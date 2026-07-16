@@ -15,20 +15,12 @@ class ScreenHandlerHUD : public ::ScreenHandlerBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
+    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

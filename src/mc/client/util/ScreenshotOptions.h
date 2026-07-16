@@ -37,6 +37,7 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
+    ScreenshotOptions& operator=(ScreenshotOptions const&);
     ScreenshotOptions();
 
 #endif
@@ -45,10 +46,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI ScreenshotOptions(::ScreenshotOptions const&);
-
-    MCAPI ::ScreenshotOptions& operator=(::ScreenshotOptions&&);
-
-    MCAPI ::ScreenshotOptions& operator=(::ScreenshotOptions const&);
 
     MCAPI ~ScreenshotOptions();
 #endif

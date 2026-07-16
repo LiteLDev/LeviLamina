@@ -6,7 +6,6 @@
 #include "mc/client/gui/screens/models/ContentType.h"
 #include "mc/client/services/download/IMarketplacePackDownloader.h"
 #include "mc/client/world/IWorldPackCollectionManager.h"
-#include "mc/client/world/PackAction.h"
 #include "mc/client/world/PackActionError.h"
 #include "mc/client/world/WorldContentItemCollectionsModel.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -16,16 +15,12 @@
 
 // auto generated forward declare list
 // clang-format off
-class ContentItemCollection;
 class IContentTierManager;
 class IEntitlementManager;
 class IMarketplacePackDownloader;
 class MutableContentItemCollection;
-struct ContentItem;
 struct ContentSource;
 struct PackContentItem;
-struct PackContentItemListPosition;
-struct PackIdVersion;
 struct PackSettingsInfo;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace ContentItemCollectionViewUtils { struct SelectedReloadProps; }
@@ -54,163 +49,49 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorldPackCollectionManagerImpl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick() /*override*/;
 
-    virtual void setContentSource(::std::unique_ptr<::ContentSource>&& contentSource) /*override*/;
+    virtual void setContentSource(::std::unique_ptr<::ContentSource>&&) /*override*/;
 
     virtual void resetContent() /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-    subscribeToContentItemCollectionDirtySubscription(::std::function<void()>&& callback) /*override*/;
+    subscribeToContentItemCollectionDirtySubscription(::std::function<void()>&&) /*override*/;
 
     virtual ::WorldContentItemCollectionsModel getWorldCollectionsModel() const /*override*/;
 
-    virtual ::std::optional<::World::PackActionError> changePackPriority(
-        ::std::string const& packIdVersion,
-        ::ContentType        packType,
-        int                  fromPosition,
-        int                  toPosition
-    ) /*override*/;
+    virtual ::std::optional<::World::PackActionError>
+    changePackPriority(::std::string const&, ::ContentType, int, int) /*override*/;
 
     virtual ::std::optional<::World::PackActionError>
-    activatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings) /*override*/;
+    activatePack(::std::string const&, ::ContentType, bool) /*override*/;
 
     virtual ::std::optional<::World::PackActionError>
-    deactivatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings) /*override*/;
+    deactivatePack(::std::string const&, ::ContentType, bool) /*override*/;
 
     virtual ::std::optional<::World::PackActionError> continuePendingPackAction() /*override*/;
 
     virtual void clearPendingPackAction() /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription subscribeToPendingPackActionPublisher(
-        ::std::function<void(::std::optional<::World::PendingPackAction>)> callback
+        ::std::function<void(::std::optional<::World::PendingPackAction>)>
     ) /*override*/;
 
-    virtual ::std::optional<::PackSettingsInfo>
-    getPackSettingsForPackIdVersion(::std::string const& packIdVersion) /*override*/;
+    virtual ::std::optional<::PackSettingsInfo> getPackSettingsForPackIdVersion(::std::string const&) /*override*/;
 
-    virtual ::std::shared_ptr<::PackContentItem const>
-    getPackItemForPackIdVersion(::std::string_view packIdVersion) /*override*/;
+    virtual ::std::shared_ptr<::PackContentItem const> getPackItemForPackIdVersion(::std::string_view) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription subscribeToMarketplacePackDownloadStatus(
-        ::std::function<void(::IMarketplacePackDownloader::MarketplacePackDownloadStatus)>&& onDownloadStatusChange
+        ::std::function<void(::IMarketplacePackDownloader::MarketplacePackDownloadStatus)>&&
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WorldPackCollectionManagerImpl(
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> contentTierManager,
-        ::std::unique_ptr<::IMarketplacePackDownloader>&&          marketplacePackDownloader
-    );
-
-    MCAPI void _completePackDownload();
-
-    MCAPI ::WorldContentItemCollectionsModel _generatePackCollectionsModel();
-
-    MCAPI ::std::shared_ptr<::ContentItemCollection>
-    _getAvailableContentItemCollection(::ContentType contentType) const;
-
-    MCAPI ::std::vector<::std::pair<::PackIdVersion, ::PackContentItemListPosition>> _getCurrentSelectedContent();
-
-    MCAPI ::std::shared_ptr<::ContentItemCollection>
-    _getMarketplacePassContentItemCollection(::ContentType contentType) const;
-
-    MCAPI void _handlePackDownloadStatusChange(::IMarketplacePackDownloader::MarketplacePackDownloadStatus newStatus);
-
-    MCAPI ::std::optional<::World::PackActionError> _handlePackMoveContinue();
-
-    MCAPI void _handleUpdatedPackSettings(::PackSettingsInfo const& updatedPackSettingsInfo);
-
-    MCAPI ::std::optional<::World::PackActionError> _movePackContent(
-        ::std::string const& packIdVersion,
-        ::ContentType        packType,
-        ::World::PackAction  packAction,
-        bool                 ignoreWarnings
-    );
-
-    MCAPI void _persistPendingWarnings(
-        ::World::PackActionError packActionError,
-        ::std::string const&     packIdVersion,
-        ::std::string const&     packName,
-        ::ContentType            packType,
-        ::World::PackAction      packAction
-    );
-
-    MCAPI void _populateDependencies(::std::vector<::std::shared_ptr<::ContentItem>>& sourceItems);
-
-    MCAPI void _reconcilePendingContent(
-        ::std::vector<::std::pair<::PackIdVersion, ::PackContentItemListPosition>> const& selectedPacks
-    );
-
-    MCAPI void _reloadContentSource();
-
-    MCAPI void _setInitialSelectedPacks(::std::vector<::std::shared_ptr<::ContentItem>> const& sourceItems);
-
-    MCAPI void _setupDownload(::std::string const& packIdVersion, ::ContentType packType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> contentTierManager,
-        ::std::unique_ptr<::IMarketplacePackDownloader>&&          marketplacePackDownloader
-    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick();
 
-    MCAPI void $setContentSource(::std::unique_ptr<::ContentSource>&& contentSource);
-
-    MCAPI void $resetContent();
-
-    MCAPI ::Bedrock::PubSub::Subscription
-    $subscribeToContentItemCollectionDirtySubscription(::std::function<void()>&& callback);
-
-    MCAPI ::WorldContentItemCollectionsModel $getWorldCollectionsModel() const;
-
-    MCAPI ::std::optional<::World::PackActionError>
-    $changePackPriority(::std::string const& packIdVersion, ::ContentType packType, int fromPosition, int toPosition);
-
-    MCAPI ::std::optional<::World::PackActionError>
-    $activatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings);
-
-    MCAPI ::std::optional<::World::PackActionError>
-    $deactivatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings);
-
-    MCAPI ::std::optional<::World::PackActionError> $continuePendingPackAction();
-
-    MCAPI void $clearPendingPackAction();
-
-    MCAPI ::Bedrock::PubSub::Subscription
-    $subscribeToPendingPackActionPublisher(::std::function<void(::std::optional<::World::PendingPackAction>)> callback);
-
-    MCAPI ::std::optional<::PackSettingsInfo> $getPackSettingsForPackIdVersion(::std::string const& packIdVersion);
-
-    MCAPI ::std::shared_ptr<::PackContentItem const> $getPackItemForPackIdVersion(::std::string_view packIdVersion);
-
-    MCAPI ::Bedrock::PubSub::Subscription $subscribeToMarketplacePackDownloadStatus(
-        ::std::function<void(::IMarketplacePackDownloader::MarketplacePackDownloadStatus)>&& onDownloadStatusChange
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

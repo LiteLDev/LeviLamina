@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorOwnerComponent;
 class EntityRegistry;
 // clang-format on
 
@@ -19,22 +18,10 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _tickSaveSurroundingChunks(::ActorOwnerComponent& actorOwnerComponent);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(::EntityRegistry& registry);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

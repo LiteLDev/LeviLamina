@@ -41,7 +41,7 @@ public:
 
     virtual float normalizeAxis(float raw, float deadzone);
 
-    virtual void normalizeAxes(float& ioX, float& ioY, float deadzone) = 0;
+    virtual void normalizeAxes(float&, float&, float) = 0;
     // NOLINTEND
 
 public:

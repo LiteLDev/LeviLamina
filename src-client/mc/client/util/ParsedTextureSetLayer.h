@@ -32,8 +32,6 @@ public:
     MCNAPI ParsedTextureSetLayer(::ParsedTextureSetLayer const&);
 
     MCNAPI ParsedTextureSetLayer(::ParsedTextureSetLayer&&);
-
-    MCNAPI ~ParsedTextureSetLayer();
     // NOLINTEND
 
 public:
@@ -42,11 +40,5 @@ public:
     MCNAPI void* $ctor(::ParsedTextureSetLayer const&);
 
     MCNAPI void* $ctor(::ParsedTextureSetLayer&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

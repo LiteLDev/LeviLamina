@@ -82,13 +82,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI ::RecipeNetId _getResultRecipeIdForInput(::ItemStack const& inputStack);
-
-    MCNAPI ::ContainerScreenActionResult
-    _tryTransferCraft(::ContainerValidationSlotData const& dstSlot, ::ContainerValidationSlotData const&);
-
-    MCNAPI bool isSelectedStone(int collectionIndex) const;
-
-    MCNAPI void setSelectedStone(int collectionIndex);
 #endif
     // NOLINTEND
 
@@ -122,11 +115,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

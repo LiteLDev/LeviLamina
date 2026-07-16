@@ -9,14 +9,12 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::v1_26_20::BlockDefinition { struct BoundingBoxData; }
-namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
-struct MultipleBoundingBoxConstraint
+class MultipleBoundingBoxConstraint
 : public ::cereal::ConstraintHandle<::SharedTypes::v1_26_20::BlockDefinition::MultipleBoundingBoxConstraint> {
 public:
     // member variables
@@ -26,14 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
-
-    MCAPI void validateValue(
-        ::std::vector<::SharedTypes::v1_26_20::BlockDefinition::BoundingBoxData> const& boundingBoxDataVector,
-        ::cereal::SerializerContext&                                                    context
-    ) const;
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
     // NOLINTEND
 
 public:
@@ -43,9 +36,9 @@ public:
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+
     // NOLINTEND
 };
 

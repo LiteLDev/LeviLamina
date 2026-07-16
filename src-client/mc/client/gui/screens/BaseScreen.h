@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseScreen() /*override*/;
+    virtual ~BaseScreen() /*override*/ = default;
 
     virtual void setupForRendering(::ScreenContext& screenContext);
 
@@ -85,13 +85,13 @@ public:
 
     virtual void applyInput(float a) /*override*/;
 
-    virtual void preRenderUpdate(::ScreenContext&) /*override*/;
+    virtual void preRenderUpdate(::ScreenContext& screenContext) /*override*/;
 
     virtual void prepareFrame(::ScreenContext& screenContext) /*override*/;
 
-    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) = 0;
+    virtual void render(::ScreenContext&, ::FrameRenderObject const&) = 0;
 
-    virtual void postRenderUpdate(::ScreenContext&) /*override*/;
+    virtual void postRenderUpdate(::ScreenContext& screenContext) /*override*/;
 
     virtual void handleInputModeChanged(::InputMode inputMode) /*override*/;
 
@@ -116,7 +116,7 @@ public:
     virtual void
     handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact) /*override*/;
 
-    virtual void setTextboxText(::std::string const& text, ::TextboxTextUpdateReason reason) /*override*/;
+    virtual void setTextboxText(::std::string const& text, ::TextboxTextUpdateReason) /*override*/;
 
     virtual void onKeyboardDismissed() /*override*/;
 
@@ -172,12 +172,11 @@ public:
 
     virtual ::std::string getScreenTelemetryName() const /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
-        /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
 
     virtual int getScreenVersion() const /*override*/;
 
-    virtual void processBufferedTextCharEvents(::std::vector<::TextCharEventData> const&) /*override*/;
+    virtual void processBufferedTextCharEvents(::std::vector<::TextCharEventData> const& bufferedEvents) /*override*/;
 
     virtual bool getShouldSendEvents() /*override*/;
 
@@ -226,18 +225,10 @@ public:
 
     virtual void sendScreenEvent(::std::string const&, ::std::string const&) /*override*/;
 
-    virtual void setScreenState(
-        ::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& routeQueryParameters
-    ) /*override*/;
+    virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> getDebugDataProvider() const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BaseScreen();
     // NOLINTEND
 
 public:
@@ -258,21 +249,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $setupForRendering(::ScreenContext& screenContext);
+    MCAPI void $setupForRendering(::ScreenContext& screenContext);
 
     MCAPI void $cleanupForRendering(::ScreenContext& screenContext);
 
@@ -308,11 +287,11 @@ public:
 
     MCFOLD void $applyInput(float a);
 
-    MCFOLD void $preRenderUpdate(::ScreenContext&);
+    MCFOLD void $preRenderUpdate(::ScreenContext& screenContext);
 
     MCFOLD void $prepareFrame(::ScreenContext& screenContext);
 
-    MCFOLD void $postRenderUpdate(::ScreenContext&);
+    MCFOLD void $postRenderUpdate(::ScreenContext& screenContext);
 
     MCFOLD void $handleInputModeChanged(::InputMode inputMode);
 
@@ -333,7 +312,7 @@ public:
 
     MCFOLD void $handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact);
 
-    MCFOLD void $setTextboxText(::std::string const& text, ::TextboxTextUpdateReason reason);
+    MCFOLD void $setTextboxText(::std::string const& text, ::TextboxTextUpdateReason);
 
     MCFOLD void $onKeyboardDismissed();
 
@@ -375,7 +354,7 @@ public:
 
     MCFOLD int $getWidth();
 
-    MCFOLD int $getHeight();
+    MCAPI int $getHeight();
 
     MCFOLD void $reload();
 
@@ -389,15 +368,15 @@ public:
 
     MCFOLD ::std::string $getScreenTelemetryName() const;
 
-    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
 
     MCFOLD int $getScreenVersion() const;
 
-    MCFOLD void $processBufferedTextCharEvents(::std::vector<::TextCharEventData> const&);
+    MCFOLD void $processBufferedTextCharEvents(::std::vector<::TextCharEventData> const& bufferedEvents);
 
     MCFOLD bool $getShouldSendEvents();
 
-    MCFOLD void $setShouldSendEvents(bool sendEvents);
+    MCAPI void $setShouldSendEvents(bool sendEvents);
 
     MCFOLD bool $getWantsTextOnly();
 
@@ -431,7 +410,7 @@ public:
 
     MCAPI void $schedulePop();
 
-    MCFOLD bool $isTerminating() const;
+    MCAPI bool $isTerminating() const;
 
     MCFOLD bool $loadScreenImmediately() const;
 
@@ -441,8 +420,7 @@ public:
 
     MCFOLD void $sendScreenEvent(::std::string const&, ::std::string const&);
 
-    MCFOLD void
-    $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& routeQueryParameters);
+    MCFOLD void $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&);
 
     MCFOLD ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> $getDebugDataProvider() const;
     // NOLINTEND

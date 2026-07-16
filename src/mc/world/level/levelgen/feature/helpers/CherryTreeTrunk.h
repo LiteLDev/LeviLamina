@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
 class IBlockWorldGenAPI;
 class ITreeCanopy;
@@ -37,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CherryTreeTrunk() /*override*/;
+    virtual ~CherryTreeTrunk() /*override*/ = default;
 
     virtual int getTreeHeight(::Random& random) const /*override*/;
 
@@ -50,29 +49,6 @@ public:
         ::TreeHelper::TreeParams const& treeParams,
         ::ITreeCanopy const*            canopy
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::BlockPos _generateBranch(
-        ::IBlockWorldGenAPI&            target,
-        ::Block const&                  trunkBlock,
-        ::Block const&                  sidewaysTrunkBlock,
-        ::Random&                       random,
-        int                             treeHeight,
-        ::BlockPos                      origin,
-        ::TreeHelper::TreeParams const& treeParams,
-        ::BlockPos                      branchDirection,
-        int                             offsetFromOrigin,
-        bool                            middleContinuesUpwards
-    ) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -91,11 +67,5 @@ public:
     ) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

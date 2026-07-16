@@ -18,22 +18,6 @@ public:
     CrashManagerConfig& operator=(CrashManagerConfig const&);
     CrashManagerConfig(CrashManagerConfig const&);
     CrashManagerConfig();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~CrashManagerConfig();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace Bedrock

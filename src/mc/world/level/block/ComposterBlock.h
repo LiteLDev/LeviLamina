@@ -21,7 +21,6 @@ class HitResult;
 class IConstBlockSource;
 class ItemStack;
 class ItemStackBase;
-class Level;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -53,7 +52,8 @@ public:
 
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource& block, ::BlockPos const&, ::Block const&, uchar) const /*override*/;
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
     virtual ::HitResult clip(
         ::Block const&                                     block,
@@ -82,19 +82,17 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const /*override*/;
 
-    virtual bool canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ComposterBlock(::std::string const& nameId, int id);
-
-    MCAPI void _emitBoneMeal(::Level& region, ::BlockSource& pos, ::BlockPos const&) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
@@ -107,15 +105,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<uint64, schar> const& _getCompostableItems();
-
-    MCAPI static bool addItem(
-        ::Container&      fromContainer,
-        int               slot,
-        ::ItemStack&      item,
-        ::BlockSource&    region,
-        ::Block const&    block,
-        ::BlockPos const& pos
-    );
 
     MCAPI static bool addItems(
         ::Container&      fromContainer,
@@ -133,8 +122,6 @@ public:
     MCAPI static void empty(::BlockSource& region, ::Block const& composter, ::BlockPos const& pos);
 
     MCAPI static ::ItemStack extractItem(::BlockSource& region, ::Block const& composter, ::BlockPos const& pos);
-
-    MCAPI static ::Block const* getComposterAt(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static schar getFillChance(::ItemStackBase const& item);
     // NOLINTEND
@@ -162,7 +149,7 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& block, ::BlockPos const&, ::Block const&, uchar) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCFOLD ::HitResult $clip(
         ::Block const&                                     block,
@@ -191,11 +178,11 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCAPI bool $canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const;
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
     MCFOLD int $getVariant(::Block const& block) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
 
     // NOLINTEND

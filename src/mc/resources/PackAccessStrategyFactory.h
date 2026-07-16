@@ -6,7 +6,6 @@
 // clang-format off
 struct AnyAccessStrategyOptions;
 struct DirectoryAccessStrategyOptions;
-struct DirectoryWihEncryptedBlobAccessStrategyOptions;
 struct EncryptedAccessStrategyOptions;
 struct EncryptedZipAccessStrategyOptions;
 struct PackAccessStrategies;
@@ -17,12 +16,11 @@ class PackAccessStrategyFactory {
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI static ::PackAccessStrategies create(::AnyAccessStrategyOptions const& create);
+#endif
 
     MCNAPI static ::PackAccessStrategies createForDirectory(::DirectoryAccessStrategyOptions const& create);
-
-    MCNAPI static ::PackAccessStrategies
-    createForDirectoryWithEncryptedBlob(::DirectoryWihEncryptedBlobAccessStrategyOptions const& create);
 
     MCNAPI static ::PackAccessStrategies createForEncrypted(::EncryptedAccessStrategyOptions const& create);
 

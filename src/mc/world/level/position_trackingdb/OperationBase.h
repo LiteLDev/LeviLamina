@@ -16,10 +16,8 @@ public:
     // NOLINTBEGIN
     virtual ~OperationBase() = default;
 
-    virtual bool tick(
-        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
-        ::PositionTrackingDB::TrackingRecord&                           record
-    ) = 0;
+    virtual bool
+    tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&) = 0;
 
     virtual char const* getDescription() const = 0;
 

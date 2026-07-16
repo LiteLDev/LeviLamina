@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BoneMealItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
@@ -36,18 +32,6 @@ public:
     virtual ::ItemColor getItemColor() const /*override*/;
 
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BoneMealItem(::std::string const& name, int id, bool allowLegacyUseAsDye);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, bool allowLegacyUseAsDye);
     // NOLINTEND
 
 public:

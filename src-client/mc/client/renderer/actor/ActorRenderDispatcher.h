@@ -49,23 +49,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorRenderDispatcher();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorRenderDispatcher();
+    virtual ~ActorRenderDispatcher() = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorRenderDispatcher(::SubClientId clientId);
-
     MCAPI ::std::shared_ptr<::ActorRenderer> _getRenderer(::Actor& actor) const;
-
-    MCAPI void cleanupRenderer(::HashedString const& name);
 
     MCAPI void clearEntityRenderers();
 
@@ -81,13 +73,7 @@ public:
 
     MCAPI ::std::shared_ptr<::DataDrivenRenderer> getDataDrivenRenderer(::HashedString const& rendererName) const;
 
-    MCFOLD ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>>& getDataDrivenRenderers();
-
-    MCAPI ::std::shared_ptr<::ActorRenderer> getRenderer(::Actor const& actor) const;
-
     MCAPI ::std::shared_ptr<::ActorRenderer> getRenderer(::HashedString const& rendererName) const;
-
-    MCAPI bool hasWaterHole(::Actor& actor) const;
 
     MCAPI void initializeEntityRenderers(
         ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> const&                geometryGroup,
@@ -109,14 +95,6 @@ public:
     MCAPI void render(
         ::BaseActorRenderContext& entityRenderContext,
         ::Actor&                  entity,
-        ::Vec3 const&             pos,
-        ::Vec2 const&             rot,
-        bool                      ignoreLighting
-    );
-
-    MCAPI void render(
-        ::BaseActorRenderContext& entityRenderContext,
-        ::Actor&                  entity,
         ::Vec3 const&             cameraTargetPos,
         ::Vec3 const&             pos,
         ::Vec2 const&             rot,
@@ -127,18 +105,6 @@ public:
 
     MCAPI void
     renderWaterHole(::BaseActorRenderContext& actorRenderContext, ::Actor& actor, ::Vec3 const& cameraTargetPos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SubClientId clientId);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

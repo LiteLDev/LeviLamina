@@ -23,10 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructurePoolBlockPredicateTrueIfFound();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool test(::Block const& block, ::IRandom& random) const /*override*/;
@@ -36,18 +32,6 @@ public:
     virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StructurePoolBlockPredicateTrueIfFound(::std::set<::Block const*> const& replacable, float probability);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::set<::Block const*> const& replacable, float probability);
     // NOLINTEND
 
 public:

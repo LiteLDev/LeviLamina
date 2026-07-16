@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -27,15 +26,13 @@ public:
     // NOLINTBEGIN
     MCAPI TradeWithPlayerGoalDefinition();
 
-    MCAPI ~TradeWithPlayerGoalDefinition();
+    MCFOLD bool operator==(::SharedTypes::v1_26_10::TradeWithPlayerGoalDefinition const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCFOLD static ::SemVersion getStrictParsingVersion();
     // NOLINTEND
 
 public:
@@ -48,12 +45,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

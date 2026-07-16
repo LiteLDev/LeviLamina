@@ -14,7 +14,6 @@ class Actor;
 class IClientInstance;
 class MinecraftUIRenderContext;
 class Player;
-class ScreenContext;
 class UIControl;
 class UICustomRenderer;
 class UIScene;
@@ -64,12 +63,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI HudCameraRenderer();
-
-    MCAPI void
-    _drawBlackBars(::ScreenContext& screenContext, float barToScreenRatio, int screenWidth, int screenHeight);
-
-    MCAPI void
-    _drawPicture(::ScreenContext& screenContext, float slideOffScreenRatio, int screenWidth, int screenHeight);
     // NOLINTEND
 
 public:

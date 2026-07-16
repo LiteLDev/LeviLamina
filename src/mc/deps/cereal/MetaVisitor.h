@@ -2,23 +2,37 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace cereal {
 
 struct MetaVisitor {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCtx;
+    // NOLINTEND
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MetaVisitor() = default;
+    virtual ~MetaVisitor();
 
     virtual void log(::std::string msg) = 0;
 
     virtual bool hasErrors() const = 0;
 
-    virtual void onSequenceContainer(uint64 index, ::std::function<void()> cb) = 0;
+    virtual void onSequenceContainer(uint64 index, ::std::function<bool()> cb) = 0;
 
-    virtual void onAssociativeContainer(::std::string_view key, ::std::function<void()> cb) = 0;
+    virtual void onAssociativeContainer(::std::string_view key, ::std::function<bool()> cb) = 0;
 
-    virtual void onAssociativeContainer(uint64 index, ::std::function<void()> cb) = 0;
+    virtual void onAssociativeContainer(uint64 index, ::std::function<bool()> cb) = 0;
 
     virtual void onSetter(::std::function<bool()> cb) = 0;
 
@@ -35,9 +49,21 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

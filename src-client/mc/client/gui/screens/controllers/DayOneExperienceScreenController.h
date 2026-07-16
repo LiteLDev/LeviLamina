@@ -44,11 +44,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DayOneExperienceScreenController(::std::shared_ptr<::DayOneExperienceModel> model);
 
-    MCAPI void _createSkipModal();
-
     MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

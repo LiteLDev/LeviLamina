@@ -30,8 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void reset();
-
     MCAPI void setTransform(
         void const* _view,
         void const* _proj,

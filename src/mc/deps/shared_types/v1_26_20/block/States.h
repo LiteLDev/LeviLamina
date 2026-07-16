@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct States {
@@ -95,38 +90,13 @@ public:
     // NOLINTBEGIN
     MCAPI States();
 
-    MCAPI ::std::unordered_map<
-        ::std::string,
-        ::std::variant<
-            ::std::vector<::std::string>,
-            ::std::vector<bool>,
-            ::std::vector<int>,
-            ::SharedTypes::v1_26_20::BlockDefinition::States::Values>>
-    getter() const;
-
     MCAPI ::SharedTypes::v1_26_20::BlockDefinition::States&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::States&&);
 
     MCAPI ::SharedTypes::v1_26_20::BlockDefinition::States&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::States const&);
 
-    MCAPI void setter(
-        ::std::unordered_map<
-            ::std::string,
-            ::std::variant<
-                ::std::vector<::std::string>,
-                ::std::vector<bool>,
-                ::std::vector<int>,
-                ::SharedTypes::v1_26_20::BlockDefinition::States::Values>>& value
-    );
-
     MCAPI ~States();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

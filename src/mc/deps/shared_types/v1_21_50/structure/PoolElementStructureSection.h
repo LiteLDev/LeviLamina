@@ -39,8 +39,6 @@ public:
 
     MCAPI ::SharedTypes::v1_21_50::PoolElementStructureSection&
     operator=(::SharedTypes::v1_21_50::PoolElementStructureSection&&);
-
-    MCAPI ~PoolElementStructureSection();
     // NOLINTEND
 
 public:
@@ -53,12 +51,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_21_50::PoolElementStructureSection const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

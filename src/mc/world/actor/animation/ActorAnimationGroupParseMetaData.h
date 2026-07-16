@@ -18,16 +18,4 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ActorAnimationGroup>> mActorAnimationGroup;
     ::ll::TypedStorage<4, 4, ::CurrentCmdVersion>                                   mCurrentCommandVersion;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorAnimationGroupParseMetaData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

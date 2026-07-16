@@ -5,24 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
-// auto generated forward declare list
-// clang-format off
-class DefinitionInstanceGroup;
-class EntityContext;
-// clang-format on
-
 class EntityComponentFactoryBase : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~EntityComponentFactoryBase() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void addComponents(::EntityContext& entity, ::DefinitionInstanceGroup const& definitionGroup);
-
-    MCNAPI static void removeComponents(::EntityContext& entity, ::DefinitionInstanceGroup const& definitionGroup);
     // NOLINTEND
 };

@@ -12,7 +12,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
-class BlockSource;
 class ItemDescriptor;
 class Mob;
 // clang-format on
@@ -62,7 +61,7 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    virtual void appendDebugInfo(::std::string&) const /*override*/;
 
     virtual void start() /*override*/;
 
@@ -70,74 +69,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MoveToBlockGoal(
-        ::Mob&                                  mob,
-        float                                   speedModifier,
-        int                                     searchRange,
-        int                                     searchHeight,
-        int                                     tickInterval,
-        int                                     stayDurationTicks,
-        float                                   goalRadius,
-        ::Vec3                                  targetPositionOffset,
-        float                                   chanceToStart,
-        ::TargetSelectionMethod                 targetSelectionMethod,
-        ::std::vector<::ActorDefinitionTrigger> onReachTriggers,
-        ::std::vector<::ActorDefinitionTrigger> onStayCompletedTriggers,
-        ::std::vector<::ItemDescriptor>         targetBlocks,
-        ::ActorFilterGroup const&               targetBlockFilter
-    );
-
-    MCAPI bool _findTargetBlock();
-
-    MCAPI bool _isValidTarget(::BlockSource& region, ::BlockPos& pos) const;
-
-    MCAPI void _moveToBlock();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                  mob,
-        float                                   speedModifier,
-        int                                     searchRange,
-        int                                     searchHeight,
-        int                                     tickInterval,
-        int                                     stayDurationTicks,
-        float                                   goalRadius,
-        ::Vec3                                  targetPositionOffset,
-        float                                   chanceToStart,
-        ::TargetSelectionMethod                 targetSelectionMethod,
-        ::std::vector<::ActorDefinitionTrigger> onReachTriggers,
-        ::std::vector<::ActorDefinitionTrigger> onStayCompletedTriggers,
-        ::std::vector<::ItemDescriptor>         targetBlocks,
-        ::ActorFilterGroup const&               targetBlockFilter
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
-
-    MCAPI void $tick();
-
-    MCAPI void $appendDebugInfo(::std::string& str) const;
-
-    MCAPI void $start();
-
-    MCAPI void $stop();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

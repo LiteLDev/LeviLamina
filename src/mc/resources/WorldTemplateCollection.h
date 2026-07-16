@@ -7,10 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct WorldTemplateData;
 struct WorldTemplateInfo;
-struct WorldTemplateMutableInfo;
-namespace mce { class UUID; }
 // clang-format on
 
 class WorldTemplateCollection {
@@ -26,24 +23,4 @@ public:
     WorldTemplateCollection& operator=(WorldTemplateCollection const&);
     WorldTemplateCollection(WorldTemplateCollection const&);
     WorldTemplateCollection();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void clear();
-
-    MCNAPI void erase(uint64 index);
-
-    MCNAPI void push_back(::WorldTemplateData&& data, ::WorldTemplateMutableInfo&& mutableInfo);
-
-    MCNAPI ::WorldTemplateInfo const* tryFindInstalledWorldByTemplateId(::gsl::span<::mce::UUID const> ids) const;
-
-    MCNAPI ~WorldTemplateCollection();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

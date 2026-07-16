@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/external/webrtc/MediaReceiveStreamInterface.h"
 #include "mc/external/webrtc/ReceiveStreamInterface.h"
-#include "mc/external/webrtc/RtcpMode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -102,12 +101,12 @@ public:
         ::ll::UntypedStorage<8, 8>  mUnk3011b4;
         ::ll::UntypedStorage<8, 80> mUnk75c8ec;
         ::ll::UntypedStorage<8, 8>  mUnk17579e;
-        ::ll::UntypedStorage<8, 8>  mUnkd8ed57;
+        ::ll::UntypedStorage<8, 8>  mUnk4ec0cb;
         ::ll::UntypedStorage<4, 4>  mUnke97962;
         ::ll::UntypedStorage<1, 1>  mUnk3debf5;
         ::ll::UntypedStorage<8, 32> mUnkd3100d;
         ::ll::UntypedStorage<8, 8>  mUnkb16578;
-        ::ll::UntypedStorage<1, 5>  mUnke6c110;
+        ::ll::UntypedStorage<8, 32> mUnke6c110;
         ::ll::UntypedStorage<8, 8>  mUnk9e1477;
         // NOLINTEND
 
@@ -166,6 +165,9 @@ public:
         ::ll::UntypedStorage<8, 8>   mUnkf89398;
         ::ll::UntypedStorage<8, 8>   mUnk248e7a;
         ::ll::UntypedStorage<8, 16>  mUnk2aea4a;
+        ::ll::UntypedStorage<8, 16>  mUnkdb85c9;
+        ::ll::UntypedStorage<8, 16>  mUnk1cbaa7;
+        ::ll::UntypedStorage<4, 4>   mUnk7d61b4;
         ::ll::UntypedStorage<4, 4>   mUnk956024;
         ::ll::UntypedStorage<4, 4>   mUnkc61dbd;
         ::ll::UntypedStorage<4, 4>   mUnk2be7a8;
@@ -179,10 +181,16 @@ public:
         ::ll::UntypedStorage<4, 4>   mUnk64258c;
         ::ll::UntypedStorage<4, 4>   mUnk603193;
         ::ll::UntypedStorage<8, 32>  mUnkfe479a;
-        ::ll::UntypedStorage<8, 72>  mUnk91f8af;
+        ::ll::UntypedStorage<8, 88>  mUnk91f8af;
         ::ll::UntypedStorage<4, 20>  mUnk7f567a;
-        ::ll::UntypedStorage<8, 80>  mUnkad454f;
+        ::ll::UntypedStorage<8, 96>  mUnkad454f;
         ::ll::UntypedStorage<8, 120> mUnk481cce;
+        ::ll::UntypedStorage<8, 16>  mUnk9fc8fe;
+        ::ll::UntypedStorage<8, 16>  mUnkd24d99;
+        ::ll::UntypedStorage<8, 16>  mUnk3db5c6;
+        ::ll::UntypedStorage<4, 4>   mUnk6c7ad2;
+        ::ll::UntypedStorage<8, 8>   mUnk382d65;
+        ::ll::UntypedStorage<8, 8>   mUnke7393d;
         // NOLINTEND
 
     public:
@@ -205,8 +213,6 @@ public:
     SetAndGetRecordingState(::webrtc::VideoReceiveStreamInterface::RecordingState, bool) = 0;
 
     virtual void GenerateKeyFrame() = 0;
-
-    virtual void SetRtcpMode(::webrtc::RtcpMode) = 0;
 
     virtual void SetFlexFecProtection(::webrtc::RtpPacketSinkInterface*) = 0;
 

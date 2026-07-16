@@ -25,34 +25,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FlatWorldOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FlatWorldOptions(::Json::Value const& root, ::LevelData const& levelData);
-
-    MCAPI bool _load(::Json::Value const& root, ::LevelData const& levelData);
-
-    MCAPI ~FlatWorldOptions();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Json::Value getLayers(::LevelData const& levelData);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Json::Value const& root, ::LevelData const& levelData);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

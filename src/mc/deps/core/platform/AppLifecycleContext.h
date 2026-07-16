@@ -16,22 +16,5 @@ public:
     // prevent constructor by default
     AppLifecycleContext& operator=(AppLifecycleContext const&);
     AppLifecycleContext(AppLifecycleContext const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI AppLifecycleContext();
-
-#ifdef LL_PLAT_C
-    MCNAPI void setFocus(bool currentlyResumed);
-
-    MCNAPI void setHasGraphicsContext(bool hasGraphicsContext);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
+    AppLifecycleContext();
 };

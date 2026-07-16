@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/Async.h"
 #include "mc/resources/pack_command/IPackCommandPipeline.h"
 
 // auto generated forward declare list
@@ -35,41 +34,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands) /*override*/;
+    virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&&) /*override*/;
 
     virtual ::PackCommand::PackCommandHandle
     submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&&) /*override*/;
 
-    virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&& commands) /*override*/;
+    virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&&) /*override*/;
 
     virtual ::TaskGroup& getTaskGroup() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Bedrock::Threading::Async<void> submitAll(::PackCommand::IPackCommandPipeline& pipeline);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::PackCommand::PackCommandHandle $submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands);
 
-    MCNAPI ::PackCommand::PackCommandHandle
-    $submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&&);
-
-    MCNAPI ::PackCommand::PackCommandHandle $submitRemove(::PackCommand::RemoveBatch&& commands);
-
-    MCNAPI ::TaskGroup& $getTaskGroup();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -25,18 +25,6 @@ public:
     ::ll::TypedStorage<1, 1, uchar>                         originalStencilRef;
     ::ll::TypedStorage<1, 1, bool>                          overwroteStencilRef;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DepthStencilStateDescription();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
 };
 
 } // namespace mce

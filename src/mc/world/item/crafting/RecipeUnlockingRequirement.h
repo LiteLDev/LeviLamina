@@ -27,30 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RecipeUnlockingRequirement();
-
-    MCAPI bool canBeUnlockedByContext(::RecipeUnlockingRequirement::UnlockingContext context) const;
-
-    MCAPI bool canBeUnlockedByIngredient(::RecipeIngredient const& ingredient) const;
-
-    MCFOLD ::RecipeUnlockingRequirement::UnlockingContext getUnlockingContext() const;
-
-    MCAPI bool isUnlockable() const;
-
     MCAPI ~RecipeUnlockingRequirement();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::RecipeUnlockingRequirement::UnlockingContext
-    unlockingContextFromString(::std::string const& context);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

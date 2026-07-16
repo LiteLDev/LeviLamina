@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -25,32 +24,33 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnkb5fa8e;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    DataTransferServiceCreateSettingResponsePayload& operator=(DataTransferServiceCreateSettingResponsePayload const&);
+    DataTransferServiceCreateSettingResponsePayload(DataTransferServiceCreateSettingResponsePayload const&);
+    DataTransferServiceCreateSettingResponsePayload();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     DataTransferServiceCreateSettingResponsePayload();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI DataTransferServiceCreateSettingResponsePayload(
         ::Editor::Network::DataTransferServiceCreateSettingResponsePayload const&
     );
-
-#ifdef LL_PLAT_C
-    MCNAPI DataTransferServiceCreateSettingResponsePayload(
-        ::mce::UUID          requestId,
-        ::std::string const& collectionName,
-        ::std::string const& identifier,
-        ::std::string const& message,
-        bool                 success
-    );
-#endif
 
     MCNAPI ::Editor::Network::DataTransferServiceCreateSettingResponsePayload&
     operator=(::Editor::Network::DataTransferServiceCreateSettingResponsePayload&&);
 
     MCNAPI ::Editor::Network::DataTransferServiceCreateSettingResponsePayload&
     operator=(::Editor::Network::DataTransferServiceCreateSettingResponsePayload const&);
+#endif
     // NOLINTEND
 
 public:
@@ -62,16 +62,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Network::DataTransferServiceCreateSettingResponsePayload const&);
-
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
-        ::mce::UUID          requestId,
-        ::std::string const& collectionName,
-        ::std::string const& identifier,
-        ::std::string const& message,
-        bool                 success
-    );
+    MCNAPI void* $ctor(::Editor::Network::DataTransferServiceCreateSettingResponsePayload const&);
 #endif
     // NOLINTEND
 

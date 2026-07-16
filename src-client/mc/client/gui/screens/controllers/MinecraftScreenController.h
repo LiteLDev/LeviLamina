@@ -9,10 +9,8 @@
 #include "mc/client/gui/screens/ScreenController.h"
 #include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/controllers/ModalScreenButtonMode.h"
-#include "mc/client/gui/screens/controllers/SafeZoneBuffer.h"
 #include "mc/client/gui/screens/controllers/ScreenExitBehavior.h"
 #include "mc/client/gui/screens/controllers/UpdateSliderProgressMode.h"
-#include "mc/client/network/NetworkFilter.h"
 #include "mc/client/social/UserPlatformConnectionResult.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/input/InputMode.h"
@@ -23,8 +21,6 @@
 // auto generated forward declare list
 // clang-format off
 class DropdownScreenController;
-class FilePickerSettings;
-class ItemInstance;
 class MinecraftScreenModel;
 class UIPropertyBag;
 struct ModalScreenData;
@@ -49,18 +45,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<1, 1, bool>           mShouldLeave;
         ::ll::TypedStorage<8, 32, ::std::string> mExpectedScreenName;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~LeaveScreenInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -199,15 +183,7 @@ public:
         ::std::function<void(::Social::MultiIdentitySigninResult)> callback
     );
 
-    MCAPI void _attemptSigninOrSignup(
-        ::Social::IdentitySignInTrigger                            signInTrigger,
-        ::std::string const&                                       signInSource,
-        ::std::function<void(::Social::MultiIdentitySigninResult)> signInCallback
-    );
-
     MCAPI bool _checkRealmCreatePermissions();
-
-    MCFOLD void _closeJsonDefinedControlPopup(::std::string const& factory, ::std::string const& name);
 
     MCAPI void _closeModalDialog();
 
@@ -247,43 +223,14 @@ public:
 
     MCAPI void _gateRealmsWhenCrossPlatformIsDisabled(::std::function<void()> callback);
 
-    MCAPI ::NetworkFilter _getNetworkFilter() const;
-
-    MCAPI int
-    _getStepSliderValue(::std::function<int()> getValue, ::std::string const& valueBindingName, bool continuousUpdate);
-
-    MCAPI void _handleSignIn(
-        ::Social::IdentitySignInTrigger                            signInTrigger,
-        ::std::string const&                                       signInSource,
-        ::std::function<void(::Social::MultiIdentitySigninResult)> signInCallback
-    );
-
     MCAPI void _handleSignInFailure(
         ::Social::MultiIdentitySigninResult const&                 signInResult,
         ::std::function<void(::Social::MultiIdentitySigninResult)> callback,
         bool                                                       isAutoSignIn
     );
 
-    MCAPI bool _isApprovedLink(::std::string const& hyperlink) const;
-
-    MCAPI void _onAttemptSignInResult(
-        ::Social::MultiIdentitySigninResult const&                 result,
-        ::std::function<void(::Social::MultiIdentitySigninResult)> callback
-    );
-
-    MCAPI ::ui::ViewRequest _onModalEventReceived(::ModalScreenButtonId modalResult, bool buttonClosesModal);
-
     MCAPI void
     _promptEduSwitchAccounts(bool showModal, ::std::string const& buttonName, ::LastClickedSource lastClickedSource);
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI bool _resolveSafeZoneVisibility(::SafeZoneBuffer buffer) const;
-
-    MCAPI ::std::string const
-    _retrieveBindingValueFromPropertyBag(::std::string const& bindingName, ::UIPropertyBag& propertyBag) const;
-
-    MCAPI void _setExitBehavior(::ScreenExitBehavior exitBehavior);
 
     MCAPI void _showLiveMultiplayerModal();
 
@@ -296,12 +243,6 @@ public:
     MCAPI bool _tryNavigateToXblUpsellScreen();
 
     MCAPI bool _tryShowSuspendWarningModal(::std::function<void()> onConfirm);
-
-    MCAPI void _updateRayTracingStatus();
-
-    MCFOLD bool _usingGamepadBehavior() const;
-
-    MCFOLD void closeJsonDefinedControlPopup(::std::string const& factory, ::std::string const& name);
 
     MCAPI void displayJsonDefinedControlPopup(
         ::std::string const& controlId,
@@ -316,12 +257,6 @@ public:
     exportWorld(::std::string const& levelId, ::std::string const& levelName, ::FileArchiver::ExportType type);
 
     MCAPI void gateOnPlatformSignInForStoreAccess(::std::function<void()> callback);
-
-    MCAPI ::InputMode getInputMode() const;
-
-    MCAPI bool isRayTracingEnabled() const;
-
-    MCFOLD bool isUsingGamepadBehavior() const;
 
     MCAPI ::ui::ViewRequest promptSignIn(
         ::Social::IdentitySignInTrigger                            signInTrigger,
@@ -378,18 +313,6 @@ public:
     );
 
     MCAPI void setUpCallbacksForFloatOption(
-        ::OptionID                                                        optionID,
-        ::std::string const&                                              sliderName,
-        ::std::string const&                                              valueBindingName,
-        ::std::string const&                                              enabledBindingName,
-        ::std::string const&                                              labelBindingName,
-        ::std::string const&                                              ttsBindingName,
-        ::std::string const&                                              optionFormat,
-        ::std::function<::std::string(::std::string const&, float, bool)> valueLabeller,
-        ::UpdateSliderProgressMode                                        updateProgressMode
-    );
-
-    MCAPI void setUpCallbacksForFloatOption(
         ::std::string const&                                              sliderName,
         ::std::string const&                                              valueBindingName,
         ::std::string const&                                              enabledBindingName,
@@ -430,18 +353,6 @@ public:
     );
 
     MCAPI void setUpCallbacksForStepOption(
-        ::OptionID                          optionID,
-        ::std::string const&                sliderName,
-        ::std::string const&                valueBindingName,
-        ::std::string const&                enabledBindingName,
-        ::std::string const&                stepsBindingName,
-        ::std::string const&                labelBindingName,
-        ::std::string const&                ttsBindingName,
-        ::std::function<::std::string(int)> valueLabeller,
-        bool                                continuousUpdate
-    );
-
-    MCAPI void setUpCallbacksForStepOption(
         ::std::string const&                  sliderName,
         ::std::string const&                  valueBindingName,
         ::std::string const&                  enabledBindingName,
@@ -458,10 +369,6 @@ public:
         ::OptionID                            sliderOptionID
     );
 
-    MCAPI void showPickFileDialog(::std::shared_ptr<::FilePickerSettings> settings);
-
-    MCAPI void showPlayerProfile(::std::string const& xuid, ::std::string const& platformId);
-
     MCAPI void showRemoteStorageErrorModal(::Core::Path const& storageDirectory);
 
     MCAPI ::ui::ViewRequest showSignIn();
@@ -470,13 +377,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string const& getControllerSliderOptionTitle();
-
     MCAPI static ::ModalScreenData getProfanityModalData();
-
-    MCAPI static ::OptionID const getSliderOptionID();
-
-    MCAPI static int packItemInstance(::ItemInstance const& item);
     // NOLINTEND
 
 public:
@@ -486,8 +387,6 @@ public:
 
     MCAPI static ::std::function<::std::string(::std::string const&, float, bool)>&
     defaultProgressSliderOptionLabeller();
-
-    MCAPI static ::UpdateSliderProgressMode const& defaultUpdateSliderProgressMode();
 
     MCAPI static ::OptionID& mSliderOptionID();
 
@@ -522,7 +421,7 @@ public:
 
     MCAPI void $leaveScreen(::std::string const& expectedScreenName);
 
-    MCAPI void $onInit();
+    MCFOLD void $onInit();
 
     MCAPI void $onDelete();
 
@@ -573,13 +472,5 @@ public:
 
     MCAPI ::ui::ViewRequest
     $promptConnect(bool signInOnSuccess, ::std::function<void(::Social::UserPlatformConnectionResult)> signInCallback);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

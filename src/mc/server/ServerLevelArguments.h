@@ -17,16 +17,4 @@ public:
     ServerLevelArguments& operator=(ServerLevelArguments const&);
     ServerLevelArguments(ServerLevelArguments const&);
     ServerLevelArguments();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ServerLevelArguments();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

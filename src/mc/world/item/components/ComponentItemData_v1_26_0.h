@@ -9,8 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersionConstant;
-struct ComponentItemData_v1_21_110;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -44,15 +42,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void
-    upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_21_110, ::ComponentItemData_v1_26_0, nullptr_t>& upgrader);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
@@ -66,6 +55,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

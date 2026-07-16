@@ -7,12 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ActorRenderData;
 class BaseActorRenderContext;
-class Block;
-class BlockTessellator;
-class DataDrivenRenderer;
 class RenderParams;
 // clang-format on
 
@@ -38,57 +34,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void preRender(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    ) /*override*/;
+    virtual void preRender(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
 
-    virtual void render(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI DataDrivenRenderer_tempComponent_MinecartAdditionalRendering(
-        ::std::shared_ptr<::DataDrivenRenderer> renderer,
-        ::BlockTessellator&                     commonRenderer
-    );
-
-    MCNAPI void renderMinecartContents(
-        ::BaseActorRenderContext& renderContext,
-        ::Actor&                  cart,
-        float                     actorFrameAlpha,
-        ::Block const&            block
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer, ::BlockTessellator& commonRenderer);
+    virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $preRender(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    );
 
-    MCNAPI void
-    $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams& renderParams);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

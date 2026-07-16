@@ -59,10 +59,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PacketTraceNetworkPeer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void sendPacket(
@@ -82,19 +78,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PacketTraceNetworkPeer(::std::shared_ptr<::NetworkPeer> peer);
-
-    MCAPI void _recordPacket(::std::string const& data, bool isOutgoing);
-
 #ifdef LL_PLAT_C
     MCAPI ::std::pair<::Json::Value, ::Json::Value> getPacketTraces() const;
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer);
     // NOLINTEND
 
 public:

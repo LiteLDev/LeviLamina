@@ -43,69 +43,34 @@ public:
         ::MolangVariableMap const&
     );
 
-#ifdef LL_PLAT_S
     virtual void addTerrainParticleEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
-#else // LL_PLAT_C
-    virtual void addTerrainParticleEffect(
-        ::BlockPos const& pos,
-        ::Block const&    block,
-        ::Vec3 const&     emitterPosition,
-        float             particleCount,
-        float             velocityScalar,
-        float             emitterRadius
-    );
-#endif
 
-#ifdef LL_PLAT_S
     virtual void addTerrainSlideEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
-#else // LL_PLAT_C
-    virtual void addTerrainSlideEffect(
-        ::BlockPos const& pos,
-        ::Block const&    block,
-        ::Vec3 const&     emitterPosition,
-        float             particleCount,
-        float             velocityScalar,
-        float             emitterRadius
-    );
-#endif
 
-#ifdef LL_PLAT_S
     virtual void
     addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&);
-#else // LL_PLAT_C
-    virtual void addBreakingItemParticleEffect(
-        ::Vec3 const&                     pos,
-        ::BreakingItemParticleData const& data,
-        ::ResolvedItemIconInfo const&     textureInfo
-    );
-#endif
 
-#ifdef LL_PLAT_S
     virtual void addBiomeTintedParticleEffect(
         ::HashedString const&,
         ::BlockPos const&,
         ::Block const&,
         ::std::optional<::mce::Color>
     );
-#else // LL_PLAT_C
-    virtual void addBiomeTintedParticleEffect(
-        ::HashedString const&         effect,
-        ::BlockPos const&             pos,
-        ::Block const&                block,
-        ::std::optional<::mce::Color> overrideColor
-    );
-#endif
 
     virtual void playMusic(::std::string const&, ::Vec3 const&, float, float);
 
     virtual void playStreamingMusic(::std::string const&, int, int, int);
 
+#ifdef LL_PLAT_S
+    virtual void onEntityAdded(::Actor& entity);
+#else // LL_PLAT_C
     virtual void onEntityAdded(::Actor&);
+#endif
 
 #ifdef LL_PLAT_S
-    virtual void onEntityRemoved(::Actor&);
-#else // LL_PLAT_C
     virtual void onEntityRemoved(::Actor& entity);
+#else // LL_PLAT_C
+    virtual void onEntityRemoved(::Actor&);
 #endif
 
     virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
@@ -116,25 +81,12 @@ public:
 
     virtual void onChunkUnloaded(::LevelChunk& lc);
 
-#ifdef LL_PLAT_S
     virtual void onLevelDestruction(::std::string const&);
-#else // LL_PLAT_C
-    virtual void onLevelDestruction(::std::string const& levelId);
-#endif
 
-#ifdef LL_PLAT_S
     virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int);
-#else // LL_PLAT_C
-    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
-#endif
 
-#ifdef LL_PLAT_S
     virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&);
-#else // LL_PLAT_C
-    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
-#endif
 
-#ifdef LL_PLAT_S
     virtual void takePicture(
         ::cg::ImageBuffer&,
         ::Actor*,
@@ -142,15 +94,6 @@ public:
         ::ScreenshotOptions&,
         ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
     );
-#else // LL_PLAT_C
-    virtual void takePicture(
-        ::cg::ImageBuffer&                                              outImage,
-        ::Actor*                                                        camera,
-        ::Actor*                                                        target,
-        ::ScreenshotOptions&                                            screenshotOptions,
-        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
-    );
-#endif
 
     virtual void playerListChanged();
 
@@ -196,9 +139,9 @@ public:
 
     MCFOLD void $playStreamingMusic(::std::string const&, int, int, int);
 
-    MCFOLD void $onEntityAdded(::Actor&);
+    MCFOLD void $onEntityAdded(::Actor& entity);
 
-    MCFOLD void $onEntityRemoved(::Actor&);
+    MCFOLD void $onEntityRemoved(::Actor& entity);
 
     MCFOLD void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 

@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataStoreSyncServer() /*override*/;
+    virtual ~DataStoreSyncServer() /*override*/ = default;
 
     virtual void clear(::std::string const& dataStoreName, bool addToOutgoingChanges) /*override*/;
 
@@ -34,24 +34,12 @@ public:
     // NOLINTBEGIN
     MCAPI void applyUpdate(::Bedrock::DDUI::DataStoreUpdate const& change);
 
-    MCAPI bool canClientUpdateProperty(
-        ::std::string const& dataStoreName,
-        ::std::string const& propertyName,
-        ::std::string const& path
-    );
-
     MCAPI void setPropertyUpdateAllowed(
         ::std::string const& dataStoreName,
         ::std::string const& propertyName,
         ::std::string const& path,
         bool                 value
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -62,12 +50,6 @@ public:
     MCFOLD void $assertAppropriateThread() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

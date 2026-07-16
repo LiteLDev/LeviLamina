@@ -34,12 +34,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands) /*override*/;
+    virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&&) /*override*/;
 
     virtual ::PackCommand::PackCommandHandle
-    submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&& commands) /*override*/;
+    submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&&) /*override*/;
 
-    virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&& commands) /*override*/;
+    virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&&) /*override*/;
 
     virtual ::TaskGroup& getTaskGroup() /*override*/;
     // NOLINTEND
@@ -50,13 +50,6 @@ public:
     MCNAPI PackCommandPipelineImpl(
         ::std::unique_ptr<::TaskGroup>                          taskGroup,
         ::std::unique_ptr<::PackCommand::IResourceRepositories> repositories
-    );
-
-    MCNAPI ::PackCommand::PackCommandHandle enqueueCommands(
-        ::std::variant<
-            ::PackCommand::UpgradeLegacyDependenciesBatch,
-            ::PackCommand::MoveReplaceBatch,
-            ::PackCommand::RemoveBatch>&& commands
     );
     // NOLINTEND
 
@@ -72,22 +65,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::PackCommand::PackCommandHandle $submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands);
 
-    MCNAPI ::PackCommand::PackCommandHandle
-    $submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&& commands);
-
-    MCNAPI ::PackCommand::PackCommandHandle $submitRemove(::PackCommand::RemoveBatch&& commands);
-
-    MCNAPI ::TaskGroup& $getTaskGroup();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

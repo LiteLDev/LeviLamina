@@ -23,17 +23,17 @@ public:
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const /*override*/;
 
     virtual void getNextParticleSpawnOffsetAndDirection(
-        ::Vec3&                                                 offset,
-        ::Vec3&                                                 direction,
-        ::ParticleSystem::ComponentAccessParticleEmitter const& emitter,
-        ::RenderParams&                                         renderParams
+        ::Vec3&,
+        ::Vec3&,
+        ::ParticleSystem::ComponentAccessParticleEmitter const&,
+        ::RenderParams&
     ) = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ParticleSystem::EffectComponentBase::EffectComponentType $getParticleComponentType() const;
+
     // NOLINTEND
 };
 

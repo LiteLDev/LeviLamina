@@ -8,8 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class StreamFeedbackObserver; }
-namespace webrtc { struct RtpPacketSendInfo; }
-namespace webrtc::rtcp { class TransportFeedback; }
+namespace webrtc { struct TransportPacketsFeedback; }
 // clang-format on
 
 namespace webrtc {
@@ -19,8 +18,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnk545058;
-    ::ll::UntypedStorage<8, 16> mUnkeb048e;
-    ::ll::UntypedStorage<8, 16> mUnk6eab8d;
     ::ll::UntypedStorage<8, 24> mUnk323496;
     // NOLINTEND
 
@@ -43,9 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddPacket(::webrtc::RtpPacketSendInfo const& packet_info);
-
-    MCNAPI void OnTransportFeedback(::webrtc::rtcp::TransportFeedback const& feedback);
+    MCNAPI void OnTransportFeedback(::webrtc::TransportPacketsFeedback const& feedback);
 
     MCNAPI TransportFeedbackDemuxer();
     // NOLINTEND

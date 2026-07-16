@@ -19,18 +19,6 @@ public:
     SystemDiagnosticTimingInfo& operator=(SystemDiagnosticTimingInfo const&);
     SystemDiagnosticTimingInfo(SystemDiagnosticTimingInfo const&);
     SystemDiagnosticTimingInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~SystemDiagnosticTimingInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ECS::Profiling::Diagnostics

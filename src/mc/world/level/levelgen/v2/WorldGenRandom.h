@@ -61,35 +61,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldGenRandom();
-
-    MCAPI WorldGenRandom(::br::worldgen::WorldGenRandom const& other);
-
     MCAPI ::br::worldgen::WorldGenRandom forkPositional(::BlockPos pos);
-
-    MCAPI ::br::worldgen::WorldGenRandom& operator=(::br::worldgen::WorldGenRandom const& other);
 
     MCAPI ::br::worldgen::WorldGenRandom& setDecorationSeed(int64 seed, int chunkX, int chunkZ);
 
     MCAPI ::br::worldgen::WorldGenRandom& setLargeFeatureSeed(int64 seed, int chunkX, int chunkZ);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::br::worldgen::WorldGenRandom create(int64 seed);
-
-    MCAPI static ::br::worldgen::WorldGenRandom createDecoration(int64 seed, int chunkX, int chunkZ);
-
-    MCAPI static ::br::worldgen::WorldGenRandom createSlimeChunk(int x, int z, int64 seed, int64 salt);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::br::worldgen::WorldGenRandom const& other);
     // NOLINTEND
 
 public:

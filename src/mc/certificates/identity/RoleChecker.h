@@ -27,21 +27,11 @@ public:
         ::std::string const&                                                           jsonCredentials,
         ::std::function<void(::edu::Role, ::std::string const&, ::std::string const&)> callback
     );
-
-    MCNAPI bool lookupInProgress() const;
-
-    MCNAPI ~RoleChecker();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

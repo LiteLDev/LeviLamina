@@ -45,14 +45,6 @@ public:
     MCFOLD uint64 $_getMaxCurveNodesAllowed();
 
     MCAPI float $_evaluateCurve(float t, ::RenderParams& renderParams);
-
-    MCFOLD ::ParticleSystem::ParticleCurveType $getCurveType() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

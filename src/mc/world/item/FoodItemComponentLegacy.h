@@ -18,6 +18,7 @@ class Item;
 class ItemStack;
 class Level;
 class Player;
+struct ItemOnUseResult;
 namespace Json { class Value; }
 // clang-format on
 
@@ -45,31 +46,6 @@ public:
         ::ll::TypedStorage<4, 4, ::EffectDuration> duration;
         ::ll::TypedStorage<4, 4, int>              amplifier;
         ::ll::TypedStorage<4, 4, float>            chance;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Effect& operator=(Effect const&);
-        Effect();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Effect(::FoodItemComponentLegacy::Effect const&);
-
-        MCAPI ~Effect();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::FoodItemComponentLegacy::Effect const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -104,67 +80,73 @@ public:
 
     virtual bool canAlwaysEat() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ::Item const* eatItem(::ItemStack&, ::Actor&, ::Level&) /*override*/;
+#else // LL_PLAT_C
     virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) /*override*/;
+#endif
 
-    virtual void use(bool& result, ::ItemStack& instance, ::Player& player) /*override*/;
+#ifdef LL_PLAT_S
+    virtual void use(::ItemOnUseResult&, ::ItemStack&, ::Player&) /*override*/;
+#else // LL_PLAT_C
+    virtual void use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::Item const*
+    useTimeDepleted(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&) /*override*/;
+#else // LL_PLAT_C
     virtual ::Item const* useTimeDepleted(
-        ::ItemUseMethod&   itemUseMethod,
-        ::ItemStack const& instance,
-        ::ItemStack&       player,
-        ::Player&          level,
-        ::Level&
+        ::ItemUseMethod& itemUseMethod,
+        ::ItemStack const&,
+        ::ItemStack& instance,
+        ::Player&    player,
+        ::Level&     level
     ) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FoodItemComponentLegacy(::Item& owner);
-
-    MCAPI void _applyEatEffects(::ItemStack const& actor, ::Actor& level, ::Level&);
-
-    MCAPI void _loadEffects(::Json::Value const& effectsData);
-
-    MCAPI void _loadRemoveEffects(::Json::Value const& removeEffectsData);
-
+#ifdef LL_PLAT_C
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
     MCAPI bool init(::Json::Value const& data, ::MolangVersion);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Item& owner);
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD int $getNutrition() const;
 
     MCFOLD float $getSaturationModifier() const;
 
-    MCFOLD bool $canAlwaysEat() const;
+    MCAPI bool $canAlwaysEat() const;
 
     MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCAPI void $use(bool& result, ::ItemStack& instance, ::Player& player);
+    MCAPI void $use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player);
 
     MCAPI ::Item const* $useTimeDepleted(
-        ::ItemUseMethod&   itemUseMethod,
-        ::ItemStack const& instance,
-        ::ItemStack&       player,
-        ::Player&          level,
-        ::Level&
+        ::ItemUseMethod& itemUseMethod,
+        ::ItemStack const&,
+        ::ItemStack& instance,
+        ::Player&    player,
+        ::Level&     level
     );
+#endif
 
 
     // NOLINTEND

@@ -18,10 +18,6 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 
 class JigsawBlock : public ::FaceDirectionalActorBlock {
 public:
-    // prevent constructor by default
-    JigsawBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isInteractiveBlock() const /*override*/;
@@ -40,8 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawBlock(::std::string const& nameId, int id);
-
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
@@ -49,12 +43,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool canAttach(::JigsawBlockInfo const& block1, ::JigsawBlockInfo const& block2);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

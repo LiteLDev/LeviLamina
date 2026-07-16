@@ -3,22 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/input/InputSource.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/external/gameface/cohtml/ControlType.h"
 
 // auto generated forward declare list
 // clang-format off
-class IGameController;
 class IOptionRegistry;
-class KeyboardAction;
 class KeyboardManager;
-class MouseAction;
-class RectangleArea;
 struct ControllerIDtoClientMap;
-struct TextBoxStateChange;
 namespace OreUI { class GamepadInputHandler; }
 namespace OreUI { class TextInputHandler; }
 namespace OreUI { class TouchInputHandler; }
@@ -45,7 +38,6 @@ public:
     ::ll::TypedStorage<8, 8, ::KeyboardManager&>                                        mKeyboardManager;
     ::ll::TypedStorage<8, 8, ::cohtml::View&>                                           mView;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap>> mControllerToClientMap;
-    ::ll::TypedStorage<1, 1, bool>                                                      mShouldIgnoreBedrockInput;
     ::ll::TypedStorage<1, 1, bool>                                                      mEmulateTouchInput;
     ::ll::TypedStorage<1, 1, bool>                                                      mIsPointerDown;
     ::ll::TypedStorage<1, 1, bool const>                                                mIsPrimaryClient;
@@ -75,28 +67,6 @@ public:
         bool                                                     isPrimaryClient,
         ::IOptionRegistry&                                       options
     );
-
-    MCAPI void deactivateTextInput();
-
-    MCAPI ::std::optional<::RectangleArea> getTextInputCaretArea();
-
-    MCAPI ::std::optional<::RectangleArea> getTextInputControlArea();
-
-    MCAPI void handleInput(::OreUI::InputSource inputSource, ::MouseAction const& mouseAction);
-
-    MCAPI void handleKeyboardInput(::OreUI::InputSource inputSource, ::KeyboardAction const& keyboardAction);
-
-    MCAPI bool isTextInputActive() const;
-
-    MCAPI void onCaretRectChanged(int x, int y, uint width, uint height);
-
-    MCAPI void onTextInputTypeChanged(::cohtml::TextInputControlType::ControlType type);
-
-    MCAPI void setCaretLocation(int location);
-
-    MCAPI void setTextBoxState(::OreUI::InputSource inputSource, ::TextBoxStateChange const& stateChange);
-
-    MCAPI bool shouldHandleGamepad(::std::shared_ptr<::IGameController> gamePad);
 
     MCAPI ~ViewInputHandler();
     // NOLINTEND

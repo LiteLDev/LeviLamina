@@ -12,6 +12,9 @@ public:
     struct PlayerStateParams;
     struct LimitedActorRenderParams;
     struct RenderChunkPosBounds;
+    struct ResolvedFogVolumetricDensitySetting;
+    struct ResolvedFogVolumetricCoefficientSetting;
+    struct ResolvedFogVolumetricHenyeyGreensteinGSetting;
     struct FogBrightnessParams;
     // clang-format on
 
@@ -27,6 +30,12 @@ public:
     struct LimitedActorRenderParams {};
 
     struct RenderChunkPosBounds {};
+
+    struct ResolvedFogVolumetricDensitySetting {};
+
+    struct ResolvedFogVolumetricCoefficientSetting {};
+
+    struct ResolvedFogVolumetricHenyeyGreensteinGSetting {};
 
     struct FogBrightnessParams {};
 };

@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HowToPlayScreenController() /*override*/;
+    virtual ~HowToPlayScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -54,14 +54,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI HowToPlayScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::HowToPlayTopicIndex topic);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerControllerCallbacks();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _selectNewTab(bool isInitialTab, int newTabIndex);
     // NOLINTEND
 
 public:
@@ -71,35 +63,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCFOLD bool $bind(
-        ::std::string const& bindingName,
-        uint                 bindingNameHash,
-        ::std::string const& bindingNameOverride,
-        ::UIPropertyBag&     bag
-    );
-
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCFOLD ::std::string $_getButtonADescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

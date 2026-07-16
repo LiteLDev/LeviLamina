@@ -25,16 +25,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool
-    shouldListen(::BlockSource& region, ::GameEvent const& gameEventContext, ::GameEventContext const&) /*override*/;
+    shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext) /*override*/;
 
     virtual void onSignalReceive(
-        ::BlockSource&     region,
-        ::BlockPos const&  source,
-        ::GameEvent const& projectileOwner,
-        ::Actor*,
+        ::BlockSource& region,
+        ::BlockPos const&,
+        ::GameEvent const&,
+        ::Actor* source,
         float,
         uint,
-        ::Actor*
+        ::Actor* projectileOwner
     ) /*override*/;
 
     virtual void onSerializableDataChanged(::BlockSource& region) /*override*/;
@@ -47,16 +47,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const& gameEventContext, ::GameEventContext const&);
+    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext);
 
     MCAPI void $onSignalReceive(
-        ::BlockSource&     region,
-        ::BlockPos const&  source,
-        ::GameEvent const& projectileOwner,
-        ::Actor*,
+        ::BlockSource& region,
+        ::BlockPos const&,
+        ::GameEvent const&,
+        ::Actor* source,
         float,
         uint,
-        ::Actor*
+        ::Actor* projectileOwner
     );
 
     MCFOLD void $onSerializableDataChanged(::BlockSource& region);

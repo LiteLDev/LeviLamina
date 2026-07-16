@@ -5,16 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
-#include "mc/deps/ecs/strict/AddRemove.h"
-#include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/deps/ecs/strict/Filter.h"
-#include "mc/deps/ecs/strict/GlobalRead.h"
-#include "mc/deps/ecs/strict/GlobalWrite.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/deps/ecs/strict/Read.h"
-#include "mc/deps/ecs/strict/StrictExecutionContext.h"
-#include "mc/deps/ecs/strict/Write.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -130,54 +122,6 @@ public:
     ::ll::TypedStorage<8, 8, ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent>> mModifier;
     ::ll::TypedStorage<4, 4, float>                                                       mSneakHeight;
     ::ll::TypedStorage<1, 1, bool>                                                        mIsClientSide;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SystemParams();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SystemParams(
-        ::StrictExecutionContext<
-            ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
-            ::Read<>,
-            ::Write<
-                ::AABBShapeComponent,
-                ::ActorDataBoundingBoxComponent,
-                ::ActorDataDirtyFlagsComponent,
-                ::DepenetrationComponent,
-                ::OffsetsComponent>,
-            ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& c,
-        float                    sneakHeight,
-        bool                     isClientSide
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::StrictExecutionContext<
-            ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
-            ::Read<>,
-            ::Write<
-                ::AABBShapeComponent,
-                ::ActorDataBoundingBoxComponent,
-                ::ActorDataDirtyFlagsComponent,
-                ::DepenetrationComponent,
-                ::OffsetsComponent>,
-            ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& c,
-        float                    sneakHeight,
-        bool                     isClientSide
-    );
     // NOLINTEND
 };
 

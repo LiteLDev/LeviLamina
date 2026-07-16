@@ -21,7 +21,7 @@ public:
 
     virtual void OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint*) = 0;
 
-    virtual bool OnSessionRequested(::NetherNet::NetworkID, uint64) = 0;
+    virtual bool OnSessionRequested(::NetherNet::NetworkID, uint64, ::std::string_view, ::std::string_view) = 0;
 
     virtual void OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId, bool isLan) = 0;
 

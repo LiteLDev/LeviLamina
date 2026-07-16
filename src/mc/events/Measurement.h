@@ -30,20 +30,6 @@ public:
     Measurement& operator=(Measurement const&);
     Measurement(Measurement const&);
     Measurement();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void updateMeasurement(::Social::Events::Measurement const& newMeasure);
-
-    MCNAPI ~Measurement();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Social::Events

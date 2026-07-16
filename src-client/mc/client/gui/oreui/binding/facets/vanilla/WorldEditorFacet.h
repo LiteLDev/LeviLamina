@@ -3,15 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/client/gui/oreui/binding/FacetTaskState.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/FallibleAction_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/LevelDataBindings.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/LevelSummaryBindings.h"
 #include "mc/client/gui/screens/rules/WorldSettingsRules.h"
 #include "mc/client/world/AddWorldFromTemplateError.h"
-#include "mc/client/world/CloseWorldError.h"
 #include "mc/client/world/IWorldStorageHandler.h"
 #include "mc/client/world/SaveWorldError.h"
 #include "mc/client/world/WorldID.h"
@@ -27,12 +25,11 @@ class NewPlayerSystem;
 class TrialManager;
 namespace OreUI { class IResourceAllowList; }
 namespace World { class WorldEditor; }
-namespace World { struct WorldData; }
 // clang-format on
 
 namespace OreUI {
 
-class WorldEditorFacet : public ::OreUI::FacetBase<::OreUI::WorldEditorFacet> {
+class WorldEditorFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::WorldEditorFacet> {
 public:
     // WorldEditorFacet inner types define
     enum class InitializationResult : int {
@@ -56,11 +53,11 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>>       mEntitlementManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
     ::ll::TypedStorage<8, 32, ::World::WorldID>                                           mCurrentWorldID;
-    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                       mLevelDataWrapper;
+    ::ll::TypedStorage<8, 1744, ::LevelDataWrapper>                                       mLevelDataWrapper;
     ::ll::TypedStorage<8, 328, ::OreUI::LevelDataBindings>                                mLevelDataBindings;
     ::ll::TypedStorage<8, 848, ::LevelSummary>                                            mDefaultLevelSummary;
     ::ll::TypedStorage<8, 160, ::OreUI::LevelSummaryBindings>                             mLevelSummaryBindings;
-    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                       mDefaultLevelDataWrapper;
+    ::ll::TypedStorage<8, 1744, ::LevelDataWrapper>                                       mDefaultLevelDataWrapper;
     ::ll::TypedStorage<8, 328, ::OreUI::LevelDataBindings>                                mLevelDataSnapshot;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mWorldDirtySubscriber;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mWorldIconDirtySubscriber;
@@ -86,7 +83,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldEditorFacet() /*override*/;
+    virtual ~WorldEditorFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -102,52 +99,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::WorldSettingsRules                                       worldSettingsRules
     );
-
-    MCAPI void _applyRulesToLevelData();
-
-    MCAPI void _initializeDataBindings(::World::WorldData const& worldData);
-
-    MCAPI void _resetLevelData();
-
-    MCAPI void addWorld();
-
-    MCAPI void clearSaveWorldTaskState();
-
-    MCAPI ::std::optional<::World::CloseWorldError> closeWorld(::std::string const& id);
-
-    MCAPI ::OreUI::LevelDataBindings& getCurrentWorldData();
-
-    MCFOLD ::std::string const& getCurrentWorldID() const;
-
-    MCAPI ::OreUI::LevelSummaryBindings& getCurrentWorldSummary();
-
-    MCAPI ::std::optional<::World::IWorldStorageHandler::ReadWorldError> const& getLoadWorldError() const;
-
-    MCAPI ::OreUI::FacetTaskState getLoadWorldTaskState() const;
-
-    MCAPI ::std::optional<::World::SaveWorldError> const& getSaveWorldError() const;
-
-    MCAPI ::OreUI::FacetTaskState getSaveWorldTaskState() const;
-
-    MCAPI bool isAchievementsDisabled() const;
-
-    MCAPI bool isEditorWorld() const;
-
-    MCAPI ::std::optional<::World::IWorldStorageHandler::ReadWorldError> loadWorld(::std::string const& id);
-
-    MCAPI void reloadWorld();
-
-    MCAPI void saveLocalWorld(::std::string const& id);
-
-    MCAPI bool worldHasBeenModified();
-
-    MCAPI bool worldIsInitialized() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isFirstWorldCuratedSeedEnabled();
     // NOLINTEND
 
 public:
@@ -170,21 +121,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

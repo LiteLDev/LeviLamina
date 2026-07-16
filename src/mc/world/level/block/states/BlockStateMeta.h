@@ -10,7 +10,6 @@
 // clang-format off
 class BlockState;
 class ListTag;
-struct BlockStateDefinition;
 // clang-format on
 
 class BlockStateMeta {
@@ -33,28 +32,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockStateMeta(::BlockState const& blockState, ::BlockStateDefinition const& def);
-
     MCAPI bool const getBool(int index) const;
-
-    MCAPI uint64 getID() const;
 
     MCAPI int const getInt(int index) const;
 
-    MCFOLD ::std::string const& getName() const;
-
-    MCFOLD ::BlockState const& getState() const;
-
     MCAPI ::std::string const& getString(int index) const;
-
-    MCFOLD ::Tag::Type const getType() const;
-
-    MCAPI int indexOf(uint64 const& h) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockState const& blockState, ::BlockStateDefinition const& def);
     // NOLINTEND
 };

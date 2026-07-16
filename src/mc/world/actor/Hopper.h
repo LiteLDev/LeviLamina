@@ -4,11 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class Container;
-class ItemActor;
-class ItemStack;
 class Vec3;
 // clang-format on
 
@@ -24,18 +21,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Hopper();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Hopper(int moveItemSpeed, bool isEntity);
-
-    MCAPI bool _addItem(::Container& container, ::ItemActor& actor);
-
-    MCAPI ::Container* _getAttachedContainerInBlock(::BlockSource& region, ::Vec3 const& pos, int attachedFace);
-
     MCAPI ::std::vector<::Container*>
     _getAttachedContainers(::BlockSource& region, ::Vec3 const& pos, int attachedFace);
 
@@ -43,15 +30,10 @@ public:
 
     MCAPI ::std::vector<::Container*> _getContainersAt(::BlockSource& region, ::Vec3 const& pos);
 
-    MCAPI ::std::vector<::Container*> _getSourceContainers(::BlockSource& region, ::Vec3 const& pos);
-
     MCAPI bool
     _pushOutItems(::BlockSource& region, ::Container& fromContainer, ::Vec3 const& position, int attachedFace);
 
     MCAPI bool _tryAddItemsFromPos(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
-
-    MCAPI bool
-    _tryMoveInItem(::BlockSource& region, ::Container& container, ::ItemStack& item, int slot, int face, int itemCount);
 
     MCAPI bool _tryMoveItems(
         ::BlockSource& region,
@@ -64,32 +46,5 @@ public:
     MCAPI bool _tryPullInItemsFromAboveContainer(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
 
     MCAPI bool _tryPullInItemsFromWorld(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
-
-    MCAPI bool
-    _tryPushToComposter(::BlockSource& region, ::Container& fromContainer, ::BlockPos hopperPos, int facingDirection);
-
-    MCAPI bool _tryTakeInItemFromSlot(
-        ::BlockSource& region,
-        ::Container&   toContainer,
-        ::Container&   fromContainer,
-        int            slot,
-        int            face
-    );
-
-    MCFOLD int getCooldownTime() const;
-
-    MCFOLD bool isOnCooldown() const;
-
-    MCAPI bool isOnMoveCooldown() const;
-
-    MCFOLD void setCooldownTime(int time);
-
-    MCFOLD void setMoveCooldownTime(int time);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int moveItemSpeed, bool isEntity);
     // NOLINTEND
 };

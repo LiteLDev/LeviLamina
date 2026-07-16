@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AbstractScene();
+    virtual ~AbstractScene() = default;
 
     virtual void init(::ScreenSizeData const& screenSizeData) = 0;
 
@@ -74,13 +74,13 @@ public:
 
     virtual void frameUpdate(::MinecraftUIFrameUpdateContext& frameUpdateContext) = 0;
 
-    virtual void preRenderUpdate(::ScreenContext&) = 0;
+    virtual void preRenderUpdate(::ScreenContext& screenContext) = 0;
 
     virtual void prepareFrame(::ScreenContext& screenContext) = 0;
 
-    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) = 0;
+    virtual void render(::ScreenContext&, ::FrameRenderObject const&) = 0;
 
-    virtual void postRenderUpdate(::ScreenContext&) = 0;
+    virtual void postRenderUpdate(::ScreenContext& screenContext) = 0;
 
     virtual void handleInputModeChanged(::InputMode inputMode) = 0;
 
@@ -101,7 +101,7 @@ public:
 
     virtual void handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact) = 0;
 
-    virtual void setTextboxText(::std::string const& text, ::TextboxTextUpdateReason reason) = 0;
+    virtual void setTextboxText(::std::string const&, ::TextboxTextUpdateReason) = 0;
 
     virtual void onKeyboardDismissed() = 0;
 
@@ -145,7 +145,7 @@ public:
 
     virtual void reload() = 0;
 
-    virtual ::RectangleArea getAreaOfControlByName(::std::string const& controlName) const = 0;
+    virtual ::RectangleArea getAreaOfControlByName(::std::string const&) const = 0;
 
     virtual ::EyeRenderingModeBit getEyeRenderingMode() const = 0;
 
@@ -153,9 +153,9 @@ public:
 
     virtual ::std::string getScreenName() const = 0;
 
-    virtual bool equalsScreenName(::std::string_view comparison) const = 0;
+    virtual bool equalsScreenName(::std::string_view) const = 0;
 
-    virtual bool containsScreenNameSubstring(::std::string_view substring) const = 0;
+    virtual bool containsScreenNameSubstring(::std::string_view) const = 0;
 
     virtual ::std::string getRawScreenName() const = 0;
 
@@ -163,11 +163,11 @@ public:
 
     virtual ::std::string getScreenTelemetryName() const = 0;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const = 0;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const = 0;
 
     virtual int getScreenVersion() const = 0;
 
-    virtual void processBufferedTextCharEvents(::std::vector<::TextCharEventData> const&) = 0;
+    virtual void processBufferedTextCharEvents(::std::vector<::TextCharEventData> const& bufferedEvents) = 0;
 
     virtual bool getShouldSendEvents() = 0;
 
@@ -214,26 +214,11 @@ public:
 
     virtual bool hasFinishedLoading() const = 0;
 
-    virtual void sendScreenEvent(::std::string const& eventName, ::std::string const& eventData) = 0;
+    virtual void sendScreenEvent(::std::string const&, ::std::string const&) = 0;
 
-    virtual void
-    setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& routeQueryParameters) = 0;
+    virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> getDebugDataProvider() const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void _setSceneId(uint sceneId);
-
-    MCFOLD uint getSceneId() const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

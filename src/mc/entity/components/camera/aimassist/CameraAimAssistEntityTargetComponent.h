@@ -2,13 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class AABB;
-class StrictEntityContext;
-class Vec3;
-// clang-format on
-
 struct CameraAimAssistEntityTargetComponent {
 public:
     // CameraAimAssistEntityTargetComponent inner types declare
@@ -33,34 +26,6 @@ public:
         EntityStatus& operator=(EntityStatus const&);
         EntityStatus(EntityStatus const&);
         EntityStatus();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI EntityStatus(
-            ::AABB const&                hitbox,
-            ::Vec3 const&                position,
-            float                        priorityPercentage,
-            ::StrictEntityContext const& entityContext,
-            bool                         obstructed
-        );
-#endif
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI void* $ctor(
-            ::AABB const&                hitbox,
-            ::Vec3 const&                position,
-            float                        priorityPercentage,
-            ::StrictEntityContext const& entityContext,
-            bool                         obstructed
-        );
-#endif
-        // NOLINTEND
     };
 
 public:

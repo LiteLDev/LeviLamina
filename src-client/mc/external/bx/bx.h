@@ -59,8 +59,6 @@ MCAPI void memSet(void* _dst, uchar _ch, uint64 _numBytes);
 
 MCAPI void mtxInverse(float* _result, float const* _a);
 
-MCAPI void mtxMul(float* _result, float const* _a, float const* _b);
-
 MCAPI void mtxOrtho(
     float* _result,
     float  _left,
@@ -86,10 +84,6 @@ MCAPI void mtxOrthoRh(
 );
 
 MCAPI void mtxProjRh(float* _result, float _fovy, float _aspect, float _near, float _far, bool _oglNdc);
-
-MCAPI void packBgr5a1(void* _dst, float const* _src);
-
-MCAPI void packBgra4(void* _dst, float const* _src);
 
 MCAPI void packBgra8(void* _dst, float const* _src);
 

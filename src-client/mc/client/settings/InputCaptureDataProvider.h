@@ -53,49 +53,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI InputCaptureDataProvider(
-        ::std::string_view                            actionName,
-        ::std::optional<::KeyboardType>               type,
-        ::Settings::RegistryBuilder::IBuilderContext& context,
-        ::std::function<bool(
-            ::Settings::RegistryBuilder::IBuilderContext const&,
-            ::std::string_view,
-            ::std::optional<::KeyboardType>
-        )>                                            callback
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string_view                            actionName,
-        ::std::optional<::KeyboardType>               type,
-        ::Settings::RegistryBuilder::IBuilderContext& context,
-        ::std::function<bool(
-            ::Settings::RegistryBuilder::IBuilderContext const&,
-            ::std::string_view,
-            ::std::optional<::KeyboardType>
-        )>                                            callback
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canModify() const;
 
-    MCAPI bool $getValue() const;
-
-    MCFOLD void $setValue(bool);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

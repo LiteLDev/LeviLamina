@@ -31,12 +31,7 @@ public:
     virtual void onResourceManagerDestroyed(::ResourcePackManager&);
 #endif
 
-#ifdef LL_PLAT_S
     virtual void onJsonResourcesChanged(::ResourcePackManager&);
-#else // LL_PLAT_C
-    virtual void onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
-#endif
-
     // NOLINTEND
 
 public:

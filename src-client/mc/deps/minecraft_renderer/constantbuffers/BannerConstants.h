@@ -23,15 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BannerConstants();
-
     MCAPI void init();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };
 

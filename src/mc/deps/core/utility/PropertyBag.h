@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/json/Value.h"
 
 class PropertyBag {
@@ -14,34 +13,21 @@ public:
     ::ll::TypedStorage<4, 4, int>            mChangeVersion;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PropertyBag();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PropertyBag();
-
-    MCAPI explicit PropertyBag(::Json::Value const& jsonValue);
-
 #ifdef LL_PLAT_C
-    MCAPI ::std::unique_ptr<::PropertyBag> clone() const;
-
-    MCAPI void erase(::std::string_view key);
-
-    MCFOLD int getChangeVersion() const;
+    MCAPI explicit PropertyBag(::std::string const& serializedJson);
 
     MCAPI bool has(::std::string_view key) const;
-
-    MCAPI bool set(::std::string_view key, ::std::vector<::Json::Value> const& val);
-
-    MCAPI bool set(::std::string_view key, ::std::vector<bool> const& val);
-
-    MCAPI bool set(::std::string_view key, ::buffer_span<int> val);
-
-    MCAPI bool set(::std::string_view key, ::buffer_span<::std::string> val);
 #endif
-
-    MCFOLD ::Json::Value const& toJsonValue() const;
-
-    MCAPI ::std::string toString() const;
     // NOLINTEND
 
 public:
@@ -53,8 +39,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Json::Value const& jsonValue);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::string const& serializedJson);
+#endif
     // NOLINTEND
 };

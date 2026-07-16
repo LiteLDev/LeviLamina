@@ -38,25 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ShaderConstants();
-
-    MCAPI void getConstants();
-
-    MCAPI float const& getHUDOpacity() const;
-
-    MCAPI void setHUDOpacity(::mce::RenderContext& renderContext, float hudOpacity);
-
-    MCAPI void setMSAASampleCount(::mce::RenderContext& renderContext, int const& value);
-
-    MCAPI void setTextureDimensions(::mce::RenderContext& renderContext, ::glm::vec3 const& textureSize);
-
-    MCAPI void setUVTransform(::mce::RenderContext& transform, ::glm::mat2x3 const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void setUVTransform(::mce::RenderContext& renderContext, ::glm::mat2x3 const& transform);
     // NOLINTEND
 
 public:

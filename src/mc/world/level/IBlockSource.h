@@ -15,6 +15,7 @@
 class AABB;
 class Actor;
 class Block;
+class BlockActor;
 class BlockChangeContext;
 class BlockPos;
 class BlockSource;
@@ -149,9 +150,9 @@ public:
         ::Vec3            clickPos
     ) = 0;
 
-    virtual bool canDoBlockDrops() const = 0;
+    virtual bool canDoBlockDrops(::Actor const* instigatingActor) const = 0;
 
-    virtual bool canDoContainedItemDrops() const = 0;
+    virtual bool canDoContainedItemDrops(::Actor const* instigatingActor) const = 0;
 
     virtual bool isInstaticking(::BlockPos const& pos) const = 0;
 
@@ -187,6 +188,8 @@ public:
         ::ActorBlockSyncMessage const* syncMsg,
         ::Actor*                       source
     ) = 0;
+
+    virtual void fireBlockEntityChanged(::BlockActor& te) = 0;
 
     virtual void blockEvent(::BlockPos const& pos, int b0, int b1) = 0;
     // NOLINTEND

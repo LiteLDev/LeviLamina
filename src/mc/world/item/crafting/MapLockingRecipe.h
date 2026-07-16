@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MapLockingRecipe();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const
@@ -40,27 +36,15 @@ public:
 
     virtual int getCraftingSize() const /*override*/;
 
-    virtual ::RecipeIngredient const& getIngredient(int, int) const /*override*/;
+    virtual ::RecipeIngredient const& getIngredient(int x, int y) const /*override*/;
 
     virtual int size() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MapLockingRecipe(::std::string const& recipeId, ::mce::UUID const& id);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID const& CartographyTableID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const& id);
     // NOLINTEND
 
 public:
@@ -75,7 +59,7 @@ public:
 
     MCFOLD int $getCraftingSize() const;
 
-    MCFOLD ::RecipeIngredient const& $getIngredient(int, int) const;
+    MCFOLD ::RecipeIngredient const& $getIngredient(int x, int y) const;
 
     MCFOLD int $size() const;
 

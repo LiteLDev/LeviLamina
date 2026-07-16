@@ -23,30 +23,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetStewEffectFunction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetStewEffectFunction() /*override*/;
+    virtual ~SetStewEffectFunction() /*override*/ = default;
 
-    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemStack&, ::Random&, ::LootTableContext&) /*override*/;
 
-    virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemInstance&, ::Random&, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SetStewEffectFunction(
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
-        ::std::vector<int>                                     effectIDs
-    );
-
-    MCFOLD ::std::vector<int> const& getEffectIDs() const;
     // NOLINTEND
 
 public:
@@ -57,32 +42,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates, ::std::vector<int> effectIDs);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context);
-
-    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

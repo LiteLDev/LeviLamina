@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/world/level/biome/components/BiomeComponentBase.h"
 
-struct FrozenNoiseBasedTemperatureFlag : public ::BiomeComponentBase {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
-};
+struct FrozenNoiseBasedTemperatureFlag : public ::BiomeComponentBase {};

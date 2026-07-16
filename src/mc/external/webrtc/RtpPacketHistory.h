@@ -3,11 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/FunctionView.h"
+#include "mc/external/webrtc/ArrayView.h"
+#include "mc/external/webrtc/FunctionView.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace webrtc { class Clock; }
+namespace webrtc { class Environment; }
 namespace webrtc { class RtpPacketToSend; }
 namespace webrtc { class TimeDelta; }
 namespace webrtc { class Timestamp; }
@@ -19,23 +20,19 @@ class RtpPacketHistory {
 public:
     // RtpPacketHistory inner types declare
     // clang-format off
-    struct MoreUseful;
     class StoredPacket;
     // clang-format on
 
     // RtpPacketHistory inner types define
     enum class PaddingMode : int {
         KDefault           = 0,
-        KPriority          = 1,
-        KRecentLargePacket = 2,
+        KRecentLargePacket = 1,
     };
 
     enum class StorageMode : int {
         KDisabled     = 0,
         KStoreAndCull = 1,
     };
-
-    struct MoreUseful {};
 
     class StoredPacket {
     public:
@@ -66,7 +63,6 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk6639d4;
     ::ll::UntypedStorage<8, 40>  mUnk563497;
     ::ll::UntypedStorage<8, 8>   mUnkb40ceb;
-    ::ll::UntypedStorage<8, 16>  mUnk581190;
     ::ll::UntypedStorage<8, 216> mUnk597307;
     // NOLINTEND
 
@@ -81,19 +77,21 @@ public:
     // NOLINTBEGIN
     MCNAPI void Clear();
 
-    MCNAPI void CullAcknowledgedPackets(::rtc::ArrayView<ushort const> sequence_numbers);
+    MCNAPI void CullAcknowledgedPackets(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers);
 
     MCNAPI void CullOldPackets();
 
     MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> GetPacketAndMarkAsPending(
         ushort sequence_number,
-        ::rtc::FunctionView<::std::unique_ptr<::webrtc::RtpPacketToSend>(::webrtc::RtpPacketToSend const&)> encapsulate
+        ::webrtc::FunctionView<::std::unique_ptr<::webrtc::RtpPacketToSend>(::webrtc::RtpPacketToSend const&)>
+            encapsulate
     );
 
     MCNAPI int GetPacketIndex(ushort sequence_number) const;
 
     MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> GetPayloadPaddingPacket(
-        ::rtc::FunctionView<::std::unique_ptr<::webrtc::RtpPacketToSend>(::webrtc::RtpPacketToSend const&)> encapsulate
+        ::webrtc::FunctionView<::std::unique_ptr<::webrtc::RtpPacketToSend>(::webrtc::RtpPacketToSend const&)>
+            encapsulate
     );
 
     MCNAPI ::webrtc::RtpPacketHistory::StorageMode GetStorageMode() const;
@@ -104,7 +102,7 @@ public:
 
     MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> RemovePacket(int packet_index);
 
-    MCNAPI RtpPacketHistory(::webrtc::Clock* clock, ::webrtc::RtpPacketHistory::PaddingMode padding_mode);
+    MCNAPI RtpPacketHistory(::webrtc::Environment const& env, ::webrtc::RtpPacketHistory::PaddingMode padding_mode);
 
     MCNAPI void SetRtt(::webrtc::TimeDelta rtt);
 
@@ -124,7 +122,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::Clock* clock, ::webrtc::RtpPacketHistory::PaddingMode padding_mode);
+    MCNAPI void* $ctor(::webrtc::Environment const& env, ::webrtc::RtpPacketHistory::PaddingMode padding_mode);
     // NOLINTEND
 
 public:

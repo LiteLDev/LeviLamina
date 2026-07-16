@@ -18,10 +18,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class LanternBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    LanternBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
@@ -46,17 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LanternBlock(::std::string const& nameId, int id);
-
-    MCAPI bool _couldHang(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

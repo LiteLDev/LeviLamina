@@ -105,11 +105,11 @@ public:
 
     MCFOLD ::std::string $getName() const;
 
-    MCFOLD ::BlockPos $getBlockPosition() const;
+    MCAPI ::BlockPos $getBlockPosition() const;
 
     MCAPI ::Vec3 $getWorldPosition() const;
 
-    MCAPI ::std::optional<::Vec2> $getRotation() const;
+    MCFOLD ::std::optional<::Vec2> $getRotation() const;
 
     MCFOLD ::Level* $getLevel() const;
 

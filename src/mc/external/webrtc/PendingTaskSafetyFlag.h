@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/RefCountedNonVirtual.h"
+#include "mc/external/webrtc/RefCountedNonVirtual.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
@@ -13,7 +13,7 @@ namespace webrtc { class TaskQueueBase; }
 
 namespace webrtc {
 
-class PendingTaskSafetyFlag : public ::rtc::RefCountedNonVirtual<::webrtc::PendingTaskSafetyFlag> {
+class PendingTaskSafetyFlag : public ::webrtc::RefCountedNonVirtual<::webrtc::PendingTaskSafetyFlag> {
 public:
     // member variables
     // NOLINTBEGIN

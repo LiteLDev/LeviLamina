@@ -16,40 +16,6 @@ public:
     ::ll::TypedStorage<8, 96, ::ScriptModuleMinecraft::ScriptActorData const> mEntity;
     ::ll::TypedStorage<8, 32, ::std::string const>                            mName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptBlockCustomComponentActorAfterEventIntermediateStorage&
-    operator=(ScriptBlockCustomComponentActorAfterEventIntermediateStorage const&);
-    ScriptBlockCustomComponentActorAfterEventIntermediateStorage();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentActorAfterEventIntermediateStorage(
-        ::ScriptModuleMinecraft::ScriptBlockCustomComponentActorAfterEventIntermediateStorage&&
-    );
-
-    MCAPI ScriptBlockCustomComponentActorAfterEventIntermediateStorage(
-        ::ScriptModuleMinecraft::ScriptBlockCustomComponentActorAfterEventIntermediateStorage const&
-    );
-
-    MCAPI ~ScriptBlockCustomComponentActorAfterEventIntermediateStorage();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentActorAfterEventIntermediateStorage&&);
-
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentActorAfterEventIntermediateStorage const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

@@ -4,8 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
-#include "mc/client/gui/oreui/routing/RouteFlags.h"
-#include "mc/client/gui/oreui/routing/RouteHistoryAction.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -55,43 +53,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ManifestValidation(
-        ::PackManifestFactory&                                            manifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
-        ::std::function<::IContentManager&()>                             getContentManager
-    );
-
-    MCAPI void _navigateToManifestValidationScreen(
-        ::SceneFactory&                                      sceneFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&  sceneStack,
-        ::std::string const&                                 path,
-        ::OreUI::RouteHistoryAction                          action,
-        ::OreUI::EntryPoints::ManifestValidation::ScreenType type
-    ) const;
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> BASE_SCREEN_ID();
-
-    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
-
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE_STORAGE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::PackManifestFactory&                                            manifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
-        ::std::function<::IContentManager&()>                             getContentManager
-    );
     // NOLINTEND
 
 public:

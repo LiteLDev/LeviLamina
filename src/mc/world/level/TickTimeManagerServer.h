@@ -11,11 +11,10 @@
 class IGameplayUserManagerConnector;
 class ILevelStorageManagerConnector;
 class IServerPlayerSleepManagerConnector;
-class ITickTimeManagerProxy;
+class LevelData;
 class LevelStorage;
 class PacketSender;
 class WorldClockRegistry;
-class WorldClockRegistryServer;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -39,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TickTimeManagerServer() /*override*/;
+    virtual ~TickTimeManagerServer() /*override*/ = default;
 
     virtual void update() /*override*/;
 
@@ -52,8 +51,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI TickTimeManagerServer(
-        ::std::unique_ptr<::ITickTimeManagerProxy>           tickTimeManagerProxy,
-        ::Bedrock::NonOwnerPointer<::LevelStorage>           levelStorage,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelData> const&    levelData,
         ::cereal::ReflectionCtx&                             ctx,
         ::Bedrock::NotNullNonOwnerPtr<::PacketSender> const& packetSender
     );
@@ -62,12 +60,10 @@ public:
 
     MCNAPI void _saveWorldClocks(::LevelStorage& levelStorage) const;
 
-    MCNAPI void _syncTime(int64 currentTick);
-
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistryServer> const getWorldClockRegistryServer();
-
     MCNAPI void
     intitializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+
+    MCNAPI void loadWorldClocks(::LevelStorage& levelStorage);
 
     MCNAPI void registerForGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
@@ -79,34 +75,15 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::std::unique_ptr<::ITickTimeManagerProxy>           tickTimeManagerProxy,
-        ::Bedrock::NonOwnerPointer<::LevelStorage>           levelStorage,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelData> const&    levelData,
         ::cereal::ReflectionCtx&                             ctx,
         ::Bedrock::NotNullNonOwnerPtr<::PacketSender> const& packetSender
     );
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $update();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry const> const $getWorldClockRegistry() const;
-
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry> const $getWorldClockRegistry();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

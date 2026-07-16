@@ -31,7 +31,7 @@ class RenderMaterial : public ::cg::RenderMaterialBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<2, 34, ::mce::VertexFormat>                                mVertexFormat;
+    ::ll::TypedStorage<2, 36, ::mce::VertexFormat>                                mVertexFormat;
     ::ll::TypedStorage<4, 4, ::mce::MSAASupport>                                  mMsaaSupport;
     ::ll::TypedStorage<4, 4, float>                                               mDepthBias;
     ::ll::TypedStorage<4, 4, float>                                               mSlopeScaledDepthBias;
@@ -51,7 +51,6 @@ public:
 
 public:
     // prevent constructor by default
-    RenderMaterial& operator=(RenderMaterial const&);
     RenderMaterial();
 
 public:
@@ -71,27 +70,10 @@ public:
     // NOLINTBEGIN
     MCAPI explicit RenderMaterial(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
 
-    MCAPI RenderMaterial(::mce::RenderMaterial const& parent);
-
-    MCAPI ::mce::ActorMaterialVariation getActorVariation(::mce::MaterialRenderType renderType);
-
-    MCAPI ::mce::framebuilder::bgfxbridge::DefineFlags const getDefinesFlags();
+    MCAPI ::mce::ActorMaterialVariation
+    getActorVariation(::mce::MaterialRenderType renderType, bool pointLightShadingEnabled);
 
     MCAPI ::std::optional<::mce::MaterialType> const getMaterialType();
-
-    MCFOLD ::mce::VertexFormat const& getVertexFormat() const;
-
-    MCAPI void parseBlendState(::Json::Value const& root);
-
-    MCAPI void parseDepthStencilState(::Json::Value const& root);
-
-    MCAPI void parseRasterizerState(::Json::Value const& root);
-
-    MCAPI void parseRenderTargetFormat(::Json::Value const& root);
-
-    MCAPI void parseSamplers(::Json::Value const& root);
-
-    MCAPI void parseVertexFields(::Json::Value const& root);
 
     MCAPI bool
     validateTextures(::ServerPBRTextureData const& textureData, ::HashedString const& renderControllerName) const;
@@ -101,8 +83,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
-
-    MCAPI void* $ctor(::mce::RenderMaterial const& parent);
     // NOLINTEND
 
 public:

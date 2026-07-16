@@ -62,24 +62,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SleepGoal(::Mob& mob);
-
-    MCAPI void _findExitPos();
-
-    MCAPI void _setSleepVariables();
-
-    MCAPI void _wakeUp();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

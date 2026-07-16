@@ -30,13 +30,12 @@ public:
 public:
     // prevent constructor by default
     MessageGamedrop& operator=(MessageGamedrop const&);
+    MessageGamedrop(MessageGamedrop const&);
     MessageGamedrop();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MessageGamedrop(::OreUI::MessageGamedrop const&);
-
     MCAPI MessageGamedrop(
         ::MessageGamedropData const&                               item,
         ::std::function<::ButtonData(::std::string)>               buttonLookup,
@@ -52,8 +51,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::MessageGamedrop const&);
-
     MCAPI void* $ctor(
         ::MessageGamedropData const&                               item,
         ::std::function<::ButtonData(::std::string)>               buttonLookup,

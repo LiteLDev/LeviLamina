@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,8 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Vec3 getBoundingSize() const;
-
     MCAPI ::Scripting::Result_deprecated<void> validate() const;
     // NOLINTEND
 

@@ -44,22 +44,12 @@ public:
     // NOLINTBEGIN
     MCAPI
     CurrentPartyDestinationQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
-
-    MCAPI void _fetchData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIQuery();
-
-    MCNAPI static void** $vftableForPropertyObject();
     // NOLINTEND
 };
 

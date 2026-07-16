@@ -7,9 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorOwnerComponent;
-class CameraShakeComponent;
-class EntityContext;
 class EntityRegistry;
 // clang-format on
 
@@ -26,20 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static void _computeIntensity(::CameraShakeComponent& cameraShakeComponent, double deltaTime);
-
-    MCAPI static void _tickComponent(
-        ::EntityContext&        entity,
-        ::ActorOwnerComponent&  actorOwnerComponent,
-        ::CameraShakeComponent& cameraShakeComponent
-    );
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
@@ -47,11 +30,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

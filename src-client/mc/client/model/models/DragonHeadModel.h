@@ -32,19 +32,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DragonHeadModel() /*override*/;
+    virtual ~DragonHeadModel() /*override*/ = default;
 
-    virtual void render(::ScreenContext& screenContext) /*override*/;
+    virtual void render(::ScreenContext&) /*override*/;
 
-    virtual void render(::ScreenContext& screenContext, float scale);
+    virtual void render(::ScreenContext&, float);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit DragonHeadModel(::GeometryPtr source);
-
-    MCFOLD ::ModelPart const& getHeadModel() const;
     // NOLINTEND
 
 public:
@@ -54,22 +52,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::ScreenContext& screenContext);
 
-    MCAPI void $render(::ScreenContext& screenContext, float scale);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -9,11 +9,12 @@
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/platform/brstd/flat_map.h"
-#include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
+class PacketSender;
 class TimeMarker;
+struct WorldClockData;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -85,29 +86,34 @@ public:
         8,
         128,
         ::Bedrock::PubSub::Publisher<void(::std::string const&, int), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
-        mOnTimeModified;
+                                   mOnTimeModified;
+    ::ll::TypedStorage<1, 1, bool> mTimeMarkerEventsRanThisTick;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    WorldClock(WorldClock const&);
+    WorldClock();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldClock();
-
-    MCAPI WorldClock(::WorldClock const& rhs);
-
-    MCAPI WorldClock(::HashedString const& name, ::std::initializer_list<::TimeMarker> timeMarkers);
-
-    MCAPI bool _validateTimeMarker(::TimeMarker const& timeMarker);
-
 #ifdef LL_PLAT_C
-    MCAPI void forEachTimeMarker(::brstd::function_ref<void(::TimeMarker const&)> callback) const;
+    MCAPI explicit WorldClock(::WorldClockData const& data);
 #endif
 
+    MCAPI void _sendAddTimeMarker(::PacketSender& packetSender) const;
+
+    MCAPI void _sendRemoveTimeMarker(::PacketSender& packetSender) const;
+
+    MCAPI void _sendSyncWorldClockState(::PacketSender& packetSender) const;
+
+#ifdef LL_PLAT_C
     MCAPI ::WorldClock& operator=(::WorldClock const& rhs);
-
-    MCAPI void tick();
-
-    MCAPI ::Bedrock::NonOwnerPointer<::TimeMarker> const tryGetTimeMarker(uint64 timeMarkerId);
+#endif
 
     MCAPI ~WorldClock();
     // NOLINTEND
@@ -119,21 +125,11 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static uint const& MAX_NAME_LENGTH();
-
-    MCAPI static uint const& MAX_TIMEMARKERS_CAPACITY();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::WorldClock const& rhs);
-
-    MCAPI void* $ctor(::HashedString const& name, ::std::initializer_list<::TimeMarker> timeMarkers);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::WorldClockData const& data);
+#endif
     // NOLINTEND
 
 public:

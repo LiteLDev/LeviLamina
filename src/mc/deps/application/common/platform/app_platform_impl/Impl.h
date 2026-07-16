@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Impl() /*override*/;
+    virtual ~Impl() /*override*/ = default;
 
     virtual ::IPlatformScreenshots& getPlatformScreenshots() /*override*/;
 
@@ -55,15 +55,15 @@ public:
 
     virtual bool keyboardInputHandledByImGui() /*override*/;
 
-    virtual void updateImGuiMousePosition(float, float) /*override*/;
+    virtual void updateImGuiMousePosition(float x, float y) /*override*/;
 
-    virtual void updateImGuiMouseButton(uchar, bool) /*override*/;
+    virtual void updateImGuiMouseButton(uchar button, bool isDown) /*override*/;
 
-    virtual void updateImGuiMouseScrollBar(float) /*override*/;
+    virtual void updateImGuiMouseScrollBar(float value) /*override*/;
 
-    virtual void imGuiAddInputChar(ushort) /*override*/;
+    virtual void imGuiAddInputChar(ushort c) /*override*/;
 
-    virtual bool updateImGuiKeyboard(uchar, bool) /*override*/;
+    virtual bool updateImGuiKeyboard(uchar param, bool isDown) /*override*/;
 
     virtual void setServiceLocators(::AppPlatform& platform) /*override*/;
 
@@ -112,12 +112,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::IPlatformScreenshots& $getPlatformScreenshots();
@@ -126,15 +120,15 @@ public:
 
     MCNAPI bool $keyboardInputHandledByImGui();
 
-    MCNAPI void $updateImGuiMousePosition(float, float);
+    MCNAPI void $updateImGuiMousePosition(float x, float y);
 
-    MCNAPI void $updateImGuiMouseButton(uchar, bool);
+    MCNAPI void $updateImGuiMouseButton(uchar button, bool isDown);
 
-    MCNAPI void $updateImGuiMouseScrollBar(float);
+    MCNAPI void $updateImGuiMouseScrollBar(float value);
 
-    MCNAPI void $imGuiAddInputChar(ushort);
+    MCNAPI void $imGuiAddInputChar(ushort c);
 
-    MCNAPI bool $updateImGuiKeyboard(uchar, bool);
+    MCNAPI bool $updateImGuiKeyboard(uchar param, bool isDown);
 
     MCNAPI void $setServiceLocators(::AppPlatform& platform);
 

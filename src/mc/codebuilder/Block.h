@@ -18,18 +18,6 @@ public:
     Block& operator=(Block const&);
     Block(Block const&);
     Block();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~Block();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace CodeBuilder

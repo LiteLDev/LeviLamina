@@ -26,8 +26,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptStatEvent(::ScriptStatEvent const&);
-
-    MCNAPI ~ScriptStatEvent();
     // NOLINTEND
 
 public:
@@ -40,11 +38,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptStatEvent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

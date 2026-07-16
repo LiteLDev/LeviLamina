@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class EntityRegistry;
-class ProjectileComponent;
 // clang-format on
 
 class ProjectileSystem : public ::ITickingSystem {
@@ -20,22 +18,10 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _tickProjectileComponent(::Actor* actor, ::ProjectileComponent& projectileComponent);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(::EntityRegistry& registry);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

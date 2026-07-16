@@ -33,7 +33,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -46,16 +46,8 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Group& operator=(Group const&);
-        Group(Group const&);
-        Group();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::CraftingItemCatalogMergeResult::Group& operator=(::CraftingItemCatalogMergeResult::Group&&);
-
         MCAPI ~Group();
         // NOLINTEND
 
@@ -72,20 +64,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::std::vector<::CraftingItemCatalogMergeResult::Group>> mGroups;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::CraftingItemCatalogMergeResult::Group* findGroup(::std::string_view groupName);
-
-        MCAPI ~Category();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -101,15 +79,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addItemToGroupIfNotDuplicateItem(
-        ::CraftingItemCatalogMergeResult::Group& group,
-        ::ItemInstance const&                    itemInstance,
-        ::std::string const&                     itemName
-    );
-
-    MCAPI ::CraftingItemCatalogMergeResult::Category&
-    getCategory(::SharedTypes::v1_21_60::CraftingCatalogItemCategory itemCategory);
-
     MCAPI void insertAfterGroup(
         ::SharedTypes::v1_21_60::CraftingCatalogItemCategory itemCategory,
         ::std::string_view                                   groupName,

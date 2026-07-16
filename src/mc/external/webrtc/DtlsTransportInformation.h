@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class SSLCertChain; }
+namespace webrtc { class SSLCertChain; }
 // clang-format on
 
 namespace webrtc {
@@ -22,7 +22,8 @@ public:
     ::ll::UntypedStorage<4, 8> mUnk3886b9;
     ::ll::UntypedStorage<4, 8> mUnkfde0ae;
     ::ll::UntypedStorage<4, 8> mUnkfcfe9e;
-    ::ll::UntypedStorage<8, 8> mUnk32ef58;
+    ::ll::UntypedStorage<8, 8> mUnk495956;
+    ::ll::UntypedStorage<4, 8> mUnkcc84b2;
     // NOLINTEND
 
 public:
@@ -43,7 +44,8 @@ public:
         ::std::optional<int>                            tls_version,
         ::std::optional<int>                            ssl_cipher_suite,
         ::std::optional<int>                            srtp_cipher_suite,
-        ::std::unique_ptr<::rtc::SSLCertChain>          remote_ssl_certificates
+        ::std::unique_ptr<::webrtc::SSLCertChain>       remote_ssl_certificates,
+        ::std::optional<int>                            ssl_group_id
     );
 
     MCNAPI ~DtlsTransportInformation();
@@ -62,7 +64,8 @@ public:
         ::std::optional<int>                            tls_version,
         ::std::optional<int>                            ssl_cipher_suite,
         ::std::optional<int>                            srtp_cipher_suite,
-        ::std::unique_ptr<::rtc::SSLCertChain>          remote_ssl_certificates
+        ::std::unique_ptr<::webrtc::SSLCertChain>       remote_ssl_certificates,
+        ::std::optional<int>                            ssl_group_id
     );
     // NOLINTEND
 

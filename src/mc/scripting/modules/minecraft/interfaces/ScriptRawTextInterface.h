@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
@@ -24,25 +23,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptRawTextInterface const& other) const;
-
-    MCAPI ~ScriptRawTextInterface();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
-
-    MCAPI static ::ScriptModuleMinecraft::ScriptRawTextInterface fromJSON(::Json::Value const& json);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

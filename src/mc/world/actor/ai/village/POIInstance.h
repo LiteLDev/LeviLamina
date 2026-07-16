@@ -11,7 +11,6 @@
 // clang-format off
 class AABB;
 class BlockSource;
-class CompoundTag;
 class Random;
 class Village;
 // clang-format on
@@ -36,68 +35,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    POIInstance();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI POIInstance(
-        ::BlockPos const& pos,
-        bool              useBoundingBox,
-        ::std::string     name,
-        ::POIType         type,
-        float             radius,
-        uint64            maxCapacity,
-        uint64            weight,
-        ::std::string     soundEvent,
-        ::std::string     initEvent,
-        ::std::string     endEvent
-    );
-
-    MCFOLD ::HashedString const& getName() const;
-
-    MCFOLD ::BlockPos const& getPosition() const;
-
-    MCAPI float getRadius() const;
-
     MCAPI ::AABB getSecondBlockFullAABB(::BlockSource& region);
 
-    MCFOLD ::HashedString const& getSoundEvent() const;
-
-    MCAPI void incrementArrivalFailureCount();
-
-    MCAPI void resetArrivalFailureCount();
-
-    MCAPI void save(::CompoundTag& tag) const;
-
     MCAPI void trySpawnParticles(::BlockSource& region, ::Random& random, int particleType) const;
-
-    MCAPI bool useBoundingBox() const;
-
-    MCAPI ~POIInstance();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BlockPos const& pos,
-        bool              useBoundingBox,
-        ::std::string     name,
-        ::POIType         type,
-        float             radius,
-        uint64            maxCapacity,
-        uint64            weight,
-        ::std::string     soundEvent,
-        ::std::string     initEvent,
-        ::std::string     endEvent
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

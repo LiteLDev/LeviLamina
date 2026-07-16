@@ -33,7 +33,6 @@ class BlockDescriptor;
 class BlockSourceListener;
 class BlockTickingQueue;
 class BlockType;
-class BlockVolume;
 class BoundingBox;
 class ChunkSource;
 class Dimension;
@@ -43,6 +42,7 @@ class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
 class ILevel;
+class IVanillaRenderBlockActorComponent;
 class ItemStackBase;
 class Level;
 class LevelChunk;
@@ -50,7 +50,6 @@ class LevelSeed64;
 class Material;
 class SubChunkPos;
 class Vec3;
-class WeakEntityRef;
 struct ActorBlockSyncMessage;
 struct ActorDefinitionIdentifier;
 struct BiomeIdLatticeBatch;
@@ -59,8 +58,6 @@ struct Bounds;
 struct Brightness;
 struct ClipParameters;
 struct DimensionType;
-struct Tick;
-struct WellKnownBiomeTags;
 namespace BlockSourceVisitor { struct CollisionShape; }
 // clang-format on
 
@@ -182,9 +179,11 @@ public:
         ::Vec3            clickPos
     ) /*override*/;
 
-    virtual bool canDoBlockDrops() const /*override*/;
+    virtual bool canDoBlockDrops(::Actor const* instigatingActor) const /*override*/;
 
-    virtual bool canDoContainedItemDrops() const /*override*/;
+    virtual bool canDoContainedItemDrops(::Actor const* instigatingActor) const /*override*/;
+
+    virtual bool hasChunk(::ChunkPos const& pos, bool serverSideOnly) const /*override*/;
 
     virtual bool hasChunksAt(::Bounds const& bounds, bool ignoreClientChunk) const /*override*/;
 
@@ -276,6 +275,8 @@ public:
         ::Actor*                       source
     ) /*override*/;
 
+    virtual void fireBlockEntityChanged(::BlockActor& te) /*override*/;
+
     virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
 
     virtual ::Block const& getBlock(::BlockPos const& pos, uint layer) const /*override*/;
@@ -336,8 +337,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockSource(::ChunkSource& source, bool publicSource, bool allowUnpopulatedChunks);
-
     MCAPI BlockSource(
         ::Level&       level,
         ::Dimension&   dimension,
@@ -347,6 +346,7 @@ public:
         bool           allowClientTickingChanges
     );
 
+#ifdef LL_PLAT_C
     MCAPI void _blockChanged(
         ::BlockPos const&              pos,
         uint                           layer,
@@ -357,43 +357,10 @@ public:
         ::ActorBlockSyncMessage const* syncMsg,
         ::Actor*                       blockChangeSource
     );
-
-    MCAPI void _fetchBorderBlockCollisions(
-        ::std::vector<::AABB>&                             shapes,
-        ::AABB const&                                      intersectTestBox,
-        ::optional_ref<::GetCollisionShapeInterface const> entity,
-        bool
-    ) const;
-
-    MCAPI void _fetchEntityHelper(
-        ::WeakEntityRef const&                              entityRef,
-        ::gsl::span<::gsl::not_null<::Actor const*>> const& ignoredEntities,
-        ::AABB const&                                       bb,
-        bool                                                useHitbox
-    );
-
-    MCAPI void _fetchEntityHelper(
-        ::WeakEntityRef const&          entityRef,
-        ::ActorType                     entityTypeId,
-        ::AABB const&                   bb,
-        ::Actor const*                  except,
-        ::std::function<bool(::Actor*)> selector
-    );
-
-    MCAPI bool _getBlockPermissions(::BlockPos const& pos, bool currentState);
+#endif
 
     MCAPI ::Brightness
     _getRawBrightness(::BlockPos const& pos, ::Brightness skyDarken, bool propagate, bool accountForNight) const;
-
-    MCAPI bool _hasChunksAt(::Bounds const& bounds, bool ignoreClientChunk) const;
-
-    MCAPI void _updateTallestCollisionShapeWithBorderBlockCollisions(
-        ::AABB const&                                      intersectTestBox,
-        ::optional_ref<::GetCollisionShapeInterface const> entity,
-        ::AABB&                                            result,
-        ::Vec3 const&                                      posToMinimizeDistanceToIfMatchingHeight,
-        float&                                             currentDistanceSqr
-    ) const;
 
     MCAPI void addToRandomTickingQueue(
         ::BlockPos const& pos,
@@ -411,39 +378,15 @@ public:
         bool              skipOverrides
     );
 
-    MCAPI void addToTickingQueue(
-        ::BlockPos const& pos,
-        ::Block const&    block,
-        int               tickDelay,
-        int               priorityOffset,
-        bool              skipOverrides
-    );
-
-    MCAPI bool allowsRunes(::BlockPos const& pos);
-
-    MCAPI bool areAllChunksLoaded(::BlockPos const& origin, ::BlockVolume& volume) const;
-
     MCAPI bool areChunksFullyLoaded(::BlockPos const& min, ::BlockPos const& max) const;
 
     MCAPI bool biomeAtPosHasTag(::BlockPos const& pos, ::IDType<::BiomeTagIDType> const& tagId) const;
 
-#ifdef LL_PLAT_C
-    MCAPI void blockEvent(int x, int y, int z, int b0, int b1);
-#endif
-
     MCAPI bool canProvideSupport(::BlockPos const& pos, uchar face, ::BlockSupportType type) const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool canRedstoneWirePassThrough(::BlockPos const& p) const;
-#endif
 
     MCAPI bool canSeeSky(::BlockPos const& pos) const;
 
-    MCAPI bool canSeeSky(int x, int y, int z) const;
-
     MCAPI bool canSeeSkyFromBelowWater(::BlockPos const& pos);
-
-    MCAPI bool containsAnyBlockInBox(::BoundingBox const& box, ::brstd::function_ref<bool(::Block const&)> predicate);
 
     MCAPI bool containsAnyBlockOfType(::BlockPos const& min, ::BlockPos const& max, ::Block const& type) const;
 
@@ -461,27 +404,13 @@ public:
 
     MCAPI ::std::vector<::BlockActor*> fetchBlockEntities(::BlockActorType blockActorTypeId, ::AABB const& bb) const;
 
-    MCAPI ::std::vector<::BlockActor*> const& fetchBlockEntities(::AABB const& bb);
-
     MCAPI void
     fetchBlockEntities(::AABB const& bb, ::std::vector<::BlockActor*>& blockEntityList, bool withPreservedEntities);
-
-    MCAPI bool fetchBlocks(::BlockPos const& origin, ::BlockVolume& volume) const;
 
     MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
     fetchBlocksInBox(::BoundingBox const& box, ::brstd::function_ref<bool(::Block const&)> predicate);
 
-    MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
-    fetchBlocksInBoxSorted(::BoundingBox const& box, ::brstd::function_ref<bool(::Block const&)> predicate);
-
     MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const> fetchBlocksInCylinder(
-        ::BlockPos const&                           centerPos,
-        uint                                        radius,
-        uint                                        height,
-        ::brstd::function_ref<bool(::Block const&)> predicate
-    );
-
-    MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const> fetchBlocksInCylinderSorted(
         ::BlockPos const&                           centerPos,
         uint                                        radius,
         uint                                        height,
@@ -497,28 +426,20 @@ public:
 
     MCAPI ::std::vector<::Actor*> const& fetchEntities2(::ActorType type, ::AABB const& aabb, bool ignoreTargetType);
 
-    MCAPI ::Actor* fetchNearestEntityOfType(::Actor const* except, ::AABB const& bb, ::ActorType entityTypeId);
-
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
     fetchPlayers(::AABB const& bb, ::Actor const* except, ::std::function<bool(::Actor*)> selector);
 
-    MCAPI bool findNextTopSolidBlockAbove(::BlockPos& pos);
+#ifdef LL_PLAT_C
+    MCAPI void fetchRenderBlockActorComponents(
+        ::AABB const&                                                         bb,
+        ::std::vector<::gsl::not_null<::IVanillaRenderBlockActorComponent*>>& blockEntityList,
+        bool                                                                  withPreservedEntities
+    );
+#endif
 
     MCAPI bool findNextTopSolidBlockUnder(::BlockPos& pos);
 
-    MCAPI void fireAreaChanged(::BlockPos const& min, ::BlockPos const& max);
-
     MCAPI void fireBlockEntityAboutToBeRemoved(::std::shared_ptr<::BlockActor> te);
-
-    MCAPI void fireBlockEntityChanged(::BlockActor& te);
-
-    MCAPI void fireBrightnessChanged(::BlockPos const& pos);
-
-    MCAPI void fireEntityChanged(::Actor& entity);
-
-    MCFOLD ::std::vector<::AABB>& getAABBFetchResultCache();
-
-    MCAPI short getAllocatedHeightAt(::BlockPos const& xzPos);
 
     MCAPI ::Biome const& getBiome(::BlockPos const& pos) const;
 
@@ -530,38 +451,11 @@ public:
 
     MCAPI ::BrightnessPair getBrightnessPair(::BlockPos const& pos) const;
 
-    MCAPI ::BrightnessPair getDefaultBrightness() const;
-
-#ifdef LL_PLAT_C
-    MCAPI int getGrassColor(::BlockPos const& pos) const;
-#endif
-
-    MCAPI short getHeightmap(::BlockPos const& pos) const;
-
-    MCAPI short getHeightmap(int x, int z);
-
     MCAPI ::BlockPos getHeightmapPos(::BlockPos const& xzPos) const;
-
-    MCFOLD ::Level& getLevel() const;
-
-    MCFOLD ::Level const& getLevelConst() const;
 
 #ifdef LL_PLAT_C
     MCAPI ::BrightnessPair getLightColor(::BlockPos const& pos, ::Brightness minBlockLight) const;
 #endif
-
-    MCAPI bool getNextTickUpdateForPos(::BlockPos const& pos, ::TickingQueueType queueType, ::Tick& tick) const;
-
-    MCFOLD bool getPublicSource() const;
-
-    MCAPI ::Brightness getRawBrightness(::BlockPos const& pos, bool propagate, bool accountForNight) const;
-
-    MCAPI ::Brightness getRawBrightnessWithManualDarken(
-        ::BlockPos const& pos,
-        ::Brightness      manualSkyDarken,
-        bool              propagate,
-        bool              accountForNight
-    ) const;
 
     MCAPI float getSeenPercent(::Vec3 const& center, ::AABB const& bb);
 
@@ -571,44 +465,10 @@ public:
     MCAPI ::Biome const& getSurfaceBiome(::BlockPos const& pos) const;
 #endif
 
-    MCAPI void getTallestCollisionShapeFromUnloadedChunksAABBs(
-        ::AABB const& intersectTestBox,
-        ::AABB&       tallestCollisionShape,
-        ::Vec3 const& posToMinimizeDistanceToIfMatchingHeight,
-        float&        currentDistanceSqr
-    ) const;
-
-#ifdef LL_PLAT_C
-    MCFOLD float getTextureShiftNoise() const;
-#endif
-
-    MCAPI ::BlockTickingQueue*
-    getTickingQueue(::BlockPos const& pos, ::TickingQueueType queueType, bool skipOverrides) const;
-
-    MCAPI short getVoidHeight() const;
-
-#ifdef LL_PLAT_C
-    MCAPI int getWaterColor(::BlockPos const& pos) const;
-#endif
-
-    MCAPI ::WellKnownBiomeTags const& getWellKnownBiomeTags() const;
-
-    MCAPI ::LevelChunk* getWritableChunk(::ChunkPos const& pos);
-
-#ifdef LL_PLAT_C
-    MCAPI bool hasChunksAt(::BlockPos const& min, ::BlockPos const& max, bool ignoreClientChunk) const;
-#endif
-
     MCAPI ::std::pair<bool, ::std::optional<::SubChunkPos>>
     hasSubChunksAt(::BlockPos const& min, ::BlockPos const& max) const;
 
     MCAPI bool hasTickInCurrentTick(::BlockPos const& pos) const;
-
-    MCAPI bool hasTickInPendingTicks(::BlockPos const& pos) const;
-
-    MCAPI bool hasTickInPendingTicks(::BlockPos const& pos, ::Block const& block) const;
-
-    MCAPI bool hasTickInPendingTicks(::BlockPos const& pos, ::BlockType const& block) const;
 
     MCAPI bool hasTickInPendingTicks(::BlockPos const& pos, ::TickingQueueType queueType) const;
 
@@ -617,42 +477,15 @@ public:
     MCAPI bool
     hasTickInPendingTicks(::BlockPos const& pos, ::BlockType const& block, ::TickingQueueType queueType) const;
 
-    MCAPI bool hasUntickedNeighborChunk(::ChunkPos const& pos, int chunkRadius) const;
-
-    MCAPI bool isChunkFullyLoaded(::ChunkPos const& chunkPos, ::ChunkSource const& chunkSource) const;
-
-    MCAPI bool isConsideredSolidBlock(::BlockPos const& pos) const;
-
-    MCAPI bool isEmptyBlock(::BlockPos const& pos) const;
-
-    MCAPI bool isEmptyWaterBlock(::BlockPos const& pos) const;
-
-    MCAPI bool isNearUnloadedChunks(::ChunkPos const& pos) const;
-
 #ifdef LL_PLAT_C
     MCAPI bool isPositionUnderSnow(::Vec3 const& p);
 #endif
 
     MCAPI bool isTouchingMaterial(::BlockPos const& pos, ::SharedTypes::v1_26_20::MaterialType type) const;
 
-#ifdef LL_PLAT_C
-    MCAPI bool isUnderWater(::BlockPos const& pos) const;
-#endif
-
     MCAPI bool isUnobstructedByEntities(::AABB const& aabb, ::Actor const* ignoreEntity);
 
-    MCAPI bool isWithinHeightLimits(int y) const;
-
     MCAPI void neighborChanged(::BlockPos const& neighPos, ::BlockPos const& myPos);
-
-    MCAPI void
-    postGameEvent(::Actor* source, ::GameEvent const& gameEvent, ::Vec3 const& originPos, ::Block const* affectedBlock);
-
-    MCAPI ::std::shared_ptr<::BlockActor> removeBlockEntity(::BlockPos const& blockPos);
-
-    MCAPI void removeFromRandomTickingQueue(::BlockPos const& pos, ::Block const& block);
-
-    MCAPI void removeFromTickingQueue(::BlockPos const& pos, ::Block const& block);
 
     MCAPI bool setBlock(
         ::BlockPos const&               pos,
@@ -665,35 +498,11 @@ public:
 
     MCAPI bool setBlockAndRetainCompatibleBlockActor(::BlockPos const& pos, ::Block const& block, int updateFlags);
 
-    MCAPI bool setBlockNoUpdate(::BlockPos const& pos, ::Block const& block);
-
     MCAPI bool setBlockSimple(::BlockPos const& pos, ::Block const& block);
 
-    MCAPI void setBorderBlock(::BlockPos const& pos, bool val);
-
-    MCAPI bool setExtraBlockSimple(::BlockPos const& pos, ::Block const& block);
-
 #ifdef LL_PLAT_C
-    MCAPI void setGrassColor(int grassColor, ::BlockPos const& pos, int flags);
-#endif
-
-    MCFOLD void setIsPersistentBlockSource();
-
-    MCAPI bool setLiquidBlock(::BlockPos const& pos, ::Block const& block, bool useExtraData, int updateFlags);
-
-    MCAPI void setRandomTickingQueue(::BlockTickingQueue& queue);
-
-    MCAPI void setTickingQueue(::BlockTickingQueue& queue);
-
-#ifdef LL_PLAT_C
-    MCAPI void setWaterColor(int waterColor, ::BlockPos const& pos, int flags);
-#endif
-
-    MCAPI int ticksFromNow(::BlockPos const& pos, ::TickingQueueType queueType, int offset) const;
-
-    MCAPI ::Biome const* tryGetBiome(::BlockPos const& pos) const;
-
     MCAPI void updateConnectionsAt(::BlockPos const& pos);
+#endif
 
     MCAPI void updateNeighborsAt(::BlockPos const& pos);
 
@@ -704,33 +513,11 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool containsAnyLiquid(::IConstBlockSource const& region, ::AABB const& box);
-
-    MCAPI static bool containsMaterial(
-        ::IConstBlockSource const&            region,
-        ::AABB const&                         box,
-        ::SharedTypes::v1_26_20::MaterialType material
-    );
-
-    MCAPI static bool doesIntersect(
-        ::IConstBlockSource const&          region,
-        ::AABB const&                       testAABB,
-        ::GetCollisionShapeInterface const& entity,
-        ::std::vector<::AABB>&              storage,
-        bool                                withUnloadedChunks
-    );
-
-    MCFOLD static ::Block const& getEmptyBlock();
-
-    MCAPI static bool isEmptyBlock(::Block const& block);
-
-    MCAPI static bool isEmptyWaterBlock(::Block const& block);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ChunkSource& source, bool publicSource, bool allowUnpopulatedChunks);
-
     MCAPI void* $ctor(
         ::Level&       level,
         ::Dimension&   dimension,
@@ -763,10 +550,6 @@ public:
     MCAPI bool $shouldFireEvents(::LevelChunk const& c) const;
 
     MCAPI bool $isInstaticking(::BlockPos const& pos) const;
-
-    MCAPI void $addListener(::BlockSourceListener& l);
-
-    MCAPI void $removeListener(::BlockSourceListener& l);
 
     MCAPI ::LevelChunk* $getChunk(int x, int z) const;
 
@@ -808,15 +591,11 @@ public:
         ::Vec3            clickPos
     );
 
-    MCAPI bool $canDoBlockDrops() const;
+    MCAPI bool $canDoBlockDrops(::Actor const* instigatingActor) const;
 
-    MCAPI bool $canDoContainedItemDrops() const;
+    MCAPI bool $canDoContainedItemDrops(::Actor const* instigatingActor) const;
 
-    MCAPI bool $hasChunksAt(::Bounds const& bounds, bool ignoreClientChunk) const;
-
-    MCAPI bool $hasChunksAt(::BlockPos const& pos, int r, bool ignoreClientChunk) const;
-
-    MCAPI bool $hasChunksAt(::AABB const& bb, bool ignoreClientChunk) const;
+    MCAPI bool $hasChunk(::ChunkPos const& pos, bool serverSideOnly) const;
 
     MCAPI bool $areChunksFullyLoaded(::BlockPos const& pos, int r) const;
 
@@ -825,16 +604,6 @@ public:
     MCAPI bool $containsMaterial(::AABB const& box, ::SharedTypes::v1_26_20::MaterialType material) const;
 
     MCAPI void $blockEvent(::BlockPos const& pos, int b0, int b1);
-
-    MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
-    $fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities);
-
-    MCAPI ::gsl::span<::gsl::not_null<::Actor*>> $fetchEntities(
-        ::ActorType                     entityTypeId,
-        ::AABB const&                   bb,
-        ::Actor const*                  except,
-        ::std::function<bool(::Actor*)> selector
-    );
 
     MCAPI void
     $fetchAABBs(::std::vector<::AABB>& shapes, ::AABB const& intersectTestBox, bool withUnloadedChunks) const;
@@ -901,6 +670,8 @@ public:
         ::Actor*                       source
     );
 
+    MCAPI void $fireBlockEntityChanged(::BlockActor& te);
+
     MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
 
     MCAPI ::Block const& $getBlock(::BlockPos const& pos, uint layer) const;
@@ -958,11 +729,5 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

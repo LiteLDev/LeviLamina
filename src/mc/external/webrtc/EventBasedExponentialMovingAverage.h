@@ -1,0 +1,43 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+namespace webrtc {
+
+class EventBasedExponentialMovingAverage {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk79fa8e;
+    ::ll::UntypedStorage<8, 8>  mUnkf76000;
+    ::ll::UntypedStorage<8, 8>  mUnk2f3283;
+    ::ll::UntypedStorage<8, 8>  mUnk102f8c;
+    ::ll::UntypedStorage<8, 16> mUnk2755a8;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    EventBasedExponentialMovingAverage& operator=(EventBasedExponentialMovingAverage const&);
+    EventBasedExponentialMovingAverage(EventBasedExponentialMovingAverage const&);
+    EventBasedExponentialMovingAverage();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void AddSample(int64 now, int sample);
+
+    MCNAPI explicit EventBasedExponentialMovingAverage(int half_time);
+
+    MCNAPI void Reset();
+
+    MCNAPI void SetHalfTime(int half_time);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(int half_time);
+    // NOLINTEND
+};
+
+} // namespace webrtc

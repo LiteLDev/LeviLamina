@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
-#include "mc/client/gui/screens/controllers/EntryType.h"
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
 #include "mc/client/network/realms/World.h"
 #include "mc/client/social/PlatformUserProfileData.h"
@@ -92,7 +91,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InviteScreenController() /*override*/;
+    virtual ~InviteScreenController() /*override*/ = default;
 
     virtual void queueTitleNarration() /*override*/;
 
@@ -114,53 +113,6 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
-
-    MCAPI void _addToDataList(::Social::PlatformUserProfileData const& user);
-
-    MCAPI ::std::string _getFirstVisiblePaginationControlsAbove(::EntryType entryType) const;
-
-    MCAPI ::std::string _getHoverText(::Social::XboxLiveUserProfileData const* xboxUserProfileData) const;
-
-    MCAPI ::std::string _getLinkedAccountFirstDisplayName(int collectionIndex) const;
-
-    MCAPI ::std::string _getLinkedAccountFriendTitleName(int collectionIndex) const;
-
-    MCAPI ::std::string _getLinkedAccountHoverText(int collectionIndex) const;
-
-    MCAPI ::std::string _getLinkedAccountSecondDisplayName(int collectionIndex) const;
-
-    MCAPI ::std::string _getPlatformDisplayName(int collectionIndex) const;
-
-    MCAPI ::std::string _getPlatformFriendTitleName(int collectionIndex) const;
-
-    MCAPI ::std::string _getXboxFriendTitleName(int collectionIndex) const;
-
-    MCAPI ::std::string _getXboxHoverText(int collectionIndex) const;
-
-    MCAPI ::std::string _getXboxLiveDisplayName(int collectionIndex) const;
-
-    MCAPI ::std::string _getXboxLiveDisplayName(::Social::XboxLiveUserProfileData const* xboxUserProfileData) const;
-
-    MCAPI void _refreshLinkedPlatformData(
-        ::std::vector<::std::string> const& validXuidsForInviteList,
-        ::std::weak_ptr<bool>               weakDataRequestExistenceTracker
-    );
-
-    MCAPI void _refreshPlatformFriendsData();
-
-    MCAPI void _refreshRealm();
-
-    MCAPI void _refreshXboxLiveFriendsData();
-
-    MCAPI void _refreshXuidData();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _sortDataList();
-
-    MCAPI void _sortRealmsDataList();
     // NOLINTEND
 
 public:
@@ -173,32 +125,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $queueTitleNarration();
 
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCFOLD ::std::string $_getButtonADescription();
-
-    MCAPI ::std::string $_getButtonXDescription();
-
-    MCAPI ::std::string $_getButtonYDescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

@@ -5,18 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/cereal/JSONCppSchemaReaderBase.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 namespace cereal {
 
 class JSONCppSchemaReader : public ::cereal::JSONCppSchemaReaderBase {
-public:
-    // prevent constructor by default
-    JSONCppSchemaReader();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -41,18 +32,6 @@ public:
     virtual bool _allowAsFloat() /*override*/;
 
     virtual bool _allowAsDouble() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit JSONCppSchemaReader(::std::reference_wrapper<::Json::Value const> value);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::reference_wrapper<::Json::Value const> value);
     // NOLINTEND
 
 public:

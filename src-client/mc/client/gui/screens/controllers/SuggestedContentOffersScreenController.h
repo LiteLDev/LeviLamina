@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SuggestedContentOffersScreenController() /*override*/;
+    virtual ~SuggestedContentOffersScreenController() /*override*/ = default;
 
     virtual void onCreation() /*override*/;
 
@@ -51,12 +51,6 @@ public:
         ::std::string const&                     defaultTitleString,
         ::std::string const&                     optionalBindingSuffix
     );
-
-    MCAPI ::std::string _getSuggestedOffersTitle() const;
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -72,26 +66,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onCreation();
 
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

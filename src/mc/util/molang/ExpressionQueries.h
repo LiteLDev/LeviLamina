@@ -48,14 +48,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI static ::ExpressionQueries createDedicatedServer();
-#endif
-
 #ifdef LL_PLAT_C
-    MCNAPI static ::MolangScriptArg const* getTargetXRotationBase(::RenderParams& renderParams);
-#endif
-
     MCNAPI static ::MolangScriptArg const* getTargetYRotationBase(::RenderParams& renderParams);
+#endif
     // NOLINTEND
 };

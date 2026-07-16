@@ -58,30 +58,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit CurrentPartyMembersQuery(::OreUI::GameDependencies const& game);
-
-    MCAPI void _fetchData();
-
-    MCAPI void _updateInviteeProfiles();
-
-    MCAPI void _updateInvitees();
-
-    MCAPI void _updateMemberProfiles();
-
-    MCAPI void _updateMembers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPropertyObject();
-
-    MCNAPI static void** $vftableForIQuery();
     // NOLINTEND
 };
 

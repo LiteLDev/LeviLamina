@@ -18,7 +18,6 @@ class Experiments;
 class IContentManager;
 class LevelDataWrapper;
 class LevelSeed64;
-class MainMenuScreenModel;
 struct LevelSummary;
 struct LocalWorldInfo;
 struct PackManagerContentSource;
@@ -45,10 +44,6 @@ public:
     using IntegerOptionSetter = ::std::function<void(int)>;
 
 public:
-    // prevent constructor by default
-    SettingsScreenControllerBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SettingsScreenControllerBase() /*override*/;
@@ -61,8 +56,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SettingsScreenControllerBase(::std::shared_ptr<::MainMenuScreenModel> model);
-
     MCAPI void _addResourcePacks(::LocalWorldInfo const& worldInfo);
 
     MCAPI bool _copyResourcePacks(
@@ -103,8 +96,6 @@ public:
 
     MCAPI void _removeResourcePacks();
 
-    MCAPI ::ui::ViewRequest _showLowDiskSpaceWarning();
-
     MCAPI void confirmationHardcoreDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
     MCAPI void confirmationNoAchievementsDialog(::std::function<void(::ModalScreenButtonId)> callback);
@@ -135,15 +126,6 @@ public:
     );
 
     MCAPI void setupCallbacksForStringOption(
-        ::OptionID                                  optionID,
-        ::std::string const&                        textboxName,
-        ::std::string const&                        valueBindingName,
-        ::std::string const&                        enabledBindingName,
-        ::std::function<bool(::std::string const&)> changedValidator,
-        ::std::function<bool(::std::string const&)> finishedValidator
-    );
-
-    MCAPI void setupCallbacksForStringOption(
         ::std::string const&                        textboxName,
         ::std::string const&                        valueBindingName,
         ::std::string const&                        enabledBindingName,
@@ -157,15 +139,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

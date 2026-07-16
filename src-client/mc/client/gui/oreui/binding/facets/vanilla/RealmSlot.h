@@ -15,31 +15,6 @@ public:
     ::ll::TypedStorage<4, 4, int>            gameMode;
     ::ll::TypedStorage<1, 1, bool>           hardcore;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RealmSlot& operator=(RealmSlot const&);
-    RealmSlot();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RealmSlot(::OreUI::RealmSlot const&);
-
-    MCAPI ~RealmSlot();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::RealmSlot const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

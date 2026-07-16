@@ -5,9 +5,13 @@
 namespace Automation {
 // static variables
 // NOLINTBEGIN
-MCNAPI char const*& BodyData();
+#ifdef LL_PLAT_C
+MCNAPI ::std::string const& EncryptionSubprotocol();
+#endif
 
-MCNAPI char const*& HeaderData();
+#ifdef LL_PLAT_S
+MCNAPI ::std::string const& EncryptionSubprotocol();
+#endif
 // NOLINTEND
 
 } // namespace Automation

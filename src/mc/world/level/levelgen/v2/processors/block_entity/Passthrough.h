@@ -18,7 +18,7 @@ struct Passthrough : public ::br::worldgen::processors::BlockEntity::ModifierTyp
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom& existingTag, ::CompoundTag const*) const /*override*/;
+    virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom&, ::CompoundTag const* existingTag) const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
     // NOLINTEND
@@ -26,7 +26,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::CompoundTag> $apply(::IRandom& existingTag, ::CompoundTag const*) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $apply(::IRandom&, ::CompoundTag const* existingTag) const;
 
     MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 

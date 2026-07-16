@@ -39,25 +39,8 @@ public:
     MCNAPI explicit StorageAreaState(::Core::PathView storageAreaRootPath);
 
 #ifdef LL_PLAT_C
-    MCNAPI void _clearCriticalDiskError();
-
-    MCNAPI void _clearLowDiskSpaceWarning();
-
-    MCNAPI void _clearOutOfSpaceError();
-
-    MCNAPI void _fireExtendDiskSpaceEvent(
-        bool                                            bSet,
-        ::std::weak_ptr<::Core::FileStorageArea> const& fileStorageAreaWeakPtr,
-        uint64                                          freeSpace,
-        ::std::function<void()>                         onHandledEventCallback
-    );
-
-    MCNAPI void _notifyLowDiskSpaceWarning();
-
-    MCNAPI void _notifyOutOfDiskSpaceError();
-#endif
-
     MCNAPI void addListener(::Core::StorageAreaStateListener* l);
+#endif
 
     MCNAPI void checkUserStorage(
         ::std::shared_ptr<::Core::FileStorageArea> const& fileStorageArea,
@@ -67,18 +50,8 @@ public:
         bool                                              canExtendSize
     );
 
-    MCNAPI bool isCriticalDiskError() const;
-
 #ifdef LL_PLAT_C
-    MCNAPI bool isLowDiskSpaceWarning() const;
-#endif
-
-    MCNAPI bool isOutOfDiskSpaceError() const;
-
     MCNAPI void notifyCriticalDiskError(::Core::LevelStorageState const& errorCode);
-
-#ifdef LL_PLAT_C
-    MCNAPI void removeListener(::Core::StorageAreaStateListener* l);
 #endif
 
     MCNAPI ~StorageAreaState();

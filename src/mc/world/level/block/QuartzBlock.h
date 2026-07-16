@@ -15,10 +15,6 @@ class Vec3;
 
 class QuartzBlock : public ::RotatedPillarBlock {
 public:
-    // prevent constructor by default
-    QuartzBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~QuartzBlock() /*override*/ = default;
@@ -28,18 +24,6 @@ public:
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI QuartzBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

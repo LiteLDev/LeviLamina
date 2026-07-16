@@ -15,6 +15,7 @@ class ActorHurtResult;
 class EntityContext;
 class Player;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -34,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     virtual float getShadowRadius() const /*override*/;
 
@@ -44,7 +45,8 @@ public:
 
     virtual void remove() /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
     // NOLINTEND
 
 public:
@@ -55,12 +57,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCAPI int getCountdown() const;
-
-    MCAPI bool interactWithPlayer(::Player& player);
-
-    MCAPI bool isActivated() const;
 
     MCAPI void startTakingPicture(::Player& player);
     // NOLINTEND
@@ -78,24 +74,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
-    MCFOLD float $getShadowRadius() const;
-
-    MCFOLD bool $isTargetable() const;
-
-    MCFOLD bool $canExistWhenDisallowMob() const;
-
-    MCAPI void $remove();
-
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float, bool, bool);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -14,11 +14,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class FrameUpdateContext;
 class RuntimeLocalLightingConfig;
-namespace mce { class RenderContext; }
 namespace mce { struct BufferResourceService; }
-namespace mcr { struct DeferredResourceTransactions; }
 // clang-format on
 
 class MinecraftGameplayGraphicsResources {
@@ -31,7 +28,7 @@ public:
     ::ll::TypedStorage<8, 8, ::cg::ResourceManagerTracker<::ImageBufferResourceManager>> mSharedImageBufferAtlasTracker;
     ::ll::TypedStorage<8, 16, ::DynamicImageResourceManager>                             mDynamicImageResourceManager;
     ::ll::TypedStorage<8, 8, ::cg::ResourceManagerTracker<::DynamicImageResourceManager>> mDynamicImageTracker;
-    ::ll::TypedStorage<8, 24, ::TickingTextures>                                          mTickingTextures;
+    ::ll::TypedStorage<8, 8, ::TickingTextures>                                           mTickingTextures;
     ::ll::TypedStorage<8, 16, ::mcr::DynamicTextureResourceManager>                       mDynamicTextures;
     ::ll::TypedStorage<8, 64, ::mce::TextureResourceService>                              mTextureResourceService;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::BufferResourceService>>            mBufferResourceService;
@@ -40,44 +37,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MinecraftGameplayGraphicsResources();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MinecraftGameplayGraphicsResources(::mce::RenderContext& renderContext);
-
     MCAPI void cleanImageCachesForActiveResourcePackChange();
-
-    MCAPI void deviceLost();
 
     MCAPI void flushResourceService();
 
-    MCAPI void frameUpdate(::FrameUpdateContext& frameUpdateContext);
-
-    MCAPI ::mcr::DeferredResourceTransactions getDeferredResourceTransactions();
+    MCAPI void reloadTickingTextures();
 
     MCAPI void resume();
-
-    MCAPI bool servicesAreEnabled() const;
-
-    MCAPI void suspend();
-
-    MCAPI void tickUpdate();
-
-    MCAPI ~MinecraftGameplayGraphicsResources();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::RenderContext& renderContext);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

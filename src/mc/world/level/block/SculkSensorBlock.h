@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
     virtual void onStandOn(::EntityContext& entityContext, ::BlockPos const& pos) const /*override*/;
 
@@ -44,7 +44,9 @@ public:
 
     virtual bool isSignalSource() const /*override*/;
 
-    virtual bool shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const /*override*/;
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
 
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
@@ -54,7 +56,7 @@ public:
 
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar) const
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
     virtual bool liquidCanFlowIntoFromDirection(
@@ -67,8 +69,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SculkSensorBlock(::std::string const& nameId, int id);
-
     MCAPI SculkSensorBlock(::std::string const& nameId, int id, ::BlockActorType type, int activeTicks);
 
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -79,11 +79,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _setInactivePhase(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
-
-    MCAPI static void
-    _tryResonateVibration(::BlockSource& region, ::BlockPos const& pos, ::Actor* source, int vibrationFrequency);
-
 #ifdef LL_PLAT_C
     MCAPI static bool isActive(::Block const& block);
 #endif
@@ -108,15 +103,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
-
     MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockActorType type, int activeTicks);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
     MCAPI void $onStandOn(::EntityContext& entityContext, ::BlockPos const& pos) const;
 
@@ -124,7 +117,8 @@ public:
 
     MCFOLD bool $isSignalSource() const;
 
-    MCFOLD bool $shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const;
+    MCFOLD bool
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
@@ -134,7 +128,7 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCFOLD bool $liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,

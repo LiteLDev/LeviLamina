@@ -28,29 +28,27 @@ public:
     // NOLINTBEGIN
     virtual ~INetworkGameConnector() = default;
 
-    virtual void joinRealmsGame(
-        ::Realms::World const&              realm,
-        ::Social::GameConnectionInfo const& gameConnection,
-        ::PlayerJoinWorldContext            context
-    ) = 0;
+    virtual void
+    joinRealmsGame(::Realms::World const&, ::Social::GameConnectionInfo const&, ::PlayerJoinWorldContext) = 0;
 
     virtual void joinRemoteServerWithAddress(
-        ::Social::GameConnectionInfo gameConnection,
-        ::std::string const&         serverName,
-        ::std::string const&         worldName,
-        ::NetworkType                networkTypeOverride,
-        ::PlayerJoinWorldContext     context
+        ::Social::GameConnectionInfo,
+        ::std::string const&,
+        ::std::string const&,
+        ::NetworkType,
+        ::std::shared_ptr<bool>,
+        ::PlayerJoinWorldContext
     ) = 0;
 
     virtual ::Bedrock::Threading::Async<void>
-    joinMultiplayerGame(::Social::MultiplayerGameInfo const& gameInfo, ::PlayerJoinWorldContext context) = 0;
+    joinMultiplayerGame(::Social::MultiplayerGameInfo const&, ::PlayerJoinWorldContext) = 0;
 
     virtual void setReconnectionCookie(
         ::std::optional<::std::variant<
             ::GameConnectionInfoEx,
             ::Social::MultiplayerGameInfo,
             ::ExperienceConnectionData,
-            ::Realms::RealmId>> const& reconnectCookie
+            ::Realms::RealmId>> const&
     ) = 0;
 
     virtual ::std::optional<::std::variant<
@@ -60,17 +58,14 @@ public:
         ::Realms::RealmId>>
     getReconnectionCookie() = 0;
 
-    virtual void joinRealmFromConnectLink(::Realms::World const& world, ::PlayerJoinWorldContext context) = 0;
+    virtual void joinRealmFromConnectLink(::Realms::World const&, ::PlayerJoinWorldContext) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> getPrimaryClientInstance() = 0;
 
     virtual ::std::weak_ptr<::RealmsAPI> getRealms() = 0;
 
-    virtual void joinRealm(
-        ::Realms::World const&                    world,
-        ::IMinecraftEventing::RealmConnectionFlow telemetryEventingConnectionFlow,
-        ::PlayerJoinWorldContext                  context
-    ) = 0;
+    virtual void
+    joinRealm(::Realms::World const&, ::IMinecraftEventing::RealmConnectionFlow, ::PlayerJoinWorldContext) = 0;
 
     virtual ::ClientNetworkSystem& getClientNetworkSystem() = 0;
     // NOLINTEND

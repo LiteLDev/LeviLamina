@@ -25,16 +25,4 @@ public:
     CustomBiomeSourceConfig& operator=(CustomBiomeSourceConfig const&);
     CustomBiomeSourceConfig(CustomBiomeSourceConfig const&);
     CustomBiomeSourceConfig();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~CustomBiomeSourceConfig();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

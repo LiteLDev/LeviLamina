@@ -12,6 +12,10 @@ public:
     // IItemComponentLegacyFactoryData inner types define
     struct Components {
     public:
+        // Components inner types define
+        using CerealDefaultValueOptOut = void;
+
+    public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::shared_ptr<::IItemComponentLegacyFactoryData>>> mMap;

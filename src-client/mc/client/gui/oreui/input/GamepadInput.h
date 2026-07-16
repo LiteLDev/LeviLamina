@@ -52,18 +52,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::GamepadInput::TriggerEvent>> mTriggerEvents;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::GamepadInput::StickEvent>>   mStickEvents;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~GamepadInput();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

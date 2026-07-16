@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor { class LogMessage; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -24,31 +23,12 @@ public:
     // prevent constructor by default
     LogMessagePayload& operator=(LogMessagePayload const&);
     LogMessagePayload(LogMessagePayload const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI LogMessagePayload();
-
-    MCNAPI explicit LogMessagePayload(::Editor::LogMessage&& message);
-
-#ifdef LL_PLAT_C
-    MCNAPI ::Editor::LogMessage const& getMessage() const;
-#endif
-    // NOLINTEND
+    LogMessagePayload();
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::Editor::LogMessage&& message);
     // NOLINTEND
 
 public:

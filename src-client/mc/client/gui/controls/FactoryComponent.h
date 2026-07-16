@@ -46,12 +46,6 @@ public:
     // NOLINTBEGIN
     MCAPI FactoryComponent(::UIControl& owner, ::std::weak_ptr<::UIControlFactory> factoryPtr);
 
-    MCAPI void _prepareControlForDestruction(::std::shared_ptr<::UIControl> control);
-
-    MCAPI void _trim();
-
-    MCAPI void addControlIdToTemplateName(::std::string const& controlId, ::std::string const& templateName);
-
     MCAPI void addVariable(::std::string const& varName, ::Json::Value const& var);
 
     MCAPI ::std::weak_ptr<::UIControl> create(::UIPropertyBag const& properties, bool ensureCreation);
@@ -61,22 +55,6 @@ public:
     MCAPI void destroyAll();
 
     MCAPI void destroyAllStartingAtIndex(uint index);
-
-    MCFOLD ::std::shared_ptr<::UIControl> getControlTemplate() const;
-
-    MCFOLD ::std::string const& getFactoryName() const;
-
-    MCAPI void removeExcessControls();
-
-    MCAPI void setControlTemplate(::std::shared_ptr<::UIControl> controlTemplate);
-
-    MCAPI void setFactoryIsChild(bool isChild);
-
-    MCFOLD void setFactoryName(::std::string const& name);
-
-    MCFOLD void setInsertPosition(::ui::ChildInsertPosition insertPosition);
-
-    MCAPI void setMaxSize(int maxSize);
     // NOLINTEND
 
 public:

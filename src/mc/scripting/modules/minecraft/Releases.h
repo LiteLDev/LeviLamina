@@ -11,9 +11,9 @@ namespace Scripting { struct Version; }
 namespace ScriptModuleMinecraft::Releases {
 // static variables
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCAPI ::std::add_lvalue_reference_t<::ScriptModuleMinecraft::Releases::VersionRelease const[]> ALL_RELEASES();
-
-MCAPI ::Scripting::Version const& LATEST_RELEASE();
+#endif
 
 MCAPI ::Scripting::Version const& V010();
 
@@ -72,6 +72,8 @@ MCAPI ::Scripting::Version const& V2_5_0();
 MCAPI ::Scripting::Version const& V2_6_0();
 
 MCAPI ::Scripting::Version const& V2_7_0();
+
+MCAPI ::Scripting::Version const& V2_8_0();
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft::Releases

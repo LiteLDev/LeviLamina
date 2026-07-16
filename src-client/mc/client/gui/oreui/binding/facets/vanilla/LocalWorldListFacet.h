@@ -3,27 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 class IContentAccessibilityProvider;
-struct LevelSummary;
-struct LocalWorldInfo;
-namespace OreUI { class AllowListPath; }
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct LocalWorldData; }
+namespace World { class IWorldCloudSyncer; }
 namespace World { class LocalWorldList; }
 // clang-format on
 
 namespace OreUI {
 
-class LocalWorldListFacet : public ::OreUI::FacetBase<::OreUI::LocalWorldListFacet> {
+class LocalWorldListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::LocalWorldListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::World::LocalWorldList>>                     mLocalWorldList;
+    ::ll::TypedStorage<8, 8, ::World::IWorldCloudSyncer&>                                     mWorldCloudSyncer;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>>     mResourceAllowList;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider>> mAccessibilityProvider;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::LocalWorldData>>                         mLocalWorlds;
@@ -32,6 +31,8 @@ public:
 
 public:
     // prevent constructor by default
+    LocalWorldListFacet& operator=(LocalWorldListFacet const&);
+    LocalWorldListFacet(LocalWorldListFacet const&);
     LocalWorldListFacet();
 
 public:
@@ -45,21 +46,10 @@ public:
     // NOLINTBEGIN
     MCAPI LocalWorldListFacet(
         ::std::shared_ptr<::World::LocalWorldList>                     localWorldList,
+        ::World::IWorldCloudSyncer&                                    worldCloudSyncer,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>     resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> accessibilityProvider
     );
-
-    MCAPI ::OreUI::AllowListPath _getWorldPreviewImage(::LocalWorldInfo const& worldInfo) const;
-
-    MCAPI ::OreUI::LocalWorldData _makeLocalWorld(::LocalWorldInfo const& worldInfo) const;
-
-    MCAPI ::std::vector<::OreUI::LocalWorldData> _readLocalWorlds() const;
-
-    MCAPI bool _worldRequiresCloudSync(::LevelSummary const& levelSummary) const;
-
-    MCFOLD ::std::vector<::OreUI::LocalWorldData> const& getLocalWorlds() const;
-
-    MCFOLD bool getOtherStorageContainsWorlds() const;
     // NOLINTEND
 
 public:
@@ -73,6 +63,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::std::shared_ptr<::World::LocalWorldList>                     localWorldList,
+        ::World::IWorldCloudSyncer&                                    worldCloudSyncer,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>     resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> accessibilityProvider
     );
@@ -81,13 +72,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

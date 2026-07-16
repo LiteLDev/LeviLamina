@@ -28,10 +28,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScatterParamsData();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScatterParamsData();
-
     MCAPI ScatterParamsData(::SharedTypes::v1_21_10::ScatterParamsData&&);
 
     MCAPI ScatterParamsData(::SharedTypes::v1_21_10::ScatterParamsData const&);
@@ -52,8 +54,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SharedTypes::v1_21_10::ScatterParamsData&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_21_10::ScatterParamsData const&);

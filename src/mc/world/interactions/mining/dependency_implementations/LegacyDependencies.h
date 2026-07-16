@@ -26,21 +26,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void hurtAndBreak(int damage) /*override*/;
+    virtual void hurtAndBreak(int) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $hurtAndBreak(int damage);
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

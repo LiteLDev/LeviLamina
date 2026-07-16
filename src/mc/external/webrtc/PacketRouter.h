@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/absl/AnyInvocable.h"
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/PacingController.h"
 
 // auto generated forward declare list
@@ -29,6 +30,8 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk15bfe9;
     ::ll::UntypedStorage<8, 8>  mUnk7b2465;
     ::ll::UntypedStorage<8, 8>  mUnk678034;
+    ::ll::UntypedStorage<1, 1>  mUnk3e85c7;
+    ::ll::UntypedStorage<1, 1>  mUnkba24d4;
     ::ll::UntypedStorage<8, 32> mUnkd39471;
     ::ll::UntypedStorage<8, 24> mUnkae9644;
     ::ll::UntypedStorage<8, 16> mUnk199a69;
@@ -54,7 +57,10 @@ public:
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>>
     GeneratePadding(::webrtc::DataSize size) /*override*/;
 
-    virtual void OnAbortedRetransmissions(uint ssrc, ::rtc::ArrayView<ushort const> sequence_numbers) /*override*/;
+    virtual void OnAbortedRetransmissions(
+        uint                                                    ssrc,
+        ::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers
+    ) /*override*/;
 
     virtual ::std::optional<uint> GetRtxSsrcForMedia(uint ssrc) const /*override*/;
 
@@ -67,6 +73,8 @@ public:
     MCNAPI void AddSendRtpModule(::webrtc::RtpRtcpInterface* rtp_module, bool remb_candidate);
 
     MCNAPI void AddSendRtpModuleToMap(::webrtc::RtpRtcpInterface* rtp_module, uint ssrc);
+
+    MCNAPI void ConfigureForRfc8888Feedback(bool send_rtp_packets_as_ect1);
 
     MCNAPI void DetermineActiveRembModule();
 
@@ -107,7 +115,8 @@ public:
 
     MCNAPI ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> $GeneratePadding(::webrtc::DataSize size);
 
-    MCNAPI void $OnAbortedRetransmissions(uint ssrc, ::rtc::ArrayView<ushort const> sequence_numbers);
+    MCNAPI void
+    $OnAbortedRetransmissions(uint ssrc, ::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers);
 
     MCNAPI ::std::optional<uint> $GetRtxSsrcForMedia(uint ssrc) const;
 

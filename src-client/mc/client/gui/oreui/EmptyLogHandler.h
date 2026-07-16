@@ -14,19 +14,13 @@ public:
     // NOLINTBEGIN
     virtual ~EmptyLogHandler() /*override*/ = default;
 
-    virtual void WriteLog(::cohtml::Logging::Severity severity, char const* message, uint64 length) /*override*/;
+    virtual void WriteLog(::cohtml::Logging::Severity, char const*, uint64) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $WriteLog(::cohtml::Logging::Severity severity, char const* message, uint64 length);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

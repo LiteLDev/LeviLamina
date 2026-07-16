@@ -20,45 +20,18 @@ public:
     // NOLINTBEGIN
     virtual ::StructurePieceType getType() const /*override*/;
 
-    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
+    virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) /*override*/;
 
     virtual void addChildren(
-        ::StructurePiece& startPiece,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>&,
-        ::Random&
-    ) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
+        ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           footX,
-        int                                                 footY,
-        int                                                 footZ,
-        int                                                 direction,
-        int                                                 genDepth,
-        int
-    );
+        ::Random&                                           random
+    ) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
-
-    MCAPI void
-    $addChildren(::StructurePiece& startPiece, ::std::vector<::std::unique_ptr<::StructurePiece>>&, ::Random&);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

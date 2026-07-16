@@ -7,20 +7,9 @@
 #include "mc/deps/core/utility/pub_sub/thread_model/SingleThreaded.h"
 #include "mc/platform/threading/LockGuard.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::PubSub::Detail { class DispatchTargets; }
-// clang-format on
-
 namespace Bedrock::PubSub::Detail {
 
 class FastDispatchPublisherBase_SingleThreaded : public ::Bedrock::PubSub::Detail::PublisherBase,
-                                                 public ::Bedrock::PubSub::ThreadModel::SingleThreaded::NullMutex {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool _loadDispatchTargets(::Bedrock::PubSub::Detail::DispatchTargets& targets) const;
-    // NOLINTEND
-};
+                                                 public ::Bedrock::PubSub::ThreadModel::SingleThreaded::NullMutex {};
 
 } // namespace Bedrock::PubSub::Detail

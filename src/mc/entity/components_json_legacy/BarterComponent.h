@@ -23,7 +23,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void onBarterItemPickedUp(::Actor const& owner, ::ActorUniqueID actorUniqueID, short barterItemId);
-
-    MCAPI void stopBarter();
     // NOLINTEND
 };

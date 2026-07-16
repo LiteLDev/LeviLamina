@@ -5,28 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/TimerActorFlagBaseGoal.h"
 
-// auto generated forward declare list
-// clang-format off
-class Mob;
-// clang-format on
-
 class TimerActorFlag1Goal : public ::TimerActorFlagBaseGoal {
-public:
-    // prevent constructor by default
-    TimerActorFlag1Goal();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit TimerActorFlag1Goal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
 public:
     // vftables
     // NOLINTBEGIN

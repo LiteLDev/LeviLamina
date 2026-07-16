@@ -10,7 +10,6 @@
 // clang-format off
 class HashedString;
 namespace SharedTypes::v1_20_80 { struct DistanceEvent; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_20_80 {
@@ -26,10 +25,13 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_20_80::DistanceEvent>>    mLoopingTravelDistanceEvents;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     EmitterLifetimeEventsComponent();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -39,6 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
 
     MCAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
@@ -48,12 +51,9 @@ public:
 
     MCAPI ::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&
     operator=(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
-    // NOLINTEND
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI bool operator==(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&) const;
+#endif
     // NOLINTEND
 
 public:
@@ -65,15 +65,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ::HashedString const& $getIdentifier() const;
+#endif
 
 
     // NOLINTEND

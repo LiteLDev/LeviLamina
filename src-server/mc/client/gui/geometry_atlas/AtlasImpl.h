@@ -11,14 +11,23 @@ public:
     struct TileEntry;
     struct Data;
     struct CommandArgs;
+    struct TileDirtyUpdate;
     // clang-format on
 
     // AtlasImpl inner types define
-    struct TileEntry {};
+    enum class TileDirtyStatus : uchar {};
+
+    struct TileEntry {
+    public:
+        // TileEntry inner types define
+        enum class Status : uchar {};
+    };
 
     struct Data {};
 
     struct CommandArgs {};
+
+    struct TileDirtyUpdate {};
 };
 
 } // namespace GeometryAtlas

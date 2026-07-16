@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v3_0_0::PackManifestDefinition {
 
 struct DropdownOption {
@@ -26,15 +21,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI DropdownOption(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption const&);
-
-    MCFOLD ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption&&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

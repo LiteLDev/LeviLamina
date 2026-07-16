@@ -13,20 +13,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>        mHasLoadedIntoUnloadedChunks;
     ::ll::TypedStorage<4, 12, ::BlockPos> mLastOffsetWhenLoadingIntoUnloadedChunks;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StructureTelemetryServerData();
-
-    MCFOLD bool hasBeenActivatedByRedstone();
-
-    MCFOLD void setHasBeenActivedByRedstone();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
 };

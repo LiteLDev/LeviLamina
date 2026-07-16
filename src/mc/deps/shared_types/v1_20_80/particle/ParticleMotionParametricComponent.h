@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_20_80 {
@@ -24,12 +23,15 @@ public:
     ::ll::TypedStorage<8, 56, ::std::optional<::SharedTypes::Legacy::ExpressionNode>>                   mRotationExpr;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ParticleMotionParametricComponent& operator=(ParticleMotionParametricComponent const&);
     ParticleMotionParametricComponent(ParticleMotionParametricComponent const&);
     ParticleMotionParametricComponent();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -39,13 +41,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ParticleMotionParametricComponent(::SharedTypes::v1_20_80::ParticleMotionParametricComponent&&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
     // NOLINTEND
 
 public:
@@ -57,13 +55,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionParametricComponent&&);
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ::HashedString const& $getIdentifier() const;
+#endif
 
 
     // NOLINTEND

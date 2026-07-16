@@ -3,19 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/server/commands/PlayerPermissionLevel.h"
 
 // auto generated forward declare list
 // clang-format off
+class ClientLevel;
 class IAppPlatform;
 class LocalPlayer;
-class MultiPlayerLevel;
 class PlayerAbilitiesManager;
 class TrialManager;
-struct ActorUniqueID;
 struct LocalPlayerChangedConnector;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct SocialPlayer; }
@@ -26,15 +24,12 @@ namespace Social { class IUserManager; }
 namespace Social { class MultiplayerServiceManager; }
 namespace Social { class ProfileSystem; }
 namespace Social { class User; }
-namespace Social { struct FriendData; }
-namespace Social { struct PlayerProfile; }
 namespace World { class WorldPlayerListTracker; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace OreUI {
 
-class WorldPlayersListFacet : public ::OreUI::FacetBase<::OreUI::WorldPlayersListFacet> {
+class WorldPlayersListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::WorldPlayersListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -57,7 +52,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mPartySubscription;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>> mPartyProvider;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::TrialManager>>         mTrialManager;
-    ::ll::TypedStorage<8, 64, ::std::function<::MultiPlayerLevel*()>>                mGetCurrentLevel;
+    ::ll::TypedStorage<8, 64, ::std::function<::ClientLevel*()>>                     mGetCurrentLevel;
     ::ll::TypedStorage<8, 32, ::std::string>                                         mLocalPlayerID;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::WorldPlayerInfoBindings>>       mPlayerList;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::WorldPlayerInfoBindings>>       mPrevPlayerList;
@@ -81,7 +76,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldPlayersListFacet() /*override*/;
+    virtual ~WorldPlayersListFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -103,46 +98,8 @@ public:
         ::std::shared_ptr<::Social::FriendList>                            friendList,
         ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>              partyProvider,
         ::Bedrock::NotNullNonOwnerPtr<::TrialManager>                      trialManager,
-        ::std::function<::MultiPlayerLevel*()>                             getCurrentLevel
+        ::std::function<::ClientLevel*()>                                  getCurrentLevel
     );
-
-    MCAPI void _addLocalPlayer();
-
-    MCAPI void _addPlayer(::mce::UUID const& uuid);
-
-    MCAPI void _clearResources();
-
-    MCAPI ::std::optional<::Social::FriendData>
-    _getFriendData(::std::string const& xuid, ::std::string const& platformId) const;
-
-    MCAPI ::mce::UUID _getLocalPlayerUUID() const;
-
-    MCAPI void _initResources();
-
-    MCAPI bool _isPlatformInviteEnabled() const;
-
-    MCAPI void _refreshPlayers();
-
-    MCAPI bool _shouldShowThirdPartyDisconnected() const;
-
-    MCAPI void _updatePlayerInfo(::Social::PlayerProfile const& playerProfile);
-
-    MCAPI void _updatePlayerPermissionLevel(
-        ::ActorUniqueID const&                   playerId,
-        ::std::optional<::PlayerPermissionLevel> playerPermissionLevel
-    );
-
-    MCAPI bool getEnableInviteToPlayButton() const;
-
-    MCFOLD ::std::string const& getLocalPlayerID() const;
-
-    MCFOLD ::std::vector<::OreUI::WorldPlayerInfoBindings> const& getPlayerList() const;
-
-    MCFOLD ::std::vector<::OreUI::SocialPlayer> const& getPlayersInMyWorld() const;
-
-    MCFOLD bool isInRealm() const;
-
-    MCFOLD bool isLocalPlayerHosting() const;
     // NOLINTEND
 
 public:
@@ -168,26 +125,14 @@ public:
         ::std::shared_ptr<::Social::FriendList>                            friendList,
         ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>              partyProvider,
         ::Bedrock::NotNullNonOwnerPtr<::TrialManager>                      trialManager,
-        ::std::function<::MultiPlayerLevel*()>                             getCurrentLevel
+        ::std::function<::ClientLevel*()>                                  getCurrentLevel
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

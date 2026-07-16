@@ -69,8 +69,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCAPI void _unleashAllActors();
     // NOLINTEND
 
 public:
@@ -88,7 +86,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
-    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+    MCFOLD void $reloadHardcodedClient(::ActorInitializationMethod method);
 
     MCFOLD float $getShadowRadius() const;
 

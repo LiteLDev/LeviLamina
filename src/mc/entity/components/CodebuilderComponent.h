@@ -11,10 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::CodeBuilderExecutionState::CodeStatus> mCodeStatus;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void resetCodeStatus();
-    // NOLINTEND
 };

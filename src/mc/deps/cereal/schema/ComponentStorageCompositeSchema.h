@@ -50,20 +50,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::entt::meta_data
-    findComponentData(::entt::meta_type const& type, uint componentId, bool serializeDeprecated);
-
-    MCAPI static ::std::pair<uint, ::entt::meta_data> findComponentFamilyData(
-        ::entt::meta_type const& source,
-        ::entt::meta_type const& curr,
-        ::std::string_view       family,
-        bool                     serializeDeprecated
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $doSave(

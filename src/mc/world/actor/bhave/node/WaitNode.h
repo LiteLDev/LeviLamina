@@ -22,27 +22,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BehaviorStatus tick(::Actor&) /*override*/;
+    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WaitNode();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BehaviorStatus $tick(::Actor&);
+    MCAPI ::BehaviorStatus $tick(::Actor& owner);
 
     MCAPI void $initializeFromDefinition(::Actor& owner);
 

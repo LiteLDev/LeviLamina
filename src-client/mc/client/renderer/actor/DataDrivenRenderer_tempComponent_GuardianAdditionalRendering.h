@@ -9,7 +9,6 @@
 // clang-format off
 class ActorRenderData;
 class BaseActorRenderContext;
-class DataDrivenRenderer;
 class RenderParams;
 // clang-format on
 
@@ -38,44 +37,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void preRender(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    ) /*override*/;
+    virtual void preRender(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
 
     virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit DataDrivenRenderer_tempComponent_GuardianAdditionalRendering(
-        ::std::shared_ptr<::DataDrivenRenderer> renderer
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $preRender(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    );
 
-    MCNAPI void $render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

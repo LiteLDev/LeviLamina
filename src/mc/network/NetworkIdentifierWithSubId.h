@@ -18,8 +18,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI bool operator<(::NetworkIdentifierWithSubId const& other) const;
-
-    MCAPI bool operator==(::NetworkIdentifierWithSubId const& other) const;
+#endif
     // NOLINTEND
 };

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class LayoutComponent;
-class LayoutVariable;
 class UIControl;
 // clang-format on
 
@@ -29,36 +28,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VariableRef(::UIControl& control, ::LayoutVariableType type);
-
     MCAPI VariableRef(::std::weak_ptr<::UIControl> control, ::LayoutVariableType type);
 
-    MCAPI ::std::shared_ptr<::UIControl> getControl() const;
-
-    MCFOLD ::LayoutVariableType getType() const;
-
-    MCFOLD ::LayoutVariable const* getVariable() const;
-
-    MCFOLD ::LayoutVariable* getVariable();
-
-    MCAPI bool isValid() const;
-
     MCAPI bool operator==(::VariableRef const& rhs) const;
-
-    MCAPI ~VariableRef();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& control, ::LayoutVariableType type);
-
     MCAPI void* $ctor(::std::weak_ptr<::UIControl> control, ::LayoutVariableType type);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

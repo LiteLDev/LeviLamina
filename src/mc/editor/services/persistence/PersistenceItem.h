@@ -3,15 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::PubSub { class Subscription; }
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
 
 namespace Editor::Services {
 
@@ -37,48 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PersistenceItem(
-        ::std::string const&                     key,
-        ::Core::PathBuffer<::std::string> const& path,
-        bool                                     replication,
-        ::cereal::ReflectionCtx&                 ctx
-    );
-
-    MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _getFilePath();
-
-    MCNAPI ::std::string _loadItem();
-
     MCNAPI ::std::string const& fetchItemPayload();
 
-    MCNAPI ::std::string const& key() const;
-
-    MCNAPI ::Bedrock::PubSub::Subscription
-    onValueChange(::std::function<void(::Editor::Services::PersistenceItem const&)> callback);
-
     MCNAPI void save();
-
-    MCNAPI void setValue(::std::string const& value);
-
-    MCNAPI ::std::string const& value() const;
-
-    MCNAPI ~PersistenceItem();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::string const&                     key,
-        ::Core::PathBuffer<::std::string> const& path,
-        bool                                     replication,
-        ::cereal::ReflectionCtx&                 ctx
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

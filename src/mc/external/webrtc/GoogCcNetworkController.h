@@ -33,40 +33,33 @@ class GoogCcNetworkController : public ::webrtc::NetworkControllerInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40>  mUnk9dee80;
-    ::ll::UntypedStorage<8, 8>   mUnk56de5d;
-    ::ll::UntypedStorage<8, 8>   mUnkf8a57f;
-    ::ll::UntypedStorage<1, 1>   mUnkeb147a;
+    ::ll::UntypedStorage<8, 40>  mUnk7f8924;
     ::ll::UntypedStorage<8, 80>  mUnkf0a30a;
     ::ll::UntypedStorage<8, 80>  mUnk57188c;
     ::ll::UntypedStorage<1, 1>   mUnk8b17cf;
     ::ll::UntypedStorage<1, 1>   mUnkd58c61;
     ::ll::UntypedStorage<1, 1>   mUnke79c09;
     ::ll::UntypedStorage<8, 88>  mUnk97e0f2;
-    ::ll::UntypedStorage<1, 1>   mUnk46382c;
+    ::ll::UntypedStorage<1, 1>   mUnk52e6e7;
     ::ll::UntypedStorage<8, 8>   mUnk7c1c04;
     ::ll::UntypedStorage<8, 8>   mUnkb34011;
     ::ll::UntypedStorage<8, 8>   mUnka2b5aa;
-    ::ll::UntypedStorage<8, 8>   mUnk2c5c8d;
+    ::ll::UntypedStorage<8, 128> mUnk95b93f;
     ::ll::UntypedStorage<8, 8>   mUnkd5ffc5;
     ::ll::UntypedStorage<8, 8>   mUnk262fe3;
     ::ll::UntypedStorage<8, 8>   mUnk45a2cb;
     ::ll::UntypedStorage<8, 8>   mUnk34b0b2;
     ::ll::UntypedStorage<8, 8>   mUnk22ed57;
-    ::ll::UntypedStorage<8, 160> mUnka6a5d1;
+    ::ll::UntypedStorage<8, 184> mUnka6a5d1;
     ::ll::UntypedStorage<8, 8>   mUnkee1d17;
     ::ll::UntypedStorage<8, 8>   mUnk9181df;
     ::ll::UntypedStorage<8, 8>   mUnk302bae;
     ::ll::UntypedStorage<8, 16>  mUnkc614fc;
     ::ll::UntypedStorage<1, 1>   mUnk4f7e31;
     ::ll::UntypedStorage<8, 144> mUnk22a689;
-    ::ll::UntypedStorage<8, 8>   mUnk3899cf;
-    ::ll::UntypedStorage<4, 4>   mUnka9ed58;
-    ::ll::UntypedStorage<4, 4>   mUnk764bf4;
     ::ll::UntypedStorage<8, 40>  mUnkdaccb3;
     ::ll::UntypedStorage<8, 8>   mUnk9effed;
     ::ll::UntypedStorage<8, 8>   mUnk55879d;
-    ::ll::UntypedStorage<8, 8>   mUnk5bd68b;
     ::ll::UntypedStorage<4, 4>   mUnk221689;
     ::ll::UntypedStorage<1, 2>   mUnk69d66c;
     ::ll::UntypedStorage<8, 8>   mUnkec4825;
@@ -100,7 +93,7 @@ public:
 
     virtual ::webrtc::NetworkControlUpdate OnSentPacket(::webrtc::SentPacket sent_packet) /*override*/;
 
-    virtual ::webrtc::NetworkControlUpdate OnReceivedPacket(::webrtc::ReceivedPacket received_packet) /*override*/;
+    virtual ::webrtc::NetworkControlUpdate OnReceivedPacket(::webrtc::ReceivedPacket) /*override*/;
 
     virtual ::webrtc::NetworkControlUpdate OnStreamsConfig(::webrtc::StreamsConfig msg) /*override*/;
 
@@ -128,6 +121,8 @@ public:
 
     MCNAPI ::std::vector<::webrtc::ProbeClusterConfig>
     ResetConstraints(::webrtc::TargetRateConstraints new_constraints);
+
+    MCNAPI void SetNetworkStateEstimate(::std::optional<::webrtc::NetworkStateEstimate> estimate);
 
     MCNAPI void UpdateCongestionWindowSize();
     // NOLINTEND
@@ -159,7 +154,7 @@ public:
 
     MCNAPI ::webrtc::NetworkControlUpdate $OnSentPacket(::webrtc::SentPacket sent_packet);
 
-    MCNAPI ::webrtc::NetworkControlUpdate $OnReceivedPacket(::webrtc::ReceivedPacket received_packet);
+    MCNAPI ::webrtc::NetworkControlUpdate $OnReceivedPacket(::webrtc::ReceivedPacket);
 
     MCNAPI ::webrtc::NetworkControlUpdate $OnStreamsConfig(::webrtc::StreamsConfig msg);
 

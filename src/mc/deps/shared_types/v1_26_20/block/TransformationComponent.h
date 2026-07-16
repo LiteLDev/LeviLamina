@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct TransformationComponent {
@@ -24,25 +19,15 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::TransformationComponent const&) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NameId();
-
-    MCAPI static ::std::string_view const& RotationId();
-
-    MCAPI static ::std::string_view const& RotationPivotId();
-
-    MCAPI static ::std::string_view const& ScaleId();
-
-    MCAPI static ::std::string_view const& ScalePivotId();
-
-    MCAPI static ::std::string_view const& TranslationId();
     // NOLINTEND
 };
 

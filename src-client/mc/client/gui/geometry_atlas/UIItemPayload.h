@@ -22,18 +22,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                                              mFrame;
     ::ll::TypedStorage<1, 1, bool>                                             mAllowAnimation;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~UIItemPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace GeometryAtlas

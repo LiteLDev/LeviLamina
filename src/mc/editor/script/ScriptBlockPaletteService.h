@@ -3,17 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::ScriptModule { class ScriptBlockPalette; }
-namespace Editor::ScriptModule { class ScriptIBlockPaletteItem; }
-namespace Editor::Services { class EditorBlockPaletteServiceProvider; }
-namespace ScriptModuleMinecraft { class ScriptBlockType; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -35,61 +28,9 @@ public:
     ScriptBlockPaletteService();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptBlockPaletteService(
-        ::Editor::Services::EditorBlockPaletteServiceProvider& provider,
-        ::Scripting::WeakLifetimeScope const&                  scope
-    );
-
-    MCNAPI void addOrReplacePalette(
-        ::std::string const&                                                             paletteId,
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette> palette
-    ) const;
-
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette>>
-    getPalette(::std::string const& paletteId) const;
-
-    MCNAPI ::std::vector<::std::string> getPaletteIdList() const;
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem>>
-    getPaletteItem(::std::string const& paletteId, int index) const;
-
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette> getPrimaryPalette() const;
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
-    getSelectedBlock() const;
-
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem>
-    getSelectedItem() const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> removePalette(::std::string const& paletteId) const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> setPaletteItem(
-        ::std::string const&                                                                  paletteId,
-        int                                                                                   index,
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem> item
-    ) const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> setPrimaryPalette(::std::string const& paletteId) const;
-
-    MCNAPI ::Scripting::Result_deprecated<void>
-    setSelectedItem(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem> item) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::Editor::Services::EditorBlockPaletteServiceProvider& provider, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

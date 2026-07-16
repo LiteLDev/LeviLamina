@@ -19,7 +19,6 @@ namespace Gameface { class ResourceResponse; }
 namespace Gameface { class ResourceStreamResponse; }
 namespace Gameface { class TemporaryTextureHolder; }
 namespace Gameface { struct ResourceRequest; }
-namespace OreUI { struct HybridResourceLocation; }
 // clang-format on
 
 namespace OreUI {
@@ -46,15 +45,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HybridResourceHandler() /*override*/;
+    virtual ~HybridResourceHandler() /*override*/ = default;
 
     virtual ::Gameface::ResourceHandlerStatus
-    onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
+    onResourceRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceResponse&) /*override*/;
 
-    virtual ::Gameface::ResourceHandlerStatus onResourceStreamRequest(
-        ::Gameface::ResourceRequest const&  request,
-        ::Gameface::ResourceStreamResponse& response
-    ) /*override*/;
+    virtual ::Gameface::ResourceHandlerStatus
+    onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&) /*override*/;
 
     virtual void update() /*override*/;
     // NOLINTEND
@@ -70,9 +67,6 @@ public:
         ::std::function<::Gameface::ISyncStreamReader*(::IFileAccess&, ::Core::Path)> const& syncStreamReaderFactory,
         ::Gameface::TemporaryTextureHolder&                                                  temporaryTextureHolder
     );
-
-    MCAPI ::std::optional<::OreUI::HybridResourceLocation>
-    _getAssetResourceLocationFromResourcePackManager(::Gameface::ResourceRequest const& request) const;
     // NOLINTEND
 
 public:
@@ -89,27 +83,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Gameface::ResourceHandlerStatus
-    $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCAPI ::Gameface::ResourceHandlerStatus
-    $onResourceStreamRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceStreamResponse& response);
-
-    MCFOLD void $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

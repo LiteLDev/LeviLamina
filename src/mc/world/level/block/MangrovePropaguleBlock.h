@@ -14,7 +14,6 @@ class Block;
 class BlockPos;
 class BlockSource;
 class BlockType;
-class Random;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
@@ -30,7 +29,8 @@ public:
 
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const&) const /*override*/;
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -48,10 +48,6 @@ public:
     // NOLINTBEGIN
     MCAPI MangrovePropaguleBlock(::std::string const& nameId, int id);
 
-    MCAPI bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI bool _isHanging(::Block const& block) const;
-
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
@@ -68,7 +64,7 @@ public:
 
     MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const&) const;
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 

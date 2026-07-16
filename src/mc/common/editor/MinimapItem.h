@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/MinimapMarkerType.h"
 #include "mc/common/editor/MinimapViewType.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
-#include "mc/deps/game_refs/WeakRef.h"
 
 // auto generated forward declare list
 // clang-format off
-class ICustomBiomeSource;
+namespace Editor::Services { struct MinimapMarkerData; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -25,8 +23,23 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk55e031;
     ::ll::UntypedStorage<4, 4>  mUnkd00df6;
     ::ll::UntypedStorage<4, 4>  mUnk3753e4;
-    ::ll::UntypedStorage<8, 64> mUnke8c2ec;
     ::ll::UntypedStorage<8, 16> mUnk2a09a2;
+    ::ll::UntypedStorage<4, 4>  mUnk4d0c0c;
+    ::ll::UntypedStorage<4, 4>  mUnk9b8dec;
+    ::ll::UntypedStorage<4, 8>  mUnk658126;
+    ::ll::UntypedStorage<4, 4>  mUnk6039ec;
+    ::ll::UntypedStorage<4, 4>  mUnk3d138a;
+    ::ll::UntypedStorage<4, 4>  mUnke8cfd8;
+    ::ll::UntypedStorage<8, 16> mUnkc253c9;
+    ::ll::UntypedStorage<8, 64> mUnkd8a2aa;
+    ::ll::UntypedStorage<1, 1>  mUnk13fa10;
+    ::ll::UntypedStorage<1, 1>  mUnkd2de74;
+    ::ll::UntypedStorage<1, 1>  mUnke5920d;
+    ::ll::UntypedStorage<1, 1>  mUnkb5163a;
+    ::ll::UntypedStorage<8, 24> mUnkdb74a5;
+    ::ll::UntypedStorage<8, 24> mUnk384288;
+    ::ll::UntypedStorage<8, 64> mUnkf3e105;
+    ::ll::UntypedStorage<4, 8>  mUnkf44e5c;
     // NOLINTEND
 
 public:
@@ -41,33 +54,20 @@ public:
     MCNAPI
     MinimapItem(::mce::UUID id, int mapWidth, int mapHeight, ::Editor::Services::MinimapViewType minimapViewType);
 
-    MCNAPI void addMarker(::Editor::Services::MinimapMarkerType markerType);
+    MCNAPI void
+    addCustomMarker(::std::string const& iconIdentifier, ::std::vector<::Editor::Services::MinimapMarkerData> data);
 
-    MCNAPI ::WeakRef<::ICustomBiomeSource> const& getCustomBiome() const;
+    MCNAPI void addLocationMarker(::std::vector<::Editor::Services::MinimapMarkerData> data);
 
-    MCNAPI ::mce::UUID const& getId() const;
+    MCNAPI bool hasCustomGroup(::std::string const& iconIdentifier) const;
 
-    MCNAPI int getMapHeight() const;
+#ifdef LL_PLAT_C
+    MCNAPI void markChunkDirty(int blockX, int blockZ);
 
-    MCNAPI int getMapWidth() const;
+    MCNAPI void removeAllCustomMarkers();
 
-    MCNAPI ::std::unordered_set<::Editor::Services::MinimapMarkerType> const& getMarkerTypes() const;
-
-    MCNAPI ::Editor::Services::MinimapViewType getViewType() const;
-
-    MCNAPI bool hasMarker(::Editor::Services::MinimapMarkerType markerType) const;
-
-    MCNAPI bool isActive() const;
-
-    MCNAPI void removeMarker(::Editor::Services::MinimapMarkerType markerType);
-
-    MCNAPI void setActive(bool active);
-
-    MCNAPI bool setCustomBiome(::WeakRef<::ICustomBiomeSource> const& customBiome);
-
-    MCNAPI void setMapSize(int mapWidth, int mapHeight);
-
-    MCNAPI void setMinimapViewType(::Editor::Services::MinimapViewType viewType);
+    MCNAPI void setMultiplayerMarkers(::std::vector<::Editor::Services::MinimapMarkerData> data);
+#endif
 
     MCNAPI ~MinimapItem();
     // NOLINTEND

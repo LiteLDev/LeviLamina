@@ -12,12 +12,9 @@
 // clang-format off
 class BlockSource;
 class BoundingBox;
-class Dimension;
 class LevelChunk;
 class Random;
 class StructureManager;
-class StructurePiece;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class PillagerOutpostPieces {
@@ -47,133 +44,28 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        PillagerOutpostPiece();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-        virtual void postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
+        virtual void
+        postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
         virtual void addHardcodedSpawnAreas(::LevelChunk& chunk) const /*override*/;
 
         virtual void _handleDataMarker(
-            ::std::string const& markerId,
-            ::BlockPos const&    position,
-            ::BlockSource&       region,
-            ::Random&            random,
-            ::BoundingBox const& chunkBB
+            ::std::string const&,
+            ::BlockPos const&,
+            ::BlockSource&,
+            ::Random&,
+            ::BoundingBox const&
         ) /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI PillagerOutpostPiece(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
-            ::std::string                                     templateName,
-            ::BlockPos const&                                 origin,
-            ::Rotation                                        rotation,
-            float                                             integrity,
-            bool                                              isSatellite,
-            ::Dimension&                                      dimension
-        );
-
-        MCAPI void _addMobsFromPositions(
-            ::BoundingBox const&               chunkBB,
-            ::ActorDefinitionIdentifier const& definition,
-            ::BlockSource&                     region,
-            ::std::vector<::BlockPos> const&   entityPositions
-        );
-
-        MCAPI void _loadTemplate();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
-            ::std::string                                     templateName,
-            ::BlockPos const&                                 origin,
-            ::Rotation                                        rotation,
-            float                                             integrity,
-            bool                                              isSatellite,
-            ::Dimension&                                      dimension
-        );
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
-
-        MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
-
-        MCAPI void $_handleDataMarker(
-            ::std::string const& markerId,
-            ::BlockPos const&    position,
-            ::BlockSource&       region,
-            ::Random&            random,
-            ::BoundingBox const& chunkBB
-        );
-
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _addPiece(
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
-        ::BlockPos const&                                   position,
-        ::Rotation const&                                   rotation,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        ::Dimension&                                        dimension
-    );
-
-    MCAPI static void _addScatteredPieces(
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
-        ::Random&                                           random,
-        ::Rotation const&                                   rotation,
-        ::BlockPos const&                                   parentPos,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Dimension&                                        dimension
-    );
-
-    MCAPI static ::std::vector<::BlockPos> _getPiecePositions(::Random& random);
-
-    MCAPI static void addPieces(
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
-        ::BlockPos const&                                   position,
-        ::Rotation const&                                   rotation,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        ::Dimension&                                        dimension
-    );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::array<::std::string_view, 7>& MSC_FEATURES();
-
-    MCAPI static ::std::string_view& PILLAGER_LOOT();
-
-    MCAPI static ::std::string_view& STRUCTURE_WATCHTOWER();
-
-    MCAPI static ::std::string_view& STRUCTURE_WATCHTOWER_OVERGROWN();
-    // NOLINTEND
 };

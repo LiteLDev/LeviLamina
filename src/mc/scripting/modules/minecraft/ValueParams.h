@@ -16,18 +16,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>           boolVal;
     ::ll::TypedStorage<8, 32, ::std::string> stringVal;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ValueParams();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

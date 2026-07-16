@@ -28,18 +28,6 @@ public:
     RegisterResourceHandlersArguments& operator=(RegisterResourceHandlersArguments const&);
     RegisterResourceHandlersArguments(RegisterResourceHandlersArguments const&);
     RegisterResourceHandlersArguments();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~RegisterResourceHandlersArguments();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

@@ -31,20 +31,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI RealmsJoinData(::World::RealmsJoinData const&);
-
-    MCAPI ~RealmsJoinData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::World::RealmsJoinData const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

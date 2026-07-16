@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/websockets/OpCode.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace RakNet { class BitStream; }
-// clang-format on
-
 class RakWebSocketDataFrame {
 public:
     // RakWebSocketDataFrame inner types define
@@ -42,17 +34,4 @@ public:
     RakWebSocketDataFrame& operator=(RakWebSocketDataFrame const&);
     RakWebSocketDataFrame(RakWebSocketDataFrame const&);
     RakWebSocketDataFrame();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void writeFrameToStream(
-        ::RakNet::BitStream& stream,
-        uchar const*         payload,
-        uint                 size,
-        ::OpCode             opCode,
-        bool                 isFin,
-        uint                 maskKey
-    );
-    // NOLINTEND
 };

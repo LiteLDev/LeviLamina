@@ -12,12 +12,7 @@
 class CompoundTagVariant;
 class IDataInput;
 class IDataOutput;
-class Int64Tag;
-class IntTag;
-class ListTag;
 class PrintStream;
-class ShortTag;
-class StringTag;
 // clang-format on
 
 class CompoundTag : public ::Tag {
@@ -104,24 +99,51 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
     MCAPI void append(::CompoundTag const& tag);
-
-    MCAPI void clear();
 
     MCAPI ::std::unique_ptr<::CompoundTag> clone() const;
 
-    MCAPI bool contains(::std::string_view name) const;
+    MCAPI void deepCopy(::CompoundTag const& other);
 
-    MCAPI bool contains(::std::string_view name, ::Tag::Type type) const;
+    MCFOLD ::Tag const* get(::std::string_view name) const;
+
+    MCFOLD ::Tag* get(::std::string_view name);
+
+    MCAPI ::std::vector<uchar> const& getByteArray(::std::string_view name) const;
+
+    MCAPI ::Tag& put(::std::string name, ::Tag&& tag);
+
+    MCAPI ::Tag* put(::std::string name, ::std::unique_ptr<::Tag> tag);
+
+    MCAPI void putBoolean(::std::string name, bool val);
+
+    MCAPI uchar& putByte(::std::string name, uchar value);
+
+    MCAPI ::std::vector<uchar>& putByteArray(::std::string name, ::std::vector<uchar> mem);
+
+    MCAPI ::CompoundTag& putCompound(::std::string name, ::CompoundTag value);
+
+    MCAPI ::CompoundTag* putCompound(::std::string name, ::std::unique_ptr<::CompoundTag> value);
+
+    MCAPI float& putFloat(::std::string name, float value);
+
+    MCAPI int& putInt(::std::string name, int value);
+
+    MCAPI int64& putInt64(::std::string name, int64 value);
+
+    MCAPI short& putShort(::std::string name, short value);
+
+    MCAPI ::std::string& putString(::std::string name, ::std::string value);
+
+    MCAPI bool remove(::std::string_view name);
+
+    MCAPI void rename(::std::string_view name, ::std::string newName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::CompoundTag&& rhs);
     // NOLINTEND
 
 public:

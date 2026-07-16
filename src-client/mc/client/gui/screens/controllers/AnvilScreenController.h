@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AnvilScreenController() /*override*/;
+    virtual ~AnvilScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -70,14 +70,6 @@ public:
         ::BlockPos const& pos,
         ::ActorUniqueID
     );
-
-    MCAPI void _initScreenControllerProxy();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerStateMachine();
     // NOLINTEND
 
 public:
@@ -88,34 +80,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD void $onLeave();
-
-    MCFOLD bool $_isStillValid() const;
-
-    MCAPI void $_registerCoalesceOrder();
-
-    MCAPI void $_registerAutoPlaceOrder();
-
-    MCAPI ::std::string $_getButtonXDescription();
-
-    MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

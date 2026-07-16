@@ -24,16 +24,4 @@ public:
         ::ll::TypedStorage<1, 1, ::Bedrock::Detail::NonCopyableField> _;
     };
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ParticleTypeRenderObject();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/util/Identifier.h"
 #include "mc/deps/shared_types/util/Reference.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_21_50 {
 
 struct CameraAimAssistPresetDefinition {
@@ -41,15 +36,7 @@ public:
     MCAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const& rhs) const;
-
     MCAPI ~CameraAimAssistPresetDefinition();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

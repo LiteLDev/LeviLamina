@@ -63,23 +63,13 @@ public:
         ::Bedrock::Detail::SignalPublisher* signalID,
         int                                 priority
     );
-
-    MCNAPI bool handleNextSignal();
 #endif
-
-    MCNAPI ~SignalReceiver();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

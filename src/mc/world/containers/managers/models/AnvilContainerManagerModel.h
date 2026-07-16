@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -12,7 +11,6 @@
 class ContainerScreenContext;
 class ItemInstance;
 class ItemStack;
-class Player;
 // clang-format on
 
 class AnvilContainerManagerModel : public ::ContainerManagerModel {
@@ -21,10 +19,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AnvilContainerManagerModel();
 
 public:
     // virtual functions
@@ -37,7 +31,7 @@ public:
 
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    virtual void setData(int, int) /*override*/;
+    virtual void setData(int id, int value) /*override*/;
 
     virtual bool isValid(float pickRange) /*override*/;
 
@@ -49,8 +43,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnvilContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
 #ifdef LL_PLAT_C
     MCAPI void applyDamageToAnvilBlock();
 
@@ -59,21 +51,7 @@ public:
     MCAPI void fireItemCraftedEvent(::ItemInstance const& item);
 
     MCAPI void fireItemEnchantedEvent(::ItemInstance const& item);
-
-    MCFOLD ::BlockPos const& getBlockPos() const;
 #endif
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& RESULT_SLOT();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
@@ -85,7 +63,7 @@ public:
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCFOLD void $setData(int, int);
+    MCFOLD void $setData(int id, int value);
 
     MCAPI bool $isValid(float pickRange);
 

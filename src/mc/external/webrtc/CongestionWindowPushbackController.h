@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit CongestionWindowPushbackController(::webrtc::FieldTrialsView const* key_value_config);
+    MCNAPI explicit CongestionWindowPushbackController(::webrtc::FieldTrialsView const& key_value_config);
 
     MCNAPI void SetDataWindow(::webrtc::DataSize data_window);
 
@@ -45,7 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::FieldTrialsView const* key_value_config);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const& key_value_config);
     // NOLINTEND
 };
 

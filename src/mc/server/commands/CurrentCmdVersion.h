@@ -54,6 +54,9 @@ enum class CurrentCmdVersion : int {
     TestForBlockCommandDoesNotIgnoreBlockState                                        = 44,
     CloneExtraBlockFilterFix                                                          = 45,
     FillCommandUnfillableErrorOutput                                                  = 46,
-    Count                                                                             = 47,
-    Latest                                                                            = 46,
+    StopSoundOutputFix                                                                = 47,
+    PlaySoundOutputFix                                                                = 48,
+    PlayerWaypointsGamerule                                                           = 49,
+    Count                                                                             = 50,
+    Latest                                                                            = 49,
 };

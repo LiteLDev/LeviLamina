@@ -26,11 +26,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit MarketplacePassUpsellScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
 
-    MCAPI bool _isSwitchMPPTrialAvailableAndReady() const;
-
     MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

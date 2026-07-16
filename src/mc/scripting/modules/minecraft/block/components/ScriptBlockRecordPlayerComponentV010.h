@@ -3,15 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockSource;
-namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -19,16 +17,6 @@ namespace Scripting { struct ClassBinding; }
 namespace ScriptModuleMinecraft {
 
 class ScriptBlockRecordPlayerComponentV010 : public ::ScriptModuleMinecraft::BaseScriptBlockActorComponent {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<void> clearRecord();
-
-    MCFOLD ::Scripting::Result_deprecated<bool> isPlaying();
-
-    MCAPI ::Scripting::Result_deprecated<void> setRecord(::ScriptModuleMinecraft::ScriptItemType const& itemType);
-    // NOLINTEND
-
 public:
     // static functions
     // NOLINTBEGIN
@@ -43,12 +31,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static char const*& ComponentId();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -8,15 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Player;
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::API { class EditorExtension; }
-namespace Editor::Services { class BrushShapeManagerServiceProvider; }
-namespace Editor::Services { class ClipboardServiceProvider; }
-namespace Editor::Services { class EditorBlockPaletteServiceProvider; }
-namespace Editor::Services { class EditorMinimapServiceProvider; }
-namespace Editor::Services { class EditorSettingsServiceProvider; }
-namespace Editor::Services { class ServerStructureServiceProvider; }
-namespace Editor::Services { class TransactionManagerServiceProvider; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -38,6 +30,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkda10a3;
     ::ll::UntypedStorage<8, 32> mUnk7daadb;
     ::ll::UntypedStorage<8, 32> mUnkedd544;
+    ::ll::UntypedStorage<8, 32> mUnk45e7c8;
     ::ll::UntypedStorage<8, 32> mUnk39e4e1;
     ::ll::UntypedStorage<8, 32> mUnk5d75b6;
     ::ll::UntypedStorage<8, 32> mUnke39f9e;
@@ -58,25 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorExtensionContext() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI EditorExtensionContext(
-        ::Player&                                                           player,
-        ::Editor::ServiceProviderCollection&                                serviceProviders,
-        ::Editor::Services::EditorSettingsServiceProvider*                  settingsService,
-        ::Editor::Services::TransactionManagerServiceProvider*              transactionManagerServiceProvider,
-        ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider>       clipboardServiceRef,
-        ::Editor::Services::EditorBlockPaletteServiceProvider*              blockPaletteService,
-        ::Editor::Services::BrushShapeManagerServiceProvider*               brushShapeService,
-        ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> serverStructureServiceWeakRef,
-        ::std::weak_ptr<::Editor::Services::EditorMinimapServiceProvider>   minimapServiceWeakRef,
-        ::Scripting::WeakLifetimeScope                                      scope,
-        ::Editor::API::EditorExtension&                                     extension
-    );
+    virtual ~EditorExtensionContext() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -84,38 +59,10 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
 
+#ifdef LL_PLAT_S
     MCNAPI static ::std::optional<::std::unique_ptr<::Editor::API::EditorExtensionContext>>
     tryCreate(::Player& player, ::Scripting::WeakLifetimeScope scope, ::Editor::API::EditorExtension& extension);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Player&                                                           player,
-        ::Editor::ServiceProviderCollection&                                serviceProviders,
-        ::Editor::Services::EditorSettingsServiceProvider*                  settingsService,
-        ::Editor::Services::TransactionManagerServiceProvider*              transactionManagerServiceProvider,
-        ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider>       clipboardServiceRef,
-        ::Editor::Services::EditorBlockPaletteServiceProvider*              blockPaletteService,
-        ::Editor::Services::BrushShapeManagerServiceProvider*               brushShapeService,
-        ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> serverStructureServiceWeakRef,
-        ::std::weak_ptr<::Editor::Services::EditorMinimapServiceProvider>   minimapServiceWeakRef,
-        ::Scripting::WeakLifetimeScope                                      scope,
-        ::Editor::API::EditorExtension&                                     extension
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+#endif
     // NOLINTEND
 };
 

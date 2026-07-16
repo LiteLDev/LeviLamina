@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/client/gui/oreui/binding/FacetTaskState.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/world/template/DownloadWorldTemplateStatus.h"
 #include "mc/client/resources/ImportFailure.h"
@@ -20,7 +19,7 @@ namespace World { class OwnedWorldTemplateManager; }
 
 namespace OreUI {
 
-class WorldTemplateOperationsFacet : public ::OreUI::FacetBase<::OreUI::WorldTemplateOperationsFacet> {
+class WorldTemplateOperationsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::WorldTemplateOperationsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -59,44 +58,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::World::OwnedWorldTemplateManager>           ownedWorldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::World::MarketplacePassWorldTemplateManager> marketplacePassWorldTemplateManager
     );
-
-    MCAPI void _beginTemplateDownload();
-
-    MCAPI void _handleInitialisingState();
-
-    MCAPI void _updateDownloadProgress();
-
-    MCAPI bool canDownloadBeCancelled();
-
-    MCAPI void cancelDownload();
-
-    MCAPI ::std::optional<::World::DownloadWorldTemplateError> downloadWorldTemplate(::std::string const& templateId);
-
-    MCFOLD ::std::string const& getDownloadTotalBytes();
-
-    MCFOLD ::std::string const& getDownloadingProgressBytes();
-
-    MCFOLD float getDownloadingProgressPercent();
-
-    MCAPI ::std::optional<::OreUI::DownloadWorldTemplateStatus> const& getDownloadingStatus();
-
-    MCAPI ::std::optional<::World::DownloadWorldTemplateError> const& getDownloadingTaskResult();
-
-    MCFOLD ::OreUI::FacetTaskState getDownloadingTaskState();
-
-    MCFOLD ::std::string const& getImportedPackName();
-
-    MCFOLD ::std::optional<::ImportFailure> const& getImportingTaskResult();
-
-    MCFOLD ::OreUI::FacetTaskState getImportingTaskState();
-
-    MCFOLD bool getIsTemplateScreenAvailable() const;
-
-    MCAPI void importWorldTemplate();
-
-    MCAPI void resetDownloadTask();
-
-    MCAPI void resetImportTask();
     // NOLINTEND
 
 public:
@@ -117,13 +78,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

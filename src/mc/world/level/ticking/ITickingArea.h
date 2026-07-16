@@ -10,7 +10,6 @@
 // clang-format off
 class Actor;
 class BlockSource;
-class CompoundTag;
 class ITickingAreaView;
 class LevelStorage;
 class Random;
@@ -54,19 +53,19 @@ public:
 
     virtual ::TickingAreaLoadMode getLoadMode() const = 0;
 
-    virtual void setLoadMode(::TickingAreaLoadMode loadMode, ::LevelStorage& levelStorage) = 0;
+    virtual void setLoadMode(::TickingAreaLoadMode, ::LevelStorage&) = 0;
 
     virtual bool isPreloadDone() const = 0;
 
-    virtual void tick(::Tick const& currentTick, bool randomize) = 0;
+    virtual void tick(::Tick const&, bool) = 0;
 
-    virtual void tickSeasons(::Random& random) = 0;
+    virtual void tickSeasons(::Random&) = 0;
 
-    virtual void updatePosition(::Vec3 const& pos) = 0;
+    virtual void updatePosition(::Vec3 const&) = 0;
 
-    virtual void updateAndCenter(::LevelStorage& levelStorage, ::Tick currentLevelTick) = 0;
+    virtual void updateAndCenter(::LevelStorage&, ::Tick) = 0;
 
-    virtual ::Actor* findOwner(uchar& pendingChunks) = 0;
+    virtual ::Actor* findOwner(uchar&) = 0;
 
     virtual bool entityHasBeenFound() const = 0;
 
@@ -74,10 +73,9 @@ public:
 
     virtual bool isRemoved() = 0;
 
-    virtual void remove(::LevelStorage& levelStorage) = 0;
+    virtual void remove(::LevelStorage&) = 0;
 
-    virtual void
-    onComponentChanged(uint radius, float maxDistToPlayers, bool alwaysActive, ::LevelStorage& levelStorage) = 0;
+    virtual void onComponentChanged(uint, float, bool, ::LevelStorage&) = 0;
 
     virtual bool isScoped() const = 0;
 
@@ -86,12 +84,6 @@ public:
     virtual bool isDoneLoadingScoped() const = 0;
 
     virtual bool isStandalone() const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::CompoundTag serialize() const;
     // NOLINTEND
 
 public:

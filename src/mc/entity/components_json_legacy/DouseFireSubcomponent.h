@@ -8,8 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockPos;
-class BlockSource;
 class ProjectileComponent;
 namespace Json { class Value; }
 // clang-format on
@@ -27,20 +25,6 @@ public:
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
     virtual char const* getName() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DouseFireSubcomponent();
-
-    MCAPI void douseFire(::Actor& owner, ::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

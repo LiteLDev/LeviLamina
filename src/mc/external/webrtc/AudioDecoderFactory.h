@@ -9,6 +9,7 @@
 // clang-format off
 namespace webrtc { class AudioCodecPairId; }
 namespace webrtc { class AudioDecoder; }
+namespace webrtc { class Environment; }
 namespace webrtc { struct AudioCodecSpec; }
 namespace webrtc { struct SdpAudioFormat; }
 // clang-format on
@@ -23,8 +24,11 @@ public:
 
     virtual bool IsSupportedDecoder(::webrtc::SdpAudioFormat const&) = 0;
 
-    virtual ::std::unique_ptr<::webrtc::AudioDecoder>
-    MakeAudioDecoder(::webrtc::SdpAudioFormat const&, ::std::optional<::webrtc::AudioCodecPairId>) = 0;
+    virtual ::std::unique_ptr<::webrtc::AudioDecoder> Create(
+        ::webrtc::Environment const&,
+        ::webrtc::SdpAudioFormat const&,
+        ::std::optional<::webrtc::AudioCodecPairId>
+    ) = 0;
 
     virtual ~AudioDecoderFactory() /*override*/ = default;
     // NOLINTEND

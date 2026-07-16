@@ -29,10 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    OnlineSafetyProgressHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
@@ -50,22 +46,6 @@ public:
     virtual ::std::string getTitleText() const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit OnlineSafetyProgressHandler(::std::function<void()> cancelledCallback);
-
-    MCAPI void setCancelled();
-
-    MCFOLD void setDone();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::function<void()> cancelledCallback);
     // NOLINTEND
 
 public:

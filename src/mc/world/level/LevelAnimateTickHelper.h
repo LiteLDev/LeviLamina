@@ -68,8 +68,6 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI explicit LevelAnimateTickHelper(::BaseGameVersion const& baseGameVersion);
-
     MCNAPI void
     _tickBlockAnimationsJavaParity(::BlockSource& region, ::Random& random, ::Vec3 const& centerPosition) const;
 
@@ -81,8 +79,6 @@ public:
     );
 
     MCNAPI void doAnimateTick(::BlockSource& region, ::Vec3 const& centerPosition, ::Vec3 const& viewDirection);
-
-    MCNAPI ~LevelAnimateTickHelper();
 #endif
     // NOLINTEND
 
@@ -111,21 +107,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::BaseGameVersion const& MIN_TIME_LIMITED_JAVA_PARITY_VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::BaseGameVersion const& baseGameVersion);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 };

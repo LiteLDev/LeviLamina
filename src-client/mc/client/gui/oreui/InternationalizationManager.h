@@ -26,42 +26,19 @@ public:
     // NOLINTBEGIN
     virtual ~InternationalizationManager() /*override*/ = default;
 
-    virtual ::cohtml::i18n::IBreakIterator*
-    CreateBreakIterator(::cohtml::i18n::BreakIteratorBoundary type) /*override*/;
+    virtual ::cohtml::i18n::IBreakIterator* CreateBreakIterator(::cohtml::i18n::BreakIteratorBoundary) /*override*/;
 
-    virtual ::cohtml::i18n::TextDirection ComputeBaseDirection(char const* utfBuffer, uint size) const /*override*/;
+    virtual ::cohtml::i18n::TextDirection ComputeBaseDirection(char const*, uint) const /*override*/;
 
-    virtual ::cohtml::i18n::TextDirection ComputeTextDirection(
-        char const*                                                  utfBuffer,
-        uint                                                         size,
-        ::cohtml::IInternationalizationManager::TextDirectionResult* result
-    ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void SetDictionaryData(::std::vector<uchar> data);
+    virtual ::cohtml::i18n::TextDirection
+    ComputeTextDirection(char const*, uint, ::cohtml::IInternationalizationManager::TextDirectionResult*) const
+        /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cohtml::i18n::IBreakIterator* $CreateBreakIterator(::cohtml::i18n::BreakIteratorBoundary type);
 
-    MCAPI ::cohtml::i18n::TextDirection $ComputeBaseDirection(char const* utfBuffer, uint size) const;
-
-    MCAPI ::cohtml::i18n::TextDirection $ComputeTextDirection(
-        char const*                                                  utfBuffer,
-        uint                                                         size,
-        ::cohtml::IInternationalizationManager::TextDirectionResult* result
-    ) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

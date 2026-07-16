@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/DaylightCycle.h"
-
 // auto generated forward declare list
 // clang-format off
 class LevelData;
@@ -25,7 +22,7 @@ public:
     ::ll::UntypedStorage<1, 2>  mUnk8d511f;
     ::ll::UntypedStorage<1, 2>  mUnke9602a;
     ::ll::UntypedStorage<1, 2>  mUnkd7a1c1;
-    ::ll::UntypedStorage<1, 2>  mUnk2f0b54;
+    ::ll::UntypedStorage<4, 8>  mUnk810811;
     ::ll::UntypedStorage<1, 2>  mUnke2177b;
     ::ll::UntypedStorage<1, 2>  mUnkcf46e8;
     ::ll::UntypedStorage<1, 2>  mUnk6d813d;
@@ -81,8 +78,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI GameOptions(::Editor::GameOptions const&);
-
-    MCNAPI void _applyDayLightCycle(::DaylightCycle daylightCyle, ::LevelData& levelData) const;
 
     MCNAPI void applyToLevelData(::LevelData& levelData) const;
 

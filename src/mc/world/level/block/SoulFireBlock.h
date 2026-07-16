@@ -22,10 +22,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class SoulFireBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    SoulFireBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB getCollisionShape(
@@ -36,9 +32,9 @@ public:
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& bufferValue, ::IConstBlockSource const&, ::BlockPos const&, ::AABB&) const /*override*/;
+    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const /*override*/;
 
-    virtual void entityInside(::BlockSource& entity, ::BlockPos const&, ::Actor&) const /*override*/;
+    virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
     virtual bool mayPick() const /*override*/;
 
@@ -55,23 +51,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SoulFireBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isValidSoulFireFuel(::BlockType const& block);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -85,9 +67,9 @@ public:
     ) const;
 
     MCFOLD ::AABB const&
-    $getOutline(::Block const& bufferValue, ::IConstBlockSource const&, ::BlockPos const&, ::AABB&) const;
+    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const;
 
-    MCAPI void $entityInside(::BlockSource& entity, ::BlockPos const&, ::Actor&) const;
+    MCAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
 
     MCFOLD bool $mayPick() const;
 

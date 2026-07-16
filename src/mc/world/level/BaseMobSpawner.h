@@ -62,14 +62,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit BaseMobSpawner(::ActorDefinitionIdentifier actorDefId);
 
-    MCAPI void _delay(::BlockSource& source);
-
 #ifdef LL_PLAT_C
     MCAPI ::Actor* createAndAddDisplayEntity(::BlockSource& region);
-
-    MCFOLD float getOSpin() const;
-
-    MCFOLD float getSpin() const;
 #endif
 
     MCAPI void removeDisplayEntity();

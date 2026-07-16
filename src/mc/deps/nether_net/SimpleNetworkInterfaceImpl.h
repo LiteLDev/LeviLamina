@@ -5,21 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/nether_net/ContextProxy.h"
 #include "mc/deps/nether_net/ESendType.h"
-#include "mc/deps/nether_net/ESessionError.h"
 #include "mc/deps/nether_net/ILanEventHandler.h"
 #include "mc/deps/nether_net/INetherNetTransportInterface.h"
 #include "mc/deps/nether_net/ISignalingEventHandler.h"
-#include "mc/deps/nether_net/SignalingChannelId.h"
-#include "mc/deps/nether_net/utils/ErrorOr.h"
-#include "mc/external/webrtc/PeerConnectionInterface.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
-namespace NetherNet { class CandidateAdd; }
-namespace NetherNet { class ConnectError; }
-namespace NetherNet { class ConnectRequest; }
-namespace NetherNet { class ConnectResponse; }
+namespace NetherNet { class IIdentityAssertionGenerator; }
 namespace NetherNet { class INetherNetTransportInterfaceCallbacks; }
 namespace NetherNet { class ISignalingInterface; }
 namespace NetherNet { struct NetworkID; }
@@ -47,7 +40,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk407f9c;
     ::ll::UntypedStorage<8, 8>   mUnkb5d73e;
     ::ll::UntypedStorage<8, 80>  mUnka71ac8;
-    ::ll::UntypedStorage<8, 384> mUnkcf1ee0;
+    ::ll::UntypedStorage<8, 416> mUnkcf1ee0;
     ::ll::UntypedStorage<1, 1>   mUnk49643d;
     ::ll::UntypedStorage<1, 1>   mUnkbea55f;
     ::ll::UntypedStorage<8, 16>  mUnk6e9a1e;
@@ -66,46 +59,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SimpleNetworkInterfaceImpl() /*override*/;
+    virtual ~SimpleNetworkInterfaceImpl() /*override*/ = default;
 
-    virtual bool SendPacket(
-        ::NetherNet::NetworkID remoteId,
-        uint64                 connectionId,
-        ::std::string const&   data,
-        ::NetherNet::ESendType eSendType
+    virtual bool SendPacket(::NetherNet::NetworkID, uint64, ::std::string const&, ::NetherNet::ESendType) /*override*/;
+
+    virtual bool IsPacketAvailable(::NetherNet::NetworkID, uint64, uint*) /*override*/;
+
+    virtual bool ReadPacket(::NetherNet::NetworkID, uint64, void*, uint, uint*) /*override*/;
+
+    virtual bool OpenSessionWithUser(
+        ::NetherNet::NetworkID,
+        ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator>
     ) /*override*/;
 
-    virtual bool
-    IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize) /*override*/;
+    virtual bool CloseSessionWithUser(::NetherNet::NetworkID, uint64) /*override*/;
 
-    virtual bool ReadPacket(
-        ::NetherNet::NetworkID remoteId,
-        uint64                 connectionId,
-        void*                  pubDest,
-        uint                   cbDest,
-        uint*                  pcbMessageSize
-    ) /*override*/;
+    virtual bool GetSessionState(::NetherNet::NetworkID, uint64, ::NetherNet::SessionState*) /*override*/;
 
-    virtual bool OpenSessionWithUser(::NetherNet::NetworkID networkIDRemote) /*override*/;
+    virtual void SetSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface> const&) /*override*/;
 
-    virtual bool CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId) /*override*/;
+    virtual void SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const&) /*override*/;
 
-    virtual bool GetSessionState(
-        ::NetherNet::NetworkID     networkIDRemote,
-        uint64                     connectionId,
-        ::NetherNet::SessionState* pConnectionState
-    ) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler*) /*override*/;
 
-    virtual void SetSignalingInterface(
-        ::std::shared_ptr<::NetherNet::ISignalingInterface> const& pWebRTCSignalingInterface
-    ) /*override*/;
-
-    virtual void SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const& config) /*override*/;
-
-    virtual ::Bedrock::PubSub::Subscription
-    RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
-
-    virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler* handler) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler*) /*override*/;
 
     virtual bool IsBroadcastDiscoveryEnabled() /*override*/;
 
@@ -113,9 +90,9 @@ public:
 
     virtual void DisableBroadcastDiscovery() /*override*/;
 
-    virtual void AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ip, int port) /*override*/;
+    virtual void AddLanHost(::NetherNet::NetworkID, ::std::string const&, int) /*override*/;
 
-    virtual void RemoveLanHost(::NetherNet::NetworkID remote) /*override*/;
+    virtual void RemoveLanHost(::NetherNet::NetworkID) /*override*/;
 
     virtual void EnableLANSignaling() /*override*/;
 
@@ -125,45 +102,26 @@ public:
 
     virtual void DisableTrickleIce() /*override*/;
 
-    virtual void OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event) /*override*/;
+    virtual void OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const&) /*override*/;
 
-    virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event) /*override*/;
+    virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const&) /*override*/;
 
-    virtual void OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const& event) /*override*/;
+    virtual void OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const&) /*override*/;
 
-    virtual void OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const& event) /*override*/;
+    virtual void OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void Finalize();
+
     MCNAPI void Initialize(::NetherNet::INetherNetTransportInterfaceCallbacks* pCallbacks);
 
-    MCNAPI void InitializeConfiguration(
-        ::NetherNet::TransportConfiguration const*           pConfiguration,
-        ::webrtc::PeerConnectionInterface::RTCConfiguration* pRtcConfigOut
-    );
-
-    MCNAPI void ReceiveFromSignalingChannel(
-        ::NetherNet::NetworkID          from,
-        ::std::string_view              message,
-        ::NetherNet::SignalingChannelId sourceChannel
-    );
-
-    MCNAPI ::NetherNet::ErrorOr<void, ::NetherNet::ESessionError> SendToSignalingChannel(
-        ::NetherNet::NetworkID networkIDTo,
-        ::std::variant<
-            ::NetherNet::ConnectRequest,
-            ::NetherNet::ConnectResponse,
-            ::NetherNet::ConnectError,
-            ::NetherNet::CandidateAdd> const&            signal,
-        ::std::optional<::NetherNet::SignalingChannelId> preference
-    );
-
     MCNAPI SimpleNetworkInterfaceImpl(
-        ::NetherNet::ContextProxy const&     ctx,
-        ::NetherNet::NetworkID               networkID,
-        ::NetherNet::TransportConfiguration* pConfiguration
+        ::NetherNet::ContextProxy const&           ctx,
+        ::NetherNet::NetworkID const&              networkID,
+        ::NetherNet::TransportConfiguration const& configuration
     );
     // NOLINTEND
 
@@ -171,91 +129,16 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::NetherNet::ContextProxy const&     ctx,
-        ::NetherNet::NetworkID               networkID,
-        ::NetherNet::TransportConfiguration* pConfiguration
+        ::NetherNet::ContextProxy const&           ctx,
+        ::NetherNet::NetworkID const&              networkID,
+        ::NetherNet::TransportConfiguration const& configuration
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $SendPacket(
-        ::NetherNet::NetworkID remoteId,
-        uint64                 connectionId,
-        ::std::string const&   data,
-        ::NetherNet::ESendType eSendType
-    );
 
-    MCNAPI bool $IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize);
-
-    MCNAPI bool
-    $ReadPacket(::NetherNet::NetworkID remoteId, uint64 connectionId, void* pubDest, uint cbDest, uint* pcbMessageSize);
-
-    MCNAPI bool $OpenSessionWithUser(::NetherNet::NetworkID networkIDRemote);
-
-    MCNAPI bool $CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
-
-    MCNAPI bool $GetSessionState(
-        ::NetherNet::NetworkID     networkIDRemote,
-        uint64                     connectionId,
-        ::NetherNet::SessionState* pConnectionState
-    );
-
-    MCNAPI void
-    $SetSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface> const& pWebRTCSignalingInterface);
-
-    MCNAPI void $SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const& config);
-
-    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
-
-    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ILanEventHandler* handler);
-
-    MCNAPI bool $IsBroadcastDiscoveryEnabled();
-
-    MCNAPI void $EnableBroadcastDiscovery();
-
-    MCNAPI void $DisableBroadcastDiscovery();
-
-    MCNAPI void $AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ip, int port);
-
-    MCNAPI void $RemoveLanHost(::NetherNet::NetworkID remote);
-
-    MCNAPI void $EnableLANSignaling();
-
-    MCNAPI void $DisableLANSignaling();
-
-    MCNAPI void $EnableTrickleIce();
-
-    MCNAPI void $DisableTrickleIce();
-
-    MCNAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event);
-
-    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event);
-
-    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const& event);
-
-    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const& event);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForISignalingEventHandler();
-
-    MCNAPI static void** $vftableForILanEventHandler();
-
-    MCNAPI static void** $vftableForContextProxy();
-
-    MCNAPI static void** $vftableForINetherNetTransportInterface();
     // NOLINTEND
 };
 

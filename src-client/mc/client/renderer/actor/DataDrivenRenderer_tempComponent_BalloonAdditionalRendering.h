@@ -11,11 +11,7 @@ class AABB;
 class Actor;
 class ActorRenderData;
 class BaseActorRenderContext;
-class DataDrivenRenderer;
 class RenderParams;
-class Tessellator;
-class Vec3;
-namespace mce { class Mesh; }
 // clang-format on
 
 class DataDrivenRenderer_tempComponent_BalloonAdditionalRendering : public ::DataDrivenRenderer_tempComponent {
@@ -41,61 +37,14 @@ public:
     // NOLINTBEGIN
     virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
 
-    virtual void renderEffects(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    ) /*override*/;
+    virtual void renderEffects(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
 
-    virtual ::AABB getRenderBounds(::Actor const& entity) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit DataDrivenRenderer_tempComponent_BalloonAdditionalRendering(
-        ::std::shared_ptr<::DataDrivenRenderer> renderer
-    );
-
-    MCNAPI ::mce::Mesh _extractRopeMesh(
-        ::Tessellator&     t,
-        ::glm::vec3 const& ropeStart,
-        ::glm::vec3 const& ropeEnd,
-        int                sideIndex,
-        int                sideCount
-    ) const;
-
-    MCNAPI ::Vec3 _getBalloonAnchor(
-        ::Actor*                  attached,
-        ::Actor&                  balloon,
-        ::BaseActorRenderContext& renderContext,
-        float                     actorFrameAlpha
-    ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer);
+    virtual ::AABB getRenderBounds(::Actor const&) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&);
 
-    MCNAPI void $renderEffects(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    );
-
-    MCNAPI ::AABB $getRenderBounds(::Actor const& entity) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -15,8 +15,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IConstBlockSource;
-class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct ActorGameTypeComponent;
@@ -27,7 +25,6 @@ struct CanStandOnSnowFlagComponent;
 struct DimensionTypeComponent;
 struct ExternalDataComponent;
 struct FallDistanceComponent;
-struct GetAttachPositionViews;
 struct HasLightweightFamilyFlagComponent;
 struct HorseFlagComponent;
 struct LocalConstBlockSourceFactoryComponent;
@@ -42,7 +39,6 @@ struct PlayerComponent;
 struct PlayerInputRequestComponent;
 struct RenderRotationComponent;
 struct StandAnimationComponent;
-struct TickingSystemWithInfo;
 struct VanillaOffsetComponent;
 struct VehicleComponent;
 // clang-format on
@@ -152,53 +148,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& strictContext
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-
-    MCAPI static void tickPlayerBoundingBoxStateUpdateSystem(
-        ::StrictEntityContext const&   context,
-        ::AABBShapeComponent const&    aabb,
-        ::PlayerInputRequestComponent& request,
-        ::StrictExecutionContext<
-            ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
-                ::HorseFlagComponent,
-                ::MobFlagComponent,
-                ::ParrotFlagComponent,
-                ::VehicleComponent,
-                ::CamelFlagComponent,
-                ::PlayerComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
-                ::ActorTypeComponent,
-                ::FallDistanceComponent,
-                ::PassengerComponent,
-                ::ActorGameTypeComponent,
-                ::ActorDataFlagComponent,
-                ::VehicleComponent,
-                ::ActorRotationComponent,
-                ::MobBodyRotationComponent,
-                ::RenderRotationComponent,
-                ::StandAnimationComponent,
-                ::OffsetsComponent,
-                ::VanillaOffsetComponent,
-                ::PassengerRenderingRidingOffsetComponent,
-                ::DimensionTypeComponent>,
-            ::Write<::PlayerInputRequestComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>&        executionContext,
-        float                           sneakHeight,
-        ::GetAttachPositionViews const& views,
-        ::IConstBlockSource const&      region
-    );
     // NOLINTEND
 
 public:

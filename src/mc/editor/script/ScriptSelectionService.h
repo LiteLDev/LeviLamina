@@ -3,17 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/script_engine/Promise.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::ScriptModule { struct ScriptSelectionManifestData; }
-namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -39,20 +35,6 @@ public:
     // NOLINTBEGIN
     MCNAPI
     ScriptSelectionService(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
-
-    MCNAPI ::Scripting::Promise<double, ::Scripting::Error>
-    deselectBlocks(::Scripting::ScriptObjectFactory& factory, ::std::string const& blockIdentifier);
-
-    MCNAPI ::Scripting::Promise<::Editor::ScriptModule::ScriptSelectionManifestData, ::Scripting::Error>
-    generateManifest(::Scripting::ScriptObjectFactory& factory);
-
-    MCNAPI ::std::optional<::Editor::ScriptModule::ScriptSelectionManifestData> getCurrentManifest() const;
-
-    MCNAPI ::Scripting::Promise<double, ::Scripting::Error> replaceBlocks(
-        ::Scripting::ScriptObjectFactory& factory,
-        ::std::string const&              fromBlockIdentifier,
-        ::std::string const&              toBlockIdentifier
-    );
     // NOLINTEND
 
 public:

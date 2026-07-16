@@ -8,9 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class SemVersion;
-namespace SharedTypes::v1_21_90 { struct SwingDurationItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,18 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SwingDurationItemComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SwingDurationItemComponent(::SharedTypes::v1_21_90::SwingDurationItemComponent component);
-
-    MCAPI uint getValueInTicks() const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(
@@ -41,14 +27,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_90::SwingDurationItemComponent component);
     // NOLINTEND
 
 public:

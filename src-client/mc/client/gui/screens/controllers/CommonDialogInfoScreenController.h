@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommonDialogInfoScreenController() /*override*/;
+    virtual ~CommonDialogInfoScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
     // NOLINTEND
@@ -38,8 +38,6 @@ public:
         ::std::string const&                      dialogTitle,
         ::std::string const&                      dialogBody
     );
-
-    MCAPI void _showCommonDialog();
     // NOLINTEND
 
 public:
@@ -53,22 +51,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

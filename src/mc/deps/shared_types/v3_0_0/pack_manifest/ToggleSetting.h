@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/v3_0_0/pack_manifest/SettingType.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v3_0_0::PackManifestDefinition {
 
 struct ToggleSetting {
@@ -31,21 +26,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ToggleSetting(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting const&);
-
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting&&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 
 public:

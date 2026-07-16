@@ -9,10 +9,8 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
-class CommandRegistry;
 class IScriptDebugger;
 class ScriptDiagnosticsPublishToFile;
-struct ScriptSettings;
 // clang-format on
 
 class ServerScriptDebugCommand : public ::ScriptDebugCommand {
@@ -30,18 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const& output, ::CommandOutput&) const /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void setup(
-        ::CommandRegistry&                registry,
-        ::IScriptDebugger*                debugger,
-        ::ScriptDiagnosticsPublishToFile* diagnosticsPublishToFile,
-        ::ScriptSettings const&           settings
-    );
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -57,14 +44,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& output, ::CommandOutput&) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -44,7 +44,7 @@ public:
 
     virtual void terminate() /*override*/;
 
-    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const&) /*override*/;
+    virtual void render(::ScreenContext&, ::FrameRenderObject const&) /*override*/;
 
     virtual bool screenIsNotFlushable() const /*override*/;
 
@@ -58,9 +58,9 @@ public:
 
     virtual ::std::string getScreenName() const /*override*/;
 
-    virtual bool equalsScreenName(::std::string_view comparison) const /*override*/;
+    virtual bool equalsScreenName(::std::string_view) const /*override*/;
 
-    virtual bool containsScreenNameSubstring(::std::string_view substring) const /*override*/;
+    virtual bool containsScreenNameSubstring(::std::string_view) const /*override*/;
 
     virtual bool getShouldSendEvents() /*override*/;
 
@@ -75,8 +75,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::CubemapBackgroundResources> const& cubemapResources,
         bool                                                               flushable
     );
-
-    MCAPI void renderCubemap(::ScreenContext& screenContext, bool hdrCubemap);
     // NOLINTEND
 
 public:
@@ -98,36 +96,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::ScreenSizeData const& screenSizeData);
 
-    MCAPI void $terminate();
-
-    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const&);
-
-    MCFOLD bool $screenIsNotFlushable() const;
-
-    MCAPI bool $renderOnlyWhenTopMost() const;
-
-    MCFOLD bool $lowFreqRendering() const;
-
-    MCFOLD bool $renderGameBehind() const;
-
-    MCFOLD bool $isShowingMenu() const;
-
-    MCAPI ::std::string $getScreenName() const;
-
-    MCAPI bool $equalsScreenName(::std::string_view comparison) const;
-
-    MCAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
-
-    MCFOLD bool $getShouldSendEvents();
-
-    MCFOLD ::RectangleArea $getAreaOfControlByName(::std::string const&) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

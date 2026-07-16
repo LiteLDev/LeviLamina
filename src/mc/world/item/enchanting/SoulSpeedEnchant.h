@@ -30,10 +30,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int getLevel(::Actor const& entity);
-
-    MCAPI static float getSpeedBoost(int level);
-
-    MCAPI static bool shouldSpawnParticles(::Actor const& entity);
     // NOLINTEND
 
 public:
@@ -56,11 +52,5 @@ public:
     MCFOLD bool $isDiscoverable() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

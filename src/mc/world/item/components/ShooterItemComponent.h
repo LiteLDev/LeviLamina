@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class ComponentItem;
-class HashedString;
 class ItemStack;
 class Player;
 class SemVersion;
@@ -34,12 +33,6 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, float> mDuration;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCFOLD void setValue(float duration);
         // NOLINTEND
     };
 
@@ -66,9 +59,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ShooterItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ShooterItemComponent() /*override*/;
+    virtual ~ShooterItemComponent() /*override*/ = default;
 
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
@@ -78,25 +75,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ShooterItemComponent();
-
     MCAPI explicit ShooterItemComponent(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
 
-    MCAPI void _consumeAmmunition(
-        ::Player*          player,
-        ::ItemStack const& ammunition,
-        int                slotIndex,
-        bool               infiniteAmmo,
-        bool               fromOffhand
-    ) const;
-
-    MCAPI int _getAmmunition(::Player const* player, bool ammo, ::ItemStack& fromOffhand, bool&) const;
-
-    MCAPI void _shootProjectiles(::ItemStack& shooterStack, ::Player* player, int durationLeft) const;
-
     MCAPI bool releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
-
-    MCAPI void use(bool& result, ::ItemStack& instance, ::Player& player) const;
     // NOLINTEND
 
 public:
@@ -107,22 +88,12 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

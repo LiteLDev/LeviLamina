@@ -84,9 +84,9 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
-    MCFOLD ::SerializationMode $getSerializationMode() const;
+    MCAPI ::SerializationMode $getSerializationMode() const;
 
-    MCFOLD void $setSerializationMode(::SerializationMode mode);
+    MCAPI void $setSerializationMode(::SerializationMode mode);
 
     MCAPI void $writeWithSerializationMode(
         ::BinaryStream&                      stream,

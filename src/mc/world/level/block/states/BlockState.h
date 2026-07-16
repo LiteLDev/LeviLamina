@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class Tag;
 // clang-format on
 
 class BlockState {
@@ -25,7 +25,7 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::BlockState::StateListNode*> mNext;
         ::ll::TypedStorage<8, 8, ::BlockState::StateListNode*> mPrev;
-        ::ll::TypedStorage<8, 8, ::BlockState*>                mState;
+        ::ll::TypedStorage<8, 8, ::BlockState const*>          mState;
         // NOLINTEND
 
     public:
@@ -59,34 +59,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockState();
+    virtual ~BlockState() = default;
 
-    virtual void toNBT(::CompoundTag& tag, int val) const = 0;
+    virtual ::std::unique_ptr<::Tag> _toNBT(int) const = 0;
 
-    virtual bool fromNBT(::CompoundTag const& tag, int& outValue) const = 0;
+    virtual ::std::optional<int> _fromNBT(::Tag const&) const = 0;
     // NOLINTEND
 
 public:
-    // static functions
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void forEachState(::brstd::function_ref<bool(::BlockState const&)> callback);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void toNBT(::CompoundTag& tag, int val) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

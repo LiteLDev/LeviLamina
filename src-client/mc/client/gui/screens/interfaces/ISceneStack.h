@@ -37,19 +37,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~SceneElement();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
+        virtual ~SceneElement() = default;
         // NOLINTEND
     };
 
@@ -82,15 +70,14 @@ public:
 
     virtual void setOptions(::std::weak_ptr<::OptionRegistry> options) = 0;
 
-    virtual void
-    registerSceneChangeCallback(void* token, ::std::function<void(::AbstractScene&)> sceneChangeCallback) = 0;
+    virtual void registerSceneChangeCallback(void*, ::std::function<void(::AbstractScene&)>) = 0;
 
-    virtual void unregisterSceneChangeCallback(void* token) = 0;
+    virtual void unregisterSceneChangeCallback(void*) = 0;
 
     virtual void
     registerPrePushSceneCallback(void* token, ::std::function<void(::AbstractScene&)> prePushSceneCallback) = 0;
 
-    virtual void unregisterPrePushSceneCallback(void* token) = 0;
+    virtual void unregisterPrePushSceneCallback(void*) = 0;
 
     virtual void registerPushSceneCallback(
         void* token,
@@ -98,12 +85,12 @@ public:
             pushSceneCallback
     ) = 0;
 
-    virtual void unregisterPushSceneCallback(void* token) = 0;
+    virtual void unregisterPushSceneCallback(void*) = 0;
 
     virtual void
     registerPrePopSceneCallback(void* token, ::std::function<void(::AbstractScene*)> prePopSceneCallback) = 0;
 
-    virtual void unregisterPrePopSceneCallback(void* token) = 0;
+    virtual void unregisterPrePopSceneCallback(void*) = 0;
 
     virtual void registerPopSceneCallback(
         void* token,
@@ -111,55 +98,40 @@ public:
             popSceneCallback
     ) = 0;
 
-    virtual void unregisterPopSceneCallback(void* token) = 0;
+    virtual void unregisterPopSceneCallback(void*) = 0;
 
-    virtual void forEachVisibleScreen(
-        ::brstd::function_ref<void(::AbstractScene&)> callback,
-        bool                                          tickedLastFrame,
-        bool                                          splitscreenRenderBypassThisFrame
-    ) = 0;
+    virtual void forEachVisibleScreen(::brstd::function_ref<void(::AbstractScene&)>, bool, bool) = 0;
 
-    virtual void forEachScreen(::brstd::function_ref<bool(::AbstractScene&)> callback, bool topDown) = 0;
+    virtual void forEachScreen(::brstd::function_ref<bool(::AbstractScene&)>, bool) = 0;
+
+    virtual void forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)>, bool) const = 0;
 
     virtual void
-    forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)> callback, bool topDown) const = 0;
+    forEachAlwaysAcceptInputScreen(::brstd::function_ref<void(::AbstractScene&)>, ::AbstractScene const*) = 0;
 
-    virtual void forEachAlwaysAcceptInputScreen(
-        ::brstd::function_ref<void(::AbstractScene&)> callback,
-        ::AbstractScene const*                        ignoreScreen
-    ) = 0;
+    virtual void forEachAlwaysAcceptInputScreenWithTop(::brstd::function_ref<void(::AbstractScene&)>) = 0;
 
-    virtual void forEachAlwaysAcceptInputScreenWithTop(::brstd::function_ref<void(::AbstractScene&)> callback) = 0;
+    virtual void pushScreenWithRouteAction(::std::shared_ptr<::AbstractScene>, ::OreUI::RouteAction const&) = 0;
 
-    virtual void pushScreenWithRouteAction(
-        ::std::shared_ptr<::AbstractScene> newScreen,
-        ::OreUI::RouteAction const&        routeAction
-    ) = 0;
-
-    virtual void popScreenWithRouteAction(::OreUI::RouteAction const& routeAction) = 0;
+    virtual void popScreenWithRouteAction(::OreUI::RouteAction const&) = 0;
 
     virtual void pushScreen(::std::shared_ptr<::AbstractScene> newScreen, bool flush) = 0;
 
-    virtual void schedulePopScreen(int totalPopNumber) = 0;
+    virtual void schedulePopScreen(int) = 0;
 
-    virtual void schedulePopScreenWithExpectedNames(::std::vector<::std::string> const& expectedScreenNames) = 0;
+    virtual void schedulePopScreenWithExpectedNames(::std::vector<::std::string> const&) = 0;
 
-    virtual void flushStack(
-        bool                    immediate,
-        bool                    ignoreNotFlushableFlag,
-        bool                    ignoreTransitions,
-        ::std::function<void()> postFlushCallback
-    ) = 0;
+    virtual void flushStack(bool, bool, bool, ::std::function<void()>) = 0;
 
     virtual void deferUpdatesUntilNextTick() = 0;
 
-    virtual ::std::optional<uint64> getFirstSceneIndexOfSceneType(::ui::SceneType sceneType) const = 0;
+    virtual ::std::optional<uint64> getFirstSceneIndexOfSceneType(::ui::SceneType) const = 0;
 
-    virtual bool popScreensBackTo(::ui::SceneType const sceneType) = 0;
+    virtual bool popScreensBackTo(::ui::SceneType const) = 0;
 
-    virtual bool popScreensBackToFirstInstanceOf(::ui::SceneType const sceneType) = 0;
+    virtual bool popScreensBackToFirstInstanceOf(::ui::SceneType const) = 0;
 
-    virtual bool popTopScreensOfType(::ui::SceneType const sceneType) = 0;
+    virtual bool popTopScreensOfType(::ui::SceneType const) = 0;
 
     virtual bool update() = 0;
 
@@ -211,15 +183,15 @@ public:
 
     virtual bool isScreenReplaceable() const = 0;
 
-    virtual void handleTextChar(::std::string const& inputUtf8) = 0;
+    virtual void handleTextChar(::std::string const&) = 0;
 
-    virtual void setBufferTextCharEvents(bool pushTextCharEvents) = 0;
+    virtual void setBufferTextCharEvents(bool) = 0;
 
     virtual bool isBufferingTextCharEvents() const = 0;
 
-    virtual bool isOnSceneStack(::ui::SceneType sceneType) const = 0;
+    virtual bool isOnSceneStack(::ui::SceneType) const = 0;
 
-    virtual bool isOnSceneStack(::std::string const& screenName) const = 0;
+    virtual bool isOnSceneStack(::std::string const&) const = 0;
 
     virtual ::SceneStackProxy* getProxy() = 0;
 
@@ -229,7 +201,7 @@ public:
 
     virtual void setScreenThreshold(::ScreenThreshold const& screenThreshold) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription registerSceneStackDestroyedListener(::std::function<void()> callback) = 0;
+    virtual ::Bedrock::PubSub::Subscription registerSceneStackDestroyedListener(::std::function<void()>) = 0;
     // NOLINTEND
 
 public:

@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class UIAnimationComponent;
 class UIControl;
-class UIResolvedDef;
 // clang-format on
 
 class UIAnimAlpha : public ::UIAnim {
@@ -22,44 +20,18 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UIAnimAlpha();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::shared_ptr<::UIAnim> clone() /*override*/;
 
-    virtual bool tick(::UIControl& ownerControl, float const deltaTime) /*override*/;
+    virtual bool tick(::UIControl&, float const) /*override*/;
 
-    virtual void _reset(::UIControl& ownerControl) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI UIAnimAlpha(::UIAnimationComponent& animComponent, ::UIResolvedDef const& def);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIAnimationComponent& animComponent, ::UIResolvedDef const& def);
+    virtual void _reset(::UIControl&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UIAnim> $clone();
 
-    MCAPI bool $tick(::UIControl& ownerControl, float const deltaTime);
-
-    MCAPI void $_reset(::UIControl& ownerControl);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

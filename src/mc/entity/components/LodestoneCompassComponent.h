@@ -41,38 +41,15 @@ public:
     MCAPI ::LodestoneCompassComponentCalculator*
     _createCalculator(::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId);
 
-    MCAPI int getAnimationFrame(
-        ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
-        ::BlockPos const&                                                                lookFromPosition,
-        ::DimensionType const&                                                           lookFromDimension
-    );
-
-    MCFOLD void initialize(::PositionTrackingId const& trackingHandle);
-
-    MCAPI void setTrackOnlyInSameDimension(
-        ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
-        bool                                                                             trackOnlyInSameDimension
-    );
-
 #ifdef LL_PLAT_C
     MCAPI bool tick(::Level& level);
 #endif
-
-    MCAPI ~LodestoneCompassComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int getSpinningAnimationFrame();
-
-    MCAPI static ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>
-    makeCalculatorId(::ActorUniqueID const& id);
-
 #ifdef LL_PLAT_C
-    MCAPI static ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>
-    makeCalculatorId(::BlockPos const& pos, ::DimensionType const& dimension);
-
     MCAPI static void tickSpinningCalculator();
 #endif
     // NOLINTEND
@@ -81,11 +58,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::CompassSpriteCalculator& mSpinningLodestone();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

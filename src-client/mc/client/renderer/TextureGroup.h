@@ -7,7 +7,6 @@
 #include "mc/client/renderer/ImageBufferResourceManager.h"
 #include "mc/client/renderer/ImageCacheMode.h"
 #include "mc/client/renderer/TextureLoadMode.h"
-#include "mc/deps/core/resource/ResourceFileSystem.h"
 #include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/CountTracker.h"
@@ -16,7 +15,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core_graphics/ImageBuffer.h"
 #include "mc/deps/core_graphics/TextureSetLayerType.h"
-#include "mc/deps/minecraft_renderer/renderer/IsMissingTexture.h"
 #include "mc/deps/minecraft_renderer/renderer/TextureGroupBase.h"
 #include "mc/resources/ResourceLoadType.h"
 #include "mc/util/texture_set_helpers/TextureSetDefinitionLoader.h"
@@ -27,9 +25,7 @@ class BedrockTexture;
 class IAdvancedGraphicsOptions;
 class ResourceLoadManager;
 class ResourceLocationPair;
-struct BedrockTextureData;
 namespace cg { class TextureSetDefinition; }
-namespace cg { class TextureSetImageDescription; }
 namespace mce { class ImageResourceLoader; }
 namespace mce { class LRUCache; }
 namespace mce { class TextureContainer; }
@@ -110,41 +106,15 @@ public:
         ::std::shared_ptr<::mce::ImageResourceLoader>             imageResourceLoader
     );
 
-    MCAPI void _loadTextureAsyncUrgentlyIfTouched(
-        ::std::pair<::ResourceLocation, ::TextureLoadMode> const& textureLoadKey,
-        ::std::optional<::ResourceLoadType>                       optionalLoadType
-    );
-
-    MCAPI void _loadTexturesAsync(
-        ::gsl::span<::ResourceLocationPair> locationPairs,
-        ::std::optional<::ResourceLoadType> resourceLoadType
-    );
-
-    MCAPI void _loadTexturesSync(::gsl::span<::ResourceLocation> locations);
-
-    MCAPI void _unloadFileSystem(::ResourceFileSystem fileSystem);
-
     MCAPI void addEmptyTexture(::ResourceLocation const& resourceLocation, int width, int height);
-
-    MCAPI void clearCPUStorage();
 
     MCAPI void enableLRUCache(uint64 cacheSize);
 
     MCAPI uint64 estimateMemoryUsage() const;
 
-    MCFOLD void frameUpdate();
-
-    MCAPI ::BedrockTextureData const* getBedrockTextureData(::ResourceLocation const& resourceLocation) const;
-
-    MCAPI ::cg::ImageBuffer* getCachedImage(::ResourceLocation const& resourceLocation) const;
-
     MCAPI ::cg::ImageBuffer* getCachedImageOrLoadAsync(::ResourceLocation const& imageToLoad);
 
     MCAPI ::cg::ImageBuffer* getCachedImageOrLoadSync(::ResourceLocation const& resourceLocation, bool forceReload);
-
-    MCAPI ::ImageBufferResourceManager getImageBufferResourceManagerCopy() const;
-
-    MCFOLD ::cg::ImageBuffer const& getMissingImageBuffer() const;
 
     MCAPI ::cg::ImageBuffer*
     insertImageIntoCache(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer&& imageBuffer);
@@ -154,10 +124,6 @@ public:
         bool                      ignoreCreation,
         ::cg::TextureSetLayerType textureType
     ) const;
-
-    MCAPI ::IsMissingTexture isMissingTexture(::ResourceLocation const& resourceLocation) const;
-
-    MCAPI bool isReloading() const;
 
     MCAPI ::nonstd::expected<void, ::std::error_condition>
     loadImageSyncAndInsertIntoCache(::ResourceLocation const& resourceLocation, bool splitAsArray);
@@ -189,16 +155,7 @@ public:
         ::gsl::not_null<::std::shared_ptr<::cg::TextureSetDefinition>> textureSetDefinition
     );
 
-    MCAPI void setTextureMetadata(
-        ::ResourceLocation const&               resourceLocation,
-        ::cg::TextureSetImageDescription const& textureSetImageDescription
-    );
-
     MCAPI bool shouldLoadPBRResources() const;
-
-    MCAPI void touchTextureInLRUCache(::ResourceLocation const& resourceLocation);
-
-    MCAPI void trimLRUCache();
 
     MCAPI void unloadAllTextures();
 
@@ -250,14 +207,6 @@ public:
         ::std::optional<uint>           optLoadOrder,
         ::cg::TextureSetLayerType const textureType
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForTextureGroupBase();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };
 

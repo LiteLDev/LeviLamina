@@ -42,16 +42,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createApplyJumpModifierSystem();
-
-    MCAPI static void tickApplyJumpModifierSystem(
-        ::StrictEntityContext const&         triggerJumpRequestComponent,
-        ::TriggerJumpRequestComponent const& actorRotationComponent,
-        ::ActorRotationComponent const&      attributesComponent,
-        ::MovementAttributesComponent const& mobEffectsComponent,
-        ::MobEffectsComponent const&         mobTravelComponent,
-        ::MobTravelComponent const&          jumpPendingScaleComponent,
-        ::JumpPendingScaleComponent&         stateVectorComponent,
-        ::StateVectorComponent&
-    );
     // NOLINTEND
 };

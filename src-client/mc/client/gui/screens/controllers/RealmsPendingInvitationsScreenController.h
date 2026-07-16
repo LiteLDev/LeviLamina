@@ -4,13 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 
 // auto generated forward declare list
 // clang-format off
 class MainMenuScreenModel;
-class UIPropertyBag;
 namespace Invites { struct Invite; }
 // clang-format on
 
@@ -49,17 +47,7 @@ public:
     MCAPI
     RealmsPendingInvitationsScreenController(::std::shared_ptr<::MainMenuScreenModel> model, bool hasPendingInvites);
 
-    MCAPI void _fetchPendingInvites();
-
-    MCAPI ::ui::ViewRequest _handleInvitationAccept(::UIPropertyBag* bag);
-
-    MCAPI ::ui::ViewRequest _handleInvitationDecline(::UIPropertyBag* bag);
-
-    MCAPI void _initialize();
-
     MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

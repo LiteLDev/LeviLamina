@@ -39,11 +39,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PanoramaRenderer() /*override*/;
+    virtual ~PanoramaRenderer() /*override*/ = default;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual void render(::MinecraftUIRenderContext& client, ::IClientInstance& owner, ::UIControl&, int) /*override*/;
+    virtual void render(::MinecraftUIRenderContext&, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
     // NOLINTEND
 
 public:
@@ -59,17 +59,11 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& client, ::IClientInstance& owner, ::UIControl&, int);
+    MCAPI void $render(::MinecraftUIRenderContext&, ::IClientInstance& client, ::UIControl& owner, int);
     // NOLINTEND
 
 public:

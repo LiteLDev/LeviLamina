@@ -27,12 +27,6 @@ public:
         ::ll::TypedStorage<4, 4, uint> subCommandFirstValue;
         ::ll::TypedStorage<4, 4, uint> subCommandSecondValue;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCFOLD bool operator==(::AvailableCommandsPacketPayload::ChainedSubcommandRelationship const& other) const;
-        // NOLINTEND
     };
 
     struct ChainedSubcommandData {
@@ -56,10 +50,6 @@ public:
 
         MCFOLD ::AvailableCommandsPacketPayload::ChainedSubcommandData&
         operator=(::AvailableCommandsPacketPayload::ChainedSubcommandData&&);
-
-#ifdef LL_PLAT_S
-        MCAPI bool operator==(::AvailableCommandsPacketPayload::ChainedSubcommandData const& other) const;
-#endif
         // NOLINTEND
 
     public:
@@ -76,22 +66,6 @@ public:
         ::ll::TypedStorage<4, 4, uint>                  enumValueSymbol;
         ::ll::TypedStorage<4, 4, uint>                  enumSymbol;
         ::ll::TypedStorage<8, 24, ::std::vector<uchar>> constraints;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_S
-        MCAPI bool operator==(::AvailableCommandsPacketPayload::ConstrainedValueData const& other) const;
-#endif
-
-        MCAPI ~ConstrainedValueData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -114,10 +88,6 @@ public:
         MCAPI EnumData(::AvailableCommandsPacketPayload::EnumData const&);
 
         MCFOLD ::AvailableCommandsPacketPayload::EnumData& operator=(::AvailableCommandsPacketPayload::EnumData&&);
-
-#ifdef LL_PLAT_S
-        MCAPI bool operator==(::AvailableCommandsPacketPayload::EnumData const& other) const;
-#endif
         // NOLINTEND
 
     public:
@@ -135,12 +105,6 @@ public:
         ::ll::TypedStorage<4, 4, uint>           parseSymbol;
         ::ll::TypedStorage<1, 1, bool>           optional;
         ::ll::TypedStorage<1, 1, uchar>          paramOptions;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator==(::AvailableCommandsPacketPayload::ParamData const& other) const;
         // NOLINTEND
     };
 
@@ -216,14 +180,6 @@ public:
         // member functions
         // NOLINTBEGIN
         MCFOLD bool operator==(::AvailableCommandsPacketPayload::SoftEnumData const& other) const;
-
-        MCAPI ~SoftEnumData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -243,6 +199,7 @@ public:
 
 public:
     // prevent constructor by default
+    AvailableCommandsPacketPayload& operator=(AvailableCommandsPacketPayload const&);
     AvailableCommandsPacketPayload();
 
 public:
@@ -260,26 +217,6 @@ public:
         ::std::vector<::AvailableCommandsPacketPayload::CommandData>&&           commandData,
         ::std::vector<::AvailableCommandsPacketPayload::SoftEnumData>&&          softEnumData
     );
-
-#ifdef LL_PLAT_C
-    MCFOLD ::std::vector<::std::string> const& getChainedSubcommandValues() const;
-
-    MCFOLD ::std::vector<::AvailableCommandsPacketPayload::ChainedSubcommandData> const& getChainedSubcommands() const;
-
-    MCFOLD ::std::vector<::AvailableCommandsPacketPayload::CommandData> const& getCommands() const;
-
-    MCFOLD ::std::vector<::AvailableCommandsPacketPayload::ConstrainedValueData> const& getConstraints() const;
-
-    MCFOLD ::std::vector<::std::string> const& getEnumValues() const;
-
-    MCFOLD ::std::vector<::AvailableCommandsPacketPayload::EnumData> const& getEnums() const;
-
-    MCFOLD ::std::vector<::std::string> const& getPostfixes() const;
-
-    MCFOLD ::std::vector<::AvailableCommandsPacketPayload::SoftEnumData> const& getSoftEnums() const;
-#endif
-
-    MCAPI ::AvailableCommandsPacketPayload& operator=(::AvailableCommandsPacketPayload const&);
 
     MCAPI ~AvailableCommandsPacketPayload();
     // NOLINTEND

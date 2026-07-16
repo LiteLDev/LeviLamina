@@ -4,12 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/controls/renderers/MinecraftUICustomRenderer.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 
 // auto generated forward declare list
 // clang-format off
-class FontHandle;
 class IClientInstance;
 class MinecraftUIRenderContext;
 class UIControl;
@@ -17,7 +15,6 @@ class UICustomRenderer;
 class UIResolvedDef;
 class UIScene;
 struct ScreenEvent;
-namespace Json { class Value; }
 // clang-format on
 
 class CreditsRenderer : public ::MinecraftUICustomRenderer {
@@ -46,22 +43,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                    mCentered;
         ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                      mTexturePtr;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CreditsContent();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI CreditsContent(::std::string const& text, int height, bool centered, int paddingAfter);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::std::string const& text, int height, bool centered, int paddingAfter);
-        // NOLINTEND
     };
 
     using clock_type = ::std::chrono::steady_clock;
@@ -88,13 +69,12 @@ public:
 
 public:
     // prevent constructor by default
-    CreditsRenderer& operator=(CreditsRenderer const&);
     CreditsRenderer();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CreditsRenderer() /*override*/;
+    virtual ~CreditsRenderer() /*override*/ = default;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -110,80 +90,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CreditsRenderer(::CreditsRenderer const&);
-
     MCAPI explicit CreditsRenderer(::UIResolvedDef const& def);
-
-    MCAPI void _addDisciplineTitleContent(
-        ::std::string const&                               sectionTitle,
-        ::Bedrock::NotNullNonOwnerPtr<::FontHandle> const& fontHandle,
-        int                                                ownerWidth
-    );
-
-    MCAPI void _addGroupTitleContent(
-        ::std::string const&                               groupTitle,
-        ::Bedrock::NotNullNonOwnerPtr<::FontHandle> const& fontHandle,
-        int                                                ownerWidth
-    );
-
-    MCAPI void _addNameContent(
-        ::std::string const&                               name,
-        ::Bedrock::NotNullNonOwnerPtr<::FontHandle> const& fontHandle,
-        int                                                ownerWidth
-    );
-
-    MCAPI void _addSectionTitleContent(
-        ::std::string const&                               sectionTitle,
-        ::Bedrock::NotNullNonOwnerPtr<::FontHandle> const& fontHandle,
-        int                                                ownerWidth
-    );
-
-    MCAPI void _loadImageFile(::IClientInstance& client, ::UIControl& owner, ::std::string const& filePath);
-
-    MCAPI void _loadJsonFile(::IClientInstance& client, ::UIControl& owner, ::std::string const& filePath);
-
-    MCAPI void _loadTextFile(::IClientInstance& client, ::UIControl& owner, ::std::string const& filePath);
-
-    MCAPI void _parseDiscipline(
-        ::Json::Value const&                               rootData,
-        ::Bedrock::NotNullNonOwnerPtr<::FontHandle> const& fontHandle,
-        int                                                ownerWidth
-    );
-
-    MCAPI void
-    _parseFiles(::IClientInstance& client, ::UIControl& owner, ::std::vector<::std::string> const& filePaths);
-
-    MCAPI void _parseSection(
-        ::Json::Value const&                               rootData,
-        ::Bedrock::NotNullNonOwnerPtr<::FontHandle> const& fontHandle,
-        int                                                ownerWidth
-    );
-
-    MCAPI void _parseTitleGroup(
-        ::Json::Value const&                               rootData,
-        ::Bedrock::NotNullNonOwnerPtr<::FontHandle> const& fontHandle,
-        int                                                ownerWidth
-    );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& FILE_PADDING();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CreditsRenderer const&);
-
     MCAPI void* $ctor(::UIResolvedDef const& def);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

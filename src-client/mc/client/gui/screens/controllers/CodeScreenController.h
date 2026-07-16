@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CodeScreenController() /*override*/;
+    virtual ~CodeScreenController() /*override*/ = default;
 
     virtual void onInit() /*override*/;
 
@@ -75,7 +75,7 @@ public:
 
     virtual void onLoadingEnd() /*override*/;
 
-    virtual void onError(::WebviewError const& error) /*override*/;
+    virtual void onError(::WebviewError const&) /*override*/;
 
     virtual void onWebviewChanged() /*override*/;
     // NOLINTEND
@@ -84,14 +84,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CodeScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::OpenCodeMethod openMethod);
-
-    MCAPI bool _deviceHasEnoughMemory() const;
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _selectEditor(::std::string const& url);
     // NOLINTEND
 
 public:
@@ -107,44 +99,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onInit();
 
-    MCAPI void $onDelete();
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCAPI ::ScreenControllerProxy* $getProxy();
-
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
-
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI void $onLoadingBegin();
-
-    MCAPI void $onLoadingEnd();
-
-    MCAPI void $onError(::WebviewError const& error);
-
-    MCFOLD void $onWebviewChanged();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForWebviewObserver();
-
-    MCNAPI static void** $vftableForCodeScreenControllerProxy();
     // NOLINTEND
 };

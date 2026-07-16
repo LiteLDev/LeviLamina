@@ -18,16 +18,4 @@ public:
     TextProcessorInitParams& operator=(TextProcessorInitParams const&);
     TextProcessorInitParams(TextProcessorInitParams const&);
     TextProcessorInitParams();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~TextProcessorInitParams();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

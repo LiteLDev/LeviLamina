@@ -8,10 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class CompoundTag;
-class GameEvent;
-struct GameEventContext;
 // clang-format on
 
 class VibrationSelector {
@@ -25,13 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addCandidate(
-        ::Tick                    currentTick,
-        ::GameEvent const&        gameEvent,
-        ::GameEventContext const& gameEventContext,
-        ::BlockPos const&         destinationPos
-    );
-
     MCAPI void save(::CompoundTag& tag) const;
     // NOLINTEND
 };

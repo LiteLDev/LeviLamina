@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void update(double const time) /*override*/;
+    virtual void update(double const) /*override*/;
     // NOLINTEND
 
 public:
@@ -58,15 +58,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double const time);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPropertyObject();
-
-    MCNAPI static void** $vftableForIQuery();
     // NOLINTEND
 };
 

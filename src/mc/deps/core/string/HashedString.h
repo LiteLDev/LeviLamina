@@ -140,18 +140,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString& defaultErrorValue();
+    MCAPI static ::HashedString const& defaultErrorValue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(nullptr_t);
-#endif
-
-    MCAPI void* $ctor(::HashedString&& rhs);
-
     MCAPI void* $ctor(::HashedString const& rhs);
 
     MCAPI void* $ctor(::std::string const& str);

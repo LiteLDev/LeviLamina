@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ResponseVerifier;
 struct EDUConfigData;
 struct ServicePack;
 namespace Json { class Value; }
@@ -22,57 +21,28 @@ public:
 
     virtual void setEula() = 0;
 
-    virtual void setPurchaseReceipt(
-        ::std::string const&               receipt,
-        ::std::function<void(bool)> const& callback,
-        ::std::string const&               anonimizedOId
-    ) = 0;
+    virtual void setPurchaseReceipt(::std::string const&, ::std::function<void(bool)> const&, ::std::string const&) = 0;
 
-    virtual void setSkin(::std::string const& newSkin) = 0;
+    virtual void setSkin(::std::string const&) = 0;
 
     virtual void signinForDemo(
         ::std::function<
             void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
-            callback
     ) = 0;
 
     virtual void signin(
         ::std::function<
-            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
-                             callback,
-        ::std::string const& delegationKey
+            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>,
+        ::std::string const&
     ) = 0;
 
-    virtual void sendInitialPackRequest(::std::function<void(::std::vector<::ServicePack>)> packReturnCallback) = 0;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static void commonSigninBody(::Json::Value& body, ::std::string const& appSessionId);
-
-    MCNAPI static ::std::unique_ptr<::WebServices::IEduWebService> create(
-        ::std::unique_ptr<::ResponseVerifier>                             verifier,
-        ::std::function<::std::string const()>                            getEduIdentityToken,
-        ::std::function<::std::optional<::EDUConfigData>(::Json::Value&)> configParser,
-        ::std::string const&                                              appSessionId
-    );
-
-    MCNAPI static void setupDemoIdentity(::Json::Value& body);
-#endif
+    virtual void sendInitialPackRequest(::std::function<void(::std::vector<::ServicePack>)>) = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

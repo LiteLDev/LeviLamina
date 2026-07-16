@@ -7,12 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class BlockSource;
 class CompoundTag;
 class Container;
 class ItemDescriptor;
-class ItemStack;
 class ItemStackBase;
 class Level;
 class Vec3;
@@ -40,10 +38,6 @@ public:
     ::ll::TypedStorage<4, 4, int const>              mDefense;
     ::ll::TypedStorage<4, 4, ::HorseArmorItem::Tier> mTier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HorseArmorItem();
 
 public:
     // virtual functions
@@ -78,32 +72,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI HorseArmorItem(::std::string const& name, int id, ::HorseArmorItem::Tier tier);
-
-    MCFOLD ::HorseArmorItem::Tier getTier() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static void ResetDefaultHorseLeatherColor();
-
-    MCAPI static void SetDefaultHorseLeatherColor(int newDefaultHorseLeatherColor);
-#endif
-
-    MCAPI static bool _tryEquipHorseArmor(::Actor* actor, ::ItemStack const& horseArmor);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::HorseArmorItem::Tier tier);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isBodyArmor() const;
@@ -124,7 +92,7 @@ public:
 
     MCAPI bool $isDyeable() const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCFOLD bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
     MCFOLD void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,

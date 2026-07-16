@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/json/ValueType.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
@@ -39,8 +36,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Property(::JsonValidator::Property&&);
-
         MCNAPI Property(::JsonValidator::Property const&);
 
         MCNAPI ::JsonValidator::Property& addChildProperty(::JsonValidator::Property const& prop);
@@ -48,19 +43,9 @@ public:
         MCNAPI ::JsonValidator::Property&
         addConditionalProperty(::Json::Value const& value, ::JsonValidator::Property const& prop);
 
-        MCNAPI ::JsonValidator::Property& addType(::Json::ValueType type);
-
-        MCNAPI ::JsonValidator::Property& description(::std::string const& description);
-
-        MCNAPI ::JsonValidator::Property& operator=(::JsonValidator::Property&&);
-
         MCNAPI ::JsonValidator::Property& operator=(::JsonValidator::Property const&);
 
         MCNAPI ::JsonValidator::Property& operator[](::std::string const& propName);
-
-        MCNAPI ::JsonValidator::Property& requireConditionalProperty();
-
-        MCNAPI ::JsonValidator::Property& required();
 
         MCNAPI ~Property();
         // NOLINTEND
@@ -68,8 +53,6 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::JsonValidator::Property&&);
-
         MCNAPI void* $ctor(::JsonValidator::Property const&);
         // NOLINTEND
 

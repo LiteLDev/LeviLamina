@@ -18,7 +18,8 @@ public:
     // NOLINTBEGIN
     virtual ::mce::UUID const& getId() const /*override*/;
 
-    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const /*override*/;
+    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -32,7 +33,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::mce::UUID const& $getId() const;
 
-    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
+    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const;
 
 
     // NOLINTEND

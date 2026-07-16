@@ -3,32 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/RelativeVolumeListBlockVolumeAction.h"
 #include "mc/common/editor/WidgetComponentType.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
-class SimpleBlockVolume;
 class Vec3;
-namespace Editor { class RelativeVolumeListBlockVolume; }
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::ScriptModule { class ScriptRelativeVolumeListBlockVolume; }
-namespace Editor::ScriptModule { class ScriptWidget; }
-namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
-namespace Editor::ScriptModule { class ScriptWidgetComponentVolumeOutlineOptions; }
-namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
-namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace ScriptModuleMinecraft { class ScriptSimpleBlockVolume; }
 namespace Scripting { struct ClassBinding; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -61,138 +46,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentVolumeOutline() /*override*/;
+    virtual ~ScriptWidgetComponentVolumeOutline() /*override*/ = default;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentVolumeOutline(
-        ::Editor::ServiceProviderCollection&                                     serviceProviders,
-        ::mce::UUID const&                                                       componentId,
-        ::std::string const&                                                     componentName,
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> owner,
-        ::Editor::ScriptModule::ScriptWidgetService&                             parentService,
-        ::std::optional<::std::variant<
-            ::Vec3,
-            ::std::vector<::Vec3>,
-            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>>> const& volume,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions>                options
-    );
-
-    MCNAPI void _calculateOrientationTransformations();
-
-    MCNAPI ::Scripting::
-        Result<::ScriptModuleMinecraft::ScriptRGBA, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-        _getHighlightHullColor() const;
-
-    MCNAPI ::Scripting::
-        Result<::ScriptModuleMinecraft::ScriptRGBA, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-        _getHighlightOutlineColor() const;
-
-    MCNAPI ::Scripting::
-        Result<::ScriptModuleMinecraft::ScriptRGBA, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-        _getHullColor() const;
-
-    MCNAPI ::Scripting::Result<::Mirror, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _getMirror() const;
-
-    MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _getNormalizedOrigin() const;
-
-    MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _getOffset() const;
-
-    MCNAPI ::Scripting::
-        Result<::ScriptModuleMinecraft::ScriptRGBA, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-        _getOutlineColor() const;
-
-    MCNAPI ::Scripting::Result<::Rotation, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _getRotation() const;
-
-    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _getShowHighlightOutline() const;
-
-    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _getShowOutline() const;
-
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume>,
-        ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _getTransformedWorldVolume() const;
-
-    MCNAPI ::Scripting::Result<
-        ::std::optional<
-            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>>,
-        ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _getVolume() const;
-
-    MCNAPI void _handleVolumeChangeEvent(
-        ::Editor::RelativeVolumeListBlockVolume const& action,
-        ::Editor::RelativeVolumeListBlockVolumeAction  variantData,
-        ::std::variant<
-            ::Vec3 const,
-            ::std::vector<::Vec3> const,
-            ::Editor::RelativeVolumeListBlockVolume const,
-            ::SimpleBlockVolume const> const&
-    );
-
-    MCNAPI ::Vec3 _resolveSize();
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _scriptSetVolume(
-        ::std::optional<::std::variant<
-            ::Vec3,
-            ::std::vector<::Vec3>,
-            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>>> const& volume
-    );
-
-    MCNAPI void _sendAddPayload();
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setHighlightHullColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setHighlightOutlineColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setHullColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setMirror(::Mirror m);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setNormalizedOrigin(::Vec3 const& normalizedOrigin);
-
-    MCNAPI ::Scripting::Result_deprecated<void> _setOffset(::Vec3 const& offset);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setOutlineColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setRotation(::Rotation r);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setShowHighlightOutline(bool visible);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setShowOutline(bool visible);
-
-    MCNAPI void _setVolume(
-        ::std::optional<::std::variant<
-            ::Vec3,
-            ::std::vector<::Vec3>,
-            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>>> const& volume,
-        bool suppressClientUpdate
-    );
     // NOLINTEND
 
 public:
@@ -202,42 +58,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Editor::ServiceProviderCollection&                                     serviceProviders,
-        ::mce::UUID const&                                                       componentId,
-        ::std::string const&                                                     componentName,
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> owner,
-        ::Editor::ScriptModule::ScriptWidgetService&                             parentService,
-        ::std::optional<::std::variant<
-            ::Vec3,
-            ::std::vector<::Vec3>,
-            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>>> const& volume,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions>                options
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
-#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -32,8 +31,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> PROJECT_ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
@@ -42,19 +39,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddToConfiguration() const;
-
     MCAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -36,10 +36,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const
         /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& aboveBlock, ::BlockPos const&, ::Block const&) const /*override*/;
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
 
     virtual bool canBeOriginalSurface(bool) const /*override*/;
 
@@ -54,14 +56,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canBeGrass(::BlockSource const& region, ::BlockPos const& pos) const;
-
-    MCAPI bool _isGrowthBlockingSolidBlock(::Block const& block) const;
-
-    MCAPI bool _isGrowthBlockingStairBlock(::Block const& block) const;
-
-    MCAPI bool fertilize(::BlockSource& region, ::BlockPos const& pos, ::IRandom& random) const;
-
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
@@ -70,9 +64,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const;
+    MCAPI bool
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& aboveBlock, ::BlockPos const&, ::Block const&) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCFOLD bool $canBeOriginalSurface(bool) const;
 

@@ -43,6 +43,8 @@ public:
 
     MCAPI ::SharedTypes::v1_20_80::ParticleEffectData& operator=(::SharedTypes::v1_20_80::ParticleEffectData const&);
 
+    MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleEffectData const&) const;
+
     MCAPI ~ParticleEffectData();
     // NOLINTEND
 

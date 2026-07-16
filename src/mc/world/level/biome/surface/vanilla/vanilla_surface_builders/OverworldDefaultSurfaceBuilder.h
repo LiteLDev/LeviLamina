@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class LevelSeed64;
 class SurfaceBuilderData;
 // clang-format on
 
@@ -16,7 +17,7 @@ class OverworldDefaultSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initBuilder(uint) /*override*/;
+    virtual void initBuilder(::LevelSeed64) /*override*/;
 
     virtual void initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const /*override*/;
 
@@ -28,7 +29,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initBuilder(uint);
+    MCFOLD void $initBuilder(::LevelSeed64);
 
     MCAPI void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
 
@@ -37,12 +38,6 @@ public:
     MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

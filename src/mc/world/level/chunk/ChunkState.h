@@ -17,5 +17,6 @@ enum class ChunkState : uchar {
     Lighting                   = 11,
     LightingFinished           = 12,
     Loaded                     = 13,
+    NumStates                  = 14,
     Invalid                    = 255,
 };

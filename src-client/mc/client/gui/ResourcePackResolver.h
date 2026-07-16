@@ -11,14 +11,8 @@
 class IUIDefRepository;
 class IUIRepository;
 class ResourcePackManager;
-class UIResolvedDef;
-namespace Json { class Value; }
-namespace UI::Resources { struct ControlPropertyNames; }
 namespace UI::Resources { struct DefinitionPropertyNames; }
-namespace UI::Resources { struct ResolvedControlData; }
 namespace UI::Resources { struct ResolvedDefinition; }
-namespace UI::Resources { struct ResolvedPropertyData; }
-namespace UI::Resources { struct ResolvedTextureData; }
 // clang-format on
 
 namespace UI::Resources {
@@ -54,31 +48,9 @@ public:
         ::ResourcePackManager&                                  resourcePackManager
     );
 
-    MCAPI ::std::vector<::UI::Resources::ResolvedControlData> _evaluateControlProperties(
-        ::UIResolvedDef const&                       resolvedDef,
-        ::std::vector<::Json::Value*>&               variableStack,
-        ::std::string const&                         defNamespace,
-        ::UI::Resources::ControlPropertyNames const& dataToResolve
-    );
-
-    MCAPI ::std::vector<::UI::Resources::ResolvedPropertyData> _evaluateProperties(
-        ::UIResolvedDef const&              resolvedDef,
-        ::std::vector<::std::string> const& propertiesToResolve
-    ) const;
-
-    MCAPI ::std::vector<::UI::Resources::ResolvedTextureData>
-    _evaluateTextures(::UIResolvedDef const& resolvedDef, ::std::vector<::std::string> const& texturesToResolve) const;
-
-    MCAPI ::UI::Resources::ResolvedTextureData
-    _getTextureData(::Json::Value const& textureDefinition, ::std::string const& definitionIdentifier) const;
-
-    MCAPI ::glm::vec2 _getTextureImageSize(::Json::Value const& textureDefinition) const;
-
     MCAPI bool doesDefinitionContainNonBaseGameTextures(
         ::std::vector<::UI::Resources::ResolvedDefinition> const& definitions
     ) const;
-
-    MCAPI bool isDirty();
 
     MCAPI ::std::vector<::UI::Resources::ResolvedDefinition>
     resolveDefinitions(::std::vector<::UI::Resources::DefinitionPropertyNames> const& definitionsToResolve);
@@ -103,13 +75,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onActiveResourcePacksChanged(::ResourcePackManager&);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

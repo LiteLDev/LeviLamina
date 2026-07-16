@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/minecraft_renderer/game/ShadowContext.h"
-#include "mc/deps/shared_types/legacy/FilterSubject.h"
 #include "mc/util/MolangScriptArg.h"
 #include "mc/world/actor/animation/AttachableSlotIndex.h"
 #include "mc/world/level/BlockPos.h"
@@ -79,20 +78,29 @@ public:
     ::ll::TypedStorage<8, 96, ::MolangScriptArg> mThisValue;
     ::ll::TypedStorage<8, 96, ::MolangScriptArg> mScratchValue;
 #endif
+    ::ll::TypedStorage<4, 4, float>                 mHeldItemScale;
     ::ll::TypedStorage<4, 4, ::RenderParams::Flags> mFlags;
     ::ll::TypedStorage<4, 12, ::Vec3>               mClickPos;
     ::ll::TypedStorage<4, 4, ::AttachableSlotIndex> mSlotIndex;
     ::ll::TypedStorage<1, 1, bool>                  mIsDitheringEnabled;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    RenderParams& operator=(RenderParams const&);
+    RenderParams();
+
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    RenderParams();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderParams();
-
     MCAPI RenderParams(::RenderParams const&);
-
-    MCAPI ::Actor* getActorTarget(::SharedTypes::Legacy::FilterSubject subject) const;
 
     MCAPI ::RenderParams& init(
         ::BaseActorRenderContext*            baseActorRenderContext,
@@ -105,24 +113,16 @@ public:
         bool                                 isDitheringEnabled
     );
 
+#ifdef LL_PLAT_C
     MCAPI ::RenderParams& operator=(::RenderParams const&);
-
-    MCAPI float& operator[](uint64 i);
+#endif
 
     MCAPI ~RenderParams();
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::RenderParams& getRenderParams(::Actor& actor);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::RenderParams const&);
     // NOLINTEND
 

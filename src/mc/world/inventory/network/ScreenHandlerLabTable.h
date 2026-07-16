@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/inventory/network/ItemStackNetResult.h"
-#include "mc/world/inventory/network/ItemStackRequestActionDataless.h"
 #include "mc/world/inventory/network/ScreenHandlerBase.h"
 
 // auto generated forward declare list
@@ -13,7 +12,6 @@ class ChemistryTableBlockActor;
 class ContainerScreenContext;
 class ItemStack;
 class ItemStackRequestAction;
-class ItemStackRequestActionHandler;
 // clang-format on
 
 class ScreenHandlerLabTable : public ::ScreenHandlerBase {
@@ -36,46 +34,16 @@ public:
     // NOLINTBEGIN
     virtual ~ScreenHandlerLabTable() /*override*/ = default;
 
-    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
+    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const&) /*override*/;
 
     virtual ::ItemStackNetResult endRequest() /*override*/;
 
-    virtual void postRequest(bool const wasSuccess) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScreenHandlerLabTable(
-        ::ContainerScreenContext const&  screenContext,
-        ::ItemStackRequestActionHandler& craftRequestHandler
-    );
-
-    MCNAPI ::ItemStackNetResult _handleLabTableCombine(::ItemStackRequestActionDataless<9> const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::ContainerScreenContext const& screenContext, ::ItemStackRequestActionHandler& craftRequestHandler);
+    virtual void postRequest(bool const) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
 
-    MCNAPI ::ItemStackNetResult $endRequest();
-
-    MCNAPI void $postRequest(bool const wasSuccess);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

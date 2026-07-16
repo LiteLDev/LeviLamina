@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/item/crafting/RecipeUnlockingRequirement.h"
-
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -71,50 +68,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UnlockedRecipesServerComponent();
-
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCAPI void addChangedInventorySlot(int slot);
-
-    MCAPI void addUnlockedRecipe(::std::string const& recipeId);
 
     MCAPI void addUnlockingInstruction(::UnlockedRecipesServerComponent::UnlockingInstruction instruction);
 
-    MCAPI void clearChangedInventorySlots();
-
-    MCAPI void clearUnlockingInstructions();
-
-    MCFOLD ::std::unordered_set<int> const& getChangedInventorySlots() const;
-
-    MCFOLD ::std::unordered_set<::std::string> const& getUnlockedRecipes() const;
-
-    MCFOLD ::std::vector<::UnlockedRecipesServerComponent::UnlockingInstruction> const&
-    getUnlockingInstructions() const;
-
-    MCAPI bool hasContextBeenUsed(::RecipeUnlockingRequirement::UnlockingContext context) const;
-
-    MCFOLD bool hasInitialDataBeenSent() const;
-
-    MCFOLD bool hasInventoryChanged() const;
-
-    MCFOLD bool hasUnlockedRecipes() const;
-
-    MCAPI bool hasUnlockingInstructions() const;
-
     MCAPI bool isRecipeUnlocked(::std::string const& recipeId) const;
 
-    MCAPI void markContextAsUsed(::RecipeUnlockingRequirement::UnlockingContext context);
-
-    MCFOLD void markInitialDataAsSent();
-
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
-
-    MCAPI void removeAllUnlockedRecipes();
-
-    MCAPI void removeUnlockedRecipe(::std::string const& recipeId);
-
-    MCAPI void resetUsedContexts();
 
     MCAPI ~UnlockedRecipesServerComponent();
     // NOLINTEND
@@ -127,12 +87,6 @@ public:
     MCAPI static ::std::string const& UNLOCKED_RECIPES_TAG();
 
     MCAPI static ::std::string const& USED_CONTEXTS_TAG();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

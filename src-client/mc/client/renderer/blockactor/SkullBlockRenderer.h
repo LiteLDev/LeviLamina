@@ -10,19 +10,15 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorResourceDefinition;
 class BaseActorRenderContext;
-class BaseGameVersion;
 class BlockActor;
 class DragonHeadModel;
-class Experiments;
 class HashedString;
 class PiglinHeadModel;
 class SkeletonHeadModel;
 class Vec3;
 struct BlockActorRenderData;
 namespace dragon { struct RenderMetadata; }
-namespace mce { class TextureGroup; }
 namespace mce { struct ClientTexture; }
 // clang-format on
 
@@ -42,26 +38,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SkullBlockRenderer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void
-    render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
+    virtual void render(::BaseActorRenderContext&, ::BlockActorRenderData&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SkullBlockRenderer(
-        ::std::shared_ptr<::ActorResourceDefinition> definition,
-        ::std::shared_ptr<::mce::TextureGroup>       textureGroup,
-        ::BaseGameVersion const&                     baseGameVersion,
-        ::Experiments const&
-    );
-
     MCAPI void renderInGui(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
@@ -83,32 +67,15 @@ public:
         ::HashedString const&           hashedString,
         ::mce::MaterialPtr const*       forcedMat,
         ::mce::ClientTexture const*     forcedTex,
-        int                             animationValue,
-        float                           isGlint,
-        bool
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::ActorResourceDefinition> definition,
-        ::std::shared_ptr<::mce::TextureGroup>       textureGroup,
-        ::BaseGameVersion const&                     baseGameVersion,
-        ::Experiments const&
+        int                             breakingAmount,
+        float                           animationValue,
+        bool                            isGlint
     );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

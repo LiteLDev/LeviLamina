@@ -12,26 +12,20 @@
 // clang-format off
 class Actor;
 class ActorSpawnRuleGroup;
-class BlockPos;
 class BlockSource;
 class ChunkPos;
 class IMinecraftEventing;
-class IRandom;
 class IWorldRegistriesProvider;
 class ItemActor;
 class ItemStack;
 class Level;
 class LevelChunkVolumeData;
 class Mob;
-class MobSpawnRules;
 class Random;
 class ResourcePackManager;
-class SpawnConditions;
 class SpawnGroupRegistry;
 class Vec3;
-struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
-struct MobSpawnHerdInfo;
 namespace br::spawn { class EntityTypeCache; }
 // clang-format on
 
@@ -62,13 +56,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BedrockSpawner() /*override*/;
+    virtual ~BedrockSpawner() /*override*/ = default;
 
-    virtual void initializeServerSide(::ResourcePackManager& rpm, ::IWorldRegistriesProvider& registries) /*override*/;
+    virtual void initializeServerSide(::ResourcePackManager&, ::IWorldRegistriesProvider&) /*override*/;
 
     virtual ::SpawnSettings const& getSpawnSettings() const /*override*/;
 
-    virtual void setSpawnSettings(::SpawnSettings const& spawnSettings) /*override*/;
+    virtual void setSpawnSettings(::SpawnSettings const&) /*override*/;
 
     virtual ::ActorSpawnRuleGroup const* getSpawnRules() const /*override*/;
 
@@ -86,13 +80,9 @@ public:
         int                throwTime
     ) /*override*/;
 
-    virtual void postProcessSpawnMobs(::BlockSource& region, int xo, int zo, ::Random& random) /*override*/;
+    virtual void postProcessSpawnMobs(::BlockSource&, int, int, ::Random&) /*override*/;
 
-    virtual void tick(
-        ::BlockSource&                region,
-        ::LevelChunkVolumeData const& levelChunkVolumeData,
-        ::ChunkPos const              chunkPos
-    ) /*override*/;
+    virtual void tick(::BlockSource&, ::LevelChunkVolumeData const&, ::ChunkPos const) /*override*/;
 
     virtual void tickMobCount() /*override*/;
 
@@ -101,12 +91,12 @@ public:
     virtual uint getSpawnableTickedMobCountPrevious() const /*override*/;
 
     virtual ::std::unordered_set<::ActorUniqueID> spawnMobGroup(
-        ::BlockSource&                  region,
-        ::std::string const&            spawnGroupId,
-        ::Vec3 const&                   pos,
-        bool                            doScatter,
-        bool                            validateDistToPlayer,
-        ::std::function<void(::Mob&)>&& spawnedCallback
+        ::BlockSource&,
+        ::std::string const&,
+        ::Vec3 const&,
+        bool,
+        bool,
+        ::std::function<void(::Mob&)>&&
     ) /*override*/;
 
     virtual ::br::spawn::SpawnPlacements& getSpawnPlacements() /*override*/;
@@ -116,45 +106,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BedrockSpawner(::Level& level, ::IMinecraftEventing& eventing);
-
-    MCAPI void
-    _permuteId(::ActorDefinitionIdentifier& actualId, ::MobSpawnRules const& spawnRules, ::Random& random) const;
-
-    MCAPI void _postProcessSpawnMobs(
-        ::BlockSource&                                                      region,
-        int                                                                 xo,
-        int                                                                 zo,
-        ::IRandom&                                                          random,
-        bool                                                                doMobSpawning,
-        ::std::function<void(::BlockPos const&, ::SpawnConditions&)> const& spawnMobClusterCallback,
-        ::std::function<bool(::BlockSource const&, ::BlockPos)> const&      isInsideAncientCity
-    );
-
-    MCAPI void _sendHerdEvents(::MobSpawnHerdInfo const& herdInfo, ::std::vector<::Mob*>& spawnGroup) const;
-
-    MCAPI void _spawnMobCluster(::BlockSource& region, ::BlockPos const& pos, ::SpawnConditions& conditions);
-
-    MCAPI void _spawnMobInCluster(
-        ::BlockSource&                     region,
-        ::ActorDefinitionIdentifier const& id,
-        ::BlockPos const&                  pos,
-        ::SpawnConditions const&           conditions,
-        ::std::vector<::Mob*>&             spawnGroup
-    );
-
-    MCAPI void _updateBaseTypeCount(::BlockSource& region, ::ChunkPos const& center);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool _isInsideAncientCity(::BlockSource const& region, ::BlockPos pos);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::unordered_set<::ChunkPos> const& SPAWN_RING_OFFSETS();
     // NOLINTEND
 
 public:
@@ -164,59 +115,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeServerSide(::ResourcePackManager& rpm, ::IWorldRegistriesProvider& registries);
 
-    MCFOLD ::SpawnSettings const& $getSpawnSettings() const;
-
-    MCAPI void $setSpawnSettings(::SpawnSettings const& spawnSettings);
-
-    MCFOLD ::ActorSpawnRuleGroup const* $getSpawnRules() const;
-
-    MCFOLD ::ActorSpawnRuleGroup* $getSpawnRulesMutable() const;
-
-    MCFOLD ::SpawnGroupRegistry const* $getSpawnGroupRegistry() const;
-
-    MCFOLD ::br::spawn::EntityTypeCache* $getEntityTypeCache() const;
-
-    MCAPI ::ItemActor*
-    $spawnItem(::BlockSource& region, ::ItemStack const& inst, ::Actor* spawner, ::Vec3 const& pos, int throwTime);
-
-    MCAPI void $postProcessSpawnMobs(::BlockSource& region, int xo, int zo, ::Random& random);
-
-    MCAPI void
-    $tick(::BlockSource& region, ::LevelChunkVolumeData const& levelChunkVolumeData, ::ChunkPos const chunkPos);
-
-    MCAPI void $tickMobCount();
-
-    MCAPI void $incrementSpawnableTickedMob();
-
-    MCAPI uint $getSpawnableTickedMobCountPrevious() const;
-
-    MCAPI ::std::unordered_set<::ActorUniqueID> $spawnMobGroup(
-        ::BlockSource&                  region,
-        ::std::string const&            spawnGroupId,
-        ::Vec3 const&                   pos,
-        bool                            doScatter,
-        bool                            validateDistToPlayer,
-        ::std::function<void(::Mob&)>&& spawnedCallback
-    );
-
-    MCFOLD ::br::spawn::SpawnPlacements& $getSpawnPlacements();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/WorkGoal.h"
 
-// auto generated forward declare list
-// clang-format off
-class ContainerComponent;
-class Mob;
-// clang-format on
-
 class WorkComposterGoal : public ::WorkGoal {
 public:
     // member variables
@@ -27,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorkComposterGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void start() /*override*/;
@@ -39,36 +29,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit WorkComposterGoal(::Mob& mob);
-
-    MCAPI ::std::pair<int, int> _findCompostableItemSlot(::ContainerComponent& inventory);
-
-    MCAPI bool _tryCompostItems();
-
-    MCAPI bool _tryEmptyComposter();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start();
 
-    MCAPI void $useWorkstation();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

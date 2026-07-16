@@ -39,8 +39,6 @@ public:
     MCAPI explicit MobEffectScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
 
     MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

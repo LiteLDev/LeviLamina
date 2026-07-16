@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RegisteredResourceHandler() /*override*/;
+    virtual ~RegisteredResourceHandler() /*override*/ = default;
 
     virtual ::Gameface::ResourceHandlerStatus
     onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
@@ -49,34 +49,6 @@ public:
     ) /*override*/;
 
     virtual void update() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RegisteredResourceHandler(
-        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&              rawFileAccess,
-        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&              appPackageFileAccess,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::ResourceAllowList> const& resourceAllowList,
-        ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&              rawFileAccess,
-        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&              appPackageFileAccess,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::ResourceAllowList> const& resourceAllowList,
-        ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

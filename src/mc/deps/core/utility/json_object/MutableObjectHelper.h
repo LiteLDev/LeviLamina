@@ -17,19 +17,11 @@ class MutableObjectHelper : public ::Bedrock::JSONObject::ObjectHelperBase<0> {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MutableObjectHelper();
-
     MCNAPI ::std::pair<
         ::std::_Tree_iterator<::std::_Tree_val<
             ::std::_Tree_simple_types<::std::pair<::std::string_view const, ::Bedrock::JSONObject::Node*>>>>,
         bool>
     insert(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value, bool copyKey);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

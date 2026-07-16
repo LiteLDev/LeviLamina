@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/ScoreboardEventListener.h"
 
@@ -26,25 +26,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::EventResult onObjectiveRemoved(::std::string const& objective) /*override*/;
+    virtual ::EventResult onObjectiveRemoved(::std::string const&) /*override*/;
 
-    virtual ::EventResult onScoreboardIdentityRemoved(::ScoreboardId const& id) /*override*/;
+    virtual ::EventResult onScoreboardIdentityRemoved(::ScoreboardId const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onObjectiveRemoved(::std::string const& objective);
 
-    MCAPI ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const& id);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

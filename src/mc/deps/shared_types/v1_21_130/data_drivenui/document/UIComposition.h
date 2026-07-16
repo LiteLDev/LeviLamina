@@ -48,8 +48,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& UI_COMPOSITION_PAYLOAD_KEY();
-
     MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 

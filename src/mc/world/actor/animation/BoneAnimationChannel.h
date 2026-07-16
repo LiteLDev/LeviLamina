@@ -7,10 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BoneOrientation;
 class KeyFrameTransform;
-class RenderParams;
-struct BoneAnimationChannelPlayer;
 // clang-format on
 
 class BoneAnimationChannel {
@@ -24,12 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void animate(
-        ::RenderParams&               renderParams,
-        ::BoneOrientation&            destBoneOrientation,
-        float                         scale,
-        ::BoneAnimationChannelPlayer* boneAnimationChannelPlayer
-    ) const;
+    MCAPI ::KeyFrameTransform& addKeyFrame(float time);
 
     MCAPI void sortKeyFrames();
     // NOLINTEND

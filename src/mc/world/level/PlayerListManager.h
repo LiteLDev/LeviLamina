@@ -4,14 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/platform/UUID.h"
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class IGameplayUserManagerConnector;
 class PacketSender;
 class PlayerListEntry;
@@ -54,39 +52,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerListManager();
-
-    MCAPI void _onAnyGameplayUsersRemoved();
-
-    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
-
-    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
-
-    MCAPI void addPlayerEntry(::mce::UUID const& uuid, ::PlayerListEntry&& playerListEntry);
-
 #ifdef LL_PLAT_C
-    MCAPI void clearPlayerList();
-
-    MCFOLD ::Bedrock::PubSub::Connector<
-        void(::PlayerListEntry const&, ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const&)>&
-    getOnPlayerListEntryAddedConnector();
-
-    MCFOLD ::Bedrock::PubSub::Connector<
-        void(::PlayerListEntry const&, ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const&)>&
-    getOnPlayerListEntryRemovedConnector();
+    MCAPI void addPlayerEntry(::mce::UUID const& uuid, ::PlayerListEntry&& playerListEntry);
 #endif
-
-    MCFOLD ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& getPlayerList() const;
-
-    MCAPI ::std::string const& getPlayerPlatformOnlineId(::mce::UUID const& uuid) const;
-
-    MCAPI ::std::string const& getPlayerXUID(::mce::UUID const& uuid) const;
 
     MCAPI void initializeWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
+#ifdef LL_PLAT_C
     MCAPI void removeByUUID(::mce::UUID const& uuid);
-
-    MCAPI void setPacketSender(::PacketSender& packetSender);
+#endif
 
     MCAPI void setPlayerLocationReceiver(::Bedrock::NonOwnerPointer<::PlayerLocationReceiver> playerLocationReceiver);
 
@@ -95,12 +69,6 @@ public:
     MCAPI ::PlayerListEntry* tryGetPlayerEntry(::mce::UUID const& uuid);
 
     MCAPI ~PlayerListManager();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

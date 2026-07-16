@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
-
 class Direction {
 public:
     // Direction inner types define
@@ -16,18 +12,6 @@ public:
         East      = 3,
         Undefined = 255,
     };
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Direction::Type convertFacingDirectionToDirection(uchar facingDirection);
-
-    MCAPI static ::Direction::Type getDirection(float xd, float zd);
-
-    MCAPI static ::Direction::Type mirrorDirection(::Mirror mirror, ::Direction::Type direction);
-
-    MCAPI static ::Direction::Type rotateDirection(::Direction::Type direction, ::Rotation rotation);
-    // NOLINTEND
 
 public:
     // static variables

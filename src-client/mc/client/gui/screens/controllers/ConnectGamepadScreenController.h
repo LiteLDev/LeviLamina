@@ -48,8 +48,6 @@ public:
         ::GameControllerErrorType                 controllerError,
         ::std::function<void()>                   onCompleteCallback
     );
-
-    MCAPI void _showGamepadRequiredPopup();
     // NOLINTEND
 
 public:

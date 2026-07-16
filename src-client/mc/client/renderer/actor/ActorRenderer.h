@@ -16,15 +16,8 @@ class ActorRenderData;
 class BaseActorRenderContext;
 class Model;
 class RenderParams;
-class Tessellator;
 class Vec2;
 class Vec3;
-struct ActorTextureInfo;
-struct ActorUniqueID;
-struct NameTagRenderObject;
-struct RopePoints;
-namespace mce { class Color; }
-namespace mce { class Mesh; }
 namespace mce { class TextureGroup; }
 // clang-format on
 
@@ -81,30 +74,32 @@ public:
 
     virtual void renderDebug(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    virtual void renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
+    virtual void renderEffects(::BaseActorRenderContext&, ::ActorRenderData&);
 
     virtual void renderLeash(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    virtual void renderWaterHole(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
+    virtual void renderWaterHole(::BaseActorRenderContext&, ::ActorRenderData&);
 
-    virtual void addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    virtual void addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup>);
 
     virtual ::AABB getRenderBounds(::Actor const& entity) const;
 
     virtual void getLeashOffsets(
-        ::Actor& yRot,
-        float    yRotPrev,
-        float    a,
-        float    legacyOffset,
-        bool     output,
-        ::Bedrock::small_vector_base<::Vec3>&
+        ::Actor&,
+        float                                 yRot,
+        float                                 yRotPrev,
+        float                                 a,
+        bool                                  legacyOffset,
+        ::Bedrock::small_vector_base<::Vec3>& output
     ) const;
 
-    virtual void setIsOnScreen(::Actor& actor, bool const isOnScreen, float distance) const;
+    virtual void setIsOnScreen(::Actor&, bool, float) const;
 
-    virtual bool shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const;
+    virtual bool shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams&) const;
 
-    virtual bool shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const;
+    virtual bool shouldUpdateEffectsIfOffScreen(::RenderParams&) const;
+
+    virtual bool shouldHideHeldItems(::RenderParams&) const;
     // NOLINTEND
 
 public:
@@ -125,69 +120,12 @@ public:
         bool                                   hasWaterHole
     );
 
-    MCAPI void _getLeashPins(
-        float                                                     actorFrameAlpha,
-        ::BaseActorRenderContext&                                 renderContext,
-        ::Actor&                                                  actor,
-        ::Bedrock::small_vector_base<::ActorRenderer::LeashPins>& output
-    ) const;
-
-    MCAPI ::std::vector<::NameTagRenderObject> extractText(
-        ::Tessellator&            tessellator,
-        ::Actor const&            entity,
-        ::std::string const&      str,
-        ::std::vector<int> const& widths,
-        ::Vec3                    camTargetPos,
-        float                     a,
-        ::mce::Color              color
-    );
-
-    MCAPI ::mce::TexturePtr getAtlasTexture();
-
-    MCFOLD ::Model const* getModel() const;
-
-    MCFOLD ::Model* getModel();
-
     MCAPI void renderGui(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _addLeashPinToOutput(
-        ::Vec3 const&                                             fromLeashes,
-        ::Vec3 const&                                             toLeashes,
-        ::Actor const&                                            actor,
-        ::Actor const*                                            roper,
-        ::ActorUniqueID                                           roperID,
-        uint64                                                    ropeIndex,
-        float                                                     actorFrameAlpha,
-        ::Bedrock::small_vector_base<::ActorRenderer::LeashPins>& output
-    );
-
-    MCAPI static void _buildFlameMesh(::Tessellator& tessellator, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
-
-    MCAPI static void _drawClassicLeash(
-        ::BaseActorRenderContext& renderContext,
-        ::Vec3 const&             ropeStart,
-        ::Vec3 const&             delta,
-        ::mce::TexturePtr&        tex
-    );
-
-    MCAPI static void _drawRopeRange(
-        ::BaseActorRenderContext& renderContext,
-        int                       begin,
-        int                       end,
-        ::Vec3 const&             basisX,
-        ::Vec3 const&             basisY,
-        ::Vec3 const&             deltaNorm,
-        ::RopePoints const&       nodes,
-        ::mce::TexturePtr&        tex,
-        float                     a,
-        ::Vec3*                   startPoint,
-        ::Vec3*                   endPoint
-    );
-
     MCAPI static void _getLeashPins(
         float                                                     actorFrameAlpha,
         ::BaseActorRenderContext&                                 renderContext,
@@ -209,24 +147,12 @@ public:
     );
 
     MCAPI static void resetTextures();
-
-    MCAPI static bool shouldRenderLeash(::Actor& entity, bool ignoreLighting);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Vec2 const& DEFAULT_RENDER_BOUNDS();
-
-    MCAPI static ::mce::MaterialPtr& mFlameMaterial();
-
-    MCAPI static ::mce::Mesh& mFlameMesh();
-
-    MCAPI static ::ActorTextureInfo& mFlameTexture();
-
-    MCAPI static ::mce::MaterialPtr& mLeashMat();
-
-    MCAPI static ::mce::TexturePtr& mLeashTexture();
     // NOLINTEND
 
 public:
@@ -251,7 +177,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -259,30 +185,32 @@ public:
     // NOLINTBEGIN
     MCAPI void $renderDebug(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    MCFOLD void $renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
+    MCFOLD void $renderEffects(::BaseActorRenderContext&, ::ActorRenderData&);
 
     MCAPI void $renderLeash(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    MCFOLD void $renderWaterHole(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
+    MCFOLD void $renderWaterHole(::BaseActorRenderContext&, ::ActorRenderData&);
 
-    MCFOLD void $addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCFOLD void $addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup>);
 
     MCAPI ::AABB $getRenderBounds(::Actor const& entity) const;
 
     MCAPI void $getLeashOffsets(
-        ::Actor& yRot,
-        float    yRotPrev,
-        float    a,
-        float    legacyOffset,
-        bool     output,
-        ::Bedrock::small_vector_base<::Vec3>&
+        ::Actor&,
+        float                                 yRot,
+        float                                 yRotPrev,
+        float                                 a,
+        bool                                  legacyOffset,
+        ::Bedrock::small_vector_base<::Vec3>& output
     ) const;
 
-    MCFOLD void $setIsOnScreen(::Actor& actor, bool const isOnScreen, float distance) const;
+    MCFOLD void $setIsOnScreen(::Actor&, bool, float) const;
 
-    MCFOLD bool $shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const;
+    MCFOLD bool $shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams&) const;
 
-    MCFOLD bool $shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const;
+    MCFOLD bool $shouldUpdateEffectsIfOffScreen(::RenderParams&) const;
+
+    MCFOLD bool $shouldHideHeldItems(::RenderParams&) const;
     // NOLINTEND
 
 public:

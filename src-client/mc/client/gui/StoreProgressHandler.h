@@ -36,7 +36,7 @@ public:
 
     virtual void onCancel(::MinecraftScreenModel&) /*override*/;
 
-    virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onExit(::MinecraftScreenModel&) /*override*/;
 
     virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
 
@@ -70,26 +70,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onStart(::MinecraftScreenModel&);
 
-    MCAPI void $tick(::MinecraftScreenModel&);
-
-    MCFOLD void $onCancel(::MinecraftScreenModel&);
-
-    MCFOLD void $onExit(::MinecraftScreenModel& minecraftScreenModel);
-
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
-
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
-
-    MCFOLD ::std::string $getTitleText() const;
-
-    MCAPI ::std::string $getName() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

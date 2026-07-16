@@ -31,12 +31,12 @@ public:
     virtual ~IWorldTemplateHandler() = default;
 
     virtual void loadTemplate(
-        ::std::string const&                                                                            templateId,
-        ::std::function<void(::std::variant<::World::WorldID, ::World::IWorldTemplateHandler::Result>)> onComplete
+        ::std::string const&,
+        ::std::function<void(::std::variant<::World::WorldID, ::World::IWorldTemplateHandler::Result>)>
     ) = 0;
 
     virtual ::std::optional<::World::IWorldTemplateHandler::WriteTemplateError>
-    saveTemplate(::LevelSummary const& levelSummary) const = 0;
+    saveTemplate(::LevelSummary const&) const = 0;
 
     virtual bool isTemplateExportEnabled() const = 0;
 

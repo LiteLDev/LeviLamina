@@ -13,16 +13,4 @@ public:
     ::ll::TypedStorage<8, 48, ::HashedString>   mName;
     ::ll::TypedStorage<8, 16, ::ExpressionNode> mScript;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~NamedMolangScript();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

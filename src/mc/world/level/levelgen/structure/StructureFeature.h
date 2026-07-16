@@ -10,14 +10,12 @@
 
 // auto generated forward declare list
 // clang-format off
-class Biome;
 class BiomeSource;
 class BlockPos;
 class BlockSource;
 class BoundingBox;
 class Dimension;
 class IPreliminarySurfaceProvider;
-class LevelChunk;
 class Random;
 class StructureStart;
 struct BiomeIdType;
@@ -94,22 +92,6 @@ public:
     // NOLINTBEGIN
     MCAPI StructureFeature(uint seed, ::HashedString structureFeatureType);
 
-    MCAPI void addFeature(
-        ::Dimension&                         dimension,
-        ::Random&                            random,
-        ::ChunkPos const&                    cp,
-        ::BiomeSource const&                 biomeSource,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
-    );
-
-    MCAPI void addHardcodedSpawnAreas(::LevelChunk& lc);
-
-    MCAPI ::BlockPos chunkStartAtSurfaceLevel(
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        ::ChunkPos                           pos,
-        int                                  defaultYLevel
-    );
-
     MCAPI void createBlueprints(
         ::Dimension&                         dimension,
         ::ChunkPos const&                    cp,
@@ -117,13 +99,9 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
-    MCAPI ::std::vector<::ChunkPos> findFarAwayStructures(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
-
     MCAPI void foreachIntersectingStructureStart(::BoundingBox const& bb, ::std::function<void(::StructureStart&)> fn);
 
     MCAPI void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
-
-    MCAPI bool postProcess(::BlockSource& region, ::Random& random, int chunkX, int chunkZ);
 
     MCAPI void postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
     // NOLINTEND
@@ -147,12 +125,6 @@ public:
         bool                                   mustBeInNewChunks
     );
 
-    MCAPI static ::std::pair<::BlockPos const, ::Biome const*> getBiomeForFeatureGeneration(
-        ::BiomeSource const&                 biomeSource,
-        ::ChunkPos const&                    chunkPos,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
-    );
-
     MCAPI static ::ChunkPos getChunkPosInSpace(
         ::ChunkPos const& cp,
         ::Random&         random,
@@ -162,8 +134,6 @@ public:
         int               salt,
         bool              tiltedSpacing
     );
-
-    MCAPI static void setRandomSeedFor(::Random& result, int x, int z, int salt, uint levelSeed);
     // NOLINTEND
 
 public:
@@ -200,11 +170,5 @@ public:
     MCAPI ::StructureStart* $getStructureAt(int cellX, int cellY, int cellZ);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

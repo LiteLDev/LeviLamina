@@ -7,23 +7,25 @@
 
 // auto generated forward declare list
 // clang-format off
-class ITickTimeManagerProxy;
+class LevelData;
 class PacketSender;
 class WorldClockRegistry;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class TickTimeManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ITickTimeManagerProxy>>> mTickTimeManagerProxy;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::PacketSender>>              mPacketSender;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelData> const> mLevelData;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::PacketSender>>    mPacketSender;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>>   mWorldClockSubscriptions;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TickTimeManager();
+    virtual ~TickTimeManager() = default;
 
     virtual void update();
 
@@ -33,28 +35,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void incrementCurrentTick();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update();
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

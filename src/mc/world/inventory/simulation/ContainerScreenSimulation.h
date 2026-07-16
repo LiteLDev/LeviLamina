@@ -6,11 +6,8 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/controllers/ItemTakeType.h"
-#include "mc/world/containers/managers/controllers/ItemSpecialLocation.h"
-#include "mc/world/containers/managers/controllers/ItemTransferType.h"
 #include "mc/world/inventory/network/ContainerScreenContext.h"
 #include "mc/world/inventory/simulation/ContainerScreenAutoplaceBehaviour.h"
-#include "mc/world/inventory/simulation/ContainerScreenTransferBehaviour.h"
 #include "mc/world/inventory/simulation/ContainerValidationCaller.h"
 
 // auto generated forward declare list
@@ -18,15 +15,14 @@
 class Container;
 class ContainerScreenActionScope;
 class ContainerScreenValidation;
-class IContainerTransfer;
 class ItemInstance;
 struct AutoPlaceTarget;
 struct ContainerScreenActionResult;
 struct ContainerSimulationSplitStack;
-struct ContainerValidationResult;
 struct ContainerValidationSlotData;
 struct FullContainerName;
 struct ItemTransferAmount;
+class IContainerTransfer;
 // clang-format on
 
 class ContainerScreenSimulation : public ::Bedrock::EnableNonOwnerReferences {
@@ -227,26 +223,6 @@ public:
         ::std::unique_ptr<::IContainerTransfer>&&                                 containerTransferInterface,
         ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> predictiveContainers
     );
-
-    MCNAPI void _leaveActionScope(::ContainerScreenActionResult& result);
-
-    MCNAPI ::ContainerScreenActionResult _tryTransfer(
-        ::ItemTransferType                   transferType,
-        ::ContainerValidationSlotData const& srcSlot,
-        ::ContainerValidationSlotData const& dstSlot,
-        ::ItemTransferAmount                 transferAmount,
-        ::ContainerScreenTransferBehaviour   transferBehaviour
-    );
-
-    MCNAPI ::ContainerScreenActionResult _tryTransferSpecial(
-        ::ContainerValidationSlotData const& srcSlot,
-        ::ItemTransferAmount                 transferAmount,
-        ::ItemSpecialLocation                location
-    );
-
-    MCNAPI ::ContainerScreenActionResult _updateCurrentScope(::ContainerScreenActionResult result);
-
-    MCNAPI ::ContainerScreenActionResult _updateCurrentScope(::ContainerValidationResult result);
 #endif
     // NOLINTEND
 

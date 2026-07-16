@@ -38,12 +38,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorEvent(::BlockPos pos, ::Actor& entity, ::std::string const& name);
-
-    MCFOLD ::Actor& getEntity() const;
-
-    MCFOLD ::std::string const& getName() const;
-
-    MCFOLD bool isClientSide() const;
     // NOLINTEND
 
 public:

@@ -3,26 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
-class MultiPlayerLevel;
+class ClientLevel;
 namespace Social { class MultiplayerServiceManager; }
 // clang-format on
 
 namespace OreUI {
 
-class InGameFacet : public ::OreUI::FacetBase<::OreUI::InGameFacet> {
+class InGameFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::InGameFacet> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                    mIsInGame;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsHosting;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsInMultiplayerSession;
-    ::ll::TypedStorage<8, 32, ::std::string>                          mCurrentLevelId;
-    ::ll::TypedStorage<8, 64, ::std::function<::MultiPlayerLevel*()>> mGetCurrentLevel;
+    ::ll::TypedStorage<1, 1, bool>                               mIsInGame;
+    ::ll::TypedStorage<1, 1, bool>                               mIsHosting;
+    ::ll::TypedStorage<1, 1, bool>                               mIsInMultiplayerSession;
+    ::ll::TypedStorage<8, 32, ::std::string>                     mCurrentLevelId;
+    ::ll::TypedStorage<8, 64, ::std::function<::ClientLevel*()>> mGetCurrentLevel;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager>>
         mMultiplayerServiceManager;
     // NOLINTEND
@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InGameFacet() /*override*/;
+    virtual ~InGameFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -44,16 +44,8 @@ public:
     // NOLINTBEGIN
     MCAPI InGameFacet(
         ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> multiplayerServiceManager,
-        ::std::function<::MultiPlayerLevel*()>                             getCurrentLevel
+        ::std::function<::ClientLevel*()>                                  getCurrentLevel
     );
-
-    MCFOLD ::std::string const& getCurrentLevelId() const;
-
-    MCFOLD bool getIsHosting() const;
-
-    MCFOLD bool getIsInGame() const;
-
-    MCFOLD bool getIsInMultiplayerSession() const;
     // NOLINTEND
 
 public:
@@ -67,26 +59,14 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> multiplayerServiceManager,
-        ::std::function<::MultiPlayerLevel*()>                             getCurrentLevel
+        ::std::function<::ClientLevel*()>                                  getCurrentLevel
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

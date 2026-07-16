@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ class ToastManager;
 
 namespace OreUI {
 
-class NotificationsFacet : public ::OreUI::FacetBase<::OreUI::NotificationsFacet> {
+class NotificationsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::NotificationsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -32,23 +32,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit NotificationsFacet(::ToastManager& toastManager);
-
-    MCAPI void _queueSnackbar(::std::string const& message);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ToastManager& toastManager);
     // NOLINTEND
 
 public:

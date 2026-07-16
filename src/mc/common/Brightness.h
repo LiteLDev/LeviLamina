@@ -9,8 +9,6 @@ struct Brightness : public ::NewType<uchar> {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Brightness const& INVALID();
-
     MCAPI static ::Brightness const& MAX();
 
     MCAPI static ::Brightness const& MIN();

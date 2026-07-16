@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/VideoSinkInterface.h"
-#include "mc/external/rtc/VideoSourceInterface.h"
 #include "mc/external/webrtc/MediaSourceInterface.h"
+#include "mc/external/webrtc/VideoSinkInterface.h"
+#include "mc/external/webrtc/VideoSourceInterface.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +17,7 @@ namespace webrtc { struct VideoTrackSourceConstraints; }
 namespace webrtc {
 
 class VideoTrackSourceInterface : public ::webrtc::MediaSourceInterface,
-                                  public ::rtc::VideoSourceInterface<::webrtc::VideoFrame> {
+                                  public ::webrtc::VideoSourceInterface<::webrtc::VideoFrame> {
 public:
     // VideoTrackSourceInterface inner types declare
     // clang-format off
@@ -53,11 +53,11 @@ public:
 
     virtual void GenerateKeyFrame() = 0;
 
-    virtual void AddEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* a1) = 0;
+    virtual void AddEncodedSink(::webrtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* a1) = 0;
 
-    virtual void RemoveEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* a1) = 0;
+    virtual void RemoveEncodedSink(::webrtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* a1) = 0;
 
-    virtual void ProcessConstraints(::webrtc::VideoTrackSourceConstraints const& constraints);
+    virtual void ProcessConstraints(::webrtc::VideoTrackSourceConstraints const& a1);
 
     virtual ~VideoTrackSourceInterface() /*override*/;
     // NOLINTEND
@@ -71,7 +71,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $ProcessConstraints(::webrtc::VideoTrackSourceConstraints const& constraints);
+    MCNAPI void $ProcessConstraints(::webrtc::VideoTrackSourceConstraints const& a1);
 
 
     // NOLINTEND

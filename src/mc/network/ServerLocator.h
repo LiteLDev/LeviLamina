@@ -25,7 +25,7 @@ public:
     virtual void startAnnouncingServer(
         ::std::string const&                 playerName,
         ::std::string const&                 worldName,
-        ::GameType                           gameType,
+        ::GameType                           worldGameType,
         int                                  numPlayers,
         int                                  maxNumPlayers,
         bool                                 isJoinableThroughServerScreen,

@@ -16,7 +16,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::dragon::TextureDescription const&>             mDescription;
     ::ll::TypedStorage<8, 8, ::mce::framebuilder::GamefaceMeshTexture const&> mTexture;
-    ::ll::TypedStorage<8, 8, ::std::array<float, 4> const&>                   mTextureSize;
     ::ll::TypedStorage<4, 4, int>                                             mTextureIndex;
     // NOLINTEND
 

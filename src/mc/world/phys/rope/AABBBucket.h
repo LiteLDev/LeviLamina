@@ -20,10 +20,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                       mDirty;
     ::ll::TypedStorage<1, 1, bool>                       mNeedsFinalize;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void mergeAABBs();
-    // NOLINTEND
 };

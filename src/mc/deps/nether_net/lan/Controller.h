@@ -16,18 +16,6 @@ public:
     Controller& operator=(Controller const&);
     Controller(Controller const&);
     Controller();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~Controller();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace NetherNet::RunLoop

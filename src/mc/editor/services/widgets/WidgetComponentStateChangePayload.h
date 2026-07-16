@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -27,6 +26,7 @@ public:
     class ComponentStateGizmo;
     class ComponentStateGrid;
     class ComponentStateNULL;
+    class ComponentStateRenderPlane;
     class ComponentStateSpline;
     class ComponentStateText;
     class ComponentStateVolumeOutline;
@@ -44,7 +44,8 @@ public:
         VolumeOutline             = 6,
         VolumeOutlineVolumeUpdate = 7,
         Grid                      = 8,
-        Null                      = 9,
+        RenderPlane               = 9,
+        Null                      = 10,
     };
 
     class ComponentStateBase {
@@ -61,12 +62,6 @@ public:
         ComponentStateBase& operator=(ComponentStateBase const&);
         ComponentStateBase(ComponentStateBase const&);
         ComponentStateBase();
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
     };
 
     class ComponentStateBoundingBox {
@@ -93,19 +88,6 @@ public:
         ComponentStateBoundingBox& operator=(ComponentStateBoundingBox const&);
         ComponentStateBoundingBox(ComponentStateBoundingBox const&);
         ComponentStateBoundingBox();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI bool
-        operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateBoundingBox const& other) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
     };
 
     class ComponentStateClipboard {
@@ -128,19 +110,6 @@ public:
         ComponentStateClipboard& operator=(ComponentStateClipboard const&);
         ComponentStateClipboard(ComponentStateClipboard const&);
         ComponentStateClipboard();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI bool
-        operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateClipboard const& other) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
     };
 
     class ComponentStateEntity {
@@ -156,24 +125,6 @@ public:
         ComponentStateEntity& operator=(ComponentStateEntity const&);
         ComponentStateEntity(ComponentStateEntity const&);
         ComponentStateEntity();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ComponentStateEntity();
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     class ComponentStateGizmo {
@@ -191,12 +142,6 @@ public:
         ComponentStateGizmo& operator=(ComponentStateGizmo const&);
         ComponentStateGizmo(ComponentStateGizmo const&);
         ComponentStateGizmo();
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
     };
 
     class ComponentStateGrid {
@@ -215,27 +160,26 @@ public:
         ComponentStateGrid& operator=(ComponentStateGrid const&);
         ComponentStateGrid(ComponentStateGrid const&);
         ComponentStateGrid();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI bool
-        operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid const& other) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
     };
 
-    class ComponentStateNULL {
+    class ComponentStateNULL {};
+
+    class ComponentStateRenderPlane {
     public:
-        // static functions
+        // member variables
         // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        ::ll::UntypedStorage<4, 16> mUnkdad3be;
+        ::ll::UntypedStorage<4, 20> mUnk9b5521;
+        ::ll::UntypedStorage<4, 20> mUnk81fa39;
+        ::ll::UntypedStorage<4, 8>  mUnk834e3f;
+        ::ll::UntypedStorage<4, 8>  mUnkc63ce9;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ComponentStateRenderPlane& operator=(ComponentStateRenderPlane const&);
+        ComponentStateRenderPlane(ComponentStateRenderPlane const&);
+        ComponentStateRenderPlane();
     };
 
     class ComponentStateSpline {
@@ -251,24 +195,6 @@ public:
         ComponentStateSpline& operator=(ComponentStateSpline const&);
         ComponentStateSpline(ComponentStateSpline const&);
         ComponentStateSpline();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ComponentStateSpline();
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     class ComponentStateText {
@@ -284,24 +210,6 @@ public:
         ComponentStateText& operator=(ComponentStateText const&);
         ComponentStateText(ComponentStateText const&);
         ComponentStateText();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ComponentStateText();
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     class ComponentStateVolumeOutline {
@@ -327,20 +235,6 @@ public:
         ComponentStateVolumeOutline& operator=(ComponentStateVolumeOutline const&);
         ComponentStateVolumeOutline(ComponentStateVolumeOutline const&);
         ComponentStateVolumeOutline();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI bool operator==(
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateVolumeOutline const& other
-        ) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
     };
 
     class ComponentStateVolumeOutlineVolumeUpdate {
@@ -356,24 +250,6 @@ public:
         ComponentStateVolumeOutlineVolumeUpdate& operator=(ComponentStateVolumeOutlineVolumeUpdate const&);
         ComponentStateVolumeOutlineVolumeUpdate(ComponentStateVolumeOutlineVolumeUpdate const&);
         ComponentStateVolumeOutlineVolumeUpdate();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ComponentStateVolumeOutlineVolumeUpdate();
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -381,7 +257,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16>  mUnk2b0e3b;
     ::ll::UntypedStorage<4, 24>  mUnk269c2b;
-    ::ll::UntypedStorage<8, 232> mUnkab1f07;
+    ::ll::UntypedStorage<8, 232> mUnka8aafe;
     // NOLINTEND
 
 public:
@@ -393,6 +269,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI WidgetComponentStateChangePayload(
         ::mce::UUID const& serviceId,
         ::mce::UUID const& groupId,
@@ -408,19 +285,16 @@ public:
             ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateVolumeOutline,
             ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateVolumeOutlineVolumeUpdate,
             ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateNULL,
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid>&& data
+            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid,
+            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateRenderPlane>&& data
     );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor(
         ::mce::UUID const& serviceId,
         ::mce::UUID const& groupId,
@@ -436,8 +310,10 @@ public:
             ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateVolumeOutline,
             ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateVolumeOutlineVolumeUpdate,
             ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateNULL,
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid>&& data
+            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid,
+            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateRenderPlane>&& data
     );
+#endif
     // NOLINTEND
 
 public:

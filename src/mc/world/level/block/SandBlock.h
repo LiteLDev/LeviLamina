@@ -31,12 +31,14 @@ public:
 
     virtual ::std::string getDustParticleName(::Block const& block) const /*override*/;
 
-    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    virtual bool mayConsumeFertilizer(::BlockSource&) const /*override*/;
+    virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& aboveBlock, ::BlockPos const&, ::Block const&) const /*override*/;
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
 
     virtual bool canBeOriginalSurface(bool) const /*override*/;
     // NOLINTEND
@@ -62,11 +64,12 @@ public:
 
     MCAPI ::std::string $getDustParticleName(::Block const& block) const;
 
-    MCFOLD bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const;
+    MCFOLD bool
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $mayConsumeFertilizer(::BlockSource&) const;
+    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& aboveBlock, ::BlockPos const&, ::Block const&) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCFOLD bool $canBeOriginalSurface(bool) const;
 

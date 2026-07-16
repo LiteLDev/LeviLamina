@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/FecMaskType.h"
 
 namespace webrtc::internal {
@@ -24,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::rtc::ArrayView<uchar const> LookUp(int num_media_packets, int num_fec_packets);
+    MCNAPI ::webrtc::ArrayView<uchar const, 18446744073709546905> LookUp(int num_media_packets, int num_fec_packets);
 
     MCNAPI PacketMaskTable(::webrtc::FecMaskType fec_mask_type, int num_media_packets);
 

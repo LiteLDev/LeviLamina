@@ -25,10 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ViewContext();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onReadyForBindings() /*override*/;
@@ -37,7 +33,7 @@ public:
 
     virtual void onBindingsReleased() /*override*/;
 
-    virtual void update(double const time) /*override*/;
+    virtual void update(double const) /*override*/;
 
     virtual ::std::vector<::OreUI::Debug::QueryInformation> getQueryInformation() const /*override*/;
 
@@ -45,45 +41,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ViewContext(
-        ::std::unique_ptr<::OreUI::Detail::QueryRegistry>   queries,
-        ::std::unique_ptr<::OreUI::Detail::CommandRegistry> commands
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::unique_ptr<::OreUI::Detail::QueryRegistry>   queries,
-        ::std::unique_ptr<::OreUI::Detail::CommandRegistry> commands
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onReadyForBindings();
 
-    MCAPI void $onSuspend();
-
-    MCFOLD void $onBindingsReleased();
-
-    MCAPI void $update(double const time);
-
-    MCAPI ::std::vector<::OreUI::Debug::QueryInformation> $getQueryInformation() const;
-
-    MCAPI ::std::vector<::OreUI::Detail::ICommandGroup*> $getCommands() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIBindable();
-
-    MCNAPI static void** $vftableForIBindingsDataProvider();
     // NOLINTEND
 };
 

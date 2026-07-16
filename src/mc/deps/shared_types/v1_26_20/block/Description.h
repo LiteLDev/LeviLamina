@@ -8,11 +8,6 @@
 #include "mc/deps/shared_types/v1_26_20/block/Traits.h"
 #include "mc/deps/shared_types/v1_26_20/block/VanillaBlockData.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct Description {
@@ -34,8 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Description(::SharedTypes::v1_26_20::BlockDefinition::Description&&);
-
     MCAPI Description(::SharedTypes::v1_26_20::BlockDefinition::Description const&);
 
     MCAPI ::SharedTypes::v1_26_20::BlockDefinition::Description&
@@ -48,16 +41,8 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::Description&&);
-
     MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::Description const&);
     // NOLINTEND
 

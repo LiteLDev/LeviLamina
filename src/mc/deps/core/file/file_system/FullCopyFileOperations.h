@@ -15,13 +15,6 @@ class FullCopyFileOperations {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Core::Result copyDirectory(
-        ::Core::FileSystemImpl* pSourceTransaction,
-        ::Core::PathView        sourceDirectoryPath,
-        ::Core::FileSystemImpl* pTargetTransaction,
-        ::Core::PathView        targetDirectoryPath
-    );
-
     MCNAPI static ::Core::Result copyFile(
         ::Core::FileSystemImpl* pSourceTransaction,
         ::Core::PathView        sourceFilePath,

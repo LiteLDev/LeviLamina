@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 struct XAsyncBlock;
-struct XTaskQueueObject;
 // clang-format on
 
 namespace Bedrock::Threading::AsyncResult {
@@ -29,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ToXAsyncBlock() /*override*/;
+    virtual ~ToXAsyncBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -38,24 +37,6 @@ public:
     MCAPI ::XAsyncBlock* _getAsyncBlock();
 
     MCAPI void _handleResult(long hr);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::Bedrock::Threading::AsyncResult::ToXAsyncBlock> create(::XTaskQueueObject* queue);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

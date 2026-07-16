@@ -11,7 +11,11 @@ enum class ScriptPrimitiveShapeType : uchar {
     Circle        = 3,
     Text          = 4,
     Arrow         = 5,
-    NumShapeTypes = 6,
+    Cylinder      = 6,
+    Pyramid       = 7,
+    Ellipsoid     = 8,
+    Cone          = 9,
+    NumShapeTypes = 10,
 };
 
 }

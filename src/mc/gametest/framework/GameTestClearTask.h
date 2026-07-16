@@ -29,8 +29,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI GameTestClearTask(::Dimension& dimension, ::BoundingBox const& bounds);
-
-    MCNAPI void tick();
     // NOLINTEND
 
 public:

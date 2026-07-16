@@ -27,19 +27,19 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                    mRecvEncryptedDataBuffer;
     ::ll::TypedStorage<8, 32, ::std::string>                                    mRecvSignedDataBuffer;
     ::ll::TypedStorage<8, 32, ::std::string>                                    mRecvDecryptedDataBuffer;
+    ::ll::TypedStorage<1, 1, bool>                                              mSkipEncryption;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EncryptedNetworkPeer();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EncryptedNetworkPeer() /*override*/;
+    virtual ~EncryptedNetworkPeer() /*override*/ = default;
 
-    virtual void
-    sendPacket(::std::string const& data, ::NetworkPeer::Reliability compressible, ::Compressibility) /*override*/;
+    virtual void sendPacket(
+        ::std::string const&       data,
+        ::NetworkPeer::Reliability reliability,
+        ::Compressibility          compressible
+    ) /*override*/;
 
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
@@ -54,27 +54,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EncryptedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer);
-
     MCAPI void enableEncryption(::std::string const& symmetricKey);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability compressible, ::Compressibility);
+    MCAPI void
+    $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
     MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 

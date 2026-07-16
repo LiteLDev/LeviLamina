@@ -11,7 +11,6 @@
 // clang-format off
 class DoorBlock;
 class Mob;
-class Path;
 // clang-format on
 
 class DoorInteractGoal : public ::BaseGoal {
@@ -50,32 +49,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DoorInteractGoal(::Mob& mob);
-
-    MCAPI bool _mobHasExited();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::DoorBlock const* _findBlockingDoorAtPos(
-        ::BlockPos const&  bpos,
-        ::Mob const&       mob,
-        ::Path*            path,
-        ::Direction::Type& dirIn,
-        ::Direction::Type& dirOut
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

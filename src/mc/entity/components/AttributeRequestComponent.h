@@ -40,18 +40,6 @@ public:
         AddModifier& operator=(AddModifier const&);
         AddModifier(AddModifier const&);
         AddModifier();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~AddModifier();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct RemoveModifier {
@@ -67,18 +55,6 @@ public:
         RemoveModifier& operator=(RemoveModifier const&);
         RemoveModifier(RemoveModifier const&);
         RemoveModifier();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~RemoveModifier();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     using Variant = ::std::variant<

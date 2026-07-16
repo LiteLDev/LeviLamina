@@ -23,12 +23,6 @@ public:
 #ifdef LL_PLAT_C
     MCAPI GatheringServerInfo(::std::string const& gatheringId, ::std::string const& gatheringTitle);
 
-    MCFOLD ::std::string const& getCreatorName() const;
-
-    MCFOLD ::std::string const& getGatheringId() const;
-
-    MCFOLD bool isValid() const;
-
     MCFOLD ::GatheringServerInfo& operator=(::GatheringServerInfo&&);
 #endif
 

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/MemberFilterOption.h"
 #include "mc/client/realms/MemberSortOption.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -16,7 +16,8 @@ namespace Realms::Stories { class FacetStateManager; }
 
 namespace OreUI {
 
-class RealmsStoriesPersistentDataFacet : public ::OreUI::FacetBase<::OreUI::RealmsStoriesPersistentDataFacet> {
+class RealmsStoriesPersistentDataFacet
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsStoriesPersistentDataFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -53,38 +54,6 @@ public:
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> realmsStoriesProvider,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>       profanityContext
     );
-
-    MCFOLD ::std::string const& getCommentInProgressBody() const;
-
-    MCFOLD ::Realms::Stories::MemberFilterOption& getCurrentMemberFilterOption() const;
-
-    MCFOLD ::std::string const& getCurrentMemberSearchText() const;
-
-    MCFOLD ::Realms::Stories::MemberSortOption& getCurrentMemberSortOption() const;
-
-    MCFOLD ::std::string const& getCurrentStoryId() const;
-
-    MCAPI bool getNewPostAvailable() const;
-
-    MCFOLD ::std::string const& getPostInProgressBody() const;
-
-    MCFOLD ::std::string const& getStoryScreenshotSelectionFilePath() const;
-
-    MCAPI void setCommentInProgressBody(::std::string const& body);
-
-    MCAPI void setCurrentMemberFilterOption(::Realms::Stories::MemberFilterOption filterOption);
-
-    MCAPI void setCurrentMemberSearchText(::std::string const& searchText);
-
-    MCAPI void setCurrentMemberSortOption(::Realms::Stories::MemberSortOption sortOption);
-
-    MCAPI void setCurrentStoryId(::std::string const& id);
-
-    MCAPI void setNewPostAvailable(bool postAvailable);
-
-    MCAPI void setPostInProgressBody(::std::string const& body);
-
-    MCAPI void setStoryScreenshotSelectionFilePath(::std::string const& path);
     // NOLINTEND
 
 public:
@@ -105,13 +74,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

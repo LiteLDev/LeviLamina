@@ -76,7 +76,8 @@ public:
         uint                                      rtp_timestamp,
         ::webrtc::EncodedImage const&             encoded_image,
         ::webrtc::RTPVideoHeader                  video_header,
-        ::webrtc::TimeDelta                       expected_retransmission_time
+        ::webrtc::TimeDelta                       expected_retransmission_time,
+        ::std::vector<uint> const&                csrcs
     );
     // NOLINTEND
 

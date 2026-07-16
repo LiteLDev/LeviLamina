@@ -18,11 +18,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addObjective(::std::string const& objective);
-
-    MCAPI bool isSubscribed(::std::string const& objective) const;
-
-    MCAPI void removeObjective(::std::string const& objective);
-
-    MCAPI void sendEvent(::std::string const& objective, int score) const;
     // NOLINTEND
 };

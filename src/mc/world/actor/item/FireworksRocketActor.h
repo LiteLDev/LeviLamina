@@ -58,12 +58,6 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void checkAchievement() const;
-
-    MCAPI void dealExplosionDamage();
-
-    MCAPI int getLifeTime() const;
-
     MCAPI void init(
         ::Level& level,
         ::Vec3 const&,
@@ -75,18 +69,12 @@ public:
 
     MCAPI void initTagData(::Random& random);
 
-    MCAPI bool isAttachedToEntity() const;
-
     MCAPI void postNormalTick();
-
-    MCFOLD void setDispensed(bool dispensed);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void defineData(::SynchedActorDataEntityWrapper& data);
-
     MCAPI static void initData(
         ::SynchedActorDataEntityWrapper& data,
         ::CompoundTag const&             rocketUserData,
@@ -108,24 +96,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD float $getShadowRadius() const;
 
-    MCAPI void $lerpMotion(::Vec3 const& delta);
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
-
-    MCAPI void $onSynchedDataUpdate(int dataId);
-
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

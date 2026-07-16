@@ -83,7 +83,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~FileSystemFileAccess() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~FileSystemFileAccess() /*override*/;
+#endif
 
     virtual void* fopen(::Core::PathView filePath, ::std::string const& mode) /*override*/;
 

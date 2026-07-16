@@ -3,17 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/shared_types/shared_types/Color255RGB.h"
-#include "mc/deps/shared_types/shared_types/ColorNormRGB.h"
 #include "mc/deps/shared_types/util/Identifier.h"
+#include "mc/util/cereal_helpers/TimeKeyframes.h"
 
 // auto generated forward declare list
 // clang-format off
-class LinkedAssetValidator;
-class SemVersionConstant;
-struct FogDefinition;
-namespace Puv { class LoadResultAny; }
+namespace SharedTypes { struct ColorNormRGB; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -59,12 +55,6 @@ public:
                 // NOLINTBEGIN
                 ::ll::TypedStorage<8, 32, ::SharedTypes::Identifier<9>> mIdentifier;
                 // NOLINTEND
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-                // NOLINTEND
             };
 
             struct FogDistanceSetting {
@@ -88,12 +78,6 @@ public:
                                                                                        mType;
                 ::ll::TypedStorage<4, 20, ::std::optional<::SharedTypes::Color255RGB>> mColor;
                 // NOLINTEND
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-                // NOLINTEND
             };
 
             struct FogInitDistanceSetting {
@@ -109,12 +93,6 @@ public:
                         ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceSetting::DistanceType>>
                                                                                        mType;
                 ::ll::TypedStorage<4, 20, ::std::optional<::SharedTypes::Color255RGB>> mColor;
-                // NOLINTEND
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
                 // NOLINTEND
             };
 
@@ -133,28 +111,18 @@ public:
                 ::ll::TypedStorage<4, 8, ::std::optional<float>> mMidTransitionPercentage;
                 ::ll::TypedStorage<4, 8, ::std::optional<float>> mMaxTransitionSeconds;
                 // NOLINTEND
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-                // NOLINTEND
             };
 
             struct FogVolumetricDensitySetting {
             public:
                 // member variables
                 // NOLINTBEGIN
-                ::ll::TypedStorage<4, 8, ::std::optional<float>> mMaxDensity;
-                ::ll::TypedStorage<1, 2, ::std::optional<bool>>  mUniform;
-                ::ll::TypedStorage<4, 8, ::std::optional<float>> mZeroDensityHeight;
-                ::ll::TypedStorage<4, 8, ::std::optional<float>> mMaxDensityHeight;
-                // NOLINTEND
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+                ::ll::TypedStorage<8, 40, ::std::optional<::CerealHelpers::TimeKeyframes<float, float>>> mMaxDensity;
+                ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                          mUniform;
+                ::ll::TypedStorage<8, 40, ::std::optional<::CerealHelpers::TimeKeyframes<float, float>>>
+                    mZeroDensityHeight;
+                ::ll::TypedStorage<8, 40, ::std::optional<::CerealHelpers::TimeKeyframes<float, float>>>
+                    mMaxDensityHeight;
                 // NOLINTEND
             };
 
@@ -163,41 +131,35 @@ public:
                 // member variables
                 // NOLINTBEGIN
                 ::ll::TypedStorage<
-                    4,
-                    32,
+                    8,
+                    136,
                     ::std::optional<
                         ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogVolumetricDensitySetting>>
                     mAir;
                 ::ll::TypedStorage<
-                    4,
-                    32,
+                    8,
+                    136,
                     ::std::optional<
                         ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogVolumetricDensitySetting>>
                     mWeather;
                 ::ll::TypedStorage<
-                    4,
-                    32,
+                    8,
+                    136,
                     ::std::optional<
                         ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogVolumetricDensitySetting>>
                     mWater;
                 ::ll::TypedStorage<
-                    4,
-                    32,
+                    8,
+                    136,
                     ::std::optional<
                         ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogVolumetricDensitySetting>>
                     mLava;
                 ::ll::TypedStorage<
-                    4,
-                    32,
+                    8,
+                    136,
                     ::std::optional<
                         ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogVolumetricDensitySetting>>
                     mLavaResistance;
-                // NOLINTEND
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
                 // NOLINTEND
             };
 
@@ -205,14 +167,16 @@ public:
             public:
                 // member variables
                 // NOLINTBEGIN
-                ::ll::TypedStorage<4, 20, ::std::optional<::SharedTypes::ColorNormRGB>> mScattering;
-                ::ll::TypedStorage<4, 20, ::std::optional<::SharedTypes::ColorNormRGB>> mAbsorption;
-                // NOLINTEND
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+                ::ll::TypedStorage<
+                    8,
+                    40,
+                    ::std::optional<::CerealHelpers::TimeKeyframes<float, ::SharedTypes::ColorNormRGB>>>
+                    mScattering;
+                ::ll::TypedStorage<
+                    8,
+                    40,
+                    ::std::optional<::CerealHelpers::TimeKeyframes<float, ::SharedTypes::ColorNormRGB>>>
+                    mAbsorption;
                 // NOLINTEND
             };
 
@@ -221,29 +185,23 @@ public:
                 // member variables
                 // NOLINTBEGIN
                 ::ll::TypedStorage<
-                    4,
-                    44,
+                    8,
+                    88,
                     ::std::optional<
                         ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogVolumetricMediaCoeffsSetting>>
                     mAir;
                 ::ll::TypedStorage<
-                    4,
-                    44,
+                    8,
+                    88,
                     ::std::optional<
                         ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogVolumetricMediaCoeffsSetting>>
                     mWater;
                 ::ll::TypedStorage<
-                    4,
-                    44,
+                    8,
+                    88,
                     ::std::optional<
                         ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogVolumetricMediaCoeffsSetting>>
                     mCloud;
-                // NOLINTEND
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
                 // NOLINTEND
             };
 
@@ -251,13 +209,8 @@ public:
             public:
                 // member variables
                 // NOLINTBEGIN
-                ::ll::TypedStorage<4, 8, ::std::optional<float>> mHenyeyGreensteinG;
-                // NOLINTEND
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+                ::ll::TypedStorage<8, 40, ::std::optional<::CerealHelpers::TimeKeyframes<float, float>>>
+                    mHenyeyGreensteinG;
                 // NOLINTEND
             };
 
@@ -266,23 +219,17 @@ public:
                 // member variables
                 // NOLINTBEGIN
                 ::ll::TypedStorage<
-                    4,
-                    12,
+                    8,
+                    48,
                     ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::
                                         FogVolumetricHenyeyGreensteinGSetting>>
                     mAir;
                 ::ll::TypedStorage<
-                    4,
-                    12,
+                    8,
+                    48,
                     ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::
                                         FogVolumetricHenyeyGreensteinGSetting>>
                     mWater;
-                // NOLINTEND
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
                 // NOLINTEND
             };
 
@@ -291,29 +238,23 @@ public:
                 // member variables
                 // NOLINTBEGIN
                 ::ll::TypedStorage<
-                    4,
-                    164,
+                    8,
+                    688,
                     ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::
                                         FogVolumetricDensityCollectionSetting>>
                     mDensitySettings;
                 ::ll::TypedStorage<
-                    4,
-                    136,
+                    8,
+                    272,
                     ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::
                                         FogVolumetricMediaCoeffsCollectionSetting>>
                     mMediaCoeffSettings;
                 ::ll::TypedStorage<
-                    4,
-                    28,
+                    8,
+                    104,
                     ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::
                                         FogVolumetricHenyeyGreensteinGCollectionSetting>>
                     mHenyeyGreensteinGSettings;
-                // NOLINTEND
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
                 // NOLINTEND
             };
 
@@ -327,12 +268,6 @@ public:
                     84,
                     ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogTransitionSetting>>
                     mTransitionFog;
-                // NOLINTEND
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
                 // NOLINTEND
             };
 
@@ -372,12 +307,6 @@ public:
                     ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceSetting>>
                     mPowderedSnow;
                 // NOLINTEND
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-                // NOLINTEND
             };
 
         public:
@@ -392,59 +321,19 @@ public:
                     ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceCollectionSetting>>
                 mFogDistances;
             ::ll::TypedStorage<
-                4,
-                332,
+                8,
+                1072,
                 ::std::optional<
                     ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogVolumetricCollectionSetting>>
                 mFogVolumetrics;
-            // NOLINTEND
-
-        public:
-            // static functions
-            // NOLINTBEGIN
-            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>                                                 mFormatVersion;
-        ::ll::TypedStorage<8, 744, ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings> mFogSettings;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FogParametersSrcV0& operator=(FogParametersSrcV0 const&);
-        FogParametersSrcV0();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI FogParametersSrcV0(::FogDefinitionCerealParser::FogParametersSrcV0 const&);
-
-        MCAPI ::FogDefinitionCerealParser::FogParametersSrcV0&
-        operator=(::FogDefinitionCerealParser::FogParametersSrcV0&&);
-
-        MCAPI ~FogParametersSrcV0();
-        // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static ::SemVersionConstant const& VERSION();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::FogDefinitionCerealParser::FogParametersSrcV0 const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
+        ::ll::TypedStorage<8, 32, ::std::string>                                                  mFormatVersion;
+        ::ll::TypedStorage<8, 1480, ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings> mFogSettings;
         // NOLINTEND
     };
 
@@ -452,20 +341,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindParameters(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static ::FogDefinition
-    convertJsonConfigToFogDefinition(::FogDefinitionCerealParser::FogParametersSrcV0 const& loadedSettings);
-
-    MCAPI static ::Puv::LoadResultAny loadFromString(
-        ::cereal::ReflectionCtx const&                     ctx,
-        ::std::string const&                               dataJson,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
-    );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& PAYLOAD_KEY();
     // NOLINTEND
 };

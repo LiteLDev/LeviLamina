@@ -88,13 +88,13 @@ public:
 
     MCFOLD bool $write(ushort value);
 
-    MCAPI bool $write(int value);
+    MCFOLD bool $write(int value);
 
-    MCAPI bool $write(uint value);
+    MCFOLD bool $write(uint value);
 
-    MCAPI bool $write(int64 value);
+    MCFOLD bool $write(int64 value);
 
-    MCAPI bool $write(uint64 value);
+    MCFOLD bool $write(uint64 value);
 
     MCFOLD bool $write(float value);
 
@@ -106,7 +106,7 @@ public:
 
     MCFOLD void $writeAdditionalData(bool value);
 
-    MCAPI void $writeAdditionalData(uint value);
+    MCFOLD void $writeAdditionalData(uint value);
 
     MCFOLD void $writeAdditionalData(::std::string_view const value);
 
@@ -116,7 +116,7 @@ public:
 
     MCFOLD ::cereal::SchemaRWType $openObject();
 
-    MCAPI ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
+    MCFOLD ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
 
     MCFOLD void $close();
 

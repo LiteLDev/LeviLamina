@@ -62,31 +62,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CameraInstructionPacket();
-
-    MCAPI explicit CameraInstructionPacket(::CameraInstructionPacketPayload payload);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::CameraInstructionPacketPayload payload);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;
 
     MCAPI ::std::string_view $getName() const;
 
-    MCFOLD ::SerializationMode $getSerializationMode() const;
+    MCAPI ::SerializationMode $getSerializationMode() const;
 
-    MCFOLD void $setSerializationMode(::SerializationMode mode);
+    MCAPI void $setSerializationMode(::SerializationMode mode);
 
     MCAPI void $writeWithSerializationMode(
         ::BinaryStream&                      stream,

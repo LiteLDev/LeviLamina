@@ -34,26 +34,6 @@ public:
         ::ll::TypedStorage<8, 64, ::std::function<void(bool&)>>     lock;
         ::ll::TypedStorage<4, 4, ::FeatureOptionTabID>              tabID;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FeatureToggle& operator=(FeatureToggle const&);
-        FeatureToggle(FeatureToggle const&);
-        FeatureToggle();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::FeatureToggles::FeatureToggle& operator=(::FeatureToggles::FeatureToggle&&);
-
-        MCAPI ~FeatureToggle();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
     using ExpectedDisabled = ::std::vector<::FeatureOptionID>;
@@ -90,50 +70,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit FeatureToggles(::AppPlatform& appPlatform);
 
-    MCAPI ::std::function<void(::Option&)> _getDisabledIfOptionExpectationsNotMetSetupCallback(
-        ::std::vector<::FeatureOptionID> expectedDisabledOptions,
-        ::std::vector<::FeatureOptionID> expectedEnabledOptions
-    );
-
-    MCAPI ::std::function<void(bool&)> _getLockIfInGameOrOptionExpectationsNotMetLockCallback(
-        ::std::vector<::FeatureOptionID> expectedDisabledOptions,
-        ::std::vector<::FeatureOptionID> expectedEnabledOptions
-    );
-
     MCAPI void _initialize(::AppPlatform& appPlatform);
-
-    MCAPI void _registerFeature(
-        ::FeatureOptionTabID             tabID,
-        ::FeatureOptionID                featureID,
-        ::std::string const&             locName,
-        ::std::string const&             saveName,
-        bool                             defaultValue,
-        ::FeatureOptionID                dependencyFeatureID,
-        ::std::function<void(::Option&)> setup,
-        ::std::function<void(bool&)>     lock
-    );
 
     MCAPI void _registerFeatures();
 
-    MCAPI void _setupDependencies();
-
-    MCAPI ::Option* get(::FeatureOptionID featureID);
-
-#ifdef LL_PLAT_C
-    MCAPI ::FeatureOptionID getFeatureIDFromSaveTag(::std::string_view featureSaveTag) const;
-#endif
-
     MCAPI bool isEnabled(::FeatureOptionID featureID) const;
-
-#ifdef LL_PLAT_C
-    MCFOLD bool isGraniteBayFeatureEnabled() const;
-#endif
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::FeatureToggles>& mFeatureToggles();
     // NOLINTEND
 
 public:

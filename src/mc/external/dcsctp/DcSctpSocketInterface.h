@@ -7,6 +7,7 @@
 #include "mc/external/dcsctp/SctpImplementation.h"
 #include "mc/external/dcsctp/SendStatus.h"
 #include "mc/external/dcsctp/SocketState.h"
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/StrongAlias.h"
 
 // auto generated forward declare list
@@ -30,7 +31,11 @@ public:
     // NOLINTBEGIN
     virtual ~DcSctpSocketInterface() = default;
 
-    virtual void ReceivePacket(::rtc::ArrayView<uchar const> data) = 0;
+    virtual void ReceivePacket(::webrtc::ArrayView<uchar const, 18446744073709546905> data) = 0;
+
+    virtual uint64 MessagesReady() const = 0;
+
+    virtual ::std::optional<::dcsctp::DcSctpMessage> GetNextMessage() = 0;
 
     virtual void HandleTimeout(::webrtc::StrongAlias<::dcsctp::TimeoutTag, uint64> timeout_id) = 0;
 
@@ -58,11 +63,15 @@ public:
 
     virtual ::dcsctp::SendStatus Send(::dcsctp::DcSctpMessage message, ::dcsctp::SendOptions const& send_options) = 0;
 
-    virtual ::std::vector<::dcsctp::SendStatus>
-    SendMany(::rtc::ArrayView<::dcsctp::DcSctpMessage> messages, ::dcsctp::SendOptions const& send_options) = 0;
+    virtual ::std::vector<::dcsctp::SendStatus> SendMany(
+        ::webrtc::ArrayView<::dcsctp::DcSctpMessage, 18446744073709546905> messages,
+        ::dcsctp::SendOptions const&                                       send_options
+    ) = 0;
 
-    virtual ::dcsctp::ResetStreamsStatus
-    ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams) = 0;
+    virtual ::dcsctp::ResetStreamsStatus ResetStreams(
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
+            outgoing_streams
+    ) = 0;
 
     virtual uint64 buffered_amount(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const = 0;
 

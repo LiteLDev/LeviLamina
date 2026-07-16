@@ -10,7 +10,6 @@
 // clang-format off
 class AppPlatform;
 namespace OreUI { class GameDependencies; }
-namespace OreUI { class InvocationStatus; }
 // clang-format on
 
 namespace OreUI {
@@ -33,8 +32,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ClientUpdatesCommandGroup(::OreUI::GameDependencies const& game);
-
-    MCAPI void _launchStoreForClientUpdates(::OreUI::InvocationStatus status) const;
     // NOLINTEND
 
 public:

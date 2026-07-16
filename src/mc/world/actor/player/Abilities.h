@@ -21,6 +21,7 @@ public:
 
 public:
     // prevent constructor by default
+    Abilities& operator=(Abilities const&);
     Abilities();
 
 public:
@@ -47,41 +48,15 @@ public:
         ::Ability::Options                                               requiredOptions
     ) const;
 
-    MCAPI bool getBool(::AbilitiesIndex ability) const;
-
-    MCAPI float getFloat(::AbilitiesIndex ability) const;
-
-    MCAPI bool isAnyAbilitySet() const;
-
     MCAPI bool loadSaveData(::CompoundTag const& parentTag);
 
-    MCAPI ::Abilities& operator=(::Abilities const& rhs);
-
-    MCAPI void setAbility(::AbilitiesIndex ability, bool value);
-
-    MCAPI void setAbility(::AbilitiesIndex abilityIndex, float value);
-
-    MCAPI void setAbilityDiff(::AbilitiesIndex ability, bool value, bool& diff);
-
     MCAPI void setFromPermissions(::PlayerPermissionLevel permissions);
-
-    MCAPI void unSet();
-
-    MCAPI void unSet(::AbilitiesIndex val);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::array<::Ability const, 20> _initDefaultAbilities();
-
-    MCAPI static char const* getAbilityName(::AbilitiesIndex abilityIndex);
-
-    MCAPI static ::Ability const& getDefault(::AbilitiesIndex abilityIndex);
-
-#ifdef LL_PLAT_C
-    MCAPI static ::std::optional<::std::string> getDiff(::Abilities const& lhs, ::Abilities const& rhs);
-#endif
 
     MCAPI static ::AbilitiesIndex nameToAbilityIndex(::std::string const& name);
     // NOLINTEND
@@ -90,8 +65,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::array<char const*, 20>& ABILITY_NAMES();
-
-    MCAPI static ::std::string const& DIFF_ABILITIY_AT();
 
     MCAPI static ::Ability& INVALID_ABILITY();
 

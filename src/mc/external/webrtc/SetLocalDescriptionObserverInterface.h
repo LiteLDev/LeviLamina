@@ -17,6 +17,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void OnSetLocalDescriptionComplete(::webrtc::RTCError error) = 0;
+
+    virtual ~SetLocalDescriptionObserverInterface() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

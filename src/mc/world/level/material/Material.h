@@ -27,44 +27,14 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD bool getBlocksMotion() const;
-
-    MCFOLD bool isLiquid() const;
-
-    MCFOLD bool isSolid() const;
-
-    MCAPI bool isSolidBlocking() const;
-
-    MCFOLD bool isSuperHot() const;
-
-    MCAPI bool isTopSolid(bool includeWater, bool includeLeaves) const;
-
-    MCAPI bool isType(::SharedTypes::v1_26_20::MaterialType type) const;
-
-    MCAPI bool operator!=(::Material const& rhs) const;
-
-    MCAPI bool operator==(::Material const& rhs) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _setupMaterials();
-
-    MCAPI static ::Material const& getMaterial(::SharedTypes::v1_26_20::MaterialType type);
-
-    MCAPI static void initMaterials();
-
-    MCAPI static void teardownMaterials();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool& mInitialized();
-
     MCAPI static ::std::vector<::std::unique_ptr<::Material>>& mMaterials();
     // NOLINTEND
 };

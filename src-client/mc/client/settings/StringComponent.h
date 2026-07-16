@@ -33,13 +33,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StringComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StringComponent() /*override*/;
+    virtual ~StringComponent() /*override*/ = default;
 
     virtual ::Settings::ComponentState getDefaultState() const /*override*/;
     // NOLINTEND
@@ -47,61 +43,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StringComponent(
-        ::std::string_view                                 id,
-        ::std::string_view                                 name,
-        ::std::optional<::std::string>                     description,
-        ::std::unique_ptr<::Settings::IStringDataProvider> dataProvider,
-        ::std::optional<::std::string>                     placeholder,
-        ::std::optional<int>                               maxLength
-    );
-
-    MCAPI void commitValue();
-
-    MCAPI bool flush();
-
-    MCAPI ::std::optional<::std::string> getFallbackValue() const;
-
-    MCAPI ::std::optional<int> getMaxLength() const;
-
     MCAPI ::std::optional<::std::string> getPlaceholder() const;
-
-    MCFOLD ::std::string getValue() const;
-
-    MCAPI bool isFormatValid() const;
 
     MCAPI bool updateValue(::std::string const& value);
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string_view                                 id,
-        ::std::string_view                                 name,
-        ::std::optional<::std::string>                     description,
-        ::std::unique_ptr<::Settings::IStringDataProvider> dataProvider,
-        ::std::optional<::std::string>                     placeholder,
-        ::std::optional<int>                               maxLength
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Settings::ComponentState $getDefaultState() const;
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

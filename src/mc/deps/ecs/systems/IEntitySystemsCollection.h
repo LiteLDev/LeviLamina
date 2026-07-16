@@ -29,49 +29,43 @@ public:
     virtual ~IEntitySystemsCollection() = default;
 
     virtual void registerTickingSystem(
-        ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const>,
-        ::std::unique_ptr<::ITickingSystem>,
-        ::SystemInfo const&,
-        ::EntitySystemTickingMode
+        ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,
+        ::std::unique_ptr<::ITickingSystem>                      system,
+        ::SystemInfo const&                                      info,
+        ::EntitySystemTickingMode                                tickingMode
     ) = 0;
 
-    virtual void registerSystem(::std::unique_ptr<::ISystem>, ::SystemInfo const&) = 0;
+    virtual void registerSystem(::std::unique_ptr<::ISystem> system, ::SystemInfo const& info) = 0;
 
-    virtual void foreachSystem(::std::function<void(::ISystem&)> const&) = 0;
+    virtual void foreachSystem(::std::function<void(::ISystem&)> const& callback) = 0;
 
     virtual void foreachTickingSystem(
-        ::EntitySystemsFilter const&,
-        ::std::function<void(::ITickingSystem&, ::TickingSystemId)> const&,
-        bool
+        ::EntitySystemsFilter const&                                       filter,
+        ::std::function<void(::ITickingSystem&, ::TickingSystemId)> const& callback,
+        bool                                                               captureTimings
     ) = 0;
 
     virtual void foreachSingleTickingSystem(
-        ::EntitySystemsFilter const&,
-        ::std::function<void(::ITickingSystem&, ::TickingSystemId)> const&,
-        bool
+        ::EntitySystemsFilter const&                                       filter,
+        ::std::function<void(::ITickingSystem&, ::TickingSystemId)> const& callback,
+        bool                                                               captureTimings
     ) = 0;
 
-    virtual ::SystemInfo const* getSystemInfoForTickingSystemId(::TickingSystemId) const = 0;
+    virtual uint64 getLargestSystemIndex() const = 0;
 
-    virtual ::ITickingSystem* getTickingSystemForTickingSystemId(::TickingSystemId) const = 0;
+    virtual ::SystemInfo const* getSystemInfoForTickingSystemId(::TickingSystemId id) const = 0;
 
-    virtual ::ComponentInfo const* getComponentInfoForId(uint) const = 0;
+    virtual ::ITickingSystem* getTickingSystemForTickingSystemId(::TickingSystemId id) const = 0;
 
-    virtual void foreachComponentInfo(::std::function<void(uint, ::ComponentInfo const&)> const&) const = 0;
+    virtual ::ComponentInfo const* getComponentInfoForId(uint id) const = 0;
 
-    virtual bool hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const) const = 0;
+    virtual void foreachComponentInfo(::std::function<void(uint, ::ComponentInfo const&)> const& callback) const = 0;
+
+    virtual bool hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const = 0;
 
     virtual ::std::vector<::SystemTiming> gatherSystemTimings() const = 0;
 
-    virtual bool _isValidIndex(uint) const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI bool isValidTickingSystemId(::TickingSystemId id) const;
-#endif
+    virtual bool _isValidIndex(uint index) const = 0;
     // NOLINTEND
 
 public:

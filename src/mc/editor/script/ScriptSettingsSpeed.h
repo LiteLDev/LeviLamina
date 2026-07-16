@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/editor/script/ScriptSettingsSpeedPropType.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ClassBinding; }
@@ -27,20 +23,6 @@ public:
     ScriptSettingsSpeed& operator=(ScriptSettingsSpeed const&);
     ScriptSettingsSpeed(ScriptSettingsSpeed const&);
     ScriptSettingsSpeed();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::std::optional<::std::variant<float>> get(::Editor::ScriptModule::ScriptSettingsSpeedPropType prop) const;
-
-    MCNAPI ::std::unordered_map<::std::string, ::std::optional<::std::variant<float>>> getAll() const;
-
-    MCNAPI ::Scripting::Result_deprecated<void>
-    set(::Editor::ScriptModule::ScriptSettingsSpeedPropType prop, ::std::variant<float> const& value);
-
-    MCNAPI ::Scripting::Result_deprecated<void>
-    setAll(::std::unordered_map<::std::string, ::std::optional<::std::variant<float>>> const& props);
-    // NOLINTEND
 
 public:
     // static functions

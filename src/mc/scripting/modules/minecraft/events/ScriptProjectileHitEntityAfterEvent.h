@@ -8,9 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-struct ProjectileHitEvent;
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -32,14 +29,6 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptProjectileHitEntityAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent const&);
 
-    MCAPI ScriptProjectileHitEntityAfterEvent(
-        ::ProjectileHitEvent const&           projectileHitEvent,
-        ::Actor const*                        hitEntity,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
-
-    MCAPI ::ScriptModuleMinecraft::ScriptEntityHitInformation getEntityHit() const;
-
     MCAPI ::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent&&);
 
@@ -57,12 +46,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent const&);
-
-    MCAPI void* $ctor(
-        ::ProjectileHitEvent const&           projectileHitEvent,
-        ::Actor const*                        hitEntity,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
     // NOLINTEND
 };
 

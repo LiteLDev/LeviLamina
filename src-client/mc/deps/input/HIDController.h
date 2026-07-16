@@ -15,7 +15,6 @@
 class IGamefaceTextInputProxy;
 class IKeyboardProxy;
 class ITextBoxController;
-namespace ApplicationSignal { class ClipboardPaste; }
 namespace Bedrock { class SignalReceiver; }
 // clang-format on
 
@@ -51,16 +50,6 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::HIDController::GamefaceTextEditContext::StateChange checkForChanges();
-
-        MCAPI ::TextBoxSelection getSelection() const;
-
-        MCAPI ::std::string getText() const;
-
-        MCAPI void imeConfirmAndEndComposition();
-
-        MCAPI void imeStartComposition();
-
-        MCFOLD bool isEnabled() const;
 
         MCAPI void replaceTextRange(::std::string const& text, int from, int to);
 
@@ -142,14 +131,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit HIDController(::IKeyboardProxy* keyboardProxy);
-
-    MCAPI void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
-
-    MCAPI void deinitialize();
-
-    MCAPI void disableEditContext();
-
-    MCAPI void enableEditContext(::std::string_view newUtf8Text, int maxLength);
 
     MCAPI ::std::string getTextBoxBackend() const;
 

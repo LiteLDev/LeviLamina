@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/legacy/ExpressionNode.h"
 #include "mc/deps/shared_types/v1_20_80/particle/FlipBook.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_20_80 {
 
 struct UV {
@@ -24,39 +19,44 @@ public:
     ::ll::TypedStorage<8, 184, ::std::optional<::SharedTypes::v1_20_80::FlipBook>>    mFlipBook;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     UV& operator=(UV const&);
     UV();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI UV(::SharedTypes::v1_20_80::UV&&);
 
     MCAPI UV(::SharedTypes::v1_20_80::UV const&);
 
-    MCAPI ~UV();
-    // NOLINTEND
+    MCAPI bool operator==(::SharedTypes::v1_20_80::UV const&) const;
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI ~UV();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::SharedTypes::v1_20_80::UV&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_20_80::UV const&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

@@ -25,24 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DolphinMoveControl();
-
-    MCAPI bool _clearOfObstacles(::Mob const& mob, float x, float z, int distance) const;
-
-    MCAPI void _handleBreaching(::Mob& mob);
-
-    MCAPI void _setupBreach(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);

@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GuiDataPickItemPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -64,16 +68,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GuiDataPickItemPacket();
-
     MCAPI explicit GuiDataPickItemPacket(::GuiDataPickItemPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::GuiDataPickItemPacketPayload payload);
     // NOLINTEND
 

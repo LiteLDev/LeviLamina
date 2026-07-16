@@ -4,16 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ProjectRegion; }
-namespace Editor { class ServiceProviderCollection; }
-namespace Editor::ScriptModule { class ScriptProjectRegion; }
-namespace Editor::ScriptModule { class ScriptProjectRegionOptions; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -38,27 +32,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptProjectRegionPlayerService(
-        ::Editor::ServiceProviderCollection& playerServices,
-        ::Scripting::WeakLifetimeScope&      scope
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> disposeAllRegions();
-
-    MCNAPI ::Scripting::Result_deprecated<bool> disposeRegion(::std::string const& id);
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptProjectRegion>>
-    getCursorRegion();
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptProjectRegion>>
-    getSelectionRegion();
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptProjectRegion>>
-    leaseRegion(::Editor::ScriptModule::ScriptProjectRegionOptions const& options);
-
     MCNAPI ~ScriptProjectRegionPlayerService();
     // NOLINTEND
 
@@ -66,12 +39,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& playerServices, ::Scripting::WeakLifetimeScope& scope);
     // NOLINTEND
 
 public:

@@ -17,6 +17,7 @@ public:
     // prevent constructor by default
     NetworkSessionOwner& operator=(NetworkSessionOwner const&);
     NetworkSessionOwner(NetworkSessionOwner const&);
+    NetworkSessionOwner();
 
 public:
     // virtual functions
@@ -27,21 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NetworkSessionOwner();
-
     MCNAPI void createNetworkSession(::TransportLayer transportLayer);
-
-    MCNAPI void destroyNetworkSession();
-
-    MCNAPI ::TransportLayer getTransportLayer() const;
-
-    MCNAPI bool hasNetworkSession() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

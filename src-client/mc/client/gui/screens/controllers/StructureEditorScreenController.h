@@ -8,7 +8,6 @@
 #include "mc/client/gui/screens/controllers/BlockScreenController.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/level/BlockPos.h"
-#include "mc/world/level/block/StructureBlockType.h"
 #include "mc/world/level/levelgen/structure/StructureEditorData.h"
 #include "mc/world/level/levelgen/structure/StructureTelemetryClientData.h"
 
@@ -19,7 +18,6 @@ class MinecraftglTFExporter;
 class Player;
 class StructureTemplate;
 struct ActorUniqueID;
-struct TextEditScreenEventData;
 namespace Json { class Value; }
 // clang-format on
 
@@ -68,7 +66,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureEditorScreenController() /*override*/;
+    virtual ~StructureEditorScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -92,46 +90,6 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
-
-    MCAPI void _filePicker(::StructureEditorScreenController::FilePickerType op);
-
-    MCAPI ::std::string _getBlockTypeIcon();
-
-    MCFOLD ::std::string _getTextEditValue(::TextEditScreenEventData& textEditEvent) const;
-
-    MCAPI float _getTextEditValueAsFloat(::TextEditScreenEventData& textEditEvent) const;
-
-    MCAPI int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent) const;
-
-    MCAPI void _initiateDetect();
-
-    MCAPI void _initiateExport();
-
-    MCAPI void _initiateFileGeneration();
-
-    MCAPI void _initiateImport();
-
-    MCAPI void _initiateLoad();
-
-    MCAPI void _initiateSave();
-
-    MCAPI void _onStructureTypeChanged(::StructureBlockType newMode);
-
-    MCAPI void _registerAnimationModeDropdown();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerModeDropdown();
-
-    MCAPI void _registerRedstoneDropdown();
-
-    MCAPI void _resetChanges();
-
-    MCAPI void _setSeedFromString();
-
-    MCAPI void _setStructureEditorData(::StructureEditorData const& structureEditorData);
     // NOLINTEND
 
 public:
@@ -146,32 +104,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI void $onLeave();
-
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
-
-    MCFOLD ::std::string $_getButtonADescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

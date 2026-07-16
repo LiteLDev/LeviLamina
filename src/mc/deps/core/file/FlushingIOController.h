@@ -21,15 +21,9 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Flusher();
+        virtual ~Flusher() = default;
 
-        virtual ::Core::Result _flushBuffer(void const* data, uint64 amount) = 0;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
+        virtual ::Core::Result _flushBuffer(void const*, uint64) = 0;
         // NOLINTEND
 
     public:
@@ -57,25 +51,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FlushingIOController(::Bedrock::FlushingIOController::Flusher* flusher, void* buffer, uint64 bufferSize);
-
     MCNAPI ::Core::Result flush();
 
     MCNAPI ::Core::Result write(void const* data, uint64 byteCount);
-
-    MCNAPI ~FlushingIOController();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::FlushingIOController::Flusher* flusher, void* buffer, uint64 bufferSize);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

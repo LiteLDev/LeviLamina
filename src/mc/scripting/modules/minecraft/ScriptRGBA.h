@@ -8,16 +8,11 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
-namespace mce { class Color; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptRGBA : public ::ScriptModuleMinecraft::ScriptRGB {
-public:
-    // prevent constructor by default
-    ScriptRGBA();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -25,21 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptRGBA(::mce::Color const& color);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::Color const& color);
     // NOLINTEND
 
 public:

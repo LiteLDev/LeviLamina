@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/SimpleContainer.h"
 
 // auto generated forward declare list
@@ -33,30 +32,6 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SimplePlayerContainer(
-        ::Player&                            player,
-        ::std::string const&                 name,
-        bool                                 customName,
-        int                                  size,
-        ::SharedTypes::Legacy::ContainerType containerType
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Player&                            player,
-        ::std::string const&                 name,
-        bool                                 customName,
-        int                                  size,
-        ::SharedTypes::Legacy::ContainerType containerType
-    );
     // NOLINTEND
 
 public:

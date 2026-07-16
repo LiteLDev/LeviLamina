@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor::Settings { struct SpeedProps; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Settings {
@@ -28,36 +27,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit Speed(::std::function<void(::Editor::Settings::SpeedProps const&)> callback);
-
-    MCNAPI float getFlySpeedMultiplier() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::Editor::Settings::SpeedProps const& getProperties() const;
-#endif
-
-    MCNAPI void setFlySpeedMultiplier(float newSpeed);
-
-    MCNAPI void updateSettings(::Editor::Settings::SpeedProps const& props, bool notifyUpdate);
-
-    MCNAPI ~Speed();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::function<void(::Editor::Settings::SpeedProps const&)> callback);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class Clock; }
@@ -48,7 +51,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static uint GetSource(uint ssrc, ::rtc::ArrayView<uint const> csrcs);
+    MCNAPI static uint GetSource(uint ssrc, ::webrtc::ArrayView<uint const, 18446744073709546905> csrcs);
     // NOLINTEND
 
 public:

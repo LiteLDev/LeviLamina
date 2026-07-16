@@ -20,18 +20,6 @@ public:
     ComplexAliasBlockPreSplitBlockInfo& operator=(ComplexAliasBlockPreSplitBlockInfo const&);
     ComplexAliasBlockPreSplitBlockInfo(ComplexAliasBlockPreSplitBlockInfo const&);
     ComplexAliasBlockPreSplitBlockInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ComplexAliasBlockPreSplitBlockInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Social::Events::AchievementEventingIdUtils::ComplexAliasBlockAchievementEventHelper

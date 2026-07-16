@@ -40,18 +40,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string const> mTabName;
         ::ll::TypedStorage<4, 4, int const>            mTabVersion;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~SettingsScreenTabInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -73,6 +61,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                 mShowInviteLinkSettings;
     ::ll::TypedStorage<8, 152, ::Realms::InviteLink>                               mInviteLink;
     ::ll::TypedStorage<1, 1, bool>                                                 mFullscreen;
+    ::ll::TypedStorage<1, 1, bool>                                                 mLegacySyncOnly;
     ::ll::TypedStorage<8, 16, ::OptionSaveDeferral>                                mOptionsSaveDeferral;
     ::ll::TypedStorage<8, 32, ::std::string>                                       mCurrentFocus;
     ::ll::TypedStorage<8, 848, ::LevelSummary>                                     mProvidedLevelSummary;
@@ -92,7 +81,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SettingsScreenController() /*override*/;
+    virtual ~SettingsScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -100,8 +89,7 @@ public:
 
     virtual ::std::string getAdditionalScreenInfo() const /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
-        /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
 
     virtual int getScreenVersion() const /*override*/;
 
@@ -151,27 +139,14 @@ public:
         bool                                     navToMenuOnExit,
         bool                                     maintainOldFocus,
         ::std::string const&                     initialPackId,
-        bool                                     fullscreen
+        bool                                     fullscreen,
+        bool                                     legacySyncOnly
     );
-
-    MCAPI void _init();
-
-    MCAPI void _makeSureInitialTabIsValid();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerSubControllers();
-
-    MCAPI ::std::string getWorldId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<int, ::SettingsScreenController::SettingsScreenTabInfo> _createScreenInfo();
-
     MCAPI static void addStaticScreenVars(
         ::Json::Value&                      globalVars,
         bool                                isWorldCreate,
@@ -193,12 +168,6 @@ public:
         ::SettingsScreenCapabilities const& capabilities,
         ::BuildPlatform const&              buildPlatform
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<int, ::SettingsScreenController::SettingsScreenTabInfo> const& mScreenInfo();
     // NOLINTEND
 
 public:
@@ -244,37 +213,14 @@ public:
         bool                                     navToMenuOnExit,
         bool                                     maintainOldFocus,
         ::std::string const&                     initialPackId,
-        bool                                     fullscreen
+        bool                                     fullscreen,
+        bool                                     legacySyncOnly
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
-
-    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
-
-    MCAPI int $getScreenVersion() const;
-
-    MCFOLD ::ui::SceneType $getSceneType() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

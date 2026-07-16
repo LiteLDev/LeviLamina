@@ -36,13 +36,5 @@ public:
         ::std::shared_ptr<::mce::TextureGroupBase> textureGroup,
         ::std::vector<::mce::TexturePtr>&&         atlasTextures
     );
-
-    MCNAPI ~TerrainTextures();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

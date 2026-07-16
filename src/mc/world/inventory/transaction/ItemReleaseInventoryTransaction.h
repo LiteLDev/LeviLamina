@@ -13,7 +13,6 @@
 // clang-format off
 class BinaryStream;
 class BlockPalette;
-class InventoryTransaction;
 class ItemStack;
 class Player;
 class ReadOnlyBinaryStream;
@@ -37,6 +36,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemReleaseInventoryTransaction(ItemReleaseInventoryTransaction const&);
+    ItemReleaseInventoryTransaction();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ItemReleaseInventoryTransaction() /*override*/;
@@ -55,19 +59,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemReleaseInventoryTransaction();
+    MCAPI ::ItemReleaseInventoryTransaction& operator=(::ItemReleaseInventoryTransaction const&);
 
-    MCAPI explicit ItemReleaseInventoryTransaction(::InventoryTransaction const& transaction);
+    MCAPI bool operator==(::ItemReleaseInventoryTransaction const& rhs) const;
 
     MCAPI ::ItemReleaseInventoryTransaction& setSelectedItem(::ItemStack const& item);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::InventoryTransaction const& transaction);
     // NOLINTEND
 
 public:

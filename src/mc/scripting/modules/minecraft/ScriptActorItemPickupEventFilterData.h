@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/scripting/modules/minecraft/actor/ScriptActorData.h"
 
 // auto generated forward declare list
@@ -24,23 +24,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptActorItemPickupEventFilterData& operator=(ScriptActorItemPickupEventFilterData const&);
-    ScriptActorItemPickupEventFilterData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorItemPickupEventFilterData(
-        ::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilterData const&
-    );
-
-    MCAPI ScriptActorItemPickupEventFilterData(
-        ::Scripting::WeakLifetimeScope           scope,
-        ::ScriptModuleMinecraft::ScriptActorData actorData,
-        ::std::vector<::ItemStack>               items
-    );
-
     MCAPI ~ScriptActorItemPickupEventFilterData();
     // NOLINTEND
 
@@ -54,18 +39,6 @@ public:
     );
 
     MCAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilterData create(
-        ::Scripting::WeakLifetimeScope           scope,
-        ::ScriptModuleMinecraft::ScriptActorData actorData,
-        ::std::vector<::ItemStack>               items
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilterData const&);
-
-    MCFOLD void* $ctor(
         ::Scripting::WeakLifetimeScope           scope,
         ::ScriptModuleMinecraft::ScriptActorData actorData,
         ::std::vector<::ItemStack>               items

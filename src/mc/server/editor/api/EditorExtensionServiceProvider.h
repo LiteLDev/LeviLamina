@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/deps/scripting/script_engine/Closure.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/deps/script_core/script_engine/scripting/Closure.h"
 #include "mc/editor/script/ServerScriptPackType.h"
 
 // auto generated forward declare list
@@ -64,7 +64,7 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> destroyRegisteredExtensions() = 0;
 
-    virtual ::Scripting::Result_deprecated<void> createExtensionContexts(::Scripting::ContextId, bool) = 0;
+    virtual ::Scripting::Result_deprecated<void> createExtensionContexts() = 0;
     // NOLINTEND
 
 public:

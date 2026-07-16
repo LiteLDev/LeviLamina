@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class IPAddress; }
+namespace webrtc { class IPAddress; }
 // clang-format on
 
 namespace webrtc {
@@ -16,11 +16,11 @@ public:
     virtual ~MdnsResponderInterface() = default;
 
     virtual void CreateNameForAddress(
-        ::rtc::IPAddress const&,
-        ::std::function<void(::rtc::IPAddress const&, ::std::string_view)>
+        ::webrtc::IPAddress const&,
+        ::std::function<void(::webrtc::IPAddress const&, ::std::string_view)>
     ) = 0;
 
-    virtual void RemoveNameForAddress(::rtc::IPAddress const&, ::std::function<void(bool)>) = 0;
+    virtual void RemoveNameForAddress(::webrtc::IPAddress const&, ::std::function<void(bool)>) = 0;
     // NOLINTEND
 
 public:

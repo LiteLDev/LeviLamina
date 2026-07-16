@@ -11,10 +11,7 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class ChiseledBookshelfBlockActor;
 class ItemInstance;
-class ItemStack;
-class Player;
 class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
@@ -29,17 +26,13 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    ChiseledBookshelfBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isInteractiveBlock() const /*override*/;
 
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const&, uchar) const
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -50,13 +43,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChiseledBookshelfBlock(::std::string const& nameId, int id);
-
-    MCAPI bool _retrieveBook(::Player& player, ::ChiseledBookshelfBlockActor& bookshelfActor, int hitSlot) const;
-
-    MCAPI void
-    _setBook(::Player& player, ::ItemStack heldItem, ::ChiseledBookshelfBlockActor& bookshelfActor, int hitSlot) const;
-
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
@@ -70,19 +56,13 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isInteractiveBlock() const;
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const&, uchar) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 

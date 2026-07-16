@@ -14,10 +14,4 @@ public:
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>>          mSet;
     ::ll::TypedStorage<1, 1, bool>                         mAutoReset;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool wait_until(::std::chrono::steady_clock::time_point t);
-    // NOLINTEND
 };

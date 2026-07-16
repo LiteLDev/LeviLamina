@@ -9,7 +9,6 @@
 // clang-format off
 class EntityContext;
 struct TimerComponent;
-struct WeightChoiceEntry;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -28,17 +27,12 @@ public:
     // prevent constructor by default
     TimerDefinition& operator=(TimerDefinition const&);
     TimerDefinition(TimerDefinition const&);
+    TimerDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TimerDefinition();
-
-    MCAPI void addWeightedChoiceEntry(::WeightChoiceEntry const& entry);
-
     MCAPI void initialize(::EntityContext& entity, ::TimerComponent& component) const;
-
-    MCAPI ~TimerDefinition();
     // NOLINTEND
 
 public:
@@ -46,17 +40,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TimerDefinition>>& root);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

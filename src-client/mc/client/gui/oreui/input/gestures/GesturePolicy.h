@@ -12,7 +12,6 @@
 // clang-format off
 namespace OreUI { class ITouchSystem; }
 namespace OreUI { struct GestureParameters; }
-namespace OreUI { struct TouchEventData; }
 // clang-format on
 
 namespace OreUI {
@@ -40,18 +39,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void
-    onPanRecognized(::Vec2 const& gestureBeginPos, ::Vec2 const& currentPos, ::Vec2 const& delta) /*override*/;
+    virtual void onPanRecognized(::Vec2 const&, ::Vec2 const&, ::Vec2 const&) /*override*/;
 
-    virtual void onPanCompleted(::Vec2 const& endPos) /*override*/;
+    virtual void onPanCompleted(::Vec2 const&) /*override*/;
 
-    virtual void onFlingCompleted(
-        ::Vec2 const&               endPos,
-        ::Vec2 const&               flingStart,
-        ::std::chrono::milliseconds flingDuration
-    ) /*override*/;
+    virtual void onFlingCompleted(::Vec2 const&, ::Vec2 const&, ::std::chrono::milliseconds) /*override*/;
 
-    virtual void onTapRecognized(::Vec2 const& position) /*override*/;
+    virtual void onTapRecognized(::Vec2 const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -64,8 +58,6 @@ public:
         ::std::function<::std::chrono::milliseconds()> const& getTime,
         bool                                                  isTTSEnabled
     );
-
-    MCAPI void onTouchesUpdate(::std::vector<::OreUI::TouchEventData> const& events);
     // NOLINTEND
 
 public:
@@ -83,20 +75,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onPanRecognized(::Vec2 const& gestureBeginPos, ::Vec2 const& currentPos, ::Vec2 const& delta);
 
-    MCAPI void $onPanCompleted(::Vec2 const& endPos);
-
-    MCAPI void
-    $onFlingCompleted(::Vec2 const& endPos, ::Vec2 const& flingStart, ::std::chrono::milliseconds flingDuration);
-
-    MCAPI void $onTapRecognized(::Vec2 const& position);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

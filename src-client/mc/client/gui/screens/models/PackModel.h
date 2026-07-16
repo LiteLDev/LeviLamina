@@ -22,45 +22,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PackModel& operator=(PackModel const&);
-    PackModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PackModel();
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PackModel(::PackModel const&);
-
-    MCAPI PackModel(::std::shared_ptr<::Pack const> pack, int subpackIndex);
-
-    MCAPI PackModel(::std::shared_ptr<::Pack const> pack, ::std::string const& subpackName);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PackModel const&);
-
-    MCAPI void* $ctor(::std::shared_ptr<::Pack const> pack, int subpackIndex);
-
-    MCAPI void* $ctor(::std::shared_ptr<::Pack const> pack, ::std::string const& subpackName);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    virtual ~PackModel() = default;
     // NOLINTEND
 };

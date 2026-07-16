@@ -4,14 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class CompoundTag;
 // clang-format on
 
 class Raid {
@@ -100,72 +98,12 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Raid();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Raid(
-        int                                      raidPreparationTime,
-        int                                      groupCompleteDelayInTicks,
-        int                                      locationHelpDelayInTicks,
-        int                                      finishedDelayInTicks,
-        ::SharedTypes::Legacy::Difficulty        difficulty,
-        uchar                                    allowedSpawnFailures,
-        ::std::function<bool(uint64, ::Vec3&)>&& pickSpawnPointCallback,
-        ::std::function<bool(uint64, ::Vec3, uchar, ::std::unordered_set<::ActorUniqueID>&)>&& spawnGroupCallback,
-        ::std::function<bool(::ActorUniqueID const&)>&&                                        doesActorExistCallback,
-        ::std::function<bool()>&&                                                              isVillageDefeatedCallback
-    );
-
-    MCAPI void _tickAwardingRewards();
-
-    MCAPI void _tickGroupInPlay();
-
-    MCAPI void _tickSpawningGroup();
-
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
     MCAPI void addPlayerToHeroList(::Actor const& actor);
-
-    MCAPI void addRaider(::ActorUniqueID const& actor, float maxHealth);
-
-    MCAPI void appendDebugInfo(::std::string& infoString) const;
 
     MCAPI float getBossBarFilledFraction() const;
 
-    MCFOLD uint64 getRemainingRaiders() const;
-
     MCAPI bool isRaider(::ActorUniqueID actor) const;
-
-    MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
-
-    MCAPI void tick(::Tick tick);
-
-    MCAPI ~Raid();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        int                                      raidPreparationTime,
-        int                                      groupCompleteDelayInTicks,
-        int                                      locationHelpDelayInTicks,
-        int                                      finishedDelayInTicks,
-        ::SharedTypes::Legacy::Difficulty        difficulty,
-        uchar                                    allowedSpawnFailures,
-        ::std::function<bool(uint64, ::Vec3&)>&& pickSpawnPointCallback,
-        ::std::function<bool(uint64, ::Vec3, uchar, ::std::unordered_set<::ActorUniqueID>&)>&& spawnGroupCallback,
-        ::std::function<bool(::ActorUniqueID const&)>&&                                        doesActorExistCallback,
-        ::std::function<bool()>&&                                                              isVillageDefeatedCallback
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

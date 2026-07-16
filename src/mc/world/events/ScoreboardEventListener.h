@@ -18,9 +18,9 @@ public:
 
     virtual ::EventResult onObjectiveAdded(::std::string const&);
 
-    virtual ::EventResult onObjectiveRemoved(::std::string const& objective);
+    virtual ::EventResult onObjectiveRemoved(::std::string const&);
 
-    virtual ::EventResult onScoreboardIdentityRemoved(::ScoreboardId const& id);
+    virtual ::EventResult onScoreboardIdentityRemoved(::ScoreboardId const&);
 
     virtual ::EventResult onScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
     // NOLINTEND
@@ -30,9 +30,9 @@ public:
     // NOLINTBEGIN
     MCFOLD ::EventResult $onObjectiveAdded(::std::string const&);
 
-    MCFOLD ::EventResult $onObjectiveRemoved(::std::string const& objective);
+    MCFOLD ::EventResult $onObjectiveRemoved(::std::string const&);
 
-    MCFOLD ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const& id);
+    MCFOLD ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const&);
 
     MCFOLD ::EventResult $onScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
 

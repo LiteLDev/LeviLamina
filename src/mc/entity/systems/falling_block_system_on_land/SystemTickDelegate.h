@@ -26,25 +26,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onLand(::FallingBlock const& block, ::IBlockSource& region, ::BlockPos const& pos) /*override*/;
+    virtual void onLand(::FallingBlock const&, ::IBlockSource&, ::BlockPos const&) /*override*/;
 
-    virtual void breakBlock(::FallingBlockActor& fallingBlock) /*override*/;
+    virtual void breakBlock(::FallingBlockActor&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLand(::FallingBlock const& block, ::IBlockSource& region, ::BlockPos const& pos);
 
-    MCAPI void $breakBlock(::FallingBlockActor& fallingBlock);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

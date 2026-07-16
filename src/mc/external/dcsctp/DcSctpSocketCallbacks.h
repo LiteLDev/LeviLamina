@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/dcsctp/ErrorKind.h"
 #include "mc/external/dcsctp/SendPacketStatus.h"
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/StrongAlias.h"
 #include "mc/external/webrtc/TaskQueueBase.h"
 
@@ -26,9 +27,10 @@ public:
     // NOLINTBEGIN
     virtual ~DcSctpSocketCallbacks() = default;
 
-    virtual void SendPacket(::rtc::ArrayView<uchar const> data);
+    virtual void SendPacket(::webrtc::ArrayView<uchar const, 18446744073709546905>);
 
-    virtual ::dcsctp::SendPacketStatus SendPacketWithStatus(::rtc::ArrayView<uchar const> data);
+    virtual ::dcsctp::SendPacketStatus
+    SendPacketWithStatus(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
 
     virtual ::std::unique_ptr<::dcsctp::Timeout> CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision);
 
@@ -44,6 +46,8 @@ public:
 
     virtual void OnMessageReceived(::dcsctp::DcSctpMessage message) = 0;
 
+    virtual void OnMessageReady();
+
     virtual void OnError(::dcsctp::ErrorKind error, ::std::string_view message) = 0;
 
     virtual void OnAborted(::dcsctp::ErrorKind error, ::std::string_view message) = 0;
@@ -55,16 +59,19 @@ public:
     virtual void OnConnectionRestarted() = 0;
 
     virtual void OnStreamsResetFailed(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams,
-        ::std::string_view                                                           reason
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
+                           outgoing_streams,
+        ::std::string_view reason
     ) = 0;
 
     virtual void OnStreamsResetPerformed(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
+            outgoing_streams
     ) = 0;
 
     virtual void OnIncomingStreamsReset(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> incoming_streams
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
+            incoming_streams
     ) = 0;
 
     virtual void OnBufferedAmountLow(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id);
@@ -83,9 +90,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $SendPacket(::rtc::ArrayView<uchar const> data);
+    MCNAPI void $SendPacket(::webrtc::ArrayView<uchar const, 18446744073709546905>);
 
-    MCNAPI ::dcsctp::SendPacketStatus $SendPacketWithStatus(::rtc::ArrayView<uchar const> data);
+    MCNAPI ::dcsctp::SendPacketStatus
+    $SendPacketWithStatus(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
 
     MCNAPI ::std::unique_ptr<::dcsctp::Timeout> $CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision);
 
@@ -96,6 +104,8 @@ public:
     MCNAPI ::webrtc::Timestamp $Now();
 
     MCNAPI void $NotifyOutgoingMessageBufferEmpty();
+
+    MCNAPI void $OnMessageReady();
 
     MCNAPI void $OnBufferedAmountLow(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id);
 

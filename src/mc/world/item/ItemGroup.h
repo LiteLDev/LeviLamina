@@ -25,16 +25,8 @@ public:
 #ifdef LL_PLAT_C
     MCAPI ItemGroup(::ItemInstance const& itemInstance, int count);
 
-    MCAPI int getCount() const;
-
-    MCAPI ::ItemInstance const& getItemInstance() const;
-
     MCAPI ::ItemInstance getItemInstanceCopy() const;
-
-    MCFOLD ::ItemInstance const& getItemTemplate() const;
 #endif
-
-    MCAPI bool isEmpty() const;
     // NOLINTEND
 
 public:

@@ -4,13 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/IOperation.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
-class Level;
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Transactions { struct EntityOperationData; }
 namespace Scripting { struct EnumBinding; }
 // clang-format on
 
@@ -45,25 +43,9 @@ public:
 
     virtual ::std::string_view getName() /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection& services) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection&) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& services) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI EntityOperation(
-        ::Editor::Transactions::EntityOperationData&&          entityData,
-        ::Editor::Transactions::EntityOperation::OperationType type
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> _loadEntity(::Level* level);
-
-    MCNAPI ::Scripting::Result_deprecated<void>
-    _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo);
-
-    MCNAPI ::Scripting::Result_deprecated<void> _saveEntity(::Level* level);
+    virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection&) /*override*/;
     // NOLINTEND
 
 public:
@@ -73,36 +55,9 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string const& DEFAULT_OPERATION_NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Editor::Transactions::EntityOperationData&&          entityData,
-        ::Editor::Transactions::EntityOperation::OperationType type
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string_view $getName();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $_undo(::Editor::ServiceProviderCollection& services);
-
-    MCNAPI ::Scripting::Result_deprecated<void> $_redo(::Editor::ServiceProviderCollection& services);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

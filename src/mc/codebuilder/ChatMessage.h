@@ -19,18 +19,6 @@ public:
     ChatMessage& operator=(ChatMessage const&);
     ChatMessage(ChatMessage const&);
     ChatMessage();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ChatMessage();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace CodeBuilder

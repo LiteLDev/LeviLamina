@@ -16,6 +16,18 @@ public:
     ScopedTaskSafetyDetached& operator=(ScopedTaskSafetyDetached const&);
     ScopedTaskSafetyDetached(ScopedTaskSafetyDetached const&);
     ScopedTaskSafetyDetached();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~ScopedTaskSafetyDetached();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace webrtc

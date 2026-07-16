@@ -11,12 +11,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class Block;
 class BlockSource;
 class IRandom;
-class ItemStack;
-struct ResourceDropsContext;
 // clang-format on
 
 class Explosion {
@@ -51,62 +47,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Explosion(::BlockSource& region, ::Actor* optSource, ::Vec3 const& pos, float radius);
-
-    MCAPI ::std::vector<::gsl::not_null<::Actor*>> _getActorsInRange(::Actor* optSource, float range) const;
-
     MCAPI bool explode(::IRandom& random);
 
-    MCAPI ::Vec3 getSourcePos(::Actor* source) const;
-
-    MCAPI void overrideInWater(bool inWater);
-
-    MCFOLD void setAllowUnderwater(bool val);
-
-    MCFOLD void setBreaking(bool val);
-
-    MCFOLD void setCanToggleBlocks(bool toggleBlocks);
-
-    MCAPI void setDamageScaling(float damageScaling);
-
-    MCAPI void setExplosionParticleType(::SharedTypes::Legacy::LevelEvent particlesExplosionType);
-
-    MCAPI void setExplosionSound(::SharedTypes::Legacy::LevelSoundEvent soundExplosionType);
-
-    MCFOLD void setFire(bool val);
-
-    MCFOLD void setIgnoreBlockResistance(bool shouldIgnore);
-
-    MCAPI void setKnockbackScaling(float scaling);
-
-    MCAPI void setMaxResistance(float resistance);
-
     MCAPI ~Explosion();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _addOrMergeItemStack(
-        ::ItemStack const&                                   newItemStack,
-        ::BlockPos                                           pos,
-        ::std::vector<::std::pair<::ItemStack, ::BlockPos>>& itemStacks
-    );
-
-    MCAPI static void _spawnExtraResourcesAndMergeItemDropsForBlock(
-        ::BlockSource&                                       region,
-        ::BlockPos const&                                    blockPos,
-        ::Block const&                                       block,
-        ::IRandom&                                           random,
-        ::ResourceDropsContext const&                        resourceDropsContext,
-        ::std::vector<::std::pair<::ItemStack, ::BlockPos>>& itemStacks
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockSource& region, ::Actor* optSource, ::Vec3 const& pos, float radius);
     // NOLINTEND
 
 public:

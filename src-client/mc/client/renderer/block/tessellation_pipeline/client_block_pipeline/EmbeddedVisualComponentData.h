@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 struct BlockBakedMaterialDataComponent;
 struct BlockGeometryComponent;
 // clang-format on
@@ -23,12 +22,6 @@ public:
     ::ll::TypedStorage<8, 8, ::BlockBakedMaterialDataComponent const*>   mBakedBlockMaterialData;
     ::ll::TypedStorage<1, 1, ::BlockEmbeddedVisualComponent::Correction> mCorrection;
     ::ll::TypedStorage<4, 64, ::Matrix const>                            mTransform;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Matrix _getTransform(::Block const& block);
     // NOLINTEND
 };
 

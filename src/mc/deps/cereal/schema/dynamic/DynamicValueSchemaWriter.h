@@ -72,14 +72,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::cereal::DynamicValue& value();
-
-    MCAPI bool write(::cereal::DynamicValue value);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $write(::cereal::NullType);

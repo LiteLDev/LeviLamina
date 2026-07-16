@@ -49,34 +49,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void playPOISoundEvent() const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool $canUse();
-
-    MCAPI bool $canContinueToUse();
-
-    MCAPI void $start();
-
-    MCAPI void $stop();
-
-    MCAPI void $tick();
-
-    MCAPI void $useWorkstation();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

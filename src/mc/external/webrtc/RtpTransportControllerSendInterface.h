@@ -7,10 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { struct NetworkRoute; }
-namespace rtc { struct SentPacket; }
 namespace webrtc { class FecController; }
 namespace webrtc { class FrameTransformerInterface; }
+namespace webrtc { class NetworkControllerInterface; }
 namespace webrtc { class NetworkLinkRtcpObserver; }
 namespace webrtc { class NetworkStateEstimateObserver; }
 namespace webrtc { class PacketRouter; }
@@ -25,12 +24,14 @@ namespace webrtc { struct BandwidthEstimationSettings; }
 namespace webrtc { struct BitrateAllocationLimits; }
 namespace webrtc { struct BitrateConstraints; }
 namespace webrtc { struct BitrateSettings; }
+namespace webrtc { struct NetworkRoute; }
 namespace webrtc { struct ReceivedPacket; }
 namespace webrtc { struct RtpConfig; }
 namespace webrtc { struct RtpPayloadState; }
 namespace webrtc { struct RtpSenderFrameEncryptionConfig; }
 namespace webrtc { struct RtpSenderObservers; }
 namespace webrtc { struct RtpState; }
+namespace webrtc { struct SentPacketInfo; }
 // clang-format on
 
 namespace webrtc {
@@ -77,7 +78,8 @@ public:
 
     virtual void RegisterTargetTransferRateObserver(::webrtc::TargetTransferRateObserver* observer) = 0;
 
-    virtual void OnNetworkRouteChanged(::std::string_view transport_name, ::rtc::NetworkRoute const& network_route) = 0;
+    virtual void
+    OnNetworkRouteChanged(::std::string_view transport_name, ::webrtc::NetworkRoute const& network_route) = 0;
 
     virtual void OnNetworkAvailability(bool network_available) = 0;
 
@@ -89,7 +91,7 @@ public:
 
     virtual void EnablePeriodicAlrProbing(bool enable) = 0;
 
-    virtual void OnSentPacket(::rtc::SentPacket const& sent_packet) = 0;
+    virtual void OnSentPacket(::webrtc::SentPacketInfo const& sent_packet) = 0;
 
     virtual void OnReceivedPacket(::webrtc::ReceivedPacket const& packet_msg) = 0;
 
@@ -104,6 +106,14 @@ public:
     virtual void IncludeOverheadInPacedSender() = 0;
 
     virtual void EnsureStarted() = 0;
+
+    virtual ::webrtc::NetworkControllerInterface* GetNetworkController() = 0;
+
+    virtual void EnableCongestionControlFeedbackAccordingToRfc8888() = 0;
+
+    virtual ::std::optional<int> ReceivedCongestionControlFeedbackCount() const = 0;
+
+    virtual ::std::optional<int> ReceivedTransportCcFeedbackCount() const = 0;
     // NOLINTEND
 
 public:

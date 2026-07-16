@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -32,14 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockPrecipitationInteractionsComponentDescription();
-
-    MCAPI explicit BlockPrecipitationInteractionsComponentDescription(::PrecipitationBehavior behavior);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -49,20 +40,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-
-    MCAPI static ::std::string const& PrecipitationBehaviorID();
-
-    MCAPI static ::std::string const& SchemaID();
-
-    MCAPI static ::SemVersion const& Version1_21_120();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::PrecipitationBehavior behavior);
     // NOLINTEND
 
 public:

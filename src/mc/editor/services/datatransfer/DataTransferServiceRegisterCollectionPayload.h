@@ -23,31 +23,33 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk128784;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    DataTransferServiceRegisterCollectionPayload& operator=(DataTransferServiceRegisterCollectionPayload const&);
+    DataTransferServiceRegisterCollectionPayload(DataTransferServiceRegisterCollectionPayload const&);
+    DataTransferServiceRegisterCollectionPayload();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     DataTransferServiceRegisterCollectionPayload();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI DataTransferServiceRegisterCollectionPayload(
         ::Editor::Network::DataTransferServiceRegisterCollectionPayload const&
     );
-
-#ifdef LL_PLAT_C
-    MCNAPI DataTransferServiceRegisterCollectionPayload(
-        ::std::string const& collectionUniqueIdentifier,
-        ::std::string const& collectionNameStringId,
-        ::std::string const& jsonSchema,
-        bool                 hasPerBiomeConfig
-    );
-#endif
 
     MCNAPI ::Editor::Network::DataTransferServiceRegisterCollectionPayload&
     operator=(::Editor::Network::DataTransferServiceRegisterCollectionPayload&&);
 
     MCNAPI ::Editor::Network::DataTransferServiceRegisterCollectionPayload&
     operator=(::Editor::Network::DataTransferServiceRegisterCollectionPayload const&);
+#endif
     // NOLINTEND
 
 public:
@@ -59,15 +61,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Network::DataTransferServiceRegisterCollectionPayload const&);
-
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
-        ::std::string const& collectionUniqueIdentifier,
-        ::std::string const& collectionNameStringId,
-        ::std::string const& jsonSchema,
-        bool                 hasPerBiomeConfig
-    );
+    MCNAPI void* $ctor(::Editor::Network::DataTransferServiceRegisterCollectionPayload const&);
 #endif
     // NOLINTEND
 

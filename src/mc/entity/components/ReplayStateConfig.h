@@ -16,26 +16,4 @@ public:
     ::ll::TypedStorage<1, 1, uchar>                          mMaxCorrectionDelay;
     ::ll::TypedStorage<2, 2, ushort>                         mHistorySize;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ReplayStateConfig();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ReplayStateConfig(::ReplayStateMode mode);
-
-    MCAPI uint64 getSanitizedHistorySize() const;
-
-#ifdef LL_PLAT_S
-    MCAPI void setReplayStateConfigThresholds(float baseThreshold);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ReplayStateMode mode);
-    // NOLINTEND
 };

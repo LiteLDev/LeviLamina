@@ -12,7 +12,6 @@
 class BindingFactory;
 class InputEventQueue;
 struct ControllerIDtoClientMap;
-struct DeviceButtonEvent;
 struct InputMapping;
 // clang-format on
 
@@ -34,10 +33,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setMapping(
-        ::InputEventQueue&      inputMapping,
-        ::BindingFactory const& controllerId,
-        ::InputMapping const&,
-        int
+        ::InputEventQueue&,
+        ::BindingFactory const&,
+        ::InputMapping const& inputMapping,
+        int                   controllerId
     ) /*override*/;
 
     virtual void clearMapping(int controllerId) /*override*/;
@@ -53,24 +52,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DeviceButtonMapper();
-
-    MCAPI void handleButtonEvent(::InputEventQueue& eventQueue, ::DeviceButtonEvent const& buttonEvent);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void
-    $setMapping(::InputEventQueue& inputMapping, ::BindingFactory const& controllerId, ::InputMapping const&, int);
+    $setMapping(::InputEventQueue&, ::BindingFactory const&, ::InputMapping const& inputMapping, int controllerId);
 
     MCAPI void $clearMapping(int controllerId);
 

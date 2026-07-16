@@ -21,36 +21,17 @@ public:
 
 public:
     // prevent constructor by default
-    LegacyBlendedNoise& operator=(LegacyBlendedNoise const&);
     LegacyBlendedNoise();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyBlendedNoise(::LegacyBlendedNoise const&);
-
     MCAPI explicit LegacyBlendedNoise(::IRandom& random);
-
-    MCAPI ~LegacyBlendedNoise();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::LegacyBlendedNoise make(::IRandom& random);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyBlendedNoise const&);
-
     MCAPI void* $ctor(::IRandom& random);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

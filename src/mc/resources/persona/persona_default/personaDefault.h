@@ -10,22 +10,18 @@ namespace personaDefault {
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
 MCNAPI bool isBuiltinSkinPack(::mce::UUID const& packId);
-
-MCNAPI bool isCustomSkinPack(::mce::UUID const& packId);
-
-MCNAPI bool isPersonaPack(::mce::UUID const& packId);
-
-MCNAPI bool isPersonaSkinPack(::mce::UUID const& packId);
-
-MCNAPI bool isVanillaSkinPack(::mce::UUID const& packId);
 #endif
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
+#ifdef LL_PLAT_S
 MCNAPI ::std::set<::mce::UUID> const& ALLOW_ITEM_LIST();
+#endif
 
+#ifdef LL_PLAT_C
 MCNAPI ::std::vector<::std::string> const& EMOTE_LIST();
+#endif
 // NOLINTEND
 
 } // namespace personaDefault

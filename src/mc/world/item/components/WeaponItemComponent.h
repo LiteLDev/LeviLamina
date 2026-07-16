@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class DefinitionTrigger;
 class HashedString;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
@@ -25,10 +24,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WeaponItemComponent();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WeaponItemComponent();
-
     MCAPI WeaponItemComponent(::WeaponItemComponent const&);
 
     MCAPI ::WeaponItemComponent& operator=(::WeaponItemComponent const&);
@@ -42,15 +43,11 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::WeaponItemComponent const&);
     // NOLINTEND
 

@@ -17,20 +17,29 @@ public:
     ::ll::UntypedStorage<8, 224> mUnk4bb75a;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ScriptModalFormDataTextFieldOptions& operator=(ScriptModalFormDataTextFieldOptions const&);
     ScriptModalFormDataTextFieldOptions();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ScriptModalFormDataTextFieldOptions& operator=(ScriptModalFormDataTextFieldOptions const&);
+    ScriptModalFormDataTextFieldOptions(ScriptModalFormDataTextFieldOptions const&);
+    ScriptModalFormDataTextFieldOptions();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptModalFormDataTextFieldOptions(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions&&);
-
+#ifdef LL_PLAT_S
     MCNAPI
     ScriptModalFormDataTextFieldOptions(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions const&);
 
     MCNAPI ~ScriptModalFormDataTextFieldOptions();
+#endif
     // NOLINTEND
 
 public:
@@ -42,15 +51,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions&&);
-
+#ifdef LL_PLAT_S
     MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions const&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

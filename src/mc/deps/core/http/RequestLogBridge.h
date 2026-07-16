@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/threading/BasicLockbox.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Threading { class Mutex; }
-// clang-format on
-
 namespace Bedrock::Http {
 
 class RequestLogBridge {
@@ -44,18 +36,6 @@ public:
         CompleteEvent& operator=(CompleteEvent const&);
         CompleteEvent(CompleteEvent const&);
         CompleteEvent();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~CompleteEvent();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct FailEvent {
@@ -92,18 +72,6 @@ public:
         InFlight& operator=(InFlight const&);
         InFlight(InFlight const&);
         InFlight();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~InFlight();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct ProgressEvent {
@@ -141,18 +109,6 @@ public:
         StartEvent& operator=(StartEvent const&);
         StartEvent(StartEvent const&);
         StartEvent();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~StartEvent();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct DrainedEvents {
@@ -190,27 +146,7 @@ public:
         SharedState& operator=(SharedState const&);
         SharedState(SharedState const&);
         SharedState();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~SharedState();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Threading::
-        BasicLockbox<::Bedrock::Http::RequestLogBridge::SharedState, ::Bedrock::Threading::Mutex>&
-        s_state();
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Http

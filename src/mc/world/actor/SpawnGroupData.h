@@ -24,12 +24,6 @@ public:
     // NOLINTBEGIN
     MCAPI SpawnGroupData(::std::string const& identifier, ::MobSpawnRules& spawnRules);
 
-    MCAPI void addSpawnRules(::MobSpawnRules& spawnRules);
-
-    MCFOLD ::std::string const& getIdentifier() const;
-
-    MCFOLD ::std::vector<::MobSpawnRules> const& getSpawnRules() const;
-
     MCAPI ~SpawnGroupData();
     // NOLINTEND
 

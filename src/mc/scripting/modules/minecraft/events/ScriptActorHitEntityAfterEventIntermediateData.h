@@ -14,18 +14,6 @@ public:
     ::ll::TypedStorage<8, 96, ::ScriptModuleMinecraft::ScriptActorData> mActor;
     ::ll::TypedStorage<8, 96, ::ScriptModuleMinecraft::ScriptActorData> mHitActor;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ScriptActorHitEntityAfterEventIntermediateData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

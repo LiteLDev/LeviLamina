@@ -3,19 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class Vec3;
-namespace Editor { class EditorStructureTemplate; }
-namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidStructureError; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct InvalidArgumentError; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -38,79 +32,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::InvalidArgumentError
-    _createBoundsError(int index, ::BlockPos const& pos, ::BlockPos const& size) const;
-
-    MCNAPI ::Scripting::Result<
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>,
-        ::ScriptModuleMinecraft::ScriptInvalidStructureError,
-        ::Scripting::InvalidArgumentError>
-    getBlockPermutation(::Vec3 const& location) const;
-
-    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-    getDescription() const;
-
-    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-    getDisplayName() const;
-
-    MCNAPI ::std::optional<::Editor::EditorStructureTemplate> getEditorStructureTemplate() const;
-
-    MCNAPI ::mce::UUID getId() const;
-
+#ifdef LL_PLAT_C
     MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
     getNormalizedOrigin() const;
 
-    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getNotes() const;
-
     MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getOffset() const;
-
-    MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-    getOriginalWorldLocation() const;
+#endif
 
     MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
 
-    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-    getStructureFullName() const;
-
-    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-    getStructureName() const;
-
-    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-    getStructureNamespace() const;
-
-    MCNAPI ::Scripting::Result<::std::vector<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-    getTags();
-
     MCNAPI bool isValid() const;
-
-    MCNAPI ::Scripting::
-        Result<bool, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::InvalidArgumentError>
-        isWaterlogged(::Vec3 const& location) const;
-
-    MCNAPI ::Scripting::
-        Result<void, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-        setBlockPermutation(
-            ::Vec3 const&                                                                         location,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation,
-            bool                                                                                  waterlogged
-        );
-
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-    setTags(::std::vector<::std::string> const& tags) const;
-
-    MCNAPI ~ScriptEditorStructure();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

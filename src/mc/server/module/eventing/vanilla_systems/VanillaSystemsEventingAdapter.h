@@ -23,22 +23,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void
-    doFireEventActorValueValidationFailed(::std::string const& invalidValue, char const* caller) /*override*/;
+    virtual void doFireEventActorValueValidationFailed(::std::string const&, char const*) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $doFireEventActorValueValidationFailed(::std::string const& invalidValue, char const* caller);
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

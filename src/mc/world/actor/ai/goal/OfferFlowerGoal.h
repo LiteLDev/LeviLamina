@@ -48,15 +48,13 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    virtual void appendDebugInfo(::std::string&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit OfferFlowerGoal(::Mob& mob);
-
-    MCFOLD int getMaxOfferFlowerDurationTicks() const;
     // NOLINTEND
 
 public:
@@ -68,24 +66,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
-
-    MCAPI void $start();
-
-    MCAPI void $stop();
-
-    MCAPI void $tick();
-
-    MCAPI void $appendDebugInfo(::std::string& str) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

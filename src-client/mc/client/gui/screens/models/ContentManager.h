@@ -35,7 +35,6 @@ class IWorldTemplateManager;
 class MutableContentItemCollection;
 class Pack;
 class PackManifestFactory;
-class PackSource;
 class ResourcePackManager;
 class StoreCatalogRepository;
 class TaskGroup;
@@ -53,6 +52,7 @@ namespace Realms { struct Content; }
 namespace Realms { struct RealmId; }
 namespace StorageManager { class ContentItemProvider; }
 namespace StorageManager { class IContentHandler; }
+namespace StorageManager { class WorldConverter; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -84,10 +84,15 @@ public:
                                                                                     mReloadSourcesAsync;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>> mEntitlementManager;
     ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
-                                                                                      mReloadViewsPublisher;
+        mReloadViewsPublisher;
+    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
+                                                                                      mDeleteContentPublisher;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::StorageManager::ContentItemProvider>> mWeakStorageContentItemProvider;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::StorageManager::IContentHandler>>>
         mStorageContentHandler;
+    ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::StorageManager::WorldConverter>()>>
+                                                                                 mStorageWorldConverterConstructor;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::StorageManager::WorldConverter>> mWeakStorageWorldConverter;
     // NOLINTEND
 
 public:
@@ -99,45 +104,39 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContentManager() /*override*/;
+    virtual ~ContentManager() /*override*/ = default;
 
-    virtual ::ContentSource* loadContent(::ContentType contentType, ::ContentFlags flags) /*override*/;
+    virtual ::ContentSource* loadContent(::ContentType, ::ContentFlags) /*override*/;
 
-    virtual ::ContentSource* loadContent(::InvalidPacksFilterGroup const& invalidFilter) /*override*/;
+    virtual ::ContentSource* loadContent(::InvalidPacksFilterGroup const&) /*override*/;
 
-    virtual ::ContentSource*
-    loadContentForLevel(::std::string const& levelId, ::mce::UUID const& premiumTemplateId) /*override*/;
+    virtual ::ContentSource* loadContentForLevel(::std::string const&, ::mce::UUID const&) /*override*/;
 
-    virtual ::ContentSource* loadContentForRealm(int64 const realmId) /*override*/;
+    virtual ::ContentSource* loadContentForRealm(int64 const) /*override*/;
 
-    virtual ::std::unique_ptr<::ContentSource> loadContentForRealmsWorld(
-        ::Realms::RealmId                       realmId,
-        ::std::vector<::Realms::Content> const& servicePackData
-    ) /*override*/;
+    virtual ::std::unique_ptr<::ContentSource>
+    loadContentForRealmsWorld(::Realms::RealmId, ::std::vector<::Realms::Content> const&) /*override*/;
 
-    virtual void addPackSourceFromPremiumTemplate(
-        ::RealmPackManagerContentSource* source,
-        ::mce::UUID const&               premiumTemplateId,
-        ::PackType                       packType
-    ) /*override*/;
+    virtual void
+    addPackSourceFromPremiumTemplate(::RealmPackManagerContentSource*, ::mce::UUID const&, ::PackType) /*override*/;
 
-    virtual void addRealmsUnknownPackSources(::RealmPackManagerContentSource* contentSource) /*override*/;
+    virtual void addRealmsUnknownPackSources(::RealmPackManagerContentSource*) /*override*/;
 
-    virtual void addPacksToRealmsUnknownPackSource(::std::unique_ptr<::Pack> pack) /*override*/;
+    virtual void addPacksToRealmsUnknownPackSource(::std::unique_ptr<::Pack>) /*override*/;
 
-    virtual void addCachedHostPackIdProvider(::std::weak_ptr<::CachedHostPackIdProvider> provider) /*override*/;
+    virtual void addCachedHostPackIdProvider(::std::weak_ptr<::CachedHostPackIdProvider>) /*override*/;
 
     virtual void clearRealmsUnknownPackSource() /*override*/;
 
-    virtual void removeUnneededItemFromRealmsUnknownContentSource(::mce::UUID const& id) /*override*/;
+    virtual void removeUnneededItemFromRealmsUnknownContentSource(::mce::UUID const&) /*override*/;
 
     virtual ::gsl::not_null<::std::shared_ptr<::ContentItemCollection>>
-    getGlobalResourcePackCollection(bool isEditorMode) /*override*/;
+    getGlobalResourcePackCollection(bool) /*override*/;
 
     virtual ::std::unique_ptr<::IContentManagerContext>
-    createContext(::std::function<bool(::std::shared_ptr<::ContentItem const> const&)> contextPredicate) /*override*/;
+        createContext(::std::function<bool(::std::shared_ptr<::ContentItem const> const&)>) /*override*/;
 
-    virtual void removeContext(::IContentManagerContext& context) /*override*/;
+    virtual void removeContext(::IContentManagerContext&) /*override*/;
 
     virtual ::std::vector<::std::unique_ptr<::ContentSource>> const& getSources() const /*override*/;
 
@@ -147,9 +146,9 @@ public:
 
     virtual void enableCatalogPackSource() /*override*/;
 
-    virtual void generateItems(::ContentSource* source) /*override*/;
+    virtual void generateItems(::ContentSource*) /*override*/;
 
-    virtual ::Bedrock::Threading::Async<void> reloadSources(bool saveSources) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> reloadSources(bool) /*override*/;
 
     virtual void reloadItems() /*override*/;
 
@@ -157,42 +156,36 @@ public:
 
     virtual void populateDependencies() const /*override*/;
 
-    virtual void deleteContent(::std::shared_ptr<::ContentItem const> const& contentItem) /*override*/;
+    virtual void deleteContent(::std::shared_ptr<::ContentItem const> const&) /*override*/;
 
-    virtual void deleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems) /*override*/;
+    virtual void deleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const&) /*override*/;
 
-    virtual void deleteContentFiles(::std::shared_ptr<::ContentItem const> const& contentItem) /*override*/;
+    virtual void deleteContentFiles(::std::shared_ptr<::ContentItem const> const&) /*override*/;
 
-    virtual void
-    deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems) /*override*/;
+    virtual void deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const&) /*override*/;
 
-    virtual void postDeleteContent(::std::shared_ptr<::ContentItem const> const& contentItem) /*override*/;
+    virtual void postDeleteContent(::std::shared_ptr<::ContentItem const> const&) /*override*/;
 
-    virtual void
-    postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems) /*override*/;
+    virtual void postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const&) /*override*/;
 
     virtual uint64 generateContentId() /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldResourcePath(::std::string const& levelId) const
-        /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getWorldResourcePath(::std::string const&) const /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldBehaviorPath(::std::string const& levelId) const
-        /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getWorldBehaviorPath(::std::string const&) const /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldResourceFolder(::std::string const& levelId) const
-        /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getWorldResourceFolder(::std::string const&) const /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldBehaviorFolder(::std::string const& levelId) const
-        /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getWorldBehaviorFolder(::std::string const&) const /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldPath(::std::string const& levelId) const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getWorldPath(::std::string const&) const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> const&
-    getPremiumWorldTemplateFolder(::ContentIdentity const& templateId) /*override*/;
+    getPremiumWorldTemplateFolder(::ContentIdentity const&) /*override*/;
 
     virtual ::ContentManagerProxy* getProxy() /*override*/;
 
-    virtual void beginAsyncInit(::TaskGroup& taskGroup) /*override*/;
+    virtual void beginAsyncInit(::TaskGroup&) /*override*/;
 
     virtual bool isInitialized() const /*override*/;
 
@@ -200,233 +193,71 @@ public:
 
     virtual void refreshContentCatalogPackSource() /*override*/;
 
-    virtual ::Bedrock::PubSub::Subscription
-    refreshContentCatalogPackSource(::std::function<void()>&& callback) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription refreshContentCatalogPackSource(::std::function<void()>&&) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> getFilePathManager() /*override*/;
 
     virtual void onLevelDeleted(::std::string const& levelId) /*override*/;
 
-    virtual void onRealmsReset(::Realms::RealmId const realmsId) /*override*/;
+    virtual void onRealmsReset(::Realms::RealmId const) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-    subscribeToSourcesReloadedAsyncCompleted(::std::function<void()>&& onSourcesReloadedAsyncCallback) /*override*/;
+    subscribeToSourcesReloadedAsyncCompleted(::std::function<void()>&&) /*override*/;
 
     virtual ::std::shared_ptr<::StorageManager::ContentItemProvider> getStorageContentItemProvider() /*override*/;
 
     virtual ::StorageManager::IContentHandler& getStorageContentHandler() /*override*/;
 
-    virtual ::Bedrock::PubSub::Subscription registerToReloadViews(::std::function<void()> callback) /*override*/;
+    virtual ::std::shared_ptr<::StorageManager::WorldConverter> getStorageWorldConverter() /*override*/;
+
+    virtual ::Bedrock::PubSub::Subscription registerToReloadViews(::std::function<void()>) /*override*/;
+
+    virtual ::Bedrock::PubSub::Subscription registerToDeleteContent(::std::function<void()>) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ContentManager(
-        ::std::unique_ptr<::IContentManagerFactory>            factory,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>   entitlementManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager> worldTemplateManager,
-        ::IPackManifestFactory&                                packManifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> filePathManager,
-        ::std::unique_ptr<::StorageManager::IContentHandler>   storageContentHandler
+        ::ILevelListCache&                                                     levelListCache,
+        ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager> const&           worldTemplateManager,
+        ::IResourcePackRepository&                                             resourcePackRepository,
+        ::ResourcePackManager&                                                 resourcePackManager,
+        ::PackManifestFactory&                                                 packManifestFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>                   entitlementManager,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const&      contentTierManager,
+        ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> const&         storeCatalog,
+        ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const&          contentCatalogService,
+        ::ClientPackSourceFactory&                                             packSourceFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&          filePathManager,
+        ::std::unique_ptr<::StorageManager::IContentHandler>                   storageContentHandler,
+        ::std::function<::std::shared_ptr<::StorageManager::WorldConverter>()> storageWorldConverterConstructor
     );
-
-    MCAPI ContentManager(
-        ::ILevelListCache&                                                levelListCache,
-        ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager> const&      worldTemplateManager,
-        ::IResourcePackRepository&                                        resourcePackRepository,
-        ::ResourcePackManager&                                            resourcePackManager,
-        ::PackManifestFactory&                                            packManifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>              entitlementManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager,
-        ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> const&    storeCatalog,
-        ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const&     contentCatalogService,
-        ::ClientPackSourceFactory&                                        packSourceFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&     filePathManager,
-        ::std::unique_ptr<::StorageManager::IContentHandler>              storageContentHandler
-    );
-
-    MCAPI void _asyncInitWork();
-
-    MCAPI void _dispatchReloadViewPublisher();
-
-    MCAPI ::ContentSource* _loadResourceContent(::ContentType type, ::ContentFlags flags);
-
-    MCAPI void _removeContentItemsFromSource(::gsl::not_null<::ContentSource*> source);
-
-    MCAPI void _retrievePackSources(::PackType packType, ::std::vector<::PackSource*>& packSources);
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsServicePackSource> _updateOrCreateRealmsServicePackSource(
-        int64                                                       realmId,
-        ::PackType                                                  packType,
-        ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
-    );
-
-    MCAPI void initExistanceTracking(::std::weak_ptr<::ContentManager> self);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _deleteContent(
-        ::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems,
-        ::std::function<void(::ContentSource&, ::std::vector<::std::shared_ptr<::ContentItem const>> const&)>
-            deleteItemCallback
-    );
-
-    MCAPI static ::std::vector<::std::shared_ptr<::ContentItem const>>
-    _prepareContentItemsForDeleting(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::unique_ptr<::IContentManagerFactory>            factory,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>   entitlementManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager> worldTemplateManager,
-        ::IPackManifestFactory&                                packManifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> filePathManager,
-        ::std::unique_ptr<::StorageManager::IContentHandler>   storageContentHandler
+        ::ILevelListCache&                                                     levelListCache,
+        ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager> const&           worldTemplateManager,
+        ::IResourcePackRepository&                                             resourcePackRepository,
+        ::ResourcePackManager&                                                 resourcePackManager,
+        ::PackManifestFactory&                                                 packManifestFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>                   entitlementManager,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const&      contentTierManager,
+        ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> const&         storeCatalog,
+        ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const&          contentCatalogService,
+        ::ClientPackSourceFactory&                                             packSourceFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&          filePathManager,
+        ::std::unique_ptr<::StorageManager::IContentHandler>                   storageContentHandler,
+        ::std::function<::std::shared_ptr<::StorageManager::WorldConverter>()> storageWorldConverterConstructor
     );
-
-    MCAPI void* $ctor(
-        ::ILevelListCache&                                                levelListCache,
-        ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager> const&      worldTemplateManager,
-        ::IResourcePackRepository&                                        resourcePackRepository,
-        ::ResourcePackManager&                                            resourcePackManager,
-        ::PackManifestFactory&                                            packManifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>              entitlementManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager,
-        ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> const&    storeCatalog,
-        ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const&     contentCatalogService,
-        ::ClientPackSourceFactory&                                        packSourceFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&     filePathManager,
-        ::std::unique_ptr<::StorageManager::IContentHandler>              storageContentHandler
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ContentSource* $loadContent(::ContentType contentType, ::ContentFlags flags);
 
-    MCAPI ::ContentSource* $loadContent(::InvalidPacksFilterGroup const& invalidFilter);
-
-    MCAPI ::ContentSource* $loadContentForLevel(::std::string const& levelId, ::mce::UUID const& premiumTemplateId);
-
-    MCAPI ::ContentSource* $loadContentForRealm(int64 const realmId);
-
-    MCAPI ::std::unique_ptr<::ContentSource>
-    $loadContentForRealmsWorld(::Realms::RealmId realmId, ::std::vector<::Realms::Content> const& servicePackData);
-
-    MCAPI void $addPackSourceFromPremiumTemplate(
-        ::RealmPackManagerContentSource* source,
-        ::mce::UUID const&               premiumTemplateId,
-        ::PackType                       packType
-    );
-
-    MCAPI void $addRealmsUnknownPackSources(::RealmPackManagerContentSource* contentSource);
-
-    MCAPI void $addPacksToRealmsUnknownPackSource(::std::unique_ptr<::Pack> pack);
-
-    MCAPI void $addCachedHostPackIdProvider(::std::weak_ptr<::CachedHostPackIdProvider> provider);
-
-    MCAPI void $clearRealmsUnknownPackSource();
-
-    MCAPI void $removeUnneededItemFromRealmsUnknownContentSource(::mce::UUID const& id);
-
-    MCAPI ::gsl::not_null<::std::shared_ptr<::ContentItemCollection>>
-    $getGlobalResourcePackCollection(bool isEditorMode);
-
-    MCAPI ::std::unique_ptr<::IContentManagerContext>
-    $createContext(::std::function<bool(::std::shared_ptr<::ContentItem const> const&)> contextPredicate);
-
-    MCAPI void $removeContext(::IContentManagerContext& context);
-
-    MCFOLD ::std::vector<::std::unique_ptr<::ContentSource>> const& $getSources() const;
-
-    MCAPI ::std::vector<::std::shared_ptr<::ContentItem>> $getContentItems() const;
-
-    MCFOLD ::std::shared_ptr<::IVersionedContentItemCollection const> $getVersionedItems() const;
-
-    MCAPI void $enableCatalogPackSource();
-
-    MCAPI void $generateItems(::ContentSource* source);
-
-    MCAPI ::Bedrock::Threading::Async<void> $reloadSources(bool saveSources);
-
-    MCAPI void $reloadItems();
-
-    MCAPI void $reloadViews();
-
-    MCAPI void $populateDependencies() const;
-
-    MCAPI void $deleteContent(::std::shared_ptr<::ContentItem const> const& contentItem);
-
-    MCAPI void $deleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems);
-
-    MCAPI void $deleteContentFiles(::std::shared_ptr<::ContentItem const> const& contentItem);
-
-    MCAPI void $deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems);
-
-    MCAPI void $postDeleteContent(::std::shared_ptr<::ContentItem const> const& contentItem);
-
-    MCAPI void $postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems);
-
-    MCAPI uint64 $generateContentId();
-
-    MCAPI ::Core::PathBuffer<::std::string> const $getWorldResourcePath(::std::string const& levelId) const;
-
-    MCAPI ::Core::PathBuffer<::std::string> const $getWorldBehaviorPath(::std::string const& levelId) const;
-
-    MCAPI ::Core::PathBuffer<::std::string> const $getWorldResourceFolder(::std::string const& levelId) const;
-
-    MCAPI ::Core::PathBuffer<::std::string> const $getWorldBehaviorFolder(::std::string const& levelId) const;
-
-    MCAPI ::Core::PathBuffer<::std::string> const $getWorldPath(::std::string const& levelId) const;
-
-    MCAPI ::Core::PathBuffer<::std::string> const& $getPremiumWorldTemplateFolder(::ContentIdentity const& templateId);
-
-    MCAPI ::ContentManagerProxy* $getProxy();
-
-    MCAPI void $beginAsyncInit(::TaskGroup& taskGroup);
-
-    MCFOLD bool $isInitialized() const;
-
-    MCAPI void $onLanguageChanged();
-
-    MCAPI void $refreshContentCatalogPackSource();
-
-    MCAPI ::Bedrock::PubSub::Subscription $refreshContentCatalogPackSource(::std::function<void()>&& callback);
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> $getFilePathManager();
-
-    MCAPI void $onLevelDeleted(::std::string const& levelId);
-
-    MCAPI void $onRealmsReset(::Realms::RealmId const realmsId);
-
-    MCAPI ::Bedrock::PubSub::Subscription
-    $subscribeToSourcesReloadedAsyncCompleted(::std::function<void()>&& onSourcesReloadedAsyncCallback);
-
-    MCAPI ::std::shared_ptr<::StorageManager::ContentItemProvider> $getStorageContentItemProvider();
-
-    MCFOLD ::StorageManager::IContentHandler& $getStorageContentHandler();
-
-    MCAPI ::Bedrock::PubSub::Subscription $registerToReloadViews(::std::function<void()> callback);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIContentManager();
-
-    MCNAPI static void** $vftableForLevelListCacheObserver();
     // NOLINTEND
 };

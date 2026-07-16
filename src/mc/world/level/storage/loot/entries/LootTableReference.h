@@ -8,10 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStack;
-class LootItemCondition;
 class LootTableContext;
 class Random;
-namespace Json { class Value; }
 // clang-format on
 
 class LootTableReference : public ::LootPoolEntry {
@@ -22,74 +20,18 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LootTableReference();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const
-        /*override*/;
+    virtual bool _createItem(::std::vector<::ItemStack>&, ::Random&, ::LootTableContext&) const /*override*/;
 
-    virtual ~LootTableReference() /*override*/;
+    virtual ~LootTableReference() /*override*/ = default;
 
     virtual ::LootPoolEntry::EntryType getEntryType() const /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LootTableReference(
-        int                                                    weight,
-        int                                                    quality,
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& conditions,
-        ::std::string                                          dir
-    );
-
-    MCFOLD ::std::string const& getDir() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(
-        ::Json::Value                                          entry,
-        int                                                    weight,
-        int                                                    quality,
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& conditions
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        int                                                    weight,
-        int                                                    quality,
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& conditions,
-        ::std::string                                          dir
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const;
 
-    MCFOLD ::LootPoolEntry::EntryType $getEntryType() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

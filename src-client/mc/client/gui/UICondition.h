@@ -14,16 +14,4 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>       controlName;
     ::ll::TypedStorage<8, 8, ::Json::Value const*> condition;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~UICondition();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

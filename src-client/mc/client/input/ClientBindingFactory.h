@@ -5,12 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/input/BindingFactory.h"
 #include "mc/deps/input/RectangleArea.h"
-#include "mc/options/option_types/OptionID.h"
 
 // auto generated forward declare list
 // clang-format off
 class ClientInputHandler;
-class Config;
 class IClientInstance;
 // clang-format on
 
@@ -85,103 +83,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientBindingFactory() /*override*/;
+    virtual ~ClientBindingFactory() /*override*/ = default;
 
-    virtual ::std::function<bool()> getBooleanBinding(uint name) const /*override*/;
+    virtual ::std::function<bool()> getBooleanBinding(uint) const /*override*/;
 
-    virtual ::std::function<float()> getFloatBinding(uint name) const /*override*/;
+    virtual ::std::function<float()> getFloatBinding(uint) const /*override*/;
 
-    virtual ::std::function<::std::string()> getStringBinding(uint name) const /*override*/;
+    virtual ::std::function<::std::string()> getStringBinding(uint) const /*override*/;
 
-    virtual ::std::function<::glm::vec2()> getPointBinding(uint name) const /*override*/;
+    virtual ::std::function<::glm::vec2()> getPointBinding(uint) const /*override*/;
 
-    virtual ::std::function<::RectangleArea()> getAreaBinding(uint name) const /*override*/;
+    virtual ::std::function<::RectangleArea()> getAreaBinding(uint) const /*override*/;
 
-    virtual ::std::function<void(::RectangleArea)> getDynamicAreaBinding(uint name) const /*override*/;
+    virtual ::std::function<void(::RectangleArea)> getDynamicAreaBinding(uint) const /*override*/;
 
-    virtual ::std::function<void(float)> getFloatSetter(uint name) const /*override*/;
+    virtual ::std::function<void(float)> getFloatSetter(uint) const /*override*/;
 
-    virtual void setCustomAreaBinding(::std::string const& name, ::RectangleArea area) /*override*/;
+    virtual void setCustomAreaBinding(::std::string const&, ::RectangleArea) /*override*/;
 
-    virtual void removeCustomAreaBinding(::std::string const& name) /*override*/;
+    virtual void removeCustomAreaBinding(::std::string const&) /*override*/;
 
     virtual ::std::vector<uint> getCustomAreaBindingNames() const /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ClientBindingFactory(::ClientInputHandler const& clientInputHandler, ::IClientInstance& client);
-
-    MCAPI ::RectangleArea
-    _calculateClassicButtonRectangleWithOptionIDs(::OptionID posX, ::OptionID posY, ::OptionID scale) const;
-
-    MCAPI ::RectangleArea _calculateClassicDpadRectangle() const;
-
-    MCAPI void _clearCustomAreaBindings();
-
-    MCAPI ::RectangleArea _fitToScreen(::RectangleArea const& rectangle) const;
-
-    MCAPI ::std::vector<::RectangleArea*> _getActiveTopTouchButtons();
-
-    MCAPI bool _isInputSprinting() const;
-
-    MCAPI void _setupTopTouchButtonAreas(float screenCenterX, float screenTop, float buttonSize, float bufferSize);
-
-    MCAPI bool _touchButtonsVisible() const;
-
-    MCAPI void onConfigChanged(::Config const& c);
-
-    MCAPI void setupAreaBindings();
-
-    MCAPI void setupBoolBindings();
-
-    MCAPI void setupFloatBindings();
-
-    MCAPI void setupFloatSetters();
-
-    MCAPI void setupPointBindings();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ClientInputHandler const& clientInputHandler, ::IClientInstance& client);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::function<bool()> $getBooleanBinding(uint name) const;
 
-    MCAPI ::std::function<float()> $getFloatBinding(uint name) const;
-
-    MCAPI ::std::function<::std::string()> $getStringBinding(uint name) const;
-
-    MCAPI ::std::function<::glm::vec2()> $getPointBinding(uint name) const;
-
-    MCAPI ::std::function<::RectangleArea()> $getAreaBinding(uint name) const;
-
-    MCAPI ::std::function<void(::RectangleArea)> $getDynamicAreaBinding(uint name) const;
-
-    MCAPI ::std::function<void(float)> $getFloatSetter(uint name) const;
-
-    MCAPI void $setCustomAreaBinding(::std::string const& name, ::RectangleArea area);
-
-    MCAPI void $removeCustomAreaBinding(::std::string const& name);
-
-    MCAPI ::std::vector<uint> $getCustomAreaBindingNames() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

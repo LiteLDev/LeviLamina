@@ -12,7 +12,6 @@
 class Actor;
 class Block;
 class BlockPos;
-class Material;
 class Vec3;
 // clang-format on
 
@@ -23,10 +22,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>  mHorizontalOnly;
     ::ll::TypedStorage<4, 4, float> mYRotOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FaceDirectionalActorBlock();
 
 public:
     // virtual functions
@@ -40,25 +35,6 @@ public:
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FaceDirectionalActorBlock(
-        ::std::string const& nameId,
-        int                  id,
-        ::Material const&    material,
-        bool                 horizontalOnly,
-        float                yRotOffset
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::string const& nameId, int id, ::Material const& material, bool horizontalOnly, float yRotOffset);
     // NOLINTEND
 
 public:
@@ -79,11 +55,5 @@ public:
     ) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

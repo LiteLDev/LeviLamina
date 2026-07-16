@@ -12,9 +12,9 @@ class IScriptDebugger {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool connect(::std::string const& host, ushort port) = 0;
+    virtual bool connect(::std::string const&, ushort) = 0;
 
-    virtual bool listen(ushort port) = 0;
+    virtual bool listen(ushort) = 0;
 
     virtual void stop() = 0;
 
@@ -23,20 +23,6 @@ public:
     virtual void startProfiler() = 0;
 
     virtual ::std::vector<::Core::Path> stopProfiler() = 0;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Core::Path getProfileSavePath(::std::string const& runtimeId);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& DIAGNOSTICS_CAPTURES_FOLDER();
-
-    MCNAPI static ::std::string_view const& PROFILER_CAPTURES_FOLDER();
     // NOLINTEND
 
 public:

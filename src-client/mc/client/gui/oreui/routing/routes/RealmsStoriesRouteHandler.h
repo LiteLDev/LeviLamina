@@ -33,21 +33,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> COMMENTS_ROUTE();
-
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> HARDCORE_ROUTE();
-
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NEW_STORY_ROUTE();
-
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> REPORT_ROUTE();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SETTINGS_ROUTE();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> SHARELINK_ROUTE();
-
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> STORIES_ROUTE();
 
     MCAPI static ::Realms::RealmId& mWorldId();
     // NOLINTEND

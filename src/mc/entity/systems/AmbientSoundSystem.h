@@ -7,11 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class ActorOwnerComponent;
-class AmbientSoundComponent;
 class EntityRegistry;
-class IRandom;
 // clang-format on
 
 class AmbientSoundSystem : public ::ITickingSystem {
@@ -27,20 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static void _tickAmbientSoundComponent(
-        ::ActorOwnerComponent&   actorOwnerComponent,
-        ::AmbientSoundComponent& ambientSoundComponent
-    );
-
-    MCAPI static void
-    tickAmbientSoundComponent(::Actor& actor, ::AmbientSoundComponent& ambientSoundComponent, ::IRandom& random);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
@@ -48,11 +30,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -16,16 +16,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::std::vector<::NameTagRenderObject, ::LinearAllocator<::NameTagRenderObject>>> mNameTags;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~NameTagRenderObjectCollection();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

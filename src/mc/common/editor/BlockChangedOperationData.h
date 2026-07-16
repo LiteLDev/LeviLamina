@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-class CompoundTag;
-// clang-format on
-
 namespace Editor::Transactions {
 
 struct BlockChangedOperationData {
@@ -28,34 +22,6 @@ public:
     BlockChangedOperationData& operator=(BlockChangedOperationData const&);
     BlockChangedOperationData(BlockChangedOperationData const&);
     BlockChangedOperationData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI BlockChangedOperationData(
-        uint                             previousBlockRuntimeId,
-        uint                             previousExtraBlockRuntimeId,
-        ::std::unique_ptr<::CompoundTag> previousBlockData,
-        uint                             newBlockRuntimeId,
-        uint                             newExtraBlockRuntimeId,
-        ::std::unique_ptr<::CompoundTag> newBlockData,
-        ::BlockPos const&                pos
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        uint                             previousBlockRuntimeId,
-        uint                             previousExtraBlockRuntimeId,
-        ::std::unique_ptr<::CompoundTag> previousBlockData,
-        uint                             newBlockRuntimeId,
-        uint                             newExtraBlockRuntimeId,
-        ::std::unique_ptr<::CompoundTag> newBlockData,
-        ::BlockPos const&                pos
-    );
-    // NOLINTEND
 };
 
 } // namespace Editor::Transactions

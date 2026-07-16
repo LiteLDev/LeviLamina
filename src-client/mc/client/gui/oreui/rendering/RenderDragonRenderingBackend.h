@@ -34,7 +34,6 @@ namespace renoir { struct PipelineState; }
 namespace renoir { struct RendererCaps; }
 namespace renoir { struct Sampler2D; }
 namespace renoir { struct Sampler2DObject; }
-namespace renoir { struct SetPipelineStateCmd; }
 namespace renoir { struct Texture2D; }
 namespace renoir { struct Texture2DObject; }
 namespace renoir { struct TextureObject; }
@@ -68,7 +67,7 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::TypedStorage<8, 184, ::dragon::mesh::VertexFormat> dragonFormat;
+            ::ll::TypedStorage<8, 200, ::dragon::mesh::VertexFormat> dragonFormat;
             ::ll::TypedStorage<8, 24, ::mce::ServerResourcePointer<::dragon::ResolvedVertexBufferResource>>
                 dragonVertexBuffer;
             // NOLINTEND
@@ -103,36 +102,11 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<uchar>> data;
         ::ll::TypedStorage<
             8,
-            216,
+            232,
             ::std::variant<
                 ::OreUI::RenderDragonRenderingBackend::VertexBuffer::DragonVertexBuffer,
                 ::OreUI::RenderDragonRenderingBackend::VertexBuffer::DragonInstanceData>>
             mDragonStorage;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        VertexBuffer& operator=(VertexBuffer const&);
-        VertexBuffer();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI VertexBuffer(::OreUI::RenderDragonRenderingBackend::VertexBuffer const&);
-
-        MCAPI ~VertexBuffer();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::OreUI::RenderDragonRenderingBackend::VertexBuffer const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -147,18 +121,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<uchar>> data;
         ::ll::TypedStorage<8, 24, ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource>>
             dragonIndexBuffer;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~IndexBuffer();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -205,7 +167,7 @@ public:
         mConstantBuffers;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::Gameface::IRenderingBackendTextureStorage>>> mTextures;
     ::ll::TypedStorage<8, 144, ::mce::framebuilder::GamefacePipelineState> mCurrentPipelineState;
-    ::ll::TypedStorage<8, 464, ::mce::framebuilder::GamefaceBatchDrawMesh> mMesh;
+    ::ll::TypedStorage<8, 424, ::mce::framebuilder::GamefaceBatchDrawMesh> mMesh;
     ::ll::TypedStorage<8, 24, ::mce::framebuilder::GamefaceBatchDraw>      mBatch;
     // NOLINTEND
 
@@ -218,7 +180,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RenderDragonRenderingBackend() /*override*/;
+    virtual ~RenderDragonRenderingBackend() /*override*/ = default;
 
     virtual void initializeStaticResources(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> const&) /*override*/;
 
@@ -226,79 +188,60 @@ public:
 
     virtual void BeginCommands() /*override*/;
 
-    virtual void FillCaps(::renoir::RendererCaps& outCaps) /*override*/;
+    virtual void FillCaps(::renoir::RendererCaps&) /*override*/;
 
     virtual void WrapUserRenderTarget(
-        void*                                userObject,
-        ::renoir::Texture2D const&           description,
-        ::renoir::Texture2DObject            object,
-        void*                                dsDescription,
-        ::renoir::DepthStencilTexture const& dsObject,
+        void*,
+        ::renoir::Texture2D const&,
+        ::renoir::Texture2DObject,
+        void*,
+        ::renoir::DepthStencilTexture const&,
         ::renoir::DepthStencilTextureObject
     ) /*override*/;
 
-    virtual void WrapUserTexture(
-        void*                      userObject,
-        ::renoir::Texture2D const& description,
-        ::renoir::Texture2DObject  object
-    ) /*override*/;
+    virtual void WrapUserTexture(void*, ::renoir::Texture2D const&, ::renoir::Texture2DObject) /*override*/;
 
-    virtual bool
-    CreatePipelineState(::renoir::PipelineState const& state, ::renoir::PipelineStateObject object) /*override*/;
+    virtual bool CreatePipelineState(::renoir::PipelineState const&, ::renoir::PipelineStateObject) /*override*/;
 
-    virtual void DestroyPipelineState(::renoir::PipelineStateObject object) /*override*/;
+    virtual void DestroyPipelineState(::renoir::PipelineStateObject) /*override*/;
 
-    virtual bool
-    CreateVertexBuffer(::renoir::VertexType type, uint count, ::renoir::VertexBufferObject object, bool) /*override*/;
+    virtual bool CreateVertexBuffer(::renoir::VertexType, uint, ::renoir::VertexBufferObject, bool) /*override*/;
 
-    virtual void DestroyVertexBuffer(::renoir::VertexBufferObject object) /*override*/;
+    virtual void DestroyVertexBuffer(::renoir::VertexBufferObject) /*override*/;
 
-    virtual void* MapVertexBuffer(::renoir::VertexBufferObject object) /*override*/;
+    virtual void* MapVertexBuffer(::renoir::VertexBufferObject) /*override*/;
 
-    virtual void UnmapVertexBuffer(::renoir::VertexBufferObject object, uint count) /*override*/;
+    virtual void UnmapVertexBuffer(::renoir::VertexBufferObject, uint) /*override*/;
 
-    virtual bool CreateIndexBuffer(
-        ::renoir::IndexBufferType   format,
-        uint                        count,
-        ::renoir::IndexBufferObject object,
-        bool
-    ) /*override*/;
+    virtual bool CreateIndexBuffer(::renoir::IndexBufferType, uint, ::renoir::IndexBufferObject, bool) /*override*/;
 
-    virtual void DestroyIndexBuffer(::renoir::IndexBufferObject object) /*override*/;
+    virtual void DestroyIndexBuffer(::renoir::IndexBufferObject) /*override*/;
 
-    virtual void* MapIndexBuffer(::renoir::IndexBufferObject object) /*override*/;
+    virtual void* MapIndexBuffer(::renoir::IndexBufferObject) /*override*/;
 
-    virtual void UnmapIndexBuffer(::renoir::IndexBufferObject object, uint elemCount) /*override*/;
+    virtual void UnmapIndexBuffer(::renoir::IndexBufferObject, uint) /*override*/;
 
-    virtual bool
-    CreateConstantBuffer(::renoir::CBType type, ::renoir::ConstantBufferObject object, uint size) /*override*/;
+    virtual bool CreateConstantBuffer(::renoir::CBType, ::renoir::ConstantBufferObject, uint) /*override*/;
 
-    virtual void DestroyConstantBuffer(::renoir::ConstantBufferObject object) /*override*/;
+    virtual void DestroyConstantBuffer(::renoir::ConstantBufferObject) /*override*/;
 
-    virtual bool CreateTexture(
-        ::renoir::Texture2DObject  object,
-        ::renoir::Texture2D const& description,
-        void const*                data,
-        uint                       dataLen
-    ) /*override*/;
+    virtual bool CreateTexture(::renoir::Texture2DObject, ::renoir::Texture2D const&, void const*, uint) /*override*/;
 
-    virtual void DestroyTexture(::renoir::Texture2DObject object) /*override*/;
+    virtual void DestroyTexture(::renoir::Texture2DObject) /*override*/;
 
     virtual void UpdateTexture(
-        ::renoir::Texture2DObject  object,
-        ::renoir::Texture2D const& description,
-        ::renoir::UpdateBox*       boxes,
-        void const**               newBytes,
-        uint                       count,
+        ::renoir::Texture2DObject,
+        ::renoir::Texture2D const&,
+        ::renoir::UpdateBox*,
+        void const**,
+        uint,
         bool
     ) /*override*/;
 
-    virtual bool CreateDepthStencilTexture(
-        ::renoir::DepthStencilTextureObject  object,
-        ::renoir::DepthStencilTexture const& description
-    ) /*override*/;
+    virtual bool
+    CreateDepthStencilTexture(::renoir::DepthStencilTextureObject, ::renoir::DepthStencilTexture const&) /*override*/;
 
-    virtual void DestroyDepthStencilTexture(::renoir::DepthStencilTextureObject object) /*override*/;
+    virtual void DestroyDepthStencilTexture(::renoir::DepthStencilTextureObject) /*override*/;
 
     virtual void CopyTextureToTexture(
         ::renoir::Texture2DObject,
@@ -307,22 +250,22 @@ public:
         ::renoir::float2
     ) /*override*/;
 
-    virtual bool CreateSampler2D(::renoir::Sampler2DObject object, ::renoir::Sampler2D const& description) /*override*/;
+    virtual bool CreateSampler2D(::renoir::Sampler2DObject, ::renoir::Sampler2D const&) /*override*/;
 
-    virtual void DestroySampler2D(::renoir::Sampler2DObject object) /*override*/;
+    virtual void DestroySampler2D(::renoir::Sampler2DObject) /*override*/;
 
     virtual bool ReadTexture(::renoir::TextureObject, ::renoir::UpdateBox const&, void*) /*override*/;
 
     virtual void ExecuteRendering(
-        ::renoir::RendererBackend::BackendCommandsBuffer const*    buffers,
-        uint                                                       buffersCount,
-        ::renoir::RendererBackend::ConstantBufferUpdateData const* cboUpdates,
-        uint                                                       numCboUpdates
+        ::renoir::RendererBackend::BackendCommandsBuffer const*,
+        uint,
+        ::renoir::RendererBackend::ConstantBufferUpdateData const*,
+        uint
     ) /*override*/;
 
     virtual void ExecuteResourceCommands(
-        ::renoir::RendererBackend::BackendResourceCommandsBuffer const* buffers,
-        uint                                                            buffersCount,
+        ::renoir::RendererBackend::BackendResourceCommandsBuffer const*,
+        uint,
         ::renoir::ResourcesCommandsStage
     ) /*override*/;
 
@@ -336,12 +279,6 @@ public:
         ::OreUI::FrameDebugData&            frameDebugData,
         ::Gameface::TemporaryTextureHolder& temporaryTextureHolder
     );
-
-    MCAPI void _drawIndexedInstanced(uint indexCount, uint indexOffset, uint instanceCount, uint instanceOffset);
-
-    MCAPI void _flush();
-
-    MCAPI void _setPipelineState(::renoir::SetPipelineStateCmd const& cmd);
     // NOLINTEND
 
 public:
@@ -352,117 +289,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeStaticResources(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> const&);
 
-    MCFOLD void $onAppPreSuspended();
-
-    MCFOLD void $BeginCommands();
-
-    MCAPI void $FillCaps(::renoir::RendererCaps& outCaps);
-
-    MCAPI void $WrapUserRenderTarget(
-        void*                                userObject,
-        ::renoir::Texture2D const&           description,
-        ::renoir::Texture2DObject            object,
-        void*                                dsDescription,
-        ::renoir::DepthStencilTexture const& dsObject,
-        ::renoir::DepthStencilTextureObject
-    );
-
-    MCAPI void
-    $WrapUserTexture(void* userObject, ::renoir::Texture2D const& description, ::renoir::Texture2DObject object);
-
-    MCAPI bool $CreatePipelineState(::renoir::PipelineState const& state, ::renoir::PipelineStateObject object);
-
-    MCAPI void $DestroyPipelineState(::renoir::PipelineStateObject object);
-
-    MCAPI bool $CreateVertexBuffer(::renoir::VertexType type, uint count, ::renoir::VertexBufferObject object, bool);
-
-    MCAPI void $DestroyVertexBuffer(::renoir::VertexBufferObject object);
-
-    MCAPI void* $MapVertexBuffer(::renoir::VertexBufferObject object);
-
-    MCAPI void $UnmapVertexBuffer(::renoir::VertexBufferObject object, uint count);
-
-    MCAPI bool
-    $CreateIndexBuffer(::renoir::IndexBufferType format, uint count, ::renoir::IndexBufferObject object, bool);
-
-    MCAPI void $DestroyIndexBuffer(::renoir::IndexBufferObject object);
-
-    MCAPI void* $MapIndexBuffer(::renoir::IndexBufferObject object);
-
-    MCAPI void $UnmapIndexBuffer(::renoir::IndexBufferObject object, uint elemCount);
-
-    MCAPI bool $CreateConstantBuffer(::renoir::CBType type, ::renoir::ConstantBufferObject object, uint size);
-
-    MCAPI void $DestroyConstantBuffer(::renoir::ConstantBufferObject object);
-
-    MCAPI bool $CreateTexture(
-        ::renoir::Texture2DObject  object,
-        ::renoir::Texture2D const& description,
-        void const*                data,
-        uint                       dataLen
-    );
-
-    MCAPI void $DestroyTexture(::renoir::Texture2DObject object);
-
-    MCAPI void $UpdateTexture(
-        ::renoir::Texture2DObject  object,
-        ::renoir::Texture2D const& description,
-        ::renoir::UpdateBox*       boxes,
-        void const**               newBytes,
-        uint                       count,
-        bool
-    );
-
-    MCAPI bool $CreateDepthStencilTexture(
-        ::renoir::DepthStencilTextureObject  object,
-        ::renoir::DepthStencilTexture const& description
-    );
-
-    MCAPI void $DestroyDepthStencilTexture(::renoir::DepthStencilTextureObject object);
-
-    MCFOLD void $CopyTextureToTexture(
-        ::renoir::Texture2DObject,
-        ::renoir::Texture2DObject,
-        ::renoir::UpdateBox,
-        ::renoir::float2
-    );
-
-    MCAPI bool $CreateSampler2D(::renoir::Sampler2DObject object, ::renoir::Sampler2D const& description);
-
-    MCAPI void $DestroySampler2D(::renoir::Sampler2DObject object);
-
-    MCFOLD bool $ReadTexture(::renoir::TextureObject, ::renoir::UpdateBox const&, void*);
-
-    MCAPI void $ExecuteRendering(
-        ::renoir::RendererBackend::BackendCommandsBuffer const*    buffers,
-        uint                                                       buffersCount,
-        ::renoir::RendererBackend::ConstantBufferUpdateData const* cboUpdates,
-        uint                                                       numCboUpdates
-    );
-
-    MCAPI void $ExecuteResourceCommands(
-        ::renoir::RendererBackend::BackendResourceCommandsBuffer const* buffers,
-        uint                                                            buffersCount,
-        ::renoir::ResourcesCommandsStage
-    );
-
-    MCAPI void $EndCommands();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

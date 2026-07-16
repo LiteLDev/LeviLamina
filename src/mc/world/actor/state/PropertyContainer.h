@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/state/PropertyMetadata.h"
 #include "mc/world/actor/state/PropertyValues.h"
 
 // auto generated forward declare list
@@ -11,7 +12,6 @@ class CompoundTag;
 class HashedString;
 class PropertyGroup;
 class PropertyMetadata;
-class RenderParams;
 class Tag;
 struct MolangScriptArg;
 struct PropertySyncData;
@@ -27,18 +27,12 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PropertyContainer();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PropertyContainer(
-        ::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup,
-        ::RenderParams&                                           renderParams
-    );
-
     MCAPI void _addDataToCompoundTag(::CompoundTag& compoundTag, ::PropertyMetadata const& propertyMetadata) const;
+
+    MCAPI ::std::optional<uint64>
+    _getPropertyTypeArrayIndex(uint64 propertyNameHash, ::PropertyMetadata::ContainedType propertyType) const;
 
     MCAPI bool _readValueFromTag(::PropertyMetadata const& propertyMetadata, ::Tag const& tag);
 
@@ -56,12 +50,5 @@ public:
         ::std::string const&                                                  aliasName,
         ::std::string const&                                                  canonicalName
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup, ::RenderParams& renderParams);
     // NOLINTEND
 };

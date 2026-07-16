@@ -8,9 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Actor;
-class BlockSource;
 class Mob;
 class NavigationComponent;
 class Path;
@@ -38,12 +36,6 @@ public:
     virtual bool moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target, float speed) /*override*/;
 
     virtual bool canUpdatePath(::Mob const& mob) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool _isInsideBorderBlock(::AABB const& aabb, ::BlockSource const& region, float grow) const;
     // NOLINTEND
 
 public:

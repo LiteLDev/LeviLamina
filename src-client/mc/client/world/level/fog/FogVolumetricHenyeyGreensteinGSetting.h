@@ -2,42 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/Keyframes.h"
+
 struct FogVolumetricHenyeyGreensteinGSetting {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mHenyeyGreensteinG;
+    ::ll::TypedStorage<8, 32, ::Core::Keyframes<float, float>> mHenyeyGreensteinG;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FogVolumetricHenyeyGreensteinGSetting();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FogVolumetricHenyeyGreensteinGSetting(float henyeyGreensteinG);
+    MCAPI ~FogVolumetricHenyeyGreensteinGSetting();
     // NOLINTEND
 
 public:
-    // static functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static ::FogVolumetricHenyeyGreensteinGSetting lerp(
-        ::FogVolumetricHenyeyGreensteinGSetting const& src,
-        ::FogVolumetricHenyeyGreensteinGSetting const& dst,
-        float                                          alpha
-    );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::FogVolumetricHenyeyGreensteinGSetting const& ZERO_SETTING();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(float henyeyGreensteinG);
+    MCFOLD void $dtor();
     // NOLINTEND
 };

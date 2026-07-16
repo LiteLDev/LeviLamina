@@ -28,22 +28,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FullPlayerInventoryWrapper(::Player& player);
-
     MCAPI int _clearSimpleContainerItem(::SimpleContainer& container, ::ContainerID containerId, int slot);
 
     MCAPI int _removeCursorItem();
-
-    MCAPI int _removeCursorItem(::ItemStack const& item, bool requireExactAux, int maxCount);
-
-    MCAPI int _removeSimpleContainerItem(
-        ::SimpleContainer& container,
-        ::ContainerID      containerId,
-        int                slot,
-        ::ItemStack const& sourceItem,
-        bool               requireExactAux,
-        int                maxCount
-    );
 
     MCAPI int clearAllItems();
 
@@ -55,11 +42,5 @@ public:
         bool                                      requireExactAux,
         int                                       maxCount
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player);
     // NOLINTEND
 };

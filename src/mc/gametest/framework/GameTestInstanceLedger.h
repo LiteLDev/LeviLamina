@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BoundingBox;
-class LevelStorage;
 struct DimensionType;
 namespace gametest { class BaseGameTestInstance; }
 // clang-format on
@@ -36,23 +34,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit GameTestInstanceLedger(::LevelStorage& storage);
-
     MCNAPI void clear(::DimensionType dimension);
-
-    MCNAPI ::std::vector<::BoundingBox> getBoundingBoxes(::DimensionType dimension) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& GAME_TEST_INSTANCE_PREFIX();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::LevelStorage& storage);
     // NOLINTEND
 
 public:

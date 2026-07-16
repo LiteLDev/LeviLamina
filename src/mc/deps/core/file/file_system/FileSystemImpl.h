@@ -65,21 +65,21 @@ public:
     virtual uint64 getTransactionWriteSizeLimit() const;
 
     virtual ::Core::Result _openFile(
-        ::std::unique_ptr<::Core::FileImpl>& uptFileOut,
-        ::Core::PathView                     filename,
-        ::Core::FileOpenMode                 fileOpenMode,
-        ::Core::FileBufferingMode            bufferingMode
+        ::std::unique_ptr<::Core::FileImpl>&,
+        ::Core::PathView,
+        ::Core::FileOpenMode,
+        ::Core::FileBufferingMode
     ) = 0;
 
-    virtual bool _fileExists(::Core::PathView filePath) = 0;
+    virtual bool _fileExists(::Core::PathView) = 0;
 
-    virtual ::Core::Result _deleteFile(::Core::PathView path) = 0;
+    virtual ::Core::Result _deleteFile(::Core::PathView) = 0;
 
     virtual ::Core::Result _deleteFilePriority(::Core::PathView filePath);
 
-    virtual ::Core::Result _getFileSize(::Core::PathView filePath, uint64* pFileSizeOut) = 0;
+    virtual ::Core::Result _getFileSize(::Core::PathView, uint64*) = 0;
 
-    virtual ::Core::Result _renameFile(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath) = 0;
+    virtual ::Core::Result _renameFile(::Core::PathView, ::Core::PathView) = 0;
 
     virtual ::Core::Result _createEmptyFile(::Core::PathView fileName);
 
@@ -98,15 +98,15 @@ public:
 
     virtual ::Core::Result _writeFileData(::Core::PathView filePath, void const* data, uint64 size);
 
-    virtual ::Core::Result _createOneDirectory(::Core::PathView directoryPath) = 0;
+    virtual ::Core::Result _createOneDirectory(::Core::PathView) = 0;
 
     virtual ::Core::Result _createOneDirectoryIfNotExisting(::Core::PathView directoryPath);
 
     virtual ::Core::Result _createDirectoryRecursively(::Core::PathView directoryPath);
 
-    virtual bool _directoryExists(::Core::PathView directoryPath) = 0;
+    virtual bool _directoryExists(::Core::PathView) = 0;
 
-    virtual ::Core::Result _deleteEmptyDirectory(::Core::PathView directoryPath) = 0;
+    virtual ::Core::Result _deleteEmptyDirectory(::Core::PathView) = 0;
 
     virtual ::Core::Result _deleteDirectoryAndContentsRecursively(::Core::PathView directoryPath);
 
@@ -114,13 +114,12 @@ public:
 
     virtual ::Core::Result _deleteRecursively(::Core::PathView directoryPath, ::Core::FileType deleteFileType);
 
-    virtual ::Core::Result
-    _renameDirectory(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath) = 0;
+    virtual ::Core::Result _renameDirectory(::Core::PathView, ::Core::PathView) = 0;
 
     virtual ::Core::Result _iterateOverDirectory(
-        ::Core::PathView                                                             directoryPath,
-        ::Core::DirectoryIterationFlags                                              flags,
-        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> fx
+        ::Core::PathView,
+        ::Core::DirectoryIterationFlags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
     ) = 0;
 
     virtual ::Core::Result
@@ -142,11 +141,11 @@ public:
     virtual ::Core::Result
     _copyDirectoryAndContentsRecursively(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
-    virtual bool _fileOrDirectoryExists(::Core::PathView entryPath) = 0;
+    virtual bool _fileOrDirectoryExists(::Core::PathView) = 0;
 
     virtual ::Core::Result _getFileOrDirectorySize(::Core::PathView entryName, uint64* pFileSizeOut);
 
-    virtual ::Core::Result _getEntryType(::Core::PathView entryPath, ::Core::FileType& fileTypeOut) = 0;
+    virtual ::Core::Result _getEntryType(::Core::PathView, ::Core::FileType&) = 0;
 
     virtual ::Core::Result _addIgnoredThrottlePath(::Core::PathView);
 
@@ -184,10 +183,9 @@ public:
     virtual ::Core::Result
     _flatFileGetFileSize(::Core::PathView filePath, ::Core::PathView manifestPath, uint64* pFileSize);
 
-    virtual ::Core::Result _getLastModificationTime(::Core::PathView filePath, int64* pModificationTime) = 0;
+    virtual ::Core::Result _getLastModificationTime(::Core::PathView, int64*) = 0;
 
-    virtual ::Core::Result
-    _copyTimeAndAccessRights(::Core::PathView sourceEntryPath, ::Core::PathView targetEntryPath) = 0;
+    virtual ::Core::Result _copyTimeAndAccessRights(::Core::PathView, ::Core::PathView) = 0;
 
     virtual ::Core::Result _endTransaction();
 
@@ -219,56 +217,11 @@ public:
 
     MCNAPI void _addFile(::Core::FileImpl* pFile);
 
-    MCNAPI ::Core::Result _flatFileOpenFlatFile(
-        ::std::unique_ptr<::Core::FileImpl>& fileOut,
-        ::Core::PathView                     filePath,
-        ::Core::PathView                     manifestPath,
-        ::Core::FileOpenMode                 openMode,
-        ::Core::FileBufferingMode            fileBufferingMode
-    );
-
-    MCNAPI ::Core::Result _flatFileUnloadManifest(::Core::PathView filePath);
-
-    MCNAPI void _initialize();
-
-    MCNAPI ::Core::Result _readOperation(::Core::Result&& result, uint64 numBytesRead);
-
-    MCNAPI ::Core::Result _readWriteOperation(
-        ::Core::Result&&                                result,
-        ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull,
-        uint64                                          numBytesRead,
-        uint64                                          numBytesWritten
-    );
-
-    MCNAPI ::Core::Result addIgnoredThrottlePath(::Core::PathView path);
-
     MCNAPI ::Core::Result commit();
-
-    MCNAPI ::Core::Result
-    copyDirectoryAndContentsRecursively(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
-
-    MCNAPI ::Core::Result copyFile(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
-
-    MCNAPI ::Core::Result copyFileWithLimit(
-        ::Core::PathView sourceFileName,
-        ::Core::PathView targetFileName,
-        uint64           startPosition,
-        uint64&          outBytesWritten,
-        uint64&          outBytesRemaining
-    );
-
-    MCNAPI ::Core::Result copyFlatFile(
-        ::Core::PathView                           flatFileParentDirectory,
-        ::Core::PathView                           targetDirectory,
-        ::std::vector<::Core::ExcludedPath> const& excludedDirectories,
-        ::std::vector<::Core::ExcludedPath> const& excludedFiles
-    );
 
     MCNAPI ::Core::Result createDirectoryRecursively(::Core::PathView directoryPath);
 
     MCNAPI ::Core::Result createEmptyFile(::Core::PathView filePath);
-
-    MCNAPI ::Core::Result createFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
     MCNAPI ::Core::Result createOneDirectory(::Core::PathView directoryPath);
 
@@ -276,45 +229,17 @@ public:
 
     MCNAPI ::Core::Result deleteDirectoryAndContentsRecursively(::Core::PathView directoryPath);
 
-    MCNAPI ::Core::Result deleteDirectoryContentsRecursively(::Core::PathView directoryPath);
-
     MCNAPI ::Core::Result deleteEmptyDirectory(::Core::PathView directoryPath);
 
     MCNAPI ::Core::Result deleteFile(::Core::PathView filePath);
 
-    MCNAPI ::Core::Result deleteFilePriority(::Core::PathView filePath);
-
     MCNAPI bool directoryExists(::Core::PathView directoryPath);
-
-    MCNAPI void enumerateFiles(::std::function<void(::Core::FileImpl*)> const& fx);
 
     MCNAPI bool fileExists(::Core::PathView filePath);
 
     MCNAPI bool fileOrDirectoryExists(::Core::PathView entryPath);
 
-    MCNAPI ::Core::Result
-    getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>& files, ::Core::PathView directoryPath);
-
-    MCNAPI ::Core::Result getDirectoryFilesAllocatedSizeRecursively(
-        uint64&          totalSize,
-        uint64&          totalAllocatedSize,
-        ::Core::PathView directoryPath
-    );
-
-    MCNAPI ::Core::Result getDirectoryFilesRecursively(
-        ::std::vector<::Core::PathBuffer<::std::string>>& files,
-        ::Core::PathView                                  directoryPath
-    );
-
-    MCNAPI ::Core::Result getDirectoryFilesSizeRecursively(uint64& totalSize, ::Core::PathView directoryPath);
-
-    MCNAPI ::Core::Result getFileOrDirectorySize(::Core::PathView entryPath, uint64* pFileSizeOut);
-
     MCNAPI ::Core::Result getFileSize(::Core::PathView filePath, uint64* pFileSize);
-
-    MCNAPI ::std::shared_ptr<::Core::FlatFileManifestTracker> getFlatFileManifestTracker() const;
-
-    MCNAPI ::std::shared_ptr<::Core::FileStorageArea> getStorageArea();
 
     MCNAPI bool isDirectoryPathAFlatFile(::Core::PathView directoryPath);
 
@@ -331,15 +256,9 @@ public:
         ::Core::FileBufferingMode            fileBufferingMode
     );
 
-    MCNAPI ::Core::Result readFileData(::Core::PathView filePath, ::brstd::function_ref<void*(uint64)> data);
-
-    MCNAPI ::Core::Result removeIgnoredThrottlePath(::Core::PathView path);
-
     MCNAPI ::Core::Result renameDirectory(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
     MCNAPI ::Core::Result renameFile(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
-
-    MCNAPI ::Core::Result writeFileData(::Core::PathView filePath, void const* data, uint64 size);
     // NOLINTEND
 
 public:

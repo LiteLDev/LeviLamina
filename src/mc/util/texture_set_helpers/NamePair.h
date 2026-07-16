@@ -17,18 +17,6 @@ public:
     NamePair& operator=(NamePair const&);
     NamePair(NamePair const&);
     NamePair();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~NamePair();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace TextureSetHelpers

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/ClientInstanceScreenController.h"
 #include "mc/deps/core/file/PathBuffer.h"
 
@@ -12,7 +11,6 @@
 class ClientInstanceScreenModel;
 class ImageExportSubController;
 class PortfolioScreenManager;
-class UIPropertyBag;
 struct PhotoRecord;
 namespace Core { class Path; }
 namespace Json { class Value; }
@@ -49,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PortfolioScreenController() /*override*/;
+    virtual ~PortfolioScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -64,30 +62,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit PortfolioScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
-
-    MCAPI void _addPhotoPage(::Core::PathBuffer<::std::string> const& photoPath);
-
-    MCAPI void _buildPhotoRecords();
-
-    MCAPI void _createPhotoItem(uint64 index);
-
-    MCAPI void _deletePhoto(uint64 index);
-
-    MCAPI int _getPickIndex(::UIPropertyBag& bag);
-
-    MCAPI ::ui::ViewRequest _handlePortfolioExport();
-
-    MCAPI void _initScreenControllerProxy();
-
-    MCAPI void _loadCaptionIfUnloaded(::PhotoRecord& record);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerSubControllers();
-
-    MCAPI void _saveCaptions(bool forceSaveAll);
     // NOLINTEND
 
 public:
@@ -97,28 +71,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI void $onTerminate();
-
-    MCFOLD bool $_isStillValid() const;
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

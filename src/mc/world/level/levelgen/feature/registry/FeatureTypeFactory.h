@@ -6,14 +6,10 @@
 // clang-format off
 class FeatureLoader;
 class FeatureTypeVersion;
-class IWorldRegistriesProvider;
-class MinEngineVersion;
-class ResourcePackManager;
 struct FeatureParserContext;
 struct SupportedFeatureSchema;
 struct SupportedFeatureUpgrader;
 namespace Documentation { struct Node; }
-namespace Json { class Value; }
 namespace Puv { class VersionRange; }
 // clang-format on
 
@@ -32,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FeatureTypeFactory();
+    virtual ~FeatureTypeFactory() = default;
     // NOLINTEND
 
 public:
@@ -41,29 +37,12 @@ public:
     MCAPI FeatureTypeFactory();
 
     MCAPI uint64 addSupportedSchema(::std::optional<::Puv::VersionRange> versionRange);
-
-    MCAPI ::FeatureTypeVersion getFeatureTypeVersion(::std::string const& featureTypeName) const;
-
-    MCAPI bool processFeature(
-        ::IWorldRegistriesProvider&  lookupProvider,
-        bool                         isBasePack,
-        ::ResourcePackManager const& rpm,
-        ::std::string const&         expectedFeatureName,
-        ::Json::Value const&         featureData,
-        ::MinEngineVersion const&    minEngineVersion
-    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

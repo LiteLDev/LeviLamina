@@ -17,19 +17,6 @@ public:
     ConnectResponse& operator=(ConnectResponse const&);
     ConnectResponse(ConnectResponse const&);
     ConnectResponse();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::std::string ToString() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::optional<::NetherNet::ConnectResponse>
-    TryParse(::std::array<::std::string_view, 3> const& tokens);
-    // NOLINTEND
 };
 
 } // namespace NetherNet

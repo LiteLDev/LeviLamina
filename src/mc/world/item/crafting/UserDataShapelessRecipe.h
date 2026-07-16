@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/crafting/Recipe.h"
 #include "mc/world/item/crafting/ShapelessRecipe.h"
 
 // auto generated forward declare list
@@ -12,7 +11,6 @@ class CraftingContainer;
 class CraftingContext;
 class ItemDescriptor;
 class ItemInstance;
-class ItemStack;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -24,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UserDataShapelessRecipe();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const
@@ -37,23 +31,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit UserDataShapelessRecipe(::Recipe::ConstructionContext&& context);
-
-    MCAPI bool _itemShouldKeepUserData(::ItemStack const& item) const;
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID const& ID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Recipe::ConstructionContext&& context);
     // NOLINTEND
 
 public:

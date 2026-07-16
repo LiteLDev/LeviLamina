@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,6 +24,10 @@ MCNAPI ::Scripting::EnumBinding bindAxisEnums();
 
 MCNAPI ::Scripting::EnumBinding bindPlaneEnums();
 
+MCNAPI ::Scripting::EnumBinding bindRenderPlaneGridResolution();
+
+MCNAPI ::Scripting::InterfaceBinding bindScriptBindingCategoryInfo();
+
 MCNAPI ::Scripting::EnumBinding bindScriptBlockPaletteItemType();
 
 MCNAPI ::Scripting::InterfaceBinding bindScriptInputBindingInfo();
@@ -34,7 +38,11 @@ MCNAPI ::Scripting::InterfaceBinding bindScriptLocalizationEntry();
 
 MCNAPI ::Scripting::EnumBinding bindScriptMouseActionCategory();
 
+MCNAPI ::Scripting::EnumBinding bindScriptMouseCursorIconType();
+
+#ifdef LL_PLAT_S
 MCNAPI ::Scripting::EnumBinding bindStructureSourceEnum();
+#endif
 
 MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem>
 convertServiceItemToScriptItem(

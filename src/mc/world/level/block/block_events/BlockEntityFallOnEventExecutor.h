@@ -26,12 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void disableCallToBase();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $dispatch(::BlockEvents::BlockEntityFallOnEvent& eventData) const;

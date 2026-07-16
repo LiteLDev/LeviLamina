@@ -32,13 +32,7 @@ public:
 
     virtual ::Json::Value asJsonValue() const /*override*/;
 
-    virtual ::Json::Value resolve(::ResolveData const& resolveData) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI TextObjectScore(::std::string name, ::std::string objective);
+    virtual ::Json::Value resolve(::ResolveData const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -52,26 +46,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string name, ::std::string objective);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $asString() const;
 
-    MCNAPI ::Json::Value $asJsonValue() const;
-
-    MCNAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

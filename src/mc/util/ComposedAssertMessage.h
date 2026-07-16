@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct AssertHandlerContext;
-// clang-format on
-
 namespace DebugUtils {
 
 class ComposedAssertMessage {
@@ -22,20 +17,6 @@ public:
     ComposedAssertMessage& operator=(ComposedAssertMessage const&);
     ComposedAssertMessage(ComposedAssertMessage const&);
     ComposedAssertMessage();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void compose(::AssertHandlerContext const& context);
-
-    MCNAPI ~ComposedAssertMessage();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace DebugUtils

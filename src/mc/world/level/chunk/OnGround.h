@@ -18,26 +18,15 @@ class OnGround : public ::br::spawn::PlacementType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool isSpawnPositionOk(::BlockSource& region, ::BlockPos pos, ::br::spawn::EntityType const& type) const
-        /*override*/;
+    virtual bool isSpawnPositionOk(::BlockSource&, ::BlockPos, ::br::spawn::EntityType const&) const /*override*/;
 
-    virtual ::BlockPos adjustSpawnPos(::BlockSource& region, ::BlockPos candidate) const /*override*/;
+    virtual ::BlockPos adjustSpawnPos(::BlockSource&, ::BlockPos) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isSpawnPositionOk(::BlockSource& region, ::BlockPos pos, ::br::spawn::EntityType const& type) const;
 
-    MCAPI ::BlockPos $adjustSpawnPos(::BlockSource& region, ::BlockPos candidate) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

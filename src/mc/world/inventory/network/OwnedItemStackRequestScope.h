@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStackNetManagerClient;
-class ItemStackRequestAction;
 class ItemStackRequestData;
 // clang-format on
 
@@ -37,8 +36,6 @@ public:
         ::std::shared_ptr<::ItemStackRequestData> result,
         ::ItemStackRequestScreen                  screen
     );
-
-    MCNAPI void addRequestAction(::std::unique_ptr<::ItemStackRequestAction> requestAction) const;
 
     MCNAPI ~OwnedItemStackRequestScope();
 #endif

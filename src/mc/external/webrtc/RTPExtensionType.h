@@ -28,7 +28,8 @@ enum class RTPExtensionType : int {
     KRtpExtensionGenericFrameDescriptor02  = 18,
     KRtpExtensionColorSpace                = 19,
     KRtpExtensionVideoFrameTrackingId      = 20,
-    KRtpExtensionNumberOfExtensions        = 21,
+    KRtpExtensionCorruptionDetection       = 21,
+    KRtpExtensionNumberOfExtensions        = 22,
 };
 
 }

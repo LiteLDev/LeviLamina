@@ -62,17 +62,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $_isStillValid() const;
+    MCAPI bool $_isStillValid() const;
 
-    MCFOLD void $_registerCoalesceOrder();
+    MCAPI void $_registerCoalesceOrder();
 
-    MCFOLD void $_registerAutoPlaceOrder();
+    MCAPI void $_registerAutoPlaceOrder();
     // NOLINTEND
 
 public:

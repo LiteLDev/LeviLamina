@@ -45,12 +45,6 @@ public:
         ::Bedrock::PubSub::ConnectPosition                                        at,
         ::std::optional<int>                                                      group
     );
-
-    MCFOLD bool empty() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD uint64 size() const;
-#endif
     // NOLINTEND
 
 public:

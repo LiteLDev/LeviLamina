@@ -13,9 +13,7 @@ namespace VanillaBlockTypes {
 // NOLINTBEGIN
 MCAPI void registerBlockMappings();
 
-MCAPI void registerBlocks(::BaseGameVersion const&, ::Experiments const&);
-
-MCAPI void unregisterBlocks();
+MCAPI void registerBlocks(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
 // NOLINTEND
 
 } // namespace VanillaBlockTypes

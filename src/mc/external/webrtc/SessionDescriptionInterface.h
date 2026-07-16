@@ -7,10 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class Candidate; }
-namespace cricket { class SessionDescription; }
+namespace webrtc { class IceCandidate; }
 namespace webrtc { class IceCandidateCollection; }
-namespace webrtc { class IceCandidateInterface; }
+namespace webrtc { class SessionDescription; }
 // clang-format on
 
 namespace webrtc {
@@ -23,9 +22,9 @@ public:
 
     virtual ::std::unique_ptr<::webrtc::SessionDescriptionInterface> Clone() const;
 
-    virtual ::cricket::SessionDescription* description() = 0;
+    virtual ::webrtc::SessionDescription* description() = 0;
 
-    virtual ::cricket::SessionDescription const* description() const = 0;
+    virtual ::webrtc::SessionDescription const* description() const = 0;
 
     virtual ::std::string session_id() const = 0;
 
@@ -35,9 +34,9 @@ public:
 
     virtual ::std::string type() const = 0;
 
-    virtual bool AddCandidate(::webrtc::IceCandidateInterface const* candidate) = 0;
+    virtual bool AddCandidate(::webrtc::IceCandidate const* candidate) = 0;
 
-    virtual uint64 RemoveCandidates(::std::vector<::cricket::Candidate> const& candidates);
+    virtual bool RemoveCandidate(::webrtc::IceCandidate const* candidate) = 0;
 
     virtual uint64 number_of_mediasections() const = 0;
 
@@ -70,8 +69,6 @@ public:
     MCNAPI ::std::unique_ptr<::webrtc::SessionDescriptionInterface> $Clone() const;
 
     MCNAPI ::webrtc::SdpType $GetType() const;
-
-    MCNAPI uint64 $RemoveCandidates(::std::vector<::cricket::Candidate> const& candidates);
 
 
     // NOLINTEND

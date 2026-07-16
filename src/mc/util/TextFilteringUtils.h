@@ -23,18 +23,11 @@ class TextFilteringUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool checkIfTextProcessorIsUnhealthy(::std::vector<::Safety::TextFilteringEvent> const& events);
-
     MCNAPI static bool checkIfTextProcessorIsUnhealthyAndSendChat(
         ::std::vector<::Safety::TextFilteringEvent> const& events,
         ::gsl::not_null<::PacketSender*>                   packetSender,
         ::NetworkIdentifier const&                         source,
         ::SubClientId const&                               subClientId
-    );
-
-    MCNAPI static bool findChatFilteringEvent(
-        ::std::vector<::Safety::TextFilteringEvent> const& events,
-        ::Safety::TextFilteringEvent                       action
     );
 
     MCNAPI static ::Bedrock::Threading::Async<::Safety::TextFilterResult>

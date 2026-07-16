@@ -24,9 +24,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void clearItemInUse(::EntityContext& owner);
 
-    MCFOLD ::ItemStack const& getItemInUse() const;
+    MCAPI int getDuration(::EntityContext const& owner) const;
 
     MCAPI int getUsedDuration(::EntityContext const& owner) const;
 
@@ -35,12 +36,9 @@ public:
     MCAPI void
     setItemInUse(::ItemStack const& newItem, ::EntityContext& owner, int duration, ::PlayerInventorySlotData slot);
 
-    MCAPI ~PlayerItemInUse();
-    // NOLINTEND
+    MCAPI bool shouldDisplayUseParticles(::EntityContext const& owner);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void updateItemInUse(::ItemStack const& updatedItem);
+#endif
     // NOLINTEND
 };

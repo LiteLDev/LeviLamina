@@ -4,9 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ScriptPluginManager;
-class ServerLevel;
-namespace Scripting { class IWatchdog; }
 namespace Scripting { struct ContextId; }
 // clang-format on
 
@@ -24,16 +21,12 @@ public:
 public:
     // prevent constructor by default
     ScriptWatchdog(ScriptWatchdog const&);
+    ScriptWatchdog();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWatchdog();
-
     MCNAPI void disableTimingWarnings(::Scripting::ContextId contextId, bool disabled);
-
-    MCNAPI void
-    initWatchdogHandler(::Scripting::IWatchdog& watchdog, ::ServerLevel& level, ::ScriptPluginManager* pluginManager);
 
     MCNAPI ::ScriptWatchdog& operator=(::ScriptWatchdog const&);
 
@@ -44,12 +37,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& SCRIPT_WATCHDOG_JOB_QUEUE_PHASE_NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

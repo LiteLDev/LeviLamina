@@ -19,31 +19,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraAimAssistActorPriorityServerComponent(CameraAimAssistActorPriorityServerComponent const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraAimAssistActorPriorityServerComponent();
-
-    MCAPI void clearDirty();
-
-    MCFOLD ::std::map<::CameraAimAssistActorPriority::PriorityKey, int> const& getActorPriorities() const;
-
-    MCAPI int getOrCreateActorIndex(::HashedString const& actorId);
-
-    MCAPI int getOrCreateCategoryIndex(::HashedString const& categoryId);
-
-    MCAPI int getOrCreatePresetIndex(::HashedString const& presetId);
-
-    MCFOLD bool isDirty() const;
-
-    MCAPI ::CameraAimAssistActorPriorityServerComponent& operator=(::CameraAimAssistActorPriorityServerComponent&&);
-
-    MCAPI ::CameraAimAssistActorPriorityServerComponent&
-    operator=(::CameraAimAssistActorPriorityServerComponent const&);
-
     MCAPI void setExclusion(::HashedString const& presetId, ::HashedString const& actorId, bool isExcluded);
 
     MCAPI void setPriority(
@@ -52,19 +29,5 @@ public:
         ::HashedString const& actorId,
         int                   newPriority
     );
-
-    MCAPI ~CameraAimAssistActorPriorityServerComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

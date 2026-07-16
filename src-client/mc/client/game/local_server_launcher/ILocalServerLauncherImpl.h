@@ -26,8 +26,8 @@ public:
     virtual ::std::unique_ptr<::LocalServerLauncher::GameDependencies> createGameDependencies() = 0;
 
     virtual void completeServerStartup(
-        ::std::shared_ptr<::LocalServerLauncher::ServerInitData> serverInitData,
-        ::LocalServerLauncher::ServerLaunchResult&&              result
+        ::std::shared_ptr<::LocalServerLauncher::ServerInitData>,
+        ::LocalServerLauncher::ServerLaunchResult&&
     ) = 0;
     // NOLINTEND
 

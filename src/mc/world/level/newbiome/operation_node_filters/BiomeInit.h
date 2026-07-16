@@ -38,8 +38,6 @@ public:
         ::Biome const&         fallbackBiome,
         ::GeneratorType        generator
     );
-
-    MCAPI ~BiomeInit();
     // NOLINTEND
 
 public:
@@ -51,12 +49,6 @@ public:
         ::Biome const&         fallbackBiome,
         ::GeneratorType        generator
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

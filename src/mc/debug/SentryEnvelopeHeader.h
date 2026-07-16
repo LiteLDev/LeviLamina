@@ -26,8 +26,6 @@ public:
     MCNAPI SentryEnvelopeHeader(::SentryEnvelopeHeader const&);
 
     MCNAPI ::SentryEnvelopeHeader& operator=(::SentryEnvelopeHeader&&);
-
-    MCNAPI ~SentryEnvelopeHeader();
     // NOLINTEND
 
 public:
@@ -40,11 +38,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SentryEnvelopeHeader const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

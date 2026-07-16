@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VoxelShapesPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -64,16 +68,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VoxelShapesPacket();
-
     MCAPI explicit VoxelShapesPacket(::VoxelShapesPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::VoxelShapesPacketPayload payload);
     // NOLINTEND
 

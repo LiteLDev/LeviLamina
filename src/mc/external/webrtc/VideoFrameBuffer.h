@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/RefCountInterface.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
@@ -45,7 +46,9 @@ public:
     CropAndScale(int offset_x, int offset_y, int crop_width, int crop_height, int scaled_width, int scaled_height);
 
     virtual ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
-    GetMappedFrameBuffer(::rtc::ArrayView<::webrtc::VideoFrameBuffer::Type> types);
+        GetMappedFrameBuffer(::webrtc::ArrayView<::webrtc::VideoFrameBuffer::Type, 18446744073709546905>);
+
+    virtual ::std::string storage_representation() const;
 
     virtual ~VideoFrameBuffer() /*override*/ = default;
     // NOLINTEND
@@ -57,7 +60,9 @@ public:
     $CropAndScale(int offset_x, int offset_y, int crop_width, int crop_height, int scaled_width, int scaled_height);
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
-    $GetMappedFrameBuffer(::rtc::ArrayView<::webrtc::VideoFrameBuffer::Type> types);
+        $GetMappedFrameBuffer(::webrtc::ArrayView<::webrtc::VideoFrameBuffer::Type, 18446744073709546905>);
+
+    MCNAPI ::std::string $storage_representation() const;
 
 
     // NOLINTEND

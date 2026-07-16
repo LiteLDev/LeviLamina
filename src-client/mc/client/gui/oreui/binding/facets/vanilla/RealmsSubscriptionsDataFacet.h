@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/RealmsSubscriptionsState.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -15,7 +15,7 @@ namespace Realms { struct RealmsSubscriptionInfo; }
 
 namespace OreUI {
 
-class RealmsSubscriptionsDataFacet : public ::OreUI::FacetBase<::OreUI::RealmsSubscriptionsDataFacet> {
+class RealmsSubscriptionsDataFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsSubscriptionsDataFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsSubscriptionsDataFacet() /*override*/;
+    virtual ~RealmsSubscriptionsDataFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -45,18 +45,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsSubscriptionsDataFacet(::std::shared_ptr<::Realms::RealmsSubscriptions> realmsSubscriptions);
-
-    MCFOLD bool getCanBuyCoreRealm() const;
-
-    MCFOLD bool getCanBuyPlusRealm() const;
-
-    MCFOLD ::std::string const& getClientStoreId() const;
-
-    MCFOLD ::std::vector<::Realms::RealmsSubscriptionInfo> const& getRealmsSubscriptionInfo() const;
-
-    MCFOLD ::Realms::RealmsSubscriptionsState getState() const;
-
-    MCAPI void setFacetDirty(::Realms::RealmsSubscriptionsState realmsSubscriptionsState);
     // NOLINTEND
 
 public:
@@ -72,21 +60,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

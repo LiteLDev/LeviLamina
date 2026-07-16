@@ -3,24 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/SSLRole.h"
 #include "mc/external/webrtc/AudioDeviceModule.h"
 #include "mc/external/webrtc/Call.h"
 #include "mc/external/webrtc/DataChannelInterface.h"
 #include "mc/external/webrtc/PeerConnectionInterface.h"
 #include "mc/external/webrtc/PeerConnectionSdpMethods.h"
 #include "mc/external/webrtc/RtpTransceiverProxyWithInternal.h"
+#include "mc/external/webrtc/SSLRole.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class CandidateStats; }
-namespace cricket { struct TransportStats; }
-namespace rtc { class RTCCertificate; }
-namespace rtc { class SSLCertChain; }
-namespace rtc { class Thread; }
+namespace webrtc { class CandidateStats; }
+namespace webrtc { class RTCCertificate; }
 namespace webrtc { class RtpTransceiver; }
+namespace webrtc { class SSLCertChain; }
+namespace webrtc { class Thread; }
 namespace webrtc { struct DataChannelStats; }
+namespace webrtc { struct TransportStats; }
 // clang-format on
 
 namespace webrtc {
@@ -29,9 +29,9 @@ class PeerConnectionInternal : public ::webrtc::PeerConnectionInterface, public 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::rtc::Thread* network_thread() const = 0;
+    virtual ::webrtc::Thread* network_thread() const = 0;
 
-    virtual ::rtc::Thread* worker_thread() const = 0;
+    virtual ::webrtc::Thread* worker_thread() const = 0;
 
     virtual bool initial_offerer() const = 0;
 
@@ -42,9 +42,9 @@ public:
 
     virtual ::std::optional<::std::string> sctp_transport_name() const = 0;
 
-    virtual ::std::vector<::cricket::CandidateStats> GetPooledCandidateStats() const = 0;
+    virtual ::std::vector<::webrtc::CandidateStats> GetPooledCandidateStats() const = 0;
 
-    virtual ::std::map<::std::string, ::cricket::TransportStats>
+    virtual ::std::map<::std::string, ::webrtc::TransportStats>
     GetTransportStatsByNames(::std::set<::std::string> const& transport_names) = 0;
 
     virtual ::webrtc::Call::Stats GetCallStats() = 0;
@@ -52,15 +52,15 @@ public:
     virtual ::std::optional<::webrtc::AudioDeviceModule::Stats> GetAudioDeviceStats() = 0;
 
     virtual bool GetLocalCertificate(
-        ::std::string const&                            transport_name,
-        ::webrtc::scoped_refptr<::rtc::RTCCertificate>* certificate
+        ::std::string const&                               transport_name,
+        ::webrtc::scoped_refptr<::webrtc::RTCCertificate>* certificate
     ) = 0;
 
-    virtual ::std::unique_ptr<::rtc::SSLCertChain> GetRemoteSSLCertChain(::std::string const& transport_name) = 0;
+    virtual ::std::unique_ptr<::webrtc::SSLCertChain> GetRemoteSSLCertChain(::std::string const& transport_name) = 0;
 
     virtual bool IceRestartPending(::std::string const& content_name) const = 0;
 
-    virtual bool GetSslRole(::std::string const& content_name, ::rtc::SSLRole* role) = 0;
+    virtual bool GetSslRole(::std::string const& content_name, ::webrtc::SSLRole* role) = 0;
 
     virtual void NoteDataAddedEvent();
 

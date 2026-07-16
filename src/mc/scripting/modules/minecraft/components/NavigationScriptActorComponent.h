@@ -3,16 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionDescriptor;
-class WeakEntityRef;
 struct NavigationDescription;
-namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -23,10 +20,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::NavigationDescription const* (*)(::ActorDefinitionDescriptor const&)> mDescriptionGetter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NavigationScriptActorComponent();
 
 public:
     // virtual functions
@@ -53,8 +46,6 @@ public:
 
     virtual ::Scripting::Result_deprecated<bool> getCanSink() const;
 
-    virtual ::Scripting::Result_deprecated<bool> getCanPathOverWater() const;
-
     virtual ::Scripting::Result_deprecated<bool> getCanPathOverLava() const;
 
     virtual ::Scripting::Result_deprecated<bool> getCanWalkInLava() const;
@@ -70,34 +61,6 @@ public:
     virtual ::Scripting::Result_deprecated<bool> getCanJump() const;
 
     virtual ::Scripting::Result_deprecated<bool> getCanPathFromAir() const;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI NavigationScriptActorComponent(
-        ::WeakEntityRef const&                entity,
-        ::Scripting::WeakLifetimeScope const& scope,
-        ::std::string const&                  id,
-        ::NavigationDescription const* (*descriptionGetter)(::ActorDefinitionDescriptor const&)
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::WeakEntityRef const&                entity,
-        ::Scripting::WeakLifetimeScope const& scope,
-        ::std::string const&                  id,
-        ::NavigationDescription const* (*descriptionGetter)(::ActorDefinitionDescriptor const&)
-    );
     // NOLINTEND
 
 public:
@@ -122,8 +85,6 @@ public:
     MCAPI ::Scripting::Result_deprecated<bool> $getCanFloat() const;
 
     MCAPI ::Scripting::Result_deprecated<bool> $getCanSink() const;
-
-    MCAPI ::Scripting::Result_deprecated<bool> $getCanPathOverWater() const;
 
     MCAPI ::Scripting::Result_deprecated<bool> $getCanPathOverLava() const;
 

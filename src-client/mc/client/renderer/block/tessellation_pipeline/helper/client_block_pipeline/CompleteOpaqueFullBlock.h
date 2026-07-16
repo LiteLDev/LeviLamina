@@ -22,18 +22,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                     mHasTextureVariations;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientBlockPipeline::IResolvedTint>> mResolvedTint;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~CompleteOpaqueFullBlock();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline

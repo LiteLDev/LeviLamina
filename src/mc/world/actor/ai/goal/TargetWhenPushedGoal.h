@@ -15,9 +15,9 @@ class TargetWhenPushedGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                                mSelf;
-    ::ll::TypedStorage<4, 4, float>                                 mPercentChance;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor> const> mTargetTypes;
+    ::ll::TypedStorage<8, 8, ::Mob&>                          mSelf;
+    ::ll::TypedStorage<4, 4, float>                           mPercentChance;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mTargetTypes;
     // NOLINTEND
 
 public:
@@ -40,18 +40,6 @@ public:
     virtual void stop() /*override*/;
 
     virtual void appendDebugInfo(::std::string&) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TargetWhenPushedGoal(::Mob& mob, ::std::vector<::MobDescriptor> targetTypes, float percentChance);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::vector<::MobDescriptor> targetTypes, float percentChance);
     // NOLINTEND
 
 public:

@@ -15,10 +15,9 @@ public:
     // NOLINTBEGIN
     virtual ~MonumentRoomFitter() = default;
 
-    virtual bool fits(::RoomDefinition const& definition) const = 0;
+    virtual bool fits(::RoomDefinition const&) const = 0;
 
-    virtual ::std::unique_ptr<::OceanMonumentPiece>
-    create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random) = 0;
+    virtual ::std::unique_ptr<::OceanMonumentPiece> create(int&, ::std::shared_ptr<::RoomDefinition>, ::Random&) = 0;
     // NOLINTEND
 
 public:

@@ -9,7 +9,11 @@
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/packet/ArrowDataPayload.h"
 #include "mc/network/packet/BoxDataPayload.h"
+#include "mc/network/packet/ConeDataPayload.h"
+#include "mc/network/packet/CylinderDataPayload.h"
+#include "mc/network/packet/EllipsoidDataPayload.h"
 #include "mc/network/packet/LineDataPayload.h"
+#include "mc/network/packet/PyramidDataPayload.h"
 #include "mc/network/packet/SphereDataPayload.h"
 #include "mc/network/packet/TextDataPayload.h"
 #include "mc/scripting/modules/minecraft/primitiveshapes/ScriptPrimitiveShapeType.h"
@@ -43,7 +47,11 @@ public:
             ::TextDataPayload,
             ::BoxDataPayload,
             ::LineDataPayload,
-            ::SphereDataPayload>>
+            ::SphereDataPayload,
+            ::CylinderDataPayload,
+            ::PyramidDataPayload,
+            ::EllipsoidDataPayload,
+            ::ConeDataPayload>>
         mExtraDataPayload;
     // NOLINTEND
 
@@ -51,17 +59,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void applyUpdatedData(::ScriptModuleMinecraft::ScriptPrimitiveShape& existing) const;
-
     MCAPI ::std::unique_ptr<::ScriptModuleMinecraft::ScriptPrimitiveShape> constructShape() const;
 #endif
-
-    MCAPI ~PrimitiveShapeDataPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

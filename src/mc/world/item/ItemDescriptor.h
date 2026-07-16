@@ -118,6 +118,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemDescriptor(ItemDescriptor const&);
+    ItemDescriptor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ItemDescriptor() = default;
@@ -130,19 +135,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemDescriptor();
-
     MCAPI explicit ItemDescriptor(::Block const& block);
 
     MCAPI explicit ItemDescriptor(::BlockType const& block);
 
-    MCAPI explicit ItemDescriptor(::SharedTypes::Legacy::ItemDescriptor const& desc);
-
     MCAPI explicit ItemDescriptor(::ItemTag const& itemTag);
-
-    MCAPI ItemDescriptor(::ItemDescriptor&& rhs);
-
-    MCAPI ItemDescriptor(::ItemDescriptor const& rhs);
 
     MCAPI explicit ItemDescriptor(::ReadOnlyBinaryStream& stream);
 
@@ -160,12 +157,6 @@ public:
 
     MCAPI ::WeakPtr<::BlockType const> const& getBlockType() const;
 
-    MCAPI ::std::string getFullName() const;
-
-    MCAPI uint64 getHash() const;
-
-    MCAPI short getId() const;
-
     MCAPI int getIdAux() const;
 
     MCAPI ::Item const* getItem() const;
@@ -174,27 +165,15 @@ public:
 
     MCAPI ::std::string getSerializedNameAndAux(bool removeInvalidAux) const;
 
-    MCAPI bool isDefinedAsItemName() const;
-
     MCAPI bool isNull() const;
 
     MCAPI bool isValid(bool shouldResolve) const;
 
-    MCAPI bool operator!=(::ItemDescriptor const& rhs) const;
-
-    MCAPI void operator=(::ItemDescriptor&& rhs);
-
     MCAPI void operator=(::ItemDescriptor const& rhs);
-
-    MCAPI bool operator==(::ItemDescriptor const& rhs) const;
 
     MCAPI bool sameItem(::ItemStack const& item, bool compareAux) const;
 
     MCAPI bool sameItem(::ItemDescriptor const& otherItemDescriptor, bool compareAux) const;
-
-    MCAPI ::std::optional<::CompoundTag> save() const;
-
-    MCAPI ::std::string toString() const;
     // NOLINTEND
 
 public:
@@ -205,26 +184,16 @@ public:
     MCAPI static void fromSharedTypes(::ItemDescriptor& instance, ::SharedTypes::Legacy::ItemDescriptor const& desc);
 
     MCAPI static ::std::optional<::ItemDescriptor> fromTag(::CompoundTag const* tag);
-
-    MCAPI static ::SharedTypes::Legacy::ItemDescriptor toSharedTypes(::ItemDescriptor const& id);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Block const& block);
 
     MCAPI void* $ctor(::BlockType const& block);
 
-    MCAPI void* $ctor(::SharedTypes::Legacy::ItemDescriptor const& desc);
-
     MCAPI void* $ctor(::ItemTag const& itemTag);
-
-    MCAPI void* $ctor(::ItemDescriptor&& rhs);
-
-    MCAPI void* $ctor(::ItemDescriptor const& rhs);
 
     MCAPI void* $ctor(::ReadOnlyBinaryStream& stream);
 

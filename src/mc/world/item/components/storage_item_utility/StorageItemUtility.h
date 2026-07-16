@@ -6,9 +6,7 @@
 // clang-format off
 class CompoundTag;
 class ContainerManagerController;
-class ItemStack;
 class ItemStackBase;
-class ListTag;
 class SaveContext;
 struct FullContainerName;
 namespace StorageItemUtility { class StorageItemWeightData; }
@@ -21,17 +19,15 @@ MCAPI void _tryFlattenStorageItem(::ItemStackBase& item, ::SaveContext const& co
 
 MCAPI int getItemWeightInStorageItem(::ItemStackBase const& item, ::std::optional<uchar> amount);
 
+#ifdef LL_PLAT_C
 MCAPI ::std::optional<::FullContainerName> getStorageItemID(::ItemStackBase const& storageItem);
 
-#ifdef LL_PLAT_C
 MCAPI ::std::optional<::StorageItemUtility::StorageItemWeightData>
 getStorageItemWeightDataClient(::ItemStackBase const& item, ::ContainerManagerController& containerManagerController);
 #endif
 
 MCAPI ::std::optional<::StorageItemUtility::StorageItemWeightData>
 getStorageItemWeightDataServer(::ItemStackBase const& item);
-
-MCAPI void removeSerializedContainerIDs(::ItemStack& item);
 
 MCAPI ::std::unique_ptr<::CompoundTag> saveDataFixupBySaveContext(
     ::std::unique_ptr<::CompoundTag> tag,
@@ -41,11 +37,7 @@ MCAPI ::std::unique_ptr<::CompoundTag> saveDataFixupBySaveContext(
 
 MCAPI void tryFlattenStorageItem(::ItemStackBase& item);
 
-MCAPI ::ListTag const* tryGetContentData(::ItemStackBase const& item);
-
 MCAPI void tryMoveStorageItem(::ItemStackBase& item);
-
-MCAPI void tryRemoveStorageItemContentData(::ItemStackBase& item);
 // NOLINTEND
 
 } // namespace StorageItemUtility

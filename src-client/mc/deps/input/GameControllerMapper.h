@@ -15,10 +15,8 @@ class BindingFactory;
 class IGameController;
 class InputEventQueue;
 struct ControllerIDtoClientMap;
-struct GameControllerButtonEvent;
 struct GameControllerInputMapping;
 struct GameControllerStickEvent;
-struct GameControllerTriggerEvent;
 struct InputMapping;
 // clang-format on
 
@@ -80,40 +78,6 @@ public:
         ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::GameControllerStickEvent>> mPreviousStickEvents;
         ::ll::TypedStorage<1, 1, bool>                                                   mMappingChanged;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        GameControllerMappingData& operator=(GameControllerMappingData const&);
-        GameControllerMappingData(GameControllerMappingData const&);
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI GameControllerMappingData();
-
-        MCAPI GameControllerMappingData(::GameControllerMapper::GameControllerMappingData&&);
-
-        MCAPI void clear();
-
-        MCAPI ::GameControllerMapper::GameControllerMappingData&
-        operator=(::GameControllerMapper::GameControllerMappingData&&);
-
-        MCAPI ~GameControllerMappingData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-
-        MCAPI void* $ctor(::GameControllerMapper::GameControllerMappingData&&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
     struct GamepadStickTurnData {
@@ -160,10 +124,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setMapping(
-        ::InputEventQueue&      inputMapping,
-        ::BindingFactory const& controllerId,
-        ::InputMapping const&,
-        int
+        ::InputEventQueue&      eventQueue,
+        ::BindingFactory const& bindingFactory,
+        ::InputMapping const&   inputMapping,
+        int                     controllerId
     ) /*override*/;
 
     virtual void clearMapping(int controllerId) /*override*/;
@@ -186,39 +150,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI GameControllerMapper();
-
-    MCAPI void _enqueueButtonDownUpEvents(
-        ::InputEventQueue&                            eventQueue,
-        ::GameControllerMapper::GamepadStickTurnData& turnData,
-        ::DirectionId                                 direction
-    );
-
-    MCAPI void _handleButtonEvent(
-        ::InputEventQueue&                 eventQueue,
-        ::GameControllerButtonEvent const& buttonEvent,
-        int                                controllerId,
-        int                                alternateControllerId
-    );
-
-    MCAPI void
-    _handleConnectionStateChangedEvent(::InputEventQueue& eventQueue, bool controllerConnected, int controllerId);
-
-    MCAPI void
-    _handleStickEvent(::InputEventQueue& eventQueue, ::GameControllerStickEvent const& stickEvent, int controllerId);
-
-    MCAPI void _handleTriggerEvent(
-        ::InputEventQueue&                  eventQueue,
-        ::GameControllerTriggerEvent const& triggerEvent,
-        int                                 controllerId
-    );
-
-    MCAPI void _reprocessPreviousStickEvents(
-        ::InputEventQueue&        eventQueue,
-        int                       controllerId,
-        ::std::vector<int> const& handledEventStickIds
-    );
-
-    MCAPI void _tickTurn(::InputEventQueue& eventQueue);
     // NOLINTEND
 
 public:
@@ -230,8 +161,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
-    $setMapping(::InputEventQueue& inputMapping, ::BindingFactory const& controllerId, ::InputMapping const&, int);
+    MCAPI void $setMapping(
+        ::InputEventQueue&      eventQueue,
+        ::BindingFactory const& bindingFactory,
+        ::InputMapping const&   inputMapping,
+        int                     controllerId
+    );
 
     MCAPI void $clearMapping(int controllerId);
 

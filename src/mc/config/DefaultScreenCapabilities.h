@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/config/TypedScreenCapabilities.h"
 
-struct DefaultScreenCapabilities : public ::TypedScreenCapabilities<::DefaultScreenCapabilities> {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
-};
+struct DefaultScreenCapabilities : public ::TypedScreenCapabilities<::DefaultScreenCapabilities> {};

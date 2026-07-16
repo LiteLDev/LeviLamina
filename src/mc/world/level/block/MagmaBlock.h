@@ -18,10 +18,6 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 
 class MagmaBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    MagmaBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getVariant(::Block const& block) const /*override*/;
@@ -39,17 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MagmaBlock(::std::string const& nameId, int id);
-
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

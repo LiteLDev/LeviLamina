@@ -24,27 +24,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LightDistanceToPlayerHeuristic();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool reject(::SubChunkPos const& subChunkPos) const /*override*/;
 
     virtual float computeScore(::BlockPos const& bp, ::PointLighting::ManagedPointLight const&) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LightDistanceToPlayerHeuristic(::Vec3 playerPos, float minDistance);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Vec3 playerPos, float minDistance);
     // NOLINTEND
 
 public:

@@ -51,27 +51,27 @@ public:
     // NOLINTBEGIN
     virtual ~VisualTree() /*override*/;
 
-    virtual ::std::shared_ptr<::UIControl> getControlWithName(::std::string const& name) /*override*/;
+    virtual ::std::shared_ptr<::UIControl> getControlWithName(::std::string const&) /*override*/;
 
     virtual bool getDirty() /*override*/;
 
-    virtual bool getDirty(::ui::DirtyFlag flag) /*override*/;
+    virtual bool getDirty(::ui::DirtyFlag) /*override*/;
 
     virtual ::ui::DirtyFlag getDirtyValue() /*override*/;
 
-    virtual void addDirtyFlag(::ui::DirtyFlag flag) /*override*/;
+    virtual void addDirtyFlag(::ui::DirtyFlag) /*override*/;
 
-    virtual void measureControls(::UIControl& measureRoot) /*override*/;
+    virtual void measureControls(::UIControl&) /*override*/;
 
-    virtual void markToRemoveDeadDependencies(::std::shared_ptr<::UIControl> control) /*override*/;
+    virtual void markToRemoveDeadDependencies(::std::shared_ptr<::UIControl>) /*override*/;
 
-    virtual void updateControlCollection(::std::shared_ptr<::UIControl> control) /*override*/;
+    virtual void updateControlCollection(::std::shared_ptr<::UIControl>) /*override*/;
 
     virtual void updateControlCollectionFromRoot() /*override*/;
 
-    virtual void removeFromControlCollection(::std::shared_ptr<::UIControl> control) /*override*/;
+    virtual void removeFromControlCollection(::std::shared_ptr<::UIControl>) /*override*/;
 
-    virtual void updateControlBinds(::std::shared_ptr<::UIControl> control) /*override*/;
+    virtual void updateControlBinds(::std::shared_ptr<::UIControl>) /*override*/;
 
     virtual void updateBindsFromRoot() /*override*/;
 
@@ -85,89 +85,17 @@ public:
     // NOLINTBEGIN
     MCAPI VisualTree(::std::string const& rootControlName, ::Json::Value const& initGlobalVars);
 
-    MCAPI void clearBindUpdateFromRoot();
-
-    MCAPI void clearControlCollectionUpdateFromRoot();
-
-    MCAPI void clearControlsToBind();
-
-    MCAPI void clearControlsToRemoveFromCollections();
-
-    MCAPI void clearControlsUpdate(bool clearBacklog);
-
-    MCAPI void clearTextEditAlwaysListeningChanged();
-
-    MCAPI void clearTextEditFocusChanged();
-
-    MCAPI void destroyAsync(::TaskGroup& taskGroup);
-
-    MCFOLD bool getClearPersistantMeshes();
-
     MCAPI ::std::shared_ptr<::UIControl> getControlByName(::std::string const& name, bool visibleOnly);
 
     MCAPI ::std::vector<::std::shared_ptr<::UIControl>>
     getControls(::std::function<bool(::UIControl const&)> predicate);
 
-    MCFOLD ::std::vector<::std::shared_ptr<::UIControl>>&& getControlsToBind();
-
-    MCFOLD ::std::vector<::std::shared_ptr<::UIControl>> const& getControlsToRemoveFromCollections();
-
-    MCAPI ::std::vector<::std::shared_ptr<::UIControl>> const& getControlsToUpdate();
-
-    MCAPI ::std::shared_ptr<::UIControl> getFirstControl(::std::function<bool(::UIControl const&)> const& predicate);
-
-    MCAPI ::std::shared_ptr<::UIControl>
-    getFirstControl(::UIControl& control, ::std::function<bool(::UIControl const&)> const& predicate);
-
-    MCAPI ::std::shared_ptr<::UIControl>
-    getFirstVisibleControl(::std::function<bool(::UIControl const&)> const& predicate);
-
-    MCFOLD ::Json::Value const& getInitGlobalVars() const;
-
-    MCAPI ::std::shared_ptr<::UIControl> getInitialSelectedControl() const;
-
-    MCFOLD ::VisualTreeProxy* getProxy();
-
-    MCFOLD ::std::shared_ptr<::UIControl> getRootControl();
-
     MCAPI ::std::vector<::std::shared_ptr<::UIControl>>
     getVisibleControls(::std::function<bool(::UIControl const&)> predicate);
-
-    MCAPI bool hasControlsToBind() const;
-
-    MCAPI bool hasControlsToUpdate();
-
-    MCAPI void initRootControl(::std::shared_ptr<::UIControl> rootControl);
-
-    MCFOLD bool needsControlBindsFromRoot() const;
-
-    MCFOLD bool needsControlCollectionUpdateFromRoot() const;
 
     MCAPI ::std::unique_ptr<::VisualTree> recreateControlTree(::UIControlFactory& controlFactory);
 
     MCAPI void removeDeadDependencies();
-
-    MCAPI void removeDirtyFlag(::ui::DirtyFlag flag);
-
-    MCAPI void reset();
-
-    MCAPI void setClearPersistantMeshes(bool clearMeshes);
-
-    MCAPI void setDirty(bool dirty);
-
-    MCAPI void setInitialSelectedControl(::std::shared_ptr<::UIControl> control);
-
-    MCAPI void setMeasureStrategy(::UIMeasureStrategy* measureStrategy);
-
-    MCFOLD void setRootControlName(::std::string const& name);
-
-    MCAPI void storeGlobalVars(::Json::Value const& vars);
-
-    MCFOLD bool textEditAlwaysListeningChanged() const;
-
-    MCFOLD bool textEditFocusChanged() const;
-
-    MCAPI void visitTree(::UIControl* fromControl, ::std::function<bool(::UIControl&, int, bool)> visitor);
     // NOLINTEND
 
 public:
@@ -191,38 +119,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UIControl> $getControlWithName(::std::string const& name);
 
-    MCAPI bool $getDirty();
-
-    MCAPI bool $getDirty(::ui::DirtyFlag flag);
-
-    MCFOLD ::ui::DirtyFlag $getDirtyValue();
-
-    MCAPI void $addDirtyFlag(::ui::DirtyFlag flag);
-
-    MCAPI void $measureControls(::UIControl& measureRoot);
-
-    MCAPI void $markToRemoveDeadDependencies(::std::shared_ptr<::UIControl> control);
-
-    MCAPI void $updateControlCollection(::std::shared_ptr<::UIControl> control);
-
-    MCAPI void $updateControlCollectionFromRoot();
-
-    MCAPI void $removeFromControlCollection(::std::shared_ptr<::UIControl> control);
-
-    MCAPI void $updateControlBinds(::std::shared_ptr<::UIControl> control);
-
-    MCAPI void $updateBindsFromRoot();
-
-    MCAPI void $markTextEditFocusChanged();
-
-    MCAPI void $markTextEditAlwaysListeningChanged();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

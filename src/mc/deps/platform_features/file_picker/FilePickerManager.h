@@ -30,29 +30,44 @@ public:
         ::ll::UntypedStorage<8, 32> mUnk25b440;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+    public:
+        // prevent constructor by default
+        DirectoryPickerResult& operator=(DirectoryPickerResult const&);
+        DirectoryPickerResult(DirectoryPickerResult const&);
+        DirectoryPickerResult();
+
+#else // LL_PLAT_C
     public:
         // prevent constructor by default
         DirectoryPickerResult& operator=(DirectoryPickerResult const&);
         DirectoryPickerResult();
 
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCNAPI DirectoryPickerResult(::Bedrock::FilePickerManager::DirectoryPickerResult const&);
 
         MCNAPI ~DirectoryPickerResult();
+#endif
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCNAPI void* $ctor(::Bedrock::FilePickerManager::DirectoryPickerResult const&);
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 

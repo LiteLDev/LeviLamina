@@ -5,14 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/network/packet/CraftingDataEntryType.h"
-#include "mc/platform/Result.h"
 #include "mc/world/item/NetworkItemInstanceDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class MultiRecipe;
-class ReadOnlyBinaryStream;
 class Recipe;
 class Recipes;
 // clang-format on
@@ -49,23 +45,5 @@ public:
 
     MCAPI void addUserDataShapelessRecipe(::Recipes& recipes) const;
 #endif
-
-    MCAPI void fillFromMultiRecipe(::MultiRecipe const& recipe);
-
-    MCAPI void fillFromRecipe(::Recipe const& recipe);
-
-#ifdef LL_PLAT_C
-    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
-#endif
-
-    MCAPI void write(::BinaryStream& stream) const;
-
-    MCAPI ~CraftingDataEntry();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

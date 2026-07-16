@@ -46,7 +46,8 @@ public:
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
-    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
 
@@ -63,14 +64,6 @@ public:
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _sendDestroyEggEvents(::BlockSource& region, ::BlockPos const& pos, ::Actor& destroyer);
-
-    MCAPI static void _spawnTadpoles(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -97,7 +90,7 @@ public:
 
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
     MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
 

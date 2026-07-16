@@ -20,6 +20,7 @@
 // auto generated forward declare list
 // clang-format off
 class ContentItemCollection;
+class ContentLogFileEndPoint;
 class GameEditionProperties;
 class IAdvancedGraphicsOptions;
 class IOptionRegistry;
@@ -31,6 +32,7 @@ class PacketSender;
 class ProfanityContext;
 class SoundOptions;
 class StoreCatalogRepository;
+class TaskGroup;
 class TrialManager;
 class WorldSettingsRules;
 struct SettingsScreenCapabilities;
@@ -90,7 +92,7 @@ public:
 
     virtual bool supportsUserDefinedSafeZone() const = 0;
 
-    virtual int getRecommendedRenderDistance(::GraphicsMode graphicsMode) const = 0;
+    virtual int getRecommendedRenderDistance(::GraphicsMode) const = 0;
 
     virtual int getMaxGUIScaleIndex() const = 0;
 
@@ -98,42 +100,41 @@ public:
 
     virtual ::InputMode getCurrentInputMode() const = 0;
 
-    virtual ::Bedrock::PubSub::Subscription registerToUIScreenSizeChangedEvent(::std::function<void()> callback) = 0;
+    virtual ::Bedrock::PubSub::Subscription registerToUIScreenSizeChangedEvent(::std::function<void()>) = 0;
 
     virtual ::Bedrock::PubSub::Subscription
-    registerLevelChangedListener(::std::function<void(::LevelDataWrapper&)> callback) = 0;
+        registerLevelChangedListener(::std::function<void(::LevelDataWrapper&)>) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription
-    registerToServerFormDataAvailableEvent(::std::function<void()> callback) = 0;
+    virtual ::Bedrock::PubSub::Subscription registerToServerFormDataAvailableEvent(::std::function<void()>) = 0;
 
     virtual bool isServerFormDataAvailable() const = 0;
 
-    virtual void pushRoute(::std::string_view route) = 0;
+    virtual void pushRoute(::std::string_view) = 0;
 
-    virtual void pushSettingsTabWithModal(::SettingsTabIndex tab, ::SettingsModalType modal) = 0;
+    virtual void pushSettingsTabWithModal(::SettingsTabIndex, ::SettingsModalType) = 0;
 
-    virtual void pushToast(::std::string_view notification) = 0;
+    virtual void pushToast(::std::string_view) = 0;
 
     virtual bool supportsSetClipboard() = 0;
 
-    virtual void navigateToJsonSettingsTab(::SettingsTabIndex tab) = 0;
+    virtual void navigateToJsonSettingsTab(::SettingsTabIndex) = 0;
 
     virtual void navigateToHowToPlayScreen() = 0;
 
-    virtual void setClipboardData(::std::string_view text) = 0;
+    virtual void setClipboardData(::std::string_view) = 0;
 
-    virtual void launchURI(::std::string const& uri) = 0;
+    virtual void launchURI(::std::string const&) = 0;
 
     virtual void navigateToPendingRealmInvites() = 0;
 
-    virtual void setInputBindingMode(::InputBindingMode mode) = 0;
+    virtual void setInputBindingMode(::InputBindingMode) = 0;
 
     virtual ::InputBindingMode getInputBindingMode() const = 0;
 
     virtual ::Bedrock::PubSub::Subscription
-    registerToRawInputEvent(::std::function<void(int, ::RawInputType, ::ButtonState, bool)> callback) = 0;
+        registerToRawInputEvent(::std::function<void(int, ::RawInputType, ::ButtonState, bool)>) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription registerToInputModeEvent(::std::function<void(::InputMode)> callback) = 0;
+    virtual ::Bedrock::PubSub::Subscription registerToInputModeEvent(::std::function<void(::InputMode)>) = 0;
 
     virtual void navigateToCustomizeTouchControl() = 0;
 
@@ -145,7 +146,7 @@ public:
 
     virtual bool isEligibleForPauseFeature() const = 0;
 
-    virtual bool supportsTTSLanguage(::std::string_view languageCode) const = 0;
+    virtual bool supportsTTSLanguage(::std::string_view) const = 0;
 
     virtual bool isTTSEnabled() const = 0;
 
@@ -171,7 +172,7 @@ public:
 
     virtual bool isRealmsOwner() const = 0;
 
-    virtual bool isRealmsFeatureEnabled(::std::string_view featureName) const = 0;
+    virtual bool isRealmsFeatureEnabled(::std::string_view) const = 0;
 
     virtual bool isConfigurableRealmsEnvironment() const = 0;
 
@@ -203,9 +204,9 @@ public:
 
     virtual bool supportsSplitScreen() const = 0;
 
-    virtual bool isFeatureEnabled(::FeatureOptionID featureOptionId) const = 0;
+    virtual bool isFeatureEnabled(::FeatureOptionID) const = 0;
 
-    virtual bool isGameFeatureEnabled(::MinecraftGameFeatures feature) const = 0;
+    virtual bool isGameFeatureEnabled(::MinecraftGameFeatures) const = 0;
 
     virtual ::GameEditionProperties const& getGameEditionProperties() const = 0;
 
@@ -230,7 +231,7 @@ public:
     virtual bool shouldShowRequestPlaystationNetworkAuthorization() const = 0;
 
     virtual ::Bedrock::PubSub::Subscription
-    subscribeToShouldShowRequestPlaystationNetworkAuthorization(::std::function<void()> callback) = 0;
+        subscribeToShouldShowRequestPlaystationNetworkAuthorization(::std::function<void()>) = 0;
 
     virtual void requestPlaystationNetworkAuthorization() = 0;
 
@@ -246,7 +247,7 @@ public:
 
     virtual bool isWaitingForPlatformConnection() const = 0;
 
-    virtual void navigateToPlatformNetworkConnectConfirmation(::std::function<void(bool)> callback) = 0;
+    virtual void navigateToPlatformNetworkConnectConfirmation(::std::function<void(bool)>) = 0;
 
     virtual void navigateToXBLSignIn() = 0;
 
@@ -263,26 +264,30 @@ public:
     virtual ::Core::FilePathManager& getFilePathManager() const = 0;
 
     virtual void navigateToDeleteAreaProgressScreen(
-        ::std::string_view           screenName,
-        ::std::chrono::seconds const secondsBeforeUserCanCancel,
-        ::std::chrono::seconds const secondsBeforeClientShouldCancel,
-        ::std::vector<::std::tuple<::Core::PathBuffer<::Core::BasicStackString<char, 1024>>, ::std::string>> paths,
-        ::std::function<void()> completeCallback
+        ::std::string_view,
+        ::std::chrono::seconds const,
+        ::std::chrono::seconds const,
+        ::std::vector<::std::tuple<::Core::PathBuffer<::Core::BasicStackString<char, 1024>>, ::std::string>>,
+        ::std::function<void()>
     ) const = 0;
 
     virtual ::Bedrock::PubSub::Subscription registerToContentItemCollectionReload(
-        ::StorageManager::ContentType                   type,
-        ::std::function<void(::ContentItemCollection&)> callback
+        ::StorageManager::ContentType,
+        ::std::function<void(::ContentItemCollection&)>
     ) = 0;
 
     virtual ::std::optional<::std::reference_wrapper<::ContentItemCollection>> const
-    getVisibleContentItemCollection(::StorageManager::ContentType type) const = 0;
+        getVisibleContentItemCollection(::StorageManager::ContentType) const = 0;
 
-    virtual void navigateToDeleteContentLogScreen() = 0;
+    virtual bool isCloudStorageManagerEnabled() const = 0;
 
-    virtual void navigateToDeleteScriptDiagnosticScreen() = 0;
+    virtual ::TaskGroup& getIOTaskGroup() = 0;
+
+    virtual ::Bedrock::NonOwnerPointer<::ContentLogFileEndPoint const> getContentLogFileEndPoint() const = 0;
 
     virtual ::std::string getCurrentContentLogFileName() = 0;
+
+    virtual bool isSupportingLegacyWorlds() const = 0;
     // NOLINTEND
 
 public:

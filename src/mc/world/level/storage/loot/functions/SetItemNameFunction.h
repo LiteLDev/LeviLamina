@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetItemNameFunction() /*override*/;
+    virtual ~SetItemNameFunction() /*override*/ = default;
 
     virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext&) /*override*/;
 
@@ -43,8 +43,6 @@ public:
     // NOLINTBEGIN
     MCAPI
     SetItemNameFunction(::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates, ::std::string const& name);
-
-    MCFOLD ::std::string const& getName() const;
     // NOLINTEND
 
 public:
@@ -58,12 +56,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates, ::std::string const& name);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

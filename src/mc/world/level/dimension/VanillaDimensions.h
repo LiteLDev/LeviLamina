@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
-#include "mc/util/BidirectionalUnorderedMap.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,18 +29,12 @@ public:
 
     MCAPI static ::Bedrock::Result<::DimensionType> fromSerializedInt(::Bedrock::Result<int>&& i);
 
-    MCFOLD static ::DimensionType fromSerializedInt(int i);
-
     MCAPI static ::DimensionType fromString(::std::string const& name);
-
-    MCAPI static int toSerializedInt(::DimensionType const& type);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::DimensionType> const& DimensionMap();
-
     MCAPI static ::DimensionType const& Nether();
 
     MCAPI static ::DimensionType const& Overworld();

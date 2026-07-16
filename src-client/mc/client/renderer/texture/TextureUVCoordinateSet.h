@@ -24,11 +24,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TextureUVCoordinateSet(TextureUVCoordinateSet const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI TextureUVCoordinateSet();
-
-    MCAPI TextureUVCoordinateSet(::TextureUVCoordinateSet const&);
 
     MCAPI TextureUVCoordinateSet(
         float              u0,
@@ -42,23 +44,7 @@ public:
         ushort             pbrTextureDataHandle
     );
 
-    MCAPI ::TextureUVCoordinateSet getFlippedHorizontal() const;
-
-    MCAPI ::TextureUVCoordinateSet getFlippedVertically() const;
-
-    MCAPI float offsetHeight(float percent, float startHeight) const;
-
-    MCAPI float offsetHeightPixel(float pixels, float startHeight) const;
-
-    MCAPI float offsetWidthPixel(float pixels, float startWidth) const;
-
-    MCFOLD ::TextureUVCoordinateSet& operator=(::TextureUVCoordinateSet const&);
-
-    MCFOLD ::TextureUVCoordinateSet& operator=(::TextureUVCoordinateSet&&);
-
-    MCAPI bool operator==(::TextureUVCoordinateSet const& other) const;
-
-    MCAPI void setTextureFrom(::TextureUVCoordinateSet const& source, float u0, float u1, float v0, float v1);
+    MCAPI ::TextureUVCoordinateSet& operator=(::TextureUVCoordinateSet const&);
 
     MCAPI ::TextureUVCoordinateSet subTexture(float u0ffset, float v0ffset, int sizeW, int sizeH) const;
 
@@ -66,17 +52,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TextureUVCoordinateSet fromOldSystem(int tex);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::TextureUVCoordinateSet const&);
 
     MCAPI void* $ctor(
         float              u0,

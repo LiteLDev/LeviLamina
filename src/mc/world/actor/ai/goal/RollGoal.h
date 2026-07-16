@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
-class Vec3;
 // clang-format on
 
 class RollGoal : public ::BaseGoal {
@@ -43,22 +42,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RollGoal(::Mob& mob, float probability);
-
-    MCAPI bool _checkForDamagingBlocks() const;
-
-    MCAPI void _handleRoll(int rollCounter, ::Vec3& positionDelta, float& rollX, float& rollZ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float probability);
     // NOLINTEND
 
 public:

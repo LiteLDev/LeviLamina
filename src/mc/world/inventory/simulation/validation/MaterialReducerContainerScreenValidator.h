@@ -7,18 +7,6 @@
 
 class MaterialReducerContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MaterialReducerContainerScreenValidator();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

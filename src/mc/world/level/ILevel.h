@@ -194,6 +194,7 @@ struct LevelTagIDType;
 struct LevelTagSetIDType;
 struct PlayerMovementSettings;
 struct PlayerSleepStatus;
+struct PlayerSpawnDimensionResolution;
 struct ResolvedItemIconInfo;
 struct ScreenshotOptions;
 struct Tick;
@@ -209,7 +210,7 @@ namespace mce { class Color; }
 namespace mce { class UUID; }
 class BaseLightTextureImageBuilder;
 class CameraRegistry;
-class MultiPlayerLevel;
+class ClientLevel;
 class Particle;
 class SubChunkManager;
 class SubChunkRequestManager;
@@ -242,7 +243,7 @@ public:
 
     virtual ::WeakRef<::Dimension> getDimension(::DimensionType id) const = 0;
 
-    virtual ::DimensionType resolvePlayerSpawnDimension(::CompoundTag const* playerTag) const = 0;
+    virtual ::PlayerSpawnDimensionResolution resolvePlayerSpawnDimension(::CompoundTag const* playerTag) const = 0;
 
     virtual void forEachDimension(::std::function<bool(::Dimension&)> callback) = 0;
 
@@ -318,7 +319,7 @@ public:
 
     virtual void addUser(::OwnerPtr<::EntityContext> userEntity) = 0;
 
-    virtual ::Actor* addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) = 0;
+    virtual ::Actor* addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>) = 0;
 
     virtual ::Actor* putEntity(
         ::BlockSource&              region,
@@ -329,7 +330,7 @@ public:
 
     virtual ::Actor* putEntity(::BlockSource& region, ::ActorUniqueID id, ::OwnerPtr<::EntityContext> entity) = 0;
 
-    virtual void removeDisplayEntity(::WeakEntityRef entity) = 0;
+    virtual void removeDisplayEntity(::WeakEntityRef) = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::DisplayActorManager> getDisplayActorManager() = 0;
 
@@ -941,13 +942,13 @@ public:
     virtual ::TradeTables* getTradeTables();
 
     virtual void decrementTagCache(
-        ::std::string const&,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     ) = 0;
 
     virtual void incrementTagCache(
-        ::std::string const&,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     ) = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() = 0;
@@ -1081,6 +1082,8 @@ public:
 
     virtual bool isEditorWorld() const = 0;
 
+    virtual bool getAllowAnonymousBlockDropsInEditorWorlds() const = 0;
+
     virtual bool isHardcore() const = 0;
 
     virtual ::Abilities& getDefaultAbilities() = 0;
@@ -1157,13 +1160,13 @@ public:
 
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const = 0;
 
-    virtual void clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId) = 0;
+    virtual void clearAllGenerationRequests(::NetworkIdentifier const&, ::SubClientId) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() = 0;
 
     virtual ::Level* asLevel();
 
-    virtual ::MultiPlayerLevel* asMultiPlayerLevel();
+    virtual ::ClientLevel* asClientLevel();
 
     virtual ::Bedrock::NonOwnerPointer<::CameraRegistry const> getCameraRegistry() const = 0;
 
@@ -1206,15 +1209,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addParticleEffect(::HashedString const& effect, ::Vec3 const& emitterPosition);
-
-    MCAPI ::MapItemSavedData&
-    createMapSavedData(::ActorUniqueID const& uuid, ::BlockPos const& origin, ::DimensionType dimension);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::MultiPlayerLevel* $asMultiPlayerLevel();
+    MCFOLD ::ClientLevel* $asClientLevel();
 
 
     // NOLINTEND

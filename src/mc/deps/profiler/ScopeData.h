@@ -60,26 +60,6 @@ public:
     ScopeData& operator=(ScopeData const&);
     ScopeData(ScopeData const&);
     ScopeData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void const* getKey() const;
-#endif
-
-    MCNAPI bool isResolved() const;
-
-    MCNAPI bool isValidated() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static ::Bedrock::Profile::Whisker::ScopeData fromKey(void const* key);
-#endif
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Profile::Whisker

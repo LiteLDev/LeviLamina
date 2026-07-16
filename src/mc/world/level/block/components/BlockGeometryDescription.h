@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/shared_types/v1_26_20/block/GeometryComponent.h"
+#include "mc/world/level/block/components/BlockComponentDescription.h"
 #include "mc/world/level/block/components/BlockRendererDescription.h"
 #include "mc/world/level/block/components/NetworkedBlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-class CerealSchemaUpgradeSet;
 class CompoundTag;
 class ExpressionNode;
 class SemVersion;
@@ -49,11 +50,12 @@ public:
                                                                                 mSharedInitializationData;
     ::ll::TypedStorage<8, 24, ::std::variant<bool, ::std::set<::HashedString>>> mUVsLocked;
     ::ll::TypedStorage<4, 52, ::BlockRendererDescription>                       mRenderer;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::shared_ptr<::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping>>
+        mNWayVisualRotation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockGeometryDescription& operator=(BlockGeometryDescription const&);
 
 public:
     // virtual functions
@@ -62,7 +64,12 @@ public:
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
+    virtual void initializeComponent(::BlockComponentDescription::InitializationContext& context) const /*override*/;
+
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
+
+    virtual void initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const
+        /*override*/;
 
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
 
@@ -87,6 +94,10 @@ public:
         ::BlockRendererDescription const&                       renderer,
         bool                                                    isFullBlockV1
     );
+
+    MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription&&);
+
+    MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription const&);
     // NOLINTEND
 
 public:
@@ -97,8 +108,6 @@ public:
     MCAPI static ::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode>
     getBoneVisibility(::std::map<::std::string, ::ExpressionNode> const& boneVisibilities);
 
-    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
-
     MCAPI static ::std::map<::std::string, ::ExpressionNode>
     setBoneVisibility(::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode> const& boneVisibilities);
     // NOLINTEND
@@ -108,29 +117,17 @@ public:
     // NOLINTBEGIN
     MCAPI static ::HashedString const& CROSS_GEO_NAME();
 
-    MCAPI static ::std::string const& CULLING_LAYER_DOCUMENTATION();
-
     MCAPI static ::HashedString const& CULLING_LAYER_LEAVES();
-
-    MCAPI static ::std::string const& CULLING_LAYER_NAME_CONSTRAINT();
 
     MCAPI static ::HashedString const& CULLING_LAYER_UNDEFINED();
 
     MCAPI static ::HashedString const& CULLING_SHAPE_DEFAULT();
 
-    MCAPI static ::std::string const& CULLING_SHAPE_DOCUMENTATION();
-
-    MCAPI static ::std::string const& CULLING_SHAPE_NAME_CONSTRAINT();
-
     MCAPI static ::HashedString const& FULL_BLOCK_GEO_NAME();
 
     MCAPI static ::HashedString const& FULL_BLOCK_GEO_NAME_V1();
 
-    MCAPI static ::std::string const& GEO_NAME_CONSTRAINT();
-
     MCAPI static ::std::string const& NameID();
-
-    MCAPI static ::std::string const& UV_LOCKING_CONSTRAINT();
     // NOLINTEND
 
 public:
@@ -158,7 +155,11 @@ public:
 
     MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
+    MCAPI void $initializeComponent(::BlockComponentDescription::InitializationContext& context) const;
+
     MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+
+    MCAPI void $initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;
 
     MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 

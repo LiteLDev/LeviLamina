@@ -21,7 +21,7 @@ class ITintResolver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITintResolver();
+    virtual ~ITintResolver() = default;
 
     virtual ::mce::Color _get(
         ::Block const&    block,
@@ -39,12 +39,6 @@ public:
         ::BlockBakedMaterialDataComponent const& bakedMaterialData,
         ::BlockPos const&                        relativePos,
         ::BiomeTintCache*                        biomeTintCache);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

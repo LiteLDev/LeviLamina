@@ -29,8 +29,6 @@ public:
 
     MCFOLD ::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent&&);
-
-    MCAPI ~ScriptActorRemoveAfterEvent();
     // NOLINTEND
 
 public:
@@ -43,12 +41,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

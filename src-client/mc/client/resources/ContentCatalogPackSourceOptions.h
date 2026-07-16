@@ -21,16 +21,4 @@ public:
     ContentCatalogPackSourceOptions& operator=(ContentCatalogPackSourceOptions const&);
     ContentCatalogPackSourceOptions(ContentCatalogPackSourceOptions const&);
     ContentCatalogPackSourceOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ContentCatalogPackSourceOptions();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

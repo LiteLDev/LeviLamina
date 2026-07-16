@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/routing/RouteHistoryAction.h"
 #include "mc/client/gui/oreui/routing/RouterAction.h"
 #include "mc/client/gui/oreui/routing/RouterHistory.h"
 #include "mc/client/gui/oreui/routing/RouterLocation.h"
@@ -12,14 +11,11 @@
 
 // auto generated forward declare list
 // clang-format off
-class AbstractScene;
 class ISceneStack;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace OreUI { class IRouteMatcher; }
 namespace OreUI { class IRoutePrerequisiteHandler; }
 namespace OreUI { class RouterEventing; }
-namespace OreUI { struct RouteAction; }
 // clang-format on
 
 namespace OreUI {
@@ -43,18 +39,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 160, ::std::optional<::OreUI::RouterLocation>> mOldLocation;
         ::ll::TypedStorage<8, 160, ::std::optional<::OreUI::RouterLocation>> mCurrentLocation;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~DeferredChangeNotification();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -102,55 +86,11 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&   sceneStack
     );
 
-    MCAPI void _handleSceneStackPop(
-        ::std::shared_ptr<::AbstractScene> const& newTopScreen,
-        bool                                      routeAction,
-        ::std::optional<::OreUI::RouteAction> const&
-    );
-
-    MCAPI void _handleSceneStackPush(
-        ::std::shared_ptr<::AbstractScene> const&    newScreen,
-        ::std::optional<::OreUI::RouteAction> const& routeAction
-    );
-
-    MCAPI void _onChange(
-        ::std::optional<::OreUI::RouterLocation> const& oldLocation,
-        ::std::optional<::OreUI::RouterLocation> const& currentLocation
-    );
-
     MCAPI bool _pushRoute(::std::string const& route, ::OreUI::Router::RouterPushMode mode);
-
-    MCAPI void _replaceCurrentRouteInHistory(::std::string const& newRoute, ::OreUI::RouteHistoryAction action);
-
-    MCAPI bool _shouldGoBackAndReplaceInsteadOfPush(::std::string const& newRoute) const;
-
-    MCAPI bool _shouldPopCurrentScreenOnReplacingWithIncompatibleRoute() const;
-
-    MCAPI ::Bedrock::PubSub::Subscription addObserver(
-        ::std::function<void(
-            ::std::optional<::OreUI::RouterLocation> const&,
-            ::std::optional<::OreUI::RouterLocation> const&,
-            ::OreUI::RouterAction
-        )> const& callback
-    );
-
-    MCAPI bool areRoutesCompatible(::std::string const& routeA, ::std::string const& routeB) const;
 
     MCAPI ::std::optional<::OreUI::RouterLocation> getCurrentLocation() const;
 
-    MCAPI ::std::vector<::std::string> getFullHistory() const;
-
-    MCFOLD ::std::vector<::OreUI::RouterLocation> const& getFullRouterLocationHistory() const;
-
-    MCFOLD uint64 getHistoryLength() const;
-
     MCAPI void goBack();
-
-    MCAPI bool isCurrentRoute(::std::string_view route) const;
-
-    MCAPI bool pushRoute(::std::string const& route);
-
-    MCAPI bool pushRouteWithFlux(::std::string const& route);
 
     MCAPI bool replaceRoute(::std::string const& route);
 

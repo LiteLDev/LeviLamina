@@ -10,12 +10,9 @@
 #include "mc/deps/core/utility/ScopeExit.h"
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
-#include "mc/network/PacketGroupDefinition.h"
-#include "mc/platform/brstd/future.h"
 
 // auto generated forward declare list
 // clang-format off
-class AllowListFile;
 class AppConfigs;
 class CDNConfig;
 class ConsoleInputReader;
@@ -23,21 +20,15 @@ class EditorBootstrapper;
 class FileArchiver;
 class IEDUSystems;
 class IGameModuleShared;
-class IMinecraftEventing;
 class LevelDbEnv;
-class LevelSettings;
 class Minecraft;
-class PermissionsFile;
 class ProfilingConfigManager;
 class ScriptDedicatedServerUtils;
 class ServerInstanceEventCoordinator;
 class ServerTextSettings;
 class SignalingService;
 class SignalingServiceSignInJob;
-class TestConfig;
 struct ImguiProfiler;
-struct PropertiesSettings;
-struct TextProcessorInitParams;
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class ActivationArguments; }
 namespace Bedrock::Http { class DispatcherInterface; }
@@ -45,7 +36,6 @@ namespace Bedrock::Http { class DispatcherProcess; }
 namespace Bedrock::Services { class AuthHelper; }
 namespace Bedrock::Services { class DiscoveryHelper; }
 namespace CodeBuilder { class IManager; }
-namespace Core { class FilePathManager; }
 namespace Core { class FileSystem; }
 // clang-format on
 
@@ -131,39 +121,6 @@ public:
     // NOLINTBEGIN
     MCAPI DedicatedServer();
 
-    MCAPI ::TextProcessorInitParams createTextProcessorInitParams(::PropertiesSettings const& properties) const;
-
-    MCAPI void initializeAppConfigs();
-
-    MCAPI void initializeCodeBuilder();
-
-    MCAPI void initializeHttp(::PropertiesSettings const& properties);
-
-    MCAPI void initializeImguiProfiler();
-
-    MCAPI void initializeLogging(::TestConfig& testConfig);
-
-    MCAPI ::brstd::future<bool>
-    initializeMultiplayerKeys(::Minecraft& minecraft, ::PropertiesSettings const& properties);
-
-    MCAPI void initializeServices(
-        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing> minecraftEventing,
-        ::PropertiesSettings const&                         properties
-    );
-
-    MCAPI ::DedicatedServer::ServerExitCode runDedicatedServerLoop(
-        ::Core::FilePathManager&                                     filePathManager,
-        ::PropertiesSettings const&                                  properties,
-        ::LevelSettings&                                             settings,
-        ::AllowListFile&                                             userAllowList,
-        ::std::unique_ptr<::PermissionsFile>&                        permissionsFile,
-        ::std::optional<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder,
-        ::Bedrock::ActivationArguments const&                        args,
-        ::TestConfig&                                                testConfig
-    );
-
-    MCAPI void shutdownServices();
-
     MCAPI ::DedicatedServer::ServerExitCode
     start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
     // NOLINTEND
@@ -183,32 +140,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $stop();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> $getFileArchiver() const;
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getPrimaryMinecraft();
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> $getAutomationClient() const;
-
-    MCAPI bool $isEduMode() const;
-
-    MCFOLD bool $isDedicatedServer() const;
-
-    MCFOLD void $onNetworkMaxPlayersChanged(uint);
-
-    MCFOLD ::IGameModuleShared& $getGameModuleShared();
-
-    MCAPI void $requestServerShutdown();
-
-    MCFOLD bool $requestInGamePause(::SubClientId const&, bool);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForAppIsland();
-
-    MCNAPI static void** $vftableForIMinecraftApp();
     // NOLINTEND
 };

@@ -8,6 +8,7 @@
 #include "mc/deps/core/file/LevelStorageState.h"
 #include "mc/deps/core/file/StorageAreaStateListener.h"
 #include "mc/deps/core/platform/FileStorageDirectory.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -43,6 +44,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 80, ::OreUI::DeviceStorageInformationQuery::ThrottledUpdater> mStorageUpdater;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                          mDeleteContentSubscription;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<::FileStorageDirectory>>               mStorageLocation;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64>>                               mStorageSize;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64>>                               mStorageUsed;

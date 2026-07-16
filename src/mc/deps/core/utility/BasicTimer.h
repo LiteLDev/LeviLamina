@@ -21,26 +21,16 @@ public:
     MCAPI BasicTimer(double timeDelay, ::std::function<double()> getTimeCallback);
 
 #ifdef LL_PLAT_C
-    MCAPI void finishTimer();
-
-    MCFOLD double getTimeDelay() const;
-
-    MCAPI bool hasExpired() const;
-#endif
-
     MCAPI bool isFinished() const;
 
     MCAPI void resetTime();
-
-#ifdef LL_PLAT_C
-    MCAPI void resetTime(double newTimeDelay);
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static double getSecondsSinceLaunch();
+    MCFOLD static double getSecondsSinceLaunch();
     // NOLINTEND
 
 public:

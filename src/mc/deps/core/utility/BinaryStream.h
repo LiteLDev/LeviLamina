@@ -5,7 +5,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/ReadOnlyBinaryStream.h"
-#include "mc/deps/core/utility/buffer_span.h"
 #include "mc/platform/brstd/function_ref.h"
 
 class BinaryStream : public ::ReadOnlyBinaryStream {
@@ -80,11 +79,11 @@ public:
 
     virtual void writeUnsignedVarInt(uint uvalue, char const* docFieldName, char const*);
 
-    virtual void writeUnsignedVarInt64(uint64 uvalue, char const* docFieldName, char const*);
+    virtual void writeUnsignedVarInt64(uint64 uvalue, char const* docFieldName, char const* docFieldNotes);
 
     virtual void writeVarInt(int value, char const* docFieldName, char const*);
 
-    virtual void writeVarInt64(int64 value, char const* docFieldName, char const*);
+    virtual void writeVarInt64(int64 value, char const* docFieldName, char const* docFieldNotes);
 
     virtual void writeDouble(double value, char const*, char const*);
 
@@ -97,16 +96,16 @@ public:
     virtual void writeString(::std::string_view value, char const*, char const*);
 
     virtual void writeIf(
-        bool                                                controlValue,
-        char const*                                         writeIfTrue,
-        ::brstd::function_ref<void(::BinaryStream&)> const& writeIfFalse,
-        ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const&
+        bool controlValue,
+        char const*,
+        ::brstd::function_ref<void(::BinaryStream&)> const&                  writeIfTrue,
+        ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const& writeIfFalse
     );
 
     virtual void writeConditional(
-        char const*                                               conditions,
-        ::std::initializer_list<::BinaryStream::ConditionBlock>&& writeDefault,
-        ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const&
+        char const*                                                          docFieldName,
+        ::std::initializer_list<::BinaryStream::ConditionBlock>&&            conditions,
+        ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const& writeDefault
     );
 
     virtual void branchingWrite_DEPRECATED(
@@ -139,49 +138,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI explicit BinaryStream(::std::string&& buffer);
-#endif
-
-    MCAPI BinaryStream(::std::string& buffer, bool copyBuffer);
-
-    MCFOLD void _writeInteger(uchar value, char const* docFieldName, char const*);
-
-    MCAPI void _writeInteger(short value, char const* docFieldName, char const*);
-
-    MCFOLD void _writeInteger(ushort value, char const* docFieldName, char const*);
-
-    MCAPI void _writeInteger(int value, char const* docFieldName, char const*);
-
-    MCAPI void _writeInteger(uint value, char const* docFieldName, char const*);
-
-    MCAPI ::std::string getAndReleaseData();
-
-    MCAPI void reset();
-
-    MCAPI void writeRawBytes(::buffer_span<uchar> bytes, char const*, char const*);
-
-    MCFOLD void writeUnsignedChar(uchar value, char const*, char const*);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::string&& buffer);
-#endif
-
-    MCAPI void* $ctor(::std::string& buffer, bool copyBuffer);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $writeBool(bool value, char const* docFieldName, char const*);
+    MCAPI void $writeBool(bool value, char const* docFieldName, char const*);
 
     MCFOLD void $writeByte(uchar value, char const*, char const*);
 
@@ -203,11 +162,11 @@ public:
 
     MCAPI void $writeUnsignedVarInt(uint uvalue, char const* docFieldName, char const*);
 
-    MCAPI void $writeUnsignedVarInt64(uint64 uvalue, char const* docFieldName, char const*);
+    MCAPI void $writeUnsignedVarInt64(uint64 uvalue, char const* docFieldName, char const* docFieldNotes);
 
     MCAPI void $writeVarInt(int value, char const* docFieldName, char const*);
 
-    MCAPI void $writeVarInt64(int64 value, char const* docFieldName, char const*);
+    MCAPI void $writeVarInt64(int64 value, char const* docFieldName, char const* docFieldNotes);
 
     MCAPI void $writeDouble(double value, char const*, char const*);
 
@@ -220,16 +179,16 @@ public:
     MCAPI void $writeString(::std::string_view value, char const*, char const*);
 
     MCAPI void $writeIf(
-        bool                                                controlValue,
-        char const*                                         writeIfTrue,
-        ::brstd::function_ref<void(::BinaryStream&)> const& writeIfFalse,
-        ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const&
+        bool controlValue,
+        char const*,
+        ::brstd::function_ref<void(::BinaryStream&)> const&                  writeIfTrue,
+        ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const& writeIfFalse
     );
 
     MCAPI void $writeConditional(
-        char const*                                               conditions,
-        ::std::initializer_list<::BinaryStream::ConditionBlock>&& writeDefault,
-        ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const&
+        char const*                                                          docFieldName,
+        ::std::initializer_list<::BinaryStream::ConditionBlock>&&            conditions,
+        ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const& writeDefault
     );
 
     MCFOLD void $branchingWrite_DEPRECATED(

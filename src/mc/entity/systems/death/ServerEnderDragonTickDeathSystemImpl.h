@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/Filter.h"
@@ -18,7 +16,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
-class StrictEntityContext;
 struct ActorDataFlagComponent;
 struct ActorDefinitionIdentifierComponent;
 struct ActorTickedComponent;
@@ -29,7 +26,6 @@ struct DimensionTypeComponent;
 struct EnderDragonFlagComponent;
 struct RandomReferenceComponent;
 struct SoundEventPlayerComponent;
-struct SoundEventRequestQueueComponent;
 struct SpawnExperienceOrbRequestQueueComponent;
 struct StateVectorComponent;
 struct TickDeathNeededComponent;
@@ -78,61 +74,13 @@ public:
             ::AddRemove<>,
             ::GlobalRead<>,
             ::GlobalWrite<::SpawnExperienceOrbRequestQueueComponent>,
-            ::EntityFactoryT<>>& context
+            ::EntityFactoryT<>>&
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _tick(
-        ::StrictEntityContext const&                                      entity,
-        ::ActorDataFlagComponent const&                                   actorFlags,
-        ::ActorDefinitionIdentifierComponent const&                       actorIdentifier,
-        ::ActorUniqueIDComponent const&                                   actorUniqueID,
-        ::DeathTickingComponent const&                                    deathTicking,
-        ::DimensionTypeComponent const&                                   dimensionType,
-        ::SoundEventPlayerComponent const&                                soundEventPlayerComponent,
-        ::ActorOwnerComponent&                                            actorOwner,
-        ::StateVectorComponent&                                           stateVector,
-        ::WingFlapDataComponent&                                          wingFlapData,
-        ::Optional<::BossComponent>                                       boss,
-        ::SpawnExperienceOrbRequestQueueComponent&                        experienceOrbRequestQueueComponent,
-        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> soundRequestQueueView
-    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
-        ::StrictExecutionContext<
-            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
-            ::Read<
-                ::ActorDataFlagComponent,
-                ::ActorDefinitionIdentifierComponent,
-                ::ActorUniqueIDComponent,
-                ::DeathTickingComponent,
-                ::DimensionTypeComponent,
-                ::SoundEventPlayerComponent>,
-            ::Write<
-                ::ActorOwnerComponent,
-                ::RandomReferenceComponent,
-                ::StateVectorComponent,
-                ::WingFlapDataComponent,
-                ::BossComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<::SpawnExperienceOrbRequestQueueComponent>,
-            ::EntityFactoryT<>>& context
-    );
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

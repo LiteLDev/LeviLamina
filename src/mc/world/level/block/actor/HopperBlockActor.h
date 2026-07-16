@@ -8,7 +8,7 @@
 #include "mc/world/actor/Hopper.h"
 #include "mc/world/item/ItemStack.h"
 #include "mc/world/level/Tick.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,7 +23,7 @@ class ILevel;
 class SaveContext;
 // clang-format on
 
-class HopperBlockActor : public ::BlockActor, public ::Container, public ::Hopper {
+class HopperBlockActor : public ::VanillaBlockActor, public ::Container, public ::Hopper {
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,13 +40,13 @@ public:
     // NOLINTBEGIN
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& context) const /*override*/;
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int) const /*override*/;
 
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int, ::ItemStack const&) /*override*/;
 
     virtual ::std::string getName() const /*override*/;
 
@@ -66,19 +66,15 @@ public:
 
     virtual void onRemoved(::BlockSource&) /*override*/;
 
-    virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const&) /*override*/;
+    virtual void onNeighborChanged(::BlockSource&, ::BlockPos const&) /*override*/;
 
     virtual void onMove() /*override*/;
 
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
+    virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&) /*override*/;
     // NOLINTEND
 
 public:
@@ -88,12 +84,6 @@ public:
 
     MCAPI int _countItems() const;
 
-    MCAPI void _ensureTickingOrder(::BlockSource& region, int maxRecursion);
-
-    MCAPI void _tick(::BlockSource& region, int maxRecursion);
-
-    MCAPI void checkForSmeltEverythingAchievement(::BlockSource& region);
-
     MCAPI ::FurnaceBlockActor* getAttachedFurnace(::BlockSource& region);
 
     MCAPI bool isAttachedToChestAndFurnace(::BlockSource& region);
@@ -101,10 +91,6 @@ public:
     MCAPI bool isAttachedToContainerType(::BlockSource& region, ::SharedTypes::Legacy::ContainerType containerType);
 
     MCAPI bool isSourceOfContainerType(::BlockSource& region, ::SharedTypes::Legacy::ContainerType containerType);
-
-    MCAPI void updateCooldownAfterMove(::Tick const& currentTick, int time);
-
-    MCAPI void updateMoveCooldownAfterMove(::Tick const& currentTick, int time);
     // NOLINTEND
 
 public:
@@ -116,56 +102,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
-
-    MCAPI ::ItemStack const& $getItem(int slot) const;
-
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
-
-    MCAPI ::std::string $getName() const;
-
-    MCFOLD int $getContainerSize() const;
-
-    MCFOLD int $getMaxStackSize() const;
-
-    MCFOLD void $startOpen(::Actor&);
-
-    MCFOLD void $stopOpen(::Actor& actor);
-
-    MCFOLD ::Container* $getContainer();
-
-    MCFOLD ::Container const* $getContainer() const;
-
-    MCAPI void $setContainerChanged(int slot);
-
-    MCFOLD void $onRemoved(::BlockSource&);
-
-    MCAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const&);
-
-    MCFOLD void $onMove();
-
-    MCAPI void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
-
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
-
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockActor();
-
-    MCAPI static void** $vftableForContainer();
     // NOLINTEND
 };

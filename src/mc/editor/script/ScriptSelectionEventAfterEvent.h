@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct ClassBinding; }
-// clang-format on
-
 namespace Editor::ScriptModule {
 
 struct ScriptSelectionEventAfterEvent {
@@ -21,12 +16,6 @@ public:
     ScriptSelectionEventAfterEvent& operator=(ScriptSelectionEventAfterEvent const&);
     ScriptSelectionEventAfterEvent(ScriptSelectionEventAfterEvent const&);
     ScriptSelectionEventAfterEvent();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

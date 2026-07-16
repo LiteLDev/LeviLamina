@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/client/social/XboxAPICallResult.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -20,7 +19,7 @@ namespace Social { class RecentlyPlayedWithList; }
 
 namespace OreUI {
 
-class RecentlyPlayedWithListFacet : public ::OreUI::FacetBase<::OreUI::RecentlyPlayedWithListFacet> {
+class RecentlyPlayedWithListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RecentlyPlayedWithListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -43,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RecentlyPlayedWithListFacet() /*override*/;
+    virtual ~RecentlyPlayedWithListFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -56,14 +55,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>  resourceAllowList,
         ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>       partyProvider
     );
-
-    MCFOLD ::std::vector<::OreUI::AddFriendUserItem>& getDisplayableList();
-
-    MCFOLD ::std::vector<::OreUI::SocialPlayer> const& getRecentlyPlayedWith();
-
-    MCFOLD ::XboxAPICallResult const getXboxAPICallResult() const;
-
-    MCFOLD bool isDataLoading() const;
     // NOLINTEND
 
 public:
@@ -83,21 +74,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

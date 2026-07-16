@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AddExternalServerScreenController() /*override*/;
+    virtual ~AddExternalServerScreenController() /*override*/ = default;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -48,14 +48,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AddExternalServerScreenController(::std::shared_ptr<::MainMenuScreenModel> model, int externalServerId);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _removeServer();
-
-    MCAPI void _saveFormDataThen(::std::function<void()> callback);
     // NOLINTEND
 
 public:
@@ -65,24 +57,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $onOpen();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

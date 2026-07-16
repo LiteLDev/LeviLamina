@@ -53,11 +53,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit GuiContentLogEndPoint(::std::optional<::LogLevel> logLevel);
 
-    MCAPI bool getLogMessage(::std::string& message, ::LogLevel& level);
-
     MCAPI bool pushMessagesToUI(::Bedrock::NotNullNonOwnerPtr<::GuiData> const& guiData);
-
-    MCAPI void setLogLevel(::LogLevel level);
     // NOLINTEND
 
 public:

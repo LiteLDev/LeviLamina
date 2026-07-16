@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Font;
 class FontHandle;
 class ProfanityContext;
 struct CaretMeasureData;
@@ -22,10 +21,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const> mProfanityContext;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MinecraftUIMeasureStrategy();
 
 public:
     // virtual functions
@@ -74,32 +69,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MinecraftUIMeasureStrategy(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context);
-
-    MCAPI void _addCaretOffsetOnRow(
-        uint64&                        caret,
-        ::std::string const&           row,
-        ::MeasureResult const&         fullTextMeasurement,
-        ::TextMeasureData const&       textData,
-        ::CaretMeasureData const&      caretData,
-        ::gsl::not_null<::FontHandle*> fontHandle,
-        ::glm::vec2 const&             position,
-        ::glm::vec2 const&             ownerSize
-    ) const;
-
-    MCAPI void
-    _fillLineWithExtend(::Font& font, ::std::string& text, bool showColorSymbol, int lineWidth, float fontSize) const;
-
-    MCAPI int _fillLineWithHyphenWord(
-        ::Font&        font,
-        ::std::string& text,
-        ::std::string& word,
-        bool           showColorSymbol,
-        int            lineWidth,
-        float          fontSize,
-        bool           hideHyphen
-    ) const;
-
     MCAPI ::MeasureResult _measureText(
         ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> const& fontHandle,
         ::std::string const&                                     text,
@@ -108,12 +77,6 @@ public:
         ::TextMeasureData const&                                 textData,
         ::CaretMeasureData const&                                caretData
     ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context);
     // NOLINTEND
 
 public:

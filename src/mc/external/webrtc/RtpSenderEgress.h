@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/RtpPacketMediaType.h"
 #include "mc/external/webrtc/RtpPacketSender.h"
 #include "mc/external/webrtc/RtpRtcpInterface.h"
@@ -10,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace webrtc { class Environment; }
 namespace webrtc { class PacketSequencer; }
 namespace webrtc { class RtpPacketHistory; }
 namespace webrtc { class RtpPacketToSend; }
@@ -57,7 +59,7 @@ public:
 
         virtual void EnqueuePackets(::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> packets) /*override*/;
 
-        virtual void RemovePacketsForSsrc(uint ssrc) /*override*/;
+        virtual void RemovePacketsForSsrc(uint) /*override*/;
         // NOLINTEND
 
     public:
@@ -91,7 +93,7 @@ public:
         // NOLINTBEGIN
         MCNAPI void $EnqueuePackets(::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> packets);
 
-        MCNAPI void $RemovePacketsForSsrc(uint ssrc);
+        MCNAPI void $RemovePacketsForSsrc(uint);
 
 
         // NOLINTEND
@@ -134,16 +136,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40>  mUnk652b53;
     ::ll::UntypedStorage<1, 1>   mUnk5c68c4;
     ::ll::UntypedStorage<8, 8>   mUnk9df36d;
     ::ll::UntypedStorage<4, 4>   mUnk5aef67;
     ::ll::UntypedStorage<4, 8>   mUnkb3891a;
     ::ll::UntypedStorage<4, 8>   mUnk11779b;
     ::ll::UntypedStorage<1, 1>   mUnk632dc1;
-    ::ll::UntypedStorage<8, 8>   mUnk89d12a;
     ::ll::UntypedStorage<8, 8>   mUnkca0132;
     ::ll::UntypedStorage<8, 8>   mUnkc6be60;
-    ::ll::UntypedStorage<8, 8>   mUnkae9cea;
     ::ll::UntypedStorage<1, 1>   mUnk8778e3;
     ::ll::UntypedStorage<1, 1>   mUnk4491d9;
     ::ll::UntypedStorage<8, 8>   mUnka7b9c1;
@@ -155,14 +156,15 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnkbff572;
     ::ll::UntypedStorage<1, 1>   mUnkb47510;
     ::ll::UntypedStorage<4, 4>   mUnk817561;
-    ::ll::UntypedStorage<8, 128> mUnk2bbc84;
-    ::ll::UntypedStorage<8, 128> mUnkdafc53;
+    ::ll::UntypedStorage<8, 176> mUnk2bbc84;
+    ::ll::UntypedStorage<8, 176> mUnkdafc53;
     ::ll::UntypedStorage<8, 24>  mUnk9e607c;
     ::ll::UntypedStorage<4, 28>  mUnk55caf4;
     ::ll::UntypedStorage<8, 8>   mUnk1e85f6;
     ::ll::UntypedStorage<8, 8>   mUnkfc9b58;
     ::ll::UntypedStorage<8, 24>  mUnke36a42;
     ::ll::UntypedStorage<8, 8>   mUnk9d7b13;
+    ::ll::UntypedStorage<1, 1>   mUnk5e3bb4;
     // NOLINTEND
 
 public:
@@ -185,15 +187,16 @@ public:
     MCNAPI ::webrtc::RtpSendRates GetSendRates(::webrtc::Timestamp now) const;
 
     MCNAPI ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-    GetSentRtpPacketInfos(::rtc::ArrayView<ushort const> sequence_numbers) const;
+    GetSentRtpPacketInfos(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) const;
 
     MCNAPI bool MediaHasBeenSent() const;
 
-    MCNAPI void OnAbortedRetransmissions(::rtc::ArrayView<ushort const> sequence_numbers);
+    MCNAPI void OnAbortedRetransmissions(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers);
 
     MCNAPI void OnBatchComplete();
 
     MCNAPI RtpSenderEgress(
+        ::webrtc::Environment const&                     env,
         ::webrtc::RtpRtcpInterface::Configuration const& config,
         ::webrtc::RtpPacketHistory*                      packet_history
     );
@@ -222,8 +225,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::webrtc::RtpRtcpInterface::Configuration const& config, ::webrtc::RtpPacketHistory* packet_history);
+    MCNAPI void* $ctor(
+        ::webrtc::Environment const&                     env,
+        ::webrtc::RtpRtcpInterface::Configuration const& config,
+        ::webrtc::RtpPacketHistory*                      packet_history
+    );
     // NOLINTEND
 
 public:

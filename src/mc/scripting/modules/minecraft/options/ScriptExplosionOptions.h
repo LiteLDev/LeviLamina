@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,16 +31,6 @@ public:
     MCAPI static ::Scripting::ClassBinding bindV010();
 
     MCAPI static ::Scripting::InterfaceBinding bindV1();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static bool const& ALLOW_UNDERWATER_DEFAULT();
-
-    MCAPI static bool const& BREAKS_BLOCKS_DEFAULT();
-
-    MCAPI static bool const& CAUSES_FIRE_DEFAULT();
     // NOLINTEND
 };
 

@@ -6,13 +6,10 @@
 #include "mc/molang/MolangVersion.h"
 #include "mc/platform/brstd/flat_map.h"
 #include "mc/world/actor/state/DefaultPropertyValues.h"
-#include "mc/world/actor/state/PropertyMetadata.h"
 
 // auto generated forward declare list
 // clang-format off
-class ExpressionNode;
 class HashedString;
-class ListTag;
 class PropertyMetadata;
 class RenderParams;
 namespace Json { class Value; }
@@ -38,58 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addBoolProperty(::std::string const& name, bool clientSync, ::ExpressionNode&& defaultExpression);
-
-    MCAPI void _addBoolProperty(::std::string const& name, bool clientSync, bool defaultValue);
-
-    MCAPI void _addEnumIndexProperty(
-        ::std::string const&                 name,
-        bool                                 clientSync,
-        ::ExpressionNode&&                   defaultExpression,
-        ::std::vector<::HashedString> const& enumValues
-    );
-
-    MCAPI void _addEnumIndexProperty(
-        ::std::string const&                 name,
-        bool                                 clientSync,
-        uint64                               defaultValue,
-        ::std::vector<::HashedString> const& enumValues
-    );
-
-    MCAPI void _addFloatProperty(
-        ::std::string const& name,
-        bool                 clientSync,
-        ::ExpressionNode&&   defaultExpression,
-        float                rangeMin,
-        float                rangeMax
-    );
-
-    MCAPI void
-    _addFloatProperty(::std::string const& name, bool clientSync, float defaultValue, float rangeMin, float rangeMax);
-
-    MCAPI void _addIntProperty(
-        ::std::string const& name,
-        bool                 clientSync,
-        ::ExpressionNode&&   defaultExpression,
-        int                  rangeMin,
-        int                  rangeMax
-    );
-
-    MCAPI void
-    _addIntProperty(::std::string const& name, bool clientSync, int defaultValue, int rangeMin, int rangeMax);
-
-    MCAPI void
-    _addPropertyMetadata(::std::string const& name, bool clientSync, ::PropertyMetadata::ContainedType propertyType);
-
-    MCAPI bool _loadPropertyFromJson(
-        ::std::string const& name,
-        ::Json::Value const& propertyNode,
-        ::MolangVersion      molangVersion,
-        bool                 clientSync
-    );
-
-    MCAPI void _reserveSpaceForTypes(::std::vector<uint64> const& typeCounts);
-
     MCAPI bool getDefaultBoolValue(uint64 boolArrayIndex, ::RenderParams& renderParams) const;
 
     MCAPI uint64 getDefaultEnumIndexValue(
@@ -102,48 +47,15 @@ public:
 
     MCAPI int getDefaultIntValue(uint64 intArrayIndex, ::RenderParams& renderParams) const;
 
-    MCAPI ::ListTag getNetworkSyncPropertyDescriptionsAsListTag() const;
-
     MCAPI ::PropertyMetadata const* getPropertyMetadata(uint64 propertyNameHash) const;
 
     MCAPI ::PropertyMetadata const* getPropertyMetadataByString(::std::string const& propertyName) const;
-
-    MCAPI bool hasAnyClientSyncProperties() const;
-
-    MCAPI ~PropertyGroup();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::PropertyMetadata::ContainedType _getJsonPropertyType(::Json::Value const& typeNode);
-
-    MCAPI static bool
-    _tryGetClientSync(::std::string const& propertyName, ::Json::Value const& propertyNode, bool& clientSyncOut);
-
-    MCAPI static bool isValidEnumEntry(::std::string const& entryValue);
-
     MCAPI static ::std::shared_ptr<::PropertyGroup const>
     loadPropertiesFromJson(::Json::Value const& root, ::MolangVersion molangVersion);
-
-#ifdef LL_PLAT_C
-    MCAPI static ::std::shared_ptr<::PropertyGroup const> loadPropertiesFromNetworkSync(::ListTag const& propertiesTag);
-#endif
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static uint64 const& MAX_ENUM_SIZE();
-
-    MCAPI static uint64 const& MAX_ENUM_VALUE_SIZE();
-
-    MCAPI static uint64 const& MAX_PROPERTIES_COUNT();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

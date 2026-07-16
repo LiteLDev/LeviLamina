@@ -21,22 +21,6 @@ public:
     FacetSessionData& operator=(FacetSessionData const&);
     FacetSessionData(FacetSessionData const&);
     FacetSessionData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI int64 getLoginTime() const;
-
-    MCAPI int64 getLogoutTime() const;
-
-    MCFOLD ::std::string const& getUserXuid() const;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
 };
 
 } // namespace OreUI::RealmsStories

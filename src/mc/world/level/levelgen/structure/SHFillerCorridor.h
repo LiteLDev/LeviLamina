@@ -11,7 +11,6 @@
 class BlockSource;
 class BoundingBox;
 class Random;
-class StructurePiece;
 // clang-format on
 
 class SHFillerCorridor : public ::StrongholdPiece {
@@ -26,35 +25,12 @@ public:
     // NOLINTBEGIN
     virtual ::StructurePieceType getType() const /*override*/;
 
-    virtual bool postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::BoundingBox findPieceBox(
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           footX,
-        int                                                 footY,
-        int                                                 footZ,
-        int                                                 direction,
-        int
-    );
+    virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

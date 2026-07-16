@@ -25,22 +25,18 @@ public:
 
     virtual bool canChangeBlockOnSpread() const /*override*/;
 
-    virtual bool attemptSpreadVeins(
-        ::IBlockWorldGenAPI& target,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        int,
-        ::SculkSpreader&
-    ) const /*override*/;
+    virtual bool
+    attemptSpreadVeins(::IBlockWorldGenAPI&, ::BlockPos const&, ::Block const&, int, ::SculkSpreader&) const
+        /*override*/;
 
     virtual int attemptUseCharge(
-        ::IBlockWorldGenAPI& target,
-        ::BlockSource*       region,
-        ::BlockPos const&    originPos,
-        ::BlockPos const&    pos,
-        int                  charge,
-        int                  random,
-        ::Random&            spreader,
+        ::IBlockWorldGenAPI&,
+        ::BlockSource*,
+        ::BlockPos const&,
+        ::BlockPos const&,
+        int,
+        int,
+        ::Random&,
         ::SculkSpreader&,
         bool const
     ) const /*override*/;
@@ -49,56 +45,8 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool _canPlaceGrowth(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::BlockPos const&);
-
-    MCAPI static void _placeGrowthAt(
-        ::IBlockWorldGenAPI& target,
-        ::BlockSource*       region,
-        ::BlockPos const&    pos,
-        ::Random&            random,
-        ::SculkSpreader&     spreader
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $updateDecayDelay(int const) const;
 
-    MCAPI int $updateFacingData(int const, ::Block const&) const;
-
-    MCFOLD bool $canChangeBlockOnSpread() const;
-
-    MCFOLD bool $attemptSpreadVeins(
-        ::IBlockWorldGenAPI& target,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        int,
-        ::SculkSpreader&
-    ) const;
-
-    MCAPI int $attemptUseCharge(
-        ::IBlockWorldGenAPI& target,
-        ::BlockSource*       region,
-        ::BlockPos const&    originPos,
-        ::BlockPos const&    pos,
-        int                  charge,
-        int                  random,
-        ::Random&            spreader,
-        ::SculkSpreader&,
-        bool const
-    ) const;
-
-    MCFOLD void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/client/gui/oreui/binding/FacetTaskState.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/UploadToRealmsError.h"
 #include "mc/client/network/realms/RealmId.h"
@@ -24,7 +23,7 @@ namespace World { struct WorldData; }
 
 namespace OreUI {
 
-class RealmWorldUploaderFacet : public ::OreUI::FacetBase<::OreUI::RealmWorldUploaderFacet> {
+class RealmWorldUploaderFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmWorldUploaderFacet> {
 public:
     // RealmWorldUploaderFacet inner types define
     enum class FacetStatus : uchar {
@@ -58,7 +57,7 @@ public:
     ::ll::TypedStorage<8, 32, ::World::WorldID>                              mCurrentWorldId;
     ::ll::TypedStorage<8, 8, ::World::WorldData*>                            mCurrentWorldData;
     ::ll::TypedStorage<8, 656, ::Realms::World>                              mRealmWorld;
-    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                          mLevelDataWrapper;
+    ::ll::TypedStorage<8, 1744, ::LevelDataWrapper>                          mLevelDataWrapper;
     ::ll::TypedStorage<8, 8, ::Realms::RealmId>                              mPreviewRealmId;
     ::ll::TypedStorage<4, 8, ::std::optional<::OreUI::UploadToRealmsError>>  mUploadRealmWorldError;
     ::ll::TypedStorage<4, 12, ::OreUI::FacetTaskTracker<::std::monostate>>   mUploadRealmWorldTask;
@@ -85,33 +84,6 @@ public:
         ::std::shared_ptr<::PlayScreenModel>     playScreenModel,
         ::OreUI::Router&                         uiRouter
     );
-
-    MCAPI void _handleCreateAndUploadToRealm();
-
-    MCAPI void _handleEnsureSignIn();
-
-    MCAPI void _handleSelectRealmsSlot();
-
-    MCAPI void _handleUploadToRealm();
-
-    MCAPI void _saveRealmWorld(::std::string const& worldID);
-
-    MCAPI void
-    _startUploadToRealm(::std::string const& worldID, ::OreUI::RealmWorldUploaderFacet::UploadAction uploadAction);
-
-    MCAPI bool choosePreviewRealm() const;
-
-    MCAPI void clearUploadWorldToRealmTaskState();
-
-    MCFOLD ::std::optional<::OreUI::UploadToRealmsError> const& getUploadWorldToRealmError() const;
-
-    MCAPI ::OreUI::FacetTaskState getUploadWorldToRealmTaskState() const;
-
-    MCFOLD int64 getUploadedRealmWorldId() const;
-
-    MCAPI void setPreviewRealmForUpload(::std::string const& realmIdStr);
-
-    MCAPI void uploadWorldToRealm(::std::string const& worldID);
     // NOLINTEND
 
 public:
@@ -134,13 +106,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

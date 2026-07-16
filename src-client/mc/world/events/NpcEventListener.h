@@ -15,17 +15,11 @@ class NpcEventListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NpcEventListener();
+    virtual ~NpcEventListener() = default;
 
-    virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> data);
+    virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData>);
 
-    virtual ::EventResult onNpcInteractScreenClose(::ActorUniqueID npcId, bool performClosingActions);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ::EventResult onNpcInteractScreenClose(::ActorUniqueID, bool);
     // NOLINTEND
 
 public:

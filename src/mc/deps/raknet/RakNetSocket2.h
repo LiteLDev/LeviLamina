@@ -33,7 +33,7 @@ public:
 
     virtual int Send(::RakNet::RNS2_SendParameters*, char const*, uint) = 0;
 
-    virtual void SetMulticastInterface(int interfaceIndex);
+    virtual void SetMulticastInterface(int);
     // NOLINTEND
 
 public:

@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mTargetEntity;
     ::ll::TypedStorage<8, 152, ::ItemStack>               mItem;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerInteractWithEntityBeforeEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

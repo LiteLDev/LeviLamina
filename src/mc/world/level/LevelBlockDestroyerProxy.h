@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
@@ -17,34 +18,14 @@ class LevelBlockDestroyerProxy : public ::ILevelBlockDestroyerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void sendEvents(
-        ::LevelEventManager& levelEventManager,
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block
-    ) /*override*/;
+    virtual void sendEvents(::LevelEventManager&, ::BlockSource&, ::BlockPos const&, ::Block const&) /*override*/;
 
-    virtual void dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) /*override*/;
+    virtual void dropResources(::BlockSource&, ::BlockPos const&, ::Block const&, ::Actor const*) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $sendEvents(
-        ::LevelEventManager& levelEventManager,
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block
-    );
 
-    MCNAPI void $dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

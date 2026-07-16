@@ -16,6 +16,14 @@ namespace OreUI {
 
 class StorageManagerCommandGroup : public ::OreUI::CommandGroupBase<::OreUI::StorageManagerCommandGroup> {
 public:
+    // StorageManagerCommandGroup inner types define
+    using ListType = ::std::string;
+
+    using ContentId = ::std::string;
+
+    using SelectValue = bool;
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::StorageManager::ContentItemProvider>()>>
@@ -32,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageManagerCommandGroup() /*override*/;
+    virtual ~StorageManagerCommandGroup() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -45,18 +53,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

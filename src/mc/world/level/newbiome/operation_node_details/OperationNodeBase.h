@@ -17,14 +17,12 @@ public:
     // NOLINTBEGIN
     virtual ~OperationNodeBase() = default;
 
-    virtual void init(int64 seed);
+    virtual void init(int64);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(int64 seed);
-
 
     // NOLINTEND
 };

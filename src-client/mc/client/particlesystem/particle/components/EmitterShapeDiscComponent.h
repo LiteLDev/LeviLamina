@@ -26,31 +26,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
+    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
 
-    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
+    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
 
-    virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
+    virtual void parseJson(::ConstDeserializeDataParams const&) /*override*/;
 
-    virtual void applyPreNormalizationModifiers(::Vec3& direction, ::RenderParams& renderParams) /*override*/;
+    virtual void applyPreNormalizationModifiers(::Vec3&, ::RenderParams&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
-
-    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
-
-    MCAPI void $applyPreNormalizationModifiers(::Vec3& direction, ::RenderParams& renderParams);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

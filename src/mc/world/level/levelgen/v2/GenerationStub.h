@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace br::worldgen { class StructureSection; }
+namespace br::worldgen { class PoolElementStructureSection; }
 namespace br::worldgen { struct GenerationContext; }
 // clang-format on
 
@@ -26,20 +26,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 24, ::BoundingBox>                                                      mBox;
-        ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::br::worldgen::StructureSection>>> mSections;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~BuildResult();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
+        ::ll::TypedStorage<4, 24, ::BoundingBox> mBox;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::br::worldgen::PoolElementStructureSection>>>
+            mSections;
         // NOLINTEND
     };
 
@@ -56,12 +45,6 @@ public:
         ::std::function<
             ::br::worldgen::GenerationStub::BuildResult(::br::worldgen::GenerationContext&, ::BlockPos const&)>>
         mPlacer;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::br::worldgen::GenerationStub::BuildResult build(::br::worldgen::GenerationContext& context);
     // NOLINTEND
 };
 

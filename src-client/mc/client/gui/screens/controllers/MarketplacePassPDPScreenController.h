@@ -6,7 +6,6 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/SceneType.h"
 #include "mc/client/gui/StoreNavigationOrigin.h"
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MarketplacePassTabIndex.h"
 #include "mc/client/gui/screens/controllers/PurchaseEnabledScreenController.h"
 #include "mc/client/store/iap/transactions/TransactionStatus.h"
@@ -58,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MarketplacePassPDPScreenController() /*override*/;
+    virtual ~MarketplacePassPDPScreenController() /*override*/ = default;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -89,28 +88,6 @@ public:
         ::StoreNavigationOrigin                              origin,
         ::sidebar::navigationLayout::Type                    sidebarLayoutType
     );
-
-    MCAPI ::ui::ViewRequest _changeTabTo(::MarketplacePassTabIndex tabIndex);
-
-    MCAPI ::std::string const _getMarketplacePassOfferPrice();
-
-    MCAPI ::std::string const _getMarketplacePassOfferString(::std::string const& locKey);
-
-    MCAPI void _getMarketplacePassVisualStyle();
-
-    MCFOLD bool _isCsbSubscribed() const;
-
-    MCAPI bool _isRealmsPlusSubscriptionActive() const;
-
-    MCFOLD void _openPurchaseInProgress();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerCollection();
-
-    MCAPI void _registerContentSectionBindings();
-
-    MCAPI void _registerEvents();
     // NOLINTEND
 
 public:
@@ -126,40 +103,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $onCreation();
-
-    MCAPI void $onOpen();
-
-    MCAPI void $onEntered();
-
-    MCAPI void $onLeave();
-
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
-
-    MCFOLD ::ui::SceneType $getSceneType() const;
-
-    MCAPI ::sidebar::navigationLayout::Type $getSidebarLayoutType() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

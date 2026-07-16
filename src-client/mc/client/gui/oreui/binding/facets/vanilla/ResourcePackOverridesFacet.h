@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/ResourcePackResolver.h"
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -13,14 +13,13 @@ class IUIDefRepository;
 class IUIRepository;
 class ResourcePackManager;
 namespace UI::Resources { struct DefinitionPropertyNames; }
-namespace UI::Resources { struct ResolvedDefinition; }
 namespace UI::Resources { struct ResolvedPropertyData; }
 namespace UI::Resources { struct ResolvedTextureData; }
 // clang-format on
 
 namespace OreUI {
 
-class ResourcePackOverridesFacet : public ::OreUI::FacetBase<::OreUI::ResourcePackOverridesFacet> {
+class ResourcePackOverridesFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ResourcePackOverridesFacet> {
 public:
     // ResourcePackOverridesFacet inner types declare
     // clang-format off
@@ -36,18 +35,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                                        control;
         ::ll::TypedStorage<8, 24, ::std::vector<::UI::Resources::ResolvedTextureData>>  textureData;
         ::ll::TypedStorage<8, 24, ::std::vector<::UI::Resources::ResolvedPropertyData>> propertyData;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~FacetDefinitionData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -68,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourcePackOverridesFacet() /*override*/;
+    virtual ~ResourcePackOverridesFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -81,9 +68,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IUIRepository>          uiRepository,
         ::ResourcePackManager&                                  resourcePackManager
     );
-
-    MCAPI ::std::vector<::OreUI::ResourcePackOverridesFacet::FacetDefinitionData>
-    _makeDefinitions(::std::vector<::UI::Resources::ResolvedDefinition> resolvedDefinitions);
     // NOLINTEND
 
 public:
@@ -103,21 +87,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

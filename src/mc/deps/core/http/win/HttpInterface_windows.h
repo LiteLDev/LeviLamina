@@ -13,12 +13,6 @@ public:
     // NOLINTBEGIN
     virtual ~HttpInterface_windows() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Http

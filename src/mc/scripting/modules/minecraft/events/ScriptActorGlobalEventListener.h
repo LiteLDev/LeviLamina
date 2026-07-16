@@ -3,14 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 struct ActorAcquiredItemEvent;
 struct ActorAddEffectEvent;
 struct ActorAttackEvent;
@@ -20,9 +21,8 @@ struct ActorDroppedItemEvent;
 struct ActorHealEvent;
 struct ActorHealthChangedEvent;
 struct ActorHurtEvent;
+struct ActorUpgradeEndedEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
-namespace ScriptModuleMinecraft { class ScriptV010Events; }
-namespace ScriptModuleMinecraft { class ScriptWorldAfterEvents; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -60,6 +60,8 @@ public:
 
     virtual ::EventResult onEvent(::ActorDefinitionEndedEvent const& eventData) /*override*/;
 
+    virtual ::EventResult onEvent(::ActorUpgradeEndedEvent const& eventData) /*override*/;
+
     virtual ::EventResult onEvent(::ActorHealEvent const& eventData) /*override*/;
 
     virtual ::EventResult onEvent(::ActorHurtEvent const& eventData) /*override*/;
@@ -73,23 +75,8 @@ public:
     virtual ::EventResult onEvent(::ActorDroppedItemEvent const& eventData) /*override*/;
 
     virtual ::EventResult onEvent(::ActorAcquiredItemEvent const& eventData) /*override*/;
-    // NOLINTEND
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void registerListener(
-        ::Scripting::WeakLifetimeScope const&                                     scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptV010Events> handle
-    );
-
-    MCFOLD void registerListener(
-        ::Scripting::WeakLifetimeScope const&                                           scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldAfterEvents> handle
-    );
-
-    MCFOLD void
-    unregisterListener(::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle);
+    virtual ::EventResult onActorSneakChanged(::Actor& actor, bool isSneaking) /*override*/;
     // NOLINTEND
 
 public:
@@ -98,6 +85,8 @@ public:
     MCAPI ::EventResult $onEvent(::ActorAddEffectEvent const& eventData);
 
     MCAPI ::EventResult $onEvent(::ActorDefinitionEndedEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::ActorUpgradeEndedEvent const& eventData);
 
     MCAPI ::EventResult $onEvent(::ActorHealEvent const& eventData);
 
@@ -113,13 +102,9 @@ public:
 
     MCAPI ::EventResult $onEvent(::ActorAcquiredItemEvent const& eventData);
 
+    MCAPI ::EventResult $onActorSneakChanged(::Actor& actor, bool isSneaking);
 
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

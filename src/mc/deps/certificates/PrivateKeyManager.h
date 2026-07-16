@@ -13,20 +13,12 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkdcc79d;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PrivateKeyManager& operator=(PrivateKeyManager const&);
     PrivateKeyManager(PrivateKeyManager const&);
     PrivateKeyManager();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    PrivateKeyManager(PrivateKeyManager const&);
-    PrivateKeyManager();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -47,10 +39,6 @@ public:
 #endif
 
     MCNAPI ::std::string computeSecret(::KeyManager const& peer) const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::PrivateKeyManager& operator=(::PrivateKeyManager const& rhs);
-#endif
     // NOLINTEND
 
 public:

@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cricket/SctpTransportInternal.h"
 #include "mc/external/dcsctp/DcSctpSocketCallbacks.h"
 #include "mc/external/dcsctp/ErrorKind.h"
 #include "mc/external/dcsctp/SendPacketStatus.h"
 #include "mc/external/sigslot/has_slots.h"
 #include "mc/external/sigslot/single_threaded.h"
+#include "mc/external/webrtc/ArrayView.h"
+#include "mc/external/webrtc/SctpTransportInternal.h"
 #include "mc/external/webrtc/StrongAlias.h"
 #include "mc/external/webrtc/TaskQueueBase.h"
 
@@ -19,18 +20,21 @@ namespace dcsctp { class DcSctpSocketFactory; }
 namespace dcsctp { class StreamIDTag; }
 namespace dcsctp { class TimeMs; }
 namespace dcsctp { class Timeout; }
-namespace rtc { class CopyOnWriteBuffer; }
-namespace rtc { class PacketTransportInternal; }
-namespace rtc { class Thread; }
+namespace webrtc { class CopyOnWriteBuffer; }
 namespace webrtc { class DataChannelSink; }
+namespace webrtc { class DtlsTransportInternal; }
 namespace webrtc { class Environment; }
+namespace webrtc { class PacketTransportInternal; }
+namespace webrtc { class PriorityValue; }
 namespace webrtc { class RTCError; }
+namespace webrtc { class Thread; }
+namespace webrtc { struct SctpOptions; }
 namespace webrtc { struct SendDataParams; }
 // clang-format on
 
 namespace webrtc {
 
-class DcSctpTransport : public ::cricket::SctpTransportInternal,
+class DcSctpTransport : public ::webrtc::SctpTransportInternal,
                         public ::dcsctp::DcSctpSocketCallbacks,
                         public ::sigslot::has_slots<::sigslot::single_threaded> {
 public:
@@ -47,6 +51,7 @@ public:
         ::ll::UntypedStorage<1, 1> mUnk26154d;
         ::ll::UntypedStorage<1, 1> mUnk5f7218;
         ::ll::UntypedStorage<1, 1> mUnkf702b7;
+        ::ll::UntypedStorage<2, 2> mUnk30c537;
         // NOLINTEND
 
     public:
@@ -59,15 +64,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkc96c40;
-    ::ll::UntypedStorage<8, 8>   mUnk2ddb50;
+    ::ll::UntypedStorage<8, 8>   mUnk980806;
+    ::ll::UntypedStorage<8, 8>   mUnk3c1abc;
     ::ll::UntypedStorage<8, 40>  mUnkfd1df4;
     ::ll::UntypedStorage<8, 8>   mUnk762537;
     ::ll::UntypedStorage<8, 8>   mUnk79c566;
     ::ll::UntypedStorage<8, 144> mUnkd82ce7;
     ::ll::UntypedStorage<8, 8>   mUnk9919e4;
     ::ll::UntypedStorage<8, 32>  mUnk3df8c5;
-    ::ll::UntypedStorage<8, 24>  mUnk36cd1e;
+    ::ll::UntypedStorage<8, 24>  mUnkfc8cc6;
     ::ll::UntypedStorage<8, 32>  mUnk593933;
     ::ll::UntypedStorage<1, 1>   mUnk5ac068;
     ::ll::UntypedStorage<8, 64>  mUnk7d9b32;
@@ -89,16 +94,16 @@ public:
 
     virtual void SetDataChannelSink(::webrtc::DataChannelSink* sink) /*override*/;
 
-    virtual void SetDtlsTransport(::rtc::PacketTransportInternal* transport) /*override*/;
+    virtual void SetDtlsTransport(::webrtc::DtlsTransportInternal* transport) /*override*/;
 
-    virtual bool Start(int local_sctp_port, int remote_sctp_port, int max_message_size) /*override*/;
+    virtual bool Start(::webrtc::SctpOptions const& options) /*override*/;
 
-    virtual bool OpenStream(int sid) /*override*/;
+    virtual bool OpenStream(int sid, ::webrtc::PriorityValue priority) /*override*/;
 
     virtual bool ResetStream(int sid) /*override*/;
 
     virtual ::webrtc::RTCError
-    SendData(int sid, ::webrtc::SendDataParams const& params, ::rtc::CopyOnWriteBuffer const& payload) /*override*/;
+    SendData(int sid, ::webrtc::SendDataParams const& params, ::webrtc::CopyOnWriteBuffer const& payload) /*override*/;
 
     virtual bool ReadyToSendData() /*override*/;
 
@@ -116,7 +121,8 @@ public:
 
     virtual void set_debug_name_for_testing(char const* debug_name) /*override*/;
 
-    virtual ::dcsctp::SendPacketStatus SendPacketWithStatus(::rtc::ArrayView<uchar const> data) /*override*/;
+    virtual ::dcsctp::SendPacketStatus
+    SendPacketWithStatus(::webrtc::ArrayView<uchar const, 18446744073709546905> data) /*override*/;
 
     virtual ::std::unique_ptr<::dcsctp::Timeout>
     CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision) /*override*/;
@@ -142,16 +148,19 @@ public:
     virtual void OnConnectionRestarted() /*override*/;
 
     virtual void OnStreamsResetFailed(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams,
-        ::std::string_view                                                           reason
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
+                           outgoing_streams,
+        ::std::string_view reason
     ) /*override*/;
 
     virtual void OnStreamsResetPerformed(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
+            outgoing_streams
     ) /*override*/;
 
     virtual void OnIncomingStreamsReset(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> incoming_streams
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
+            incoming_streams
     ) /*override*/;
     // NOLINTEND
 
@@ -161,33 +170,36 @@ public:
     MCNAPI void ConnectTransportSignals();
 
     MCNAPI DcSctpTransport(
-        ::webrtc::Environment const&    env,
-        ::rtc::Thread*                  network_thread,
-        ::rtc::PacketTransportInternal* transport
+        ::webrtc::Environment const&     env,
+        ::webrtc::Thread*                network_thread,
+        ::webrtc::DtlsTransportInternal* transport
     );
 
     MCNAPI DcSctpTransport(
         ::webrtc::Environment const&                     env,
-        ::rtc::Thread*                                   network_thread,
-        ::rtc::PacketTransportInternal*                  transport,
+        ::webrtc::Thread*                                network_thread,
+        ::webrtc::DtlsTransportInternal*                 transport,
         ::std::unique_ptr<::dcsctp::DcSctpSocketFactory> socket_factory
     );
 
     MCNAPI void MaybeConnectSocket();
 
-    MCNAPI void OnTransportWritableState(::rtc::PacketTransportInternal* transport);
+    MCNAPI void OnTransportWritableState(::webrtc::PacketTransportInternal* transport);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::webrtc::Environment const& env, ::rtc::Thread* network_thread, ::rtc::PacketTransportInternal* transport);
+    MCNAPI void* $ctor(
+        ::webrtc::Environment const&     env,
+        ::webrtc::Thread*                network_thread,
+        ::webrtc::DtlsTransportInternal* transport
+    );
 
     MCNAPI void* $ctor(
         ::webrtc::Environment const&                     env,
-        ::rtc::Thread*                                   network_thread,
-        ::rtc::PacketTransportInternal*                  transport,
+        ::webrtc::Thread*                                network_thread,
+        ::webrtc::DtlsTransportInternal*                 transport,
         ::std::unique_ptr<::dcsctp::DcSctpSocketFactory> socket_factory
     );
     // NOLINTEND
@@ -205,16 +217,16 @@ public:
 
     MCNAPI void $SetDataChannelSink(::webrtc::DataChannelSink* sink);
 
-    MCNAPI void $SetDtlsTransport(::rtc::PacketTransportInternal* transport);
+    MCNAPI void $SetDtlsTransport(::webrtc::DtlsTransportInternal* transport);
 
-    MCNAPI bool $Start(int local_sctp_port, int remote_sctp_port, int max_message_size);
+    MCNAPI bool $Start(::webrtc::SctpOptions const& options);
 
-    MCNAPI bool $OpenStream(int sid);
+    MCNAPI bool $OpenStream(int sid, ::webrtc::PriorityValue priority);
 
     MCNAPI bool $ResetStream(int sid);
 
     MCNAPI ::webrtc::RTCError
-    $SendData(int sid, ::webrtc::SendDataParams const& params, ::rtc::CopyOnWriteBuffer const& payload);
+    $SendData(int sid, ::webrtc::SendDataParams const& params, ::webrtc::CopyOnWriteBuffer const& payload);
 
     MCNAPI bool $ReadyToSendData();
 
@@ -232,7 +244,8 @@ public:
 
     MCNAPI void $set_debug_name_for_testing(char const* debug_name);
 
-    MCNAPI ::dcsctp::SendPacketStatus $SendPacketWithStatus(::rtc::ArrayView<uchar const> data);
+    MCNAPI ::dcsctp::SendPacketStatus
+    $SendPacketWithStatus(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
 
     MCNAPI ::std::unique_ptr<::dcsctp::Timeout> $CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision);
 
@@ -257,16 +270,19 @@ public:
     MCNAPI void $OnConnectionRestarted();
 
     MCNAPI void $OnStreamsResetFailed(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams,
-        ::std::string_view                                                           reason
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
+                           outgoing_streams,
+        ::std::string_view reason
     );
 
     MCNAPI void $OnStreamsResetPerformed(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
+            outgoing_streams
     );
 
     MCNAPI void $OnIncomingStreamsReset(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> incoming_streams
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
+            incoming_streams
     );
 
 
@@ -277,9 +293,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftableForHasSlots();
 
-    MCNAPI static void** $vftableForSctpTransportInternal();
-
     MCNAPI static void** $vftableForDcSctpSocketCallbacks();
+
+    MCNAPI static void** $vftableForSctpTransportInternal();
     // NOLINTEND
 };
 

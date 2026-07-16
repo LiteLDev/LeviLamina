@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Block;
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor {
 
 struct WeightedRandomBlock {
@@ -23,26 +17,6 @@ public:
     WeightedRandomBlock& operator=(WeightedRandomBlock const&);
     WeightedRandomBlock(WeightedRandomBlock const&);
     WeightedRandomBlock();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI WeightedRandomBlock(::Block const* block, int weight);
-
-    MCNAPI int getWeight() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Block const* block, int weight);
-    // NOLINTEND
 };
 
 } // namespace Editor

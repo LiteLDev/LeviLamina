@@ -12,13 +12,10 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-class ItemGraphics;
-class ItemStack;
 class TaskGroup;
 namespace OreUI { struct AtlasIndex; }
 namespace cg { class ImageBuffer; }
 namespace mce { class Color; }
-namespace mce { class TexturePtr; }
 // clang-format on
 
 namespace OreUI {
@@ -45,26 +42,6 @@ public:
         ::ll::TypedStorage<8, 8, uint64>                                                   count;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UIThumbnailAtlasRenderer::AtlasInfo>> mAtlasInfo;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cg::ImageBuffer>>                     mImageBuffer;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        AtlasData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit AtlasData(::HashedString name);
-
-        MCAPI AtlasData(::HashedString name, ::std::unique_ptr<::UIThumbnailAtlasRenderer::AtlasInfo>&& atlasInfo);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::HashedString name);
-
-        MCAPI void* $ctor(::HashedString name, ::std::unique_ptr<::UIThumbnailAtlasRenderer::AtlasInfo>&& atlasInfo);
         // NOLINTEND
     };
 
@@ -108,35 +85,11 @@ public:
 
     MCAPI bool _buildThumbnailAtlas(::TaskGroup& taskGroup, bool isResume);
 
-    MCAPI void _generateItemIndex(bool stripVanillaNamespace);
-
-    MCAPI ::OreUI::UIBlockThumbnailAtlasManager::AtlasData& _getAtlasData(::std::string_view atlasName);
-
-    MCAPI ::mce::TexturePtr _getAtlasTexture(::ItemStack const& item, ::ItemGraphics const& itemGraphics);
-
-    MCAPI ::OreUI::UIBlockThumbnailAtlasManager::AtlasData&
-    _getOrCreateAtlasData(::std::string_view atlasName, ::mce::TexturePtr const& texturePtr);
-
-    MCAPI ::mce::TexturePtr _getShulkerBoxTexture(::ItemStack const& item) const;
-
     MCAPI void _unloadAtlasTextures();
-
-    MCAPI bool buildThumbnailAtlas(bool isResume);
-
-    MCAPI ::std::optional<::std::pair<::UIThumbnailAtlasRenderer::AtlasInfo, ::OreUI::AtlasIndex::ItemEntry>>
-    findItemAndAtlasInfo(::std::string_view name) const;
-
-    MCFOLD ::std::map<::std::string, ::mce::Color> const& getBlockAverageColorMap();
-
-    MCAPI ::std::shared_ptr<::OreUI::AtlasIndex> getIndex(::std::string_view atlasName) const;
 
     MCAPI bool isThumbnailAtlasEnabled() const;
 
-    MCAPI void onAppResume();
-
     MCAPI bool rebuildThumbnailAtlas(bool isResume);
-
-    MCAPI ~UIBlockThumbnailAtlasManager();
     // NOLINTEND
 
 public:
@@ -146,12 +99,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>     primaryClientInstance,
         ::std::unordered_map<::HashedString, ::HashedString> substitutionMap
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/external/absl/AnyInvocable.h"
-#include "mc/external/webrtc/Priority.h"
 #include "mc/external/webrtc/RefCountInterface.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class DataChannelObserver; }
+namespace webrtc { class PriorityValue; }
 namespace webrtc { class RTCError; }
 namespace webrtc { struct DataBuffer; }
 // clang-format on
@@ -39,10 +39,6 @@ public:
 
     virtual bool ordered() const;
 
-    virtual ushort maxRetransmitTime() const;
-
-    virtual ushort maxRetransmits() const;
-
     virtual ::std::optional<int> maxRetransmitsOpt() const;
 
     virtual ::std::optional<int> maxPacketLifeTime() const;
@@ -53,7 +49,7 @@ public:
 
     virtual int id() const = 0;
 
-    virtual ::webrtc::Priority priority() const;
+    virtual ::webrtc::PriorityValue priority() const;
 
     virtual ::webrtc::DataChannelInterface::DataState state() const = 0;
 

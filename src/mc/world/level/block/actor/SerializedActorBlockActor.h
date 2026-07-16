@@ -6,28 +6,24 @@
 #include "mc/deps/nbt/CompoundTag.h"
 #include "mc/world/Direction.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
-#include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/BlockActorRendererId.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorFactory;
 class Block;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
-class BlockType;
 class DataLoadHelper;
 class ILevel;
 class ItemStackBase;
 class SaveContext;
-class Vec2;
-class Vec3;
 // clang-format on
 
-class SerializedActorBlockActor : public ::BlockActor {
+class SerializedActorBlockActor : public ::VanillaBlockActor {
 public:
     // SerializedActorBlockActor inner types declare
     // clang-format off
@@ -85,40 +81,19 @@ public:
         ::ActorDefinitionIdentifier defaultActorIdentifier
     );
 
-    MCAPI ::Actor* _loadSerializedActor(
-        ::BlockSource&  region,
-        ::ActorFactory& actorFactory,
-        ::Vec3 const&   pos,
-        ::Vec2 const&   rotation
-    ) const;
-
     MCAPI void
     executeEvent(::BlockSource&, ::BlockPos const& pos, ::Block const&, ::std::string const& eventName, ::Actor& actor);
 
-    MCFOLD int getPose() const;
-
-    MCAPI int getSignalStrength() const;
-
-    MCAPI void loadUserData(::CompoundTag const& tag);
-
     MCAPI void saveUserData(::CompoundTag& tag) const;
 
-    MCAPI void setPose(int pose);
-
     MCAPI ::Actor* spawnActor(::BlockSource& region, ::Direction::Type direction);
-
-    MCAPI bool trySerializeActor(::Actor const& actor);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static int getPoseFromTag(::CompoundTag const& tag);
-
     MCAPI static bool isItemSerializedActorBlock(::ItemStackBase const& item);
-
-    MCAPI static bool isSerializedActorBlock(::BlockType const& block);
 #endif
 
     MCAPI static void savePoseToItemForInventoryRendering(::ItemStackBase& item, int pose);
@@ -127,13 +102,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& ACTOR_IDENTIFIER_TAG_NAME();
-
-    MCAPI static ::std::string_view const& ACTOR_TAG_NAME();
-
     MCAPI static ::std::string_view const& POSE_TAG_NAME();
-
-    MCAPI static ::std::string_view const& SAVE_DATA_TAG_NAME();
     // NOLINTEND
 
 public:
@@ -172,6 +141,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
     // NOLINTEND
 };

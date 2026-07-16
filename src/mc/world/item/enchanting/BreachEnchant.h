@@ -22,28 +22,12 @@ public:
 
     virtual float getDamageBonus(int, ::Actor const&, ::Actor const&) const /*override*/;
 
-    virtual float getAfterBreachArmorFraction(int level, float const armorFraction) const /*override*/;
+    virtual float getAfterBreachArmorFraction(int, float const) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getMinCost(int level) const;
 
-    MCFOLD int $getMaxCost(int level) const;
-
-    MCFOLD int $getMaxLevel() const;
-
-    MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
-
-    MCAPI float $getAfterBreachArmorFraction(int level, float const armorFraction) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

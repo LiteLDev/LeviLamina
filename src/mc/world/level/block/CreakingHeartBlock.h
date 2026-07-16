@@ -40,7 +40,7 @@ public:
 
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar) const
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
     // NOLINTEND
 
@@ -51,7 +51,9 @@ public:
 
     MCFOLD void _onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
+#ifdef LL_PLAT_C
     MCAPI bool isInPaleOakPillar(::BlockSource const& region, ::BlockPos const& pos) const;
+#endif
 
     MCAPI void onEvent(::BlockEvents::ActorEvent& event) const;
 
@@ -79,7 +81,7 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
 
     // NOLINTEND

@@ -6,7 +6,6 @@
 #include "mc/client/gui/screens/models/ContentType.h"
 #include "mc/client/world/AddWorldFromTemplateError.h"
 #include "mc/client/world/ClearPlayerDataType.h"
-#include "mc/client/world/CloseWorldError.h"
 #include "mc/client/world/DeleteWorldError.h"
 #include "mc/client/world/ExportWorldFlags.h"
 #include "mc/client/world/IWorldStorageHandler.h"
@@ -24,7 +23,6 @@
 class ILevelListCache;
 class LevelData;
 struct LevelSummary;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace Realms { struct RealmId; }
@@ -32,7 +30,6 @@ namespace Realms { struct World; }
 namespace World { class IWorldResourcePackHandler; }
 namespace World { class IWorldStorageHandler; }
 namespace World { class IWorldTemplateHandler; }
-namespace World { struct PackDownloadProgressInfo; }
 namespace World { struct WorldData; }
 namespace World { struct WorldPacksData; }
 // clang-format on
@@ -84,32 +81,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldEditor(
-        ::ILevelListCache&                                levelListCache,
-        bool                                              isEduMode,
-        ::World::IWorldResourcePackHandler&               worldResourcePackHandler,
-        ::World::IWorldStorageHandler&                    worldStorageHandler,
-        ::std::unique_ptr<::World::IWorldTemplateHandler> worldTemplateHandler
-    );
-
     MCAPI ::LevelSummary& _addLevelSummary(::World::WorldID const& worldID);
-
-    MCAPI void _addWorldEditorEntry(
-        ::World::WorldID const&                               worldID,
-        ::World::IWorldStorageHandler::CachedWorldData const& cachedWorldData
-    );
 
     MCAPI bool _closeWorld(::World::WorldID const& worldID);
 
     MCAPI void _onWorldIconUpdated(::World::WorldID const& worldID);
 
     MCAPI bool _refreshWorldData(::World::WorldID const& worldID);
-
-    MCAPI void _saveWorld(
-        ::World::WorldID const&                        worldID,
-        ::std::function<void()>                        onCompleteCallback,
-        ::std::function<void(::World::SaveWorldError)> onErrorCallback
-    );
 
     MCAPI ::std::optional<::World::PackActionError>
     activatePack(::World::WorldID const& worldID, ::ContentType contentType, ::std::string const& packId, bool force);
@@ -120,8 +98,6 @@ public:
         ::std::string const&                                                                        templateId,
         ::std::function<void(::std::variant<::World::AddWorldFromTemplateError, ::World::WorldID>)> onComplete
     );
-
-    MCAPI void cancelDownloadPack();
 
     MCAPI ::std::optional<::World::PackActionError> changePackPriority(
         ::World::WorldID const& worldID,
@@ -136,8 +112,6 @@ public:
         ::World::ClearPlayerDataType                                               type,
         ::std::optional<::World::IWorldStorageHandler::StartClearPlayerDataError>& error
     ) const;
-
-    MCAPI ::std::optional<::World::CloseWorldError> closeWorld(::World::WorldID const& worldID);
 
     MCAPI ::std::optional<::World::PackActionError> continuePackActivation(::World::WorldID const& worldID);
 
@@ -174,10 +148,6 @@ public:
         ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
     ) const;
 
-    MCFOLD ::World::IWorldStorageHandler::ExportWorldStatus exportWorldStatus() const;
-
-    MCAPI ::World::PackDownloadProgressInfo getDownloadPackProgress();
-
     MCAPI ::World::WorldData* getWorld(::World::WorldID const& worldID);
 
     MCAPI ::World::WorldPacksData getWorldPacksData(::World::WorldID const& worldID);
@@ -186,20 +156,9 @@ public:
 
     MCAPI bool isAchievementsDisabled(::World::WorldID const& id, bool isTrial) const;
 
-    MCAPI bool isWorldInEditor(::World::WorldID const& worldID);
-
     MCAPI bool isWorldPlatformLocked(::World::WorldID const& id) const;
 
     MCAPI ::std::optional<::World::IWorldStorageHandler::ReadWorldError> loadWorld(::World::WorldID const& worldID);
-
-    MCAPI ::Bedrock::PubSub::Subscription
-    registerWorldIconUpdatedListener(::std::function<void(::World::WorldID const&)> callback);
-
-    MCAPI ::Bedrock::PubSub::Subscription registerWorldsInvalidatedListener(::std::function<void()> callback);
-
-    MCAPI void reloadWorld(::World::WorldID const& worldID);
-
-    MCAPI void resetWorldIconToDefault(::World::WorldID const& worldID);
 
     MCAPI void saveScreenshotAsWorldIcon(
         ::World::WorldID const&           worldID,
@@ -212,34 +171,12 @@ public:
         ::std::function<void()>                        onCompleteCallback,
         ::std::function<void(::World::SaveWorldError)> onErrorCallback
     );
-
-    MCAPI void setRealmWorldInfo(::Realms::World const& realmWorld);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ILevelListCache&                                levelListCache,
-        bool                                              isEduMode,
-        ::World::IWorldResourcePackHandler&               worldResourcePackHandler,
-        ::World::IWorldStorageHandler&                    worldStorageHandler,
-        ::std::unique_ptr<::World::IWorldTemplateHandler> worldTemplateHandler
-    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLevelDeleted(::std::string const& levelId);
 
-    MCAPI void $onLevelUpdated(::std::string const& levelId);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
@@ -22,7 +22,7 @@ public:
     virtual ~IControl() = default;
 
     virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
-    buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const = 0;
+    buildJson(::Player&, ::CurrentCmdVersion) const = 0;
     // NOLINTEND
 
 public:

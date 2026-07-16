@@ -16,10 +16,4 @@ public:
     ::ll::TypedStorage<4, 4, float>                         mChance;
     ::ll::TypedStorage<1, 1, bool>                          mUnselectTarget;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void setActorDefByName(::std::string const& name);
-    // NOLINTEND
 };

@@ -19,7 +19,6 @@ class GetCollisionShapeInterface;
 class HashedString;
 class IConstBlockSource;
 class ItemInstance;
-class MapItemSavedData;
 class Player;
 class Vec3;
 struct ResourceDropsContext;
@@ -53,7 +52,7 @@ public:
 
     virtual bool isInteractiveBlock() const /*override*/;
 
-    virtual ::ItemInstance asItemInstance(::Block const& blockActor, ::BlockActor const*) const /*override*/;
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const* blockActor) const /*override*/;
 
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
@@ -79,7 +78,7 @@ public:
     virtual ::HashedString getSpawnedItemName() const;
 
     virtual void
-    spawnAfterBreak(::BlockSource& region, ::Block const& pos, ::BlockPos const&, ::ResourceDropsContext const&) const
+    spawnAfterBreak(::BlockSource& region, ::Block const&, ::BlockPos const& pos, ::ResourceDropsContext const&) const
         /*override*/;
     // NOLINTEND
 
@@ -88,15 +87,7 @@ public:
     // NOLINTBEGIN
     MCAPI ItemFrameBlock(::std::string const& nameId, int id);
 
-    MCAPI int _addMapCollection(
-        ::std::vector<::MapItemSavedData*>& detectionGrid,
-        ::BlockPos const&                   centerPos,
-        ::BlockSource&                      region
-    ) const;
-
-    MCAPI void _checkAchievements(::Player& player, ::BlockPos const& currentPos) const;
-
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
@@ -133,7 +124,7 @@ public:
 
     MCFOLD bool $isInteractiveBlock() const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const& blockActor, ::BlockActor const*) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
 
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
@@ -149,14 +140,14 @@ public:
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD bool $isLavaBlocking() const;
 
     MCAPI ::HashedString $getSpawnedItemName() const;
 
     MCAPI void
-    $spawnAfterBreak(::BlockSource& region, ::Block const& pos, ::BlockPos const&, ::ResourceDropsContext const&) const;
+    $spawnAfterBreak(::BlockSource& region, ::Block const&, ::BlockPos const& pos, ::ResourceDropsContext const&) const;
 
 
     // NOLINTEND

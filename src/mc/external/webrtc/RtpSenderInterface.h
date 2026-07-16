@@ -4,7 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/external/absl/AnyInvocable.h"
-#include "mc/external/cricket/MediaType.h"
+#include "mc/external/webrtc/FrameTransformerHost.h"
+#include "mc/external/webrtc/MediaType.h"
 #include "mc/external/webrtc/RefCountInterface.h"
 #include "mc/external/webrtc/VideoEncoderFactory.h"
 #include "mc/external/webrtc/scoped_refptr.h"
@@ -17,13 +18,14 @@ namespace webrtc { class FrameEncryptorInterface; }
 namespace webrtc { class FrameTransformerInterface; }
 namespace webrtc { class MediaStreamTrackInterface; }
 namespace webrtc { class RTCError; }
+namespace webrtc { class RtpSenderObserverInterface; }
 namespace webrtc { struct RtpEncodingParameters; }
 namespace webrtc { struct RtpParameters; }
 // clang-format on
 
 namespace webrtc {
 
-class RtpSenderInterface : public ::webrtc::RefCountInterface {
+class RtpSenderInterface : public ::webrtc::RefCountInterface, public ::webrtc::FrameTransformerHost {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -35,7 +37,7 @@ public:
 
     virtual uint ssrc() const = 0;
 
-    virtual ::cricket::MediaType media_type() const = 0;
+    virtual ::webrtc::MediaType media_type() const = 0;
 
     virtual ::std::string id() const = 0;
 
@@ -52,16 +54,21 @@ public:
     virtual void
     SetParametersAsync(::webrtc::RtpParameters const& a1, ::absl::AnyInvocable<void(::webrtc::RTCError) &&> a2);
 
+    virtual void SetObserver(::webrtc::RtpSenderObserverInterface* a1);
+
     virtual ::webrtc::scoped_refptr<::webrtc::DtmfSenderInterface> GetDtmfSender() const = 0;
 
     virtual void SetFrameEncryptor(::webrtc::scoped_refptr<::webrtc::FrameEncryptorInterface> a1) = 0;
 
     virtual ::webrtc::scoped_refptr<::webrtc::FrameEncryptorInterface> GetFrameEncryptor() const = 0;
 
-    virtual void
-    SetEncoderToPacketizerFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> a1) = 0;
+    virtual void SetEncoderToPacketizerFrameTransformer(
+        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
+    );
 
     virtual void SetEncoderSelector(::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface> a1) = 0;
+
+    virtual void SetFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> a1) /*override*/;
 
     virtual ~RtpSenderInterface() /*override*/ = default;
     // NOLINTEND
@@ -69,6 +76,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $SetEncoderToPacketizerFrameTransformer(
+        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
+    );
+
 
     // NOLINTEND
 };

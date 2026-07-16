@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace brstd { struct source_location; }
-// clang-format on
-
 namespace Molang::details {
 
 struct MolangProgramBuildState {
@@ -23,46 +18,6 @@ public:
     MolangProgramBuildState& operator=(MolangProgramBuildState const&);
     MolangProgramBuildState(MolangProgramBuildState const&);
     MolangProgramBuildState();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI uint64 allocateInstruction();
-
-    MCNAPI void insertJumpWithMaddAtIndex(
-        uint64 instructionIndexToPutThisInstruction,
-        uint64 instructionToJumpTo,
-        float  mulValue,
-        float  addValue,
-        ::brstd::source_location
-    );
-
-    MCNAPI void popForEachScope(uint64 instructionIndex);
-
-    MCNAPI void popLoopScope(uint64 instructionIndex);
-
-    MCNAPI void pushLoopScope(
-        uint64 loopScopeInitializationInstructionIndex,
-        uint64 loopRepeatLogicInstructionIndex,
-        uint64 loopCleanupInstructionIndex,
-        uint64 nextStatementIndex,
-        ::brstd::source_location
-    );
-
-    MCNAPI void pushReturnValue(::brstd::source_location);
-
-    MCNAPI void pushValue(float value, ::brstd::source_location);
-
-    MCNAPI void setReturnValue(float value, ::brstd::source_location);
-
-    MCNAPI ~MolangProgramBuildState();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Molang::details

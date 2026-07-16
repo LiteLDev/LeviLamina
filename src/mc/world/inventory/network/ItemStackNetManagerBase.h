@@ -70,17 +70,29 @@ public:
 
     virtual void onContainerScreenClose();
 
+#ifdef LL_PLAT_S
+    virtual ::SparseContainer* initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
+#else // LL_PLAT_C
     virtual ::SparseContainer* initOpenContainer(
         ::BlockSource&             region,
         ::FullContainerName const& openContainerId,
         ::ContainerWeakRef const&  containerWeakRef
     );
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void _addLegacyTransactionRequestSetItemSlot(
+        ::ItemStackNetManagerScreen&,
+        ::SharedTypes::Legacy::ContainerType containerType,
+        int                                  slot
+    );
+#else // LL_PLAT_C
     virtual void _addLegacyTransactionRequestSetItemSlot(
         ::ItemStackNetManagerScreen&         screen,
         ::SharedTypes::Legacy::ContainerType containerType,
         int                                  slot
     );
+#endif
 
     virtual void _initScreen(::ItemStackNetManagerScreen& screen);
     // NOLINTEND
@@ -95,10 +107,6 @@ public:
     MCAPI void _pushScreen(::ContainerScreenContext screenContext);
 
     MCAPI ::ContainerScreenContext const& getScreenContext() const;
-
-    MCFOLD bool isClientSide() const;
-
-    MCAPI bool isScreenOpen() const;
     // NOLINTEND
 
 public:
@@ -133,34 +141,24 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isEnabled() const;
 
-    MCFOLD bool $retainSetItemStackNetIdVariant() const;
-
     MCAPI ::gsl::final_action<::std::function<void()>> $_tryBeginClientLegacyTransactionRequest();
 
     MCAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
     MCAPI void $onContainerScreenClose();
 
-    MCFOLD ::SparseContainer* $initOpenContainer(
-        ::BlockSource&             region,
-        ::FullContainerName const& openContainerId,
-        ::ContainerWeakRef const&  containerWeakRef
-    );
+    MCFOLD ::SparseContainer* $initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
 
     MCFOLD void $_addLegacyTransactionRequestSetItemSlot(
-        ::ItemStackNetManagerScreen&         screen,
+        ::ItemStackNetManagerScreen&,
         ::SharedTypes::Legacy::ContainerType containerType,
         int                                  slot
     );
 
-    MCFOLD void $_initScreen(::ItemStackNetManagerScreen& screen);
+#ifdef LL_PLAT_C
+    MCFOLD bool $retainSetItemStackNetIdVariant() const;
+#endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

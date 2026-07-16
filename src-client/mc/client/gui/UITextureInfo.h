@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ResourceLocation;
 struct AsepriteFrameInformation;
-namespace Json { class Value; }
 // clang-format on
 
 class UITextureInfo {
@@ -21,23 +19,5 @@ public:
     ::ll::TypedStorage<4, 8, ::glm::vec2>                                mBaseUVSize;
     ::ll::TypedStorage<8, 24, ::std::vector<::AsepriteFrameInformation>> mAsepriteFrames;
     ::ll::TypedStorage<4, 4, int>                                        mTotalDurationInMilliseconds;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool _loadAseprite(::Json::Value const& value);
-
-    MCAPI void _loadNineslice(::Json::Value const& value);
-
-    MCFOLD ::glm::vec2 const& getBaseUVSize() const;
-
-    MCFOLD ::ui::SliceSize const& getNinesliceSize() const;
-
-    MCAPI void getPositionAfterMilliseconds(int ms, int& x, int& y) const;
-
-    MCFOLD bool hasNineslice() const;
-
-    MCAPI void load(::ResourceLocation const& value, ::Json::Value const&);
     // NOLINTEND
 };

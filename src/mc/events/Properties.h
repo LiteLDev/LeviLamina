@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Social::Events { class Property; }
-// clang-format on
-
 namespace Social::Events {
 
 class Properties {
@@ -21,12 +16,6 @@ public:
     Properties& operator=(Properties const&);
     Properties(Properties const&);
     Properties();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void addProperty(::Social::Events::Property const& property);
-    // NOLINTEND
 };
 
 } // namespace Social::Events

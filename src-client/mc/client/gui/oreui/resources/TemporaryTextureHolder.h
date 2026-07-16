@@ -39,22 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::variant<::cg::ImageBuffer, ::mce::TexturePtr, ::std::shared_ptr<::GeometryAtlas::IAtlasTile>>
-    consumeImageBuffer(uint64 id);
-
     MCAPI void dropImageBuffer(uint64 id);
 
-    MCAPI uint64 holdImageBuffer(::cg::ImageBuffer buffer);
-
     MCAPI uint64 holdTexturePtr(::mce::TexturePtr texture);
-
-    MCAPI ~TemporaryTextureHolder();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ namespace Realms { class RealmsSubscriptions; }
 
 namespace OreUI {
 
-class RealmsSubscriptionsMethodsFacet : public ::OreUI::FacetBase<::OreUI::RealmsSubscriptionsMethodsFacet> {
+class RealmsSubscriptionsMethodsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsSubscriptionsMethodsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -37,10 +37,6 @@ public:
     MCAPI explicit RealmsSubscriptionsMethodsFacet(
         ::std::shared_ptr<::Realms::RealmsSubscriptions> realmsSubscriptions
     );
-
-    MCAPI void initialize();
-
-    MCAPI void reset();
     // NOLINTEND
 
 public:

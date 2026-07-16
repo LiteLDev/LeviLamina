@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void renderSpin(::BaseActorRenderContext& renderContext, ::Actor& bob, float scale, float);
+    virtual void renderSpin(::BaseActorRenderContext&, ::Actor&, float, float);
     // NOLINTEND
 
 public:
@@ -42,12 +42,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $renderSpin(::BaseActorRenderContext& renderContext, ::Actor& bob, float scale, float);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::Cursor { struct CursorState; }
 namespace Scripting { struct EnumBinding; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
@@ -31,16 +30,6 @@ public:
     ScriptCursorProperties();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptCursorProperties(::Editor::Cursor::CursorState const& stateToCopy);
-
-#ifdef LL_PLAT_C
-    MCNAPI ::Editor::Cursor::CursorState toCursorState(::Editor::Cursor::CursorState& outState) const;
-#endif
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
@@ -48,12 +37,6 @@ public:
     MCNAPI static ::Scripting::EnumBinding bindScriptEnumsControlMode();
 
     MCNAPI static ::Scripting::EnumBinding bindScriptEnumsTargetMode();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Cursor::CursorState const& stateToCopy);
     // NOLINTEND
 };
 

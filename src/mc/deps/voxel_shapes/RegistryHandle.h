@@ -15,24 +15,7 @@ public:
     // prevent constructor by default
     RegistryHandle& operator=(RegistryHandle const&);
     RegistryHandle(RegistryHandle const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI RegistryHandle();
-
-    MCNAPI ushort getValue() const;
-
-    MCNAPI explicit operator bool() const;
-
-    MCNAPI void setValue(ushort value);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
+    RegistryHandle();
 };
 
 } // namespace VoxelShapes

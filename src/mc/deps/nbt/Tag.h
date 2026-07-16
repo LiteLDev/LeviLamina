@@ -115,28 +115,14 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $deleteChildren();
-
-    MCFOLD bool $equals(::Tag const& rhs) const;
 
     MCAPI void $print(::PrintStream& out) const;
 
     MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

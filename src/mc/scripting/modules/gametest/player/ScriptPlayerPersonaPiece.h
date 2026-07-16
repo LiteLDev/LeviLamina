@@ -33,9 +33,6 @@ public:
     MCAPI ScriptPlayerPersonaPiece(::ScriptModuleGameTest::ScriptPlayerPersonaPiece const&);
 
     MCAPI ::ScriptModuleGameTest::ScriptPlayerPersonaPiece&
-    operator=(::ScriptModuleGameTest::ScriptPlayerPersonaPiece&&);
-
-    MCAPI ::ScriptModuleGameTest::ScriptPlayerPersonaPiece&
     operator=(::ScriptModuleGameTest::ScriptPlayerPersonaPiece const&);
 
     MCAPI ~ScriptPlayerPersonaPiece();

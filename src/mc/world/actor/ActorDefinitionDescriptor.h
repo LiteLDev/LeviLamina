@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/container/small_vector_base.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/entity/factory/DefinitionInstanceGroup.h"
+#include "mc/entity/factory/GoalDefinitionInstanceGroup.h"
 #include "mc/world/actor/ActorAliasDescription.h"
 #include "mc/world/actor/ActorPropertiesDescription.h"
 #include "mc/world/actor/AnimationScriptsDescription.h"
@@ -22,7 +22,6 @@ class Actor;
 class ActorDefinitionEvent;
 class ActorDefinitionTrigger;
 struct ActorDefinitionAttribute;
-struct ActorDefinitionEventStackEntry;
 struct AmphibiousMoveControlDescription;
 struct AttackDescription;
 struct BehaviorTreeDescription;
@@ -89,7 +88,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionAttribute>>                   mAttributes;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ActorDefinitionEvent>> mEventHandlers;
     ::ll::TypedStorage<8, 72, ::DefinitionInstanceGroup>                                   mDefinitionGroup;
-    ::ll::TypedStorage<8, 72, ::DefinitionInstanceGroup>                                   mGoalDefinitionGroup;
+    ::ll::TypedStorage<8, 144, ::GoalDefinitionInstanceGroup>                              mGoalDefinitionGroup;
     ::ll::TypedStorage<8, 8, ::AttackDescription const*>                                   mAttack;
     ::ll::TypedStorage<8, 8, ::MobEffectChangeDescription const*>                          mMobEffects;
     ::ll::TypedStorage<8, 8, ::AmphibiousMoveControlDescription const*>                    mAmphibiousMoveControl;
@@ -138,6 +137,7 @@ public:
 
 public:
     // prevent constructor by default
+    ActorDefinitionDescriptor& operator=(ActorDefinitionDescriptor const&);
     ActorDefinitionDescriptor(ActorDefinitionDescriptor const&);
 
 public:
@@ -149,21 +149,11 @@ public:
 
     MCAPI ::ActorDefinitionDescriptor& combine(::ActorDefinitionDescriptor const& rhs);
 
-    MCAPI bool contains(::ActorDefinitionDescriptor const& rhs) const;
-
     MCAPI ::std::optional<::ActorDefinitionAttribute> findAttributeByName(::std::string const& attributeName) const;
 
-    MCAPI bool hasJumpSubComponent();
-
-    MCAPI bool hasMovementSubComponent();
-
-    MCAPI bool hasNavigationSubComponent();
+    MCFOLD bool hasComponent(::HashedString const& name) const;
 
     MCAPI ::ActorDefinitionDescriptor& operator=(::ActorDefinitionDescriptor&&);
-
-    MCAPI ::ActorDefinitionDescriptor& operator=(::ActorDefinitionDescriptor const&);
-
-    MCAPI bool overlaps(::ActorDefinitionDescriptor const& rhs) const;
 
     MCAPI ::ActorDefinitionDescriptor& subtract(::ActorDefinitionDescriptor const& rhs);
 
@@ -180,15 +170,6 @@ public:
 
     MCAPI static void
     forceExecuteTrigger(::Actor& entity, ::ActorDefinitionTrigger const& trigger, ::VariantParameterList const& list);
-
-    MCAPI static void forceExecuteTriggerChain(
-        ::Actor&                                                        entity,
-        ::ActorDefinitionTrigger const&                                 trigger,
-        ::Bedrock::small_vector_base<::ActorDefinitionEventStackEntry>& eventStack,
-        ::VariantParameterList const&                                   list
-    );
-
-    MCAPI static bool hasEvent(::Actor const& entity, ::std::string const& name);
     // NOLINTEND
 
 public:

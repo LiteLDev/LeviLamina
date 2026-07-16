@@ -4,12 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/platform/brstd/function_ref.h"
-#include "mc/util/PerfContextEvent.h"
 
 // auto generated forward declare list
 // clang-format off
 class PerfContextTrackerReport;
-struct FrameAnomalyDetectorSummary;
+class PerfContextTrackerReportLite;
 // clang-format on
 
 class PerfContextTracker {
@@ -47,15 +46,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI void $reset();
 
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -76,15 +67,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI explicit EventScope(::PerfContextEvent eventType);
-
         MCNAPI ~EventScope();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::PerfContextEvent eventType);
         // NOLINTEND
 
     public:
@@ -137,7 +120,7 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk2b7e27;
     ::ll::UntypedStorage<8, 40>  mUnkeefdc7;
     ::ll::UntypedStorage<8, 288> mUnk7e0308;
-    ::ll::UntypedStorage<8, 256> mUnk8e863b;
+    ::ll::UntypedStorage<8, 264> mUnk8e863b;
     ::ll::UntypedStorage<4, 4>   mUnkf2b035;
     ::ll::UntypedStorage<4, 4>   mUnke5955e;
     ::ll::UntypedStorage<4, 4>   mUnk4f5d25;
@@ -159,61 +142,29 @@ public:
     MCNAPI PerfContextTracker();
 
 #ifdef LL_PLAT_C
-    MCNAPI bool _tryBeginContext(::std::string const& contextName, ::std::chrono::steady_clock::time_point const& now);
-
-    MCNAPI void _tryEndContext(::std::chrono::steady_clock::time_point const& now);
-
-    MCNAPI bool _tryRestartContext(::std::chrono::steady_clock::time_point const& now);
-
     MCNAPI void clear();
-#endif
 
-    MCNAPI void incrementPacketReceivedInfo(uint packetSize);
-
-    MCNAPI void incrementPacketSentInfo(uint packetSize);
-
-#ifdef LL_PLAT_C
     MCNAPI void onAppResume();
 
     MCNAPI void onAppSuspend();
 
-    MCNAPI void setActorRenderCount(int actorRenderCount);
+    MCNAPI ::PerfContextTrackerReportLite peekReportLite() const;
 
-    MCNAPI void
-    setFrameAnomalyEventing(::std::function<::std::optional<::FrameAnomalyDetectorSummary>()> summaryProvider);
-#endif
-
-    MCNAPI void setMobCount(uint mobCount);
-
-#ifdef LL_PLAT_C
     MCNAPI void tick(
         ::std::string const& currentContext,
         uint                 clientCount,
         uint                 renderDistance,
         uint                 simDistance,
         ::brstd::function_ref<void(::PerfContextTrackerReport const&) const, void(::PerfContextTrackerReport const&)>
-            reporter
+                                                    reporter,
+        ::brstd::function_ref<void() const, void()> gatherData
     );
 #endif
-
-    MCNAPI ~PerfContextTracker();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::PerfContextTracker& getInstance();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

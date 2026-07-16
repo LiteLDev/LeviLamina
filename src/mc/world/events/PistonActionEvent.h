@@ -20,16 +20,4 @@ public:
     ::ll::TypedStorage<1, 1, ::PistonState>                           mActionType;
     ::ll::TypedStorage<1, 1, bool>                                    mShouldCheckAttachedBlocks;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PistonActionEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

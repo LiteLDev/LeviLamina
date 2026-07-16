@@ -18,18 +18,6 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<bool()>> mIsSelected;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>> mIsSupported;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~OreUIScreenConfiguration();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ui

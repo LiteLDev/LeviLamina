@@ -3,13 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/editor/datastore/container/Container.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::DataStore { class PayloadEventDispatcher; }
 namespace Editor::DataStore { struct PayloadDescription; }
 namespace Json { class Value; }
 // clang-format on
@@ -40,8 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PaneContainer(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
-
     MCNAPI ::Scripting::Result_deprecated<void> handleDataEvent(
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
@@ -53,12 +50,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_DATA();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
     // NOLINTEND
 
 public:

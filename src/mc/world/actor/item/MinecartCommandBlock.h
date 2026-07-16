@@ -9,21 +9,14 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
 class Block;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
 class MinecartCommandBlock : public ::Minecart {
-public:
-    // prevent constructor by default
-    MinecartCommandBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -43,26 +36,6 @@ public:
     virtual void applyNaturalSlowdown(::BlockSource& region) /*override*/;
 
     virtual void _lazyInitDisplayBlock() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MinecartCommandBlock(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

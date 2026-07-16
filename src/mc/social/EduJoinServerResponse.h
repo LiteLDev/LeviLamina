@@ -14,26 +14,16 @@ public:
     ::ll::UntypedStorage<8, 152> mUnk9150cd;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     EduJoinServerResponse& operator=(EduJoinServerResponse const&);
     EduJoinServerResponse(EduJoinServerResponse const&);
     EduJoinServerResponse();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    EduJoinServerResponse(EduJoinServerResponse const&);
-    EduJoinServerResponse();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::Social::EduJoinServerResponse& operator=(::Social::EduJoinServerResponse const&);
-
     MCNAPI ~EduJoinServerResponse();
 #endif
     // NOLINTEND

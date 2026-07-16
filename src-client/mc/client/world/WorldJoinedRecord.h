@@ -24,51 +24,21 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorldJoinedRecord();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldJoinedRecord();
+    virtual ~WorldJoinedRecord() = default;
 
     virtual ::World::WorldJoinedRecordType getWorldJoinedRecordType() const = 0;
 
-    virtual bool operator==(::World::WorldJoinedRecord const& other) const = 0;
+    virtual bool operator==(::World::WorldJoinedRecord const&) const = 0;
 
-    virtual void serializeExtended(::Json::Value& outJsonValue) const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WorldJoinedRecord(::std::string const& name, ::GameType gameType, bool isEditorWorld);
-
-    MCAPI ::Json::Value serialize() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, ::GameType gameType, bool isEditorWorld);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    virtual void serializeExtended(::Json::Value&) const = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

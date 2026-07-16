@@ -22,8 +22,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AddPage(::BookEditAction::AddPage const&);
-
-    MCFOLD ::BookEditAction::AddPage& operator=(::BookEditAction::AddPage&&);
     // NOLINTEND
 
 public:

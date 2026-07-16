@@ -3,24 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/deps/scripting/script_engine/Promise.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 namespace Editor { class EditorPlayerServiceProvider; }
-namespace Editor::ScriptModule { class ScriptClipboardItem; }
 namespace Editor::Services { class EditorJigsawServiceProvider; }
-namespace Editor::Services { struct EditorJigsawSection; }
-namespace Editor::Services { struct EditorRegistryFile; }
-namespace Editor::Services { struct JigsawBlockData; }
-namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
-namespace Scripting { struct Error; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -56,46 +47,7 @@ public:
         ::Scripting::WeakLifetimeScope const&            scope
     );
 
-    MCNAPI void deleteRegistryData(::std::string const& registryName);
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::Promise<::std::vector<::Editor::Services::EditorJigsawSection>, ::Scripting::Error>>
-    generateJigsaw(
-        ::std::string const&                               registryName,
-        ::std::string const&                               startingPool,
-        ::std::string const&                               startTarget,
-        ::Vec3 const&                                      seed,
-        int                                                depth,
-        int                                                maxHorizontalDistanceFromCenter,
-        bool                                               validateRegistry,
-        ::Editor::ScriptModule::ScriptClipboardItem const& clipboardItem,
-        ::Scripting::ScriptObjectFactory&                  factory
-    );
-
-    MCNAPI ::std::map<::std::string, ::std::string> getEmptyRegistryFiles();
-
-    MCNAPI ::std::string getExportLocation();
-
-    MCNAPI ::Editor::Services::JigsawBlockData getJigsawBlockData(::Vec3& pos);
-
-    MCNAPI ::std::map<::std::string, ::std::vector<::Editor::Services::EditorRegistryFile>>
-    getRegistryData(::std::string const& registryName);
-
-    MCNAPI ::std::vector<::std::string> getRegistryList();
-
     MCNAPI ::Editor::ScriptModule::ScriptJigsawService& operator=(::Editor::ScriptModule::ScriptJigsawService&& other);
-
-    MCNAPI void setJigsawBlockData(::Vec3& pos, ::Editor::Services::JigsawBlockData& jigsawData);
-
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::vector<::std::string>, ::Scripting::Error>>
-    setRegistryData(
-        ::std::string const&                                  registryName,
-        ::std::vector<::Editor::Services::EditorRegistryFile> processorData,
-        ::std::vector<::Editor::Services::EditorRegistryFile> structureData,
-        ::std::vector<::Editor::Services::EditorRegistryFile> structureSetData,
-        ::std::vector<::Editor::Services::EditorRegistryFile> templatePoolData,
-        ::Scripting::ScriptObjectFactory&                     factory
-    );
 
     MCNAPI ~ScriptJigsawService();
     // NOLINTEND

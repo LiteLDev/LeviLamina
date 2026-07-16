@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/resources/IContentCatalogPackSource.h"
 #include "mc/deps/core/resource/PackType.h"
-#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/SharedAsync.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -15,7 +14,6 @@ class IContentCatalogPackSourceService;
 class IEntitlementManager;
 class IPackManifestFactory;
 class TaskGroup;
-struct ContentCatalogPackSourceOptions;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 namespace ContentManagerUtils { class ISourcesAsyncReloader; }
@@ -37,15 +35,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContentCatalogPackSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContentCatalogPackSource() /*override*/;
+    virtual ~ContentCatalogPackSource() /*override*/ = default;
 
-    virtual void setEnabled(bool enabled) /*override*/;
+    virtual void setEnabled(bool) /*override*/;
 
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
 
@@ -55,42 +49,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ContentCatalogPackSource(::ContentCatalogPackSourceOptions options);
-
-    MCAPI ::Bedrock::Threading::Async<void> _collectAllCatalogItems();
-
-    MCAPI ::Bedrock::Threading::Async<void> _load();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContentCatalogPackSourceOptions options);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $setEnabled(bool enabled);
 
-    MCAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&&);
-
-    MCFOLD ::PackType $getPackType() const;
-
-    MCAPI void $refreshCatalogItems(::IPackManifestFactory&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/external/absl/AnyInvocable.h"
-#include "mc/external/rtc/VideoSourceInterface.h"
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/DegradationPreference.h"
+#include "mc/external/webrtc/VideoSourceInterface.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
@@ -32,7 +33,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 288> mUnkccbdb4;
+        ::ll::UntypedStorage<8, 320> mUnkccbdb4;
         ::ll::UntypedStorage<8, 40>  mUnkc4b09b;
         ::ll::UntypedStorage<4, 4>   mUnkedf477;
         ::ll::UntypedStorage<8, 8>   mUnke19dd7;
@@ -42,7 +43,7 @@ public:
         ::ll::UntypedStorage<1, 1>   mUnk1cb5a2;
         ::ll::UntypedStorage<8, 8>   mUnk48ac42;
         ::ll::UntypedStorage<8, 8>   mUnk92291e;
-        ::ll::UntypedStorage<1, 5>   mUnkd97f02;
+        ::ll::UntypedStorage<8, 32>  mUnkd97f02;
         ::ll::UntypedStorage<8, 8>   mUnkf4b2bd;
         // NOLINTEND
 
@@ -74,16 +75,19 @@ public:
         ::ll::UntypedStorage<4, 4>   mUnk5f9f0c;
         ::ll::UntypedStorage<4, 4>   mUnkaf4a3a;
         ::ll::UntypedStorage<4, 4>   mUnke26a19;
-        ::ll::UntypedStorage<8, 128> mUnkffcf33;
+        ::ll::UntypedStorage<8, 176> mUnkffcf33;
         ::ll::UntypedStorage<4, 20>  mUnk3590b0;
-        ::ll::UntypedStorage<8, 64>  mUnke06987;
+        ::ll::UntypedStorage<8, 72>  mUnke06987;
         ::ll::UntypedStorage<8, 8>   mUnkd298f2;
         ::ll::UntypedStorage<4, 4>   mUnk82a04b;
         ::ll::UntypedStorage<8, 16>  mUnk84d23f;
+        ::ll::UntypedStorage<8, 24>  mUnk2cc175;
+        ::ll::UntypedStorage<8, 8>   mUnk83d6af;
         ::ll::UntypedStorage<8, 8>   mUnk80f10a;
         ::ll::UntypedStorage<8, 8>   mUnkf13538;
         ::ll::UntypedStorage<4, 4>   mUnke7c524;
         ::ll::UntypedStorage<1, 2>   mUnkb9ce33;
+        ::ll::UntypedStorage<8, 16>  mUnkf6fd8a;
         // NOLINTEND
 
     public:
@@ -153,7 +157,7 @@ public:
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::Resource>> GetAdaptationResources() = 0;
 
     virtual void
-    SetSource(::rtc::VideoSourceInterface<::webrtc::VideoFrame>*, ::webrtc::DegradationPreference const&) = 0;
+    SetSource(::webrtc::VideoSourceInterface<::webrtc::VideoFrame>*, ::webrtc::DegradationPreference const&) = 0;
 
     virtual void ReconfigureVideoEncoder(::webrtc::VideoEncoderConfig) = 0;
 
@@ -161,6 +165,10 @@ public:
         ReconfigureVideoEncoder(::webrtc::VideoEncoderConfig, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>) = 0;
 
     virtual ::webrtc::VideoSendStream::Stats GetStats() = 0;
+
+    virtual void SetStats(::webrtc::VideoSendStream::Stats const&);
+
+    virtual void SetCsrcs(::webrtc::ArrayView<uint const, 18446744073709546905>) = 0;
 
     virtual void GenerateKeyFrame(::std::vector<::std::string> const&) = 0;
 

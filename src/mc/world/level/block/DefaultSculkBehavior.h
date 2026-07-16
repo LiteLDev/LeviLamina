@@ -19,23 +19,19 @@ class DefaultSculkBehavior : public ::SculkBehavior {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual int updateDecayDelay(int const currentValue) const /*override*/;
+    virtual int updateDecayDelay(int const) const /*override*/;
 
-    virtual int updateFacingData(int const currentValue, ::Block const&) const /*override*/;
+    virtual int updateFacingData(int const, ::Block const&) const /*override*/;
 
     virtual bool canChangeBlockOnSpread() const /*override*/;
 
-    virtual bool attemptSpreadVeins(
-        ::IBlockWorldGenAPI& target,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        int                  facingData,
-        ::SculkSpreader&
-    ) const /*override*/;
+    virtual bool
+    attemptSpreadVeins(::IBlockWorldGenAPI&, ::BlockPos const&, ::Block const&, int, ::SculkSpreader&) const
+        /*override*/;
 
     virtual int attemptUseCharge(
-        ::IBlockWorldGenAPI& charge,
-        ::BlockSource*       decayDelay,
+        ::IBlockWorldGenAPI&,
+        ::BlockSource*,
         ::BlockPos const&,
         ::BlockPos const&,
         int,
@@ -51,40 +47,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $updateDecayDelay(int const currentValue) const;
 
-    MCFOLD int $updateFacingData(int const currentValue, ::Block const&) const;
-
-    MCFOLD bool $canChangeBlockOnSpread() const;
-
-    MCAPI bool $attemptSpreadVeins(
-        ::IBlockWorldGenAPI& target,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        int                  facingData,
-        ::SculkSpreader&
-    ) const;
-
-    MCAPI int $attemptUseCharge(
-        ::IBlockWorldGenAPI& charge,
-        ::BlockSource*       decayDelay,
-        ::BlockPos const&,
-        ::BlockPos const&,
-        int,
-        int,
-        ::Random&,
-        ::SculkSpreader&,
-        bool const
-    ) const;
-
-    MCFOLD void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

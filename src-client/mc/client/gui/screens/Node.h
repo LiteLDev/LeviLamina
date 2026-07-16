@@ -19,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    Node(Node const&);
     Node();
 
 public:
@@ -29,8 +28,6 @@ public:
         ::std::function<::ui::ViewRequest(uint, ::std::string const&, int)> onEnter,
         ::std::function<::ui::ViewRequest(uint, ::std::string const&, int)> onExit
     );
-
-    MCFOLD ::Node& operator=(::Node const&);
 
     MCAPI ~Node();
     // NOLINTEND

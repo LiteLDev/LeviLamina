@@ -9,22 +9,6 @@
 // clang-format off
 namespace ClientBlockPipeline { class Inputs; }
 namespace ClientBlockPipeline { class StepResult; }
-namespace ClientBlockPipeline { struct CulledFaceAttribute; }
-namespace ClientBlockPipeline { struct FaceDimmingAttributes; }
-namespace ClientBlockPipeline { struct FaceDirectionFaceAttributes; }
-namespace ClientBlockPipeline { struct FaceNormalAttributes; }
-namespace ClientBlockPipeline { struct GeoTypeVertexAttributes; }
-namespace ClientBlockPipeline { struct ImageUvFaceAttributes; }
-namespace ClientBlockPipeline { struct LightUvFaceAttributes; }
-namespace ClientBlockPipeline { struct MaterialFaceAttributes; }
-namespace ClientBlockPipeline { struct NamedMeshStreams; }
-namespace ClientBlockPipeline { struct PositionVertexAttributes; }
-namespace ClientBlockPipeline { struct QuadIndicesFaceAttributes; }
-namespace ClientBlockPipeline { struct SmoothLightingUvAttributes; }
-namespace ClientBlockPipeline { struct TextureShiftNoiseVertexAttributes; }
-namespace ClientBlockPipeline { struct TintFaceAttributes; }
-namespace ClientBlockPipeline { struct Transforms; }
-namespace ClientBlockPipeline { struct VertexAOAttributes; }
 // clang-format on
 
 namespace ClientBlockPipeline {
@@ -38,44 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GpuBufferGenStep();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GpuBufferGenStep(bool emitColors, bool emitPBRTextures);
-
-    MCAPI void _run(
-        ::ClientBlockPipeline::PositionVertexAttributes const&          vertexPositions,
-        ::ClientBlockPipeline::QuadIndicesFaceAttributes const&         faceIndices,
-        ::ClientBlockPipeline::ImageUvFaceAttributes const&             faceImageUvs,
-        ::ClientBlockPipeline::MaterialFaceAttributes const&            faceMaterials,
-        ::ClientBlockPipeline::TintFaceAttributes const&                faceColors,
-        ::ClientBlockPipeline::FaceDirectionFaceAttributes const&       faceFacings,
-        ::ClientBlockPipeline::CulledFaceAttribute const*               culledFaces,
-        ::ClientBlockPipeline::LightUvFaceAttributes const*             faceLightUvs,
-        ::ClientBlockPipeline::SmoothLightingUvAttributes const*        vertexLightUvs,
-        ::ClientBlockPipeline::FaceDimmingAttributes const*             faceDimmings,
-        ::ClientBlockPipeline::FaceNormalAttributes const*              faceNormals,
-        ::ClientBlockPipeline::VertexAOAttributes const*                vertexAO,
-        ::ClientBlockPipeline::Transforms const*                        transforms,
-        ::ClientBlockPipeline::TextureShiftNoiseVertexAttributes const* textureShiftVertexNoises,
-        ::ClientBlockPipeline::GeoTypeVertexAttributes const*           outStreams,
-        ::ClientBlockPipeline::NamedMeshStreams&
-    ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool emitColors, bool emitPBRTextures);
     // NOLINTEND
 
 public:

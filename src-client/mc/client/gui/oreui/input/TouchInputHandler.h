@@ -11,7 +11,6 @@
 class Option;
 namespace OreUI { class GesturePolicy; }
 namespace OreUI { class ITouchSystem; }
-namespace OreUI { struct TouchEvent; }
 // clang-format on
 
 namespace OreUI {
@@ -56,8 +55,6 @@ public:
         ::std::unique_ptr<::OreUI::GesturePolicy> gesturePolicy,
         ::Option*                                 ttsOption
     );
-
-    MCAPI void handle(::std::vector<::OreUI::TouchEvent> const& rawTouchEvents);
 
     MCAPI ~TouchInputHandler();
     // NOLINTEND

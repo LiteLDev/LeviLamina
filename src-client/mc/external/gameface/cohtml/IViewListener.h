@@ -45,7 +45,7 @@ public:
 
     virtual void OnDOMBuilt();
 
-    virtual void OnLoadFailed(char const* url, char const* error);
+    virtual void OnLoadFailed(char const*, char const*);
 
     virtual void OnFinishLoad(char const*);
 
@@ -76,29 +76,29 @@ public:
         ::cohtml::InputEventPhase::PhaseType const
     );
 
-    virtual void OnAudioStreamCreated(int id, int bitDepth, int channels, float samplingRate);
+    virtual void OnAudioStreamCreated(int, int, int, float);
 
-    virtual void OnAudioStreamClosed(int id);
+    virtual void OnAudioStreamClosed(int);
 
-    virtual void OnAudioStreamPlay(int id);
+    virtual void OnAudioStreamPlay(int);
 
-    virtual void OnAudioStreamPause(int id);
+    virtual void OnAudioStreamPause(int);
 
-    virtual void OnAudioDataReceived(int id, int samples, float** pcm, int channels);
+    virtual void OnAudioDataReceived(int, int, float**, int);
 
-    virtual void OnAudioStreamEnded(int id);
+    virtual void OnAudioStreamEnded(int);
 
-    virtual void OnAudioStreamVolumeChanged(int id, float volume);
+    virtual void OnAudioStreamVolumeChanged(int, float);
 
-    virtual void OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType type);
+    virtual void OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType);
 
-    virtual void OnCaretRectChanged(int x, int y, uint width, uint height);
+    virtual void OnCaretRectChanged(int, int, uint, uint);
 
     virtual void OnCursorChanged(::cohtml::CursorTypes::Cursors, char const*, float const*, float const*);
 
-    virtual void OnClipboardTextSet(char const* text, uint lengthBytes);
+    virtual void OnClipboardTextSet(char const*, uint);
 
-    virtual void OnClipboardTextGet(::cohtml::IViewListener::IClipboardData* setDataObject);
+    virtual void OnClipboardTextGet(::cohtml::IViewListener::IClipboardData*);
 
     virtual ::cohtml::IClientSideSocket* OnCreateWebSocket(::cohtml::ISocketListener*, char const*, char const**, uint);
     // NOLINTEND

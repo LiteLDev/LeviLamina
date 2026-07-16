@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
-#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -44,31 +43,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BedScreen(
-        ::ui::ScreenTechStackSelector const& screenTechStackSelector,
-        ::std::function<void()>              clearAllRequiredTTSEvents
-    );
-
-    MCAPI bool _isOreUIBedScreenEnabled() const;
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ui::ScreenTechStackSelector const& screenTechStackSelector,
-        ::std::function<void()>              clearAllRequiredTTSEvents
-    );
     // NOLINTEND
 
 public:

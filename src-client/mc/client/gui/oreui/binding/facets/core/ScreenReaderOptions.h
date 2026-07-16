@@ -14,24 +14,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>           shouldPlayInBackground;
     ::ll::TypedStorage<1, 1, bool>           shouldPlayWhenPlatformTTSEnabled;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ScreenReaderOptions();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/scripting/modules/minecraft/events/IScriptWorldAfterEvents.h"
 #include "mc/scripting/modules/minecraft/events/IScriptWorldBeforeEvents.h"
 #include "mc/scripting/modules/minecraft/events/ScriptFilteredEventSignal.h"
@@ -294,14 +294,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptV010Events(::ScriptModuleMinecraft::ScriptV010Events&&);
-
     MCAPI ScriptV010Events(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::Level*> level);
 
     MCAPI void
     onActorCreated(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorCreateEvent>& actorEvent);
-
-    MCAPI void onLevelTick(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTickEvent>& tickEvent);
 
     MCAPI ::ScriptModuleMinecraft::ScriptV010Events& operator=(::ScriptModuleMinecraft::ScriptV010Events&&);
 
@@ -320,8 +316,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptV010Events&&);
-
     MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::Level*> level);
     // NOLINTEND
 

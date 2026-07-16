@@ -6,7 +6,6 @@
 // clang-format off
 class ContentItemCollection;
 class IStorageManagementModel;
-class IVersionedContentItemCollection;
 struct ContentItem;
 // clang-format on
 
@@ -44,47 +43,5 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::StorageManagementViews::ContentTab>>       mCacheTab;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ContentItemCollection>>>    mSelectedView;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ContentItem const>>>         mSelectedItems;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StorageManagementViews();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StorageManagementViews(
-        ::std::shared_ptr<::IVersionedContentItemCollection const> viewSource,
-        ::std::shared_ptr<::IStorageManagementModel>               model
-    );
-
-    MCAPI void _onSelectedReloaded(::ContentItemCollection& selectedView);
-
-    MCAPI void deselectItem(::ContentItem const& item);
-
-    MCAPI ::std::vector<::std::shared_ptr<::ContentItem const>> getAndExpandSelectedItems() const;
-
-    MCAPI ::ContentItemCollection& getSelectedView();
-
-    MCAPI ::std::array<::gsl::not_null<::std::shared_ptr<::StorageManagementViews::ContentTab>>, 6> getTabs();
-
-    MCAPI void selectItem(::std::shared_ptr<::ContentItem const> item);
-
-    MCAPI ~StorageManagementViews();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::IVersionedContentItemCollection const> viewSource,
-        ::std::shared_ptr<::IStorageManagementModel>               model
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

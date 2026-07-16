@@ -50,10 +50,6 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerStateMachine();
     // NOLINTEND
 
 public:
@@ -70,20 +66,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCAPI bool $_isStillValid() const;
-
-    MCAPI void $_registerCoalesceOrder();
-
-    MCAPI void $_registerAutoPlaceOrder();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

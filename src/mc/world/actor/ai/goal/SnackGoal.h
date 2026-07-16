@@ -10,7 +10,6 @@
 // clang-format off
 class Actor;
 class ItemDescriptor;
-class ItemStack;
 class Mob;
 class Path;
 // clang-format on
@@ -38,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SnackGoal() /*override*/;
+    virtual ~SnackGoal() /*override*/ = default;
 
     virtual bool canUse() /*override*/;
 
@@ -53,30 +52,6 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual int getRandomEatingEnd() const;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    SnackGoal(::Mob& mob, ::std::vector<::ItemDescriptor> const& itemList, float cooldown, float min, float stopChance);
-
-    MCAPI bool _hasSnackableItems();
-
-    MCFOLD void _updateHand(::ItemStack const& item);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Mob& mob, ::std::vector<::ItemDescriptor> const& itemList, float cooldown, float min, float stopChance);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

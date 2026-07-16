@@ -18,16 +18,4 @@ public:
     ::ll::TypedStorage<8, 40, ::std::vector<::CrackRenderObject, ::LinearAllocator<::CrackRenderObject>>> mCracks;
     ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                                          mAtlasTexture;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~CrackRenderObjectCollection();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

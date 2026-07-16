@@ -32,16 +32,6 @@ public:
     ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                           mMutex;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::FramesToPaintQueue::ViewFrame>> mFrames;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void clear(::OreUI::ViewId viewId);
-
-    MCAPI ::std::vector<::OreUI::FrameId> popAll(::OreUI::ViewId viewId);
-
-    MCAPI void push(::OreUI::ViewId viewId, ::OreUI::FrameId frameId);
-    // NOLINTEND
 };
 
 } // namespace OreUI

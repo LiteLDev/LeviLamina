@@ -4,12 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/file_system/FileAccessTransforms.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
-// auto generated forward declare list
-// clang-format off
-class IContentKeyProvider;
-// clang-format on
 
 class EncryptedZipTransforms : public ::FileAccessTransforms {
 public:
@@ -29,21 +23,7 @@ public:
     // NOLINTBEGIN
     virtual bool readTransform(::std::vector<uchar>& stream) const /*override*/;
 
-    virtual bool writeTransform(::std::vector<uchar>&) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit EncryptedZipTransforms(
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider);
+    virtual bool writeTransform(::std::vector<uchar>& stream) const /*override*/;
     // NOLINTEND
 
 public:
@@ -51,7 +31,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $readTransform(::std::vector<uchar>& stream) const;
 
-    MCNAPI bool $writeTransform(::std::vector<uchar>&) const;
+    MCNAPI bool $writeTransform(::std::vector<uchar>& stream) const;
 
 
     // NOLINTEND

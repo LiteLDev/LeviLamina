@@ -26,27 +26,16 @@ public:
     // prevent constructor by default
     RenderStageWithFrameBufferObject& operator=(RenderStageWithFrameBufferObject const&);
     RenderStageWithFrameBufferObject(RenderStageWithFrameBufferObject const&);
+    RenderStageWithFrameBufferObject();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual void preRender(::ScreenContext& screenContext) /*override*/;
 
-    virtual void postRender(::ScreenContext&) /*override*/;
+    virtual void postRender(::ScreenContext& screenContext) /*override*/;
 
     virtual void setupStage(::ScreenContext& screenContext, bool const clearBuffer);
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI RenderStageWithFrameBufferObject();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -54,7 +43,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $preRender(::ScreenContext& screenContext);
 
-    MCNAPI void $postRender(::ScreenContext&);
+    MCNAPI void $postRender(::ScreenContext& screenContext);
 
     MCNAPI void $setupStage(::ScreenContext& screenContext, bool const clearBuffer);
     // NOLINTEND

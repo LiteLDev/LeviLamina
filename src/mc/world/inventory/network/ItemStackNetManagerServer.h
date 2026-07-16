@@ -4,19 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/events/TextProcessingEventOrigin.h"
 #include "mc/util/CallbackToken.h"
 #include "mc/util/CallbackTokenContext.h"
-#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/network/ItemStackNetManagerBase.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class ContainerScreenContext;
-class ItemStack;
 class ItemStackNetManagerScreen;
 class ItemStackRequestActionHandler;
 class ItemStackRequestBatch;
@@ -25,8 +21,7 @@ class ServerPlayer;
 class TextFilteringProcessor;
 struct ItemStackLegacyRequestIdTag;
 struct ItemStackRequestIdTag;
-struct ItemStackRequestSlotInfo;
-struct ItemStackResponseInfo;
+struct LegacySetSlot;
 // clang-format on
 
 class ItemStackNetManagerServer : public ::ItemStackNetManagerBase {
@@ -67,7 +62,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemStackNetManagerServer() /*override*/;
+    virtual ~ItemStackNetManagerServer() /*override*/ = default;
 
     virtual ::ItemStackRequestId getRequestId() const /*override*/;
 
@@ -85,33 +80,14 @@ public:
     // NOLINTBEGIN
     MCAPI ItemStackNetManagerServer(::ServerPlayer& serverPlayer, bool isEnabled);
 
-    MCAPI void _filterStrings(
-        ::ItemStackRequestId                requestId,
-        ::std::vector<::std::string> const& stringsToFilter,
-        ::TextProcessingEventOrigin const&  stringsToFilterOrigin
-    );
-
     MCAPI void _handleLegacyTransactionRequest(
-        ::ItemStackLegacyRequestId const&                                            legacyClientRequestId,
-        ::std::vector<::std::pair<::ContainerEnumName, ::std::vector<uchar>>> const& legacySetItemSlots
+        ::ItemStackLegacyRequestId const&     legacyClientRequestId,
+        ::std::vector<::LegacySetSlot> const& legacySetItemSlots
     );
 
-    MCAPI void
-    _handleRequestData(::std::vector<::ItemStackResponseInfo>& responses, ::ItemStackRequestData const* requestData);
-
+#ifdef LL_PLAT_S
     MCAPI void _processQueue();
-
-    MCAPI void _queueRequest(::std::unique_ptr<::ItemStackRequestData> request);
-
-    MCAPI void _queueRequests(::ItemStackRequestBatch const& requestBatch);
-
-    MCAPI ::gsl::final_action<::std::function<void()>> _retainSetItemStackNetIdVariantScope();
-
-    MCAPI void _sendResponsePacket(::std::vector<::ItemStackResponseInfo>&& responses);
-
-    MCAPI void _setTextFilterState(::ItemStackNetManagerServer::TextFilterState state);
-
-    MCAPI bool _tryFilterText(::ItemStackRequestData const* requestData);
+#endif
 
     MCAPI void handleRequest(
         ::std::unique_ptr<::ItemStackRequestData>            request,
@@ -123,11 +99,7 @@ public:
         ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilteringProcessor
     );
 
-    MCAPI bool itemMatches(::ItemStackRequestSlotInfo const& slotInfo, ::ItemStack const& expectedItem);
-
     MCAPI void normalTick();
-
-    MCAPI void startCrafting(bool workbench, ::BlockPos const& pos);
 
     MCAPI ::CallbackToken tryCloseContainerScreen(::std::function<void()> onContainerScreenCloseCB);
     // NOLINTEND
@@ -136,12 +108,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ServerPlayer& serverPlayer, bool isEnabled);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

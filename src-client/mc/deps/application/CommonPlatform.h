@@ -42,10 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommonPlatform();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~CommonPlatform();
@@ -80,35 +76,40 @@ public:
 
     virtual void issueDPIChange(float dpi);
 
-    virtual void issueOrientationChange(::DisplayOrientation const& orientation);
+    virtual void issueOrientationChange(::DisplayOrientation const&);
 
     virtual void feedButtonPress(int const& button);
 
     virtual void feedKeyPress(char const key);
 
-    virtual void setTextboxText(::std::string const&);
+    virtual void setTextboxText(::std::string const& text);
 
-    virtual void setStorageDirectory(::FileStorageDirectory, bool, ::PropertyBag const&, ::std::function<void(bool)>);
+    virtual void setStorageDirectory(
+        ::FileStorageDirectory dir,
+        bool                   isCallback,
+        ::PropertyBag const&   extraData,
+        ::std::function<void(bool)>
+    );
 
-    virtual ::FileStorageDirectory setInitialStorageDirectory(::FileStorageDirectory);
+    virtual ::FileStorageDirectory setInitialStorageDirectory(::FileStorageDirectory dir);
 
     virtual ::FileStorageDirectory getStorageDirectory() const;
 
     virtual bool _preAppCreation(::Bedrock::ActivationArguments const&) = 0;
 
-    virtual bool _postAppCreation(::Bedrock::ActivationArguments const& actArgs) = 0;
+    virtual bool _postAppCreation(::Bedrock::ActivationArguments const&) = 0;
 
-    virtual void _processActivationArguments(::Bedrock::ActivationArguments const& args) = 0;
+    virtual void _processActivationArguments(::Bedrock::ActivationArguments const&) = 0;
 
-    virtual bool _update(bool canRender) = 0;
+    virtual bool _update(bool) = 0;
 
     virtual bool _isShuttingDown() = 0;
 
     virtual bool _isShutdown() = 0;
 
-    virtual void pushNotificationReceived_Shim(::PushNotificationMessage const& msg) = 0;
+    virtual void pushNotificationReceived_Shim(::PushNotificationMessage const&) = 0;
 
-    virtual void notifyUriListeners_Shim(::ActivationUri const& uri) = 0;
+    virtual void notifyUriListeners_Shim(::ActivationUri const&) = 0;
 
     virtual ::std::string getDeviceId_Shim() const = 0;
     // NOLINTEND
@@ -116,25 +117,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CommonPlatform(::brstd::move_only_function<::std::unique_ptr<::IMinecraftGame>()> createGame);
-
     MCAPI bool _createApp();
-
-    MCAPI void activate(::Bedrock::ActivationArguments const& actArgs);
-
-    MCAPI bool hasInitialized() const;
-
-    MCAPI bool init(::Bedrock::ActivationArguments const& actArgs);
-
-    MCAPI bool startApp(::Bedrock::ActivationArguments const& actArgs);
-
-    MCAPI int update(bool canRender);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::brstd::move_only_function<::std::unique_ptr<::IMinecraftGame>()> createGame);
     // NOLINTEND
 
 public:
@@ -172,17 +155,22 @@ public:
 
     MCFOLD void $issueDPIChange(float dpi);
 
-    MCFOLD void $issueOrientationChange(::DisplayOrientation const& orientation);
+    MCFOLD void $issueOrientationChange(::DisplayOrientation const&);
 
     MCAPI void $feedButtonPress(int const& button);
 
     MCAPI void $feedKeyPress(char const key);
 
-    MCFOLD void $setTextboxText(::std::string const&);
+    MCFOLD void $setTextboxText(::std::string const& text);
 
-    MCFOLD void $setStorageDirectory(::FileStorageDirectory, bool, ::PropertyBag const&, ::std::function<void(bool)>);
+    MCFOLD void $setStorageDirectory(
+        ::FileStorageDirectory dir,
+        bool                   isCallback,
+        ::PropertyBag const&   extraData,
+        ::std::function<void(bool)>
+    );
 
-    MCFOLD ::FileStorageDirectory $setInitialStorageDirectory(::FileStorageDirectory);
+    MCFOLD ::FileStorageDirectory $setInitialStorageDirectory(::FileStorageDirectory dir);
 
     MCFOLD ::FileStorageDirectory $getStorageDirectory() const;
     // NOLINTEND

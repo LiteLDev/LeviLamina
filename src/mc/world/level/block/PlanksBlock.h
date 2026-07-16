@@ -15,12 +15,8 @@ class PlanksBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::WoodType> mWoodType;
+    ::ll::TypedStorage<1, 1, ::WoodType> mWoodType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlanksBlock();
 
 public:
     // virtual functions
@@ -29,21 +25,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PlanksBlock(::std::string const& nameId, int id, ::WoodType woodType);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::array<::std::string, 10> const& WOOD_NAMES();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::WoodType woodType);
     // NOLINTEND
 
 public:

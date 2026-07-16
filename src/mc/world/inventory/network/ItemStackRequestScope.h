@@ -2,15 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/events/TextProcessingEventOrigin.h"
-#include "mc/world/inventory/network/TypedClientNetId.h"
-
 // auto generated forward declare list
 // clang-format off
 class ItemStackNetManagerClient;
 class ItemStackRequestAction;
-struct ItemStackRequestIdTag;
 // clang-format on
 
 struct ItemStackRequestScope {
@@ -25,27 +20,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ItemStackRequestScope();
-
-    MCNAPI explicit ItemStackRequestScope(::ItemStackNetManagerClient& manager);
-
     MCNAPI void addRequestAction(::std::unique_ptr<::ItemStackRequestAction> requestAction) const;
 
-    MCNAPI int addRequestToFilterString(::std::string const& stringToFilter, ::TextProcessingEventOrigin origin) const;
-
-    MCNAPI ::ItemStackRequestId getCurrentRequestId() const;
-
     MCNAPI ~ItemStackRequestScope();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::ItemStackNetManagerClient& manager);
 #endif
     // NOLINTEND
 

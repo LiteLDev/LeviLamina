@@ -20,8 +20,7 @@ class GrassTessellationPolicy : public ::BiomeColorSampling::TessellationPolicy 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::mce::Color
-    get(::Block const&, ::BlockSource& region, ::BlockPos const& pos, ::BiomeTintCache const* biomeTintCache) const
+    virtual ::mce::Color get(::Block const&, ::BlockSource&, ::BlockPos const&, ::BiomeTintCache const*) const
         /*override*/;
 
     virtual ::mce::Color get(::Block const&) const /*override*/;
@@ -30,16 +29,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::Color
-    $get(::Block const&, ::BlockSource& region, ::BlockPos const& pos, ::BiomeTintCache const* biomeTintCache) const;
 
-    MCAPI ::mce::Color $get(::Block const&) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

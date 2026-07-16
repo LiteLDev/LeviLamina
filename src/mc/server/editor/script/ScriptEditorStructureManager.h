@@ -2,18 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-
 // auto generated forward declare list
 // clang-format off
-class Vec3;
-namespace Editor::ScriptModule { class ScriptClipboardItem; }
-namespace Editor::ScriptModule { class ScriptEditorStructure; }
-namespace Editor::ScriptModule { class ScriptEditorStructureSearchOptions; }
-namespace Editor::Services { class ServerStructureServiceProvider; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -34,47 +24,9 @@ public:
     ScriptEditorStructureManager();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptEditorStructureManager(
-        ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> structureService,
-        ::Scripting::WeakLifetimeScope&                                     scope
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptEditorStructure>>
-    createEmptyStructure(::std::string const& structureName, ::Vec3 const& size);
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptEditorStructure>>
-    createFromClipboardItem(::Editor::ScriptModule::ScriptClipboardItem& item, ::std::string structureName);
-
-    MCNAPI ::Scripting::Result_deprecated<void> deleteStructure(::std::string id);
-
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getExistingTags();
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptEditorStructure>>
-    getStructure(::std::string id);
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptEditorStructure>>>
-    searchStructures(::std::optional<::Editor::ScriptModule::ScriptEditorStructureSearchOptions> optOptions);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> structureService,
-        ::Scripting::WeakLifetimeScope&                                     scope
-    );
     // NOLINTEND
 };
 

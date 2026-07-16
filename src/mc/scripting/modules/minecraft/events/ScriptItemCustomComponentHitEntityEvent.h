@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentPubSubConnectors.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentAfterEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentIntermediateStorage.h"
@@ -48,20 +48,12 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI IntermediateStorage(::ItemStack& item, ::Actor& hitEntity, ::Mob& attackingEntity, bool hadEffect);
-
-        MCAPI ~IntermediateStorage();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::ItemStack& item, ::Actor& hitEntity, ::Mob& attackingEntity, bool hadEffect);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 

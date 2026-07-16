@@ -4,8 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseGoal;
-class EntityContext;
 class Mob;
 // clang-format on
 
@@ -20,7 +18,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseGoalDefinition();
+    virtual ~BaseGoalDefinition() = default;
 
     virtual bool validateMobType(::Mob&) const;
 
@@ -28,21 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext&, ::BaseGoal& goal) const;
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::std::string, int> const& mControlFlagMap();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

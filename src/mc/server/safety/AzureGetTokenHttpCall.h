@@ -8,8 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class TaskGroup;
-namespace Bedrock::Http { class Request; }
-namespace Bedrock::Http { class Response; }
 namespace Bedrock::Services { struct AzureGetTokenHttpResponse; }
 namespace Bedrock::Services { struct AzureIdentityConfig; }
 namespace Bedrock::Services { struct ClientAssertion; }
@@ -54,21 +52,6 @@ public:
     );
 
     MCNAPI ::Bedrock::Threading::Async<::Bedrock::Services::AzureGetTokenHttpResponse> send(::TaskGroup& taskGroup);
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI static ::std::optional<::Bedrock::Http::Request> _buildRequest(
-        ::std::string const&                        url,
-        ::std::string const&                        clientId,
-        ::std::string const&                        scope,
-        ::Bedrock::Services::ClientAssertion const& clientAssertionAuth
-    );
-
-    MCNAPI static ::Bedrock::Services::AzureGetTokenHttpResponse _parseResponse(::Bedrock::Http::Response response);
 #endif
     // NOLINTEND
 

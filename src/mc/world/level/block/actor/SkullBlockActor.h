@@ -4,12 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/SkullBlock.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -17,7 +16,7 @@ class ILevel;
 class SaveContext;
 // clang-format on
 
-class SkullBlockActor : public ::BlockActor {
+class SkullBlockActor : public ::VanillaBlockActor {
 public:
     // member variables
     // NOLINTBEGIN
@@ -26,10 +25,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                     mAnimationTickCount;
     ::ll::TypedStorage<4, 4, ::SkullBlock::SkullType> mSkullType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SkullBlockActor();
 
 public:
     // virtual functions
@@ -42,31 +37,9 @@ public:
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SkullBlockActor(::BlockPos const& pos);
-
-#ifdef LL_PLAT_C
-    MCAPI float getAnimationProgress(float a);
-#endif
-
-    MCAPI float getRotation() const;
-
-    MCFOLD ::SkullBlock::SkullType getSkullType() const;
-
-    MCAPI void setRotation(float rot);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -80,7 +53,7 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
@@ -90,6 +63,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
     // NOLINTEND
 };

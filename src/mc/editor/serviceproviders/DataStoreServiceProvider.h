@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/datastore/EventType.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
 namespace Bedrock::PubSub { class Subscription; }
+namespace Editor::DataStore { class IContentBadgeContainer; }
 namespace Editor::DataStore { struct PayloadDescription; }
 namespace Json { class Value; }
 // clang-format on
@@ -21,6 +22,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~DataStoreServiceProvider() = default;
+
+    virtual ::Editor::DataStore::IContentBadgeContainer& getContentBadgeContainer() = 0;
 
     virtual ::Scripting::Result_deprecated<void> dispatchEvent(
         ::HashedString const&                          dataTag,

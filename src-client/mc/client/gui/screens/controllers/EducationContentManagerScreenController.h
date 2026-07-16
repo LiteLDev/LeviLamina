@@ -78,11 +78,7 @@ public:
 
     MCAPI void cancelWorldDownload();
 
-    MCAPI void cancelWorldLaunch();
-
     MCAPI void importWorld(::LessonItem& item);
-
-    MCAPI bool isDownloadInProgress() const;
 
     MCAPI void launchWorld(
         ::LessonItem&                              item,
@@ -107,13 +103,5 @@ public:
         ::ToastManager&                                             tm,
         ::EducationContentManagerScreenController::OptionalBehavior optionalBehavior
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

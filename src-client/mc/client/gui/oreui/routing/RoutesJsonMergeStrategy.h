@@ -37,14 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _addRoutes(::OreUI::RouteData const& newRouteData);
-
-    MCAPI void _removeRoutes(::OreUI::RouteData const& newRouteData);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $mergeFiles(::std::vector<::LoadedResourceData> const& fileStack);

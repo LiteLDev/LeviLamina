@@ -46,8 +46,6 @@ public:
     );
 
     MCAPI ::PlayerListEntry const& _getLevelLocalPlayerListEntry();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

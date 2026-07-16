@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
@@ -31,10 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptActorEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::EventResult onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod) /*override*/;
@@ -42,26 +38,6 @@ public:
     virtual ::EventResult onEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;
 
     virtual ::EventResult onEvent(::ProjectileHitEvent const& projectileHitEvent) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptActorEventListener(
-        ::Scripting::WeakLifetimeScope const&                                            scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle,
-        bool                                                                             afterListener
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Scripting::WeakLifetimeScope const&                                            scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle,
-        bool                                                                             afterListener
-    );
     // NOLINTEND
 
 public:

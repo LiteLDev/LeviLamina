@@ -9,9 +9,7 @@
 // clang-format off
 class IMinecraftEventing;
 class ResourcePackManager;
-class SemVersionConstant;
 struct PBRFallbackSettings;
-namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -36,24 +34,6 @@ public:
         PBRFallbackConfigSettings& operator=(PBRFallbackConfigSettings const&);
         PBRFallbackConfigSettings(PBRFallbackConfigSettings const&);
         PBRFallbackConfigSettings();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PBRFallbackConfigSettings();
-        // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCNAPI static ::SemVersionConstant const& VERSION();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -82,21 +62,12 @@ public:
     MCNAPI explicit PBRFallbackConfig(::IMinecraftEventing& eventing);
 
     MCNAPI void loadDataSync(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager& resourcePackManager);
-
-    MCNAPI ::Puv::LoadResultAny
-    loadFromString(::cereal::ReflectionCtx const& ctx, ::std::string const& pbrFallbackJson);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindPBRFallbackParameters(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& PAYLOAD_KEY();
     // NOLINTEND
 
 public:

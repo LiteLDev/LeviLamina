@@ -32,6 +32,8 @@ public:
     // NOLINTBEGIN
     MCAPI ActorDefinitionTrigger(::SharedTypes::v1_21_120::ActorDefinitionTrigger const&);
 
+    MCAPI bool operator==(::SharedTypes::v1_21_120::ActorDefinitionTrigger const&) const;
+
     MCAPI ~ActorDefinitionTrigger();
     // NOLINTEND
 
@@ -50,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

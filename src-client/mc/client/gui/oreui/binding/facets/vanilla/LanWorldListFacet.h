@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ namespace World { class LanServerWorldList; }
 
 namespace OreUI {
 
-class LanWorldListFacet : public ::OreUI::FacetBase<::OreUI::LanWorldListFacet> {
+class LanWorldListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::LanWorldListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LanWorldListFacet() /*override*/;
+    virtual ~LanWorldListFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -42,8 +42,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit LanWorldListFacet(::World::LanServerWorldList& lanServerWorldList);
-
-    MCFOLD ::std::vector<::OreUI::LanWorld>& getLanWorlds();
     // NOLINTEND
 
 public:
@@ -56,12 +54,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::World::LanServerWorldList& lanServerWorldList);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -5,9 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 #include "mc/deps/input/interface/ControllerRefreshState.h"
-#include "mc/deps/input/interface/GameControllerButtonState.h"
 #include "mc/deps/input/interface/GameControllerErrorType.h"
-#include "mc/deps/input/interface/GameControllerStickState.h"
 #include "mc/deps/input/interface/IGameControllerManager.h"
 
 // auto generated forward declare list
@@ -33,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameControllerManager() /*override*/;
+    virtual ~GameControllerManager() /*override*/ = default;
 
     virtual ::std::weak_ptr<::IGameController> getGameController(int id) /*override*/;
 
@@ -43,7 +41,7 @@ public:
 
     virtual bool hasAdequateConnectedGameController() const /*override*/;
 
-    virtual bool hasAdequateConnectedGameControllers(uint64 const playerCount) const /*override*/;
+    virtual bool hasAdequateConnectedGameControllers(uint64 const) const /*override*/;
 
     virtual uint64 getMaxGameControllerButtons() const /*override*/;
 
@@ -58,7 +56,7 @@ public:
     virtual ::GameControllerErrorType getPlatformSpecificControllerError() const /*override*/;
 
     virtual void
-    setPlatformSpecificControllerErrorRetrievalFunc(::std::function<::GameControllerErrorType()>&& lambda) /*override*/;
+    setPlatformSpecificControllerErrorRetrievalFunc(::std::function<::GameControllerErrorType()>&&) /*override*/;
 
     virtual void resetClientControllerCount() /*override*/;
 
@@ -69,23 +67,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameControllerManager();
-
-    MCAPI void
-    feedButton(int gameControllerId, int buttonId, ::GameControllerButtonState buttonState, bool allowRemapping);
-
-    MCAPI void feedChangeUser(int gameControllerId, bool restrictToControllerIdChange);
-
-    MCAPI void feedJoinGame(int gameControllerId, bool isConfirmation);
-
-    MCAPI void feedStick(int gameControllerId, int stickId, ::GameControllerStickState state, float x, float y);
-
-    MCAPI void feedTrigger(int gameControllerId, int triggerId, float magnitude);
-
-    MCAPI bool getGameControllerIsConnected(int gameControllerId) const;
-
-    MCAPI bool isAdequateController(int gameControllerId);
-
     MCAPI void setGameControllerConnected(int gameControllerId, bool isConnected);
     // NOLINTEND
 
@@ -96,31 +77,13 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::weak_ptr<::IGameController> $getGameController(int id);
 
-    MCAPI ::std::vector<::std::weak_ptr<::IGameController>> $getConnectedGameControllers();
-
     MCAPI ::std::vector<::std::weak_ptr<::IGameController>> $getGameControllersInUse();
 
     MCAPI bool $hasAdequateConnectedGameController() const;
-
-    MCAPI bool $hasAdequateConnectedGameControllers(uint64 const playerCount) const;
-
-    MCFOLD uint64 $getMaxGameControllerButtons() const;
 
     MCAPI void $registerConsumer(void const* token);
 
@@ -132,16 +95,8 @@ public:
 
     MCAPI ::GameControllerErrorType $getPlatformSpecificControllerError() const;
 
-    MCAPI void $setPlatformSpecificControllerErrorRetrievalFunc(::std::function<::GameControllerErrorType()>&& lambda);
-
     MCAPI void $resetClientControllerCount();
 
     MCAPI void $addClientHasAdequateConnectedController(int id, bool const isAdequate, ::SubClientId clientId);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

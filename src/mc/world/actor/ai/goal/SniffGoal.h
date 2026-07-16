@@ -5,14 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/shared_types/FloatRange.h"
-#include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-struct DistanceSortedActor;
 // clang-format on
 
 class SniffGoal : public ::BaseGoal {
@@ -49,22 +47,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SniffGoal(::Mob& mob);
-
-    MCAPI ::std::vector<::DistanceSortedActor> _fetchNearbySniffableActors(::ActorType actorType) const;
-
-    MCAPI ::std::optional<::DistanceSortedActor> _fetchNearestSniffableActor() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

@@ -36,18 +36,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void render(
-        ::ScreenContext& screenContext,
-        ::Actor&         entity,
-        float            time,
-        float            r,
-        float            bob,
-        float            yRot,
-        float            xRot,
-        float            scale
-    ) /*override*/;
+    virtual void render(::ScreenContext&, ::Actor&, float, float, float, float, float, float) /*override*/;
 
-    virtual void setupAnim(::Actor& bob, float yRot, float xRot, float, float, float, float);
+    virtual void setupAnim(::Actor&, float, float, float, float, float, float);
     // NOLINTEND
 
 public:
@@ -65,23 +56,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(
-        ::ScreenContext& screenContext,
-        ::Actor&         entity,
-        float            time,
-        float            r,
-        float            bob,
-        float            yRot,
-        float            xRot,
-        float            scale
-    );
 
-    MCAPI void $setupAnim(::Actor& bob, float yRot, float xRot, float, float, float, float);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

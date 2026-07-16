@@ -33,16 +33,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::FeaturePlacementFailureLog::SourceMessagePair> const& getFailureLog() const;
-
     MCAPI void logFailure(::Bedrock::StaticOptimizedString source, ::Bedrock::StaticOptimizedString message);
-
-    MCAPI ~FeaturePlacementFailureLog();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

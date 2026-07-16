@@ -27,12 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-#else // LL_PLAT_C
     virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -46,10 +41,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
-#endif
-
 
     // NOLINTEND
 };

@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace dragon { class ResolvedTextureResource; }
 namespace dragon { struct ResolvedIndexBufferResource; }
 namespace dragon { struct ResolvedVertexBufferResource; }
 // clang-format on
@@ -37,25 +36,10 @@ public:
             ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource> const& lhs,
             ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource> const& rhs
         ) const;
-
-        MCNAPI bool operator()(
-            ::mce::ServerResourcePointer<::dragon::ResolvedTextureResource> const& lhs,
-            ::mce::ServerResourcePointer<::dragon::ResolvedTextureResource> const& rhs
-        ) const;
         // NOLINTEND
     };
 
-    struct BufferHasher {
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI uint64 operator()(::mce::ServerResourcePointer<::dragon::ResolvedVertexBufferResource> const& lhs) const;
-
-        MCNAPI uint64 operator()(::mce::ServerResourcePointer<::dragon::ResolvedTextureResource> const& lhs) const;
-
-        MCNAPI uint64 operator()(::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource> const& lhs) const;
-        // NOLINTEND
-    };
+    struct BufferHasher {};
 
     struct ThreadLocalData {};
 };

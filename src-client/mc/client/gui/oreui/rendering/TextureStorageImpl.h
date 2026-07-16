@@ -23,7 +23,6 @@ namespace Gameface { struct VisitedSampler; }
 namespace Gameface { struct VisitedTexture; }
 namespace GeometryAtlas { class IAtlasTile; }
 namespace dragon { class ResolvedTextureResource; }
-namespace mce { class TexturePtr; }
 namespace mce { struct SamplerStateDescription; }
 namespace renoir { struct DepthStencilTexture; }
 namespace renoir { struct Sampler2D; }
@@ -74,31 +73,6 @@ public:
                 ::std::shared_ptr<::GeometryAtlas::IAtlasTile>>>
                                                                 mTexture;
         ::ll::TypedStorage<8, 64, ::dragon::TextureDescription> mDesc;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TextureStorage& operator=(TextureStorage const&);
-        TextureStorage();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI TextureStorage(::Gameface::TextureStorageImpl::TextureStorage const&);
-
-        MCAPI ~TextureStorage();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::Gameface::TextureStorageImpl::TextureStorage const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -203,14 +177,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit TextureStorageImpl(::Gameface::BackendTextureStorageDependencies&& deps);
-
-    MCAPI void
-    _wrapUserTexture(::Gameface::TextureStorageImpl::WrapUserTextureArgs const& args, ::mce::TexturePtr texture);
-
-    MCAPI void _wrapUserTexture(
-        ::Gameface::TextureStorageImpl::WrapUserTextureArgs const& args,
-        ::std::shared_ptr<::GeometryAtlas::IAtlasTile> const&      tile
-    );
     // NOLINTEND
 
 public:

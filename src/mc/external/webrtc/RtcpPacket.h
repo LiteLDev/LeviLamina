@@ -3,7 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/FunctionView.h"
+#include "mc/external/webrtc/ArrayView.h"
+#include "mc/external/webrtc/FunctionView.h"
 
 namespace webrtc::rtcp {
 
@@ -28,10 +29,10 @@ public:
     virtual uint64 BlockLength() const = 0;
 
     virtual bool Create(
-        uchar*                                                   packet,
-        uint64*                                                  index,
-        uint64                                                   max_length,
-        ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback
+        uchar*                                                                               packet,
+        uint64*                                                                              index,
+        uint64                                                                               max_length,
+        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> callback
     ) const = 0;
     // NOLINTEND
 
@@ -40,8 +41,11 @@ public:
     // NOLINTBEGIN
     MCNAPI uint64 HeaderLength() const;
 
-    MCNAPI bool
-    OnBufferFull(uchar* packet, uint64* index, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback) const;
+    MCNAPI bool OnBufferFull(
+        uchar*                                                                               packet,
+        uint64*                                                                              index,
+        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> callback
+    ) const;
     // NOLINTEND
 
 public:

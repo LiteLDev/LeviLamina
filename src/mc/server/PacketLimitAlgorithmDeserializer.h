@@ -8,8 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IPacketLimitAlgorithm;
-namespace Json { class Value; }
+namespace Core { class Path; }
 // clang-format on
 
 class PacketLimitAlgorithmDeserializer {
@@ -28,17 +27,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI ::Bedrock::Result<::std::unique_ptr<::IPacketLimitAlgorithm>>
-    _deserializeAlgorithm(::Json::Value& algorithmNode);
-
-    MCNAPI ::Bedrock::Result<::PacketGroupDefinition::PacketGroupBuilder>
-    _deserializePacketLimitConfig(::Json::Value& root);
+#ifdef LL_PLAT_C
+    MCNAPI explicit PacketLimitAlgorithmDeserializer(::Core::Path const& filePath);
+#endif
 
     MCNAPI ::Bedrock::Result<::PacketGroupDefinition::PacketGroupBuilder> deserializePacketLimitConfig();
-
-    MCNAPI ~PacketLimitAlgorithmDeserializer();
-#endif
     // NOLINTEND
 
 public:
@@ -50,10 +43,10 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Core::Path const& filePath);
 #endif
     // NOLINTEND
 };

@@ -15,18 +15,6 @@ public:
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> path;
     ::ll::TypedStorage<4, 4, ::ResourceFileSystem>               fileSystem;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ResourcePath();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

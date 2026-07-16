@@ -16,6 +16,7 @@ class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 // clang-format on
 
 class Monster : public ::Mob {
@@ -41,7 +42,7 @@ public:
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
@@ -79,9 +80,10 @@ public:
 
     MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
-    MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 

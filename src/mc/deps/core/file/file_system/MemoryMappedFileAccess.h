@@ -29,13 +29,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual uint64 fread(void* buffer, uint64 count, uint64 file, void*) const /*override*/;
+        virtual uint64 fread(void* buffer, uint64, uint64 count, void* file) const /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI uint64 $fread(void* buffer, uint64 count, uint64 file, void*) const;
+        MCNAPI uint64 $fread(void* buffer, uint64, uint64 count, void* file) const;
 
 
         // NOLINTEND
@@ -51,13 +51,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual uint64 fwrite(void const* buffer, uint64 count, uint64 file, void*) /*override*/;
+        virtual uint64 fwrite(void const* buffer, uint64, uint64 count, void* file) /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI uint64 $fwrite(void const* buffer, uint64 count, uint64 file, void*);
+        MCNAPI uint64 $fwrite(void const* buffer, uint64, uint64 count, void* file);
 
 
         // NOLINTEND
@@ -85,18 +85,6 @@ public:
         StreamDetails& operator=(StreamDetails const&);
         StreamDetails(StreamDetails const&);
         StreamDetails();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~StreamDetails();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct StreamHandle {
@@ -136,7 +124,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MemoryMappedFileAccess() /*override*/;
+    virtual ~MemoryMappedFileAccess() /*override*/ = default;
 
     virtual void* fopen(::Core::PathView filePath, ::std::string const& mode) /*override*/;
 
@@ -163,24 +151,12 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::FileAccessTransforms const& EMPTY_TRANSFORMS();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const& inner,
         ::std::unique_ptr<::FileAccessTransforms>           transforms
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

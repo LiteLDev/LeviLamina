@@ -29,9 +29,8 @@ public:
     virtual ~CerealSchemaUpgrade();
 
     virtual bool previousSchema(
-        ::rapidjson::GenericValue<
-            ::rapidjson::UTF8<char>,
-            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
+        ::rapidjson::
+            GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&
     ) const = 0;
 
     virtual void upgradeToNext(

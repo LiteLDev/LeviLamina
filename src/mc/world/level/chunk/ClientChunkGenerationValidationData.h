@@ -14,11 +14,5 @@ public:
     // NOLINTBEGIN
     MCAPI void
     _captureChunkData(::std::map<::ChunkPos, ::std::vector<::std::string>>& data, ::ChunkSource& chunkSource);
-
-#ifdef LL_PLAT_C
-    MCAPI void captureClientChunkData(::ChunkSource& clientChunkSource);
-#endif
-
-    MCAPI void captureServerChunkData(::ChunkSource& serverChunkSource);
     // NOLINTEND
 };

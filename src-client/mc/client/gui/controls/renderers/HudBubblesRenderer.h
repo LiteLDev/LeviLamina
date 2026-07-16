@@ -11,11 +11,9 @@
 // clang-format off
 class IClientInstance;
 class MinecraftUIRenderContext;
-class ScreenContext;
 class UIControl;
 class UICustomRenderer;
 class UIScene;
-namespace mce { class TextureGroup; }
 // clang-format on
 
 class HudBubblesRenderer : public ::MinecraftUICustomRenderer {
@@ -38,7 +36,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                mPopSoundReady;
     ::ll::TypedStorage<1, 1, bool>                                mWobblingLastFrame;
     ::ll::TypedStorage<8, 96, ::std::array<::mce::TexturePtr, 3>> mBubbleTextures;
-    ::ll::TypedStorage<8, 1656, ::std::array<::mce::Mesh, 3>>     mBubbleMeshes;
+    ::ll::TypedStorage<8, 1776, ::std::array<::mce::Mesh, 3>>     mBubbleMeshes;
     ::ll::TypedStorage<4, 120, ::std::array<::glm::vec3, 10>>     mIconPosition;
     // NOLINTEND
 
@@ -49,31 +47,15 @@ public:
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual void
-    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int) /*override*/;
+    virtual void render(::MinecraftUIRenderContext&, ::IClientInstance&, ::UIControl&, int) /*override*/;
 
-    virtual bool update(::IClientInstance& client, ::UIControl&, ::UIScene const&) /*override*/;
+    virtual bool update(::IClientInstance&, ::UIControl&, ::UIScene const&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI HudBubblesRenderer();
-
-    MCFOLD bool _areTexturesValid() const;
-
-    MCAPI void _loadBubbleTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-
-    MCAPI void _tryPlayPopSound(::IClientInstance& client);
-
-    MCFOLD bool _validateBubbleMeshes(::ScreenContext& screenContext);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::tuple<int, int, int>
-    calculateBubbleData(bool isBreathing, bool isCreativeOrSpectator, short supply, short maxSupply);
     // NOLINTEND
 
 public:
@@ -85,16 +67,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int);
-
-    MCAPI bool $update(::IClientInstance& client, ::UIControl&, ::UIScene const&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

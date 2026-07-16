@@ -39,15 +39,26 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        IntermediateStorage();
+
+    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~IntermediateStorage();
+        MCAPI IntermediateStorage(
+            ::ItemUseMethod&,
+            ::ItemStack const& initialItemStack,
+            ::ItemStack&,
+            ::Player& player,
+            ::Level&
+        );
         // NOLINTEND
 
     public:
-        // destructor thunk
+        // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void*
+        $ctor(::ItemUseMethod&, ::ItemStack const& initialItemStack, ::ItemStack&, ::Player& player, ::Level&);
         // NOLINTEND
     };
 

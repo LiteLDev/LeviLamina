@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class Mob;
 // clang-format on
 
 class InspectBookshelfGoal : public ::BaseMoveToBlockGoal {
@@ -19,10 +18,6 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos> mBookshelfPos;
     ::ll::TypedStorage<1, 1, bool>        mRequireSameY;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InspectBookshelfGoal();
 
 public:
     // virtual functions
@@ -38,18 +33,6 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual bool _canReach(::BlockPos const& pos) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit InspectBookshelfGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

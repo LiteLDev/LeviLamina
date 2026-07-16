@@ -22,18 +22,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>           playerHasItemsForTrade;
     ::ll::TypedStorage<1, 1, bool>           isSelectedTrade;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~TradeOfferInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace GameplayUI

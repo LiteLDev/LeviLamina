@@ -8,7 +8,6 @@
 #include "mc/deps/input/MouseInputMapping.h"
 #include "mc/deps/input/TestAutoInputMapping.h"
 #include "mc/deps/input/TouchInputMapping.h"
-#include "mc/deps/input/enums/DirectionId.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -49,10 +48,6 @@ public:
         ::std::vector<::ChordButtonMapping>&  aChordButtonMapping,
         ::std::vector<::DeviceButtonMapping>& aDeviceButtonMapping
     );
-
-    MCAPI ::std::vector<::std::string> getButtonDifference(::InputMapping const* otherMapping) const;
-
-    MCAPI ::std::vector<::DirectionId> getStickDifference(::InputMapping const* otherMapping) const;
 
     MCAPI ~InputMapping();
     // NOLINTEND

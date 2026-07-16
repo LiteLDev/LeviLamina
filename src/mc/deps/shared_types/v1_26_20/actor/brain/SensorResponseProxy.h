@@ -16,6 +16,18 @@ public:
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                                        mEventName;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_26_20::Brain::MemorySetterDefinition>> mSetters;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~SensorResponseProxy();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_26_20::Brain::MemorySensors

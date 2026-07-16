@@ -13,9 +13,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ContainerComponent;
 class Mob;
-class ShareableComponent;
 // clang-format on
 
 class AdmireItemGoal : public ::BaseGoal {
@@ -58,11 +56,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit AdmireItemGoal(::Mob& mob);
-
-    MCAPI void _removeItemFromOffhandSlot() const;
-
-    MCAPI void
-    _tryPlaceItemInInventory(::ContainerComponent& containerComponent, ::ShareableComponent const& shareableComponent);
     // NOLINTEND
 
 public:

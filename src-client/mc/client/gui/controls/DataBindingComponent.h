@@ -42,31 +42,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>                          alreadyBoundOnce;
         ::ll::TypedStorage<1, 1, bool>                          visible;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DataBinding& operator=(DataBinding const&);
-        DataBinding();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI DataBinding(::DataBindingComponent::DataBinding const&);
-
-        MCAPI ~DataBinding();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::DataBindingComponent::DataBinding const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -79,10 +54,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DataBindingComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
@@ -93,8 +64,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DataBindingComponent(::UIControl& owner);
-
     MCAPI void _addBindings(
         ::BindingType        bindingType,
         ::std::string const& collectionName,
@@ -105,13 +74,6 @@ public:
 
     MCAPI void
     _bind(::ScreenController& controller, bool visible, ::std::vector<::DataBindingComponent::DataBinding>& bindings);
-
-    MCAPI bool _isCollectionSizeBinding(::DataBindingComponent::DataBinding const& binding) const;
-
-    MCAPI void _updateCollectionBindingIndicies();
-
-    MCAPI void
-    _updateCustomComponentsPostBinding(::std::string_view propertyName, ::UIControl& owner, ::UiExpression expression);
 
     MCAPI void addCollectionBinding(
         ::std::string const& collectionName,
@@ -137,24 +99,6 @@ public:
         ::UiExpression                  sourcePropertyName,
         ::std::string const&            targetPropertyName
     );
-
-    MCAPI void bindAlwaysBinds(::ScreenController& controller, bool visible);
-
-    MCAPI void bindHighPriorityBinds(::ScreenController& controller, bool visible);
-
-    MCAPI void bindLowPriorityBinds(::ScreenController& controller, bool visible);
-
-    MCFOLD bool getDirty() const;
-
-    MCAPI bool hasAlwaysBinds() const;
-
-    MCFOLD void setDirty(bool dirty);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:

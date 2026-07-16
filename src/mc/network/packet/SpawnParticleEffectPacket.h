@@ -25,8 +25,7 @@ public:
 
 public:
     // prevent constructor by default
-    SpawnParticleEffectPacket& operator=(SpawnParticleEffectPacket const&);
-    SpawnParticleEffectPacket(SpawnParticleEffectPacket const&);
+    SpawnParticleEffectPacket();
 
 public:
     template <typename... Args>
@@ -73,18 +72,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnParticleEffectPacket();
-
     MCAPI explicit SpawnParticleEffectPacket(::SpawnParticleEffectPacketPayload payload);
-
-    MCAPI ::SpawnParticleEffectPacket& operator=(::SpawnParticleEffectPacket&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SpawnParticleEffectPacketPayload payload);
     // NOLINTEND
 

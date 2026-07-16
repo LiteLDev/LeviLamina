@@ -28,13 +28,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<1, 1, bool> mEnableMultiBlockState;
         // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void
-        fromStringVector(::BlockTrait::MultiBlock::EnabledStates& instance, ::std::vector<::std::string> const& states);
-        // NOLINTEND
     };
 
 public:
@@ -55,12 +48,6 @@ public:
     virtual ::std::unique_ptr<::CompoundTag> _buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
 
     virtual ::std::string const& _getName() const /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

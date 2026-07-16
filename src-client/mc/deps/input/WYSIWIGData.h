@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<4, 4, int>               mNumberOfEnabledConfigs;
     ::ll::TypedStorage<4, 4, ::WYSIWYGState>    mWYSIWYGState;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~WYSIWIGData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

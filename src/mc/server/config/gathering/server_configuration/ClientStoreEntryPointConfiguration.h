@@ -29,8 +29,6 @@ public:
 
     MCNAPI ::ServerConfiguration::ClientStoreEntryPointConfiguration&
     operator=(::ServerConfiguration::ClientStoreEntryPointConfiguration&&);
-
-    MCNAPI ~ClientStoreEntryPointConfiguration();
     // NOLINTEND
 
 public:
@@ -43,12 +41,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ServerConfiguration::ClientStoreEntryPointConfiguration const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

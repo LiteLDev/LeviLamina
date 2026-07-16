@@ -19,10 +19,4 @@ public:
     TaskStartInfo& operator=(TaskStartInfo const&);
     TaskStartInfo(TaskStartInfo const&);
     TaskStartInfo();
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::thread::id const& NoAffinity();
-    // NOLINTEND
 };

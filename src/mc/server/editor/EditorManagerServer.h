@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/EditorManager.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
@@ -25,9 +25,7 @@ struct ScriptingWorldInitializeEvent;
 namespace Core { class FilePathManager; }
 namespace Editor { class IEditorPlayer; }
 namespace Editor { struct EditorInitParams; }
-namespace Editor::Network { class INetworkPayload; }
 namespace Scripting { class GenericModuleBindingFactory; }
-namespace Scripting { struct ContextId; }
 // clang-format on
 
 namespace Editor {
@@ -43,6 +41,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkf4abda;
     ::ll::UntypedStorage<8, 24> mUnk62d704;
     ::ll::UntypedStorage<8, 8>  mUnke15a95;
+    ::ll::UntypedStorage<8, 8>  mUnkdddb22;
     // NOLINTEND
 
 public:
@@ -54,30 +53,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorManagerServer() /*override*/;
+    virtual ~EditorManagerServer() /*override*/ = default;
 
     virtual bool isClientSide() const /*override*/;
 
-    virtual ::std::unique_ptr<::Editor::IEditorPlayer> createPlayer(::Player& player) /*override*/;
+    virtual ::std::unique_ptr<::Editor::IEditorPlayer> createPlayer(::Player&) /*override*/;
 
     virtual ::EventResult onServerLevelInitialized(::ServerInstance& instance, ::Level& level) /*override*/;
 
     virtual ::EventResult onStartLeaveGame(::ServerInstance& instance) /*override*/;
 
-    virtual ::EventResult onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent) /*override*/;
+    virtual ::EventResult onEvent(::ScriptingWorldInitializeEvent const&) /*override*/;
 
     virtual ::EventResult onLevelTick(::Level&) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> scriptingTeardown() /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void>
-    scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> scriptingRebuild() /*override*/;
+
+    virtual bool isEditorModeOrInEditorWorld() const /*override*/;
 
     virtual ::std::unique_ptr<::FileArchiver::IWorldConverter> createWorldConverter(
-        ::ILevelListCache&                                              levelListCache,
-        ::Scheduler&                                                    scheduler,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
+        ::ILevelListCache&,
+        ::Scheduler&,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>
     ) /*override*/;
     // NOLINTEND
 
@@ -86,11 +86,10 @@ public:
     // NOLINTBEGIN
     MCNAPI EditorManagerServer(
         ::ServerInstance&                                      server,
+        bool                                                   isEditorModeEnabled,
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager,
         ::std::unique_ptr<::Editor::EditorInitParams>          editorInitParams
     );
-
-    MCNAPI void _dispatchToServerPlayers(::Editor::Network::INetworkPayload& payload);
 
     MCNAPI ::std::vector<::std::unique_ptr<::Scripting::GenericModuleBindingFactory>> getServerModuleFactories();
     // NOLINTEND
@@ -100,58 +99,16 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(
         ::ServerInstance&                                      server,
+        bool                                                   isEditorModeEnabled,
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager,
         ::std::unique_ptr<::Editor::EditorInitParams>          editorInitParams
     );
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isClientSide() const;
 
-    MCNAPI ::std::unique_ptr<::Editor::IEditorPlayer> $createPlayer(::Player& player);
-
-    MCNAPI ::EventResult $onServerLevelInitialized(::ServerInstance& instance, ::Level& level);
-
-    MCNAPI ::EventResult $onStartLeaveGame(::ServerInstance& instance);
-
-    MCNAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent);
-
-    MCNAPI ::EventResult $onLevelTick(::Level&);
-
-    MCNAPI ::Scripting::Result_deprecated<void> $scriptingTeardown();
-
-    MCNAPI ::Scripting::Result_deprecated<void> $scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent);
-
-    MCNAPI ::std::unique_ptr<::FileArchiver::IWorldConverter> $createWorldConverter(
-        ::ILevelListCache&                                              levelListCache,
-        ::Scheduler&                                                    scheduler,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
-    );
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIEditorManager();
-
-    MCNAPI static void** $vftableForEditorServiceList();
-
-    MCNAPI static void** $vftableForEditorManagerServiceProvider();
-
-    MCNAPI static void** $vftableForServerInstanceEventListener();
-
-    MCNAPI static void** $vftableForEventListenerDispatcher();
     // NOLINTEND
 };
 

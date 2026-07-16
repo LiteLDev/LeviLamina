@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/server/commands/CurrentCmdVersion.h"
-
 // auto generated forward declare list
 // clang-format off
 class ResourcePackManager;
@@ -26,14 +23,5 @@ public:
     MCFOLD ::NpcDialogueScene* getScene(::std::string const& sceneName);
 
     MCAPI void init(::ResourcePackManager& resourcePackManager);
-
-    MCAPI bool
-    parseFile(::std::string const& fileData, ::std::string const& fileName, ::CurrentCmdVersion packCommandVersion);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& MAX_NUM_BUTTONS();
     // NOLINTEND
 };

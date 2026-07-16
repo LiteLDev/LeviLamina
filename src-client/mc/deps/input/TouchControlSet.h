@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/input/TouchMoveAndTurnControlState.h"
 #include "mc/deps/input/TouchPointResults.h"
-#include "mc/deps/input/TouchState.h"
 #include "mc/deps/input/TouchTurnControlState.h"
 #include "mc/deps/input/TouchTurnState.h"
 
@@ -13,15 +12,9 @@
 // clang-format off
 class BindingFactory;
 class InputEventQueue;
-class InputRenderContext;
-class RectangleArea;
 class TouchControl;
 class TouchMoveAndTurnInteractControl;
 class TouchTurnInteractControl;
-struct TouchControlConfig;
-struct TouchGlyphButtonBinding;
-struct TouchTapOrHoldGlyphButtonBinding;
-struct TouchTextButtonBinding;
 // clang-format on
 
 class TouchControlSet {
@@ -44,64 +37,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TouchControlSet();
-
-    MCAPI void addConditionalGuiPassthrough(
-        ::BindingFactory const& bindingFactory,
-        uint                    areaBindingName,
-        ::std::string const&    buttonName,
-        uint                    conditionName,
-        bool                    consumeInput
-    );
-
     MCAPI void addCustomZone(::BindingFactory const& bindingFactory, uint areaBindingName, uint conditionName);
-
-    MCAPI void addGlyphButton(::BindingFactory const& bindingFactory, ::TouchGlyphButtonBinding const& binding);
-
-    MCAPI void addMoveAndTurnInteract(
-        ::TouchControlConfig const&                       touchControlConfig,
-        ::std::function<::std::vector<::RectangleArea>()> inactiveAreas
-    );
-
-    MCAPI void addPointer(int id, ::TouchState state, float x, float y, bool captured, bool startedInactive);
-
-    MCAPI void
-    addTapOrHoldGlyphButton(::BindingFactory const& bindingFactory, ::TouchTapOrHoldGlyphButtonBinding const& binding);
-
-    MCAPI void addTextButton(::BindingFactory const& bindingFactory, ::TouchTextButtonBinding const& binding);
-
-    MCAPI void addTouchControlEditor(
-        ::BindingFactory const& bindingFactory,
-        uint                    areaBindingName,
-        uint                    mainPanelAreaBindingName,
-        uint                    subPanelAreaBindingName,
-        uint                    conditionBindingName
-    );
-
-    MCAPI void addTurnInteract(
-        ::TouchControlConfig const&                       touchControlConfig,
-        ::std::function<::std::vector<::RectangleArea>()> inactiveAreas
-    );
 
     MCAPI void clearControls(::InputEventQueue& eventQueue);
 
-    MCAPI void clearPointers();
-
-    MCAPI void getTouchIdsWithFlags(::std::vector<::std::pair<int, int>>& touchIdsWithFlags);
-
-    MCAPI void render(::InputRenderContext& context) const;
-
-    MCAPI void setWindowSize(int width, int height);
-
-    MCAPI void tick(::InputEventQueue& eventQueue, int yAxisInversionFactor);
-
     MCAPI ~TouchControlSet();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

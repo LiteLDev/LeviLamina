@@ -16,26 +16,10 @@ namespace Bedrock::Http {
 
 class HttpDiagnostics : public ::Bedrock::Http::DispatcherProcess {
 public:
-    // prevent constructor by default
-    HttpDiagnostics();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response>
     send(::Bedrock::Http::Request&& request) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit HttpDiagnostics(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
     // NOLINTEND
 
 public:

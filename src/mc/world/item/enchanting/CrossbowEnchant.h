@@ -17,7 +17,7 @@ public:
 
     virtual bool isCompatibleWith(::Enchant::Type type) const /*override*/;
 
-    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const /*override*/;
+    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type) const /*override*/;
     // NOLINTEND
 
 public:
@@ -29,22 +29,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getMinCost(int level) const;
 
-    MCAPI int $getMaxCost(int level) const;
-
-    MCAPI int $getMaxLevel() const;
-
-    MCAPI bool $isCompatibleWith(::Enchant::Type type) const;
-
-    MCAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

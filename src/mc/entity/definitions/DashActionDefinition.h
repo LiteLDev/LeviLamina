@@ -34,8 +34,6 @@ public:
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity, ::DashActionComponent& component) const;
 
-    MCAPI void setDirection(::std::string const& direction);
-
     MCAPI void uninitialize(::EntityContext& entity, ::DashActionComponent&) const;
     // NOLINTEND
 

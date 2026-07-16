@@ -27,12 +27,6 @@ public:
         Iterator& operator=(Iterator const&);
         Iterator(Iterator const&);
         Iterator();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::VoxelShapes::IterableIndexMerger::Iterator& operator++();
-        // NOLINTEND
     };
 
     struct StartPoint {

@@ -12,16 +12,4 @@ public:
     ::ll::TypedStorage<1, 1, ::CodeBuilderExecutionState::CodeStatus> mStatus;
     ::ll::TypedStorage<8, 32, ::std::string>                          mPropertyName;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~CodeBuilderSelectorFilter();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

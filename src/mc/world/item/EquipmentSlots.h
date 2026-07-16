@@ -15,13 +15,7 @@ class EntityContext;
 namespace EquipmentSlots {
 // functions
 // NOLINTBEGIN
-MCAPI bool equipmentSlotRequiresIndex(::SharedTypes::Legacy::EquipmentSlot slot);
-
-MCAPI char const* equipmentSlotToName(::SharedTypes::Legacy::EquipmentSlot slot);
-
 MCAPI ::SharedTypes::Legacy::ArmorSlot getArmorSlotForEntityArmorEquipmentSlot(::EntityContext const& entityContext);
-
-MCAPI ::SharedTypes::Legacy::EquipmentSlot hashedNameToEquipmentSlot(uint64 const& slotName);
 
 MCAPI ::SharedTypes::Legacy::EquipmentSlot nameToEquipmentSlot(::std::string const& slotName);
 

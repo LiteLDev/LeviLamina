@@ -36,13 +36,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI explicit ScriptEventCommandMessageAfterEventIntermediateData(::ScriptCommandMessageEvent const& event);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::ScriptCommandMessageEvent const& event);
+#endif
     // NOLINTEND
 };
 

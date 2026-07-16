@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/sem_ver/SemVersion.h"
-
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
@@ -21,12 +18,6 @@ MCNAPI ::Puv::Logger makeLogger(::cereal::BasicSerializerContext const& log);
 MCNAPI ::std::optional<::SemVersion> pickJsonFormatVersion(::std::string_view input);
 
 MCNAPI ::Puv::VersionRange sanitizeRange(::Puv::VersionRange const& range, ::SemVersion const& currentGameSemVersion);
-
-MCNAPI ::SemVersion::MatchType versionFromJson(
-    ::rapidjson::
-        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& json,
-    ::SemVersion&                                                                                                 output
-);
 // NOLINTEND
 
 // static variables

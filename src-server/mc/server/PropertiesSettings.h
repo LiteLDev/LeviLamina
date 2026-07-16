@@ -12,6 +12,8 @@
 #include "mc/network/NetworkAddress.h"
 #include "mc/network/NetworkPermissions.h"
 #include "mc/network/NetworkSettingOptions.h"
+#include "mc/network/PortConfiguration.h"
+#include "mc/network/ServerEditorConnectionPolicy.h"
 #include "mc/network/ServerPlayerJoinBehavior.h"
 #include "mc/network/TransportLayer.h"
 #include "mc/network/services/discovery/DiscoveryConfig.h"
@@ -23,11 +25,6 @@
 #include "mc/world/actor/player/PlayerMovementSettings.h"
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/GeneratorType.h"
-
-// auto generated forward declare list
-// clang-format off
-struct MappedPorts;
-// clang-format on
 
 struct PropertiesSettings {
 public:
@@ -91,8 +88,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                 mServerWakeupFrequency;
     ::ll::TypedStorage<4, 4, ::TransportLayer>                                    mTransportLayerType;
     ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID>                             mNetherNetId;
-    ::ll::TypedStorage<1, 1, bool>                                                mDisableTrickleIce;
-    ::ll::TypedStorage<1, 1, bool>                                                mUseJsonRpc;
     ::ll::TypedStorage<8, 40, ::NetworkAddress>                                   mRemoteServerCommunicationEndpoint;
     ::ll::TypedStorage<1, 1, ::PlayerPermissionLevel>                             mDefaultPlayerPermissionLevel;
     ::ll::TypedStorage<1, 1, bool>                                                mDisableClientVibrantVisuals;
@@ -124,37 +119,19 @@ public:
     ::ll::TypedStorage<4, 4, ::ServerPlayerJoinBehavior>                          mPlayerJoinBehavior;
     ::ll::TypedStorage<8, 32, ::std::string>                                      mAppId;
     ::ll::TypedStorage<8, 32, ::std::string>                                      mAppTenantId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                      mServerPublicIP;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MappedPorts>>                       mPortMappings;
+    ::ll::TypedStorage<8, 104, ::PortConfiguration>                               mPortConfig;
     ::ll::TypedStorage<4, 8, ::Bedrock::Services::DiscoveryConfig>                mDiscoveryConfig;
     ::ll::TypedStorage<1, 1, bool>                                                mRealmsStoriesEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                mProfilerEnabled;
     ::ll::TypedStorage<4, 4, ::EducationServicesEnvironment>                      mEducationServicesEnvironment;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsChatLoggingEnabled;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mServiceOverrides;
     ::ll::TypedStorage<4, 8, ::std::optional<uint>>                               mScriptSentryMaxEventsPerWindow;
     ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::seconds>>            mScriptSentryRateLimitWindow;
     ::ll::TypedStorage<8, 160, ::PropertiesSettings::TelemetrySettings>           mTelemetry;
-    ::ll::TypedStorage<8, 464, ::ServerConfiguration::ServerConfigInfo>           mServerConfiguration;
+    ::ll::TypedStorage<8, 512, ::ServerConfiguration::ServerConfigInfo>           mServerConfiguration;
     ::ll::TypedStorage<1, 1, bool>                                                mEditorNetworkMetricsEnabled;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PropertiesSettings();
-
-    MCAPI ~PropertiesSettings();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    ::ll::TypedStorage<1, 1, bool>                                                mConvertWorldToEditorProject;
+    ::ll::TypedStorage<4, 4, ::ServerEditorConnectionPolicy>                      mEditorConnectionPolicy;
     // NOLINTEND
 };

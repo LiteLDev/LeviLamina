@@ -17,24 +17,4 @@ public:
     ::ll::TypedStorage<4, 4, float>   mMassB;
     ::ll::TypedStorage<4, 4, float>   mDesiredDistance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DistanceConstraint();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI DistanceConstraint(float massA, float massB, float desiredDistance);
-
-    MCNAPI float setup(::Vec3 const& posA, ::Vec3 const& posB, float baumgarteTerm, float slop);
-
-    MCNAPI void solve(::Vec3& velA, ::Vec3& velB);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(float massA, float massB, float desiredDistance);
-    // NOLINTEND
 };

@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Mob;
 // clang-format on
 
@@ -51,26 +50,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit AquaticChargeAttackGoal(::Mob& mob);
-
-    MCAPI bool _isCloseEnoughToAttack() const;
-
-    MCAPI void _performKnockbackAttack(::Actor& target);
-
-    MCAPI void _resetForNextCharge();
-
-    MCAPI void _transitionToCooldown(bool hasAttacked);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

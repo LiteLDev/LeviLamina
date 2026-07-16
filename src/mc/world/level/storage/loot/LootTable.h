@@ -5,11 +5,9 @@
 // auto generated forward declare list
 // clang-format off
 class Container;
-class ItemStack;
 class LootPool;
 class LootTableContext;
 class Random;
-namespace Json { class Value; }
 // clang-format on
 
 class LootTable {
@@ -23,18 +21,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void deserialize(::Json::Value const& table, bool usingUpcomingCreatorFeaturesExperiment);
-
     MCAPI void fill(::Container& container, ::Random& random, ::LootTableContext& context);
 
-    MCAPI ::std::vector<int> getAvailableSlots(::Container& container, ::Random& random);
-
     MCFOLD ::std::string getDir() const;
-
-    MCFOLD ::std::vector<::std::unique_ptr<::LootPool>> const& getPools() const;
-
-    MCAPI ::std::vector<::ItemStack> getRandomItems(::Random& random, ::LootTableContext& context) const;
-
-    MCAPI void shuffleAndSplitItems(::std::vector<::ItemStack>& result, int availableSlots, ::Random& random);
     // NOLINTEND
 };

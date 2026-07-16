@@ -36,6 +36,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_26_20::GoHomeGoalDefinition& operator=(::SharedTypes::v1_26_20::GoHomeGoalDefinition&&);
 
+    MCAPI bool operator==(::SharedTypes::v1_26_20::GoHomeGoalDefinition const&) const;
+
     MCAPI ~GoHomeGoalDefinition();
     // NOLINTEND
 
@@ -48,14 +50,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_CALCULATE_NEW_PATH_RADIUS();
-
-    MCAPI static float const& DEFAULT_GOAL_RADIUS();
-
-    MCAPI static int const& DEFAULT_INTERVAL();
-
-    MCAPI static float const& DEFAULT_SPEED_MULTIPLIER();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 

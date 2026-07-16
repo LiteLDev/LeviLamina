@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 #include "mc/deps/shared_types/v1_21_120/actor/ActorDefinitionTrigger.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_21_120 {
 
 struct DigGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -27,27 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~DigGoalDefinition();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

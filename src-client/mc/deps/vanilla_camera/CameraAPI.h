@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class EntityContext;
 class EntityRegistry;
 class IClientInstance;
@@ -48,7 +47,7 @@ public:
     virtual ::std::optional<::Vec3> tryGetActorPositionDelta(::WeakRef<::EntityContext> const actorRef) const
         /*override*/;
 
-    virtual ::std::optional<::ICameraAPI::ShakeParameters> tryGetShakeParameters(
+    virtual ::std::vector<::ICameraAPI::ShakeParameters> tryGetShakeParameters(
         ::WeakRef<::EntityContext> actorRef,
         float                      noiseMultiplier,
         float                      frequency,
@@ -79,20 +78,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit CameraAPI(::IClientInstance& client);
-
-    MCFOLD ::Actor const* _getActor(::WeakRef<::EntityContext> actorRef) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IClientInstance& client);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::Vec3> $tryGetActorRelativeLocation(
@@ -107,7 +92,7 @@ public:
 
     MCAPI ::std::optional<::Vec3> $tryGetActorPositionDelta(::WeakRef<::EntityContext> const actorRef) const;
 
-    MCAPI ::std::optional<::ICameraAPI::ShakeParameters> $tryGetShakeParameters(
+    MCAPI ::std::vector<::ICameraAPI::ShakeParameters> $tryGetShakeParameters(
         ::WeakRef<::EntityContext> actorRef,
         float                      noiseMultiplier,
         float                      frequency,

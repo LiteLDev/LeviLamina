@@ -10,9 +10,7 @@
 // clang-format off
 class BaseGameVersion;
 class CraftingItemCatalogMergeResult;
-class CreativeGroupInfo;
 class CreativeItemRegistry;
-class ItemInstance;
 struct BlockDefinition;
 // clang-format on
 
@@ -37,15 +35,9 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> creativeItemRegistry
     );
 
-    MCAPI void _addCreativeItemServer(::CreativeGroupInfo& creativeGroupInfo, ::ItemInstance const& itemInstance);
-
-    MCAPI void _addLooseCreativeItem(::ItemInstance const& itemInstance);
-
     MCAPI void _addLooseCreativeItemsServer(::BaseGameVersion const& worldVersion);
 
     MCAPI void addLooseBlocks(::std::vector<::BlockDefinition const*> const& blockDefinitions);
-
-    MCAPI void addLooseCreativeItems(::BaseGameVersion const& worldVersion);
 
     MCAPI void
     initializeFromCraftingItemCatalog(::CraftingItemCatalogMergeResult const& craftingItemCatalogMergeResult);

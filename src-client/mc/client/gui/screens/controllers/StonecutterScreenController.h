@@ -61,16 +61,6 @@ public:
         ::BlockPos const& pos,
         ::ActorUniqueID
     );
-
-    MCAPI void _changeLeftTab(int dir);
-
-    MCAPI ::std::string _getStoneHoverText(int collectionIndex) const;
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerStateMachine();
     // NOLINTEND
 
 public:
@@ -83,20 +73,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCFOLD bool $_isStillValid() const;
-
-    MCAPI void $_registerCoalesceOrder();
-
-    MCAPI void $_registerAutoPlaceOrder();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

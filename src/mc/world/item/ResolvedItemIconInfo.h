@@ -22,13 +22,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ResolvedItemIconInfo();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResolvedItemIconInfo();
-
-    MCAPI ResolvedItemIconInfo(uint legacyID, int frame);
-
+#ifdef LL_PLAT_C
     MCAPI ResolvedItemIconInfo(::std::string const& name, int frame, ::ItemIconInfoType type);
+#endif
 
     MCAPI ResolvedItemIconInfo(
         ::std::string const& name,
@@ -46,11 +48,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(uint legacyID, int frame);
-
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::std::string const& name, int frame, ::ItemIconInfoType type);
+#endif
 
     MCAPI void*
     $ctor(::std::string const& name, float u0, float u1, float v0, float v1, ushort texSizeW, ushort texSizeH);

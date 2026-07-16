@@ -22,10 +22,6 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 
 class VineBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    VineBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB const& getVisualShapeInWorld(
@@ -66,10 +62,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VineBlock(::std::string const& nameId, int id);
-
-    MCAPI int _nextVineDirections(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void growDown(::BlockSource& region, ::BlockPos const& pos, int spawnFacings) const;
 
     MCAPI void growSideways(::BlockSource& region, ::BlockPos const& pos, int testDirection) const;
@@ -84,13 +76,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static bool directionsContainFace(int vineDirections, uchar face);
-#endif
-
     MCAPI static ::Block const& getBlockForFace(uchar face);
-
-    MCAPI static bool isAcceptableNeighbour(::Block const& block);
     // NOLINTEND
 
 public:
@@ -105,12 +91,6 @@ public:
     MCAPI static int const& VINE_SOUTH();
 
     MCAPI static int const& VINE_WEST();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

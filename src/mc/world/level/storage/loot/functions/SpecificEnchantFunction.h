@@ -41,30 +41,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SpecificEnchantFunction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SpecificEnchantFunction() /*override*/;
+    virtual ~SpecificEnchantFunction() /*override*/ = default;
 
-    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemStack&, ::Random&, ::LootTableContext&) /*override*/;
 
-    virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemInstance&, ::Random&, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SpecificEnchantFunction(
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>&       predicates,
-        ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& enchantments
-    );
-
-    MCFOLD ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& getEnchantments() const;
     // NOLINTEND
 
 public:
@@ -75,35 +60,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>&       predicates,
-        ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& enchantments
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
-    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext&);
-
-    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

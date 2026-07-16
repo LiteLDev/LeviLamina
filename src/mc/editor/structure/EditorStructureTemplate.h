@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BaseBlockLocationIterator;
 class Block;
 class BlockPalette;
 class BlockPos;
@@ -19,7 +18,6 @@ class BoundingBox;
 class CompoundTag;
 class IUnknownBlockTypeRegistry;
 class StructureSettings;
-class Vec3;
 namespace Editor { class RelativeVolumeListBlockVolume; }
 // clang-format on
 
@@ -73,14 +71,6 @@ public:
     );
 #endif
 
-    MCNAPI void _editorFillBlockInfo(
-        ::BlockSource&                                 region,
-        ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator,
-        ::BlockPos const&                              posMin,
-        ::BlockPos const&                              size,
-        ::BlockPos const&                              structureOffset
-    );
-
     MCNAPI void editorFillFromWorld(
         ::BlockSource&             region,
         ::StructureSettings const& structureSettings,
@@ -93,26 +83,6 @@ public:
         ::Editor::RelativeVolumeListBlockVolume const& volume
     );
 
-    MCNAPI void editorFillFromWorld(
-        ::BlockSource&                                 region,
-        ::StructureSettings const&                     structureSettings,
-        ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator,
-        ::BlockPos const&                              posMin,
-        ::BlockPos const&                              span
-    );
-
-#ifdef LL_PLAT_C
-    MCNAPI ::Editor::RelativeVolumeListBlockVolume const& getBlockVolume() const;
-#endif
-
-    MCNAPI ::Vec3 const& getNormalizedOrigin() const;
-
-    MCNAPI ::Vec3 getOriginalWorldLocation() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::std::vector<::std::string> getTags() const;
-#endif
-
     MCNAPI void placeStructureTemplateInWorldForEditor(
         ::BlockSource&             region,
         ::BlockPalette const&      globalBlockPalette,
@@ -120,14 +90,6 @@ public:
         ::StructureSettings const& structureSettings,
         bool                       excludeAirBlocks
     ) const;
-
-    MCNAPI void setBounds(::BlockVolumeBase const& volume);
-
-    MCNAPI void setBounds(::Editor::RelativeVolumeListBlockVolume const& volume);
-
-    MCNAPI void setBounds(::BlockPos const& from, ::BlockPos const& to);
-
-    MCNAPI bool setNormalizedOrigin(::Vec3 newOrigin);
     // NOLINTEND
 
 public:

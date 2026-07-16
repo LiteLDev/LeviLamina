@@ -16,18 +16,4 @@ public:
     uchar                   mSlot;
     ::ItemStackNetIdVariant mNetIdVariant;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool matchesContainerAndSlot(::ItemStackRequestSlotInfo const& other) const;
-
-    MCNAPI ~ItemStackRequestSlotInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

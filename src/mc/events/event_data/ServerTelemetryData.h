@@ -24,8 +24,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ServerTelemetryData(::Social::Events::ServerTelemetryData const&);
 
-    MCNAPI ::Social::Events::ServerTelemetryData& operator=(::Social::Events::ServerTelemetryData&&);
-
     MCNAPI ~ServerTelemetryData();
     // NOLINTEND
 

@@ -59,14 +59,6 @@ public:
         MCNAPI ::Core::Profile::ProfileGroup* find(::std::string_view groupName);
 
         MCNAPI ::Core::Profile::ProfileGroup& findOrCreate(::std::string_view groupName, uint color);
-
-        MCNAPI ~Impl();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -81,22 +73,6 @@ public:
     ProfileGroupManager& operator=(ProfileGroupManager const&);
     ProfileGroupManager(ProfileGroupManager const&);
     ProfileGroupManager();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Core::Profile::ProfileGroup* find(::std::string_view groupName);
-
-    MCNAPI void forEachGroup(::std::function<void(::Core::Profile::ProfileGroup&)> const& fn);
-
-    MCNAPI ::brstd::move_only_function<void(::Core::Profile::ProfileGroup&)>& notifyOnNewGroup();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Core::Profile::ProfileGroupManager& getSharedInstance();
-    // NOLINTEND
 };
 
 } // namespace Core::Profile

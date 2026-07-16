@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AppPlatformListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~AppPlatformListener();
@@ -47,7 +43,7 @@ public:
 
     virtual void onOperationModeChanged(::OperationMode const operationMode);
 
-    virtual void onPerformanceModeChanged(bool const);
+    virtual void onPerformanceModeChanged(bool const boost);
 
     virtual void onPushNotificationReceived(::PushNotificationMessage const& msg);
 
@@ -79,17 +75,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AppPlatformListener(bool doInit);
-
     MCAPI void initListener(float priority);
 
+#ifdef LL_PLAT_C
     MCAPI void terminate();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool doInit);
+#endif
     // NOLINTEND
 
 public:
@@ -119,7 +109,7 @@ public:
 
     MCFOLD void $onOperationModeChanged(::OperationMode const operationMode);
 
-    MCFOLD void $onPerformanceModeChanged(bool const);
+    MCFOLD void $onPerformanceModeChanged(bool const boost);
 
     MCFOLD void $onPushNotificationReceived(::PushNotificationMessage const& msg);
 

@@ -29,14 +29,6 @@ public:
     StringNode& operator=(StringNode const&);
     StringNode(StringNode const&);
     StringNode();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI char const* getCString(uint64* outputLength) const;
-
-    MCNAPI bool set(::std::string_view str, bool copy);
-    // NOLINTEND
 };
 
 } // namespace Bedrock::JSONObject

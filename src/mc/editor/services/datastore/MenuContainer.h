@@ -3,13 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/editor/datastore/container/Container.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::DataStore { class PayloadEventDispatcher; }
 namespace Editor::DataStore { struct PayloadDescription; }
 namespace Json { class Value; }
 // clang-format on
@@ -40,18 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MenuContainer(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
-
-    MCNAPI bool _createMenuItem(::std::string const& id, ::Json::Value const& payload);
-
-    MCNAPI void _onMenuItemCreated(::std::string const& id);
-
-    MCNAPI void _onMenuItemDestroyed(::std::string const& id);
-
-    MCNAPI void _onMenuItemUpdated(::std::string const& id);
-
-    MCNAPI bool _removeMenuItem(::std::string const& id);
-
     MCNAPI ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> handleDataEvent(
@@ -65,12 +52,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_DATA();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
     // NOLINTEND
 
 public:

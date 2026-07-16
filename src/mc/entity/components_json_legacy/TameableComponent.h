@@ -23,10 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TameableComponent();
-
-    MCAPI bool _attemptToTame(::Actor& owner, ::Player& player, ::std::optional<::ItemDescriptor> const& resultItem);
-
     MCAPI bool _canTame(::Actor& owner, ::Player& player, ::ItemDescriptor& resultItemOut);
 
     MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
@@ -38,11 +34,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _becomeTame(::Actor& owner);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

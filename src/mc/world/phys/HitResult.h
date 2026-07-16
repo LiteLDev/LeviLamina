@@ -13,7 +13,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-struct AABBHitResult;
 // clang-format on
 
 class HitResult {
@@ -38,7 +37,7 @@ public:
       mType(HitResultType::Entity),
       mFacing(0),
       mPos(pos),
-      mEntity(entity.getEntityContext().getWeakRef()),
+      mEntity(*entity.mEntityContext),
       mEntityAABB(entityAABB),
       mIsHitLiquid(false),
       mLiquidFacing(0),
@@ -62,50 +61,34 @@ public:
     bool            mIndirectHit;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    HitResult& operator=(HitResult const&);
+    HitResult(HitResult const&);
+    HitResult();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HitResult();
-
-    MCAPI explicit HitResult(::AABBHitResult const& hit);
-
-    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity);
-
-    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Vec3 const& rayEnd);
-
-    MCAPI HitResult(
-        ::Vec3 const&     startPos,
-        ::Vec3 const&     rayDir,
-        ::BlockPos const& blockPos,
-        uchar             facing,
-        ::Vec3 const&     pos
-    );
-
-    MCAPI float distanceToSqr(::Actor const& otherEntity) const;
+#ifdef LL_PLAT_C
+    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
+#endif
 
     MCAPI ::Actor* getEntity() const;
 
+#ifdef LL_PLAT_C
     MCAPI ::HitResult& operator=(::HitResult&&);
-
-    MCAPI void setIsHitLiquid(bool isHit, ::HitResult const& liquidHit);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::AABBHitResult const& hit);
-
-    MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity);
-
-    MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Vec3 const& rayEnd);
-
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
 #endif
-
-    MCAPI void*
-    $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::BlockPos const& blockPos, uchar facing, ::Vec3 const& pos);
     // NOLINTEND
 };

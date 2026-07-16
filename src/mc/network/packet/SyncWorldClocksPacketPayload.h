@@ -31,12 +31,6 @@ public:
         ::ll::TypedStorage<8, 8, uint64>                           mClockId;
         ::ll::TypedStorage<8, 24, ::std::vector<::TimeMarkerData>> mTimeMarkers;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator==(::SyncWorldClocksPacketPayload::AddTimeMarkerData const& rhs) const;
-        // NOLINTEND
     };
 
     struct InitializeRegistryData {

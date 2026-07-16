@@ -9,18 +9,11 @@
 
 // auto generated forward declare list
 // clang-format off
-class IScriptDebuggerWatchdog;
-class IScriptTelemetryLogger;
-class MinecraftCommands;
-class ScriptPluginManager;
 class ScriptStat;
-class ServerLevel;
 struct ScriptDebuggerSettings;
 namespace Core { class Path; }
-namespace ScriptDebuggerMessages { struct CommandMessage; }
-namespace ScriptDebuggerMessages { struct ProfilerMessage; }
-namespace Scripting { class ScriptEngine; }
-namespace cereal { struct ReflectionCtx; }
+namespace ScriptDebuggerMessages { struct DebuggerRequestMessage; }
+namespace cereal { class DynamicValue; }
 // clang-format on
 
 class ScriptDebugger : public ::IScriptDebugger, public ::IScriptStatPublisher {
@@ -71,6 +64,8 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk5186f8;
     ::ll::UntypedStorage<4, 4>   mUnk82a025;
     ::ll::UntypedStorage<8, 24>  mUnk89c845;
+    ::ll::UntypedStorage<8, 24>  mUnk50622d;
+    ::ll::UntypedStorage<8, 64>  mUnk89cb81;
     ::ll::UntypedStorage<4, 12>  mUnkc99a5f;
     // NOLINTEND
 
@@ -83,13 +78,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDebugger() /*override*/;
+    virtual ~ScriptDebugger() /*override*/ = default;
 
     virtual ::ScriptDebuggerSettings const& getSettings() const /*override*/;
 
-    virtual bool connect(::std::string const& host, ushort port) /*override*/;
+    virtual bool connect(::std::string const&, ushort) /*override*/;
 
-    virtual bool listen(ushort port) /*override*/;
+    virtual bool listen(ushort) /*override*/;
 
     virtual void stop() /*override*/;
 
@@ -99,92 +94,30 @@ public:
 
     virtual bool isStatPublisherEnabled() const /*override*/;
 
-    virtual void publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats) /*override*/;
+    virtual void publishStats(uint64, ::std::vector<::ScriptStat> const&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptDebugger(
-        ::ScriptDebuggerSettings   settings,
-        ::ServerLevel&             serverLevel,
-        ::MinecraftCommands&       commands,
-        ::cereal::ReflectionCtx&   ctx,
-        ::Scripting::ScriptEngine& scriptEngine,
-        ::ScriptPluginManager&     pluginManager,
-        ::IScriptDebuggerWatchdog& watchdog,
-        ::IScriptTelemetryLogger&  telemetry
+    MCNAPI void registerDebuggerRequestHandler(
+        ::std::string_view                                                                                command,
+        ::std::function<void(::ScriptDebuggerMessages::DebuggerRequestMessage const&, ::ScriptDebugger&)> handler
     );
 
-    MCNAPI void _debuggerMessageHandler(::std::string_view message);
-
-    MCNAPI void _handleCommandMessage(::ScriptDebuggerMessages::CommandMessage const& commandMessage);
-
-    MCNAPI void _handleStopProfilerMessage(::ScriptDebuggerMessages::ProfilerMessage const& profilerMessage);
-
-    MCNAPI ::std::string _sanitizeHostName(::std::string const& host) const;
-
-    MCNAPI void _sendNotification(::LogLevel logLevel, ::std::string_view message);
-
-    MCNAPI bool _tryAttachRuntime(bool expectRuntime);
-
-    MCNAPI bool _trySelectTarget();
+    MCNAPI void sendDebuggeeResponse(
+        int                                     requestSeq,
+        bool                                    success,
+        ::std::string_view                      responseMessage,
+        ::std::optional<::cereal::DynamicValue> args
+    );
 
     MCNAPI void sendLog(::LogLevel logLevel, ::std::string_view message);
-
-    MCNAPI void update();
-
-    MCNAPI void waitAutoAttach(::std::chrono::seconds waitDuration);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::ScriptDebuggerSettings   settings,
-        ::ServerLevel&             serverLevel,
-        ::MinecraftCommands&       commands,
-        ::cereal::ReflectionCtx&   ctx,
-        ::Scripting::ScriptEngine& scriptEngine,
-        ::ScriptPluginManager&     pluginManager,
-        ::IScriptDebuggerWatchdog& watchdog,
-        ::IScriptTelemetryLogger&  telemetry
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ScriptDebuggerSettings const& $getSettings() const;
 
-    MCNAPI bool $connect(::std::string const& host, ushort port);
-
-    MCNAPI bool $listen(ushort port);
-
-    MCNAPI void $stop();
-
-    MCNAPI void $startProfiler();
-
-    MCNAPI ::std::vector<::Core::Path> $stopProfiler();
-
-    MCNAPI bool $isStatPublisherEnabled() const;
-
-    MCNAPI void $publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIScriptDebugger();
-
-    MCNAPI static void** $vftableForIScriptStatPublisher();
     // NOLINTEND
 };

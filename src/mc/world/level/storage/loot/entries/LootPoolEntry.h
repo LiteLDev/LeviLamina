@@ -33,22 +33,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool
-    _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const = 0;
+    virtual bool _createItem(::std::vector<::ItemStack>&, ::Random&, ::LootTableContext&) const = 0;
 
-    virtual ~LootPoolEntry();
+    virtual ~LootPoolEntry() = default;
 
     virtual ::LootPoolEntry::EntryType getEntryType() const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD int getBaseWeight() const;
-
-    MCFOLD int getQuality() const;
-
-    MCFOLD ::LootPoolEntry const* getSubTable() const;
     // NOLINTEND
 
 public:
@@ -59,20 +48,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

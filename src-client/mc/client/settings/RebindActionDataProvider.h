@@ -6,8 +6,6 @@
 #include "mc/client/settings/IActionDataProvider.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/input/InputMode.h"
-#include "mc/deps/input/enums/ButtonState.h"
-#include "mc/deps/input/enums/RawInputType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -50,43 +48,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RebindActionDataProvider(
-        uint64                                        index,
-        ::InputMode                                   inputMode,
-        ::RemappingLayout&                            layout,
-        ::Settings::RegistryBuilder::IBuilderContext& context
-    );
-
-    MCAPI void _rebindInput(int id, ::RawInputType keyType, ::ButtonState buttonState);
-
-    MCAPI void enqueueRawInputRegistration();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        uint64                                        index,
-        ::InputMode                                   inputMode,
-        ::RemappingLayout&                            layout,
-        ::Settings::RegistryBuilder::IBuilderContext& context
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $flush();
 
-    MCFOLD bool $canModify() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

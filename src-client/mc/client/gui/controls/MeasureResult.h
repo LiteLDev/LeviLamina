@@ -15,35 +15,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MeasureResult();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MeasureResult(
-        ::std::string      formattedText,
-        ::glm::vec2 const& size,
-        ::std::vector<int> caretOffsets,
-        float              caretHeightOffset,
-        bool               usingEllipses,
-        float              lineHeight
-    );
-
     MCAPI ~MeasureResult();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string      formattedText,
-        ::glm::vec2 const& size,
-        ::std::vector<int> caretOffsets,
-        float              caretHeightOffset,
-        bool               usingEllipses,
-        float              lineHeight
-    );
     // NOLINTEND
 
 public:

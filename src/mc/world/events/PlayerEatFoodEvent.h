@@ -18,16 +18,4 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
     ::ll::TypedStorage<8, 152, ::ItemStack>               mFoodItem;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerEatFoodEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

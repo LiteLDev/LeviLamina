@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/renderer/constant_buffers/AlignmentAllocator.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace mce { class ConstantBufferContainer; }
@@ -22,45 +19,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ConstantBufferConstantsBase();
+    virtual ~ConstantBufferConstantsBase() = default;
 
     virtual void init() = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ConstantBufferConstantsBase();
-
-    MCAPI ::std::vector<uchar, ::mce::AlignmentHelper::AlignmentAllocator<uchar, 16>> const& getBuffer() const;
-
-    MCAPI void setFromBytes(
-        ::std::vector<uchar, ::mce::AlignmentHelper::AlignmentAllocator<uchar, 16>> const& constantBufferMemoryContainer
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

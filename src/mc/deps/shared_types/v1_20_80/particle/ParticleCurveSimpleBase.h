@@ -7,11 +7,6 @@
 #include "mc/deps/shared_types/legacy/ExpressionNode.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleCurveBase.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_20_80 {
 
 struct ParticleCurveSimpleBase : public ::SharedTypes::v1_20_80::ParticleCurveBase {
@@ -41,12 +36,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ParticleCurveSimpleBase(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -45,38 +45,6 @@ public:
         Rail& operator=(Rail const&);
         Rail(Rail const&);
         Rail();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Rail(::BlockSource& region, ::BlockPos const& pos);
-
-        MCAPI void connectTo(::BaseRailBlock::Rail& rail);
-
-        MCAPI ::std::shared_ptr<::BaseRailBlock::Rail> getRail(::BlockPos const& p);
-
-        MCAPI bool hasNeighborRail(::BlockPos const& pos);
-
-        MCAPI void place(int signalStrength, bool first);
-
-        MCAPI void removeSoftConnections();
-
-        MCAPI void updateConnections(int direction);
-
-        MCAPI ~Rail();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::BlockSource& region, ::BlockPos const& pos);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -103,7 +71,7 @@ public:
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual ::BlockRenderLayer getRenderLayer(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const
+    virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
         /*override*/;
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -134,15 +102,11 @@ public:
     MCFOLD void _onRedstoneUpdateBase(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-
-    MCAPI void updateDir(::BlockSource& region, ::BlockPos const& pos, bool first) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _createCircuitComponent(::BlockSource& region, ::BlockPos const& pos);
-
     MCAPI static bool isCorner(::BlockSource const& region, ::BlockPos const& pos);
 
     MCAPI static bool isFacingWestEast(::BlockSource const& region, ::BlockPos const& pos);
@@ -152,8 +116,6 @@ public:
     MCAPI static bool isRail(::IConstBlockSource const& region, ::BlockPos const& pos);
 
     MCAPI static bool isSlope(::Block const& block);
-
-    MCAPI static bool isSlope(int railDirection);
     // NOLINTEND
 
 public:
@@ -176,7 +138,7 @@ public:
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const;
+    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 

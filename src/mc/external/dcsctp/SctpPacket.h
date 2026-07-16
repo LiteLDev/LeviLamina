@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/StrongAlias.h"
 
 // auto generated forward declare list
@@ -79,7 +80,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1>  mUnkfc7a17;
         ::ll::UntypedStorage<1, 1>  mUnk5a7a37;
-        ::ll::UntypedStorage<8, 16> mUnk1d4891;
+        ::ll::UntypedStorage<8, 16> mUnk8fc314;
         // NOLINTEND
 
     public:
@@ -107,7 +108,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::optional<::dcsctp::SctpPacket>
-    Parse(::rtc::ArrayView<uchar const> data, ::dcsctp::DcSctpOptions const& options);
+    Parse(::webrtc::ArrayView<uchar const, 18446744073709546905> data, ::dcsctp::DcSctpOptions const& options);
     // NOLINTEND
 };
 

@@ -85,18 +85,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::std::string> mEventName;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ActorDefinition();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct BellUsed {
@@ -133,18 +121,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::std::string> mRuntimeAction;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~CodeBuilderRuntimeAction();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct CodeBuilderScoreboard {
@@ -153,18 +129,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::std::string> mObjectiveName;
         ::ll::TypedStorage<4, 4, int>            mScore;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~CodeBuilderScoreboard();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -222,18 +186,6 @@ public:
         ::ll::TypedStorage<4, 4, int>            mDamageSource;
         ::ll::TypedStorage<4, 4, int>            mTraderTier;
         ::ll::TypedStorage<8, 32, ::std::string> mTraderName;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~MobKilled();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -314,29 +266,14 @@ public:
     public:
         // prevent constructor by default
         SlashCommand& operator=(SlashCommand const&);
+        SlashCommand(SlashCommand const&);
         SlashCommand();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SlashCommand(::LegacyTelemetryEventPacketPayload::SlashCommand const&);
-
         MCFOLD ::LegacyTelemetryEventPacketPayload::SlashCommand&
         operator=(::LegacyTelemetryEventPacketPayload::SlashCommand&&);
-
-        MCAPI ~SlashCommand();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(::LegacyTelemetryEventPacketPayload::SlashCommand const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 

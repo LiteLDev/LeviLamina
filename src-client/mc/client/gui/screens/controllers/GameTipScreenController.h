@@ -7,19 +7,15 @@
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/screens/controllers/ClientInstanceScreenController.h"
 #include "mc/client/social/IToastEventListener.h"
-#include "mc/client/tutorial/game_tip_constants/Animation.h"
 #include "mc/client/tutorial/game_tip_constants/Interruption.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/input/InputMode.h"
 
 // auto generated forward declare list
 // clang-format off
-class ClientInstanceScreenModel;
 class GameTip;
 class HudContainerManagerController;
-class Option;
 class ToastMessage;
-class UIPropertyBag;
 // clang-format on
 
 class GameTipScreenController : public ::ClientInstanceScreenController, public ::IToastEventListener {
@@ -45,13 +41,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GameTipScreenController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameTipScreenController() /*override*/;
+    virtual ~GameTipScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -59,93 +51,14 @@ public:
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    virtual void
-    handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg) /*override*/;
+    virtual void handleToastEvent(::IToastEventListener::ToastEventType const, ::ToastMessage const) /*override*/;
 
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GameTipScreenController(
-        ::std::shared_ptr<::ClientInstanceScreenModel>     model,
-        ::std::shared_ptr<::HudContainerManagerController> mHudScreenManagerController
-    );
-
-    MCAPI void _addActiveTipArrowProperties(::UIPropertyBag& bag);
-
-    MCAPI void _addInterruption(::GameTipConstants::Interruption interruption);
-
-    MCAPI void _cleanUpFinishedTips();
-
-    MCAPI void _destroyActiveTip();
-
-    MCAPI void _displayActiveTip(::GameTipConstants::Animation animation);
-
-    MCAPI void _displayNewTip(::std::shared_ptr<::GameTip> const& tip);
-
-    MCAPI void _gametipOptionCallback(::Option const& gametipEnabled);
-
-    MCAPI ::std::string _getActiveTipAnimationFileName(::InputMode inputMode);
-
-    MCAPI ::std::string _getActiveTipLocalizationText(::InputMode inputMode) const;
-
-    MCAPI ::std::array<::std::string, 2> _getActiveTipOffset() const;
-
-    MCAPI void _handleInterruptions();
-
-    MCAPI void _handleMobsNearbyInterruption();
-
-    MCAPI void _instantiateTips();
-
-    MCAPI void _maybeUpdateActiveNowTip();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _removeInterruption(::GameTipConstants::Interruption interruption);
-
-    MCAPI void _stopDisplayingActiveTip();
-
-    MCAPI bool isDisplayingTip() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::ClientInstanceScreenModel>     model,
-        ::std::shared_ptr<::HudContainerManagerController> mHudScreenManagerController
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCFOLD void $onTerminate();
-
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI void $handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg);
-
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

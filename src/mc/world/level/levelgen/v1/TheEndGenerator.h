@@ -74,23 +74,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TheEndGenerator() /*override*/;
+    virtual ~TheEndGenerator() /*override*/ = default;
 
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
-    virtual bool structurePostProcessChunk(::ChunkViewSource& neighborhoodIn) /*override*/;
+    virtual bool structurePostProcessChunk(::ChunkViewSource&) /*override*/;
 
-    virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhood) /*override*/;
+    virtual bool decorationPostProcessChunk(::ChunkViewSource&) /*override*/;
 
     virtual void
     postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random) /*override*/;
 
-    virtual void
-    prepareHeights(::BlockVolume& box, ::ChunkPos const& chunkPos, ::std::vector<short>* ZXheights, bool) /*override*/;
+    virtual void prepareHeights(::BlockVolume&, ::ChunkPos const&, ::std::vector<short>*, bool) /*override*/;
 
-    virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const /*override*/;
+    virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4>) const /*override*/;
 
-    virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
+    virtual ::BiomeArea getBiomeArea(::BoundingBox const&, uint) const /*override*/;
 
     virtual ::BiomeSource const& getBiomeSource() const /*override*/;
 
@@ -102,8 +101,7 @@ public:
     decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const
         /*override*/;
 
-    virtual void
-    decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
+    virtual void decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const
         /*override*/;
     // NOLINTEND
 
@@ -111,20 +109,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI TheEndGenerator(::Dimension& dimension, uint seed, ::Biome const* overrideBiome);
-
-    MCAPI void _prepareHeights(::BlockVolume& box, ::ChunkPos const& chunkPos, ::std::vector<short>* ZXheights) const;
-
-    MCAPI void buildSurfaces(::BlockVolume& box, ::ChunkPos const& levelChunk, ::LevelChunk&);
-
-    MCAPI ::Util::MultidimensionalArray<float, 3, 3, 33> generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
-
-    MCAPI float getIslandHeightValue(int chunkX, int chunkZ, int cellOffsetX, int cellOffsetZ) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isOutsideCentralIslandArea(::ChunkPos const& chunkPos);
     // NOLINTEND
 
 public:
@@ -134,48 +118,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
-
-    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
-
-    MCAPI void $postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
-
-    MCAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const& chunkPos, ::std::vector<short>* ZXheights, bool);
-
-    MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
-
-    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
-
-    MCAPI ::BiomeSource const& $getBiomeSource() const;
-
-    MCAPI ::BlockPos $findSpawnPosition() const;
-
-    MCFOLD ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
-
-    MCFOLD void
-    $decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const;
-
-    MCFOLD void
-    $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForChunkSource();
-
-    MCNAPI static void** $vftableForIPreliminarySurfaceProvider();
     // NOLINTEND
 };

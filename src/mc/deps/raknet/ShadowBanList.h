@@ -54,18 +54,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ShadowBanList();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ShadowBanList(
-        ::std::function<void(::std::string const&)> addBanCallback,
-        ::std::chrono::seconds                      banExpiryDuration,
-        ::std::chrono::seconds                      appHandshakeGracePeriod
-    );
-
     MCAPI ushort addBan(::RakNet::SystemAddress const& addr, ::std::chrono::seconds time);
 
     MCAPI ::RakNet::RakPeer::RemoteSystemStruct* shouldDisconnectConnection(
@@ -73,28 +63,6 @@ public:
         ::std::chrono::seconds                              now,
         ::gsl::span<::RakNet::RakPeer::RemoteSystemStruct*> remotes
     );
-
-    MCAPI bool tryUnban(::RakNet::SystemAddress const& addr);
-
-    MCAPI uint64 updateBans(::std::chrono::seconds now);
-
-    MCAPI ~ShadowBanList();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::function<void(::std::string const&)> addBanCallback,
-        ::std::chrono::seconds                      banExpiryDuration,
-        ::std::chrono::seconds                      appHandshakeGracePeriod
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

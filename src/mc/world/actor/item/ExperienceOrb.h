@@ -20,6 +20,7 @@ class Level;
 class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -50,19 +51,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual void playerTouch(::Player& player) /*override*/;
+    virtual void playerTouch(::Player&) /*override*/;
 
     virtual float getShadowRadius() const /*override*/;
 
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& damage, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float, ::HurtParameters const&) /*override*/;
 
     virtual void doWaterSplashEffect() /*override*/;
     // NOLINTEND
@@ -76,12 +77,6 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _handleMending(::Player& player);
-
-    MCAPI void _tryMergeExistingOrbs();
-
-    MCAPI int getIconIndex() const;
-
     MCAPI void postNormalTick();
     // NOLINTEND
 
@@ -90,23 +85,10 @@ public:
     // NOLINTBEGIN
     MCAPI static void _spawnOrb(::BlockSource& region, ::Level& level, ::Vec3 const& pos, int orbXPValue);
 
-    MCAPI static bool _tryMergeIntoExistingOrbs(::BlockSource& region, ::Vec3 const& pos, int xpValue);
-
-    MCAPI static void spawnOrb(::BlockSource& region, ::Vec3 const& pos, int orbXPValue);
-
     MCAPI static void spawnOrbs(
         ::BlockSource&            region,
         ::Vec3 const&             pos,
         int                       xpValue,
-        ::ExperienceOrb::DropType dropType,
-        ::Player*                 owner
-    );
-
-    MCAPI static void spawnOrbs(
-        ::BlockSource&            region,
-        ::Vec3 const&             pos,
-        int                       randValueMin,
-        int                       randValueMax,
         ::ExperienceOrb::DropType dropType,
         ::Player*                 owner
     );
@@ -125,28 +107,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCAPI void $playerTouch(::Player& player);
-
-    MCFOLD float $getShadowRadius() const;
-
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
-
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& damage, float, bool, bool);
-
-    MCFOLD void $doWaterSplashEffect();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

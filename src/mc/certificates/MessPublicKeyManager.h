@@ -51,9 +51,6 @@ public:
 
 #ifdef LL_PLAT_C
     MCNAPI ::std::vector<::std::string> getMessSigningPublicKeys();
-
-    MCNAPI void
-    requestPublicKeys(::MessPublicKeyManager::PublicKeysEndpoint endpoint, ::std::function<void(bool)> callback);
 #endif
     // NOLINTEND
 

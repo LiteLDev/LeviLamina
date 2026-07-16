@@ -15,7 +15,6 @@ class ActorSkeletalAnimationPtr;
 class AnimationComponent;
 class ApplyAnimationContext;
 class BoneOrientation;
-class ExpressionNode;
 class HashedString;
 class RenderParams;
 struct AnimationVisitor;
@@ -41,10 +40,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void applyToPose(
-        ::ApplyAnimationContext const&                                                    applyContext,
-        ::RenderParams&                                                                   renderParams,
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
-        float                                                                             blendWeight
+        ::ApplyAnimationContext const&,
+        ::RenderParams&,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>&,
+        float
     ) /*override*/;
 
     virtual void resetAnimation() /*override*/;
@@ -55,7 +54,7 @@ public:
 
     virtual bool hasAnimationFinished() const /*override*/;
 
-    virtual ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& friendlyName) /*override*/;
+    virtual ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const&) /*override*/;
 
     virtual ::ActorAnimationType getAnimationType() const /*override*/;
 
@@ -67,15 +66,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorAnimationControllerStatePlayer(
-        ::HashedString const&                                    friendlyName,
-        ::ActorAnimationControllerPlayer&                        owner,
-        ::std::shared_ptr<::ActorAnimationControllerState>       animationControllerState,
-        ::AnimationComponent&                                    animationComponent,
-        ::ExpressionNode const&                                  blendExpression,
-        ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
-    );
-
 #ifdef LL_PLAT_C
     MCAPI void addAnimation(
         ::AnimationComponent&       animationComponent,
@@ -83,59 +73,11 @@ public:
         ::ActorSkeletalAnimationPtr animation
     );
 #endif
-
-    MCAPI bool allAnimationsFinished() const;
-
-    MCAPI bool anyAnimationsFinished() const;
-
-    MCFOLD float getStateTime() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::HashedString const&                                    friendlyName,
-        ::ActorAnimationControllerPlayer&                        owner,
-        ::std::shared_ptr<::ActorAnimationControllerState>       animationControllerState,
-        ::AnimationComponent&                                    animationComponent,
-        ::ExpressionNode const&                                  blendExpression,
-        ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
-    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $applyToPose(
-        ::ApplyAnimationContext const&                                                    applyContext,
-        ::RenderParams&                                                                   renderParams,
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
-        float                                                                             blendWeight
-    );
 
-    MCAPI void $resetAnimation();
-
-    MCFOLD void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
-
-    MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
-
-    MCFOLD bool $hasAnimationFinished() const;
-
-    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const& friendlyName);
-
-    MCFOLD ::ActorAnimationType $getAnimationType() const;
-
-    MCFOLD ::HashedString const& $getRawName() const;
-
-    MCAPI void $visit(::AnimationVisitor&& dispatcher);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

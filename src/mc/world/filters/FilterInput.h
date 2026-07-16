@@ -14,14 +14,13 @@ public:
 
 public:
     // prevent constructor by default
+    FilterInput& operator=(FilterInput const&);
     FilterInput(FilterInput const&);
     FilterInput();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::FilterInput& operator=(::FilterInput const&);
-
     MCNAPI ~FilterInput();
     // NOLINTEND
 

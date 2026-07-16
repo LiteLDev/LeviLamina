@@ -22,41 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool areStorageActionsAllowed() const;
-
-    MCNAPI ::std::chrono::steady_clock::time_point
-    calculateNextGameDataSaveTime(::std::chrono::steady_clock::time_point currentTime) const;
-
-    MCNAPI bool isNextGameDataSaveTimeSet() const;
-
-    MCNAPI bool isTimeForGameDataSave(::std::chrono::steady_clock::time_point currentTime) const;
-
-    MCNAPI bool isTimeForStorageCheck(::std::chrono::steady_clock::time_point currentTime) const;
-
-    MCNAPI void onAppSuspend();
-
-    MCNAPI void onStartLeaveGame();
-
-    MCNAPI void onUpdateAfterStorageDeferred(::std::chrono::steady_clock::time_point currentTime);
-
-    MCNAPI ::std::shared_ptr<void*> requestTimedStorageDeferment();
-
-    MCNAPI void setNextGameDataSaveTime(::std::chrono::steady_clock::time_point nextGameDataSaveTime);
-
-    MCNAPI void setNextStorageCheckTime(::std::chrono::steady_clock::time_point nextStorageCheckTime);
-
-    MCNAPI void setWasStorageSavePreviouslyDeferred(bool wasStorageSavePreviouslyDeferred);
-
-    MCNAPI bool wasStorageSavePreviouslyDeferred() const;
-
     MCNAPI ~GameDataSaveTimer();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::chrono::steady_clock::time_point
-    calculateNextStorageCheckTime(::std::chrono::steady_clock::time_point currentTime);
     // NOLINTEND
 
 public:

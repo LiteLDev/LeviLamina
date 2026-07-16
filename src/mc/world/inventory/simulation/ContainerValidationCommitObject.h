@@ -29,18 +29,9 @@ public:
 
     virtual bool append(::ContainerValidationCommitObject* other) = 0;
 
-    virtual bool canCommit(::ContainerScreenContext const& screenContext) const = 0;
+    virtual bool canCommit(::ContainerScreenContext const&) const = 0;
 
     virtual void commit(::ContainerScreenContext const& screenContext) = 0;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void append(
-        ::std::shared_ptr<::ContainerValidationCommitObject>                 commitObject,
-        ::std::vector<::std::shared_ptr<::ContainerValidationCommitObject>>& objectList
-    );
     // NOLINTEND
 
 public:

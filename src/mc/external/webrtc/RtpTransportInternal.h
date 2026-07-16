@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/Socket.h"
 #include "mc/external/sigslot/has_slots.h"
 #include "mc/external/sigslot/single_threaded.h"
+#include "mc/external/webrtc/Socket.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class CopyOnWriteBuffer; }
-namespace rtc { struct PacketOptions; }
+namespace webrtc { class CopyOnWriteBuffer; }
 namespace webrtc { class RtpDemuxerCriteria; }
 namespace webrtc { class RtpPacketSinkInterface; }
+namespace webrtc { struct AsyncSocketPacketOptions; }
 namespace webrtc { struct RtpExtension; }
 // clang-format on
 
@@ -23,11 +23,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk3ed5db;
-    ::ll::UntypedStorage<8, 32> mUnk3b44e7;
+    ::ll::UntypedStorage<8, 32> mUnk7ee9ad;
     ::ll::UntypedStorage<8, 32> mUnke96161;
-    ::ll::UntypedStorage<8, 32> mUnk2ddd2d;
+    ::ll::UntypedStorage<8, 32> mUnkf54653;
     ::ll::UntypedStorage<8, 32> mUnk26d9e7;
-    ::ll::UntypedStorage<8, 32> mUnk640107;
+    ::ll::UntypedStorage<8, 32> mUnk39cfb9;
     // NOLINTEND
 
 public:
@@ -45,9 +45,9 @@ public:
 
     virtual ::std::string const& transport_name() const = 0;
 
-    virtual int SetRtpOption(::rtc::Socket::Option opt, int value) = 0;
+    virtual int SetRtpOption(::webrtc::Socket::Option opt, int value) = 0;
 
-    virtual int SetRtcpOption(::rtc::Socket::Option opt, int value) = 0;
+    virtual int SetRtcpOption(::webrtc::Socket::Option opt, int value) = 0;
 
     virtual bool rtcp_mux_enabled() const = 0;
 
@@ -55,9 +55,17 @@ public:
 
     virtual bool IsWritable(bool rtcp) const = 0;
 
-    virtual bool SendRtpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) = 0;
+    virtual bool SendRtpPacket(
+        ::webrtc::CopyOnWriteBuffer*              packet,
+        ::webrtc::AsyncSocketPacketOptions const& options,
+        int                                       flags
+    ) = 0;
 
-    virtual bool SendRtcpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) = 0;
+    virtual bool SendRtcpPacket(
+        ::webrtc::CopyOnWriteBuffer*              packet,
+        ::webrtc::AsyncSocketPacketOptions const& options,
+        int                                       flags
+    ) = 0;
 
     virtual void UpdateRtpHeaderExtensionMap(::std::vector<::webrtc::RtpExtension> const& header_extensions) = 0;
 

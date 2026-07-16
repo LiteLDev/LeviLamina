@@ -13,11 +13,11 @@
 // auto generated forward declare list
 // clang-format off
 class IOptionRegistry;
-class IStoreCatalogItem;
 class MinecraftScreenModel;
 class PartySystemSubController;
 class PerfTurtleScreenController;
 class PersonaRepository;
+class PlayerMessagingToastSubController;
 class ToastManager;
 namespace Json { class Value; }
 namespace Parties { class PartySystem; }
@@ -33,10 +33,12 @@ public:
     ::ll::TypedStorage<4, 4, ::ui::DirtyFlag>                                mDirty;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::PerfTurtleScreenController>> mPerfTurtleScreenController;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PartySystemSubController>> mPartySystemController;
-    ::ll::TypedStorage<8, 8, ::PersonaRepository&>                           mPersonaRepository;
-    ::ll::TypedStorage<8, 8, ::IOptionRegistry&>                             mOptions;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ToastManager>>    mToastManager;
-    ::ll::TypedStorage<8, 376, ::std::optional<::ToastMessage>>              mToastMessage;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PlayerMessagingToastSubController>>
+                                                                          mPlayerMessagingToastSubController;
+    ::ll::TypedStorage<8, 8, ::PersonaRepository&>                        mPersonaRepository;
+    ::ll::TypedStorage<8, 8, ::IOptionRegistry&>                          mOptions;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ToastManager>> mToastManager;
+    ::ll::TypedStorage<8, 376, ::std::optional<::ToastMessage>>           mToastMessage;
     // NOLINTEND
 
 public:
@@ -48,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ToastScreenController() /*override*/;
+    virtual ~ToastScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -56,7 +58,7 @@ public:
 
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
-    virtual void showToast(::ToastMessage message, bool animateIn) /*override*/;
+    virtual void showToast(::ToastMessage, bool) /*override*/;
 
     virtual void removeToast() /*override*/;
 
@@ -73,18 +75,6 @@ public:
         ::ToastManager&                                    toastManager,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
-
-    MCAPI void _destroySplitscreenJoinPopup();
-
-    MCAPI ::IStoreCatalogItem const* _getAchievementPersonaPiece();
-
-    MCAPI ::std::string _getButtonGlyphId(bool isUsingGamepad);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _spawnSplitscreenJoinPopup(::std::string const& joinText);
-
-    MCAPI ::std::string readToastData(::std::string const& field_name) const;
     // NOLINTEND
 
 public:
@@ -100,34 +90,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCFOLD ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
-
-    MCAPI void $showToast(::ToastMessage message, bool animateIn);
-
-    MCAPI void $removeToast();
-
-    MCFOLD void $refreshToast();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

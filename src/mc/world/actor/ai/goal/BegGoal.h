@@ -49,30 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BegGoal(
-        ::Mob&                                 tamableAnimal,
-        ::std::vector<::ItemDescriptor> const& itemList,
-        float                                  lookDistance,
-        int                                    minLookTime,
-        int                                    maxLookTime
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                 tamableAnimal,
-        ::std::vector<::ItemDescriptor> const& itemList,
-        float                                  lookDistance,
-        int                                    minLookTime,
-        int                                    maxLookTime
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

@@ -4,21 +4,21 @@
 
 // auto generated inclusion list
 #include "mc/external/absl/AnyInvocable.h"
-#include "mc/external/rtc/WeakPtr.h"
 #include "mc/external/webrtc/DataChannelInterface.h"
 #include "mc/external/webrtc/DataChannelObserver.h"
 #include "mc/external/webrtc/DataMessageType.h"
-#include "mc/external/webrtc/Priority.h"
+#include "mc/external/webrtc/WeakPtr.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class CopyOnWriteBuffer; }
-namespace rtc { class Thread; }
+namespace webrtc { class CopyOnWriteBuffer; }
 namespace webrtc { class PendingTaskSafetyFlag; }
+namespace webrtc { class PriorityValue; }
 namespace webrtc { class RTCError; }
 namespace webrtc { class SctpDataChannelControllerInterface; }
 namespace webrtc { class StreamId; }
+namespace webrtc { class Thread; }
 namespace webrtc { struct DataBuffer; }
 namespace webrtc { struct DataChannelStats; }
 namespace webrtc { struct InternalDataChannelInit; }
@@ -72,7 +72,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnkeeafcb;
         ::ll::UntypedStorage<8, 8> mUnka1f486;
-        ::ll::UntypedStorage<8, 8> mUnk40ed1f;
+        ::ll::UntypedStorage<8, 8> mUnk85bcfe;
         ::ll::UntypedStorage<8, 8> mUnkb40647;
         ::ll::UntypedStorage<8, 8> mUnk4bf475;
         ::ll::UntypedStorage<8, 8> mUnk307686;
@@ -128,15 +128,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkbda45a;
-    ::ll::UntypedStorage<8, 8>  mUnk13548f;
+    ::ll::UntypedStorage<8, 8>  mUnk13bccf;
+    ::ll::UntypedStorage<8, 8>  mUnk107b95;
     ::ll::UntypedStorage<2, 4>  mUnkab3466;
     ::ll::UntypedStorage<4, 4>  mUnk9256c4;
     ::ll::UntypedStorage<8, 32> mUnkcca8c1;
     ::ll::UntypedStorage<8, 32> mUnk9b2333;
     ::ll::UntypedStorage<4, 8>  mUnkffae17;
     ::ll::UntypedStorage<4, 8>  mUnkb09717;
-    ::ll::UntypedStorage<4, 8>  mUnk3ae18a;
+    ::ll::UntypedStorage<2, 4>  mUnkc3da2a;
     ::ll::UntypedStorage<1, 1>  mUnk269941;
     ::ll::UntypedStorage<1, 1>  mUnk4cf2fb;
     ::ll::UntypedStorage<8, 8>  mUnkf28c17;
@@ -148,7 +148,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkc1e3df;
     ::ll::UntypedStorage<4, 4>  mUnkc2f6a8;
     ::ll::UntypedStorage<8, 8>  mUnk11159a;
-    ::ll::UntypedStorage<8, 16> mUnk96602b;
+    ::ll::UntypedStorage<8, 16> mUnk3c0d8e;
     ::ll::UntypedStorage<4, 4>  mUnke0f8f0;
     ::ll::UntypedStorage<1, 1>  mUnkdfae7e;
     ::ll::UntypedStorage<8, 48> mUnkc9a510;
@@ -174,10 +174,6 @@ public:
 
     virtual bool ordered() const /*override*/;
 
-    virtual ushort maxRetransmitTime() const /*override*/;
-
-    virtual ushort maxRetransmits() const /*override*/;
-
     virtual ::std::optional<int> maxPacketLifeTime() const /*override*/;
 
     virtual ::std::optional<int> maxRetransmitsOpt() const /*override*/;
@@ -188,7 +184,7 @@ public:
 
     virtual int id() const /*override*/;
 
-    virtual ::webrtc::Priority priority() const /*override*/;
+    virtual ::webrtc::PriorityValue priority() const /*override*/;
 
     virtual uint64 buffered_amount() const /*override*/;
 
@@ -235,7 +231,7 @@ public:
 
     MCNAPI void OnClosingProcedureStartedRemotely();
 
-    MCNAPI void OnDataReceived(::webrtc::DataMessageType type, ::rtc::CopyOnWriteBuffer const& payload);
+    MCNAPI void OnDataReceived(::webrtc::DataMessageType type, ::webrtc::CopyOnWriteBuffer const& payload);
 
     MCNAPI void OnTransportChannelClosed(::webrtc::RTCError error);
 
@@ -244,15 +240,15 @@ public:
     MCNAPI void OnTransportReady();
 
     MCNAPI SctpDataChannel(
-        ::webrtc::InternalDataChannelInit const&                     config,
-        ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> controller,
-        ::std::string const&                                         label,
-        bool                                                         connected_to_transport,
-        ::rtc::Thread*                                               signaling_thread,
-        ::rtc::Thread*                                               network_thread
+        ::webrtc::InternalDataChannelInit const&                        config,
+        ::webrtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> controller,
+        ::std::string const&                                            label,
+        bool                                                            connected_to_transport,
+        ::webrtc::Thread*                                               signaling_thread,
+        ::webrtc::Thread*                                               network_thread
     );
 
-    MCNAPI bool SendControlMessage(::rtc::CopyOnWriteBuffer const& buffer);
+    MCNAPI bool SendControlMessage(::webrtc::CopyOnWriteBuffer const& buffer);
 
     MCNAPI ::webrtc::RTCError SendDataMessage(::webrtc::DataBuffer const& buffer, bool queue_if_blocked);
 
@@ -269,12 +265,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::SctpDataChannel> Create(
-        ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> controller,
-        ::std::string const&                                         label,
-        bool                                                         connected_to_transport,
-        ::webrtc::InternalDataChannelInit const&                     config,
-        ::rtc::Thread*                                               signaling_thread,
-        ::rtc::Thread*                                               network_thread
+        ::webrtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> controller,
+        ::std::string const&                                            label,
+        bool                                                            connected_to_transport,
+        ::webrtc::InternalDataChannelInit const&                        config,
+        ::webrtc::Thread*                                               signaling_thread,
+        ::webrtc::Thread*                                               network_thread
     );
 
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::DataChannelInterface> CreateProxy(
@@ -287,12 +283,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::webrtc::InternalDataChannelInit const&                     config,
-        ::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> controller,
-        ::std::string const&                                         label,
-        bool                                                         connected_to_transport,
-        ::rtc::Thread*                                               signaling_thread,
-        ::rtc::Thread*                                               network_thread
+        ::webrtc::InternalDataChannelInit const&                        config,
+        ::webrtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> controller,
+        ::std::string const&                                            label,
+        bool                                                            connected_to_transport,
+        ::webrtc::Thread*                                               signaling_thread,
+        ::webrtc::Thread*                                               network_thread
     );
     // NOLINTEND
 
@@ -315,10 +311,6 @@ public:
 
     MCNAPI bool $ordered() const;
 
-    MCNAPI ushort $maxRetransmitTime() const;
-
-    MCNAPI ushort $maxRetransmits() const;
-
     MCNAPI ::std::optional<int> $maxPacketLifeTime() const;
 
     MCNAPI ::std::optional<int> $maxRetransmitsOpt() const;
@@ -329,7 +321,7 @@ public:
 
     MCNAPI int $id() const;
 
-    MCNAPI ::webrtc::Priority $priority() const;
+    MCNAPI ::webrtc::PriorityValue $priority() const;
 
     MCNAPI uint64 $buffered_amount() const;
 

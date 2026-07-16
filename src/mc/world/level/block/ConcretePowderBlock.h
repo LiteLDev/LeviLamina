@@ -12,7 +12,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class HashedString;
 class ItemInstance;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace mce { class Color; }
@@ -26,9 +25,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
+    virtual ::mce::Color getDustColor(::Block const& block) const /*override*/;
 
-    virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
+    virtual ::std::string getDustParticleName(::Block const& block) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
@@ -43,8 +42,6 @@ public:
     // NOLINTBEGIN
     MCAPI ConcretePowderBlock(::std::string const& nameId, int id);
 
-    MCAPI bool _tryTouchWater(::BlockSource& region, ::BlockPos const& pos, ::std::optional<::HashedString> name) const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
@@ -57,9 +54,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::mce::Color $getDustColor(::Block const&) const;
+    MCFOLD ::mce::Color $getDustColor(::Block const& block) const;
 
-    MCAPI ::std::string $getDustParticleName(::Block const&) const;
+    MCAPI ::std::string $getDustParticleName(::Block const& block) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

@@ -85,7 +85,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::std::string const& $getRequestId() const;
 
-    MCFOLD ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
     MCFOLD ::BlockPos $getBlockPosition() const;
 
@@ -113,7 +113,7 @@ public:
 
     MCFOLD ::CompoundTag $serialize() const;
 
-    MCFOLD bool $isValid() const;
+    MCAPI bool $isValid() const;
 
 
     // NOLINTEND

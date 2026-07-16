@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-struct BeforeWatchdogTerminateEvent;
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -23,29 +21,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptWatchdogTerminateBeforeEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptWatchdogTerminateBeforeEvent(
-        ::BeforeWatchdogTerminateEvent const& beforeWatchdogTerminateEvent,
-        ::Scripting::WeakLifetimeScope const&
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::BeforeWatchdogTerminateEvent const& beforeWatchdogTerminateEvent, ::Scripting::WeakLifetimeScope const&);
+#endif
     // NOLINTEND
 };
 

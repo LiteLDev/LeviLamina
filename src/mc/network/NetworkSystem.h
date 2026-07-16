@@ -7,23 +7,17 @@
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/BinaryStream.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
-#include "mc/network/DevConnectionQuality.h"
 #include "mc/network/NetworkEnableDisableListener.h"
 #include "mc/network/NetworkSettingOptions.h"
 #include "mc/network/PacketGroupDefinition.h"
 #include "mc/network/RakNetConnector.h"
 #include "mc/network/RakPeerHelper.h"
-#include "mc/network/TransportLayer.h"
 #include "mc/network/connection/DisconnectFailReason.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
-class CompressedNetworkPeer;
-class EncryptedNetworkPeer;
 class IPacketObserver;
 class IPacketSerializationController;
 class LocalConnector;
@@ -86,8 +80,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::NetEventCallback&>          mCallbacksObj;
-        ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
+        ::ll::TypedStorage<8, 8, ::NetEventCallback&> mCallbacksObj;
         // NOLINTEND
 
     public:
@@ -96,6 +89,8 @@ public:
         IncomingPacketQueue(IncomingPacketQueue const&);
         IncomingPacketQueue();
     };
+
+    using IncomingPacketQueueArray = ::std::unique_ptr<::NetworkSystem::IncomingPacketQueue>[4];
 
 public:
     // member variables
@@ -198,20 +193,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit NetworkSystem(::NetworkSystem::Dependencies&& deps);
 
-    MCAPI ::TransportLayer _getTransportLayer() const;
-
-    MCAPI void _initNetworkStatistics(::std::unique_ptr<::NetworkStatistics>&& stats);
-
     MCAPI bool _isUsingNetherNetTransportLayer() const;
-
-    MCAPI void _sendInternal(::NetworkIdentifier const& id, ::Packet const& packet, ::std::string const& data);
-
-#ifdef LL_PLAT_C
-    MCAPI void _setDisableLanSignaling(bool disableLanSignaling);
-#endif
-
-    MCAPI bool
-    _sortAndPacketizeEvents(::NetworkConnection& connection, ::std::chrono::steady_clock::time_point endTime);
 
 #ifdef LL_PLAT_C
     MCAPI void closeConnection(
@@ -225,39 +207,9 @@ public:
 
     MCAPI void enableAsyncFlush(::NetworkIdentifier const& id);
 
-    MCAPI ::std::weak_ptr<::CompressedNetworkPeer> getCompressedPeerForUser(::NetworkIdentifier const& id);
-
-    MCFOLD ::std::vector<::std::unique_ptr<::NetworkConnection>> const& getConnections() const;
-
-    MCAPI ::std::weak_ptr<::EncryptedNetworkPeer> getEncryptedPeerForUser(::NetworkIdentifier const& id);
-
-#ifdef LL_PLAT_S
-    MCFOLD ::NetworkStatistics const* getNetworkStatistics() const;
-#endif
-
     MCAPI ::NetworkPeer* getPeerForUser(::NetworkIdentifier const& id);
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::RemoteConnector const> getRemoteConnector() const;
-
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::RemoteConnector> getRemoteConnector();
-
-    MCFOLD ::ServerLocator& getServerLocator();
-
-#ifdef LL_PLAT_C
-    MCAPI ::Bedrock::PubSub::Connector<void(::Json::Value const&)>& getSessionSummaryCallback();
-
-    MCAPI bool hasNetworkSession() const;
-
-    MCAPI bool isNetherNetEnabled() const;
-#endif
-
     MCAPI bool isServer() const;
-
-#ifdef LL_PLAT_C
-    MCAPI void registerClientInstance(::NetEventCallback& callback, ::SubClientId subID);
-#endif
-
-    MCAPI void registerServerInstance(::NetEventCallback& callback);
 
     MCAPI void runEvents(bool networkIsCritical);
 
@@ -266,20 +218,6 @@ public:
     MCAPI void sendToMultiple(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
 
     MCAPI void setCloseConnection(::NetworkIdentifier const& id);
-
-#ifdef LL_PLAT_C
-    MCAPI void setConnectionChannelPaused(::NetworkIdentifier const& id, uint channel, bool paused);
-
-    MCAPI void setDefaultGamePort(ushort defaultPort);
-
-    MCAPI void setDefaultGamePortv6(ushort defaultPortv6);
-
-    MCAPI void setDevConnectionQuality(::DevConnectionQuality quality);
-
-    MCAPI void setUseIPv6Only(bool useIPv6Only);
-#endif
-
-    MCAPI void unregisterClientOrServerInstance(::SubClientId const& subID);
 
     MCAPI void update(::std::vector<::WeakEntityRef> const* userList);
     // NOLINTEND
@@ -338,15 +276,5 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForConnectionCallbacks();
-
-    MCNAPI static void** $vftableForIPSupportInterface();
-
-    MCNAPI static void** $vftableForNetworkEnableDisableListener();
     // NOLINTEND
 };

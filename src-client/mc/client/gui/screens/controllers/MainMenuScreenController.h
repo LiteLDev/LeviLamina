@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/StoreNavigationOrigin.h"
 #include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
 #include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
@@ -15,13 +14,10 @@
 // clang-format off
 class AsyncTracker;
 class DlcUIWrapper;
-class IStoreCatalogItem;
 class MainMenuScreenModel;
-struct LevelSummary;
 struct LocalWorldInfo;
 struct TextEditScreenEventData;
 namespace Realms { struct World; }
-namespace mce { class UUID; }
 // clang-format on
 
 class MainMenuScreenController : public ::MinecraftScreenController {
@@ -58,14 +54,7 @@ public:
 
     MCAPI ::std::string _checkTextEditEventForProfanityAndOpenWarning(::TextEditScreenEventData const& textEditEvent);
 
-    MCFOLD void _displayFileStorageLocationWarningModal();
-
     MCAPI void _displayWorldConversionErrorModalDialog();
-
-    MCAPI void _navigateToPurchaseOfferScreen(::mce::UUID const& uuid, ::StoreNavigationOrigin origin);
-
-    MCAPI void
-    _navigateToPurchaseOfferScreen(::IStoreCatalogItem& item, ::StoreNavigationOrigin origin, bool allowSeeMoreBy);
 
     MCAPI ::ui::ViewRequest _startLocalWorldSubRoutine(
         ::LocalWorldInfo const&                        world,
@@ -73,21 +62,11 @@ public:
         ::std::function<void(::LocalWorldInfo const&)> startLocalWorldCallback
     );
 
-    MCAPI bool _tryCopyWorld(::LevelSummary const& levelSummary);
-
-    MCAPI void _verifySkinApprovedBeforeJoin(::std::function<void()> const& joinCallback);
-
     MCAPI ::ui::ViewRequest attemptUserSignIn(::std::function<void()> adHocCallback);
-
-    MCAPI void confirmationExperimentalVersionDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
     MCAPI void confirmationNoCrossPlatformMultiplayerDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
     MCAPI void confirmationNoCrossPlatformMultiplayerSkinDialog(::std::function<void()> callback);
-
-    MCAPI ::std::shared_ptr<::MainMenuScreenModel> getMainMenuScreenModel();
-
-    MCAPI void needOnlineNetworkForXBLSignInDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
     MCAPI void showInvalidCrossPlatformMultiplayerSkinModal();
 
@@ -110,7 +89,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

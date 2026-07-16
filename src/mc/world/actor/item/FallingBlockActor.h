@@ -14,13 +14,12 @@ class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
 class Block;
-class BlockPos;
-class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
 class ITickDelegate;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -62,21 +61,15 @@ public:
 
     virtual float getShadowRadius() const /*override*/;
 
-    virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
+    virtual float causeFallDamageToActor(float, float, ::ActorDamageSource) /*override*/;
 
-    virtual void teleportTo(
-        ::Vec3 const& pos,
-        bool          shouldStopRiding,
-        int           cause,
-        int           sourceEntityType,
-        bool          keepVelocity
-    ) /*override*/;
+    virtual void teleportTo(::Vec3 const&, bool, int, int, bool) /*override*/;
 
     virtual bool canChangeDimensionsUsingPortal() const /*override*/;
 
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float, ::HurtParameters const&) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
@@ -92,15 +85,9 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI bool _isBeingPushedUp(::Block const& pushingBlock, ::BlockSource& region, ::BlockPos blockPos) const;
-
     MCAPI void breakBlock();
 
     MCAPI void doNormalTick(::ITickDelegate& tickDelegate);
-
-    MCAPI ::Block const& getFallingBlock() const;
-
-    MCAPI void setFallDamageAmount(float amount);
 
     MCAPI void setFallingBlock(::Block const& block, bool creative);
     // NOLINTEND
@@ -118,33 +105,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
-    MCAPI void $normalTick();
-
-    MCFOLD float $getShadowRadius() const;
-
-    MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
-
-    MCFOLD void
-    $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
-
-    MCAPI bool $canChangeDimensionsUsingPortal() const;
-
-    MCAPI void $onSynchedDataUpdate(int dataId);
-
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float, bool, bool);
-
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

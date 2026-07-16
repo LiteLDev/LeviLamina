@@ -19,29 +19,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SlotDescriptor();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SlotDescriptor(::SlotDescriptor&&);
-
-    MCAPI SlotDescriptor(::SlotDescriptor const&);
-
-    MCFOLD void addAcceptedItem(::ItemDescriptor const& itemDescriptor);
-
-    MCAPI ::SlotDescriptor& operator=(::SlotDescriptor const&);
-
     MCAPI ~SlotDescriptor();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SlotDescriptor&&);
-
-    MCAPI void* $ctor(::SlotDescriptor const&);
     // NOLINTEND
 
 public:

@@ -57,10 +57,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setMapping(
-        ::InputEventQueue&      inputMapping,
-        ::BindingFactory const& controllerId,
-        ::InputMapping const&,
-        int
+        ::InputEventQueue&      eventQueue,
+        ::BindingFactory const& bindingFactory,
+        ::InputMapping const&   inputMapping,
+        int                     controllerId
     ) /*override*/;
 
     virtual void clearMapping(int controllerId) /*override*/;
@@ -78,22 +78,14 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI KeyboardMapper();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
-    $setMapping(::InputEventQueue& inputMapping, ::BindingFactory const& controllerId, ::InputMapping const&, int);
+    MCAPI void $setMapping(
+        ::InputEventQueue&      eventQueue,
+        ::BindingFactory const& bindingFactory,
+        ::InputMapping const&   inputMapping,
+        int                     controllerId
+    );
 
     MCAPI void $clearMapping(int controllerId);
 

@@ -10,12 +10,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class ClientNetworkSystem;
 class EntityContext;
 class NetEventCallback;
 class NetworkIdentifier;
 class Packet;
-class ServerNetworkSystem;
 class UserEntityIdentifierComponent;
 struct NetworkIdentifierWithSubId;
 // clang-format on
@@ -29,10 +27,6 @@ public:
     ::ll::TypedStorage<8, 8, ::std::vector<::OwnerPtr<::EntityContext>> const*> mUserList;
     ::ll::TypedStorage<8, 24, ::std::vector<::NetworkIdentifierWithSubId>>      mTempUserIds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LoopbackPacketSender();
 
 public:
     // virtual functions
@@ -60,32 +54,6 @@ public:
     sendBroadcast(::NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, ::Packet const& packet) /*override*/;
 
     virtual void flush(::NetworkIdentifier const& id, ::std::function<void()>&& callback) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI LoopbackPacketSender(::SubClientId subid, ::ClientNetworkSystem& network);
-#endif
-
-    MCAPI LoopbackPacketSender(::SubClientId subid, ::ServerNetworkSystem& network);
-
-    MCFOLD void addLoopbackCallback(::NetEventCallback& callback);
-
-    MCAPI void removeLoopbackCallback(::NetEventCallback& callback);
-
-    MCFOLD void setUserList(::std::vector<::OwnerPtr<::EntityContext>> const* userList);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SubClientId subid, ::ClientNetworkSystem& network);
-#endif
-
-    MCAPI void* $ctor(::SubClientId subid, ::ServerNetworkSystem& network);
     // NOLINTEND
 
 public:

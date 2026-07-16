@@ -17,22 +17,6 @@ public:
     ObjectID& operator=(ObjectID const&);
     ObjectID(ObjectID const&);
     ObjectID();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI explicit ObjectID(int id);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(int id);
-#endif
-    // NOLINTEND
 };
 
 } // namespace glTF

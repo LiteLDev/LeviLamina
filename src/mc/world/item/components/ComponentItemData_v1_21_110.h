@@ -9,8 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersionConstant;
-struct ComponentItemData_v1_21_90;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -24,48 +22,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ComponentItemData_v1_21_110& operator=(ComponentItemData_v1_21_110 const&);
-    ComponentItemData_v1_21_110();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ComponentItemData_v1_21_110(::ComponentItemData_v1_21_110&&);
-
-    MCAPI ComponentItemData_v1_21_110(::ComponentItemData_v1_21_110 const&);
-
-    MCFOLD ::ComponentItemData_v1_21_110& operator=(::ComponentItemData_v1_21_110&&);
-
-    MCAPI ~ComponentItemData_v1_21_110();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void
-    upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_21_90, ::ComponentItemData_v1_21_110, nullptr_t>& upgrader);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ComponentItemData_v1_21_110&&);
-
-    MCFOLD void* $ctor(::ComponentItemData_v1_21_110 const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

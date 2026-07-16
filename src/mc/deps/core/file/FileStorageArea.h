@@ -137,7 +137,7 @@ public:
 
     virtual void tick();
 
-    virtual void flushImmediately();
+    virtual void flushImmediately(::Core::PathView flushPath);
 
     virtual void enableFlushToDisk(bool);
 
@@ -155,9 +155,9 @@ public:
 
     virtual bool shouldAllowCommit() const;
 
-    virtual void trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation);
+    virtual void trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
 
-    virtual void trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation);
+    virtual void trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation writeOperation);
 
     virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
 
@@ -183,33 +183,13 @@ public:
 
     MCAPI void _addReadOperation(bool succeeded, uint64 numBytesRead);
 
-    MCAPI void _addWriteOperation(bool succeeded, uint64 numBytesWritten);
-
     MCAPI void _beginTransaction(::Core::FileSystemImpl* pTransaction, bool);
-
-    MCAPI ::Core::Result _endTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
-
-    MCAPI void _onDeleteFile(::Core::PathView filePath);
-
-    MCAPI void _onWriteFile(::Core::PathView filePath);
 
 #ifdef LL_PLAT_C
     MCAPI void addObserver(::Core::FileStorageAreaObserver& observer);
 #endif
 
     MCAPI void checkUserStorage();
-
-#ifdef LL_PLAT_C
-    MCAPI uint64 getRestrictedMaximumFileSize() const;
-#endif
-
-    MCFOLD ::Core::PathBuffer<::std::string> const& getRootPath() const;
-
-#ifdef LL_PLAT_C
-    MCAPI void setLoggingEnabled(bool enabled);
-
-    MCAPI bool supportsFlatFiles() const;
-#endif
     // NOLINTEND
 
 public:
@@ -218,19 +198,8 @@ public:
     MCAPI static ::Core::Result
     _getStorageAreaForPathImpl(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
 
-    MCAPI static ::Core::Result
-    getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
-
-#ifdef LL_PLAT_C
-    MCAPI static void getTotalBytesWrittenAndReadFromAllStorageAreas(uint64& outBytesWritten, uint64& outBytesRead);
-#endif
-
-    MCAPI static void teardown();
-
 #ifdef LL_PLAT_C
     MCAPI static void tickStorageAreas();
-
-    MCAPI static ::Core::Result unloadAllStorageAreaFlatFileManifests(bool isInGame);
 #endif
     // NOLINTEND
 
@@ -303,7 +272,7 @@ public:
 
     MCFOLD void $tick();
 
-    MCFOLD void $flushImmediately();
+    MCFOLD void $flushImmediately(::Core::PathView flushPath);
 
     MCFOLD void $enableFlushToDisk(bool);
 
@@ -321,13 +290,13 @@ public:
 
     MCAPI bool $shouldAllowCommit() const;
 
-    MCAPI void $trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation);
+    MCAPI void $trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
 
-    MCAPI void $trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation);
+    MCAPI void $trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation writeOperation);
 
     MCAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
 
-    MCAPI bool $shouldRecordFileError(::Core::PathView path, ::std::error_code error) const;
+    MCFOLD bool $shouldRecordFileError(::Core::PathView path, ::std::error_code error) const;
 
     MCFOLD ::Core::Result $_commit();
 
@@ -336,12 +305,6 @@ public:
     MCFOLD void $_onTeardown();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

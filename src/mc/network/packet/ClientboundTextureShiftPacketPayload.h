@@ -27,25 +27,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ClientboundTextureShiftPacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClientboundTextureShiftPacketPayload(::ClientboundTextureShiftPacketPayload const&);
-
-    MCAPI ::ClientboundTextureShiftPacketPayload& operator=(::ClientboundTextureShiftPacketPayload&&);
-
-    MCAPI ::ClientboundTextureShiftPacketPayload& operator=(::ClientboundTextureShiftPacketPayload const&);
-
     MCAPI ~ClientboundTextureShiftPacketPayload();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ClientboundTextureShiftPacketPayload const&);
     // NOLINTEND
 
 public:

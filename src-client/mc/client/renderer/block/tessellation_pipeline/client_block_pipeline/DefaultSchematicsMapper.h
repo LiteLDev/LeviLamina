@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/block/culling/BlockCullingData.h"
 #include "mc/client/renderer/block/tessellation_pipeline/client_block_pipeline/ISchematicsMapper.h"
 #include "mc/client/renderer/block/tessellation_pipeline/helper/client_block_pipeline/ArrayCache.h"
 
@@ -37,20 +36,6 @@ public:
         ::BlockPos const&                                         relativePos,
         ::Matrix const&                                           blockPosTransform
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool _shouldOccludeAgainst(
-        ::BlockPos const&                                           relativePos,
-        uchar                                                       neighborDirection,
-        ::ClientBlockPipeline::BlockVolumeArea const&               area,
-        ::ClientBlockPipeline::BitsetCache const&                   opaqueFullBlockCache,
-        ::ClientBlockPipeline::ArrayCache<::Block const*> const&    cullingBlocksCache,
-        ::std::optional<::BlockCullingData::CullingRule::Condition> condition,
-        bool                                                        cullAgainstFullAndOpaque
-    ) const;
     // NOLINTEND
 
 public:

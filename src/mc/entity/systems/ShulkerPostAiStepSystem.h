@@ -4,10 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class StrictEntityContext;
-struct ActorRotationComponent;
-struct MobBodyRotationComponent;
-struct StateVectorComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -15,13 +11,6 @@ class ShulkerPostAiStepSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doShulkerPostAiStepSystem(
-        ::StrictEntityContext const& actorRotationComponent,
-        ::ActorRotationComponent&    mobBodyRotationComponent,
-        ::MobBodyRotationComponent&  stateVectorComponent,
-        ::StateVectorComponent&
-    );
-
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

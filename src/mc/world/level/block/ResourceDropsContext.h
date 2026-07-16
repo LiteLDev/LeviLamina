@@ -9,11 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockActor;
 class IBlockSource;
-class ILevel;
 class ItemStack;
-class Random;
 // clang-format on
 
 struct ResourceDropsContext {
@@ -31,31 +28,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockActor const* getBlockActor() const;
-
-    MCAPI ::ILevel& getLevel() const;
-
     MCAPI int getMiningLootBonusLevel() const;
 
-    MCAPI ::Random& getRandom() const;
-
     MCAPI bool isUsingSilkTouch() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::ResourceDropsContext
-    fromExplosion(::IBlockSource const& region, float explosionRadius, ::BlockPos const& position);
-
-    MCAPI static ::ResourceDropsContext
-    fromLootResolver(::IBlockSource const& region, ::BlockPos const& position, ::ItemStack const& usedItem);
-
-    MCAPI static ::ResourceDropsContext fromOtherCause(::IBlockSource const& region, ::BlockPos const& position);
-
-    MCAPI static ::ResourceDropsContext
-    fromPlayerMining(::IBlockSource const& region, ::BlockPos const& position, ::ItemStack const& usedItem);
-
-    MCAPI static ::ResourceDropsContext fromProjectileHit(::IBlockSource const& region, ::BlockPos const& position);
     // NOLINTEND
 };

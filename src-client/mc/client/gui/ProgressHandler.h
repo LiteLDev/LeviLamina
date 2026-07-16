@@ -39,7 +39,7 @@ public:
 
     virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) = 0;
 
-    virtual void onRetry(::MinecraftScreenModel& minecraftScreenModel);
+    virtual void onRetry(::MinecraftScreenModel&);
 
     virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) = 0;
 
@@ -47,9 +47,9 @@ public:
 
     virtual float getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel& model) const = 0;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const = 0;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
 
     virtual ::std::string getName() const = 0;
 
@@ -70,11 +70,11 @@ public:
 
     MCFOLD void $onComplete(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onRetry(::MinecraftScreenModel& minecraftScreenModel);
+    MCFOLD void $onRetry(::MinecraftScreenModel&);
 
     MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
 
     MCAPI ::std::string $getTTSProgressMessage() const;
 

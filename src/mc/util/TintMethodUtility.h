@@ -17,8 +17,6 @@ MCNAPI void bindType(::cereal::ReflectionCtx& ctx);
 
 MCNAPI ::TintMethod fromString(::std::string const& tintMethodString, ::TintMethod defaultValue);
 
-MCNAPI char const* getHelp();
-
 MCNAPI ::std::string toString(::TintMethod tintMethod, ::std::string const& defaultValue);
 // NOLINTEND
 

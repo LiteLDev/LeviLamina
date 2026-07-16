@@ -6,7 +6,7 @@
 #include "mc/common/editor/IEditorPlayer.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorPlayerServiceProvider.h"
 #include "mc/editor/services/EditorServiceList.h"
 #include "mc/world/events/EventListenerDispatcher.h"
@@ -93,10 +93,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI EditorPlayerCommon(::Player& player, ::gsl::not_null<::Editor::EditorInitParams*> initParams);
-
-    MCNAPI ::Editor::EditorPlayerCommon::InitializationState _getInitializationState() const;
-
-    MCNAPI void _setInitializationState(::Editor::EditorPlayerCommon::InitializationState value);
     // NOLINTEND
 
 public:

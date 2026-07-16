@@ -14,25 +14,6 @@ public:
 public:
     // prevent constructor by default
     LevelRendererProxyCallbacks& operator=(LevelRendererProxyCallbacks const&);
+    LevelRendererProxyCallbacks(LevelRendererProxyCallbacks const&);
     LevelRendererProxyCallbacks();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI LevelRendererProxyCallbacks(::LevelRendererProxyCallbacks const&);
-
-    MCNAPI ~LevelRendererProxyCallbacks();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::LevelRendererProxyCallbacks const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

@@ -27,38 +27,17 @@ public:
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
 
-    virtual void executeAction(::RenderParams& params) const /*override*/;
+    virtual void executeAction(::RenderParams&) const /*override*/;
 
     virtual void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
-        ::Factory<::EventResponse> const&                                                                       factory
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>&,
+        ::Factory<::EventResponse> const&
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
 
-    MCAPI void $executeAction(::RenderParams& params) const;
-
-    MCAPI void $buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
-        ::Factory<::EventResponse> const&                                                                       factory
-    ) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

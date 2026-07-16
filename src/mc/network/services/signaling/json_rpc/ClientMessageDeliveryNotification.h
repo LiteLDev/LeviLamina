@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/network/services/signaling/json_rpc/JsonRpcNotificationBase.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace JsonRpc {
 
 struct ClientMessageDeliveryNotification : public ::JsonRpc::JsonRpcNotificationBase {
@@ -32,18 +27,6 @@ public:
         Params& operator=(Params const&);
         Params(Params const&);
         Params();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~Params();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -54,36 +37,9 @@ public:
 
 public:
     // prevent constructor by default
+    ClientMessageDeliveryNotification& operator=(ClientMessageDeliveryNotification const&);
     ClientMessageDeliveryNotification(ClientMessageDeliveryNotification const&);
     ClientMessageDeliveryNotification();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ClientMessageDeliveryNotification(::std::string messageId);
-
-    MCNAPI ::JsonRpc::ClientMessageDeliveryNotification& operator=(::JsonRpc::ClientMessageDeliveryNotification const&);
-
-    MCNAPI ~ClientMessageDeliveryNotification();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string messageId);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace JsonRpc

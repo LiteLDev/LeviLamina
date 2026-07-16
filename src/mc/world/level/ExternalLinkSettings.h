@@ -21,19 +21,11 @@ public:
     MCAPI ExternalLinkSettings(::ExternalLinkSettings const&);
 
     MCFOLD ::ExternalLinkSettings& operator=(::ExternalLinkSettings&&);
-
-    MCAPI ~ExternalLinkSettings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCFOLD void* $ctor(::ExternalLinkSettings const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

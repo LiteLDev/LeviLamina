@@ -12,7 +12,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockSource;
 class Mob;
 class Path;
 // clang-format on
@@ -89,25 +88,13 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    virtual void appendDebugInfo(::std::string&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RandomSearchAndDigGoal(::Mob& mob);
-
-    MCAPI ::RandomSearchAndDigGoal::CanUseOutcome _canUse();
-
-    MCAPI void _digUpItems();
-
-    MCAPI void _emitDiggingParticles();
-
-    MCAPI ::std::optional<::BlockPos> _findWantedTargetPos() const;
-
-    MCAPI bool _isValidTarget(::BlockSource const& region, ::BlockPos pos) const;
-
-    MCAPI void _resetCooldownEndTick();
     // NOLINTEND
 
 public:
@@ -119,24 +106,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
-
-    MCAPI void $start();
-
-    MCAPI void $stop();
-
-    MCAPI void $tick();
-
-    MCAPI void $appendDebugInfo(::std::string& str) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

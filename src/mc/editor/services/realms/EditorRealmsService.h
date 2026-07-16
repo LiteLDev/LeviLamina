@@ -6,7 +6,7 @@
 #include "mc/common/editor/EditorRealmsServiceAvailability.h"
 #include "mc/common/editor/RealmsServiceStatus.h"
 #include "mc/common/editor/RealmsWorldUploadResult.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorRealmsServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -17,7 +17,6 @@ class WeakEntityRef;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class GameOptions; }
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Network { class EditorRealmsStatusPayload; }
 namespace Editor::Services { struct EditorRealmsWorld; }
 namespace Editor::Services { struct EditorRealmsWorldSlot; }
 // clang-format on
@@ -113,16 +112,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EditorRealmsService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI bool const _canUploadWorld() const;
-
-    MCNAPI void _handleServiceStatusPayload(::Editor::Network::EditorRealmsStatusPayload const& payload);
-
-#ifdef LL_PLAT_C
-    MCNAPI void sendIsRealmsServiceAvailablePayload();
-#endif
-
-    MCNAPI void sendServiceStatusPayload();
     // NOLINTEND
 
 public:

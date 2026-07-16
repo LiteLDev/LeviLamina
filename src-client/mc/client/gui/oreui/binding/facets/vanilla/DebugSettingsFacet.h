@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ namespace OreUI { struct BiomeData; }
 
 namespace OreUI {
 
-class DebugSettingsFacet : public ::OreUI::FacetBase<::OreUI::DebugSettingsFacet> {
+class DebugSettingsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::DebugSettingsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -46,40 +46,6 @@ public:
     MCAPI explicit DebugSettingsFacet(
         ::std::shared_ptr<::OreUI::WorldSettingsProvider_DEPRECATED> worldSettingsProvider
     );
-
-    MCAPI void _setGameVersion(::std::string const& versionName);
-
-    MCFOLD int getBiomeOverride() const;
-
-    MCFOLD bool getEnableGameVersionOverride() const;
-
-    MCAPI bool getFlatNether() const;
-
-    MCFOLD ::std::string const& getGameVersionOverride() const;
-
-    MCFOLD int getSpawnBiome() const;
-
-    MCFOLD int getSpawnDimension() const;
-
-    MCFOLD bool isEnableBiomeOverride() const;
-
-    MCFOLD bool isEnableSpawnBiome() const;
-
-    MCAPI void setBiomeOverride(int);
-
-    MCAPI void setEnableBiomeOverride(bool enable);
-
-    MCAPI void setEnableGameVersionOverride(bool doOverride);
-
-    MCAPI void setEnableSpawnBiome(bool enable);
-
-    MCAPI void setFlatNether(bool isFlat);
-
-    MCAPI void setGameVersionOverride(::std::string const& version);
-
-    MCAPI void setSpawnBiome(int);
-
-    MCAPI void setSpawnDimension(int spawnDimensionIndex);
     // NOLINTEND
 
 public:
@@ -97,13 +63,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

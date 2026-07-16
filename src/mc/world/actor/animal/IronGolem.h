@@ -77,7 +77,7 @@ public:
 
     MCFOLD void $die(::ActorDamageSource const& source);
 
-    MCFOLD float $getShadowRadius() const;
+    MCAPI float $getShadowRadius() const;
 
     MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings);
 

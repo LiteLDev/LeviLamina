@@ -73,23 +73,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TCPInterface();
+    virtual ~TCPInterface() = default;
 
-    virtual void Send(char const* data, uint length, ::RakNet::SystemAddress const& systemAddress, bool broadcast);
+    virtual void Send(char const*, uint, ::RakNet::SystemAddress const&, bool);
 
-    virtual bool SendList(
-        char const**                   data,
-        uint const*                    lengths,
-        int const                      numParameters,
-        ::RakNet::SystemAddress const& systemAddress,
-        bool                           broadcast
-    );
+    virtual bool SendList(char const**, uint const*, int const, ::RakNet::SystemAddress const&, bool);
 
     virtual bool ReceiveHasPackets();
 
     virtual ::RakNet::Packet* Receive();
 
-    virtual void PushBackPacket(::RakNet::Packet* packet, bool pushAtHead);
+    virtual void PushBackPacket(::RakNet::Packet*, bool);
     // NOLINTEND
 
 public:
@@ -100,13 +94,10 @@ public:
     MCAPI ::RakNet::SystemAddress
     Connect(char const* host, ushort remotePort, bool block, ushort socketFamily, char const* bindAddress);
 
-    MCAPI bool CreateListenSocket(ushort port, ushort maxIncomingConnections, ushort socketFamily, char const*);
+    MCAPI bool
+    CreateListenSocket(ushort port, ushort maxIncomingConnections, ushort socketFamily, char const* bindAddress);
 
     MCAPI void DeallocatePacket(::RakNet::Packet* packet);
-
-    MCAPI ushort GetConnectionCount() const;
-
-    MCAPI void GetConnectionList(::RakNet::SystemAddress* remoteSystems, ushort* numberOfSystems) const;
 
     MCAPI uint GetOutgoingDataBufferSize(::RakNet::SystemAddress systemAddress) const;
 
@@ -115,10 +106,6 @@ public:
     MCAPI ::RakNet::SystemAddress HasFailedConnectionAttempt();
 
     MCAPI ::RakNet::SystemAddress HasLostConnection();
-
-    MCAPI ::RakNet::Packet* ReceiveInt();
-
-    MCAPI uint64 SocketConnect(char const* host, ushort remotePort, ushort socketFamily, char const*);
 
     MCAPI bool Start(
         ushort      port,
@@ -132,10 +119,6 @@ public:
     MCAPI void Stop();
 
     MCAPI TCPInterface();
-
-    MCAPI bool WasStarted() const;
-
-    MCAPI bool _appendToBlockingSocketList(uint64 const& s);
     // NOLINTEND
 
 public:
@@ -145,37 +128,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Send(char const* data, uint length, ::RakNet::SystemAddress const& systemAddress, bool broadcast);
 
-    MCAPI bool $SendList(
-        char const**                   data,
-        uint const*                    lengths,
-        int const                      numParameters,
-        ::RakNet::SystemAddress const& systemAddress,
-        bool                           broadcast
-    );
-
-    MCAPI bool $ReceiveHasPackets();
-
-    MCAPI ::RakNet::Packet* $Receive();
-
-    MCAPI void $PushBackPacket(::RakNet::Packet* packet, bool pushAtHead);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

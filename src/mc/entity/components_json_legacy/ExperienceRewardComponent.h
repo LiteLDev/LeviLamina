@@ -22,17 +22,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCFOLD bool getIsExperienceDropEnabled() const;
-
     MCAPI int getOnBredExperience(::Actor& owner) const;
 
     MCAPI int getOnDeathExperience(::Actor& owner) const;
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
-
-    MCFOLD void setIsExperienceDropEnabled(bool isExperienceDropEnabled);
 
     MCAPI ~ExperienceRewardComponent();
     // NOLINTEND

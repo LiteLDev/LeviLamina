@@ -4,18 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/world/inventory/network/ItemStackNetResult.h"
-#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
-#include "mc/world/inventory/network/crafting/ItemStackRequestActionCraft.h"
 
 // auto generated forward declare list
 // clang-format off
 class ContainerScreenContext;
 class ItemStack;
 class ItemStackRequestActionCraftBase;
-class ItemStackRequestActionCraftRecipeAuto;
 struct FullContainerName;
-struct RecipeNetIdTag;
 // clang-format on
 
 class CraftHandlerTrade : public ::CraftHandlerBase {
@@ -37,10 +33,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftHandlerTrade() /*override*/;
+    virtual ~CraftHandlerTrade() /*override*/ = default;
 
-    virtual ::ItemStackNetResult
-    _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
+    virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const&) /*override*/;
 
     virtual ::ItemStackNetResult handleConsumedItem(
         ::FullContainerName const& openContainerNetId,
@@ -52,42 +47,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult _handleAutoTrade2(::ItemStackRequestActionCraftRecipeAuto const& requestAction);
-
-    MCAPI ::ItemStackNetResult _handleTrade1(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
-
-    MCAPI ::ItemStackNetResult _initResultItem(::RecipeNetId const& tradeRecipeNetId, uchar numCrafts);
-
-    MCAPI ::ItemStackNetResult _initTrade2Consumes();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
-    MCAPI ::ItemStackNetResult $handleConsumedItem(
-        ::FullContainerName const& openContainerNetId,
-        uchar const                slot,
-        ::ItemStack const&         consumedItem
-    );
-
-    MCAPI void $_postCraftRequest(bool const wasSuccess);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

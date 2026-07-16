@@ -79,12 +79,6 @@ public:
             ::std::allocator<::OreUI::DataDrivenUIGenericNode>> const& childrenNodes
     );
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace OreUI

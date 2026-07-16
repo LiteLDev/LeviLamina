@@ -35,18 +35,6 @@ public:
         PoolEntry& operator=(PoolEntry const&);
         PoolEntry(PoolEntry const&);
         PoolEntry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PoolEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -67,11 +55,8 @@ public:
     // NOLINTBEGIN
     virtual void init() /*override*/;
 
-    virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> createWorkerPool(
-        ::std::string_view               name,
-        ::Core::Profile::ThreadFrameType frameType,
-        ::WorkerPoolConfig const&        config
-    ) /*override*/;
+    virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>
+    createWorkerPool(::std::string_view, ::Core::Profile::ThreadFrameType, ::WorkerPoolConfig const&) /*override*/;
 
     virtual void tick() /*override*/;
     // NOLINTEND
@@ -79,25 +64,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $init();
 
-    MCNAPI ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> $createWorkerPool(
-        ::std::string_view               name,
-        ::Core::Profile::ThreadFrameType frameType,
-        ::WorkerPoolConfig const&        config
-    );
-
-    MCNAPI void $tick();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForImplBase();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };
 

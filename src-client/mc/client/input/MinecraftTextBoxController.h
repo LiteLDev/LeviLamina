@@ -40,20 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit MinecraftTextBoxController(::IMinecraftGame& minecraftGame);
-
-    MCFOLD void onOreUIInitialized(::OreUI::OreUISystem* oreUISystem);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftGame& minecraftGame);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setTextBoxState(int controllerId, ::TextBoxStateChange const& stateChange);

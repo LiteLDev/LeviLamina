@@ -66,10 +66,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ResourceAllowList(::Core::Path const& packagePath);
-
-    MCAPI ::std::optional<::std::string> getQRCodeTarget(::std::string const& id) const;
-
-    MCAPI ::std::optional<::OreUI::ResourcePath> getResourcePath(::std::string const& id) const;
     // NOLINTEND
 
 public:

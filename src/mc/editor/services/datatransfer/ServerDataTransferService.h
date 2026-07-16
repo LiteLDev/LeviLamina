@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/ServerDataTransferServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -12,12 +12,6 @@
 // clang-format off
 class HashedString;
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Network { class DataTransferServiceCreateSettingResponsePayload; }
-namespace Editor::Network { class DataTransferServiceDataRequestResponsePayload; }
-namespace Editor::Network { class DataTransferServiceDeferredExperimentEnabledPayload; }
-namespace Editor::Network { class DataTransferServiceIdentifiersRequestResponsePayload; }
-namespace Editor::Network { class DataTransferServiceRegisterCollectionPayload; }
-namespace Editor::Network { class DataTransferServiceRequestBiomeConfigResponsePayload; }
 namespace Editor::ScriptModule { class ScriptTransferCollectionNameData; }
 namespace mce { class UUID; }
 // clang-format on
@@ -51,18 +45,6 @@ public:
         PendingBiomeConfigRequest& operator=(PendingBiomeConfigRequest const&);
         PendingBiomeConfigRequest(PendingBiomeConfigRequest const&);
         PendingBiomeConfigRequest();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PendingBiomeConfigRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct PendingCreateSettingRequest {
@@ -76,23 +58,9 @@ public:
 
     public:
         // prevent constructor by default
+        PendingCreateSettingRequest& operator=(PendingCreateSettingRequest const&);
         PendingCreateSettingRequest(PendingCreateSettingRequest const&);
         PendingCreateSettingRequest();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::Editor::Services::ServerDataTransferService::PendingCreateSettingRequest&
-        operator=(::Editor::Services::ServerDataTransferService::PendingCreateSettingRequest const&);
-
-        MCNAPI ~PendingCreateSettingRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct PendingDataRequest {
@@ -108,18 +76,6 @@ public:
         PendingDataRequest& operator=(PendingDataRequest const&);
         PendingDataRequest(PendingDataRequest const&);
         PendingDataRequest();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PendingDataRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct PendingIdentifiersRequest {
@@ -135,18 +91,6 @@ public:
         PendingIdentifiersRequest& operator=(PendingIdentifiersRequest const&);
         PendingIdentifiersRequest(PendingIdentifiersRequest const&);
         PendingIdentifiersRequest();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PendingIdentifiersRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct RegisteredCollection {
@@ -163,21 +107,6 @@ public:
         RegisteredCollection& operator=(RegisteredCollection const&);
         RegisteredCollection(RegisteredCollection const&);
         RegisteredCollection();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::Editor::Services::ServerDataTransferService::RegisteredCollection&
-        operator=(::Editor::Services::ServerDataTransferService::RegisteredCollection&&);
-
-        MCNAPI ~RegisteredCollection();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -188,6 +117,7 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk35f4bc;
     ::ll::UntypedStorage<8, 64> mUnk705e89;
     ::ll::UntypedStorage<8, 64> mUnke70eae;
+    ::ll::UntypedStorage<8, 64> mUnkdc0560;
     ::ll::UntypedStorage<1, 1>  mUnkb9da73;
     // NOLINTEND
 
@@ -200,7 +130,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerDataTransferService() /*override*/;
+    virtual ~ServerDataTransferService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -209,7 +139,7 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     virtual void requestBiomeConfigs(
-        ::std::string const& biomeIdentifier,
+        ::std::string const&,
         ::std::function<void(
             ::std::string const&,
             ::std::string const&,
@@ -217,59 +147,62 @@ public:
             ::std::string const&,
             ::std::string const&,
             ::std::string const&
-        )> const&            callback
+        )> const&
+    ) /*override*/;
+
+    virtual void requestDefaultBiomeConfigs(
+        ::std::string const&,
+        ::std::function<void(
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&
+        )> const&
     ) /*override*/;
 
     virtual void requestData(
-        ::std::string const& collectionName,
-        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const& callback,
-        ::std::string const&                                                                                 identifier,
-        bool                                                                                                 useSnapshot
+        ::std::string const&,
+        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const&,
+        ::std::string const&,
+        bool
     ) /*override*/;
 
     virtual void requestIdentifiersForCollection(
-        ::std::string const& collectionName,
+        ::std::string const&,
         ::std::function<void(
             ::std::string const&,
             ::std::vector<::HashedString> const&,
             bool,
             ::std::optional<::std::string>
-        )> const&            callback
+        )> const&
     ) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<::std::string const>
-    requestSchema(::std::string const& collectionName) /*override*/;
+    virtual ::Scripting::Result_deprecated<::std::string const> requestSchema(::std::string const&) /*override*/;
 
     virtual void createNewSetting(
-        ::std::string const& collectionName,
-        ::std::string const& identifier,
-        ::std::string const& jsonData,
-        bool                 lockToBiome,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        bool,
         ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::optional<::std::string>)> const&
-            callback
     ) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> changeBiomeMapping(
-        ::std::string const& biomeIdentifier,
-        ::std::string const& collectionName,
-        ::std::string const& identifier
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    changeBiomeMapping(::std::string const&, ::std::string const&, ::std::string const&) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> sendData(
-        ::std::string const& collectionName,
-        ::std::string const& jsonData,
-        ::std::string const& identifier,
-        bool                 lockToBiome
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    sendData(::std::string const&, ::std::string const&, ::std::string const&, bool) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> sendDataToClipboard(::std::string const& jsonData) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> sendDataToClipboard(::std::string const&) /*override*/;
 
     virtual ::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData> getRegisteredCollections() const
         /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> openSession(::std::string const& collectionName) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> openSession(::std::string const&) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> closeSession(::std::string const& collectionName) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> closeSession(::std::string const&) /*override*/;
 
     virtual bool isDeferredExperimentEnabled() const /*override*/;
     // NOLINTEND
@@ -278,29 +211,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ServerDataTransferService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI void
-    _onCreateSettingResponseReceived(::Editor::Network::DataTransferServiceCreateSettingResponsePayload const& payload);
-
-    MCNAPI void _onDataRequestResponsePayloadReceived(
-        ::Editor::Network::DataTransferServiceDataRequestResponsePayload const& payload
-    );
-
-    MCNAPI void _onDeferredExperimentEnabledPayloadReceived(
-        ::Editor::Network::DataTransferServiceDeferredExperimentEnabledPayload const& payload
-    );
-
-    MCNAPI void _onRegisterCollectionPayloadReceived(
-        ::Editor::Network::DataTransferServiceRegisterCollectionPayload const& payload
-    );
-
-    MCNAPI void _onRequestBiomeConfigResponseReceived(
-        ::Editor::Network::DataTransferServiceRequestBiomeConfigResponsePayload const& payload
-    );
-
-    MCNAPI void _onRequestIdentifiersResponseReceived(
-        ::Editor::Network::DataTransferServiceIdentifiersRequestResponsePayload const& payload
-    );
     // NOLINTEND
 
 public:
@@ -310,92 +220,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $quit();
-
-    MCNAPI ::std::string_view $getServiceName() const;
-
-    MCNAPI void $requestBiomeConfigs(
-        ::std::string const& biomeIdentifier,
-        ::std::function<void(
-            ::std::string const&,
-            ::std::string const&,
-            ::std::string const&,
-            ::std::string const&,
-            ::std::string const&,
-            ::std::string const&
-        )> const&            callback
-    );
-
-    MCNAPI void $requestData(
-        ::std::string const& collectionName,
-        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const& callback,
-        ::std::string const&                                                                                 identifier,
-        bool                                                                                                 useSnapshot
-    );
-
-    MCNAPI void $requestIdentifiersForCollection(
-        ::std::string const& collectionName,
-        ::std::function<void(
-            ::std::string const&,
-            ::std::vector<::HashedString> const&,
-            bool,
-            ::std::optional<::std::string>
-        )> const&            callback
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<::std::string const> $requestSchema(::std::string const& collectionName);
-
-    MCNAPI void $createNewSetting(
-        ::std::string const& collectionName,
-        ::std::string const& identifier,
-        ::std::string const& jsonData,
-        bool                 lockToBiome,
-        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::optional<::std::string>)> const&
-            callback
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> $changeBiomeMapping(
-        ::std::string const& biomeIdentifier,
-        ::std::string const& collectionName,
-        ::std::string const& identifier
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> $sendData(
-        ::std::string const& collectionName,
-        ::std::string const& jsonData,
-        ::std::string const& identifier,
-        bool                 lockToBiome
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> $sendDataToClipboard(::std::string const& jsonData);
-
-    MCNAPI ::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData> $getRegisteredCollections() const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> $openSession(::std::string const& collectionName);
-
-    MCNAPI ::Scripting::Result_deprecated<void> $closeSession(::std::string const& collectionName);
-
-    MCNAPI bool $isDeferredExperimentEnabled() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForServerDataTransferServiceProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

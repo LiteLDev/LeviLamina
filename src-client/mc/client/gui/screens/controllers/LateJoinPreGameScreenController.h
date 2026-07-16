@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LateJoinPreGameScreenController() /*override*/;
+    virtual ~LateJoinPreGameScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -56,22 +56,6 @@ public:
         ::std::function<void()> const&            userReadyCallback,
         bool                                      hasXBLBroadcast
     );
-
-    MCAPI void _checkPremiumAccessAndShowUpsell(::std::function<void(bool)> callback);
-
-    MCAPI void _handleUserReadyToJoinGame();
-
-    MCAPI void _promptForPlatformConnection();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI bool _tickAnimatingText(bool updateBaseText);
-
-    MCAPI bool _tickUserState();
-
-    MCAPI void _warnLockedSkin();
-
-    MCAPI void _warnRestrictedPlatformMultiplayer();
     // NOLINTEND
 
 public:
@@ -85,26 +69,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI ::std::string $_getButtonBDescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

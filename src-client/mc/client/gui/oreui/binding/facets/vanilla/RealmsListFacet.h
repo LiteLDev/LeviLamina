@@ -3,21 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/client/network/realms/RealmsAPI.h"
-#include "mc/client/realms/RealmsListError.h"
-#include "mc/client/realms/RealmsListState.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
-struct RealmsWorldInfo;
 namespace Realms { class RealmsList; }
 // clang-format on
 
 namespace OreUI {
 
-class RealmsListFacet : public ::OreUI::FacetBase<::OreUI::RealmsListFacet> {
+class RealmsListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,16 +36,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsListFacet(::std::shared_ptr<::Realms::RealmsList> realmsList);
-
-    MCFOLD void forceFetchRealmsList();
-
-    MCAPI ::Realms::RealmsListError getError() const;
-
-    MCAPI ::RealmsAPI::Compatibility getRealmsCompatibility() const;
-
-    MCFOLD ::Realms::RealmsListState getState() const;
-
-    MCFOLD ::std::vector<::RealmsWorldInfo> const& getWorldList() const;
     // NOLINTEND
 
 public:
@@ -67,13 +53,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

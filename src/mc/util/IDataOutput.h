@@ -6,7 +6,7 @@ class IDataOutput {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDataOutput();
+    virtual ~IDataOutput() = default;
 
     virtual void writeString(::std::string_view v) = 0;
 
@@ -25,12 +25,6 @@ public:
     virtual void writeLongLong(int64 v) = 0;
 
     virtual void writeBytes(void const* data, uint64 bytes) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

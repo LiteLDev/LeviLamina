@@ -14,6 +14,7 @@ class ActorHurtResult;
 class Block;
 class EntityContext;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -41,7 +42,7 @@ public:
     virtual bool canDestroyBlock(::Block const& block) const /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual float getInertia() /*override*/;
     // NOLINTEND
@@ -77,7 +78,8 @@ public:
 
     MCAPI bool $canDestroyBlock(::Block const& block) const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
     MCAPI float $getInertia();
 

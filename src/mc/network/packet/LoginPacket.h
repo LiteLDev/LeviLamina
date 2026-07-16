@@ -62,26 +62,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LoginPacket();
-
-#ifdef LL_PLAT_C
-    MCAPI explicit LoginPacket(::LoginPacketPayload payload);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::LoginPacketPayload payload);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::MinecraftPacketIds $getId() const;

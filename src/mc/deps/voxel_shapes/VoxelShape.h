@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/container/small_vector.h"
 #include "mc/deps/voxel_shapes/JoinOperation.h"
 
 // auto generated forward declare list
 // clang-format off
 class AABB;
 class Vec3;
-namespace VoxelShapes { class Cells; }
 namespace VoxelShapes { struct SerializableVoxelShape; }
 // clang-format on
 
@@ -38,26 +36,13 @@ public:
 
     MCNAPI VoxelShape(::VoxelShapes::VoxelShape const&);
 
-    MCNAPI VoxelShape(
-        ::VoxelShapes::Cells               cells,
-        ::Bedrock::small_vector<float, 12> xCoords,
-        ::Bedrock::small_vector<float, 12> yCoords,
-        ::Bedrock::small_vector<float, 12> zCoords
-    );
-
     MCNAPI ::VoxelShapes::VoxelShape computeFaceShape(uchar face) const;
-
-#ifdef LL_PLAT_C
-    MCNAPI bool isEmpty() const;
-
-    MCNAPI bool isUnitCube() const;
-#endif
 
     MCNAPI ::VoxelShapes::VoxelShape& operator=(::VoxelShapes::VoxelShape&&);
 
+#ifdef LL_PLAT_C
     MCNAPI bool operator==(::VoxelShapes::VoxelShape const& rhs) const;
-
-    MCNAPI void rotate(::Vec3 const& rotationDegrees, ::Vec3 const& rotationPivot);
+#endif
 
     MCNAPI ::VoxelShapes::SerializableVoxelShape toSerializable() const;
 
@@ -70,17 +55,9 @@ public:
     MCNAPI static ::VoxelShapes::VoxelShape
     createCuboidShape(float xMin, float yMin, float zMin, float xMax, float yMax, float zMax);
 
-    MCNAPI static ::VoxelShapes::VoxelShape createEmptyShape();
-
     MCNAPI static ::VoxelShapes::VoxelShape createShapeFromAabbs(::gsl::span<::AABB const> boxes);
 
     MCNAPI static ::VoxelShapes::VoxelShape fromSerializable(::VoxelShapes::SerializableVoxelShape const& serializable);
-
-    MCNAPI static ::VoxelShapes::VoxelShape join(
-        ::VoxelShapes::VoxelShape const& first,
-        ::VoxelShapes::VoxelShape const& second,
-        ::VoxelShapes::JoinOperation     operation
-    );
 
 #ifdef LL_PLAT_C
     MCNAPI static bool joinIsNotEmpty(
@@ -120,13 +97,6 @@ public:
     MCNAPI void* $ctor(::VoxelShapes::VoxelShape&&);
 
     MCNAPI void* $ctor(::VoxelShapes::VoxelShape const&);
-
-    MCNAPI void* $ctor(
-        ::VoxelShapes::Cells               cells,
-        ::Bedrock::small_vector<float, 12> xCoords,
-        ::Bedrock::small_vector<float, 12> yCoords,
-        ::Bedrock::small_vector<float, 12> zCoords
-    );
     // NOLINTEND
 
 public:

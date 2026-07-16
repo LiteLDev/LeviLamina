@@ -18,6 +18,7 @@ class BoneOrientation;
 class ExpressionNode;
 class RenderParams;
 struct AnimationVisitor;
+namespace Util { struct HashStringHashGreater; }
 // clang-format on
 
 class ActorAnimationControllerPlayer : public ::ActorAnimationPlayer {
@@ -44,24 +45,21 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void applyToPose(
-        ::ApplyAnimationContext const&                                                    applyContext,
-        ::RenderParams&                                                                   renderParams,
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
-        float                                                                             blendWeight
+        ::ApplyAnimationContext const&,
+        ::RenderParams&,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>&,
+        float
     ) /*override*/;
 
     virtual void resetAnimation() /*override*/;
 
-    virtual void bindParticleEffects(
-        ::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap
-    ) /*override*/;
+    virtual void bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&) /*override*/;
 
-    virtual void
-    bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap) /*override*/;
+    virtual void bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&) /*override*/;
 
     virtual bool hasAnimationFinished() const /*override*/;
 
-    virtual ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& friendlyName) /*override*/;
+    virtual ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const&) /*override*/;
 
     virtual ::ActorAnimationType getAnimationType() const /*override*/;
 
@@ -74,26 +72,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorAnimationControllerPlayer(
-        ::HashedString const&                                    friendlyName,
-        ::ActorAnimationControllerPtr const&                     animationControllerPtr,
-        ::AnimationComponent&                                    animationComponent,
-        ::ExpressionNode const&                                  blendExpression,
-        ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
-    );
-
-    MCAPI void blendViaShortestPath(
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>> const&
-            blendOutBoneOrientationsMap,
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>> const&
-              blendInBoneOrientationsMap,
-        float blendInWeight,
-        float
+        ::HashedString const&                                      friendlyName,
+        ::ActorAnimationControllerPtr const&                       animationControllerPtr,
+        ::AnimationComponent&                                      animationComponent,
+        ::ExpressionNode const&                                    blendExpression,
+        ::std::set<::HashedString, ::Util::HashStringHashGreater>& animationControllerNameStack
     );
 
 #ifdef LL_PLAT_C
     MCAPI ::std::shared_ptr<::ActorAnimationControllerStatePlayer>
     getStatePlayer(::HashedString const& stateName, ::AnimationComponent& animationComponent, bool createIfMissing);
+
+    MCAPI void setNextState(::HashedString const& stateName);
 #endif
     // NOLINTEND
 
@@ -101,46 +91,17 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::HashedString const&                                    friendlyName,
-        ::ActorAnimationControllerPtr const&                     animationControllerPtr,
-        ::AnimationComponent&                                    animationComponent,
-        ::ExpressionNode const&                                  blendExpression,
-        ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
+        ::HashedString const&                                      friendlyName,
+        ::ActorAnimationControllerPtr const&                       animationControllerPtr,
+        ::AnimationComponent&                                      animationComponent,
+        ::ExpressionNode const&                                    blendExpression,
+        ::std::set<::HashedString, ::Util::HashStringHashGreater>& animationControllerNameStack
     );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $applyToPose(
-        ::ApplyAnimationContext const&                                                    applyContext,
-        ::RenderParams&                                                                   renderParams,
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
-        float                                                                             blendWeight
-    );
 
-    MCAPI void $resetAnimation();
-
-    MCAPI void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
-
-    MCAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
-
-    MCAPI bool $hasAnimationFinished() const;
-
-    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const& friendlyName);
-
-    MCFOLD ::ActorAnimationType $getAnimationType() const;
-
-    MCAPI ::HashedString const& $getRawName() const;
-
-    MCAPI void $visit(::AnimationVisitor&& dispatcher);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

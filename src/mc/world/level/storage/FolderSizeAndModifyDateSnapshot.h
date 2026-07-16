@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/Result.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Path; }
-// clang-format on
-
 class FolderSizeAndModifyDateSnapshot {
 public:
     // FolderSizeAndModifyDateSnapshot inner types declare
@@ -42,45 +34,7 @@ public:
 
 public:
     // prevent constructor by default
+    FolderSizeAndModifyDateSnapshot& operator=(FolderSizeAndModifyDateSnapshot const&);
     FolderSizeAndModifyDateSnapshot(FolderSizeAndModifyDateSnapshot const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI FolderSizeAndModifyDateSnapshot();
-
-    MCNAPI FolderSizeAndModifyDateSnapshot(::FolderSizeAndModifyDateSnapshot&&);
-
-#ifdef LL_PLAT_C
-    MCNAPI uint64 numBytes() const;
-
-    MCNAPI uint64 numFiles() const;
-#endif
-
-    MCNAPI ::FolderSizeAndModifyDateSnapshot& operator=(::FolderSizeAndModifyDateSnapshot&&);
-
-    MCNAPI ::FolderSizeAndModifyDateSnapshot& operator=(::FolderSizeAndModifyDateSnapshot const&);
-
-    MCNAPI ~FolderSizeAndModifyDateSnapshot();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::FolderSizeAndModifyDateSnapshot> CaptureSnapshot(::Core::Path const& path);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::FolderSizeAndModifyDateSnapshot&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
+    FolderSizeAndModifyDateSnapshot();
 };

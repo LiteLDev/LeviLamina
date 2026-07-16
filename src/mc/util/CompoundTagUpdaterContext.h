@@ -23,18 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CompoundTagUpdaterContext();
-
-    MCAPI ::CompoundTagUpdaterNodeBuilder addUpdater(uchar const* const version);
-
     MCAPI ::CompoundTagUpdaterNodeBuilder addUpdater(uchar major, uchar minor, uchar patch);
 
     MCAPI ::CompoundTagUpdaterResult update(::CompoundTag& tag, uint version) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

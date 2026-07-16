@@ -31,10 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BiomeSource3d();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ChunkVolume::VolumeOf<::Biome> getBiomeVolumeToFill(
@@ -65,18 +61,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BiomeSource3d(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ChunkVolume::VolumeOf<::Biome> $getBiomeVolumeToFill(
@@ -104,11 +88,5 @@ public:
     MCAPI ::Biome const* $_getBiome(::GetBiomeOptions const& getBiomeOptions) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

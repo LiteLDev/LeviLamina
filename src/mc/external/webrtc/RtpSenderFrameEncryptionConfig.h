@@ -8,8 +8,8 @@ struct RtpSenderFrameEncryptionConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk187121;
-    ::ll::UntypedStorage<1, 5> mUnk1f3892;
+    ::ll::UntypedStorage<8, 8>  mUnk187121;
+    ::ll::UntypedStorage<8, 32> mUnk1f3892;
     // NOLINTEND
 
 public:

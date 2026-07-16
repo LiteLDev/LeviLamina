@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void tick(::EntityRegistry& registry) /*override*/;
+    virtual void tick(::EntityRegistry&) /*override*/;
 
     virtual void singleTick(::EntityRegistry& registry, ::EntityContext& entity) /*override*/;
 
@@ -41,19 +41,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
 
-    MCFOLD void $singleTick(::EntityRegistry& registry, ::EntityContext& entity);
-
-    MCFOLD void $singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

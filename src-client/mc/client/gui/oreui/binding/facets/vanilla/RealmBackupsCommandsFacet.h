@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ namespace Realms { class RealmsBackups; }
 
 namespace OreUI {
 
-class RealmBackupsCommandsFacet : public ::OreUI::FacetBase<::OreUI::RealmBackupsCommandsFacet> {
+class RealmBackupsCommandsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmBackupsCommandsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -35,10 +35,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmBackupsCommandsFacet(::std::shared_ptr<::Realms::RealmsBackups> realmsBackups);
-
-    MCAPI void clearRealmBackupsState();
-
-    MCAPI void downloadRealmWorld(::std::string const& realmId, ::std::string const& realmName, int activeSlotIndex);
     // NOLINTEND
 
 public:

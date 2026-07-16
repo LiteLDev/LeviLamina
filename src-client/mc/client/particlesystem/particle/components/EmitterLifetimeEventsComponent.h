@@ -31,66 +31,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
+    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
 
-    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
+    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
 
-    virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
+    virtual void parseJson(::ConstDeserializeDataParams const&) /*override*/;
 
-    virtual void handleCreation(::ParticleSystem::ComponentAccessParticleEmitter& emitter) /*override*/;
+    virtual void handleCreation(::ParticleSystem::ComponentAccessParticleEmitter&) /*override*/;
 
-    virtual void handleExpiration(::ParticleSystem::ComponentAccessParticleEmitter& emitter) /*override*/;
+    virtual void handleExpiration(::ParticleSystem::ComponentAccessParticleEmitter&) /*override*/;
 
     virtual void handleTimelineEvents(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::std::chrono::nanoseconds const                  lastAge,
-        ::std::chrono::nanoseconds                        age
+        ::ParticleSystem::ComponentAccessParticleEmitter&,
+        ::std::chrono::nanoseconds const,
+        ::std::chrono::nanoseconds
     ) /*override*/;
 
-    virtual void handleTravelDistanceEvents(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        float                                             lastDistance,
-        float                                             distance
-    ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void
-    _parseEvent(::ConstDeserializeDataParams const& deserializeDataParams, ::std::vector<::HashedString>& eventList);
+    virtual void
+    handleTravelDistanceEvents(::ParticleSystem::ComponentAccessParticleEmitter&, float, float) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
-
-    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
-
-    MCAPI void $handleCreation(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
-
-    MCAPI void $handleExpiration(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
-
-    MCAPI void $handleTimelineEvents(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::std::chrono::nanoseconds const                  lastAge,
-        ::std::chrono::nanoseconds                        age
-    );
-
-    MCAPI void $handleTravelDistanceEvents(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        float                                             lastDistance,
-        float                                             distance
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

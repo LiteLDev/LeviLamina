@@ -3,21 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
-class ContentIdentity;
 class IContentKeyProvider;
 class IPackIOProvider;
 class IPackManifestFactory;
 class PackAccessStrategy;
 class PackManifest;
 class PackMetadata;
-class PackReport;
 class PackSourceReport;
 class ResourceLocation;
 class SubpackInfoCollection;
@@ -51,32 +48,6 @@ public:
         ::std::unique_ptr<::PackMetadata>          metadata
     );
 
-    MCAPI void _loadLocalizationFiles();
-
-    MCFOLD ::PackAccessStrategy const* getAccessStrategy() const;
-
-    MCFOLD ::PackAccessStrategy* getAccessStrategy();
-
-    MCFOLD uchar getCurrentRevision() const;
-
-    MCFOLD ::PackManifest const& getManifest() const;
-
-    MCAPI ::Bedrock::NonOwnerPointer<::PackManifest const> const getManifestPtr() const;
-
-    MCFOLD ::SubpackInfoCollection const* getSubpackInfoStack() const;
-
-    MCAPI void move(::Pack&& pack);
-
-    MCAPI void setManifestPackCapabilitiesTrusted();
-
-    MCAPI void setManifestSourceIdentity(::ContentIdentity const& contentIdentity);
-
-#ifdef LL_PLAT_C
-    MCAPI void setManifestTitleLocked(bool titleLocked);
-#endif
-
-    MCAPI void upgradeLegacyDependencies(::std::unique_ptr<::PackCommand::UpgradeLegacyDependencies const> upgrade);
-
     MCAPI ~Pack();
     // NOLINTEND
 
@@ -93,7 +64,6 @@ public:
         ::PackSourceReport*                                     report,
         ::Core::Path const&                                     zipSubDir
     );
-#endif
 
     MCAPI static ::std::unique_ptr<::Pack> createPack(
         ::IPackIOProvider const&                                io,
@@ -105,19 +75,7 @@ public:
         ::PackSourceReport*                                     report,
         ::Core::Path const&                                     zipSubDir
     );
-
-    MCAPI static ::std::unique_ptr<::PackMetadata> createPackMetadata(
-        ::PackType                  type,
-        ::PackManifest&             manifest,
-        ::PackAccessStrategy const& accessStrategy,
-        ::PackReport&               report
-    );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::std::string> const& EDUCATION_METADATA_FILE();
+#endif
     // NOLINTEND
 
 public:

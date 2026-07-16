@@ -3,16 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/SplineType.h"
 #include "mc/editor/network/NetworkPayload.h"
 #include "mc/editor/services/widgets/WidgetComponentBasePayload.h"
-
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-namespace cereal { struct ReflectionCtx; }
-namespace mce { class UUID; }
-// clang-format on
 
 namespace Editor::Network {
 
@@ -36,46 +28,14 @@ public:
     // NOLINTBEGIN
     MCNAPI WidgetAddSplineComponentPayload(::Editor::Network::WidgetAddSplineComponentPayload const&);
 
-    MCNAPI WidgetAddSplineComponentPayload(
-        ::mce::UUID const&                    serviceId,
-        ::mce::UUID const&                    groupId,
-        ::mce::UUID const&                    widgetId,
-        ::mce::UUID const&                    componentId,
-        ::std::string const&                  componentName,
-        ::Vec3 const&                         pos,
-        bool                                  visible,
-        bool                                  lockToSurface,
-        ::std::vector<::mce::UUID>            controlPointIds,
-        ::Scripting::RenderHelper::SplineType splineType
-    );
-
     MCNAPI ::Editor::Network::WidgetAddSplineComponentPayload&
     operator=(::Editor::Network::WidgetAddSplineComponentPayload&&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::Network::WidgetAddSplineComponentPayload const&);
-
-    MCNAPI void* $ctor(
-        ::mce::UUID const&                    serviceId,
-        ::mce::UUID const&                    groupId,
-        ::mce::UUID const&                    widgetId,
-        ::mce::UUID const&                    componentId,
-        ::std::string const&                  componentName,
-        ::Vec3 const&                         pos,
-        bool                                  visible,
-        bool                                  lockToSurface,
-        ::std::vector<::mce::UUID>            controlPointIds,
-        ::Scripting::RenderHelper::SplineType splineType
-    );
     // NOLINTEND
 
 public:

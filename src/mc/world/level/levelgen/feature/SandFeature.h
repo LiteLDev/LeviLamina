@@ -30,32 +30,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SandFeature(::Block const& block, int radius);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Block const& block, int radius);
+    virtual bool place(::BlockSource&, ::BlockPos const&, ::Random&) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -24,44 +24,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChestModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChestModel() /*override*/;
+    virtual ~ChestModel() /*override*/ = default;
 
-    virtual void render(::ScreenContext& screenContext) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ChestModel(bool large);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool large);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    virtual void render(::ScreenContext&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::ScreenContext& screenContext);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

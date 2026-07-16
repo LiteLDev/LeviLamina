@@ -38,10 +38,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MultifaceBlock() /*override*/;
+    virtual ~MultifaceBlock() /*override*/ = default;
 
     virtual ::AABB const&
-    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const& bufferAABB, ::BlockPos const&, ::AABB&) const
+    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const
         /*override*/;
 
     virtual ::AABB getCollisionShape(
@@ -89,8 +89,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MultifaceBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI MultifaceBlock(
         ::std::string const&                         nameId,
         int                                          id,
@@ -100,13 +98,6 @@ public:
 
     MCAPI bool
     _canSpread(::IBlockWorldGenAPI& target, ::Block const& block, ::BlockPos const& pos, uchar startingFace) const;
-
-    MCAPI void _removeBlock(
-        ::IBlockWorldGenAPI& target,
-        ::BlockSource*       region,
-        ::BlockPos const&    pos,
-        bool                 canSpawnParticles
-    ) const;
 
     MCAPI void removeFace(
         ::IBlockWorldGenAPI& target,
@@ -124,28 +115,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int _getNumSides(::Block const& block);
-
-    MCAPI static bool _hasAnyFace(::Block const& block);
-
-    MCAPI static bool _hasAnyVacantFace(::Block const& block);
-
-    MCAPI static int convertOldMultifaceToNewMultifaceValue(int oldMultifaceDirections);
-
-    MCAPI static ::Block const& getBlockForPlacement(
-        ::Block const&    oldBlock,
-        ::Block const&    placementBlock,
-        ::BlockSource&    region,
-        ::BlockPos const& placementPos,
-        uchar             placementDirection
-    );
-
-    MCAPI static ::Block const& getBlockForPlacementOrFillMoreFaces(
-        ::Block const&    oldBlock,
-        ::Block const&    placementBlock,
-        ::BlockSource&    region,
-        ::BlockPos const& placementPos,
-        uchar             placementDirection
-    );
 
     MCAPI static ::Block const& getBlockForPlacementWorldGen(
         ::Block const&       oldBlock,
@@ -165,15 +134,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& MULTIFACE_ALL();
-
     MCAPI static int const& MULTIFACE_DOWN();
 
     MCAPI static int const& MULTIFACE_EAST();
 
     MCAPI static int const& MULTIFACE_NORTH();
-
-    MCAPI static int const& MULTIFACE_SIDES();
 
     MCAPI static int const& MULTIFACE_SOUTH();
 
@@ -185,8 +150,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI void* $ctor(
         ::std::string const&                         nameId,
         int                                          id,
@@ -196,19 +159,13 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::AABB const& $getVisualShapeInWorld(
-        ::Block const&             block,
-        ::IConstBlockSource const& bufferAABB,
+        ::Block const& block,
+        ::IConstBlockSource const&,
         ::BlockPos const&,
-        ::AABB&
+        ::AABB& bufferAABB
     ) const;
 
     MCFOLD ::AABB $getCollisionShape(

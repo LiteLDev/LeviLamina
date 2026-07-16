@@ -69,18 +69,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _disableCoreTextEdit();
-
-    MCAPI void _enableCoreTextEdit();
-
-    MCAPI void _notifyCoreTextEdit(bool textChanged);
-
-    MCAPI void setCaretScreenPosition(int x, int y);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $update();

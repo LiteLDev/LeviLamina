@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,14 +14,19 @@ namespace Scripting { struct ErrorBinding; }
 namespace ScriptModuleMinecraft {
 
 struct ScriptBlockCustomComponentReloadVersionError : public ::Scripting::BaseError {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ScriptBlockCustomComponentReloadVersionError();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI explicit ScriptBlockCustomComponentReloadVersionError(::HashedString const& componentName);
+#endif
     // NOLINTEND
 
 public:
@@ -33,7 +38,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::HashedString const& componentName);
+#endif
     // NOLINTEND
 };
 

@@ -17,6 +17,8 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk4e23d1;
     ::ll::UntypedStorage<8, 40> mUnk2af607;
     ::ll::UntypedStorage<8, 40> mUnkb20737;
+    ::ll::UntypedStorage<8, 40> mUnk558688;
+    ::ll::UntypedStorage<4, 8>  mUnk2bf33b;
     // NOLINTEND
 
 public:
@@ -27,15 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI BindingInfo(
-        ::std::string                  label,
-        bool                           canRebind,
-        ::std::optional<::std::string> tooltip,
-        ::std::optional<::std::string> actionId
-    );
-#endif
-
     MCNAPI ::Editor::Input::BindingInfo& operator=(::Editor::Input::BindingInfo const&);
 
     MCNAPI ~BindingInfo();
@@ -45,19 +38,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
-        ::std::string                  label,
-        bool                           canRebind,
-        ::std::optional<::std::string> tooltip,
-        ::std::optional<::std::string> actionId
-    );
-#endif
     // NOLINTEND
 
 public:

@@ -13,22 +13,12 @@ public:
 
     virtual bool isInstantaneous() const /*override*/;
 
-    virtual bool isDurationEffectTick(int remainingDuration, int) const;
+    virtual bool isDurationEffectTick(int, int) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isInstantaneous() const;
 
-    MCAPI bool $isDurationEffectTick(int remainingDuration, int) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

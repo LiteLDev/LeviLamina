@@ -36,8 +36,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnkd5442e;
-    ::ll::UntypedStorage<8, 176> mUnkea76dc;
-    ::ll::UntypedStorage<8, 8>   mUnk3c5df9;
+    ::ll::UntypedStorage<8, 192> mUnkea76dc;
     ::ll::UntypedStorage<1, 1>   mUnk7baf69;
     ::ll::UntypedStorage<8, 16>  mUnk3acecb;
     ::ll::UntypedStorage<8, 8>   mUnkacdeed;
@@ -53,7 +52,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk26ef50;
     ::ll::UntypedStorage<8, 16>  mUnkeeee55;
     ::ll::UntypedStorage<8, 8>   mUnked7d5a;
-    ::ll::UntypedStorage<8, 200> mUnk477ab7;
+    ::ll::UntypedStorage<8, 208> mUnk477ab7;
     // NOLINTEND
 
 public:
@@ -106,8 +105,6 @@ public:
     MCNAPI void RollbackResetStreams();
 
     MCNAPI bool ShouldSendForwardTsn(::webrtc::Timestamp now);
-
-    MCNAPI bool can_send_data() const;
 
     MCNAPI ~RetransmissionQueue();
     // NOLINTEND

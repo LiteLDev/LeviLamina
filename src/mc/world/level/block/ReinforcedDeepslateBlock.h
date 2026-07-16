@@ -7,25 +7,9 @@
 
 class ReinforcedDeepslateBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    ReinforcedDeepslateBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canBeOriginalSurface(bool) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ReinforcedDeepslateBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

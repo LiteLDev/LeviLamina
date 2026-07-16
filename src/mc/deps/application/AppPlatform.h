@@ -33,12 +33,10 @@
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
 #include "mc/deps/core/utility/Subject.h"
 #include "mc/deps/core/utility/UniqueService.h"
-#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/PointerType.h"
-#include "mc/options/UIProfile.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/threading/Mutex.h"
 
@@ -80,9 +78,6 @@ class NetworkChangeObserver;
 class PushNotificationMessage;
 class RectangleArea;
 class ThrottledFileWriteManager;
-namespace ApplicationSignal { class ClipboardCopy; }
-namespace ApplicationSignal { class ClipboardPaste; }
-namespace ApplicationSignal { class ClipboardPasteRequest; }
 namespace Bedrock { class CommonPlatform; }
 namespace Social { struct UserCreationData; }
 namespace Webview { class PlatformArguments; }
@@ -233,27 +228,12 @@ public:
 
     virtual int getKeyFromKeyCode(int, int, int);
 
-    virtual void textEditComponentGainedFocus(
-        ::std::string const& currentText,
-        int                  maxLength,
-        bool                 limitInput,
-        bool                 numbersOnly,
-        bool                 isMultiline
-    );
+    virtual void textEditComponentGainedFocus(::std::string const&, int, bool, bool, bool);
 
     virtual void textEditComponentLostFocus();
 
-    virtual void showKeyboard(
-        ::std::string const& currentText,
-        int                  maxLength,
-        bool                 limitInput,
-        bool                 numbersOnly,
-        bool                 isMultiline,
-        int const            controllerId,
-        ::glm::vec2 const&   position,
-        float                controlHeight,
-        ::InputMode          inputMode
-    );
+    virtual void
+    showKeyboard(::std::string const&, int, bool, bool, bool, int const, ::glm::vec2 const&, float, ::InputMode);
 
     virtual void hideKeyboard();
 
@@ -269,7 +249,7 @@ public:
 
     virtual bool refocusMouse(bool lostMouse, bool oldMouseGrabbed);
 
-    virtual void setMousePointerType(::Bedrock::Input::PointerType pointerType);
+    virtual void setMousePointerType(::Bedrock::Input::PointerType);
 
     virtual void hideMousePointer();
 
@@ -325,9 +305,9 @@ public:
 
     virtual ::std::string getTermsOfUseHyperlink() const;
 
-    virtual void pickImage(::std::shared_ptr<::ImagePickingCallback> callback) = 0;
+    virtual void pickImage(::std::shared_ptr<::ImagePickingCallback>) = 0;
 
-    virtual void pickFile(::std::shared_ptr<::FilePickerSettings> settings);
+    virtual void pickFile(::std::shared_ptr<::FilePickerSettings>);
 
     virtual bool supportsAlbumExport() const;
 
@@ -361,7 +341,7 @@ public:
 
     virtual bool supportsClipboardAsyncGet() const;
 
-    virtual void setClipboard(::std::string const& value) const;
+    virtual void setClipboard(::std::string const&) const;
 
     virtual ::std::wstring getClipboardText() const;
 
@@ -380,16 +360,11 @@ public:
     virtual void pushNotificationReceived(::PushNotificationMessage const& msg);
 
     virtual void openStoragePermissionRequest(
-        ::PermissionRequestReason resultCallback,
-        ::std::function<void(::StoragePermissionResult)>
+        ::PermissionRequestReason,
+        ::std::function<void(::StoragePermissionResult)> resultCallback
     );
 
-    virtual void setStorageDirectory(
-        ::FileStorageDirectory      dir,
-        bool                        isCallback,
-        ::PropertyBag const&        extraData,
-        ::std::function<void(bool)> onComplete
-    );
+    virtual void setStorageDirectory(::FileStorageDirectory, bool, ::PropertyBag const&, ::std::function<void(bool)>);
 
     virtual ::FileStorageDirectory setInitialStorageDirectory(::FileStorageDirectory);
 
@@ -398,7 +373,7 @@ public:
     virtual void setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)>);
 
     virtual ::Bedrock::PubSub::Subscription
-    addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback);
+        addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)>);
 
     virtual void runStoragePermissionResultCallback(::StoragePermissionResult result);
 
@@ -406,7 +381,11 @@ public:
 
     virtual bool delayOptionSaveUntilCloudSync() const;
 
-    virtual void updateTextEditBoxPosition(::RectangleArea const&, ::RectangleArea const&, float const);
+    virtual void updateTextEditBoxPosition(
+        ::RectangleArea const& controlPosition,
+        ::RectangleArea const& selectionPosition,
+        float const            guiScale
+    );
 
     virtual ::BatteryMonitorInterface const& getBatteryMonitorInterface() const;
 
@@ -425,9 +404,9 @@ public:
 #endif
     virtual ::Bedrock::Threading::Async<::IntegrityTokenResult> requestIntegrityToken(::std::string const& nonceToken);
 
-    virtual void setIntegrityToken(::std::string const&);
+    virtual void setIntegrityToken(::std::string const& integrityToken);
 
-    virtual void setIntegrityTokenErrorMessage(::std::string const&);
+    virtual void setIntegrityTokenErrorMessage(::std::string const& errorMessage);
 
     virtual bool supportsInPackageRecursion() const;
 
@@ -507,11 +486,11 @@ public:
 
     virtual int getDisplayHeight();
 
-    virtual void setScreenSize(int width, int height);
+    virtual void setScreenSize(int, int);
 
-    virtual void setWindowSize(int width, int height);
+    virtual void setWindowSize(int, int);
 
-    virtual void setWindowText(::std::string const& title);
+    virtual void setWindowText(::std::string const&);
 
     virtual ::std::optional<::OperationMode> getOperationMode() const;
 
@@ -547,11 +526,11 @@ public:
 
     virtual ::std::string getTextBoxBackend() const = 0;
 
-    virtual void setTextBoxBackend(::std::string const& newText) = 0;
+    virtual void setTextBoxBackend(::std::string const&) = 0;
 
     virtual int getCaretPosition() const = 0;
 
-    virtual void setCaretPosition(int position) = 0;
+    virtual void setCaretPosition(int) = 0;
 
     virtual void setTextBoxSelection(::TextBoxSelection selection);
 
@@ -612,7 +591,7 @@ public:
 
     virtual void finish();
 
-    virtual bool canLaunchUri(::std::string const&);
+    virtual bool canLaunchUri(::std::string const& uri);
 
     virtual void launchUri(::std::string const& uri);
 
@@ -686,8 +665,6 @@ public:
 
     virtual ::std::string getModelName();
 
-    virtual bool usesHDRBrightness() const;
-
     virtual void updateBootstrapSettingsFromTreatmentsAsync();
 
 #ifdef LL_PLAT_C
@@ -708,7 +685,7 @@ public:
     virtual void notifyUriListenerRegistrationDone();
 
 #endif
-    virtual void setFullscreenMode(::FullscreenMode const fullscreenMode);
+    virtual void setFullscreenMode(::FullscreenMode const);
 
     virtual bool isNetworkThrottled() const;
 
@@ -768,11 +745,15 @@ public:
 
     virtual ::mce::UUID const& getThirdPartyPackUUID() const;
 
+    virtual ::mce::UUID const& getPlatformBetaPackUUID() const;
+
     virtual bool saveTreatmentPacksAsZips() const;
 
     virtual bool saveEncryptedPacksAsZips() const;
 
     virtual bool saveEncryptedWorldTemplatePacksAsZips() const;
+
+    virtual bool saveEncryptedPersonaPacksAsZips() const;
 
     virtual bool allowsResourcePackDevelopment() const;
 
@@ -817,7 +798,7 @@ public:
     virtual ::std::shared_ptr<::Core::FileStorageArea>
     createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::PathView loggingPath);
 
-    virtual void handlePlatformSpecificCommerceError(uint);
+    virtual void handlePlatformSpecificCommerceError(uint error);
 
     virtual bool isEduMode() const;
 
@@ -845,7 +826,7 @@ public:
 
     virtual bool usesAsyncOptionSaving() const;
 
-    virtual void showPlatformStoreIcon(bool);
+    virtual void showPlatformStoreIcon(bool shouldShow);
 
     virtual void showPlatformEmptyStoreDialog(::std::function<void(bool)>&& callback) /*override*/;
 
@@ -919,61 +900,21 @@ public:
     // NOLINTBEGIN
     MCAPI AppPlatform(bool registerService, ::std::unique_ptr<::IAppPlatformImpl> impl);
 
-#ifdef LL_PLAT_C
-    MCAPI void _clipboardCopyHandler(::ApplicationSignal::ClipboardCopy const& signal);
-
-    MCAPI void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
-
-    MCAPI void _clipboardPasteRequestHandler(::ApplicationSignal::ClipboardPasteRequest const&);
-#endif
-
 #ifdef LL_PLAT_S
     MCAPI void _fireAppTerminated();
-#endif
 
-#ifdef LL_PLAT_C
-    MCAPI ::IAppPlatformImpl& _getImpl();
-#endif
-
-    MCAPI void _initializeLoadProfiler();
-
-#ifdef LL_PLAT_S
     MCAPI void _terminateListeners();
-
-    MCFOLD ::std::unique_ptr<::Bedrock::PlatformRuntimeInfo>& accessPlatformRuntimeInformation_Shim();
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI void addNetworkChangeObserver(::NetworkChangeObserver& observer);
-
     MCAPI void checkAndTriggerOnLowMemory();
 
-    MCAPI void disableCPUBoost();
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Bedrock::IApplicationDataStores> getApplicationDataStores();
-#endif
-
-    MCFOLD ::Core::PathBuffer<::std::string> getCurrentStoragePath() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::UIProfile getDefaultUIProfile() const;
-
     MCAPI ::std::string getDeviceIdWarning() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> getExternalStoragePath() const;
-
-    MCAPI uint64 getFreeMemoryTestable() const;
 #endif
 
     MCAPI ::std::string getGraphicsDeviceTier() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> getInternalStoragePath() const;
-
     MCAPI ::std::optional<::std::locale> getLocaleForDateTimeFormatting() const;
-
-    MCAPI ::gsl::not_null<::Bedrock::PubSub::Connector<void(::LowMemorySeverity)>*> getOnLowMemoryConnector();
-
-    MCAPI ::std::unique_ptr<::Bedrock::PlatformRuntimeInfo> const& getPlatformRuntimeInformation() const;
 
 #ifdef LL_PLAT_C
     MCAPI ::std::string getShareText() const;
@@ -983,26 +924,8 @@ public:
     MCAPI ::std::string getShareUri() const;
 
     MCAPI double getTotalActiveSeconds();
-#endif
 
-    MCFOLD ::Core::PathBuffer<::std::string> getUserdataPath() const;
-
-    MCAPI bool isTerminating() const;
-
-#ifdef LL_PLAT_C
     MCAPI void loadImage(::mce::Image& out, ::Core::Path const& filename);
-
-    MCAPI ::mce::Image loadTexture(::Core::Path const& filename);
-
-    MCAPI ::mce::Image loadTextureFromStream(::std::string const& fileStream);
-
-    MCAPI void notifyElapsedSeconds(double seconds);
-#endif
-
-    MCAPI void notifyUserStorageInitialized();
-
-#ifdef LL_PLAT_C
-    MCAPI void processSignals();
 #endif
 
     MCAPI ::Bedrock::Result<::std::string>
@@ -1014,26 +937,20 @@ public:
     MCAPI void setShareData(::std::string shareTitle, ::std::string shareText, ::std::string shareUri);
 
     MCAPI void setShareMetaData(::std::string const& shareTitle, ::std::string const& shareText);
-
-    MCAPI bool tryEnableCPUBoost();
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI static ::Bedrock::Result<::std::string> _readAssetFileGeneric(::Core::PathView filename);
+#endif
 
 #ifdef LL_PLAT_C
-    MCAPI static bool hasPendingProtocolActivation();
-
     MCAPI static void imGuiAddInputChar(ushort c);
 
-    MCAPI static bool isInitialized();
-
     MCAPI static bool mouseInputHandledByImGui();
-
-    MCAPI static void setPendingProtocolActivation(::ActivationUri const& uri);
 
     MCAPI static bool updateImGuiKeyboard(uchar param, bool isDown);
 
@@ -1050,17 +967,11 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& HOME_PATH();
 
-    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& LOG_PATH();
-
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& SETTINGS_PATH();
-
-    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& SHADERCACHE_PATH();
 
     MCAPI static bool& mIsInitialized();
 
     MCAPI static ::ActivationUri& mPendingProtocolActivation();
-
-    MCAPI static ::Bedrock::Threading::Mutex& mProtocolMutex();
     // NOLINTEND
 
 public:
@@ -1084,21 +995,15 @@ public:
 
     MCAPI void $initAppPlatformNetworkSettings();
 
-    MCAPI uint64 $getHighPerformanceThreadsCount() const;
-
-    MCAPI uint64 $getTotalHardwareThreadsCount() const;
-
-    MCFOLD void $initializeGraphicsDeviceTier();
-
     MCAPI void $addListener(::AppPlatformListener* l, float priority);
 
     MCAPI void $removeListener(::AppPlatformListener* l);
 
     MCAPI ::ProcessExecutionState $getProcessExecutionState() const;
 
-    MCFOLD void $restartApp(bool restart);
+    MCAPI void $restartApp(bool restart);
 
-    MCFOLD bool $restartRequested();
+    MCAPI bool $restartRequested();
 
     MCFOLD int const $numberOfThrottledTreatmentPacksToImportPerMinute() const;
 
@@ -1108,9 +1013,9 @@ public:
 
     MCAPI ::Bedrock::Threading::Async<::IntegrityTokenResult> $requestIntegrityToken(::std::string const& nonceToken);
 
-    MCFOLD void $setIntegrityToken(::std::string const&);
+    MCFOLD void $setIntegrityToken(::std::string const& integrityToken);
 
-    MCFOLD void $setIntegrityTokenErrorMessage(::std::string const&);
+    MCFOLD void $setIntegrityTokenErrorMessage(::std::string const& errorMessage);
 
     MCFOLD bool $supportsInPackageRecursion() const;
 
@@ -1130,13 +1035,11 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> $getScratchPath();
 
-    MCFOLD ::Core::PathBuffer<::std::string> $getInternalPackStoragePath() const;
+    MCAPI ::Core::PathBuffer<::std::string> $getInternalPackStoragePath() const;
 
     MCAPI ::Core::PathBuffer<::std::string> $getSettingsPath();
 
     MCFOLD ::Core::PathBuffer<::std::string> $getLoggingPath() const;
-
-    MCFOLD ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
 
     MCAPI ::Core::PathBuffer<::std::string> $getShaderCachePath();
 
@@ -1152,7 +1055,7 @@ public:
 
     MCFOLD ::Core::PathBuffer<::std::string> $getCatalogSearchScratchPath();
 
-    MCFOLD ::Core::PathBuffer<::std::string> $getUserStorageRootPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> $getUserStorageRootPath() const;
 
     MCFOLD ::std::shared_ptr<::Core::FileStorageArea> $getOrCreateStorageAreaForUser(::Social::UserCreationData const&);
 
@@ -1160,7 +1063,7 @@ public:
 
     MCFOLD uint64 $getOptimalLDBSize();
 
-    MCFOLD int $getMaxLDBFilesOpen() const;
+    MCAPI int $getMaxLDBFilesOpen() const;
 
     MCFOLD bool $getDisableLDBSeekCompactions() const;
 
@@ -1180,25 +1083,21 @@ public:
 
     MCFOLD void $registerFileForCollectionWithCrashDump(::Core::Path const&);
 
-    MCFOLD void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
-
     MCAPI int $getScreenWidth() const;
 
     MCAPI int $getScreenHeight() const;
 
-    MCAPI int $getDisplayWidth();
+    MCFOLD int $getDisplayWidth();
 
-    MCFOLD int $getDisplayHeight();
+    MCAPI int $getDisplayHeight();
 
-    MCFOLD void $setScreenSize(int width, int height);
+    MCFOLD void $setScreenSize(int, int);
 
-    MCFOLD void $setWindowSize(int width, int height);
+    MCFOLD void $setWindowSize(int, int);
 
-    MCFOLD void $setWindowText(::std::string const& title);
+    MCFOLD void $setWindowText(::std::string const&);
 
     MCFOLD ::std::optional<::OperationMode> $getOperationMode() const;
-
-    MCFOLD bool $allowContentLogWriteToDisk();
 
     MCFOLD uint $getMaxClubsRequests() const;
 
@@ -1281,7 +1180,7 @@ public:
 
     MCFOLD void $finish();
 
-    MCFOLD bool $canLaunchUri(::std::string const&);
+    MCFOLD bool $canLaunchUri(::std::string const& uri);
 
     MCFOLD void $launchUri(::std::string const& uri);
 
@@ -1343,11 +1242,9 @@ public:
 
     MCAPI ::std::string $getModelName();
 
-    MCFOLD bool $usesHDRBrightness() const;
-
     MCFOLD void $updateBootstrapSettingsFromTreatmentsAsync();
 
-    MCFOLD void $setFullscreenMode(::FullscreenMode const fullscreenMode);
+    MCFOLD void $setFullscreenMode(::FullscreenMode const);
 
     MCAPI bool $isNetworkThrottled() const;
 
@@ -1355,7 +1252,9 @@ public:
 
     MCFOLD bool $doesLANRequireMultiplayerRestrictions() const;
 
+#ifdef LL_PLAT_S
     MCAPI void $collectGraphicsHardwareDetails();
+#endif
 
     MCAPI ::std::string $getEdition() const;
 
@@ -1387,7 +1286,7 @@ public:
 
     MCAPI ::AppFocusState $getFocusState();
 
-    MCFOLD ::AppLifecycleContext& $getAppLifecycleContext();
+    MCAPI ::AppLifecycleContext& $getAppLifecycleContext();
 
     MCFOLD bool $supportsFliteTTS() const;
 
@@ -1397,19 +1296,21 @@ public:
 
     MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
 
-    MCFOLD bool $devHotReloadRenderResources() const;
-
     MCFOLD bool $shouldPauseDownloadsWhenEnterGame() const;
 
     MCFOLD bool $compareAppReceiptToLocalReceipt(::std::string const&);
 
-    MCAPI ::mce::UUID const& $getThirdPartyPackUUID() const;
+    MCFOLD ::mce::UUID const& $getThirdPartyPackUUID() const;
+
+    MCFOLD ::mce::UUID const& $getPlatformBetaPackUUID() const;
 
     MCFOLD bool $saveTreatmentPacksAsZips() const;
 
     MCFOLD bool $saveEncryptedPacksAsZips() const;
 
     MCFOLD bool $saveEncryptedWorldTemplatePacksAsZips() const;
+
+    MCFOLD bool $saveEncryptedPersonaPacksAsZips() const;
 
     MCFOLD bool $allowsResourcePackDevelopment() const;
 
@@ -1454,7 +1355,7 @@ public:
     MCAPI ::std::shared_ptr<::Core::FileStorageArea>
     $createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::PathView loggingPath);
 
-    MCFOLD void $handlePlatformSpecificCommerceError(uint);
+    MCFOLD void $handlePlatformSpecificCommerceError(uint error);
 
     MCFOLD bool $isEduMode() const;
 
@@ -1463,10 +1364,6 @@ public:
     MCFOLD bool $isWebviewSupported() const;
 
     MCFOLD ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&&) const;
-
-    MCFOLD bool $getPlatformTTSExists() const;
-
-    MCFOLD bool $getPlatformTTSEnabled() const;
 
     MCAPI ::std::variant<::HWND__*, ::std::monostate> $getRenderSurfaceParameters() const;
 
@@ -1480,7 +1377,7 @@ public:
 
     MCFOLD bool $usesAsyncOptionSaving() const;
 
-    MCFOLD void $showPlatformStoreIcon(bool);
+    MCFOLD void $showPlatformStoreIcon(bool shouldShow);
 
     MCAPI void $showPlatformEmptyStoreDialog(::std::function<void(bool)>&& callback);
 
@@ -1501,8 +1398,6 @@ public:
     MCFOLD void $onMinecraftGameInitComplete();
 
     MCFOLD void $onFullGameUnlock();
-
-    MCFOLD bool $is24HourTimeFormat() const;
 
     MCAPI ::Bedrock::Threading::Async<bool> $showOSUserDialog(::std::string, ::std::string, ::std::string);
 
@@ -1533,29 +1428,14 @@ public:
 
     MCFOLD int $getKeyFromKeyCode(int, int, int);
 
-    MCFOLD void $textEditComponentGainedFocus(
-        ::std::string const& currentText,
-        int                  maxLength,
-        bool                 limitInput,
-        bool                 numbersOnly,
-        bool                 isMultiline
-    );
+    MCFOLD void $textEditComponentGainedFocus(::std::string const&, int, bool, bool, bool);
 
     MCFOLD void $textEditComponentLostFocus();
 
-    MCAPI void $showKeyboard(
-        ::std::string const& currentText,
-        int                  maxLength,
-        bool                 limitInput,
-        bool                 numbersOnly,
-        bool                 isMultiline,
-        int const            controllerId,
-        ::glm::vec2 const&   position,
-        float                controlHeight,
-        ::InputMode          inputMode
-    );
+    MCAPI void
+    $showKeyboard(::std::string const&, int, bool, bool, bool, int const, ::glm::vec2 const&, float, ::InputMode);
 
-    MCFOLD void $hideKeyboard();
+    MCAPI void $hideKeyboard();
 
     MCAPI bool $blankLineDismissesChat() const;
 
@@ -1569,7 +1449,7 @@ public:
 
     MCAPI bool $refocusMouse(bool lostMouse, bool oldMouseGrabbed);
 
-    MCFOLD void $setMousePointerType(::Bedrock::Input::PointerType pointerType);
+    MCFOLD void $setMousePointerType(::Bedrock::Input::PointerType);
 
     MCFOLD void $hideMousePointer();
 
@@ -1585,9 +1465,9 @@ public:
 
     MCFOLD ::Core::PathBuffer<::std::string> $getCustomSoftwareCursorAsset() const;
 
-    MCFOLD bool $getPointerFocus();
+    MCAPI bool $getPointerFocus();
 
-    MCFOLD void $setPointerFocus(bool lostFocus);
+    MCAPI void $setPointerFocus(bool lostFocus);
 
     MCFOLD bool $isInvertScrollEnabled() const;
 
@@ -1621,19 +1501,11 @@ public:
 
     MCAPI ::std::string $getTermsOfUseHyperlink() const;
 
-    MCFOLD void $pickFile(::std::shared_ptr<::FilePickerSettings> settings);
-
-    MCFOLD bool $supportsAlbumExport() const;
-
-    MCFOLD bool $supportsPDFExport() const;
-
-    MCFOLD ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
+    MCFOLD void $pickFile(::std::shared_ptr<::FilePickerSettings>);
 
     MCFOLD void $shareFile(::Core::Path const&, ::std::function<void(bool)>);
 
     MCFOLD bool $hasHardwareBackButton();
-
-    MCFOLD bool $supportsMSAA() const;
 
     MCFOLD bool $supports3rdPartyServers() const;
 
@@ -1655,7 +1527,7 @@ public:
 
     MCAPI bool $supportsClipboardAsyncGet() const;
 
-    MCFOLD void $setClipboard(::std::string const& value) const;
+    MCFOLD void $setClipboard(::std::string const&) const;
 
     MCAPI ::std::wstring $getClipboardText() const;
 
@@ -1674,16 +1546,11 @@ public:
     MCAPI void $pushNotificationReceived(::PushNotificationMessage const& msg);
 
     MCAPI void $openStoragePermissionRequest(
-        ::PermissionRequestReason resultCallback,
-        ::std::function<void(::StoragePermissionResult)>
+        ::PermissionRequestReason,
+        ::std::function<void(::StoragePermissionResult)> resultCallback
     );
 
-    MCFOLD void $setStorageDirectory(
-        ::FileStorageDirectory      dir,
-        bool                        isCallback,
-        ::PropertyBag const&        extraData,
-        ::std::function<void(bool)> onComplete
-    );
+    MCFOLD void $setStorageDirectory(::FileStorageDirectory, bool, ::PropertyBag const&, ::std::function<void(bool)>);
 
     MCFOLD ::FileStorageDirectory $setInitialStorageDirectory(::FileStorageDirectory);
 
@@ -1692,7 +1559,7 @@ public:
     MCFOLD void $setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)>);
 
     MCFOLD ::Bedrock::PubSub::Subscription
-    $addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback);
+        $addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)>);
 
     MCAPI void $runStoragePermissionResultCallback(::StoragePermissionResult result);
 
@@ -1700,7 +1567,11 @@ public:
 
     MCFOLD bool $delayOptionSaveUntilCloudSync() const;
 
-    MCFOLD void $updateTextEditBoxPosition(::RectangleArea const&, ::RectangleArea const&, float const);
+    MCFOLD void $updateTextEditBoxPosition(
+        ::RectangleArea const& controlPosition,
+        ::RectangleArea const& selectionPosition,
+        float const            guiScale
+    );
 
     MCAPI ::BatteryMonitorInterface const& $getBatteryMonitorInterface() const;
 
@@ -1726,21 +1597,11 @@ public:
 
     MCAPI void $notifyUriListenerRegistrationDone();
 
-    MCFOLD void $showXboxLiveUserSettings();
-
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ThrottledFileWriteManager> $getThrottledFileWriteManager() const;
 
     MCAPI void $_notifyUriListeners(::ActivationUri const& uri, bool ignoreVerb);
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIAppPlatform();
-
-    MCNAPI static void** $vftableForISecureStorageKeySystem();
     // NOLINTEND
 };

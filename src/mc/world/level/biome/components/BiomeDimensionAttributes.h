@@ -12,10 +12,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

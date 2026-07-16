@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/RtpPacketizer.h"
 
 // auto generated forward declare list
@@ -19,7 +20,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 3>  mUnkd34563;
     ::ll::UntypedStorage<8, 8>  mUnk2ba69c;
-    ::ll::UntypedStorage<8, 16> mUnk2ea1a6;
+    ::ll::UntypedStorage<8, 16> mUnk8eb70a;
     ::ll::UntypedStorage<8, 24> mUnke5fddc;
     ::ll::UntypedStorage<8, 8>  mUnkdfa7c8;
     // NOLINTEND
@@ -43,25 +44,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    RtpPacketizerGeneric(::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits);
+    MCNAPI RtpPacketizerGeneric(
+        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits             limits
+    );
 
     MCNAPI RtpPacketizerGeneric(
-        ::rtc::ArrayView<uchar const>              payload,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
-        ::webrtc::RTPVideoHeader const&            rtp_video_header
+        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits             limits,
+        ::webrtc::RTPVideoHeader const&                        rtp_video_header
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits);
+    MCNAPI void* $ctor(
+        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits             limits
+    );
 
     MCNAPI void* $ctor(
-        ::rtc::ArrayView<uchar const>              payload,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
-        ::webrtc::RTPVideoHeader const&            rtp_video_header
+        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits             limits,
+        ::webrtc::RTPVideoHeader const&                        rtp_video_header
     );
     // NOLINTEND
 

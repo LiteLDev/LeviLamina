@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/NetworkIdentifier.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/MPMCQueue.h"
@@ -20,10 +19,10 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
+namespace NetherNet { class IIdentityAssertionGenerator; }
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { struct RakNetStatistics; }
 namespace RakNet { struct RakPeerConfiguration; }
-namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 class RakNetConnector : public ::RemoteConnector {
@@ -62,12 +61,6 @@ public:
         // NOLINTBEGIN
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
     struct PingCallbackData {
@@ -76,30 +69,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::std::string>               mAddress;
         ::ll::TypedStorage<8, 64, ::std::function<void(uint)>> mAction;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PingCallbackData& operator=(PingCallbackData const&);
-        PingCallbackData(PingCallbackData const&);
-        PingCallbackData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::RakNetConnector::PingCallbackData& operator=(::RakNetConnector::PingCallbackData&&);
-
-#ifdef LL_PLAT_C
-        MCAPI ~PingCallbackData();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCFOLD void $dtor();
-#endif
         // NOLINTEND
     };
 
@@ -117,18 +86,6 @@ public:
             // NOLINTBEGIN
             ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mTimepoint;
             ::ll::TypedStorage<8, 32, ::std::string>                          mReadBuffer;
-            // NOLINTEND
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCAPI ~ReadBufferData();
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCFOLD void $dtor();
             // NOLINTEND
         };
 
@@ -153,13 +110,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void
-        sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility) /*override*/;
+        virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
 
-        virtual ::NetworkPeer::DataStatus _receivePacket(
-            ::std::string&                                                    outData,
-            ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
-        ) /*override*/;
+        virtual ::NetworkPeer::DataStatus
+        _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
 
         virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
@@ -171,35 +125,9 @@ public:
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void newData(::std::string data);
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
 
-        MCAPI ::NetworkPeer::DataStatus $_receivePacket(
-            ::std::string&                                                    outData,
-            ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
-        );
-        MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
-
-        MCAPI void $update();
-
-        MCFOLD bool $isLocal() const;
-
-        MCFOLD bool $isEncrypted() const;
-
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -240,13 +168,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RakNetConnector() /*override*/;
+    virtual ~RakNetConnector() /*override*/ = default;
 
-    virtual bool host(::ConnectionDefinition const& definition) /*override*/;
+    virtual bool host(::ConnectionDefinition const&) /*override*/;
 
     virtual bool connect(
-        ::Social::GameConnectionInfo const& primaryConnection,
-        ::Social::GameConnectionInfo const& backupConnection
+        ::Social::GameConnectionInfo const&,
+        ::Social::GameConnectionInfo const&,
+        ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator>
     ) /*override*/;
 
     virtual void disconnect() /*override*/;
@@ -255,9 +184,9 @@ public:
 
     virtual void runEvents() /*override*/;
 
-    virtual void closeNetworkConnection(::NetworkIdentifier const& id) /*override*/;
+    virtual void closeNetworkConnection(::NetworkIdentifier const&) /*override*/;
 
-    virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const& id) /*override*/;
+    virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const&) /*override*/;
 
     virtual bool isServer() const /*override*/;
 
@@ -300,12 +229,6 @@ public:
         ::RakNet::RakPeerConfiguration const&            rakPeerConfig
     );
 
-    MCAPI ::std::vector<::std::string> _getLocalIps() const;
-
-    MCAPI ::std::vector<::RakNet::SystemAddress> _getRefinedLocalIps() const;
-
-    MCAPI void _storeLocalIP();
-
 #ifdef LL_PLAT_C
     MCAPI void
     getPingTimeForConnection(::std::string const& address, int port, ::std::function<void(uint)> pingTimeCallback);
@@ -326,71 +249,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $host(::ConnectionDefinition const& definition);
 
-    MCAPI bool $connect(
-        ::Social::GameConnectionInfo const& primaryConnection,
-        ::Social::GameConnectionInfo const& backupConnection
-    );
-
-    MCAPI void $disconnect();
-
-    MCAPI void $tick();
-
-    MCAPI void $runEvents();
-
-    MCAPI void $closeNetworkConnection(::NetworkIdentifier const& id);
-
-    MCAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const& id);
-
-    MCFOLD bool $isServer() const;
-
-    MCAPI ::std::string $getLocalIp();
-
-    MCAPI ushort $getPort() const;
-
-    MCAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
-
-    MCAPI bool $isIPv4Supported() const;
-
-    MCAPI bool $isIPv6Supported() const;
-
-    MCAPI ushort $getIPv4Port() const;
-
-    MCAPI ushort $getIPv6Port() const;
-
-    MCAPI ::NetworkIdentifier $getNetworkIdentifier() const;
-
-    MCFOLD ::RakNet::RakPeerInterface* $getPeer();
-
-    MCFOLD ::RakNet::RakPeerInterface const* $getPeer() const;
-
-    MCFOLD ::TransportLayer $getNetworkType() const;
-
-    MCFOLD void $setDisableLanSignaling(bool);
-
-    MCAPI void $_onDisable();
-
-    MCAPI void $_onEnable();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForConnector();
-
-    MCNAPI static void** $vftableForNetworkEnableDisableListener();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

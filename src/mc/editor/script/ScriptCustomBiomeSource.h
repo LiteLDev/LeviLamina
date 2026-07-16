@@ -3,21 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-
-// auto generated forward declare list
-// clang-format off
-class ICustomBiomeSource;
-class Vec3;
-namespace Editor { class CustomBiomeManagerProvider; }
-namespace Editor::ScriptModule { struct ScriptCustomBiomeConfig; }
-namespace ScriptModuleMinecraft { class ScriptBiomeType; }
-namespace ScriptModuleMinecraft { class ScriptRGBA; }
-namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct ClassBinding; }
-// clang-format on
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 namespace Editor::ScriptModule {
 
@@ -36,44 +22,6 @@ public:
     ScriptCustomBiomeSource& operator=(ScriptCustomBiomeSource const&);
     ScriptCustomBiomeSource(ScriptCustomBiomeSource const&);
     ScriptCustomBiomeSource();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptCustomBiomeSource(
-        ::Scripting::WeakLifetimeScope&                       scope,
-        ::WeakRef<::ICustomBiomeSource> const&                sourceData,
-        ::std::weak_ptr<::Editor::CustomBiomeManagerProvider> manager
-    );
-
-    MCNAPI void destroy();
-
-    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptBiomeType> getBiomeAt(::Vec3 const& pos) const;
-
-    MCNAPI ::std::string getId() const;
-
-    MCNAPI ::Scripting::Result_deprecated<void>
-    recalculateBiomes(::std::vector<::Editor::ScriptModule::ScriptCustomBiomeConfig> const& newBiomes);
-
-    MCNAPI ::Scripting::Result_deprecated<void>
-    updateColor(::std::string const& biomeName, ::ScriptModuleMinecraft::ScriptRGBA const& color);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindType();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Scripting::WeakLifetimeScope&                       scope,
-        ::WeakRef<::ICustomBiomeSource> const&                sourceData,
-        ::std::weak_ptr<::Editor::CustomBiomeManagerProvider> manager
-    );
-    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

@@ -4,9 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorOwnerComponent;
-class StrictEntityContext;
-struct PlayerComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -14,12 +11,6 @@ class SendPlayerAuthInputReceivedEventSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doSendPlayerAuthInputReceivedEvent(
-        ::StrictEntityContext&   playerComponent,
-        ::PlayerComponent const& actorOwnerComponent,
-        ::ActorOwnerComponent&
-    );
-
     MCAPI static ::TickingSystemWithInfo create();
     // NOLINTEND
 };

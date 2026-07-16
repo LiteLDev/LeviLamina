@@ -4,11 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/application/crash_manager/CrashFileProcessor.h"
-#include "mc/deps/core/file/PathBuffer.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class CrashManagerImpl; }
 namespace Bedrock { class SessionInfo; }
 // clang-format on
 
@@ -32,62 +30,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ::std::shared_ptr<::Bedrock::SessionInfo> findCrashedSessionInfo(::std::string_view) const /*override*/;
-#else // LL_PLAT_C
-    virtual ::std::shared_ptr<::Bedrock::SessionInfo> findCrashedSessionInfo(::std::string_view sessionId) const
-        /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual void notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const&) /*override*/;
-#else // LL_PLAT_C
-    virtual void
-    notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const& status) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual void notifyDoneWithSession(::std::string_view) /*override*/;
-#else // LL_PLAT_C
-    virtual void notifyDoneWithSession(::std::string_view sessionId) /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI CrashHandlerImpl(::Bedrock::CrashManagerImpl& manager, ::Core::PathBuffer<::std::string> const& filePath);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::Bedrock::CrashManagerImpl& manager, ::Core::PathBuffer<::std::string> const& filePath);
-#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::std::shared_ptr<::Bedrock::SessionInfo> $findCrashedSessionInfo(::std::string_view sessionId) const;
 
-    MCNAPI void $notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const& status);
-
-    MCNAPI void $notifyDoneWithSession(::std::string_view sessionId);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

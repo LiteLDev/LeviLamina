@@ -272,26 +272,15 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI bool isNan() const;
-
+    MCAPI int toARGB() const;
 #endif
-
-    MCAPI int toABGR() const;
 
     MCAPI ::std::string toHexString() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::glm::vec4 toVec4() const;
-#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::mce::Color fromHSB(float hue, float saturation, float brightness);
-#endif
-
     MCAPI static ::mce::Color fromHexString(::std::string const& hexStr);
 
     MCAPI static ::mce::Color fromRGBHexString(::std::string const& hexStr);

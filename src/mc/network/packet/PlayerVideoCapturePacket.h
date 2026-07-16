@@ -32,17 +32,17 @@ public:
 
     virtual ::SerializationMode getSerializationMode() const /*override*/;
 
-    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+    virtual void setSerializationMode(::SerializationMode) /*override*/;
 
     virtual void writeWithSerializationMode(
-        ::BinaryStream&                      stream,
-        ::cereal::ReflectionCtx const&       reflectionCtx,
-        ::std::optional<::SerializationMode> overrideMode
+        ::BinaryStream&,
+        ::cereal::ReflectionCtx const&,
+        ::std::optional<::SerializationMode>
     ) const /*override*/;
 
-    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
 
-    virtual void write(::BinaryStream& stream) const /*override*/;
+    virtual void write(::BinaryStream&) const /*override*/;
 
     virtual ::Bedrock::Result<void>
     read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
@@ -55,54 +55,15 @@ public:
 
     virtual ::std::string toString() const /*override*/;
 
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) /*override*/;
 
     virtual ::Bedrock::Result<void>
-    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string_view $getName() const;
-
-    MCFOLD ::SerializationMode $getSerializationMode() const;
-
-    MCFOLD void $setSerializationMode(::SerializationMode mode);
-
-    MCAPI void $writeWithSerializationMode(
-        ::BinaryStream&                      stream,
-        ::cereal::ReflectionCtx const&       reflectionCtx,
-        ::std::optional<::SerializationMode> overrideMode
-    ) const;
-
-    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
-
-    MCAPI void $write(::BinaryStream& stream) const;
-
-    MCAPI ::Bedrock::Result<void>
-    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
-
-    MCFOLD bool $disallowBatching() const;
-
-    MCFOLD bool $isValid() const;
-
-    MCFOLD uint64 $getMaxSize() const;
-
-    MCAPI ::std::string $toString() const;
-
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -23,17 +23,12 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContentManagerContext();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContentManagerContext() /*override*/;
+    virtual ~ContentManagerContext() /*override*/ = default;
 
-    virtual ::ContentView& getContentView(
-        ::brstd::move_only_function<bool(::std::shared_ptr<::ContentItem const> const&)> predicate
-    ) /*override*/;
+    virtual ::ContentView&
+        getContentView(::brstd::move_only_function<bool(::std::shared_ptr<::ContentItem const> const&)>) /*override*/;
 
     virtual ::std::vector<::std::unique_ptr<::ContentView>> const& getContentViews() const /*override*/;
 
@@ -41,43 +36,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ContentManagerContext(
-        ::std::weak_ptr<::IContentManager>                                   manager,
-        ::std::function<bool(::std::shared_ptr<::ContentItem const> const&)> contextPredicate
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::weak_ptr<::IContentManager>                                   manager,
-        ::std::function<bool(::std::shared_ptr<::ContentItem const> const&)> contextPredicate
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ContentView&
-    $getContentView(::brstd::move_only_function<bool(::std::shared_ptr<::ContentItem const> const&)> predicate);
 
-    MCFOLD ::std::vector<::std::unique_ptr<::ContentView>> const& $getContentViews() const;
-
-    MCAPI void $onLanguageChanged();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

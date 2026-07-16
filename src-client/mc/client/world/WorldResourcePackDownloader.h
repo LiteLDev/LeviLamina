@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class DlcDependency;
 class IClientInstance;
 class IContentAcquisition;
 class IDlcBatchModel;
@@ -57,92 +56,27 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void downloadPacks(
-        ::std::vector<::std::string> const&               productIds,
-        ::std::function<void()>                           onCompleteCallback,
-        ::std::function<void(::World::PackDownloadError)> onErrorCallback
+        ::std::vector<::std::string> const&,
+        ::std::function<void()>,
+        ::std::function<void(::World::PackDownloadError)>
     ) /*override*/;
 
     virtual ::World::PackDownloadProgressInfo getProgress() /*override*/;
 
-    virtual void
-    getDownloadingPackTitles(::std::function<void(::std::vector<::std::string>)> packTitlesCallback) /*override*/;
+    virtual void getDownloadingPackTitles(::std::function<void(::std::vector<::std::string>)>) /*override*/;
 
     virtual void cancelDownloadPack() /*override*/;
 
-    virtual void getPackSizes(
-        ::std::vector<::std::string> const& productIds,
-        ::std::function<void(uint64)>       onCompleteCallback
-    ) /*override*/;
+    virtual void getPackSizes(::std::vector<::std::string> const&, ::std::function<void(uint64)>) /*override*/;
 
-    virtual ::World::PackCheckResult
-    checkDlc(::std::string const& levelId, ::PackIdVersion const& packIdVersion, bool const isForRealms) const
+    virtual ::World::PackCheckResult checkDlc(::std::string const&, ::PackIdVersion const&, bool const) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WorldResourcePackDownloader(
-        ::IDlcValidation&                                    dlcValidation,
-        ::IContentAcquisition&                               contentAcquisition,
-        ::IStoreCatalogRepository&                           storeCatalogRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager,
-        ::IClientInstance&                                   clientInstance,
-        ::ILevelListCache&                                   levelListCache
-    );
-
-    MCAPI void _checkPacks();
-
-    MCAPI void _downloadPacks();
-
-    MCFOLD bool
-    _hasExpiredRealmsPlusSubscription(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager) const;
-
-    MCAPI bool _hasRealmsPlusDlcDependencies(
-        ::std::vector<::DlcDependency> const& dependencies,
-        ::IStoreCatalogRepository const&      storeCatalogRepository
-    ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::IDlcValidation&                                    dlcValidation,
-        ::IContentAcquisition&                               contentAcquisition,
-        ::IStoreCatalogRepository&                           storeCatalogRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager,
-        ::IClientInstance&                                   clientInstance,
-        ::ILevelListCache&                                   levelListCache
-    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $downloadPacks(
-        ::std::vector<::std::string> const&               productIds,
-        ::std::function<void()>                           onCompleteCallback,
-        ::std::function<void(::World::PackDownloadError)> onErrorCallback
-    );
 
-    MCAPI ::World::PackDownloadProgressInfo $getProgress();
-
-    MCAPI void $getDownloadingPackTitles(::std::function<void(::std::vector<::std::string>)> packTitlesCallback);
-
-    MCAPI void $cancelDownloadPack();
-
-    MCAPI void
-    $getPackSizes(::std::vector<::std::string> const& productIds, ::std::function<void(uint64)> onCompleteCallback);
-
-    MCAPI ::World::PackCheckResult
-    $checkDlc(::std::string const& levelId, ::PackIdVersion const& packIdVersion, bool const isForRealms) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

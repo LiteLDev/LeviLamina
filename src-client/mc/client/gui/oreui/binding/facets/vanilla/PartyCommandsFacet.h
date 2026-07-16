@@ -3,11 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/CommandState.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/PartyCommandError.h"
-#include "mc/client/party/parties/PartyPrivacy.h"
-#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -19,7 +17,7 @@ namespace Parties { class PartySystem; }
 
 namespace OreUI {
 
-class PartyCommandsFacet : public ::OreUI::FacetBase<::OreUI::PartyCommandsFacet> {
+class PartyCommandsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PartyCommandsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PartyCommandsFacet() /*override*/;
+    virtual ~PartyCommandsFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -51,37 +49,6 @@ public:
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem>                  partySystem,
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::IClientInstance>()> getClientInstance
     );
-
-    MCAPI void _runCommandAndUpdateState(
-        ::Bedrock::Threading::Async<bool>                  task,
-        ::OreUI::CommandState<::OreUI::PartyCommandError>& state
-    );
-
-    MCAPI void acceptInvite(::std::string const& partyId, ::std::string const& connectionString);
-
-    MCAPI void createParty();
-
-    MCAPI ::OreUI::CommandState<::OreUI::PartyCommandError> const& getAcceptInviteState() const;
-
-    MCAPI ::OreUI::CommandState<::OreUI::PartyCommandError> const& getCreatePartyState() const;
-
-    MCFOLD ::OreUI::CommandState<::OreUI::PartyCommandError> const& getJoinPartyState() const;
-
-    MCAPI void ignoreInvite(::std::string const& partyId, ::std::string const& inviterXuid);
-
-    MCAPI void joinParty(::std::string const& partyId);
-
-    MCAPI void leaveParty();
-
-    MCAPI void removeMember(::std::string const& memberXuid, bool preventRejoin);
-
-    MCAPI void sendInvite(::std::string const& xuid);
-
-    MCAPI void setLeader(::std::string const& memberXuid);
-
-    MCAPI void setPrivacy(::Parties::PartyPrivacy newPrivacy);
-
-    MCAPI void travelToDestination();
     // NOLINTEND
 
 public:
@@ -100,21 +67,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

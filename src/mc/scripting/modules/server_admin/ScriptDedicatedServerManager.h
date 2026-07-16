@@ -2,15 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
-
 // auto generated forward declare list
 // clang-format off
 class Level;
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct EngineError; }
 class IScriptDedicatedServerUtils;
 // clang-format on
 
@@ -40,12 +36,6 @@ public:
         ::IScriptDedicatedServerUtils&  serverUtils,
         ::Level&                        level
     );
-
-    MCNAPI ::Scripting::Result<void, ::Scripting::EngineError> reloadCDNConfig();
-
-    MCNAPI ::Scripting::Result<void, ::Scripting::EngineError> reloadPermissionsFile();
-
-    MCNAPI ::Scripting::Result<void, ::Scripting::EngineError> reloadScriptConfig();
     // NOLINTEND
 
 public:

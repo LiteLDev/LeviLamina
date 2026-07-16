@@ -53,16 +53,4 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec4>>                                 mColorOverrides;
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorDerivitiveData::UniformEntry>>         mUniformEntries;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorDerivitiveData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -21,12 +21,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _eventingRequestSystem(
-        ::StrictEntityContext const&     eventingRequestQueueComponent,
-        ::EventingRequestQueueComponent& levelComponent,
-        ::LevelComponent&
-    );
-
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

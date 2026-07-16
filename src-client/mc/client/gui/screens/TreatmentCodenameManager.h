@@ -34,38 +34,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TreatmentCodenameManager();
-
-    MCAPI void _generateCodenames(
-        ::std::vector<::std::string> const& treatments,
-        ::std::vector<::std::string>&       codenamesInUse,
-        ::std::stringstream&                inoutStream
-    );
-
-    MCAPI void generateNewCodenames(
-        ::std::vector<::std::string> const& realmFeatures,
-        ::std::vector<::std::string> const& treatments
-    );
-
     MCAPI ::Bedrock::PubSub::Subscription
     registerCodenameUpdatedListener(::std::function<void(::std::string_view)> callback);
 
     MCAPI void registerRealmsFeatureNamesListener(::RealmsAPI& realmsAPI);
 
     MCAPI void registerTreatmentsListener(::std::weak_ptr<::FlightingService> flightingService);
-
-    MCAPI ~TreatmentCodenameManager();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

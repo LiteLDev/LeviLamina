@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::Cursor { struct Position; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -25,21 +24,9 @@ public:
     ScriptCursorPosition();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptCursorPosition(::Editor::Cursor::Position const& position);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Cursor::Position const& position);
     // NOLINTEND
 };
 

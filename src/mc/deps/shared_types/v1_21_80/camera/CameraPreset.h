@@ -10,11 +10,6 @@
 #include "mc/deps/shared_types/v1_21_50/camera/CameraAimAssistCommandPresetDefinition.h"
 #include "mc/world/level/camera/controlscheme/Scheme.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_21_80 {
 
 struct CameraPreset {
@@ -51,40 +46,6 @@ public:
     ::ll::TypedStorage<8, 72, ::std::optional<::SharedTypes::v1_21_50::CameraAimAssistCommandPresetDefinition>>
                                                                        mAimAssist;
     ::ll::TypedStorage<1, 2, ::std::optional<::ControlScheme::Scheme>> mControlScheme;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraPreset();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CameraPreset(::SharedTypes::v1_21_80::CameraPreset const&);
-
-    MCFOLD ::SharedTypes::v1_21_80::CameraPreset& operator=(::SharedTypes::v1_21_80::CameraPreset&&);
-
-    MCFOLD ::SharedTypes::v1_21_80::CameraPreset& operator=(::SharedTypes::v1_21_80::CameraPreset const&);
-
-    MCAPI ~CameraPreset();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_21_80::CameraPreset const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

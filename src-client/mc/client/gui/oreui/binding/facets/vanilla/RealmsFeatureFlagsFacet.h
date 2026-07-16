@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ class RealmsAPI;
 
 namespace OreUI {
 
-class RealmsFeatureFlagsFacet : public ::OreUI::FacetBase<::OreUI::RealmsFeatureFlagsFacet> {
+class RealmsFeatureFlagsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsFeatureFlagsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,8 +33,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsFeatureFlagsFacet(::std::weak_ptr<::RealmsAPI> realmsApi);
-
-    MCFOLD ::std::vector<::std::string> const& getAllFeatureFlags() const;
     // NOLINTEND
 
 public:
@@ -52,13 +50,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

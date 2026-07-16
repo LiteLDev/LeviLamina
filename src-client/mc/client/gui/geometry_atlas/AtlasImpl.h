@@ -6,24 +6,23 @@
 #include "mc/client/gui/geometry_atlas/CommandDispatcherArgs.h"
 #include "mc/client/gui/geometry_atlas/IGeometryAtlas.h"
 #include "mc/client/gui/geometry_atlas/ItemData.h"
+#include "mc/client/gui/geometry_atlas/PaperDollData.h"
 #include "mc/deps/core/threading/BasicLockbox.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/external/render_dragon/atlas/AtlasTileDescription.h"
 #include "mc/external/render_dragon/atlas/AtlasTileHandle.h"
-#include "mc/platform/brstd/flat_set.h"
+#include "mc/platform/brstd/flat_map.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Bedrock::Threading { class Mutex; }
 namespace GeometryAtlas { class IItemTile; }
+namespace GeometryAtlas { class IPaperDollTile; }
 namespace GeometryAtlas { class IRenderContext; }
-namespace GeometryAtlas { struct AllocateAtlasPayload; }
-namespace GeometryAtlas { struct AllocateBackendPayload; }
 namespace GeometryAtlas { struct RenderableUpdateCommand; }
 namespace GeometryAtlas { struct TileDefinition; }
-namespace GeometryAtlas { struct UIItemPayload; }
 namespace dragon::atlas { class IAtlasHandle; }
 // clang-format on
 
@@ -35,23 +34,35 @@ public:
     // clang-format off
     struct TileEntry;
     struct Data;
+    struct TileDirtyUpdate;
     struct CommandArgs;
     struct mDispatcher;
     // clang-format on
 
     // AtlasImpl inner types define
+    enum class TileDirtyStatus : uchar {
+        NewUserData           = 0,
+        SubmittedForRendering = 1,
+        UpToDate              = 2,
+    };
+
     struct TileEntry {
     public:
         // TileEntry inner types define
-        using Variant = ::std::variant<::GeometryAtlas::ItemData>;
+        enum class Status : uchar {
+            Uninitialized        = 0,
+            Initialized          = 1,
+            FailedInitialization = 2,
+        };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 56, ::std::variant<::GeometryAtlas::ItemData>> mData;
-        ::ll::TypedStorage<8, 24, ::dragon::atlas::AtlasTileHandle>          mBackendID;
-        ::ll::TypedStorage<4, 8, ::dragon::atlas::AtlasTileDescription>      mTileDescription;
-        ::ll::TypedStorage<1, 1, bool>                                       mIsAnimated;
+        ::ll::TypedStorage<8, 40, ::std::variant<::GeometryAtlas::ItemData, ::GeometryAtlas::PaperDollData>> mData;
+        ::ll::TypedStorage<8, 32, ::dragon::atlas::AtlasTileHandle>                                          mBackendID;
+        ::ll::TypedStorage<4, 8, ::dragon::atlas::AtlasTileDescription>         mTileDescription;
+        ::ll::TypedStorage<1, 1, bool>                                          mIsAnimated;
+        ::ll::TypedStorage<1, 1, ::GeometryAtlas::AtlasImpl::TileEntry::Status> mStatus;
         // NOLINTEND
     };
 
@@ -59,29 +70,36 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::dragon::atlas::IAtlasHandle>>                  mAtlas;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::dragon::atlas::IAtlasHandle>>>   mAtlases;
         ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::GeometryAtlas::AtlasImpl::TileEntry>> mTiles;
         ::ll::TypedStorage<
             8,
             120,
             ::Bedrock::Threading::
                 BasicLockbox<::std::deque<::GeometryAtlas::RenderableUpdateCommand>, ::Bedrock::Threading::Mutex>>
-                                                                                                   mCommands;
-        ::ll::TypedStorage<8, 24, ::std::vector<::GeometryAtlas::RenderableUpdateCommand>>         mFutureCommands;
-        ::ll::TypedStorage<8, 24, ::brstd::flat_set<uint, ::std::less<uint>, ::std::vector<uint>>> mDirtyTiles;
-        ::ll::TypedStorage<8, 24, ::std::vector<uint>>                                             mTileNotifications;
+                                                                                           mCommands;
+        ::ll::TypedStorage<8, 24, ::std::vector<::GeometryAtlas::RenderableUpdateCommand>> mFutureCommands;
+        ::ll::TypedStorage<
+            8,
+            48,
+            ::brstd::flat_map<
+                uint,
+                ::GeometryAtlas::AtlasImpl::TileDirtyStatus,
+                ::std::less<uint>,
+                ::std::vector<uint>,
+                ::std::vector<::GeometryAtlas::AtlasImpl::TileDirtyStatus>>>
+                                                       mDirtyTiles;
+        ::ll::TypedStorage<8, 24, ::std::vector<uint>> mTileNotifications;
         // NOLINTEND
+    };
 
+    struct TileDirtyUpdate {
     public:
-        // member functions
+        // member variables
         // NOLINTBEGIN
-        MCAPI ~Data();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
+        ::ll::TypedStorage<1, 1, ::GeometryAtlas::AtlasImpl::TileDirtyStatus> mNewStatus;
+        ::ll::TypedStorage<1, 1, bool>                                        mSubmitTileRender;
+        ::ll::TypedStorage<1, 1, bool>                                        mNotifyTileUpdated;
         // NOLINTEND
     };
 
@@ -128,9 +146,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::shared_ptr<::GeometryAtlas::IItemTile>
-    createItem(::GeometryAtlas::TileDefinition const& definition) /*override*/;
+    createItem(::GeometryAtlas::TileDefinition const&) /*override*/;
 
-    virtual void trySubmitUpdates(::GeometryAtlas::IRenderContext& context) /*override*/;
+    virtual ::std::shared_ptr<::GeometryAtlas::IPaperDollTile>
+    createDoll(::GeometryAtlas::TileDefinition const&) /*override*/;
+
+    virtual void trySubmitUpdates(::GeometryAtlas::IRenderContext&) /*override*/;
+
+    virtual bool hasAnyUpdates() const /*override*/;
 
     virtual ::Bedrock::PubSub::Connector<void(::std::vector<uint> const&)>& getTileChangeConnector() /*override*/;
     // NOLINTEND
@@ -139,16 +162,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AtlasImpl();
-
-    MCAPI void _processAllCommands(::GeometryAtlas::IRenderContext& context);
-
-    MCAPI void _processCommand(::GeometryAtlas::AtlasImpl::CommandArgs& args, ::GeometryAtlas::AllocateAtlasPayload);
-
-    MCAPI void _processCommand(::GeometryAtlas::AtlasImpl::CommandArgs& args, ::GeometryAtlas::AllocateBackendPayload);
-
-    MCAPI void _processCommand(::GeometryAtlas::AtlasImpl::CommandArgs& args, ::GeometryAtlas::UIItemPayload&& payload);
-
-    MCAPI void _submitTileRenders(::GeometryAtlas::IRenderContext& context);
     // NOLINTEND
 
 public:
@@ -160,17 +173,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::GeometryAtlas::IItemTile> $createItem(::GeometryAtlas::TileDefinition const& definition);
 
-    MCAPI void $trySubmitUpdates(::GeometryAtlas::IRenderContext& context);
-
-    MCFOLD ::Bedrock::PubSub::Connector<void(::std::vector<uint> const&)>& $getTileChangeConnector();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

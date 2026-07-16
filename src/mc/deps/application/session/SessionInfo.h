@@ -22,50 +22,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI SessionInfo();
-
-    MCNAPI SessionInfo(::Bedrock::SessionInfo const&);
-
-    MCNAPI ::std::string const& getBranchId() const;
-
-    MCNAPI ::std::string const& getBuildId() const;
-
-    MCNAPI ::std::string const& getCommitId() const;
-
-    MCNAPI int64 getCrashTimestamp() const;
-
-    MCNAPI ::std::optional<uint> const& getErrorCode() const;
-
-    MCNAPI ::std::string const& getErrorMessage() const;
-
-    MCNAPI ::std::string const& getSessionId() const;
-
-    MCNAPI ::std::map<::std::string, ::std::string>& getTags();
-
-    MCNAPI ::Bedrock::SessionInfo& operator=(::Bedrock::SessionInfo&&);
-
-    MCNAPI ::Bedrock::SessionInfo& operator=(::Bedrock::SessionInfo const&);
-
-    MCNAPI bool operator==(::Bedrock::SessionInfo const& rhs) const;
-
-    MCNAPI ~SessionInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::Bedrock::SessionInfo const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
+    // prevent constructor by default
+    SessionInfo& operator=(SessionInfo const&);
+    SessionInfo(SessionInfo const&);
+    SessionInfo();
 };
 
 } // namespace Bedrock

@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MoveActorDeltaPacket() /*override*/;
+    virtual ~MoveActorDeltaPacket() /*override*/ = default;
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
@@ -33,28 +33,6 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MoveActorDeltaPacket();
-
-    MCAPI explicit MoveActorDeltaPacket(::MoveActorDeltaData const& data);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::MoveActorDeltaData const& data);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

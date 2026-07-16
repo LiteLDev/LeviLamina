@@ -19,16 +19,4 @@ public:
     DataDrivenRendererResources& operator=(DataDrivenRendererResources const&);
     DataDrivenRendererResources(DataDrivenRendererResources const&);
     DataDrivenRendererResources();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DataDrivenRendererResources();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

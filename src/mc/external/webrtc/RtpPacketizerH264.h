@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/H264PacketizationMode.h"
 #include "mc/external/webrtc/RtpPacketizer.h"
 
@@ -25,7 +26,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk88bdb2;
+        ::ll::UntypedStorage<8, 16> mUnkc16bba;
         ::ll::UntypedStorage<1, 1>  mUnkc014ea;
         ::ll::UntypedStorage<1, 1>  mUnk34776e;
         ::ll::UntypedStorage<1, 1>  mUnke2078c;
@@ -44,7 +45,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 16> mUnk24da15;
     ::ll::UntypedStorage<8, 8>  mUnk658d84;
-    ::ll::UntypedStorage<8, 40> mUnkbdc12f;
+    ::ll::UntypedStorage<8, 40> mUnkb6de6b;
     ::ll::UntypedStorage<8, 40> mUnkbf7a86;
     // NOLINTEND
 
@@ -76,9 +77,9 @@ public:
     MCNAPI uint64 PacketizeStapA(uint64 fragment_index);
 
     MCNAPI RtpPacketizerH264(
-        ::rtc::ArrayView<uchar const>              payload,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
-        ::webrtc::H264PacketizationMode            packetization_mode
+        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits             limits,
+        ::webrtc::H264PacketizationMode                        packetization_mode
     );
     // NOLINTEND
 
@@ -86,9 +87,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::rtc::ArrayView<uchar const>              payload,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
-        ::webrtc::H264PacketizationMode            packetization_mode
+        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits             limits,
+        ::webrtc::H264PacketizationMode                        packetization_mode
     );
     // NOLINTEND
 

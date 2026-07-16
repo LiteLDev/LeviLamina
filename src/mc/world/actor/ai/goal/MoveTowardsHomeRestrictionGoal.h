@@ -5,34 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/MoveTowardsRestrictionGoal.h"
 
-// auto generated forward declare list
-// clang-format off
-class Mob;
-// clang-format on
-
 class MoveTowardsHomeRestrictionGoal : public ::MoveTowardsRestrictionGoal {
-public:
-    // prevent constructor by default
-    MoveTowardsHomeRestrictionGoal();
-
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canUse() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit MoveTowardsHomeRestrictionGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

@@ -30,8 +30,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit AutoSaveInfoScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

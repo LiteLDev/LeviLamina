@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-class Tag;
 struct EquipmentTableDropChance;
 // clang-format on
 
@@ -27,10 +26,6 @@ public:
     // NOLINTBEGIN
     MCAPI EquipmentTable(::EquipmentTable const&);
 
-    MCAPI explicit EquipmentTable(::std::string lootTable);
-
-    MCAPI explicit EquipmentTable(::CompoundTag const& tag);
-
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCFOLD ::EquipmentTable& operator=(::EquipmentTable&&);
@@ -39,18 +34,8 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::vector<::EquipmentTableDropChance> _createDropChancesFromTag(::Tag const& tag);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCFOLD void* $ctor(::EquipmentTable const&);
-
-    MCAPI void* $ctor(::std::string lootTable);
-
-    MCAPI void* $ctor(::CompoundTag const& tag);
     // NOLINTEND
 };

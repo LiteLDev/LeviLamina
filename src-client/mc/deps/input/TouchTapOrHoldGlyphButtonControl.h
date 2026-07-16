@@ -45,11 +45,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TouchTapOrHoldGlyphButtonControl() /*override*/;
+    virtual ~TouchTapOrHoldGlyphButtonControl() /*override*/ = default;
 
     virtual void render(::InputRenderContext& context) const /*override*/;
 
-    virtual void tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int) /*override*/;
+    virtual void
+    tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor) /*override*/;
 
     virtual void release(::InputEventQueue& eventQueue) /*override*/;
     // NOLINTEND
@@ -89,24 +90,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::InputRenderContext& context) const;
 
-    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int);
-
-    MCAPI void $release(::InputEventQueue& eventQueue);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -17,10 +17,4 @@ public:
     AtmosphericScatteringSessionStorage& operator=(AtmosphericScatteringSessionStorage const&);
     AtmosphericScatteringSessionStorage(AtmosphericScatteringSessionStorage const&);
     AtmosphericScatteringSessionStorage();
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

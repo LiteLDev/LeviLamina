@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class DtlsTransportInternal; }
 namespace webrtc { class DtlsTransportInformation; }
+namespace webrtc { class DtlsTransportInternal; }
 namespace webrtc { class DtlsTransportObserverInterface; }
 namespace webrtc { class IceTransportInterface; }
 // clang-format on
@@ -21,10 +21,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnkf33c20;
-    ::ll::UntypedStorage<8, 8>  mUnk63ee28;
+    ::ll::UntypedStorage<8, 8>  mUnke0da3a;
     ::ll::UntypedStorage<8, 40> mUnk912461;
-    ::ll::UntypedStorage<8, 48> mUnk35d5aa;
-    ::ll::UntypedStorage<8, 8>  mUnkb9a9c8;
+    ::ll::UntypedStorage<8, 56> mUnk35d5aa;
+    ::ll::UntypedStorage<8, 8>  mUnk8ea1be;
     ::ll::UntypedStorage<8, 8>  mUnka7df75;
     // NOLINTEND
 
@@ -53,7 +53,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void Clear();
 
-    MCNAPI explicit DtlsTransport(::std::unique_ptr<::cricket::DtlsTransportInternal> internal);
+    MCNAPI explicit DtlsTransport(::std::unique_ptr<::webrtc::DtlsTransportInternal> internal);
 
     MCNAPI void UpdateInformation();
 
@@ -63,7 +63,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::unique_ptr<::cricket::DtlsTransportInternal> internal);
+    MCNAPI void* $ctor(::std::unique_ptr<::webrtc::DtlsTransportInternal> internal);
     // NOLINTEND
 
 public:

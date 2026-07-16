@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class BlockSource;
 struct BlockAnimateTickData;
 // clang-format on
 
@@ -20,27 +18,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ObsidianBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ObsidianBlock(::std::string const& nameId, int id, bool isGlowing);
-
-    MCAPI void poofParticles(::BlockSource& region, ::BlockPos const& pos) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool isGlowing);
     // NOLINTEND
 
 public:

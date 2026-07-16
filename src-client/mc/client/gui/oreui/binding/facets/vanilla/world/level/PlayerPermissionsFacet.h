@@ -5,14 +5,12 @@
 // auto generated inclusion list
 #include "mc/client/commands/PlayerPermissionsCommandsUtils.h"
 #include "mc/client/commands/PlayerPermissionsLevelListener.h"
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/world/level/PlayerPermissionsActionState.h"
-#include "mc/client/gui/oreui/binding/facets/vanilla/world/level/PlayerPermissionsError.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
-#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,7 +26,7 @@ namespace World { class WorldPlayerListTracker; }
 
 namespace OreUI {
 
-class PlayerPermissionsFacet : public ::OreUI::FacetBase<::OreUI::PlayerPermissionsFacet> {
+class PlayerPermissionsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PlayerPermissionsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -70,7 +68,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerPermissionsFacet() /*override*/;
+    virtual ~PlayerPermissionsFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -88,58 +86,6 @@ public:
         ::std::function<bool()>              isPrimaryClient,
         ::std::function<bool()>              isHostingLocalDedicatedServer
     );
-
-    MCAPI bool _evaluateCanEditPermissions();
-
-    MCAPI bool _evaluateCanKickPlayer(::ActorUniqueID playerId);
-
-    MCAPI void _evaluateStates();
-
-    MCAPI void _initResources();
-
-    MCAPI void _reloadPermissions();
-
-    MCAPI void _syncFromManager(::ActorUniqueID playerId);
-
-    MCAPI bool _validateLocalPlayer();
-
-    MCAPI bool areCheatsEnabled() const;
-
-    MCAPI bool canEditPermissions() const;
-
-    MCFOLD bool canKickPlayer() const;
-
-    MCAPI void clearErrorFlag(::OreUI::PlayerPermissionsError error);
-
-    MCAPI void enableCheats();
-
-    MCFOLD ::std::optional<::PlayerPermissionLevel> const& getCurrentPlayerPermissionLevel() const;
-
-    MCAPI ::OreUI::PlayerPermissionsActionState const& getKickCommandState() const;
-
-    MCAPI bool getOperatorCommandsRevokedFlag() const;
-
-    MCFOLD bool getPlayerIdInvalidFlag() const;
-
-    MCFOLD ::std::vector<::OreUI::PlayerAbilityBindings> const& getPlayerPermissionList() const;
-
-    MCAPI bool getPlayerPermissionsMissingFlag() const;
-
-    MCAPI bool getSelectedPlayerLeftFlag() const;
-
-    MCAPI bool getSelectedPlayerPermissionsChangedFlag() const;
-
-    MCAPI bool isWorldTemplateOptionsLocked() const;
-
-    MCAPI void kickPlayer(::std::string playerId);
-
-    MCAPI void loadPlayerPermissions(::std::string playerId);
-
-    MCAPI void requestSavePermissions();
-
-    MCAPI void setPlayerPermission(::std::string playerId, ::AbilitiesIndex abilityIndex, bool isEnabled);
-
-    MCAPI void setPlayerPermissionLevel(::std::string playerId, ::PlayerPermissionLevel playerPermissionLevel);
     // NOLINTEND
 
 public:
@@ -164,21 +110,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

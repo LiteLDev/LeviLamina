@@ -25,8 +25,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-        ::std::optional<::SemVersion>
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
     // NOLINTEND
 

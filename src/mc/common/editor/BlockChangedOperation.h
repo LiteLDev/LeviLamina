@@ -4,17 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/IOperation.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockSource;
-class CompoundTag;
-class Level;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Transactions { struct BlockChangeIntentData; }
-namespace Editor::Transactions { struct BlockChangedOperationData; }
 // clang-format on
 
 namespace Editor::Transactions {
@@ -45,42 +42,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit BlockChangedOperation(::std::vector<::Editor::Transactions::BlockChangedOperationData>&& blocks);
-
-    MCNAPI ::Scripting::Result_deprecated<void>
-    _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo) const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> _setBlock(
-        ::Level&          level,
-        ::BlockSource&    region,
-        uint const&       blockToPlace,
-        uint const&       extraBlockToPlace,
-        ::CompoundTag*    blockData,
-        ::BlockPos const& pos
-    ) const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> _setBlocks(::Level& level, ::BlockSource& region, bool isUndo) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::vector<::Editor::Transactions::BlockChangeIntentData>
     createBlockChangeIntentFromLocation(::BlockSource const& region, ::BlockPos const& pos, bool includeAll);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string const& DEFAULT_OPERATION_NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::vector<::Editor::Transactions::BlockChangedOperationData>&& blocks);
     // NOLINTEND
 
 public:

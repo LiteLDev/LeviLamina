@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/LookAtActorGoal.h"
 
-class LookAtTargetGoal : public ::LookAtActorGoal {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
-};
+class LookAtTargetGoal : public ::LookAtActorGoal {};

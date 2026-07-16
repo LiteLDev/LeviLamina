@@ -2,25 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/script_engine/Promise.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace ScriptModuleMinecraftNet { class ScriptHttpRequestLimitExceededError; }
-namespace ScriptModuleMinecraftNet { class ScriptInternalHttpRequestError; }
-namespace ScriptModuleMinecraftNet { class ScriptMalformedUriError; }
-namespace ScriptModuleMinecraftNet { class ScriptRequestBodyTooLargeError; }
-namespace ScriptModuleMinecraftNet { class ScriptTLSOnlyError; }
-namespace ScriptModuleMinecraftNet { class ScriptUriNotAllowedError; }
-namespace ScriptModuleMinecraftNet { struct ScriptNetHeader; }
-namespace ScriptModuleMinecraftNet { struct ScriptNetRequest; }
-namespace ScriptModuleMinecraftNet { struct ScriptNetResponse; }
-namespace Scripting { struct BaseError; }
-namespace Scripting { struct Error; }
-// clang-format on
-
 namespace ScriptModuleMinecraftNet {
 
 class ScriptNetPromiseTracker {
@@ -44,18 +25,6 @@ public:
         InProgressRequest& operator=(InProgressRequest const&);
         InProgressRequest(InProgressRequest const&);
         InProgressRequest();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~InProgressRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -63,6 +32,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>  mUnk77e70b;
     ::ll::UntypedStorage<8, 64> mUnke5d2b6;
+    ::ll::UntypedStorage<8, 24> mUnk50e0b3;
     // NOLINTEND
 
 public:
@@ -70,34 +40,6 @@ public:
     ScriptNetPromiseTracker& operator=(ScriptNetPromiseTracker const&);
     ScriptNetPromiseTracker(ScriptNetPromiseTracker const&);
     ScriptNetPromiseTracker();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void handleFailure(uint requestId, ::Scripting::BaseError const& error);
-
-    MCNAPI void handleResponse(
-        uint                                                              requestId,
-        ::std::vector<::ScriptModuleMinecraftNet::ScriptNetHeader> const& headers,
-        ::std::string const&                                              body,
-        uint                                                              status
-    );
-
-    MCNAPI void rejectAll(::std::string const& reason);
-
-    MCNAPI uint track(
-        ::Scripting::Promise<
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
-            ::Scripting::Error,
-            ::ScriptModuleMinecraftNet::ScriptRequestBodyTooLargeError,
-            ::ScriptModuleMinecraftNet::ScriptInternalHttpRequestError,
-            ::ScriptModuleMinecraftNet::ScriptHttpRequestLimitExceededError,
-            ::ScriptModuleMinecraftNet::ScriptTLSOnlyError,
-            ::ScriptModuleMinecraftNet::ScriptMalformedUriError,
-            ::ScriptModuleMinecraftNet::ScriptUriNotAllowedError> const&                          promise,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
-    );
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraftNet

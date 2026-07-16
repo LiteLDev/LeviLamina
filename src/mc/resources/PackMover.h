@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
-class PackManifest;
 class ResourceLocation;
 class TaskGroup;
 namespace Core { class Path; }
@@ -18,18 +17,6 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static void copyPack(
-        ::TaskGroup&                        taskGroup,
-        ::PackManifest const&               srcPack,
-        ::Core::Path const&                 destPath,
-        bool                                zipDestination,
-        ::std::vector<::std::string> const& excludeDirs,
-        ::Core::ZipUtils::ZipProgressList&  progressList,
-        ::std::function<void(bool)>         callback,
-        bool                                unzipAsFlatFile,
-        bool                                unzipInTransaction
-    );
-
     MCNAPI static void copyPack(
         ::TaskGroup&                        taskGroup,
         ::ResourceLocation const&           srcLocation,

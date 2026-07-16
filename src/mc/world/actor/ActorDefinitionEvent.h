@@ -8,13 +8,6 @@
 #include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/response/ActorEventResponseCollection.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-struct ActorDefinitionModifier;
-struct VariantParameterListConst;
-// clang-format on
-
 class ActorDefinitionEvent {
 public:
     // member variables
@@ -30,22 +23,28 @@ public:
     ::ll::TypedStorage<8, 24, ::ActorEventResponseCollection>        mResponses;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ActorDefinitionEvent();
+
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ActorDefinitionEvent& operator=(ActorDefinitionEvent const&);
+    ActorDefinitionEvent();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionEvent();
-
     MCAPI ActorDefinitionEvent(::ActorDefinitionEvent const&);
 
-    MCAPI void _evaluateGroups(
-        ::Actor&                                  entity,
-        ::std::vector<::ActorDefinitionModifier>& modifications,
-        ::VariantParameterListConst const&        list
-    ) const;
-
+#ifdef LL_PLAT_S
     MCAPI ::ActorDefinitionEvent& operator=(::ActorDefinitionEvent const&);
 
     MCAPI void setName(::std::string name);
+#endif
 
     MCAPI ~ActorDefinitionEvent();
     // NOLINTEND
@@ -53,8 +52,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ActorDefinitionEvent const&);
     // NOLINTEND
 

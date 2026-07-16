@@ -56,15 +56,15 @@ public:
 
     virtual bool keyboardInputHandledByImGui() = 0;
 
-    virtual void updateImGuiMousePosition(float, float) = 0;
+    virtual void updateImGuiMousePosition(float x, float y) = 0;
 
-    virtual void updateImGuiMouseButton(uchar, bool) = 0;
+    virtual void updateImGuiMouseButton(uchar button, bool isDown) = 0;
 
-    virtual void updateImGuiMouseScrollBar(float) = 0;
+    virtual void updateImGuiMouseScrollBar(float value) = 0;
 
-    virtual void imGuiAddInputChar(ushort) = 0;
+    virtual void imGuiAddInputChar(ushort c) = 0;
 
-    virtual bool updateImGuiKeyboard(uchar, bool) = 0;
+    virtual bool updateImGuiKeyboard(uchar param, bool isDown) = 0;
 
     virtual ::UIProfile getDefaultUIProfile(::UIScalingRules uiScalingRules) const = 0;
     // NOLINTEND

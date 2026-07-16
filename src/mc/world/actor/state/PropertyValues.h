@@ -24,8 +24,6 @@ public:
 
     MCAPI ::PropertyValues& operator=(::PropertyValues&&);
 
-    MCAPI void resize(uint64 numInts, uint64 numFloats, uint64 numBools, uint64 numEnums);
-
     MCAPI ~PropertyValues();
     // NOLINTEND
 

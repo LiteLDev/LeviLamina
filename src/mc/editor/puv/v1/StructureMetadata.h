@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
-namespace Editor::Structures::PUVLoader::v0 { struct StructureMetadata; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -40,21 +39,13 @@ public:
 
 public:
     // prevent constructor by default
+    StructureMetadata& operator=(StructureMetadata const&);
+    StructureMetadata(StructureMetadata const&);
     StructureMetadata();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructureMetadata(::Editor::Structures::PUVLoader::v1::StructureMetadata&&);
-
-    MCNAPI StructureMetadata(::Editor::Structures::PUVLoader::v1::StructureMetadata const&);
-
-    MCNAPI ::Editor::Structures::PUVLoader::v1::StructureMetadata&
-    operator=(::Editor::Structures::PUVLoader::v1::StructureMetadata&&);
-
-    MCNAPI ::Editor::Structures::PUVLoader::v1::StructureMetadata&
-    operator=(::Editor::Structures::PUVLoader::v1::StructureMetadata const&);
-
     MCNAPI ~StructureMetadata();
     // NOLINTEND
 
@@ -62,23 +53,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCNAPI static ::Editor::Structures::PUVLoader::v1::StructureMetadata
-    upgradeFromV0(::Editor::Structures::PUVLoader::v0::StructureMetadata&& legacy);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Structures::PUVLoader::v1::StructureMetadata&&);
-
-    MCNAPI void* $ctor(::Editor::Structures::PUVLoader::v1::StructureMetadata const&);
     // NOLINTEND
 
 public:

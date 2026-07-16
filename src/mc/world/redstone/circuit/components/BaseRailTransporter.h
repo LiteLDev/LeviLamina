@@ -36,7 +36,7 @@ public:
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     virtual bool addSource(
-        ::CircuitSceneGraph&,
+        ::CircuitSceneGraph&         graph,
         ::CircuitTrackingInfo const& info,
         int&                         dampening,
         bool&                        bDirectlyPowered
@@ -53,18 +53,10 @@ public:
     MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     MCAPI bool
-    $addSource(::CircuitSceneGraph&, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

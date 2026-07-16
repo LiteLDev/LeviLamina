@@ -42,20 +42,13 @@ public:
 public:
     // prevent constructor by default
     ResourceHandlerFactoryArguments& operator=(ResourceHandlerFactoryArguments const&);
+    ResourceHandlerFactoryArguments(ResourceHandlerFactoryArguments const&);
     ResourceHandlerFactoryArguments();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourceHandlerFactoryArguments(::OreUI::ResourceHandlerFactoryArguments const&);
-
     MCAPI ~ResourceHandlerFactoryArguments();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ResourceHandlerFactoryArguments const&);
     // NOLINTEND
 
 public:

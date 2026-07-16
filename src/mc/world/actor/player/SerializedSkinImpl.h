@@ -84,8 +84,6 @@ public:
         bool                      overridesPlayerAppearance
     );
 
-    MCAPI bool isValid() const;
-
     MCAPI bool operator==(::SerializedSkinImpl const& rhs) const;
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
@@ -112,8 +110,6 @@ public:
     MCAPI void updateGeometryName();
 
     MCAPI void write(::BinaryStream& stream) const;
-
-    MCAPI ~SerializedSkinImpl();
     // NOLINTEND
 
 public:
@@ -146,11 +142,5 @@ public:
         bool                      isPrimaryUser,
         bool                      overridesPlayerAppearance
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

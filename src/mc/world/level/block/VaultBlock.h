@@ -19,10 +19,6 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 
 class VaultBlock : public ::ActorBlock {
 public:
-    // prevent constructor by default
-    VaultBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
@@ -45,15 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VaultBlock(::std::string const& nameId, int id);
-
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -73,7 +61,7 @@ public:
 
     MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI ::Block const& $getRenderBlock() const;
+    MCFOLD ::Block const& $getRenderBlock() const;
 
     MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 

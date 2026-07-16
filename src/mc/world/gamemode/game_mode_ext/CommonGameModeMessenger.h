@@ -31,11 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~CommonGameModeMessenger() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~CommonGameModeMessenger() /*override*/;
-#endif
 
     virtual ::gsl::final_action<::std::function<void()>> createBlockBreakCaptureScope(
         ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)>
@@ -45,7 +41,11 @@ public:
 
     virtual void sendStartDestroyBlock(::BlockPos const&, int) /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void sendDestroyBlock(::Block const&, ::BlockPos const&, int) /*override*/;
+#else // LL_PLAT_C
     virtual void sendDestroyBlock(::Block const& oldBlock, ::BlockPos const& pos, int variantData) /*override*/;
+#endif
 
     virtual void sendChangeContinueDestroyBlock(::BlockPos const&, int) /*override*/;
 
@@ -53,40 +53,25 @@ public:
 
     virtual void sendStopDestroyBlock(::BlockPos const&, float) /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void sendStartItemUseOn(::BlockPos const&, ::BlockPos const&, int) /*override*/;
+#else // LL_PLAT_C
     virtual void sendStartItemUseOn(::BlockPos const& pos, ::BlockPos const& buildPos, int face) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void sendStopItemUseOn(::BlockPos const&) /*override*/;
+#else // LL_PLAT_C
     virtual void sendStopItemUseOn(::BlockPos const& pos) /*override*/;
+#endif
 
     virtual void tryRotateTowardsAimAssist() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI explicit CommonGameModeMessenger(::Player& player);
-
-    MCFOLD ::Player& _getPlayer();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::Player& player);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ::gsl::final_action<::std::function<void()>>
         $createBlockBreakCaptureScope(::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)>);
 
@@ -107,14 +92,9 @@ public:
     MCAPI void $sendStopItemUseOn(::BlockPos const& pos);
 
     MCFOLD void $tryRotateTowardsAimAssist();
+#endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

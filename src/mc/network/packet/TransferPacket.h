@@ -28,6 +28,10 @@ public:
     : PayloadPacket(dest, port, reloadWorld) {}
 
 public:
+    // prevent constructor by default
+    TransferPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -68,16 +72,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TransferPacket();
-
     MCAPI explicit TransferPacket(::TransferPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::TransferPacketPayload payload);
     // NOLINTEND
 

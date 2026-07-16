@@ -36,17 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AutomationBehaviorTreeGroup(::ResourcePackManager& packManager, ::BehaviorFactory& factory);
-
     MCAPI ::BehaviorTreeDefinitionPtr tryGetDefinition(::std::string const& defId);
 
     MCAPI ~AutomationBehaviorTreeGroup();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ResourcePackManager& packManager, ::BehaviorFactory& factory);
     // NOLINTEND
 
 public:

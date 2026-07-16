@@ -15,15 +15,15 @@ namespace SharedTypes::v1_21_100 {
 
 class RotationCustomConstraint : public ::cereal::ConstraintHandle<::SharedTypes::v1_21_100::RotationCustomConstraint> {
 public:
-    // member functions
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+
     // NOLINTEND
 };
 

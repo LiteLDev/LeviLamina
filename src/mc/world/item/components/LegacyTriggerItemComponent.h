@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/item/components/ItemComponent.h"
 
@@ -12,13 +11,14 @@
 class DefinitionTrigger;
 class ItemStackBase;
 class RenderParams;
+struct ItemOnUseResult;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class LegacyTriggerItemComponent : public ::ItemComponent {
 public:
     // LegacyTriggerItemComponent inner types define
-    using TriggerSignature = void(bool&, ::ItemStackBase&, ::DefinitionTrigger const&, ::RenderParams&);
+    using TriggerSignature = void(::ItemOnUseResult&, ::ItemStackBase&, ::DefinitionTrigger const&, ::RenderParams&);
 
 public:
     // member variables
@@ -27,20 +27,10 @@ public:
         8,
         128,
         ::Bedrock::PubSub::Publisher<
-            void(bool&, ::ItemStackBase&, ::DefinitionTrigger const&, ::RenderParams&),
+            void(::ItemOnUseResult&, ::ItemStackBase&, ::DefinitionTrigger const&, ::RenderParams&),
             ::Bedrock::PubSub::ThreadModel::MultiThreaded,
             0>>
         mOnTriggerPublisher;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void
-    _dispatch(bool& result, ::ItemStackBase& item, ::DefinitionTrigger const& trigger, ::RenderParams& params);
-
-    MCFOLD ::Bedrock::PubSub::Connector<void(bool&, ::ItemStackBase&, ::DefinitionTrigger const&, ::RenderParams&)>&
-    onTrigger();
     // NOLINTEND
 
 public:

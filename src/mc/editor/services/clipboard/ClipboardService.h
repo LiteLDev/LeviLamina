@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/ClipboardServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/server/editor/services/structures/IStructureDataProvider.h"
@@ -46,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClipboardService() /*override*/;
+    virtual ~ClipboardService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -116,24 +116,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ClipboardService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI void _onItemChanged(::Editor::Services::ClipboardItem const& item) const;
-
-    MCNAPI void _onItemDestroyed(::mce::UUID const& id) const;
-
-    MCNAPI void _sendChangeItemToClient(::mce::UUID const& id) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

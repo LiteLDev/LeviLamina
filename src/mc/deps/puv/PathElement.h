@@ -19,24 +19,6 @@ public:
     PathElement& operator=(PathElement const&);
     PathElement(PathElement const&);
     PathElement();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~PathElement();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& WILDCARD_STRING_VIEW();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Puv::internal

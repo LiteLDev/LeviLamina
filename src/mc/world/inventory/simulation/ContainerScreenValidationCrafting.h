@@ -26,12 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _appendCraftResult(::ContainerValidationCraftResult& craftResult);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ContainerValidationResult

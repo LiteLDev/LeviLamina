@@ -16,7 +16,6 @@ class Level;
 class LoopbackPacketSender;
 class NetEventCallback;
 class ServerNetworkHandler;
-class ServerNetworkSystem;
 // clang-format on
 
 class GameSession {
@@ -28,7 +27,6 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Level>>      mLevel;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerNetworkHandler>> mServerNetworkHandler;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NetEventCallback>>     mLegacyClientNetworkHandler;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NetEventCallback>>     mClientNetworkHandler;
     ::ll::TypedStorage<8, 8, ::LoopbackPacketSender&>                   mLoopbackPacketSender;
     ::ll::TypedStorage<1, 1, ::SubClientId>                             mClientSubId;
     // NOLINTEND
@@ -49,26 +47,13 @@ public:
         ::LoopbackPacketSender&               loopbackPacketSender,
         ::SubClientId                         subid
     );
-#endif
 
-    MCAPI GameSession(
-        ::ServerNetworkSystem&                                               network,
-        ::std::unique_ptr<::ServerNetworkHandler>                            serverNetworkHandler,
-        ::LoopbackPacketSender&                                              loopbackPacketSender,
-        ::std::unique_ptr<::NetEventCallback>                                clientNetworkHandler,
-        ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
-        ::SubClientId                                                        subid
-    );
-
-#ifdef LL_PLAT_C
     MCAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
-#endif
 
     MCAPI void setLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
 
-    MCAPI void tick();
-
     MCAPI ~GameSession();
+#endif
     // NOLINTEND
 
 public:
@@ -82,20 +67,13 @@ public:
         ::SubClientId                         subid
     );
 #endif
-
-    MCAPI void* $ctor(
-        ::ServerNetworkSystem&                                               network,
-        ::std::unique_ptr<::ServerNetworkHandler>                            serverNetworkHandler,
-        ::LoopbackPacketSender&                                              loopbackPacketSender,
-        ::std::unique_ptr<::NetEventCallback>                                clientNetworkHandler,
-        ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
-        ::SubClientId                                                        subid
-    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

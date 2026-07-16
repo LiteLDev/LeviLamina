@@ -16,16 +16,4 @@ public:
     AppConfigsDependencies& operator=(AppConfigsDependencies const&);
     AppConfigsDependencies(AppConfigsDependencies const&);
     AppConfigsDependencies();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~AppConfigsDependencies();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

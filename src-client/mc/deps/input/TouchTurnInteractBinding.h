@@ -32,16 +32,13 @@ public:
 
 public:
     // prevent constructor by default
+    TouchTurnInteractBinding& operator=(TouchTurnInteractBinding const&);
     TouchTurnInteractBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI TouchTurnInteractBinding(::TouchTurnInteractBinding const&);
-
-    MCAPI ::TouchTurnInteractBinding& operator=(::TouchTurnInteractBinding const&);
-
-    MCAPI ::TouchTurnInteractBinding& operator=(::TouchTurnInteractBinding&&);
 
     MCAPI ~TouchTurnInteractBinding();
     // NOLINTEND

@@ -5,20 +5,10 @@
 // auto generated inclusion list
 #include "mc/util/Bounds.h"
 #include "mc/world/level/chunk/AreaType.h"
-#include "mc/world/level/chunk/ChunkRequestListType.h"
-#include "mc/world/level/chunk/ChunksLoadedStatus.h"
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
-class Dimension;
-class ICommandOriginLoader;
 class IRequestAction;
-class ITickingAreaView;
-class JigsawStructureElementRegistry;
-class LevelChunk;
-struct DeserializedChunkLoadedRequest;
-struct Tick;
 // clang-format on
 
 class ChunkLoadedRequest {
@@ -35,8 +25,6 @@ public:
 
 public:
     // prevent constructor by default
-    ChunkLoadedRequest& operator=(ChunkLoadedRequest const&);
-    ChunkLoadedRequest(ChunkLoadedRequest const&);
     ChunkLoadedRequest();
 
 public:
@@ -48,38 +36,7 @@ public:
         bool                                allowNonTickingPlayerAndTickingAreaChunks
     );
 
-    MCAPI ChunkLoadedRequest(
-        ::Bounds const&                     bounds,
-        ::std::unique_ptr<::IRequestAction> requestAction,
-        bool                                isCircleArea,
-        bool                                allowNonTickingPlayerAndTickingAreaChunks
-    );
-
-    MCAPI ::ITickingAreaView const* _getTickingArea(::Dimension const& dimension) const;
-
-    MCAPI ::ChunksLoadedStatus areAllChunksLoaded(::Dimension& dimension, ::Tick currentLevelTick) const;
-
-    MCAPI bool areaContainsChunk(::LevelChunk const& chunk) const;
-
-    MCAPI ::ChunkLoadedRequest& operator=(::ChunkLoadedRequest&&);
-
-    MCAPI ::CompoundTag serialize(::ChunkRequestListType chunkRequestListType);
-
     MCAPI ~ChunkLoadedRequest();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isValidTag(::CompoundTag const& tag);
-
-    MCAPI static ::DeserializedChunkLoadedRequest load(
-        ::std::string const&                    key,
-        ::CompoundTag const&                    tag,
-        ::ICommandOriginLoader&                 loader,
-        ::std::string const&                    dimensionPrefix,
-        ::JigsawStructureElementRegistry const& elementReg
-    );
     // NOLINTEND
 
 public:
@@ -88,13 +45,6 @@ public:
     MCAPI void* $ctor(
         ::std::string const&                tickingAreaName,
         ::std::unique_ptr<::IRequestAction> requestAction,
-        bool                                allowNonTickingPlayerAndTickingAreaChunks
-    );
-
-    MCAPI void* $ctor(
-        ::Bounds const&                     bounds,
-        ::std::unique_ptr<::IRequestAction> requestAction,
-        bool                                isCircleArea,
         bool                                allowNonTickingPlayerAndTickingAreaChunks
     );
     // NOLINTEND

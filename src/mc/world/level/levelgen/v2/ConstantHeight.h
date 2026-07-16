@@ -25,19 +25,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual int sample(::IRandom& heightAccessor, ::br::worldgen::WorldGenContext const&) const /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::br::worldgen::ConstantHeight of(::br::worldgen::VerticalAnchor value);
+    virtual int sample(::IRandom&, ::br::worldgen::WorldGenContext const& heightAccessor) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $sample(::IRandom& heightAccessor, ::br::worldgen::WorldGenContext const&) const;
+    MCAPI int $sample(::IRandom&, ::br::worldgen::WorldGenContext const& heightAccessor) const;
 
 
     // NOLINTEND

@@ -11,6 +11,7 @@
 class CloudSaveSystemWrapper;
 class ILevelListCache;
 class IMinecraftEventing;
+namespace Core { struct ContainerSyncState; }
 namespace World { struct WorldID; }
 // clang-format on
 
@@ -38,6 +39,22 @@ public:
 
     virtual void
     syncWorld(::World::WorldID const&, ::std::function<void(::World::WorldCloudSyncResult)> const&) /*override*/;
+
+    virtual ::Core::ContainerSyncState getSyncState(::World::WorldID const&) const /*override*/;
+
+    virtual ::std::optional<uint64> getConsumedRemoteStorageQuota(::World::WorldID const&) const /*override*/;
+
+    virtual void setLocalOnly(
+        ::World::WorldID const&,
+        bool,
+        ::std::function<void(::World::WorldCloudSyncResult)> const&
+    ) /*override*/;
+
+    virtual void setCloudSaved(
+        ::World::WorldID const&,
+        bool,
+        ::std::function<void(::World::WorldCloudSyncResult)> const&
+    ) /*override*/;
     // NOLINTEND
 
 public:

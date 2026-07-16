@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 namespace glTF {
 
 struct Accessor {
@@ -37,48 +32,17 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnkafde70;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     Accessor& operator=(Accessor const&);
     Accessor(Accessor const&);
     Accessor();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    Accessor& operator=(Accessor const&);
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI Accessor();
-
-    MCNAPI Accessor(::glTF::Accessor const&);
-
-    MCNAPI ::Json::Value serialize() const;
-
     MCNAPI ~Accessor();
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static int getAccessorTypeSize(::glTF::Accessor::Type accessorType);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::glTF::Accessor const&);
 #endif
     // NOLINTEND
 

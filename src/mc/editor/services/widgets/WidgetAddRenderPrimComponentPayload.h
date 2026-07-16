@@ -6,11 +6,6 @@
 #include "mc/editor/network/NetworkPayload.h"
 #include "mc/editor/services/widgets/WidgetComponentBasePayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class WidgetAddRenderPrimComponentPayload
@@ -19,20 +14,25 @@ class WidgetAddRenderPrimComponentPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 76> mUnkf772ab;
-    ::ll::UntypedStorage<4, 4>  mUnk6ddb52;
+    ::ll::UntypedStorage<8, 112> mUnk3479ea;
+    ::ll::UntypedStorage<4, 4>   mUnk6ddb52;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     WidgetAddRenderPrimComponentPayload& operator=(WidgetAddRenderPrimComponentPayload const&);
-    WidgetAddRenderPrimComponentPayload(WidgetAddRenderPrimComponentPayload const&);
     WidgetAddRenderPrimComponentPayload();
 
 public:
-    // static functions
+    // member functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI WidgetAddRenderPrimComponentPayload(::Editor::Network::WidgetAddRenderPrimComponentPayload const&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Network::WidgetAddRenderPrimComponentPayload const&);
     // NOLINTEND
 
 public:

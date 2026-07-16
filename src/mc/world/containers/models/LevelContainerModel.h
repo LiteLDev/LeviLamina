@@ -5,8 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/containers/models/ContainerCategory.h"
 #include "mc/world/containers/models/ContainerModel.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
@@ -61,55 +59,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LevelContainerModel(
-        ::ContainerEnumName containerName,
-        int                 containerSize,
-        ::Player&           player,
-        ::ActorUniqueID     entityId,
-        ::ContainerCategory category
-    );
-
-    MCAPI LevelContainerModel(
-        ::ContainerEnumName containerName,
-        int                 containerSize,
-        ::Player&           player,
-        ::BlockActorType    type,
-        ::BlockPos const&   blockPos,
-        ::ContainerCategory category
-    );
-
-    MCAPI void _refreshContainer();
-
-    MCAPI void containerRemoved();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Container* getContainerHelper(::Player& player, ::ActorUniqueID const& actorUniqueId);
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ContainerEnumName containerName,
-        int                 containerSize,
-        ::Player&           player,
-        ::ActorUniqueID     entityId,
-        ::ContainerCategory category
-    );
-
-    MCAPI void* $ctor(
-        ::ContainerEnumName containerName,
-        int                 containerSize,
-        ::Player&           player,
-        ::BlockActorType    type,
-        ::BlockPos const&   blockPos,
-        ::ContainerCategory category
-    );
+    MCAPI static ::Container*
+    getContainerHelper(::Player& player, ::BlockActorType blockActorType, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
@@ -129,7 +84,7 @@ public:
 
     MCAPI int $_getContainerOffset() const;
 
-    MCFOLD void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
     MCAPI ::Container* $_getContainer() const;
 

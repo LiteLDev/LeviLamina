@@ -54,7 +54,7 @@ public:
 
     virtual void playerTouch(::Player& player) /*override*/;
 
-    virtual void setAuxValue(int aux) /*override*/;
+    virtual void setAuxValue(int) /*override*/;
 
     virtual ::ItemStack _getPickupItem() const /*override*/;
 
@@ -76,19 +76,9 @@ public:
 
     MCAPI void addMobEffect(::MobEffectInstance effect);
 
+#ifdef LL_PLAT_C
     MCAPI int getAuxValue() const;
-
-    MCAPI int getEnchantPunch() const;
-
-    MCAPI void setCritical(bool isCrit);
-
-    MCAPI void setEnchantFlame(int level);
-
-    MCAPI void setEnchantInfinity(int level);
-
-    MCAPI void setEnchantPower(int level);
-
-    MCAPI void setEnchantPunch(int level);
+#endif
     // NOLINTEND
 
 public:
@@ -104,30 +94,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
-
-    MCAPI void $normalTick();
-
-    MCAPI void $playerTouch(::Player& player);
-
-    MCAPI void $setAuxValue(int aux);
-
-    MCAPI ::ItemStack $_getPickupItem() const;
-
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCAPI ::mce::Color $getEffectColor();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

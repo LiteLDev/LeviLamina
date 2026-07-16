@@ -8,7 +8,6 @@
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/enums/DirectionId.h"
 #include "mc/deps/input/enums/FocusImpact.h"
 
@@ -73,15 +72,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InGamePlayScreen() /*override*/;
+    virtual ~InGamePlayScreen() /*override*/ = default;
 
     virtual void applyInput(float a) /*override*/;
 
     virtual void prepareFrame(::ScreenContext& screenContext) /*override*/;
 
-    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) /*override*/;
+    virtual void render(::ScreenContext&, ::FrameRenderObject const&) /*override*/;
 
-    virtual void postRenderUpdate(::ScreenContext&) /*override*/;
+    virtual void postRenderUpdate(::ScreenContext& screenContext) /*override*/;
 
     virtual void onFocusGained() /*override*/;
 
@@ -97,7 +96,7 @@ public:
 
     virtual bool shouldStealMouse() const /*override*/;
 
-    virtual void handleDirection(::DirectionId directionId, float dx, float dy, ::FocusImpact) /*override*/;
+    virtual void handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact) /*override*/;
 
     virtual void handlePointerPressed(bool pressed) /*override*/;
 
@@ -105,9 +104,9 @@ public:
 
     virtual ::std::string getScreenName() const /*override*/;
 
-    virtual bool equalsScreenName(::std::string_view comparison) const /*override*/;
+    virtual bool equalsScreenName(::std::string_view) const /*override*/;
 
-    virtual bool containsScreenNameSubstring(::std::string_view substring) const /*override*/;
+    virtual bool containsScreenNameSubstring(::std::string_view) const /*override*/;
 
     virtual bool isPlayScreen() const /*override*/;
 
@@ -117,32 +116,25 @@ public:
 
     virtual bool _isPlayerSuspended() const;
 
-    virtual void
-    _renderLevelPrep(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer, ::Actor& cameraEntity);
+    virtual void _renderLevelPrep(::ScreenContext&, ::LevelRenderer&, ::Actor&);
 
-    virtual void _renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+    virtual void _renderLevel(::ScreenContext&, ::FrameRenderObject const&);
 
     virtual void _preLevelRender(::ScreenContext&);
 
-    virtual void _postLevelRender(::ScreenContext& levelRenderer, ::LevelRenderer&);
+    virtual void _postLevelRender(::ScreenContext&, ::LevelRenderer&);
 
     virtual bool _shouldRenderFirstPersonObjects(::LevelRenderer&) const;
 
-    virtual bool _updateFreeformPickDirection(
-        float        outSrc,
-        ::Vec3&      outDir,
-        ::Vec3&      outHitResult,
-        ::HitResult& outLiquidHit,
-        ::HitResult&
-    );
+    virtual bool _updateFreeformPickDirection(float, ::Vec3&, ::Vec3&, ::HitResult&, ::HitResult&);
 
-    virtual void _saveMatrices(::mce::Camera& camera);
+    virtual void _saveMatrices(::mce::Camera&);
 
-    virtual void _renderTransparentFirstPerson3DObjects(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
+    virtual void _renderTransparentFirstPerson3DObjects(::ScreenContext&, ::LevelRenderer&);
 
-    virtual void _renderItemInHand(::ScreenContext& screenContext, ::Player& player);
+    virtual void _renderItemInHand(::ScreenContext&, ::Player&);
 
-    virtual void _prepareCuller(::mce::Camera& camera, ::Frustum& frustumData);
+    virtual void _prepareCuller(::mce::Camera&, ::Frustum&);
 
     virtual void _localPlayerTurned(float);
 
@@ -154,124 +146,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    InGamePlayScreen(::IMinecraftGame& minecraftGame, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
-
-    MCAPI void _applyInput_Standard(::InputMode const& inputMode, float xo, float yo, float a);
-
-    MCAPI void _pick(float a);
-
-    MCAPI bool _showHand() const;
-
-    MCAPI bool _showOverlay() const;
-
-    MCAPI void _tryTickRelativeStrafeRotation();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Vec2
-    calculateTurnDelta(::IClientInstance const& client, ::Vec2 const& newDelta, ::Vec2 const& currentDelta);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftGame& minecraftGame, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $applyInput(float a);
 
-    MCAPI void $prepareFrame(::ScreenContext& screenContext);
-
-    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
-
-    MCFOLD void $postRenderUpdate(::ScreenContext&);
-
-    MCFOLD void $onFocusGained();
-
-    MCFOLD bool $renderGameBehind() const;
-
-    MCAPI void $tick(int nTick, int maxTick);
-
-    MCFOLD bool $isShowingMenu() const;
-
-    MCFOLD bool $isModal() const;
-
-    MCFOLD bool $renderOnlyWhenTopMost() const;
-
-    MCAPI bool $shouldStealMouse() const;
-
-    MCAPI void $handleDirection(::DirectionId directionId, float dx, float dy, ::FocusImpact);
-
-    MCAPI void $handlePointerPressed(bool pressed);
-
-    MCAPI void $init(::ScreenSizeData const& screenSizeData);
-
-    MCAPI ::std::string $getScreenName() const;
-
-    MCAPI bool $equalsScreenName(::std::string_view comparison) const;
-
-    MCAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
-
-    MCFOLD bool $isPlayScreen() const;
-
-    MCFOLD ::RectangleArea $getAreaOfControlByName(::std::string const&) const;
-
-    MCFOLD bool $forceUpdateActiveSceneStackWhenPushed() const;
-
-    MCAPI bool $_isPlayerSuspended() const;
-
-    MCAPI void $_renderLevelPrep(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer, ::Actor& cameraEntity);
-
-    MCAPI void $_renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
-
-    MCFOLD void $_preLevelRender(::ScreenContext&);
-
-    MCAPI void $_postLevelRender(::ScreenContext& levelRenderer, ::LevelRenderer&);
-
-    MCAPI bool $_shouldRenderFirstPersonObjects(::LevelRenderer&) const;
-
-    MCAPI bool $_updateFreeformPickDirection(
-        float        outSrc,
-        ::Vec3&      outDir,
-        ::Vec3&      outHitResult,
-        ::HitResult& outLiquidHit,
-        ::HitResult&
-    );
-
-    MCAPI void $_saveMatrices(::mce::Camera& camera);
-
-    MCAPI void $_renderTransparentFirstPerson3DObjects(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
-
-    MCAPI void $_renderItemInHand(::ScreenContext& screenContext, ::Player& player);
-
-    MCAPI void $_prepareCuller(::mce::Camera& camera, ::Frustum& frustumData);
-
-    MCFOLD void $_localPlayerTurned(float);
-
-    MCAPI float $_getPickRange();
-
-    MCFOLD bool $_shouldPushHUD();
-
-    MCFOLD void $_updateInGameCursor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

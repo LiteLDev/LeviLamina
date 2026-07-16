@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cricket/MediaType.h"
+#include "mc/external/webrtc/MediaType.h"
 
 namespace webrtc {
 
@@ -11,7 +11,7 @@ class RtpReceiverObserverInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void OnFirstPacketReceived(::cricket::MediaType) = 0;
+    virtual void OnFirstPacketReceived(::webrtc::MediaType) = 0;
 
     virtual ~RtpReceiverObserverInterface() = default;
     // NOLINTEND

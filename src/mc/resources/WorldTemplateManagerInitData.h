@@ -2,15 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-
-// auto generated forward declare list
-// clang-format off
-class PackSourceFactory;
-struct WorldTemplateManagerInitDeps;
-// clang-format on
-
 struct WorldTemplateManagerInitData {
 public:
     // member variables
@@ -30,15 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void initialize(::WorldTemplateManagerInitDeps& deps);
-
-    MCNAPI void initializePackSources(
-        ::PackSourceFactory&                     packSourceFactory,
-        ::Core::PathBuffer<::std::string> const& worldTemplatesPath
-    );
-
-    MCNAPI ::WorldTemplateManagerInitData& operator=(::WorldTemplateManagerInitData&&);
-
     MCNAPI ~WorldTemplateManagerInitData();
     // NOLINTEND
 

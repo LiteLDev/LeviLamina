@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
-#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/client/gui/screens/models/PlayScreenDefaultTab.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -45,12 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PlayScreen(::ui::ScreenTechStackSelector const& screenTechStackSelector);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string
@@ -70,17 +63,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> EDITOR_ROUTE();
 
-    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
-
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> LEGACY_ROUTE();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ui::ScreenTechStackSelector const& screenTechStackSelector);
     // NOLINTEND
 
 public:

@@ -9,11 +9,6 @@
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleEffectComponent.h"
 #include "mc/deps/shared_types/v1_20_80/particle/UV.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_20_80 {
 
 struct ParticleAppearanceBillboardComponent : public ::SharedTypes::v1_20_80::ParticleEffectComponent {
@@ -26,10 +21,13 @@ public:
     ::ll::TypedStorage<8, 392, ::std::optional<::SharedTypes::v1_20_80::UV>>                mUV;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ParticleAppearanceBillboardComponent();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -39,6 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ParticleAppearanceBillboardComponent(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
 
     MCAPI ::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&
@@ -46,12 +45,9 @@ public:
 
     MCAPI ::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&
     operator=(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
-    // NOLINTEND
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&) const;
+#endif
     // NOLINTEND
 
 public:
@@ -63,13 +59,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ::HashedString const& $getIdentifier() const;
+#endif
 
 
     // NOLINTEND

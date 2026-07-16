@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Level;
 namespace gametest { class BaseGameTestInstance; }
-namespace gametest { class MultipleTestTracker; }
 // clang-format on
 
 class TestSummaryDisplayer : public ::gametest::IGameTestListener {
@@ -35,34 +33,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI TestSummaryDisplayer(::Level& level, ::gametest::MultipleTestTracker& testTracker);
-
-    MCNAPI void _say(::std::string const& text, ::std::string const& chatColor) const;
-
-    MCNAPI void _showTestSummaryIfAllDone() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Level& level, ::gametest::MultipleTestTracker& testTracker);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance&);
 
-    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance&);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

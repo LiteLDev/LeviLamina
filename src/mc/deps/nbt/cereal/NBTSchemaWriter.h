@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Tag;
+class CompoundTag;
 namespace cereal { struct NullType; }
 // clang-format on
 
@@ -101,7 +101,7 @@ public:
 
     virtual ::cereal::SchemaRWType openObject() /*override*/;
 
-    virtual ::cereal::SchemaRWType openArray(bool, uint64) /*override*/;
+    virtual ::cereal::SchemaRWType openArray(bool isDynamicExtent, uint64 length) /*override*/;
 
     virtual void close() /*override*/;
     // NOLINTEND
@@ -111,7 +111,7 @@ public:
     // NOLINTBEGIN
     MCNAPI NBTSchemaWriter();
 
-    MCNAPI bool _serializeTag(::std::unique_ptr<::Tag> tag);
+    MCNAPI ::CompoundTag getSavedCompoundTag();
     // NOLINTEND
 
 public:
@@ -163,7 +163,7 @@ public:
 
     MCNAPI ::cereal::SchemaRWType $openObject();
 
-    MCNAPI ::cereal::SchemaRWType $openArray(bool, uint64);
+    MCNAPI ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
 
     MCNAPI void $close();
 

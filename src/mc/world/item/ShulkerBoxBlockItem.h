@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 class ItemStackBase;
 class Level;
 namespace Bedrock::Safety { class RedactableString; }
@@ -27,12 +26,6 @@ public:
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool) const /*override*/;
 
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::string _buildContainedItemList(::CompoundTag const* containerList) const;
     // NOLINTEND
 
 public:

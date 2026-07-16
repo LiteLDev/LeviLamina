@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Pack;
-// clang-format on
-
 namespace PackCommand {
 
 struct DeduplicatePacksVisitor {
@@ -21,20 +16,6 @@ public:
     DeduplicatePacksVisitor& operator=(DeduplicatePacksVisitor const&);
     DeduplicatePacksVisitor(DeduplicatePacksVisitor const&);
     DeduplicatePacksVisitor();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool tryVisit(::Pack const& pack);
-
-    MCNAPI ~DeduplicatePacksVisitor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace PackCommand

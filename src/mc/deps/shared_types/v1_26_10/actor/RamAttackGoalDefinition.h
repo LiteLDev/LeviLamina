@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~RamAttackGoalDefinition();
+    MCAPI bool operator==(::SharedTypes::v1_26_10::RamAttackGoalDefinition const&) const;
     // NOLINTEND
 
 public:
@@ -47,27 +47,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_BABY_KNOCKBACK_MODIFIER();
-
-    MCAPI static float const& DEFAULT_KNOCKBACK_FORCE();
-
-    MCAPI static float const& DEFAULT_KNOCKBACK_HEIGHT();
-
-    MCAPI static int const& DEFAULT_MIN_RAM_DISTANCE();
-
-    MCAPI static int const& DEFAULT_RAM_DISTANCE();
-
-    MCAPI static float const& DEFAULT_RAM_SPEED();
-
-    MCAPI static float const& DEFAULT_RUN_SPEED();
-
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

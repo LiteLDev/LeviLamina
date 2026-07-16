@@ -13,7 +13,6 @@
 // clang-format off
 class RenderParams;
 struct ConstDeserializeDataParams;
-namespace Json { class Value; }
 namespace ParticleSystem { class ComponentAccessParticleEmitter; }
 namespace ParticleSystem { struct CommonParticle; }
 namespace SharedTypes::v1_20_80 { struct ParticleEffectComponent; }
@@ -37,63 +36,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
+    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
 
-    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
+    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
 
-    virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
+    virtual void parseJson(::ConstDeserializeDataParams const&) /*override*/;
 
     virtual void updateParticleAppearance(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::ParticleSystem::CommonParticle&                 particle,
-        ::RenderParams&                                   renderParams
+        ::ParticleSystem::ComponentAccessParticleEmitter&,
+        ::ParticleSystem::CommonParticle&,
+        ::RenderParams&
     ) /*override*/;
 
-    virtual void updateEmitterAppearance(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::RenderParams&                                   renderParams
-    ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ParticleAppearanceBillboardComponent();
-
-    MCAPI void _parseFlipbook(::ConstDeserializeDataParams const& deserializeDataParams);
-
-    MCAPI void _parseTextureWidthHeight(::Json::Value const& uvs);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    virtual void
+    updateEmitterAppearance(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
-
-    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
-
-    MCAPI void $updateParticleAppearance(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::ParticleSystem::CommonParticle&                 particle,
-        ::RenderParams&                                   renderParams
-    );
-
-    MCAPI void
-    $updateEmitterAppearance(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -17,10 +17,4 @@ public:
     ::ll::TypedStorage<1, 1, ::SpringType>        mSpringType;
     ::ll::TypedStorage<4, 4, float>               mRotationAdjustment;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void setSpringType(::std::string const& type);
-    // NOLINTEND
 };

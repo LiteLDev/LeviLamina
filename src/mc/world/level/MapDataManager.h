@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class DimensionManager;
 class IGameplayUserManagerConnector;
 class ILevelStorageManagerConnector;
@@ -17,7 +16,6 @@ class IMapDataManagerOptions;
 class LevelStorage;
 class MapItemSavedData;
 class PacketSender;
-struct DimensionType;
 // clang-format on
 
 class MapDataManager {
@@ -44,7 +42,7 @@ public:
     // NOLINTBEGIN
     virtual ~MapDataManager();
 
-    virtual void registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    virtual void registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector&);
 
     virtual ::MapItemSavedData& createMapSavedData(::ActorUniqueID const& uuid);
 
@@ -63,31 +61,7 @@ public:
         ::std::function<::ActorUniqueID()>          getNewUniqueID
     );
 
-    MCAPI ::MapItemSavedData* _loadMapData(::ActorUniqueID const& uuid);
-
-    MCAPI void _onSaveLevelData(::LevelStorage& levelStorage);
-
-    MCAPI ::MapItemSavedData& createMapSavedData(
-        ::std::vector<::ActorUniqueID> const& mapIds,
-        ::BlockPos const&                     origin,
-        ::DimensionType                       dimension,
-        int                                   returnScaleLevel
-    );
-
-    MCAPI ::MapItemSavedData& createMapSavedData(
-        ::ActorUniqueID const& uuid,
-        ::BlockPos const&      origin,
-        ::DimensionType        dimension,
-        int                    returnScaleLevel
-    );
-
-    MCAPI ::ActorUniqueID expandMapByID(::ActorUniqueID uuid, bool wasInit);
-
     MCAPI void registerOnSaveLevelDataSubscription(::ILevelStorageManagerConnector& levelStorageManagerConnector);
-
-    MCAPI void setPacketSender(::PacketSender& packetSender);
-
-    MCAPI void tick();
     // NOLINTEND
 
 public:
@@ -110,7 +84,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCFOLD void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector&);
 
     MCAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
 

@@ -29,11 +29,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::mce::Color
-    get(::Block const&          block,
-        ::BlockSource&          region,
-        ::BlockPos const&       pos,
-        ::BiomeTintCache const* biomeTintCache) const /*override*/;
+    virtual ::mce::Color get(::Block const&, ::BlockSource&, ::BlockPos const&, ::BiomeTintCache const*) const
+        /*override*/;
 
     virtual ::mce::Color get(::Block const&) const /*override*/;
     // NOLINTEND
@@ -41,20 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::Color $get(
-        ::Block const&          block,
-        ::BlockSource&          region,
-        ::BlockPos const&       pos,
-        ::BiomeTintCache const* biomeTintCache
-    ) const;
 
-    MCAPI ::mce::Color $get(::Block const&) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

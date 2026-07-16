@@ -21,47 +21,11 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk5d895a;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     UserInfo& operator=(UserInfo const&);
     UserInfo(UserInfo const&);
     UserInfo();
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    UserInfo& operator=(UserInfo const&);
-    UserInfo();
-
-#endif
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI UserInfo(::WebServices::EduSignin::UserInfo const&);
-
-    MCNAPI ::WebServices::EduSignin::UserInfo& operator=(::WebServices::EduSignin::UserInfo&&);
-
-    MCNAPI ~UserInfo();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::WebServices::EduSignin::UserInfo const&);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace WebServices::EduSignin

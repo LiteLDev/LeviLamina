@@ -4,15 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/resources/AllowListPath.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
-// auto generated forward declare list
-// clang-format off
-class DateManager;
-namespace OreUI { class IResourceAllowList; }
-namespace Screenshots { struct GalleryScreenshot; }
-namespace Screenshots { struct ShowcasedScreenshot; }
-// clang-format on
 
 namespace OreUI {
 
@@ -40,18 +31,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI GalleryScreenshot(
-        ::Screenshots::GalleryScreenshot const&                    screenshot,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
-    );
-
-    MCAPI GalleryScreenshot(
-        ::Screenshots::ShowcasedScreenshot const&                  showcasedScreenshot,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
-    );
-
-    MCAPI GalleryScreenshot(
         ::std::string          id,
         ::OreUI::AllowListPath thumbnail,
         ::OreUI::AllowListPath image,
@@ -70,18 +49,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Screenshots::GalleryScreenshot const&                    screenshot,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
-    );
-
-    MCAPI void* $ctor(
-        ::Screenshots::ShowcasedScreenshot const&                  showcasedScreenshot,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
-    );
-
     MCAPI void* $ctor(
         ::std::string          id,
         ::OreUI::AllowListPath thumbnail,

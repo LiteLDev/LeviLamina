@@ -3,18 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/PersistenceGroupItemChangeAction.h"
 #include "mc/common/editor/PersistenceGroupType.h"
 #include "mc/common/editor/PersistenceScope.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
 #include "mc/deps/game_refs/StackRefResult.h"
-#include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::PubSub { class Subscription; }
 namespace Editor::Services { class PersistenceItem; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -47,6 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI PersistenceGroup(
         ::Core::PathBuffer<::std::string>&       path,
         int                                      version,
@@ -56,14 +54,7 @@ public:
         ::Editor::Services::PersistenceGroupType groupType,
         ::cereal::ReflectionCtx&                 cerealContext
     );
-
-    MCNAPI ::std::string _getValidKeyName(::std::string const& key) const;
-
-    MCNAPI bool _hasItem(::std::string const& itemName) const;
-
-    MCNAPI void _loadItems();
-
-    MCNAPI void _notifyItemChanged(::Editor::Services::PersistenceItem const& item);
+#endif
 
     MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceItem>>
     createItem(::std::string const& itemName, ::std::optional<::std::string> defaultJsonValue);
@@ -73,27 +64,10 @@ public:
     MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceItem>>
     fetchItem(::std::string const& itemName) const;
 
-    MCNAPI ::Editor::Services::PersistenceGroupType const getGroupType() const;
-
     MCNAPI ::std::string getNamespaceVersionedName() const;
 
     MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceItem>>
     getOrCreateItem(::std::string const& itemName, ::std::optional<::std::string> defaultJsonValue);
-
-    MCNAPI ::Editor::Services::PersistenceScope getScope() const;
-
-    MCNAPI int const getVersion() const;
-
-    MCNAPI ::WeakRef<::Editor::Services::PersistenceGroup> const getWeakRef();
-
-    MCNAPI ::std::vector<::std::string> listItems() const;
-
-    MCNAPI ::Bedrock::PubSub::Subscription onItemChange(
-        ::std::function<void(
-            ::Editor::Services::PersistenceGroupItemChangeAction,
-            ::StackRefResult<::Editor::Services::PersistenceItem>&
-        )> callback
-    );
 
     MCNAPI bool operator==(::Editor::Services::PersistenceGroup const& other) const;
 
@@ -103,6 +77,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void* $ctor(
         ::Core::PathBuffer<::std::string>&       path,
         int                                      version,
@@ -112,6 +87,7 @@ public:
         ::Editor::Services::PersistenceGroupType groupType,
         ::cereal::ReflectionCtx&                 cerealContext
     );
+#endif
     // NOLINTEND
 
 public:

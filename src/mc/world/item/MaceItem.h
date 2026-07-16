@@ -27,7 +27,7 @@ public:
     virtual int getEnchantSlot() const /*override*/;
 
     virtual bool
-    isValidRepairItem(::ItemStackBase const& repairItem, ::ItemStackBase const&, ::BaseGameVersion const&) const
+    isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const
         /*override*/;
 
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
@@ -57,13 +57,13 @@ public:
     MCAPI int $getEnchantSlot() const;
 
     MCAPI bool
-    $isValidRepairItem(::ItemStackBase const& repairItem, ::ItemStackBase const&, ::BaseGameVersion const&) const;
+    $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
 
     MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
     MCAPI float $getAttackDamageBonus(::Actor const& attacker) const;
 
-    MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
+    MCFOLD float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
     MCAPI bool $canDestroySpecial(::Block const& block) const;
 

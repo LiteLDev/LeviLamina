@@ -27,7 +27,7 @@ public:
 
     virtual void mainUpdate() = 0;
 
-    virtual void processActivationArguments(::Bedrock::ActivationArguments const& args) = 0;
+    virtual void processActivationArguments(::Bedrock::ActivationArguments const&) = 0;
     // NOLINTEND
 
 public:

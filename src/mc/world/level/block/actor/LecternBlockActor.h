@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/Container.h"
 #include "mc/world/item/ItemStack.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,7 +19,7 @@ class ILevel;
 class SaveContext;
 // clang-format on
 
-class LecternBlockActor : public ::BlockActor, public ::Container {
+class LecternBlockActor : public ::VanillaBlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
@@ -35,9 +35,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ItemStack const& getItem(int) const /*override*/;
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    virtual void setItem(int item, ::ItemStack const&) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     virtual int getMaxStackSize() const /*override*/;
 
@@ -58,12 +58,12 @@ public:
     virtual void onChanged(::BlockSource& region) /*override*/;
 
     virtual void serverInitItemStackIds(
-        int containerSlot,
-        int onNetIdChanged,
-        ::std::function<void(int, ::ItemStack const&)>
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
@@ -74,14 +74,6 @@ public:
     MCAPI explicit LecternBlockActor(::BlockPos const& pos);
 
     MCAPI void dropBook(::BlockSource& region);
-
-    MCFOLD int getPage() const;
-
-    MCFOLD int getTotalPages() const;
-
-    MCAPI bool hasBook() const;
-
-    MCAPI bool isPageInBounds(int page) const;
 
     MCAPI void setItemFromBlock(int slot, ::ItemStack const& item);
 
@@ -97,9 +89,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ItemStack const& $getItem(int) const;
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int item, ::ItemStack const&);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCFOLD int $getMaxStackSize() const;
 
@@ -119,10 +111,13 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void
-    $serverInitItemStackIds(int containerSlot, int onNetIdChanged, ::std::function<void(int, ::ItemStack const&)>);
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    );
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
@@ -132,8 +127,14 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
+
     MCAPI static void** $vftableForBlockActor();
 
-    MCAPI static void** $vftableForContainer();
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftable();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
     // NOLINTEND
 };

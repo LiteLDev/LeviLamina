@@ -14,9 +14,6 @@ class BlockCullingGroup;
 class BlockTransformationComponent;
 class Experiments;
 class GeometryGroup;
-class GeometryPtr;
-class Matrix;
-struct BlockCullingData;
 struct BlockGeometryComponent;
 namespace ClientBlockPipeline { class MaterialRepository; }
 namespace ClientBlockPipeline { struct BlockSchematic; }
@@ -63,35 +60,6 @@ public:
     // NOLINTBEGIN
     MCAPI SchematicsRepository();
 
-    MCAPI ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic>
-    _createUnitCube(::Matrix const& postModelSpaceTransform, uchar rotX, uchar rotY, uchar rotZ, bool isV1);
-
-    MCAPI bool _hasAllPartsWithinBufferLimit(
-        ::Vec3 const&                 schematicMin,
-        ::Vec3 const&                 schematicMax,
-        ::HashedString const&         schematicName,
-        ::std::vector<::std::string>& errorMessages
-    ) const;
-
-    MCAPI ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic> _loadSchematic(
-        ::GeometryPtr                                           geoPtr,
-        ::BlockCullingData const*                               cullingDataPtr,
-        ::HashedString const&                                   cullingLayer,
-        ::BlockTransformationComponent const*                   transformComponent,
-        ::Matrix const&                                         preModelSpaceTransform,
-        ::Matrix const&                                         postModelSpaceTransform,
-        ::std::variant<bool, ::std::set<::HashedString>> const& lockUVs,
-        ::Experiments const*
-    );
-
-    MCAPI bool _validateSchematic(
-        ::HashedString const&                  name,
-        ::ClientBlockPipeline::BlockSchematic& schematic,
-        bool                                   checkAllPartsWithinBufferLimit
-    );
-
-    MCFOLD ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository> getMaterialRepo() const;
-
     MCAPI void initialize();
 
     MCAPI void initializeBlockGeometryComponent(
@@ -101,8 +69,6 @@ public:
         ::BlockCullingGroup&                  cullingGroup,
         ::Experiments const*                  experiments
     );
-
-    MCFOLD void setValidation(::ClientBlockPipeline::SchematicsRepository::Validation schematicValidation);
 
     MCAPI bool validateTransformedBounds(::Block const& block) const;
     // NOLINTEND

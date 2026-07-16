@@ -23,15 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::std::function<::TaskResult()>
-    createDetectionTask(::std::shared_ptr<::Bedrock::StorageMigration::ManifestData> manifest);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 

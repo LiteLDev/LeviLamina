@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
+namespace SharedTypes::Beta { struct DurabilitySensorItemComponent; }
 namespace SharedTypes::v1_21_10 { struct DurabilitySensorItemComponent; }
 // clang-format on
 
@@ -20,29 +20,23 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DurabilitySensorItemComponent();
-
-    MCAPI explicit DurabilitySensorItemComponent(::SharedTypes::v1_21_10::DurabilitySensorItemComponent data);
-
-    MCAPI explicit DurabilitySensorItemComponent(::std::vector<::DurabilityThreshold> const& durabilityThresholds);
-    // NOLINTEND
+    // prevent constructor by default
+    DurabilitySensorItemComponent();
 
 public:
-    // static functions
+    // member functions
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
+    MCAPI explicit DurabilitySensorItemComponent(::SharedTypes::Beta::DurabilitySensorItemComponent data);
+
+    MCAPI explicit DurabilitySensorItemComponent(::SharedTypes::v1_21_10::DurabilitySensorItemComponent data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::SharedTypes::Beta::DurabilitySensorItemComponent data);
 
     MCAPI void* $ctor(::SharedTypes::v1_21_10::DurabilitySensorItemComponent data);
-
-    MCAPI void* $ctor(::std::vector<::DurabilityThreshold> const& durabilityThresholds);
     // NOLINTEND
 
 public:

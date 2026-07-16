@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_factory/GenericModuleBindingFactory.h"
+#include "mc/deps/script_core/binding_factory/scripting/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
 class ServerLevel;
-namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { struct ModuleBinding; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -32,16 +30,11 @@ public:
     MCNAPI explicit ScriptMinecraftServerUIModuleFactory(::ServerLevel* level);
 
     MCNAPI void _addVersions();
-
-    MCNAPI ::Scripting::ModuleBinding
-    _generateBindings(::Scripting::ModuleBindingBuilder& moduleBuilder, ::std::string const& versionPath);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& LegacyModuleName();
-
     MCNAPI static char const*& ModuleName();
 
     MCNAPI static ::mce::UUID const& ModuleUUID();

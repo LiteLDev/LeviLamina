@@ -44,22 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PlayerLocationPacket();
-
-    MCAPI PlayerLocationPacket(::PlayerLocationPacket::Type type, ::ActorUniqueID const& id, ::Vec3 const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::PlayerLocationPacket::Type type, ::ActorUniqueID const& id, ::Vec3 const& pos);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;

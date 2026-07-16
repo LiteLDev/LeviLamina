@@ -17,26 +17,6 @@ public:
     Event& operator=(Event const&);
     Event(Event const&);
     Event();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit Event(::std::string const& name);
-
-    MCNAPI ~Event();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& name);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Util::CodeBuilder

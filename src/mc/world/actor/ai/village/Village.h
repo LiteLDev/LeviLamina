@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/entity/components_json_legacy/DwellerRole.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/platform/UUID.h"
@@ -16,19 +15,11 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Block;
-class BlockSource;
-class CompoundTag;
 class Dimension;
-class Level;
 class LevelStorage;
-class Mob;
 class POIInstance;
 class Player;
 class Raid;
-class Random;
-class Vec3;
-class VillageManager;
 // clang-format on
 
 class Village {
@@ -55,23 +46,7 @@ public:
         // NOLINTEND
     };
 
-    struct StandingModifiers {
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static int const& GOLEM_DEATH_PENALTY();
-
-        MCAPI static int const& LARGE_PENALTY();
-
-        MCAPI static int const& LARGE_REWARD();
-
-        MCAPI static int const& MEDIUM_PENALTY();
-
-        MCAPI static int const& SMALL_PENALTY();
-
-        MCAPI static int const& SMALL_REWARD();
-        // NOLINTEND
-    };
+    struct StandingModifiers {};
 
     using ClaimedPOIList = ::std::unordered_map<::ActorUniqueID, ::std::array<::std::weak_ptr<::POIInstance>, 3>>;
 
@@ -122,111 +97,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Village(::Dimension& dimension, ::mce::UUID id, ::BlockPos const& origin);
-
-    MCAPI void _applyHeroOfTheVillageEffect(::ActorUniqueID const& actorID);
-
-    MCAPI void _calcPOIDist();
-
-    MCAPI bool _chooseRaidSpawnPosition(uint64 timesCalled, ::Vec3& outSpawnPoint) const;
-
-    MCAPI ::Vec3 _chooseRandomDirectionFromVillage(::Random& random) const;
-
-    MCAPI void _claimUnclaimedPOIs();
-
     MCAPI void _clearVillagerPOIs(::ActorUniqueID const& villager);
 
     MCAPI void _createRaid();
 
-    MCAPI bool _findAvailablePOI(uint64 index, ::Level& level, ::Random& random, ::ActorUniqueID id);
-
-    MCAPI bool _findPlayerCentricSpawnPointForRaid(::Vec3& outSpawnPoint, bool snapToSurface) const;
-
-    MCAPI bool _findSpawnPointForRaid(
-        ::Vec3& outSpawnPoint,
-        float   distanceTolerance,
-        float   boundsScaling,
-        bool    snapToSurface,
-        bool    outsideOfVillage
-    ) const;
-
-    MCAPI ::BlockSource*
-    _findSpawnableRegion(::Vec3 spawnPosition, int xzSpreadDistance, bool& outHasSpawnAreaLoaded) const;
-
-    MCAPI void _findWeightedPOI(
-        ::std::vector<::std::weak_ptr<::POIInstance>>& unclaimedPOIStack,
-        ::Random&                                      random,
-        ::ActorUniqueID                                id
-    );
-
-    MCAPI void _helpLocateRaiders(::Raid const& raid);
-
-    MCAPI void _loadVillageData(::CompoundTag const& tag);
-
-    MCAPI void _loadVillageDwellers(::CompoundTag const& tag);
-
-    MCAPI void _loadVillagePOIs(::CompoundTag const& tag);
-
-    MCAPI void _loadVillagePlayerStanding(::CompoundTag const& tag);
-
-    MCAPI void _playSoundFrom(::Vec3 const& soundOrigin, ::SharedTypes::Legacy::LevelSoundEvent sound);
-
-    MCAPI void _readyRaidGroup(::std::unordered_set<::ActorUniqueID>& spawnedMobs);
-
-    MCAPI void _ringBells(::BlockSource& region, ::Random& random) const;
-
-    MCAPI void _saveVillageData(::LevelStorage& levelStorage) const;
-
-    MCAPI void _saveVillageDwellers(::LevelStorage& levelStorage) const;
-
-    MCAPI void _saveVillagePOIs(::LevelStorage& levelStorage) const;
-
-    MCAPI void _saveVillagePOIsToTag(::CompoundTag& tag) const;
-
     MCAPI void _saveVillagePlayerStanding(::LevelStorage& levelStorage) const;
-
-    MCAPI void _saveVillageRaid(::LevelStorage& levelStorage) const;
-
-    MCAPI void _spawnPassiveDwellers(::BlockSource& region, int);
-
-    MCAPI bool
-    _spawnRaidGroup(::Vec3 spawnPosition, uchar groupNumber, ::std::unordered_set<::ActorUniqueID>& spawnedMobs) const;
-
-    MCAPI void _tryAddPoiToVillage(::ActorUniqueID const& villager, ::std::weak_ptr<::POIInstance> pi);
-
-    MCAPI void _tryShiftStandingsTowardNeutral(::Tick& updateTick, uint64 updateInterval, bool positiveShift);
-
-    MCAPI void _trySpawnDefenderDwellers(::BlockSource& region, uint64 bedCount);
-
-    MCAPI void _updateAndRemoveInactiveDwellers(uint64 villagerPurgeTime, float villageBorderTolerance);
-
-    MCAPI void _updateClaimedPOIs(::BlockSource& region);
-
-    MCAPI void _updateUnclaimedPOIs(::BlockSource& region);
 
     MCAPI void addActorToVillage(::DwellerRole role, ::ActorUniqueID const& actorID);
 
-    MCAPI void addAggressor(::Mob const& mob);
-
-    MCAPI bool addPOI(::std::weak_ptr<::POIInstance> pi);
-
     MCAPI void addVillager(::ActorUniqueID const& villagerID);
 
-    MCAPI bool canRemove() const;
-
     MCAPI bool checkNeedMoreVillagers() const;
-
-    MCAPI void clearOwnedPOIs();
-
-    MCAPI void debugDraw();
 
     MCAPI ::std::weak_ptr<::POIInstance> fetchOwnedPOI(::ActorUniqueID const& id, ::POIType type);
 
     MCAPI void fireSoundTheAlarm();
-
-    MCFOLD ::AABB const& getBounds() const;
-
-    MCAPI ::Vec3 getCenter() const;
 
     MCAPI ::Actor* getClosestAggressor(::Actor* from);
 
@@ -234,23 +119,9 @@ public:
 
     MCAPI ::std::weak_ptr<::POIInstance> getClosestPOI(::POIType type, ::BlockPos const& position);
 
-    MCAPI uint64 getPOICount() const;
-
-    MCFOLD ::Raid const* getRaid() const;
-
-    MCFOLD ::AABB const& getRaidBounds() const;
-
-    MCFOLD ::Raid* getRaidMutable();
-
-    MCFOLD ::mce::UUID getUniqueID() const;
-
     MCAPI bool hasInvalidRole(::ActorUniqueID const& actorId, ::DwellerRole const& role);
 
-    MCAPI bool hasRaid() const;
-
     MCAPI bool hasSpecificDweller(::DwellerRole role, ::ActorUniqueID const& id) const;
-
-    MCAPI void loadDataByKey(::std::string const& key, ::CompoundTag const& tag);
 
     MCAPI int modifyStanding(::ActorUniqueID const& playerID, int delta);
 
@@ -260,19 +131,13 @@ public:
 
     MCAPI void removeAllInstancesofActorFromVillage(::ActorUniqueID const& actor);
 
-    MCAPI void removeVillageSavedData();
+    MCAPI ::std::_List_iterator<
+        ::std::_List_val<::std::_List_simple_types<::std::pair<::ActorUniqueID const, ::Village::DwellerData>>>>
+    removeVillager(::ActorUniqueID const& villager);
 
     MCAPI void resetDwellerTimer(::DwellerRole role, ::ActorUniqueID const& id);
 
-    MCAPI void resetNoBreedTimer();
-
-    MCAPI void rewardAllPlayers(int deltaAmount);
-
     MCAPI void setSavedDwellerPosition(::DwellerRole role, ::ActorUniqueID const& id, ::BlockPos pos);
-
-    MCAPI void tick(::Tick tick, ::BlockSource& region);
-
-    MCAPI void tickRaid(::Tick gameTick);
 
     MCAPI void triggerRaid();
 
@@ -281,50 +146,11 @@ public:
     MCAPI void unlinkMismatchedJobsites(::Actor const& villager);
 
     MCAPI bool villagerLivesHere(::ActorUniqueID const& villager) const;
-
-    MCAPI bool withinVillageBounds(::Vec3 const& pos, float tolerance) const;
-
-    MCAPI ~Village();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _cleanupUnclaimedPOIStack(::std::vector<::std::weak_ptr<::POIInstance>>& unclaimedPOIStack);
-
-    MCAPI static ::std::shared_ptr<::POIInstance> _findPreferredPOI(
-        ::std::vector<::std::weak_ptr<::POIInstance>>& unclaimedPOIStack,
-        ::HashedString const&                          preferredPOI
-    );
-
-    MCAPI static bool isValidBedPOI(::Block const& block);
-
-    MCAPI static bool isValidRegisteredPOI(::BlockSource& region, ::Block const& block, ::BlockPos const& position);
-
-    MCAPI static bool isVillagePOI(::VillageManager const& villageManager, ::Block const& block);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& CELEBRATION_EVENT();
-
-    MCAPI static bool& DEBUG_DRAWING();
-
-    MCAPI static ::std::string const& RAID_EXPIRY_EVENT();
-
     MCAPI static ::std::string const& STORAGE_KEY_PREFIX();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, ::mce::UUID id, ::BlockPos const& origin);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

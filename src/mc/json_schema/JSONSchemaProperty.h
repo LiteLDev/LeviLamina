@@ -38,19 +38,7 @@ public:
         ::SemVersion     optionalVersion
     );
 
-#ifdef LL_PLAT_S
-    MCNAPI ::JSONSchemaArea area() const;
-
-    MCNAPI ::std::string const& name() const;
-#endif
-
     MCNAPI ::JSONSchemaProperty& operator=(::JSONSchemaProperty&&);
-
-#ifdef LL_PLAT_S
-    MCNAPI ::JSONSchemaPath path() const;
-
-    MCNAPI ::SemVersion const& version() const;
-#endif
 
     MCNAPI ~JSONSchemaProperty();
     // NOLINTEND

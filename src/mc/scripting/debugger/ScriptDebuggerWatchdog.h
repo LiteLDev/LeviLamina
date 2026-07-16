@@ -17,6 +17,7 @@ public:
     // prevent constructor by default
     ScriptDebuggerWatchdog& operator=(ScriptDebuggerWatchdog const&);
     ScriptDebuggerWatchdog(ScriptDebuggerWatchdog const&);
+    ScriptDebuggerWatchdog();
 
 public:
     // virtual functions
@@ -25,42 +26,26 @@ public:
 
     virtual bool requireClose() const /*override*/;
 
+#ifdef LL_PLAT_S
     virtual void startListenTimeout(::std::chrono::seconds duration) /*override*/;
+#else // LL_PLAT_C
+    virtual void startListenTimeout(::std::chrono::seconds) /*override*/;
+#endif
 
     virtual bool listenTimeoutExpired() const /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptDebuggerWatchdog();
-
-#ifdef LL_PLAT_C
-    MCNAPI void startLeaveGame();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI bool $requireClose() const;
 
     MCNAPI void $startListenTimeout(::std::chrono::seconds duration);
 
     MCNAPI bool $listenTimeoutExpired() const;
+#endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

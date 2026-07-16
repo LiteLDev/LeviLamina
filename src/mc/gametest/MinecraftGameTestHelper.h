@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/gametest/framework/BaseGameTestHelper.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
@@ -11,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Actor;
 class Block;
 class BlockPos;
@@ -21,7 +19,6 @@ class Dimension;
 class Item;
 class ItemStack;
 class Mob;
-class ServerNetworkHandler;
 class SimulatedPlayer;
 class Vec3;
 struct ActorDefinitionIdentifier;
@@ -272,30 +269,6 @@ public:
     virtual ::std::variant<::gametest::GameTestError, ::Dimension*> getDimension() /*override*/;
 
     virtual ::std::optional<::gametest::GameTestError> onPlayerJump(::Mob& mob, int jumpAmount) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::optional<::gametest::GameTestError> _assertEntityInstancePresent(
-        ::Actor const*    actor,
-        ::AABB const&     searchBounds,
-        ::BlockPos const& relativeTestPosition,
-        bool              expectedPresent
-    ) const;
-
-    MCAPI ::std::optional<::gametest::GameTestError> _assertEntityPresent(
-        ::ActorDefinitionIdentifier const& actorIdentifier,
-        ::AABB const&                      searchBounds,
-        ::BlockPos const&                  pos,
-        bool                               expectedPresent
-    ) const;
-
-    MCAPI int _getItemEntityCount(::Item const& item, ::AABB const& searchBounds);
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> _getServerNetworkHandler() const;
-
-    MCAPI ::std::optional<::gametest::GameTestError> _getStructureBlockMissingError() const;
     // NOLINTEND
 
 public:

@@ -6,7 +6,7 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/world/Container.h"
 #include "mc/world/item/ItemStack.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,12 +20,11 @@ class ILevel;
 class LabTablePacket;
 class LabTableReaction;
 class Player;
-class Random;
 class SaveContext;
 struct ActorUniqueID;
 // clang-format on
 
-class ChemistryTableBlockActor : public ::BlockActor, public ::Container {
+class ChemistryTableBlockActor : public ::VanillaBlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
@@ -45,15 +44,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChemistryTableBlockActor() /*override*/;
+    virtual ~ChemistryTableBlockActor() /*override*/ = default;
 
     virtual ::Container* getContainer() /*override*/;
 
     virtual ::Container const* getContainer() const /*override*/;
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int) const /*override*/;
 
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int, ::ItemStack const&) /*override*/;
 
     virtual int getMaxStackSize() const /*override*/;
 
@@ -63,19 +62,15 @@ public:
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    virtual void onRemoved(::BlockSource& region) /*override*/;
+    virtual void onRemoved(::BlockSource&) /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper&) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const&) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& context) const /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
+    virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
     // NOLINTEND
 
 public:
@@ -83,18 +78,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ChemistryTableBlockActor(::BlockPos const& pos);
 
-    MCAPI ::std::unique_ptr<::LabTableReaction>
-    _createReaction(::Random& random, ::std::vector<::ItemStack> const& consumedInput);
-
+#ifdef LL_PLAT_C
     MCAPI ::HashedString const& _getType(::BlockSource& region);
 
-#ifdef LL_PLAT_C
     MCAPI void clientLabTablePacket(::LabTablePacket const& packet, ::BlockSource& region);
-
-    MCAPI bool isReactionInProgress();
 #endif
-
-    MCAPI bool isSameType(::HashedString const& type) const;
 
     MCAPI void playerOpenLabTable(::Player& player);
 
@@ -112,52 +100,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Container* $getContainer();
 
-    MCFOLD ::Container const* $getContainer() const;
-
-    MCAPI ::ItemStack const& $getItem(int slot) const;
-
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
-
-    MCFOLD int $getMaxStackSize() const;
-
-    MCFOLD int $getContainerSize() const;
-
-    MCFOLD void $startOpen(::Actor&);
-
-    MCAPI void $stopOpen(::Actor& actor);
-
-    MCAPI void $onRemoved(::BlockSource& region);
-
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper&);
-
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const&) const;
-
-    MCAPI void $tick(::BlockSource& region);
-
-    MCAPI void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftableForContainer();
-
-    MCAPI static void** $vftableForBlockActor();
     // NOLINTEND
 };

@@ -4,9 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/options/option_types/Option.h"
-#include "mc/options/option_types/OptionID.h"
-#include "mc/options/option_types/OptionOwnerType.h"
-#include "mc/options/option_types/OptionResetFlags.h"
 
 class FloatOption : public ::Option {
 public:
@@ -19,13 +16,6 @@ public:
     ::ll::TypedStorage<4, 4, float const> DELTA;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    FloatOption();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -41,46 +31,6 @@ public:
     virtual void load(::std::string const& valueString) /*override*/;
 #endif
 
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI FloatOption(
-        ::OptionID           id,
-        ::OptionOwnerType    ownerType,
-        ::OptionResetFlags   resetFlags,
-        ::std::string const& captionId,
-        ::std::string const& saveTag,
-        float                value,
-        float                valueMin,
-        float                rangeMax,
-        float                rangeDelta
-    );
-
-    MCFOLD float getDefault() const;
-
-    MCAPI void set(float v, bool saveOptionChange);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(
-        ::OptionID           id,
-        ::OptionOwnerType    ownerType,
-        ::OptionResetFlags   resetFlags,
-        ::std::string const& captionId,
-        ::std::string const& saveTag,
-        float                value,
-        float                valueMin,
-        float                rangeMax,
-        float                rangeDelta
-    );
-#endif
     // NOLINTEND
 
 public:

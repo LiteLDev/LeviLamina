@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-struct SplitScreenInfo;
 namespace OreUI { class ClientDependencies; }
 namespace OreUI { class GameDependencies; }
 // clang-format on
@@ -36,22 +35,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SplitScreenQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
-
-    MCAPI void _updateData(::SplitScreenInfo const& info);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIQuery();
-
-    MCNAPI static void** $vftableForPropertyObject();
     // NOLINTEND
 };
 

@@ -24,26 +24,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                          mHasSettings;
     ::ll::TypedStorage<1, 1, bool>                          mIsAddon;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FacetResourcePack();
-
-    MCAPI ~FacetResourcePack();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

@@ -7,7 +7,6 @@
 namespace webrtc { class Environment; }
 namespace webrtc { class FieldTrialsView; }
 namespace webrtc { class RtcEventLog; }
-namespace webrtc { class TaskQueueFactory; }
 // clang-format on
 
 namespace webrtc {
@@ -16,7 +15,7 @@ class EnvironmentFactory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk32ee7f;
+    ::ll::UntypedStorage<8, 8> mUnkd3b2c4;
     ::ll::UntypedStorage<8, 8> mUnkb99ec4;
     ::ll::UntypedStorage<8, 8> mUnkfed2cb;
     ::ll::UntypedStorage<8, 8> mUnk948798;
@@ -41,8 +40,6 @@ public:
     MCNAPI void Set(::std::unique_ptr<::webrtc::FieldTrialsView const> utility);
 
     MCNAPI void Set(::std::unique_ptr<::webrtc::RtcEventLog> utility);
-
-    MCNAPI void Set(::std::unique_ptr<::webrtc::TaskQueueFactory> utility);
 
     MCNAPI ~EnvironmentFactory();
     // NOLINTEND

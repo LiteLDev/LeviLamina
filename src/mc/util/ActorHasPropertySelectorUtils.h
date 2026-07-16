@@ -14,7 +14,6 @@ namespace ScriptModuleMinecraft { struct LessThanComparison; }
 namespace ScriptModuleMinecraft { struct LessThanOrEqualsComparison; }
 namespace ScriptModuleMinecraft { struct NotEqualsComparison; }
 namespace ScriptModuleMinecraft { struct RangeComparison; }
-namespace ScriptModuleMinecraft { struct ValueParams; }
 // clang-format on
 
 namespace ActorHasPropertySelectorUtils {
@@ -61,9 +60,6 @@ MCNAPI ::std::variant<::CommandRationalRange, bool, ::std::string> parseComparis
         ::ScriptModuleMinecraft::RangeComparison> const& comparison,
     bool                                                 isExclude
 );
-
-MCNAPI ::std::variant<::CommandRationalRange, bool, ::std::string>
-parseValueParams(::ScriptModuleMinecraft::ValueParams const& params, bool isExclude);
 // NOLINTEND
 
 } // namespace ActorHasPropertySelectorUtils

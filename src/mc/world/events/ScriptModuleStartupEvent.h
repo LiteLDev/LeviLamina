@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class CustomCommandRegistry; }
@@ -23,7 +20,6 @@ public:
     ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptCustomSpawnRulesRegistry&>      mSpawnRulesRegistry;
     ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::CustomCommandRegistry&>               mCustomCommandRegistry;
     ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptCustomDimensionRegistry&>       mCustomDimensionRegistry;
-    ::ll::TypedStorage<8, 24, ::std::optional<::Scripting::WeakLifetimeScope>>              mSpecificScopeForEvent;
     // NOLINTEND
 
 public:

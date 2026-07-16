@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 class ListTag;
+class Tag;
 // clang-format on
 
 class CustomBlockStateVariant : public ::BlockState {
@@ -21,42 +21,18 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CustomBlockStateVariant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void toNBT(::CompoundTag& tag, int val) const /*override*/;
+    virtual ~CustomBlockStateVariant() /*override*/ = default;
 
-    virtual bool fromNBT(::CompoundTag const& tag, int& outValue) const /*override*/;
-    // NOLINTEND
+    virtual ::std::unique_ptr<::Tag> _toNBT(int) const /*override*/;
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CustomBlockStateVariant(uint64 id, ::std::string const& name, ::ListTag const& values);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uint64 id, ::std::string const& name, ::ListTag const& values);
+    virtual ::std::optional<int> _fromNBT(::Tag const&) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $toNBT(::CompoundTag& tag, int val) const;
 
-    MCAPI bool $fromNBT(::CompoundTag const& tag, int& outValue) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

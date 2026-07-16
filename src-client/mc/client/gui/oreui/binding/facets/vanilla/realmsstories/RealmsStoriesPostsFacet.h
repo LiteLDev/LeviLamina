@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/PostStatus.h"
 #include "mc/client/realms/stories/FetchStatus.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -19,7 +19,7 @@ namespace Realms::Stories { class FacetStateManager; }
 
 namespace OreUI {
 
-class RealmsStoriesPostsFacet : public ::OreUI::FacetBase<::OreUI::RealmsStoriesPostsFacet> {
+class RealmsStoriesPostsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsStoriesPostsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsStoriesPostsFacet() /*override*/;
+    virtual ~RealmsStoriesPostsFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -56,22 +56,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>          profanityContext,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
-
-    MCAPI bool _getMostRecentStoriesViewed() const;
-
-    MCFOLD int _getPageLength() const;
-
-    MCAPI ::Realms::Stories::PostStatus _getPostStoryStatus() const;
-
-    MCAPI bool _getStoryFeedFirstPageReady() const;
-
-    MCAPI ::Realms::Stories::FetchStatus _getStoryFeedStatus() const;
-
-    MCAPI int _getStoryFeedTotalStories() const;
-
-    MCAPI int _getUnreadStoryCount() const;
-
-    MCAPI void _regenerateView();
     // NOLINTEND
 
 public:
@@ -92,21 +76,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

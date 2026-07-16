@@ -8,11 +8,6 @@
 #include "mc/deps/shared_types/v1_26_20/block/ConnectionType.h"
 #include "mc/deps/shared_types/v1_26_20/block/Direction.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct ConnectionRuleComponent {
@@ -25,33 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ConnectionRuleComponent();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& AcceptConnectionsFromId();
-
-    MCAPI static ::std::string_view const& EnabledDirectionsId();
-
     MCAPI static ::std::string_view const& NameId();
-
-    MCAPI static ::std::string_view const& VanillaConnectionsFromId();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -25,16 +25,4 @@ public:
     ::ll::TypedStorage<8, 48, ::Bedrock::small_vector<::ImageInfo, 1>> mBottom;
     ::ll::TypedStorage<8, 48, ::Bedrock::small_vector<::ImageInfo, 1>> mMiddle;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~NinesliceInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

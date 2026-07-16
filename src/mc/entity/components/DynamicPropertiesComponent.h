@@ -22,7 +22,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::ILevel& level) const;
-
-    MCFOLD ::DynamicProperties& getProperties();
     // NOLINTEND
 };

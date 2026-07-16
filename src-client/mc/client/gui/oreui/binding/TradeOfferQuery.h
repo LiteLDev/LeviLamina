@@ -10,8 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace GameplayUI { struct GameplayUIContext; }
-namespace OreUI { class ClientDependencies; }
-namespace OreUI { class GameDependencies; }
 // clang-format on
 
 namespace OreUI {
@@ -39,55 +37,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TradeOfferQuery();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void update(double time) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TradeOfferQuery(
-        ::OreUI::GameDependencies const&   game,
-        ::OreUI::ClientDependencies const& client,
-        int                                tradeTier,
-        int                                tradeIndex
-    );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::OreUI::GameDependencies const&   game,
-        ::OreUI::ClientDependencies const& client,
-        int                                tradeTier,
-        int                                tradeIndex
-    );
+    virtual void update(double) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double time);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPropertyObject();
-
-    MCNAPI static void** $vftableForIQuery();
     // NOLINTEND
 };
 

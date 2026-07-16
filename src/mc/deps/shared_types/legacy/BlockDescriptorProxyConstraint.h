@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/cereal/ContextArea.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::Legacy::BlockDescriptorSerializer { struct BlockDescriptorProxy; }
-namespace cereal { class SerializerContext; }
+namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace SharedTypes::Legacy::BlockDescriptorSerializer {
@@ -16,18 +16,15 @@ namespace SharedTypes::Legacy::BlockDescriptorSerializer {
 class BlockDescriptorProxyConstraint
 : public ::cereal::ConstraintHandle<::SharedTypes::Legacy::BlockDescriptorSerializer::BlockDescriptorProxyConstraint> {
 public:
-    // member functions
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI void validateValue(
-        ::SharedTypes::Legacy::BlockDescriptorSerializer::BlockDescriptorProxy const& proxy,
-        ::cereal::SerializerContext&                                                  context
-    ) const;
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+
     // NOLINTEND
 };
 

@@ -94,23 +94,7 @@ public:
         int                        seaLevel
     );
 
-    MCAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
-
     MCAPI void computeAt(::BlockPos const& worldPos);
-
-    MCFOLD float getLastBarrier() const;
-
-    MCAPI ::Block const* getLastFluidBlockType() const;
-
-    MCFOLD int getLastFluidLevel() const;
-
-    MCFOLD bool shouldScheduleFluidUpdate() const;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::array<::std::pair<int, int>, 13> const& chunkOffset();
     // NOLINTEND
 
 public:

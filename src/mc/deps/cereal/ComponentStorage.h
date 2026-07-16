@@ -39,24 +39,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool empty() const;
-
     MCAPI bool eraseComponent(::std::string_view name);
 
     MCAPI ::entt::meta_any getComponent(::std::string_view name);
 
     MCAPI ::entt::meta_any getComponent(::std::string_view name) const;
 
-    MCAPI bool hasComponent(::std::string_view name) const;
-
-    MCFOLD ::entt::iterable_adaptor<
-        ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::std::string>>>,
-        ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::std::string>>>>
-    keys() const;
-
     MCAPI bool operator==(::cereal::ComponentStorage const& other) const;
-
-    MCFOLD uint64 size() const;
 
     MCAPI ~ComponentStorage();
     // NOLINTEND

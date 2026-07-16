@@ -25,15 +25,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ExperimentStorage(::ExperimentStorage const&);
 
-    MCNAPI bool isAnyToggleEnabled() const;
-
     MCNAPI ::ExperimentStorage& operator=(::ExperimentStorage&&);
-
-#ifdef LL_PLAT_C
-    MCNAPI bool sameActiveExperimentsAreEnabled(::ExperimentStorage const& other) const;
-
-    MCNAPI bool wereAnyExperimentsEverToggled() const;
-#endif
 
     MCNAPI ~ExperimentStorage();
     // NOLINTEND

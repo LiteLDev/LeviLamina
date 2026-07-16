@@ -24,7 +24,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorRenderDispatcher;
 class ActorResourceDefinitionGroup;
 class Block;
 class BlockActorRenderDispatcher;
@@ -32,46 +31,41 @@ class BlockPos;
 class BlockSource;
 class BlockTessellator;
 class ClientFrameUpdateContext;
+class ClientLevel;
 class DataDrivenRendererV2RequiredData;
 class GameRenderer;
 class GeometryEditorGui;
 class GeometryGroup;
 class IClientInstance;
-class IRenderChunkGarbageCollection;
 class LevelChunk;
 class LevelRendererPlayer;
 class LevelRendererProxy;
 class LevelRendererShadowCamera;
-class MultiPlayerLevel;
 class OptionRegistry;
 class ParticleEngine;
 class ParticleSystemEngine;
 class PlayerRenderView;
 class RenderChunkCoordinator;
+class RenderChunkShared;
 class RuntimeLocalLightingConfig;
 class ScreenContext;
 class SoundMapping;
 class SoundPlayerInterface;
 class TaskGroup;
-class Tessellator;
 class TextureAtlas;
 class TextureShiftManager;
 struct ActorBlockSyncMessage;
-struct DataDrivenRendererContinuousData;
 struct FrameRenderObject;
 struct LevelRenderPreRenderUpdateParameters;
-struct ProcessedDataDrivenRenderers;
 struct ScreenshotOptions;
-namespace ClientBlockPipeline { class SchematicsRepository; }
 namespace LightPropagation { class LightPropagationCoordinator; }
 namespace LightPropagation { class LightVolumeManager; }
 namespace PointLighting { class PointLightCoordinator; }
 namespace PointLighting { class PointLightShadowProbeManager; }
-namespace Scripting::RenderHelper { class RendererInterface; }
 namespace cg { class ImageBuffer; }
+namespace dragon::atlas { class IAtlasUserOperations; }
 namespace mce { class Mesh; }
 namespace mce { class TextureGroup; }
-namespace mce { struct TextureResourceService; }
 // clang-format on
 
 class LevelRenderer : public ::LevelListener, public ::AppPlatformListener {
@@ -117,7 +111,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                      mTaskGroup;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                      mSyncTaskGroup;
     ::ll::TypedStorage<8, 8, ::GameRenderer&>                                     mGameRenderer;
-    ::ll::TypedStorage<8, 8, ::MultiPlayerLevel&>                                 mLevel;
+    ::ll::TypedStorage<8, 8, ::ClientLevel&>                                      mLevel;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OptionRegistry>>                mOptions;
     ::ll::TypedStorage<8, 8, ::IClientInstance&>                                  mClientInstance;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef>                                    mLocalUser;
@@ -143,7 +137,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelRenderer() /*override*/;
+    virtual ~LevelRenderer() /*override*/ = default;
 
     virtual void onAppSuspended() /*override*/;
 
@@ -165,14 +159,14 @@ public:
         ::Actor*                       blockChangeSource
     ) /*override*/;
 
-    virtual void onChunkUnloaded(::LevelChunk& levelChunk) /*override*/;
+    virtual void onChunkUnloaded(::LevelChunk&) /*override*/;
 
     virtual void takePicture(
-        ::cg::ImageBuffer&                                              outImage,
-        ::Actor*                                                        camera,
-        ::Actor*                                                        target,
-        ::ScreenshotOptions&                                            screenshotOptions,
-        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
+        ::cg::ImageBuffer&,
+        ::Actor*,
+        ::Actor*,
+        ::ScreenshotOptions&,
+        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
     ) /*override*/;
     // NOLINTEND
 
@@ -181,7 +175,7 @@ public:
     // NOLINTBEGIN
     MCAPI LevelRenderer(
         ::IClientInstance&                                                         clientInstance,
-        ::MultiPlayerLevel&                                                        level,
+        ::ClientLevel&                                                             level,
         ::std::shared_ptr<::OptionRegistry>                                        options,
         ::std::shared_ptr<::mce::TextureGroup>                                     textureGroup,
         ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const&                 terrainTexture,
@@ -191,79 +185,19 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> const&                      geometryGroup,
         ::SoundMapping const&                                                      sounds,
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> const& actorResourceDefinitionGroup,
-        ::Bedrock::NotNullNonOwnerPtr<::TextureShiftManager const>&                textureShiftManager
+        ::Bedrock::NotNullNonOwnerPtr<::TextureShiftManager const>&                textureShiftManager,
+        ::std::weak_ptr<::dragon::atlas::IAtlasUserOperations>                     atlasOps
     );
-
-    MCAPI void _createMeshes(::Tessellator& tessellator);
-
-    MCAPI void _createParticleEngines();
-
-    MCAPI void _debugDrawClientSideChunkGenBlockDifferences();
-
-    MCAPI void _initPipelineTessellatorResources(
-        ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const>        textureAtlas,
-        ::Bedrock::NotNullNonOwnerPtr<::TextureShiftManager const> textureShiftManager
-    );
-
-    MCAPI void _initResources();
-
-    MCAPI void _resetMeshes();
 
     MCAPI void _setLevelRendererCameras();
 
-    MCAPI void endFrame(::mce::TextureResourceService& textureResourceService);
+    MCAPI void extractPointLightCandidates(::RenderChunkShared const& renderChunkShared);
 
     MCAPI void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 
-    MCAPI ::BlockTessellator& getBlockRenderer();
-
-    MCAPI ::mce::Color const& getClearBufferColor() const;
-
-    MCAPI ::DataDrivenRendererV2RequiredData* getDataDrivenRendererV2RequiredData();
-
-    MCAPI ::std::shared_ptr<::ActorRenderDispatcher> getEntityRenderDispatcher();
-
-    MCAPI ::std::shared_ptr<::LevelRendererShadowCamera> getLevelRendererCloudShadowCamera();
-
-    MCFOLD ::LevelRendererPlayer const& getLevelRendererPlayer() const;
-
-    MCFOLD ::LevelRendererPlayer& getLevelRendererPlayer();
-
-    MCAPI ::std::shared_ptr<::LevelRendererShadowCamera> getLevelRendererShadowCamera();
-
-    MCAPI ::std::weak_ptr<::LightPropagation::LightPropagationCoordinator> getLightPropagationCoordinator();
-
-    MCFOLD ::std::weak_ptr<::LightPropagation::LightVolumeManager> getLightVolumeManager();
-
-    MCFOLD ::std::weak_ptr<::LightPropagation::LightVolumeManager const> getLightVolumeManagerConst() const;
-
-    MCAPI ::ParticleEngine& getParticleEngine() const;
-
-    MCAPI ::ParticleSystemEngine& getParticleSystemEngine() const;
-
     MCAPI ::StackRefResult<::RenderChunkCoordinator> getRenderChunkCoordinator(::DimensionType dimID);
 
-    MCAPI ::IRenderChunkGarbageCollection& getRenderChunkGarbageCollection();
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ClientBlockPipeline::SchematicsRepository> getSchematicsRepository() const;
-
-    MCFOLD ::Scripting::RenderHelper::RendererInterface& getScriptRendererInterface();
-
-    MCAPI bool getTextureShiftsEnabled() const;
-
-    MCFOLD ::Tick const& getTicks() const;
-
-    MCAPI ::DataDrivenRendererContinuousData* getV2ContinuousData();
-
-    MCAPI ::ProcessedDataDrivenRenderers const* getV2ProcessedDataDrivenRenderers() const;
-
-    MCAPI bool getV2ShouldRenderActorsWithAttachables() const;
-
-    MCAPI void onDimensionChanged();
-
     MCAPI void onOptionsChanged();
-
-    MCAPI void onWillChangeDimension();
 
     MCAPI void preRenderUpdate(
         ::ScreenContext&                        screenContext,
@@ -272,33 +206,21 @@ public:
 
     MCAPI void rebuildAllDDRv2Geometry();
 
-    MCAPI void rebuildAllRenderChunkGeometry();
-
     MCAPI void reinit(
         ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const&                 terrainTexture,
         ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> const&                      geometryGroup,
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> const& actorResourceDefinitionGroup
     );
 
-    MCAPI void relightAllRenderChunkGeometry();
-
     MCAPI void renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
-
-    MCAPI void resetCameras();
 
     MCAPI void resetLightVolumeManager(::std::weak_ptr<::RuntimeLocalLightingConfig const> runtimeLocalLightingConfig);
 
     MCAPI void resetLightingConfig(::std::weak_ptr<::RuntimeLocalLightingConfig const> runtimeLocalLightingConfig);
 
-    MCAPI void resetPointLighting();
+    MCAPI void resetPointLighting(::std::weak_ptr<::dragon::atlas::IAtlasUserOperations> atlasUserOps);
 
     MCAPI void tickLevelRenderer();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& Z_NEAR();
     // NOLINTEND
 
 public:
@@ -306,7 +228,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::IClientInstance&                                                         clientInstance,
-        ::MultiPlayerLevel&                                                        level,
+        ::ClientLevel&                                                             level,
         ::std::shared_ptr<::OptionRegistry>                                        options,
         ::std::shared_ptr<::mce::TextureGroup>                                     textureGroup,
         ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const&                 terrainTexture,
@@ -316,55 +238,14 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> const&                      geometryGroup,
         ::SoundMapping const&                                                      sounds,
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> const& actorResourceDefinitionGroup,
-        ::Bedrock::NotNullNonOwnerPtr<::TextureShiftManager const>&                textureShiftManager
+        ::Bedrock::NotNullNonOwnerPtr<::TextureShiftManager const>&                textureShiftManager,
+        ::std::weak_ptr<::dragon::atlas::IAtlasUserOperations>                     atlasOps
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onAppSuspended();
 
-    MCAPI void $onAppResumed();
-
-    MCAPI void $onDeviceLost();
-
-    MCAPI void $onLowMemory(::LowMemorySeverity);
-
-    MCAPI void $onBlockChanged(
-        ::BlockSource&                 source,
-        ::BlockPos const&              pos,
-        uint                           layer,
-        ::Block const&                 block,
-        ::Block const&                 oldBlock,
-        int                            updateFlags,
-        ::ActorBlockSyncMessage const* syncMsg,
-        ::BlockChangedEventTarget      eventTarget,
-        ::Actor*                       blockChangeSource
-    );
-
-    MCAPI void $onChunkUnloaded(::LevelChunk& levelChunk);
-
-    MCAPI void $takePicture(
-        ::cg::ImageBuffer&                                              outImage,
-        ::Actor*                                                        camera,
-        ::Actor*                                                        target,
-        ::ScreenshotOptions&                                            screenshotOptions,
-        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForLevelListener();
-
-    MCNAPI static void** $vftableForAppPlatformListener();
     // NOLINTEND
 };

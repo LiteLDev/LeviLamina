@@ -137,6 +137,7 @@
 
 // stb C++ Library
 #include "stb_truetype.h"
+struct stbi__context;
 
 struct HWND__;
 struct HKEY__;
@@ -222,6 +223,33 @@ struct D3D12_FEATURE_DATA_ARCHITECTURE {};
 #ifndef D3D12_FEATURE_DATA_D3D12_OPTIONS
 struct D3D12_FEATURE_DATA_D3D12_OPTIONS {};
 #endif
+
+// Nvidia SDK definitions
+typedef enum NVSDK_NGX_Logging_Level;
+typedef enum NVSDK_NGX_Feature;
+
+// OpenSSL definitions
+struct ssl_ctx_st;
+struct ssl_st;
+struct ssl_session_st;
+struct x509_store_ctx_st;
+struct x509_st;
+struct evp_md_st;
+struct ssl_session_st;
+
+// abseil definitions
+namespace absl::hash_internal {
+template <typename T>
+struct Hash;
+}
+
+// Ungenerated cereal definitions
+namespace cereal {
+namespace internal {
+template<typename It, typename Type>
+class ComponentStorageIterator;
+}
+}
 
 namespace GameInput::v2 {
     class IGameInput;

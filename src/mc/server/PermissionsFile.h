@@ -14,7 +14,6 @@ class GameplayUserManager;
 class Player;
 class UserEntityIdentifierComponent;
 namespace Core { class Path; }
-namespace Json { class Value; }
 // clang-format on
 
 class PermissionsFile {
@@ -44,10 +43,6 @@ public:
         ::CommandPermissionLevel               opCommandPermissionLevel
     );
 
-    MCNAPI ::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& getPermissions() const;
-
-    MCNAPI ::std::vector<::std::string> getXUIDsByPermission(::PlayerPermissionLevel permission) const;
-
     MCNAPI bool isPermissionsSet(::std::string const& xuid, ::PlayerPermissionLevel permission) const;
 
     MCNAPI void persistPlayerPermissionsToDisk(
@@ -57,18 +52,12 @@ public:
 
     MCNAPI void persistPlayerPermissionsToDisk(::std::string const& xuid, ::PlayerPermissionLevel permission);
 
-    MCNAPI ::std::tuple<::FileReadResult, ::Json::Value> readPermissionFile();
-
     MCNAPI ::FileReadResult reload();
 
     MCNAPI ::FileReadResult reloadAndApply(
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> userManager,
         ::CommandPermissionLevel                             opCommandPermissionLevel
     );
-
-#ifdef LL_PLAT_S
-    MCNAPI ~PermissionsFile();
-#endif
     // NOLINTEND
 
 public:
@@ -76,14 +65,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
     MCNAPI void* $ctor(::Core::Path const& filePath);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

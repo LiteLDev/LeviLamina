@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_21_130 {
 
 struct AddRiderComponentDefinition {
@@ -24,32 +19,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string> mEntityType;
         ::ll::TypedStorage<8, 32, ::std::string> mSpawnEvent;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RiderData& operator=(RiderData const&);
-        RiderData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI RiderData(::SharedTypes::v1_21_130::AddRiderComponentDefinition::RiderData const&);
-
-        MCFOLD ::SharedTypes::v1_21_130::AddRiderComponentDefinition::RiderData&
-        operator=(::SharedTypes::v1_21_130::AddRiderComponentDefinition::RiderData&&);
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(::SharedTypes::v1_21_130::AddRiderComponentDefinition::RiderData const&);
-        // NOLINTEND
     };
 
 public:
@@ -63,13 +32,12 @@ public:
 public:
     // prevent constructor by default
     AddRiderComponentDefinition& operator=(AddRiderComponentDefinition const&);
+    AddRiderComponentDefinition(AddRiderComponentDefinition const&);
     AddRiderComponentDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AddRiderComponentDefinition(::SharedTypes::v1_21_130::AddRiderComponentDefinition const&);
-
     MCAPI ::SharedTypes::v1_21_130::AddRiderComponentDefinition&
     operator=(::SharedTypes::v1_21_130::AddRiderComponentDefinition&&);
 
@@ -77,21 +45,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_130::AddRiderComponentDefinition const&);
     // NOLINTEND
 
 public:

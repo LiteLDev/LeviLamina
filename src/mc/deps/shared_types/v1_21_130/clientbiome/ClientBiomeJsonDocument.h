@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersionConstant;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -51,36 +50,31 @@ public:
                 mComponents;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
     public:
         // prevent constructor by default
         ClientBiomeJsonObject(ClientBiomeJsonObject const&);
         ClientBiomeJsonObject();
 
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCFOLD ::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject&
         operator=(::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
 
         MCAPI ~ClientBiomeJsonObject();
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static ::SemVersionConstant const& VERSION();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCFOLD void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -93,37 +87,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ClientBiomeJsonDocument& operator=(ClientBiomeJsonDocument const&);
-    ClientBiomeJsonDocument();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ClientBiomeJsonDocument(::SharedTypes::v1_21_130::ClientBiomeJsonDocument const&);
-
-    MCFOLD ::SharedTypes::v1_21_130::ClientBiomeJsonDocument&
-    operator=(::SharedTypes::v1_21_130::ClientBiomeJsonDocument&&);
-
-    MCAPI ~ClientBiomeJsonDocument();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_21_130::ClientBiomeJsonDocument const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

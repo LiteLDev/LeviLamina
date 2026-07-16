@@ -33,15 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BuoyancyDefinition();
-
-    MCAPI void _addLiquidBlockDescriptor(::BlockDescriptor const& liquidBlockDescriptor);
-
-    MCAPI ::Json::Value _serialize() const;
-
     MCAPI void initialize(::EntityContext& entity, ::BuoyancyComponent& component) const;
-
-    MCAPI void setMovementType(::std::string const& movementType);
 
     MCAPI void uninitialize(::EntityContext& entity, ::BuoyancyComponent&) const;
     // NOLINTEND
@@ -52,11 +44,5 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BuoyancyDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

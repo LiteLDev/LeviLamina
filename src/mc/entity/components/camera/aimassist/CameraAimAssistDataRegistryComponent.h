@@ -6,8 +6,6 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/puv/LoadResult.h"
-#include "mc/deps/puv/Loader.h"
 #include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
@@ -18,14 +16,10 @@ class EntityContext;
 class IMinecraftEventing;
 class LinkedAssetValidator;
 class NetworkIdentifier;
-class PackInstance;
 class PacketSender;
 class ResourcePackManager;
 struct CameraAimAssistDataRegistryDirtyComponent;
-namespace Core { class Path; }
 namespace SharedTypes::v1_21_120 { struct CameraAimAssistPresetDefinition; }
-namespace SharedTypes::v1_21_120 { struct CameraAimAssistPresetFile; }
-namespace SharedTypes::v1_21_50 { struct CameraAimAssistCategoriesFile; }
 namespace SharedTypes::v1_21_50 { struct CameraAimAssistCategoryDefinition; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -59,57 +53,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit CameraAimAssistDataRegistryComponent(::IMinecraftEventing& eventing);
 
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> _categoriesPackForEachCallback(
-        ::EntityContext& levelEntity,
-        ::Puv::Loader<
-            ::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile,
-            ::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> const& loader,
-        ::PackInstance const&                                              pack,
-        ::std::string&                                                     fileData,
-        ::Core::Path const&                                                filenameWithExtension
-    );
-
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> _parseAndLoadAimAssistCategories(
-        ::EntityContext& levelEntity,
-        ::Puv::Loader<
-            ::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile,
-            ::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> const& loader,
-        ::std::string const&                                               fileData
-    );
-
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_120::CameraAimAssistPresetFile> _parseAndLoadAimAssistPreset(
-        ::EntityContext& levelEntity,
-        ::Puv::Loader<
-            ::SharedTypes::v1_21_120::CameraAimAssistPresetFile,
-            ::SharedTypes::v1_21_120::CameraAimAssistPresetFile> const& loader,
-        ::std::string const&                                            fileData
-    );
-
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_120::CameraAimAssistPresetFile> _presetsPackForEachCallback(
-        ::EntityContext& levelEntity,
-        ::Puv::Loader<
-            ::SharedTypes::v1_21_120::CameraAimAssistPresetFile,
-            ::SharedTypes::v1_21_120::CameraAimAssistPresetFile> const& loader,
-        ::PackInstance const&                                           pack,
-        ::std::string&                                                  fileData,
-        ::Core::Path const&                                             filenameWithExtension
-    );
-
-    MCAPI void _reset();
-
-    MCAPI bool _validatePresetCategorySetting(::std::string const& categoryId) const;
-
     MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&
     addCategory(::EntityContext& levelEntity, ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&& category);
 
     MCAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const&
     addPreset(::EntityContext& levelEntity, ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&& preset);
-
-    MCFOLD ::std::unordered_map<::HashedString, ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition> const&
-    getCategories() const;
-
-    MCFOLD ::std::unordered_map<::HashedString, ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition> const&
-    getPresets() const;
 
     MCAPI void loadJsonFilesForServer(
         ::EntityContext&                                   levelEntity,

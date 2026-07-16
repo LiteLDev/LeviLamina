@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct CustomBiome;
-namespace Scripting { struct InterfaceBinding; }
-// clang-format on
-
 namespace Editor::ScriptModule {
 
 struct ScriptCustomBiomeConfig {
@@ -22,41 +16,8 @@ public:
 public:
     // prevent constructor by default
     ScriptCustomBiomeConfig& operator=(ScriptCustomBiomeConfig const&);
+    ScriptCustomBiomeConfig(ScriptCustomBiomeConfig const&);
     ScriptCustomBiomeConfig();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptCustomBiomeConfig(::Editor::ScriptModule::ScriptCustomBiomeConfig const&);
-
-    MCNAPI void addToMap(::std::map<::std::string, ::CustomBiome>& map) const;
-
-    MCNAPI ::Editor::ScriptModule::ScriptCustomBiomeConfig&
-    operator=(::Editor::ScriptModule::ScriptCustomBiomeConfig&&);
-
-    MCNAPI ~ScriptCustomBiomeConfig();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bindType();
-
-    MCNAPI static ::std::map<::std::string, ::CustomBiome>
-    buildMap(::std::vector<::Editor::ScriptModule::ScriptCustomBiomeConfig> const& listOfCustomBiomes);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptCustomBiomeConfig const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

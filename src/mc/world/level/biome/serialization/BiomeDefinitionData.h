@@ -31,16 +31,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BiomeDefinitionData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeDefinitionData(::BiomeDefinitionData const&);
-
-    MCAPI ::BiomeDefinitionData& operator=(::BiomeDefinitionData const&);
-
     MCAPI void write(::BinaryStream& stream) const;
 
     MCAPI ~BiomeDefinitionData();
@@ -50,12 +42,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::BiomeDefinitionData> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeDefinitionData const&);
     // NOLINTEND
 
 public:

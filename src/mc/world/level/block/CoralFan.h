@@ -42,7 +42,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    virtual bool mayConsumeFertilizer(::BlockSource&) const /*override*/;
+    virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
     virtual bool isLavaBlocking() const /*override*/;
 
@@ -61,8 +61,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CoralFan(::std::string const& nameId, int id, ::HashedString const& deadVersion);
-
-    MCFOLD ::HashedString const& getDeadVersion() const;
 
     MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
@@ -85,7 +83,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD bool $mayConsumeFertilizer(::BlockSource&) const;
+    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
 
     MCFOLD bool $isLavaBlocking() const;
 

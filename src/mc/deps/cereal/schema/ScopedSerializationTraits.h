@@ -19,30 +19,6 @@ public:
     ::ll::TypedStorage<8, 8, ::cereal::SerializationTraitsSupport*> mOwner;
     ::ll::TypedStorage<1, 1, ::cereal::SerializationTraits>         mTraits;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScopedSerializationTraits();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScopedSerializationTraits(::cereal::SerializationTraitsSupport& owner, ::cereal::SerializationTraits traits);
-
-    MCAPI ~ScopedSerializationTraits();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::SerializationTraitsSupport& owner, ::cereal::SerializationTraits traits);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace cereal

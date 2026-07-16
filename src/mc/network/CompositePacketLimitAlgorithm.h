@@ -30,18 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit CompositePacketLimitAlgorithm(::std::vector<::std::unique_ptr<::IPacketLimitAlgorithm>> algorithms);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::vector<::std::unique_ptr<::IPacketLimitAlgorithm>> algorithms);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::IPacketLimitAlgorithm> $copy() const;

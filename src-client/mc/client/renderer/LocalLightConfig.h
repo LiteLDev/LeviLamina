@@ -4,15 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class LocalPlayer;
-class ResourcePackManager;
-class SemVersionConstant;
 namespace Editor::Services { class ClientDataTransferServiceProvider; }
-namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -59,33 +56,6 @@ public:
         LocalLightConfigSettingsV0& operator=(LocalLightConfigSettingsV0 const&);
         LocalLightConfigSettingsV0(LocalLightConfigSettingsV0 const&);
         LocalLightConfigSettingsV0();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::LocalLightConfig::LocalLightConfigSettingsV0&
-        operator=(::LocalLightConfig::LocalLightConfigSettingsV0&&);
-
-        MCNAPI ~LocalLightConfigSettingsV0();
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCNAPI static ::SemVersionConstant const& VERSION();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -100,28 +70,18 @@ public:
     // prevent constructor by default
     LocalLightConfig& operator=(LocalLightConfig const&);
     LocalLightConfig(LocalLightConfig const&);
+    LocalLightConfig();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalLightConfig() /*override*/;
+    virtual ~LocalLightConfig() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LocalLightConfig();
-
     MCNAPI void finalizeResources();
-
-    MCNAPI void loadDataSync(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager& resourcePackManager);
-
-    MCNAPI ::Puv::LoadResultAny
-    loadFromString(::cereal::ReflectionCtx const& ctx, ::std::string const& pointLightsJson);
-
-    MCNAPI ::std::optional<::std::string> serializeToString(::cereal::ReflectionCtx const& ctx) const;
-
-    MCNAPI void setConfig(::LocalLightConfig::LocalLightConfigSettingsV0 const& other);
     // NOLINTEND
 
 public:
@@ -134,31 +94,5 @@ public:
         ::LocalPlayer&                                         localPlayer,
         ::cereal::ReflectionCtx const&                         ctx
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& LOCAL_LIGHTS_GLOBAL_CONFIG_FILE();
-
-    MCNAPI static ::std::string_view const& PAYLOAD_KEY_V0();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

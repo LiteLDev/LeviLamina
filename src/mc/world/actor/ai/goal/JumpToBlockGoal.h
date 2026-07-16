@@ -12,11 +12,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockSource;
 class ItemDescriptor;
 class Mob;
-class MoveControlComponent;
-class NavigationComponent;
 // clang-format on
 
 class JumpToBlockGoal : public ::BaseGoal {
@@ -102,24 +99,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit JumpToBlockGoal(::Mob& mob);
-
-    MCAPI void _clearGoalState();
-
-    MCAPI bool _findCandidateBlocks(::NavigationComponent& navigation);
-
-    MCAPI bool _findJumpableBlocks(bool useOnlyPreferredBlocksIfAny);
-
-    MCAPI bool _findTargetBlock();
-
-    MCAPI bool _isValidTargetBlock(
-        ::BlockPos const&      blockPos,
-        ::BlockSource const&   region,
-        ::NavigationComponent& navigation
-    ) const;
-
-    MCAPI bool _turnToTarget(::MoveControlComponent const& moveControl) const;
-
-    MCAPI void resetCooldown();
     // NOLINTEND
 
 public:

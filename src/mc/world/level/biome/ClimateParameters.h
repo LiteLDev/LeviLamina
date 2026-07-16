@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/level/biome/climate_utils/Parameter.h"
 
-// auto generated forward declare list
-// clang-format off
-struct TargetPoint;
-// clang-format on
-
 struct ClimateParameters {
 public:
     // member variables
@@ -40,8 +35,6 @@ public:
         ::ClimateUtils::Parameter weirdness,
         float                     offset
     );
-
-    MCAPI int64 fitness(::TargetPoint const& other) const;
     // NOLINTEND
 
 public:

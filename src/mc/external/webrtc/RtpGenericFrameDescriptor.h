@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
+
 namespace webrtc {
 
 class RtpGenericFrameDescriptor {
@@ -29,7 +32,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool AddFrameDependencyDiff(ushort fdiff);
 
-    MCNAPI ::rtc::ArrayView<ushort const> FrameDependenciesDiffs() const;
+    MCNAPI ::webrtc::ArrayView<ushort const, 18446744073709546905> FrameDependenciesDiffs() const;
 
     MCNAPI ushort FrameId() const;
 

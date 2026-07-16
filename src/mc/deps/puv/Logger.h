@@ -55,20 +55,12 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ParseLogEntry(::Puv::Logger::ParseLogEntry const&);
-
-        MCNAPI ~ParseLogEntry();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::Puv::Logger::ParseLogEntry const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -91,20 +83,12 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI UpgradeLogEntry(::Puv::Logger::UpgradeLogEntry const&);
-
-        MCNAPI ~UpgradeLogEntry();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::Puv::Logger::UpgradeLogEntry const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -157,51 +141,12 @@ public:
     // NOLINTBEGIN
     MCNAPI Logger(::Puv::Logger const&);
 
-    MCNAPI explicit Logger(::cereal::ResultCode parseErrorCodes);
-
-    MCNAPI ::entt::iterable_adaptor<
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ParseLogEntry>>>>,
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ParseLogEntry>>>>>
-    getParseLog(::cereal::ResultCode mask) const;
-
-    MCNAPI ::entt::iterable_adaptor<
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::UpgradeLogEntry>>>>,
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::UpgradeLogEntry>>>>>
-    getUpgradeLog(::Puv::Logger::UpgradeResultCode mask) const;
-
-    MCNAPI ::entt::iterable_adaptor<
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ValidationLogEntry>>>>,
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ValidationLogEntry>>>>>
-    getValidationLog(::Puv::Logger::ValidationResultCode mask) const;
-
-    MCNAPI bool hasErrors() const;
-
     MCNAPI ::Puv::Logger& log(::Puv::Logger::ValidationResultCode res, ::std::string msg);
 
     MCNAPI ::Puv::Logger&
     log(::cereal::ResultCode                                                                     res,
         ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>> path,
         ::std::string                                                                            msg);
-
-    MCNAPI ::Puv::Logger&
-    log(::Puv::Logger::UpgradeResultCode                                                         res,
-        ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>> src,
-        ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>> dst,
-        ::std::string                                                                            msg);
-
-    MCNAPI void merge(::Puv::Logger log);
-
-    MCNAPI ::cereal::ResultCode parseErrorCodes() const;
-
-    MCNAPI ::Puv::Logger::UpgradeResultCode upgradeErrorCodes() const;
-
-    MCNAPI ::Puv::Logger::ValidationResultCode validationErrorCodes() const;
 
     MCNAPI ~Logger();
     // NOLINTEND
@@ -218,8 +163,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Puv::Logger const&);
-
-    MCNAPI void* $ctor(::cereal::ResultCode parseErrorCodes);
     // NOLINTEND
 
 public:

@@ -19,23 +19,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI FocusContainerCustomData(::FocusContainerCustomData const&);
-
-    MCAPI FocusContainerCustomData(::std::string const& name, ::std::string const& id);
-
-    MCAPI ~FocusContainerCustomData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCFOLD void* $ctor(::FocusContainerCustomData const&);
-
-    MCFOLD void* $ctor(::std::string const& name, ::std::string const& id);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

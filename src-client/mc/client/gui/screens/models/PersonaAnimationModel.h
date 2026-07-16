@@ -33,18 +33,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string> animationName;
         ::ll::TypedStorage<8, 32, ::std::string> soundEventName;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ReactAnimationData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     using ReactAnimationType = ::persona::ReactAnimationType;
@@ -92,8 +80,6 @@ public:
     MCAPI void playEmote(::persona::PieceOfferWrapper const& emoteCatalogOffer);
 
     MCAPI void playReactAnimations(::persona::PieceType pieceType, bool offer);
-
-    MCAPI void tick(::ui::DirtyFlag& dirtyFlags);
 
     MCAPI void updateAppearanceData(::persona::PieceOfferWrapper const& offer, bool isOwned);
 

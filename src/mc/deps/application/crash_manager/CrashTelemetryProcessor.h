@@ -16,25 +16,19 @@ public:
     // NOLINTBEGIN
     virtual ~CrashTelemetryProcessor() = default;
 
-    virtual void sendCrashTelemetryNow(::std::shared_ptr<::Bedrock::SessionInfo> session) = 0;
+    virtual void sendCrashTelemetryNow(::std::shared_ptr<::Bedrock::SessionInfo>) = 0;
 
-    virtual void addCrashTelemetryToBatch(::std::shared_ptr<::Bedrock::SessionInfo> session) = 0;
+    virtual void addCrashTelemetryToBatch(::std::shared_ptr<::Bedrock::SessionInfo>) = 0;
 
     virtual void sendBatchedCrashTelemetry() = 0;
 
-    virtual void sendCrashStatusTelemetry(::Bedrock::CrashUploadStatus const& status) = 0;
+    virtual void sendCrashStatusTelemetry(::Bedrock::CrashUploadStatus const&) = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

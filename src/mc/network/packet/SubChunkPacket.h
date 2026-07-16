@@ -52,14 +52,6 @@ public:
         ::ll::TypedStorage<1, 1, ::SubChunkPacket::HeightMapDataType>         mRenderHeightMapType;
         ::ll::TypedStorage<1, 256, ::std::array<::std::array<schar, 16>, 16>> mSubchunkRenderHeightMap;
         // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
-
-        MCAPI static schar const& HEIGHT_COLUMN_BELOW_SUBCHUNK();
-        // NOLINTEND
     };
 
     struct SubChunkPosOffset {
@@ -84,22 +76,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        SubChunkPacketData& operator=(SubChunkPacketData const&);
-        SubChunkPacketData();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SubChunkPacketData(::SubChunkPacket::SubChunkPacketData const&);
-
         MCAPI ~SubChunkPacketData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::SubChunkPacket::SubChunkPacketData const&);
         // NOLINTEND
 
     public:
@@ -121,7 +100,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SubChunkPacket() /*override*/;
+    virtual ~SubChunkPacket() /*override*/ = default;
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
@@ -130,28 +109,6 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SubChunkPacket();
-
-    MCAPI SubChunkPacket(::DimensionType const& dimension, ::SubChunkPos const& centerPos, bool cacheEnabled);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::DimensionType const& dimension, ::SubChunkPos const& centerPos, bool cacheEnabled);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

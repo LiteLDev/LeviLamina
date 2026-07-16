@@ -36,7 +36,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getEnchantSlot() const;
+    MCAPI int $getEnchantSlot() const;
 
 
     // NOLINTEND

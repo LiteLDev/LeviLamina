@@ -31,6 +31,7 @@ public:
     // BasicSchema inner types declare
     // clang-format off
     struct DynamicSetterArg;
+    struct EnumMapping;
     struct GetterDescriptor;
     struct MemberDescriptor;
     struct MemberFamily;
@@ -46,6 +47,42 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 64, ::entt::meta_any>                                   mArg;
         ::ll::TypedStorage<8, 8, ::gsl::not_null<::cereal::SerializerContext const*>> mContext;
+        // NOLINTEND
+    };
+
+    struct EnumMapping {
+    public:
+        // EnumMapping inner types declare
+        // clang-format off
+        struct EnumValue;
+        struct View;
+        // clang-format on
+
+        // EnumMapping inner types define
+        struct EnumValue {
+        public:
+            // member variables
+            // NOLINTBEGIN
+            ::ll::TypedStorage<1, 1, bool> mIsDeprecated;
+            // NOLINTEND
+        };
+
+        struct View {
+        public:
+            // member variables
+            // NOLINTBEGIN
+            ::ll::TypedStorage<4, 4, uint> mScope;
+            ::ll::
+                TypedStorage<8, 64, ::std::unordered_map<uint, ::cereal::internal::BasicSchema::EnumMapping::EnumValue>>
+                                                            mValues;
+            ::ll::TypedStorage<4, 8, ::std::optional<uint>> mParent;
+            // NOLINTEND
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 24, ::std::vector<::cereal::internal::BasicSchema::EnumMapping::View>> mViews;
         // NOLINTEND
     };
 
@@ -87,6 +124,7 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                mErrorMessage;
         ::ll::TypedStorage<1, 1, ::cereal::SerializationTraits> mSerializationTraits;
         ::ll::TypedStorage<1, 1, ::cereal::ContextArea>         mAllowedAreas;
+        ::ll::TypedStorage<4, 8, ::std::optional<uint>>         mScope;
         ::ll::TypedStorage<1, 1, bool>                          mIsDeprecatedComponent;
         // NOLINTEND
 
@@ -138,6 +176,7 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::internal::BasicSchema>> mPtr;
         ::ll::TypedStorage<8, 32, ::std::string>                                     mName;
+        ::ll::TypedStorage<8, 24, ::cereal::internal::BasicSchema::EnumMapping>      mEnumMapping;
         ::ll::TypedStorage<
             8,
             72,
@@ -208,9 +247,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::SchemaDescription
-    description(::cereal::internal::ReflectionContext const& ctx, ::cereal::DescriptionConfig config) const;
-
     MCAPI void load(
         ::cereal::SchemaReader&              value,
         ::entt::meta_any&                    any,
@@ -223,24 +259,6 @@ public:
         ::entt::meta_any&                      src,
         ::entt::meta_any&                      dst,
         ::cereal::MetaVisitor&                 visitor) const;
-
-    MCAPI void
-    save(::cereal::SchemaWriter& value, ::entt::meta_any const& any, ::cereal::internal::SaveState const& state) const;
-
-    MCAPI ::cereal::internal::BasicSchema const& unwrap(::entt::meta_any& elem, bool fillIfEmpty) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool forwardDoMap(
-        ::cereal::internal::BasicSchema const& schema,
-        ::entt::meta_any&                      src,
-        ::entt::meta_any&                      dst,
-        ::cereal::MetaVisitor&                 visitor
-    );
-
-    MCAPI static ::cereal::internal::BasicSchema const& lookup(::entt::meta_ctx const& ctx, ::entt::type_info info);
     // NOLINTEND
 
 public:

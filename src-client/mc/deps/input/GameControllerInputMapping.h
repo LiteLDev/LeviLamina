@@ -26,14 +26,13 @@ public:
 
 public:
     // prevent constructor by default
+    GameControllerInputMapping& operator=(GameControllerInputMapping const&);
     GameControllerInputMapping();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI GameControllerInputMapping(::GameControllerInputMapping const&);
-
-    MCAPI ::GameControllerInputMapping& operator=(::GameControllerInputMapping const&);
 
     MCAPI ~GameControllerInputMapping();
     // NOLINTEND

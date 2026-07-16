@@ -19,23 +19,12 @@ public:
     virtual bool fits(::RoomDefinition const&) const /*override*/;
 
     virtual ::std::unique_ptr<::OceanMonumentPiece>
-    create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random) /*override*/;
+    create(int&, ::std::shared_ptr<::RoomDefinition>, ::Random&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $fits(::RoomDefinition const&) const;
 
-    MCAPI ::std::unique_ptr<::OceanMonumentPiece>
-    $create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

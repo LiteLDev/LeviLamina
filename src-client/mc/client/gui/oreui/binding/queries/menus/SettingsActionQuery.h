@@ -7,6 +7,7 @@
 #include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/client/gui/oreui/binding/queries/menus/CommonProperties.h"
 #include "mc/client/gui/oreui/binding/queries/menus/SettingsActionType.h"
+#include "mc/client/gui/oreui/binding/queries/menus/SettingsAsyncProgressInformation.h"
 #include "mc/client/gui/oreui/binding/queries/menus/SettingsConfirmationRequest.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -27,6 +28,7 @@ public:
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                                mActionLabel;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<::OreUI::SettingsActionType>>> mActionType;
     ::ll::TypedStorage<8, 1048, ::std::optional<::OreUI::SettingsConfirmationRequest>>          mConfirmationRequest;
+    ::ll::TypedStorage<8, 648, ::std::optional<::OreUI::SettingsAsyncProgressInformation>>      mAsyncInfo;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mSettingsChangedSubscription;
     // NOLINTEND
 
@@ -37,35 +39,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SettingsActionQuery() /*override*/;
+    virtual ~SettingsActionQuery() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI SettingsActionQuery(::OreUI::ClientDependencies const& client, ::std::string const& id);
-
-    MCAPI void _updateProperties();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::string const& id);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIQuery();
-
-    MCNAPI static void** $vftableForPropertyObject();
     // NOLINTEND
 };
 

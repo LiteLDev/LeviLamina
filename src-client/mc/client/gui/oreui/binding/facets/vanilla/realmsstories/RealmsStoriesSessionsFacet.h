@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/stories/FetchStatus.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ namespace Realms::Stories { class FacetStateManager; }
 
 namespace OreUI {
 
-class RealmsStoriesSessionsFacet : public ::OreUI::FacetBase<::OreUI::RealmsStoriesSessionsFacet> {
+class RealmsStoriesSessionsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsStoriesSessionsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsStoriesSessionsFacet() /*override*/;
+    virtual ~RealmsStoriesSessionsFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -40,8 +40,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsStoriesSessionsFacet(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
-
-    MCAPI ::Realms::Stories::FetchStatus _getFetchSessionsState() const;
 
     MCAPI void _regenerateView();
     // NOLINTEND
@@ -56,12 +54,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

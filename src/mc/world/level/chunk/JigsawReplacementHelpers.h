@@ -5,16 +5,35 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class CompoundTag;
-namespace br::worldgen::processors::JigsawReplacementHelpers { struct Prop; }
+class BlockType;
 // clang-format on
 
 namespace br::worldgen::processors::JigsawReplacementHelpers {
-// functions
+// static variables
 // NOLINTBEGIN
-MCAPI ::Block const* calcFinalBlock(::CompoundTag const& tag);
+#ifdef LL_PLAT_C
+MCAPI ::Block const*& AIR();
+#endif
 
-MCAPI ::std::vector<::br::worldgen::processors::JigsawReplacementHelpers::Prop> parseProps(::std::string_view src);
+#ifdef LL_PLAT_S
+MCAPI ::Block const*& AIR();
+#endif
+
+#ifdef LL_PLAT_C
+MCAPI ::BlockType const*& JIGSAW_BLOCK();
+#endif
+
+#ifdef LL_PLAT_S
+MCAPI ::BlockType const*& JIGSAW_BLOCK();
+#endif
+
+#ifdef LL_PLAT_C
+MCAPI ::BlockType const*& STRUCTURE_VOID();
+#endif
+
+#ifdef LL_PLAT_S
+MCAPI ::BlockType const*& STRUCTURE_VOID();
+#endif
 // NOLINTEND
 
 } // namespace br::worldgen::processors::JigsawReplacementHelpers

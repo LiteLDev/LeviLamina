@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ComplexItem.h"
-#include "mc/world/level/saveddata/maps/MapItemSavedData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,10 +28,6 @@ namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class MapItem : public ::ComplexItem {
-public:
-    // prevent constructor by default
-    MapItem();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -66,23 +61,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapItem(::std::string const& itemName, short itemId);
-
     MCAPI void blockTick(::ItemStackBase const& item, ::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void updateMap(::Level& level, ::Actor& player, ::MapItemSavedData& map) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _scheduleMapChunkRendering(
-        ::Dimension&                    dimension,
-        ::MapItemSavedData const&       original,
-        ::MapItemSavedData::ChunkBounds bb,
-        ::std::shared_ptr<bool>         chunksRefCount
-    );
-
     MCAPI static bool doesDisplayPlayerMarkers(::ItemStackBase const& item);
 
     MCAPI static ::ActorUniqueID getMapId(::CompoundTag const* tag);
@@ -123,15 +107,7 @@ public:
 
     MCAPI static ::std::string const& TAG_MAP_SCALE();
 
-    MCAPI static ::std::string const& TAG_MAP_SCALING();
-
     MCAPI static ::std::string const& TAG_MAP_UUID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& itemName, short itemId);
     // NOLINTEND
 
 public:

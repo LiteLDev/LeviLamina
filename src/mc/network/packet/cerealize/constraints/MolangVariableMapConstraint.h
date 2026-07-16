@@ -15,16 +15,22 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 class MolangVariableMapConstraint : public ::cereal::ConstraintHandle<::MolangVariableMapConstraint> {
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
-
     MCAPI void validateValue(::Json::Value const& parsedJson, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
+
     // NOLINTEND
 };

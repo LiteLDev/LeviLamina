@@ -20,16 +20,4 @@ public:
     ::ll::TypedStorage<1, 1, bool const>                                    mIsPowered;
     ::ll::TypedStorage<8, 24, ::std::vector<::WeakEntityRef> const>         mSources;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~TripWireTripEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

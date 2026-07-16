@@ -50,17 +50,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructureSet();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureSet(
-        ::std::vector<::br::worldgen::StructureSet::Entry> entries,
-        ::br::worldgen::StructurePlacement                 placement
-    );
-
     MCAPI bool contains(::HashedString type) const;
     // NOLINTEND
 
@@ -69,13 +60,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::shared_ptr<::br::worldgen::StructureSet>
     create(::std::shared_ptr<::br::worldgen::Structure const> structure, ::br::worldgen::StructurePlacement placement);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::vector<::br::worldgen::StructureSet::Entry> entries, ::br::worldgen::StructurePlacement placement);
     // NOLINTEND
 };
 

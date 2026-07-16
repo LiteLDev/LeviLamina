@@ -14,29 +14,6 @@ public:
     ::ll::TypedStorage<1, 1, ::AbilitiesIndex> mAbilitiesIndex;
     ::ll::TypedStorage<1, 1, bool>             mIsEnabled;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerAbilityBindings();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PlayerAbilityBindings(::AbilitiesIndex abilitiesIndex, bool isEnabled);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::pair<::AbilitiesIndex, bool>>
-    toPlayerAbilitiesPairsVector(::std::vector<::OreUI::PlayerAbilityBindings> const& bindingsList);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::AbilitiesIndex abilitiesIndex, bool isEnabled);
-    // NOLINTEND
 };
 
 } // namespace OreUI

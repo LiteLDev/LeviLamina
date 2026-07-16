@@ -19,6 +19,7 @@ public:
     ::ll::TypedStorage<4, 8, ::FloatRange>     mDamage;
     ::ll::TypedStorage<8, 32, ::std::string>   mEffectName;
     ::ll::TypedStorage<4, 4, ::EffectDuration> mEffectDuration;
+    ::ll::TypedStorage<4, 4, int>              mEffectAmplifier;
     // NOLINTEND
 
 public:
@@ -37,11 +38,5 @@ public:
     MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

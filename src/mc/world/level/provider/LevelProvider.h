@@ -28,8 +28,6 @@ MCNAPI void registerExternalDataComponent(
 MCNAPI void registerLevelGlobalComponents(::EntityRegistry& registry, ::ILevel& level);
 
 MCNAPI void removeGlobalComponents(::EntityRegistry& registry);
-
-MCNAPI void unregisterLevelGlobalComponents(::EntityRegistry& registry);
 // NOLINTEND
 
 } // namespace LevelProvider

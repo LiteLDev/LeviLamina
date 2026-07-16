@@ -13,8 +13,6 @@ namespace SharedTypes::v1_21_10 {
 MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindCoordinateEvaluationOrder(::cereal::ReflectionCtx& ctx);
-
-MCAPI void bindItemComponentTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace SharedTypes::v1_21_10

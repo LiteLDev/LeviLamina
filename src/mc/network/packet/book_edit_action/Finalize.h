@@ -15,18 +15,13 @@ public:
 
 public:
     // prevent constructor by default
+    Finalize& operator=(Finalize const&);
     Finalize();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI Finalize(::BookEditAction::Finalize const&);
-
-    MCFOLD ::BookEditAction::Finalize& operator=(::BookEditAction::Finalize&&);
-
-    MCFOLD ::BookEditAction::Finalize& operator=(::BookEditAction::Finalize const&);
-
-    MCFOLD bool operator==(::BookEditAction::Finalize const&) const;
 
     MCAPI ~Finalize();
     // NOLINTEND

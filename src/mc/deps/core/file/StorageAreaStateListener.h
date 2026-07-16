@@ -26,39 +26,22 @@ public:
     // NOLINTBEGIN
     virtual ~StorageAreaStateListener();
 
-#ifdef LL_PLAT_S
     virtual void
     onExtendDiskSpace(bool const, ::std::weak_ptr<::Core::FileStorageArea> const&, uint64, ::std::function<void()>);
-#else // LL_PLAT_C
-    virtual void onExtendDiskSpace(
-        bool const                                      bSet,
-        ::std::weak_ptr<::Core::FileStorageArea> const& storageAreaWeakPtr,
-        uint64                                          freeSpace,
-        ::std::function<void()>                         onHandledEventCallback
-    );
-#endif
 
-    virtual void onLowDiskSpace(bool const bSet);
+    virtual void onLowDiskSpace(bool const);
 
-    virtual void onOutOfDiskSpace(bool const bSet);
+    virtual void onOutOfDiskSpace(bool const);
 
-    virtual void onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
+    virtual void onCriticalDiskError(bool const, ::Core::LevelStorageState const&);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StorageAreaStateListener();
-
     MCAPI void initListener(::std::shared_ptr<::Core::FileStorageArea> fileStorageArea);
 
     MCAPI void removeListener();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -73,11 +56,11 @@ public:
     MCAPI void
     $onExtendDiskSpace(bool const, ::std::weak_ptr<::Core::FileStorageArea> const&, uint64, ::std::function<void()>);
 
-    MCFOLD void $onLowDiskSpace(bool const bSet);
+    MCFOLD void $onLowDiskSpace(bool const);
 
-    MCFOLD void $onOutOfDiskSpace(bool const bSet);
+    MCFOLD void $onOutOfDiskSpace(bool const);
 
-    MCFOLD void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
+    MCFOLD void $onCriticalDiskError(bool const, ::Core::LevelStorageState const&);
 
 
     // NOLINTEND

@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/world/actor/bhave/definition/BehaviorDefinition.h"
 
-class ConsumeItemDefinition : public ::BehaviorDefinition {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
-};
+class ConsumeItemDefinition : public ::BehaviorDefinition {};

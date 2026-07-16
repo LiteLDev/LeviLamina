@@ -67,14 +67,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftServiceKeyManager() /*override*/;
+    virtual ~MinecraftServiceKeyManager() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit MinecraftServiceKeyManager(::std::unique_ptr<::IMinecraftServiceKeySource> keySource);
-
     MCNAPI MinecraftServiceKeyManager(
         ::std::unique_ptr<::IMinecraftServiceKeySource>                                                     keySource,
         ::std::function<int64()>                                                                            timeFn,
@@ -85,18 +83,7 @@ public:
             ::std::unordered_map<::std::string, ::std::string>>>(::TaskGroup&, ::std::string const&, bool)> keysFn
     );
 
-#ifdef LL_PLAT_S
-    MCNAPI void _blockingInitRecursive(
-        ::MinecraftServiceKeyInfo                                                     keyFetchResult,
-        ::std::shared_ptr<::MinecraftServiceKeyManager::BlockingInitRecursiveContext> context
-    );
-#endif
-
-    MCNAPI ::Bedrock::Threading::Async<::MinecraftServiceKeyInfo> _fastFetch(bool highPriority);
-
     MCNAPI ::Bedrock::Threading::Async<::MinecraftServiceKeyInfo> _fullFetch(bool highPriority);
-
-    MCNAPI bool _saveMetadata(::std::optional<::MinecraftServiceKeysMetadata> const& metadata);
 
     MCNAPI void _updateTrustedKeys();
 
@@ -104,19 +91,11 @@ public:
     MCNAPI ::brstd::future<bool> blockingInit();
 #endif
 
-    MCNAPI ::std::string const& getIssuer() const;
-
     MCNAPI ::std::string getKeyFromKeyId(::std::string const& kid) const;
 
     MCNAPI ::MinecraftServiceKeyInfo getKeyInfo() const;
 
     MCNAPI ::Bedrock::Threading::Async<::MinecraftServiceKeyInfo> getKeysIfWeDontAlreadyHaveThem();
-
-    MCNAPI int64 getRoughTimeCorrectionSeconds() const;
-
-    MCNAPI bool hasRetrievedTrustedKeys() const;
-
-    MCNAPI void init();
 
     MCNAPI bool onTick();
 
@@ -126,8 +105,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::unique_ptr<::IMinecraftServiceKeySource> keySource);
-
     MCNAPI void* $ctor(
         ::std::unique_ptr<::IMinecraftServiceKeySource>                                                     keySource,
         ::std::function<int64()>                                                                            timeFn,
@@ -137,17 +114,5 @@ public:
         ::std::function<::Bedrock::Threading::Async<::std::optional<
             ::std::unordered_map<::std::string, ::std::string>>>(::TaskGroup&, ::std::string const&, bool)> keysFn
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

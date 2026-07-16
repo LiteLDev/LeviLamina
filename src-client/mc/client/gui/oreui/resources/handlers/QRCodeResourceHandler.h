@@ -14,7 +14,6 @@ namespace Gameface { class ResourceStreamResponse; }
 namespace Gameface { class TemporaryTextureHolder; }
 namespace Gameface { struct ResourceRequest; }
 namespace OreUI { class ResourceAllowList; }
-namespace mce { class Color; }
 // clang-format on
 
 namespace OreUI {
@@ -41,37 +40,12 @@ public:
     virtual ::Gameface::ResourceHandlerStatus
     onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
 
-    virtual ::Gameface::ResourceHandlerStatus
-    onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&) /*override*/;
+    virtual ::Gameface::ResourceHandlerStatus onResourceStreamRequest(
+        ::Gameface::ResourceRequest const& request,
+        ::Gameface::ResourceStreamResponse&
+    ) /*override*/;
 
     virtual void update() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI QRCodeResourceHandler(
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::ResourceAllowList> const& resourceAllowList,
-        ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::optional<::mce::Color> _getColorFromQueryParameter(
-        ::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& queryParameters,
-        ::std::string const&                                                      parameterName
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::ResourceAllowList> const& resourceAllowList,
-        ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder
-    );
     // NOLINTEND
 
 public:
@@ -81,7 +55,7 @@ public:
     $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
     MCFOLD ::Gameface::ResourceHandlerStatus
-    $onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&);
+    $onResourceStreamRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceStreamResponse&);
 
     MCFOLD void $update();
     // NOLINTEND

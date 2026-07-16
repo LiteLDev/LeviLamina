@@ -6,7 +6,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,7 +15,6 @@ class IWorldRegistriesProvider;
 class LinkedAssetValidator;
 class MinEngineVersion;
 class ResourcePackManager;
-namespace Json { class Value; }
 // clang-format on
 
 class FeatureRegistry {
@@ -46,8 +44,6 @@ public:
         MCAPI FeatureBinaryJsonFormat(::FeatureRegistry::FeatureBinaryJsonFormat const&);
 
         MCFOLD ::FeatureRegistry::FeatureBinaryJsonFormat& operator=(::FeatureRegistry::FeatureBinaryJsonFormat&&);
-
-        MCAPI bool operator==(::FeatureRegistry::FeatureBinaryJsonFormat const& rhs) const;
 
         MCAPI ~FeatureBinaryJsonFormat();
         // NOLINTEND
@@ -101,22 +97,6 @@ public:
     );
 #endif
 
-    MCAPI bool _setupFeature(
-        ::IWorldRegistriesProvider&  worldRegistries,
-        bool                         isBasePack,
-        ::ResourcePackManager const& rpm,
-        ::std::string const&         featureName,
-        ::Json::Value const&         jsonDefinition,
-        ::MinEngineVersion const&    minEngineVersion,
-        bool                         serializeFeatures
-    );
-
-    MCAPI void forEachFeature(::brstd::function_ref<void(::HashedString const&, ::WeakRef<::IFeature>)> callback) const;
-
-    MCAPI ::std::vector<::std::string> getLargeFeaturePasses() const;
-
-    MCAPI ::std::vector<::std::string> getSmallFeaturePasses() const;
-
     MCAPI bool isFeaturePassDefined(::std::string const& featurePass) const;
 
     MCAPI void loadFromDefinitions(
@@ -135,24 +115,11 @@ public:
 
     MCAPI ::WeakRef<::IFeature> lookupByName(::std::string const& name) const;
 
-    MCAPI ::WeakRef<::IFeature> lookupOrReserveFeature(::std::string const& featureName);
-
     MCAPI ::WeakRef<::IFeature> reserveFeature(::std::string const& name);
-
-    MCAPI ::std::string const& reverseLookupString(::IFeature const& feature) const;
 
     MCAPI void setLargeFeaturePasses(::std::vector<::std::string> largeFeaturePasses);
 
     MCAPI void setSmallFeaturePasses(::std::vector<::std::string> smallFeaturePasses);
-
-    MCAPI ~FeatureRegistry();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::string
-    _featureIdentifierFromInput(::std::string_view filePath, ::Json::Value const& jsonDefinition);
     // NOLINTEND
 
 public:
@@ -187,11 +154,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

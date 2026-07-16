@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace webrtc { struct RtpStreamConfig; }
+// clang-format on
+
 namespace webrtc {
 
 struct RtpConfig {
@@ -81,6 +86,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk342802;
     ::ll::UntypedStorage<4, 4>  mUnkf5e267;
     ::ll::UntypedStorage<1, 1>  mUnk9b0d30;
+    ::ll::UntypedStorage<8, 24> mUnk21506b;
     ::ll::UntypedStorage<1, 1>  mUnk44ee85;
     ::ll::UntypedStorage<4, 4>  mUnkdc0e80;
     ::ll::UntypedStorage<4, 12> mUnk7e6fb9;
@@ -99,6 +105,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::optional<uint> GetRtxSsrcAssociatedWithMediaSsrc(uint media_ssrc) const;
+
+    MCNAPI ::webrtc::RtpStreamConfig GetStreamConfig(uint64 index) const;
 
     MCNAPI RtpConfig(::webrtc::RtpConfig const&);
 

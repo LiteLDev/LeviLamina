@@ -15,7 +15,6 @@ class IConstBlockSource;
 class LocalSpatialEntityFetcher;
 class StrictEntityContext;
 struct AABBShapeComponent;
-struct ActorUniqueID;
 struct CollidableMobFlagComponent;
 struct CollisionShapes;
 struct FallingBlockFlagComponent;
@@ -41,7 +40,5 @@ public:
         ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> fallingBlockView,
         ::CollisionShapes&                                                     collisionShapes
     );
-
-    MCNAPI static ::StrictEntityContext tryFetchEntity(::LocalSpatialEntityFetcher& fetcher, ::ActorUniqueID const& id);
     // NOLINTEND
 };

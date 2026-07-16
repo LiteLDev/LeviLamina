@@ -4,22 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class BlockActorDataPacket;
 class BlockSource;
-class BlockVolume;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class SaveContext;
-class WorldGenerator;
 // clang-format on
 
-class EndGatewayBlockActor : public ::BlockActor {
+class EndGatewayBlockActor : public ::VanillaBlockActor {
 public:
     // member variables
     // NOLINTBEGIN
@@ -36,87 +33,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& context) const /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual void onChanged(::BlockSource& region) /*override*/;
+    virtual void onChanged(::BlockSource&) /*override*/;
 
     virtual bool hasAlphaLayer() const /*override*/;
 
-    virtual void triggerEvent(int b0, int b1) /*override*/;
+    virtual void triggerEvent(int, int) /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI float getCooldownPercentage() const;
-#endif
-
-    MCAPI int getParticleAmount(::BlockSource& region, ::BlockPos const& pos) const;
-
-#ifdef LL_PLAT_C
-    MCAPI float getSpawnPercentage() const;
-
-    MCAPI bool isCoolingDown() const;
-
-    MCAPI bool isSpawning() const;
-#endif
-
-    MCAPI void setExitPosition(::BlockPos const& exitPosition);
-
-    MCAPI void teleportEntity(::Actor& entity);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static int _getHighestSection(::WorldGenerator& endGenerator, ::BlockVolume& box, ::BlockPos const& pos);
-
-    MCAPI static bool _isSafeToTeleport(::BlockSource const& region, ::BlockPos const& pos);
-
-    MCAPI static ::BlockPos findExitPortal(::WorldGenerator& endGenerator, ::BlockPos const& origin);
-
-    MCAPI static ::BlockPos
-    findTallestBlock(::BlockSource& region, ::BlockPos const& around, int dist, bool allowBedrock);
-
-    MCAPI static ::BlockPos findValidSpawnAround(
-        ::BlockSource&    region,
-        ::BlockPos const& around,
-        bool              searchForEndStoneOnly,
-        int               searchRadius,
-        bool              searchAboveBlock
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
-
-    MCAPI void $tick(::BlockSource& region);
-
-    MCFOLD void $onChanged(::BlockSource& region);
-
-    MCFOLD bool $hasAlphaLayer() const;
-
-    MCAPI void $triggerEvent(int b0, int b1);
-
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

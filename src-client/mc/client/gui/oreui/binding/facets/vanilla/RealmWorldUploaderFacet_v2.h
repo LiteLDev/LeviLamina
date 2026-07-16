@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/client/gui/oreui/binding/FacetTaskState.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/realms/UploadToRealmsError.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -17,7 +16,7 @@ namespace Realms { class RealmsUploader; }
 
 namespace OreUI {
 
-class RealmWorldUploaderFacet_v2 : public ::OreUI::FacetBase<::OreUI::RealmWorldUploaderFacet_v2> {
+class RealmWorldUploaderFacet_v2 : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmWorldUploaderFacet_v2> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -44,14 +43,6 @@ public:
         ::std::shared_ptr<::Realms::RealmsUploader> realmsUploader,
         ::std::shared_ptr<::Realms::RealmsList>     realmsList
     );
-
-    MCAPI void clearUploadWorldToRealmTaskState();
-
-    MCFOLD ::std::optional<::Realms::UploadToRealmsError> const& getUploadWorldToRealmError() const;
-
-    MCFOLD ::OreUI::FacetTaskState getUploadWorldToRealmTaskState() const;
-
-    MCAPI void uploadWorldToRealm(::std::string const& realmID, ::std::string const& worldID);
     // NOLINTEND
 
 public:
@@ -72,13 +63,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

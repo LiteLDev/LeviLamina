@@ -32,8 +32,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::SubscribedObjectives& getPlayerSubscriptions(::ScoreboardId const& id, ::Player const& player);
-
-    MCAPI void removePlayerSubscriptions(::ScoreboardId const& id);
     // NOLINTEND
 
 public:
@@ -42,11 +40,5 @@ public:
     MCAPI ::EventResult $onScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

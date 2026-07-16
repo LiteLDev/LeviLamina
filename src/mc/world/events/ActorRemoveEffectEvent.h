@@ -13,16 +13,4 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakEntityRef>            mEntity;
     ::ll::TypedStorage<8, 136, ::MobEffectInstance const> mMobEffect;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorRemoveEffectEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

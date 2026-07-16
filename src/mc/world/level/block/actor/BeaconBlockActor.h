@@ -4,8 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/Container.h"
-#include "mc/world/level/block/BlockColor.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +12,6 @@ class Actor;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
-class BlockType;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
@@ -25,7 +23,7 @@ class Vec3;
 struct BeaconBeamSection;
 // clang-format on
 
-class BeaconBlockActor : public ::BlockActor, public ::Container {
+class BeaconBlockActor : public ::VanillaBlockActor, public ::Container {
 public:
     // BeaconBlockActor inner types define
     using BeaconBeamSections = ::std::vector<::BeaconBeamSection>;
@@ -56,13 +54,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BeaconBlockActor() /*override*/;
+    virtual ~BeaconBlockActor() /*override*/ = default;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& context) const /*override*/;
 
-    virtual void load(::ILevel& tag, ::CompoundTag const&, ::DataLoadHelper&) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper) /*override*/;
 
     virtual bool hasAlphaLayer() const /*override*/;
 
@@ -86,8 +84,7 @@ public:
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    virtual void
-    serverInitItemStackIds(int onNetIdChanged, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
+    virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
 
     virtual ::Container* getContainer() /*override*/;
 
@@ -95,7 +92,7 @@ public:
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&) /*override*/;
     // NOLINTEND
 
 public:
@@ -103,38 +100,15 @@ public:
     // NOLINTBEGIN
     MCAPI BeaconBlockActor(::BlockPos const& pos, bool permanentlyRendered);
 
-    MCAPI void _applyEffects(::BlockSource& region);
-
     MCAPI int _getEffectTier(int effectId) const;
 
-    MCAPI void
-    _notifyBeamSectionsChange(::BlockSource& region, ::std::vector<::BeaconBeamSection> const& oldBeamSections);
-
-    MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const&) const;
-
-    MCAPI void checkAchievement(::BlockSource& region);
+#ifdef LL_PLAT_C
+    MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCAPI void checkShape(::BlockSource& region);
 
-#ifdef LL_PLAT_C
-    MCAPI bool clientRenderingNeedsUpdate() const;
-#endif
-
     MCAPI void generateBeamSections(::BlockSource& region);
-
-#ifdef LL_PLAT_C
-    MCAPI ::CompoundTag getBeaconData(::SaveContext const& saveContext);
-
-    MCFOLD ::std::vector<::MobEffect*> const& getEffects() const;
-
-    MCAPI int getMaxSelections() const;
 #endif
-
-    MCAPI bool isEffectAvailable(int effectId) const;
-
-    MCAPI bool isSecondaryAvailable() const;
-
-    MCAPI bool setPrimaryEffect(int effectId);
 
     MCAPI bool setSecondaryEffect(int effectId);
     // NOLINTEND
@@ -142,8 +116,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockColor _getMediumColor(::BlockType const& medium);
-
     MCAPI static bool isPaymentItem(::ItemDescriptor const& pItem);
     // NOLINTEND
 
@@ -154,60 +126,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
-
-    MCAPI void $load(::ILevel& tag, ::CompoundTag const&, ::DataLoadHelper&);
-
-    MCFOLD bool $hasAlphaLayer() const;
-
-    MCAPI bool $isPermanentlyRendered() const;
-
-    MCAPI bool $isWithinRenderDistance(::Vec3 const& cameraPosition) const;
-
-    MCFOLD ::ItemStack const& $getItem(int) const;
-
-    MCFOLD void $setItem(int, ::ItemStack const&);
-
-    MCFOLD void $removeItem(int slot, int count);
-
-    MCAPI ::std::string $getName() const;
-
-    MCFOLD int $getContainerSize() const;
-
-    MCFOLD int $getMaxStackSize() const;
-
-    MCFOLD void $startOpen(::Actor&);
-
-    MCFOLD void $stopOpen(::Actor& actor);
-
-    MCFOLD void $serverInitItemStackIds(int onNetIdChanged, int, ::std::function<void(int, ::ItemStack const&)>);
-
-    MCFOLD ::Container* $getContainer();
-
-    MCFOLD ::Container const* $getContainer() const;
-
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
-
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockActor();
-
-    MCAPI static void** $vftableForContainer();
     // NOLINTEND
 };

@@ -21,10 +21,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class ChorusPlantBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    ChorusPlantBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -34,17 +30,18 @@ public:
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const&             region,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&,
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& region, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const
+    getOutline(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
     virtual bool isLavaBlocking() const /*override*/;
@@ -55,27 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChorusPlantBlock(::std::string const& nameId, int id);
-
-    MCAPI ::AABB const& _getShape(::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool connectsTo(::IConstBlockSource const& region, ::BlockPos const&, ::BlockPos const& otherPos) const;
-#endif
-
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& PLANT_ITEM_DIMENSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -87,17 +64,17 @@ public:
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const&             region,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&,
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCAPI ::AABB const&
-    $getOutline(::Block const& region, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const;
+    $getOutline(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
     MCFOLD bool $isLavaBlocking() const;
 

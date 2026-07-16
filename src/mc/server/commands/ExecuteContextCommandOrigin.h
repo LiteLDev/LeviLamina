@@ -20,7 +20,6 @@ class CommandPositionFloat;
 class CompoundTag;
 class Dimension;
 class Level;
-class ServerLevel;
 // clang-format on
 
 class ExecuteContextCommandOrigin : public ::CommandOrigin {
@@ -80,67 +79,13 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ExecuteContextCommandOrigin(
-        ::ActorUniqueID                      executionEntity,
-        ::Vec3 const&                        position,
-        ::std::optional<::Vec2> const&       rotation,
-        ::ActorUniqueID                      rotationActor,
-        ::ActorUniqueID                      positionActor,
-        ::SharedTypes::Legacy::ActorLocation anchor,
-        ::DimensionType                      dimensionType,
-        ::Level&                             level,
-        int                                  version
-    );
-
-    MCAPI ::Actor const* getPositionEntity();
-
-    MCAPI void setDimension(::Dimension const& dimension);
-
-    MCAPI void setDimension(::DimensionType const& dimensionType);
-
-    MCAPI void setExecutionEntity(::Actor const& entity);
-
-    MCAPI void setPosition(::Vec3 const& position);
-
-    MCAPI void setPositionEntity(::Actor const& entity);
-
-    MCAPI void setRotation(::Vec2 const& rotation);
-
-    MCAPI void setRotationEntity(::Actor const& entity);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::ExecuteContextCommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorUniqueID                      executionEntity,
-        ::Vec3 const&                        position,
-        ::std::optional<::Vec2> const&       rotation,
-        ::ActorUniqueID                      rotationActor,
-        ::ActorUniqueID                      positionActor,
-        ::SharedTypes::Legacy::ActorLocation anchor,
-        ::DimensionType                      dimensionType,
-        ::Level&                             level,
-        int                                  version
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::string const& $getRequestId() const;
 
     MCAPI ::std::string $getName() const;
 
-    MCFOLD ::BlockPos $getBlockPosition() const;
+    MCAPI ::BlockPos $getBlockPosition() const;
 
     MCAPI ::Vec3 $getWorldPosition() const;
 

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/util/Reference.h"
-#include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/TintMethod.h"
 #include "mc/world/level/block/components/BlockMaterialInstancePackedBools.h"
@@ -27,31 +26,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockMaterialInstance(BlockMaterialInstance const&);
-    BlockMaterialInstance();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance&&);
-
-    MCAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance const&);
-
-    MCAPI ::std::string renderLayerToString(::std::string const& defaultValue) const;
-
     MCAPI ~BlockMaterialInstance();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::BlockRenderLayer> const& renderLayerNameBiMap();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

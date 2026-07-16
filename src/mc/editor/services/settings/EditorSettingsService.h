@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/ThemeSettingsColorKey.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorSettingsServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 
@@ -119,40 +119,24 @@ public:
     virtual ::Bedrock::PubSub::Subscription
     listenForThemeDeleted(::std::function<void(::std::string const&)> func) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void _handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const& payload);
-#else // LL_PLAT_C
-    virtual void _handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const& props);
-#endif
+    virtual void _handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const&);
 
-#ifdef LL_PLAT_S
-    virtual void
-    _handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& payload);
-#else // LL_PLAT_C
-    virtual void _handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& props);
-#endif
+    virtual void _handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const&);
 
-#ifdef LL_PLAT_S
-    virtual void _handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& payload);
-#else // LL_PLAT_C
-    virtual void _handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& props);
-#endif
+    virtual void _handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const&);
 
-    virtual void _handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload);
-
-    virtual void _handleThemeSettingsCurrentThemeChangedPayload(
-        ::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const& payload
-    );
+    virtual void _handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const&);
 
     virtual void
-    _handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload);
-
-    virtual void _handleThemeSettingsThemeColorUpdatedPayload(
-        ::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload
-    );
+    _handleThemeSettingsCurrentThemeChangedPayload(::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const&);
 
     virtual void
-    _handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload);
+    _handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const&);
+
+    virtual void
+    _handleThemeSettingsThemeColorUpdatedPayload(::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const&);
+
+    virtual void _handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const&);
     // NOLINTEND
 
 public:
@@ -223,38 +207,7 @@ public:
 
     MCNAPI ::Bedrock::PubSub::Subscription $listenForThemeDeleted(::std::function<void(::std::string const&)> func);
 
-    MCNAPI void $_handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const& payload);
 
-    MCNAPI void
-    $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& payload);
-
-    MCNAPI void $_handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& payload);
-
-    MCNAPI void $_handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload);
-
-    MCNAPI void $_handleThemeSettingsCurrentThemeChangedPayload(
-        ::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const& payload
-    );
-
-    MCNAPI void
-    $_handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload);
-
-    MCNAPI void $_handleThemeSettingsThemeColorUpdatedPayload(
-        ::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload
-    );
-
-    MCNAPI void
-    $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEditorSettingsServiceProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

@@ -11,6 +11,7 @@
 class ActorMigratedDefinitionFactory;
 class BaseGameVersion;
 class ClientInputMappingFactory;
+class ClientLevel;
 class CommandRegistry;
 class Experiments;
 class GameModuleDocumentation;
@@ -18,7 +19,6 @@ class IClientInstance;
 class IResourcePackRepository;
 class ItemRegistryRef;
 class Level;
-class MultiPlayerLevel;
 class ResourcePackStack;
 class ServerboundDiagnosticsPacket;
 // clang-format on
@@ -37,71 +37,53 @@ public:
     // NOLINTBEGIN
     virtual ~GameModuleClient() /*override*/ = default;
 
-    virtual void init(::IClientInstance& client, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level) = 0;
+    virtual void init(::IClientInstance&, ::Bedrock::NotNullNonOwnerPtr<::Level> const&) = 0;
 
     virtual void configureLevel(
-        ::IClientInstance&                                       client,
-        ::Bedrock::NotNullNonOwnerPtr<::MultiPlayerLevel> const& level,
-        ::Experiments const&                                     experiments,
-        ::BaseGameVersion const&                                 baseGameVersion
+        ::IClientInstance&,
+        ::Bedrock::NotNullNonOwnerPtr<::ClientLevel> const&,
+        ::Experiments const&,
+        ::BaseGameVersion const&
     ) = 0;
 
-    virtual void deconfigureLevel(::IClientInstance& client) = 0;
+    virtual void deconfigureLevel(::IClientInstance&) = 0;
 
     virtual void initializeResourceStack(
-        ::Experiments const*                                            experiments,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
-        ::ResourcePackStack&                                            stack,
-        ::BaseGameVersion const&                                        baseGameVersion,
-        ::GameModuleClient::ResourceLoadingPhase                        loadingPhase,
-        bool                                                            includeEditorPacks
+        ::Experiments const*,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
+        ::ResourcePackStack&,
+        ::BaseGameVersion const&,
+        ::GameModuleClient::ResourceLoadingPhase,
+        bool
     ) = 0;
 
     virtual void configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const) = 0;
 
     virtual void tick() = 0;
 
-    virtual void setupStandardCommands(::CommandRegistry& commandRegistry) = 0;
+    virtual void setupStandardCommands(::CommandRegistry&) = 0;
 
     virtual void setupStartMenuScreenCommands(::CommandRegistry&) = 0;
 
     virtual void setupUI() = 0;
 
-    virtual void registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client) = 0;
+    virtual void registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&) = 0;
 
-    virtual ::std::unique_ptr<::ClientInputMappingFactory> createInputMappingFactory(::IClientInstance& client) = 0;
+    virtual ::std::unique_ptr<::ClientInputMappingFactory> createInputMappingFactory(::IClientInstance&) = 0;
 
     virtual ::std::shared_ptr<void> registerVanillaGoalsForUpgrader(
-        ::Experiments const&              experiments,
-        ::BaseGameVersion const&          baseGameVersion,
-        ::ItemRegistryRef const           itemRegistryRef,
-        ::ActorMigratedDefinitionFactory& migratedFactory
+        ::Experiments const&,
+        ::BaseGameVersion const&,
+        ::ItemRegistryRef const,
+        ::ActorMigratedDefinitionFactory&
     ) const = 0;
 
     virtual ::ServerboundDiagnosticsPacket createServerboundDiagnosticsPacket() = 0;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GameModuleClient();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/puv/LoadResult.h"
 #include "mc/deps/resource_processing/category/CategoryLoader.h"
 #include "mc/platform/threading/Mutex.h"
 
@@ -13,16 +12,11 @@
 // clang-format off
 class IMinecraftEventing;
 class LinkedAssetValidator;
-class MinEngineVersion;
-class PackStats;
 class ParticleEffectInfo;
 class ResourceLoadManager;
 class ResourcePackManager;
-namespace ParticleSystem { class ParticleEffect; }
 namespace ParticleSystem { class ParticleEffectComponentRegistry; }
 namespace ParticleSystem { struct ParticleEffectLoaderTraits; }
-namespace SharedTypes::v1_20_80 { struct ParticleEffectData; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ParticleEffectGroup {
@@ -50,24 +44,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleEffectGroup(::cereal::ReflectionCtx& ctx, ::IMinecraftEventing& eventing);
-
-    MCAPI bool _createParticleEffectInfo(
-        ::HashedString const&                               name,
-        ::std::shared_ptr<::ParticleSystem::ParticleEffect> candidateParticle,
-        ::std::string const&                                containerName
-    );
-
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_20_80::ParticleEffectData> _loadParticleEffect(
-        ::std::string const&                                     fileWithExtension,
-        ::std::string const&                                     containerName,
-        ::std::string&&                                          fileData,
-        ::MinEngineVersion const&                                minEngineVersion,
-        ::ParticleSystem::ParticleEffectComponentRegistry const& particleComponentRegistry,
-        ::PackStats&                                             stats,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>       validator
-    );
-
     MCAPI ::std::shared_ptr<::ParticleEffectInfo> getParticleEffectInfo(::HashedString const& name);
 
     MCAPI void loadParticleEffects(
@@ -78,19 +54,5 @@ public:
     );
 
     MCAPI void unloadParticleEffects();
-
-    MCAPI ~ParticleEffectGroup();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx& ctx, ::IMinecraftEventing& eventing);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/string/BasicStackString.h"
-#include "mc/deps/resource_processing/PreloadState.h"
 #include "mc/platform/Result.h"
 #include "mc/resources/PackAccessAssetGenerationResult.h"
 #include "mc/resources/PackAccessStrategyType.h"
@@ -13,14 +12,12 @@
 // auto generated forward declare list
 // clang-format off
 class ContentIdentity;
-class PackAssetSet;
 class ResourceLocation;
 struct StreamableAssetSource;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Bedrock::Resources::Archive { class Reader; }
 namespace Core { class Path; }
 namespace Core { class PathView; }
-namespace Json { class Value; }
 // clang-format on
 
 class PackAccessStrategy {
@@ -104,29 +101,6 @@ public:
     // NOLINTBEGIN
     MCNAPI PackAccessStrategy();
 
-    MCNAPI explicit PackAccessStrategy(::std::unique_ptr<::PackAssetSet>&& assetSet);
-
-    MCNAPI void _clearAssetSet();
-
-    MCNAPI void _forEachInAssetSet(::std::function<void(::Core::Path const&)> callback) const;
-
-    MCNAPI ::std::string const* const _getDecryptionKey(::Core::Path const& path) const;
-
-    MCNAPI ::Bedrock::Resources::PreloadState
-    _getPreloaded(::Core::Path const& packRelativePath, ::std::string& result) const;
-
-    MCNAPI ::Bedrock::Resources::PreloadState _hasPreloaded(::Core::Path const& packRelativePath) const;
-
-    MCNAPI bool _isInAssetSet(::Core::Path const& path) const;
-
-    MCNAPI bool _isInAssetSetCaseInsensative(::Core::Path const& path) const;
-
-    MCNAPI void _upgradeContentsFile(::Json::Value& root);
-
-    MCNAPI bool hasGeneratedAssetSet() const;
-
-    MCNAPI bool isAssetSetEmpty() const;
-
     MCNAPI ::Bedrock::Resources::PreloadedPathHandle preloadArchive(::Core::Path const& packRelativePath) const;
 
     MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
@@ -139,16 +113,12 @@ public:
     MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& ARCHIVE_EXTENSION();
 
     MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& ARCHIVE_FOLDER();
-
-    MCNAPI static ::Core::PathBuffer<::std::string> const& PACK_IMPORT_LOCK_FILE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::std::unique_ptr<::PackAssetSet>&& assetSet);
     // NOLINTEND
 
 public:

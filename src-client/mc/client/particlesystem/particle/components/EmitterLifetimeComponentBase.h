@@ -21,61 +21,29 @@ public:
 
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const /*override*/;
 
-    virtual bool
-    emitterResetting(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
+    virtual bool emitterResetting(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&);
 
-    virtual bool
-    hasEmitterExpired(::ParticleSystem::ComponentAccessParticleEmitter const& emitter, ::RenderParams& renderParams);
+    virtual bool hasEmitterExpired(::ParticleSystem::ComponentAccessParticleEmitter const&, ::RenderParams&);
 
-    virtual bool
-    isEmitterActive(::ParticleSystem::ComponentAccessParticleEmitter const& emitter, ::RenderParams& renderParams);
+    virtual bool isEmitterActive(::ParticleSystem::ComponentAccessParticleEmitter const&, ::RenderParams&);
 
-    virtual void handleCreation(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
+    virtual void handleCreation(::ParticleSystem::ComponentAccessParticleEmitter&);
 
-    virtual void handleExpiration(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
+    virtual void handleExpiration(::ParticleSystem::ComponentAccessParticleEmitter&);
 
     virtual void handleTimelineEvents(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::std::chrono::nanoseconds const                  lastAge,
-        ::std::chrono::nanoseconds                        age
+        ::ParticleSystem::ComponentAccessParticleEmitter&,
+        ::std::chrono::nanoseconds const,
+        ::std::chrono::nanoseconds
     );
 
-    virtual void handleTravelDistanceEvents(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        float                                             lastDistance,
-        float                                             distance
-    );
+    virtual void handleTravelDistanceEvents(::ParticleSystem::ComponentAccessParticleEmitter&, float, float);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ParticleSystem::EffectComponentBase::EffectComponentType $getParticleComponentType() const;
 
-    MCFOLD bool
-    $emitterResetting(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
-
-    MCFOLD bool
-    $hasEmitterExpired(::ParticleSystem::ComponentAccessParticleEmitter const& emitter, ::RenderParams& renderParams);
-
-    MCFOLD bool
-    $isEmitterActive(::ParticleSystem::ComponentAccessParticleEmitter const& emitter, ::RenderParams& renderParams);
-
-    MCFOLD void $handleCreation(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
-
-    MCFOLD void $handleExpiration(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
-
-    MCFOLD void $handleTimelineEvents(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::std::chrono::nanoseconds const                  lastAge,
-        ::std::chrono::nanoseconds                        age
-    );
-
-    MCFOLD void $handleTravelDistanceEvents(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        float                                             lastDistance,
-        float                                             distance
-    );
     // NOLINTEND
 };
 

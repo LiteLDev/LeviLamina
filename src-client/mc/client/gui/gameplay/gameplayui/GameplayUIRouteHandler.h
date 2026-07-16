@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/gui/gameplay/gameplayui/GameStateModel.h"
 
-// auto generated forward declare list
-// clang-format off
-class IOptionRegistry;
-// clang-format on
-
 namespace GameplayUI {
 
 class GameplayUIRouteHandler {
@@ -24,12 +19,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void onLeaveWorld();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isManagedRoute(::std::string const& route, ::IOptionRegistry const& options);
     // NOLINTEND
 };
 

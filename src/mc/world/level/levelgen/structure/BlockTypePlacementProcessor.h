@@ -37,8 +37,6 @@ public:
 
     MCAPI ::Block const*
     applyBlockRules(::BlockSource& region, ::BlockPos& pos, ::Block const* blockToPlace, ::BlockPos const& refPos);
-
-    MCAPI ::BlockPos& applyGravity(::BlockSource& region, int yOffset, ::BlockPos& pos) const;
     // NOLINTEND
 
 public:

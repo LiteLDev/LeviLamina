@@ -3,15 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
-class Player;
-struct ItemReleaseUseEvent;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -31,37 +28,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptItemReleaseUseAfterEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptItemReleaseUseAfterEvent(
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> item,
-        ::Player const&                                                                                 player,
-        ::ItemReleaseUseEvent const&                                                                    itemEvent,
-        ::Scripting::WeakLifetimeScope const&                                                           scope
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
 
     MCAPI static ::Scripting::ClassBinding bindV010();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> item,
-        ::Player const&                                                                                 player,
-        ::ItemReleaseUseEvent const&                                                                    itemEvent,
-        ::Scripting::WeakLifetimeScope const&                                                           scope
-    );
     // NOLINTEND
 };
 

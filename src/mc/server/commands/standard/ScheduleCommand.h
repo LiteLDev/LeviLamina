@@ -13,10 +13,7 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class Dimension;
 class FunctionEntry;
-class FunctionManager;
-class ServerLevel;
 // clang-format on
 
 class ScheduleCommand : public ::Command {
@@ -56,18 +53,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>   mResolvedPath;
         ::ll::TypedStorage<1, 1, bool>             mIsValid;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~FunctionInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -91,29 +76,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _clear(::ServerLevel& serverLevel, ::Dimension& dimension, ::CommandOutput& output) const;
-
-    MCAPI void _delayAdd(::ServerLevel& serverLevel, ::Dimension& dimension, ::CommandOutput& output) const;
-
-    MCAPI void _delayClear(::ServerLevel& serverLevel, ::Dimension& dimension, ::CommandOutput& output) const;
-
-    MCAPI void _onAreaLoadedAdd(
-        ::CommandOrigin const& origin,
-        ::ServerLevel&         serverLevel,
-        ::Dimension&           dimension,
-        ::CommandOutput&       output
-    ) const;
-
-    MCAPI void _onAreaLoadedClear(::ServerLevel& serverLevel, ::Dimension& dimension, ::CommandOutput& output) const;
-
-    MCAPI ::ScheduleCommand::FunctionInfo
-    _tryGetFunction(::FunctionManager& functionManager, ::CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -125,25 +88,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::ScheduleCommand::ClearType>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::ScheduleCommand::DelayMode>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::ScheduleCommand::RequestAction>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::ScheduleCommand::ScheduleAction>();
-// clang-format on

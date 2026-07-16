@@ -3,21 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/v1_26_20/actor/ActorDefinitions.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
+#include "mc/deps/shared_types/v1_26_30/actor/ActorDefinitions.h"
 
 namespace SharedTypes::Beta {
 
-struct ActorDefinitions : public ::SharedTypes::v1_26_20::ActorDefinitions {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-};
+struct ActorDefinitions : public ::SharedTypes::v1_26_30::ActorDefinitions {};
 
 } // namespace SharedTypes::Beta

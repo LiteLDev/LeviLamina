@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>             actorIsBeingDestroyed;
     ::ll::TypedStorage<1, 1, bool>             switchingVehicles;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorStopRidingEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

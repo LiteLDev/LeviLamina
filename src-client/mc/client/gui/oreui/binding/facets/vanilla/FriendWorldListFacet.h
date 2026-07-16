@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
-struct NetworkWorldInfo;
-namespace Network { struct ServerID; }
 namespace OreUI { struct FriendWorld; }
 namespace Parties { class PartyTravelManager; }
 namespace Social { class FriendList; }
@@ -18,7 +16,7 @@ namespace World { class FriendServerWorldList; }
 
 namespace OreUI {
 
-class FriendWorldListFacet : public ::OreUI::FacetBase<::OreUI::FriendWorldListFacet> {
+class FriendWorldListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::FriendWorldListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -48,14 +46,6 @@ public:
         ::std::shared_ptr<::Social::FriendList>                   friendList,
         ::Bedrock::NonOwnerPointer<::Parties::PartyTravelManager> partyTravelManager
     );
-
-    MCAPI ::OreUI::FriendWorld _createFriendWorld(
-        ::Network::ServerID const& serverId,
-        ::NetworkWorldInfo const&  networkWorldInfo,
-        bool                       directFriend
-    );
-
-    MCFOLD ::std::vector<::OreUI::FriendWorld> const& getFriendWorlds() const;
     // NOLINTEND
 
 public:
@@ -77,13 +67,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

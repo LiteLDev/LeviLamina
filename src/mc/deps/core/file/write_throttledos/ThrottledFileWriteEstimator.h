@@ -38,12 +38,6 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static ::Core::WriteThrottledOS::ThrottledFileWriteEstimator::WriteTimeEstimate getTimeForBudget(
-        int                                                     recoverLeewayHintMb,
-        ::Core::WriteThrottledOS::OSWriteThrottleTracker const& tracker,
-        ::std::chrono::nanoseconds const&                       timeDiffBeforeImpactedWhileWaiting
-    );
-
     MCNAPI static ::Core::WriteThrottledOS::ThrottledFileWriteEstimator::WriteTimeEstimate getTimeToWrite(
         int                                                     recoverLeewayHintMb,
         ::Core::WriteThrottledOS::OSWriteThrottleTracker const& tracker,

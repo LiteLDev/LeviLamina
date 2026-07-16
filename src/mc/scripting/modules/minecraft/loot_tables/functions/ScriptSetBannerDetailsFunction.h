@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/loot_tables/functions/ScriptLootItemFunction.h"
 
 // auto generated forward declare list
@@ -33,6 +33,7 @@ public:
 public:
     // prevent constructor by default
     ScriptSetBannerDetailsFunction& operator=(ScriptSetBannerDetailsFunction const&);
+    ScriptSetBannerDetailsFunction(ScriptSetBannerDetailsFunction const&);
     ScriptSetBannerDetailsFunction();
 
 public:
@@ -42,24 +43,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptSetBannerDetailsFunction(::ScriptModuleMinecraft::ScriptSetBannerDetailsFunction const&);
-
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBannerPattern>>
-    getPatterns();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSetBannerDetailsFunction const&);
     // NOLINTEND
 
 public:

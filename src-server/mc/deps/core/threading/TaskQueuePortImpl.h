@@ -89,6 +89,7 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnk934f42;
     ::ll::UntypedStorage<4, 4>   mUnk769562;
     ::ll::UntypedStorage<8, 136> mUnkfa4e09;
+    ::ll::UntypedStorage<4, 4>   mUnkee88a0;
     ::ll::UntypedStorage<4, 4>   mUnk500b9b;
     ::ll::UntypedStorage<8, 72>  mUnk7302f0;
     ::ll::UntypedStorage<8, 80>  mUnke94bfc;
@@ -96,6 +97,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk15683e;
     ::ll::UntypedStorage<8, 8>   mUnka75c9f;
     ::ll::UntypedStorage<8, 8>   mUnk9f9912;
+    ::ll::UntypedStorage<8, 80>  mUnk4b85cd;
     ::ll::UntypedStorage<8, 8>   mUnk89a610;
     ::ll::UntypedStorage<8, 8>   mUnk8c66f0;
     ::ll::UntypedStorage<8, 8>   mUnk3df8d0;
@@ -183,6 +185,13 @@ public:
     MCNAPI void NotifyItemQueued();
 
     MCNAPI void ProcessThreadPoolCallback(::OS::ThreadPoolActionStatus& status);
+
+    MCNAPI bool
+    ScheduleNextPendingCallback(uint64 dueTime, ::TaskQueuePortImpl::QueueEntry& dueEntry, uint64& dueEntryNode);
+
+    MCNAPI void ScheduleTermination(::TaskQueuePortImpl::TerminationEntry* term);
+
+    MCNAPI void SignalTerminations();
 
     MCNAPI void SubmitPendingCallback();
 

@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AppPlatform;
 namespace Bedrock { class DataStore; }
 // clang-format on
 
@@ -33,55 +32,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ApplicationDataStores() /*override*/;
+    virtual ~ApplicationDataStores() /*override*/ = default;
 
     virtual void init() /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
-    getDataStore(::Bedrock::IApplicationDataStores::DataStores which) /*override*/;
+        getDataStore(::Bedrock::IApplicationDataStores::DataStores) /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
-    getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ApplicationDataStores(::Bedrock::NotNullNonOwnerPtr<::AppPlatform> platform, ::std::string_view tag);
-
-    MCNAPI void _initDataStore(::Bedrock::IApplicationDataStores::DataStores which);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::AppPlatform> platform, ::std::string_view tag);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+        getDataStore(::Bedrock::IApplicationDataStores::DataStores) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $init();
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
-    $getDataStore(::Bedrock::IApplicationDataStores::DataStores which);
-
-    MCNAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
-    $getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

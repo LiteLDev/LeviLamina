@@ -38,16 +38,4 @@ public:
     DataDrivenRendererDerivitiveData& operator=(DataDrivenRendererDerivitiveData const&);
     DataDrivenRendererDerivitiveData(DataDrivenRendererDerivitiveData const&);
     DataDrivenRendererDerivitiveData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DataDrivenRendererDerivitiveData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/interfaces/ScriptRawMessageScoreInterface.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
@@ -53,8 +53,6 @@ public:
     MCAPI ScriptRawMessageInterface(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
 
     MCAPI void buildJsonObject(::Json::Value& val) const;
-
-    MCAPI bool isRawTextJsonFormat() const;
 
     MCAPI ::ScriptModuleMinecraft::ScriptRawMessageInterface&
     operator=(::ScriptModuleMinecraft::ScriptRawMessageInterface&& other);

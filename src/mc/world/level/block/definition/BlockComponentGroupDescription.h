@@ -20,6 +20,10 @@ public:
     // BlockComponentGroupDescription inner types define
     struct Components {
     public:
+        // Components inner types define
+        using CerealDefaultValueOptOut = void;
+
+    public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::shared_ptr<::BlockComponentDescription>>>
@@ -65,8 +69,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockComponentDescription* getComponentDescription(::std::string const& name) const;
-
     MCAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription const&);
 
     MCAPI ~BlockComponentGroupDescription();

@@ -86,6 +86,10 @@ struct PlayerSkinLoadedClientEvent;
 struct PlayerSleepStateChangeEvent;
 struct PlayerStopLoadingEvent;
 struct PlayerSwingStartEvent;
+struct PlayerTellCommandEvent;
+struct PlayerTellRawCommandEvent;
+struct PlayerTitleCommandEvent;
+struct PlayerTitleRawCommandEvent;
 struct PlayerUpdateInteractionEvent;
 struct PlayerUseNameTagEvent;
 // clang-format on
@@ -129,6 +133,10 @@ struct PlayerNotificationEvent : public ::EventVariantImpl<
                                      ::PlayerHotbarSelectedSlotChangeEvent const,
                                      ::PlayerInputPermissionCategoryChangeEvent const,
                                      ::PlayerSayCommandEvent const,
+                                     ::PlayerTellCommandEvent const,
+                                     ::PlayerTellRawCommandEvent const,
+                                     ::PlayerTitleCommandEvent const,
+                                     ::PlayerTitleRawCommandEvent const,
                                      ::PlayerGetExperienceOrbEvent const,
                                      ::PlayerInteractEvent const,
                                      ::PlayerInteractWithEntityBeforeEvent const,

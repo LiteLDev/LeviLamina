@@ -33,8 +33,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit AdhocScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

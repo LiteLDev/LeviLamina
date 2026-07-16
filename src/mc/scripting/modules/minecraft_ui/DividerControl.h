@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft_ui/IControl.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
@@ -33,22 +33,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
-    buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
+    buildJson(::Player&, ::CurrentCmdVersion) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
-    $buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

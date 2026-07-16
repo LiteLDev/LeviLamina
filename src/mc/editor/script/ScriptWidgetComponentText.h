@@ -4,18 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor { class ServiceProviderCollection; }
-namespace Editor::ScriptModule { class ScriptWidget; }
-namespace Editor::ScriptModule { class ScriptWidgetComponentTextOptions; }
-namespace Editor::ScriptModule { class ScriptWidgetService; }
-namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { struct ClassBinding; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -37,27 +30,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentText() /*override*/;
+    virtual ~ScriptWidgetComponentText() /*override*/ = default;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentText(
-        ::Editor::ServiceProviderCollection&                                      serviceProviders,
-        ::mce::UUID const&                                                        componentId,
-        ::std::string const&                                                      componentName,
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>  owner,
-        ::Editor::ScriptModule::ScriptWidgetService&                              parentService,
-        ::std::string const&                                                      textString,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentTextOptions> options
-    );
-
-    MCNAPI void _setColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
-
-    MCNAPI void _setTextString(::std::string const& textString);
     // NOLINTEND
 
 public:
@@ -67,37 +42,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Editor::ServiceProviderCollection&                                      serviceProviders,
-        ::mce::UUID const&                                                        componentId,
-        ::std::string const&                                                      componentName,
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>  owner,
-        ::Editor::ScriptModule::ScriptWidgetService&                              parentService,
-        ::std::string const&                                                      textString,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentTextOptions> options
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

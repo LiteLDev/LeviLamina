@@ -31,12 +31,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForLevelEventListener();
-
-    MCNAPI static void** $vftableForITickingSystem();
-    // NOLINTEND
 };

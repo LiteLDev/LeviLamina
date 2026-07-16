@@ -39,14 +39,4 @@ public:
     MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::PhysicsDefinition>>& root);
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static bool const& HAS_COLLISION_DEFAULT();
-
-    MCAPI static bool const& HAS_GRAVITY_DEFAULT();
-
-    MCAPI static bool const& PUSH_TOWARDS_CLOSEST_SPACE_DEFAULT();
-    // NOLINTEND
 };

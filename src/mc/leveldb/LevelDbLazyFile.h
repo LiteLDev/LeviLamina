@@ -18,36 +18,4 @@ public:
     LevelDbLazyFile& operator=(LevelDbLazyFile const&);
     LevelDbLazyFile(LevelDbLazyFile const&);
     LevelDbLazyFile();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::leveldb::Status Append(::leveldb::Slice const& slice);
-
-    MCNAPI ::leveldb::Status Close();
-
-    MCNAPI ::leveldb::Status Flush();
-
-    MCNAPI ::leveldb::Status Read(uint64 n, ::leveldb::Slice* result, char* scratch);
-
-    MCNAPI ::leveldb::Status Read(uint64 offset, uint64 n, ::leveldb::Slice* result, char* scratch) const;
-
-    MCNAPI ::leveldb::Status Skip(uint64 n);
-
-    MCNAPI auto _lazyOpen() const;
-
-    MCNAPI ~LevelDbLazyFile();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::atomic<uint64>& mFileCount();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

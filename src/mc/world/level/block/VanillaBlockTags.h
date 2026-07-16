@@ -24,8 +24,6 @@ MCAPI ::HashedString const& Dirt();
 
 MCAPI ::HashedString const& FertilizeArea();
 
-MCAPI ::HashedString const& GoldDiggable();
-
 MCAPI ::HashedString const& Grass();
 
 MCAPI ::HashedString const& Gravel();
@@ -93,8 +91,6 @@ MCAPI ::HashedString const& Trapdoors();
 MCAPI ::HashedString const& Water();
 
 MCAPI ::HashedString const& Wood();
-
-MCAPI ::HashedString const& WoodDiggable();
 // NOLINTEND
 
 } // namespace VanillaBlockTags

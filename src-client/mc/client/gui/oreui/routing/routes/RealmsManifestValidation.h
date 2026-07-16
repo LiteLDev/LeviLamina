@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
-#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -48,33 +47,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RealmsManifestValidation(
-        ::PackManifestFactory&                                                            manifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&                 keyProvider,
-        ::std::function<::std::shared_ptr<::PackContentItem const>(::std::string_view)>&& getPackItemFromId
-    );
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> BASE_SCREEN_ID();
-
-    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::PackManifestFactory&                                                            manifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&                 keyProvider,
-        ::std::function<::std::shared_ptr<::PackContentItem const>(::std::string_view)>&& getPackItemFromId
-    );
     // NOLINTEND
 
 public:

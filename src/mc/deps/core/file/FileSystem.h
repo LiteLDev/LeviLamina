@@ -47,18 +47,6 @@ public:
         BasicFileData& operator=(BasicFileData const&);
         BasicFileData(BasicFileData const&);
         BasicFileData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~BasicFileData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct FileTransferProgress {

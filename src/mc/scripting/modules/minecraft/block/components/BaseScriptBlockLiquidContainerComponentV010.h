@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/ScriptFluidType.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockActorComponent.h"
 #include "mc/world/level/block/CauldronLiquidType.h"
@@ -13,9 +13,6 @@
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class CauldronBlockActor;
-namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -47,47 +44,19 @@ public:
     MCAPI BaseScriptBlockLiquidContainerComponentV010(
         ::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponentV010 const&
     );
-
-    MCAPI BaseScriptBlockLiquidContainerComponentV010(
-        ::BlockActor&                            blockActor,
-        ::BlockSource&                           region,
-        ::BlockPos                               position,
-        ::Scripting::WeakLifetimeScope const&    scope,
-        ::CauldronLiquidType                     type,
-        ::std::string const&                     id,
-        ::ScriptModuleMinecraft::ScriptFluidType fluidtype
-    );
-
-    MCAPI bool _isValidLiquid() const;
-
-    MCAPI ::CauldronBlockActor* _tryGetCauldronBlockActor();
-
-    MCAPI ::Scripting::Result_deprecated<int> getFillLevel();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static ::ScriptModuleMinecraft::ScriptFluidType
+    MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
     _getActualCauldronLiquidType(::BlockActor& blockActor, ::BlockSource& region, ::BlockPos position);
-
-    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponentV010 const&);
-
-    MCAPI void* $ctor(
-        ::BlockActor&                            blockActor,
-        ::BlockSource&                           region,
-        ::BlockPos                               position,
-        ::Scripting::WeakLifetimeScope const&    scope,
-        ::CauldronLiquidType                     type,
-        ::std::string const&                     id,
-        ::ScriptModuleMinecraft::ScriptFluidType fluidtype
-    );
     // NOLINTEND
 
 public:
@@ -95,7 +64,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result_deprecated<void> $setFillLevel(int level);
 
-    MCFOLD bool $_isValid() const;
+    MCAPI bool $_isValid() const;
 
 
     // NOLINTEND

@@ -28,6 +28,7 @@
 #include "mc/world/level/block/PaleMossCarpetSide.h"
 #include "mc/world/level/block/PillarAxis.h"
 #include "mc/world/level/block/PortalAxis.h"
+#include "mc/world/level/block/PotentSulfurState.h"
 #include "mc/world/level/block/PrismarineBlockType.h"
 #include "mc/world/level/block/SandType.h"
 #include "mc/world/level/block/SandstoneType.h"
@@ -62,10 +63,6 @@ namespace VanillaStates {
 // functions
 // NOLINTBEGIN
 MCAPI ::BlockState const* getState(::HashedString const& name);
-
-MCAPI void registerStates();
-
-MCAPI void unregisterStates();
 // NOLINTEND
 
 // static variables
@@ -161,8 +158,6 @@ MCAPI ::BlockStateVariant<::MonsterEggStoneType> const& DEPRECATED_MonsterEggSto
 MCAPI ::BlockStateVariant<::NewLeavesType> const& DEPRECATED_NewLeavesType();
 
 MCAPI ::BlockStateVariant<::NewLogType> const& DEPRECATED_NewLogType();
-
-MCAPI ::BlockStateVariant<bool> const& DEPRECATED_NoDropBit();
 
 MCAPI ::BlockStateVariant<::OldLeavesType> const& DEPRECATED_OldLeavesType();
 
@@ -279,6 +274,8 @@ MCAPI ::BlockStateVariant<bool> const& PersistentBit();
 MCAPI ::BlockStateVariant<::PillarAxis> const& PillarAxis();
 
 MCAPI ::BlockStateVariant<::PortalAxis> const& PortalAxis();
+
+MCAPI ::BlockStateVariant<::PotentSulfurState> const& PotentSulfurState();
 
 MCAPI ::BlockStateVariant<bool> const& PoweredBit();
 

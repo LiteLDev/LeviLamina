@@ -25,14 +25,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string getStringFromType(::persona::ArmSize::Type armSizeType);
-
-#ifdef LL_PLAT_C
-    MCAPI static ::std::string_view getTexturePathByType(::persona::ArmSize::Type armSizeType);
-
-    MCAPI static ::persona::ArmSize::Type getTypeFromString(::std::string_view armSizeStr);
-
-    MCAPI static bool isValidType(::persona::ArmSize::Type armSizeType);
-#endif
     // NOLINTEND
 
 public:

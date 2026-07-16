@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/absl/InlinedVector.h"
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/RtpPacketizer.h"
 
 // auto generated forward declare list
@@ -19,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk8d6496;
-    ::ll::UntypedStorage<8, 16> mUnke6bb71;
+    ::ll::UntypedStorage<8, 16> mUnk6027a6;
     ::ll::UntypedStorage<8, 24> mUnk8fa4a4;
     ::ll::UntypedStorage<8, 8>  mUnkd0225c;
     // NOLINTEND
@@ -44,9 +45,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RtpPacketizerVp8(
-        ::rtc::ArrayView<uchar const>              payload,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
-        ::webrtc::RTPVideoHeaderVP8 const&         hdr_info
+        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits             limits,
+        ::webrtc::RTPVideoHeaderVP8 const&                     hdr_info
     );
     // NOLINTEND
 
@@ -61,9 +62,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::rtc::ArrayView<uchar const>              payload,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
-        ::webrtc::RTPVideoHeaderVP8 const&         hdr_info
+        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits             limits,
+        ::webrtc::RTPVideoHeaderVP8 const&                     hdr_info
     );
     // NOLINTEND
 

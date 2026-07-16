@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/client/gui/oreui/binding/FacetTaskState.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/UserPermissions.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/UserPermissionsFEWrapper.h"
@@ -23,7 +22,7 @@ namespace Social { class User; }
 
 namespace OreUI {
 
-class UserAccountFacet : public ::OreUI::FacetBase<::OreUI::UserAccountFacet> {
+class UserAccountFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::UserAccountFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -63,7 +62,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UserAccountFacet() /*override*/;
+    virtual ~UserAccountFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -76,66 +75,6 @@ public:
         ::std::shared_ptr<::Social::User>                    user,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
     );
-
-    MCAPI bool _isMarketplacePassSubscriptionActive() const;
-
-    MCAPI bool _isRealmsPlusSubscriptionActive() const;
-
-    MCAPI void _onEntitlementsInventoryRefreshed();
-
-    MCAPI bool _updatePermissions();
-
-    MCAPI void clearAccountUnlinkState();
-
-    MCAPI ::OreUI::FacetTaskState getAccountUnlinkState();
-
-    MCFOLD ::std::string const& getBanExpiration() const;
-
-    MCFOLD ::std::string const& getBanReason() const;
-
-    MCFOLD ::std::string const& getCurrentPlatformId() const;
-
-    MCFOLD ::std::string const& getCurrentXuid() const;
-
-    MCAPI ::std::string getMarketplaceDisabledReason() const;
-
-    MCAPI ::std::optional<::Social::UserPlatformConnectionResult> const& getSignInToPlatformNetworkResult() const;
-
-    MCAPI ::OreUI::FacetTaskState getSignInToPlatformNetworkState();
-
-    MCFOLD ::OreUI::UserPermissionsFEWrapper const& getUserPermissions() const;
-
-    MCFOLD bool hasPremiumNetworkAccess() const;
-
-    MCFOLD bool hasValidCrossPlatformSkin() const;
-
-    MCAPI bool isBanned() const;
-
-    MCFOLD bool isLoggedInWithMicrosoftAccount() const;
-
-    MCFOLD bool isMarketplaceDisabled() const;
-
-    MCFOLD bool isMarketplacePassSubscriptionActive() const;
-
-    MCFOLD bool isRealmsPlusSubscriptionActive() const;
-
-    MCFOLD bool isSignInInProgress() const;
-
-    MCFOLD bool isSignedInPlatformNetwork() const;
-
-    MCAPI void manageMicrosoftAccount();
-
-    MCAPI void resetSignInToPlatformNetwork();
-
-    MCAPI void showPremiumNetworkUpsellModal();
-
-    MCAPI void signInToPlatformNetwork(bool isUserInitiated);
-
-    MCAPI void signOutOfMicrosoftAccount();
-
-    MCAPI void unlinkMicrosoftAccount();
-
-    MCAPI void updateMultiplayerPrivilegeUsingSystemModal();
     // NOLINTEND
 
 public:
@@ -155,21 +94,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

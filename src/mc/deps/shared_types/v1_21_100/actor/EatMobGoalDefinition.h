@@ -36,7 +36,7 @@ public:
 
     MCAPI ::SharedTypes::v1_21_100::EatMobGoalDefinition& operator=(::SharedTypes::v1_21_100::EatMobGoalDefinition&&);
 
-    MCAPI ~EatMobGoalDefinition();
+    MCAPI bool operator==(::SharedTypes::v1_21_100::EatMobGoalDefinition const&) const;
     // NOLINTEND
 
 public:
@@ -48,14 +48,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_EAT_ANIMATION_TIME();
-
-    MCAPI static float const& DEFAULT_PULL_IN_FORCE();
-
-    MCAPI static float const& DEFAULT_REACH_MOB_DISTANCE();
-
-    MCAPI static float const& DEFAULT_RUN_SPEED();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
@@ -63,12 +55,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_21_100::EatMobGoalDefinition const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

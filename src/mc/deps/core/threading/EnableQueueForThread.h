@@ -36,8 +36,6 @@ public:
     // NOLINTBEGIN
     MCAPI EnableQueueForThread(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::string name);
 
-    MCAPI void flushThreadTasks();
-
     MCAPI ::Bedrock::Threading::Async<void> queue(::std::function<void()>&& callback);
 
 #ifdef LL_PLAT_C

@@ -16,10 +16,6 @@ class Player;
 
 class EmptyMapItem : public ::ComplexItem {
 public:
-    // prevent constructor by default
-    EmptyMapItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
@@ -33,23 +29,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EmptyMapItem(::std::string const& itemName, short itemId);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void addPlayerMarker(::ItemStackBase& map);
 
     MCAPI static bool isLocatorMap(::ItemStackBase const& map);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& itemName, short itemId);
     // NOLINTEND
 
 public:

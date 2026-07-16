@@ -25,14 +25,13 @@ public:
 
 public:
     // prevent constructor by default
+    TouchTapOrHoldGlyphButtonBinding& operator=(TouchTapOrHoldGlyphButtonBinding const&);
     TouchTapOrHoldGlyphButtonBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI TouchTapOrHoldGlyphButtonBinding(::TouchTapOrHoldGlyphButtonBinding const&);
-
-    MCAPI ::TouchTapOrHoldGlyphButtonBinding& operator=(::TouchTapOrHoldGlyphButtonBinding const&);
 
     MCAPI ~TouchTapOrHoldGlyphButtonBinding();
     // NOLINTEND

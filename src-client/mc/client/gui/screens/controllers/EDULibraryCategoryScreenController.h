@@ -9,7 +9,6 @@
 // clang-format off
 class LibrarySearchBarScreenController;
 class MainMenuScreenModel;
-class UIPropertyBag;
 struct EDULibraryCategory;
 namespace Json { class Value; }
 // clang-format on
@@ -53,14 +52,6 @@ public:
         ::std::vector<::EDULibraryCategory>      libraryCategories,
         bool                                     firstPage
     );
-
-    MCAPI ::EDULibraryCategory* _getCategory(::UIPropertyBag const& bag);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerControllerCallbacks();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -81,16 +72,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $onOpen();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

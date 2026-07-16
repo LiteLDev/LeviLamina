@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AcceptDeclineInvitationScreenController() /*override*/;
+    virtual ~AcceptDeclineInvitationScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -78,28 +78,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
-
-    MCFOLD ::std::string $getAdditionalScreenInfo() const;
-
-    MCAPI ::std::string $getTelemetryOverride() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

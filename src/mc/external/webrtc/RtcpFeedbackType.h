@@ -10,6 +10,7 @@ enum class RtcpFeedbackType : int {
     Nack        = 2,
     Remb        = 3,
     TransportCc = 4,
+    Ccfb        = 5,
 };
 
 }

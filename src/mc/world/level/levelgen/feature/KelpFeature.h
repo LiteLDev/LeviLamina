@@ -20,25 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    KelpFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit KelpFeature(int iterations);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int iterations);
     // NOLINTEND
 
 public:

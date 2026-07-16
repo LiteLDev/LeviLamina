@@ -31,19 +31,7 @@ public:
 
     virtual ::Json::Value asJsonValue() const /*override*/;
 
-    virtual ::Json::Value resolve(::ResolveData const&) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit TextObjectLocalizedText(::std::string text);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string text);
+    virtual ::Json::Value resolve(::ResolveData const& resolveData) const /*override*/;
     // NOLINTEND
 
 public:
@@ -53,7 +41,7 @@ public:
 
     MCNAPI ::Json::Value $asJsonValue() const;
 
-    MCNAPI ::Json::Value $resolve(::ResolveData const&) const;
+    MCNAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
 
 
     // NOLINTEND

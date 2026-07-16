@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace webrtc { class Clock; }
 namespace webrtc { class DataRate; }
+namespace webrtc { class Environment; }
 namespace webrtc { class ForwardErrorCorrection; }
 namespace webrtc { class RtpPacketToSend; }
 namespace webrtc { struct FecProtectionParams; }
@@ -43,10 +43,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40>  mUnk7db480;
     ::ll::UntypedStorage<4, 4>   mUnkd4deb2;
     ::ll::UntypedStorage<4, 4>   mUnk1bd645;
-    ::ll::UntypedStorage<8, 8>   mUnk833228;
-    ::ll::UntypedStorage<4, 8>   mUnk578608;
+    ::ll::UntypedStorage<4, 8>   mUnkb87449;
     ::ll::UntypedStorage<8, 8>   mUnk989b2c;
     ::ll::UntypedStorage<8, 16>  mUnke8e2bf;
     ::ll::UntypedStorage<8, 216> mUnke7eec4;
@@ -96,17 +96,17 @@ public:
     // NOLINTBEGIN
     MCNAPI void ResetState();
 
-    MCNAPI UlpfecGenerator(::std::unique_ptr<::webrtc::ForwardErrorCorrection> fec, ::webrtc::Clock* clock);
+    MCNAPI UlpfecGenerator(::webrtc::Environment const& env, ::std::unique_ptr<::webrtc::ForwardErrorCorrection> fec);
 
-    MCNAPI UlpfecGenerator(int red_payload_type, int ulpfec_payload_type, ::webrtc::Clock* clock);
+    MCNAPI UlpfecGenerator(::webrtc::Environment const& env, int red_payload_type, int ulpfec_payload_type);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::unique_ptr<::webrtc::ForwardErrorCorrection> fec, ::webrtc::Clock* clock);
+    MCNAPI void* $ctor(::webrtc::Environment const& env, ::std::unique_ptr<::webrtc::ForwardErrorCorrection> fec);
 
-    MCNAPI void* $ctor(int red_payload_type, int ulpfec_payload_type, ::webrtc::Clock* clock);
+    MCNAPI void* $ctor(::webrtc::Environment const& env, int red_payload_type, int ulpfec_payload_type);
     // NOLINTEND
 
 public:

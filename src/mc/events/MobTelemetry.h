@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Social::Events { class Event; }
-// clang-format on
-
 namespace Social::Events {
 
 class MobTelemetry {
@@ -38,20 +33,6 @@ public:
         MobDeathData& operator=(MobDeathData const&);
         MobDeathData(MobDeathData const&);
         MobDeathData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::Social::Events::MobTelemetry::MobDeathData& operator=(::Social::Events::MobTelemetry::MobDeathData&&);
-
-        MCNAPI ~MobDeathData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct MobItemData {
@@ -71,20 +52,6 @@ public:
         MobItemData& operator=(MobItemData const&);
         MobItemData(MobItemData const&);
         MobItemData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::Social::Events::MobTelemetry::MobItemData& operator=(::Social::Events::MobTelemetry::MobItemData&&);
-
-        MCNAPI ~MobItemData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct MobSpawnData {
@@ -106,20 +73,6 @@ public:
         MobSpawnData& operator=(MobSpawnData const&);
         MobSpawnData(MobSpawnData const&);
         MobSpawnData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::Social::Events::MobTelemetry::MobSpawnData& operator=(::Social::Events::MobTelemetry::MobSpawnData&&);
-
-        MCNAPI ~MobSpawnData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct nowFunc {};
@@ -139,24 +92,11 @@ public:
     // prevent constructor by default
     MobTelemetry& operator=(MobTelemetry const&);
     MobTelemetry(MobTelemetry const&);
+    MobTelemetry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MobTelemetry();
-
-    MCNAPI bool checkHasDataResetClock();
-
-    MCNAPI void onActorSpawned(
-        ::std::string const& nameSpace,
-        ::std::string const& name,
-        bool                 isBaby,
-        ::std::string const& reason,
-        ::std::string const& method,
-        ::std::string const& spawnerNamespace,
-        ::std::string const& spawnerName
-    );
-
     MCNAPI void onMobDied(
         ::std::string const& nameSpace,
         ::std::string const& name,
@@ -165,30 +105,6 @@ public:
         bool                 isBaby,
         bool                 hadPassenger
     );
-
-    MCNAPI void onMobDroppedItem(
-        ::std::string const& mobNamespace,
-        ::std::string const& mobName,
-        ::std::string const& itemNamespace,
-        ::std::string const& itemName,
-        uint                 stackSize
-    );
-
-    MCNAPI void onMobPickedUpItem(
-        ::std::string const& mobNamespace,
-        ::std::string const& mobName,
-        ::std::string const& itemNamespace,
-        ::std::string const& itemName,
-        uint                 stackSize
-    );
-
-    MCNAPI void populateEvent(::Social::Events::Event& event);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

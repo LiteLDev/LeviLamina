@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class PathView; }
-namespace Core { class Result; }
-// clang-format on
-
 namespace Core {
 
 class TransactionFrameSourceTarget {
@@ -27,37 +21,6 @@ public:
     TransactionFrameSourceTarget& operator=(TransactionFrameSourceTarget const&);
     TransactionFrameSourceTarget(TransactionFrameSourceTarget const&);
     TransactionFrameSourceTarget();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI TransactionFrameSourceTarget(::Core::PathView source, ::Core::PathView target);
-
-    MCNAPI ~TransactionFrameSourceTarget();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Core::Result exec(
-        ::Core::PathView                                                       source,
-        ::Core::PathView                                                       target,
-        ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> sameStorageAreaFunction,
-        ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> differentStorageAreaFunction
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::PathView source, ::Core::PathView target);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Core

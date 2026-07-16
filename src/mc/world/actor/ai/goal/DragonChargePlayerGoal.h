@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/DragonBaseGoal.h"
 
-// auto generated forward declare list
-// clang-format off
-class Mob;
-// clang-format on
-
 class DragonChargePlayerGoal : public ::DragonBaseGoal {
 public:
     // member variables
@@ -17,10 +12,6 @@ public:
     ::ll::TypedStorage<4, 4, int> mOutsideChargeZoneTicks;
     ::ll::TypedStorage<4, 4, int> mContinueChargeThresholdTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DragonChargePlayerGoal();
 
 public:
     // virtual functions
@@ -36,18 +27,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DragonChargePlayerGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

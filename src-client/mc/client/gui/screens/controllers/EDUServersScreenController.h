@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/ViewRequest.h"
-#include "mc/client/gui/screens/controllers/EduRefreshType.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/BasicLockbox.h"
@@ -20,7 +19,6 @@ class EDUAddServerScreenController;
 class EDUPasscodeEntryScreenController;
 class IContentManager;
 class PlayScreenModel;
-class UIPropertyBag;
 struct PackManagerContentSource;
 struct ScreenEvent;
 namespace Bedrock::Threading { class Mutex; }
@@ -84,7 +82,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUServersScreenController() /*override*/;
+    virtual ~EDUServersScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -101,70 +99,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EDUServersScreenController(::std::shared_ptr<::PlayScreenModel> model);
-
-    MCAPI void _closeAddServerModal();
-
-    MCAPI void _closePasscodeEntryModal();
-
-    MCAPI void _closeSharePopup();
-
-    MCAPI void _getCachedServers();
-
-    MCAPI ::std::optional<::Social::EduDedicatedServerDetails> _getServerDetails(::UIPropertyBag& bag) const;
-
-    MCAPI ::std::optional<::Social::EduDedicatedServerDetails>
-    _getServerDetailsById(::std::string const& serverId) const;
-
-    MCAPI uint64 _getTileIndex(::UIPropertyBag& bag) const;
-
-    MCAPI void _launchShareUri(::std::string const& uri, ::std::string const& toastMsg, ::std::string const& eventName);
-
-    MCAPI void _refreshServerInfo(::std::vector<::std::string> serverIds, ::Social::EduRefreshType const& refreshType);
-
-    MCAPI void _refreshServerList();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerControllerCallbacks();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerSubControllers();
-
-    MCAPI void _removeServer(::UIPropertyBag* bag);
-
-    MCAPI void _requestAddServer(::std::string const& serverId);
-
-    MCAPI void _requestJoinServer(::Social::EduDedicatedServerDetails const& details, ::std::string const& passcode);
-
-    MCAPI void _showAddErrorMessage(::Social::EduResponseError& error);
-
-    MCAPI void _showAddServerModal();
-
-    MCAPI void _showFetchErrorMessage(::Social::EduResponseError& error);
-
-    MCAPI void _showPasscodeEntryModal(::Social::EduDedicatedServerDetails const& details);
-
-    MCAPI void _showRemoveServerModal(::UIPropertyBag* bag);
-
-    MCAPI void _showSharePopup(::std::string const& popupFactory, ::std::string const& popupName);
-
-    MCAPI void _updateServerList(
-        ::brstd::flat_map<
-            ::std::string,
-            ::Social::EduDedicatedServerDetails,
-            ::std::less<::std::string>,
-            ::std::vector<::std::string>,
-            ::std::vector<::Social::EduDedicatedServerDetails>> const& servers
-    );
-
-    MCAPI void cacheAddServer(::std::string const& serverId);
-
-    MCAPI void cacheJoinServer(::std::string const& serverId);
-
-    MCAPI bool getIsDoneLoadingServers() const;
-
-    MCAPI void setDoneFetchHandler();
     // NOLINTEND
 
 public:
@@ -174,30 +108,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI void $onTerminate();
-
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

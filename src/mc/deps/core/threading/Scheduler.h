@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BackgroundTaskBase;
 class WorkerPool;
 // clang-format on
 
@@ -97,34 +96,15 @@ public:
     // NOLINTBEGIN
     MCAPI Scheduler(::std::string_view name, uint FPS);
 
-    MCAPI ::std::chrono::nanoseconds _calcBaseTimeBudget(
-        uint                           forFps,
-        ::std::chrono::nanoseconds     frameTimeSoFar,
-        ::Scheduler::MinimumTimeBudget ensureNonZeroRunTime,
-        ::Scheduler::MaximumTimeBudget limitMaxRunTime
-    );
-
-    MCAPI bool _runCoroutines(::std::chrono::nanoseconds timeCap);
-
-    MCAPI void changeThread(::std::thread::id newOwner);
-
-    MCFOLD ::WorkerPool& getCoroutinePool();
-
     MCAPI void processCoroutines(
         ::std::chrono::nanoseconds     timeSinceSwap,
         ::Scheduler::MinimumTimeBudget ensureNonZeroRunTime,
         ::Scheduler::MaximumTimeBudget limitMaxRunTime
     );
 
-    MCAPI void queueCallback(::std::shared_ptr<::BackgroundTaskBase> task);
-
 #ifdef LL_PLAT_C
     MCAPI ::std::shared_ptr<void> setCoroutinePolicy(::brstd::move_only_function<bool() const> policy);
 #endif
-
-    MCAPI void setTargetFPS(uint FPS);
-
-    MCAPI void updateTargetFPS();
     // NOLINTEND
 
 public:

@@ -32,21 +32,13 @@ public:
 
     virtual void clear() = 0;
 
-    virtual bool hasAsset(::Core::Path const&, bool) const = 0;
+    virtual bool hasAsset(::Core::Path const& path, bool caseSensitive) const = 0;
 
     virtual ::std::string const* const getDecryptionKey(::Core::Path const&, bool) const = 0;
 
-    virtual void forEachAsset(::brstd::function_ref<void(::Core::Path const&)>) const = 0;
+    virtual void forEachAsset(::brstd::function_ref<void(::Core::Path const&)> callback) const = 0;
 
     virtual bool isEmpty() const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool isPopulated() const;
-
-    MCNAPI void setPopulated(bool value);
     // NOLINTEND
 
 public:

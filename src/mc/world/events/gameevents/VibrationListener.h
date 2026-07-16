@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/events/gameevents/GameEventListener.h"
+#include "mc/world/events/gameevents/IGameEventListener.h"
 #include "mc/world/events/gameevents/PositionSource.h"
 #include "mc/world/events/gameevents/VibrationInfo.h"
 #include "mc/world/events/gameevents/VibrationSelector.h"
@@ -15,12 +15,11 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class GameEvent;
-class Vec3;
 class VibrationListenerConfig;
 struct GameEventContext;
 // clang-format on
 
-class VibrationListener : public ::GameEventListener {
+class VibrationListener : public ::IGameEventListener {
 public:
     // VibrationListener inner types define
     enum class OwnerType : int {
@@ -44,10 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    VibrationListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void handleGameEvent(
@@ -64,27 +59,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VibrationListener(
-        ::std::unique_ptr<::VibrationListenerConfig>&& config,
-        ::GameEvents::PositionSource                   positionSource,
-        uint                                           range,
-        ::VibrationListener::OwnerType                 ownerType
-    );
-
     MCAPI bool _areAdjacentChunksTicking(::BlockSource& region) const;
 
     MCAPI void _requestVibrationParticle(::BlockSource& region, ::BlockPos const& originPos, float timeToLive);
 
     MCAPI bool _tryAdvanceInFlightVibration(::BlockSource& region);
-
-    MCAPI void _trySendSneakCloseToSculkSensorEventPacket(
-        ::BlockSource&            gameEvent,
-        ::GameEvent const&        gameEventContext,
-        ::GameEventContext const& sensorPos,
-        ::Vec3 const&
-    );
-
-    MCFOLD ::GameEvent const& getLatestReceivedVibration() const;
 
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
@@ -94,35 +73,12 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool _isVibrationOccluded(::BlockSource& region, ::Vec3 const& originPos, ::Vec3 const& targetPos);
-
-    MCAPI static bool _shouldIgnoreVibration(
-        ::BlockSource&            region,
-        ::GameEvent const&        gameEvent,
-        ::GameEventContext const& gameEventContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::unique_ptr<::VibrationListenerConfig>&& config,
-        ::GameEvents::PositionSource                   positionSource,
-        uint                                           range,
-        ::VibrationListener::OwnerType                 ownerType
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void
     $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
 
-    MCFOLD uint $getRange() const;
+    MCAPI uint $getRange() const;
 
     MCFOLD ::GameEvents::PositionSource const& $getPositionSource() const;
 

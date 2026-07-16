@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/sound/SoundEventIdentifier.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class SemVersion;
+namespace SharedTypes::Beta { struct SwingSoundsItemComponent; }
 namespace SharedTypes::v1_21_90 { struct SwingSoundsItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -19,23 +19,21 @@ class SwingSoundsItemComponent : public ::NetworkedItemComponent<::SwingSoundsIt
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::std::optional<::SharedTypes::Legacy::LevelSoundEvent>> mAttackMissSound;
-    ::ll::TypedStorage<4, 8, ::std::optional<::SharedTypes::Legacy::LevelSoundEvent>> mAttackHitSound;
-    ::ll::TypedStorage<4, 8, ::std::optional<::SharedTypes::Legacy::LevelSoundEvent>> mAttackCriticalHitSound;
+    ::ll::TypedStorage<8, 48, ::std::optional<::SoundEventIdentifier>> mAttackMissSound;
+    ::ll::TypedStorage<8, 48, ::std::optional<::SoundEventIdentifier>> mAttackHitSound;
+    ::ll::TypedStorage<8, 48, ::std::optional<::SoundEventIdentifier>> mAttackCriticalHitSound;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SwingSoundsItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SwingSoundsItemComponent();
+    MCAPI explicit SwingSoundsItemComponent(::SharedTypes::Beta::SwingSoundsItemComponent const& data);
 
     MCAPI explicit SwingSoundsItemComponent(::SharedTypes::v1_21_90::SwingSoundsItemComponent const& data);
-
-    MCFOLD ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackCriticalHitSound() const;
-
-    MCFOLD ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackHitSound() const;
-
-    MCFOLD ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackMissSound() const;
     // NOLINTEND
 
 public:
@@ -46,14 +44,12 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::SharedTypes::Beta::SwingSoundsItemComponent const& data);
 
     MCAPI void* $ctor(::SharedTypes::v1_21_90::SwingSoundsItemComponent const& data);
     // NOLINTEND

@@ -34,8 +34,6 @@ public:
     // NOLINTBEGIN
     MCAPI
     StorageSpaceWarningScreenController(::std::shared_ptr<::MinecraftScreenModel> model, ::std::string const& message);
-
-    MCAPI void _showStorageSpaceWarningPopup();
     // NOLINTEND
 
 public:

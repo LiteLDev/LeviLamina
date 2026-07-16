@@ -34,10 +34,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB getCollisionShape(
-        ::Block const&             block,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&          entity,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&                                  pos,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
     virtual ::HitResult clip(
@@ -57,7 +57,7 @@ public:
 
     virtual bool isLavaBlocking() const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
@@ -65,7 +65,8 @@ public:
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor& lastPathPos, ::BlockPos const& pathPos, ::BlockPos const&) const /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
@@ -79,19 +80,9 @@ public:
     // NOLINTBEGIN
     MCAPI ScaffoldingBlock(::std::string const& nameId, int id);
 
-    MCAPI bool _updateBlockStability(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI int calculateStability(::BlockSource const& region, ::BlockPos const& pos) const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& MAX_STABILITY();
     // NOLINTEND
 
 public:
@@ -104,10 +95,10 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::AABB $getCollisionShape(
-        ::Block const&             block,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&          entity,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&                                  pos,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
     MCAPI ::HitResult $clip(
@@ -126,7 +117,7 @@ public:
 
     MCFOLD bool $isLavaBlocking() const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
@@ -138,7 +129,7 @@ public:
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $checkIsPathable(::Actor& lastPathPos, ::BlockPos const& pathPos, ::BlockPos const&) const;
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
     MCAPI ::mce::Color $getDustColor(::Block const&) const;
 

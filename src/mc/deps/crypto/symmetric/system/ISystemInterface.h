@@ -23,6 +23,10 @@ public:
     virtual uint64 getEncryptionBufferSize(uint64 inputSize) const = 0;
 
     virtual bool encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) = 0;
+
+    virtual uint64 getDecryptionBufferSize(uint64 inputSize) const = 0;
+
+    virtual bool decryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) = 0;
     // NOLINTEND
 
 public:

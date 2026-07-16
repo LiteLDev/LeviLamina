@@ -65,15 +65,6 @@ public:
     MCAPI static ::std::vector<
         ::std::function<void(::OreUI::Detail::QueryRegistry&, ::OreUI::Detail::ViewContextFactory&)>>&
     _queryStorage();
-
-    MCAPI static bool _registerCommand(
-        ::std::function<void(::OreUI::Detail::CommandRegistry&, ::OreUI::Detail::ViewContextFactory&)> const&
-            registrator
-    );
-
-    MCAPI static bool _registerQuery(
-        ::std::function<void(::OreUI::Detail::QueryRegistry&, ::OreUI::Detail::ViewContextFactory&)> const& registrator
-    );
     // NOLINTEND
 
 public:

@@ -49,12 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::Gameface::IRenderingBackendTextureService> create();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 

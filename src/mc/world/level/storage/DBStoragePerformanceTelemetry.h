@@ -34,7 +34,7 @@ public:
     MCNAPI explicit DBStoragePerformanceTelemetry(::Bedrock::NonOwnerPointer<::LevelStorageEventing> eventing);
 
     MCNAPI void
-    _fireEventLevelDBPerformanceData(::Bedrock::Threading::LockGuard<::Bedrock::Threading::Mutex>& force, bool);
+    _fireEventLevelDBPerformanceData(::Bedrock::Threading::LockGuard<::Bedrock::Threading::Mutex>&, bool force);
 
     MCNAPI void fireEventLevelDBPerformanceData(bool force);
 
@@ -45,19 +45,11 @@ public:
     MCNAPI void recordReadData(bool successfulRead, uint64 bytesRead, ::std::chrono::nanoseconds readTime);
 
     MCNAPI void recordWriteData(uint64 numWrites, uint64 bytesWritten, ::std::chrono::nanoseconds writeTime);
-
-    MCNAPI ~DBStoragePerformanceTelemetry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelStorageEventing> eventing);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

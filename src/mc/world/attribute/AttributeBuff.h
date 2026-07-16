@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/HurtEffectsSettings.h"
 #include "mc/world/attribute/AttributeBuffType.h"
 
 // auto generated forward declare list
@@ -19,6 +20,7 @@ public:
     ::ll::TypedStorage<4, 4, float>                                   mAmount;
     ::ll::TypedStorage<4, 4, ::AttributeBuffType>                     mType;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ActorDamageSource>> mSource;
+    ::ll::TypedStorage<4, 28, ::std::optional<::HurtEffectsSettings>> mHurtEffectsSettings;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Amplifier>>         mValueAmplifier;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Amplifier>>         mDurationAmplifier;
     ::ll::TypedStorage<4, 4, float>                                   mScale;
@@ -35,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AttributeBuff();
+    virtual ~AttributeBuff() = default;
 
     virtual bool isInstantaneous() const = 0;
 
@@ -49,27 +51,17 @@ public:
     // NOLINTBEGIN
     MCAPI AttributeBuff(float amount, int operand, ::AttributeBuffType type);
 
-    MCAPI AttributeBuff(float amount, int operand, ::ActorDamageSource const& source, ::AttributeBuffType type);
-
-    MCAPI float getAmount() const;
-
-    MCFOLD uint64 getId() const;
-
-    MCFOLD int getOperand() const;
-
-    MCFOLD ::AttributeBuffType getType() const;
+    MCAPI AttributeBuff(
+        float                                         amount,
+        int                                           operand,
+        ::ActorDamageSource const&                    source,
+        ::AttributeBuffType                           type,
+        ::std::optional<::HurtEffectsSettings> const& hurtEffectsSettings
+    );
 
     MCAPI ::AttributeBuff& operator=(::AttributeBuff const&);
 
-    MCAPI void setAmplificationAmount(int amplification, float scale);
-
-    MCFOLD void setId(uint64 val);
-
-    MCFOLD void setOperand(int val);
-
     MCAPI void setSource(::Actor* source);
-
-    MCFOLD void setValueAmplifier(::std::shared_ptr<::Amplifier> amplifier);
     // NOLINTEND
 
 public:
@@ -77,13 +69,13 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(float amount, int operand, ::AttributeBuffType type);
 
-    MCAPI void* $ctor(float amount, int operand, ::ActorDamageSource const& source, ::AttributeBuffType type);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(
+        float                                         amount,
+        int                                           operand,
+        ::ActorDamageSource const&                    source,
+        ::AttributeBuffType                           type,
+        ::std::optional<::HurtEffectsSettings> const& hurtEffectsSettings
+    );
     // NOLINTEND
 
 public:

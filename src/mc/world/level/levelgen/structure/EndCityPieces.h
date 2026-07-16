@@ -50,73 +50,26 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        EndCityPiece();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         virtual ::StructurePieceType getType() const /*override*/;
 
-        virtual void postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
+        virtual void
+        postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
         virtual void _handleDataMarker(
-            ::std::string const& markerId,
-            ::BlockPos const&    position,
-            ::BlockSource&       region,
-            ::Random&            random,
-            ::BoundingBox const& chunkBB
+            ::std::string const&,
+            ::BlockPos const&,
+            ::BlockSource&,
+            ::Random&,
+            ::BoundingBox const&
         ) /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI EndCityPiece(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
-            ::std::string                                     templateName,
-            ::BlockPos const&                                 origin,
-            ::Rotation                                        rotation,
-            bool                                              overwrite
-        );
-
-        MCAPI void _loadAndSetup(::BlockPos const& position);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
-            ::std::string                                     templateName,
-            ::BlockPos const&                                 origin,
-            ::Rotation                                        rotation,
-            bool                                              overwrite
-        );
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::StructurePieceType $getType() const;
 
-        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
-
-        MCAPI void $_handleDataMarker(
-            ::std::string const& markerId,
-            ::BlockPos const&    position,
-            ::BlockSource&       region,
-            ::Random&            random,
-            ::BoundingBox const& chunkBB
-        );
-
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -125,13 +78,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual bool generate(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
-            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
-            int                                                                        genDepth,
-            ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          offset,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
-            ::Random&                                                                  random
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>,
+            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const&,
+            int,
+            ::EndCityPieces::EndCityPiece*,
+            ::BlockPos const&,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&,
+            ::Random&
         ) = 0;
 
         virtual ~SectionGenerator() = default;
@@ -149,12 +102,12 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual bool generate(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
-            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
-            int                                                                        genDepth,
-            ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          pieces,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>,
+            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const&,
+            int,
+            ::EndCityPieces::EndCityPiece*,
+            ::BlockPos const&,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&,
             ::Random&
         ) /*override*/;
         // NOLINTEND
@@ -162,23 +115,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $generate(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
-            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
-            int                                                                        genDepth,
-            ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          pieces,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
-            ::Random&
-        );
 
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -187,36 +124,20 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual bool generate(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
-            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
-            int                                                                        genDepth,
-            ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          offset,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
-            ::Random&                                                                  random
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>,
+            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const&,
+            int,
+            ::EndCityPieces::EndCityPiece*,
+            ::BlockPos const&,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&,
+            ::Random&
         ) /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $generate(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
-            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
-            int                                                                        genDepth,
-            ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          offset,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
-            ::Random&                                                                  random
-        );
 
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -231,12 +152,12 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual bool generate(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
-            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
-            int                                                                        genDepth,
-            ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          pieces,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>,
+            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const&,
+            int,
+            ::EndCityPieces::EndCityPiece*,
+            ::BlockPos const&,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&,
             ::Random&
         ) /*override*/;
         // NOLINTEND
@@ -244,23 +165,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $generate(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
-            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
-            int                                                                        genDepth,
-            ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          pieces,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
-            ::Random&
-        );
 
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -269,12 +174,12 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual bool generate(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
-            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
-            int                                                                        genDepth,
-            ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          pieces,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>,
+            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const&,
+            int,
+            ::EndCityPieces::EndCityPiece*,
+            ::BlockPos const&,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&,
             ::Random&
         ) /*override*/;
         // NOLINTEND
@@ -282,59 +187,11 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $generate(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
-            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
-            int                                                                        genDepth,
-            ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          pieces,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
-            ::Random&
-        );
 
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
     using Generators = ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>>;
 
     using SectionGenerator = ::EndCityPieces::SectionGenerator;
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::EndCityPieces::EndCityPiece> _createPiece(
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
-        ::EndCityPieces::EndCityPiece*                    parent,
-        ::BlockPos const&                                 offset,
-        ::std::string const&                              templateName,
-        ::Rotation                                        rotation,
-        bool                                              overwrite
-    );
-
-    MCAPI static bool _recursiveChildren(
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
-        ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
-        ::EndCityPieces::SectionType                                               type,
-        int                                                                        newGenDepth,
-        ::EndCityPieces::EndCityPiece*                                             parent,
-        ::BlockPos const&                                                          offset,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
-        ::Random&                                                                  random
-    );
-
-    MCAPI static void startHouseTower(
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
-        ::BlockPos const&                                   origin,
-        ::Rotation                                          rotation,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random
-    );
-    // NOLINTEND
 };

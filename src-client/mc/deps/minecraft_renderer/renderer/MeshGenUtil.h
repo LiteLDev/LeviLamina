@@ -13,33 +13,6 @@ namespace mce::MeshGenUtil {
 // NOLINTBEGIN
 MCAPI ::mce::VertexLayout findVertexLayout(::mce::MeshData const& data, bool splitStream);
 
-MCAPI void generateOldStyleRenderChunk(
-    ::mce::MeshData const&     data,
-    ::mce::VertexLayout const& format,
-    uint64                     vertexCount,
-    uint64                     indexSegmentSize,
-    uint                       indexSize,
-    ::std::vector<uchar>&      dataOut
-);
-
-MCAPI void generateOldStyleTintedUIElement(
-    ::mce::MeshData const&     data,
-    ::mce::VertexLayout const& format,
-    uint64                     vertexCount,
-    uint64                     indexSegmentSize,
-    uint                       indexSize,
-    ::std::vector<uchar>&      dataOut
-);
-
-MCAPI void generateOldStyleUIElement(
-    ::mce::MeshData const&     data,
-    ::mce::VertexLayout const& format,
-    uint64                     vertexCount,
-    uint64                     indexSegmentSize,
-    uint                       indexSize,
-    ::std::vector<uchar>&      dataOut
-);
-
 MCAPI void generateOldStyleVertexBufferData(
     ::mce::MeshData const&                      data,
     ::mce::VertexLayout const&                  layout,

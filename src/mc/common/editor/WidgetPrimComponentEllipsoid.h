@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class WidgetPrimComponentEllipsoid {
@@ -25,18 +20,6 @@ public:
     WidgetPrimComponentEllipsoid& operator=(WidgetPrimComponentEllipsoid const&);
     WidgetPrimComponentEllipsoid(WidgetPrimComponentEllipsoid const&);
     WidgetPrimComponentEllipsoid();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool operator==(::Editor::Network::WidgetPrimComponentEllipsoid const& other) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
 };
 
 } // namespace Editor::Network

@@ -30,39 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptCustomCommandInterface& operator=(ScriptCustomCommandInterface const&);
-    ScriptCustomCommandInterface();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptCustomCommandInterface(::ScriptModuleMinecraft::ScriptCustomCommandInterface const&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptCustomCommandInterface&
-    operator=(::ScriptModuleMinecraft::ScriptCustomCommandInterface&&);
-
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptCustomCommandInterface const& other) const;
-
-    MCAPI ~ScriptCustomCommandInterface();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomCommandInterface const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

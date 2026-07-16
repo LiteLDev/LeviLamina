@@ -35,10 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PistonArmBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -74,7 +70,7 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
@@ -90,17 +86,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PistonArmBlock(::std::string const& nameId, int id, ::PistonBlock::Type type);
-
-    MCAPI void _getCollisions(::AABB& armBaseAABB, ::AABB& armAABB, ::AABB& frontAABB, uchar facingDir) const;
-
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::PistonBlock::Type type);
     // NOLINTEND
 
 public:
@@ -138,7 +124,7 @@ public:
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 

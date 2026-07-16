@@ -22,18 +22,4 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                  lastInputUserControllerId;
     ::ll::TypedStorage<8, 16, ::std::map<int, ::std::weak_ptr<::IClientInstance>>> controllerIDtoClientMap;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void insertClientInstance(int id, ::std::shared_ptr<::IClientInstance> clientInstance);
-
-    MCAPI void removeClientInstance(::std::shared_ptr<::IClientInstance> const& clientInstance);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

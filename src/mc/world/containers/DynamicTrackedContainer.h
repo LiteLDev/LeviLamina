@@ -17,16 +17,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                            mExpired;
     ::ll::TypedStorage<1, 1, bool>                                            mIsValid;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DynamicTrackedContainer();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

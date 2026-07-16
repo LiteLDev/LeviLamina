@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_21_110 {
 
 struct SonicBoomGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -33,41 +28,20 @@ public:
 public:
     // prevent constructor by default
     SonicBoomGoalDefinition& operator=(SonicBoomGoalDefinition const&);
+    SonicBoomGoalDefinition(SonicBoomGoalDefinition const&);
     SonicBoomGoalDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SonicBoomGoalDefinition(::SharedTypes::v1_21_110::SonicBoomGoalDefinition const&);
-
     MCAPI ::SharedTypes::v1_21_110::SonicBoomGoalDefinition&
     operator=(::SharedTypes::v1_21_110::SonicBoomGoalDefinition&&);
-
-    MCAPI ~SonicBoomGoalDefinition();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_110::SonicBoomGoalDefinition const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

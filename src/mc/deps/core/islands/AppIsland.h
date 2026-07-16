@@ -27,7 +27,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~AppIsland() /*override*/;
+#else // LL_PLAT_C
+    virtual ~AppIsland() /*override*/ = default;
+#endif
 
     virtual ushort getId() /*override*/;
 
@@ -41,7 +45,7 @@ public:
 
     virtual void mainUpdate() /*override*/;
 
-    virtual void processActivationArguments(::Bedrock::ActivationArguments const& args) /*override*/;
+    virtual void processActivationArguments(::Bedrock::ActivationArguments const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -77,7 +81,7 @@ public:
 
     MCNAPI void $mainUpdate();
 
-    MCNAPI void $processActivationArguments(::Bedrock::ActivationArguments const& args);
+    MCNAPI void $processActivationArguments(::Bedrock::ActivationArguments const&);
 
 
     // NOLINTEND

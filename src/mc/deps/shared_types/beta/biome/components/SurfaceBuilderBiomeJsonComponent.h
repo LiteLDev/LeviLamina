@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/beta/biome/components/NoiseGradientSurfaceSettings.h"
 #include "mc/deps/shared_types/v1_20_60/biome/components/IBiomeJsonComponent.h"
 #include "mc/deps/shared_types/v1_21_100/biome/components/CappedSurfaceSettings.h"
 #include "mc/deps/shared_types/v1_21_100/biome/components/FrozenOceanSurfaceSettings.h"
@@ -11,6 +10,7 @@
 #include "mc/deps/shared_types/v1_21_100/biome/components/OverworldSurfaceSettings.h"
 #include "mc/deps/shared_types/v1_21_100/biome/components/SwampSurfaceSettings.h"
 #include "mc/deps/shared_types/v1_21_100/biome/components/TheEndSurfaceSettings.h"
+#include "mc/deps/shared_types/v1_26_30/biome/components/NoiseGradientSurfaceSettings.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,7 +33,7 @@ public:
             ::SharedTypes::v1_21_100::SurfaceBuilder::SwampSurfaceSettings,
             ::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings,
             ::SharedTypes::v1_21_100::SurfaceBuilder::TheEndSurfaceSettings,
-            ::SharedTypes::Beta::SurfaceBuilder::NoiseGradientSurfaceSettings>>
+            ::SharedTypes::v1_26_30::SurfaceBuilder::NoiseGradientSurfaceSettings>>
         mBuilder;
     // NOLINTEND
 

@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 struct PrimitiveShapeDataPayload;
-namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -31,41 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptLinePrimitive();
-
-#ifdef LL_PLAT_S
-    MCAPI ScriptLinePrimitive(
-        ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location,
-        ::Vec3 const&                                                                   endLocation,
-        bool                                                                            isDebugShape
-    );
-#endif
-
-    MCFOLD ::Vec3 const& getEndLocation() const;
-
-    MCAPI void setEndLocation(::Vec3 const& location);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-#ifdef LL_PLAT_S
-    MCAPI void* $ctor(
-        ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location,
-        ::Vec3 const&                                                                   endLocation,
-        bool                                                                            isDebugShape
-    );
-#endif
     // NOLINTEND
 
 public:

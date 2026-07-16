@@ -25,22 +25,6 @@ public:
     LayoutScheduler& operator=(LayoutScheduler const&);
     LayoutScheduler(LayoutScheduler const&);
     LayoutScheduler();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit LayoutScheduler(::cohtml::Library& library);
-
-    MCAPI void scheduleLayoutTask();
-
-    MCAPI void waitUntilLayoutIsCompleted();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cohtml::Library& library);
-    // NOLINTEND
 };
 
 } // namespace OreUI

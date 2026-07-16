@@ -16,9 +16,9 @@ public:
 
     virtual uint getPrimaryLocalUser() const = 0;
 
-    virtual ::std::unordered_map<::std::string, ::Social::Events::Property> buildCommonProperties(uint) const = 0;
+    virtual ::std::unordered_map<::std::string, ::Social::Events::Property> buildCommonProperties(uint user) const = 0;
 
-    virtual void recordEvent(::Social::Events::Event&) = 0;
+    virtual void recordEvent(::Social::Events::Event& event) = 0;
     // NOLINTEND
 
 public:

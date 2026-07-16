@@ -19,18 +19,6 @@ public:
     EditorJigsawSection& operator=(EditorJigsawSection const&);
     EditorJigsawSection(EditorJigsawSection const&);
     EditorJigsawSection();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~EditorJigsawSection();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

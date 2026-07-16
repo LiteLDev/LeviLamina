@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
@@ -16,14 +17,9 @@ public:
     // NOLINTBEGIN
     virtual ~ILevelBlockDestroyerProxy() = default;
 
-    virtual void sendEvents(
-        ::LevelEventManager& levelEventManager,
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block
-    ) = 0;
+    virtual void sendEvents(::LevelEventManager&, ::BlockSource&, ::BlockPos const&, ::Block const&) = 0;
 
-    virtual void dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) = 0;
+    virtual void dropResources(::BlockSource&, ::BlockPos const&, ::Block const&, ::Actor const*) = 0;
     // NOLINTEND
 
 public:

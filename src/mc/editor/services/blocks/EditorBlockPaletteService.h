@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorBlockPaletteServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -29,7 +29,6 @@ namespace Editor::Network { class BlockPaletteItemChangedPayload; }
 namespace Editor::Network { class BlockPaletteRemovedPayload; }
 namespace Editor::Network { class BlockPaletteSelectedIndexChangedPayload; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace Editor::Services {
@@ -118,23 +117,14 @@ public:
 
     MCNAPI void _addOrReplacePalette(::Editor::EditorBlockPalette const& palette);
 
-    MCNAPI ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
-    _checkAndClampWeights(::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> item);
-
     MCNAPI ::Scripting::Result_deprecated<void> _checkForDuplicateBlocks(
         ::HashedString const&                                                                          paletteId,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
 
-    MCNAPI ::Scripting::Error _getAttemptingToRemoveOnlyPaletteError(::HashedString const& paletteId) const;
-
-    MCNAPI ::Scripting::Error _getDuplicateBlockFoundError(::HashedString const& paletteId) const;
-
     MCNAPI ::Scripting::ArgumentOutOfBoundsError _getIndexOutOfBoundsError(int param, int argIndex, int max) const;
 
     MCNAPI ::Editor::EditorBlockPalette* _getPalette(::HashedString const& paletteId) const;
-
-    MCNAPI ::Scripting::Error _getPaletteIdNotFoundError(::HashedString const& paletteId) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> _removePalette(::HashedString const& paletteId);
 

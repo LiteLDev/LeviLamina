@@ -38,18 +38,6 @@ public:
         ::ll::TypedStorage<4, 16, float[4]>                          mCol;
         ::ll::TypedStorage<4, 16, float[4]>                          mParticleColorFloat;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ParticleColors();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -81,14 +69,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _parseColorBlock(::ConstDeserializeDataParams const& deserializeDataParams, float value);
-
-    MCAPI void _parseGradientBlock(::ConstDeserializeDataParams const& deserializeDataParams);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
@@ -102,12 +82,6 @@ public:
         ::ParticleSystem::CommonParticle&                 particle,
         ::RenderParams&                                   renderParams
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

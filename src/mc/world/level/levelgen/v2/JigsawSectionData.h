@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/util/Rotation.h"
-#include "mc/world/level/levelgen/v2/JigsawSectionDataKey.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,35 +26,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                                    mPositions;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::br::worldgen::JigsawJunction>>> mJunctions;
     ::ll::TypedStorage<8, 24, ::std::vector<::BoundingBox>>                                 mBoundingBoxes;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JigsawSectionData& operator=(JigsawSectionData const&);
-    JigsawSectionData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI JigsawSectionData(::br::worldgen::JigsawSectionData const&);
-
-    MCAPI ::br::worldgen::JigsawSectionDataKey push(::StructurePoolElement const* element, int depth);
-
-    MCAPI void reserve(uint64 size);
-
-    MCAPI ~JigsawSectionData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::JigsawSectionData const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

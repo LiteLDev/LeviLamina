@@ -80,12 +80,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::ServerCommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(

@@ -2,15 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/external/webrtc/StrongAlias.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace dcsctp { class PPIDTag; }
-namespace dcsctp { class StreamIDTag; }
-// clang-format on
-
 namespace dcsctp {
 
 class DcSctpMessage {
@@ -31,23 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DcSctpMessage(
-        ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id,
-        ::webrtc::StrongAlias<::dcsctp::PPIDTag, uint>       ppid,
-        ::std::vector<uchar>                                 payload
-    );
-
     MCNAPI ~DcSctpMessage();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id,
-        ::webrtc::StrongAlias<::dcsctp::PPIDTag, uint>       ppid,
-        ::std::vector<uchar>                                 payload
-    );
     // NOLINTEND
 
 public:

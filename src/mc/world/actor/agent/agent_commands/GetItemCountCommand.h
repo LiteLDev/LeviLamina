@@ -27,19 +27,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $execute();
 
-    MCFOLD bool $isDone();
-
-    MCAPI void $fireCommandDoneEvent();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

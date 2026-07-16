@@ -19,10 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WeatherManagerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual float getRainLevel() const /*override*/;
@@ -40,18 +36,6 @@ public:
     virtual void setRainTime(int rainTime) /*override*/;
 
     virtual void setLightningTime(int lightningTime) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit WeatherManagerProxy(::Bedrock::NotNullNonOwnerPtr<::LevelData> levelData);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::LevelData> levelData);
     // NOLINTEND
 
 public:

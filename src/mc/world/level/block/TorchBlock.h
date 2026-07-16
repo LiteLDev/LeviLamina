@@ -6,7 +6,6 @@
 #include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/block/BlockType.h"
-#include "mc/world/level/block/TorchFacing.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -66,13 +65,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TorchBlock(::std::string const& nameId, int id);
-
     MCAPI TorchBlock(::std::string const& nameId, int id, ::ParticleType flameParticle);
 
-    MCAPI ::Vec3 _flameParticlePos(::BlockPos const& pos, ::TorchFacing dir) const;
-
+#ifdef LL_PLAT_S
     MCAPI bool canBePlacedOn(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
+#endif
 
     MCAPI void onPlaceTorchBlock(::BlockEvents::BlockPlaceEvent& eventData) const;
 
@@ -80,18 +77,8 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<::TorchFacing const[]> DATA_FROM_FACING();
-
-    MCAPI static ::std::add_lvalue_reference_t<ushort const[]> FACING_FROM_DATA();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
-
     MCAPI void* $ctor(::std::string const& nameId, int id, ::ParticleType flameParticle);
     // NOLINTEND
 
@@ -123,7 +110,7 @@ public:
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

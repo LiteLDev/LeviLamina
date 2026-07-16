@@ -2,13 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
 // auto generated forward declare list
 // clang-format off
 class IProfileEntryPromptData;
-class MinecraftScreenController;
 // clang-format on
 
 class ProfileEntryPromptManager {
@@ -21,30 +17,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ProfileEntryPromptManager();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ProfileEntryPromptManager(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> controller);
-
-    MCAPI void _registerEventHandlers(::MinecraftScreenController& controller);
-
     MCAPI void closeCurrentModal(bool openNextModal);
-
-    MCAPI ~ProfileEntryPromptManager();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> controller);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

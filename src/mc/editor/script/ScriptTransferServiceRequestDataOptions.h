@@ -24,21 +24,9 @@ public:
     ScriptTransferServiceRequestDataOptions();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ScriptTransferServiceRequestDataOptions();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindInterface();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

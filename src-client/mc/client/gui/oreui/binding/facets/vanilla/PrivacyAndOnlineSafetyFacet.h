@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ namespace Social { class User; }
 
 namespace OreUI {
 
-class PrivacyAndOnlineSafetyFacet : public ::OreUI::FacetBase<::OreUI::PrivacyAndOnlineSafetyFacet> {
+class PrivacyAndOnlineSafetyFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PrivacyAndOnlineSafetyFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -35,14 +35,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit PrivacyAndOnlineSafetyFacet(::std::weak_ptr<::Social::User> user);
-
-    MCAPI void doPermissionCheck();
-
-    MCAPI bool getAllowCapturesResult() const;
-
-    MCAPI bool getClubCheckResult() const;
-
-    MCAPI bool getMultiplayerCheckResult() const;
     // NOLINTEND
 
 public:

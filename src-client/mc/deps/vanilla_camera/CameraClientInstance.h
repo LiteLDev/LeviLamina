@@ -62,10 +62,4 @@ public:
 
     MCFOLD float $getSecondsSinceProgramStart();
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

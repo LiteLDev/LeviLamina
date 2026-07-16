@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/network/realms/RealmId.h"
 #include "mc/client/network/realms/World.h"
 
@@ -15,7 +15,7 @@ namespace OreUI { struct RealmSlot; }
 
 namespace OreUI {
 
-class RealmSlotsFacet : public ::OreUI::FacetBase<::OreUI::RealmSlotsFacet> {
+class RealmSlotsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmSlotsFacet> {
 public:
     // RealmSlotsFacet inner types define
     enum class FacetStatus : uchar {
@@ -57,28 +57,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmSlotsFacet(::std::shared_ptr<::PlayScreenModel> playScreenModel);
-
-    MCAPI void activateSlot(int index);
-
-    MCAPI void confirm();
-
-    MCAPI bool didFailToActivateSlot() const;
-
-    MCAPI bool didFailToQuerySelectedRealmDetails() const;
-
-    MCFOLD ::std::vector<::OreUI::RealmSlot> const& getRealmSlots() const;
-
-    MCAPI void getSelectedRealmDetails(::std::string const& realmId);
-
-    MCAPI bool isLoading() const;
-
-    MCAPI bool isShowingConfirmationModal() const;
-
-    MCAPI bool isSlotSelected() const;
-
-    MCAPI void reset();
-
-    MCAPI void selectSlot(int index);
     // NOLINTEND
 
 public:

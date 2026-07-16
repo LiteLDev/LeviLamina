@@ -19,23 +19,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetDownloadProgressHandlerError& operator=(SetDownloadProgressHandlerError const&);
-    SetDownloadProgressHandlerError(SetDownloadProgressHandlerError const&);
-    SetDownloadProgressHandlerError();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SetDownloadProgressHandlerError(::SetDownloadProgressHandlerError&&);
-
     MCAPI ~SetDownloadProgressHandlerError();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SetDownloadProgressHandlerError&&);
     // NOLINTEND
 
 public:

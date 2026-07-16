@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/absl/InlinedVector.h"
+#include "mc/external/webrtc/ArrayView.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -50,8 +51,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::absl::InlinedVector<int64, 5, ::std::allocator<int64>>
-    FromBuffersUsage(int64 frame_id, ::rtc::ArrayView<::webrtc::CodecBufferUsage const> buffers_usage);
+    MCNAPI ::absl::InlinedVector<int64, 5, ::std::allocator<int64>> FromBuffersUsage(
+        int64                                                                       frame_id,
+        ::webrtc::ArrayView<::webrtc::CodecBufferUsage const, 18446744073709546905> buffers_usage
+    );
 
     MCNAPI ~FrameDependenciesCalculator();
     // NOLINTEND

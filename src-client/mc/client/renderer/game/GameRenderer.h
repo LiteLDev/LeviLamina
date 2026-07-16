@@ -61,18 +61,6 @@ public:
         Overlays& operator=(Overlays const&);
         Overlays(Overlays const&);
         Overlays();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~Overlays();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     using PauseStateChangeConnector = ::Bedrock::PubSub::Connector<void(bool)>;
@@ -131,7 +119,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameRenderer();
+    virtual ~GameRenderer() = default;
     // NOLINTEND
 
 public:
@@ -143,77 +131,32 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::FrameAnomalyDetector> const& frameAnomalyDetector
     );
 
-    MCAPI void _checkAndDrawInputUI(::ScreenContext& screenContext);
-
-    MCAPI ::std::unique_ptr<::FrameRenderObject, ::std::function<void(::FrameRenderObject*)>>
-    _extractFrame(::ScreenContext& screenContext, bool renderGraphContainsPlayScreen);
-
-    MCAPI void _prepareFrame(::ScreenContext& screenContext);
-
     MCAPI ::std::weak_ptr<::PlayerRenderView> addPlayerRenderView(::LevelRenderer& renderer);
 
     MCAPI void createRenderGraph(::mce::RenderContext& renderContext, bool onResume);
 
-    MCAPI void endFrame(::mce::RenderContext& renderContext);
-
-    MCFOLD ::Matrix const& getCubemapWorldMat() const;
-
-    MCFOLD ::Matrix const& getLastLevelProjSpace() const;
-
-    MCFOLD ::Matrix const& getLastLevelViewSpace() const;
-
-    MCFOLD ::Tessellator& getTessellator();
-
     MCAPI ::ScreenContext makeScreenContext(float a);
-
-    MCFOLD void onAppResumed();
 
     MCAPI void onAppSuspended();
 
     MCAPI void onSubClientRemoved(::IClientInstance const& client);
 
-    MCAPI void recreateTickingTextureStage();
-
     MCAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
+
+    MCAPI void removePlayerRenderView(::PlayerRenderView* view);
 
     MCAPI void renderCurrentFrame(float a);
 
-    MCAPI void renderCursor(::ScreenContext& screenContext, float xMouse, float yMouse);
-
     MCAPI void renderDebugScreen(::ScreenContext& screenContext, ::IClientInstance& client);
-
-    MCAPI void setCapturingFrame(::std::optional<::GameRenderer::FrameCaptureMode> frameCaptureMode);
-
-    MCAPI void setClient(::IClientInstance& ci);
-
-    MCAPI void setCommandListQueue(::CommandListQueue& commandListQueue);
-
-    MCAPI void setCubemapRotationPaused(bool paused);
-
-    MCAPI void setLastLevelProjSpace(::Matrix const& projMat);
-
-    MCAPI void setLastLevelViewSpace(::Matrix const& viewMat);
-
-    MCAPI void setLastLevelViewSpaceAbsolute(::Matrix const& viewMat);
-
-    MCAPI void setLastLevelWorldSpace(::Matrix const& worldMat);
 
     MCAPI void setLevel(::Level* level, ::Dimension* dimension);
 
-    MCAPI void setLowFrequencyUIRender(bool val);
-
-    MCFOLD void startFrame(::mce::RenderContext& renderContext);
-
     MCAPI void tick();
-
-    MCAPI bool useLowFrequencyUIRender() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void clearRenderTarget(::ScreenContext& screenContext);
-
     MCAPI static void setClearColor(::IClientInstance& client, ::ScreenContext& screenContext);
     // NOLINTEND
 
@@ -235,17 +178,5 @@ public:
         ::MinecraftGraphics&                                         graphics,
         ::Bedrock::NotNullNonOwnerPtr<::FrameAnomalyDetector> const& frameAnomalyDetector
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

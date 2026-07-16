@@ -10,7 +10,6 @@
 // clang-format off
 class RenderParams;
 class Vec3;
-struct ConstDeserializeDataParams;
 namespace ParticleSystem { class ComponentAccessParticleEmitter; }
 namespace ParticleSystem { struct CommonParticle; }
 // clang-format on
@@ -28,36 +27,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setInitialState(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::ParticleSystem::CommonParticle&                 particle,
-        ::RenderParams&                                   renderParams,
-        ::Vec3 const&                                     spawnDirection
+        ::ParticleSystem::ComponentAccessParticleEmitter&,
+        ::ParticleSystem::CommonParticle&,
+        ::RenderParams&,
+        ::Vec3 const&
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool _parseDirection(::ConstDeserializeDataParams const& deserializeDataParams);
-
-    MCAPI void _updateDirection(::ParticleSystem::CommonParticle& particle, ::RenderParams& renderParams);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setInitialState(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::ParticleSystem::CommonParticle&                 particle,
-        ::RenderParams&                                   renderParams,
-        ::Vec3 const&                                     spawnDirection
-    );
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

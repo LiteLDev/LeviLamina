@@ -38,18 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::HashedString const& DARK_THEME_ID();
-
-    MCNAPI static ::HashedString const& HIGH_CONTRAST_THEME_ID();
-
-    MCNAPI static ::HashedString const& LIGHT_THEME_ID();
-
-    MCNAPI static ::HashedString const& REDSTONE_THEME_ID();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::Settings::ThemePalette const&);

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,13 +22,13 @@ public:
     virtual ~IScriptItemComponentFactory() = default;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent> createComponent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Scripting::WeakLifetimeScope const&                                          scope
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>,
+        ::Scripting::WeakLifetimeScope const&
     ) const = 0;
 
     virtual ::std::vector<::Scripting::ClassBinding> bind() const = 0;
 
-    virtual bool canAddOn(::ScriptModuleMinecraft::ScriptItemStack& item) const = 0;
+    virtual bool canAddOn(::ScriptModuleMinecraft::ScriptItemStack&) const = 0;
     // NOLINTEND
 
 public:

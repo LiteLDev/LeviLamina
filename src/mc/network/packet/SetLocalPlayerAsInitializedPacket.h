@@ -62,26 +62,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SetLocalPlayerAsInitializedPacket();
-
-#ifdef LL_PLAT_C
-    MCAPI explicit SetLocalPlayerAsInitializedPacket(::SetLocalPlayerAsInitializedPacketPayload payload);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SetLocalPlayerAsInitializedPacketPayload payload);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;

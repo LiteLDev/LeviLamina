@@ -21,16 +21,12 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class FrostedIceBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    FrostedIceBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
     // NOLINTEND
@@ -38,10 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FrostedIceBlock(::std::string const& nameId, int id, bool packed);
-
-    MCAPI int _countNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void _slightlyMelt(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool propagate) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -50,17 +42,11 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool packed);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 

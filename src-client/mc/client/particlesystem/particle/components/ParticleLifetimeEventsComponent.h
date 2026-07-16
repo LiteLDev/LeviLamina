@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 struct ConstDeserializeDataParams;
-namespace Json { class Value; }
 namespace ParticleSystem { class ComponentAccessParticleEmitter; }
 namespace ParticleSystem { struct CommonParticle; }
 namespace SharedTypes::v1_20_80 { struct ParticleEffectComponent; }
@@ -55,12 +54,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _parseEvent(::Json::Value const& event, ::std::vector<::HashedString>& eventList);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
@@ -85,12 +78,6 @@ public:
         ::std::chrono::nanoseconds const                  lastAge,
         ::std::chrono::nanoseconds                        age
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -76,16 +76,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RenderChunkCoordinator() /*override*/;
+    virtual ~RenderChunkCoordinator() /*override*/ = default;
 
-    virtual void onChunkLoaded(::ChunkSource& lc, ::LevelChunk&) /*override*/;
+    virtual void onChunkLoaded(::ChunkSource&, ::LevelChunk&) /*override*/;
 
-    virtual void onSubChunkLoaded(
-        ::ChunkSource& lc,
-        ::LevelChunk&  absoluteSubChunkIndex,
-        short          subChunkVisibilityChanged,
-        bool
-    ) /*override*/;
+    virtual void onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool) /*override*/;
 
     virtual void onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos) /*override*/;
 
@@ -111,43 +106,15 @@ public:
 
     MCAPI void _handleVisibilityUpdates();
 
-    MCAPI void _launchVisibilityRebuild(::std::shared_ptr<::RenderChunkShared>& renderChunkShared);
-
     MCAPI void _setAllDirty(bool immediate, bool changesVisibility);
-
-    MCAPI void
-    _setDirty(::BlockPos const& min, ::BlockPos const& max, bool immediate, bool changesVisibility, bool canInterlock);
-
-    MCAPI void addLevelRendererCameraListener(::LevelRendererCamera* levelRendererCamera);
 
     MCAPI ::std::shared_ptr<::RenderChunkShared> getOrCreateChunkAtPos(::SubChunkPos const& pos);
 
-    MCFOLD ::RenderChunkCoordinatorProxy* getProxy();
-
     MCAPI uint64 getRenderChunkGeometryFaceMetadataMemoryUsed() const;
-
-    MCAPI void preRenderTick();
-
-    MCAPI void rebuildAllRenderChunkGeometry();
 
     MCAPI void relightAllRenderChunkGeometry();
 
-    MCAPI void removeLevelRendererCameraListener(::LevelRendererCamera* levelRendererCamera);
-
     MCAPI void tick();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool shouldSetBlockAsDirty(
-        ::BlockPos const& pos,
-        ::Block const&    block,
-        ::Block const&    oldBlock,
-        ::BlockPos&       min,
-        ::BlockPos&       max,
-        bool&             changesVisibility
-    );
     // NOLINTEND
 
 public:
@@ -157,39 +124,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onChunkLoaded(::ChunkSource& lc, ::LevelChunk&);
 
-    MCAPI void
-    $onSubChunkLoaded(::ChunkSource& lc, ::LevelChunk& absoluteSubChunkIndex, short subChunkVisibilityChanged, bool);
-
-    MCAPI void $onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
-
-    MCAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
-
-    MCAPI void $onBlockChanged(
-        ::BlockSource&                 source,
-        ::BlockPos const&              pos,
-        uint                           layer,
-        ::Block const&                 block,
-        ::Block const&                 oldBlock,
-        int                            updateFlags,
-        ::ActorBlockSyncMessage const* syncMsg,
-        ::BlockChangedEventTarget      eventTarget,
-        ::Actor*                       blockChangeSource
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

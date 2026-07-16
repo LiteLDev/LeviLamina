@@ -30,18 +30,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int consumeChosenAction();
-
-    MCFOLD bool hasChosenAction() const;
-
-    MCAPI void hide();
-
     MCAPI ::OreUI::Prompt& operator=(::OreUI::Prompt&&);
 
     MCAPI void
     show(::std::string id, ::std::string title, ::std::string body, ::std::vector<::OreUI::PromptAction> actions);
-
-    MCAPI void storeChosenAction(int action);
 
     MCAPI ~Prompt();
     // NOLINTEND

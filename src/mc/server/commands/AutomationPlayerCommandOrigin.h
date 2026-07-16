@@ -64,28 +64,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::string $getName() const;
 
-    MCFOLD ::std::string const& $getRequestId() const;
-
-    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
-
-    MCFOLD ::CommandOriginType $getOriginType() const;
-
-    MCAPI ::CommandOriginData $toCommandOriginData() const;
-
-    MCFOLD ::NetworkIdentifier const& $getSourceId() const;
-
-    MCFOLD ::CompoundTag $serialize() const;
-
-    MCAPI bool $isValid() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

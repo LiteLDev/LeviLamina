@@ -13,10 +13,27 @@ class EncodedImage {
 public:
     // EncodedImage inner types declare
     // clang-format off
+    struct Psnr;
     struct Timing;
     // clang-format on
 
     // EncodedImage inner types define
+    struct Psnr {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk9c3501;
+        ::ll::UntypedStorage<8, 8> mUnk6da1c9;
+        ::ll::UntypedStorage<8, 8> mUnk86d088;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Psnr& operator=(Psnr const&);
+        Psnr(Psnr const&);
+        Psnr();
+    };
+
     struct Timing {
     public:
         // member variables
@@ -56,7 +73,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk80115a;
     ::ll::UntypedStorage<4, 4>  mUnke01019;
     ::ll::UntypedStorage<4, 8>  mUnk227a5e;
-    ::ll::UntypedStorage<8, 16> mUnkbffc88;
+    ::ll::UntypedStorage<8, 16> mUnk1ee0f6;
     ::ll::UntypedStorage<4, 8>  mUnk83aaff;
     ::ll::UntypedStorage<4, 8>  mUnk5d7896;
     ::ll::UntypedStorage<8, 16> mUnk2acd68;
@@ -65,6 +82,9 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk917932;
     ::ll::UntypedStorage<1, 1>  mUnkedf20d;
     ::ll::UntypedStorage<1, 1>  mUnkc98a8e;
+    ::ll::UntypedStorage<1, 1>  mUnk3b4d67;
+    ::ll::UntypedStorage<8, 24> mUnke79c44;
+    ::ll::UntypedStorage<8, 32> mUnk9c7b81;
     // NOLINTEND
 
 public:

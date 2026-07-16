@@ -45,8 +45,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ProducerComponent();
-
-    MCFOLD void allowAttachments(bool bAttached);
     // NOLINTEND
 
 public:

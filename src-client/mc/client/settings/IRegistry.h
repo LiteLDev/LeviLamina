@@ -43,8 +43,7 @@ public:
 
     virtual ::std::vector<::std::string_view> getSettingsGroups() const = 0;
 
-    virtual ::std::optional<::std::vector<::Settings::IRegistry::SettingId>>
-    getSettingsGroup(::std::string_view settingsGroupId) = 0;
+    virtual ::std::optional<::std::vector<::Settings::IRegistry::SettingId>> getSettingsGroup(::std::string_view) = 0;
 
     virtual ::std::optional<::std::reference_wrapper<::std::variant<
         ::Settings::BooleanComponent,
@@ -56,7 +55,7 @@ public:
         ::Settings::TextComponent,
         ::Settings::GroupInfoComponent,
         ::Settings::BannerComponent>>>
-    getSetting(::std::string_view settingId) const = 0;
+        getSetting(::std::string_view) const = 0;
     // NOLINTEND
 
 public:

@@ -49,22 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SwimUpForBreathGoal(::Mob& mob);
-
-    MCAPI int _determineApproximateLiquidDepthOfMob() const;
-
-    MCAPI void _findAirPosition();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

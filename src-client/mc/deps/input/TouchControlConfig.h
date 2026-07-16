@@ -37,16 +37,4 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<float()>>                          clientActivePointer;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                           issInControlEditMode;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~TouchControlConfig();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

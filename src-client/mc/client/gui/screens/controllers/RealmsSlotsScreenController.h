@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/RealmsSettingsScreenController.h"
 
 // auto generated forward declare list
@@ -12,7 +11,6 @@
 class MainMenuScreenModel;
 class PlatformMultiplayerRestrictions;
 namespace Realms { struct World; }
-namespace Social { struct PermissionCheckResult; }
 // clang-format on
 
 class RealmsSlotsScreenController : public ::RealmsSettingsScreenController {
@@ -39,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsSlotsScreenController() /*override*/;
+    virtual ~RealmsSlotsScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -52,22 +50,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI RealmsSlotsScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::Realms::World& world);
-
-    MCAPI void _getUnreadCount();
-
-    MCAPI bool _isRealmExpiringForPlatform();
-
-    MCAPI ::Social::PermissionCheckResult _parentalControlsDialogCheck();
-
-    MCAPI void _refreshSlotsInfo();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _setActiveSlot(int slotIndex, ::std::function<void()> callback, bool refreshScreen);
-
-    MCAPI ::ui::ViewRequest _startRealm();
     // NOLINTEND
 
 public:
@@ -77,26 +59,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI void $onCreation();
-
-    MCAPI ::ui::DirtyFlag $tick();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

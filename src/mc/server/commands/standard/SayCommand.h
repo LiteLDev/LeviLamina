@@ -11,9 +11,6 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class Level;
-class Player;
-struct CommandOriginIdentity;
 // clang-format on
 
 class SayCommand : public ::MessagingCommand {
@@ -26,42 +23,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _logOutput(::std::string const& message, ::CommandOrigin const& output, ::CommandOutput&) const;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _sendMessage(
-        ::std::string const&           message,
-        ::std::optional<::std::string> filteredMessage,
-        ::std::string const&           sender,
-        ::CommandOriginIdentity const& identity,
-        ::Level&                       level
-    );
-
-    MCAPI static bool _trySendSayCommandEvent(::Player const& player, ::Level& level, ::std::string const& message);
-
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

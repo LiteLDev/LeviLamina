@@ -10,11 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class Block;
 class ComponentItem;
-class HashedString;
-class ItemStack;
 class SemVersion;
 namespace SharedTypes::v1_20_50 { struct DiggerItemComponent; }
 // clang-format on
@@ -33,23 +29,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 176, ::BlockDescriptor>  filter;
         ::ll::TypedStorage<8, 56, ::DefinitionTrigger> onDig;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DiggerBlockDefinitionTrigger& operator=(DiggerBlockDefinitionTrigger const&);
-        DiggerBlockDefinitionTrigger();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI DiggerBlockDefinitionTrigger(::LegacyOnDigTriggerItemComponent::DiggerBlockDefinitionTrigger const&);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::LegacyOnDigTriggerItemComponent::DiggerBlockDefinitionTrigger const&);
         // NOLINTEND
     };
 
@@ -81,14 +60,6 @@ public:
     MCAPI explicit LegacyOnDigTriggerItemComponent(
         ::SharedTypes::v1_20_50::DiggerItemComponent const& diggerComponentData
     );
-
-    MCAPI void _onMineBlock(bool& result, ::ItemStack& item, ::Block const& block, int x, int y, int z, ::Actor& owner);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

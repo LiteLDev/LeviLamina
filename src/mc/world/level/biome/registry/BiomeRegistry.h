@@ -8,7 +8,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/platform/brstd/flat_set.h"
-#include "mc/platform/brstd/function_ref.h"
 #include "mc/util/IDType.h"
 #include "mc/util/TagRegistry.h"
 #include "mc/world/level/biome/registry/WellKnownBiomeTags.h"
@@ -19,7 +18,6 @@ class BaseGameVersion;
 class Biome;
 class HashedString;
 class ILevelStorageManagerConnector;
-class IWorldRegistriesProvider;
 class LevelStorage;
 class LinkedAssetValidator;
 class ResourcePackManager;
@@ -93,7 +91,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BiomeRegistry() /*override*/;
+    virtual ~BiomeRegistry() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -101,20 +99,12 @@ public:
     // NOLINTBEGIN
     MCAPI BiomeRegistry();
 
-    MCAPI void _forEachExistingBiomeAndRemovedBiome(
-        ::brstd::function_ref<void(::BiomeIdType, ::std::string const&)> callback
-    ) const;
-
     MCAPI ::Biome& _register(::std::string_view name, ::BiomeIdType id);
-
-    MCAPI void _save(::LevelStorage& levelStorage) const;
 
 #ifdef LL_PLAT_C
     MCAPI
         uint64 assignSeasonTextureRow(::BiomeRegistry::SeasonTextureRowSettings const& desiredSettings, uint64 maxSize);
 #endif
-
-    MCAPI bool biomeAddTag(::Biome& biome, ::HashedString tag);
 
     MCAPI ::std::vector<::std::string> const biomeGetTags(::Biome const& biome) const;
 
@@ -126,35 +116,10 @@ public:
 
     MCFOLD bool biomeHasTag(::Biome const& biome, ::WellKnownTagID const& tagID) const;
 
-    MCFOLD void forEachBiome(::brstd::function_ref<void(::Biome const&)> callback) const;
-
-    MCFOLD void forEachNonConstBiome(::brstd::function_ref<void(::Biome&)> callback);
-
     MCAPI ::std::vector<::Biome const*> getBiomesInDimension(::DimensionType type) const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::std::vector<::BiomeRegistry::SeasonTextureRowSettings> const& getSeasonTextureRowSettings() const;
-
-    MCFOLD ::std::vector<::BiomeRegistry::SeasonTextureRowSettings>& getSeasonTextureRowSettings();
-#endif
-
-    MCFOLD ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const& getTagRegistry() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& getTagRegistry();
-#endif
-
-    MCAPI void initServerFromPacks(
-        ::IWorldRegistriesProvider& worldRegistries,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>,
-        ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>&
-            biomeIdToResolvedData
-    );
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
-
-    MCAPI bool isRegistrationFinished() const;
 
     MCAPI void loadAllBiomeDocuments(
         ::ResourcePackManager const&                       loader,
@@ -171,43 +136,21 @@ public:
 
     MCAPI void loadBiomeTable(::LevelStorage const& levelStorage);
 
-#ifdef LL_PLAT_C
-    MCAPI ::Biome const* lookupByHash(::HashedString const& hash) const;
-#endif
-
     MCFOLD ::Biome const* lookupByHashId(::BiomeHashType id) const;
 
     MCFOLD ::Biome* lookupByHashId(::BiomeHashType id);
 
-    MCFOLD ::Biome const* lookupById(::BiomeIdType id) const;
-
-    MCFOLD ::Biome* lookupById(::BiomeIdType id);
+    MCAPI ::Biome* lookupById(::BiomeIdType id);
 
     MCFOLD ::Biome const* lookupByName(::std::string const& name) const;
 
     MCFOLD ::Biome* lookupByName(::std::string const& name);
-
-    MCAPI ::Biome& registerBiomeWithExplicitId(::std::string_view name, ::BiomeIdType id);
-
-    MCAPI ::Biome& registerCustomBiome(::std::string_view name);
-
-    MCAPI void registrationFinished();
-
-    MCAPI void removeFailedToLoadBiomes();
-
-    MCAPI void saveBiomeTable(::LevelStorage& levelStorage) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

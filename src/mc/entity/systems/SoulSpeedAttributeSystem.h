@@ -4,8 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorOwnerComponent;
-class StrictEntityContext;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -13,8 +11,6 @@ struct SoulSpeedAttributeSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tryProcessSoulSpeed(::StrictEntityContext& actorOwnerComponent, ::ActorOwnerComponent&);
-
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

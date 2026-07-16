@@ -11,12 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class ComponentItem;
-class HashedString;
-class ItemStack;
-class Player;
 class SemVersion;
-class Vec3;
-namespace SharedTypes::v1_21_90 { struct PiercingWeaponItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -37,16 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PiercingWeaponItemComponent();
-
-    MCAPI explicit PiercingWeaponItemComponent(::SharedTypes::v1_21_90::PiercingWeaponItemComponent const& data);
-
-    MCAPI void _onUseAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(
@@ -54,16 +39,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::SharedTypes::v1_21_90::PiercingWeaponItemComponent const& data);
     // NOLINTEND
 
 public:

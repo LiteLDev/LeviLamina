@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/RealmsPurchaseFailureReason.h"
 #include "mc/client/realms/RealmsPurchaseState.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -15,7 +15,7 @@ namespace Realms { class RealmsPurchase; }
 
 namespace OreUI {
 
-class RealmsPurchaseQueriesFacet : public ::OreUI::FacetBase<::OreUI::RealmsPurchaseQueriesFacet> {
+class RealmsPurchaseQueriesFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsPurchaseQueriesFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsPurchaseQueriesFacet() /*override*/;
+    virtual ~RealmsPurchaseQueriesFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -44,12 +44,6 @@ public:
     // NOLINTBEGIN
     MCAPI
     RealmsPurchaseQueriesFacet(::std::shared_ptr<::Realms::RealmsPurchase> realmsPurchase, int expectedStoreVersion);
-
-    MCFOLD ::Realms::RealmsPurchaseFailureReason getFailureReason() const;
-
-    MCFOLD ::Realms::RealmsPurchaseState getState() const;
-
-    MCFOLD bool isPurchaseDisabledDueToStoreVersion() const;
     // NOLINTEND
 
 public:
@@ -65,21 +59,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

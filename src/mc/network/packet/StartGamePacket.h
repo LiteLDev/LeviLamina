@@ -32,7 +32,7 @@ class StartGamePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1336, ::LevelSettings>             mSettings;
+    ::ll::TypedStorage<8, 1344, ::LevelSettings>             mSettings;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                mEntityId;
     ::ll::TypedStorage<8, 8, ::ActorRuntimeID>               mRuntimeId;
     ::ll::TypedStorage<4, 4, ::GameType>                     mEntityGameType;
@@ -54,8 +54,9 @@ public:
     ::ll::TypedStorage<1, 1, bool>                           mServerEnabledClientSideGeneration;
     ::ll::TypedStorage<1, 1, bool>                           mBlockNetworkIdsAreHashes;
     ::ll::TypedStorage<1, 1, ::NetworkPermissions>           mNetworkPermissions;
+    ::ll::TypedStorage<1, 1, bool>                           mIsLoggingChat;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::CompoundTag>>> mBlockProperties;
-    ::ll::TypedStorage<8, 368, ::std::optional<::ServerConfiguration::ServerConfigurationJoinInfo>>
+    ::ll::TypedStorage<8, 416, ::std::optional<::ServerConfiguration::ServerConfigurationJoinInfo>>
                                                                       mServerConfigurationJoinInfo;
     ::ll::TypedStorage<8, 128, ::Social::Events::ServerTelemetryData> mServerTelemetryData;
     // NOLINTEND
@@ -99,12 +100,11 @@ public:
         ::Social::Events::ServerTelemetryData const&                               serverTelemetryData,
         uint64                                                                     levelCurrentTime,
         int                                                                        enchantmentSeed,
-        uint64                                                                     blockTypeRegistryChecksum
+        uint64                                                                     blockTypeRegistryChecksum,
+        bool                                                                       isLoggingChat
     );
 
 #ifdef LL_PLAT_C
-    MCFOLD ::LevelSettings const& getLevelSettings() const;
-
     MCAPI ::std::string getMultiplayerCorrelationId() const;
 #endif
     // NOLINTEND
@@ -136,7 +136,8 @@ public:
         ::Social::Events::ServerTelemetryData const&                               serverTelemetryData,
         uint64                                                                     levelCurrentTime,
         int                                                                        enchantmentSeed,
-        uint64                                                                     blockTypeRegistryChecksum
+        uint64                                                                     blockTypeRegistryChecksum,
+        bool                                                                       isLoggingChat
     );
     // NOLINTEND
 

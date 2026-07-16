@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class CopyOnWriteBuffer; }
+namespace webrtc { class CopyOnWriteBuffer; }
 namespace webrtc { class RtpPacketReceived; }
 // clang-format on
 
@@ -18,7 +18,7 @@ class PacketReceiver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void DeliverRtcpPacket(::rtc::CopyOnWriteBuffer) = 0;
+    virtual void DeliverRtcpPacket(::webrtc::CopyOnWriteBuffer) = 0;
 
     virtual void DeliverRtpPacket(
         ::webrtc::MediaType,

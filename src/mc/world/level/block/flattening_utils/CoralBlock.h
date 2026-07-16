@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/BlockType.h"
-#include "mc/world/level/block/CoralColor.h"
-
 // auto generated forward declare list
 // clang-format off
 class Block;
@@ -19,10 +15,6 @@ namespace FlatteningUtils::CoralBlock {
 MCAPI ::FlatteningUtils::Instance get();
 
 MCAPI ::std::function<::Block const*(int)> getBlockComplexAliasCallback();
-
-MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getColorSplitStates(bool dead);
-
-MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getDeadSplitStates(::CoralColor color);
 
 MCAPI ::ItemRegistryComplexAlias getItemComplexAliasCallback();
 // NOLINTEND

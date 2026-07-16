@@ -6,11 +6,6 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/shared_types/legacy/ExpressionNode.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_20_80 {
 
 struct ParticleVisualEffectEvent {
@@ -36,12 +31,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ParticleVisualEffectEvent();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

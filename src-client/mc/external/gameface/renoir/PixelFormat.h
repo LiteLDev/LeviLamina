@@ -58,7 +58,8 @@ enum class PixelFormat : int {
     AstcSrgb12x12               = 50,
     R8g8b8                      = 51,
     R8g8b8a8Srgb                = 52,
-    UserFormat                  = 53,
+    B8g8r8a8                    = 53,
+    UserFormat                  = 54,
 };
 
 }

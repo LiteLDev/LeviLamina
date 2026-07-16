@@ -28,18 +28,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::cereal::SerializerContext*> mContext;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ScopedPop();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -55,8 +43,6 @@ public:
     MCAPI void clearGenerations(uint from, uint to, ::cereal::ResultCode filter);
 
     MCAPI ::cereal::LogCheckpoint getLogCheckpoint();
-
-    MCAPI bool hasErrors() const;
 
     MCAPI void log(::cereal::ResultCode res, ::Bedrock::StaticOptimizedString msg);
 

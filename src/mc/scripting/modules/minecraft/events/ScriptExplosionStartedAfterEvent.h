@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockSource;
 namespace ScriptModuleMinecraft { class ScriptActor; }
-namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace ScriptModuleMinecraft { struct ScriptExplosionStartedAfterEventIntermediateData; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -51,9 +50,6 @@ public:
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                               scope
     );
-
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>
-    getImpactedBlocks() const;
     // NOLINTEND
 
 public:

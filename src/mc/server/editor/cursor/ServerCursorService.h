@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 #include "mc/server/editor/serviceproviders/ServerCursorServiceProvider.h"
@@ -22,8 +22,6 @@ namespace Editor::Cursor { struct AttachmentProperties; }
 namespace Editor::Cursor { struct CursorState; }
 namespace Editor::Cursor { struct Position; }
 namespace Editor::Cursor { struct Ray; }
-namespace Editor::Network { class CursorServicePositionChangePayload; }
-namespace Editor::Network { class CursorServiceViewDistanceChangePayload; }
 // clang-format on
 
 namespace Editor::Cursor {
@@ -56,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerCursorService() /*override*/;
+    virtual ~ServerCursorService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -117,26 +115,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ServerCursorService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI ::Scripting::Result_deprecated<::WeakRef<::Editor::Cursor::ServerCursor>> _createCursor();
-
-    MCNAPI void _createOrUpdateRegion(::BlockPos const& pos);
-
-    MCNAPI void _handleMaxViewDistanceChange(::Editor::Network::CursorServiceViewDistanceChangePayload const& payload);
-
-    MCNAPI void _handlePayloadPositionChange(::Editor::Network::CursorServicePositionChangePayload const& payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

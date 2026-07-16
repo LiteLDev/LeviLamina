@@ -9,7 +9,6 @@
 // clang-format off
 class IClientInstance;
 class MinecraftUIRenderContext;
-class ScreenContext;
 class UIControl;
 class UICustomRenderer;
 // clang-format on
@@ -24,20 +23,6 @@ public:
 
     virtual void
     render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI HotBarCooldownRenderer();
-
-    MCAPI void _renderCooldownProgress(::ScreenContext& screenContext, ::IClientInstance& client, ::UIControl& owner);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

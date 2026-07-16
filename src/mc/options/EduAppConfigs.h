@@ -10,7 +10,6 @@
 // clang-format off
 class IAppConfigData;
 class IContentAccessibilityProvider;
-struct PackIdVersion;
 // clang-format on
 
 class EduAppConfigs : public ::DataBackedAppConfigs {
@@ -34,14 +33,6 @@ public:
     virtual ::EducationEditionOffer getEducationEditionOffering() const /*override*/;
 
     virtual ::std::unique_ptr<::IContentAccessibilityProvider> createContentAccessibility() const /*override*/;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::PackIdVersion const& EDUOreUIResourcePack();
-
-    MCNAPI static ::PackIdVersion const& EDUResourcePack();
     // NOLINTEND
 
 public:

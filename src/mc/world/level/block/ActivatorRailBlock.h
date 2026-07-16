@@ -13,27 +13,11 @@ namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 
 class ActivatorRailBlock : public ::BaseRailBlock {
 public:
-    // prevent constructor by default
-    ActivatorRailBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getVariant(::Block const& block) const /*override*/;
 
     virtual void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ActivatorRailBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

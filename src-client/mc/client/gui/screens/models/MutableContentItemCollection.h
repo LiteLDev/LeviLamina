@@ -31,16 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void forceVersion();
-
-    MCFOLD ::std::vector<::gsl::not_null<::std::shared_ptr<::ContentItem>>> const& get() const;
-
-    MCAPI void set(::std::vector<::gsl::not_null<::std::shared_ptr<::ContentItem>>>&& items);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $appendLatest(
@@ -48,7 +38,7 @@ public:
         ::std::vector<::gsl::not_null<::std::shared_ptr<::ContentItem const>>>& output
     ) const;
 
-    MCFOLD ::ContentItemCollectionVersion $getVersion() const;
+    MCAPI ::ContentItemCollectionVersion $getVersion() const;
     // NOLINTEND
 
 public:

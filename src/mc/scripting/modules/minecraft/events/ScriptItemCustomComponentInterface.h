@@ -16,12 +16,6 @@ class ScriptItemCustomComponentInterface : public ::ScriptModuleMinecraft::Scrip
 public:
     // ScriptItemCustomComponentInterface inner types define
     using Flags = ::ScriptModuleMinecraft::ScriptItemCustomComponentClosureFlags;
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptItemCustomComponentClosureFlags toFlags() const;
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

@@ -36,20 +36,6 @@ public:
     MCAPI explicit Win10TrialConversionScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
 
     MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::string> const& mMasterPackTitle();
-
-    MCAPI static ::std::map<::std::string, ::std::string> const& mPacksImages();
-
-    MCAPI static ::std::map<::std::string, ::std::string> const& mPacksInfo();
-
-    MCAPI static ::std::vector<::std::string> const& mStarterPackTitle();
     // NOLINTEND
 
 public:

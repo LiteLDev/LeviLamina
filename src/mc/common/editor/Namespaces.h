@@ -5,11 +5,18 @@
 namespace Editor::Namespaces {
 // functions
 // NOLINTBEGIN
-MCNAPI bool hasEditorNamespace(::std::string_view str);
-
 MCNAPI bool isFullyQualifiedName(::std::string_view str);
+// NOLINTEND
 
-MCNAPI bool isValidName(::std::string_view str);
+// static variables
+// NOLINTBEGIN
+#ifdef LL_PLAT_C
+MCNAPI ::std::add_lvalue_reference_t<char const[]> EDITOR_NAMESPACE();
+#endif
+
+#ifdef LL_PLAT_S
+MCNAPI ::std::add_lvalue_reference_t<char const[]> EDITOR_NAMESPACE();
+#endif
 // NOLINTEND
 
 } // namespace Editor::Namespaces

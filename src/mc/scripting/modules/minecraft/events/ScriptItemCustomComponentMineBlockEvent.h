@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentPubSubConnectors.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentAfterEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentIntermediateStorage.h"
@@ -20,8 +20,6 @@ namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -50,27 +48,6 @@ public:
         IntermediateStorage& operator=(IntermediateStorage const&);
         IntermediateStorage(IntermediateStorage const&);
         IntermediateStorage();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI
-        IntermediateStorage(bool& result, ::ItemStack& item, ::Block const& block, int x, int y, int z, ::Actor& owner);
-
-        MCAPI ~IntermediateStorage();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(bool& result, ::ItemStack& item, ::Block const& block, int x, int y, int z, ::Actor& owner);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     using EventConnectorsType = ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<
@@ -88,46 +65,6 @@ public:
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>> mBlock;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
         mMinedBlock;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptItemCustomComponentMineBlockEvent& operator=(ScriptItemCustomComponentMineBlockEvent const&);
-    ScriptItemCustomComponentMineBlockEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    ScriptItemCustomComponentMineBlockEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentMineBlockEvent const&);
-
-    MCAPI ScriptItemCustomComponentMineBlockEvent(
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentMineBlockEvent::IntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                        scope
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentMineBlockEvent const&);
-
-    MCAPI void* $ctor(
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentMineBlockEvent::IntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                        scope
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

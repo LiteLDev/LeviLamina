@@ -3,16 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
-namespace Editor { class ServiceProviderCollection; }
-namespace Editor::ScriptModule { class ScriptCursorProperties; }
-namespace Editor::ScriptModule { class ScriptCursorRay; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -33,55 +27,9 @@ public:
     ScriptCursorService();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI
-    ScriptCursorService(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
-
-    MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptCursorProperties> getDefaultProperties() const;
-
-    MCNAPI ::Scripting::Result_deprecated<uchar> getFacingDirection() const;
-
-    MCNAPI ::Scripting::Result_deprecated<int> getMaxViewBlockDistance() const;
-
-    MCNAPI ::Scripting::Result_deprecated<::Vec3> getPosition() const;
-
-    MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptCursorProperties> getProperties() const;
-
-    MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptCursorRay> getRay() const;
-
-    MCNAPI ::Scripting::Result_deprecated<bool> isVisible() const;
-
-    MCNAPI ::Scripting::Result_deprecated<::Vec3> moveBy(::glm::ivec3 const& offset);
-
-    MCNAPI ::Scripting::Result_deprecated<void> popPropertiesById(::std::string const& identifier);
-
-    MCNAPI ::Scripting::Result_deprecated<void> pushPropertiesById(
-        ::Editor::ScriptModule::ScriptCursorProperties const& properties,
-        ::std::string const&                                  identifier
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void>
-    setProperties(::Editor::ScriptModule::ScriptCursorProperties const& properties);
-
-    MCNAPI ::Scripting::Result_deprecated<void> setVisible(bool value);
-
-    MCNAPI ::Scripting::Result_deprecated<void> updatePropertiesById(
-        ::Editor::ScriptModule::ScriptCursorProperties const& properties,
-        ::std::optional<::std::string> const&                 identifier
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

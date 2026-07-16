@@ -17,11 +17,11 @@ public:
     ::ll::UntypedStorage<8, 8> mUnk572b86;
     ::ll::UntypedStorage<8, 8> mUnkc6578b;
     ::ll::UntypedStorage<8, 8> mUnk3b5d81;
-    ::ll::UntypedStorage<8, 8> mUnk442b01;
+    ::ll::UntypedStorage<8, 8> mUnk7f645b;
     ::ll::UntypedStorage<1, 1> mUnk5b93ba;
-    ::ll::UntypedStorage<8, 8> mUnkb55020;
-    ::ll::UntypedStorage<8, 8> mUnk6155a1;
-    ::ll::UntypedStorage<8, 8> mUnk893e57;
+    ::ll::UntypedStorage<8, 8> mUnk23f349;
+    ::ll::UntypedStorage<8, 8> mUnkbc89bc;
+    ::ll::UntypedStorage<8, 8> mUnk9a3cd4;
     // NOLINTEND
 
 public:
@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void ObserveRTT(::webrtc::TimeDelta measured_rtt);
+    MCNAPI void ObserveRTT(::webrtc::TimeDelta rtt);
 
     MCNAPI explicit RetransmissionTimeout(::dcsctp::DcSctpOptions const& options);
     // NOLINTEND

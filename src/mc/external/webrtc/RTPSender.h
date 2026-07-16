@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/RtpRtcpInterface.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace webrtc { class Environment; }
 namespace webrtc { class RtpPacketHistory; }
 namespace webrtc { class RtpPacketSender; }
 namespace webrtc { class RtpPacketToSend; }
@@ -31,7 +33,7 @@ public:
     ::ll::UntypedStorage<8, 40> mUnkd12327;
     ::ll::UntypedStorage<1, 1>  mUnkf05150;
     ::ll::UntypedStorage<8, 8>  mUnke60a01;
-    ::ll::UntypedStorage<1, 22> mUnkbb36b0;
+    ::ll::UntypedStorage<1, 23> mUnkbb36b0;
     ::ll::UntypedStorage<8, 8>  mUnk1283be;
     ::ll::UntypedStorage<8, 8>  mUnk5fcfe2;
     ::ll::UntypedStorage<4, 4>  mUnk6d952f;
@@ -56,7 +58,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> AllocatePacket(::rtc::ArrayView<uint const> csrcs);
+    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend>
+    AllocatePacket(::webrtc::ArrayView<uint const, 18446744073709546905> csrcs);
 
     MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> BuildRtxPacket(::webrtc::RtpPacketToSend const& packet);
 
@@ -79,13 +82,14 @@ public:
 
     MCNAPI uint64 MaxRtpPacketSize() const;
 
-    MCNAPI void OnReceivedAckOnRtxSsrc(int64 extended_highest_sequence_number);
+    MCNAPI void OnReceivedAckOnRtxSsrc(int64);
 
-    MCNAPI void OnReceivedAckOnSsrc(int64 extended_highest_sequence_number);
+    MCNAPI void OnReceivedAckOnSsrc(int64);
 
     MCNAPI void OnReceivedNack(::std::vector<ushort> const& nack_sequence_numbers, int64 avg_rtt);
 
     MCNAPI RTPSender(
+        ::webrtc::Environment const&                     env,
         ::webrtc::RtpRtcpInterface::Configuration const& config,
         ::webrtc::RtpPacketHistory*                      packet_history,
         ::webrtc::RtpPacketSender*                       packet_sender
@@ -133,13 +137,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::rtc::ArrayView<::webrtc::RtpExtensionSize const> FecExtensionSizes();
+    MCNAPI static ::webrtc::ArrayView<::webrtc::RtpExtensionSize const, 18446744073709546905> FecExtensionSizes();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
+        ::webrtc::Environment const&                     env,
         ::webrtc::RtpRtcpInterface::Configuration const& config,
         ::webrtc::RtpPacketHistory*                      packet_history,
         ::webrtc::RtpPacketSender*                       packet_sender

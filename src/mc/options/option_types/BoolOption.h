@@ -46,10 +46,14 @@ public:
     );
 
     MCAPI void reset(bool saveOptionChange);
+#endif
 
     MCAPI void set(bool v, bool saveOptionChange);
 
-    MCAPI void setDefault(bool defaultValue);
+#ifdef LL_PLAT_C
+    MCAPI void setCoerceValueCallback(::std::function<bool(bool)> f);
+
+    MCAPI void toggle();
 #endif
     // NOLINTEND
 

@@ -3,70 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/BaseGoal.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class Mob;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class EmergeGoal : public ::BaseGoal {
-public:
-    // EmergeGoal inner types declare
-    // clang-format off
-    class Definition;
-    // clang-format on
-
-    // EmergeGoal inner types define
-    class Definition : public ::BaseGoalDefinition {
-    public:
-        // Definition inner types define
-        using self = ::EmergeGoal::Definition;
-
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>                      mDuration;
-        ::ll::TypedStorage<4, 4, float>                      mCooldownSeconds;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnDoneEvent;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Definition();
-
-        MCAPI void initialize(::EntityContext& entity, ::EmergeGoal& goal) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const&                                                                                   name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EmergeGoal::Definition>>& root
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -98,18 +44,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit EmergeGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

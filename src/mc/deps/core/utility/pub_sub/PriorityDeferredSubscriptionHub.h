@@ -7,6 +7,7 @@
 #include "mc/deps/core/utility/pub_sub/ConnectPosition.h"
 #include "mc/deps/core/utility/pub_sub/DeferredSubscriptionHub.h"
 #include "mc/deps/core/utility/pub_sub/DeferredSubscriptionHubBase.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 namespace Bedrock::PubSub {
 
@@ -23,7 +24,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnk625823;
+        ::ll::UntypedStorage<8, 64> mUnk97b459;
         ::ll::UntypedStorage<4, 4>  mUnkec5839;
         // NOLINTEND
 
@@ -38,7 +39,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnka11425;
+        ::ll::UntypedStorage<8, 64> mUnka2ed86;
         ::ll::UntypedStorage<4, 8>  mUnk20c6e2;
         ::ll::UntypedStorage<4, 4>  mUnka8f19d;
         // NOLINTEND
@@ -73,12 +74,12 @@ public:
     virtual bool _runOneEvent() /*override*/;
 
     virtual void _enqueue(
-        ::std::function<void()>            fn,
-        ::Bedrock::PubSub::ConnectPosition at,
-        ::std::optional<int>               group
+        ::brstd::move_only_function<void()> fn,
+        ::Bedrock::PubSub::ConnectPosition  at,
+        ::std::optional<int>                group
     ) /*override*/;
 
-    virtual void _runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const& entry);
+    virtual void _runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&& entry);
     // NOLINTEND
 
 public:
@@ -90,10 +91,13 @@ public:
 
     MCNAPI bool $_runOneEvent();
 
-    MCNAPI void
-    $_enqueue(::std::function<void()> fn, ::Bedrock::PubSub::ConnectPosition at, ::std::optional<int> group);
+    MCNAPI void $_enqueue(
+        ::brstd::move_only_function<void()> fn,
+        ::Bedrock::PubSub::ConnectPosition  at,
+        ::std::optional<int>                group
+    );
 
-    MCNAPI void $_runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const& entry);
+    MCNAPI void $_runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&& entry);
 
 
     // NOLINTEND

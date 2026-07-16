@@ -4,13 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/raknet/IRNS2_Berkley.h"
-#include "mc/deps/raknet/RNS2BindResult.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace RakNet { struct RNS2_BerkleyBindParameters; }
-namespace RakNet { struct SystemAddress; }
-// clang-format on
 
 namespace RakNet {
 
@@ -35,40 +28,13 @@ public:
     // NOLINTBEGIN
     virtual ~RNS2_Berkley() /*override*/ = default;
 
-    virtual void SetMulticastInterface(int interfaceIndex) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::RakNet::RNS2BindResult
-    BindSharedIPV4And6(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const*, uint);
-
-    MCAPI uint RecvFromLoopInt();
-
-    MCAPI void SetBroadcastSocket(int broadcast);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void GetSystemAddressIPV4And6(int rns2Socket, ::RakNet::SystemAddress* systemAddressOut);
-
-    MCAPI static uint RecvFromLoop(void* arguments);
+    virtual void SetMulticastInterface(int) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetMulticastInterface(int interfaceIndex);
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

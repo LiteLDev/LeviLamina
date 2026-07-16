@@ -34,25 +34,12 @@ public:
     // NOLINTBEGIN
     virtual ::V2TempComponentRequirements getV2Requirements() const /*override*/;
 
-    virtual void render(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    ) /*override*/;
+    virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
 
-    MCNAPI void
-    $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams& renderParams);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

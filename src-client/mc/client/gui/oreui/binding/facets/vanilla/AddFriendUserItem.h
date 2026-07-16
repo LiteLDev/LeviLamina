@@ -24,6 +24,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                             isOnline;
     ::ll::TypedStorage<1, 1, bool>                             isFollowingMe;
     ::ll::TypedStorage<1, 1, bool>                             isFollowedByMe;
+    ::ll::TypedStorage<1, 1, bool>                             isFriendRequestReceived;
+    ::ll::TypedStorage<1, 1, bool>                             isFriendRequestSent;
     ::ll::TypedStorage<8, 32, ::std::string>                   description;
     // NOLINTEND
 
@@ -46,6 +48,8 @@ public:
         bool                                  isOnline,
         bool                                  isFollowingMe,
         bool                                  isFollowedByMe,
+        bool                                  isFriendRequestReceived,
+        bool                                  isFriendRequestSent,
         ::std::string const&                  description
     );
 
@@ -67,6 +71,8 @@ public:
         bool                                  isOnline,
         bool                                  isFollowingMe,
         bool                                  isFollowedByMe,
+        bool                                  isFriendRequestReceived,
+        bool                                  isFriendRequestSent,
         ::std::string const&                  description
     );
     // NOLINTEND

@@ -40,8 +40,6 @@ public:
         ::std::string const&      violationContext
     );
 #endif
-
-    MCAPI ~PacketViolationWarningPacketPayload();
     // NOLINTEND
 
 public:
@@ -62,11 +60,5 @@ public:
         ::std::string const&      violationContext
     );
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

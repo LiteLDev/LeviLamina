@@ -27,10 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AmethystClusterBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BlockType& init() /*override*/;
@@ -44,11 +40,12 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const /*override*/;
 
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
     // NOLINTEND
@@ -56,19 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AmethystClusterBlock(::std::string const& nameId, int id, int height, int aabbOffset);
-
-    MCAPI ::AABB const& _getShape(::Block const& block, ::AABB& bufferAABB) const;
-
-    MCAPI ::AABB _shapeFromDirection(int facing) const;
-
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, int height, int aabbOffset);
     // NOLINTEND
 
 public:
@@ -84,11 +69,11 @@ public:
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

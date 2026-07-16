@@ -16,13 +16,13 @@ class FollowCaravanGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                                mMob;
-    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>>                    mParent;
-    ::ll::TypedStorage<4, 4, float>                                 mSpeedModifier;
-    ::ll::TypedStorage<4, 4, float>                                 mSpeedModifierO;
-    ::ll::TypedStorage<4, 4, int>                                   mDistanceCheckCounter;
-    ::ll::TypedStorage<4, 4, int>                                   mCaravanSize;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor> const> mTargetTypes;
+    ::ll::TypedStorage<8, 8, ::Mob&>                          mMob;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>>              mParent;
+    ::ll::TypedStorage<4, 4, float>                           mSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>                           mSpeedModifierO;
+    ::ll::TypedStorage<4, 4, int>                             mDistanceCheckCounter;
+    ::ll::TypedStorage<4, 4, int>                             mCaravanSize;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mTargetTypes;
     // NOLINTEND
 
 public:
@@ -45,23 +45,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    FollowCaravanGoal(::Mob& mob, float speed, int caravanLimit, ::std::vector<::MobDescriptor> const& targetTypes);
-
-    MCAPI bool checkCaravanType(::Mob* currentMob);
-
-    MCAPI bool firstIsLeashed(::Mob* currentMob, int counter);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speed, int caravanLimit, ::std::vector<::MobDescriptor> const& targetTypes);
     // NOLINTEND
 
 public:

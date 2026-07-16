@@ -4,58 +4,18 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace RakNet { class BitStream; }
-namespace RakNet { class RakNetSocket2; }
-namespace RakNet { class RakPeer; }
 namespace RakNet { struct RakNetGUID; }
-namespace RakNet { struct SplitPacketChannel; }
 namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
 // functions
 // NOLINTBEGIN
-MCAPI uint ConnectionAttemptLoop(void* arguments);
-
 MCAPI uint64 GetTime();
-
-MCAPI uint GetTimeMS();
-
-MCAPI uint64 GetTimeUS();
-
-MCAPI bool NonNumericHostString(char const* host);
-
-MCAPI void ProcessNetworkPacket(
-    ::RakNet::SystemAddress  systemAddress,
-    char const*              data,
-    int                      length,
-    ::RakNet::RakPeer*       rakPeer,
-    ::RakNet::RakNetSocket2* rakNetSocket,
-    uint64                   timeRead,
-    ::RakNet::BitStream&     updateBitStream
-);
-
-MCAPI bool ProcessOfflineNetworkPacket(
-    ::RakNet::SystemAddress  systemAddress,
-    char const*              data,
-    int                      length,
-    ::RakNet::RakPeer*       rakPeer,
-    ::RakNet::RakNetSocket2* rakNetSocket,
-    bool*                    isOfflineMessage,
-    uint64                   timeRead
-);
-
-MCAPI int SplitPacketChannelComp(ushort const& key, ::RakNet::SplitPacketChannel* const& data);
-
-MCAPI uint UpdateNetworkLoop(void* arguments);
 
 MCAPI uint UpdateTCPInterfaceLoop(void* arguments);
 
-MCAPI void _RakFree_Ex(void* p, char const*, uint);
-
-MCAPI void* _RakMalloc_Ex(uint64 size, char const*, uint);
-
-MCAPI void* _RakRealloc_Ex(void* p, uint64 size, char const*, uint);
+MCAPI void _RakFree_Ex(void* p, char const* file, uint line);
 // NOLINTEND
 
 // static variables

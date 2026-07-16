@@ -19,16 +19,4 @@ public:
     BlockComponentEventSubscriber& operator=(BlockComponentEventSubscriber const&);
     BlockComponentEventSubscriber(BlockComponentEventSubscriber const&);
     BlockComponentEventSubscriber();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BlockComponentEventSubscriber(::BlockEvents::BlockEventManager& manager);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::BlockEvents::BlockEventManager& manager);
-    // NOLINTEND
 };

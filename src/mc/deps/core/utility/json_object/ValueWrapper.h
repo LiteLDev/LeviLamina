@@ -69,27 +69,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _moveConstruct(::Bedrock::JSONObject::ValueWrapper&& other);
-
-    MCNAPI ::std::function<bool(::Bedrock::JSONObject::ValueWrapper&)> const& getArrayWrapper() const;
-
-    MCNAPI ::std::function<bool(::std::string&, ::Bedrock::JSONObject::ValueWrapper&)> const& getObjectWrapper() const;
-
     MCNAPI ~ValueWrapper();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static ::Bedrock::JSONObject::ValueWrapper _createRaw(bool b);
-
-    MCNAPI static ::Bedrock::JSONObject::ValueWrapper _createRaw(int64 n);
-#endif
-
-    MCNAPI static ::Bedrock::JSONObject::ValueWrapper _createRaw(char const* s, uint64 length, bool copy);
-
-    MCNAPI static ::Bedrock::JSONObject::ValueWrapper emptyObject();
     // NOLINTEND
 
 public:

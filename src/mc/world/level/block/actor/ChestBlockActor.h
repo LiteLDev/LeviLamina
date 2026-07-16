@@ -15,7 +15,6 @@
 // clang-format off
 class AABB;
 class Actor;
-class BlockActor;
 class BlockActorDataPacket;
 class BlockSource;
 class CompoundTag;
@@ -23,6 +22,7 @@ class Container;
 class ContainerContentChangeListener;
 class DataLoadHelper;
 class ILevel;
+class IVanillaRenderBlockActorComponent;
 class ItemStack;
 class Player;
 class SaveContext;
@@ -134,9 +134,10 @@ public:
 
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    virtual void onNeighborChanged(::BlockSource&, ::BlockPos const&) /*override*/;
+    virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const& position) /*override*/;
 
-    virtual ::BlockActor* getCrackEntity(::BlockSource& region, ::BlockPos const& pos) /*override*/;
+    virtual ::IVanillaRenderBlockActorComponent*
+    getCrackEntity(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
     virtual int clearInventory(int resizeTo) /*override*/;
 
@@ -168,7 +169,7 @@ public:
 
     virtual void initializeContainerContents(::BlockSource& region) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
@@ -195,57 +196,9 @@ public:
 
     MCAPI void _closeChest(::BlockSource& region, ::Actor* actor);
 
-    MCAPI bool _detectBlockObstruction(::BlockSource& region) const;
-
-    MCAPI void _pairWith(::ChestBlockActor* chest, ::BlockSource& region, bool isLead);
-
     MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void _tryToPairWith(::BlockSource& region, ::BlockPos const& position);
-
-    MCAPI void _validatePairedChest(::BlockSource& region);
-
-    MCAPI bool canOpen(::BlockSource& region) const;
-
-    MCAPI bool canPairWith(::BlockActor* entity, ::BlockSource& region);
-
-    MCAPI void forceCloseChest(::BlockSource& region);
-
     MCAPI ::std::weak_ptr<::ChestBlockActor::ChestCloser> getChestCloser(::Actor& closingActor);
-
-#ifdef LL_PLAT_C
-    MCAPI bool getIsGlobalChest();
-#endif
-
-    MCAPI ::ChestBlockActor& getMainChest();
-
-#ifdef LL_PLAT_C
-    MCAPI float getModelOffsetX() const;
-
-    MCAPI float getOldOpenness() const;
-#endif
-
-    MCAPI int getOpenCount() const;
-
-    MCAPI float getOpenness() const;
-
-    MCFOLD ::BlockPos const& getPairedChestPosition() const;
-
-    MCAPI bool isFindable() const;
-
-    MCAPI bool isLargeChest() const;
-
-    MCAPI bool isMainSubchest() const;
-
-    MCAPI void onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to);
-
-    MCAPI void pairWithLeadChest(::ChestBlockActor* leadChest, ::BlockSource& region);
-
-    MCAPI void playCloseSound(::BlockSource& region);
-
-    MCAPI void playOpenSound(::BlockSource& region);
-
-    MCAPI void setFindable(bool isFindable);
 
     MCAPI void unpair(::BlockSource& region);
     // NOLINTEND
@@ -317,9 +270,9 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCFOLD void $onNeighborChanged(::BlockSource&, ::BlockPos const&);
+    MCFOLD void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
 
-    MCAPI ::BlockActor* $getCrackEntity(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI ::IVanillaRenderBlockActorComponent* $getCrackEntity(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI int $clearInventory(int resizeTo);
 
@@ -351,7 +304,7 @@ public:
 
     MCAPI void $initializeContainerContents(::BlockSource& region);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
@@ -371,8 +324,14 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForFillingContainer();
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
 
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

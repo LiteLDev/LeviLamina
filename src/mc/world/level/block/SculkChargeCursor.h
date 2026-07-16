@@ -7,14 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockSource;
 class CompoundTag;
-class DefaultSculkBehavior;
-class IBlockWorldGenAPI;
-class Random;
-class SculkBlockBehavior;
-class SculkSpreader;
-class SculkVeinBlockBehavior;
 // clang-format on
 
 class SculkChargeCursor {
@@ -34,38 +27,5 @@ public:
     MCAPI void load(::CompoundTag const& tag);
 
     MCAPI void save(::CompoundTag& tag) const;
-
-    MCAPI void update(
-        ::IBlockWorldGenAPI& target,
-        ::BlockSource*       region,
-        ::BlockPos const&    originPos,
-        ::Random&            random,
-        ::SculkSpreader&     spreader,
-        bool                 spreadVeins
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::optional<::BlockPos> _getValidMovementPos(
-        ::IBlockWorldGenAPI& target,
-        ::BlockPos const&    pos,
-        ::SculkSpreader&     spreader,
-        ::Random&            random
-    );
-
-    MCAPI static bool
-    _isMovementUnobstructed(::IBlockWorldGenAPI& target, ::BlockPos const& fromPos, ::BlockPos const& toPos);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::DefaultSculkBehavior const& sDefaultSculkBehavior();
-
-    MCAPI static ::SculkBlockBehavior const& sSculkBlockBehavior();
-
-    MCAPI static ::SculkVeinBlockBehavior const& sSculkVeinBlockBehavior();
     // NOLINTEND
 };

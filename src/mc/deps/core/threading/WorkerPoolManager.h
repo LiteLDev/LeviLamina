@@ -21,11 +21,8 @@ public:
     // NOLINTBEGIN
     virtual void init() = 0;
 
-    virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> createWorkerPool(
-        ::std::string_view               name,
-        ::Core::Profile::ThreadFrameType frameType,
-        ::WorkerPoolConfig const&        config
-    ) = 0;
+    virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>
+    createWorkerPool(::std::string_view, ::Core::Profile::ThreadFrameType, ::WorkerPoolConfig const&) = 0;
 
     virtual void tick() = 0;
     // NOLINTEND

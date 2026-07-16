@@ -3,15 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/v1_26_0/block/LiquidReaction.h"
-#include "mc/deps/shared_types/v1_26_0/block/LiquidType.h"
-#include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-class CerealSchemaUpgradeSet;
 class CompoundTag;
 namespace SharedTypes::v1_26_0 { struct DetectionRule; }
 namespace cereal { struct ReflectionCtx; }
@@ -25,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockLiquidDetectionDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -39,47 +31,21 @@ public:
 
     virtual bool isNetworkComponent() const /*override*/;
 
-    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BlockLiquidDetectionDescription(::std::vector<::SharedTypes::v1_26_0::DetectionRule> detectionRules);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static ::std::string const
-    liquidReactionToString(::SharedTypes::v1_26_0::LiquidReaction key, ::std::string const& defaultValue);
-
-    MCAPI static ::std::string const
-    liquidTypeToString(::SharedTypes::v1_26_0::LiquidType key, ::std::string const& defaultValue);
-
-    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-
-    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::SharedTypes::v1_26_0::LiquidReaction> const&
-    liquidReactionNameBiMap();
-
-    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::SharedTypes::v1_26_0::LiquidType> const&
-    liquidTypeNameBiMap();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::SharedTypes::v1_26_0::DetectionRule> detectionRules);
     // NOLINTEND
 
 public:
@@ -93,7 +59,7 @@ public:
 
     MCFOLD bool $isNetworkComponent() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const&) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
     MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 

@@ -53,10 +53,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI uint _genRandInt32();
-
-    MCAPI uint _genUniformRandomInt();
-
-    MCAPI float nextGaussian();
     // NOLINTEND
 
 public:

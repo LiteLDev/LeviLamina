@@ -19,13 +19,9 @@ public:
     // NOLINTBEGIN
     virtual ~TessellationPolicy() = default;
 
-    virtual ::mce::Color
-    get(::Block const&          block,
-        ::BlockSource&          region,
-        ::BlockPos const&       pos,
-        ::BiomeTintCache const* biomeTintCache) const = 0;
+    virtual ::mce::Color get(::Block const&, ::BlockSource&, ::BlockPos const&, ::BiomeTintCache const*) const = 0;
 
-    virtual ::mce::Color get(::Block const& block) const = 0;
+    virtual ::mce::Color get(::Block const&) const = 0;
     // NOLINTEND
 
 public:

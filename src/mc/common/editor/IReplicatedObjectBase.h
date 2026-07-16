@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
 
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-// clang-format on
-
 namespace Editor {
 
 class IReplicatedObjectBase : public ::EnableGetWeakRef<::Editor::IReplicatedObjectBase> {
@@ -41,12 +36,6 @@ public:
     virtual ::std::string save() const = 0;
 
     virtual uint getTypeHash() const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::HashedString const& getId() const;
     // NOLINTEND
 
 public:

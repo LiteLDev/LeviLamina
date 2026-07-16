@@ -9,10 +9,6 @@
 // clang-format off
 class BlockSource;
 class Rope;
-class Vec3;
-struct RopeParams;
-struct RopePointsRef;
-struct RopeWave;
 // clang-format on
 
 class RopeSystem {
@@ -31,52 +27,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RopeSystem();
-
-    MCAPI void _tick();
-
-#ifdef LL_PLAT_C
-    MCAPI void addWave(uint64 index, ::RopeWave&& wave);
-#endif
-
-    MCAPI void cutAtPercent(float percent);
-
-#ifdef LL_PLAT_C
-    MCFOLD uint64 getCutNode() const;
-
-    MCFOLD ::ActorUniqueID const& getEndPinEntity() const;
-
-    MCAPI ::RopePointsRef getPoints(uint64 index);
-#endif
-
-    MCAPI void initialize(::RopeParams const& params, uint64 initialRopeCount);
-
-    MCAPI void initializePins(::Vec3 const& startPin, ::Vec3 const& endPin);
-
-    MCAPI bool isCut() const;
-
-    MCAPI bool isDestroyed() const;
-
     MCAPI void queueTick(::BlockSource& region, ::std::shared_ptr<::RopeSystem>& self);
-
-#ifdef LL_PLAT_C
-    MCAPI void setRopeCount(uint64 ropeCount);
-
-    MCFOLD void storeEndPinEntity(::ActorUniqueID const& end);
-
-    MCAPI void updatePins(uint64 ropeIndex, ::Vec3 const& startPin, ::Vec3 const& endPin);
-#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static bool& sEnabled();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

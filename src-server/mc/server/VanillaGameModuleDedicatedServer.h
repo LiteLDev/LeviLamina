@@ -22,25 +22,12 @@ public:
 
     virtual void registerMolangQueries() /*override*/;
 
-    virtual void
-    registerServerInstanceHandler(::ServerInstanceEventCoordinator& serverInstanceCoordinator) /*override*/;
+    virtual void registerServerInstanceHandler(::ServerInstanceEventCoordinator&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::GameModuleServer> $createGameModuleServer();
 
-    MCNAPI ::std::shared_ptr<::IInPackagePacks> $createInPackagePacks();
-
-    MCNAPI void $registerMolangQueries();
-
-    MCNAPI void $registerServerInstanceHandler(::ServerInstanceEventCoordinator& serverInstanceCoordinator);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

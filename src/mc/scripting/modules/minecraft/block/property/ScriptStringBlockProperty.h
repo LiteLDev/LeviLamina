@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/block/property/IScriptBlockProperty.h"
 
 // auto generated forward declare list
@@ -32,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptStringBlockProperty(::ScriptModuleMinecraft::ScriptStringBlockProperty&& rhs);
-
     MCAPI ScriptStringBlockProperty(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
@@ -41,12 +38,8 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
     );
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getState() const;
-
     MCAPI ::ScriptModuleMinecraft::ScriptStringBlockProperty&
     operator=(::ScriptModuleMinecraft::ScriptStringBlockProperty&& rhs);
-
-    MCAPI ::Scripting::Result_deprecated<void> setState(::std::string state);
     // NOLINTEND
 
 public:
@@ -58,8 +51,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptStringBlockProperty&& rhs);
-
     MCAPI void* $ctor(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,

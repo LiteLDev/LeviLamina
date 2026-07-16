@@ -19,6 +19,13 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mPatternNameId;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ItemStackRequestActionCraftLoom();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -30,8 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemStackRequestActionCraftLoom();
-
 #ifdef LL_PLAT_C
     MCNAPI ItemStackRequestActionCraftLoom(::std::string const& patternNameId, uchar numCrafts);
 #endif
@@ -40,8 +45,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::string const& patternNameId, uchar numCrafts);
 #endif

@@ -42,35 +42,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SettingsBooleanQuery() /*override*/;
+    virtual ~SettingsBooleanQuery() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI SettingsBooleanQuery(::OreUI::ClientDependencies const& client, ::std::string const& id);
-
-    MCAPI void _updateProperties();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::string const& id);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIQuery();
-
-    MCNAPI static void** $vftableForPropertyObject();
     // NOLINTEND
 };
 

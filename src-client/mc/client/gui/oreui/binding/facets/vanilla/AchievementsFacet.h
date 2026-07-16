@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/FacetPlayerAchievementData.h"
 #include "mc/client/social/manual_achievement_tracking/TrackedSetting.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -14,14 +14,13 @@
 // clang-format off
 class Option;
 namespace OreUI { class IResourceAllowList; }
-namespace OreUI { struct FacetAchievementData; }
 namespace Social { class User; }
 namespace persona { class AchievementOfferCollectionManager; }
 // clang-format on
 
 namespace OreUI {
 
-class AchievementsFacet : public ::OreUI::FacetBase<::OreUI::AchievementsFacet> {
+class AchievementsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::AchievementsFacet> {
 public:
     // AchievementsFacet inner types define
     enum class AchievementFacetStatus : uchar {
@@ -62,7 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AchievementsFacet() /*override*/;
+    virtual ~AchievementsFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -76,20 +75,6 @@ public:
         ::gsl::not_null<::Option*>                                        manualTrackingOption,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
     );
-
-    MCAPI void _addAchievementUpdateCallback(::std::function<void()> callback);
-
-    MCAPI void _getAchievementData();
-
-    MCAPI void _refreshPersona(::OreUI::FacetAchievementData& facetAchievement) const;
-
-    MCAPI void _removeAchievementUpdateCallback();
-
-    MCFOLD ::OreUI::FacetPlayerAchievementData const& getFacetPlayerAchievementData() const;
-
-    MCFOLD ::OreUI::AchievementsFacet::AchievementFacetStatus getStatus() const;
-
-    MCAPI void setTrackedStatus(::std::string const& achievementId, bool tracked);
     // NOLINTEND
 
 public:
@@ -110,21 +95,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

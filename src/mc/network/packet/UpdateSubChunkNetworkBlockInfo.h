@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<1, 1, uchar>                    mUpdateFlags;
     ::ll::TypedStorage<8, 16, ::ActorBlockSyncMessage> mSyncMessage;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~UpdateSubChunkNetworkBlockInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -4,36 +4,62 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/controls/UIMaterialType.h"
+#include "mc/client/gui/controls/renderers/InventoryItemRenderItemData.h"
 #include "mc/client/gui/controls/renderers/MinecraftUICustomRenderer.h"
 #include "mc/client/gui/screens/UIBatchType.h"
 #include "mc/client/renderer/ActorShaderManager.h"
-#include "mc/client/renderer/actor/ItemRenderChunkType.h"
-#include "mc/client/renderer/texture/TextureUVCoordinateSet.h"
-#include "mc/common/WeakPtr.h"
-#include "mc/deps/core/resource/ResourceFileSystem.h"
-#include "mc/world/item/ItemStack.h"
+#include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-class Item;
+class IInventoryItemRendererRenderContext;
 class ItemRegistryRef;
+class ItemStack;
 class MinecraftUIRenderContext;
+class PropertyBag;
 class ResourceLocation;
 class UIControl;
 class UICustomRenderer;
 class UIScene;
+struct InventoryItemRenderOwnerData;
 struct UIItemRenderInfo;
 // clang-format on
 
-class InventoryItemRenderer : public ::MinecraftUICustomRenderer, public ::ActorShaderManager {
+class InventoryItemRenderer : public ::MinecraftUICustomRenderer,
+                              public ::ActorShaderManager,
+                              public ::InventoryItemRenderItemData {
 public:
     // InventoryItemRenderer inner types declare
     // clang-format off
+    struct UpdateData;
     class CachedProperties;
     // clang-format on
 
     // InventoryItemRenderer inner types define
+    struct UpdateData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 8, ::glm::vec2>              mOwnerPosition;
+        ::ll::TypedStorage<8, 8, ::PropertyBag const*>     mOwnerPropertyBag;
+        ::ll::TypedStorage<8, 8, ::ItemRegistryRef const&> mItemRegistry;
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::brstd::function_ref<
+                ::std::optional<int>(bool, ::ItemStack const&) const,
+                ::std::optional<int>(bool, ::ItemStack const&)>>
+            mGetAnimationFrame;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        UpdateData& operator=(UpdateData const&);
+        UpdateData(UpdateData const&);
+        UpdateData();
+    };
+
     class CachedProperties {
     public:
         // member variables
@@ -51,31 +77,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                        mCustomId;
-    ::ll::TypedStorage<4, 4, int>                                        mItemId;
-    ::ll::TypedStorage<4, 4, int>                                        mAuxVal;
-    ::ll::TypedStorage<4, 4, int>                                        mCustomColor;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>    mPickupTime;
-    ::ll::TypedStorage<1, 1, bool>                                       mIsShowPickup;
-    ::ll::TypedStorage<1, 1, bool>                                       mIsFiltered;
-    ::ll::TypedStorage<4, 4, int>                                        mAnimationFrame;
-    ::ll::TypedStorage<1, 1, bool>                                       mIsEnchanted;
-    ::ll::TypedStorage<1, 1, bool>                                       mHidingIcon;
-    ::ll::TypedStorage<4, 8, ::glm::vec2>                                mPosition;
-    ::ll::TypedStorage<8, 32, ::std::string>                             mTextureName;
-    ::ll::TypedStorage<4, 4, ::UIMaterialType>                           mUIMaterialType;
-    ::ll::TypedStorage<4, 4, ::ResourceFileSystem>                       mTextureFileSystem;
-    ::ll::TypedStorage<8, 88, ::TextureUVCoordinateSet>                  mIcon;
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::Item>>                          mItem;
-    ::ll::TypedStorage<8, 152, ::ItemStack>                              mItemInstance;
-    ::ll::TypedStorage<4, 4, ::ItemRenderChunkType>                      mItemRenderType;
     ::ll::TypedStorage<8, 40, ::InventoryItemRenderer::CachedProperties> mCachedProperties;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InventoryItemRenderer() /*override*/;
+    virtual ~InventoryItemRenderer() /*override*/ = default;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -108,31 +116,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InventoryItemRenderer();
+    MCAPI void _render(
+        ::IInventoryItemRendererRenderContext& renderContext,
+        ::InventoryItemRenderOwnerData const&  owner,
+        int                                    pass
+    );
 
-    MCAPI void _onItemChanged(::ItemRegistryRef itemRegistry, int itemId, int newAuxVal);
-
-    MCAPI void _updateCachedProperties(::UIControl const& owner);
+    MCAPI bool _update(::InventoryItemRenderer::UpdateData const& data);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::UIItemRenderInfo getItemRenderInfo(::ItemStack const& item);
-
-    MCAPI static ::ItemRenderChunkType getRenderTypeFromItem(::ItemStack const& item);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

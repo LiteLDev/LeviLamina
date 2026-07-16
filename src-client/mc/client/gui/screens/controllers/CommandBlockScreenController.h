@@ -15,7 +15,6 @@ class ClientInstanceScreenModel;
 class MinecartCommandBlockManager;
 class Player;
 struct ActorUniqueID;
-struct TextEditScreenEventData;
 // clang-format on
 
 class CommandBlockScreenController : public ::BlockScreenController {
@@ -50,7 +49,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandBlockScreenController() /*override*/;
+    virtual ~CommandBlockScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -66,26 +65,6 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
-
-    MCAPI ::std::string _getLastPerformedCommandBlockConditionalModeString() const;
-
-    MCAPI ::std::string _getLastPerformedCommandBlockRedstoneModeString() const;
-
-    MCAPI ::std::string _getLastPerformedCommandBlockTypeModeString() const;
-
-    MCAPI ::std::string _getOutputText() const;
-
-    MCAPI int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent) const;
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerBlockTypeDropdown();
-
-    MCAPI void _registerConditionDropdown();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerRedstoneDropdown();
     // NOLINTEND
 
 public:
@@ -100,24 +79,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

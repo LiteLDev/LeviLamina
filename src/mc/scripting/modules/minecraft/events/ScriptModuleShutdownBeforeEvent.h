@@ -13,7 +13,9 @@ struct ScriptModuleShutdownBeforeEvent {
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static ::Scripting::ClassBinding bind();
+#endif
     // NOLINTEND
 };
 

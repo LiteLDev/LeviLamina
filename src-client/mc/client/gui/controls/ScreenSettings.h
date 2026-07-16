@@ -92,29 +92,23 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void setShouldSendEvents(bool sendEvents);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
     MCFOLD void $reset();
 
-    MCFOLD bool $getScreenIsNotFlushable() const;
+    MCAPI bool $getScreenIsNotFlushable() const;
 
     MCAPI bool $getAlwaysAcceptsInput() const;
 
     MCAPI bool $getRenderGameBehind() const;
 
-    MCFOLD bool $getAbsorbsInput() const;
+    MCAPI bool $getAbsorbsInput() const;
 
-    MCFOLD bool $getIsShowingMenu() const;
+    MCAPI bool $getIsShowingMenu() const;
 
-    MCFOLD bool $getIsModal() const;
+    MCAPI bool $getIsModal() const;
 
     MCAPI bool $getShouldStealMouse() const;
 

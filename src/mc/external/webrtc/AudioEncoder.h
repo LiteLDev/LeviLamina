@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/BufferT.h"
+#include "mc/external/webrtc/ArrayView.h"
+#include "mc/external/webrtc/BufferT.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class DataRate; }
-namespace webrtc { class RtcEventLog; }
 namespace webrtc { class TimeDelta; }
 namespace webrtc { struct ANAStats; }
 namespace webrtc { struct BitrateAllocationUpdate; }
@@ -37,8 +37,7 @@ public:
         KPcmA                     = 3,
         KPcmU                     = 4,
         KG722                     = 5,
-        KIlbc                     = 6,
-        KMaxLoggedAudioCodecTypes = 7,
+        KMaxLoggedAudioCodecTypes = 6,
     };
 
     struct EncodedInfoLeaf {
@@ -105,9 +104,10 @@ public:
 
     virtual void SetTargetBitrate(int);
 
-    virtual ::rtc::ArrayView<::std::unique_ptr<::webrtc::AudioEncoder>> ReclaimContainedEncoders();
+    virtual ::webrtc::ArrayView<::std::unique_ptr<::webrtc::AudioEncoder>, 18446744073709546905>
+    ReclaimContainedEncoders();
 
-    virtual bool EnableAudioNetworkAdaptor(::std::string const&, ::webrtc::RtcEventLog*);
+    virtual bool EnableAudioNetworkAdaptor(::std::string_view);
 
     virtual void DisableAudioNetworkAdaptor();
 
@@ -134,7 +134,7 @@ public:
     virtual ::std::optional<::std::pair<::webrtc::DataRate, ::webrtc::DataRate>> GetBitrateRange() const;
 
     virtual ::webrtc::AudioEncoder::EncodedInfo
-    EncodeImpl(uint, ::rtc::ArrayView<short const>, ::rtc::BufferT<uchar, 0>*) = 0;
+    EncodeImpl(uint, ::webrtc::ArrayView<short const, 18446744073709546905>, ::webrtc::BufferT<uchar, 0>*) = 0;
     // NOLINTEND
 
 public:

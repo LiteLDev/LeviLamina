@@ -3,15 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class Vec3;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -27,24 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void addCursorsWithOffset(::Vec3 const& offset, int charge);
-
-    MCAPI ::Scripting::Result_deprecated<::Vec3> getCursorPosition(int index) const;
-
-    MCAPI ::Scripting::Result_deprecated<int> getNumberOfCursors() const;
-
-    MCAPI ::Scripting::Result_deprecated<int> getTotalCharge() const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-
-    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptSculkSpreader>>
-    getHandle(::BlockSource& region, ::BlockPos const& pos, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

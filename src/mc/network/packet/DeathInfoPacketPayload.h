@@ -30,16 +30,4 @@ public:
             ::DeathInfoPacketPayload::TagDeathCauseMessageType>>
         mDeathCauseMessage;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~DeathInfoPacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

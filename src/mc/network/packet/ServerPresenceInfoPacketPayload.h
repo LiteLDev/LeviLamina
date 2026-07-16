@@ -9,6 +9,6 @@ struct ServerPresenceInfoPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::std::optional<::ServerConfiguration::PresenceConfiguration>> mPresenceConfiguration;
+    ::ll::TypedStorage<8, 120, ::std::optional<::ServerConfiguration::PresenceConfiguration>> mPresenceConfiguration;
     // NOLINTEND
 };

@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentPubSubConnectors.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentAfterEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentIntermediateStorage.h"
@@ -13,6 +13,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ComponentItem;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -38,15 +39,19 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        IntermediateStorage();
+
+    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~IntermediateStorage();
+        MCAPI IntermediateStorage(::ItemStack const& initialInstance, ::ItemStack&, ::Actor& actor);
         // NOLINTEND
 
     public:
-        // destructor thunk
+        // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void* $ctor(::ItemStack const& initialInstance, ::ItemStack&, ::Actor& actor);
         // NOLINTEND
     };
 
@@ -78,6 +83,10 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+
+    MCAPI static ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<
+        void(::ItemStack const&, ::ItemStack&, ::Actor&)>
+    getConnectors(::ComponentItem& item);
     // NOLINTEND
 
 public:

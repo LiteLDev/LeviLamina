@@ -12,13 +12,6 @@
 #include "mc/platform/UUID.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
 
-// auto generated forward declare list
-// clang-format off
-class LocalPlayer;
-class PlayerListEntry;
-namespace Social { class User; }
-// clang-format on
-
 namespace OreUI {
 
 struct WorldPlayerInfoBindings {
@@ -38,60 +31,6 @@ public:
     ::ll::TypedStorage<1, 1, ::OreUI::ConnectionType>                  mConnectionType;
     ::ll::TypedStorage<4, 4, ::BuildPlatform>                          mPlatform;
     ::ll::TypedStorage<1, 1, bool>                                     mIsHost;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WorldPlayerInfoBindings();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WorldPlayerInfoBindings(
-        ::mce::UUID                              uuid,
-        ::PlayerListEntry const*                 playerDetails,
-        ::std::optional<::PlayerPermissionLevel> playerPermissionLevel
-    );
-
-    MCAPI WorldPlayerInfoBindings(
-        ::mce::UUID                              uuid,
-        ::LocalPlayer const*                     localPlayer,
-        ::std::shared_ptr<::Social::User>        user,
-        ::std::optional<::PlayerPermissionLevel> playerPermissionLevel,
-        bool                                     isHost,
-        ::BuildPlatform                          platform
-    );
-
-    MCAPI ::std::string const& getActiveProfileImage() const;
-
-    MCAPI bool hasAnyProfileId() const;
-
-    MCAPI ~WorldPlayerInfoBindings();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::mce::UUID                              uuid,
-        ::PlayerListEntry const*                 playerDetails,
-        ::std::optional<::PlayerPermissionLevel> playerPermissionLevel
-    );
-
-    MCAPI void* $ctor(
-        ::mce::UUID                              uuid,
-        ::LocalPlayer const*                     localPlayer,
-        ::std::shared_ptr<::Social::User>        user,
-        ::std::optional<::PlayerPermissionLevel> playerPermissionLevel,
-        bool                                     isHost,
-        ::BuildPlatform                          platform
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -11,7 +11,6 @@
 // clang-format off
 class Block;
 class BlockActor;
-class ChunkViewSource;
 namespace ClientBlockPipeline { struct BlockVolumeArea; }
 namespace ClientBlockPipeline::WorldView { struct LocalInfo; }
 // clang-format on
@@ -51,18 +50,6 @@ public:
     virtual ::BlockPos getRelativeMax(::BlockPos const& worldMax) const /*override*/;
 
     virtual bool isInBounds(::BlockPos const& relativePos, ::BlockPos const& dimensions) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SingleBlock(::ChunkViewSource& viewSource, ::Block const& block, ::BlockPos minPos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ChunkViewSource& viewSource, ::Block const& block, ::BlockPos minPos);
     // NOLINTEND
 
 public:

@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/network/IPacketSecurityHandler.h"
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/PacketGroupDefinition.h"
 #include "mc/network/PacketViolationResponse.h"
 #include "mc/platform/ErrorInfo.h"
 
@@ -24,15 +23,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PacketLimitHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::PacketViolationResponse checkForViolation(
-        ::MinecraftPacketIds                                                     packetId,
-        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& outIsNewOrUpdatedViolation,
+        ::MinecraftPacketIds,
+        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const&,
         bool*
     ) /*override*/;
 
@@ -40,41 +35,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit PacketLimitHandler(
-        ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder
-    );
-
-    MCNAPI ::PacketViolationResponse
-    _checkLimitThreshold(::MinecraftPacketIds packetId, bool* outIsNewOrUpdatedViolation);
-
-    MCNAPI ::Bedrock::ErrorInfo<::std::error_code> consumeViolation();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::PacketViolationResponse $checkForViolation(
-        ::MinecraftPacketIds                                                     packetId,
-        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& outIsNewOrUpdatedViolation,
-        bool*
-    );
 
-    MCNAPI uint $getTelemetryData();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

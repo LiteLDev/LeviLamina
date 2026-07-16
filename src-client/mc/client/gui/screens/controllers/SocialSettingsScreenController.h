@@ -5,41 +5,10 @@
 // auto generated inclusion list
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
 
-// auto generated forward declare list
-// clang-format off
-class MainMenuScreenModel;
-// clang-format on
-
 class SocialSettingsScreenController : public ::SettingsScreenControllerBase {
-public:
-    // prevent constructor by default
-    SocialSettingsScreenController();
-
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SocialSettingsScreenController() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SocialSettingsScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
-
-    MCAPI void _registerEventHandlers();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

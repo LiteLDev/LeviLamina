@@ -5,18 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/cereal/MetaVisitor.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Puv::internal {
 
 class CerealUpgraderVisitor : public ::cereal::MetaVisitor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk9dd776;
     ::ll::UntypedStorage<8, 240> mUnkaade51;
     // NOLINTEND
 
@@ -33,11 +27,11 @@ public:
 
     virtual bool hasErrors() const /*override*/;
 
-    virtual void onSequenceContainer(uint64 index, ::std::function<void()> cb) /*override*/;
+    virtual void onSequenceContainer(uint64 index, ::std::function<bool()> cb) /*override*/;
 
-    virtual void onAssociativeContainer(::std::string_view key, ::std::function<void()> cb) /*override*/;
+    virtual void onAssociativeContainer(::std::string_view key, ::std::function<bool()> cb) /*override*/;
 
-    virtual void onAssociativeContainer(uint64 index, ::std::function<void()> cb) /*override*/;
+    virtual void onAssociativeContainer(uint64 index, ::std::function<bool()> cb) /*override*/;
 
     virtual void onSetter(::std::function<bool()> cb) /*override*/;
 
@@ -54,29 +48,17 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit CerealUpgraderVisitor(::cereal::ReflectionCtx const& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $log(::std::string msg);
 
     MCNAPI bool $hasErrors() const;
 
-    MCNAPI void $onSequenceContainer(uint64 index, ::std::function<void()> cb);
+    MCNAPI void $onSequenceContainer(uint64 index, ::std::function<bool()> cb);
 
-    MCNAPI void $onAssociativeContainer(::std::string_view key, ::std::function<void()> cb);
+    MCNAPI void $onAssociativeContainer(::std::string_view key, ::std::function<bool()> cb);
 
-    MCNAPI void $onAssociativeContainer(uint64 index, ::std::function<void()> cb);
+    MCNAPI void $onAssociativeContainer(uint64 index, ::std::function<bool()> cb);
 
     MCNAPI void $onSetter(::std::function<bool()> cb);
 

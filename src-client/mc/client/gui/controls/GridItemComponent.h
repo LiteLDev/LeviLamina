@@ -19,33 +19,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GridItemComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit GridItemComponent(::UIControl& owner);
-
-    MCFOLD int getCollectionIndex() const;
-
-    MCFOLD ::glm::ivec2 const& getGridPosition() const;
-
-    MCAPI void setGridPosition(::glm::ivec2 const& position);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:

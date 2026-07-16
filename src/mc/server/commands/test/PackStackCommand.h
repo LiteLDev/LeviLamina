@@ -10,8 +10,6 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class ResourcePackStack;
-struct PackInfo;
 // clang-format on
 
 class PackStackCommand : public ::ServerCommand {
@@ -44,50 +42,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string formatPackInfoOutput(::PackInfo const& packInfo, bool isVerbose);
-
-    MCAPI static ::std::vector<::PackInfo>
-    getPacksForOutput(::std::vector<::PackInfo> const& packInfoList, bool isVerbose, bool excludeVanilla);
-
-    MCAPI static void
-    outputPackStack(::CommandOutput& output, ::ResourcePackStack const& stack, bool isVerbose, bool excludeVanilla);
-
-    MCAPI static void outputWorldTemplateData(
-        ::CommandOutput&     output,
-        ::std::string const& worldTemplateID,
-        ::std::string const& worldTemplateVersion,
-        bool                 isVerbose
-    );
-
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::PackStackCommand::ExcludeVanilla>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::PackStackCommand::StackType>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::PackStackCommand::Verbose>();
-// clang-format on

@@ -24,25 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LegacyFlowerFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LegacyFlowerFeature(::FlowerPlacementType placementType, int iterations);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::FlowerPlacementType placementType, int iterations);
     // NOLINTEND
 
 public:

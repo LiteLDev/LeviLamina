@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptEventSource.h"
 
 // auto generated forward declare list
@@ -39,13 +39,17 @@ public:
             mSourceBlock;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ScriptEventCommandMessageAfterEvent();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ScriptEventCommandMessageAfterEvent(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
 
     MCAPI ScriptEventCommandMessageAfterEvent(
@@ -61,6 +65,7 @@ public:
     operator=(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
 
     MCAPI ~ScriptEventCommandMessageAfterEvent();
+#endif
     // NOLINTEND
 
 public:
@@ -72,6 +77,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
 
     MCAPI void* $ctor(
@@ -79,12 +85,15 @@ public:
                                         scriptCommandMessageEvent,
         ::Scripting::WeakLifetimeScope& scope
     );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

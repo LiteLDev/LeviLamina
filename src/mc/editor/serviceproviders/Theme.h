@@ -4,14 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/ThemeSettingsColorKey.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
 namespace Editor::Settings { struct ThemePalette; }
 namespace Editor::Settings { struct ThemeProps; }
-namespace Scripting { struct Error; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class Color; }
 // clang-format on
@@ -50,13 +49,6 @@ public:
         ::std::function<void(::std::string const&)> onThemeDeletedCallback
     );
 
-    MCNAPI ::std::unordered_map<::HashedString, ::mce::Color>
-    _cloneThemeColorProps(::std::unordered_map<::HashedString, ::mce::Color> colorProps);
-
-    MCNAPI ::Scripting::Error _getAttemptingToModifyBuiltInThemeError(::std::string const& themeId) const;
-
-    MCNAPI ::Scripting::Error _getThemeDoesNotExistError(::std::string const& themeId, bool isCustom) const;
-
     MCNAPI ::Scripting::Result_deprecated<void> addNewTheme(
         ::std::string const&                  id,
         ::std::optional<::std::string> const& name,
@@ -72,20 +64,14 @@ public:
     MCNAPI ::std::unordered_map<::HashedString, ::Editor::Settings::ThemePalette> getAllThemesMap() const;
 #endif
 
-    MCNAPI ::std::string const& getCurrentTheme() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::Editor::Settings::ThemeProps const& getProperties() const;
-#endif
-
     MCNAPI ::std::optional<::Editor::Settings::ThemePalette> getThemeColors(::std::string const& id) const;
-
-    MCNAPI ::std::vector<::std::string> getThemeIdList() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::string> getThemeName(::std::string const& id) const;
 
+#ifdef LL_PLAT_C
     MCNAPI ::Scripting::Result_deprecated<::Editor::Settings::ThemePalette>
     getThemePalette(::std::string const& id) const;
+#endif
 
     MCNAPI ::mce::Color const& resolveColorKey(::Editor::Settings::ThemeSettingsColorKey key) const;
 
@@ -108,20 +94,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::mce::Color _getDarkThemeColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
-
-    MCNAPI static ::std::unordered_map<::HashedString, ::Editor::Settings::ThemePalette> _getDefaultThemesMap();
-
-    MCNAPI static ::mce::Color _getDefaultWorldUIColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
-
-    MCNAPI static ::std::unordered_map<::HashedString, ::mce::Color> _getEmptyColorKeyMap();
-
-    MCNAPI static ::mce::Color _getHighContrastThemeColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
-
-    MCNAPI static ::mce::Color _getLightThemeColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
-
-    MCNAPI static ::mce::Color _getRedstoneThemeColorByKey(::Editor::Settings::ThemeSettingsColorKey colorKey);
-
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 

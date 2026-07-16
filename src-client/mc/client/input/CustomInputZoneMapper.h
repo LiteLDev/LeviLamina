@@ -61,6 +61,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CustomInputZoneMapper();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -82,11 +94,11 @@ public:
 
     MCFOLD void $clearInputDeviceQueue();
 
-    MCFOLD ::InputMode $getInputMode() const;
+    MCAPI ::InputMode $getInputMode() const;
 
-    MCAPI void $render(::InputRenderContext& context) const;
+    MCFOLD void $render(::InputRenderContext& context) const;
 
-    MCAPI void $setWindowSize(int width, int height);
+    MCFOLD void $setWindowSize(int width, int height);
 
     MCAPI void $changeControllerId(int oldId, int newId);
     // NOLINTEND

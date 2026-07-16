@@ -9,10 +9,8 @@
 // clang-format off
 class Actor;
 class Block;
-class BlockPos;
 class BlockSource;
 class Item;
-class RenderParams;
 // clang-format on
 
 namespace BlockEvents {
@@ -38,44 +36,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BlockSource const& getBlockSource() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockPlayerPlacingEvent(
-        ::BlockSource&                  region,
-        ::BlockPos                      pos,
-        ::Actor&                        actor,
-        uchar                           face,
-        ::gsl::not_null<::Block const*> permutationToPlace,
-        ::Item const&                   item
-    );
-
-    MCAPI void configureRenderParamsForTrigger(::RenderParams& params);
-
-    MCFOLD ::Actor const& getActor() const;
-
-    MCFOLD ::Item const& getItemUsed() const;
-
-    MCFOLD ::Block const& getPermutationToPlace() const;
-
-    MCFOLD bool isClientSide() const;
-
-    MCFOLD void setPermutationToPlace(::Block const& perm);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BlockSource&                  region,
-        ::BlockPos                      pos,
-        ::Actor&                        actor,
-        uchar                           face,
-        ::gsl::not_null<::Block const*> permutationToPlace,
-        ::Item const&                   item
-    );
     // NOLINTEND
 
 public:

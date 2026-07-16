@@ -12,7 +12,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Container;
 class ItemStack;
 class Player;
 class Vec3;
@@ -50,7 +49,8 @@ public:
 
     virtual int getTickDelay() const;
 
-    virtual bool allowStateMismatchOnPlacement(::Block const&, ::Block const&) const /*override*/;
+    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
+        /*override*/;
 
     virtual void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
@@ -61,18 +61,6 @@ public:
     MCAPI DispenserBlock(::std::string const& nameId, int id);
 
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
-
-    MCAPI void ejectItem(
-        ::BlockSource&     region,
-        ::Vec3 const&      pos,
-        uchar              face,
-        ::ItemStack const& item,
-        ::Container&       container,
-        int                slot,
-        int                countLimit
-    ) const;
-
-    MCAPI ::Vec3 getDispensePosition(::BlockSource& region, ::Vec3 const& pos) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
@@ -124,7 +112,7 @@ public:
 
     MCFOLD int $getTickDelay() const;
 
-    MCFOLD bool $allowStateMismatchOnPlacement(::Block const&, ::Block const&) const;
+    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
     MCAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
 

@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Bee() /*override*/;
+    virtual ~Bee() /*override*/ = default;
 
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
@@ -45,8 +45,6 @@ public:
         ::EntityContext&                   entityContext);
 
     MCAPI void _registerLoopingSounds();
-
-    MCAPI void postNormalTick();
     // NOLINTEND
 
 public:
@@ -60,24 +58,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI void $onSynchedDataUpdate(int dataId);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

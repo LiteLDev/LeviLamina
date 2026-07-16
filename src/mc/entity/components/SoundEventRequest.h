@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class StrictEntityContext;
 struct ActorDataFlagComponent;
 struct ActorDefinitionIdentifier;
@@ -119,18 +118,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SoundEventRequest& operator=(SoundEventRequest const&);
-    SoundEventRequest(SoundEventRequest const&);
-    SoundEventRequest();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SoundEventRequest(::SoundEventRequest&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
@@ -157,26 +144,6 @@ public:
     );
 
     MCAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
-        ::ActorDataFlagComponent const&        actorData,
-        ::SharedTypes::Legacy::LevelSoundEvent type,
-        ::StrictEntityContext const&           entity,
-        ::SharedTypes::Legacy::ActorLocation   location,
-        float                                  volume,
-        float                                  pitch
-    );
-
-    MCAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
-        ::ActorDataFlagComponent const&        actorFlags,
-        ::ActorDefinitionIdentifier const&     identifier,
-        ::ActorUniqueID                        actorId,
-        ::DimensionType                        dimension,
-        ::SharedTypes::Legacy::LevelSoundEvent type,
-        ::StrictEntityContext const&           entity,
-        ::SharedTypes::Legacy::ActorLocation   location,
-        ::Block const&                         block
-    );
-
-    MCAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
         ::ActorDataFlagComponent const&        actorFlags,
         ::ActorDefinitionIdentifier const&     identifier,
         ::ActorUniqueID                        actorId,
@@ -186,11 +153,5 @@ public:
         ::SharedTypes::Legacy::ActorLocation   location,
         int                                    data
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SoundEventRequest&&);
     // NOLINTEND
 };

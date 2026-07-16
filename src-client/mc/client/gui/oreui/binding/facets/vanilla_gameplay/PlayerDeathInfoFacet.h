@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ class IClientInstance;
 
 namespace OreUI {
 
-class PlayerDeathInfoFacet : public ::OreUI::FacetBase<::OreUI::PlayerDeathInfoFacet> {
+class PlayerDeathInfoFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PlayerDeathInfoFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,23 +33,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PlayerDeathInfoFacet(::IClientInstance& client);
-
-    MCAPI ::std::string _getLatestDeathInfo() const;
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IClientInstance& client);
     // NOLINTEND
 
 public:

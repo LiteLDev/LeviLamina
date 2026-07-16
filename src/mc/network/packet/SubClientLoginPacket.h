@@ -25,11 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~SubClientLoginPacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~SubClientLoginPacket() /*override*/;
-#endif
 
     virtual ::std::string_view getName() const /*override*/;
 
@@ -40,32 +36,6 @@ public:
     virtual bool disallowBatching() const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SubClientLoginPacket();
-
-#ifdef LL_PLAT_C
-    MCAPI explicit SubClientLoginPacket(::SubClientConnectionRequest const& connectionRequest);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SubClientConnectionRequest const& connectionRequest);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

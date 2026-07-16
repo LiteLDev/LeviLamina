@@ -145,7 +145,9 @@ enum class DisconnectFailReason : int {
     NonceNotFound                                 = 137,
     NonceExpired                                  = 138,
     NonceNotValid                                 = 139,
-    MaxDisconnectFailReason                       = 140,
+    HostDisconnected                              = 140,
+    EditorJoinIntentPolicyFailure                 = 141,
+    MaxDisconnectFailReason                       = 142,
 };
 
 }

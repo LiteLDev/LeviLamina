@@ -7,7 +7,7 @@ namespace renoir {
 enum class ResourcesCommandsStage : int {
     PreExecuteRendering          = 0,
     PostExecuteRendering         = 1,
-    DestoryAllRenderingResources = 2,
+    DestroyAllRenderingResources = 2,
     CreateGlyphResources         = 3,
     DestroyGlyphAtlases          = 4,
 };

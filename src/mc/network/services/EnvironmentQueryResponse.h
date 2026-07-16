@@ -30,24 +30,9 @@ public:
     MCNAPI ::std::string GetDefaultEnvironment() const;
 
     MCNAPI ::std::string GetPropertyValue(::std::string const& serviceName, ::std::string const& propertyKey) const;
-
-    MCNAPI ::std::map<::std::string, ::std::string> const*
-    GetServiceEnvironmentProperties(::std::string const& serviceName, ::std::string const& environmentName) const;
 #endif
 
     MCNAPI void fromJsonShared(::Json::Value const& jsonValue);
-
-#ifdef LL_PLAT_C
-    MCNAPI ~EnvironmentQueryResponse();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

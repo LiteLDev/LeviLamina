@@ -25,16 +25,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual int generateHeightAtPosition(
-        ::BlockPos const&                                                          pos,
-        ::Dimension&                                                               dim,
-        ::BlockVolume&                                                             box,
-        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
+        ::BlockPos const&,
+        ::Dimension&,
+        ::BlockVolume&,
+        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&
     ) const /*override*/;
 
-    virtual ::Block const*
-    getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const /*override*/;
+    virtual ::Block const* getSupportBlock(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
 
-    virtual ::Block const& getBeardStabilizeBlock(::Block const& foundationBlock) const /*override*/;
+    virtual ::Block const& getBeardStabilizeBlock(::Block const&) const /*override*/;
 
     virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const /*override*/;
 
@@ -57,28 +56,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $generateHeightAtPosition(
-        ::BlockPos const&                                                          pos,
-        ::Dimension&                                                               dim,
-        ::BlockVolume&                                                             box,
-        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
-    ) const;
 
-    MCAPI ::Block const*
-    $getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
-
-    MCAPI ::Block const& $getBeardStabilizeBlock(::Block const& foundationBlock) const;
-
-    MCFOLD ::AdjustmentEffect $getTerrainAdjustmentEffect() const;
-
-    MCAPI bool $_needsPostProcessing(::BlockSource& region);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

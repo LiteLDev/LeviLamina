@@ -9,8 +9,6 @@
 // clang-format off
 class ResolvedTextObject;
 class TextPacket;
-namespace PlayerCapabilities { struct IPlayerData; }
-namespace PlayerCapabilities { struct ISharedController; }
 // clang-format on
 
 struct TextPacketPayload {
@@ -34,6 +32,7 @@ public:
 
     public:
         AuthorAndMessage& operator=(AuthorAndMessage const&) = default;
+        AuthorAndMessage(AuthorAndMessage const&)            = default;
         AuthorAndMessage()                                   = default;
         AuthorAndMessage(TextPacketType type, std::string const& author, std::string const& message)
         : mType(type),
@@ -43,15 +42,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI AuthorAndMessage(::TextPacketPayload::AuthorAndMessage const&);
-
         MCAPI ::TextPacketPayload::AuthorAndMessage& operator=(::TextPacketPayload::AuthorAndMessage&&);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::TextPacketPayload::AuthorAndMessage const&);
         // NOLINTEND
     };
 
@@ -65,26 +56,10 @@ public:
         // NOLINTEND
 
     public:
-        MessageAndParams& operator=(MessageAndParams const&) = default;
-        MessageAndParams()                                   = default;
         MessageAndParams(TextPacketType type, std::string const& message, std::vector<std::string> const& params)
         : mType(type),
           mMessage(message),
           mParams(params) {}
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI MessageAndParams(::TextPacketPayload::MessageAndParams const&);
-
-        MCAPI bool operator==(::TextPacketPayload::MessageAndParams const& other) const;
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(::TextPacketPayload::MessageAndParams const&);
-        // NOLINTEND
     };
 
     struct MessageOnly {
@@ -115,26 +90,14 @@ public:
 
 public:
     // prevent constructor by default
+    TextPacketPayload& operator=(TextPacketPayload const&);
+    TextPacketPayload(TextPacketPayload const&);
     TextPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TextPacketPayload(::TextPacketPayload const&);
-
-    MCAPI ::std::string const& getAuthorOrEmpty() const;
-
-    MCAPI ::std::string const& getMessage() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::std::vector<::std::string> const& getParams() const;
-#endif
-
-    MCAPI ::TextPacketType getType() const;
-
     MCAPI ::TextPacketPayload& operator=(::TextPacketPayload&&);
-
-    MCAPI ::TextPacketPayload& operator=(::TextPacketPayload const&);
 
     MCAPI ~TextPacketPayload();
     // NOLINTEND
@@ -142,11 +105,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool const _shouldHandleTextPacketForPlayer(
-        ::PlayerCapabilities::IPlayerData&             playerData,
-        ::PlayerCapabilities::ISharedController const& sharedController
-    );
-
     MCAPI static ::TextPacket createAnnouncement(
         ::std::string const&           author,
         ::std::string const&           message,
@@ -216,12 +174,6 @@ public:
         ::std::string const&           xuid,
         ::std::string const&           platformId
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::TextPacketPayload const&);
     // NOLINTEND
 
 public:

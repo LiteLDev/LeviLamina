@@ -12,7 +12,7 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptNavigationGenericComponent : public ::ScriptModuleMinecraft::DerivedNavigationScriptActorComponent<808> {
+class ScriptNavigationGenericComponent : public ::ScriptModuleMinecraft::DerivedNavigationScriptActorComponent<880> {
 public:
     // static functions
     // NOLINTBEGIN
@@ -23,12 +23,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static char const*& ComponentId();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -28,20 +28,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<0> begin();
-
     MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<1> begin() const;
-
-    MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<0> end();
-
-    MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<1> end() const;
 
     MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<1> find(::std::string_view keyStr) const;
 
     MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<0>
     insert(::std::string_view keyStr, ::Bedrock::JSONObject::ValueWrapper const& value, bool copyKey);
-
-    MCNAPI bool setContents(::Bedrock::JSONObject::ValueWrapper const& contents);
     // NOLINTEND
 };
 

@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/level/BlockPos.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +17,7 @@ class ILevel;
 class SaveContext;
 // clang-format on
 
-class ConduitBlockActor : public ::BlockActor {
+class ConduitBlockActor : public ::VanillaBlockActor {
 public:
     // member variables
     // NOLINTBEGIN
@@ -35,49 +35,19 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ConduitBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::BlockSource& region) /*override*/;
 
     virtual bool hasAlphaLayer() const /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const&) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual void load(::ILevel& tag, ::CompoundTag const& dataLoadHelper, ::DataLoadHelper&) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ConduitBlockActor(::BlockPos const& pos);
-
-    MCAPI void _animateTick(::BlockSource& region) const;
-
-    MCAPI void _applyEffects(::BlockSource& region);
-
-    MCAPI void _checkShape(::BlockSource& region);
-
-    MCAPI void _updateTarget(::BlockSource& region);
-
-#ifdef LL_PLAT_C
-    MCAPI void incrementAnimationValue(float animationStep);
-
-    MCAPI void incrementWindLevel();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -87,9 +57,9 @@ public:
 
     MCFOLD bool $hasAlphaLayer() const;
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const&) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::ILevel& tag, ::CompoundTag const& dataLoadHelper, ::DataLoadHelper&);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
@@ -101,6 +71,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
     // NOLINTEND
 };

@@ -29,10 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ButtonComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ButtonComponent() /*override*/ = default;
@@ -44,10 +40,10 @@ public:
     virtual void reload(::UIComponent const& rhs) /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree& screenEvent,
-        ::ScreenInputContext&,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     ) /*override*/;
 
     virtual ::ComponentReceiveActionType receive(::ScreenEvent const& screenEvent) /*override*/;
@@ -60,33 +56,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ButtonComponent(::UIControl& owner);
-
     MCAPI void _updateControlVisibility();
-
-    MCFOLD ::std::weak_ptr<::UIControl> getDefaultStateControl() const;
-
-    MCFOLD ::std::weak_ptr<::UIControl> getHoverStateControl() const;
-
-    MCFOLD ::std::weak_ptr<::UIControl> getLockedStateControl() const;
-
-    MCFOLD ::std::weak_ptr<::UIControl> getPressedStateControl() const;
-
-    MCFOLD void setConsumeEvents(bool consumeEvents);
-
-    MCAPI void setDefaultStateControl(::std::weak_ptr<::UIControl> control);
-
-    MCAPI void setHoverStateControl(::std::weak_ptr<::UIControl> control);
-
-    MCAPI void setLockedStateControl(::std::weak_ptr<::UIControl> control);
-
-    MCAPI void setPressedStateControl(::std::weak_ptr<::UIControl> control);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:
@@ -98,8 +68,12 @@ public:
 
     MCAPI void $reload(::UIComponent const& rhs);
 
-    MCAPI ::ComponentReceiveActionType
-    $receive(::VisualTree& screenEvent, ::ScreenInputContext&, ::UIAnimationController&, ::ScreenEvent const&);
+    MCAPI ::ComponentReceiveActionType $receive(
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
+    );
 
     MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
 

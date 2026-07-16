@@ -60,8 +60,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PortalForcer(::Level& level);
-
     MCAPI ::std::optional<::PortalRecord> _findPortal(
         ::DimensionType   dimensionId,
         ::BlockPos const& centerBlockPos,
@@ -69,22 +67,7 @@ public:
         ::BlockPos&       targetBlockPos
     ) const;
 
-    MCAPI ::PortalRecord const& addPortalRecord(::DimensionType dimensionType, ::PortalShape const& shape);
-
-    MCAPI ::PortalRecord const& addPortalRecord(::DimensionType dimensionType, ::PortalRecord toAdd);
-
-    MCAPI ::PortalRecord const& createPortal(::Actor const& entity, int radius);
-
-    MCAPI bool findPortal(
-        ::DimensionType   dimensionId,
-        ::BlockPos const& centerBlockPos,
-        int               radius,
-        ::BlockPos&       targetBlockPos
-    ) const;
-
     MCAPI void force(::Actor& entity, ::DimensionTransitionComponent const& portalEntranceComponent);
-
-    MCAPI bool portalRecordExists(::DimensionType dimensionType, ::PortalRecord const& record) const;
 
     MCAPI void removeMisalignedPortalRecords(
         ::BlockSource&        region,
@@ -101,12 +84,6 @@ public:
     MCAPI static ::BaseGameVersion const& MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION();
 
     MCAPI static ::std::string const& PORTAL_FILE_ID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level);
     // NOLINTEND
 
 public:

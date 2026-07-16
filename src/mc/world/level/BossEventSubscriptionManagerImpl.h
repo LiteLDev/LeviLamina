@@ -38,19 +38,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Bedrock::PubSub::Subscription
-    subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback) /*override*/;
+        subscribeToBossEvent(::std::function<void(::BossEventUpdateType)>) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(
-        ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)> callback
+        ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)>
     ) /*override*/;
 
-    virtual void broadcastBossEvent(::BossEventUpdateType type) /*override*/;
+    virtual void broadcastBossEvent(::BossEventUpdateType) /*override*/;
 
-    virtual void broadcastBossEvent(
-        ::BossEventUpdateType    type,
-        ::ActorUniqueID const&   id,
-        ::BossEventPacket const& packet
-    ) /*override*/;
+    virtual void
+    broadcastBossEvent(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&) /*override*/;
 
     virtual bool areBossEventSubscribersReady() const /*override*/;
     // NOLINTEND
@@ -58,27 +55,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback);
 
-    MCAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(
-        ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)> callback
-    );
-
-    MCAPI void $broadcastBossEvent(::BossEventUpdateType type);
-
-    MCAPI void
-    $broadcastBossEvent(::BossEventUpdateType type, ::ActorUniqueID const& id, ::BossEventPacket const& packet);
-
-    MCAPI bool $areBossEventSubscribersReady() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForImplBase();
     // NOLINTEND
 };

@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/Version.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
+#include "mc/deps/script_core/scripting/Version.h"
 #include "mc/scripting/modules/minecraft/ScriptWeatherType.h"
 #include "mc/scripting/modules/minecraft/events/IScriptWorldBeforeEvents.h"
 #include "mc/scripting/modules/minecraft/events/ScriptFilteredEventSignal.h"
@@ -30,8 +30,7 @@ struct ItemUseEvent;
 struct ItemUseOnEvent;
 struct PlayerInteractWithBlockBeforeEvent;
 struct PlayerInteractWithEntityBeforeEvent;
-namespace ScriptModuleMinecraft { class ScriptBlockComponentRegistry; }
-namespace ScriptModuleMinecraft { class ScriptItemComponentRegistry; }
+struct ScriptingWorldInitializeEvent;
 namespace ScriptModuleMinecraft { struct EmptyFilter; }
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHealBeforeEvent; }
@@ -267,12 +266,7 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
     onBeforePlayerGameModeChange(::Player const& player, ::GameType fromGameMode, ::GameType toGameMode) /*override*/;
 
-    virtual void onBeforeWorldInitialize(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&
-            blockComponentRegistry,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry> const&
-            itemComponentRegistry
-    ) /*override*/;
+    virtual void onBeforeWorldInitialize(::ScriptingWorldInitializeEvent const& eventData) /*override*/;
 
     virtual void onBeforePlayerLeave(::Player const& player) /*override*/;
 
@@ -380,12 +374,7 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
     $onBeforePlayerGameModeChange(::Player const& player, ::GameType fromGameMode, ::GameType toGameMode);
 
-    MCAPI void $onBeforeWorldInitialize(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&
-            blockComponentRegistry,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry> const&
-            itemComponentRegistry
-    );
+    MCAPI void $onBeforeWorldInitialize(::ScriptingWorldInitializeEvent const& eventData);
 
     MCAPI void $onBeforePlayerLeave(::Player const& player);
 

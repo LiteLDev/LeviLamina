@@ -8,11 +8,6 @@
 #include "mc/client/gui/oreui/binding/properties/PropertyObject.h"
 #include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Realms { struct AdminLog; }
-// clang-format on
-
 namespace OreUI {
 
 class AdminLogData : public ::OreUI::PropertyObject<::OreUI::AdminLogData> {
@@ -32,28 +27,6 @@ public:
         120,
         ::OreUI::PropertyVector<::std::string, ::std::allocator<::OreUI::Detail::ObservableValue<::std::string>>>>
         mKeys;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AdminLogData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit AdminLogData(::Realms::AdminLog const& adminLog);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Realms::AdminLog const& adminLog);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

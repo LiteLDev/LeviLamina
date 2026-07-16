@@ -94,10 +94,6 @@ public:
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI bool canBeAffectedByWaterBottle() const;
-
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
-
-    MCAPI void refillTimeWithWaterBottle();
     // NOLINTEND
 };

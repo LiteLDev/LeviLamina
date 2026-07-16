@@ -16,7 +16,6 @@
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/brstd/promise.h"
 #include "mc/platform/threading/Mutex.h"
-#include "mc/platform/threading/UniqueLock.h"
 #include "mc/resources/TaskGroupState.h"
 #include "mc/server/commands/edu/make_code_fileio/MakeCodeFileResult.h"
 #include "mc/world/level/FileArchiver.h"
@@ -88,27 +87,25 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Bedrock::Threading::Async<void> queue_DEPRECATED(
-        ::TaskStartInfo const&                        startInfo,
-        ::brstd::move_only_function<::TaskResult()>&& task,
-        ::std::function<void()>&&                     callback
+        ::TaskStartInfo const&,
+        ::brstd::move_only_function<::TaskResult()>&&,
+        ::std::function<void()>&&
     ) /*override*/;
 
-    virtual ::Bedrock::Threading::Async<void> queueSync_DEPRECATED(
-        ::TaskStartInfo const&                        startInfo,
-        ::brstd::move_only_function<::TaskResult()>&& task
-    ) /*override*/;
+    virtual ::Bedrock::Threading::Async<void>
+    queueSync_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&) /*override*/;
 
     virtual ~TaskGroup() /*override*/;
 
-    virtual void taskRegister(::std::shared_ptr<::BackgroundTaskBase> task) /*override*/;
+    virtual void taskRegister(::std::shared_ptr<::BackgroundTaskBase>) /*override*/;
 
-    virtual void requeueTask(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate) /*override*/;
+    virtual void requeueTask(::std::shared_ptr<::BackgroundTaskBase>, bool) /*override*/;
 
     virtual ::TaskGroupState getState() const /*override*/;
 
     virtual void processCoroutines() /*override*/;
 
-    virtual void taskComplete(::gsl::not_null<::BackgroundTaskBase*> task) /*override*/;
+    virtual void taskComplete(::gsl::not_null<::BackgroundTaskBase*>) /*override*/;
 
     virtual bool _workerPoolIsAsync() const;
     // NOLINTEND
@@ -120,38 +117,15 @@ public:
 
     MCAPI void _doWorkUntil(::Bedrock::Threading::SharedAsync<void> task, ::brstd::promise<void>* workStarted);
 
-    MCAPI void _forAllTasks(
-        ::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex>&        lock,
-        ::std::function<void(::std::shared_ptr<::BackgroundTaskBase> const&)> callback
-    );
-
     MCAPI void _queueInternal(::std::shared_ptr<::BackgroundTaskBase> bgtask);
 
 #ifdef LL_PLAT_C
     MCAPI uint64 count() const;
 #endif
 
-    MCAPI void disableOwnerThreadChecks();
-
     MCAPI void flush(::std::function<void()> waitFn);
 
-#ifdef LL_PLAT_C
-    MCAPI uint64 getMaxConcurrency() const;
-#endif
-
-    MCFOLD ::std::string_view getName() const;
-
-    MCAPI ::std::thread::id getOwnerThreadID() const;
-
-    MCAPI ::Scheduler& getScheduler();
-
     MCAPI bool isEmpty() const;
-
-#ifdef LL_PLAT_C
-    MCAPI void kick(uint count);
-#endif
-
-    MCAPI void pause();
 
 #ifdef LL_PLAT_C
     MCAPI void resume();
@@ -163,8 +137,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::IBackgroundTaskOwner* getCurrentTaskGroup();
-
     MCAPI static ::Bedrock::Threading::Async<void>
     queueChildSync_DEPRECATED(::TaskStartInfo const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task);
 
@@ -190,33 +162,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Threading::Async<void> $queue_DEPRECATED(
-        ::TaskStartInfo const&                        startInfo,
-        ::brstd::move_only_function<::TaskResult()>&& task,
-        ::std::function<void()>&&                     callback
-    );
 
-    MCAPI ::Bedrock::Threading::Async<void>
-    $queueSync_DEPRECATED(::TaskStartInfo const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task);
-
-    MCAPI void $taskRegister(::std::shared_ptr<::BackgroundTaskBase> task);
-
-    MCAPI void $requeueTask(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
-
-    MCFOLD ::TaskGroupState $getState() const;
-
-    MCAPI void $processCoroutines();
-
-    MCAPI void $taskComplete(::gsl::not_null<::BackgroundTaskBase*> task);
-
-    MCAPI bool $_workerPoolIsAsync() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

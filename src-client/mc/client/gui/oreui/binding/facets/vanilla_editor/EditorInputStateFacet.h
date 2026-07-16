@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -15,7 +15,7 @@ namespace Editor::Services { class ClientPlayerInputServiceProvider; }
 
 namespace OreUI {
 
-class EditorInputStateFacet : public ::OreUI::FacetBase<::OreUI::EditorInputStateFacet> {
+class EditorInputStateFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::EditorInputStateFacet> {
 public:
     // EditorInputStateFacet inner types declare
     // clang-format off
@@ -43,6 +43,8 @@ public:
         ::HashedString,
         ::std::unordered_map<::HashedString, ::OreUI::EditorInputStateFacet::KeyBindingStateFacet>>;
 
+    using CursorIconStateMap = ::std::unordered_map<::HashedString, ::std::string>;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -51,13 +53,15 @@ public:
     ::ll::TypedStorage<8, 8, ::Editor::Services::ClientPlayerInputServiceProvider&> mInputService;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                      mViewportFocusEventSub;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                      mKeyBindingStateChangedEventSub;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                      mCursorIconChangedEventSub;
     ::ll::TypedStorage<
         8,
         64,
         ::std::unordered_map<
             ::HashedString,
             ::std::unordered_map<::HashedString, ::OreUI::EditorInputStateFacet::KeyBindingStateFacet>>>
-        mKeyBindingStateMap;
+                                                                                   mKeyBindingStateMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::string>> mCursorIconStateMap;
     // NOLINTEND
 
 public:
@@ -69,7 +73,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorInputStateFacet() /*override*/;
+    virtual ~EditorInputStateFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -78,40 +82,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorInputStateFacet(::Editor::ServiceProviderCollection* services);
-
-    MCAPI void _handleKeyBindingStateChange(
-        ::HashedString const&       contextId,
-        ::HashedString const&       bindingId,
-        ::std::optional<int> const& processingState
-    );
-
-    MCFOLD void _handleViewportFocusChange(bool);
-
-    MCFOLD ::std::unordered_map<
-        ::HashedString,
-        ::std::unordered_map<::HashedString, ::OreUI::EditorInputStateFacet::KeyBindingStateFacet>> const&
-    getKeyBindingStateMap() const;
-
-    MCFOLD bool isViewportFocused() const;
-
-    MCAPI bool
-    onViewportMouseButtonDown(::OreUI::EditorInputStateFacet::MouseButton button, bool shift, bool ctrl, bool alt);
-
-    MCAPI bool onViewportMouseButtonUp(
-        ::OreUI::EditorInputStateFacet::MouseButton button,
-        bool                                        shift,
-        bool                                        ctrl,
-        bool                                        alt,
-        bool                                        hasDragged
-    );
-
-    MCAPI bool onViewportMouseDelta(float dx, float dy);
-
-    MCAPI bool onViewportMouseWheel(bool wheelOut);
-
-    MCAPI void setCursorReleased(bool shouldRelease);
-
-    MCAPI void setViewportFocus(bool isFocused);
     // NOLINTEND
 
 public:
@@ -127,21 +97,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -35,20 +35,6 @@ MCAPI ::VanillaBlockTessellation::Config createCrackPipelineConfig(
     ::Bedrock::NonOwnerPointer<::ClientBlockPipeline::Material const> materialOverride
 );
 
-MCAPI ::VanillaBlockTessellation::Config createGuiPipelineConfig(
-    ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository> materialRepository,
-    ::std::array<float, 6> const&                                dimensionDimmingScalars
-);
-
-MCAPI ::VanillaBlockTessellation::Config
-createHighlightPipelineConfig(::std::shared_ptr<::ClientBlockPipeline::MaterialRepository> materialRepository);
-
-MCAPI ::VanillaBlockTessellation::Config
-createItemInHandPipelineConfig(::std::shared_ptr<::ClientBlockPipeline::MaterialRepository> materialRepository);
-
-MCAPI ::std::unique_ptr<::ClientBlockPipeline::Description>
-createPipelineFromConfig(::VanillaBlockTessellation::Config&& config);
-
 MCAPI ::VanillaBlockTessellation::Config createWorldPipelineConfig(
     ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository> materialRepository,
     ::DimensionType const&                                       dimension,

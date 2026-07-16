@@ -3,12 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/IDebuggerTransport.h"
-
-// auto generated forward declare list
-// clang-format off
-class IScriptDebuggerWatchdog;
-// clang-format on
+#include "mc/deps/script_core/runtime/scripting/IDebuggerTransport.h"
 
 class ScriptDebuggerTransport : public ::Scripting::IDebuggerTransport {
 public:
@@ -32,11 +27,11 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptDebuggerTransport() /*override*/ = default;
 
-    virtual bool listen(ushort port) /*override*/;
+    virtual bool listen(ushort) /*override*/;
 
-    virtual bool connect(::std::string const& host, ushort port) /*override*/;
+    virtual bool connect(::std::string const&, ushort) /*override*/;
 
-    virtual bool selectClient(::std::string& outClient) /*override*/;
+    virtual bool selectClient(::std::string&) /*override*/;
 
     virtual bool started() const /*override*/;
 
@@ -50,54 +45,14 @@ public:
 
     virtual bool peek() const /*override*/;
 
-    virtual bool receive(char* buffer, uint64 length) /*override*/;
+    virtual bool receive(char*, uint64) /*override*/;
 
-    virtual void send(char const* buffer, uint64 length) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptDebuggerTransport(::IScriptDebuggerWatchdog& debuggerWatchdog);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::IScriptDebuggerWatchdog& debuggerWatchdog);
+    virtual void send(char const*, uint64) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $listen(ushort port);
 
-    MCNAPI bool $connect(::std::string const& host, ushort port);
-
-    MCNAPI bool $selectClient(::std::string& outClient);
-
-    MCNAPI bool $started() const;
-
-    MCNAPI bool $connected() const;
-
-    MCNAPI bool $lostConnection() const;
-
-    MCNAPI bool $readyClose() const;
-
-    MCNAPI void $close();
-
-    MCNAPI bool $peek() const;
-
-    MCNAPI bool $receive(char* buffer, uint64 length);
-
-    MCNAPI void $send(char const* buffer, uint64 length);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

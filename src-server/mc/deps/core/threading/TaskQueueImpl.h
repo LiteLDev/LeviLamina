@@ -14,6 +14,7 @@ struct ITaskQueuePortContext;
 struct XTaskQueueObject;
 struct XTaskQueuePortObject;
 struct XTaskQueueRegistrationToken;
+struct XTaskQueueTestHooks;
 // clang-format on
 
 class TaskQueueImpl : public ::Api<2, ::ITaskQueue> {
@@ -53,7 +54,6 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkd13164;
         ::ll::UntypedStorage<1, 1>  mUnk809a2c;
         ::ll::UntypedStorage<8, 80> mUnk684968;
         ::ll::UntypedStorage<8, 72> mUnkbbdbec;
@@ -75,7 +75,7 @@ public:
     ::ll::UntypedStorage<8, 160>  mUnka865be;
     ::ll::UntypedStorage<8, 56>   mUnkf550d3;
     ::ll::UntypedStorage<8, 56>   mUnkead70c;
-    ::ll::UntypedStorage<1, 1>    mUnka16436;
+    ::ll::UntypedStorage<8, 8>    mUnke70680;
     // NOLINTEND
 
 public:
@@ -89,6 +89,10 @@ public:
     virtual ~TaskQueueImpl() /*override*/ = default;
 
     virtual ::XTaskQueueObject* GetHandle() /*override*/;
+
+    virtual ::XTaskQueueTestHooks* GetTestHooks() /*override*/;
+
+    virtual void SetTestHooks(::XTaskQueueTestHooks* testHooks) /*override*/;
 
     virtual HRESULT GetPortContext(::XTaskQueuePort port, ::ITaskQueuePortContext** portContext) /*override*/;
 
@@ -110,10 +114,6 @@ public:
 
     virtual void UnregisterSubmitCallback(::XTaskQueueRegistrationToken token) /*override*/;
 
-    virtual bool CanTerminate() /*override*/;
-
-    virtual bool CanClose() /*override*/;
-
     virtual HRESULT Terminate(bool wait, void* callbackContext, void (*callback)(void*)) /*override*/;
 
     virtual void RundownObject() /*override*/;
@@ -122,14 +122,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI long Initialize(::XTaskQueuePortObject* workPort, ::XTaskQueuePortObject* completionPort);
+    MCNAPI long Initialize(::XTaskQueueDispatchMode workMode, ::XTaskQueueDispatchMode completionMode);
 
-    MCNAPI long Initialize(
-        ::XTaskQueueDispatchMode workMode,
-        ::XTaskQueueDispatchMode completionMode,
-        bool                     allowTermination,
-        bool                     allowClose
-    );
+    MCNAPI long Initialize(::XTaskQueuePortObject* workPort, ::XTaskQueuePortObject* completionPort);
 
     MCNAPI TaskQueueImpl();
     // NOLINTEND
@@ -151,6 +146,10 @@ public:
     // NOLINTBEGIN
     MCNAPI ::XTaskQueueObject* $GetHandle();
 
+    MCNAPI ::XTaskQueueTestHooks* $GetTestHooks();
+
+    MCNAPI void $SetTestHooks(::XTaskQueueTestHooks* testHooks);
+
     MCNAPI HRESULT $GetPortContext(::XTaskQueuePort port, ::ITaskQueuePortContext** portContext);
 
     MCNAPI HRESULT $RegisterWaitHandle(
@@ -170,10 +169,6 @@ public:
     );
 
     MCNAPI void $UnregisterSubmitCallback(::XTaskQueueRegistrationToken token);
-
-    MCNAPI bool $CanTerminate();
-
-    MCNAPI bool $CanClose();
 
     MCNAPI HRESULT $Terminate(bool wait, void* callbackContext, void (*callback)(void*));
 

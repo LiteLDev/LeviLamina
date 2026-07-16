@@ -14,16 +14,4 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<void(int)>>                mPlaceAllToInputSlot;
     ::ll::TypedStorage<8, 64, ::std::function<::ItemStackBase const&()>> mGetInputItem;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~EnchantingScreenControllerProxyCallbacks();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -34,17 +34,7 @@ public:
 
     MCNAPI bool tryUnloadManifest(::Core::PathView manifestPath);
 
-    MCNAPI void unloadAllManifests();
-
     MCNAPI void updateManifest(::std::shared_ptr<::Core::FlatFileManifest> manifest, bool keepCached);
-
-    MCNAPI ~FlatFileManifestTracker();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

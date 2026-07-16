@@ -15,22 +15,11 @@ struct SyncedClientOptionsComponent;
 
 class SubClientConnectionRequest : public ::BaseConnectionRequest {
 public:
-    // prevent constructor by default
-    SubClientConnectionRequest& operator=(SubClientConnectionRequest const&);
-    SubClientConnectionRequest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SubClientConnectionRequest() /*override*/;
+    virtual ~SubClientConnectionRequest() /*override*/ = default;
 
     virtual bool _isAuthTypeWellFormed() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SubClientConnectionRequest(::SubClientConnectionRequest const& other);
     // NOLINTEND
 
 public:
@@ -54,18 +43,6 @@ public:
 #endif
 
     MCAPI static ::SubClientConnectionRequest fromString(::std::string const& str);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SubClientConnectionRequest const& other);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

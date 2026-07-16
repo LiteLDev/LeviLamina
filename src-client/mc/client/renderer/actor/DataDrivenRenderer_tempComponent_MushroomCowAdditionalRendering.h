@@ -10,8 +10,6 @@
 // clang-format off
 class ActorRenderData;
 class BaseActorRenderContext;
-class BlockTessellator;
-class DataDrivenRenderer;
 class RenderParams;
 // clang-format on
 
@@ -40,40 +38,12 @@ public:
     // NOLINTBEGIN
     virtual ::V2TempComponentRequirements getV2Requirements() const /*override*/;
 
-    virtual void render(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI DataDrivenRenderer_tempComponent_MushroomCowAdditionalRendering(
-        ::std::shared_ptr<::DataDrivenRenderer> renderer,
-        ::BlockTessellator&                     commonBlockRenderer
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer, ::BlockTessellator& commonBlockRenderer);
+    virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
 
-    MCNAPI void
-    $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams& renderParams);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

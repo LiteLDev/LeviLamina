@@ -6,8 +6,7 @@
 #include "mc/client/renderer/EditorRenderingModifiableConfig.h"
 #include "mc/client/renderer/RenderingResourcePackJsonConfig.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/util/cereal_helpers/TimeKeyframes.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,10 +14,8 @@ class HashedString;
 class LinkedAssetValidator;
 class LocalPlayer;
 class ResourcePackManager;
-class SemVersionConstant;
 namespace Editor::Services { class ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
-namespace SharedTypes { struct Color255RGB; }
 namespace cereal { struct ReflectionCtx; }
 namespace dragon::framerenderer::modules { struct AtmosphericScatteringParameters; }
 // clang-format on
@@ -57,12 +54,6 @@ public:
         // NOLINTEND
 
     public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
@@ -81,25 +72,14 @@ public:
 
     public:
         // prevent constructor by default
+        HorizonBlendKeyFrames& operator=(HorizonBlendKeyFrames const&);
         HorizonBlendKeyFrames(HorizonBlendKeyFrames const&);
         HorizonBlendKeyFrames();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::AtmosphericScattering::HorizonBlendKeyFrames&
-        operator=(::AtmosphericScattering::HorizonBlendKeyFrames&&);
-
-        MCNAPI ::AtmosphericScattering::HorizonBlendKeyFrames&
-        operator=(::AtmosphericScattering::HorizonBlendKeyFrames const&);
-
         MCNAPI ~HorizonBlendKeyFrames();
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
@@ -125,43 +105,9 @@ public:
 
     public:
         // prevent constructor by default
+        AtmosphericScatteringSettingsV0& operator=(AtmosphericScatteringSettingsV0 const&);
+        AtmosphericScatteringSettingsV0(AtmosphericScatteringSettingsV0 const&);
         AtmosphericScatteringSettingsV0();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI AtmosphericScatteringSettingsV0(::AtmosphericScattering::AtmosphericScatteringSettingsV0 const&);
-
-        MCNAPI AtmosphericScatteringSettingsV0(::AtmosphericScattering::AtmosphericScatteringSettingsV0&&);
-
-        MCNAPI ::AtmosphericScattering::AtmosphericScatteringSettingsV0&
-        operator=(::AtmosphericScattering::AtmosphericScatteringSettingsV0&&);
-
-        MCNAPI ::AtmosphericScattering::AtmosphericScatteringSettingsV0&
-        operator=(::AtmosphericScattering::AtmosphericScatteringSettingsV0 const&);
-
-        MCNAPI ~AtmosphericScatteringSettingsV0();
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::AtmosphericScattering::AtmosphericScatteringSettingsV0 const&);
-
-        MCNAPI void* $ctor(::AtmosphericScattering::AtmosphericScatteringSettingsV0&&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct AtmosphericScatteringSettingsV1 {
@@ -180,6 +126,7 @@ public:
 
     public:
         // prevent constructor by default
+        AtmosphericScatteringSettingsV1& operator=(AtmosphericScatteringSettingsV1 const&);
         AtmosphericScatteringSettingsV1();
 
     public:
@@ -187,29 +134,13 @@ public:
         // NOLINTBEGIN
         MCNAPI AtmosphericScatteringSettingsV1(::AtmosphericScattering::AtmosphericScatteringSettingsV1 const&);
 
-        MCNAPI AtmosphericScatteringSettingsV1(::AtmosphericScattering::AtmosphericScatteringSettingsV1&&);
-
-        MCNAPI ::AtmosphericScattering::AtmosphericScatteringSettingsV1&
-        operator=(::AtmosphericScattering::AtmosphericScatteringSettingsV1&&);
-
-        MCNAPI ::AtmosphericScattering::AtmosphericScatteringSettingsV1&
-        operator=(::AtmosphericScattering::AtmosphericScatteringSettingsV1 const&);
-
         MCNAPI ~AtmosphericScatteringSettingsV1();
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::AtmosphericScattering::AtmosphericScatteringSettingsV1 const&);
-
-        MCNAPI void* $ctor(::AtmosphericScattering::AtmosphericScatteringSettingsV1&&);
         // NOLINTEND
 
     public:
@@ -233,33 +164,13 @@ public:
     public:
         // prevent constructor by default
         AtmosphericScatteringConfigSettingsV0& operator=(AtmosphericScatteringConfigSettingsV0 const&);
+        AtmosphericScatteringConfigSettingsV0(AtmosphericScatteringConfigSettingsV0 const&);
         AtmosphericScatteringConfigSettingsV0();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI
-        AtmosphericScatteringConfigSettingsV0(::AtmosphericScattering::AtmosphericScatteringConfigSettingsV0 const&);
-
-        MCNAPI ~AtmosphericScatteringConfigSettingsV0();
-        // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
         MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::AtmosphericScattering::AtmosphericScatteringConfigSettingsV0 const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -278,21 +189,9 @@ public:
         AtmosphericScatteringConfigSettingsV1();
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~AtmosphericScatteringConfigSettingsV1();
-        // NOLINTEND
-
-    public:
         // static functions
         // NOLINTBEGIN
         MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -312,80 +211,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AtmosphericScattering() /*override*/;
+    virtual ~AtmosphericScattering() /*override*/ = default;
 
     virtual void loadDataSync(
-        ::cereal::ReflectionCtx const&                     ctx,
-        ::ResourcePackManager&                             resourcePackManager,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+        ::cereal::ReflectionCtx const&,
+        ::ResourcePackManager&,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>
     ) /*override*/;
 
     virtual ::Puv::LoadResultAny loadFromString(
-        ::cereal::ReflectionCtx const&                     ctx,
-        ::std::string const&                               atmosphereJson,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+        ::cereal::ReflectionCtx const&,
+        ::std::string const&,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>
     ) /*override*/;
 
-    virtual void _setDefaultIdentifierImpl(::HashedString const& defaultIdentifier) /*override*/;
+    virtual void _setDefaultIdentifierImpl(::HashedString const&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool addNewAtmosphereSetting(
-        ::HashedString const&                                           identifier,
-        ::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1& inAtmosphereSettings
-    );
-
     MCNAPI ::dragon::framerenderer::modules::AtmosphericScatteringParameters calculateAtmosphericScatteringParameters(
         ::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& atmosphereSettings,
         float                                                                 timeOfDay
     ) const;
-
-    MCNAPI ::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const&
-    findAtmosphereSettings(::HashedString const& identifier) const;
-
-    MCNAPI ::dragon::framerenderer::modules::AtmosphericScatteringParameters
-    getAtmosphericScatteringParameters(float timeOfDay) const;
-
-    MCNAPI ::CerealHelpers::TimeKeyframes<float, float>
-    getHorizonBlendMax(::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& config) const;
-
-    MCNAPI ::CerealHelpers::TimeKeyframes<float, float>
-    getHorizonBlendMieStart(::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& config) const;
-
-    MCNAPI ::CerealHelpers::TimeKeyframes<float, float>
-    getHorizonBlendMin(::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& config) const;
-
-    MCNAPI ::CerealHelpers::TimeKeyframes<float, float>
-    getHorizonBlendStart(::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& config) const;
-
-    MCNAPI ::CerealHelpers::TimeKeyframes<float, float>
-    getMoonMieStrength(::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& config) const;
-
-    MCNAPI ::CerealHelpers::TimeKeyframes<float, float>
-    getRayleighStrength(::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& config) const;
-
-    MCNAPI ::CerealHelpers::TimeKeyframes<float, ::SharedTypes::Color255RGB>
-    getSkyHorizonColor(::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& config) const;
-
-    MCNAPI ::CerealHelpers::TimeKeyframes<float, ::SharedTypes::Color255RGB>
-    getSkyZenithColor(::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& config) const;
-
-    MCNAPI ::CerealHelpers::TimeKeyframes<float, float>
-    getSunGlareShape(::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& config) const;
-
-    MCNAPI ::CerealHelpers::TimeKeyframes<float, float>
-    getSunMieStrength(::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& config) const;
-
-    MCNAPI bool setAtmosphereSettings(
-        ::HashedString const&                                                 identifier,
-        ::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& inAtmosphereSettings
-    );
-
-    MCNAPI void setDefaultAtmosphereSettings(
-        ::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& inAtmosphereSettings
-    );
     // NOLINTEND
 
 public:
@@ -404,38 +253,8 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& PAYLOAD_KEY();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $loadDataSync(
-        ::cereal::ReflectionCtx const&                     ctx,
-        ::ResourcePackManager&                             resourcePackManager,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
-    );
 
-    MCNAPI ::Puv::LoadResultAny $loadFromString(
-        ::cereal::ReflectionCtx const&                     ctx,
-        ::std::string const&                               atmosphereJson,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
-    );
-
-    MCNAPI void $_setDefaultIdentifierImpl(::HashedString const& defaultIdentifier);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -42,17 +42,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createHorsePreTravelSystem();
-
-    MCAPI static void tickHorsePreTravelSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::HorseFlagComponent>,
-            ::Optional<::VehicleComponent>,
-            ::ActorDataFlagComponent const,
-            ::AirSpeedComponent>                                      mainView,
-        ::ViewT<::StrictEntityContext, ::MobFlagComponent const>      mobCheck,
-        ::ViewT<::StrictEntityContext, ::OnGroundFlagComponent const> onGroundCheck,
-        ::EntityModifier<::HorseWasOnGroundPreTravelComponent>        mod
-    );
     // NOLINTEND
 };

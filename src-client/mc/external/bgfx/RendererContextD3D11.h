@@ -30,15 +30,11 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace bgfx { class UniformBuffer; }
 namespace bgfx { struct Attachment; }
-namespace bgfx { struct BlitState; }
-namespace bgfx { struct Clear; }
 namespace bgfx { struct ClearQuad; }
 namespace bgfx { struct Frame; }
 namespace bgfx { struct Handle; }
 namespace bgfx { struct IndexBufferHandle; }
-namespace bgfx { struct Init; }
 namespace bgfx { struct Memory; }
 namespace bgfx { struct OcclusionQueryHandle; }
 namespace bgfx { struct ProgramHandle; }
@@ -126,7 +122,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RendererContextD3D11() /*override*/;
+    virtual ~RendererContextD3D11() /*override*/ = default;
 
     virtual ::bgfx::RendererType::Enum getRendererType() const /*override*/;
 
@@ -136,155 +132,112 @@ public:
 
     virtual char const* getRendererName() const /*override*/;
 
-    virtual void
-    createIndexBuffer(::bgfx::IndexBufferHandle _handle, ::bgfx::Memory const* _mem, ushort _flags) /*override*/;
+    virtual void createIndexBuffer(::bgfx::IndexBufferHandle, ::bgfx::Memory const*, ushort) /*override*/;
 
-    virtual void destroyIndexBuffer(::bgfx::IndexBufferHandle _handle) /*override*/;
+    virtual void destroyIndexBuffer(::bgfx::IndexBufferHandle) /*override*/;
 
-    virtual void createVertexDecl(::bgfx::VertexDeclHandle _handle, ::bgfx::VertexDecl const& _decl) /*override*/;
+    virtual void createVertexDecl(::bgfx::VertexDeclHandle, ::bgfx::VertexDecl const&) /*override*/;
 
     virtual void destroyVertexDecl(::bgfx::VertexDeclHandle) /*override*/;
 
     virtual void createVertexBuffer(
-        ::bgfx::VertexBufferHandle _handle,
-        ::bgfx::Memory const*      _mem,
-        ::bgfx::VertexDeclHandle   _declHandle,
-        ushort                     _flags
+        ::bgfx::VertexBufferHandle,
+        ::bgfx::Memory const*,
+        ::bgfx::VertexDeclHandle,
+        ushort
     ) /*override*/;
 
-    virtual void destroyVertexBuffer(::bgfx::VertexBufferHandle _handle) /*override*/;
+    virtual void destroyVertexBuffer(::bgfx::VertexBufferHandle) /*override*/;
 
-    virtual void createDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle, uint _size, ushort _flags) /*override*/;
+    virtual void createDynamicIndexBuffer(::bgfx::IndexBufferHandle, uint, ushort) /*override*/;
 
-    virtual void updateDynamicIndexBuffer(
-        ::bgfx::IndexBufferHandle _handle,
-        uint                      _offset,
-        uint                      _size,
-        ::bgfx::Memory const*     _mem
-    ) /*override*/;
+    virtual void updateDynamicIndexBuffer(::bgfx::IndexBufferHandle, uint, uint, ::bgfx::Memory const*) /*override*/;
 
-    virtual void destroyDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle) /*override*/;
+    virtual void destroyDynamicIndexBuffer(::bgfx::IndexBufferHandle) /*override*/;
 
-    virtual void createDynamicVertexBuffer(::bgfx::VertexBufferHandle _handle, uint _size, ushort _flags) /*override*/;
+    virtual void createDynamicVertexBuffer(::bgfx::VertexBufferHandle, uint, ushort) /*override*/;
 
-    virtual void updateDynamicVertexBuffer(
-        ::bgfx::VertexBufferHandle _handle,
-        uint                       _offset,
-        uint                       _size,
-        ::bgfx::Memory const*      _mem
-    ) /*override*/;
+    virtual void updateDynamicVertexBuffer(::bgfx::VertexBufferHandle, uint, uint, ::bgfx::Memory const*) /*override*/;
 
-    virtual void destroyDynamicVertexBuffer(::bgfx::VertexBufferHandle _handle) /*override*/;
+    virtual void destroyDynamicVertexBuffer(::bgfx::VertexBufferHandle) /*override*/;
 
-    virtual void createShader(::bgfx::ShaderHandle _handle, ::bgfx::Memory const* _mem) /*override*/;
+    virtual void createShader(::bgfx::ShaderHandle, ::bgfx::Memory const*) /*override*/;
 
-    virtual void destroyShader(::bgfx::ShaderHandle _handle) /*override*/;
+    virtual void destroyShader(::bgfx::ShaderHandle) /*override*/;
 
-    virtual void
-    createProgram(::bgfx::ProgramHandle _handle, ::bgfx::ShaderHandle _vsh, ::bgfx::ShaderHandle _fsh) /*override*/;
+    virtual void createProgram(::bgfx::ProgramHandle, ::bgfx::ShaderHandle, ::bgfx::ShaderHandle) /*override*/;
 
-    virtual void destroyProgram(::bgfx::ProgramHandle _handle) /*override*/;
+    virtual void destroyProgram(::bgfx::ProgramHandle) /*override*/;
 
-    virtual void* createTexture(
-        ::bgfx::TextureHandle _handle,
-        ::bgfx::Memory const* _mem,
-        uint                  _flags,
-        uchar                 _skip,
-        ::bgfx::Memory const**
-    ) /*override*/;
+    virtual void*
+    createTexture(::bgfx::TextureHandle, ::bgfx::Memory const*, uint, uchar, ::bgfx::Memory const**) /*override*/;
 
     virtual void wrapExternalTexture(
         ::bgfx::TextureHandle      _handle,
         ::bgfx::RendererType::Enum _type,
         void*                      _texturePtr,
-        void*                      _deferredRef
+        void*                      ref
     ) /*override*/;
 
     virtual void updateTextureBegin(::bgfx::TextureHandle, uchar, uchar) /*override*/;
 
     virtual void updateTexture(
-        ::bgfx::TextureHandle _handle,
-        uchar                 _side,
-        uchar                 _mip,
-        ::bgfx::Rect const&   _rect,
-        ushort                _z,
-        ushort                _depth,
-        ushort                _pitch,
-        ::bgfx::Memory const* _mem
+        ::bgfx::TextureHandle,
+        uchar,
+        uchar,
+        ::bgfx::Rect const&,
+        ushort,
+        ushort,
+        ushort,
+        ::bgfx::Memory const*
     ) /*override*/;
 
     virtual void updateTextureEnd() /*override*/;
 
-    virtual void readTexture(::bgfx::TextureHandle _handle, void* _data, uchar _mip) /*override*/;
+    virtual void readTexture(::bgfx::TextureHandle, void*, uchar) /*override*/;
 
-    virtual void resizeTexture(
-        ::bgfx::TextureHandle _handle,
-        ushort                _width,
-        ushort                _height,
-        uchar                 _numMips,
-        ushort                _numLayers
-    ) /*override*/;
+    virtual void resizeTexture(::bgfx::TextureHandle, ushort, ushort, uchar, ushort) /*override*/;
 
-    virtual void overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint _flags) /*override*/;
+    virtual void overrideInternal(::bgfx::TextureHandle, uint64, uint) /*override*/;
 
-    virtual uint64 getInternal(::bgfx::TextureHandle _handle) /*override*/;
+    virtual uint64 getInternal(::bgfx::TextureHandle) /*override*/;
 
-    virtual void destroyTexture(::bgfx::TextureHandle _handle) /*override*/;
+    virtual void destroyTexture(::bgfx::TextureHandle) /*override*/;
+
+    virtual void createShaderBuffer(::bgfx::ShaderBufferHandle, uint, uint, ushort) /*override*/;
+
+    virtual void updateShaderBuffer(::bgfx::ShaderBufferHandle, uint, ::bgfx::Memory const*) /*override*/;
+
+    virtual void destroyShaderBuffer(::bgfx::ShaderBufferHandle) /*override*/;
+
+    virtual void createFrameBuffer(::bgfx::FrameBufferHandle, uchar, ::bgfx::Attachment const*) /*override*/;
 
     virtual void
-    createShaderBuffer(::bgfx::ShaderBufferHandle _handle, uint _size, uint _stride, ushort _flags) /*override*/;
+    createFrameBuffer(::bgfx::FrameBufferHandle, void*, uint, uint, ::bgfx::TextureFormat::Enum) /*override*/;
 
-    virtual void
-    updateShaderBuffer(::bgfx::ShaderBufferHandle _handle, uint _offset, ::bgfx::Memory const* _mem) /*override*/;
+    virtual void destroyFrameBuffer(::bgfx::FrameBufferHandle) /*override*/;
 
-    virtual void destroyShaderBuffer(::bgfx::ShaderBufferHandle _handle) /*override*/;
+    virtual void createUniform(::bgfx::UniformHandle, ::bgfx::UniformType::Enum, ushort, char const*) /*override*/;
 
-    virtual void createFrameBuffer(
-        ::bgfx::FrameBufferHandle _handle,
-        uchar                     _num,
-        ::bgfx::Attachment const* _attachment
-    ) /*override*/;
+    virtual void destroyUniform(::bgfx::UniformHandle) /*override*/;
 
-    virtual void createFrameBuffer(
-        ::bgfx::FrameBufferHandle   _handle,
-        void*                       _nwh,
-        uint                        _width,
-        uint                        _height,
-        ::bgfx::TextureFormat::Enum _depthFormat
-    ) /*override*/;
+    virtual void requestScreenShot(::bgfx::FrameBufferHandle, char const*) /*override*/;
 
-    virtual void destroyFrameBuffer(::bgfx::FrameBufferHandle _handle) /*override*/;
+    virtual void updateViewName(ushort, char const*) /*override*/;
 
-    virtual void createUniform(
-        ::bgfx::UniformHandle     _handle,
-        ::bgfx::UniformType::Enum _type,
-        ushort                    _num,
-        char const*               _name
-    ) /*override*/;
+    virtual void updateUniform(void*, ushort, void const*, uint) /*override*/;
 
-    virtual void destroyUniform(::bgfx::UniformHandle _handle) /*override*/;
+    virtual void setMarker(void*, char const*, uint) /*override*/;
 
-    virtual void requestScreenShot(::bgfx::FrameBufferHandle _handle, char const* _filePath) /*override*/;
+    virtual void invalidateOcclusionQuery(::bgfx::OcclusionQueryHandle) /*override*/;
 
-    virtual void updateViewName(ushort _id, char const* _name) /*override*/;
+    virtual void setName(::bgfx::Handle, char const*) /*override*/;
 
-    virtual void updateUniform(void*, ushort _loc, void const* _data, uint _size) /*override*/;
+    virtual void submit(::bgfx::Frame*, ::bgfx::ClearQuad&, ::bgfx::TextVideoMemBlitter&) /*override*/;
 
-    virtual void setMarker(void*, char const* _marker, uint _size) /*override*/;
+    virtual void blitSetup(::bgfx::TextVideoMemBlitter&) /*override*/;
 
-    virtual void invalidateOcclusionQuery(::bgfx::OcclusionQueryHandle _handle) /*override*/;
-
-    virtual void setName(::bgfx::Handle _handle, char const* _name) /*override*/;
-
-    virtual void submit(
-        ::bgfx::Frame*               _render,
-        ::bgfx::ClearQuad&           _clearQuad,
-        ::bgfx::TextVideoMemBlitter& _textVideoMemBlitter
-    ) /*override*/;
-
-    virtual void blitSetup(::bgfx::TextVideoMemBlitter& _blitter) /*override*/;
-
-    virtual void blitRender(::bgfx::TextVideoMemBlitter& _blitter, uint _numIndices) /*override*/;
+    virtual void blitRender(::bgfx::TextVideoMemBlitter&, uint) /*override*/;
 
     virtual bool isDeviceRemoved() /*override*/;
 
@@ -300,234 +253,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RendererContextD3D11();
-
-    MCAPI void capture();
-
-    MCAPI void capturePostReset();
-
-    MCAPI void clear(::bgfx::Clear const& _clear, float (*const _palette)[4]);
-
-    MCAPI void clearQuad(
-        ::bgfx::ClearQuad&   _clearQuad,
-        ::bgfx::Rect const&  _rect,
-        ::bgfx::Clear const& _clear,
-        float (*const _palette)[4]
-    );
-
-    MCAPI void commit(::bgfx::UniformBuffer& _uniformBuffer);
-
-    MCAPI ::ID3D11ShaderResourceView* getCachedSrv(::bgfx::TextureHandle _handle, uchar _mip, bool _compute);
-
-    MCAPI ::ID3D11UnorderedAccessView* getCachedUav(::bgfx::TextureHandle _handle, uchar _mip);
-
-    MCAPI ::ID3D11SamplerState* getSamplerState(uint _flags, float const* const _rgba);
-
-    MCAPI bool init(::bgfx::Init const& _init);
-
-    MCAPI void postReset();
-
-    MCAPI void preReset();
-
-    MCAPI void setBlendState(uint64 _state, uint _rgba);
-
-    MCAPI void setDepthStencilState(uint64 _state, uint64 _stencil);
-
-    MCAPI void setFrameBuffer(::bgfx::FrameBufferHandle _fbh, bool _msaa, bool _needPresent);
-
-    MCAPI void setInputLayout(
-        uchar                              _numStreams,
-        ::bgfx::VertexDecl const**         _vertexDecls,
-        ::bgfx::d3d11::ProgramD3D11 const& _program,
-        ushort                             _numInstanceData
-    );
-
-    MCAPI void setRasterizerState(
-        uint64 _state,
-        int    _biasConst,
-        float  _biasSlope,
-        float  _biasClamp,
-        bool   _wireframe,
-        bool   _scissor
-    );
-
-    MCAPI void shutdown();
-
-    MCAPI void submitBlit(::bgfx::BlitState& _bs, ushort _view);
-
-    MCAPI void updateMsaa(::DXGI_FORMAT _format) const;
-
-    MCAPI bool updateResolution(::bgfx::Resolution const& _resolution);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::bgfx::RendererType::Enum $getRendererType() const;
 
-    MCAPI uint64 $getRendererVersion() const;
-
-    MCFOLD uint64 $getShaderVersion() const;
-
-    MCAPI char const* $getRendererName() const;
-
-    MCAPI void $createIndexBuffer(::bgfx::IndexBufferHandle _handle, ::bgfx::Memory const* _mem, ushort _flags);
-
-    MCFOLD void $destroyIndexBuffer(::bgfx::IndexBufferHandle _handle);
-
-    MCAPI void $createVertexDecl(::bgfx::VertexDeclHandle _handle, ::bgfx::VertexDecl const& _decl);
-
-    MCFOLD void $destroyVertexDecl(::bgfx::VertexDeclHandle);
-
-    MCAPI void $createVertexBuffer(
-        ::bgfx::VertexBufferHandle _handle,
-        ::bgfx::Memory const*      _mem,
-        ::bgfx::VertexDeclHandle   _declHandle,
-        ushort                     _flags
-    );
-
-    MCFOLD void $destroyVertexBuffer(::bgfx::VertexBufferHandle _handle);
-
-    MCAPI void $createDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle, uint _size, ushort _flags);
-
-    MCAPI void
-    $updateDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle, uint _offset, uint _size, ::bgfx::Memory const* _mem);
-
-    MCFOLD void $destroyDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle);
-
-    MCAPI void $createDynamicVertexBuffer(::bgfx::VertexBufferHandle _handle, uint _size, ushort _flags);
-
-    MCAPI void $updateDynamicVertexBuffer(
-        ::bgfx::VertexBufferHandle _handle,
-        uint                       _offset,
-        uint                       _size,
-        ::bgfx::Memory const*      _mem
-    );
-
-    MCFOLD void $destroyDynamicVertexBuffer(::bgfx::VertexBufferHandle _handle);
-
-    MCAPI void $createShader(::bgfx::ShaderHandle _handle, ::bgfx::Memory const* _mem);
-
-    MCAPI void $destroyShader(::bgfx::ShaderHandle _handle);
-
-    MCAPI void $createProgram(::bgfx::ProgramHandle _handle, ::bgfx::ShaderHandle _vsh, ::bgfx::ShaderHandle _fsh);
-
-    MCAPI void $destroyProgram(::bgfx::ProgramHandle _handle);
-
-    MCAPI void* $createTexture(
-        ::bgfx::TextureHandle _handle,
-        ::bgfx::Memory const* _mem,
-        uint                  _flags,
-        uchar                 _skip,
-        ::bgfx::Memory const**
-    );
-
-    MCAPI void $wrapExternalTexture(
-        ::bgfx::TextureHandle      _handle,
-        ::bgfx::RendererType::Enum _type,
-        void*                      _texturePtr,
-        void*                      _deferredRef
-    );
-
-    MCFOLD void $updateTextureBegin(::bgfx::TextureHandle, uchar, uchar);
-
-    MCAPI void $updateTexture(
-        ::bgfx::TextureHandle _handle,
-        uchar                 _side,
-        uchar                 _mip,
-        ::bgfx::Rect const&   _rect,
-        ushort                _z,
-        ushort                _depth,
-        ushort                _pitch,
-        ::bgfx::Memory const* _mem
-    );
-
-    MCFOLD void $updateTextureEnd();
-
-    MCAPI void $readTexture(::bgfx::TextureHandle _handle, void* _data, uchar _mip);
-
-    MCAPI void
-    $resizeTexture(::bgfx::TextureHandle _handle, ushort _width, ushort _height, uchar _numMips, ushort _numLayers);
-
-    MCAPI void $overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint _flags);
-
-    MCAPI uint64 $getInternal(::bgfx::TextureHandle _handle);
-
-    MCAPI void $destroyTexture(::bgfx::TextureHandle _handle);
-
-    MCAPI void $createShaderBuffer(::bgfx::ShaderBufferHandle _handle, uint _size, uint _stride, ushort _flags);
-
-    MCAPI void $updateShaderBuffer(::bgfx::ShaderBufferHandle _handle, uint _offset, ::bgfx::Memory const* _mem);
-
-    MCAPI void $destroyShaderBuffer(::bgfx::ShaderBufferHandle _handle);
-
-    MCAPI void $createFrameBuffer(::bgfx::FrameBufferHandle _handle, uchar _num, ::bgfx::Attachment const* _attachment);
-
-    MCAPI void $createFrameBuffer(
-        ::bgfx::FrameBufferHandle   _handle,
-        void*                       _nwh,
-        uint                        _width,
-        uint                        _height,
-        ::bgfx::TextureFormat::Enum _depthFormat
-    );
-
-    MCAPI void $destroyFrameBuffer(::bgfx::FrameBufferHandle _handle);
-
-    MCAPI void
-    $createUniform(::bgfx::UniformHandle _handle, ::bgfx::UniformType::Enum _type, ushort _num, char const* _name);
-
-    MCAPI void $destroyUniform(::bgfx::UniformHandle _handle);
-
-    MCAPI void $requestScreenShot(::bgfx::FrameBufferHandle _handle, char const* _filePath);
-
-    MCAPI void $updateViewName(ushort _id, char const* _name);
-
-    MCAPI void $updateUniform(void*, ushort _loc, void const* _data, uint _size);
-
-    MCFOLD void $setMarker(void*, char const* _marker, uint _size);
-
-    MCAPI void $invalidateOcclusionQuery(::bgfx::OcclusionQueryHandle _handle);
-
-    MCAPI void $setName(::bgfx::Handle _handle, char const* _name);
-
-    MCAPI void
-    $submit(::bgfx::Frame* _render, ::bgfx::ClearQuad& _clearQuad, ::bgfx::TextVideoMemBlitter& _textVideoMemBlitter);
-
-    MCAPI void $blitSetup(::bgfx::TextVideoMemBlitter& _blitter);
-
-    MCAPI void $blitRender(::bgfx::TextVideoMemBlitter& _blitter, uint _numIndices);
-
-    MCAPI bool $isDeviceRemoved();
-
-    MCAPI void $suspend();
-
-    MCFOLD void $resume();
-
-    MCAPI void $advanceToNextFrame();
-
-    MCAPI void $flip();
-
-    MCFOLD void $waitForFlipQueue();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

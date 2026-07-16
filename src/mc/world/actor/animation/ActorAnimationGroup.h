@@ -8,7 +8,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,9 +17,7 @@ class MinEngineVersion;
 class PackStats;
 class ResourceLoadManager;
 class ResourcePackManager;
-struct ActorAnimationGroupParseMetaData;
 namespace Core { class Path; }
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class ActorAnimationGroup : public ::Bedrock::EnableNonOwnerReferences {
@@ -37,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorAnimationGroup() /*override*/;
+    virtual ~ActorAnimationGroup() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -45,14 +42,9 @@ public:
     // NOLINTBEGIN
     MCAPI ActorAnimationGroup();
 
-    MCAPI ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorAnimationGroupParseMetaData>>
-    _buildAnimationFileSchema_v1_8(bool isPersonaPack);
-
     MCAPI ::ActorSkeletalAnimationPtr getActorAnimation(::HashedString const& name);
 
-    MCAPI ::std::shared_ptr<::ActorAnimationInfo> getActorAnimationInfo(::HashedString const& name);
-
+#ifdef LL_PLAT_C
     MCAPI void loadActorAnimation(
         ::std::string const&      fileData,
         ::Core::Path const&       filenameWithExtension,
@@ -63,7 +55,6 @@ public:
         ::std::string const&      personaPieceId
     );
 
-#ifdef LL_PLAT_C
     MCAPI void loadActorAnimationsAsync(
         ::ResourcePackManager&                               resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager
@@ -77,12 +68,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

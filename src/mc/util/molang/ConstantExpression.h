@@ -72,20 +72,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ConstantExpression(::MolangScriptArg const& value);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::MolangScriptArg const& value);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI ::std::unique_ptr<::Molang::details::IComplexExpression> $clone() const;
 
     MCNAPI ::MolangScriptArg const& $evalGeneric(::RenderParams&) const;
@@ -115,6 +104,7 @@ public:
     MCNAPI ::std::optional<::MolangScriptArg> $getValueIfConstant() const;
 
     MCNAPI ::Molang::details::SourceTree* $getSource();
+#endif
 
 
     // NOLINTEND

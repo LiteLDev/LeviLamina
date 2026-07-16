@@ -21,9 +21,8 @@ enum class AllExperiments : int {
     VoxelShapes                            = 15,
     Poi                                    = 16,
     BrainPrototype                         = 17,
-    FurnaceRecipeBook                      = 18,
-    CustomProjectiles                      = 19,
-    Y2026Drop2                             = 20,
-    Lwe                                    = 21,
-    Count                                  = 22,
+    Lwe                                    = 18,
+    GameplayUi                             = 19,
+    GameEventSystemRefactor                = 20,
+    Count                                  = 21,
 };

@@ -20,10 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MapDataManagerOptions();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isPremiumWorldTemplate() const /*override*/;
@@ -33,18 +29,6 @@ public:
     virtual bool hasMapsCenteredToOrigin() const /*override*/;
 
     virtual ::BlockPos const& getWorldCenter() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit MapDataManagerOptions(::Bedrock::NotNullNonOwnerPtr<::LevelData const> levelData);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::LevelData const> levelData);
     // NOLINTEND
 
 public:

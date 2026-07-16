@@ -25,29 +25,4 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<void(bool)>>                                     mSetScreenTicking;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                                         mUpdate;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SceneStackProxyCallbacks& operator=(SceneStackProxyCallbacks const&);
-    SceneStackProxyCallbacks();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SceneStackProxyCallbacks(::SceneStackProxyCallbacks const&);
-
-    MCAPI ~SceneStackProxyCallbacks();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SceneStackProxyCallbacks const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

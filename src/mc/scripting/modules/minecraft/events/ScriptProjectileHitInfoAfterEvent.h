@@ -4,14 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
-struct ProjectileHitEvent;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -32,24 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptProjectileHitInfoAfterEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptProjectileHitInfoAfterEvent(
-        ::ProjectileHitEvent const&           projectileHitEvent,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
-
     MCAPI ~ScriptProjectileHitInfoAfterEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ProjectileHitEvent const& projectileHitEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 namespace OreUI {
 
-class RealmsPDPFacet : public ::OreUI::FacetBase<::OreUI::RealmsPDPFacet> {
+class RealmsPDPFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsPDPFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -32,8 +32,6 @@ public:
         ::std::function<void()> updateRealmsTrialAvailable,
         ::std::function<bool()> checkRealmsTrialAvailable
     );
-
-    MCAPI bool isRealmsTrialAvailable() const;
     // NOLINTEND
 
 public:
@@ -52,13 +50,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

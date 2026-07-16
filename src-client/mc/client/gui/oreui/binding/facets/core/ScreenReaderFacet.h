@@ -3,20 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/util/ProfanityFilterContext.h"
 
 // auto generated forward declare list
 // clang-format off
 class ITTSEventManager;
 class Option;
-namespace OreUI { struct ScreenReaderOptions; }
 // clang-format on
 
 namespace OreUI {
 
-class ScreenReaderFacet : public ::OreUI::FacetBase<::OreUI::ScreenReaderFacet> {
+class ScreenReaderFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ScreenReaderFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -38,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenReaderFacet() /*override*/;
+    virtual ~ScreenReaderFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -53,20 +51,6 @@ public:
     );
 
     MCAPI void _registerObservers();
-
-    MCAPI void clear();
-
-    MCFOLD bool getIsChatTextToSpeechEnabled() const;
-
-    MCFOLD bool getIsIdle() const;
-
-    MCFOLD bool getIsUITextToSpeechEnabled() const;
-
-    MCAPI void read(
-        ::std::string const&                textToRead,
-        ::ProfanityFilterContext            profanityFilterContext,
-        ::OreUI::ScreenReaderOptions const& options
-    );
     // NOLINTEND
 
 public:
@@ -83,12 +67,6 @@ public:
         ::gsl::not_null<::Option*>          chatTextToSpeechOption,
         ::gsl::not_null<::Option*>          uiTextToSpeechOption
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

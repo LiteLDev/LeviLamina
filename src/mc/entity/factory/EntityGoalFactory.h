@@ -4,8 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class DefinitionInstanceGroup;
-class EntityContext;
 class HashedString;
 class IJsonDefinitionSerializer;
 // clang-format on
@@ -27,11 +25,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::IJsonDefinitionSerializer* tryGetDefinitionSerializer(::std::string const& name);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void addGoals(::EntityContext& entity, ::DefinitionInstanceGroup const& definitionGroup);
     // NOLINTEND
 };

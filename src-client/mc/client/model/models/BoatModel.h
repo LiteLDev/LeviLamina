@@ -50,7 +50,7 @@ public:
         float            scale
     ) /*override*/;
 
-    virtual void setupAnim(float, float, float, float, float, float) /*override*/;
+    virtual void setupAnim(float time, float r, float bob, float yRot, float xRot, float scale) /*override*/;
 
     virtual ::ModelPart _makePaddle(bool flip, ::ModelPart paddle);
     // NOLINTEND
@@ -60,7 +60,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit BoatModel(::GeometryPtr source);
 
-    MCFOLD void _animatePaddle(
+    MCAPI void _animatePaddle(
         ::ModelPart&        paddle,
         ::ScreenContext&    screenContext,
         ::Boat const&       boat,
@@ -96,7 +96,7 @@ public:
         float            scale
     );
 
-    MCFOLD void $setupAnim(float, float, float, float, float, float);
+    MCFOLD void $setupAnim(float time, float r, float bob, float yRot, float xRot, float scale);
 
     MCFOLD ::ModelPart $_makePaddle(bool flip, ::ModelPart paddle);
     // NOLINTEND

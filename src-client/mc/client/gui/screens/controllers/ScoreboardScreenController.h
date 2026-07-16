@@ -9,11 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class ClientInstanceScreenModel;
-class ResourceLocation;
 class UserDataScreenController;
 struct ActorUniqueID;
-struct PlayerListInfo;
-struct PlayerScore;
 struct ScoreboardCacheData;
 // clang-format on
 
@@ -35,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScoreboardScreenController() /*override*/;
+    virtual ~ScoreboardScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
     // NOLINTEND
@@ -47,30 +44,6 @@ public:
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::std::function<void(::ActorUniqueID const&)>  navigateToPermissions
     );
-
-    MCAPI ::PlayerListInfo _findPlayerListInfoForId(int64 playerId) const;
-
-    MCAPI void _generatePlayerLists();
-
-    MCAPI ::std::string _getPermissionIcon(::ActorUniqueID playerId) const;
-
-    MCAPI ::ResourceLocation _getScoredPlayerIconInfo(int index) const;
-
-    MCAPI ::ResourceLocation _getUnscoredPlayerIconInfo(int index) const;
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerSubControllers();
-
-    MCAPI void buildCacheFromDisplayInfo(
-        ::std::vector<::ScoreboardCacheData>&                         output,
-        ::std::vector<::PlayerScore> const&                           input,
-        ::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver
-    );
-
-    MCAPI ::std::shared_ptr<::UserDataScreenController> getUserDataScreenController() const;
 
     MCAPI bool isSidebarValid();
     // NOLINTEND
@@ -85,22 +58,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

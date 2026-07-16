@@ -10,16 +10,6 @@ namespace Bedrock::Profiler::details { struct Category; }
 namespace ProfCat {
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
-MCNAPI ::Bedrock::Profiler::details::Category const& ACTOR_RENDER_SYSTEM();
-#endif
-
-MCNAPI ::Bedrock::Profiler::details::Category const& ACTOR_SYSTEM();
-
-#ifdef LL_PLAT_C
-MCNAPI ::Bedrock::Profiler::details::Category const& BASELINE();
-#endif
-
 MCNAPI ::Bedrock::Profiler::details::Category const& BASELINE_CREATOR();
 
 #ifdef LL_PLAT_C
@@ -27,38 +17,18 @@ MCNAPI ::Bedrock::Profiler::details::Category const& BASELINE_RESOURCELOAD();
 
 MCNAPI ::Bedrock::Profiler::details::Category const& BURST();
 
+MCNAPI ::Bedrock::Profiler::details::Category const& FRAME_BUILDER();
+
 MCNAPI ::Bedrock::Profiler::details::Category const& GRAPHICS_TASKS();
 
 MCNAPI ::Bedrock::Profiler::details::Category const& JSON_UI_SYSTEM();
 
-MCNAPI ::Bedrock::Profiler::details::Category const& LEVEL_RENDERER();
-#endif
-
-MCNAPI ::Bedrock::Profiler::details::Category const& MAIN_APP();
-
-#ifdef LL_PLAT_C
-MCNAPI ::Bedrock::Profiler::details::Category const& MAIN_LOOP();
-
 MCNAPI ::Bedrock::Profiler::details::Category const& MULTIPLAYER_LEVEL();
-#endif
 
-MCNAPI ::Bedrock::Profiler::details::Category const& NETWORK_SYSTEM();
-
-#ifdef LL_PLAT_C
 MCNAPI ::Bedrock::Profiler::details::Category const& ORCHESTRATOR();
 #endif
 
-MCNAPI ::Bedrock::Profiler::details::Category const& SCHEDULER();
-
-#ifdef LL_PLAT_C
-MCNAPI ::Bedrock::Profiler::details::Category const& UISCENE();
-#endif
-
 MCNAPI ::Bedrock::Profiler::details::Category const& WHISKER_INTERNAL();
-
-#ifdef LL_PLAT_C
-MCNAPI ::Bedrock::Profiler::details::Category const& WHISKER_OVERLAY();
-#endif
 // NOLINTEND
 
 } // namespace ProfCat

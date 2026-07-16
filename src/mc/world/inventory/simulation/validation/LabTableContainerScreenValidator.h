@@ -7,18 +7,6 @@
 
 class LabTableContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LabTableContainerScreenValidator();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

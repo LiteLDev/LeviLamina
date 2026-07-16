@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class RequestUploadWorldPayload
@@ -37,22 +32,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RequestUploadWorldPayload(::Editor::Network::RequestUploadWorldPayload const&);
-
-    MCNAPI RequestUploadWorldPayload(::std::string const& worldId, int slotId, ::std::string const& levelId);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::Network::RequestUploadWorldPayload const&);
-
-    MCNAPI void* $ctor(::std::string const& worldId, int slotId, ::std::string const& levelId);
     // NOLINTEND
 
 public:

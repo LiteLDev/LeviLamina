@@ -26,11 +26,20 @@ public:
     ::ll::UntypedStorage<8, 616> mUnkfe07cc;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    AppPlatformWindows& operator=(AppPlatformWindows const&);
+    AppPlatformWindows(AppPlatformWindows const&);
+    AppPlatformWindows();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     AppPlatformWindows& operator=(AppPlatformWindows const&);
     AppPlatformWindows(AppPlatformWindows const&);
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -52,13 +61,21 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const&) /*override*/;
+#else // LL_PLAT_C
     virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const& rootPath) /*override*/;
+#endif
 
     virtual bool allowContentLogWriteToDisk() /*override*/;
 
     virtual bool devHotReloadRenderResources() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void queueForMainThread_DEPRECATED(::std::function<void()>) /*override*/;
+#else // LL_PLAT_C
     virtual void queueForMainThread_DEPRECATED(::std::function<void()> callback) /*override*/;
+#endif
 
     virtual ::MPMCQueue<::std::function<void()>>& getMainThreadQueue() /*override*/;
 
@@ -80,13 +97,15 @@ public:
 
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const&) const /*override*/;
+#else // LL_PLAT_C
     virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const
         /*override*/;
 
-#ifdef LL_PLAT_C
     virtual void showXboxLiveUserSettings() /*override*/;
-
 #endif
+
     virtual bool is24HourTimeFormat() const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> _getCurrentStoragePath() const /*override*/;
@@ -105,9 +124,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI AppPlatformWindows();
-
-    MCAPI uint64 _findHighPerformanceThreadsCount() const;
+#endif
     // NOLINTEND
 
 public:
@@ -119,12 +138,21 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ::std::string $getSystemLocale() const;
+
+    MCAPI void $collectGraphicsHardwareDetails();
+
+    MCFOLD bool $supportsMSAA() const;
+
     MCAPI uint64 $getTotalHardwareThreadsCount() const;
 
     MCAPI uint64 $getHighPerformanceThreadsCount() const;
@@ -145,6 +173,16 @@ public:
 
     MCAPI ::MPMCQueue<::std::function<void()>>& $getMainThreadQueue();
 
+    MCFOLD bool $supportsAlbumExport() const;
+
+    MCAPI bool $supportsPDFExport() const;
+
+    MCFOLD ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
+
+    MCFOLD bool $isTablet() const;
+
+    MCAPI double $getTimeSFromProcessStart() const;
+
     MCFOLD bool $canAppSelfTerminate() const;
 
     MCFOLD bool $getPlatformTTSExists() const;
@@ -152,6 +190,8 @@ public:
     MCAPI bool $getPlatformTTSEnabled() const;
 
     MCAPI void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
+
+    MCAPI void $showXboxLiveUserSettings();
 
     MCAPI bool $is24HourTimeFormat() const;
 
@@ -166,25 +206,6 @@ public:
     MCAPI ::Core::PathBuffer<::std::string> $_getSharedDataPath() const;
 
     MCAPI ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
-
-#ifdef LL_PLAT_C
-    MCAPI ::std::string $getSystemLocale() const;
-
-    MCFOLD void $collectGraphicsHardwareDetails();
-
-    MCFOLD bool $supportsMSAA() const;
-
-    MCFOLD bool $supportsAlbumExport() const;
-
-    MCFOLD bool $supportsPDFExport() const;
-
-    MCFOLD ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
-
-    MCFOLD bool $isTablet() const;
-
-    MCAPI double $getTimeSFromProcessStart() const;
-
-    MCAPI void $showXboxLiveUserSettings();
 #endif
 
 

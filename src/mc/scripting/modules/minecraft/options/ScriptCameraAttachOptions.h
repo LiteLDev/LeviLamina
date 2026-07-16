@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 
 // auto generated forward declare list
@@ -20,12 +20,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mAttachEntity;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorLocation>                                        mLocator;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptCameraAttachOptions const& other) const;
     // NOLINTEND
 
 public:

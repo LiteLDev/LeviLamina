@@ -9,7 +9,6 @@
 #include "mc/deps/core/resource/PackIdVersion.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
-#include "mc/deps/core/resource/ResourceFileSystem.h"
 #include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/deps/core/resource/ResourceMetadata.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
@@ -99,18 +98,11 @@ public:
     ::ll::TypedStorage<8, 24, ::SemVersion>                                                      mOptimizationVersion;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PackManifest& operator=(PackManifest const&);
     PackManifest();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    PackManifest();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -136,55 +128,13 @@ public:
 
     MCAPI void _serializeModules(::Json::Value& destination) const;
 
-    MCAPI void _serializeVersion(::Json::Value& destination, ::SemVersion const& version) const;
-
-    MCAPI void addModule(::ResourceInformation const& resourceInfo);
-
-    MCAPI void addPackCapability(::std::string_view capability, ::PackCapability::TrustLevel trustLevel);
-
 #ifdef LL_PLAT_C
-    MCAPI bool canBeRedownloaded() const;
-
     MCAPI ::Core::PathBuffer<::std::string> generateBaseIconPath() const;
 
     MCAPI ::Core::PathBuffer<::std::string> generateIconPath() const;
 #endif
 
-    MCFOLD ::ContentIdentity const& getContentIdentity() const;
-
-    MCFOLD ::std::vector<::PackIdVersion> const& getDependentPackIdentities() const;
-
     MCAPI ::std::string getDescription() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::ResourceFileSystem getFileSystemFromOrigin() const;
-#endif
-
-    MCFOLD ::PackManifestFormat getFormatVersion() const;
-
-    MCFOLD ::PackIdVersion const& getIdentity() const;
-
-    MCFOLD ::std::vector<::std::string> const& getLanguageCodesForPackKeywords() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::std::string const& getLastModifiedDate() const;
-
-    MCFOLD ::std::vector<::LegacyPackIdVersion> const& getLegacyModuleDependencies() const;
-#endif
-
-    MCFOLD ::ResourceLocation const& getLocation() const;
-
-    MCFOLD ::ManifestOrigin getManifestOrigin() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::ManifestType getManifestType() const;
-#endif
-
-    MCFOLD ::ResourceMetadata const& getMetaData() const;
-
-    MCFOLD ::MinEngineVersion const& getMinEngineVersion() const;
-
-    MCFOLD ::std::vector<::ResourceInformation> const& getModules() const;
 
     MCAPI ::std::string getName() const;
 
@@ -192,104 +142,13 @@ public:
 
     MCAPI ::std::string getNameWithVersionForTelemetry() const;
 
-    MCFOLD ::std::vector<::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency> const&
-    getNativeModuleDependencies() const;
-
-    MCFOLD ::SemVersion const& getOptimizationVersion() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::TemplateLockState getOptionLockedState() const;
-#endif
-
-    MCAPI ::PackManifestFormat getOriginalFormatVersion() const;
-
-    MCFOLD ::PackCategory getPackCategory() const;
-
 #ifdef LL_PLAT_C
     MCAPI ::std::unordered_map<::std::string, ::std::string> getPackNameLocalization() const;
 #endif
 
-    MCFOLD ::PackOrigin getPackOrigin() const;
-
-    MCFOLD ::PackScope getPackScope() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::std::optional<::std::vector<::std::variant<
-        ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
-        ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
-        ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
-        ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>>> const& getPackSettingsDef() const;
-#endif
-
-    MCAPI ::std::optional<::std::vector<::std::string>> getPackSettingsLocKeys() const;
-
-    MCFOLD uint64 getPackSize() const;
-
-    MCAPI ::PackType getPackType() const;
-
-    MCAPI ::BaseGameVersion const& getRequiredBaseGameVersion() const;
-
-    MCFOLD ::ContentIdentity const& getSourceIdentity() const;
-
-    MCAPI ::std::vector<::std::string> getTrustedCapabilities() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::Core::PathBuffer<::std::string> getZipFolderPath() const;
-#endif
-
-    MCAPI bool hasClientScript() const;
-
-    MCAPI bool hasModule(::PackIdVersion const& moduleIdentity) const;
-
     MCAPI bool hasPackCapability(::std::string_view capability) const;
 
-    MCFOLD bool hasPlugins() const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool hasValidUUID() const;
-#endif
-
-    MCAPI bool isAddon() const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool isBasePackCategory() const;
-#endif
-
-    MCAPI bool isHidden() const;
-
-    MCAPI bool isPlatformLocked() const;
-
-    MCAPI bool isPremium() const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool isRandomSeedAllowed() const;
-#endif
-
-    MCAPI bool isRestrictedPack() const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool isTitleLocked() const;
-
-    MCAPI bool isUsingPackNameKeyword() const;
-
-    MCAPI bool isValid() const;
-
-    MCAPI ::PackManifest& operator=(::PackManifest const&);
-#endif
-
     MCAPI void serialize(::PackManifestFormat formatVersion, ::Json::Value& destination) const;
-
-    MCAPI void setCanBeRedownloaded(bool reDownloadable);
-
-#ifdef LL_PLAT_C
-    MCAPI void setContentIdentity(::ContentIdentity const& contentIdentity);
-#endif
-
-    MCAPI void setDescription(::std::string const& description);
-
-#ifdef LL_PLAT_C
-    MCAPI void setExpired(bool expired);
-#endif
 
     MCAPI void setIdentity(::PackIdVersion const& identity);
 
@@ -297,41 +156,7 @@ public:
 
     MCAPI void setLocalizedNameKeywords(::std::unordered_map<::std::string, ::std::string> const& localizationNameMap);
 
-    MCAPI void setManifestOrigin(::ManifestOrigin const& origin);
-
-    MCFOLD void setName(::std::string const& name);
-
-    MCAPI void setOptionLockedState(::TemplateLockState isWorldTemplateOptionLocked);
-
-    MCFOLD void setPackCategory(::PackCategory packCategory);
-
-#ifdef LL_PLAT_C
-    MCAPI void setPackIconLocation(::ResourceLocation const& location);
-#endif
-
-    MCAPI void setPackSettingsDef(
-        ::std::vector<::std::variant<
-            ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>> packSettingsDef
-    );
-
-    MCAPI void setPackType(::PackType packType);
-
     MCAPI void setRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
-
-    MCAPI void setSourceIdentity(::ContentIdentity const& contentIdentity);
-
-#ifdef LL_PLAT_C
-    MCAPI bool supportsLocalizedSubpackNames() const;
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::PackScope StringToPackScope(::std::string const& str);
     // NOLINTEND
 
 public:

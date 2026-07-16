@@ -16,27 +16,11 @@ class Vec3;
 
 class BellBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    BellBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BellBlockItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

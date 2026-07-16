@@ -4,8 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/events/gameevents/VibrationListener.h"
-#include "mc/world/level/block/actor/BlockActor.h"
-#include "mc/world/level/block/actor/BlockActorType.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,7 +18,7 @@ class Player;
 class SaveContext;
 // clang-format on
 
-class SculkShriekerBlockActor : public ::BlockActor {
+class SculkShriekerBlockActor : public ::VanillaBlockActor {
 public:
     // SculkShriekerBlockActor inner types declare
     // clang-format off
@@ -72,17 +71,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canRespond(::BlockSource const& region, ::BlockPos const& pos);
-
-    MCAPI static ::SculkShriekerBlockActor* tryGet(::BlockSource& region, ::BlockPos blockPos);
-
     MCAPI static ::Player* tryGetPlayerInHierarchy(::Actor* actor);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::BlockActorType const& TypeId();
     // NOLINTEND
 
 public:
@@ -108,6 +97,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
     // NOLINTEND
 };

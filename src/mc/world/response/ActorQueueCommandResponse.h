@@ -56,12 +56,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForActorEventResponse();
-
-    MCNAPI static void** $vftableForCommandResponseBase();
-    // NOLINTEND
 };

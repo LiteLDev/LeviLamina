@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ItemStack;
 class Mob;
-class MobEquipmentPacket;
 // clang-format on
 
 class EquipItemGoal : public ::BaseGoal {
@@ -35,22 +33,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit EquipItemGoal(::Mob& mob);
-
-    MCAPI void _dropItem(::ItemStack const& item) const;
-
-    MCAPI void _sendMobEquipmentPacket(::MobEquipmentPacket packet) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

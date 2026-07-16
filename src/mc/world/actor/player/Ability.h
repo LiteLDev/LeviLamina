@@ -39,34 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Ability();
-
-    MCAPI Ability(bool value, ::Ability::Options ops);
-
-    MCAPI bool getBool() const;
-
-    MCAPI float getFloat() const;
-
-    MCFOLD ::Ability::Type getType() const;
-
-    MCAPI bool hasOption(::Ability::Options op) const;
-
-    MCAPI bool isSet() const;
-
     MCAPI bool operator!=(::Ability const& rhs) const;
-
-    MCAPI void setBool(bool val);
-
-    MCAPI void setFloat(float val);
-
-    MCFOLD void unSet();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(bool value, ::Ability::Options ops);
     // NOLINTEND
 };

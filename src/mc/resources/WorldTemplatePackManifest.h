@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/resources/PackManifest.h"
-#include "mc/world/level/GameType.h"
 
 class WorldTemplatePackManifest : public ::PackManifest {
 public:
@@ -18,6 +17,7 @@ public:
     // prevent constructor by default
     WorldTemplatePackManifest& operator=(WorldTemplatePackManifest const&);
     WorldTemplatePackManifest(WorldTemplatePackManifest const&);
+    WorldTemplatePackManifest();
 
 public:
     // virtual functions
@@ -25,20 +25,6 @@ public:
     virtual ~WorldTemplatePackManifest() /*override*/;
 
     virtual ::std::unique_ptr<::PackManifest> clone() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI WorldTemplatePackManifest();
-
-    MCNAPI ::GameType getGameType() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -10,17 +10,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace Editor::CerealHelpers {
 // functions
 // NOLINTBEGIN
-MCNAPI void bindColor(::cereal::ReflectionCtx& ctx);
-
-MCNAPI void bindDimensionType(::cereal::ReflectionCtx& ctx);
-
 MCNAPI void bindHelpers(::cereal::ReflectionCtx& ctx);
-
-MCNAPI void bindNetworPayloadTypes(::cereal::ReflectionCtx& ctx);
-
-MCNAPI void bindScriptManagerEventType(::cereal::ReflectionCtx& ctx);
-
-MCNAPI void bindThemePaletteType(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace Editor::CerealHelpers

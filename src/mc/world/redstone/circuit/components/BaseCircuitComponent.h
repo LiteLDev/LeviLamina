@@ -67,7 +67,8 @@ public:
 
     virtual void removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
 
-    virtual bool addSource(::CircuitSceneGraph&, ::CircuitTrackingInfo const&, int&, bool&);
+    virtual bool
+    addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     virtual bool allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
@@ -103,19 +104,6 @@ public:
     // NOLINTBEGIN
     MCAPI BaseCircuitComponent();
 
-    MCAPI void addSourceItem(::CircuitComponentList::Item const& item);
-
-    MCAPI short getOldStrength() const;
-
-    MCFOLD bool isRemoved() const;
-
-    MCAPI ::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<::CircuitComponentList::Item>>>
-    removeFromSourceAndDestinationList(
-        ::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<::CircuitComponentList::Item>>> iter
-    );
-
-    MCFOLD void setRemoved();
-
     MCAPI bool trackPowerSource(
         ::CircuitTrackingInfo const& info,
         int                          dampening,
@@ -142,17 +130,17 @@ public:
     // NOLINTBEGIN
     MCFOLD int $getStrength() const;
 
-    MCFOLD int $getDirection() const;
+    MCAPI int $getDirection() const;
 
     MCAPI void $setOldStrength(short strength);
 
     MCAPI void $setStrength(int strength);
 
-    MCFOLD void $setDirection(uchar direction);
+    MCAPI void $setDirection(uchar direction);
 
-    MCFOLD void $setConsumePowerAnyDirection(bool canConsumePowerAnyDirection);
+    MCAPI void $setConsumePowerAnyDirection(bool canConsumePowerAnyDirection);
 
-    MCFOLD bool $canConsumePowerAnyDirection() const;
+    MCAPI bool $canConsumePowerAnyDirection() const;
 
     MCFOLD bool $canConsumerPower() const;
 
@@ -164,7 +152,8 @@ public:
 
     MCAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
 
-    MCFOLD bool $addSource(::CircuitSceneGraph&, ::CircuitTrackingInfo const&, int&, bool&);
+    MCFOLD bool
+    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     MCFOLD bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 

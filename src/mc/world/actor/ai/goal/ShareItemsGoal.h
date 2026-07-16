@@ -51,33 +51,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ShareItemsGoal(
-        ::Mob&                                mob,
-        ::std::vector<::MobDescriptor> const& mobFilters,
-        float                                 speedModifier,
-        int                                   searchRange,
-        float                                 goalRadius
-    );
-
-    MCAPI ::std::pair<int, ::ItemStack>
-    selectEntityToShareWith(::std::vector<::std::pair<int, ::ItemStack>> const& shareableItems);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                mob,
-        ::std::vector<::MobDescriptor> const& mobFilters,
-        float                                 speedModifier,
-        int                                   searchRange,
-        float                                 goalRadius
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

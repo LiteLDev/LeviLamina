@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockSource;
 struct AABBBucket;
 struct RopeNode;
 struct RopeWave;
@@ -37,18 +36,6 @@ public:
         ::ll::TypedStorage<8, 8, uint64>        mToCutNode;
         ::ll::TypedStorage<1, 1, bool>          mAbandonCollision;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~IntermediateData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -66,43 +53,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Rope& operator=(Rope const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Rope();
 
-    MCAPI Rope(::Rope const&);
-
-    MCAPI void _finalizeBucket(::AABBBucket& bucket);
-
-    MCAPI void _integrate();
-
-    MCAPI void _pruneDenyList();
-
-    MCAPI void _resize();
-
-    MCAPI float _solveCollisions(bool checkDenyList);
-
-    MCAPI float _solveDistanceConstraints1();
-
-    MCAPI float _solveDistanceConstraints3();
-
-    MCAPI void _solveFrictionConstraints();
-
-    MCAPI bool cacheColliders(::BlockSource& region);
-
     MCAPI void initializePins(::std::optional<::RopeParams> parameters);
-
-    MCAPI void prepareAABBBucketsForNextFrame();
-
-    MCAPI void tick();
-
-    MCAPI void tickWaves();
-
-    MCAPI uint64 updateRenderPoints();
 
     MCAPI ~Rope();
     // NOLINTEND
@@ -111,8 +66,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Rope const&);
     // NOLINTEND
 
 public:

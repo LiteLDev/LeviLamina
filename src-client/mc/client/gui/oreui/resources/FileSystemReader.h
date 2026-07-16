@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileSystemReader() /*override*/;
+    virtual ~FileSystemReader() /*override*/ = default;
 
     virtual bool EnumerateFolder(char const* path) /*override*/;
 
@@ -64,12 +64,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&                                  fileAccess,
         ::std::function<::Gameface::ISyncStreamReader*(::IFileAccess&, ::Core::Path)> const& syncStreamReaderFactory
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

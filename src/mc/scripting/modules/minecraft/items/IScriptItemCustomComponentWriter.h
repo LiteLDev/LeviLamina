@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,10 +31,7 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
-    tryRegisterComponentV1(
-        ::HashedString const&                                         componentName,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
-    ) = 0;
+    tryRegisterComponentV1(::HashedString const&, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&) = 0;
 
     virtual ::Scripting::Result<
         void,
@@ -43,22 +40,13 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
-    tryRegisterComponent(
-        ::HashedString const&                                         componentName,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
-    ) = 0;
+    tryRegisterComponent(::HashedString const&, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&) = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -2,41 +2,38 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
 // auto generated forward declare list
 // clang-format off
+class IStructureTemplateManager;
 class StructurePoolElement;
 // clang-format on
 
 class JigsawStructureElementRegistry {
 public:
     // JigsawStructureElementRegistry inner types define
-    using StructureElementLookupMap = ::std::unordered_map<::std::string, ::StructurePoolElement const*>;
-
-    using StructureElementRegistry = ::std::vector<::std::unique_ptr<::StructurePoolElement>>;
+    using StructureElementLookupMap = ::std::unordered_map<::std::string, ::std::unique_ptr<::StructurePoolElement>>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::StructurePoolElement>>>           mElementRegistry;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::StructurePoolElement const*>> mElementLookupMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unique_ptr<::StructurePoolElement>>>
+        mElementLookupMap;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::StructurePoolElement const* lookupByName(::std::string name) const;
+    MCAPI ::StructurePoolElement const* lookupByName(::std::string name) const;
 
-    MCAPI ::StructurePoolElement const& registerStructureElement(::std::unique_ptr<::StructurePoolElement>&& element);
+    MCAPI ::StructurePoolElement const* lookupEmptyElement() const;
 
     MCAPI ::StructurePoolElement const&
-    registerStructureElement(::std::string name, ::std::unique_ptr<::StructurePoolElement>&& element);
+    registerElement(::std::string name, ::std::unique_ptr<::StructurePoolElement>&& element);
 
-    MCAPI ~JigsawStructureElementRegistry();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI ::StructurePoolElement const&
+    registerEmptyElement(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> manager);
     // NOLINTEND
 };

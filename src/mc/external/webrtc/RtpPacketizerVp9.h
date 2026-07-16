@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/RtpPacketizer.h"
 
 // auto generated forward declare list
@@ -20,7 +21,7 @@ public:
     ::ll::UntypedStorage<8, 1640> mUnk9addc6;
     ::ll::UntypedStorage<4, 4>    mUnkecb493;
     ::ll::UntypedStorage<4, 4>    mUnk5e2fc6;
-    ::ll::UntypedStorage<8, 16>   mUnkc19163;
+    ::ll::UntypedStorage<8, 16>   mUnk8c792a;
     ::ll::UntypedStorage<8, 24>   mUnkaa1a14;
     ::ll::UntypedStorage<8, 8>    mUnka9b7da;
     // NOLINTEND
@@ -45,21 +46,22 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RtpPacketizerVp9(
-        ::rtc::ArrayView<uchar const>              payload,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
-        ::webrtc::RTPVideoHeaderVP9 const&         hdr
+        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits             limits,
+        ::webrtc::RTPVideoHeaderVP9 const&                     hdr
     );
 
-    MCNAPI bool WriteHeader(bool layer_begin, bool layer_end, ::rtc::ArrayView<uchar> buffer) const;
+    MCNAPI bool
+    WriteHeader(bool layer_begin, bool layer_end, ::webrtc::ArrayView<uchar, 18446744073709546905> buffer) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::rtc::ArrayView<uchar const>              payload,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
-        ::webrtc::RTPVideoHeaderVP9 const&         hdr
+        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits             limits,
+        ::webrtc::RTPVideoHeaderVP9 const&                     hdr
     );
     // NOLINTEND
 

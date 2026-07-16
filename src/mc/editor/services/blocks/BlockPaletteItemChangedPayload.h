@@ -10,7 +10,6 @@
 class HashedString;
 namespace Editor { struct ProbabilityBlockPaletteItem; }
 namespace Editor { struct SimpleBlockPaletteItem; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Network {
@@ -34,7 +33,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~BlockPaletteItemChangedPayload() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~BlockPaletteItemChangedPayload() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -45,12 +49,6 @@ public:
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

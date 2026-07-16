@@ -12,10 +12,7 @@
 class IExternalServerFile;
 class ProfanityContext;
 class ServerLocator;
-struct ExternalServer;
 struct NetworkWorldInfo;
-struct PingedCompatibleServer;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
@@ -50,14 +47,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>    profanityContext
     );
 
-    MCFOLD bool _areExternalAndRemoteServerSame(
-        ::ExternalServer const&         externalServer,
-        ::PingedCompatibleServer const& remoteServer
-    ) const;
-
     MCAPI void _refreshWorlds();
-
-    MCAPI void _runProfanityCheckOnWorlds();
 
     MCAPI ::nonstd::expected<int, ::World::ExternalServerWorldError>
     addExternalServerWorld(::std::string const& name, ::std::string const& address, int port);
@@ -67,15 +57,7 @@ public:
 
     MCAPI ::std::optional<::NetworkWorldInfo> getWorld(::std::string const& id);
 
-    MCFOLD ::std::vector<::NetworkWorldInfo> const& getWorlds() const;
-
-    MCFOLD ::Bedrock::PubSub::Subscription registerListener(::std::function<void()> callback);
-
     MCAPI ::std::optional<::World::ExternalServerWorldError> removeExternalServerWorld(int id);
-
-    MCAPI void update(double timestampMs);
-
-    MCAPI ~ExternalServerWorldList();
     // NOLINTEND
 
 public:
@@ -86,12 +68,6 @@ public:
         ::ServerLocator&                                     serverLocator,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>    profanityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

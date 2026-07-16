@@ -24,8 +24,6 @@ class SimulatedPlayer;
 class Vec3;
 struct ActorDefinitionIdentifier;
 namespace ScriptModuleGameTest { class ScriptGameTestConnectivity; }
-namespace gametest { class BaseGameTestInstance; }
-namespace gametest { class GameTestSequence; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 
@@ -258,17 +256,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BaseGameTestHelper(::gametest::BaseGameTestInstance& testInstance);
-
     MCNAPI ::BlockPos _absolutePos(::BlockPos const& relativePos) const;
 
     MCNAPI ::Vec3 _absoluteVec(::Vec3 const& relativeVec) const;
 
-    MCNAPI void _relativeConnectivity(bool& north, bool& east, bool& south, bool& west) const;
-
     MCNAPI ::BlockPos _relativePos(::BlockPos const& absolutePos) const;
-
-    MCNAPI ::Vec3 _relativeVec(::Vec3 const& absolutePos) const;
 
     MCNAPI ::std::optional<::gametest::GameTestError> assertCondition(bool condition, ::std::string const& message);
 
@@ -289,31 +281,11 @@ public:
         ::BlockPos const&             relativePos
     ) const;
 
-    MCNAPI uchar getTestDirection() const;
-
     MCNAPI ::std::string getTestName() const;
-
-    MCNAPI float getTestRotationAngle() const;
-
-    MCNAPI bool isCleaningUp() const;
-
-    MCNAPI bool isTestInstanceDone() const;
 
     MCNAPI ::std::variant<::gametest::GameTestError, uchar> rotateDirection(uchar direction) const;
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::Vec3> rotateVector(::Vec3 const& vec) const;
-
     MCNAPI void runAfterDelay(int ticksToDelay, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
-
-    MCNAPI void runAtTickTime(int tickTime, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
-
-    MCNAPI void runOnFinish(::std::function<::std::optional<::gametest::GameTestError>()> fn);
-
-    MCNAPI ::std::optional<::gametest::GameTestError> setBlock(::BlockPos const& pos, ::Block const& block);
-
-    MCNAPI ::gametest::GameTestSequence& startSequence();
-
-    MCNAPI void succeed();
 
     MCNAPI void succeedIf(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
@@ -330,21 +302,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::gametest::BaseGameTestInstance& testInstance);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace NetherNet { struct NetworkID; }
-namespace rtc { class SocketAddress; }
 // clang-format on
 
 namespace NetherNet {
@@ -26,7 +25,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>  mUnk6d0d23;
-        ::ll::UntypedStorage<8, 80> mUnkabaa69;
+        ::ll::UntypedStorage<8, 80> mUnkc826b3;
         // NOLINTEND
 
     public:
@@ -34,18 +33,6 @@ public:
         PeerRecord& operator=(PeerRecord const&);
         PeerRecord(PeerRecord const&);
         PeerRecord();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PeerRecord();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -63,51 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PeerRecordTable() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool AddOrUpdate(
-        ::NetherNet::NetworkID                  networkID,
-        ::rtc::SocketAddress const&             address,
-        ::std::chrono::steady_clock::time_point timeOfDiscovery
-    );
-
-    MCNAPI bool Contains(::NetherNet::NetworkID networkID);
-
-    MCNAPI bool Find(::NetherNet::NetworkID networkID, ::rtc::SocketAddress* pOut);
-
-    MCNAPI explicit PeerRecordTable(::NetherNet::ContextProxy const& ctx);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::vector<::std::pair<::NetherNet::NetworkID, ::NetherNet::PeerRecordTable::PeerRecord>>
-    RemoveExpiredRecords(
-        ::NetherNet::Utils::ThreadSafe<
-            ::std::map<::NetherNet::NetworkID, ::NetherNet::PeerRecordTable::PeerRecord>>::View const& exclusiveTable
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::NetherNet::ContextProxy const& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    virtual ~PeerRecordTable() /*override*/ = default;
     // NOLINTEND
 };
 

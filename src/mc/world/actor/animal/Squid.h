@@ -15,8 +15,8 @@ class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
 class EntityContext;
-class Vec3;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -52,10 +52,10 @@ public:
 
     virtual bool checkSpawnObstruction() const /*override*/;
 
-    virtual bool checkSpawnRules(bool) /*override*/;
+    virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const;
 
@@ -72,21 +72,7 @@ public:
         ::mce::Color const&                inkParticleColor
     );
 
-    MCAPI ::Vec3 _randomInkDir();
-
-    MCAPI float getTentacleAngle() const;
-
-    MCAPI float getTy();
-
-    MCFOLD float getZBodyRot() const;
-
     MCAPI void postAiStep();
-
-    MCAPI void setTx(float val);
-
-    MCAPI void setTy(float val);
-
-    MCAPI void setTz(float val);
 
     MCAPI void spawnInkParticles();
     // NOLINTEND
@@ -109,9 +95,10 @@ public:
 
     MCFOLD bool $checkSpawnObstruction() const;
 
-    MCAPI bool $checkSpawnRules(bool);
+    MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $_getInkSquirtSoundEvent() const;
 

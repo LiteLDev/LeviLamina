@@ -30,10 +30,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    FireworkChargeItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void appendFormattedHovertext(
@@ -53,12 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FireworkChargeItem(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _initFireworkChargeItem(
@@ -68,15 +58,6 @@ public:
         ::std::vector<uchar>        fadeColors,
         bool                        hasTrail,
         bool                        hasFlicker
-    );
-
-    MCAPI static void
-    appendColors(::Bedrock::Safety::RedactableString& hovertext, ::std::vector<uchar> const& colorList);
-
-    MCAPI static void getFormattedHoverText(
-        ::CompoundTag const&                 explosion,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        ::std::string const&                 indent
     );
 
     MCFOLD static ::ItemInstance const& initFireworkChargeItem(
@@ -96,8 +77,6 @@ public:
         bool                        hasTrail,
         bool                        hasFlicker
     );
-
-    MCAPI static void setColor(::ItemStackBase& instance);
     // NOLINTEND
 
 public:
@@ -114,12 +93,6 @@ public:
     MCAPI static ::std::string const& TAG_E_TRAIL();
 
     MCAPI static ::std::string const& TAG_E_TYPE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

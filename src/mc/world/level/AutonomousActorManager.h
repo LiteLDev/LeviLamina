@@ -20,9 +20,7 @@ class EntityRegistry;
 class IAddActorEntityProxy;
 class ILevelChunkEventManagerConnector;
 class ILevelStorageManagerConnector;
-class LevelChunk;
 class LevelStorage;
-class ListTag;
 class WeakEntityRef;
 struct ActorUniqueID;
 // clang-format on
@@ -54,14 +52,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ActorManager>              actorManager
     );
 
-    MCAPI void _moveActiveAutonomousActorEntityToInactive(::Actor& actor, ::LevelChunk& levelChunk);
-
-    MCAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
-
-    MCAPI void _onChunkLoaded(::IAddActorEntityProxy& addActorEntityProxy, ::LevelChunk& levelChunk);
-
-    MCAPI void _onRemoveActorEntityReferences(::Actor& actor);
-
     MCAPI void _saveAllAutonomousActors(::LevelStorage& levelStorage);
 
     MCAPI ::Actor*
@@ -73,21 +63,11 @@ public:
 
     MCAPI void loadAutonomousActorsFromDisk(::LevelStorage& levelStorage, ::ActorFactory& actorFactory);
 
-    MCAPI void onLevelTearingDown();
-
     MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
     MCAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCAPI bool removeActiveAutonomousActorEntity(::WeakEntityRef weakEntityRef);
-
     MCAPI ~AutonomousActorManager();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _deduplicateDuplicateActorsFromList(::ListTag& listTag);
     // NOLINTEND
 
 public:

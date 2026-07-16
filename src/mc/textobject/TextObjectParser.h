@@ -2,13 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/server/commands/CommandRegistry.h"
-
 // auto generated forward declare list
 // clang-format off
-class CommandOrigin;
-class Scoreboard;
 class TextObjectRoot;
 namespace Json { class Value; }
 // clang-format on
@@ -63,49 +58,11 @@ public:
         ServerData& operator=(ServerData const&);
         ServerData(ServerData const&);
         ServerData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ServerData(
-            ::CommandRegistry::Parser& parser,
-            ::CommandOrigin const&     commandOrigin,
-            ::Scoreboard const&        scoreboard
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void*
-        $ctor(::CommandRegistry::Parser& parser, ::CommandOrigin const& commandOrigin, ::Scoreboard const& scoreboard);
-        // NOLINTEND
     };
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _getObjectsFromTextObject(
-        ::Json::Value const&                   root,
-        ::TextObjectRoot&                      parsedObject,
-        ::TextObjectParser::ServerData*        serverData,
-        ::TextObjectParser::ErrorLocalization& errorLocalization
-    );
-
-    MCNAPI static bool _parseScoreTextObject(
-        ::TextObjectRoot&                      parentTextObject,
-        ::Json::Value const&                   scoreObject,
-        ::TextObjectParser::ServerData*        serverData,
-        ::TextObjectParser::ErrorLocalization& errorLocalization
-    );
-
-    MCNAPI static bool _parseSelectorTextObject(
-        ::TextObjectRoot&                      parentTextObject,
-        ::std::string                          selectorString,
-        ::TextObjectParser::ServerData*        serverData,
-        ::TextObjectParser::ErrorLocalization& errorLocalization
-    );
-
     MCNAPI static bool _textObjectFromJson(
         ::Json::Value const&                   root,
         ::TextObjectRoot&                      parsedObject,
@@ -123,13 +80,6 @@ public:
     MCNAPI static bool
     textObjectFromJson(::Json::Value const& root, ::TextObjectRoot& parsedObject, ::std::string& errorMsg);
 
-    MCNAPI static bool textObjectFromJsonServer(
-        ::Json::Value const&                   root,
-        ::TextObjectRoot&                      parsedObject,
-        ::TextObjectParser::ServerData         serverData,
-        ::TextObjectParser::ErrorLocalization& errorLocalization
-    );
-
     MCNAPI static bool textObjectFromJsonString(
         ::std::string const& jsonAsString,
         ::TextObjectRoot&    parsedObject,
@@ -140,26 +90,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& RAW_TEXT_ERROR_NOT_ARRAY();
-
-    MCNAPI static ::std::string const& RAW_TEXT_ERROR_NOT_OBJECT();
-
-    MCNAPI static ::std::string const& RAW_TEXT_ERROR_NO_DATA();
-
     MCNAPI static ::std::string const& RAW_TEXT_ERROR_PARSE_FAILED();
-
-    MCNAPI static ::std::string const& RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING();
-
-    MCNAPI static ::std::string const& RAW_TEXT_ERROR_SCORE_NOT_OBJECT();
-
-    MCNAPI static ::std::string const& RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING();
-
-    MCNAPI static ::std::string const& RAW_TEXT_ERROR_SELECTOR_NOT_STRING();
-
-    MCNAPI static ::std::string const& RAW_TEXT_ERROR_TEXT_NOT_STRING();
-
-    MCNAPI static ::std::string const& RAW_TEXT_ERROR_TRANSLATE_NOT_STRING();
-
-    MCNAPI static ::std::string const& RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT();
     // NOLINTEND
 };

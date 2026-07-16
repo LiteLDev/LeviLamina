@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
-#include "mc/util/DownloadError.h"
 #include "mc/util/DownloadState.h"
 
 // auto generated forward declare list
@@ -32,18 +31,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string> currentUserXuid;
         ::ll::TypedStorage<4, 4, int>            slotIndex;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~RealmData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -67,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileDownloadScreenController() /*override*/;
+    virtual ~FileDownloadScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -86,18 +73,6 @@ public:
         ::std::string const&                     realmVersionName,
         ::std::function<void(bool)>              callback
     );
-
-    MCAPI bool _canCancelDownload() const;
-
-    MCAPI void _displayDownloadErrorPopup(::DownloadError downloadError);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _startDownload();
-
-    MCAPI ::std::string getTitleLabel() const;
     // NOLINTEND
 
 public:
@@ -115,24 +90,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

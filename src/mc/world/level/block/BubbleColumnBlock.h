@@ -16,7 +16,6 @@ class BlockSource;
 class GetCollisionShapeInterface;
 class HashedString;
 class IConstBlockSource;
-class Random;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -46,9 +45,10 @@ public:
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
-    virtual bool mayPick(::BlockSource const& liquid, ::Block const&, bool) const /*override*/;
+    virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
 
     virtual void addAABBs(
         ::Block const&             block,
@@ -94,12 +94,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _createParticles(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool down);
-
-    MCAPI static bool _getFlowDownward(::Block const& block);
-
-    MCAPI static bool _isValidBubbleColumnLocation(::BlockSource& region, ::BlockPos const& pos);
-
     MCAPI static bool addBubbleColumnSegment(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static bool shouldDragDown(::Block const& block);
@@ -124,9 +118,9 @@ public:
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCFOLD bool $mayPick(::BlockSource const& liquid, ::Block const&, bool) const;
+    MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
     MCFOLD void $addAABBs(
         ::Block const&             block,

@@ -26,13 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WebRTCNetworkPeer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WebRTCNetworkPeer() /*override*/;
+    virtual ~WebRTCNetworkPeer() /*override*/ = default;
 
     virtual void
     sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility) /*override*/;
@@ -51,40 +47,6 @@ public:
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI WebRTCNetworkPeer(
-        ::Bedrock::NonOwnerPointer<::NetherNetConnector>&& connector,
-        ::NetherNet::NetworkID const&                      peerId,
-        uint64                                             sessionId,
-        bool                                               isLan
-    );
-
-    MCNAPI void _updateConnectionStatus();
-
-    MCNAPI ::NetherNet::NetworkID const& getPeerId() const;
-
-    MCNAPI uint64 getSessionId() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Bedrock::NonOwnerPointer<::NetherNetConnector>&& connector,
-        ::NetherNet::NetworkID const&                      peerId,
-        uint64                                             sessionId,
-        bool                                               isLan
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

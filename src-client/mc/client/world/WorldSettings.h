@@ -19,7 +19,7 @@ class WorldSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>            mLevelDataWrapper;
+    ::ll::TypedStorage<8, 1744, ::LevelDataWrapper>            mLevelDataWrapper;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mLevelChangedSubscription;
     ::ll::TypedStorage<
         8,
@@ -37,24 +37,14 @@ public:
     // NOLINTBEGIN
     MCAPI explicit WorldSettings(::Minecraft& serverData);
 
-    MCFOLD ::LevelDataWrapper& getLevelData();
-
     MCAPI ::Bedrock::PubSub::Subscription
     registerLevelChangedListener(::std::function<void(::LevelDataWrapper&)> callback);
-
-    MCAPI ~WorldSettings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Minecraft& serverData);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/legacy/Facing.h"
 #include "mc/deps/shared_types/v1_26_0/block/BlockedDirections.h"
 #include "mc/deps/shared_types/v1_26_0/block/LiquidReaction.h"
 #include "mc/deps/shared_types/v1_26_0/block/LiquidType.h"
@@ -27,37 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DetectionRule();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DetectionRule(
-        ::SharedTypes::v1_26_0::LiquidType          liquidType,
-        bool                                        canContainLiquid,
-        ::SharedTypes::v1_26_0::LiquidReaction      onLiquidTouches,
-        ::std::vector<::SharedTypes::Facing> const& stopsWaterFlowingOutFromDirections,
-        bool                                        clipAgainstCollider
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::SharedTypes::v1_26_0::LiquidType          liquidType,
-        bool                                        canContainLiquid,
-        ::SharedTypes::v1_26_0::LiquidReaction      onLiquidTouches,
-        ::std::vector<::SharedTypes::Facing> const& stopsWaterFlowingOutFromDirections,
-        bool                                        clipAgainstCollider
-    );
     // NOLINTEND
 };
 

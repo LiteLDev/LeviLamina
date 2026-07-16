@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     virtual ~ConduitBaseModel() /*override*/ = default;
 
-    virtual void render(::ScreenContext& screenContext) /*override*/;
+    virtual void render(::ScreenContext&) /*override*/;
     // NOLINTEND
 
 public:
@@ -47,12 +47,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $render(::ScreenContext& screenContext);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

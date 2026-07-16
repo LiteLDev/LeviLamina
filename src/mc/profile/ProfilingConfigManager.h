@@ -45,14 +45,6 @@ public:
             ::Core::Profile::ProfileGroupManager&    profileGroupManager,
             ::Bedrock::JSONObject::ObjectNode const& profileObject
         );
-
-        MCNAPI ~Impl();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -77,11 +69,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ProfilingConfigManager();
-
-    MCNAPI void init(
-        ::Core::Profile::ProfileGroupManager&    profileGroupManager,
-        ::Bedrock::JSONObject::ObjectNode const& profileObject
-    );
     // NOLINTEND
 
 public:

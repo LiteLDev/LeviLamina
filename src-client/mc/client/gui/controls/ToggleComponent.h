@@ -12,9 +12,6 @@ class ScreenInputContext;
 class UIAnimationController;
 class UIControl;
 class VisualTree;
-struct ButtonScreenEventData;
-struct ControllerDirectionEventData;
-struct HoverScreenEventData;
 struct ScreenEvent;
 // clang-format on
 
@@ -47,15 +44,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ToggleComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ToggleComponent() /*override*/;
+    virtual ~ToggleComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
 
     virtual void reset() /*override*/;
 
@@ -64,8 +57,8 @@ public:
     virtual ::ComponentReceiveActionType receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
-        ::UIAnimationController& screenEvent,
-        ::ScreenEvent const&
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     ) /*override*/;
 
     virtual ::std::string const& getTextToSpeechComponentValue() const /*override*/;
@@ -74,60 +67,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ToggleComponent(::UIControl& owner);
-
-    MCAPI void _handleButtonEvent(
-        ::VisualTree&                  visualTree,
-        ::ScreenInputContext&          context,
-        ::ButtonScreenEventData const& buttonData
-    );
-
-    MCAPI void _handleControllerDirectionEvent(
-        ::VisualTree&                         visualTree,
-        ::ScreenInputContext&                 context,
-        ::ControllerDirectionEventData const& controllerData
-    );
-
-    MCAPI void
-    _handleHoverEvent(::VisualTree& visualTree, ::ScreenInputContext& context, ::HoverScreenEventData const& hoverData);
-
-    MCAPI void _setChecked(::ScreenInputContext& context, bool checked, bool toggledByButtonClick);
-
-    MCFOLD void _setVisible(::std::weak_ptr<::UIControl>& control, bool visible);
-
     MCAPI void _updateControlVisibility();
-
-    MCAPI void _updateToggleGroupState(::VisualTree& visualTree, bool toggleState);
-
-    MCFOLD ::std::weak_ptr<::UIControl> getCheckedHoverStateControl() const;
-
-    MCAPI ::std::weak_ptr<::UIControl> getCheckedLockedHoverStateControl() const;
-
-    MCAPI ::std::weak_ptr<::UIControl> getCheckedLockedStateControl() const;
-
-    MCFOLD ::std::weak_ptr<::UIControl> getCheckedStateControl() const;
-
-    MCAPI bool getEnableDirectionalToggling() const;
-
-    MCAPI int getGroupIndex() const;
-
-    MCFOLD uint const& getToggleGroup() const;
-
-    MCFOLD ::std::weak_ptr<::UIControl> getUncheckedHoverStateControl() const;
-
-    MCAPI ::std::weak_ptr<::UIControl> getUncheckedLockedHoverStateControl() const;
-
-    MCAPI ::std::weak_ptr<::UIControl> getUncheckedLockedStateControl() const;
-
-    MCFOLD ::std::weak_ptr<::UIControl> getUncheckedStateControl() const;
-
-    MCAPI bool isChecked() const;
-
-    MCAPI bool isRadioToggleGroup() const;
-
-    MCAPI void resetDefaultState();
-
-    MCAPI void resetHoverState();
 
     MCAPI void setChecked(bool checked);
 
@@ -135,39 +75,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reset();
-
-    MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
-
-    MCAPI ::ComponentReceiveActionType $receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& screenEvent,
-        ::ScreenEvent const&
-    );
-
-    MCAPI ::std::string const& $getTextToSpeechComponentValue() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,7 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/FunctionView.h"
+#include "mc/external/webrtc/ArrayView.h"
+#include "mc/external/webrtc/FunctionView.h"
 #include "mc/external/webrtc/RtcpPacket.h"
 
 // auto generated forward declare list
@@ -19,7 +20,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnk28d016;
     ::ll::UntypedStorage<4, 4>  mUnkd5d374;
-    ::ll::UntypedStorage<8, 24> mUnka79393;
+    ::ll::UntypedStorage<8, 24> mUnk780713;
     // NOLINTEND
 
 public:
@@ -35,10 +36,10 @@ public:
     virtual uint64 BlockLength() const /*override*/;
 
     virtual bool Create(
-        uchar*                                                   packet,
-        uint64*                                                  index,
-        uint64                                                   max_length,
-        ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback
+        uchar*                                                                               packet,
+        uint64*                                                                              index,
+        uint64                                                                               max_length,
+        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> callback
     ) const /*override*/;
     // NOLINTEND
 
@@ -68,10 +69,10 @@ public:
     MCNAPI uint64 $BlockLength() const;
 
     MCNAPI bool $Create(
-        uchar*                                                   packet,
-        uint64*                                                  index,
-        uint64                                                   max_length,
-        ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback
+        uchar*                                                                               packet,
+        uint64*                                                                              index,
+        uint64                                                                               max_length,
+        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> callback
     ) const;
 
 

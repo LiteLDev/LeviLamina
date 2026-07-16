@@ -15,7 +15,6 @@ class IAppPlatform;
 class IClientInstance;
 class IMinecraftGame;
 namespace OreUI { class IFacet; }
-namespace OreUI { class IFacetRegistry; }
 // clang-format on
 
 namespace OreUI {
@@ -39,39 +38,6 @@ public:
             64,
             ::std::function<::std::unique_ptr<::OreUI::IFacet>(::OreUI::FacetRegistryLocation)> const>
             mConstructor;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FacetData& operator=(FacetData const&);
-        FacetData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI FacetData(::OreUI::FacetRegistryFactory::FacetData const&);
-
-        MCAPI FacetData(::OreUI::FacetRegistryFactory::FacetData&&);
-
-        MCAPI FacetData(
-            char const*                                                                         name,
-            ::OreUI::FacetAvailability                                                          availability,
-            ::std::function<::std::unique_ptr<::OreUI::IFacet>(::OreUI::FacetRegistryLocation)> constructor
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(::OreUI::FacetRegistryFactory::FacetData const&);
-
-        MCFOLD void* $ctor(::OreUI::FacetRegistryFactory::FacetData&&);
-
-        MCAPI void* $ctor(
-            char const*                                                                         name,
-            ::OreUI::FacetAvailability                                                          availability,
-            ::std::function<::std::unique_ptr<::OreUI::IFacet>(::OreUI::FacetRegistryLocation)> constructor
-        );
         // NOLINTEND
     };
 
@@ -104,15 +70,9 @@ public:
 
     MCAPI void _registerCoreFacets();
 
-    MCAPI void _registerDebugFacets();
-
-    MCAPI void _registerTestFacets();
-
     MCAPI void _registerVanillaFacets();
 
     MCAPI void _registerVanillaGameplayFacets();
-
-    MCAPI ::std::unique_ptr<::OreUI::IFacetRegistry> createFacetRegistry(::OreUI::FacetRegistryLocation location);
 
     MCAPI ~FacetRegistryFactory();
     // NOLINTEND

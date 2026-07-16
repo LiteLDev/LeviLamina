@@ -2,16 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/Rotation.h"
-
 // auto generated forward declare list
 // clang-format off
 class AABB;
-class BlockPos;
 class BoundingBox;
 class Vec3;
-class WeakEntityRef;
 struct DimensionType;
 namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class GameTestSequence; }
@@ -104,67 +99,19 @@ public:
         ::std::unique_ptr<::gametest::IGameTestHelperProvider> helper
     );
 
-    MCNAPI void addListener(::std::shared_ptr<::gametest::IGameTestListener> listener);
-
-    MCNAPI void addSimulatedPlayer(::WeakEntityRef simulatedPlayer);
-
     MCNAPI ::gametest::GameTestSequence& createSequence();
 
     MCNAPI void fail(::gametest::GameTestError error, bool canRetry);
-
-    MCNAPI void finish(bool canRetry);
-
-    MCNAPI int getAttempts() const;
-
-    MCNAPI ::std::optional<::gametest::GameTestError> const& getError() const;
-
-    MCNAPI int getMaxAttempts() const;
-
-    MCNAPI int getRequiredSuccesses() const;
-
-#ifdef LL_PLAT_S
-    MCNAPI ::Rotation getRotation() const;
-#endif
-
-    MCNAPI ::BlockPos getStructureBlockPos() const;
-
-    MCNAPI int getSuccesses() const;
-
-    MCNAPI ::std::string const& getTestName() const;
-
-    MCNAPI int getTick() const;
-
-#ifdef LL_PLAT_S
-    MCNAPI bool hasRetryAttempts() const;
-#endif
-
-    MCNAPI bool isFlaky() const;
-
-    MCNAPI bool isRequired() const;
 
     MCNAPI void removeListener(::std::shared_ptr<::gametest::IGameTestListener> listener);
 
     MCNAPI void runCallbacksOnFinish();
 
-    MCNAPI void setMaxRunCount(int repeatCount);
-
-    MCNAPI void setRotation(::Rotation rotation);
-
     MCNAPI void setRunAtTickTime(int tickTime, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
     MCNAPI void setRunOnFinish(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
-    MCNAPI void setStopOnFailure(bool stopOnFailure);
-
-    MCNAPI void setStructureBlockPos(::BlockPos const& structureBlockPos);
-
-    MCNAPI void startExecution();
-
-    MCNAPI void startTest();
-
     MCNAPI void succeed();
-
-    MCNAPI void tick();
     // NOLINTEND
 
 public:
@@ -185,8 +132,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initialize();
-
     MCNAPI void $spawnStructure();
 
     MCNAPI void $_rerun();
@@ -194,12 +139,6 @@ public:
     MCNAPI void $_removeSimulatedPlayers();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

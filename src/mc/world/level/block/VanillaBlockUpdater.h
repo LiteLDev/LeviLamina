@@ -13,8 +13,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void addBaseUpdater(::CompoundTagUpdaterContext& context);
 
-    MCAPI static void addRailUpdater_1_14_0(::std::string const& railName, ::CompoundTagUpdaterContext& context);
-
     MCAPI static void addUpdaters_1_10_0(::CompoundTagUpdaterContext& context);
 
     MCAPI static void addUpdaters_1_12_0(::CompoundTagUpdaterContext& context);
@@ -62,8 +60,6 @@ public:
     MCAPI static void addUpdaters_1_21_30(::CompoundTagUpdaterContext& context);
 
     MCAPI static void addUpdaters_1_21_60(::CompoundTagUpdaterContext& context);
-
-    MCAPI static void destroy();
 
     MCAPI static ::CompoundTagUpdaterContext& get();
 

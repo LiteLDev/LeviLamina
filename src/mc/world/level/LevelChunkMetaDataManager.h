@@ -36,8 +36,6 @@ public:
 
     MCNAPI void _onNewDimensionCreated(::Dimension& dimension);
 
-    MCNAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> getLevelChunkMetaDataDictionary() const;
-
     MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
     MCNAPI void registerOnNewDimensionCreated(::IDimensionManagerConnector& dimensionManagerConnector);
@@ -49,8 +47,6 @@ public:
         ::LevelChunkMetaDataBaseGameVersionWrapper const& levelChunkMetaDataBaseGameVersionWrapper,
         ::DimensionHeightRange const&                     dimensionHeightRange
     );
-
-    MCNAPI ~LevelChunkMetaDataManager();
     // NOLINTEND
 
 public:
@@ -82,11 +78,5 @@ public:
         ::GeneratorType                                   generatorType,
         ::LevelChunkMetaDataBaseGameVersionWrapper const& levelChunkMetaDataBaseGameVersionWrapper
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

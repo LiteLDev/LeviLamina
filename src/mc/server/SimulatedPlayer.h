@@ -4,6 +4,7 @@
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/server/sim/LookDuration.h"
+#include "mc/world/actor/player/PlayerInventory.h"
 #include "mc/world/actor/provider/SynchedActorDataAccess.h"
 
 // auto generated inclusion list
@@ -30,7 +31,6 @@ class ChunkViewSource;
 class EntityContext;
 class ItemStack;
 class Level;
-class NavigationComponent;
 class NetworkIdentifier;
 class PacketSender;
 class ServerNetworkHandler;
@@ -54,13 +54,13 @@ public:
 
     bool simulateSneaking() {
         setSneaking(true);
-        return SynchedActorDataAccess::getActorFlag(getEntityContext(), ActorFlags::Sneaking);
+        return SynchedActorDataAccess::getActorFlag(mEntityContext, ActorFlags::Sneaking);
     }
     bool simulateStopSneaking() {
         setSneaking(false);
-        return !SynchedActorDataAccess::getActorFlag(getEntityContext(), ActorFlags::Sneaking);
+        return !SynchedActorDataAccess::getActorFlag(mEntityContext, ActorFlags::Sneaking);
     }
-    bool simulateUseItem() { return simulateUseItemInSlot(getSelectedItemSlot()); }
+    bool simulateUseItem() { return simulateUseItemInSlot(mInventory->mSelected); }
 
     LLAPI bool simulateDestroyBlock(BlockPos const&, ScriptModuleMinecraft::ScriptFacing);
     LLAPI bool simulateDestroyLookAt(float handLength = 5.5f);
@@ -134,7 +134,7 @@ public:
 
     virtual ::std::shared_ptr<::ChunkViewSource> _createChunkSource(::ChunkSource& mainChunkSource) /*override*/;
 
-    virtual void _updateChunkPublisherView(::Vec3 const& position, float minDistance) /*override*/;
+    virtual void _updateChunkPublisherView(::Vec3 const&, float) /*override*/;
     // NOLINTEND
 
 public:
@@ -158,26 +158,15 @@ public:
         ::EntityContext&                                   entityContext
     );
 
-    MCAPI void _addMoveComponent();
-
-    MCAPI ::ScriptModuleGameTest::ScriptNavigationResult
-    _createNavigationResult(::NavigationComponent* navigation) const;
-
     MCAPI void _updateDestroyBlock();
 
     MCAPI void _updateMovement();
 
     MCAPI void _updateRidingComponents();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper> getGameTestHelper() const;
-
-    MCAPI void postAiStep();
-
     MCAPI void preAiStep();
 
     MCAPI void setGameTestHelper(::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper> gameTestHelper);
-
-    MCAPI void setXuid(::std::string const& xuid);
 
     MCAPI bool simulateAttack();
 
@@ -185,13 +174,9 @@ public:
 
     MCAPI bool simulateInteract();
 
-    MCAPI bool simulateInteract(::BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face);
-
     MCAPI bool simulateJump();
 
-    MCAPI void simulateLookAt(::Vec3 const& pos);
-
-    MCAPI void simulateLookAt(::BlockPos const& blockPos, ::sim::LookDuration lookType = sim::LookDuration::Instant);
+    MCAPI void simulateLookAt(::BlockPos const& blockPos, ::sim::LookDuration lookType);
 
     MCAPI void simulateLookAt(::Vec3 const& pos, ::sim::LookDuration lookType = sim::LookDuration::Instant);
 
@@ -203,10 +188,6 @@ public:
     MCAPI void simulateNavigateToLocations(::std::vector<::Vec3>&& positions, float speed);
 
     MCAPI void simulateSetBodyRotation(float degY);
-
-    MCAPI bool simulateSetItem(::ItemStack& item, bool selectSlot, int slot);
-
-    MCAPI void simulateStopDestroyingBlock();
 
     MCAPI bool simulateUseItem(::ItemStack& item);
 
@@ -277,31 +258,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $aiStep();
-
-    MCFOLD bool $isSimulated() const;
-
-    MCAPI ::std::string $getXuid() const;
-
-    MCAPI ::PlayerMovementSettings const& $getMovementSettings() const;
-
-    MCAPI void
-    $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
-
-    MCFOLD int $_getSpawnChunkLimit() const;
-
-    MCAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
-
-    MCFOLD void $_updateChunkPublisherView(::Vec3 const& position, float minDistance);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

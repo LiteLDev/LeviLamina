@@ -13,6 +13,18 @@ namespace mce { struct Image; }
 
 class TheEndLightTextureImageBuilder : public ::BaseLightTextureImageBuilder {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 16> mUnk7c13b0;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TheEndLightTextureImageBuilder& operator=(TheEndLightTextureImageBuilder const&);
+    TheEndLightTextureImageBuilder(TheEndLightTextureImageBuilder const&);
+    TheEndLightTextureImageBuilder();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool buildImage(
@@ -28,19 +40,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $buildImage(
-        ::BaseLightData const& lightData,
-        ::mce::Image*          targetImage,
-        uint                   imageLength,
-        float                  a,
-        float                  ambientBoost,
-        bool                   clampToMinimum
-    );
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

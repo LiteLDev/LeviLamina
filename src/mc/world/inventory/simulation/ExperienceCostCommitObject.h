@@ -28,37 +28,16 @@ public:
     // NOLINTBEGIN
     virtual ~ExperienceCostCommitObject() /*override*/ = default;
 
-    virtual bool append(::ContainerValidationCommitObject* other) /*override*/;
+    virtual bool append(::ContainerValidationCommitObject*) /*override*/;
 
-    virtual bool canCommit(::ContainerScreenContext const& screenContext) const /*override*/;
+    virtual bool canCommit(::ContainerScreenContext const&) const /*override*/;
 
-    virtual void commit(::ContainerScreenContext const& screenContext) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static ::std::optional<int>
-    tryGetCost(::std::vector<::std::shared_ptr<::ContainerValidationCommitObject>> const& commitObjects);
-#endif
+    virtual void commit(::ContainerScreenContext const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $append(::ContainerValidationCommitObject* other);
 
-    MCNAPI bool $canCommit(::ContainerScreenContext const& screenContext) const;
-
-    MCNAPI void $commit(::ContainerScreenContext const& screenContext);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

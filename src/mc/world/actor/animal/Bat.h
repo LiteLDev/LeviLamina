@@ -15,6 +15,7 @@ class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 // clang-format on
 
 class Bat : public ::Mob {
@@ -35,7 +36,7 @@ public:
     virtual void newServerAiStep() /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
@@ -68,22 +69,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $newServerAiStep();
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
-
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
-
-    MCFOLD void $pushActors();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

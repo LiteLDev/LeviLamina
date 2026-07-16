@@ -13,16 +13,4 @@ public:
     ::ll::TypedStorage<8, 112, ::SkinHandle> mSkinHandle;
     ::ll::TypedStorage<4, 4, uint>           mDefaultIndex;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~CharacterSelectorData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

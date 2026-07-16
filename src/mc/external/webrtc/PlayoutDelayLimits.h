@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class VideoPlayoutDelay; }
@@ -13,7 +16,8 @@ class PlayoutDelayLimits {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool Write(::rtc::ArrayView<uchar> data, ::webrtc::VideoPlayoutDelay const& playout_delay);
+    MCNAPI static bool
+    Write(::webrtc::ArrayView<uchar, 18446744073709546905> data, ::webrtc::VideoPlayoutDelay const& playout_delay);
     // NOLINTEND
 };
 

@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersionConstant;
 namespace SharedTypes::v1_21_20::JigsawStructureSet { struct Structure; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -25,27 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~Contents();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

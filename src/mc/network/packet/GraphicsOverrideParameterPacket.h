@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GraphicsOverrideParameterPacket& operator=(GraphicsOverrideParameterPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -69,20 +65,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI GraphicsOverrideParameterPacket();
-
-    MCAPI GraphicsOverrideParameterPacket(::GraphicsOverrideParameterPacket const&);
-
-    MCAPI explicit GraphicsOverrideParameterPacket(::GraphicsOverrideParameterPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::GraphicsOverrideParameterPacket const&);
-
-    MCAPI void* $ctor(::GraphicsOverrideParameterPacketPayload payload);
     // NOLINTEND
 
 public:

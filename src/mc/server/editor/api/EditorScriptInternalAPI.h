@@ -2,33 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/deps/scripting/script_engine/Closure.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Editor { class ServiceProviderCollection; }
-namespace Editor::API { class EditorExtension; }
-namespace Editor::API { class EditorExtensionContext; }
-namespace Editor::API { struct EditorExtensionOptionalParameters; }
-namespace Editor::ScriptModule { class ScriptCustomBiomeSource; }
-namespace Editor::ScriptModule { class ScriptInternalPlayerServiceContext; }
-namespace Editor::ScriptModule { struct ScriptCustomBiomeSourceConfig; }
-namespace ScriptModuleMinecraft { class ScriptBiomeType; }
-namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
-namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
-namespace ScriptModuleMinecraft { class ScriptDimension; }
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
-namespace ScriptModuleMinecraft { struct ScriptBiomeFillOptions; }
-namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct ContextConfig; }
-// clang-format on
-
 namespace Editor::API {
 
 class EditorScriptInternalAPI {
@@ -38,6 +11,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk6c34da;
     ::ll::UntypedStorage<8, 40> mUnk26f8ed;
     ::ll::UntypedStorage<8, 32> mUnk72f340;
+    ::ll::UntypedStorage<8, 32> mUnk24869d;
     ::ll::UntypedStorage<8, 8>  mUnk3d92dd;
     // NOLINTEND
 
@@ -46,67 +20,6 @@ public:
     EditorScriptInternalAPI& operator=(EditorScriptInternalAPI const&);
     EditorScriptInternalAPI(EditorScriptInternalAPI const&);
     EditorScriptInternalAPI();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI
-    EditorScriptInternalAPI(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptCustomBiomeSource>>
-    _createCustomBiomeSource(::Editor::ScriptModule::ScriptCustomBiomeSourceConfig const& config);
-
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::API::EditorExtension> _registerExtension(
-        ::Scripting::ContextConfig const& contextConfig,
-        ::std::string const&              extensionName,
-        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
-            activationClosure,
-        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
-                                                                          shutdownClosure,
-        ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> fillBiomes(
-        ::ScriptModuleMinecraft::ScriptDimension& dimension,
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>> const& volume,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType> const&                biome,
-        ::std::optional<::ScriptModuleMinecraft::ScriptBiomeFillOptions> const&                              options
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> fireTelemetryEvent(
-        ::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer,
-        ::std::string const&                   source,
-        ::std::string const&                   eventName,
-        ::std::string const&                   metadata
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
-    getPlayerServiceContext(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
-
-    MCNAPI ~EditorScriptInternalAPI();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Editor::API

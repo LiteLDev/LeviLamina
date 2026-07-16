@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/common/editor/MouseActionCategory.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -13,18 +13,12 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Input { class ContextKeyBinding; }
-namespace Editor::Input { struct EditorKeyBindingRegistered; }
-namespace Editor::Input { struct EditorKeyBindingUnregistered; }
-namespace Editor::Input { struct EditorKeyBindingUpdated; }
-namespace Editor::Input { struct EditorMouseBindingRegistered; }
-namespace Editor::Input { struct EditorMouseBindingUnregistered; }
 namespace Editor::Services { class ClientPlayerInputServiceProvider; }
 // clang-format on
 
 namespace OreUI {
 
-class EditorInputBindingFacet : public ::OreUI::FacetBase<::OreUI::EditorInputBindingFacet> {
+class EditorInputBindingFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::EditorInputBindingFacet> {
 public:
     // EditorInputBindingFacet inner types declare
     // clang-format off
@@ -45,30 +39,6 @@ public:
         ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mActionId;
         ::ll::TypedStorage<1, 1, bool>                            mCanRebind;
         ::ll::TypedStorage<1, 1, bool>                            mIsModified;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        KeyBindingFacet();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI KeyBindingFacet(::Editor::Input::ContextKeyBinding const& binding, bool useDefault);
-
-        MCAPI ~KeyBindingFacet();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::Editor::Input::ContextKeyBinding const& binding, bool useDefault);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -114,7 +84,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorInputBindingFacet() /*override*/;
+    virtual ~EditorInputBindingFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -123,46 +93,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorInputBindingFacet(::Editor::ServiceProviderCollection* services);
-
-    MCAPI void _handleKeyBindingChanged(
-        ::std::variant<
-            ::Editor::Input::EditorKeyBindingRegistered,
-            ::Editor::Input::EditorKeyBindingUpdated,
-            ::Editor::Input::EditorKeyBindingUnregistered> const& evt
-    );
-
-    MCAPI void _handleMouseBindingChanged(
-        ::std::variant<
-            ::Editor::Input::EditorMouseBindingRegistered,
-            ::Editor::Input::EditorMouseBindingUnregistered> const& evt
-    );
-
-    MCAPI void _handleTutorialStageChangeEvent(::HashedString const& isTutorialStarted, ::HashedString const&, bool);
-
-    MCAPI void _refreshBindings();
-
-    MCFOLD ::std::unordered_map<
-        ::HashedString,
-        ::std::unordered_map<::HashedString, ::OreUI::EditorInputBindingFacet::KeyBindingFacet>> const&
-    getKeyBindings() const;
-
-    MCFOLD ::std::unordered_map<
-        ::HashedString,
-        ::std::unordered_map<::HashedString, ::OreUI::EditorInputBindingFacet::MouseBindingFacet>> const&
-    getMouseBindings() const;
-
-    MCAPI bool invokeActionCallback(::HashedString const& eventId);
-
-    MCAPI void resetKeyBinding(::HashedString const& contextId, ::HashedString const& bindingId);
-
-    MCAPI void resetModifiedKeyBindings(::std::optional<::HashedString> const& contextId);
-
-    MCAPI void updateKeyBinding(
-        ::HashedString const&     contextId,
-        ::HashedString const&     bindingId,
-        int                       key,
-        ::Editor::Input::Modifier modifier
-    );
     // NOLINTEND
 
 public:
@@ -178,21 +108,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

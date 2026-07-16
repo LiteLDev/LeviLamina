@@ -55,33 +55,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibrarySearchBarScreenController() /*override*/;
+    virtual ~LibrarySearchBarScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit LibrarySearchBarScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI bool _updateCollection();
-
-    MCAPI void openSearch();
-
-    MCAPI void updateSearchString(::std::string searchString);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

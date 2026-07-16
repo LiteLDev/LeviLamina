@@ -28,6 +28,7 @@ public:
     struct EnabledStates;
     class UpdateCardinalGetPlacementBlockCallback;
     class UpdateFacingGetPlacementBlockCallback;
+    class UpdateRotationGetPlacementBlockCallback;
     // clang-format on
 
     // PlacementDirection inner types define
@@ -38,21 +39,7 @@ public:
         ::ll::TypedStorage<1, 1, bool> mCardinalDirection;
         ::ll::TypedStorage<1, 1, bool> mFacingDirection;
         ::ll::TypedStorage<1, 1, bool> mCornerAndCardinalDirection;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void fromStringVector(
-            ::BlockTrait::PlacementDirection::EnabledStates& instance,
-            ::std::vector<::std::string> const&              states
-        );
+        ::ll::TypedStorage<1, 1, bool> mSixteenWayRotation;
         // NOLINTEND
     };
 
@@ -67,8 +54,8 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual ::gsl::not_null<::Block const*> getPlacementBlock(
-            ::gsl::not_null<::Block const*> block,
-            ::Actor const&                  by,
+            ::gsl::not_null<::Block const*>,
+            ::Actor const&,
             ::BlockPos const&,
             uchar,
             ::Vec3 const&
@@ -80,23 +67,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
-            ::gsl::not_null<::Block const*> block,
-            ::Actor const&                  by,
-            ::BlockPos const&,
-            uchar,
-            ::Vec3 const&
-        ) const;
 
-        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
-
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -111,9 +82,9 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual ::gsl::not_null<::Block const*> getPlacementBlock(
-            ::gsl::not_null<::Block const*> block,
-            ::Actor const&                  by,
-            ::BlockPos const&               pos,
+            ::gsl::not_null<::Block const*>,
+            ::Actor const&,
+            ::BlockPos const&,
             uchar,
             ::Vec3 const&
         ) const /*override*/;
@@ -124,30 +95,36 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
-            ::gsl::not_null<::Block const*> block,
-            ::Actor const&                  by,
-            ::BlockPos const&               pos,
+
+        // NOLINTEND
+    };
+
+    class UpdateRotationGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ::gsl::not_null<::Block const*> getPlacementBlock(
+            ::gsl::not_null<::Block const*>,
+            ::Actor const&,
+            ::BlockPos const&,
             uchar,
             ::Vec3 const&
-        ) const;
+        ) const /*override*/;
 
-        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
-
-
+        virtual ::BlockTrait::PlacementCallbackOrder getCallbackOrder() const /*override*/;
         // NOLINTEND
 
     public:
-        // vftables
+        // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI static void** $vftable();
+
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 3, ::BlockTrait::PlacementDirection::EnabledStates>        mStates;
+    ::ll::TypedStorage<1, 4, ::BlockTrait::PlacementDirection::EnabledStates>        mStates;
     ::ll::TypedStorage<4, 4, float>                                                  mRotationOffset;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::BlockDescriptor>> mBlocksToCornerWith;
     // NOLINTEND
@@ -162,17 +139,6 @@ public:
     virtual ::std::unique_ptr<::CompoundTag> _buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
     virtual ::std::string const& _getName() const /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _addCornerConnection(
-        ::BlockType&                                                 blockType,
-        ::std::vector<::SharedTypes::Legacy::BlockDescriptor> const& blocksToCornerWith
-    );
-
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

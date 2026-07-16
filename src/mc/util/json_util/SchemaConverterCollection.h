@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 namespace JsonUtil {
 
 class SchemaConverterCollection {
@@ -25,28 +20,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit SchemaConverterCollection(::Json::Value& node);
-
-    MCNAPI ::JsonUtil::SchemaConverterCollection copy() const;
-
     MCNAPI ::JsonUtil::SchemaConverterCollection&
     operator()(::std::string const& filterString, bool forceCaseInsensitive);
 
     MCNAPI ::JsonUtil::SchemaConverterCollection& operator()(uint64 minIndex, uint64 maxIndex, bool);
 
+#ifdef LL_PLAT_C
     MCNAPI ~SchemaConverterCollection();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Json::Value& node);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 #include "mc/client/gui/screens/controllers/RealmPlayer.h"
 #include "mc/client/network/realms/RealmsAPI.h"
@@ -17,9 +16,7 @@ class DropdownScreenController;
 class MainMenuScreenModel;
 class PlatformMultiplayerRestrictions;
 class ProgressHandler;
-class UIPropertyBag;
 namespace Json { class Value; }
-namespace Realms { struct Player; }
 namespace Social { struct PlatformUserProfileData; }
 // clang-format on
 
@@ -108,7 +105,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsAllowListScreenController() /*override*/;
+    virtual ~RealmsAllowListScreenController() /*override*/ = default;
 
     virtual void onLeave() /*override*/;
 
@@ -131,82 +128,6 @@ public:
         ::std::function<void()>                  followUpCallbackAfterCreation,
         bool                                     fromSettingsOrAllowListEntryPoint
     );
-
-    MCAPI void _buildPlayerList();
-
-    MCAPI void _clearFromFriendLists(::std::string const& xuid);
-
-    MCAPI void _clearMemberList();
-
-    MCAPI void _finalizeLinkedAccountLoading();
-
-    MCAPI void _getBlocklistProfiles(::std::vector<::std::string> allXuids, ::std::vector<::std::string> blockList);
-
-    MCAPI ::std::map<::std::string, ::RealmsAPI::InviteAction> _getInvitesToSend() const;
-
-    MCAPI ::RealmPlayer*
-    _getRealmPlayerAtIndex(int index, ::RealmsAllowListScreenController::RealmPlayerList realmPlayerList);
-
-    MCAPI ::RealmPlayer* _getRealmPlayerFromXuid(::std::string const& xuid);
-
-    MCAPI ::RealmsAllowListScreenController::RealmPlayerList const
-    _getRealmPlayerListFromCollection(::UIPropertyBag const* bag) const;
-
-    MCAPI void _handleDoesNotHavePermission(::std::function<void()> newWorldCallback);
-
-    MCAPI ::ui::ViewRequest _handleInviteClick(::UIPropertyBag* bag);
-
-    MCAPI void _handlePlayerInvite(::RealmPlayer& player);
-
-    MCAPI void _handleUpdateFailed(::std::function<void()> callback);
-
-    MCAPI void _initializeLinkedAccounts(
-        ::std::vector<::std::string>&                           platformIds,
-        ::std::vector<::Social::PlatformUserProfileData> const& platformProfiles
-    );
-
-    MCAPI void _initializePlayerList(::std::function<void()> callback);
-
-    MCAPI void _joinRealm();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _requestPlatformGamerpic(::Social::PlatformUserProfileData const& platformEntry);
-
-    MCAPI void _sendInvites(::std::function<void()> callback);
-
-    MCAPI bool _shouldUpdateFriendsList();
-
-    MCAPI void _sortPlayerList();
-
-    MCAPI void _updateFriendsList();
-
-    MCAPI void _updateLinkedAccountLoading();
-
-    MCAPI void _updatePlayerList(
-        ::std::vector<::Realms::Player> const& newPlayers,
-        ::std::vector<::Realms::Player> const& newBlockList
-    );
-
-    MCAPI void _updatePlayerlistModel(
-        ::std::string const&                               filter,
-        ::RealmsAllowListScreenController::RealmPlayerList realmPlayerList,
-        bool                                               forceUpdate
-    );
-
-    MCAPI void sendDefaultPermission(::PlayerPermissionLevel const& permission);
-
-    MCAPI void sendInvitesWithProgress(::std::function<void()> callback);
-
-    MCAPI void sendUserPermission(
-        ::std::string const&    xuid,
-        ::PlayerPermissionLevel permission,
-        ::PlayerPermissionLevel oldPermission
-    );
-
-    MCAPI void updateWorld(::Realms::World const& world, ::std::function<void()> callback);
     // NOLINTEND
 
 public:
@@ -222,30 +143,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLeave();
 
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCAPI ::std::string $_getButtonBDescription();
-
-    MCAPI bool $_getGamepadHelperVisible() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

@@ -4,31 +4,28 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 #include "mc/client/gui/screens/controllers/SlotSelectedAction.h"
 
 // auto generated forward declare list
 // clang-format off
 class MainMenuScreenModel;
-namespace Realms { struct Slot; }
+struct RealmsWorldInfo;
 namespace Realms { struct World; }
-namespace RealmsScreenUtils { struct RealmsWorldLoadingDetailsGroup; }
 // clang-format on
 
 class ChooseRealmScreenController : public ::MainMenuScreenController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>           mDirty;
-    ::ll::TypedStorage<1, 1, bool>           mSlotsViewToggle;
-    ::ll::TypedStorage<1, 1, bool>           mProgressLoadingVisible;
-    ::ll::TypedStorage<4, 4, int>            mCurrentRealmIndex;
-    ::ll::TypedStorage<8, 32, ::std::string> mCurrentSlotImage;
-    ::ll::TypedStorage<8, 32, ::std::string> mCurrentSlotImagePath;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RealmsScreenUtils::RealmsWorldLoadingDetailsGroup>>
-                                                                      mRealmsWorldLoadingDetailsGroup;
-    ::ll::TypedStorage<1, 1, bool>                                    mDoneLoading;
+    ::ll::TypedStorage<1, 1, bool>                                    mDirty;
+    ::ll::TypedStorage<1, 1, bool>                                    mSlotsViewToggle;
+    ::ll::TypedStorage<1, 1, bool>                                    mProgressLoadingVisible;
+    ::ll::TypedStorage<4, 4, int>                                     mCurrentRealmIndex;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mCurrentSlotImage;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mCurrentSlotImagePath;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsFetching;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RealmsWorldInfo>>       mRealmsWorldsInfo;
     ::ll::TypedStorage<8, 64, ::std::function<void(::Realms::World)>> mCallback;
     ::ll::TypedStorage<8, 64, ::std::function<void()>>                mOnCancelCallback;
     ::ll::TypedStorage<4, 4, ::SlotSelectedAction>                    mSlotSelectedAction;
@@ -62,16 +59,6 @@ public:
         ::SlotSelectedAction                     selectionAction,
         ::std::function<void()>                  onCancelCallback
     );
-
-    MCAPI void _fetchUserWorlds();
-
-    MCAPI ::Realms::Slot _getSlotAt(int index);
-
-    MCAPI ::ui::ViewRequest _notifyCallback(::Realms::World world);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEvents();
     // NOLINTEND
 
 public:
@@ -88,20 +75,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onCreation();
 
-    MCAPI void $onOpen();
-
-    MCAPI void $onDelete();
-
-    MCAPI ::ui::DirtyFlag $tick();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

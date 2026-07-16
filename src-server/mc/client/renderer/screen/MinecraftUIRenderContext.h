@@ -8,13 +8,10 @@ public:
     // clang-format off
     struct TextItem;
     struct ImageItem;
-    struct PersistentMeshItem;
     // clang-format on
 
     // MinecraftUIRenderContext inner types define
     struct TextItem {};
 
     struct ImageItem {};
-
-    struct PersistentMeshItem {};
 };

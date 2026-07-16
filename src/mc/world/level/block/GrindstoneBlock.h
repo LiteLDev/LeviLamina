@@ -20,10 +20,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class GrindstoneBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    GrindstoneBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
@@ -45,17 +41,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GrindstoneBlock(::std::string const& nameId, int id);
-
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

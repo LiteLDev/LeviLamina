@@ -28,17 +28,11 @@ public:
     // NOLINTBEGIN
     virtual ~SetSpawnEggFunction() /*override*/ = default;
 
-    virtual void apply(::ItemStack& item, ::Random& context, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemStack&, ::Random&, ::LootTableContext&) /*override*/;
 
-    virtual void apply(::ItemInstance& itemInstance, ::Random& context, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemInstance&, ::Random&, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::string const& getCanonicalName() const;
     // NOLINTEND
 
 public:
@@ -51,18 +45,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& context, ::LootTableContext&);
 
-    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& context, ::LootTableContext&);
-
-    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/file/FileAccessType.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Core { class PathView; }
-// clang-format on
-
 namespace Core {
 
 class TransactionFrame {
@@ -26,26 +18,6 @@ public:
     TransactionFrame& operator=(TransactionFrame const&);
     TransactionFrame(TransactionFrame const&);
     TransactionFrame();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI TransactionFrame(::Core::FileAccessType accessType, ::Core::PathView path);
-
-    MCNAPI ~TransactionFrame();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::FileAccessType accessType, ::Core::PathView path);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Core

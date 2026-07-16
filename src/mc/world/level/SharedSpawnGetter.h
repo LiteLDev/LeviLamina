@@ -20,27 +20,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SharedSpawnGetter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SharedSpawnGetter() /*override*/ = default;
 
     virtual ::BlockPos const& getSharedSpawnPosition() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SharedSpawnGetter(::Bedrock::NotNullNonOwnerPtr<::LevelData const> levelData);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::LevelData const> levelData);
     // NOLINTEND
 
 public:

@@ -32,7 +32,7 @@ class ShieldItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int selected, bool) const
+    virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int, bool selected) const
         /*override*/;
 
     virtual int getEnchantSlot() const /*override*/;
@@ -72,7 +72,7 @@ public:
 
     virtual int getCooldownDuration() const /*override*/;
 
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const& userData, ::CompoundTag const*) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const /*override*/;
 
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
@@ -85,14 +85,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::InHandUpdateType _getInHandUpdateType(
-        ::Player const&    player,
-        ::ItemStack const& oldItem,
-        ::ItemStack const& newItem,
-        bool               slotChanged,
-        bool
-    ) const;
-
     MCAPI void playBlockSound(::Player* player) const;
 
     MCAPI void playBreakSound(::Player* player) const;
@@ -107,21 +99,11 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& EFFECTIVE_BLOCK_DELAY();
-
-    MCAPI static int const& NO_SHIELD_PATTERN();
-
-    MCAPI static ::std::string const& TIMESTAMP_TAG();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int selected, bool) const;
+    MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int, bool selected) const;
 
-    MCFOLD int $getEnchantSlot() const;
+    MCAPI int $getEnchantSlot() const;
 
     MCAPI bool $isValidRepairItem(
         ::ItemStackBase const&   source,
@@ -156,7 +138,7 @@ public:
 
     MCFOLD int $getCooldownDuration() const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& userData, ::CompoundTag const*) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
 
     MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/math/Color.h"
 
 // auto generated forward declare list
@@ -13,7 +13,7 @@ namespace Editor { class ServiceProviderCollection; }
 
 namespace OreUI {
 
-class EditorProjectConstantsFacet : public ::OreUI::FacetBase<::OreUI::EditorProjectConstantsFacet> {
+class EditorProjectConstantsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::EditorProjectConstantsFacet> {
 public:
     // EditorProjectConstantsFacet inner types declare
     // clang-format off
@@ -30,12 +30,6 @@ public:
         ::ll::TypedStorage<8, 8, uint64 const> mThumbnailWidth;
         ::ll::TypedStorage<8, 8, uint64 const> mThumbnailHeight;
         // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-        // NOLINTEND
     };
 
     struct BlockInfo {
@@ -45,24 +39,6 @@ public:
         ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mLabel;
         ::ll::TypedStorage<4, 20, ::std::optional<::mce::Color>>  mAverageColor;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~BlockInfo();
-        // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct EntityInfo {
@@ -70,24 +46,6 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mLabel;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~EntityInfo();
-        // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -111,7 +69,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorProjectConstantsFacet() /*override*/;
+    virtual ~EditorProjectConstantsFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -120,18 +78,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorProjectConstantsFacet(::Editor::ServiceProviderCollection* services);
-
-    MCFOLD ::std::unordered_map<::std::string, ::OreUI::EditorProjectConstantsFacet::BlockInfo> const&
-    getBlockInfoMap() const;
-
-    MCFOLD ::std::vector<::std::string> const& getBlocknameList() const;
-
-    MCFOLD ::std::vector<::std::string> const& getEntityIdList() const;
-
-    MCFOLD ::std::unordered_map<::std::string, ::OreUI::EditorProjectConstantsFacet::EntityInfo> const&
-    getEntityInfoMap() const;
-
-    MCFOLD bool const isBlockAtlasAvailable() const;
     // NOLINTEND
 
 public:
@@ -147,21 +93,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

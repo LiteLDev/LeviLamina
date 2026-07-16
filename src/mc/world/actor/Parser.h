@@ -16,7 +16,6 @@
 class ActorDefinitionTrigger;
 class BlockDescriptor;
 class DefinitionTrigger;
-class FilterGroup;
 class HashedString;
 class ItemDescriptor;
 class MobEffectInstance;
@@ -24,7 +23,6 @@ class Vec3;
 struct ActorDefinitionIdentifier;
 struct EffectDuration;
 struct FloatRange;
-struct IntRange;
 namespace Json { class Value; }
 namespace mce { class Color; }
 // clang-format on
@@ -39,22 +37,11 @@ public:
 
     MCAPI static bool parse(::Json::Value const& val, ::DefinitionTrigger& definitionTrigger, bool acceptString);
 
-    MCAPI static bool parse(::Json::Value const& val, ::MolangVersion molangVersion, ::ItemDescriptor& itemDescriptor);
-
     MCAPI static bool
     parse(::Json::Value const& val, ::MolangVersion molangVersion, ::std::vector<::ItemDescriptor>& itemDescriptors);
 
-    MCAPI static bool parse(::Json::Value const& val, ::ActorDefinitionTrigger& trigger, char const* jsonName);
-
     MCAPI static bool
     parse(::Json::Value const& val, ::std::vector<::ActorDefinitionTrigger>& triggers, char const* jsonName);
-
-    MCAPI static bool parse(
-        ::Json::Value const&                  val,
-        ::SharedTypes::Legacy::FilterSubject& target,
-        char const*                           jsonName,
-        char const*                           defaultValue
-    );
 
     MCAPI static bool
     parse(::Json::Value const& val, ::EffectDuration& variable, char const* jsonName, bool convertToTicks);
@@ -62,36 +49,9 @@ public:
     MCAPI static void parse(::Json::Value const& val, uchar& face, uchar defaultValue);
 
     MCAPI static void
-    parse(::Json::Value const& val, ::MolangVersion molangVersion, ::BlockDescriptor& blockDescriptor);
-
-    MCAPI static void
-    parse(::Json::Value const& val, ::MolangVersion molangVersion, ::std::vector<::BlockDescriptor>& blockDescriptors);
-
-    MCAPI static void parse(::Json::Value const& val, ::FloatRange& variable, char const* jsonName);
-
-    MCAPI static void parse(::Json::Value const& val, ::Json::Value& variable, char const* jsonName);
-
-    MCAPI static void
     parse(::Json::Value const& val, ::WeightedChoices<::ActorDefinitionTrigger>& variable, char const* jsonName);
 
-    MCAPI static void parse(::Json::Value const& val, ::std::vector<::std::string>& variable, char const* jsonName);
-
     MCAPI static void parse(::Json::Value const& val, ::MobEffectInstance& variable, char const* jsonName);
-
-    MCAPI static void parse(
-        ::Json::Value const&              val,
-        ::MolangVersion                   molangVersion,
-        ::std::vector<::BlockDescriptor>& variable,
-        char const*                       jsonName
-    );
-
-    MCAPI static void parse(::Json::Value const& val, ::FilterGroup& variable, char const* jsonName, char const*);
-
-    MCAPI static void parse(::Json::Value const& val, int& variable, char const* jsonName, int defaultValue);
-
-    MCAPI static void parse(::Json::Value const& val, uint& variable, char const* jsonName, uint defaultValue);
-
-    MCAPI static void parse(::Json::Value const& val, float& variable, char const* jsonName, float defaultValue);
 
     MCAPI static void parse(
         ::Json::Value const&         val,
@@ -142,15 +102,6 @@ public:
     parse(::Json::Value const& val, ::ParticleType& variable, char const* jsonName, char const* defaultValue);
 
     MCAPI static void parse(::Json::Value const& val, bool& variable, char const* jsonName, bool defaultValue);
-
-    MCAPI static void
-    parse(::Json::Value const& val, ::IntRange& variable, char const* jsonName, int defaultMin, int defaultMax);
-
-    MCAPI static void serialize(::ActorDefinitionTrigger const& trigger, ::Json::Value& val, char const* jsonName);
-
-    MCAPI static void serialize(::ActorDefinitionIdentifier const& variable, ::Json::Value& val, char const* jsonName);
-
-    MCAPI static void serialize(::EffectDuration const& variable, ::Json::Value& val, char const* jsonName);
 
     MCAPI static void serialize(::FloatRange const& variable, ::Json::Value& val, char const* jsonName);
 

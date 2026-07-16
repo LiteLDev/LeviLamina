@@ -29,7 +29,6 @@ class ScreenContext;
 class ScreenController;
 class ScreenView;
 class TaskGroup;
-class UIControl;
 class UIControlFactory;
 class UIMeasureStrategy;
 class VisualTree;
@@ -96,11 +95,9 @@ public:
 
     virtual ::std::weak_ptr<::AbstractSceneProxy> getProxy() /*override*/;
 
-    virtual void setScreenState(
-        ::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& routeQueryParameters
-    ) /*override*/;
+    virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) /*override*/;
 
-    virtual ::RectangleArea getAreaOfControlByName(::std::string const& controlName) const /*override*/;
+    virtual ::RectangleArea getAreaOfControlByName(::std::string const&) const /*override*/;
 
     virtual void init(::ScreenSizeData const& screenSizeData) /*override*/;
 
@@ -127,7 +124,7 @@ public:
         ::FocusImpact                     focusImpact
     ) /*override*/;
 
-    virtual void handlePointerPressed(bool) /*override*/;
+    virtual void handlePointerPressed(bool pressed) /*override*/;
 
     virtual void handleLicenseChanged() /*override*/;
 
@@ -145,9 +142,9 @@ public:
 
     virtual void frameUpdate(::MinecraftUIFrameUpdateContext& frameUpdateContext) /*override*/;
 
-    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const&) /*override*/;
+    virtual void render(::ScreenContext&, ::FrameRenderObject const&) /*override*/;
 
-    virtual void applyInput(float) /*override*/;
+    virtual void applyInput(float a) /*override*/;
 
     virtual void handleInputModeChanged(::InputMode inputMode) /*override*/;
 
@@ -161,7 +158,7 @@ public:
     virtual void
     handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact) /*override*/;
 
-    virtual void setTextboxText(::std::string const& text, ::TextboxTextUpdateReason reason) /*override*/;
+    virtual void setTextboxText(::std::string const&, ::TextboxTextUpdateReason) /*override*/;
 
     virtual void onKeyboardDismissed() /*override*/;
 
@@ -197,9 +194,9 @@ public:
 
     virtual ::std::string getScreenName() const /*override*/;
 
-    virtual bool equalsScreenName(::std::string_view comparison) const /*override*/;
+    virtual bool equalsScreenName(::std::string_view) const /*override*/;
 
-    virtual bool containsScreenNameSubstring(::std::string_view substring) const /*override*/;
+    virtual bool containsScreenNameSubstring(::std::string_view) const /*override*/;
 
     virtual ::std::string getRoute() const /*override*/;
 
@@ -207,10 +204,9 @@ public:
 
     virtual bool getShouldSendEvents() /*override*/;
 
-    virtual void setShouldSendEvents(bool shouldSendEvents) /*override*/;
+    virtual void setShouldSendEvents(bool sendEvents) /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
-        /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
 
     virtual int getScreenVersion() const /*override*/;
 
@@ -232,13 +228,7 @@ public:
         ::std::weak_ptr<::ITTSEventManager>                     ttsEventManager
     );
 
-    MCAPI ::ScreenController& getController();
-
-    MCAPI ::std::shared_ptr<::UIControl> getFocusedControl() const;
-
     MCAPI void setInitializedCallback(::std::function<void()> initializedCallback);
-
-    MCAPI bool wasDirectionalButtonPressed() const;
     // NOLINTEND
 
 public:
@@ -272,153 +262,14 @@ public:
 
     MCAPI ::glm::vec2 const& $getGamepadCursorPosition() const;
 
-    MCAPI ::std::vector<::RectangleArea> $getInputAreas() const;
-
-    MCAPI void $cleanInputComponents();
-
     MCAPI void $onCreation();
-
-    MCAPI void $onLeave();
-
-    MCAPI bool $canBePushed() const;
-
-    MCAPI bool $canBePopped() const;
-
-    MCAPI bool $canBeTransitioned() const;
-
-    MCAPI void $onScreenExit(bool isPopping, bool doScreenTransitions, ::std::shared_ptr<::AbstractScene> pushedScene);
-
-    MCAPI void $onScreenEntrance(bool isRevisiting, bool doScreenTransitions);
 
     MCAPI bool $isEntering() const;
 
     MCAPI bool $isExiting() const;
 
-    MCAPI void $schedulePop();
-
     MCAPI bool $isTerminating() const;
 
     MCAPI bool $loadScreenImmediately() const;
-
-    MCAPI ::std::weak_ptr<::AbstractSceneProxy> $getProxy();
-
-    MCAPI void
-    $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& routeQueryParameters);
-
-    MCAPI ::RectangleArea $getAreaOfControlByName(::std::string const& controlName) const;
-
-    MCAPI void $init(::ScreenSizeData const& screenSizeData);
-
-    MCAPI void $onSetKeyboardHeight(float keyboardHeight);
-
-    MCAPI void $onFocusLost();
-
-    MCAPI void $onInternetUpdate();
-
-    MCAPI bool $renderGameBehind() const;
-
-    MCAPI bool $closeOnPlayerHurt() const;
-
-    MCAPI bool $useCustomPocketToast() const;
-
-    MCAPI void $setSize(::ScreenSizeData const& screenSizeData);
-
-    MCAPI void $handleButtonPress(uint buttonId, ::FocusImpact focusImpact);
-
-    MCAPI void $handleButtonRelease(uint buttonId, ::FocusImpact focusImpact);
-
-    MCAPI bool $handlePointerLocation(::PointerLocationEventData const& pointerLocationData, ::FocusImpact focusImpact);
-
-    MCFOLD void $handlePointerPressed(bool);
-
-    MCAPI void $handleLicenseChanged();
-
-    MCAPI void $terminate();
-
-    MCAPI void $onFocusGained();
-
-    MCAPI void $onGameEventNotification(::ui::GameEventNotification notification);
-
-    MCAPI void $reload();
-
-    MCAPI void $leaveScreen();
-
-    MCAPI void $preFrameTick();
-
-    MCAPI void $frameUpdate(::MinecraftUIFrameUpdateContext& frameUpdateContext);
-
-    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const&);
-
-    MCAPI void $applyInput(float);
-
-    MCAPI void $handleInputModeChanged(::InputMode inputMode);
-
-    MCAPI void $handleRawInputEvent(int id, ::RawInputType keyType, ::ButtonState state, bool allowRemapping);
-
-    MCAPI void $handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact);
-
-    MCAPI void $handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact);
-
-    MCAPI void $handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact);
-
-    MCAPI void $setTextboxText(::std::string const& text, ::TextboxTextUpdateReason reason);
-
-    MCAPI void $onKeyboardDismissed();
-
-    MCAPI bool $absorbsInput() const;
-
-    MCAPI bool $screenIsNotFlushable() const;
-
-    MCAPI bool $alwaysAcceptsInput() const;
-
-    MCAPI bool $isShowingMenu() const;
-
-    MCAPI bool $isModal() const;
-
-    MCAPI bool $shouldStealMouse() const;
-
-    MCAPI bool $screenDrawsLast() const;
-
-    MCAPI bool $shouldBeSkippedInAutomation() const;
-
-    MCAPI int $getWidth();
-
-    MCAPI int $getHeight();
-
-    MCAPI bool $renderOnlyWhenTopMost() const;
-
-    MCAPI bool $lowFreqRendering() const;
-
-    MCAPI bool $ignoreAsTop() const;
-
-    MCAPI ::ui::SceneType $getSceneType() const;
-
-    MCAPI ::std::string $getRawScreenName() const;
-
-    MCAPI ::std::string $getScreenName() const;
-
-    MCAPI bool $equalsScreenName(::std::string_view comparison) const;
-
-    MCAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
-
-    MCAPI ::std::string $getRoute() const;
-
-    MCAPI ::std::string $getScreenTelemetryName() const;
-
-    MCAPI bool $getShouldSendEvents();
-
-    MCAPI void $setShouldSendEvents(bool shouldSendEvents);
-
-    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
-
-    MCAPI int $getScreenVersion() const;
-
-    MCAPI void $onDelete(::CachedScenes& cache, ::TaskGroup& taskGroup);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

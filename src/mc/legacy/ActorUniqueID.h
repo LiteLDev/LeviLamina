@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { class UUID; }
-// clang-format on
-
 struct ActorUniqueID {
 public:
     [[nodiscard]] constexpr bool operator==(ActorUniqueID const& other) const noexcept { return rawID == other.rawID; }
@@ -22,9 +17,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
+    // member functions
     // NOLINTBEGIN
-    MCAPI static ::ActorUniqueID fromUUID(::mce::UUID const& uuid);
+    MCAPI uint64 getHash() const;
     // NOLINTEND
 
 public:

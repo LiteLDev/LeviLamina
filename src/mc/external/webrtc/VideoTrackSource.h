@@ -3,17 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/VideoSinkInterface.h"
-#include "mc/external/rtc/VideoSourceInterface.h"
 #include "mc/external/webrtc/MediaSourceInterface.h"
 #include "mc/external/webrtc/Notifier.h"
+#include "mc/external/webrtc/VideoSinkInterface.h"
+#include "mc/external/webrtc/VideoSourceInterface.h"
 #include "mc/external/webrtc/VideoTrackSourceInterface.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { struct VideoSinkWants; }
 namespace webrtc { class RecordableEncodedFrame; }
 namespace webrtc { class VideoFrame; }
+namespace webrtc { struct VideoSinkWants; }
 // clang-format on
 
 namespace webrtc {
@@ -48,21 +48,21 @@ public:
     virtual bool GetStats(::webrtc::VideoTrackSourceInterface::Stats* stats) /*override*/;
 
     virtual void AddOrUpdateSink(
-        ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink,
-        ::rtc::VideoSinkWants const&                     wants
+        ::webrtc::VideoSinkInterface<::webrtc::VideoFrame>* sink,
+        ::webrtc::VideoSinkWants const&                     wants
     ) /*override*/;
 
-    virtual void RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink) /*override*/;
+    virtual void RemoveSink(::webrtc::VideoSinkInterface<::webrtc::VideoFrame>* sink) /*override*/;
 
     virtual bool SupportsEncodedOutput() const /*override*/;
 
     virtual void GenerateKeyFrame() /*override*/;
 
-    virtual void AddEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink) /*override*/;
+    virtual void AddEncodedSink(::webrtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink) /*override*/;
 
-    virtual void RemoveEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink) /*override*/;
+    virtual void RemoveEncodedSink(::webrtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink) /*override*/;
 
-    virtual ::rtc::VideoSourceInterface<::webrtc::VideoFrame>* source() = 0;
+    virtual ::webrtc::VideoSourceInterface<::webrtc::VideoFrame>* source() = 0;
 
     virtual ~VideoTrackSource() /*override*/;
     // NOLINTEND
@@ -101,17 +101,17 @@ public:
     MCNAPI bool $GetStats(::webrtc::VideoTrackSourceInterface::Stats* stats);
 
     MCNAPI void
-    $AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants);
+    $AddOrUpdateSink(::webrtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::webrtc::VideoSinkWants const& wants);
 
-    MCNAPI void $RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink);
+    MCNAPI void $RemoveSink(::webrtc::VideoSinkInterface<::webrtc::VideoFrame>* sink);
 
     MCNAPI bool $SupportsEncodedOutput() const;
 
     MCNAPI void $GenerateKeyFrame();
 
-    MCNAPI void $AddEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink);
+    MCNAPI void $AddEncodedSink(::webrtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink);
 
-    MCNAPI void $RemoveEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink);
+    MCNAPI void $RemoveEncodedSink(::webrtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink);
 
 
     // NOLINTEND

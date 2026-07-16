@@ -10,7 +10,6 @@
 class Actor;
 class ActorRenderer;
 struct GameplayRelatedRenderData;
-struct ProcessedDataDrivenRenderers;
 // clang-format on
 
 class DataDrivenRendererV2 {
@@ -34,23 +33,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    DataDrivenRendererV2(::ProcessedDataDrivenRenderers const* v2BakedRenderers, bool renderActorsWithAttachables);
-
     MCNAPI uint generateFrame(::GameplayRelatedRenderData const& renderData);
-
-    MCNAPI void reserveActors(uint64 size);
 
     MCNAPI bool
     tryAddActor(::Actor& actor, ::std::shared_ptr<::ActorRenderer> const& renderer, ::ShadowContext shadowContext);
 
     MCNAPI ~DataDrivenRendererV2();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ProcessedDataDrivenRenderers const* v2BakedRenderers, bool renderActorsWithAttachables);
     // NOLINTEND
 
 public:

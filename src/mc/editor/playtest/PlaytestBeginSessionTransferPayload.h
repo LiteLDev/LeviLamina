@@ -37,12 +37,6 @@ public:
     // NOLINTBEGIN
     MCNAPI PlaytestBeginSessionTransferPayload(::Editor::Network::PlaytestBeginSessionTransferPayload const&);
 
-    MCNAPI PlaytestBeginSessionTransferPayload(
-        ::std::string const& destinationLevelId,
-        ::std::string const& returnProjectLevelId,
-        ::std::string const& sessionHandle
-    );
-
     MCNAPI ::Editor::Network::PlaytestBeginSessionTransferPayload&
     operator=(::Editor::Network::PlaytestBeginSessionTransferPayload const&);
     // NOLINTEND
@@ -57,12 +51,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::Network::PlaytestBeginSessionTransferPayload const&);
-
-    MCNAPI void* $ctor(
-        ::std::string const& destinationLevelId,
-        ::std::string const& returnProjectLevelId,
-        ::std::string const& sessionHandle
-    );
     // NOLINTEND
 
 public:

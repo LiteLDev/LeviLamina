@@ -47,8 +47,6 @@ public:
         ::std::string const&      sourceFileName
     );
 
-    MCNAPI ::JsonValueHierarchyNode& operator=(::JsonValueHierarchyNode&&);
-
     MCNAPI ~JsonValueHierarchyNode();
 #endif
     // NOLINTEND

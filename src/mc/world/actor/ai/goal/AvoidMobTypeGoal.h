@@ -13,7 +13,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Mob;
 class Path;
 struct MobDescriptor;
@@ -66,24 +65,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit AvoidMobTypeGoal(::Mob& mob);
-
-    MCAPI bool canFindAvoidPath(::Actor* actor);
-
-    MCAPI bool canFindAvoidPos(::Actor& entity);
-
-    MCAPI ::Actor* findNearestEntityToAvoid(float dist);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

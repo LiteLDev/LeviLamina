@@ -3,32 +3,32 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/VideoSinkInterface.h"
-#include "mc/external/rtc/VideoSourceBaseGuarded.h"
 #include "mc/external/webrtc/MediaStreamTrack.h"
 #include "mc/external/webrtc/MediaStreamTrackInterface.h"
 #include "mc/external/webrtc/ObserverInterface.h"
+#include "mc/external/webrtc/VideoSinkInterface.h"
+#include "mc/external/webrtc/VideoSourceBaseGuarded.h"
 #include "mc/external/webrtc/VideoTrackInterface.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class Thread; }
-namespace rtc { struct VideoSinkWants; }
+namespace webrtc { class Thread; }
 namespace webrtc { class VideoFrame; }
 namespace webrtc { class VideoTrackSourceInterface; }
+namespace webrtc { struct VideoSinkWants; }
 // clang-format on
 
 namespace webrtc {
 
 class VideoTrack : public ::webrtc::MediaStreamTrack<::webrtc::VideoTrackInterface>,
-                   public ::rtc::VideoSourceBaseGuarded,
+                   public ::webrtc::VideoSourceBaseGuarded,
                    public ::webrtc::ObserverInterface {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1> mUnk983a4d;
-    ::ll::UntypedStorage<8, 8> mUnk828522;
+    ::ll::UntypedStorage<8, 8> mUnkd46400;
     ::ll::UntypedStorage<8, 8> mUnk348dcd;
     ::ll::UntypedStorage<4, 4> mUnkaaa9c5;
     ::ll::UntypedStorage<1, 1> mUnka54207;
@@ -44,11 +44,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void AddOrUpdateSink(
-        ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink,
-        ::rtc::VideoSinkWants const&                     wants
+        ::webrtc::VideoSinkInterface<::webrtc::VideoFrame>* sink,
+        ::webrtc::VideoSinkWants const&                     wants
     ) /*override*/;
 
-    virtual void RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink) /*override*/;
+    virtual void RemoveSink(::webrtc::VideoSinkInterface<::webrtc::VideoFrame>* sink) /*override*/;
 
     virtual void RequestRefreshFrame() /*override*/;
 
@@ -77,7 +77,7 @@ public:
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::VideoTrack> Create(
         ::std::string_view                                           id,
         ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceInterface> source,
-        ::rtc::Thread*                                               worker_thread
+        ::webrtc::Thread*                                            worker_thread
     );
     // NOLINTEND
 
@@ -91,9 +91,9 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void
-    $AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants);
+    $AddOrUpdateSink(::webrtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::webrtc::VideoSinkWants const& wants);
 
-    MCNAPI void $RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink);
+    MCNAPI void $RemoveSink(::webrtc::VideoSinkInterface<::webrtc::VideoFrame>* sink);
 
     MCNAPI void $RequestRefreshFrame();
 

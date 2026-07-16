@@ -3,12 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor { class ServiceProviderCollection; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -29,25 +27,11 @@ public:
     ScriptEditorConstants();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptEditorConstants(
-        ::Editor::ServiceProviderCollection&  serviceProviders,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::Scripting::WeakLifetimeScope const& scope);
+#endif
     // NOLINTEND
 };
 

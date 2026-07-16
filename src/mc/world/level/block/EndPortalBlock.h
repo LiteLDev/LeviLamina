@@ -25,10 +25,6 @@ namespace BlockEvents { class BlockEntityFallOnEvent; }
 
 class EndPortalBlock : public ::ActorBlock {
 public:
-    // prevent constructor by default
-    EndPortalBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool addCollisionShapes(
@@ -54,15 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EndPortalBlock(::std::string const& nameId, int id);
-
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

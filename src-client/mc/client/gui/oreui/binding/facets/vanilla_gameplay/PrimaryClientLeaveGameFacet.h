@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/util/ScreenshotOptions.h"
 #include "mc/client/util/renderdragon/PendingScreenshotImage.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -19,7 +19,7 @@ namespace mce { struct ViewportInfo; }
 
 namespace OreUI {
 
-class PrimaryClientLeaveGameFacet : public ::OreUI::FacetBase<::OreUI::PrimaryClientLeaveGameFacet> {
+class PrimaryClientLeaveGameFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PrimaryClientLeaveGameFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -61,18 +61,6 @@ public:
         ::std::function<void()>                                     requestQuit,
         ::std::function<::mce::ViewportInfo()>                      getViewportInfo
     );
-
-    MCAPI bool _beginLeaveGame();
-
-    MCAPI void _finalizeLeaveGame();
-
-    MCAPI ::std::optional<::ScreenshotOptions> _tryCreateScreenshotOptions();
-
-    MCAPI void exitApplication();
-
-    MCAPI void leaveGame();
-
-    MCAPI void leaveGameThenJoinFriendsWorld(::std::string const& serverId);
     // NOLINTEND
 
 public:
@@ -93,13 +81,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

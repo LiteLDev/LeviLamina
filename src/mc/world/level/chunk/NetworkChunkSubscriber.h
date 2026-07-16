@@ -27,27 +27,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI NetworkChunkSubscriber();
-
-    MCAPI void clearRegion();
-
-    MCAPI void destroyRegion();
-
-    MCFOLD ::ChunkSource& getChunkSource() const;
-
     MCAPI bool moveRegion(::BlockPos const& position, uint blockRadius, ::Vec3 const& direction, float minDistance);
 
     MCAPI void prepareRegion(::ChunkSource& mainChunkSource, ::ChunkPos& center);
-
-    MCAPI void updateRadiusLimit(uint requestedChunkRadius);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor();
 #endif
     // NOLINTEND
 };

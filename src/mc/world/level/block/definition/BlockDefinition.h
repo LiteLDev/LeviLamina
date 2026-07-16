@@ -12,9 +12,7 @@
 // clang-format off
 class CerealDocumentUpgrader;
 class DefinitionEvent;
-class SemVersionConstant;
 struct BlockPermutationDescription;
-namespace Core { class Path; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -32,56 +30,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockDefinition();
-
-    MCAPI BlockDefinition(::BlockDefinition&&);
-
-    MCAPI BlockDefinition(::BlockDefinition const&);
-
-    MCAPI ::BlockDefinition& operator=(::BlockDefinition&&);
-
-    MCAPI ::BlockDefinition& operator=(::BlockDefinition const&);
-
-    MCAPI ~BlockDefinition();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::CerealDocumentUpgrader& initCerealDocumentUpgrader(::cereal::ReflectionCtx& ctx);
 
     MCAPI static void registerBlockDefinitionTypes(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static ::std::pair<bool, ::SemVersion> upgradeJson(
-        ::cereal::ReflectionCtx const& ctx,
-        ::std::string&                 json,
-        ::Core::Path const&            resourceName,
-        bool                           betaApis,
-        ::std::optional<::SemVersion>  minVersion
-    );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::BlockDefinition&&);
-
-    MCAPI void* $ctor(::BlockDefinition const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

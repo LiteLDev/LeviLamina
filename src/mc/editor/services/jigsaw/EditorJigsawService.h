@@ -4,23 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/JigsawJsonType.h"
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorJigsawServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class FeatureRegistry;
-class IStructureTemplateManager;
 class JigsawEditorData;
 class JigsawStructureRegistry;
-class ResourcePackManager;
 class WeakEntityRef;
 namespace Bedrock::PubSub { class Subscription; }
-namespace Editor { class IEditorPlayer; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::ScriptModule { class ScriptClipboardItem; }
 namespace Editor::Services { struct EditorJigsawSection; }
@@ -50,27 +44,8 @@ public:
     public:
         // prevent constructor by default
         TemplatePoolData& operator=(TemplatePoolData const&);
+        TemplatePoolData(TemplatePoolData const&);
         TemplatePoolData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI TemplatePoolData(::Editor::Services::EditorJigsawService::TemplatePoolData const&);
-
-        MCNAPI ~TemplatePoolData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::Editor::Services::EditorJigsawService::TemplatePoolData const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -95,7 +70,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorJigsawService() /*override*/;
+    virtual ~EditorJigsawService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -111,41 +86,40 @@ public:
 
     virtual ::std::vector<::std::string> getJigsawRegistryList() /*override*/;
 
-    virtual ::JigsawStructureRegistry* getJigsawRegistry(::std::string const& registryName) /*override*/;
+    virtual ::JigsawStructureRegistry* getJigsawRegistry(::std::string const&) /*override*/;
 
     virtual ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>
-    getJigsawRegistryJson(::std::string const& registryName) /*override*/;
+    getJigsawRegistryJson(::std::string const&) /*override*/;
 
     virtual void setJigsawRegistry(
-        ::std::string const& registryName,
-        ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> data,
-        bool shouldSaveFiles
+        ::std::string const&,
+        ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>,
+        bool
     ) /*override*/;
 
-    virtual void deleteJigsawRegistry(::std::string const& registryName) /*override*/;
+    virtual void deleteJigsawRegistry(::std::string const&) /*override*/;
 
     virtual void generateJigsawPreview(
-        ::std::string const&                               registryName,
-        ::std::string const&                               startPool,
-        ::std::string const&                               startTarget,
-        ::BlockPos const&                                  seed,
-        int const                                          depth,
-        int const                                          maxHorizontalDistanceFromCenter,
-        bool const                                         validateRegistry,
-        ::Editor::ScriptModule::ScriptClipboardItem const& clipboardItem,
-        ::WeakEntityRef                                    playerRef
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        ::BlockPos const&,
+        int const,
+        int const,
+        bool const,
+        ::Editor::ScriptModule::ScriptClipboardItem const&,
+        ::WeakEntityRef
     ) /*override*/;
 
-    virtual ::JigsawEditorData const getJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef) /*override*/;
+    virtual ::JigsawEditorData const getJigsawBlockData(::BlockPos&, ::WeakEntityRef) /*override*/;
 
-    virtual void
-    setJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef, ::JigsawEditorData jigsawData) /*override*/;
+    virtual void setJigsawBlockData(::BlockPos&, ::WeakEntityRef, ::JigsawEditorData) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-    listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)> callback) /*override*/;
+        listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)>) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription listenForGenerateJigsawPreview(
-        ::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)> callback
+        ::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)>
     ) /*override*/;
     // NOLINTEND
 
@@ -153,28 +127,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EditorJigsawService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI void _bootstrapJigsawRegistry(
-        ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager,
-        ::FeatureRegistry&                                         featureRegistry,
-        ::JigsawStructureRegistry&                                 jigsawStructureRegistry
-    );
-
-    MCNAPI void _loadBehaviorPackJigsawRegistries(::ResourcePackManager& packManager);
-
-    MCNAPI void _loadWorldJigsawRegistries();
-
-    MCNAPI void _saveFile(
-        ::Editor::Services::EditorRegistryFile& regFile,
-        ::Core::PathBuffer<::std::string>       jigsawPath,
-        ::Editor::Services::JigsawJsonType      fileType,
-        ::std::vector<::std::string>&           outErrors
-    );
-
-    MCNAPI void _saveJigsawRegistryFiles(::std::string const& registryName);
-
-    MCNAPI bool
-    _validateRegistry(::std::string registryName, ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> editorPlayer);
     // NOLINTEND
 
 public:
@@ -184,73 +136,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $quit();
-
-    MCNAPI ::Scripting::Result_deprecated<void> $ready();
-
-    MCNAPI ::std::string_view $getServiceName() const;
-
-    MCNAPI ::std::string $getJigsawExportDirectory();
-
-    MCNAPI ::std::map<::Editor::Services::JigsawJsonType, ::std::string> $getEmptyJigsawFiles();
-
-    MCNAPI ::std::vector<::std::string> $getJigsawRegistryList();
-
-    MCNAPI ::JigsawStructureRegistry* $getJigsawRegistry(::std::string const& registryName);
-
-    MCNAPI ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>
-    $getJigsawRegistryJson(::std::string const& registryName);
-
-    MCNAPI void $setJigsawRegistry(
-        ::std::string const& registryName,
-        ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> data,
-        bool shouldSaveFiles
-    );
-
-    MCNAPI void $deleteJigsawRegistry(::std::string const& registryName);
-
-    MCNAPI void $generateJigsawPreview(
-        ::std::string const&                               registryName,
-        ::std::string const&                               startPool,
-        ::std::string const&                               startTarget,
-        ::BlockPos const&                                  seed,
-        int const                                          depth,
-        int const                                          maxHorizontalDistanceFromCenter,
-        bool const                                         validateRegistry,
-        ::Editor::ScriptModule::ScriptClipboardItem const& clipboardItem,
-        ::WeakEntityRef                                    playerRef
-    );
-
-    MCNAPI ::JigsawEditorData const $getJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef);
-
-    MCNAPI void $setJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef, ::JigsawEditorData jigsawData);
-
-    MCNAPI ::Bedrock::PubSub::Subscription
-    $listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)> callback);
-
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForGenerateJigsawPreview(
-        ::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)> callback
-    );
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEditorJigsawServiceProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

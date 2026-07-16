@@ -6,7 +6,6 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/resource/ResourceFileSystem.h"
 #include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -15,7 +14,6 @@
 class FileDeleteProgressHandler;
 class IContentKeyProvider;
 class MinecraftScreenModel;
-class PackError;
 class PackManifest;
 class PackManifestFactory;
 struct PackContentItem;
@@ -58,7 +56,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ManifestValidationScreenController() /*override*/;
+    virtual ~ManifestValidationScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -77,45 +75,6 @@ public:
         bool                                                              packInUserDataPath,
         ::std::shared_ptr<::PackContentItem const> const&                 item
     );
-
-    MCAPI ::std::string
-    _colorLocString(::ManifestValidationScreenController::IssueType issue, ::std::string const& str) const;
-
-    MCAPI void _delete();
-
-    MCAPI void _finishValidation();
-
-    MCAPI ::Core::PathBuffer<::std::string> const _generateBaseIconPath(::PackManifest const& manifest) const;
-
-    MCAPI ::std::string _generateErrorContent(
-        ::ManifestValidationScreenController::IssueType issueType,
-        ::std::string const&                            header,
-        ::PackError const&                              error
-    ) const;
-
-    MCAPI ::Core::PathBuffer<::std::string> const _generateIconPath(::PackManifest const& manifest) const;
-
-    MCAPI ::ResourceFileSystem _getIconFileSystem() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> const _getIconPath() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> const _getIconZip() const;
-
-    MCAPI ::std::string _getPackHeaderDescription() const;
-
-    MCAPI ::std::string _getPackHeaderSize() const;
-
-    MCAPI ::std::string _getPackHeaderTitle() const;
-
-    MCAPI ::std::string _getPackID() const;
-
-    MCAPI ::std::string _getPackType() const;
-
-    MCAPI ::std::string _getPackVersion() const;
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -133,24 +92,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $onTerminate();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

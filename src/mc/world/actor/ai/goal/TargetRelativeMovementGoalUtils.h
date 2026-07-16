@@ -31,14 +31,6 @@ MCAPI ::Vec3 getRandomPointBehindTarget(
     float          minLandingDistance,
     float          maxLandingDistance
 );
-
-MCAPI bool validTransition(
-    ::AABB const&   mobAABB,
-    ::IBlockSource& region,
-    ::Vec3 const&   oldPos,
-    ::Vec3 const&   newPos,
-    float           scaleFactor
-);
 // NOLINTEND
 
 } // namespace TargetRelativeMovementGoalUtils

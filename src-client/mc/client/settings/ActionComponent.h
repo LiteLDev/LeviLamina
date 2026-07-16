@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/settings/AsyncProgressInfo.h"
 #include "mc/client/settings/Component.h"
 #include "mc/client/settings/ComponentState.h"
 #include "mc/client/settings/ConfirmationRequest.h"
@@ -23,14 +24,17 @@ public:
     using ActionLabelOverrideProvider =
         ::std::function<::std::optional<::std::string>(::Settings::ActionComponent const&)>;
 
+    using ActionCallback = ::std::function<void(::std::function<void(bool)>)>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                                     mActionLabel;
-    ::ll::TypedStorage<4, 8, ::std::optional<::Settings::SettingsActionType>>    mActionType;
-    ::ll::TypedStorage<8, 136, ::std::optional<::Settings::ConfirmationRequest>> mConfirmationRequest;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Settings::IActionDataProvider>> mDataProvider;
-    ::ll::TypedStorage<8, 64, ::std::function<void()>>                           mActionCallback;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mActionLabel;
+    ::ll::TypedStorage<4, 8, ::std::optional<::Settings::SettingsActionType>>     mActionType;
+    ::ll::TypedStorage<8, 136, ::std::optional<::Settings::ConfirmationRequest>>  mConfirmationRequest;
+    ::ll::TypedStorage<8, 72, ::std::optional<::Settings::AsyncProgressInfo>>     mAsyncProgressInfo;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Settings::IActionDataProvider>>  mDataProvider;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::function<void(bool)>)>> mActionCallback;
     ::ll::TypedStorage<8, 64, ::std::function<::std::optional<::std::string>(::Settings::ActionComponent const&)>>
         mActionLabelOverrideProvider;
     // NOLINTEND
@@ -42,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActionComponent() /*override*/;
+    virtual ~ActionComponent() /*override*/ = default;
 
     virtual ::Settings::ComponentState getDefaultState() const /*override*/;
     // NOLINTEND
@@ -55,20 +59,15 @@ public:
         ::std::string_view                                 name,
         ::std::optional<::std::string>                     description,
         ::std::string_view                                 actionLabel,
-        ::std::function<void()>                            actionCallback,
+        ::std::function<void(::std::function<void(bool)>)> actionCallback,
         ::std::optional<::Settings::ConfirmationRequest>   confirmationRequest,
+        ::std::optional<::Settings::AsyncProgressInfo>     asyncProgressInfo,
         ::std::unique_ptr<::Settings::IActionDataProvider> dataProvider
     );
 
-    MCAPI bool flush();
-
     MCAPI ::std::string getActionLabel() const;
 
-    MCAPI ::std::optional<::Settings::SettingsActionType> getActionType() const;
-
-    MCFOLD ::std::optional<::Settings::ConfirmationRequest> const& getConfirmationRequest() const;
-
-    MCAPI bool invokeClickCallback();
+    MCAPI bool invokeClickCallback(::std::function<void(bool)> statusCallback);
     // NOLINTEND
 
 public:
@@ -79,28 +78,17 @@ public:
         ::std::string_view                                 name,
         ::std::optional<::std::string>                     description,
         ::std::string_view                                 actionLabel,
-        ::std::function<void()>                            actionCallback,
+        ::std::function<void(::std::function<void(bool)>)> actionCallback,
         ::std::optional<::Settings::ConfirmationRequest>   confirmationRequest,
+        ::std::optional<::Settings::AsyncProgressInfo>     asyncProgressInfo,
         ::std::unique_ptr<::Settings::IActionDataProvider> dataProvider
     );
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Settings::ComponentState $getDefaultState() const;
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

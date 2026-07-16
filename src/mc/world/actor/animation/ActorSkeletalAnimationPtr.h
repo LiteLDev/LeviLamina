@@ -9,7 +9,6 @@
 // clang-format off
 class ActorAnimationGroup;
 class ActorAnimationInfo;
-class ActorSkeletalAnimation;
 class HashedString;
 // clang-format on
 
@@ -32,19 +31,7 @@ public:
         ::HashedString const&                                       name
     );
 
-#ifdef LL_PLAT_C
-    MCFOLD ::ActorSkeletalAnimation* get();
-#endif
-
-    MCFOLD bool isNull() const;
-
     MCAPI ~ActorSkeletalAnimationPtr();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::ActorSkeletalAnimationPtr const& NONE();
     // NOLINTEND
 
 public:

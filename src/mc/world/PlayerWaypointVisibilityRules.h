@@ -22,12 +22,4 @@ public:
     PlayerWaypointVisibilityRules& operator=(PlayerWaypointVisibilityRules const&);
     PlayerWaypointVisibilityRules(PlayerWaypointVisibilityRules const&);
     PlayerWaypointVisibilityRules();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void set(::PlayerWaypointVisibilityRules::Flag f, bool value);
-
-    MCNAPI bool test(::PlayerWaypointVisibilityRules::Flag f) const;
-    // NOLINTEND
 };

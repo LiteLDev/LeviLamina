@@ -10,7 +10,6 @@
 // clang-format off
 class HashedString;
 namespace Editor::DataStore { struct PayloadDescription; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Network {
@@ -47,12 +46,6 @@ public:
         ::std::optional<::std::string>                 payload,
         ::Editor::DataStore::PayloadDescription const& desc
     );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

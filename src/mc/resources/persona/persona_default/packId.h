@@ -12,7 +12,9 @@ namespace personaDefault::packId {
 // NOLINTBEGIN
 MCNAPI ::mce::UUID const& PERSONA_BUILTIN_PACK();
 
+#ifdef LL_PLAT_C
 MCNAPI ::mce::UUID const& PERSONA_TESTING_PACK();
+#endif
 // NOLINTEND
 
 } // namespace personaDefault::packId

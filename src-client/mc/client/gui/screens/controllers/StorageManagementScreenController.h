@@ -4,12 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
-#include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/controllers/StorageManagementScreenData.h"
 #include "mc/client/gui/screens/controllers/StorageManagementViews.h"
-#include "mc/client/legacy/ImportStatus.h"
 #include "mc/world/actor/player/LoadingState.h"
 
 // auto generated forward declare list
@@ -21,8 +18,6 @@ class MainMenuScreenModel;
 class StorageDependencyScreenController;
 class StorageManagementScreenControllerProxy;
 struct ContentItem;
-struct ImportResult;
-struct LegacyWorldInfo;
 // clang-format on
 
 class StorageManagementScreenController : public ::MainMenuScreenController {
@@ -52,6 +47,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                        mShowDeleteModal;
     ::ll::TypedStorage<1, 1, bool> mShowDeleteLocalScreenshotsModal;
     ::ll::TypedStorage<1, 1, bool> mIsLegacyWorldTabExpanded;
+    ::ll::TypedStorage<1, 1, bool> mLegacySyncOnly;
     ::ll::TypedStorage<4, 4, ::StorageManagementScreenController::ConvertProgressState>      mProgressScreenState;
     ::ll::TypedStorage<8, 8, ::LegacyWorldConverter&>                                        mLegacyWorldConverter;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::IStorageManagementModel>>> mModel;
@@ -76,63 +72,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StorageManagementScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::IContentManager& manager);
-
-    MCAPI bool _containsPremiumWorldTemplate(::std::vector<::std::string>& outWorldList) const;
-
-    MCAPI void _convertLegacyWorld(::LegacyWorldInfo const& world);
-
-    MCAPI ::ui::ViewRequest _deleteButtonPressed();
-
-    MCAPI ::ui::ViewRequest _deleteLocalScreenshotsButtonPressed();
-
-    MCAPI ::ui::ViewRequest _deleteSelectedResources();
-
-    MCAPI void _displayImportRetailWorldModal(uint64 worldSize, ::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI ::LegacyWorldInfo _getLegacyWorld(int worldIndex);
-
-    MCAPI ::std::function<void(::Legacy::ImportStatus, float, ::std::shared_ptr<::ImportResult>)>
-    _getLegacyWorldConvertCallback(::LegacyWorldInfo const& worldInfo, ::std::string const& levelId);
-
-    MCAPI ::std::string _getLegacyWorldsSize(uint numberElements, uint64 size);
-
-    MCAPI ::LegacyWorldInfo _getRetailToPreviewWorld(int worldIndex);
-
-    MCAPI void _onWorldConversionCompleted(::std::shared_ptr<::ImportResult> result, ::std::string const& levelId);
-
-    MCAPI void _openProcessLegacyWorldProgressDialog();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerLegacyWorldsBindings();
-
-    MCAPI void _registerRetailToPreviewWorldsBindings();
-
-    MCAPI ::ui::ViewRequest _selectLegacyWorld(int worldIndex);
-
-    MCAPI ::ui::ViewRequest _selectRetailToPreviewWorld(int worldIndex);
-
-    MCAPI ::StorageManagementScreenControllerProxy* getStorageManagementScreenControllerProxy();
+    MCAPI StorageManagementScreenController(
+        ::std::shared_ptr<::MainMenuScreenModel> model,
+        ::IContentManager&                       manager,
+        bool                                     legacySyncOnly
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::IContentManager& manager);
+    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::IContentManager& manager, bool legacySyncOnly);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

@@ -41,23 +41,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MarketplacePassWorldTemplateManager() /*override*/;
+    virtual ~MarketplacePassWorldTemplateManager() /*override*/ = default;
 
-    virtual void _templateDownloadedCallback(::std::string const& templateId, bool success) /*override*/;
+    virtual void _templateDownloadedCallback(::std::string const&, bool) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MarketplacePassWorldTemplateManager(
-        ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager>,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>   entitlementManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager> worldTemplateManager,
-        ::IContentAcquisition&                                 contentAquisition,
-        ::std::shared_ptr<::IMarketplaceContentOffersProvider> offersProvider
-    );
-
     MCAPI MarketplacePassWorldTemplateManager(
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
@@ -68,27 +59,9 @@ public:
         ::MarketplaceServicesManager&                            marketplaceServicesManager
     );
 
-    MCAPI ::std::vector<::World::MarketplaceWorldTemplateData> _getTemplates();
-
-    MCAPI void _localWorldUpdateCallback(::std::pair<::std::string, bool> const& updatedTemplateData);
-
-    MCAPI void _onOfferPurchased(::std::string const& productId);
-
     MCAPI void _prepareOffers();
 
-    MCAPI bool areSuggestedOffersLoaded() const;
-
-    MCFOLD ::std::vector<::World::MarketplaceWorldTemplateData> const& getMarketplacePassWorldTemplateList() const;
-
-    MCAPI ::std::string getSeeMorePageId() const;
-
-    MCAPI ::std::optional<::std::string> getSuggestedOffersTitle() const;
-
-    MCFOLD bool isDirty() const;
-
     MCAPI void isTemplateOwnedThroughPassOnly(::std::string const& templateId, ::std::function<void(bool)> callback);
-
-    MCAPI void refreshOffers();
 
     MCAPI void update(double);
     // NOLINTEND
@@ -106,15 +79,6 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager>,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>   entitlementManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager> worldTemplateManager,
-        ::IContentAcquisition&                                 contentAquisition,
-        ::std::shared_ptr<::IMarketplaceContentOffersProvider> offersProvider
-    );
-
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager,
         ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager>   worldTemplateManager,
@@ -125,21 +89,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

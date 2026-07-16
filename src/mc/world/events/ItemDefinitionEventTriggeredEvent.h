@@ -14,32 +14,4 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mActor;
     ::ll::TypedStorage<8, 32, ::std::string>   mEventName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemDefinitionEventTriggeredEvent& operator=(ItemDefinitionEventTriggeredEvent const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ItemDefinitionEventTriggeredEvent();
-
-    MCAPI ItemDefinitionEventTriggeredEvent(::ItemDefinitionEventTriggeredEvent const&);
-
-    MCAPI ~ItemDefinitionEventTriggeredEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ItemDefinitionEventTriggeredEvent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

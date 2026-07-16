@@ -14,12 +14,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::OreUI::FrameDebugData> mFrameDebugData;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace OreUI

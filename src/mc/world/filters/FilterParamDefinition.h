@@ -2,17 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/filters/FilterParamOption.h"
-#include "mc/world/filters/FilterParamRequirement.h"
-#include "mc/world/filters/FilterParamType.h"
-
-// auto generated forward declare list
-// clang-format off
-class FilterInput;
-struct FilterStringMap;
-// clang-format on
-
 struct FilterParamDefinition {
 public:
     // member variables
@@ -30,56 +19,4 @@ public:
     FilterParamDefinition& operator=(FilterParamDefinition const&);
     FilterParamDefinition(FilterParamDefinition const&);
     FilterParamDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI FilterParamDefinition(
-        ::FilterParamType        type,
-        ::FilterParamRequirement requirement,
-        ::std::string            description,
-        ::FilterInput            def,
-        ::FilterStringMap        stringMap
-    );
-
-    MCNAPI FilterParamDefinition(
-        ::FilterParamType        type,
-        ::FilterParamRequirement requirement,
-        ::std::string            description,
-        ::FilterParamOption      opt,
-        ::FilterInput            def,
-        ::FilterStringMap        stringMap
-    );
-
-    MCNAPI ::FilterParamDefinition& operator=(::FilterParamDefinition&&);
-
-    MCNAPI ~FilterParamDefinition();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::FilterParamType        type,
-        ::FilterParamRequirement requirement,
-        ::std::string            description,
-        ::FilterInput            def,
-        ::FilterStringMap        stringMap
-    );
-
-    MCNAPI void* $ctor(
-        ::FilterParamType        type,
-        ::FilterParamRequirement requirement,
-        ::std::string            description,
-        ::FilterParamOption      opt,
-        ::FilterInput            def,
-        ::FilterStringMap        stringMap
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

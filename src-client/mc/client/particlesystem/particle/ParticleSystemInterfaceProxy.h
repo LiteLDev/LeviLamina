@@ -41,27 +41,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleSystemInterfaceProxy() /*override*/;
+    virtual ~ParticleSystemInterfaceProxy() /*override*/ = default;
 
-    virtual float getDistanceToCameraSqr(::Vec3 const& pos) const /*override*/;
+    virtual float getDistanceToCameraSqr(::Vec3 const&) const /*override*/;
 
     virtual int getViewDistanceChunks() const /*override*/;
 
     virtual float getParticleViewDistance() const /*override*/;
 
-    virtual ::Particle* instance(
-        ::ParticleType       type,
-        ::Vec3 const&        pos,
-        ::Vec3 const&        dir,
-        int                  data,
-        ::CompoundTag const* tag
-    ) /*override*/;
+    virtual ::Particle* instance(::ParticleType, ::Vec3 const&, ::Vec3 const&, int, ::CompoundTag const*) /*override*/;
 
-    virtual void addParticleEffect(
-        ::HashedString const&      effect,
-        ::Vec3 const&              emitterPosition,
-        ::MolangVariableMap const& molangVariables
-    ) /*override*/;
+    virtual void addParticleEffect(::HashedString const&, ::Vec3 const&, ::MolangVariableMap const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -87,33 +77,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getDistanceToCameraSqr(::Vec3 const& pos) const;
 
-    MCFOLD int $getViewDistanceChunks() const;
-
-    MCAPI float $getParticleViewDistance() const;
-
-    MCAPI ::Particle*
-    $instance(::ParticleType type, ::Vec3 const& pos, ::Vec3 const& dir, int data, ::CompoundTag const* tag);
-
-    MCAPI void $addParticleEffect(
-        ::HashedString const&      effect,
-        ::Vec3 const&              emitterPosition,
-        ::MolangVariableMap const& molangVariables
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

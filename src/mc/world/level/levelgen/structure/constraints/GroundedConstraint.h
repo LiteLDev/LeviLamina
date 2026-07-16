@@ -29,38 +29,25 @@ public:
     // NOLINTBEGIN
     virtual ~GroundedConstraint() /*override*/ = default;
 
-    virtual bool
-    isSatisfied(::IBlockWorldGenAPI const& target, ::BlockPos const& structurePos, ::Rotation const& structureRot) const
+    virtual bool isSatisfied(::IBlockWorldGenAPI const&, ::BlockPos const&, ::Rotation const&, ::BlockPos const&) const
         /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GroundedConstraint(::StructureTemplate& structure);
+    MCAPI GroundedConstraint(::StructureTemplate& structure, int groundLevel);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::StructureTemplate& structure);
+    MCAPI void* $ctor(::StructureTemplate& structure, int groundLevel);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isSatisfied(
-        ::IBlockWorldGenAPI const& target,
-        ::BlockPos const&          structurePos,
-        ::Rotation const&          structureRot
-    ) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

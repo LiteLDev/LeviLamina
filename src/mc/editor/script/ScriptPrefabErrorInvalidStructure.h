@@ -3,33 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct ErrorBinding; }
-// clang-format on
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 
 namespace Editor::ScriptModule {
 
-struct ScriptPrefabErrorInvalidStructure : public ::Scripting::BaseError {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptPrefabErrorInvalidStructure();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
-};
+struct ScriptPrefabErrorInvalidStructure : public ::Scripting::BaseError {};
 
 } // namespace Editor::ScriptModule

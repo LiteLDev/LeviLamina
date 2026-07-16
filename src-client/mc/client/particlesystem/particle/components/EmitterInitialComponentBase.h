@@ -21,8 +21,7 @@ public:
 
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const /*override*/;
 
-    virtual void
-    setupInitial(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams) = 0;
+    virtual void setupInitial(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&) = 0;
 
     virtual void update(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&);
     // NOLINTEND
@@ -30,9 +29,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ParticleSystem::EffectComponentBase::EffectComponentType $getParticleComponentType() const;
 
-    MCFOLD void $update(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&);
     // NOLINTEND
 };
 

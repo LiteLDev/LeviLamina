@@ -20,6 +20,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD bool operator==(::SharedTypes::v1_21_120::EntityTypes const&) const;
+
     MCAPI ~EntityTypes();
     // NOLINTEND
 
@@ -27,17 +29,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void fromDescriptor(
-        ::SharedTypes::v1_21_120::EntityTypes&   entityTypes,
-        ::SharedTypes::v1_21_120::MobDescriptor& descriptor
-    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

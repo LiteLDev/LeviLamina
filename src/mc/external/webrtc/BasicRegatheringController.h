@@ -8,10 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class IceTransportInternal; }
-namespace rtc { class PacketTransportInternal; }
-namespace rtc { class Thread; }
-namespace rtc { struct NetworkRoute; }
+namespace webrtc { class IceTransportInternal; }
+namespace webrtc { class PacketTransportInternal; }
+namespace webrtc { class Thread; }
+namespace webrtc { struct NetworkRoute; }
 // clang-format on
 
 namespace webrtc {
@@ -43,9 +43,9 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnk397e3e;
     ::ll::UntypedStorage<4, 4> mUnka21c63;
-    ::ll::UntypedStorage<8, 8> mUnk33ff0e;
-    ::ll::UntypedStorage<8, 8> mUnkf79c90;
-    ::ll::UntypedStorage<8, 8> mUnkb66aca;
+    ::ll::UntypedStorage<8, 8> mUnk4cb467;
+    ::ll::UntypedStorage<8, 8> mUnk25690a;
+    ::ll::UntypedStorage<8, 8> mUnk9a9c4e;
     // NOLINTEND
 
 public:
@@ -65,17 +65,17 @@ public:
     // NOLINTBEGIN
     MCNAPI BasicRegatheringController(
         ::webrtc::BasicRegatheringController::Config const& config,
-        ::cricket::IceTransportInternal*                    ice_transport,
-        ::rtc::Thread*                                      thread
+        ::webrtc::IceTransportInternal*                     ice_transport,
+        ::webrtc::Thread*                                   thread
     );
 
-    MCNAPI void OnIceTransportNetworkRouteChanged(::std::optional<::rtc::NetworkRoute>);
+    MCNAPI void OnIceTransportNetworkRouteChanged(::std::optional<::webrtc::NetworkRoute>);
 
-    MCNAPI void OnIceTransportReceivingState(::rtc::PacketTransportInternal*);
+    MCNAPI void OnIceTransportReceivingState(::webrtc::PacketTransportInternal*);
 
-    MCNAPI void OnIceTransportStateChanged(::cricket::IceTransportInternal*);
+    MCNAPI void OnIceTransportStateChanged(::webrtc::IceTransportInternal*);
 
-    MCNAPI void OnIceTransportWritableState(::rtc::PacketTransportInternal*);
+    MCNAPI void OnIceTransportWritableState(::webrtc::PacketTransportInternal*);
 
     MCNAPI void ScheduleRecurringRegatheringOnFailedNetworks();
 
@@ -89,8 +89,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(
         ::webrtc::BasicRegatheringController::Config const& config,
-        ::cricket::IceTransportInternal*                    ice_transport,
-        ::rtc::Thread*                                      thread
+        ::webrtc::IceTransportInternal*                     ice_transport,
+        ::webrtc::Thread*                                   thread
     );
     // NOLINTEND
 

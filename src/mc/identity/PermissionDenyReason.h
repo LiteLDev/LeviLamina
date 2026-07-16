@@ -16,7 +16,6 @@ enum class PermissionDenyReason : uint {
     Unknown                   = 1u << 6,
     PlatformPlayStationPlus   = 1u << 7,
     PlatformNintendoSwitchNso = 1u << 8,
-    PlatformXboxGamepass      = 1u << 9,
 };
 
 }

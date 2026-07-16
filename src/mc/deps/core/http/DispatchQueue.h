@@ -7,7 +7,6 @@
 #include "mc/deps/core/http/DispatcherProcess.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/AsyncResultBase.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,23 +45,9 @@ public:
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI void complete(::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response> const& response);
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI void $_cancel();
 
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -87,50 +72,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DispatchQueue() /*override*/;
+    virtual ~DispatchQueue() /*override*/ = default;
 
-    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response>
-    send(::Bedrock::Http::Request&& request) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit DispatchQueue(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
-
-    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> _addNewRequest(::Bedrock::Http::Request&& request);
-
-    MCNAPI void _cleanUpCompletedRequests();
-
-    MCNAPI void _handlePendingRequest();
-
-    MCNAPI void _onCompletion();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> send(::Bedrock::Http::Request&&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> $send(::Bedrock::Http::Request&& request);
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

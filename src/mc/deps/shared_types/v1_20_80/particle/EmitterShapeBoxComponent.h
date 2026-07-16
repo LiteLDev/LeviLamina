@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_20_80 {
@@ -25,6 +24,13 @@ public:
     ::ll::TypedStorage<8, 168, ::std::optional<::SharedTypes::v1_20_80::ParticleEmitterDirection>> mDirection;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    EmitterShapeBoxComponent();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -34,8 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EmitterShapeBoxComponent();
-
+#ifdef LL_PLAT_C
     MCAPI EmitterShapeBoxComponent(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
 
     MCAPI EmitterShapeBoxComponent(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
@@ -45,12 +50,9 @@ public:
 
     MCAPI ::SharedTypes::v1_20_80::EmitterShapeBoxComponent&
     operator=(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
-    // NOLINTEND
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI bool operator==(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&) const;
+#endif
     // NOLINTEND
 
 public:
@@ -62,17 +64,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ::HashedString const& $getIdentifier() const;
+#endif
 
 
     // NOLINTEND

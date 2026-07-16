@@ -42,15 +42,15 @@ public:
 
     virtual ::std::optional<::std::vector<::SnapshotFilenameAndLength>> saveQuery() /*override*/;
 
-    virtual bool addNameToAllowList(::std::string const& name) /*override*/;
+    virtual bool addNameToAllowList(::std::string const&) /*override*/;
 
-    virtual bool removeNameFromAllowList(::std::string const& name) /*override*/;
+    virtual bool removeNameFromAllowList(::std::string const&) /*override*/;
 
-    virtual bool allowListContains(::std::string const& name) /*override*/;
+    virtual bool allowListContains(::std::string const&) /*override*/;
 
     virtual bool reloadAllowListFile() /*override*/;
 
-    virtual void setAllowListEnabled(bool enabled) /*override*/;
+    virtual void setAllowListEnabled(bool) /*override*/;
 
     virtual bool getAllowListEnabled() const /*override*/;
 
@@ -64,36 +64,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $stopServer();
 
-    MCNAPI bool $saveHold();
-
-    MCNAPI bool $saveResume();
-
-    MCNAPI ::std::optional<::std::vector<::SnapshotFilenameAndLength>> $saveQuery();
-
-    MCNAPI bool $addNameToAllowList(::std::string const& name);
-
-    MCNAPI bool $removeNameFromAllowList(::std::string const& name);
-
-    MCNAPI bool $allowListContains(::std::string const& name);
-
-    MCNAPI bool $reloadAllowListFile();
-
-    MCNAPI void $setAllowListEnabled(bool enabled);
-
-    MCNAPI bool $getAllowListEnabled() const;
-
-    MCNAPI bool $reloadPermissionsFile();
-
-    MCNAPI bool $reloadScriptConfig();
-
-    MCNAPI bool $reloadCDNConfig();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

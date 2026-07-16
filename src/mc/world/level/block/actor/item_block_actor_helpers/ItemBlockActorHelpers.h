@@ -15,9 +15,6 @@ namespace ItemBlockActorHelpers { struct SpriteCalculatorRefs; }
 namespace ItemBlockActorHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI void
-tickMapItem(::ItemStackBase const& item, ::BlockSource& region, ::BlockPos const& pos, bool& refreshClientMap);
-
 MCAPI void tickSpriteCalculators(
     ::ItemStackBase const&                         item,
     ::ItemBlockActorHelpers::SpriteCalculatorRefs& spriteCalculators,
@@ -33,8 +30,6 @@ MCAPI bool tryDestroyDisplayEntitiy(::WeakEntityRef& displayEntityRef, ::BlockSo
 MCAPI ::Actor*
 tryGetOrCreateDisplayEntity(::WeakEntityRef& displayEntityRef, ::BlockSource& region, ::BlockPos const& pos);
 #endif
-
-MCAPI void updateMapItem(::ItemStackBase const& item, ::BlockSource& region, ::BlockPos const& pos);
 
 MCAPI void updateSpriteCalculators(
     ::ItemStackBase const&                               item,

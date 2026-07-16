@@ -3,16 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LoadResult.h"
 #include "mc/world/level/GeneratorType.h"
 #include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off
-class DimensionDataLoader;
 class IMinecraftEventing;
 class ResourcePackManager;
-namespace SharedTypes::v1_21_60::DimensionDefinition { struct DimensionDocument; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -55,27 +52,9 @@ public:
         ::IMinecraftEventing&          eventing
     );
 
-#ifdef LL_PLAT_C
     MCAPI void forEachDimensionDefinition(
         ::std::function<void(::std::string const&, ::DimensionDefinitionGroup::DimensionDefinition const&)> callback
     ) const;
-#endif
-
-    MCAPI ::std::optional<::DimensionDefinitionGroup::DimensionDefinition>
-    getDimensionDefinition(::std::string const& dimensionName) const;
-
-    MCAPI bool isEmpty() const;
-
-    MCAPI bool tryAddDimensionDefinition(
-        ::std::string const&                                   dimensionName,
-        ::DimensionDefinitionGroup::DimensionDefinition const& dimensionDefinition
-    );
-
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
-    tryAddDimensionDefinitionByString(
-        ::std::string const&  dimensionDefinitionJSON,
-        ::DimensionDataLoader dimensionLoader
-    );
 
     MCAPI ~DimensionDefinitionGroup();
     // NOLINTEND

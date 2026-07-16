@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/RealmsWorldContextState.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -14,7 +14,7 @@ namespace Realms { class RealmsWorldContext; }
 
 namespace OreUI {
 
-class RealmsWorldContextQueriesFacet : public ::OreUI::FacetBase<::OreUI::RealmsWorldContextQueriesFacet> {
+class RealmsWorldContextQueriesFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsWorldContextQueriesFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsWorldContextQueriesFacet() /*override*/;
+    virtual ~RealmsWorldContextQueriesFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -48,26 +48,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsWorldContextQueriesFacet(::std::shared_ptr<::Realms::RealmsWorldContext> realmsWorldContext);
-
-    MCAPI void _setFacetState(::Realms::RealmsWorldContextState realmsWorldContextState);
-
-    MCFOLD int getActiveSlotIndex() const;
-
-    MCFOLD bool getIsClosed() const;
-
-    MCFOLD bool getIsExpired() const;
-
-    MCFOLD bool getIsFull() const;
-
-    MCFOLD int getMaxPlayers() const;
-
-    MCFOLD ::std::string const& getRealmId() const;
-
-    MCFOLD ::std::string const& getRealmName() const;
-
-    MCFOLD ::std::string const& getRealmOwnerId() const;
-
-    MCFOLD ::Realms::RealmsWorldContextState getState() const;
     // NOLINTEND
 
 public:
@@ -83,21 +63,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

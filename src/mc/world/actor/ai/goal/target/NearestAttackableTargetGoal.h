@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Mob;
 struct Tick;
 // clang-format on
 
@@ -32,10 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NearestAttackableTargetGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canUse() /*override*/;
@@ -47,24 +42,6 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual ::ActorUniqueID _findTarget(::MobDescriptor const** outMobDescriptor);
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit NearestAttackableTargetGoal(::Mob& mob);
-
-    MCAPI bool _isTargetInCooldown(::MobDescriptor const& descriptor) const;
-
-    MCAPI bool _selectTarget();
-
-    MCAPI bool isTargetVisible(::Mob const& mob, float maxDistance, float maxHeight) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

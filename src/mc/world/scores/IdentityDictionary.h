@@ -25,27 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI IdentityDictionary();
-
     MCAPI bool clearIdentity(::ScoreboardId const& scoreboardId);
 
+#ifdef LL_PLAT_C
     MCAPI ::ScoreboardId const&
     convertFakeToReal(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
+#endif
 
     MCAPI ::ScoreboardId const& getScoreboardId(::std::string const& fakePlayerName) const;
-
-    MCAPI ~IdentityDictionary();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

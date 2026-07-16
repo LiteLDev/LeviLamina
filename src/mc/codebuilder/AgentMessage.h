@@ -18,18 +18,6 @@ public:
     AgentMessage& operator=(AgentMessage const&);
     AgentMessage(AgentMessage const&);
     AgentMessage();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~AgentMessage();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace CodeBuilder

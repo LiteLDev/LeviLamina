@@ -3,10 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptDimensionLocation.h"
 #include "mc/scripting/modules/minecraft/ScriptRGB.h"
 #include "mc/scripting/modules/minecraft/ScriptWaypointTextureSelector.h"
@@ -55,13 +54,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptWaypoint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWaypoint();
+    virtual ~ScriptWaypoint() = default;
 
     virtual ::std::unique_ptr<::ServerWaypoint> createWaypoint() const = 0;
 
@@ -75,92 +70,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptWaypoint(
-        ::Scripting::WeakLifetimeScope const&                         scope,
-        ::ScriptModuleMinecraft::ScriptWaypointTextureSelector const& textureSelector,
-        ::std::optional<::ScriptModuleMinecraft::ScriptRGB> const&    color
-    );
-
-    MCAPI ::Scripting::Result<
-        ::std::optional<::ScriptModuleMinecraft::ScriptRGB>,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointError,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointTextureSelectorError>
-    getColor() const;
-
-    MCAPI ::Scripting::Result<
-        bool,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointError,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointTextureSelectorError>
-    getIsEnabled() const;
-
-    MCFOLD ::Bedrock::PubSub::Connector<void()>& getOnRemoveEvent();
-
-    MCFOLD ::Bedrock::PubSub::Connector<void(::std::variant<
-                                             bool,
-                                             ::std::optional<::ScriptModuleMinecraft::ScriptRGB>,
-                                             ::ScriptModuleMinecraft::ScriptWaypointTextureSelector,
-                                             ::ScriptModuleMinecraft::ScriptDimensionLocation> const&)>&
-    getOnSetPropertyEvent();
-
-    MCAPI ::Scripting::Result<
-        ::ScriptModuleMinecraft::ScriptWaypointTextureSelector,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointError,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointTextureSelectorError>
-    getTextureSelector() const;
-
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointError,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointTextureSelectorError>
-    setColor(::std::optional<::ScriptModuleMinecraft::ScriptRGB> const& color);
-
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointError,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointTextureSelectorError>
-    setIsEnabled(bool value);
-
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointError,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointTextureSelectorError>
-    setTextureSelector(::ScriptModuleMinecraft::ScriptWaypointTextureSelector const& textureSelector);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Scripting::WeakLifetimeScope const&                         scope,
-        ::ScriptModuleMinecraft::ScriptWaypointTextureSelector const& textureSelector,
-        ::std::optional<::ScriptModuleMinecraft::ScriptRGB> const&    color
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

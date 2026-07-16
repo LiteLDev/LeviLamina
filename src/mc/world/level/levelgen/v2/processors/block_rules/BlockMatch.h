@@ -31,12 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::br::worldgen::processors::BlockRules::BlockMatch from(::BlockType const& block);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $test(::Block const& block, ::IRandom&) const;

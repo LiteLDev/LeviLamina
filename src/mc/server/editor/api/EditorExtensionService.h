@@ -5,9 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/deps/scripting/script_engine/Closure.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/deps/script_core/script_engine/scripting/Closure.h"
 #include "mc/editor/script/ServerScriptPackType.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/server/editor/api/EditorExtensionServiceProvider.h"
@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorExtensionService() /*override*/;
+    virtual ~EditorExtensionService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -58,6 +58,7 @@ public:
 
     virtual ::std::string_view getServiceName() const /*override*/;
 
+#ifdef LL_PLAT_S
     virtual ::Scripting::Result_deprecated<::Bedrock::NonOwnerPointer<::Editor::API::EditorExtension>>
     registerExtension(
         ::std::string const&           extensionName,
@@ -69,60 +70,105 @@ public:
         ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options,
         ::Editor::API::ServerScriptPackType                               packType
     ) /*override*/;
+#else // LL_PLAT_C
+    virtual ::Scripting::Result_deprecated<::Bedrock::NonOwnerPointer<::Editor::API::EditorExtension>>
+    registerExtension(
+        ::std::string const&,
+        ::Scripting::WeakLifetimeScope,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>,
+        ::std::optional<::Editor::API::EditorExtensionOptionalParameters>,
+        ::Editor::API::ServerScriptPackType
+    ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual ::Scripting::Result_deprecated<::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>>
     getExtension(::std::string const& extensionName) /*override*/;
+#else // LL_PLAT_C
+    virtual ::Scripting::Result_deprecated<::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>>
+    getExtension(::std::string const&) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual bool hasExtension(::std::string const& extensionName) /*override*/;
+#else // LL_PLAT_C
+    virtual bool hasExtension(::std::string const&) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual void forEachExtension(
         ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
+#else // LL_PLAT_C
+    virtual void forEachExtension(
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>
+    ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual void forEachExtensionOrdered(
         ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
+#else // LL_PLAT_C
+    virtual void forEachExtensionOrdered(
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>
+    ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual void forEachExtensionReverse(
         ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
+#else // LL_PLAT_C
+    virtual void forEachExtensionReverse(
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>
+    ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerForScriptSystemRebuildEvent(
         ::std::function<::Scripting::Result_deprecated<void>(::std::optional<::Scripting::ContextId>)> handler
     ) /*override*/;
+#else // LL_PLAT_C
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerForScriptSystemRebuildEvent(
+        ::std::function<::Scripting::Result_deprecated<void>(::std::optional<::Scripting::ContextId>)>
+    ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result_deprecated<void>()> handler) /*override*/;
+#else // LL_PLAT_C
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+        registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result_deprecated<void>()>) /*override*/;
+#endif
 
     virtual ::Scripting::Result_deprecated<void> destroyRegisteredExtensions() /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void>
-    createExtensionContexts(::Scripting::ContextId finalEvent, bool) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> createExtensionContexts() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI explicit EditorExtensionService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI void _sortExtensionListIntoExecutionOrder();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI ::Scripting::Result_deprecated<void> $init();
 
     MCNAPI ::Scripting::Result_deprecated<void> $ready();
@@ -166,17 +212,10 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $destroyRegisteredExtensions();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $createExtensionContexts(::Scripting::ContextId finalEvent, bool);
+    MCNAPI ::Scripting::Result_deprecated<void> $createExtensionContexts();
+#endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIEditorService();
-
-    MCNAPI static void** $vftableForEditorExtensionServiceProvider();
     // NOLINTEND
 };
 

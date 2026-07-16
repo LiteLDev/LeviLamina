@@ -3,30 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/ServerStructureServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockSource;
 namespace Editor { class EditorStructureTemplate; }
-namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct EditorStructureDBMetadata; }
 namespace Editor { struct EditorStructureMetadataDeleteEditResult; }
 namespace Editor { struct EditorStructureMetadataEditParams; }
 namespace Editor { struct EditorStructureMetadataQueryParams; }
-namespace Editor::Network { class StructureCopyToClipboardPayload; }
-namespace Editor::Network { class StructureDeletePayload; }
-namespace Editor::Network { class StructureDuplicatePayload; }
-namespace Editor::Network { class StructureEditPayload; }
-namespace Editor::Network { class StructureFromClipboardPayload; }
-namespace Editor::Network { class StructureFromSelectionPayload; }
-namespace Editor::Network { class StructureQueryPayload; }
-namespace Editor::Network { class StructureReplaceFromClipboardPayload; }
-namespace Editor::Network { class StructureUpdateFromClipboardPayload; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -94,34 +83,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ServerStructureService(::Editor::ServiceProviderCollection& serviceProviders, bool isHostInstance);
-
-    MCNAPI void _dispatchMetadataToClients();
-
-    MCNAPI void _handleCopyToClipboardPayload(::Editor::Network::StructureCopyToClipboardPayload const& payload);
-
-    MCNAPI void _handleDeletePayload(::Editor::Network::StructureDeletePayload const& evt);
-
-    MCNAPI void _handleDuplicatePayload(::Editor::Network::StructureDuplicatePayload const& payload);
-
-    MCNAPI void _handleEditPayload(::Editor::Network::StructureEditPayload const& evt);
-
-    MCNAPI void _handleQueryPayload(::Editor::Network::StructureQueryPayload const& evt);
-
-    MCNAPI void _handleStructureFromClipboardPayload(::Editor::Network::StructureFromClipboardPayload const& payload);
-
-    MCNAPI void _handleStructureFromSelectionPayload(::Editor::Network::StructureFromSelectionPayload const& payload);
-
-    MCNAPI void
-    _handleStructureReplaceFromClipboardPayload(::Editor::Network::StructureReplaceFromClipboardPayload const& payload);
-
-    MCNAPI void
-    _handleUpdateFromClipboardPayload(::Editor::Network::StructureUpdateFromClipboardPayload const& payload);
-
-    MCNAPI void _makeStructureTemplateFromVolume(
-        ::Editor::EditorStructureTemplate&             structureTemplate,
-        ::BlockSource*                                 region,
-        ::Editor::RelativeVolumeListBlockVolume const& volume
-    );
     // NOLINTEND
 
 public:

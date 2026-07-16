@@ -40,7 +40,7 @@ public:
 
     virtual bool getValue() const /*override*/;
 
-    virtual void setValue(bool value) /*override*/;
+    virtual void setValue(bool) /*override*/;
     // NOLINTEND
 
 public:
@@ -52,8 +52,6 @@ public:
         ::std::vector<::std::function<::Bedrock::PubSub::Subscription(::std::function<void()>)>> subscriptionConnectors,
         ::std::unique_ptr<::Settings::IBooleanPropertyHandler>                                   delegate
     );
-
-    MCAPI void _updateSubscriptions();
     // NOLINTEND
 
 public:
@@ -70,17 +68,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canModify() const;
 
-    MCFOLD bool $getValue() const;
-
-    MCAPI void $setValue(bool value);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

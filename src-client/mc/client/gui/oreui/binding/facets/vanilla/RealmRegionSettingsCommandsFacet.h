@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,8 @@ namespace Realms { class RealmsRegionSettings; }
 
 namespace OreUI {
 
-class RealmRegionSettingsCommandsFacet : public ::OreUI::FacetBase<::OreUI::RealmRegionSettingsCommandsFacet> {
+class RealmRegionSettingsCommandsFacet
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmRegionSettingsCommandsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -37,18 +38,6 @@ public:
     MCAPI explicit RealmRegionSettingsCommandsFacet(
         ::std::weak_ptr<::Realms::RealmsRegionSettings> realmsRegionSettings
     );
-
-    MCAPI void fetchRegions();
-
-    MCAPI void resetLowPingWarning();
-
-    MCAPI void resetRegionStatus();
-
-    MCAPI void saveSelectedServerRegion(::std::string const& realmId);
-
-    MCAPI void setDoNotShowPingWarning(bool doNotShow);
-
-    MCAPI void setSelectedServerRegionIndex(int index);
     // NOLINTEND
 
 public:

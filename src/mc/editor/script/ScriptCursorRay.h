@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::Cursor { struct Ray; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -27,25 +26,9 @@ public:
     ScriptCursorRay();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI explicit ScriptCursorRay(::Editor::Cursor::Ray const& rayToCopy);
-#endif
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::Editor::Cursor::Ray const& rayToCopy);
-#endif
     // NOLINTEND
 };
 

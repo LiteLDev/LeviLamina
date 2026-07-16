@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -35,8 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptSettingsService(::Editor::ScriptModule::ScriptSettingsService&&);
-
     MCNAPI ScriptSettingsService(
         ::Editor::Services::EditorSettingsServiceProvider* serviceProvider,
         ::Scripting::WeakLifetimeScope const&              scope
@@ -57,8 +55,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptSettingsService&&);
-
     MCNAPI void* $ctor(
         ::Editor::Services::EditorSettingsServiceProvider* serviceProvider,
         ::Scripting::WeakLifetimeScope const&              scope

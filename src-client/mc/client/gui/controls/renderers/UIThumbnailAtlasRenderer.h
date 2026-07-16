@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/actor/ItemRenderChunkType.h"
 #include "mc/deps/core/checked_resource_service/ClientResourcePointer.h"
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/math/Matrix.h"
@@ -18,10 +17,7 @@
 // auto generated forward declare list
 // clang-format off
 class BaseActorRenderContext;
-class BlockType;
 class IClientInstance;
-class ItemRegistryRef;
-class ItemStack;
 class ScreenContext;
 class TaskGroup;
 namespace OreUI { struct AtlasIndex; }
@@ -66,8 +62,6 @@ public:
         // NOLINTBEGIN
         MCAPI AtlasInfo(::UIThumbnailAtlasRenderer::AtlasInfo const&);
 
-        MCAPI AtlasInfo(::UIThumbnailAtlasRenderer::AtlasInfo&&);
-
         MCAPI ~AtlasInfo();
         // NOLINTEND
 
@@ -75,8 +69,6 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::UIThumbnailAtlasRenderer::AtlasInfo const&);
-
-        MCAPI void* $ctor(::UIThumbnailAtlasRenderer::AtlasInfo&&);
         // NOLINTEND
 
     public:
@@ -98,7 +90,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BaseActorRenderContext>>                      mRenderContext;
     ::ll::TypedStorage<4, 24, ::AABB>                                                          mArea;
     ::ll::TypedStorage<4, 64, ::Matrix>                                                        mWorldMatrix;
-    ::ll::TypedStorage<8, 552, ::mce::Mesh>                                                    mMesh;
+    ::ll::TypedStorage<8, 592, ::mce::Mesh>                                                    mMesh;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::framebuilder::RenderUIMeshDescription>> mMeshDescription;
     ::ll::TypedStorage<4, 16, ::mce::Color>                                                    mTint;
     ::ll::TypedStorage<4, 20, ::std::optional<::glm::vec4>>                                    mClipRegion;
@@ -121,18 +113,6 @@ public:
         ::std::unordered_map<::HashedString, ::HashedString>& substitutions
     );
 
-    MCAPI void _addItemsToMesh(::OreUI::AtlasIndex& items, float scale);
-
-    MCAPI ::ItemStack _getItemStack(::std::string_view name, ::ItemRegistryRef const& registry) const;
-
-    MCAPI void _initialize(bool isResume, ::UIThumbnailAtlasRenderer::AtlasInfo const& atlasInfo);
-
-    MCAPI bool _isCaptureReady() const;
-
-    MCAPI bool _isNonRenderableBlock(::BlockType const& block) const;
-
-    MCAPI void _render(::ItemStack& item, float scale, float x, float y, ::ItemRenderChunkType renderType);
-
     MCAPI bool renderOffscreen(
         ::OreUI::AtlasIndex&                         items,
         ::TaskGroup&                                 taskGroup,
@@ -142,18 +122,6 @@ public:
     );
 
     MCAPI ~UIThumbnailAtlasRenderer();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::UIThumbnailAtlasRenderer::AtlasInfo> const getItemAtlasInfo();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int& mRenderCounter();
     // NOLINTEND
 
 public:

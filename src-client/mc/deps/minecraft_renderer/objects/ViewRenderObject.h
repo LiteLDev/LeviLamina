@@ -20,65 +20,13 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 140, ::ViewRenderData>                    mViewData;
     ::ll::TypedStorage<1, 1, ::ClientRenderData>                    mClientData;
-    ::ll::TypedStorage<8, 72, ::CloudRenderObject>                  mCloudState;
-    ::ll::TypedStorage<8, 1784, ::ChunkRenderObjectCollection>      mChunksState;
+    ::ll::TypedStorage<8, 80, ::CloudRenderObject>                  mCloudState;
+    ::ll::TypedStorage<8, 1280, ::ChunkRenderObjectCollection>      mChunksState;
     ::ll::TypedStorage<8, 128, ::ActorShadowRenderObjectCollection> mEntityShadowsState;
     ::ll::TypedStorage<8, 144, ::ParticleRenderObjectCollection>    mParticleState;
     ::ll::TypedStorage<8, 320, ::SkyRenderObject>                   mSkyState;
     ::ll::TypedStorage<8, 10848, ::WeatherRenderObject>             mWeatherState;
     ::ll::TypedStorage<8, 72, ::CrackRenderObjectCollection>        mCrackState;
     ::ll::TypedStorage<8, 40, ::NameTagRenderObjectCollection>      mNameTagState;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ViewRenderObject& operator=(ViewRenderObject const&);
-    ViewRenderObject(ViewRenderObject const&);
-    ViewRenderObject();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ViewRenderObject(::ViewRenderObject&&);
-
-    MCAPI ViewRenderObject(
-        ::ViewRenderData&&                    viewData,
-        ::ClientRenderData&&                  clientData,
-        ::CloudRenderObject&&                 cloudState,
-        ::ChunkRenderObjectCollection&&       chunkCollection,
-        ::ActorShadowRenderObjectCollection&& entityShadowsCollection,
-        ::ParticleRenderObjectCollection&&    particleCollection,
-        ::SkyRenderObject&&                   skyState,
-        ::WeatherRenderObject&&               weatherState,
-        ::CrackRenderObjectCollection&&       crackState,
-        ::NameTagRenderObjectCollection&&     nameTagState
-    );
-
-    MCAPI ~ViewRenderObject();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ViewRenderObject&&);
-
-    MCAPI void* $ctor(
-        ::ViewRenderData&&                    viewData,
-        ::ClientRenderData&&                  clientData,
-        ::CloudRenderObject&&                 cloudState,
-        ::ChunkRenderObjectCollection&&       chunkCollection,
-        ::ActorShadowRenderObjectCollection&& entityShadowsCollection,
-        ::ParticleRenderObjectCollection&&    particleCollection,
-        ::SkyRenderObject&&                   skyState,
-        ::WeatherRenderObject&&               weatherState,
-        ::CrackRenderObjectCollection&&       crackState,
-        ::NameTagRenderObjectCollection&&     nameTagState
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

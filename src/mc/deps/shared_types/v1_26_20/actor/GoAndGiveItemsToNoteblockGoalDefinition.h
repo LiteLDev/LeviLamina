@@ -28,12 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~GoAndGiveItemsToNoteblockGoalDefinition();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -42,23 +36,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_LISTEN_TIME();
-
-    MCAPI static float const& DEFAULT_REACH_BLOCK_DISTANCE();
-
-    MCAPI static float const& DEFAULT_RUN_SPEED();
-
-    MCAPI static float const& DEFAULT_THROW_FORCE();
-
-    MCAPI static float const& DEFAULT_VERTICAL_THROW_MUL();
-
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

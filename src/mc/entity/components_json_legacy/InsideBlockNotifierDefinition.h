@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class InsideBlockEventMap;
-class InsideBlockNotifierComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -18,12 +16,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::InsideBlockEventMap>> mBlockList;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext&, ::InsideBlockNotifierComponent& component) const;
     // NOLINTEND
 
 public:

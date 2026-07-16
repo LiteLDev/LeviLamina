@@ -10,11 +10,13 @@ namespace mce { class UUID; }
 namespace Editor::ThumbnailCacheHelpers {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_S
 MCNAPI ::std::string buildFilename(::mce::UUID id, uint hash, ::std::string_view extension);
 
 MCNAPI uint extractHashFromFilename(::std::string_view filename);
 
 MCNAPI bool matchFilename(::mce::UUID id, ::std::optional<uint> hash, ::std::string_view filename);
+#endif
 // NOLINTEND
 
 // static variables

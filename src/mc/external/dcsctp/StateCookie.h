@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
+
 namespace dcsctp {
 
 class StateCookie {
@@ -32,7 +35,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::dcsctp::StateCookie> Deserialize(::rtc::ArrayView<uchar const> cookie);
+    MCNAPI static ::std::optional<::dcsctp::StateCookie>
+    Deserialize(::webrtc::ArrayView<uchar const, 18446744073709546905> cookie);
     // NOLINTEND
 };
 

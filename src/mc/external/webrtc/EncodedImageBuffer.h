@@ -12,8 +12,7 @@ class EncodedImageBuffer : public ::webrtc::EncodedImageBufferInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd194c8;
-    ::ll::UntypedStorage<8, 8> mUnk665d2c;
+    ::ll::UntypedStorage<8, 24> mUnka452fb;
     // NOLINTEND
 
 public:
@@ -25,8 +24,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual uchar* data() /*override*/;
-
     virtual uchar const* data() const /*override*/;
 
     virtual uint64 size() const /*override*/;
@@ -43,8 +40,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uchar* $data();
-
     MCNAPI uchar const* $data() const;
 
     MCNAPI uint64 $size() const;

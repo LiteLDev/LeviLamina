@@ -45,9 +45,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI LegacyForestFoliageFeature(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
-
-    MCAPI void
-    _placeDoublePlants(::BlockSource& region, ::BlockPos const& origin, ::Random& random, int doublePlantCount) const;
     // NOLINTEND
 
 public:

@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/input/enums/ButtonState.h"
-#include "mc/deps/input/enums/ChordTrackingResult.h"
-
 // auto generated forward declare list
 // clang-format off
 class InputEventQueue;
@@ -64,8 +60,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void clear();
-
         MCAPI ::ButtonChordTracker::TrackerMappingAndState& operator=(::ButtonChordTracker::TrackerMappingAndState&&);
 
         MCAPI ~TrackerMappingAndState();
@@ -105,22 +99,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _checkChordHoldDurations();
-
-    MCAPI void _raiseLongestChordSequences(::ButtonChordTracker::TrackerMappingAndState& trackerData, int controllerId);
-
     MCAPI void clearMapping(int controllerId);
 
     MCAPI void setMapping(::std::vector<::ChordButtonMapping> const& inputMapping, int controllerId);
-
-    MCAPI ::ChordTrackingResult trackButtonEvent(uint buttonId, ::ButtonState state, int controllerId);
-
-    MCAPI ~ButtonChordTracker();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,23 +32,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptBiomeFilter(::ScriptModuleMinecraft::ScriptBiomeFilter const&);
-
-    MCAPI bool isEmpty() const;
-
-    MCFOLD void
-    setBiomes(::std::vector<::std::string>& biomeContainer, ::std::optional<::std::vector<::std::string>> biomes);
-
-    MCAPI void setExcludeBiomes(::std::optional<::std::vector<::std::string>> biomes);
-
-    MCAPI void setExcludeTags(::std::optional<::std::vector<::std::string>> tags);
-
-    MCAPI void setIncludeBiomes(::std::optional<::std::vector<::std::string>> biomes);
-
-    MCAPI void setIncludeTags(::std::optional<::std::vector<::std::string>> tags);
-
-    MCFOLD void setTags(::std::vector<::std::string>& tagContainer, ::std::optional<::std::vector<::std::string>> tags);
-
-    MCAPI ~ScriptBiomeFilter();
     // NOLINTEND
 
 public:
@@ -61,12 +44,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBiomeFilter const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

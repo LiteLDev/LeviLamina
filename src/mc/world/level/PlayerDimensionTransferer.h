@@ -55,35 +55,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerDimensionTransferer() /*override*/;
-
-    virtual void playerSaveLimboActors(
-        ::Player&                  player,
-        ::ChangeDimensionRequest&  changeRequest,
-        ::Dimension&               toDimension,
-        ::PlayerLimboActorManager* playerLimboActorManager
-    ) /*override*/;
-
-    virtual void playerDestroyRemotePlayers(::GameplayUserManager& gameplayUserManager) /*override*/;
-
-    virtual void playerStartChangeDimensionSuspendRegion(::Player& player, ::DimensionType fromDimension) /*override*/;
-
-    virtual void setTransitionLocation(
-        ::Player&                 player,
-        ::ChangeDimensionRequest& changeRequest,
-        ::Dimension&              toDimension
-    ) /*override*/;
+    virtual ~PlayerDimensionTransferer() /*override*/ = default;
 
     virtual void
-    syncTransitionComponentTargetPosition(::Player& player, ::ChangeDimensionRequest const& changeRequest) /*override*/;
+    playerSaveLimboActors(::Player&, ::ChangeDimensionRequest&, ::Dimension&, ::PlayerLimboActorManager*) /*override*/;
 
-    virtual void playerDestroyRegion(::Player& player, ::ChangeDimensionRequest const& changeRequest) /*override*/;
+    virtual void playerDestroyRemotePlayers(::GameplayUserManager&) /*override*/;
 
-    virtual void playerPrepareRegion(
-        ::Player&                       player,
-        ::ChangeDimensionRequest const& changeRequest,
-        ::Dimension const&              toDimension
-    ) /*override*/;
+    virtual void playerStartChangeDimensionSuspendRegion(::Player&, ::DimensionType) /*override*/;
+
+    virtual void setTransitionLocation(::Player&, ::ChangeDimensionRequest&, ::Dimension&) /*override*/;
+
+    virtual void syncTransitionComponentTargetPosition(::Player&, ::ChangeDimensionRequest const&) /*override*/;
+
+    virtual void playerDestroyRegion(::Player&, ::ChangeDimensionRequest const&) /*override*/;
+
+    virtual void playerPrepareRegion(::Player&, ::ChangeDimensionRequest const&, ::Dimension const&) /*override*/;
 
     virtual ::Bedrock::PubSub::Connector<void(::DimensionType)>&
     getOnAnyPlayerChangeDimensionPreSuspendRegionConnector() /*override*/;
@@ -91,32 +78,21 @@ public:
     virtual ::Bedrock::PubSub::Connector<void()>&
     getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector() /*override*/;
 
-    virtual bool
-    playerWaitForServer(::Player& player, ::std::chrono::steady_clock::time_point currentTime) /*override*/;
+    virtual bool playerWaitForServer(::Player&, ::std::chrono::steady_clock::time_point) /*override*/;
 
-    virtual bool
-    playerWaitForDimensionTransitionSystem(::Player const& player, ::EntityRegistry& entityRegistry) /*override*/;
+    virtual bool playerWaitForDimensionTransitionSystem(::Player const&, ::EntityRegistry&) /*override*/;
 
-    virtual void
-    sendClientRespawnMovePacketFromServer(::Player const& player, ::ChangeDimensionRequest& changeRequest) /*override*/;
+    virtual void sendClientRespawnMovePacketFromServer(::Player const&, ::ChangeDimensionRequest&) /*override*/;
 
-    virtual bool waitForSubChunks(::Player& player, ::Dimension const& toDimension) /*override*/;
+    virtual bool waitForSubChunks(::Player&, ::Dimension const&) /*override*/;
 
-    virtual void startWaitForRespawn(::Player const& player) /*override*/;
+    virtual void startWaitForRespawn(::Player const&) /*override*/;
 
-    virtual void playerSwitchDimension(
-        ::Player&                 player,
-        ::ChangeDimensionRequest& changeRequest,
-        ::AddLimboActorHelper*    addLimboActorHelper
-    ) /*override*/;
+    virtual void playerSwitchDimension(::Player&, ::ChangeDimensionRequest&, ::AddLimboActorHelper*) /*override*/;
 
-    virtual bool doRespawnIfReady(
-        ::Player&                 player,
-        ::ChangeDimensionRequest& changeRequest,
-        ::AddLimboActorHelper*    addLimboActorHelper
-    ) /*override*/;
+    virtual bool doRespawnIfReady(::Player&, ::ChangeDimensionRequest&, ::AddLimboActorHelper*) /*override*/;
 
-    virtual void setPacketSender(::PacketSender& packetSender) /*override*/;
+    virtual void setPacketSender(::PacketSender&) /*override*/;
     // NOLINTEND
 
 public:
@@ -130,8 +106,6 @@ public:
         ::Bedrock::NonOwnerPointer<::LevelStorage>           levelStorage,
         ::Bedrock::NonOwnerPointer<::LoadingScreenIdManager> loadingScreenIdManager
     );
-
-    MCAPI void _finalizeDimensionChange(::Player& player, ::ChangeDimensionRequest const& changeRequest);
     // NOLINTEND
 
 public:
@@ -148,73 +122,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $playerSaveLimboActors(
-        ::Player&                  player,
-        ::ChangeDimensionRequest&  changeRequest,
-        ::Dimension&               toDimension,
-        ::PlayerLimboActorManager* playerLimboActorManager
-    );
 
-    MCAPI void $playerDestroyRemotePlayers(::GameplayUserManager& gameplayUserManager);
-
-    MCAPI void $playerStartChangeDimensionSuspendRegion(::Player& player, ::DimensionType fromDimension);
-
-    MCAPI void
-    $setTransitionLocation(::Player& player, ::ChangeDimensionRequest& changeRequest, ::Dimension& toDimension);
-
-    MCAPI void $syncTransitionComponentTargetPosition(::Player& player, ::ChangeDimensionRequest const& changeRequest);
-
-    MCAPI void $playerDestroyRegion(::Player& player, ::ChangeDimensionRequest const& changeRequest);
-
-    MCAPI void $playerPrepareRegion(
-        ::Player&                       player,
-        ::ChangeDimensionRequest const& changeRequest,
-        ::Dimension const&              toDimension
-    );
-
-    MCFOLD ::Bedrock::PubSub::Connector<void(::DimensionType)>&
-    $getOnAnyPlayerChangeDimensionPreSuspendRegionConnector();
-
-    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector();
-
-    MCAPI bool $playerWaitForServer(::Player& player, ::std::chrono::steady_clock::time_point currentTime);
-
-    MCAPI bool $playerWaitForDimensionTransitionSystem(::Player const& player, ::EntityRegistry& entityRegistry);
-
-    MCAPI void $sendClientRespawnMovePacketFromServer(::Player const& player, ::ChangeDimensionRequest& changeRequest);
-
-    MCAPI bool $waitForSubChunks(::Player& player, ::Dimension const& toDimension);
-
-    MCAPI void $startWaitForRespawn(::Player const& player);
-
-    MCAPI void $playerSwitchDimension(
-        ::Player&                 player,
-        ::ChangeDimensionRequest& changeRequest,
-        ::AddLimboActorHelper*    addLimboActorHelper
-    );
-
-    MCAPI bool $doRespawnIfReady(
-        ::Player&                 player,
-        ::ChangeDimensionRequest& changeRequest,
-        ::AddLimboActorHelper*    addLimboActorHelper
-    );
-
-    MCAPI void $setPacketSender(::PacketSender& packetSender);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

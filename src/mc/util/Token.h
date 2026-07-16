@@ -30,32 +30,8 @@ public:
     Token();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit Token(::std::string const& str);
-
-    MCNAPI bool _parseRandom();
-
-    MCNAPI ::std::string const& getText(::std::string const& defaultValue) const;
-
-    MCNAPI ~Token();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::vector<::Token> tokenize(::std::string const& str);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& str);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

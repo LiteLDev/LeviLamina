@@ -8,10 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class Candidate; }
-namespace cricket { class SessionDescription; }
+namespace webrtc { class IceCandidate; }
 namespace webrtc { class IceCandidateCollection; }
-namespace webrtc { class IceCandidateInterface; }
+namespace webrtc { class SessionDescription; }
 // clang-format on
 
 namespace webrtc {
@@ -20,11 +19,11 @@ class JsepSessionDescription : public ::webrtc::SessionDescriptionInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkd958bc;
+    ::ll::UntypedStorage<8, 8>  mUnka6f262;
     ::ll::UntypedStorage<8, 32> mUnk45b0d1;
     ::ll::UntypedStorage<8, 32> mUnkf608db;
     ::ll::UntypedStorage<4, 4>  mUnk429f56;
-    ::ll::UntypedStorage<8, 24> mUnke7df2e;
+    ::ll::UntypedStorage<8, 24> mUnk9b3179;
     // NOLINTEND
 
 public:
@@ -40,9 +39,9 @@ public:
 
     virtual ::std::unique_ptr<::webrtc::SessionDescriptionInterface> Clone() const /*override*/;
 
-    virtual ::cricket::SessionDescription const* description() const /*override*/;
+    virtual ::webrtc::SessionDescription const* description() const /*override*/;
 
-    virtual ::cricket::SessionDescription* description() /*override*/;
+    virtual ::webrtc::SessionDescription* description() /*override*/;
 
     virtual ::std::string session_id() const /*override*/;
 
@@ -52,9 +51,9 @@ public:
 
     virtual ::std::string type() const /*override*/;
 
-    virtual bool AddCandidate(::webrtc::IceCandidateInterface const* candidate) /*override*/;
+    virtual bool AddCandidate(::webrtc::IceCandidate const* candidate) /*override*/;
 
-    virtual uint64 RemoveCandidates(::std::vector<::cricket::Candidate> const& candidates) /*override*/;
+    virtual bool RemoveCandidate(::webrtc::IceCandidate const* candidate) /*override*/;
 
     virtual uint64 number_of_mediasections() const /*override*/;
 
@@ -66,19 +65,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool GetMediasectionIndex(::webrtc::IceCandidateInterface const* candidate, uint64* index);
+    MCNAPI bool GetMediasectionIndex(::webrtc::IceCandidate const* candidate, uint64* index) const;
 
     MCNAPI bool Initialize(
-        ::std::unique_ptr<::cricket::SessionDescription> description,
-        ::std::string const&                             session_id,
-        ::std::string const&                             session_version
+        ::std::unique_ptr<::webrtc::SessionDescription> description,
+        ::std::string const&                            session_id,
+        ::std::string const&                            session_version
     );
 
     MCNAPI JsepSessionDescription(
-        ::webrtc::SdpType                                type,
-        ::std::unique_ptr<::cricket::SessionDescription> description,
-        ::std::string_view                               session_id,
-        ::std::string_view                               session_version
+        ::webrtc::SdpType                               type,
+        ::std::unique_ptr<::webrtc::SessionDescription> description,
+        ::std::string_view                              session_id,
+        ::std::string_view                              session_version
     );
     // NOLINTEND
 
@@ -86,10 +85,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::webrtc::SdpType                                type,
-        ::std::unique_ptr<::cricket::SessionDescription> description,
-        ::std::string_view                               session_id,
-        ::std::string_view                               session_version
+        ::webrtc::SdpType                               type,
+        ::std::unique_ptr<::webrtc::SessionDescription> description,
+        ::std::string_view                              session_id,
+        ::std::string_view                              session_version
     );
     // NOLINTEND
 
@@ -98,9 +97,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::webrtc::SessionDescriptionInterface> $Clone() const;
 
-    MCNAPI ::cricket::SessionDescription const* $description() const;
+    MCNAPI ::webrtc::SessionDescription const* $description() const;
 
-    MCNAPI ::cricket::SessionDescription* $description();
+    MCNAPI ::webrtc::SessionDescription* $description();
 
     MCNAPI ::std::string $session_id() const;
 
@@ -110,9 +109,9 @@ public:
 
     MCNAPI ::std::string $type() const;
 
-    MCNAPI bool $AddCandidate(::webrtc::IceCandidateInterface const* candidate);
+    MCNAPI bool $AddCandidate(::webrtc::IceCandidate const* candidate);
 
-    MCNAPI uint64 $RemoveCandidates(::std::vector<::cricket::Candidate> const& candidates);
+    MCNAPI bool $RemoveCandidate(::webrtc::IceCandidate const* candidate);
 
     MCNAPI uint64 $number_of_mediasections() const;
 

@@ -24,7 +24,7 @@ public:
             ::LocalWorldTransferActionFunc,
             ::ExternalWorldTransferActionFunc,
             ::RealmTransferActionFunc,
-            ::std::monostate>&& worldTransferAction
+            ::std::monostate>&&
     ) = 0;
 
     virtual ::std::variant<
@@ -36,7 +36,7 @@ public:
 
     virtual ::Bedrock::NonOwnerPointer<::WorldTransferAgent> const getWorldTransferAgent() const = 0;
 
-    virtual void setIsWorldTransferInProgress(bool isWorldTransferInProgress) = 0;
+    virtual void setIsWorldTransferInProgress(bool) = 0;
 
     virtual bool isWorldTransferInProgress() const = 0;
     // NOLINTEND

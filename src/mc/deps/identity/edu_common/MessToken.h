@@ -28,8 +28,6 @@ public:
     // NOLINTBEGIN
     MCNAPI MessToken(::MessToken const&);
 
-    MCNAPI bool isExpired() const;
-
     MCNAPI ::MessToken& operator=(::MessToken&&);
 
     MCNAPI ::std::string toString() const;

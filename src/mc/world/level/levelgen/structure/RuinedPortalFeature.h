@@ -29,10 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RuinedPortalFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool getNearestGeneratedFeature(
@@ -48,31 +44,19 @@ public:
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&         dimension,
         ::BiomeSource const& biomeSource,
-        ::Random&            cp,
-        ::ChunkPos const&    preliminarySurfaceLevel,
-        ::IPreliminarySurfaceProvider const&
+        ::Random&,
+        ::ChunkPos const&                    cp,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
 
     virtual bool isFeatureChunk(
-        ::BiomeSource const& random,
-        ::Random&            pos,
-        ::ChunkPos const&    levelSeed,
-        uint,
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& pos,
+        uint              levelSeed,
         ::IPreliminarySurfaceProvider const&,
         ::Dimension const&
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RuinedPortalFeature(uint seed, bool nether);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uint seed, bool nether);
     // NOLINTEND
 
 public:
@@ -91,16 +75,16 @@ public:
     MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
         ::Dimension&         dimension,
         ::BiomeSource const& biomeSource,
-        ::Random&            cp,
-        ::ChunkPos const&    preliminarySurfaceLevel,
-        ::IPreliminarySurfaceProvider const&
+        ::Random&,
+        ::ChunkPos const&                    cp,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
     MCAPI bool $isFeatureChunk(
-        ::BiomeSource const& random,
-        ::Random&            pos,
-        ::ChunkPos const&    levelSeed,
-        uint,
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& pos,
+        uint              levelSeed,
         ::IPreliminarySurfaceProvider const&,
         ::Dimension const&
     );

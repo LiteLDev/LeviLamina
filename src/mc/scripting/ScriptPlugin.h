@@ -4,12 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackIdVersion.h"
-#include "mc/deps/core/resource/ResourceInformation.h"
-#include "mc/deps/scripting/runtime/IDependencyLoader.h"
-#include "mc/deps/scripting/runtime/IPrinter.h"
-#include "mc/deps/scripting/script_engine/Capabilities.h"
-#include "mc/deps/scripting/script_engine/ModuleDescriptor.h"
-#include "mc/deps/scripting/script_engine/ScriptContext.h"
+#include "mc/deps/script_core/runtime/scripting/IDependencyLoader.h"
+#include "mc/deps/script_core/runtime/scripting/IPrinter.h"
+#include "mc/deps/script_core/script_engine/scripting/Capabilities.h"
+#include "mc/deps/script_core/script_engine/scripting/ModuleDescriptor.h"
+#include "mc/deps/script_core/script_engine/scripting/ScriptContext.h"
 #include "mc/resources/MinEngineVersion.h"
 #include "mc/scripting/PluginExecutionGroup.h"
 #include "mc/scripting/ScriptRuntimeType.h"
@@ -47,144 +46,39 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPlugin();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptPlugin() /*override*/;
+    virtual ~ScriptPlugin() /*override*/ = default;
 
-    virtual ::std::optional<::Scripting::ScriptData> onLoadScript(::std::string const& name) /*override*/;
+    virtual ::std::optional<::Scripting::ScriptData> onLoadScript(::std::string const&) /*override*/;
 
-    virtual void onInfo(::Scripting::ContextId contextId, ::std::string_view message) const /*override*/;
+    virtual void onInfo(::Scripting::ContextId, ::std::string_view) const /*override*/;
 
-    virtual void onWarn(::Scripting::ContextId contextId, ::std::string_view message) const /*override*/;
+    virtual void onWarn(::Scripting::ContextId, ::std::string_view) const /*override*/;
 
-    virtual void onError(::Scripting::ContextId contextId, ::std::string_view message) const /*override*/;
+    virtual void onError(::Scripting::ContextId, ::std::string_view) const /*override*/;
 
-    virtual void onException(
-        ::Scripting::ContextId        contextId,
-        ::Scripting::BaseError const& error,
-        ::entt::meta_any const&       errorAny
-    ) const /*override*/;
+    virtual void onException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const
+        /*override*/;
 
-    virtual bool shouldPrintException(
-        ::Scripting::ContextId        contextId,
-        ::Scripting::BaseError const& error,
-        ::entt::meta_any const&       errorAny
-    ) const /*override*/;
+    virtual bool
+    shouldPrintException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const
+        /*override*/;
 
-    virtual void onPromiseRejection(
-        ::Scripting::ContextId        contextId,
-        ::Scripting::BaseError const& error,
-        ::entt::meta_any const&       errorAny,
-        bool                          isHandled
-    ) const /*override*/;
+    virtual void
+    onPromiseRejection(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&, bool) const
+        /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlugin(
-        ::std::shared_ptr<::IScriptPluginSource>       pluginSource,
-        ::Scripting::ModuleDescriptor&&                moduleDesc,
-        ::std::vector<::Scripting::ModuleDescriptor>&& moduleDependencies,
-        ::Scripting::Capabilities&&                    capabilities,
-        ::MinEngineVersion const&                      minEngineVersion,
-        ::PackIdVersion const&                         packId,
-        ::std::string const&                           runtimeName,
-        ::std::string const&                           mainScriptFilePath,
-        ::ResourceInformation::ResourceType            pluginType,
-        ::PluginExecutionGroup                         executionGroup,
-        ::std::unique_ptr<::Scripting::IPrinter>       printLogger
-    );
-
-    MCAPI ::std::optional<::Scripting::ScriptData> _loadScript(::std::string const& fileName);
-
     MCAPI void enableHandleCounter(bool enabled);
-
-    MCAPI ::ScriptPluginHandleCounter* getHandleCounter() const;
-
-    MCFOLD ::std::string const& getMainScriptFilePath() const;
-
-    MCFOLD ::Scripting::ModuleDescriptor const& getModuleDescriptor() const;
-
-    MCFOLD ::std::string const& getName() const;
-
-    MCFOLD ::PackIdVersion const& getPackId() const;
-
-    MCFOLD ::std::string const& getRuntimeName() const;
-
-    MCFOLD ::Scripting::ScriptContext& getScriptContext();
-
-    MCFOLD ::std::vector<::std::string> const& getScriptFilePaths() const;
-
-    MCAPI void setSentryLogger(::std::unique_ptr<::ScriptSentryLogger> sentryLogger);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::IScriptPluginSource>       pluginSource,
-        ::Scripting::ModuleDescriptor&&                moduleDesc,
-        ::std::vector<::Scripting::ModuleDescriptor>&& moduleDependencies,
-        ::Scripting::Capabilities&&                    capabilities,
-        ::MinEngineVersion const&                      minEngineVersion,
-        ::PackIdVersion const&                         packId,
-        ::std::string const&                           runtimeName,
-        ::std::string const&                           mainScriptFilePath,
-        ::ResourceInformation::ResourceType            pluginType,
-        ::PluginExecutionGroup                         executionGroup,
-        ::std::unique_ptr<::Scripting::IPrinter>       printLogger
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::Scripting::ScriptData> $onLoadScript(::std::string const& name);
 
-    MCAPI void $onInfo(::Scripting::ContextId contextId, ::std::string_view message) const;
-
-    MCAPI void $onWarn(::Scripting::ContextId contextId, ::std::string_view message) const;
-
-    MCAPI void $onError(::Scripting::ContextId contextId, ::std::string_view message) const;
-
-    MCAPI void $onException(
-        ::Scripting::ContextId        contextId,
-        ::Scripting::BaseError const& error,
-        ::entt::meta_any const&       errorAny
-    ) const;
-
-    MCAPI bool $shouldPrintException(
-        ::Scripting::ContextId        contextId,
-        ::Scripting::BaseError const& error,
-        ::entt::meta_any const&       errorAny
-    ) const;
-
-    MCAPI void $onPromiseRejection(
-        ::Scripting::ContextId        contextId,
-        ::Scripting::BaseError const& error,
-        ::entt::meta_any const&       errorAny,
-        bool                          isHandled
-    ) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIDependencyLoader();
-
-    MCNAPI static void** $vftableForIPrinter();
     // NOLINTEND
 };

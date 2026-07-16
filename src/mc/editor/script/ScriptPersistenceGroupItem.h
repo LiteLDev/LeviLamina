@@ -3,17 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::ScriptModule { class ScriptPersistenceGroup; }
-namespace Editor::Services { class PersistenceItem; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -36,41 +30,9 @@ public:
     ScriptPersistenceGroupItem();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptPersistenceGroupItem(
-        ::WeakRef<::Editor::Services::PersistenceItem>  persistenceItem,
-        ::Editor::ScriptModule::ScriptPersistenceGroup* owner,
-        ::Scripting::WeakLifetimeScope const&           scope
-    );
-
-    MCNAPI ::Scripting::Error _getInvalidGroupItemError() const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> commit();
-
-    MCNAPI ::Scripting::Result_deprecated<::std::string const> fetchItemJSON();
-
-    MCNAPI ::Scripting::Result_deprecated<::std::string const> key() const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> setValue(::std::string const& value);
-
-    MCNAPI ::Scripting::Result_deprecated<::std::string const> value() const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::WeakRef<::Editor::Services::PersistenceItem>  persistenceItem,
-        ::Editor::ScriptModule::ScriptPersistenceGroup* owner,
-        ::Scripting::WeakLifetimeScope const&           scope
-    );
     // NOLINTEND
 };
 

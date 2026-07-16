@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/SSLRole.h"
+#include "mc/external/webrtc/SSLRole.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::webrtc::StreamId> AllocateSid(::rtc::SSLRole role);
+    MCNAPI ::std::optional<::webrtc::StreamId> AllocateSid(::webrtc::SSLRole role);
 
     MCNAPI void ReleaseSid(::webrtc::StreamId sid);
 

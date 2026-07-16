@@ -39,13 +39,6 @@ public:
 
     MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilter const&);
-
-    MCFOLD void process();
-
-    MCAPI bool
-    shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilterData const& data) const;
-
-    MCAPI ~ScriptActorHurtBeforeEventFilter();
     // NOLINTEND
 
 public:
@@ -58,12 +51,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilter const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

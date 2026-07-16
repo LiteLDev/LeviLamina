@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,8 +32,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<::Editor::BlockMask::BlockMaskList> getBlockMaskList() const;
-
-    MCNAPI ~ScriptBlockMaskList();
     // NOLINTEND
 
 public:
@@ -42,12 +40,6 @@ public:
     MCNAPI static ::Scripting::EnumBinding bindEnums();
 
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

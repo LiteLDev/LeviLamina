@@ -23,19 +23,15 @@ public:
     // NOLINTEND
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
-
-    MCFOLD ::cereal::StringConstraint& maxSize(uint64 size);
-
-    MCFOLD uint64 maxSize() const;
-
-    MCAPI ::cereal::StringConstraint& minSize(uint64 size);
-
     MCAPI ::cereal::StringConstraint& regex(::std::string str, ::std::regex_constants::syntax_option_type flag);
-
-    MCAPI ::cereal::StringConstraint& rejectEmpty();
 
     MCAPI void validateValue(::std::string_view str, ::cereal::SerializerContext& context) const;
     // NOLINTEND
@@ -44,6 +40,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string flagsToString(::std::regex_constants::syntax_option_type flags);
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
+
     // NOLINTEND
 
 public:

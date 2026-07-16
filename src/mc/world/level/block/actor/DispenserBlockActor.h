@@ -17,7 +17,6 @@ class CompoundTag;
 class Container;
 class DataLoadHelper;
 class ILevel;
-class Random;
 class SaveContext;
 // clang-format on
 
@@ -65,9 +64,9 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
@@ -76,8 +75,6 @@ public:
     MCAPI explicit DispenserBlockActor(::BlockPos pos);
 
     MCAPI DispenserBlockActor(::BlockPos pos, ::BlockActorType type);
-
-    MCAPI int getRandomSlot(::Random& random);
     // NOLINTEND
 
 public:
@@ -103,9 +100,7 @@ public:
 
     MCFOLD int $getMaxStackSize() const;
 
-    MCAPI ::std::string $getName() const;
-
-    MCAPI void $startOpen(::Actor& actor);
+    MCFOLD void $startOpen(::Actor& actor);
 
     MCFOLD void $stopOpen(::Actor& actor);
 
@@ -121,18 +116,6 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftableForContainer();
-
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

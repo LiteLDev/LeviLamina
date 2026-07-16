@@ -20,10 +20,6 @@ struct ResolvedItemIconInfo;
 
 class ChalkboardItem : public ::Item {
 public:
-    // prevent constructor by default
-    ChalkboardItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
@@ -31,17 +27,11 @@ public:
 
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    virtual bool _calculatePlacePos(::ItemStackBase& entity, ::Actor& face, uchar& pos, ::BlockPos&) const /*override*/;
+    virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
 
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ChalkboardItem(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -53,19 +43,13 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
     MCFOLD ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase& entity, ::Actor& face, uchar& pos, ::BlockPos&) const;
+    MCAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;

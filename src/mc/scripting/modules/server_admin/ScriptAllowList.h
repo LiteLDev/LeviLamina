@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
-namespace ScriptModuleServerAdmin { class ScriptAllowListFileReloadError; }
 namespace ScriptModuleServerAdmin { class ScriptAllowListModificationError; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -29,36 +28,6 @@ public:
     ScriptAllowList& operator=(ScriptAllowList const&);
     ScriptAllowList(ScriptAllowList const&);
     ScriptAllowList();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleServerAdmin::ScriptAllowListModificationError,
-        ::ScriptModuleMinecraft::ScriptInvalidActorError>
-    add(::std::variant<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>,
-        ::std::string> const& playerData);
-
-    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError> contains(
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>,
-            ::std::string> const& playerData
-    );
-
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleServerAdmin::ScriptAllowListFileReloadError> reloadFile();
-
-    MCNAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleServerAdmin::ScriptAllowListModificationError,
-        ::ScriptModuleMinecraft::ScriptInvalidActorError>
-    remove(
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>,
-            ::std::string> const& playerData
-    );
-    // NOLINTEND
 
 public:
     // static functions

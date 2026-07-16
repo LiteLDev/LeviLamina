@@ -12,6 +12,7 @@ class Item;
 class ItemStack;
 class Level;
 class Player;
+struct ItemOnUseResult;
 // clang-format on
 
 class IFoodItemComponent {
@@ -28,7 +29,7 @@ public:
 
     virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) = 0;
 
-    virtual void use(bool& result, ::ItemStack& instance, ::Player& player) = 0;
+    virtual void use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player) = 0;
 
     virtual ::Item const* useTimeDepleted(
         ::ItemUseMethod&   itemUseMethod,
@@ -37,16 +38,6 @@ public:
         ::Player&          player,
         ::Level&           level
     ) = 0;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> CAN_ALWAYS_EAT();
-
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NUTRITION();
-
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SATURATION_MODIFIER();
     // NOLINTEND
 
 public:

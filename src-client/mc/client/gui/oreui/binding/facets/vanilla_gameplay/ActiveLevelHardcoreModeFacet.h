@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -15,7 +15,7 @@ class Minecraft;
 
 namespace OreUI {
 
-class ActiveLevelHardcoreModeFacet : public ::OreUI::FacetBase<::OreUI::ActiveLevelHardcoreModeFacet> {
+class ActiveLevelHardcoreModeFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ActiveLevelHardcoreModeFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,10 +40,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ActiveLevelHardcoreModeFacet(::Bedrock::NotNullNonOwnerPtr<::Minecraft const> minecraft);
-
-    MCAPI void _onLevelChanged(::Level const* const level);
-
-    MCAPI ::std::optional<bool> const& getIsHardcore() const;
     // NOLINTEND
 
 public:
@@ -61,13 +57,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -41,22 +41,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RouterQuery(::OreUI::ClientDependencies const& client);
-
-    MCAPI void _updateState();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIQuery();
-
-    MCNAPI static void** $vftableForPropertyObject();
     // NOLINTEND
 };
 

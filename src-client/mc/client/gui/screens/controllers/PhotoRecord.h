@@ -17,31 +17,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PhotoRecord& operator=(PhotoRecord const&);
-    PhotoRecord();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PhotoRecord(::PhotoRecord const&);
-
     MCAPI ::std::string const getName() const;
-
-    MCAPI ::PhotoRecord& operator=(::PhotoRecord&&);
-
-    MCAPI ~PhotoRecord();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PhotoRecord const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

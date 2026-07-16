@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cricket/AudioSource.h"
+#include "mc/external/webrtc/AudioSource.h"
 #include "mc/external/webrtc/AudioTrackSinkInterface.h"
 
 namespace webrtc {
 
-class LocalAudioSinkAdapter : public ::webrtc::AudioTrackSinkInterface, public ::cricket::AudioSource {
+class LocalAudioSinkAdapter : public ::webrtc::AudioTrackSinkInterface, public ::webrtc::AudioSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk9b8599;
+    ::ll::UntypedStorage<8, 8>  mUnk16bf7d;
     ::ll::UntypedStorage<8, 40> mUnkd9f781;
     ::ll::UntypedStorage<4, 4>  mUnke84c4d;
     // NOLINTEND
@@ -47,7 +47,7 @@ public:
 
     virtual int NumPreferredChannels() const /*override*/;
 
-    virtual void SetSink(::cricket::AudioSource::Sink* sink) /*override*/;
+    virtual void SetSink(::webrtc::AudioSource::Sink* sink) /*override*/;
     // NOLINTEND
 
 public:
@@ -72,7 +72,7 @@ public:
 
     MCNAPI int $NumPreferredChannels() const;
 
-    MCNAPI void $SetSink(::cricket::AudioSource::Sink* sink);
+    MCNAPI void $SetSink(::webrtc::AudioSource::Sink* sink);
 
 
     // NOLINTEND

@@ -3,15 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 
 // auto generated forward declare list
 // clang-format off
 class ServerLevel;
-namespace ScriptModuleDebugUtilities { class ScriptDebugShape; }
-namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace ScriptModuleMinecraft { struct ScriptPrimitiveShapesDataComponent; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -38,33 +36,12 @@ public:
     ScriptDebugDrawer();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _addShape(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugShape> shape,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
-    );
-
-    MCAPI void _removeAll();
-
-    MCAPI void _removeShape(::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugShape> shape);
-
-    MCAPI ~ScriptDebugDrawer();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugDrawer>
     getHandle(::Scripting::WeakLifetimeScope& scope, ::ServerLevel& level);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

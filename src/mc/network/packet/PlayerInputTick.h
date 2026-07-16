@@ -22,23 +22,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit PlayerInputTick(::EntityContext const& entity);
-
-    MCAPI explicit PlayerInputTick(uint64 value);
-
-    MCAPI explicit operator uint64() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static char const* clientBoundDoc();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::EntityContext const& entity);
-
-    MCFOLD void* $ctor(uint64 value);
     // NOLINTEND
 };

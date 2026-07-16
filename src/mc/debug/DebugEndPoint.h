@@ -108,7 +108,12 @@ public:
 
     virtual bool logOnlyOnce() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
+#else // LL_PLAT_C
     virtual void contentAssert(::LogArea const, ::LogLevel const, char const*);
+#endif
+
     // NOLINTEND
 
 public:
@@ -119,12 +124,6 @@ public:
 #endif
 
     MCNAPI void initializeContentLogging(::ResourcePackManager& mgr, ::Core::Path const& levelPath);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::LogArea, bool> const& mAssertAreas();
     // NOLINTEND
 
 public:
@@ -149,7 +148,7 @@ public:
 
     MCNAPI bool $logOnlyOnce() const;
 
-    MCNAPI void $contentAssert(::LogArea const, ::LogLevel const, char const*);
+    MCNAPI void $contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
 #endif
 
 

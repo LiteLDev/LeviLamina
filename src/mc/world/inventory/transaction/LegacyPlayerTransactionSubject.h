@@ -29,22 +29,12 @@ public:
     // NOLINTBEGIN
     virtual bool isServerAuthBlockBreakingEnabled() const /*override*/;
 
-    virtual bool destroyBlock(::BlockPos const& pos, uchar face) /*override*/;
+    virtual bool destroyBlock(::BlockPos const&, uchar) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isServerAuthBlockBreakingEnabled() const;
 
-    MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

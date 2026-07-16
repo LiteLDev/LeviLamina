@@ -12,10 +12,6 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 
 class CartographyTableBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    CartographyTableBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isCraftingBlock() const /*override*/;
@@ -26,15 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CartographyTableBlock(::std::string const& nameId, int id);
-
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

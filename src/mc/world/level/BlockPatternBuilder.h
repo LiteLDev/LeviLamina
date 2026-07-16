@@ -11,7 +11,6 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class HashedString;
 // clang-format on
 
 class BlockPatternBuilder {
@@ -24,13 +23,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _allCharactersMatched() const;
-
     MCAPI ::BlockPatternBuilder& aisle(::std::vector<::std::string> patterns);
 
     MCAPI ::BlockPatternData buildOrAssert();
-
-    MCAPI ::BlockPatternBuilder& define(char pattern, ::HashedString const& block);
 
     MCAPI ::BlockPatternBuilder& define(
         char                                                                                       pattern,

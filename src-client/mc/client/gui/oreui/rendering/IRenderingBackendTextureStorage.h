@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Gameface { struct BackendTextureStorageDependencies; }
 namespace Gameface { struct VisitedRenderTarget; }
 namespace Gameface { struct VisitedSampler; }
 namespace Gameface { struct VisitedTexture; }
@@ -89,13 +88,6 @@ public:
         ::brstd::function_ref<void(::Gameface::VisitedSampler const&) const, void(::Gameface::VisitedSampler const&)>
             visitor
     ) = 0;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::Gameface::IRenderingBackendTextureStorage>
-    create(::Gameface::BackendTextureStorageDependencies&& deps);
     // NOLINTEND
 
 public:

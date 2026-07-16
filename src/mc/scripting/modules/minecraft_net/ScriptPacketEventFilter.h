@@ -20,35 +20,14 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptPacketEventFilter& operator=(ScriptPacketEventFilter const&);
+    ScriptPacketEventFilter(ScriptPacketEventFilter const&);
     ScriptPacketEventFilter();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptPacketEventFilter(::ScriptModuleMinecraftNet::EventFilters::ScriptPacketEventFilter const&);
-
-    MCNAPI ::ScriptModuleMinecraftNet::EventFilters::ScriptPacketEventFilter&
-    operator=(::ScriptModuleMinecraftNet::EventFilters::ScriptPacketEventFilter const&);
-
-    MCNAPI ~ScriptPacketEventFilter();
-    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraftNet::EventFilters::ScriptPacketEventFilter const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

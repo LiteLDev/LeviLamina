@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class FolderSizeAndModifyDateSnapshot;
-// clang-format on
-
 class FolderSizeAndModifyDateSnapshotDiff {
 public:
     // member variables
@@ -24,33 +19,4 @@ public:
     FolderSizeAndModifyDateSnapshotDiff& operator=(FolderSizeAndModifyDateSnapshotDiff const&);
     FolderSizeAndModifyDateSnapshotDiff(FolderSizeAndModifyDateSnapshotDiff const&);
     FolderSizeAndModifyDateSnapshotDiff();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI FolderSizeAndModifyDateSnapshotDiff(
-        ::FolderSizeAndModifyDateSnapshot const& older,
-        ::FolderSizeAndModifyDateSnapshot const& newer
-    );
-
-    MCNAPI ~FolderSizeAndModifyDateSnapshotDiff();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::FolderSizeAndModifyDateSnapshot const& older, ::FolderSizeAndModifyDateSnapshot const& newer);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };

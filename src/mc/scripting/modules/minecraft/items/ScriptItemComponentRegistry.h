@@ -3,23 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class IScriptItemCustomComponentWriter; }
-namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
-namespace ScriptModuleMinecraft { struct ScriptCustomComponentInvalidRegistryError; }
-namespace ScriptModuleMinecraft { struct ScriptCustomComponentNameError; }
-namespace ScriptModuleMinecraft { struct ScriptItemCustomComponentAlreadyRegisteredError; }
-namespace ScriptModuleMinecraft { struct ScriptItemCustomComponentReloadNewComponentError; }
-namespace ScriptModuleMinecraft { struct ScriptItemCustomComponentReloadNewEventError; }
-namespace ScriptModuleMinecraft { struct ScriptItemCustomComponentReloadVersionError; }
-namespace ScriptModuleMinecraft { struct ScriptNamespaceNameError; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct EngineError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -39,53 +28,9 @@ public:
     ScriptItemComponentRegistry();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptItemComponentRegistry(
-        ::ScriptModuleMinecraft::IScriptItemCustomComponentWriter& customComponentWriter
-    );
-
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
-        ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError,
-        ::Scripting::EngineError>
-    registerCustomComponent(
-        ::Scripting::WeakLifetimeScope&                             scope,
-        ::std::string const&                                        componentName,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface closures
-    );
-
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptCustomComponentNameError,
-        ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError,
-        ::Scripting::EngineError>
-    registerCustomComponentV1(
-        ::Scripting::WeakLifetimeScope&                             scope,
-        ::std::string const&                                        componentName,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface closures
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::IScriptItemCustomComponentWriter& customComponentWriter);
     // NOLINTEND
 };
 

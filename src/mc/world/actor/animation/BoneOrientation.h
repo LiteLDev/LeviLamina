@@ -51,44 +51,13 @@ public:
 
     MCAPI BoneOrientation(::BoneOrientation const& rhs);
 
-#ifdef LL_PLAT_C
-    MCFOLD ::ExpressionNode const* getBoneBindingExpression() const;
-
-    MCAPI ::BoneBindingMethod getBoneBindingMethod() const;
-
-    MCAPI ::BoneOrientationTransform& getDefaultTransform();
-
-    MCFOLD ::Matrix const& getMatrix() const;
-#endif
-
-    MCFOLD ::HashedString const& getName() const;
-
-    MCFOLD ::Vec3 const& getPivot() const;
-
-    MCFOLD ::Vec3& getPivot();
-
-#ifdef LL_PLAT_C
-    MCAPI ::BoneAnimationRelativeMode getRotationRelativeMode() const;
-
-    MCFOLD ::BoneOrientationTransform const& getTransform() const;
-#endif
-
     MCAPI ::BoneOrientation& operator=(::BoneOrientation const& rhs);
+
+    MCAPI void LL_CC_V
+    rotateAndUpdateLocalPreTransformMatrix(::DirectX::XMMATRIX matrix, float rotationInDegrees, ::Vec3 const& axis);
 
 #ifdef LL_PLAT_C
     MCAPI void setBoneBindingExpression(::std::string const& bindingExpression, ::MolangVersion molangVersion);
-
-    MCAPI void setBoneBindingMethod(::BoneBindingMethod boneBindingMethod);
-
-    MCAPI void setDefaultTransform(::BoneOrientationTransform const& transform);
-
-    MCAPI void setMatrix(::Matrix const& matrix);
-
-    MCAPI void setOverrideStackMatrix(bool arg);
-
-    MCFOLD void setPivot(::Vec3 const& pivot);
-
-    MCAPI void setTransform(::BoneOrientationTransform const& transform);
 
     MCAPI void LL_CC_V updateBoneTransform(::Vec3 const* offset, ::DirectX::XMMATRIX& boneToEntitySpaceMatrix);
 #endif

@@ -7,7 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class CopyOnWriteBuffer; }
+namespace webrtc { class CopyOnWriteBuffer; }
+namespace webrtc { class PriorityValue; }
 namespace webrtc { class RTCError; }
 namespace webrtc { class SctpDataChannel; }
 namespace webrtc { class StreamId; }
@@ -21,12 +22,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::webrtc::RTCError SendData(
-        ::webrtc::StreamId              sid,
-        ::webrtc::SendDataParams const& params,
-        ::rtc::CopyOnWriteBuffer const& payload
+        ::webrtc::StreamId                 sid,
+        ::webrtc::SendDataParams const&    params,
+        ::webrtc::CopyOnWriteBuffer const& payload
     ) = 0;
 
-    virtual void AddSctpDataStream(::webrtc::StreamId sid) = 0;
+    virtual void AddSctpDataStream(::webrtc::StreamId sid, ::webrtc::PriorityValue priority) = 0;
 
     virtual void RemoveSctpDataStream(::webrtc::StreamId sid) = 0;
 

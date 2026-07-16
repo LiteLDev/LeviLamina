@@ -20,12 +20,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ChunkGenerationManager;
 class Command;
 class CommandManager;
 class CommandOrigin;
-class DynamicProperties;
 class DynamicPropertiesManager;
 class Experiments;
 class HashedString;
@@ -34,13 +32,11 @@ class LevelSettings;
 class MapDataManager;
 class MobEvents;
 class NetworkIdentifier;
-class Player;
 class PlayerSleepManager;
 class Random;
 class ResourcePackManager;
 class ServerMapDataManager;
 class ServerPlayerSleepManager;
-class ServerScriptManager;
 class ServerSubChunkLighter;
 class TagCacheManager;
 class TickTimeManager;
@@ -51,7 +47,6 @@ class WorldClockRegistryServer;
 struct BiomeJsonDocumentGlueResolvedBiomeData;
 struct LevelTagIDType;
 struct LevelTagSetIDType;
-struct ServerLevelArguments;
 namespace GameModeExt { struct MessengerFactory; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
 // clang-format on
@@ -95,7 +90,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerLevel() /*override*/;
+    virtual ~ServerLevel() /*override*/ = default;
 
     virtual bool initialize(
         ::std::string const&   levelName,
@@ -137,13 +132,13 @@ public:
     runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem) /*override*/;
 
     virtual void decrementTagCache(
-        ::std::string const& tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     ) /*override*/;
 
     virtual void incrementTagCache(
-        ::std::string const& tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     ) /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() /*override*/;
@@ -159,7 +154,7 @@ public:
     virtual ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> tryGetVolumeEntityManagerServer() const
         /*override*/;
 
-    virtual void clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId) /*override*/;
+    virtual void clearAllGenerationRequests(::NetworkIdentifier const&, ::SubClientId) /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> getChunkGenerationManager() /*override*/;
 
@@ -187,153 +182,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ServerLevel(::ServerLevelArguments&& args);
-
-    MCAPI void _initializeActorManager();
-
-    MCAPI void _initializeDynamicPropertiesManager();
-
-    MCAPI void _initializeMobEvents();
-
-    MCAPI void _initializePlayerSleepManager();
-
-    MCAPI void _initializeScoreboard();
-
-    MCAPI void _onActorEntityAdded(::Actor& actor);
-
-    MCAPI void _onPlayerWakeUp(::Player& player);
-
-    MCAPI void bindDynamicScriptTypes(::ServerScriptManager& script);
-
-    MCFOLD ::CommandManager const& getCommandManager() const;
-
-    MCFOLD ::CommandManager& getCommandManager();
-
-    MCAPI ::DynamicPropertiesDefinition& getDynamicPropertiesDefinition();
-
-    MCAPI ::DynamicPropertiesManager& getDynamicPropertiesManager() const;
-
-    MCFOLD ::MobEvents const& getMobEvents() const;
-
-    MCFOLD ::MobEvents& getMobEvents();
-
-    MCAPI ::DynamicProperties& getOrAddDynamicProperties();
-
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistryServer> getWorldClockRegistryServer() const;
-
-    MCAPI void setShouldSendSleepMessage(bool shouldSend);
-
-    MCAPI bool shouldSendSleepMessage() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerLevelArguments&& args);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $initialize(
-        ::std::string const&   levelName,
-        ::LevelSettings const& levelSettings,
-        ::Experiments const&   experiments,
-        ::std::string const*   levelId,
-        ::std::optional<::std::reference_wrapper<
-            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
-            biomeIdToResolvedData
-    );
 
-    MCFOLD ::PlayerSleepManager const& $getPlayerSleepManager() const;
-
-    MCFOLD ::PlayerSleepManager& $getPlayerSleepManager();
-
-    MCFOLD ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> $getServerPlayerSleepManager();
-
-    MCFOLD ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> $getServerPlayerSleepManager() const;
-
-    MCAPI void $setCommandsEnabled(bool commandsEnabled);
-
-    MCAPI void $setWorldTemplateOptionsUnlocked();
-
-    MCAPI ::ResourcePackManager* $getClientResourcePackManager() const;
-
-    MCAPI ::ResourcePackManager* $getServerResourcePackManager() const;
-
-    MCAPI ::TradeTables* $getTradeTables();
-
-    MCAPI void $runCommand(
-        ::HashedString const&     commandStr,
-        ::CommandOrigin&          origin,
-        ::CommandOriginSystem     originSystem,
-        ::CurrentCmdVersion const commandVersion
-    );
-
-    MCAPI void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
-
-    MCAPI void $decrementTagCache(
-        ::std::string const& tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
-    );
-
-    MCAPI void $incrementTagCache(
-        ::std::string const& tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
-    );
-
-    MCAPI ::Bedrock::NonOwnerPointer<::TagCacheManager> $getTagCacheManager();
-
-    MCAPI ::LevelChunkMetaDataManager* $getLevelChunkMetaDataManager();
-
-    MCAPI void $loadFunctionManager();
-
-    MCFOLD ::Random& $getThreadRandom() const;
-
-    MCAPI ::PositionTrackingDB::PositionTrackingDBServer* $getPositionTrackerDBServer() const;
-
-    MCAPI ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> $tryGetVolumeEntityManagerServer() const;
-
-    MCAPI void $clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
-
-    MCFOLD ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> $getChunkGenerationManager();
-
-    MCFOLD ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> $getMapDataManager();
-
-    MCAPI ::GameModeExt::MessengerFactory $createMessengerFactory() const;
-
-    MCAPI ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
-
-    MCAPI void $_subTick();
-
-    MCFOLD ::TickTimeManager const& $_getTickTimeManager() const;
-
-    MCFOLD ::TickTimeManager& $_getTickTimeManager();
-
-    MCAPI ::PlayerDeathManager* $_getPlayerDeathManager();
-
-    MCAPI ::MapDataManager& $_getMapDataManager();
-
-    MCAPI void $_initializeMapDataManager();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockSourceListener();
-
-    MCNAPI static void** $vftableForIWorldRegistriesProvider();
-
-    MCNAPI static void** $vftableForILevel();
     // NOLINTEND
 };

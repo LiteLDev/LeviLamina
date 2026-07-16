@@ -4,24 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
-#include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/deps/scripting/script_engine/Closure.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::ScriptModule { class ScriptPersistenceGroup; }
-namespace Editor::Services { class EditorPersistenceServiceProvider; }
 namespace Editor::Services { class PersistenceGroup; }
-namespace Editor::Services { struct PersistenceGroupCreationOptions; }
-namespace Editor::Services { struct PersistenceQueryGroupOptions; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct EnumBinding; }
 namespace Scripting { struct InterfaceBinding; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -44,58 +33,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPersistenceService(
-        ::Editor::Services::EditorPersistenceServiceProvider* persistenceService,
-        ::Scripting::WeakLifetimeScope const&                 scope
-    );
-
-    MCNAPI ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>
-    _createScriptPersistenceGroup(::WeakRef<::Editor::Services::PersistenceGroup> groupRef);
-
-    MCNAPI bool _validateNamespace(::Scripting::ContextConfig const& contextConfig, ::std::string namespacedName);
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>>
-    createGroup(
-        ::Scripting::ContextConfig const&                   contextConfig,
-        ::std::string const&                                namespacedName,
-        ::Editor::Services::PersistenceGroupCreationOptions options
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> deleteGroup(
-        ::Scripting::ContextConfig const&                   contextConfig,
-        ::std::string const&                                namespacedName,
-        ::Editor::Services::PersistenceGroupCreationOptions options
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> disposeAllGroups();
-
-    MCNAPI ::Scripting::Result_deprecated<bool> disposeGroup(::mce::UUID uuid);
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::std::vector<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>>>
-    fetchGroups(::Editor::Services::PersistenceQueryGroupOptions options);
-
-    MCNAPI ::std::optional<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>>
-    getGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceGroupCreationOptions options);
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>>
-    getOrCreateGroup(
-        ::Scripting::ContextConfig const&                   contextConfig,
-        ::std::string const&                                namespacedName,
-        ::Editor::Services::PersistenceGroupCreationOptions options
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> requestClientGroup(
-        ::std::string const&                                                              namespacedName,
-        ::Editor::Services::PersistenceGroupCreationOptions                               options,
-        ::Scripting::Closure<void(::Scripting::Result_deprecated<::std::optional<::Scripting::WeakTypedObjectHandle<
-                                      ::Editor::ScriptModule::ScriptPersistenceGroup>>>)> callback
-    );
-
-    MCNAPI bool saveGroupToClient(::mce::UUID uuid);
-
     MCNAPI ~ScriptPersistenceService();
     // NOLINTEND
 
@@ -111,15 +48,6 @@ public:
     MCNAPI static ::Scripting::InterfaceBinding bindScriptPersistenceQueryGroupOptions();
 
     MCNAPI static ::Scripting::EnumBinding bindScriptPersistenceScope();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Editor::Services::EditorPersistenceServiceProvider* persistenceService,
-        ::Scripting::WeakLifetimeScope const&                 scope
-    );
     // NOLINTEND
 
 public:

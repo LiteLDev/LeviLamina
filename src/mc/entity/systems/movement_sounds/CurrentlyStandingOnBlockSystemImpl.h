@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
-#include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
@@ -17,8 +16,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
-class IConstBlockSource;
-class StrictEntityContext;
 struct AABBShapeComponent;
 struct CurrentlyStandingOnBlockComponent;
 struct DimensionTypeComponent;
@@ -47,43 +44,13 @@ public:
             ::AddRemove<::CurrentlyStandingOnBlockComponent>,
             ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
             ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context
+            ::EntityFactoryT<>>&
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void doCurrentlyStandingOnBlockSystem(
-        ::StrictEntityContext const&                          entity,
-        ::ActorOwnerComponent const&                          actorOwnerComponent,
-        ::StateVectorComponent const&                         stateVectorComponent,
-        ::AABBShapeComponent const&                           aabbShapeComponent,
-        ::EntityModifier<::CurrentlyStandingOnBlockComponent> entityModifier,
-        ::IConstBlockSource const&                            region
-    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
-        ::StrictExecutionContext<
-            ::Filter<::ShouldPlayMovementSoundComponent>,
-            ::Read<::ActorOwnerComponent, ::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>,
-            ::Write<>,
-            ::AddRemove<::CurrentlyStandingOnBlockComponent>,
-            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context
-    );
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

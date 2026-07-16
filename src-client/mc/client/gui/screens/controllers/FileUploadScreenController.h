@@ -6,7 +6,6 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 #include "mc/deps/core/file/FileUploadType.h"
-#include "mc/util/UploadError.h"
 #include "mc/util/UploadState.h"
 
 // auto generated forward declare list
@@ -43,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileUploadScreenController() /*override*/;
+    virtual ~FileUploadScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -64,20 +63,6 @@ public:
         ::Core::FileUploadType                                fileUploadType,
         ::std::function<void(::UploadState, ::Realms::World)> callback
     );
-
-    MCAPI bool _canCancelUpload() const;
-
-    MCAPI void _displayPostUploadErrorPopup();
-
-    MCAPI void _displayUploadErrorPopup(::UploadError uploadError);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _startUpload();
-
-    MCAPI ::std::string getTitleLabel() const;
     // NOLINTEND
 
 public:
@@ -95,26 +80,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

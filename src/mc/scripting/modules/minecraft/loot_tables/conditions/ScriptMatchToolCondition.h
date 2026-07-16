@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/scripting/modules/minecraft/loot_tables/conditions/ScriptLootItemCondition.h"
 
 // auto generated forward declare list
@@ -35,19 +35,6 @@ public:
     ScriptMatchToolCondition& operator=(ScriptMatchToolCondition const&);
     ScriptMatchToolCondition(ScriptMatchToolCondition const&);
     ScriptMatchToolCondition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEnchantInfo>>
-    getEnchantments();
-
-    MCAPI ::std::vector<::std::string> const getItemTagsAll();
-
-    MCAPI ::std::vector<::std::string> const getItemTagsAny() const;
-
-    MCAPI ::std::vector<::std::string> const getItemTagsNone() const;
-    // NOLINTEND
 
 public:
     // static functions

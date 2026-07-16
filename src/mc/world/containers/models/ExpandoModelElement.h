@@ -14,29 +14,4 @@ public:
     ::ll::TypedStorage<4, 4, ::ContainerExpandStatus> status;
     ::ll::TypedStorage<8, 32, ::std::string>          groupName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ExpandoModelElement();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI
-    ExpandoModelElement(::ItemInstance const& _item, ::ContainerExpandStatus _status, ::std::string const& _groupName);
-
-    MCNAPI ~ExpandoModelElement();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ItemInstance const& _item, ::ContainerExpandStatus _status, ::std::string const& _groupName);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

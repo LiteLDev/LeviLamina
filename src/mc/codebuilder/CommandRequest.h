@@ -18,18 +18,6 @@ public:
     CommandRequest& operator=(CommandRequest const&);
     CommandRequest(CommandRequest const&);
     CommandRequest();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~CommandRequest();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace CodeBuilder

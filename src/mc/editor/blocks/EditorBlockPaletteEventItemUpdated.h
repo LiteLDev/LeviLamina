@@ -18,18 +18,6 @@ public:
     EditorBlockPaletteEventItemUpdated& operator=(EditorBlockPaletteEventItemUpdated const&);
     EditorBlockPaletteEventItemUpdated(EditorBlockPaletteEventItemUpdated const&);
     EditorBlockPaletteEventItemUpdated();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~EditorBlockPaletteEventItemUpdated();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Editor

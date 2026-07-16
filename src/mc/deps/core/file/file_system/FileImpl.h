@@ -67,25 +67,25 @@ public:
 
     virtual ::Core::Result _close() = 0;
 
-    virtual ::Core::Result _read(void* buf, uint64 numBytes, uint64* pNumBytesRead) = 0;
+    virtual ::Core::Result _read(void* pBuffer, uint64 numBytes, uint64* pNumBytesRead) = 0;
 
     virtual ::Core::Result _readExactly(void* buf, uint64 numBytes) = 0;
 
     virtual ::Core::Result _skip(uint64 numBytes) = 0;
 
-    virtual ::Core::Result _readAtPosition(uint64 position, void* buf, uint64 numBytes, uint64* pNumBytesRead) = 0;
+    virtual ::Core::Result _readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead) = 0;
 
-    virtual ::Core::Result _getPosition(uint64* pSizeOut) = 0;
+    virtual ::Core::Result _getPosition(uint64* pPosition) = 0;
 
     virtual ::Core::Result _setPosition(uint64 position) = 0;
 
-    virtual ::Core::Result _write(void const* buf, uint64 numBytes) = 0;
+    virtual ::Core::Result _write(void const*, uint64) = 0;
 
     virtual ::Core::Result _flush() = 0;
 
-    virtual ::Core::Result _getSize(uint64* pSizeOut) = 0;
+    virtual ::Core::Result _getSize(uint64* pSize) = 0;
 
-    virtual ::Core::Result _getRemainingSize(uint64* pSizeOut) = 0;
+    virtual ::Core::Result _getRemainingSize(uint64* pFileSize) = 0;
     // NOLINTEND
 
 public:
@@ -97,37 +97,15 @@ public:
 
     MCNAPI ::Core::Result _writeOperation(::Core::Result&& result, uint64 numBytesWritten);
 
-    MCNAPI ::Core::Result close();
-
     MCNAPI void detachFromTransaction();
 
     MCNAPI ::Core::Result flush();
-
-    MCNAPI ::Core::FileOpenMode const& getOpenMode() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::Core::PathBuffer<::std::string> getPath() const;
-#endif
-
-    MCNAPI ::Core::Result getPosition(uint64* pPosition);
-
-    MCNAPI ::Core::Result getRemainingSize(uint64* pSize);
-
-    MCNAPI ::Core::Result getSize(uint64* pSize);
-
-    MCNAPI ::Core::FileSystemImpl* getTransaction();
-
-    MCNAPI bool isOpen();
 
     MCNAPI ::Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
 
     MCNAPI ::Core::Result readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead);
 
     MCNAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
-
-    MCNAPI ::Core::Result setPosition(uint64 position);
-
-    MCNAPI ::Core::Result skip(uint64 numBytes);
 
     MCNAPI ::Core::Result write(void const* pBuf, uint64 numBytes);
     // NOLINTEND

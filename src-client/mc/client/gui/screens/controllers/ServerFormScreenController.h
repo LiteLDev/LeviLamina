@@ -12,7 +12,6 @@
 class DynamicFormScreenController;
 class MainMenuScreenModel;
 class ServerFormBindingInformation;
-namespace Json { class Value; }
 // clang-format on
 
 class ServerFormScreenController : public ::MainMenuScreenController {
@@ -37,11 +36,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerFormScreenController() /*override*/;
+    virtual ~ServerFormScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification event) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual void onTerminate() /*override*/;
     // NOLINTEND
@@ -56,14 +55,6 @@ public:
         bool                                     isServerTab,
         bool                                     unhideTab
     );
-
-    MCAPI void _createScreen(::std::string const& formJson);
-
-    MCAPI ::std::string _parseRawText(::Json::Value const& value) const;
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -79,26 +70,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification event);
-
-    MCAPI void $onTerminate();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

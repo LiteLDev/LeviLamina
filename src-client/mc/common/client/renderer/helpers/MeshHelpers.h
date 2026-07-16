@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/renderer/SupplementaryFieldAutoGenerationMode.h"
+
 // auto generated forward declare list
 // clang-format off
 class ScreenContext;
 class Tessellator;
-struct UIActorOffscreenCaptureDescription;
-struct UIMeshOffscreenCaptureDescription;
-struct UIStructureVolumeOffscreenCaptureDescription;
-struct UIThumbnailMeshOffscreenCaptureDescription;
+struct OffscreenCaptureDescription;
 namespace mce { class MaterialPtr; }
 namespace mce { class Mesh; }
-namespace mce { class Texture; }
 namespace mce { class TexturePtr; }
 namespace mce { struct ClientTexture; }
 namespace mce { struct ServerTexture; }
@@ -22,22 +21,10 @@ namespace MeshHelpers {
 // functions
 // NOLINTBEGIN
 MCAPI void renderMeshImmediately(
-    ::ScreenContext&          screenContext,
-    ::Tessellator&            tessellator,
-    ::mce::MaterialPtr const& material,
-    ::std::variant<
-        ::std::monostate,
-        ::UIActorOffscreenCaptureDescription,
-        ::UIThumbnailMeshOffscreenCaptureDescription,
-        ::UIMeshOffscreenCaptureDescription,
-        ::UIStructureVolumeOffscreenCaptureDescription> const& offscreenCaptureDescription
-);
-
-MCAPI void renderMeshImmediately(
-    ::ScreenContext&                                                        screenContext,
-    ::Tessellator&                                                          tessellator,
-    ::mce::MaterialPtr const&                                               material,
-    ::std::initializer_list<::std::reference_wrapper<::mce::Texture const>> textures
+    ::ScreenContext&                     screenContext,
+    ::Tessellator&                       tessellator,
+    ::mce::MaterialPtr const&            material,
+    ::OffscreenCaptureDescription const& offscreenCaptureDescription
 );
 
 MCAPI void renderMeshImmediately(
@@ -54,29 +41,19 @@ MCAPI void renderMeshImmediately(
 );
 
 MCAPI void renderMeshImmediately(
-    ::ScreenContext&            screenContext,
-    ::Tessellator&              tessellator,
-    ::mce::MaterialPtr const&   material,
-    ::mce::ClientTexture const& texture,
-    ::std::variant<
-        ::std::monostate,
-        ::UIActorOffscreenCaptureDescription,
-        ::UIThumbnailMeshOffscreenCaptureDescription,
-        ::UIMeshOffscreenCaptureDescription,
-        ::UIStructureVolumeOffscreenCaptureDescription> const& offscreenCaptureDescription
-);
-
-MCAPI void renderMeshImmediately(
     ::ScreenContext&          screenContext,
     ::Tessellator&            tessellator,
     ::mce::MaterialPtr const& material,
     ::std::variant<::std::monostate, ::mce::TexturePtr, ::mce::ClientTexture, ::mce::ServerTexture> const& texture,
-    ::std::variant<
-        ::std::monostate,
-        ::UIActorOffscreenCaptureDescription,
-        ::UIThumbnailMeshOffscreenCaptureDescription,
-        ::UIMeshOffscreenCaptureDescription,
-        ::UIStructureVolumeOffscreenCaptureDescription> const& offscreenCaptureDescription
+    ::OffscreenCaptureDescription const& offscreenCaptureDescription
+);
+
+MCAPI void renderMeshImmediately(
+    ::ScreenContext&                     screenContext,
+    ::Tessellator&                       tessellator,
+    ::mce::MaterialPtr const&            material,
+    ::mce::ClientTexture const&          texture,
+    ::OffscreenCaptureDescription const& offscreenCaptureDescription
 );
 
 MCAPI void renderMeshImmediately(
@@ -84,12 +61,16 @@ MCAPI void renderMeshImmediately(
     ::Tessellator&                                                             tessellator,
     ::mce::MaterialPtr const&                                                  material,
     ::std::initializer_list<::std::reference_wrapper<::mce::TexturePtr const>> textures,
-    ::std::variant<
-        ::std::monostate,
-        ::UIActorOffscreenCaptureDescription,
-        ::UIThumbnailMeshOffscreenCaptureDescription,
-        ::UIMeshOffscreenCaptureDescription,
-        ::UIStructureVolumeOffscreenCaptureDescription> const& offscreenCaptureDescription
+    ::OffscreenCaptureDescription const&                                       offscreenCaptureDescription
+);
+
+MCAPI void renderMeshImmediately(
+    ::ScreenContext&          screenContext,
+    ::Tessellator&            tessellator,
+    ::mce::MaterialPtr const& material,
+    ::std::variant<::std::monostate, ::mce::TexturePtr, ::mce::ClientTexture, ::mce::ServerTexture> const& texture,
+    ::SupplementaryFieldAutoGenerationMode generationMode,
+    ::OffscreenCaptureDescription const&   offscreenCaptureDescription
 );
 // NOLINTEND
 

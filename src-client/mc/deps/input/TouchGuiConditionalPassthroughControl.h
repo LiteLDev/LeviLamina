@@ -30,9 +30,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TouchGuiConditionalPassthroughControl() /*override*/;
+    virtual ~TouchGuiConditionalPassthroughControl() /*override*/ = default;
 
-    virtual void tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int) /*override*/;
+    virtual void
+    tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor) /*override*/;
     // NOLINTEND
 
 public:
@@ -54,20 +55,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

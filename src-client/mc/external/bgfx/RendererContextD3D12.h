@@ -41,7 +41,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace bgfx { struct Attachment; }
-namespace bgfx { struct BlitState; }
 namespace bgfx { struct ClearQuad; }
 namespace bgfx { struct Frame; }
 namespace bgfx { struct Handle; }
@@ -83,29 +82,12 @@ public:
     // clang-format on
 
     // RendererContextD3D12 inner types define
-    enum class BufferHeapUpdateMode : int {
-        Flip            = 0,
-        AfterWaitForGPU = 1,
-    };
-
     struct TlasBuildRequest {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<2, 2, ::bgfx::AccelerationStructureHandle>          m_asHandle;
         ::ll::TypedStorage<8, 24, ::std::vector<::bgfx::TopLevelInstanceDesc>> m_tlasInstanceDescs;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~TlasBuildRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -342,11 +324,11 @@ public:
     virtual void destroyProgram(::bgfx::ProgramHandle _handle) /*override*/;
 
     virtual void* createTexture(
-        ::bgfx::TextureHandle  _handle,
-        ::bgfx::Memory const*  _mem,
-        uint                   _flags,
-        uchar                  _skip,
-        ::bgfx::Memory const** _imageContainerData
+        ::bgfx::TextureHandle _handle,
+        ::bgfx::Memory const* _mem,
+        uint                  _flags,
+        uchar                 _skip,
+        ::bgfx::Memory const**
     ) /*override*/;
 
     virtual void updateTextureBegin(::bgfx::TextureHandle, uchar, uchar) /*override*/;
@@ -378,10 +360,10 @@ public:
         ::bgfx::TextureHandle      _handle,
         ::bgfx::RendererType::Enum _type,
         void*                      _texturePtr,
-        void*                      ref
+        void*                      _deferredRef
     ) /*override*/;
 
-    virtual void overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint) /*override*/;
+    virtual void overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint _flags) /*override*/;
 
     virtual uint64 getInternal(::bgfx::TextureHandle _handle) /*override*/;
 
@@ -441,23 +423,20 @@ public:
 
     virtual void destroyUniform(::bgfx::UniformHandle _handle) /*override*/;
 
-    virtual void requestScreenShot(::bgfx::FrameBufferHandle _filePath, char const*) /*override*/;
+    virtual void requestScreenShot(::bgfx::FrameBufferHandle _handle, char const* _filePath) /*override*/;
 
     virtual void updateViewName(ushort _id, char const* _name) /*override*/;
 
     virtual void updateUniform(void* _uniformsTarget, ushort _loc, void const* _data, uint _size) /*override*/;
 
-    virtual void setMarker(void*, char const*, uint) /*override*/;
+    virtual void setMarker(void*, char const* _marker, uint) /*override*/;
 
     virtual void invalidateOcclusionQuery(::bgfx::OcclusionQueryHandle _handle) /*override*/;
 
-    virtual void setName(::bgfx::Handle _handle, char const*) /*override*/;
+    virtual void setName(::bgfx::Handle _handle, char const* _name) /*override*/;
 
-    virtual void submit(
-        ::bgfx::Frame*               _render,
-        ::bgfx::ClearQuad&           _clearQuad,
-        ::bgfx::TextVideoMemBlitter& _textVideoMemBlitter
-    ) /*override*/;
+    virtual void
+    submit(::bgfx::Frame* _render, ::bgfx::ClearQuad&, ::bgfx::TextVideoMemBlitter& _textVideoMemBlitter) /*override*/;
 
     virtual void blitSetup(::bgfx::TextVideoMemBlitter& _blitter) /*override*/;
 
@@ -465,21 +444,21 @@ public:
 
     virtual bool updateResolution(::bgfx::Resolution const& _resolution);
 
-    virtual void updateFlipRate(::bgfx::Resolution const&);
+    virtual void updateFlipRate(::bgfx::Resolution const& _resolution);
 
     virtual void kick(bool _alloc);
 
     virtual void finish();
 
-    virtual void doPreBlasSkinning(::bgfx::d3d12::CommandListD3D12& bgfxCommandList);
+    virtual void doPreBlasSkinning(::bgfx::d3d12::CommandListD3D12&);
 
     virtual void rayTrace(
-        ::bgfx::d3d12::CommandListD3D12&       bgfxCommandList,
-        ::bgfx::RayTracingConfiguration const& rtConfig,
-        ::bgfx::RayTracingResources const&     rtResources,
-        ::bgfx::RenderBind const&              renderBind,
-        ::bgfx::Matrix4 const&                 viewMat,
-        ::bgfx::Matrix4 const&                 projMat
+        ::bgfx::d3d12::CommandListD3D12&,
+        ::bgfx::RayTracingConfiguration const&,
+        ::bgfx::RayTracingResources const&,
+        ::bgfx::RenderBind const&,
+        ::bgfx::Matrix4 const&,
+        ::bgfx::Matrix4 const&
     );
     // NOLINTEND
 
@@ -495,20 +474,6 @@ public:
         ::D3D12_RESOURCE_STATES           _initialState,
         ::D3D12_RESOURCE_FLAGS            _flags
     );
-
-    MCAPI ::D3D12_CPU_DESCRIPTOR_HANDLE getRtv(::bgfx::FrameBufferHandle _fbh);
-
-    MCAPI void postReset(bool _swapChainReset);
-
-    MCAPI void preReset(bool _swapChainReset);
-
-    MCAPI void saveDREDInfo();
-
-    MCAPI void submitBlit(::bgfx::d3d12::CommandListD3D12& _commandList, ::bgfx::BlitState& _bs, ushort _view);
-
-    MCAPI void updateBufferHeapFences(::bgfx::d3d12::RendererContextD3D12::BufferHeapUpdateMode bufferHeapUpdateMode);
-
-    MCAPI void updateMsaa(::DXGI_FORMAT _format);
     // NOLINTEND
 
 public:
@@ -530,13 +495,9 @@ public:
 
     MCAPI void $shutdown();
 
-    MCFOLD ::bgfx::RendererType::Enum $getRendererType() const;
-
     MCAPI uint64 $getRendererVersion() const;
 
     MCAPI uint64 $getShaderVersion() const;
-
-    MCAPI char const* $getRendererName() const;
 
     MCAPI bool $isDeviceRemoved();
 
@@ -594,11 +555,11 @@ public:
     MCAPI void $destroyProgram(::bgfx::ProgramHandle _handle);
 
     MCAPI void* $createTexture(
-        ::bgfx::TextureHandle  _handle,
-        ::bgfx::Memory const*  _mem,
-        uint                   _flags,
-        uchar                  _skip,
-        ::bgfx::Memory const** _imageContainerData
+        ::bgfx::TextureHandle _handle,
+        ::bgfx::Memory const* _mem,
+        uint                  _flags,
+        uchar                 _skip,
+        ::bgfx::Memory const**
     );
 
     MCFOLD void $updateTextureBegin(::bgfx::TextureHandle, uchar, uchar);
@@ -621,10 +582,14 @@ public:
     MCAPI void
     $resizeTexture(::bgfx::TextureHandle _handle, ushort _width, ushort _height, uchar _numMips, ushort _numLayers);
 
-    MCAPI void
-    $wrapExternalTexture(::bgfx::TextureHandle _handle, ::bgfx::RendererType::Enum _type, void* _texturePtr, void* ref);
+    MCAPI void $wrapExternalTexture(
+        ::bgfx::TextureHandle      _handle,
+        ::bgfx::RendererType::Enum _type,
+        void*                      _texturePtr,
+        void*                      _deferredRef
+    );
 
-    MCAPI void $overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint);
+    MCAPI void $overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint _flags);
 
     MCAPI uint64 $getInternal(::bgfx::TextureHandle _handle);
 
@@ -674,20 +639,19 @@ public:
 
     MCAPI void $destroyUniform(::bgfx::UniformHandle _handle);
 
-    MCAPI void $requestScreenShot(::bgfx::FrameBufferHandle _filePath, char const*);
+    MCAPI void $requestScreenShot(::bgfx::FrameBufferHandle _handle, char const* _filePath);
 
     MCAPI void $updateViewName(ushort _id, char const* _name);
 
     MCAPI void $updateUniform(void* _uniformsTarget, ushort _loc, void const* _data, uint _size);
 
-    MCFOLD void $setMarker(void*, char const*, uint);
+    MCFOLD void $setMarker(void*, char const* _marker, uint);
 
     MCAPI void $invalidateOcclusionQuery(::bgfx::OcclusionQueryHandle _handle);
 
-    MCAPI void $setName(::bgfx::Handle _handle, char const*);
+    MCAPI void $setName(::bgfx::Handle _handle, char const* _name);
 
-    MCAPI void
-    $submit(::bgfx::Frame* _render, ::bgfx::ClearQuad& _clearQuad, ::bgfx::TextVideoMemBlitter& _textVideoMemBlitter);
+    MCAPI void $submit(::bgfx::Frame* _render, ::bgfx::ClearQuad&, ::bgfx::TextVideoMemBlitter& _textVideoMemBlitter);
 
     MCAPI void $blitSetup(::bgfx::TextVideoMemBlitter& _blitter);
 
@@ -695,28 +659,11 @@ public:
 
     MCAPI bool $updateResolution(::bgfx::Resolution const& _resolution);
 
-    MCFOLD void $updateFlipRate(::bgfx::Resolution const&);
+    MCFOLD void $updateFlipRate(::bgfx::Resolution const& _resolution);
 
     MCAPI void $kick(bool _alloc);
 
     MCAPI void $finish();
-
-    MCFOLD void $doPreBlasSkinning(::bgfx::d3d12::CommandListD3D12& bgfxCommandList);
-
-    MCFOLD void $rayTrace(
-        ::bgfx::d3d12::CommandListD3D12&       bgfxCommandList,
-        ::bgfx::RayTracingConfiguration const& rtConfig,
-        ::bgfx::RayTracingResources const&     rtResources,
-        ::bgfx::RenderBind const&              renderBind,
-        ::bgfx::Matrix4 const&                 viewMat,
-        ::bgfx::Matrix4 const&                 projMat
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -24,14 +24,14 @@ public:
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                     mEntityFilter;
     ::ll::TypedStorage<4, 4, float>                                   mAttackCooldownSeconds;
     ::ll::TypedStorage<1, 1, bool>                                    mPlayAttackSound;
+    ::ll::TypedStorage<1, 1, bool>                                    mUseSelfAsDamageSource;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mDeathMessageOverride;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::AreaAttackComponent& component) const;
-
-    MCAPI void setDamageCause(::std::string const& cause);
+    MCAPI void initialize(::EntityContext&, ::AreaAttackComponent& component) const;
     // NOLINTEND
 
 public:

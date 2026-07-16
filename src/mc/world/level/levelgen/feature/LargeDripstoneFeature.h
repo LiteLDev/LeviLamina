@@ -6,13 +6,6 @@
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
-// auto generated forward declare list
-// clang-format off
-class IBlockWorldGenAPI;
-class Random;
-namespace SpeleothemUtils { class WindOffsetter; }
-// clang-format on
-
 class LargeDripstoneFeature : public ::IFeature {
 public:
     // LargeDripstoneFeature inner types declare
@@ -31,18 +24,6 @@ public:
         ::ll::TypedStorage<4, 4, float const> mBluntness;
         ::ll::TypedStorage<4, 4, float const> mScale;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(
-            ::IBlockWorldGenAPI&                    target,
-            ::SpeleothemUtils::WindOffsetter const& wind
-        );
-
-        MCAPI void
-        placeBlocks(::IBlockWorldGenAPI& target, ::Random& random, ::SpeleothemUtils::WindOffsetter const& wind) const;
-        // NOLINTEND
     };
 
 public:
@@ -57,11 +38,5 @@ public:
     MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

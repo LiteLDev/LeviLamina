@@ -15,16 +15,10 @@ class BlockPos;
 class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Material;
-class Vec3;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class FoliageBlock : public ::BlockType {
-public:
-    // prevent constructor by default
-    FoliageBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -58,23 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FoliageBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI bool growCrops(::BlockSource& region, ::BlockPos const& pos, ::FertilizerType fType) const;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::Vec3 const& BUSH_VISUAL_SHAPE_MAX();
-
-    MCAPI static ::Vec3 const& BUSH_VISUAL_SHAPE_MIN();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -93,7 +71,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 

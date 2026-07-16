@@ -7,11 +7,11 @@ public:
 // member variables
 // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    ::ll::UntypedStorage<2, 2> mUnk6ee502;
-    ::ll::UntypedStorage<2, 2> mUnk6ba071;
+    ::ll::UntypedStorage<2, 2> mUnk402d0e;
+    ::ll::UntypedStorage<2, 2> mUnk8ed594;
 #else // LL_PLAT_C
-    ::ll::UntypedStorage<2, 2> mUnk7069db;
-    ::ll::UntypedStorage<2, 2> mUnk1f00cf;
+    ::ll::UntypedStorage<2, 2> mUnk43110e;
+    ::ll::UntypedStorage<2, 2> mUnk3b880d;
 #endif
     // NOLINTEND
 

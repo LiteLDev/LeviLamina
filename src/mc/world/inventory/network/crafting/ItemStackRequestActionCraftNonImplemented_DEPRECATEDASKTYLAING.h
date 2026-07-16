@@ -16,27 +16,15 @@ class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING : public ::
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void _write(::BinaryStream&) const /*override*/;
+    virtual void _write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_write(::BinaryStream&) const;
+    MCNAPI void $_write(::BinaryStream& stream) const;
 
     MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream&);
 

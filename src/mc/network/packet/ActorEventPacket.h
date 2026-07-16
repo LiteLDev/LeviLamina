@@ -62,25 +62,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ActorEventPacket();
-
-    MCAPI explicit ActorEventPacket(::ActorEventPacketPayload payload);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ActorEventPacketPayload payload);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::MinecraftPacketIds $getId() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
     MCAPI ::std::string_view $getName() const;
 

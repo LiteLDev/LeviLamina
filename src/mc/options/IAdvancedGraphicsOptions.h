@@ -30,7 +30,7 @@ public:
 
     virtual bool isVibrantVisualsAllowed() const = 0;
 
-    virtual void setForceDisableVibrantVisuals(bool value) = 0;
+    virtual void setForceDisableVibrantVisuals(bool) = 0;
 
     virtual bool isPlatformDeferredPerformanceCompatible() const = 0;
 
@@ -40,9 +40,9 @@ public:
 
     virtual ::dragon::rendering::LightingModels getLightingModel() const = 0;
 
-    virtual void setLightingModel(::dragon::rendering::LightingModels const model) = 0;
+    virtual void setLightingModel(::dragon::rendering::LightingModels const) = 0;
 
-    virtual void setCanSwitchGraphicsModeInGame(bool canRuntimeSwitch) = 0;
+    virtual void setCanSwitchGraphicsModeInGame(bool) = 0;
 
     virtual ::GraphicsMode getDefaultGraphicsMode() const = 0;
 
@@ -50,7 +50,7 @@ public:
 
     virtual ::GraphicsMode getPrevVanillaGraphicsMode() const = 0;
 
-    virtual void setGraphicsMode(::GraphicsMode const graphicsMode) = 0;
+    virtual void setGraphicsMode(::GraphicsMode const) = 0;
 
     virtual bool isPrevAdvancedGraphicsMode() const = 0;
 #endif
