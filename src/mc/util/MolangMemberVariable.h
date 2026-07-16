@@ -4,7 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/util/MolangScriptArg.h"
+
+struct MolangScriptArg;
 
 struct MolangMemberVariable {
 public:

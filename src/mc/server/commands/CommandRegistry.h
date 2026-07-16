@@ -447,19 +447,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>                              name;
-        ::ll::TypedStorage<8, 32, ::std::string>                              description;
-        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Overload>> overloads;
-        ::ll::TypedStorage<8, 24, ::std::vector<uint>>                        chainedSubcommandIndexes;
-        ::ll::TypedStorage<1, 1, ::CommandPermissionLevel>                    permissionLevel;
-        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol>                   commandSymbol;
-        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol>                   commandAliasEnum;
-        ::ll::TypedStorage<2, 2, ::CommandFlag>                               flags;
-        ::ll::TypedStorage<4, 4, int>                                         firstRule;
-        ::ll::TypedStorage<4, 4, int>                                         firstFactorization;
-        ::ll::TypedStorage<4, 4, int>                                         firstOptional;
-        ::ll::TypedStorage<1, 1, bool>                                        runnable;
-        ::ll::TypedStorage<8, 8, uint64>                                      ruleCounter;
+        ::std::string                              name;
+        ::std::string                              description;
+        ::std::vector<::CommandRegistry::Overload> overloads;
+        ::std::vector<uint>                        chainedSubcommandIndexes;
+        ::CommandPermissionLevel                   permissionLevel;
+        ::CommandRegistry::Symbol                  commandSymbol;
+        ::CommandRegistry::Symbol                  commandAliasEnum;
+        ::CommandFlag                              flags;
+        int                                        firstRule;
+        int                                        firstFactorization;
+        int                                        firstOptional;
+        bool                                       runnable;
+        uint64                                     ruleCounter;
         // NOLINTEND
 
     public:
@@ -486,19 +486,19 @@ public:
         ::std::map<
             ::CommandRegistry::Symbol,
             ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>
-        first;
+            first;
 
         ::std::map<
             ::CommandRegistry::Symbol,
             ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>
-        follow;
+            follow;
 
         ::entt::dense_map<
             ::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::Symbol>,
             int,
             ::CommandRegistry::SymbolPairHasher,
             ::std::equal_to<void>>
-                                                             predict;
+                                   predict;
         ::std::chrono::nanoseconds buildDuration;
         // NOLINTEND
     };

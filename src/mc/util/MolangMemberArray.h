@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/util/MolangMemberVariable.h"
 
 // auto generated inclusion list
 #include "mc/util/MolangStruct_BaseAndPattern.h"
