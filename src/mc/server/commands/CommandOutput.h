@@ -24,9 +24,14 @@ public:
     CommandOutputType                   mType;
     std::unique_ptr<CommandPropertyBag> mBag;
     std::vector<CommandOutputMessage>   mMessages;
-    uint                                 mSuccessCount;
+    uint                                mSuccessCount;
     bool                                mHasPlayerText;
     // NOLINTEND
+
+public:
+    void error(std::string_view msgId, std::vector<::CommandOutputParameter> const& params = {}) {
+        addMessage(msgId, params, CommandOutputMessageType::Error);
+    }
 
     template <class First, class... Args>
         requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)

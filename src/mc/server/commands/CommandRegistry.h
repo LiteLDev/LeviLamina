@@ -362,6 +362,26 @@ public:
         // NOLINTEND
 
     public:
+        [[nodiscard]] std::string toString() const {
+            if (text) {
+                return {text, length};
+            }
+            if (!child) {
+                return {};
+            }
+            auto const* first = child.get();
+            while (first->child) {
+                first = first->child.get();
+            }
+            auto const* last = child.get();
+            while (last->child || last->next) {
+                if (last->next) last = last->next.get();
+                else last = last->child.get();
+            }
+            return {first->text, static_cast<size_t>((last->text + last->length) - first->text)};
+        }
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~ParseToken();
