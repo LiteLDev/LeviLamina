@@ -71,8 +71,10 @@ public:
     [[nodiscard]] auto crbegin() const noexcept;
     [[nodiscard]] auto crend() const noexcept;
 
-    bool erase(std::string_view name);
-    void rename(std::string_view name, std::string_view newName);
+    bool               erase(std::string_view name);
+    void               rename(std::string_view name, std::string_view newName);
+    [[nodiscard]] bool contains(std::string_view name) const { return mTags.contains(name); }
+    LLNDAPI bool       contains(std::string_view name, Type type) const;
 
 public:
     // virtual functions

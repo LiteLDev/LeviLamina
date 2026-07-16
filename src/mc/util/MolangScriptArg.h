@@ -2,7 +2,6 @@
 
 #include "ll/api/base/Concepts.h"
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/util/MolangMemberVariable.h"
 
 // auto generated inclusion list
 #include "mc/deps/minecraft_renderer/renderer/MaterialVariants.h"
