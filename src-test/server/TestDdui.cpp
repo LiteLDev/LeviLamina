@@ -226,3 +226,66 @@ ll::memory::HookRegistrar<registerDduiTestBuiltinCommands> hooks{};
 } // namespace ll::test::dduitest
 
 TEST(DduiTest, RegisterDduiTestCommandDoesNotThrow) { EXPECT_NO_THROW(ll::test::dduitest::registerDduiTestCommand()); }
+
+TEST(DduiTest, ParseFormIdWorksCorrectly) {
+    using ll::ddui::DduiManager;
+    EXPECT_EQ(DduiManager::parseFormId("123"), std::optional<uint>(123));
+    EXPECT_EQ(DduiManager::parseFormId("0"), std::optional<uint>(0));
+    EXPECT_EQ(DduiManager::parseFormId("4294967295"), std::optional<uint>(4294967295U));
+    EXPECT_EQ(DduiManager::parseFormId(""), std::nullopt);
+    EXPECT_EQ(DduiManager::parseFormId("abc"), std::nullopt);
+    EXPECT_EQ(DduiManager::parseFormId("123a"), std::nullopt);
+    EXPECT_EQ(DduiManager::parseFormId("12345678901"), std::nullopt);
+}
+
+TEST(DduiTest, SliderValidationAndClamping) {
+    using namespace ll::ddui;
+    auto val = std::make_shared<ObservableNumber>(10.0, ObservableOptions{true});
+    Slider slider("Test Slider", val, 0.0, 20.0, SliderOptions{std::string("Main"), 1.0});
+
+    EXPECT_TRUE(slider.validate());
+
+    // Update with valid value
+    slider.handleUpdate("value", std::variant<double, bool, std::string>(15.0));
+    EXPECT_DOUBLE_EQ(val->getData(), 15.0);
+
+    // Update with value out of range (should clamp)
+    slider.handleUpdate("value", std::variant<double, bool, std::string>(25.0));
+    EXPECT_DOUBLE_EQ(val->getData(), 20.0);
+
+    // Update with NaN (should be ignored)
+    slider.handleUpdate("value", std::variant<double, bool, std::string>(std::numeric_limits<double>::quiet_NaN()));
+    EXPECT_DOUBLE_EQ(val->getData(), 20.0);
+
+    // Step alignment check
+    Slider sliderStep("Step Slider", val, 0.0, 10.0, SliderOptions{std::string("Step"), 2.5});
+    sliderStep.handleUpdate("value", std::variant<double, bool, std::string>(3.0));
+    EXPECT_DOUBLE_EQ(val->getData(), 2.5); // rounds to closest step (2.5)
+}
+
+TEST(DduiTest, DropdownValidationAndIndexMapping) {
+    using namespace ll::ddui;
+    auto val = std::make_shared<ObservableNumber>(1.0, ObservableOptions{true});
+    Dropdown dropdown("Test Dropdown", val, {
+        {"Item 0", 0.0, "Description 0"},
+        {"Item 1", 1.0, "Description 1"},
+        {"Item 2", 2.0, "Description 2"}
+    });
+
+    EXPECT_TRUE(dropdown.validate());
+
+    auto serialized = dropdown.serialize();
+    EXPECT_EQ(serialized["value"], 1.0); // mapped to index 1
+
+    // Update with valid index 2
+    dropdown.handleUpdate("value", std::variant<double, bool, std::string>(2.0));
+    EXPECT_DOUBLE_EQ(val->getData(), 2.0); // mapped to item value 2.0
+
+    // Update with out of bounds index
+    dropdown.handleUpdate("value", std::variant<double, bool, std::string>(5.0));
+    EXPECT_DOUBLE_EQ(val->getData(), 2.0); // unchanged
+
+    // Update with NaN
+    dropdown.handleUpdate("value", std::variant<double, bool, std::string>(std::numeric_limits<double>::quiet_NaN()));
+    EXPECT_DOUBLE_EQ(val->getData(), 2.0); // unchanged
+}
