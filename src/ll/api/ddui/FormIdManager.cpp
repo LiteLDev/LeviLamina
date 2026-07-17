@@ -26,7 +26,7 @@ CustomForm* FormIdManager::getCustomForm(uint id) {
 CustomForm* FormIdManager::getCustomForm(Player& player) {
     std::lock_guard<std::mutex> lock(DduiManager::mMutex);
 
-    if (auto it = DduiManager::mPlayerActiveSessions.find(player.getUuid().asString());
+    if (auto it = DduiManager::mPlayerActiveSessions.find(player.getUuid());
         it != DduiManager::mPlayerActiveSessions.end() && it->second->isCustomForm()) {
         auto session = std::static_pointer_cast<CustomFormSession>(it->second);
         return session->mWrapper;
@@ -50,7 +50,7 @@ MessageBox* FormIdManager::getMessageBox(uint id) {
 MessageBox* FormIdManager::getMessageBox(Player& player) {
     std::lock_guard<std::mutex> lock(DduiManager::mMutex);
 
-    if (auto it = DduiManager::mPlayerActiveSessions.find(player.getUuid().asString());
+    if (auto it = DduiManager::mPlayerActiveSessions.find(player.getUuid());
         it != DduiManager::mPlayerActiveSessions.end() && !it->second->isCustomForm()) {
         auto session = std::static_pointer_cast<MessageBoxSession>(it->second);
         return session->mWrapper;

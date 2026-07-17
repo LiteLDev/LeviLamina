@@ -39,10 +39,10 @@ static void queueOnServerThread(std::function<void()> func) {
     }
 }
 
-static Player* getPlayerByUuid(std::string const& uuidStr) {
+static Player* getPlayerByUuid(mce::UUID const& uuid) {
     Player* foundPlayer = nullptr;
     ll::service::getLevel().transform([&](auto& level) {
-        foundPlayer = level.findPlayer([&](Player const& p) { return p.getUuid().asString() == uuidStr; });
+        foundPlayer = level.findPlayer([&](Player const& p) { return p.getUuid() == uuid; });
         return true;
     });
 
@@ -64,8 +64,8 @@ static void safeExecuteCallback(
     }
 }
 
-CustomFormSession::CustomFormSession(std::string uuid, ObsStringOrString title)
-: mUuid(std::move(uuid)),
+CustomFormSession::CustomFormSession(mce::UUID uuid, ObsStringOrString title)
+: mUuid(uuid),
   mTitle(std::move(title)) {
     mFormId = FormIdManager::genFormId();
 }
@@ -188,7 +188,7 @@ void CustomFormSession::handleDataStoreUpdate(
     if (path == "closeButton.onClick") {
         if (mCloseButton) {
             if (!mCloseButton->handleUpdate("onClick", value)) {
-                ll::getLogger().warn("Failed to handle close button onClick for player with UUID {} (DDUI)", mUuid);
+                ll::getLogger().warn("Failed to handle close button onClick for player with UUID {} (DDUI)", mUuid.asString());
             }
         }
 
@@ -219,7 +219,7 @@ void CustomFormSession::handleDataStoreUpdate(
                                     ll::getLogger().warn(
                                         "Failed to handle control update '{}' for player with UUID {} (DDUI)",
                                         path,
-                                        mUuid
+                                        mUuid.asString()
                                     );
                                 }
                             }
@@ -240,8 +240,8 @@ void CustomFormSession::handleScreenClosed(::DataDrivenScreenClosedReason closed
     DduiManager::unregisterSession(mFormId, mUuid);
     cleanupSubscriptions();
 
-    std::string uuid   = mUuid;
-    uint        formId = mFormId;
+    mce::UUID uuid   = mUuid;
+    uint      formId = mFormId;
     queueOnServerThread([uuid, formId]() {
         auto player = getPlayerByUuid(uuid);
         if (player) {
@@ -283,8 +283,8 @@ void CustomFormSession::close() {
     DduiManager::unregisterSession(mFormId, mUuid);
     cleanupSubscriptions();
 
-    std::string uuid   = mUuid;
-    uint        formId = mFormId;
+    mce::UUID uuid   = mUuid;
+    uint      formId = mFormId;
     queueOnServerThread([uuid, formId]() {
         auto player = getPlayerByUuid(uuid);
         if (player) {
@@ -335,7 +335,7 @@ bool CustomFormSession::validate() const {
 }
 
 CustomForm::CustomForm(Player& player, ObsStringOrString title) {
-    mSession           = std::make_shared<CustomFormSession>(player.getUuid().asString(), std::move(title));
+    mSession           = std::make_shared<CustomFormSession>(player.getUuid(), std::move(title));
     mSession->mWrapper = this;
 }
 
