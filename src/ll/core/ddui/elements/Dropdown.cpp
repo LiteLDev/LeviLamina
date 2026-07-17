@@ -5,10 +5,10 @@
 namespace ll::ddui {
 
 Dropdown::Dropdown(
-    ObsStringOrString                 label,
-    std::shared_ptr<ObservableNumber> value,
-    std::vector<DropdownItemData>     items,
-    DropdownOptions                   options
+    ObsStringOrString                  label,
+    std::shared_ptr<ObservableInteger> value,
+    std::vector<DropdownItemData>      items,
+    DropdownOptions                    options
 )
 : mLabel(std::move(label)),
   mValue(std::move(value)),
@@ -23,18 +23,12 @@ nlohmann::ordered_json Dropdown::serialize() const {
     j["label"]            = resolveText(mLabel);
     j["description"]      = resolveText(mOptions.description);
 
-    double selectedIndex = 0.0;
+    int currentVal = 0;
     if (mValue) {
-        double currentVal = mValue->getData();
-        for (size_t i = 0; i < mItems.size(); ++i) {
-            if (mItems[i].value == currentVal) {
-                selectedIndex = static_cast<double>(i);
-                break;
-            }
-        }
+        currentVal = mValue->getData();
     }
 
-    j["value"]    = selectedIndex;
+    j["value"]    = currentVal;
     j["disabled"] = resolveOption(mOptions.disabled);
 
     nlohmann::ordered_json itemsObj = nlohmann::ordered_json::object();
@@ -63,15 +57,8 @@ void Dropdown::setupSubscriptions(
     setupTextSubscription(mOptions.description, prefix + "description", addSub, updateString);
 
     if (mValue) {
-        auto subId = mValue->subscribe([this, updateDouble, prefix](double val) {
-            double selectedIndex = 0.0;
-            for (size_t i = 0; i < mItems.size(); ++i) {
-                if (mItems[i].value == val) {
-                    selectedIndex = static_cast<double>(i);
-                    break;
-                }
-            }
-            updateDouble(prefix + "value", selectedIndex);
+        auto subId = mValue->subscribe([updateDouble, prefix](int val) {
+            updateDouble(prefix + "value", static_cast<double>(val));
         });
         addSub(mValue, subId, [obs = mValue](uint64_t id) { obs->unsubscribe(id); });
     }
@@ -106,13 +93,21 @@ bool Dropdown::handleUpdate(std::string const& subpath, std::variant<double, boo
     if (subpath == "value") {
         if (mValue && mValue->isClientWritable() && std::holds_alternative<double>(value)) {
             double val = std::get<double>(value);
-            if (!std::isfinite(val) || val < 0.0) {
+            if (!std::isfinite(val)) {
                 return false;
             }
 
-            auto index = static_cast<size_t>(val);
-            if (index < mItems.size()) {
-                mValue->setData(mItems[index].value);
+            int  selectedVal = static_cast<int>(val);
+            bool found       = false;
+            for (auto const& item : mItems) {
+                if (item.value == selectedVal) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found) {
+                mValue->setData(selectedVal);
                 return true;
             }
         }
@@ -126,7 +121,7 @@ bool Dropdown::validate() const {
             return false;
         }
 
-        double currentVal = mValue->getData();
+        int currentVal = mValue->getData();
 
         bool found = false;
         for (auto const& item : mItems) {

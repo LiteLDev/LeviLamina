@@ -84,6 +84,11 @@ public:
     explicit ObservableNumber(double data, ObservableOptions const& options = {}) : Observable(data, options) {}
 };
 
+class ObservableInteger : public Observable<int> {
+public:
+    explicit ObservableInteger(int data, ObservableOptions const& options = {}) : Observable(data, options) {}
+};
+
 class ObservableBoolean : public Observable<bool> {
 public:
     explicit ObservableBoolean(bool data, ObservableOptions const& options = {}) : Observable(data, options) {}

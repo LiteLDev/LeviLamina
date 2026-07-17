@@ -45,9 +45,9 @@ public:
 private:
     friend class FormIdManager;
 
-    static std::unordered_map<uint, std::shared_ptr<DduiSession>>     mActiveSessions;
+    static std::unordered_map<uint, std::shared_ptr<DduiSession>>      mActiveSessions;
     static std::unordered_map<mce::UUID, std::shared_ptr<DduiSession>> mPlayerActiveSessions;
-    static std::mutex                                                 mMutex;
+    static std::mutex                                                  mMutex;
 };
 
 } // namespace ll::ddui
