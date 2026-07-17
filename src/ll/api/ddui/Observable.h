@@ -50,9 +50,11 @@ public:
         {
             std::lock_guard<std::recursive_mutex> lock(mMutex);
             if (mData == data) return;
+
             mData = data;
-            subs = mSubscribers;
+            subs  = mSubscribers;
         }
+
         for (auto const& [id, callback] : subs) {
             if (callback) callback(data);
         }
@@ -60,8 +62,8 @@ public:
 
     SubscriptionId subscribe(Callback callback) {
         std::lock_guard<std::recursive_mutex> lock(mMutex);
-        SubscriptionId id = mNextId++;
-        mSubscribers[id] = std::move(callback);
+        SubscriptionId                        id = mNextId++;
+        mSubscribers[id]                         = std::move(callback);
         return id;
     }
 
@@ -93,12 +95,8 @@ public:
     : Observable(data, options) {}
 };
 
-using ObsStringOrString = std::variant<
-    std::string,
-    std::shared_ptr<ObservableString>,
-    UIRawMessage,
-    std::shared_ptr<ObservableUIRawMessage>
->;
+using ObsStringOrString =
+    std::variant<std::string, std::shared_ptr<ObservableString>, UIRawMessage, std::shared_ptr<ObservableUIRawMessage>>;
 using ObsNumberOrNumber = std::variant<double, std::shared_ptr<ObservableNumber>>;
 using ObsBoolOrBool     = std::variant<bool, std::shared_ptr<ObservableBoolean>>;
 
