@@ -2,6 +2,7 @@
 
 #include "ll/api/base/StdInt.h"
 #include "ll/core/ddui/DduiSession.h"
+#include "mc/platform/UUID.h"
 #include <memory>
 #include <mutex>
 #include <optional>
@@ -25,7 +26,7 @@ public:
     [[nodiscard]] static std::string getMessageBoxPropertyName() { return "message_box_data_"; }
 
     static void registerSession(std::shared_ptr<DduiSession> const& session, Player& player);
-    static void unregisterSession(uint id, std::string const& playerUuid);
+    static void unregisterSession(uint id, mce::UUID const& playerUuid);
 
     static void handleDataStoreUpdate(
         Player&                                        player,
@@ -39,14 +40,14 @@ public:
 
     static std::optional<uint> parseFormId(std::string_view str);
 
-    static void closeSessionForPlayer(std::string const& uuid);
+    static void closeSessionForPlayer(mce::UUID const& uuid);
 
 private:
     friend class FormIdManager;
 
-    static std::unordered_map<uint, std::shared_ptr<DduiSession>>        mActiveSessions;
-    static std::unordered_map<std::string, std::shared_ptr<DduiSession>> mPlayerActiveSessions;
-    static std::mutex                                                    mMutex;
+    static std::unordered_map<uint, std::shared_ptr<DduiSession>>     mActiveSessions;
+    static std::unordered_map<mce::UUID, std::shared_ptr<DduiSession>> mPlayerActiveSessions;
+    static std::mutex                                                 mMutex;
 };
 
 } // namespace ll::ddui

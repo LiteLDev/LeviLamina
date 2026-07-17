@@ -17,7 +17,7 @@ struct MessageBoxResult;
 
 class MessageBoxSession : public DduiSession, public std::enable_shared_from_this<MessageBoxSession> {
 public:
-    std::string       mUuid;
+    mce::UUID         mUuid;
     ObsStringOrString mTitle;
     ObsStringOrString mBody;
     ObsStringOrString mBtn1Label;
@@ -39,12 +39,12 @@ public:
     std::vector<ObsSub>  mSubs;
     std::recursive_mutex mSubMutex;
 
-    MessageBoxSession(std::string uuid, ObsStringOrString title);
+    MessageBoxSession(mce::UUID uuid, ObsStringOrString title);
     ~MessageBoxSession() override;
 
-    uint        getId() const override { return mFormId; }
-    std::string getPlayerUuid() const override { return mUuid; }
-    bool        isCustomForm() const override { return false; }
+    uint      getId() const override { return mFormId; }
+    mce::UUID getPlayerUuid() const override { return mUuid; }
+    bool      isCustomForm() const override { return false; }
 
     void handleDataStoreUpdate(
         std::string const&                             property,

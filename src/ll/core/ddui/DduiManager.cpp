@@ -5,16 +5,16 @@
 
 namespace ll::ddui {
 
-std::unordered_map<uint, std::shared_ptr<DduiSession>>        DduiManager::mActiveSessions;
-std::unordered_map<std::string, std::shared_ptr<DduiSession>> DduiManager::mPlayerActiveSessions;
-std::mutex                                                    DduiManager::mMutex;
+std::unordered_map<uint, std::shared_ptr<DduiSession>>     DduiManager::mActiveSessions;
+std::unordered_map<mce::UUID, std::shared_ptr<DduiSession>> DduiManager::mPlayerActiveSessions;
+std::mutex                                                 DduiManager::mMutex;
 
 void DduiManager::registerSession(std::shared_ptr<DduiSession> const& session, Player& player) {
     std::shared_ptr<DduiSession> oldSession;
     {
         std::lock_guard<std::mutex> lock(mMutex);
 
-        std::string uuid = player.getUuid().asString();
+        mce::UUID uuid = player.getUuid();
         if (auto it = mPlayerActiveSessions.find(uuid); it != mPlayerActiveSessions.end()) {
             oldSession = it->second;
         }
@@ -28,7 +28,7 @@ void DduiManager::registerSession(std::shared_ptr<DduiSession> const& session, P
     }
 }
 
-void DduiManager::unregisterSession(uint id, std::string const& playerUuid) {
+void DduiManager::unregisterSession(uint id, mce::UUID const& playerUuid) {
     std::lock_guard<std::mutex> lock(mMutex);
     mActiveSessions.erase(id);
 
@@ -87,7 +87,7 @@ void DduiManager::handleDataStoreUpdate(
         }
 
         if (session) {
-            if (session->getPlayerUuid() == player.getUuid().asString()) {
+            if (session->getPlayerUuid() == player.getUuid()) {
                 session->handleDataStoreUpdate(property, path, value);
             }
         }
@@ -105,13 +105,13 @@ void DduiManager::handleScreenClosed(uint formId, ::DataDrivenScreenClosedReason
     }
 
     if (session) {
-        if (session->getPlayerUuid() == player.getUuid().asString()) {
+        if (session->getPlayerUuid() == player.getUuid()) {
             session->handleScreenClosed(reason);
         }
     }
 }
 
-void DduiManager::closeSessionForPlayer(std::string const& uuid) {
+void DduiManager::closeSessionForPlayer(mce::UUID const& uuid) {
     std::shared_ptr<DduiSession> session;
     {
         std::lock_guard<std::mutex> lock(mMutex);

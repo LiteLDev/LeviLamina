@@ -16,7 +16,7 @@ class CustomForm;
 
 class CustomFormSession : public DduiSession, public std::enable_shared_from_this<CustomFormSession> {
 public:
-    std::string                                                mUuid;
+    mce::UUID                                                  mUuid;
     ObsStringOrString                                          mTitle;
     uint                                                       mFormId = 0;
     std::atomic<bool>                                          mIsShowing{false};
@@ -33,12 +33,12 @@ public:
     std::vector<ObsSub>  mSubs;
     std::recursive_mutex mSubMutex;
 
-    CustomFormSession(std::string uuid, ObsStringOrString title);
+    CustomFormSession(mce::UUID uuid, ObsStringOrString title);
     ~CustomFormSession() override;
 
-    uint        getId() const override { return mFormId; }
-    std::string getPlayerUuid() const override { return mUuid; }
-    bool        isCustomForm() const override { return true; }
+    uint      getId() const override { return mFormId; }
+    mce::UUID getPlayerUuid() const override { return mUuid; }
+    bool      isCustomForm() const override { return true; }
 
     void handleDataStoreUpdate(
         std::string const&                             property,

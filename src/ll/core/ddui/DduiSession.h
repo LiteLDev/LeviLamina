@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ll/api/base/StdInt.h"
+#include "mc/platform/UUID.h"
 #include <string>
 #include <variant>
 
@@ -12,9 +13,9 @@ class DduiSession {
 public:
     virtual ~DduiSession() = default;
 
-    [[nodiscard]] virtual uint        getId() const         = 0;
-    [[nodiscard]] virtual std::string getPlayerUuid() const = 0;
-    [[nodiscard]] virtual bool        isCustomForm() const  = 0;
+    [[nodiscard]] virtual uint      getId() const         = 0;
+    [[nodiscard]] virtual mce::UUID getPlayerUuid() const = 0;
+    [[nodiscard]] virtual bool      isCustomForm() const  = 0;
 
     virtual void handleDataStoreUpdate(
         std::string const&                             property,
