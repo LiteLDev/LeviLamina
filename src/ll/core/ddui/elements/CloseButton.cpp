@@ -3,6 +3,31 @@
 
 namespace ll::ddui {
 
+static void setupTextSubscription(
+    ObsStringOrString const& textOpt,
+    std::string const& path,
+    std::function<void(std::shared_ptr<void> const&, uint64_t, std::function<void(uint64_t)>)> const& addSub,
+    std::function<void(std::string const&, std::string const&)> const& updateString
+) {
+    if (std::holds_alternative<std::shared_ptr<ObservableString>>(textOpt)) {
+        auto obs = std::get<std::shared_ptr<ObservableString>>(textOpt);
+        if (obs) {
+            auto subId = obs->subscribe([updateString, path](std::string const& val) {
+                updateString(path, val);
+            });
+            addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
+        }
+    } else if (std::holds_alternative<std::shared_ptr<ObservableUIRawMessage>>(textOpt)) {
+        auto obs = std::get<std::shared_ptr<ObservableUIRawMessage>>(textOpt);
+        if (obs) {
+            auto subId = obs->subscribe([updateString, path](UIRawMessage const& val) {
+                updateString(path, val.serialize().dump());
+            });
+            addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
+        }
+    }
+}
+
 CloseButton::CloseButton(ObsStringOrString label, std::function<void()> onClick, ButtonOptions options)
 : mLabel(std::move(label)),
   mOnClick(std::move(onClick)),
@@ -13,8 +38,8 @@ nlohmann::ordered_json CloseButton::serialize() const {
 
     j["visible"]        = resolveOption(mOptions.visible);
     j["button_visible"] = true;
-    j["label"]          = resolveString(mLabel);
-    j["tooltip"]        = resolveString(mOptions.tooltip);
+    j["label"]          = resolveText(mLabel);
+    j["tooltip"]        = resolveText(mOptions.tooltip);
     j["disabled"]       = resolveOption(mOptions.disabled);
     j["onClick"]        = 0;
 
@@ -28,14 +53,9 @@ void CloseButton::setupSubscriptions(
     std::function<void(std::string const&, bool)> const&               updateBool,
     std::function<void(std::string const&, std::string const&)> const& updateString
 ) {
-    if (std::holds_alternative<std::shared_ptr<ObservableString>>(mLabel)) {
-        auto obs = std::get<std::shared_ptr<ObservableString>>(mLabel);
-        if (obs) {
-            auto subId =
-                obs->subscribe([updateString, prefix](std::string const& val) { updateString(prefix + "label", val); });
-            addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
-        }
-    }
+    setupTextSubscription(mLabel, prefix + "label", addSub, updateString);
+    setupTextSubscription(mOptions.tooltip, prefix + "tooltip", addSub, updateString);
+
     if (std::holds_alternative<std::shared_ptr<ObservableBoolean>>(mOptions.disabled)) {
         auto obs = std::get<std::shared_ptr<ObservableBoolean>>(mOptions.disabled);
         if (obs) {
@@ -56,6 +76,10 @@ void CloseButton::handleUpdate(
     std::string const& subpath,
     std::variant<double, bool, std::string> const& /*value*/
 ) {
+    if (resolveOption(mOptions.disabled) || !resolveOption(mOptions.visible)) {
+        return;
+    }
+
     if (subpath == "onClick") {
         if (mOnClick) {
             mOnClick();
