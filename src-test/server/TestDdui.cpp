@@ -6,6 +6,9 @@
 #include "ll/api/ddui/CustomForm.h"
 #include "ll/api/ddui/MessageBox.h"
 #include "ll/api/ddui/Observable.h"
+#include "ll/core/ddui/DduiManager.h"
+#include "ll/core/ddui/elements/Slider.h"
+#include "ll/core/ddui/elements/Dropdown.h"
 #include "ll/api/io/Logger.h"
 #include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/memory/Hook.h"
@@ -241,9 +244,9 @@ TEST(DduiTest, ParseFormIdWorksCorrectly) {
 TEST(DduiTest, SliderValidationAndClamping) {
     using namespace ll::ddui;
     auto val = std::make_shared<ObservableNumber>(10.0, ObservableOptions{true});
-    Slider slider("Test Slider", val, 0.0, 20.0, SliderOptions{std::string("Main"), 1.0});
+    Slider slider("Test Slider", val, 0.0, 20.0, SliderOptions{.description = std::string("Main"), .step = 1.0});
 
-    EXPECT_TRUE(slider.validate());
+    EXPECT_TRUE(slider.isValid());
 
     // Update with valid value
     slider.handleUpdate("value", std::variant<double, bool, std::string>(15.0));
@@ -258,7 +261,7 @@ TEST(DduiTest, SliderValidationAndClamping) {
     EXPECT_DOUBLE_EQ(val->getData(), 20.0);
 
     // Step alignment check
-    Slider sliderStep("Step Slider", val, 0.0, 10.0, SliderOptions{std::string("Step"), 2.5});
+    Slider sliderStep("Step Slider", val, 0.0, 10.0, SliderOptions{.description = std::string("Step"), .step = 2.5});
     sliderStep.handleUpdate("value", std::variant<double, bool, std::string>(3.0));
     EXPECT_DOUBLE_EQ(val->getData(), 2.5); // rounds to closest step (2.5)
 }
@@ -270,9 +273,9 @@ TEST(DduiTest, DropdownValidationAndIndexMapping) {
         {"Item 0", 0.0, "Description 0"},
         {"Item 1", 1.0, "Description 1"},
         {"Item 2", 2.0, "Description 2"}
-    });
+    }, DropdownOptions{});
 
-    EXPECT_TRUE(dropdown.validate());
+    EXPECT_TRUE(dropdown.isValid());
 
     auto serialized = dropdown.serialize();
     EXPECT_EQ(serialized["value"], 1.0); // mapped to index 1
