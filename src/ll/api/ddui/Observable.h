@@ -112,9 +112,9 @@ inline T resolveOption(std::variant<T, std::shared_ptr<ObsT>> const& opt) {
     }
 }
 
-inline nlohmann::json resolveText(ObsStringOrString const& opt) {
+inline nlohmann::ordered_json resolveText(ObsStringOrString const& opt) {
     return std::visit(
-        [](auto const& val) -> nlohmann::json {
+        [](auto const& val) -> nlohmann::ordered_json {
             using Type = std::decay_t<decltype(val)>;
             if constexpr (std::is_same_v<Type, std::string>) {
                 return val;
@@ -123,7 +123,7 @@ inline nlohmann::json resolveText(ObsStringOrString const& opt) {
             } else if constexpr (std::is_same_v<Type, UIRawMessage>) {
                 return val.serialize();
             } else if constexpr (std::is_same_v<Type, std::shared_ptr<ObservableUIRawMessage>>) {
-                return val ? val->getData().serialize() : nlohmann::json::object();
+                return val ? val->getData().serialize() : nlohmann::ordered_json::object();
             }
             return "";
         },
