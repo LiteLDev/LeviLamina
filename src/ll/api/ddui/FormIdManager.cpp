@@ -9,6 +9,7 @@
 
 namespace ll::ddui {
 
+// NOTE: I don't know if there is another place where the DDUI form counter is incremented, so we use the regular one
 uint FormIdManager::genFormId() { return ll::form::FormIdManager::genFormId(); }
 
 CustomForm* FormIdManager::getCustomForm(uint id) {
