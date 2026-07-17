@@ -1,0 +1,60 @@
+#pragma once
+
+#include "ll/core/ddui/DduiSession.h"
+#include "ll/api/ddui/Observable.h"
+#include "ll/api/ddui/options/ButtonOptions.h"
+#include "ll/core/ddui/elements/Element.h"
+#include "ll/core/ddui/elements/CloseButton.h"
+#include <vector>
+#include <memory>
+#include <atomic>
+
+namespace ll::ddui {
+
+class CustomForm;
+
+class CustomFormSession : public DduiSession, public std::enable_shared_from_this<CustomFormSession> {
+public:
+    std::string                           mUuid;
+    ObsStringOrString                     mTitle;
+    uint                                  mFormId = 0;
+    std::atomic<bool>                     mIsShowing{false};
+    std::unique_ptr<CloseButton>          mCloseButton;
+    std::vector<std::unique_ptr<Element>> mControls;
+    CustomForm*                           mWrapper = nullptr;
+    std::function<void(Player&, DataDrivenScreenClosedReason)> mCallback;
+
+    struct ObsSub {
+        std::shared_ptr<void>         observable;
+        uint64_t                      subId;
+        std::function<void(uint64_t)> unsubscribeFn;
+    };
+    std::vector<ObsSub> mSubs;
+    std::recursive_mutex mSubMutex;
+
+    CustomFormSession(std::string uuid, ObsStringOrString title);
+    ~CustomFormSession() override;
+
+    uint getId() const override { return mFormId; }
+    std::string getPlayerUuid() const override { return mUuid; }
+    bool isCustomForm() const override { return true; }
+
+    void handleDataStoreUpdate(
+        std::string const& property,
+        std::string const& path,
+        std::variant<double, bool, std::string> const& value
+    ) override;
+
+    void handleScreenClosed(::DataDrivenScreenClosedReason reason) override;
+
+    void close() override;
+
+    bool validate() const;
+
+    void cleanupSubscriptions();
+    void updatePath(std::string const& path, double val);
+    void updatePath(std::string const& path, bool val);
+    void updatePath(std::string const& path, std::string const& val);
+};
+
+} // namespace ll::ddui

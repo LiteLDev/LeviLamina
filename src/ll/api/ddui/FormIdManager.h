@@ -21,9 +21,6 @@ public:
     LLNDAPI static MessageBox* getMessageBox(uint id);
     LLNDAPI static MessageBox* getMessageBox(Player& player);
 
-private:
-    static uint       mNextFormId;
-    static std::mutex mMutex;
 };
 
 } // namespace ll::ddui
