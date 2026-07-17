@@ -2,8 +2,8 @@
 #include "ll/api/ddui/DataDrivenScreenClosedReason.h"
 #include "ll/api/ddui/FormIdManager.h"
 #include "ll/api/io/Logger.h"
-#include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/service/Bedrock.h"
+#include "ll/core/LeviLamina.h"
 #include "ll/core/ddui/CustomFormSession.h"
 #include "ll/core/ddui/DduiManager.h"
 #include "ll/core/ddui/elements/Button.h"
@@ -58,11 +58,9 @@ static void safeExecuteCallback(
     try {
         cb(p, reason);
     } catch (std::exception const& e) {
-        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
-        logger->error("Exception in DDUI callback '{}': {}", name, e.what());
+        ll::getLogger().error("Exception in DDUI callback '{}': {}", name, e.what());
     } catch (...) {
-        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
-        logger->error("Unknown exception in DDUI callback '{}'", name);
+        ll::getLogger().error("Unknown exception in DDUI callback '{}'", name);
     }
 }
 
@@ -82,6 +80,7 @@ void CustomFormSession::cleanupSubscriptions() {
     for (auto const& sub : mSubs) {
         sub.unsubscribeFn(sub.subId);
     }
+
     mSubs.clear();
 }
 
@@ -188,7 +187,9 @@ void CustomFormSession::handleDataStoreUpdate(
 ) {
     if (path == "closeButton.onClick") {
         if (mCloseButton) {
-            mCloseButton->handleUpdate("onClick", value);
+            if (!mCloseButton->handleUpdate("onClick", value)) {
+                ll::getLogger().warn("Failed to handle close button onClick for player with UUID {} (DDUI)", mUuid);
+            }
         }
 
         close();
@@ -214,7 +215,13 @@ void CustomFormSession::handleDataStoreUpdate(
                         if (endBracket + 1 < path.size() && path[endBracket + 1] == '.') {
                             std::string subpath = path.substr(endBracket + 2);
                             if (controlIndex < mControls.size()) {
-                                mControls[controlIndex]->handleUpdate(subpath, value);
+                                if (!mControls[controlIndex]->handleUpdate(subpath, value)) {
+                                    ll::getLogger().warn(
+                                        "Failed to handle control update '{}' for player with UUID {} (DDUI)",
+                                        path,
+                                        mUuid
+                                    );
+                                }
                             }
                         }
                     }
@@ -307,13 +314,23 @@ void CustomFormSession::close() {
 }
 
 bool CustomFormSession::validate() const {
-    if (mControls.size() > 100) return false;
-
-    for (auto const& control : mControls) {
-        if (!control->isValid()) return false;
+    if (mControls.size() > 100) {
+        ll::getLogger().error("Custom form has too many controls (max 100) (DDUI)");
+        return false;
     }
 
-    if (mCloseButton && !mCloseButton->isValid()) return false;
+    for (auto const& control : mControls) {
+        if (!control->isValid()) {
+            ll::getLogger().error("Invalid controls in custom form (DDUI)");
+            return false;
+        }
+    }
+
+    if (mCloseButton && !mCloseButton->isValid()) {
+        ll::getLogger().error("Invalid close button in custom form (DDUI)");
+        return false;
+    }
+
     return true;
 }
 
