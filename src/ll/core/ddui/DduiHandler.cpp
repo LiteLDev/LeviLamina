@@ -3,6 +3,8 @@
 #include "ll/api/ddui/MessageBox.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/core/ddui/DduiManager.h"
+#include "ll/api/io/LoggerRegistry.h"
+#include "ll/api/io/Logger.h"
 #include "mc/network/IPacketHandlerDispatcher.h"
 #include "mc/network/PacketHandlerDispatcherInstance.h"
 #include "mc/network/ServerNetworkHandler.h"
@@ -22,19 +24,27 @@ LL_TYPE_INSTANCE_HOOK(
     NetEventCallback&        callback,
     std::shared_ptr<Packet>& packet
 ) {
-    auto* handle = static_cast<ServerNetworkHandler*>(&callback);
+    try {
+        auto* handle = static_cast<ServerNetworkHandler*>(&callback);
 
-    auto player = handle->_getServerPlayer(source, packet->mSenderSubId);
-    if (player) {
-        auto& dataPacket = static_cast<ServerboundDataStorePacket&>(*packet);
+        auto player = handle->_getServerPlayer(source, packet->mSenderSubId);
+        if (player) {
+            auto& dataPacket = static_cast<ServerboundDataStorePacket&>(*packet);
 
-        auto const& update        = dataPacket.mUpdate.get();
-        std::string datastoreName = update.mDataStoreName;
-        std::string property      = update.mProperty;
-        std::string path          = update.mPath;
-        auto const& data          = update.mData.get();
+            auto const& update        = dataPacket.mUpdate.get();
+            std::string datastoreName = update.mDataStoreName;
+            std::string property      = update.mProperty;
+            std::string path          = update.mPath;
+            auto const& data          = update.mData.get();
 
-        DduiManager::handleDataStoreUpdate(*player, datastoreName, property, path, data);
+            DduiManager::handleDataStoreUpdate(*player, datastoreName, property, path, data);
+        }
+    } catch (std::exception const& e) {
+        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
+        logger->error("Exception in ServerboundDduiDataStorePacketHook: {}", e.what());
+    } catch (...) {
+        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
+        logger->error("Unknown exception in ServerboundDduiDataStorePacketHook");
     }
 
     origin(source, callback, packet);
@@ -50,16 +60,24 @@ LL_TYPE_INSTANCE_HOOK(
     NetEventCallback&        callback,
     std::shared_ptr<Packet>& packet
 ) {
-    auto* handle = static_cast<ServerNetworkHandler*>(&callback);
+    try {
+        auto* handle = static_cast<ServerNetworkHandler*>(&callback);
 
-    auto player = handle->_getServerPlayer(source, packet->mSenderSubId);
-    if (player) {
-        auto& closedPacket = static_cast<ServerboundDataDrivenScreenClosedPacket&>(*packet);
+        auto player = handle->_getServerPlayer(source, packet->mSenderSubId);
+        if (player) {
+            auto& closedPacket = static_cast<ServerboundDataDrivenScreenClosedPacket&>(*packet);
 
-        uint formId       = closedPacket.mFormId;
-        auto closedReason = closedPacket.mCloseReason;
+            uint formId       = closedPacket.mFormId;
+            auto closedReason = closedPacket.mCloseReason;
 
-        DduiManager::handleScreenClosed(formId, closedReason, *player);
+            DduiManager::handleScreenClosed(formId, closedReason, *player);
+        }
+    } catch (std::exception const& e) {
+        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
+        logger->error("Exception in ServerboundDduiScreenClosedPacketHook: {}", e.what());
+    } catch (...) {
+        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
+        logger->error("Unknown exception in ServerboundDduiScreenClosedPacketHook");
     }
 
     origin(source, callback, packet);
@@ -76,12 +94,14 @@ LL_TYPE_INSTANCE_HOOK(
     // clang-format on
 
     ServerPlayer& player = *this;
-    if (auto* form = FormIdManager::getCustomForm(player)) {
-        form->close();
-    }
-
-    if (auto* box = FormIdManager::getMessageBox(player)) {
-        box->close();
+    try {
+        DduiManager::closeSessionForPlayer(player.getUuid().asString());
+    } catch (std::exception const& e) {
+        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
+        logger->error("Exception in PlayerDisconnectHook: {}", e.what());
+    } catch (...) {
+        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
+        logger->error("Unknown exception in PlayerDisconnectHook");
     }
 
     origin();
