@@ -1,8 +1,34 @@
 #include "ll/core/ddui/elements/Slider.h"
 #include <algorithm>
+#include <cmath>
 #include <utility>
 
 namespace ll::ddui {
+
+static void setupTextSubscription(
+    ObsStringOrString const& textOpt,
+    std::string const& path,
+    std::function<void(std::shared_ptr<void> const&, uint64_t, std::function<void(uint64_t)>)> const& addSub,
+    std::function<void(std::string const&, std::string const&)> const& updateString
+) {
+    if (std::holds_alternative<std::shared_ptr<ObservableString>>(textOpt)) {
+        auto obs = std::get<std::shared_ptr<ObservableString>>(textOpt);
+        if (obs) {
+            auto subId = obs->subscribe([updateString, path](std::string const& val) {
+                updateString(path, val);
+            });
+            addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
+        }
+    } else if (std::holds_alternative<std::shared_ptr<ObservableUIRawMessage>>(textOpt)) {
+        auto obs = std::get<std::shared_ptr<ObservableUIRawMessage>>(textOpt);
+        if (obs) {
+            auto subId = obs->subscribe([updateString, path](UIRawMessage const& val) {
+                updateString(path, val.serialize().dump());
+            });
+            addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
+        }
+    }
+}
 
 Slider::Slider(
     ObsStringOrString                 label,
@@ -22,8 +48,8 @@ nlohmann::ordered_json Slider::serialize() const {
 
     j["visible"]        = resolveOption(mOptions.visible);
     j["slider_visible"] = true;
-    j["label"]          = resolveString(mLabel);
-    j["description"]    = resolveString(mOptions.description);
+    j["label"]          = resolveText(mLabel);
+    j["description"]    = resolveText(mOptions.description);
     j["value"]          = mValue ? mValue->getData() : resolveOption(mMin);
     j["minValue"]       = resolveOption(mMin);
     j["maxValue"]       = resolveOption(mMax);
@@ -40,14 +66,9 @@ void Slider::setupSubscriptions(
     std::function<void(std::string const&, bool)> const&                                              updateBool,
     std::function<void(std::string const&, std::string const&)> const&                                updateString
 ) {
-    if (std::holds_alternative<std::shared_ptr<ObservableString>>(mLabel)) {
-        auto obs = std::get<std::shared_ptr<ObservableString>>(mLabel);
-        if (obs) {
-            auto subId =
-                obs->subscribe([updateString, prefix](std::string const& val) { updateString(prefix + "label", val); });
-            addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
-        }
-    }
+    setupTextSubscription(mLabel, prefix + "label", addSub, updateString);
+    setupTextSubscription(mOptions.description, prefix + "description", addSub, updateString);
+
     if (mValue) {
         auto subId = mValue->subscribe([updateDouble, prefix](double val) { updateDouble(prefix + "value", val); });
         addSub(mValue, subId, [obs = mValue](uint64_t id) { obs->unsubscribe(id); });
@@ -90,11 +111,21 @@ void Slider::setupSubscriptions(
 }
 
 void Slider::handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) {
+    if (resolveOption(mOptions.disabled) || !resolveOption(mOptions.visible)) {
+        return;
+    }
+
     if (subpath == "value") {
-        if (mValue && std::holds_alternative<double>(value)) {
-            double val    = std::get<double>(value);
+        if (mValue && mValue->isClientWritable() && std::holds_alternative<double>(value)) {
+            double val = std::get<double>(value);
+            if (!std::isfinite(val)) {
+                return;
+            }
             double minVal = resolveOption(mMin);
             double maxVal = resolveOption(mMax);
+            if (!std::isfinite(minVal) || !std::isfinite(maxVal)) {
+                return;
+            }
             if (minVal > maxVal) {
                 std::swap(minVal, maxVal);
             }
@@ -104,6 +135,14 @@ void Slider::handleUpdate(std::string const& subpath, std::variant<double, bool,
                 val = maxVal;
             }
 
+            double stepVal = resolveOption(mOptions.step);
+            if (std::isfinite(stepVal) && stepVal > 0.0) {
+                double steps = std::round((val - minVal) / stepVal);
+                val = minVal + steps * stepVal;
+                if (val < minVal) val = minVal;
+                if (val > maxVal) val = maxVal;
+            }
+
             mValue->setData(val);
         }
     }
@@ -111,9 +150,15 @@ void Slider::handleUpdate(std::string const& subpath, std::variant<double, bool,
 
 bool Slider::validate() const {
     if (mValue) {
+        if (!mValue->isClientWritable()) {
+            return false;
+        }
         double val    = mValue->getData();
         double minVal = resolveOption(mMin);
         double maxVal = resolveOption(mMax);
+        if (!std::isfinite(val) || !std::isfinite(minVal) || !std::isfinite(maxVal)) {
+            return false;
+        }
         if (minVal > maxVal) {
             std::swap(minVal, maxVal);
         }

@@ -1,7 +1,33 @@
 #include "ll/core/ddui/elements/Dropdown.h"
+#include <cmath>
 #include <utility>
 
 namespace ll::ddui {
+
+static void setupTextSubscription(
+    ObsStringOrString const& textOpt,
+    std::string const& path,
+    std::function<void(std::shared_ptr<void> const&, uint64_t, std::function<void(uint64_t)>)> const& addSub,
+    std::function<void(std::string const&, std::string const&)> const& updateString
+) {
+    if (std::holds_alternative<std::shared_ptr<ObservableString>>(textOpt)) {
+        auto obs = std::get<std::shared_ptr<ObservableString>>(textOpt);
+        if (obs) {
+            auto subId = obs->subscribe([updateString, path](std::string const& val) {
+                updateString(path, val);
+            });
+            addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
+        }
+    } else if (std::holds_alternative<std::shared_ptr<ObservableUIRawMessage>>(textOpt)) {
+        auto obs = std::get<std::shared_ptr<ObservableUIRawMessage>>(textOpt);
+        if (obs) {
+            auto subId = obs->subscribe([updateString, path](UIRawMessage const& val) {
+                updateString(path, val.serialize().dump());
+            });
+            addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
+        }
+    }
+}
 
 Dropdown::Dropdown(
     ObsStringOrString                 label,
@@ -19,17 +45,28 @@ nlohmann::ordered_json Dropdown::serialize() const {
 
     j["visible"]          = resolveOption(mOptions.visible);
     j["dropdown_visible"] = true;
-    j["label"]            = resolveString(mLabel);
-    j["description"]      = resolveString(mOptions.description);
-    j["value"]            = mValue ? mValue->getData() : 0.0;
+    j["label"]            = resolveText(mLabel);
+    j["description"]      = resolveText(mOptions.description);
+
+    double selectedIndex = 0.0;
+    if (mValue) {
+        double currentVal = mValue->getData();
+        for (size_t i = 0; i < mItems.size(); ++i) {
+            if (mItems[i].value == currentVal) {
+                selectedIndex = static_cast<double>(i);
+                break;
+            }
+        }
+    }
+    j["value"]            = selectedIndex;
     j["disabled"]         = resolveOption(mOptions.disabled);
 
     nlohmann::ordered_json itemsObj = nlohmann::ordered_json::object();
     for (size_t i = 0; i < mItems.size(); ++i) {
         itemsObj[std::to_string(i)] = {
-            {      "label",       resolveString(mItems[i].label)},
+            {      "label",       resolveText(mItems[i].label)},
             {      "value",                      mItems[i].value},
-            {"description", resolveString(mItems[i].description)}
+            {"description", resolveText(mItems[i].description)}
         };
     }
 
@@ -46,18 +83,23 @@ void Dropdown::setupSubscriptions(
     std::function<void(std::string const&, bool)> const&                                              updateBool,
     std::function<void(std::string const&, std::string const&)> const&                                updateString
 ) {
-    if (std::holds_alternative<std::shared_ptr<ObservableString>>(mLabel)) {
-        auto obs = std::get<std::shared_ptr<ObservableString>>(mLabel);
-        if (obs) {
-            auto subId =
-                obs->subscribe([updateString, prefix](std::string const& val) { updateString(prefix + "label", val); });
-            addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
-        }
-    }
+    setupTextSubscription(mLabel, prefix + "label", addSub, updateString);
+    setupTextSubscription(mOptions.description, prefix + "description", addSub, updateString);
+
     if (mValue) {
-        auto subId = mValue->subscribe([updateDouble, prefix](double val) { updateDouble(prefix + "value", val); });
+        auto subId = mValue->subscribe([this, updateDouble, prefix](double val) {
+            double selectedIndex = 0.0;
+            for (size_t i = 0; i < mItems.size(); ++i) {
+                if (mItems[i].value == val) {
+                    selectedIndex = static_cast<double>(i);
+                    break;
+                }
+            }
+            updateDouble(prefix + "value", selectedIndex);
+        });
         addSub(mValue, subId, [obs = mValue](uint64_t id) { obs->unsubscribe(id); });
     }
+
     if (std::holds_alternative<std::shared_ptr<ObservableBoolean>>(mOptions.disabled)) {
         auto obs = std::get<std::shared_ptr<ObservableBoolean>>(mOptions.disabled);
         if (obs) {
@@ -72,16 +114,29 @@ void Dropdown::setupSubscriptions(
             addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
         }
     }
+
+    for (size_t i = 0; i < mItems.size(); ++i) {
+        std::string itemPrefix = prefix + "items[" + std::to_string(i) + "].";
+        setupTextSubscription(mItems[i].label, itemPrefix + "label", addSub, updateString);
+        setupTextSubscription(mItems[i].description, itemPrefix + "description", addSub, updateString);
+    }
 }
 
 void Dropdown::handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) {
+    if (resolveOption(mOptions.disabled) || !resolveOption(mOptions.visible)) {
+        return;
+    }
+
     if (subpath == "value") {
-        if (mValue && std::holds_alternative<double>(value)) {
+        if (mValue && mValue->isClientWritable() && std::holds_alternative<double>(value)) {
             double val = std::get<double>(value);
+            if (!std::isfinite(val) || val < 0.0) {
+                return;
+            }
 
             auto index = static_cast<size_t>(val);
             if (index < mItems.size()) {
-                mValue->setData(val);
+                mValue->setData(mItems[index].value);
             }
         }
     }
@@ -89,12 +144,19 @@ void Dropdown::handleUpdate(std::string const& subpath, std::variant<double, boo
 
 bool Dropdown::validate() const {
     if (mValue) {
-        double val = mValue->getData();
-
-        auto index = static_cast<size_t>(val);
-        return index < mItems.size();
+        if (!mValue->isClientWritable()) {
+            return false;
+        }
+        double currentVal = mValue->getData();
+        bool found = false;
+        for (auto const& item : mItems) {
+            if (item.value == currentVal) {
+                found = true;
+                break;
+            }
+        }
+        return found;
     }
-
     return true;
 }
 

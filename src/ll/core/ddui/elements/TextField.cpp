@@ -3,6 +3,31 @@
 
 namespace ll::ddui {
 
+static void setupTextSubscription(
+    ObsStringOrString const& textOpt,
+    std::string const& path,
+    std::function<void(std::shared_ptr<void> const&, uint64_t, std::function<void(uint64_t)>)> const& addSub,
+    std::function<void(std::string const&, std::string const&)> const& updateString
+) {
+    if (std::holds_alternative<std::shared_ptr<ObservableString>>(textOpt)) {
+        auto obs = std::get<std::shared_ptr<ObservableString>>(textOpt);
+        if (obs) {
+            auto subId = obs->subscribe([updateString, path](std::string const& val) {
+                updateString(path, val);
+            });
+            addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
+        }
+    } else if (std::holds_alternative<std::shared_ptr<ObservableUIRawMessage>>(textOpt)) {
+        auto obs = std::get<std::shared_ptr<ObservableUIRawMessage>>(textOpt);
+        if (obs) {
+            auto subId = obs->subscribe([updateString, path](UIRawMessage const& val) {
+                updateString(path, val.serialize().dump());
+            });
+            addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
+        }
+    }
+}
+
 TextField::TextField(ObsStringOrString label, std::shared_ptr<ObservableString> text, TextFieldOptions options)
 : mLabel(std::move(label)),
   mText(std::move(text)),
@@ -13,9 +38,9 @@ nlohmann::ordered_json TextField::serialize() const {
 
     j["visible"]           = resolveOption(mOptions.visible);
     j["textfield_visible"] = true;
-    j["label"]             = resolveString(mLabel);
+    j["label"]             = resolveText(mLabel);
     j["text"]              = mText ? mText->getData() : "";
-    j["description"]       = resolveString(mOptions.description);
+    j["description"]       = resolveText(mOptions.description);
     j["disabled"]          = resolveOption(mOptions.disabled);
 
     return j;
@@ -28,14 +53,9 @@ void TextField::setupSubscriptions(
     std::function<void(std::string const&, bool)> const&               updateBool,
     std::function<void(std::string const&, std::string const&)> const& updateString
 ) {
-    if (std::holds_alternative<std::shared_ptr<ObservableString>>(mLabel)) {
-        auto obs = std::get<std::shared_ptr<ObservableString>>(mLabel);
-        if (obs) {
-            auto subId =
-                obs->subscribe([updateString, prefix](std::string const& val) { updateString(prefix + "label", val); });
-            addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
-        }
-    }
+    setupTextSubscription(mLabel, prefix + "label", addSub, updateString);
+    setupTextSubscription(mOptions.description, prefix + "description", addSub, updateString);
+
     if (mText) {
         auto subId =
             mText->subscribe([updateString, prefix](std::string const& val) { updateString(prefix + "text", val); });
@@ -58,13 +78,22 @@ void TextField::setupSubscriptions(
 }
 
 void TextField::handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) {
+    if (resolveOption(mOptions.disabled) || !resolveOption(mOptions.visible)) {
+        return;
+    }
+
     if (subpath == "text") {
-        if (mText && std::holds_alternative<std::string>(value)) {
+        if (mText && mText->isClientWritable() && std::holds_alternative<std::string>(value)) {
             mText->setData(std::get<std::string>(value));
         }
     }
 }
 
-bool TextField::validate() const { return true; }
+bool TextField::validate() const {
+    if (mText && !mText->isClientWritable()) {
+        return false;
+    }
+    return true;
+}
 
 } // namespace ll::ddui
