@@ -2,8 +2,8 @@
 #include "ll/api/ddui/DataDrivenScreenClosedReason.h"
 #include "ll/api/ddui/FormIdManager.h"
 #include "ll/api/io/Logger.h"
-#include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/service/Bedrock.h"
+#include "ll/core/LeviLamina.h"
 #include "ll/core/ddui/DduiManager.h"
 #include "ll/core/ddui/MessageBoxSession.h"
 #include "mc/network/packet/ClientboundDataDrivenUICloseScreenPacket.h"
@@ -46,11 +46,9 @@ static void safeExecuteCallback(
     try {
         cb(p, result);
     } catch (std::exception const& e) {
-        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
-        logger->error("Exception in DDUI callback '{}': {}", name, e.what());
+        ll::getLogger().error("Exception in DDUI callback '{}': {}", name, e.what());
     } catch (...) {
-        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
-        logger->error("Unknown exception in DDUI callback '{}'", name);
+        ll::getLogger().error("Unknown exception in DDUI callback '{}'", name);
     }
 }
 
