@@ -154,8 +154,9 @@ public:
     /**
      * @brief Shows the form to the target player.
      * @param callback Function invoked when the form screen is closed by the client or server.
+     * @return True if showing the form was successful, false otherwise (e.g. invalid form, player offline).
      */
-    LLAPI void show(Callback callback = {});
+    LLAPI bool show(Callback callback = {});
 
     /**
      * @brief Programmatically closes the form screen on the client.
@@ -168,21 +169,19 @@ public:
      */
     LLNDAPI bool isShowing() const;
 
+    /**
+     * @brief Validates the form configuration.
+     * @return True if the form structure is valid.
+     */
+    LLNDAPI bool validate() const;
+
     // clang-format on
 
 private:
-    friend class DduiManager;
+    friend class CustomFormSession;
+    friend class FormIdManager;
 
-    void handleDataStoreUpdate(
-        std::string const&                             property,
-        std::string const&                             path,
-        std::variant<double, bool, std::string> const& value
-    );
-
-    void handleScreenClosed(::DataDrivenScreenClosedReason reason, Player& player);
-
-    struct Impl;
-    std::unique_ptr<Impl> mImpl;
+    std::shared_ptr<CustomFormSession> mSession;
 };
 
 } // namespace ll::ddui

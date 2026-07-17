@@ -62,8 +62,9 @@ public:
     /**
      * @brief Shows the message box screen to the player.
      * @param callback Function invoked when the player interacts with or closes the message box.
+     * @return True if showing the message box was successful, false otherwise.
      */
-    LLAPI void show(Callback callback = {});
+    LLAPI bool show(Callback callback = {});
 
     /**
      * @brief Programmatically closes the message box screen on the client.
@@ -76,21 +77,19 @@ public:
      */
     LLNDAPI bool isShowing() const;
 
+    /**
+     * @brief Validates the message box configuration.
+     * @return True if valid.
+     */
+    LLNDAPI bool validate() const;
+
     // clang-format on
 
 private:
-    friend class DduiManager;
+    friend class MessageBoxSession;
+    friend class FormIdManager;
 
-    void handleDataStoreUpdate(
-        std::string const&                             property,
-        std::string const&                             path,
-        std::variant<double, bool, std::string> const& value
-    );
-
-    void handleScreenClosed(::DataDrivenScreenClosedReason reason, Player& player);
-
-    struct Impl;
-    std::unique_ptr<Impl> mImpl;
+    std::shared_ptr<MessageBoxSession> mSession;
 };
 
 } // namespace ll::ddui
