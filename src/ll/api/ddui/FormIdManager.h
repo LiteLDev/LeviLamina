@@ -1,8 +1,6 @@
 #pragma once
 
 #include "ll/api/base/Macro.h"
-#include "ll/api/base/StdInt.h"
-#include <mutex>
 
 class Player;
 
@@ -20,7 +18,6 @@ public:
 
     LLNDAPI static MessageBox* getMessageBox(uint id);
     LLNDAPI static MessageBox* getMessageBox(Player& player);
-
 };
 
 } // namespace ll::ddui
