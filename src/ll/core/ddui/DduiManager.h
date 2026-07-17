@@ -1,18 +1,18 @@
 #pragma once
 
 #include "ll/api/base/StdInt.h"
+#include "ll/core/ddui/DduiSession.h"
 #include <mutex>
 #include <string>
 #include <unordered_map>
 #include <variant>
+#include <memory>
+#include <optional>
 
 class Player;
 enum class DataDrivenScreenClosedReason : uchar;
 
 namespace ll::ddui {
-
-class CustomForm;
-class MessageBox;
 
 class DduiManager {
 public:
@@ -24,11 +24,8 @@ public:
     [[nodiscard]] static std::string getCustomFormPropertyName() { return "custom_form_data_"; }
     [[nodiscard]] static std::string getMessageBoxPropertyName() { return "message_box_data_"; }
 
-    static void registerCustomForm(uint id, Player& player, CustomForm* form);
-    static void unregisterCustomForm(uint id, Player& player);
-
-    static void registerMessageBox(uint id, Player& player, MessageBox* box);
-    static void unregisterMessageBox(uint id, Player& player);
+    static void registerSession(std::shared_ptr<DduiSession> const& session, Player& player);
+    static void unregisterSession(uint id, std::string const& playerUuid);
 
     static void handleDataStoreUpdate(
         Player&                                        player,
@@ -40,14 +37,16 @@ public:
 
     static void handleScreenClosed(uint formId, ::DataDrivenScreenClosedReason reason, Player& player);
 
+    static std::optional<uint> parseFormId(std::string_view str);
+
+    static void closeSessionForPlayer(std::string const& uuid);
+
 private:
     friend class FormIdManager;
 
-    static std::unordered_map<uint, CustomForm*>    mActiveCustomForms;
-    static std::unordered_map<uint, MessageBox*>    mActiveMessageBoxes;
-    static std::unordered_map<Player*, CustomForm*> mPlayerActiveCustomForms;
-    static std::unordered_map<Player*, MessageBox*> mPlayerActiveMessageBoxes;
-    static std::mutex                               mMutex;
+    static std::unordered_map<uint, std::shared_ptr<DduiSession>>        mActiveSessions;
+    static std::unordered_map<std::string, std::shared_ptr<DduiSession>> mPlayerActiveSessions;
+    static std::mutex                                                    mMutex;
 };
 
 } // namespace ll::ddui

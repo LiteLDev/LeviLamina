@@ -1,43 +1,49 @@
 #include "ll/core/ddui/DduiManager.h"
-#include "ll/api/ddui/CustomForm.h"
-#include "ll/api/ddui/FormIdManager.h"
-#include "ll/api/ddui/MessageBox.h"
 #include "mc/ui/DataDrivenScreenClosedReason.h"
+#include "mc/world/actor/player/Player.h"
+#include <charconv>
 
 namespace ll::ddui {
 
-std::unordered_map<uint, CustomForm*>    DduiManager::mActiveCustomForms;
-std::unordered_map<uint, MessageBox*>    DduiManager::mActiveMessageBoxes;
-std::unordered_map<Player*, CustomForm*> DduiManager::mPlayerActiveCustomForms;
-std::unordered_map<Player*, MessageBox*> DduiManager::mPlayerActiveMessageBoxes;
-std::mutex                               DduiManager::mMutex;
+std::unordered_map<uint, std::shared_ptr<DduiSession>>        DduiManager::mActiveSessions;
+std::unordered_map<std::string, std::shared_ptr<DduiSession>> DduiManager::mPlayerActiveSessions;
+std::mutex                                                    DduiManager::mMutex;
 
-void DduiManager::registerCustomForm(uint id, Player& player, CustomForm* form) {
-    std::lock_guard<std::mutex> lock(mMutex);
+void DduiManager::registerSession(std::shared_ptr<DduiSession> const& session, Player& player) {
+    std::shared_ptr<DduiSession> oldSession;
+    {
+        std::lock_guard<std::mutex> lock(mMutex);
+        std::string uuid = player.getUuid().asString();
+        auto it = mPlayerActiveSessions.find(uuid);
+        if (it != mPlayerActiveSessions.end()) {
+            oldSession = it->second;
+        }
 
-    mActiveCustomForms[id]            = form;
-    mPlayerActiveCustomForms[&player] = form;
+        mActiveSessions[session->getId()] = session;
+        mPlayerActiveSessions[uuid] = session;
+    }
+    if (oldSession) {
+        oldSession->close();
+    }
 }
 
-void DduiManager::unregisterCustomForm(uint id, Player& player) {
+void DduiManager::unregisterSession(uint id, std::string const& playerUuid) {
     std::lock_guard<std::mutex> lock(mMutex);
-
-    mActiveCustomForms.erase(id);
-    mPlayerActiveCustomForms.erase(&player);
+    mActiveSessions.erase(id);
+    auto it = mPlayerActiveSessions.find(playerUuid);
+    if (it != mPlayerActiveSessions.end() && it->second->getId() == id) {
+        mPlayerActiveSessions.erase(it);
+    }
 }
 
-void DduiManager::registerMessageBox(uint id, Player& player, MessageBox* box) {
-    std::lock_guard<std::mutex> lock(mMutex);
-
-    mActiveMessageBoxes[id]            = box;
-    mPlayerActiveMessageBoxes[&player] = box;
-}
-
-void DduiManager::unregisterMessageBox(uint id, Player& player) {
-    std::lock_guard<std::mutex> lock(mMutex);
-
-    mActiveMessageBoxes.erase(id);
-    mPlayerActiveMessageBoxes.erase(&player);
+std::optional<uint> DduiManager::parseFormId(std::string_view str) {
+    if (str.empty() || str.size() > 10) return std::nullopt;
+    uint value = 0;
+    auto [ptr, ec] = std::from_chars(str.data(), str.data() + str.size(), value);
+    if (ec == std::errc() && ptr == str.data() + str.size()) {
+        return value;
+    }
+    return std::nullopt;
 }
 
 void DduiManager::handleDataStoreUpdate(
@@ -47,54 +53,67 @@ void DduiManager::handleDataStoreUpdate(
     std::string const&                             path,
     std::variant<double, bool, std::string> const& value
 ) {
+    if (property.length() > 256 || path.length() > 256) return;
+
     if (datastoreName == getDatastoreName()) {
+        std::shared_ptr<DduiSession> session;
         if (property.rfind(getCustomFormPropertyName(), 0) == 0) {
-            std::string idStr   = property.substr(getCustomFormPropertyName().length());
-            bool        isDigit = !idStr.empty();
-            for (char c : idStr) {
-                if (c < '0' || c > '9') {
-                    isDigit = false;
-                    break;
+            std::string idStr = property.substr(getCustomFormPropertyName().length());
+            auto formIdOpt = parseFormId(idStr);
+            if (formIdOpt) {
+                std::lock_guard<std::mutex> lock(mMutex);
+                auto it = mActiveSessions.find(*formIdOpt);
+                if (it != mActiveSessions.end()) {
+                    session = it->second;
                 }
-            }
-            if (isDigit) {
-                uint formId = std::stoul(idStr);
-                if (auto* form = FormIdManager::getCustomForm(formId)) {
-                    form->handleDataStoreUpdate(property, path, value);
-                    return;
-                }
-            }
-            if (auto* form = FormIdManager::getCustomForm(player)) {
-                form->handleDataStoreUpdate(property, path, value);
             }
         } else if (property.rfind(getMessageBoxPropertyName(), 0) == 0) {
-            std::string idStr   = property.substr(getMessageBoxPropertyName().length());
-            bool        isDigit = !idStr.empty();
-            for (char c : idStr) {
-                if (c < '0' || c > '9') {
-                    isDigit = false;
-                    break;
+            std::string idStr = property.substr(getMessageBoxPropertyName().length());
+            auto formIdOpt = parseFormId(idStr);
+            if (formIdOpt) {
+                std::lock_guard<std::mutex> lock(mMutex);
+                auto it = mActiveSessions.find(*formIdOpt);
+                if (it != mActiveSessions.end()) {
+                    session = it->second;
                 }
             }
-            if (isDigit) {
-                uint formId = std::stoul(idStr);
-                if (auto* box = FormIdManager::getMessageBox(formId)) {
-                    box->handleDataStoreUpdate(property, path, value);
-                    return;
-                }
-            }
-            if (auto* box = FormIdManager::getMessageBox(player)) {
-                box->handleDataStoreUpdate(property, path, value);
+        }
+
+        if (session) {
+            if (session->getPlayerUuid() == player.getUuid().asString()) {
+                session->handleDataStoreUpdate(property, path, value);
             }
         }
     }
 }
 
 void DduiManager::handleScreenClosed(uint formId, ::DataDrivenScreenClosedReason reason, Player& player) {
-    if (auto* form = FormIdManager::getCustomForm(formId)) {
-        form->handleScreenClosed(reason, player);
-    } else if (auto* box = FormIdManager::getMessageBox(formId)) {
-        box->handleScreenClosed(reason, player);
+    std::shared_ptr<DduiSession> session;
+    {
+        std::lock_guard<std::mutex> lock(mMutex);
+        auto it = mActiveSessions.find(formId);
+        if (it != mActiveSessions.end()) {
+            session = it->second;
+        }
+    }
+    if (session) {
+        if (session->getPlayerUuid() == player.getUuid().asString()) {
+            session->handleScreenClosed(reason);
+        }
+    }
+}
+
+void DduiManager::closeSessionForPlayer(std::string const& uuid) {
+    std::shared_ptr<DduiSession> session;
+    {
+        std::lock_guard<std::mutex> lock(mMutex);
+        auto it = mPlayerActiveSessions.find(uuid);
+        if (it != mPlayerActiveSessions.end()) {
+            session = it->second;
+        }
+    }
+    if (session) {
+        session->close();
     }
 }
 
