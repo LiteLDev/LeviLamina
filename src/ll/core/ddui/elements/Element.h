@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ll/api/ddui/Observable.h"
 #include "nlohmann/json.hpp"
 #include <functional>
 #include <memory>
@@ -28,6 +29,13 @@ public:
 
 protected:
     [[nodiscard]] virtual bool validate() const = 0;
+
+    static void setupTextSubscription(
+        ObsStringOrString const&                                                                          textOpt,
+        std::string const&                                                                                path,
+        std::function<void(std::shared_ptr<void> const&, uint64_t, std::function<void(uint64_t)>)> const& addSub,
+        std::function<void(std::string const&, std::string const&)> const&                                updateString
+    );
 };
 
 } // namespace ll::ddui
