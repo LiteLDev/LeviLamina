@@ -50,6 +50,17 @@ struct UIRawMessage {
         }
         return j;
     }
+
+    bool operator==(UIRawMessage const& other) const {
+        return rawtext == other.rawtext &&
+               text == other.text &&
+               translate == other.translate &&
+               with_args == other.with_args;
+    }
+
+    bool operator!=(UIRawMessage const& other) const {
+        return !(*this == other);
+    }
 };
 
 } // namespace ll::ddui
