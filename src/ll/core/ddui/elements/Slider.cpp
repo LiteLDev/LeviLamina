@@ -85,22 +85,22 @@ void Slider::setupSubscriptions(
     }
 }
 
-void Slider::handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) {
+bool Slider::handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) {
     if (resolveOption(mOptions.disabled) || !resolveOption(mOptions.visible)) {
-        return;
+        return false;
     }
 
     if (subpath == "value") {
         if (mValue && mValue->isClientWritable() && std::holds_alternative<double>(value)) {
             double val = std::get<double>(value);
             if (!std::isfinite(val)) {
-                return;
+                return false;
             }
 
             double minVal = resolveOption(mMin);
             double maxVal = resolveOption(mMax);
             if (!std::isfinite(minVal) || !std::isfinite(maxVal)) {
-                return;
+                return false;
             }
 
             if (minVal > maxVal) {
@@ -122,8 +122,10 @@ void Slider::handleUpdate(std::string const& subpath, std::variant<double, bool,
             }
 
             mValue->setData(val);
+            return true;
         }
     }
+    return false;
 }
 
 bool Slider::validate() const {

@@ -33,10 +33,12 @@ void Header::setupSubscriptions(
     }
 }
 
-void Header::handleUpdate(
+bool Header::handleUpdate(
     std::string const& /*subpath*/,
     std::variant<double, bool, std::string> const& /*value*/
-) {}
+) {
+    return false;
+}
 
 bool Header::validate() const { return true; }
 

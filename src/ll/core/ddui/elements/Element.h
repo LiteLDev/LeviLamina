@@ -22,7 +22,7 @@ public:
         std::function<void(std::string const&, std::string const&)> const&                                updateString
     ) = 0;
 
-    virtual void handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) = 0;
+    virtual bool handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) = 0;
 
     [[nodiscard]] bool isValid() const { return validate(); }
 

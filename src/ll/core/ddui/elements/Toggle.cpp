@@ -51,16 +51,18 @@ void Toggle::setupSubscriptions(
     }
 }
 
-void Toggle::handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) {
+bool Toggle::handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) {
     if (resolveOption(mOptions.disabled) || !resolveOption(mOptions.visible)) {
-        return;
+        return false;
     }
 
     if (subpath == "toggled") {
         if (mToggled && mToggled->isClientWritable() && std::holds_alternative<bool>(value)) {
             mToggled->setData(std::get<bool>(value));
+            return true;
         }
     }
+    return false;
 }
 
 bool Toggle::validate() const {
