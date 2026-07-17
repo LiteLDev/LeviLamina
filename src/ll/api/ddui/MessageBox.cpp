@@ -90,7 +90,7 @@ void MessageBoxSession::updateProperty(std::string const& name, std::string cons
                 Bedrock::DDUI::sendDataStorePacketsToClient(
                     sp.getDataStoreSync(),
                     *sender,
-                    &self->mPlayer.getUserEntityIdentifier() // Wait, self->mPlayer doesn't exist, we use player->getUserEntityIdentifier()
+                    &sp.getUserEntityIdentifier()
                 );
             }
             return true;
