@@ -13,15 +13,16 @@ void DduiManager::registerSession(std::shared_ptr<DduiSession> const& session, P
     std::shared_ptr<DduiSession> oldSession;
     {
         std::lock_guard<std::mutex> lock(mMutex);
+
         std::string uuid = player.getUuid().asString();
-        auto it = mPlayerActiveSessions.find(uuid);
-        if (it != mPlayerActiveSessions.end()) {
+        if (auto it = mPlayerActiveSessions.find(uuid); it != mPlayerActiveSessions.end()) {
             oldSession = it->second;
         }
 
         mActiveSessions[session->getId()] = session;
-        mPlayerActiveSessions[uuid] = session;
+        mPlayerActiveSessions[uuid]       = session;
     }
+
     if (oldSession) {
         oldSession->close();
     }
@@ -30,19 +31,23 @@ void DduiManager::registerSession(std::shared_ptr<DduiSession> const& session, P
 void DduiManager::unregisterSession(uint id, std::string const& playerUuid) {
     std::lock_guard<std::mutex> lock(mMutex);
     mActiveSessions.erase(id);
-    auto it = mPlayerActiveSessions.find(playerUuid);
-    if (it != mPlayerActiveSessions.end() && it->second->getId() == id) {
+
+    if (auto it = mPlayerActiveSessions.find(playerUuid);
+        it != mPlayerActiveSessions.end() && it->second->getId() == id) {
         mPlayerActiveSessions.erase(it);
     }
 }
 
 std::optional<uint> DduiManager::parseFormId(std::string_view str) {
     if (str.empty() || str.size() > 10) return std::nullopt;
+
     uint value = 0;
+
     auto [ptr, ec] = std::from_chars(str.data(), str.data() + str.size(), value);
     if (ec == std::errc() && ptr == str.data() + str.size()) {
         return value;
     }
+
     return std::nullopt;
 }
 
@@ -59,21 +64,23 @@ void DduiManager::handleDataStoreUpdate(
         std::shared_ptr<DduiSession> session;
         if (property.rfind(getCustomFormPropertyName(), 0) == 0) {
             std::string idStr = property.substr(getCustomFormPropertyName().length());
+
             auto formIdOpt = parseFormId(idStr);
             if (formIdOpt) {
                 std::lock_guard<std::mutex> lock(mMutex);
-                auto it = mActiveSessions.find(*formIdOpt);
-                if (it != mActiveSessions.end()) {
+
+                if (auto it = mActiveSessions.find(*formIdOpt); it != mActiveSessions.end()) {
                     session = it->second;
                 }
             }
         } else if (property.rfind(getMessageBoxPropertyName(), 0) == 0) {
             std::string idStr = property.substr(getMessageBoxPropertyName().length());
+
             auto formIdOpt = parseFormId(idStr);
             if (formIdOpt) {
                 std::lock_guard<std::mutex> lock(mMutex);
-                auto it = mActiveSessions.find(*formIdOpt);
-                if (it != mActiveSessions.end()) {
+
+                if (auto it = mActiveSessions.find(*formIdOpt); it != mActiveSessions.end()) {
                     session = it->second;
                 }
             }
@@ -91,11 +98,12 @@ void DduiManager::handleScreenClosed(uint formId, ::DataDrivenScreenClosedReason
     std::shared_ptr<DduiSession> session;
     {
         std::lock_guard<std::mutex> lock(mMutex);
-        auto it = mActiveSessions.find(formId);
-        if (it != mActiveSessions.end()) {
+
+        if (auto it = mActiveSessions.find(formId); it != mActiveSessions.end()) {
             session = it->second;
         }
     }
+
     if (session) {
         if (session->getPlayerUuid() == player.getUuid().asString()) {
             session->handleScreenClosed(reason);
@@ -107,11 +115,12 @@ void DduiManager::closeSessionForPlayer(std::string const& uuid) {
     std::shared_ptr<DduiSession> session;
     {
         std::lock_guard<std::mutex> lock(mMutex);
-        auto it = mPlayerActiveSessions.find(uuid);
-        if (it != mPlayerActiveSessions.end()) {
+
+        if (auto it = mPlayerActiveSessions.find(uuid); it != mPlayerActiveSessions.end()) {
             session = it->second;
         }
     }
+
     if (session) {
         session->close();
     }

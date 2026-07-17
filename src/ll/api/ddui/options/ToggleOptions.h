@@ -8,9 +8,9 @@
 namespace ll::ddui {
 
 struct ToggleOptions {
-    ObsStringOrString                                            description = std::string("");
-    std::variant<bool, std::shared_ptr<ObservableBoolean>>       disabled    = false;
-    std::variant<bool, std::shared_ptr<ObservableBoolean>>       visible     = true;
+    ObsStringOrString                                      description = std::string("");
+    std::variant<bool, std::shared_ptr<ObservableBoolean>> disabled    = false;
+    std::variant<bool, std::shared_ptr<ObservableBoolean>> visible     = true;
 };
 
 } // namespace ll::ddui

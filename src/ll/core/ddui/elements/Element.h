@@ -1,7 +1,6 @@
 #pragma once
 
 #include "ll/api/ddui/Observable.h"
-#include "nlohmann/json.hpp"
 #include <functional>
 #include <memory>
 #include <string>

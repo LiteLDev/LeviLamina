@@ -4,31 +4,6 @@
 
 namespace ll::ddui {
 
-static void setupTextSubscription(
-    ObsStringOrString const& textOpt,
-    std::string const& path,
-    std::function<void(std::shared_ptr<void> const&, uint64_t, std::function<void(uint64_t)>)> const& addSub,
-    std::function<void(std::string const&, std::string const&)> const& updateString
-) {
-    if (std::holds_alternative<std::shared_ptr<ObservableString>>(textOpt)) {
-        auto obs = std::get<std::shared_ptr<ObservableString>>(textOpt);
-        if (obs) {
-            auto subId = obs->subscribe([updateString, path](std::string const& val) {
-                updateString(path, val);
-            });
-            addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
-        }
-    } else if (std::holds_alternative<std::shared_ptr<ObservableUIRawMessage>>(textOpt)) {
-        auto obs = std::get<std::shared_ptr<ObservableUIRawMessage>>(textOpt);
-        if (obs) {
-            auto subId = obs->subscribe([updateString, path](UIRawMessage const& val) {
-                updateString(path, val.serialize().dump());
-            });
-            addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
-        }
-    }
-}
-
 Dropdown::Dropdown(
     ObsStringOrString                 label,
     std::shared_ptr<ObservableNumber> value,
@@ -58,14 +33,15 @@ nlohmann::ordered_json Dropdown::serialize() const {
             }
         }
     }
-    j["value"]            = selectedIndex;
-    j["disabled"]         = resolveOption(mOptions.disabled);
+
+    j["value"]    = selectedIndex;
+    j["disabled"] = resolveOption(mOptions.disabled);
 
     nlohmann::ordered_json itemsObj = nlohmann::ordered_json::object();
     for (size_t i = 0; i < mItems.size(); ++i) {
         itemsObj[std::to_string(i)] = {
             {      "label",       resolveText(mItems[i].label)},
-            {      "value",                      mItems[i].value},
+            {      "value",                    mItems[i].value},
             {"description", resolveText(mItems[i].description)}
         };
     }
@@ -147,7 +123,9 @@ bool Dropdown::validate() const {
         if (!mValue->isClientWritable()) {
             return false;
         }
+
         double currentVal = mValue->getData();
+
         bool found = false;
         for (auto const& item : mItems) {
             if (item.value == currentVal) {
@@ -155,8 +133,10 @@ bool Dropdown::validate() const {
                 break;
             }
         }
+
         return found;
     }
+
     return true;
 }
 

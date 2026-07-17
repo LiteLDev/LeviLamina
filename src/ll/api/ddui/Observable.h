@@ -1,7 +1,6 @@
 #pragma once
 
 #include "ll/api/ddui/UIRawMessage.h"
-#include "nlohmann/json.hpp"
 #include <functional>
 #include <mutex>
 #include <string>
@@ -62,8 +61,9 @@ public:
 
     SubscriptionId subscribe(Callback callback) {
         std::lock_guard<std::recursive_mutex> lock(mMutex);
-        SubscriptionId                        id = mNextId++;
-        mSubscribers[id]                         = std::move(callback);
+
+        SubscriptionId id = mNextId++;
+        mSubscribers[id]  = std::move(callback);
         return id;
     }
 

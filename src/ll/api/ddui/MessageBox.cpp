@@ -1,19 +1,19 @@
 #include "ll/api/ddui/MessageBox.h"
 #include "ll/api/ddui/DataDrivenScreenClosedReason.h"
 #include "ll/api/ddui/FormIdManager.h"
+#include "ll/api/io/Logger.h"
+#include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/core/ddui/DduiManager.h"
 #include "ll/core/ddui/MessageBoxSession.h"
-#include "ll/api/io/LoggerRegistry.h"
-#include "ll/api/io/Logger.h"
 #include "mc/network/packet/ClientboundDataDrivenUICloseScreenPacket.h"
 #include "mc/network/packet/ClientboundDataDrivenUIShowScreenPacket.h"
 #include "mc/scripting/data_sync/DDUI.h"
 #include "mc/scripting/data_sync/DataStoreSyncServer.h"
 #include "mc/scripting/data_sync/PathQueryError.h"
 #include "mc/scripting/data_sync/PathUtility.h"
-#include "mc/server/ServerPlayer.h"
 #include "mc/server/ServerInstance.h"
+#include "mc/server/ServerPlayer.h"
 #include "mc/ui/DataDrivenScreenClosedReason.h"
 #include "mc/world/level/Level.h"
 #include <utility>
@@ -30,15 +30,19 @@ static void queueOnServerThread(std::function<void()> func) {
 static Player* getPlayerByUuid(std::string const& uuidStr) {
     Player* foundPlayer = nullptr;
     ll::service::getLevel().transform([&](auto& level) {
-        foundPlayer = level.findPlayer([&](Player const& p) {
-            return p.getUuid().asString() == uuidStr;
-        });
+        foundPlayer = level.findPlayer([&](Player const& p) { return p.getUuid().asString() == uuidStr; });
         return true;
     });
+
     return foundPlayer;
 }
 
-static void safeExecuteCallback(std::string_view name, std::function<void(Player&, MessageBoxResult const&)> const& cb, Player& p, MessageBoxResult const& result) {
+static void safeExecuteCallback(
+    std::string_view                                             name,
+    std::function<void(Player&, MessageBoxResult const&)> const& cb,
+    Player&                                                      p,
+    MessageBoxResult const&                                      result
+) {
     try {
         cb(p, result);
     } catch (std::exception const& e) {
@@ -51,7 +55,8 @@ static void safeExecuteCallback(std::string_view name, std::function<void(Player
 }
 
 MessageBoxSession::MessageBoxSession(std::string uuid, ObsStringOrString title)
-: mUuid(std::move(uuid)), mTitle(std::move(title)) {
+: mUuid(std::move(uuid)),
+  mTitle(std::move(title)) {
     mFormId = FormIdManager::genFormId();
 }
 
@@ -65,12 +70,14 @@ void MessageBoxSession::cleanupSubscriptions() {
     for (auto const& sub : mSubs) {
         sub.unsubscribeFn(sub.subId);
     }
+
     mSubs.clear();
 }
 
 void MessageBoxSession::updateProperty(std::string const& name, std::string const& val) {
     queueOnServerThread([self = shared_from_this(), name, val]() {
         if (!self->mIsShowing) return;
+
         auto player = getPlayerByUuid(self->mUuid);
         if (!player) return;
 
@@ -93,14 +100,15 @@ void MessageBoxSession::updateProperty(std::string const& name, std::string cons
                     &sp.getUserEntityIdentifier()
                 );
             }
+
             return true;
         });
     });
 }
 
 void MessageBoxSession::handleDataStoreUpdate(
-    std::string const& property,
-    std::string const& path,
+    std::string const&                             property,
+    std::string const&                             path,
     std::variant<double, bool, std::string> const& value
 ) {
     if (property == "selection" || path == "selection") {
@@ -135,8 +143,8 @@ void MessageBoxSession::handleScreenClosed(::DataDrivenScreenClosedReason closed
     DduiManager::unregisterSession(mFormId, mUuid);
     cleanupSubscriptions();
 
-    std::string uuid = mUuid;
-    uint formId = mFormId;
+    std::string uuid   = mUuid;
+    uint        formId = mFormId;
     queueOnServerThread([uuid, formId]() {
         auto player = getPlayerByUuid(uuid);
         if (player) {
@@ -160,7 +168,7 @@ void MessageBoxSession::handleScreenClosed(::DataDrivenScreenClosedReason closed
             reason = DataDrivenScreenClosedReason::UserBusy;
         }
 
-        int sel = mSelection;
+        int                sel = mSelection;
         std::optional<int> selectionOpt;
         if (sel == 0 || sel == 1) {
             selectionOpt = sel;
@@ -184,8 +192,8 @@ void MessageBoxSession::close() {
     DduiManager::unregisterSession(mFormId, mUuid);
     cleanupSubscriptions();
 
-    std::string uuid = mUuid;
-    uint formId = mFormId;
+    std::string uuid   = mUuid;
+    uint        formId = mFormId;
     queueOnServerThread([uuid, formId]() {
         auto player = getPlayerByUuid(uuid);
         if (player) {
@@ -208,14 +216,19 @@ void MessageBoxSession::close() {
         queueOnServerThread([cb, uuid]() {
             auto player = getPlayerByUuid(uuid);
             if (player) {
-                safeExecuteCallback("MessageBox::Callback", cb, *player, MessageBoxResult{DataDrivenScreenClosedReason::ServerClosed, std::nullopt});
+                safeExecuteCallback(
+                    "MessageBox::Callback",
+                    cb,
+                    *player,
+                    MessageBoxResult{DataDrivenScreenClosedReason::ServerClosed, std::nullopt}
+                );
             }
         });
     }
 }
 
 MessageBox::MessageBox(Player& player, ObsStringOrString title) {
-    mSession = std::make_shared<MessageBoxSession>(player.getUuid().asString(), std::move(title));
+    mSession           = std::make_shared<MessageBoxSession>(player.getUuid().asString(), std::move(title));
     mSession->mWrapper = this;
 }
 
@@ -257,20 +270,22 @@ bool MessageBox::show(Callback callback) {
     auto& serverPlayer = static_cast<ServerPlayer&>(*player);
     auto& sync         = serverPlayer.getDataStoreSync();
 
+    // clang-format off
     nlohmann::json data = {
-        {"title", resolveText(mSession->mTitle)},
-        {"body", resolveText(mSession->mBody)},
-        {"button1", {
-            {"label", resolveText(mSession->mBtn1Label)},
-            {"onClick", 0},
-            {"tooltip", resolveText(mSession->mBtn1Tooltip)}
+        { "title", resolveText(mSession->mTitle) },
+        { "body", resolveText(mSession->mBody) },
+        { "button1", {
+            { "label", resolveText(mSession->mBtn1Label) },
+            { "onClick", 0 },
+            { "tooltip", resolveText(mSession->mBtn1Tooltip) }
         }},
-        {"button2", {
-            {"label", resolveText(mSession->mBtn2Label)},
-            {"onClick", 0},
-            {"tooltip", resolveText(mSession->mBtn2Tooltip)}
+        { "button2", {
+            { "label", resolveText(mSession->mBtn2Label) },
+            { "onClick", 0 },
+            { "tooltip", resolveText(mSession->mBtn2Tooltip) }
         }},
     };
+    // clang-format on
 
     std::string dumped = data.dump();
     if (dumped.size() > 65536) {
@@ -324,22 +339,17 @@ bool MessageBox::show(Callback callback) {
         if (sender) {
             Bedrock::DDUI::sendDataStorePacketsToClient(sync, *sender, &serverPlayer.getUserEntityIdentifier());
         }
+
         return true;
     });
 
     return true;
 }
 
-void MessageBox::close() {
-    mSession->close();
-}
+void MessageBox::close() { mSession->close(); }
 
-bool MessageBox::isShowing() const {
-    return mSession->mIsShowing;
-}
+bool MessageBox::isShowing() const { return mSession->mIsShowing; }
 
-bool MessageBox::validate() const {
-    return true;
-}
+bool MessageBox::validate() const { return true; }
 
 } // namespace ll::ddui

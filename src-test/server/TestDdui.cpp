@@ -6,9 +6,6 @@
 #include "ll/api/ddui/CustomForm.h"
 #include "ll/api/ddui/MessageBox.h"
 #include "ll/api/ddui/Observable.h"
-#include "ll/core/ddui/DduiManager.h"
-#include "ll/core/ddui/elements/Slider.h"
-#include "ll/core/ddui/elements/Dropdown.h"
 #include "ll/api/io/Logger.h"
 #include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/memory/Hook.h"
@@ -16,6 +13,9 @@
 #include "ll/api/thread/ServerThreadExecutor.h"
 #include "ll/api/utils/Base64Utils.h"
 #include "ll/api/utils/StringUtils.h"
+#include "ll/core/ddui/DduiManager.h"
+#include "ll/core/ddui/elements/Dropdown.h"
+#include "ll/core/ddui/elements/Slider.h"
 #include "mc/deps/crypto/Hash.h"
 #include "mc/deps/crypto/hash/HashType.h"
 #include "mc/scripting/ServerScriptManager.h"
@@ -243,7 +243,7 @@ TEST(DduiTest, ParseFormIdWorksCorrectly) {
 
 TEST(DduiTest, SliderValidationAndClamping) {
     using namespace ll::ddui;
-    auto val = std::make_shared<ObservableNumber>(10.0, ObservableOptions{true});
+    auto   val = std::make_shared<ObservableNumber>(10.0, ObservableOptions{true});
     Slider slider("Test Slider", val, 0.0, 20.0, SliderOptions{.description = std::string("Main"), .step = 1.0});
 
     EXPECT_TRUE(slider.isValid());
@@ -268,12 +268,17 @@ TEST(DduiTest, SliderValidationAndClamping) {
 
 TEST(DduiTest, DropdownValidationAndIndexMapping) {
     using namespace ll::ddui;
-    auto val = std::make_shared<ObservableNumber>(1.0, ObservableOptions{true});
-    Dropdown dropdown("Test Dropdown", val, {
-        {"Item 0", 0.0, "Description 0"},
-        {"Item 1", 1.0, "Description 1"},
-        {"Item 2", 2.0, "Description 2"}
-    }, DropdownOptions{});
+    auto     val = std::make_shared<ObservableNumber>(1.0, ObservableOptions{true});
+    Dropdown dropdown(
+        "Test Dropdown",
+        val,
+        {
+            {"Item 0", 0.0, "Description 0"},
+            {"Item 1", 1.0, "Description 1"},
+            {"Item 2", 2.0, "Description 2"}
+    },
+        DropdownOptions{}
+    );
 
     EXPECT_TRUE(dropdown.isValid());
 

@@ -8,10 +8,10 @@
 namespace ll::ddui {
 
 struct SliderOptions {
-    ObsStringOrString                                            description = std::string("");
-    std::variant<bool, std::shared_ptr<ObservableBoolean>>       disabled    = false;
-    std::variant<double, std::shared_ptr<ObservableNumber>>      step        = 1.0;
-    std::variant<bool, std::shared_ptr<ObservableBoolean>>       visible     = true;
+    ObsStringOrString                                       description = std::string("");
+    std::variant<bool, std::shared_ptr<ObservableBoolean>>  disabled    = false;
+    std::variant<double, std::shared_ptr<ObservableNumber>> step        = 1.0;
+    std::variant<bool, std::shared_ptr<ObservableBoolean>>  visible     = true;
 };
 
 } // namespace ll::ddui

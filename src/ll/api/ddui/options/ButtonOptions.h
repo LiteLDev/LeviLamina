@@ -8,9 +8,9 @@
 namespace ll::ddui {
 
 struct ButtonOptions {
-    std::variant<bool, std::shared_ptr<ObservableBoolean>>       disabled = false;
-    ObsStringOrString                                            tooltip  = std::string("");
-    std::variant<bool, std::shared_ptr<ObservableBoolean>>       visible  = true;
+    std::variant<bool, std::shared_ptr<ObservableBoolean>> disabled = false;
+    ObsStringOrString                                      tooltip  = std::string("");
+    std::variant<bool, std::shared_ptr<ObservableBoolean>> visible  = true;
 };
 
 } // namespace ll::ddui

@@ -1,9 +1,11 @@
 #include "ll/api/ddui/CustomForm.h"
 #include "ll/api/ddui/DataDrivenScreenClosedReason.h"
 #include "ll/api/ddui/FormIdManager.h"
+#include "ll/api/io/Logger.h"
+#include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/service/Bedrock.h"
-#include "ll/core/ddui/DduiManager.h"
 #include "ll/core/ddui/CustomFormSession.h"
+#include "ll/core/ddui/DduiManager.h"
 #include "ll/core/ddui/elements/Button.h"
 #include "ll/core/ddui/elements/CloseButton.h"
 #include "ll/core/ddui/elements/Divider.h"
@@ -15,20 +17,18 @@
 #include "ll/core/ddui/elements/Spacer.h"
 #include "ll/core/ddui/elements/TextField.h"
 #include "ll/core/ddui/elements/Toggle.h"
-#include "ll/api/io/LoggerRegistry.h"
-#include "ll/api/io/Logger.h"
 #include "mc/network/packet/ClientboundDataDrivenUICloseScreenPacket.h"
 #include "mc/network/packet/ClientboundDataDrivenUIShowScreenPacket.h"
 #include "mc/scripting/data_sync/DDUI.h"
 #include "mc/scripting/data_sync/DataStoreSyncServer.h"
 #include "mc/scripting/data_sync/PathQueryError.h"
 #include "mc/scripting/data_sync/PathUtility.h"
-#include "mc/server/ServerPlayer.h"
 #include "mc/server/ServerInstance.h"
+#include "mc/server/ServerPlayer.h"
 #include "mc/ui/DataDrivenScreenClosedReason.h"
 #include "mc/world/level/Level.h"
-#include <utility>
 #include <charconv>
+#include <utility>
 
 namespace ll::ddui {
 
@@ -42,15 +42,19 @@ static void queueOnServerThread(std::function<void()> func) {
 static Player* getPlayerByUuid(std::string const& uuidStr) {
     Player* foundPlayer = nullptr;
     ll::service::getLevel().transform([&](auto& level) {
-        foundPlayer = level.findPlayer([&](Player const& p) {
-            return p.getUuid().asString() == uuidStr;
-        });
+        foundPlayer = level.findPlayer([&](Player const& p) { return p.getUuid().asString() == uuidStr; });
         return true;
     });
+
     return foundPlayer;
 }
 
-static void safeExecuteCallback(std::string_view name, std::function<void(Player&, DataDrivenScreenClosedReason)> const& cb, Player& p, DataDrivenScreenClosedReason reason) {
+static void safeExecuteCallback(
+    std::string_view                                                  name,
+    std::function<void(Player&, DataDrivenScreenClosedReason)> const& cb,
+    Player&                                                           p,
+    DataDrivenScreenClosedReason                                      reason
+) {
     try {
         cb(p, reason);
     } catch (std::exception const& e) {
@@ -63,7 +67,8 @@ static void safeExecuteCallback(std::string_view name, std::function<void(Player
 }
 
 CustomFormSession::CustomFormSession(std::string uuid, ObsStringOrString title)
-: mUuid(std::move(uuid)), mTitle(std::move(title)) {
+: mUuid(std::move(uuid)),
+  mTitle(std::move(title)) {
     mFormId = FormIdManager::genFormId();
 }
 
@@ -83,6 +88,7 @@ void CustomFormSession::cleanupSubscriptions() {
 void CustomFormSession::updatePath(std::string const& path, double val) {
     queueOnServerThread([self = shared_from_this(), path, val]() {
         if (!self->mIsShowing) return;
+
         auto player = getPlayerByUuid(self->mUuid);
         if (!player) return;
 
@@ -105,6 +111,7 @@ void CustomFormSession::updatePath(std::string const& path, double val) {
                     &sp.getUserEntityIdentifier()
                 );
             }
+
             return true;
         });
     });
@@ -113,6 +120,7 @@ void CustomFormSession::updatePath(std::string const& path, double val) {
 void CustomFormSession::updatePath(std::string const& path, bool val) {
     queueOnServerThread([self = shared_from_this(), path, val]() {
         if (!self->mIsShowing) return;
+
         auto player = getPlayerByUuid(self->mUuid);
         if (!player) return;
 
@@ -135,6 +143,7 @@ void CustomFormSession::updatePath(std::string const& path, bool val) {
                     &sp.getUserEntityIdentifier()
                 );
             }
+
             return true;
         });
     });
@@ -143,6 +152,7 @@ void CustomFormSession::updatePath(std::string const& path, bool val) {
 void CustomFormSession::updatePath(std::string const& path, std::string const& val) {
     queueOnServerThread([self = shared_from_this(), path, val]() {
         if (!self->mIsShowing) return;
+
         auto player = getPlayerByUuid(self->mUuid);
         if (!player) return;
 
@@ -165,6 +175,7 @@ void CustomFormSession::updatePath(std::string const& path, std::string const& v
                     &sp.getUserEntityIdentifier()
                 );
             }
+
             return true;
         });
     });
@@ -179,6 +190,7 @@ void CustomFormSession::handleDataStoreUpdate(
         if (mCloseButton) {
             mCloseButton->handleUpdate("onClick", value);
         }
+
         close();
         return;
     }
@@ -221,8 +233,8 @@ void CustomFormSession::handleScreenClosed(::DataDrivenScreenClosedReason closed
     DduiManager::unregisterSession(mFormId, mUuid);
     cleanupSubscriptions();
 
-    std::string uuid = mUuid;
-    uint formId = mFormId;
+    std::string uuid   = mUuid;
+    uint        formId = mFormId;
     queueOnServerThread([uuid, formId]() {
         auto player = getPlayerByUuid(uuid);
         if (player) {
@@ -264,8 +276,8 @@ void CustomFormSession::close() {
     DduiManager::unregisterSession(mFormId, mUuid);
     cleanupSubscriptions();
 
-    std::string uuid = mUuid;
-    uint formId = mFormId;
+    std::string uuid   = mUuid;
+    uint        formId = mFormId;
     queueOnServerThread([uuid, formId]() {
         auto player = getPlayerByUuid(uuid);
         if (player) {
@@ -296,15 +308,17 @@ void CustomFormSession::close() {
 
 bool CustomFormSession::validate() const {
     if (mControls.size() > 100) return false;
+
     for (auto const& control : mControls) {
         if (!control->isValid()) return false;
     }
+
     if (mCloseButton && !mCloseButton->isValid()) return false;
     return true;
 }
 
 CustomForm::CustomForm(Player& player, ObsStringOrString title) {
-    mSession = std::make_shared<CustomFormSession>(player.getUuid().asString(), std::move(title));
+    mSession           = std::make_shared<CustomFormSession>(player.getUuid().asString(), std::move(title));
     mSession->mWrapper = this;
 }
 
@@ -319,12 +333,14 @@ CustomForm& CustomForm::appendButton(ObsStringOrString label, std::function<void
     return *this;
 }
 
-CustomForm& CustomForm::appendTextField(ObsStringOrString label, std::shared_ptr<ObservableString> text, TextFieldOptions options) {
+CustomForm&
+CustomForm::appendTextField(ObsStringOrString label, std::shared_ptr<ObservableString> text, TextFieldOptions options) {
     mSession->mControls.push_back(std::make_unique<TextField>(std::move(label), std::move(text), std::move(options)));
     return *this;
 }
 
-CustomForm& CustomForm::appendToggle(ObsStringOrString label, std::shared_ptr<ObservableBoolean> toggled, ToggleOptions options) {
+CustomForm&
+CustomForm::appendToggle(ObsStringOrString label, std::shared_ptr<ObservableBoolean> toggled, ToggleOptions options) {
     mSession->mControls.push_back(std::make_unique<Toggle>(std::move(label), std::move(toggled), std::move(options)));
     return *this;
 }
@@ -374,7 +390,8 @@ CustomForm& CustomForm::appendDivider(DividerOptions options) {
     return *this;
 }
 
-CustomForm& CustomForm::appendCloseButton(ObsStringOrString label, std::function<void()> onClick, ButtonOptions options) {
+CustomForm&
+CustomForm::appendCloseButton(ObsStringOrString label, std::function<void()> onClick, ButtonOptions options) {
     mSession->mCloseButton = std::make_unique<CloseButton>(std::move(label), std::move(onClick), std::move(options));
     return *this;
 }
@@ -385,7 +402,7 @@ bool CustomForm::show(Callback callback) {
     auto player = getPlayerByUuid(mSession->mUuid);
     if (!player) return false;
 
-    mSession->mCallback = std::move(callback);
+    mSession->mCallback  = std::move(callback);
     mSession->mIsShowing = true;
 
     DduiManager::registerSession(mSession, *player);
@@ -411,7 +428,7 @@ bool CustomForm::show(Callback callback) {
         layoutObj[std::to_string(i)] = mSession->mControls[i]->serialize();
     }
     layoutObj["length"] = mSession->mControls.size();
-    root["layout"] = layoutObj;
+    root["layout"]      = layoutObj;
 
     std::string dumped = root.dump();
     if (dumped.size() > 65536) {
@@ -432,20 +449,21 @@ bool CustomForm::show(Callback callback) {
 
     mSession->cleanupSubscriptions();
 
-    auto addSub = [session = mSession](std::shared_ptr<void> const& obs, uint64_t subId, std::function<void(uint64_t)> unsub) {
-        std::lock_guard<std::recursive_mutex> lock(session->mSubMutex);
-        session->mSubs.push_back({obs, subId, std::move(unsub)});
-    };
+    auto addSub =
+        [session = mSession](std::shared_ptr<void> const& obs, uint64_t subId, std::function<void(uint64_t)> unsub) {
+            std::lock_guard<std::recursive_mutex> lock(session->mSubMutex);
+            session->mSubs.push_back({obs, subId, std::move(unsub)});
+        };
     auto updateDouble = [session = mSession](std::string const& path, double val) { session->updatePath(path, val); };
     auto updateBool   = [session = mSession](std::string const& path, bool val) { session->updatePath(path, val); };
-    auto updateString = [session = mSession](std::string const& path, std::string const& val) { session->updatePath(path, val); };
+    auto updateString = [session = mSession](std::string const& path, std::string const& val) {
+        session->updatePath(path, val);
+    };
 
     if (std::holds_alternative<std::shared_ptr<ObservableString>>(mSession->mTitle)) {
         auto obs = std::get<std::shared_ptr<ObservableString>>(mSession->mTitle);
         if (obs) {
-            auto subId = obs->subscribe([updateString](std::string const& val) {
-                updateString("title", val);
-            });
+            auto subId = obs->subscribe([updateString](std::string const& val) { updateString("title", val); });
             addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
         }
     } else if (std::holds_alternative<std::shared_ptr<ObservableUIRawMessage>>(mSession->mTitle)) {
@@ -485,16 +503,10 @@ bool CustomForm::show(Callback callback) {
     return true;
 }
 
-void CustomForm::close() {
-    mSession->close();
-}
+void CustomForm::close() { mSession->close(); }
 
-bool CustomForm::isShowing() const {
-    return mSession->mIsShowing;
-}
+bool CustomForm::isShowing() const { return mSession->mIsShowing; }
 
-bool CustomForm::validate() const {
-    return mSession->validate();
-}
+bool CustomForm::validate() const { return mSession->validate(); }
 
 } // namespace ll::ddui
