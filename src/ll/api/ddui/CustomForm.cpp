@@ -64,9 +64,7 @@ static void safeExecuteCallback(
     }
 }
 
-CustomFormSession::CustomFormSession(mce::UUID uuid, ObsStringOrString title)
-: mUuid(uuid),
-  mTitle(std::move(title)) {
+CustomFormSession::CustomFormSession(mce::UUID uuid, ObsStringOrString title) : mUuid(uuid), mTitle(std::move(title)) {
     mFormId = FormIdManager::genFormId();
 }
 
@@ -188,7 +186,10 @@ void CustomFormSession::handleDataStoreUpdate(
     if (path == "closeButton.onClick") {
         if (mCloseButton) {
             if (!mCloseButton->handleUpdate("onClick", value)) {
-                ll::getLogger().warn("Failed to handle close button onClick for player with UUID {} (DDUI)", mUuid.asString());
+                ll::getLogger().warn(
+                    "Failed to handle close button onClick for player with UUID {} (DDUI)",
+                    mUuid.asString()
+                );
             }
         }
 
@@ -376,10 +377,10 @@ CustomForm& CustomForm::appendSlider(
 }
 
 CustomForm& CustomForm::appendDropdown(
-    ObsStringOrString                 label,
-    std::shared_ptr<ObservableNumber> value,
-    std::vector<DropdownItemData>     items,
-    DropdownOptions                   options
+    ObsStringOrString                  label,
+    std::shared_ptr<ObservableInteger> value,
+    std::vector<DropdownItemData>      items,
+    DropdownOptions                    options
 ) {
     mSession->mControls.push_back(
         std::make_unique<Dropdown>(std::move(label), std::move(value), std::move(items), std::move(options))

@@ -52,9 +52,7 @@ static void safeExecuteCallback(
     }
 }
 
-MessageBoxSession::MessageBoxSession(mce::UUID uuid, ObsStringOrString title)
-: mUuid(uuid),
-  mTitle(std::move(title)) {
+MessageBoxSession::MessageBoxSession(mce::UUID uuid, ObsStringOrString title) : mUuid(uuid), mTitle(std::move(title)) {
     mFormId = FormIdManager::genFormId();
 }
 

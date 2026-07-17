@@ -80,16 +80,16 @@ void registerDduiTestCommand() {
             auto name     = std::make_shared<ObservableString>(player->getName(), ObservableOptions{true});
             auto music    = std::make_shared<ObservableBoolean>(true, ObservableOptions{true});
             auto volume   = std::make_shared<ObservableNumber>(75.0, ObservableOptions{true});
-            auto language = std::make_shared<ObservableNumber>(0.0, ObservableOptions{true});
+            auto language = std::make_shared<ObservableInteger>(0, ObservableOptions{true});
 
             auto form = std::make_shared<CustomForm>(*player, "Game Settings");
             form->appendDropdown(
                 "Language",
                 language,
                 {
-                    {"English", 0.0, "English Language"},
-                    {"Spanish", 1.0, "Spanish Language"},
-                    { "French", 2.0,  "French Language"}
+                    {"English", 0, "English Language"},
+                    {"Spanish", 1, "Spanish Language"},
+                    { "French", 2,  "French Language"}
             }
             );
             form->appendTextField("Player Name", name);
@@ -268,14 +268,15 @@ TEST(DduiTest, SliderValidationAndClamping) {
 
 TEST(DduiTest, DropdownValidationAndIndexMapping) {
     using namespace ll::ddui;
-    auto     val = std::make_shared<ObservableNumber>(1.0, ObservableOptions{true});
+    auto     val = std::make_shared<ObservableInteger>(1, ObservableOptions{true});
     Dropdown dropdown(
         "Test Dropdown",
         val,
         {
-            {"Item 0", 0.0, "Description 0"},
-            {"Item 1", 1.0, "Description 1"},
-            {"Item 2", 2.0, "Description 2"}
+            {"Item 0",  0, "Description 0"},
+            {"Item 1",  1, "Description 1"},
+            {"Item 2",  2, "Description 2"},
+            {"Item 3", 13, "Description 3"}
     },
         DropdownOptions{}
     );
@@ -283,17 +284,21 @@ TEST(DduiTest, DropdownValidationAndIndexMapping) {
     EXPECT_TRUE(dropdown.isValid());
 
     auto serialized = dropdown.serialize();
-    EXPECT_EQ(serialized["value"], 1.0); // mapped to index 1
+    EXPECT_EQ(serialized["value"], 1); // mapped to value 1
 
-    // Update with valid index 2
+    // Update with valid value 2
     dropdown.handleUpdate("value", std::variant<double, bool, std::string>(2.0));
-    EXPECT_DOUBLE_EQ(val->getData(), 2.0); // mapped to item value 2.0
+    EXPECT_EQ(val->getData(), 2); // mapped to item value 2
 
-    // Update with out of bounds index
-    dropdown.handleUpdate("value", std::variant<double, bool, std::string>(5.0));
-    EXPECT_DOUBLE_EQ(val->getData(), 2.0); // unchanged
+    // Update with valid value 13
+    dropdown.handleUpdate("value", std::variant<double, bool, std::string>(13.0));
+    EXPECT_EQ(val->getData(), 13); // mapped to item value 13
+
+    // Update with out of bounds value
+    dropdown.handleUpdate("value", std::variant<double, bool, std::string>(99.0));
+    EXPECT_EQ(val->getData(), 13); // unchanged
 
     // Update with NaN
     dropdown.handleUpdate("value", std::variant<double, bool, std::string>(std::numeric_limits<double>::quiet_NaN()));
-    EXPECT_DOUBLE_EQ(val->getData(), 2.0); // unchanged
+    EXPECT_EQ(val->getData(), 13); // unchanged
 }

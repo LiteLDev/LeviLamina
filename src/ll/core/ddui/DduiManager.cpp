@@ -5,9 +5,9 @@
 
 namespace ll::ddui {
 
-std::unordered_map<uint, std::shared_ptr<DduiSession>>     DduiManager::mActiveSessions;
+std::unordered_map<uint, std::shared_ptr<DduiSession>>      DduiManager::mActiveSessions;
 std::unordered_map<mce::UUID, std::shared_ptr<DduiSession>> DduiManager::mPlayerActiveSessions;
-std::mutex                                                 DduiManager::mMutex;
+std::mutex                                                  DduiManager::mMutex;
 
 void DduiManager::registerSession(std::shared_ptr<DduiSession> const& session, Player& player) {
     std::shared_ptr<DduiSession> oldSession;

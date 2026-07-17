@@ -10,7 +10,7 @@ namespace ll::ddui {
 
 struct DropdownItemData {
     ObsStringOrString label;
-    double            value;
+    int               value;
     ObsStringOrString description = std::string("");
 };
 

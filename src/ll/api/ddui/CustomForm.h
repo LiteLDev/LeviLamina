@@ -100,10 +100,10 @@ public:
      * @return Reference to the CustomForm instance for method chaining.
      */
     LLAPI CustomForm& appendDropdown(
-        ObsStringOrString                 label,
-        std::shared_ptr<ObservableNumber> value,
-        std::vector<DropdownItemData>     items,
-        DropdownOptions                   options = {}
+        ObsStringOrString                  label,
+        std::shared_ptr<ObservableInteger> value,
+        std::vector<DropdownItemData>      items,
+        DropdownOptions                    options = {}
     );
 
     /**

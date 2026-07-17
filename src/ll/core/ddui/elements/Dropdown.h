@@ -10,17 +10,17 @@ namespace ll::ddui {
 
 class Dropdown : public Element {
 private:
-    ObsStringOrString                 mLabel;
-    std::shared_ptr<ObservableNumber> mValue;
-    std::vector<DropdownItemData>     mItems;
-    DropdownOptions                   mOptions;
+    ObsStringOrString                  mLabel;
+    std::shared_ptr<ObservableInteger> mValue;
+    std::vector<DropdownItemData>      mItems;
+    DropdownOptions                    mOptions;
 
 public:
     Dropdown(
-        ObsStringOrString                 label,
-        std::shared_ptr<ObservableNumber> value,
-        std::vector<DropdownItemData>     items,
-        DropdownOptions                   options
+        ObsStringOrString                  label,
+        std::shared_ptr<ObservableInteger> value,
+        std::vector<DropdownItemData>      items,
+        DropdownOptions                    options
     );
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override;
