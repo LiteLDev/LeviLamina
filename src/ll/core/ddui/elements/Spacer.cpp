@@ -31,10 +31,12 @@ void Spacer::setupSubscriptions(
     }
 }
 
-void Spacer::handleUpdate(
+bool Spacer::handleUpdate(
     std::string const& /*subpath*/,
     std::variant<double, bool, std::string> const& /*value*/
-) {}
+) {
+    return false;
+}
 
 bool Spacer::validate() const { return true; }
 

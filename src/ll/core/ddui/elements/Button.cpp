@@ -47,19 +47,21 @@ void Button::setupSubscriptions(
     }
 }
 
-void Button::handleUpdate(
+bool Button::handleUpdate(
     std::string const& subpath,
     std::variant<double, bool, std::string> const& /*value*/
 ) {
     if (resolveOption(mOptions.disabled) || !resolveOption(mOptions.visible)) {
-        return;
+        return false;
     }
 
     if (subpath == "onClick") {
         if (mOnClick) {
             mOnClick();
         }
+        return true;
     }
+    return false;
 }
 
 bool Button::validate() const { return true; }

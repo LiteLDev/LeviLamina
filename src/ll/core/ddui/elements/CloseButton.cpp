@@ -47,19 +47,21 @@ void CloseButton::setupSubscriptions(
     }
 }
 
-void CloseButton::handleUpdate(
+bool CloseButton::handleUpdate(
     std::string const& subpath,
     std::variant<double, bool, std::string> const& /*value*/
 ) {
     if (resolveOption(mOptions.disabled) || !resolveOption(mOptions.visible)) {
-        return;
+        return false;
     }
 
     if (subpath == "onClick") {
         if (mOnClick) {
             mOnClick();
         }
+        return true;
     }
+    return false;
 }
 
 bool CloseButton::validate() const { return true; }

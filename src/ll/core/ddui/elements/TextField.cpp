@@ -52,16 +52,18 @@ void TextField::setupSubscriptions(
     }
 }
 
-void TextField::handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) {
+bool TextField::handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) {
     if (resolveOption(mOptions.disabled) || !resolveOption(mOptions.visible)) {
-        return;
+        return false;
     }
 
     if (subpath == "text") {
         if (mText && mText->isClientWritable() && std::holds_alternative<std::string>(value)) {
             mText->setData(std::get<std::string>(value));
+            return true;
         }
     }
+    return false;
 }
 
 bool TextField::validate() const {

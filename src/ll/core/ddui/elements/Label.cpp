@@ -33,10 +33,12 @@ void Label::setupSubscriptions(
     }
 }
 
-void Label::handleUpdate(
+bool Label::handleUpdate(
     std::string const& /*subpath*/,
     std::variant<double, bool, std::string> const& /*value*/
-) {}
+) {
+    return false;
+}
 
 bool Label::validate() const { return true; }
 

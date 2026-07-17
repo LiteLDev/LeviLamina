@@ -1,6 +1,6 @@
 #include "ll/api/io/Logger.h"
-#include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/memory/Hook.h"
+#include "ll/core/LeviLamina.h"
 #include "ll/core/ddui/DduiManager.h"
 #include "mc/network/IPacketHandlerDispatcher.h"
 #include "mc/network/PacketHandlerDispatcherInstance.h"
@@ -37,11 +37,9 @@ LL_TYPE_INSTANCE_HOOK(
             DduiManager::handleDataStoreUpdate(*player, datastoreName, property, path, data);
         }
     } catch (std::exception const& e) {
-        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
-        logger->error("Exception in ServerboundDduiDataStorePacketHook: {}", e.what());
+        ll::getLogger().error("Exception in ServerboundDduiDataStorePacketHook: {} (DDUI)", e.what());
     } catch (...) {
-        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
-        logger->error("Unknown exception in ServerboundDduiDataStorePacketHook");
+        ll::getLogger().error("Unknown exception in ServerboundDduiDataStorePacketHook (DDUI)");
     }
 
     origin(source, callback, packet);
@@ -70,11 +68,9 @@ LL_TYPE_INSTANCE_HOOK(
             DduiManager::handleScreenClosed(formId, closedReason, *player);
         }
     } catch (std::exception const& e) {
-        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
-        logger->error("Exception in ServerboundDduiScreenClosedPacketHook: {}", e.what());
+        ll::getLogger().error("Exception in ServerboundDduiScreenClosedPacketHook: {} (DDUI)", e.what());
     } catch (...) {
-        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
-        logger->error("Unknown exception in ServerboundDduiScreenClosedPacketHook");
+        ll::getLogger().error("Unknown exception in ServerboundDduiScreenClosedPacketHook (DDUI)");
     }
 
     origin(source, callback, packet);
@@ -94,11 +90,9 @@ LL_TYPE_INSTANCE_HOOK(
     try {
         DduiManager::closeSessionForPlayer(player.getUuid().asString());
     } catch (std::exception const& e) {
-        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
-        logger->error("Exception in PlayerDisconnectHook: {}", e.what());
+        ll::getLogger().error("Exception in PlayerDisconnectHook: {} (DDUI)", e.what());
     } catch (...) {
-        auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("Ddui");
-        logger->error("Unknown exception in PlayerDisconnectHook");
+        ll::getLogger().error("Unknown exception in PlayerDisconnectHook (DDUI)");
     }
 
     origin();

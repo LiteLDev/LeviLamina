@@ -98,24 +98,26 @@ void Dropdown::setupSubscriptions(
     }
 }
 
-void Dropdown::handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) {
+bool Dropdown::handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) {
     if (resolveOption(mOptions.disabled) || !resolveOption(mOptions.visible)) {
-        return;
+        return false;
     }
 
     if (subpath == "value") {
         if (mValue && mValue->isClientWritable() && std::holds_alternative<double>(value)) {
             double val = std::get<double>(value);
             if (!std::isfinite(val) || val < 0.0) {
-                return;
+                return false;
             }
 
             auto index = static_cast<size_t>(val);
             if (index < mItems.size()) {
                 mValue->setData(mItems[index].value);
+                return true;
             }
         }
     }
+    return false;
 }
 
 bool Dropdown::validate() const {

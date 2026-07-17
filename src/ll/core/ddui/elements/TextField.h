@@ -26,7 +26,7 @@ public:
         std::function<void(std::string const&, std::string const&)> const&                                updateString
     ) override;
 
-    void handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) override;
+    bool handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) override;
 
 protected:
     [[nodiscard]] bool validate() const override;
