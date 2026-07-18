@@ -25,11 +25,22 @@ nlohmann::ordered_json Slider::serialize() const {
     j["slider_visible"] = true;
     j["label"]          = resolveText(mLabel);
     j["description"]    = resolveText(mOptions.description);
-    j["value"]          = mValue ? mValue->getData() : resolveOption(mMin);
-    j["minValue"]       = resolveOption(mMin);
-    j["maxValue"]       = resolveOption(mMax);
-    j["step"]           = resolveOption(mOptions.step);
-    j["disabled"]       = resolveOption(mOptions.disabled);
+
+    double minVal = resolveOption(mMin);
+    double maxVal = resolveOption(mMax);
+    if (minVal > maxVal) {
+        std::swap(minVal, maxVal);
+    }
+    double stepVal = resolveOption(mOptions.step);
+    if (!std::isfinite(stepVal) || stepVal <= 0.0) {
+        stepVal = 1.0;
+    }
+
+    j["value"]    = mValue ? mValue->getData() : minVal;
+    j["minValue"] = minVal;
+    j["maxValue"] = maxVal;
+    j["step"]     = stepVal;
+    j["disabled"] = resolveOption(mOptions.disabled);
 
     return j;
 }
@@ -144,6 +155,11 @@ bool Slider::validate() const {
 
         if (minVal > maxVal) {
             std::swap(minVal, maxVal);
+        }
+
+        double stepVal = resolveOption(mOptions.step);
+        if (!std::isfinite(stepVal) || stepVal <= 0.0) {
+            return false;
         }
 
         return val >= minVal && val <= maxVal;
