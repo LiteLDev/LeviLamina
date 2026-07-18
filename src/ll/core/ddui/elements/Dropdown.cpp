@@ -1,5 +1,6 @@
 #include "ll/core/ddui/elements/Dropdown.h"
 #include <cmath>
+#include <limits>
 #include <utility>
 
 namespace ll::ddui {
@@ -93,7 +94,7 @@ bool Dropdown::handleUpdate(std::string const& subpath, std::variant<double, boo
     if (subpath == "value") {
         if (mValue && mValue->isClientWritable() && std::holds_alternative<double>(value)) {
             double val = std::get<double>(value);
-            if (!std::isfinite(val)) {
+            if (!std::isfinite(val) || val < std::numeric_limits<int>::min() || val > std::numeric_limits<int>::max()) {
                 return false;
             }
 
