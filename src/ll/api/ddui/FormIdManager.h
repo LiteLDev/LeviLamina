@@ -13,11 +13,11 @@ class FormIdManager {
 public:
     LLNDAPI static uint genFormId();
 
-    LLNDAPI static CustomForm* getCustomForm(uint id);
-    LLNDAPI static CustomForm* getCustomForm(Player& player);
+    LLAPI static void close(Player const& player);
 
-    LLNDAPI static MessageBox* getMessageBox(uint id);
-    LLNDAPI static MessageBox* getMessageBox(Player& player);
+private:
+    static CustomForm* getCustomForm(Player const& player);
+    static MessageBox* getMessageBox(Player const& player);
 };
 
 } // namespace ll::ddui
