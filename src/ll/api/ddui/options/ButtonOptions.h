@@ -1,16 +1,14 @@
 #pragma once
 
 #include "ll/api/ddui/Observable.h"
-#include <memory>
 #include <string>
-#include <variant>
 
 namespace ll::ddui {
 
 struct ButtonOptions {
-    std::variant<bool, std::shared_ptr<ObservableBoolean>> disabled = false;
-    ObsStringOrString                                      tooltip  = std::string("");
-    std::variant<bool, std::shared_ptr<ObservableBoolean>> visible  = true;
+    ObsBoolOrBool     disabled = false;
+    ObsStringOrString tooltip  = std::string("");
+    ObsBoolOrBool     visible  = true;
 };
 
 } // namespace ll::ddui
