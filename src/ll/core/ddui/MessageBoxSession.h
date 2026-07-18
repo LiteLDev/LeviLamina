@@ -28,8 +28,8 @@ public:
     uint                                                  mFormId = 0;
     std::atomic<bool>                                     mIsShowing{false};
     std::atomic<int>                                      mSelection{-1};
-    MessageBox*                                           mWrapper = nullptr;
     std::function<void(Player&, MessageBoxResult const&)> mCallback;
+    std::shared_ptr<MessageBox>                           mKeepAlive;
 
     struct ObsSub {
         std::shared_ptr<void>         observable;
@@ -58,6 +58,7 @@ public:
 
     void cleanupSubscriptions();
     void updateProperty(std::string const& name, std::string const& val);
+    void updateObjectProperty(std::string const& name, std::string const& val);
 
     template <typename T>
     void addSubscription(std::shared_ptr<Observable<T>> const& obs, std::function<void(T const&)> callback) {

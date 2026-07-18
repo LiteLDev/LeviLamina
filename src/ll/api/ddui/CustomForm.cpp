@@ -64,9 +64,7 @@ static void safeExecuteCallback(
     }
 }
 
-CustomFormSession::CustomFormSession(mce::UUID uuid, ObsStringOrString title) : mUuid(uuid), mTitle(std::move(title)) {
-    mFormId = FormIdManager::genFormId();
-}
+CustomFormSession::CustomFormSession(mce::UUID uuid, ObsStringOrString title) : mUuid(uuid), mTitle(std::move(title)) {}
 
 CustomFormSession::~CustomFormSession() {
     cleanupSubscriptions();
@@ -178,11 +176,48 @@ void CustomFormSession::updatePath(std::string const& path, std::string const& v
     });
 }
 
+void CustomFormSession::updateObjectPath(std::string const& path, std::string const& val) {
+    queueOnServerThread([self = shared_from_this(), path, val]() {
+        if (!self->mIsShowing) return;
+
+        auto player = getPlayerByUuid(self->mUuid);
+        if (!player) return;
+
+        auto& sp           = static_cast<ServerPlayer&>(*player);
+        auto  propertyName = DduiManager::getCustomFormPropertyName() + std::to_string(self->mFormId);
+
+        auto const* currentData = sp.getDataStoreSync().get(DduiManager::getDatastoreName(), propertyName);
+        if (currentData) {
+            auto res = sp.getDataStoreSync()
+                           .setObjectPath(DduiManager::getDatastoreName(), propertyName, path, *currentData, val);
+            if (!res.has_value()) {
+                ll::getLogger().warn("Failed to update object path '{}' for DDUI CustomForm", path);
+            } else {
+                ll::service::getLevel().transform([&](auto& level) {
+                    auto* sender = level.getPacketSender();
+                    if (sender) {
+                        Bedrock::DDUI::sendDataStorePacketsToClient(
+                            sp.getDataStoreSync(),
+                            *sender,
+                            &sp.getUserEntityIdentifier()
+                        );
+                    }
+                    return true;
+                });
+            }
+        }
+    });
+}
+
 void CustomFormSession::handleDataStoreUpdate(
     std::string const& /*property*/,
     std::string const&                             path,
     std::variant<double, bool, std::string> const& value
 ) {
+    if (!mIsShowing) {
+        return;
+    }
+
     if (path == "closeButton.onClick") {
         if (mCloseButton) {
             if (!mCloseButton->handleUpdate("onClick", value)) {
@@ -240,6 +275,7 @@ void CustomFormSession::handleScreenClosed(::DataDrivenScreenClosedReason closed
 
     DduiManager::unregisterSession(mFormId, mUuid);
     cleanupSubscriptions();
+    mKeepAlive.reset();
 
     mce::UUID uuid   = mUuid;
     uint      formId = mFormId;
@@ -283,6 +319,7 @@ void CustomFormSession::close() {
 
     DduiManager::unregisterSession(mFormId, mUuid);
     cleanupSubscriptions();
+    mKeepAlive.reset();
 
     mce::UUID uuid   = mUuid;
     uint      formId = mFormId;
@@ -336,29 +373,30 @@ bool CustomFormSession::validate() const {
 }
 
 CustomForm::CustomForm(Player& player, ObsStringOrString title) {
-    mSession           = std::make_shared<CustomFormSession>(player.getUuid(), std::move(title));
-    mSession->mWrapper = this;
+    mSession = std::make_shared<CustomFormSession>(player.getUuid(), std::move(title));
 }
 
-CustomForm::~CustomForm() {
-    if (mSession) {
-        mSession->mWrapper = nullptr;
-    }
-}
+CustomForm::~CustomForm() = default;
 
 CustomForm& CustomForm::appendButton(ObsStringOrString label, std::function<void()> onClick, ButtonOptions options) {
+    if (mSession->mIsShowing) return *this;
+
     mSession->mControls.push_back(std::make_unique<Button>(std::move(label), std::move(onClick), std::move(options)));
     return *this;
 }
 
 CustomForm&
 CustomForm::appendTextField(ObsStringOrString label, std::shared_ptr<ObservableString> text, TextFieldOptions options) {
+    if (mSession->mIsShowing) return *this;
+
     mSession->mControls.push_back(std::make_unique<TextField>(std::move(label), std::move(text), std::move(options)));
     return *this;
 }
 
 CustomForm&
 CustomForm::appendToggle(ObsStringOrString label, std::shared_ptr<ObservableBoolean> toggled, ToggleOptions options) {
+    if (mSession->mIsShowing) return *this;
+
     mSession->mControls.push_back(std::make_unique<Toggle>(std::move(label), std::move(toggled), std::move(options)));
     return *this;
 }
@@ -370,6 +408,8 @@ CustomForm& CustomForm::appendSlider(
     ObsNumberOrNumber                 max,
     SliderOptions                     options
 ) {
+    if (mSession->mIsShowing) return *this;
+
     mSession->mControls.push_back(
         std::make_unique<Slider>(std::move(label), std::move(value), std::move(min), std::move(max), std::move(options))
     );
@@ -382,6 +422,8 @@ CustomForm& CustomForm::appendDropdown(
     std::vector<DropdownItemData>      items,
     DropdownOptions                    options
 ) {
+    if (mSession->mIsShowing) return *this;
+
     mSession->mControls.push_back(
         std::make_unique<Dropdown>(std::move(label), std::move(value), std::move(items), std::move(options))
     );
@@ -389,27 +431,37 @@ CustomForm& CustomForm::appendDropdown(
 }
 
 CustomForm& CustomForm::appendHeader(ObsStringOrString text, TextOptions options) {
+    if (mSession->mIsShowing) return *this;
+
     mSession->mControls.push_back(std::make_unique<Header>(std::move(text), std::move(options)));
     return *this;
 }
 
 CustomForm& CustomForm::appendLabel(ObsStringOrString text, TextOptions options) {
+    if (mSession->mIsShowing) return *this;
+
     mSession->mControls.push_back(std::make_unique<Label>(std::move(text), std::move(options)));
     return *this;
 }
 
 CustomForm& CustomForm::appendSpacer(SpacingOptions options) {
+    if (mSession->mIsShowing) return *this;
+
     mSession->mControls.push_back(std::make_unique<Spacer>(std::move(options)));
     return *this;
 }
 
 CustomForm& CustomForm::appendDivider(DividerOptions options) {
+    if (mSession->mIsShowing) return *this;
+
     mSession->mControls.push_back(std::make_unique<Divider>(std::move(options)));
     return *this;
 }
 
 CustomForm&
 CustomForm::appendCloseButton(ObsStringOrString label, std::function<void()> onClick, ButtonOptions options) {
+    if (mSession->mIsShowing) return *this;
+
     mSession->mCloseButton = std::make_unique<CloseButton>(std::move(label), std::move(onClick), std::move(options));
     return *this;
 }
@@ -420,13 +472,7 @@ bool CustomForm::show(Callback callback) {
     auto player = getPlayerByUuid(mSession->mUuid);
     if (!player) return false;
 
-    mSession->mCallback  = std::move(callback);
-    mSession->mIsShowing = true;
-
-    DduiManager::registerSession(mSession, *player);
-
-    auto& serverPlayer = static_cast<ServerPlayer&>(*player);
-    auto& sync         = serverPlayer.getDataStoreSync();
+    if (mSession->mIsShowing) return false;
 
     nlohmann::ordered_json root = nlohmann::ordered_json::object();
     root["title"]               = resolveText(mSession->mTitle);
@@ -458,6 +504,15 @@ bool CustomForm::show(Callback callback) {
         return false;
     }
 
+    mSession->mFormId    = FormIdManager::genFormId();
+    mSession->mCallback  = std::move(callback);
+    mSession->mIsShowing = true;
+
+    DduiManager::registerSession(mSession, *player);
+
+    auto& serverPlayer = static_cast<ServerPlayer&>(*player);
+    auto& sync         = serverPlayer.getDataStoreSync();
+
     sync.set(
         DduiManager::getDatastoreName(),
         DduiManager::getCustomFormPropertyName() + std::to_string(mSession->mFormId),
@@ -477,6 +532,9 @@ bool CustomForm::show(Callback callback) {
     auto updateString = [session = mSession](std::string const& path, std::string const& val) {
         session->updatePath(path, val);
     };
+    auto updateObj = [session = mSession](std::string const& path, std::string const& val) {
+        session->updateObjectPath(path, val);
+    };
 
     if (std::holds_alternative<std::shared_ptr<ObservableString>>(mSession->mTitle)) {
         auto obs = std::get<std::shared_ptr<ObservableString>>(mSession->mTitle);
@@ -487,9 +545,8 @@ bool CustomForm::show(Callback callback) {
     } else if (std::holds_alternative<std::shared_ptr<ObservableUIRawMessage>>(mSession->mTitle)) {
         auto obs = std::get<std::shared_ptr<ObservableUIRawMessage>>(mSession->mTitle);
         if (obs) {
-            auto subId = obs->subscribe([updateString](UIRawMessage const& val) {
-                updateString("title", val.serialize().dump());
-            });
+            auto subId =
+                obs->subscribe([updateObj](UIRawMessage const& val) { updateObj("title", val.serialize().dump()); });
             addSub(obs, subId, [obs](uint64_t id) { obs->unsubscribe(id); });
         }
     }
@@ -518,6 +575,7 @@ bool CustomForm::show(Callback callback) {
         return true;
     });
 
+    mSession->mKeepAlive = weak_from_this().lock();
     return true;
 }
 

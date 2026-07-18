@@ -17,7 +17,7 @@ struct MessageBoxResult {
     std::optional<int>                     selection;
 };
 
-class MessageBox {
+class MessageBox : public std::enable_shared_from_this<MessageBox> {
 public:
     using Callback = std::function<void(Player&, MessageBoxResult const&)>;
 

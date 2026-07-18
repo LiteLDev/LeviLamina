@@ -22,8 +22,8 @@ public:
     std::atomic<bool>                                          mIsShowing{false};
     std::unique_ptr<CloseButton>                               mCloseButton;
     std::vector<std::unique_ptr<Element>>                      mControls;
-    CustomForm*                                                mWrapper = nullptr;
     std::function<void(Player&, DataDrivenScreenClosedReason)> mCallback;
+    std::shared_ptr<CustomForm>                                mKeepAlive;
 
     struct ObsSub {
         std::shared_ptr<void>         observable;
@@ -56,6 +56,7 @@ public:
     void updatePath(std::string const& path, double val);
     void updatePath(std::string const& path, bool val);
     void updatePath(std::string const& path, std::string const& val);
+    void updateObjectPath(std::string const& path, std::string const& val);
 };
 
 } // namespace ll::ddui
