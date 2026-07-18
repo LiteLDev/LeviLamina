@@ -70,7 +70,7 @@ void registerDduiTestCommand() {
             auto form = std::make_shared<CustomForm>(*player, "Action Menu");
             form->appendButton("Button 1", [player]() { player->sendMessage("You clicked Button 1"); });
             form->appendButton("Button 2", [player]() { player->sendMessage("You clicked Button 2"); });
-            form->show([form](Player&, DataDrivenScreenClosedReason reason) {
+            form->show([](Player&, DataDrivenScreenClosedReason reason) {
                 logptr->info("Action Menu closed, reason: {}", static_cast<int>(reason));
             });
             break;
@@ -95,13 +95,16 @@ void registerDduiTestCommand() {
             form->appendTextField("Player Name", name);
             form->appendSlider("Volume", volume, 0.0, 100.0, SliderOptions{std::string("Main Volume")});
             form->appendToggle("Music Enabled", music);
-            form->appendButton("Save Settings", [form, player, name, music]() {
+            std::weak_ptr<CustomForm> weakForm = form;
+            form->appendButton("Save Settings", [weakForm, player, name, music]() {
                 player->sendMessage(
                     "Settings Saved! Name: " + name->getData() + ", Music: " + (music->getData() ? "On" : "Off")
                 );
-                form->close();
+                if (auto f = weakForm.lock()) {
+                    f->close();
+                }
             });
-            form->show([form, name, music, volume, language](Player&, DataDrivenScreenClosedReason) {
+            form->show([name, music, volume, language](Player&, DataDrivenScreenClosedReason) {
                 logptr->info("Settings closed, name={}", name->getData());
             });
             break;
@@ -130,7 +133,7 @@ void registerDduiTestCommand() {
             form->appendLabel(statusMessage);
             form->appendCloseButton();
 
-            form->show([form](Player&, DataDrivenScreenClosedReason reason) {
+            form->show([](Player&, DataDrivenScreenClosedReason reason) {
                 logptr->info("Entity Monitor closed, reason: {}", static_cast<int>(reason));
             });
 
@@ -143,7 +146,7 @@ void registerDduiTestCommand() {
             mbox->appendBody("Are you sure you want to perform this action?");
             mbox->appendButton1("Confirm", "Proceed with action");
             mbox->appendButton2("Cancel", "Abort action");
-            mbox->show([mbox](Player& p, MessageBoxResult const& result) {
+            mbox->show([](Player& p, MessageBoxResult const& result) {
                 if (result.selection) {
                     p.sendMessage("You selected Button " + std::to_string(*result.selection + 1));
                 } else {
@@ -169,7 +172,7 @@ void registerDduiTestCommand() {
 
             form->appendCloseButton();
 
-            form->show([form, input, sha256Label, base64Label](Player&, DataDrivenScreenClosedReason reason) {
+            form->show([input, sha256Label, base64Label](Player&, DataDrivenScreenClosedReason reason) {
                 logptr->info("Advanced Form closed, reason: {}", (int)reason);
             });
 
