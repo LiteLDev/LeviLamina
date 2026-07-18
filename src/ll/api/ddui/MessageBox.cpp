@@ -52,9 +52,7 @@ static void safeExecuteCallback(
     }
 }
 
-MessageBoxSession::MessageBoxSession(mce::UUID uuid, ObsStringOrString title) : mUuid(uuid), mTitle(std::move(title)) {
-    mFormId = FormIdManager::genFormId();
-}
+MessageBoxSession::MessageBoxSession(mce::UUID uuid, ObsStringOrString title) : mUuid(uuid), mTitle(std::move(title)) {}
 
 MessageBoxSession::~MessageBoxSession() {
     cleanupSubscriptions();
@@ -102,19 +100,53 @@ void MessageBoxSession::updateProperty(std::string const& name, std::string cons
     });
 }
 
+void MessageBoxSession::updateObjectProperty(std::string const& name, std::string const& val) {
+    queueOnServerThread([self = shared_from_this(), name, val]() {
+        if (!self->mIsShowing) return;
+
+        auto player = getPlayerByUuid(self->mUuid);
+        if (!player) return;
+
+        auto& sp           = static_cast<ServerPlayer&>(*player);
+        auto  propertyName = DduiManager::getMessageBoxPropertyName() + std::to_string(self->mFormId);
+
+        auto const* currentData = sp.getDataStoreSync().get(DduiManager::getDatastoreName(), propertyName);
+        if (currentData) {
+            auto res = sp.getDataStoreSync()
+                           .setObjectPath(DduiManager::getDatastoreName(), propertyName, name, *currentData, val);
+            if (!res.has_value()) {
+                ll::getLogger().warn("Failed to update object path '{}' for DDUI MessageBox", name);
+            } else {
+                ll::service::getLevel().transform([&](auto& level) {
+                    auto* sender = level.getPacketSender();
+                    if (sender) {
+                        Bedrock::DDUI::sendDataStorePacketsToClient(
+                            sp.getDataStoreSync(),
+                            *sender,
+                            &sp.getUserEntityIdentifier()
+                        );
+                    }
+                    return true;
+                });
+            }
+        }
+    });
+}
+
 void MessageBoxSession::handleDataStoreUpdate(
     std::string const&                             property,
     std::string const&                             path,
     std::variant<double, bool, std::string> const& value
 ) {
+    if (!mIsShowing) {
+        return;
+    }
+
     if (property == "selection" || path == "selection") {
         if (std::holds_alternative<double>(value)) {
             double valDouble = std::get<double>(value);
-            if (std::isfinite(valDouble)) {
-                int val = static_cast<int>(valDouble);
-                if (val == 0 || val == 1) {
-                    mSelection = val;
-                }
+            if (valDouble == 0.0 || valDouble == 1.0) {
+                mSelection = static_cast<int>(valDouble);
             }
         }
     } else if (
@@ -138,6 +170,7 @@ void MessageBoxSession::handleScreenClosed(::DataDrivenScreenClosedReason closed
 
     DduiManager::unregisterSession(mFormId, mUuid);
     cleanupSubscriptions();
+    mKeepAlive.reset();
 
     mce::UUID uuid   = mUuid;
     uint      formId = mFormId;
@@ -187,6 +220,7 @@ void MessageBoxSession::close() {
 
     DduiManager::unregisterSession(mFormId, mUuid);
     cleanupSubscriptions();
+    mKeepAlive.reset();
 
     mce::UUID uuid   = mUuid;
     uint      formId = mFormId;
@@ -224,28 +258,29 @@ void MessageBoxSession::close() {
 }
 
 MessageBox::MessageBox(Player& player, ObsStringOrString title) {
-    mSession           = std::make_shared<MessageBoxSession>(player.getUuid(), std::move(title));
-    mSession->mWrapper = this;
+    mSession = std::make_shared<MessageBoxSession>(player.getUuid(), std::move(title));
 }
 
-MessageBox::~MessageBox() {
-    if (mSession) {
-        mSession->mWrapper = nullptr;
-    }
-}
+MessageBox::~MessageBox() = default;
 
 MessageBox& MessageBox::appendBody(ObsStringOrString bodyText) {
+    if (mSession->mIsShowing) return *this;
+
     mSession->mBody = std::move(bodyText);
     return *this;
 }
 
 MessageBox& MessageBox::appendButton1(ObsStringOrString label, ObsStringOrString tooltip) {
+    if (mSession->mIsShowing) return *this;
+
     mSession->mBtn1Label   = std::move(label);
     mSession->mBtn1Tooltip = std::move(tooltip);
     return *this;
 }
 
 MessageBox& MessageBox::appendButton2(ObsStringOrString label, ObsStringOrString tooltip) {
+    if (mSession->mIsShowing) return *this;
+
     mSession->mBtn2Label   = std::move(label);
     mSession->mBtn2Tooltip = std::move(tooltip);
     return *this;
@@ -257,11 +292,7 @@ bool MessageBox::show(Callback callback) {
     auto player = getPlayerByUuid(mSession->mUuid);
     if (!player) return false;
 
-    mSession->mCallback  = std::move(callback);
-    mSession->mIsShowing = true;
-    mSession->mSelection = -1;
-
-    DduiManager::registerSession(mSession, *player);
+    if (mSession->mIsShowing) return false;
 
     auto& serverPlayer = static_cast<ServerPlayer&>(*player);
     auto& sync         = serverPlayer.getDataStoreSync();
@@ -293,6 +324,13 @@ bool MessageBox::show(Callback callback) {
         return false;
     }
 
+    mSession->mFormId    = FormIdManager::genFormId();
+    mSession->mCallback  = std::move(callback);
+    mSession->mIsShowing = true;
+    mSession->mSelection = -1;
+
+    DduiManager::registerSession(mSession, *player);
+
     sync.set(
         DduiManager::getDatastoreName(),
         DduiManager::getMessageBoxPropertyName() + std::to_string(mSession->mFormId),
@@ -311,7 +349,7 @@ bool MessageBox::show(Callback callback) {
         } else if (std::holds_alternative<std::shared_ptr<ObservableUIRawMessage>>(field)) {
             auto obs = std::get<std::shared_ptr<ObservableUIRawMessage>>(field);
             mSession->addSubscription<UIRawMessage>(obs, [session = mSession, name](UIRawMessage const& val) {
-                session->updateProperty(name, val.serialize().dump());
+                session->updateObjectProperty(name, val.serialize().dump());
             });
         }
     };
@@ -335,10 +373,10 @@ bool MessageBox::show(Callback callback) {
         if (sender) {
             Bedrock::DDUI::sendDataStorePacketsToClient(sync, *sender, &serverPlayer.getUserEntityIdentifier());
         }
-
         return true;
     });
 
+    mSession->mKeepAlive = weak_from_this().lock();
     return true;
 }
 

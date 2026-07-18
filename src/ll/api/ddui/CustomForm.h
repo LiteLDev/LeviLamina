@@ -21,7 +21,7 @@ namespace ll::ddui {
 
 enum class DataDrivenScreenClosedReason;
 
-class CustomForm {
+class CustomForm : public std::enable_shared_from_this<CustomForm> {
 public:
     using Callback = std::function<void(Player&, ll::ddui::DataDrivenScreenClosedReason)>;
 
@@ -94,7 +94,7 @@ public:
     /**
      * @brief Appends a dropdown selection list to the form.
      * @param label The label text displayed next to the dropdown.
-     * @param value The observable number binding that synchronizes the index of the selected item.
+     * @param value The observable number binding that synchronizes with the value of the selected DropdownItemData item.
      * @param items Vector containing data for all items in the dropdown list.
      * @param options Additional options for configuring the dropdown (e.g. description, visibility, disabled state).
      * @return Reference to the CustomForm instance for method chaining.
