@@ -5,9 +5,11 @@
 
 namespace ll::ddui {
 
+std::mutex                                                  DduiManager::mMutex;
 std::unordered_map<uint, std::shared_ptr<DduiSession>>      DduiManager::mActiveSessions;
 std::unordered_map<mce::UUID, std::shared_ptr<DduiSession>> DduiManager::mPlayerActiveSessions;
-std::mutex                                                  DduiManager::mMutex;
+
+constexpr size_t MaxClientStringSize = 2500;
 
 void DduiManager::registerSession(std::shared_ptr<DduiSession> const& session, Player& player) {
     std::shared_ptr<DduiSession> oldSession;
@@ -24,7 +26,7 @@ void DduiManager::registerSession(std::shared_ptr<DduiSession> const& session, P
     }
 
     if (oldSession) {
-        oldSession->close();
+        oldSession->close(&player);
     }
 }
 
@@ -59,6 +61,9 @@ void DduiManager::handleDataStoreUpdate(
     std::variant<double, bool, std::string> const& value
 ) {
     if (property.length() > 256 || path.length() > 256) return;
+    if (auto const* str = std::get_if<std::string>(&value)) {
+        if (str->size() > MaxClientStringSize) return;
+    }
 
     if (datastoreName == getDatastoreName()) {
         std::shared_ptr<DduiSession> session;
@@ -111,7 +116,7 @@ void DduiManager::handleScreenClosed(uint formId, ::DataDrivenScreenClosedReason
     }
 }
 
-void DduiManager::closeSessionForPlayer(mce::UUID const& uuid) {
+void DduiManager::closeSessionForPlayer(mce::UUID const& uuid, Player* player) {
     std::shared_ptr<DduiSession> session;
     {
         std::lock_guard<std::mutex> lock(mMutex);
@@ -122,7 +127,7 @@ void DduiManager::closeSessionForPlayer(mce::UUID const& uuid) {
     }
 
     if (session) {
-        session->close();
+        session->close(player);
     }
 }
 
