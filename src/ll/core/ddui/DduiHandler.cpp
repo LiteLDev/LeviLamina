@@ -88,7 +88,7 @@ LL_TYPE_INSTANCE_HOOK(
 
     ServerPlayer& player = *this;
     try {
-        DduiManager::closeSessionForPlayer(player.getUuid());
+        DduiManager::closeSessionForPlayer(player.getUuid(), &player);
     } catch (std::exception const& e) {
         ll::getLogger().error("Exception in PlayerDisconnectHook: {} (DDUI)", e.what());
     } catch (...) {
