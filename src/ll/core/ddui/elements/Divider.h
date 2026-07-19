@@ -19,7 +19,8 @@ public:
         std::function<void(std::shared_ptr<void> const&, uint64_t, std::function<void(uint64_t)>)> const& addSub,
         std::function<void(std::string const&, double)> const&                                            updateDouble,
         std::function<void(std::string const&, bool)> const&                                              updateBool,
-        std::function<void(std::string const&, std::string const&)> const&                                updateString
+        std::function<void(std::string const&, std::string const&)> const&                                updateString,
+        std::function<void(std::string const&, std::string const&)> const&                                updateObject
     ) override;
 
     bool handleUpdate(std::string const& subpath, std::variant<double, bool, std::string> const& value) override;

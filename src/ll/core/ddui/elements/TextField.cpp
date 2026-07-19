@@ -26,10 +26,11 @@ void TextField::setupSubscriptions(
     std::function<void(std::shared_ptr<void> const&, uint64_t, std::function<void(uint64_t)>)> const& addSub,
     std::function<void(std::string const&, double)> const& /*updateDouble*/,
     std::function<void(std::string const&, bool)> const&               updateBool,
-    std::function<void(std::string const&, std::string const&)> const& updateString
+    std::function<void(std::string const&, std::string const&)> const& updateString,
+    std::function<void(std::string const&, std::string const&)> const& updateObject
 ) {
-    setupTextSubscription(mLabel, prefix + "label", addSub, updateString);
-    setupTextSubscription(mOptions.description, prefix + "description", addSub, updateString);
+    setupTextSubscription(mLabel, prefix + "label", addSub, updateString, updateObject);
+    setupTextSubscription(mOptions.description, prefix + "description", addSub, updateString, updateObject);
 
     if (mText) {
         auto subId =
@@ -67,7 +68,10 @@ bool TextField::handleUpdate(std::string const& subpath, std::variant<double, bo
 }
 
 bool TextField::validate() const {
-    if (mText && !mText->isClientWritable()) {
+    if (!mText) {
+        return false;
+    }
+    if (!mText->isClientWritable()) {
         return false;
     }
 
