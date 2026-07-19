@@ -26,10 +26,11 @@ void CloseButton::setupSubscriptions(
     std::function<void(std::shared_ptr<void> const&, uint64_t, std::function<void(uint64_t)>)> const& addSub,
     std::function<void(std::string const&, double)> const& /*updateDouble*/,
     std::function<void(std::string const&, bool)> const&               updateBool,
-    std::function<void(std::string const&, std::string const&)> const& updateString
+    std::function<void(std::string const&, std::string const&)> const& updateString,
+    std::function<void(std::string const&, std::string const&)> const& updateObject
 ) {
-    setupTextSubscription(mLabel, prefix + "label", addSub, updateString);
-    setupTextSubscription(mOptions.tooltip, prefix + "tooltip", addSub, updateString);
+    setupTextSubscription(mLabel, prefix + "label", addSub, updateString, updateObject);
+    setupTextSubscription(mOptions.tooltip, prefix + "tooltip", addSub, updateString, updateObject);
 
     if (std::holds_alternative<std::shared_ptr<ObservableBoolean>>(mOptions.disabled)) {
         auto obs = std::get<std::shared_ptr<ObservableBoolean>>(mOptions.disabled);

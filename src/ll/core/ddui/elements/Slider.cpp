@@ -50,10 +50,11 @@ void Slider::setupSubscriptions(
     std::function<void(std::shared_ptr<void> const&, uint64_t, std::function<void(uint64_t)>)> const& addSub,
     std::function<void(std::string const&, double)> const&                                            updateDouble,
     std::function<void(std::string const&, bool)> const&                                              updateBool,
-    std::function<void(std::string const&, std::string const&)> const&                                updateString
+    std::function<void(std::string const&, std::string const&)> const&                                updateString,
+    std::function<void(std::string const&, std::string const&)> const&                                updateObject
 ) {
-    setupTextSubscription(mLabel, prefix + "label", addSub, updateString);
-    setupTextSubscription(mOptions.description, prefix + "description", addSub, updateString);
+    setupTextSubscription(mLabel, prefix + "label", addSub, updateString, updateObject);
+    setupTextSubscription(mOptions.description, prefix + "description", addSub, updateString, updateObject);
 
     if (mValue) {
         auto subId = mValue->subscribe([updateDouble, prefix](double val) { updateDouble(prefix + "value", val); });
@@ -140,32 +141,32 @@ bool Slider::handleUpdate(std::string const& subpath, std::variant<double, bool,
 }
 
 bool Slider::validate() const {
-    if (mValue) {
-        if (!mValue->isClientWritable()) {
-            return false;
-        }
-
-        double val    = mValue->getData();
-        double minVal = resolveOption(mMin);
-        double maxVal = resolveOption(mMax);
-
-        if (!std::isfinite(val) || !std::isfinite(minVal) || !std::isfinite(maxVal)) {
-            return false;
-        }
-
-        if (minVal > maxVal) {
-            std::swap(minVal, maxVal);
-        }
-
-        double stepVal = resolveOption(mOptions.step);
-        if (!std::isfinite(stepVal) || stepVal <= 0.0) {
-            return false;
-        }
-
-        return val >= minVal && val <= maxVal;
+    if (!mValue) {
+        return false;
     }
 
-    return true;
+    if (!mValue->isClientWritable()) {
+        return false;
+    }
+
+    double val    = mValue->getData();
+    double minVal = resolveOption(mMin);
+    double maxVal = resolveOption(mMax);
+
+    if (!std::isfinite(val) || !std::isfinite(minVal) || !std::isfinite(maxVal)) {
+        return false;
+    }
+
+    if (minVal > maxVal) {
+        std::swap(minVal, maxVal);
+    }
+
+    double stepVal = resolveOption(mOptions.step);
+    if (!std::isfinite(stepVal) || stepVal <= 0.0) {
+        return false;
+    }
+
+    return val >= minVal && val <= maxVal;
 }
 
 } // namespace ll::ddui

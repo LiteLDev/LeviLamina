@@ -20,9 +20,10 @@ void Label::setupSubscriptions(
     std::function<void(std::shared_ptr<void> const&, uint64_t, std::function<void(uint64_t)>)> const& addSub,
     std::function<void(std::string const&, double)> const& /*updateDouble*/,
     std::function<void(std::string const&, bool)> const&               updateBool,
-    std::function<void(std::string const&, std::string const&)> const& updateString
+    std::function<void(std::string const&, std::string const&)> const& updateString,
+    std::function<void(std::string const&, std::string const&)> const& updateObject
 ) {
-    setupTextSubscription(mText, prefix + "text", addSub, updateString);
+    setupTextSubscription(mText, prefix + "text", addSub, updateString, updateObject);
 
     if (std::holds_alternative<std::shared_ptr<ObservableBoolean>>(mOptions.visible)) {
         auto obs = std::get<std::shared_ptr<ObservableBoolean>>(mOptions.visible);

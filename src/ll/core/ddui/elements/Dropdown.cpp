@@ -52,10 +52,11 @@ void Dropdown::setupSubscriptions(
     std::function<void(std::shared_ptr<void> const&, uint64_t, std::function<void(uint64_t)>)> const& addSub,
     std::function<void(std::string const&, double)> const&                                            updateDouble,
     std::function<void(std::string const&, bool)> const&                                              updateBool,
-    std::function<void(std::string const&, std::string const&)> const&                                updateString
+    std::function<void(std::string const&, std::string const&)> const&                                updateString,
+    std::function<void(std::string const&, std::string const&)> const&                                updateObject
 ) {
-    setupTextSubscription(mLabel, prefix + "label", addSub, updateString);
-    setupTextSubscription(mOptions.description, prefix + "description", addSub, updateString);
+    setupTextSubscription(mLabel, prefix + "label", addSub, updateString, updateObject);
+    setupTextSubscription(mOptions.description, prefix + "description", addSub, updateString, updateObject);
 
     if (mValue) {
         auto subId = mValue->subscribe([updateDouble, prefix](int val) {
@@ -81,8 +82,8 @@ void Dropdown::setupSubscriptions(
 
     for (size_t i = 0; i < mItems.size(); ++i) {
         std::string itemPrefix = prefix + "items[" + std::to_string(i) + "].";
-        setupTextSubscription(mItems[i].label, itemPrefix + "label", addSub, updateString);
-        setupTextSubscription(mItems[i].description, itemPrefix + "description", addSub, updateString);
+        setupTextSubscription(mItems[i].label, itemPrefix + "label", addSub, updateString, updateObject);
+        setupTextSubscription(mItems[i].description, itemPrefix + "description", addSub, updateString, updateObject);
     }
 }
 
@@ -95,6 +96,9 @@ bool Dropdown::handleUpdate(std::string const& subpath, std::variant<double, boo
         if (mValue && mValue->isClientWritable() && std::holds_alternative<double>(value)) {
             double val = std::get<double>(value);
             if (!std::isfinite(val) || val < std::numeric_limits<int>::min() || val > std::numeric_limits<int>::max()) {
+                return false;
+            }
+            if (std::trunc(val) != val) {
                 return false;
             }
 
@@ -117,25 +121,25 @@ bool Dropdown::handleUpdate(std::string const& subpath, std::variant<double, boo
 }
 
 bool Dropdown::validate() const {
-    if (mValue) {
-        if (!mValue->isClientWritable()) {
-            return false;
-        }
-
-        int currentVal = mValue->getData();
-
-        bool found = false;
-        for (auto const& item : mItems) {
-            if (item.value == currentVal) {
-                found = true;
-                break;
-            }
-        }
-
-        return found;
+    if (!mValue) {
+        return false;
     }
 
-    return true;
+    if (!mValue->isClientWritable()) {
+        return false;
+    }
+
+    int currentVal = mValue->getData();
+
+    bool found = false;
+    for (auto const& item : mItems) {
+        if (item.value == currentVal) {
+            found = true;
+            break;
+        }
+    }
+
+    return found;
 }
 
 } // namespace ll::ddui
