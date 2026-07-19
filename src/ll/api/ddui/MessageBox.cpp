@@ -54,10 +54,7 @@ static void safeExecuteCallback(
 
 MessageBoxSession::MessageBoxSession(mce::UUID uuid, ObsStringOrString title) : mUuid(uuid), mTitle(std::move(title)) {}
 
-MessageBoxSession::~MessageBoxSession() {
-    cleanupSubscriptions();
-    DduiManager::unregisterSession(mFormId, mUuid);
-}
+MessageBoxSession::~MessageBoxSession() { cleanupSubscriptions(); }
 
 void MessageBoxSession::cleanupSubscriptions() {
     std::lock_guard<std::recursive_mutex> lock(mSubMutex);
@@ -69,46 +66,111 @@ void MessageBoxSession::cleanupSubscriptions() {
 }
 
 void MessageBoxSession::updateProperty(std::string const& name, std::string const& val) {
-    queueOnServerThread([self = shared_from_this(), name, val]() {
-        if (!self->mIsShowing) return;
+    uint const formId = mFormId;
+    {
+        std::lock_guard<std::recursive_mutex> lock(mUpdateMutex);
+
+        mPendingUpdates[name] = val;
+
+        mPendingIsObjectUpdate[name] = false;
+        if (mUpdateScheduled[name]) {
+            return;
+        }
+
+        mUpdateScheduled[name] = true;
+    }
+
+    queueOnServerThread([self = shared_from_this(), formId, name]() {
+        std::string val;
+        {
+            std::lock_guard<std::recursive_mutex> lock(self->mUpdateMutex);
+            if (!self->mIsShowing || self->mFormId != formId) {
+                self->mUpdateScheduled[name] = false;
+                return;
+            }
+
+            auto it = self->mPendingUpdates.find(name);
+            if (it == self->mPendingUpdates.end()) {
+                self->mUpdateScheduled[name] = false;
+                return;
+            }
+
+            val = it->second;
+            self->mPendingUpdates.erase(it);
+            self->mUpdateScheduled[name] = false;
+        }
 
         auto player = getPlayerByUuid(self->mUuid);
         if (!player) return;
 
-        auto& sp = static_cast<ServerPlayer&>(*player);
-        sp.getDataStoreSync().setPath(
+        auto& sp  = static_cast<ServerPlayer&>(*player);
+        auto  res = sp.getDataStoreSync().setPath(
             DduiManager::getDatastoreName(),
-            DduiManager::getMessageBoxPropertyName() + std::to_string(self->mFormId),
+            DduiManager::getMessageBoxPropertyName(formId),
             name,
             std::variant<double, bool, std::string>(val),
             true,
             true
         );
+        if (!res.has_value()) {
+            ll::getLogger().warn("Failed to update path '{}' for DDUI MessageBox", name);
+        } else {
+            ll::service::getLevel().transform([&](auto& level) {
+                auto* sender = level.getPacketSender();
+                if (sender) {
+                    Bedrock::DDUI::sendDataStorePacketsToClient(
+                        sp.getDataStoreSync(),
+                        *sender,
+                        &sp.getUserEntityIdentifier()
+                    );
+                }
 
-        ll::service::getLevel().transform([&](auto& level) {
-            auto* sender = level.getPacketSender();
-            if (sender) {
-                Bedrock::DDUI::sendDataStorePacketsToClient(
-                    sp.getDataStoreSync(),
-                    *sender,
-                    &sp.getUserEntityIdentifier()
-                );
-            }
-
-            return true;
-        });
+                return true;
+            });
+        }
     });
 }
 
 void MessageBoxSession::updateObjectProperty(std::string const& name, std::string const& val) {
-    queueOnServerThread([self = shared_from_this(), name, val]() {
-        if (!self->mIsShowing) return;
+    uint const formId = mFormId;
+    {
+        std::lock_guard<std::recursive_mutex> lock(mUpdateMutex);
+
+        mPendingUpdates[name] = val;
+
+        mPendingIsObjectUpdate[name] = true;
+        if (mUpdateScheduled[name]) {
+            return;
+        }
+
+        mUpdateScheduled[name] = true;
+    }
+
+    queueOnServerThread([self = shared_from_this(), formId, name]() {
+        std::string val;
+        {
+            std::lock_guard<std::recursive_mutex> lock(self->mUpdateMutex);
+            if (!self->mIsShowing || self->mFormId != formId) {
+                self->mUpdateScheduled[name] = false;
+                return;
+            }
+
+            auto it = self->mPendingUpdates.find(name);
+            if (it == self->mPendingUpdates.end()) {
+                self->mUpdateScheduled[name] = false;
+                return;
+            }
+
+            val = it->second;
+            self->mPendingUpdates.erase(it);
+            self->mUpdateScheduled[name] = false;
+        }
 
         auto player = getPlayerByUuid(self->mUuid);
         if (!player) return;
 
         auto& sp           = static_cast<ServerPlayer&>(*player);
-        auto  propertyName = DduiManager::getMessageBoxPropertyName() + std::to_string(self->mFormId);
+        auto  propertyName = DduiManager::getMessageBoxPropertyName(formId);
 
         auto const* currentData = sp.getDataStoreSync().get(DduiManager::getDatastoreName(), propertyName);
         if (currentData) {
@@ -126,6 +188,7 @@ void MessageBoxSession::updateObjectProperty(std::string const& name, std::strin
                             &sp.getUserEntityIdentifier()
                         );
                     }
+
                     return true;
                 });
             }
@@ -182,7 +245,7 @@ void MessageBoxSession::handleScreenClosed(::DataDrivenScreenClosedReason closed
             auto& stores = *sync.mDataStores;
 
             if (auto it = stores.find(DduiManager::getDatastoreName()); it != stores.end()) {
-                it->second.erase(DduiManager::getMessageBoxPropertyName() + std::to_string(formId));
+                it->second.erase(DduiManager::getMessageBoxPropertyName(formId));
             }
         }
     });
@@ -212,7 +275,7 @@ void MessageBoxSession::handleScreenClosed(::DataDrivenScreenClosedReason closed
     }
 }
 
-void MessageBoxSession::close() {
+void MessageBoxSession::close(Player* player) {
     bool expected = true;
     if (!mIsShowing.compare_exchange_strong(expected, false)) {
         return;
@@ -232,7 +295,7 @@ void MessageBoxSession::close() {
             auto& stores = *sync.mDataStores;
 
             if (auto it = stores.find(DduiManager::getDatastoreName()); it != stores.end()) {
-                it->second.erase(DduiManager::getMessageBoxPropertyName() + std::to_string(formId));
+                it->second.erase(DduiManager::getMessageBoxPropertyName(formId));
             }
 
             ClientboundDataDrivenUICloseScreenPacket packet;
@@ -243,17 +306,26 @@ void MessageBoxSession::close() {
 
     auto cb = std::move(mCallback);
     if (cb) {
-        queueOnServerThread([cb, uuid]() {
-            auto player = getPlayerByUuid(uuid);
-            if (player) {
-                safeExecuteCallback(
-                    "MessageBox::Callback",
-                    cb,
-                    *player,
-                    MessageBoxResult{DataDrivenScreenClosedReason::ServerClosed, std::nullopt}
-                );
-            }
-        });
+        if (player) {
+            safeExecuteCallback(
+                "MessageBox::Callback",
+                cb,
+                *player,
+                MessageBoxResult{DataDrivenScreenClosedReason::ServerClosed, std::nullopt}
+            );
+        } else {
+            queueOnServerThread([cb, uuid]() {
+                auto player = getPlayerByUuid(uuid);
+                if (player) {
+                    safeExecuteCallback(
+                        "MessageBox::Callback",
+                        cb,
+                        *player,
+                        MessageBoxResult{DataDrivenScreenClosedReason::ServerClosed, std::nullopt}
+                    );
+                }
+            });
+        }
     }
 }
 
@@ -264,14 +336,20 @@ MessageBox::MessageBox(Player& player, ObsStringOrString title) {
 MessageBox::~MessageBox() = default;
 
 MessageBox& MessageBox::appendBody(ObsStringOrString bodyText) {
-    if (mSession->mIsShowing) return *this;
+    if (mSession->mIsShowing) {
+        ll::getLogger().warn("Cannot append body: MessageBox is already showing");
+        return *this;
+    }
 
     mSession->mBody = std::move(bodyText);
     return *this;
 }
 
 MessageBox& MessageBox::appendButton1(ObsStringOrString label, ObsStringOrString tooltip) {
-    if (mSession->mIsShowing) return *this;
+    if (mSession->mIsShowing) {
+        ll::getLogger().warn("Cannot append button 1: MessageBox is already showing");
+        return *this;
+    }
 
     mSession->mBtn1Label   = std::move(label);
     mSession->mBtn1Tooltip = std::move(tooltip);
@@ -279,7 +357,10 @@ MessageBox& MessageBox::appendButton1(ObsStringOrString label, ObsStringOrString
 }
 
 MessageBox& MessageBox::appendButton2(ObsStringOrString label, ObsStringOrString tooltip) {
-    if (mSession->mIsShowing) return *this;
+    if (mSession->mIsShowing) {
+        ll::getLogger().warn("Cannot append button 2: MessageBox is already showing");
+        return *this;
+    }
 
     mSession->mBtn2Label   = std::move(label);
     mSession->mBtn2Tooltip = std::move(tooltip);
@@ -292,7 +373,10 @@ bool MessageBox::show(Callback callback) {
     auto player = getPlayerByUuid(mSession->mUuid);
     if (!player) return false;
 
-    if (mSession->mIsShowing) return false;
+    if (mSession->mIsShowing) {
+        ll::getLogger().warn("Cannot show MessageBox: already showing");
+        return false;
+    }
 
     auto& serverPlayer = static_cast<ServerPlayer&>(*player);
     auto& sync         = serverPlayer.getDataStoreSync();
@@ -331,12 +415,7 @@ bool MessageBox::show(Callback callback) {
 
     DduiManager::registerSession(mSession, *player);
 
-    sync.set(
-        DduiManager::getDatastoreName(),
-        DduiManager::getMessageBoxPropertyName() + std::to_string(mSession->mFormId),
-        *valOpt,
-        true
-    );
+    sync.set(DduiManager::getDatastoreName(), DduiManager::getMessageBoxPropertyName(mSession->mFormId), *valOpt, true);
 
     mSession->cleanupSubscriptions();
 
@@ -380,7 +459,7 @@ bool MessageBox::show(Callback callback) {
     return true;
 }
 
-void MessageBox::close() { mSession->close(); }
+void MessageBox::close() { mSession->close(nullptr); }
 
 bool MessageBox::isShowing() const { return mSession->mIsShowing; }
 

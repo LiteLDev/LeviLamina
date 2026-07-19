@@ -5,6 +5,7 @@
 #include <string>
 #include <variant>
 
+class Player;
 enum class DataDrivenScreenClosedReason : uchar;
 
 namespace ll::ddui {
@@ -25,7 +26,7 @@ public:
 
     virtual void handleScreenClosed(::DataDrivenScreenClosedReason reason) = 0;
 
-    virtual void close() = 0;
+    virtual void close(Player* player) = 0;
 };
 
 } // namespace ll::ddui
