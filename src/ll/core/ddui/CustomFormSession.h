@@ -30,8 +30,8 @@ public:
         uint64_t                      subId;
         std::function<void(uint64_t)> unsubscribeFn;
     };
-    std::vector<ObsSub>  mSubs;
     std::recursive_mutex mSubMutex;
+    std::vector<ObsSub>  mSubs;
 
     CustomFormSession(mce::UUID uuid, ObsStringOrString title);
     ~CustomFormSession() override;
@@ -48,7 +48,7 @@ public:
 
     void handleScreenClosed(::DataDrivenScreenClosedReason reason) override;
 
-    void close() override;
+    void close(Player* player) override;
 
     bool validate() const;
 
@@ -57,6 +57,11 @@ public:
     void updatePath(std::string const& path, bool val);
     void updatePath(std::string const& path, std::string const& val);
     void updateObjectPath(std::string const& path, std::string const& val);
+
+    std::recursive_mutex                                                     mUpdateMutex;
+    std::unordered_map<std::string, std::variant<double, bool, std::string>> mPendingUpdates;
+    std::unordered_map<std::string, bool>                                    mUpdateScheduled;
+    std::unordered_map<std::string, bool>                                    mPendingIsObjectUpdate;
 };
 
 } // namespace ll::ddui

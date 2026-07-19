@@ -44,6 +44,7 @@ public:
      * @param onClick The callback function invoked when the button is clicked.
      * @param options Additional options for configuring the button (e.g. visibility, disabled state, tooltip).
      * @return Reference to the CustomForm instance for method chaining.
+     * @note WARNING: Capturing a shared pointer to the CustomForm directly in the onClick callback creates a strong reference cycle which causes a memory leak. To avoid this, use a std::weak_ptr to the CustomForm inside the callback.
      */
     LLAPI CustomForm&
     appendButton(ObsStringOrString label, std::function<void()> onClick, ButtonOptions options = {});
@@ -98,6 +99,7 @@ public:
      * @param items Vector containing data for all items in the dropdown list.
      * @param options Additional options for configuring the dropdown (e.g. description, visibility, disabled state).
      * @return Reference to the CustomForm instance for method chaining.
+     * @note The Dropdown uses an integer observable representing the value of the selected item. According to the DDUI specification, selection values are numbers. In this C++ implementation, selection values are narrowed and mapped to `int` and `ObservableInteger` because item selections in standard dropdown lists are conceptually discrete indices or integer identifiers rather than continuous floating-point values. If a client attempts to send a floating-point selection value (e.g., 13.9), the system rounds it down to an integer (e.g., 13) and checks if a corresponding item value exists.
      */
     LLAPI CustomForm& appendDropdown(
         ObsStringOrString                  label,

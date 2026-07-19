@@ -36,8 +36,8 @@ public:
         uint64_t                      subId;
         std::function<void(uint64_t)> unsubscribeFn;
     };
-    std::vector<ObsSub>  mSubs;
     std::recursive_mutex mSubMutex;
+    std::vector<ObsSub>  mSubs;
 
     MessageBoxSession(mce::UUID uuid, ObsStringOrString title);
     ~MessageBoxSession() override;
@@ -54,11 +54,16 @@ public:
 
     void handleScreenClosed(::DataDrivenScreenClosedReason reason) override;
 
-    void close() override;
+    void close(Player* player) override;
 
     void cleanupSubscriptions();
     void updateProperty(std::string const& name, std::string const& val);
     void updateObjectProperty(std::string const& name, std::string const& val);
+
+    std::recursive_mutex                         mUpdateMutex;
+    std::unordered_map<std::string, std::string> mPendingUpdates;
+    std::unordered_map<std::string, bool>        mUpdateScheduled;
+    std::unordered_map<std::string, bool>        mPendingIsObjectUpdate;
 
     template <typename T>
     void addSubscription(std::shared_ptr<Observable<T>> const& obs, std::function<void(T const&)> callback) {
