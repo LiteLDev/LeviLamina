@@ -1,4 +1,5 @@
 #pragma once
+#include "ll/api/base/FixedString.h"
 #include "ll/api/base/TypeTraits.h"
 #include <ll/api/reflection/Reflection.h>
 #include <ll/api/reflection/Serializer.h>
@@ -109,11 +110,43 @@ inline Expected<> member_serialize(J& j, T&& t, F const& keyFormatter) noexcept
     return {};
 }
 
+template <ll::FixedString Key, class J, class T, IsKeyFormatter F>
+inline Expected<> field_serialize(J& j, T&& t, F const& keyFormatter) noexcept
+    requires(!std::is_const_v<std::remove_reference_t<J>>)
+{
+    static_assert(Key.size() != 0, "field name is empty");
+    if (!j.is_object()) return makeSerObjectTypeError();
+
+    auto key = keyFormatter(Key.sv());
+
+    if constexpr (concepts::IsOptional<std::remove_cvref_t<T>>) {
+        if (!t.has_value()) {
+            return {};
+        }
+        auto result = serialize<J>(*t, keyFormatter);
+        if (!result) return ll::forwardError(result.error());
+        j[key] = *std::move(result);
+    } else {
+        auto result = serialize<J>(std::forward<T>(t), keyFormatter);
+        if (!result) return ll::forwardError(result.error());
+        j[key] = *std::move(result);
+    }
+
+    return {};
+}
+
 template <auto MemberPtr, class J, class T>
 inline Expected<> member_serialize(J& j, T&& t) noexcept
     requires(!std::is_const_v<std::remove_reference_t<J>>)
 {
     return member_serialize<MemberPtr>(j, std::forward<T>(t), builtin_key_formatter::default_key_formatter);
+}
+
+template <ll::FixedString Key, class J, class T>
+inline Expected<> field_serialize(J& j, T&& t) noexcept
+    requires(!std::is_const_v<std::remove_reference_t<J>>)
+{
+    return field_serialize<Key>(j, std::forward<T>(t), builtin_key_formatter::default_key_formatter);
 }
 
 template <auto MemberPtr, class T, class J, IsKeyFormatter F>
@@ -123,11 +156,25 @@ inline Expected<> member(T&& t, J& j, F const& keyFormatter) noexcept
     return member_serialize<MemberPtr>(j, std::forward<T>(t), keyFormatter);
 }
 
+template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
+inline Expected<> field(T&& t, J& j, F const& keyFormatter) noexcept
+    requires(!std::is_const_v<std::remove_reference_t<J>>)
+{
+    return field_serialize<Key>(j, std::forward<T>(t), keyFormatter);
+}
+
 template <auto MemberPtr, class T, class J>
 inline Expected<> member(T&& t, J& j) noexcept
     requires(!std::is_const_v<std::remove_reference_t<J>>)
 {
     return member<MemberPtr>(std::forward<T>(t), j, builtin_key_formatter::default_key_formatter);
+}
+
+template <ll::FixedString Key, class T, class J>
+inline Expected<> field(T&& t, J& j) noexcept
+    requires(!std::is_const_v<std::remove_reference_t<J>>)
+{
+    return field<Key>(std::forward<T>(t), j, builtin_key_formatter::default_key_formatter);
 }
 
 namespace {
