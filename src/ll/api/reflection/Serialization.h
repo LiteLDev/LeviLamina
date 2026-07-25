@@ -1,63 +1,90 @@
 #pragma once
-
-#include "ll/api/reflection/Reflection.h"
-#include "ll/api/reflection/ReflectionError.h"
+#include "ll/api/base/TypeTraits.h"
+#include <ll/api/reflection/Reflection.h>
+#include <ll/api/reflection/Serializer.h>
+#include <ll/api/reflection/ReflectionError.h>
 
 // Priority:
-// 5. IsVectorBase IsDispatcher IsOptional
-// 4. string
-// 3. TupleLike
-// 2. ArrayLike Associative
-// 1. Reflectable enum
-// 0. convertible
+// 11. Arithmetic
+// 10. Custom Specialization
+// 9. Optional
+// 9. Dispatcher
+// 8. IsVectorBase
+// 7. Enum
+// 6. Variant
+// 5. String Convertible
+// 4. TupleLike
+// 3. ArrayLike
+// 2. Associative
+// 1. Aggregate
+// 0. Not Reflectable
 
 namespace ll::reflection {
 
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& vec, meta::PriorityTag<5>)
-    requires(concepts::IsVectorBase<std::remove_cvref_t<T>>);
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& d, meta::PriorityTag<5>)
-    requires(concepts::IsDispatcher<std::remove_cvref_t<T>>);
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& opt, meta::PriorityTag<5>)
-    requires(concepts::IsOptional<std::remove_cvref_t<T>>);
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& str, meta::PriorityTag<4>)
-    requires(concepts::IsString<std::remove_cvref_t<T>> && std::is_assignable_v<std::remove_cvref_t<T>, std::string>);
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& tuple, meta::PriorityTag<3>)
-    requires(concepts::TupleLike<std::remove_cvref_t<T>>);
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& arr, meta::PriorityTag<2>)
-    requires(concepts::ArrayLike<std::remove_cvref_t<T>>);
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& map, meta::PriorityTag<2>)
-    requires(concepts::Associative<std::remove_cvref_t<T>>);
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& obj, meta::PriorityTag<1>)
-    requires(Reflectable<std::remove_cvref_t<T>>);
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& e, meta::PriorityTag<1>)
-    requires(std::is_enum_v<std::remove_cvref_t<T>>);
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& obj, meta::PriorityTag<0>)
-    requires(std::convertible_to<std::remove_cvref_t<T>, J>);
+namespace {
 
-template <class J, class T>
-[[nodiscard]] inline Expected<J> serialize(T&& t) noexcept
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<11>)
+    requires(std::is_arithmetic_v<std::remove_cvref_t<T>>);
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<10>)
+    requires(detail::has_custom_serializer_v<std::remove_cvref_t<T>, J, F>);
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<9>)
+    requires(concepts::IsOptional<std::remove_cvref_t<T>>);
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<9>)
+    requires(concepts::IsDispatcher<std::remove_cvref_t<T>>);
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<8>)
+    requires(concepts::IsVectorBase<std::remove_cvref_t<T>>);
+template <class J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<7>)
+    requires(std::is_enum_v<std::remove_cvref_t<T>>);
+template <class J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<6>)
+    requires(concepts::IsVariant<std::remove_cvref_t<T>>);
+template <class J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<5>)
+    requires(concepts::IsStringConvertible<std::remove_cvref_t<T>>);
+template <class J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<4>)
+    requires(concepts::TupleLike<std::remove_cvref_t<T>>);
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<3>)
+    requires(concepts::ArrayLike<std::remove_cvref_t<T>>);
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<2>)
+    requires(concepts::Associative<std::remove_cvref_t<T>>);
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<1>)
+    requires(Reflectable<std::remove_cvref_t<T>>);
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<0>);
+
+} // namespace
+
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize(T&& t, F const& keyFormatter) noexcept
 #if !defined(__INTELLISENSE__)
-    requires(requires(T&& t) { serialize_impl<J>(std::forward<T>(t), meta::PriorityTag<5>{}); })
+    requires(requires(T&& t, F const& keyFormatter) {
+        serialize_impl<J>(std::forward<T>(t), keyFormatter, meta::PriorityTag<11>{});
+    })
 #endif
 try {
-    return serialize_impl<J>(std::forward<T>(t), meta::PriorityTag<5>{});
+    return serialize_impl<J>(std::forward<T>(t), keyFormatter, meta::PriorityTag<11>{});
 } catch (...) {
     return makeExceptionError();
 }
 
-template <class J, class T>
-[[nodiscard]] inline Expected<> serialize_to(J& j, T&& t) noexcept {
-    if (auto res = serialize<J>(std::forward<T>(t)); res) {
+template <typename J, typename T>
+inline Expected<J> serialize(T&& t) noexcept{
+    return serialize<J>(std::forward<T>(t), builtin_key_formatter::default_key_formatter);
+}
+
+template <class J, class T, IsKeyFormatter F>
+inline Expected<> serialize_to(J& j, T&& t, F const& keyFormatter) noexcept {
+    if (auto res = serialize<J>(std::forward<T>(t), keyFormatter); res) {
         j = std::move(*res);
     } else {
         return forwardError(res.error());
@@ -66,13 +93,128 @@ template <class J, class T>
 }
 
 template <class J, class T>
-inline Expected<J> serialize_impl(T&& vec, meta::PriorityTag<5>)
+inline Expected<> serialize_to(J& j, T&& t) noexcept {
+    return serialize_to<J>(j, std::forward<T>(t), builtin_key_formatter::default_key_formatter);
+}
+
+template <auto MemberPtr, class J, class T, IsKeyFormatter F>
+inline Expected<> member_serialize(J& j, T&& t, F const& keyFormatter) noexcept
+    requires(!std::is_const_v<std::remove_reference_t<J>>)
+{
+    static_assert(!typeNameStem(getRawName<MemberPtr>()).empty(), "member name is empty");
+    if (!j.is_object()) return makeSerObjectTypeError();
+    auto result = serialize<J>(t.*MemberPtr, keyFormatter);
+    if (!result) return ll::forwardError(result.error());
+    j[keyFormatter(typeNameStem(getRawName<MemberPtr>()))] = *std::move(result);
+    return {};
+}
+
+template <auto MemberPtr, class J, class T>
+inline Expected<> member_serialize(J& j, T&& t) noexcept
+    requires(!std::is_const_v<std::remove_reference_t<J>>)
+{
+    return member_serialize<MemberPtr>(j, std::forward<T>(t), builtin_key_formatter::default_key_formatter);
+}
+
+template <auto MemberPtr, class T, class J, IsKeyFormatter F>
+inline Expected<> member(T&& t, J& j, F const& keyFormatter) noexcept
+    requires(!std::is_const_v<std::remove_reference_t<J>>)
+{
+    return member_serialize<MemberPtr>(j, std::forward<T>(t), keyFormatter);
+}
+
+template <auto MemberPtr, class T, class J>
+inline Expected<> member(T&& t, J& j) noexcept
+    requires(!std::is_const_v<std::remove_reference_t<J>>)
+{
+    return member<MemberPtr>(std::forward<T>(t), j, builtin_key_formatter::default_key_formatter);
+}
+
+namespace {
+
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const&, meta::PriorityTag<11>)
+    requires(std::is_arithmetic_v<std::remove_cvref_t<T>>)
+{
+    return t;
+}
+
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<10>)
+    requires(detail::has_custom_serializer_v<std::remove_cvref_t<T>, J, F>)
+{
+    using RT = std::remove_cvref_t<T>;
+    if constexpr (detail::has_value_serializer_v<RT, J, F>) {
+        using JT = std::remove_cvref_t<J>;
+        auto result = [&]() -> decltype(auto) {
+            if constexpr (requires { Serializer<RT, JT>::serialize(std::forward<T>(t), keyFormatter); }) {
+                return Serializer<RT, JT>::serialize(std::forward<T>(t), keyFormatter);
+            } else if constexpr (requires { Serializer<RT, JT>::serialize(std::forward<T>(t)); }) {
+                return Serializer<RT, JT>::serialize(std::forward<T>(t));
+            } else if constexpr (requires { Serializer<RT>::template serialize<JT>(std::forward<T>(t), keyFormatter); }) {
+                return Serializer<RT>::template serialize<JT>(std::forward<T>(t), keyFormatter);
+            } else {
+                return Serializer<RT>::template serialize<JT>(std::forward<T>(t));
+            }
+        }();
+        using Result = std::remove_cvref_t<decltype(result)>;
+        if constexpr (concepts::IsLeviExpected<Result>) {
+            if (!result) {
+                return forwardError(result.error());
+            }
+            if constexpr (std::same_as<std::remove_cvref_t<decltype(*result)>, J>) {
+                return *std::move(result);
+            } else {
+                return J(*std::move(result));
+            }
+        } else {
+            if constexpr (std::same_as<Result, J>) {
+                return std::move(result);
+            } else {
+                return J(std::move(result));
+            }
+        }
+    } else {
+        J result{};
+        if constexpr (requires { Serializer<RT>::serialize(std::forward<T>(t), result, keyFormatter); }) {
+            if (auto res = Serializer<RT>::serialize(std::forward<T>(t), result, keyFormatter); !res) {
+                return forwardError(res.error());
+            }
+        } else {
+            if (auto res = Serializer<RT>::serialize(std::forward<T>(t), result); !res) {
+                return forwardError(res.error());
+            }
+        }
+        return result;
+    }
+}
+
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<9>) 
+    requires(concepts::IsOptional<std::remove_cvref_t<T>>)
+{
+    return t ? serialize_impl<J>(*std::forward<T>(t), keyFormatter, meta::PriorityTag<11>{}) : nullptr;
+}
+
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<9>)
+    requires(concepts::IsDispatcher<std::remove_cvref_t<T>>)
+{
+    return serialize_impl<J>(
+        std::forward<T>(t).storage,
+        keyFormatter,
+        meta::PriorityTag<11>{}
+    );
+}
+
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const&, meta::PriorityTag<8>)
     requires(concepts::IsVectorBase<std::remove_cvref_t<T>>)
 {
     Expected<J> res{J::array()};
     std::remove_cvref_t<T>::forEachComponent([&]<typename axis_type, size_t iter> {
         if (res) {
-            if (auto v = serialize<J>(std::forward<T>(vec).template get<axis_type, iter>()); v) {
+            if (auto v = serialize<J>(std::forward<T>(t).template get<axis_type, iter>()); v) {
                 res->push_back(*std::move(v));
             } else {
                 res = makeSerIndexError(iter, v.error());
@@ -81,29 +223,37 @@ inline Expected<J> serialize_impl(T&& vec, meta::PriorityTag<5>)
     });
     return res;
 }
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& d, meta::PriorityTag<5>)
-    requires(concepts::IsDispatcher<std::remove_cvref_t<T>>)
+
+template <class J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<7>)
+    requires(std::is_enum_v<std::remove_cvref_t<T>>)
 {
-    return serialize<J>(std::forward<T>(d).storage);
-}
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& opt, meta::PriorityTag<5>)
-    requires(concepts::IsOptional<std::remove_cvref_t<T>>)
-{
-    if (!opt) {
-        return nullptr;
+    using enum_type = std::remove_cvref_t<T>;
+    if (auto name = detail::enum_name_to_string<enum_type>(t, keyFormatter)) {
+        return *std::move(name);
     }
-    return serialize<J>(*std::forward<T>(opt));
+    return std::to_underlying(t);
 }
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& str, meta::PriorityTag<4>)
-    requires(concepts::IsString<std::remove_cvref_t<T>> && std::is_assignable_v<std::remove_cvref_t<T>, std::string>)
+
+template <class J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<6>)
+    requires(concepts::IsVariant<std::remove_cvref_t<T>>)
 {
-    return std::string{std::forward<T>(str)};
+    return std::visit(
+        [&](auto const& value) { return serialize_impl<J>(value, keyFormatter, meta::PriorityTag<11>{}); },
+        t
+    );
 }
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& tuple, meta::PriorityTag<3>)
+
+template <class J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const&, meta::PriorityTag<5>)
+    requires(concepts::IsStringConvertible<std::remove_cvref_t<T>>)
+{
+    return J(std::string{std::forward<T>(t)});
+}
+
+template <class J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<4>)
     requires(concepts::TupleLike<std::remove_cvref_t<T>>)
 {
     Expected<J> res{J::array()};
@@ -112,7 +262,9 @@ inline Expected<J> serialize_impl(T&& tuple, meta::PriorityTag<3>)
             size_t iter{0};
             (([&](auto&& arg) {
                  if (res) {
-                     if (auto v = serialize<J>(std::forward<decltype(arg)>(arg)); v) {
+                     if (auto v =
+                             serialize_impl<J>(std::forward<decltype(arg)>(arg), keyFormatter, meta::PriorityTag<11>{});
+                         v) {
                          res->push_back(*std::move(v));
                          iter++;
                      } else {
@@ -122,18 +274,19 @@ inline Expected<J> serialize_impl(T&& tuple, meta::PriorityTag<3>)
              }(std::forward<decltype(args)>(args))),
              ...);
         },
-        std::forward<decltype(tuple)>(tuple)
+        std::forward<decltype(t)>(t)
     );
     return res;
 }
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& arr, meta::PriorityTag<2>)
+
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<3>)
     requires(concepts::ArrayLike<std::remove_cvref_t<T>>)
 {
     Expected<J> res{J::array()};
     size_t      iter{0};
-    for (auto&& val : std::forward<T>(arr)) {
-        if (auto v = serialize<J>(std::forward<decltype(val)>(val)); v) {
+    for (auto&& val : std::forward<T>(t)) {
+        if (auto v = serialize_impl<J>(std::forward<decltype(val)>(val), keyFormatter, meta::PriorityTag<11>{}); v) {
             res->push_back(*std::move(v));
             iter++;
         } else {
@@ -143,24 +296,19 @@ inline Expected<J> serialize_impl(T&& arr, meta::PriorityTag<2>)
     }
     return res;
 }
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& map, meta::PriorityTag<2>)
+
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<2>)
     requires(concepts::Associative<std::remove_cvref_t<T>>)
 {
-    using RT = std::remove_cvref_t<T>;
     static_assert(
-        (concepts::IsString<typename RT::key_type> || std::is_enum_v<typename RT::key_type>),
+        detail::is_key_stringifiable_v<typename std::remove_cvref_t<T>::key_type>,
         "the key type of the associative container must be convertible to a string"
     );
     Expected<J> res{J::object()};
-    for (auto&& [k, v] : map) {
-        std::string key;
-        if constexpr (concepts::IsString<typename RT::key_type>) {
-            key = std::string{std::forward<decltype(k)>(k)};
-        } else {
-            key = magic_enum::enum_name(std::forward<decltype(k)>(k));
-        }
-        if (auto sv = serialize<J>(std::forward<decltype(v)>(v)); sv) {
+    for (auto&& [k, v] : t) {
+        auto key = type_to_string(k, keyFormatter);
+        if (auto sv = serialize_impl<J>(std::forward<decltype(v)>(v), keyFormatter, meta::PriorityTag<11>{}); sv) {
             (*res)[key] = *std::move(sv);
         } else {
             res = makeSerKeyError(key, sv.error());
@@ -169,51 +317,30 @@ inline Expected<J> serialize_impl(T&& map, meta::PriorityTag<2>)
     }
     return res;
 }
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& obj, meta::PriorityTag<1>)
+
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<1>)
     requires(Reflectable<std::remove_cvref_t<T>>)
 {
     Expected<J> res{J::object()};
-    forEachMember(obj, [&](std::string_view name, auto&& member) {
-        if (name.starts_with('$') || !res) {
-            return;
-        }
-        using member_type = decltype((member));
-        if constexpr (requires(member_type m) { serialize<J>(m); }) {
-            auto v = serialize<J>(std::forward<member_type>(member));
-            if (v) {
-                if (!v->is_null()) (*res)[std::string{name}] = *std::move(v);
-            } else {
-                res = makeSerMemberError(std::string{name}, v.error());
-            }
+    forEachMember(t, [&](std::string_view name, auto&& member) {
+        if (name.starts_with('$') || !res) return;
+        auto key = keyFormatter(name);
+        auto v   = serialize_impl<J>(std::forward<decltype((member))>(member), keyFormatter, meta::PriorityTag<11>{});
+        if (v) {
+            if (!v->is_null()) (*res)[key] = *std::move(v);
         } else {
-            static_assert(traits::always_false<member_type>, "this type can't serialize");
+            res = makeSerMemberError(key, v.error());
         }
     });
     return res;
 }
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& e, meta::PriorityTag<1>)
-    requires(std::is_enum_v<std::remove_cvref_t<T>>)
-{
-    using enum_type = std::remove_cvref_t<T>;
-    if constexpr (magic_enum::detail::supported<enum_type>::value) {
-        if constexpr (magic_enum::detail::subtype_v<enum_type> == magic_enum::detail::enum_subtype::flags) {
-            if (auto const name = magic_enum::enum_flags_name<enum_type>(e); !name.empty()) {
-                return name;
-            }
-        } else {
-            if (auto const name = magic_enum::enum_name<enum_type>(e); !name.empty()) {
-                return name;
-            }
-        }
-    }
-    return (std::underlying_type_t<enum_type>)e;
+
+template <typename J, typename T, IsKeyFormatter F>
+inline Expected<J> serialize_impl(T&&, F const&, meta::PriorityTag<0>) {
+    static_assert(traits::always_false<T>, "this type can't serialize");
 }
-template <class J, class T>
-inline Expected<J> serialize_impl(T&& obj, meta::PriorityTag<0>)
-    requires(std::convertible_to<std::remove_cvref_t<T>, J>)
-{
-    return std::forward<T>(obj);
-}
+
+} // namespace
+
 } // namespace ll::reflection
