@@ -43,6 +43,7 @@ public:
         ::IntArrayTag>;
 
     using Variant = Types::to<::std::variant>;
+    using string_t = std::string;
 
     template <bool Const>
     class Iterator {
@@ -239,6 +240,8 @@ public:
     [[nodiscard]] constexpr bool is_number_integer() const noexcept {
         return hold(Tag::Byte) || hold(Tag::Short) || hold(Tag::Int) || hold(Tag::Int64);
     }
+    [[nodiscard]] constexpr bool is_number_signed() const noexcept { return is_number_integer(); }
+    [[nodiscard]] constexpr bool is_number_unsigned() const noexcept { return false; }
     [[nodiscard]] constexpr bool is_object() const noexcept { return hold(Tag::Compound); }
     [[nodiscard]] constexpr bool is_string() const noexcept { return hold(Tag::String); }
     [[nodiscard]] constexpr bool is_number() const noexcept { return is_number_float() || is_number_integer(); }
@@ -246,6 +249,17 @@ public:
         return is_null() || is_string() || is_number() || is_binary();
     }
     [[nodiscard]] constexpr bool is_structured() const noexcept { return is_array() || is_object(); }
+
+    [[nodiscard]] constexpr std::string_view type_name() const noexcept {
+        if (is_null()) return "null";
+        if (is_object()) return "object";
+        if (is_array()) return "array";
+        if (is_string()) return "string";
+        if (is_boolean()) return "boolean";
+        if (is_number()) return "number";
+        if (is_binary()) return "binary";
+        return "unknown";
+    }
 
     [[nodiscard]] constexpr CompoundTag::TagMap const& items() const { return get<CompoundTag>().mTags; }
     [[nodiscard]] constexpr CompoundTag::TagMap&       items() { return get<CompoundTag>().mTags; }
@@ -303,6 +317,20 @@ public:
     template <std::derived_from<Tag> T>
     [[nodiscard]] constexpr T const& get() const {
         return std::get<T>(mTagStorage);
+    }
+
+    template <class Ref>
+    [[nodiscard]] constexpr Ref get_ref() &
+        requires(std::same_as<Ref, string_t&>)
+    {
+        return static_cast<string_t&>(get<StringTag>());
+    }
+
+    template <class Ref>
+    [[nodiscard]] constexpr Ref get_ref() const&
+        requires(std::same_as<Ref, string_t const&>)
+    {
+        return static_cast<string_t const&>(get<StringTag>());
     }
 
     [[nodiscard]] Tag& get() { return reinterpret_cast<Tag&>(mTagStorage); }

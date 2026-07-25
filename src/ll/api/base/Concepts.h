@@ -105,4 +105,10 @@ concept VirtualCloneable = traits::is_virtual_cloneable_v<T>;
 template <class T>
 concept Awaitable = traits::is_awaitable_v<T>;
 
+template <typename T>
+concept IsVariant = traits::is_variant_v<std::remove_cvref_t<T>>;
+
+template <typename T>
+concept IsStringConvertible = traits::is_string_convertible_v<std::remove_cvref_t<T>>;
+
 } // namespace ll::concepts

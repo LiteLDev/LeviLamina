@@ -15,7 +15,8 @@
 #include <variant>
 #include <vector>
 
-#include "ll/api/reflection/ReflectionError.h"
+#include "ll/api/Expected.h"
+#include "ll/api/reflection/Reflection.h"
 #include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/StringUtils.h"
 
@@ -292,29 +293,6 @@ struct Version {
     }
 };
 
-template <class J, class T>
-[[nodiscard]] inline Expected<J> serialize(T&& ver) noexcept
-    requires(std::same_as<std::remove_cvref_t<T>, Version>)
-try {
-    return ver.to_string();
-} catch (...) {
-    return makeExceptionError();
-}
-template <class T, class J>
-[[nodiscard]] inline Expected<> deserialize(T& ver, J const& j) noexcept
-    requires(std::same_as<T, Version>)
-{
-    if (j.is_string()) {
-        if (auto res = ver.from_string_noexcept((std::string const&)j); res) {
-            return {};
-        } else {
-            return makeErrorCodeError(res.ec);
-        }
-    } else {
-        return reflection::makeDeserStringTypeError();
-    }
-}
-
 namespace literals {
 [[nodiscard]] constexpr Version operator""_version(char const* str, std::size_t length) {
     return Version{
@@ -324,6 +302,34 @@ namespace literals {
 } // namespace literals
 
 } // namespace ll::data
+
+template <>
+struct ll::reflection::Serializer<ll::data::Version> {
+    static std::string                 to_string(data::Version const& t) { return t.to_string(); }
+    static ll::Expected<data::Version> from_string(std::string_view s) {
+        if (ll::data::Version ver; auto res = ver.from_string_noexcept(s)) {
+            return ver;
+        } else {
+            return makeErrorCodeError(res.ec);
+        }
+    }
+
+    template <typename J>
+    static ll::Expected<> serialize(data::Version const& t, J& j) {
+        j = t.to_string();
+        return {};
+    }
+    template <typename J>
+    static ll::Expected<> deserialize(data::Version& t, J const& j) {
+        if (!j.is_string()) return makeErrorCodeError(std::errc::invalid_argument);
+        if (auto result = from_string(std::string_view{j})) {
+            t = *result;
+            return {};
+        } else {
+            return ll::forwardError(result.error());
+        }
+    }
+};
 
 namespace std {
 template <>
