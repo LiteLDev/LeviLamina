@@ -7,6 +7,7 @@
 #include "ll/api/reflection/Dispatcher.h"
 #include "ll/api/reflection/Serialization.h"
 #include "ll/api/utils/StringUtils.h"
+#include "mc/deps/nbt/CompoundTagVariant.h"
 #include "mc/platform/UUID.h"
 
 #include <algorithm>
@@ -20,6 +21,13 @@
 #include <string_view>
 #include <variant>
 #include <vector>
+
+#define LL_REFLECTION_TEST_TRY(EXPR) \
+    do { \
+        if (auto _ll_reflection_test_result = (EXPR); !_ll_reflection_test_result) { \
+            return ll::forwardError(_ll_reflection_test_result.error()); \
+        } \
+    } while (false)
 
 namespace {
 
@@ -135,6 +143,29 @@ struct StringViewRoot {
     std::string_view text;
 };
 
+using PlainVariant = std::variant<int, std::string, NestedValue, TestVersion>;
+
+struct PlainVariantRoot {
+    PlainVariant               value;
+    std::vector<PlainVariant> values;
+};
+
+using ArithmeticVariant = std::variant<bool, std::int64_t, std::uint64_t, double>;
+
+enum class ItemInfoType {
+    Name,
+    Snbt,
+};
+
+struct ItemInfo {
+    ItemInfoType               type = ItemInfoType::Name;
+    std::optional<std::string> name;
+    std::optional<int>         aux;
+    std::optional<std::string> snbt;
+
+    auto operator<=>(ItemInfo const&) const = default;
+};
+
 template <>
 struct ll::reflection::Serializer<mce::UUID> {
     static std::string to_string(mce::UUID const& value) { return value.asString(); }
@@ -157,6 +188,18 @@ struct ll::reflection::Serializer<mce::UUID> {
             return ll::reflection::makeDeserStringTypeError();
         }
         return from_string(std::string{j});
+    }
+};
+
+template <>
+struct ll::reflection::Serializer<CompoundTagVariant> {
+    template <typename J, typename F>
+    static ll::Expected<J> serialize(CompoundTagVariant const& value, F const&) {
+        if constexpr (std::same_as<std::remove_cvref_t<J>, CompoundTagVariant>) {
+            return value;
+        } else {
+            return J(value.toSnbt(SnbtFormat::Minimize, 0));
+        }
     }
 };
 
@@ -305,15 +348,9 @@ struct ll::reflection::Serializer<TestVersion> {
     static ll::Expected<J> serialize(TestVersion const& v) {
         using ll::reflection::member;
         auto result = J::object();
-        if (auto res = member<&TestVersion::mMajor>(v, result); !res) {
-            return ll::forwardError(res.error());
-        }
-        if (auto res = member<&TestVersion::mMinor>(v, result); !res) {
-            return ll::forwardError(res.error());
-        }
-        if (auto res = member<&TestVersion::mPatch>(v, result); !res) {
-            return ll::forwardError(res.error());
-        }
+        LL_REFLECTION_TEST_TRY(member<&TestVersion::mMajor>(v, result));
+        LL_REFLECTION_TEST_TRY(member<&TestVersion::mMinor>(v, result));
+        LL_REFLECTION_TEST_TRY(member<&TestVersion::mPatch>(v, result));
         return result;
     }
 
@@ -321,15 +358,9 @@ struct ll::reflection::Serializer<TestVersion> {
     static ll::Expected<TestVersion> deserialize(J const& j) {
         using ll::reflection::member;
         TestVersion result;
-        if (auto r = member<&TestVersion::mMajor>(result, j); !r) {
-            return ll::forwardError(r.error());
-        }
-        if (auto r = member<&TestVersion::mMinor>(result, j); !r) {
-            return ll::forwardError(r.error());
-        }
-        if (auto r = member<&TestVersion::mPatch>(result, j); !r) {
-            return ll::forwardError(r.error());
-        }
+        LL_REFLECTION_TEST_TRY(member<&TestVersion::mMajor>(result, j));
+        LL_REFLECTION_TEST_TRY(member<&TestVersion::mMinor>(result, j));
+        LL_REFLECTION_TEST_TRY(member<&TestVersion::mPatch>(result, j));
         return result;
     }
 
@@ -351,6 +382,67 @@ struct ll::reflection::Serializer<TestVersion> {
             return TestVersion{*major, *minor, *patch};
         }
         return ll::makeI18nStringError<"invalid version">();
+    }
+};
+
+template <>
+struct ll::reflection::Serializer<ItemInfo> {
+    template <typename J, typename F>
+    static ll::Expected<J> serialize(ItemInfo const& value, F const& keyFormatter) {
+        using ll::reflection::field;
+
+        J result = J::object();
+        LL_REFLECTION_TEST_TRY(field<"type">(value.type, result, keyFormatter));
+
+        switch (value.type) {
+        case ItemInfoType::Name: {
+            if (!value.name.has_value()) {
+                return ll::reflection::makeDeserMissingRequiredFieldError(keyFormatter("name"));
+            }
+            LL_REFLECTION_TEST_TRY(field<"name">(value.name, result, keyFormatter));
+            LL_REFLECTION_TEST_TRY(field<"aux">(value.aux, result, keyFormatter));
+            break;
+        }
+        case ItemInfoType::Snbt: {
+            if (!value.snbt.has_value()) {
+                return ll::reflection::makeDeserMissingRequiredFieldError(keyFormatter("snbt"));
+            }
+            LL_REFLECTION_TEST_TRY(field<"snbt">(value.snbt, result, keyFormatter));
+            break;
+        }
+        }
+
+        return result;
+    }
+
+    template <typename J, typename F>
+    static ll::Expected<ItemInfo> deserialize(J const& j, F const& keyFormatter) {
+        using ll::reflection::field;
+        using ll::reflection::required_field;
+
+        if (!j.is_object()) {
+            return ll::reflection::makeDeserObjectTypeError();
+        }
+
+        ItemInfo result;
+        LL_REFLECTION_TEST_TRY(field<"type">(result.type, j, keyFormatter));
+
+        switch (result.type) {
+        case ItemInfoType::Name: {
+            LL_REFLECTION_TEST_TRY(required_field<"name">(result.name, j, keyFormatter));
+            LL_REFLECTION_TEST_TRY(field<"aux">(result.aux, j, keyFormatter));
+            result.snbt.reset();
+            break;
+        }
+        case ItemInfoType::Snbt: {
+            LL_REFLECTION_TEST_TRY(required_field<"snbt">(result.snbt, j, keyFormatter));
+            result.name.reset();
+            result.aux.reset();
+            break;
+        }
+        }
+
+        return result;
     }
 };
 
@@ -461,6 +553,34 @@ TEST(ReflectionTest, MemberHelpersSerializeDeserializeAndHandleOptionalMissingFi
     auto deserializeOptionalResult = ll::reflection::member_deserialize<&MemberOps::maybe>(parsed, json);
     ASSERT_TRUE(deserializeOptionalResult.has_value()) << deserializeOptionalResult.error().message();
     EXPECT_FALSE(parsed.maybe.has_value());
+}
+
+TEST(ReflectionTest, FixedKeyHelpersSerializeDeserializeAndHandleOptionalMissingFields) {
+    nlohmann::json json = nlohmann::json::object();
+    int            plain = 42;
+    std::optional<int> maybe;
+
+    auto serializePlainResult = ll::reflection::field<"plain">(plain, json);
+    ASSERT_TRUE(serializePlainResult.has_value()) << serializePlainResult.error().message();
+    auto serializeOptionalResult = ll::reflection::field<"maybe">(maybe, json);
+    ASSERT_TRUE(serializeOptionalResult.has_value()) << serializeOptionalResult.error().message();
+    EXPECT_EQ(json.at("plain"), 42);
+    EXPECT_FALSE(json.contains("maybe"));
+
+    int                parsedPlain = 0;
+    std::optional<int> parsedMaybe = 7;
+
+    auto deserializePlainResult = ll::reflection::field_deserialize<"plain">(parsedPlain, json);
+    ASSERT_TRUE(deserializePlainResult.has_value()) << deserializePlainResult.error().message();
+    EXPECT_EQ(parsedPlain, 42);
+
+    auto deserializeOptionalResult = ll::reflection::field_deserialize<"maybe">(parsedMaybe, json);
+    ASSERT_TRUE(deserializeOptionalResult.has_value()) << deserializeOptionalResult.error().message();
+    EXPECT_FALSE(parsedMaybe.has_value());
+
+    auto missingPlainResult = ll::reflection::field_deserialize<"required">(parsedPlain, json);
+    ASSERT_FALSE(missingPlainResult.has_value());
+    expectErrorMessageContains(missingPlainResult.error(), R"(missing required field "required" when deserializing)");
 }
 
 TEST(ReflectionTest, ValueSerializerSpecializationSupportsSerializeAndDeserialize) {
@@ -579,6 +699,178 @@ TEST(ReflectionTest, StringViewDeserializationRequiresBorrowableLvalueSource) {
         tempResult.error(),
         "field cannot be safely deserialized into string_view from a temporary or non-borrowing source"
     );
+}
+
+TEST(ReflectionTest, PlainVariantSerializesAndDeserializesDirectAlternatives) {
+    PlainVariant intValue = 42;
+
+    auto intJson = ll::reflection::serialize<nlohmann::json>(intValue, uppercaseAsciiKey);
+    ASSERT_TRUE(intJson.has_value()) << intJson.error().message();
+    EXPECT_EQ(*intJson, 42);
+
+    auto parsedInt = ll::reflection::deserialize_to<PlainVariant>(*intJson, uppercaseAsciiKey);
+    ASSERT_TRUE(parsedInt.has_value()) << parsedInt.error().message();
+    EXPECT_TRUE(std::holds_alternative<int>(*parsedInt));
+    EXPECT_EQ(std::get<int>(*parsedInt), 42);
+
+    PlainVariant stringValue = std::string{"hello"};
+
+    auto stringJson = ll::reflection::serialize<nlohmann::json>(stringValue, uppercaseAsciiKey);
+    ASSERT_TRUE(stringJson.has_value()) << stringJson.error().message();
+    EXPECT_EQ(*stringJson, "hello");
+
+    auto parsedString = ll::reflection::deserialize_to<PlainVariant>(*stringJson, uppercaseAsciiKey);
+    ASSERT_TRUE(parsedString.has_value()) << parsedString.error().message();
+    EXPECT_TRUE(std::holds_alternative<std::string>(*parsedString));
+    EXPECT_EQ(std::get<std::string>(*parsedString), "hello");
+
+    PlainVariant objectValue = NestedValue{7, std::string{"note"}};
+
+    auto objectJson = ll::reflection::serialize<nlohmann::json>(objectValue, uppercaseAsciiKey);
+    ASSERT_TRUE(objectJson.has_value()) << objectJson.error().message();
+    ASSERT_TRUE(objectJson->is_object());
+    EXPECT_EQ(objectJson->at("NUMBER"), 7);
+    EXPECT_EQ(objectJson->at("NOTE"), "note");
+
+    auto parsedObject = ll::reflection::deserialize_to<PlainVariant>(*objectJson, uppercaseAsciiKey);
+    ASSERT_TRUE(parsedObject.has_value()) << parsedObject.error().message();
+    EXPECT_TRUE(std::holds_alternative<NestedValue>(*parsedObject));
+    EXPECT_EQ(std::get<NestedValue>(*parsedObject).number, 7);
+    ASSERT_TRUE(std::get<NestedValue>(*parsedObject).note.has_value());
+    EXPECT_EQ(*std::get<NestedValue>(*parsedObject).note, "note");
+
+    PlainVariantRoot root;
+    root.value  = TestVersion{1, 20, 5};
+    root.values = {42, std::string{"text"}, NestedValue{9, std::string{"nested"}}};
+
+    auto rootJson = ll::reflection::serialize<nlohmann::json>(root, uppercaseAsciiKey);
+    ASSERT_TRUE(rootJson.has_value()) << rootJson.error().message();
+    ASSERT_TRUE(rootJson->at("VALUE").is_object());
+    EXPECT_EQ(rootJson->at("VALUE").at("mMajor"), 1);
+    EXPECT_EQ(rootJson->at("VALUES").at(0), 42);
+    EXPECT_EQ(rootJson->at("VALUES").at(1), "text");
+    EXPECT_EQ(rootJson->at("VALUES").at(2).at("NUMBER"), 9);
+
+    auto parsedRoot = ll::reflection::deserialize_to<PlainVariantRoot>(*rootJson, uppercaseAsciiKey);
+    ASSERT_TRUE(parsedRoot.has_value()) << parsedRoot.error().message();
+    EXPECT_TRUE(std::holds_alternative<TestVersion>(parsedRoot->value));
+    auto const expectedVersion = TestVersion{1, 20, 5};
+    EXPECT_EQ(std::get<TestVersion>(parsedRoot->value), expectedVersion);
+    ASSERT_EQ(parsedRoot->values.size(), 3u);
+    EXPECT_TRUE(std::holds_alternative<int>(parsedRoot->values[0]));
+    EXPECT_TRUE(std::holds_alternative<std::string>(parsedRoot->values[1]));
+    EXPECT_TRUE(std::holds_alternative<NestedValue>(parsedRoot->values[2]));
+}
+
+TEST(ReflectionTest, PlainVariantPrefersExactArithmeticAlternativeMatches) {
+    auto parsedBool = ll::reflection::deserialize_to<ArithmeticVariant>(nlohmann::json(true));
+    ASSERT_TRUE(parsedBool.has_value()) << parsedBool.error().message();
+    EXPECT_TRUE(std::holds_alternative<bool>(*parsedBool));
+    EXPECT_EQ(std::get<bool>(*parsedBool), true);
+
+    auto parsedSigned = ll::reflection::deserialize_to<ArithmeticVariant>(nlohmann::json(-7));
+    ASSERT_TRUE(parsedSigned.has_value()) << parsedSigned.error().message();
+    EXPECT_TRUE(std::holds_alternative<std::int64_t>(*parsedSigned));
+    EXPECT_EQ(std::get<std::int64_t>(*parsedSigned), -7);
+
+    auto parsedUnsigned = ll::reflection::deserialize_to<ArithmeticVariant>(nlohmann::json(std::uint64_t{7}));
+    ASSERT_TRUE(parsedUnsigned.has_value()) << parsedUnsigned.error().message();
+    EXPECT_TRUE(std::holds_alternative<std::uint64_t>(*parsedUnsigned));
+    EXPECT_EQ(std::get<std::uint64_t>(*parsedUnsigned), 7u);
+
+    auto parsedDouble = ll::reflection::deserialize_to<ArithmeticVariant>(nlohmann::json(1.5));
+    ASSERT_TRUE(parsedDouble.has_value()) << parsedDouble.error().message();
+    EXPECT_TRUE(std::holds_alternative<double>(*parsedDouble));
+    EXPECT_DOUBLE_EQ(std::get<double>(*parsedDouble), 1.5);
+}
+
+TEST(ReflectionTest, PlainVariantReportsCastFailureWhenNoAlternativeMatches) {
+    auto json = nlohmann::json::parse(R"({"unexpected":true})");
+
+    auto result = ll::reflection::deserialize_to<std::variant<int, std::string>>(json);
+    ASSERT_FALSE(result.has_value());
+    expectErrorMessageContains(result.error(), "could not cast target object");
+    expectErrorMessageContains(result.error(), R"({"unexpected":true})");
+}
+
+TEST(ReflectionTest, ItemInfoUsesTypeFieldToSelectRequiredFields) {
+    ItemInfo byName;
+    byName.type = ItemInfoType::Name;
+    byName.name = "minecraft:stone";
+    byName.aux  = 2;
+
+    auto byNameJson = ll::reflection::serialize<nlohmann::json>(byName, camelToSnakeWithoutM);
+    ASSERT_TRUE(byNameJson.has_value()) << byNameJson.error().message();
+    EXPECT_EQ(byNameJson->at("type"), "name");
+    EXPECT_EQ(byNameJson->at("name"), "minecraft:stone");
+    EXPECT_EQ(byNameJson->at("aux"), 2);
+    EXPECT_FALSE(byNameJson->contains("snbt"));
+
+    auto parsedByName = ll::reflection::deserialize_to<ItemInfo>(*byNameJson, camelToSnakeWithoutM);
+    ASSERT_TRUE(parsedByName.has_value()) << parsedByName.error().message();
+    EXPECT_EQ(parsedByName->type, ItemInfoType::Name);
+    ASSERT_TRUE(parsedByName->name.has_value());
+    EXPECT_EQ(*parsedByName->name, "minecraft:stone");
+    ASSERT_TRUE(parsedByName->aux.has_value());
+    EXPECT_EQ(*parsedByName->aux, 2);
+    EXPECT_FALSE(parsedByName->snbt.has_value());
+
+    ItemInfo bySnbt;
+    bySnbt.type = ItemInfoType::Snbt;
+    bySnbt.snbt = R"({Count:1b,id:"minecraft:stone"})";
+
+    auto bySnbtJson = ll::reflection::serialize<nlohmann::json>(bySnbt, camelToSnakeWithoutM);
+    ASSERT_TRUE(bySnbtJson.has_value()) << bySnbtJson.error().message();
+    EXPECT_EQ(bySnbtJson->at("type"), "snbt");
+    EXPECT_EQ(bySnbtJson->at("snbt"), R"({Count:1b,id:"minecraft:stone"})");
+    EXPECT_FALSE(bySnbtJson->contains("name"));
+    EXPECT_FALSE(bySnbtJson->contains("aux"));
+
+    auto parsedBySnbt = ll::reflection::deserialize_to<ItemInfo>(*bySnbtJson, camelToSnakeWithoutM);
+    ASSERT_TRUE(parsedBySnbt.has_value()) << parsedBySnbt.error().message();
+    EXPECT_EQ(parsedBySnbt->type, ItemInfoType::Snbt);
+    ASSERT_TRUE(parsedBySnbt->snbt.has_value());
+    EXPECT_EQ(*parsedBySnbt->snbt, R"({Count:1b,id:"minecraft:stone"})");
+    EXPECT_FALSE(parsedBySnbt->name.has_value());
+    EXPECT_FALSE(parsedBySnbt->aux.has_value());
+}
+
+TEST(ReflectionTest, ItemInfoReportsMissingFieldsRequiredByType) {
+    auto missingName = nlohmann::json::parse(R"({
+        "type": "name"
+    })");
+
+    auto missingNameResult = ll::reflection::deserialize_to<ItemInfo>(missingName, camelToSnakeWithoutM);
+    ASSERT_FALSE(missingNameResult.has_value());
+    expectErrorMessageContains(missingNameResult.error(), R"(missing required field "name" when deserializing)");
+
+    auto missingSnbt = nlohmann::json::parse(R"({
+        "type": "snbt"
+    })");
+
+    auto missingSnbtResult = ll::reflection::deserialize_to<ItemInfo>(missingSnbt, camelToSnakeWithoutM);
+    ASSERT_FALSE(missingSnbtResult.has_value());
+    expectErrorMessageContains(missingSnbtResult.error(), R"(missing required field "snbt" when deserializing)");
+}
+
+TEST(ReflectionTest, NbtValueSpecializationCanSerializeDifferentlyForJsonAndNbt) {
+    auto value = CompoundTagVariant::object(
+        {
+            {"id",    "minecraft:stone"                                                                 },
+            {"count", 64                                                                                },
+            {"slots", CompoundTagVariant::array({1, 2, 3})                                              },
+            {"tag",   CompoundTagVariant::object({{"display", CompoundTagVariant::object({{"name", "Stone"}})}})}
+    }
+    );
+
+    auto json = ll::reflection::serialize<nlohmann::json>(value);
+    ASSERT_TRUE(json.has_value()) << json.error().message();
+    ASSERT_TRUE(json->is_string());
+    EXPECT_EQ(*json, value.toSnbt(SnbtFormat::Minimize, 0));
+
+    auto nbt = ll::reflection::serialize<CompoundTagVariant>(value);
+    ASSERT_TRUE(nbt.has_value()) << nbt.error().message();
+    EXPECT_EQ(*nbt, value);
 }
 
 TEST(ReflectionTest, VariantWithEnumIndexSerializesAndDeserializesUsingEnumDiscriminator) {
