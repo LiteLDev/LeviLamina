@@ -210,6 +210,8 @@ field_serialize<"name">(outJson, value, formatter);
 field<"name">(value, inJson, formatter);
 field_deserialize<"name">(value, inJson, formatter);
 required_field<"name">(value, inJson, formatter);
+default_field<"name">(value, inJson, formatter);
+default_field<"name">(value, inJson, defaultValue, formatter);
 ```
 
 Use these when:
@@ -223,6 +225,10 @@ Use these when:
 `field_deserialize<"...">` treats missing `std::optional<T>` as success and resets it to `std::nullopt`.
 
 `required_field<"...">` always requires the field to exist, even if the destination type is `std::optional<T>`.
+
+`default_field<"...">` without a `defaultValue` keeps the current value unchanged when the field does not exist.
+
+`default_field<"...">` uses the provided default value when the field does not exist, and does not report a missing-field error.
 
 This is useful for conditional schemas such as:
 
