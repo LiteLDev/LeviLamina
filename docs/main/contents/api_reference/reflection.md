@@ -195,6 +195,9 @@ These use the real C++ member pointer and reflected member name:
 member<&Type::member>(object, outJson, formatter);
 member_serialize<&Type::member>(outJson, object, formatter);
 member_deserialize<&Type::member>(object, inJson, formatter);
+required_member<&Type::member>(object, inJson, formatter);
+default_member<&Type::member>(object, inJson, formatter);
+default_member<&Type::member>(object, inJson, defaultValue, formatter);
 ```
 
 Use these when the field name should come from the actual member name.
@@ -229,6 +232,13 @@ Use these when:
 `default_field<"...">` without a `defaultValue` keeps the current value unchanged when the field does not exist.
 
 `default_field<"...">` uses the provided default value when the field does not exist, and does not report a missing-field error.
+
+The member-based variants follow the same rules:
+
+- `member<&Type::member>` resets missing optional members to `std::nullopt`
+- `required_member<&Type::member>` always requires the member field to exist
+- `default_member<&Type::member>` keeps the current member value if the field is missing
+- `default_member<&Type::member>(..., defaultValue)` writes the provided fallback when the field is missing
 
 This is useful for conditional schemas such as:
 

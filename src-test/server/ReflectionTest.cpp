@@ -555,6 +555,39 @@ TEST(ReflectionTest, MemberHelpersSerializeDeserializeAndHandleOptionalMissingFi
     EXPECT_FALSE(parsed.maybe.has_value());
 }
 
+TEST(ReflectionTest, MemberHelpersCanRequireOptionalFieldsAndUseDefaults) {
+    auto json = nlohmann::json::parse(R"({
+        "plain": 42
+    })");
+
+    MemberOps requiredParsed;
+    requiredParsed.maybe = 7;
+    auto requiredResult = ll::reflection::required_member<&MemberOps::maybe>(requiredParsed, json);
+    ASSERT_FALSE(requiredResult.has_value());
+    expectErrorMessageContains(requiredResult.error(), R"(missing required field "maybe" when deserializing)");
+
+    MemberOps defaultedParsed;
+    defaultedParsed.plain = 1;
+    defaultedParsed.maybe = 2;
+    auto existingResult = ll::reflection::default_member<&MemberOps::plain>(defaultedParsed, json, 99);
+    ASSERT_TRUE(existingResult.has_value()) << existingResult.error().message();
+    EXPECT_EQ(defaultedParsed.plain, 42);
+
+    auto missingWithDefaultResult =
+        ll::reflection::default_member<&MemberOps::maybe>(defaultedParsed, json, std::optional<int>{12});
+    ASSERT_TRUE(missingWithDefaultResult.has_value()) << missingWithDefaultResult.error().message();
+    ASSERT_TRUE(defaultedParsed.maybe.has_value());
+    EXPECT_EQ(*defaultedParsed.maybe, 12);
+
+    MemberOps keepExistingParsed;
+    keepExistingParsed.plain = 99;
+    keepExistingParsed.maybe = 13;
+    auto keepExistingResult = ll::reflection::default_member<&MemberOps::maybe>(keepExistingParsed, json);
+    ASSERT_TRUE(keepExistingResult.has_value()) << keepExistingResult.error().message();
+    ASSERT_TRUE(keepExistingParsed.maybe.has_value());
+    EXPECT_EQ(*keepExistingParsed.maybe, 13);
+}
+
 TEST(ReflectionTest, FixedKeyHelpersSerializeDeserializeAndHandleOptionalMissingFields) {
     nlohmann::json json = nlohmann::json::object();
     int            plain = 42;
