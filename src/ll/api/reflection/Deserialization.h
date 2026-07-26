@@ -23,90 +23,6 @@ namespace ll::reflection {
 
 namespace {
 
-template <typename Child, typename J>
-[[nodiscard]] inline decltype(auto) array_child_at(J&& j, size_t index) {
-    if constexpr (std::same_as<std::remove_cvref_t<J>, CompoundTagVariant>) {
-        return CompoundTagVariant{j[index]};
-    } else if constexpr (std::same_as<std::remove_cvref_t<J>, UniqueTagPtr>) {
-        return CompoundTagVariant{j[index]};
-    } else if constexpr (std::is_lvalue_reference_v<J&&>) {
-        return static_cast<J&&>(j[index]);
-    } else {
-        return std::remove_cvref_t<J>(j[index]);
-    }
-}
-
-template <typename J, typename K>
-[[nodiscard]] inline decltype(auto) object_child_at(J&& j, K&& key) {
-    if constexpr (std::same_as<std::remove_cvref_t<J>, CompoundTagVariant>) {
-        return CompoundTagVariant{j[std::forward<K>(key)]};
-    } else if constexpr (std::same_as<std::remove_cvref_t<J>, UniqueTagPtr>) {
-        return CompoundTagVariant{j[std::forward<K>(key)]};
-    } else if constexpr (std::is_lvalue_reference_v<J&&>) {
-        return static_cast<J&&>(j[std::forward<K>(key)]);
-    } else {
-        return std::remove_cvref_t<J>(j[std::forward<K>(key)]);
-    }
-}
-
-template <class T, class R>
-inline Expected<> assign_deserialized_value(T& target, R&& result) {
-    using Result = std::remove_cvref_t<R>;
-    if constexpr (concepts::IsLeviExpected<Result>) {
-        if (!result) {
-            return forwardError(result.error());
-        }
-        target = *std::forward<R>(result);
-    } else {
-        target = std::forward<R>(result);
-    }
-    return {};
-}
-
-template <class T, class J, IsKeyFormatter F>
-inline decltype(auto) invoke_value_deserializer(J&& j, F const& keyFormatter) {
-    using RT = std::remove_cvref_t<T>;
-    using JT = std::remove_cvref_t<J>;
-    if constexpr (requires { Serializer<RT, JT>::deserialize(std::forward<J>(j), keyFormatter); }) {
-        return Serializer<RT, JT>::deserialize(std::forward<J>(j), keyFormatter);
-    } else if constexpr (requires { Serializer<RT, JT>::deserialize(std::forward<J>(j)); }) {
-        return Serializer<RT, JT>::deserialize(std::forward<J>(j));
-    } else if constexpr (requires { Serializer<RT>::template deserialize<JT>(std::forward<J>(j), keyFormatter); }) {
-        return Serializer<RT>::template deserialize<JT>(std::forward<J>(j), keyFormatter);
-    } else {
-        return Serializer<RT>::template deserialize<JT>(std::forward<J>(j));
-    }
-}
-
-template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_with_value_specialization(T& target, J&& j, F const& keyFormatter) {
-    return assign_deserialized_value(target, invoke_value_deserializer<T>(std::forward<J>(j), keyFormatter));
-}
-
-template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_with_inplace_specialization(T& target, J&& j, F const& keyFormatter) {
-    using RT = std::remove_cvref_t<T>;
-    if constexpr (requires { Serializer<RT>::deserialize(target, std::forward<J>(j), keyFormatter); }) {
-        return Serializer<RT>::deserialize(target, std::forward<J>(j), keyFormatter);
-    } else {
-        return Serializer<RT>::deserialize(target, std::forward<J>(j));
-    }
-}
-
-template <class J>
-concept BorrowableStringSource = requires(std::remove_cvref_t<J> const& value) {
-    typename std::remove_cvref_t<J>::string_t;
-    {
-        value.template get_ref<typename std::remove_cvref_t<J>::string_t const&>()
-    } -> std::same_as<typename std::remove_cvref_t<J>::string_t const&>;
-};
-
-template <BorrowableStringSource J>
-[[nodiscard]] inline std::string_view borrow_string_view(J const& value) noexcept {
-    auto const& text = value.template get_ref<typename std::remove_cvref_t<J>::string_t const&>();
-    return std::string_view{text};
-}
-
 template <class T, class J, IsKeyFormatter F>
 inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<11>)
     requires(std::is_arithmetic_v<std::remove_cvref_t<T>>);
@@ -201,6 +117,32 @@ inline Expected<T> deserialize_to(J&& j) noexcept {
 
 namespace {
 
+template <typename Child, typename J>
+[[nodiscard]] inline decltype(auto) array_child_at(J&& j, size_t index) {
+    if constexpr (std::same_as<std::remove_cvref_t<J>, CompoundTagVariant>) {
+        return CompoundTagVariant{j[index]};
+    } else if constexpr (std::same_as<std::remove_cvref_t<J>, UniqueTagPtr>) {
+        return CompoundTagVariant{j[index]};
+    } else if constexpr (std::is_lvalue_reference_v<J&&>) {
+        return static_cast<J&&>(j[index]);
+    } else {
+        return std::remove_cvref_t<J>(j[index]);
+    }
+}
+
+template <typename J, typename K>
+[[nodiscard]] inline decltype(auto) object_child_at(J&& j, K&& key) {
+    if constexpr (std::same_as<std::remove_cvref_t<J>, CompoundTagVariant>) {
+        return CompoundTagVariant{j[std::forward<K>(key)]};
+    } else if constexpr (std::same_as<std::remove_cvref_t<J>, UniqueTagPtr>) {
+        return CompoundTagVariant{j[std::forward<K>(key)]};
+    } else if constexpr (std::is_lvalue_reference_v<J&&>) {
+        return static_cast<J&&>(j[std::forward<K>(key)]);
+    } else {
+        return std::remove_cvref_t<J>(j[std::forward<K>(key)]);
+    }
+}
+
 template <auto MemberPtr, class T, class J, IsKeyFormatter F>
 inline Expected<> member_deserialize_impl(T& t, J&& j, F const& keyFormatter) {
     static_assert(!typeNameStem(getRawName<MemberPtr>()).empty(), "member name is empty");
@@ -238,6 +180,35 @@ inline Expected<> field_deserialize_impl(T& t, J&& j, F const& keyFormatter) {
     return deserialize<std::remove_cvref_t<T>>(t, std::forward<decltype(child)>(child), keyFormatter);
 }
 
+template <ll::FixedString Key, class T, class D, class J, IsKeyFormatter F>
+inline Expected<> field_deserialize_or_impl(T& t, J&& j, D&& defaultValue, F const& keyFormatter) {
+    static_assert(Key.size() != 0, "field name is empty");
+    if (!j.is_object()) return makeDeserObjectTypeError();
+
+    auto key = keyFormatter(Key.sv());
+    if (!j.contains(key)) {
+        t = std::forward<D>(defaultValue);
+        return {};
+    }
+
+    decltype(auto) child = object_child_at(std::forward<J>(j), key);
+    return deserialize<std::remove_cvref_t<T>>(t, std::forward<decltype(child)>(child), keyFormatter);
+}
+
+template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
+inline Expected<> field_deserialize_default_impl(T& t, J&& j, F const& keyFormatter) {
+    static_assert(Key.size() != 0, "field name is empty");
+    if (!j.is_object()) return makeDeserObjectTypeError();
+
+    auto key = keyFormatter(Key.sv());
+    if (!j.contains(key)) {
+        return {};
+    }
+
+    decltype(auto) child = object_child_at(std::forward<J>(j), key);
+    return deserialize<std::remove_cvref_t<T>>(t, std::forward<decltype(child)>(child), keyFormatter);
+}
+
 } // namespace
 
 template <auto MemberPtr, class T, class J, IsKeyFormatter F>
@@ -255,10 +226,20 @@ inline Expected<> field_deserialize(T& t, J&& j, F const& keyFormatter) noexcept
 }
 
 template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
-inline Expected<> required_field_deserialize(T& t, J&& j, F const& keyFormatter) noexcept
+inline Expected<> field_deserialize_required(T& t, J&& j, F const& keyFormatter) noexcept
     requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return field_deserialize_impl<Key, false>(t, std::forward<J>(j), keyFormatter);
+}
+
+template <ll::FixedString Key, class T, class D, class J, IsKeyFormatter F>
+inline Expected<> field_deserialize_or(T& t, J&& j, D&& defaultValue, F const& keyFormatter) noexcept
+    requires(
+        !IsKeyFormatter<std::remove_cvref_t<D>>
+        && (!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
+    )
+{
+    return field_deserialize_or_impl<Key>(t, std::forward<J>(j), std::forward<D>(defaultValue), keyFormatter);
 }
 
 template <auto MemberPtr, class T, class J, IsKeyFormatter F>
@@ -272,8 +253,15 @@ inline Expected<> field_deserialize(T& t, J const& j, F const& keyFormatter) noe
 }
 
 template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
-inline Expected<> required_field_deserialize(T& t, J const& j, F const& keyFormatter) noexcept {
+inline Expected<> field_deserialize_required(T& t, J const& j, F const& keyFormatter) noexcept {
     return field_deserialize_impl<Key, false>(t, j, keyFormatter);
+}
+
+template <ll::FixedString Key, class T, class D, class J, IsKeyFormatter F>
+inline Expected<> field_deserialize_or(T& t, J const& j, D&& defaultValue, F const& keyFormatter) noexcept
+    requires(!IsKeyFormatter<std::remove_cvref_t<D>>)
+{
+    return field_deserialize_or_impl<Key>(t, j, std::forward<D>(defaultValue), keyFormatter);
 }
 
 template <auto MemberPtr, class T, class J>
@@ -291,10 +279,25 @@ inline Expected<> field_deserialize(T& t, J&& j) noexcept
 }
 
 template <ll::FixedString Key, class T, class J>
-inline Expected<> required_field_deserialize(T& t, J&& j) noexcept
+inline Expected<> field_deserialize_required(T& t, J&& j) noexcept
     requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
-    return required_field_deserialize<Key>(t, std::forward<J>(j), builtin_key_formatter::default_key_formatter);
+    return field_deserialize_required<Key>(t, std::forward<J>(j), builtin_key_formatter::default_key_formatter);
+}
+
+template <ll::FixedString Key, class T, class D, class J>
+inline Expected<> field_deserialize_or(T& t, J&& j, D&& defaultValue) noexcept
+    requires(
+        !IsKeyFormatter<std::remove_cvref_t<D>>
+        && (!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
+    )
+{
+    return field_deserialize_or<Key>(
+        t,
+        std::forward<J>(j),
+        std::forward<D>(defaultValue),
+        builtin_key_formatter::default_key_formatter
+    );
 }
 
 template <auto MemberPtr, class T, class J>
@@ -308,8 +311,20 @@ inline Expected<> field_deserialize(T& t, J const& j) noexcept {
 }
 
 template <ll::FixedString Key, class T, class J>
-inline Expected<> required_field_deserialize(T& t, J const& j) noexcept {
+inline Expected<> field_deserialize_required(T& t, J const& j) noexcept {
     return field_deserialize_impl<Key, false>(t, j, builtin_key_formatter::default_key_formatter);
+}
+
+template <ll::FixedString Key, class T, class D, class J>
+inline Expected<> field_deserialize_or(T& t, J const& j, D&& defaultValue) noexcept
+    requires(!IsKeyFormatter<std::remove_cvref_t<D>>)
+{
+    return field_deserialize_or_impl<Key>(
+        t,
+        j,
+        std::forward<D>(defaultValue),
+        builtin_key_formatter::default_key_formatter
+    );
 }
 
 template <auto MemberPtr, class T, class J, IsKeyFormatter F>
@@ -330,7 +345,24 @@ template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
 inline Expected<> required_field(T& t, J&& j, F const& keyFormatter) noexcept
     requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
-    return required_field_deserialize<Key>(t, std::forward<J>(j), keyFormatter);
+    return field_deserialize_required<Key>(t, std::forward<J>(j), keyFormatter);
+}
+
+template <ll::FixedString Key, class T, class D, class J, IsKeyFormatter F>
+inline Expected<> default_field(T& t, J&& j, D&& defaultValue, F const& keyFormatter) noexcept
+    requires(
+        !IsKeyFormatter<std::remove_cvref_t<D>>
+        && (!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
+    )
+{
+    return field_deserialize_or<Key>(t, std::forward<J>(j), std::forward<D>(defaultValue), keyFormatter);
+}
+
+template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
+inline Expected<> default_field(T& t, J&& j, F const& keyFormatter) noexcept
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
+{
+    return field_deserialize_default_impl<Key>(t, std::forward<J>(j), keyFormatter);
 }
 
 template <auto MemberPtr, class T, class J>
@@ -354,6 +386,82 @@ inline Expected<> required_field(T& t, J&& j) noexcept
     return required_field<Key>(t, std::forward<J>(j), builtin_key_formatter::default_key_formatter);
 }
 
+template <ll::FixedString Key, class T, class D, class J>
+inline Expected<> default_field(T& t, J&& j, D&& defaultValue) noexcept
+    requires(
+        !IsKeyFormatter<std::remove_cvref_t<D>>
+        && (!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
+    )
+{
+    return default_field<Key>(
+        t,
+        std::forward<J>(j),
+        std::forward<D>(defaultValue),
+        builtin_key_formatter::default_key_formatter
+    );
+}
+
+template <ll::FixedString Key, class T, class J>
+inline Expected<> default_field(T& t, J&& j) noexcept
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
+{
+    return field_deserialize_default_impl<Key>(t, std::forward<J>(j), builtin_key_formatter::default_key_formatter);
+}
+
+template <auto MemberPtr, class T, class J, IsKeyFormatter F>
+inline Expected<> member(T& t, J const& j, F const& keyFormatter) noexcept {
+    return member_deserialize<MemberPtr>(t, j, keyFormatter);
+}
+
+template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
+inline Expected<> field(T& t, J const& j, F const& keyFormatter) noexcept {
+    return field_deserialize<Key>(t, j, keyFormatter);
+}
+
+template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
+inline Expected<> required_field(T& t, J const& j, F const& keyFormatter) noexcept {
+    return field_deserialize_required<Key>(t, j, keyFormatter);
+}
+
+template <ll::FixedString Key, class T, class D, class J, IsKeyFormatter F>
+inline Expected<> default_field(T& t, J const& j, D&& defaultValue, F const& keyFormatter) noexcept
+    requires(!IsKeyFormatter<std::remove_cvref_t<D>>)
+{
+    return field_deserialize_or<Key>(t, j, std::forward<D>(defaultValue), keyFormatter);
+}
+
+template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
+inline Expected<> default_field(T& t, J const& j, F const& keyFormatter) noexcept {
+    return field_deserialize_default_impl<Key>(t, j, keyFormatter);
+}
+
+template <auto MemberPtr, class T, class J>
+inline Expected<> member(T& t, J const& j) noexcept {
+    return member<MemberPtr>(t, j, builtin_key_formatter::default_key_formatter);
+}
+
+template <ll::FixedString Key, class T, class J>
+inline Expected<> field(T& t, J const& j) noexcept {
+    return field<Key>(t, j, builtin_key_formatter::default_key_formatter);
+}
+
+template <ll::FixedString Key, class T, class J>
+inline Expected<> required_field(T& t, J const& j) noexcept {
+    return required_field<Key>(t, j, builtin_key_formatter::default_key_formatter);
+}
+
+template <ll::FixedString Key, class T, class D, class J>
+inline Expected<> default_field(T& t, J const& j, D&& defaultValue) noexcept
+    requires(!IsKeyFormatter<std::remove_cvref_t<D>>)
+{
+    return default_field<Key>(t, j, std::forward<D>(defaultValue), builtin_key_formatter::default_key_formatter);
+}
+
+template <ll::FixedString Key, class T, class J>
+inline Expected<> default_field(T& t, J const& j) noexcept {
+    return field_deserialize_default_impl<Key>(t, j, builtin_key_formatter::default_key_formatter);
+}
+
 namespace {
 
 template <class T, class J, IsKeyFormatter F>
@@ -370,10 +478,35 @@ inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::Pri
     requires(detail::has_custom_deserializer_v<std::remove_cvref_t<T>, J, F>)
 {
     using RT = std::remove_cvref_t<T>;
+    using JT = std::remove_cvref_t<J>;
     if constexpr (detail::has_value_deserializer_v<RT, J, F>) {
-        return deserialize_with_value_specialization(t, std::forward<J>(j), keyFormatter);
+        decltype(auto) result = [&]() -> decltype(auto) {
+            if constexpr (requires { Serializer<RT, JT>::deserialize(std::forward<J>(j), keyFormatter); }) {
+                return Serializer<RT, JT>::deserialize(std::forward<J>(j), keyFormatter);
+            } else if constexpr (requires { Serializer<RT, JT>::deserialize(std::forward<J>(j)); }) {
+                return Serializer<RT, JT>::deserialize(std::forward<J>(j));
+            } else if constexpr (requires { Serializer<RT>::template deserialize<JT>(std::forward<J>(j), keyFormatter); }) {
+                return Serializer<RT>::template deserialize<JT>(std::forward<J>(j), keyFormatter);
+            } else {
+                return Serializer<RT>::template deserialize<JT>(std::forward<J>(j));
+            }
+        }();
+        using Result = std::remove_cvref_t<decltype(result)>;
+        if constexpr (concepts::IsLeviExpected<Result>) {
+            if (!result) {
+                return forwardError(result.error());
+            }
+            t = *std::forward<decltype(result)>(result);
+        } else {
+            t = std::forward<decltype(result)>(result);
+        }
+        return {};
     } else {
-        return deserialize_with_inplace_specialization(t, std::forward<J>(j), keyFormatter);
+        if constexpr (requires { Serializer<RT>::deserialize(t, std::forward<J>(j), keyFormatter); }) {
+            return Serializer<RT>::deserialize(t, std::forward<J>(j), keyFormatter);
+        } else {
+            return Serializer<RT>::deserialize(t, std::forward<J>(j));
+        }
     }
 }
 
@@ -523,8 +656,9 @@ inline Expected<> deserialize_impl(T& t, J&& j, F const&, meta::PriorityTag<5>)
     requires(std::same_as<std::remove_cvref_t<T>, std::string_view>)
 {
     if (!j.is_string()) return makeDeserStringTypeError();
-    if constexpr (std::is_lvalue_reference_v<J&&> && BorrowableStringSource<J>) {
-        t = borrow_string_view(std::as_const(j));
+    if constexpr (std::is_lvalue_reference_v<J&&> && concepts::BorrowableStringSource<J>) {
+        auto const& text = std::as_const(j).template get_ref<typename std::remove_cvref_t<J>::string_t const&>();
+        t                = std::string_view{text};
         return {};
     } else {
         return makeDeserStringViewLifetimeError();

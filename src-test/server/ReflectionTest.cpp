@@ -583,6 +583,50 @@ TEST(ReflectionTest, FixedKeyHelpersSerializeDeserializeAndHandleOptionalMissing
     expectErrorMessageContains(missingPlainResult.error(), R"(missing required field "required" when deserializing)");
 }
 
+TEST(ReflectionTest, FixedKeyHelpersCanUseDefaultValueWhenFieldIsMissing) {
+    auto json = nlohmann::json::parse(R"({
+        "plain": 42
+    })");
+
+    int existingValue = 0;
+    auto existingResult = ll::reflection::default_field<"plain">(existingValue, json, 7);
+    ASSERT_TRUE(existingResult.has_value()) << existingResult.error().message();
+    EXPECT_EQ(existingValue, 42);
+
+    int missingValue = 0;
+    auto missingResult = ll::reflection::default_field<"missing">(missingValue, json, 99);
+    ASSERT_TRUE(missingResult.has_value()) << missingResult.error().message();
+    EXPECT_EQ(missingValue, 99);
+
+    std::optional<int> missingOptional = 1;
+    auto missingOptionalResult = ll::reflection::default_field<"maybe">(missingOptional, json, std::optional<int>{12});
+    ASSERT_TRUE(missingOptionalResult.has_value()) << missingOptionalResult.error().message();
+    ASSERT_TRUE(missingOptional.has_value());
+    EXPECT_EQ(*missingOptional, 12);
+}
+
+TEST(ReflectionTest, FixedKeyHelpersCanKeepExistingDefaultWhenFieldIsMissing) {
+    auto json = nlohmann::json::parse(R"({
+        "plain": 42
+    })");
+
+    int existingValue = 7;
+    auto existingResult = ll::reflection::default_field<"plain">(existingValue, json);
+    ASSERT_TRUE(existingResult.has_value()) << existingResult.error().message();
+    EXPECT_EQ(existingValue, 42);
+
+    int missingValue = 99;
+    auto missingResult = ll::reflection::default_field<"missing">(missingValue, json);
+    ASSERT_TRUE(missingResult.has_value()) << missingResult.error().message();
+    EXPECT_EQ(missingValue, 99);
+
+    std::optional<int> missingOptional = 12;
+    auto missingOptionalResult = ll::reflection::default_field<"maybe">(missingOptional, json);
+    ASSERT_TRUE(missingOptionalResult.has_value()) << missingOptionalResult.error().message();
+    ASSERT_TRUE(missingOptional.has_value());
+    EXPECT_EQ(*missingOptional, 12);
+}
+
 TEST(ReflectionTest, ValueSerializerSpecializationSupportsSerializeAndDeserialize) {
     TestVersion value;
     value.mMajor = 1;

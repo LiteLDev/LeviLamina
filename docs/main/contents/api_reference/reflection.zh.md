@@ -213,6 +213,8 @@ field_serialize<"name">(outJson, value, formatter);
 field<"name">(value, inJson, formatter);
 field_deserialize<"name">(value, inJson, formatter);
 required_field<"name">(value, inJson, formatter);
+default_field<"name">(value, inJson, formatter);
+default_field<"name">(value, inJson, defaultValue, formatter);
 ```
 
 适合：
@@ -226,6 +228,10 @@ required_field<"name">(value, inJson, formatter);
 `field_deserialize<"...">` 在目标类型是 `std::optional<T>` 且字段缺失时，会成功并把目标重置为 `std::nullopt`。
 
 `required_field<"...">` 则表示这个字段必须存在，即使目标类型本身是 `std::optional<T>`。
+
+`default_field<"...">` 如果不传 `defaultValue`，则在字段缺失时保留目标对象当前已有的值不变。
+
+`default_field<"...">` 则表示字段缺失时直接使用提供的默认值，并且不会报缺失字段错误。
 
 这特别适合条件字段场景，例如：
 
