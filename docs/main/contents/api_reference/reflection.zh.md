@@ -198,6 +198,9 @@ struct UuidKeyFormatter {
 member<&Type::member>(object, outJson, formatter);
 member_serialize<&Type::member>(outJson, object, formatter);
 member_deserialize<&Type::member>(object, inJson, formatter);
+required_member<&Type::member>(object, inJson, formatter);
+default_member<&Type::member>(object, inJson, formatter);
+default_member<&Type::member>(object, inJson, defaultValue, formatter);
 ```
 
 适合字段名就是成员名的情况。
@@ -232,6 +235,13 @@ default_field<"name">(value, inJson, defaultValue, formatter);
 `default_field<"...">` 如果不传 `defaultValue`，则在字段缺失时保留目标对象当前已有的值不变。
 
 `default_field<"...">` 则表示字段缺失时直接使用提供的默认值，并且不会报缺失字段错误。
+
+基于成员指针的版本语义完全一致：
+
+- `member<&Type::member>` 在目标成员类型为 `std::optional<T>` 且字段缺失时，会将该成员重置为 `std::nullopt`
+- `required_member<&Type::member>` 会始终要求这个成员对应的字段存在
+- `default_member<&Type::member>` 会在字段缺失时保留成员当前已有的值
+- `default_member<&Type::member>(..., defaultValue)` 会在字段缺失时写入提供的默认值
 
 这特别适合条件字段场景，例如：
 
