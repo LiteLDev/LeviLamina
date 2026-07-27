@@ -2,11 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/threading/Scheduler.h"
-#include "mc/deps/scripting/script_engine/DependencyLocator.h"
+#include "mc/deps/script_core/script_engine/scripting/DependencyLocator.h"
 #include "mc/scripting/ScriptFormPromiseTracker.h"
 #include "mc/scripting/ScriptPluginManager.h"
 #include "mc/scripting/ScriptPluginResult.h"
-#include "mc/scripting/ScriptPrintLogger.h"
 #include "mc/scripting/ScriptSettings.h"
 #include "mc/scripting/ScriptTickListener.h"
 #include "mc/scripting/debugger/ScriptDebugger.h"
