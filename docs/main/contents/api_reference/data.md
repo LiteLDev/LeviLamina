@@ -30,6 +30,12 @@ A persistent key-value store backed by LevelDB.
 namespace ll::data {
 class KeyValueDB {
 public:
+    class WriteBatch {
+    public:
+        WriteBatch& set(std::string_view key, std::string_view val);
+        WriteBatch& del(std::string_view key);
+    };
+
     explicit KeyValueDB(std::filesystem::path const& path);
     KeyValueDB(std::filesystem::path const& path, bool createIfMiss, bool fixIfError, int bloomFilterBit);
 
@@ -38,6 +44,7 @@ public:
     bool empty() const;
     bool set(std::string_view key, std::string_view val);
     bool del(std::string_view key);
+    bool write(WriteBatch const& batch);
 
     coro::Generator<std::pair<std::string_view, std::string_view>> iter() const;
 };
@@ -63,6 +70,11 @@ void useDatabase(ll::mod::Mod& mod) {
     if (db.has("player_score")) {
         db.del("player_score");
     }
+
+    // Apply several updates atomically
+    ll::data::KeyValueDB::WriteBatch batch;
+    batch.set("player_score", "125").set("last_reward", "daily").del("pending_reward");
+    db.write(batch);
 
     // Iterate all entries
     for (auto [key, value] : db.iter()) {

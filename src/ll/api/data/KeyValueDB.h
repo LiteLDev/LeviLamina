@@ -19,6 +19,31 @@ private:
     std::unique_ptr<KeyValueDBImpl> impl;
 
 public:
+    class WriteBatch {
+        friend class KeyValueDB;
+
+        class WriteBatchImpl;
+
+        std::unique_ptr<WriteBatchImpl> impl;
+
+    public:
+        LLNDAPI WriteBatch();
+
+        WriteBatch(WriteBatch const&) noexcept = delete;
+
+        WriteBatch& operator=(WriteBatch const&) noexcept = delete;
+
+        LLNDAPI WriteBatch(WriteBatch&&) noexcept;
+
+        LLAPI WriteBatch& operator=(WriteBatch&&) noexcept;
+
+        LLAPI ~WriteBatch();
+
+        LLAPI WriteBatch& set(std::string_view key, std::string_view val);
+
+        LLAPI WriteBatch& del(std::string_view key);
+    };
+
     LLNDAPI explicit KeyValueDB(std::filesystem::path const& path);
 
     LLNDAPI explicit KeyValueDB(
@@ -47,6 +72,8 @@ public:
     LLAPI bool set(std::string_view key, std::string_view val);
 
     LLAPI bool del(std::string_view key);
+
+    LLAPI bool write(WriteBatch const& batch);
 
     LLNDAPI coro::Generator<std::pair<std::string_view, std::string_view>> iter() const;
 };

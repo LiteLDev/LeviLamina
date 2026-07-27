@@ -13,16 +13,24 @@
 #include "leveldb/db.h"
 #include "leveldb/filter_policy.h"
 #include "leveldb/iterator.h"
+#include "leveldb/write_batch.h"
 
 #include "ll/api/utils/StringUtils.h"
 
 namespace ll::data {
+class KeyValueDB::WriteBatch::WriteBatchImpl {
+public:
+    leveldb::WriteBatch batch;
+};
+
 class KeyValueDB::KeyValueDBImpl {
 public:
-    std::unique_ptr<leveldb::DB> db;
-    leveldb::ReadOptions         readOptions;
-    leveldb::WriteOptions        writeOptions;
-    leveldb::Options             options;
+    // Declared before db so reverse destruction keeps the policy alive until db closes.
+    std::unique_ptr<leveldb::FilterPolicy const> filterPolicy;
+    std::unique_ptr<leveldb::DB>                 db;
+    leveldb::ReadOptions                         readOptions;
+    leveldb::WriteOptions                        writeOptions;
+    leveldb::Options                             options;
 
     KeyValueDBImpl(std::string const& path, bool createIfMiss, bool fixIfError, int bloomFilterBit) {
         readOptions               = leveldb::ReadOptions();
@@ -30,10 +38,11 @@ public:
         options                   = leveldb::Options();
         options.create_if_missing = createIfMiss;
         if (bloomFilterBit) {
-            options.filter_policy = leveldb::NewBloomFilterPolicy(bloomFilterBit);
+            filterPolicy.reset(leveldb::NewBloomFilterPolicy(bloomFilterBit));
+            options.filter_policy = filterPolicy.get();
         }
         auto status = leveldb::DB::Open(options, path, std::out_ptr(db));
-        if (fixIfError && !status.ok()) {
+        if (fixIfError && status.IsCorruption()) {
             status = leveldb::RepairDB(path, options);
             if (status.ok()) {
                 status = leveldb::DB::Open(options, path, std::out_ptr(db));
@@ -43,9 +52,25 @@ public:
             throw std::runtime_error(status.ToString());
         }
     }
-
-    ~KeyValueDBImpl() { delete options.filter_policy; }
 };
+
+KeyValueDB::WriteBatch::WriteBatch() : impl(std::make_unique<WriteBatchImpl>()) {}
+
+KeyValueDB::WriteBatch::WriteBatch(WriteBatch&&) noexcept = default;
+
+KeyValueDB::WriteBatch& KeyValueDB::WriteBatch::operator=(WriteBatch&&) noexcept = default;
+
+KeyValueDB::WriteBatch::~WriteBatch() = default;
+
+KeyValueDB::WriteBatch& KeyValueDB::WriteBatch::set(std::string_view key, std::string_view val) {
+    impl->batch.Put(leveldb::Slice(key.data(), key.size()), leveldb::Slice(val.data(), val.size()));
+    return *this;
+}
+
+KeyValueDB::WriteBatch& KeyValueDB::WriteBatch::del(std::string_view key) {
+    impl->batch.Delete(leveldb::Slice(key.data(), key.size()));
+    return *this;
+}
 
 KeyValueDB::KeyValueDB(std::filesystem::path const& path, bool createIfMiss, bool fixIfError, int bloomFilterBit) {
     if (createIfMiss) {
@@ -60,7 +85,7 @@ KeyValueDB::KeyValueDB(std::filesystem::path const& path, bool createIfMiss, boo
     );
 }
 
-KeyValueDB::KeyValueDB(std::filesystem::path const& path) : KeyValueDB(path, true, true, 0) {}
+KeyValueDB::KeyValueDB(std::filesystem::path const& path) : KeyValueDB(path, true, true, 10) {}
 
 KeyValueDB::KeyValueDB(KeyValueDB&&) noexcept = default;
 
@@ -102,6 +127,8 @@ bool KeyValueDB::empty() const {
 bool KeyValueDB::del(std::string_view key) {
     return impl->db->Delete(impl->writeOptions, leveldb::Slice(key.data(), key.size())).ok();
 }
+
+bool KeyValueDB::write(WriteBatch const& batch) { return impl->db->Write(impl->writeOptions, &batch.impl->batch).ok(); }
 
 coro::Generator<std::pair<std::string_view, std::string_view>> KeyValueDB::iter() const {
     std::unique_ptr<leveldb::Iterator> it(impl->db->NewIterator(impl->readOptions));
