@@ -2,10 +2,10 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
-#include "mc/network/ServerNetworkHandler.h"
+#include "mc/deps/nbt/CompoundTag.h"
+#include "mc/server/PermissionsFile.h"
 #include "mc/world/level/Level.h"
 
-#include "mc/deps/nbt/CompoundTag.h"
 
 namespace ll::event::inline player {
 
@@ -31,8 +31,8 @@ PlayerPermissionLevel& PlayerChangePermEvent::newPerm() const { return mMewPerm;
 LL_TYPE_INSTANCE_HOOK(
     PlayerChangePermEventHook,
     HookPriority::Normal,
-    ServerNetworkHandler,
-    &ServerNetworkHandler::persistPlayerPermissionsToDisk,
+    PermissionsFile,
+    &PermissionsFile::persistPlayerPermissionsToDisk,
     void,
     UserEntityIdentifierComponent const& userIdentifier,
     PlayerPermissionLevel                permission
