@@ -55,11 +55,19 @@ public:
     template <typename... Args>
     constexpr explicit I18nStringError(fmt::format_string<Args...> fmt, Args&&... args)
     : mI18n(std::addressof(ll::i18n::getInstance())),
-      mKey(std::string{fmt.get().begin(), fmt.get().end()}),
-      mArgs() {
+      mKey(std::string{fmt.get().begin(), fmt.get().end()}) {
         if constexpr (sizeof...(Args) > 0) {
-            mArgs.reserve(sizeof...(Args), 0);
-            (mArgs.push_back(std::forward<Args>(args)), ...);
+            // clang-format off
+            mArgs.reserve(sizeof...(Args), fmt::detail::count_named_args<Args...>());
+            ([&] {
+                if constexpr (fmt::detail::is_named_arg<std::decay_t<Args>>()) {
+                    // from static_named_arg to named_arg
+                    mArgs.push_back(fmt::arg(std::forward<Args>(args).name, std::forward<Args>(args).value));
+                } else {
+                    mArgs.push_back(std::forward<Args>(args));
+                }
+            }(), ...);
+            // clang-format on
         }
     }
 
