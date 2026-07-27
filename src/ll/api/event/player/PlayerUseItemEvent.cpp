@@ -3,7 +3,7 @@
 #include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
-#include "mc/world/inventory/transaction/PlayerTransactionSubject.h"
+#include "mc/world/gamemode/GameMode.h"
 
 #include "mc/deps/nbt/CompoundTag.h"
 
@@ -19,12 +19,12 @@ ItemStack& PlayerUseItemEvent::item() const { return mItem; }
 LL_TYPE_INSTANCE_HOOK(
     PlayerUseItemEventHook,
     HookPriority::Normal,
-    PlayerTransactionSubject,
-    &PlayerTransactionSubject::$baseUseItem,
+    GameMode,
+    &GameMode::baseUseItem,
     bool,
-    ItemStack& item
+    ItemStack const& item
 ) {
-    auto ev = PlayerUseItemEvent(mUnk18866d.as<Player&>(), item);
+    auto ev = PlayerUseItemEvent(mPlayer, const_cast<ItemStack&>(item));
     EventBus::getInstance().publish(ev);
     if (ev.isCancelled()) {
         return false;
