@@ -3,8 +3,9 @@
 #include "ll/api/memory/Hook.h"
 
 #include "mc/deps/nbt/CompoundTag.h"
-#include "mc/world/gamemode/GameMode.h"
+#include "mc/scripting/event_handlers/ScriptBlockGameplayHandler.h"
 #include "mc/world/level/block/Block.h"
+
 
 namespace ll::event::inline player {
 
@@ -18,19 +19,22 @@ BlockPos const& PlayerDestroyBlockEvent::pos() const { return mPos; }
 LL_TYPE_INSTANCE_HOOK(
     PlayerDestroyBlockEventHook,
     HookPriority::Normal,
-    GameMode,
-    &GameMode::_sendTryDestroyBlockEvent,
-    ::std::optional<::ItemStack>,
-    ::Block const&    block,
-    ::BlockPos const& pos,
-    ::ItemStack       itemBeforeEvent
+    ScriptBlockGameplayHandler,
+    &ScriptBlockGameplayHandler::$handleEvent,
+    GameplayHandlerResult<::CoordinatorResult>,
+    BlockTryDestroyByPlayerEvent& eventData
 ) {
-    auto event = PlayerDestroyBlockEvent{mPlayer, pos};
+    auto actor = eventData.mPlayer->tryUnwrap();
+    if (!actor) {
+        return origin(eventData);
+    }
+    Player& player = static_cast<Player&>(actor.value());
+    auto    event  = PlayerDestroyBlockEvent{player, eventData.mPos};
     EventBus::getInstance().publish(event);
     if (event.isCancelled()) {
-        return std::nullopt;
+        return {HandlerResult::BypassListeners, CoordinatorResult::Cancel};
     }
-    return origin(block, pos, itemBeforeEvent);
+    return origin(eventData);
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory();
