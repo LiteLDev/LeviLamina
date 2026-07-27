@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.20.5] - 2026-07-27
+
+### Fixed
+
+- Fixed security shutdown @zimuya4153
+- Fixed hash of ActorUniqueID
+- Fixed TypeWrapper.h
+
 ## [26.20.4] - 2026-07-14
 
 ### Changed
@@ -1649,7 +1657,8 @@ For lip and tooth-hub test only.
 [#1807]: https://github.com/LiteLDev/LeviLamina/issues/1807
 [#1815]: https://github.com/LiteLDev/LeviLamina/issues/1815
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.4...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.5...HEAD
+[26.20.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.4...v26.20.5
 [26.20.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.3...v26.20.4
 [26.20.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.2...v26.20.3
 [26.20.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.1...v26.20.2
