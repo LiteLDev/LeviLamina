@@ -2,6 +2,7 @@
 
 #include "ll/api/service/Bedrock.h"
 
+#include "mc/deps/certificates/WebToken.h"
 #include "mc/deps/ecs/gamerefs_entity/GameRefsEntity.h"
 #include "mc/deps/vanilla_components/PlayerComponent.h"
 #include "mc/network/ConnectionRequest.h"
@@ -53,7 +54,11 @@ mce::UUID const& Player::getUuid() const { return getUserEntityIdentifier().mCli
 
 std::string Player::getIPAndPort() const { return getNetworkIdentifier().getIPAndPort(); }
 
-std::string Player::getLocaleCode() const { return getConnectionRequest()->getLanguageCode(); }
+std::string Player::getLocaleCode() const {
+    return getConnectionRequest().and_then([](auto& request) {
+        return std::as_const(request.mRawToken->mDataInfo)["LanguageCode"].asString({});
+    });
+}
 
 std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
     return ll::service::getNetworkSystem()
