@@ -957,8 +957,6 @@ public:
     MCAPI bool isItemOnCooldown(::HashedString const& category) const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool isOperator() const;
-
     MCAPI bool isScoping() const;
 #endif
 

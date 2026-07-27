@@ -65,8 +65,6 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    HitResult& operator=(HitResult const&);
-    HitResult(HitResult const&);
     HitResult();
 
 #endif
