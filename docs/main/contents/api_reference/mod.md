@@ -64,8 +64,8 @@ Mod metadata loaded from `manifest.json`.
 ```cpp
 namespace ll::mod {
 struct Dependency {
-    std::string                  name;
-    std::optional<data::Version> version;
+    std::string                             name;
+    std::optional<data::VersionRequirement> version;
 };
 
 struct Manifest {
@@ -85,6 +85,40 @@ struct Manifest {
 };
 }
 ```
+
+Dependency entries keep the existing manifest JSON shape:
+
+```json
+{
+  "dependencies": [
+    { "name": "RequiredMod", "version": "^1.2.3" }
+  ],
+  "optionalDependencies": [
+    { "name": "OptionalIntegration", "version": ">=2.0.0 <3.0.0" }
+  ],
+  "loadBefore": [
+    { "name": "LateInitializer" }
+  ]
+}
+```
+
+Omitting a dependency's `version` accepts any declared version, including an unversioned target. If a range is present,
+the target must declare a matching version. See [Data](data.md#versionrequirement) for the complete range syntax. A bare
+full version such as `1.2.3` temporarily keeps the legacy meaning `>=1.2.3 <2.0.0` and emits a migration warning; use
+`=1.2.3` for an exact match.
+
+### Dependency Semantics
+
+| Manifest field | Load ordering | Load failure | Disable and unload protection |
+|----------------|---------------|--------------|-------------------------------|
+| `dependencies` | Dependency first | Blocks the dependent | Yes |
+| `optionalDependencies` | Matching available dependency first | Does not block the consumer | Yes, when bound at load time |
+| `loadBefore` | Declaring mod first | Does not create a dependency | No |
+
+`loadBefore` is only a startup and bulk-operation ordering constraint. It never prevents either mod from being disabled
+or unloaded independently. Dynamic loading does not reorder already loaded mods; if a new mod asks to load before an
+already loaded target, LeviLamina logs a warning and continues. Optional dependencies are bound only when their consumer
+loads, so loading an optional provider later does not retroactively add lifecycle protection.
 
 ## Usage
 

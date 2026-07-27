@@ -13,6 +13,7 @@ The Data module provides utility data structures: a LevelDB-based key-value stor
 | `ll/api/data/KeyValueDB.h` | LevelDB key-value database |
 | `ll/api/data/DependencyGraph.h` | Dependency resolution graph |
 | `ll/api/data/Version.h` | Semantic version type |
+| `ll/api/data/VersionRequirement.h` | Semantic version range |
 | `ll/api/data/AnyFunction.h` | Type-erased function container |
 | `ll/api/data/CancellableCallback.h` | Cancellable async callback |
 | `ll/api/data/ConcurrentPriorityQueue.h` | Thread-safe priority queue |
@@ -72,15 +73,48 @@ void useDatabase(ll::mod::Mod& mod) {
 
 ### Version
 
-Semantic version type with comparison operators.
+`Version` parses strict `major.minor.patch` semantic versions. Prerelease identifiers affect precedence, while build
+metadata does not. Use `isIdenticalTo()` when build metadata is part of the identity you need to compare.
 
 ```cpp
 #include "ll/api/data/Version.h"
 
-ll::data::Version v{1, 2, 3};
-ll::data::Version v2{1, 3, 0};
-bool newer = v2 > v; // true
+ll::data::Version current{"1.3.0-beta.1+windows.5"};
+ll::data::Version release{"1.3.0"};
+
+bool newer = release > current; // true
+bool samePrecedence = ll::data::Version{"1.3.0+first"} == ll::data::Version{"1.3.0+second"}; // true
+bool sameIdentity = ll::data::Version{"1.3.0+first"}.isIdenticalTo(ll::data::Version{"1.3.0+second"}); // false
 ```
+
+### VersionRequirement
+
+`VersionRequirement` is a normalized semantic version range. Comparators separated by whitespace form an AND group;
+`||` separates OR groups. Comparison operators are `=`, `>`, `>=`, `<`, and `<=`.
+
+| Syntax | Meaning |
+|--------|---------|
+| `=1.2.3` | Exactly version `1.2.3` |
+| `>=1.2.0 <2.0.0` | At least `1.2.0` and below `2.0.0` |
+| `^1.2.3` | Compatible updates below `2.0.0` |
+| `~1.2.3` | Patch updates below `1.3.0` |
+| `1`, `1.2`, `1.2.x` | Partial or wildcard ranges |
+| `*`, `x`, `X` | Any non-prerelease version |
+| `1.2.3 - 2.0.0` | Inclusive hyphen range |
+| `^1.2.3 || =2.0.0` | Either alternative |
+
+```cpp
+#include "ll/api/data/VersionRequirement.h"
+
+ll::data::VersionRequirement supported{"^1.2.3 || =2.0.0"};
+bool matches = supported.matches(ll::data::Version{"1.8.0"}); // true
+```
+
+A normal range does not match a prerelease unexpectedly. A comparator in the same AND group must explicitly mention a
+prerelease with the candidate's `major.minor.patch` core.
+
+For compatibility, a bare full version such as `1.2.3` currently means `>=1.2.3 <2.0.0`. This form emits a migration
+warning when read from a mod manifest. Use `=1.2.3` for an exact requirement or write the intended range explicitly.
 
 ## Related
 

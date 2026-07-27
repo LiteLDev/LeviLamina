@@ -8,6 +8,7 @@
 #include "ll/core/Config.h"
 
 #include "ll/api/service/Bedrock.h"
+#include "ll/api/utils/StringUtils.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/mod/ModRegistrar.h"
 

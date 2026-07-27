@@ -1,9 +1,12 @@
 #include "gtest/gtest.h"
 
+#include <chrono>
+#include <cstdlib>
 #include <memory>
 #include <optional>
 #include <string>
 #include <string_view>
+#include <thread>
 
 #include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/thread/ServerThreadExecutor.h"
@@ -37,6 +40,35 @@ static bool isDebuggerAttached() {
 #else
     return false;
 #endif
+}
+
+static bool isDebuggerExpected() {
+#if defined(_WIN32)
+    char value[2]{};
+    return GetEnvironmentVariableA("LL_TEST_WAIT_FOR_DEBUGGER", value, static_cast<DWORD>(sizeof(value))) == 1
+        && value[0] == '1';
+#else
+    auto expected = std::getenv("LL_TEST_WAIT_FOR_DEBUGGER");
+    return expected != nullptr && std::string_view{expected} == "1";
+#endif
+}
+
+static bool waitForExpectedDebugger() {
+    if (isDebuggerAttached()) {
+        return true;
+    }
+    if (!isDebuggerExpected()) {
+        return false;
+    }
+
+    auto deadline = std::chrono::steady_clock::now() + std::chrono::seconds{30};
+    while (std::chrono::steady_clock::now() < deadline) {
+        std::this_thread::sleep_for(std::chrono::milliseconds{50});
+        if (isDebuggerAttached()) {
+            return true;
+        }
+    }
+    return false;
 }
 
 class LLTestEventListener final : public testing::TestEventListener {
@@ -205,7 +237,7 @@ static bool gmain = [] {
         listeners.Append(new LLTestEventListener());
 
         std::optional<ll::test::coverage::CoverageCatalog> catalog;
-        if (isDebuggerAttached()) {
+        if (waitForExpectedDebugger()) {
             logger.warn("Debugger detected, coverage disabled");
         } else if (CrashLogger::isExternalRunning()) {
             logger.warn("External CrashLogger running, coverage disabled");
@@ -231,6 +263,7 @@ static bool gmain = [] {
 
         [[maybe_unused]] auto result = RUN_ALL_TESTS();
         logger.debug("RUN_ALL_TESTS() returned {}", result);
+        logger.flush();
 
         if (catalog && catalog->isSampling()) {
             catalog->stopSampling();

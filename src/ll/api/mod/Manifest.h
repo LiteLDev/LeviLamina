@@ -5,12 +5,13 @@
 
 #include "ll/api/base/Containers.h"
 #include "ll/api/data/Version.h"
+#include "ll/api/data/VersionRequirement.h"
 #include "ll/api/utils/HashUtils.h"
 
 namespace ll::mod {
 struct Dependency {
-    std::string                  name;
-    std::optional<data::Version> version;
+    std::string                             name;
+    std::optional<data::VersionRequirement> version;
 
     [[nodiscard]] constexpr bool operator==(Dependency const& other) const {
         return name == other.name && version == other.version;

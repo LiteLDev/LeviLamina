@@ -5,6 +5,7 @@
 #include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/service/GamingStatus.h"
 #include "ll/api/service/ServerInfo.h"
+#include "ll/api/utils/StringUtils.h"
 
 #include "pl/Config.h"
 

@@ -64,8 +64,8 @@ std::filesystem::path const& getModsRoot();
 ```cpp
 namespace ll::mod {
 struct Dependency {
-    std::string                  name;
-    std::optional<data::Version> version;
+    std::string                             name;
+    std::optional<data::VersionRequirement> version;
 };
 
 struct Manifest {
@@ -85,6 +85,38 @@ struct Manifest {
 };
 }
 ```
+
+依赖项沿用现有的 manifest JSON 结构：
+
+```json
+{
+  "dependencies": [
+    { "name": "RequiredMod", "version": "^1.2.3" }
+  ],
+  "optionalDependencies": [
+    { "name": "OptionalIntegration", "version": ">=2.0.0 <3.0.0" }
+  ],
+  "loadBefore": [
+    { "name": "LateInitializer" }
+  ]
+}
+```
+
+依赖项省略 `version` 时可匹配任意版本，也可匹配未声明版本的目标；一旦写出范围，目标必须声明匹配的版本。
+完整语法见 [Data（数据结构）](data.zh.md#versionrequirement)。裸完整版本 `1.2.3` 暂时保留旧语义
+`>=1.2.3 <2.0.0`，并会输出迁移警告；精确匹配请使用 `=1.2.3`。
+
+### 依赖语义
+
+| Manifest 字段 | 加载顺序 | 依赖加载失败 | disable/unload 保护 |
+|---------------|----------|--------------|---------------------|
+| `dependencies` | 依赖先加载 | 阻止依赖方加载 | 有 |
+| `optionalDependencies` | 可用且版本匹配的依赖先加载 | 不阻止使用方加载 | 加载时成功绑定后有 |
+| `loadBefore` | 声明方先加载 | 不建立依赖关系 | 无 |
+
+`loadBefore` 只约束启动加载和批量操作顺序，绝不会阻止任一方单独 disable 或 unload。动态加载不会重排已经加载的
+mod；若新 mod 要求在已加载目标之前加载，LeviLamina 会记录警告并继续。可选依赖只在使用方加载时绑定，因此之后
+才动态加载的可选依赖提供方不会被追溯加入生命周期保护。
 
 ## 使用方法
 

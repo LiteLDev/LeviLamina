@@ -3,6 +3,7 @@
 #include <execution>
 
 #include "ll/api/base/Containers.h"
+#include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/LeviLamina.h"
 
