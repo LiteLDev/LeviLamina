@@ -96,7 +96,7 @@ bool KeyValueDB::has(std::string_view key) const {
 bool KeyValueDB::empty() const {
     std::unique_ptr<leveldb::Iterator> it(impl->db->NewIterator(impl->readOptions));
     it->SeekToFirst();
-    return it->Valid();
+    return !it->Valid();
 }
 
 bool KeyValueDB::del(std::string_view key) {
