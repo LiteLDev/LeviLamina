@@ -3,8 +3,9 @@
 #include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
-#include "mc/world/gamemode/GameMode.h"
 #include "mc/world/gamemode/InteractionResult.h"
+#include "mc/world/gamemode/SurvivalMode.h"
+
 
 #include "mc/deps/nbt/CompoundTag.h"
 
@@ -27,8 +28,8 @@ optional_ref<Block const> PlayerInteractBlockEvent::block() const { return mBloc
 LL_TYPE_INSTANCE_HOOK(
     PlayerInteractBlockEventHook,
     HookPriority::Normal,
-    GameMode,
-    &GameMode::$useItemOn,
+    SurvivalMode,
+    &SurvivalMode::$useItemOn,
     InteractionResult,
     ItemStack&      item,
     BlockPos const& blockPos,

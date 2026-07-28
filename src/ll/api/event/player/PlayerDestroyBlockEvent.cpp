@@ -28,8 +28,8 @@ LL_TYPE_INSTANCE_HOOK(
     if (!actor) {
         return origin(eventData);
     }
-    Player& player = static_cast<Player&>(actor.value());
-    auto    event  = PlayerDestroyBlockEvent{player, eventData.mPos};
+    auto& player = static_cast<Player&>(actor.value());
+    auto  event  = PlayerDestroyBlockEvent{player, eventData.mPos};
     EventBus::getInstance().publish(event);
     if (event.isCancelled()) {
         return {HandlerResult::BypassListeners, CoordinatorResult::Cancel};
