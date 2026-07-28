@@ -24,6 +24,9 @@ public:
     // NOLINTEND
 
 public:
+    ModalFormRequestPacket(uint formId, std::string const& formJSON) : PayloadPacket(formId, formJSON) {}
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;

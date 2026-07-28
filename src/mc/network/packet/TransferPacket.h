@@ -25,7 +25,8 @@ public:
 
 public:
     TransferPacket(std::string const& dest, ushort port, bool reloadWorld = false)
-    : PayloadPacket(dest, port, reloadWorld) {}
+    : PayloadPacket(dest, port, reloadWorld),
+      mSerializationMode(SerializationMode::SideBySideLogOnMismatch) {}
 
 public:
     // prevent constructor by default
