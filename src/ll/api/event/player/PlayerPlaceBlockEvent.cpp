@@ -6,8 +6,8 @@
 
 #include "mc/deps/nbt/CompoundTag.h"
 #include "mc/scripting/event_handlers/ScriptBlockGameplayHandler.h"
+#include "mc/world/gamemode/GameMode.h"
 #include "mc/world/gamemode/InteractionResult.h"
-#include "mc/world/gamemode/SurvivalMode.h"
 #include "mc/world/level/BlockSource.h"
 
 
@@ -34,8 +34,8 @@ static thread_local bool isUsingItem = false;
 LL_TYPE_INSTANCE_HOOK(
     PlayerPlacingBlockEventCallerHook,
     HookPriority::High,
-    SurvivalMode,
-    &SurvivalMode::$useItemOn,
+    GameMode,
+    &GameMode::$useItemOn,
     InteractionResult,
     ItemStack&      item,
     BlockPos const& blockPos,

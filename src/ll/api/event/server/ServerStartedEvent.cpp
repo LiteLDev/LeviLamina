@@ -15,12 +15,11 @@ void ServerStartedEvent::serialize(CompoundTag& nbt) const {
 
 ServerInstance& ServerStartedEvent::server() const { return mInstance; }
 
-// TODO: check if this work properly
 LL_TYPE_INSTANCE_HOOK(
     ServerStartedEventHook,
     ll::memory::HookPriority::Low,
-    ServerInstanceEventListener,
-    &ServerInstanceEventListener::$onServerThreadStarted,
+    ServerScriptManager,
+    &ServerScriptManager::$onServerThreadStarted,
     EventResult,
     ::ServerInstance& ins
 ) {
