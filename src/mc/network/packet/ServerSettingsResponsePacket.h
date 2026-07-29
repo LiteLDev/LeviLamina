@@ -23,7 +23,9 @@ public:
     ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 public:
-    ServerSettingsResponsePacket(uint formId, ::std::string const& formJSON) : PayloadPacket(formId, formJSON) {}
+    ServerSettingsResponsePacket(uint formId, ::std::string const& formJSON)
+    : PayloadPacket(formId, formJSON),
+      mSerializationMode(SerializationMode::SideBySideLogOnMismatch) {}
 
 public:
     // virtual functions

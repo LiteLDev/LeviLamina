@@ -24,10 +24,17 @@ public:
     // NOLINTEND
 
 public:
-    StopSoundPacket& operator=(StopSoundPacket const&);
-    StopSoundPacket(StopSoundPacket const&);
+    StopSoundPacket& operator=(StopSoundPacket const& rhs) {
+        if (this != &rhs) {
+            PayloadPacket::operator=(rhs);
+            mSerializationMode = rhs.mSerializationMode;
+        }
+        return *this;
+    }
+    StopSoundPacket(StopSoundPacket const& rhs) : PayloadPacket(rhs) { mSerializationMode = rhs.mSerializationMode; }
     StopSoundPacket(std::string const& name, bool stopAll = false, bool stopMusicLegacy = false)
-    : PayloadPacket(name, stopAll, stopMusicLegacy) {}
+    : PayloadPacket(name, stopAll, stopMusicLegacy),
+      mSerializationMode(SerializationMode::SideBySideLogOnMismatch) {}
 
 public:
     // virtual functions

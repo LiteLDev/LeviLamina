@@ -25,7 +25,9 @@ public:
 
 public:
     template <typename... Args>
-    SetTitlePacket(Args&&... args) : PayloadPacket(std::forward<Args>(args)...) {}
+    SetTitlePacket(Args&&... args)
+    : PayloadPacket(std::forward<Args>(args)...),
+      mSerializationMode(SerializationMode::SideBySideLogOnMismatch) {}
 
 public:
     // virtual functions

@@ -24,6 +24,12 @@ public:
     // NOLINTEND
 
 public:
+    template <typename... Args>
+    MobEquipmentPacket(Args&&... args)
+    : PayloadPacket(std::forward<Args>(args)...),
+      mSerializationMode(SerializationMode::CerealOnly) {}
+
+public:
     // prevent constructor by default
     MobEquipmentPacket& operator=(MobEquipmentPacket const&);
     MobEquipmentPacket(MobEquipmentPacket const&);

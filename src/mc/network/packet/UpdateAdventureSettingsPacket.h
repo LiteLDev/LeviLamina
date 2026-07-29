@@ -24,7 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    [[nodiscard]] explicit UpdateAdventureSettingsPacket(AdventureSettings const& settings) : PayloadPacket(settings) {}
+    [[nodiscard]] explicit UpdateAdventureSettingsPacket(AdventureSettings const& settings)
+    : PayloadPacket(settings),
+      mSerializationMode(SerializationMode::SideBySideLogOnMismatch) {}
 
 public:
     // virtual functions

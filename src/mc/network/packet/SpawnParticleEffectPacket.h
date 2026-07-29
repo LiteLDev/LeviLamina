@@ -30,7 +30,9 @@ public:
 
 public:
     template <typename... Args>
-    SpawnParticleEffectPacket(Args&&... args) : PayloadPacket(std::forward<Args>(args)...) {}
+    SpawnParticleEffectPacket(Args&&... args)
+    : PayloadPacket(std::forward<Args>(args)...),
+      mSerializationMode(SerializationMode::SideBySideLogOnMismatch) {}
 
 public:
     // virtual functions
