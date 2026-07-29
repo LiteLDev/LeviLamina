@@ -33,7 +33,6 @@
 #include "mc/resources/ResourcePack.h"
 #include "mc/resources/ResourcePackStack.h"
 #include "mc/scripting/ServerScriptManager.h"
-#include "mc/server/ServerInstance.h"
 #include "mc/server/module/VanillaGameModuleServer.h"
 
 #include "pl/Config.h"
@@ -71,6 +70,22 @@ void leviLaminaMain() {
     if (config.targeted.vulnerabilityFixes.enable) {
         vulnerability_fixes::enableFixes();
     }
+}
+
+LL_AUTO_TYPE_INSTANCE_HOOK(
+    LanguageChangeHook,
+    HookPriority::High,
+    MinecraftGame,
+    &MinecraftGame::$onLanguageChanged,
+    void,
+    std::string const& code,
+    bool               languageSystemInitializing
+) {
+    auto& config = getLeviConfig();
+    if (config.language == "system") {
+        i18n::defaultLocaleCode() = code;
+    }
+    origin(code, languageSystemInitializing);
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
