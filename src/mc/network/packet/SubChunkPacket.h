@@ -54,6 +54,12 @@ public:
         // NOLINTEND
 
     public:
+        HeightmapData() {
+            mHeightMapType       = HeightMapDataType::NoData;
+            mRenderHeightMapType = HeightMapDataType::NoData;
+        }
+
+    public:
         // static variables
         // NOLINTBEGIN
         MCAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
@@ -84,9 +90,37 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        SubChunkPacketData& operator=(SubChunkPacketData const&);
-        SubChunkPacketData();
+        SubChunkPacketData(SubChunkPosOffset const& pos, SubChunkRequestResult requestResult) {
+            mSubChunkPosOffset                   = pos;
+            mResult                              = requestResult;
+            mSerializedSubChunk                  = {};
+            mHeightMapData->mHeightMapType       = HeightMapDataType::NoData;
+            mHeightMapData->mRenderHeightMapType = HeightMapDataType::NoData;
+            mBlobId                              = 0;
+        }
+
+        SubChunkPacketData& operator=(SubChunkPacketData const& rhs) {
+            mSubChunkPosOffset                   = rhs.mSubChunkPosOffset;
+            mSerializedSubChunk                  = rhs.mSerializedSubChunk;
+            mResult                              = rhs.mResult;
+            mHeightMapData->mHeightMapType       = rhs.mHeightMapData->mHeightMapType;
+            mHeightMapData->mRenderHeightMapType = rhs.mHeightMapData->mRenderHeightMapType;
+            mBlobId                              = rhs.mBlobId;
+            return *this;
+        }
+
+        SubChunkPacketData() {
+            mSubChunkPosOffset = {
+                0,
+                0,
+                0,
+            };
+            mResult                              = SubChunkRequestResult::Undefined;
+            mSerializedSubChunk                  = {};
+            mHeightMapData->mHeightMapType       = HeightMapDataType::NoData;
+            mHeightMapData->mRenderHeightMapType = HeightMapDataType::NoData;
+            mBlobId                              = 0;
+        }
 
     public:
         // member functions
