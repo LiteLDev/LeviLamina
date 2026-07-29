@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.20.6] - 2026-07-29
+
+### Added
+
+- Added semantic version ranges and mod load planning @OEOTYAN
+- Added batched writes to KeyValueDB @OEOTYAN
+- Added constructor for SubChunkPacket::SubChunkPacketData
+- Added constructor for MobEquipmentPacket
+- Added `BinaryStream::write(char const* origin, uint64 num)`
+
+### Changed
+
+- Reverted modification for Player::getLocaleCode
+- Supported named arguments in I18nStringError @zimuya4153
+
+### Fixed
+
+- Fixed KeyValueDB::empty() [#1822]
+- Initialize mSerializationMode for some packets's constructor
+
 ## [26.20.5] - 2026-07-27
 
 ### Fixed
@@ -1656,8 +1676,10 @@ For lip and tooth-hub test only.
 [#1806]: https://github.com/LiteLDev/LeviLamina/issues/1806
 [#1807]: https://github.com/LiteLDev/LeviLamina/issues/1807
 [#1815]: https://github.com/LiteLDev/LeviLamina/issues/1815
+[#1822]: https://github.com/LiteLDev/LeviLamina/issues/1822
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.5...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.6...HEAD
+[26.20.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.5...v26.20.6
 [26.20.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.4...v26.20.5
 [26.20.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.3...v26.20.4
 [26.20.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.2...v26.20.3
