@@ -3,16 +3,35 @@
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/utils/StringUtils.h"
 
+#include <memory>
+
 #include "windows.h"
 
 #include "dwrite.h"
 #include "wingdi.h"
 #include "winuser.h"
 
-#include "atlbase.h"
-
 namespace ll::inline utils::font_utils {
 using namespace string_utils;
+
+template <class T>
+struct ComReleaser {
+    void operator()(T* ptr) const noexcept { ptr->Release(); }
+};
+
+template <class T>
+using ComUniquePtr = std::unique_ptr<T, ComReleaser<T>>;
+
+static HRESULT createDWriteFactory(ComUniquePtr<IDWriteFactory>& factory) {
+    IDWriteFactory* rawFactory{};
+    HRESULT         hr = DWriteCreateFactory(
+        DWRITE_FACTORY_TYPE_SHARED,
+        __uuidof(IDWriteFactory),
+        reinterpret_cast<IUnknown**>(&rawFactory)
+    );
+    factory.reset(rawFactory);
+    return hr;
+}
 
 static bool isValidFontFileType(DWRITE_FONT_FILE_TYPE fileType) {
     return fileType == DWRITE_FONT_FILE_TYPE_CFF || fileType == DWRITE_FONT_FILE_TYPE_TRUETYPE
@@ -27,23 +46,32 @@ static std::vector<std::filesystem::path> getFilePathFromIDWriteFontFace(IDWrite
     if (!SUCCEEDED(hr)) {
         return result;
     }
-    std::unique_ptr<CComPtr<IDWriteFontFile>[]> fontFiles = std::make_unique<CComPtr<IDWriteFontFile>[]>(fileCount);
-    hr = fontFace.GetFiles(&fileCount, reinterpret_cast<IDWriteFontFile**>(fontFiles.get()));
-    for (uint i = 0; i < fileCount; i++) {
-        IDWriteFontFile* fontFile = fontFiles[i];
+    using FontFilePtr = ComUniquePtr<IDWriteFontFile>;
+    static_assert(sizeof(FontFilePtr) == sizeof(IDWriteFontFile*));
+    static_assert(alignof(FontFilePtr) == alignof(IDWriteFontFile*));
 
-        void*  refKey{};
-        UINT32 refKeySize = 0;
-        if (SUCCEEDED(hr)) {
-            hr = fontFile->GetReferenceKey((void const**)&refKey, &refKeySize);
+    auto fontFiles = std::make_unique<FontFilePtr[]>(fileCount);
+    hr             = fontFace.GetFiles(&fileCount, reinterpret_cast<IDWriteFontFile**>(fontFiles.get()));
+    if (FAILED(hr)) {
+        return result;
+    }
+
+    for (UINT32 i = 0; i < fileCount; ++i) {
+        auto& fontFile = fontFiles[i];
+        if (!fontFile) {
+            continue;
         }
-        CComPtr<IDWriteFontFileLoader> loader;
+
+        void const* refKey{};
+        UINT32      refKeySize = 0;
+        hr                     = fontFile->GetReferenceKey(&refKey, &refKeySize);
+        ComUniquePtr<IDWriteFontFileLoader> loader;
         if (SUCCEEDED(hr)) {
-            hr = fontFile->GetLoader(&loader);
+            hr = fontFile->GetLoader(std::out_ptr(loader));
         }
-        CComPtr<IDWriteLocalFontFileLoader> localLoader;
+        ComUniquePtr<IDWriteLocalFontFileLoader> localLoader;
         if (SUCCEEDED(hr)) {
-            hr = loader->QueryInterface(&localLoader);
+            hr = loader->QueryInterface<IDWriteLocalFontFileLoader>(std::out_ptr(localLoader));
         }
         BOOL                  isSupportedFontType = false;
         DWRITE_FONT_FILE_TYPE fontFileType        = DWRITE_FONT_FILE_TYPE_UNKNOWN;
@@ -75,16 +103,16 @@ static std::vector<std::filesystem::path> getFilePathFromIDWriteFontFamily(
     float              stretch,
     FontStyle          style
 ) {
-    CComPtr<IDWriteFont> pDWriteFont;
-    HRESULT              hr = family.GetFirstMatchingFont(
+    ComUniquePtr<IDWriteFont> pDWriteFont;
+    HRESULT                   hr = family.GetFirstMatchingFont(
         (DWRITE_FONT_WEIGHT)std::round(1 + weight * 998),
         (DWRITE_FONT_STRETCH)std::round(1 + stretch * 8),
         (DWRITE_FONT_STYLE)style,
-        &pDWriteFont
+        std::out_ptr(pDWriteFont)
     );
-    CComPtr<IDWriteFontFace> pDWriteFontFace;
+    ComUniquePtr<IDWriteFontFace> pDWriteFontFace;
     if (SUCCEEDED(hr)) {
-        hr = pDWriteFont->CreateFontFace(&pDWriteFontFace);
+        hr = pDWriteFont->CreateFontFace(std::out_ptr(pDWriteFontFace));
     }
     if (SUCCEEDED(hr)) {
         if (index) {
@@ -102,16 +130,12 @@ std::vector<std::filesystem::path> getFilePathFromFontName(
     std::optional<float>     stretch,
     std::optional<FontStyle> style
 ) {
-    CComPtr<IDWriteFactory> pDWriteFactory;
-    HRESULT                 hr = DWriteCreateFactory(
-        DWRITE_FACTORY_TYPE_SHARED,
-        __uuidof(IDWriteFactory),
-        reinterpret_cast<IUnknown**>(&pDWriteFactory)
-    );
-    CComPtr<IDWriteFontCollection> pFontCollection;
+    ComUniquePtr<IDWriteFactory>        pDWriteFactory;
+    HRESULT                             hr = createDWriteFactory(pDWriteFactory);
+    ComUniquePtr<IDWriteFontCollection> pFontCollection;
     // Get the system font collection.
     if (SUCCEEDED(hr)) {
-        hr = pDWriteFactory->GetSystemFontCollection(&pFontCollection);
+        hr = pDWriteFactory->GetSystemFontCollection(std::out_ptr(pFontCollection));
     }
     UINT32 findex = 0;
     BOOL   exists = false;
@@ -119,9 +143,9 @@ std::vector<std::filesystem::path> getFilePathFromFontName(
     if (SUCCEEDED(hr)) {
         hr = pFontCollection->FindFamilyName(str2wstr(name).c_str(), &findex, &exists);
     }
-    CComPtr<IDWriteFontFamily> pFontFamily;
+    ComUniquePtr<IDWriteFontFamily> pFontFamily;
     if (SUCCEEDED(hr) && exists && findex != UINT_MAX) {
-        hr = pFontCollection->GetFontFamily(findex, &pFontFamily);
+        hr = pFontCollection->GetFontFamily(findex, std::out_ptr(pFontFamily));
     }
     if (SUCCEEDED(hr)) {
         return getFilePathFromIDWriteFontFamily(
@@ -136,16 +160,12 @@ std::vector<std::filesystem::path> getFilePathFromFontName(
 }
 
 std::vector<std::string> getSystemFontNames() {
-    CComPtr<IDWriteFactory> pDWriteFactory;
-    HRESULT                 hr = DWriteCreateFactory(
-        DWRITE_FACTORY_TYPE_SHARED,
-        __uuidof(IDWriteFactory),
-        reinterpret_cast<IUnknown**>(&pDWriteFactory)
-    );
-    CComPtr<IDWriteFontCollection> pFontCollection;
+    ComUniquePtr<IDWriteFactory>        pDWriteFactory;
+    HRESULT                             hr = createDWriteFactory(pDWriteFactory);
+    ComUniquePtr<IDWriteFontCollection> pFontCollection;
     // Get the system font collection.
     if (SUCCEEDED(hr)) {
-        hr = pDWriteFactory->GetSystemFontCollection(&pFontCollection);
+        hr = pDWriteFactory->GetSystemFontCollection(std::out_ptr(pFontCollection));
     }
     UINT32 familyCount = 0;
     // Get the number of font families in the collection.
@@ -156,15 +176,15 @@ std::vector<std::string> getSystemFontNames() {
     result.reserve(familyCount);
     std::wstring localeCode = str2wstr(i18n::getDefaultLocaleCode());
     for (UINT32 i = 0; i < familyCount; ++i) {
-        CComPtr<IDWriteFontFamily> pFontFamily;
+        ComUniquePtr<IDWriteFontFamily> pFontFamily;
         // Get the font family.
         if (SUCCEEDED(hr)) {
-            hr = pFontCollection->GetFontFamily(i, &pFontFamily);
+            hr = pFontCollection->GetFontFamily(i, std::out_ptr(pFontFamily));
         }
-        CComPtr<IDWriteLocalizedStrings> pFamilyNames;
+        ComUniquePtr<IDWriteLocalizedStrings> pFamilyNames;
         // Get a list of localized strings for the family name.
         if (SUCCEEDED(hr)) {
-            hr = pFontFamily->GetFamilyNames(&pFamilyNames);
+            hr = pFontFamily->GetFamilyNames(std::out_ptr(pFamilyNames));
         }
         UINT32 index  = 0;
         BOOL   exists = false;
