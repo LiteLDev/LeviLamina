@@ -20,9 +20,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        bool                                          controlValue;
-        ::brstd::function_ref<void(::BinaryStream&)>  writeCondition;
-        char const*                                   docFieldName;
+        bool                                         controlValue;
+        ::brstd::function_ref<void(::BinaryStream&)> writeCondition;
+        char const*                                  docFieldName;
         // NOLINTEND
     };
 
@@ -41,6 +41,11 @@ public:
 
     BinaryStream() : ReadOnlyBinaryStream({}, true), mBuffer(mOwnedBuffer) {}
     BinaryStream(std::string& buffer) : ReadOnlyBinaryStream(buffer, false), mBuffer(buffer) {}
+
+    void write(char const* origin, uint64 num) {
+        mBuffer.append(origin, num);
+        mView = mBuffer;
+    }
 
 public:
     // member variables
