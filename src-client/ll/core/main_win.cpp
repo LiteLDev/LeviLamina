@@ -20,6 +20,7 @@
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/string/StringHash.h"
+#include "mc/deps/entry/src_gamecore_pc/pc/WndProc_PC.h"
 #include "mc/module/VanillaGameModuleClient.h"
 #include "mc/resources/CompositePackSource.h"
 #include "mc/resources/DirectoryPackSource.h"
@@ -197,11 +198,18 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(experiments, repo, stack, baseGameVersion, includeEditorPacks);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(DisableAllModsHook, HookPriority::Low, MinecraftGame, &MinecraftGame::$stop, bool) {
+LL_AUTO_TYPE_INSTANCE_HOOK(
+    DisableAllModsHook,
+    HookPriority::High,
+    MainGameCore::WndProc_PC,
+    &MainGameCore::WndProc_PC::$onDestroy,
+    std::optional<int64>,
+    MainGameCore::WndProc::WndProcParams params
+) {
     setGamingStatus(GamingStatus::Stopping);
     mod::ModRegistrar::getInstance().disableAllMods();
     setGamingStatus(GamingStatus::Default);
-    return origin();
+    return origin(params);
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
