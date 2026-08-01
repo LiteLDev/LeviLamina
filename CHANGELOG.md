@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.20.7] - 2026-08-01
+
+### Added
+
+- LeviLamina client's default language now follows the client's language
+
+### Changed
+
+- Bumped bedrock-rumtime-data to v26.20.5-server.7 and v26.20.4-client.7
+- Replaced ATL smart pointers in FontUtils @OEOTYAN
+
+### Fixed
+
+- Fixed DisableAllMods on client
+
 ## [26.20.6] - 2026-07-29
 
 ### Added
@@ -1678,7 +1693,8 @@ For lip and tooth-hub test only.
 [#1815]: https://github.com/LiteLDev/LeviLamina/issues/1815
 [#1822]: https://github.com/LiteLDev/LeviLamina/issues/1822
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.6...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.7...HEAD
+[26.20.7]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.6...v26.20.7
 [26.20.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.5...v26.20.6
 [26.20.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.4...v26.20.5
 [26.20.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.3...v26.20.4
