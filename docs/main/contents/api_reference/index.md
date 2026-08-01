@@ -24,6 +24,7 @@ LeviLamina's API is organized into the following modules:
 | [Command](command.md) | Command registration, overloads, enums, and execution | Common |
 | [Service](service.md) | Service registration, discovery, and Bedrock engine accessors | Common / Server / Client |
 | [Form](form.md) | Interactive UI forms (Simple, Modal, Custom) | Common |
+| [Data-driven UI](data_driven_ui.md) | Reactive DDUI forms, typed observables, screen sessions, and data-store bindings | Common |
 
 ### I/O & Logging
 
@@ -44,7 +45,7 @@ LeviLamina's API is organized into the following modules:
 
 | Module | Description | Scope |
 |--------|-------------|-------|
-| [Data](data.md) | Key-value database, dependency graph, version, and containers | Common |
+| [Data](data.md) | Observable values, key-value database, dependency graph, version, and containers | Common |
 | [Utils](utils.md) | System, string, hash, random, file, base64, and error utilities | Common |
 
 ### Low-Level

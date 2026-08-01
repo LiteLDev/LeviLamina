@@ -42,8 +42,6 @@ MCNAPI ::std::vector<::cereal::SchemaDescription>
 getSchemaDescriptions(::cereal::ReflectionCtx const& ctx, ::cereal::DescriptionConfig config);
 #endif
 
-MCNAPI bool operator==(::cereal::DynamicValue const& lhs, ::cereal::DynamicValue const& rhs);
-
 #ifdef LL_PLAT_S
 MCNAPI ::entt::meta_type resolve(::cereal::ReflectionCtx const& ctx, uint id);
 #endif

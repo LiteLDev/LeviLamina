@@ -4,6 +4,8 @@
 
 namespace cereal {
 
-struct NullType {};
+struct NullType {
+    [[nodiscard]] constexpr bool operator==(NullType const&) const noexcept = default;
+};
 
 } // namespace cereal

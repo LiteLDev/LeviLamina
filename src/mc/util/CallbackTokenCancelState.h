@@ -6,29 +6,9 @@ class CallbackTokenCancelState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk88860f;
+    std::atomic<bool> mCanceled;
     // NOLINTEND
 
-public:
-    // prevent constructor by default
-    CallbackTokenCancelState& operator=(CallbackTokenCancelState const&);
-    CallbackTokenCancelState(CallbackTokenCancelState const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI CallbackTokenCancelState();
-
-#ifdef LL_PLAT_C
-    MCNAPI void cancel();
-#endif
-
-    MCNAPI bool wasCanceled() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
+    void cancel() { mCanceled = true; }
+    bool wasCanceled() const { return mCanceled; }
 };

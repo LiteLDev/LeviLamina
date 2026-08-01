@@ -24,6 +24,7 @@ LeviLamina 的 API 按以下模块组织：
 | [Command（命令系统）](command.zh.md) | 命令注册、重载、枚举和执行 | 通用 |
 | [Service（服务系统）](service.zh.md) | 服务注册、发现和 Bedrock 引擎访问器 | 通用 / 服务端 / 客户端 |
 | [Form（表单 UI）](form.zh.md) | 交互式 UI 表单（Simple、Modal、Custom） | 通用 |
+| [Data-driven UI（数据驱动 UI）](data_driven_ui.zh.md) | 响应式 DDUI 表单、类型化 Observable、Screen Session 和 DataStore Binding | 通用 |
 
 ### I/O 与日志
 
@@ -44,7 +45,7 @@ LeviLamina 的 API 按以下模块组织：
 
 | 模块 | 说明 | 适用范围 |
 |------|------|----------|
-| [Data（数据结构）](data.zh.md) | 键值数据库、依赖图、版本号和容器 | 通用 |
+| [Data（数据结构）](data.zh.md) | Observable、键值数据库、依赖图、版本号和容器 | 通用 |
 | [Utils（工具函数）](utils.zh.md) | 系统、字符串、哈希、随机数、文件、Base64 和错误处理工具 | 通用 |
 
 ### 底层
