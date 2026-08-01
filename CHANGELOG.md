@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - LeviLamina client's default language now follows the client's language
 - Added CoroTask::via executor switching @OEOTYAN
+- feat: Implement DDUI with session architecture and enhanced safety features [#1824] @OEOTYAN @LordBombardir
 
 ### Changed
 
@@ -1693,6 +1694,7 @@ For lip and tooth-hub test only.
 [#1807]: https://github.com/LiteLDev/LeviLamina/issues/1807
 [#1815]: https://github.com/LiteLDev/LeviLamina/issues/1815
 [#1822]: https://github.com/LiteLDev/LeviLamina/issues/1822
+[#1824]: https://github.com/LiteLDev/LeviLamina/issues/1824
 
 [Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.7...HEAD
 [26.20.7]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.6...v26.20.7
