@@ -808,7 +808,7 @@ TEST(DataDrivenUITest, CustomFormComponentsUseStableVanillaFieldsAndDefaults) {
 
     EXPECT_EQ(form["title"].asString(), "Title");
     EXPECT_TRUE(form["closeButton"]["button_visible"].asBool());
-    EXPECT_EQ(form["closeButton"]["label"].asString(), "Close");
+    EXPECT_EQ(form["closeButton"]["label"]["translate"].asString(), "gui.close");
     EXPECT_EQ(form["closeButton"]["onClick"].asNumber(), 0.0);
     EXPECT_EQ(layout["length"].asInteger(), 9);
 
