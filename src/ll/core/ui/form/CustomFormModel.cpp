@@ -6,8 +6,8 @@
 #include <string_view>
 #include <utility>
 
+#include "ll/core/ui/base/Materializer.h"
 #include "ll/core/ui/form/FormRuntime.h"
-#include "ll/core/ui/form/FormValue.h"
 
 namespace ll::ui::detail {
 
@@ -107,8 +107,8 @@ Expected<> Dropdown::bind(FormRuntime& runtime, std::size_t index) {
     if (auto result = runtime.bind(path + "disabled", options.disabled); !result) return result;
     if (auto result = runtime.bind(path + "visible", options.visible); !result) return result;
     auto itemValues = data::Observable<cereal::DynamicValue>{serializeItems(items)};
-    bool dynamic = false;
-    auto observe = [&](TextValue const& text, std::size_t itemIndex, std::string_view member) {
+    bool dynamic    = false;
+    auto observe    = [&](TextValue const& text, std::size_t itemIndex, std::string_view member) {
         std::visit(
             [&](auto const& value) {
                 using T = std::remove_cvref_t<decltype(value)>;
