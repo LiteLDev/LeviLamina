@@ -23,6 +23,7 @@ nav:
           - developer_guides/how_to_guides/event_guide.md
           - developer_guides/how_to_guides/interface_export_guide.md
           - developer_guides/how_to_guides/find_function_guide.md
+          - developer_guides/how_to_guides/data_driven_ui_guide.md
           - developer_guides/how_to_guides/form_guide.md
           - developer_guides/how_to_guides/hook_guide.md
           - developer_guides/how_to_guides/i18n_guide.md
@@ -41,6 +42,7 @@ nav:
           - Config: api_reference/config.md
           - Coroutine: api_reference/coro.md
           - Data: api_reference/data.md
+          - Data-driven UI: api_reference/data_driven_ui.md
           - Event: api_reference/event.md
           - Expected: api_reference/expected.md
           - Form: api_reference/form.md
@@ -142,6 +144,7 @@ plugins:
             Config: 配置系统
             Coroutine: 协程
             Data: 数据结构
+            Data-driven UI: 数据驱动 UI
             Event: 事件系统
             Expected: 错误处理
             Form: 表单 UI
