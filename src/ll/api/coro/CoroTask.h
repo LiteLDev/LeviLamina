@@ -8,6 +8,39 @@
 
 namespace ll::coro {
 
+class ViaContinuation {
+public:
+    struct promise_type {
+        constexpr ViaContinuation get_return_object() noexcept {
+            return ViaContinuation{std::coroutine_handle<promise_type>::from_promise(*this)};
+        }
+        constexpr std::suspend_always initial_suspend() noexcept { return {}; }
+        constexpr std::suspend_never  final_suspend() noexcept { return {}; }
+        constexpr void                return_void() noexcept {}
+        [[noreturn]] void             unhandled_exception() noexcept { std::terminate(); }
+    };
+
+    using Handle = std::coroutine_handle<promise_type>;
+
+    ViaContinuation(ViaContinuation const&)            = delete;
+    ViaContinuation& operator=(ViaContinuation const&) = delete;
+
+    constexpr explicit ViaContinuation(Handle h) noexcept : handle(h) {}
+    constexpr ViaContinuation(ViaContinuation&& other) noexcept : handle(std::exchange(other.handle, nullptr)) {}
+
+    constexpr ~ViaContinuation() {
+        if (handle) {
+            std::exchange(handle, nullptr).destroy();
+        }
+    }
+
+    constexpr std::coroutine_handle<> get() const noexcept { return handle; }
+    constexpr void                    release() noexcept { handle = nullptr; }
+
+private:
+    Handle handle;
+};
+
 template <class T = void>
 class CoroTask {
 public:
@@ -45,6 +78,26 @@ public:
         }
     };
 
+    struct ViaAwaiter : public ValueAwaiter {
+        constexpr ViaAwaiter(Handle h, NonNullExecutorRef executor) : ValueAwaiter(h) {
+            AwaiterBase::handle.promise().exec = executor;
+        }
+
+        template <std::derived_from<CoroPromiseBase> P>
+        void await_suspend(std::coroutine_handle<P> continuation) {
+            auto resumeCaller = [](NonNullExecutorRef      executor,
+                                   std::coroutine_handle<> continuation) -> ViaContinuation {
+                executor.execute(continuation);
+                co_return;
+            }(continuation.promise().exec.value(), continuation);
+            auto& promise  = AwaiterBase::handle.promise();
+            promise.handle = resumeCaller.get();
+            promise.local  = continuation.promise().local;
+            promise.exec->execute(AwaiterBase::handle);
+            resumeCaller.release();
+        }
+    };
+
 private:
     struct Launcher {
         struct promise_type : public CoroPromiseBase {
@@ -76,6 +129,8 @@ public:
     bool done() const { return !handle || handle.done(); }
 
     auto operator co_await() { return ValueAwaiter(std::exchange(handle, nullptr)); }
+
+    auto via(NonNullExecutorRef executor) { return ViaAwaiter(std::exchange(handle, nullptr), executor); }
 
     auto tryGet() { return ExpectedAwaiter(std::exchange(handle, nullptr)); }
 

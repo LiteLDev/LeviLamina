@@ -12,6 +12,7 @@
 #include "ll/api/thread/ThreadName.h"
 #include "ll/api/thread/ThreadPoolExecutor.h"
 
+#include <array>
 #include <atomic>
 #include <thread>
 #include <vector>
@@ -28,6 +29,24 @@ CoroTask<int> val1() {
 CoroTask<float> val2() {
     co_await 0.5s;
     co_return 20;
+}
+
+struct ExecutionPoint {
+    Executor const* executor;
+    std::thread::id thread;
+};
+
+CoroTask<ExecutionPoint> getExecutionPoint() {
+    auto& executor = co_await currentExecutor;
+    co_return ExecutionPoint{&executor, std::this_thread::get_id()};
+}
+
+CoroTask<std::array<ExecutionPoint, 3>> traceVia(NonNullExecutorRef viaExecutor) {
+    auto& callerExecutor = co_await currentExecutor;
+    auto  before         = ExecutionPoint{&callerExecutor, std::this_thread::get_id()};
+    auto  inner          = co_await getExecutionPoint().via(viaExecutor);
+    auto  after          = ExecutionPoint{&(co_await currentExecutor), std::this_thread::get_id()};
+    co_return std::array{before, inner, after};
 }
 
 Generator<size_t> generator(size_t n) {
@@ -110,6 +129,21 @@ TEST(ExecTest, CoroTaskCollectAllReturnsExpectedValues) {
 
     ASSERT_TRUE(result.has_value());
     EXPECT_EQ(result.value(), 50);
+}
+
+TEST(ExecTest, CoroTaskViaUsesSelectedExecutorWithoutChangingCallerExecutor) {
+    thread::ThreadPoolExecutor callerExecutor("coro_via_caller", 1);
+    thread::ThreadPoolExecutor viaExecutor("coro_via_target", 1);
+
+    auto result = traceVia(viaExecutor).syncLaunch(callerExecutor);
+
+    ASSERT_TRUE(result.has_value());
+    auto const& [before, inner, after] = result.value();
+    EXPECT_EQ(before.executor, &callerExecutor);
+    EXPECT_EQ(inner.executor, &viaExecutor);
+    EXPECT_EQ(after.executor, &callerExecutor);
+    EXPECT_EQ(before.thread, after.thread);
+    EXPECT_NE(before.thread, inner.thread);
 }
 
 TEST(ExecTest, CallbackTransformerStopsAfterValueGreaterThanTen) {
