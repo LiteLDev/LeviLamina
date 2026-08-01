@@ -34,9 +34,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $resolve(::DataDrivenScreenClosedReason resolution);
+    MCAPI void $resolve(::DataDrivenScreenClosedReason resolution);
 
-    MCNAPI void $reject(::DataDrivenScreenRejectReason rejection);
+    MCAPI void $reject(::DataDrivenScreenRejectReason rejection);
 
 
     // NOLINTEND

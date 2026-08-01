@@ -73,13 +73,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~FromRequest();
+        MCAPI ~FromRequest();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -116,21 +116,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptFormPromiseTracker(
+    MCAPI ScriptFormPromiseTracker(
         ::ServerScriptManagerEvents&    events,
         ::LevelEventCoordinator&        levelEventCoordinator,
         ::ServerPlayerEventCoordinator& playerEventCooordinator
     );
 
-    MCNAPI void handleFormClose(::PlayerFormCloseEvent const& formResponse);
+    MCAPI void handleFormClose(::PlayerFormCloseEvent const& formResponse);
 
-    MCNAPI void handleFormResponse(uint formId, ::Json::Value const& formResponse);
+    MCAPI void handleFormResponse(uint formId, ::Json::Value const& formResponse);
 
-    MCNAPI void handlePlayerQuit(::NetworkIdentifier const& playerId);
+    MCAPI void handlePlayerQuit(::NetworkIdentifier const& playerId);
 
-    MCNAPI void rejectAll();
+    MCAPI void rejectAll();
 
-    MCNAPI void showDataDrivenScreenToPlayer(
+    MCAPI void showDataDrivenScreenToPlayer(
         ::Player const&                              player,
         ::std::string const&                         screenId,
         ::std::optional<uint>                        dataInstanceId,
@@ -141,15 +141,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::NetworkIdentifier _getPlayerNetworkId(::Player const& player);
+    MCAPI static ::NetworkIdentifier _getPlayerNetworkId(::Player const& player);
 
-    MCNAPI static void _sendToClient(::Player const& player, ::Json::Value formJson, uint formId);
+    MCAPI static void _sendToClient(::Player const& player, ::Json::Value formJson, uint formId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ServerScriptManagerEvents&    events,
         ::LevelEventCoordinator&        levelEventCoordinator,
         ::ServerPlayerEventCoordinator& playerEventCooordinator
@@ -159,19 +159,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onEvent(::PlayerFormResponseEvent const& formResponseEvent);
+    MCAPI ::EventResult $onEvent(::PlayerFormResponseEvent const& formResponseEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerFormCloseEvent const& formCloseEvent);
+    MCAPI ::EventResult $onEvent(::PlayerFormCloseEvent const& formCloseEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerDataDrivenScreenClosedEvent const& formResponseEvent);
+    MCAPI ::EventResult $onEvent(::PlayerDataDrivenScreenClosedEvent const& formResponseEvent);
 
-    MCNAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
+    MCAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
 
 
     // NOLINTEND
