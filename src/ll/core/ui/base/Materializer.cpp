@@ -44,7 +44,7 @@ bool materialize(std::optional<BooleanValue> const& value, bool fallback) {
 }
 
 double materialize(NumberValue const& value) {
-    auto result = std::visit(
+    return std::visit(
         [](auto const& item) {
             using T = std::remove_cvref_t<decltype(item)>;
             if constexpr (std::same_as<T, double>) {
@@ -55,10 +55,6 @@ double materialize(NumberValue const& value) {
         },
         value
     );
-    if (!std::isfinite(result)) {
-        throw std::invalid_argument("DDUI numbers must be finite");
-    }
-    return result;
 }
 
 double materialize(std::optional<NumberValue> const& value, double fallback) {

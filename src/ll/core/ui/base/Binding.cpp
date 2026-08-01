@@ -1,6 +1,5 @@
 #include "ll/core/ui/base/ScreenSession.h"
 
-#include <cmath>
 #include <concepts>
 #include <utility>
 
@@ -16,45 +15,18 @@
 
 namespace ll::ui::detail {
 
-static bool containsOnlyFiniteNumbers(cereal::DynamicValue const& value) {
-    if (value.isNumber()) {
-        return std::isfinite(value.get<cereal::DynamicValue::Number>());
-    }
-    if (value.isArray()) {
-        for (auto const& element : value.get<cereal::DynamicValue::Array>()) {
-            if (!containsOnlyFiniteNumbers(element)) {
-                return false;
-            }
-        }
-    } else if (value.isObject()) {
-        for (auto const& [name, member] : value.get<cereal::DynamicValue::Object>()) {
-            (void)name;
-            if (!containsOnlyFiniteNumbers(member)) {
-                return false;
-            }
-        }
-    }
-    return true;
-}
-
 Expected<BindingVariant> readBindingValue(std::size_t type, cereal::DynamicValue const* value) {
     if (value == nullptr) {
         return makeI18nStringError<"DDUI binding path does not contain a value">();
     }
 
     if (type == BindingValueTypes::index<cereal::DynamicValue>) {
-        if (!containsOnlyFiniteNumbers(*value)) {
-            return makeI18nStringError<"DDUI binding rejected a non-finite value">();
-        }
         return BindingVariant{std::in_place_type<cereal::DynamicValue>, *value};
     }
 
     auto result = Bedrock::DDUI::PathUtility::convertToPrimitive(*value);
     if (!result || result->index() != type) {
         return makeI18nStringError<"DDUI binding value has the wrong type">();
-    }
-    if (auto const* number = std::get_if<double>(&*result); number != nullptr && !std::isfinite(*number)) {
-        return makeI18nStringError<"DDUI number binding rejected a non-finite value">();
     }
     return std::visit(
         []<class T>(T const& item) -> BindingVariant { return BindingVariant{std::in_place_type<T>, item}; },
@@ -124,13 +96,6 @@ Expected<> detail::ScreenSessionImpl::setBinding(BindingSlot& binding, BindingVa
     }
     if (value.index() != binding.type()) {
         return makeI18nStringError<"DDUI binding write has the wrong type">();
-    }
-    if (auto const* number = std::get_if<double>(&value); number != nullptr && !std::isfinite(*number)) {
-        return makeI18nStringError<"DDUI number binding rejected a non-finite value">();
-    }
-    if (auto const* dynamic = std::get_if<cereal::DynamicValue>(&value);
-        dynamic != nullptr && !detail::containsOnlyFiniteNumbers(*dynamic)) {
-        return makeI18nStringError<"DDUI binding rejected a non-finite value">();
     }
 
     auto* player = getPlayer();

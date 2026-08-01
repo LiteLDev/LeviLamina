@@ -1,6 +1,5 @@
 #include "ll/core/ui/form/CustomFormModel.h"
 
-#include <cmath>
 #include <stdexcept>
 #include <string>
 #include <string_view>
@@ -64,12 +63,6 @@ Dropdown::Dropdown(
   options(std::move(settings)) {
     if (!selected.isClientWritable()) {
         throw std::invalid_argument("This DDUI input requires a client-writable Observable");
-    }
-    (void)materialize(NumberValue{selected});
-    for (auto const& item : items) {
-        if (!std::isfinite(item.value)) {
-            throw std::invalid_argument("DDUI dropdown values must be finite");
-        }
     }
 }
 
@@ -178,12 +171,6 @@ Slider::Slider(
   options(std::move(settings)) {
     if (!current.isClientWritable()) {
         throw std::invalid_argument("This DDUI input requires a client-writable Observable");
-    }
-    (void)materialize(NumberValue{current});
-    (void)materialize(min);
-    (void)materialize(max);
-    if (options.step) {
-        (void)materialize(*options.step);
     }
 }
 

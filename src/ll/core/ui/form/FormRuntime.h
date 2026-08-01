@@ -66,7 +66,7 @@ public:
     template <class T, class Callback>
     void observe(data::Observable<T> observable, Callback&& callback) {
         auto id = observable.subscribe(std::forward<Callback>(callback));
-        observableDisconnectors.emplace_back([observable, id]() mutable { (void)observable.unsubscribe(id); });
+        observableDisconnectors.emplace_back([observable, id]() mutable { observable.unsubscribe(id); });
     }
 
     Expected<>                            show(ScreenSession::Callback callback = {});

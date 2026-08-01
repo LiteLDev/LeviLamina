@@ -12,40 +12,18 @@
 namespace ll::ui {
 
 template <class T = void>
-static Expected<T> invalidBindingHandle() {
-    return makeI18nStringError<"Invalid DDUI binding handle">();
-}
-
-template <class T = void>
-static Expected<T> invalidPropertyHandle() {
-    return makeI18nStringError<"Invalid DDUI property handle">();
-}
-
-template <class T = void>
 static Expected<T> invalidSessionHandle() {
     return makeI18nStringError<"Invalid DDUI session handle">();
 }
 
-template <class T>
-static bool hasOwner(std::weak_ptr<T> const& value) noexcept {
-    std::weak_ptr<T> empty;
-    return value.owner_before(empty) || empty.owner_before(value);
+template <class T = void>
+static Expected<T> unavailableBinding() {
+    return makeI18nStringError<"DDUI binding is unavailable">();
 }
 
-template <class Result = void, class T>
-static Expected<Result> unavailableBinding(std::weak_ptr<T> const& value) {
-    if (hasOwner(value)) {
-        return makeI18nStringError<"DDUI binding session has expired">();
-    }
-    return invalidBindingHandle<Result>();
-}
-
-template <class Result = void, class T>
-static Expected<Result> unavailableProperty(std::weak_ptr<T> const& value) {
-    if (hasOwner(value)) {
-        return makeI18nStringError<"DDUI property session has expired">();
-    }
-    return invalidPropertyHandle<Result>();
+template <class T = void>
+static Expected<T> unavailableProperty() {
+    return makeI18nStringError<"DDUI property is unavailable">();
 }
 
 template <BindingValue T>
@@ -75,31 +53,31 @@ detail::BindingHandle& detail::BindingHandle::operator=(BindingHandle&&) noexcep
 
 Expected<bool> detail::BindingHandle::get(bool*) const {
     auto handle = impl.lock();
-    return handle ? extract<bool>(handle->property->session().getBinding(*handle)) : unavailableBinding<bool>(impl);
+    return handle ? extract<bool>(handle->property->session().getBinding(*handle)) : unavailableBinding<bool>();
 }
 
 Expected<double> detail::BindingHandle::get(double*) const {
     auto handle = impl.lock();
-    return handle ? extract<double>(handle->property->session().getBinding(*handle)) : unavailableBinding<double>(impl);
+    return handle ? extract<double>(handle->property->session().getBinding(*handle)) : unavailableBinding<double>();
 }
 
 Expected<std::string> detail::BindingHandle::get(std::string*) const {
     auto handle = impl.lock();
     return handle ? extract<std::string>(handle->property->session().getBinding(*handle))
-                  : unavailableBinding<std::string>(impl);
+                  : unavailableBinding<std::string>();
 }
 
 Expected<cereal::DynamicValue> detail::BindingHandle::get(cereal::DynamicValue*) const {
     auto handle = impl.lock();
     return handle ? extract<cereal::DynamicValue>(handle->property->session().getBinding(*handle))
-                  : unavailableBinding<cereal::DynamicValue>(impl);
+                  : unavailableBinding<cereal::DynamicValue>();
 }
 
 Expected<> detail::BindingHandle::set(bool value) const {
     auto handle = impl.lock();
     return handle
              ? handle->property->session().setBinding(*handle, detail::BindingVariant{std::in_place_type<bool>, value})
-             : unavailableBinding(impl);
+             : unavailableBinding();
 }
 
 Expected<> detail::BindingHandle::set(double value) const {
@@ -108,7 +86,7 @@ Expected<> detail::BindingHandle::set(double value) const {
                         *handle,
                         detail::BindingVariant{std::in_place_type<double>, value}
                     )
-                  : unavailableBinding(impl);
+                  : unavailableBinding();
 }
 
 Expected<> detail::BindingHandle::set(std::string value) const {
@@ -117,7 +95,7 @@ Expected<> detail::BindingHandle::set(std::string value) const {
                         *handle,
                         detail::BindingVariant{std::in_place_type<std::string>, std::move(value)}
                     )
-                  : unavailableBinding(impl);
+                  : unavailableBinding();
 }
 
 Expected<> detail::BindingHandle::set(cereal::DynamicValue value) const {
@@ -126,7 +104,7 @@ Expected<> detail::BindingHandle::set(cereal::DynamicValue value) const {
                         *handle,
                         detail::BindingVariant{std::in_place_type<cereal::DynamicValue>, std::move(value)}
                     )
-                  : unavailableBinding(impl);
+                  : unavailableBinding();
 }
 
 Expected<Subscription> detail::BindingHandle::listen(brstd::move_only_function<void(bool const&)> callback) const {
@@ -135,7 +113,7 @@ Expected<Subscription> detail::BindingHandle::listen(brstd::move_only_function<v
                         *handle,
                         detail::ListenerCallback{std::in_place_type<detail::Listener<bool>>, std::move(callback)}
                     )
-                  : unavailableBinding<Subscription>(impl);
+                  : unavailableBinding<Subscription>();
 }
 
 Expected<Subscription> detail::BindingHandle::listen(brstd::move_only_function<void(double const&)> callback) const {
@@ -144,7 +122,7 @@ Expected<Subscription> detail::BindingHandle::listen(brstd::move_only_function<v
                         *handle,
                         detail::ListenerCallback{std::in_place_type<detail::Listener<double>>, std::move(callback)}
                     )
-                  : unavailableBinding<Subscription>(impl);
+                  : unavailableBinding<Subscription>();
 }
 
 Expected<Subscription>
@@ -154,7 +132,7 @@ detail::BindingHandle::listen(brstd::move_only_function<void(std::string const&)
                         *handle,
                         detail::ListenerCallback{std::in_place_type<detail::Listener<std::string>>, std::move(callback)}
                     )
-                  : unavailableBinding<Subscription>(impl);
+                  : unavailableBinding<Subscription>();
 }
 
 Expected<Subscription>
@@ -167,12 +145,12 @@ detail::BindingHandle::listen(brstd::move_only_function<void(cereal::DynamicValu
                             std::move(callback)
                         }
                     )
-                  : unavailableBinding<Subscription>(impl);
+                  : unavailableBinding<Subscription>();
 }
 
 Expected<> detail::BindingHandle::setClientWritable(bool writable) const {
     auto handle = impl.lock();
-    return handle ? handle->property->session().setClientWritable(*handle, writable) : unavailableBinding(impl);
+    return handle ? handle->property->session().setClientWritable(*handle, writable) : unavailableBinding();
 }
 
 bool detail::BindingHandle::isClientWritable() const noexcept {
@@ -199,7 +177,7 @@ Property& Property::operator=(Property&&) noexcept = default;
 Expected<> Property::set(cereal::DynamicValue const& value) const {
     auto property = impl.lock();
     if (!property) {
-        return unavailableProperty(impl);
+        return unavailableProperty();
     }
     return property->session().set(*property, value);
 }
@@ -207,7 +185,7 @@ Expected<> Property::set(cereal::DynamicValue const& value) const {
 Expected<> Property::erase() const {
     auto property = impl.lock();
     if (!property) {
-        return unavailableProperty(impl);
+        return unavailableProperty();
     }
     return property->session().erase(*property);
 }
@@ -227,7 +205,7 @@ Expected<detail::BindingHandle> Property::bindErased(std::string path, std::stri
 Expected<> Property::setJson(std::string const& json) const {
     auto property = impl.lock();
     if (!property) {
-        return unavailableProperty(impl);
+        return unavailableProperty();
     }
     return property->session().setJson(*property, json);
 }
@@ -239,7 +217,7 @@ Expected<detail::BindingHandle> Property::bindErased(std::string path, cereal::D
 Expected<detail::BindingHandle> Property::bindErasedImpl(std::string path, std::size_t type) const {
     auto property = impl.lock();
     if (!property) {
-        return unavailableProperty<detail::BindingHandle>(impl);
+        return unavailableProperty<detail::BindingHandle>();
     }
     auto binding = property->session().getOrCreateBinding(*property, std::move(path), type);
     if (!binding) {

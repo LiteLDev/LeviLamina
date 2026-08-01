@@ -515,11 +515,8 @@ void runSecurity(Player& player, CommandOutput& output) {
 
     state->toggle.setData(false);
     state->toggle.setData(true);
-    state->number.setData(13.0);
-    state->number.setData(12.5);
     auto toggleBase = latestOutgoingUpdate(sync, *property, "layout[1].toggled");
-    auto numberBase = latestOutgoingUpdate(sync, *property, "layout[2].value");
-    if (!toggleBase || !numberBase) {
+    if (!toggleBase) {
         output.error("security failed: high-level outgoing update templates are unavailable");
         return;
     }
@@ -532,17 +529,6 @@ void runSecurity(Player& player, CommandOutput& output) {
     sync.applyUpdate(wrongType);
     if (!state->toggle.getData() || state->toggleCallbacks != before) {
         output.error("security failed: wrong-type update changed Observable");
-        return;
-    }
-
-    auto nonFinite = *numberBase;
-    before         = state->numberCallbacks;
-    if (!prepareClientUpdate(sync, nonFinite, std::numeric_limits<double>::infinity(), output, "prepare non-finite")) {
-        return;
-    }
-    sync.applyUpdate(nonFinite);
-    if (state->number.getData() != 12.5 || state->numberCallbacks != before) {
-        output.error("security failed: non-finite update changed Observable");
         return;
     }
 
@@ -565,7 +551,7 @@ void runSecurity(Player& player, CommandOutput& output) {
     }
 
     ll::thread::ServerThreadExecutor::getDefault().executeAfter([state] { state->form.close(); }, 2s);
-    output.success("security passed: read-only, writable, type, finite-number, and replay checks");
+    output.success("security passed: read-only, writable, type, and replay checks");
 }
 
 coro::CoroTask<void> runStress(mce::UUID uuid, int count) {
@@ -734,7 +720,7 @@ TEST(ObservableTest, MoveOnlyCallbacksRunDirectlyAndExceptionsPropagate) {
     EXPECT_TRUE(observable.unsubscribe(throwing));
 
     int observed{};
-    (void)observable.subscribe([&](int const& value) { observed = value; });
+    observable.subscribe([&](int const& value) { observed = value; });
     observable.setData(3);
     EXPECT_EQ(observable.getData(), 3);
     EXPECT_EQ(observed, 3);
@@ -935,24 +921,6 @@ TEST(DataDrivenUITest, MessageBoxModelUsesStableVanillaFields) {
     EXPECT_EQ(data["button2"]["label"].asString(), "Two");
     EXPECT_EQ(data["button2"]["tooltip"].asString(), "");
     EXPECT_EQ(data["button2"]["onClick"].asNumber(), 0.0);
-}
-
-TEST(DataDrivenUITest, ComponentsRejectNonFiniteNumbers) {
-    auto infinity = std::numeric_limits<double>::infinity();
-    EXPECT_THROW((void)ll::ui::detail::materialize(ll::ui::NumberValue{infinity}), std::invalid_argument);
-
-    ll::ui::ObservableNumber dropdown{0.0, {.clientWritable = true}};
-    EXPECT_THROW(
-        (void)ll::ui::detail::component::Dropdown(
-            "Dropdown",
-            dropdown,
-            {
-                {"Invalid", infinity, {}}
-    },
-            {}
-        ),
-        std::invalid_argument
-    );
 }
 
 TEST(DataDrivenUITest, PublicCloseReasonsMatchBedrockValues) {
