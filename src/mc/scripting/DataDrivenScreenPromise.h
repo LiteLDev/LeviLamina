@@ -10,14 +10,8 @@ struct DataDrivenScreenPromise {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk277a07;
+    std::optional<unsigned int> mFormId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataDrivenScreenPromise& operator=(DataDrivenScreenPromise const&);
-    DataDrivenScreenPromise(DataDrivenScreenPromise const&);
-    DataDrivenScreenPromise();
 
 public:
     // virtual functions

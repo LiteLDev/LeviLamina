@@ -55,11 +55,11 @@ public:
 
     LLNDAPI std::vector<int> const& getKeyCodes() const;
 
+    LLNDAPI bool isValid() const;
+
     LLNDAPI bool isAllowRemap() const;
 
-    LLNDAPI void setAllowRemap(bool allowRemap);
-
-    LLNDAPI bool isValid() const;
+    LLAPI void setAllowRemap(bool allowRemap);
 
     LLAPI void registerButtonDownHandler(ButtonDownHandler handler, bool suspendable = false);
 

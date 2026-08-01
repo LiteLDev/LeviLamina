@@ -17,8 +17,8 @@
 namespace ll::input {
 
 struct KeyRegistry::Impl {
-    SmallDenseNodeMap<std::string, KeyHandle> keys;
-    SmallDenseMap<int, std::string>           keyCodeToName;
+    SmallStringNodeMap<KeyHandle>   keys;
+    SmallDenseMap<int, std::string> keyCodeToName;
 
     struct PendingKeyMapping {
         std::string      name;
