@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - LeviLamina client's default language now follows the client's language
+- Added CoroTask::via executor switching @OEOTYAN
 
 ### Changed
 
