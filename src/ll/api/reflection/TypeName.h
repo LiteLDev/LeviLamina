@@ -75,6 +75,12 @@ constexpr std::string_view removeTypeNamespace(std::string_view s) noexcept {
 }
 
 constexpr std::string_view typeNameStem(std::string_view s) noexcept {
+    if (s.starts_with('&')) {
+        auto const separator = s.rfind("::");
+        if (separator != std::string_view::npos) {
+            return s.substr(separator + 2);
+        }
+    }
     return removeTypeNamespace(removeTypeSuffix(removeTypePrefix(s)));
 }
 
