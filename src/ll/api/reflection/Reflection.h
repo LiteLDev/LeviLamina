@@ -132,32 +132,6 @@ constexpr std::string_view trim_ascii_spaces(std::string_view sv) {
     return sv;
 }
 
-template <typename F>
-    requires(is_key_formatter_v<std::remove_cvref_t<F>>)
-constexpr std::string format_enum_name_parts(std::string_view name, F const& keyFormatter) {
-    std::string result;
-    size_t      cursor = 0;
-
-    while (cursor < name.size()) {
-        auto const next = name.find('|', cursor);
-        auto const part = trim_ascii_spaces(
-            name.substr(cursor, next == std::string_view::npos ? name.size() - cursor : next - cursor)
-        );
-
-        if (!result.empty()) {
-            result += '|';
-        }
-        result += keyFormatter(part);
-
-        if (next == std::string_view::npos) {
-            break;
-        }
-        cursor = next + 1;
-    }
-
-    return result;
-}
-
 template <typename Enum, typename F>
     requires(is_key_formatter_v<std::remove_cvref_t<F>>)
 constexpr std::optional<std::string> enum_name_to_string(Enum value, F const& keyFormatter) {
@@ -167,11 +141,43 @@ constexpr std::optional<std::string> enum_name_to_string(Enum value, F const& ke
         return std::nullopt;
     } else if constexpr (magic_enum::detail::subtype_v<enum_type> == magic_enum::detail::enum_subtype::flags) {
         if (auto const name = magic_enum::enum_flags_name<enum_type>(value); !name.empty()) {
-            return format_enum_name_parts(name, keyFormatter);
+            if constexpr (has_typed_key_formatter_v<enum_type, F>) {
+                std::string result;
+                size_t      cursor{0};
+                auto        nameSv = std::string_view{name};
+
+                while (cursor < nameSv.size()) {
+                    auto next = nameSv.find('|', cursor);
+                    auto part = trim_ascii_spaces(
+                        nameSv.substr(cursor, next == std::string_view::npos ? nameSv.size() - cursor : next - cursor)
+                    );
+
+                    auto partValue = [&]() -> std::optional<enum_type> {
+                        if (auto parsed = magic_enum::enum_cast<enum_type>(part)) return *parsed;
+                        if (auto parsed = magic_enum::enum_flags_cast<enum_type>(part)) return *parsed;
+                        return std::nullopt;
+                    }();
+                    if (!partValue) return std::string{name};
+
+                    if (!result.empty()) result += '|';
+                    result += std::string{keyFormatter.template operator()<enum_type>(*partValue)};
+
+                    if (next == std::string_view::npos) break;
+                    cursor = next + 1;
+                }
+
+                return result;
+            } else {
+                return std::string{name};
+            }
         }
     } else {
-        if (auto const name = magic_enum::enum_name<enum_type>(value); !name.empty()) {
-            return std::string{keyFormatter(name)};
+        if (auto name = magic_enum::enum_name<enum_type>(value); !name.empty()) {
+            if constexpr (has_typed_key_formatter_v<enum_type, F>) {
+                return std::string{keyFormatter.template operator()<enum_type>(value)};
+            } else {
+                return std::string{name};
+            }
         }
     }
 
@@ -191,7 +197,9 @@ constexpr std::optional<Enum> string_to_enum(std::string_view sv, F const& keyFo
         return *val;
     }
 
-    if constexpr (magic_enum::detail::supported<enum_type>::value) {
+    if constexpr (
+        magic_enum::detail::supported<enum_type>::value && has_typed_key_formatter_v<enum_type, F>
+    ) {
         if constexpr (magic_enum::detail::subtype_v<enum_type> == magic_enum::detail::enum_subtype::flags) {
             underlying_type result{};
             bool            matchedAny = false;
@@ -297,7 +305,13 @@ constexpr std::string type_to_string(T const& t, F const& keyFormatter) {
             || detail::is_string_serializable_v<T> || traits::is_string_convertible_v<T> || std::is_enum_v<T>,
         "the key type must be serializable to a string"
     );
-    if constexpr (detail::has_typed_key_formatter_v<T, F>) {
+    if constexpr (std::is_enum_v<T>) {
+        if (auto name = detail::enum_name_to_string(t, keyFormatter)) return *std::move(name);
+        if constexpr (detail::has_typed_key_formatter_v<T, F>) {
+            return keyFormatter.template operator()<std::remove_cvref_t<T>>(t);
+        }
+        return std::to_string(std::to_underlying(t));
+    } else if constexpr (detail::has_typed_key_formatter_v<T, F>) {
         return keyFormatter.template operator()<std::remove_cvref_t<T>>(t);
     } else if constexpr (detail::has_custom_key_serializer_v<T, F>) {
         if constexpr (requires { Serializer<T>::to_string(t, keyFormatter); }) {
@@ -310,10 +324,7 @@ constexpr std::string type_to_string(T const& t, F const& keyFormatter) {
     } else if constexpr (detail::is_string_serializable_v<T>) {
         return Serializer<T>::to_string(t);
     } else {
-        if (auto name = detail::enum_name_to_string(t, keyFormatter)) {
-            return *std::move(name);
-        }
-        return std::to_string(std::to_underlying(t));
+        static_assert(std::is_enum_v<T>, "unreachable");
     }
 }
 
