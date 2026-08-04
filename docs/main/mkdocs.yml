@@ -16,8 +16,6 @@ nav:
   - Developer Guides:
       - Tutorials:
           - developer_guides/tutorials/create_your_first_mod.md
-          - developer_guides/tutorials/publish_your_first_mod.md
-          - developer_guides/tutorials/publish_your_first_pack.md
 
       - How-to Guides:
           - developer_guides/how_to_guides/event_guide.md

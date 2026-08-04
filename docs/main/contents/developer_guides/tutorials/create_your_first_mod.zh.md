@@ -7,13 +7,13 @@
 在这个教程中，我们将会创建一个简单的模组，用于实现以下功能：
 
 - 玩家可以输入`/suicide`指令自杀
-- 玩家首次登录服务器时给予一个钟
+- 玩家首次进入世界时给予一个钟
 - 玩家使用钟时，弹出确认窗口询问是否自杀，如果确认则自杀
 
 这个教程包含以下知识点：
 
 - 日志输出
-- 订阅和退订事件
+- 订阅事件
 - 注册指令
 - 读取配置文件
 - 数据库存取
@@ -22,7 +22,8 @@
 - 调用Minecraft函数
 
 !!! info
-    本教程的所有源码可以在[futrime/better-suicide](https://github.com/futrime/better-suicide)找到。我们建议你一边看源码一边看教程。
+    本教程的所有源码可以在[ShrBox/ExampleMod](https://github.com/ShrBox/ExampleMod)找到。我们建议你一边看源码一边看教程。
+
 
 ## 学习C++
 
@@ -42,200 +43,242 @@
 - [xmake](https://xmake.io)
 - [Visual Studio Code](https://code.visualstudio.com)
 - [Git](https://git-scm.com)
-- [Visual Studio 2022](https://visualstudio.microsoft.com/) （安装Visual Studio 2022时，请确保勾选了C++桌面应用开发这一项）
+- [Visual Studio](https://visualstudio.microsoft.com/)（安装Visual Studio时，请确保勾选了“使用C++的桌面开发”这一项）
+- LLVM：打开Visual Studio Installer，在“使用 C++ 的桌面开发”可选组件下选择“适用于 Windows 的 C++ Clang 工具”。或者从[GitHub](https://github.com/llvm/llvm-project/releases/latest)下载。
 
-!!! warning
-    如果你安装的不是最新版本的Visual Studio 2022、MSVC和Windows SDK，则后续在构建、加载、运行模组中有可能遇到问题。如果你遇到了类似`xxx is not a member of std`这样的问题，请考虑这个可能性。本教程测试构建的环境是Visual Studio Community 2022 17.8.1、MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.38-17.8)、Windows 11 SDK (10.0.22000.0)
+### 为Visual Studio Code安装扩展程序
 
-!!! tip
-    由于LeviLamina项目极大，如果你使用Visual Studio Code，其自带的Intellisense系统可能不堪重负。我们建议你安装[clangd扩展](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)并使用clangd进行代码检查等。安装clangd和对应的扩展后，你需要运行以下命令生成`compile_commands.json`，然后重启VSCode以使clangd生效。
+在安装完VSCode后，你还需要在VSCode中安装以下扩展：
 
-    ```shell
-    xmake project -k compile_commands
-    ```
-
-然后，你需要在某处安装LeviLamina。本教程针对的是LeviLamina 0.6.3，对于其它版本，可能需要做一些修改。
+- [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+- [XMake](https://marketplace.visualstudio.com/items?itemName=tboox.xmake-vscode)
+- [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
 
 ## 创建模组仓库
 
-访问[levilamina-mod-template](https://github.com/LiteLDev/levilamina-mod-template)，点击`Use this template`以使用这个模板初始化你的模组仓库。
+访问[levilamina-mod-template](https://github.com/LiteLDev/levilamina-mod-template)，点击`Use this template`以使用这个模板初始化你的模组仓库。  
+![Create from template](levilamina-mod-template.png)  
+在某个用于存放模组工程的文件夹中使用`git clone`将模组仓库克隆到本地，然后使用VSCode打开。你需要修改其中的一些文件，填写你的模组信息。
 
-![Create from template](levilamina-mod-template.png)
-
-将模组仓库使用Git克隆到本地，然后使用VSCode打开。你需要修改其中的一些文件，填写你的模组信息。
-
-首先，你需要修改`xmake.lua`中模组名字信息。修改模组名字是为了指定你的模组的名字，这个名字将会在LeviLamina中显示。名字允许英文大小写、数字、中划线，不允许包括空格和其他特殊字符，建议采用`example-mod`或`ExampleMod`这两种形式。在这里，我们的模组命名为`better-suicide`。
+首先，你需要修改`xmake.lua`中模组名字信息。修改模组名字是为了指定你的模组的名字，这个名字将会在LeviLamina中显示。名字允许英文大小写、数字、中划线，不允许包括空格和其他特殊字符，建议采用`example-mod`或`ExampleMod`这两种形式。在这里，我们的模组命名为`ExampleMod`。
 
 ```lua
-target("better-suicide") -- Change this to your mod name.
+target("ExampleMod") -- Change this to your mod name.
 ```
 
-接着，修改`tooth.json`的内容。`tooth.json`为lip安装模组包提供了相关信息，正确配置后，你的模组将会被[Bedrinth](https://pkg.levimc.org)收录，并能被全世界的用户下载安装。将`tooth`字段的值改为这个模组的GitHub仓库地址，填写`info`中各个信息字段，然后根据仓库release地址填写`asset_url`字段，修改依赖的LeviLamina版本，并根据在`xmake.lua`中填写的模组名修改`place`的`src`和`dest`。对于本文的模组，以下是一个可行的参考：
+然后，最好手动固定一下Mod使用的LeviLamina版本，比如，我们需要使用LeviLamina 26.20的最新版本，我们在levilamina后面添加`26.20.*`作为版本号。也支持使用某个commit作为版本号，这在LeviLamina未能发布新版本时提前为模组适配新版本时很有用。
+
+```lua
+-- add_requires("levilamina x.x.x") for a specific version
+-- add_requires("levilamina develop") to use develop version
+-- please note that you should add bdslibrary yourself if using dev version
+add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_type")}})
+```
+
+接着，修改`tooth.json`的内容。`tooth.json`为lip安装模组包提供了相关信息，正确配置后，你的模组将会被[Bedrinth](https://pkg.levimc.org)和[LeviLauncher](https://github.com/LiteLDev/LeviLauncher)收录，并能被全世界的用户下载安装。  
+!!! tip
+    其中`label`为空的`variant`代表服务端，`label`为`client`的variant代表客户端，如果您的模组只在服务端/客户端可用，可以将无用的variant删掉。在lip中可以用以下命令来安装：
+    ```shell
+    # 服务端
+    lip install https://github.com/ShrBox/ExampleMod
+    # 客户端
+    lip install https://github.com/ShrBox/ExampleMod#client
+    ```
+- 将`tooth`字段的值改为这个模组的GitHub仓库地址，填写`info`中各个信息字段  
+  `info.avatar_url`会显示在Bedrinth以及LeviLauncher的模组页面中，为模组挑选一个适合的图标也是展示您的模组的重要一环，这里为了方便直接使用教程编写者的GitHub头像  
+- 修改各个`variant`中的`dependencies`里的LeviLamina目标版本为模组实际使用的LeviLamina版本  
+- 然后根据仓库release地址填写`asset_url`字段，修改依赖的LeviLamina版本，并根据在`xmake.lua`中填写的模组名修改`place`的`src`和`dest`。对于本文的模组，以下是一个可行的参考：
 
 ```json
 {
   "format_version": 3,
   "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
-  "tooth": "github.com/futrime/better-suicide",
-  "version": "0.6.0",
+  "tooth": "https://github.com/ShrBox/ExampleMod",
+  "version": "0.1.0",
   "info": {
-    "name": "better-suicide",
-    "description": "Allow players to suicide in Minecraft.",
+    "name": "ExampleMod",
+    "description": "Mod example for LeviLamina",
     "tags": [
       "platform:levilamina",
       "type:mod"
     ],
-    "avatar_url": ""
+    "avatar_url": "https://avatars.githubusercontent.com/u/53301243"
   },
   "variants": [
     {
+      "label": "",
       "platform": "win-x64",
       "dependencies": {
-        "github.com/LiteLDev/LeviLamina": "1.3.*"
+        "github.com/LiteLDev/LeviLamina": "26.20.*"
       },
       "assets": [
         {
           "type": "zip",
           "urls": [
-            "https://github.com/futrime/better-suicide/releases/download/v0.6.0/better-suicide-windows-x64.zip"
+            "https://{{tooth}}/releases/download/v{{version}}/ExampleMod-server-windows-x64.zip"
           ],
           "placements": [
             {
               "type": "dir",
-              "src": "better-suicide/",
-              "dest": "plugins/better-suicide/"
+              "src": "ExampleMod/",
+              "dest": "plugins/ExampleMod/"
             }
           ]
         }
-      ]
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_pack": [],
+        "post_pack": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    },
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.20.*"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://{{tooth}}/releases/download/v{{version}}/ExampleMod-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "ExampleMod/",
+              "dest": "mods/ExampleMod/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_pack": [],
+        "post_pack": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
     }
   ]
 }
-
 ```
 
 然后，你需要修改`LICENSE`文件中的版权信息。你可以在[这里](https://choosealicense.com/licenses/)选择一个适合你的模组的开源协议。请放心，你的模组不需要开源，因为模组模板使用了CC0协议，你可以随意修改或删除`LICENSE`文件。但是，我们建议你使用一个开源协议，因为这样可以让其他人更容易地使用你的模组和帮助你改进你的模组。
 
 接下来，你需要修改`README.md`文件中的内容。这个文件将会在你的模组仓库主页显示，你可以在这里介绍你的模组的功能、使用方法、配置文件、指令等等。
 
-最后，你需要修改命名空间名。将`MyMod.cpp`和`MyMod.h`中命名空间`my_mod`改成你想要的名字。按照C++常见惯例，命名空间名应当使用小写字母和下划线，且应当保持一致。这里，我们统一改成`better_suicide`。同样，你可以将`MyMod.cpp`和`MyMod.h`改为你想要的名字，但同时要记得把源文件中的`#include MyMod.h`改为新的头文件名。
+最后，你需要修改命名空间名。将`MyMod.cpp`和`MyMod.h`中命名空间`my_mod`以及类`MyMod`改成你想要的名字。按照C++常见惯例，命名空间名应当使用小写字母和下划线，且应当保持一致。这里，我们将命名空间统一改成`example_mod`，类名改为`ExmapleMod`。同样，你可以将`MyMod.cpp`和`MyMod.h`改为你想要的名字，但同时要记得把源文件中的`#include MyMod.h`改为新的头文件名。
 
 ## 构建你的模组
 
-在一切开始之前，先让我们尝试构建一下空的模组。
+在一切开始之前，先让我们尝试构建一下空的模组。  
+在VSCode界面左侧的侧边栏找到XMake图标，然后选择构建的模式，这里选择`Debug`  
+![](vscode-xmake-sidebar.png)  
+然后我们还需要手动指定一下模组将被构建成服务端模组还是客户端模组
 
-先更新一下仓库：
-
-```shell
-xmake repo -u
-```
-
-配置构建：
-
-```shell
-xmake f -m debug
-```
-
-!!! tip
-    如果你想以其它模式构建，也可以使用`-m release`或`-m releasedbg`。这两个模式会开启`fastest`优化等级。其中，`-m release`会关闭调试信息，而`-m releasedbg`会开启调试信息，就像`-m debug`一样。对于它们的具体区别，请参考[自定义规则 - xmake](https://xmake.io/#/zh-cn/manual/custom_rule)。
+1. 点击VSCode左侧侧边栏的**扩展**按钮，在扩展标签页中找到**XMake**，然后右键点击**设置**  
+   ![](vscode-xmake-setting.png)  
+2. 在弹出的设置页面中，找到`Additional Config Arguments`，点击下面的`Add Item`，在输入框中输入`--target_type=client`或`--target_type=server`，它们分别表示构建为客户端模组或服务端模组  
+   ![](vscode-xmake-add-args.png)
 
 !!! failure
-    如果你在更新仓库或配置构建过程中，出现了下载失败的情况，那么可能需要[配置GitHub镜像代理](https://xmake.io/#/zh-cn/package/remote_package?id=%e9%95%9c%e5%83%8f%e4%bb%a3%e7%90%86)：
+    如果你在更新仓库或配置构建过程中，出现了下载失败的情况，那么可能需要[配置GitHub镜像代理](https://xmake.io/zh/guide/package-management/network-optimization.html#mirror-proxy)
+    或者[配置HTTP代理](https://xmake.io/zh/guide/package-management/network-optimization.html#proxy-setting)：
 
-    ```shell
-    xmake g --proxy_pac=github_mirror.lua
-    ```
-
-    或者[配置HTTP代理](https://xmake.io/#/zh-cn/package/remote_package?id=%e8%ae%be%e7%bd%ae%e4%bb%a3%e7%90%86)：
-
-
-然后构建：
-
-```shell
-xmake
-```
-
-!!! tip
-    你也可以安装[xmake扩展](https://marketplace.visualstudio.com/items?itemName=tboox.xmake-vscode)来更方便地进行构建和生成
-    `compile_commands.json`，顺带一提，使用xmake扩展生成`compile_commands.json`前需要将扩展设置中的**Compile Commands
-    Directory**改为"."才能让clangd检测到。
-
-!!! failure
-    构建失败了？尝试升级一下Visual Studio 2022、MSVC和Windows SDK吧。记住，一定要升级到最新版本。
-
-## 补充`#include`
-
-在`MyMod.cpp`中补充`#include`，最终效果看起来是这样的：
-
-```cpp
-#include "MyPMod.h"
-
-#include "Config.h"
-
-#include <ll/api/Config.h>
-#include <ll/api/command/CommandHandle.h>
-#include <ll/api/command/CommandRegistrar.h>
-#include <ll/api/data/KeyValueDB.h>
-#include <ll/api/event/EventBus.h>
-#include <ll/api/event/player/PlayerJoinEvent.h>
-#include <ll/api/event/player/PlayerUseItemEvent.h>
-#include <ll/api/service/Bedrock.h>
-#include <mc/server/commands/CommandOrigin.h>
-#include <mc/server/commands/CommandOutput.h>
-#include <mc/world/actor/player/Player.h>
-```
+然后点击VSCode底栏的**Build the given target**图标来构建模组
 
 ## 注册指令`/suicide`
 
-在BDS中，指令并不是一开始就能够注册的，而是需要在特定的程序执行之后才能注册。因此，你不能在模组加载时注册模组，而只能在模组启用时注册指令。一般来说，还应当在模组禁用时解注册指令，以防止出现未定义行为。
+在Minecraft中，指令并不是一开始就能够注册的，而是需要在特定的程序执行之后才能注册。因此，你不能在模组加载时注册模组，在服务端中，你可以在模组启用时注册指令，因为此时服务端已完全启动，但在客户端中，你不能这么做，因为自26.10版本开始，客户端会在游戏启动完成时启用模组，而非在本地世界加载完成时。  
+所以，在本教程中，我们将通过监听`ServerCommandRegisterEvent`来注册指令。
 
 !!! warning
-    模组在加载时，会调用其构造函数。但请不要将事件订阅、指令注册等任何与游戏相关的操作放在构造函数中，因为这些操作需要在游戏加载完成后才能进行。如果你在构造函数中进行了这些操作，那么你的模组将很有可能会在加载时崩溃。
+    模组在加载时，会调用其加载方法。但请不要将事件订阅、指令注册等任何与游戏相关的操作放在加载方法中，因为这些操作需要在游戏加载完成后才能进行。如果你在加载方法中进行了这些操作，那么你的模组将很有可能会在加载时崩溃。
 
 !!! tip
     一般来说，模组的构造函数中只需要进行一些与游戏无关初始化操作即可，例如初始化日志系统、初始化配置文件、初始化数据库等等。
 
-```cpp
-bool MyMod::enable() {
+1. include一些我们需要的头文件  
+   如前文所说，我们需要在`ServerCommandRegisterEvent`中注册指令，所以我们需要include下面的头文件
+   ```cpp
+   #include "ll/api/command/CommandHandle.h"
+   #include "ll/api/command/CommandRegistrar.h"
+   #include "ll/api/event/EventBus.h"
+   #include "ll/api/event/command/ServerCommandRegisterEvent.h"
+   ```
 
-    // ...
+2. 在`ExampleMod::enable()`中实现我们的事件监听以及指令注册
+   ```cpp
+   bool ExampleMod::enable() { // 会被LeviLamina启用所有模组时调用
+       auto& logger = getSelf().getLogger();
+       logger.debug("Enabling..."); // 向控制台以DEBUG等级输出日志
+       using namespace ll::
+           event; // 提前使用命名空间以精简代码，比如ll::event::EventBus可以直接写成EventBus，ll::event::command::ServerCommandRegisterEvent可以直接写成   command::ServerCommandRegisterEvent
+   
+       auto& bus = EventBus::getInstance(); // EventBus是单例，通过getInstance()方法获取实例
+   
+       bus.emplaceListener<
+           command::ServerCommandRegisterEvent>([&logger](
+                                                    command::ServerCommandRegisterEvent&
+                                                ) { // 以lambda表达式注册事件监听器，参数为ServerCommandRegisterEvent的引用
+           auto& command =
+               ll::command::CommandRegistrar::getInstance(
+                   false
+               ) // CommandRegistrar是单例，通过getInstance()方法获取实例，参数表示是否为客户端侧指令，传入false表示为服务端
+                   .getOrCreateCommand(
+                       "suicide",
+                       "Commits suicide.",
+                       CommandPermissionLevel::Any
+                   ); // 获取或创建指令，第一个参数为指令名称，第二个参数为指令描述，会出现在客户端的指令提示以及服务端的help中，第三个参数为最低指令权限等级
+   
+           command.overload().execute([&logger](
+                                          CommandOrigin const& origin,
+                                          CommandOutput&       output
+                                      ) { // 重载指令并且注册指令回调
+   
+               auto* entity = origin.getEntity(); // 通过CommandOrigin获取执行指令的实体对象
 
-    // Register commands.
-    auto commandRegistry = ll::service::getCommandRegistry();
-    if (!commandRegistry) {
-        throw std::runtime_error("failed to get command registry");
-    }
+               if (entity == nullptr
+                   || !entity->isPlayer()) { // 如果实体对象为空指针或实体对象并非玩家
+   
+                   output.error(
+                       "Only players can commit suicide"
+                   ); // 通过CommandOutput向控制台/命令方块等非玩家对象输出错误
+   
+                   return;
+               }
+   
+               auto* player = static_cast<Player*>(
+                   entity
+               ); // 将实体对象转为玩家对象，因为在Minecraft中玩家对象继承自实体对象，且在上文我们已经判断过实体为玩家了
+   
+               player->kill(); // 调用kill()方法杀死玩家
+   
+               logger.info(
+                   "{} killed themselves",
+                   player->getRealName()
+               ); // 向控制台输出玩家自杀了
+           });
+       });
+       return true; // 返回true表明模组启用成功
+   }
+   ```
 
-    auto& command = ll::command::CommandRegistrar::getInstance()
-                        .getOrCreateCommand("suicide", "Commits suicide.", CommandPermissionLevel::Any);
-    command.overload().execute([this](CommandOrigin const& origin, CommandOutput& output) {
-        auto* entity = origin.getEntity();
-        if (entity == nullptr || entity->getEntityTypeId() != ActorType::Player) {
-            output.error("Only players can commit suicide");
-            return;
-        }
-
-        auto* player = static_cast<Player*>(entity); // NOLINT(cppcoreguidelines-pro-type-static-cast-downcast)
-        player->kill();
-
-        getSelf().getLogger().info("{} killed themselves", player->getRealName());
-    });
-
-    // ...
-
-    return true;
-}
-```
-
-让我们将这些代码拆开来看。下列语句获取指令注册表。指令注册表只有在特定时机之后才会生效，因此其类型为`optional_ref<T>`。我们需要判定获取到的指令注册表是否有效。
-
-```cpp
-auto commandRegistry = ll::service::getCommandRegistry();
-if (!commandRegistry) {
-    throw std::runtime_error("failed to get command registry");
-}
-```
-
+我们结合以上代码中的注释将以上的代码拆开来理解
 LeviLamina的指令系统支持使用`CommandRegistrar::getOrCreateCommand()`函数直接注册或获取指令。
 
 ```cpp
@@ -243,19 +286,7 @@ auto& command = ll::command::CommandRegistrar::getInstance()
                         .getOrCreateCommand("suicide", "Commits suicide.", CommandPermissionLevel::Any);
 ```
 
-其中，第一个参数是指令本身，即在控制台或聊天栏内输入的字符。虽然尚未测试各种特殊字符能否生效，但我们仍然建议只包含小写英文字母。第二个参数是指令简介，在聊天栏输入指令的一部分时，会在上方以半透明灰色的形式显示候选指令及其简介。第三个参数是指令的权限等级，其定义如下。其中，如果我们希望生存模式下的普通玩家也能执行，应当选择`Any`。而`GameDirectors`对应至少为创造模式的玩家的权限，`Admin`对应至少为OP的权限，`Host`对应控制台的权限。
-
-```cpp
-enum class CommandPermissionLevel : uchar {
-    Any           = 0x0,
-    GameDirectors = 0x1,
-    Admin         = 0x2,
-    Host          = 0x3,
-    Owner         = 0x4,
-    Internal      = 0x5,
-};
-```
-
+第三个参数为执行指令至少需要的权限等级，如果我们希望普通玩家也能执行，应当选择`Any`。而`GameDirectors`对应权限至少为Operator（通过控制台OP指令赋予权限或通过暂停菜单提升为操作员）的玩家，`Host`对应控制台的权限。  
 然后，我们需要为指令增加一个重载并设置对应的回调。
 
 ```cpp
@@ -265,7 +296,8 @@ command.overload().execute([this](CommandOrigin const& origin, CommandOutput& ou
 ```
 
 !!! note
-    指令的重载意味着指令的一个模式，例如`ll <unload|reload|reactivate> <mod:string>` 是一个重载，而`ll list`是另一个重载。下面是一个例子，来自LeviLamina的模组管理指令：
+    指令的重载意味着指令的一个模式，例如`ll <unload|reload|reactivate> <mod:string>` 是一个重载，而`ll list`是另一个重载。  
+    下面是一个例子，来自LeviLamina的模组管理指令：
 
 ```cpp
 enum LeviCommandOperation : int {
@@ -298,34 +330,14 @@ void registerModManageCommand() {
 }
 ```
 
-在回调函数中，我们首先尝试获取指令的执行来源。在这里，我们需要进行一个判定，因为控制台、命令方块乃至各种实体都能够执行指令，但自杀模组应当只响应玩家的请求。如果错误的执行来源执行了自杀指令，那么应当提示一个错误信息。
-
-```cpp
-auto* entity = origin.getEntity();
-if (entity == nullptr || entity->getEntityTypeId != ActorType::Player) {
-    output.error("Only players can commit suicide");
-    return;
-}
-```
-
-当我们确认了执行来源为玩家后，我们就可以将实体指针转换为玩家指针，并杀死之。
-
-```cpp
-auto* player = static_cast<Player*>(entity);
-player->kill();
-
-getSelf().getLogger().info("{} killed themselves", player->getRealName());
-```
-
 !!! warning
-    由于BDS缺乏RTTI信息，因此不能够使用`dynamic_cast<T>()`。
+    由于MCBE缺乏RTTI信息，因此不能够使用`dynamic_cast<T>()`。
 
 !!! tip
-    你可能注意到另一个函数`player->getName()`，但我们并没有使用它。这是因为玩家的名字是可以通过模组或其它方式进行修改的，而`player->getRealName()`的结果则是（一般来说较为）固定的。
+    你可能注意到另一个函数`player->getName()`，但我们并没有使用它。这是因为玩家的名字是可以通过模组或其它方式进行修改的，而`player->getRealName()`的结果则是固定的。
 
-到这一步，指令对象已经配置完毕，当服务器启动后，指令对象将被加载到游戏中。
-
-在`enable()`函数的末尾，返回一个`true`，代表模组启用成功。如果在`enable()`函数中返回了`false`，则LeviLamina会认为模组启用失败，并在控制台上提示错误信息。
+到这一步，指令对象已经配置完毕，当服务器启动后或客户端进入本地世界后，指令对象将被加载到游戏中。  
+如果在`enable()`函数中返回了`false`，则LeviLamina会认为模组启用失败，并在控制台上提示错误信息。
 
 ## 读取配置文件
 
@@ -336,52 +348,48 @@ getSelf().getLogger().info("{} killed themselves", player->getRealName());
 首先，我们另外创建一个`Config.h`文件，定义一个结构体`Config`，用于保存配置信息。
 
 ```cpp
+namespace example_mod {
 struct Config {
-    int  version          = 1;
+    int  version                = 1;
     bool doGiveClockOnFirstJoin = true;
-    bool enableClockMenu = true;
+    bool enableClockMenu        = true;
 };
+} // namespace example_mod
+
 ```
 
 我们在匿名命名空间中增加一个成员变量，用于保存配置文件中的配置信息。
 
 ```cpp
 namespace {
-
-// ...
-
 Config config;
-
 }
 ```
 
 然后，我们读取配置文件并将配置信息保存到成员变量中。
 
 ```cpp
-bool MyMod::load() {
-    
-    // ...
-
-    // Load or initialize configurations.
+bool ExampleMod::load() { // 会被LeviLamina加载所有模组
+    auto& logger = getSelf().getLogger();
+    logger.debug("Loading...");
+    // 加载或初始化配置文件
     const auto& configFilePath = getSelf().getConfigDir() / "config.json";
     if (!ll::config::loadConfig(config, configFilePath)) {
-        getSelf().getLogger().warn("Cannot load configurations from {}", configFilePath);
-        getSelf().getLogger().info("Saving default configurations");
+        logger.warn("Cannot load configurations from {}", configFilePath);
+        logger.info("Saving default configurations");
 
         if (!ll::config::saveConfig(config, configFilePath)) {
-            getSelf().getLogger().error("Cannot save default configurations to {}", configFilePath);
+            logger.error("Cannot save default configurations to {}", configFilePath);
         }
     }
-
-    // ...
-
+    return true;
 }
 ```
 
 在这段代码中，我们首先获取模组的配置文件路径，然后调用`ll::config::loadConfig()`函数，将配置文件中的配置信息读取到结构体实例中。如果读取失败，我们将会在控制台上输出警告信息，并将默认配置信息保存到配置文件中。
 
 !!! note
-    由于配置文件读取是在构造函数内进行的，所以在后续操作中可以保证配置文件已经读取成功了。
+    由于配置文件读取是在加载方法内进行的，所以在后续操作中可以保证配置文件已经读取成功了。
 
 ## 将玩家进服信息持久化保存在数据库中
 
@@ -390,7 +398,10 @@ bool MyMod::load() {
 首先，我们在匿名命名空间中增加一个成员变量，用于保存数据库实例。
 
 ```cpp
+namespace {
+Config                                config;
 std::unique_ptr<ll::data::KeyValueDB> playerDb;
+} // namespace
 ```
 
 !!! note
@@ -399,18 +410,17 @@ std::unique_ptr<ll::data::KeyValueDB> playerDb;
 !!! warning
     请不要使用普通的指针来保存`ll::KeyValueDB`的实例，因为这样很容易使得生命周期管理变得复杂，从而导致内存泄漏和其他问题。请记住：你在写C++，而不是C。
 
-然后，我们在`load`函数中，初始化数据库实例。
+然后，我们在`load`方法中，初始化数据库实例。
 
 ```cpp
-bool MyMod::load() {
-        
+bool ExampleMod::load() { // 会被LeviLamina加载所有模组
     // ...
 
-    // Initialize databases;
+    // 初始化数据库
     const auto& playerDbPath = getSelf().getDataDir() / "players";
     playerDb                 = std::make_unique<ll::data::KeyValueDB>(playerDbPath);
 
-    // ...
+    return true;
 }
 ```
 
@@ -419,91 +429,53 @@ bool MyMod::load() {
 !!! note
     由于数据库初始化是在构造函数内进行的，所以在后续操作中可以保证数据库已经初始化成功了。
 
-## 玩家首次进服时，给予一个钟
+## 玩家首次进入游戏时，给予一个钟
 
-我们的模组的第二个功能是玩家首次进入服务器时，给予一个钟。我们需要在玩家进服时，判断玩家是否首次进服，如果是，则给予一个钟。
-
-在BDS中，玩家进服时，会触发事件`PlayerJoinEvent`。在LeviLamina中，我们可以订阅这个事件，当这个事件被触发时，模组可以在这里实现玩家进服时的逻辑。
-
-在匿名命名空间中，我们增加一个事件监听器指针：
+我们的模组的第二个功能是玩家首次进入服务器时，给予一个钟。我们需要在玩家进服时，判断玩家是否首次进服，如果是，则给予一个钟。  
+在Minecraft中，玩家进入游戏时，会触发事件`PlayerJoinEvent`。在LeviLamina中，我们可以订阅这个事件，当这个事件被触发时，模组可以在这里实现玩家进服时的逻辑。  
+LeviLamina足够智能，能够在模组被禁用时自动取消事件的监听，所以我们不需要为事件监听的生命周期担心。
 
 ```cpp
-ll::event::ListenerPtr playerJoinEventListener;
-```
-
-在`enable()`函数中注册这个事件监听器，并在`disable()`函数中取消注册。
-
-```cpp
-bool MyMod::enable() {
-
+bool ExampleMod::enable() { // 会被LeviLamina启用所有模组时调用
     // ...
 
-    auto& eventBus = ll::event::EventBus::getInstance();
+    bus.emplaceListener<ll::event::player::PlayerJoinEvent>([&doGiveClockOnFirstJoin = config.doGiveClockOnFirstJoin,
+                                                             &logger,
+                                                             &playerDb =
+                                                                 playerDb](ll::event::player::PlayerJoinEvent& event) {
+        if (doGiveClockOnFirstJoin) {    // 判断是否需要在玩家首次加入时给予钟
+            auto& player = event.self(); // 获取玩家对象
 
-    playerJoinEventListener = eventBus.emplaceListener<ll::event::PlayerJoinEvent>(
-        [doGiveClockOnFirstJoin = config.doGiveClockOnFirstJoin,
-         &playerDb = playerDb,
-         this](ll::event::PlayerJoinEvent& event) {
-            if (doGiveClockOnFirstJoin) {
-                auto& player = event.self();
+            const auto& uuid = player.getUuid(); // 获取玩家的UUID
 
-                const auto& uuid = player.getUuid();
+            // 检查玩家之前是否加入过
+            if (!playerDb->get(uuid.asString())) {
 
-                // Check if the player has joined before.
-                if (!playerDb->get(uuid.asString())) {
+                // 构造ItemStack对象
+                ItemStack itemStack("minecraft::clock", 1, 0, nullptr);
+                // 给玩家的背包添加ItemStack对象
+                player.add(itemStack);
 
-                    ItemStack itemStack("clock", 1);
-                    player.add(itemStack);
+                // 需要刷新玩家的背包来让玩家看得见钟
+                player.refreshInventory();
 
-                    // Must refresh inventory to see the clock.
-                    player.refreshInventory();
-
-                    // Mark the player as joined.
-                    if (!playerDb->set(uuid.asString(), "true")) {
-                        getSelf().getLogger().error("Cannot mark {} as joined in database", player.getRealName());
-                    }
-
-                    getSelf().getLogger().info("First join of {}! Giving them a clock", player.getRealName());
+                // 标记玩家已加入过
+                if (!playerDb->set(uuid.asString(), "true")) {
+                    logger.error("Cannot mark {} as joined in database", player.getRealName());
                 }
+
+                // 以INFO等级向控制台输出日志，表示玩家首次加入并给予了钟
+                logger.info("First join of {}! Giving them a clock", player.getRealName());
             }
         }
-    );
+    });
 
-    // ...
-
-}
-
-bool MyMod::disable() {
-
-    // ...
-
-    auto& eventBus = ll::event::EventBus::getInstance();
-
-    eventBus.removeListener(playerJoinEventListener);
-
-    // ...
-
+    return true; // 返回true表明模组启用成功
 }
 ```
 
-让我们将这些代码拆开来看。在回调lambda函数中，我们捕获了配置中的`doGiveClockOnFirstJoin`，以及模组的this和数据库实例。然后，我们判断配置中的`doGiveClockOnFirstJoin`是否为`true`，如果是，则继续执行逻辑。
-
-```cpp
-[doGiveClockOnFirstJoin = config.doGiveClockOnFirstJoin,
- &playerDb = playerDb
- this](ll::event::player::PlayerJoinEvent& event) {
-    if (doGiveClockOnFirstJoin) {
-        // ...
-    }
-}
-```
-
+让我们将这些代码拆开来看。在回调lambda函数中，我们捕获了配置中的`doGiveClockOnFirstJoin`，以及logger变量和数据库实例。然后，我们判断配置中的`doGiveClockOnFirstJoin`是否为`true`，如果是，则继续执行逻辑。  
 接下来，我们获取事件实例中的玩家实例和玩家的UUID。
-
-```cpp
-auto& player = event.self();
-auto& uuid   = player.getUuid();
-```
 
 !!! note
     这里获取的UUID的类型是`mce::UUID`而不是`std::string`。我们建议只有在需要时才将UUID转换为`std::string`，因为`mce::UUID`的实现更加高效。
@@ -511,179 +483,100 @@ auto& uuid   = player.getUuid();
 !!! danger
     请不要使用XUID作为玩家的唯一标识符。虽然在LiteLoaderBDS时代，不少模组使用XUID作为玩家的唯一标识符，但这是不正确的。XUID是Xbox Live的标识符，而不是玩家的标识符。如果服务器没有开启在线模式，或者存在假人，那么XUID的行为将是不可预测的。因此，我们强烈建议使用UUID作为玩家的唯一标识符。
 
-然后，我们使用玩家的UUID作为键，从数据库中获取玩家是否已经进服过。如果玩家已经进服过，那么我们就不需要再给予玩家一个钟了。
-
-```cpp
-// Check if the player has joined before.
-if (!playerDb->get(uuid.asString())) {
-    // ...
-}
-```
-
-接下来，我们创建一个钟的物品栈，并将这个物品栈添加到玩家的背包中。
-
-```cpp
-ItemStack itemStack("minecraft:clock", 1);
-player.add(itemStack);
-```
+然后，我们使用玩家的UUID作为键，从数据库中获取玩家是否已经进服过。如果玩家已经进服过，那么我们就不需要再给予玩家一个钟了。  
+接下来，我们构造了一个钟的物品栈，并将这个物品栈添加到玩家的背包中。
 
 !!! note
     这里使用了`ItemStack`类，而不是`Item`类。`ItemStack`类是`Item`类的一个包装，它包含了物品的数量、附魔、耐久等信息，而`Item`类仅仅代表这个物品类别。因此应当使用`ItemStack`类而不是`Item`类。
 
-然后，我们需要刷新玩家的背包，以便玩家能够看到钟。
-
-```cpp
-player.refreshInventory();
-```
-
+然后，我们需要刷新玩家的背包，以便玩家能够看到钟。  
 最后，我们将玩家的UUID作为键，将玩家标记为已经进服过。
-
-```cpp
-// Mark the player as joined.
-if (!playerDb->set(uuid.asString(), "true")) {
-    getSelf().getLogger().error("Cannot mark {} as joined in database", player.getRealName());
-}
-```
-
-在`disable()`函数中，我们需要在事件总线上移除事件监听器以取消对事件的订阅。
-
-```cpp
-eventBus.removeListener(playerJoinEventListener);
-```
 
 ## 使用钟的时候，弹出确认自杀的提示
 
-我们的模组的第三个功能是使用钟的时候，弹出确认自杀的提示，玩家确认后可以自杀。我们需要订阅玩家使用物品的事件，当玩家使用钟时，弹出确认自杀的提示。
-
-在匿名命名空间中，我们增加一个事件监听器指针：
-
-```cpp
-ll::event::ListenerPtr playerUseItemEventListener;
-```
-
-在`enable()`函数中注册这个事件监听器，并在`disable()`函数中取消注册。
+我们的模组的第三个功能是使用钟的时候，弹出确认自杀的提示，玩家确认后可以自杀。我们需要订阅玩家使用物品的事件，当玩家使用钟时，弹出确认自杀的提示。  
+在`enable()`函数中注册这个事件监听器。
 
 ```cpp
-bool MyMod::enable() {
+bool ExampleMod::enable() { // 会被LeviLamina启用所有模组时调用
+    auto& logger = getSelf().getLogger();
 
     // ...
 
-    playerUseItemEventListener =
-        eventBus.emplaceListener<ll::event::PlayerUseItemEvent>([enableClockMenu = config.enableClockMenu,
-                                                                 this](ll::event::PlayerUseItemEvent& event) {
-            if (enableClockMenu) {
-                auto& player    = event.self();
-                auto& itemStack = event.item();
-
-                if (itemStack.getTypeName() == "minecraft:clock") {
-                    ll::form::ModalForm form(
-                        "Warning",
-                        "Are you sure you want to kill yourself?",
-                        "Yes",
-                        "No",
-                        [this](Player& player, bool yes) {
-                            if (yes) {
-                                player.kill();
-
-                                getSelf().getLogger().info("{} killed themselves", player.getRealName());
-                            }
-                        }
-                    );
-
-                    form.sendTo(player);
-                }
-            }
-        });
-
-    // ...
-
-}
-
-bool MyMod::disable() {
-
-    // ...
-
-    eventBus.removeListener(playerUseItemEventListener);
-
-    // ...
-
-}
-```
-
-让我们将代码拆开来看。在回调lambda函数中，我们捕获了配置项`enableClockMenu`和this，然后进行判断，只有配置项启用时，才执行逻辑。
-
-```cpp
-playerUseItemEventListener = eventBus.emplaceListener<ll::event::PlayerUseItemEvent>(
-    [enableClockMenu = config.enableClockMenu, this](ll::event::PlayerUseItemEvent& event) {
+    bus.emplaceListener<ll::event::PlayerUseItemEvent>([enableClockMenu = config.enableClockMenu,
+                                                        &logger](ll::event::PlayerUseItemEvent& event) {
         if (enableClockMenu) {
-           // ...
+            auto& player = event.self();    // 获取玩家对象
+            auto& itemStack = event.item(); // 获取玩家使用的物品对象
+
+            if (itemStack.getRawNameId() == "clock") { // 如果物品是钟
+                using namespace ll::form;              // 使用ll::form命名空间以简化代码
+                // 构造ModalForm对象，传入标题、内容、上方按钮文本、下方按钮文本
+                ModalForm form("Warning", "Are you sure you want to kill yourself?", "Yes", "No");
+
+                // 发送ModalForm给玩家，并注册回调函数
+                form.sendTo(player, [&logger](Player& player, ModalFormResult res, FormCancelReason) {
+                    // 如果玩家选择了上方按钮（Yes），则杀死玩家
+                    if (res.has_value() && res.value() == ModalFormSelectedButton::Upper) {
+                        player.kill();
+
+                        logger.info("{} killed themselves", player.getRealName());
+                    }
+                });
+            }
         }
-    }
-);
-```
+    });
 
-在逻辑中，我们首先获取该事件的两个属性，即使用物品的玩家和被使用的物品。然后判断物品id是否为`clock`，并执行弹出表单的逻辑。
-
-```cpp
-auto& player    = event.self();
-auto& itemStack = event.item();
-
-if (itemStack.getTypeName() == "clock") {
-    // ...
+    return true; // 返回true表明模组启用成功
 }
 ```
+
+让我们将代码拆开来看。在回调lambda函数中，我们捕获了配置项`enableClockMenu`和logger，然后进行判断，只有配置项启用时，才执行逻辑。  
+在逻辑中，我们首先获取该事件的两个属性，即使用物品的玩家和被使用的物品。然后判断物品id是否为`clock`，并执行弹出表单的逻辑。
 
 !!! warning
     不要使用`itemStack.getName()`，因为这个函数返回的是物品显示的名字，比如`Clock`或`Iron Sword`。
 
-在这里我们使用了最简单的模态表单`ModalForm`，其构造函数的第一个参数是表单的标题，第二个参数是表单提示内容，第三个参数是左下角按钮内容，第四个参数是右下角按钮内容。回调函数接收两个参数，第一个参数是表单发送向的玩家，第二个参数是玩家的选择，`true`代表选择了左下角按钮。
+在这里我们使用了最简单的模态表单`ModalForm`，其构造函数的参数分别是：
+1. 表单的标题
+2. 表单提示内容
+3. 左下角按钮内容
+4. 右下角按钮内容。
 
-```cpp
-ll::form::ModalForm form(
-    "Warning",
-    "Are you sure you want to kill yourself?",
-    "Yes",
-    "No",
-    [this](Player& player, bool yes) {
-        if (yes) {
-            player.kill();
-
-            getSelf().getLogger().info("{} killed themselves", player.getRealName());
-        }
-    }
-);
-```
-
-接下来将表单发送给玩家即可。
-
-```cpp
-form.sendTo(player);
-```
+回调函数接收三个参数，分别是：
+1. 表单发送向的玩家
+2. 玩家的选择结果
+3. 表单被取消的原因，此处暂未使用。
 
 ## 运行你的模组
 
-如果你的模组正常构建完毕，你应该能看到`bin/`目录内有一个以你的模组名为名的目录。将这个目录拷贝到LeviLamina目录中的`plugins/`目录里面（如果没有，请创建），得到如下的文件结构：
+如果你的模组正常构建完毕，你应该能看到`bin/`目录内有一个以你的模组名为名的目录。将这个目录拷贝到LeviLamina服务端目录中的`plugins/`目录或LeviLamina客户端目录中的`mods`目录中（如果没有，请创建）。  
+然后运行LeviLamina服务端（`bedrock_server_mod.exe`）或LeviLamina客户端即可。
 
-```text
-/path/to/levilamina/plugins/better-suicide
-├── better-suicide.dll
-└── manifest.json
-```
+## 发布你的模组
 
-然后运行LeviLamina服务器（`bedrock_server_mod.exe`）即可。
+1. 将`tooth.json`中的`version`字段改为你即将发布的版本，例如`0.1.0`  
+2. 为`CHANGELOG.md`添加即将发布的新版本的CHANGELOG，具体的CHANGELOG格式可以参照[keepachangelog.com](https://keepachangelog.com/zh-CN/1.1.0/)，例如：
+   ```md
+   ## 0.1.0 - 2026-08-04
+   
+   ### Added
+   
+   - First release.
+   
+   ```
+3. （可选）安装Node.js，然后运行
+    ```shell
+    npm install keep-a-changelog -g
+    ```
+4. （可选）运行
+    ```shell
+    changelog --format markdownlint
+    ```
+    来格式化`CHANGELOG.md`
+6. 在GitHub上创建新的release，例如`v0.1.0`
 
-## 下一步？
+GitHub Actions会自动将CHANGELOG.md的内容写进release，稍等几分钟，你的模组将会自动被编译并上传到release
 
-你可以[公开发布你的模组](./publish_your_first_mod.zh.md)，让更多的人使用你的模组。
-
-## 更进一步的练习
-
-我们可以在这个模组的基础上，增加一些功能，来练习LeviLamina模组开发的更多知识。下面是一些可能的练习：
-
-- 设置玩家自杀的冷却时间
-- 让玩家自杀时，保留所有物品不掉落
-- 让玩家自杀时，保留经验
-- 让玩家自杀时，在原地重生
-- 统计玩家自杀次数，并在侧边栏显示排行榜
-- 使用更高级的表单，让玩家选择自杀的方式
-- 让玩家自杀时，显示一个自定义的死亡信息
+!!! warning
+    一定要使用以v开头并且符合[语义化版本](https://semver.org/lang/zh-CN/)的版本号，否则无法正常被Bedrinth和LeviLauncher收录！

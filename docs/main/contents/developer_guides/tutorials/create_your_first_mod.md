@@ -1,19 +1,19 @@
-# Create your first mod
+# Create Your First Mod
 
 ## Introduction
 
-This tutorial is designed to help you get started with mod development in LeviLamina. It is by no means a complete tutorial of all the possibilities in LeviLamina, but rather an overview of the basics. First, make sure you understand C++, set up your workspace in the IDE, and then introduce the basics of most LeviLamina mods.
+This tutorial aims to help you get started with mod development in LeviLamina. It is by no means a complete tutorial covering all possibilities in LeviLamina, but rather a general overview of the basics. First, make sure you understand C++, then set up your workspace in an IDE, and finally learn the fundamentals of most LeviLamina mods.
 
-In this tutorial, we will create a simple mod that implements the following features:
+In this tutorial, we will create a simple mod with the following features:
 
-- Players can enter the `/suicide` command to suicide
-- Players are given a clock when they first log in to the server
-- When players use the clock, a confirmation window pops up asking if they want to suicide, and if they confirm, they suicide
+- Players can use the `/suicide` command to commit suicide
+- Players receive a clock when they enter the world for the first time
+- When players use the clock, a confirmation dialog will appear asking whether they want to commit suicide. If confirmed, the player will die
 
 This tutorial covers the following topics:
 
 - Logging output
-- Subscribing and unsubscribing events
+- Subscribing to events
 - Registering commands
 - Reading configuration files
 - Database access
@@ -22,11 +22,12 @@ This tutorial covers the following topics:
 - Calling Minecraft functions
 
 !!! info
-    All the source code for this tutorial can be found at [futrime/better-suicide](https://github.com/futrime/better-suicide). We recommend that you look at the source code while reading the tutorial.
+    The complete source code for this tutorial can be found at [ShrBox/ExampleMod](https://github.com/ShrBox/ExampleMod). We recommend reading the source code alongside this tutorial.
 
-## Learn C++
 
-These tutorials require basic knowledge of the C++ programming language. If you are just starting out with C++ or need a refresher, here is a non-exhaustive list.
+## Learning C++
+
+These tutorials require basic knowledge of the C++ programming language. If you are just starting with C++ or need a refresher, here is a non-exhaustive list of resources.
 
 - [C++ Developer Roadmap](https://roadmap.sh/cpp)
 - [cppreference.com](https://en.cppreference.com/w/)
@@ -35,228 +36,318 @@ These tutorials require basic knowledge of the C++ programming language. If you 
 - [hacking C++](https://hackingcpp.com/)
 - [C++ Core Guidelines](http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
 
-## Set up your workspace
+## Setting Up Your Workspace
 
-Before developing mods (or learning C++), you need to set up a development environment. This includes but is not limited to the following:
+Before developing mods (or learning C++), you need to set up a development environment. This includes, but is not limited to, the following:
 
 - [xmake](https://xmake.io)
 - [Visual Studio Code](https://code.visualstudio.com)
 - [Git](https://git-scm.com)
-- [Visual Studio 2022](https://visualstudio.microsoft.com/) (When installing Visual Studio 2022, make sure to check the C++ desktop application development option)
+- [Visual Studio](https://visualstudio.microsoft.com/) (When installing Visual Studio, make sure to select "Desktop development with C++")
+- LLVM: Open Visual Studio Installer, select "C++ Clang tools for Windows" under the optional components of "Desktop development with C++". Alternatively, download it from [GitHub](https://github.com/llvm/llvm-project/releases/latest).
 
-!!! warning
-    If you are not using the latest version of Visual Studio 2022, MSVC, and Windows SDK, you may encounter problems in building, loading, and running mods later. If you encounter problems like `xxx is not a member of std`, please consider this possibility. The environment for testing the build of this tutorial is Visual Studio Community 2022 17.8.1, MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.38-17.8), Windows 11 SDK (10.0.22000.0)
+### Installing Extensions for Visual Studio Code
 
-!!! tip
-    Because the LeviLamina project is huge, if you use Visual Studio Code, its built-in Intellisense system may be overwhelmed. We recommend that you install [the clangd extension](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) and use clangd for code checking and so on. After installing clangd and the corresponding extension, you need to run the following command to generate `compile_commands.json`, and then restart VSCode to make clangd effective.
+After installing VSCode, you also need to install the following extensions:
 
-    ```shell
-    xmake project -k compile_commands
-    ```
+- [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+- [XMake](https://marketplace.visualstudio.com/items?itemName=tboox.xmake-vscode)
+- [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
 
-Then, you need to install LeviLamina somewhere. This tutorial is for LeviLamina 0.9.2, and some modifications may be required for other versions.
+## Creating a Mod Repository
 
-## Create a mod repository
-
-Visit [levilamina-mod-template](https://github.com/LiteLDev/levilamina-mod-template) and click `Use this template` to use this template to initialize your mod repository.
-
+Visit [levilamina-mod-template](https://github.com/LiteLDev/levilamina-mod-template) and click `Use this template` to initialize your mod repository using this template.  
 ![Create from template](levilamina-mod-template.png)
 
-Clone the mod repository to your local machine using Git, and then open it with VSCode. You need to modify some of the files to fill in your mod information.
+Clone the mod repository locally using `git clone` inside a folder used for storing mod projects, then open it with VSCode. You need to modify some files to fill in your mod information.
 
-First, you need to modify the mod name information in `xmake.lua`. Modify the mod name to specify the name of your mod, which will be displayed in LeviLamina. The name allows uppercase and lowercase English letters, numbers, and hyphens, and does not allow spaces and other special characters. It is recommended to use `example-mod` or `ExampleMod` these two forms. Here, our mod is named `better-suicide`.
+First, modify the mod name in `xmake.lua`. Changing the mod name specifies the name of your mod, which will be displayed in LeviLamina. The name may contain uppercase and lowercase English letters, numbers, and hyphens, but spaces and other special characters are not allowed. It is recommended to use formats such as `example-mod` or `ExampleMod`. In this tutorial, our mod is named `ExampleMod`.
 
 ```lua
-target("better-suicide") -- Change this to your mod name.
+target("ExampleMod") -- Change this to your mod name.
 ```
 
-Next, modify the contents of `tooth.json`. `tooth.json` provides relevant information for lip to install mod packages. After proper configuration, your mod will be included in the [Bedrinth](https://pkg.levimc.org) and can be downloaded and installed by users around the world. Change the value of the `tooth` field to the GitHub repository address of this mod, fill in the information fields in `info`, and then fill in the `asset_url` field according to the release address of the repository, modify the dependent LeviLamina version, and modify the `place` of `src` and `dest` according to the mod name filled in `xmake.lua`. For the mod in this article, the following is a feasible reference:
+Next, it is recommended to manually pin the LeviLamina version used by your mod. For example, if we want to use the latest version of LeviLamina 26.20, we add `26.20.*` after `levilamina` as the version requirement. You can also specify a specific commit as the version, which is useful when adapting your mod to a new LeviLamina version before an official release is available.
+
+```lua
+-- add_requires("levilamina x.x.x") for a specific version
+-- add_requires("levilamina develop") to use develop version
+-- please note that you should add bdslibrary yourself if using dev version
+add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_type")}})
+```
+
+Next, modify the contents of `tooth.json`. `tooth.json` provides information required by lip to install mod packages. After proper configuration, your mod will be included in [Bedrinth](https://pkg.levimc.org) and [LeviLauncher](https://github.com/LiteLDev/LeviLauncher), allowing users worldwide to download and install it.
+
+!!! tip
+    In `tooth.json`, a `variant` with an empty `label` represents the server version, while a `variant` with `label` set to `client` represents the client version. If your mod is only available on the server or client, you can remove the unnecessary variant. In lip, you can install them using the following commands:
+    ```shell
+    # Server
+    lip install https://github.com/ShrBox/ExampleMod
+
+    # Client
+    lip install https://github.com/ShrBox/ExampleMod#client
+    ```
+
+* Change the value of the `tooth` field to your mod's GitHub repository URL, and fill in the information fields in `info`.
+  `info.avatar_url` will be displayed on the mod pages of Bedrinth and LeviLauncher. Choosing a suitable icon is also an important part of presenting your mod. For convenience, this tutorial directly uses the author's GitHub avatar.
+* Change the LeviLamina target version in the `dependencies` section of each `variant` to the actual LeviLamina version used by your mod.
+* Fill in the `asset_url` field according to the repository release URL, update the required LeviLamina version, and modify the `src` and `dest` fields in `place` according to the mod name specified in `xmake.lua`. For this tutorial's mod, the following is a possible example:
 
 ```json
 {
   "format_version": 3,
   "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
-  "tooth": "github.com/futrime/better-suicide",
-  "version": "0.6.0",
+  "tooth": "https://github.com/ShrBox/ExampleMod",
+  "version": "0.1.0",
   "info": {
-    "name": "better-suicide",
-    "description": "Allow players to suicide in Minecraft.",
+    "name": "ExampleMod",
+    "description": "Mod example for LeviLamina",
     "tags": [
       "platform:levilamina",
       "type:mod"
     ],
-    "avatar_url": ""
+    "avatar_url": "https://avatars.githubusercontent.com/u/53301243"
   },
   "variants": [
     {
+      "label": "",
       "platform": "win-x64",
       "dependencies": {
-        "github.com/LiteLDev/LeviLamina": "1.3.*"
+        "github.com/LiteLDev/LeviLamina": "26.20.*"
       },
       "assets": [
         {
           "type": "zip",
           "urls": [
-            "https://github.com/futrime/better-suicide/releases/download/v0.6.0/better-suicide-windows-x64.zip"
+            "https://{{tooth}}/releases/download/v{{version}}/ExampleMod-server-windows-x64.zip"
           ],
           "placements": [
             {
               "type": "dir",
-              "src": "better-suicide/",
-              "dest": "plugins/better-suicide/"
+              "src": "ExampleMod/",
+              "dest": "plugins/ExampleMod/"
             }
           ]
         }
-      ]
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_pack": [],
+        "post_pack": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
+    },
+    {
+      "label": "client",
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina#client": "26.20.*"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://{{tooth}}/releases/download/v{{version}}/ExampleMod-client-windows-x64.zip"
+          ],
+          "placements": [
+            {
+              "type": "dir",
+              "src": "ExampleMod/",
+              "dest": "mods/ExampleMod/"
+            }
+          ]
+        }
+      ],
+      "preserve_files": [],
+      "remove_files": [],
+      "scripts": {
+        "pre_install": [],
+        "install": [],
+        "post_install": [],
+        "pre_pack": [],
+        "post_pack": [],
+        "pre_uninstall": [],
+        "uninstall": [],
+        "post_uninstall": []
+      }
     }
   ]
 }
 ```
 
-Then, you need to modify the copyright information in the `LICENSE` file. You can choose an open source license that suits your mod [here](https://choosealicense.com/licenses/). Rest assured, your mod does not need to be open source, because the mod template uses the CC0 license, you can freely modify or delete the `LICENSE` file. However, we recommend that you use an open source license, because this way you can make it easier for others to use your mod and help you improve your mod.
+Then, you need to modify the copyright information in the `LICENSE` file. You can choose a suitable open-source license for your mod from [here](https://choosealicense.com/licenses/).
 
-Next, you need to modify the contents of the `README.md` file. This file will be displayed on the main page of your mod repository, where you can introduce the features, usage, configuration files, commands, etc. of your mod.
+Your mod does not need to be open source. Since the mod template uses the CC0 license, you are free to modify or remove the `LICENSE` file. However, we recommend using an open-source license, as it makes it easier for others to use your mod and help improve it.
 
-Finally, you need to change the namespace name. Change the namespace `my_mod` in `MyMod.cpp` and `MyMod.h` to the name you want. Following common C++ conventions, namespace names should use lowercase letters and underscores, and should be consistent. Here, we uniformly change it to `better_suicide`. Similarly, you can change `MyMod.cpp` and `MyMod.h` to the names you want, but at the same time remember to change `#include MyMod.h` in the source file to the new header file name.
+Next, modify the contents of the `README.md` file. This file will be displayed on your mod repository homepage. You can introduce your mod's features, usage instructions, configuration files, commands, and more here.
 
-## Build your mod
+Finally, you need to modify the namespace name. Change the namespace `my_mod` and the class `MyMod` in `MyMod.cpp` and `MyMod.h` to the names you want.
 
-Before we start, let's try to build an empty mod.
+Following common C++ conventions, namespace names should use lowercase letters and underscores, and should remain consistent. In this tutorial, we rename the namespace to `example_mod` and the class to `ExampleMod`.
 
-First, update the repository:
+Similarly, you can rename `MyMod.cpp` and `MyMod.h` to whatever you want, but remember to change `#include MyMod.h` in the source files to the new header file name.
 
-```shell
-xmake repo -u
-```
+## Building Your Mod
 
-Configure the build:
+Before we begin anything else, let's try building the empty mod first.
 
-```shell
-xmake f -m debug
-```
+Find the XMake icon in the left sidebar of VSCode, then select the build mode. Here we choose `Debug`.
 
-!!! tip
-    If you want to build in other modes, you can also use `-m release` or `-m releasedbg`. These two modes will enable the `fastest` optimization level. Among them, `-m release` will turn off debugging information, while `-m releasedbg` will turn on debugging information, just like `-m debug`. For their specific differences, please refer to [Custom Rules - xmake](https://xmake.io/#/en/manual/custom_rule).
+![](vscode-xmake-sidebar.png)
 
-!!! failure
-    If you encounter a download failure during the repository update or build configuration process, you may need to [configure GitHub mirror proxy](https://xmake.io/#/en/package/remote_package?id=mirror-proxy):
+Then we need to manually specify whether the mod should be built as a server mod or a client mod.
 
-    ```shell
-    xmake g --proxy_pac=github_mirror.lua
-    ```
+1. Click the **Extensions** button in the left sidebar of VSCode. In the Extensions tab, find **XMake**, then right-click and select **Settings**.
 
-    Or [configure HTTP proxy](https://xmake.io/#/en/package/remote_package?id=set-proxy):
+   ![](vscode-xmake-setting.png)
 
+2. In the settings page that appears, find `Additional Config Arguments`, click **Add Item** below it, and enter `--target_type=client` or `--target_type=server`.
 
-Then build:
+   These options represent building a client mod or server mod respectively.
 
-```shell
-xmake
-```
-
-!!! tip
-    You can also install the [XMake extension](https://marketplace.visualstudio.com/items?itemName=tboox.xmake-vscode) to
-    make building and generating `compile_commands.json` more convenient. By the way, before using the XMake extension to
-    generate `compile_commands.json`, you need to set **Compile Commands Directory** in the extension settings to `"."` so
-    that `clangd` can detect it.
+   ![](vscode-xmake-add-args.png)
 
 !!! failure
-    Build failed? Try upgrading Visual Studio 2022, MSVC, and Windows SDK. Remember, be sure to upgrade to the latest version.
+    If you encounter download failures while updating the repository or configuring the build process, you may need to [configure the GitHub mirror proxy](https://xmake.io/guide/package-management/network-optimization.html#mirror-proxy)
+    or [configure an HTTP proxy](https://xmake.io/guide/package-management/network-optimization.html#proxy-setting):
 
-## Add `#include`
+Then click the **Build the given target** icon in the VSCode bottom bar to build the mod.
 
-Add `#include` in `MyMod.cpp`, the final effect looks like this:
+## Registering the `/suicide` Command
 
-```cpp
-#include "MyMod.h"
+In Minecraft, commands cannot be registered immediately when the game starts. They can only be registered after certain parts of the program have executed.
 
-#include "Config.h"
+Therefore, you cannot register commands while the mod is loading. On the server side, you can register commands when the mod is enabled because the server has fully started at that point.
 
-#include <ll/api/Config.h>
-#include <ll/api/command/CommandHandle.h>
-#include <ll/api/command/CommandRegistrar.h>
-#include <ll/api/data/KeyValueDB.h>
-#include <ll/api/event/EventBus.h>
-#include <ll/api/event/player/PlayerJoinEvent.h>
-#include <ll/api/event/player/PlayerUseItemEvent.h>
-#include <ll/api/service/Bedrock.h>
-#include <mc/server/commands/CommandOrigin.h>
-#include <mc/server/commands/CommandOutput.h>
-#include <mc/world/actor/player/Player.h>
-```
+However, this cannot be done on the client side, because since version 26.10, the client enables mods when the game startup process completes, rather than when a local world finishes loading.
 
-## Register command `/suicide`
-
-In BDS, commands are not registered from the beginning, but need to be registered after a specific program is executed. Therefore, you cannot register mods when they are loaded, but only when they are enabled. Generally speaking, you should also unregister commands when the mod is disabled to prevent undefined behavior.
+Therefore, in this tutorial, we will register the command by listening to the `ServerCommandRegisterEvent`.
 
 !!! warning
-    The mod will call its constructor when it is loaded. But please do not put event subscription, command registration, and any other game-related operations in the constructor, because these operations need to be performed after the game is loaded. If you do these operations in the constructor, your mod will most likely crash when loading.
+    When a mod is loaded, its loading method will be called. However, please do not perform any game-related operations such as event subscriptions or command registration inside the loading method, because these operations can only be performed after the game has finished loading.  
+    If you perform these operations in the loading method, your mod will very likely crash during loading.
 
 !!! tip
-    Generally speaking, the mod's constructor only needs to perform some game-independent initialization operations, such as initializing the logging system, initializing the configuration file, initializing the database, etc.
+    Generally speaking, the constructor of a mod should only perform initialization operations unrelated to the game, such as initializing the logging system, configuration files, databases, and so on.
+
+1. Include the required header files.  
+   As mentioned above, we need to register commands in `ServerCommandRegisterEvent`, so we need to include the following headers:
 
 ```cpp
-bool MyMod::enable() {
+#include "ll/api/command/CommandHandle.h"
+#include "ll/api/command/CommandRegistrar.h"
+#include "ll/api/event/EventBus.h"
+#include "ll/api/event/command/ServerCommandRegisterEvent.h"
+```
 
-    // ...
+2. Implement event listening and command registration in `ExampleMod::enable()`.
 
-    // Register commands.
-    auto commandRegistry = ll::service::getCommandRegistry();
-    if (!commandRegistry) {
-        throw std::runtime_error("failed to get command registry");
-    }
+```cpp
+bool ExampleMod::enable() { // Called by LeviLamina when enabling all mods
+    auto& logger = getSelf().getLogger();
 
-    auto& command = ll::command::CommandRegistrar::getInstance()
-                        .getOrCreateCommand("suicide", "Commits suicide.", CommandPermissionLevel::Any);
-    command.overload().execute([this](CommandOrigin const& origin, CommandOutput& output) {
-        auto* entity = origin.getEntity();
-        if (entity == nullptr || entity->getEntityTypeId() != ActorType::Player) {
-            output.error("Only players can commit suicide");
-            return;
-        }
+    logger.debug("Enabling..."); // Output a DEBUG level log message to the console
 
-        auto* player = static_cast<Player*>(entity); // NOLINT(cppcoreguidelines-pro-type-static-cast-downcast)
-        player->kill();
+    using namespace ll::
+        event; // Use the namespace in advance to simplify code.
+               // For example, ll::event::EventBus can be written as EventBus,
+               // and ll::event::command::ServerCommandRegisterEvent can be written as command::ServerCommandRegisterEvent.
 
-        getSelf().getLogger().info("{} killed themselves", player->getRealName());
+    auto& bus = EventBus::getInstance(); // EventBus is a singleton. Get its instance using getInstance()
+
+    bus.emplaceListener<
+        command::ServerCommandRegisterEvent>([&logger](
+                                                 command::ServerCommandRegisterEvent&
+                                             ) {
+        // Register an event listener using a lambda expression.
+        // The parameter is a reference to ServerCommandRegisterEvent.
+
+        auto& command =
+            ll::command::CommandRegistrar::getInstance(
+                false
+            )
+                // CommandRegistrar is a singleton. Get its instance using getInstance().
+                // The parameter indicates whether this is a client-side command.
+                // Passing false means it is a server-side command.
+
+                .getOrCreateCommand(
+                    "suicide",
+                    "Commits suicide.",
+                    CommandPermissionLevel::Any
+                );
+                // Get or create the command.
+                // The first parameter is the command name.
+                // The second parameter is the command description,
+                // which appears in client command suggestions and server help.
+                // The third parameter is the minimum required permission level.
+
+        command.overload().execute([&logger](
+                                       CommandOrigin const& origin,
+                                       CommandOutput&       output
+                                   ) {
+            // Add a command overload and register the command callback.
+
+            auto* entity = origin.getEntity();
+            // Get the entity executing the command through CommandOrigin.
+
+            if (entity == nullptr
+                || !entity->isPlayer()) {
+                // If the entity pointer is null or the entity is not a player.
+
+                output.error(
+                    "Only players can commit suicide"
+                );
+                // Output an error message to non-player command sources
+                // such as the console or command blocks through CommandOutput.
+
+                return;
+            }
+
+            auto* player = static_cast<Player*>(entity);
+            // Convert the entity object into a player object.
+            // In Minecraft, Player inherits from Entity,
+            // and we have already verified that the entity is a player above.
+
+            player->kill();
+            // Call kill() to kill the player.
+
+            logger.info(
+                "{} killed themselves",
+                player->getRealName()
+            );
+            // Output that the player committed suicide to the console.
+        });
     });
 
-    // ...
-
     return true;
+    // Returning true indicates that the mod was enabled successfully.
 }
 ```
 
-Let's break down these codes and see. The following statement gets the command registry. The command registry only takes effect after a specific time, so its type is `optional_ref<T>`. We need to determine whether the command registry obtained is valid.
+Let's break down the code above using the comments inside it.
 
-```cpp
-auto commandRegistry = ll::service::getCommandRegistry();
-if (!commandRegistry) {
-    throw std::runtime_error("failed to get command registry");
-}
-```
-
-LeviLamina's command system supports using the `CommandRegistrar::getOrCreateCommand()` function to directly register or get commands.
+LeviLamina's command system supports directly registering or obtaining commands using the `CommandRegistrar::getOrCreateCommand()` function.
 
 ```cpp
 auto& command = ll::command::CommandRegistrar::getInstance()
                         .getOrCreateCommand("suicide", "Commits suicide.", CommandPermissionLevel::Any);
 ```
 
-The first parameter is the command itself, which is the character entered in the console or chat bar. Although it has not been tested whether various special characters can work, we still recommend that only lowercase English letters be included. The second parameter is the command introduction. When entering part of the command in the chat bar, the candidate command and its introduction will be displayed in a semi-transparent gray form above. The third parameter is the command's permission level, which is defined as follows. Among them, if we want ordinary players in survival mode to be able to execute, we should choose `Any`. And `GameDirectors` corresponds to the permission of players who are at least in creative mode, `Admin` corresponds to the permission of at least OP, and `Host` corresponds to the console's permission.
+The third parameter is the minimum permission level required to execute the command.
 
-```cpp
-enum class CommandPermissionLevel : uchar {
-    Any           = 0x0,
-    GameDirectors = 0x1,
-    Admin         = 0x2,
-    Host          = 0x3,
-    Owner         = 0x4,
-    Internal      = 0x5,
-};
-```
+If we want ordinary players to be able to execute it, we should choose `Any`.
 
-Then, we need to add an overload to the command and set the corresponding callback.
+`GameDirectors` corresponds to players with at least Operator permissions (permissions granted through the console OP command or by promoting the player to operator through the pause menu).
+
+`Host` corresponds to the permission level of the console.
+
+Then, we need to add an overload to the command and set its corresponding callback.
 
 ```cpp
 command.overload().execute([this](CommandOrigin const& origin, CommandOutput& output) {
@@ -265,7 +356,9 @@ command.overload().execute([this](CommandOrigin const& origin, CommandOutput& ou
 ```
 
 !!! note
-    The command overload means a mode of the command, such as `ll <unload|reload|reactivate> <mod:string>` is an overload, and `ll list` is another overload. Here is an example, from LeviLamina's mod management command:
+    A command overload represents one possible pattern of a command.
+    For example, `ll <unload|reload|reactivate> <mod:string>` is one overload, while `ll list` is another overload.  
+    Here is an example from LeviLamina's mod management commands:
 
 ```cpp
 enum LeviCommandOperation : int {
@@ -273,417 +366,421 @@ enum LeviCommandOperation : int {
     reload,
     reactivate,
 };
+
 struct LeviCommand {
     LeviCommandOperation operation;
-    SoftEnum<mod::ModNames>   mod;
+    SoftEnum<mod::ModNames> mod;
 };
 
 void registerModManageCommand() {
     // ...
+
     cmd.alias("ll");
-    cmd.overload<LeviCommand3>().text("load").required("mod").execute(
-        [](CommandOrigin const&, CommandOutput& output, LeviCommand3 const& param) {
-            // ...
-        }
-    ); // ll load <mod:string>
+
+    cmd.overload<LeviCommand3>()
+        .text("load")
+        .required("mod")
+        .execute(
+            [](CommandOrigin const&, CommandOutput& output, LeviCommand3 const& param) {
+                // ...
+            }
+        ); // ll load <mod:string>
+
     cmd.overload<LeviCommand>()
         .required("operation")
         .required("mod")
-        .execute([](CommandOrigin const&, CommandOutput& output, LeviCommand const& param) {
-            // ...
-        }); // ll <unload|reload|reactivate> <mod:string>
-    cmd.overload().text("list").execute([](CommandOrigin const&, CommandOutput& output) {
-        // ...
-    }); // ll list
+        .execute(
+            [](CommandOrigin const&, CommandOutput& output, LeviCommand const& param) {
+                // ...
+            }
+        ); // ll <unload|reload|reactivate> <mod:string>
+
+    cmd.overload()
+        .text("list")
+        .execute(
+            [](CommandOrigin const&, CommandOutput& output) {
+                // ...
+            }
+        ); // ll list
 }
-```
-
-In the callback function, we first try to get the source of the command execution. Here, we need to make a judgment, because the console, command block and even various entities can execute commands, but the suicide mod should only respond to the player's request. If the wrong source of execution executes the suicide command, an error message should be prompted.
-
-```cpp
-auto* entity = origin.getEntity();
-if (entity == nullptr || entity->getEntityTypeId() != ActorType::Player) {
-    output.error("Only players can commit suicide");
-    return;
-}
-```
-
-After we confirm that the source of execution is the player, we can convert the entity pointer to the player pointer and kill it.
-
-```cpp
-auto* player = static_cast<Player*>(entity);
-player->kill();
-
-getSelf().getLogger().info("{} killed themselves", player->getRealName());
 ```
 
 !!! warning
-    Because BDS lacks RTTI information, `dynamic_cast<T>()` cannot be used.
+    Because MCBE lacks RTTI information, you cannot use `dynamic_cast<T>()`.
 
 !!! tip
-    You may have noticed another function `player->getName()`, but we did not use it. This is because the player's name can be modified by mods or other means, while the result of `player->getRealName()` is (generally speaking) fixed.
+    You may have noticed another function, `player->getName()`, but we did not use it.  
+    This is because a player's name can be modified through mods or other methods, while the result of `player->getRealName()` is fixed.
 
-At this point, the command object has been configured, and the command object will be loaded into the game after the server starts.
+At this point, the command object has been fully configured.
 
-At the end of the `enable()` function, return a `true` to indicate that the mod is successfully enabled. If `false` is returned in the `enable()` function, LeviLamina will think that the mod is enabled to fail and prompt an error message on the console.
+When the server starts, or when the client enters a local world, the command object will be loaded into the game.
 
-## Read the configuration file
+If the `enable()` function returns `false`, LeviLamina will consider the mod enabling process failed and display an error message in the console.
 
-The second feature of our mod is to give a clock when the player first enters the server; the third feature is to pop up a confirmation of suicide when using the clock, and the player can suicide after confirmation. But there is a small problem with these two features: the server administrator may have installed other mods that implement similar functions, and do not want to use these functions in this suicide mod. We hope to provide some way to allow administrators to turn these two functions on and off.
+## Reading Configuration Files
 
-We are very pleased to announce that LeviLamina has implemented the reflection of configuration files and configuration information structures in C++. This means that we can define a structure in C++, and then define an instance of this structure in the configuration file, and LeviLamina will automatically read the contents of the configuration file into the structure instance. In this way, we can directly use this structure instance in C++, without having to parse the configuration file ourselves.
+The second feature of our mod is giving players a clock when they first join the server.
 
-First, we create another `Config.h` file, define a structure `Config`, and use it to store configuration information.
+The third feature is displaying a suicide confirmation prompt when the player uses the clock, allowing the player to commit suicide after confirmation.
+
+However, there is a problem with these two features: the server administrator may already have installed other mods that provide similar functionality and may not want to use these features from this suicide mod.
+
+Therefore, we want to provide a way for administrators to enable or disable these two features.
+
+We are pleased to announce that LeviLamina implements reflection for configuration files and configuration structures in C++.
+
+This means we can define a structure in C++, then define an instance of that structure in the configuration file. LeviLamina will automatically read the configuration file contents into the structure instance.
+
+This allows us to directly use the structure instance in C++ without manually parsing the configuration file.
+
+First, create a new file named `Config.h` and define a structure `Config` to store configuration information.
 
 ```cpp
+namespace example_mod {
 struct Config {
-    int  version          = 1;
+    int  version                = 1;
     bool doGiveClockOnFirstJoin = true;
-    bool enableClockMenu = true;
+    bool enableClockMenu        = true;
 };
+} // namespace example_mod
 ```
 
-We add a member variable in the anonymous namespace to store the configuration information in the configuration file.
+Add a member variable in the anonymous namespace to store the configuration data.
 
 ```cpp
 namespace {
-
-// ...
-
 Config config;
-
 }
 ```
 
-Then, we read the configuration file and save the configuration information to the member variable.
+Then, read the configuration file and store the configuration information in the member variable.
 
 ```cpp
-bool MyMod::load() {
-    
-    // ...
+bool ExampleMod::load() { // Called by LeviLamina when loading all mods
+    auto& logger = getSelf().getLogger();
 
-    // Load or initialize configurations.
+    logger.debug("Loading...");
+
+    // Load or initialize the configuration file
     const auto& configFilePath = getSelf().getConfigDir() / "config.json";
+
     if (!ll::config::loadConfig(config, configFilePath)) {
-        getSelf().getLogger().warn("Cannot load configurations from {}", configFilePath);
-        getSelf().getLogger().info("Saving default configurations");
+        logger.warn("Cannot load configurations from {}", configFilePath);
+
+        logger.info("Saving default configurations");
 
         if (!ll::config::saveConfig(config, configFilePath)) {
-            getSelf().getLogger().error("Cannot save default configurations to {}", configFilePath);
+            logger.error("Cannot save default configurations to {}", configFilePath);
         }
     }
 
-    // ...
-
+    return true;
 }
 ```
 
-In this code, we first get the mod's configuration file path, and then call the `ll::config::loadConfig()` function to read the configuration information in the configuration file into the structure instance. If the read fails, we will output a warning message on the console and save the default configuration information to the configuration file.
+In this code, we first obtain the path to the mod's configuration file.
+
+Then we call the `ll::config::loadConfig()` function to read the configuration information from the configuration file into the structure instance.
+
+If reading fails, we output a warning message to the console and save the default configuration to the configuration file.
 
 !!! note
-    Since the configuration file is read in the constructor, it can be guaranteed that the configuration file has been read successfully in subsequent operations.
+    Since configuration loading is performed inside the loading method, we can ensure that the configuration file has already been successfully loaded in later operations.
 
-## Persistently save player entry information in the database
+## Persisting Player Join Information in a Database
 
-The second feature of our mod is to give a clock when the player first enters the server. However, if we save the entry information in memory, the player's entry information will be lost when the server restarts. Therefore, we need to persistently save the player's entry information in the database. LeviLamina provides a KV database wrapper that allows us to use the database directly in C++.
+The second feature of our mod is giving players a clock when they first join the server.
 
-First, we add a member variable in the anonymous namespace to store the database instance.
+However, if we store join information only in memory, the information will be lost after the server restarts.
+
+Therefore, we need to persist player join information in a database.
+
+LeviLamina provides a wrapper for a KV database, allowing us to directly use databases in C++.
+
+First, add a member variable in the anonymous namespace to store the database instance.
 
 ```cpp
+namespace {
+Config                                config;
+
 std::unique_ptr<ll::data::KeyValueDB> playerDb;
+} // namespace
 ```
 
 !!! note
-    Why is it `std::unique_ptr<ll::KeyValueDB>` instead of `ll::KeyValueDB`? This is because `ll::KeyValueDB` prohibits copying and can only be moved. Therefore, we need to use `std::unique_ptr` to store the `ll::KeyValueDB` instance.
+    Why use `std::unique_ptr<ll::KeyValueDB>` instead of `ll::KeyValueDB`?  
+    This is because `ll::KeyValueDB` cannot be copied and can only be moved.  
+    Therefore, we need to use `std::unique_ptr` to store an instance of `ll::KeyValueDB`.
 
 !!! warning
-    Please do not use ordinary pointers to store the `ll::KeyValueDB` instance, because this can easily make the life cycle management complicated, resulting in memory leaks and other problems. Remember: you are writing C++, not C.
+    Please do not use ordinary pointers to store the `ll::KeyValueDB` instance, because this can easily make lifetime management complicated and lead to memory leaks or other problems.  
+    Remember: you are writing C++, not C.
 
-Then, in the `load` function, we initialize the database instance.
+Then, initialize the database instance in the `load` method.
 
 ```cpp
-bool MyMod::load() {
-        
+bool ExampleMod::load() { // Called by LeviLamina when loading all mods
     // ...
 
-    // Initialize databases;
-    const auto& playerDbPath = self.getDataDir() / "players";
-    playerDb                 = std::make_unique<ll::data::KeyValueDB>(playerDbPath);
+    // Initialize database
+    const auto& playerDbPath = getSelf().getDataDir() / "players";
 
-    // ...
+    playerDb = std::make_unique<ll::data::KeyValueDB>(playerDbPath);
+
+    return true;
 }
 ```
 
-In this code, we first get the mod's database path, and then call the `std::make_unique<ll::data::KeyValueDB>()` function to create a database instance. If the database path does not exist, the `std::make_unique<ll::data::KeyValueDB>()` function will automatically create the database path.
+In this code, we first obtain the path to the mod database.
+
+Then we call `std::make_unique<ll::data::KeyValueDB>()` to create a database instance.
+
+If the database path does not exist, `std::make_unique<ll::data::KeyValueDB>()` will automatically create it.
 
 !!! note
-    Since the database initialization is done in the constructor, it can be guaranteed that the database has been initialized successfully in subsequent operations.
+    Since database initialization is performed in the constructor, we can ensure that the database has already been initialized successfully in later operations.
 
-# Give a clock when the player first enters the server
+## Giving Players a Clock When They First Join the Game
 
-The second feature of our mod is to give a clock when the player first enters the server. We need to judge whether the player is entering the server for the first time when the player enters the server, and if so, give a clock.
+The second feature of our mod is giving players a clock when they first join the server.
 
-In BDS, when the player enters the server, the event `PlayerJoinEvent` is triggered. In LeviLamina, we can subscribe to this event, and when this event is triggered, the mod can implement the logic when the player enters the server.
+We need to determine whether a player is joining for the first time when they enter the server. If so, we give them a clock.
 
-In the anonymous namespace, we add an event listener pointer:
+In Minecraft, when a player enters the game, the `PlayerJoinEvent` event is triggered.
 
-```cpp
-ll::event::ListenerPtr playerJoinEventListener;
-```
+In LeviLamina, we can subscribe to this event. When the event is triggered, the mod can implement the logic for players joining the server.
 
-In the `enable()` function, we register this event listener, and in the `disable()` function, we unregister it.
+LeviLamina is smart enough to automatically remove event listeners when the mod is disabled, so we do not need to worry about the lifetime of event listeners.
 
 ```cpp
-bool MyMod::enable() {
-
+bool ExampleMod::enable() { // Called by LeviLamina when enabling all mods
     // ...
 
-    auto& eventBus = ll::event::EventBus::getInstance();
+    bus.emplaceListener<ll::event::player::PlayerJoinEvent>(
+        [&doGiveClockOnFirstJoin = config.doGiveClockOnFirstJoin,
+         &logger,
+         &playerDb = playerDb](ll::event::player::PlayerJoinEvent& event) {
 
-    playerJoinEventListener = eventBus.emplaceListener<ll::event::player::PlayerJoinEvent>(
-        [doGiveClockOnFirstJoin = config.doGiveClockOnFirstJoin,
-         &playerDb = playerDb
-         this](ll::event::player::PlayerJoinEvent& event) {
-            if (doGiveClockOnFirstJoin) {
-                auto& player = event.self();
+        if (doGiveClockOnFirstJoin) {
+            // Check whether the clock should be given when the player joins for the first time
 
-                const auto& uuid = player.getUuid();
+            auto& player = event.self();
+            // Get the player object
 
-                // Check if the player has joined before.
-                if (!playerDb->get(uuid.asString())) {
+            const auto& uuid = player.getUuid();
+            // Get the player's UUID
 
-                    ItemStack itemStack("clock", 1);
-                    player.add(itemStack);
+            // Check whether the player has joined before
+            if (!playerDb->get(uuid.asString())) {
 
-                    // Must refresh inventory to see the clock.
-                    player.refreshInventory();
+                // Construct an ItemStack object
+                ItemStack itemStack("minecraft::clock", 1, 0, nullptr);
 
-                    // Mark the player as joined.
-                    if (!playerDb->set(uuid.asString(), "true")) {
-                        getSelf().getLogger().error("Cannot mark {} as joined in database", player.getRealName());
-                    }
+                // Add the ItemStack object to the player's inventory
+                player.add(itemStack);
 
-                    getSelf().getLogger().info("First join of {}! Giving them a clock", player.getRealName());
+                // Refresh the player's inventory so that the player can see the clock
+                player.refreshInventory();
+
+                // Mark the player as having joined before
+                if (!playerDb->set(uuid.asString(), "true")) {
+                    logger.error("Cannot mark {} as joined in database",
+                                 player.getRealName());
                 }
+
+                // Output an INFO level log message indicating that the player joined for the first time and received a clock
+                logger.info("First join of {}! Giving them a clock",
+                            player.getRealName());
             }
         }
-    );
+    });
 
-    // ...
-
-}
-
-bool MyMod::disable() {
-
-    // ...
-
-    auto& eventBus = ll::event::EventBus::getInstance();
-
-    eventBus.removeListener(playerJoinEventListener);
-
-    // ...
-
+    return true;
+    // Returning true indicates that the mod was enabled successfully
 }
 ```
 
-Let's break down these codes and see. In the callback lambda function, we capture the `doGiveClockOnFirstJoin` in the configuration, as well as the mod's this and database instance. Then, we judge whether the `doGiveClockOnFirstJoin` in the configuration is `true`, and if so, continue to execute the logic.
+Let's break down this code.
 
-```cpp
-[doGiveClockOnFirstJoin = config.doGiveClockOnFirstJoin,
- &playerDb = playerDb
- this](ll::event::player::PlayerJoinEvent& event) {
-    if (doGiveClockOnFirstJoin) {
-        // ...
-    }
-}
-```
+In the callback lambda function, we capture `doGiveClockOnFirstJoin` from the configuration, as well as the logger variable and the database instance.
 
-Next, we get the player instance and the player's UUID from the event instance.
+Then we check whether `doGiveClockOnFirstJoin` is `true`. If it is, we continue executing the logic.
 
-```cpp
-auto& player = event.self();
-auto& uuid   = player.getUuid();
-```
+Next, we obtain the player instance and the player's UUID from the event instance.
 
 !!! note
-    The type of UUID obtained here is `mce::UUID` instead of `std::string`. We recommend that you only convert UUID to `std::string` when needed, because `mce::UUID` is more efficient.
+    The UUID obtained here is of type `mce::UUID`, not `std::string`.  
+    We recommend converting the UUID to `std::string` only when necessary, because the implementation of `mce::UUID` is more efficient.
+
 
 !!! danger
-    Please do not use XUID as the player's unique identifier. Although in the LiteLoaderBDS era, many mods used XUID as the player's unique identifier, this is incorrect. XUID is the identifier of Xbox Live, not the player. If the server does not enable online mode, or there are fake players, the behavior of XUID will be unpredictable. Therefore, we strongly recommend using UUID as the player's unique identifier.
+    Do not use XUID as the unique identifier for players.  
+    Although many mods used XUID as the unique player identifier during the LiteLoaderBDS era, this is incorrect. XUID is an identifier for Xbox Live, not an identifier for players.
+    If the server does not enable online mode, or if fake players exist, the behavior of XUID will be unpredictable.  
+    Therefore, we strongly recommend using UUID as the unique identifier for players.
 
-Then, we use the player's UUID as the key to get whether the player has entered the server before from the database. If the player has entered the server before, then we don't need to give the player a clock again.
+Then, we use the player's UUID as the key to query whether the player has joined before from the database.
 
-```cpp
-// Check if the player has joined before.
-if (!playerDb->get(uuid.asString())) {
-    // ...
-}
-```
+If the player has already joined, we do not need to give them another clock.
 
-Next, we create a clock item stack and add it to the player's backpack.
-
-```cpp
-ItemStack itemStack("minecraft:clock", 1);
-player.add(itemStack);
-```
+Next, we construct a clock item stack and add it to the player's inventory.
 
 !!! note
-    Here we use the `ItemStack` class instead of the `Item` class. The `ItemStack` class is a wrapper of the `Item` class, which contains the quantity, enchantment, durability and other information of the item, while the `Item` class only represents the item category. Therefore, the `ItemStack` class should be used instead of the `Item` class.
+    Here we use the `ItemStack` class instead of the `Item` class.  
+    The `ItemStack` class is a wrapper around the `Item` class. It contains information such as item count, enchantments, and durability, while the `Item` class only represents the item type.  
+    Therefore, you should use the `ItemStack` class instead of the `Item` class.
 
 Then, we need to refresh the player's inventory so that the player can see the clock.
 
-```cpp
-player.refreshInventory();
-```
+Finally, we use the player's UUID as the key and mark the player as having already joined the server.
 
-Finally, we use the player's UUID as the key to mark the player as having entered the server.
+## Displaying a Suicide Confirmation Prompt When Using the Clock
 
-```cpp
-// Mark the player as joined.
-if (!playerDb->set(uuid.asString(), "true")) {
-    getSelf().getLogger().error("Cannot mark {} as joined in database", player.getRealName());
-}
-```
+The third feature of our mod is displaying a suicide confirmation prompt when the player uses the clock. After confirmation, the player can commit suicide.
 
-In the `disable()` function, we need to remove the event listener from the event bus to unsubscribe from the event.
+We need to subscribe to the player item usage event. When the player uses a clock, a suicide confirmation prompt will be displayed.
+
+Register this event listener in the `enable()` function.
 
 ```cpp
-eventBus.removeListener(playerJoinEventListener);
-```
-
-## Pop up a confirmation of suicide when using the clock
-
-The third feature of our mod is to pop up a confirmation of suicide when using the clock, and the player can suicide after confirmation. We need to subscribe to the player's use of items event, and when the player uses the clock, pop up a confirmation of suicide.
-
-In the anonymous namespace, we add an event listener pointer:
-
-```cpp
-ll::event::ListenerPtr playerUseItemEventListener;
-```
-
-In the `enable()` function, we register this event listener, and in the `disable()` function, we unregister it.
-
-```cpp
-bool MyMod::enable() {
+bool ExampleMod::enable() { // Called by LeviLamina when enabling all mods
+    auto& logger = getSelf().getLogger();
 
     // ...
 
-    playerUseItemEventListener =
-        eventBus.emplaceListener<ll::event::PlayerUseItemEvent>([enableClockMenu = config.enableClockMenu,
-                                                                 this](ll::event::PlayerUseItemEvent& event) {
-            if (enableClockMenu) {
-                auto& player    = event.self();
-                auto& itemStack = event.item();
+    bus.emplaceListener<ll::event::PlayerUseItemEvent>(
+        [enableClockMenu = config.enableClockMenu,
+         &logger](ll::event::PlayerUseItemEvent& event) {
 
-                if (itemStack.getTypeName() == "minecraft:clock") {
-                    ll::form::ModalForm form(
-                        "Warning",
-                        "Are you sure you want to kill yourself?",
-                        "Yes",
-                        "No",
-                        [this](Player& player, bool yes) {
-                            if (yes) {
-                                player.kill();
-
-                                getSelf().getLogger().info("{} killed themselves", player.getRealName());
-                            }
-                        }
-                    );
-
-                    form.sendTo(player);
-                }
-            }
-        });
-
-    // ...
-
-}
-
-bool MyMod::disable() {
-
-    // ...
-
-    eventBus.removeListener(playerUseItemEventListener);
-
-    // ...
-
-}
-```
-
-Let's break down the code and see. In the callback lambda function, we capture the configuration item `enableClockMenu` and this, and then judge, only when the configuration item is enabled, execute the logic.
-
-```cpp
-playerUseItemEventListener = eventBus.emplaceListener<ll::event::PlayerUseItemEvent>(
-    [enableClockMenu = config.enableClockMenu, this](ll::event::PlayerUseItemEvent& event) {
         if (enableClockMenu) {
-           // ...
+
+            auto& player = event.self();
+            // Get the player object
+
+            auto& itemStack = event.item();
+            // Get the item object used by the player
+
+            if (itemStack.getRawNameId() == "clock") {
+                // If the item is a clock
+
+                using namespace ll::form;
+                // Use the ll::form namespace to simplify the code
+
+                // Construct a ModalForm object.
+                // Parameters:
+                // title, content, upper button text, lower button text
+                ModalForm form(
+                    "Warning",
+                    "Are you sure you want to kill yourself?",
+                    "Yes",
+                    "No"
+                );
+
+                // Send the ModalForm to the player and register the callback function
+                form.sendTo(
+                    player,
+                    [&logger](
+                        Player& player,
+                        ModalFormResult res,
+                        FormCancelReason
+                    ) {
+
+                    // If the player selected the upper button (Yes), kill the player
+                    if (res.has_value()
+                        && res.value() == ModalFormSelectedButton::Upper) {
+
+                        player.kill();
+
+                        logger.info(
+                            "{} killed themselves",
+                            player.getRealName()
+                        );
+                    }
+                });
+            }
         }
-    }
-);
-```
+    });
 
-In the logic, we first get the two attributes of the event, the player who uses the item and the item being used. Then judge whether the item id is `clock`, and execute the pop-up form logic.
-
-```cpp
-auto& player    = event.self();
-auto& itemStack = event.item();
-
-if (itemStack.getTypeName() == "minecraft:clock") {
-    // ...
+    return true;
+    // Returning true indicates that the mod was enabled successfully
 }
 ```
+
+Let's break down this code.
+
+In the callback lambda function, we capture the configuration option `enableClockMenu` and the logger.
+
+Then we perform a check. The logic will only execute when this configuration option is enabled.
+
+Inside the logic, we first obtain the two properties of the event:
+
+* The player who used the item
+* The item that was used
+
+Then we check whether the item ID is `clock`, and if so, execute the form display logic.
 
 !!! warning
-    Do not use `itemStack.getName()`, because this function returns the name of the item displayed, such as `Clock` or `Iron Sword`.
+    Do not use `itemStack.getName()` because this function returns the display name of the item, such as `Clock` or `Iron Sword`.
 
-Here we use the simplest modal form `ModalForm`, the first parameter of the constructor is the title of the form, the second parameter is the prompt content of the form, the third parameter is the content of the lower left button, and the fourth parameter is the content of the lower right button. The callback function receives two parameters, the first parameter is the player to whom the form is sent, and the second parameter is the player's choice, `true` means that the lower left button is selected.
+Here we use the simplest modal form, `ModalForm`.
 
-```cpp
-ll::form::ModalForm form(
-    "Warning",
-    "Are you sure you want to kill yourself?",
-    "Yes",
-    "No",
-    [this](Player& player, bool yes) {
-        if (yes) {
-            player.kill();
+The constructor parameters are:
 
-            getSelf().getLogger().info("{} killed themselves", player.getRealName());
-        }
-    }
-);
-```
+1. The title of the form
+2. The message content displayed in the form
+3. The text of the upper-left button
+4. The text of the lower-right button
 
-Next, send the form to the player.
+The callback function receives three parameters:
 
-```cpp
-form.sendTo(player);
-```
+1. The player to whom the form was sent
+2. The player's selection result
+3. The reason why the form was cancelled
 
-## Run your mod
+The third parameter is not used in this example.
 
-If your mod is built normally, you should be able to see a directory named after your mod in the `bin/` directory. Copy this directory to the `plugins/` directory in the LeviLamina directory (create it if it does not exist), and get the following file structure:
+## Running Your Mod
 
-```text
-/path/to/levilamina/plugins/better-suicide
-├── better-suicide.dll
-└── manifest.json
-```
+If your mod has been built successfully, you should see a directory named after your mod inside the `bin/` directory.
 
-Then run the LeviLamina server (`bedrock_server_mod.exe`) and you're done.
+Copy this directory to the `plugins/` directory of the LeviLamina server or the `mods` directory of the LeviLamina client.
 
-## Next steps?
+(Create the directory manually if it does not exist.)
 
-You can [publicly release your mod](./publish_your_first_mod.md) and let more people use your mod.
+Then run the LeviLamina server (`bedrock_server_mod.exe`) or the LeviLamina client.
 
-## Further exercises
+## Publishing Your Mod
 
-We can add some features to this mod based on this mod to practice more knowledge of LeviLamina mod development. Here are some possible exercises:
+1. Change the `version` field in `tooth.json` to the version you are about to release, for example `0.1.0`.
 
-- Set the cooldown time for player suicide
-- Keep all items from dropping when the player suicide
-- Keep the experience when the player suicide
-- Suicide at the original place when the player suicide
-- Count the number of player suicides and display the leaderboard on the sidebar
-- Use more advanced forms to let the player choose the way of suicide
-- Show a custom death message when the player suicide
+2. Add the CHANGELOG for the upcoming release to `CHANGELOG.md`.  
+   For the specific CHANGELOG format, refer to [keepachangelog.com](https://keepachangelog.com/en/1.1.0/).  
+   Example:
+   ```md
+   ## 0.1.0 - 2026-08-04
+
+   ### Added
+
+   - First release.
+   ```
+3. (Optional) Install Node.js, then run:  
+   ```shell
+   npm install keep-a-changelog -g
+   ```
+
+4. (Optional) Run:
+   ```shell
+   changelog --format markdownlint
+   ```
+   to format `CHANGELOG.md`.
+
+5. Create a new release on GitHub, for example `v0.1.0`.
+
+GitHub Actions will automatically write the contents of `CHANGELOG.md` into the release.
+
+After waiting a few minutes, your mod will automatically be compiled and uploaded to the release.
+
+!!! warning
+    You must use a version number that starts with `v` and follows [Semantic Versioning](https://semver.org/).  
+    Otherwise, your mod cannot be properly included by Bedrinth and LeviLauncher!
