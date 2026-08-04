@@ -144,6 +144,67 @@ inline Expected<T> deserialize_to(J&& j) noexcept {
 
 namespace {
 
+template <class T, class J, IsKeyFormatter F>
+constexpr bool can_deserialize_to_v =
+    detail::has_value_deserializer_v<std::remove_cvref_t<T>, J, F>
+    || std::default_initializable<std::remove_cvref_t<T>>;
+
+template <class T, class J, IsKeyFormatter F>
+inline Expected<std::remove_cvref_t<T>> deserialize_construct(J&& j, F const& keyFormatter)
+    requires(can_deserialize_to_v<T, J, F>)
+{
+    return deserialize_to<std::remove_cvref_t<T>>(std::forward<J>(j), keyFormatter);
+}
+
+template <class T, class V>
+inline void array_append_value(T& t, V&& value) {
+    if constexpr (requires(T& a, std::remove_cvref_t<V> v) { a.emplace_back(std::move(v)); }) {
+        t.emplace_back(std::forward<V>(value));
+    } else if constexpr (requires(T& a, std::remove_cvref_t<V> v) { a.push_back(std::move(v)); }) {
+        t.push_back(std::forward<V>(value));
+    } else if constexpr (requires(T& a, std::remove_cvref_t<V> v) { a.insert(a.end(), std::move(v)); }) {
+        t.insert(t.end(), std::forward<V>(value));
+    } else if constexpr (requires(T& a, std::remove_cvref_t<V> v) { a.insert(std::move(v)); }) {
+        t.insert(std::forward<V>(value));
+    } else {
+        static_assert(
+            requires(T& a, std::remove_cvref_t<V> v) { a.emplace_back(std::move(v)); }
+                || requires(T& a, std::remove_cvref_t<V> v) { a.push_back(std::move(v)); }
+                || requires(T& a, std::remove_cvref_t<V> v) { a.insert(a.end(), std::move(v)); }
+                || requires(T& a, std::remove_cvref_t<V> v) { a.insert(std::move(v)); },
+            "array-like type must support appending a constructed value for deserialization"
+        );
+    }
+}
+
+template <class T, class K, class V>
+inline void associative_insert_value(T& t, K&& key, V&& value) {
+    if constexpr (requires(T& a, std::remove_cvref_t<K> k, std::remove_cvref_t<V> v) {
+                      a.try_emplace(std::move(k), std::move(v));
+                  }) {
+        t.try_emplace(std::forward<K>(key), std::forward<V>(value));
+    } else if constexpr (requires(T& a, std::remove_cvref_t<K> k, std::remove_cvref_t<V> v) {
+                             a.emplace(std::move(k), std::move(v));
+                         }) {
+        t.emplace(std::forward<K>(key), std::forward<V>(value));
+    } else if constexpr (requires(T& a, std::remove_cvref_t<K> k, std::remove_cvref_t<V> v) {
+                             a.insert_or_assign(std::move(k), std::move(v));
+                         }) {
+        t.insert_or_assign(std::forward<K>(key), std::forward<V>(value));
+    } else {
+        static_assert(
+            requires(T& a, std::remove_cvref_t<K> k, std::remove_cvref_t<V> v) {
+                a.try_emplace(std::move(k), std::move(v));
+            } || requires(T& a, std::remove_cvref_t<K> k, std::remove_cvref_t<V> v) {
+                a.emplace(std::move(k), std::move(v));
+            } || requires(T& a, std::remove_cvref_t<K> k, std::remove_cvref_t<V> v) {
+                a.insert_or_assign(std::move(k), std::move(v));
+            },
+            "associative type must support inserting a constructed mapped value for deserialization"
+        );
+    }
+}
+
 template <typename Child, typename J>
 [[nodiscard]] inline decltype(auto) array_child_at(J&& j, size_t index) {
     if constexpr (std::same_as<std::remove_cvref_t<J>, CompoundTagVariant>) {
@@ -731,8 +792,15 @@ inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::Pri
         t = std::nullopt;
         return {};
     }
-    if (!t.has_value()) t.emplace();
-    return deserialize<typename RT::value_type>(*t, std::forward<J>(j), keyFormatter);
+    using value_type = typename RT::value_type;
+    static_assert(
+        can_deserialize_to_v<value_type, J, F>,
+        "optional value type must be default-constructible or provide a value-returning deserializer"
+    );
+    auto value = deserialize_construct<value_type>(std::forward<J>(j), keyFormatter);
+    if (!value) return forwardError(value.error());
+    t = std::move(*value);
+    return {};
 }
 
 template <class T, class J, IsKeyFormatter F>
@@ -821,9 +889,9 @@ inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::Pri
         ([&] {
             if (!matched) {
                 if constexpr (std::is_arithmetic_v<Ts>) {
-                    Ts temp{};
+                    Ts temp = Ts{};
                     if (auto result = deserialize_arithmetic_force_match(temp, std::forward<J>(j)); result) {
-                        t       = std::move(temp);
+                        t       = temp;
                         matched = true;
                     }
                 }
@@ -835,11 +903,11 @@ inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::Pri
     [&]<typename... Ts>(std::type_identity<std::variant<Ts...>>) {
         ([&] {
             if (!matched) {
-                Ts temp{};
-                if (auto result = deserialize_impl(temp, std::forward<J>(j), keyFormatter, meta::PriorityTag<11>{});
-                    result) {
-                    t       = std::move(temp);
-                    matched = true;
+                if constexpr (can_deserialize_to_v<Ts, J, F>) {
+                    if (auto result = deserialize_construct<Ts>(std::forward<J>(j), keyFormatter); result) {
+                        t       = std::move(*result);
+                        matched = true;
+                    }
                 }
             }
         }(), ...);
@@ -907,31 +975,35 @@ inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::Pri
     using RT = std::remove_cvref_t<T>;
     if (!j.is_array()) return makeDeserArrayTypeError();
     using value_type = typename RT::value_type;
+    using child_type = decltype(array_child_at<value_type>(std::forward<J>(j), size_t{}));
+    static_assert(
+        can_deserialize_to_v<value_type, child_type, F>,
+        "array-like value type must be default-constructible or provide a value-returning deserializer"
+    );
     if constexpr (requires(T a) { a.clear(); }) {
         t.clear();
     }
-    if constexpr (requires(T a) { { a.emplace_back() } -> std::same_as<value_type&>; }) {
+    if constexpr (
+        requires(T& a, value_type v) { a.emplace_back(std::move(v)); }
+        || requires(T& a, value_type v) { a.push_back(std::move(v)); }
+        || requires(T& a, value_type v) { a.insert(a.end(), std::move(v)); }
+        || requires(T& a, value_type v) { a.insert(std::move(v)); }
+    ) {
         for (size_t i = 0; i < j.size(); ++i) {
-            auto& val = t.emplace_back();
             auto  child = array_child_at<value_type>(std::forward<J>(j), i);
-            if (auto res = deserialize<value_type>(val, child, keyFormatter); !res) {
-                return makeDeserIndexError(i, res.error());
+            auto  value = deserialize_construct<value_type>(std::forward<decltype(child)>(child), keyFormatter);
+            if (!value) {
+                return makeDeserIndexError(i, value.error());
             }
-        }
-    } else if constexpr (requires(T a, value_type v) { a.insert(v); }) {
-        for (size_t i = 0; i < j.size(); ++i) {
-            value_type tmp{};
-            auto       child = array_child_at<value_type>(std::forward<J>(j), i);
-            if (auto res = deserialize<value_type>(tmp, child, keyFormatter); !res) {
-                return makeDeserIndexError(i, res.error());
-            }
-            t.insert(std::move(tmp));
+            array_append_value(t, std::move(*value));
         }
     } else {
         static_assert(
-            requires(T a) { { a.emplace_back() } -> std::same_as<value_type&>; }
-                || requires(T a, value_type v) { a.insert(v); },
-            "array-like type must support emplace_back() or insert() for deserialization"
+            requires(T& a, value_type v) { a.emplace_back(std::move(v)); }
+                || requires(T& a, value_type v) { a.push_back(std::move(v)); }
+                || requires(T& a, value_type v) { a.insert(a.end(), std::move(v)); }
+                || requires(T& a, value_type v) { a.insert(std::move(v)); },
+            "array-like type must support appending a constructed value for deserialization"
         );
     }
     return {};
@@ -956,13 +1028,16 @@ inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::Pri
             auto error = makeDeserInvalidKeyError(keyString);
             return makeDeserKeyError(keyString, error.error());
         }
-        if (auto res = deserialize<typename RT::mapped_type>(
-                t[*keyOpt],
-                std::forward<decltype(v)>(v),
-                keyFormatter);
-            !res) {
-            return makeDeserKeyError(keyString, res.error());
+        using mapped_type = typename RT::mapped_type;
+        static_assert(
+            can_deserialize_to_v<mapped_type, decltype(v), F>,
+            "associative mapped type must be default-constructible or provide a value-returning deserializer"
+        );
+        auto value = deserialize_construct<mapped_type>(std::forward<decltype(v)>(v), keyFormatter);
+        if (!value) {
+            return makeDeserKeyError(keyString, value.error());
         }
+        associative_insert_value(t, std::move(*keyOpt), std::move(*value));
     }
     return {};
 }

@@ -198,6 +198,13 @@ struct NonDefaultConstructibleItem {
     auto operator<=>(NonDefaultConstructibleItem const&) const = default;
 };
 
+struct NonDefaultContainerRoot {
+    std::optional<NonDefaultConstructibleItem>        maybe;
+    std::vector<NonDefaultConstructibleItem>          items;
+    std::map<std::string, NonDefaultConstructibleItem> named;
+    std::variant<int, NonDefaultConstructibleItem>    value = 0;
+};
+
 template <>
 struct ll::reflection::Serializer<mce::UUID> {
     static std::string to_string(mce::UUID const& value) { return value.asString(); }
@@ -1521,6 +1528,57 @@ TEST(ReflectionTest, DeserializeToSupportsNonDefaultConstructibleTypesWithValueD
     ASSERT_TRUE(parsed.has_value()) << parsed.error().message();
     EXPECT_EQ(parsed->id, 7);
     EXPECT_EQ(parsed->name, "stone");
+}
+
+TEST(ReflectionTest, ContainersSupportNonDefaultConstructibleValuesWithValueDeserializer) {
+    auto json = nlohmann::json::parse(R"({
+        "maybe": {
+            "id": 1,
+            "name": "optional"
+        },
+        "items": [
+            {
+                "id": 2,
+                "name": "first"
+            },
+            {
+                "id": 3,
+                "name": "second"
+            }
+        ],
+        "named": {
+            "alpha": {
+                "id": 4,
+                "name": "mapped"
+            }
+        },
+        "value": {
+            "id": 5,
+            "name": "variant"
+        }
+    })");
+
+    auto parsed = ll::reflection::deserialize_to<NonDefaultContainerRoot>(json);
+    ASSERT_TRUE(parsed.has_value()) << parsed.error().message();
+
+    ASSERT_TRUE(parsed->maybe.has_value());
+    EXPECT_EQ(parsed->maybe->id, 1);
+    EXPECT_EQ(parsed->maybe->name, "optional");
+
+    ASSERT_EQ(parsed->items.size(), 2u);
+    EXPECT_EQ(parsed->items[0].id, 2);
+    EXPECT_EQ(parsed->items[0].name, "first");
+    EXPECT_EQ(parsed->items[1].id, 3);
+    EXPECT_EQ(parsed->items[1].name, "second");
+
+    ASSERT_EQ(parsed->named.size(), 1u);
+    EXPECT_EQ(parsed->named.at("alpha").id, 4);
+    EXPECT_EQ(parsed->named.at("alpha").name, "mapped");
+
+    ASSERT_TRUE(std::holds_alternative<NonDefaultConstructibleItem>(parsed->value));
+    auto const& value = std::get<NonDefaultConstructibleItem>(parsed->value);
+    EXPECT_EQ(value.id, 5);
+    EXPECT_EQ(value.name, "variant");
 }
 
 TEST(ReflectionTest, NbtValueSpecializationCanSerializeDifferentlyForJsonAndNbt) {
