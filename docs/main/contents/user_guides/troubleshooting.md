@@ -12,4 +12,8 @@ The dependencies version of LeviLamina or mod are not correct. You can find out 
 
 ### 1114
 
-Vcredist is too old. Updating [vcredist](https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist?view=msvc-170) to solve this error.
+Vcredist is too old. Updating [vcredist](https://aka.ms/vc14/vc_redist.x64.exe) to solve this error.
+
+## An error occurs with `PeEditor.exe` when installing using lip
+
+Vcredist is too old. Updating [vcredist](https://aka.ms/vc14/vc_redist.x64.exe) to solve this error.

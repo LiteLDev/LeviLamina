@@ -12,4 +12,8 @@ LeviLamina或模组的依赖版本不正确。您可以在依赖诊断(Dependenc
 
 ### 1114
 
-Vcredist版本太老。更新[vcredist](https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist?view=msvc-170)以解决此错误。
+Vcredist版本太老。更新[vcredist](https://aka.ms/vc14/vc_redist.x64.exe)以解决此错误。
+
+## 使用lip安装时`PeEditor.exe`报错
+
+Vcredist版本太老。更新[vcredist](https://aka.ms/vc14/vc_redist.x64.exe)以解决此错误。
