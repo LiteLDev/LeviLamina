@@ -188,6 +188,16 @@ struct ItemInfo {
     auto operator<=>(ItemInfo const&) const = default;
 };
 
+struct NonDefaultConstructibleItem {
+    int         id;
+    std::string name;
+
+    NonDefaultConstructibleItem() = delete;
+    NonDefaultConstructibleItem(int id, std::string name) : id(id), name(std::move(name)) {}
+
+    auto operator<=>(NonDefaultConstructibleItem const&) const = default;
+};
+
 template <>
 struct ll::reflection::Serializer<mce::UUID> {
     static std::string to_string(mce::UUID const& value) { return value.asString(); }
@@ -878,6 +888,24 @@ struct ll::reflection::Serializer<ItemInfo> {
     }
 };
 
+template <>
+struct ll::reflection::Serializer<NonDefaultConstructibleItem> {
+    template <typename J, typename F>
+    static ll::Expected<NonDefaultConstructibleItem> deserialize(J const& j, F const& keyFormatter) {
+        using ll::reflection::required_field;
+
+        if (!j.is_object()) {
+            return ll::reflection::makeDeserObjectTypeError();
+        }
+
+        int         id   = 0;
+        std::string name = {};
+        LL_REFLECTION_TEST_TRY(required_field<"id">(id, j, keyFormatter));
+        LL_REFLECTION_TEST_TRY(required_field<"name">(name, j, keyFormatter));
+        return NonDefaultConstructibleItem{id, std::move(name)};
+    }
+};
+
 TEST(ReflectionTest, SerializeAndDeserializeRespectKeyFormatterAndDispatcher) {
     resetDispatchListenerState();
 
@@ -1481,6 +1509,18 @@ TEST(ReflectionTest, ItemInfoReportsMissingFieldsRequiredByType) {
     auto missingSnbtResult = ll::reflection::deserialize_to<ItemInfo>(missingSnbt, formatter);
     ASSERT_FALSE(missingSnbtResult.has_value());
     expectErrorMessageContains(missingSnbtResult.error(), R"(missing required field "snbt" when deserializing)");
+}
+
+TEST(ReflectionTest, DeserializeToSupportsNonDefaultConstructibleTypesWithValueDeserializer) {
+    auto json = nlohmann::json::parse(R"({
+        "id": 7,
+        "name": "stone"
+    })");
+
+    auto parsed = ll::reflection::deserialize_to<NonDefaultConstructibleItem>(json);
+    ASSERT_TRUE(parsed.has_value()) << parsed.error().message();
+    EXPECT_EQ(parsed->id, 7);
+    EXPECT_EQ(parsed->name, "stone");
 }
 
 TEST(ReflectionTest, NbtValueSpecializationCanSerializeDifferentlyForJsonAndNbt) {
