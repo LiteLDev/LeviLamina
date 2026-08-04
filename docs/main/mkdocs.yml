@@ -30,6 +30,8 @@ nav:
           - developer_guides/how_to_guides/coro_guide.md
           - developer_guides/how_to_guides/build_guide.md
 
+      - developer_guides/faq.md
+
       - Architecture: developer_guides/architecture.md
 
       - API Reference:
