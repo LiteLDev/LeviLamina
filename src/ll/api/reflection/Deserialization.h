@@ -102,12 +102,39 @@ inline Expected<> deserialize(T& t, J&& j) noexcept {
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<T> deserialize_to(J&& j, F const& keyFormatter) noexcept {
-    Expected<T> res{};
-    if (auto d = deserialize<T>(*res, std::forward<J>(j), keyFormatter); !d) {
-        res = forwardError(d.error());
+inline Expected<T> deserialize_to(J&& j, F const& keyFormatter) noexcept try {
+    if constexpr (detail::has_value_deserializer_v<T, J, F>) {
+        decltype(auto) result = [](J&& j, F const& keyFormatter) {
+            using RT = std::remove_cvref_t<T>;
+            using JT = std::remove_cvref_t<J>;
+            if constexpr (requires { Serializer<RT, JT>::deserialize(std::forward<J>(j), keyFormatter); }) {
+                return Serializer<RT, JT>::deserialize(std::forward<J>(j), keyFormatter);
+            } else if constexpr (requires { Serializer<RT, JT>::deserialize(std::forward<J>(j)); }) {
+                return Serializer<RT, JT>::deserialize(std::forward<J>(j));
+            } else if constexpr (requires {
+                                     Serializer<RT>::template deserialize<JT>(std::forward<J>(j), keyFormatter);
+                                 }) {
+                return Serializer<RT>::template deserialize<JT>(std::forward<J>(j), keyFormatter);
+            } else {
+                return Serializer<RT>::template deserialize<JT>(std::forward<J>(j));
+            }
+        }(std::forward<J>(j), keyFormatter);
+        using Result = std::remove_cvref_t<decltype(result)>;
+        if constexpr (concepts::IsLeviExpected<Result>) {
+            if (!result) return forwardError(result.error());
+            return std::move(*result);
+        } else {
+            return std::forward<decltype(result)>(result);
+        }
+    } else {
+        Expected<T> res{};
+        if (auto d = deserialize<T>(*res, std::forward<J>(j), keyFormatter); !d) {
+            res = forwardError(d.error());
+        }
+        return res;
     }
-    return res;
+} catch (...) {
+    return makeExceptionError();
 }
 
 template <class T, class J>
@@ -662,25 +689,26 @@ inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::Pri
     requires(detail::has_custom_deserializer_v<std::remove_cvref_t<T>, J, F>)
 {
     using RT = std::remove_cvref_t<T>;
-    using JT = std::remove_cvref_t<J>;
     if constexpr (detail::has_value_deserializer_v<RT, J, F>) {
-        decltype(auto) result = [&]() -> decltype(auto) {
+        decltype(auto) result = [](J&& j, F const& keyFormatter) {
+            using RT = std::remove_cvref_t<T>;
+            using JT = std::remove_cvref_t<J>;
             if constexpr (requires { Serializer<RT, JT>::deserialize(std::forward<J>(j), keyFormatter); }) {
                 return Serializer<RT, JT>::deserialize(std::forward<J>(j), keyFormatter);
             } else if constexpr (requires { Serializer<RT, JT>::deserialize(std::forward<J>(j)); }) {
                 return Serializer<RT, JT>::deserialize(std::forward<J>(j));
-            } else if constexpr (requires { Serializer<RT>::template deserialize<JT>(std::forward<J>(j), keyFormatter); }) {
+            } else if constexpr (requires {
+                                     Serializer<RT>::template deserialize<JT>(std::forward<J>(j), keyFormatter);
+                                 }) {
                 return Serializer<RT>::template deserialize<JT>(std::forward<J>(j), keyFormatter);
             } else {
                 return Serializer<RT>::template deserialize<JT>(std::forward<J>(j));
             }
-        }();
+        }(std::forward<J>(j), keyFormatter);
         using Result = std::remove_cvref_t<decltype(result)>;
         if constexpr (concepts::IsLeviExpected<Result>) {
-            if (!result) {
-                return forwardError(result.error());
-            }
-            t = *std::forward<decltype(result)>(result);
+            if (!result) return forwardError(result.error());
+            t = std::move(*result);
         } else {
             t = std::forward<decltype(result)>(result);
         }
