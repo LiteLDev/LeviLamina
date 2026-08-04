@@ -1,4 +1,4 @@
-# Install on Client
+# Install client on Windows
 
 ## Prerequisites
 

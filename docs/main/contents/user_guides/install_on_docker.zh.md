@@ -1,4 +1,4 @@
-# 在Docker上安装
+# 在Docker(Linux)上安装服务器
 
 ## 安装
 

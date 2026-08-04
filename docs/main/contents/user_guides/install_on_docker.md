@@ -1,4 +1,4 @@
-# Install on Docker
+# Install server on Docker(Linux)
 
 ## Installation
 
