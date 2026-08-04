@@ -85,6 +85,10 @@ constexpr bool has_value_deserializer_v = requires(std::remove_cvref_t<J> const&
 } || requires(std::remove_cvref_t<J> const& j) {
     { Serializer<std::remove_cvref_t<T>, std::remove_cvref_t<J>>::deserialize(j) };
 } || requires(std::remove_cvref_t<J> const& j, F const& f) {
+    { Serializer<std::remove_cvref_t<T>>::deserialize(j, f) };
+} || requires(std::remove_cvref_t<J> const& j) {
+    { Serializer<std::remove_cvref_t<T>>::deserialize(j) };
+} || requires(std::remove_cvref_t<J> const& j, F const& f) {
     { Serializer<std::remove_cvref_t<T>>::template deserialize<std::remove_cvref_t<J>>(j, f) };
 } || requires(std::remove_cvref_t<J> const& j) {
     { Serializer<std::remove_cvref_t<T>>::template deserialize<std::remove_cvref_t<J>>(j) };
@@ -103,24 +107,6 @@ constexpr bool has_inplace_serializer_v = requires(
 
 template <typename T, typename J, typename F>
 constexpr bool has_custom_serializer_v = has_value_serializer_v<T, J, F> || has_inplace_serializer_v<T, J, F>;
-
-template <typename T, typename J, typename F>
-constexpr bool has_inplace_deserializer_v = requires(
-    T&                      t,
-    std::remove_cvref_t<J>& j,
-    F const&                f
-) {
-    { Serializer<T>::deserialize(t, j, f) } -> std::convertible_to<ll::Expected<>>;
-} || requires(T& t, std::remove_cvref_t<J> const& j, F const& f) {
-    { Serializer<T>::deserialize(t, j, f) } -> std::convertible_to<ll::Expected<>>;
-} || requires(T& t, std::remove_cvref_t<J>& j) {
-    { Serializer<T>::deserialize(t, j) } -> std::convertible_to<ll::Expected<>>;
-} || requires(T& t, std::remove_cvref_t<J> const& j) {
-    { Serializer<T>::deserialize(t, j) } -> std::convertible_to<ll::Expected<>>;
-};
-
-template <typename T, typename J, typename F>
-constexpr bool has_custom_deserializer_v = has_value_deserializer_v<T, J, F> || has_inplace_deserializer_v<T, J, F>;
 
 constexpr std::string_view trim_ascii_spaces(std::string_view sv) {
     while (!sv.empty() && std::isspace(static_cast<unsigned char>(sv.front()))) {
@@ -336,9 +322,7 @@ constexpr std::string type_to_string(T const& t) {
 template <IsLeastStringifiableType T, IsKeyFormatter F>
 constexpr std::optional<T> string_to_type(std::string_view sv, F const& keyFormatter) {
     using RT = std::remove_cvref_t<T>;
-    if constexpr (traits::is_string_convertible_v<T>) {
-        return RT{sv};
-    } else if constexpr (detail::has_custom_key_deserializer_v<T, F>) {
+    if constexpr (detail::has_custom_key_deserializer_v<T, F>) {
         if constexpr (requires { Serializer<RT>::from_string(sv, keyFormatter); }) {
             if (auto res = Serializer<RT>::from_string(sv, keyFormatter); res) {
                 return *std::move(res);
@@ -354,6 +338,8 @@ constexpr std::optional<T> string_to_type(std::string_view sv, F const& keyForma
             return *std::move(res);
         }
         return std::nullopt;
+    } else if constexpr (traits::is_string_convertible_v<T>) {
+        return RT{sv};
     } else {
         return detail::string_to_enum<RT>(sv, keyFormatter);
     }

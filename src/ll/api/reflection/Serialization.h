@@ -255,13 +255,13 @@ inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTa
 }
 
 template <typename J, typename T, IsKeyFormatter F>
-inline Expected<J> serialize_impl(T&& t, F const&, meta::PriorityTag<8>)
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<8>)
     requires(concepts::IsVectorBase<std::remove_cvref_t<T>>)
 {
     Expected<J> res{J::array()};
     std::remove_cvref_t<T>::forEachComponent([&]<typename axis_type, size_t iter> {
         if (res) {
-            if (auto v = serialize<J>(std::forward<T>(t).template get<axis_type, iter>()); v) {
+            if (auto v = serialize<J>(std::forward<T>(t).template get<axis_type, iter>(), keyFormatter); v) {
                 res->push_back(*std::move(v));
             } else {
                 res = makeSerIndexError(iter, v.error());
