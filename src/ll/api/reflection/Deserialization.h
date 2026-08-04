@@ -4,6 +4,7 @@
 #include "ll/api/reflection/Reflection.h"
 #include "ll/api/reflection/Serializer.h"
 #include "ll/api/reflection/ReflectionError.h"
+#include <memory>
 
 // Priority:
 // 11. Arithmetic
@@ -23,75 +24,79 @@ namespace ll::reflection {
 
 namespace {
 
+template <class T, class J, class F>
+constexpr bool use_convertible_deserialize_fallback_v =
+    !std::is_arithmetic_v<std::remove_cvref_t<T>> && !detail::has_value_deserializer_v<std::remove_cvref_t<T>, J, F>
+    && !concepts::IsOptional<std::remove_cvref_t<T>> && !concepts::IsDispatcher<std::remove_cvref_t<T>>
+    && !concepts::IsVectorBase<std::remove_cvref_t<T>> && !std::is_enum_v<std::remove_cvref_t<T>>
+    && !concepts::IsVariant<std::remove_cvref_t<T>>
+    && !(concepts::IsString<std::remove_cvref_t<T>> && std::is_assignable_v<std::remove_cvref_t<T>&, std::string>)
+    && !std::same_as<std::remove_cvref_t<T>, std::string_view> && !concepts::TupleLike<std::remove_cvref_t<T>>
+    && !concepts::ArrayLike<std::remove_cvref_t<T>> && !concepts::Associative<std::remove_cvref_t<T>>
+    && !Reflectable<std::remove_cvref_t<T>> && std::convertible_to<J, std::remove_cvref_t<T>>;
+
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<11>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<11>)
     requires(std::is_arithmetic_v<std::remove_cvref_t<T>>);
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<10>)
-    requires(detail::has_custom_deserializer_v<std::remove_cvref_t<T>, J, F>);
-
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<10>)
+    requires(
+        detail::has_value_deserializer_v<std::remove_cvref_t<T>, J, F>
+        || detail::is_string_serializable_v<std::remove_cvref_t<T>>
+    );
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<9>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<9>)
     requires(concepts::IsOptional<std::remove_cvref_t<T>>);
-
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<9>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<9>)
     requires(concepts::IsDispatcher<std::remove_cvref_t<T>>);
-
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<8>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<8>)
     requires(concepts::IsVectorBase<std::remove_cvref_t<T>>);
-
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<7>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<7>)
     requires(std::is_enum_v<std::remove_cvref_t<T>>);
-
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<6>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<6>)
     requires(concepts::IsVariant<std::remove_cvref_t<T>>);
-
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<5>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<5>)
     requires(
         concepts::IsString<std::remove_cvref_t<T>> && std::is_assignable_v<std::remove_cvref_t<T>&, std::string>
         && !std::same_as<std::remove_cvref_t<T>, std::string_view>
     );
-
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<5>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<5>)
     requires(std::same_as<std::remove_cvref_t<T>, std::string_view>);
-
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<4>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<4>)
     requires(concepts::TupleLike<std::remove_cvref_t<T>>);
-
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<3>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<3>)
     requires(concepts::ArrayLike<std::remove_cvref_t<T>>);
-
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<2>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<2>)
     requires(concepts::Associative<std::remove_cvref_t<T>>);
-
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<1>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<1>)
     requires(Reflectable<std::remove_cvref_t<T>>);
-
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<0>)
-    requires(std::convertible_to<J, std::remove_cvref_t<T>>);
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<0>)
+    requires(use_convertible_deserialize_fallback_v<T, J, F>);
+
+template <class T, class V>
+inline void replace_deserialized_value(T& target, V&& value);
 
 } // namespace
 
 template <class T, class J, IsKeyFormatter F>
 inline Expected<> deserialize(T& t, J&& j, F const& keyFormatter) noexcept
-#if !defined(__INTELLISENSE__)
-    requires(requires(T& t, J&& j, F const& keyFormatter) {
-        deserialize_impl<T>(t, std::forward<J>(j), keyFormatter, meta::PriorityTag<11>{});
-    })
-#endif
 try {
-    return deserialize_impl<T>(t, std::forward<J>(j), keyFormatter, meta::PriorityTag<11>{});
+    using RT = std::remove_cvref_t<T>;
+    auto value = deserialize_impl<RT>(std::forward<J>(j), keyFormatter, meta::PriorityTag<11>{});
+    if (!value) return forwardError(value.error());
+    replace_deserialized_value(t, std::move(*value));
+    return {};
 } catch (...) {
     return makeExceptionError();
 }
@@ -103,36 +108,7 @@ inline Expected<> deserialize(T& t, J&& j) noexcept {
 
 template <class T, class J, IsKeyFormatter F>
 inline Expected<T> deserialize_to(J&& j, F const& keyFormatter) noexcept try {
-    if constexpr (detail::has_value_deserializer_v<T, J, F>) {
-        decltype(auto) result = [](J&& j, F const& keyFormatter) {
-            using RT = std::remove_cvref_t<T>;
-            using JT = std::remove_cvref_t<J>;
-            if constexpr (requires { Serializer<RT, JT>::deserialize(std::forward<J>(j), keyFormatter); }) {
-                return Serializer<RT, JT>::deserialize(std::forward<J>(j), keyFormatter);
-            } else if constexpr (requires { Serializer<RT, JT>::deserialize(std::forward<J>(j)); }) {
-                return Serializer<RT, JT>::deserialize(std::forward<J>(j));
-            } else if constexpr (requires {
-                                     Serializer<RT>::template deserialize<JT>(std::forward<J>(j), keyFormatter);
-                                 }) {
-                return Serializer<RT>::template deserialize<JT>(std::forward<J>(j), keyFormatter);
-            } else {
-                return Serializer<RT>::template deserialize<JT>(std::forward<J>(j));
-            }
-        }(std::forward<J>(j), keyFormatter);
-        using Result = std::remove_cvref_t<decltype(result)>;
-        if constexpr (concepts::IsLeviExpected<Result>) {
-            if (!result) return forwardError(result.error());
-            return std::move(*result);
-        } else {
-            return std::forward<decltype(result)>(result);
-        }
-    } else {
-        Expected<T> res{};
-        if (auto d = deserialize<T>(*res, std::forward<J>(j), keyFormatter); !d) {
-            res = forwardError(d.error());
-        }
-        return res;
-    }
+    return deserialize_impl<T>(std::forward<J>(j), keyFormatter, meta::PriorityTag<11>{});
 } catch (...) {
     return makeExceptionError();
 }
@@ -146,14 +122,39 @@ namespace {
 
 template <class T, class J, IsKeyFormatter F>
 constexpr bool can_deserialize_to_v =
-    detail::has_value_deserializer_v<std::remove_cvref_t<T>, J, F>
-    || std::default_initializable<std::remove_cvref_t<T>>;
+    requires(J&& j, F const& keyFormatter) {
+        deserialize_impl<T>(std::forward<J>(j), keyFormatter, meta::PriorityTag<11>{});
+    };
+
+template <class T, class V>
+inline void replace_deserialized_value(T& target, V&& value) {
+    using target_type = std::remove_cvref_t<T>;
+    using value_type  = std::remove_cvref_t<V>;
+
+    static_assert(
+        std::same_as<target_type, value_type>,
+        "replace_deserialized_value requires the constructed value to match the target type"
+    );
+
+    if constexpr (std::is_assignable_v<T&, V&&>) {
+        target = std::forward<V>(value);
+    } else {
+        static_assert(!std::is_const_v<target_type>, "deserialize target must not be const");
+        static_assert(!std::is_reference_v<T>, "deserialize target must not be a reference");
+        static_assert(
+            std::is_constructible_v<target_type, V&&>,
+            "deserialize target must be assignable or constructible from the deserialized value"
+        );
+        std::destroy_at(std::addressof(target));
+        std::construct_at(std::addressof(target), std::forward<V>(value));
+    }
+}
 
 template <class T, class J, IsKeyFormatter F>
 inline Expected<std::remove_cvref_t<T>> deserialize_construct(J&& j, F const& keyFormatter)
     requires(can_deserialize_to_v<T, J, F>)
 {
-    return deserialize_to<std::remove_cvref_t<T>>(std::forward<J>(j), keyFormatter);
+    return deserialize_impl<T>(std::forward<J>(j), keyFormatter, meta::PriorityTag<11>{});
 }
 
 template <class T, class V>
@@ -168,10 +169,7 @@ inline void array_append_value(T& t, V&& value) {
         t.insert(std::forward<V>(value));
     } else {
         static_assert(
-            requires(T& a, std::remove_cvref_t<V> v) { a.emplace_back(std::move(v)); }
-                || requires(T& a, std::remove_cvref_t<V> v) { a.push_back(std::move(v)); }
-                || requires(T& a, std::remove_cvref_t<V> v) { a.insert(a.end(), std::move(v)); }
-                || requires(T& a, std::remove_cvref_t<V> v) { a.insert(std::move(v)); },
+            ll::traits::always_false<std::remove_cvref_t<T>>,
             "array-like type must support appending a constructed value for deserialization"
         );
     }
@@ -193,13 +191,7 @@ inline void associative_insert_value(T& t, K&& key, V&& value) {
         t.insert_or_assign(std::forward<K>(key), std::forward<V>(value));
     } else {
         static_assert(
-            requires(T& a, std::remove_cvref_t<K> k, std::remove_cvref_t<V> v) {
-                a.try_emplace(std::move(k), std::move(v));
-            } || requires(T& a, std::remove_cvref_t<K> k, std::remove_cvref_t<V> v) {
-                a.emplace(std::move(k), std::move(v));
-            } || requires(T& a, std::remove_cvref_t<K> k, std::remove_cvref_t<V> v) {
-                a.insert_or_assign(std::move(k), std::move(v));
-            },
+            ll::traits::always_false<std::remove_cvref_t<T>>,
             "associative type must support inserting a constructed mapped value for deserialization"
         );
     }
@@ -246,7 +238,13 @@ inline Expected<> member_deserialize_impl(T& t, J&& j, F const& keyFormatter) {
         }
     }
     decltype(auto) child = object_child_at(std::forward<J>(j), key);
-    return deserialize<decltype(t.*MemberPtr)>(t.*MemberPtr, std::forward<decltype(child)>(child), keyFormatter);
+    auto value = deserialize_construct<std::remove_cvref_t<decltype(t.*MemberPtr)>>(
+        std::forward<decltype(child)>(child),
+        keyFormatter
+    );
+    if (!value) return forwardError(value.error());
+    replace_deserialized_value(t.*MemberPtr, std::move(*value));
+    return {};
 }
 
 template <auto MemberPtr, class T, class D, class J, IsKeyFormatter F>
@@ -261,7 +259,13 @@ inline Expected<> member_deserialize_or_impl(T& t, J&& j, D&& defaultValue, F co
     }
 
     decltype(auto) child = object_child_at(std::forward<J>(j), key);
-    return deserialize<decltype(t.*MemberPtr)>(t.*MemberPtr, std::forward<decltype(child)>(child), keyFormatter);
+    auto value = deserialize_construct<std::remove_cvref_t<decltype(t.*MemberPtr)>>(
+        std::forward<decltype(child)>(child),
+        keyFormatter
+    );
+    if (!value) return forwardError(value.error());
+    replace_deserialized_value(t.*MemberPtr, std::move(*value));
+    return {};
 }
 
 template <auto MemberPtr, class T, class J, IsKeyFormatter F>
@@ -275,7 +279,13 @@ inline Expected<> member_deserialize_default_impl(T& t, J&& j, F const& keyForma
     }
 
     decltype(auto) child = object_child_at(std::forward<J>(j), key);
-    return deserialize<decltype(t.*MemberPtr)>(t.*MemberPtr, std::forward<decltype(child)>(child), keyFormatter);
+    auto value = deserialize_construct<std::remove_cvref_t<decltype(t.*MemberPtr)>>(
+        std::forward<decltype(child)>(child),
+        keyFormatter
+    );
+    if (!value) return forwardError(value.error());
+    replace_deserialized_value(t.*MemberPtr, std::move(*value));
+    return {};
 }
 
 template <ll::FixedString Key, bool AllowOptionalMissing, class T, class J, IsKeyFormatter F>
@@ -294,7 +304,10 @@ inline Expected<> field_deserialize_impl(T& t, J&& j, F const& keyFormatter) {
     }
 
     decltype(auto) child = object_child_at(std::forward<J>(j), key);
-    return deserialize<std::remove_cvref_t<T>>(t, std::forward<decltype(child)>(child), keyFormatter);
+    auto value = deserialize_construct<std::remove_cvref_t<T>>(std::forward<decltype(child)>(child), keyFormatter);
+    if (!value) return forwardError(value.error());
+    replace_deserialized_value(t, std::move(*value));
+    return {};
 }
 
 template <ll::FixedString Key, class T, class D, class J, IsKeyFormatter F>
@@ -309,7 +322,10 @@ inline Expected<> field_deserialize_or_impl(T& t, J&& j, D&& defaultValue, F con
     }
 
     decltype(auto) child = object_child_at(std::forward<J>(j), key);
-    return deserialize<std::remove_cvref_t<T>>(t, std::forward<decltype(child)>(child), keyFormatter);
+    auto value = deserialize_construct<std::remove_cvref_t<T>>(std::forward<decltype(child)>(child), keyFormatter);
+    if (!value) return forwardError(value.error());
+    replace_deserialized_value(t, std::move(*value));
+    return {};
 }
 
 template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
@@ -323,7 +339,10 @@ inline Expected<> field_deserialize_default_impl(T& t, J&& j, F const& keyFormat
     }
 
     decltype(auto) child = object_child_at(std::forward<J>(j), key);
-    return deserialize<std::remove_cvref_t<T>>(t, std::forward<decltype(child)>(child), keyFormatter);
+    auto value = deserialize_construct<std::remove_cvref_t<T>>(std::forward<decltype(child)>(child), keyFormatter);
+    if (!value) return forwardError(value.error());
+    replace_deserialized_value(t, std::move(*value));
+    return {};
 }
 
 } // namespace
@@ -736,28 +755,91 @@ inline Expected<> default_field(T& t, J const& j) noexcept {
 
 namespace {
 
-template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const&, meta::PriorityTag<11>)
-    requires(std::is_arithmetic_v<std::remove_cvref_t<T>>)
-{
-    if (!j.is_number() && !j.is_boolean()) return makeDeserArithmeticTypeError();
-    t = static_cast<std::remove_cvref_t<T>>(j);
-    return {};
+template <class T, class J, IsKeyFormatter F, size_t I = 0, class... Args>
+inline Expected<std::remove_cvref_t<T>> tuple_deserialize_value(J&& j, F const& keyFormatter, Args&&... args) {
+    using RT = std::remove_cvref_t<T>;
+    if constexpr (I == std::tuple_size_v<RT>) {
+        return RT{std::forward<Args>(args)...};
+    } else {
+        using element_type = std::remove_cvref_t<std::tuple_element_t<I, RT>>;
+        auto child         = array_child_at<element_type>(std::forward<J>(j), I);
+        auto value         = deserialize_construct<element_type>(std::forward<decltype(child)>(child), keyFormatter);
+        if (!value) {
+            return makeDeserIndexError(I, value.error());
+        }
+        return tuple_deserialize_value<RT, J, F, I + 1>(
+            std::forward<J>(j),
+            keyFormatter,
+            std::forward<Args>(args)...,
+            std::move(*value)
+        );
+    }
+}
+
+template <class T, class J, IsKeyFormatter F, size_t I = 0, class... Args>
+inline Expected<std::remove_cvref_t<T>> reflectable_deserialize_value(J&& j, F const& keyFormatter, Args&&... args) {
+    using RT = std::remove_cvref_t<T>;
+    if constexpr (I == member_count_v<RT>) {
+        return RT{std::forward<Args>(args)...};
+    } else {
+        using member_type = std::remove_cvref_t<member_t<I, RT>>;
+        auto key          = keyFormatter(member_name_array_v<RT>[I]);
+        std::string sname{key};
+        if (!j.contains(sname)) {
+            if constexpr (concepts::IsOptional<member_type>) {
+                return reflectable_deserialize_value<RT, J, F, I + 1>(
+                    std::forward<J>(j),
+                    keyFormatter,
+                    std::forward<Args>(args)...,
+                    member_type{std::nullopt}
+                );
+            } else {
+                return makeDeserMissingRequiredFieldError(sname);
+            }
+        }
+
+        decltype(auto) child = object_child_at(std::forward<J>(j), sname);
+        auto value           = deserialize_construct<member_type>(std::forward<decltype(child)>(child), keyFormatter);
+        if (!value) {
+            return makeDeserMemberError(sname, value.error());
+        }
+        return reflectable_deserialize_value<RT, J, F, I + 1>(
+            std::forward<J>(j),
+            keyFormatter,
+            std::forward<Args>(args)...,
+            std::move(*value)
+        );
+    }
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<10>)
-    requires(detail::has_custom_deserializer_v<std::remove_cvref_t<T>, J, F>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const&, meta::PriorityTag<11>)
+    requires(std::is_arithmetic_v<std::remove_cvref_t<T>>)
+{
+    using RT = std::remove_cvref_t<T>;
+    if (!j.is_number() && !j.is_boolean()) return makeDeserArithmeticTypeError();
+    return static_cast<RT>(j);
+}
+
+template <class T, class J, IsKeyFormatter F>
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<10>)
+    requires(
+        detail::has_value_deserializer_v<std::remove_cvref_t<T>, J, F>
+        || detail::is_string_serializable_v<std::remove_cvref_t<T>>
+    )
 {
     using RT = std::remove_cvref_t<T>;
     if constexpr (detail::has_value_deserializer_v<RT, J, F>) {
-        decltype(auto) result = [](J&& j, F const& keyFormatter) {
-            using RT = std::remove_cvref_t<T>;
-            using JT = std::remove_cvref_t<J>;
+        using JT = std::remove_cvref_t<J>;
+        decltype(auto) result = [&]() -> decltype(auto) {
             if constexpr (requires { Serializer<RT, JT>::deserialize(std::forward<J>(j), keyFormatter); }) {
                 return Serializer<RT, JT>::deserialize(std::forward<J>(j), keyFormatter);
             } else if constexpr (requires { Serializer<RT, JT>::deserialize(std::forward<J>(j)); }) {
                 return Serializer<RT, JT>::deserialize(std::forward<J>(j));
+            } else if constexpr (requires { Serializer<RT>::deserialize(std::forward<J>(j), keyFormatter); }) {
+                return Serializer<RT>::deserialize(std::forward<J>(j), keyFormatter);
+            } else if constexpr (requires { Serializer<RT>::deserialize(std::forward<J>(j)); }) {
+                return Serializer<RT>::deserialize(std::forward<J>(j));
             } else if constexpr (requires {
                                      Serializer<RT>::template deserialize<JT>(std::forward<J>(j), keyFormatter);
                                  }) {
@@ -765,252 +847,206 @@ inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::Pri
             } else {
                 return Serializer<RT>::template deserialize<JT>(std::forward<J>(j));
             }
-        }(std::forward<J>(j), keyFormatter);
+        }();
         using Result = std::remove_cvref_t<decltype(result)>;
         if constexpr (concepts::IsLeviExpected<Result>) {
             if (!result) return forwardError(result.error());
-            t = std::move(*result);
+            return std::move(*result);
         } else {
-            t = std::forward<decltype(result)>(result);
+            return std::forward<decltype(result)>(result);
         }
-        return {};
     } else {
-        if constexpr (requires { Serializer<RT>::deserialize(t, std::forward<J>(j), keyFormatter); }) {
-            return Serializer<RT>::deserialize(t, std::forward<J>(j), keyFormatter);
+        if (!j.is_string()) return makeDeserStringTypeError();
+        if constexpr (std::is_lvalue_reference_v<J&&> && concepts::BorrowableStringSource<J>) {
+            auto const& text = std::as_const(j).template get_ref<typename std::remove_cvref_t<J>::string_t const&>();
+            if (auto res = Serializer<RT>::from_string(std::string_view{text}); res) {
+                return *std::move(res);
+            } else {
+                return forwardError(res.error());
+            }
         } else {
-            return Serializer<RT>::deserialize(t, std::forward<J>(j));
+            std::string text = std::string{std::forward<J>(j)};
+            if (auto res = Serializer<RT>::from_string(text); res) {
+                return *std::move(res);
+            } else {
+                return forwardError(res.error());
+            }
         }
     }
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<9>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<9>)
     requires(concepts::IsOptional<std::remove_cvref_t<T>>)
 {
-    using RT = std::remove_cvref_t<T>;
-    if (j.is_null()) {
-        t = std::nullopt;
-        return {};
-    }
+    using RT         = std::remove_cvref_t<T>;
     using value_type = typename RT::value_type;
-    static_assert(
-        can_deserialize_to_v<value_type, J, F>,
-        "optional value type must be default-constructible or provide a value-returning deserializer"
-    );
+    if (j.is_null()) {
+        return RT{std::nullopt};
+    }
     auto value = deserialize_construct<value_type>(std::forward<J>(j), keyFormatter);
     if (!value) return forwardError(value.error());
-    t = std::move(*value);
-    return {};
+    return RT{std::move(*value)};
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<9>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<9>)
     requires(concepts::IsDispatcher<std::remove_cvref_t<T>>)
 {
-    using RT = std::remove_cvref_t<T>;
-    auto res = deserialize<typename RT::storage_type>(t.storage, std::forward<J>(j), keyFormatter);
-    if (!res) return res;
-    t.call();
-    return {};
+    using RT           = std::remove_cvref_t<T>;
+    using storage_type = typename RT::storage_type;
+    auto storage       = deserialize_construct<storage_type>(std::forward<J>(j), keyFormatter);
+    if (!storage) return forwardError(storage.error());
+    RT result{std::move(*storage)};
+    result.call();
+    return result;
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<8>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<8>)
     requires(concepts::IsVectorBase<std::remove_cvref_t<T>>)
 {
+    using RT = std::remove_cvref_t<T>;
     if (!j.is_array()) return makeDeserArrayTypeError();
+    RT result{};
     Expected<> res;
-    T::forEachComponent([&]<typename axis_type, size_t iter> {
+    RT::forEachComponent([&]<typename axis_type, size_t iter> {
         if (res) {
-            auto child = array_child_at<axis_type>(std::forward<J>(j), iter);
-            res        = deserialize<axis_type>(t.template get<axis_type, iter>(), child, keyFormatter);
-            if (!res) res = makeDeserIndexError(iter, res.error());
+            auto child  = array_child_at<axis_type>(std::forward<J>(j), iter);
+            auto value  = deserialize_construct<axis_type>(std::forward<decltype(child)>(child), keyFormatter);
+            if (!value) {
+                res = makeDeserIndexError(iter, value.error());
+            } else {
+                result.template get<axis_type, iter>() = std::move(*value);
+            }
         }
     });
-    return res;
+    if (!res) return forwardError(res.error());
+    return result;
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<7>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<7>)
     requires(std::is_enum_v<std::remove_cvref_t<T>>)
 {
     using enum_type = std::remove_cvref_t<T>;
     if (j.is_string()) {
         std::string s = std::string{std::forward<J>(j)};
         if (auto res = detail::string_to_enum<enum_type>(s, keyFormatter)) {
-            t = *res;
+            return *res;
         } else if constexpr (magic_enum::detail::subtype_v<enum_type> == magic_enum::detail::enum_subtype::flags) {
             return makeDeserEnumFlagsValueError(s);
         } else {
             return makeDeserEnumValueError(s);
         }
     } else if (j.is_number()) {
-        t = static_cast<enum_type>(static_cast<std::underlying_type_t<enum_type>>(j));
+        return static_cast<enum_type>(static_cast<std::underlying_type_t<enum_type>>(j));
     } else {
         return makeDeserEnumTypeError();
     }
-    return {};
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<6>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<6>)
     requires(concepts::IsVariant<std::remove_cvref_t<T>>)
 {
-    bool matched = false;
+    using RT = std::remove_cvref_t<T>;
+    Expected<RT> matched = makeDeserVariantCastError(j.type_name(), j.dump());
 
-    constexpr static auto deserialize_arithmetic_force_match = [](auto& t, auto&& j) noexcept -> Expected<> {
-        using RT = std::remove_cvref_t<decltype(t)>;
-        if constexpr (std::same_as<RT, bool>) {
-            if (j.is_boolean()) {
-                t = j.template get<bool>();
-                return {};
-            }
-        } else if constexpr (std::is_floating_point_v<RT>) {
-            if (j.is_number_float()) {
-                t = static_cast<RT>(j.template get<double>());
-                return {};
-            }
-        } else if constexpr (std::is_signed_v<RT>) {
-            if (j.is_number_integer() && !j.is_number_unsigned()) {
-                t = static_cast<RT>(j.template get<std::int64_t>());
-                return {};
-            }
-        } else {
-            if (j.is_number_unsigned()) {
-                t = static_cast<RT>(j.template get<std::uint64_t>());
-                return {};
-            }
-        }
-        return makeDeserNumberTypeError(j.type_name());
-    };
-
-    // First pass: try arithmetic types with exact match
     [&]<typename... Ts>(std::type_identity<std::variant<Ts...>>) {
         ([&] {
-            if (!matched) {
-                if constexpr (std::is_arithmetic_v<Ts>) {
-                    Ts temp = Ts{};
-                    if (auto result = deserialize_arithmetic_force_match(temp, std::forward<J>(j)); result) {
-                        t       = temp;
-                        matched = true;
+            if (matched.has_value()) return;
+            if constexpr (std::is_arithmetic_v<Ts>) {
+                Expected<Ts> value = [&]() -> Expected<Ts> {
+                    if constexpr (std::same_as<Ts, bool>) {
+                        if (j.is_boolean()) return j.template get<bool>();
+                    } else if constexpr (std::is_floating_point_v<Ts>) {
+                        if (j.is_number_float()) return static_cast<Ts>(j.template get<double>());
+                    } else if constexpr (std::is_signed_v<Ts>) {
+                        if (j.is_number_integer() && !j.is_number_unsigned()) {
+                            return static_cast<Ts>(j.template get<std::int64_t>());
+                        }
+                    } else if constexpr (std::is_unsigned_v<Ts>) {
+                        if (j.is_number_unsigned()) return static_cast<Ts>(j.template get<std::uint64_t>());
                     }
+                    return makeDeserNumberTypeError(j.type_name());
+                }();
+                if (value) {
+                    matched = RT{std::in_place_type<Ts>, std::move(*value)};
                 }
             }
         }(), ...);
-    }(std::type_identity<std::remove_cvref_t<T>>{});
+    }(std::type_identity<RT>{});
 
-    // Second pass: try normal deserialization for all types
     [&]<typename... Ts>(std::type_identity<std::variant<Ts...>>) {
         ([&] {
-            if (!matched) {
-                if constexpr (can_deserialize_to_v<Ts, J, F>) {
-                    if (auto result = deserialize_construct<Ts>(std::forward<J>(j), keyFormatter); result) {
-                        t       = std::move(*result);
-                        matched = true;
-                    }
-                }
+            if (matched.has_value()) return;
+            if (auto value = deserialize_construct<Ts>(std::forward<J>(j), keyFormatter); value) {
+                matched = RT{std::in_place_type<Ts>, std::move(*value)};
             }
         }(), ...);
-    }(std::type_identity<std::remove_cvref_t<T>>{});
+    }(std::type_identity<RT>{});
 
-    if (!matched) {
-        return makeDeserVariantCastError(j.type_name(), j.dump());
-    }
-    return {};
+    return matched;
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const&, meta::PriorityTag<5>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const&, meta::PriorityTag<5>)
     requires(
         concepts::IsString<std::remove_cvref_t<T>> && std::is_assignable_v<std::remove_cvref_t<T>&, std::string>
         && !std::same_as<std::remove_cvref_t<T>, std::string_view>
     )
 {
+    using RT = std::remove_cvref_t<T>;
     if (!j.is_string()) return makeDeserStringTypeError();
-    t = std::string{std::forward<J>(j)};
-    return {};
+    return RT{std::string{std::forward<J>(j)}};
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const&, meta::PriorityTag<5>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const&, meta::PriorityTag<5>)
     requires(std::same_as<std::remove_cvref_t<T>, std::string_view>)
 {
     if (!j.is_string()) return makeDeserStringTypeError();
     if constexpr (std::is_lvalue_reference_v<J&&> && concepts::BorrowableStringSource<J>) {
         auto const& text = std::as_const(j).template get_ref<typename std::remove_cvref_t<J>::string_t const&>();
-        t                = std::string_view{text};
-        return {};
+        return std::string_view{text};
     } else {
         return makeDeserStringViewLifetimeError();
     }
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<4>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<4>)
     requires(concepts::TupleLike<std::remove_cvref_t<T>>)
 {
     using RT = std::remove_cvref_t<T>;
     if (!j.is_array()) return makeDeserArrayTypeError();
     if (j.size() != std::tuple_size_v<RT>) return makeDeserArraySizeError(std::tuple_size_v<RT>);
-    Expected<> res;
-    std::apply([&](auto&... args) {
-        size_t iter = 0;
-        (([&](auto& arg) {
-            if (res) {
-                using ArgType = std::remove_cvref_t<decltype(arg)>;
-                auto child = array_child_at<ArgType>(std::forward<J>(j), iter);
-                res        = deserialize<ArgType>(arg, child, keyFormatter);
-                if (!res) res = makeDeserIndexError(iter, res.error());
-                ++iter;
-            }
-        }(args)), ...);
-    }, t);
-    return res;
+    return tuple_deserialize_value<RT>(std::forward<J>(j), keyFormatter);
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<3>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<3>)
     requires(concepts::ArrayLike<std::remove_cvref_t<T>>)
 {
-    using RT = std::remove_cvref_t<T>;
-    if (!j.is_array()) return makeDeserArrayTypeError();
+    using RT         = std::remove_cvref_t<T>;
     using value_type = typename RT::value_type;
-    using child_type = decltype(array_child_at<value_type>(std::forward<J>(j), size_t{}));
-    static_assert(
-        can_deserialize_to_v<value_type, child_type, F>,
-        "array-like value type must be default-constructible or provide a value-returning deserializer"
-    );
-    if constexpr (requires(T a) { a.clear(); }) {
-        t.clear();
+    if (!j.is_array()) return makeDeserArrayTypeError();
+    RT result{};
+    if constexpr (requires(RT& a) { a.clear(); }) {
+        result.clear();
     }
-    if constexpr (
-        requires(T& a, value_type v) { a.emplace_back(std::move(v)); }
-        || requires(T& a, value_type v) { a.push_back(std::move(v)); }
-        || requires(T& a, value_type v) { a.insert(a.end(), std::move(v)); }
-        || requires(T& a, value_type v) { a.insert(std::move(v)); }
-    ) {
-        for (size_t i = 0; i < j.size(); ++i) {
-            auto  child = array_child_at<value_type>(std::forward<J>(j), i);
-            auto  value = deserialize_construct<value_type>(std::forward<decltype(child)>(child), keyFormatter);
-            if (!value) {
-                return makeDeserIndexError(i, value.error());
-            }
-            array_append_value(t, std::move(*value));
-        }
-    } else {
-        static_assert(
-            requires(T& a, value_type v) { a.emplace_back(std::move(v)); }
-                || requires(T& a, value_type v) { a.push_back(std::move(v)); }
-                || requires(T& a, value_type v) { a.insert(a.end(), std::move(v)); }
-                || requires(T& a, value_type v) { a.insert(std::move(v)); },
-            "array-like type must support appending a constructed value for deserialization"
-        );
+    for (size_t i = 0; i < j.size(); ++i) {
+        auto child = array_child_at<value_type>(std::forward<J>(j), i);
+        auto value = deserialize_construct<value_type>(std::forward<decltype(child)>(child), keyFormatter);
+        if (!value) return makeDeserIndexError(i, value.error());
+        array_append_value(result, std::move(*value));
     }
-    return {};
+    return result;
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<2>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<2>)
     requires(concepts::Associative<std::remove_cvref_t<T>>)
 {
     using RT = std::remove_cvref_t<T>;
@@ -1020,7 +1056,10 @@ inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::Pri
     );
     J const& jConst = j;
     if (!jConst.is_object()) return makeDeserObjectTypeError();
-    t.clear();
+    RT result{};
+    if constexpr (requires(RT& a) { a.clear(); }) {
+        result.clear();
+    }
     for (auto&& [k, v] : jConst.items()) {
         std::string keyString{k};
         auto        keyOpt = string_to_type<typename RT::key_type>(keyString, keyFormatter);
@@ -1029,52 +1068,29 @@ inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::Pri
             return makeDeserKeyError(keyString, error.error());
         }
         using mapped_type = typename RT::mapped_type;
-        static_assert(
-            can_deserialize_to_v<mapped_type, decltype(v), F>,
-            "associative mapped type must be default-constructible or provide a value-returning deserializer"
-        );
-        auto value = deserialize_construct<mapped_type>(std::forward<decltype(v)>(v), keyFormatter);
-        if (!value) {
-            return makeDeserKeyError(keyString, value.error());
-        }
-        associative_insert_value(t, std::move(*keyOpt), std::move(*value));
+        auto value        = deserialize_construct<mapped_type>(std::forward<decltype(v)>(v), keyFormatter);
+        if (!value) return makeDeserKeyError(keyString, value.error());
+        associative_insert_value(result, std::move(*keyOpt), std::move(*value));
     }
-    return {};
+    return result;
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const& keyFormatter, meta::PriorityTag<1>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<1>)
     requires(Reflectable<std::remove_cvref_t<T>>)
 {
+    using RT = std::remove_cvref_t<T>;
     J const& jConst = j;
     if (!jConst.is_object()) return makeDeserObjectTypeError();
-    Expected<> res;
-    forEachMember(t, [&](std::string_view name, auto& member) {
-        if (name.starts_with('$') || !res) return;
-        using member_type = std::remove_cvref_t<decltype((member))>;
-        auto key = keyFormatter(name);
-        std::string sname{key};
-        if (jConst.contains(sname)) {
-            decltype(auto) child = object_child_at(std::forward<J>(j), sname);
-            res                  = deserialize<member_type>(member, std::forward<decltype(child)>(child), keyFormatter);
-            if (!res) res = makeDeserMemberError(sname, res.error());
-        } else {
-            if constexpr (concepts::IsOptional<member_type>) {
-                member = std::nullopt;
-            } else {
-                res = makeDeserMissingRequiredFieldError(sname);
-            }
-        }
-    });
-    return res;
+    return reflectable_deserialize_value<RT>(std::forward<J>(j), keyFormatter);
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<> deserialize_impl(T& t, J&& j, F const&, meta::PriorityTag<0>)
-    requires(std::convertible_to<J, std::remove_cvref_t<T>>)
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const&, meta::PriorityTag<0>)
+    requires(use_convertible_deserialize_fallback_v<T, J, F>)
 {
-    t = static_cast<std::remove_cvref_t<T>>(j);
-    return {};
+    using RT = std::remove_cvref_t<T>;
+    return static_cast<RT>(j);
 }
 
 } // namespace

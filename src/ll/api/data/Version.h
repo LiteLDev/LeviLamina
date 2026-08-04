@@ -320,14 +320,9 @@ struct ll::reflection::Serializer<ll::data::Version> {
         return {};
     }
     template <typename J>
-    static ll::Expected<> deserialize(data::Version& t, J const& j) {
+    static ll::Expected<data::Version> deserialize(J const& j) {
         if (!j.is_string()) return makeErrorCodeError(std::errc::invalid_argument);
-        if (auto result = from_string(std::string_view{j})) {
-            t = *result;
-            return {};
-        } else {
-            return ll::forwardError(result.error());
-        }
+        return from_string(std::string_view{j});
     }
 };
 
