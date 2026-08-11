@@ -170,6 +170,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Bedrock::Threading::Async<void> $queue_DEPRECATED(
+        ::TaskStartInfo const&                        startInfo,
+        ::brstd::move_only_function<::TaskResult()>&& task,
+        ::std::function<void()>&&                     callback
+    );
+
+    MCAPI ::Bedrock::Threading::Async<void>
+    $queueSync_DEPRECATED(::TaskStartInfo const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task);
+
+    MCAPI void $taskRegister(::std::shared_ptr<::BackgroundTaskBase> task);
+
+    MCAPI void $requeueTask(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
+
+    MCFOLD ::TaskGroupState $getState() const;
+
+    MCAPI void $processCoroutines();
+
+    MCAPI void $taskComplete(::gsl::not_null<::BackgroundTaskBase*> task);
+
+    MCAPI bool $_workerPoolIsAsync() const;
+
 
     // NOLINTEND
 };

@@ -43,6 +43,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::NetherNet::ErrorOr<void, ::std::error_code> $SetKey(uint64 id);
+
+    MCNAPI int $Send(void const* pv, uint64 cb);
+
+    MCNAPI int $SendTo(void const* pv, uint64 cb, ::webrtc::SocketAddress const& addr);
+
+    MCNAPI int $Recv(void* pv, uint64 cb, int64* timestamp);
+
+    MCNAPI int $RecvFrom(void* pv, uint64 cb, ::webrtc::SocketAddress* paddr, int64* timestamp);
+
 
     // NOLINTEND
 };

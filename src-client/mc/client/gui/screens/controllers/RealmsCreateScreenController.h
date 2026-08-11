@@ -125,6 +125,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onCreation();
 
+    MCAPI void $onOpen();
+
+    MCAPI void $onLeave();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

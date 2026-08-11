@@ -34,7 +34,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI int64 $seek(int64, ::bx::Whence::Enum);
 
+    MCAPI int $write(void const*, int, ::bx::Error*);
     // NOLINTEND
 };
 

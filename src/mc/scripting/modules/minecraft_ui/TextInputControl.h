@@ -60,6 +60,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
+    $buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
+
 
     // NOLINTEND
 };

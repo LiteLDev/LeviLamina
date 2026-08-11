@@ -17,7 +17,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD void $WriteLog(char const* message, uint64 length);
     // NOLINTEND
 };
 

@@ -57,6 +57,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::LevelChunk>
+    $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+
+    MCAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& cp);
+
+    MCAPI bool $isWithinWorldLimit(::ChunkPos const& cp) const;
+
+    MCFOLD bool $canCreateViews() const;
+
+    MCAPI ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* $getChunkMap();
+
 
     // NOLINTEND
 };

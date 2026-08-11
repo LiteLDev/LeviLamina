@@ -66,6 +66,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+
+    MCFOLD bool $requiresInteract() const;
+
+    MCAPI ::std::string $getInteractText(::Player const& player) const;
+
 
     // NOLINTEND
 };

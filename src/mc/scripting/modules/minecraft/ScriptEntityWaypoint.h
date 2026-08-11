@@ -51,6 +51,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isValid() const;
+
+    MCAPI ::Scripting::Result<
+        ::ScriptModuleMinecraft::ScriptDimensionLocation,
+        ::ScriptModuleMinecraft::ScriptInvalidWaypointError,
+        ::ScriptModuleMinecraft::ScriptInvalidWaypointTextureSelectorError>
+    $getDimensionLocation() const;
+
+    MCAPI ::std::unique_ptr<::ServerWaypoint> $createWaypoint() const;
+
 
     // NOLINTEND
 };

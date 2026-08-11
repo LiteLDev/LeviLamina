@@ -53,6 +53,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI int $generateHeightAtPosition(
+        ::BlockPos const&                                                          pos,
+        ::Dimension&                                                               dim,
+        ::BlockVolume&                                                             box,
+        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
+    ) const;
+
+    MCFOLD ::Block const*
+    $getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+
+    MCAPI ::Block const& $getBeardStabilizeBlock(::Block const& foundationBlock) const;
+
+    MCFOLD ::AdjustmentEffect $getTerrainAdjustmentEffect() const;
+
 
     // NOLINTEND
 };

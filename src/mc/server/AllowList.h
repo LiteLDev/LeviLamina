@@ -83,11 +83,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ::Json::Value $serialize() const;
 
     MCAPI void $deserialize(::Json::Value const& root);
-#endif
 
 
     // NOLINTEND

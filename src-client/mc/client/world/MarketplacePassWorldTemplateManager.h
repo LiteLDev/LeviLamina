@@ -95,7 +95,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
     // NOLINTEND
 };
 

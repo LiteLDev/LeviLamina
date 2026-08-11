@@ -97,6 +97,8 @@ public:
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
+    MCAPI void $destroy(::Actor* source);
+
     MCAPI void $normalTick();
 
     MCFOLD float $getShadowRadius() const;

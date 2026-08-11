@@ -58,18 +58,23 @@ public:
 
     MCNAPI void $onLoadingEnd();
 
+#ifdef LL_PLAT_S
     MCNAPI void $onError(::WebviewError const&);
+#else // LL_PLAT_C
+    MCNAPI void $onError(::WebviewError const& error);
+#endif
 
     MCNAPI void $onWebviewChanged();
 
-    MCNAPI void $onDownloadUpdate(::WebviewDownloadInfo const&);
-
-#ifdef LL_PLAT_C
     MCNAPI void $onDownloadBegin(::WebviewDownloadInfo const& downloadInfo);
+
+    MCNAPI void $onDownloadUpdate(::WebviewDownloadInfo const&);
 
     MCNAPI void $onDownloadComplete(::WebviewDownloadInfo const& downloadInfo);
 
     MCNAPI void $onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo);
+
+    MCNAPI void $onMessageRecieved(::std::string const& message);
 
     MCNAPI void $fireCodeBuilderLoadPerformance(
         ::std::string const&        stage,
@@ -80,7 +85,6 @@ public:
 
     MCNAPI void
     $fireCodeBuilderRunPerformance(::std::string const& stage, ::std::chrono::milliseconds elapsedTimeMS) const;
-#endif
 
 
     // NOLINTEND

@@ -46,6 +46,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::string $getParameters(::Bedrock::SessionInfo const&, ::Bedrock::PlatformRuntimeInfo const*) const;
+
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Result<void>>
+    $uploadMinidump(::TaskGroup&, ::Core::Path const&, ::std::string const&) const;
+
+    MCNAPI ::std::string const& $getMinidumpUploadUri() const;
+
 
     // NOLINTEND
 };

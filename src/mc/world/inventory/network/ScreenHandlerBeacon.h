@@ -45,6 +45,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
+
+    MCAPI ::ItemStackNetResult $endRequest();
+
+    MCAPI void $postRequest(bool const wasSuccess);
+
 
     // NOLINTEND
 };

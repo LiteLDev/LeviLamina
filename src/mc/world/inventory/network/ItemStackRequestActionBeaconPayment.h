@@ -31,11 +31,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $_write(::BinaryStream& stream) const;
 
     MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
-#endif
 
 
     // NOLINTEND

@@ -26,6 +26,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $RequestCallOnNextTick(::absl::AnyInvocable<void() &&>);
+
 
     // NOLINTEND
 };

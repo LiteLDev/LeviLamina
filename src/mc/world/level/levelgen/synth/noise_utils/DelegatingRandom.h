@@ -49,9 +49,15 @@ public:
 
     MCAPI int $nextInt(int const bound);
 
+#ifdef LL_PLAT_S
     MCAPI int64 $nextLong();
+#else // LL_PLAT_C
+    MCFOLD int64 $nextLong();
+#endif
 
     MCFOLD bool $nextBoolean();
+
+    MCAPI float $nextFloat();
 
     MCAPI double $nextDouble();
 

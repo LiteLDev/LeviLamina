@@ -68,7 +68,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $canModify() const;
 
+    MCFOLD bool $getValue() const;
+
+    MCAPI void $setValue(bool value);
     // NOLINTEND
 };
 

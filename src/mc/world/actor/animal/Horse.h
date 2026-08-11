@@ -116,6 +116,47 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $die(::ActorDamageSource const& damagesource);
+
+    MCAPI void $setHorseEating(bool state);
+
+    MCAPI float $getStandAnim(float a) const;
+
+    MCAPI bool $isHorseEating() const;
+
+    MCAPI bool $isMouthOpen() const;
+
+    MCAPI void $setStanding(bool value);
+
+    MCAPI void $onFailedTame();
+
+    MCAPI void $makeMad();
+
+    MCAPI ::ActorUniqueID $getControllingPlayer() const;
+
+    MCAPI bool $tameToPlayer(::Player& player, bool tamingParticles);
+
+    MCFOLD void $onSynchedDataUpdate(int dataId);
+
+    MCAPI void $openContainerComponent(::Player& player);
+
+    MCAPI ::Vec3 $getInterpolatedRidingOffset(float a, int const) const;
+
+    MCAPI float $getShadowRadius() const;
+
+    MCAPI void $feed(int itemId);
+
+    MCAPI bool $canFreeze() const;
+
+    MCAPI bool $isImmobile() const;
+
+    MCAPI float $causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source);
+
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
+
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
 
     // NOLINTEND
 };

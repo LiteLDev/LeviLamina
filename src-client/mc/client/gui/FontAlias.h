@@ -132,6 +132,69 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI float $_getCharWidth(int uniChar, bool forceUnicode);
 
+    MCAPI bool $supportsChar(int const& character);
+
+    MCAPI float $getWrapHeight() const;
+
+    MCAPI float $getScaleFactor() const;
+
+    MCAPI float $getScaleFactor(int uniChar) const;
+
+    MCAPI bool $isScreenPixelAligned() const;
+
+    MCAPI bool $materialCanBeOverridden() const;
+
+    MCAPI void $setTextConstantsInScreenContext(
+        ::ScreenContext&    screenContext,
+        int                 glyphSheet,
+        float               guiScale,
+        ::mce::Color const& textColor,
+        bool                hasShadow
+    ) const;
+
+    MCFOLD void $uploadTextureToGPU();
+
+    MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool forceUnicode) const;
+
+    MCAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
+
+    MCAPI ::mce::Font::Type $getType(int glyphSheet) const;
+
+    MCAPI ::std::optional<::mce::Font::RenderingParameters> $tryGetRenderingParameters(
+        ::ScreenContext const& screenContext,
+        int                    glyphSheet,
+        float                  guiScale,
+        ::mce::Color const&    textColor,
+        bool                   hasShadow,
+        uint                   textureWidth,
+        uint                   textureHeight
+    ) const;
+
+    MCFOLD void $loadFontData(bool uploadTextureImmediately);
+
+    MCAPI bool $_supportsShadowInSingleDraw();
+
+    MCAPI void $onLanguageChanged(::std::string_view languageCode);
+
+    MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
+
+    MCAPI float $buildChar(
+        ::std::vector<::Font::GlyphQuad>& quads,
+        int                               i,
+        ::mce::Color const&               color,
+        bool                              italic,
+        float                             x,
+        float                             y,
+        bool                              unicode
+    );
+
+    MCAPI ::std::string $_remapString(::std::string_view str) const;
+
+    MCAPI void $switchFontsource(::Core::Path const& asciiName, ::Core::Path const& unicodeName);
+
+    MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
+    $getFontSources() const;
     // NOLINTEND
 };

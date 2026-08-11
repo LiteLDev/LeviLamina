@@ -64,6 +64,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $stopServer();
 
+    MCNAPI bool $saveHold();
+
+    MCNAPI bool $saveResume();
+
+    MCNAPI ::std::optional<::std::vector<::SnapshotFilenameAndLength>> $saveQuery();
+
+    MCNAPI bool $addNameToAllowList(::std::string const& name);
+
+    MCNAPI bool $removeNameFromAllowList(::std::string const& name);
+
+    MCNAPI bool $allowListContains(::std::string const& name);
+
+    MCNAPI bool $reloadAllowListFile();
+
+    MCNAPI void $setAllowListEnabled(bool enabled);
+
+    MCNAPI bool $getAllowListEnabled() const;
+
+    MCNAPI bool $reloadPermissionsFile();
+
+    MCNAPI bool $reloadScriptConfig();
+
+    MCNAPI bool $reloadCDNConfig();
     // NOLINTEND
 };

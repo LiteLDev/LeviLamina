@@ -149,7 +149,11 @@ public:
 
     MCNAPI ::EditorConnectionJoinIntent $getEditorConnectionJoinIntent() const;
 
+#ifdef LL_PLAT_S
     MCNAPI void $setEditorConnectionJoinIntent(::EditorConnectionJoinIntent);
+#else // LL_PLAT_C
+    MCNAPI void $setEditorConnectionJoinIntent(::EditorConnectionJoinIntent intent);
+#endif
 
 
     // NOLINTEND

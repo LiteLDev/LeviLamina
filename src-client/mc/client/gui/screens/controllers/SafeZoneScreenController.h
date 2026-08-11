@@ -63,6 +63,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::ui::ViewRequest $tryExit();
     // NOLINTEND
 };

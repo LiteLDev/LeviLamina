@@ -171,7 +171,91 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $pushCurrentScene(::OreUI::IScene& scene, ::OreUI::RouteMode routeMode);
 
+    MCAPI bool $hasScenes() const;
+
+    MCAPI void $removeScene(::OreUI::IScene const& scene);
+
+    MCAPI void $update(double time);
+
+    MCAPI void $render(::ScreenContext& screenContext);
+
+    MCAPI void $resize(uint width, uint height);
+
+    MCAPI void $reload();
+
+    MCAPI void $leave();
+
+    MCAPI void $onSuspend();
+
+    MCAPI void $onResume();
+
+    MCAPI void $onRouteChanged(
+        ::std::optional<::OreUI::RouterLocation> const& previousLocation,
+        ::std::optional<::OreUI::RouterLocation> const& currentLocation
+    );
+
+    MCAPI ::std::string_view $getUrl() const;
+
+    MCAPI ::OreUI::RouteMode $getRouteMode() const;
+
+    MCAPI uint $getWidth() const;
+
+    MCAPI uint $getHeight() const;
+
+    MCAPI ::OreUI::ViewState $getState() const;
+
+    MCAPI void $setTextBoxState(::TextBoxStateChange const& stateChange);
+
+    MCAPI void $onKeyboardDismissed();
+
+    MCAPI void $setCaretLocation(int caretLocation);
+
+    MCAPI void $triggerEvent(::std::string const& eventName, ::std::string const& eventData);
+
+    MCAPI ::std::unique_ptr<::IGamefaceTextInputProxy> $getTextInputProxy();
+
+    MCAPI void $OnLoadFailed(char const* url, char const* error);
+
+    MCAPI void $OnReadyForBindings();
+
+    MCAPI void $OnBindingsReleased();
+
+    MCAPI ::cohtml::ScreenInfo $OnScreenInfoRequested();
+
+    MCAPI void $OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType type);
+
+    MCAPI void $OnCaretRectChanged(int x, int y, uint width, uint height);
+
+    MCAPI void $OnCursorChanged(::cohtml::CursorTypes::Cursors cursor, char const*, float const*, float const*);
+
+    MCFOLD ::cohtml::IClientSideSocket* $OnCreateWebSocket(
+        ::cohtml::ISocketListener* listener,
+        char const*                url,
+        char const**               protocols,
+        uint                       protocolsCount
+    );
+
+    MCAPI void $OnAudioStreamCreated(int id, int bitDepth, int channels, float samplingRate);
+
+    MCAPI void $OnAudioStreamClosed(int id);
+
+    MCAPI void $OnAudioStreamPlay(int id);
+
+    MCAPI void $OnAudioStreamPause(int id);
+
+    MCAPI void $OnAudioDataReceived(int id, int samples, float** pcm, int channels);
+
+    MCAPI void $OnAudioStreamEnded(int id);
+
+    MCAPI void $OnAudioStreamVolumeChanged(int id, float volume);
+
+    MCAPI void $OnClipboardTextSet(char const* text, uint lengthBytes);
+
+    MCAPI void $OnClipboardTextGet(::cohtml::IViewListener::IClipboardData* setDataObject);
+
+    MCFOLD ::OreUI::IViewTestHelper* $getViewTestHelper();
     // NOLINTEND
 };
 

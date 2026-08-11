@@ -109,7 +109,11 @@ public:
 
     MCAPI void $resetAnimation();
 
+#ifdef LL_PLAT_S
     MCFOLD void $buildBoneToPartMapping(::AnimationComponent& animationComponent);
+#else // LL_PLAT_C
+    MCAPI void $buildBoneToPartMapping(::AnimationComponent& animationComponent);
+#endif
 
     MCAPI void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
 

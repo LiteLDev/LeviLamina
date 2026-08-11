@@ -50,6 +50,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+
+    MCNAPI bool $evaluate(::FilterContext const& context) const;
+
+    MCNAPI ::std::string_view $getName() const;
+
+    MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getValue() const;
+
+    MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getDomain() const;
+
+    MCNAPI ::Json::Value $_serializeValue() const;
+
+    MCNAPI ::Json::Value $_serializeDomain() const;
+
+    MCNAPI bool $_isExpectedItem(::std::vector<::ItemStack const*> const& itemList) const;
+
 
     // NOLINTEND
 };

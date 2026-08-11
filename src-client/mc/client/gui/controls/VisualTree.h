@@ -119,6 +119,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::UIControl> $getControlWithName(::std::string const& name);
 
+    MCAPI bool $getDirty();
+
+    MCAPI bool $getDirty(::ui::DirtyFlag flag);
+
+    MCFOLD ::ui::DirtyFlag $getDirtyValue();
+
+    MCAPI void $addDirtyFlag(::ui::DirtyFlag flag);
+
+    MCAPI void $measureControls(::UIControl& measureRoot);
+
+    MCAPI void $markToRemoveDeadDependencies(::std::shared_ptr<::UIControl> control);
+
+    MCAPI void $updateControlCollection(::std::shared_ptr<::UIControl> control);
+
+    MCAPI void $updateControlCollectionFromRoot();
+
+    MCAPI void $removeFromControlCollection(::std::shared_ptr<::UIControl> control);
+
+    MCAPI void $updateControlBinds(::std::shared_ptr<::UIControl> control);
+
+    MCAPI void $updateBindsFromRoot();
+
+    MCAPI void $markTextEditFocusChanged();
+
+    MCAPI void $markTextEditAlwaysListeningChanged();
     // NOLINTEND
 };

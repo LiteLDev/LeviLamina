@@ -25,6 +25,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $initializeFactory(::PackLoadInfo const& packLoadInfo);
+
+    MCAPI void $initSchema();
+
 
     // NOLINTEND
 };

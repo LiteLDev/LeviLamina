@@ -211,6 +211,29 @@ public:
 
     MCNAPI ::Bedrock::PubSub::Subscription $listenForThemeDeleted(::std::function<void(::std::string const&)> func);
 
+    MCNAPI void $_handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const& payload);
+
+    MCNAPI void
+    $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& payload);
+
+    MCNAPI void $_handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& payload);
+
+    MCNAPI void $_handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload);
+
+    MCNAPI void $_handleThemeSettingsCurrentThemeChangedPayload(
+        ::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const& payload
+    );
+
+    MCNAPI void
+    $_handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload);
+
+    MCNAPI void $_handleThemeSettingsThemeColorUpdatedPayload(
+        ::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload
+    );
+
+    MCNAPI void
+    $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload);
+
 
     // NOLINTEND
 };

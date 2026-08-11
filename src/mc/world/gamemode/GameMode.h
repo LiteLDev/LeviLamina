@@ -209,18 +209,51 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
+
+    MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
+
     MCAPI bool
     $continueDestroyBlock(::BlockPos const& pos, uchar face, ::Vec3 const& playerPos, bool& hasDestroyedBlock);
 
     MCAPI void $stopDestroyBlock(::BlockPos const& pos);
 
+    MCAPI void $startBuildBlock(::BlockPos const& pos, uchar face);
+
+    MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick);
+
     MCAPI void $continueBuildBlock(::BlockPos const& pos, uchar face);
 
     MCAPI void $stopBuildBlock();
 
+    MCAPI void $tick();
+
     MCAPI float $getPickRange(::InputMode const& currentInputMode);
 
+    MCAPI bool $useItem(::ItemStack& item);
+
+    MCAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection);
+
+    MCAPI ::InteractionResult $useItemOn(
+        ::ItemStack&      item,
+        ::BlockPos const& at,
+        uchar             face,
+        ::Vec3 const&     hit,
+        ::Block const*    targetBlock,
+        bool              isFirstEvent
+    );
+
+    MCAPI bool $interact(::Actor& entity, ::Vec3 const& location);
+
+    MCAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
+
     MCAPI void $releaseUsingItem();
+
+    MCFOLD void $setTrialMode(bool isEnabled);
+
+    MCFOLD bool $isInTrialMode();
+
+    MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
 
 
     // NOLINTEND

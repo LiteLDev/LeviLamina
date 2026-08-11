@@ -90,6 +90,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
+    MCFOLD void $onTerminate();
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCFOLD ::ui::SceneType $getSceneType() const;
     // NOLINTEND
 };

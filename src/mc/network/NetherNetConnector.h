@@ -231,11 +231,21 @@ public:
 
     MCAPI void $setDisableLanSignaling(bool disableLanSignaling);
 
+    MCFOLD bool $host(::ConnectionDefinition const& definition);
+
+#ifdef LL_PLAT_S
     MCAPI bool $connect(
         ::Social::GameConnectionInfo const&,
         ::Social::GameConnectionInfo const&,
         ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator>
     );
+#else // LL_PLAT_C
+    MCAPI bool $connect(
+        ::Social::GameConnectionInfo const&                         primaryConnection,
+        ::Social::GameConnectionInfo const&                         backupConnection,
+        ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator
+    );
+#endif
 
     MCFOLD void $tick();
 
@@ -267,10 +277,6 @@ public:
     MCAPI bool $OnBroadcastDiscoveryRequestReceivedGetResponse(void* pApplicationData, int* pSize);
 
     MCAPI void $OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint* flags);
-
-#ifdef LL_PLAT_C
-    MCFOLD bool $host(::ConnectionDefinition const& definition);
-#endif
 
 
     // NOLINTEND

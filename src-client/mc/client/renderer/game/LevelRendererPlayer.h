@@ -451,6 +451,90 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $initResources();
 
+    MCAPI void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
+
+    MCAPI void $tickLevelRendererCamera();
+
+    MCAPI void $tickRain();
+
+    MCAPI void $onWillChangeDimension(::Player& player);
+
+    MCAPI void $onDimensionChanged(::Player& player);
+
+    MCAPI void $recalculateRenderDistance(float const renderDistanceScalar);
+
+    MCAPI void $preRenderUpdate(
+        ::ScreenContext&                        screenContext,
+        ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
+    );
+
+    MCAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
+
+    MCAPI void $updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+
+    MCAPI ::NameTagRenderObjectCollection $extractNameTags(::ScreenContext& screenContext) const;
+
+    MCAPI void $callRenderNameTags(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, ::Font& font);
+
+    MCAPI ::CrackRenderObjectCollection $extractCracks(::ScreenContext& screenContext) const;
+
+    MCAPI void $callRenderCracks(::BaseActorRenderContext& renderContext, ::ViewRenderObject const& renderObj);
+
+    MCAPI bool $getForceFog(::Actor const& cameraActor) const;
+
+    MCAPI void $setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
+
+    MCAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
+
+    MCAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
+
+    MCAPI void $addCameraListenerToRenderChunkCoordinator();
+
+    MCAPI void $notifyGeoChangedForAffectedEntities(::RenderChunkShared& renderChunkShared, uchar version);
+
+    MCAPI void $addTerrainParticleEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             particleCount,
+        float             velocityScalar,
+        float             emitterRadius
+    );
+
+    MCAPI void $addTerrainSlideEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             particleCount,
+        float             velocityScalar,
+        float             emitterRadius
+    );
+
+    MCAPI void $addBreakingItemParticleEffect(
+        ::Vec3 const&                     pos,
+        ::BreakingItemParticleData const& data,
+        ::ResolvedItemIconInfo const&     textureInfo
+    );
+
+    MCAPI void $addBiomeTintedParticleEffect(
+        ::HashedString const&         effect,
+        ::BlockPos const&             pos,
+        ::Block const&                block,
+        ::std::optional<::mce::Color> overrideColor
+    );
+
+    MCAPI float $getUnderwaterVisionClarity();
+
+    MCAPI ::FogDefinition::DistanceSettingType $_getFogDistanceSettingType() const;
+
+    MCAPI ::FogDefinition::DensitySettingType $_getFogDensitySettingType() const;
+
+    MCAPI void $_releaseRespectiveResources();
+
+    MCAPI void $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+
+    MCAPI void $renderEntityEffects(::BaseActorRenderContext& renderContext);
     // NOLINTEND
 };

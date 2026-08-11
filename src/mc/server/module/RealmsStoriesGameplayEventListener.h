@@ -94,6 +94,38 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::EventResult $onEvent(::ActorAcquiredItemEvent const& actorAcquiredItemEvent);
+
+    MCNAPI ::EventResult $onEvent(::ActorKilledEvent const& actorKilledEvent);
+
+    MCNAPI ::EventResult $onEvent(::PlayerUseNameTagEvent const& playerUseNameTagEvent);
+
+    MCNAPI ::EventResult $onPlayerMove(::Player& player);
+
+    MCNAPI ::EventResult $onPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn);
+
+    MCNAPI ::EventResult
+    $onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
+
+    MCNAPI ::EventResult $onPlayerPoweredBeacon(::Player const& player, int);
+
+    MCNAPI ::EventResult $onPlayerCraftedItem(
+        ::Player&                   player,
+        ::ItemInstance const&       craftedItem,
+        bool                        recipeBook,
+        bool                        hadSearchString,
+        bool                        craftedAutomatically,
+        int                         startingTabId,
+        int                         endingTabId,
+        int                         numTabsChanged,
+        bool                        filterOn,
+        bool                        recipeBookShown,
+        ::std::vector<short> const& ingredientItemIDs
+    );
+
+    MCNAPI ::EventResult
+    $onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
+
 
     // NOLINTEND
 };

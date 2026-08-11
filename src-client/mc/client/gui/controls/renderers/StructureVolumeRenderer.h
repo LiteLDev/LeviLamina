@@ -154,6 +154,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
+    MCAPI void
+    $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
+
+    MCAPI void $onSourceDestroyed(::BlockSource& source);
+
+    MCAPI void $onBlockChanged(
+        ::BlockSource&                 source,
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            updateFlags,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget      eventTarget,
+        ::Actor*                       blockChangeSource
+    );
+
+    MCAPI void $onAppResumed();
+
+    MCAPI void $onAppSuspended();
     // NOLINTEND
 };

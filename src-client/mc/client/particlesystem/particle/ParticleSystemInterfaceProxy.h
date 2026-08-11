@@ -89,6 +89,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI float $getDistanceToCameraSqr(::Vec3 const& pos) const;
 
+    MCFOLD int $getViewDistanceChunks() const;
+
+    MCAPI float $getParticleViewDistance() const;
+
+    MCAPI ::Particle*
+    $instance(::ParticleType type, ::Vec3 const& pos, ::Vec3 const& dir, int data, ::CompoundTag const* tag);
+
+    MCAPI void $addParticleEffect(
+        ::HashedString const&      effect,
+        ::Vec3 const&              emitterPosition,
+        ::MolangVariableMap const& molangVariables
+    );
     // NOLINTEND
 };

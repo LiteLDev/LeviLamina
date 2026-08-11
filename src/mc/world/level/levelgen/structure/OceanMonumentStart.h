@@ -37,6 +37,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+    MCAPI ::std::string_view $getStructureName() const;
+
 
     // NOLINTEND
 };

@@ -134,6 +134,17 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI ::gsl::not_null<::Bedrock::DataStore const*> $getOwningDataStore() const;
+
+        MCNAPI ::gsl::not_null<::Bedrock::DataStore*> $getOwningDataStore();
+
+        MCNAPI ::Bedrock::JSONObject::Node const* $getValueForKey(::std::string_view key) const;
+
+        MCNAPI ::Bedrock::JSONObject::Node* $getValueForKey(::std::string_view key);
+
+        MCNAPI ::Bedrock::JSONObject::Node*
+        $setValueForKey(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value);
+
 
         // NOLINTEND
     };
@@ -216,6 +227,12 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI ::gsl::not_null<::Bedrock::DataStore const*> $getOwningDataStore() const;
+
+        MCNAPI ::gsl::not_null<::Bedrock::DataStore*> $getOwningDataStore();
+
+        MCNAPI ::Bedrock::JSONObject::Node const* $getValueForKey(::std::string_view key) const;
+
 
         // NOLINTEND
     };

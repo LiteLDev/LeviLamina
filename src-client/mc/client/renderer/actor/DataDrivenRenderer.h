@@ -100,6 +100,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $getLeashOffsets(
+        ::Actor& actor,
+        float,
+        float,
+        float,
+        bool                                  legacyOffset,
+        ::Bedrock::small_vector_base<::Vec3>& output
+    ) const;
 
+    MCAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
+
+    MCAPI void $renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
+
+    MCAPI ::AABB $getRenderBounds(::Actor const& entity) const;
+
+    MCAPI void $addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+
+    MCAPI void $setIsOnScreen(::Actor& actor, bool const isOnScreen, float distance) const;
+
+    MCAPI bool $shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const;
+
+    MCAPI bool $shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const;
+
+    MCAPI bool $shouldHideHeldItems(::RenderParams& renderParams) const;
     // NOLINTEND
 };

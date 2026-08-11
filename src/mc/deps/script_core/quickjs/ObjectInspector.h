@@ -57,6 +57,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $isSameObject(::Scripting::ObjectHandle handleA, ::Scripting::ObjectHandle handleB) const;
+
+    MCNAPI bool $hasBooleanPropertyValue(::Scripting::ObjectHandle handle, char const* name, bool expectedValue) const;
+
+    MCNAPI ::std::optional<::Scripting::ResultAny>
+    $getPropertyValue(::Scripting::ObjectHandle handle, char const* name, ::entt::meta_type const& expectedType) const;
+
+    MCNAPI uint $getDataBufferLength(::Scripting::ObjectHandle handle) const;
+
+    MCNAPI uint $getDataBufferByteLength(::Scripting::ObjectHandle handle) const;
+
+    MCNAPI uchar* $getDataBufferBytes(::Scripting::ObjectHandle handle) const;
+
 
     // NOLINTEND
 };

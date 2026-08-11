@@ -28,7 +28,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $submitUpdate(::GeometryAtlas::PaperDollPayload&& payload);
 
+    MCFOLD uint $getUserID() const;
+
+    MCAPI ::dragon::atlas::AtlasTileHandle $getBackendID() const;
     // NOLINTEND
 };
 

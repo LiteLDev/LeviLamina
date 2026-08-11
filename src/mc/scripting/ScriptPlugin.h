@@ -89,6 +89,33 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::optional<::Scripting::ScriptData> $onLoadScript(::std::string const& name);
+
+    MCAPI void $onInfo(::Scripting::ContextId contextId, ::std::string_view message) const;
+
+    MCAPI void $onWarn(::Scripting::ContextId contextId, ::std::string_view message) const;
+
+    MCAPI void $onError(::Scripting::ContextId contextId, ::std::string_view message) const;
+
+    MCAPI void $onException(
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny
+    ) const;
+
+    MCAPI bool $shouldPrintException(
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny
+    ) const;
+
+    MCAPI void $onPromiseRejection(
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny,
+        bool                          isHandled
+    ) const;
+
 
     // NOLINTEND
 };

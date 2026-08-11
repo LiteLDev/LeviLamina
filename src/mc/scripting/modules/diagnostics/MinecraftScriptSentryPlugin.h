@@ -52,6 +52,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $setSentryLogger(::std::unique_ptr<::ScriptSentryLogger> sentryLogger);
+
+    MCNAPI ::std::string const& $getPlatformName() const;
+
 
     // NOLINTEND
 };

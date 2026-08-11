@@ -34,6 +34,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI int $RecordedDataIsAvailable(
+        void const*,
+        uint64,
+        uint64,
+        uint64,
+        uint,
+        uint,
+        int,
+        uint,
+        bool,
+        uint&,
+        ::std::optional<int64>
+    );
+
 
     // NOLINTEND
 };

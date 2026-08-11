@@ -194,6 +194,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI void $onChanged(::BlockSource& region);
+
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI ::std::string $getImmersiveReaderText(::BlockSource& region);
+
+    MCAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const& tag) const;
+
+    MCAPI void $setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
+
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+
 
     // NOLINTEND
 };

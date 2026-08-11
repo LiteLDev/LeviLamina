@@ -51,17 +51,31 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCNAPI void $onLevelAdded(::std::string const&, ::LevelListCacheObserver::LevelAddedType);
+#else // LL_PLAT_C
     MCNAPI void $onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI void $onLevelUpdated(::std::string const&);
+#else // LL_PLAT_C
     MCNAPI void $onLevelUpdated(::std::string const& levelId);
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI void $onLevelDeleted(::std::string const&);
+#else // LL_PLAT_C
     MCNAPI void $onLevelDeleted(::std::string const& levelId);
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI void $onSummaryUpdated(::std::string const&);
+#else // LL_PLAT_C
     MCNAPI void $onSummaryUpdated(::std::string const& levelId);
+#endif
 
     MCNAPI void $onStorageChanged();
-#endif
 
 
     // NOLINTEND

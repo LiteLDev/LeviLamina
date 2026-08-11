@@ -147,6 +147,45 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onMessageRecieved(::std::string const& message);
+
+    MCNAPI void $agentCommand(::std::string const& requestId, ::CodeBuilder::CommandRequest&& request);
+
+    MCNAPI void $command(::std::string const& requestId, ::CodeBuilder::CommandRequest&& request);
+
+    MCNAPI void $chatSubscribe(::std::string const& requestId, ::CodeBuilder::ChatSubscription&& subscription);
+
+    MCNAPI void $chatUnsubscribe(::std::string const&, ::std::string const& subscriptionId);
+
+    MCNAPI void $chatUnsubscribeAll(::std::string const&);
+
+    MCNAPI void $dataBlock(::std::string const& requestId);
+
+    MCNAPI void $dataItem(::std::string const& requestId);
+
+    MCNAPI void $dataMob(::std::string const& requestId);
+
+    MCNAPI void $dataTutorial(::std::string const& requestId, ::std::string const& tutorialPath);
+
+    MCNAPI void $dataFile(
+        ::std::string const& requestId,
+        bool const           isRead,
+        ::std::string const& filePath,
+        ::std::string const& fileContents
+    );
+
+    MCNAPI void $dataFilePath(::std::string const& requestId, ::std::string const& filePath);
+
+    MCNAPI bool $encryptConnection(::std::string const& requestId, ::CodeBuilder::EncryptionRequest const& request);
+
+    MCNAPI void $subscribe(::std::string const& requestId, ::std::string const& eventId);
+
+    MCNAPI void $unsubscribe(::std::string const& requestId, ::std::string const& eventId);
+
+    MCNAPI void $error(::std::string const&, ::CodeBuilder::ErrorMessage const& message);
+
+    MCNAPI bool $tutorialCached(::std::string const& tutorialPath);
+
 
     // NOLINTEND
 };

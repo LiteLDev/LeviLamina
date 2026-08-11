@@ -86,6 +86,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::std::string $getCommandName() const;
+
 
         // NOLINTEND
     };
@@ -148,6 +150,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
 
     // NOLINTEND
 };

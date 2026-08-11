@@ -43,13 +43,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $init(
         ::WeakRef<::EntityRegistry>                        registry,
         ::VanillaSystemsRegistration::RegistrationOptions& options,
         ::Bedrock::NonOwnerPointer<::IMinecraftEventing>   eventing
     );
-#endif
 
 
     // NOLINTEND

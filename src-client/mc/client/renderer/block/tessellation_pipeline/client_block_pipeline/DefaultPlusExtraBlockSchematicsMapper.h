@@ -95,7 +95,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $execute(
+        ::std::vector<::ClientBlockPipeline::CustomGeometryBox>&  customBoxes,
+        ::std::vector<::ClientBlockPipeline::CustomGeometryFace>& customFaces,
+        ::ClientBlockPipeline::BlockVolumeArea const&             area,
+        ::ClientBlockPipeline::BitsetCache const&                 opaqueFullBlockCache,
+        ::ClientBlockPipeline::ArrayCache<::Block const*> const*,
+        ::ClientBlockPipeline::CustomGeometryBlock const&,
+        ::ClientBlockPipeline::BlockLookupData const&,
+        ::BlockPos const& relativePos,
+        ::Matrix const&   blockPosTransform
+    ) const;
     // NOLINTEND
 };
 

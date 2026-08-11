@@ -75,6 +75,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Json::Value $createGlobalVars(::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> defRepository) const;
 
+    MCAPI ::std::shared_ptr<::AbstractScene> $createDevConsole();
     // NOLINTEND
 };

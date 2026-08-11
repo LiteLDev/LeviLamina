@@ -24,6 +24,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::mce::Color $get(::BlockSource&, ::BlockPos const&) const;
+
 
     // NOLINTEND
 };

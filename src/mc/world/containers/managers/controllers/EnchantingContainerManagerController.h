@@ -88,11 +88,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCNAPI bool $handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&);
+#else // LL_PLAT_C
     MCNAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+#endif
 
     MCNAPI void $registerContainerCallbacks();
-#endif
 
 
     // NOLINTEND

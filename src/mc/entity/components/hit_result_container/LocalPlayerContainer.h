@@ -42,13 +42,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCAPI void $addHitResult(::HitResult, ::HitResult);
+#else // LL_PLAT_C
     MCAPI void $addHitResult(::HitResult solidHit, ::HitResult liquidHit);
+#endif
 
     MCAPI void $clear();
 
     MCAPI ::gsl::span<::std::pair<::HitResult, ::HitResult> const> $getHits() const;
-#endif
 
 
     // NOLINTEND

@@ -69,6 +69,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $newServerAiStep();
+
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
+
+    MCFOLD void $pushActors();
+
 
     // NOLINTEND
 };

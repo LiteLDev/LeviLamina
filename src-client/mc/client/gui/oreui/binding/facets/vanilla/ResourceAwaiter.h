@@ -39,7 +39,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::OreUI::IResourceAwaiter::Status $updateStatus();
 
+    MCAPI void $refreshResources();
     // NOLINTEND
 };
 

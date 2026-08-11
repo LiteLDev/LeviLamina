@@ -101,15 +101,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI ::Bedrock::PubSub::Connector<void(
         ::cg::ImageBuffer&,
         ::Actor*,
         ::Actor*,
         ::ScreenshotOptions&,
         ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
-    )>& $getPictureTakenConnector();
-#endif
+    )>&
+    $getPictureTakenConnector();
 
 
     // NOLINTEND

@@ -91,6 +91,18 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::StructurePieceType $getType() const;
+
+        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+        MCAPI void $_handleDataMarker(
+            ::std::string const& markerId,
+            ::BlockPos const&    position,
+            ::BlockSource&       region,
+            ::Random&            random,
+            ::BoundingBox const& chunkBB
+        );
+
 
         // NOLINTEND
     };
@@ -137,6 +149,16 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI bool $generate(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
+            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
+            int                                                                        genDepth,
+            ::EndCityPieces::EndCityPiece*                                             parent,
+            ::BlockPos const&                                                          offset,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
+            ::Random&                                                                  random
+        );
+
 
         // NOLINTEND
     };
@@ -159,6 +181,16 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI bool $generate(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
+            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
+            int                                                                        genDepth,
+            ::EndCityPieces::EndCityPiece*                                             parent,
+            ::BlockPos const&                                                          offset,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
+            ::Random&                                                                  random
+        );
+
 
         // NOLINTEND
     };
@@ -187,6 +219,16 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI bool $generate(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
+            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
+            int                                                                        genDepth,
+            ::EndCityPieces::EndCityPiece*                                             parent,
+            ::BlockPos const&                                                          offset,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
+            ::Random&                                                                  random
+        );
+
 
         // NOLINTEND
     };
@@ -209,6 +251,16 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI bool $generate(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
+            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
+            int                                                                        genDepth,
+            ::EndCityPieces::EndCityPiece*                                             parent,
+            ::BlockPos const&                                                          offset,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
+            ::Random&                                                                  random
+        );
+
 
         // NOLINTEND
     };

@@ -58,6 +58,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $setEnabled(bool enabled);
 
+    MCAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&&);
+
+    MCAPI ::PackType $getPackType() const;
+
+    MCAPI void $refreshCatalogItems(::IPackManifestFactory&);
     // NOLINTEND
 };

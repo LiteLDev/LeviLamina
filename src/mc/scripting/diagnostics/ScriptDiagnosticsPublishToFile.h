@@ -48,6 +48,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI ::Core::Result $_flushBuffer(void const* data, uint64 amount);
+
 
         // NOLINTEND
     };

@@ -47,6 +47,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
+
+    MCAPI ::Container* $_tryGetContainer() const;
+
+    MCAPI ::ItemContext $_getItemContext(int slot) const;
+
 
     // NOLINTEND
 };

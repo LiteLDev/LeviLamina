@@ -64,7 +64,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
+    MCAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+
+    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
+
+    MCAPI void $handleCreation(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
+
+    MCAPI void $handleExpiration(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
+
+    MCAPI void $handleTimelineEvents(
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::std::chrono::nanoseconds const                  lastAge,
+        ::std::chrono::nanoseconds                        age
+    );
+
+    MCAPI void $handleTravelDistanceEvents(
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        float                                             lastDistance,
+        float                                             distance
+    );
     // NOLINTEND
 };
 

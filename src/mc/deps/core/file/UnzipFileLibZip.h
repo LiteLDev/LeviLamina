@@ -60,6 +60,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Core::ZipUtils::UnzipResult $locateFile(char const* fileName, int caseSensitivity);
+
+    MCNAPI ::Core::ZipUtils::UnzipResult $goToFirstFile();
+
+    MCNAPI ::Core::ZipUtils::UnzipResult $goToNextFile();
+
+    MCNAPI ::std::string $getCurrentFileName() const;
+
+    MCNAPI ::Core::ZipUtils::UnzipResult $openCurrentFileForReading();
+
+    MCNAPI ::Core::ZipUtils::UnzipResult $closeCurrentFile();
+
+    MCNAPI void $readCurrentFileContentsIntoMemory(::std::string& str);
+
+    MCNAPI void $readCurrentFileContents(uint64 bufferSize, ::std::function<void(int, void const*)> onReadCallback);
+
+    MCNAPI uint64 $getTotalFilesInZip();
+
+    MCNAPI uint64 $getCurrentFileUncompressedSize();
+
+    MCNAPI bool $_isGood() const;
+
 
     // NOLINTEND
 };

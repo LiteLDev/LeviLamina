@@ -141,6 +141,48 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCFOLD bool $hasAlphaLayer() const;
+
+    MCAPI bool $isPermanentlyRendered() const;
+
+    MCAPI bool $isWithinRenderDistance(::Vec3 const& cameraPosition) const;
+
+    MCFOLD ::ItemStack const& $getItem(int slot) const;
+
+    MCFOLD void $setItem(int slot, ::ItemStack const& item);
+
+    MCFOLD void $removeItem(int slot, int count);
+
+    MCAPI ::std::string $getName() const;
+
+    MCFOLD int $getContainerSize() const;
+
+    MCFOLD int $getMaxStackSize() const;
+
+    MCFOLD void $startOpen(::Actor&);
+
+    MCFOLD void $stopOpen(::Actor& actor);
+
+    MCFOLD void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    );
+
+    MCFOLD ::Container* $getContainer();
+
+    MCFOLD ::Container const* $getContainer() const;
+
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+
 
     // NOLINTEND
 };

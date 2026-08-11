@@ -153,6 +153,18 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::StructurePieceType $getType() const;
+
+        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+        MCAPI void $_handleDataMarker(
+            ::std::string const& markerId,
+            ::BlockPos const&    position,
+            ::BlockSource&       region,
+            ::Random&            random,
+            ::BoundingBox const& chunkBB
+        );
+
 
         // NOLINTEND
     };
@@ -181,6 +193,20 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::std::string $get1x1(::Random& random);
+
+        MCAPI ::std::string $get1x1Secret(::Random& random);
+
+        MCAPI ::std::string $get1x2SideEntrance(::Random& random, bool isStairsRoom);
+
+        MCAPI ::std::string $get1x2FrontEntrance(::Random& random, bool isStairsRoom);
+
+        MCAPI ::std::string $get1x2Secret(::Random& random);
+
+        MCAPI ::std::string $get2x2(::Random& random);
+
+        MCAPI ::std::string $get2x2Secret(::Random& random);
+
 
         // NOLINTEND
     };
@@ -300,6 +326,20 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::std::string $get1x1(::Random& random);
+
+        MCAPI ::std::string $get1x1Secret(::Random& random);
+
+        MCAPI ::std::string $get1x2SideEntrance(::Random& random, bool isStairsRoom);
+
+        MCAPI ::std::string $get1x2FrontEntrance(::Random& random, bool isStairsRoom);
+
+        MCAPI ::std::string $get1x2Secret(::Random& random);
+
+        MCAPI ::std::string $get2x2(::Random& random);
+
+        MCAPI ::std::string $get2x2Secret(::Random& random);
+
 
         // NOLINTEND
     };

@@ -119,6 +119,62 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI float $_getCharWidth(int uniChar, bool forceUnicode);
 
+    MCAPI bool $supportsChar(int const& character);
+
+    MCAPI float $getWrapHeight() const;
+
+    MCAPI float $getScaleFactor() const;
+
+    MCFOLD bool $isScreenPixelAligned() const;
+
+    MCFOLD bool $materialCanBeOverridden() const;
+
+    MCFOLD void $uploadTextureToGPU();
+
+    MCAPI void $setTextConstantsInScreenContext(
+        ::ScreenContext& screenContext,
+        int,
+        float               guiScale,
+        ::mce::Color const& textColor,
+        bool                hasShadow
+    ) const;
+
+    MCAPI ::Vec2 $getTranslationFactor() const;
+
+    MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
+
+    MCFOLD bool $_supportsShadowInSingleDraw();
+
+    MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool) const;
+
+    MCAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
+
+    MCFOLD ::mce::Font::Type $getType(int glyphSheet) const;
+
+    MCAPI void $loadFontData(bool);
+
+    MCAPI float $buildChar(
+        ::std::vector<::Font::GlyphQuad>& quads,
+        int                               i,
+        ::mce::Color const&               color,
+        bool                              italic,
+        float                             x,
+        float                             y,
+        bool                              unicode
+    );
+
+    MCAPI ::Core::PathBuffer<::std::string>
+    $getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
+
+    MCFOLD int $_getReplacementCharacter();
+
+    MCAPI ::std::string $_remapString(::std::string_view str) const;
+
+    MCAPI void $switchFontsource(::Core::Path const&, ::Core::Path const&);
+
+    MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
+    $getFontSources() const;
     // NOLINTEND
 };

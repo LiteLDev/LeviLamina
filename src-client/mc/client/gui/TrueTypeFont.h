@@ -146,6 +146,63 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $loadFontData(bool uploadTextureImmediately);
 
+    MCFOLD bool $_supportsShadowInSingleDraw();
+
+    MCAPI ::mce::MaterialPtr& $getMaterial(int sheet, bool isOddGuiScale) const;
+
+    MCAPI void $uploadTextureToGPU();
+
+    MCAPI void $unloadTextures();
+
+    MCFOLD int $_getReplacementCharacter();
+
+    MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool) const;
+
+    MCAPI float $_getCharWidth(int uniChar, bool);
+
+    MCAPI bool $supportsChar(int const& character);
+
+    MCAPI float $getWrapHeight() const;
+
+    MCFOLD float $getScaleFactor() const;
+
+    MCFOLD bool $isScreenPixelAligned() const;
+
+    MCFOLD bool $materialCanBeOverridden() const;
+
+    MCFOLD void $setTextConstantsInScreenContext(::ScreenContext&, int, float, ::mce::Color const&, bool) const;
+
+    MCAPI void $reloadFontTextures(
+        ::Bedrock::NonOwnerPointer<::ResourceLoadManager> const& resourceLoadManager,
+        bool                                                     blockingLoad
+    );
+
+    MCFOLD bool $isReloadingTextures();
+
+    MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
+
+    MCFOLD ::mce::Font::Type $getType(int glyphSheet) const;
+
+    MCAPI void $fetchPage(int page);
+
+    MCAPI float $buildChar(
+        ::std::vector<::Font::GlyphQuad>& quads,
+        int                               i,
+        ::mce::Color const&               color,
+        bool                              italic,
+        float                             x,
+        float                             y,
+        bool                              unicode
+    );
+
+    MCAPI ::Core::PathBuffer<::std::string>
+    $getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
+
+    MCFOLD void $switchFontsource(::Core::Path const&, ::Core::Path const&);
+
+    MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
+    $getFontSources() const;
     // NOLINTEND
 };

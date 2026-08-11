@@ -161,6 +161,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
+    MCNAPI ::std::string_view $getServiceName() const;
+
     MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> $getGroup(
         ::std::string const&                 namespacedName,
         ::Editor::Services::PersistenceScope scope,

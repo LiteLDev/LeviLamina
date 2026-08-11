@@ -109,6 +109,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $hasPlayerPermissions(::ActorUniqueID playerId) const;
+
 
     // NOLINTEND
 };

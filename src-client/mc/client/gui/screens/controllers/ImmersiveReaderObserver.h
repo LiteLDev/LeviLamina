@@ -21,6 +21,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $onMessageRecieved(::std::string const& message);
     // NOLINTEND
 };

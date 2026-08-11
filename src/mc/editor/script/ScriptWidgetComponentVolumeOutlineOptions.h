@@ -57,6 +57,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
+
 
     // NOLINTEND
 };

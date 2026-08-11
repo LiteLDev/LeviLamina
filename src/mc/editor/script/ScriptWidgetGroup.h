@@ -140,6 +140,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $_performDeleteGroup();
+
+    MCNAPI void $_setValid(bool valid);
+
+    MCNAPI void $_handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload);
+
+    MCNAPI void
+    $_handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload);
+
+    MCNAPI void $_servicePendingStateChanges();
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $_deleteWidget(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> widgetToDelete);
+
 
     // NOLINTEND
 };

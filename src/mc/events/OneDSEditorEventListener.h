@@ -87,6 +87,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $sendEvent(::Social::Events::Event const& event);
+
+    MCNAPI int $getEventTagsFilter() const;
+
+    MCNAPI void $_flushEventQueue();
+
 
     // NOLINTEND
 };

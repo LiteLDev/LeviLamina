@@ -113,6 +113,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
+    MCAPI void $preFrameTick();
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI bool $_isStillValid() const;
+
+    MCAPI ::std::string $_getButtonBDescription();
     // NOLINTEND
 };

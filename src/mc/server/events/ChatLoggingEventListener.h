@@ -89,6 +89,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::EventResult $onEvent(::ChatEvent const& chatEvent);
+
+    MCNAPI ::EventResult $onEvent(::ServerInstanceLeaveGameDoneEvent const&);
+
+    MCNAPI ::EventResult $onEvent(::PlayerSayCommandEvent const& sayEvent);
+
+    MCNAPI ::EventResult $onEvent(::PlayerTellCommandEvent const& tellEvent);
+
+    MCNAPI ::EventResult $onEvent(::PlayerTellRawCommandEvent const& tellRawEvent);
+
+    MCNAPI ::EventResult $onEvent(::PlayerTitleCommandEvent const& titleEvent);
+
+    MCNAPI ::EventResult $onEvent(::PlayerTitleRawCommandEvent const& titleRawEvent);
+
+    MCNAPI ::EventResult $onServerInitializeStart(::ServerInstance& instance);
+
+    MCNAPI ::EventResult $onLevelAddedPlayer(::Player& player);
+
+    MCNAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
+
 
     // NOLINTEND
 };

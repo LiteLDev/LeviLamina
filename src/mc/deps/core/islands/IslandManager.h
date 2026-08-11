@@ -57,6 +57,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $registerIsland(::Bedrock::IslandRegistrationInfo&);
+
+    MCNAPI ::std::shared_ptr<::Bedrock::IIslandCore> $getIsland(ushort) const;
+
+    MCNAPI void $start();
+
+    MCNAPI void $suspend();
+
+    MCNAPI void $resume();
+
+    MCNAPI void $stop();
+
+    MCNAPI bool $isTransitionComplete() const;
+
+    MCNAPI void $update();
+
 
     // NOLINTEND
 };

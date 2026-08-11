@@ -67,6 +67,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::ShouldPlayMovementSoundComponent>,
+            ::Read<::ActorOwnerComponent, ::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>,
+            ::Write<>,
+            ::AddRemove<::CurrentlyStandingOnBlockComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
+
 
     // NOLINTEND
 };

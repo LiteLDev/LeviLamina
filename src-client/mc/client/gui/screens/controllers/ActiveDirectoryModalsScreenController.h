@@ -51,6 +51,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onOpen();
 
+    MCFOLD ::ui::SceneType $getSceneType() const;
     // NOLINTEND
 };

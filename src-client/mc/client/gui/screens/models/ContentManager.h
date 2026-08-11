@@ -294,6 +294,114 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ContentSource* $loadContent(::ContentType contentType, ::ContentFlags flags);
 
+    MCAPI ::ContentSource* $loadContent(::InvalidPacksFilterGroup const& invalidFilter);
+
+    MCAPI ::ContentSource* $loadContentForLevel(::std::string const& levelId, ::mce::UUID const& premiumTemplateId);
+
+    MCAPI ::ContentSource* $loadContentForRealm(int64 const realmId);
+
+    MCAPI ::std::unique_ptr<::ContentSource>
+    $loadContentForRealmsWorld(::Realms::RealmId realmId, ::std::vector<::Realms::Content> const& servicePackData);
+
+    MCAPI void $addPackSourceFromPremiumTemplate(
+        ::RealmPackManagerContentSource* source,
+        ::mce::UUID const&               premiumTemplateId,
+        ::PackType                       packType
+    );
+
+    MCAPI void $addRealmsUnknownPackSources(::RealmPackManagerContentSource* contentSource);
+
+    MCAPI void $addPacksToRealmsUnknownPackSource(::std::unique_ptr<::Pack> pack);
+
+    MCAPI void $addCachedHostPackIdProvider(::std::weak_ptr<::CachedHostPackIdProvider> provider);
+
+    MCAPI void $clearRealmsUnknownPackSource();
+
+    MCAPI void $removeUnneededItemFromRealmsUnknownContentSource(::mce::UUID const& id);
+
+    MCAPI ::gsl::not_null<::std::shared_ptr<::ContentItemCollection>>
+    $getGlobalResourcePackCollection(bool isEditorMode);
+
+    MCAPI ::std::unique_ptr<::IContentManagerContext>
+    $createContext(::std::function<bool(::std::shared_ptr<::ContentItem const> const&)> contextPredicate);
+
+    MCAPI void $removeContext(::IContentManagerContext& context);
+
+    MCFOLD ::std::vector<::std::unique_ptr<::ContentSource>> const& $getSources() const;
+
+    MCAPI ::std::vector<::std::shared_ptr<::ContentItem>> $getContentItems() const;
+
+    MCFOLD ::std::shared_ptr<::IVersionedContentItemCollection const> $getVersionedItems() const;
+
+    MCAPI void $enableCatalogPackSource();
+
+    MCAPI void $generateItems(::ContentSource* source);
+
+    MCAPI ::Bedrock::Threading::Async<void> $reloadSources(bool saveSources);
+
+    MCAPI void $reloadItems();
+
+    MCAPI void $reloadViews();
+
+    MCAPI void $populateDependencies() const;
+
+    MCAPI void $deleteContent(::std::shared_ptr<::ContentItem const> const& contentItem);
+
+    MCAPI void $deleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems);
+
+    MCAPI void $deleteContentFiles(::std::shared_ptr<::ContentItem const> const& contentItem);
+
+    MCAPI void $deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems);
+
+    MCAPI void $postDeleteContent(::std::shared_ptr<::ContentItem const> const& contentItem);
+
+    MCAPI void $postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems);
+
+    MCAPI uint64 $generateContentId();
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getWorldResourcePath(::std::string const& levelId) const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getWorldBehaviorPath(::std::string const& levelId) const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getWorldResourceFolder(::std::string const& levelId) const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getWorldBehaviorFolder(::std::string const& levelId) const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getWorldPath(::std::string const& levelId) const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const& $getPremiumWorldTemplateFolder(::ContentIdentity const& templateId);
+
+    MCAPI ::ContentManagerProxy* $getProxy();
+
+    MCAPI void $beginAsyncInit(::TaskGroup& taskGroup);
+
+    MCFOLD bool $isInitialized() const;
+
+    MCAPI void $onLanguageChanged();
+
+    MCAPI void $refreshContentCatalogPackSource();
+
+    MCAPI ::Bedrock::PubSub::Subscription $refreshContentCatalogPackSource(::std::function<void()>&& callback);
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> $getFilePathManager();
+
+    MCAPI void $onLevelDeleted(::std::string const& levelId);
+
+    MCAPI void $onRealmsReset(::Realms::RealmId const realmsId);
+
+    MCAPI ::Bedrock::PubSub::Subscription
+    $subscribeToSourcesReloadedAsyncCompleted(::std::function<void()>&& onSourcesReloadedAsyncCallback);
+
+    MCAPI ::std::shared_ptr<::StorageManager::ContentItemProvider> $getStorageContentItemProvider();
+
+    MCAPI ::StorageManager::IContentHandler& $getStorageContentHandler();
+
+    MCAPI ::std::shared_ptr<::StorageManager::WorldConverter> $getStorageWorldConverter();
+
+    MCAPI ::Bedrock::PubSub::Subscription $registerToReloadViews(::std::function<void()> callback);
+
+    MCAPI ::Bedrock::PubSub::Subscription $registerToDeleteContent(::std::function<void()> callback);
     // NOLINTEND
 };

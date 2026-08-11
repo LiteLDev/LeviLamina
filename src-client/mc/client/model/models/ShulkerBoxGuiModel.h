@@ -56,6 +56,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD void $render(::ScreenContext& screenContext);
     // NOLINTEND
 };

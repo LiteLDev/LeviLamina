@@ -24,6 +24,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI uchar $getPoweroutDirection() const;
+
+    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
+
 
     // NOLINTEND
 };

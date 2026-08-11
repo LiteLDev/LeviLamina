@@ -71,6 +71,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
+
+    MCNAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload);
+
 
     // NOLINTEND
 };

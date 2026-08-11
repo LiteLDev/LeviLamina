@@ -111,6 +111,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $recalculateRenderDistance(float const renderDistanceScalar);
+
+    MCNAPI void $preRenderUpdate(
+        ::ScreenContext&                        screenContext,
+        ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
+    );
+
+    MCNAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
+
+    MCNAPI void
+    $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+
+    MCNAPI void $setupViewArea();
+
+    MCNAPI void $setViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+
+    MCNAPI void $updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+
+    MCNAPI void $onDimensionChanged(::Player& player);
+
+    MCNAPI void $addCameraListenerToRenderChunkCoordinator();
+
     MCNAPI void $updateLevelCullerType(::LevelCullerType const newLevelCullerType);
     // NOLINTEND
 };

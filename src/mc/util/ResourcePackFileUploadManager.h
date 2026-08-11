@@ -123,6 +123,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $archiveAndUploadFileToRealmStorage(
+        ::std::string const& uploadId,
+        ::Core::Path const&  path,
+        int const            slotIndex,
+        ::std::string const& realmsGuid
+    );
+
+    MCAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
+
 
     // NOLINTEND
 };

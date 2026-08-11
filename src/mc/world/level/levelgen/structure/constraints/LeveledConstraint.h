@@ -53,6 +53,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isSatisfied(
+        ::IBlockWorldGenAPI const& target,
+        ::BlockPos const&          structurePos,
+        ::Rotation const&          structureRot,
+        ::BlockPos const&          centeringOffset
+    ) const;
+
 
     // NOLINTEND
 };

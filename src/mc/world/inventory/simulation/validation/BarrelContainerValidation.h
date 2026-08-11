@@ -22,6 +22,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+
 
     // NOLINTEND
 };

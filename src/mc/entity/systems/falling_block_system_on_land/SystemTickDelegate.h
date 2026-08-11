@@ -34,6 +34,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onLand(::FallingBlock const& block, ::IBlockSource& region, ::BlockPos const& pos);
+
+    MCAPI void $breakBlock(::FallingBlockActor& fallingBlock);
+
 
     // NOLINTEND
 };

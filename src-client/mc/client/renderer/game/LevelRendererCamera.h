@@ -512,6 +512,71 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addCameraListenerToRenderChunkCoordinator();
 
+    MCAPI void $onAppSuspended();
+
+    MCAPI void $onAppResumed();
+
+    MCAPI void $onDeviceLost();
+
+    MCFOLD void $onLowMemory();
+
+    MCFOLD void $initResources();
+
+    MCFOLD void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
+
+    MCAPI void $tickLevelRendererCamera();
+
+    MCAPI void $tickRain();
+
+    MCAPI void $updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+
+    MCFOLD void $callRenderNameTags(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, ::Font& font);
+
+    MCAPI ::NameTagRenderObjectCollection $extractNameTags(::ScreenContext& screenContext) const;
+
+    MCFOLD void $callRenderCracks(::BaseActorRenderContext& renderContext, ::ViewRenderObject const& renderObj);
+
+    MCAPI ::CrackRenderObjectCollection $extractCracks(::ScreenContext& screenContext) const;
+
+    MCFOLD void $renderEntityEffects(::BaseActorRenderContext& renderContext);
+
+    MCAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
+
+    MCAPI void $setViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+
+    MCFOLD bool $getForceFog(::Actor const& cameraActor) const;
+
+    MCAPI void $setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
+
+    MCAPI float $getAmbientBrightness() const;
+
+    MCAPI void $recalculateRenderDistance(float const renderDistanceScalar);
+
+    MCAPI void $preRenderUpdate(
+        ::ScreenContext&                        screenContext,
+        ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
+    );
+
+    MCAPI void $render(
+        ::BaseActorRenderContext& baseEntityRenderContext,
+        ::ViewRenderObject const& renderObj,
+        ::IClientInstance&        ci
+    );
+
+    MCFOLD void $postRenderUpdate();
+
+    MCFOLD void $notifyGeoChangedForAffectedEntities(::RenderChunkShared& renderChunkShared, uchar version);
+
+    MCAPI void $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+
+    MCFOLD void $_releaseRespectiveResources();
+
+    MCAPI void $setupViewArea();
+
+    MCAPI ::FogDefinition::DistanceSettingType $_getFogDistanceSettingType() const;
+
+    MCAPI ::FogDefinition::DensitySettingType $_getFogDensitySettingType() const;
     // NOLINTEND
 };

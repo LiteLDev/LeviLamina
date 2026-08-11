@@ -191,6 +191,91 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $clearLanguages();
+
+    MCAPI ::std::vector<::std::string> $findAvailableLanguages(::ResourcePackManager& resourcePackManager);
+
+    MCAPI ::std::unordered_map<::std::string, ::std::string>
+    $findAvailableLanguageNames(::ResourcePackManager& resourcePackManager);
+
+    MCAPI ::Bedrock::Threading::Async<void> $loadLanguages(
+        ::ResourcePackManager&                               resourcePackManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
+        ::std::string const&                                 initLang
+    );
+
+    MCAPI void $loadAllLanguages(::ResourcePackManager& resourcePackManager);
+
+    MCAPI ::std::vector<::std::string> $getLanguageCodesFromPack(::PackAccessStrategy const& accessStrategy);
+
+    MCAPI void
+    $loadLanguageKeywordsFromPack(::PackManifest const& manifest, ::PackAccessStrategy const& accessStrategy);
+
+    MCAPI void $loadLanguageKeywordsFromPack(
+        ::PackManifest const&                                manifest,
+        ::PackAccessStrategy const&                          accessStrategy,
+        ::std::vector<::std::string> const&                  languageCodes,
+        ::std::optional<::std::vector<::std::string>> const& additionalLocKeys
+    );
+
+    MCAPI void $appendLanguageStringsFromPack(
+        ::PackManifest const&                                                            manifest,
+        ::std::multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& localizationMapping
+    );
+
+    MCAPI ::std::unordered_map<::std::string, ::std::string>
+    $getLanguageKeywordsFromPack(::PackManifest const& manifest, ::std::string const& keyword);
+
+    MCAPI void $loadLangaugesByLocale(
+        ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& storeLocalization
+    );
+
+    MCAPI void $appendAdditionalTranslations(
+        ::std::unordered_map<::std::string, ::std::string> const& translations,
+        ::std::string const&                                      keyPrefix
+    );
+
+    MCAPI void $appendLanguageStrings(::PackAccessStrategy* accessStrategy);
+
+    MCAPI void $addI18nObserver(::I18nObserver& observer);
+
+    MCAPI void $chooseLanguage(::std::string const& code);
+
+    MCAPI ::std::string $get(
+        ::std::string const&                          id,
+        ::std::vector<::std::string> const&           params,
+        ::std::shared_ptr<::Localization const> const locale
+    );
+
+    MCAPI ::std::string $get(::std::string const& langString, ::std::shared_ptr<::Localization const> const locale);
+
+    MCAPI ::std::string $getPackKeywordValue(::PackManifest const& manifest, ::std::string const& key);
+
+    MCAPI ::std::string $getPackKeywordValueForTelemetry(::PackManifest const& manifest, ::std::string const& key);
+
+    MCAPI bool $hasPackKeyEntry(::PackManifest const& manifest, ::std::string const& key);
+
+    MCFOLD ::std::vector<::std::string> const& $getSupportedLanguageCodes();
+
+    MCAPI ::std::string const& $getLanguageName(::std::string const& code);
+
+    MCAPI ::std::shared_ptr<::Localization const> const $getLocaleFor(::std::string const& code);
+
+    MCAPI ::std::string const& $getLocaleCodeFor(::std::string const& code);
+
+    MCAPI ::gsl::not_null<::std::shared_ptr<::Localization const>> $getCurrentLanguage();
+
+#ifdef LL_PLAT_S
+    MCAPI bool $languageSupportsHypenSplitting();
+#else // LL_PLAT_C
+    MCFOLD bool $languageSupportsHypenSplitting();
+#endif
+
+    MCAPI ::std::string
+    $getLocalizedAssetFileWithFallback(::std::string const& fileNamePrefix, ::std::string const& fileNameSuffix);
+
+    MCAPI bool $isPackKeyword(::std::string const& key);
+
 
     // NOLINTEND
 };

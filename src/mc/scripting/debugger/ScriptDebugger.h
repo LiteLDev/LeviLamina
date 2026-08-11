@@ -127,6 +127,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::ScriptDebuggerSettings const& $getSettings() const;
+
+    MCNAPI bool $connect(::std::string const& host, ushort port);
+
+    MCNAPI bool $listen(ushort port);
+
+    MCNAPI void $stop();
+
+    MCNAPI void $startProfiler();
+
+    MCNAPI ::std::vector<::Core::Path> $stopProfiler();
+
+    MCNAPI bool $isStatPublisherEnabled() const;
+
+    MCNAPI void $publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats);
+
 
     // NOLINTEND
 };

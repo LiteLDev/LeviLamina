@@ -22,6 +22,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 };

@@ -80,7 +80,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::optional<::World::DownloadWorldTemplateError> $downloadWorldTemplate(
+        ::std::string const&                                                        templateId,
+        ::std::function<void(::std::optional<::World::DownloadWorldTemplateError>)> callback
+    );
 
+    MCAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
     // NOLINTEND
 };
 

@@ -194,6 +194,93 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $initialize(
+        ::std::string const&   levelName,
+        ::LevelSettings const& levelSettings,
+        ::Experiments const&   experiments,
+        ::std::string const*   levelId,
+        ::std::optional<::std::reference_wrapper<
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
+            biomeIdToResolvedData
+    );
+
+    MCAPI ::PlayerSleepManager const& $getPlayerSleepManager() const;
+
+    MCAPI ::PlayerSleepManager& $getPlayerSleepManager();
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> $getServerPlayerSleepManager();
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> $getServerPlayerSleepManager() const;
+
+    MCAPI void $setCommandsEnabled(bool commandsEnabled);
+
+    MCAPI void $setWorldTemplateOptionsUnlocked();
+
+    MCAPI ::ResourcePackManager* $getClientResourcePackManager() const;
+
+    MCAPI ::ResourcePackManager* $getServerResourcePackManager() const;
+
+    MCAPI ::TradeTables* $getTradeTables();
+
+    MCAPI void $runCommand(
+        ::HashedString const&     commandStr,
+        ::CommandOrigin&          origin,
+        ::CommandOriginSystem     originSystem,
+        ::CurrentCmdVersion const commandVersion
+    );
+
+    MCAPI void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
+
+    MCAPI void $decrementTagCache(
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
+    );
+
+    MCAPI void $incrementTagCache(
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
+    );
+
+    MCAPI ::Bedrock::NonOwnerPointer<::TagCacheManager> $getTagCacheManager();
+
+    MCAPI ::LevelChunkMetaDataManager* $getLevelChunkMetaDataManager();
+
+    MCAPI void $loadFunctionManager();
+
+#ifdef LL_PLAT_S
+    MCAPI ::Random& $getThreadRandom() const;
+#else // LL_PLAT_C
+    MCFOLD ::Random& $getThreadRandom() const;
+#endif
+
+    MCAPI ::PositionTrackingDB::PositionTrackingDBServer* $getPositionTrackerDBServer() const;
+
+    MCAPI ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> $tryGetVolumeEntityManagerServer() const;
+
+    MCAPI void $clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> $getChunkGenerationManager();
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> $getMapDataManager();
+
+    MCAPI ::GameModeExt::MessengerFactory $createMessengerFactory() const;
+
+    MCAPI ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
+
+    MCAPI void $_subTick();
+
+    MCAPI ::TickTimeManager const& $_getTickTimeManager() const;
+
+    MCAPI ::TickTimeManager& $_getTickTimeManager();
+
+    MCAPI ::PlayerDeathManager* $_getPlayerDeathManager();
+
+    MCAPI ::MapDataManager& $_getMapDataManager();
+
+    MCAPI void $_initializeMapDataManager();
+
 
     // NOLINTEND
 };

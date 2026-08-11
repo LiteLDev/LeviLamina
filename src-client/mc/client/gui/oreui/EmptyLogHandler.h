@@ -20,7 +20,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD void $WriteLog(::cohtml::Logging::Severity severity, char const* message, uint64 length);
     // NOLINTEND
 };
 

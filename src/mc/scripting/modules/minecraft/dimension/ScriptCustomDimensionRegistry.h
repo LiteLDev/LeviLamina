@@ -73,6 +73,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $_onReload();
+
+    MCAPI void $_onScriptModuleStartupComplete();
+
 
     // NOLINTEND
 };

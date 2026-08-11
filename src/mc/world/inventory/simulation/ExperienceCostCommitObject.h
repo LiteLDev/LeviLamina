@@ -38,6 +38,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $append(::ContainerValidationCommitObject* other);
+
+    MCNAPI bool $canCommit(::ContainerScreenContext const& screenContext) const;
+
+    MCNAPI void $commit(::ContainerScreenContext const& screenContext);
+
 
     // NOLINTEND
 };

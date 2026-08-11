@@ -79,6 +79,14 @@ public:
     // NOLINTBEGIN
     MCNAPI void $SetDirection(::webrtc::RtpTransceiverDirection new_direction);
 
+    MCNAPI ::webrtc::RTCError $SetDirectionWithError(::webrtc::RtpTransceiverDirection new_direction);
+
+    MCNAPI ::std::optional<::webrtc::RtpTransceiverDirection> $fired_direction() const;
+
+    MCNAPI ::webrtc::RTCError $StopStandard();
+
+    MCNAPI void $StopInternal();
+
     MCNAPI void $Stop();
 
 

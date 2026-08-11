@@ -144,6 +144,56 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
+
+    MCNAPI ::std::string_view $getServiceName() const;
+
+    MCNAPI ::std::string $getJigsawExportDirectory();
+
+    MCNAPI ::std::map<::Editor::Services::JigsawJsonType, ::std::string> $getEmptyJigsawFiles();
+
+    MCNAPI ::std::vector<::std::string> $getJigsawRegistryList();
+
+    MCNAPI ::JigsawStructureRegistry* $getJigsawRegistry(::std::string const& registryName);
+
+    MCNAPI ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>
+    $getJigsawRegistryJson(::std::string const& registryName);
+
+    MCNAPI void $setJigsawRegistry(
+        ::std::string const& registryName,
+        ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> data,
+        bool shouldSaveFiles
+    );
+
+    MCNAPI void $deleteJigsawRegistry(::std::string const& registryName);
+
+    MCNAPI void $generateJigsawPreview(
+        ::std::string const&                               registryName,
+        ::std::string const&                               startPool,
+        ::std::string const&                               startTarget,
+        ::BlockPos const&                                  seed,
+        int const                                          depth,
+        int const                                          maxHorizontalDistanceFromCenter,
+        bool const                                         validateRegistry,
+        ::Editor::ScriptModule::ScriptClipboardItem const& clipboardItem,
+        ::WeakEntityRef                                    playerRef
+    );
+
+    MCNAPI ::JigsawEditorData const $getJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef);
+
+    MCNAPI void $setJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef, ::JigsawEditorData jigsawData);
+
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)> callback);
+
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForGenerateJigsawPreview(
+        ::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)> callback
+    );
+
 
     // NOLINTEND
 };

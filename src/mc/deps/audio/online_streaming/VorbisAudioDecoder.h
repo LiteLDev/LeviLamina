@@ -112,6 +112,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Bedrock::Result<void> $initialize();
+
+    MCNAPI ::Bedrock::Result<::gsl::span<float>> $decodeInto(::Audio::AudioFrameBuffer& outputBuffer);
+
+    MCNAPI uchar $getChannels() const;
+
+    MCNAPI int $getSampleRate() const;
+
+    MCNAPI int64 $getCurrentFramePosition() const;
+
+    MCNAPI void $setTotalSamples(uint64 totalSamples);
+
+    MCNAPI ::std::optional<uint64> $getTotalSamples() const;
+
+    MCNAPI bool $isFinished() const;
+
+    MCNAPI uint64 $getFileReadPosition() const;
+
+    MCNAPI uint64 $getSafeConsumePosition() const;
+
 
     // NOLINTEND
 };

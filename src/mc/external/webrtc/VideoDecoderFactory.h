@@ -50,6 +50,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::VideoDecoderFactory::CodecSupport $QueryCodecSupport(::webrtc::SdpVideoFormat const&, bool) const;
+
 
     // NOLINTEND
 };

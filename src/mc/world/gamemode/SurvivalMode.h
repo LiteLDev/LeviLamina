@@ -102,9 +102,17 @@ public:
 
     MCAPI void $setTrialMode(bool isEnabled);
 
+#ifdef LL_PLAT_S
     MCAPI bool $isInTrialMode();
+#else // LL_PLAT_C
+    MCFOLD bool $isInTrialMode();
+#endif
 
+#ifdef LL_PLAT_S
     MCAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
+#else // LL_PLAT_C
+    MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
+#endif
 
 
     // NOLINTEND

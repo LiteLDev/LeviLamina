@@ -41,6 +41,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $onFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+
 
         // NOLINTEND
     };

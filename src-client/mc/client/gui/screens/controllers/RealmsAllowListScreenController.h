@@ -198,6 +198,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onLeave();
 
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI ::std::string $_getButtonBDescription();
+
+    MCAPI bool $_getGamepadHelperVisible() const;
     // NOLINTEND
 };

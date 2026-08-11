@@ -50,9 +50,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCNAPI void $send(void const*);
+#else // LL_PLAT_C
     MCNAPI void $send(void const* data);
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)>
+    $getConnectOp(::std::function<void(void const*)>&&);
+#else // LL_PLAT_C
     MCNAPI ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)>
     $getConnectOp(::std::function<void(void const*)>&& handler);
 #endif

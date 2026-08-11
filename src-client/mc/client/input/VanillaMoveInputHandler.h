@@ -21,6 +21,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $registerInputHandlers(::InputHandler& inputHandler, ::IClientInstance const& client);
     // NOLINTEND
 };

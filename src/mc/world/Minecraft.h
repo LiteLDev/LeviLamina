@@ -203,6 +203,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $setSimTimePause(bool pause);
+
+    MCAPI void $setSimTimeScale(float scale);
+
+    MCAPI bool $getSimPaused() const;
+
+    MCAPI bool $isOnlineClient() const;
+
+    MCAPI ::StackRefResult<::EntityRegistry> $getEntityRegistry();
+
+    MCAPI ::StackRefResult<::EntityRegistry const> $getEntityRegistry() const;
+
 
     // NOLINTEND
 };

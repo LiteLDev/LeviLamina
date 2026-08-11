@@ -151,6 +151,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::EventResult $onEvent(::PlayerFormResponseEvent const& formResponseEvent);
+
+    MCAPI ::EventResult $onEvent(::PlayerFormCloseEvent const& formCloseEvent);
+
+    MCAPI ::EventResult $onEvent(::PlayerDataDrivenScreenClosedEvent const& formResponseEvent);
+
+    MCAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
+
 
     // NOLINTEND
 };

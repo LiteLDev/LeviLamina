@@ -48,6 +48,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $Create();
+
+    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
+    $CreateAndResolve(::webrtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback);
+
+    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
+    $CreateAndResolve(::webrtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback);
+
 
     // NOLINTEND
 };

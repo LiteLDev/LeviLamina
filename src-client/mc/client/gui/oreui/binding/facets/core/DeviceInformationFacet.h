@@ -183,7 +183,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $update();
 
+    MCAPI void $onOperationModeChanged(::OperationMode operationMode);
+
+    MCAPI void $onLowDiskSpace(bool const);
+
+    MCAPI void $onOutOfDiskSpace(bool const);
     // NOLINTEND
 };
 

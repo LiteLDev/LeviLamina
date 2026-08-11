@@ -91,7 +91,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void
+    $registerFacet(::std::string const& name, ::std::function<::std::unique_ptr<::OreUI::IFacet>()> const& constructor);
 
+    MCAPI ::std::optional<::OreUI::IFacetRegistry::Error> $activateFacet(
+        ::OreUI::FacetBinder&                                                                   binder,
+        ::std::string const&                                                                    name,
+        ::std::string const&                                                                    id,
+        ::std::unordered_map<::std::string, ::std::variant<double, bool, ::std::string>> const& payload
+    );
+
+    MCAPI ::std::optional<::OreUI::IFacetRegistry::Error>
+    $deactivateFacet(::OreUI::FacetBinder& binder, ::std::string const& id);
+
+    MCAPI void $clearAllFacets();
+
+    MCAPI void $suspendAllFacets();
+
+    MCAPI void $disableFacetActivation();
+
+    MCAPI void $bind(::OreUI::FacetBinder& binder);
+
+    MCAPI ::std::vector<::std::string> const& $update(::OreUI::FacetBinder& binder);
+
+    MCAPI ::std::unordered_map<::std::string, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IFacet>> $getActiveFacets();
     // NOLINTEND
 };
 

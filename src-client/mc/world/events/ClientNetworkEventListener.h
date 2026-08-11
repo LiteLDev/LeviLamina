@@ -22,6 +22,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::EventResult $onMessage(::ClientMessageEvent const& messageEvent);
     // NOLINTEND
 };

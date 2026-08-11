@@ -64,11 +64,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> $dtls_transport() const;
+
+    MCNAPI ::std::vector<::std::string> $stream_ids() const;
+
+    MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> $streams() const;
+
     MCNAPI bool $SetParameters(::webrtc::RtpParameters const&);
+
+    MCNAPI ::std::vector<::webrtc::RtpSource> $GetSources() const;
+
+    MCNAPI void $SetFrameDecryptor(::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface> a1);
+
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface> $GetFrameDecryptor() const;
 
     MCNAPI void $SetDepacketizerToDecoderFrameTransformer(
         ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
     );
+
+    MCNAPI void $SetFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> a1);
 
 
     // NOLINTEND

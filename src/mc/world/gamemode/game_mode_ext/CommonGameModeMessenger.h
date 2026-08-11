@@ -75,20 +75,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ::gsl::final_action<::std::function<void()>> $createBlockBreakCaptureScope(
         ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)> callback
     );
 
+#ifdef LL_PLAT_S
+    MCFOLD void $sendDenyDestroyBlock(::BlockPos const&, int);
+#else // LL_PLAT_C
     MCFOLD void $sendDenyDestroyBlock(::BlockPos const& pos, int face);
+#endif
 
+#ifdef LL_PLAT_S
+    MCFOLD void $sendStartDestroyBlock(::BlockPos const&, int);
+#else // LL_PLAT_C
     MCFOLD void $sendStartDestroyBlock(::BlockPos const& pos, int face);
+#endif
 
     MCAPI void $sendDestroyBlock(::Block const& oldBlock, ::BlockPos const& pos, int variantData);
 
+#ifdef LL_PLAT_S
+    MCFOLD void $sendChangeContinueDestroyBlock(::BlockPos const&, int);
+#else // LL_PLAT_C
     MCFOLD void $sendChangeContinueDestroyBlock(::BlockPos const& pos, int face);
+#endif
 
+#ifdef LL_PLAT_S
+    MCFOLD void $sendContinueDestroyAboutToDestroyBlock(::BlockPos const&, int);
+#else // LL_PLAT_C
     MCFOLD void $sendContinueDestroyAboutToDestroyBlock(::BlockPos const& pos, int face);
+#endif
 
     MCFOLD void $sendStopDestroyBlock(::BlockPos const&, float);
 
@@ -97,7 +112,6 @@ public:
     MCAPI void $sendStopItemUseOn(::BlockPos const& pos);
 
     MCFOLD void $tryRotateTowardsAimAssist();
-#endif
 
 
     // NOLINTEND

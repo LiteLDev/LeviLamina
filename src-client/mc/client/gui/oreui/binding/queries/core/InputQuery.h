@@ -58,7 +58,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $update(double const time);
     // NOLINTEND
 };
 

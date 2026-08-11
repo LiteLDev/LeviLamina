@@ -93,6 +93,8 @@ public:
         // NOLINTBEGIN
         MCAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
+        MCAPI ::std::string $getFullName() const;
+
         MCAPI ::std::string $toString() const;
 
         MCFOLD ::ItemDescriptor::ItemEntry $getItem() const;

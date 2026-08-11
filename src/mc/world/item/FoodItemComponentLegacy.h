@@ -116,8 +116,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCAPI int $getNutrition() const;
+#else // LL_PLAT_C
     MCFOLD int $getNutrition() const;
+#endif
 
     MCFOLD float $getSaturationModifier() const;
 
@@ -134,7 +137,6 @@ public:
         ::Player&    player,
         ::Level&     level
     );
-#endif
 
 
     // NOLINTEND

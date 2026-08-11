@@ -94,6 +94,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
+
+    MCAPI void $normalTick();
+
+    MCAPI void $playerTouch(::Player& player);
+
+    MCAPI void $setAuxValue(int aux);
+
+    MCAPI ::ItemStack $_getPickupItem() const;
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI ::mce::Color $getEffectColor();
+
 
     // NOLINTEND
 };

@@ -314,7 +314,103 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $initializeStaticResources(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> const&);
 
+    MCFOLD void $onAppPreSuspended();
+
+    MCFOLD void $BeginCommands();
+
+    MCAPI void $FillCaps(::renoir::RendererCaps& outCaps);
+
+    MCAPI void $WrapUserRenderTarget(
+        void*                                userObject,
+        ::renoir::Texture2D const&           description,
+        ::renoir::Texture2DObject            object,
+        void*                                depthStencil,
+        ::renoir::DepthStencilTexture const& dsDescription,
+        ::renoir::DepthStencilTextureObject  dsObject
+    );
+
+    MCAPI void
+    $WrapUserTexture(void* userObject, ::renoir::Texture2D const& description, ::renoir::Texture2DObject object);
+
+    MCAPI bool $CreatePipelineState(::renoir::PipelineState const& state, ::renoir::PipelineStateObject object);
+
+    MCAPI void $DestroyPipelineState(::renoir::PipelineStateObject object);
+
+    MCAPI bool $CreateVertexBuffer(::renoir::VertexType type, uint count, ::renoir::VertexBufferObject object, bool);
+
+    MCAPI void $DestroyVertexBuffer(::renoir::VertexBufferObject object);
+
+    MCAPI void* $MapVertexBuffer(::renoir::VertexBufferObject object);
+
+    MCAPI void $UnmapVertexBuffer(::renoir::VertexBufferObject object, uint count);
+
+    MCAPI bool
+    $CreateIndexBuffer(::renoir::IndexBufferType format, uint count, ::renoir::IndexBufferObject object, bool);
+
+    MCAPI void $DestroyIndexBuffer(::renoir::IndexBufferObject object);
+
+    MCAPI void* $MapIndexBuffer(::renoir::IndexBufferObject object);
+
+    MCAPI void $UnmapIndexBuffer(::renoir::IndexBufferObject object, uint elemCount);
+
+    MCAPI bool $CreateConstantBuffer(::renoir::CBType type, ::renoir::ConstantBufferObject object, uint size);
+
+    MCAPI void $DestroyConstantBuffer(::renoir::ConstantBufferObject object);
+
+    MCAPI bool $CreateTexture(
+        ::renoir::Texture2DObject  object,
+        ::renoir::Texture2D const& description,
+        void const*                data,
+        uint                       dataLen
+    );
+
+    MCAPI void $DestroyTexture(::renoir::Texture2DObject object);
+
+    MCAPI void $UpdateTexture(
+        ::renoir::Texture2DObject  object,
+        ::renoir::Texture2D const& description,
+        ::renoir::UpdateBox*       boxes,
+        void const**               newBytes,
+        uint                       count,
+        bool
+    );
+
+    MCAPI bool $CreateDepthStencilTexture(
+        ::renoir::DepthStencilTextureObject  object,
+        ::renoir::DepthStencilTexture const& description
+    );
+
+    MCAPI void $DestroyDepthStencilTexture(::renoir::DepthStencilTextureObject object);
+
+    MCFOLD void $CopyTextureToTexture(
+        ::renoir::Texture2DObject,
+        ::renoir::Texture2DObject,
+        ::renoir::UpdateBox,
+        ::renoir::float2
+    );
+
+    MCAPI bool $CreateSampler2D(::renoir::Sampler2DObject object, ::renoir::Sampler2D const& description);
+
+    MCAPI void $DestroySampler2D(::renoir::Sampler2DObject object);
+
+    MCFOLD bool $ReadTexture(::renoir::TextureObject, ::renoir::UpdateBox const&, void*);
+
+    MCAPI void $ExecuteRendering(
+        ::renoir::RendererBackend::BackendCommandsBuffer const*    buffers,
+        uint                                                       buffersCount,
+        ::renoir::RendererBackend::ConstantBufferUpdateData const* cboUpdates,
+        uint                                                       numCboUpdates
+    );
+
+    MCAPI void $ExecuteResourceCommands(
+        ::renoir::RendererBackend::BackendResourceCommandsBuffer const* buffers,
+        uint                                                            buffersCount,
+        ::renoir::ResourcesCommandsStage
+    );
+
+    MCAPI void $EndCommands();
     // NOLINTEND
 };
 

@@ -30,6 +30,8 @@ public:
     // NOLINTBEGIN
     MCFOLD ::EventResult $onChangedHitResult(::HitResult& hitResult);
 
+    MCAPI ::EventResult $onContinuousHitResult(::HitResult& hitResult);
+
     MCFOLD ::EventResult $onChangedPickHitResult(::HitResult& hitResult);
 
     MCFOLD ::EventResult $onContinuousPickHitResult(::HitResult& hitResult);

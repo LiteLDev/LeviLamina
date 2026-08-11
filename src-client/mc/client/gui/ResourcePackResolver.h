@@ -86,7 +86,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
     // NOLINTEND
 };
 

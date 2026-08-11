@@ -329,7 +329,125 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $setActorBindInfo(
+        ::Dimension*          dimension,
+        ::ActorUniqueID       actorId,
+        ::HashedString const& locator,
+        ::Vec3 const&         offset
+    );
 
+    MCAPI void $setActorBindInfo(::WeakEntityRef actorRef, ::HashedString const& locator, ::Vec3 const& offset);
+
+    MCAPI void $setActorBindInfo(::Actor* actor, ::HashedString const& locator, ::Vec3 const& offset);
+
+    MCAPI void $setEnableUpdate(bool enable);
+
+    MCAPI void $setEnableRender(bool enable);
+
+    MCAPI void $runInitializationScript(::ExpressionNode const& initializationScript);
+
+    MCAPI void $onBlockChanged(::BlockPos const& blockPosition);
+
+    MCAPI void $expire();
+
+    MCAPI bool $isValid() const;
+
+    MCAPI bool $isManualEmitter() const;
+
+    MCAPI bool $expirationRequested() const;
+
+    MCAPI bool $hasExpired() const;
+
+    MCAPI ::AABB const& $getAABB() const;
+
+    MCFOLD ::HashedString const& $getEffectName() const;
+
+    MCAPI uint64 $getParticleCount() const;
+
+    MCAPI uint64 $getEffectEmitterCount() const;
+
+    MCAPI uint64 $getEffectParticleCount() const;
+
+    MCAPI uint64 $getTotalEmitterCount() const;
+
+    MCAPI uint64 $getTotalParticleCount() const;
+
+    MCAPI ::Vec3 const& $getLastCameraPosition() const;
+
+    MCAPI bool $getAreParticlesFromActorButWorldRelative() const;
+
+    MCAPI void $tick(::std::chrono::nanoseconds const& dtIn, float const a);
+
+    MCAPI void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
+
+    MCAPI void $extractForRendering(::ParticleRenderData& particleRenderData, float a);
+
+    MCAPI void $setManualParticleEmission(bool manualParticleEmission);
+
+    MCAPI void $emitParticleManually(::Vec3 const& particlePosition, ::Vec3 const& velocityAdd, float const scaleMult);
+
+    MCAPI ::ParticleSystem::ActorBindInfo $getActorBindInfo() const;
+
+    MCAPI ::Vec3 const& $getPosition() const;
+
+    MCAPI ::Matrix const& $getTransform() const;
+
+    MCFOLD ::Vec3 const& $getWorldPosition() const;
+
+    MCFOLD ::Vec3 const& $getWorldVelocity() const;
+
+    MCAPI void $setMaxNumParticles(uint64 num);
+
+    MCFOLD uint64 $getMaxNumParticles() const;
+
+    MCAPI uint64 $getNumParticles() const;
+
+    MCFOLD uint64 $getNumParticlesEmitted() const;
+
+    MCAPI void $setActorFrameOfReference(bool useActorPosition, bool useActorRotation, bool useEmitterVelocity);
+
+    MCAPI void $setEmissionDuration(float activeTime);
+
+    MCAPI void $setSleepDuration(float sleepTime);
+
+    MCAPI void $setFacing(::HashedString const& facing);
+
+    MCAPI bool $blockListInitialized();
+
+    MCAPI void $initializeBlockList(::buffer_span<::std::string> blockList);
+
+    MCAPI bool $blockAtPositionIsInList(::BlockPos const& blockPos);
+
+    MCAPI ::BrightnessPair $getBrightnessPairAtBlock(::BlockPos const& blockPosition) const;
+
+    MCAPI ::std::pair<::BrightnessPair, ::BlockPos>
+    $getBrightestNeighbor(::BlockPos const& blockPosition, ::ParticleSystem::CommonParticle const& particle) const;
+
+    MCAPI bool $getVisibilityAtBlock(::BlockPos const& blockPosition) const;
+
+    MCAPI ::mce::Color $getGameplayLightForParticle(::ParticleSystem::CommonParticle const& particle) const;
+
+    MCAPI ::BrightnessPair $getBrightnessPairForParticle(::ParticleSystem::CommonParticle const& particle) const;
+
+    MCAPI ::std::vector<::AABB> const& $getCollisionShapesForBlockPosition(::BlockPos const& blockPosition);
+
+    MCAPI ::std::vector<::AABB>& $getCollisionAabbList();
+
+    MCAPI ::std::vector<::ParticleSystem::ComponentAccessParticleEmitter::CollisionHelper>& $getCollisionSweepList();
+
+    MCAPI void $fireEvent(::HashedString const& eventName, ::Vec3 const& position, ::Vec3 const& velocity);
+
+    MCAPI void $fireEvent(::HashedString const& eventName, ::Matrix const& transform, ::Vec3 const& velocity);
+
+    MCAPI bool $getUseActorPosition() const;
+
+    MCAPI bool $getUseActorRotation() const;
+
+    MCAPI void $getParticleWorldPositionAndVelocity(
+        ::ParticleSystem::CommonParticle& particle,
+        ::Vec3&                           particleWorldPosition,
+        ::Vec3&                           particleWorldVelocity
+    );
     // NOLINTEND
 };
 

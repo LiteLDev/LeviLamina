@@ -272,6 +272,19 @@ public:
 
     MCFOLD ::cereal::internal::BasicSchema const& $doUnwrap(::entt::meta_any& elem, bool fillIfEmpty) const;
 
+    MCAPI void $doLoad(
+        ::cereal::SchemaReader&              reader,
+        ::entt::meta_any&                    any,
+        ::entt::meta_any const&              udata,
+        ::cereal::internal::LoadState const& state
+    ) const;
+
+    MCAPI void $doSave(
+        ::cereal::SchemaWriter&              value,
+        ::entt::meta_any const&              any,
+        ::cereal::internal::SaveState const& state
+    ) const;
+
 
     // NOLINTEND
 };

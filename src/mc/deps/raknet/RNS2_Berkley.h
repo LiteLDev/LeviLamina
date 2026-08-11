@@ -56,6 +56,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $SetMulticastInterface(int interfaceIndex);
+
 
     // NOLINTEND
 };

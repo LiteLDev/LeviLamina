@@ -56,6 +56,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $SetMode(::webrtc::SSLMode);
+
+    MCNAPI void $SetCertVerifier(::webrtc::SSLCertificateVerifier*);
+
+    MCNAPI void $SetIdentity(::std::unique_ptr<::webrtc::SSLIdentity>);
+
+    MCNAPI void $SetRole(::webrtc::SSLRole);
+
+    MCNAPI void $SetIgnoreBadCert(bool);
+
+    MCNAPI ::webrtc::OpenSSLAdapter* $CreateAdapter(::webrtc::Socket*);
+
 
     // NOLINTEND
 };

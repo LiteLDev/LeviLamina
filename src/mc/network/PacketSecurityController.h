@@ -68,6 +68,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::PacketViolationResponse $checkForViolation(
+        ::MinecraftPacketIds                                                     packetId,
+        ::SubClientId                                                            subClientId,
+        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result,
+        bool*                                                                    outIsNewOrUpdatedViolation
+    );
+
+    MCNAPI uint $getTelemetryData();
+
+    MCNAPI ::Bedrock::ErrorInfo<::std::error_code> $consumePacketError(::SubClientId subClientId);
+
+    MCNAPI void
+    $reloadPacketLimitConfig(::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder);
+
 
     // NOLINTEND
 };

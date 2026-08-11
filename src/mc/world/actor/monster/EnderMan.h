@@ -80,6 +80,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $normalTick();
+
+    MCAPI void $newServerAiStep();
+
+    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings);
+
+    MCFOLD bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
+
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
+
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
 
     // NOLINTEND
 };

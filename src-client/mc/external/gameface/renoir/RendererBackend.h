@@ -222,7 +222,33 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $SetDebugName(::renoir::Texture2DObject, char const*);
 
+    MCNAPI void $SetDebugName(::renoir::DepthStencilTextureObject, char const*);
+
+    MCNAPI void $SetDebugName(::renoir::VertexBufferObject, char const*);
+
+    MCNAPI void $SetDebugName(::renoir::IndexBufferObject, char const*);
+
+    MCNAPI void $SetDebugName(::renoir::PipelineStateObject, char const*);
+
+    MCNAPI void $SetDebugName(::renoir::ConstantBufferObject, char const*);
+
+    MCNAPI void $SetDebugName(::renoir::Sampler2DObject, char const*);
+
+    MCNAPI void $BeginGPUPerformanceTiming(uint);
+
+    MCNAPI void $EndGPUPerformanceTiming(uint);
+
+    MCNAPI bool $ReadTexture(::renoir::TextureObject, ::renoir::UpdateBox const&, void*);
+
+    MCNAPI bool $ReadVertexBuffer(::renoir::VertexBufferObject, void*);
+
+    MCNAPI bool $ReadIndexBuffer(::renoir::IndexBufferObject, void*);
+
+    MCNAPI bool $GetNativeTexture(::renoir::Texture2DObject, void*);
+
+    MCNAPI ::renoir::RendererBackend::GPUPerfTimingResult $TryGetLatestGPUPerformanceTiming(uint, float&);
     // NOLINTEND
 };
 

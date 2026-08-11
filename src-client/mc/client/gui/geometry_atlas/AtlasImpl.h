@@ -177,7 +177,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::GeometryAtlas::IItemTile> $createItem(::GeometryAtlas::TileDefinition const& definition);
 
+    MCAPI ::std::shared_ptr<::GeometryAtlas::IPaperDollTile>
+    $createDoll(::GeometryAtlas::TileDefinition const& definition);
+
+    MCAPI void $trySubmitUpdates(::GeometryAtlas::IRenderContext& context);
+
+    MCAPI bool $hasAnyUpdates() const;
+
+    MCFOLD ::Bedrock::PubSub::Connector<void(::std::vector<uint> const&)>& $getTileChangeConnector();
     // NOLINTEND
 };
 

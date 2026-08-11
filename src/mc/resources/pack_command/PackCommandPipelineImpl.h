@@ -72,6 +72,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::PackCommand::PackCommandHandle $submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands);
+
+    MCNAPI ::PackCommand::PackCommandHandle
+    $submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&& commands);
+
+    MCNAPI ::PackCommand::PackCommandHandle $submitRemove(::PackCommand::RemoveBatch&& commands);
+
+    MCNAPI ::TaskGroup& $getTaskGroup();
+
 
     // NOLINTEND
 };

@@ -117,6 +117,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Editor::DataStore::IContentBadgeContainer::Config const& $getConfig() const;
+
+    MCNAPI ::Scripting::Result_deprecated<void> $setSuppressNewBadges(bool shouldSuppress);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $clearBadge(::HashedString const& id);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $clearAllRegisteredBadges();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $restoreAllRegisteredBadges();
+
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $onVisibleBadgesChanged(::std::function<void(::std::unordered_set<::HashedString> const&)> callback);
+
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $onConfigChanged(::std::function<void(::Editor::DataStore::IContentBadgeContainer::Config const&)> callback);
+
+    MCNAPI ::std::unordered_set<::HashedString> const& $getVisibleBadges();
+
+    MCNAPI void $clear();
+
 
     // NOLINTEND
 };

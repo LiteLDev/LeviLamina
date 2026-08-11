@@ -143,6 +143,54 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
+
+    MCNAPI ::std::string_view $getServiceName() const;
+
+    MCNAPI ::std::optional<::std::string> $createNewEditorProjectStructure(
+        ::Editor::EditorStructureTemplate const& templateData,
+        ::std::string const&                     id,
+        ::std::optional<::std::string> const&    fullName,
+        ::std::optional<::std::string> const&    displayName
+    );
+
+    MCNAPI bool $replaceMCStructureFromTemplate(
+        ::mce::UUID const&                       guid,
+        ::Editor::EditorStructureTemplate const& structureTemplate,
+        bool                                     isHost
+    );
+
+    MCNAPI ::std::optional<::Editor::EditorStructureTemplate> $load(::mce::UUID const& guid) const;
+
+    MCNAPI ::std::vector<::HashedString> const $getEditorStructureGuids() const;
+
+    MCNAPI ::std::vector<::Editor::EditorStructureDBMetadata> const
+    $queryEditorStructureDBMetadata(::Editor::EditorStructureMetadataQueryParams const& params) const;
+
+    MCNAPI ::Editor::EditorStructureMetadataDeleteEditResult const
+    $deleteEditorStructureDBMetadataByGuid(::mce::UUID const& guid, bool isHost);
+
+    MCNAPI ::Editor::EditorStructureMetadataDeleteEditResult const
+    $editEditorStructureDBMetadata(::Editor::EditorStructureMetadataEditParams const& params, bool isHost);
+
+    MCNAPI ::std::optional<::Editor::EditorStructureDBMetadata> const
+    $getEditorStructureMetadataByGuid(::mce::UUID const& guid) const;
+
+    MCNAPI void $processLevelStructures();
+
+    MCNAPI bool $hasStructureData(::mce::UUID const& id) const;
+
+    MCNAPI ::Scripting::Result_deprecated<::std::variant<
+        ::StructureTemplate const*,
+        ::Editor::EditorStructureTemplate const*,
+        ::std::shared_ptr<::StructureTemplate const>,
+        ::std::shared_ptr<::Editor::EditorStructureTemplate const>>>
+    $getStructureData(::mce::UUID const& id) const;
+
 
     // NOLINTEND
 };

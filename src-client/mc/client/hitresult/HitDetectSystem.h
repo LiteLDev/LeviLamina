@@ -74,6 +74,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $reset();
 
+    MCAPI void $tick();
+
+    MCAPI void $evaluate(::IClientInstance& client, float a);
+
+    MCAPI void $_evaluateType(
+        ::IClientInstance& client,
+        float              a,
+        ::Actor&           cameraEntity,
+        ::LocalPlayer&     player,
+        bool               isPicking,
+        ::HitResult&       hitResult,
+        ::HitResult&       liquidHitResult
+    );
     // NOLINTEND
 };

@@ -118,6 +118,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::ArrayView<::webrtc::Connection const* const, 18446744073709546905> $GetConnections() const;
+
+    MCNAPI ::webrtc::ArrayView<::webrtc::Connection const*, 18446744073709546905> $connections() const;
+
 
     // NOLINTEND
 };

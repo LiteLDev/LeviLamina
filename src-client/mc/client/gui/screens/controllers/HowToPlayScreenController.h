@@ -67,6 +67,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onOpen();
 
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI bool $bind(
+        ::std::string const& bindingName,
+        uint                 bindingNameHash,
+        ::std::string const& bindingNameOverride,
+        ::UIPropertyBag&     bag
+    );
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCFOLD ::std::string $_getButtonADescription();
     // NOLINTEND
 };

@@ -110,6 +110,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
+    MCAPI void $reset();
+
+    MCAPI void $render(::UIRenderContext& context);
+
+    MCAPI void $updateUI(::UIMeasureStrategy const& uiMeasureStrategy);
+
+    MCFOLD ::std::string const& $getTextToSpeechComponentValue() const;
     // NOLINTEND
 };

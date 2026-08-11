@@ -20,6 +20,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
+
 
     // NOLINTEND
 };

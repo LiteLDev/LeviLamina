@@ -116,6 +116,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::WSConnectionResult $connect(::std::string const& uri, ::std::vector<::std::string> const& subProtocols);
+
+    MCNAPI ::WSConnectionResult $connect(::std::string const& uri);
+
+    MCNAPI bool $isReady() const;
+
+    MCNAPI void $setOnMessageReceivedHandler(::std::function<void(::RakWebSocketDataFrame const&)> const& handler);
+
+    MCNAPI void $setOnCloseHandler(::std::function<void(::CloseStatusCode, ::std::string const&)> const& handler);
+
+    MCNAPI void $setOnConnectedHandler(::std::function<void(::std::string const&)> const& handler);
+
+    MCNAPI void $tick();
+
 
     // NOLINTEND
 };

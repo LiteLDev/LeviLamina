@@ -47,6 +47,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
+
+    MCNAPI ::ItemInstance const& $getRecipeItem(int slot) const;
+
+    MCNAPI void $clearSelectedRecipe();
+
 
     // NOLINTEND
 };

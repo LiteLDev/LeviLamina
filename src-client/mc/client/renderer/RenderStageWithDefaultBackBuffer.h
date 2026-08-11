@@ -24,7 +24,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $preRender(::ScreenContext& screenContext);
 
+    MCNAPI void $postRender(::ScreenContext& screenContext);
     // NOLINTEND
 };
 

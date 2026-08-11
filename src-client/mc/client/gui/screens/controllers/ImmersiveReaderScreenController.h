@@ -85,6 +85,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCFOLD ::ui::SceneType $getSceneType() const;
     // NOLINTEND
 };

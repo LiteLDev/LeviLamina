@@ -186,6 +186,40 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::DisplayObjective const* $setDisplayObjective(
+        ::std::string const&       displaySlotName,
+        ::Objective const&         objective,
+        ::ObjectiveSortOrder const order
+    );
+
+    MCAPI ::Objective* $clearDisplayObjective(::std::string const& displaySlotName);
+
+    MCAPI ::ScoreboardId const& $createScoreboardId(::Player const& player);
+
+    MCAPI ::ScoreboardId const& $createScoreboardId(::Actor const& entity);
+
+    MCAPI ::ScoreboardId const& $createScoreboardId(::std::string const& fakePlayer);
+
+    MCAPI void $onObjectiveAdded(::Objective const& objective);
+
+    MCAPI void $onObjectiveRemoved(::Objective& objective);
+
+    MCAPI void $onScoreChanged(::ScoreboardId const& id, ::Objective const& obj);
+
+    MCAPI void $onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective);
+
+    MCFOLD void $onPlayerJoined(::Player const& player);
+
+    MCAPI void $onPlayerIdentityUpdated(::PlayerScoreboardId const& playerId);
+
+    MCFOLD void $tick();
+
+    MCFOLD void $setPacketSender(::PacketSender* sender);
+
+    MCFOLD void $writeToLevelStorage();
+
+    MCFOLD bool $isClientSide() const;
+
 
     // NOLINTEND
 };

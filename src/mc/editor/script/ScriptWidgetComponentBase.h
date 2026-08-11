@@ -88,6 +88,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload);
+
+    MCNAPI void $_onOwnerPositionUpdate();
+
 
     // NOLINTEND
 };

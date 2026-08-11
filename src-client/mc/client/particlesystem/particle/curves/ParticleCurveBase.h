@@ -43,7 +43,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD ::ParticleSystem::ParticleCurveType $getCurveType() const;
     // NOLINTEND
 };
 

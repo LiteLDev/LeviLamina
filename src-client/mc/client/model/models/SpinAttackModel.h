@@ -42,6 +42,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $renderSpin(::BaseActorRenderContext& renderContext, ::Actor& e, float bob, float scale);
     // NOLINTEND
 };

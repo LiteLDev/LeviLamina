@@ -26,6 +26,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD int $getMinCost(int level) const;
+
+    MCFOLD int $getMaxCost(int level) const;
+
+    MCFOLD int $getMaxLevel() const;
+
+    MCAPI float $getDamageBonus(int level, ::Actor const&, ::Actor const& attacker) const;
+
 
     // NOLINTEND
 };

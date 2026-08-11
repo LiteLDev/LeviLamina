@@ -64,35 +64,89 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCAPI ::std::string const& $getRequestId() const;
+#else // LL_PLAT_C
     MCFOLD ::std::string const& $getRequestId() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::std::string $getName() const;
+#else // LL_PLAT_C
     MCFOLD ::std::string $getName() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::BlockPos $getBlockPosition() const;
+#else // LL_PLAT_C
     MCFOLD ::BlockPos $getBlockPosition() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::Vec3 $getWorldPosition() const;
+#else // LL_PLAT_C
     MCFOLD ::Vec3 $getWorldPosition() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::std::optional<::Vec2> $getRotation() const;
+#else // LL_PLAT_C
     MCFOLD ::std::optional<::Vec2> $getRotation() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::Level* $getLevel() const;
+#else // LL_PLAT_C
     MCFOLD ::Level* $getLevel() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::Dimension* $getDimension() const;
+#else // LL_PLAT_C
     MCFOLD ::Dimension* $getDimension() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::Actor* $getEntity() const;
+#else // LL_PLAT_C
     MCFOLD ::Actor* $getEntity() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
+#else // LL_PLAT_C
     MCFOLD ::CommandPermissionLevel $getPermissionsLevel() const;
+#endif
 
     MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
+#ifdef LL_PLAT_S
+    MCAPI bool $canUseCommandsWithoutCheatsEnabled() const;
+#else // LL_PLAT_C
     MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $isSelectorExpansionAllowed() const;
+#else // LL_PLAT_C
     MCFOLD bool $isSelectorExpansionAllowed() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::CommandOriginType $getOriginType() const;
+#else // LL_PLAT_C
     MCFOLD ::CommandOriginType $getOriginType() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::CompoundTag $serialize() const;
+#else // LL_PLAT_C
     MCFOLD ::CompoundTag $serialize() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $isValid() const;
+#else // LL_PLAT_C
     MCFOLD bool $isValid() const;
 #endif
 

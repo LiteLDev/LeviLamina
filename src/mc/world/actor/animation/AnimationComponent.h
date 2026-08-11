@@ -249,15 +249,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCFOLD ::ClientAnimationComponent* $tryGetClient();
 
     MCAPI void $visitApplyContext(
         ::brstd::function_ref<void(::ApplyAnimationContext const&) const, void(::ApplyAnimationContext const&)> visitor
     ) const;
 
+#ifdef LL_PLAT_S
+    MCFOLD void $initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)>);
+#else // LL_PLAT_C
     MCFOLD void
     $initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)> animationComponentInitFunction);
+#endif
 
     MCFOLD void $ensureClientAnimationComponentIsInitialized();
 
@@ -265,10 +268,17 @@ public:
 
     MCFOLD void $updateQueryableGeometryBoneOrientations();
 
+#ifdef LL_PLAT_S
+    MCFOLD ::Matrix const* $getQueryableBoneOrientation(uint64) const;
+#else // LL_PLAT_C
     MCFOLD ::Matrix const* $getQueryableBoneOrientation(uint64 boneNameHash) const;
+#endif
 
     MCFOLD ::gsl::span<::SkeletalHierarchyIndex const> $getSkeletalHierarchiesToProcess() const;
 
+#ifdef LL_PLAT_S
+    MCFOLD float $_getActorRenderDeltaTime(::ActorRenderData const&) const;
+#else // LL_PLAT_C
     MCFOLD float $_getActorRenderDeltaTime(::ActorRenderData const& data) const;
 #endif
 

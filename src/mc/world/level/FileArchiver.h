@@ -182,6 +182,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI void $clear();
+
 
         // NOLINTEND
     };
@@ -573,6 +575,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::FilePickerSettings>
+    $generateFilePickerSettings(::std::vector<::FileArchiver::ExportType> const& types, ::std::string const&) const;
+
 
     // NOLINTEND
 };

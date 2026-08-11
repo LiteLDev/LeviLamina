@@ -53,6 +53,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $start(ushort port, ushort maxIncomming, ushort maxOutgoing);
+
+    MCNAPI ::RakNet::SystemAddress $connect(::std::string const& host, ushort port);
+
+    MCNAPI void $send(char const* data, uint length, ::RakNet::SystemAddress address);
+
+    MCNAPI void $close(::RakNet::SystemAddress address);
+
+    MCNAPI bool $packetsAvailable();
+
+    MCNAPI ::RakNet::Packet* $nextPacket();
+
+    MCNAPI void $deallocatePacket(::RakNet::Packet* packet);
+
+    MCNAPI ::RakNet::SystemAddress $nextCompletedConnectionAttempt();
+
+    MCNAPI ::RakNet::SystemAddress $nextFailedConnectionAttempt();
+
+    MCNAPI ::RakNet::SystemAddress $nextLostConnection();
+
 
     // NOLINTEND
 };

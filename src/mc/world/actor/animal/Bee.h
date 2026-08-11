@@ -60,6 +60,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+
+    MCAPI void $onSynchedDataUpdate(int dataId);
+
 
     // NOLINTEND
 };

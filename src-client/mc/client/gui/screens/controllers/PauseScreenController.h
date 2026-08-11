@@ -118,6 +118,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onOpen();
 
+    MCAPI void $onTerminate();
+
+    MCAPI void $onInit();
+
+    MCAPI void $onEntered();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCFOLD ::ui::SceneType $getSceneType() const;
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
+    MCFOLD ::std::string $_getButtonADescription();
     // NOLINTEND
 };

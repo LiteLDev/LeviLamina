@@ -96,6 +96,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $init(::ScreenSizeData const& screenSizeData);
 
+    MCAPI void $terminate();
+
+    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+
+    MCFOLD bool $screenIsNotFlushable() const;
+
+    MCAPI bool $renderOnlyWhenTopMost() const;
+
+    MCFOLD bool $lowFreqRendering() const;
+
+    MCFOLD bool $renderGameBehind() const;
+
+    MCFOLD bool $isShowingMenu() const;
+
+    MCAPI ::std::string $getScreenName() const;
+
+    MCAPI bool $equalsScreenName(::std::string_view comparison) const;
+
+    MCAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
+
+    MCFOLD bool $getShouldSendEvents();
+
+    MCFOLD ::RectangleArea $getAreaOfControlByName(::std::string const&) const;
     // NOLINTEND
 };

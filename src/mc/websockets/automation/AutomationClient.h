@@ -99,7 +99,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI void $onUri(::ActivationUri const& uri);
 
     MCNAPI void $send(::CodeBuilder::AgentMessage const& message);
@@ -119,7 +118,6 @@ public:
     MCNAPI void $onLevelDestruction(::std::string const&);
 
     MCNAPI void $playerListChanged();
-#endif
 
 
     // NOLINTEND

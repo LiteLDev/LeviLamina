@@ -829,6 +829,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::AbstractScene> $createDevConsole();
+
     MCAPI ::std::shared_ptr<::AbstractScene> $createTabbedUpsellScreen(::TabbedUpsellScreenDefaultTab tab);
 
     MCAPI ::std::shared_ptr<::AbstractScene> $createStoreDataDrivenScreen(

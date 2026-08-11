@@ -75,6 +75,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $OnStatsDelivered(::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const& report);
+
+    MCNAPI void $OnSignalingChange(::webrtc::PeerConnectionInterface::SignalingState);
+
+    MCNAPI void $OnDataChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface> dataChannel);
+
+    MCNAPI void $OnIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState newState);
+
+    MCNAPI void $OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState newState);
+
+    MCNAPI void $OnIceCandidate(::webrtc::IceCandidate const* candidate);
+
+    MCNAPI void $OnIceCandidateError(
+        ::std::string const& address,
+        int                  port,
+        ::std::string const& url,
+        int                  errorCode,
+        ::std::string const& errorMessage
+    );
+
 
     // NOLINTEND
 };

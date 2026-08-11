@@ -36,7 +36,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::ParticleSystem::EffectComponentBase::EffectComponentType $getParticleComponentType() const;
 
+    MCFOLD uint64 $getNumberOfManualParticlesAllowed(
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::RenderParams&                                   renderParams
+    );
     // NOLINTEND
 };
 

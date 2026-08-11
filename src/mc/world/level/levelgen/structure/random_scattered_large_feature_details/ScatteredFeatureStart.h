@@ -34,6 +34,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI int $getMaxYSpawnOffset() const;
+
+    MCAPI ::std::string_view $getStructureName() const;
+
 
     // NOLINTEND
 };

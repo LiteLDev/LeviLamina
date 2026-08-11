@@ -132,6 +132,63 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::EventResult $onEvent(::PistonActionEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::LeverActionEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::ButtonPushEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::PressurePlatePushEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::PressurePlatePopEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::TripWireTripEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::TargetBlockHitEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::ExplosionStartedEvent const& eventData);
+
+    MCAPI ::EventResult $onBlockExploded(
+        ::Dimension&      dimension,
+        ::BlockPos const& blockPos,
+        ::Block const&    destroyedBlock,
+        ::Actor*          source
+    );
+
+#ifdef LL_PLAT_S
+    MCAPI ::EventResult
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool);
+#else // LL_PLAT_C
+    MCAPI ::EventResult
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+#endif
+
+    MCAPI ::EventResult $onBlockDestroyedByPlayer(
+        ::Player&              player,
+        ::Block const&         destroyedBlock,
+        ::BlockPos const&      pos,
+        ::ItemStackBase const& currentItem,
+        ::ItemStackBase const& itemBeforeBlockBreak
+    );
+
+    MCAPI ::EventResult $onBlockDestructionStarted(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    hitBlock,
+        uchar const       face,
+        int const         previousProgress
+    );
+
+    MCAPI ::EventResult $onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress);
+
+    MCAPI ::EventResult $onBlockDestructionContinued(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        uchar const       face,
+        int const         previousProgress
+    );
+
 
     // NOLINTEND
 };

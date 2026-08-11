@@ -37,6 +37,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::string $asString() const;
+
+    MCNAPI ::Json::Value $asJsonValue() const;
+
+    MCNAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
+
 
     // NOLINTEND
 };

@@ -158,6 +158,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $stop();
 
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> $getFileArchiver() const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getPrimaryMinecraft();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> $getAutomationClient() const;
+
+    MCAPI bool $isEduMode() const;
+
+    MCFOLD bool $isDedicatedServer() const;
+
+    MCFOLD void $onNetworkMaxPlayersChanged(uint newMaxPlayerCount);
+
+    MCFOLD ::IGameModuleShared& $getGameModuleShared();
+
+    MCAPI void $requestServerShutdown();
+
+    MCFOLD bool $requestInGamePause(::SubClientId const&, bool);
     // NOLINTEND
 };

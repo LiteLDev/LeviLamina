@@ -1101,6 +1101,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD void $reloadEntityRenderers(
+        ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const& actorResourceDefinitionGroup
+    );
     // NOLINTEND
 };

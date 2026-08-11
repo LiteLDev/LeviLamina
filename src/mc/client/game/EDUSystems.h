@@ -117,6 +117,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Identity::IEduAuth& $getEduAuth() const;
+
+    MCNAPI ::Social::IEduMultiplayerHeadless& $getMultiplayerHeadless() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI void $onNotify(::EDUConfigData const& state);
+
+    MCNAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const& state);
+#endif
+
 
     // NOLINTEND
 };

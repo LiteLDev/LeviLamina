@@ -58,6 +58,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::unique_ptr<::Molang::details::IComplexExpression> $clone() const;
+
+    MCNAPI ::MolangScriptArg const& $evalGeneric(::RenderParams& params) const;
+
 
     // NOLINTEND
 };

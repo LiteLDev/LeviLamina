@@ -46,6 +46,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $reset();
+
 
         // NOLINTEND
     };

@@ -20,6 +20,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Puv::LoadResultAny $doUpgrade(::Puv::LoadResultAny source) const;
+
 
     // NOLINTEND
 };

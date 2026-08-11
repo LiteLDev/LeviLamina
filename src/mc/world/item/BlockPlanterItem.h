@@ -62,6 +62,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+
+    MCFOLD ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+
+    MCAPI ::BlockPlanterItem& $setDescriptionId(::std::string const& descriptionId);
+
 
     // NOLINTEND
 };

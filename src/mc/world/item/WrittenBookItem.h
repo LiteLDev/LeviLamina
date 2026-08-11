@@ -110,6 +110,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+
+    MCFOLD bool $requiresInteract() const;
+
+    MCAPI ::std::string $getInteractText(::Player const& player) const;
+
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& item, ::CompoundTag const* userData) const;
+
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
+
+    MCAPI ::Bedrock::Safety::RedactableString $getRedactedCustomName(::ItemStackBase const& stack) const;
+
+    MCAPI bool $hasCustomHoverName(::ItemStackBase const& stack) const;
+
+    MCAPI bool $inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const;
+
+    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
+
 
     // NOLINTEND
 };

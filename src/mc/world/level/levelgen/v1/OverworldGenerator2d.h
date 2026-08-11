@@ -102,6 +102,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::BiomeSource const& $getBiomeSource() const;
+
+    MCAPI ::BlockPos $findSpawnPosition() const;
+
+    MCFOLD int $getLevelGenHeight() const;
+
+    MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
+    $generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
+
+    MCAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
+
+    MCAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
+
+    MCAPI void
+    $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
+
+    MCAPI void $_prepareHeights(
+        ::BlockVolume&                                                  box,
+        ::ChunkPos const&                                               chunkPos,
+        ::ChunkLocalNoiseCache const&                                   chunkLocalNoiseCache,
+        ::Aquifer*                                                      aquiferPtr,
+        ::std::function<void(::BlockPos const&, ::Block const&, int)>&& tickUpdateFn,
+        bool                                                            factorInBeardsAndShavers,
+        ::std::vector<short>*                                           ZXheights
+    );
+
+    MCAPI ::std::optional<::XoroshiroPositionalRandomFactory> $getXoroshiroPositionalRandomFactory() const;
+
 
     // NOLINTEND
 };

@@ -72,6 +72,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Core::PathBuffer<::std::string> $_getPath() const;
+
+    MCNAPI uint64 $_getBlockSize() const;
+
+    MCNAPI bool $_isOpen();
+
+    MCNAPI ::Core::Result $_close();
+
+    MCNAPI ::Core::Result $_read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
+
+    MCNAPI ::Core::Result $_readExactly(void* buf, uint64 numBytes);
+
+    MCNAPI ::Core::Result $_readAtPosition(uint64 position, void* buf, uint64 numBytes, uint64* pNumBytesRead);
+
+    MCNAPI ::Core::Result $_write(void const* buf, uint64 numBytes);
+
+    MCNAPI ::Core::Result $_setPosition(uint64 position);
+
+    MCNAPI ::Core::Result $_getPosition(uint64* pSizeOut);
+
+    MCNAPI ::Core::Result $_skip(uint64 numBytes);
+
+    MCNAPI ::Core::Result $_flush();
+
+    MCNAPI ::Core::Result $_getSize(uint64* pSizeOut);
+
+    MCNAPI ::Core::Result $_getRemainingSize(uint64* pSizeOut);
+
 
     // NOLINTEND
 };

@@ -71,6 +71,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI void $onServerInvalidated(::EDUDiscovery::ServerInvalidationDetails const&);
+
+    MCAPI void $onJoinCodeGenerated(::EDUDiscovery::JoinCode const&);
+
+    MCAPI void $onCredentialsInvalidated();
     // NOLINTEND
 };

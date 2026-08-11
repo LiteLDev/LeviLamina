@@ -77,7 +77,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCNAPI void $initialize(::std::shared_ptr<::JsonRpc::JsonRpcProvider>);
+#else // LL_PLAT_C
     MCNAPI void $initialize(::std::shared_ptr<::JsonRpc::JsonRpcProvider> provider);
 #endif
 

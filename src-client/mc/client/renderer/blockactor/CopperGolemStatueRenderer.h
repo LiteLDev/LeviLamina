@@ -38,6 +38,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::SerializedActorRenderer::RenderData $getRenderData(
+        ::SerializedActorRenderer::RenderType type,
+        ::BlockType const&                    block,
+        ::SerializedActorBlockActor const*    entity,
+        ::ItemStack const*                    item
+    );
     // NOLINTEND
 };

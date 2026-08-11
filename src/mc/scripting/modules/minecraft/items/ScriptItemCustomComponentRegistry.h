@@ -166,6 +166,53 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
+    $tryRegisterComponentV1(
+        ::HashedString const&                                         componentName,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
+    );
+
+    MCAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
+    $tryRegisterComponent(
+        ::HashedString const&                                         componentName,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
+    );
+
+    MCAPI ::std::vector<::std::string_view> $getValidComponentsForItem(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle
+    ) const;
+
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
+    $tryGetCustomComponentParametersForItem(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle,
+        ::std::string_view                                                           componentName,
+        ::Scripting::WeakLifetimeScope const&                                        scope
+    ) const;
+
+#ifdef LL_PLAT_S
+    MCAPI ::ScriptDeferredEventListener& $getEventListener();
+#else // LL_PLAT_C
+    MCFOLD ::ScriptDeferredEventListener& $getEventListener();
+#endif
+
+    MCAPI void $setCerealContext(::cereal::ReflectionCtx& ctx);
+
+    MCAPI void $_onReload();
+
+    MCAPI void $_onScriptInitializationComplete();
+
 
     // NOLINTEND
 };

@@ -42,6 +42,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $start();
+
+    MCAPI void $useWorkstation();
+
 
     // NOLINTEND
 };

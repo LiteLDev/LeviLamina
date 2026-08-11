@@ -22,6 +22,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI uint64 $threadId();
+
+    MCNAPI void $writeToDebugger(char const* area, ::HCTraceLevel level, char const* message);
+
 
     // NOLINTEND
 };

@@ -87,7 +87,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches);
 
+    MCFOLD void
+    $onTouchesMoved(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches);
+
+    MCFOLD void
+    $onTouchesEnded(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches);
+
+    MCFOLD void $onGestureRecognized();
     // NOLINTEND
 };
 

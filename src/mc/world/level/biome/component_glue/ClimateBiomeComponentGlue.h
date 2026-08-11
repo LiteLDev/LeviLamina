@@ -23,6 +23,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $resolveAndValidate(::entt::meta_any const& biomeJsonComponent, ::BiomeRegistry const&);
+
+    MCAPI void $applyToBiome(::Biome& biome, ::entt::meta_any const& biomeJsonComponent) const;
+
 
     // NOLINTEND
 };

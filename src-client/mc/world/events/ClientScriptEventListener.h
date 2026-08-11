@@ -17,6 +17,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::EventResult $onScriptKeyEvent(::std::string const& eventID, ::std::string const& additionalInfo);
     // NOLINTEND
 };

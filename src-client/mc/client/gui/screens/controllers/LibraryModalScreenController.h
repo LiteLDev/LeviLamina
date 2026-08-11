@@ -63,6 +63,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::ui::SceneType $getSceneType() const;
 
+    MCAPI ::std::string $getTelemetryOverride() const;
+
+    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
     // NOLINTEND
 };

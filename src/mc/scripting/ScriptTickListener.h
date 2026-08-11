@@ -64,6 +64,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::EventResult $onLevelTickStart(::Level& level);
+
+    MCAPI ::EventResult $onLevelTickEnd(::Level&);
+
+    MCAPI void $onScriptTickStart();
+
+    MCAPI void $onScriptTickEnd();
+
 
     // NOLINTEND
 };

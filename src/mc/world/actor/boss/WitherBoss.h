@@ -176,6 +176,45 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+
+    MCAPI void $aiStep();
+
+    MCAPI void $newServerAiStep();
+
+    MCFOLD bool $canFreeze() const;
+
+    MCAPI bool $canBeAffected(uint effectId) const;
+
+    MCAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
+
+    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings);
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCFOLD float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
+
+    MCAPI int $getArmorValue() const;
+
+    MCAPI void $die(::ActorDamageSource const& source);
+
+    MCAPI void $remove();
+
+    MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
+
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+
+    MCAPI ::Vec3 $getFiringPos() const;
+
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
+
 
     // NOLINTEND
 };

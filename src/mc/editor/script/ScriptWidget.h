@@ -204,6 +204,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::AABB const& $_getWorldBounds() const;
+
+    MCNAPI void $_performDeleteWidget(bool suppressClientMessage);
+
+    MCNAPI void $_setValid(bool valid);
+
+    MCNAPI void $_handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload);
+
+    MCNAPI void
+    $_handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload);
+
+    MCNAPI void $_servicePendingStateChanges();
+
+    MCNAPI void $_setSelectedNoBroadcast(bool selected);
+
+    MCNAPI ::Scripting::WeakLifetimeScope& $_getScope();
+
+    MCNAPI void $_deleteComponent(::mce::UUID const& componentId);
+
 
     // NOLINTEND
 };

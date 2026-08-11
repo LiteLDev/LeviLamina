@@ -28,11 +28,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI int $overflow(int c);
 
     MCNAPI int64 $xsputn(char const* s, int64 n);
-#endif
 
 
     // NOLINTEND

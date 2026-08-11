@@ -111,6 +111,31 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $isClientSide() const;
+
+    MCNAPI ::std::unique_ptr<::Editor::IEditorPlayer> $createPlayer(::Player& player);
+
+    MCNAPI ::EventResult $onServerLevelInitialized(::ServerInstance& instance, ::Level& level);
+
+    MCNAPI ::EventResult $onStartLeaveGame(::ServerInstance& instance);
+
+    MCNAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const&);
+
+    MCNAPI ::EventResult $onLevelTick(::Level&);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $scriptingTeardown();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $scriptingRebuild();
+
+    MCNAPI bool $isEditorModeOrInEditorWorld() const;
+
+    MCNAPI ::std::unique_ptr<::FileArchiver::IWorldConverter> $createWorldConverter(
+        ::ILevelListCache&                                              levelListCache,
+        ::Scheduler&                                                    scheduler,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
+    );
+
 
     // NOLINTEND
 };

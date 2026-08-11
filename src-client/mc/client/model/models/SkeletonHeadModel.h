@@ -64,6 +64,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $render(
+        ::ScreenContext& screenContext,
+        ::Actor&         e,
+        float            time,
+        float            r,
+        float            bob,
+        float            yRot,
+        float            xRot,
+        float            scale
+    );
 
+    MCFOLD void $render(::ScreenContext& screenContext);
+
+    MCFOLD void $render(::BaseActorRenderContext&);
+
+    MCAPI void $setupAnim(float time, float r, float bob, float yRot, float xRot, float scale);
     // NOLINTEND
 };

@@ -93,6 +93,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $containerContentChanged(int slot);
+
+    MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
+
+    MCAPI void $setItemInstance(int modelSlot, ::ItemInstance const& item);
+
+    MCAPI void $refreshContainer(bool fullRefresh);
+
+    MCAPI int $getContainerSize() const;
+
+    MCAPI int $getFilteredContainerSize() const;
+
+    MCAPI bool $isExpanableItemFiltered(int index) const;
+
+    MCAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
+
+    MCAPI void $_init();
+
 
     // NOLINTEND
 };

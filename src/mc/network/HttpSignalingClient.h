@@ -49,6 +49,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $SendSignal(
+        ::NetherNet::NetworkID                              from,
+        ::NetherNet::NetworkID                              to,
+        ::std::string const&                                signal,
+        ::std::function<void(::NetherNet::ESessionError)>&& onComplete
+    );
+
+    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
+
 
     // NOLINTEND
 };

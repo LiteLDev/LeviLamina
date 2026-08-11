@@ -181,7 +181,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onLevelDeleted(::std::string const& levelId);
 
+    MCAPI void $onLevelUpdated(::std::string const& levelId);
     // NOLINTEND
 };
 

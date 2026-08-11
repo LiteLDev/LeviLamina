@@ -187,25 +187,68 @@ public:
         ::MolangVariableMap const&
     );
 
+#ifdef LL_PLAT_S
     MCFOLD void $addTerrainParticleEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
+#else // LL_PLAT_C
+    MCFOLD void $addTerrainParticleEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             particleCount,
+        float             velocityScalar,
+        float             emitterRadius
+    );
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $addTerrainSlideEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
+#else // LL_PLAT_C
+    MCFOLD void $addTerrainSlideEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             particleCount,
+        float             velocityScalar,
+        float             emitterRadius
+    );
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void
     $addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&);
+#else // LL_PLAT_C
+    MCFOLD void $addBreakingItemParticleEffect(
+        ::Vec3 const&                     pos,
+        ::BreakingItemParticleData const& data,
+        ::ResolvedItemIconInfo const&     textureInfo
+    );
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $addBiomeTintedParticleEffect(
         ::HashedString const&,
         ::BlockPos const&,
         ::Block const&,
         ::std::optional<::mce::Color>
     );
+#else // LL_PLAT_C
+    MCFOLD void $addBiomeTintedParticleEffect(
+        ::HashedString const&         effect,
+        ::BlockPos const&             pos,
+        ::Block const&                block,
+        ::std::optional<::mce::Color> overrideColor
+    );
+#endif
 
     MCFOLD void $playMusic(::std::string const&, ::Vec3 const&, float, float);
 
     MCFOLD void $playStreamingMusic(::std::string const&, int, int, int);
 
+#ifdef LL_PLAT_S
     MCFOLD void $onEntityAdded(::Actor& entity);
+#else // LL_PLAT_C
+    MCFOLD void $onEntityAdded(::Actor&);
+#endif
 
     MCFOLD void $onEntityRemoved(::Actor& entity);
 
@@ -213,16 +256,38 @@ public:
 
     MCFOLD void $onChunkReloaded(::ChunkSource&, ::LevelChunk&);
 
+#ifdef LL_PLAT_S
     MCFOLD void $onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool);
+#else // LL_PLAT_C
+    MCFOLD void $onSubChunkLoaded(
+        ::ChunkSource& source,
+        ::LevelChunk&  lc,
+        short          absoluteSubChunkIndex,
+        bool           subChunkVisibilityChanged
+    );
+#endif
 
     MCFOLD void $onChunkUnloaded(::LevelChunk& lc);
 
+#ifdef LL_PLAT_S
     MCFOLD void $onLevelDestruction(::std::string const&);
+#else // LL_PLAT_C
+    MCFOLD void $onLevelDestruction(::std::string const& levelId);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int);
+#else // LL_PLAT_C
+    MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&);
+#else // LL_PLAT_C
+    MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
+#endif
 
+#ifdef LL_PLAT_S
     MCAPI void $takePicture(
         ::cg::ImageBuffer&,
         ::Actor*,
@@ -230,10 +295,23 @@ public:
         ::ScreenshotOptions&,
         ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
     );
+#else // LL_PLAT_C
+    MCAPI void $takePicture(
+        ::cg::ImageBuffer&                                              outImage,
+        ::Actor*                                                        camera,
+        ::Actor*                                                        target,
+        ::ScreenshotOptions&                                            screenshotOptions,
+        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
+    );
+#endif
 
     MCFOLD void $playerListChanged();
 
+#ifdef LL_PLAT_S
     MCFOLD void $onLevelDataCommandsChanged(bool);
+#else // LL_PLAT_C
+    MCFOLD void $onLevelDataCommandsChanged(bool commandsEnabeld);
+#endif
 
     MCFOLD void $onLevelDataWorldTemplateOptionsUnlocked();
 

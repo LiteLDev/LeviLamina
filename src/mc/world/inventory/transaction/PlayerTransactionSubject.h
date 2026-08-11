@@ -98,6 +98,64 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $setSelectedSlot(int slot, ::ContainerID containerId);
+
+    MCFOLD bool $isAlive() const;
+
+    MCAPI ::ItemStack $unwrapItem(::NetworkItemStackDescriptor const& item) const;
+
+    MCAPI ::ItemStack const& $getSelectedItem() const;
+
+    MCAPI void $setSelectedItem(::ItemStack const& item);
+
+    MCAPI ::PlayerInventorySlotData $getSelectedSlot() const;
+
+    MCAPI float $getMaxPickRange() const;
+
+    MCAPI ::Vec3 $getPosition() const;
+
+    MCAPI void $setPosition(::Vec3 const& position);
+
+    MCAPI void $createTransactionContext(
+        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>&& callback,
+        ::std::function<void()>&&                                                          execute
+    );
+
+    MCAPI void $addExpectedAction(::InventoryAction const& action);
+
+    MCAPI bool $baseUseItem(::ItemStack& item);
+
+    MCAPI bool $baseUseItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection);
+
+    MCAPI ::InteractionResult $useItemOn(
+        ::ItemStack&      item,
+        ::BlockPos const& at,
+        uchar             face,
+        ::Vec3 const&     hit,
+        ::Block const*    targetBlock,
+        bool              isFirstEvent
+    );
+
+    MCAPI void $resendBlocksAroundArea(::BlockPos const& pos, uchar facing) const;
+
+    MCAPI void $resendPlayerState() const;
+
+    MCAPI void $sendPlayerInventory() const;
+
+    MCAPI bool $isSneaking() const;
+
+    MCAPI ::Block const& $unwrapBlock(uint const& block) const;
+
+    MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
+
+    MCAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
+
+    MCAPI bool $isLastBuildBlockInteractive() const;
+
+    MCAPI void $sendBlockInteractedWith(::BlockPos const& pos);
+
+    MCAPI ::DepenetrationComponent& $getDepenetrationComponent();
+
 
     // NOLINTEND
 };

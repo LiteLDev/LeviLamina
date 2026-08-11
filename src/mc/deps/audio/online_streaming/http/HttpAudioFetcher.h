@@ -110,6 +110,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $start();
+
+    MCNAPI void $update(float deltaTimeSeconds);
+
+    MCNAPI void $notifyReadPosition(uint64 offset);
+
+    MCNAPI void $seekTo(uint64 offset);
+
+    MCNAPI void $stop();
+
+    MCNAPI bool $isFetching() const;
+
+    MCNAPI uint64 $getNextFetchOffset() const;
+
+    MCNAPI uint64 $getTotalBytesRequested() const;
+
+    MCNAPI uint $getTotalRetries() const;
+
 
     // NOLINTEND
 };

@@ -161,6 +161,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI void $onLeave();
+
+    MCAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
+
+    MCFOLD bool $_getGestureControlEnabled() const;
+
+    MCAPI void $_registerCoalesceOrder();
+
+    MCAPI void $_registerAutoPlaceOrder();
+
+    MCFOLD bool $_isStillValid() const;
+
+    MCAPI ::ItemStackBase const&
+    $_getVisualItemStackImpl(::std::string const& collectionName, int collectionIndex) const;
+
+    MCAPI void $_sendFlyingItem(
+        ::ItemStackBase const& item,
+        ::std::string const&   fromName,
+        int                    fromIndex,
+        ::std::string const&   toName,
+        int                    toIndex,
+        ::FadeInIconBehavior   fadeInIconBehavior
+    );
+
+    MCAPI ::std::string $_getButtonADescription();
     // NOLINTEND
 };

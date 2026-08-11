@@ -44,6 +44,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD void $start(bool allowed);
     // NOLINTEND
 };

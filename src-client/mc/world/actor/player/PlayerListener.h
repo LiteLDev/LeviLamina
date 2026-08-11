@@ -23,6 +23,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $onWillChangeDimension(::Player& player);
 
+    MCFOLD void $onDimensionChanged(::Player& player);
+
+    MCFOLD void $onPlayerDestruction(::Player& player);
     // NOLINTEND
 };

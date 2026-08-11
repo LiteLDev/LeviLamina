@@ -51,6 +51,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI int $underflow();
+
+    MCNAPI int $overflow(int c);
+
+    MCNAPI ::std::fpos<::_Mbstatet> $seekoff(int64 off, int way, int);
+
+    MCNAPI ::std::fpos<::_Mbstatet> $seekpos(::std::fpos<::_Mbstatet> pos, int);
+
+    MCNAPI int $sync();
+
 
     // NOLINTEND
 };

@@ -53,6 +53,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::leveldb::Status $NewSequentialFile(::std::string const& f, ::leveldb::SequentialFile** r);
+
+    MCNAPI ::leveldb::Status $NewRandomAccessFile(::std::string const& f, ::leveldb::RandomAccessFile** r);
+
+    MCNAPI ::leveldb::Status $NewWritableFile(::std::string const& f, ::leveldb::WritableFile** r);
+
+    MCNAPI ::leveldb::Status $NewAppendableFile(::std::string const& f, ::leveldb::WritableFile** r);
+
+    MCNAPI ::leveldb::Status $RemoveFile(::std::string const& f);
+
+    MCNAPI ::leveldb::Status $RenameFile(::std::string const& from, ::std::string const& to);
+
+    MCNAPI bool $FileExists(::std::string const& f);
+
+    MCNAPI ::leveldb::Status $GetChildren(::std::string const& dir, ::std::vector<::std::string>* r);
+
+    MCNAPI void $flushToPermanentStorage();
+
 
     // NOLINTEND
 };

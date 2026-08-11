@@ -37,6 +37,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::IConstBlockSource const* $updateBlockSourceForEntity(::StrictEntityContext const& entity);
+
 
     // NOLINTEND
 };

@@ -134,6 +134,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $initialize();
+
     MCNAPI void $spawnStructure();
 
     MCNAPI void $_rerun();

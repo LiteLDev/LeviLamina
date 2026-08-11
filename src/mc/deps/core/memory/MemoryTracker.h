@@ -54,6 +54,37 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $isTracking() const;
+
+    MCFOLD ::Memory::MemoryCategory $getCurrentCategory() const;
+
+#ifdef LL_PLAT_S
+    MCFOLD void $setCurrentCategory(::Memory::MemoryCategory);
+#else // LL_PLAT_C
+    MCFOLD void $setCurrentCategory(::Memory::MemoryCategory category);
+#endif
+
+    MCFOLD uint64 $getCategoryAllocationCount(uint) const;
+
+#ifdef LL_PLAT_S
+    MCFOLD uint64 $getCategoryAllocatedMemory(uint) const;
+#else // LL_PLAT_C
+    MCFOLD uint64 $getCategoryAllocatedMemory(uint cat) const;
+#endif
+
+    MCFOLD uint64 $getCategoryTotalAllocationCount(uint) const;
+
+    MCFOLD void $publish();
+
+#ifdef LL_PLAT_S
+    MCFOLD void $populateCounters(::std::vector<::Memory::MemoryCategoryCounter>&, uint64) const;
+#else // LL_PLAT_C
+    MCFOLD void $populateCounters(
+        ::std::vector<::Memory::MemoryCategoryCounter>& categoryCounters,
+        uint64                                          minimumThresholdBytes
+    ) const;
+#endif
+
 
     // NOLINTEND
 };

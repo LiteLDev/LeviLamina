@@ -36,6 +36,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $sendEvents(
+        ::LevelEventManager& levelEventManager,
+        ::BlockSource&       region,
+        ::BlockPos const&    pos,
+        ::Block const&       block
+    );
+
+    MCNAPI void
+    $dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor const* actorContext);
+
 
     // NOLINTEND
 };

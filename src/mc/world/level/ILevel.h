@@ -1214,6 +1214,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::TradeTables* $getTradeTables();
+
+    MCAPI ::Level* $asLevel();
+
     MCFOLD ::ClientLevel* $asClientLevel();
 
 

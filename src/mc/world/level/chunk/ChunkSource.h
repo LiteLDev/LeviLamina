@@ -327,7 +327,11 @@ public:
 
     MCAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> $loadLevelChunkMetaDataDictionary();
 
+#ifdef LL_PLAT_S
     MCAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
+#else // LL_PLAT_C
+    MCFOLD void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
+#endif
 
     MCAPI bool $canLaunchTasks() const;
 

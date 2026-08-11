@@ -15,6 +15,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $feedText(::std::string const& text);
     // NOLINTEND
 };

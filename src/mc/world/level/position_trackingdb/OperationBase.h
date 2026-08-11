@@ -31,6 +31,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isAsync() const;
+
+    MCAPI bool $isComplete() const;
+
 
     // NOLINTEND
 };

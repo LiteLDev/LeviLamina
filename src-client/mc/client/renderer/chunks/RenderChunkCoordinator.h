@@ -136,6 +136,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onChunkLoaded(::ChunkSource&, ::LevelChunk& lc);
 
+    MCAPI void
+    $onSubChunkLoaded(::ChunkSource&, ::LevelChunk& lc, short absoluteSubChunkIndex, bool subChunkVisibilityChanged);
+
+    MCAPI void $onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
+
+    MCAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
+
+    MCAPI void $onBlockChanged(
+        ::BlockSource&                 source,
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            updateFlags,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget      eventTarget,
+        ::Actor*                       blockChangeSource
+    );
     // NOLINTEND
 };

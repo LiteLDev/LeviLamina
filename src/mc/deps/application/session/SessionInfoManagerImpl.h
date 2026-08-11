@@ -87,6 +87,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $initialize();
+
+    MCNAPI void $beginNewSession();
+
+    MCNAPI ::std::shared_ptr<::Bedrock::SessionInfo const> $getCurrentSession() const;
+
+    MCNAPI ::Bedrock::AccessUpdateEditor<
+        ::std::shared_ptr<::Bedrock::SessionInfo>,
+        ::Bedrock::SessionInfoManagerImpl,
+        ::Bedrock::Detail::AccessUpdateEditorAccessor<::std::shared_ptr<::Bedrock::SessionInfo>, void>,
+        ::Bedrock::Threading::Mutex>
+    $editCurrentSession();
+
+    MCNAPI ::Bedrock::PubSub::Connector<void(
+        ::Bedrock::NonOwnerPointer<::Bedrock::SessionInfoManager> const&,
+        ::std::shared_ptr<::Bedrock::SessionInfo const> const&
+    )>&
+    $onCurrentSessionChanged();
+
+    MCNAPI ::std::string $serializeSession(::Bedrock::SessionInfo const& session) const;
+
+    MCNAPI ::std::shared_ptr<::Bedrock::SessionInfo> $deserializeSession(::std::string_view contents) const;
+
 
     // NOLINTEND
 };

@@ -104,6 +104,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $createOffer(
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& config,
+        ::brstd::move_only_function<void(
+            ::Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError>
+        )>&&                                                       onComplete
+    );
+
+    MCNAPI ::NetherNet::ESessionError $checkTimeout(::std::chrono::seconds timeout) const;
+
+    MCNAPI void $_onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const& offerOrError);
+
+    MCNAPI void $_onSetLocalDescription(::webrtc::RTCError result);
+
+    MCNAPI void $onRemoteAnswer(::NetherNet::ConnectResponse const& answer);
+
+    MCNAPI void $onRemoteError(::NetherNet::ConnectError const& error);
+
+    MCNAPI void $_onSetRemoteDescription(::webrtc::RTCError result);
+
+    MCNAPI void $_onLocalIceCandidate(::webrtc::IceCandidate const* iceCandidate);
+
+    MCNAPI void $onRemoteIceCandidate(::NetherNet::CandidateAdd const& candidate);
+
 
     // NOLINTEND
 };

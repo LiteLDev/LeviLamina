@@ -65,6 +65,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Url> $getUrl(::std::string const& id);
 
+    MCNAPI ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> $getAuthToken();
+
+    MCNAPI void $reset();
     // NOLINTEND
 };

@@ -62,7 +62,11 @@ public:
 
     MCAPI void $setIsVisible(bool isVisible);
 
+#ifdef LL_PLAT_S
     MCAPI void $setClientPositionAuthority(bool clientPositionAuthority);
+#else // LL_PLAT_C
+    MCFOLD void $setClientPositionAuthority(bool clientPositionAuthority);
+#endif
 
     MCAPI void $setTexturePath(::std::optional<::std::string> const& texturePath);
 

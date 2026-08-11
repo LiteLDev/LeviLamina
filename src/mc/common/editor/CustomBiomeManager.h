@@ -43,6 +43,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::WeakRef<::ICustomBiomeSource> $buildCustomSource(::CustomBiomeSourceConfig const& config);
+
+    MCNAPI bool $destroyCustomSource(::mce::UUID id);
+
+    MCNAPI ::WeakRef<::ICustomBiomeSource> $getCustomSource(::mce::UUID const& id);
+
 
     // NOLINTEND
 };

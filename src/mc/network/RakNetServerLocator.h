@@ -310,6 +310,46 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $startAnnouncingServer(
+        ::std::string const&                 playerName,
+        ::std::string const&                 worldName,
+        ::GameType                           gameType,
+        int                                  numPlayers,
+        int                                  maxNumPlayers,
+        bool                                 isJoinableThroughServerScreen,
+        bool                                 isEditorWorld,
+        bool                                 isHardcore,
+        ::ServerSupportedAuthenticationTypes supportedAuth
+    );
+
+    MCNAPI void $stopAnnouncingServer();
+
+    MCNAPI void $startServerDiscovery(::PortPair ports);
+
+    MCNAPI void $stopServerDiscovery();
+
+    MCNAPI void $addCustomServer(::AsynchronousIPResolver const& futureIP, int port);
+
+    MCNAPI void $addCustomServer(::std::string const& address, int port);
+
+    MCNAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
+
+    MCNAPI void $clearServerList();
+
+    MCNAPI void $update();
+
+    MCNAPI float $getPingTimeForGUID(::std::string const& guid);
+
+    MCNAPI void $checkCanConnectToCustomServerAsync(
+        ::std::string                                         hostIpAddress,
+        int                                                   port,
+        ::std::function<void(::ServerConnectivityTestResult)> callback
+    );
+
+    MCNAPI void $_onDisable();
+
+    MCNAPI void $_onEnable();
+
 
     // NOLINTEND
 };

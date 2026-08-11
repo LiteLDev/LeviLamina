@@ -29,6 +29,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI float $getPlayerSleepPercentageGoal() const;
+
 
     // NOLINTEND
 };

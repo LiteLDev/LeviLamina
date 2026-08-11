@@ -49,6 +49,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void
+    $enqueueMessage(::brstd::move_only_function<void()> message, ::ServerInstanceMessenger::MessageAction action);
+
+    MCNAPI void $enqueueAndAwaitExecution(
+        ::brstd::move_only_function<void(::brstd::move_only_function<void() const>)> message,
+        ::ServerInstanceMessenger::MessageAction                                     action
+    );
+
+    MCNAPI void $processMessages();
+
+    MCNAPI ::ServerInstanceMessenger::IMessageProducer& $getProducer();
+
+    MCNAPI ::ServerInstanceMessenger::IMessageConsumer& $getConsumer();
+
 
     // NOLINTEND
 };

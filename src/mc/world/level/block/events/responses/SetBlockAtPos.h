@@ -40,6 +40,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::string const& $getName() const;
+
+    MCAPI void $executeAction(::RenderParams& params) const;
+
+    MCAPI void $buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
+        ::Factory<::EventResponse> const&                                                                       factory
+    ) const;
+
 
     // NOLINTEND
 };

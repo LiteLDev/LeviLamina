@@ -118,7 +118,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI ::Scripting::Result_deprecated<void> $init();
 
     MCNAPI ::Scripting::Result_deprecated<void> $ready();
@@ -163,7 +162,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $destroyRegisteredExtensions();
 
     MCNAPI ::Scripting::Result_deprecated<void> $createExtensionContexts();
-#endif
 
 
     // NOLINTEND

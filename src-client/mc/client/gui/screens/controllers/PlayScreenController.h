@@ -204,5 +204,7 @@ public:
     MCFOLD ::ui::SceneType $getSceneType() const;
 
     MCFOLD ::std::string $_getButtonADescription();
+
+    MCAPI void $_registerEventHandlers();
     // NOLINTEND
 };

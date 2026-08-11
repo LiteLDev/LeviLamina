@@ -92,6 +92,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $render(::InputRenderContext& context) const;
 
+    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
+
+    MCAPI void $release(::InputEventQueue& eventQueue);
     // NOLINTEND
 };

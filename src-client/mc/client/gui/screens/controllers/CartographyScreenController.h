@@ -69,6 +69,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $_isStillValid() const;
 
+    MCAPI void $_handleTakeHalf(::std::string const& collectionName, int index);
+
+    MCAPI void $_registerCoalesceOrder();
+
+    MCAPI void $_registerAutoPlaceOrder();
     // NOLINTEND
 };

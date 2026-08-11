@@ -136,6 +136,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $update(::ui::DirtyFlag& dirtyFlags);
 
+    MCAPI ::SkinHandle const& $getSelectedSkinHandle() const;
     // NOLINTEND
 };

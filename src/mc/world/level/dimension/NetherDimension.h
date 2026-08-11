@@ -61,6 +61,36 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
+
+    MCAPI ::BiomeIdType $getDefaultBiomeId() const;
+
+    MCFOLD bool $isNaturalDimension() const;
+
+    MCFOLD bool $isValidSpawn(int x, int z) const;
+
+    MCFOLD bool $showSky() const;
+
+    MCFOLD float $getTimeOfDay(int time, float a) const;
+
+    MCFOLD bool $mayRespawnViaBed() const;
+
+    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
+
+    MCAPI ::std::unique_ptr<::WorldGenerator>
+    $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
+
+    MCAPI bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
+
+    MCAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
+
+    MCAPI void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
+
+    MCAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
+
+    MCFOLD ::std::unique_ptr<::ChunkSource>
+    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
+
 
     // NOLINTEND
 };

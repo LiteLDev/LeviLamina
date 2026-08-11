@@ -267,7 +267,20 @@ public:
     // NOLINTBEGIN
     MCAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
+    MCAPI void $removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
+
+    MCFOLD void $onEffectExpired(::Actor& target) const;
+
     MCFOLD void $onActorDied(::Actor& target, int amplifier) const;
+
+    MCFOLD void $onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const;
+
+    MCAPI void
+    $applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
+
+    MCFOLD bool $isInstantaneous() const;
+
+    MCAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
 
 
     // NOLINTEND

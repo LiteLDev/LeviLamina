@@ -52,6 +52,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::EventResult $onEvent(::ActorNotificationEvent const& event);
+
 
     // NOLINTEND
 };

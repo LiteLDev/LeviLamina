@@ -498,7 +498,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $isDeviceRemoved();
     // NOLINTEND
 };
 

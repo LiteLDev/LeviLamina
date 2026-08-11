@@ -28,6 +28,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Core::CrossStorageCopyMode $getCrossStorageCopyMode();
+
+    MCNAPI ::std::unique_ptr<::Core::FileImpl>
+    $_createMemoryFileHandle(::Core::MemoryFileSystemEntryFile*, ::Core::FileOpenMode, uint64);
+
 
     // NOLINTEND
 };

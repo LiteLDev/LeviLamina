@@ -100,6 +100,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+
+    MCAPI bool $checkSpawnRules(bool);
+
+    MCAPI int $getArmorValue() const;
+
+    MCFOLD void $_doInitialMove();
+
+    MCFOLD ::std::unique_ptr<::BodyControl> $initBodyControl();
+
+    MCFOLD float $getShadowRadius() const;
+
+    MCAPI float $getMaxHeadXRot();
+
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
+
 
     // NOLINTEND
 };

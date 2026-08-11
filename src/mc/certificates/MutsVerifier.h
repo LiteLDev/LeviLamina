@@ -41,6 +41,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $setRequest(::Json::Value& request);
+
+    MCNAPI ::std::optional<::Json::Value> $verify(::Json::Value&& response);
+
 
     // NOLINTEND
 };

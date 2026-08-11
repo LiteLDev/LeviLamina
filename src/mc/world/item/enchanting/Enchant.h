@@ -220,7 +220,33 @@ public:
 
     MCAPI int $getMaxCost(int level) const;
 
+    MCFOLD int $getMinLevel() const;
+
     MCFOLD int $getMaxLevel() const;
+
+    MCFOLD int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
+
+    MCFOLD float $getAfterBreachArmorFraction(int, float) const;
+
+    MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
+
+    MCFOLD void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
+
+    MCFOLD void $doPostPiercingAttack(::Actor& attacker, int enchantLevel) const;
+
+    MCFOLD void $doPostItemHurtActor(::Actor&, ::Actor&, int) const;
+
+    MCFOLD void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
+
+    MCFOLD bool $isMeleeDamageEnchant() const;
+
+    MCFOLD bool $isProtectionEnchant() const;
+
+    MCFOLD bool $isTreasureOnly() const;
+
+    MCFOLD bool $isDiscoverable() const;
+
+    MCFOLD bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
 
 
     // NOLINTEND

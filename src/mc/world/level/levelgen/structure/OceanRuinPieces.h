@@ -91,6 +91,18 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::StructurePieceType $getType() const;
+
+        MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+        MCAPI void $_handleDataMarker(
+            ::std::string const& markerId,
+            ::BlockPos const&    position,
+            ::BlockSource&       region,
+            ::Random&            random,
+            ::BoundingBox const& chunkBB
+        );
+
 
         // NOLINTEND
     };

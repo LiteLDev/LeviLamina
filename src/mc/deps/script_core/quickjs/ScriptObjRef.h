@@ -84,6 +84,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onReduceToSingleOwner();
+
+    MCNAPI void $onPromoteToMultipleOwners();
+
+    MCNAPI void $onFinalize();
+
 
     // NOLINTEND
 };

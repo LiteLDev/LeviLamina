@@ -22,6 +22,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI bool $onJoincodeReceived(::std::string const& encodedJoincode);
     // NOLINTEND
 };

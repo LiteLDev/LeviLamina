@@ -282,6 +282,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onPreFlushAfterEvents();
+
+    MCAPI void $onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+
+    MCAPI void $onPostFlushAfterEvents();
+
+    MCAPI void $_onScriptInitializationComplete();
+
+    MCAPI void $_onReload();
+
+    MCAPI ::std::vector<::std::string_view> $getValidComponentsForBlock(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> const& permutation
+    ) const;
+
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
+    $tryGetCustomComponentParametersForBlock(
+        ::Block const&                        block,
+        ::std::string_view                    componentName,
+        ::Scripting::WeakLifetimeScope const& scope
+    ) const;
+
 
     // NOLINTEND
 };

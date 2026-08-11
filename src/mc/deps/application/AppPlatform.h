@@ -1038,6 +1038,12 @@ public:
 
     MCAPI void $initAppPlatformNetworkSettings();
 
+    MCAPI uint64 $getHighPerformanceThreadsCount() const;
+
+    MCAPI uint64 $getTotalHardwareThreadsCount() const;
+
+    MCFOLD void $initializeGraphicsDeviceTier();
+
     MCAPI void $addListener(::AppPlatformListener* l, float priority);
 
     MCAPI void $removeListener(::AppPlatformListener* l);
@@ -1084,6 +1090,8 @@ public:
 
     MCFOLD ::Core::PathBuffer<::std::string> $getLoggingPath() const;
 
+    MCFOLD ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
+
     MCAPI ::Core::PathBuffer<::std::string> $getShaderCachePath();
 
     MCFOLD ::Core::PathBuffer<::std::string> $getUserdataPathForLevels() const;
@@ -1126,21 +1134,37 @@ public:
 
     MCFOLD void $registerFileForCollectionWithCrashDump(::Core::Path const&);
 
+    MCFOLD void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
+
     MCAPI int $getScreenWidth() const;
 
     MCAPI int $getScreenHeight() const;
 
+#ifdef LL_PLAT_S
     MCFOLD int $getDisplayWidth();
+#else // LL_PLAT_C
+    MCAPI int $getDisplayWidth();
+#endif
 
     MCAPI int $getDisplayHeight();
 
+#ifdef LL_PLAT_S
     MCFOLD void $setScreenSize(int, int);
+#else // LL_PLAT_C
+    MCFOLD void $setScreenSize(int width, int height);
+#endif
 
     MCFOLD void $setWindowSize(int width, int height);
 
+#ifdef LL_PLAT_S
     MCFOLD void $setWindowText(::std::string const& title);
+#else // LL_PLAT_C
+    MCFOLD void $setWindowText(::std::string const&);
+#endif
 
     MCFOLD ::std::optional<::OperationMode> $getOperationMode() const;
+
+    MCFOLD bool $allowContentLogWriteToDisk();
 
     MCFOLD uint $getMaxClubsRequests() const;
 
@@ -1263,9 +1287,17 @@ public:
 
     MCAPI void $calculateIfLowMemoryDevice();
 
+#ifdef LL_PLAT_S
     MCFOLD bool $isLowMemoryDevice() const;
+#else // LL_PLAT_C
+    MCAPI bool $isLowMemoryDevice() const;
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD bool $isLowPhysicalMemoryDevice() const;
+#else // LL_PLAT_C
+    MCAPI bool $isLowPhysicalMemoryDevice() const;
+#endif
 
     MCFOLD uint64 $getTextureMemoryBudget() const;
 
@@ -1297,6 +1329,8 @@ public:
 
 #ifdef LL_PLAT_S
     MCAPI void $collectGraphicsHardwareDetails();
+#else // LL_PLAT_C
+    MCFOLD void $collectGraphicsHardwareDetails();
 #endif
 
     MCAPI ::std::string $getEdition() const;
@@ -1317,7 +1351,11 @@ public:
 
     MCFOLD float $getDefaultScreenPositionY() const;
 
+#ifdef LL_PLAT_S
     MCAPI bool $isQuitCapable() const;
+#else // LL_PLAT_C
+    MCFOLD bool $isQuitCapable() const;
+#endif
 
     MCFOLD bool $requireControllerAtStartup() const;
 
@@ -1338,6 +1376,8 @@ public:
     MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
 
     MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
+
+    MCFOLD bool $devHotReloadRenderResources() const;
 
     MCFOLD bool $shouldPauseDownloadsWhenEnterGame() const;
 
@@ -1406,7 +1446,15 @@ public:
 
     MCFOLD bool $isWebviewSupported() const;
 
+#ifdef LL_PLAT_S
     MCFOLD ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&& args) const;
+#else // LL_PLAT_C
+    MCFOLD ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&&) const;
+#endif
+
+    MCFOLD bool $getPlatformTTSExists() const;
+
+    MCFOLD bool $getPlatformTTSEnabled() const;
 
     MCAPI ::std::variant<::HWND__*, ::std::monostate> $getRenderSurfaceParameters() const;
 
@@ -1442,6 +1490,8 @@ public:
 
     MCFOLD void $onFullGameUnlock();
 
+    MCFOLD bool $is24HourTimeFormat() const;
+
     MCAPI ::Bedrock::Threading::Async<bool> $showOSUserDialog(::std::string, ::std::string, ::std::string);
 
     MCFOLD bool $_tryEnableCPUBoost();
@@ -1450,7 +1500,11 @@ public:
 
     MCFOLD ::Bedrock::CommonPlatform* $getPlatformShim() const;
 
+#ifdef LL_PLAT_S
     MCFOLD void $_initializeFileStorageAreas();
+#else // LL_PLAT_C
+    MCAPI void $_initializeFileStorageAreas();
+#endif
 
     MCAPI void $_teardownFileStorageAreas();
 
@@ -1561,9 +1615,17 @@ public:
 
     MCFOLD void $pickFile(::std::shared_ptr<::FilePickerSettings> settings);
 
+    MCFOLD bool $supportsAlbumExport() const;
+
+    MCFOLD bool $supportsPDFExport() const;
+
+    MCFOLD ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
+
     MCFOLD void $shareFile(::Core::Path const&, ::std::function<void(bool)>);
 
     MCFOLD bool $hasHardwareBackButton();
+
+    MCFOLD bool $supportsMSAA() const;
 
     MCFOLD bool $supports3rdPartyServers() const;
 
@@ -1659,6 +1721,8 @@ public:
     MCAPI void $notifyUriListeners(::ActivationUri const& uri);
 
     MCAPI void $notifyUriListenerRegistrationDone();
+
+    MCFOLD void $showXboxLiveUserSettings();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ThrottledFileWriteManager> $getThrottledFileWriteManager() const;
 

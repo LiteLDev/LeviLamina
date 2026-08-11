@@ -155,6 +155,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD uint64 $getAccessTimestamp() const;
+
 
     // NOLINTEND
 };

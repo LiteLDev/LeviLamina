@@ -114,6 +114,45 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
+
+    MCNAPI ::std::string_view $getServiceName() const;
+
+    MCNAPI ::Editor::Selection::SelectionContainerVolume const& $containerVolume() const;
+
+    MCNAPI ::Editor::Selection::SelectionContainerEntity const& $containerEntity() const;
+
+    MCNAPI ::Editor::Selection::SelectionContainerVolume& $containerVolumeNonConst();
+
+    MCNAPI ::Editor::Selection::SelectionContainerEntity& $containerEntityNonConst();
+
+    MCNAPI ::WeakRef<::Editor::ProjectRegion> $getVolumeRegion() const;
+
+    MCNAPI uint64 $generateManifest();
+
+    MCNAPI uint64 $generateManifestWithCallback(
+        ::std::function<
+            void(::Scripting::Result_deprecated<::Editor::Services::SelectionServiceProvider::ManifestState> const&)>
+            callback
+    );
+
+    MCNAPI ::Editor::Services::SelectionServiceProvider::ManifestState const& $getCurrentManifest() const;
+
+    MCNAPI void $deselectBlocksAsync(
+        ::std::string const&                                                 blockIdentifier,
+        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
+    );
+
+    MCNAPI void $replaceBlocksAsync(
+        ::std::string const&                                                 fromBlockIdentifier,
+        ::std::string const&                                                 toBlockIdentifier,
+        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
+    );
+
 
     // NOLINTEND
 };

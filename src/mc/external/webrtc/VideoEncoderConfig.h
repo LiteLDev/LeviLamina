@@ -49,6 +49,12 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $FillVideoCodecVp8(::webrtc::VideoCodecVP8*) const;
+
+        MCNAPI void $FillVideoCodecVp9(::webrtc::VideoCodecVP9*) const;
+
+        MCNAPI void $FillVideoCodecAv1(::webrtc::VideoCodecAV1*) const;
+
 
         // NOLINTEND
     };
@@ -94,6 +100,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $FillVideoCodecAv1(::webrtc::VideoCodecAV1*) const;
+
 
         // NOLINTEND
     };
@@ -122,6 +130,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $FillVideoCodecVp8(::webrtc::VideoCodecVP8*) const;
+
 
         // NOLINTEND
     };
@@ -150,6 +160,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $FillVideoCodecVp9(::webrtc::VideoCodecVP9*) const;
+
 
         // NOLINTEND
     };

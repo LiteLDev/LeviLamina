@@ -31,10 +31,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI ::AdvanceFrameResult
     $getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const& snapshot);
-#endif
 
 
     // NOLINTEND

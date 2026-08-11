@@ -121,7 +121,15 @@ public:
 
     MCNAPI ::std::string const& $getPackName() const;
 
+    MCNAPI bool $isWritable() const;
+
+    MCNAPI bool $isTrusted() const;
+
+    MCNAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+
     MCNAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
+
+    MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
     MCNAPI void $forEachIn(
         ::Core::Path const&                        packRelativePath,
@@ -132,9 +140,19 @@ public:
     MCNAPI void
     $forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const;
 
+    MCNAPI ::PackAccessStrategyType $getStrategyType() const;
+
+    MCNAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
+
     MCNAPI bool $canRecurse() const;
 
     MCNAPI void $unload();
+
+    MCNAPI ::Bedrock::Result<::StreamableAssetSource>
+    $getStreamableSource(::Core::Path const& packRelativePath, ::std::optional<::Core::PathView> tempDirectory) const;
+
+    MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
+    $_loadArchive(::Core::Path const& packRelativePath) const;
 
     MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
     $_preloadSubFolders(::Core::Path const& packRelativePath) const;

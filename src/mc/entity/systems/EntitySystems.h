@@ -132,6 +132,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tickMovementCatchup(::EntityRegistry& registry);
+
+    MCAPI void $tickMovementCorrectionReplay(::EntityRegistry& registry);
+
+    MCAPI void $registerTickingSystem(
+        ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,
+        ::std::unique_ptr<::ITickingSystem>                      system,
+        ::SystemInfo const&                                      info,
+        ::EntitySystemTickingMode                                tickingMode
+    );
+
+    MCAPI bool $_hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const;
+
 
     // NOLINTEND
 };

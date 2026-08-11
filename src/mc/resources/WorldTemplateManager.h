@@ -124,7 +124,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI void $flushResourceLoaderTasks();
 
     MCNAPI void $populateWorldTemplates();
@@ -150,7 +149,6 @@ public:
     $registerModifiedCallback(::std::function<void(::std::pair<::std::string, bool> const&)> newCallbackFunction);
 
     MCNAPI ::WorldTemplateCollectionView $createView(::mce::UUID const& toView) const;
-#endif
 
 
     // NOLINTEND

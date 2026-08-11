@@ -30,6 +30,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $isCraftingImplemented();
+
+    MCAPI ::ContainerValidationCraftResult $getCraftResult(
+        ::ContainerScreenContext const&                     screenContext,
+        ::ContainerScreenValidation&                        screenValidation,
+        ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
+        uchar const                                         numCrafts
+    );
+
 
     // NOLINTEND
 };

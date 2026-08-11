@@ -126,6 +126,47 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::ShouldPlayMovementSoundComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDefinitionIdentifierComponent,
+                ::ActorUniqueIDComponent,
+                ::DimensionTypeComponent,
+                ::SoundEventPlayerComponent,
+                ::StateVectorComponent,
+                ::MovementSoundComponent,
+                ::ClimbingLadderBlockComponent,
+                ::CurrentlyStandingOnBlockComponent>,
+            ::Write<>,
+            ::AddRemove<::ShouldPlayStepSoundComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
+
+    MCAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<::ShouldPlayMovementSoundComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDefinitionIdentifierComponent,
+                ::ActorUniqueIDComponent,
+                ::DimensionTypeComponent,
+                ::SoundEventPlayerComponent,
+                ::StateVectorComponent,
+                ::MovementSoundComponent,
+                ::ClimbingLadderBlockComponent,
+                ::CurrentlyStandingOnBlockComponent>,
+            ::Write<>,
+            ::AddRemove<::ShouldPlayStepSoundComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context,
+        ::StrictEntityContext&   entityContext
+    );
+
 
     // NOLINTEND
 };

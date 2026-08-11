@@ -145,6 +145,45 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $initializeServerSide(::ResourcePackManager& rpm, ::IWorldRegistriesProvider& registries);
+
+    MCFOLD ::SpawnSettings const& $getSpawnSettings() const;
+
+    MCAPI void $setSpawnSettings(::SpawnSettings const& spawnSettings);
+
+    MCFOLD ::ActorSpawnRuleGroup const* $getSpawnRules() const;
+
+    MCFOLD ::ActorSpawnRuleGroup* $getSpawnRulesMutable() const;
+
+    MCFOLD ::SpawnGroupRegistry const* $getSpawnGroupRegistry() const;
+
+    MCFOLD ::br::spawn::EntityTypeCache* $getEntityTypeCache() const;
+
+    MCAPI ::ItemActor*
+    $spawnItem(::BlockSource& region, ::ItemStack const& inst, ::Actor* spawner, ::Vec3 const& pos, int throwTime);
+
+    MCAPI void $postProcessSpawnMobs(::BlockSource& region, int xo, int zo, ::Random& random);
+
+    MCAPI void
+    $tick(::BlockSource& region, ::LevelChunkVolumeData const& levelChunkVolumeData, ::ChunkPos const chunkPos);
+
+    MCAPI void $tickMobCount();
+
+    MCAPI void $incrementSpawnableTickedMob();
+
+    MCAPI uint $getSpawnableTickedMobCountPrevious() const;
+
+    MCAPI ::std::unordered_set<::ActorUniqueID> $spawnMobGroup(
+        ::BlockSource&                  region,
+        ::std::string const&            spawnGroupId,
+        ::Vec3 const&                   pos,
+        bool                            doScatter,
+        bool                            validateDistToPlayer,
+        ::std::function<void(::Mob&)>&& spawnedCallback
+    );
+
+    MCFOLD ::br::spawn::SpawnPlacements& $getSpawnPlacements();
+
 
     // NOLINTEND
 };

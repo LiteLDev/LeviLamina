@@ -57,6 +57,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $containerSizeChanged(int size);
+
+    MCAPI void $containerContentChanged(int slot);
+
+    MCAPI void $createTransactionContext(
+        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
+        ::std::function<void()>                                                          execute
+    );
+
 
     // NOLINTEND
 };

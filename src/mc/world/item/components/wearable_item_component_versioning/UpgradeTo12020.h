@@ -21,6 +21,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $previousSchema(
+        ::rapidjson::GenericValue<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
+    ) const;
+
 
     // NOLINTEND
 };

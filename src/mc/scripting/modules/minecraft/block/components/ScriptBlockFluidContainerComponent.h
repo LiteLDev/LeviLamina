@@ -55,6 +55,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $_isValid() const;
+
 
     // NOLINTEND
 };

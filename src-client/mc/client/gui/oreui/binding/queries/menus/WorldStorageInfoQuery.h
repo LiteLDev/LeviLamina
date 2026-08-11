@@ -86,7 +86,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onLevelUpdated(::std::string const& levelId);
 
+    MCAPI void $onSummaryUpdated(::std::string const& levelId);
+
+    MCAPI void $onStorageChanged();
+
+    MCAPI void $update(double);
     // NOLINTEND
 };
 

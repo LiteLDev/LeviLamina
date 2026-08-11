@@ -69,6 +69,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void $tick(::BlockSource& region);
+
+    MCFOLD void $onChanged(::BlockSource& region);
+
+    MCFOLD bool $hasAlphaLayer() const;
+
+    MCAPI void $triggerEvent(int b0, int b1);
+
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+
 
     // NOLINTEND
 };

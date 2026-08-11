@@ -30,6 +30,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $doFireEventActorValueValidationFailed(::std::string const& invalidValue, char const* caller);
+
 
     // NOLINTEND
 };

@@ -20,6 +20,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $isEntitlementValid(::IEntitlement const& entitlement) const;
     // NOLINTEND
 };

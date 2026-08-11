@@ -61,6 +61,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCFOLD ::std::vector<::std::string> $getUgcStrings(::CompoundTag const&) const;
+
+    MCFOLD void $setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
+
+    MCAPI void $onChanged(::BlockSource& region);
+
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+
 
     // NOLINTEND
 };

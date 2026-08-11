@@ -32,6 +32,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $writeBytes(void const* data, uint64 bytes);
+
 
     // NOLINTEND
 };

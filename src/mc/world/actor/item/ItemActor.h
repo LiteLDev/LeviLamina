@@ -141,6 +141,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
+
+    MCAPI void $playerTouch(::Player& player);
+
+    MCAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
+
+    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
+
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+
+    MCFOLD bool $canSynchronizeNewEntity() const;
+
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+
+    MCAPI bool $isFireImmune() const;
+
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float damage, ::HurtParameters const&);
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
 
     // NOLINTEND
 };

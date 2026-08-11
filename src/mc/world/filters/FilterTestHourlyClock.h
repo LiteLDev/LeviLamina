@@ -38,6 +38,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+
+    MCNAPI bool $evaluate(::FilterContext const& context) const;
+
+    MCNAPI ::std::string_view $getName() const;
+
 
     // NOLINTEND
 };

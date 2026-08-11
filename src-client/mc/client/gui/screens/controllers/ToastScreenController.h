@@ -97,6 +97,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCFOLD ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
+    MCAPI void $showToast(::ToastMessage message, bool animateIn);
+
+    MCAPI void $removeToast();
+
+    MCAPI void $refreshToast();
     // NOLINTEND
 };

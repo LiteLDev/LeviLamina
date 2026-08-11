@@ -188,6 +188,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onCreation();
 
+    MCAPI void $onOpen();
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCFOLD ::std::string $getAdditionalScreenInfo() const;
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+
+    MCFOLD ::ui::SceneType $getSceneType() const;
+
+    MCAPI bool $_getGamepadHelperVisible() const;
+
+    MCFOLD ::std::string $_getButtonADescription();
     // NOLINTEND
 };

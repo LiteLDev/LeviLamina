@@ -38,6 +38,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::cg::ImageBuffer* $getCachedImage(::ResourceLocation const& resourceLocation);
 
+    MCNAPI ::cg::ImageBuffer*
+    $insertImageIntoCache(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer&& imageBuffer);
     // NOLINTEND
 };

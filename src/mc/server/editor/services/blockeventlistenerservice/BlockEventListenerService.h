@@ -55,7 +55,12 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
+#ifdef LL_PLAT_S
     MCNAPI ::EventResult $onBlockPlacedByPlayer(::Player& player, ::Block const&, ::BlockPos const& pos, bool);
+#else // LL_PLAT_C
+    MCNAPI ::EventResult
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+#endif
 
     MCNAPI ::EventResult $onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
 

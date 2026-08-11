@@ -81,6 +81,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void
+    $onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const& type, uint size);
+
+    MCNAPI void $onDestroyObject(
+        ::Scripting::LifetimeRegistry&,
+        ::Scripting::ObjectHandle,
+        ::entt::meta_type const& type,
+        uint                     size
+    );
+
 
     // NOLINTEND
 };

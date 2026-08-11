@@ -114,7 +114,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::vector<::std::string_view> $getSettingsGroups() const;
 
+    MCAPI ::std::optional<::std::vector<::Settings::IRegistry::SettingId>>
+    $getSettingsGroup(::std::string_view settingsGroupId);
+
+    MCAPI ::std::optional<::std::reference_wrapper<::std::variant<
+        ::Settings::BooleanComponent,
+        ::Settings::NumberComponent<int>,
+        ::Settings::NumberComponent<float>,
+        ::Settings::OptionComponent,
+        ::Settings::StringComponent,
+        ::Settings::ActionComponent,
+        ::Settings::TextComponent,
+        ::Settings::GroupInfoComponent,
+        ::Settings::BannerComponent>>>
+    $getSetting(::std::string_view settingId) const;
     // NOLINTEND
 };
 

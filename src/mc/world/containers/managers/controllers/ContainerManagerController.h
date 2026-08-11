@@ -474,96 +474,232 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCAPI void $postInit(::std::weak_ptr<::ContainerManagerController>);
+#else // LL_PLAT_C
     MCFOLD void $postInit(::std::weak_ptr<::ContainerManagerController> self);
+#endif
 
     MCAPI void $registerContainerCallbacks();
 
+#ifdef LL_PLAT_S
+    MCAPI void $setPreviewItemName(::Bedrock::Safety::RedactableString const&);
+#else // LL_PLAT_C
     MCFOLD void $setPreviewItemName(::Bedrock::Safety::RedactableString const& name);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void $setItemName(::Bedrock::Safety::RedactableString const&);
+#else // LL_PLAT_C
     MCFOLD void $setItemName(::Bedrock::Safety::RedactableString const& name);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::Bedrock::Safety::RedactableString const& $getPreviewItemName() const;
+#else // LL_PLAT_C
     MCFOLD ::Bedrock::Safety::RedactableString const& $getPreviewItemName() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::Bedrock::Safety::RedactableString const& $getItemName() const;
+#else // LL_PLAT_C
     MCFOLD ::Bedrock::Safety::RedactableString const& $getItemName() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void $updatePreviewItem();
+#else // LL_PLAT_C
     MCFOLD void $updatePreviewItem();
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const&) const;
+#else // LL_PLAT_C
     MCAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $handleTakeAmount(::SlotData const&, int, ::SlotData const&);
+#else // LL_PLAT_C
     MCAPI bool $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $handleTakeAll(::SlotData const&, ::SlotData const&);
+#else // LL_PLAT_C
     MCAPI bool $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&);
+#else // LL_PLAT_C
     MCAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $handleTakeHalf(::SlotData const&, ::SlotData const&);
+#else // LL_PLAT_C
     MCAPI bool $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $handlePlaceOne(::SlotData const&, ::SlotData const&);
+#else // LL_PLAT_C
     MCAPI bool $handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $handlePlaceAmount(::SlotData const&, int, ::SlotData const&);
+#else // LL_PLAT_C
     MCAPI bool $handlePlaceAmount(::SlotData const& srcSlot, int amount, ::SlotData const& dstSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI int
+    $handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&);
+#else // LL_PLAT_C
     MCAPI int $handleAutoPlace(
         ::SlotData const&                     srcSlot,
         int                                   amount,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     );
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI int $handleAutoPlaceStack(
+        ::SlotData const&,
+        ::ItemTakeType,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    );
+#else // LL_PLAT_C
     MCAPI int $handleAutoPlaceStack(
         ::SlotData const&                     srcSlot,
         ::ItemTakeType                        takeType,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     );
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void $handleSplitSingle(::SlotData const&, ::SlotData const&);
+#else // LL_PLAT_C
     MCAPI void $handleSplitSingle(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void $handleSplitMultiple(::SelectedSlotInfo const&, ::ItemInstance const&, ::SlotData const&);
+#else // LL_PLAT_C
     MCAPI void $handleSplitMultiple(
         ::SelectedSlotInfo const& selected,
         ::ItemInstance const&     itemTemplate,
         ::SlotData const&         dstSlot
     );
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $handleCoalesce(::SlotData const&, ::std::vector<::std::string> const&, ::std::string const&);
+#else // LL_PLAT_C
     MCAPI bool $handleCoalesce(
         ::SlotData const&                   dstSlot,
         ::std::vector<::std::string> const& coalesceOrder,
         ::std::string const&                coalesceSrc
     );
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $handleSwap(::SlotData const&, ::SlotData const&);
+#else // LL_PLAT_C
     MCAPI bool $handleSwap(::SlotData const& slotA, ::SlotData const& slotB);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $handleDrop(::SlotData const&, ::ItemTransferAmount const);
+#else // LL_PLAT_C
     MCAPI bool $handleDrop(::SlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $handleDestroy(::SelectedSlotInfo const&, ::ItemTransferAmount const);
+#else // LL_PLAT_C
     MCAPI bool $handleDestroy(::SelectedSlotInfo const& selected, ::ItemTransferAmount const transferAmount);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $handleDestroy(::SlotData const&, ::ItemTransferAmount const);
+#else // LL_PLAT_C
     MCAPI bool $handleDestroy(::SlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $handleConsume(::SlotData const&, ::ItemTransferAmount const);
+#else // LL_PLAT_C
     MCAPI bool $handleConsume(::SlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $handleAddToStack(::SlotData const&, ::SlotData const&, ::ItemTakeType);
+#else // LL_PLAT_C
     MCAPI bool $handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type);
+#endif
 
     MCAPI void $closeContainers();
 
+#ifdef LL_PLAT_S
+    MCAPI bool $isOutputSlot(::std::string const&) const;
+#else // LL_PLAT_C
     MCFOLD bool $isOutputSlot(::std::string const& collectionName) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void $_updateItemStackRequest(
+        ::ContainerScreenRequestActionType,
+        ::ContainerScreenActionResult const&,
+        ::ItemStackRequestScope&
+    );
+#else // LL_PLAT_C
     MCFOLD void $_updateItemStackRequest(
         ::ContainerScreenRequestActionType,
         ::ContainerScreenActionResult const&,
         ::ItemStackRequestScope&
     );
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::CreateContainerItemScope $_makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&);
+#else // LL_PLAT_C
     MCAPI ::CreateContainerItemScope
     $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void $_onItemTransferredFrom(::ItemInstance const&, ::SlotData const&);
+#else // LL_PLAT_C
     MCAPI void $_onItemTransferredFrom(::ItemInstance const& stack, ::SlotData const& srcSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void $_onItemTransferredTo(::ItemInstance const&, ::SlotData const&);
+#else // LL_PLAT_C
     MCAPI void $_onItemTransferredTo(::ItemInstance const& stack, ::SlotData const& dstSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void $_onItemAcquired(::ItemInstance const&, ::SlotData const&);
+#else // LL_PLAT_C
     MCFOLD void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void $_onItemPlaced(::ItemInstance const&, ::SlotData const&);
+#else // LL_PLAT_C
     MCFOLD void $_onItemPlaced(::ItemInstance const& stack, ::SlotData const& dstSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void $_onContainerScreenAction(::ContainerScreenActionResult const&);
+#else // LL_PLAT_C
     MCFOLD void $_onContainerScreenAction(::ContainerScreenActionResult const& result);
 #endif
 

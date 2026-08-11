@@ -29,6 +29,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::unique_ptr<::GameModuleServer> $createGameModuleServer();
 
+    MCNAPI ::std::shared_ptr<::IInPackagePacks> $createInPackagePacks();
+
+    MCNAPI void $registerMolangQueries();
+
+    MCNAPI void $registerServerInstanceHandler(::ServerInstanceEventCoordinator& serverInstanceCoordinator);
     // NOLINTEND
 };

@@ -39,6 +39,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool
+    $tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
+
+    MCAPI char const* $getDescription() const;
+
 
     // NOLINTEND
 };

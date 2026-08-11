@@ -88,6 +88,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+
+    MCAPI ::Actor* $createProjectileActor(
+        ::BlockSource&     region,
+        ::ItemStack const& stack,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      direction
+    ) const;
+
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
+
+    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const;
+
+    MCAPI bool $isValidAuxValue(int auxValue) const;
+
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
 
     // NOLINTEND
 };

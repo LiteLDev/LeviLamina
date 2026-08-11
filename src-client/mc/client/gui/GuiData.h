@@ -353,6 +353,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $onConfigChanged(::Config const& c);
     // NOLINTEND
 };

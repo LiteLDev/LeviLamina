@@ -161,6 +161,59 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
+
+    MCNAPI void $onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
+
+    MCNAPI void $load(::ResourcePackManager const& resourcePackManager);
+
+    MCNAPI ::std::vector<::std::variant<
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormButton>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDivider>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDropdown>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormScrollView>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSlider>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSwitch>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormTextField>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelCloseButton>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelSpacing>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ScrollableGridLayout>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>> const&
+    $getComposition(::std::string const& identifier) const;
+
+    MCNAPI ::std::vector<::std::variant<
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerLayout>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Context>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Panel>>> const&
+    $getRoot(::std::string const& identifier) const;
+
+    MCNAPI ::std::vector<::std::variant<
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormButton>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDivider>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDropdown>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormScrollView>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSlider>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSwitch>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormTextField>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelCloseButton>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelSpacing>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ScrollableGridLayout>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>>
+    $getExtensionPointContents(::std::string const& name) const;
+
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $subscribeToOnCompositionsReloadedAsync(::std::function<void()>&& onCompositionsReloadedAsyncCallback);
+
 
     // NOLINTEND
 };

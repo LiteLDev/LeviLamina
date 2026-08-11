@@ -26,6 +26,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::leveldb::Status $Read(uint64 n, ::leveldb::Slice* result, char* scratch);
+
+    MCNAPI ::leveldb::Status $Skip(uint64 n);
+
 
     // NOLINTEND
 };

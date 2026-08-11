@@ -64,6 +64,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::LootPoolEntry const& $_getEntry() const;
+
 
     // NOLINTEND
 };

@@ -104,6 +104,45 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+
+    MCFOLD bool $structurePostProcessChunk(::ChunkViewSource&);
+
+    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
+
+#ifdef LL_PLAT_S
+    MCAPI ::HashedString $findStructureFeatureTypeAt(::BlockPos const& pos);
+#else // LL_PLAT_C
+    MCFOLD ::HashedString $findStructureFeatureTypeAt(::BlockPos const& pos);
+#endif
+
+    MCAPI bool $isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
+
+    MCAPI bool $findNearestStructureFeature(
+        ::HashedString                  feature,
+        ::BlockPos const&               origin,
+        ::BlockPos&                     pos,
+        bool                            mustBeInNewChunks,
+        ::std::optional<::HashedString> biomeTag
+    );
+
+    MCAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const&, ::std::vector<short>* zxHeights, bool);
+
+    MCFOLD void $garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks);
+
+    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
+
+    MCAPI ::BlockPos $findSpawnPosition() const;
+
+    MCAPI ::BiomeSource const& $getBiomeSource() const;
+
+    MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
+
+    MCFOLD void
+    $decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const;
+
+    MCFOLD void $decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const;
+
 
     // NOLINTEND
 };

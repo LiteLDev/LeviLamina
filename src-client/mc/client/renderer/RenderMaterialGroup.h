@@ -90,7 +90,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onAppResumed();
 
+    MCAPI ::mce::RenderMaterialInfo& $getMaterialInfo(::HashedString const& name);
+
+    MCAPI void $clearMaterial(::HashedString const& name);
     // NOLINTEND
 };
 

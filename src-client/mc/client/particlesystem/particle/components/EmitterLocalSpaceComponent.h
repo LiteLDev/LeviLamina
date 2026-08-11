@@ -40,7 +40,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
+    MCAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+
+    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
+
+    MCAPI void $setupInitial(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
     // NOLINTEND
 };
 

@@ -61,6 +61,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $start(bool allowed);
 
+    MCAPI bool $exhausted() const;
+
+    MCAPI ::HandleRangeResult $handleRange(int, int end);
     // NOLINTEND
 };

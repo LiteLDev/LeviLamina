@@ -102,13 +102,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $update();
 
     MCNAPI void $cancelDownload();
 
     MCNAPI float $getDownloadProgress() const;
-#endif
 
 
     // NOLINTEND

@@ -24,6 +24,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
+
+    MCAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
+
 
     // NOLINTEND
 };

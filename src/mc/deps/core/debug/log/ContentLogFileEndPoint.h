@@ -92,7 +92,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
 
     MCNAPI void $flush();
@@ -102,7 +101,6 @@ public:
     MCNAPI bool $isEnabled() const;
 
     MCNAPI bool $logOnlyOnce() const;
-#endif
 
 
     // NOLINTEND

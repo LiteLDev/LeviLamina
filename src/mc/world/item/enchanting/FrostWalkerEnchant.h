@@ -21,6 +21,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD int $getMinCost(int level) const;
+
+    MCFOLD int $getMaxCost(int level) const;
+
+    MCFOLD int $getMaxLevel() const;
+
+    MCFOLD bool $isTreasureOnly() const;
+
 
     // NOLINTEND
 };

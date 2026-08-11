@@ -82,7 +82,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $canModify() const;
 
+    MCAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
+
+    MCFOLD int $getValue() const;
+
+    MCAPI void $setValue(int index);
+
+    MCFOLD ::std::optional<
+        ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
+    $getInfo() const;
     // NOLINTEND
 };
 

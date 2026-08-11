@@ -36,6 +36,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

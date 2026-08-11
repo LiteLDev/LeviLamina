@@ -44,6 +44,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
+
+    MCNAPI ::ItemStackNetResult $endRequest();
+
+    MCNAPI void $postRequest(bool const wasSuccess);
+
 
     // NOLINTEND
 };

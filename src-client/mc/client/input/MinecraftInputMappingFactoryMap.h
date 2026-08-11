@@ -37,7 +37,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-
+        MCFOLD ::InputMapping const* $getMapping(::std::string const& mappingName);
         // NOLINTEND
     };
 
@@ -57,6 +57,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::InputMappingFactory& $getInputMappingFactory(int controllerId);
     // NOLINTEND
 };

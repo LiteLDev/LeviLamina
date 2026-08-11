@@ -80,7 +80,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onPanRecognized(::Vec2 const& gestureBeginPos, ::Vec2 const& currentPos, ::Vec2 const& delta);
 
+    MCAPI void $onPanCompleted(::Vec2 const& endPos);
+
+    MCAPI void
+    $onFlingCompleted(::Vec2 const& endPos, ::Vec2 const& flingStart, ::std::chrono::milliseconds flingDuration);
+
+    MCAPI void $onTapRecognized(::Vec2 const& position);
     // NOLINTEND
 };
 

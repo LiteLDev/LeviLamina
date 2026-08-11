@@ -36,6 +36,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
+
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
+
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
+
 
     // NOLINTEND
 };

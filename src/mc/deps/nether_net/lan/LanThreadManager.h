@@ -107,6 +107,36 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ILanEventHandler* handler);
+
+    MCNAPI bool $IsBroadcastDiscoveryEnabled(::NetherNet::NetworkID id);
+
+    MCNAPI void $EnableBroadcastDiscovery(::NetherNet::NetworkID id);
+
+    MCNAPI void $DisableBroadcastDiscovery(::NetherNet::NetworkID id);
+
+    MCNAPI void $AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ipStr, int port);
+
+    MCNAPI void $RemoveLanHost(::NetherNet::NetworkID remote);
+
+    MCNAPI void $SendLanBroadcastResponse(
+        ::webrtc::SocketAddress const& destination,
+        ::NetherNet::NetworkID         from,
+        ::std::vector<::std::byte>     data
+    );
+
+    MCNAPI void $SendSignalingMessageTo(
+        ::NetherNet::NetworkID     networkIdFrom,
+        ::NetherNet::NetworkID     networkIdTo,
+        ::std::vector<::std::byte> data
+    );
+
+    MCNAPI bool $IsNetworkIdOnLan(::NetherNet::NetworkID networkId);
+
+    MCNAPI void $Suspend();
+
+    MCNAPI void $Resume();
+
 
     // NOLINTEND
 };

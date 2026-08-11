@@ -57,6 +57,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onTestStarted(::gametest::BaseGameTestInstance& testInstance);
 
+    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
+
+    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
     // NOLINTEND
 };

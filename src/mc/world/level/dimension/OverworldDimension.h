@@ -52,6 +52,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
+
+    MCAPI ::std::unique_ptr<::WorldGenerator>
+    $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
+
+    MCAPI bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
+
+    MCAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
+
+    MCAPI void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
+
+    MCAPI short $getCloudHeight() const;
+
+    MCFOLD ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
+
+    MCAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
+
+    MCAPI ::std::unique_ptr<::ChunkSource>
+    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
+
 
     // NOLINTEND
 };

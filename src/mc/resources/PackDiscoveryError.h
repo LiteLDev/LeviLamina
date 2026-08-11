@@ -42,11 +42,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI ::std::unordered_map<int, ::std::string> const& $getLocErrorMessageMap() const;
 
     MCNAPI ::std::unordered_map<int, ::std::string> const& $getEventErrorMessageMap() const;
-#endif
 
 
     // NOLINTEND

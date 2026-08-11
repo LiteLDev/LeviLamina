@@ -25,6 +25,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI char const* $what() const;
+
 
     // NOLINTEND
 };

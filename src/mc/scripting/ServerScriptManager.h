@@ -201,6 +201,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::EventResult $onServerUpdateEnd(::ServerInstance& instance);
+
+    MCAPI ::EventResult $onServerThreadStarted(::ServerInstance& instance);
+
+    MCAPI ::EventResult $onEvent(::ServerInstanceRequestResourceReload const& reloadEvent);
+
+    MCAPI ::EventResult $onEvent(::LevelStartLeaveGameEvent const& levelStartLeaveGameEvent);
+
 
     // NOLINTEND
 };

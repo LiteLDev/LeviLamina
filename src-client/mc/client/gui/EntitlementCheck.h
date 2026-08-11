@@ -28,6 +28,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $isValid(::ContentIdentity const& identity) const;
     // NOLINTEND
 };

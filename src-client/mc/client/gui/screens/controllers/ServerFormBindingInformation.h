@@ -36,6 +36,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $createBindingData(::Json::Value const& formData);
     // NOLINTEND
 };

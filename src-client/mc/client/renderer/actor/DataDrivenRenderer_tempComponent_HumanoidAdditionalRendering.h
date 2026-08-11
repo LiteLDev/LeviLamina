@@ -165,6 +165,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $preRender(
+        ::BaseActorRenderContext& renderContext,
+        ::ActorRenderData&        actorRenderData,
+        ::RenderParams&           renderParams
+    );
 
+    MCNAPI void
+    $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams& renderParams);
+
+    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
     // NOLINTEND
 };

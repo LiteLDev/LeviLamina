@@ -265,6 +265,87 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
+
+    MCNAPI ::std::string_view $getServiceName() const;
+
+    MCNAPI void $requestBiomeConfigs(
+        ::std::string const& biomeIdentifier,
+        ::std::function<void(
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&
+        )> const&            callback
+    );
+
+    MCNAPI void $requestDefaultBiomeConfigs(
+        ::std::string const& biomeIdentifier,
+        ::std::function<void(
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&
+        )> const&            callback
+    );
+
+    MCNAPI void $requestData(
+        ::std::string const& collectionName,
+        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const& callback,
+        ::std::string const&                                                                                 identifier,
+        bool                                                                                                 useSnapshot
+    );
+
+    MCNAPI void $requestIdentifiersForCollection(
+        ::std::string const& collectionName,
+        ::std::function<void(
+            ::std::string const&,
+            ::std::vector<::HashedString> const&,
+            bool,
+            ::std::optional<::std::string>
+        )> const&            callback
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<::std::string const> $requestSchema(::std::string const& collectionName);
+
+    MCNAPI void $createNewSetting(
+        ::std::string const& collectionName,
+        ::std::string const& identifier,
+        ::std::string const& jsonData,
+        bool                 lockToBiome,
+        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::optional<::std::string>)> const&
+            callback
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<void> $changeBiomeMapping(
+        ::std::string const& biomeIdentifier,
+        ::std::string const& collectionName,
+        ::std::string const& identifier
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<void> $sendData(
+        ::std::string const& collectionName,
+        ::std::string const& jsonData,
+        ::std::string const& identifier,
+        bool                 lockToBiome
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<void> $sendDataToClipboard(::std::string const& jsonData);
+
+    MCNAPI ::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData> $getRegisteredCollections() const;
+
+    MCNAPI ::Scripting::Result_deprecated<void> $openSession(::std::string const& collectionName);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $closeSession(::std::string const& collectionName);
+
+    MCNAPI bool $isDeferredExperimentEnabled() const;
+
 
     // NOLINTEND
 };

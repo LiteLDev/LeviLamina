@@ -41,7 +41,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::cohtml::i18n::IBreakIterator* $CreateBreakIterator(::cohtml::i18n::BreakIteratorBoundary type);
 
+    MCAPI ::cohtml::i18n::TextDirection $ComputeBaseDirection(char const* utfBuffer, uint size) const;
+
+    MCAPI ::cohtml::i18n::TextDirection $ComputeTextDirection(
+        char const*                                                  utfBuffer,
+        uint                                                         size,
+        ::cohtml::IInternationalizationManager::TextDirectionResult* result
+    ) const;
     // NOLINTEND
 };
 

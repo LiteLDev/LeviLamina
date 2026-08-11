@@ -169,6 +169,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::LegacyStructureTemplate& $getOrCreateLegacy(::std::string const& structureName);
+
+    MCAPI ::StructureTemplate& $getOrCreate(::std::string const& structureName);
+
+    MCAPI ::StructureTemplate* $getStructure(::std::string const& structureName) const;
+
+    MCAPI bool $readStructure(::StructureTemplate& structureTemplate);
+
+    MCAPI ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata>
+    $getOrCreateJigsawStructureMetadata(::StructurePoolElement const& structurePoolElement);
+
 
     // NOLINTEND
 };

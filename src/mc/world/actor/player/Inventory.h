@@ -48,6 +48,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $init();
+
+    MCAPI bool $add(::ItemStack& item);
+
+    MCAPI bool $canAdd(::ItemStack const& item) const;
+
+    MCAPI int $getFirstEmptySlot() const;
+
+    MCFOLD int $getEmptySlotsCount() const;
+
+    MCAPI void $setContainerSize(int size);
+
+    MCFOLD void $setItem(int slot, ::ItemStack const& item);
+
+    MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+
 
     // NOLINTEND
 };

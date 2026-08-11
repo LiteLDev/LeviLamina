@@ -109,6 +109,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI void $playerTouch(::Player& player);
+
+    MCFOLD float $getShadowRadius() const;
+
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float damage, ::HurtParameters const&);
+
+    MCFOLD void $doWaterSplashEffect();
+
 
     // NOLINTEND
 };

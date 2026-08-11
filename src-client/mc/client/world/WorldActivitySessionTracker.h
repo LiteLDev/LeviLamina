@@ -47,7 +47,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::EventResult $onClientEnteredWorld(::ClientInstance& instance);
     // NOLINTEND
 };
 

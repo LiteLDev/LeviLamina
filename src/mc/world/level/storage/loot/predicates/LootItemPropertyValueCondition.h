@@ -36,6 +36,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $applies(::Random&, ::LootTableContext& context);
+
 
     // NOLINTEND
 };

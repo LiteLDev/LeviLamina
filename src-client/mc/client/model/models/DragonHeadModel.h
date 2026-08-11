@@ -54,6 +54,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $render(::ScreenContext& screenContext);
 
+    MCAPI void $render(::ScreenContext& screenContext, float scale);
     // NOLINTEND
 };

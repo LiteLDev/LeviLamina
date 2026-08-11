@@ -53,6 +53,10 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI bool $SendRtp(::webrtc::ArrayView<uchar const, 18446744073709546905>, ::webrtc::PacketOptions const&);
+
+        MCNAPI bool $SendRtcp(::webrtc::ArrayView<uchar const, 18446744073709546905>, ::webrtc::PacketOptions const&);
+
 
         // NOLINTEND
     };
@@ -81,6 +85,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI int $GetRtpSendTimeExtnId() const;
+
 
     // NOLINTEND
 };

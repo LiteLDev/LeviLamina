@@ -56,6 +56,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCFOLD void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
 
     // NOLINTEND
 };

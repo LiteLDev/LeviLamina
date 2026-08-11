@@ -32,6 +32,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::EventResult $onRealmsStory(::std::string const&);
+
 
     // NOLINTEND
 };

@@ -142,6 +142,52 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
+
+    MCNAPI ::std::string_view $getServiceName() const;
+
+    MCNAPI void $beginExportProject(
+        ::WeakEntityRef                                                     playerRef,
+        ::Editor::GameOptions const&                                        gameOptions,
+        ::Editor::WorldType const                                           editorWorldType,
+        ::std::function<void(::Editor::ExportResult const&, ::std::string)> callback
+    );
+
+    MCNAPI bool $canExportProject();
+
+    MCNAPI ::Editor::ProjectExportStatus $getExportStatus();
+
+    MCNAPI ::Bedrock::PubSub::Subscription $addExportBeginTask(
+        ::std::function<void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&)> fn
+    );
+
+    MCNAPI ::Bedrock::PubSub::Subscription $addExportCopyCompleteTask(
+        ::std::function<
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
+    );
+
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $addExportLevelDataMutationTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)> fn);
+
+    MCNAPI ::Bedrock::PubSub::Subscription $addExportPreFileRemovalTask(
+        ::std::function<
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
+    );
+
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $addExportLevelDataFinalizeTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)> fn);
+
+    MCNAPI ::Bedrock::PubSub::Subscription $addExportPrePackageTask(
+        ::std::function<
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
+    );
+
+    MCNAPI ::Bedrock::PubSub::Subscription $addExportCleanupTask(::std::function<void(::FileArchiver::ExportType)> fn);
+
+    MCNAPI ::std::shared_ptr<::FileArchiver::InterventionPublishers> $getInterventionPublisherTable();
+
 
     // NOLINTEND
 };

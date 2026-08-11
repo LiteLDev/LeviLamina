@@ -244,6 +244,58 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
+
+    MCNAPI ::std::string_view $getServiceName() const;
+
+    MCNAPI ::Scripting::Result_deprecated<void> $dispatchToSelf(::Editor::Network::INetworkPayload& payload);
+
+    MCNAPI void $onReceivePayload(::EditorNetworkPacket const& packet);
+
+    MCNAPI bool $isCollectingMetrics() const;
+
+    MCNAPI void $clearMetrics();
+
+    MCNAPI void $setCollectingMetrics(bool collecting);
+
+    MCNAPI ::std::vector<::std::pair<::std::string, ::Editor::Network::PayloadMetrics>> $collectMetricsReport() const;
+
+    MCNAPI ::Editor::Network::PayloadMetrics* $_registerPayload(
+        char const*                                                              payloadName,
+        ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()> constructorFunc
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $_send(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadMetrics* metrics);
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $_sendToManager(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadMetrics* metrics);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $_sendToClientId(
+        ::mce::UUID const&                  clientId,
+        ::Editor::Network::INetworkPayload& payload,
+        ::Editor::Network::PayloadMetrics*  metrics
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<void> $_sendToClientIds(
+        ::std::vector<::mce::UUID> const&   clientIds,
+        ::Editor::Network::INetworkPayload& payload,
+        ::Editor::Network::PayloadMetrics*  metrics
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $_broadcastToClients(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadMetrics* metrics);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $_broadcastToClientManagers(
+        ::Editor::Network::INetworkPayload& payload,
+        ::Editor::Network::PayloadMetrics*  metrics
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    $_listenFor(char const* payloadName, ::std::function<void(::Editor::Network::INetworkPayload const&)> fnSubscriber);
+
 
     // NOLINTEND
 };

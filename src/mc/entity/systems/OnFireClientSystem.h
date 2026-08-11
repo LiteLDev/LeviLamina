@@ -34,7 +34,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCAPI void $tick(::EntityRegistry&);
+#else // LL_PLAT_C
     MCAPI void $tick(::EntityRegistry& registry);
 #endif
 

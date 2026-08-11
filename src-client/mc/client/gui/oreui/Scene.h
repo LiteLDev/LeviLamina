@@ -265,7 +265,189 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $onCreation();
 
+    MCFOLD void $init(::ScreenSizeData const&);
+
+    MCAPI void $setSize(::ScreenSizeData const& screenSizeData);
+
+    MCFOLD void $onSetKeyboardHeight(float);
+
+    MCFOLD ::std::vector<::RectangleArea> $getInputAreas() const;
+
+    MCFOLD void $onInternetUpdate();
+
+    MCFOLD void $onFocusGained();
+
+    MCAPI void $onFocusLost();
+
+    MCFOLD void $terminate();
+
+    MCFOLD void $onLeave();
+
+    MCFOLD void $onGameEventNotification(::ui::GameEventNotification);
+
+    MCFOLD void $leaveScreen();
+
+    MCFOLD void $preFrameTick();
+
+    MCFOLD void $tick(int, int);
+
+    MCFOLD void $frameUpdate(::MinecraftUIFrameUpdateContext&);
+
+    MCFOLD void $applyInput(float);
+
+    MCFOLD void $preRenderUpdate(::ScreenContext&);
+
+    MCFOLD void $prepareFrame(::ScreenContext&);
+
+    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const&);
+
+    MCFOLD void $postRenderUpdate(::ScreenContext&);
+
+    MCFOLD void $handleInputModeChanged(::InputMode);
+
+    MCFOLD void $handleButtonPress(uint, ::FocusImpact);
+
+    MCFOLD void $handleButtonRelease(uint, ::FocusImpact);
+
+    MCFOLD void $handleRawInputEvent(int, ::RawInputType, ::ButtonState, bool);
+
+    MCFOLD bool $handlePointerLocation(::PointerLocationEventData const&, ::FocusImpact);
+
+    MCFOLD void $handlePointerPressed(bool);
+
+    MCFOLD void $handleDirection(::DirectionId, float, float, ::FocusImpact);
+
+    MCFOLD void $handleTextChar(::std::string const&, ::FocusImpact);
+
+    MCFOLD void $handleTouchPadTouch(::TouchPadTouchEventData const&, ::FocusImpact);
+
+    MCFOLD void $setTextboxText(::std::string const&, ::TextboxTextUpdateReason);
+
+    MCFOLD void $onKeyboardDismissed();
+
+    MCFOLD void $handleLicenseChanged();
+
+    MCFOLD bool $renderGameBehind() const;
+
+    MCAPI bool $absorbsInput() const;
+
+    MCFOLD bool $closeOnPlayerHurt() const;
+
+    MCFOLD bool $useCustomPocketToast() const;
+
+    MCAPI bool $isModal() const;
+
+    MCAPI bool $isEditorMode() const;
+
+    MCAPI bool $isShowingMenu() const;
+
+    MCAPI bool $shouldStealMouse() const;
+
+    MCAPI bool $screenIsNotFlushable() const;
+
+    MCAPI bool $alwaysAcceptsInput() const;
+
+    MCFOLD bool $screenDrawsLast() const;
+
+    MCFOLD bool $isPlayScreen() const;
+
+    MCFOLD bool $renderOnlyWhenTopMost() const;
+
+    MCFOLD bool $lowFreqRendering() const;
+
+    MCAPI bool $ignoreAsTop() const;
+
+    MCFOLD bool $shouldBeSkippedInAutomation() const;
+
+    MCAPI int $getWidth();
+
+    MCAPI int $getHeight();
+
+    MCFOLD void $reload();
+
+    MCAPI ::EyeRenderingModeBit $getEyeRenderingMode() const;
+
+    MCAPI ::ui::SceneType $getSceneType() const;
+
+    MCAPI ::std::string $getScreenName() const;
+
+    MCAPI bool $equalsScreenName(::std::string_view comparison) const;
+
+    MCAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
+
+    MCAPI ::std::string $getRawScreenName() const;
+
+    MCFOLD ::std::string $getRoute() const;
+
+    MCFOLD ::std::string $getScreenTelemetryName() const;
+
+    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
+
+    MCFOLD int $getScreenVersion() const;
+
+    MCFOLD void $processBufferedTextCharEvents(::std::vector<::TextCharEventData> const&);
+
+    MCFOLD bool $getShouldSendEvents();
+
+    MCFOLD void $setShouldSendEvents(bool);
+
+    MCFOLD bool $getWantsTextOnly();
+
+    MCFOLD void $setWantsTextOnly(bool);
+
+    MCFOLD void $onDelete(::CachedScenes&, ::TaskGroup&);
+
+    MCFOLD bool $isGamepadCursorEnabled() const;
+
+    MCFOLD bool $isGamepadDeflectionModeEnabled() const;
+
+    MCFOLD ::glm::vec2 const& $getGamepadCursorPosition() const;
+
+    MCFOLD void $cleanInputComponents();
+
+    MCAPI ::std::weak_ptr<::AbstractSceneProxy> $getProxy();
+
+    MCFOLD bool $canBePushed() const;
+
+    MCFOLD bool $canBePopped() const;
+
+    MCAPI bool $canBeTransitioned() const;
+
+    MCAPI void $onScreenExit(bool, bool, ::std::shared_ptr<::AbstractScene>);
+
+    MCAPI void $onScreenEntrance(bool, bool);
+
+    MCFOLD bool $isEntering() const;
+
+    MCAPI bool $isExiting() const;
+
+    MCFOLD void $schedulePop();
+
+    MCFOLD bool $isTerminating() const;
+
+    MCFOLD bool $loadScreenImmediately() const;
+
+    MCFOLD bool $forceUpdateActiveSceneStackWhenPushed() const;
+
+    MCFOLD ::RectangleArea $getAreaOfControlByName(::std::string const&) const;
+
+    MCAPI bool $hasFinishedLoading() const;
+
+    MCAPI void $sendScreenEvent(::std::string const& eventName, ::std::string const& eventData);
+
+    MCFOLD void $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&);
+
+    MCFOLD ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> $getDebugDataProvider() const;
+
+    MCAPI void $onLoadFailed(char const*, char const*);
+
+    MCAPI void $onViewReused();
+
+    MCAPI void $onReusedViewReleased();
+
+    MCAPI bool $isInputEnabled() const;
     // NOLINTEND
 };
 

@@ -61,6 +61,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCFOLD float $getShadowRadius() const;
+
+    MCFOLD bool $isDarkEnoughToSpawn() const;
+
+    MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
+
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
+
 
     // NOLINTEND
 };

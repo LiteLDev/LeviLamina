@@ -51,6 +51,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool
+    $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
+
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const;
+
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               item,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
+
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+
+    MCFOLD bool $isBodyArmor() const;
+
+    MCFOLD int $getArmorValue() const;
+
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getBreakSound() const;
+
 
     // NOLINTEND
 };

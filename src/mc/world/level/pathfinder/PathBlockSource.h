@@ -44,6 +44,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $isInWater() const;
+
+    MCNAPI bool $isInLava() const;
+
+    MCNAPI bool $isWaterBlock(::BlockPos const& blockPos) const;
+
+    MCNAPI bool $isLavaBlock(::BlockPos const& blockPos) const;
+
+    MCNAPI bool $isSolidBlock(::BlockPos const& blockPos) const;
+
 
     // NOLINTEND
 };

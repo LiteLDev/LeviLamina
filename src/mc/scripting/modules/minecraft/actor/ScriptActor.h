@@ -640,10 +640,8 @@ public:
 
     MCAPI void $setUnloaded(::Actor& actor);
 
-#ifdef LL_PLAT_S
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     $lookAt(::Actor& self, ::Vec3 const& targetLocation);
-#endif
 
     MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $getNameTag(::Actor const& self) const;
@@ -671,14 +669,12 @@ public:
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $setNameplateDepthTested(::Actor& self, bool isNameplateDepthTested);
 
-#ifdef LL_PLAT_S
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     $remove(::Actor& self);
 
     MCAPI bool $isValid() const;
 
     MCAPI ::ScoreboardId const& $_getScoreboardId(::Scoreboard const& scoreboard) const;
-#endif
 
 
     // NOLINTEND

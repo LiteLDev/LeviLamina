@@ -69,6 +69,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $refresh();
 
+    MCAPI float $normalizeAxis(float raw, float deadzone);
+
+    MCAPI void $normalizeAxes(float& ioX, float& ioY, float deadzone);
     // NOLINTEND
 };

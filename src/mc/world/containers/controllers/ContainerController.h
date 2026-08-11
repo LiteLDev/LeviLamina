@@ -148,29 +148,64 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCAPI ::ItemInstance const& $getRecipeItem(int) const;
+#else // LL_PLAT_C
     MCFOLD ::ItemInstance const& $getRecipeItem(int slot) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $canRemove(int, int) const;
+#else // LL_PLAT_C
     MCAPI bool $canRemove(int slot, int removeCount) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $isItemAllowed(::ItemStackBase const&) const;
+#else // LL_PLAT_C
     MCFOLD bool $isItemAllowed(::ItemStackBase const& item) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const&) const;
+#else // LL_PLAT_C
     MCAPI bool $isItemFiltered(::Recipes const& recipes, ::ItemStackBase const& item) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI int $getBackgroundStyle(int, bool) const;
+#else // LL_PLAT_C
     MCFOLD int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::ItemSetType
+    $_canSet(::ContainerScreenContext const&, int, ::ItemStackBase const&, ::ItemTransferAmount) const;
+#else // LL_PLAT_C
     MCAPI ::ItemSetType $_canSet(
         ::ContainerScreenContext const& context,
         int                             modelSlot,
         ::ItemStackBase const&          item,
         ::ItemTransferAmount            transferAmount
     ) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI int $_getAvailableSetCount(::ContainerScreenContext const&, int, ::ItemStackBase const&) const;
+#else // LL_PLAT_C
     MCAPI int
     $_getAvailableSetCount(::ContainerScreenContext const& context, int modelSlot, ::ItemStackBase const& item) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $_canRemove(int, int) const;
+#else // LL_PLAT_C
     MCAPI bool $_canRemove(int modelSlot, int removeCount) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void $_onItemChanged(int);
+#else // LL_PLAT_C
     MCFOLD void $_onItemChanged(int modelSlot);
 #endif
 

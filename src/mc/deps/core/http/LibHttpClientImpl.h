@@ -72,6 +72,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $initialize();
+
+    MCNAPI void $shutdown();
+
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> $send(::Bedrock::Http::Request&& request);
+
 
     // NOLINTEND
 };

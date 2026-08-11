@@ -58,6 +58,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback);
+
+    MCAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(
+        ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)> callback
+    );
+
+    MCAPI void $broadcastBossEvent(::BossEventUpdateType type);
+
+    MCAPI void
+    $broadcastBossEvent(::BossEventUpdateType type, ::ActorUniqueID const& id, ::BossEventPacket const& packet);
+
+    MCAPI bool $areBossEventSubscribersReady() const;
+
 
     // NOLINTEND
 };

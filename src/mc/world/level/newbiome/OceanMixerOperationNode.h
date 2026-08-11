@@ -78,6 +78,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $_fillArea(
+        ::OperationNodeDetails::WorkingData<::Biome const*, ::Biome const*>& operationNodeData,
+        ::Pos2d const&                                                       origin,
+        ::Pos2d const&                                                       size,
+        int                                                                  pw,
+        ::OperationGraphResult<::BiomeTemperatureCategory>                   oceanData
+    ) const;
+
+    MCAPI ::std::tuple<::Pos2d, ::Pos2d> $_getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const;
+
 
     // NOLINTEND
 };

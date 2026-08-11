@@ -119,6 +119,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD float $getShadowRadius() const;
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI ::InteractionResult
+    $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+
+    MCAPI void $kill();
+
+    MCAPI void $die(::ActorDamageSource const& source);
+
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
+
+    MCAPI void $normalTick();
+
+    MCAPI void $pushActors();
+
+    MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+
 
     // NOLINTEND
 };

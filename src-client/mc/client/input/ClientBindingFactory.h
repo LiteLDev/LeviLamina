@@ -133,6 +133,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::function<bool()> $getBooleanBinding(uint name) const;
 
+    MCAPI ::std::function<float()> $getFloatBinding(uint name) const;
+
+    MCAPI ::std::function<::std::string()> $getStringBinding(uint name) const;
+
+    MCAPI ::std::function<::glm::vec2()> $getPointBinding(uint name) const;
+
+    MCAPI ::std::function<::RectangleArea()> $getAreaBinding(uint name) const;
+
+    MCAPI ::std::function<void(::RectangleArea)> $getDynamicAreaBinding(uint name) const;
+
+    MCAPI ::std::function<void(float)> $getFloatSetter(uint name) const;
+
+    MCAPI void $setCustomAreaBinding(::std::string const& name, ::RectangleArea area);
+
+    MCAPI void $removeCustomAreaBinding(::std::string const& name);
+
+    MCAPI ::std::vector<uint> $getCustomAreaBindingNames() const;
     // NOLINTEND
 };

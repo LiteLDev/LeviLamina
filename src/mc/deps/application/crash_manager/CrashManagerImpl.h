@@ -143,6 +143,36 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $initialize(::Bedrock::CrashManagerConfig const& config);
+
+    MCNAPI void $setCrashProcessorForFileType(
+        ::std::string_view                               fileExtension,
+        ::std::shared_ptr<::Bedrock::CrashFileProcessor> processor
+    );
+
+    MCNAPI void $setCrashTelemetryProcessor(::gsl::not_null<::Bedrock::CrashTelemetryProcessor*> processor);
+
+    MCNAPI void $processCrashes(
+        ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> workerPool,
+        ::Scheduler&                                            scheduler,
+        bool                                                    isNetworkAvailable
+    );
+
+    MCNAPI void $notifyCrashed();
+
+    MCNAPI void $notifySystemError(uint errorCode, ::std::string const& errorMessage);
+
+    MCNAPI void
+    $recordCrashedSession(::std::string_view sessionId, ::std::string_view serializedSession, int64 crashTime);
+
+    MCNAPI void $stopProcessingCrashes();
+
+    MCNAPI bool $isCrashProcessingActive() const;
+
+    MCNAPI ::std::string const& $getCrashDataRoot() const;
+
+    MCNAPI ::std::string const& $getCrashedSessionFileSuffix() const;
+
 
     // NOLINTEND
 };

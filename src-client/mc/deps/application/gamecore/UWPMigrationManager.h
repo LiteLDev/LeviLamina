@@ -124,7 +124,9 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI ::Core::Result $migrate(bool forceCritical) const;
 
+        MCNAPI void $cleanup() const;
         // NOLINTEND
     };
 
@@ -140,7 +142,9 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI ::Core::Result $migrate(bool forceCritical) const;
 
+        MCNAPI void $cleanup() const;
         // NOLINTEND
     };
 
@@ -156,7 +160,9 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI ::Core::Result $migrate(bool) const;
 
+        MCNAPI void $cleanup() const;
         // NOLINTEND
     };
 

@@ -52,6 +52,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB);
+
+    MCAPI bool
+    $canBeReplaced(::BlockSource& region, int const x, int const y, int const z, ::BoundingBox const& chunkBB);
+
 
     // NOLINTEND
 };

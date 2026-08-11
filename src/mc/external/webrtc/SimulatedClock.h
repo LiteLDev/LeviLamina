@@ -39,6 +39,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::Timestamp $CurrentTime();
+
+    MCNAPI ::webrtc::NtpTime $ConvertTimestampToNtpTime(::webrtc::Timestamp);
+
 
     // NOLINTEND
 };

@@ -35,7 +35,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+#else // LL_PLAT_C
+    MCAPI void $deserializeData(::DeserializeDataParams nonConstDeserializeDataParams);
+#endif
 
 
     // NOLINTEND

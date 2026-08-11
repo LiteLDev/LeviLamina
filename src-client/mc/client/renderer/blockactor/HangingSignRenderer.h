@@ -54,6 +54,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
 
+    MCAPI float $_getScaleFactor() const;
+
+    MCAPI float $_yTextOffset() const;
+
+    MCAPI float $_zTextOffset() const;
+
+    MCFOLD int $_getSignWidth() const;
     // NOLINTEND
 };

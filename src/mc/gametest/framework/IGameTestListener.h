@@ -41,7 +41,11 @@ public:
 
     MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
 
+#ifdef LL_PLAT_S
     MCNAPI void $onTestStarted(::gametest::BaseGameTestInstance& testInstance);
+#else // LL_PLAT_C
+    MCNAPI void $onTestStarted(::gametest::BaseGameTestInstance&);
+#endif
 
     MCNAPI void $onTestRetryStarted(::gametest::BaseGameTestInstance&);
 

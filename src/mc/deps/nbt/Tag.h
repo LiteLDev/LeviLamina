@@ -68,6 +68,8 @@ public:
     // NOLINTBEGIN
     MCFOLD void $deleteChildren();
 
+    MCAPI bool $equals(::Tag const& rhs) const;
+
     MCAPI void $print(::PrintStream& out) const;
 
     MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;

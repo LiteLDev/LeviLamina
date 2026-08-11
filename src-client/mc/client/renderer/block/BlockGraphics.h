@@ -177,6 +177,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::BlockRenderLayer $getRenderLayer(::BlockSource& region, ::BlockPos const& pos) const;
 
+    MCFOLD int $getColor(int auxData) const;
+
+    MCFOLD int $getColor(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCFOLD bool $isSeasonTinted(::BlockSource& region, ::BlockPos const& p) const;
+
+    MCAPI void $onGraphicsModeChanged(bool fancy, bool fancyBubbles);
+
+    MCFOLD int $getExtraRenderLayers();
+
+    MCAPI ::TextureUVCoordinateSet const& $getCarriedTexture(uint64 textureSlot, int blockVariant) const;
+
+    MCAPI void $setVisualShape(::AABB const& shape);
+
+    MCAPI void $setVisualShape(::Vec3 const& min, ::Vec3 const& max);
     // NOLINTEND
 };

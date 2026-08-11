@@ -22,6 +22,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $evaluate(::FilterContext const& context) const;
+
+    MCNAPI ::std::string_view $getName() const;
+
 
     // NOLINTEND
 };

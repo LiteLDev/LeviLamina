@@ -35,6 +35,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $sendRequest(::SentryEnvelope sentryEvent);
+
 
     // NOLINTEND
 };

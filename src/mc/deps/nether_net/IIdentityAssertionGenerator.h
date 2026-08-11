@@ -20,6 +20,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::string_view $idpProtocol() const;
+
 
     // NOLINTEND
 };

@@ -50,7 +50,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::ParticleSystem::EffectComponentBase::EffectComponentType $getParticleComponentType() const;
 
+    MCFOLD bool
+    $emitterResetting(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
+
+    MCFOLD bool
+    $hasEmitterExpired(::ParticleSystem::ComponentAccessParticleEmitter const& emitter, ::RenderParams& renderParams);
+
+    MCFOLD bool
+    $isEmitterActive(::ParticleSystem::ComponentAccessParticleEmitter const& emitter, ::RenderParams& renderParams);
+
+    MCFOLD void $handleCreation(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
+
+    MCFOLD void $handleExpiration(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
+
+    MCFOLD void $handleTimelineEvents(
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::std::chrono::nanoseconds const                  lastAge,
+        ::std::chrono::nanoseconds                        age
+    );
+
+    MCFOLD void $handleTravelDistanceEvents(
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        float                                             lastDistance,
+        float                                             distance
+    );
     // NOLINTEND
 };
 

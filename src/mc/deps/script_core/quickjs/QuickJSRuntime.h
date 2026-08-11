@@ -198,6 +198,86 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::IRuntimeMetadata* $getMetadata() const;
+
+    MCNAPI void $moveToThread();
+
+    MCNAPI ::std::optional<::Scripting::ScriptContext> $createContext(
+        ::Scripting::ModuleBindingBundle&& bindings,
+        ::Scripting::IDependencyLoader*    loader,
+        ::Scripting::IPrinter*             printer,
+        ::Scripting::ContextConfig const&  config
+    );
+
+    MCNAPI void $destroyContext(::Scripting::ContextId contextId);
+
+    MCNAPI ::Scripting::ResultAny $runString(
+        ::Scripting::ContextId                  contextId,
+        ::std::string const&                    scriptName,
+        ::std::string const&                    scriptData,
+        ::std::optional<::Scripting::Privilege> privilege
+    );
+
+    MCNAPI ::Scripting::ResultAny $call(
+        ::Scripting::ContextId                                   contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::ClosureType> closureHandle,
+        ::entt::meta_any*                                        args,
+        uint                                                     argc,
+        ::entt::meta_type const&                                 expectedReturnType,
+        ::std::optional<::Scripting::Privilege>                  privilege
+    );
+
+    MCNAPI ::Scripting::ResultAny $resolve(
+        ::Scripting::ContextId                                   contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise,
+        ::entt::meta_any&                                        arg
+    );
+
+    MCNAPI ::Scripting::ResultAny $reject(
+        ::Scripting::ContextId                                   contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise,
+        ::entt::meta_any&                                        arg
+    );
+
+    MCNAPI ::Scripting::FutureStatus $getFutureStatus(
+        ::Scripting::ContextId                                  contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle
+    ) const;
+
+    MCNAPI ::Scripting::ResultAny $getFutureResult(
+        ::Scripting::ContextId                                  contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle,
+        ::entt::meta_type const&                                expectedResultType
+    ) const;
+
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
+    $executeCoroutines(::std::optional<::Scripting::Privilege> privilege);
+
+    MCNAPI bool $hasPendingJobs();
+
+    MCNAPI ::Scripting::IDebuggerController*
+    $enableDebugger(::Scripting::IDebuggerTransport& transport, ::Scripting::IBreakpointValidator& validator);
+
+    MCNAPI void $disableDebugger();
+
+    MCNAPI void $startProfiler();
+
+    MCNAPI void $stopProfiler(
+        ::std::function<void(::std::string_view)>                      captureCb,
+        ::std::optional<::std::reference_wrapper<::std::string const>> savePathOpt
+    );
+
+    MCNAPI ::Scripting::RuntimeStats $computeRuntimeStats() const;
+
+    MCNAPI ::std::optional<::Scripting::TypeNameInfo>
+    $getNameForType(::Scripting::ContextId contextId, ::entt::meta_type const& type, bool allowUnknownTypes) const;
+
+    MCNAPI ::Scripting::IWatchdog* $enableWatchdog(::Scripting::WatchdogSettings settings);
+
+    MCNAPI void $disableWatchdog();
+
+    MCNAPI ::Scripting::IWatchdog* $getWatchdog() const;
+
 
     // NOLINTEND
 };

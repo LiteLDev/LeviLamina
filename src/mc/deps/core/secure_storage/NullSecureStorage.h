@@ -23,6 +23,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $add(::std::string const&, ::std::string const&);
+
+    MCNAPI bool $addOrUpdate(::std::string const&, ::std::string const&);
+
+    MCNAPI bool $remove(::std::string const&);
+
+    MCNAPI bool $get(::std::string const&, ::std::string&);
+
 
     // NOLINTEND
 };

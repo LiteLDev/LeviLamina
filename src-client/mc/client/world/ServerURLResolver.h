@@ -28,7 +28,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $fromStringExplicitPort(::PingedCompatibleServer& server, char const* str, ushort port, int ipVersion);
 
+    MCAPI void $fromString(::RakNet::RakNetGUID& guid, char const* source);
     // NOLINTEND
 };
 

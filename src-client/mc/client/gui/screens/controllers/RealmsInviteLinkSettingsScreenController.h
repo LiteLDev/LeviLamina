@@ -79,6 +79,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCFOLD bool $_doesScreenHaveExitBehavior() const;
     // NOLINTEND
 };

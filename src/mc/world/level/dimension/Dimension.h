@@ -405,7 +405,11 @@ public:
 
     MCAPI short $getCloudHeight() const;
 
+#ifdef LL_PLAT_S
     MCAPI ::BiomeIdType $getDefaultBiomeId() const;
+#else // LL_PLAT_C
+    MCFOLD ::BiomeIdType $getDefaultBiomeId() const;
+#endif
 
     MCFOLD bool $mayRespawnViaBed() const;
 

@@ -430,7 +430,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $aiStep();
@@ -572,8 +571,11 @@ public:
 
     MCAPI ::std::optional<::PlayerPartyInfo> $getPartyInfo_UNTRUSTED() const;
 
+    MCAPI int $_getSpawnChunkLimit() const;
+
+    MCAPI void $_updateChunkPublisherView(::Vec3 const& position, float minDistance);
+
     MCAPI void $_serverInitItemStackIds();
-#endif
 
 
     // NOLINTEND

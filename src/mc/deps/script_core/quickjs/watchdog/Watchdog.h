@@ -80,6 +80,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler);
+
+    MCNAPI void $setWatchdogInterruptPollCounter(uint counter);
+
+    MCNAPI void $beginTiming(::Scripting::ContextId contextId);
+
+    MCNAPI void $endTiming(::Scripting::ContextId contextId);
+
+    MCNAPI void $pushPhase(::std::string const& namedPhase, ::std::chrono::microseconds frameBaseLine);
+
+    MCNAPI void $popPhase();
+
+    MCNAPI void $endFrame();
+
+    MCNAPI void $resetTimings();
+
 
     // NOLINTEND
 };

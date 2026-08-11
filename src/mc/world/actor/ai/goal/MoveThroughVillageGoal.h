@@ -43,6 +43,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $canUse();
+
+    MCFOLD bool $canContinueToUse();
+
+    MCAPI void $start();
+
+    MCFOLD void $stop();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
 
     // NOLINTEND
 };

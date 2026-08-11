@@ -56,7 +56,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-
+        MCAPI void $onUserRemoved(::std::shared_ptr<::Social::User> const& user);
         // NOLINTEND
     };
 
@@ -187,6 +187,33 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $handleLicenseChanged();
 
+    MCAPI ::ui::SceneType $getSceneType() const;
+
+    MCAPI void $onCreation();
+
+    MCAPI void $queueTitleNarration();
+
+    MCAPI void $onOpen();
+
+    MCAPI void $onEntered();
+
+    MCAPI void $onInit();
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsAuthComplete> const& state);
+
+    MCAPI ::std::string $_getButtonYDescription();
+
+    MCAPI ::std::string $_getButtonXDescription();
+
+    MCAPI ::ui::ViewRequest
+    $promptConnect(bool signInOnSuccess, ::std::function<void(::Social::UserPlatformConnectionResult)> signInCallback);
     // NOLINTEND
 };

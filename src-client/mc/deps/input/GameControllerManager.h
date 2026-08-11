@@ -81,9 +81,15 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::weak_ptr<::IGameController> $getGameController(int id);
 
+    MCAPI ::std::vector<::std::weak_ptr<::IGameController>> $getConnectedGameControllers();
+
     MCAPI ::std::vector<::std::weak_ptr<::IGameController>> $getGameControllersInUse();
 
     MCAPI bool $hasAdequateConnectedGameController() const;
+
+    MCAPI bool $hasAdequateConnectedGameControllers(uint64 const playerCount) const;
+
+    MCFOLD uint64 $getMaxGameControllerButtons() const;
 
     MCAPI void $registerConsumer(void const* token);
 
@@ -94,6 +100,8 @@ public:
     MCFOLD ::ControllerRefreshState $getControllerRefreshState() const;
 
     MCAPI ::GameControllerErrorType $getPlatformSpecificControllerError() const;
+
+    MCAPI void $setPlatformSpecificControllerErrorRetrievalFunc(::std::function<::GameControllerErrorType()>&& lambda);
 
     MCAPI void $resetClientControllerCount();
 

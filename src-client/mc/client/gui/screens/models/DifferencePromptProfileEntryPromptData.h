@@ -35,6 +35,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $allowedToOpenCheck() const;
 
+    MCAPI void $callOnOpen();
+
+    MCAPI void $callOnClose();
     // NOLINTEND
 };

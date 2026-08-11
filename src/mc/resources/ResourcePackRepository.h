@@ -80,6 +80,13 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI ::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData>
+        $buildTaskData(::RepositoryLoading::BuildTaskDataOptions const& ops);
+
+        MCNAPI void $applyTaskResults(::RepositoryLoading::AllRefreshTaskData&& taskData);
+
+        MCNAPI ::std::shared_ptr<::RepositoryPacks const> $getPacks() const;
+
 
         // NOLINTEND
     };
@@ -291,14 +298,45 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    MCAPI void $getResourcePacksByPackId(
+        ::std::vector<::PackInstanceId> const& packInstanceIds,
+        ::std::vector<::PackInstance>&         result
+    ) const;
+
+    MCAPI ::std::shared_ptr<::ResourcePack> $getResourcePackForPackId(::PackIdVersion const& idAndVersion) const;
+
+    MCAPI ::ResourcePack* $getResourcePackOfDifferentVersionForPackId(::PackIdVersion const& idAndVersion) const;
+
+    MCAPI ::ResourcePack*
+    $getResourcePackForPackIdInPath(::PackIdVersion const& idAndVersion, ::Core::Path const& fullPath) const;
+
+    MCAPI ::ResourcePack* $getResourcePackByUUID(::mce::UUID const& id) const;
+
+    MCAPI ::ResourcePack* $getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const;
+
+    MCAPI ::std::shared_ptr<::ResourcePack>
+    $getResourcePackSatisfiesPackId(::PackIdVersion const& idAndVersion, bool requireOwnership) const;
+
+    MCAPI ::ResourcePack* $getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const;
+
+    MCAPI ::Bedrock::Threading::Async<::std::shared_ptr<::ResourcePack>>
+    $getResourcePackInPath(::Core::Path const& path) const;
+
+    MCAPI bool $isResourcePackLoaded(::PackIdVersion const& identity, ::PackOrigin const& location);
+
     MCFOLD ::PackSourceReport const* $getPackLoadingReport() const;
 
     MCAPI ::std::shared_ptr<::ResourcePack> $getEditorPack() const;
 
     MCAPI ::std::shared_ptr<::ResourcePack> $getVanillaPack() const;
 
+    MCAPI bool $setServicePacks(::std::vector<::PackIdVersion> servicePackIds);
+
+    MCAPI void $addServicePacksToStack(::ResourcePackStack& stack) const;
+
     MCAPI void $addSystemPacksToStack(::ResourcePackStack& stack) const;
+
+    MCAPI void $addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys);
 
     MCAPI void $addWorldResourcePacks(::Core::Path const& levelPath);
 
@@ -307,8 +345,79 @@ public:
         ::ContentIdentity const& premiumWorldIdentity
     );
 
+    MCAPI void $addTempWorldTemplateResourcePacks(::mce::UUID const& worldTemplateUUID);
+
+    MCAPI void $addWorldPackSource(::Core::Path const& levelPath);
+
+    MCAPI void $addPremiumWorldTemplatePackSource(
+        ::Core::Path const&      worldTemplatePath,
+        ::ContentIdentity const& premiumWorldIdentity
+    );
+
+    MCAPI void $removePacksLoadedFromCache();
+
+    MCAPI void $removePacksLoadedFromWorld();
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getResourcePacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getBehaviorPacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getSkinPacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getCustomSkinDirectoryPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getDevelopmentResourcePacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getDevelopmentBehaviorPacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getDevelopmentSkinPacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getTreatmentPacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getSystemBehaviorPacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getSystemResourcePacksPath() const;
+
+    MCAPI void $refreshPacks();
+
+    MCAPI ::Bedrock::Threading::Async<void> $refreshPacksAsync();
+
+    MCAPI void $requestReloadUserPacks();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> $getKeyProvider() const;
+
+    MCFOLD ::PackManifestFactory& $getPackManifestFactory();
+
     MCFOLD ::PackSettingsFactory& $getPackSettingsFactory() const;
-#endif
+
+    MCFOLD ::PackSourceFactory& $getPackSourceFactory();
+
+    MCAPI ::std::vector<::ResourcePack*> $getPacksByResourceLocation(::PackOrigin type) const;
+
+    MCAPI ::std::vector<::ResourcePack*> $getPacksByType(::PackType type) const;
+
+    MCAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::ResourcePack>>>
+    $getPacksByCategory(::PackCategory category) const;
+
+    MCAPI void $forEachPack(::std::function<void(::ResourcePack const&)> const& callback) const;
+
+    MCAPI ::std::vector<::ResourceLocation> const& $getInvalidPacks(::PackType type) const;
+
+    MCAPI ::std::vector<::ResourceLocation> $getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const;
+
+    MCAPI void $deletePack(::ResourceLocation const& packLocation);
+
+    MCAPI void $deletePackFiles(::ResourceLocation const& packLocation);
+
+    MCAPI void $postDeletePack(::ResourceLocation const& packLocation);
+
+    MCAPI void $untrackInvalidPack(::ResourceLocation const& packLocation);
+
+    MCAPI bool $isInitialized() const;
+
+    MCAPI ::ResourcePackStack $createStack(::std::vector<::PackInstanceId> const& identities);
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> $getContentSourceRepository();
 
 
     // NOLINTEND

@@ -148,6 +148,69 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::mce::UUID const& $getId() const;
+
+    MCFOLD ::std::string const& $getName() const;
+
+    MCFOLD ::ActorUniqueID const& $getEntityId() const;
+
+    MCAPI ::Bounds const $getBoundsCopy() const;
+
+    MCAPI bool $isEntityOwned() const;
+
+#ifdef LL_PLAT_S
+    MCAPI bool $isAlwaysActive() const;
+#else // LL_PLAT_C
+    MCFOLD bool $isAlwaysActive() const;
+#endif
+
+    MCAPI float $getMaxDistToPlayers() const;
+
+    MCAPI ::ITickingAreaView const& $getView() const;
+
+    MCAPI ::ITickingAreaView& $getView();
+
+    MCAPI ::WeakRef<::BlockSource> const $getBlockSource() const;
+
+    MCAPI ::WeakRef<::BlockSource> $getBlockSource();
+
+    MCAPI ::TickingAreaDescription $getDescription() const;
+
+    MCAPI ::TickingAreaLoadMode $getLoadMode() const;
+
+    MCAPI void $setLoadMode(::TickingAreaLoadMode loadMode, ::LevelStorage& levelStorage);
+
+    MCAPI bool $isPreloadDone() const;
+
+    MCAPI void $tick(::Tick const& currentTick, bool randomize);
+
+    MCAPI void $tickSeasons(::Random& random);
+
+    MCAPI void $updatePosition(::Vec3 const& pos);
+
+    MCAPI void $updateAndCenter(::LevelStorage& levelStorage, ::Tick currentLevelTick);
+
+    MCAPI ::Actor* $findOwner(uchar& pendingChunks);
+
+    MCAPI bool $entityHasBeenFound() const;
+
+    MCAPI void $setEntityFound();
+
+    MCAPI bool $isRemoved();
+
+    MCAPI void $remove(::LevelStorage& levelStorage);
+
+    MCAPI void
+    $onComponentChanged(uint radius, float maxDistToPlayers, bool alwaysActive, ::LevelStorage& levelStorage);
+
+    MCFOLD bool $isScoped() const;
+
+    MCFOLD ::std::optional<uint64> const& $getScope() const;
+
+    MCFOLD bool $isDoneLoadingScoped() const;
+
+    MCAPI bool $isStandalone() const;
+
 
     // NOLINTEND
 };

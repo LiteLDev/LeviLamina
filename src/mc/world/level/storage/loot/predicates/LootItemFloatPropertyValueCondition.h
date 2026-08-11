@@ -43,6 +43,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::LootItemCondition::ConditionType $getConditionType() const;
+
+    MCNAPI bool $_hasPropertyValue(::PropertyComponent const& component) const;
+
 
     // NOLINTEND
 };

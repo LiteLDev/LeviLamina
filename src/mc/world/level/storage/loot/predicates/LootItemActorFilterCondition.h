@@ -35,6 +35,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $applies(::Random&, ::LootTableContext&);
+
+    MCNAPI ::LootItemCondition::ConditionType $getConditionType() const;
+
 
     // NOLINTEND
 };

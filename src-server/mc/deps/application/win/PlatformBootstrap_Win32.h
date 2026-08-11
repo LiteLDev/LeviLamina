@@ -74,7 +74,37 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $initialize();
 
+    MCNAPI ::std::string_view $getAssetRoot();
+
+    MCNAPI ::std::string_view $getSaveDataRoot();
+
+    MCNAPI ::Bedrock::PlatformBootstrap::LoadResult
+    $rawLoadAssetFile(char* buffer, uint64 bufferSize, char const* path, char* errorBuffer, uint64 errorBufferSize);
+
+    MCNAPI ::Bedrock::PlatformBootstrap::LoadResult
+    $rawLoadDataFile(char* buffer, uint64 bufferSize, char const* path, char* errorBuffer, uint64 errorBufferSize);
+
+    MCNAPI ::Bedrock::PlatformBootstrap::SaveResult $rawSaveDataFile(
+        char const* buffer,
+        uint64      bufferSize,
+        char const* path,
+        bool,
+        char*  errorBuffer,
+        uint64 errorBufferSize
+    );
+
+    MCNAPI ::Bedrock::PlatformBootstrap::LoadResult $rawLoadFromCustomRoot(
+        char*       buffer,
+        uint64      bufferSize,
+        char const* fullPath,
+        char*       errorBuffer,
+        uint64      errorBufferSize
+    );
+
+    MCNAPI ::Bedrock::PlatformBootstrap::CreateDirectoryResult
+    $rawCreateDirectory(char const* path, char* errorBuffer, uint64 errorBufferSize);
     // NOLINTEND
 };
 

@@ -52,6 +52,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $init();
+
+    MCNAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
+    $getDataStore(::Bedrock::IApplicationDataStores::DataStores which);
+
+    MCNAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
+    $getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const;
+
 
     // NOLINTEND
 };

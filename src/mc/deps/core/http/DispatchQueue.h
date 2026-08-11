@@ -47,6 +47,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $_cancel();
+
 
         // NOLINTEND
     };
@@ -87,6 +89,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> $send(::Bedrock::Http::Request&& request);
+
 
     // NOLINTEND
 };

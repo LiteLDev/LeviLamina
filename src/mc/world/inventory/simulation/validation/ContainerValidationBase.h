@@ -55,7 +55,6 @@ public:
         int const                       slot
     ) const;
 
-#ifdef LL_PLAT_S
     MCFOLD bool $isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
         int const                       slot,
@@ -63,7 +62,6 @@ public:
         int const                       amount,
         bool
     ) const;
-#endif
 
     MCAPI int $getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
 

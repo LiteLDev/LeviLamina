@@ -50,7 +50,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $flush();
 
+    MCFOLD bool $canModify() const;
     // NOLINTEND
 };
 

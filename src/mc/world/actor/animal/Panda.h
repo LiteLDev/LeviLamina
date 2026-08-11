@@ -65,6 +65,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $setTransitioningSitting(bool value);
+
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
 
     // NOLINTEND
 };

@@ -221,6 +221,55 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
+
+    MCAPI bool $load(
+        ::ResourceLocation const&        resourceLocation,
+        ::std::string&                   resourceStream,
+        ::gsl::span<::std::string const> extensionList
+    ) const;
+
+    MCAPI bool $load(
+        ::ResourceLocationPair const&    resourceLocationPair,
+        ::std::string&                   resourceStream,
+        ::gsl::span<::std::string const> extensionList
+    ) const;
+
+    MCAPI bool $loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
+
+    MCAPI ::std::vector<::LoadedResourceData> $loadAllVersionsOf(::ResourceLocation const& resourceLocation) const;
+
+    MCAPI bool $isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
+
+    MCAPI bool $isInStreamableLocation(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;
+
+    MCAPI ::Core::PathBuffer<::std::string>
+    $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const;
+
+    MCAPI ::Core::PathBuffer<::std::string>
+    $getPathContainingResource(::ResourceLocation const& resourceLocation) const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const;
+
+    MCAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const;
+
+    MCAPI bool $hasCapability(::std::string_view requiredCapability) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::mce::Image $loadTexture(::ResourceLocation const& resourceLocation) const;
+#endif
+
 
     // NOLINTEND
 };

@@ -244,6 +244,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onCreation();
 
+    MCAPI void $onOpen();
+
+    MCAPI void $onTerminate();
+
+    MCAPI void $onLevelDeleted(::std::string const& levelId);
+
+    MCAPI void $onStorageChanged();
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI bool $hasAvailableSpaceForLevel(::std::shared_ptr<::Core::FileStorageArea> sptStorageArea);
+
+    MCAPI void $saveWorld();
+
+    MCFOLD ::LevelSummary& $getLevelSummary();
+
+    MCAPI ::LevelData& $getLevelData();
+
+    MCAPI void $_registerControllerCallbacks();
+
+    MCAPI void $_displayLockedWorldPopup();
     // NOLINTEND
 };

@@ -233,6 +233,65 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $shutdown();
+
+    MCAPI bool $isShutdownDone();
+
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+
+    MCAPI bool $isChunkKnown(::ChunkPos const& chunkPos);
+
+    MCAPI bool $isChunkSaved(::ChunkPos const& chunkPos);
+
+    MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhood);
+
+    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
+
+    MCAPI void $checkAndReplaceChunk(::ChunkViewSource& neighborhood, ::LevelChunk& lc);
+
+    MCAPI bool $verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk& lc);
+
+    MCAPI void $neighborAwareChunkUpgrade(::LevelChunk& levelChunk, ::ChunkViewSource& neighborhood);
+
+    MCAPI void $deleteAllChunkData(
+        ::std::unordered_set<::ChunkPos>           excludedChunks,
+        ::std::function<void()>                    completionCallback,
+        ::std::shared_ptr<::ChunkDeletionMetadata> metadata
+    );
+
+    MCAPI void $deleteStoredChunkData(
+        ::std::unordered_set<::ChunkPos>           chunksToDelete,
+        ::std::function<void()>                    completionCallback,
+        ::std::shared_ptr<::ChunkDeletionMetadata> metadata
+    );
+
+    MCAPI bool $saveLiveChunk(::LevelChunk& lc);
+
+    MCAPI void $writeEntityChunkTransfer(::LevelChunk& lc);
+
+    MCAPI void $writeEntityChunkTransfersToUnloadedChunk(
+        ::ChunkKey const&                                       chunkKey,
+        ::std::vector<::ActorUnloadedChunkTransferEntry> const& transfers
+    );
+
+    MCAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
+
+    MCAPI void $hintDiscardBatchBegin();
+
+    MCAPI void $hintDiscardBatchEnd();
+
+    MCAPI void $flushPendingDiscardedChunkWrites();
+
+    MCAPI void $flushThreadBatch();
+
+    MCAPI ::std::unique_ptr<::BlendingDataProvider> $tryGetBlendingDataProvider();
+
+    MCAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> $loadLevelChunkMetaDataDictionary();
+
+    MCAPI void $deserializeActorStorageToLevelChunk(::LevelChunk& levelChunk);
+
+    MCAPI bool $chunkPosNeedsBlending(::ChunkPos const& cp);
+
 
     // NOLINTEND
 };

@@ -47,6 +47,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $doQuickCompletionCheck();
+
+    MCNAPI void $_runMigration(
+        ::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>,
+        ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles>,
+        ::std::function<void(::Bedrock::StorageMigration::StorageMigrator::MigrationProgress)>,
+        ::std::function<void(::Bedrock::StorageMigration::MigrationResult)>
+    );
+
 
     // NOLINTEND
 };

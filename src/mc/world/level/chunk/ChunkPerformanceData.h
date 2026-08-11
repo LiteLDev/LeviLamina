@@ -130,6 +130,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCFOLD void $visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)>);
+#else // LL_PLAT_C
+    MCFOLD void $visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)> visitor);
+#endif
+
     MCAPI void $resetAll();
 
 

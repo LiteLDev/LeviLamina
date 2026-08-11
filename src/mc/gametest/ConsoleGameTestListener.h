@@ -24,6 +24,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& test);
+
+    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& test);
+
+    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& test);
+
 
     // NOLINTEND
 };

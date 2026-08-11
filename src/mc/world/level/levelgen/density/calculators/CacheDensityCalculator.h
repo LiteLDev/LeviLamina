@@ -58,6 +58,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const;
+
 
     // NOLINTEND
 };

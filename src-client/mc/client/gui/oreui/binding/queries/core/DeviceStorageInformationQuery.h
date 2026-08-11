@@ -78,7 +78,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $update(double);
 
+    MCAPI void $onLowDiskSpace(bool);
+
+    MCAPI void $onOutOfDiskSpace(bool);
+
+    MCAPI void
+    $onExtendDiskSpace(bool, ::std::weak_ptr<::Core::FileStorageArea> const&, uint64, ::std::function<void()>);
+
+    MCAPI void $onCriticalDiskError(bool, ::Core::LevelStorageState const&);
     // NOLINTEND
 };
 

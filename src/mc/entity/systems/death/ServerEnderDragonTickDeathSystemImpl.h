@@ -105,6 +105,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDefinitionIdentifierComponent,
+                ::ActorUniqueIDComponent,
+                ::DeathTickingComponent,
+                ::DimensionTypeComponent,
+                ::SoundEventPlayerComponent>,
+            ::Write<
+                ::ActorOwnerComponent,
+                ::RandomReferenceComponent,
+                ::StateVectorComponent,
+                ::WingFlapDataComponent,
+                ::BossComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<::SpawnExperienceOrbRequestQueueComponent>,
+            ::EntityFactoryT<>>& context
+    );
+
 
     // NOLINTEND
 };

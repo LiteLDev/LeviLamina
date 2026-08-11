@@ -27,6 +27,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isSpawnPositionOk(::BlockSource& region, ::BlockPos pos, ::br::spawn::EntityType const& type) const;
+
+    MCAPI ::BlockPos $adjustSpawnPos(::BlockSource& region, ::BlockPos candidate) const;
+
 
     // NOLINTEND
 };

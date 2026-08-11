@@ -131,6 +131,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $packetSentTo(::NetworkIdentifier const& target, ::Packet const& packet, uint size);
+
+    MCAPI void $packetReceivedFrom(::NetworkIdentifier const& source, ::Packet const& packet, uint size);
+
+    MCAPI void $dataSentTo(::NetworkIdentifier const& target, ::std::string_view data);
+
+    MCAPI void $dataReceivedFrom(::NetworkIdentifier const& source, ::std::string const& data);
+
+    MCAPI void $reset();
+
 
     // NOLINTEND
 };

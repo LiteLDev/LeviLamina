@@ -78,6 +78,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::string $serialize(::Crypto::Certificate::Encoding encoding) const;
+
+    MCNAPI ::std::string $extractPublicKey(::Crypto::Certificate::Encoding encoding) const;
+
+    MCNAPI ::std::string $extractPrivateKey(::Crypto::Certificate::Encoding encoding) const;
+
+    MCNAPI ::std::string $getIssuer() const;
+
+    MCNAPI bool $hasValidCertChain() const;
+
+    MCNAPI ::std::string $generateCertificateThumbprint(
+        ::Crypto::Hash::HashType                hashFunction,
+        ::Crypto::Certificate::ThumbprintFormat formatting
+    ) const;
+
+    MCNAPI ::std::string $generatePublicKeyThumbprint(
+        ::Crypto::Hash::HashType                hashFunction,
+        ::Crypto::Certificate::ThumbprintFormat formatting
+    ) const;
+
 
     // NOLINTEND
 };

@@ -45,6 +45,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
+        ::IBlockSource& region,
+        ::BlockPos,
+        ::BlockPos,
+        ::br::worldgen::StructureBlockInfo const&,
+        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
+        ::br::worldgen::StructurePlaceSettings const&
+    ) const;
+
+    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
+
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+
 
     // NOLINTEND
 };

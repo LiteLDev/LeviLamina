@@ -82,6 +82,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $setViewCommand(::ScreenViewCommand const& callback);
     // NOLINTEND
 };

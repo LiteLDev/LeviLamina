@@ -76,9 +76,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void
+    $SetParametersAsync(::webrtc::RtpParameters const& a1, ::absl::AnyInvocable<void(::webrtc::RTCError) &&> a2);
+
+    MCNAPI void $SetObserver(::webrtc::RtpSenderObserverInterface* a1);
+
     MCNAPI void $SetEncoderToPacketizerFrameTransformer(
         ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
     );
+
+    MCNAPI void $SetFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> a1);
 
 
     // NOLINTEND

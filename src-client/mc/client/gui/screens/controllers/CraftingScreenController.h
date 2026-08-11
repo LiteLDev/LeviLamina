@@ -252,6 +252,71 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onOpen();
 
+    MCAPI void $onEntered();
+
+    MCAPI void $onTerminate();
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI void $showToast(::ToastMessage message, bool animateIn);
+
+    MCAPI void $removeToast();
+
+    MCAPI void $refreshToast();
+
+    MCAPI bool $_isStillValid() const;
+
+    MCAPI void $_handlePlaceAll(::std::string const& collectionName, int index);
+
+    MCAPI void $_handlePlaceOne(::std::string const& collectionName, int index);
+
+    MCAPI void $_handleSelectSlot(::std::string const& collectionName, int collectionIndex);
+
+    MCAPI ::ItemStackBase const&
+    $_getVisualItemStackImpl(::std::string const& collectionName, int collectionIndex) const;
+
+    MCAPI ::std::string $_getButtonADescription();
+
+    MCAPI ::std::string $_getButtonBDescription();
+
+    MCAPI ::std::string $_getButtonXDescription();
+
+    MCAPI ::std::string $_getButtonYDescription();
+
+    MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
+
+    MCAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
+
+    MCAPI ::std::string $_getCollectionName(::UIPropertyBag* bag) const;
+
+    MCAPI ::SlotData $_reevaluateSlotData(::SlotData&& slotData) const;
+
+    MCAPI bool $_shouldSwap(
+        ::std::string const& collectionName,
+        int                  collectionIndex,
+        ::std::string const& otherCollectionName,
+        int                  otherCollectionIndex
+    ) const;
+
+    MCAPI bool $_isTargetSwappable(::std::string const& otherCollectionName, int otherCollectionIndex) const;
+
+    MCAPI void $_sendFlyingItem(
+        ::ItemStackBase const& item,
+        ::std::string const&   fromName,
+        int                    fromIndex,
+        ::std::string const&   toName,
+        int                    toIndex,
+        ::FadeInIconBehavior   fadeInIconBehavior
+    );
+
+    MCAPI void $_registerCoalesceOrder();
+
+    MCAPI void $_registerAutoPlaceOrder();
+
+    MCAPI bool $_isInCreativeContainer(::std::string const& containerName) const;
     // NOLINTEND
 };

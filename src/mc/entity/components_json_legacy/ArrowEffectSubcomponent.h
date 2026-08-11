@@ -40,6 +40,8 @@ public:
 
     MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 
+    MCAPI char const* $getName() const;
+
 
     // NOLINTEND
 };

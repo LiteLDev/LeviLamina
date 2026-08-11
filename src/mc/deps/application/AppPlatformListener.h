@@ -123,9 +123,17 @@ public:
 
     MCFOLD void $onAppSurfaceDestroyed();
 
+#ifdef LL_PLAT_S
     MCFOLD void $onClipboardCopy(::std::string const&);
+#else // LL_PLAT_C
+    MCFOLD void $onClipboardCopy(::std::string const& clipString);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $onClipboardPaste(::std::string const&);
+#else // LL_PLAT_C
+    MCFOLD void $onClipboardPaste(::std::string const& clipString);
+#endif
 
     MCFOLD void $onLowMemory(::LowMemorySeverity);
 

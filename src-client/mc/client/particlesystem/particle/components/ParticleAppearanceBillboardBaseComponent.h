@@ -37,7 +37,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $setInitialState(
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::ParticleSystem::CommonParticle&                 particle,
+        ::RenderParams&                                   renderParams,
+        ::Vec3 const&                                     spawnDirection
+    );
     // NOLINTEND
 };
 

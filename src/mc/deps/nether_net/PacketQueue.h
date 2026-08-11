@@ -84,6 +84,14 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $OnStateChange();
+
+        MCNAPI void $OnMessage(::webrtc::DataBuffer const& buffer);
+
+        MCNAPI void $OnBufferedAmountChange(uint64);
+
+        MCNAPI bool $IsOkToCallOnTheNetworkThread();
+
 
         // NOLINTEND
     };

@@ -265,14 +265,147 @@ public:
 
     MCAPI ::glm::vec2 const& $getGamepadCursorPosition() const;
 
+    MCAPI ::std::vector<::RectangleArea> $getInputAreas() const;
+
+    MCAPI void $cleanInputComponents();
+
     MCAPI void $onCreation();
+
+    MCAPI void $onLeave();
+
+    MCAPI bool $canBePushed() const;
+
+    MCAPI bool $canBePopped() const;
+
+    MCAPI bool $canBeTransitioned() const;
+
+    MCAPI void $onScreenExit(bool isPopping, bool doScreenTransitions, ::std::shared_ptr<::AbstractScene> pushedScene);
+
+    MCAPI void $onScreenEntrance(bool isRevisiting, bool doScreenTransitions);
 
     MCAPI bool $isEntering() const;
 
     MCAPI bool $isExiting() const;
 
+    MCAPI void $schedulePop();
+
     MCAPI bool $isTerminating() const;
 
     MCAPI bool $loadScreenImmediately() const;
+
+    MCAPI ::std::weak_ptr<::AbstractSceneProxy> $getProxy();
+
+    MCAPI void
+    $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& routeQueryParameters);
+
+    MCAPI ::RectangleArea $getAreaOfControlByName(::std::string const& controlName) const;
+
+    MCAPI void $init(::ScreenSizeData const& screenSizeData);
+
+    MCAPI void $onSetKeyboardHeight(float keyboardHeight);
+
+    MCAPI void $onFocusLost();
+
+    MCAPI void $onInternetUpdate();
+
+    MCAPI bool $renderGameBehind() const;
+
+    MCAPI bool $closeOnPlayerHurt() const;
+
+    MCAPI bool $useCustomPocketToast() const;
+
+    MCAPI void $setSize(::ScreenSizeData const& screenSizeData);
+
+    MCAPI void $handleButtonPress(uint buttonId, ::FocusImpact focusImpact);
+
+    MCAPI void $handleButtonRelease(uint buttonId, ::FocusImpact focusImpact);
+
+    MCAPI bool $handlePointerLocation(::PointerLocationEventData const& pointerLocationData, ::FocusImpact focusImpact);
+
+    MCFOLD void $handlePointerPressed(bool pressed);
+
+    MCAPI void $handleLicenseChanged();
+
+    MCAPI void $terminate();
+
+    MCAPI void $onFocusGained();
+
+    MCAPI void $onGameEventNotification(::ui::GameEventNotification notification);
+
+    MCAPI void $reload();
+
+    MCAPI void $leaveScreen();
+
+    MCAPI void $preFrameTick();
+
+    MCAPI void $frameUpdate(::MinecraftUIFrameUpdateContext& frameUpdateContext);
+
+    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+
+    MCAPI void $applyInput(float a);
+
+    MCAPI void $handleInputModeChanged(::InputMode inputMode);
+
+    MCAPI void $handleRawInputEvent(int id, ::RawInputType keyType, ::ButtonState state, bool allowRemapping);
+
+    MCAPI void $handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact);
+
+    MCAPI void $handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact);
+
+    MCAPI void $handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact);
+
+    MCAPI void $setTextboxText(::std::string const& text, ::TextboxTextUpdateReason reason);
+
+    MCAPI void $onKeyboardDismissed();
+
+    MCAPI bool $absorbsInput() const;
+
+    MCAPI bool $screenIsNotFlushable() const;
+
+    MCAPI bool $alwaysAcceptsInput() const;
+
+    MCAPI bool $isShowingMenu() const;
+
+    MCAPI bool $isModal() const;
+
+    MCAPI bool $shouldStealMouse() const;
+
+    MCAPI bool $screenDrawsLast() const;
+
+    MCAPI bool $shouldBeSkippedInAutomation() const;
+
+    MCAPI int $getWidth();
+
+    MCAPI int $getHeight();
+
+    MCAPI bool $renderOnlyWhenTopMost() const;
+
+    MCAPI bool $lowFreqRendering() const;
+
+    MCAPI bool $ignoreAsTop() const;
+
+    MCAPI ::ui::SceneType $getSceneType() const;
+
+    MCAPI ::std::string $getRawScreenName() const;
+
+    MCAPI ::std::string $getScreenName() const;
+
+    MCAPI bool $equalsScreenName(::std::string_view comparison) const;
+
+    MCAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
+
+    MCAPI ::std::string $getRoute() const;
+
+    MCAPI ::std::string $getScreenTelemetryName() const;
+
+    MCAPI bool $getShouldSendEvents();
+
+    MCAPI void $setShouldSendEvents(bool shouldSendEvents);
+
+    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+
+    MCAPI int $getScreenVersion() const;
+
+    MCAPI void $onDelete(::CachedScenes& cache, ::TaskGroup& taskGroup);
     // NOLINTEND
 };

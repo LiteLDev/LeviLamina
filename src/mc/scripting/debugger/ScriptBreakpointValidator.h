@@ -30,6 +30,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $validatePath(::std::string_view sourcePath);
+
 
     // NOLINTEND
 };

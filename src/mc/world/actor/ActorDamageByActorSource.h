@@ -84,9 +84,17 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isEntitySource() const;
 
+#ifdef LL_PLAT_S
     MCAPI bool $getIsCreative() const;
+#else // LL_PLAT_C
+    MCFOLD bool $getIsCreative() const;
+#endif
 
+#ifdef LL_PLAT_S
     MCAPI bool $getIsWorldBuilder() const;
+#else // LL_PLAT_C
+    MCFOLD bool $getIsWorldBuilder() const;
+#endif
 
     MCFOLD ::ActorUniqueID $getEntityUniqueID() const;
 

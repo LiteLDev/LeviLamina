@@ -51,10 +51,23 @@ public:
 
     MCNAPI void $onError(::Scripting::ContextId contextId, ::std::string_view message) const;
 
+    MCNAPI void $onException(
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny
+    ) const;
+
     MCNAPI bool $shouldPrintException(
         ::Scripting::ContextId        contextId,
         ::Scripting::BaseError const& error,
         ::entt::meta_any const&       errorAny
+    ) const;
+
+    MCNAPI void $onPromiseRejection(
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny,
+        bool                          isHandled
     ) const;
 
 

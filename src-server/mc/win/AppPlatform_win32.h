@@ -187,6 +187,98 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Bedrock::Result<::std::string> $_readAssetFileInternal(::Core::PathView filename);
 
+    MCAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
+
+    MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
+
+    MCFOLD bool $canLaunchUri(::std::string const& uri);
+
+    MCAPI void $launchUri(::std::string const& uri);
+
+    MCAPI ::Core::PathBuffer<::std::string> $getPackagePath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $getLoggingPath() const;
+
+    MCAPI ::std::string $getEdition() const;
+
+    MCAPI ::OsVersion $getOSVersion() const;
+
+    MCFOLD bool $supportsVibration() const;
+
+    MCFOLD bool $supportsFliteTTS() const;
+
+    MCAPI int $getScreenWidth() const;
+
+    MCAPI int $getScreenHeight() const;
+
+    MCAPI int $getDisplayWidth();
+
+    MCAPI int $getDisplayHeight();
+
+    MCFOLD void $setScreenSize(int, int);
+
+    MCAPI void $setWindowSize(int width, int height);
+
+    MCAPI void $setWindowText(::std::string const& title);
+
+    MCFOLD ::std::string $getTextBoxBackend() const;
+
+    MCFOLD void $setTextBoxBackend(::std::string const& newText);
+
+    MCFOLD int $getCaretPosition() const;
+
+    MCFOLD void $setCaretPosition(int position);
+
+    MCFOLD bool $hasBuyButtonWhenInvalidLicense();
+
+    MCAPI ::std::string $getApplicationId() const;
+
+    MCAPI bool $isCentennial() const;
+
+    MCAPI ::std::string $getPackageFamilyName() const;
+
+    MCFOLD ::PlatformType $getPlatformType() const;
+
+    MCFOLD ::BuildPlatform $getBuildPlatform() const;
+
+    MCAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
+
+    MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
+
+    MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
+
+    MCAPI ::std::string $getPlatformString() const;
+
+    MCAPI ::std::string $getSubPlatformString() const;
+
+    MCAPI uint64 $getFreeMemory() const;
+
+    MCAPI uint64 $getMemoryLimit() const;
+
+    MCAPI uint64 $getUsedMemory();
+
+    MCAPI uint64 $getTotalPhysicalMemory() const;
+
+    MCAPI ::std::string $getModelName();
+
+    MCAPI void $setFullscreenMode(::FullscreenMode const fullscreenMode);
+
+    MCAPI bool $isWebviewSupported() const;
+
+    MCFOLD ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&& args) const;
+
+    MCAPI bool $getPlatformTTSEnabled() const;
+
+    MCAPI ::std::variant<::HWND__*, ::std::monostate> $getRenderSurfaceParameters() const;
+
+    MCAPI ::std::optional<bool> $isOnWifiConnectionTelemetryValue();
+
+    MCAPI void $hideSplashScreen();
+
+    MCFOLD int $getPlatformDpi() const;
+
+    MCFOLD ::UIScalingRules $getPlatformUIScalingRules() const;
     // NOLINTEND
 };

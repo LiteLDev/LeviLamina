@@ -29,6 +29,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $initBuilder(::LevelSeed64);
+
+    MCFOLD void $initBiomeSurface(::SurfaceBuilderData&) const;
+
     MCAPI bool $isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const;
 
     MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;

@@ -808,6 +808,260 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onValidPacketReceived(
+        ::NetworkIdentifier const& netId,
+        ::MinecraftPacketIds       packetId,
+        ::SubClientId              senderSubId,
+        ::SubClientId
+    );
+
+    MCAPI void $onWebsocketRequest(
+        ::std::string const&    serverAddress,
+        ::std::string const&    payload,
+        ::std::function<void()> errorCallback
+    );
+
+    MCAPI void $onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid);
+
+    MCAPI void $onPlayerJoinedLobby(::Social::OnlineId const& player, ::Social::Nonce const& nonce);
+
+    MCFOLD void $onPlayerLeftLobby(::Social::OnlineId const&);
+
+    MCAPI void $onXboxUserBlocked(::std::string const& xuid);
+
+    MCAPI void $onXboxUserUnblocked(::std::string const& xuid);
+
+    MCFOLD void $onPlayerReady(::Player& player);
+
+    MCAPI void $handlePacketViolation(
+        ::std::shared_ptr<::IPacketSecurityController> const& packetSecurityController,
+        ::std::error_code const&                              errorCode,
+        ::PacketViolationResponse const                       response,
+        ::MinecraftPacketIds const                            packetId,
+        ::std::string&&                                       context,
+        ::NetworkIdentifier const&                            netId,
+        ::SubClientId const                                   clientSubId,
+        ::SubClientId const                                   senderSubId,
+        uint const                                            packetSize
+    );
+
+    MCAPI void $sendPacketViolationWarningPacket(
+        ::std::error_code const&   errorCode,
+        ::PacketViolationResponse  violationResponse,
+        ::MinecraftPacketIds       violatingPacketId,
+        ::std::string const&       context,
+        ::NetworkIdentifier const& netId,
+        ::SubClientId              clientSubId
+    );
+
+    MCAPI void $sendServerLegacyParticle(::ParticleType name, ::Vec3 const& pos, ::Vec3 const&, int data);
+
+    MCAPI void $onTransferRequest(::NetworkIdentifier const& id, ::Social::GameConnectionInfo const& destination);
+
+    MCAPI void $onDisconnect(
+        ::NetworkIdentifier const&               id,
+        ::Connection::DisconnectFailReason const discoReason,
+        ::Connection::DisconnectionStage const   disconnectStage,
+        ::std::string const&                     messageFromServer,
+        ::std::string const&                     messageBodyOverride,
+        bool                                     skipMessage,
+        ::std::string const&                     telemetryOverride
+    );
+
+    MCAPI ::IncomingPacketFilterResult $allowIncomingPacketId(
+        ::NetworkIdentifierWithSubId const& sender,
+        ::MinecraftPacketIds                packetId,
+        uint64                              packetSize
+    );
+
+    MCAPI ::OutgoingPacketFilterResult
+    $allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ActorEventPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ActorPickRequestPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::AnimatePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::BlockActorDataPacket> packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::BlockPickRequestPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::LecternUpdatePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::BookEditPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::BossEventPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ClientCameraAimAssistPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ClientCacheStatusPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ClientCacheBlobStatusPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ClientMovementPredictionSyncPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ClientToServerHandshakePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::CommandBlockUpdatePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::CommandRequestPacket const& packet);
+
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::CompletedUsingItemPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ContainerClosePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::DebugInfoPacket const& packet);
+
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::CreatePhotoPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::DisconnectPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::EmoteListPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::EmotePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::InteractPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::InventoryTransactionPacket> packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ItemStackRequestPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::LabTablePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::LevelSoundEventPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::LoginPacket> packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PartyChangedPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::MapCreateLockedCopyPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::MapInfoRequestPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::MobEquipmentPacket> packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ModalFormResponsePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::NetworkStackLatencyPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::NpcRequestPacket const& packet);
+
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PhotoTransferPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerActionPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerAuthInputPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerHotbarPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerSkinPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerToggleCrafterSlotRequestPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PositionTrackingDBClientRequestPacket const& packet);
+
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PurchaseReceiptPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::RequestChunkRadiusPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ResourcePackChunkRequestPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::ResourcePacksReadyForValidationPacket const&);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::RespawnPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetDefaultGameTypePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetDifficultyPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetLocalPlayerAsInitializedPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetPlayerGameTypePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::UpdatePlayerGameTypePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ScriptMessagePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PartyDestinationCookieResponsePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ShowCreditsPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SimpleEventPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SpawnExperienceOrbPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::StructureBlockUpdatePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::StructureTemplateDataRequestPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::SubClientLoginPacket> packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::TextPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::MultiplayerSettingsPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SettingsCommandPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::AnvilDamagePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SubChunkRequestPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::CodeBuilderSourcePacket const& packet);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ChangeMobPropertyPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::RequestAbilityPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::RequestNetworkSettingsPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::RequestPermissionsPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::EditorNetworkPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::GameTestRequestPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetPlayerInventoryOptionsPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ServerboundLoadingScreenPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ServerboundDiagnosticsPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::UpdateClientOptionsPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ServerboundPackSettingChangePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ServerboundDataStorePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ServerboundDataDrivenScreenClosedPacket const& packet);
+
+    MCAPI void $sendSubClientLoginMessageLocal(
+        ::NetworkIdentifier const&          source,
+        ::SubClientConnectionRequest const& connectionRequest,
+        ::PlayerAuthenticationInfo const&   playerInfo,
+        ::SubClientId                       subid
+    );
+
+    MCAPI void $onTick();
+
+    MCAPI ::GameSpecificNetEventCallback* $getGameSpecificNetEventCallback();
+
+    MCAPI void $onConnect(::NetworkIdentifier const& id);
+
+    MCAPI void $completeHandshake(::NetworkIdentifier const& source);
+
+    MCAPI ::std::optional<::PlayerAuthenticationInfo>
+    $_validateLoginPacket(::NetworkIdentifier const& source, ::LoginPacket const& packet);
+
+    MCAPI void $_onClientAsyncAuthorized(
+        ::NetworkIdentifier const&          source,
+        ::ConnectionRequest const&          request,
+        ::PlayerAuthenticationInfo const&   playerInfo,
+        ::std::optional<::MessToken> const& hostMessToken
+    );
+
+    MCAPI ::ServerPlayer* $_getServerPlayer(::NetworkIdentifier const& source, ::SubClientId subId);
+
 
     // NOLINTEND
 };

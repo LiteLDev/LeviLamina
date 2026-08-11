@@ -1050,7 +1050,13 @@ public:
 
     MCAPI bool $canChangeDimensionsUsingPortal() const;
 
+    MCFOLD void $changeDimensionWithCredits(::DimensionType dimension);
+
+#ifdef LL_PLAT_S
     MCAPI void $tickWorld(::Tick const&);
+#else // LL_PLAT_C
+    MCAPI void $tickWorld(::Tick const& currentTick);
+#endif
 
     MCAPI ::std::vector<::ChunkPos> const& $getTickingOffsets() const;
 
@@ -1067,6 +1073,8 @@ public:
     MCAPI bool $isFireImmune() const;
 
     MCFOLD void $checkMovementStats(::Vec3 const& d);
+
+    MCAPI ::HashedString $getCurrentStructureFeature() const;
 
     MCFOLD bool $isAutoJumpEnabled() const;
 
@@ -1085,6 +1093,8 @@ public:
     MCAPI void $dropEquipmentOnDeath(::ActorDamageSource const& source);
 
     MCAPI void $dropEquipmentOnDeath();
+
+    MCFOLD void $clearVanishEnchantedItemsOnDeath();
 
     MCAPI bool $drop(::ItemStack const& item, bool const randomly);
 
@@ -1124,16 +1134,68 @@ public:
 
     MCAPI void $damageCarriedItemOnAttack(::Actor& target, float damageDealtToTarget);
 
-    MCFOLD void $openChalkboard(::ChalkboardBlockActor&, bool);
+    MCFOLD void $openPortfolio();
 
+#ifdef LL_PLAT_S
+    MCFOLD void $openBook(int, bool, int, ::BlockActor*);
+#else // LL_PLAT_C
+    MCFOLD void $openBook(int bookSlot, bool editable, int page, ::BlockActor* lectern);
+#endif
+
+    MCFOLD void $openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen);
+
+#ifdef LL_PLAT_S
+    MCFOLD void $openChalkboard(::ChalkboardBlockActor&, bool);
+#else // LL_PLAT_C
+    MCFOLD void $openChalkboard(::ChalkboardBlockActor& chalkboard, bool showLockToggle);
+#endif
+
+    MCFOLD void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
+
+    MCFOLD void $openInventory();
+
+#ifdef LL_PLAT_S
     MCAPI void $displayChatMessage(
         ::std::string const&                 author,
         ::std::string const&                 message,
         ::std::optional<::std::string> const filteredMessage
     );
+#else // LL_PLAT_C
+    MCFOLD void $displayChatMessage(
+        ::std::string const&                 author,
+        ::std::string const&                 message,
+        ::std::optional<::std::string> const filteredMessage
+    );
+#endif
 
     MCAPI void
     $displayClientMessage(::std::string const& message, ::std::optional<::std::string> const filteredMessage);
+
+    MCFOLD void $displayTextObjectMessage(
+        ::TextObjectRoot const& textObject,
+        ::std::string const&    fromXuid,
+        ::std::string const&    fromPlatformId
+    );
+
+    MCFOLD void $displayTextObjectWhisperMessage(
+        ::ResolvedTextObject const& resolvedTextObject,
+        ::std::string const&        xuid,
+        ::std::string const&        platformId
+    );
+
+    MCFOLD void $displayTextObjectWhisperMessage(
+        ::std::string const& message,
+        ::std::string const& xuid,
+        ::std::string const& platformId
+    );
+
+    MCFOLD void $displayWhisperMessage(
+        ::std::string const&                 author,
+        ::std::string const&                 message,
+        ::std::optional<::std::string> const filteredMessage,
+        ::std::string const&                 xuid,
+        ::std::string const&                 platformId
+    );
 
     MCAPI float $getShadowRadius() const;
 
@@ -1147,11 +1209,23 @@ public:
 
     MCAPI bool $canStartSleepInBed();
 
+    MCFOLD void $sendInventory(bool shouldSelectSlot);
+
+    MCFOLD void $openSign(::BlockPos const& position, bool isFrontSide);
+
+#ifdef LL_PLAT_S
     MCFOLD void $playEmote(::std::string const&, bool const);
+#else // LL_PLAT_C
+    MCFOLD void $playEmote(::std::string const& pieceId, bool const playChatMessage);
+#endif
 
     MCAPI bool $isSilentObserver() const;
 
     MCAPI void $useItem(::ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem);
+
+    MCFOLD bool $isLoading() const;
+
+    MCFOLD bool $isPlayerInitialized() const;
 
     MCFOLD void $stopLoading();
 
@@ -1189,6 +1263,8 @@ public:
 
     MCAPI bool $consumeTotem();
 
+    MCFOLD bool $isActorRelevant(::Actor const& actor);
+
     MCFOLD float $getMapDecorationRotation() const;
 
     MCAPI void
@@ -1200,9 +1276,15 @@ public:
 
     MCAPI void $stopSwimming();
 
+    MCFOLD void $onSuspension();
+
+    MCFOLD void $onLinkedSlotsChanged();
+
     MCFOLD bool $canBePulledIntoVehicle() const;
 
     MCAPI void $feed(int itemId);
+
+    MCFOLD void $sendNetworkPacket(::Packet& packet) const;
 
     MCFOLD bool $canExistWhenDisallowMob() const;
 
@@ -1232,13 +1314,29 @@ public:
 
     MCAPI void $doExitWaterSplashEffect();
 
+    MCFOLD ::std::optional<::PlayerPartyInfo> $getPartyInfo_UNTRUSTED() const;
+
+#ifdef LL_PLAT_S
     MCFOLD void $requestMissingSubChunk(::SubChunkPos const&);
+#else // LL_PLAT_C
+    MCFOLD void $requestMissingSubChunk(::SubChunkPos const& scp);
+#endif
+
+    MCFOLD uchar $getMaxChunkBuildRadius() const;
 
     MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
+#ifdef LL_PLAT_S
     MCFOLD void $setBehaviorCommandStatus(::std::string const&, ::BehaviorStatus);
+#else // LL_PLAT_C
+    MCFOLD void $setBehaviorCommandStatus(::std::string const& name, ::BehaviorStatus status);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $setRemotePlayerTicked(bool);
+#else // LL_PLAT_C
+    MCFOLD void $setRemotePlayerTicked(bool ticked);
+#endif
 
     MCFOLD ::std::unique_ptr<::ISparseContainerSetListener> $createSparseContainerListener();
 
@@ -1263,73 +1361,9 @@ public:
 
     MCAPI ::HashedString const& $getActorRendererId() const;
 
-    MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
-
-#ifdef LL_PLAT_C
-    MCFOLD void $changeDimensionWithCredits(::DimensionType dimension);
-
-    MCAPI ::HashedString $getCurrentStructureFeature() const;
-
-    MCFOLD void $clearVanishEnchantedItemsOnDeath();
-
-    MCFOLD void $openPortfolio();
-
-    MCFOLD void $openBook(int bookSlot, bool editable, int page, ::BlockActor* lectern);
-
-    MCFOLD void $openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen);
-
-    MCFOLD void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
-
-    MCFOLD void $openInventory();
-
-    MCFOLD void $displayTextObjectMessage(
-        ::TextObjectRoot const& textObject,
-        ::std::string const&    fromXuid,
-        ::std::string const&    fromPlatformId
-    );
-
-    MCFOLD void $displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& resolvedTextObject,
-        ::std::string const&        xuid,
-        ::std::string const&        platformId
-    );
-
-    MCFOLD void $displayTextObjectWhisperMessage(
-        ::std::string const& message,
-        ::std::string const& xuid,
-        ::std::string const& platformId
-    );
-
-    MCFOLD void $displayWhisperMessage(
-        ::std::string const&                 author,
-        ::std::string const&                 message,
-        ::std::optional<::std::string> const filteredMessage,
-        ::std::string const&                 xuid,
-        ::std::string const&                 platformId
-    );
-
-    MCFOLD void $sendInventory(bool shouldSelectSlot);
-
-    MCFOLD void $openSign(::BlockPos const& position, bool isFrontSide);
-
-    MCFOLD bool $isLoading() const;
-
-    MCFOLD bool $isPlayerInitialized() const;
-
-    MCFOLD bool $isActorRelevant(::Actor const& actor);
-
-    MCFOLD void $onSuspension();
-
-    MCFOLD void $onLinkedSlotsChanged();
-
-    MCFOLD void $sendNetworkPacket(::Packet& packet) const;
-
-    MCFOLD ::std::optional<::PlayerPartyInfo> $getPartyInfo_UNTRUSTED() const;
-
-    MCFOLD uchar $getMaxChunkBuildRadius() const;
-
     MCFOLD void $_serverInitItemStackIds();
-#endif
+
+    MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
 
 
     // NOLINTEND

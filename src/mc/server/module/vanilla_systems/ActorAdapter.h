@@ -34,6 +34,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $dropHangingActor(::StrictEntityContext const& entity);
+
 
     // NOLINTEND
 };

@@ -150,6 +150,59 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $playerSaveLimboActors(
+        ::Player&                  player,
+        ::ChangeDimensionRequest&  changeRequest,
+        ::Dimension&               toDimension,
+        ::PlayerLimboActorManager* playerLimboActorManager
+    );
+
+    MCAPI void $playerDestroyRemotePlayers(::GameplayUserManager& gameplayUserManager);
+
+    MCAPI void $playerStartChangeDimensionSuspendRegion(::Player& player, ::DimensionType fromDimension);
+
+    MCAPI void
+    $setTransitionLocation(::Player& player, ::ChangeDimensionRequest& changeRequest, ::Dimension& toDimension);
+
+    MCAPI void $syncTransitionComponentTargetPosition(::Player& player, ::ChangeDimensionRequest const& changeRequest);
+
+    MCAPI void $playerDestroyRegion(::Player& player, ::ChangeDimensionRequest const& changeRequest);
+
+    MCAPI void $playerPrepareRegion(
+        ::Player&                       player,
+        ::ChangeDimensionRequest const& changeRequest,
+        ::Dimension const&              toDimension
+    );
+
+    MCFOLD ::Bedrock::PubSub::Connector<void(::DimensionType)>&
+    $getOnAnyPlayerChangeDimensionPreSuspendRegionConnector();
+
+    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector();
+
+    MCAPI bool $playerWaitForServer(::Player& player, ::std::chrono::steady_clock::time_point currentTime);
+
+    MCAPI bool $playerWaitForDimensionTransitionSystem(::Player const& player, ::EntityRegistry& entityRegistry);
+
+    MCAPI void $sendClientRespawnMovePacketFromServer(::Player const& player, ::ChangeDimensionRequest& changeRequest);
+
+    MCAPI bool $waitForSubChunks(::Player& player, ::Dimension const& toDimension);
+
+    MCAPI void $startWaitForRespawn(::Player const& player);
+
+    MCAPI void $playerSwitchDimension(
+        ::Player&                 player,
+        ::ChangeDimensionRequest& changeRequest,
+        ::AddLimboActorHelper*    addLimboActorHelper
+    );
+
+    MCAPI bool $doRespawnIfReady(
+        ::Player&                 player,
+        ::ChangeDimensionRequest& changeRequest,
+        ::AddLimboActorHelper*    addLimboActorHelper
+    );
+
+    MCAPI void $setPacketSender(::PacketSender& packetSender);
+
 
     // NOLINTEND
 };

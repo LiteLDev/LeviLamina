@@ -135,6 +135,41 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+
+    MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
+
+    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhoodIn);
+
+    MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
+
+    MCAPI void $prepareHeights(
+        ::BlockVolume&        box,
+        ::ChunkPos const&     chunkPos,
+        ::std::vector<short>* ZXheights,
+        bool                  factorInBeardsAndShavers
+    );
+
+    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
+
+    MCFOLD ::std::unique_ptr<::Aquifer> $tryMakeAquifer(
+        ::ChunkPos const&          chunkPos,
+        ::SurfaceLevelCache const& surfaceLevelCache,
+        short                      minHeight,
+        short                      levelGenHeight,
+        short                      seaLevel
+    ) const;
+
+    MCAPI void $decorateWorldGenLoadChunk(
+        ::Biome const&       biome,
+        ::LevelChunk&        lc,
+        ::BlockVolumeTarget& target,
+        ::Random&            random,
+        ::ChunkPos const&    pos
+    ) const;
+
+    MCAPI ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos chunkPos) const;
+
 
     // NOLINTEND
 };

@@ -40,6 +40,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::Scripting::PromiseType> $makePromise();
+
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType>
+    $makeDataBuffer(uchar const* data, uint64 size, ::entt::meta_type const& dataType);
+
 
     // NOLINTEND
 };

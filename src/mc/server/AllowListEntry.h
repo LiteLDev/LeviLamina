@@ -70,6 +70,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Json::Value $serialize() const;
+
+    MCNAPI void $deserialize(::Json::Value const& root);
+
 
     // NOLINTEND
 };

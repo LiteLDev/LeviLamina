@@ -29,6 +29,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $setCerealContext(::cereal::ReflectionCtx& ctx);
+
 
     // NOLINTEND
 };

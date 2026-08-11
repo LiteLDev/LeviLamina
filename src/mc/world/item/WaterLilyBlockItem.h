@@ -31,6 +31,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+
+    MCFOLD bool $_calculatePlacePos(::ItemStackBase&, ::Actor&, uchar& face, ::BlockPos& pos) const;
+
+    MCFOLD bool $isLiquidClipItem() const;
+
 
     // NOLINTEND
 };

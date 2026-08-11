@@ -113,6 +113,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
+    MCAPI void $reload(::UIComponent const& rhs);
+
+    MCAPI void $reset();
+
+    MCAPI ::ComponentReceiveActionType $receive(
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
+    );
+
+    MCAPI void $onVisibilityChanged(bool visible);
+
+    MCAPI ::std::string const& $getTextToSpeechComponentValue() const;
     // NOLINTEND
 };

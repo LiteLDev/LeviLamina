@@ -114,6 +114,47 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $init(::IClientInstance& client, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
 
+    MCAPI void $initializeResourceStack(
+        ::Experiments const*                                            experiments,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
+        ::ResourcePackStack&                                            stack,
+        ::BaseGameVersion const&                                        baseGameVersion,
+        ::GameModuleClient::ResourceLoadingPhase                        loadingPhase,
+        bool                                                            includeEditorPacks
+    );
+
+    MCAPI void $configureLevel(
+        ::IClientInstance&                                  client,
+        ::Bedrock::NotNullNonOwnerPtr<::ClientLevel> const& level,
+        ::Experiments const&                                experiments,
+        ::BaseGameVersion const&                            baseGameVersion
+    );
+
+    MCAPI void $deconfigureLevel(::IClientInstance& client);
+
+    MCFOLD void $configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const docItemRegistry);
+
+    MCAPI void $tick();
+
+    MCAPI void $setupStandardCommands(::CommandRegistry& commandRegistry);
+
+    MCFOLD void $setupStartMenuScreenCommands(::CommandRegistry& commandRegistry);
+
+    MCAPI void $setupUI();
+
+    MCAPI void $registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+
+    MCAPI ::std::unique_ptr<::ClientInputMappingFactory> $createInputMappingFactory(::IClientInstance& client);
+
+    MCAPI ::std::shared_ptr<void> $registerVanillaGoalsForUpgrader(
+        ::Experiments const&              experiments,
+        ::BaseGameVersion const&          baseGameVersion,
+        ::ItemRegistryRef const           itemRegistryRef,
+        ::ActorMigratedDefinitionFactory& migratedFactory
+    ) const;
+
+    MCAPI ::ServerboundDiagnosticsPacket $createServerboundDiagnosticsPacket();
     // NOLINTEND
 };

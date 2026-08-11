@@ -22,6 +22,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $initializeInternal(::Mob& mob);
+
+    MCAPI void $tick(::Mob& mob);
+
 
     // NOLINTEND
 };

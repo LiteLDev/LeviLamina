@@ -255,6 +255,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onAppSuspended();
 
+    MCAPI void $onAppResumed();
+
+    MCAPI void $onDeviceLost();
+
+    MCAPI void $onLowMemory(::LowMemorySeverity);
+
+    MCAPI void $onBlockChanged(
+        ::BlockSource&                 source,
+        ::BlockPos const&              blockPosition,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            updateFlags,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget      eventTarget,
+        ::Actor*                       blockChangeSource
+    );
+
+    MCAPI void $onChunkUnloaded(::LevelChunk& levelChunk);
+
+    MCAPI void $takePicture(
+        ::cg::ImageBuffer&                                              outImage,
+        ::Actor*                                                        camera,
+        ::Actor*                                                        target,
+        ::ScreenshotOptions&                                            screenshotOptions,
+        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
+    );
     // NOLINTEND
 };

@@ -76,6 +76,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onLeave();
 
+    MCFOLD bool $_isStillValid() const;
+
+    MCAPI void $_registerCoalesceOrder();
+
+    MCAPI void $_registerAutoPlaceOrder();
+
+    MCAPI ::ui::ViewRequest $_onContainerSlotSelected(::std::string const& collectionName, int index);
+
+    MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
     // NOLINTEND
 };

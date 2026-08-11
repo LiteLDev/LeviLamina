@@ -70,6 +70,33 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+
+    MCFOLD bool $isHandEquipped() const;
+
+    MCFOLD bool $requiresInteract() const;
+
+    MCAPI ::std::string $getInteractText(::Player const& player) const;
+
+    MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const;
+
+    MCAPI int $getEnchantSlot() const;
+
+    MCFOLD int $getEnchantValue() const;
+
+    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+
+    MCFOLD bool $shouldEmitInUseGameEvents() const;
+
+    MCFOLD bool $shouldUseJsonForRenderMatrix() const;
+
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+
 
     // NOLINTEND
 };

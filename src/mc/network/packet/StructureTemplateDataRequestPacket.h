@@ -86,7 +86,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ::MinecraftPacketIds $getId() const;
 
     MCAPI ::std::string_view $getName() const;
@@ -119,7 +118,6 @@ public:
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
-#endif
 
 
     // NOLINTEND

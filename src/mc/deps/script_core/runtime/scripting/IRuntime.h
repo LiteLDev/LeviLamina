@@ -122,11 +122,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI ::Scripting::IRuntimeMetadata* $getMetadata() const;
 
     MCNAPI void $moveToThread();
-#endif
 
 
     // NOLINTEND

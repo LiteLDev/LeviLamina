@@ -77,6 +77,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::mce::UUID const& $getId();
+
+    MCNAPI ::BiomeRegistry& $getRegistry();
+
+    MCNAPI ::BiomeSource& $getSource();
+
+    MCNAPI ::Biome const* $getBiomeAtLocation(::BlockPos const& location) const;
+
+    MCNAPI ::std::optional<::mce::Color> $findColorIfCustomBiome(::Biome const* biome) const;
+
+    MCNAPI void $recalculateBiomes(::std::map<::std::string, ::CustomBiome> const& customBiomeMap);
+
+    MCNAPI void $updateColor(::std::string const& biomeName, ::mce::Color const& color);
+
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForBiomeUpdates(::std::function<void()> callback);
+
 
     // NOLINTEND
 };

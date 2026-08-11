@@ -102,6 +102,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $enqueueConvertImportingWorldTasks(
+        ::std::shared_ptr<::FileArchiver::Result>&                      sharedResult,
+        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
+        ::Bedrock::Threading::Async<void>&                              prevTaskHandle
+    );
+
+    MCNAPI bool $shouldCopyWorldForConversion(::std::string const& levelId) const;
+
+    MCNAPI void $enqueueConvertExportingWorldTasks(
+        ::std::shared_ptr<::FileArchiver::ExportData>&                             exportData,
+        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>            progress,
+        ::Bedrock::Threading::Async<void>&                                         prevTaskHandle,
+        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers,
+        ::std::optional<::FileArchiver::WorldConverterExportSettings> const        exportSetting
+    );
+
 
     // NOLINTEND
 };

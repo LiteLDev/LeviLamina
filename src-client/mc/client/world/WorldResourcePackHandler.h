@@ -247,7 +247,76 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::World::WorldPacks& $loadPackContentForWorld(::LevelSummary const& levelSummary);
 
+    MCAPI ::World::PackCollection
+    $getWorldPackCollection(::LevelSummary const& levelSummary, ::ContentType const contentType, bool const isEduMode);
+
+    MCAPI ::std::optional<::World::PackActionError> $activatePack(
+        ::LevelSummary const& levelSummary,
+        ::ContentType const   contentType,
+        ::std::string const&  packId,
+        bool const            isEduMode,
+        bool const            force
+    );
+
+    MCAPI ::std::optional<::World::PackActionError> $deactivatePack(
+        ::LevelSummary const& levelSummary,
+        ::ContentType const   contentType,
+        ::std::string const&  packId,
+        bool const            isEduMode,
+        bool const            force
+    );
+
+    MCAPI ::std::optional<::World::PackActionError> $continuePackActivation(::LevelSummary const& levelSummary);
+
+    MCAPI ::std::optional<::World::PackActionError> $continuePackDeactivation(::LevelSummary const& levelSummary);
+
+    MCAPI void $downloadPacks(
+        ::LevelSummary const&                             levelSummary,
+        ::std::vector<::std::string> const&               packIds,
+        ::std::function<void()>                           onCompleteCallback,
+        ::std::function<void(::World::PackDownloadError)> onErrorCallback
+    );
+
+    MCAPI ::World::PackDownloadProgressInfo $getDownloadPackProgress();
+
+    MCAPI void $getDownloadingPackTitles(::std::function<void(::std::vector<::std::string>)> packTitlesCallback);
+
+    MCFOLD void $cancelDownloadPack();
+
+    MCAPI void $getPackSizes(
+        ::LevelSummary const&                           levelSummary,
+        ::std::vector<::std::string> const&             packIds,
+        ::std::function<void(uint64)>                   onCompleteCallback,
+        ::std::function<void(::World::PackActionError)> onErrorCallback
+    );
+
+    MCAPI void $savePacksData();
+
+    MCAPI bool $hasNonAddonBehaviorPacks(::LevelSummary const& levelSummary);
+
+    MCAPI bool $hasBehaviorPacks(::LevelSummary const& levelSummary);
+
+    MCAPI bool $hasLockedPacks(::LevelSummary const& levelSummary) const;
+
+    MCAPI ::std::optional<::World::PackActionError> $changePackPriority(
+        ::LevelSummary const& levelSummary,
+        ::ContentType const   contentType,
+        ::std::string const&  packId,
+        int const             fromIndex,
+        int const             toIndex
+    );
+
+    MCAPI ::World::PackCheckResult
+    $checkDlc(::std::string const& levelId, ::PackIdVersion const& packIdVersion, bool const isForRealms);
+
+    MCAPI ::std::vector<::World::PackDetails>
+    $getPackDetailsForWorld(::LevelSummary const& levelSummary, ::std::vector<::std::string> const& packIds);
+
+    MCAPI bool $getResourcePacksDirty();
+
+    MCAPI void $refreshPacksData();
     // NOLINTEND
 };
 

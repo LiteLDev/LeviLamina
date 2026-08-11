@@ -82,6 +82,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $canUse();
+
+    MCAPI bool $canContinueToUse();
+
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
+    MCAPI void $start();
+
+    MCAPI void $stop();
+
 
     // NOLINTEND
 };

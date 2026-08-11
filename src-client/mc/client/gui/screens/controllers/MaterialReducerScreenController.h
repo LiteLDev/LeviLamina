@@ -66,6 +66,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::string $_getButtonADescription();
 
+    MCAPI ::std::string $_getButtonXDescription();
+
+    MCAPI bool $_isStillValid() const;
+
+    MCAPI void $_registerCoalesceOrder();
+
+    MCAPI void $_registerAutoPlaceOrder();
     // NOLINTEND
 };

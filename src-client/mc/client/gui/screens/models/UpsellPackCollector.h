@@ -60,6 +60,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $start(bool allowed);
 
+    MCAPI bool $exhausted() const;
+
+    MCAPI ::HandleRangeResult $handleRange(int, int end);
+
+    MCAPI void $collect(
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
+        ::PersonaClient&                                     skinRepo,
+        ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
+        ::std::unordered_set<::mce::UUID>&                   handledPackSet
+    );
     // NOLINTEND
 };

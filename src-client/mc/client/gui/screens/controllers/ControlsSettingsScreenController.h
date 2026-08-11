@@ -175,6 +175,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $_registerControllerCallbacks();
 
+    MCAPI void $onTerminate();
+
+    MCAPI bool $canExit();
     // NOLINTEND
 };

@@ -36,6 +36,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::ServerWaypoint> $createWaypoint() const;
+
 
     // NOLINTEND
 };

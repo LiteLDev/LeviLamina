@@ -202,6 +202,136 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
 
+    MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
+
+    MCFOLD bool $canLaunchUri(::std::string const& uri);
+
+    MCAPI void $launchUri(::std::string const& uri);
+
+    MCAPI ::Core::PathBuffer<::std::string> $getPackagePath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $getLoggingPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $getDataUrl() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $getUserStorageRootPath() const;
+
+    MCAPI void $setStorageDirectory(
+        ::FileStorageDirectory      dir,
+        bool                        isCallback,
+        ::PropertyBag const&        extraData,
+        ::std::function<void(bool)> onComplete
+    );
+
+    MCFOLD bool $usesAsyncOptionSaving() const;
+
+    MCFOLD bool $supportsKeyboardMouse() const;
+
+    MCFOLD void $updateKeyboard();
+
+    MCAPI void $initializeOnScreenKeyboard(::Bedrock::NotNullNonOwnerPtr<::ITextBoxController>);
+
+    MCFOLD void $deinitializeOnScreenKeyboard();
+
+    MCFOLD bool $supportsMSAA() const;
+
+    MCAPI void $_fireAppFocusGained();
+
+    MCAPI void $_fireAppFocusLost();
+
+    MCAPI void $textEditComponentGainedFocus(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline
+    );
+
+    MCAPI void $textEditComponentLostFocus();
+
+    MCFOLD void $setClipboard(::std::string const& value) const;
+
+    MCAPI ::std::wstring $getClipboardText() const;
+
+    MCFOLD void $swapBuffers();
+
+    MCFOLD void $discardBackbuffer();
+
+    MCAPI ::std::string $createUUID();
+
+    MCFOLD auto $getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
+
+    MCFOLD bool $supportsVibration() const;
+
+    MCFOLD bool $supportsFliteTTS() const;
+
+    MCFOLD bool $getSimulateTouchWithMouse() const;
+
+    MCAPI int $getScreenWidth() const;
+
+    MCAPI int $getScreenHeight() const;
+
+    MCAPI void $setScreenSize(int width, int height);
+
+    MCAPI void $setWindowSize(int width, int height);
+
+    MCFOLD void $screenToClient(int& x, int& y) const;
+
+    MCFOLD bool $hasBuyButtonWhenInvalidLicense();
+
+    MCAPI ::std::string $getApplicationId() const;
+
+    MCFOLD bool $isMouseInsideClient() const;
+
+    MCFOLD bool $canScroll() const;
+
+    MCFOLD bool $isRemoteSession() const;
+
+    MCFOLD bool $isMouseClickLockEnabled() const;
+
+    MCFOLD bool $isMouseSonarEnabled() const;
+
+    MCFOLD uint $getMouseClickLockTime() const;
+
+    MCAPI uint64 $getFreeMemory() const;
+
+    MCAPI uint64 $getMemoryLimit() const;
+
+    MCAPI uint64 $getUsedMemory();
+
+    MCAPI uint64 $getTotalPhysicalMemory() const;
+
+    MCAPI void $setFullscreenMode(::FullscreenMode const fullscreenMode);
+
+    MCFOLD bool $isWebviewSupported() const;
+
+    MCAPI ::std::variant<::HWND__*, ::std::monostate> $getRenderSurfaceParameters() const;
+
+    MCAPI bool $isLANAvailable() const;
+
+    MCAPI bool $isNetworkAllowed() const;
+
+    MCAPI bool $isNetworkAvailable() const;
+
+    MCAPI bool $isInternetAvailable() const;
+
+    MCAPI ::Bedrock::PubSub::Subscription
+    $addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback);
+
+    MCFOLD bool $isHandheldDevice() const;
+
+    MCAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
+
+    MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
+
+    MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
+
+    MCFOLD bool $compareAppReceiptToLocalReceipt(::std::string const&);
+
+    MCAPI int $getPlatformDpi() const;
+
+    MCAPI ::Bedrock::CommonPlatform* $getPlatformShim() const;
     // NOLINTEND
 };

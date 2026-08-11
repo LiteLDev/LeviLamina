@@ -116,6 +116,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
+    MCAPI void $onCreation();
+
+    MCAPI void $onOpen();
+
+    MCAPI void $onEntered();
+
+    MCAPI void $onLeave();
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::std::string $getAdditionalScreenInfo() const;
+
+    MCFOLD ::ui::SceneType $getSceneType() const;
+
+    MCAPI ::sidebar::navigationLayout::Type $getSidebarLayoutType() const;
     // NOLINTEND
 };

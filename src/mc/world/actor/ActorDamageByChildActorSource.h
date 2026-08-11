@@ -83,7 +83,11 @@ public:
 
     MCAPI bool $getDamagingEntityIsCreative() const;
 
+#ifdef LL_PLAT_S
     MCAPI bool $getDamagingEntityIsWorldBuilder() const;
+#else // LL_PLAT_C
+    MCFOLD bool $getDamagingEntityIsWorldBuilder() const;
+#endif
 
     MCAPI ::ActorUniqueID $getDamagingEntityUniqueID() const;
 

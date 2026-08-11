@@ -22,6 +22,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::string_view $getName() const;
+
+    MCNAPI bool $_isExpectedItem(::std::vector<::ItemStack const*> const& itemList) const;
+
 
     // NOLINTEND
 };

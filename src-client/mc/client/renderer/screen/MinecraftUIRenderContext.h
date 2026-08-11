@@ -267,6 +267,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI int $getLineLength(::Font& font, ::std::string const& text, float fontSize, bool showColorSymbol) const;
+
+    MCFOLD float $getTextAlpha() const;
+
+    MCAPI void $setTextAlpha(float alpha);
+
+    MCAPI void $drawDebugText(
+        ::RectangleArea const&    rect,
+        ::std::string&&           text,
+        ::mce::Color const&       color,
+        float                     alpha,
+        ::ui::TextAlignment       alignment,
+        ::TextMeasureData const&  textData,
+        ::CaretMeasureData const& caretData
+    );
+
+    MCAPI void $drawText(
+        ::Font&                   font,
+        ::RectangleArea const&    rect,
+        ::std::string&&           text,
+        ::mce::Color const&       color,
+        float                     alpha,
+        ::ui::TextAlignment       alignment,
+        ::TextMeasureData const&  textData,
+        ::CaretMeasureData const& caretData
+    );
+
+    MCAPI void $flushText(float deltaTime, ::std::optional<float> obfuscateSwitchTime);
+
     MCAPI void $drawImage(
         ::mce::ClientTexture const& texture,
         ::glm::vec2 const&          position,
@@ -275,5 +304,73 @@ public:
         ::glm::vec2 const&          uvSize,
         bool const                  colorCorrected
     );
+
+    MCAPI void $drawNineslice(::mce::ClientTexture const& texture, ::NinesliceInfo const& info);
+
+    MCAPI void $flushImages(::mce::Color const& color, float alpha, ::HashedString const& materialNameHash);
+
+    MCAPI ::mce::TexturePtr $getTexture(::ResourceLocation const& resourceLocation, bool forceReload) const;
+
+    MCAPI ::mce::TexturePtr $getZippedTexture(
+        ::Core::Path const&       zippedFolderPath,
+        ::ResourceLocation const& resourceLocation,
+        bool                      forceReload
+    ) const;
+
+    MCAPI bool $unloadTexture(::ResourceLocation const& resourceLocation);
+
+    MCAPI ::UITextureInfoPtr $getUITextureInfo(::ResourceLocation const& resourceLocation, bool forceReload) const;
+
+    MCAPI void $touchTexture(::ResourceLocation const& resourceLocation);
+
+    MCAPI void $beginSharedMeshBatch(::ComponentRenderBatch& renderBatch);
+
+    MCAPI void $endSharedMeshBatch(::ComponentRenderBatch& renderBatch);
+
+    MCAPI void $reserveSharedMeshBatch(uint64 vertexCount);
+
+    MCAPI uint64 $getSharedMeshBatchVertexCount() const;
+
+    MCAPI void $drawRectangle(::RectangleArea const& rect, ::mce::Color const& color, float alpha, int thickness);
+
+    MCAPI void $fillRectangle(::RectangleArea const& rect, ::mce::Color const& color, float alpha);
+
+    MCAPI void $increaseStencilRef();
+
+    MCAPI void $decreaseStencilRef();
+
+    MCAPI void $resetStencilRef();
+
+    MCAPI void $fillRectangleStencil(::RectangleArea const& rect);
+
+    MCAPI void $enableScissorTest(::RectangleArea const& rect);
+
+    MCAPI void $disableScissorTest();
+
+    MCAPI void $setClippingRectangle(::RectangleArea const& rect);
+
+    MCAPI void $setFullClippingRectangle();
+
+    MCAPI void $saveCurrentClippingRectangle();
+
+    MCAPI void $restoreSavedClippingRectangle();
+
+    MCAPI ::RectangleArea $getFullClippingRectangle() const;
+
+    MCAPI void $cleanup();
+
+    MCAPI void $removePersistentMeshes();
+
+    MCFOLD ::UIMeasureStrategy& $getMeasureStrategy();
+
+    MCAPI void $snapImageSizeToGrid(::glm::vec2& size) const;
+
+    MCAPI void $snapImagePositionToGrid(::glm::vec2& position) const;
+
+    MCAPI void $notifyImageEstimate(uint64 imageCount);
+
+    MCAPI bool $updateCustom(::gsl::not_null<::CustomRenderComponent*> customRenderer);
+
+    MCAPI void $renderCustom(::gsl::not_null<::CustomRenderComponent*> customRenderer, int pass);
     // NOLINTEND
 };

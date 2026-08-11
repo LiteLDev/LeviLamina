@@ -178,6 +178,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $SetStats(::webrtc::VideoSendStream::Stats const&);
+
 
     // NOLINTEND
 };

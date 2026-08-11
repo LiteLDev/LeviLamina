@@ -86,7 +86,11 @@ public:
 
     MCNAPI void $mainUpdate();
 
+#ifdef LL_PLAT_S
     MCNAPI void $processActivationArguments(::Bedrock::ActivationArguments const&);
+#else // LL_PLAT_C
+    MCNAPI void $processActivationArguments(::Bedrock::ActivationArguments const& args);
+#endif
 
 
     // NOLINTEND

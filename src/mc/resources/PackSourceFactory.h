@@ -170,13 +170,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ::TreatmentPackSource& $createTreatmentPackSource(::Core::Path const& path, ::PackType packType);
-
-    MCAPI ::TreatmentPackSource* $getTreatmentPackSource(::Core::Path const& path, ::PackType packType) const;
-
-    MCAPI void $removeFromTreatmentPackSource(::Core::Path const& fullPathToPack);
-
     MCAPI ::WorldTemplatePackSource& $createWorldTemplatePackSource(
         ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager,
         ::mce::UUID const&                                                  worldTemplateId,
@@ -223,6 +216,13 @@ public:
     );
 
     MCAPI ::std::unique_ptr<::CompositePackSource> $createCompositePackSource(::std::vector<::PackSource*> sources);
+
+#ifdef LL_PLAT_C
+    MCAPI ::TreatmentPackSource& $createTreatmentPackSource(::Core::Path const& path, ::PackType packType);
+
+    MCAPI ::TreatmentPackSource* $getTreatmentPackSource(::Core::Path const& path, ::PackType packType) const;
+
+    MCAPI void $removeFromTreatmentPackSource(::Core::Path const& fullPathToPack);
 #endif
 
 

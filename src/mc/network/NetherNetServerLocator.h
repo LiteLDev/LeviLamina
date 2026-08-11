@@ -131,6 +131,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $startAnnouncingServer(
+        ::std::string const&                 playerName,
+        ::std::string const&                 worldName,
+        ::GameType                           gameType,
+        int                                  numPlayers,
+        int                                  maxNumPlayers,
+        bool                                 isJoinableThroughServerScreen,
+        bool                                 isEditorWorld,
+        bool                                 isHardcore,
+        ::ServerSupportedAuthenticationTypes supportedAuth
+    );
+
+    MCNAPI void $stopAnnouncingServer();
+
+    MCNAPI void $startServerDiscovery(::PortPair ports);
+
+    MCNAPI void $stopServerDiscovery();
+
+    MCNAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
+
+    MCNAPI void $clearServerList();
+
+    MCNAPI void $update();
+
 
     // NOLINTEND
 };

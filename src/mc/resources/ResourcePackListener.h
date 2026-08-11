@@ -44,9 +44,17 @@ public:
 
     MCNAPI void $onLanguageSubpacksChanged();
 
+#ifdef LL_PLAT_S
     MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
+#else // LL_PLAT_C
+    MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager&);
+#endif
 
+#ifdef LL_PLAT_S
     MCNAPI void $onJsonResourcesChanged(::ResourcePackManager&);
+#else // LL_PLAT_C
+    MCNAPI void $onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
+#endif
 
 
     // NOLINTEND

@@ -52,6 +52,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCFOLD int $getEnchantSlot() const;
+
+    MCAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
+
 
     // NOLINTEND
 };

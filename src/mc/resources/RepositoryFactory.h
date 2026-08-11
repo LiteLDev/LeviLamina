@@ -25,6 +25,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::RepositorySources> $createSources(::IResourcePackRepository const& repository) const;
+
+    MCFOLD ::std::unique_ptr<::IPackIOProvider> $createIO() const;
+
 
     // NOLINTEND
 };

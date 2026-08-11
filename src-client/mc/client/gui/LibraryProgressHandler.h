@@ -51,6 +51,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& container) const;
 
+    MCAPI ::std::string $getName() const;
     // NOLINTEND
 };

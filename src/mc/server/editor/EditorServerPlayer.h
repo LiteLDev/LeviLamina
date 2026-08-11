@@ -48,6 +48,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
+
+    MCNAPI ::optional_ref<::PlayerEventCoordinator> $getPlayerEventCoordinator();
+
+    MCNAPI bool $isClientSide() const;
+
 
     // NOLINTEND
 };

@@ -67,6 +67,16 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+            ::gsl::not_null<::Block const*> block,
+            ::Actor const&                  by,
+            ::BlockPos const&,
+            uchar,
+            ::Vec3 const&
+        ) const;
+
+        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
+
 
         // NOLINTEND
     };
@@ -95,6 +105,16 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+            ::gsl::not_null<::Block const*> block,
+            ::Actor const&                  by,
+            ::BlockPos const&               pos,
+            uchar,
+            ::Vec3 const&
+        ) const;
+
+        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
+
 
         // NOLINTEND
     };
@@ -117,6 +137,16 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+            ::gsl::not_null<::Block const*> block,
+            ::Actor const&                  by,
+            ::BlockPos const&,
+            uchar,
+            ::Vec3 const&
+        ) const;
+
+        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
+
 
         // NOLINTEND
     };

@@ -61,6 +61,10 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $OnSuccess(::webrtc::SessionDescriptionInterface* description);
+
+        MCNAPI void $OnFailure(::webrtc::RTCError error);
+
 
         // NOLINTEND
     };
@@ -88,6 +92,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $OnSetLocalDescriptionComplete(::webrtc::RTCError result);
+
 
         // NOLINTEND
     };
@@ -115,6 +121,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $OnSetRemoteDescriptionComplete(::webrtc::RTCError result);
+
 
         // NOLINTEND
     };
@@ -185,6 +193,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::NetherNet::ESessionError $checkTimeout(::std::chrono::seconds timeout) const;
+
+    MCNAPI void $onRemoteAnswer(::NetherNet::ConnectResponse const& answer);
+
+    MCNAPI void $onRemoteError(::NetherNet::ConnectError const& error);
+
 
     // NOLINTEND
 };

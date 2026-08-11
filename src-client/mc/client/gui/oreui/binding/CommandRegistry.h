@@ -86,6 +86,12 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onReadyForBindings();
+
+    MCFOLD void $onSuspend();
+
+    MCFOLD void $onBindingsReleased();
+
+    MCFOLD void $update(double const time);
     // NOLINTEND
 };
 

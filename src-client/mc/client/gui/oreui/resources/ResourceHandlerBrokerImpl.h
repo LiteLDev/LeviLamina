@@ -77,7 +77,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void
+    $OnResourceRequest(::cohtml::IAsyncResourceRequest const* request, ::cohtml::IAsyncResourceResponse* response);
 
+    MCAPI void $OnResourceStreamRequest(
+        ::cohtml::IAsyncResourceRequest const*  request,
+        ::cohtml::IAsyncResourceStreamResponse* response
+    );
+
+    MCFOLD void $OnAbortResourceRequest(uint);
+
+    MCAPI void $update();
+
+    MCAPI void $registerResourceHandler(
+        ::std::string const&                            protocol,
+        ::std::unique_ptr<::Gameface::IResourceHandler> resourceHandler
+    );
+
+    MCAPI void $unregisterResourceHandler(::std::string const& protocol);
+
+    MCAPI void $onViewCreate(::IClientInstance& clientInstance);
+
+    MCAPI void $onAppPreSuspend();
+
+    MCFOLD ::cohtml::IAsyncResourceHandler* $getCohtmlHandler();
     // NOLINTEND
 };
 

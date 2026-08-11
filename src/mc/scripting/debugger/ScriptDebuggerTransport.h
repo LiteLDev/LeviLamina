@@ -53,6 +53,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $listen(ushort port);
+
+    MCNAPI bool $connect(::std::string const& host, ushort port);
+
+    MCNAPI bool $selectClient(::std::string& outClient);
+
+    MCNAPI bool $started() const;
+
+    MCNAPI bool $connected() const;
+
+    MCNAPI bool $lostConnection() const;
+
+    MCNAPI bool $readyClose() const;
+
+    MCNAPI void $close();
+
+    MCNAPI bool $peek() const;
+
+    MCNAPI bool $receive(char* buffer, uint64 length);
+
+    MCNAPI void $send(char const* buffer, uint64 length);
+
 
     // NOLINTEND
 };

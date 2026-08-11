@@ -126,6 +126,28 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $onConnect();
+
+        MCNAPI void $onMessage(::std::string_view incomingMessage);
+
+        MCNAPI bool $shouldReconnect() const;
+
+        MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Url> $getUrl();
+
+        MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::HeaderCollection> $getHeaders();
+
+        MCNAPI ::Bedrock::Http::RetryPolicy $getReconnectPolicy();
+
+        MCNAPI void $onDisconnect(bool, uint closeStatus);
+
+        MCNAPI void $_requestTurnConfig() const;
+
+        MCNAPI void $_sendPing() const;
+
+        MCNAPI void $onAppSuspended();
+
+        MCNAPI void $onAppResumed();
+
 
         // NOLINTEND
     };
@@ -163,6 +185,15 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $SendSignal(
+            ::NetherNet::NetworkID                              from,
+            ::NetherNet::NetworkID                              to,
+            ::std::string const&                                message,
+            ::std::function<void(::NetherNet::ESessionError)>&& onComplete
+        );
+
+        MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
+
 
         // NOLINTEND
     };
@@ -216,6 +247,28 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>> $sendJsonRpcTo(
+            ::PlayerMessaging::NetworkID          networkIdTo,
+            ::std::optional<::std::string> const& messageId,
+            ::std::string const&                  message
+        ) const;
+
+        MCNAPI ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>>
+        $sendJsonRpc(::std::optional<::std::string> const& messageId, ::std::string const& message) const;
+
+        MCNAPI ::std::shared_ptr<::MessageTracker> $getMessageTracker();
+
+        MCNAPI void $parseSignal(::NetherNet::NetworkID fromNetworkID, ::std::string message, ::std::string messageId);
+
+        MCNAPI void $parseTurnConfig(::Json::Value const& config);
+
+        MCNAPI void $setTurnConfig(
+            ::std::vector<::NetherNet::StunRelayServer>&& config,
+            ::std::chrono::steady_clock::time_point       expiration
+        );
+
+        MCNAPI void $onTurnConfigFailure(::Bedrock::ErrorInfo<::NetherNet::ESessionError> const& error);
+
 
         // NOLINTEND
     };

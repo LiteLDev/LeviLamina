@@ -22,7 +22,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI void $_initializePlatform(::Bedrock::DeviceIDPlatformEnvironment const& environment);
     // NOLINTEND
 };
 

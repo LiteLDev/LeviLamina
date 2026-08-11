@@ -67,6 +67,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+    MCAPI int $getWorldZ(int x, int z);
+
+    MCAPI int $getWorldX(int x, int z);
+
+    MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+
 
     // NOLINTEND
 };

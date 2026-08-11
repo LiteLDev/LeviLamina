@@ -152,7 +152,53 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::variant<::World::IWorldStorageHandler::ReadWorldError, ::World::IWorldStorageHandler::CachedWorldData>
+    $readWorld(::World::WorldID const& id) const;
 
+    MCAPI ::std::optional<::World::IWorldStorageHandler::WriteWorldError> $updateOrCreateWorld(
+        ::LevelData&                       levelData,
+        ::LevelSummary&                    levelSummary,
+        ::std::shared_ptr<::LevelSettings> levelSettings
+    ) const;
+
+    MCAPI void $deleteWorld(::World::WorldID const& id);
+
+    MCAPI void $reloadWorld(::World::WorldID const& id);
+
+    MCAPI ::Bedrock::Threading::Async<void> $clearPlayerData(
+        ::World::WorldID const&                                                    worldId,
+        ::World::ClearPlayerDataType                                               type,
+        ::std::optional<::World::IWorldStorageHandler::StartClearPlayerDataError>& error
+    );
+
+    MCAPI void $duplicateWorld(
+        ::World::WorldID const&                                                                             worldId,
+        ::std::function<void(::World::WorldID const&, ::World::IWorldStorageHandler::DuplicateWorldResult)> onComplete
+    );
+
+    MCAPI void $exportWorld(
+        ::World::WorldID const&                                                 worldId,
+        ::World::ExportWorldFlags                                               flags,
+        ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
+    );
+
+    MCAPI void $exportWorldAsTemplate(
+        ::World::WorldID const&                                                 worldId,
+        ::World::ExportWorldFlags                                               flags,
+        ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
+    );
+
+    MCFOLD ::World::IWorldStorageHandler::ExportWorldStatus $exportWorldStatus() const;
+
+    MCAPI void $updateWorldIcon(
+        ::World::WorldID const&                        worldId,
+        ::Core::PathBuffer<::std::string> const&       screenshotPath,
+        ::std::string const&                           id,
+        ::std::function<void(::World::WorldID const&)> onComplete
+    );
+
+    MCAPI void
+    $resetWorldIcon(::World::WorldID const& worldId, ::std::function<void(::World::WorldID const&)> onComplete);
     // NOLINTEND
 };
 

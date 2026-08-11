@@ -211,6 +211,8 @@ public:
 
     MCAPI void $onSuspend();
 
+    MCFOLD void $onBindingsReleased();
+
     MCAPI void $update(double const time);
     // NOLINTEND
 };

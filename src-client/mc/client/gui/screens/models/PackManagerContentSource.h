@@ -94,6 +94,8 @@ public:
     // NOLINTBEGIN
     MCAPI void $load();
 
+    MCAPI void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
+
     MCAPI void
     $_createSelectedPackContentItems(::PackManagerContentSourceData& packData, ::std::vector<::PackModel>& selected);
 

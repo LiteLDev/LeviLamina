@@ -339,6 +339,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onOpen();
 
+    MCAPI void $onCreation();
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::std::string $getAdditionalScreenInfo() const;
+
+    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
     // NOLINTEND
 };

@@ -53,6 +53,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $findTargetBlock();
+
+    MCAPI bool $canUse();
+
+    MCAPI bool $canContinueToUse();
+
+    MCAPI void $start();
+
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
+    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI void $_moveToBlock();
+
 
     // NOLINTEND
 };

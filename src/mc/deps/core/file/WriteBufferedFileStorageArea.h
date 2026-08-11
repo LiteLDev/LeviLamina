@@ -74,6 +74,36 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::unique_ptr<::Core::FileSystemImpl> $createTransaction(::Core::FileAccessType);
+
+    MCNAPI bool $supportsSizeQuery() const;
+
+    MCNAPI uint64 $getTotalSize() const;
+
+    MCNAPI ::Core::Result $getUsedSize(uint64&);
+
+    MCNAPI uint64 $getTransactionWriteSizeLimit() const;
+
+    MCNAPI bool $handlesPendingWrites() const;
+
+    MCNAPI void $informPendingWriteSize(uint64, bool const);
+
+    MCNAPI uint64 $estimatePendingWriteDiskSize(uint64 rawFileSize) const;
+
+    MCNAPI void $informStorageAreaCopy(uint64);
+
+    MCNAPI ::Core::Result $setSaveDataIcon(::Core::PathView);
+
+    MCNAPI ::Core::FileStorageArea::FlushableLevelDbEnvType $getFlushableLevelDbEnvType() const;
+
+    MCNAPI void $flushImmediately(::Core::PathView flushPath);
+
+    MCNAPI void $enableFlushToDisk(bool);
+
+    MCNAPI bool $checkCorrupt(bool);
+
+    MCNAPI void $_onTeardown();
+
 
     // NOLINTEND
 };

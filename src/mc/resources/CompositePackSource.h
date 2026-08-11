@@ -44,6 +44,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $forEachPackShared(::brstd::function_ref<void(::gsl::not_null<::std::shared_ptr<::Pack>>)> callback);
+
+    MCAPI void $_buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources);
+
+    MCAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&&);
+
 
     // NOLINTEND
 };

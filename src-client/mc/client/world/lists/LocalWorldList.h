@@ -95,7 +95,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
 
+    MCAPI void $onLevelUpdated(::std::string const& levelId);
+
+    MCAPI void $onLevelDeleted(::std::string const& levelId);
+
+    MCAPI void $onSummaryUpdated(::std::string const& levelId);
+
+    MCAPI void $onStorageChanged();
     // NOLINTEND
 };
 

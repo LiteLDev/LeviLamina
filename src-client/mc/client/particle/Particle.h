@@ -95,6 +95,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $addTagData(::CompoundTag const& tag);
 
+    MCAPI void $normalTick();
+
+    MCAPI void $tessellate(::ParticleRenderContext const& renderContext);
+
+    MCAPI ::mce::TexturePtr const& $getParticleTexture() const;
+
+    MCFOLD void $setEmittingEntity(::Actor& entity);
+
+    MCAPI bool $_shouldUpdateVertexData(float sqDist);
+
+    MCAPI void $_calculateAmbientLight(float a);
     // NOLINTEND
 };

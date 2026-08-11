@@ -41,6 +41,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::shared_ptr<::gametest::BaseGameTestInstance>
+    $_createGameTestInstance(::gametest::BaseGameTestFunction& function);
+
+    MCNAPI void $_runTest(::std::shared_ptr<::gametest::BaseGameTestInstance> test, ::gametest::GameTestTicker& ticker);
+
 
     // NOLINTEND
 };

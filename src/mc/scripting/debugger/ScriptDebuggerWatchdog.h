@@ -34,13 +34,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI bool $requireClose() const;
 
     MCNAPI void $startListenTimeout(::std::chrono::seconds duration);
 
     MCNAPI bool $listenTimeoutExpired() const;
-#endif
 
 
     // NOLINTEND

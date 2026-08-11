@@ -31,7 +31,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onUserAdded(::std::shared_ptr<::Social::User> const& user);
 
+    MCNAPI void $onUserRemoved(::std::shared_ptr<::Social::User> const& user);
+
+    MCNAPI void $onUserStorageAreaChanged(
+        ::std::shared_ptr<::Social::User> const&    user,
+        ::std::shared_ptr<::Core::FileStorageArea>& oldStorageArea
+    );
     // NOLINTEND
 };
 

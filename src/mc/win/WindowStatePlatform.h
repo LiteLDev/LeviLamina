@@ -40,13 +40,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCNAPI bool $getWindowRect(::HWND__*, ::tagRECT&) const;
+#else // LL_PLAT_C
     MCNAPI bool $getWindowRect(::HWND__* window, ::tagRECT& result) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI bool $getClientRect(::HWND__*, ::tagRECT&) const;
+#else // LL_PLAT_C
     MCNAPI bool $getClientRect(::HWND__* window, ::tagRECT& result) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI bool $getWindowShowCommand(::HWND__*, int&) const;
+#else // LL_PLAT_C
     MCNAPI bool $getWindowShowCommand(::HWND__* window, int& result) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI bool $getAdjustedWindowRect(::tagRECT const&, ::tagRECT&) const;
+#else // LL_PLAT_C
     MCNAPI bool $getAdjustedWindowRect(::tagRECT const& clientRect, ::tagRECT& windowRect) const;
 #endif
 

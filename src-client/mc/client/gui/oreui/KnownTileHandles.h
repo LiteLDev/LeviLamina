@@ -68,7 +68,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::GeometryAtlas::IAtlasTile> $tryGet(uint id);
 
+    MCAPI ::gsl::not_null<::std::shared_ptr<::GeometryAtlas::IAtlasTile>>
+    $getOrCreate(::GeometryAtlas::TileDefinition const& definition);
+
+    MCAPI void $garbageCollect();
     // NOLINTEND
 };
 

@@ -60,6 +60,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
+
+    MCAPI ::ItemStackNetResult $handleConsumedItem(
+        ::FullContainerName const& openContainerNetId,
+        uchar const                slot,
+        ::ItemStack const&         consumedItem
+    );
+
+    MCAPI void $_postCraftRequest(bool const wasSuccess);
+
 
     // NOLINTEND
 };

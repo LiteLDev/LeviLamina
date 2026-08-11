@@ -92,7 +92,11 @@ public:
 
     MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
+#ifdef LL_PLAT_S
     MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
+#else // LL_PLAT_C
+    MCAPI ::std::string $buildDescriptionId(::Block const&) const;
+#endif
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 

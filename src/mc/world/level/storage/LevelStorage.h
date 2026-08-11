@@ -140,7 +140,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $loadedSuccessfully() const;
+
     MCAPI bool $clonePlayerData(::std::string_view fromKey, ::std::string_view toKey, bool isEditorPlayer);
+
+    MCAPI bool $loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
+
+    MCAPI void $freeCaches();
 
     MCFOLD void $corruptLevel();
 

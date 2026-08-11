@@ -80,7 +80,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::vector<::mce::UUID> const& $getPlayerList();
 
+    MCAPI ::PlayerListEntry const* $getPlayerEntry(::mce::UUID const& uuid);
+
+    MCAPI ::std::vector<::mce::UUID> $_getCurrentLobby() const;
     // NOLINTEND
 };
 

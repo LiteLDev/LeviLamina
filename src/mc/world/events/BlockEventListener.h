@@ -78,6 +78,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ::EventResult
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+#else // LL_PLAT_C
+    MCFOLD ::EventResult
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+#endif
+
     MCFOLD ::EventResult $onBlockDestroyedByPlayer(
         ::Player&              player,
         ::Block const&         destroyedBlock,
@@ -122,10 +130,9 @@ public:
 
     MCFOLD ::EventResult $onUnknownBlockReceived(::Level& level, ::NewBlockID const& blockId, ushort data);
 
-#ifdef LL_PLAT_C
-    MCFOLD ::EventResult
-    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
-
+#ifdef LL_PLAT_S
+    MCAPI ::EventResult $onEvent(::BlockNotificationEvent const& event);
+#else // LL_PLAT_C
     MCFOLD ::EventResult $onEvent(::BlockNotificationEvent const& event);
 #endif
 

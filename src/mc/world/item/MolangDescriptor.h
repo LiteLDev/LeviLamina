@@ -55,6 +55,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
+
+    MCAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
+
+    MCAPI bool $sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool) const;
+
+    MCAPI ::std::string $getFullName() const;
+
+    MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
+
+    MCAPI ::std::optional<::CompoundTag> $save() const;
+
+    MCAPI void $serialize(::Json::Value& val) const;
+
+    MCAPI void $serialize(::BinaryStream& stream) const;
+
+    MCFOLD ::ItemDescriptor::InternalType $getType() const;
+
+    MCAPI uint64 $getHash() const;
+
 
     // NOLINTEND
 };

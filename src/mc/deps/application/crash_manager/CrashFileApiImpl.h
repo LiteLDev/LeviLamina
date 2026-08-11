@@ -22,6 +22,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::string_view $getSaveRoot() const;
+
+    MCNAPI ::Bedrock::Result<void> $createDirectory(char const* path);
+
+    MCNAPI ::Bedrock::Result<void> $writeFile(char const* path, char const* buffer, uint64 bufferSize);
+
 
     // NOLINTEND
 };

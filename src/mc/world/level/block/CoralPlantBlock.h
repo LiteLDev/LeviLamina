@@ -75,6 +75,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::AABB $getCollisionShape(
+        ::Block const&,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
+
+    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
+
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+
+    MCFOLD bool $isLavaBlocking() const;
+
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+
+    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+
 
     // NOLINTEND
 };

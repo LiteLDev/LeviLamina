@@ -37,6 +37,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
+
 
     // NOLINTEND
 };

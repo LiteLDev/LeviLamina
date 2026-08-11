@@ -105,6 +105,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
 
     // NOLINTEND
 };

@@ -52,7 +52,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
+    MCFOLD void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+
+    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
+
+    MCAPI bool
+    $emitterResetting(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
+
+    MCFOLD bool
+    $hasEmitterExpired(::ParticleSystem::ComponentAccessParticleEmitter const& emitter, ::RenderParams& renderParams);
+
+    MCFOLD bool
+    $isEmitterActive(::ParticleSystem::ComponentAccessParticleEmitter const& emitter, ::RenderParams& renderParams);
     // NOLINTEND
 };
 

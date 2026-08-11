@@ -47,6 +47,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $Init();
+
+    MCNAPI ::webrtc::VoiceEngineInterface const& $voice() const;
+
+    MCNAPI ::webrtc::VoiceEngineInterface& $voice();
+
+    MCNAPI ::webrtc::VideoEngineInterface const& $video() const;
+
+    MCNAPI ::webrtc::VideoEngineInterface& $video();
+
 
     // NOLINTEND
 };

@@ -75,7 +75,11 @@ public:
 
     MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
 
+#ifdef LL_PLAT_S
     MCAPI void $visit(::AnimationVisitor&& dispatcher);
+#else // LL_PLAT_C
+    MCFOLD void $visit(::AnimationVisitor&& dispatcher);
+#endif
 
 
     // NOLINTEND

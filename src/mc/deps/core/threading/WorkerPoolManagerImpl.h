@@ -67,6 +67,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $init();
+
+    MCNAPI ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> $createWorkerPool(
+        ::std::string_view               name,
+        ::Core::Profile::ThreadFrameType frameType,
+        ::WorkerPoolConfig const&        config
+    );
+
+    MCNAPI void $tick();
+
 
     // NOLINTEND
 };

@@ -21,6 +21,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event);
+
 
     // NOLINTEND
 };

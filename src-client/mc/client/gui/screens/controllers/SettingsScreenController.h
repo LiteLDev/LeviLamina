@@ -224,6 +224,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onOpen();
 
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI ::std::string $getAdditionalScreenInfo() const;
+
+    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+
+    MCAPI int $getScreenVersion() const;
+
+    MCFOLD ::ui::SceneType $getSceneType() const;
     // NOLINTEND
 };

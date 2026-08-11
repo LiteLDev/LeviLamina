@@ -338,7 +338,151 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::bgfx::RendererType::Enum $getRendererType() const;
 
+    MCAPI uint64 $getRendererVersion() const;
+
+    MCAPI uint64 $getShaderVersion() const;
+
+    MCAPI char const* $getRendererName() const;
+
+    MCAPI void $createIndexBuffer(::bgfx::IndexBufferHandle _handle, ::bgfx::Memory const* _mem, ushort _flags);
+
+    MCAPI void $destroyIndexBuffer(::bgfx::IndexBufferHandle _handle);
+
+    MCAPI void $createVertexDecl(::bgfx::VertexDeclHandle _handle, ::bgfx::VertexDecl const& _decl);
+
+    MCFOLD void $destroyVertexDecl(::bgfx::VertexDeclHandle);
+
+    MCAPI void $createVertexBuffer(
+        ::bgfx::VertexBufferHandle _handle,
+        ::bgfx::Memory const*      _mem,
+        ::bgfx::VertexDeclHandle   _declHandle,
+        ushort                     _flags
+    );
+
+    MCAPI void $destroyVertexBuffer(::bgfx::VertexBufferHandle _handle);
+
+    MCAPI void $createDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle, uint _size, ushort _flags);
+
+    MCAPI void
+    $updateDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle, uint _offset, uint _size, ::bgfx::Memory const* _mem);
+
+    MCAPI void $destroyDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle);
+
+    MCAPI void $createDynamicVertexBuffer(::bgfx::VertexBufferHandle _handle, uint _size, ushort _flags);
+
+    MCAPI void $updateDynamicVertexBuffer(
+        ::bgfx::VertexBufferHandle _handle,
+        uint                       _offset,
+        uint                       _size,
+        ::bgfx::Memory const*      _mem
+    );
+
+    MCAPI void $destroyDynamicVertexBuffer(::bgfx::VertexBufferHandle _handle);
+
+    MCAPI void $createShader(::bgfx::ShaderHandle _handle, ::bgfx::Memory const* _mem);
+
+    MCAPI void $destroyShader(::bgfx::ShaderHandle _handle);
+
+    MCAPI void $createProgram(::bgfx::ProgramHandle _handle, ::bgfx::ShaderHandle _vsh, ::bgfx::ShaderHandle _fsh);
+
+    MCAPI void $destroyProgram(::bgfx::ProgramHandle _handle);
+
+    MCAPI void* $createTexture(
+        ::bgfx::TextureHandle _handle,
+        ::bgfx::Memory const* _mem,
+        uint                  _flags,
+        uchar                 _skip,
+        ::bgfx::Memory const**
+    );
+
+    MCAPI void $wrapExternalTexture(
+        ::bgfx::TextureHandle      _handle,
+        ::bgfx::RendererType::Enum _type,
+        void*                      _texturePtr,
+        void*                      _deferredRef
+    );
+
+    MCFOLD void $updateTextureBegin(::bgfx::TextureHandle, uchar, uchar);
+
+    MCAPI void $updateTexture(
+        ::bgfx::TextureHandle _handle,
+        uchar                 _side,
+        uchar                 _mip,
+        ::bgfx::Rect const&   _rect,
+        ushort                _z,
+        ushort                _depth,
+        ushort                _pitch,
+        ::bgfx::Memory const* _mem
+    );
+
+    MCFOLD void $updateTextureEnd();
+
+    MCAPI void $readTexture(::bgfx::TextureHandle _handle, void* _data, uchar _mip);
+
+    MCAPI void
+    $resizeTexture(::bgfx::TextureHandle _handle, ushort _width, ushort _height, uchar _numMips, ushort _numLayers);
+
+    MCAPI void $overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint _flags);
+
+    MCAPI uint64 $getInternal(::bgfx::TextureHandle _handle);
+
+    MCAPI void $destroyTexture(::bgfx::TextureHandle _handle);
+
+    MCAPI void $createShaderBuffer(::bgfx::ShaderBufferHandle _handle, uint _size, uint _stride, ushort _flags);
+
+    MCAPI void $updateShaderBuffer(::bgfx::ShaderBufferHandle _handle, uint _offset, ::bgfx::Memory const* _mem);
+
+    MCAPI void $destroyShaderBuffer(::bgfx::ShaderBufferHandle _handle);
+
+    MCAPI void $createFrameBuffer(::bgfx::FrameBufferHandle _handle, uchar _num, ::bgfx::Attachment const* _attachment);
+
+    MCAPI void $createFrameBuffer(
+        ::bgfx::FrameBufferHandle   _handle,
+        void*                       _nwh,
+        uint                        _width,
+        uint                        _height,
+        ::bgfx::TextureFormat::Enum _depthFormat
+    );
+
+    MCAPI void $destroyFrameBuffer(::bgfx::FrameBufferHandle _handle);
+
+    MCAPI void
+    $createUniform(::bgfx::UniformHandle _handle, ::bgfx::UniformType::Enum _type, ushort _num, char const* _name);
+
+    MCAPI void $destroyUniform(::bgfx::UniformHandle _handle);
+
+    MCAPI void $requestScreenShot(::bgfx::FrameBufferHandle _handle, char const* _filePath);
+
+    MCAPI void $updateViewName(ushort _id, char const* _name);
+
+    MCAPI void $updateUniform(void*, ushort _loc, void const* _data, uint _size);
+
+    MCFOLD void $setMarker(void*, char const* _marker, uint _size);
+
+    MCAPI void $invalidateOcclusionQuery(::bgfx::OcclusionQueryHandle _handle);
+
+    MCAPI void $setName(::bgfx::Handle _handle, char const* _name);
+
+    MCAPI void
+    $submit(::bgfx::Frame* _render, ::bgfx::ClearQuad& _clearQuad, ::bgfx::TextVideoMemBlitter& _textVideoMemBlitter);
+
+    MCAPI void $blitSetup(::bgfx::TextVideoMemBlitter& _blitter);
+
+    MCAPI void $blitRender(::bgfx::TextVideoMemBlitter& _blitter, uint _numIndices);
+
+    MCAPI bool $isDeviceRemoved();
+
+    MCAPI void $suspend();
+
+    MCFOLD void $resume();
+
+    MCAPI void $advanceToNextFrame();
+
+    MCAPI void $flip();
+
+    MCFOLD void $waitForFlipQueue();
     // NOLINTEND
 };
 

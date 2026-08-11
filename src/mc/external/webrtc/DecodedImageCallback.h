@@ -25,6 +25,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI int $Decoded(::webrtc::VideoFrame&, int64);
+
+    MCNAPI void $Decoded(::webrtc::VideoFrame&, ::std::optional<int>, ::std::optional<uchar>);
+
 
     // NOLINTEND
 };

@@ -62,8 +62,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void
     $onExtendDiskSpace(bool const, ::std::weak_ptr<::Core::FileStorageArea> const&, uint64, ::std::function<void()>);
+#else // LL_PLAT_C
+    MCFOLD void $onExtendDiskSpace(
+        bool const                                      bSet,
+        ::std::weak_ptr<::Core::FileStorageArea> const& storageAreaWeakPtr,
+        uint64                                          freeSpace,
+        ::std::function<void()>                         onHandledEventCallback
+    );
+#endif
 
     MCFOLD void $onLowDiskSpace(bool const bSet);
 

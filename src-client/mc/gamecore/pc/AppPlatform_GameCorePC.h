@@ -182,6 +182,136 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $showKeyboard(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline,
+        int const            controllerId,
+        ::glm::vec2 const&   position,
+        float                controlHeight,
+        ::InputMode          inputMode
+    );
 
+    MCAPI void $hideKeyboard();
+
+    MCAPI void $updateTextEditBoxPosition(
+        ::RectangleArea const& controlPosition,
+        ::RectangleArea const& selectionPosition,
+        float const            guiScale
+    );
+
+    MCAPI float $getKeyboardHeight() const;
+
+    MCAPI bool $isMouseInsideClient() const;
+
+    MCAPI bool $canScroll() const;
+
+    MCAPI bool $isRemoteSession() const;
+
+    MCAPI bool $isMouseClickLockEnabled() const;
+
+    MCAPI bool $isMouseSonarEnabled() const;
+
+    MCAPI uint $getMouseClickLockTime() const;
+
+    MCAPI void $hideMousePointer();
+
+    MCAPI void $showMousePointer();
+
+    MCAPI void $setMousePointerType(::Bedrock::Input::PointerType pointerType);
+
+    MCAPI void $toggleSimulateTouchWithMouse();
+
+    MCAPI int $getDisplayWidth();
+
+    MCAPI int $getDisplayHeight();
+
+    MCAPI void $screenToClient(int& x, int& y) const;
+
+    MCAPI ::std::string $getTextBoxBackend() const;
+
+    MCAPI void $setTextBoxBackend(::std::string const& newText);
+
+    MCAPI int $getCaretPosition() const;
+
+    MCAPI void $setCaretPosition(int position);
+
+    MCFOLD ::ClipboardFeatureFlags $getClipboardFeatures() const;
+
+    MCAPI void $setClipboard(::std::string const& value) const;
+
+    MCAPI ::std::wstring $getClipboardText() const;
+
+    MCFOLD bool $allowSplitScreen();
+
+    MCFOLD bool $allowsResourcePackDevelopment() const;
+
+    MCFOLD bool $supportsFilePicking() const;
+
+    MCAPI bool $supportsShare() const;
+
+    MCAPI void $share() const;
+
+    MCAPI void $shareFile(::Core::Path const& path, ::std::function<void(bool)>);
+
+    MCAPI void $pickImage(::std::shared_ptr<::ImagePickingCallback> callback);
+
+    MCAPI void $pickFile(::std::shared_ptr<::FilePickerSettings> settings);
+
+    MCFOLD auto $getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
+
+    MCFOLD ::OsVersion $getOSVersion() const;
+
+    MCFOLD ::PlatformType $getPlatformType() const;
+
+    MCFOLD ::BuildPlatform $getBuildPlatform() const;
+
+    MCAPI ::std::string $getPlatformString() const;
+
+    MCAPI ::std::string $getSubPlatformString() const;
+
+    MCAPI ::std::string $getClientUpdateUrl() const;
+
+    MCAPI ::std::string $getEdition() const;
+
+    MCAPI ::std::string $getModelName();
+
+    MCFOLD bool $devHotReloadRenderResources() const;
+
+    MCFOLD bool $delayOptionSaveUntilCloudSync() const;
+
+    MCFOLD bool $requiresXboxLiveSigninToPlay() const;
+
+    MCFOLD bool $requiresLiveGoldForMultiplayer() const;
+
+    MCAPI void $onMinecraftGameInitComplete();
+
+    MCAPI bool $isHandheldDevice() const;
+
+    MCAPI bool $getSimulateTouchWithMouse() const;
+
+    MCAPI float $getDefaultSafeZoneScaleX() const;
+
+    MCAPI float $getDefaultSafeZoneScaleY() const;
+
+    MCAPI float $getDefaultSafeZoneScaleAll() const;
+
+    MCFOLD float $getDefaultScreenPositionX() const;
+
+    MCFOLD float $getDefaultScreenPositionY() const;
+
+    MCAPI void $_initializeFileStorageAreas();
+
+    MCAPI ::Core::PathBuffer<::std::string> $_getUserFolderFromXUID(::std::string_view xuid);
+
+    MCAPI void $_retrieveSavedWindowSize(::tagRECT& size);
+
+    MCAPI void $_onInitialize();
+
+    MCAPI bool $isInvertScrollEnabled() const;
+
+    MCFOLD ::UIScalingRules $getPlatformUIScalingRules() const;
     // NOLINTEND
 };

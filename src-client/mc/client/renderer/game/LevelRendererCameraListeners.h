@@ -60,6 +60,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onWillChangeDimension(::Player& player);
 
+    MCNAPI void $onDimensionChanged(::Player& player);
+
+    MCNAPI void $onRegionDestroyed();
+
+    MCNAPI void $onChunkReloaded(::ChunkSource&, ::LevelChunk& lc);
+
+    MCNAPI void $updateLevelCullerType(::LevelCullerType const newLevelCullerType);
     // NOLINTEND
 };

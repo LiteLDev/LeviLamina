@@ -115,7 +115,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void
     $recordEvent(::Social::Events::Event const& event, ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
 
@@ -125,8 +124,9 @@ public:
 
     MCNAPI void $_flushEventQueue();
 
+    MCNAPI bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
+
     MCNAPI bool $_isListenerReadyForEvents() const;
-#endif
 
 
     // NOLINTEND

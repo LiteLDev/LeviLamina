@@ -76,6 +76,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI void $onOpen();
+
+    MCAPI void $onLeave();
+
+    MCAPI void $onTerminate();
+
+    MCAPI bool $_isStillValid() const;
     // NOLINTEND
 };

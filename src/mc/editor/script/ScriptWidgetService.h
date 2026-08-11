@@ -89,6 +89,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $_groupDeleteGroup(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete);
+
+    MCNAPI ::AABB const& $_getDimensionBounds() const;
+
 
     // NOLINTEND
 };

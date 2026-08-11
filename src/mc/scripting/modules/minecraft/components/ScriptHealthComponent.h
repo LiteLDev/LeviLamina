@@ -54,6 +54,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Scripting::Result_deprecated<bool> $setCurrent(float const& value) const;
+
+    MCAPI ::Scripting::
+        Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
+        $setCurrentV2(float const& value) const;
+
+    MCAPI ::Scripting::Result_deprecated<void> $resetToMinValue() const;
+
+    MCAPI ::Scripting::Result_deprecated<void> $resetToMaxValue() const;
+
+    MCAPI ::Scripting::Result_deprecated<void> $resetToDefaultValue() const;
+
 
     // NOLINTEND
 };

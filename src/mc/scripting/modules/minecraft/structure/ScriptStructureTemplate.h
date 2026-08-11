@@ -88,6 +88,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::std::string const& $getContentType() const;
+
 
     // NOLINTEND
 };

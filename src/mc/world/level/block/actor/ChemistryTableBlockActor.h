@@ -112,6 +112,36 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::Container* $getContainer();
+
+    MCFOLD ::Container const* $getContainer() const;
+
+    MCAPI ::ItemStack const& $getItem(int slot) const;
+
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
+
+    MCFOLD int $getMaxStackSize() const;
+
+    MCFOLD int $getContainerSize() const;
+
+    MCFOLD void $startOpen(::Actor&);
+
+    MCAPI void $stopOpen(::Actor& actor);
+
+    MCAPI void $onRemoved(::BlockSource& region);
+
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    );
+
 
     // NOLINTEND
 };

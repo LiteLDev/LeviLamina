@@ -115,6 +115,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
+    MCFOLD void $onComplete(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCAPI ::std::string $getTitleText() const;
+
+    MCAPI ::std::string $getName() const;
+
+    MCFOLD ::ProgressAnimation $showLoadingBar() const;
     // NOLINTEND
 };

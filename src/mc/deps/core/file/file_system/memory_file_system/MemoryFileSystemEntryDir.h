@@ -53,6 +53,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI uint64 $getSize() const;
+
+    MCNAPI bool $canRemove() const;
+
 
     // NOLINTEND
 };

@@ -1261,7 +1261,11 @@ public:
 
     MCAPI void $changeDimension(::DimensionType toId);
 
+#ifdef LL_PLAT_S
     MCFOLD void $changeDimension(::ChangeDimensionPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $changeDimension(::ChangeDimensionPacket const& packet);
+#endif
 
     MCFOLD ::ActorUniqueID $getControllingPlayer() const;
 

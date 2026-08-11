@@ -32,6 +32,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::mce::Color $get(::BlockSource& region, ::BlockPos const& pos) const;
+
 
     // NOLINTEND
 };

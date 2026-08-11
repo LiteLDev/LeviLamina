@@ -105,7 +105,11 @@ public:
 
     MCAPI int $getMaxStackSize() const;
 
+#ifdef LL_PLAT_S
     MCAPI void $containerContentChanged(int slot);
+#else // LL_PLAT_C
+    MCFOLD void $containerContentChanged(int slot);
+#endif
 
     MCFOLD void $serverInitItemStackIds(
         int                                            containerSlot,

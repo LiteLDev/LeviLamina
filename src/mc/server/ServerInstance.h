@@ -311,6 +311,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onLowMemory(::LowMemorySeverity);
+
+    MCAPI void $onLevelCorrupt();
+
+    MCFOLD void $onGameModeChanged();
+
+    MCFOLD void $onTick(int nTick, int maxTick);
+
+    MCFOLD void $onInternetUpdate();
+
+    MCFOLD void $onGameSessionReset();
+
+    MCFOLD void $onLevelExit();
+
+    MCAPI void $onRequestResourceReload();
+
+    MCAPI void $onLowDiskSpace(bool const bSet);
+
+    MCAPI void $onOutOfDiskSpace(bool const bSet);
+
+    MCAPI void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
+
+    MCAPI void $onAppSuspended();
+
+    MCAPI void $onAppResumed();
+
+    MCFOLD void $updateScreens();
+
 
     // NOLINTEND
 };

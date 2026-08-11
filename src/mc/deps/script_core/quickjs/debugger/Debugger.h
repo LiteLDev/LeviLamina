@@ -77,6 +77,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $attach(
+        bool                                      performHandshake,
+        ::std::optional<::std::string>            targetModuleUuid,
+        ::std::function<void(::std::string_view)> handler
+    );
+
+    MCNAPI void $detach();
+
+    MCNAPI bool $closed() const;
+
+    MCNAPI void $pumpMessages();
+
 
     // NOLINTEND
 };

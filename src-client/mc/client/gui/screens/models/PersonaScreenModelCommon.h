@@ -170,6 +170,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $update(::ui::DirtyFlag& dirtyFlags);
 
+    MCAPI void $updateSkin(::persona::PersonaCharacterHandle const& characterHandle, ::SkinHandle handle);
     // NOLINTEND
 };

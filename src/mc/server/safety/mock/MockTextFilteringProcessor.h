@@ -120,6 +120,46 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::CallbackToken $processAnonymousMessages(
+        ::TextProcessingEventOrigin,
+        ::std::vector<::std::string> const&,
+        ::std::function<void(
+            ::std::vector<::std::string> const&,
+            ::std::vector<::std::string> const&,
+            ::std::vector<::Safety::TextFilteringEvent> const&
+        )>
+    );
+
+    MCNAPI ::CallbackToken $processMessages(
+        ::Player const&,
+        ::TextProcessingEventOrigin,
+        ::std::vector<::std::string> const&,
+        ::std::function<void(
+            ::std::vector<::std::string> const&,
+            ::std::vector<::std::string> const&,
+            ::std::vector<::Safety::TextFilteringEvent> const&
+        )>
+    );
+
+    MCNAPI ::CallbackToken $processMessages(
+        ::BlockCommandOrigin const&,
+        ::TextProcessingEventOrigin,
+        ::std::vector<::std::string> const&,
+        ::std::function<void(
+            ::std::vector<::std::string> const&,
+            ::std::vector<::std::string> const&,
+            ::std::vector<::Safety::TextFilteringEvent> const&
+        )>
+    );
+
+    MCNAPI ::Bedrock::Threading::Async<::Safety::TextFilterResult>
+    $processAnonymousMessagesAsync(::TextProcessingEventOrigin, ::std::vector<::std::string> const&);
+
+    MCNAPI ::Bedrock::Threading::Async<::Safety::TextFilterResult>
+    $processMessagesAsync(::Player const&, ::TextProcessingEventOrigin, ::std::vector<::std::string> const&);
+
+    MCNAPI void $onStartShutdown();
+
 
     // NOLINTEND
 };

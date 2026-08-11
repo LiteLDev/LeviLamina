@@ -108,6 +108,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
+    MCAPI void $reset();
+
+    MCAPI void $reload(::UIComponent const& rhs);
+
+    MCAPI ::ComponentReceiveActionType $receive(
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
+    );
+
+    MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
+
+    MCAPI void $onVisibilityChanged(bool visible);
+
+    MCAPI void $onEnabledChanged(bool enabled);
     // NOLINTEND
 };

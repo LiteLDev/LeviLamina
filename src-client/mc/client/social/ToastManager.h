@@ -124,6 +124,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $pushToast(::ToastMessage&& message);
 
+    MCAPI bool $isEditorModeEnabled() const;
+
+    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
     // NOLINTEND
 };

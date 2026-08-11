@@ -44,6 +44,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI void $onFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+
 
         // NOLINTEND
     };

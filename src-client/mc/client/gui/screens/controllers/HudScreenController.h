@@ -329,6 +329,37 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI bool $bind(
+        ::std::string const& collectionName,
+        uint                 collectionNameHash,
+        int                  collectionIndex,
+        ::std::string const& bindingName,
+        uint                 bindingNameHash,
+        ::std::string const& bindingNameOverride,
+        ::UIPropertyBag&     bag
+    );
+
+    MCAPI bool $bind(
+        ::std::string const& bindingName,
+        uint                 bindingNameHash,
+        ::std::string const& bindingNameOverride,
+        ::UIPropertyBag&     bag
+    );
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
+    MCAPI void $onInit();
+
+    MCAPI void $onOpen();
+
+    MCAPI void $onScreenPushedAbove();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCFOLD ::ui::SceneType $getSceneType() const;
+
+    MCAPI bool $_isStillValid() const;
     // NOLINTEND
 };

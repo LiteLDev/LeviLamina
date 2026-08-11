@@ -353,6 +353,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $loadDataSync(
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::ResourcePackManager&                             resourcePackManager,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
 
+    MCNAPI ::Puv::LoadResultAny $loadFromString(
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::std::string const&                               dataJson,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
+
+    MCNAPI void $_setDefaultIdentifierImpl(::HashedString const& defaultIdentifier);
     // NOLINTEND
 };

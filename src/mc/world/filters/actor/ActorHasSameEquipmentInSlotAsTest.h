@@ -43,6 +43,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::string_view $getName() const;
+
+    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+
+    MCNAPI bool $evaluate(::FilterContext const& context) const;
+
+    MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getDomain() const;
+
+    MCNAPI ::Json::Value $_serializeDomain() const;
+
 
     // NOLINTEND
 };

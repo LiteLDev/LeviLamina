@@ -101,6 +101,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::EventResult $onEvent(::LevelTickingAreaFinishedLoadingEvent const& event);
+
 
     // NOLINTEND
 };

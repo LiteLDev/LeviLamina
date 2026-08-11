@@ -32,6 +32,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::leveldb::Status $Append(::leveldb::Slice const& data);
+
+    MCNAPI ::leveldb::Status $Close();
+
+    MCNAPI ::leveldb::Status $Flush();
+
+    MCNAPI ::leveldb::Status $Sync();
+
 
     // NOLINTEND
 };

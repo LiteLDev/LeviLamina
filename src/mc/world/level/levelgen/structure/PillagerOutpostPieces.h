@@ -98,6 +98,20 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+        MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+
+        MCAPI void $_handleDataMarker(
+            ::std::string const& markerId,
+            ::BlockPos const&    position,
+            ::BlockSource&       region,
+            ::Random&            random,
+            ::BoundingBox const& chunkBB
+        );
+
 
         // NOLINTEND
     };

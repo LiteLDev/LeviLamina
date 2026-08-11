@@ -84,6 +84,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability, ::Compressibility);
+
+    MCNAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+
+    MCNAPI bool $isLocal() const;
+
+    MCNAPI bool $isEncrypted() const;
+
+    MCNAPI ::NetworkPeer::DataStatus $_receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    );
+
 
     // NOLINTEND
 };

@@ -139,9 +139,7 @@ public:
     // NOLINTBEGIN
     MCAPI float $getUploadProgress() const;
 
-#ifdef LL_PLAT_C
     MCAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
-#endif
 
 
     // NOLINTEND

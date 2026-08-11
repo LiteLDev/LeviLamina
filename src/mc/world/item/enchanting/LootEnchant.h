@@ -19,6 +19,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD int $getMinCost(int level) const;
+
+    MCAPI int $getMaxCost(int level) const;
+
+    MCFOLD int $getMaxLevel() const;
+
 
     // NOLINTEND
 };

@@ -116,6 +116,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Bedrock::PubSub::Connector<void(::DimensionManager&)>& $getOnReadyForCustomDimensionRegistrationConnector();
+
+#ifdef LL_PLAT_S
+    MCAPI ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
+#else // LL_PLAT_C
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
+#endif
+
 
     // NOLINTEND
 };

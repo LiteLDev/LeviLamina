@@ -38,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $reject(::SubChunkPos const& subChunkPos) const;
     // NOLINTEND
 };
 

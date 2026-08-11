@@ -60,6 +60,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::I420BufferInterface> $ToI420();
+
+    MCNAPI ::webrtc::I420BufferInterface const* $GetI420() const;
+
+    MCNAPI int $width() const;
+
+    MCNAPI int $height() const;
+
+    MCNAPI uchar const* $DataY() const;
+
+    MCNAPI uchar const* $DataU() const;
+
+    MCNAPI uchar const* $DataV() const;
+
+    MCNAPI int $StrideY() const;
+
+    MCNAPI int $StrideU() const;
+
+    MCNAPI int $StrideV() const;
+
 
     // NOLINTEND
 };

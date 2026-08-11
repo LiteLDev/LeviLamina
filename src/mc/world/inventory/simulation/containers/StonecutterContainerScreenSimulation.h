@@ -91,31 +91,49 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCNAPI ::ContainerScreenActionResult
+    $tryTakeAmount(::ContainerValidationSlotData const&, int, ::ContainerValidationSlotData const&);
+#else // LL_PLAT_C
     MCNAPI ::ContainerScreenActionResult $tryTakeAmount(
         ::ContainerValidationSlotData const& dstSlot,
         int                                  amount,
         ::ContainerValidationSlotData const& srcSlot
     );
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI ::ContainerScreenActionResult
+    $tryTakeAll(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
+#else // LL_PLAT_C
     MCNAPI ::ContainerScreenActionResult
     $tryTakeAll(::ContainerValidationSlotData const& dstSlot, ::ContainerValidationSlotData const& srcSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI ::ContainerScreenActionResult
+    $tryTakeHalf(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
+#else // LL_PLAT_C
     MCNAPI ::ContainerScreenActionResult
     $tryTakeHalf(::ContainerValidationSlotData const& dstSlot, ::ContainerValidationSlotData const& srcSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI ::ContainerScreenActionResult
+    $tryAutoPlace(::ContainerValidationSlotData const&, ::ItemTransferAmount, ::ContainerScreenAutoplaceBehaviour);
+#else // LL_PLAT_C
     MCNAPI ::ContainerScreenActionResult $tryAutoPlace(
         ::ContainerValidationSlotData const& srcSlot,
         ::ItemTransferAmount                 amount,
         ::ContainerScreenAutoplaceBehaviour  autoplaceBehaviour
     );
+#endif
 
     MCNAPI ::ContainerValidationCraftResult $getCraftPreview();
 
     MCNAPI void $_registerCoalesceOrder();
 
     MCNAPI void $_registerAutoPlaceOrder();
-#endif
 
 
     // NOLINTEND

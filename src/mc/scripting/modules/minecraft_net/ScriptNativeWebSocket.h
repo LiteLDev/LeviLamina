@@ -45,6 +45,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onMessage(::std::string_view message);
+
+    MCNAPI void $onClose(uint);
+
 
     // NOLINTEND
 };

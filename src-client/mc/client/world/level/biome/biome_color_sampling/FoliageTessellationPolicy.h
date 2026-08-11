@@ -41,7 +41,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::mce::Color $get(
+        ::Block const&          block,
+        ::BlockSource&          region,
+        ::BlockPos const&       pos,
+        ::BiomeTintCache const* biomeTintCache
+    ) const;
 
+    MCAPI ::mce::Color $get(::Block const&) const;
     // NOLINTEND
 };
 

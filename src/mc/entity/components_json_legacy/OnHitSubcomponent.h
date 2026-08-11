@@ -33,6 +33,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI char const* $getName() const;
+
 
     // NOLINTEND
 };

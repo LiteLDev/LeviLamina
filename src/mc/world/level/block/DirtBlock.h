@@ -79,7 +79,11 @@ public:
 
     MCFOLD bool $canBeOriginalSurface(bool) const;
 
+#ifdef LL_PLAT_S
     MCAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
+#else // LL_PLAT_C
+    MCFOLD bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
+#endif
 
     MCFOLD ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 

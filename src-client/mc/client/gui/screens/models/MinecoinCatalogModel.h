@@ -90,6 +90,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::OfferCatalogStatus $update();
 
+    MCAPI void $fetchAllCoinOffers();
     // NOLINTEND
 };

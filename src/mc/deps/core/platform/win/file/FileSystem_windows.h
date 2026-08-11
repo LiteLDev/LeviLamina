@@ -97,6 +97,43 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Core::Result $_openFile(
+        ::std::unique_ptr<::Core::FileImpl>& uptFileOut,
+        ::Core::PathView                     filename,
+        ::Core::FileOpenMode                 fileOpenMode,
+        ::Core::FileBufferingMode            bufferingMode
+    );
+
+    MCNAPI bool $_fileExists(::Core::PathView filePath);
+
+    MCNAPI ::Core::Result $_deleteFile(::Core::PathView path);
+
+    MCNAPI ::Core::Result $_getFileSize(::Core::PathView filePath, uint64* pFileSizeOut);
+
+    MCNAPI ::Core::Result $_renameFile(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
+
+    MCNAPI ::Core::Result $_createOneDirectory(::Core::PathView directoryPath);
+
+    MCNAPI ::Core::Result $_deleteEmptyDirectory(::Core::PathView directoryPath);
+
+    MCNAPI bool $_directoryExists(::Core::PathView directoryPath);
+
+    MCNAPI ::Core::Result $_renameDirectory(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
+
+    MCNAPI ::Core::Result $_iterateOverDirectory(
+        ::Core::PathView                                                             directoryPath,
+        ::Core::DirectoryIterationFlags                                              flags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> fx
+    );
+
+    MCNAPI bool $_fileOrDirectoryExists(::Core::PathView entryPath);
+
+    MCNAPI ::Core::Result $_getLastModificationTime(::Core::PathView filePath, int64* pModificationTime);
+
+    MCNAPI ::Core::Result $_getEntryType(::Core::PathView entryPath, ::Core::FileType& fileTypeOut);
+
+    MCNAPI ::Core::Result $_copyTimeAndAccessRights(::Core::PathView sourceEntryPath, ::Core::PathView targetEntryPath);
+
 
     // NOLINTEND
 };

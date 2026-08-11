@@ -234,6 +234,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Bedrock::PubSub::Connector<
+        void(::SoundEventIdentifier const&, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool)>&
+    $getOnLevelSoundEventConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<
+        void(::std::string const&, ::Vec3 const&, float, float, ::std::optional<::ServerSoundHandle>)>&
+    $getOnLevelSoundEventWithVolumeAndPitchConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::std::string const&)>& $getOnStopLevelSoundEventConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopAllLevelSoundsEventConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopMusicEventConnector();
+
 
     // NOLINTEND
 };

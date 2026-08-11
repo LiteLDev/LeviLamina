@@ -97,6 +97,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::std::string $toString() const;
+
 
         // NOLINTEND
     };
@@ -322,6 +324,32 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        MCAPI bool $isValidStartItem() const;
+#else // LL_PLAT_C
+        MCFOLD bool $isValidStartItem() const;
+#endif
+
+        MCAPI bool $isAddedActorItem() const;
+
+        MCAPI bool $isMotionHintItem() const;
+
+        MCAPI ::Vec3 const& $getPos() const;
+
+#ifdef LL_PLAT_S
+        MCAPI ::Vec2 const& $getRot() const;
+#else // LL_PLAT_C
+        MCFOLD ::Vec2 const& $getRot() const;
+#endif
+
+        MCAPI float $getYHeadRot() const;
+
+#ifdef LL_PLAT_S
+        MCAPI bool $isOnGround() const;
+#else // LL_PLAT_C
+        MCFOLD bool $isOnGround() const;
+#endif
+
 
         // NOLINTEND
     };
@@ -364,6 +392,20 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCFOLD bool $isValidStartItem() const;
+
+        MCFOLD bool $isAddedActorItem() const;
+
+        MCFOLD bool $isMotionHintItem() const;
+
+        MCFOLD ::Vec3 const& $getPos() const;
+
+        MCAPI ::Vec2 const& $getRot() const;
+
+        MCAPI float $getYHeadRot() const;
+
+        MCFOLD bool $isOnGround() const;
+
 
         // NOLINTEND
     };

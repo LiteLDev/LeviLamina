@@ -179,6 +179,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI int $InsertPacket(::webrtc::RTPHeader const&, ::webrtc::ArrayView<uchar const, 18446744073709546905>);
+
+    MCNAPI int $InsertPacket(
+        ::webrtc::RTPHeader const&,
+        ::webrtc::ArrayView<uchar const, 18446744073709546905>,
+        ::webrtc::Timestamp
+    );
+
+    MCNAPI int $InsertPacket(
+        ::webrtc::RTPHeader const&,
+        ::webrtc::ArrayView<uchar const, 18446744073709546905>,
+        ::webrtc::RtpPacketInfo const&
+    );
+
+    MCNAPI bool $CreateDecoder(int);
+
+    MCNAPI ::std::optional<::webrtc::NetEq::DecoderFormat> $GetDecoderFormat(int) const;
+
+    MCNAPI ::std::optional<::webrtc::NetEq::DecoderFormat> $GetCurrentDecoderFormat() const;
+
 
     // NOLINTEND
 };

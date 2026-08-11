@@ -93,6 +93,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fertilizerType) const;
+
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+
 
     // NOLINTEND
 };

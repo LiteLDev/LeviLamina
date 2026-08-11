@@ -138,6 +138,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $Send(char const* data, uint length, ::RakNet::SystemAddress const& systemAddress, bool broadcast);
+
+    MCAPI bool $SendList(
+        char const**                   data,
+        uint const*                    lengths,
+        int const                      numParameters,
+        ::RakNet::SystemAddress const& systemAddress,
+        bool                           broadcast
+    );
+
+    MCAPI bool $ReceiveHasPackets();
+
+    MCAPI ::RakNet::Packet* $Receive();
+
+    MCAPI void $PushBackPacket(::RakNet::Packet* packet, bool pushAtHead);
+
 
     // NOLINTEND
 };

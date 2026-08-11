@@ -42,6 +42,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::shared_ptr<::Bedrock::SessionInfo> $findCrashedSessionInfo(::std::string_view sessionId) const;
+
+    MCNAPI void $notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const& status);
+
+    MCNAPI void $notifyDoneWithSession(::std::string_view sessionId);
+
 
     // NOLINTEND
 };

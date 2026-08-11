@@ -82,6 +82,20 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $onBlockChanged(
+            ::BlockSource&                 source,
+            ::BlockPos const&              pos,
+            uint                           layer,
+            ::Block const&                 block,
+            ::Block const&                 oldBlock,
+            int                            updateFlags,
+            ::ActorBlockSyncMessage const* syncMsg,
+            ::BlockChangedEventTarget      eventTarget,
+            ::Actor*                       blockChangeSource
+        );
+
+        MCNAPI void $onSourceDestroyed(::BlockSource& source);
+
 
         // NOLINTEND
     };
@@ -252,6 +266,48 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $isOutputSlot(::std::string const& collectionName) const;
+
+    MCNAPI bool $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
+
+    MCNAPI bool $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+
+    MCNAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+
+    MCNAPI bool $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+
+    MCNAPI bool $handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+
+    MCNAPI int $handleAutoPlace(
+        ::SlotData const&                     srcSlot,
+        int                                   amount,
+        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
+        ::std::vector<::AutoPlaceResult>&     destinations
+    );
+
+    MCNAPI int $handleAutoPlaceStack(
+        ::SlotData const&                     srcSlot,
+        ::ItemTakeType                        type,
+        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
+        ::std::vector<::AutoPlaceResult>&     destinations
+    );
+
+    MCNAPI void $handleSplitSingle(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+
+    MCNAPI void $handleSplitMultiple(
+        ::SelectedSlotInfo const& selected,
+        ::ItemInstance const&     itemTemplate,
+        ::SlotData const&         dstSlot
+    );
+
+    MCNAPI bool $handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type);
+
+    MCNAPI bool $handleDrop(::SlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
+
+    MCNAPI void $closeContainers();
+
+    MCNAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
+
 
     // NOLINTEND
 };

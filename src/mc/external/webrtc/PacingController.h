@@ -76,6 +76,13 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $OnBatchComplete();
+
+        MCNAPI void
+        $OnAbortedRetransmissions(uint ssrc, ::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers);
+
+        MCNAPI ::std::optional<uint> $GetRtxSsrcForMedia(uint ssrc) const;
+
 
         // NOLINTEND
     };

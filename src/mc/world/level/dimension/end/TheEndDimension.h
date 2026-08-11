@@ -90,6 +90,54 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $startLeaveGame();
+
+    MCAPI void $init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
+
+    MCAPI void $tick();
+
+    MCAPI ::BiomeIdType $getDefaultBiomeId() const;
+
+    MCFOLD bool $isNaturalDimension() const;
+
+    MCFOLD bool $isValidSpawn(int x, int z) const;
+
+    MCAPI short $getCloudHeight() const;
+
+    MCFOLD bool $mayRespawnViaBed() const;
+
+    MCAPI ::BlockPos $getSpawnPos() const;
+
+    MCFOLD int $getSpawnYPosition() const;
+
+    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
+
+    MCAPI void $deserialize(::CompoundTag const& tag);
+
+    MCAPI void $serialize(::CompoundTag& tag) const;
+
+    MCFOLD float $getTimeOfDay(int time, float a) const;
+
+    MCAPI ::std::unique_ptr<::WorldGenerator>
+    $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
+
+    MCAPI bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
+
+    MCAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
+
+    MCAPI void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
+
+    MCAPI ::Dimension::DirectionalLightState $getDimensionDirectionalLightSourceState(float a) const;
+
+    MCAPI void $setDimensionDirectionalLightControls(
+        ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
+    );
+
+    MCAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
+
+    MCFOLD ::std::unique_ptr<::ChunkSource>
+    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
+
 
     // NOLINTEND
 };

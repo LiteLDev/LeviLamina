@@ -47,6 +47,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $containerContentChanged(int);
+
 
     // NOLINTEND
 };

@@ -155,14 +155,31 @@ public:
         ::Scripting::IPrinter*             printer,
         ::Scripting::ContextConfig const&
     );
+#else // LL_PLAT_C
+    MCNAPI ::std::optional<::Scripting::ScriptContext> $createContext(
+        ::Scripting::ModuleBindingBundle&&,
+        ::Scripting::IDependencyLoader*,
+        ::Scripting::IPrinter*,
+        ::Scripting::ContextConfig const&
+    );
+#endif
 
+#ifdef LL_PLAT_S
     MCNAPI void $destroyContext(::Scripting::ContextId contextId);
+#else // LL_PLAT_C
+    MCNAPI void $destroyContext(::Scripting::ContextId);
+#endif
 
+#ifdef LL_PLAT_S
     MCNAPI ::Scripting::ResultAny $run(
         ::Scripting::ContextId                  contextId,
         ::Scripting::IPayload*                  payload,
         ::std::optional<::Scripting::Privilege> privilege
     );
+#else // LL_PLAT_C
+    MCNAPI ::Scripting::ResultAny
+    $run(::Scripting::ContextId, ::Scripting::IPayload*, ::std::optional<::Scripting::Privilege>);
+#endif
 
     MCNAPI ::Scripting::ResultAny $call(
         ::Scripting::ContextId,
@@ -215,7 +232,6 @@ public:
 
     MCNAPI ::std::optional<::Scripting::TypeNameInfo>
     $getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const;
-#endif
 
 
     // NOLINTEND

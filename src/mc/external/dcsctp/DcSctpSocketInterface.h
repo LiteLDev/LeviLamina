@@ -93,6 +93,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::dcsctp::SctpImplementation $peer_implementation() const;
+
 
     // NOLINTEND
 };

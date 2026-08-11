@@ -94,7 +94,11 @@ public:
 
     MCFOLD ::Block const& $getExtraBlock(::BlockPos const& pos) const;
 
+#ifdef LL_PLAT_S
     MCAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
+#else // LL_PLAT_C
+    MCFOLD ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
+#endif
 
     MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
     $fetchBlocksInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate);

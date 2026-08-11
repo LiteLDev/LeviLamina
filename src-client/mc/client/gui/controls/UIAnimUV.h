@@ -31,6 +31,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::UIAnim> $clone();
 
+    MCAPI bool $tick(::UIControl& ownerControl, float const deltaTime);
+
+    MCAPI void $_reset(::UIControl& ownerControl);
     // NOLINTEND
 };

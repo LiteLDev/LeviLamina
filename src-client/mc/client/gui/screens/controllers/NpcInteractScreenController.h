@@ -150,6 +150,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI void $onTerminate();
+
+    MCAPI void $onCreation();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI ::EventResult $onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> dialogueData);
+
+    MCAPI ::EventResult $onNpcInteractScreenClose(::ActorUniqueID npcId, bool);
+
+    MCAPI bool $_isStillValid() const;
     // NOLINTEND
 };

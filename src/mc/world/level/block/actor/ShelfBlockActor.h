@@ -101,6 +101,44 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::string $getName() const;
+
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI void $onChanged(::BlockSource& region);
+
+    MCAPI void $onRemoved(::BlockSource& region);
+
+    MCFOLD ::Container* $getContainer();
+
+    MCFOLD ::Container const* $getContainer() const;
+
+    MCAPI ::ItemStack const& $getItem(int slot) const;
+
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
+
+    MCFOLD int $getMaxStackSize() const;
+
+    MCFOLD int $getContainerSize() const;
+
+    MCFOLD void $startOpen(::Actor&);
+
+    MCFOLD void $stopOpen(::Actor& actor);
+
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    );
+
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+
 
     // NOLINTEND
 };

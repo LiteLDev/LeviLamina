@@ -54,6 +54,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::string $getAdditionalScreenInfo() const;
 
+    MCAPI bool $_polymorphicButtonEnabled() const;
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 };

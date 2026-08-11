@@ -138,13 +138,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ::std::string $getSystemLocale() const;
-
-    MCAPI void $collectGraphicsHardwareDetails();
-
-    MCFOLD bool $supportsMSAA() const;
-
     MCAPI uint64 $getTotalHardwareThreadsCount() const;
 
     MCAPI uint64 $getHighPerformanceThreadsCount() const;
@@ -165,6 +158,43 @@ public:
 
     MCAPI ::MPMCQueue<::std::function<void()>>& $getMainThreadQueue();
 
+    MCFOLD bool $canAppSelfTerminate() const;
+
+    MCFOLD bool $getPlatformTTSExists() const;
+
+    MCAPI bool $getPlatformTTSEnabled() const;
+
+    MCAPI void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
+
+    MCAPI bool $is24HourTimeFormat() const;
+
+#ifdef LL_PLAT_S
+    MCAPI ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
+#else // LL_PLAT_C
+    MCFOLD ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
+#else // LL_PLAT_C
+    MCFOLD ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
+#endif
+
+    MCAPI ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $_getUserdataPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $_getSharedDataPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
+
+#ifdef LL_PLAT_C
+    MCAPI ::std::string $getSystemLocale() const;
+
+    MCAPI void $collectGraphicsHardwareDetails();
+
+    MCFOLD bool $supportsMSAA() const;
+
     MCFOLD bool $supportsAlbumExport() const;
 
     MCAPI bool $supportsPDFExport() const;
@@ -175,29 +205,7 @@ public:
 
     MCAPI double $getTimeSFromProcessStart() const;
 
-    MCFOLD bool $canAppSelfTerminate() const;
-
-    MCFOLD bool $getPlatformTTSExists() const;
-
-    MCAPI bool $getPlatformTTSEnabled() const;
-
-    MCAPI void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
-
     MCAPI void $showXboxLiveUserSettings();
-
-    MCAPI bool $is24HourTimeFormat() const;
-
-    MCFOLD ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
-
-    MCFOLD ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> $_getUserdataPath() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> $_getSharedDataPath() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
 #endif
 
 

@@ -31,6 +31,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $collect(
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
+        ::PersonaClient&                                     skinRepo,
+        ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
+        ::std::unordered_set<::mce::UUID>&                   handledPackSet
+    );
     // NOLINTEND
 };

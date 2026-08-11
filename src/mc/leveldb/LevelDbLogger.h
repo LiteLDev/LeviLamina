@@ -12,6 +12,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $Logv(char const* format, char* ap);
+
 
     // NOLINTEND
 };

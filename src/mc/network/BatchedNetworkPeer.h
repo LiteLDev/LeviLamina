@@ -90,6 +90,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $flush(::std::function<void()>&& callback);
+
+    MCAPI void
+    $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
+
+    MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+
+    MCAPI void $update();
+
+    MCAPI ::NetworkPeer::DataStatus $_receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    );
+
 
     // NOLINTEND
 };

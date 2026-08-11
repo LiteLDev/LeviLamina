@@ -296,6 +296,132 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onPlayerReady(::Player& player);
 
+    MCAPI void $onConnect(::NetworkIdentifier const& hostId);
+
+    MCAPI void $onUnableToConnect(
+        ::Connection::DisconnectFailReason discoReason,
+        ::std::string const&               messageFromServer,
+        ::std::string const&               messageBodyOverride
+    );
+
+    MCAPI bool $getIsConnectedToApplicationLayer() const;
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::AddActorPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::AddItemActorPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::AddPaintingPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::AddPlayerPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::AnimatePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::BlockActorDataPacket> packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::BlockEventPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ChangeDimensionPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ContainerClosePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ContainerOpenPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ContainerRegistryCleanupPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ContainerSetDataPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::DisconnectPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::LevelChunkPacket> packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::ClientCacheMissResponsePacket> packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::GameRulesChangedPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::HurtArmorPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::InventoryContentPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::InventorySlotPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::InventoryTransactionPacket> packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::MobArmorEquipmentPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::MobEffectPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::MobEquipmentPacket> packetPtr);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::MoveActorAbsolutePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::MoveActorDeltaPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::MovementEffectPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::MovePlayerPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::NetworkSettingsPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::NetworkStackLatencyPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerHotbarPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerListPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerSkinPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::PlayerUpdateEntityOverridesPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::RemoveActorPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetActorDataPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetActorLinkPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::SetActorMotionPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::MotionPredictionHintsPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetCommandsEnabledPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetDefaultGameTypePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetDifficultyPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetHealthPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetSpawnPositionPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetTimePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetHudPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SpawnParticleEffectPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::StartGamePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::UpdateBlockPacket> packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::UpdateBlockSyncedPacket> packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::CreativeContentPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::ItemRegistryPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::DimensionDataPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::UpdateAbilitiesPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::UpdateAdventureSettingsPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ServerStatsPacket const& packet);
+
+    MCAPI void $onTick();
+
+    MCAPI void $onEntityRemoved(::Actor& entity);
+
+    MCAPI void $onLevelDestruction(::std::string const&);
     // NOLINTEND
 };

@@ -136,6 +136,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onInit();
 
+    MCAPI void $onOpen();
+
+    MCAPI void $onEntered();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
+    MCAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

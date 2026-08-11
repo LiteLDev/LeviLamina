@@ -51,6 +51,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void $OnLogMessage(::std::string const& msg, ::webrtc::LoggingSeverity severity, char const* tag);
 
+    MCNAPI void $OnLogMessage(::std::string const& message, ::webrtc::LoggingSeverity level);
+
     MCNAPI void $OnLogMessage(::std::string_view msg, ::webrtc::LoggingSeverity severity, char const* tag);
 
     MCNAPI void $OnLogMessage(::std::string_view msg, ::webrtc::LoggingSeverity);

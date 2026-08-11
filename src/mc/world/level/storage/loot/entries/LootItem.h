@@ -38,6 +38,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $_createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const;
+
+    MCFOLD ::LootPoolEntry::EntryType $getEntryType() const;
+
 
     // NOLINTEND
 };

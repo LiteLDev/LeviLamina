@@ -88,6 +88,31 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $setEula();
+
+    MCNAPI void $setPurchaseReceipt(
+        ::std::string const&               receipt,
+        ::std::function<void(bool)> const& callback,
+        ::std::string const&               anonimizedOId
+    );
+
+    MCNAPI void $setSkin(::std::string const& newSkin);
+
+    MCNAPI void $signinForDemo(
+        ::std::function<
+            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
+            callback
+    );
+
+    MCNAPI void $signin(
+        ::std::function<
+            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
+                             callback,
+        ::std::string const& delegationKey
+    );
+
+    MCNAPI void $sendInitialPackRequest(::std::function<void(::std::vector<::ServicePack>)> packReturnCallback);
+
 
     // NOLINTEND
 };

@@ -36,6 +36,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $isDedicatedServer() const;
+
+    MCNAPI bool $canChangePermission(::ServerPlayer const& player) const;
+
 
     // NOLINTEND
 };

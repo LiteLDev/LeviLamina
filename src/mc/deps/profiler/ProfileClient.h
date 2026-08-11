@@ -194,11 +194,17 @@ public:
 
     MCNAPI void $onHeapFree(void const*, uint64, ::Memory::MemoryCategory, char const*);
 
+    MCNAPI void
+    $enterCPUProfile(::Bedrock::Profile::ScopeStackStorage& scope, ::Core::Profile::CPUProfileToken const& token);
+
     MCNAPI void $enterCPUProfileDynamic(
         ::Bedrock::Profile::ScopeStackStorage&  scope,
         ::Core::Profile::CPUProfileToken const& token,
         ::Bedrock::Profiler::details::DynamicProfLabel
     );
+
+    MCNAPI void
+    $leaveCPUProfile(::Bedrock::Profile::ScopeStackStorage& scope, ::Core::Profile::CPUProfileToken const& token);
 
     MCNAPI uchar $createGPUContext(char const*, int64, float, bool, bool);
 
@@ -229,6 +235,14 @@ public:
     MCNAPI bool $isCaptureEnding();
 
     MCNAPI void $setMarker(char const*, uint) const;
+
+    MCNAPI void $generateCPUProfileTokenStatic(
+        ::Core::Profile::CPUProfileToken&             target,
+        char const*                                   group,
+        ::Bedrock::Profiler::details::StaticProfLabel label,
+        uint                                          color,
+        ::brstd::source_location const&               location
+    );
 
     MCNAPI void $generateCPUProfileTokenLegacy(
         ::Core::Profile::CPUProfileToken&,

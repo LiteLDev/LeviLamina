@@ -74,6 +74,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::BlockPos $getBlockPosition() const;
+
+    MCAPI ::Vec3 $getWorldPosition() const;
+
+    MCAPI ::std::optional<::Vec2> $getRotation() const;
+
+    MCAPI ::Actor* $getEntity() const;
+
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+
+    MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
+
+    MCFOLD ::CommandOriginType $getOriginType() const;
+
+    MCAPI ::CompoundTag $serialize() const;
+
+    MCFOLD bool $isValid() const;
+
+    MCFOLD ::CommandBlockActor* $_getBlockEntity(::BlockSource& region) const;
+
+    MCAPI ::BaseCommandBlock* $_getBaseCommandBlock(::BlockSource& region) const;
+
 
     // NOLINTEND
 };

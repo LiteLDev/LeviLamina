@@ -77,6 +77,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::PackOrigin $getPackOrigin() const;
+
+    MCFOLD ::PackType $getPackType() const;
+
+    MCAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
+
 
     // NOLINTEND
 };

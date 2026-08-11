@@ -144,6 +144,40 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $loadDefsList(
+        ::ResourceLocation const&                           defsListFile,
+        ::ResourcePackStack const&                          packStack,
+        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
+    );
 
+    MCAPI void $validateDefEntries(
+        ::ResourceLocation const&                           defsListFile,
+        ::std::shared_ptr<::ResourcePackStack const>        packStack,
+        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
+    ) const;
+
+    MCAPI ::Json::Value const& $findDef(::std::string const& defNamespace, ::std::string const& defName) const;
+
+    MCAPI ::Bedrock::Threading::SharedLock<::std::shared_mutex> $acquireSharedLock() const;
+
+    MCAPI void $syncUILoad();
+
+    MCAPI void $syncUILoadDefinitions();
+
+    MCAPI void $syncUILoadDefinitionReferences();
+
+    MCAPI void $cancelUIValidation();
+
+    MCAPI bool $isLoadingDone() const;
+
+    MCAPI bool $isUILoadingDone() const;
+
+    MCAPI bool $isUIValidationDone() const;
+
+    MCAPI void $forEachControl(::std::function<void(::Json::Value const&, ::std::string const&)> callback);
+
+    MCFOLD ::Json::Value const& $getGlobalVariables() const;
+
+    MCAPI void $translateLegacyItemIdsInRepository(::ItemRegistryRef const itemRegistry);
     // NOLINTEND
 };

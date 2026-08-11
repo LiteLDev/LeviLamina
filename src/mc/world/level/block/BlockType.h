@@ -184,6 +184,10 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::std::optional<int> $getState(::BlockType const& blockType, int blockData) const;
+
+        MCAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
+
 
         // NOLINTEND
     };
@@ -231,6 +235,10 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::std::optional<int> $getState(::BlockType const& blockType, int) const;
+
+        MCAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
+
 
         // NOLINTEND
     };
@@ -994,7 +1002,11 @@ public:
 
     MCFOLD bool $mayPick() const;
 
+#ifdef LL_PLAT_S
     MCFOLD bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
+#else // LL_PLAT_C
+    MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
+#endif
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 

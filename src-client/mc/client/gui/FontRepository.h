@@ -118,6 +118,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onAppSuspended();
 
+    MCAPI void $onDeviceLost();
     // NOLINTEND
 };

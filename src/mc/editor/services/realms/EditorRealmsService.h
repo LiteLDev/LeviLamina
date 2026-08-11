@@ -172,9 +172,17 @@ public:
 
     MCNAPI void $loadRealmsWorldList();
 
+#ifdef LL_PLAT_S
     MCNAPI void $loadRealmsWorldSlots(::std::string const&);
+#else // LL_PLAT_C
+    MCNAPI void $loadRealmsWorldSlots(::std::string const& worldId);
+#endif
 
+#ifdef LL_PLAT_S
     MCNAPI void $downloadRealmWorld(::std::string const&, int const);
+#else // LL_PLAT_C
+    MCNAPI void $downloadRealmWorld(::std::string const& worldId, int const slotId);
+#endif
 
     MCNAPI bool const $canUploadWorld() const;
 

@@ -133,7 +133,53 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $updatePlatformInfo();
 
+    MCAPI bool $updatePlatformGraphicsInfo();
+
+    MCAPI void $issueShutdown();
+
+    MCAPI void $issueBack();
+
+    MCFOLD void $issueLowMemory();
+
+    MCAPI void $issueFocusLost();
+
+    MCAPI void $issueFocusGained();
+
+    MCFOLD void $issueInputPaneVisible();
+
+    MCFOLD void $issueInputPaneHidden();
+
+    MCFOLD void $issueSuspendWarning();
+
+    MCAPI void $issueVisibilityChange(bool visible);
+
+    MCAPI void $issueWindowSizeChange(int width, int height);
+
+    MCAPI void $issueDPIChange(float dpi);
+
+    MCAPI void $issueOrientationChange(::DisplayOrientation const& orientation);
+
+    MCAPI bool $_preAppCreation(::Bedrock::ActivationArguments const&);
+
+    MCAPI void $_processActivationArguments(::Bedrock::ActivationArguments const& args);
+
+    MCAPI bool $_postAppCreation(::Bedrock::ActivationArguments const& actArgs);
+
+    MCAPI bool $_update(bool canRender);
+
+    MCAPI void $pushNotificationReceived_Shim(::PushNotificationMessage const& msg);
+
+    MCAPI void $notifyUriListeners_Shim(::ActivationUri const& uri);
+
+    MCAPI ::std::string $getDeviceId_Shim() const;
+
+    MCFOLD bool $_isShuttingDown();
+
+    MCFOLD bool $_isShutdown();
+
+    MCFOLD void $resetCallback();
     // NOLINTEND
 };
 

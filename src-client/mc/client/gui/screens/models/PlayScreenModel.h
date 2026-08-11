@@ -95,7 +95,13 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI void $onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
 
+        MCAPI void $onLevelUpdated(::std::string const& levelId);
+
+        MCAPI void $onLevelDeleted(::std::string const& levelId);
+
+        MCAPI void $onStorageChanged();
         // NOLINTEND
     };
 
@@ -329,6 +335,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI int $getWorldCount(::WorldType worldType, ::NetworkWorldType networkType) const;
 
+    MCAPI ::LocalWorldInfo const* $getLocalWorldAtIndex(int const index) const;
+
+    MCAPI ::LocalWorldInfo const* $getLocalWorldById(::std::string const& id) const;
+
+    MCAPI bool $refresh(::WorldType tabType);
+
+    MCAPI void $startLocalWorld(::LocalWorldInfo worldInfo, ::LevelSettings const* settings);
+
+    MCAPI bool $isDirty() const;
+
+    MCFOLD ::IMinecraftEventing& $getMinecraftEventing() const;
     // NOLINTEND
 };

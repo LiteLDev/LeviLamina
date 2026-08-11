@@ -104,6 +104,48 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI float $_getCharWidth(int uniChar, bool forceUnicode);
 
+    MCAPI bool $supportsChar(int const& character);
+
+    MCAPI float $getWrapHeight() const;
+
+    MCAPI float $getScaleFactor(int c) const;
+
+    MCAPI float $getScaleFactor() const;
+
+    MCFOLD bool $isScreenPixelAligned() const;
+
+    MCFOLD bool $materialCanBeOverridden() const;
+
+    MCAPI void $uploadTextureToGPU();
+
+    MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
+
+    MCFOLD bool $_supportsShadowInSingleDraw();
+
+    MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool forceUnicode) const;
+
+    MCAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
+
+    MCAPI void $loadFontData(bool uploadTextureImmediately);
+
+    MCAPI float $buildChar(
+        ::std::vector<::Font::GlyphQuad>& quads,
+        int                               i,
+        ::mce::Color const&               color,
+        bool                              italic,
+        float                             x,
+        float                             y,
+        bool                              unicode
+    );
+
+    MCAPI ::Core::PathBuffer<::std::string>
+    $getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
+
+    MCAPI void $switchFontsource(::Core::Path const& asciiName, ::Core::Path const& unicodeName);
+
+    MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
+    $getFontSources() const;
     // NOLINTEND
 };

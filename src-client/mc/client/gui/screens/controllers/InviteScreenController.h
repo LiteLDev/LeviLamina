@@ -145,6 +145,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $queueTitleNarration();
 
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCFOLD ::std::string $_getButtonADescription();
+
+    MCAPI ::std::string $_getButtonXDescription();
+
+    MCAPI ::std::string $_getButtonYDescription();
     // NOLINTEND
 };

@@ -506,9 +506,13 @@ public:
 
     MCAPI void $shutdown();
 
+    MCFOLD ::bgfx::RendererType::Enum $getRendererType() const;
+
     MCAPI uint64 $getRendererVersion() const;
 
     MCAPI uint64 $getShaderVersion() const;
+
+    MCAPI char const* $getRendererName() const;
 
     MCAPI bool $isDeviceRemoved();
 
@@ -676,6 +680,17 @@ public:
     MCAPI void $kick(bool _alloc);
 
     MCAPI void $finish();
+
+    MCFOLD void $doPreBlasSkinning(::bgfx::d3d12::CommandListD3D12& bgfxCommandList);
+
+    MCFOLD void $rayTrace(
+        ::bgfx::d3d12::CommandListD3D12&       bgfxCommandList,
+        ::bgfx::RayTracingConfiguration const& rtConfig,
+        ::bgfx::RayTracingResources const&     rtResources,
+        ::bgfx::RenderBind const&              renderBind,
+        ::bgfx::Matrix4 const&                 viewMat,
+        ::bgfx::Matrix4 const&                 projMat
+    );
     // NOLINTEND
 };
 

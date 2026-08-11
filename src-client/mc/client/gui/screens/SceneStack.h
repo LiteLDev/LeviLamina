@@ -430,7 +430,13 @@ public:
 
     MCAPI void $setOptions(::std::weak_ptr<::OptionRegistry> options);
 
+    MCAPI void $registerSceneChangeCallback(void* token, ::std::function<void(::AbstractScene&)> sceneChangeCallback);
+
+    MCAPI void $unregisterSceneChangeCallback(void* token);
+
     MCAPI void $registerPrePushSceneCallback(void* token, ::std::function<void(::AbstractScene&)> prePushSceneCallback);
+
+    MCAPI void $unregisterPrePushSceneCallback(void* token);
 
     MCAPI void $registerPushSceneCallback(
         void* token,
@@ -438,7 +444,11 @@ public:
             pushSceneCallback
     );
 
+    MCAPI void $unregisterPushSceneCallback(void* token);
+
     MCAPI void $registerPrePopSceneCallback(void* token, ::std::function<void(::AbstractScene*)> prePopSceneCallback);
+
+    MCAPI void $unregisterPrePopSceneCallback(void* token);
 
     MCAPI void $registerPopSceneCallback(
         void* token,
@@ -446,13 +456,78 @@ public:
             popSceneCallback
     );
 
+    MCAPI void $unregisterPopSceneCallback(void* token);
+
+    MCAPI void $forEachVisibleScreen(
+        ::brstd::function_ref<void(::AbstractScene&)> callback,
+        bool                                          tickedLastFrame,
+        bool                                          splitscreenRenderBypassThisFrame
+    );
+
+    MCAPI void $forEachScreen(::brstd::function_ref<bool(::AbstractScene&)> callback, bool topDown);
+
+    MCAPI void $forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)> callback, bool topDown) const;
+
+    MCAPI void $forEachAlwaysAcceptInputScreen(
+        ::brstd::function_ref<void(::AbstractScene&)> callback,
+        ::AbstractScene const*                        ignoreScreen
+    );
+
+    MCAPI void $forEachAlwaysAcceptInputScreenWithTop(::brstd::function_ref<void(::AbstractScene&)> callback);
+
+    MCAPI void
+    $pushScreenWithRouteAction(::std::shared_ptr<::AbstractScene> newScreen, ::OreUI::RouteAction const& routeAction);
+
+    MCAPI void $popScreenWithRouteAction(::OreUI::RouteAction const& routeAction);
+
     MCAPI void $pushScreen(::std::shared_ptr<::AbstractScene> newScreen, bool flush);
+
+    MCAPI void $schedulePopScreen(int totalPopNumber);
+
+    MCAPI void $schedulePopScreenWithExpectedNames(::std::vector<::std::string> const& expectedScreenNames);
+
+    MCAPI void $flushStack(
+        bool                    immediate,
+        bool                    ignoreNotFlushableFlag,
+        bool                    ignoreTransitions,
+        ::std::function<void()> postFlushCallback
+    );
+
+    MCAPI void $deferUpdatesUntilNextTick();
+
+    MCAPI ::std::optional<uint64> $getFirstSceneIndexOfSceneType(::ui::SceneType sceneType) const;
+
+    MCAPI bool $popScreensBackTo(::ui::SceneType const sceneType);
+
+    MCAPI bool $popScreensBackToFirstInstanceOf(::ui::SceneType const sceneType);
+
+    MCAPI bool $popTopScreensOfType(::ui::SceneType const sceneType);
+
+    MCAPI bool $update();
 
     MCAPI void $resetScreenChangeDirtyFlag();
 
+    MCFOLD bool $hasChangedThisFrame() const;
+
+    MCAPI bool $isEmpty() const;
+
+    MCAPI uint64 $getSize() const;
+
     MCAPI void $setScreenTickingFlag(bool screenIsTicking);
 
+    MCAPI bool $getScreenTickingFlag() const;
+
+    MCAPI ::ui::SceneType $getNonTerminatingSceneType() const;
+
+    MCAPI ::std::vector<::std::string> $getScreenNames() const;
+
     MCAPI ::std::vector<::std::string> $getScreenTelemetryNames() const;
+
+    MCAPI ::std::string $getScreenName() const;
+
+    MCAPI ::std::string $getScreenTelemetry() const;
+
+    MCFOLD ::std::string const& $getLastPoppedScreenName() const;
 
     MCAPI void $handleLicenseChanged();
 
@@ -460,10 +535,42 @@ public:
 
     MCAPI ::AbstractScene* $getTopScene();
 
+    MCFOLD ::AbstractScene const* $getTopScene() const;
+
+    MCAPI ::std::shared_ptr<::AbstractScene> $getTopSceneShared() const;
+
     MCAPI ::AbstractScene* $getActiveScene();
+
+    MCFOLD ::AbstractScene const* $getActiveScene() const;
+
+    MCAPI ::std::shared_ptr<::AbstractScene> $getSharedNonTerminatingActiveScene();
+
+    MCAPI ::std::shared_ptr<::AbstractScene const> const $getSharedNonTerminatingActiveScene() const;
+
+    MCAPI ::gsl::span<::ISceneStack::SceneElement const> $getScreenStackView() const;
 
     MCFOLD int $getScheduledPopCount() const;
 
+    MCAPI bool $isScreenReplaceable() const;
+
+    MCAPI void $handleTextChar(::std::string const& inputUtf8);
+
+    MCAPI void $setBufferTextCharEvents(bool pushTextCharEvents);
+
+    MCAPI bool $isBufferingTextCharEvents() const;
+
+    MCAPI bool $isOnSceneStack(::ui::SceneType sceneType) const;
+
+    MCAPI bool $isOnSceneStack(::std::string const& screenName) const;
+
+    MCAPI ::SceneStackProxy* $getProxy();
+
+    MCAPI bool $hasScheduledScreens() const;
+
+    MCAPI bool $hasScheduledEvents() const;
+
     MCAPI void $setScreenThreshold(::ScreenThreshold const& screenThreshold);
+
+    MCAPI ::Bedrock::PubSub::Subscription $registerSceneStackDestroyedListener(::std::function<void()> callback);
     // NOLINTEND
 };

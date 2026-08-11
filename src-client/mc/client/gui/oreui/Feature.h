@@ -32,7 +32,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isEnabled() const;
 
+    MCAPI void $registerIsEnabledChangedCallback(::Bedrock::PubSub::Subscription&, ::std::function<void(bool)>);
     // NOLINTEND
 };
 

@@ -54,6 +54,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&);
 
+    MCNAPI void $renderEffects(
+        ::BaseActorRenderContext& renderContext,
+        ::ActorRenderData&        actorRenderData,
+        ::RenderParams&           renderParams
+    );
     // NOLINTEND
 };

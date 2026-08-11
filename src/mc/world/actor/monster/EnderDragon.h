@@ -140,6 +140,31 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $remove();
+
+    MCAPI void $setSitting(bool value);
+
+    MCFOLD bool $canBeAffected(uint id) const;
+
+    MCAPI bool $isImmobile() const;
+
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+
+    MCAPI ::Vec3 $getHeadLookVector(float a) const;
+
+    MCAPI void $die(::ActorDamageSource const& source);
+
+    MCAPI float $getShadowRadius() const;
+
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+
+    MCFOLD bool $canBePulledIntoVehicle() const;
+
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
+
 
     // NOLINTEND
 };

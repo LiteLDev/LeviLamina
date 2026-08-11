@@ -95,6 +95,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $applyToPose(
+        ::ApplyAnimationContext const&                                                    applyContext,
+        ::RenderParams&                                                                   renderParams,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
+        float                                                                             blendWeight
+    );
+
+    MCAPI void $resetAnimation();
+
+    MCFOLD void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
+
+    MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
+
+    MCFOLD bool $hasAnimationFinished() const;
+
+    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const& friendlyName);
+
+    MCFOLD ::ActorAnimationType $getAnimationType() const;
+
+    MCFOLD ::HashedString const& $getRawName() const;
+
+    MCAPI void $visit(::AnimationVisitor&& dispatcher);
+
 
     // NOLINTEND
 };

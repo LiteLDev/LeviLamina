@@ -118,7 +118,40 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tick();
 
+    MCAPI void $setContentSource(::std::unique_ptr<::ContentSource>&& contentSource);
+
+    MCAPI void $resetContent();
+
+    MCAPI ::Bedrock::PubSub::Subscription
+    $subscribeToContentItemCollectionDirtySubscription(::std::function<void()>&& callback);
+
+    MCAPI ::WorldContentItemCollectionsModel $getWorldCollectionsModel() const;
+
+    MCAPI ::std::optional<::World::PackActionError>
+    $changePackPriority(::std::string const& packIdVersion, ::ContentType packType, int fromPosition, int toPosition);
+
+    MCAPI ::std::optional<::World::PackActionError>
+    $activatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings);
+
+    MCAPI ::std::optional<::World::PackActionError>
+    $deactivatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings);
+
+    MCAPI ::std::optional<::World::PackActionError> $continuePendingPackAction();
+
+    MCAPI void $clearPendingPackAction();
+
+    MCAPI ::Bedrock::PubSub::Subscription
+    $subscribeToPendingPackActionPublisher(::std::function<void(::std::optional<::World::PendingPackAction>)> callback);
+
+    MCAPI ::std::optional<::PackSettingsInfo> $getPackSettingsForPackIdVersion(::std::string const& packIdVersion);
+
+    MCAPI ::std::shared_ptr<::PackContentItem const> $getPackItemForPackIdVersion(::std::string_view packIdVersion);
+
+    MCAPI ::Bedrock::PubSub::Subscription $subscribeToMarketplacePackDownloadStatus(
+        ::std::function<void(::IMarketplacePackDownloader::MarketplacePackDownloadStatus)>&& onDownloadStatusChange
+    );
     // NOLINTEND
 };
 

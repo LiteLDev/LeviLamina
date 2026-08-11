@@ -38,6 +38,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::optional<::webrtc::SocketAddress> $Reflect(::webrtc::SocketAddress const& local) const;
+
 
     // NOLINTEND
 };

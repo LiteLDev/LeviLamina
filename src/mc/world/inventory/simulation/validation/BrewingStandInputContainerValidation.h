@@ -27,6 +27,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isItemAllowedInSlot(
+        ::ContainerScreenContext const&,
+        int const,
+        ::ItemStackBase const& item,
+        int const,
+        bool
+    ) const;
+
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+
 
     // NOLINTEND
 };

@@ -71,6 +71,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI void $onOpen();
+
+    MCAPI bool $canExit();
     // NOLINTEND
 };

@@ -180,6 +180,66 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $SendPacket(
+        ::NetherNet::NetworkID remoteId,
+        uint64                 connectionId,
+        ::std::string const&   data,
+        ::NetherNet::ESendType eSendType
+    );
+
+    MCNAPI bool $IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize);
+
+    MCNAPI bool
+    $ReadPacket(::NetherNet::NetworkID remoteId, uint64 connectionId, void* pubDest, uint cbDest, uint* pcbMessageSize);
+
+    MCNAPI bool $OpenSessionWithUser(
+        ::NetherNet::NetworkID                                      networkIDRemote,
+        ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator
+    );
+
+    MCNAPI bool $CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
+
+    MCNAPI bool $GetSessionState(
+        ::NetherNet::NetworkID     networkIDRemote,
+        uint64                     connectionId,
+        ::NetherNet::SessionState* pConnectionState
+    );
+
+    MCNAPI void
+    $SetSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface> const& pWebRTCSignalingInterface);
+
+    MCNAPI void $SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const& config);
+
+    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
+
+    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ILanEventHandler* handler);
+
+    MCNAPI bool $IsBroadcastDiscoveryEnabled();
+
+    MCNAPI void $EnableBroadcastDiscovery();
+
+    MCNAPI void $DisableBroadcastDiscovery();
+
+    MCNAPI void $AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ip, int port);
+
+    MCNAPI void $RemoveLanHost(::NetherNet::NetworkID remote);
+
+    MCNAPI void $EnableLANSignaling();
+
+    MCNAPI void $DisableLANSignaling();
+
+    MCNAPI void $EnableTrickleIce();
+
+    MCNAPI void $DisableTrickleIce();
+
+    MCNAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event);
+
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event);
+
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const& event);
+
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const& event);
+
 
     // NOLINTEND
 };

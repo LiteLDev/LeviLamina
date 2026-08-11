@@ -243,6 +243,77 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addStorageObserver(::std::unique_ptr<::LevelStorageObserver> observer);
+
+    MCFOLD bool $loadedSuccessfully() const;
+
+    MCAPI ::Core::LevelStorageResult $getState() const;
+
+    MCAPI ::std::unique_ptr<::ChunkSource>
+    $createChunkStorage(::std::unique_ptr<::ChunkSource> generator, ::StorageVersion);
+
+#ifdef LL_PLAT_S
+    MCAPI ::Core::PathBuffer<::std::string> const& $getFullPath() const;
+#else // LL_PLAT_C
+    MCFOLD ::Core::PathBuffer<::std::string> const& $getFullPath() const;
+#endif
+
+    MCAPI ::std::unique_ptr<::CompoundTag> $getCompoundTag(::std::string const& key, ::DBHelpers::Category category);
+
+    MCAPI bool $hasKey(::std::string_view key, ::DBHelpers::Category category) const;
+
+    MCAPI bool $loadLevelData(::LevelData& data);
+
+    MCAPI void $saveLevelData(::LevelData const& levelData);
+
+    MCAPI ::Bedrock::Threading::Async<void>
+    $saveData(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category);
+
+    MCAPI ::Bedrock::Threading::Async<void> $saveData(::LevelStorageWriteBatch const& batch);
+
+    MCAPI ::Bedrock::Threading::Async<void> $deleteData(::std::string const& key, ::DBHelpers::Category category);
+
+    MCAPI bool $loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
+
+    MCAPI void $forEachKeyWithPrefix(
+        ::std::string_view                                                   prefix,
+        ::DBHelpers::Category                                                category,
+        ::std::function<void(::std::string_view, ::std::string_view)> const& callback
+    ) const;
+
+    MCAPI ::Core::LevelStorageResult $getLevelStorageState() const;
+
+    MCFOLD ::ContentIdentity const* $getContentIdentity() const;
+
+    MCAPI void $startShutdown();
+
+    MCAPI bool $isShuttingDown() const;
+
+    MCAPI bool $checkShutdownDone();
+
+    MCAPI void $getStatistics(::std::string& outStats, ::LevelStorage::StatsType statsType) const;
+
+    MCAPI ::std::vector<::SnapshotFilenameAndLength>
+    $createSnapshot(::std::string const& filePrefix, bool flushWriteCache);
+
+    MCAPI void $releaseSnapshot();
+
+    MCAPI ::Bedrock::Threading::Async<void> $compactStorage();
+
+    MCAPI void $syncAndSuspendStorage();
+
+    MCAPI void $resumeStorage();
+
+    MCAPI void $setFlushAllowed(bool flushAllowed);
+
+    MCAPI void $flushToPermanentStorage();
+
+    MCAPI void $freeCaches();
+
+    MCAPI void $setCompactionCallback(::std::function<void(::CompactionStatus)> callback);
+
+    MCAPI void $setCriticalSyncSaveCallback(::std::function<void()> callback);
+
 
     // NOLINTEND
 };

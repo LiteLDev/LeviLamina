@@ -62,6 +62,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
+    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
+
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
+
+    MCFOLD ::UIBatchType $getBatchType() const;
+
+    MCFOLD int $getCustomId() const;
     // NOLINTEND
 };

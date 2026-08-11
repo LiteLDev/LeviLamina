@@ -71,6 +71,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
 
+    MCAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

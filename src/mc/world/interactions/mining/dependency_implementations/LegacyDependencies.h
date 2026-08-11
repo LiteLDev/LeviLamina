@@ -32,6 +32,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $hurtAndBreak(int damage);
+
 
     // NOLINTEND
 };

@@ -45,7 +45,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $update(::PaperDollUpdateOwnerData const& data);
 
+    MCAPI void
+    $render(::PaperDollRenderOwnerData const& data, ::OffscreenCaptureDescription const* capture, bool isRenderingUI);
     // NOLINTEND
 };
 

@@ -117,6 +117,37 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $ready();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
+
+    MCNAPI ::std::string_view $getServiceName() const;
+
+    MCNAPI void $_handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const& payload);
+
+    MCNAPI void
+    $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& payload);
+
+    MCNAPI void $_handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& payload);
+
+    MCNAPI void $_handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload);
+
+    MCNAPI void $_handleThemeSettingsCurrentThemeChangedPayload(
+        ::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const& payload
+    );
+
+    MCNAPI void
+    $_handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload);
+
+    MCNAPI void $_handleThemeSettingsThemeColorUpdatedPayload(
+        ::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload
+    );
+
+    MCNAPI void
+    $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload);
+
 
     // NOLINTEND
 };

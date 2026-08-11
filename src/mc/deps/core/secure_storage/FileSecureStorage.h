@@ -36,6 +36,10 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI bool $getData(::std::string& output, ::Core::Path path);
+
+        MCNAPI void $setData(::std::string const& data, ::Core::Path path);
+
 
         // NOLINTEND
     };
@@ -64,6 +68,10 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI bool $getData(::std::string& output, ::Core::Path path);
+
+        MCNAPI void $setData(::std::string const& data, ::Core::Path path);
+
 
         // NOLINTEND
     };
@@ -156,7 +164,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI bool $add(::std::string const& key, ::std::string const& value);
 
     MCNAPI bool $addOrUpdate(::std::string const& key, ::std::string const& value);
@@ -164,7 +171,6 @@ public:
     MCNAPI bool $remove(::std::string const& key);
 
     MCNAPI bool $get(::std::string const& key, ::std::string& outValue);
-#endif
 
 
     // NOLINTEND

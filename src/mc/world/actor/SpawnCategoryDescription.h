@@ -35,9 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI char const* $getJsonName() const;
-#endif
 
 
     // NOLINTEND
