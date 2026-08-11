@@ -247,21 +247,9 @@ MCNAPI bool validateIdentifier(
 
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
 MCNAPI ::std::unordered_map<uchar, ::std::string> const& CP1252_TO_UTF8();
-#endif
 
-#ifdef LL_PLAT_S
-MCNAPI ::std::unordered_map<uchar, ::std::string> const& CP1252_TO_UTF8();
-#endif
-
-#ifdef LL_PLAT_C
 MCNAPI ::std::unordered_map<uchar, ::std::string> const& CP437_TO_UTF8();
-#endif
-
-#ifdef LL_PLAT_S
-MCNAPI ::std::unordered_map<uchar, ::std::string> const& CP437_TO_UTF8();
-#endif
 
 MCNAPI ::std::string const& EMPTY_GUID();
 

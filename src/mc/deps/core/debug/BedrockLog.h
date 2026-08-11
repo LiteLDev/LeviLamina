@@ -53,13 +53,7 @@ MCAPI void update();
 
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
 MCAPI ::BedrockLog::CategoryLogs& sCategory();
-#endif
-
-#ifdef LL_PLAT_S
-MCAPI ::BedrockLog::CategoryLogs& sCategory();
-#endif
 // NOLINTEND
 
 } // namespace BedrockLog

@@ -11,29 +11,11 @@ class BlockType;
 namespace br::worldgen::processors::JigsawReplacementHelpers {
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
 MCAPI ::Block const*& AIR();
-#endif
 
-#ifdef LL_PLAT_S
-MCAPI ::Block const*& AIR();
-#endif
-
-#ifdef LL_PLAT_C
 MCAPI ::BlockType const*& JIGSAW_BLOCK();
-#endif
 
-#ifdef LL_PLAT_S
-MCAPI ::BlockType const*& JIGSAW_BLOCK();
-#endif
-
-#ifdef LL_PLAT_C
 MCAPI ::BlockType const*& STRUCTURE_VOID();
-#endif
-
-#ifdef LL_PLAT_S
-MCAPI ::BlockType const*& STRUCTURE_VOID();
-#endif
 // NOLINTEND
 
 } // namespace br::worldgen::processors::JigsawReplacementHelpers

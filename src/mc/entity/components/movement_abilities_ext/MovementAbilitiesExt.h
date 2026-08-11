@@ -13,13 +13,7 @@ namespace MovementAbilitiesExt { struct MovementAbilityInfo; }
 namespace MovementAbilitiesExt {
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
 MCAPI ::std::unordered_map<::AbilitiesIndex, ::MovementAbilitiesExt::MovementAbilityInfo> const& ABILITIES_MAP();
-#endif
-
-#ifdef LL_PLAT_S
-MCAPI ::std::unordered_map<::AbilitiesIndex, ::MovementAbilitiesExt::MovementAbilityInfo> const& ABILITIES_MAP();
-#endif
 // NOLINTEND
 
 } // namespace MovementAbilitiesExt

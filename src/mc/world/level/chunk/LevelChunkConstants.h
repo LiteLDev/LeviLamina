@@ -10,13 +10,7 @@ class ChunkLocalHeight;
 namespace LevelChunkConstants {
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
 MCAPI ::ChunkLocalHeight const& INVALID_RAIN_HEIGHT();
-#endif
-
-#ifdef LL_PLAT_S
-MCAPI ::ChunkLocalHeight const& INVALID_RAIN_HEIGHT();
-#endif
 // NOLINTEND
 
 } // namespace LevelChunkConstants

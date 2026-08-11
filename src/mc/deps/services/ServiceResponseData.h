@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace services::multiplayer::model {
+namespace services::gatherings::model {
 
 struct ServiceResponseData {};
 
-} // namespace services::multiplayer::model
+} // namespace services::gatherings::model

@@ -15,13 +15,7 @@ MCNAPI ::gsl::not_null<::Scheduler*> getMainThreadScheduler();
 
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
 MCNAPI uint64& sMainProcToken();
-#endif
-
-#ifdef LL_PLAT_S
-MCNAPI uint64& sMainProcToken();
-#endif
 // NOLINTEND
 
 } // namespace Bedrock::Threading

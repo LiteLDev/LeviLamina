@@ -10,13 +10,7 @@ class Vec3;
 namespace TeleportDefaults {
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
 MCAPI ::Vec3 const& RANDOM_TELEPORT_CUBE();
-#endif
-
-#ifdef LL_PLAT_S
-MCAPI ::Vec3 const& RANDOM_TELEPORT_CUBE();
-#endif
 // NOLINTEND
 
 } // namespace TeleportDefaults

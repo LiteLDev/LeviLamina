@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace services::layout::model {
+namespace services::gatherings::model {
 
 struct Price {};
 
-} // namespace services::layout::model
+} // namespace services::gatherings::model

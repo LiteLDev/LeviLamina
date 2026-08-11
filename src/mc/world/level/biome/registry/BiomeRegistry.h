@@ -104,7 +104,7 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI
-    uint64 assignSeasonTextureRow(::BiomeRegistry::SeasonTextureRowSettings const& desiredSettings, uint64 maxSize);
+        uint64 assignSeasonTextureRow(::BiomeRegistry::SeasonTextureRowSettings const& desiredSettings, uint64 maxSize);
 #endif
 
     MCAPI ::std::vector<::std::string> const biomeGetTags(::Biome const& biome) const;
