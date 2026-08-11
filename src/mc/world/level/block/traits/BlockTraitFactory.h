@@ -60,6 +60,8 @@ public:
 
     MCAPI static ::std::unordered_map<::std::string, ::BlockTraitFactory::TraitMetadata> const*
     registeredTraits(::cereal::ReflectionCtx const& ctx);
+
+    MCAPI static ::BlockTraitFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

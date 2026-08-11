@@ -37,7 +37,7 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptNativeWebSocket() /*override*/ = default;
 
-    virtual void onMessage(::std::string_view) /*override*/;
+    virtual void onMessage(::std::string_view message) /*override*/;
 
     virtual void onClose(uint) /*override*/;
     // NOLINTEND

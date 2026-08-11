@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class DisconnectionRequestHandler;
+namespace OreUI { struct ConnectionErrorInfo; }
 // clang-format on
 
 namespace OreUI {
@@ -43,6 +44,10 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::DisconnectionRequestHandler> disconnectionRequestHandler,
         ::std::function<void(::std::string const&)>                  launchUri
     );
+
+    MCAPI ::OreUI::ConnectionErrorInfo const getConnectionErrorInfo(int reason) const;
+
+    MCAPI void openLearnMoreLink(int reason) const;
     // NOLINTEND
 
 public:

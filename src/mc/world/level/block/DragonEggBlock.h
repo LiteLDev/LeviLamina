@@ -10,7 +10,9 @@
 class BaseGameVersion;
 class Block;
 class BlockPos;
+class BlockSource;
 class Player;
+class Random;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace mce { class Color; }
 // clang-format on
@@ -38,6 +40,12 @@ public:
     MCAPI DragonEggBlock(::std::string const& nameId, int id);
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _attemptTeleport(::BlockSource& region, ::Random& random, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

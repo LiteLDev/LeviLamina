@@ -25,19 +25,23 @@ public:
 
     virtual bool canChangeBlockOnSpread() const /*override*/;
 
-    virtual bool
-    attemptSpreadVeins(::IBlockWorldGenAPI&, ::BlockPos const&, ::Block const&, int, ::SculkSpreader&) const
-        /*override*/;
+    virtual bool attemptSpreadVeins(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::Block const&       block,
+        int,
+        ::SculkSpreader&
+    ) const /*override*/;
 
     virtual int attemptUseCharge(
-        ::IBlockWorldGenAPI&,
-        ::BlockSource*,
-        ::BlockPos const&,
-        ::BlockPos const&,
+        ::IBlockWorldGenAPI& target,
+        ::BlockSource*       region,
+        ::BlockPos const&    originPos,
+        ::BlockPos const&    pos,
+        int                  charge,
         int,
-        int,
-        ::Random&,
-        ::SculkSpreader&,
+        ::Random&        random,
+        ::SculkSpreader& spreader,
         bool const
     ) const /*override*/;
 

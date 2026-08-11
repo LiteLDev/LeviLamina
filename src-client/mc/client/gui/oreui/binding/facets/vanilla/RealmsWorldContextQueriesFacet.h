@@ -48,6 +48,26 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsWorldContextQueriesFacet(::std::shared_ptr<::Realms::RealmsWorldContext> realmsWorldContext);
+
+    MCAPI void _setFacetState(::Realms::RealmsWorldContextState realmsWorldContextState);
+
+    MCFOLD int getActiveSlotIndex() const;
+
+    MCFOLD bool getIsClosed() const;
+
+    MCAPI bool getIsExpired() const;
+
+    MCAPI bool getIsFull() const;
+
+    MCAPI int getMaxPlayers() const;
+
+    MCFOLD ::std::string const& getRealmId() const;
+
+    MCFOLD ::std::string const& getRealmName() const;
+
+    MCFOLD ::std::string const& getRealmOwnerId() const;
+
+    MCFOLD ::Realms::RealmsWorldContextState getState() const;
     // NOLINTEND
 
 public:

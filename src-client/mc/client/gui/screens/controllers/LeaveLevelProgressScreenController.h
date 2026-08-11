@@ -73,6 +73,14 @@ public:
         bool                                               loadAssets,
         bool                                               forceRenderBelow
     );
+
+    MCAPI void _closeEduCloudConflictPopup();
+
+    MCAPI bool _exitingErrorScreen() const;
+
+    MCAPI ::std::chrono::milliseconds const _getEduCloudIsDoneInterval() const;
+
+    MCAPI void _showEduCloudConflictPopup();
     // NOLINTEND
 
 public:

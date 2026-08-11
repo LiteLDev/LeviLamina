@@ -6,6 +6,7 @@
 // clang-format off
 struct MolangParseConfig;
 namespace Molang::details { class ExpressionNode; }
+namespace Molang::details { class IComplexExpression; }
 // clang-format on
 
 namespace Molang::details {
@@ -36,6 +37,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI SourceTree(::Molang::details::ExpressionNode node, ::MolangParseConfig const& parseConfig);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::unique_ptr<::Molang::details::IComplexExpression> link(::Molang::details::SourceTree root);
     // NOLINTEND
 
 public:

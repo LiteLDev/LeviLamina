@@ -20,6 +20,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD bool operator==(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const& other) const;
+
     MCAPI ~ScriptRawMessageScoreInterface();
     // NOLINTEND
 

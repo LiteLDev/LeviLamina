@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/item/crafting/MultiRecipe.h"
 
 // auto generated forward declare list
 // clang-format off
+class BannerPattern;
 class CraftingContainer;
 class CraftingContext;
 class ItemInstance;
@@ -36,6 +38,13 @@ public:
     virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const /*override*/;
 
     virtual int size() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::NonOwnerPointer<::BannerPattern const> const
+    matchPatterns(::CraftingContainer const& craftSlots) const;
     // NOLINTEND
 
 public:

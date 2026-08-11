@@ -40,7 +40,7 @@ public:
 
     virtual ::ItemInstance const& getItemInstance(int modelSlot) const /*override*/;
 
-    virtual void setItemInstance(int, ::ItemInstance const&);
+    virtual void setItemInstance(int modelSlot, ::ItemInstance const& item);
 
     virtual bool isItemInstanceBased() const /*override*/;
 
@@ -62,11 +62,19 @@ public:
 
     virtual void switchItemExpando(int itemId) /*override*/;
 
-    virtual void refreshContainer(bool) /*override*/;
+    virtual void refreshContainer(bool fullRefresh) /*override*/;
 
-    virtual int getIndexForCreativeItem(::ItemStackBase const&) const;
+    virtual int getIndexForCreativeItem(::ItemStackBase const& item) const;
 
     virtual void _init() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _generateCurrentItems();
+
+    MCAPI void _refreshContainer(bool fullRefresh);
     // NOLINTEND
 
 public:

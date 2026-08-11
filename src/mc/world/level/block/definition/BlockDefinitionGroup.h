@@ -3,9 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/debug/log/LogArea.h"
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/json/Value.h"
+#include "mc/deps/shared_types/v1_21_110/item/ItemCategory.h"
 #include "mc/resources/JsonBetaState.h"
 #include "mc/resources/MinEngineVersion.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
@@ -20,7 +23,10 @@ class Experiments;
 class IMinecraftEventing;
 class Level;
 class LinkedAssetValidator;
+class PackLoadContext;
+class PackLoadRequirement;
 class ResourcePackManager;
+struct BlockComponentGroupDescription;
 struct BlockDefinition;
 namespace JsonUtil { class EmptyClass; }
 namespace cereal { struct ReflectionCtx; }
@@ -78,13 +84,50 @@ public:
     // NOLINTBEGIN
     MCAPI BlockDefinitionGroup(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
 
+    MCAPI void _buildBlockDescriptionSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockDescription>>& description
+    );
+
+    MCAPI bool _parseComponents(
+        ::Json::Value const&              blockRoot,
+        ::BlockComponentGroupDescription& componentGroupDescription,
+        ::std::string const&              blockIdentifier,
+        ::SemVersion const&               originalJsonVersion,
+        ::PackLoadContext&                packLoadContext,
+        ::JsonBetaState                   canUseBeta,
+        bool                              isVanillaBlock
+    );
+
+    MCAPI ::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory
+    _stringToCreativeItemCategory(::std::string const& category, ::std::string const& blockIdentifier);
+
+    MCAPI bool _validatePrereleaseRequirements(
+        ::LogArea                                   logArea,
+        ::std::string const&                        jsonType,
+        ::std::string const&                        jsonIdentifier,
+        ::std::optional<::SemVersion> const&        releaseVersion,
+        ::std::vector<::PackLoadRequirement> const& requirements,
+        ::PackLoadContext const&                    packLoadContext,
+        ::JsonBetaState const                       canUseBeta
+    ) const;
+
     MCAPI void digestServerBlockProperties(::std::vector<::std::pair<::std::string, ::CompoundTag>> const& blocks);
+
+    MCAPI ::std::unique_ptr<::BlockDefinition>
+    generateBlockDefinition(::BlockDefinitionGroup::BlockResource const& resource, ::PackLoadContext& packLoadContext);
 
     MCAPI ::std::vector<::std::pair<::std::string, ::CompoundTag>> generateServerBlockProperties() const;
 
     MCAPI ::std::vector<::BlockDefinition const*> getBlockDefinitions() const;
 
     MCAPI void initializeBlockFromDefinition(::BlockDefinition const& definition, ::Level& level);
+
+    MCAPI ::std::unique_ptr<::BlockDefinition> loadResource(
+        ::std::string                            upgradedJsonData,
+        ::Core::PathBuffer<::std::string> const& res,
+        ::std::string const&                     resourcePacklocation,
+        ::PackLoadContext&                       packLoadContext
+    );
 
     MCAPI void loadResources(
         ::ResourcePackManager const&                       resourcePackManager,

@@ -24,6 +24,8 @@ class ClientInputCallbacks {
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void destroyVibrate(::IClientInstance& client, int milliSeconds);
+
     MCAPI static bool handleBuildAction(
         ::IClientInstance&      client,
         ::BuildActionIntention& bai,

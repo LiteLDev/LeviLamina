@@ -46,6 +46,10 @@ public:
     // NOLINTBEGIN
     MCAPI ::Block const& getBlock(::BlockPos const& p);
 
+    MCAPI ::BlockGraphics const* getBlockGraphics(::BlockPos const& p, ::Block const& block, uint layer);
+
+    MCAPI ::Block const& getExtraBlock(::BlockPos const& p);
+
     MCAPI ::BrightnessPair getLightColor(::BlockPos const& p, ::Block const* blockHint);
     // NOLINTEND
 };

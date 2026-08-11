@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/binding/facets/vanilla_gameplay/ChatAvailability.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,6 +40,20 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PlayerInBedFacet(::LocalPlayer* player, bool isTrial);
+
+    MCAPI bool getCanChangeSleepSettings() const;
+
+    MCAPI ::OreUI::ChatAvailability getChatAvailability() const;
+
+    MCFOLD bool getIsAbleToSleep() const;
+
+    MCAPI int getRemotePlayersCount() const;
+
+    MCFOLD int getRequiredSleepingPlayerCount() const;
+
+    MCAPI int getSleepingPlayerCount() const;
+
+    MCAPI void wakeUp();
     // NOLINTEND
 
 public:

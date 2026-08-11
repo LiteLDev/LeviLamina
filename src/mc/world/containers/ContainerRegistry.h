@@ -83,6 +83,12 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ContainerRegistry(bool isClientSide);
 
+    MCAPI ::DynamicTrackedContainer& _getOrCreate(
+        ::FullContainerName const&         id,
+        ::StorageItemComponent*            storageItemComponent,
+        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
+    );
+
     MCAPI int _tick(::std::function<void(::Packet&)> broadcastPacketFunction, int ticksSinceLastCleanup);
     // NOLINTEND
 

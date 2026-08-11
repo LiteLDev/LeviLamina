@@ -25,6 +25,7 @@ struct ScriptingWorldInitializeEvent;
 namespace Core { class FilePathManager; }
 namespace Editor { class IEditorPlayer; }
 namespace Editor { struct EditorInitParams; }
+namespace Editor::Network { class INetworkPayload; }
 namespace Scripting { class GenericModuleBindingFactory; }
 // clang-format on
 
@@ -57,7 +58,7 @@ public:
 
     virtual bool isClientSide() const /*override*/;
 
-    virtual ::std::unique_ptr<::Editor::IEditorPlayer> createPlayer(::Player&) /*override*/;
+    virtual ::std::unique_ptr<::Editor::IEditorPlayer> createPlayer(::Player& player) /*override*/;
 
     virtual ::EventResult onServerLevelInitialized(::ServerInstance& instance, ::Level& level) /*override*/;
 
@@ -74,10 +75,10 @@ public:
     virtual bool isEditorModeOrInEditorWorld() const /*override*/;
 
     virtual ::std::unique_ptr<::FileArchiver::IWorldConverter> createWorldConverter(
-        ::ILevelListCache&,
-        ::Scheduler&,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>
+        ::ILevelListCache&                                              levelListCache,
+        ::Scheduler&                                                    scheduler,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
     ) /*override*/;
     // NOLINTEND
 
@@ -90,6 +91,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager,
         ::std::unique_ptr<::Editor::EditorInitParams>          editorInitParams
     );
+
+    MCNAPI void _dispatchToServerPlayers(::Editor::Network::INetworkPayload& payload);
 
     MCNAPI ::std::vector<::std::unique_ptr<::Scripting::GenericModuleBindingFactory>> getServerModuleFactories();
     // NOLINTEND

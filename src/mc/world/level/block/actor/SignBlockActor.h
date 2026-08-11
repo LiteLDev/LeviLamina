@@ -137,10 +137,20 @@ public:
         // NOLINTBEGIN
         MCAPI ::std::string const& getMessage() const;
 
+        MCAPI void load(::CompoundTag const& tag, ::SignBlockActor::Text::LoadMode load);
+
+        MCAPI bool save(::CompoundTag& tag) const;
+
 #ifdef LL_PLAT_C
         MCAPI void setMessage(::std::string message);
 
         MCAPI void setMessage(::TextObjectRoot message);
+#endif
+
+#ifdef LL_PLAT_S
+        MCAPI void setMessage(::TextObjectRoot message);
+
+        MCAPI void setMessage(::std::string message);
 #endif
 
         MCAPI ~Text();

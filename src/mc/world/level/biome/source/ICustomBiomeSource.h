@@ -29,15 +29,15 @@ public:
 
     virtual ::BiomeSource& getSource() = 0;
 
-    virtual ::Biome const* getBiomeAtLocation(::BlockPos const&) const = 0;
+    virtual ::Biome const* getBiomeAtLocation(::BlockPos const& location) const = 0;
 
-    virtual ::std::optional<::mce::Color> findColorIfCustomBiome(::Biome const*) const = 0;
+    virtual ::std::optional<::mce::Color> findColorIfCustomBiome(::Biome const* biome) const = 0;
 
-    virtual void recalculateBiomes(::std::map<::std::string, ::CustomBiome> const&) = 0;
+    virtual void recalculateBiomes(::std::map<::std::string, ::CustomBiome> const& customBiomeMap) = 0;
 
-    virtual void updateColor(::std::string const&, ::mce::Color const&) = 0;
+    virtual void updateColor(::std::string const& biomeName, ::mce::Color const& color) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription listenForBiomeUpdates(::std::function<void()>) = 0;
+    virtual ::Bedrock::PubSub::Subscription listenForBiomeUpdates(::std::function<void()> callback) = 0;
     // NOLINTEND
 
 public:

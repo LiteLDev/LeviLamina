@@ -65,7 +65,16 @@ public:
         ::std::function<void(::std::string const&, ::ActorFactoryData const&)> callback
     ) const;
 
+    MCAPI ::OwnerPtr<::EntityContext> _constructActor(
+        ::ActorDefinitionIdentifier const&  identifier,
+        ::Vec3 const&                       position,
+        ::Vec2 const&                       rotation,
+        ::std::vector<::std::string> const* previousDefinitions
+    ) const;
+
     MCAPI void _loadDefinitionGroups(::ActorDefinitionGroup* group);
+
+    MCAPI void _loadDefinitionsHelper();
 
     MCAPI void applyEntityInitializer(::std::unique_ptr<::Actor> actor, ::EntityContext& entity) const;
 
@@ -118,6 +127,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static void fillFactoryData(
+        ::ActorDefinitionIdentifier const&                             identifier,
+        ::ActorDefinitionIdentifier const&                             baseIdentifier,
+        ::std::unordered_map<::std::string, ::ActorFactoryData> const& factoryFunctions,
+        ::ActorFactoryData&                                            data
+    );
+#endif
+
     MCAPI static ::Actor* fixLegacyEntity(::BlockSource& region, ::CompoundTag const* tag);
     // NOLINTEND
 

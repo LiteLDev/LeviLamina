@@ -21,13 +21,13 @@ public:
     virtual ~ISignalingInterface() = default;
 
     virtual void SendSignal(
-        ::NetherNet::NetworkID,
-        ::NetherNet::NetworkID,
-        ::std::string const&,
-        ::std::function<void(::NetherNet::ESessionError)>&&
+        ::NetherNet::NetworkID                              from,
+        ::NetherNet::NetworkID                              to,
+        ::std::string const&                                message,
+        ::std::function<void(::NetherNet::ESessionError)>&& onComplete
     ) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler*) = 0;
+    virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) = 0;
     // NOLINTEND
 
 public:

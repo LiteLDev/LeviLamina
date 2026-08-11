@@ -9,6 +9,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class Item;
 // clang-format on
 
 class FertilizeFarmBlockGoal : public ::BaseMoveToBlockGoal {
@@ -38,6 +39,12 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI int findInventorySlotForItem(::std::function<bool(::Item const&)> itemCallback) const;
     // NOLINTEND
 
 public:

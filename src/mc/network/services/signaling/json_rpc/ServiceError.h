@@ -28,6 +28,8 @@ public:
 
     MCNAPI ServiceError(::JsonRpc::ServiceError const&);
 
+    MCNAPI bool operator==(::JsonRpc::ServiceError const& rhs) const;
+
     MCNAPI ~ServiceError();
     // NOLINTEND
 

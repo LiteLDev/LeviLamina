@@ -7,6 +7,7 @@
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/platform/PlatformType.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/core/utility/CrashDumpLogStringID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
@@ -37,6 +38,7 @@ class ChunkSource;
 class ComplexInventoryTransaction;
 class CompoundTag;
 class Container;
+class ContainerManagerModel;
 class DataLoadHelper;
 class EntityContext;
 class IContainerManager;
@@ -157,114 +159,50 @@ public:
 
     virtual void moveView() /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType) /*override*/;
-#else // LL_PLAT_C
     virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension) /*override*/;
-#endif
 
     virtual void frameUpdate(::FrameUpdateContextBase&) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual bool isValidTarget(::Actor*) const /*override*/;
-#else // LL_PLAT_C
     virtual bool isValidTarget(::Actor* attacker) const /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual bool swing(::ActorSwingSource) /*override*/;
-#else // LL_PLAT_C
     virtual bool swing(::ActorSwingSource swingSource) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void
-    hurtArmorSlots(::ActorDamageSource const& source, int damage, ::std::bitset<5> const hurtSlots) /*override*/;
-#else // LL_PLAT_C
     virtual void
     hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void sendArmorDamage(::std::bitset<5> const) /*override*/;
-#else // LL_PLAT_C
     virtual void sendArmorDamage(::std::bitset<5> const damagedSlots) /*override*/;
-#endif
 
     virtual void sendArmor(::std::bitset<5> const armorSlots) /*override*/;
 
     virtual void setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void sendInventory(bool) /*override*/;
-#else // LL_PLAT_C
     virtual void sendInventory(bool shouldSelectSlot) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void sendInventoryTransaction(::InventoryTransaction const&) const /*override*/;
-#else // LL_PLAT_C
     virtual void sendInventoryTransaction(::InventoryTransaction const& transaction) const /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction>) const /*override*/;
-#else // LL_PLAT_C
     virtual void sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction> transaction) const
         /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void sendNetworkPacket(::Packet&) const /*override*/;
-#else // LL_PLAT_C
     virtual void sendNetworkPacket(::Packet& packet) const /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void
-    displayTextObjectMessage(::TextObjectRoot const&, ::std::string const&, ::std::string const&) /*override*/;
-#else // LL_PLAT_C
     virtual void displayTextObjectMessage(
         ::TextObjectRoot const& textObject,
         ::std::string const&    fromXuid,
         ::std::string const&    fromPlatformId
     ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const&,
-        ::std::string const&,
-        ::std::string const&
-    ) /*override*/;
-#else // LL_PLAT_C
     virtual void displayTextObjectWhisperMessage(
         ::ResolvedTextObject const& textObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void
-    displayTextObjectWhisperMessage(::std::string const&, ::std::string const&, ::std::string const&) /*override*/;
-#else // LL_PLAT_C
     virtual void displayTextObjectWhisperMessage(
         ::std::string const& message,
         ::std::string const& xuid,
         ::std::string const& platformId
     ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void displayWhisperMessage(
-        ::std::string const&,
-        ::std::string const&,
-        ::std::optional<::std::string> const,
-        ::std::string const&,
-        ::std::string const&
-    ) /*override*/;
-#else // LL_PLAT_C
     virtual void displayWhisperMessage(
         ::std::string const&                 author,
         ::std::string const&                 message,
@@ -272,56 +210,27 @@ public:
         ::std::string const&                 xuid,
         ::std::string const&                 platformId
     ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void openTrading(::ActorUniqueID const&, bool) /*override*/;
-#else // LL_PLAT_C
     virtual void openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen) /*override*/;
-#endif
 
     virtual void openPortfolio() /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData>) /*override*/;
-#else // LL_PLAT_C
     virtual void openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc) /*override*/;
-#endif
 
     virtual void openInventory() /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void openBook(int, bool, int, ::BlockActor*) /*override*/;
-#else // LL_PLAT_C
     virtual void openBook(int, bool, int, ::BlockActor* lectern) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void openSign(::BlockPos const&, bool) /*override*/;
-#else // LL_PLAT_C
     virtual void openSign(::BlockPos const& position, bool isFrontSide) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void checkMovementStats(::Vec3 const&) /*override*/;
-#else // LL_PLAT_C
     virtual void checkMovementStats(::Vec3 const& d) /*override*/;
-#endif
 
     virtual ::HashedString getCurrentStructureFeature() const /*override*/;
 
     virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void setContainerData(::IContainerManager&, int, int) /*override*/;
-#else // LL_PLAT_C
     virtual void setContainerData(::IContainerManager& menu, int id, int value) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void
-    slotChanged(::IContainerManager&, ::Container&, int, ::ItemStack const&, ::ItemStack const&, bool) /*override*/;
-#else // LL_PLAT_C
     virtual void slotChanged(
         ::IContainerManager& menu,
         ::Container&         container,
@@ -330,21 +239,12 @@ public:
         ::ItemStack const&   newItem,
         bool                 isResultSlot
     ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void refreshContainer(::IContainerManager&) /*override*/;
-#else // LL_PLAT_C
     virtual void refreshContainer(::IContainerManager& menu) /*override*/;
-#endif
 
     virtual void stopSleepInBed(bool forcefulWakeUp, bool updateLevelList) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void setArmor(::SharedTypes::Legacy::ArmorSlot const slot, ::ItemStack const& item) /*override*/;
-#else // LL_PLAT_C
     virtual void setArmor(::SharedTypes::Legacy::ArmorSlot const armorSlot, ::ItemStack const& item) /*override*/;
-#endif
 
     virtual void setOffhandSlot(::ItemStack const& item) /*override*/;
 
@@ -354,21 +254,13 @@ public:
 
     virtual void changeDimension(::DimensionType toId) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void changeDimensionWithCredits(::DimensionType) /*override*/;
-#else // LL_PLAT_C
     virtual void changeDimensionWithCredits(::DimensionType dimension) /*override*/;
-#endif
 
     virtual void setPlayerGameType(::GameType gameType) /*override*/;
 
     virtual void prepareRegion(::ChunkSource& mainChunkSource) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual bool isActorRelevant(::Actor const&) /*override*/;
-#else // LL_PLAT_C
     virtual bool isActorRelevant(::Actor const& actor) /*override*/;
-#endif
 
     virtual ::ActorUniqueID getControllingPlayer() const /*override*/;
 
@@ -400,7 +292,7 @@ public:
 
     virtual int _getSpawnChunkLimit() const;
 
-    virtual void _updateChunkPublisherView(::Vec3 const&, float);
+    virtual void _updateChunkPublisherView(::Vec3 const& position, float minDistance);
 
     virtual void _serverInitItemStackIds() /*override*/;
     // NOLINTEND
@@ -430,6 +322,17 @@ public:
         ::SyncedClientOptionsComponent                     clientOptions
     );
 
+    MCAPI void _logCDEvent(
+        ::CrashDumpLogStringID option1,
+        ::CrashDumpLogStringID option2,
+        ::CrashDumpLogStringID option3,
+        ::CrashDumpLogStringID option4
+    );
+
+    MCAPI void _removeNearbyEntities();
+
+    MCAPI void _setContainerManagerModel(::std::shared_ptr<::ContainerManagerModel> menu);
+
     MCAPI void addActorToReplicationList(::gsl::not_null<::Actor*> actor, bool autonomous);
 
     MCAPI void createEditorPlayer(::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager);
@@ -439,6 +342,10 @@ public:
     MCAPI void doDeleteContainerManager(bool forceDisconnect);
 
 #ifdef LL_PLAT_C
+    MCAPI void doInitialSpawn();
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI void doInitialSpawn();
 #endif
 
@@ -464,6 +371,8 @@ public:
     MCAPI void preReplicationTick(::Tick const& currentTick);
 
     MCAPI bool selectItem(::ItemStack const& item);
+
+    MCAPI void sendPlayerContainerClosedEvent();
 
     MCAPI void sendPlayerContainerOpenedEvent(
         ::SharedTypes::Legacy::ContainerType        type,

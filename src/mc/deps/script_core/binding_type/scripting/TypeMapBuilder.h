@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/script_core/binding_type/scripting/TaggedBinding.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { class Release; }
+// clang-format on
+
 namespace Scripting {
 
 class TypeMapBuilder : public ::Scripting::TaggedBinding {
@@ -29,6 +34,13 @@ public:
         ::std::string const& typeMapName_,
         ::std::string const& keyConstantName_,
         ::entt::meta_type    baseClassType_
+    );
+
+    MCNAPI void mapping(
+        ::std::string const&                       keyName,
+        ::std::string const&                       className,
+        ::std::vector<::Scripting::Release> const& classReleases,
+        ::std::vector<::Scripting::Release> const& keyReleases
     );
     // NOLINTEND
 

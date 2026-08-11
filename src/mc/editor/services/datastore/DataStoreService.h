@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/Mode.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/editor/serviceproviders/DataStoreServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
@@ -15,6 +16,8 @@ namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::DataStore { class IContentBadgeContainer; }
 namespace Editor::DataStore { struct PayloadDescription; }
+namespace Editor::Network { class DataStoreEventPayload; }
+namespace Editor::Network { class ServerScriptTeardownRebuildPayload; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -89,6 +92,34 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit DataStoreService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI void _handleDataStoreEventPacket(::Editor::Network::DataStoreEventPayload const& packet);
+
+    MCNAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
+
+    MCNAPI void _handleScriptReloadEventPacket(::Editor::Network::ServerScriptTeardownRebuildPayload const& packet);
+
+    MCNAPI ::Scripting::Result_deprecated<void> _processEvent(
+        ::HashedString const&                          dataTag,
+        ::Editor::DataStore::EventType                 eventType,
+        ::Json::Value const&                           payload,
+        ::Editor::DataStore::PayloadDescription const& desc,
+        bool                                           isNetworkEvent
+    );
+
+    MCNAPI void _publishEvent(
+        ::HashedString const&                          dataTag,
+        ::Editor::DataStore::EventType                 eventType,
+        ::Json::Value const&                           payload,
+        ::Editor::DataStore::PayloadDescription const& desc
+    );
+
+    MCNAPI void _sendNetworkEvent(
+        ::HashedString const&                          dataTag,
+        ::Editor::DataStore::EventType                 eventType,
+        ::Json::Value const&                           payload,
+        ::Editor::DataStore::PayloadDescription const& desc
+    );
     // NOLINTEND
 
 public:

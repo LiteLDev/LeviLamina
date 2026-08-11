@@ -75,15 +75,21 @@ public:
     // NOLINTBEGIN
     virtual ~TCPInterface() = default;
 
-    virtual void Send(char const*, uint, ::RakNet::SystemAddress const&, bool);
+    virtual void Send(char const* data, uint length, ::RakNet::SystemAddress const& systemAddress, bool broadcast);
 
-    virtual bool SendList(char const**, uint const*, int const, ::RakNet::SystemAddress const&, bool);
+    virtual bool SendList(
+        char const**                   data,
+        uint const*                    lengths,
+        int const                      numParameters,
+        ::RakNet::SystemAddress const& systemAddress,
+        bool                           broadcast
+    );
 
     virtual bool ReceiveHasPackets();
 
     virtual ::RakNet::Packet* Receive();
 
-    virtual void PushBackPacket(::RakNet::Packet*, bool);
+    virtual void PushBackPacket(::RakNet::Packet* packet, bool pushAtHead);
     // NOLINTEND
 
 public:
@@ -106,6 +112,8 @@ public:
     MCAPI ::RakNet::SystemAddress HasFailedConnectionAttempt();
 
     MCAPI ::RakNet::SystemAddress HasLostConnection();
+
+    MCAPI uint64 SocketConnect(char const* host, ushort remotePort, ushort socketFamily, char const* bindAddress);
 
     MCAPI bool Start(
         ushort      port,

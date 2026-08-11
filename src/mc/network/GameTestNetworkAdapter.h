@@ -37,9 +37,9 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void onTestPassed(::gametest::BaseGameTestInstance&) /*override*/;
+        virtual void onTestPassed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
-        virtual void onTestFailed(::gametest::BaseGameTestInstance&) /*override*/;
+        virtual void onTestFailed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
         // NOLINTEND
 
     public:

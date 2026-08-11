@@ -29,6 +29,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::ExprToken createExpressionToken(::UiExpression expression);
+
+    MCAPI static ::ExprToken createIntToken(int fromInt);
+
     MCAPI static ::ExprToken createStringToken(::std::string_view fromStr, ::ExprToken::StringOption evalString);
     // NOLINTEND
 };

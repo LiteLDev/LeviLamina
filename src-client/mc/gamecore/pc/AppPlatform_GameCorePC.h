@@ -46,15 +46,15 @@ public:
     virtual ~AppPlatform_GameCorePC() /*override*/ = default;
 
     virtual void showKeyboard(
-        ::std::string const&,
-        int,
-        bool,
-        bool,
-        bool,
-        int const,
-        ::glm::vec2 const&,
-        float,
-        ::InputMode
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline,
+        int const            controllerId,
+        ::glm::vec2 const&   position,
+        float                controlHeight,
+        ::InputMode          inputMode
     ) /*override*/;
 
     virtual void hideKeyboard() /*override*/;
@@ -83,7 +83,7 @@ public:
 
     virtual void showMousePointer() /*override*/;
 
-    virtual void setMousePointerType(::Bedrock::Input::PointerType) /*override*/;
+    virtual void setMousePointerType(::Bedrock::Input::PointerType pointerType) /*override*/;
 
     virtual void toggleSimulateTouchWithMouse() /*override*/;
 
@@ -91,19 +91,19 @@ public:
 
     virtual int getDisplayHeight() /*override*/;
 
-    virtual void screenToClient(int&, int&) const /*override*/;
+    virtual void screenToClient(int& x, int& y) const /*override*/;
 
     virtual ::std::string getTextBoxBackend() const /*override*/;
 
-    virtual void setTextBoxBackend(::std::string const&) /*override*/;
+    virtual void setTextBoxBackend(::std::string const& newText) /*override*/;
 
     virtual int getCaretPosition() const /*override*/;
 
-    virtual void setCaretPosition(int) /*override*/;
+    virtual void setCaretPosition(int position) /*override*/;
 
     virtual ::ClipboardFeatureFlags getClipboardFeatures() const /*override*/;
 
-    virtual void setClipboard(::std::string const&) const /*override*/;
+    virtual void setClipboard(::std::string const& value) const /*override*/;
 
     virtual ::std::wstring getClipboardText() const /*override*/;
 
@@ -117,11 +117,11 @@ public:
 
     virtual void share() const /*override*/;
 
-    virtual void shareFile(::Core::Path const&, ::std::function<void(bool)>) /*override*/;
+    virtual void shareFile(::Core::Path const& path, ::std::function<void(bool)>) /*override*/;
 
-    virtual void pickImage(::std::shared_ptr<::ImagePickingCallback>) /*override*/;
+    virtual void pickImage(::std::shared_ptr<::ImagePickingCallback> callback) /*override*/;
 
-    virtual void pickFile(::std::shared_ptr<::FilePickerSettings>) /*override*/;
+    virtual void pickFile(::std::shared_ptr<::FilePickerSettings> settings) /*override*/;
 
     virtual auto getModalErrorMessageProc()
         -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&) /*override*/;
@@ -168,9 +168,9 @@ public:
 
     virtual void _initializeFileStorageAreas() /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> _getUserFolderFromXUID(::std::string_view) /*override*/;
+    virtual ::Core::PathBuffer<::std::string> _getUserFolderFromXUID(::std::string_view xuid) /*override*/;
 
-    virtual void _retrieveSavedWindowSize(::tagRECT&) /*override*/;
+    virtual void _retrieveSavedWindowSize(::tagRECT& size) /*override*/;
 
     virtual void _onInitialize() /*override*/;
 

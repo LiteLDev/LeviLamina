@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/GeneratorType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_21_60::DimensionDefinition { struct DimensionDocument; }
@@ -20,5 +23,11 @@ public:
             nullptr_t,
             ::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>>
         mDimensionDefinitionLoader;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::optional<::GeneratorType> stringToGeneratorType(::std::string const& generatorNameString);
     // NOLINTEND
 };

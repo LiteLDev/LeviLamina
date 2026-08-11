@@ -57,13 +57,19 @@ public:
 
     virtual bool isTrusted() const /*override*/;
 
-    virtual bool hasAsset(::Core::Path const&, bool, bool) const /*override*/;
+    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
+        /*override*/;
 
-    virtual bool hasFolder(::Core::Path const&) const /*override*/;
+    virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
-    virtual bool getAsset(::Core::Path const&, ::std::string&, bool) const /*override*/;
+    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
+        /*override*/;
 
-    virtual void forEachIn(::Core::Path const&, ::std::function<void(::Core::Path const&)>, bool) const /*override*/;
+    virtual void forEachIn(
+        ::Core::Path const&                        packRelativePath,
+        ::std::function<void(::Core::Path const&)> callback,
+        bool                                       recurseAnyways
+    ) const /*override*/;
 
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
@@ -71,20 +77,21 @@ public:
 
     virtual bool supportsSignatureVerification() const /*override*/;
 
-    virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const&) const /*override*/;
+    virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
     virtual void unload() /*override*/;
 
     virtual ::ContentIdentity readContentIdentity() const /*override*/;
 
     virtual ::Bedrock::Result<::StreamableAssetSource>
-    getStreamableSource(::Core::Path const&, ::std::optional<::Core::PathView>) const /*override*/;
-
-    virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> _loadArchive(::Core::Path const&) const
+    getStreamableSource(::Core::Path const& packRelativePath, ::std::optional<::Core::PathView> tempDirectory) const
         /*override*/;
 
-    virtual ::std::vector<::Bedrock::Resources::PreloadedPathHandle> _preloadSubFolders(::Core::Path const&) const
-        /*override*/;
+    virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
+    _loadArchive(::Core::Path const& packRelativePath) const /*override*/;
+
+    virtual ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
+    _preloadSubFolders(::Core::Path const& packRelativePath) const /*override*/;
     // NOLINTEND
 
 public:
@@ -97,6 +104,8 @@ public:
                         fileAccess,
         ::ZipPackArgs&& args
     );
+
+    MCNAPI bool initZipFile() const;
     // NOLINTEND
 
 public:

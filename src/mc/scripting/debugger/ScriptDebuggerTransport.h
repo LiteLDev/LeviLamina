@@ -27,11 +27,11 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptDebuggerTransport() /*override*/ = default;
 
-    virtual bool listen(ushort) /*override*/;
+    virtual bool listen(ushort port) /*override*/;
 
-    virtual bool connect(::std::string const&, ushort) /*override*/;
+    virtual bool connect(::std::string const& host, ushort port) /*override*/;
 
-    virtual bool selectClient(::std::string&) /*override*/;
+    virtual bool selectClient(::std::string& outClient) /*override*/;
 
     virtual bool started() const /*override*/;
 
@@ -45,9 +45,9 @@ public:
 
     virtual bool peek() const /*override*/;
 
-    virtual bool receive(char*, uint64) /*override*/;
+    virtual bool receive(char* buffer, uint64 length) /*override*/;
 
-    virtual void send(char const*, uint64) /*override*/;
+    virtual void send(char const* buffer, uint64 length) /*override*/;
     // NOLINTEND
 
 public:

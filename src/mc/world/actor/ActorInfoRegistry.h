@@ -31,6 +31,8 @@ public:
 
     MCAPI bool isSpawnEggAvailable(::std::string identifier);
 
+    MCAPI void registerActorInfo(::ActorInfo const& info);
+
     MCAPI void setSpawnEggAvailable(::std::string identifier, bool val);
     // NOLINTEND
 };

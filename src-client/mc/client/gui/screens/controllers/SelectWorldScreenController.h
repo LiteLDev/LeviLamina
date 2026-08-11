@@ -6,6 +6,7 @@
 #include "mc/client/gui/SceneType.h"
 #include "mc/client/gui/screens/SelectWorldResult.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
+#include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/models/SelectWorldModel.h"
 #include "mc/deps/core/utility/optional_ref.h"
 
@@ -52,6 +53,10 @@ public:
             void(::SelectWorldResult, ::optional_ref<::LevelSummary const>, ::optional_ref<::Realms::World const>)>
             callback
     );
+
+    MCAPI void _displayCopyFailedModal(::std::function<void(::ModalScreenButtonId)> callback);
+
+    MCAPI void _exit(::SelectWorldResult result);
     // NOLINTEND
 
 public:

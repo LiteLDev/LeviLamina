@@ -6,14 +6,20 @@
 #include "mc/deps/core/minecraft/threading/EnableQueueForMainThread.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/identity/edu_common/ActiveDirectoryAuthenticationState.h"
+#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class IEDUSystems;
+struct AccessTokenInfo;
 namespace Identity { class IEduAuth; }
 namespace Identity { struct ActiveDirectoryIdentityParameters; }
+namespace Identity { struct AuthError; }
+namespace Identity { struct AuthToken; }
 namespace Identity { struct EduAuthParameters; }
 namespace Identity { struct ServiceResponse; }
+namespace WebServices::EduSignin { struct SigninResponse; }
 namespace Identity { struct SignOutResult; }
 // clang-format on
 
@@ -60,7 +66,37 @@ public:
 
     MCNAPI void _authenticateDemoWithService();
 
+    MCNAPI void _authenticateSignInWithService();
+
+    MCNAPI void _handleAuthenticationResponse(::WebServices::EduSignin::SigninResponse& response);
+
     MCNAPI void _identityGained();
+
+    MCNAPI void _identityLost();
+
+    MCNAPI void _onError(
+        ::std::string const&                                     error,
+        ::ActiveDirectoryAuthenticationState                     newState,
+        ::std::vector<::std::pair<::std::string, ::std::string>> details
+    );
+
+    MCNAPI void _onStatusChanged(::ActiveDirectoryAuthenticationState from, ::ActiveDirectoryAuthenticationState to);
+
+    MCNAPI ::AccessTokenInfo _parseTokenInfo(::std::string const& tokenToParse) const;
+
+    MCNAPI void _populateResponse(::WebServices::EduSignin::SigninResponse const& response);
+
+    MCNAPI void _signInCanceled();
+
+    MCNAPI void _updateData(
+        ::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>> result,
+        bool                                                                             isRefresh
+    );
+
+    MCNAPI void _updateGraphData(
+        ::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>> result,
+        bool                                                                             isRefresh
+    );
 
     MCNAPI void getIdentity();
 

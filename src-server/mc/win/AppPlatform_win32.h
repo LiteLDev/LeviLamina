@@ -83,17 +83,17 @@ public:
 
     virtual void setScreenSize(int, int) /*override*/;
 
-    virtual void setWindowSize(int, int) /*override*/;
+    virtual void setWindowSize(int width, int height) /*override*/;
 
-    virtual void setWindowText(::std::string const&) /*override*/;
+    virtual void setWindowText(::std::string const& title) /*override*/;
 
     virtual ::std::string getTextBoxBackend() const /*override*/;
 
-    virtual void setTextBoxBackend(::std::string const&) /*override*/;
+    virtual void setTextBoxBackend(::std::string const& newText) /*override*/;
 
     virtual int getCaretPosition() const /*override*/;
 
-    virtual void setCaretPosition(int) /*override*/;
+    virtual void setCaretPosition(int position) /*override*/;
 
     virtual bool hasBuyButtonWhenInvalidLicense() /*override*/;
 
@@ -127,11 +127,11 @@ public:
 
     virtual ::std::string getModelName() /*override*/;
 
-    virtual void setFullscreenMode(::FullscreenMode const) /*override*/;
+    virtual void setFullscreenMode(::FullscreenMode const fullscreenMode) /*override*/;
 
     virtual bool isWebviewSupported() const /*override*/;
 
-    virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&&) const /*override*/;
+    virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&& args) const /*override*/;
 
     virtual bool getPlatformTTSEnabled() const /*override*/;
 

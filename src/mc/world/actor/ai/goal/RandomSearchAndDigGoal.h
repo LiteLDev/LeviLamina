@@ -12,6 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockSource;
 class Mob;
 class Path;
 // clang-format on
@@ -88,13 +89,17 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual void appendDebugInfo(::std::string&) const /*override*/;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RandomSearchAndDigGoal(::Mob& mob);
+
+    MCAPI ::std::optional<::BlockPos> _findWantedTargetPos() const;
+
+    MCAPI bool _isValidTarget(::BlockSource const& region, ::BlockPos const pos) const;
     // NOLINTEND
 
 public:

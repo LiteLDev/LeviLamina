@@ -21,6 +21,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD void addAcceptedItem(::ItemDescriptor const& itemDescriptor);
+
     MCAPI ~SlotDescriptor();
     // NOLINTEND
 

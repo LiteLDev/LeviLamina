@@ -61,6 +61,14 @@ public:
     );
 
     MCAPI void _populateCharacterSkinData();
+
+    MCAPI void applySelectedCharacterSkin() const;
+
+    MCAPI ::std::string const& getSelectedCharacterId() const;
+
+    MCAPI void setIsCreative(bool creative);
+
+    MCAPI void setSelectedCharacter(::std::string const& selectedId);
     // NOLINTEND
 
 public:

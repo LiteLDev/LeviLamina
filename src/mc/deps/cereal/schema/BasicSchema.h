@@ -235,7 +235,7 @@ public:
     ) const;
 
     virtual void doSave(
-        ::cereal::SchemaWriter&              writer,
+        ::cereal::SchemaWriter&              value,
         ::entt::meta_any const&              any,
         ::cereal::internal::SaveState const& state
     ) const;

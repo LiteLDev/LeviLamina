@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -47,8 +48,15 @@ public:
 
     MCAPI void copyTo(::ChatEvent& chatEvent, ::Scripting::WeakLifetimeScope const& scope) const;
 
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::vector<::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
+    getTargets_V010();
+
     MCAPI ::ScriptModuleMinecraft::ScriptChatSendAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
+
+    MCAPI ::Scripting::Result_deprecated<void>
+    setTargets_V010(::std::vector<::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> targets);
 
     MCAPI ~ScriptChatSendAfterEvent();
     // NOLINTEND

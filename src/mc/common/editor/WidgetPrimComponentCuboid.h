@@ -22,6 +22,12 @@ public:
     WidgetPrimComponentCuboid& operator=(WidgetPrimComponentCuboid const&);
     WidgetPrimComponentCuboid(WidgetPrimComponentCuboid const&);
     WidgetPrimComponentCuboid();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::Editor::Network::WidgetPrimComponentCuboid const& other) const;
+    // NOLINTEND
 };
 
 } // namespace Editor::Network

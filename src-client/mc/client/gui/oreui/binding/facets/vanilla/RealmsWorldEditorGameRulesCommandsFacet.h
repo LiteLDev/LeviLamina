@@ -38,6 +38,32 @@ public:
     MCAPI explicit RealmsWorldEditorGameRulesCommandsFacet(
         ::std::shared_ptr<::Realms::RealmsWorldEditor> realmsWorldEditor
     );
+
+    MCAPI void setFireSpreads(bool shouldFireSpread);
+
+    MCAPI void setImmediateRespawn(bool shouldImmediateRespawn);
+
+    MCAPI void setMobsDropLoot(bool shouldMobsDropLoot);
+
+    MCAPI void setNaturalRegeneration(bool shouldHaveNaturalRegeneration);
+
+    MCAPI void setRecipesUnlock(bool shouldRecipesUnlock);
+
+    MCAPI void setRespawnBlocksExplode(bool shouldRespawnBlocksExplode);
+
+    MCAPI void setRespawnRadius(int respawnRadius);
+
+    MCAPI void setShowCoordinates(bool shouldshowCoordinates);
+
+    MCAPI void setShowDaysPlayed(bool shouldShowDaysPlayed);
+
+    MCAPI void setSleepSkipNight(bool shouldSleepSkipNight);
+
+    MCAPI void setSleepSkipNightPercent(int sleepSkipNightValue);
+
+    MCAPI void setTNTExplodes(bool shouldTNTExplode);
+
+    MCAPI void setTileDrops(bool shouldTilesDrop);
     // NOLINTEND
 
 public:

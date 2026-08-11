@@ -11,6 +11,7 @@
 class MainMenuScreenModel;
 class PlatformMultiplayerRestrictions;
 namespace Realms { struct World; }
+namespace Social { struct PermissionCheckResult; }
 // clang-format on
 
 class RealmsSlotsScreenController : public ::RealmsSettingsScreenController {
@@ -50,6 +51,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI RealmsSlotsScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::Realms::World& world);
+
+    MCAPI bool _isRealmExpiringForPlatform();
+
+    MCAPI ::Social::PermissionCheckResult _parentalControlsDialogCheck();
+
+    MCAPI void _setActiveSlot(int slotIndex, ::std::function<void()> callback, bool refreshScreen);
     // NOLINTEND
 
 public:

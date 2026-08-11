@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Tessellator;
+class Vec3;
 // clang-format on
 
 class TextureTessellator {
@@ -34,6 +35,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _addLighting(
+        ::Tessellator&     tessellator,
+        uchar const* const imageData,
+        ::Vec3 const&      normal,
+        ::glm::vec4 const& mers,
+        bool               deferredEnabled,
+        bool               cloudLighting
+    );
+
     MCNAPI void tessellate(
         ::Tessellator&                                      tessellator,
         uchar const* const                                  colorData,

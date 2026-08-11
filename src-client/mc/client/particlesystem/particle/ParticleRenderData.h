@@ -78,5 +78,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void reset();
+
+    MCAPI ~ParticleRenderData();
     // NOLINTEND
 };

@@ -12,6 +12,7 @@ class ResourceLocation;
 namespace Core { class Path; }
 namespace mce { class Color; }
 namespace mce { class MaterialPtr; }
+namespace mce { class TextureGroup; }
 namespace mce { struct Image; }
 // clang-format on
 
@@ -30,17 +31,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BitmapFont();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BitmapFont() /*override*/ = default;
 
-    virtual float _getCharWidth(int, bool) /*override*/;
+    virtual float _getCharWidth(int uniChar, bool forceUnicode) /*override*/;
 
-    virtual bool supportsChar(int const&) /*override*/;
+    virtual bool supportsChar(int const& character) /*override*/;
 
     virtual float getWrapHeight() const /*override*/;
 
-    virtual float getScaleFactor(int) const /*override*/;
+    virtual float getScaleFactor(int c) const /*override*/;
 
     virtual float getScaleFactor() const /*override*/;
 
@@ -50,25 +55,50 @@ public:
 
     virtual void uploadTextureToGPU() /*override*/;
 
-    virtual void _scanUnicodeCharacterSize(int, int, bool) /*override*/;
+    virtual void _scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode) /*override*/;
 
     virtual bool _supportsShadowInSingleDraw() /*override*/;
 
-    virtual ::ResourceLocation _getFontSheetLocation(int, bool) const /*override*/;
+    virtual ::ResourceLocation _getFontSheetLocation(int sheet, bool forceUnicode) const /*override*/;
 
-    virtual ::mce::MaterialPtr const& getMaterial(int, bool) const /*override*/;
+    virtual ::mce::MaterialPtr const& getMaterial(int sheet, bool isOddGuiScale) const /*override*/;
 
-    virtual void loadFontData(bool) /*override*/;
+    virtual void loadFontData(bool uploadTextureImmediately) /*override*/;
 
-    virtual float
-    buildChar(::std::vector<::Font::GlyphQuad>&, int, ::mce::Color const&, bool, float, float, bool) /*override*/;
+    virtual float buildChar(
+        ::std::vector<::Font::GlyphQuad>& quads,
+        int                               i,
+        ::mce::Color const&               color,
+        bool                              italic,
+        float                             x,
+        float                             y,
+        bool                              unicode
+    ) /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> getUnicodeFontNameWithPage(::Core::Path const&, uchar const) const;
+    virtual ::Core::PathBuffer<::std::string>
+    getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
 
-    virtual void switchFontsource(::Core::Path const&, ::Core::Path const&) /*override*/;
+    virtual void switchFontsource(::Core::Path const& asciiName, ::Core::Path const& unicodeName) /*override*/;
 
     virtual ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     getFontSources() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BitmapFont(
+        ::Core::Path const&                    asciiName,
+        ::Core::Path const&                    unicodeName,
+        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
+        bool                                   uploadOnConstruction
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

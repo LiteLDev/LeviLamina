@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class EntityWaypointVisibilityRules {
 public:
     // EntityWaypointVisibilityRules inner types define
@@ -22,4 +27,10 @@ public:
     EntityWaypointVisibilityRules& operator=(EntityWaypointVisibilityRules const&);
     EntityWaypointVisibilityRules(EntityWaypointVisibilityRules const&);
     EntityWaypointVisibilityRules();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator()(::Actor const& actor) const;
+    // NOLINTEND
 };

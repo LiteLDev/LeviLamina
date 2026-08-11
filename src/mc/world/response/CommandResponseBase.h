@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/level/CommandOriginSystem.h"
 
+// auto generated forward declare list
+// clang-format off
+class RenderParams;
+// clang-format on
+
 class CommandResponseBase {
 public:
     // member variables
@@ -29,6 +34,14 @@ public:
     virtual ~CommandResponseBase() = default;
 
     virtual ::CommandOriginSystem _getCommandOriginSystem() const;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _addCommand(::std::string const& entry);
+
+    MCNAPI void _executeAction(::RenderParams& params) const;
     // NOLINTEND
 
 public:

@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockActor;
+class BlockPos;
+// clang-format on
+
 namespace Editor::Transactions {
 
 struct BlockChangeIntentData {
@@ -19,6 +25,23 @@ public:
     BlockChangeIntentData& operator=(BlockChangeIntentData const&);
     BlockChangeIntentData(BlockChangeIntentData const&);
     BlockChangeIntentData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI BlockChangeIntentData(
+        uint                blockRuntimeId,
+        uint                extraBlockRuntimeId,
+        ::BlockActor const* blockActor,
+        ::BlockPos const&   pos
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };
 
 } // namespace Editor::Transactions

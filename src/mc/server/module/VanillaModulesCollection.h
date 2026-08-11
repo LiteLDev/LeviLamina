@@ -33,20 +33,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual void init(
-        ::WeakRef<::EntityRegistry>,
-        ::VanillaSystemsRegistration::RegistrationOptions&,
-        ::Bedrock::NonOwnerPointer<::IMinecraftEventing>
-    ) /*override*/;
-#else // LL_PLAT_C
     virtual void init(
         ::WeakRef<::EntityRegistry>                        registry,
         ::VanillaSystemsRegistration::RegistrationOptions& options,
         ::Bedrock::NonOwnerPointer<::IMinecraftEventing>   eventing
     ) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:

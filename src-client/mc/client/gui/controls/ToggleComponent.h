@@ -44,11 +44,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ToggleComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ToggleComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
@@ -67,11 +71,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ToggleComponent(::UIControl& owner);
+
+    MCAPI void _setChecked(::ScreenInputContext& context, bool checked, bool toggledByButtonClick);
+
     MCAPI void _updateControlVisibility();
+
+    MCAPI void _updateToggleGroupState(::VisualTree& visualTree, bool toggleState);
+
+    MCAPI void resetDefaultState();
 
     MCAPI void setChecked(bool checked);
 
     MCAPI void setForcedGroupIndex(int forcedIndex);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

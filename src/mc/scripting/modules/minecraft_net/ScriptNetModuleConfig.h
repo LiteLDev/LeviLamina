@@ -2,9 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/script_core/runtime/scripting/Result.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
+namespace ScriptModuleMinecraftNet { class ScriptMalformedUriError; }
+namespace ScriptModuleMinecraftNet { class ScriptTLSOnlyError; }
+namespace ScriptModuleMinecraftNet { class ScriptUriNotAllowedError; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -40,6 +46,16 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ScriptModuleMinecraftNet::ScriptNetModuleConfig&
     operator=(::ScriptModuleMinecraftNet::ScriptNetModuleConfig&&);
+
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraftNet::ScriptMalformedUriError,
+        ::ScriptModuleMinecraftNet::ScriptTLSOnlyError,
+        ::ScriptModuleMinecraftNet::ScriptUriNotAllowedError>
+    validateUriWithConfig(
+        ::std::string const&                                       uri,
+        ::ScriptModuleMinecraftNet::ScriptNetModuleConfig::NetType type
+    ) const;
 
     MCNAPI ~ScriptNetModuleConfig();
     // NOLINTEND

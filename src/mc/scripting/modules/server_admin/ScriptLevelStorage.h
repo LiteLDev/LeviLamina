@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/script_core/runtime/scripting/Result.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleServerAdmin { class ScriptLevelStorageSaveStateChangeError; }
 namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
 
@@ -43,6 +47,14 @@ public:
     ScriptLevelStorage& operator=(ScriptLevelStorage const&);
     ScriptLevelStorage(ScriptLevelStorage const&);
     ScriptLevelStorage();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleServerAdmin::ScriptLevelStorageSaveStateChangeError> saveHold();
+
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleServerAdmin::ScriptLevelStorageSaveStateChangeError> saveResume();
+    // NOLINTEND
 
 public:
     // static functions

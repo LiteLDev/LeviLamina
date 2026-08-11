@@ -10,6 +10,7 @@
 #include "mc/world/inventory/network/ItemStackNetManagerBase.h"
 #include "mc/world/inventory/network/ItemStackRequestScreen.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
+#include "mc/world/inventory/simulation/SparseContainerBackingSetType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,6 +19,8 @@ class ClientScratchContainer;
 class Container;
 class ContainerModel;
 class EntityContext;
+class IPlayerContainerSetter;
+class ISparseContainerSetListener;
 class ItemStack;
 class ItemStackNetManagerScreen;
 class ItemStackRequestAction;
@@ -53,10 +56,37 @@ public:
             mZeroedOutItems;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        PredictiveContainer();
+
+#endif
     public:
         // virtual functions
         // NOLINTBEGIN
         virtual ~PredictiveContainer() = default;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI PredictiveContainer(
+            ::Container&                                     backingContainer,
+            ::SparseContainerBackingSetType                  backingSetType,
+            bool                                             isItemStackNetManagerEnabled,
+            ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
+            ::std::unique_ptr<::IPlayerContainerSetter>      playerContainerSetter
+        );
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
         // NOLINTEND
     };
 
@@ -96,6 +126,32 @@ public:
             64,
             ::std::unordered_map<::FullContainerName, ::ItemStackNetManagerClient::OpenSessionContainerData>>
             mHudContainerMap;
+        // NOLINTEND
+
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        ClientScreenData& operator=(ClientScreenData const&);
+        ClientScreenData(ClientScreenData const&);
+        ClientScreenData();
+
+#endif
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI ClientScreenData(::ItemStackNetManagerClient::ClientScreenData&&);
+
+        MCNAPI ::ItemStackNetManagerClient::ClientScreenData&
+        operator=(::ItemStackNetManagerClient::ClientScreenData&&);
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
         // NOLINTEND
     };
 
@@ -166,11 +222,19 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void _beginRequest(::ItemStackRequestScreen screen);
 
+    MCNAPI void _clearPredictiveContainerRequest(
+        ::ItemStackRequestId const&                       requestId,
+        ::ItemStackNetManagerClient::PredictiveContainer& predictiveContainer,
+        bool                                              shouldBeEmpty
+    );
+
     MCNAPI void _endRequest();
 
     MCNAPI ::std::unique_ptr<::ItemStackRequestData> _endTakeRequest();
 
     MCNAPI ::ItemStackNetManagerClient::ClientScreenData const* _tryGetCurrentClientScreen() const;
+
+    MCNAPI ::ItemStackNetManagerClient::ClientScreenData* _tryGetCurrentClientScreen();
 
     MCNAPI void addContainerToRequest(::ItemStackRequestId requestId, ::Container* container);
 

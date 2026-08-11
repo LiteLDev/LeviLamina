@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class EntityContext;
 class EntityRegistry;
 class IClientInstance;
@@ -75,6 +76,12 @@ public:
     virtual bool isInWall(::Vec3 const& pos) const /*override*/;
 
     virtual bool isAlive(::WeakRef<::EntityContext> const actorRef) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Actor const* _getActor(::WeakRef<::EntityContext> const actorRef) const;
     // NOLINTEND
 
 public:

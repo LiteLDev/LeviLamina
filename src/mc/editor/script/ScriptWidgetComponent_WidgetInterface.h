@@ -13,7 +13,8 @@ class ScriptWidgetComponent_WidgetInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void _handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const&) = 0;
+    virtual void
+    _handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload) = 0;
 
     virtual void _onOwnerPositionUpdate() = 0;
     // NOLINTEND

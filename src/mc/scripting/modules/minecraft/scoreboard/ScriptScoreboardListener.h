@@ -26,9 +26,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::EventResult onObjectiveRemoved(::std::string const&) /*override*/;
+    virtual ::EventResult onObjectiveRemoved(::std::string const& objective) /*override*/;
 
-    virtual ::EventResult onScoreboardIdentityRemoved(::ScoreboardId const&) /*override*/;
+    virtual ::EventResult onScoreboardIdentityRemoved(::ScoreboardId const& id) /*override*/;
     // NOLINTEND
 
 public:

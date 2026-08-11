@@ -534,9 +534,17 @@ public:
 
     virtual void addUser(::OwnerPtr<::EntityContext> userEntity) /*override*/;
 
+#ifdef LL_PLAT_S
     virtual ::Actor* addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>) /*override*/;
+#else // LL_PLAT_C
+    virtual ::Actor* addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual void removeDisplayEntity(::WeakEntityRef) /*override*/;
+#else // LL_PLAT_C
+    virtual void removeDisplayEntity(::WeakEntityRef entity) /*override*/;
+#endif
 
     virtual ::Bedrock::NonOwnerPointer<::DisplayActorManager> getDisplayActorManager() /*override*/;
 
@@ -1178,29 +1186,15 @@ public:
 
     virtual ::TradeTables* getTradeTables() /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void decrementTagCache(
-        ::std::string const&,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
-    ) /*override*/;
-#else // LL_PLAT_C
     virtual void decrementTagCache(
         ::std::string const&                                                      tag,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void incrementTagCache(
-        ::std::string const&,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
-    ) /*override*/;
-#else // LL_PLAT_C
     virtual void incrementTagCache(
         ::std::string const&                                                      tag,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     ) /*override*/;
-#endif
 
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() /*override*/;
 
@@ -1225,24 +1219,15 @@ public:
     virtual ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> tryGetVolumeEntityManagerServer() const
         /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void
-    runCommand(::HashedString const&, ::CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion const) /*override*/;
-#else // LL_PLAT_C
     virtual void runCommand(
         ::HashedString const&     commandStr,
         ::CommandOrigin&          origin,
         ::CommandOriginSystem     originSystem,
         ::CurrentCmdVersion const commandVersion
     ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void runCommand(::Command&, ::CommandOrigin&, ::CommandOriginSystem) /*override*/;
-#else // LL_PLAT_C
     virtual void
     runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem) /*override*/;
-#endif
 
     virtual ::PlayerCapabilities::ISharedController const& getCapabilities() const /*override*/;
 
@@ -1450,7 +1435,7 @@ public:
 
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const /*override*/;
 
-    virtual void clearAllGenerationRequests(::NetworkIdentifier const&, ::SubClientId) /*override*/;
+    virtual void clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId) /*override*/;
 
     virtual void digestServerBlockProperties(::StartGamePacket const& packet) /*override*/;
 
@@ -1469,6 +1454,58 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit Level(::LevelArguments&& args);
+
+    MCAPI void _onAddBreakingItemParticleEffect(
+        ::Vec3 const&                     pos,
+        ::BreakingItemParticleData const& data,
+        ::ResolvedItemIconInfo const&     textureInfo
+    );
+
+    MCAPI void _onAddTerrainParticleEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             particleCount,
+        float             velocityScalar,
+        float             emitterRadius
+    );
+
+    MCAPI void _onAddTerrainSlideEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             particleCount,
+        float             velocityScalar,
+        float             emitterRadius
+    );
+
+    MCAPI void _onAnyGameplayUsersRemoved();
+
+    MCAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
+
+    MCAPI void _onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk, int);
+
+    MCAPI void _onChunkReloaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
+
+    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
+
+    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
+
+    MCAPI void _onLevelEventCompoundTag(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
+
+    MCAPI void _onLevelEventData(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
+
+    MCAPI void _onPictureTaken(
+        ::cg::ImageBuffer&                                              outImage,
+        ::Actor*                                                        camera,
+        ::Actor*                                                        target,
+        ::ScreenshotOptions&                                            screenshotOptions,
+        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
+    );
+
+    MCAPI void _onRemoveActorEntityReferences(::Actor& actor);
+
+    MCAPI void _onSendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data);
 
     MCAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
     addEntityWithError(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
@@ -2491,7 +2528,7 @@ public:
 
     MCFOLD ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
 
-    MCFOLD void $clearAllGenerationRequests(::NetworkIdentifier const&, ::SubClientId);
+    MCFOLD void $clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
 
     MCFOLD ::PlayerDeathManager* $_getPlayerDeathManager();
 #endif

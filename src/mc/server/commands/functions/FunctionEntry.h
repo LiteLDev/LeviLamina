@@ -26,7 +26,8 @@ public:
     // NOLINTBEGIN
     virtual ~FunctionEntry() /*override*/ = default;
 
-    virtual void execute(::FunctionManager&, ::CommandOrigin const&, ::FunctionQueueOrder) /*override*/;
+    virtual void
+    execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order) /*override*/;
     // NOLINTEND
 
 public:

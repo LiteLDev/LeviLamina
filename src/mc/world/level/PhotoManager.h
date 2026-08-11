@@ -75,7 +75,17 @@ public:
     MCAPI ::Core::PathBuffer<::std::string> _getPhotoStoragePath();
 
     MCAPI void createPhotoStorage();
+#endif
 
+#ifdef LL_PLAT_C
+    MCAPI void createPhotoStorage();
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI void createScreenshotsFolder(::std::string const& levelId, ::AppPlatform& appPlatform);
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI void createScreenshotsFolder(::std::string const& levelId, ::AppPlatform& appPlatform);
 #endif
     // NOLINTEND

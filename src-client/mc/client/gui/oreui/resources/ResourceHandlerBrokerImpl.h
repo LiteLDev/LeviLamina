@@ -46,24 +46,28 @@ public:
     // NOLINTBEGIN
     virtual ~ResourceHandlerBrokerImpl() /*override*/ = default;
 
-    virtual void
-    OnResourceRequest(::cohtml::IAsyncResourceRequest const*, ::cohtml::IAsyncResourceResponse*) /*override*/;
+    virtual void OnResourceRequest(
+        ::cohtml::IAsyncResourceRequest const* request,
+        ::cohtml::IAsyncResourceResponse*      response
+    ) /*override*/;
 
     virtual void OnResourceStreamRequest(
-        ::cohtml::IAsyncResourceRequest const*,
-        ::cohtml::IAsyncResourceStreamResponse*
+        ::cohtml::IAsyncResourceRequest const*  request,
+        ::cohtml::IAsyncResourceStreamResponse* response
     ) /*override*/;
 
     virtual void OnAbortResourceRequest(uint) /*override*/;
 
     virtual void update() /*override*/;
 
-    virtual void
-    registerResourceHandler(::std::string const&, ::std::unique_ptr<::Gameface::IResourceHandler>) /*override*/;
+    virtual void registerResourceHandler(
+        ::std::string const&                            protocol,
+        ::std::unique_ptr<::Gameface::IResourceHandler> resourceHandler
+    ) /*override*/;
 
-    virtual void unregisterResourceHandler(::std::string const&) /*override*/;
+    virtual void unregisterResourceHandler(::std::string const& protocol) /*override*/;
 
-    virtual void onViewCreate(::IClientInstance&) /*override*/;
+    virtual void onViewCreate(::IClientInstance& clientInstance) /*override*/;
 
     virtual void onAppPreSuspend() /*override*/;
 

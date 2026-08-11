@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void hurtAndBreak(int) /*override*/;
+    virtual void hurtAndBreak(int damage) /*override*/;
     // NOLINTEND
 
 public:

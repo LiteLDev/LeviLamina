@@ -87,6 +87,8 @@ public:
     // NOLINTBEGIN
     MCAPI ItemFrameBlock(::std::string const& nameId, int id);
 
+    MCAPI void _checkAchievements(::Player& player, ::BlockPos const& currentPos) const;
+
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;

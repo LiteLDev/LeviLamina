@@ -11,7 +11,10 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class ChiseledBookshelfBlockActor;
 class ItemInstance;
+class ItemStack;
+class Player;
 class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
@@ -43,6 +46,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _retrieveBook(::Player& player, ::ChiseledBookshelfBlockActor& bookshelfActor, int const hitSlot) const;
+
+    MCAPI void _setBook(
+        ::Player&                      player,
+        ::ItemStack                    heldItem,
+        ::ChiseledBookshelfBlockActor& bookshelfActor,
+        int const                      hitSlot
+    ) const;
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 

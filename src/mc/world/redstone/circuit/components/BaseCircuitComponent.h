@@ -104,6 +104,8 @@ public:
     // NOLINTBEGIN
     MCAPI BaseCircuitComponent();
 
+    MCAPI void addSourceItem(::CircuitComponentList::Item const& item);
+
     MCAPI bool trackPowerSource(
         ::CircuitTrackingInfo const& info,
         int                          dampening,

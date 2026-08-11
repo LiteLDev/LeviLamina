@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+namespace ScriptModuleMinecraft { class IScriptBlockProperty; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutationComponent; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -51,6 +52,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::IScriptBlockProperty>>>
+    _createPropertyV010(::std::string const& propertyName);
+
     MCAPI ::Scripting::Result_deprecated<bool>
     canBeDestroyedByLiquidSpread(::SharedTypes::v1_26_0::LiquidType liquidType) const;
 

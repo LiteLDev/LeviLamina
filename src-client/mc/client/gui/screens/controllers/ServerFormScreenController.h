@@ -12,6 +12,7 @@
 class DynamicFormScreenController;
 class MainMenuScreenModel;
 class ServerFormBindingInformation;
+namespace Json { class Value; }
 // clang-format on
 
 class ServerFormScreenController : public ::MainMenuScreenController {
@@ -40,7 +41,7 @@ public:
 
     virtual void onOpen() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification event) /*override*/;
 
     virtual void onTerminate() /*override*/;
     // NOLINTEND
@@ -55,6 +56,10 @@ public:
         bool                                     isServerTab,
         bool                                     unhideTab
     );
+
+    MCAPI void _createScreen(::std::string const& formJson);
+
+    MCAPI ::std::string _parseRawText(::Json::Value const& value) const;
     // NOLINTEND
 
 public:

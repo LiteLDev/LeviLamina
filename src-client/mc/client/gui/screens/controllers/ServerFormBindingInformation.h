@@ -24,7 +24,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void createBindingData(::Json::Value const& contentData) /*override*/;
+    virtual void createBindingData(::Json::Value const& formData) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::string _parseRawText(::Json::Value const& value) const;
     // NOLINTEND
 
 public:

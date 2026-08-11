@@ -12,9 +12,12 @@
 // clang-format off
 class Pack;
 class PackAccessStrategy;
+struct StreamableAssetSource;
 struct SubpackInfo;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Core { class Path; }
+namespace Core { class PathView; }
+namespace Json { class Value; }
 // clang-format on
 
 class ResourcePack {
@@ -53,6 +56,8 @@ public:
 
     MCAPI void _createSubpacks();
 
+    MCAPI bool areKnownFilesValid();
+
     MCAPI void forEachIn(
         ::Core::Path const&                        filePath,
         ::std::function<void(::Core::Path const&)> callback,
@@ -62,15 +67,33 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void generateAssetSet();
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void generateAssetSet();
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI ::Core::PathBuffer<::std::string> getIconPath(::PackIconType iconType) const;
 #endif
 
     MCAPI bool getResource(::Core::Path const& resourceName, ::std::string& resourceStream, int subpackIndex) const;
 
 #ifdef LL_PLAT_C
+    MCAPI ::std::optional<::StreamableAssetSource> getStreamableSource(
+        ::Core::Path const&               resourceName,
+        int                               subpackIndex,
+        ::std::optional<::Core::PathView> tempDirectory
+    ) const;
+
+    MCAPI ::Json::Value getTexturesList(int subpackIndex) const;
+
+    MCAPI bool hasExtraResourcesForLocale(::std::string const& code, int subpackIndex) const;
+
     MCAPI bool hasIcon(::PackIconType iconType) const;
 #endif
+
+    MCAPI bool isAssetExtractionViable() const;
 
     MCAPI ::Bedrock::Resources::PreloadedPathHandle
     preloadArchive(::Core::Path const& packRelativePath, int subpackIndex) const;
@@ -81,6 +104,8 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void regenerateAssetSet();
 #endif
+
+    MCAPI void setLocale(::std::string const& code);
 
     MCAPI ~ResourcePack();
     // NOLINTEND

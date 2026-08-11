@@ -30,6 +30,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    virtual ~LakeFeature() /*override*/;
     // NOLINTEND
 
 public:
@@ -50,6 +52,12 @@ public:
         ::HashedString                                                       barrierBlock,
         ::std::vector<::std::reference_wrapper<::HashedString const>> const& prohibitedBlocks
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -63,6 +63,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _messagePlayers(::std::string message);
+
+    MCAPI void _showTrialReminder(bool force);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);

@@ -67,6 +67,10 @@ public:
         ::EntityContext&                   entityContext
     );
 
+    MCAPI float _getWaterPercentage();
+
+    MCAPI void _pullCloser(::Actor& inEntity, float inSpeed);
+
     MCAPI void postNormalTick();
 
     MCAPI int retrieve();

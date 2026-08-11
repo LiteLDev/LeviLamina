@@ -75,6 +75,13 @@ public:
         bool                                                              packInUserDataPath,
         ::std::shared_ptr<::PackContentItem const> const&                 item
     );
+
+    MCAPI ::std::string
+    _colorLocString(::ManifestValidationScreenController::IssueType issue, ::std::string const& str) const;
+
+    MCAPI void _finishValidation();
+
+    MCAPI ::Core::PathBuffer<::std::string> const _generateBaseIconPath(::PackManifest const& manifest) const;
     // NOLINTEND
 
 public:

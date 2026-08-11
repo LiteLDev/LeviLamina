@@ -43,15 +43,25 @@ public:
     // NOLINTBEGIN
     virtual ~ParticleSystemInterfaceProxy() /*override*/ = default;
 
-    virtual float getDistanceToCameraSqr(::Vec3 const&) const /*override*/;
+    virtual float getDistanceToCameraSqr(::Vec3 const& pos) const /*override*/;
 
     virtual int getViewDistanceChunks() const /*override*/;
 
     virtual float getParticleViewDistance() const /*override*/;
 
-    virtual ::Particle* instance(::ParticleType, ::Vec3 const&, ::Vec3 const&, int, ::CompoundTag const*) /*override*/;
+    virtual ::Particle* instance(
+        ::ParticleType       type,
+        ::Vec3 const&        pos,
+        ::Vec3 const&        dir,
+        int                  data,
+        ::CompoundTag const* tag
+    ) /*override*/;
 
-    virtual void addParticleEffect(::HashedString const&, ::Vec3 const&, ::MolangVariableMap const&) /*override*/;
+    virtual void addParticleEffect(
+        ::HashedString const&      effect,
+        ::Vec3 const&              emitterPosition,
+        ::MolangVariableMap const& molangVariables
+    ) /*override*/;
     // NOLINTEND
 
 public:

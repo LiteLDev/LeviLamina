@@ -11,6 +11,7 @@
 class BaseActorRenderContext;
 class Player;
 class ScreenContext;
+class Vec3;
 struct LevelRenderPreRenderUpdateParameters;
 struct ShadowCascadeState;
 namespace mce::framebuilder { struct ShadowParameters; }
@@ -46,21 +47,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void recalculateRenderDistance(float const) /*override*/;
+    virtual void recalculateRenderDistance(float const renderDistanceScalar) /*override*/;
 
-    virtual void preRenderUpdate(::ScreenContext&, ::LevelRenderPreRenderUpdateParameters&) /*override*/;
+    virtual void preRenderUpdate(
+        ::ScreenContext&                        screenContext,
+        ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
+    ) /*override*/;
 
-    virtual void renderBlockEntities(::BaseActorRenderContext&, bool) /*override*/;
+    virtual void renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer) /*override*/;
 
-    virtual void queueRenderEntities(::LevelRenderPreRenderUpdateParameters const&) /*override*/;
+    virtual void queueRenderEntities(
+        ::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters
+    ) /*override*/;
 
     virtual void setupViewArea() /*override*/;
 
-    virtual void setViewArea(::LevelRenderPreRenderUpdateParameters const&) /*override*/;
+    virtual void
+    setViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters) /*override*/;
 
-    virtual void updateViewArea(::LevelRenderPreRenderUpdateParameters const&) /*override*/;
+    virtual void
+    updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters) /*override*/;
 
-    virtual void onDimensionChanged(::Player&) /*override*/;
+    virtual void onDimensionChanged(::Player& player) /*override*/;
 
     virtual void addCameraListenerToRenderChunkCoordinator() /*override*/;
 
@@ -70,6 +78,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _calculatePlayerShadowMap(
+        ::mce::framebuilder::ShadowParameters const& shadowParameters,
+        ::Vec3 const&                                lightSourceDir
+    );
+
     MCNAPI void setupCamera(
         ::glm::vec3 const&                              direction,
         float                                           angle,

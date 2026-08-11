@@ -17,7 +17,7 @@ public:
     // NOLINTBEGIN
     virtual ~BeaconPaymentContainerController() /*override*/ = default;
 
-    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const&) const /*override*/;
+    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const /*override*/;
     // NOLINTEND
 
 public:

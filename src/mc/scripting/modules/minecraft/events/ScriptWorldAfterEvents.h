@@ -108,7 +108,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void onFlushWorldAfterEvents(::ScriptDeferredFlushTracker&) /*override*/;
+        virtual void onFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
         // NOLINTEND
 
     public:

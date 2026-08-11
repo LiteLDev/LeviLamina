@@ -63,6 +63,10 @@ public:
         ::Core::FileUploadType                                fileUploadType,
         ::std::function<void(::UploadState, ::Realms::World)> callback
     );
+
+    MCAPI void _displayPostUploadErrorPopup();
+
+    MCAPI void _startUpload();
     // NOLINTEND
 
 public:

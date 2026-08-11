@@ -9,6 +9,7 @@
 #include "mc/world/item/ItemInstance.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/VanillaBlockActor.h"
+#include "mc/world/level/block/states/BlockStateVariant.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,6 +19,7 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class HashedString;
 class ILevel;
 class SaveContext;
 // clang-format on
@@ -62,12 +64,17 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+
+    virtual ~ItemFrameBlockActor() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ItemFrameBlockActor(::BlockPos const& pos, ::BlockActorType type);
+
+    MCAPI void
+    _updateBit(::BlockSource& region, ::BlockStateVariant<bool> const& vanillaState, ::HashedString const& itemName);
 
     MCAPI void actuallyDropItem(::BlockSource& region, bool dropItem, ::Actor* entitySource);
 
@@ -82,6 +89,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType type);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

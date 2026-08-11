@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::Http { class HeaderCollection; }
+struct HC_WEBSOCKET_OBSERVER;
 // clang-format on
 
 namespace Bedrock::Http {
@@ -36,7 +37,7 @@ public:
 
     virtual ::Bedrock::Threading::Async<::std::error_code> send(::std::string const& message) const;
 
-    virtual void onMessage(::std::string_view);
+    virtual void onMessage(::std::string_view message);
 
     virtual void onBinaryMessage(::gsl::span<uchar const>);
 
@@ -51,6 +52,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _deallocateSocketAsync(::HC_WEBSOCKET_OBSERVER* handle);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
@@ -61,7 +68,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Bedrock::Threading::Async<::std::error_code> $send(::std::string const& message) const;
 
-    MCNAPI void $onMessage(::std::string_view);
+    MCNAPI void $onMessage(::std::string_view message);
 
     MCNAPI void $onBinaryMessage(::gsl::span<uchar const>);
 

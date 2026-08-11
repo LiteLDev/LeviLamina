@@ -140,7 +140,7 @@ public:
 
     virtual ::std::string const& getDescriptionId() const;
 
-    virtual int getMaxUseDuration(::ItemStack const*) const;
+    virtual int getMaxUseDuration(::ItemStack const* instance) const;
 
     virtual ::WeakPtr<::BlockType const> const& getBlockTypeForRendering() const;
 
@@ -291,9 +291,9 @@ public:
 
     virtual bool hasCustomColor(::CompoundTag const* userData) const;
 
-    virtual void clearColor(::ItemStackBase& instance) const;
+    virtual void clearColor(::ItemStackBase& item) const;
 
-    virtual void setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
+    virtual void setColor(::ItemStackBase& item, ::mce::Color const& color) const;
 
     virtual ::ActorDefinitionIdentifier getActorIdentifier(::ItemStack const&) const;
 
@@ -372,7 +372,7 @@ public:
 
     virtual bool validFishInteraction(int) const;
 
-    virtual void enchantProjectile(::ItemStackBase const&, ::Actor&) const;
+    virtual void enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
 
     virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const;
 
@@ -405,7 +405,7 @@ public:
 
     virtual bool canBeCharged() const;
 
-    virtual void playSoundIncrementally(::ItemStack const&, ::Mob&) const;
+    virtual void playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const;
 
     virtual float getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
 
@@ -530,7 +530,7 @@ public:
 
     MCAPI ::std::string const& $getDescriptionId() const;
 
-    MCAPI int $getMaxUseDuration(::ItemStack const*) const;
+    MCAPI int $getMaxUseDuration(::ItemStack const* instance) const;
 
     MCAPI ::WeakPtr<::BlockType const> const& $getBlockTypeForRendering() const;
 
@@ -681,9 +681,9 @@ public:
 
     MCFOLD bool $hasCustomColor(::CompoundTag const* userData) const;
 
-    MCFOLD void $clearColor(::ItemStackBase& instance) const;
+    MCFOLD void $clearColor(::ItemStackBase& item) const;
 
-    MCFOLD void $setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
+    MCFOLD void $setColor(::ItemStackBase& item, ::mce::Color const& color) const;
 
     MCAPI ::ActorDefinitionIdentifier $getActorIdentifier(::ItemStack const&) const;
 
@@ -762,7 +762,7 @@ public:
 
     MCFOLD bool $validFishInteraction(int) const;
 
-    MCFOLD void $enchantProjectile(::ItemStackBase const&, ::Actor&) const;
+    MCFOLD void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
 
     MCFOLD ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
 
@@ -795,7 +795,7 @@ public:
 
     MCFOLD bool $canBeCharged() const;
 
-    MCFOLD void $playSoundIncrementally(::ItemStack const&, ::Mob&) const;
+    MCFOLD void $playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const;
 
     MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
 

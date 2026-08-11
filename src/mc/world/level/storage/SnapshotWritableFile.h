@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     virtual ~SnapshotWritableFile() /*override*/ = default;
 
-    virtual ::leveldb::Status Append(::leveldb::Slice const&) /*override*/;
+    virtual ::leveldb::Status Append(::leveldb::Slice const& data) /*override*/;
 
     virtual ::leveldb::Status Close() /*override*/;
 

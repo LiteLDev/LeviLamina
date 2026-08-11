@@ -60,6 +60,8 @@ public:
     virtual ::std::string_view getName() const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    virtual ~ClientboundMapItemDataPacket() /*override*/;
     // NOLINTEND
 
 public:
@@ -117,6 +119,12 @@ public:
         bool                isLocked,
         ::BlockPos const&   mapOrigin
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

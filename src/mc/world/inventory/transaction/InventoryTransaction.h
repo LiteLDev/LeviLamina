@@ -12,6 +12,7 @@
 class BinaryStream;
 class InventoryAction;
 class InventoryTransactionItemGroup;
+class ItemStack;
 class Player;
 class ReadOnlyBinaryStream;
 // clang-format on
@@ -28,6 +29,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addAction(::InventoryAction const& action);
+
+    MCAPI void addItemToContent(::ItemStack const& item, int count);
 
 #ifdef LL_PLAT_C
     MCAPI ::InventoryTransactionError executeFull(::Player& p, bool isSenderAuthority) const;
@@ -49,6 +52,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool checkTransactionItemsMatch(::ItemStack const& serverItem, ::ItemStack const& clientItem);
+
     MCAPI static ::Bedrock::Result<::InventoryTransaction> deserialize(::ReadOnlyBinaryStream& stream);
 
     MCAPI static ::std::string const getInventoryTransactionErrorName(::InventoryTransactionError type);

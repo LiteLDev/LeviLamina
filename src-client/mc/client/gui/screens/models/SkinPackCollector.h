@@ -27,17 +27,17 @@ public:
     // NOLINTBEGIN
     virtual ~SkinPackCollector() = default;
 
-    virtual void start(bool);
+    virtual void start(bool allowed);
 
     virtual bool exhausted() const = 0;
 
     virtual ::HandleRangeResult handleRange(int, int) = 0;
 
     virtual void collect(
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>,
-        ::PersonaClient&,
-        ::std::vector<::std::shared_ptr<::SkinPackModel>>&,
-        ::std::unordered_set<::mce::UUID>&
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
+        ::PersonaClient&                                     skinRepo,
+        ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
+        ::std::unordered_set<::mce::UUID>&                   handledPackSet
     ) = 0;
     // NOLINTEND
 

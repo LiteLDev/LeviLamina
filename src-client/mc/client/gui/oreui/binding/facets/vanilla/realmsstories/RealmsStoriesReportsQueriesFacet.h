@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/realms/DeletionStatus.h"
+#include "mc/client/realms/stories/FetchStatus.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -53,6 +55,14 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>          profanityContext,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
+
+    MCAPI ::Realms::Stories::DeletionStatus _getHasDeleted() const;
+
+    MCAPI int _getPageLength() const;
+
+    MCAPI ::Realms::Stories::FetchStatus _getStoryFeedStatus() const;
+
+    MCAPI int _getStoryFeedTotalStories() const;
     // NOLINTEND
 
 public:

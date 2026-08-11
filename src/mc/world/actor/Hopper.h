@@ -6,6 +6,7 @@
 // clang-format off
 class BlockSource;
 class Container;
+class ItemStack;
 class Vec3;
 // clang-format on
 
@@ -34,6 +35,9 @@ public:
     _pushOutItems(::BlockSource& region, ::Container& fromContainer, ::Vec3 const& position, int attachedFace);
 
     MCAPI bool _tryAddItemsFromPos(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
+
+    MCAPI bool
+    _tryMoveInItem(::BlockSource& region, ::Container& container, ::ItemStack& item, int slot, int face, int itemCount);
 
     MCAPI bool _tryMoveItems(
         ::BlockSource& region,

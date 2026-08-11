@@ -12,6 +12,7 @@
 // clang-format off
 class Font;
 class ResourceLocation;
+namespace Core { class Path; }
 namespace mce { class TextureGroup; }
 // clang-format on
 
@@ -58,7 +59,30 @@ public:
     // NOLINTBEGIN
     MCAPI FontRepository();
 
+    MCAPI void _queueBitmapFont(
+        ::std::string const&                 alias,
+        ::Core::Path const&                  asciiName,
+        ::Core::Path const&                  unicodeName,
+        ::std::weak_ptr<::mce::TextureGroup> textureGroupWeakPtr
+    );
+
+    MCAPI void _queueMsdfFont(
+        ::std::string const&                 alias,
+        ::Core::Path const&                  fontPagePrefix,
+        ::std::weak_ptr<::mce::TextureGroup> textureGroupWeakPtr
+    );
+
+    MCAPI void _setDefaultFont(::std::string const& fontName, uint64 const fontId, ::std::shared_ptr<::Font> font);
+
+    MCAPI void _setFontIfOverride(uint64 const fontId, ::std::shared_ptr<::Font> font);
+
+    MCAPI uint64 addPreloadedFont(::std::string const& fontName, ::gsl::not_null<::std::shared_ptr<::Font>> font);
+
     MCAPI ::FontHandle getFontFromFontType(::std::string const& fontType) const;
+
+    MCAPI ::FontHandle getFontHandle(uint64 const fontId);
+
+    MCAPI uint64 getFontIdentifier(::std::string const& fontName);
 
     MCAPI ::std::vector<::ResourceLocation> getReloadFontTextures() const;
 

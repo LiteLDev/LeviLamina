@@ -6,7 +6,9 @@
 #include "mc/common/editor/PersistenceGroupType.h"
 #include "mc/common/editor/PersistenceScope.h"
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorPersistenceServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
@@ -15,6 +17,9 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Network { class PersistenceRequestGroupPayload; }
+namespace Editor::Network { class PersistenceResponseGroupPayload; }
+namespace Editor::Network { class SavePersistenceGroupPayload; }
 namespace Editor::Services { class PersistenceGroup; }
 // clang-format on
 
@@ -93,6 +98,13 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit EditorPersistenceService(::Editor::ServiceProviderCollection& providers);
 
+    MCNAPI ::WeakRef<::Editor::Services::PersistenceGroup> _createCacheGroup(
+        ::std::string const&                     namespacedName,
+        ::Editor::Services::PersistenceScope     scope,
+        int                                      version,
+        ::Editor::Services::PersistenceGroupType groupType
+    );
+
     MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> _createGroup(
         ::std::string const&                     namespacedName,
         ::Editor::Services::PersistenceScope     scope,
@@ -106,7 +118,26 @@ public:
         ::std::optional<int>                 version
     );
 
+    MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    _getManifestFilePath(::Editor::Services::PersistenceScope scope);
+
+    MCNAPI int _getMaxVersion(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope);
+
+    MCNAPI ::Core::PathBuffer<::std::string> _getPath(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    ) const;
+
+    MCNAPI void _handleRequestGroupPayload(::Editor::Network::PersistenceRequestGroupPayload const& payload);
+
+    MCNAPI void _handleResponseGroupPayload(::Editor::Network::PersistenceResponseGroupPayload const& payload);
+
+    MCNAPI void _handleSaveGroupPayload(::Editor::Network::SavePersistenceGroupPayload const& payload);
+
     MCNAPI void _loadGroupMetaData(::Editor::Services::PersistenceScope scope);
+
+    MCNAPI bool _saveGroupMetaData(::Editor::Services::PersistenceScope scope);
     // NOLINTEND
 
 public:

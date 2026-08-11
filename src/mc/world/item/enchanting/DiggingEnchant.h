@@ -15,7 +15,7 @@ public:
 
     virtual int getMaxLevel() const /*override*/;
 
-    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type) const /*override*/;
+    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const /*override*/;
     // NOLINTEND
 
 public:

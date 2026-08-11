@@ -10,6 +10,7 @@
 class Pack;
 class TintMapColor;
 struct PackIdVersion;
+namespace mce { class UUID; }
 // clang-format on
 
 class PersonaPiece {
@@ -94,6 +95,8 @@ public:
         bool                   titleLocked
     );
 
+    MCNAPI void _initSideInfo();
+
     MCNAPI ::std::string getPieceName() const;
 
     MCNAPI ::std::string getPieceTypeAsString() const;
@@ -102,11 +105,19 @@ public:
 
     MCNAPI bool getTintMapColor(::TintMapColor& tintColor) const;
 
+    MCNAPI void hipBoneParentRetarget();
+
     MCNAPI void initLocalizationDictionary();
 
     MCNAPI bool isDefaultPiece() const;
 
     MCNAPI bool isValid() const;
+
+    MCNAPI void setPackIdVersion(::PackIdVersion const& packIdVersion);
+
+    MCNAPI void setPieceId(::mce::UUID const& pieceId);
+
+    MCNAPI void setPieceNameAsLocKey(::std::string const& pieceName);
 
     MCNAPI ~PersonaPiece();
 #endif

@@ -35,9 +35,31 @@ public:
         ::Random&                                           random
     ) /*override*/;
 
-    virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) /*override*/;
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _fillPillarDownOrChainUp(
+        ::BlockSource&       region,
+        int const            x,
+        int const            y,
+        int const            z,
+        ::BoundingBox const& chunkBB
+    );
+
+    MCAPI void _placeCobWeb(
+        ::BlockSource&       region,
+        ::BoundingBox const& chunkBB,
+        ::Random&            random,
+        float                p,
+        int const            x0,
+        int const            y1,
+        int                  z
+    );
     // NOLINTEND
 
 public:

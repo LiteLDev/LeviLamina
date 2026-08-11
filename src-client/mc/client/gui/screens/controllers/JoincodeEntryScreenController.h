@@ -57,6 +57,25 @@ public:
         ::std::string const&                      popupButtonName
     );
 
+    MCAPI void _closeActiveScreen(bool fullClose);
+
+    MCAPI void _closeScreen(::std::string const& popupControlId);
+
+    MCAPI void _openEntryScreen();
+
+    MCAPI void _openErrorScreen(::EDUDiscovery::Error const& error);
+
+    MCAPI void _openIPEntryScreen();
+
+    MCAPI void
+    _openScreen(::std::string const& popupControlId, ::std::string const& ttsTitle, ::std::string const& ttsContent);
+
+    MCAPI void _requestJoinServer(
+        ::std::function<
+            void(::std::shared_ptr<::JoincodeEntryScreenController>, ::EDUDiscovery::JoinServerQueryState const&)>
+            joinCallback
+    );
+
     MCAPI void queryJoincode(::std::string const& encodedJoincode);
     // NOLINTEND
 

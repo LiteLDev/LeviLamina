@@ -59,7 +59,7 @@ public:
             ::AddRemove<>,
             ::GlobalRead<>,
             ::GlobalWrite<>,
-            ::EntityFactoryT<>>&
+            ::EntityFactoryT<>>& context
     ) /*override*/;
     // NOLINTEND
 

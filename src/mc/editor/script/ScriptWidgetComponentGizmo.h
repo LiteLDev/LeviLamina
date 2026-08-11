@@ -4,11 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
+#include "mc/scripting/Axis.h"
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
 namespace Editor::Network { class WidgetComponentStateChangePayload; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -41,7 +45,21 @@ public:
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
 
     virtual void
-    _handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const&) /*override*/;
+    _handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::
+        Result<::std::optional<::Vec3>, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+        _getAutoOffset() const;
+
+    MCNAPI ::Scripting::Result<::Scripting::Axis, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getEnabledAxes() const;
+
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _isActivated() const;
     // NOLINTEND
 
 public:

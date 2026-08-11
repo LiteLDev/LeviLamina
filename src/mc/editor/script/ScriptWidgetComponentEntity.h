@@ -4,10 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -32,6 +34,13 @@ public:
     virtual ~ScriptWidgetComponentEntity() /*override*/ = default;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getClickable() const;
     // NOLINTEND
 
 public:

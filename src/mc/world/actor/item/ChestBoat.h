@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Vec3;
 // clang-format on
 
 class ChestBoat : public ::Boat {
@@ -19,6 +20,12 @@ public:
     virtual void destroy(::Actor* sourceActor) /*override*/;
 
     virtual ::std::string getEntityLocNameString() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _dropChestContents(::Vec3 const& pos);
     // NOLINTEND
 
 public:

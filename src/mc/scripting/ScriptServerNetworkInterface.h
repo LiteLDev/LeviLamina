@@ -13,6 +13,7 @@
 // clang-format off
 class Player;
 class TextFilteringProcessor;
+class UserEntityIdentifierComponent;
 namespace Scripting { struct EngineError; }
 // clang-format on
 
@@ -51,6 +52,13 @@ public:
 
     virtual ::Scripting::Result<void, ::Scripting::EngineError>
     savePlayerPermission(::Player const& player, ::PlayerPermissionLevel permission) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::Result<::UserEntityIdentifierComponent const*, ::Scripting::EngineError>
+    _getNetIdentity(::Player const& player) const;
     // NOLINTEND
 
 public:

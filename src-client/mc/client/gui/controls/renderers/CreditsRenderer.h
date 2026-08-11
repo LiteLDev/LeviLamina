@@ -43,6 +43,22 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                    mCentered;
         ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                      mTexturePtr;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CreditsContent();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI CreditsContent(::std::string const& text, int height, bool centered, int paddingAfter);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
     };
 
     using clock_type = ::std::chrono::steady_clock;
@@ -91,6 +107,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit CreditsRenderer(::UIResolvedDef const& def);
+
+    MCAPI void
+    _parseFiles(::IClientInstance& client, ::UIControl& owner, ::std::vector<::std::string> const& filePaths);
     // NOLINTEND
 
 public:

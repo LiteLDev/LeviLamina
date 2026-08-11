@@ -43,6 +43,8 @@ public:
     virtual ::std::vector<::Scripting::Release> getPropertyReleases() const /*override*/;
 
     virtual ::std::string getEventDataName() const /*override*/;
+
+    virtual ~ScriptAfterEventSignalBuilderBase() /*override*/;
     // NOLINTEND
 
 public:
@@ -69,6 +71,12 @@ public:
         ::Scripting::ClassBinding (*maybeOverrideBindFunction)(),
         ::gsl::not_null<::Scripting::ClassBinding (*)()> rawBindFunction
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

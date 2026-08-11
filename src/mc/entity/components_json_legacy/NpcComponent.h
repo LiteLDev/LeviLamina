@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/entity/components_json_legacy/NpcGUIOffset.h"
 #include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/actor/ActorDataIDs.h"
 #include "mc/world/actor/npc/ActionContainer.h"
 
 // auto generated forward declare list
@@ -58,11 +59,16 @@ public:
     // NOLINTBEGIN
     MCAPI NpcComponent(::NpcComponent&& rhs);
 
+    MCAPI void _defineEntityDataString(::Actor& owner, ::ActorDataIDs id);
+
     MCAPI void _deserializeData(::Json::Value const& npcData);
 
     MCAPI void _loadData(::Actor& owner);
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
+
+    MCAPI void
+    executeCommandAction(::Actor& owner, ::Player& sourcePlayer, int actionIndex, ::std::string const& sceneName);
 
     MCAPI ::std::vector<int> getCommandCounts() const;
 

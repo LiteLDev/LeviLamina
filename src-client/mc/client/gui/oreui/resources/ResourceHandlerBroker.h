@@ -19,11 +19,14 @@ public:
 
     virtual void update() = 0;
 
-    virtual void registerResourceHandler(::std::string const&, ::std::unique_ptr<::Gameface::IResourceHandler>) = 0;
+    virtual void registerResourceHandler(
+        ::std::string const&                            protocol,
+        ::std::unique_ptr<::Gameface::IResourceHandler> resourceHandler
+    ) = 0;
 
-    virtual void unregisterResourceHandler(::std::string const&) = 0;
+    virtual void unregisterResourceHandler(::std::string const& protocol) = 0;
 
-    virtual void onViewCreate(::IClientInstance&) = 0;
+    virtual void onViewCreate(::IClientInstance& clientInstance) = 0;
 
     virtual void onAppPreSuspend() = 0;
 

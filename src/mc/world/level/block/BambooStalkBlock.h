@@ -62,6 +62,10 @@ public:
     // NOLINTBEGIN
     MCAPI BambooStalkBlock(::std::string const& nameId, int id);
 
+    MCAPI ::Block const& _determineNewBlockState(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void _placeBamboo(::BlockSource& region, ::BlockPos const& pos) const;
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;

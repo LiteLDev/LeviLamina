@@ -68,6 +68,8 @@ public:
     virtual void updateMovement() = 0;
 
     virtual void stopMovement() = 0;
+
+    virtual ~TemptBaseGoal() /*override*/;
     // NOLINTEND
 
 public:
@@ -106,6 +108,12 @@ public:
         ::ActorDefinitionTrigger const&        onStartEvent,
         ::ActorDefinitionTrigger const&        onEndEvent
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

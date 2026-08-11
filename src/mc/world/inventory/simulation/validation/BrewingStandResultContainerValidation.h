@@ -19,7 +19,7 @@ public:
     virtual ~BrewingStandResultContainerValidation() /*override*/ = default;
 
     virtual bool
-    isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const&, int const, bool) const
+    isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool) const
         /*override*/;
 
     virtual int getAvailableSetCount(int const slot, ::ItemStackBase const& item) const /*override*/;

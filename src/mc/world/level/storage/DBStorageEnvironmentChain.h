@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class FlushableEnv;
+namespace Core { class FileStorageArea; }
+namespace Core { class Path; }
+// clang-format on
+
 class DBStorageEnvironmentChain {
 public:
     // member variables
@@ -21,4 +28,20 @@ public:
     DBStorageEnvironmentChain& operator=(DBStorageEnvironmentChain const&);
     DBStorageEnvironmentChain(DBStorageEnvironmentChain const&);
     DBStorageEnvironmentChain();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~DBStorageEnvironmentChain();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::unique_ptr<::FlushableEnv> createFlushableEnv(
+        ::leveldb::Env*                            currentEnv,
+        ::std::shared_ptr<::Core::FileStorageArea> storageAreaForLevel,
+        ::Core::Path const&                        dbPath
+    );
+    // NOLINTEND
 };

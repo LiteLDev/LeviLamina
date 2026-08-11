@@ -86,6 +86,10 @@ public:
     MCNAPI bool _processNextTask(::RunTaskOptions const& options);
 #endif
 
+#ifdef LL_PLAT_S
+    MCNAPI bool _processNextTask(::RunTaskOptions const& options);
+#endif
+
     MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task);
 
     MCNAPI void requestStop(bool wait);

@@ -30,6 +30,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Bedrock::NonOwnerPointer<::AppExtensions::IAppExtensions> tryGetExtensions() const /*override*/;
+
+    virtual ~AppExtensionsNonOwner() /*override*/;
     // NOLINTEND
 
 public:
@@ -38,6 +40,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void setExtensions(::AppExtensions::IAppExtensionsNonOwner const& owner);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

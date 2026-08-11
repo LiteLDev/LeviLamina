@@ -35,7 +35,7 @@ public:
 
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
-    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
+    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
 
     virtual ::PackType getPackType() const /*override*/;
     // NOLINTEND

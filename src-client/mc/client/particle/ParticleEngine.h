@@ -18,6 +18,7 @@ class HashedString;
 class Level;
 class LightTexture;
 class Particle;
+class ParticleSystemEngine;
 class ScreenContext;
 class SeasonsRenderer;
 class Vec3;
@@ -81,6 +82,14 @@ public:
         ::Level&                                         level,
         ::Bedrock::NotNullNonOwnerPtr<::SeasonsRenderer> seasons,
         ::LightTexture&                                  lightTexture
+    );
+
+    MCAPI void _emitParticleNew(
+        ::ParticleSystemEngine& particleSystemEngine,
+        ::ParticleType          type,
+        ::Vec3 const&           pos,
+        ::Vec3 const&           dir,
+        int                     data
     );
 
     MCAPI ::ParticleLayerRenderObject _extractParticleLayer(

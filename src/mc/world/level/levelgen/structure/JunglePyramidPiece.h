@@ -17,7 +17,7 @@ class JunglePyramidPiece : public ::ScatteredFeaturePiece {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) /*override*/;
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     virtual ::StructurePieceType getType() const /*override*/;
     // NOLINTEND

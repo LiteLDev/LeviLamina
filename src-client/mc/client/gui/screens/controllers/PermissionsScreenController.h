@@ -6,8 +6,10 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/screens/controllers/ClientInstanceScreenController.h"
+#include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/controllers/ScreenExitBehavior.h"
 #include "mc/legacy/ActorUniqueID.h"
+#include "mc/server/commands/PlayerPermissionLevel.h"
 #include "mc/world/actor/player/LayeredAbilities.h"
 
 // auto generated forward declare list
@@ -64,6 +66,28 @@ public:
         ::std::weak_ptr<::UserDataScreenController>    userDataScreenController,
         ::ScreenExitBehavior                           exitBehavior
     );
+
+    MCAPI void _closeEduPermissionsPopup();
+
+    MCAPI void _confirmationDeoppingOtherDialog(::std::function<void(::ModalScreenButtonId)> callback);
+
+    MCAPI void _confirmationDeoppingSelfDialog(::std::function<void(::ModalScreenButtonId)> callback);
+
+    MCAPI void _confirmationNoCheatsDialog(::std::function<void(::ModalScreenButtonId)> callback);
+
+    MCAPI void _decidePermissions();
+
+    MCAPI void _evaluateCanEdit();
+
+    MCAPI bool _isLocalPlayerSelected() const;
+
+    MCAPI bool _isNonXboxLivePlayerSelected() const;
+
+    MCAPI void _populateClientIds();
+
+    MCAPI void _setCurrentPermissionLevel(::PlayerPermissionLevel permissionLevel, bool checkDefaultCustomAbilities);
+
+    MCAPI void _syncAbilities();
     // NOLINTEND
 
 public:

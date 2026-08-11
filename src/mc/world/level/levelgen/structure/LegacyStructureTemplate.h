@@ -13,6 +13,7 @@
 // clang-format off
 class Block;
 class BlockSource;
+class CompoundTag;
 class JigsawStructureBlockInfo;
 class LegacyStructureActorInfo;
 class LegacyStructureBlockInfo;
@@ -81,6 +82,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _fixItemStack(::CompoundTag& itemTag, int const dataVersion);
+
+    MCAPI static void _mapPropertiesToTags(::CompoundTag& originalTag, ::CompoundTag const& paletteTag);
+
+    MCAPI static ::std::unique_ptr<::CompoundTag> _mapTag(
+        ::std::unique_ptr<::CompoundTag> originalTag,
+        ::std::string const&             javaBlockName,
+        int const                        dataVersion,
+        ::Block const*&                  block
+    );
+
     MCAPI static ::Block const* _mapToBlock(::std::string const& blockName);
 
     MCAPI static ::Block const& _mapToData(::Block const& curr, ::LegacyStructureSettings const& settings);

@@ -106,7 +106,13 @@ public:
 
     virtual void destroyProgram(::bgfx::ProgramHandle _handle) = 0;
 
-    virtual void* createTexture(::bgfx::TextureHandle, ::bgfx::Memory const*, uint, uchar, ::bgfx::Memory const**) = 0;
+    virtual void* createTexture(
+        ::bgfx::TextureHandle  _handle,
+        ::bgfx::Memory const*  _mem,
+        uint                   _flags,
+        uchar                  _skip,
+        ::bgfx::Memory const** _imageContainerData
+    ) = 0;
 
     virtual void updateTextureBegin(::bgfx::TextureHandle, uchar, uchar) = 0;
 
@@ -173,7 +179,11 @@ public:
 
     virtual void setName(::bgfx::Handle _handle, char const* _name) = 0;
 
-    virtual void submit(::bgfx::Frame*, ::bgfx::ClearQuad&, ::bgfx::TextVideoMemBlitter&) = 0;
+    virtual void submit(
+        ::bgfx::Frame*               _render,
+        ::bgfx::ClearQuad&           _clearQuad,
+        ::bgfx::TextVideoMemBlitter& _textVideoMemBlitter
+    ) = 0;
 
     virtual void blitSetup(::bgfx::TextVideoMemBlitter& _blitter) = 0;
 
@@ -182,14 +192,14 @@ public:
     virtual void waitForFlipQueue() = 0;
 
     virtual void schedulePreBlasSkinningDispatch(
-        ::bgfx::VertexBufferHandle,
-        uint,
-        ::bgfx::VertexBufferHandle,
-        uint,
-        ::bgfx::VertexDeclHandle,
-        uint,
-        ::bgfx::Memory const*,
-        ::bx::StringT const&
+        ::bgfx::VertexBufferHandle _preSkinVBHandle,
+        uint                       _preSkinVertOffset,
+        ::bgfx::VertexBufferHandle _postSkinVBHandle,
+        uint                       _postSkinVertOffset,
+        ::bgfx::VertexDeclHandle   _vertexDeclHandle,
+        uint                       _vertexCount,
+        ::bgfx::Memory const*      _bones,
+        ::bx::StringT const&       _debugName
     );
 
     virtual void createBottomLevelAccelerationStructure(
@@ -219,6 +229,17 @@ public:
     // NOLINTBEGIN
     MCFOLD void
     $wrapExternalTexture(::bgfx::TextureHandle _handle, ::bgfx::RendererType::Enum _type, void* _texturePtr, void* ref);
+
+    MCFOLD void $schedulePreBlasSkinningDispatch(
+        ::bgfx::VertexBufferHandle _preSkinVBHandle,
+        uint                       _preSkinVertOffset,
+        ::bgfx::VertexBufferHandle _postSkinVBHandle,
+        uint                       _postSkinVertOffset,
+        ::bgfx::VertexDeclHandle   _vertexDeclHandle,
+        uint                       _vertexCount,
+        ::bgfx::Memory const*      _bones,
+        ::bx::StringT const&       _debugName
+    );
 
     MCFOLD void $createBottomLevelAccelerationStructure(
         ::bgfx::AccelerationStructureHandle           _handle,

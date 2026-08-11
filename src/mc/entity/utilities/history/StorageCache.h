@@ -6,6 +6,7 @@
 // clang-format off
 class BuoyancyComponent;
 class EntityId;
+class EntityRegistry;
 struct ActorRotationComponent;
 struct BlockPosTrackerComponent;
 struct BuoyancyFloatRequestComponent;
@@ -37,6 +38,12 @@ public:
     StorageCache& operator=(StorageCache const&);
     StorageCache(StorageCache const&);
     StorageCache();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::History::StorageCache& getOrInit(::EntityRegistry& registry);
+    // NOLINTEND
 };
 
 } // namespace History

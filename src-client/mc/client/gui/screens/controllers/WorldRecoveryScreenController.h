@@ -58,6 +58,8 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::function<void()>                  successCallback
     );
+
+    MCAPI void _fireTelemetry();
     // NOLINTEND
 
 public:

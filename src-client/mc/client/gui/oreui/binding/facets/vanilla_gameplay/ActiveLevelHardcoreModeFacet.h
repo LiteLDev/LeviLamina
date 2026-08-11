@@ -40,6 +40,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ActiveLevelHardcoreModeFacet(::Bedrock::NotNullNonOwnerPtr<::Minecraft const> minecraft);
+
+    MCAPI ::std::optional<bool> const& getIsHardcore() const;
     // NOLINTEND
 
 public:

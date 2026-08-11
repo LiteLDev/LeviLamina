@@ -19,6 +19,7 @@ namespace Gameface { class ResourceResponse; }
 namespace Gameface { class ResourceStreamResponse; }
 namespace Gameface { class TemporaryTextureHolder; }
 namespace Gameface { struct ResourceRequest; }
+namespace OreUI { struct HybridResourceLocation; }
 // clang-format on
 
 namespace OreUI {
@@ -48,10 +49,12 @@ public:
     virtual ~HybridResourceHandler() /*override*/ = default;
 
     virtual ::Gameface::ResourceHandlerStatus
-    onResourceRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceResponse&) /*override*/;
+    onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
 
-    virtual ::Gameface::ResourceHandlerStatus
-    onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&) /*override*/;
+    virtual ::Gameface::ResourceHandlerStatus onResourceStreamRequest(
+        ::Gameface::ResourceRequest const&  request,
+        ::Gameface::ResourceStreamResponse& response
+    ) /*override*/;
 
     virtual void update() /*override*/;
     // NOLINTEND
@@ -67,6 +70,9 @@ public:
         ::std::function<::Gameface::ISyncStreamReader*(::IFileAccess&, ::Core::Path)> const& syncStreamReaderFactory,
         ::Gameface::TemporaryTextureHolder&                                                  temporaryTextureHolder
     );
+
+    MCAPI ::std::optional<::OreUI::HybridResourceLocation>
+    _getAssetResourceLocationFromResourcePackManager(::Gameface::ResourceRequest const& request) const;
     // NOLINTEND
 
 public:

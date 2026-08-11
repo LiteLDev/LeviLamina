@@ -12,16 +12,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
 class Block;
+class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
+class Level;
 class MobEffectInstance;
 struct ActorDefinitionIdentifier;
+struct ActorUniqueID;
 struct HurtEffectsSettings;
 struct HurtParameters;
 struct VariantParameterList;
@@ -94,7 +98,7 @@ public:
 
     virtual bool canFreeze() const /*override*/;
 
-    virtual bool canBeAffected(uint id) const /*override*/;
+    virtual bool canBeAffected(uint effectId) const /*override*/;
 
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
 
@@ -134,11 +138,23 @@ public:
         ::EntityContext&                   entityContext
     );
 
+    MCAPI void _destroyBlocks(
+        ::Level&                       level,
+        ::AABB const&                  bb,
+        ::BlockSource&                 region,
+        int                            range,
+        ::WitherBoss::WitherAttackType attackType
+    );
+
+    MCAPI void _performRangedAttack(int headID, ::Vec3 const& targetPos, bool dangerous);
+
     MCAPI void awardSpawnWitherAchievement() const;
 
     MCAPI void postAiStep();
 
     MCAPI ::WitherBossPreAIStepResult preAiStep();
+
+    MCAPI void setAlternativeTarget(int headIndex, ::ActorUniqueID entityId);
     // NOLINTEND
 
 public:

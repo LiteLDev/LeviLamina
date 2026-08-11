@@ -44,10 +44,10 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual ::gsl::not_null<::Block const*> getPlacementBlock(
-            ::gsl::not_null<::Block const*>,
+            ::gsl::not_null<::Block const*> block,
             ::Actor const&,
             ::BlockPos const&,
-            uchar,
+            uchar face,
             ::Vec3 const&
         ) const /*override*/;
 
@@ -66,11 +66,11 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual ::gsl::not_null<::Block const*> getPlacementBlock(
-            ::gsl::not_null<::Block const*>,
+            ::gsl::not_null<::Block const*> block,
             ::Actor const&,
             ::BlockPos const&,
-            uchar,
-            ::Vec3 const&
+            uchar         face,
+            ::Vec3 const& clickPos
         ) const /*override*/;
 
         virtual ::BlockTrait::PlacementCallbackOrder getCallbackOrder() const /*override*/;

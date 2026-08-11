@@ -17,9 +17,13 @@ public:
     // NOLINTBEGIN
     virtual ~BeaconPaymentContainerValidation() /*override*/ = default;
 
-    virtual bool
-    isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const&, int const, bool) const
-        /*override*/;
+    virtual bool isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
+        bool
+    ) const /*override*/;
 
     virtual int getAvailableSetCount(int slot, ::ItemStackBase const& item) const /*override*/;
 

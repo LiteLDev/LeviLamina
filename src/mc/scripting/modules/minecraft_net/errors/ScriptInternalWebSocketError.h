@@ -23,12 +23,23 @@ public:
     // prevent constructor by default
     ScriptInternalWebSocketError& operator=(ScriptInternalWebSocketError const&);
     ScriptInternalWebSocketError(ScriptInternalWebSocketError const&);
-    ScriptInternalWebSocketError();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptInternalWebSocketError();
+    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };
 

@@ -17,9 +17,10 @@ public:
     // NOLINTBEGIN
     virtual ~PlacementType() = default;
 
-    virtual bool isSpawnPositionOk(::BlockSource&, ::BlockPos, ::br::spawn::EntityType const&) const = 0;
+    virtual bool
+    isSpawnPositionOk(::BlockSource& region, ::BlockPos pos, ::br::spawn::EntityType const& type) const = 0;
 
-    virtual ::BlockPos adjustSpawnPos(::BlockSource&, ::BlockPos) const;
+    virtual ::BlockPos adjustSpawnPos(::BlockSource& region, ::BlockPos candidate) const;
     // NOLINTEND
 
 public:

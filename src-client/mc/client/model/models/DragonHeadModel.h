@@ -34,9 +34,9 @@ public:
     // NOLINTBEGIN
     virtual ~DragonHeadModel() /*override*/ = default;
 
-    virtual void render(::ScreenContext&) /*override*/;
+    virtual void render(::ScreenContext& screenContext) /*override*/;
 
-    virtual void render(::ScreenContext&, float);
+    virtual void render(::ScreenContext& screenContext, float scale);
     // NOLINTEND
 
 public:

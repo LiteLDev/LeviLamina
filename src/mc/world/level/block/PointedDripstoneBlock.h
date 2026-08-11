@@ -45,6 +45,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _canDrip(::BlockSource& region, ::BlockPos const& pos);
+
     MCAPI static bool _canFillCauldron(::Block const& block);
 
     MCAPI static ::std::optional<::BlockPos> _findFillableCauldronBelowStalactiteTip(

@@ -47,6 +47,8 @@ public:
     virtual void containerContentChanged(int iSlot) /*override*/;
 
     virtual void containerClosed(::Actor& actor) /*override*/;
+
+    virtual ~ContainerComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -105,6 +107,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ContainerComponent&& other);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

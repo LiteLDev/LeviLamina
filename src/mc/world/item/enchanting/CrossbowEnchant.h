@@ -17,7 +17,7 @@ public:
 
     virtual bool isCompatibleWith(::Enchant::Type type) const /*override*/;
 
-    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type) const /*override*/;
+    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const /*override*/;
     // NOLINTEND
 
 public:

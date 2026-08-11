@@ -10,6 +10,7 @@
 // clang-format off
 class ActorMigratedDefinitionFactory;
 class BaseGameVersion;
+class BiomeRegistry;
 class ClientInputMappingFactory;
 class ClientLevel;
 class CommandRegistry;
@@ -58,48 +59,56 @@ public:
     // NOLINTBEGIN
     virtual ~VanillaGameModuleClient() /*override*/ = default;
 
-    virtual void init(::IClientInstance&, ::Bedrock::NotNullNonOwnerPtr<::Level> const&) /*override*/;
+    virtual void init(::IClientInstance& client, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level) /*override*/;
 
     virtual void initializeResourceStack(
-        ::Experiments const*,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
-        ::ResourcePackStack&,
-        ::BaseGameVersion const&,
-        ::GameModuleClient::ResourceLoadingPhase,
-        bool
+        ::Experiments const*                                            experiments,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
+        ::ResourcePackStack&                                            stack,
+        ::BaseGameVersion const&                                        baseGameVersion,
+        ::GameModuleClient::ResourceLoadingPhase                        loadingPhase,
+        bool                                                            includeEditorPacks
     ) /*override*/;
 
     virtual void configureLevel(
-        ::IClientInstance&,
-        ::Bedrock::NotNullNonOwnerPtr<::ClientLevel> const&,
-        ::Experiments const&,
-        ::BaseGameVersion const&
+        ::IClientInstance&                                  client,
+        ::Bedrock::NotNullNonOwnerPtr<::ClientLevel> const& level,
+        ::Experiments const&                                experiments,
+        ::BaseGameVersion const&                            baseGameVersion
     ) /*override*/;
 
-    virtual void deconfigureLevel(::IClientInstance&) /*override*/;
+    virtual void deconfigureLevel(::IClientInstance& client) /*override*/;
 
-    virtual void configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const) /*override*/;
+    virtual void
+    configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const docItemRegistry) /*override*/;
 
     virtual void tick() /*override*/;
 
-    virtual void setupStandardCommands(::CommandRegistry&) /*override*/;
+    virtual void setupStandardCommands(::CommandRegistry& commandRegistry) /*override*/;
 
-    virtual void setupStartMenuScreenCommands(::CommandRegistry&) /*override*/;
+    virtual void setupStartMenuScreenCommands(::CommandRegistry& commandRegistry) /*override*/;
 
     virtual void setupUI() /*override*/;
 
-    virtual void registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&) /*override*/;
+    virtual void registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client) /*override*/;
 
-    virtual ::std::unique_ptr<::ClientInputMappingFactory> createInputMappingFactory(::IClientInstance&) /*override*/;
+    virtual ::std::unique_ptr<::ClientInputMappingFactory>
+    createInputMappingFactory(::IClientInstance& client) /*override*/;
 
     virtual ::std::shared_ptr<void> registerVanillaGoalsForUpgrader(
-        ::Experiments const&,
-        ::BaseGameVersion const&,
-        ::ItemRegistryRef const,
-        ::ActorMigratedDefinitionFactory&
+        ::Experiments const&              experiments,
+        ::BaseGameVersion const&          baseGameVersion,
+        ::ItemRegistryRef const           itemRegistryRef,
+        ::ActorMigratedDefinitionFactory& migratedFactory
     ) const /*override*/;
 
     virtual ::ServerboundDiagnosticsPacket createServerboundDiagnosticsPacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _onLevelBiomesRegistered(::BiomeRegistry& biomeRegistry);
     // NOLINTEND
 
 public:

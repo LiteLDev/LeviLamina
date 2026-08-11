@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     virtual ~MinecraftScriptSentryPlugin() /*override*/ = default;
 
-    virtual void setSentryLogger(::std::unique_ptr<::ScriptSentryLogger>) /*override*/;
+    virtual void setSentryLogger(::std::unique_ptr<::ScriptSentryLogger> sentryLogger) /*override*/;
 
     virtual ::std::string const& getPlatformName() const /*override*/;
     // NOLINTEND

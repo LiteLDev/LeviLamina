@@ -39,13 +39,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onPanRecognized(::Vec2 const&, ::Vec2 const&, ::Vec2 const&) /*override*/;
+    virtual void
+    onPanRecognized(::Vec2 const& gestureBeginPos, ::Vec2 const& currentPos, ::Vec2 const& delta) /*override*/;
 
-    virtual void onPanCompleted(::Vec2 const&) /*override*/;
+    virtual void onPanCompleted(::Vec2 const& endPos) /*override*/;
 
-    virtual void onFlingCompleted(::Vec2 const&, ::Vec2 const&, ::std::chrono::milliseconds) /*override*/;
+    virtual void onFlingCompleted(
+        ::Vec2 const&               endPos,
+        ::Vec2 const&               flingStart,
+        ::std::chrono::milliseconds flingDuration
+    ) /*override*/;
 
-    virtual void onTapRecognized(::Vec2 const&) /*override*/;
+    virtual void onTapRecognized(::Vec2 const& position) /*override*/;
     // NOLINTEND
 
 public:

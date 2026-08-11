@@ -21,23 +21,30 @@ public:
 
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const /*override*/;
 
-    virtual bool emitterResetting(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&);
+    virtual bool
+    emitterResetting(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
 
-    virtual bool hasEmitterExpired(::ParticleSystem::ComponentAccessParticleEmitter const&, ::RenderParams&);
+    virtual bool
+    hasEmitterExpired(::ParticleSystem::ComponentAccessParticleEmitter const& emitter, ::RenderParams& renderParams);
 
-    virtual bool isEmitterActive(::ParticleSystem::ComponentAccessParticleEmitter const&, ::RenderParams&);
+    virtual bool
+    isEmitterActive(::ParticleSystem::ComponentAccessParticleEmitter const& emitter, ::RenderParams& renderParams);
 
-    virtual void handleCreation(::ParticleSystem::ComponentAccessParticleEmitter&);
+    virtual void handleCreation(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
 
-    virtual void handleExpiration(::ParticleSystem::ComponentAccessParticleEmitter&);
+    virtual void handleExpiration(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
 
     virtual void handleTimelineEvents(
-        ::ParticleSystem::ComponentAccessParticleEmitter&,
-        ::std::chrono::nanoseconds const,
-        ::std::chrono::nanoseconds
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::std::chrono::nanoseconds const                  lastAge,
+        ::std::chrono::nanoseconds                        age
     );
 
-    virtual void handleTravelDistanceEvents(::ParticleSystem::ComponentAccessParticleEmitter&, float, float);
+    virtual void handleTravelDistanceEvents(
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        float                                             lastDistance,
+        float                                             distance
+    );
     // NOLINTEND
 
 public:

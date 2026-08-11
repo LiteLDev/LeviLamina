@@ -22,6 +22,8 @@ class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
+namespace BlockEvents { class ActorInternalEvent; }
+namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class CropBlock : public ::FoliageBlock {
@@ -87,6 +89,8 @@ public:
         ushort            newGrowth,
         int               updateFlags
     ) const /*override*/;
+
+    virtual ~CropBlock() /*override*/;
     // NOLINTEND
 
 public:
@@ -96,12 +100,22 @@ public:
 
     MCAPI bool
     _placeFeature(::BlockSource& region, ::BlockPos const& pos, ::Block const& baseBlock, int updateFlags) const;
+
+    MCAPI void onEvent(::BlockEvents::ActorInternalEvent& event) const;
+
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& nameId, int id, ::CropParams params);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

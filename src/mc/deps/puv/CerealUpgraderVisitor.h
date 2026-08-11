@@ -45,6 +45,14 @@ public:
         ::entt::meta_any                                                                                  to,
         ::std::function<void(::entt::meta_data, ::entt::meta_any&, ::entt::meta_data, ::entt::meta_any&)> cb
     ) /*override*/;
+
+    virtual ~CerealUpgraderVisitor() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

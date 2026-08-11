@@ -42,5 +42,7 @@ public:
         ::std::unique_ptr<::std::vector<
             ::std::unique_ptr<::StructurePoolActorRule, ::std::default_delete<::StructurePoolActorRule>>>>&& ruleList
     );
+
+    MCAPI ~JigsawStructureActorRulesRegistry();
     // NOLINTEND
 };

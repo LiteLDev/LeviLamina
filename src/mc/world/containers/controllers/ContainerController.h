@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/controllers/ItemAddType.h"
 #include "mc/world/containers/controllers/ItemPlaceType.h"
 #include "mc/world/containers/controllers/ItemSetType.h"
 
@@ -33,7 +34,7 @@ public:
 #ifdef LL_PLAT_S
     virtual ::ItemInstance const& getRecipeItem(int) const;
 #else // LL_PLAT_C
-    virtual ::ItemInstance const& getRecipeItem(int index) const;
+    virtual ::ItemInstance const& getRecipeItem(int slot) const;
 #endif
 
 #ifdef LL_PLAT_S
@@ -97,6 +98,15 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI int _addItem(::ContainerScreenContext const& context, int modelSlot, int addCount);
+
+    MCAPI ::ItemAddType _canAdd(
+        ::ContainerScreenContext const& context,
+        int                             slot,
+        ::ItemStackBase const&          item,
+        ::ItemTransferAmount            transferAmount
+    ) const;
+
     MCFOLD bool canConsume(int modelSlot, int removeCount) const;
 
     MCFOLD bool canDestroy(int modelSlot, int removeCount) const;
@@ -139,7 +149,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD ::ItemInstance const& $getRecipeItem(int index) const;
+    MCFOLD ::ItemInstance const& $getRecipeItem(int slot) const;
 
     MCAPI bool $canRemove(int slot, int removeCount) const;
 

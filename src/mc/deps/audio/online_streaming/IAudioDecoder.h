@@ -20,7 +20,7 @@ public:
 
     virtual ::Bedrock::Result<void> initialize() = 0;
 
-    virtual ::Bedrock::Result<::gsl::span<float>> decodeInto(::Audio::AudioFrameBuffer&) = 0;
+    virtual ::Bedrock::Result<::gsl::span<float>> decodeInto(::Audio::AudioFrameBuffer& outputBuffer) = 0;
 
     virtual uchar getChannels() const = 0;
 
@@ -28,7 +28,7 @@ public:
 
     virtual int64 getCurrentFramePosition() const = 0;
 
-    virtual void setTotalSamples(uint64) = 0;
+    virtual void setTotalSamples(uint64 totalSamples) = 0;
 
     virtual ::std::optional<uint64> getTotalSamples() const = 0;
 

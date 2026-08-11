@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/resources/RequestResourceRange.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cohtml { class IAsyncResourceRequest; }
+// clang-format on
+
 namespace Gameface {
 
 struct ResourceRequest {
@@ -19,9 +24,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ResourceRequest();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ResourceRequest(::cohtml::IAsyncResourceRequest const& request);
+
     MCAPI ~ResourceRequest();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

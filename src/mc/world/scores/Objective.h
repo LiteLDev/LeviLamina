@@ -30,8 +30,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Objective(::std::string const& name, ::ObjectiveCriteria const& criteria);
+
 #ifdef LL_PLAT_C
     MCAPI ::std::vector<::ScoreboardId> getPlayers() const;
 #endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };

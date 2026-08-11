@@ -55,7 +55,7 @@ public:
     // NOLINTBEGIN
     virtual ~PlayerPermissionsManager() = default;
 
-    virtual bool hasPlayerPermissions(::ActorUniqueID) const;
+    virtual bool hasPlayerPermissions(::ActorUniqueID playerId) const;
     // NOLINTEND
 
 public:
@@ -66,6 +66,8 @@ public:
         ::Bedrock::NonOwnerPointer<::PlayerListManager>      playerListManager,
         ::std::function<::Player*()>                         getPrimaryLocalPlayer
     );
+
+    MCAPI void _loadLocalPermissionsList();
 
 #ifdef LL_PLAT_C
     MCAPI void _updatePermissionLevel();

@@ -12,6 +12,7 @@
 class Block;
 class BlockSource;
 class StructureBlockPlacementInfo;
+struct StructurePlacementNeighbors;
 // clang-format on
 
 class StructurePlacementInfo {
@@ -34,6 +35,10 @@ public:
     MCAPI StructurePlacementInfo(::BlockPos const& size, ::BlockPos const& origin);
 
     MCAPI uint _findOrInsertPlacementIndex(::StructureBlockPlacementInfo const& info);
+
+    MCAPI ::StructureBlockPlacementInfo const& getBlockPlacementInfo(::BlockPos const& pos) const;
+
+    MCAPI ::StructurePlacementNeighbors getNeighbors(::BlockPos const& relativePos, ::Rotation rotation);
 
     MCAPI void handlePostPlacedStructureForArea(
         ::BlockSource&                                                     region,

@@ -6,6 +6,7 @@
 // clang-format off
 class ActorRuntimeID;
 class MoveActorAbsoluteData;
+class Player;
 class Vec2;
 class Vec3;
 // clang-format on
@@ -78,6 +79,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI bool _shouldUpdateBasedOptimizationOnScore(::Player& player) const;
+
 #ifdef LL_PLAT_C
     MCNAPI void handleServerData(
         ::MoveActorAbsoluteData const&                 moveData,
@@ -100,6 +103,8 @@ public:
     MCNAPI bool shouldSendMotionPredictionHintsPacket() const;
 
     MCNAPI void teleportEntity(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot);
+
+    MCNAPI ~SpatialActorNetworkData();
     // NOLINTEND
 
 public:

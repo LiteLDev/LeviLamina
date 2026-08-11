@@ -28,6 +28,12 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::cereal::SerializerContext*> mContext;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ScopedPop();
+        // NOLINTEND
     };
 
 public:

@@ -26,9 +26,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onLand(::FallingBlock const&, ::IBlockSource&, ::BlockPos const&) /*override*/;
+    virtual void onLand(::FallingBlock const& block, ::IBlockSource& region, ::BlockPos const& pos) /*override*/;
 
-    virtual void breakBlock(::FallingBlockActor&) /*override*/;
+    virtual void breakBlock(::FallingBlockActor& fallingBlock) /*override*/;
     // NOLINTEND
 
 public:

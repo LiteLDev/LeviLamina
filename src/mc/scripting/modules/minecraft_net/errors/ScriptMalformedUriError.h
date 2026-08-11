@@ -13,16 +13,17 @@ namespace Scripting { struct ErrorBinding; }
 namespace ScriptModuleMinecraftNet {
 
 class ScriptMalformedUriError : public ::Scripting::BaseError {
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ScriptMalformedUriError();
 
-#else // LL_PLAT_C
-#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit ScriptMalformedUriError(::std::string message);
+#endif
+
 #ifdef LL_PLAT_S
     MCNAPI explicit ScriptMalformedUriError(::std::string message);
 #endif

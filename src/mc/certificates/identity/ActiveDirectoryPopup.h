@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/certificates/identity/ActiveDirectoryExperience.h"
 #include "mc/certificates/identity/edu/Role.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActiveDirectoryIdentity;
+// clang-format on
 
 class ActiveDirectoryPopup {
 public:
@@ -43,6 +49,8 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI ActiveDirectoryPopup(::ActiveDirectoryPopup&&);
+
     MCNAPI ActiveDirectoryPopup(::ActiveDirectoryPopup const&);
 
     MCNAPI ::std::string getTTSMessageBody() const;
@@ -57,6 +65,10 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI static ::ActiveDirectoryPopup
+    get(::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity const> identity,
+        ::ActiveDirectoryExperience                                    experience);
+
     MCNAPI static ::ActiveDirectoryPopup
     get(::edu::Role, int trialsRemaining, ::ActiveDirectoryExperience experience, ::std::string const& email);
 

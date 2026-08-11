@@ -40,7 +40,7 @@ public:
 
     virtual bool getValue() const /*override*/;
 
-    virtual void setValue(bool) /*override*/;
+    virtual void setValue(bool value) /*override*/;
     // NOLINTEND
 
 public:

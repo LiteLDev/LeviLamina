@@ -126,6 +126,8 @@ public:
         ::ItemStack const&              itemInSlot
     ) const;
 
+    MCAPI void _onItemNetworkChanged(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+
     MCAPI void addAvailableSetCountCallback(
         ::ContainerEnumName                               name,
         ::std::function<int(int, ::ItemStackBase const&)> availableSetCountCallback

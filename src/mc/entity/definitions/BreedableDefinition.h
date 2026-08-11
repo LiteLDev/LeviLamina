@@ -42,6 +42,16 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addBreedItem(::ActorDefinitionBreedItem const& breedItem);
+
+    MCAPI void addBreedItemByName(::std::string const& itemName);
+
+    MCAPI void addEnvironmentRequirement(::EnvironmentRequirement const& envReq);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

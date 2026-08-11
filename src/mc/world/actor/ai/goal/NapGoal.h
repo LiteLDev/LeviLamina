@@ -45,7 +45,7 @@ public:
 
     virtual bool canContinueToUse() /*override*/;
 
-    virtual void appendDebugInfo(::std::string&) const /*override*/;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
     // NOLINTEND
 
 public:
@@ -60,6 +60,8 @@ public:
         ::ActorFilterGroup const& canNapFilters,
         ::ActorFilterGroup const& wakeMobExceptions
     );
+
+    MCAPI bool _detectsMobs() const;
     // NOLINTEND
 
 public:

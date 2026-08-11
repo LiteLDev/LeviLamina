@@ -35,6 +35,20 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsStoriesRealmDataFacet(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
+
+    MCAPI bool getIsFetchingRealm() const;
+
+    MCAPI bool getIsHardcoreRealm() const;
+
+    MCAPI bool getIsRealmValid() const;
+
+    MCAPI ::std::string const& getOwnerXuid();
+
+    MCAPI ::std::string const& getRealmDescription();
+
+    MCAPI ::std::string const& getRealmName();
+
+    MCAPI ::std::string const& getUserXuid();
     // NOLINTEND
 
 public:

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class CompoundTag;
 class ItemInstance;
 class ItemStack;
 class LootTableContext;
@@ -27,11 +28,17 @@ public:
     // NOLINTBEGIN
     virtual ~SetBookContentsFunction() /*override*/ = default;
 
-    virtual void apply(::ItemStack&, ::Random&, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext&) /*override*/;
 
-    virtual void apply(::ItemInstance&, ::Random&, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _fillUserData(::CompoundTag& tag);
     // NOLINTEND
 
 public:

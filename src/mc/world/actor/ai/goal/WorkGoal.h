@@ -49,6 +49,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void playPOISoundEvent() const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
 

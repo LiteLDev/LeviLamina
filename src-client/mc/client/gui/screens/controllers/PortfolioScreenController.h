@@ -11,6 +11,7 @@
 class ClientInstanceScreenModel;
 class ImageExportSubController;
 class PortfolioScreenManager;
+class UIPropertyBag;
 struct PhotoRecord;
 namespace Core { class Path; }
 namespace Json { class Value; }
@@ -62,6 +63,16 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit PortfolioScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
+
+    MCAPI void _createPhotoItem(uint64 index);
+
+    MCAPI void _deletePhoto(uint64 index);
+
+    MCAPI int _getPickIndex(::UIPropertyBag& bag);
+
+    MCAPI void _loadCaptionIfUnloaded(::PhotoRecord& record);
+
+    MCAPI void _saveCaptions(bool forceSaveAll);
     // NOLINTEND
 
 public:

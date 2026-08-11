@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/world/SessionTrackerOperationResult.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -34,6 +35,13 @@ public:
     virtual ~WorldActivitySessionTracker() /*override*/ = default;
 
     virtual ::EventResult onClientEnteredWorld(::ClientInstance& instance) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::World::SessionTrackerOperationResult
+    _addOrUpdate(::std::unique_ptr<::World::WorldJoinedRecord> pJoinedRecord);
     // NOLINTEND
 
 public:

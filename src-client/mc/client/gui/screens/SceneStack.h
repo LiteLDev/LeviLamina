@@ -198,16 +198,17 @@ public:
 
     virtual void setOptions(::std::weak_ptr<::OptionRegistry> options) /*override*/;
 
-    virtual void registerSceneChangeCallback(void*, ::std::function<void(::AbstractScene&)>) /*override*/;
+    virtual void
+    registerSceneChangeCallback(void* token, ::std::function<void(::AbstractScene&)> sceneChangeCallback) /*override*/;
 
-    virtual void unregisterSceneChangeCallback(void*) /*override*/;
+    virtual void unregisterSceneChangeCallback(void* token) /*override*/;
 
     virtual void registerPrePushSceneCallback(
         void*                                   token,
         ::std::function<void(::AbstractScene&)> prePushSceneCallback
     ) /*override*/;
 
-    virtual void unregisterPrePushSceneCallback(void*) /*override*/;
+    virtual void unregisterPrePushSceneCallback(void* token) /*override*/;
 
     virtual void registerPushSceneCallback(
         void* token,
@@ -215,12 +216,12 @@ public:
             pushSceneCallback
     ) /*override*/;
 
-    virtual void unregisterPushSceneCallback(void*) /*override*/;
+    virtual void unregisterPushSceneCallback(void* token) /*override*/;
 
     virtual void
     registerPrePopSceneCallback(void* token, ::std::function<void(::AbstractScene*)> prePopSceneCallback) /*override*/;
 
-    virtual void unregisterPrePopSceneCallback(void*) /*override*/;
+    virtual void unregisterPrePopSceneCallback(void* token) /*override*/;
 
     virtual void registerPopSceneCallback(
         void* token,
@@ -228,41 +229,57 @@ public:
             popSceneCallback
     ) /*override*/;
 
-    virtual void unregisterPopSceneCallback(void*) /*override*/;
+    virtual void unregisterPopSceneCallback(void* token) /*override*/;
 
-    virtual void forEachVisibleScreen(::brstd::function_ref<void(::AbstractScene&)>, bool, bool) /*override*/;
+    virtual void forEachVisibleScreen(
+        ::brstd::function_ref<void(::AbstractScene&)> callback,
+        bool                                          tickedLastFrame,
+        bool                                          splitscreenRenderBypassThisFrame
+    ) /*override*/;
 
-    virtual void forEachScreen(::brstd::function_ref<bool(::AbstractScene&)>, bool) /*override*/;
+    virtual void forEachScreen(::brstd::function_ref<bool(::AbstractScene&)> callback, bool topDown) /*override*/;
 
-    virtual void forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)>, bool) const /*override*/;
+    virtual void forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)> callback, bool topDown) const
+        /*override*/;
+
+    virtual void forEachAlwaysAcceptInputScreen(
+        ::brstd::function_ref<void(::AbstractScene&)> callback,
+        ::AbstractScene const*                        ignoreScreen
+    ) /*override*/;
 
     virtual void
-    forEachAlwaysAcceptInputScreen(::brstd::function_ref<void(::AbstractScene&)>, ::AbstractScene const*) /*override*/;
+    forEachAlwaysAcceptInputScreenWithTop(::brstd::function_ref<void(::AbstractScene&)> callback) /*override*/;
 
-    virtual void forEachAlwaysAcceptInputScreenWithTop(::brstd::function_ref<void(::AbstractScene&)>) /*override*/;
+    virtual void pushScreenWithRouteAction(
+        ::std::shared_ptr<::AbstractScene> newScreen,
+        ::OreUI::RouteAction const&        routeAction
+    ) /*override*/;
 
-    virtual void
-    pushScreenWithRouteAction(::std::shared_ptr<::AbstractScene>, ::OreUI::RouteAction const&) /*override*/;
-
-    virtual void popScreenWithRouteAction(::OreUI::RouteAction const&) /*override*/;
+    virtual void popScreenWithRouteAction(::OreUI::RouteAction const& routeAction) /*override*/;
 
     virtual void pushScreen(::std::shared_ptr<::AbstractScene> newScreen, bool flush) /*override*/;
 
-    virtual void schedulePopScreen(int) /*override*/;
+    virtual void schedulePopScreen(int totalPopNumber) /*override*/;
 
-    virtual void schedulePopScreenWithExpectedNames(::std::vector<::std::string> const&) /*override*/;
+    virtual void
+    schedulePopScreenWithExpectedNames(::std::vector<::std::string> const& expectedScreenNames) /*override*/;
 
-    virtual void flushStack(bool, bool, bool, ::std::function<void()>) /*override*/;
+    virtual void flushStack(
+        bool                    immediate,
+        bool                    ignoreNotFlushableFlag,
+        bool                    ignoreTransitions,
+        ::std::function<void()> postFlushCallback
+    ) /*override*/;
 
     virtual void deferUpdatesUntilNextTick() /*override*/;
 
-    virtual ::std::optional<uint64> getFirstSceneIndexOfSceneType(::ui::SceneType) const /*override*/;
+    virtual ::std::optional<uint64> getFirstSceneIndexOfSceneType(::ui::SceneType sceneType) const /*override*/;
 
-    virtual bool popScreensBackTo(::ui::SceneType const) /*override*/;
+    virtual bool popScreensBackTo(::ui::SceneType const sceneType) /*override*/;
 
-    virtual bool popScreensBackToFirstInstanceOf(::ui::SceneType const) /*override*/;
+    virtual bool popScreensBackToFirstInstanceOf(::ui::SceneType const sceneType) /*override*/;
 
-    virtual bool popTopScreensOfType(::ui::SceneType const) /*override*/;
+    virtual bool popTopScreensOfType(::ui::SceneType const sceneType) /*override*/;
 
     virtual bool update() /*override*/;
 
@@ -314,15 +331,15 @@ public:
 
     virtual bool isScreenReplaceable() const /*override*/;
 
-    virtual void handleTextChar(::std::string const&) /*override*/;
+    virtual void handleTextChar(::std::string const& inputUtf8) /*override*/;
 
-    virtual void setBufferTextCharEvents(bool) /*override*/;
+    virtual void setBufferTextCharEvents(bool pushTextCharEvents) /*override*/;
 
     virtual bool isBufferingTextCharEvents() const /*override*/;
 
-    virtual bool isOnSceneStack(::ui::SceneType) const /*override*/;
+    virtual bool isOnSceneStack(::ui::SceneType sceneType) const /*override*/;
 
-    virtual bool isOnSceneStack(::std::string const&) const /*override*/;
+    virtual bool isOnSceneStack(::std::string const& screenName) const /*override*/;
 
     virtual ::SceneStackProxy* getProxy() /*override*/;
 
@@ -332,7 +349,8 @@ public:
 
     virtual void setScreenThreshold(::ScreenThreshold const& screenThreshold) /*override*/;
 
-    virtual ::Bedrock::PubSub::Subscription registerSceneStackDestroyedListener(::std::function<void()>) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    registerSceneStackDestroyedListener(::std::function<void()> callback) /*override*/;
     // NOLINTEND
 
 public:
@@ -342,6 +360,21 @@ public:
         ::CachedScenes&                                            cachedScenes,
         ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> const& uiEventCoordinator,
         ::std::function<bool()> const&                             getSuspended
+    );
+
+    MCAPI bool _animationsEnabled() const;
+
+    MCAPI bool _popScreens(
+        int&                                  popCount,
+        bool                                  ignoreTransitions,
+        ::std::optional<::OreUI::RouteAction> routeAction,
+        ::std::vector<::std::string> const&   expectedScreenNames
+    );
+
+    MCAPI void _schedulePopScreen(
+        int                                   totalPopNumber,
+        ::std::optional<::OreUI::RouteAction> routeAction,
+        ::std::vector<::std::string> const&   expectedScreenNames
     );
 
     MCAPI void _schedulePushScreen(
@@ -354,6 +387,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _forEachVisibleScreen(
+        ::brstd::function_ref<void(::AbstractScene&)> callback,
+        ::std::function<::AbstractScene*(int)>        getScreen,
+        bool,
+        bool   splitscreenRenderBypassThisFrame,
+        uint64 topStackIndex,
+        uint64 startIndex,
+        uint64 endIndex,
+        bool   renderDrawLastScreens
+    );
+
     MCAPI static void forEachVisibleScreen(
         ::brstd::function_ref<void(::AbstractScene&)> callback,
         ::std::function<::AbstractScene*(int)>        getScreen,

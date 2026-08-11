@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace gametest { class BaseGameTestInstance; }
+namespace gametest { struct GameTestError; }
 // clang-format on
 
 class DedicatedServerGameTestRunnerListener : public ::gametest::IGameTestListener {
@@ -30,11 +31,27 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onTestStarted(::gametest::BaseGameTestInstance&) /*override*/;
+    virtual void onTestStarted(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
-    virtual void onTestPassed(::gametest::BaseGameTestInstance&) /*override*/;
+    virtual void onTestPassed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
-    virtual void onTestFailed(::gametest::BaseGameTestInstance&) /*override*/;
+    virtual void onTestFailed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _addTestResult(
+        ::std::string const&                             testName,
+        ::std::string const&                             result,
+        ::std::optional<::gametest::GameTestError> const error
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::string _getTestNameWithRotation(::gametest::BaseGameTestInstance& testInstance);
     // NOLINTEND
 
 public:

@@ -34,11 +34,11 @@ public:
     // NOLINTBEGIN
     virtual ~ScreenHandlerLabTable() /*override*/ = default;
 
-    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const&) /*override*/;
+    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
 
     virtual ::ItemStackNetResult endRequest() /*override*/;
 
-    virtual void postRequest(bool const) /*override*/;
+    virtual void postRequest(bool const wasSuccess) /*override*/;
     // NOLINTEND
 
 public:

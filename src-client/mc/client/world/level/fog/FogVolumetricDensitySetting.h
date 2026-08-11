@@ -16,9 +16,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FogVolumetricDensitySetting();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FogVolumetricDensitySetting(
+        ::Core::Keyframes<float, float> maxDensity,
+        ::Core::Keyframes<float, float> maxDensityHeight,
+        ::Core::Keyframes<float, float> zeroDensityHeight
+    );
+
     MCAPI ~FogVolumetricDensitySetting();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

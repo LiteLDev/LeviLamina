@@ -49,8 +49,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _onBackspace();
+
+    MCAPI void _onCopy();
+
     MCAPI void _setText(::std::string_view newUtf8Text);
 
+    MCAPI void feedAction(::TextEditContext::TextEditAction action);
+
+    MCAPI void feedCaretUpdate(::TextEditContext::CaretUpdate caretMovement);
+
     MCAPI void feedText(::std::string_view utf8Text);
+
+    MCFOLD ::std::string const getText() const;
     // NOLINTEND
 };

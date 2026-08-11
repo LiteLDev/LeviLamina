@@ -51,7 +51,7 @@ public:
 
     virtual void writeAdditionalData(::std::string_view const value) = 0;
 
-    virtual bool pushMember(::std::string_view const memberName) = 0;
+    virtual bool pushMember(::std::string_view const value) = 0;
 
     virtual void popMember() = 0;
 

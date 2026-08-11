@@ -121,7 +121,7 @@ public:
 
     virtual ::ui::ViewRequest _onContainerSlotHovered(::std::string const& collectionName, int index) /*override*/;
 
-    virtual bool _isInCreativeContainer(::std::string const&) const /*override*/;
+    virtual bool _isInCreativeContainer(::std::string const& containerName) const /*override*/;
 
     virtual void _sendFlyingItem(
         ::ItemStackBase const& item,
@@ -143,6 +143,20 @@ public:
         ::ActorUniqueID                                uniqueId,
         ::HashedString const&                          recipeTag
     );
+
+    MCAPI int _findNextLeftSideTab(int dir) const;
+
+    MCAPI void _handleClearGrid();
+
+    MCAPI bool _isRecipeIngredientSelected(::std::string const& collectionName, int collectionIndex) const;
+
+    MCAPI void _refreshFilters(int tabIndex, bool forceRefresh);
+
+    MCAPI void _savePlayerOptions();
+
+    MCAPI void _selectRecipe(::std::string const& collectionName, int collectionIndex);
+
+    MCAPI void _setLeftSideTab(int tabIndex);
     // NOLINTEND
 
 public:

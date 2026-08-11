@@ -6,9 +6,11 @@
 // clang-format off
 class Actor;
 class ActorInteraction;
+class AgeableDefinition;
 class CompoundTag;
 class DataLoadHelper;
 class InteractionResult;
+class ItemStack;
 class Player;
 // clang-format on
 
@@ -23,6 +25,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::InteractionResult _growthToggle(
+        ::Actor&                   actor,
+        ::Player&                  player,
+        ::ActorInteraction&        interaction,
+        ::AgeableDefinition const& definition,
+        ::ItemStack const&         item,
+        bool const                 growthPaused
+    );
+
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI ::InteractionResult getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);

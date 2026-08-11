@@ -25,6 +25,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _clearOfObstacles(::Mob const& mob, float x, float z, int distance) const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);

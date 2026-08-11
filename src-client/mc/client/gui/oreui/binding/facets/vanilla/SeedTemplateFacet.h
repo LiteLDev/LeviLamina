@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class DateManager;
+class WorldSeedModel;
 namespace OreUI { class IResourceAllowList; }
 namespace Social { class IUserManager; }
 // clang-format on
@@ -41,6 +42,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>             userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
     );
+
+    MCAPI bool failedFetch() const;
+
+    MCFOLD ::std::vector<::WorldSeedModel>& getWorldSeedModels();
+
+    MCAPI void refresh();
     // NOLINTEND
 
 public:

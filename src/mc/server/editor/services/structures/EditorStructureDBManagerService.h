@@ -12,6 +12,8 @@
 // clang-format off
 class HashedString;
 class StructureTemplate;
+namespace Core { class Path; }
+namespace Editor { class EditorStructureSourceDataItem; }
 namespace Editor { class EditorStructureTemplate; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct EditorStructureDBMetadata; }
@@ -62,47 +64,74 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     virtual ::std::optional<::std::string> createNewEditorProjectStructure(
-        ::Editor::EditorStructureTemplate const&,
-        ::std::string const&,
-        ::std::optional<::std::string> const&,
-        ::std::optional<::std::string> const&
+        ::Editor::EditorStructureTemplate const& templateData,
+        ::std::string const&                     id,
+        ::std::optional<::std::string> const&    fullName,
+        ::std::optional<::std::string> const&    displayName
     ) /*override*/;
 
-    virtual bool
-    replaceMCStructureFromTemplate(::mce::UUID const&, ::Editor::EditorStructureTemplate const&, bool) /*override*/;
+    virtual bool replaceMCStructureFromTemplate(
+        ::mce::UUID const&                       guid,
+        ::Editor::EditorStructureTemplate const& structureTemplate,
+        bool                                     isHost
+    ) /*override*/;
 
-    virtual ::std::optional<::Editor::EditorStructureTemplate> load(::mce::UUID const&) const /*override*/;
+    virtual ::std::optional<::Editor::EditorStructureTemplate> load(::mce::UUID const& guid) const /*override*/;
 
     virtual ::std::vector<::HashedString> const getEditorStructureGuids() const /*override*/;
 
     virtual ::std::vector<::Editor::EditorStructureDBMetadata> const
-    queryEditorStructureDBMetadata(::Editor::EditorStructureMetadataQueryParams const&) const /*override*/;
+    queryEditorStructureDBMetadata(::Editor::EditorStructureMetadataQueryParams const& params) const /*override*/;
 
     virtual ::Editor::EditorStructureMetadataDeleteEditResult const
-    deleteEditorStructureDBMetadataByGuid(::mce::UUID const&, bool) /*override*/;
+    deleteEditorStructureDBMetadataByGuid(::mce::UUID const& guid, bool isHost) /*override*/;
 
     virtual ::Editor::EditorStructureMetadataDeleteEditResult const
-    editEditorStructureDBMetadata(::Editor::EditorStructureMetadataEditParams const&, bool) /*override*/;
+    editEditorStructureDBMetadata(::Editor::EditorStructureMetadataEditParams const& params, bool isHost) /*override*/;
 
     virtual ::std::optional<::Editor::EditorStructureDBMetadata> const
-    getEditorStructureMetadataByGuid(::mce::UUID const&) const /*override*/;
+    getEditorStructureMetadataByGuid(::mce::UUID const& guid) const /*override*/;
 
     virtual void processLevelStructures() /*override*/;
 
-    virtual bool hasStructureData(::mce::UUID const&) const /*override*/;
+    virtual bool hasStructureData(::mce::UUID const& id) const /*override*/;
 
     virtual ::Scripting::Result_deprecated<::std::variant<
         ::StructureTemplate const*,
         ::Editor::EditorStructureTemplate const*,
         ::std::shared_ptr<::StructureTemplate const>,
         ::std::shared_ptr<::Editor::EditorStructureTemplate const>>>
-    getStructureData(::mce::UUID const&) const /*override*/;
+    getStructureData(::mce::UUID const& id) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EditorStructureDBManagerService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI ::std::optional<::mce::UUID> _addToEditorStructureDB(
+        ::Editor::EditorStructureDBMetadata&     metaData,
+        ::Editor::EditorStructureSourceDataItem& mcStructureData
+    );
+
+    MCNAPI ::std::pair<::std::optional<::mce::UUID>, ::std::optional<::std::string>> _addToEditorStructureDB(
+        ::Editor::EditorStructureSourceDataItem const& mcStructureData,
+        ::std::optional<::std::string> const&          id,
+        ::std::optional<::std::string> const&          displayName
+    );
+
+    MCNAPI void _addToMetadataEntries(
+        ::mce::UUID const&                             guid,
+        ::Editor::EditorStructureSourceDataItem const& mcStructureData,
+        ::Editor::EditorStructureDBMetadata&           metaData
+    );
+
+    MCNAPI ::std::string _getNamespaceFromStructurePath(::Core::Path const& path) const;
+
+    MCNAPI ::std::optional<::Editor::EditorStructureSourceDataItem> const
+    _parseJsonToMetadata(::std::string& jsonString, ::Editor::EditorStructureDBMetadata& metaData);
+
+    MCNAPI bool _writeMetaData(::Core::Path const& path, ::Editor::EditorStructureDBMetadata& metaData) const;
     // NOLINTEND
 
 public:

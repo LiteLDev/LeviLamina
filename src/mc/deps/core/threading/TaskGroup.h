@@ -16,6 +16,7 @@
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/brstd/promise.h"
 #include "mc/platform/threading/Mutex.h"
+#include "mc/platform/threading/UniqueLock.h"
 #include "mc/resources/TaskGroupState.h"
 #include "mc/server/commands/edu/make_code_fileio/MakeCodeFileResult.h"
 #include "mc/world/level/FileArchiver.h"
@@ -87,25 +88,27 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Bedrock::Threading::Async<void> queue_DEPRECATED(
-        ::TaskStartInfo const&,
-        ::brstd::move_only_function<::TaskResult()>&&,
-        ::std::function<void()>&&
+        ::TaskStartInfo const&                        startInfo,
+        ::brstd::move_only_function<::TaskResult()>&& task,
+        ::std::function<void()>&&                     callback
     ) /*override*/;
 
-    virtual ::Bedrock::Threading::Async<void>
-    queueSync_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> queueSync_DEPRECATED(
+        ::TaskStartInfo const&                        startInfo,
+        ::brstd::move_only_function<::TaskResult()>&& task
+    ) /*override*/;
 
     virtual ~TaskGroup() /*override*/;
 
-    virtual void taskRegister(::std::shared_ptr<::BackgroundTaskBase>) /*override*/;
+    virtual void taskRegister(::std::shared_ptr<::BackgroundTaskBase> task) /*override*/;
 
-    virtual void requeueTask(::std::shared_ptr<::BackgroundTaskBase>, bool) /*override*/;
+    virtual void requeueTask(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate) /*override*/;
 
     virtual ::TaskGroupState getState() const /*override*/;
 
     virtual void processCoroutines() /*override*/;
 
-    virtual void taskComplete(::gsl::not_null<::BackgroundTaskBase*>) /*override*/;
+    virtual void taskComplete(::gsl::not_null<::BackgroundTaskBase*> task) /*override*/;
 
     virtual bool _workerPoolIsAsync() const;
     // NOLINTEND
@@ -116,6 +119,11 @@ public:
     MCAPI TaskGroup(::WorkerPool& workers, ::Scheduler& context, ::std::string name);
 
     MCAPI void _doWorkUntil(::Bedrock::Threading::SharedAsync<void> task, ::brstd::promise<void>* workStarted);
+
+    MCAPI void _forAllTasks(
+        ::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex>&        lock,
+        ::std::function<void(::std::shared_ptr<::BackgroundTaskBase> const&)> callback
+    );
 
     MCAPI void _queueInternal(::std::shared_ptr<::BackgroundTaskBase> bgtask);
 

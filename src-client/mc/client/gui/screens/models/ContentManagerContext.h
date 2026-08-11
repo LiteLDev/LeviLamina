@@ -27,8 +27,9 @@ public:
     // NOLINTBEGIN
     virtual ~ContentManagerContext() /*override*/ = default;
 
-    virtual ::ContentView&
-        getContentView(::brstd::move_only_function<bool(::std::shared_ptr<::ContentItem const> const&)>) /*override*/;
+    virtual ::ContentView& getContentView(
+        ::brstd::move_only_function<bool(::std::shared_ptr<::ContentItem const> const&)> predicate
+    ) /*override*/;
 
     virtual ::std::vector<::std::unique_ptr<::ContentView>> const& getContentViews() const /*override*/;
 

@@ -69,6 +69,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static int _parseTime(char const* str, uint64 const len, uint* hours, uint* minutes, uint* seconds);
+
+    MCNAPI static int
+    _parseTimeZone(char const* str, uint64 const len, ::DateManager::TimeZoneType* type, int* hours, int* minutes);
+
     MCNAPI static ::std::string getCurrentTimestampFileName();
 
     MCNAPI static int64 getRealTime();

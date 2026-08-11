@@ -11,10 +11,13 @@
 #include "mc/deps/core/minecraft/threading/EnableQueueForMainThread.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/FileArchiver.h"
+#include "mc/world/level/FileArchiverOutcome.h"
 
 // auto generated forward declare list
 // clang-format off
 class FileArchiver;
+class FilePickerSettings;
 class IContentKeyProvider;
 class IContentManager;
 class ILevelListCache;
@@ -73,48 +76,77 @@ public:
     // NOLINTBEGIN
     virtual ::std::
         variant<::World::IWorldStorageHandler::ReadWorldError, ::World::IWorldStorageHandler::CachedWorldData>
-        readWorld(::World::WorldID const&) const /*override*/;
+        readWorld(::World::WorldID const& id) const /*override*/;
 
-    virtual ::std::optional<::World::IWorldStorageHandler::WriteWorldError>
-    updateOrCreateWorld(::LevelData&, ::LevelSummary&, ::std::shared_ptr<::LevelSettings>) const /*override*/;
+    virtual ::std::optional<::World::IWorldStorageHandler::WriteWorldError> updateOrCreateWorld(
+        ::LevelData&                       levelData,
+        ::LevelSummary&                    levelSummary,
+        ::std::shared_ptr<::LevelSettings> levelSettings
+    ) const /*override*/;
 
-    virtual void deleteWorld(::World::WorldID const&) /*override*/;
+    virtual void deleteWorld(::World::WorldID const& id) /*override*/;
 
-    virtual void reloadWorld(::World::WorldID const&) /*override*/;
+    virtual void reloadWorld(::World::WorldID const& id) /*override*/;
 
     virtual ::Bedrock::Threading::Async<void> clearPlayerData(
-        ::World::WorldID const&,
-        ::World::ClearPlayerDataType,
-        ::std::optional<::World::IWorldStorageHandler::StartClearPlayerDataError>&
+        ::World::WorldID const&                                                    worldId,
+        ::World::ClearPlayerDataType                                               type,
+        ::std::optional<::World::IWorldStorageHandler::StartClearPlayerDataError>& error
     ) /*override*/;
 
     virtual void duplicateWorld(
-        ::World::WorldID const&,
-        ::std::function<void(::World::WorldID const&, ::World::IWorldStorageHandler::DuplicateWorldResult)>
+        ::World::WorldID const&                                                                             worldId,
+        ::std::function<void(::World::WorldID const&, ::World::IWorldStorageHandler::DuplicateWorldResult)> onComplete
     ) /*override*/;
 
     virtual void exportWorld(
-        ::World::WorldID const&,
-        ::World::ExportWorldFlags,
-        ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)>
+        ::World::WorldID const&                                                 worldId,
+        ::World::ExportWorldFlags                                               flags,
+        ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
     ) /*override*/;
 
     virtual void exportWorldAsTemplate(
-        ::World::WorldID const&,
-        ::World::ExportWorldFlags,
-        ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)>
+        ::World::WorldID const&                                                 worldId,
+        ::World::ExportWorldFlags                                               flags,
+        ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
     ) /*override*/;
 
     virtual ::World::IWorldStorageHandler::ExportWorldStatus exportWorldStatus() const /*override*/;
 
     virtual void updateWorldIcon(
-        ::World::WorldID const&,
-        ::Core::PathBuffer<::std::string> const&,
-        ::std::string const&,
-        ::std::function<void(::World::WorldID const&)>
+        ::World::WorldID const&                        worldId,
+        ::Core::PathBuffer<::std::string> const&       screenshotPath,
+        ::std::string const&                           id,
+        ::std::function<void(::World::WorldID const&)> onComplete
     ) /*override*/;
 
-    virtual void resetWorldIcon(::World::WorldID const&, ::std::function<void(::World::WorldID const&)>) /*override*/;
+    virtual void resetWorldIcon(
+        ::World::WorldID const&                        worldId,
+        ::std::function<void(::World::WorldID const&)> onComplete
+    ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _exportWorld(
+        ::World::WorldID const&                                                 worldId,
+        ::FileArchiver::ExportType const                                        exportType,
+        ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
+    );
+
+    MCAPI void _onExportComplete(
+        ::FileArchiverOutcome                                                   outcome,
+        ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete,
+        ::std::shared_ptr<::FilePickerSettings>                                 settings
+    );
+
+    MCAPI void _setupExportWorld(
+        ::World::WorldID const&                                                 worldId,
+        ::FileArchiver::ExportType const                                        exportType,
+        ::World::ExportWorldFlags                                               flags,
+        ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
+    );
     // NOLINTEND
 
 public:

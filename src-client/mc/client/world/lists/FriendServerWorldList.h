@@ -53,6 +53,8 @@ public:
     MCAPI ::Bedrock::PubSub::Subscription subscribeToBuildGameList();
 
     MCFOLD void userControlledUpdateGameList();
+
+    MCAPI ~FriendServerWorldList();
     // NOLINTEND
 
 public:

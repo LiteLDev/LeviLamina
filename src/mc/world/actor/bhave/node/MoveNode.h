@@ -30,6 +30,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI uchar convertDirectionStringToKeyPress(::std::string directionString);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::BehaviorStatus $tick(::Actor& owner);

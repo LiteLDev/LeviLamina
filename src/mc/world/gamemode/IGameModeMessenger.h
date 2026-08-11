@@ -22,21 +22,24 @@ public:
     virtual ~IGameModeMessenger() = default;
 
     virtual ::gsl::final_action<::std::function<void()>> createBlockBreakCaptureScope(
-        ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)>
+        ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)> callback
     ) = 0;
 
-    virtual void sendDenyDestroyBlock(::BlockPos const&, int) = 0;
+    virtual void sendDenyDestroyBlock(::BlockPos const& pos, int face) = 0;
 
-    virtual void sendStartDestroyBlock(::BlockPos const&, int) = 0;
+    virtual void sendStartDestroyBlock(::BlockPos const& pos, int face) = 0;
 
-    virtual bool
-    sendTryDestroyBlock(::BlockPos const&, int, ::std::function<bool(::std::optional<::ItemStack>&)> const&) = 0;
+    virtual bool sendTryDestroyBlock(
+        ::BlockPos const&                                           pos,
+        int                                                         face,
+        ::std::function<bool(::std::optional<::ItemStack>&)> const& tryDestroy
+    ) = 0;
 
     virtual void sendDestroyBlock(::Block const& oldBlock, ::BlockPos const& pos, int variantData) = 0;
 
-    virtual void sendChangeContinueDestroyBlock(::BlockPos const&, int) = 0;
+    virtual void sendChangeContinueDestroyBlock(::BlockPos const& pos, int face) = 0;
 
-    virtual void sendContinueDestroyAboutToDestroyBlock(::BlockPos const&, int) = 0;
+    virtual void sendContinueDestroyAboutToDestroyBlock(::BlockPos const& pos, int face) = 0;
 
     virtual void sendStopDestroyBlock(::BlockPos const&, float) = 0;
 

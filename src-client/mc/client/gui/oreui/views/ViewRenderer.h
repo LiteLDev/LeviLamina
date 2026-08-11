@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ScreenContext;
 namespace OreUI { class FramesToPaintQueue; }
 namespace OreUI { class LayoutScheduler; }
 namespace cohtml { class ViewRenderer; }
@@ -40,6 +41,14 @@ public:
     ViewRenderer& operator=(ViewRenderer const&);
     ViewRenderer(ViewRenderer const&);
     ViewRenderer();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _createGamefaceTexture(::ScreenContext& screenContext);
+
+    MCAPI ~ViewRenderer();
+    // NOLINTEND
 };
 
 } // namespace OreUI

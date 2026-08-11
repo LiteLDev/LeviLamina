@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::SimpleStringBuilder& AppendFormat(char const*, ...);
+    MCNAPI ::webrtc::SimpleStringBuilder& AppendFormat(char const* fmt, ...);
 
     MCNAPI explicit SimpleStringBuilder(::webrtc::ArrayView<char, 18446744073709546905> buffer);
 

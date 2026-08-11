@@ -37,15 +37,21 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void createOffer(
-        ::webrtc::PeerConnectionInterface::RTCConfiguration const&,
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& config,
         ::brstd::move_only_function<void(
             ::Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError>
-        )>&&
+        )>&&                                                       onComplete
     ) /*override*/;
 
-    virtual void _onSetLocalDescription(::webrtc::RTCError) /*override*/;
+    virtual void _onSetLocalDescription(::webrtc::RTCError result) /*override*/;
 
-    virtual void _onLocalIceCandidate(::webrtc::IceCandidate const*) /*override*/;
+    virtual void _onLocalIceCandidate(::webrtc::IceCandidate const* iceCandidate) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _onIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState newState);
     // NOLINTEND
 
 public:

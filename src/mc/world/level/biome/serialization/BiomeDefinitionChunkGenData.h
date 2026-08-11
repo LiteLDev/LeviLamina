@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/shared_types/VillageType.h"
+#include "mc/platform/Result.h"
 #include "mc/world/level/biome/serialization/BiomeClimateData.h"
 #include "mc/world/level/biome/serialization/BiomeConsolidatedFeaturesData.h"
 #include "mc/world/level/biome/serialization/BiomeLegacyWorldGenRulesData.h"
@@ -17,6 +18,7 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class ReadOnlyBinaryStream;
 // clang-format on
 
 struct BiomeDefinitionChunkGenData {
@@ -49,9 +51,17 @@ public:
 
     MCAPI ::BiomeDefinitionChunkGenData& operator=(::BiomeDefinitionChunkGenData&&);
 
+    MCAPI bool operator==(::BiomeDefinitionChunkGenData const& other) const;
+
     MCAPI void write(::BinaryStream& stream) const;
 
     MCAPI ~BiomeDefinitionChunkGenData();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Bedrock::Result<::BiomeDefinitionChunkGenData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:

@@ -51,6 +51,10 @@ public:
         ::std::string const&                     itemId,
         int                                      feedbackTextLimit
     );
+
+    MCAPI void _displayResponseStatusDialog(bool receivedSuccessResponse);
+
+    MCAPI void _setResponseMessage();
     // NOLINTEND
 
 public:

@@ -45,12 +45,12 @@ public:
     virtual ~WorldTemplateHandler() /*override*/ = default;
 
     virtual void loadTemplate(
-        ::std::string const&,
-        ::std::function<void(::std::variant<::World::WorldID, ::World::IWorldTemplateHandler::Result>)>
+        ::std::string const&                                                                            templateId,
+        ::std::function<void(::std::variant<::World::WorldID, ::World::IWorldTemplateHandler::Result>)> onComplete
     ) /*override*/;
 
     virtual ::std::optional<::World::IWorldTemplateHandler::WriteTemplateError>
-    saveTemplate(::LevelSummary const&) const /*override*/;
+    saveTemplate(::LevelSummary const& levelSummary) const /*override*/;
 
     virtual bool isTemplateExportEnabled() const /*override*/;
 

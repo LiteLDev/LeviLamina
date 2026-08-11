@@ -9,6 +9,7 @@
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/core/utility/CrashDumpLogStringID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -239,9 +240,9 @@ public:
 
     virtual void destroyRegion() /*override*/;
 
-    virtual void tickWorld(::Tick const&) /*override*/;
+    virtual void tickWorld(::Tick const& currentTick) /*override*/;
 
-    virtual void frameUpdate(::FrameUpdateContextBase&) /*override*/;
+    virtual void frameUpdate(::FrameUpdateContextBase& frameUpdateContextBase) /*override*/;
 
     virtual ::std::vector<::ChunkPos> const& getTickingOffsets() const /*override*/;
 
@@ -259,22 +260,28 @@ public:
 
     virtual void openPortfolio() /*override*/;
 
-    virtual void openBook(int, bool, int, ::BlockActor*) /*override*/;
+    virtual void openBook(int bookSlot, bool editable, int page, ::BlockActor* lectern) /*override*/;
 
-    virtual void openChalkboard(::ChalkboardBlockActor&, bool) /*override*/;
+    virtual void openChalkboard(::ChalkboardBlockActor& chalkboard, bool showLockToggle) /*override*/;
 
-    virtual void openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData>) /*override*/;
+    virtual void openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> data) /*override*/;
 
-    virtual void openTrading(::ActorUniqueID const&, bool) /*override*/;
+    virtual void openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen) /*override*/;
 
     virtual void openInventory() /*override*/;
 
-    virtual void setContainerData(::IContainerManager&, int, int) /*override*/;
+    virtual void setContainerData(::IContainerManager& menu, int id, int value) /*override*/;
 
-    virtual void
-    slotChanged(::IContainerManager&, ::Container&, int, ::ItemStack const&, ::ItemStack const&, bool) /*override*/;
+    virtual void slotChanged(
+        ::IContainerManager& menu,
+        ::Container&         container,
+        int                  slot,
+        ::ItemStack const&   oldItem,
+        ::ItemStack const&   newItem,
+        bool                 isResultSlot
+    ) /*override*/;
 
-    virtual void refreshContainer(::IContainerManager&) /*override*/;
+    virtual void refreshContainer(::IContainerManager& menu) /*override*/;
 
     virtual bool isLoading() const /*override*/;
 
@@ -301,7 +308,7 @@ public:
         ::std::string const&                 platformId
     ) /*override*/;
 
-    virtual ::BedSleepingResult startSleepInBed(::BlockPos const& bedBlockPos) /*override*/;
+    virtual ::BedSleepingResult startSleepInBed(::BlockPos const& pos) /*override*/;
 
     virtual void stopSleepInBed(bool forcefulWakeUp, bool updateLevelList) /*override*/;
 
@@ -309,13 +316,13 @@ public:
 
     virtual void handleInsidePortal(::BlockPos const& portalPos) /*override*/;
 
-    virtual bool swing(::ActorSwingSource) /*override*/;
+    virtual bool swing(::ActorSwingSource swingSource) /*override*/;
 
-    virtual void setSneaking(bool value) /*override*/;
+    virtual void setSneaking(bool _isSneaking) /*override*/;
 
-    virtual void setSprinting(bool shouldSprint) /*override*/;
+    virtual void setSprinting(bool _isSprinting) /*override*/;
 
-    virtual void playEmote(::std::string const&, bool const) /*override*/;
+    virtual void playEmote(::std::string const& pieceId, bool const playChatMessage) /*override*/;
 
     virtual void resetRot() /*override*/;
 
@@ -331,7 +338,7 @@ public:
 
     virtual void changeDimension(::DimensionType toId) /*override*/;
 
-    virtual void changeDimension(::ChangeDimensionPacket const&) /*override*/;
+    virtual void changeDimension(::ChangeDimensionPacket const& packet) /*override*/;
 
     virtual void setPlayerGameType(::GameType gameType) /*override*/;
 
@@ -363,19 +370,20 @@ public:
 
     virtual void addLevels(int levels) /*override*/;
 
-    virtual bool isActorRelevant(::Actor const&) /*override*/;
+    virtual bool isActorRelevant(::Actor const& actor) /*override*/;
 
     virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
-    virtual void checkMovementStats(::Vec3 const&) /*override*/;
+    virtual void checkMovementStats(::Vec3 const& d) /*override*/;
 
     virtual ::HashedString getCurrentStructureFeature() const /*override*/;
 
     virtual bool isTeacher() const /*override*/;
 
-    virtual void sendInventoryTransaction(::InventoryTransaction const&) const /*override*/;
+    virtual void sendInventoryTransaction(::InventoryTransaction const& transaction) const /*override*/;
 
-    virtual void sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction>) const /*override*/;
+    virtual void sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction> transaction) const
+        /*override*/;
 
     virtual void sendNetworkPacket(::Packet& packet) const /*override*/;
 
@@ -390,11 +398,11 @@ public:
 
     virtual ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> getEditorPlayer() const /*override*/;
 
-    virtual void requestMissingSubChunk(::SubChunkPos const&) /*override*/;
+    virtual void requestMissingSubChunk(::SubChunkPos const& scp) /*override*/;
 
     virtual uchar getMaxChunkBuildRadius() const /*override*/;
 
-    virtual void setBehaviorCommandStatus(::std::string const&, ::BehaviorStatus) /*override*/;
+    virtual void setBehaviorCommandStatus(::std::string const& name, ::BehaviorStatus status) /*override*/;
 
     virtual ::std::unique_ptr<::ISparseContainerSetListener> createSparseContainerListener() /*override*/;
 
@@ -425,6 +433,17 @@ public:
     MCAPI void _applyTurnDelta(::Vec2 const& turnOffset);
 
     MCAPI void _forceCameraCut();
+
+    MCAPI ::CrashDumpLogStringID _getCrashDumpLogCategory();
+
+    MCAPI void _logCDEvent(
+        ::CrashDumpLogStringID option1,
+        ::CrashDumpLogStringID option2,
+        ::CrashDumpLogStringID option3,
+        ::CrashDumpLogStringID option4
+    );
+
+    MCAPI void _prepareMainChunkSource(::ChunkPos const& center);
 
     MCAPI float checkSecondsSinceLevelChanged();
 

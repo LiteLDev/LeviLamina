@@ -27,7 +27,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool _createItem(::std::vector<::ItemStack>&, ::Random&, ::LootTableContext&) const /*override*/;
+    virtual bool _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const
+        /*override*/;
 
     virtual ~LootItem() /*override*/ = default;
 

@@ -68,11 +68,11 @@ public:
     // NOLINTBEGIN
     virtual ~FilterTest() = default;
 
-    virtual bool setup(::FilterTest::Definition const&, ::FilterInputs const&);
+    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 
-    virtual bool evaluate(::FilterContext const&) const = 0;
+    virtual bool evaluate(::FilterContext const& context) const = 0;
 
-    virtual void finalizeParsedValue(::IWorldRegistriesProvider&);
+    virtual void finalizeParsedValue(::IWorldRegistriesProvider& registries);
 
     virtual ::std::string_view getName() const = 0;
 

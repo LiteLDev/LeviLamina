@@ -6,6 +6,7 @@
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/server/commands/PlayerPermissionLevel.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,6 +15,7 @@ class IAppPlatform;
 class LocalPlayer;
 class PlayerAbilitiesManager;
 class TrialManager;
+struct ActorUniqueID;
 struct LocalPlayerChangedConnector;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct SocialPlayer; }
@@ -24,7 +26,9 @@ namespace Social { class IUserManager; }
 namespace Social { class MultiplayerServiceManager; }
 namespace Social { class ProfileSystem; }
 namespace Social { class User; }
+namespace Social { struct PlayerProfile; }
 namespace World { class WorldPlayerListTracker; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace OreUI {
@@ -100,6 +104,33 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::TrialManager>                      trialManager,
         ::std::function<::ClientLevel*()>                                  getCurrentLevel
     );
+
+    MCAPI void _clearResources();
+
+    MCAPI ::mce::UUID _getLocalPlayerUUID() const;
+
+    MCAPI void _initResources();
+
+    MCAPI void _refreshPlayers();
+
+    MCAPI void _updatePlayerInfo(::Social::PlayerProfile const& playerProfile);
+
+    MCAPI void _updatePlayerPermissionLevel(
+        ::ActorUniqueID const&                   playerId,
+        ::std::optional<::PlayerPermissionLevel> playerPermissionLevel
+    );
+
+    MCAPI bool getEnableInviteToPlayButton() const;
+
+    MCFOLD ::std::string const& getLocalPlayerID() const;
+
+    MCAPI ::std::vector<::OreUI::WorldPlayerInfoBindings> const& getPlayerList() const;
+
+    MCAPI ::std::vector<::OreUI::SocialPlayer> const& getPlayersInMyWorld() const;
+
+    MCAPI bool isInRealm() const;
+
+    MCAPI bool isLocalPlayerHosting() const;
     // NOLINTEND
 
 public:

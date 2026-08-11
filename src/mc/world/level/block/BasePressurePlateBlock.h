@@ -73,6 +73,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void checkPressed(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Actor*          sourceEntity,
+        int               oldSignal,
+        int               newSignal
+    ) const;
+
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 

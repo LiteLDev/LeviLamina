@@ -48,6 +48,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AddExternalServerScreenController(::std::shared_ptr<::MainMenuScreenModel> model, int externalServerId);
+
+    MCAPI void _saveFormDataThen(::std::function<void()> callback);
     // NOLINTEND
 
 public:

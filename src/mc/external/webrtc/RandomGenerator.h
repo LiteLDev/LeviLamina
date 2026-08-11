@@ -12,7 +12,7 @@ public:
 
     virtual bool Init(void const* seed, uint64 len);
 
-    virtual bool Generate(void*, uint64) = 0;
+    virtual bool Generate(void* buf, uint64 len) = 0;
     // NOLINTEND
 
 public:

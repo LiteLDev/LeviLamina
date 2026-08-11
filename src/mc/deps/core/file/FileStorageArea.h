@@ -183,7 +183,11 @@ public:
 
     MCAPI void _addReadOperation(bool succeeded, uint64 numBytesRead);
 
+    MCAPI void _addWriteOperation(bool succeeded, uint64 numBytesWritten);
+
     MCAPI void _beginTransaction(::Core::FileSystemImpl* pTransaction, bool);
+
+    MCAPI ::Core::Result _endTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
 
 #ifdef LL_PLAT_C
     MCAPI void addObserver(::Core::FileStorageAreaObserver& observer);

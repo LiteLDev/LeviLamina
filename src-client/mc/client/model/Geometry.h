@@ -14,7 +14,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class JsonValueHierarchy;
 class ModelPartLocator;
+struct TextureUVCoordinateSet;
 namespace Json { class Value; }
 // clang-format on
 
@@ -47,6 +49,17 @@ public:
         ::ll::TypedStorage<4, 4, float>                                 mInflate;
         ::ll::TypedStorage<1, 1, bool>                                  mUsesFaceUVs;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void _boxFaceUVToJson(
+            ::Json::Value&                      uvNode,
+            uchar                               facing,
+            ::std::string const&                faceName,
+            ::std::vector<::std::string> const& materialInstanceList
+        ) const;
+        // NOLINTEND
     };
 
     struct NodeVertex {
@@ -56,6 +69,12 @@ public:
         ::ll::TypedStorage<4, 4, uint> mPositionIndex;
         ::ll::TypedStorage<4, 4, uint> mNormalIndex;
         ::ll::TypedStorage<4, 4, uint> mUVIndex;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void toJson(::Json::Value& root) const;
         // NOLINTEND
     };
 
@@ -145,6 +164,14 @@ public:
         // NOLINTBEGIN
         MCAPI Node(::Geometry::Node const&);
 
+        MCAPI void addLocator(
+            ::std::string const& name,
+            ::std::string const& boneName,
+            ::Vec3 const&        localOffset,
+            bool                 ignoreInheritedScale,
+            bool                 errorIfIdenticalLocatorAlreadyExists
+        );
+
         MCAPI ~Node();
         // NOLINTEND
 
@@ -185,6 +212,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void
+    _parseBones(::JsonValueHierarchy const& root, bool applyBindPoseRotation, ::TextureUVCoordinateSet const& uvOffset);
+
+    MCAPI void _parseBoxFaceUV(
+        ::Geometry::Box&                box,
+        ::Json::Value const&            uvNode,
+        uchar                           facing,
+        ::std::string const&            faceName,
+        ::Vec2 const&                   defaultUVSize,
+        ::TextureUVCoordinateSet const& uvOffset
+    );
+
+    MCAPI ::Geometry::Node const* getNode(::std::string_view name) const;
+
     MCAPI void toJson(::Json::Value& root) const;
     // NOLINTEND
 };

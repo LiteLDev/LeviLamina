@@ -11,6 +11,7 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -42,6 +43,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptItemComponent(::ScriptModuleMinecraft::ScriptItemComponent const&);
+
+    MCAPI ScriptItemComponent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope,
+        ::std::string                                                                  id
+    );
     // NOLINTEND
 
 public:

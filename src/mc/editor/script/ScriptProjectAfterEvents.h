@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 #include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
+#include "mc/world/SimulationType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,7 +35,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void onFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker&) /*override*/;
+        virtual void onFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
         // NOLINTEND
 
     public:
@@ -63,6 +64,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _handleSimulationTypeChanged(::SimulationType, ::SimulationType to);
+
     MCNAPI ::Editor::ScriptModule::ScriptProjectAfterEvents&
     operator=(::Editor::ScriptModule::ScriptProjectAfterEvents&& rhs);
 

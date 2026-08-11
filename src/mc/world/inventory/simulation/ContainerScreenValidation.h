@@ -14,12 +14,15 @@
 class Container;
 class ContainerScreenValidatorBase;
 class ContainerValidationBase;
+class ItemStack;
 class SimpleSparseContainer;
+struct ContainerIterationRange;
 struct ContainerValidationCraftInputs;
 struct ContainerValidationCraftResult;
 struct ContainerValidationLayer;
 struct ContainerValidationResult;
 struct ContainerValidationSlotData;
+struct ContainerValidationSlotInfo;
 // clang-format on
 
 class ContainerScreenValidation {
@@ -70,13 +73,36 @@ public:
 
     MCAPI void _commit();
 
+    MCAPI ::ContainerValidationSlotInfo
+    _createContainerValidatorSlotInfo(::ContainerValidationSlotData const& slotData);
+
     MCAPI bool _dropItems();
+
+    MCAPI bool _propagateContainers();
+
+    MCAPI bool
+    _tryMoveItem(::ContainerValidationSlotInfo& srcValidatorPair, ::ContainerValidationSlotInfo& dstValidatorPair);
+
+    MCAPI ::ItemStack _tryRemoveItem(::ContainerValidationSlotInfo& slotInfo, int amount);
+
+    MCAPI int _trySetItem(
+        ::ContainerValidationSlotInfo& slotInfo,
+        ::ItemStack const&             stack,
+        bool                           isWholeStackTransfer,
+        bool                           allowPartialSuccess,
+        bool                           isInternalTransfer
+    );
 
     MCAPI ::ContainerValidationResult _tryTransferSpecial(
         ::ContainerValidationSlotData const& srcSlotData,
         int                                  transferAmount,
         ::ContainerScreenRequestActionType   actionType
     );
+
+#ifdef LL_PLAT_C
+    MCAPI ::std::optional<::ContainerIterationRange>
+    getContainerIterator(::ContainerValidationSlotData const& slotData);
+#endif
 
     MCAPI ::std::shared_ptr<::SimpleSparseContainer>
     getOrCreateSparseContainer(::FullContainerName const& containerEnumName);

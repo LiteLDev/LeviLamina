@@ -54,7 +54,7 @@ public:
 
     virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onRetry(::MinecraftScreenModel&) /*override*/;
+    virtual void onRetry(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -76,6 +76,8 @@ public:
         ::std::shared_ptr<::PlayScreenModel>       model,
         ::brstd::move_only_function<void()>&       reopenPasscodeEntry
     );
+
+    MCAPI void _handleErrors(::MinecraftScreenModel& minecraftScreenModel);
     // NOLINTEND
 
 public:

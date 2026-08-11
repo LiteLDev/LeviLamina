@@ -38,6 +38,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void getConstants();
+
     MCAPI void setUVTransform(::mce::RenderContext& renderContext, ::glm::mat2x3 const& transform);
     // NOLINTEND
 

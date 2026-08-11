@@ -13,7 +13,7 @@ public:
 
     virtual bool isInstantaneous() const /*override*/;
 
-    virtual bool isDurationEffectTick(int, int) const;
+    virtual bool isDurationEffectTick(int remainingDuration, int) const;
     // NOLINTEND
 
 public:

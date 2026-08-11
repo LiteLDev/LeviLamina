@@ -40,6 +40,16 @@ public:
         ::std::shared_ptr<::Realms::RealmsPlayerList>       realmsPlayerList,
         ::std::shared_ptr<::Realms::RealmsPlayerManagement> realmsManagePlayer
     );
+
+    MCAPI void blockPlayer(::std::string const& xuid, ::std::string const& realmID);
+
+    MCAPI void populateMembers();
+
+    MCAPI void removePlayer(::std::string const& xuid, ::std::string const& realmID);
+
+    MCAPI void resetManageState();
+
+    MCAPI void resetState();
     // NOLINTEND
 
 public:

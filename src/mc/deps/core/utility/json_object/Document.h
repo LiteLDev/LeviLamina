@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/container/list.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::JSONObject { class NodeBase; }
@@ -60,6 +63,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void* _acquireNode(
+        ::Bedrock::Intrusive::
+            list<::Bedrock::JSONObject::NodeBase, ::Bedrock::JSONObject::NodeBase, ::Bedrock::JSONObject::NodeBase>&
+                freeList,
+        uint64  size,
+        uint64  alignment
+    );
+
     MCNAPI ::Bedrock::JSONObject::NodeBase* _createNode(::Bedrock::JSONObject::ValueWrapper const& value);
 
     MCNAPI void _initialize();

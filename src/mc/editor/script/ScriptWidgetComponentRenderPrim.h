@@ -4,10 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
+#include "mc/scripting/PrimitiveType.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
+namespace Editor::ScriptModule { class ScriptWidgetErrorInvalidObject; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -32,6 +36,16 @@ public:
     virtual ~ScriptWidgetComponentRenderPrim() /*override*/ = default;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::Result<
+        ::Scripting::RenderHelper::PrimitiveType,
+        ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
+        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _getPrimitiveType() const;
     // NOLINTEND
 
 public:

@@ -16,6 +16,7 @@ class InteractionResult;
 class MerchantRecipeList;
 class Player;
 class UpdateTradePacket;
+struct IntRange;
 struct Tick;
 struct TradeTable;
 // clang-format on
@@ -56,6 +57,8 @@ public:
     MCAPI ::UpdateTradePacket createDataPacket(::ContainerID containerID);
 
     MCAPI void fixVillagerTierToMatchTradeList(::MerchantRecipeList* oldOffers);
+
+    MCAPI ::IntRange getCurrentCuredDiscount() const;
 
     MCAPI ::InteractionResult getInteraction(::Player& player, ::ActorInteraction& interaction);
 

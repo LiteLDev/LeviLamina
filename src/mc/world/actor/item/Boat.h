@@ -41,7 +41,7 @@ public:
 
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    virtual void destroy(::Actor* sourceActor);
+    virtual void destroy(::Actor* source);
 
     virtual void normalTick() /*override*/;
 

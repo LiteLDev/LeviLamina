@@ -4,10 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/nether_net/ContextProxy.h"
+#include "mc/deps/nether_net/ESendType.h"
+#include "mc/deps/nether_net/ESessionError.h"
 #include "mc/external/webrtc/DataChannelObserver.h"
+#include "mc/external/webrtc/scoped_refptr.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace webrtc { class CopyOnWriteBuffer; }
+namespace webrtc { class DataChannelInterface; }
 namespace webrtc { struct DataBuffer; }
 // clang-format on
 
@@ -46,11 +52,33 @@ public:
 
         virtual void OnStateChange() /*override*/;
 
-        virtual void OnMessage(::webrtc::DataBuffer const&) /*override*/;
+        virtual void OnMessage(::webrtc::DataBuffer const& buffer) /*override*/;
 
         virtual void OnBufferedAmountChange(uint64) /*override*/;
 
         virtual bool IsOkToCallOnTheNetworkThread() /*override*/;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI DataChannel(
+            ::NetherNet::ContextProxy const&                              ctx,
+            ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose,
+            ::brstd::move_only_function<void(uchar const*, uint64)>       onData
+        );
+
+        MCNAPI void _trySend();
+
+        MCNAPI void send(::webrtc::CopyOnWriteBuffer buffer);
+
+        MCNAPI void setChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface> channel);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
         // NOLINTEND
 
     public:
@@ -76,6 +104,23 @@ public:
     PacketQueue& operator=(PacketQueue const&);
     PacketQueue(PacketQueue const&);
     PacketQueue();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI PacketQueue(
+        ::NetherNet::ContextProxy const&                              ctx,
+        ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose
+    );
+
+    MCNAPI void _sendFragment(uchar header, uchar const* payload, uint64 payloadSize, ::NetherNet::ESendType type);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };
 
 } // namespace NetherNet

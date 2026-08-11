@@ -14,7 +14,9 @@
 class AABB;
 class Actor;
 class ActorRenderData;
+class ActorResourceDefinition;
 class BaseActorRenderContext;
+class BlockTessellator;
 class DataDrivenRenderer_tempComponent;
 class RenderParams;
 class Vec3;
@@ -35,32 +37,64 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DataDrivenRenderer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void getLeashOffsets(::Actor&, float, float, float, bool, ::Bedrock::small_vector_base<::Vec3>&) const
-        /*override*/;
+    virtual void getLeashOffsets(
+        ::Actor& actor,
+        float,
+        float,
+        float,
+        bool                                  legacyOffset,
+        ::Bedrock::small_vector_base<::Vec3>& output
+    ) const /*override*/;
 
-    virtual void render(::BaseActorRenderContext&, ::ActorRenderData&) /*override*/;
+    virtual void render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData) /*override*/;
 
-    virtual void renderEffects(::BaseActorRenderContext&, ::ActorRenderData&) /*override*/;
+    virtual void
+    renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData) /*override*/;
 
     virtual ::AABB getRenderBounds(::Actor const& entity) const /*override*/;
 
-    virtual void addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup>) /*override*/;
+    virtual void addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup) /*override*/;
 
-    virtual void setIsOnScreen(::Actor&, bool const, float) const /*override*/;
+    virtual void setIsOnScreen(::Actor& actor, bool const isOnScreen, float distance) const /*override*/;
 
-    virtual bool shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams&) const /*override*/;
+    virtual bool shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const /*override*/;
 
-    virtual bool shouldUpdateEffectsIfOffScreen(::RenderParams&) const /*override*/;
+    virtual bool shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const /*override*/;
 
-    virtual bool shouldHideHeldItems(::RenderParams&) const /*override*/;
+    virtual bool shouldHideHeldItems(::RenderParams& renderParams) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI DataDrivenRenderer(
+        ::std::shared_ptr<::ActorResourceDefinition> definition,
+        ::std::shared_ptr<::mce::TextureGroup>       textureGroup
+    );
+
+    MCAPI void addGuardianAdditionalRendering();
+
+    MCAPI void addHumanoidAdditionalRendering(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+
+    MCAPI void addMinecartAdditionalRendering(::BlockTessellator& commonBlockRenderer);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void getLeashOffsets(::Actor& actor, bool legacyOffset, ::Bedrock::small_vector_base<::Vec3>& output);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

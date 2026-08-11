@@ -26,6 +26,16 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BuildSettingsFacet();
+
+    MCFOLD ::OreUI::GameVersionBindings const& getCurrentGameVersion() const;
+
+    MCFOLD ::std::optional<::std::string> const& getDevelopmentVersion() const;
+
+    MCFOLD bool isAnyBeta() const;
+
+    MCFOLD bool isBetaBuild() const;
+
+    MCFOLD bool isInDeveloperMode() const;
     // NOLINTEND
 
 public:

@@ -12,7 +12,7 @@ public:
     // NOLINTBEGIN
     virtual ::Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) /*override*/;
 
-    virtual ::Bedrock::Result<void> readBigEndianBytesResult(void*, uint64);
+    virtual ::Bedrock::Result<void> readBigEndianBytesResult(void* data, uint64 bytes);
 
     virtual ::Bedrock::Result<float> readFloatResult() /*override*/;
 

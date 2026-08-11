@@ -33,6 +33,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsListActionsFacet(::std::shared_ptr<::Realms::RealmsList> realmsList);
+
+    MCAPI void clearRealmUnreadCount(::std::string const& realmId) const;
+
+    MCAPI void forceFetchRealmList() const;
     // NOLINTEND
 
 public:

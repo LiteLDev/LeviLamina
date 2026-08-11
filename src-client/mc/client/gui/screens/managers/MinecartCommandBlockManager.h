@@ -98,6 +98,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _loadFromBaseCommandBlock();
+
+    MCAPI void _saveToBaseCommandBlock(::BaseCommandBlock& baseCommandBlock);
     // NOLINTEND
 
 public:

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 #include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/deps/script_core/script_engine/scripting/Promise.h"
@@ -14,7 +15,15 @@ class IGameplayUserManagerConnector;
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptFormVisibilityError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptInvalidFormError; }
+namespace ScriptModuleMinecraftServerUI { class ScriptInvalidFormModificationError; }
+namespace ScriptModuleMinecraftServerUI { class ScriptObservableString; }
+namespace ScriptModuleMinecraftServerUI { class ScriptObservableUIRawMessage; }
 namespace ScriptModuleMinecraftServerUI { class ScriptPlayerLeftError; }
+namespace ScriptModuleMinecraftServerUI { class ScriptUIRawMessage; }
+namespace ScriptModuleMinecraftServerUI { struct ScriptTextOptions; }
+namespace Scripting { class DependencyLocator; }
+namespace Scripting { class ScriptObjectFactory; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
 // clang-format on
@@ -39,6 +48,49 @@ public:
     ScriptCustomForm& operator=(ScriptCustomForm const&);
     ScriptCustomForm(ScriptCustomForm const&);
     ScriptCustomForm();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptCustomForm>,
+        ::ScriptModuleMinecraftServerUI::ScriptInvalidFormModificationError>
+    header(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableString>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableUIRawMessage>,
+            ::ScriptModuleMinecraftServerUI::ScriptUIRawMessage>            text,
+        ::std::optional<::ScriptModuleMinecraftServerUI::ScriptTextOptions> options
+    );
+
+    MCNAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptCustomForm>,
+        ::ScriptModuleMinecraftServerUI::ScriptInvalidFormModificationError>
+    label(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableString>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableUIRawMessage>,
+            ::ScriptModuleMinecraftServerUI::ScriptUIRawMessage>            text,
+        ::std::optional<::ScriptModuleMinecraftServerUI::ScriptTextOptions> options
+    );
+
+    MCNAPI ::Scripting::Result<
+        ::Scripting::Promise<
+            ::ScriptModuleMinecraftServerUI::ScriptDataDrivenScreenClosedReason,
+            ::ScriptModuleMinecraftServerUI::ScriptPlayerLeftError,
+            ::ScriptModuleMinecraftServerUI::ScriptInvalidFormError,
+            ::Scripting::EngineError>,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::ScriptModuleMinecraftServerUI::ScriptFormVisibilityError,
+        ::Scripting::EngineError>
+    show(
+        ::Scripting::DependencyLocator&   locator,
+        ::Scripting::ScriptObjectFactory& factory,
+        ::Scripting::WeakLifetimeScope&   scope
+    );
+    // NOLINTEND
 
 public:
     // static functions

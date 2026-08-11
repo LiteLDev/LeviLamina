@@ -25,7 +25,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ::std::function<bool()> getBooleanBinding(uint) const /*override*/;
+        virtual ::std::function<bool()> getBooleanBinding(uint name) const /*override*/;
 
         virtual ::std::function<float()> getFloatBinding(uint) const /*override*/;
 
@@ -63,7 +63,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BindingFactory const& getBindingFactory(int) const /*override*/;
+    virtual ::BindingFactory const& getBindingFactory(int controllerId) const /*override*/;
     // NOLINTEND
 
 public:

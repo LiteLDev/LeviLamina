@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     virtual ~CombatRegenerationListener() /*override*/ = default;
 
-    virtual ::EventResult onEvent(::ActorNotificationEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::ActorNotificationEvent const& event) /*override*/;
     // NOLINTEND
 
 public:

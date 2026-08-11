@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Editor::Prefabs { class PrefabDBTemplate; }
+// clang-format on
+
 namespace Editor::ScriptModule {
 
 class ScriptPrefabTemplateMetadata {
@@ -25,6 +33,18 @@ public:
     ScriptPrefabTemplateMetadata& operator=(ScriptPrefabTemplateMetadata const&);
     ScriptPrefabTemplateMetadata(ScriptPrefabTemplateMetadata const&);
     ScriptPrefabTemplateMetadata();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit ScriptPrefabTemplateMetadata(::WeakRef<::Editor::Prefabs::PrefabDBTemplate const> templateRef);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

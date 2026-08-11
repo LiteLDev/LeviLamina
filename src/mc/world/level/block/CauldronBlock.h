@@ -4,7 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/deps/shared_types/legacy/LevelEvent.h"
 #include "mc/deps/shared_types/v1_26_20/block/MaterialType.h"
+#include "mc/events/MinecraftEventing.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
@@ -19,11 +21,14 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class CauldronBlockActor;
 class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
 class ItemInstance;
+class ItemStack;
 class Level;
+class Player;
 class Random;
 class Vec3;
 struct BlockAnimateTickData;
@@ -101,6 +106,34 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CauldronBlock(::std::string const& nameId, int id);
+
+    MCAPI void _explodeCauldronContents(::BlockSource& region, ::BlockPos const& pos, ushort) const;
+
+    MCAPI void _sendCauldronUsedEventToClient(
+        ::Player const&                              player,
+        short                                        itemId,
+        ::MinecraftEventing::POIBlockInteractionType interactionType
+    ) const;
+
+    MCAPI void _spawnCauldronEvent(
+        ::BlockSource&                    region,
+        ::BlockPos const&                 pos,
+        ::SharedTypes::Legacy::LevelEvent levelEvent
+    ) const;
+
+    MCAPI bool _useDyeableComponent(
+        ::ItemStack&          itemInstance,
+        ::Player&             player,
+        ::BlockPos const&     pos,
+        ::CauldronBlockActor& blockEntity,
+        ::BlockSource&        region,
+        int                   fillLevel,
+        bool                  isEmpty,
+        bool                  isWater,
+        bool                  isCleanWater
+    ) const;
+
+    MCAPI void _useInventory(::Player& player, ::ItemStack& current, ::ItemStack& replaceWith, int useCount) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 

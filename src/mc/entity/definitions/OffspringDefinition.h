@@ -95,6 +95,12 @@ public:
     OffspringDefinition();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void setMutationStrategy(::std::string const& strategy);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

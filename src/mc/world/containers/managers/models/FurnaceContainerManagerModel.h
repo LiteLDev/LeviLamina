@@ -89,6 +89,10 @@ public:
         ::BlockPos const&                    blockPos
     );
 
+    MCAPI ::FilterResult _filterByInventory(::ItemInstance const& item, bool includeCursorItem) const;
+
+    MCAPI bool _hasUnlockedRecipes(::ItemInstance const& item) const;
+
     MCAPI void _populateRecipeBook();
 
 #ifdef LL_PLAT_C

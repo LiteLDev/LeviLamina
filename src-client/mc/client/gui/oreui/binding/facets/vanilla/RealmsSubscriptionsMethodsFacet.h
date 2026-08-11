@@ -37,6 +37,10 @@ public:
     MCAPI explicit RealmsSubscriptionsMethodsFacet(
         ::std::shared_ptr<::Realms::RealmsSubscriptions> realmsSubscriptions
     );
+
+    MCAPI void initialize();
+
+    MCAPI void reset();
     // NOLINTEND
 
 public:

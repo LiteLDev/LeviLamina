@@ -19,6 +19,7 @@
 class DefaultCommandsContextProvider;
 class EntityContext;
 class EntityRegistry;
+class EntitySystems;
 class Experiments;
 class FileArchiver;
 class GameCallbacks;
@@ -119,9 +120,9 @@ public:
     // NOLINTBEGIN
     virtual ~Minecraft() /*override*/ = default;
 
-    virtual void setSimTimePause(bool);
+    virtual void setSimTimePause(bool pause);
 
-    virtual void setSimTimeScale(float);
+    virtual void setSimTimeScale(float scale);
 
     virtual bool getSimPaused() const;
 
@@ -136,6 +137,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit Minecraft(::MinecraftArguments&& args);
+
+    MCAPI void _tryCatchupMovementTicks();
 
     MCAPI void configureGameTest(::Level& level, ::Experiments const& experiments);
 
@@ -179,6 +182,16 @@ public:
     MCAPI void startLeaveGame(bool stopNetwork);
 
     MCAPI bool update();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _tryCatchupMovementTicks(
+        ::EntitySystems&                     entitySystems,
+        ::EntityRegistry&                    registry,
+        ::std::unique_ptr<::ITickingSystem>& addMovementTickForCatchup
+    );
     // NOLINTEND
 
 public:

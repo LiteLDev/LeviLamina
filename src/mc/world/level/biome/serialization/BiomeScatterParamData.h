@@ -24,4 +24,10 @@ public:
     ::ll::TypedStorage<2, 2, ::ExpressionOp>                                     mIterationsType;
     ::ll::TypedStorage<2, 2, ushort>                                             mIterations;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator==(::BiomeScatterParamData const& other) const;
+    // NOLINTEND
 };

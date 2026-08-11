@@ -67,13 +67,21 @@ public:
     // NOLINTBEGIN
     virtual ~GestureRecognizerBase() = default;
 
-    virtual void onTouchesBegan(::std::vector<::OreUI::TouchEventData> const&);
+    virtual void onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches);
 
-    virtual void onTouchesMoved(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const&);
+    virtual void
+    onTouchesMoved(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches);
 
-    virtual void onTouchesEnded(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const&);
+    virtual void
+    onTouchesEnded(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches);
 
     virtual void onGestureRecognized();
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool filterOnlyTrackedTouchesAndUpdate(::std::vector<::OreUI::TouchEventData> const& touches);
     // NOLINTEND
 
 public:

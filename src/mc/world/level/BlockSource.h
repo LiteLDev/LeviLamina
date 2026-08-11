@@ -50,6 +50,7 @@ class LevelSeed64;
 class Material;
 class SubChunkPos;
 class Vec3;
+class WeakEntityRef;
 struct ActorBlockSyncMessage;
 struct ActorDefinitionIdentifier;
 struct BiomeIdLatticeBatch;
@@ -342,6 +343,26 @@ public:
         ::Actor*                       blockChangeSource
     );
 #endif
+
+#ifdef LL_PLAT_S
+    MCAPI void _blockChanged(
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 previousBlock,
+        int                            updateFlags,
+        bool                           fireEvent,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::Actor*                       blockChangeSource
+    );
+#endif
+
+    MCAPI void _fetchEntityHelper(
+        ::WeakEntityRef const&                              entityRef,
+        ::gsl::span<::gsl::not_null<::Actor const*>> const& ignoredEntities,
+        ::AABB const&                                       bb,
+        bool                                                useHitbox
+    );
 
     MCAPI ::Brightness
     _getRawBrightness(::BlockPos const& pos, ::Brightness skyDarken, bool propagate, bool accountForNight) const;

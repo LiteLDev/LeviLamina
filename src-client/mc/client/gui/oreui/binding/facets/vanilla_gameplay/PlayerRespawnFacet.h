@@ -43,6 +43,8 @@ public:
     // NOLINTBEGIN
     MCAPI
     PlayerRespawnFacet(::LocalPlayerChangedConnector const& localPlayerChangedConnector, ::PacketSender& packetSender);
+
+    MCAPI void _respawn();
     // NOLINTEND
 
 public:

@@ -18,9 +18,19 @@ class LevelBlockDestroyerProxy : public ::ILevelBlockDestroyerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void sendEvents(::LevelEventManager&, ::BlockSource&, ::BlockPos const&, ::Block const&) /*override*/;
+    virtual void sendEvents(
+        ::LevelEventManager& levelEventManager,
+        ::BlockSource&       region,
+        ::BlockPos const&    pos,
+        ::Block const&       block
+    ) /*override*/;
 
-    virtual void dropResources(::BlockSource&, ::BlockPos const&, ::Block const&, ::Actor const*) /*override*/;
+    virtual void dropResources(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Actor const*    actorContext
+    ) /*override*/;
     // NOLINTEND
 
 public:

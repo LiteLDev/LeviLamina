@@ -35,6 +35,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmWorldEditorCommandsFacet(::std::shared_ptr<::Realms::RealmsWorldEditor> worldEditor);
+
+    MCAPI void clearRealmWorldEditorState();
+
+    MCAPI void resetRealmWorld(::std::string const& realmId);
+
+    MCAPI void saveRealmWorld(::std::string const& realmId);
+
+    MCAPI void setUseRealmWorldBackend(bool const shouldUseRealmWorldBackend);
     // NOLINTEND
 
 public:

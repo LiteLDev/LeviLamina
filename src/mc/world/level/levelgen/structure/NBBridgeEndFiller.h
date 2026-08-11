@@ -11,6 +11,7 @@
 class BlockSource;
 class BoundingBox;
 class Random;
+class StructurePiece;
 // clang-format on
 
 class NBBridgeEndFiller : public ::NetherFortressPiece {
@@ -25,7 +26,21 @@ public:
     // NOLINTBEGIN
     virtual ::StructurePieceType getType() const /*override*/;
 
-    virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) /*override*/;
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::NetherFortressPiece> createPiece(
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction,
+        int                                                 genDepth
+    );
     // NOLINTEND
 
 public:

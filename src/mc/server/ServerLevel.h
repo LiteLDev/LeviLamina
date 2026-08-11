@@ -20,6 +20,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ChunkGenerationManager;
 class Command;
 class CommandManager;
@@ -32,6 +33,7 @@ class LevelSettings;
 class MapDataManager;
 class MobEvents;
 class NetworkIdentifier;
+class Player;
 class PlayerSleepManager;
 class Random;
 class ResourcePackManager;
@@ -154,7 +156,7 @@ public:
     virtual ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> tryGetVolumeEntityManagerServer() const
         /*override*/;
 
-    virtual void clearAllGenerationRequests(::NetworkIdentifier const&, ::SubClientId) /*override*/;
+    virtual void clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId) /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> getChunkGenerationManager() /*override*/;
 
@@ -182,6 +184,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _onActorEntityAdded(::Actor& actor);
+
+    MCAPI void _onPlayerWakeUp(::Player& player);
+
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistryServer> getWorldClockRegistryServer() const;
     // NOLINTEND
 

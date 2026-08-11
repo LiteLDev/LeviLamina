@@ -63,7 +63,7 @@ public:
     // NOLINTBEGIN
     virtual ~PersonaScreenModel() /*override*/ = default;
 
-    virtual void update(::ui::DirtyFlag&) /*override*/;
+    virtual void update(::ui::DirtyFlag& dirtyFlags) /*override*/;
 
     virtual ::SkinHandle const& getSelectedSkinHandle() const /*override*/;
     // NOLINTEND

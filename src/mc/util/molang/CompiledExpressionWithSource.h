@@ -38,8 +38,9 @@ public:
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::Molang::details::IComplexExpression> clone() const /*override*/;
 
-    virtual void
-    replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>&) /*override*/;
+    virtual void replaceArrayVariables(
+        ::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap
+    ) /*override*/;
 
     virtual void validateArrayVariables() const /*override*/;
 

@@ -26,7 +26,7 @@ public:
 
     virtual int getEmptySlotsCount() const /*override*/;
 
-    virtual void setContainerSize(int);
+    virtual void setContainerSize(int size);
 
     virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 

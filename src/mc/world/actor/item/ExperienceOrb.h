@@ -51,19 +51,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual void playerTouch(::Player&) /*override*/;
+    virtual void playerTouch(::Player& player) /*override*/;
 
     virtual float getShadowRadius() const /*override*/;
 
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float, ::HurtParameters const&) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float damage, ::HurtParameters const&) /*override*/;
 
     virtual void doWaterSplashEffect() /*override*/;
     // NOLINTEND
@@ -84,6 +84,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _spawnOrb(::BlockSource& region, ::Level& level, ::Vec3 const& pos, int orbXPValue);
+
+    MCAPI static bool _tryMergeIntoExistingOrbs(::BlockSource& region, ::Vec3 const& pos, int xpValue);
 
     MCAPI static void spawnOrbs(
         ::BlockSource&            region,

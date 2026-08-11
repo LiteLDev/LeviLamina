@@ -16,7 +16,9 @@ class BlockSource;
 class BoundingBox;
 class Random;
 class StructureManager;
+class StructurePiece;
 class StructurePoolBlockRule;
+struct OceanRuinConfiguration;
 // clang-format on
 
 class OceanRuinPieces {
@@ -47,6 +49,10 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        OceanRuinPiece();
+
+    public:
         // virtual functions
         // NOLINTBEGIN
         virtual ::StructurePieceType getType() const /*override*/;
@@ -54,12 +60,32 @@ public:
         virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
         virtual void _handleDataMarker(
-            ::std::string const&,
-            ::BlockPos const&,
-            ::BlockSource&,
-            ::Random&,
-            ::BoundingBox const&
+            ::std::string const& markerId,
+            ::BlockPos const&    position,
+            ::BlockSource&       region,
+            ::Random&            random,
+            ::BoundingBox const& chunkBB
         ) /*override*/;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI OceanRuinPiece(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string                                     templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation,
+            float                                             integrity,
+            bool                                              isLarge,
+            ::OceanTempCategory                               type
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
         // NOLINTEND
 
     public:
@@ -68,4 +94,19 @@ public:
 
         // NOLINTEND
     };
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _addPiece(
+        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
+        ::BlockPos const&                                   position,
+        ::Rotation const&                                   rotation,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        ::OceanRuinConfiguration const&                     configuration,
+        bool const                                          isLarge,
+        float const                                         baseIntegrity
+    );
+    // NOLINTEND
 };

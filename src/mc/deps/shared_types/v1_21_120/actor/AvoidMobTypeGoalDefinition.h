@@ -9,6 +9,11 @@
 #include "mc/deps/shared_types/v1_21_120/actor/ActorDefinitionTrigger.h"
 #include "mc/deps/shared_types/v1_21_120/actor/EntityTypes.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_21_120 {
 
 struct AvoidMobTypeGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -45,6 +50,12 @@ public:
 
     MCAPI ::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&
     operator=(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

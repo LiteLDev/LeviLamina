@@ -40,19 +40,11 @@ public:
     virtual ~ContentLogFileEndPoint() /*override*/;
 #endif
 
-#ifdef LL_PLAT_S
-    virtual void log(::LogArea const, ::LogLevel const, char const*) /*override*/;
-#else // LL_PLAT_C
     virtual void log(::LogArea const area, ::LogLevel const level, char const* message) /*override*/;
-#endif
 
     virtual void flush() /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void setEnabled(bool) /*override*/;
-#else // LL_PLAT_C
     virtual void setEnabled(bool newState) /*override*/;
-#endif
 
     virtual bool isEnabled() const /*override*/;
 
@@ -77,6 +69,10 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI static ::std::string sanitizePathPrefixForDisplay(::std::string_view text);
+#endif
+
+#ifdef LL_PLAT_S
     MCNAPI static ::std::string sanitizePathPrefixForDisplay(::std::string_view text);
 #endif
     // NOLINTEND

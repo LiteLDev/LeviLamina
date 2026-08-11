@@ -22,6 +22,12 @@ public:
     ScriptCustomBiomeSource& operator=(ScriptCustomBiomeSource const&);
     ScriptCustomBiomeSource(ScriptCustomBiomeSource const&);
     ScriptCustomBiomeSource();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::std::string getId() const;
+    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

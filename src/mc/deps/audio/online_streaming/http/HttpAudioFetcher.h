@@ -70,11 +70,11 @@ public:
 
     virtual void start() /*override*/;
 
-    virtual void update(float) /*override*/;
+    virtual void update(float deltaTimeSeconds) /*override*/;
 
-    virtual void notifyReadPosition(uint64) /*override*/;
+    virtual void notifyReadPosition(uint64 offset) /*override*/;
 
-    virtual void seekTo(uint64) /*override*/;
+    virtual void seekTo(uint64 offset) /*override*/;
 
     virtual void stop() /*override*/;
 
@@ -85,6 +85,14 @@ public:
     virtual uint64 getTotalBytesRequested() const /*override*/;
 
     virtual uint getTotalRetries() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void _tryIssueRequest();
+#endif
     // NOLINTEND
 
 public:

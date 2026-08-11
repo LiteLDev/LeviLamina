@@ -63,6 +63,8 @@ public:
     virtual ::Puv::Input::Data data() const /*override*/;
 
     virtual ::Puv::Logger const& getErrors() const /*override*/;
+
+    virtual ~MinecraftDocumentInput() /*override*/;
     // NOLINTEND
 
 public:
@@ -87,6 +89,8 @@ public:
             ::rapidjson::CrtAllocator> payload
     );
 
+    MCNAPI void checkPayloadKey(::std::string_view payloadKey);
+
     MCNAPI void init(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
     // NOLINTEND
 
@@ -110,6 +114,12 @@ public:
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
             ::rapidjson::CrtAllocator> payload
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

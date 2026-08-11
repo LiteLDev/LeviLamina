@@ -32,6 +32,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext&, ::AreaAttackComponent& component) const;
+
+    MCAPI void setDamageCause(::std::string const& cause);
     // NOLINTEND
 
 public:

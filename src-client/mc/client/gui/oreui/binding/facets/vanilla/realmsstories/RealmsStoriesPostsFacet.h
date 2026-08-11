@@ -56,6 +56,22 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>          profanityContext,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
+
+    MCAPI bool _getMostRecentStoriesViewed() const;
+
+    MCFOLD int _getPageLength() const;
+
+    MCAPI ::Realms::Stories::PostStatus _getPostStoryStatus() const;
+
+    MCAPI bool _getStoryFeedFirstPageReady() const;
+
+    MCAPI ::Realms::Stories::FetchStatus _getStoryFeedStatus() const;
+
+    MCAPI int _getStoryFeedTotalStories() const;
+
+    MCAPI int _getUnreadStoryCount() const;
+
+    MCAPI void _regenerateView();
     // NOLINTEND
 
 public:

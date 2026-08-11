@@ -55,7 +55,8 @@ public:
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
+        /*override*/;
     // NOLINTEND
 
 public:

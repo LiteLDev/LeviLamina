@@ -40,6 +40,12 @@ public:
     BPSTracker& operator=(BPSTracker const&);
     BPSTracker(BPSTracker const&);
     BPSTracker();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void Push1(uint64 time, uint64 value1);
+    // NOLINTEND
 };
 
 } // namespace RakNet

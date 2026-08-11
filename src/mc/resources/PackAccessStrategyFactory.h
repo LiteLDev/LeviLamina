@@ -20,6 +20,10 @@ public:
     MCNAPI static ::PackAccessStrategies create(::AnyAccessStrategyOptions const& create);
 #endif
 
+#ifdef LL_PLAT_S
+    MCNAPI static ::PackAccessStrategies create(::AnyAccessStrategyOptions const& create);
+#endif
+
     MCNAPI static ::PackAccessStrategies createForDirectory(::DirectoryAccessStrategyOptions const& create);
 
     MCNAPI static ::PackAccessStrategies createForEncrypted(::EncryptedAccessStrategyOptions const& create);

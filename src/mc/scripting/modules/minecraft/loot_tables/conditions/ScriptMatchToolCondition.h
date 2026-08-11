@@ -37,6 +37,14 @@ public:
     ScriptMatchToolCondition();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::vector<::std::string> const getItemTagsAny() const;
+
+    MCAPI ::std::vector<::std::string> const getItemTagsNone() const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();

@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockSource;
 class BoundingBox;
 class Random;
@@ -28,6 +29,19 @@ public:
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     virtual ::std::string_view getStructureName() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _makeStairs(
+        ::BlockPos const&    startPos,
+        ::Block const&       stairBlock,
+        uchar                xStepDir,
+        uchar                yStepDir,
+        ::BlockSource&       region,
+        ::BoundingBox const& chunkBB
+    );
     // NOLINTEND
 
 public:

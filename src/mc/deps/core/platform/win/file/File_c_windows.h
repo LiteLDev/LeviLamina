@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Core { class PathView; }
 namespace Core { class Result; }
 // clang-format on
 
@@ -40,25 +41,32 @@ public:
 
     virtual ::Core::Result _close() /*override*/;
 
-    virtual ::Core::Result _read(void*, uint64, uint64*) /*override*/;
+    virtual ::Core::Result _read(void* buf, uint64 numBytes, uint64* pNumBytesRead) /*override*/;
 
-    virtual ::Core::Result _readExactly(void*, uint64) /*override*/;
+    virtual ::Core::Result _readExactly(void* buf, uint64 numBytes) /*override*/;
 
-    virtual ::Core::Result _readAtPosition(uint64, void*, uint64, uint64*) /*override*/;
+    virtual ::Core::Result
+    _readAtPosition(uint64 position, void* buf, uint64 numBytes, uint64* pNumBytesRead) /*override*/;
 
-    virtual ::Core::Result _write(void const*, uint64) /*override*/;
+    virtual ::Core::Result _write(void const* buf, uint64 numBytes) /*override*/;
 
-    virtual ::Core::Result _setPosition(uint64) /*override*/;
+    virtual ::Core::Result _setPosition(uint64 position) /*override*/;
 
-    virtual ::Core::Result _getPosition(uint64*) /*override*/;
+    virtual ::Core::Result _getPosition(uint64* pSizeOut) /*override*/;
 
-    virtual ::Core::Result _skip(uint64) /*override*/;
+    virtual ::Core::Result _skip(uint64 numBytes) /*override*/;
 
     virtual ::Core::Result _flush() /*override*/;
 
-    virtual ::Core::Result _getSize(uint64*) /*override*/;
+    virtual ::Core::Result _getSize(uint64* pSizeOut) /*override*/;
 
-    virtual ::Core::Result _getRemainingSize(uint64*) /*override*/;
+    virtual ::Core::Result _getRemainingSize(uint64* pSizeOut) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::string getExtendedLengthPath(::Core::PathView path);
     // NOLINTEND
 
 public:

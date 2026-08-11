@@ -16,9 +16,12 @@ class ChunkSource;
 class ChunkViewSource;
 class ILevel;
 class LevelChunk;
+class LevelChunkPacket;
 class ServerNetworkSystem;
+class VarIntDataOutput;
 class Vec3;
 namespace ClientBlobCache::Server { class ActiveTransfersManager; }
+namespace ClientBlobCache::Server { class TransferBuilder; }
 // clang-format on
 
 class NetworkChunkPublisher {
@@ -66,6 +69,17 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI NetworkChunkPublisher(::ILevel& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
+
+    MCAPI bool _sendQueuedChunk(
+        ::ChunkPositionAndDimension const&          queuedChunk,
+        ::ClientBlobCache::Server::TransferBuilder* cachedTransfer
+    );
+
+    MCAPI void _serializeAndCache(
+        ::LevelChunkPacket&                          packet,
+        ::ClientBlobCache::Server::TransferBuilder&  transfer,
+        ::std::function<void(::VarIntDataOutput&)>&& serialize
+    );
 
     MCAPI void clearRegion();
 

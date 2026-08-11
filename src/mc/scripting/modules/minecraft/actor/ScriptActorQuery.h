@@ -31,6 +31,8 @@ class ScriptActorQuery {
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::Scripting::UnsupportedAPIError _incompatableWorldQueryOptionError(::std::string const& propertyName);
+
     MCAPI static ::Scripting::
         Result<::ActorSelectorArgs, ::Scripting::InvalidArgumentError, ::Scripting::UnsupportedAPIError>
         constructSelectorArgs(

@@ -14,7 +14,7 @@ class FeatureUpgrader : public ::Puv::UpgraderBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Puv::LoadResultAny doUpgrade(::Puv::LoadResultAny) const /*override*/;
+    virtual ::Puv::LoadResultAny doUpgrade(::Puv::LoadResultAny source) const /*override*/;
     // NOLINTEND
 
 public:

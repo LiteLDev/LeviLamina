@@ -66,6 +66,52 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
     );
+
+    MCAPI void _reset();
+
+    MCAPI void addScreenshotToShowcase(::std::string const& id, bool isFeatured);
+
+    MCAPI void clearDeleteScreenshotsError();
+
+    MCAPI void clearLoadGalleryError();
+
+    MCAPI void clearModifyShowcaseGalleryError();
+
+    MCAPI void deleteScreenshots(::std::vector<::std::string> const& ids);
+
+    MCAPI uint64 getCount() const;
+
+    MCAPI ::OreUI::ScreenshotGalleryFacetError const getDeleteScreenshotsError() const;
+
+    MCFOLD ::OreUI::AllowListPath const& getFeaturedScreenshot() const;
+
+    MCAPI bool const getIsAddFeaturedImageInProgress() const;
+
+    MCAPI bool const getIsAddShowcasedImageInProgress() const;
+
+    MCFOLD bool const getIsDeleteScreenshotsInProgress() const;
+
+    MCFOLD bool const getIsLoadGalleryInProgress() const;
+
+    MCFOLD bool const getIsModifyShowcaseGalleryInProgress() const;
+
+    MCAPI ::OreUI::ScreenshotGalleryFacetError const getLoadGalleryError() const;
+
+    MCFOLD uint64 getMaxScreenshots() const;
+
+    MCAPI ::OreUI::ScreenshotGalleryFacetError const getModifyShowcaseGalleryError() const;
+
+    MCFOLD ::std::vector<::OreUI::GalleryScreenshot> const& getScreenshots() const;
+
+    MCAPI uint64 getUndownloadedCount() const;
+
+    MCAPI bool isLoadingCount() const;
+
+    MCAPI bool isLoadingFeaturedScreenshot() const;
+
+    MCAPI void removeShowcasedScreenshot(::std::string const& id);
+
+    MCAPI void retryLoadGallery();
     // NOLINTEND
 
 public:

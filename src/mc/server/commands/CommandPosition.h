@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
+class CompoundTag;
 // clang-format on
 
 class CommandPosition {
@@ -25,6 +26,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Vec3 getPosition(int version, ::CommandOrigin const& origin, ::Vec3 const& offsetFromBase) const;
+
+    MCAPI void load(::CompoundTag const& tag);
     // NOLINTEND
 };
 

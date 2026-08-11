@@ -30,7 +30,7 @@ public:
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-            ::rapidjson::CrtAllocator>&,
+            ::rapidjson::CrtAllocator>& document,
         ::SemVersion const&
     ) const /*override*/;
     // NOLINTEND

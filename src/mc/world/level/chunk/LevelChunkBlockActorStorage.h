@@ -71,6 +71,8 @@ public:
             ::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>> ite
     );
 
+    MCAPI uint64 erase(::ChunkBlockPos const& pos);
+
     MCAPI ::LevelChunkBlockActorStorage& operator=(::LevelChunkBlockActorStorage&& other);
 
     MCAPI ~LevelChunkBlockActorStorage();

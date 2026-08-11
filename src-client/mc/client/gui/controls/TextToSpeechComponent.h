@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     virtual ~TextToSpeechComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
     // NOLINTEND
@@ -46,6 +46,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::string const _convertString(
+        ::std::string const& value,
+        ::std::function<::std::string(::std::string const&, ::std::optional<::std::vector<::std::string>>)> const&
+            localizationCallback
+    ) const;
+
     MCAPI int _getControlIndex(::std::shared_ptr<::UIControl> ancestor);
 
     MCAPI int _getMaximumContainerSize(::std::shared_ptr<::UIControl> ancestor);

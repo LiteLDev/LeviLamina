@@ -26,11 +26,7 @@ public:
 
     virtual bool requireClose() const /*override*/;
 
-#ifdef LL_PLAT_S
     virtual void startListenTimeout(::std::chrono::seconds duration) /*override*/;
-#else // LL_PLAT_C
-    virtual void startListenTimeout(::std::chrono::seconds) /*override*/;
-#endif
 
     virtual bool listenTimeoutExpired() const /*override*/;
     // NOLINTEND

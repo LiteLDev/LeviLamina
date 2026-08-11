@@ -20,6 +20,8 @@ public:
         ::JsonValidator::Property const& dividerType
     );
 
+    MCNAPI static ::JsonValidator::Property getControlLockedProperty();
+
     MCNAPI static ::JsonValidator::Property getDividerProperty();
 
     MCNAPI static ::JsonValidator::Property getDropdownProperty(bool requiresDefault);
@@ -31,6 +33,8 @@ public:
     MCNAPI static ::JsonValidator::Property getSliderProperty(bool requiresDefault);
 
     MCNAPI static ::JsonValidator::Property getStepSliderProperty(bool requiresDefault);
+
+    MCNAPI static ::JsonValidator::Property getStringOrObjectProperty();
 
     MCNAPI static ::JsonValidator::Property getTextInputProperty(bool requiresDefault);
 

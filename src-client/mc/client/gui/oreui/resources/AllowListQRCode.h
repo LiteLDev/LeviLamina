@@ -12,6 +12,22 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mURL;
     ::ll::TypedStorage<8, 32, ::std::string> mTarget;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    AllowListQRCode();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI AllowListQRCode(::std::string id, ::std::string target);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };
 
 } // namespace OreUI

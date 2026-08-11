@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorAnimationGroup;
 class AnimationComponent;
 class IClientInstance;
 class IPaperDollRenderContext;
@@ -90,10 +91,25 @@ public:
 
     MCAPI explicit PaperDollRenderer(::IPaperDollUIDefSource const& def);
 
+    MCAPI void _addAnimationIfNotRegistered(
+        ::std::shared_ptr<::ActorAnimationGroup> actorAnimationGroup,
+        ::HashedString const&                    friendlyName
+    );
+
+    MCAPI ::AnimationComponent& _getAnimationComponent();
+
     MCAPI void _render(
         ::IPaperDollRenderContext&           context,
         ::PaperDollRenderOwnerData const&    data,
         ::OffscreenCaptureDescription const* capture
+    );
+
+    MCAPI void _render(
+        ::MinecraftUIRenderContext& renderContext,
+        ::IClientInstance&          client,
+        ::UIControl&                owner,
+        int,
+        ::OffscreenCaptureData const* uiActorCaptureData
     );
 
     MCAPI void _update(::IPaperDollUpdateContext& context, ::PaperDollUpdateOwnerData const& data);

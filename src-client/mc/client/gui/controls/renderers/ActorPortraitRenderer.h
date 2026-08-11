@@ -10,7 +10,9 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
+class Matrix;
 class MinecraftUIRenderContext;
+class Mob;
 class UIControl;
 class UICustomRenderer;
 // clang-format on
@@ -53,7 +55,22 @@ public:
     // NOLINTBEGIN
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual void render(::MinecraftUIRenderContext&, ::IClientInstance&, ::UIControl&, int) /*override*/;
+    virtual void
+    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _prependTransform(
+        ::Matrix&                            mat,
+        ::glm::vec2 const&                   ownerPos,
+        ::glm::vec2 const&                   ownerScale,
+        int                                  ownerLayer,
+        float                                invScale,
+        ::ActorPortraitRenderer::Args const& args,
+        ::Mob const&                         mob
+    ) const;
     // NOLINTEND
 
 public:

@@ -46,6 +46,40 @@ public:
     MCAPI explicit DebugSettingsFacet(
         ::std::shared_ptr<::OreUI::WorldSettingsProvider_DEPRECATED> worldSettingsProvider
     );
+
+    MCAPI void _setGameVersion(::std::string const& versionName);
+
+    MCFOLD int getBiomeOverride() const;
+
+    MCFOLD bool getEnableGameVersionOverride() const;
+
+    MCAPI bool getFlatNether() const;
+
+    MCFOLD ::std::string const& getGameVersionOverride() const;
+
+    MCFOLD int getSpawnBiome() const;
+
+    MCFOLD int getSpawnDimension() const;
+
+    MCAPI bool isEnableBiomeOverride() const;
+
+    MCFOLD bool isEnableSpawnBiome() const;
+
+    MCAPI void setBiomeOverride(int biomeIndex);
+
+    MCAPI void setEnableBiomeOverride(bool enable);
+
+    MCAPI void setEnableGameVersionOverride(bool doOverride);
+
+    MCAPI void setEnableSpawnBiome(bool enable);
+
+    MCAPI void setFlatNether(bool isFlat);
+
+    MCAPI void setGameVersionOverride(::std::string const& version);
+
+    MCAPI void setSpawnBiome(int biomeIndex);
+
+    MCAPI void setSpawnDimension(int spawnDimensionIndex);
     // NOLINTEND
 
 public:

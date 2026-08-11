@@ -110,10 +110,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
+        virtual void
+        sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility) /*override*/;
 
-        virtual ::NetworkPeer::DataStatus
-        _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
+        virtual ::NetworkPeer::DataStatus _receivePacket(
+            ::std::string&                                                    outData,
+            ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+        ) /*override*/;
 
         virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
@@ -170,11 +173,11 @@ public:
     // NOLINTBEGIN
     virtual ~RakNetConnector() /*override*/ = default;
 
-    virtual bool host(::ConnectionDefinition const&) /*override*/;
+    virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
     virtual bool connect(
-        ::Social::GameConnectionInfo const&,
-        ::Social::GameConnectionInfo const&,
+        ::Social::GameConnectionInfo const& primaryConnection,
+        ::Social::GameConnectionInfo const& backupConnection,
         ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator>
     ) /*override*/;
 
@@ -184,9 +187,9 @@ public:
 
     virtual void runEvents() /*override*/;
 
-    virtual void closeNetworkConnection(::NetworkIdentifier const&) /*override*/;
+    virtual void closeNetworkConnection(::NetworkIdentifier const& id) /*override*/;
 
-    virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const&) /*override*/;
+    virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const& id) /*override*/;
 
     virtual bool isServer() const /*override*/;
 

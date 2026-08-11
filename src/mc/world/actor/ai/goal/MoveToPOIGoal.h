@@ -50,6 +50,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _canReachPOI(::Vec3 const& pos, float const radiusSqr, bool usingBoundingBox);
+
     MCAPI void _updatePOIBooking();
 
     MCAPI bool getPOI(::POIType type);

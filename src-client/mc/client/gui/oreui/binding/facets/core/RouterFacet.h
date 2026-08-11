@@ -39,6 +39,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RouterFacet(::OreUI::Router& router);
+
+    MCFOLD ::OreUI::RouterHistoryAdapter& getHistoryAdapter();
     // NOLINTEND
 
 public:

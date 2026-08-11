@@ -30,8 +30,10 @@ class LevelStorageEventing;
 class LevelStorageObserver;
 class SaveTransactionManager;
 class TaskGroup;
+class TaskResult;
 struct DBStorageConfig;
 struct SnapshotFilenameAndLength;
+namespace Core { class Path; }
 // clang-format on
 
 class DBStorage : public ::LevelStorage {
@@ -146,38 +148,41 @@ public:
     // NOLINTBEGIN
     virtual ~DBStorage() /*override*/ = default;
 
-    virtual void addStorageObserver(::std::unique_ptr<::LevelStorageObserver>) /*override*/;
+    virtual void addStorageObserver(::std::unique_ptr<::LevelStorageObserver> observer) /*override*/;
 
     virtual bool loadedSuccessfully() const /*override*/;
 
     virtual ::Core::LevelStorageResult getState() const /*override*/;
 
     virtual ::std::unique_ptr<::ChunkSource>
-        createChunkStorage(::std::unique_ptr<::ChunkSource>, ::StorageVersion) /*override*/;
+    createChunkStorage(::std::unique_ptr<::ChunkSource> generator, ::StorageVersion) /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> const& getFullPath() const /*override*/;
 
-    virtual ::std::unique_ptr<::CompoundTag> getCompoundTag(::std::string const&, ::DBHelpers::Category) /*override*/;
+    virtual ::std::unique_ptr<::CompoundTag>
+    getCompoundTag(::std::string const& key, ::DBHelpers::Category category) /*override*/;
 
-    virtual bool hasKey(::std::string_view, ::DBHelpers::Category) const /*override*/;
+    virtual bool hasKey(::std::string_view key, ::DBHelpers::Category category) const /*override*/;
 
-    virtual bool loadLevelData(::LevelData&) /*override*/;
+    virtual bool loadLevelData(::LevelData& data) /*override*/;
 
-    virtual void saveLevelData(::LevelData const&) /*override*/;
+    virtual void saveLevelData(::LevelData const& levelData) /*override*/;
 
     virtual ::Bedrock::Threading::Async<void>
-    saveData(::std::string const&, ::std::string&&, ::DBHelpers::Category) /*override*/;
+    saveData(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category) /*override*/;
 
-    virtual ::Bedrock::Threading::Async<void> saveData(::LevelStorageWriteBatch const&) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> saveData(::LevelStorageWriteBatch const& batch) /*override*/;
 
-    virtual ::Bedrock::Threading::Async<void> deleteData(::std::string const&, ::DBHelpers::Category) /*override*/;
+    virtual ::Bedrock::Threading::Async<void>
+    deleteData(::std::string const& key, ::DBHelpers::Category category) /*override*/;
 
-    virtual bool loadData(::std::string_view, ::std::string&, ::DBHelpers::Category) const /*override*/;
+    virtual bool loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const
+        /*override*/;
 
     virtual void forEachKeyWithPrefix(
-        ::std::string_view,
-        ::DBHelpers::Category,
-        ::std::function<void(::std::string_view, ::std::string_view)> const&
+        ::std::string_view                                                   prefix,
+        ::DBHelpers::Category                                                category,
+        ::std::function<void(::std::string_view, ::std::string_view)> const& callback
     ) const /*override*/;
 
     virtual ::Core::LevelStorageResult getLevelStorageState() const /*override*/;
@@ -190,9 +195,10 @@ public:
 
     virtual bool checkShutdownDone() /*override*/;
 
-    virtual void getStatistics(::std::string&, ::LevelStorage::StatsType) const /*override*/;
+    virtual void getStatistics(::std::string& outStats, ::LevelStorage::StatsType statsType) const /*override*/;
 
-    virtual ::std::vector<::SnapshotFilenameAndLength> createSnapshot(::std::string const&, bool) /*override*/;
+    virtual ::std::vector<::SnapshotFilenameAndLength>
+    createSnapshot(::std::string const& filePrefix, bool flushWriteCache) /*override*/;
 
     virtual void releaseSnapshot() /*override*/;
 
@@ -202,21 +208,30 @@ public:
 
     virtual void resumeStorage() /*override*/;
 
-    virtual void setFlushAllowed(bool) /*override*/;
+    virtual void setFlushAllowed(bool flushAllowed) /*override*/;
 
     virtual void flushToPermanentStorage() /*override*/;
 
     virtual void freeCaches() /*override*/;
 
-    virtual void setCompactionCallback(::std::function<void(::CompactionStatus)>) /*override*/;
+    virtual void setCompactionCallback(::std::function<void(::CompactionStatus)> callback) /*override*/;
 
-    virtual void setCriticalSyncSaveCallback(::std::function<void()>) /*override*/;
+    virtual void setCriticalSyncSaveCallback(::std::function<void()> callback) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI DBStorage(::DBStorageConfig config, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv);
+
+    MCAPI ::TaskResult _flushWriteCacheToLevelDB();
+
+    MCAPI ::std::string _getTelemetryMessage(::leveldb::Status const& status) const;
+
+    MCAPI ::DBStorage::PendingWriteResult
+    _readPendingWrite(::std::string const& key, ::DBHelpers::Category category) const;
+
+    MCAPI bool tryRepair(::Core::Path const& path) const;
     // NOLINTEND
 
 public:

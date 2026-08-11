@@ -19,9 +19,10 @@ public:
     // NOLINTBEGIN
     virtual ~ServerURLResolver() /*override*/ = default;
 
-    virtual bool fromStringExplicitPort(::PingedCompatibleServer&, char const*, ushort, int) /*override*/;
+    virtual bool
+    fromStringExplicitPort(::PingedCompatibleServer& server, char const* str, ushort port, int ipVersion) /*override*/;
 
-    virtual void fromString(::RakNet::RakNetGUID&, char const*) /*override*/;
+    virtual void fromString(::RakNet::RakNetGUID& guid, char const* source) /*override*/;
     // NOLINTEND
 
 public:

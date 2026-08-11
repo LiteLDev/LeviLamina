@@ -43,15 +43,16 @@ public:
 
     virtual void SendSignal(
         ::NetherNet::NetworkID,
-        ::NetherNet::NetworkID,
-        ::std::string const&,
-        ::std::function<void(::NetherNet::ESessionError)>&&
+        ::NetherNet::NetworkID                              to,
+        ::std::string const&                                signal,
+        ::std::function<void(::NetherNet::ESessionError)>&& onComplete
     ) /*override*/;
 
-    virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler*) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
 
     virtual ::Bedrock::Threading::Async<::Bedrock::Result<::NetherNet::HttpResponse>>
-        onRequest(::NetherNet::HttpRequest) /*override*/;
+    onRequest(::NetherNet::HttpRequest request) /*override*/;
     // NOLINTEND
 
 public:

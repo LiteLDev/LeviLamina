@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/JigsawJsonType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorJigsawServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
@@ -15,6 +16,7 @@ class JigsawEditorData;
 class JigsawStructureRegistry;
 class WeakEntityRef;
 namespace Bedrock::PubSub { class Subscription; }
+namespace Editor { class IEditorPlayer; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::ScriptModule { class ScriptClipboardItem; }
 namespace Editor::Services { struct EditorJigsawSection; }
@@ -86,40 +88,41 @@ public:
 
     virtual ::std::vector<::std::string> getJigsawRegistryList() /*override*/;
 
-    virtual ::JigsawStructureRegistry* getJigsawRegistry(::std::string const&) /*override*/;
+    virtual ::JigsawStructureRegistry* getJigsawRegistry(::std::string const& registryName) /*override*/;
 
     virtual ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>
-    getJigsawRegistryJson(::std::string const&) /*override*/;
+    getJigsawRegistryJson(::std::string const& registryName) /*override*/;
 
     virtual void setJigsawRegistry(
-        ::std::string const&,
-        ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>,
-        bool
+        ::std::string const& registryName,
+        ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> data,
+        bool shouldSaveFiles
     ) /*override*/;
 
-    virtual void deleteJigsawRegistry(::std::string const&) /*override*/;
+    virtual void deleteJigsawRegistry(::std::string const& registryName) /*override*/;
 
     virtual void generateJigsawPreview(
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&,
-        ::BlockPos const&,
-        int const,
-        int const,
-        bool const,
-        ::Editor::ScriptModule::ScriptClipboardItem const&,
-        ::WeakEntityRef
+        ::std::string const&                               registryName,
+        ::std::string const&                               startPool,
+        ::std::string const&                               startTarget,
+        ::BlockPos const&                                  seed,
+        int const                                          depth,
+        int const                                          maxHorizontalDistanceFromCenter,
+        bool const                                         validateRegistry,
+        ::Editor::ScriptModule::ScriptClipboardItem const& clipboardItem,
+        ::WeakEntityRef                                    playerRef
     ) /*override*/;
 
-    virtual ::JigsawEditorData const getJigsawBlockData(::BlockPos&, ::WeakEntityRef) /*override*/;
+    virtual ::JigsawEditorData const getJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef) /*override*/;
 
-    virtual void setJigsawBlockData(::BlockPos&, ::WeakEntityRef, ::JigsawEditorData) /*override*/;
+    virtual void
+    setJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef, ::JigsawEditorData jigsawData) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-        listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)>) /*override*/;
+    listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)> callback) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription listenForGenerateJigsawPreview(
-        ::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)>
+        ::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)> callback
     ) /*override*/;
     // NOLINTEND
 
@@ -127,6 +130,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EditorJigsawService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI bool
+    _validateRegistry(::std::string registryName, ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> editorPlayer);
     // NOLINTEND
 
 public:

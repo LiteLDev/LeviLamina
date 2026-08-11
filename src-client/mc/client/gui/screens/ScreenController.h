@@ -601,6 +601,8 @@ public:
         ::brstd::move_only_function<bool(int) const>          condition
     );
 
+    MCAPI bool hasFinishedAsyncTasks() const;
+
     MCAPI void queueAsyncTask(::brstd::move_only_function<::TaskResult()>&& task, ::std::function<void()>&& callback);
 
     MCAPI void

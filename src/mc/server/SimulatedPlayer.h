@@ -26,6 +26,7 @@ class ChunkViewSource;
 class EntityContext;
 class ItemStack;
 class Level;
+class NavigationComponent;
 class NetworkIdentifier;
 class PacketSender;
 class ServerNetworkHandler;
@@ -89,7 +90,7 @@ public:
 
     virtual ::std::shared_ptr<::ChunkViewSource> _createChunkSource(::ChunkSource& mainChunkSource) /*override*/;
 
-    virtual void _updateChunkPublisherView(::Vec3 const&, float) /*override*/;
+    virtual void _updateChunkPublisherView(::Vec3 const& position, float minDistance) /*override*/;
     // NOLINTEND
 
 public:
@@ -112,6 +113,11 @@ public:
         bool                                               enableItemStackNetManager,
         ::EntityContext&                                   entityContext
     );
+
+    MCAPI void _addMoveComponent();
+
+    MCAPI ::ScriptModuleGameTest::ScriptNavigationResult
+    _createNavigationResult(::NavigationComponent* navigation) const;
 
     MCAPI void _updateDestroyBlock();
 

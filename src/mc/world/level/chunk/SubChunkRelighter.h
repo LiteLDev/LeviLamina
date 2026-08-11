@@ -67,8 +67,21 @@ public:
         bool              useFullyDarkSubchunk
     );
 
+    MCAPI void _checkEdgeForSubtractiveBlockLightProcessing(::SubChunkLightIndex const& coordIndex);
+
+    MCAPI void _checkEdgeForSubtractiveSkyLightProcessing(::SubChunkLightIndex const& coordIndex);
+
+    MCAPI ::SubChunk* _dirtySubChunk(::SubChunkLightIndex const coordIndex, uint& subChunkIndex);
+
     MCAPI ::SubChunk*
     _getBlock(::SubChunkLightIndex coordIndex, ::Block const*& block, ::Block const*& extraBlock) const;
+
+    MCAPI ::SubChunk* _getBlock(
+        ::SubChunkLightIndex const coordIndex,
+        ::Block const*&            block,
+        ::Block const*&            extraBlock,
+        uint&                      subChunkIndex
+    ) const;
 
 #ifdef LL_PLAT_S
     MCAPI void _propagateBlockLight();
@@ -89,6 +102,10 @@ public:
         uint                 lightType,
         uint                 subChunkIndex
     );
+
+    MCAPI void _setPropagatedBlockLightValue(::SubChunkLightIndex coordIndex, uchar brightness);
+
+    MCAPI void _setPropagatedSkyLightValue(::SubChunkLightIndex coordIndex, uchar brightness);
 
     MCAPI void _setSkyLight(
         ::SubChunkLightIndex coordIndex,

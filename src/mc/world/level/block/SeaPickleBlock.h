@@ -72,6 +72,8 @@ public:
     // NOLINTBEGIN
     MCAPI SeaPickleBlock(::std::string const& nameId, int id);
 
+    MCAPI void _randomTick(::BlockSource& region, ::BlockPos const& pos) const;
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;

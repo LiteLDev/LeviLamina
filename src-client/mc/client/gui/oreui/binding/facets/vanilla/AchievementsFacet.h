@@ -14,6 +14,7 @@
 // clang-format off
 class Option;
 namespace OreUI { class IResourceAllowList; }
+namespace OreUI { struct FacetAchievementData; }
 namespace Social { class User; }
 namespace persona { class AchievementOfferCollectionManager; }
 // clang-format on
@@ -75,6 +76,14 @@ public:
         ::gsl::not_null<::Option*>                                        manualTrackingOption,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
     );
+
+    MCAPI void _refreshPersona(::OreUI::FacetAchievementData& facetAchievement) const;
+
+    MCFOLD ::OreUI::FacetPlayerAchievementData const& getFacetPlayerAchievementData() const;
+
+    MCFOLD ::OreUI::AchievementsFacet::AchievementFacetStatus getStatus() const;
+
+    MCAPI void setTrackedStatus(::std::string const& achievementId, bool tracked);
     // NOLINTEND
 
 public:

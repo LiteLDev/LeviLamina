@@ -49,6 +49,12 @@ public:
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> provider,
         ::Bedrock::NonOwnerPointer<::OreUI::IResourceAllowList> resourceAllowList
     );
+
+    MCAPI ::Realms::Stories::FetchStatus _getFetchMembersStatus() const;
+
+    MCAPI ::Realms::Stories::FetchStatus _getFetchOnlineMembersStatus() const;
+
+    MCAPI void _regenerateView();
     // NOLINTEND
 
 public:

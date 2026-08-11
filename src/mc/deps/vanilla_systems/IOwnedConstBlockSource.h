@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual ~IOwnedConstBlockSource() = default;
 
-    virtual ::IConstBlockSource const* updateBlockSourceForEntity(::StrictEntityContext const&) = 0;
+    virtual ::IConstBlockSource const* updateBlockSourceForEntity(::StrictEntityContext const& entity) = 0;
     // NOLINTEND
 
 public:

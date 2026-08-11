@@ -13,6 +13,11 @@
 #include "mc/client/social/TitleHistory.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace OreUI::Detail { class IPropertyObject; }
+// clang-format on
+
 namespace OreUI {
 
 class SocialPlayerObject : public ::OreUI::PropertyObject<::OreUI::SocialPlayerObject>,
@@ -39,6 +44,22 @@ public:
     ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>>>                    mIsBlocked;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>>>                    mIsMuted;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<::Social::RelationToCurrentUser>>          mRelation;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SocialPlayerObject();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SocialPlayerObject(::OreUI::Detail::IPropertyObject* parent, ::OreUI::SocialPlayerData const& data);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };
 

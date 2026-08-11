@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::Beta {
 
 struct ApplyKnockbackRulesComponentDefinition {
@@ -42,6 +47,20 @@ public:
             ::SharedTypes::Beta::ApplyKnockbackRulesComponentDefinition::ApplyKnockbackRulesPreset::
                 ExtraKnockbackApproach>
             mExtraKnockbackApproach;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI bool operator==(
+            ::SharedTypes::Beta::ApplyKnockbackRulesComponentDefinition::ApplyKnockbackRulesPreset const& other
+        ) const;
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
     };
 

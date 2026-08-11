@@ -50,6 +50,8 @@ public:
     virtual bool needsUpdate() /*override*/;
 
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
+
+    virtual ~ConsumerComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -62,6 +64,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

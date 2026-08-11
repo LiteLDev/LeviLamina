@@ -19,6 +19,7 @@
 // clang-format off
 class AppPlatform;
 class IPacketObserver;
+class IPacketSecurityController;
 class IPacketSerializationController;
 class LocalConnector;
 class NetEventCallback;
@@ -190,7 +191,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit NetworkSystem(::NetworkSystem::Dependencies&& deps);
 
+    MCAPI ::std::shared_ptr<::IPacketSecurityController> _createPacketSecurityController(::NetworkIdentifier const& id);
+
     MCAPI bool _isUsingNetherNetTransportLayer() const;
+
+    MCAPI void _sendInternal(::NetworkIdentifier const& id, ::Packet const& packet, ::std::string const& data);
 
 #ifdef LL_PLAT_C
     MCAPI void closeConnection(

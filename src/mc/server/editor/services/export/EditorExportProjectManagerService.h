@@ -17,6 +17,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class FileArchiver;
+class Level;
 class LevelData;
 class WeakEntityRef;
 namespace Bedrock::PubSub { class Subscription; }
@@ -58,10 +60,10 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     virtual void beginExportProject(
-        ::WeakEntityRef,
-        ::Editor::GameOptions const&,
-        ::Editor::WorldType const,
-        ::std::function<void(::Editor::ExportResult const&, ::std::string)>
+        ::WeakEntityRef                                                     playerRef,
+        ::Editor::GameOptions const&                                        gameOptions,
+        ::Editor::WorldType const                                           editorWorldType,
+        ::std::function<void(::Editor::ExportResult const&, ::std::string)> callback
     ) /*override*/;
 
     virtual bool canExportProject() /*override*/;
@@ -69,32 +71,32 @@ public:
     virtual ::Editor::ProjectExportStatus getExportStatus() /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription addExportBeginTask(
-        ::std::function<void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&)>
+        ::std::function<void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&)> fn
     ) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription addExportCopyCompleteTask(
         ::std::function<
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
     ) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-        addExportLevelDataMutationTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)>) /*override*/;
+    addExportLevelDataMutationTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)> fn) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription addExportPreFileRemovalTask(
         ::std::function<
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
     ) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-        addExportLevelDataFinalizeTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)>) /*override*/;
+    addExportLevelDataFinalizeTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)> fn) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription addExportPrePackageTask(
         ::std::function<
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
     ) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-        addExportCleanupTask(::std::function<void(::FileArchiver::ExportType)>) /*override*/;
+    addExportCleanupTask(::std::function<void(::FileArchiver::ExportType)> fn) /*override*/;
 
     virtual ::std::shared_ptr<::FileArchiver::InterventionPublishers> getInterventionPublisherTable() /*override*/;
     // NOLINTEND
@@ -107,6 +109,24 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager,
         ::Editor::ProjectExportStatus                          exportStatus
     );
+
+    MCNAPI void _beginBackupExport(
+        ::Level*                                                            level,
+        ::FileArchiver*                                                     fileArchiver,
+        ::std::function<void(::Editor::ExportResult const&, ::std::string)> callback
+    );
+
+    MCNAPI void _onExportError(
+        ::std::function<void(::Editor::ExportResult const&, ::std::string)> callback,
+        ::std::string                                                       message,
+        ::Editor::ExportResult                                              result
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::string _buildTimestampedFileName(::std::string const& levelId, ::std::string const& extension);
     // NOLINTEND
 
 public:

@@ -46,7 +46,7 @@ public:
 
     virtual uint64 NumPackets() const = 0;
 
-    virtual bool NextPacket(::webrtc::RtpPacketToSend* packet) = 0;
+    virtual bool NextPacket(::webrtc::RtpPacketToSend* rtp_packet) = 0;
     // NOLINTEND
 
 public:

@@ -17,6 +17,7 @@
 // clang-format off
 class ServerLevel;
 struct LevelTickingAreaFinishedLoadingEvent;
+namespace ScriptModuleMinecraft { struct ScriptTickingArea; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 // clang-format on
@@ -77,7 +78,18 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptTickingAreaManager() /*override*/ = default;
 
-    virtual ::EventResult onEvent(::LevelTickingAreaFinishedLoadingEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::LevelTickingAreaFinishedLoadingEvent const& event) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptTickingArea>
+    _getTickingArea(::ScriptModuleMinecraft::ScriptTickingAreaManager::PromiseContext const& context) const;
+
+    MCAPI bool _hasCapacity(::DimensionType const& dimensionId, ::Bounds const& bounds);
+
+    MCAPI bool _removeTickingAreas(::std::vector<::mce::UUID> const& uuids);
     // NOLINTEND
 
 public:

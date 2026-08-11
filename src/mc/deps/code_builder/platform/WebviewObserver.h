@@ -22,7 +22,11 @@ public:
 
     virtual void onLoadingEnd();
 
+#ifdef LL_PLAT_S
     virtual void onError(::WebviewError const&);
+#else // LL_PLAT_C
+    virtual void onError(::WebviewError const& error);
+#endif
 
     virtual void onWebviewChanged();
 
@@ -34,7 +38,7 @@ public:
 
     virtual void onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo);
 
-    virtual void onMessageRecieved(::std::string const&);
+    virtual void onMessageRecieved(::std::string const& message);
 
     virtual void fireCodeBuilderLoadPerformance(
         ::std::string const&        stage,

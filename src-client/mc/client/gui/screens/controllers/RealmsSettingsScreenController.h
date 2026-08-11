@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
+#include "mc/client/gui/screens/controllers/ModalScreenButtonMode.h"
 #include "mc/client/gui/screens/controllers/ModalScreenData.h"
 #include "mc/client/gui/screens/controllers/MultiplayerLockState.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
@@ -25,11 +26,14 @@ class MainMenuScreenModel;
 class PlatformMultiplayerRestrictions;
 class RealmsAllowListScreenController;
 class ResourcePacksScreenController;
+struct GameRuleId;
 struct PackContentItem;
 struct PackManagerContentSource;
 namespace Realms { class ContentService; }
+namespace Realms { struct Content; }
 namespace Realms { struct InviteLink; }
 namespace Realms { struct ServerRegion; }
+namespace Realms { struct WorldBackup; }
 // clang-format on
 
 class RealmsSettingsScreenController : public ::SettingsScreenControllerBase {
@@ -196,7 +200,8 @@ public:
 
     virtual ::std::string getAdditionalScreenInfo() const /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -207,6 +212,112 @@ public:
         ::Realms::World const&                   world,
         ::std::string const&                     initialPackId
     );
+
+    MCAPI void _addContentToBeAppliedAndUploadIfNeeded(
+        ::std::vector<::std::shared_ptr<::PackContentItem>>                             contentToUpload,
+        ::std::shared_ptr<::std::vector<::Realms::Content>>                             contentToApply,
+        int                                                                             index,
+        ::std::function<void(::std::vector<::Realms::Content>)>                         completeUploadCallback,
+        ::std::function<void(::std::vector<::std::shared_ptr<::PackContentItem>>, int)> failedUploadCallback
+    );
+
+    MCAPI void _applyPacks(::std::function<void()> packsApplyCallback);
+
+    MCAPI bool _canChangeCheatGameRules() const;
+
+    MCAPI void _displayFreeUpSpacePopup();
+
+    MCAPI void _displayModalPopup(
+        ::std::string const&                         title,
+        ::std::string const&                         message,
+        ::std::function<void(::ModalScreenButtonId)> callback,
+        ::std::string const&                         leftButtonLabel,
+        ::std::string const&                         middleButtonLabel,
+        ::std::string const&                         rightButtonLabel,
+        ::ModalScreenButtonMode                      buttonNumber,
+        ::std::string const&                         telemetryOverride
+    );
+
+    MCAPI void _downloadMostRecentBackup();
+
+    MCAPI void _downloadRealmsWorld(
+        uint64               estimatedSize,
+        ::std::string const& backupId,
+        ::std::string const& time,
+        bool                 shouldCheckForSettingsChanged
+    );
+
+    MCAPI void _fetchActiveWorldSize();
+
+    MCAPI void _fetchAppliedContent();
+
+    MCAPI void _fetchInviteLinks();
+
+    MCAPI void _fetchWorldBackupList();
+
+    MCAPI bool _hasGameRulesChanged();
+
+    MCAPI bool _hasSingleGameRuleChanged(::GameRuleId const& rule);
+
+    MCAPI bool _hasSlotInfoChanged();
+
+    MCAPI bool _hasWorldInfoChanged();
+
+    MCAPI bool _isStoreMismatch() const;
+
+    MCAPI void _openCloseRealm(bool isRequestToOpen);
+
+    MCAPI void _querySubscriptionInfo();
+
+    MCAPI void _refreshWorldInfo(bool refreshSubscriptionInfo);
+
+    MCAPI void _registerEventHandlers();
+
+    MCAPI void _renewRealmHandler();
+
+    MCAPI void _saveAutoRealmWorldBackup();
+
+    MCAPI void _saveRealmWorldBackup();
+
+    MCAPI void _saveSettings(bool showRealmsLoadingLevelProgressHandler, ::std::function<void(bool)> actionAfterSave);
+
+    MCAPI void _setUpCallbacksBooleanGameRuleSettings(
+        ::std::vector<::std::pair<::std::string, ::GameRuleId>> const& rules,
+        ::std::function<bool()>                                        enabledFunction
+    );
+
+    MCAPI void _showErrorPopup(::std::string titleId, ::std::string contentId, ::std::function<void(bool)> action);
+
+    MCAPI void _showErrorPopupAndExitScreenAfterDismissed(::std::string titleId, ::std::string contentId);
+
+    MCAPI void _showSuccessPopup();
+
+    MCAPI void _updateRealmBranchConfig(::std::string const& ref);
+
+    MCAPI void _updateSubscriptionInformation(::Realms::SubscriptionInfo subscription);
+
+    MCAPI void _updateVersionsModel(::std::string const& filter, bool forceUpdate);
+
+    MCAPI void activateInitialPack();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::string
+    _getDateAsFormattedStringForBackupByIndex(::std::vector<::Realms::WorldBackup> const& backups, int index);
+
+    MCAPI static ::std::string
+    _getGameServerVersionForBackupByIndex(::std::vector<::Realms::WorldBackup> const& backups, int index);
+
+    MCAPI static ::std::string
+    _getPacksListTextForBackupByIndex(::std::vector<::Realms::WorldBackup> const& backups, int index);
+
+    MCAPI static ::std::string
+    _getTimeAsFormattedStringForBackupByIndex(::std::vector<::Realms::WorldBackup> const& backups, int index);
+
+    MCAPI static ::std::string
+    _getWorldNameForBackupByIndex(::std::vector<::Realms::WorldBackup> const& backups, int index);
     // NOLINTEND
 
 public:

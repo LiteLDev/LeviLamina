@@ -87,6 +87,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool tryGrow(::BlockSource& region, ::BlockPos const pos);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& nameId, int id, bool hasStems, ::std::optional<int> visualHeightTx);

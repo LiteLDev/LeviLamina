@@ -42,7 +42,7 @@ public:
         // NOLINTBEGIN
         virtual ~StreamFlusher() /*override*/ = default;
 
-        virtual ::Core::Result _flushBuffer(void const*, uint64) /*override*/;
+        virtual ::Core::Result _flushBuffer(void const* data, uint64 amount) /*override*/;
         // NOLINTEND
 
     public:

@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     virtual ~IPaperDollTile() /*override*/ = default;
 
-    virtual void submitUpdate(::GeometryAtlas::PaperDollPayload&&) = 0;
+    virtual void submitUpdate(::GeometryAtlas::PaperDollPayload&& payload) = 0;
     // NOLINTEND
 
 public:

@@ -52,35 +52,18 @@ public:
 
     virtual ::std::string_view getServiceName() const /*override*/;
 
-#ifdef LL_PLAT_S
     virtual ::Scripting::Result_deprecated<void>
     startExtensions(::std::optional<::Scripting::ContextId> optionalContextId) /*override*/;
-#else // LL_PLAT_C
-    virtual ::Scripting::Result_deprecated<void> startExtensions(::std::optional<::Scripting::ContextId>) /*override*/;
-#endif
 
     virtual ::Scripting::Result_deprecated<void> stopExtensions() /*override*/;
 
-#ifdef LL_PLAT_S
     virtual ::Scripting::Result_deprecated<void> forEachExtension(
         ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
-#else // LL_PLAT_C
-    virtual ::Scripting::Result_deprecated<void> forEachExtension(
-        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>
-    ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual ::Scripting::Result_deprecated<
         ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
     getInternalServiceContext(::Scripting::WeakLifetimeScope const& scope) /*override*/;
-#else // LL_PLAT_C
-    virtual ::Scripting::Result_deprecated<
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
-    getInternalServiceContext(::Scripting::WeakLifetimeScope const&) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -89,6 +72,11 @@ public:
 #ifdef LL_PLAT_S
     MCNAPI explicit EditorPlayerExtensionService(::Editor::ServiceProviderCollection& providers);
 #endif
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _createAndStartExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
+
+    MCNAPI ::Scripting::Result_deprecated<void> _destroyExtensionContexts();
     // NOLINTEND
 
 public:

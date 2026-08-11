@@ -63,6 +63,8 @@ public:
     // NOLINTBEGIN
     MCAPI WeepingVinesBlock(::std::string const& nameId, int id);
 
+    MCAPI void _tryGrow(::BlockSource& region, ::BlockPos const& pos, int age) const;
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;

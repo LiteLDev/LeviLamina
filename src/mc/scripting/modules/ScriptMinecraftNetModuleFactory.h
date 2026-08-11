@@ -12,6 +12,9 @@ class Scheduler;
 class ScriptPackConfigurationManager;
 class ServerLevel;
 namespace ScriptModuleMinecraftNet { class ScriptNativeWebSocketFactory; }
+namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct ContextConfig; }
+namespace Scripting { struct ModuleBinding; }
 // clang-format on
 
 class ScriptMinecraftNetModuleFactory : public ::Scripting::GenericModuleBindingFactory {
@@ -45,6 +48,13 @@ public:
         ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager>                packConfigManager,
         ::ServerLevel*                                                              level,
         ::std::shared_ptr<::ScriptModuleMinecraftNet::ScriptNativeWebSocketFactory> webSocketFactory
+    );
+
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Scripting::ModuleBindingBuilder&          moduleBuilder,
+        ::std::optional<::Scripting::ContextConfig> contextConfig,
+        bool                                        allowUntagged,
+        ::std::vector<::std::string> const&         allowedTags
     );
     // NOLINTEND
 

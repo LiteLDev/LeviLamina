@@ -26,7 +26,7 @@ public:
 
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const /*override*/;
 
-    virtual ::ItemInstance const& getRecipeItem(int) const /*override*/;
+    virtual ::ItemInstance const& getRecipeItem(int slot) const /*override*/;
 
     virtual void clearSelectedRecipe() /*override*/;
     // NOLINTEND

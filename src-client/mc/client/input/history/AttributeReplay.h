@@ -56,11 +56,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AdvanceFrameResult
-    getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const&) /*override*/;
+    getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const& entity) /*override*/;
 
-    virtual void advanceFrame(::EntityContext&) const /*override*/;
+    virtual void advanceFrame(::EntityContext& entity) const /*override*/;
 
-    virtual void advanceLiveFrame(::Actor&, ::std::optional<uint64>) /*override*/;
+    virtual void advanceLiveFrame(::Actor& actor, ::std::optional<uint64>) /*override*/;
 
     virtual ::std::bitset<2> getCorrectionTypeBitset() const /*override*/;
     // NOLINTEND

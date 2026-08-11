@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/puv/LoadResult.h"
 #include "mc/world/level/BiomeFilterGroup.h"
 #include "mc/world/level/biome/components/BiomeDecorationFeature.h"
 
@@ -12,6 +13,7 @@ class BedrockLoadContext;
 class HashedString;
 class IMinecraftEventing;
 class IWorldRegistriesProvider;
+class MinEngineVersion;
 class ResourcePackManager;
 namespace SharedTypes::v1_21_20 { struct AutomaticFeatureRulesData; }
 namespace cereal { struct ReflectionCtx; }
@@ -63,6 +65,17 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AutomaticFeatureRules(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
+
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_20::AutomaticFeatureRulesData> _parseAndInsertUnsorted(
+        ::std::string const&        filename,
+        ::std::string&&             data,
+        ::MinEngineVersion const&   minEngineVersion,
+        ::IWorldRegistriesProvider& worldRegistries,
+        ::std::unordered_map<
+            ::std::string,
+            ::std::unordered_map<::HashedString, ::AutomaticFeatureRules::AutomaticFeatureRule>>& bucketedFeatures,
+        bool                                                                                      isBasePack
+    ) const;
 
     MCAPI void attachAutomaticFeatures(
         ::ResourcePackManager&                                          resourcePackManager,

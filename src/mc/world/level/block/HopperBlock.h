@@ -94,6 +94,8 @@ public:
     // NOLINTBEGIN
     MCAPI HopperBlock(::std::string const& nameId, int id);
 
+    MCAPI ::AABB _getSpoutAABB(::Block const& block) const;
+
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;

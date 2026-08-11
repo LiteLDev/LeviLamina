@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ComplexItem.h"
+#include "mc/world/level/saveddata/maps/MapItemSavedData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,7 +47,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool const
     ) const /*override*/;
 
     virtual bool hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const /*override*/;
@@ -67,6 +68,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _scheduleMapChunkRendering(
+        ::Dimension&                    dimension,
+        ::MapItemSavedData const&       original,
+        ::MapItemSavedData::ChunkBounds bb,
+        ::std::shared_ptr<bool>         chunksRefCount
+    );
+
     MCAPI static bool doesDisplayPlayerMarkers(::ItemStackBase const& item);
 
     MCAPI static ::ActorUniqueID getMapId(::CompoundTag const* tag);
@@ -126,7 +134,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool const
     ) const;
 
     MCAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;

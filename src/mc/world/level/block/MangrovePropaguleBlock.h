@@ -14,6 +14,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class BlockType;
+class Random;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
@@ -47,6 +48,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI MangrovePropaguleBlock(::std::string const& nameId, int id);
+
+    MCAPI bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool _isHanging(::Block const& block) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND

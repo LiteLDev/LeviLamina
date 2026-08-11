@@ -31,7 +31,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ::InputMapping const* getMapping(::std::string const&) /*override*/;
+        virtual ::InputMapping const* getMapping(::std::string const& mappingName) /*override*/;
         // NOLINTEND
 
     public:
@@ -51,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::InputMappingFactory& getInputMappingFactory(int) /*override*/;
+    virtual ::InputMappingFactory& getInputMappingFactory(int controllerId) /*override*/;
     // NOLINTEND
 
 public:

@@ -40,4 +40,13 @@ public:
     // NOLINTBEGIN
     virtual ~StorageDependencyScreenController() /*override*/ = default;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void
+    _populateAllDependencies(::std::vector<::std::shared_ptr<::PackContentItem const>> const& dependentContent);
+
+    MCAPI void _populateDependencies();
+    // NOLINTEND
 };

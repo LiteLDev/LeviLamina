@@ -44,6 +44,12 @@ public:
     // NOLINTBEGIN
     MCAPI explicit SubscriptionsScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
 
+    MCAPI bool _isCsbExpired();
+
+    MCAPI bool _isCsbSubscribed();
+
+    MCAPI bool _platformMatches();
+
     MCAPI bool shouldShowSubscriptionsTab() const;
     // NOLINTEND
 

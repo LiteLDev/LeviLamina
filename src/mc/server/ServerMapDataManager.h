@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 class IGameplayUserManagerConnector;
 class MapItemSavedData;
 struct ActorUniqueID;
@@ -34,7 +35,8 @@ public:
     // NOLINTBEGIN
     virtual ~ServerMapDataManager() /*override*/ = default;
 
-    virtual void registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector&) /*override*/;
+    virtual void
+    registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector) /*override*/;
 
     virtual ::Bedrock::PubSub::Connector<void(::MapItemSavedData&)>& getOnCreateMapSavedDataConnector() /*override*/;
 
@@ -43,6 +45,12 @@ public:
     virtual void requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate) /*override*/;
 
     virtual void _copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
     // NOLINTEND
 
 public:

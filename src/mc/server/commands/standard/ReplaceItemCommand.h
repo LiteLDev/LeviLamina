@@ -17,6 +17,7 @@ class Actor;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+namespace Util { struct ReplacementResults; }
 // clang-format on
 
 class ReplaceItemCommand : public ::Command {
@@ -53,7 +54,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _outputError(
+        ::CommandOutput&                 output,
+        ::Util::ReplacementResults const errorDetails,
+        ::std::string const&             itemName
+    ) const;
     // NOLINTEND
 
 public:

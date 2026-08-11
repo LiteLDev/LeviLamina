@@ -76,6 +76,8 @@ public:
     );
 
     MCAPI void doNormalTick();
+
+    MCAPI void returnWithLoyalty(int enchantLevel);
     // NOLINTEND
 
 public:

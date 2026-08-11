@@ -25,6 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ReplicatedObjectInfo(::Editor::Network::ReplicatedObjectInfo&& other);
+
     MCNAPI ReplicatedObjectInfo(::Editor::Network::ReplicatedObjectInfo const& other);
 
     MCNAPI void operator=(::Editor::Network::ReplicatedObjectInfo const& other);

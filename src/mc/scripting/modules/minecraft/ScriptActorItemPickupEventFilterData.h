@@ -24,8 +24,18 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptActorItemPickupEventFilterData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptActorItemPickupEventFilterData(
+        ::Scripting::WeakLifetimeScope           scope,
+        ::ScriptModuleMinecraft::ScriptActorData actorData,
+        ::std::vector<::ItemStack>               items
+    );
+
     MCAPI ~ScriptActorItemPickupEventFilterData();
     // NOLINTEND
 
@@ -43,6 +53,12 @@ public:
         ::ScriptModuleMinecraft::ScriptActorData actorData,
         ::std::vector<::ItemStack>               items
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

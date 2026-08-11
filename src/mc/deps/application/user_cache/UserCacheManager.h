@@ -38,6 +38,13 @@ public:
         ::brstd::move_only_function<::Bedrock::NonOwnerPointer<::AppPlatform>()> getAppPlatform
     );
 
+    MCNAPI void _getDirectoryContents(
+        ::std::vector<::Bedrock::DirectoryEntry>& folders,
+        ::Core::PathBuffer<::std::string> const&  filePath
+    ) const;
+
+    MCNAPI void _getDirectorySizeAndDeleteDirectoryContents(::Core::PathBuffer<::std::string> const& path) const;
+
     MCNAPI bool clearDownloadStorageIfFull(::std::vector<::Bedrock::DirectoryEntry>& folders);
 
     MCNAPI bool clearUserStorageIfFull(::std::vector<::Bedrock::DirectoryEntry>& folders);

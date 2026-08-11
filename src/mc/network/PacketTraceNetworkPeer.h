@@ -78,6 +78,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _recordPacket(::std::string const& data, bool isOutgoing);
+
 #ifdef LL_PLAT_C
     MCAPI ::std::pair<::Json::Value, ::Json::Value> getPacketTraces() const;
 #endif

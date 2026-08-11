@@ -11,6 +11,7 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+struct TickingAreaDescription;
 // clang-format on
 
 class TickingAreaCommand : public ::Command {
@@ -52,12 +53,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::string formatTickingAreaList(::std::vector<::TickingAreaDescription> const& tickingAreas);
+
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 

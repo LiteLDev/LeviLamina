@@ -61,21 +61,25 @@ public:
     // NOLINTBEGIN
     virtual ~BrushableBlockActor() /*override*/ = default;
 
-    virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
     virtual int getContainerSize() const /*override*/;
 
     virtual int getMaxStackSize() const /*override*/;
 
-    virtual ::ItemStack const& getItem(int) const /*override*/;
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    virtual void setItem(int, ::ItemStack const&) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    virtual void onChanged(::BlockSource&) /*override*/;
+    virtual void onChanged(::BlockSource& region) /*override*/;
 
-    virtual void onRemoved(::BlockSource&) /*override*/;
+    virtual void onRemoved(::BlockSource& region) /*override*/;
 
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
@@ -83,7 +87,7 @@ public:
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&) /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:

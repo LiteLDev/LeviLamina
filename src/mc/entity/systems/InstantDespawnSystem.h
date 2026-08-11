@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorOwnerComponent;
 class EntityRegistry;
+class InstantDespawnComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -21,6 +23,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void
+    _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::InstantDespawnComponent& instantDespawnComponent);
+
     MCAPI static ::TickingSystemWithInfo createInstantDespawningPlayerCleanupSystem();
     // NOLINTEND
 

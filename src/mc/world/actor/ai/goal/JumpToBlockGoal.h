@@ -14,6 +14,8 @@
 // clang-format off
 class ItemDescriptor;
 class Mob;
+class MoveControlComponent;
+class NavigationComponent;
 // clang-format on
 
 class JumpToBlockGoal : public ::BaseGoal {
@@ -99,6 +101,16 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit JumpToBlockGoal(::Mob& mob);
+
+    MCAPI void _clearGoalState();
+
+    MCAPI bool _findCandidateBlocks(::NavigationComponent& navigation);
+
+    MCAPI bool _findJumpableBlocks(bool useOnlyPreferredBlocksIfAny);
+
+    MCAPI bool _findTargetBlock();
+
+    MCAPI bool _turnToTarget(::MoveControlComponent const& moveControl) const;
     // NOLINTEND
 
 public:

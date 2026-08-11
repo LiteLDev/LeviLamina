@@ -75,6 +75,9 @@ public:
     MCAPI void
     _bind(::ScreenController& controller, bool visible, ::std::vector<::DataBindingComponent::DataBinding>& bindings);
 
+    MCAPI void
+    _updateCustomComponentsPostBinding(::std::string_view propertyName, ::UIControl& owner, ::UiExpression expression);
+
     MCAPI void addCollectionBinding(
         ::std::string const& collectionName,
         ::UiExpression       bindingExpression,

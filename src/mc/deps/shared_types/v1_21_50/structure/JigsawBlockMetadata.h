@@ -34,6 +34,8 @@ public:
 
     MCFOLD ::SharedTypes::v1_21_50::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_50::JigsawBlockMetadata const&);
 
+    MCAPI bool operator==(::SharedTypes::v1_21_50::JigsawBlockMetadata const& rhs) const;
+
     MCAPI ~JigsawBlockMetadata();
     // NOLINTEND
 

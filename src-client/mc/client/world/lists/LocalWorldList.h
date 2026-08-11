@@ -71,6 +71,13 @@ public:
         bool                                                 isEditorMode
     );
 
+    MCAPI void _checkIfOtherStorageContainsWorlds();
+
+    MCAPI void
+    _filterWorlds(::std::vector<::LevelSummary>& worlds, ::TrialManager const& trialManager, bool isEditorMode);
+
+    MCAPI void onEntitlementRefresh();
+
     MCAPI void update(::TrialManager const& trialManager);
     // NOLINTEND
 

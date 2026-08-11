@@ -13,6 +13,8 @@
 class StructureTemplate;
 namespace Editor { class EditorStructureTemplate; }
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Network { class StructureDataCacheReleaseStructurePayload; }
+namespace Editor::Network { class StructureDataCacheRequestStructurePayload; }
 namespace Editor::StructureDataCache { class IStructureDataProvider; }
 namespace mce { class UUID; }
 // clang-format on
@@ -66,6 +68,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit StructureDataCacheService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI void _handleStructureDataCacheReleaseStructurePayload(
+        ::Editor::Network::StructureDataCacheReleaseStructurePayload const& payload
+    );
+
+    MCNAPI void _handleStructureDataCacheRequestStructurePayload(
+        ::Editor::Network::StructureDataCacheRequestStructurePayload const& payload
+    );
     // NOLINTEND
 
 public:

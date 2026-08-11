@@ -51,6 +51,8 @@ public:
     MCAPI ::std::optional<::mce::PointLightParameters>
     _createPointLightFromBlock(::Block const& block, ::BlockPos const& blockPos) const;
 
+    MCAPI void _releaseAllResources(::BlockPos const& blockPos, ::PointLighting::ManagedPointLight& pointLight);
+
     MCAPI void clear();
 
     MCAPI ::std::vector<::mce::AnalyticalLight> getAnalyticalLights() const;
@@ -64,6 +66,12 @@ public:
     );
 
     MCAPI ~PointLightCoordinator();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isPointLightCandidate(::Block const& block, ::RuntimeLocalLightingConfig const& lightConfig);
     // NOLINTEND
 
 public:

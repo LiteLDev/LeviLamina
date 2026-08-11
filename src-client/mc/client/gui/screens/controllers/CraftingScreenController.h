@@ -13,6 +13,8 @@
 #include "mc/deps/shared_types/item/CreativeItemCategory.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/SlotData.h"
+#include "mc/world/containers/controllers/ItemCraftType.h"
+#include "mc/world/containers/controllers/ItemTakeType.h"
 #include "mc/world/inventory/InventoryLeftTabIndex.h"
 #include "mc/world/item/ItemInstance.h"
 
@@ -26,6 +28,7 @@ class Player;
 class ToastMessage;
 class UIPropertyBag;
 struct ActorUniqueID;
+struct AutoPlaceResult;
 namespace Json { class Value; }
 // clang-format on
 
@@ -115,7 +118,7 @@ public:
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
-    virtual void showToast(::ToastMessage, bool) /*override*/;
+    virtual void showToast(::ToastMessage message, bool animateIn) /*override*/;
 
     virtual void removeToast() /*override*/;
 
@@ -171,7 +174,7 @@ public:
 
     virtual void _registerAutoPlaceOrder() /*override*/;
 
-    virtual bool _isInCreativeContainer(::std::string const&) const /*override*/;
+    virtual bool _isInCreativeContainer(::std::string const& containerName) const /*override*/;
     // NOLINTEND
 
 public:
@@ -183,6 +186,48 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId,
         ::CraftingType                                 craftingType
+    );
+
+    MCAPI bool _currentItemIsSelected(::std::string const& collectionName, int collectionIndex) const;
+
+    MCAPI void _cycleLayout(int dir);
+
+    MCAPI void _evacuateCraftingGrid();
+
+    MCAPI int _findNextLeftSideInventoryTab(int dir) const;
+
+    MCAPI void _focusCollectionItem(::std::string const& collectionName, int collectionIndex, bool forceFocus);
+
+    MCAPI void _handleCraftItem(::ItemCraftType);
+
+    MCAPI void _handleRecipeSelect(::std::string const& collectionName, int collectionIndex, bool displayOnly);
+
+    MCAPI bool _isConstructionTabVisible() const;
+
+    MCAPI bool _isEquipmentTabVisible() const;
+
+    MCAPI bool _isItemsTabVisible() const;
+
+    MCAPI bool _isNatureTabVisible() const;
+
+    MCAPI ::ui::ViewRequest
+    _recipeAutoCraft(::std::string const& collectionName, int collectionIndex, ::ItemCraftType craftType);
+
+    MCAPI void _refreshFilters(::InventoryLeftTabIndex tab, bool forceRefresh);
+
+    MCAPI void _savePlayerInventoryOptions();
+
+    MCAPI void _sendActiveLayoutInfo();
+
+    MCAPI void _setLeftSideInventoryTab(int tabIndex, bool saveOptions);
+
+    MCAPI ::std::string _tabIndexToCollectionName(::InventoryLeftTabIndex index) const;
+
+    MCAPI int _tryAutoPlaceItemIntoContainer(
+        ::SlotData const&                 srcSlot,
+        ::ItemTakeType                    type,
+        ::ContainerEnumName               containerName,
+        ::std::vector<::AutoPlaceResult>& autoPlaceResults
     );
     // NOLINTEND
 

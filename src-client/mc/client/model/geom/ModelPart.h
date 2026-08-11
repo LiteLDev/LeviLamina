@@ -16,6 +16,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorResourceDefinition;
 class BoneOrientation;
 class Cube;
 class DataDrivenGeometry;
@@ -28,6 +29,7 @@ class RenderParams;
 class ScreenContext;
 class Tessellator;
 namespace mce { class Color; }
+namespace mce { class MaterialPtr; }
 // clang-format on
 
 class ModelPart {
@@ -117,6 +119,14 @@ public:
 
     MCAPI ModelPart(int xTexOffs, int yTexOffs, int texWidth, int texHeight);
 
+    MCAPI void _copyBoneMatricesToSkinnedMeshes(
+        ::RenderParams&                      renderParams,
+        ::gsl::span<::BoneOrientation const> boneOrientations,
+        ::RenderController const*            renderControllerId,
+        ::DataDrivenGeometry&                geo,
+        bool                                 deferred
+    );
+
     MCAPI void addBox(::Vec3 const& point0, ::Vec3 const& extents, bool mirror, float g, ::mce::Color const& color);
 
     MCAPI void assignPartToGroup(::Model& model, bool forceToUniqueGroup, ::DataDrivenGeometry* owningGeometry);
@@ -143,10 +153,50 @@ public:
 
     MCAPI void expandAABB(::AABB& bb) const;
 
+    MCAPI void LL_CC_V generateBoneTransformMatrices(
+        ::RenderParams&                renderParams,
+        ::gsl::span<::BoneOrientation> boneOrientations,
+        ::RenderController const*      renderControllerId,
+        ::DirectX::XMMATRIX const      boneToEntitySpaceMatrix
+    );
+
+    MCAPI bool isVisible(::RenderParams& renderParams, ::RenderController const* renderControllerId) const;
+
     MCAPI bool load(::GeometryPtr source, ::std::string_view nodeName, ::ModelPart* parentPart);
+
+    MCAPI bool load(
+        ::std::shared_ptr<::ActorResourceDefinition> const resourceDefinition,
+        ::GeometryPtr const                                source,
+        ::std::string_view                                 nodeName,
+        ::ModelPart*                                       parentPart
+    );
+
+    MCAPI void loadBoxes(
+        ::Vec3 const&                         newPivot,
+        ::Vec3 const&                         offset,
+        ::std::vector<::Geometry::Box> const& boxes,
+        ::Vec3 const&                         bindPoseRotation
+    );
 
     MCAPI void
     loadPolyMesh(::Vec3 const& newPivot, ::Vec3 const& bindPoseRotation, ::Geometry::NodePolyMesh const& sourceMesh);
+
+    MCAPI bool loadWithOrientation(
+        ::std::shared_ptr<::ActorResourceDefinition> const resourceDefinition,
+        ::GeometryPtr const                                source,
+        ::std::string_view                                 nodeName,
+        ::Vec3 const&                                      basePos,
+        ::Vec3 const&                                      pivot,
+        ::ModelPart*                                       parentPart
+    );
+
+    MCAPI bool loadWithOrientation_(
+        ::GeometryPtr const source,
+        ::std::string_view  nodeName,
+        ::Vec3 const&       basePos,
+        ::Vec3 const&       pivot,
+        ::ModelPart*        parentPart
+    );
 
     MCAPI uint64 numCubes() const;
 
@@ -170,6 +220,10 @@ public:
         uint             count,
         ::Matrix         boneToEntitySpaceMatrix
     );
+
+    MCAPI void reset();
+
+    MCAPI void setModelPartMaterial(::mce::MaterialPtr const& mat, ::RenderController const* renderControllerId);
 
     MCAPI void translateTo(::Matrix& mv, float scale);
 

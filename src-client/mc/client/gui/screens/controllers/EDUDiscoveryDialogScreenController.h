@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/screens/controllers/EDUDiscoveryDialogCallbacks.h"
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
+#include "mc/client/social/edu_discovery/ButtonAction.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,6 +40,8 @@ public:
     );
 
     MCAPI void _openPopup();
+
+    MCAPI void _performButtonAction(::EDUDiscovery::ButtonAction action);
 
     MCAPI bool presentIfNeeded();
     // NOLINTEND

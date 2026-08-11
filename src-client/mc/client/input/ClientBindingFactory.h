@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/input/BindingFactory.h"
 #include "mc/deps/input/RectangleArea.h"
+#include "mc/options/option_types/OptionID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -85,25 +86,48 @@ public:
     // NOLINTBEGIN
     virtual ~ClientBindingFactory() /*override*/ = default;
 
-    virtual ::std::function<bool()> getBooleanBinding(uint) const /*override*/;
+    virtual ::std::function<bool()> getBooleanBinding(uint name) const /*override*/;
 
-    virtual ::std::function<float()> getFloatBinding(uint) const /*override*/;
+    virtual ::std::function<float()> getFloatBinding(uint name) const /*override*/;
 
-    virtual ::std::function<::std::string()> getStringBinding(uint) const /*override*/;
+    virtual ::std::function<::std::string()> getStringBinding(uint name) const /*override*/;
 
-    virtual ::std::function<::glm::vec2()> getPointBinding(uint) const /*override*/;
+    virtual ::std::function<::glm::vec2()> getPointBinding(uint name) const /*override*/;
 
-    virtual ::std::function<::RectangleArea()> getAreaBinding(uint) const /*override*/;
+    virtual ::std::function<::RectangleArea()> getAreaBinding(uint name) const /*override*/;
 
-    virtual ::std::function<void(::RectangleArea)> getDynamicAreaBinding(uint) const /*override*/;
+    virtual ::std::function<void(::RectangleArea)> getDynamicAreaBinding(uint name) const /*override*/;
 
-    virtual ::std::function<void(float)> getFloatSetter(uint) const /*override*/;
+    virtual ::std::function<void(float)> getFloatSetter(uint name) const /*override*/;
 
-    virtual void setCustomAreaBinding(::std::string const&, ::RectangleArea) /*override*/;
+    virtual void setCustomAreaBinding(::std::string const& name, ::RectangleArea area) /*override*/;
 
-    virtual void removeCustomAreaBinding(::std::string const&) /*override*/;
+    virtual void removeCustomAreaBinding(::std::string const& name) /*override*/;
 
     virtual ::std::vector<uint> getCustomAreaBindingNames() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::RectangleArea
+    _calculateClassicButtonRectangleWithOptionIDs(::OptionID posX, ::OptionID posY, ::OptionID scale) const;
+
+    MCAPI ::RectangleArea _calculateClassicDpadRectangle() const;
+
+    MCAPI ::RectangleArea _fitToScreen(::RectangleArea const& rectangle) const;
+
+    MCAPI bool _isInputSprinting() const;
+
+    MCAPI bool _touchButtonsVisible() const;
+
+    MCAPI void setupAreaBindings();
+
+    MCAPI void setupBoolBindings();
+
+    MCAPI void setupFloatBindings();
+
+    MCAPI void setupFloatSetters();
     // NOLINTEND
 
 public:

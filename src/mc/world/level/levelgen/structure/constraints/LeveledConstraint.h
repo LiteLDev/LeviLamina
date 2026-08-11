@@ -30,8 +30,12 @@ public:
     // NOLINTBEGIN
     virtual ~LeveledConstraint() /*override*/ = default;
 
-    virtual bool isSatisfied(::IBlockWorldGenAPI const&, ::BlockPos const&, ::Rotation const&, ::BlockPos const&) const
-        /*override*/;
+    virtual bool isSatisfied(
+        ::IBlockWorldGenAPI const& target,
+        ::BlockPos const&          structurePos,
+        ::Rotation const&          structureRot,
+        ::BlockPos const&          centeringOffset
+    ) const /*override*/;
     // NOLINTEND
 
 public:

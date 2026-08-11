@@ -33,6 +33,8 @@ public:
     MCAPI NoiseBlockSpecifier(::SharedTypes::v1_26_30::NoiseBlockSpecifier const&);
 
     MCAPI ::SharedTypes::v1_26_30::NoiseBlockSpecifier& operator=(::SharedTypes::v1_26_30::NoiseBlockSpecifier const&);
+
+    MCAPI bool operator==(::SharedTypes::v1_26_30::NoiseBlockSpecifier const&) const;
     // NOLINTEND
 
 public:

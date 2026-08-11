@@ -25,9 +25,9 @@ public:
     // NOLINTBEGIN
     virtual ~CustomBlockStateVariant() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::Tag> _toNBT(int) const /*override*/;
+    virtual ::std::unique_ptr<::Tag> _toNBT(int val) const /*override*/;
 
-    virtual ::std::optional<int> _fromNBT(::Tag const&) const /*override*/;
+    virtual ::std::optional<int> _fromNBT(::Tag const& tag) const /*override*/;
     // NOLINTEND
 
 public:

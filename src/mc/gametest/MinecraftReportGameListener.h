@@ -7,7 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
+class BlockSource;
 namespace gametest { class BaseGameTestInstance; }
+namespace gametest { struct GameTestError; }
 // clang-format on
 
 class MinecraftReportGameListener : public ::gametest::IGameTestListener,
@@ -30,11 +33,21 @@ public:
     // NOLINTBEGIN
     virtual ~MinecraftReportGameListener() /*override*/ = default;
 
-    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance&) /*override*/;
+    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
-    virtual void onTestPassed(::gametest::BaseGameTestInstance&) /*override*/;
+    virtual void onTestPassed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
-    virtual void onTestFailed(::gametest::BaseGameTestInstance&) /*override*/;
+    virtual void onTestFailed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _reportFailure(::gametest::GameTestError const& error, ::BlockSource& region);
+
+    MCNAPI void _say(::std::string const& chatColor, ::std::string const& text);
+
+    MCNAPI void _spawnBeacon(::Block const& glassType);
     // NOLINTEND
 
 public:

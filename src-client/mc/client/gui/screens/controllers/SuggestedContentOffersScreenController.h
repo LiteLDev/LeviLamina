@@ -51,6 +51,8 @@ public:
         ::std::string const&                     defaultTitleString,
         ::std::string const&                     optionalBindingSuffix
     );
+
+    MCAPI ::std::string _getSuggestedOffersTitle() const;
     // NOLINTEND
 
 public:

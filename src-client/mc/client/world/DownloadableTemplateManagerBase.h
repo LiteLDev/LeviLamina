@@ -5,11 +5,13 @@
 // auto generated inclusion list
 #include "mc/client/world/DownloadWorldTemplateError.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 class IContentAcquisition;
 class IDlcBatcher;
+class IStoreCatalogRepository;
 // clang-format on
 
 namespace World {
@@ -41,16 +43,21 @@ public:
     virtual ~DownloadableTemplateManagerBase() /*override*/ = default;
 
     virtual ::std::optional<::World::DownloadWorldTemplateError> downloadWorldTemplate(
-        ::std::string const&,
-        ::std::function<void(::std::optional<::World::DownloadWorldTemplateError>)>
+        ::std::string const&                                                        templateId,
+        ::std::function<void(::std::optional<::World::DownloadWorldTemplateError>)> callback
     );
 
-    virtual void _templateDownloadedCallback(::std::string const&, bool);
+    virtual void _templateDownloadedCallback(::std::string const& templateId, bool success);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DownloadableTemplateManagerBase(
+        ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
+        ::IContentAcquisition&                                   contentAquisition
+    );
+
     MCAPI bool canDownloadBeCancelled(::std::string const& templateId) const;
 
     MCAPI void cancelDownload(::std::string const& templateId);
@@ -62,6 +69,12 @@ public:
     MCAPI ::std::string getDownloadingProgressBytes(::std::string const& templateId) const;
 
     MCAPI bool isDownloadingStep2Started(::std::string const& templateId) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

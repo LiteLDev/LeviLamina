@@ -3,13 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/ProgressContentType.h"
 #include "mc/client/gui/oreui/binding/AsyncStatefulFunction_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/screens/ProgressScreenNavigation.h"
+#include "mc/client/services/download/DlcCheckResult.h"
 #include "mc/client/world/IWorldStorageHandler.h"
 #include "mc/client/world/StartLocalWorldResult.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -94,6 +98,36 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ContentAcquisition>               contentAcquisition,
         ::Bedrock::NotNullNonOwnerPtr<::World::OwnedWorldTemplateManager> ownedWorldTemplateManager
     );
+
+    MCAPI ::DlcCheckResult _checkDLCsToStartLocalWorld(::std::string const& worldIdStr);
+
+    MCAPI void _pushLoadingScreen(::ProgressContentType contentType, ::GameType gametype);
+
+    MCAPI void clearStartLocalWorldResult();
+
+    MCFOLD ::OreUI::AsyncStatefulFunction_DEPRECATED<
+        ::OreUI::WorldStartupFacet::BackupThenStartLocalWorldResult(::std::string const&)>&
+    getBackupThenStartLocalWorldFunctor_DEPRECATED();
+
+    MCAPI ::std::vector<::World::PackDetails> const& getBrokenPacksToStart() const;
+
+    MCAPI bool const getHasMissingResources() const;
+
+    MCAPI ::std::string const& getMissingPacksSize() const;
+
+    MCFOLD ::std::vector<::World::PackDetails> const& getMissingPacksToStart() const;
+
+    MCAPI ::std::string const& getMissingTemplateToStart() const;
+
+    MCFOLD ::std::optional<::World::StartLocalWorldResult> const& getStartLocalWorldResult();
+
+    MCAPI ::OreUI::FacetTaskState getStartLocalWorldTaskState() const;
+
+    MCAPI bool hasConfirmedPlatformLockedContentForWorld(::std::string const& worldIdStr);
+
+    MCAPI void setConfirmedPlatformLockedContentForWorld(::std::string const& worldIdStr);
+
+    MCAPI void startLocalWorld(::std::string const& worldIdStr);
     // NOLINTEND
 
 public:

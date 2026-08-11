@@ -38,6 +38,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SettingsStringQuery(::OreUI::ClientDependencies const& client, ::std::string const& id);
+
+    MCAPI void _updateProperties();
     // NOLINTEND
 
 public:

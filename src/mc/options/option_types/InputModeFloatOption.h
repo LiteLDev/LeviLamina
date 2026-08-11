@@ -30,9 +30,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>&) /*override*/;
+    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) /*override*/;
 
-    virtual void load(::std::string const&) /*override*/;
+    virtual void load(::std::string const& valueString) /*override*/;
 
     virtual void load(::std::map<::std::string, ::std::string>& propertyMap) /*override*/;
     // NOLINTEND
@@ -51,6 +51,9 @@ public:
         float                valueMin,
         float                rangeMax
     );
+
+    MCAPI void
+    _saveForInputMode(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector, ::InputMode mode);
 
     MCAPI void reset(::InputMode inputMode, bool saveOptionChange);
 

@@ -42,15 +42,15 @@ public:
 
     virtual ::std::optional<::std::vector<::SnapshotFilenameAndLength>> saveQuery() /*override*/;
 
-    virtual bool addNameToAllowList(::std::string const&) /*override*/;
+    virtual bool addNameToAllowList(::std::string const& name) /*override*/;
 
-    virtual bool removeNameFromAllowList(::std::string const&) /*override*/;
+    virtual bool removeNameFromAllowList(::std::string const& name) /*override*/;
 
-    virtual bool allowListContains(::std::string const&) /*override*/;
+    virtual bool allowListContains(::std::string const& name) /*override*/;
 
     virtual bool reloadAllowListFile() /*override*/;
 
-    virtual void setAllowListEnabled(bool) /*override*/;
+    virtual void setAllowListEnabled(bool enabled) /*override*/;
 
     virtual bool getAllowListEnabled() const /*override*/;
 

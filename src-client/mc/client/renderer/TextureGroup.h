@@ -106,6 +106,16 @@ public:
         ::std::shared_ptr<::mce::ImageResourceLoader>             imageResourceLoader
     );
 
+    MCAPI void _loadTextureAsyncUrgentlyIfTouched(
+        ::std::pair<::ResourceLocation, ::TextureLoadMode> const& textureLoadKey,
+        ::std::optional<::ResourceLoadType> const                 optionalLoadType
+    );
+
+    MCAPI void _loadTexturesAsync(
+        ::gsl::span<::ResourceLocationPair> const locationPairs,
+        ::std::optional<::ResourceLoadType> const resourceLoadType
+    );
+
     MCAPI void addEmptyTexture(::ResourceLocation const& resourceLocation, int width, int height);
 
     MCAPI void enableLRUCache(uint64 cacheSize);

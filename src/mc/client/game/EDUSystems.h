@@ -70,7 +70,7 @@ public:
 #else // LL_PLAT_C
     virtual ::Social::IEduMultiplayerHeadless& getMultiplayerHeadless() const /*override*/;
 
-    virtual void onNotify(::EDUConfigData const& config) /*override*/;
+    virtual void onNotify(::EDUConfigData const& state) /*override*/;
 
     virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const& state) /*override*/;
 #endif

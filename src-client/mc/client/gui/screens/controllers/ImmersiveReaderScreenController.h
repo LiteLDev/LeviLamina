@@ -72,6 +72,8 @@ public:
     // NOLINTBEGIN
     MCAPI
     ImmersiveReaderScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::std::string readerText);
+
+    MCAPI void _launchReader();
     // NOLINTEND
 
 public:

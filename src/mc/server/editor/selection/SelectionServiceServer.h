@@ -13,8 +13,10 @@
 // clang-format off
 namespace Editor { class ProjectRegion; }
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Network { class SelectionVolumeUpdate; }
 namespace Editor::Selection { class SelectionContainerEntity; }
 namespace Editor::Selection { class SelectionContainerVolume; }
+namespace Editor::Selection { struct SelectionVolumeEvent; }
 // clang-format on
 
 namespace Editor::Services {
@@ -70,19 +72,20 @@ public:
     virtual uint64 generateManifestWithCallback(
         ::std::function<
             void(::Scripting::Result_deprecated<::Editor::Services::SelectionServiceProvider::ManifestState> const&)>
+            callback
     ) /*override*/;
 
     virtual ::Editor::Services::SelectionServiceProvider::ManifestState const& getCurrentManifest() const /*override*/;
 
     virtual void deselectBlocksAsync(
-        ::std::string const&,
-        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)>
+        ::std::string const&                                                 blockIdentifier,
+        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
     ) /*override*/;
 
     virtual void replaceBlocksAsync(
-        ::std::string const&,
-        ::std::string const&,
-        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)>
+        ::std::string const&                                                 fromBlockIdentifier,
+        ::std::string const&                                                 toBlockIdentifier,
+        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
     ) /*override*/;
     // NOLINTEND
 
@@ -90,6 +93,16 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit SelectionServiceServer(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI void _cancelPreviousGeneration();
+
+    MCNAPI void _completeManifestWithEmptyState();
+
+    MCNAPI void _handleRegionUpdate(::Editor::Selection::SelectionVolumeEvent const& evt);
+
+    MCNAPI void _handleVolumeUpdate(::Editor::Network::SelectionVolumeUpdate const& payload);
+
+    MCNAPI void _startManifestGeneration();
     // NOLINTEND
 
 public:

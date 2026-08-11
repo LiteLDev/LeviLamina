@@ -12,6 +12,7 @@
 // clang-format off
 class GatheringConfig;
 class MainMenuScreenModel;
+class ServicesManager;
 namespace Json { class Value; }
 // clang-format on
 
@@ -45,6 +46,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI GatheringInfoScreenController(::std::shared_ptr<::MainMenuScreenModel> model, bool autoConnect);
+
+    MCAPI void _attemptToConnect();
+
+    MCAPI void _createQRCode();
+
+    MCAPI bool _isConsolePlatform() const;
+
+    MCAPI bool _locKeyValid(::std::string const& key) const;
+
+    MCAPI bool _shouldShowQRCode() const;
+
+    MCAPI void _updateRequiredBuild(::ServicesManager* servicesManager);
     // NOLINTEND
 
 public:

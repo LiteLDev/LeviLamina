@@ -57,6 +57,7 @@ class IDataOutput;
 class ILevel;
 class LevelChunkMetaData;
 class SaveContext;
+class StringByteInput;
 class SubChunkPos;
 class WeakEntityRef;
 struct ActorDefinitionIdentifier;
@@ -240,13 +241,21 @@ public:
         ::LevelChunkBlockActorStorage::TrackingMode blockActorTrackingMode
     );
 
+    MCAPI void _addEntityToVolumes(::gsl::not_null<::Actor*> actor);
+
     MCAPI void _checkAndInferMetaDataAfterDeserialization();
 
 #ifdef LL_PLAT_C
     MCAPI void _deserializeBiomes(::IDataInput& stream, ::BiomeRegistry const& biomeRegistry, bool fromNetwork);
 #endif
 
+#ifdef LL_PLAT_S
+    MCAPI void _deserializeBiomes(::IDataInput& stream, ::BiomeRegistry const& biomeRegistry, bool fromNetwork);
+#endif
+
     MCAPI void _deserializeBlockEntities(::IDataInput& stream, ::LevelChunkBlockActorStorage& blockEntityMap);
+
+    MCAPI bool _deserializeSubChunk(short index, ::StringByteInput& stream);
 
     MCAPI void _fixupCorruptedBlockActors(
         ::LevelChunkBlockActorStorage& deserialized,
@@ -259,6 +268,14 @@ public:
         ::Block const&         current,
         ::BlockSource*         currentSource
     );
+
+    MCAPI void _placeBlockEntity(::std::shared_ptr<::BlockActor> te);
+
+    MCAPI bool _recalcHeight(::ChunkBlockPos const& start, ::BlockSource* source);
+
+    MCAPI void _set2DBiomesFrom3D(::IDataInput& stream);
+
+    MCAPI void _setAllBiomesFrom2D(::std::array<::BiomeIdType, 256>& legacyBiomes);
 
     MCAPI void _setBiome(::Biome const& biome, ::ChunkBlockPos const& pos, bool fillYDimension);
 
@@ -295,6 +312,15 @@ public:
         ::std::optional<::DeserializationChanges*> deserializationChanges
     );
 
+    MCAPI void deserializeSubChunk(
+        uchar                                      idx,
+        ::IDataInput&                              stream,
+        ::std::optional<schar>                     absoluteIndex,
+        ::std::optional<::DeserializationChanges*> deserializationChanges
+    );
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI void deserializeSubChunk(
         uchar                                      idx,
         ::IDataInput&                              stream,

@@ -57,17 +57,21 @@ public:
 
     virtual bool isTrusted() const /*override*/;
 
-    virtual bool hasAsset(::Core::Path const&, bool, bool) const /*override*/;
+    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
+        /*override*/;
 
-    virtual bool hasFolder(::Core::Path const&) const /*override*/;
+    virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
-    virtual bool getAsset(::Core::Path const&, ::std::string&, bool) const /*override*/;
+    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
+        /*override*/;
 
-    virtual void forEachIn(::Core::Path const&, ::std::function<void(::Core::Path const&)>, bool) const /*override*/;
+    virtual void
+    forEachIn(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback, bool) const
+        /*override*/;
 
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
-    virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const&) const /*override*/;
+    virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
     virtual ::PackAccessAssetGenerationResult generateAssetSet() /*override*/;
 

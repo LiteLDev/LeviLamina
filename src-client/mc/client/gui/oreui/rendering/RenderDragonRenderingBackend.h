@@ -188,60 +188,79 @@ public:
 
     virtual void BeginCommands() /*override*/;
 
-    virtual void FillCaps(::renoir::RendererCaps&) /*override*/;
+    virtual void FillCaps(::renoir::RendererCaps& outCaps) /*override*/;
 
     virtual void WrapUserRenderTarget(
-        void*,
-        ::renoir::Texture2D const&,
-        ::renoir::Texture2DObject,
-        void*,
-        ::renoir::DepthStencilTexture const&,
-        ::renoir::DepthStencilTextureObject
+        void*                                userObject,
+        ::renoir::Texture2D const&           description,
+        ::renoir::Texture2DObject            object,
+        void*                                depthStencil,
+        ::renoir::DepthStencilTexture const& dsDescription,
+        ::renoir::DepthStencilTextureObject  dsObject
     ) /*override*/;
 
-    virtual void WrapUserTexture(void*, ::renoir::Texture2D const&, ::renoir::Texture2DObject) /*override*/;
-
-    virtual bool CreatePipelineState(::renoir::PipelineState const&, ::renoir::PipelineStateObject) /*override*/;
-
-    virtual void DestroyPipelineState(::renoir::PipelineStateObject) /*override*/;
-
-    virtual bool CreateVertexBuffer(::renoir::VertexType, uint, ::renoir::VertexBufferObject, bool) /*override*/;
-
-    virtual void DestroyVertexBuffer(::renoir::VertexBufferObject) /*override*/;
-
-    virtual void* MapVertexBuffer(::renoir::VertexBufferObject) /*override*/;
-
-    virtual void UnmapVertexBuffer(::renoir::VertexBufferObject, uint) /*override*/;
-
-    virtual bool CreateIndexBuffer(::renoir::IndexBufferType, uint, ::renoir::IndexBufferObject, bool) /*override*/;
-
-    virtual void DestroyIndexBuffer(::renoir::IndexBufferObject) /*override*/;
-
-    virtual void* MapIndexBuffer(::renoir::IndexBufferObject) /*override*/;
-
-    virtual void UnmapIndexBuffer(::renoir::IndexBufferObject, uint) /*override*/;
-
-    virtual bool CreateConstantBuffer(::renoir::CBType, ::renoir::ConstantBufferObject, uint) /*override*/;
-
-    virtual void DestroyConstantBuffer(::renoir::ConstantBufferObject) /*override*/;
-
-    virtual bool CreateTexture(::renoir::Texture2DObject, ::renoir::Texture2D const&, void const*, uint) /*override*/;
-
-    virtual void DestroyTexture(::renoir::Texture2DObject) /*override*/;
-
-    virtual void UpdateTexture(
-        ::renoir::Texture2DObject,
-        ::renoir::Texture2D const&,
-        ::renoir::UpdateBox*,
-        void const**,
-        uint,
-        bool
+    virtual void WrapUserTexture(
+        void*                      userObject,
+        ::renoir::Texture2D const& description,
+        ::renoir::Texture2DObject  object
     ) /*override*/;
 
     virtual bool
-    CreateDepthStencilTexture(::renoir::DepthStencilTextureObject, ::renoir::DepthStencilTexture const&) /*override*/;
+    CreatePipelineState(::renoir::PipelineState const& state, ::renoir::PipelineStateObject object) /*override*/;
 
-    virtual void DestroyDepthStencilTexture(::renoir::DepthStencilTextureObject) /*override*/;
+    virtual void DestroyPipelineState(::renoir::PipelineStateObject object) /*override*/;
+
+    virtual bool
+    CreateVertexBuffer(::renoir::VertexType type, uint count, ::renoir::VertexBufferObject object, bool) /*override*/;
+
+    virtual void DestroyVertexBuffer(::renoir::VertexBufferObject object) /*override*/;
+
+    virtual void* MapVertexBuffer(::renoir::VertexBufferObject object) /*override*/;
+
+    virtual void UnmapVertexBuffer(::renoir::VertexBufferObject object, uint count) /*override*/;
+
+    virtual bool CreateIndexBuffer(
+        ::renoir::IndexBufferType   format,
+        uint                        count,
+        ::renoir::IndexBufferObject object,
+        bool
+    ) /*override*/;
+
+    virtual void DestroyIndexBuffer(::renoir::IndexBufferObject object) /*override*/;
+
+    virtual void* MapIndexBuffer(::renoir::IndexBufferObject object) /*override*/;
+
+    virtual void UnmapIndexBuffer(::renoir::IndexBufferObject object, uint elemCount) /*override*/;
+
+    virtual bool
+    CreateConstantBuffer(::renoir::CBType type, ::renoir::ConstantBufferObject object, uint size) /*override*/;
+
+    virtual void DestroyConstantBuffer(::renoir::ConstantBufferObject object) /*override*/;
+
+    virtual bool CreateTexture(
+        ::renoir::Texture2DObject  object,
+        ::renoir::Texture2D const& description,
+        void const*                data,
+        uint                       dataLen
+    ) /*override*/;
+
+    virtual void DestroyTexture(::renoir::Texture2DObject object) /*override*/;
+
+    virtual void UpdateTexture(
+        ::renoir::Texture2DObject  object,
+        ::renoir::Texture2D const& description,
+        ::renoir::UpdateBox*       boxes,
+        void const**               newBytes,
+        uint                       count,
+        bool
+    ) /*override*/;
+
+    virtual bool CreateDepthStencilTexture(
+        ::renoir::DepthStencilTextureObject  object,
+        ::renoir::DepthStencilTexture const& description
+    ) /*override*/;
+
+    virtual void DestroyDepthStencilTexture(::renoir::DepthStencilTextureObject object) /*override*/;
 
     virtual void CopyTextureToTexture(
         ::renoir::Texture2DObject,
@@ -250,22 +269,22 @@ public:
         ::renoir::float2
     ) /*override*/;
 
-    virtual bool CreateSampler2D(::renoir::Sampler2DObject, ::renoir::Sampler2D const&) /*override*/;
+    virtual bool CreateSampler2D(::renoir::Sampler2DObject object, ::renoir::Sampler2D const& description) /*override*/;
 
-    virtual void DestroySampler2D(::renoir::Sampler2DObject) /*override*/;
+    virtual void DestroySampler2D(::renoir::Sampler2DObject object) /*override*/;
 
     virtual bool ReadTexture(::renoir::TextureObject, ::renoir::UpdateBox const&, void*) /*override*/;
 
     virtual void ExecuteRendering(
-        ::renoir::RendererBackend::BackendCommandsBuffer const*,
-        uint,
-        ::renoir::RendererBackend::ConstantBufferUpdateData const*,
-        uint
+        ::renoir::RendererBackend::BackendCommandsBuffer const*    buffers,
+        uint                                                       buffersCount,
+        ::renoir::RendererBackend::ConstantBufferUpdateData const* cboUpdates,
+        uint                                                       numCboUpdates
     ) /*override*/;
 
     virtual void ExecuteResourceCommands(
-        ::renoir::RendererBackend::BackendResourceCommandsBuffer const*,
-        uint,
+        ::renoir::RendererBackend::BackendResourceCommandsBuffer const* buffers,
+        uint                                                            buffersCount,
         ::renoir::ResourcesCommandsStage
     ) /*override*/;
 
@@ -279,6 +298,10 @@ public:
         ::OreUI::FrameDebugData&            frameDebugData,
         ::Gameface::TemporaryTextureHolder& temporaryTextureHolder
     );
+
+    MCAPI void _drawIndexedInstanced(uint indexCount, uint indexOffset, uint instanceCount, uint instanceOffset);
+
+    MCAPI void _flush();
     // NOLINTEND
 
 public:

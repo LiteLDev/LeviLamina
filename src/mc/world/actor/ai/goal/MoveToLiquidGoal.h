@@ -26,9 +26,9 @@ public:
 
     virtual bool canContinueToUse() /*override*/;
 
-    virtual bool isValidTarget(::BlockSource&, ::BlockPos const&) /*override*/;
+    virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
-    virtual void appendDebugInfo(::std::string&) const /*override*/;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual bool findTargetBlock() /*override*/;
     // NOLINTEND

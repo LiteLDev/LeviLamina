@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void writeBytes(void const*, uint64) /*override*/;
+    virtual void writeBytes(void const* data, uint64 bytes) /*override*/;
     // NOLINTEND
 
 public:

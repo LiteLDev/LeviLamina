@@ -20,6 +20,12 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                  mValue;
     ::ll::TypedStorage<8, 8, int (*)(::br::worldgen::WorldGenContext const&, int)> mHandler;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::string toString() const;
+    // NOLINTEND
 };
 
 } // namespace br::worldgen

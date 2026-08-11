@@ -87,6 +87,8 @@ public:
 
     MCAPI void preAiStep();
 
+    MCAPI void registerLoopingSounds();
+
 #ifdef LL_PLAT_C
     MCAPI void setElderGhost();
 #endif

@@ -20,7 +20,8 @@ class WaterTessellationPolicy : public ::BiomeColorSampling::TessellationPolicy 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::mce::Color get(::Block const&, ::BlockSource&, ::BlockPos const&, ::BiomeTintCache const*) const
+    virtual ::mce::Color
+    get(::Block const&, ::BlockSource& region, ::BlockPos const& pos, ::BiomeTintCache const* biomeTintCache) const
         /*override*/;
 
     virtual ::mce::Color get(::Block const&) const /*override*/;

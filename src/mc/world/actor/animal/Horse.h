@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/animal/Animal.h"
+#include "mc/world/actor/animal/HorseFlags.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,11 +33,11 @@ public:
     // NOLINTBEGIN
     virtual ~Horse() /*override*/ = default;
 
-    virtual void die(::ActorDamageSource const& source) /*override*/;
+    virtual void die(::ActorDamageSource const& damagesource) /*override*/;
 
-    virtual void setHorseEating(bool);
+    virtual void setHorseEating(bool state);
 
-    virtual float getStandAnim(float) const;
+    virtual float getStandAnim(float a) const;
 
     virtual bool isHorseEating() const;
 
@@ -50,13 +51,13 @@ public:
 
     virtual ::ActorUniqueID getControllingPlayer() const /*override*/;
 
-    virtual bool tameToPlayer(::Player&, bool);
+    virtual bool tameToPlayer(::Player& player, bool tamingParticles);
 
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
     virtual void openContainerComponent(::Player& player) /*override*/;
 
-    virtual ::Vec3 getInterpolatedRidingOffset(float, int const) const /*override*/;
+    virtual ::Vec3 getInterpolatedRidingOffset(float a, int const) const /*override*/;
 
     virtual float getShadowRadius() const /*override*/;
 
@@ -66,7 +67,7 @@ public:
 
     virtual bool isImmobile() const /*override*/;
 
-    virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
+    virtual float causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source) /*override*/;
 
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
@@ -82,6 +83,10 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+
+    MCAPI void _setHorseFlag(::HorseFlags flag, bool shouldAddFlag);
+
+    MCAPI void openMouth();
 
     MCAPI void postAiStep();
 

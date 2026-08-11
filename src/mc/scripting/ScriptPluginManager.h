@@ -18,6 +18,7 @@ class ScriptPluginResult;
 namespace Scripting { class IRuntime; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct RuntimeStats; }
+namespace Scripting { struct ScriptContextResult; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -62,6 +63,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _addContextResultsToPluginResults(
+        ::Scripting::ScriptContextResult const& contextResult,
+        ::ScriptPluginResult&                   pluginResult
+    );
+
     MCNAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
 
     MCNAPI void

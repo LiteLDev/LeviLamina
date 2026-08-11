@@ -5,6 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/script_engine/scripting/Closure.h"
+#include "mc/deps/script_core/script_engine/scripting/Promise.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +16,10 @@ namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
 namespace ScriptModuleMinecraft { class ScriptSystemAfterEvents; }
 namespace ScriptModuleMinecraft { class ScriptSystemBeforeEvents; }
 namespace ScriptModuleMinecraft { class ScriptSystemInfo; }
+namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EngineError; }
+namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -50,7 +56,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::Scripting::EngineError>
+    _waitTicks(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
+
     MCAPI ::ScriptModuleMinecraft::ScriptSystem& operator=(::ScriptModuleMinecraft::ScriptSystem&&);
+
+    MCAPI uint runInterval(::Scripting::Closure<void()> closure, ::std::optional<uint> interval);
+
+    MCAPI uint runTimeout(::Scripting::Closure<void()> closure, ::std::optional<uint> delay);
+
+    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::Scripting::EngineError>
+    waitTicks(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
+
+    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::Scripting::EngineError>
+    waitTicksV1(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
     // NOLINTEND
 
 public:

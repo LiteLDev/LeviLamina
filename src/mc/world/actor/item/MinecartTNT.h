@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/item/Minecart.h"
 #include "mc/world/actor/item/MinecartType.h"
@@ -33,6 +34,12 @@ public:
     _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual float causeFallDamageToActor(float distance, float, ::ActorDamageSource) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void primeFuse(::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:

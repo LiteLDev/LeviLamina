@@ -13,6 +13,7 @@ class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
+class Mob;
 class Vec3;
 struct ActorDefinitionIdentifier;
 struct VariantParameterList;
@@ -61,6 +62,8 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+
+    MCAPI void shoot(::Mob& shooter);
     // NOLINTEND
 
 public:

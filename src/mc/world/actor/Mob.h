@@ -154,11 +154,7 @@ public:
 
     virtual float getItemUseIntervalProgress() const;
 
-#ifdef LL_PLAT_S
-    virtual bool swing(::ActorSwingSource) /*override*/;
-#else // LL_PLAT_C
     virtual bool swing(::ActorSwingSource swingSource) /*override*/;
-#endif
 
     virtual float getMaxHeadXRot();
 
@@ -185,11 +181,7 @@ public:
 
     virtual void setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
 
-#ifdef LL_PLAT_S
-    virtual void sendArmorDamage(::std::bitset<5> const);
-#else // LL_PLAT_C
     virtual void sendArmorDamage(::std::bitset<5> const damagedSlots);
-#endif
 
     virtual void sendArmor(::std::bitset<5> const armorSlots);
 
@@ -211,11 +203,7 @@ public:
 
     virtual void clearVanishEnchantedItemsOnDeath();
 
-#ifdef LL_PLAT_S
-    virtual void sendInventory(bool);
-#else // LL_PLAT_C
     virtual void sendInventory(bool shouldSelectSlot);
-#endif
 
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
@@ -336,6 +324,8 @@ public:
     MCAPI float getDamageAfterArmorReduction(::ActorDamageSource const& source, float damage) const;
 
     MCAPI float getDamageAfterDamageSensorComponentAdjustments(::ActorDamageSource const& source, float damage);
+
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent getHurtSound(::SharedTypes::Legacy::ActorDamageCause cause) const;
 
     MCAPI float getJumpEffectAmplifierValue();
 
@@ -505,7 +495,7 @@ public:
 
     MCFOLD float $getItemUseIntervalProgress() const;
 
-    MCAPI bool $swing(::ActorSwingSource);
+    MCAPI bool $swing(::ActorSwingSource swingSource);
 
     MCAPI float $getMaxHeadXRot();
 
@@ -531,7 +521,7 @@ public:
 
     MCAPI void $setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
 
-    MCFOLD void $sendArmorDamage(::std::bitset<5> const);
+    MCFOLD void $sendArmorDamage(::std::bitset<5> const damagedSlots);
 
     MCAPI void $sendArmor(::std::bitset<5> const armorSlots);
 
@@ -553,7 +543,7 @@ public:
 
     MCAPI void $clearVanishEnchantedItemsOnDeath();
 
-    MCAPI void $sendInventory(bool);
+    MCAPI void $sendInventory(bool shouldSelectSlot);
 
     MCAPI void $buildDebugInfo(::std::string& out) const;
 

@@ -9,6 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+class Vec2;
+class Vec3;
 // clang-format on
 
 class BreedGoal : public ::BaseGoal {
@@ -46,6 +48,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BreedGoal(::Mob& animal);
+
+    MCAPI bool _isCloseEnoughToBreed(::Vec3 pos1, ::Vec2 size1, ::Vec3 pos2, ::Vec2 size2) const;
+
+    MCAPI ::Mob* _moveToFreePartner() const;
     // NOLINTEND
 
 public:

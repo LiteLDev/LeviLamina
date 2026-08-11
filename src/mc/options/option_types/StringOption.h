@@ -27,9 +27,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>&) /*override*/;
+    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) /*override*/;
 
-    virtual void load(::std::string const&) /*override*/;
+    virtual void load(::std::string const& valueString) /*override*/;
     // NOLINTEND
 
 public:

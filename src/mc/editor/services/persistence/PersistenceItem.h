@@ -3,7 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
 
 namespace Editor::Services {
 
@@ -29,9 +36,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PersistenceItem(
+        ::std::string const&                     key,
+        ::Core::PathBuffer<::std::string> const& path,
+        bool const                               replication,
+        ::cereal::ReflectionCtx&                 ctx
+    );
+
+    MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _getFilePath();
+
     MCNAPI ::std::string const& fetchItemPayload();
 
     MCNAPI void save();
+
+    MCNAPI ~PersistenceItem();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };
 

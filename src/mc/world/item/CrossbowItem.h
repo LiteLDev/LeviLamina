@@ -36,9 +36,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     virtual int
     getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const
@@ -51,15 +52,15 @@ public:
 
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
-    virtual void playSoundIncrementally(::ItemStack const&, ::Mob&) const /*override*/;
+    virtual void playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const /*override*/;
 
     virtual int getEnchantSlot() const /*override*/;
 
     virtual bool canBeCharged() const /*override*/;
 
-    virtual int getMaxUseDuration(::ItemStack const*) const /*override*/;
+    virtual int getMaxUseDuration(::ItemStack const* instance) const /*override*/;
 
-    virtual void enchantProjectile(::ItemStackBase const&, ::Actor&) const /*override*/;
+    virtual void enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const /*override*/;
     // NOLINTEND
 
 public:

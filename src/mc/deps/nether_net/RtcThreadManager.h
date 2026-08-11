@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ThreadConfiguration;
+namespace webrtc { class SocketServer; }
+// clang-format on
+
 namespace NetherNet {
 
 class RtcThreadManager {
@@ -17,6 +23,18 @@ public:
     RtcThreadManager& operator=(RtcThreadManager const&);
     RtcThreadManager(RtcThreadManager const&);
     RtcThreadManager();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void Initialize(
+        char const*                                 threadName,
+        ::ThreadConfiguration const&                threadConfiguration,
+        ::std::unique_ptr<::webrtc::SocketServer>&& socketServer
+    );
+
+    MCNAPI void Shutdown();
+    // NOLINTEND
 };
 
 } // namespace NetherNet

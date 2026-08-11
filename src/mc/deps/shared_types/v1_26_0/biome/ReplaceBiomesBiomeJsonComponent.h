@@ -6,6 +6,11 @@
 #include "mc/deps/shared_types/util/Reference.h"
 #include "mc/deps/shared_types/v1_20_60/biome/components/IBiomeJsonComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_26_0 {
 
 struct ReplaceBiomesBiomeJsonComponent : public ::SharedTypes::v1_20_60::IBiomeJsonComponent {
@@ -36,6 +41,8 @@ public:
         // NOLINTBEGIN
         MCAPI BiomeReplacement(::SharedTypes::v1_26_0::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&);
 
+        MCFOLD bool operator==(::SharedTypes::v1_26_0::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&) const;
+
         MCAPI ~BiomeReplacement();
         // NOLINTEND
 
@@ -57,6 +64,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_26_0::ReplaceBiomesBiomeJsonComponent::BiomeReplacement>>
         mBiomeReplacements;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

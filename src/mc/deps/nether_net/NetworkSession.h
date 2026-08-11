@@ -4,6 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/nether_net/ContextProxy.h"
+#include "mc/deps/nether_net/ESessionError.h"
+#include "mc/external/webrtc/PeerConnectionInterface.h"
+#include "mc/external/webrtc/scoped_refptr.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace webrtc { class DataChannelInterface; }
+namespace webrtc { class RTCStatsReport; }
+// clang-format on
 
 namespace NetherNet {
 
@@ -58,6 +67,20 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~NetworkSession() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void CheckUpdateStats();
+
+    MCNAPI void CloseWithReason(::NetherNet::ESessionError error) const;
+
+    MCNAPI void _onDataChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface> dataChannel);
+
+    MCNAPI void _onStatsDelivered(::webrtc::RTCStatsReport const& report);
+
+    MCNAPI void onIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState newState);
     // NOLINTEND
 };
 

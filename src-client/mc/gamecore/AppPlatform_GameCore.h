@@ -71,8 +71,12 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> getUserStorageRootPath() const /*override*/;
 
-    virtual void
-    setStorageDirectory(::FileStorageDirectory, bool, ::PropertyBag const&, ::std::function<void(bool)>) /*override*/;
+    virtual void setStorageDirectory(
+        ::FileStorageDirectory      dir,
+        bool                        isCallback,
+        ::PropertyBag const&        extraData,
+        ::std::function<void(bool)> onComplete
+    ) /*override*/;
 
     virtual bool usesAsyncOptionSaving() const /*override*/;
 
@@ -90,11 +94,17 @@ public:
 
     virtual void _fireAppFocusLost() /*override*/;
 
-    virtual void textEditComponentGainedFocus(::std::string const&, int, bool, bool, bool) /*override*/;
+    virtual void textEditComponentGainedFocus(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline
+    ) /*override*/;
 
     virtual void textEditComponentLostFocus() /*override*/;
 
-    virtual void setClipboard(::std::string const&) const /*override*/;
+    virtual void setClipboard(::std::string const& value) const /*override*/;
 
     virtual ::std::wstring getClipboardText() const /*override*/;
 
@@ -117,11 +127,11 @@ public:
 
     virtual int getScreenHeight() const /*override*/;
 
-    virtual void setScreenSize(int, int) /*override*/;
+    virtual void setScreenSize(int width, int height) /*override*/;
 
-    virtual void setWindowSize(int, int) /*override*/;
+    virtual void setWindowSize(int width, int height) /*override*/;
 
-    virtual void screenToClient(int&, int&) const;
+    virtual void screenToClient(int& x, int& y) const;
 
     virtual bool hasBuyButtonWhenInvalidLicense() /*override*/;
 
@@ -147,7 +157,7 @@ public:
 
     virtual uint64 getTotalPhysicalMemory() const /*override*/;
 
-    virtual void setFullscreenMode(::FullscreenMode const) /*override*/;
+    virtual void setFullscreenMode(::FullscreenMode const fullscreenMode) /*override*/;
 
     virtual bool isWebviewSupported() const /*override*/;
 
@@ -162,7 +172,7 @@ public:
     virtual bool isInternetAvailable() const /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-        addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)>) /*override*/;
+    addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback) /*override*/;
 
     virtual bool isHandheldDevice() const;
 
@@ -176,11 +186,17 @@ public:
 
     virtual int getPlatformDpi() const /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> _getUserFolderFromXUID(::std::string_view) = 0;
+    virtual ::Core::PathBuffer<::std::string> _getUserFolderFromXUID(::std::string_view xuid) = 0;
 
-    virtual void _retrieveSavedWindowSize(::tagRECT&) = 0;
+    virtual void _retrieveSavedWindowSize(::tagRECT& size) = 0;
 
     virtual ::Bedrock::CommonPlatform* getPlatformShim() const /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _onInviteReceived(void* context, char const* inviteUri);
     // NOLINTEND
 
 public:

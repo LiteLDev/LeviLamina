@@ -46,7 +46,18 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DataDrivenModel(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
 
+    MCAPI bool _setArmorTrim(
+        ::ItemStack const&                   itemInstance,
+        ::std::shared_ptr<::DataDrivenModel> model,
+        ::Actor&                             actor,
+        ::RenderParams&                      renderParams,
+        ::RenderParams&                      childRenderParams
+    );
+
     MCAPI ::ExpressionNode getCopyOfScript_defaultIfNone(::HashedString const& name) const;
+
+    MCAPI ::std::weak_ptr<::DataDrivenRenderer>
+    getDataDrivenRenderer(::RenderParams& renderParams, ::ItemStack const& itemInstance);
 
     MCAPI ::std::string getResourceDefinitionName() const;
 
@@ -59,6 +70,13 @@ public:
         ::Vec3 const&                           cameraTargetPos
     );
 
+    MCAPI void renderAttachable(
+        ::ItemStack const&           itemInstance,
+        ::AttachableSlotIndex const& attachableSlotIndex,
+        ::RenderParams&              renderParams,
+        ::Actor&                     actor
+    );
+
     MCAPI void renderAttachableNoChecks(
         ::ItemStack const&           itemInstance,
         ::AttachableSlotIndex const& attachableSlotIndex,
@@ -67,6 +85,13 @@ public:
     );
 
     MCAPI void resolveHeldItemScaleForRender(::RenderParams& renderParams) const;
+
+    MCAPI void setupAttachable(
+        ::ItemStack const&           itemInstance,
+        ::AttachableSlotIndex const& attachableSlotIndex,
+        ::RenderParams&              renderParams,
+        ::Actor&                     actor
+    );
 
     MCAPI void setupAttachableNoChecks(
         ::ItemStack const&           itemInstance,

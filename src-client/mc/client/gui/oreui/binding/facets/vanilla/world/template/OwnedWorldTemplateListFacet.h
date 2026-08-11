@@ -46,6 +46,10 @@ public:
         ::World::OwnedWorldTemplateManager&                        ownedWorldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
+
+    MCAPI void _refresh();
+
+    MCFOLD ::std::vector<::OreUI::OwnedWorldTemplateDataBindings> const& getOwnedTemplateWorldsList();
     // NOLINTEND
 
 public:

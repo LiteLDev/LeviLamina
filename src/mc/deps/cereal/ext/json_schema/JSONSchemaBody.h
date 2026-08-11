@@ -8,7 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { struct SchemaDescription; }
 namespace cereal::ext::internal { struct JSONSchemaDef; }
+namespace cereal::ext::internal { struct OutRefsMap; }
+namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace cereal::ext::internal {
@@ -63,11 +66,26 @@ public:
     // NOLINTBEGIN
     MCAPI JSONSchemaBody(::cereal::ext::internal::JSONSchemaBody const&);
 
+    MCAPI void fill(::cereal::internal::ConstraintDescription const& constraint);
+
+    MCAPI void fillBody(::cereal::SchemaDescription const& schemaInfo, ::cereal::ext::internal::OutRefsMap& outRefs);
+
+    MCAPI void fillBodyIfEnum(::cereal::SchemaDescription const& schemaInfo);
+
     MCAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody&&);
 
     MCAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody const&);
 
     MCAPI ~JSONSchemaBody();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void overwriteIfAny(
+        ::std::shared_ptr<::cereal::ext::internal::JSONSchemaDef>&          that,
+        ::std::shared_ptr<::cereal::internal::ConstraintDescription> const& other
+    );
     // NOLINTEND
 
 public:

@@ -23,6 +23,7 @@ class BoundingBox;
 class IRandom;
 class IStructureTemplateManager;
 class JigsawBlockInfo;
+class JigsawStructureBlockInfo;
 class LegacyStructureSettings;
 class LegacyStructureTemplate;
 class Random;
@@ -87,6 +88,15 @@ public:
         virtual ::BlockPos getSize(::Rotation rotation) const /*override*/;
 
         virtual bool isLegacyStructure() const /*override*/;
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static ::std::vector<::JigsawBlockInfo> _findJigsawBlocks(
+            ::std::vector<::JigsawStructureBlockInfo>&                           jigsawMarkers,
+            ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* blockTagRules
+        );
         // NOLINTEND
 
     public:
@@ -237,6 +247,8 @@ public:
     );
 
     MCAPI ::SharedTypes::v1_21_80::JigsawStructureMetadata const& _getMetadata() const;
+
+    MCAPI uint64 _getMetadataKey() const;
     // NOLINTEND
 
 public:

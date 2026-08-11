@@ -69,8 +69,28 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Potion();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Potion(::std::string_view const nameId, ::std::string_view const prefix);
+
+    MCAPI Potion(
+        ::std::string_view const   nameId,
+        ::std::string_view const   descriptionID,
+        ::MobEffectInstance const& mobEffect,
+        ::Potion::PotionVariant    var
+    );
+
+    MCAPI Potion(
+        ::std::string_view const           nameId,
+        ::std::vector<::std::string>       descriptionIDs,
+        ::std::vector<::MobEffectInstance> mobEffects,
+        ::Potion::PotionVariant            var
+    );
+
     MCAPI void appendFormattedPotionText(
         ::Bedrock::Safety::RedactableString& inOutHovertext,
         ::Potion::PotionType                 potionType,
@@ -93,6 +113,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void addPotion(::std::shared_ptr<::Potion const> const potion);
+
     MCAPI static void appendMobEffectText(
         ::Bedrock::Safety::RedactableString& inOutHovertext,
         ::Potion::PotionVariant              potionVariant,
@@ -103,6 +125,8 @@ public:
 
     MCAPI static ::std::string
     effectDurationToString(::Potion::PotionType potionType, float timeMod, ::MobEffectInstance const& effect);
+
+    MCAPI static ::std::string effectPotencyToString(::MobEffectInstance const& effect);
 
     MCAPI static ::std::string getBasePotion(::Potion::PotionType type);
 
@@ -144,5 +168,11 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<::std::shared_ptr<::Potion const>[]> mPotionsById();
 
     MCAPI static ::std::unordered_map<::std::string, int>& mPotionsByName();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };

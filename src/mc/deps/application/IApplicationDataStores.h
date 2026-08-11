@@ -31,10 +31,10 @@ public:
     virtual void init() = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
-        getDataStore(::Bedrock::IApplicationDataStores::DataStores) = 0;
+    getDataStore(::Bedrock::IApplicationDataStores::DataStores which) = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
-        getDataStore(::Bedrock::IApplicationDataStores::DataStores) const = 0;
+    getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const = 0;
     // NOLINTEND
 
 public:

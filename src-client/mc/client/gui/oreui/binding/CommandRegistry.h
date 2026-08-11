@@ -62,7 +62,9 @@ public:
 
     virtual void onBindingsReleased() /*override*/;
 
-    virtual void update(double const) /*override*/;
+    virtual void update(double const time) /*override*/;
+
+    virtual ~CommandRegistry() /*override*/;
     // NOLINTEND
 
 public:
@@ -72,6 +74,12 @@ public:
         ::std::string                                                        name,
         ::std::function<::std::unique_ptr<::OreUI::Detail::ICommandGroup>()> constructor
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -31,6 +31,21 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _createBottledItem(::Actor& entity, ::ItemStack& instance, ::std::string_view const itemToCreate) const;
+
+    MCAPI void _fillBottleViaDispenser(
+        ::BlockSource&           region,
+        ::std::string_view const bottledItem,
+        ::Container&             container,
+        int                      slot,
+        ::Vec3 const&            pos,
+        uchar                    face
+    ) const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;

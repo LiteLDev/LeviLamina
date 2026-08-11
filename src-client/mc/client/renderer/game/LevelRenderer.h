@@ -52,6 +52,7 @@ class ScreenContext;
 class SoundMapping;
 class SoundPlayerInterface;
 class TaskGroup;
+class Tessellator;
 class TextureAtlas;
 class TextureShiftManager;
 struct ActorBlockSyncMessage;
@@ -149,7 +150,7 @@ public:
 
     virtual void onBlockChanged(
         ::BlockSource&                 source,
-        ::BlockPos const&              pos,
+        ::BlockPos const&              blockPosition,
         uint                           layer,
         ::Block const&                 block,
         ::Block const&                 oldBlock,
@@ -159,14 +160,14 @@ public:
         ::Actor*                       blockChangeSource
     ) /*override*/;
 
-    virtual void onChunkUnloaded(::LevelChunk&) /*override*/;
+    virtual void onChunkUnloaded(::LevelChunk& levelChunk) /*override*/;
 
     virtual void takePicture(
-        ::cg::ImageBuffer&,
-        ::Actor*,
-        ::Actor*,
-        ::ScreenshotOptions&,
-        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
+        ::cg::ImageBuffer&                                              outImage,
+        ::Actor*                                                        camera,
+        ::Actor*                                                        target,
+        ::ScreenshotOptions&                                            screenshotOptions,
+        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
     ) /*override*/;
     // NOLINTEND
 
@@ -189,13 +190,21 @@ public:
         ::std::weak_ptr<::dragon::atlas::IAtlasUserOperations>                     atlasOps
     );
 
+    MCAPI void _createMeshes(::Tessellator& tessellator);
+
     MCAPI void _setLevelRendererCameras();
 
     MCAPI void extractPointLightCandidates(::RenderChunkShared const& renderChunkShared);
 
     MCAPI void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 
+    MCAPI ::BlockTessellator& getBlockRenderer();
+
+    MCAPI ::ParticleEngine& getParticleEngine() const;
+
     MCAPI ::StackRefResult<::RenderChunkCoordinator> getRenderChunkCoordinator(::DimensionType dimID);
+
+    MCAPI void onDimensionChanged();
 
     MCAPI void onOptionsChanged();
 

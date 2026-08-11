@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/molang/MolangVersion.h"
 #include "mc/world/item/ItemDescriptor.h"
 
 // auto generated forward declare list
@@ -27,7 +28,7 @@ public:
 
     virtual bool sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const /*override*/;
 
-    virtual bool sameItem(::ItemDescriptor::ItemEntry const&, bool) const /*override*/;
+    virtual bool sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool) const /*override*/;
 
     virtual ::std::string getFullName() const /*override*/;
 
@@ -37,11 +38,18 @@ public:
 
     virtual void serialize(::Json::Value& val) const /*override*/;
 
-    virtual void serialize(::BinaryStream&) const /*override*/;
+    virtual void serialize(::BinaryStream& stream) const /*override*/;
 
     virtual ::ItemDescriptor::InternalType getType() const /*override*/;
 
     virtual uint64 getHash() const /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::MolangDescriptor>
+    fromExpressionTag(::std::string const& tagExpression, ::MolangVersion const molangVersion);
     // NOLINTEND
 
 public:

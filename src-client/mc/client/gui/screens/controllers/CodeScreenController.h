@@ -75,7 +75,7 @@ public:
 
     virtual void onLoadingEnd() /*override*/;
 
-    virtual void onError(::WebviewError const&) /*override*/;
+    virtual void onError(::WebviewError const& error) /*override*/;
 
     virtual void onWebviewChanged() /*override*/;
     // NOLINTEND
@@ -84,6 +84,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CodeScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::OpenCodeMethod openMethod);
+
+    MCAPI void _selectEditor(::std::string const& url);
     // NOLINTEND
 
 public:

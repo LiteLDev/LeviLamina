@@ -23,6 +23,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class LevelData;
 namespace Core { class Path; }
 // clang-format on
 
@@ -70,14 +71,41 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                          mEducationCreatorWorldId;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    LevelSummary& operator=(LevelSummary const&);
+
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI LevelSummary();
+#endif
+
 #ifdef LL_PLAT_C
     MCAPI LevelSummary();
+#endif
 
+#ifdef LL_PLAT_S
     MCAPI LevelSummary(::LevelSummary const&);
+#endif
 
+#ifdef LL_PLAT_C
+    MCAPI LevelSummary(::LevelSummary const&);
+#endif
+
+    MCAPI LevelSummary(
+        ::std::string const& levelId,
+        ::LevelData const&   levelData,
+        ::Core::Path const&  levelDirectory,
+        ::Core::Path const&  levelInfoDirectory,
+        bool                 isBetaRetailLevel
+    );
+
+#ifdef LL_PLAT_C
     MCAPI LevelSummary(
         ::std::string const&                  id,
         ::std::string const&                  name,
@@ -111,7 +139,11 @@ public:
         bool                                  uncompleteWorldFileOnDisk,
         ::std::optional<::CloudSaveLevelInfo> cloudSaveInfo
     );
+#endif
 
+    MCAPI void _initializeWorldIconPath(::Core::Path const& directory);
+
+#ifdef LL_PLAT_C
     MCAPI ::std::string getEducationCreatorId() const;
 
     MCAPI ::std::string getEducationCreatorWorldId() const;
@@ -130,6 +162,10 @@ public:
 
     MCAPI ::LevelSummary& setId(::std::string Id);
 
+    MCAPI ::LevelSummary& setName(::std::string Name);
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI ::LevelSummary& setName(::std::string Name);
 #endif
 

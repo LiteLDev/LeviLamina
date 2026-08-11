@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual ::std::string_view getName() const /*override*/;
 
-    virtual bool _isExpectedItem(::std::vector<::ItemStack const*> const&) const /*override*/;
+    virtual bool _isExpectedItem(::std::vector<::ItemStack const*> const& itemList) const /*override*/;
     // NOLINTEND
 
 public:

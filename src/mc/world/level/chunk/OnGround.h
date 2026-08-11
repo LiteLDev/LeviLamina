@@ -18,9 +18,10 @@ class OnGround : public ::br::spawn::PlacementType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool isSpawnPositionOk(::BlockSource&, ::BlockPos, ::br::spawn::EntityType const&) const /*override*/;
+    virtual bool isSpawnPositionOk(::BlockSource& region, ::BlockPos pos, ::br::spawn::EntityType const& type) const
+        /*override*/;
 
-    virtual ::BlockPos adjustSpawnPos(::BlockSource&, ::BlockPos) const /*override*/;
+    virtual ::BlockPos adjustSpawnPos(::BlockSource& region, ::BlockPos candidate) const /*override*/;
     // NOLINTEND
 
 public:

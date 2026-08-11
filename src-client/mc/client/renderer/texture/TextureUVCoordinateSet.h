@@ -44,7 +44,13 @@ public:
         ushort             pbrTextureDataHandle
     );
 
+    MCAPI ::TextureUVCoordinateSet getFlippedHorizontal() const;
+
+    MCAPI ::TextureUVCoordinateSet getFlippedVertically() const;
+
     MCAPI ::TextureUVCoordinateSet& operator=(::TextureUVCoordinateSet const&);
+
+    MCAPI bool operator==(::TextureUVCoordinateSet const& other) const;
 
     MCAPI ::TextureUVCoordinateSet subTexture(float u0ffset, float v0ffset, int sizeW, int sizeH) const;
 

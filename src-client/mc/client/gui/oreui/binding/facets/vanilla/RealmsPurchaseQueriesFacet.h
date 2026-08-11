@@ -44,6 +44,12 @@ public:
     // NOLINTBEGIN
     MCAPI
     RealmsPurchaseQueriesFacet(::std::shared_ptr<::Realms::RealmsPurchase> realmsPurchase, int expectedStoreVersion);
+
+    MCFOLD ::Realms::RealmsPurchaseFailureReason getFailureReason() const;
+
+    MCAPI ::Realms::RealmsPurchaseState getState() const;
+
+    MCFOLD bool isPurchaseDisabledDueToStoreVersion() const;
     // NOLINTEND
 
 public:

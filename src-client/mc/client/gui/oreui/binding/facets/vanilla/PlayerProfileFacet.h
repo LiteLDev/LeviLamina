@@ -5,12 +5,15 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/PartyPresence.h"
+#include "mc/client/gui/oreui/binding/facets/vanilla/data/SocialPresence.h"
 #include "mc/client/gui/oreui/interface/ProfileImageState.h"
 #include "mc/client/gui/oreui/resources/AllowListPath.h"
 #include "mc/client/gui/oreui/resources/AllowListProfileImage.h"
 #include "mc/client/gui/oreui/resources/AllowListQRCode.h"
 #include "mc/client/social/PlayerProfileData.h"
 #include "mc/client/social/PlayerProfileState.h"
+#include "mc/client/social/RelationToCurrentUser.h"
+#include "mc/client/social/RelationshipStatus.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -21,6 +24,7 @@ namespace Parties { class IPartyProvider; }
 namespace Social { class IUserManager; }
 namespace Social { class MultiplayerServiceManager; }
 namespace Social { class ProfileSystem; }
+namespace Social { struct PlayerProfile; }
 // clang-format on
 
 namespace OreUI {
@@ -48,6 +52,44 @@ public:
         ::ll::TypedStorage<1, 1, bool>                             isInSameGame;
         ::ll::TypedStorage<4, 4, ::OreUI::PartyPresence>           partyPresence;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ::RelationshipStatus favoriteStatus() const;
+
+        MCFOLD ::std::string const& getOfflineName() const;
+
+        MCAPI ::OreUI::PartyPresence getPartyPresence() const;
+
+        MCFOLD ::std::string const& getPlatformId() const;
+
+        MCFOLD ::std::string const& getPlatformName() const;
+
+        MCAPI ::std::string const& getPlayingOnRealmId() const;
+
+        MCAPI ::std::string const& getPlayingOnServerId() const;
+
+        MCAPI ::OreUI::SocialPresence getPresence() const;
+
+        MCAPI ::std::string const& getPresenceMessage() const;
+
+        MCFOLD ::std::string const& getRealName() const;
+
+        MCAPI ::Social::RelationToCurrentUser getRelationship() const;
+
+        MCFOLD ::std::string const& getTitleName() const;
+
+        MCFOLD ::std::string const& getUrl() const;
+
+        MCFOLD ::std::string const& getXblName() const;
+
+        MCFOLD ::std::string const& getXuid() const;
+
+        MCAPI bool isBlocked() const;
+
+        MCAPI bool isMuted() const;
+        // NOLINTEND
     };
 
     struct PlayerProfileWrapper {
@@ -56,6 +98,25 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 40, ::Social::PlayerProfileState>                            state;
         ::ll::TypedStorage<8, 1096, ::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper> data;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PlayerProfileWrapper();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI PlayerProfileWrapper(
+            ::Social::PlayerProfileState                            inState,
+            ::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper&& inData
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
         // NOLINTEND
     };
 
@@ -100,6 +161,15 @@ public:
         ::std::shared_ptr<::Social::ProfileSystem>                         profileSystem,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>         resourceAllowList
     );
+
+    MCAPI ::OreUI::PlayerProfileFacet::PlayerProfileWrapper&
+    _updateTrackedProfile(::Social::PlayerProfile const& playerProfile);
+
+    MCFOLD ::std::vector<::OreUI::PlayerProfileFacet::PlayerProfileWrapper> const& getTrackedProfiles() const;
+
+    MCAPI void refetchProfile(::std::string const& xuid, ::std::string const& platformId);
+
+    MCAPI void subscribeToProfile(::std::string const& xuid, ::std::string const& platformId);
     // NOLINTEND
 
 public:

@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorOwnerComponent;
 class EntityRegistry;
+struct GroupSizeComponent;
 // clang-format on
 
 class GroupSizeSystem : public ::ITickingSystem {
@@ -15,6 +17,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::GroupSizeComponent& groupSizeComponent);
     // NOLINTEND
 
 public:

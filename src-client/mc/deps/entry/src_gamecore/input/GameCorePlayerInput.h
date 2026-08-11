@@ -12,6 +12,7 @@ class GameCoreGamepadSupport;
 class GameCoreKeyboardSupport;
 class GameCoreMouseSupport;
 class GameCoreTouchSupport;
+namespace GameInput::v2 { struct IGameInputDevice; }
 // clang-format on
 
 class GameCorePlayerInput {
@@ -24,5 +25,23 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameCoreTouchSupport>>    mTouchSupport;
     ::ll::TypedStorage<8, 136, ::Social::XsapiHandle<::XUser*>>            mMappedUser;
     ::ll::TypedStorage<4, 4, ::PlayerInputConnectionState>                 mConnectionState;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    GameCorePlayerInput();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI GameCorePlayerInput(::GameInput::v2::IGameInputDevice* device, ::Social::XsapiHandle<::XUser*> mappedUser);
+
+    MCAPI bool tryAddHardwareDeviceMapping(::GameInput::v2::IGameInputDevice* device);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };

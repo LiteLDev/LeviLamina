@@ -75,6 +75,10 @@ public:
     MCNAPI static ::Bedrock::NonOwnerPointer<::ValidatorRegistry> _get();
 #endif
 
+#ifdef LL_PLAT_S
+    MCNAPI static ::Bedrock::NonOwnerPointer<::ValidatorRegistry> _get();
+#endif
+
     MCNAPI static ::std::unordered_map<::std::string, ::ValidatorRegistry::ValidatorRegistryValidators> const&
     getValidatorMap();
     // NOLINTEND

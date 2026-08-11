@@ -50,15 +50,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(
-        ::std::vector<::ClientBlockPipeline::CustomGeometryBox>&,
-        ::std::vector<::ClientBlockPipeline::CustomGeometryFace>&,
-        ::ClientBlockPipeline::BlockVolumeArea const&,
-        ::ClientBlockPipeline::BitsetCache const&,
+        ::std::vector<::ClientBlockPipeline::CustomGeometryBox>&  customBoxes,
+        ::std::vector<::ClientBlockPipeline::CustomGeometryFace>& customFaces,
+        ::ClientBlockPipeline::BlockVolumeArea const&             area,
+        ::ClientBlockPipeline::BitsetCache const&                 opaqueFullBlockCache,
         ::ClientBlockPipeline::ArrayCache<::Block const*> const*,
         ::ClientBlockPipeline::CustomGeometryBlock const&,
         ::ClientBlockPipeline::BlockLookupData const&,
-        ::BlockPos const&,
-        ::Matrix const&
+        ::BlockPos const& relativePos,
+        ::Matrix const&   blockPosTransform
     ) const /*override*/;
     // NOLINTEND
 

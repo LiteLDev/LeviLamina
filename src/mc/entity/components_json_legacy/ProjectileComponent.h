@@ -131,6 +131,8 @@ public:
 
     MCAPI ProjectileComponent(::ProjectileComponent const&);
 
+    MCAPI bool _isLoyaltyTrident(::Actor const& owner) const;
+
     MCAPI void _selectNextMoveDirection(::Actor const& owner, ::ProjectileComponent::EAxis avoidAxis);
 
     MCAPI void _tryReflectOnHurt(::Actor& owner, ::ActorDamageSource const& damageSource);

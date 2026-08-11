@@ -11,7 +11,9 @@
 class Block;
 class BlockPos;
 class BoundingBox;
+class ChunkSource;
 class Dimension;
+class LevelChunk;
 struct Bounds;
 namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor { struct ProjectRegionConfig; }
@@ -102,7 +104,11 @@ public:
 
     MCNAPI void _discardRequests();
 
+    MCNAPI void _initialize(::Dimension& dimension);
+
     MCNAPI bool _isBoundsAvailable(::Bounds const& bounds) const;
+
+    MCNAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int);
 
     MCNAPI void _processAvailability();
 

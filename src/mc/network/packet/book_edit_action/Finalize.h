@@ -23,6 +23,8 @@ public:
     // NOLINTBEGIN
     MCAPI Finalize(::BookEditAction::Finalize const&);
 
+    MCFOLD bool operator==(::BookEditAction::Finalize const&) const;
+
     MCAPI ~Finalize();
     // NOLINTEND
 

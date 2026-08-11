@@ -70,6 +70,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>   levelEventManager
     );
 
+    MCFOLD void _onPlayerDeath();
+
     MCAPI bool enoughPlayersDeepSleeping() const;
 
     MCAPI void initializeWithPlayerDeathManager(::PlayerDeathManager& playerDeathManager);

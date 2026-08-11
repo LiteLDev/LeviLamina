@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BaseBlockLocationIterator;
+class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
@@ -30,6 +31,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptListBlockVolume();
+
+    MCAPI void add(::std::vector<::Vec3> const& locations);
+
+    MCAPI void remove(::std::vector<::Vec3> const& locations);
     // NOLINTEND
 
 public:

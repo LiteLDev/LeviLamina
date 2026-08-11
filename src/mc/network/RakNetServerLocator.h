@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/network/LocatorStateChangeRequest.h"
 #include "mc/network/PermissionIPv6.h"
 #include "mc/network/PermissionLAN.h"
 #include "mc/network/RakNetServerLANVisibility.h"
@@ -22,6 +23,7 @@ struct PingedCompatibleServer;
 struct PortPair;
 struct ServerSupportedAuthenticationTypes;
 namespace RakNet { class RakPeerInterface; }
+namespace RakNet { struct RakNetGUID; }
 // clang-format on
 
 class RakNetServerLocator : public ::ServerLocator {
@@ -59,8 +61,19 @@ public:
     public:
         // prevent constructor by default
         AnnounceServerData& operator=(AnnounceServerData const&);
-        AnnounceServerData(AnnounceServerData const&);
         AnnounceServerData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI AnnounceServerData(::RakNetServerLocator::AnnounceServerData const& announceData);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
     };
 
     class NatHolePuncherFunctor {
@@ -75,6 +88,14 @@ public:
         NatHolePuncherFunctor& operator=(NatHolePuncherFunctor const&);
         NatHolePuncherFunctor(NatHolePuncherFunctor const&);
         NatHolePuncherFunctor();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI bool punch(::std::function<bool()> lanDiscoveryPortPuncher, ::std::function<bool()> gamePortPuncher);
+#endif
+        // NOLINTEND
     };
 
     class PingRateRecorder {
@@ -175,26 +196,26 @@ public:
     virtual ~RakNetServerLocator() /*override*/ = default;
 
     virtual void startAnnouncingServer(
-        ::std::string const&,
-        ::std::string const&,
-        ::GameType,
-        int,
-        int,
-        bool,
-        bool,
-        bool,
-        ::ServerSupportedAuthenticationTypes
+        ::std::string const&                 playerName,
+        ::std::string const&                 worldName,
+        ::GameType                           gameType,
+        int                                  numPlayers,
+        int                                  maxNumPlayers,
+        bool                                 isJoinableThroughServerScreen,
+        bool                                 isEditorWorld,
+        bool                                 isHardcore,
+        ::ServerSupportedAuthenticationTypes supportedAuth
     ) /*override*/;
 
     virtual void stopAnnouncingServer() /*override*/;
 
-    virtual void startServerDiscovery(::PortPair) /*override*/;
+    virtual void startServerDiscovery(::PortPair ports) /*override*/;
 
     virtual void stopServerDiscovery() /*override*/;
 
-    virtual void addCustomServer(::AsynchronousIPResolver const&, int) /*override*/;
+    virtual void addCustomServer(::AsynchronousIPResolver const& futureIP, int port) /*override*/;
 
-    virtual void addCustomServer(::std::string const&, int) /*override*/;
+    virtual void addCustomServer(::std::string const& address, int port) /*override*/;
 
     virtual ::std::vector<::PingedCompatibleServer> getServerList() const /*override*/;
 
@@ -202,12 +223,12 @@ public:
 
     virtual void update() /*override*/;
 
-    virtual float getPingTimeForGUID(::std::string const&) /*override*/;
+    virtual float getPingTimeForGUID(::std::string const& guid) /*override*/;
 
     virtual void checkCanConnectToCustomServerAsync(
-        ::std::string,
-        int,
-        ::std::function<void(::ServerConnectivityTestResult)>
+        ::std::string                                         hostIpAddress,
+        int                                                   port,
+        ::std::function<void(::ServerConnectivityTestResult)> callback
     ) /*override*/;
 
     virtual void _onDisable() /*override*/;
@@ -230,6 +251,43 @@ public:
         ::std::function<::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>()>
             createUniqueRakPeerFunc
     );
+
+    MCNAPI void _activate();
+
+    MCNAPI void _addCustomServerFromIpResolver(::AsynchronousIPResolver const& futureIP, int port);
+
+    MCNAPI void _announceServer(::RakNetServerLocator::AnnounceServerData const& serverData);
+
+    MCNAPI void _enqueueStateChangeRequest(
+        ::LocatorStateChangeRequest               newState,
+        ::RakNetServerLocator::AnnounceServerData newAnnounceData,
+        ::PortPair                                newPorts
+    );
+
+    MCNAPI ::std::string _getHostGuid(::std::string const& address, int port);
+
+    MCNAPI void _getServerOriginalAddress(::std::string& originalAddressToSet, ::std::string const& ip);
+
+#ifdef LL_PLAT_C
+    MCNAPI void _initializeBroadcastAddresses();
+#endif
+
+    MCNAPI void _onPingSend(::std::string const& guid, ::std::string const& addr, int ipVersion);
+
+    MCNAPI bool
+    _onPongReceive(float& latencyToSet, ::RakNet::RakNetGUID const& guid, uint const& receivedTime, int ipVersion);
+
+    MCNAPI bool _pingServerV4(::std::string const& address, int port);
+
+    MCNAPI bool _pingServerV6(::std::string const& address, int port);
+
+    MCNAPI void _startAnnouncingServer(::RakNetServerLocator::AnnounceServerData const& announceData);
+
+    MCNAPI void _startServerDiscovery(::PortPair const& ports);
+
+    MCNAPI void _stopAnnouncingServer();
+
+    MCNAPI void _stopServerDiscovery();
     // NOLINTEND
 
 public:

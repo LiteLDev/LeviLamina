@@ -5,10 +5,14 @@
 // auto generated inclusion list
 #include "mc/util/Bounds.h"
 #include "mc/world/level/chunk/AreaType.h"
+#include "mc/world/level/chunk/ChunksLoadedStatus.h"
 
 // auto generated forward declare list
 // clang-format off
+class Dimension;
 class IRequestAction;
+class ITickingAreaView;
+struct Tick;
 // clang-format on
 
 class ChunkLoadedRequest {
@@ -35,6 +39,10 @@ public:
         ::std::unique_ptr<::IRequestAction> requestAction,
         bool                                allowNonTickingPlayerAndTickingAreaChunks
     );
+
+    MCAPI ::ITickingAreaView const* _getTickingArea(::Dimension const& dimension) const;
+
+    MCAPI ::ChunksLoadedStatus areAllChunksLoaded(::Dimension& dimension, ::Tick currentLevelTick) const;
 
     MCAPI ~ChunkLoadedRequest();
     // NOLINTEND

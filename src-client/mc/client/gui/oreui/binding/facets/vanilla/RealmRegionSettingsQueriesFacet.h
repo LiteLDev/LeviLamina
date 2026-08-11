@@ -51,6 +51,18 @@ public:
     MCAPI explicit RealmRegionSettingsQueriesFacet(
         ::std::weak_ptr<::Realms::RealmsRegionSettings> realmsRegionSettings
     );
+
+    MCFOLD bool getDoNotShowPingWarning() const;
+
+    MCFOLD bool getLowPingWarning() const;
+
+    MCFOLD ::Realms::RealmsRegionSettingsState getRealmRegionSettingsState() const;
+
+    MCFOLD int getRegionSelectedIndex() const;
+
+    MCFOLD ::std::vector<::Realms::ServerRegion> const& getRegions() const;
+
+    MCFOLD ::Realms::RealmsWorldEditorStateStatus getStatus() const;
     // NOLINTEND
 
 public:

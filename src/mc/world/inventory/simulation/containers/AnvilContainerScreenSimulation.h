@@ -4,15 +4,18 @@
 
 // auto generated inclusion list
 #include "mc/safety/RedactableString.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/inventory/simulation/ContainerScreenAutoplaceBehaviour.h"
 #include "mc/world/inventory/simulation/ContainerScreenSimulationCrafting.h"
 
 // auto generated forward declare list
 // clang-format off
+class ItemStack;
 struct ContainerScreenActionResult;
 struct ContainerValidationCraftResult;
 struct ContainerValidationSlotData;
 struct ItemTransferAmount;
+struct RecipeNetIdTag;
 // clang-format on
 
 class AnvilContainerScreenSimulation : public ::ContainerScreenSimulationCrafting {
@@ -74,6 +77,18 @@ public:
     virtual void _registerCoalesceOrder() /*override*/;
 
     virtual void _registerAutoPlaceOrder() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::RecipeNetId const
+    _getRecipeNetIdForMapItems(::ItemStack const& inputStack, ::ItemStack const& materialStack) const;
+
+    MCNAPI ::ContainerScreenActionResult
+    _tryTransferCraft(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const& dstSlot);
+#endif
     // NOLINTEND
 
 public:

@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { struct ReflectionCtx; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
@@ -98,6 +99,12 @@ public:
     operator=(::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent const&);
 
     MCAPI ~MaterialInstancesComponent();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

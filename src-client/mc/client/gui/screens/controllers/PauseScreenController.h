@@ -13,11 +13,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class Option;
 class PauseScreenModel;
 class PermissionsScreenController;
+class PlayerListEntry;
 class SocialButtonScreenController;
 class UserDataScreenController;
 namespace Json { class Value; }
+namespace mce { class UUID; }
 // clang-format on
 
 class PauseScreenController : public ::ClientInstanceScreenController {
@@ -79,6 +82,31 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PauseScreenController(::std::shared_ptr<::PauseScreenModel> model, bool overlaySocialDrawerOnce);
+
+    MCAPI bool _isInviteButtonEnabled() const;
+
+    MCAPI bool _isInviteButtonVisible() const;
+
+    MCAPI bool _isMultiplayerLocked() const;
+
+    MCAPI bool _isProfileButtonAEnabled() const;
+
+    MCAPI bool _isProfileButtonBEnabled() const;
+
+    MCAPI void _navigateToPermissions(::ActorUniqueID const& id);
+
+    MCAPI void _onPlayerListEntryRemoved(
+        ::PlayerListEntry const&,
+        ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& list
+    );
+
+    MCAPI void _pauseToggleOptionCallback(::Option const& pauseFeatureToggle);
+
+    MCAPI void _populateClientIds();
+
+    MCAPI bool _showRealmsButtons() const;
+
+    MCAPI bool _useMovedInviteButton() const;
     // NOLINTEND
 
 public:

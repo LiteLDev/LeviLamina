@@ -8,7 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorOwnerComponent;
 class EntityRegistry;
+struct TrailComponent;
 // clang-format on
 
 class TrailSystem : public ::ITickingSystem {
@@ -31,6 +33,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::TrailComponent& trailComponent);
     // NOLINTEND
 
 public:

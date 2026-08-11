@@ -65,6 +65,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI int getAlternateSignalAt(::BlockSource& region, ::BlockPos const& pos, int facing) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool isDiode(::Block const& block);

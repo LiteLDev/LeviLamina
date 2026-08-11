@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
-    buildJson(::Player&, ::CurrentCmdVersion) const /*override*/;
+    buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
     // NOLINTEND
 
 public:

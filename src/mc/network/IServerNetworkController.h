@@ -15,7 +15,7 @@ public:
 
     virtual bool isDedicatedServer() const = 0;
 
-    virtual bool canChangePermission(::ServerPlayer const&) const = 0;
+    virtual bool canChangePermission(::ServerPlayer const& player) const = 0;
     // NOLINTEND
 
 public:

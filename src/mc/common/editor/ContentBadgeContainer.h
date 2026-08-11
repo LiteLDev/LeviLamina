@@ -16,6 +16,7 @@ namespace Bedrock::PubSub { class Subscription; }
 namespace Editor::DataStore { class PayloadEventDispatcher; }
 namespace Editor::DataStore { struct PayloadDescription; }
 namespace Editor::Services { class PersistenceGroup; }
+namespace Editor::Services { class PersistenceItem; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -54,19 +55,20 @@ public:
 
     virtual ::Editor::DataStore::IContentBadgeContainer::Config const& getConfig() const /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> setSuppressNewBadges(bool) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> setSuppressNewBadges(bool shouldSuppress) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> clearBadge(::HashedString const&) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> clearBadge(::HashedString const& id) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> clearAllRegisteredBadges() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> restoreAllRegisteredBadges() /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-        onVisibleBadgesChanged(::std::function<void(::std::unordered_set<::HashedString> const&)>) /*override*/;
+    onVisibleBadgesChanged(::std::function<void(::std::unordered_set<::HashedString> const&)> callback) /*override*/;
 
-    virtual ::Bedrock::PubSub::Subscription
-        onConfigChanged(::std::function<void(::Editor::DataStore::IContentBadgeContainer::Config const&)>) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription onConfigChanged(
+        ::std::function<void(::Editor::DataStore::IContentBadgeContainer::Config const&)> callback
+    ) /*override*/;
 
     virtual ::std::unordered_set<::HashedString> const& getVisibleBadges() /*override*/;
 
@@ -77,6 +79,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ContentBadgeContainer(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
+
+    MCNAPI void _onContentBadgeRegistered(::HashedString id, int iteration);
+
+    MCNAPI ::Scripting::Result_deprecated<void> _saveBadgesToItem(
+        ::WeakRef<::Editor::Services::PersistenceItem> const& itemRef,
+        ::std::unordered_map<::HashedString, int> const&      badges
+    );
 
     MCNAPI ::Scripting::Result_deprecated<void> handleDataEvent(
         ::Editor::DataStore::EventType                 eventType,

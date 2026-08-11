@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"
+#include "mc/deps/core/threading/AsyncPromise.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/nether_net/ILanEventHandler.h"
 
@@ -11,6 +12,7 @@
 // clang-format off
 class SignalingService;
 struct NetherNetConnector;
+namespace NetherNet { struct StunRelayServer; }
 namespace NetherNet::LanEvents { struct MessageReceived; }
 namespace NetherNet::LanEvents { struct MessageSent; }
 namespace PlayerMessaging { struct NetworkID; }
@@ -39,9 +41,9 @@ public:
     // NOLINTBEGIN
     virtual ~SignalingServiceSignInJob() /*override*/ = default;
 
-    virtual void OnLanEvent(::NetherNet::LanEvents::MessageSent const&) /*override*/;
+    virtual void OnLanEvent(::NetherNet::LanEvents::MessageSent const& event) /*override*/;
 
-    virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const&) /*override*/;
+    virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event) /*override*/;
     // NOLINTEND
 
 public:
@@ -54,6 +56,11 @@ public:
         ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
     );
 #endif
+
+    MCNAPI void _handleRelayConfig(
+        ::std::vector<::NetherNet::StunRelayServer> const&      config,
+        ::Bedrock::Threading::AsyncPromise<::std::error_code>&& signInPromise
+    ) const;
 
     MCNAPI ::Bedrock::Threading::Async<::std::error_code> signin(bool fetchRelayConfig);
     // NOLINTEND

@@ -84,13 +84,8 @@ public:
 
     virtual void baseTick() /*override*/;
 
-    virtual void teleportTo(
-        ::Vec3 const& pos,
-        bool          shouldStopRiding,
-        int           cause,
-        int           sourceEntityType,
-        bool          keepVelocity
-    ) /*override*/;
+    virtual void
+    teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity) /*override*/;
 
     virtual bool canExistWhenDisallowMob() const /*override*/;
 
@@ -100,7 +95,7 @@ public:
 
     virtual void kill() /*override*/;
 
-    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
+    virtual void setOwner(::ActorUniqueID const id) /*override*/;
 
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;

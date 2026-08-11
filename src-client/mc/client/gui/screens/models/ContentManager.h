@@ -35,6 +35,7 @@ class IWorldTemplateManager;
 class MutableContentItemCollection;
 class Pack;
 class PackManifestFactory;
+class PackSource;
 class ResourcePackManager;
 class StoreCatalogRepository;
 class TaskGroup;
@@ -106,37 +107,43 @@ public:
     // NOLINTBEGIN
     virtual ~ContentManager() /*override*/ = default;
 
-    virtual ::ContentSource* loadContent(::ContentType, ::ContentFlags) /*override*/;
+    virtual ::ContentSource* loadContent(::ContentType contentType, ::ContentFlags flags) /*override*/;
 
-    virtual ::ContentSource* loadContent(::InvalidPacksFilterGroup const&) /*override*/;
+    virtual ::ContentSource* loadContent(::InvalidPacksFilterGroup const& invalidFilter) /*override*/;
 
-    virtual ::ContentSource* loadContentForLevel(::std::string const&, ::mce::UUID const&) /*override*/;
+    virtual ::ContentSource*
+    loadContentForLevel(::std::string const& levelId, ::mce::UUID const& premiumTemplateId) /*override*/;
 
-    virtual ::ContentSource* loadContentForRealm(int64 const) /*override*/;
+    virtual ::ContentSource* loadContentForRealm(int64 const realmId) /*override*/;
 
-    virtual ::std::unique_ptr<::ContentSource>
-    loadContentForRealmsWorld(::Realms::RealmId, ::std::vector<::Realms::Content> const&) /*override*/;
+    virtual ::std::unique_ptr<::ContentSource> loadContentForRealmsWorld(
+        ::Realms::RealmId                       realmId,
+        ::std::vector<::Realms::Content> const& servicePackData
+    ) /*override*/;
 
-    virtual void
-    addPackSourceFromPremiumTemplate(::RealmPackManagerContentSource*, ::mce::UUID const&, ::PackType) /*override*/;
+    virtual void addPackSourceFromPremiumTemplate(
+        ::RealmPackManagerContentSource* source,
+        ::mce::UUID const&               premiumTemplateId,
+        ::PackType                       packType
+    ) /*override*/;
 
-    virtual void addRealmsUnknownPackSources(::RealmPackManagerContentSource*) /*override*/;
+    virtual void addRealmsUnknownPackSources(::RealmPackManagerContentSource* contentSource) /*override*/;
 
-    virtual void addPacksToRealmsUnknownPackSource(::std::unique_ptr<::Pack>) /*override*/;
+    virtual void addPacksToRealmsUnknownPackSource(::std::unique_ptr<::Pack> pack) /*override*/;
 
-    virtual void addCachedHostPackIdProvider(::std::weak_ptr<::CachedHostPackIdProvider>) /*override*/;
+    virtual void addCachedHostPackIdProvider(::std::weak_ptr<::CachedHostPackIdProvider> provider) /*override*/;
 
     virtual void clearRealmsUnknownPackSource() /*override*/;
 
-    virtual void removeUnneededItemFromRealmsUnknownContentSource(::mce::UUID const&) /*override*/;
+    virtual void removeUnneededItemFromRealmsUnknownContentSource(::mce::UUID const& id) /*override*/;
 
     virtual ::gsl::not_null<::std::shared_ptr<::ContentItemCollection>>
-    getGlobalResourcePackCollection(bool) /*override*/;
+    getGlobalResourcePackCollection(bool isEditorMode) /*override*/;
 
     virtual ::std::unique_ptr<::IContentManagerContext>
-        createContext(::std::function<bool(::std::shared_ptr<::ContentItem const> const&)>) /*override*/;
+    createContext(::std::function<bool(::std::shared_ptr<::ContentItem const> const&)> contextPredicate) /*override*/;
 
-    virtual void removeContext(::IContentManagerContext&) /*override*/;
+    virtual void removeContext(::IContentManagerContext& context) /*override*/;
 
     virtual ::std::vector<::std::unique_ptr<::ContentSource>> const& getSources() const /*override*/;
 
@@ -146,9 +153,9 @@ public:
 
     virtual void enableCatalogPackSource() /*override*/;
 
-    virtual void generateItems(::ContentSource*) /*override*/;
+    virtual void generateItems(::ContentSource* source) /*override*/;
 
-    virtual ::Bedrock::Threading::Async<void> reloadSources(bool) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> reloadSources(bool saveSources) /*override*/;
 
     virtual void reloadItems() /*override*/;
 
@@ -156,36 +163,42 @@ public:
 
     virtual void populateDependencies() const /*override*/;
 
-    virtual void deleteContent(::std::shared_ptr<::ContentItem const> const&) /*override*/;
+    virtual void deleteContent(::std::shared_ptr<::ContentItem const> const& contentItem) /*override*/;
 
-    virtual void deleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const&) /*override*/;
+    virtual void deleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems) /*override*/;
 
-    virtual void deleteContentFiles(::std::shared_ptr<::ContentItem const> const&) /*override*/;
+    virtual void deleteContentFiles(::std::shared_ptr<::ContentItem const> const& contentItem) /*override*/;
 
-    virtual void deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const&) /*override*/;
+    virtual void
+    deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems) /*override*/;
 
-    virtual void postDeleteContent(::std::shared_ptr<::ContentItem const> const&) /*override*/;
+    virtual void postDeleteContent(::std::shared_ptr<::ContentItem const> const& contentItem) /*override*/;
 
-    virtual void postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const&) /*override*/;
+    virtual void
+    postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems) /*override*/;
 
     virtual uint64 generateContentId() /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldResourcePath(::std::string const&) const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getWorldResourcePath(::std::string const& levelId) const
+        /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldBehaviorPath(::std::string const&) const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getWorldBehaviorPath(::std::string const& levelId) const
+        /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldResourceFolder(::std::string const&) const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getWorldResourceFolder(::std::string const& levelId) const
+        /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldBehaviorFolder(::std::string const&) const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getWorldBehaviorFolder(::std::string const& levelId) const
+        /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldPath(::std::string const&) const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getWorldPath(::std::string const& levelId) const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> const&
-    getPremiumWorldTemplateFolder(::ContentIdentity const&) /*override*/;
+    getPremiumWorldTemplateFolder(::ContentIdentity const& templateId) /*override*/;
 
     virtual ::ContentManagerProxy* getProxy() /*override*/;
 
-    virtual void beginAsyncInit(::TaskGroup&) /*override*/;
+    virtual void beginAsyncInit(::TaskGroup& taskGroup) /*override*/;
 
     virtual bool isInitialized() const /*override*/;
 
@@ -193,16 +206,17 @@ public:
 
     virtual void refreshContentCatalogPackSource() /*override*/;
 
-    virtual ::Bedrock::PubSub::Subscription refreshContentCatalogPackSource(::std::function<void()>&&) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    refreshContentCatalogPackSource(::std::function<void()>&& callback) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> getFilePathManager() /*override*/;
 
     virtual void onLevelDeleted(::std::string const& levelId) /*override*/;
 
-    virtual void onRealmsReset(::Realms::RealmId const) /*override*/;
+    virtual void onRealmsReset(::Realms::RealmId const realmsId) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-    subscribeToSourcesReloadedAsyncCompleted(::std::function<void()>&&) /*override*/;
+    subscribeToSourcesReloadedAsyncCompleted(::std::function<void()>&& onSourcesReloadedAsyncCallback) /*override*/;
 
     virtual ::std::shared_ptr<::StorageManager::ContentItemProvider> getStorageContentItemProvider() /*override*/;
 
@@ -210,9 +224,9 @@ public:
 
     virtual ::std::shared_ptr<::StorageManager::WorldConverter> getStorageWorldConverter() /*override*/;
 
-    virtual ::Bedrock::PubSub::Subscription registerToReloadViews(::std::function<void()>) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription registerToReloadViews(::std::function<void()> callback) /*override*/;
 
-    virtual ::Bedrock::PubSub::Subscription registerToDeleteContent(::std::function<void()>) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription registerToDeleteContent(::std::function<void()> callback) /*override*/;
     // NOLINTEND
 
 public:
@@ -232,6 +246,28 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&          filePathManager,
         ::std::unique_ptr<::StorageManager::IContentHandler>                   storageContentHandler,
         ::std::function<::std::shared_ptr<::StorageManager::WorldConverter>()> storageWorldConverterConstructor
+    );
+
+    MCAPI ::ContentSource* _loadResourceContent(::ContentType type, ::ContentFlags flags);
+
+    MCAPI void _removeContentItemsFromSource(::gsl::not_null<::ContentSource*> source);
+
+    MCAPI void _retrievePackSources(::PackType packType, ::std::vector<::PackSource*>& packSources);
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsServicePackSource> _updateOrCreateRealmsServicePackSource(
+        int64                                                       realmId,
+        ::PackType                                                  packType,
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _deleteContent(
+        ::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems,
+        ::std::function<void(::ContentSource&, ::std::vector<::std::shared_ptr<::ContentItem const>> const&)>
+            deleteItemCallback
     );
     // NOLINTEND
 

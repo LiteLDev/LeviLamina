@@ -84,6 +84,8 @@ public:
         ::std::function<void(::SetDownloadProgressHandlerError)> const& setDownloadErrorsStatusCallbacks,
         ::std::function<void(bool)> const&                              setReadyToLaunch
     );
+
+    MCAPI void _leaveProgressHandler(::MinecraftScreenModel& minecraftScreenModel);
     // NOLINTEND
 
 public:

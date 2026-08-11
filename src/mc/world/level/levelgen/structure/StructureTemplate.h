@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
 #include "mc/world/level/block/Block.h"
 #include "mc/world/level/chunk/NeighborAwareBlockUpdateType.h"
@@ -26,6 +27,7 @@ class LevelChunk;
 class StructureBlockPalette;
 class StructureSettings;
 class StructureTelemetryServerData;
+class Vec3;
 namespace br::worldgen { struct StructureTemplateBlockPalette; }
 // clang-format on
 
@@ -112,6 +114,26 @@ public:
         ::DataLoadHelper&              dataLoadHelper,
         bool                           shouldReloadActorEquipment,
         ::std::optional<::BoundingBox> overlapBB
+    ) const;
+
+    MCAPI void _placeNextBlockSegmentInWorld(
+        ::BlockSource&                 region,
+        uint64                         startPlacement,
+        uint64                         endPlacement,
+        ::StructureSettings const&     structureSettings,
+        ::DataLoadHelper&              dataLoadHelper,
+        ::StructureBlockPalette const& structureBlockPalette,
+        ::BlockPalette const&          globalBlockPalette,
+        ::BlockPos                     position,
+        ::BlockPos const&              offset,
+        ::Vec3 const&                  pivot,
+        ::Rotation                     rotation,
+        ::Mirror                       mirror,
+        float                          integrityValue,
+        uint                           integritySeed,
+        ::StructureTelemetryServerData*,
+        bool updateItemData,
+        bool ignoreJigsawBlocks
     ) const;
 
     MCAPI void fillFromWorld(

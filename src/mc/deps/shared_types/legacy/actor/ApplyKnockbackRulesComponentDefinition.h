@@ -25,6 +25,14 @@ public:
         ::ll::TypedStorage<4, 4, float>                                      mVerticalVelocityCap;
         ::ll::TypedStorage<1, 1, bool>                                       mCheckIfTargetIsImmersedInWater;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI bool operator==(
+            ::SharedTypes::Legacy::ApplyKnockbackRulesComponentDefinition::ApplyKnockbackRulesPreset const& other
+        ) const;
+        // NOLINTEND
     };
 
 public:

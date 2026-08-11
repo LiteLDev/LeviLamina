@@ -66,21 +66,21 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptBlockGlobalEventListener() /*override*/ = default;
 
-    virtual ::EventResult onEvent(::PistonActionEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::PistonActionEvent const& eventData) /*override*/;
 
-    virtual ::EventResult onEvent(::LeverActionEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::LeverActionEvent const& eventData) /*override*/;
 
-    virtual ::EventResult onEvent(::ButtonPushEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::ButtonPushEvent const& eventData) /*override*/;
 
-    virtual ::EventResult onEvent(::PressurePlatePushEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::PressurePlatePushEvent const& eventData) /*override*/;
 
-    virtual ::EventResult onEvent(::PressurePlatePopEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::PressurePlatePopEvent const& eventData) /*override*/;
 
-    virtual ::EventResult onEvent(::TripWireTripEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::TripWireTripEvent const& eventData) /*override*/;
 
-    virtual ::EventResult onEvent(::TargetBlockHitEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::TargetBlockHitEvent const& eventData) /*override*/;
 
-    virtual ::EventResult onEvent(::ExplosionStartedEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::ExplosionStartedEvent const& eventData) /*override*/;
 
     virtual ::EventResult onBlockExploded(
         ::Dimension&      dimension,
@@ -89,29 +89,44 @@ public:
         ::Actor*          source
     ) /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ::EventResult
+    onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool) /*override*/;
+#else // LL_PLAT_C
     virtual ::EventResult onBlockPlacedByPlayer(
         ::Player&         player,
         ::Block const&    placedBlock,
         ::BlockPos const& pos,
         bool              isUnderwater
     ) /*override*/;
+#endif
 
     virtual ::EventResult onBlockDestroyedByPlayer(
-        ::Player&,
-        ::Block const&,
-        ::BlockPos const&,
-        ::ItemStackBase const&,
-        ::ItemStackBase const&
+        ::Player&              player,
+        ::Block const&         destroyedBlock,
+        ::BlockPos const&      pos,
+        ::ItemStackBase const& currentItem,
+        ::ItemStackBase const& itemBeforeBlockBreak
     ) /*override*/;
 
-    virtual ::EventResult
-    onBlockDestructionStarted(::Player&, ::BlockPos const&, ::Block const&, uchar const, int const) /*override*/;
+    virtual ::EventResult onBlockDestructionStarted(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    hitBlock,
+        uchar const       face,
+        int const         previousProgress
+    ) /*override*/;
 
     virtual ::EventResult
     onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress) /*override*/;
 
-    virtual ::EventResult
-    onBlockDestructionContinued(::Player&, ::BlockPos const&, ::Block const&, uchar const, int const) /*override*/;
+    virtual ::EventResult onBlockDestructionContinued(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        uchar const       face,
+        int const         previousProgress
+    ) /*override*/;
     // NOLINTEND
 
 public:

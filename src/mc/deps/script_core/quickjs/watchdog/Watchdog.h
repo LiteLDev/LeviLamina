@@ -7,8 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+struct JSContext;
 namespace Scripting { struct ContextId; }
 namespace Scripting { struct WatchdogEvent; }
+namespace Scripting::QuickJS { class ContextTimings; }
 // clang-format on
 
 namespace Scripting::QuickJS {
@@ -41,21 +43,38 @@ public:
     // NOLINTBEGIN
     virtual ~Watchdog() /*override*/ = default;
 
-    virtual void setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)>) /*override*/;
+    virtual void
+    setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler) /*override*/;
 
-    virtual void setWatchdogInterruptPollCounter(uint) /*override*/;
+    virtual void setWatchdogInterruptPollCounter(uint counter) /*override*/;
 
-    virtual void beginTiming(::Scripting::ContextId) /*override*/;
+    virtual void beginTiming(::Scripting::ContextId contextId) /*override*/;
 
-    virtual void endTiming(::Scripting::ContextId) /*override*/;
+    virtual void endTiming(::Scripting::ContextId contextId) /*override*/;
 
-    virtual void pushPhase(::std::string const&, ::std::chrono::microseconds) /*override*/;
+    virtual void pushPhase(::std::string const& namedPhase, ::std::chrono::microseconds frameBaseLine) /*override*/;
 
     virtual void popPhase() /*override*/;
 
     virtual void endFrame() /*override*/;
 
     virtual void resetTimings() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::QuickJS::ContextTimings& _getOrCreateContextTime(::Scripting::ContextId contextId);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _outOfMemoryHandler(::JSContext* ctx, void* runtimeOpaque);
+
+    MCNAPI static int _stackOverflowHandler(::JSContext* ctx, void* runtimeOpaque);
+
+    MCNAPI static int _timeoutHandler(::JSContext* ctx, void* runtimeOpaque);
     // NOLINTEND
 
 public:

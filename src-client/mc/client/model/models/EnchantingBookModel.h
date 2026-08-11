@@ -54,6 +54,8 @@ public:
     ) /*override*/;
 
     virtual void setupAnim(float time, float r, float bob, float yRot, float xRot, float scale) /*override*/;
+
+    virtual ~EnchantingBookModel() /*override*/;
     // NOLINTEND
 
 public:
@@ -69,6 +71,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(bool isOnLectern);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -62,6 +62,8 @@ public:
         bool                    mustSee,
         ::MobDescriptor const** outDescriptorMatch
     );
+
+    virtual ~TargetGoal() /*override*/;
     // NOLINTEND
 
 public:
@@ -70,6 +72,15 @@ public:
     MCAPI bool _canAttack(::Actor* target, bool allowInvulnerable, ::MobDescriptor const** outDescriptorMatch);
 
     MCAPI bool _canReach(::Actor& target);
+
+    MCAPI bool
+    _matchesTargetTypes(::Mob* testMob, ::Actor* target, bool mustSee, ::MobDescriptor const** outDescriptorMatch);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -9,6 +9,7 @@
 // clang-format off
 class EntityContext;
 struct TimerComponent;
+struct WeightChoiceEntry;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -32,6 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void addWeightedChoiceEntry(::WeightChoiceEntry const& entry);
+
     MCAPI void initialize(::EntityContext& entity, ::TimerComponent& component) const;
     // NOLINTEND
 

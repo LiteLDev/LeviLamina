@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/PersistenceGroupChangeAction.h"
+#include "mc/common/editor/PersistenceGroupItemChangeAction.h"
 #include "mc/common/editor/PersistenceGroupType.h"
 #include "mc/common/editor/PersistenceScope.h"
 #include "mc/deps/core/file/PathBuffer.h"
@@ -12,7 +14,10 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor::Network { class PersistenceQuerySharedGroupPayload; }
 namespace Editor::Services { class PersistenceGroup; }
+namespace Editor::Services { class PersistenceItem; }
+namespace Editor::Services { struct PersistenceGroupMetadata; }
 // clang-format on
 
 namespace Editor::Services {
@@ -66,6 +71,32 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> _getGroupRootPath(::Editor::Services::PersistenceScope scope) const
         /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Editor::Services::PersistenceGroupMetadata _createMetadata(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    );
+
+    MCNAPI void _dispatchGroupToClients(
+        ::Editor::Services::PersistenceGroupChangeAction action,
+        ::Editor::Services::PersistenceGroupMetadata     groupMetadata
+    );
+
+    MCNAPI ::std::string _getGroupItemKey(::std::string groupVersionName, ::Editor::Services::PersistenceScope scope);
+
+    MCNAPI void _handleGroupItemChange(
+        ::std::string                                          key,
+        ::Editor::Services::PersistenceScope                   scope,
+        ::Editor::Services::PersistenceGroupItemChangeAction   action,
+        ::StackRefResult<::Editor::Services::PersistenceItem>& item
+    );
+
+    MCNAPI void _handleQuerySharedGroupPayload(::Editor::Network::PersistenceQuerySharedGroupPayload const& payload);
     // NOLINTEND
 
 public:

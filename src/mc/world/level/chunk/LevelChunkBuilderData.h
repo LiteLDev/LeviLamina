@@ -58,6 +58,10 @@ public:
     MCAPI void enqueueChunkForProcessing(::ChunkPos const& pos, ::ChunkState state);
 #endif
 
+#ifdef LL_PLAT_S
+    MCAPI void enqueueChunkForProcessing(::ChunkPos const& pos, ::ChunkState state);
+#endif
+
     MCAPI ~LevelChunkBuilderData();
     // NOLINTEND
 

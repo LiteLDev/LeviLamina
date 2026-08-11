@@ -22,6 +22,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addTamingItem(::ActorDefinitionTameItem const& tameItem);
+
+    MCAPI void addTamingItemByName(::std::string const& name);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

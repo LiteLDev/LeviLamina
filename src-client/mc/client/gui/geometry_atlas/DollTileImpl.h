@@ -18,7 +18,7 @@ class DollTileImpl : public ::GeometryAtlas::IPaperDollTile, public ::GeometryAt
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void submitUpdate(::GeometryAtlas::PaperDollPayload&&) /*override*/;
+    virtual void submitUpdate(::GeometryAtlas::PaperDollPayload&& payload) /*override*/;
 
     virtual uint getUserID() const /*override*/;
 

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/block/BigDripleafTilt.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -74,6 +75,11 @@ public:
     MCAPI BigDripleafBlock(::std::string const& nameId, int id);
 
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
+    MCAPI void _resetTilt(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void
+    _setTiltAndScheduleTick(::BigDripleafTilt bigDripleafTilt, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 

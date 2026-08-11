@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     virtual ~ConduitBaseModel() /*override*/ = default;
 
-    virtual void render(::ScreenContext&) /*override*/;
+    virtual void render(::ScreenContext& screenContext) /*override*/;
     // NOLINTEND
 
 public:

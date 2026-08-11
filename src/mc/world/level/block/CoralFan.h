@@ -55,6 +55,8 @@ public:
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    virtual ~CoralFan() /*override*/;
     // NOLINTEND
 
 public:
@@ -69,6 +71,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& nameId, int id, ::HashedString const& deadVersion);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

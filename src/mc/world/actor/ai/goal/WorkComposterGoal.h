@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/WorkGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class ContainerComponent;
+// clang-format on
+
 class WorkComposterGoal : public ::WorkGoal {
 public:
     // member variables
@@ -26,6 +31,12 @@ public:
     virtual void start() /*override*/;
 
     virtual void useWorkstation() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::pair<int, int> _findCompostableItemSlot(::ContainerComponent& inventory);
     // NOLINTEND
 
 public:

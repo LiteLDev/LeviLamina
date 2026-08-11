@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class TaskResult;
+namespace Bedrock::Profiler::details { struct PredeclaredAnnotation; }
 // clang-format on
 
 class ResourceLoadManager : public ::Bedrock::EnableNonOwnerReferences {
@@ -61,6 +62,12 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI ::Bedrock::Threading::Async<void> queue(
+            ::brstd::move_only_function<::TaskResult()> threadedCallback,
+            ::std::function<void()>                     mainThreadCallback,
+            uint                                        taskPriority
+        );
+
 #ifdef LL_PLAT_C
         MCNAPI ::Bedrock::Threading::Async<void>
         queueAsync(::brstd::move_only_function<::TaskResult()> callback, uint taskPriority);
@@ -149,6 +156,13 @@ public:
         uint                                        taskPriority
     );
 
+    MCNAPI void registerResourceLoadTaskGroup(
+        ::std::string_view                                    groupName,
+        ::Bedrock::Profiler::details::PredeclaredAnnotation&& annotation,
+        ::ResourceLoadType                                    resourceLoadType,
+        ::std::vector<::ResourceLoadType>                     dependencies
+    );
+
     MCNAPI void setAppSuspended(bool suspended);
 
     MCNAPI bool softCancel();
@@ -162,6 +176,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::std::function<void()> _wrapMainThreadCallback(
+        ::ResourceLoadManager::ResourceLoadTaskGroup& resourceLoadTaskGroup,
+        ::std::function<void()>&&                     mainThreadCallback
+    );
+
     MCNAPI static void queueChild(
         ::brstd::move_only_function<::TaskResult()> threadedCallback,
         ::std::function<void()>                     mainThreadCallback,

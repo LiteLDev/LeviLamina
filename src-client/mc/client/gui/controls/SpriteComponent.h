@@ -58,11 +58,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SpriteComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SpriteComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
     // NOLINTEND
@@ -70,11 +74,62 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit SpriteComponent(::UIControl& owner);
+
+    MCAPI void _drawClipped(
+        ::glm::vec2 const&                                                                                    pos,
+        ::glm::vec2 const&                                                                                    size,
+        ::glm::vec2 const&                                                                                    startUV,
+        ::glm::vec2 const&                                                                                    uvSize,
+        ::std::function<void(::glm::vec2 const&, ::glm::vec2 const&, ::glm::vec2 const&, ::glm::vec2 const&)> callback
+    ) const;
+
+    MCAPI void _drawFilled(
+        ::UIRenderContext& context,
+        ::glm::vec2 const& startPos,
+        ::glm::vec2 const& size,
+        ::glm::vec2 const& startUV,
+        ::glm::vec2 const& uvSize
+    ) const;
+
+    MCAPI void _drawKeepRatio(
+        ::UIRenderContext& context,
+        ::glm::vec2 const& startPos,
+        ::glm::vec2 const& size,
+        ::glm::vec2 const& startUV,
+        ::glm::vec2 const& uvSize
+    ) const;
+
+    MCAPI void _drawTiled(
+        ::glm::vec2 const&                                                                                    startPos,
+        ::glm::vec2 const&                                                                                    size,
+        ::glm::vec2 const&                                                                                    startUV,
+        ::glm::vec2 const&                                                                                    uvSize,
+        ::std::function<void(::glm::vec2 const&, ::glm::vec2 const&, ::glm::vec2 const&, ::glm::vec2 const&)> callback
+    ) const;
+
+    MCAPI void _drawTiledClipped(
+        ::glm::vec2 const&                                                                                    startPos,
+        ::glm::vec2 const&                                                                                    size,
+        ::glm::vec2 const&                                                                                    startUV,
+        ::glm::vec2 const&                                                                                    uvSize,
+        ::std::function<void(::glm::vec2 const&, ::glm::vec2 const&, ::glm::vec2 const&, ::glm::vec2 const&)> callback
+    );
+
+    MCAPI void
+    _getClippedInfo(::glm::vec2& clipPos, ::glm::vec2& clipSize, ::glm::vec2& clipUV, ::glm::vec2& clipUVSize) const;
+
     MCAPI void render(::UIRenderContext& context);
 
     MCAPI void setResourceLocation(::ResourceLocation const& resourceLocation);
 
     MCAPI void setZipFolder(::Core::PathView zipFolder);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

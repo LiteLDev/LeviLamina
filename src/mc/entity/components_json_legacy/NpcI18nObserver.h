@@ -37,6 +37,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _loadNpcData();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $onLanguageChanged(::std::string const& code, bool languageSystemInitializing);

@@ -14,6 +14,8 @@
 // clang-format off
 class AABB;
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Network { class WidgetComponentStateChangePayload; }
+namespace Editor::Network { class WidgetStateChangePayload; }
 namespace Editor::ScriptModule { class ScriptWidget; }
 namespace Editor::ScriptModule { class ScriptWidgetGroup; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -50,8 +52,9 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptWidgetService() = default;
 
-    virtual ::Scripting::Result_deprecated<void>
-        _groupDeleteGroup(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup>) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _groupDeleteGroup(
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete
+    ) /*override*/;
 
     virtual ::AABB const& _getDimensionBounds() const /*override*/;
     // NOLINTEND
@@ -63,6 +66,11 @@ public:
         ::Editor::ServiceProviderCollection&  serviceProviderCollection,
         ::Scripting::WeakLifetimeScope const& scope
     );
+
+    MCNAPI void
+    _handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload);
+
+    MCNAPI void _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload);
     // NOLINTEND
 
 public:

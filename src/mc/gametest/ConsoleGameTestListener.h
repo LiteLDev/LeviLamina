@@ -14,11 +14,11 @@ class ConsoleGameTestListener : public ::gametest::IGameTestListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance&) /*override*/;
+    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& test) /*override*/;
 
-    virtual void onTestPassed(::gametest::BaseGameTestInstance&) /*override*/;
+    virtual void onTestPassed(::gametest::BaseGameTestInstance& test) /*override*/;
 
-    virtual void onTestFailed(::gametest::BaseGameTestInstance&) /*override*/;
+    virtual void onTestFailed(::gametest::BaseGameTestInstance& test) /*override*/;
     // NOLINTEND
 
 public:

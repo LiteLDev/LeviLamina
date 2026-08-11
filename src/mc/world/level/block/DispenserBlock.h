@@ -12,6 +12,7 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class Container;
 class ItemStack;
 class Player;
 class Vec3;
@@ -61,6 +62,18 @@ public:
     MCAPI DispenserBlock(::std::string const& nameId, int id);
 
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
+    MCAPI void ejectItem(
+        ::BlockSource&     region,
+        ::Vec3 const&      pos,
+        uchar              face,
+        ::ItemStack const& item,
+        ::Container&       container,
+        int                slot,
+        int                countLimit
+    ) const;
+
+    MCAPI ::Vec3 getDispensePosition(::BlockSource& region, ::Vec3 const& pos) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 

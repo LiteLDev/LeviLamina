@@ -22,7 +22,8 @@ public:
 
     virtual void registerMolangQueries() /*override*/;
 
-    virtual void registerServerInstanceHandler(::ServerInstanceEventCoordinator&) /*override*/;
+    virtual void
+    registerServerInstanceHandler(::ServerInstanceEventCoordinator& serverInstanceCoordinator) /*override*/;
     // NOLINTEND
 
 public:

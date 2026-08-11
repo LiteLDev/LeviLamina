@@ -49,6 +49,8 @@ public:
         ::ui::ScreenTechStackSelector&                        techStackSelector,
         ::std::function<void(::UploadState, ::Realms::World)> callbackAfterUpload
     );
+
+    MCAPI void _upload(int const worldIndex);
     // NOLINTEND
 
 public:

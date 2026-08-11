@@ -15,10 +15,12 @@ class BlockSource;
 class CompoundTag;
 class Level;
 class Mob;
+class Random;
 class SpawnData;
 class TrialSpawnerConfigRegistry;
 class Vec3;
 struct ActorUniqueID;
+struct DimensionType;
 // clang-format on
 
 class TrialSpawner {
@@ -105,13 +107,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::vector<::TrialSpawner::WeightedItemStack>& _getDispensingItems(::BlockSource& region);
+
+    MCAPI ::std::optional<::Vec3>
+    _getPositionToSpawnItemSpawner(::BlockSource& region, ::std::vector<::ActorUniqueID> const& eligibleActorIds) const;
+
+    MCAPI bool
+    _hasLineOfSight(::BlockSource const& region, ::Vec3 const from, ::Vec3 const to, float const maxRange) const;
+
+    MCAPI void _sendSmallFlame(::BlockSource& region, ::Vec3 const center);
+
+    MCAPI void _setUpdated(::BlockSource& region);
+
+    MCAPI void _spawnItemSpawner(::BlockSource& region, ::Vec3 pos, ::ItemStack const& itemToSpawn);
+
+    MCAPI ::std::optional<::ActorUniqueID> _spawnMob(::BlockSource& region, ::BlockPos blockActorPos);
+
+    MCAPI void _tryRegisterNewPlayers(::BlockSource& region, ::TrialSpawner::SpawningLogicState currentState);
+
     MCAPI void applyUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
 
     MCAPI ::Mob* createAndAddDisplayEntity(::BlockSource& region);
 
     MCAPI ::CompoundTag createUpdatePacket();
 
+    MCAPI ::SpawnData const* getOrCreateNextSpawnData(::Random& random);
+
 #ifdef LL_PLAT_C
+    MCAPI ::TrialSpawner::SpawningLogicState getSpawningLogicState(::BlockSource& region) const;
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI ::TrialSpawner::SpawningLogicState getSpawningLogicState(::BlockSource& region) const;
 #endif
 
@@ -133,6 +159,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::vector<::ItemStack> _getRandomLootTableItems(
+        ::Level&             level,
+        ::Random&            random,
+        ::DimensionType      dimensionType,
+        ::std::string const& lootTableName
+    );
+
 #ifdef LL_PLAT_C
     MCAPI static void addSpawnParticles(::Level& level, ::Vec3 pos, bool isOminous);
 

@@ -9,6 +9,11 @@
 #include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_26_30 {
 
 struct FireAtTargetGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -45,6 +50,12 @@ public:
     ::ll::TypedStorage<4, 4, ::SharedTypes::v1_26_30::FireAtTargetGoalDefinition::ProjectileAnchorProxy>
                                       mTargetAnchorProxy;
     ::ll::TypedStorage<4, 12, ::Vec3> mTargetOffset;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

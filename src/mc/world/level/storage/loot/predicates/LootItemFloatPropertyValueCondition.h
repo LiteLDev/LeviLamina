@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
 
-    virtual bool _hasPropertyValue(::PropertyComponent const&) const /*override*/;
+    virtual bool _hasPropertyValue(::PropertyComponent const& component) const /*override*/;
     // NOLINTEND
 
 public:

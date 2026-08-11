@@ -39,6 +39,14 @@ public:
     // NOLINTBEGIN
     virtual ::std::optional<::br::worldgen::GenerationStub>
     findValidGenerationPoint(::br::worldgen::GenerationContext& context) const /*override*/;
+
+    virtual ~JigsawStructure() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

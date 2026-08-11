@@ -7,7 +7,9 @@
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/controllers/ItemTakeType.h"
+#include "mc/world/containers/managers/controllers/ItemSpecialLocation.h"
 #include "mc/world/containers/managers/controllers/ItemTransferType.h"
+#include "mc/world/containers/models/ContainerCategory.h"
 #include "mc/world/containers/models/ContainerExpandStatus.h"
 #include "mc/world/inventory/simulation/ContainerScreenRequestActionType.h"
 
@@ -72,7 +74,11 @@ public:
     virtual ~ContainerManagerController();
 #endif
 
+#ifdef LL_PLAT_S
     virtual void postInit(::std::weak_ptr<::ContainerManagerController>);
+#else // LL_PLAT_C
+    virtual void postInit(::std::weak_ptr<::ContainerManagerController> self);
+#endif
 
     virtual void registerContainerCallbacks();
 
@@ -285,10 +291,20 @@ public:
 #ifdef LL_PLAT_C
     MCAPI explicit ContainerManagerController(::std::weak_ptr<::ContainerManagerModel> containerManagerModel);
 
+    MCAPI void _addContainer(::std::shared_ptr<::ContainerController> uiContainer);
+
     MCAPI void _addOutputsAsDestinations(
         ::ContainerScreenActionResult const& result,
         ::std::vector<::AutoPlaceResult>&    destinations
     ) const;
+
+    MCAPI int _appendAutoPlaceOutputs(
+        ::ItemTransferRequest&                request,
+        ::ItemStackBase const&                itemToPlace,
+        int                                   requestAmount,
+        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
+        int                                   placementGroup
+    );
 
     MCAPI void _autoPlaceOrDrop(
         ::SlotData const&                     srcSlot,
@@ -326,15 +342,44 @@ public:
 
     MCAPI ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> _getPredictiveContainers();
 
+    MCAPI ::SlotData _getSlotData(::ContainerValidationSlotData const& containerValidationSlotData) const;
+
     MCAPI bool _handleAutoPlace(::ItemTransferRequest const& request);
 
+    MCAPI void _handleSplitMultiple(
+        ::SelectedSlotInfo const& selected,
+        ::ItemInstance const&     itemTemplate,
+        ::SlotData const&         dstSlot
+    );
+
     MCAPI bool _isContainerSimulationEnabled() const;
+
+    MCAPI void _onItemTransferring(
+        ::ItemStack const& stack,
+        ::SlotData const&  srcSlot,
+        ::ContainerModel*  srcModel,
+        ::SlotData const&  dstSlot,
+        ::ContainerModel*  dstModel
+    );
 
     MCAPI void _onTransfer(::ContainerScreenActionResult const& result);
 
     MCAPI void _playCraftingSound(
         ::std::weak_ptr<::ContainerManagerModel> const& containerManagerModel,
         ::SharedTypes::Legacy::LevelSoundEvent          soundEvent
+    );
+
+    MCAPI void _registerSetThisDirtyCallback(::std::shared_ptr<::ContainerModel> containerModel);
+
+    MCAPI ::ContainerCategory
+    _resolveToRealSourceSlot(::ContainerModel* srcModel, ::SlotData const& srcSlot, ::SlotData& realSrcSlot) const;
+
+    MCAPI void _returnToPlayerOrDrop(::SlotData const& srcSlot, ::ItemTransferAmount amount);
+
+    MCAPI void _shiftLeftStorageItemContents(
+        ::std::string const&              collectionName,
+        int                               selectedItemIdx,
+        ::std::vector<::ItemStack> const& items
     );
 
     MCAPI bool _transfer(
@@ -344,6 +389,12 @@ public:
         ::ItemTransferAmount transferAmount,
         bool                 allowSwap,
         bool                 allowVisualOnlySameItemSwap
+    );
+
+    MCAPI bool _transferSpecial(
+        ::SlotData const&          srcSlot,
+        ::ItemTransferAmount const transferAmount,
+        ::ItemSpecialLocation      location
     );
 
     MCAPI ::ItemStackRequestScope _tryBeginItemStackRequest(::ContainerManagerModel const* managerModel);
@@ -424,7 +475,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $postInit(::std::weak_ptr<::ContainerManagerController>);
+    MCFOLD void $postInit(::std::weak_ptr<::ContainerManagerController> self);
 
     MCAPI void $registerContainerCallbacks();
 

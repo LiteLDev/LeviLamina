@@ -14,6 +14,7 @@
 // auto generated forward declare list
 // clang-format off
 class ILevelListCache;
+struct LevelSummary;
 namespace OreUI { class GameDependencies; }
 namespace OreUI { class IResourceAllowList; }
 namespace World { class IWorldCloudSyncer; }
@@ -68,6 +69,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI WorldStorageInfoQuery(::OreUI::GameDependencies const& game, ::std::string const& worldId);
+
+    MCAPI void _tryUpdateCloudProperties();
+
+    MCAPI void _updateCloudProperties(::std::optional<::World::SyncState> syncState);
+
+    MCAPI void _updateProperties(::LevelSummary& levelSummary);
     // NOLINTEND
 
 public:

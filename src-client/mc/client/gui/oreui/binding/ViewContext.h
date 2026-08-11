@@ -33,7 +33,7 @@ public:
 
     virtual void onBindingsReleased() /*override*/;
 
-    virtual void update(double const) /*override*/;
+    virtual void update(double const time) /*override*/;
 
     virtual ::std::vector<::OreUI::Debug::QueryInformation> getQueryInformation() const /*override*/;
 

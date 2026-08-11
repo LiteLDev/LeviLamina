@@ -47,7 +47,7 @@ public:
 
     virtual int getValue() const /*override*/;
 
-    virtual void setValue(int) /*override*/;
+    virtual void setValue(int index) /*override*/;
 
     virtual ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
@@ -62,6 +62,8 @@ public:
         ::std::function<::Bedrock::PubSub::Subscription(::std::function<void(::LevelDataWrapper&)>)>
             registerLevelChangeCallback
     );
+
+    MCAPI void _updateData();
     // NOLINTEND
 
 public:

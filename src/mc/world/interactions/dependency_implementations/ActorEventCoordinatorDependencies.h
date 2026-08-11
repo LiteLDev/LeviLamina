@@ -30,7 +30,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void sendActorUseItemEvent(::EntityContext&, ::ItemStack&, ::ItemUseMethod) /*override*/;
+    virtual void
+    sendActorUseItemEvent(::EntityContext& actor, ::ItemStack& item, ::ItemUseMethod useMethod) /*override*/;
     // NOLINTEND
 
 public:

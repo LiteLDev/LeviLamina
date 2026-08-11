@@ -18,10 +18,12 @@ public:
     virtual ~ChunkStructureAccess() = default;
 
     virtual ::std::shared_ptr<::br::worldgen::StructureInstance const>
-    getStructureInstance(::br::worldgen::Structure const&) const = 0;
+    getStructureInstance(::br::worldgen::Structure const& structure) const = 0;
 
-    virtual void
-    setStructureInstance(::br::worldgen::Structure const&, ::std::shared_ptr<::br::worldgen::StructureInstance>) = 0;
+    virtual void setStructureInstance(
+        ::br::worldgen::Structure const&                     structure,
+        ::std::shared_ptr<::br::worldgen::StructureInstance> instance
+    ) = 0;
 
     virtual ::ChunkPos getPos() const = 0;
     // NOLINTEND

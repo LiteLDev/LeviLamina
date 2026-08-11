@@ -10,6 +10,7 @@
 struct DimensionType;
 namespace ScriptModuleMinecraft { class ScriptDimensionType; }
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -29,6 +30,12 @@ public:
         ::std::map<::std::string, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType>>>
                                    mDimensionTypes;
     ::ll::TypedStorage<1, 1, bool> mRegisteredTypes;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void registerTypes(::Scripting::WeakLifetimeScope scope);
     // NOLINTEND
 
 public:

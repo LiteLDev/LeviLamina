@@ -29,6 +29,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SliderSetting(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting const&);
+
+    MCAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting const& other) const;
     // NOLINTEND
 
 public:

@@ -14,6 +14,7 @@
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Services { class EditorMinimapServiceProvider; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace OreUI {
@@ -121,6 +122,26 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorMinimapFacet(::Editor::ServiceProviderCollection* services);
+
+    MCAPI void _handleMarkersChanged(::mce::UUID const& minimapId);
+
+    MCAPI void _handleMeMarkerChanged();
+
+    MCAPI void _handleMinimapDataChanged(::mce::UUID const& minimapId);
+
+    MCAPI ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData> const& getGlobalMarkers();
+
+    MCAPI ::std::unordered_map<::std::string, ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData>> const&
+    getMarkers();
+
+    MCAPI ::std::unordered_map<::std::string, ::OreUI::EditorMinimapFacet::MinimapData> const& getMinimaps();
+
+    MCAPI ::OreUI::EditorMinimapFacet::MinimapHoverInfo
+    queryMinimapPosition(::std::string const& minimapId, float worldX, float worldZ);
+
+    MCAPI void registerMinimapUI(::std::string const& mapId);
+
+    MCAPI void unregisterMinimapUI(::std::string const& mapId);
     // NOLINTEND
 
 public:

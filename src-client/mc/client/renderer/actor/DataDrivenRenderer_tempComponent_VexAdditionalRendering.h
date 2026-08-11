@@ -5,11 +5,16 @@
 // auto generated inclusion list
 #include "mc/client/renderer/actor/DataDrivenRenderer_tempComponent.h"
 #include "mc/client/renderer/actor/V2TempComponentRequirements.h"
+#include "mc/deps/renderer/MatrixStack.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorRenderData;
 class BaseActorRenderContext;
+class BoneOrientation;
+class HashedString;
+class ItemStack;
+class Mob;
 class RenderParams;
 // clang-format on
 
@@ -39,7 +44,24 @@ public:
     // NOLINTBEGIN
     virtual ::V2TempComponentRequirements getV2Requirements() const /*override*/;
 
-    virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
+    virtual void render(
+        ::BaseActorRenderContext& renderContext,
+        ::ActorRenderData&        actorRenderData,
+        ::RenderParams&           renderParams
+    ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _renderParentedItemInHand(
+        ::Mob&                                  mob,
+        ::HashedString const&                   boneName,
+        ::ItemStack const&                      item,
+        ::BaseActorRenderContext&               renderContext,
+        ::std::vector<::BoneOrientation> const& boneOrientations,
+        ::MatrixStack::MatrixStackRef&          worldMatrix
+    ) const;
     // NOLINTEND
 
 public:

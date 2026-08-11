@@ -35,11 +35,11 @@ public:
 
     virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
-    virtual void tick(::MinecraftScreenModel&) /*override*/;
+    virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void onCancel(::MinecraftScreenModel&) /*override*/;
 
-    virtual void onExit(::MinecraftScreenModel&) /*override*/;
+    virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
 

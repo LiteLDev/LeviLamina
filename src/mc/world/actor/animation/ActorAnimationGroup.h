@@ -44,6 +44,8 @@ public:
 
     MCAPI ::ActorSkeletalAnimationPtr getActorAnimation(::HashedString const& name);
 
+    MCAPI ::std::shared_ptr<::ActorAnimationInfo> getActorAnimationInfo(::HashedString const& name);
+
 #ifdef LL_PLAT_C
     MCAPI void loadActorAnimation(
         ::std::string const&      fileData,

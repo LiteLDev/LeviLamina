@@ -485,6 +485,8 @@ public:
 
     MCNAPI bool containsWaterSettings(::HashedString const& biomeID) const;
 
+    MCNAPI ::WaterConfig::WaterConfigSettingsV4 const& findWaterConfigSettings(::HashedString const& biomeID) const;
+
     MCNAPI ::mce::framebuilder::CausticsParameters getCausticsParameters() const;
 
     MCNAPI ::dragon::framerenderer::modules::water::WaterParameters getWaterParameters() const;
@@ -497,6 +499,13 @@ public:
     MCNAPI ::mce::framebuilder::WaterSurfaceParameters getWaterSurfaceParameters(::HashedString const& biomeID) const;
 
     MCNAPI void loadTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+
+    MCNAPI void setDefaultWaterSettings(::WaterConfig::WaterConfigSettingsV4 const& inWaterSettings);
+
+    MCNAPI bool setWaterConfigSettings(
+        ::HashedString const&                       identifier,
+        ::WaterConfig::WaterConfigSettingsV4 const& inWaterConfigSettings
+    );
 
     MCNAPI void unloadTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 

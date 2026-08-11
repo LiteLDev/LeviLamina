@@ -21,6 +21,12 @@ public:
     WidgetPrimComponentWireframeMesh& operator=(WidgetPrimComponentWireframeMesh const&);
     WidgetPrimComponentWireframeMesh(WidgetPrimComponentWireframeMesh const&);
     WidgetPrimComponentWireframeMesh();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::Editor::Network::WidgetPrimComponentWireframeMesh const& other) const;
+    // NOLINTEND
 };
 
 } // namespace Editor::Network

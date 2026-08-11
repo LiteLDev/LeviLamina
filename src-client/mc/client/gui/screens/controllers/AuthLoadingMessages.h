@@ -18,4 +18,10 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                           mCurrentMessage;
     ::ll::TypedStorage<8, 8, int64>                                                    mUpdateTime;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void update();
+    // NOLINTEND
 };

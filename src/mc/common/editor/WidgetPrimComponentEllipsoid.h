@@ -20,6 +20,12 @@ public:
     WidgetPrimComponentEllipsoid& operator=(WidgetPrimComponentEllipsoid const&);
     WidgetPrimComponentEllipsoid(WidgetPrimComponentEllipsoid const&);
     WidgetPrimComponentEllipsoid();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::Editor::Network::WidgetPrimComponentEllipsoid const& other) const;
+    // NOLINTEND
 };
 
 } // namespace Editor::Network

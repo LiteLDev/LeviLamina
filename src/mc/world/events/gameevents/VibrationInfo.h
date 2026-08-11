@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class DataLoadHelper;
 class GameEvent;
 // clang-format on
 
@@ -26,6 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
     MCAPI void save(::CompoundTag& tag) const;
     // NOLINTEND
 };

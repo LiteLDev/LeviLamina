@@ -25,11 +25,11 @@ public:
 
     virtual char const* getInitialValueKey() const /*override*/;
 
-    virtual bool tick(::UIControl&, float const) /*override*/;
+    virtual bool tick(::UIControl& ownerControl, float const deltaTime) /*override*/;
 
-    virtual void onResourcesLoaded(::UIAnimationComponent&) /*override*/;
+    virtual void onResourcesLoaded(::UIAnimationComponent& animComponent) /*override*/;
 
-    virtual void _reset(::UIControl&) /*override*/;
+    virtual void _reset(::UIControl& ownerControl) /*override*/;
     // NOLINTEND
 
 public:

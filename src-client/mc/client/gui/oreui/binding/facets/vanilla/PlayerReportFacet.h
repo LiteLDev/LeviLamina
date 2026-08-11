@@ -69,6 +69,22 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string> mLabel;
         ::ll::TypedStorage<4, 4, int>            mValue;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DropdownOption();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI DropdownOption(::std::string label, int value);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
     };
 
     struct ChatSelection {
@@ -133,6 +149,19 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&    clientInstance,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
+
+    MCAPI void decideReportReasonOptions();
+
+    MCAPI void finishReport();
+
+    MCAPI bool getHasReachedReportLimit() const;
+
+    MCAPI bool isPartyChatAvailable() const;
+
+    MCAPI bool isWorldChatAvailable() const;
+
+    MCAPI void
+    startReport(::std::string const& xuid, ::std::string const& platformId, ::std::string const& galleryScreenshotId);
     // NOLINTEND
 
 public:

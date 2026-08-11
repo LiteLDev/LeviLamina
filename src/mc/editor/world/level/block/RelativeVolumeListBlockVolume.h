@@ -60,6 +60,8 @@ public:
     virtual ::std::unordered_set<::BlockPos> getFlattenedBlockPositions() const /*override*/;
 
     virtual ::std::unique_ptr<::BaseBlockLocationIterator> getIterator() const /*override*/;
+
+    virtual ~RelativeVolumeListBlockVolume() /*override*/;
     // NOLINTEND
 
 public:
@@ -70,6 +72,9 @@ public:
     MCNAPI RelativeVolumeListBlockVolume(::Editor::RelativeVolumeListBlockVolume const& rhs);
 
     MCNAPI void add(::SimpleBlockVolume const& _relativeVolume);
+
+    MCNAPI ::std::vector<::SimpleBlockVolume>
+    calculateVolumetricDifference(::SimpleBlockVolume const& volA, ::SimpleBlockVolume const& volB);
 
     MCNAPI void clear();
 
@@ -108,6 +113,12 @@ public:
     MCNAPI void* $ctor(::Editor::RelativeVolumeListBlockVolume&& rhs);
 
     MCNAPI void* $ctor(::Editor::RelativeVolumeListBlockVolume const& rhs);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -80,22 +80,10 @@ public:
 
     virtual bool canAlwaysEat() const /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual ::Item const* eatItem(::ItemStack&, ::Actor&, ::Level&) /*override*/;
-#else // LL_PLAT_C
     virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void use(::ItemOnUseResult&, ::ItemStack&, ::Player&) /*override*/;
-#else // LL_PLAT_C
     virtual void use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::Item const*
-    useTimeDepleted(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&) /*override*/;
-#else // LL_PLAT_C
     virtual ::Item const* useTimeDepleted(
         ::ItemUseMethod& itemUseMethod,
         ::ItemStack const&,
@@ -103,13 +91,13 @@ public:
         ::Player&    player,
         ::Level&     level
     ) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _applyEatEffects(::ItemStack const&, ::Actor& actor, ::Level& level);
+
 #ifdef LL_PLAT_C
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 

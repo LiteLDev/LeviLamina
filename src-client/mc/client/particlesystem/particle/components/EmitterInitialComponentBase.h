@@ -21,9 +21,10 @@ public:
 
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const /*override*/;
 
-    virtual void setupInitial(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&) = 0;
+    virtual void
+    setupInitial(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams) = 0;
 
-    virtual void update(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&);
+    virtual void update(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
     // NOLINTEND
 
 public:

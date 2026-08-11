@@ -4,9 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -26,6 +28,14 @@ public:
     ScriptGuidePlaneManager& operator=(ScriptGuidePlaneManager const&);
     ScriptGuidePlaneManager(ScriptGuidePlaneManager const&);
     ScriptGuidePlaneManager();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> _setPlaneNormal(::std::string const& planeId, ::Vec3 const& normal);
+
+    MCNAPI ::Scripting::Result_deprecated<void> _setPlaneOrigin(::std::string const& planeId, ::Vec3 const& origin);
+    // NOLINTEND
 
 public:
     // static functions

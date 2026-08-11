@@ -79,6 +79,11 @@ public:
         ::AnimationComponent&       animationComponent,
         ::ExpressionNode const&     blendExpression
     );
+
+    MCAPI void _setDefaultPose(
+        ::RenderParams&                                                                   renderParams,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationMap
+    ) const;
     // NOLINTEND
 
 public:

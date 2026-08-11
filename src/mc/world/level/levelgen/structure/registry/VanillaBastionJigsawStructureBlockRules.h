@@ -2,4 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class VanillaBastionJigsawStructureBlockRules {};
+// auto generated forward declare list
+// clang-format off
+class JigsawStructureRegistry;
+// clang-format on
+
+class VanillaBastionJigsawStructureBlockRules {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void initialize(::JigsawStructureRegistry& jigsawRegistry);
+    // NOLINTEND
+};

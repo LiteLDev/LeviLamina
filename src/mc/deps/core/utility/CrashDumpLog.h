@@ -14,6 +14,8 @@ class CrashDumpLog {
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void crashDumpLogThreadRoutine();
+
     MCNAPI static void logEvent(::CrashDumpEventData const& eventData);
 
     MCNAPI static void logKeyValue(::CrashDumpKeyValueData const& keyValueData);

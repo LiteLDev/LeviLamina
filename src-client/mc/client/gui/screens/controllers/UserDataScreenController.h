@@ -47,6 +47,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit UserDataScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
 
+    MCAPI void _updatePlayerList();
+
     MCAPI ::PlayerListInfo getLocalPlayer() const;
 
     MCAPI ::PlayerListInfo getPlayerByAUID(::ActorUniqueID auid) const;

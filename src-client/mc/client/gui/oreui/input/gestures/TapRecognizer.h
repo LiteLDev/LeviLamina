@@ -29,10 +29,11 @@ public:
     // NOLINTBEGIN
     virtual ~TapRecognizer() /*override*/ = default;
 
-    virtual void onTouchesBegan(::std::vector<::OreUI::TouchEventData> const&) /*override*/;
+    virtual void onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches) /*override*/;
 
-    virtual void
-    onTouchesEnded(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const&) /*override*/;
+    virtual void onTouchesEnded(
+        ::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches
+    ) /*override*/;
 
     virtual void onGestureRecognized() /*override*/;
     // NOLINTEND

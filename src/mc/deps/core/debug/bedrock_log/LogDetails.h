@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/diagnostics/LogAreaID.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace Core { class Path; }
 class LogSettingsUpdater;
 // clang-format on
 
@@ -50,6 +54,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _logToFile(::std::string const& debugEvent);
+
+    MCAPI void _log_va(
+        ::LogAreaID _area,
+        uint        _priority,
+        char const* _function,
+        int         line,
+        int         _messageId,
+        char const* pszFormat,
+        char*       argptr
+    );
+
+    MCAPI ::std::string _makeLogString(
+        ::std::string        timestamp,
+        ::LogAreaID          area,
+        uint                 priority,
+        ::std::string        functionName,
+        int                  lineNumber,
+        int                  messageId,
+        ::std::string const& logMessage
+    );
+
+    MCAPI void _openLogFile();
+
+    MCAPI void closeLog();
+
+    MCAPI void createLog(
+        ::Core::Path const&   _logFilePath,
+        ::std::string const&  _logFileName,
+        ::std::string const&  _debugLogTimestamp,
+        bool                  createLogFile,
+        ::LogSettingsUpdater* _settings,
+        double const          _logCycleInS
+    );
+
 #ifdef LL_PLAT_S
     MCAPI void updateLogFilter(
         ::std::unique_ptr<::LogSettingsUpdater> options,

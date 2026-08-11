@@ -24,7 +24,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void addRotationExpressionNode(::ExpressionNode const& node);
+
     MCAPI bool operator==(::SeatDescription const& seat) const;
+
+    MCAPI void setCameraRelaxDistanceSmoothing(float const& value);
+
+    MCAPI void setThirdPersonCamerRadiusOverride(float const& value);
     // NOLINTEND
 
 public:

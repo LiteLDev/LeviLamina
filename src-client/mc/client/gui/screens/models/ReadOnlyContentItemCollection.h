@@ -28,8 +28,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void appendLatest(
-        ::ContentItemCollectionVersion&,
-        ::std::vector<::gsl::not_null<::std::shared_ptr<::ContentItem const>>>&
+        ::ContentItemCollectionVersion&                                         version,
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::ContentItem const>>>& output
     ) const /*override*/;
 
     virtual ::ContentItemCollectionVersion getVersion() const /*override*/;

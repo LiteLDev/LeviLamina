@@ -19,23 +19,27 @@ class DefaultSculkBehavior : public ::SculkBehavior {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual int updateDecayDelay(int const) const /*override*/;
+    virtual int updateDecayDelay(int const currentValue) const /*override*/;
 
-    virtual int updateFacingData(int const, ::Block const&) const /*override*/;
+    virtual int updateFacingData(int const currentValue, ::Block const&) const /*override*/;
 
     virtual bool canChangeBlockOnSpread() const /*override*/;
 
-    virtual bool
-    attemptSpreadVeins(::IBlockWorldGenAPI&, ::BlockPos const&, ::Block const&, int, ::SculkSpreader&) const
-        /*override*/;
+    virtual bool attemptSpreadVeins(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::Block const&       block,
+        int                  facingData,
+        ::SculkSpreader&
+    ) const /*override*/;
 
     virtual int attemptUseCharge(
         ::IBlockWorldGenAPI&,
         ::BlockSource*,
         ::BlockPos const&,
         ::BlockPos const&,
-        int,
-        int,
+        int charge,
+        int decayDelay,
         ::Random&,
         ::SculkSpreader&,
         bool const

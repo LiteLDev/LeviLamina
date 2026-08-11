@@ -14,6 +14,7 @@ class DlcUIWrapper;
 class PlatformMultiplayerRestrictions;
 class PlayScreenModel;
 class ResourceLocation;
+struct PackIdVersion;
 struct WorldTemplateInfo;
 namespace Json { class Value; }
 namespace ui { class ScreenTechStackSelector; }
@@ -67,6 +68,12 @@ public:
         ::ui::ScreenTechStackSelector const& screenTechStackSelector,
         bool                                 hideTopBar
     );
+
+    MCAPI void _createWorldTemplate(::PackIdVersion const& packId, ::std::function<void(bool)> successCallback);
+
+    MCAPI void _fetchDownloadedWorldTemplates();
+
+    MCAPI void _handleWorldTemplateClicked(::WorldTemplateInfo const& level);
     // NOLINTEND
 
 public:

@@ -45,6 +45,19 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel>     screenModel
     );
 
+    MCAPI ::std::string _constructHoveredButtonMessage(
+        bool                 slotSet,
+        int                  slotIndex,
+        int                  screenButtonCount,
+        ::std::string const& emoteName
+    ) const;
+
+    MCAPI void _fetchEmoteCatalogOffers();
+
+    MCAPI void _registerBindings(::MinecraftScreenController& mScreen);
+
+    MCAPI void _setHoverIndex(int hoverIndex);
+
     MCAPI void setOnEmoteSlotSelected(::std::function<void(int)> callback);
 
     MCAPI ~EmoteWheelCommonModel();

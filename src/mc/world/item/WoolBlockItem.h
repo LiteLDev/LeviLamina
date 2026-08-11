@@ -21,7 +21,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
+        /*override*/;
     // NOLINTEND
 
 public:

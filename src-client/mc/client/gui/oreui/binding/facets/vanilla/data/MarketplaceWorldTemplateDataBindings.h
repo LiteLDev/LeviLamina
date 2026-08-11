@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/RatingDataBindings.h"
 #include "mc/client/gui/oreui/resources/AllowListPath.h"
+#include "mc/client/store/StoreCatalogCategory.h"
 #include "mc/client/world/MarketplaceWorldTemplateData.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -29,6 +30,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD ::std::string const& getCreator() const;
+
+    MCFOLD ::std::string const& getId() const;
+
+    MCFOLD bool getIsExpired() const;
+
+    MCAPI bool getIsInstalled() const;
+
+    MCAPI bool getIsUpdateAvailable() const;
+
+    MCFOLD ::std::string const& getName() const;
+
+    MCAPI ::std::string const& getPackId() const;
+
+    MCFOLD ::OreUI::RatingDataBindings const& getRatingDataBinding() const;
+
+    MCAPI ::StoreCatalogCategory const& getStoreCatalogCategory() const;
+
+    MCFOLD ::OreUI::AllowListPath const& getThumbnailPath() const;
+
     MCAPI ~MarketplaceWorldTemplateDataBindings();
     // NOLINTEND
 

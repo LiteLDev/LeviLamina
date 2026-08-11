@@ -76,6 +76,18 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ShooterItemComponent(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
 
+    MCAPI void _consumeAmmunition(
+        ::Player*          player,
+        ::ItemStack const& ammunition,
+        int                slotIndex,
+        bool               infiniteAmmo,
+        bool               fromOffhand
+    ) const;
+
+    MCAPI int _getAmmunition(::Player const* player, bool, ::ItemStack& ammo, bool& fromOffhand) const;
+
+    MCAPI void _shootProjectiles(::ItemStack& shooterStack, ::Player* player, int durationLeft) const;
+
     MCAPI bool releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
     // NOLINTEND
 

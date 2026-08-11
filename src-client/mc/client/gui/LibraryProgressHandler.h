@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     virtual ~LibraryProgressHandler() /*override*/ = default;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& container) const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
     // NOLINTEND

@@ -66,6 +66,9 @@ public:
         bool                 valueGamePad
     );
 
+    MCAPI void
+    _saveForInputMode(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector, ::InputMode mode);
+
     MCAPI void reset(::InputMode inputMode, bool saveOptionChange);
 
     MCAPI void set(::InputMode inputmode, bool value, bool saveOptionChange);

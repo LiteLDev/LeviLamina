@@ -40,7 +40,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool place(::BlockSource&, ::BlockPos const&, ::Random&) const /*override*/;
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TrailToSurfaceFeature(
+        ::std::string const&                                                       feature,
+        ::HashedString const&                                                      hangingBlock,
+        ::HashedString const&                                                      trailBlock,
+        ::std::vector<::std::reference_wrapper<::HashedString const>> const&       replaceableBlocks,
+        ::brstd::function_ref<bool(::IBlockWorldGenAPI const&, ::BlockPos const&)> isValidFeaturePos
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

@@ -83,6 +83,13 @@ public:
             ::std::unordered_map<::std::string, ::std::string>>>(::TaskGroup&, ::std::string const&, bool)> keysFn
     );
 
+#ifdef LL_PLAT_S
+    MCNAPI void _blockingInitRecursive(
+        ::MinecraftServiceKeyInfo                                                     keyFetchResult,
+        ::std::shared_ptr<::MinecraftServiceKeyManager::BlockingInitRecursiveContext> context
+    );
+#endif
+
     MCNAPI ::Bedrock::Threading::Async<::MinecraftServiceKeyInfo> _fullFetch(bool highPriority);
 
     MCNAPI void _updateTrustedKeys();

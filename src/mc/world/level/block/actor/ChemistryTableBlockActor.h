@@ -50,9 +50,9 @@ public:
 
     virtual ::Container const* getContainer() const /*override*/;
 
-    virtual ::ItemStack const& getItem(int) const /*override*/;
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    virtual void setItem(int, ::ItemStack const&) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     virtual int getMaxStackSize() const /*override*/;
 
@@ -62,15 +62,19 @@ public:
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    virtual void onRemoved(::BlockSource&) /*override*/;
+    virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& context) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -80,7 +84,13 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI ::HashedString const& _getType(::BlockSource& region);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::HashedString const& _getType(::BlockSource& region);
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI void clientLabTablePacket(::LabTablePacket const& packet, ::BlockSource& region);
 #endif
 

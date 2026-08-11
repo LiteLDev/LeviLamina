@@ -34,36 +34,40 @@ public:
     virtual ~CommonGameModeMessenger() /*override*/ = default;
 
     virtual ::gsl::final_action<::std::function<void()>> createBlockBreakCaptureScope(
-        ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)>
+        ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)> callback
     ) /*override*/;
 
-    virtual void sendDenyDestroyBlock(::BlockPos const&, int) /*override*/;
-
-    virtual void sendStartDestroyBlock(::BlockPos const&, int) /*override*/;
-
 #ifdef LL_PLAT_S
-    virtual void sendDestroyBlock(::Block const&, ::BlockPos const&, int) /*override*/;
+    virtual void sendDenyDestroyBlock(::BlockPos const&, int) /*override*/;
 #else // LL_PLAT_C
-    virtual void sendDestroyBlock(::Block const& oldBlock, ::BlockPos const& pos, int variantData) /*override*/;
+    virtual void sendDenyDestroyBlock(::BlockPos const& pos, int face) /*override*/;
 #endif
 
-    virtual void sendChangeContinueDestroyBlock(::BlockPos const&, int) /*override*/;
+#ifdef LL_PLAT_S
+    virtual void sendStartDestroyBlock(::BlockPos const&, int) /*override*/;
+#else // LL_PLAT_C
+    virtual void sendStartDestroyBlock(::BlockPos const& pos, int face) /*override*/;
+#endif
 
+    virtual void sendDestroyBlock(::Block const& oldBlock, ::BlockPos const& pos, int variantData) /*override*/;
+
+#ifdef LL_PLAT_S
+    virtual void sendChangeContinueDestroyBlock(::BlockPos const&, int) /*override*/;
+#else // LL_PLAT_C
+    virtual void sendChangeContinueDestroyBlock(::BlockPos const& pos, int face) /*override*/;
+#endif
+
+#ifdef LL_PLAT_S
     virtual void sendContinueDestroyAboutToDestroyBlock(::BlockPos const&, int) /*override*/;
+#else // LL_PLAT_C
+    virtual void sendContinueDestroyAboutToDestroyBlock(::BlockPos const& pos, int face) /*override*/;
+#endif
 
     virtual void sendStopDestroyBlock(::BlockPos const&, float) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void sendStartItemUseOn(::BlockPos const&, ::BlockPos const&, int) /*override*/;
-#else // LL_PLAT_C
     virtual void sendStartItemUseOn(::BlockPos const& pos, ::BlockPos const& buildPos, int face) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void sendStopItemUseOn(::BlockPos const&) /*override*/;
-#else // LL_PLAT_C
     virtual void sendStopItemUseOn(::BlockPos const& pos) /*override*/;
-#endif
 
     virtual void tryRotateTowardsAimAssist() /*override*/;
     // NOLINTEND
@@ -72,18 +76,19 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::gsl::final_action<::std::function<void()>>
-        $createBlockBreakCaptureScope(::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)>);
+    MCAPI ::gsl::final_action<::std::function<void()>> $createBlockBreakCaptureScope(
+        ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)> callback
+    );
 
-    MCFOLD void $sendDenyDestroyBlock(::BlockPos const&, int);
+    MCFOLD void $sendDenyDestroyBlock(::BlockPos const& pos, int face);
 
-    MCFOLD void $sendStartDestroyBlock(::BlockPos const&, int);
+    MCFOLD void $sendStartDestroyBlock(::BlockPos const& pos, int face);
 
     MCAPI void $sendDestroyBlock(::Block const& oldBlock, ::BlockPos const& pos, int variantData);
 
-    MCFOLD void $sendChangeContinueDestroyBlock(::BlockPos const&, int);
+    MCFOLD void $sendChangeContinueDestroyBlock(::BlockPos const& pos, int face);
 
-    MCFOLD void $sendContinueDestroyAboutToDestroyBlock(::BlockPos const&, int);
+    MCFOLD void $sendContinueDestroyAboutToDestroyBlock(::BlockPos const& pos, int face);
 
     MCFOLD void $sendStopDestroyBlock(::BlockPos const&, float);
 

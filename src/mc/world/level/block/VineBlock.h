@@ -62,6 +62,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI int _nextVineDirections(::BlockSource& region, ::BlockPos const& pos) const;
+
     MCAPI void growDown(::BlockSource& region, ::BlockPos const& pos, int spawnFacings) const;
 
     MCAPI void growSideways(::BlockSource& region, ::BlockPos const& pos, int testDirection) const;

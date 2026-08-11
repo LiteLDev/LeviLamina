@@ -11,8 +11,10 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace NetherNet { class HttpConnection; }
 namespace NetherNet { struct HttpRequest; }
 namespace NetherNet { struct HttpResponse; }
+namespace webrtc { class Socket; }
 // clang-format on
 
 namespace NetherNet {
@@ -40,7 +42,15 @@ public:
     virtual ~HttpServer() /*override*/ = default;
 
     virtual ::Bedrock::Threading::Async<::Bedrock::Result<::NetherNet::HttpResponse>>
-        onRequest(::NetherNet::HttpRequest) = 0;
+    onRequest(::NetherNet::HttpRequest request) = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _onConnectionClosed(::NetherNet::HttpConnection* conn);
+
+    MCNAPI void _onListenReadEvent(::webrtc::Socket*);
     // NOLINTEND
 
 public:

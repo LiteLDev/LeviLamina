@@ -15,9 +15,11 @@ class ActorSkeletalAnimationPtr;
 class AnimationComponent;
 class ApplyAnimationContext;
 class BoneOrientation;
+class ExpressionNode;
 class HashedString;
 class RenderParams;
 struct AnimationVisitor;
+namespace Util { struct HashStringHashGreater; }
 // clang-format on
 
 class ActorAnimationControllerStatePlayer : public ::ActorAnimationPlayer {
@@ -40,10 +42,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void applyToPose(
-        ::ApplyAnimationContext const&,
-        ::RenderParams&,
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>&,
-        float
+        ::ApplyAnimationContext const&                                                    applyContext,
+        ::RenderParams&                                                                   renderParams,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
+        float                                                                             blendWeight
     ) /*override*/;
 
     virtual void resetAnimation() /*override*/;
@@ -54,7 +56,7 @@ public:
 
     virtual bool hasAnimationFinished() const /*override*/;
 
-    virtual ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const&) /*override*/;
+    virtual ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& friendlyName) /*override*/;
 
     virtual ::ActorAnimationType getAnimationType() const /*override*/;
 
@@ -67,12 +69,27 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI ActorAnimationControllerStatePlayer(
+        ::HashedString const&                                      friendlyName,
+        ::ActorAnimationControllerPlayer&                          owner,
+        ::std::shared_ptr<::ActorAnimationControllerState>         animationControllerState,
+        ::AnimationComponent&                                      animationComponent,
+        ::ExpressionNode const&                                    blendExpression,
+        ::std::set<::HashedString, ::Util::HashStringHashGreater>& animationControllerNameStack
+    );
+
     MCAPI void addAnimation(
         ::AnimationComponent&       animationComponent,
         ::HashedString const&       friendlyName,
         ::ActorSkeletalAnimationPtr animation
     );
 #endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

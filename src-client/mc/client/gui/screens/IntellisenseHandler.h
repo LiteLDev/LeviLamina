@@ -9,6 +9,8 @@
 // clang-format off
 class ClientInstanceScreenModel;
 class CommandOrigin;
+class CommandRegistry;
+struct AutoCompleteInformation;
 // clang-format on
 
 class IntellisenseHandler {
@@ -44,6 +46,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::AutoCompleteInformation> _getAutoCompleteOptions(
+        ::CommandOrigin const& origin,
+        ::std::string const&   _cmdLine,
+        uint                   cursorPositionUnsafe,
+        ::CommandRegistry&     registry,
+        bool                   isPlayerMention
+    ) const;
+
+    MCAPI ::std::unique_ptr<::CommandOrigin>
+    _getCommandOrigin(::std::weak_ptr<::ClientInstanceScreenModel> minecraftScreenModel) const;
+
+    MCAPI void _updateAutoCompleteMessages(
+        ::AutoCompleteInformation const& autocompleteInfo,
+        ::CommandOrigin const&           origin,
+        ::CommandRegistry const&         registry,
+        bool                             isCheatsEnabled,
+        bool                             isCommand
+    );
+
     MCAPI int getAutoCompleteItemId(int index);
 
     MCAPI ::std::string getAutoCompleteText(int index);

@@ -27,11 +27,11 @@ public:
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
 
-    virtual void executeAction(::RenderParams&) const /*override*/;
+    virtual void executeAction(::RenderParams& params) const /*override*/;
 
     virtual void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>&,
-        ::Factory<::EventResponse> const&
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
+        ::Factory<::EventResponse> const&                                                                       factory
     ) const /*override*/;
     // NOLINTEND
 

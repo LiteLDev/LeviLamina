@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/Result.h"
+
 namespace Audio {
 
 class OnlineStreamedAudioBuffer {
@@ -44,6 +47,14 @@ public:
     OnlineStreamedAudioBuffer& operator=(OnlineStreamedAudioBuffer const&);
     OnlineStreamedAudioBuffer(OnlineStreamedAudioBuffer const&);
     OnlineStreamedAudioBuffer();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::Result<::gsl::span<uchar>> tryRead(uint64 offset, ::gsl::span<uchar> outputBuffer) const;
+#endif
+    // NOLINTEND
 };
 
 } // namespace Audio

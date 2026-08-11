@@ -10,6 +10,7 @@
 // clang-format off
 class BiomeRegistry;
 namespace ScriptModuleMinecraft { class ScriptBiomeType; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -27,6 +28,14 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>>
                                                                            mBiomeTypes;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::BiomeRegistry>> mBiomeRegistry;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _generateAllBiomeTypeHandles(::Scripting::WeakLifetimeScope& scope);
+
+    MCAPI ~ScriptBiomeTypes();
     // NOLINTEND
 
 public:

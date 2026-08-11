@@ -48,6 +48,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::string
+    _getKeySpriteLocationInternal(int key, bool checkUserConfiguredButtonSwapping, ::IconSize iconSize) const;
+
+    MCAPI ::std::string const _getMappedKeyNameInternal(int key, bool const checkUserConfiguredButtonSwapping) const;
+
     MCAPI void _swapGamepadKeyBindings(int key1, int key2);
 
     MCAPI ::std::string getKeySpriteName(int key) const;

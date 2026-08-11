@@ -31,6 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI int _getDistanceUntilEdge(::BlockPos const& pos, ::Facing::Name direction, ::BlockSource const& source) const;
+
     MCAPI void createPortalBlocks(::WorldChangeTransaction& transaction) const;
 
     MCAPI void evaluate(::BlockPos const& originalPosition, ::BlockSource const& source);

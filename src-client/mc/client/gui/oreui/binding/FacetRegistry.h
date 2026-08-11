@@ -59,18 +59,20 @@ public:
     // NOLINTBEGIN
     virtual ~FacetRegistry() /*override*/ = default;
 
-    virtual void
-    registerFacet(::std::string const&, ::std::function<::std::unique_ptr<::OreUI::IFacet>()> const&) /*override*/;
+    virtual void registerFacet(
+        ::std::string const&                                         name,
+        ::std::function<::std::unique_ptr<::OreUI::IFacet>()> const& constructor
+    ) /*override*/;
 
     virtual ::std::optional<::OreUI::IFacetRegistry::Error> activateFacet(
-        ::OreUI::FacetBinder&,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::unordered_map<::std::string, ::std::variant<double, bool, ::std::string>> const&
+        ::OreUI::FacetBinder&                                                                   binder,
+        ::std::string const&                                                                    name,
+        ::std::string const&                                                                    id,
+        ::std::unordered_map<::std::string, ::std::variant<double, bool, ::std::string>> const& payload
     ) /*override*/;
 
     virtual ::std::optional<::OreUI::IFacetRegistry::Error>
-    deactivateFacet(::OreUI::FacetBinder&, ::std::string const&) /*override*/;
+    deactivateFacet(::OreUI::FacetBinder& binder, ::std::string const& id) /*override*/;
 
     virtual void clearAllFacets() /*override*/;
 
@@ -78,9 +80,9 @@ public:
 
     virtual void disableFacetActivation() /*override*/;
 
-    virtual void bind(::OreUI::FacetBinder&) /*override*/;
+    virtual void bind(::OreUI::FacetBinder& binder) /*override*/;
 
-    virtual ::std::vector<::std::string> const& update(::OreUI::FacetBinder&) /*override*/;
+    virtual ::std::vector<::std::string> const& update(::OreUI::FacetBinder& binder) /*override*/;
 
     virtual ::std::unordered_map<::std::string, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IFacet>>
     getActiveFacets() /*override*/;

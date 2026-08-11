@@ -4,12 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/FallibleAction_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/LevelDataBindings.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/LevelSummaryBindings.h"
 #include "mc/client/gui/screens/rules/WorldSettingsRules.h"
 #include "mc/client/world/AddWorldFromTemplateError.h"
+#include "mc/client/world/CloseWorldError.h"
 #include "mc/client/world/IWorldStorageHandler.h"
 #include "mc/client/world/SaveWorldError.h"
 #include "mc/client/world/WorldID.h"
@@ -25,6 +27,7 @@ class NewPlayerSystem;
 class TrialManager;
 namespace OreUI { class IResourceAllowList; }
 namespace World { class WorldEditor; }
+namespace World { struct WorldData; }
 // clang-format on
 
 namespace OreUI {
@@ -99,6 +102,44 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::WorldSettingsRules                                       worldSettingsRules
     );
+
+    MCAPI void _initializeDataBindings(::World::WorldData const& worldData);
+
+    MCAPI void _resetLevelData();
+
+    MCAPI void addWorld();
+
+    MCAPI void clearSaveWorldTaskState();
+
+    MCAPI ::std::optional<::World::CloseWorldError> closeWorld(::std::string const& id);
+
+    MCAPI ::OreUI::LevelDataBindings& getCurrentWorldData();
+
+    MCFOLD ::std::string const& getCurrentWorldID() const;
+
+    MCAPI ::OreUI::LevelSummaryBindings& getCurrentWorldSummary();
+
+    MCAPI ::std::optional<::World::IWorldStorageHandler::ReadWorldError> const& getLoadWorldError() const;
+
+    MCAPI ::OreUI::FacetTaskState getLoadWorldTaskState() const;
+
+    MCAPI ::std::optional<::World::SaveWorldError> const& getSaveWorldError() const;
+
+    MCAPI ::OreUI::FacetTaskState getSaveWorldTaskState() const;
+
+    MCAPI bool isAchievementsDisabled() const;
+
+    MCAPI bool isEditorWorld() const;
+
+    MCAPI ::std::optional<::World::IWorldStorageHandler::ReadWorldError> loadWorld(::std::string const& id);
+
+    MCAPI void reloadWorld();
+
+    MCAPI void saveLocalWorld(::std::string const& id);
+
+    MCAPI bool worldHasBeenModified();
+
+    MCAPI bool worldIsInitialized() const;
     // NOLINTEND
 
 public:

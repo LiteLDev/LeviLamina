@@ -16,6 +16,7 @@
 class ClientInstanceScreenModel;
 class ItemStackBase;
 class Trade2ContainerManagerController;
+class UIPropertyBag;
 struct ActorUniqueID;
 // clang-format on
 
@@ -46,6 +47,34 @@ public:
         ::ll::TypedStorage<4, 8, ::std::optional<int>>                mTierIndex;
         ::ll::TypedStorage<4, 8, ::std::optional<int>>                mTradeIndex;
         ::ll::TypedStorage<8, 16, ::std::optional<::MerchantRecipe*>> mTrade;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TradeItemCollections();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI explicit TradeItemCollections(::UIPropertyBag const& bag);
+
+        MCAPI int getTierIndex() const;
+
+        MCAPI int getTradeIndex() const;
+
+        MCAPI bool hasSellItemCollection() const;
+
+        MCAPI bool hasTradeItem1Collection() const;
+
+        MCAPI bool hasTradeItem2Collection() const;
+
+        MCAPI bool hasValidTradeToggleCollections() const;
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
         // NOLINTEND
     };
 
@@ -109,6 +138,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Trade2ScreenController(::std::shared_ptr<::ClientInstanceScreenModel> pModel, ::ActorUniqueID uniqueID);
+
+    MCAPI void _changeLeftTab(int dir);
+
+    MCAPI int _getBaseItemCountForTrade(::Trade2ScreenController::TradeItemCollections const& tic) const;
+
+    MCAPI ::ItemInstance const& _getItemForTrade(::Trade2ScreenController::TradeItemCollections const& tic) const;
+
+    MCAPI ::std::string _getTradeErrorDetails(::ItemStackBase const& item, bool itemA) const;
+
+    MCAPI bool _hasAdjustedBuyCount(::Trade2ScreenController::TradeItemCollections const& tic) const;
+
+    MCAPI void _makeTradeDetails(bool itemA) const;
     // NOLINTEND
 
 public:

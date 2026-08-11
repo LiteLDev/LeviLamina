@@ -15,7 +15,7 @@ class ScreenHandlerHUD : public ::ScreenHandlerBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const&) /*override*/;
+    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
     // NOLINTEND
 
 public:

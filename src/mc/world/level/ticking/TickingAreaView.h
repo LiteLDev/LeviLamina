@@ -11,11 +11,13 @@ class BlockSource;
 class ChunkPos;
 class ChunkSource;
 class ChunkViewSource;
+class Level;
 class LevelChunk;
 class Random;
 struct Bounds;
 struct DimensionType;
 struct Tick;
+namespace LevelChunkTicking { struct Registry; }
 // clang-format on
 
 class TickingAreaView : public ::ITickingAreaView {
@@ -66,6 +68,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit TickingAreaView(::ChunkSource& parent);
+
+    MCAPI bool _tickChunk(
+        ::Tick const&                  currentTick,
+        ::BlockSource&                 region,
+        ::Level&                       level,
+        ::ChunkPos const&              cp,
+        ::LevelChunkTicking::Registry* registry
+    );
     // NOLINTEND
 
 public:

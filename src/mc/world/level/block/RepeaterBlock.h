@@ -74,6 +74,8 @@ public:
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
+    MCAPI void updateDelay(::BlockSource& region, ::BlockPos const& pos, bool doIncrement) const;
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 

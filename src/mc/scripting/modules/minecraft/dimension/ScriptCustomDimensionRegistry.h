@@ -60,6 +60,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptCustomDimensionRegistry(::ServerScriptManagerEvents& events, ::DimensionManager& dimensionManager);
+
+    MCAPI void _onReadyForCustomDimensionRegistration(::DimensionManager& dimensionManager);
     // NOLINTEND
 
 public:

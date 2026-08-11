@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/Optional.h"
+#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/Filter.h"
@@ -17,6 +19,7 @@
 // clang-format off
 class ActorOwnerComponent;
 class ExperienceRewardComponent;
+class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
@@ -29,7 +32,9 @@ struct MobFlagComponent;
 struct OffsetsComponent;
 struct PlayerComponent;
 struct SoundEventPlayerComponent;
+struct SoundEventRequestQueueComponent;
 struct SpawnExperienceOrbRequestQueueComponent;
+struct SpawnOnDeathComponent;
 struct StateVectorComponent;
 struct TickDeathNeededComponent;
 // clang-format on
@@ -76,8 +81,32 @@ public:
             ::AddRemove<>,
             ::GlobalRead<>,
             ::GlobalWrite<::SpawnExperienceOrbRequestQueueComponent>,
-            ::EntityFactoryT<>>&
+            ::EntityFactoryT<>>& context
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _tick(
+        ::StrictEntityContext&                                             entity,
+        ::AABBShapeComponent const&                                        aabbShape,
+        ::ActorDefinitionIdentifierComponent const&                        actorIdentifier,
+        ::ActorUniqueIDComponent const&                                    actorUniqueID,
+        ::DimensionTypeComponent const&                                    dimensionType,
+        ::OffsetsComponent const&                                          offsets,
+        ::SoundEventPlayerComponent const&                                 soundEventPlayer,
+        ::StateVectorComponent const&                                      stateVector,
+        ::ActorDataFlagComponent&                                          actorFlags,
+        ::ActorDataDirtyFlagsComponent&                                    actorDirtyFlags,
+        ::ActorOwnerComponent&                                             actorOwner,
+        ::DeathTickingComponent&                                           deathTicking,
+        ::Optional<::ExperienceRewardComponent>                            experienceReward,
+        ::Optional<::PlayerComponent>                                      player,
+        ::Optional<::SpawnOnDeathComponent>                                spawnOnDeath,
+        ::SpawnExperienceOrbRequestQueueComponent&                         experienceOrbRequestQueue,
+        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& soundRequestQueueView
+    );
     // NOLINTEND
 
 public:

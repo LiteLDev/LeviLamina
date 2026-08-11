@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     virtual ~ContainerTransferScope() = default;
 
-    virtual void createItem(::ItemStack const&, ::std::shared_ptr<::SimpleSparseContainer>);
+    virtual void createItem(::ItemStack const& item, ::std::shared_ptr<::SimpleSparseContainer> createdOutputContainer);
     // NOLINTEND
 
 public:

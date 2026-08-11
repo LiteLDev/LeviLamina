@@ -31,6 +31,12 @@ public:
     ScriptPackConfigurationManager();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~ScriptPackConfigurationManager() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptPackConfigurationManager(::ScriptPackConfigurationManager const&);
@@ -50,6 +56,12 @@ public:
     MCNAPI void* $ctor(::ScriptPackConfigurationManager const&);
 
     MCNAPI void* $ctor(::std::optional<::Core::PathBuffer<::std::string>> configDirectory);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

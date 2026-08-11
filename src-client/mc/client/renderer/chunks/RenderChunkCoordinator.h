@@ -78,9 +78,14 @@ public:
     // NOLINTBEGIN
     virtual ~RenderChunkCoordinator() /*override*/ = default;
 
-    virtual void onChunkLoaded(::ChunkSource&, ::LevelChunk&) /*override*/;
+    virtual void onChunkLoaded(::ChunkSource&, ::LevelChunk& lc) /*override*/;
 
-    virtual void onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool) /*override*/;
+    virtual void onSubChunkLoaded(
+        ::ChunkSource&,
+        ::LevelChunk& lc,
+        short         absoluteSubChunkIndex,
+        bool          subChunkVisibilityChanged
+    ) /*override*/;
 
     virtual void onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos) /*override*/;
 
@@ -106,7 +111,12 @@ public:
 
     MCAPI void _handleVisibilityUpdates();
 
+    MCAPI void _launchVisibilityRebuild(::std::shared_ptr<::RenderChunkShared>& renderChunkShared);
+
     MCAPI void _setAllDirty(bool immediate, bool changesVisibility);
+
+    MCAPI void
+    _setDirty(::BlockPos const& min, ::BlockPos const& max, bool immediate, bool changesVisibility, bool canInterlock);
 
     MCAPI ::std::shared_ptr<::RenderChunkShared> getOrCreateChunkAtPos(::SubChunkPos const& pos);
 

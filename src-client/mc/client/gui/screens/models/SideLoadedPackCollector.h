@@ -37,13 +37,13 @@ public:
 
     virtual bool exhausted() const /*override*/;
 
-    virtual ::HandleRangeResult handleRange(int, int) /*override*/;
+    virtual ::HandleRangeResult handleRange(int, int end) /*override*/;
 
     virtual void collect(
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>,
-        ::PersonaClient&,
-        ::std::vector<::std::shared_ptr<::SkinPackModel>>&,
-        ::std::unordered_set<::mce::UUID>&
+        ::PersonaClient&                                   skinRepo,
+        ::std::vector<::std::shared_ptr<::SkinPackModel>>& skinPacks,
+        ::std::unordered_set<::mce::UUID>&                 handledPackSet
     ) /*override*/;
     // NOLINTEND
 

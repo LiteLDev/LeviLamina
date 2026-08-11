@@ -15,6 +15,7 @@
 // clang-format off
 struct ScriptingWorldInitializeEvent;
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Network { class RestartServiceRequestRestartPayload; }
 // clang-format on
 
 namespace Editor::Services {
@@ -65,6 +66,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ServerRestartService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI void
+    _onRestartServiceRequestRestartPayload(::Editor::Network::RestartServiceRequestRestartPayload const& payload);
+
+    MCNAPI void _onTick();
     // NOLINTEND
 
 public:

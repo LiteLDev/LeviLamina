@@ -32,13 +32,13 @@ public:
     // NOLINTBEGIN
     virtual ~PlayerInventory() /*override*/ = default;
 
-    virtual void containerSizeChanged(int) /*override*/;
+    virtual void containerSizeChanged(int size) /*override*/;
 
-    virtual void containerContentChanged(int) /*override*/;
+    virtual void containerContentChanged(int slot) /*override*/;
 
     virtual void createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>,
-        ::std::function<void()>
+        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
+        ::std::function<void()>                                                          execute
     );
     // NOLINTEND
 

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorOwnerComponent;
 class EntityRegistry;
 // clang-format on
 
@@ -20,6 +21,14 @@ public:
     virtual void tick(::EntityRegistry& registry) /*override*/;
 #endif
 
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static void _tickClient(::ActorOwnerComponent& actorOwnerComponent);
+#endif
     // NOLINTEND
 
 public:

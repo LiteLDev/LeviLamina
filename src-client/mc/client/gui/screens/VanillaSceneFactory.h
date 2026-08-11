@@ -40,7 +40,8 @@ public:
     // NOLINTBEGIN
     virtual ~VanillaSceneFactory() /*override*/ = default;
 
-    virtual ::Json::Value createGlobalVars(::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const>) const /*override*/;
+    virtual ::Json::Value createGlobalVars(::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> defRepository) const
+        /*override*/;
 
     virtual ::std::shared_ptr<::AbstractScene> createDevConsole() /*override*/;
     // NOLINTEND

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor::Network { class WidgetPrimComponentWireframeMesh; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -31,6 +32,15 @@ public:
     operator=(ScriptWidgetComponentRenderPrimType_WireframeMesh const&);
     ScriptWidgetComponentRenderPrimType_WireframeMesh(ScriptWidgetComponentRenderPrimType_WireframeMesh const&);
     ScriptWidgetComponentRenderPrimType_WireframeMesh();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool
+    operator==(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_WireframeMesh const& other) const;
+
+    MCNAPI ::Editor::Network::WidgetPrimComponentWireframeMesh toNetworkComponent() const;
+    // NOLINTEND
 
 public:
     // static functions

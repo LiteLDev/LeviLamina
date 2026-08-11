@@ -44,6 +44,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit MobEvents(::LevelStorage& levelStorage);
 
+    MCAPI void _onSaveEvent(::LevelStorage&);
+
     MCAPI ::MobEventsIndex getIndexFromName(::std::string const& name) const;
 
     MCAPI void

@@ -30,6 +30,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Herd(::SharedTypes::v1_21_60::Spawn::Herd const&);
+
+    MCAPI bool operator==(::SharedTypes::v1_21_60::Spawn::Herd const&) const;
     // NOLINTEND
 
 public:

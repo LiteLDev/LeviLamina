@@ -190,6 +190,17 @@ public:
         ::std::optional<::NetherNet::NetworkID> networkId
     );
 
+#ifdef LL_PLAT_C
+    MCAPI void _createEventQueue();
+
+    MCAPI ::gsl::not_null<::std::shared_ptr<::WebRTCNetworkPeer>> _getOrCreatePeer(
+        ::NetherNet::NetworkID const& remoteId,
+        uint64                        sessionId,
+        bool                          isLan,
+        ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const&
+    );
+#endif
+
     MCAPI void setBroadcastRequestCallback(::std::function<bool(void*, int*)>&& broadcastRequestCallback);
 
     MCAPI void setBroadcastResponseCallback(

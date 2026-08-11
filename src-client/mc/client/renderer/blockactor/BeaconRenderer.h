@@ -35,7 +35,8 @@ public:
     // NOLINTBEGIN
     virtual ~BeaconRenderer() /*override*/ = default;
 
-    virtual void render(::BaseActorRenderContext&, ::BlockActorRenderData&) /*override*/;
+    virtual void
+    render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
     // NOLINTEND
 
 public:

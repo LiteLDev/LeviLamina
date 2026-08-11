@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void logMessage(::NetherNet::LogSeverity, char const*, ...) const;
+    MCNAPI void logMessage(::NetherNet::LogSeverity level, char const* fmt, ...) const;
     // NOLINTEND
 
 public:

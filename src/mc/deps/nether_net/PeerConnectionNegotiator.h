@@ -10,6 +10,7 @@
 #include "mc/external/webrtc/RefCountedObject.h"
 #include "mc/external/webrtc/SetLocalDescriptionObserverInterface.h"
 #include "mc/external/webrtc/SetRemoteDescriptionObserverInterface.h"
+#include "mc/external/webrtc/scoped_refptr.h"
 #include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
@@ -18,6 +19,8 @@ namespace NetherNet { class CandidateAdd; }
 namespace NetherNet { class ConnectError; }
 namespace NetherNet { class ConnectRequest; }
 namespace NetherNet { class ConnectResponse; }
+namespace NetherNet { class PeerConnectionObserver; }
+namespace webrtc { class PeerConnectionFactory; }
 namespace webrtc { class RTCError; }
 namespace webrtc { class SessionDescriptionInterface; }
 // clang-format on
@@ -50,9 +53,9 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void OnSuccess(::webrtc::SessionDescriptionInterface*) /*override*/;
+        virtual void OnSuccess(::webrtc::SessionDescriptionInterface* description) /*override*/;
 
-        virtual void OnFailure(::webrtc::RTCError) /*override*/;
+        virtual void OnFailure(::webrtc::RTCError error) /*override*/;
         // NOLINTEND
 
     public:
@@ -79,7 +82,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void OnSetLocalDescriptionComplete(::webrtc::RTCError) /*override*/;
+        virtual void OnSetLocalDescriptionComplete(::webrtc::RTCError result) /*override*/;
         // NOLINTEND
 
     public:
@@ -106,7 +109,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void OnSetRemoteDescriptionComplete(::webrtc::RTCError) /*override*/;
+        virtual void OnSetRemoteDescriptionComplete(::webrtc::RTCError result) /*override*/;
         // NOLINTEND
 
     public:
@@ -142,19 +145,41 @@ public:
     // NOLINTBEGIN
     virtual ~PeerConnectionNegotiator() /*override*/ = default;
 
-    virtual ::NetherNet::ESessionError checkTimeout(::std::chrono::seconds) const;
+    virtual ::NetherNet::ESessionError checkTimeout(::std::chrono::seconds timeout) const;
 
-    virtual void onRemoteAnswer(::NetherNet::ConnectResponse const&);
+    virtual void onRemoteAnswer(::NetherNet::ConnectResponse const& answer);
 
-    virtual void onRemoteError(::NetherNet::ConnectError const&);
+    virtual void onRemoteError(::NetherNet::ConnectError const& error);
 
-    virtual void onRemoteIceCandidate(::NetherNet::CandidateAdd const&) = 0;
+    virtual void onRemoteIceCandidate(::NetherNet::CandidateAdd const& candidate) = 0;
 
-    virtual void _onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const&) = 0;
+    virtual void _onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const& offerOrError) = 0;
 
-    virtual void _onSetLocalDescription(::webrtc::RTCError) = 0;
+    virtual void _onSetLocalDescription(::webrtc::RTCError result) = 0;
 
-    virtual void _onSetRemoteDescription(::webrtc::RTCError) = 0;
+    virtual void _onSetRemoteDescription(::webrtc::RTCError result) = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI PeerConnectionNegotiator(
+        ::NetherNet::ContextProxy const&                                           ctx,
+        ::webrtc::scoped_refptr<::webrtc::PeerConnectionFactory>                   factory,
+        ::webrtc::scoped_refptr<::NetherNet::PeerConnectionObserver>               observer,
+        ::brstd::move_only_function<void(::std::variant<
+                                         ::NetherNet::ConnectRequest,
+                                         ::NetherNet::ConnectResponse,
+                                         ::NetherNet::ConnectError,
+                                         ::NetherNet::CandidateAdd> const&) const> sendMessage,
+        uint64                                                                     sessionId
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

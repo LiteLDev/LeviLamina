@@ -72,6 +72,10 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::shared_ptr<::SkinRepository>      skinRepository
     );
+
+    MCAPI bool _isCustomSkin(::SkinHandle const& skin) const;
+
+    MCAPI void setPreviewSkin(::SkinHandle const& newSkin);
     // NOLINTEND
 
 public:

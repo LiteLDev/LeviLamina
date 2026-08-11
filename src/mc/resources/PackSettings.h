@@ -10,6 +10,10 @@
 // clang-format off
 struct PackSettingValueAndDefault;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace SharedTypes::v3_0_0::PackManifestDefinition { struct DropdownSetting; }
+namespace SharedTypes::v3_0_0::PackManifestDefinition { struct LabelSetting; }
+namespace SharedTypes::v3_0_0::PackManifestDefinition { struct SliderSetting; }
+namespace SharedTypes::v3_0_0::PackManifestDefinition { struct ToggleSetting; }
 // clang-format on
 
 class PackSettings {
@@ -32,8 +36,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void applyDefinitions(
+        ::std::vector<::std::variant<
+            ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>> const&  packSettingDef,
+        ::std::map<::std::string, ::std::variant<float, bool, ::std::string>> const* userOverrides
+    );
+
 #ifdef LL_PLAT_C
     MCNAPI void setValue(::std::string const& name, ::std::variant<float, bool, ::std::string> const& value);
 #endif
+
+    MCNAPI ~PackSettings();
     // NOLINTEND
 };

@@ -10,8 +10,10 @@
 // auto generated forward declare list
 // clang-format off
 class ServerLevel;
+class StructureTemplate;
 namespace ScriptModuleMinecraft { class ScriptStructureTemplate; }
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct InvalidArgumentError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -40,8 +42,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::string_view _getPlaceErrorMessage(::std::string_view const key) const;
+
+    MCAPI ::StructureTemplate const* _getStructure(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>> const&
+            scriptStructureOrName
+    ) const;
+
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>
+    getOrCreateScriptStructure(::StructureTemplate& structureTemplate);
+
     MCAPI ::ScriptModuleMinecraft::ScriptStructureManager&
     operator=(::ScriptModuleMinecraft::ScriptStructureManager const&);
+
+    MCAPI ::std::optional<::Scripting::InvalidArgumentError> validateIdentifier(::std::string const& identifier) const;
     // NOLINTEND
 
 public:

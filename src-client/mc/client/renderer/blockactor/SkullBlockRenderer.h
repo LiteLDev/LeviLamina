@@ -10,15 +10,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorResourceDefinition;
 class BaseActorRenderContext;
+class BaseGameVersion;
 class BlockActor;
 class DragonHeadModel;
+class Experiments;
 class HashedString;
 class PiglinHeadModel;
 class SkeletonHeadModel;
 class Vec3;
 struct BlockActorRenderData;
 namespace dragon { struct RenderMetadata; }
+namespace mce { class TextureGroup; }
 namespace mce { struct ClientTexture; }
 // clang-format on
 
@@ -38,14 +42,26 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SkullBlockRenderer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void render(::BaseActorRenderContext&, ::BlockActorRenderData&) /*override*/;
+    virtual void
+    render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SkullBlockRenderer(
+        ::std::shared_ptr<::ActorResourceDefinition> const definition,
+        ::std::shared_ptr<::mce::TextureGroup>             textureGroup,
+        ::BaseGameVersion const&                           baseGameVersion,
+        ::Experiments const&
+    );
+
     MCAPI void renderInGui(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
@@ -71,6 +87,12 @@ public:
         float                           animationValue,
         bool                            isGlint
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

@@ -22,6 +22,12 @@ public:
     WidgetPrimComponentCylinder& operator=(WidgetPrimComponentCylinder const&);
     WidgetPrimComponentCylinder(WidgetPrimComponentCylinder const&);
     WidgetPrimComponentCylinder();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::Editor::Network::WidgetPrimComponentCylinder const& other) const;
+    // NOLINTEND
 };
 
 } // namespace Editor::Network

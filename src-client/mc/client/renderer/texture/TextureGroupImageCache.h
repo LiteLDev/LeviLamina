@@ -29,9 +29,10 @@ public:
     // NOLINTBEGIN
     virtual ~TextureGroupImageCache() /*override*/ = default;
 
-    virtual ::cg::ImageBuffer* getCachedImage(::ResourceLocation const&) /*override*/;
+    virtual ::cg::ImageBuffer* getCachedImage(::ResourceLocation const& resourceLocation) /*override*/;
 
-    virtual ::cg::ImageBuffer* insertImageIntoCache(::ResourceLocation const&, ::cg::ImageBuffer&&) /*override*/;
+    virtual ::cg::ImageBuffer*
+    insertImageIntoCache(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer&& imageBuffer) /*override*/;
     // NOLINTEND
 
 public:

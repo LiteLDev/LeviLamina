@@ -4,12 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockSource;
+namespace ScriptModuleMinecraft { struct ScriptBlockInvalidComponentError; }
 namespace Scripting { class Release; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
@@ -18,6 +20,12 @@ namespace Scripting { struct ClassBinding; }
 namespace ScriptModuleMinecraft {
 
 class ScriptBlockRedstoneProducerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptBlockInvalidComponentError> getPower() const;
+    // NOLINTEND
+
 public:
     // static functions
     // NOLINTBEGIN

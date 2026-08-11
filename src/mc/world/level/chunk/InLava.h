@@ -18,7 +18,8 @@ class InLava : public ::br::spawn::PlacementType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool isSpawnPositionOk(::BlockSource&, ::BlockPos, ::br::spawn::EntityType const&) const /*override*/;
+    virtual bool isSpawnPositionOk(::BlockSource& region, ::BlockPos pos, ::br::spawn::EntityType const&) const
+        /*override*/;
     // NOLINTEND
 
 public:

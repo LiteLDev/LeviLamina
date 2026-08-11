@@ -73,13 +73,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~FromRequest();
+        MCAPI ~FromRequest();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -104,25 +104,27 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptFormPromiseTracker() /*override*/ = default;
 
-    virtual ::EventResult onEvent(::PlayerFormResponseEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::PlayerFormResponseEvent const& formResponseEvent) /*override*/;
 
-    virtual ::EventResult onEvent(::PlayerFormCloseEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::PlayerFormCloseEvent const& formCloseEvent) /*override*/;
 
-    virtual ::EventResult onEvent(::PlayerDataDrivenScreenClosedEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::PlayerDataDrivenScreenClosedEvent const& formResponseEvent) /*override*/;
 
-    virtual ::EventResult onLevelRemovedPlayer(::Player&) /*override*/;
+    virtual ::EventResult onLevelRemovedPlayer(::Player& player) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptFormPromiseTracker(
+    MCAPI ScriptFormPromiseTracker(
         ::ServerScriptManagerEvents&    events,
         ::LevelEventCoordinator&        levelEventCoordinator,
         ::ServerPlayerEventCoordinator& playerEventCooordinator
     );
 
-    MCNAPI void showDataDrivenScreenToPlayer(
+    MCAPI void rejectAll();
+
+    MCAPI void showDataDrivenScreenToPlayer(
         ::Player const&                              player,
         ::std::string const&                         screenId,
         ::std::optional<uint>                        dataInstanceId,
@@ -133,13 +135,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _sendToClient(::Player const& player, ::Json::Value formJson, uint formId);
+    MCAPI static void _sendToClient(::Player const& player, ::Json::Value formJson, uint formId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ServerScriptManagerEvents&    events,
         ::LevelEventCoordinator&        levelEventCoordinator,
         ::ServerPlayerEventCoordinator& playerEventCooordinator

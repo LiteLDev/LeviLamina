@@ -17,9 +17,9 @@ public:
     // NOLINTBEGIN
     virtual ~NpcEventListener() = default;
 
-    virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData>);
+    virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> data);
 
-    virtual ::EventResult onNpcInteractScreenClose(::ActorUniqueID, bool);
+    virtual ::EventResult onNpcInteractScreenClose(::ActorUniqueID npcId, bool performClosingActions);
     // NOLINTEND
 
 public:

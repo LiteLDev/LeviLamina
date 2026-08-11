@@ -64,7 +64,7 @@ public:
 
     virtual ::CommandOriginType getOriginType() const /*override*/;
 
-    virtual void handleCommandOutputCallback(int, ::std::string&&) const /*override*/;
+    virtual void handleCommandOutputCallback(int successCount, ::std::string&& messages) const /*override*/;
 
     virtual bool isValid() const /*override*/;
     // NOLINTEND

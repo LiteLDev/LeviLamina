@@ -17,7 +17,7 @@ public:
     // NOLINTBEGIN
     virtual bool resolveAndValidate(::entt::meta_any const&, ::BiomeRegistry const&) /*override*/;
 
-    virtual void applyToBiome(::Biome&, ::entt::meta_any const&) const /*override*/;
+    virtual void applyToBiome(::Biome& biome, ::entt::meta_any const&) const /*override*/;
     // NOLINTEND
 
 public:

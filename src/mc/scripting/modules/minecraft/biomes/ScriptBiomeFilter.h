@@ -32,6 +32,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptBiomeFilter(::ScriptModuleMinecraft::ScriptBiomeFilter const&);
+
+    MCAPI void
+    setBiomes(::std::vector<::std::string>& biomeContainer, ::std::optional<::std::vector<::std::string>> biomes);
+
+    MCAPI void setTags(::std::vector<::std::string>& tagContainer, ::std::optional<::std::vector<::std::string>> tags);
     // NOLINTEND
 
 public:

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/molang/MolangVersion.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/item/ItemInstance.h"
@@ -19,9 +20,16 @@ class Experiments;
 class Item;
 class ItemStackBase;
 class Level;
+class MinEngineVersion;
 class Recipe;
+class RecipeUnlockingRequirement;
 class ResourcePackManager;
+class SemVersion;
+class ShapedRecipe;
+class ShapelessRecipe;
 struct RecipeNetIdTag;
+namespace Json { class Value; }
+namespace mce { class UUID; }
 // clang-format on
 
 class Recipes {
@@ -94,11 +102,202 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void _addItemRecipe(::std::unique_ptr<::Recipe> recipe);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void _addItemRecipe(::std::unique_ptr<::Recipe> recipe);
+#endif
+
+    MCAPI void _loadHardcodedRecipes(::BaseGameVersion const& baseGameVersion, ::Experiments const&);
+
+    MCAPI ::RecipeIngredient const _loadIngredientFromJson(
+        ::Json::Value const& obj,
+        ::MolangVersion      molangVersion,
+        bool                 allowItemCount,
+        bool                 allowItemGroup
+    ) const;
+
+    MCAPI ::RecipeIngredient const
+    _loadInputIngredientFromJson(::Json::Value const& obj, ::MinEngineVersion const& minEngineVersion) const;
+
+    MCAPI ::std::optional<::RecipeUnlockingRequirement> _loadUnlockingRequirementFromJson(
+        ::Json::Value const& obj,
+        ::MolangVersion      molangVersion,
+        ::std::string const& recipeId
+    ) const;
+
+    MCAPI void addDyedItemRecipe(
+        ::std::string                      recipeId,
+        ::ItemInstance const&              result,
+        ::RecipeIngredient const           itemToDye,
+        ::RecipeIngredient const           dye,
+        ::RecipeUnlockingRequirement const unlockingReq,
+        int const                          priority,
+        ::SemVersion const&                formatVersion
+    );
+
+#ifdef LL_PLAT_C
     MCAPI void addNetMappedRecipe(::RecipeNetId const& recipeNetId, ::std::unique_ptr<::Recipe> recipe);
 
     MCAPI void addRecipeListener(::std::weak_ptr<bool> lifePtr, ::std::function<void()> callback);
 #endif
+
+    MCAPI void addShapedRecipe(
+        ::std::string                         recipeId,
+        ::ItemInstance const&                 result,
+        ::std::string const&                  r0,
+        ::std::vector<::Recipes::Type> const& types,
+        ::std::vector<::HashedString> const&  tags,
+        int const                             priority,
+        ::std::function<::std::unique_ptr<::ShapedRecipe>(
+            ::std::string,
+            int,
+            int,
+            ::std::vector<::RecipeIngredient> const&,
+            ::std::vector<::ItemInstance> const&,
+            ::HashedString,
+            bool,
+            int,
+            ::mce::UUID const*,
+            ::RecipeUnlockingRequirement const&,
+            ::SemVersion const&
+        )>                                    constructor,
+        ::RecipeUnlockingRequirement const&   unlockingReq,
+        ::SemVersion const&                   formatVersion,
+        bool const                            assumeSymmetry
+    );
+
+    MCAPI void addShapedRecipe(
+        ::std::string                         recipeId,
+        ::ItemInstance const&                 result,
+        ::std::vector<::std::string> const&   rows,
+        ::std::vector<::Recipes::Type> const& types,
+        ::std::vector<::HashedString> const&  tags,
+        int const                             priority,
+        ::std::function<::std::unique_ptr<::ShapedRecipe>(
+            ::std::string,
+            int,
+            int,
+            ::std::vector<::RecipeIngredient> const&,
+            ::std::vector<::ItemInstance> const&,
+            ::HashedString,
+            bool,
+            int,
+            ::mce::UUID const*,
+            ::RecipeUnlockingRequirement const&,
+            ::SemVersion const&
+        )>                                    constructor,
+        ::RecipeUnlockingRequirement const&   unlockingReq,
+        ::SemVersion const&                   formatVersion,
+        bool const                            assumeSymmetry
+    );
+
+    MCAPI void addShapedRecipe(
+        ::std::string                         recipeId,
+        ::std::vector<::ItemInstance> const&  result,
+        ::std::vector<::std::string> const&   rows,
+        ::std::vector<::Recipes::Type> const& types,
+        ::std::vector<::HashedString> const&  tags,
+        int const                             priority,
+        ::std::function<::std::unique_ptr<::ShapedRecipe>(
+            ::std::string,
+            int,
+            int,
+            ::std::vector<::RecipeIngredient> const&,
+            ::std::vector<::ItemInstance> const&,
+            ::HashedString,
+            bool,
+            int,
+            ::mce::UUID const*,
+            ::RecipeUnlockingRequirement const&,
+            ::SemVersion const&
+        )>                                    constructor,
+        ::RecipeUnlockingRequirement const&   unlockingReq,
+        ::SemVersion const&                   formatVersion,
+        bool const                            assumeSymmetry
+    );
+
+    MCAPI void addShapedRecipe(
+        ::std::string                         recipeId,
+        ::ItemInstance const&                 result,
+        ::std::string const&                  r0,
+        ::std::string const&                  r1,
+        ::std::vector<::Recipes::Type> const& types,
+        ::std::vector<::HashedString> const&  tags,
+        int const                             priority,
+        ::std::function<::std::unique_ptr<::ShapedRecipe>(
+            ::std::string,
+            int,
+            int,
+            ::std::vector<::RecipeIngredient> const&,
+            ::std::vector<::ItemInstance> const&,
+            ::HashedString,
+            bool,
+            int,
+            ::mce::UUID const*,
+            ::RecipeUnlockingRequirement const&,
+            ::SemVersion const&
+        )>                                    constructor,
+        ::RecipeUnlockingRequirement const&   unlockingReq,
+        ::SemVersion const&                   formatVersion,
+        bool const                            assumeSymmetry
+    );
+
+    MCAPI void addShapedRecipe(
+        ::std::string                         recipeId,
+        ::ItemInstance const&                 result,
+        ::std::string const&                  r0,
+        ::std::string const&                  r1,
+        ::std::string const&                  r2,
+        ::std::vector<::Recipes::Type> const& types,
+        ::std::vector<::HashedString> const&  tags,
+        int const                             priority,
+        ::std::function<::std::unique_ptr<::ShapedRecipe>(
+            ::std::string,
+            int,
+            int,
+            ::std::vector<::RecipeIngredient> const&,
+            ::std::vector<::ItemInstance> const&,
+            ::HashedString,
+            bool,
+            int,
+            ::mce::UUID const*,
+            ::RecipeUnlockingRequirement const&,
+            ::SemVersion const&
+        )>                                    constructor,
+        ::RecipeUnlockingRequirement const&   unlockingReq,
+        ::SemVersion const&                   formatVersion,
+        bool const                            assumeSymmetry
+    );
+
+    MCAPI void addShapelessRecipe(
+        ::std::string                         recipeId,
+        ::ItemInstance const&                 result,
+        ::std::vector<::Recipes::Type> const& types,
+        ::std::vector<::HashedString> const&  tags,
+        int const                             priority,
+        ::std::function<::std::unique_ptr<::ShapelessRecipe>(
+            ::std::string,
+            ::std::vector<::RecipeIngredient> const&,
+            ::std::vector<::ItemInstance> const&,
+            ::HashedString,
+            int,
+            ::mce::UUID const*,
+            ::RecipeUnlockingRequirement const&,
+            ::SemVersion const&
+        )>                                    constructor,
+        ::RecipeUnlockingRequirement const&   unlockingReq,
+        ::SemVersion const&                   formatVersion
+    );
+
+    MCAPI void addShulkerBoxRecipe(
+        ::std::string&                        recipeId,
+        ::ItemInstance const&                 result,
+        ::std::vector<::Recipes::Type> const& types,
+        ::std::vector<::HashedString> const&  tags,
+        ::RecipeUnlockingRequirement const&   unlockingReq,
+        ::SemVersion const&                   formatVersion
+    );
 
     MCAPI void clearRecipes();
 
@@ -146,6 +345,13 @@ public:
         ::ExternalRecipeStore&   recipeStorage,
         ::BaseGameVersion const& baseGameVersion,
         ::Experiments const&     experiments
+    );
+
+    MCAPI bool loadRecipe(
+        ::std::pair<::std::string, ::Json::Value> const& recipeObjInfo,
+        ::MinEngineVersion const&                        minEngineVersion,
+        ::SemVersion const&                              formatVersion,
+        bool                                             isBaseGamePack
     );
 
 #ifdef LL_PLAT_C

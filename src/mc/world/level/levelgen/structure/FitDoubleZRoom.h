@@ -16,10 +16,10 @@ class FitDoubleZRoom : public ::MonumentRoomFitter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool fits(::RoomDefinition const&) const /*override*/;
+    virtual bool fits(::RoomDefinition const& definition) const /*override*/;
 
     virtual ::std::unique_ptr<::OceanMonumentPiece>
-    create(int&, ::std::shared_ptr<::RoomDefinition>, ::Random&) /*override*/;
+    create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random) /*override*/;
     // NOLINTEND
 
 public:

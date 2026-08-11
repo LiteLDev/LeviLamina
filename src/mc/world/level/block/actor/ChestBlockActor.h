@@ -15,6 +15,7 @@
 // clang-format off
 class AABB;
 class Actor;
+class BlockActor;
 class BlockActorDataPacket;
 class BlockSource;
 class CompoundTag;
@@ -196,7 +197,13 @@ public:
 
     MCAPI void _closeChest(::BlockSource& region, ::Actor* actor);
 
+    MCAPI void _pairWith(::ChestBlockActor* chest, ::BlockSource& region, bool isLead);
+
     MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void _tryToPairWith(::BlockSource& region, ::BlockPos const& position);
+
+    MCAPI bool canPairWith(::BlockActor* entity, ::BlockSource& region);
 
     MCAPI ::std::weak_ptr<::ChestBlockActor::ChestCloser> getChestCloser(::Actor& closingActor);
 

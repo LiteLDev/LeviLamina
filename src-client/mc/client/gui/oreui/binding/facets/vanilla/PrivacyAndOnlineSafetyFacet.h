@@ -35,6 +35,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit PrivacyAndOnlineSafetyFacet(::std::weak_ptr<::Social::User> user);
+
+    MCAPI void doPermissionCheck();
+
+    MCAPI bool getAllowCapturesResult() const;
+
+    MCAPI bool getClubCheckResult() const;
+
+    MCAPI bool getMultiplayerCheckResult() const;
     // NOLINTEND
 
 public:

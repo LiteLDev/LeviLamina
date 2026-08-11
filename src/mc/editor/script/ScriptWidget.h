@@ -3,9 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/WidgetCollisionType.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/editor/script/ScriptWidget_ComponentInterface.h"
 #include "mc/editor/script/ScriptWidget_GroupInterface.h"
 #include "mc/editor/script/ScriptWidget_ServiceInterface.h"
@@ -19,6 +21,7 @@ namespace Editor::Network { class WidgetComponentStateChangePayload; }
 namespace Editor::Network { class WidgetStateChangePayload; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentBase; }
 namespace Editor::ScriptModule { class ScriptWidgetCreateOptions; }
+namespace Editor::ScriptModule { class ScriptWidgetErrorInvalidObject; }
 namespace Editor::ScriptModule { class ScriptWidgetGroup; }
 namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -75,22 +78,24 @@ public:
 
     virtual ::AABB const& _getWorldBounds() const /*override*/;
 
-    virtual void _performDeleteWidget(bool) /*override*/;
+    virtual void _performDeleteWidget(bool suppressClientMessage) /*override*/;
 
-    virtual void _setValid(bool) /*override*/;
-
-    virtual void _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const&) /*override*/;
+    virtual void _setValid(bool valid) /*override*/;
 
     virtual void
-    _handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const&) /*override*/;
+    _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload) /*override*/;
+
+    virtual void _handleWidgetComponentStateChangePayload(
+        ::Editor::Network::WidgetComponentStateChangePayload const& payload
+    ) /*override*/;
 
     virtual void _servicePendingStateChanges() /*override*/;
 
-    virtual void _setSelectedNoBroadcast(bool) /*override*/;
+    virtual void _setSelectedNoBroadcast(bool selected) /*override*/;
 
     virtual ::Scripting::WeakLifetimeScope& _getScope() /*override*/;
 
-    virtual void _deleteComponent(::mce::UUID const&) /*override*/;
+    virtual void _deleteComponent(::mce::UUID const& componentId) /*override*/;
     // NOLINTEND
 
 public:
@@ -106,6 +111,73 @@ public:
         ::Scripting::WeakLifetimeScope const&                                         scope
     );
 #endif
+
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _getBindPositionToBlockCursor() const;
+
+    MCNAPI ::Scripting::Result<float, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _getCollisionRadius() const;
+
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _getCollisionRadiusVisible() const;
+
+    MCNAPI ::Scripting::
+        Result<::Editor::Widgets::WidgetCollisionType, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+        _getCollisionType() const;
+
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _getIgnoreEditorModeVisibilityOverride() const;
+
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject> _getLockToSurface() const;
+
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject> _getSnapToBlock() const;
+
+    MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _scriptGetCollisionOffset() const;
+
+    MCNAPI ::Scripting::Result<::std::optional<::std::string>, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _scriptGetDimensionId() const;
+
+    MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _scriptGetPosition() const;
+
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _scriptGetSelectable() const;
+
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject> _scriptGetSelected() const;
+
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _scriptGetShowBoundingBox() const;
+
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject> _scriptGetVisible() const;
+
+    MCNAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup>,
+        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _scriptGetWidgetGroup() const;
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _scriptSetShowBoundingBox(bool visible);
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _scriptSetVisible(bool visible);
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _setBindPositionToBlockCursor(bool bindToBlockCursor);
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _setCollisionRadiusVisible(bool const visible);
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _setIgnoreEditorModeVisibilityOverride(bool ignore);
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _setLockToSurface(bool lockToSurface);
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _setSnapToBlock(bool snapToBlock);
+
+    MCNAPI ::mce::UUID const& getGroupId() const;
     // NOLINTEND
 
 public:

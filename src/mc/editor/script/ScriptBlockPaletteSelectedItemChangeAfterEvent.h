@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor::ScriptModule { class ScriptIBlockPaletteItem; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -24,6 +25,12 @@ public:
     ScriptBlockPaletteSelectedItemChangeAfterEvent& operator=(ScriptBlockPaletteSelectedItemChangeAfterEvent const&);
     ScriptBlockPaletteSelectedItemChangeAfterEvent(ScriptBlockPaletteSelectedItemChangeAfterEvent const&);
     ScriptBlockPaletteSelectedItemChangeAfterEvent();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

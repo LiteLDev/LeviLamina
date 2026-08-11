@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool isValid(::ContentIdentity const&) const /*override*/;
+    virtual bool isValid(::ContentIdentity const& identity) const /*override*/;
     // NOLINTEND
 
 public:

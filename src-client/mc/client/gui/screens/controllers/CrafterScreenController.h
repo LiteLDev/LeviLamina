@@ -53,6 +53,8 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
+
+    MCAPI void _setToggledStateForSlot(int slot, bool shouldEnable);
     // NOLINTEND
 
 public:

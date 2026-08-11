@@ -48,6 +48,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack const& _getBook();
 
+    MCAPI ::Core::PathBuffer<::std::string> _getExportTempDir();
+
     MCAPI ::ViewStatus _viewPage(::PageContent const& page);
 
     MCAPI void addPageAt(int index, ::PageContent const& page);

@@ -27,7 +27,7 @@ public:
     // NOLINTBEGIN
     virtual ~UnzipFileMinizip() /*override*/ = default;
 
-    virtual ::Core::ZipUtils::UnzipResult locateFile(char const*, int) /*override*/;
+    virtual ::Core::ZipUtils::UnzipResult locateFile(char const* fileName, int caseSensitivity) /*override*/;
 
     virtual ::Core::ZipUtils::UnzipResult goToFirstFile() /*override*/;
 
@@ -39,9 +39,10 @@ public:
 
     virtual ::Core::ZipUtils::UnzipResult closeCurrentFile() /*override*/;
 
-    virtual void readCurrentFileContentsIntoMemory(::std::string&) /*override*/;
+    virtual void readCurrentFileContentsIntoMemory(::std::string& str) /*override*/;
 
-    virtual void readCurrentFileContents(uint64, ::std::function<void(int, void const*)>) /*override*/;
+    virtual void
+    readCurrentFileContents(uint64 bufferSize, ::std::function<void(int, void const*)> onReadCallback) /*override*/;
 
     virtual uint64 getTotalFilesInZip() /*override*/;
 

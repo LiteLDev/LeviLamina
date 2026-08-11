@@ -44,7 +44,7 @@ public:
 
     virtual void terminate() /*override*/;
 
-    virtual void render(::ScreenContext&, ::FrameRenderObject const&) /*override*/;
+    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) /*override*/;
 
     virtual bool screenIsNotFlushable() const /*override*/;
 
@@ -58,9 +58,9 @@ public:
 
     virtual ::std::string getScreenName() const /*override*/;
 
-    virtual bool equalsScreenName(::std::string_view) const /*override*/;
+    virtual bool equalsScreenName(::std::string_view comparison) const /*override*/;
 
-    virtual bool containsScreenNameSubstring(::std::string_view) const /*override*/;
+    virtual bool containsScreenNameSubstring(::std::string_view substring) const /*override*/;
 
     virtual bool getShouldSendEvents() /*override*/;
 

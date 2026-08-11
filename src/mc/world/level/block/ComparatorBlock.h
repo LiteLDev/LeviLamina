@@ -70,7 +70,11 @@ public:
     // NOLINTBEGIN
     MCAPI ComparatorBlock(::std::string const& nameId, int id, bool on);
 
+    MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos, bool loading) const;
+
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
+    MCAPI void _refreshOutputState(::BlockSource& region, ::BlockPos const& pos, int strength) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 

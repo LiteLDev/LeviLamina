@@ -30,6 +30,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ShareFacet();
+
+    MCAPI bool isShareSupported() const;
+
+    MCAPI void share(::std::string const& shareTitle, ::std::string const& shareText, ::std::string const& shareUri);
+
+    MCAPI void
+    shareFile(::std::string const& shareTitle, ::std::string const& shareText, ::std::string const& filePath);
     // NOLINTEND
 
 public:

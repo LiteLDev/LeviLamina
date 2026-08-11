@@ -48,6 +48,10 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI static ::RepositorySourceOptions create(::IResourcePackRepository const& repo, ::AppPlatform& platform);
 #endif
+
+#ifdef LL_PLAT_S
+    MCNAPI static ::RepositorySourceOptions create(::IResourcePackRepository const& repo, ::AppPlatform& platform);
+#endif
     // NOLINTEND
 
 public:

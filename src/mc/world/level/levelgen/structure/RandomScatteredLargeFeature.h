@@ -51,20 +51,20 @@ public:
     virtual bool shouldPostProcessMobs() const /*override*/;
 
     virtual bool isFeatureChunk(
-        ::BiomeSource const&,
-        ::Random&,
-        ::ChunkPos const&,
-        uint,
-        ::IPreliminarySurfaceProvider const&,
-        ::Dimension const&
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    pos,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&                   dimension
     ) /*override*/;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension&,
-        ::BiomeSource const&,
-        ::Random&,
-        ::ChunkPos const&,
-        ::IPreliminarySurfaceProvider const&
+        ::Dimension&                         dimension,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    cp,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
     // NOLINTEND
 

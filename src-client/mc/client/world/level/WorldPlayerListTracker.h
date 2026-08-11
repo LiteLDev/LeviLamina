@@ -48,7 +48,7 @@ public:
 
     virtual ::std::vector<::mce::UUID> const& getPlayerList();
 
-    virtual ::PlayerListEntry const* getPlayerEntry(::mce::UUID const&);
+    virtual ::PlayerListEntry const* getPlayerEntry(::mce::UUID const& uuid);
 
     virtual ::std::vector<::mce::UUID> _getCurrentLobby() const;
     // NOLINTEND
@@ -60,6 +60,8 @@ public:
         ::std::function<::LocalPlayer*()> getCurrentLocalPlayer,
         ::LocalPlayerChangedConnector     localPlayerChangedConnector
     );
+
+    MCAPI void _init();
 
     MCAPI bool _updatePlayerList();
 

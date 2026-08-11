@@ -25,7 +25,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void render(::ScreenContext&) /*override*/;
+    virtual void render(::ScreenContext& screenContext) /*override*/;
+
+    virtual ~SerializedActorModel() /*override*/;
     // NOLINTEND
 
 public:
@@ -40,6 +42,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -10,6 +10,7 @@
 class ScreenContext;
 struct FrameRenderObject;
 namespace mce { class RenderContext; }
+namespace mce { class Texture; }
 // clang-format on
 
 class TickingTextureStage : public ::mce::RenderStageWithFrameBufferObject {
@@ -42,6 +43,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _createRenderTarget(::mce::Texture& atlasTexture, ::mce::RenderContext& renderContext);
+
     MCNAPI void createRenderTarget(::mce::RenderContext& renderContext);
 
     MCNAPI void resetStage();

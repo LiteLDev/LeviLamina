@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ResourceLocation;
 class ResourcePackManager;
 namespace Gameface { class ResourceResponse; }
 namespace Gameface { class ResourceStreamResponse; }
@@ -45,6 +46,13 @@ public:
     ) /*override*/;
 
     virtual void update() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::ResourceLocation>
+    _getAssetResourceLocationFromResourcePackManager(::Gameface::ResourceRequest const& request) const;
     // NOLINTEND
 
 public:

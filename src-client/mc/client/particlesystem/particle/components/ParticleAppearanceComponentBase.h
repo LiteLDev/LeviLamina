@@ -24,10 +24,10 @@ public:
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const /*override*/;
 
     virtual void setInitialState(
-        ::ParticleSystem::ComponentAccessParticleEmitter&,
-        ::ParticleSystem::CommonParticle&,
-        ::RenderParams&,
-        ::Vec3 const&
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::ParticleSystem::CommonParticle&                 particle,
+        ::RenderParams&                                   renderParams,
+        ::Vec3 const&                                     spawnDirection
     );
 
     virtual void updateParticleAppearance(
@@ -36,7 +36,8 @@ public:
         ::RenderParams&                                   renderParams
     );
 
-    virtual void updateEmitterAppearance(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&);
+    virtual void
+    updateEmitterAppearance(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
     // NOLINTEND
 
 public:

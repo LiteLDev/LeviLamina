@@ -324,11 +324,7 @@ public:
 
     virtual void setTarget(::Actor* entity);
 
-#ifdef LL_PLAT_S
-    virtual bool isValidTarget(::Actor*) const;
-#else // LL_PLAT_C
     virtual bool isValidTarget(::Actor* attacker) const;
-#endif
 
     virtual ::ActorHurtResult attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
@@ -404,7 +400,11 @@ public:
 
     virtual void changeDimension(::DimensionType toId);
 
+#ifdef LL_PLAT_S
     virtual void changeDimension(::ChangeDimensionPacket const&);
+#else // LL_PLAT_C
+    virtual void changeDimension(::ChangeDimensionPacket const& packet);
+#endif
 
     virtual ::ActorUniqueID getControllingPlayer() const;
 
@@ -446,11 +446,7 @@ public:
 
     virtual void openContainerComponent(::Player& player);
 
-#ifdef LL_PLAT_S
-    virtual bool swing(::ActorSwingSource);
-#else // LL_PLAT_C
     virtual bool swing(::ActorSwingSource swingSource);
-#endif
 
     virtual void useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
@@ -521,6 +517,10 @@ public:
         ::EntityContext&                   entityContext
     );
 
+    MCAPI ::BuiltInActorComponents _addActorBuiltInComponents();
+
+    MCAPI void _addActorNonBuiltInComponents();
+
     MCAPI bool _applyPendingPropertyChanges();
 
     MCAPI ::ItemActor const* _drop(::ItemStack const& item, bool randomly);
@@ -552,6 +552,8 @@ public:
 
     MCAPI void _setupServerAnimationComponent();
 
+    MCAPI void _updateComposition(bool reload);
+
     MCAPI void addEffect(::MobEffectInstance const& effect);
 
     MCAPI bool addTag(::std::string const& tag);
@@ -575,6 +577,8 @@ public:
     MCAPI bool canSee(::Vec3 const& targetPos, ::ShapeType obstructionType) const;
 
     MCAPI bool canSeeDaylight() const;
+
+    MCAPI void celebrateHunt(int duration, bool special);
 
     MCAPI void checkFallDamage(float ya, bool onGround, bool recheckLiquid);
 
@@ -753,6 +757,8 @@ public:
 #endif
 
     MCAPI void handleFallDamage(float fallDistance, float multiplier, ::ActorDamageSource source);
+
+    MCAPI void handleLeftoverFallDamage(float damage, ::ActorDamageSource source);
 
     MCAPI bool hasAnyEffects() const;
 
@@ -1179,7 +1185,7 @@ public:
 
     MCAPI void $setTarget(::Actor* entity);
 
-    MCFOLD bool $isValidTarget(::Actor*) const;
+    MCFOLD bool $isValidTarget(::Actor* attacker) const;
 
     MCAPI ::ActorHurtResult $attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
@@ -1297,7 +1303,7 @@ public:
 
     MCAPI void $openContainerComponent(::Player& player);
 
-    MCFOLD bool $swing(::ActorSwingSource);
+    MCFOLD bool $swing(::ActorSwingSource swingSource);
 
     MCAPI void $useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
 

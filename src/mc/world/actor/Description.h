@@ -16,7 +16,12 @@ public:
 
     virtual ~Description() = default;
 
+#ifdef LL_PLAT_S
+    virtual void deserializeData(::DeserializeDataParams deserializeDataParams);
+#else // LL_PLAT_C
     virtual void deserializeData(::DeserializeDataParams nonConstDeserializeDataParams);
+#endif
+
     // NOLINTEND
 
 public:
@@ -30,7 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $deserializeData(::DeserializeDataParams nonConstDeserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
     // NOLINTEND

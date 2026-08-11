@@ -74,7 +74,7 @@ public:
     virtual ::std::vector<::std::string_view> getSettingsGroups() const /*override*/;
 
     virtual ::std::optional<::std::vector<::Settings::IRegistry::SettingId>>
-        getSettingsGroup(::std::string_view) /*override*/;
+    getSettingsGroup(::std::string_view settingsGroupId) /*override*/;
 
     virtual ::std::optional<::std::reference_wrapper<::std::variant<
         ::Settings::BooleanComponent,
@@ -86,12 +86,16 @@ public:
         ::Settings::TextComponent,
         ::Settings::GroupInfoComponent,
         ::Settings::BannerComponent>>>
-        getSetting(::std::string_view) const /*override*/;
+    getSetting(::std::string_view settingId) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void refresh();
+
+    MCAPI void refresh(::std::string_view id);
+
     MCAPI void registerSettingsFactory(
         ::std::string_view                      key,
         ::std::function<::std::vector<::std::unique_ptr<::std::variant<

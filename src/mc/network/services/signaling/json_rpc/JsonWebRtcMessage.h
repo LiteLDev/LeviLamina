@@ -42,6 +42,18 @@ public:
     JsonWebRtcMessage& operator=(JsonWebRtcMessage const&);
     JsonWebRtcMessage(JsonWebRtcMessage const&);
     JsonWebRtcMessage();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI JsonWebRtcMessage(::std::string const& toPlayerId, ::std::string const& innerMessage);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };
 
 } // namespace JsonRpc

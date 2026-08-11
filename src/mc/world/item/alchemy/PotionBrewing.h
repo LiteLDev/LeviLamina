@@ -42,6 +42,8 @@ public:
         ::ItemDescriptor const&            to
     );
 
+    MCAPI static ::ItemInstance getChemistryMix(::ItemDescriptor const& from, ::ItemDescriptor const& ingredient);
+
     MCAPI static int getFuelValue(::ItemDescriptor const& item);
 
     MCAPI static bool hasMix(::ItemInstance const& source, ::ItemDescriptor const& ingredient);

@@ -45,6 +45,14 @@ public:
         ::std::shared_ptr<::ClientInstanceScreenModel> clientModel,
         ::std::shared_ptr<::PersonaScreenModelCommon>  model
     );
+
+    MCAPI ::std::string _getChangeOrExitInstructions() const;
+
+    MCAPI ::std::string _getEmoteScreenInstructions();
+
+    MCAPI void _onButtonPress(int emoteIndex);
+
+    MCAPI void _sendButtonPressedMessage(bool slotSet) const;
     // NOLINTEND
 
 public:

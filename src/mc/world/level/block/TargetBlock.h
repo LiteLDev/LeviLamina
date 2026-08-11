@@ -11,6 +11,7 @@
 class Actor;
 class BlockPos;
 class BlockSource;
+class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
@@ -34,6 +35,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _processHitByProjectileAtPos(
+        ::Vec3 const&     hitPos,
+        ::BlockSource&    region,
+        ::BlockPos const& blockPos,
+        ::Actor const&    projectile
+    ) const;
+
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;

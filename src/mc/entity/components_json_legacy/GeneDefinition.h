@@ -20,4 +20,10 @@ public:
     ::ll::TypedStorage<1, 1, bool>                             mUseSimplifiedBreeding;
     ::ll::TypedStorage<4, 4, float>                            mMutationRateOverride;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addGeneticVariant(::GeneticVariant const& geneticVariant);
+    // NOLINTEND
 };

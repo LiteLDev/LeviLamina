@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     virtual ~ContextScopeListener() /*override*/ = default;
 
-    virtual void onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry&) /*override*/;
+    virtual void onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry& registry) /*override*/;
 
     virtual void onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&) /*override*/;
     // NOLINTEND

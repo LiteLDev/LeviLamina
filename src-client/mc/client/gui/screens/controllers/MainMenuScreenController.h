@@ -62,6 +62,8 @@ public:
         ::std::function<void(::LocalWorldInfo const&)> startLocalWorldCallback
     );
 
+    MCAPI void _verifySkinApprovedBeforeJoin(::std::function<void()> const& joinCallback);
+
     MCAPI ::ui::ViewRequest attemptUserSignIn(::std::function<void()> adHocCallback);
 
     MCAPI void confirmationNoCrossPlatformMultiplayerDialog(::std::function<void(::ModalScreenButtonId)> callback);

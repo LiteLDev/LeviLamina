@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class IDimension;
 class LevelEventCoordinator;
 class PacketSender;
 class UserEntityIdentifierComponent;
@@ -71,6 +72,9 @@ public:
         int                                    data,
         ::UserEntityIdentifierComponent const* userIdentifierToExclude
     );
+
+    MCAPI void
+    broadcastLocalEvent(::IDimension& dimension, ::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
     // NOLINTEND
 
 public:

@@ -13,6 +13,7 @@ namespace RakNet { class BitStream; }
 namespace RakNet { class PluginInterface2; }
 namespace RakNet { class RakNetRandom; }
 namespace RakNet { class RakNetSocket2; }
+namespace RakNet { struct InternalPacket; }
 namespace RakNet { struct RakNetStatistics; }
 namespace RakNet { struct SystemAddress; }
 // clang-format on
@@ -151,6 +152,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::RakNet::InternalPacket* AllocateFromInternalPacketPool();
+
+    MCAPI void ClearPacketsAndDatagrams();
+
+    MCAPI ::RakNet::InternalPacket* CreateInternalPacketFromBitStream(::RakNet::BitStream* bitStream, uint64 time);
+
+    MCAPI void FreeInternalPacketData(::RakNet::InternalPacket* internalPacket, char const* file, uint line);
+
     MCAPI void FreeThreadSafeMemory();
 
     MCAPI ::RakNet::RakNetStatistics* GetStatistics(::RakNet::RakNetStatistics* rns);
@@ -169,6 +178,10 @@ public:
 
     MCAPI void InitializeVariables();
 
+    MCAPI void PushDatagram();
+
+    MCAPI void PushPacket(uint64 time, ::RakNet::InternalPacket* internalPacket, bool isReliable);
+
     MCAPI ReliabilityLayer();
 
     MCAPI bool Send(
@@ -181,6 +194,14 @@ public:
         int                 MTUSize,
         uint64              currentTime,
         uint                receipt
+    );
+
+    MCAPI void SendACKs(
+        ::RakNet::RakNetSocket2* s,
+        ::RakNet::SystemAddress& systemAddress,
+        uint64                   time,
+        ::RakNet::RakNetRandom*  rnr,
+        ::RakNet::BitStream&     updateBitStream
     );
 
     MCAPI void Update(

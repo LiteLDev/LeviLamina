@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class EntityContext;
 // clang-format on
 
@@ -29,6 +30,12 @@ public:
     virtual void containerContentChanged(int) /*override*/;
 
     virtual ~LegacyActorArmorChangedListener() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void containerContentChanged(::Actor& actor);
     // NOLINTEND
 
 public:

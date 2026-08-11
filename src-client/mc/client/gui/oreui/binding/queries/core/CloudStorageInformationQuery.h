@@ -47,6 +47,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit CloudStorageInformationQuery(::OreUI::ClientDependencies const& client);
+
+    MCAPI void _tryUpdate();
     // NOLINTEND
 
 public:

@@ -50,7 +50,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void onUserRemoved(::std::shared_ptr<::Social::User> const&) /*override*/;
+        virtual void onUserRemoved(::std::shared_ptr<::Social::User> const& user) /*override*/;
         // NOLINTEND
 
     public:
@@ -153,6 +153,26 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel>             model,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
     );
+
+    MCAPI bool _YHelperVisible() const;
+
+    MCAPI void _fetchUserOrientedContent(bool const signInFailed);
+
+    MCAPI bool _isNxAdHocEnabled() const;
+
+    MCAPI bool _isProfileButtonAEnabled() const;
+
+    MCAPI bool _isProfileButtonBEnabled() const;
+
+    MCAPI bool _isSignInVisible();
+
+    MCAPI bool _realmsPromoEnabled() const;
+
+    MCAPI void _updateProfileImage();
+
+    MCAPI void resetInboxAnimation();
+
+    MCAPI void startInboxAnimation();
     // NOLINTEND
 
 public:

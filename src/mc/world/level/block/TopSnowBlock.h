@@ -20,6 +20,7 @@ class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Player;
+class Random;
 class Vec3;
 struct ActorBlockSyncMessage;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -122,11 +123,15 @@ public:
     // NOLINTBEGIN
     MCAPI TopSnowBlock(::std::string const& nameId, int id, bool usePartialHeight, bool allowFallOnPlace);
 
+    MCAPI bool _canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockType const* newBlock) const;
+
     MCAPI bool melt(::BlockSource& region, ::BlockPos const& pos, int meltHeight) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+
+    MCAPI void startFallingIfLostSupport(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND

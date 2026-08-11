@@ -66,6 +66,12 @@ public:
     ResolvedTypes& operator=(ResolvedTypes const&);
     ResolvedTypes(ResolvedTypes const&);
     ResolvedTypes();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool isPrivilegedClosureTemplateType(::entt::meta_type const& type) const;
+    // NOLINTEND
 };
 
 } // namespace Scripting::QuickJS

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockSource;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -46,7 +47,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _handleRunSet(
+        ::MinecraftGameTest&   gameTest,
+        ::BlockSource&         region,
+        ::CommandOrigin const& origin,
+        ::CommandOutput&       output,
+        bool                   stopOtherTestsOnFailure
+    ) const;
     // NOLINTEND
 
 public:

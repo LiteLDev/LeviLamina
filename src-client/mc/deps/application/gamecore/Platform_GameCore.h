@@ -95,19 +95,19 @@ public:
 
     virtual void issueDPIChange(float dpi) /*override*/;
 
-    virtual void issueOrientationChange(::DisplayOrientation const&) /*override*/;
+    virtual void issueOrientationChange(::DisplayOrientation const& orientation) /*override*/;
 
     virtual bool _preAppCreation(::Bedrock::ActivationArguments const&) /*override*/;
 
-    virtual void _processActivationArguments(::Bedrock::ActivationArguments const&) /*override*/;
+    virtual void _processActivationArguments(::Bedrock::ActivationArguments const& args) /*override*/;
 
-    virtual bool _postAppCreation(::Bedrock::ActivationArguments const&) /*override*/;
+    virtual bool _postAppCreation(::Bedrock::ActivationArguments const& actArgs) /*override*/;
 
-    virtual bool _update(bool) /*override*/;
+    virtual bool _update(bool canRender) /*override*/;
 
-    virtual void pushNotificationReceived_Shim(::PushNotificationMessage const&) /*override*/;
+    virtual void pushNotificationReceived_Shim(::PushNotificationMessage const& msg) /*override*/;
 
-    virtual void notifyUriListeners_Shim(::ActivationUri const&) /*override*/;
+    virtual void notifyUriListeners_Shim(::ActivationUri const& uri) /*override*/;
 
     virtual ::std::string getDeviceId_Shim() const /*override*/;
 
@@ -116,6 +116,18 @@ public:
     virtual bool _isShutdown() /*override*/;
 
     virtual void resetCallback() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void setRemoteSession(bool value);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void onProtocolActivation(void* context, char const* uri);
     // NOLINTEND
 
 public:

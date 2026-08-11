@@ -13,6 +13,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class ItemStackBase;
+struct ElementInfo;
 namespace mce { class Color; }
 // clang-format on
 
@@ -41,6 +42,8 @@ public:
 #ifdef LL_PLAT_C
     MCAPI static ::ElementType getElement(::ItemStackBase const& item);
 #endif
+
+    MCAPI static ::ElementInfo getElementInfo(::ElementType e);
 
     MCAPI static void initElements();
     // NOLINTEND

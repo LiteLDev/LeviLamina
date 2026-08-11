@@ -78,6 +78,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DecoratedPotBlockActor(::BlockPos const& pos);
 
+    MCAPI void _setContainedItem(::ItemStack const& item);
+
 #ifdef LL_PLAT_C
     MCAPI void fromItem(::ItemStack const& item);
 #endif

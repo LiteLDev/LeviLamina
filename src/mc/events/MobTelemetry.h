@@ -105,6 +105,22 @@ public:
         bool                 isBaby,
         bool                 hadPassenger
     );
+
+    MCNAPI void onMobDroppedItem(
+        ::std::string const& mobNamespace,
+        ::std::string const& mobName,
+        ::std::string const& itemNamespace,
+        ::std::string const& itemName,
+        uint                 stackSize
+    );
+
+    MCNAPI void onMobPickedUpItem(
+        ::std::string const& mobNamespace,
+        ::std::string const& mobName,
+        ::std::string const& itemNamespace,
+        ::std::string const& itemName,
+        uint                 stackSize
+    );
     // NOLINTEND
 };
 

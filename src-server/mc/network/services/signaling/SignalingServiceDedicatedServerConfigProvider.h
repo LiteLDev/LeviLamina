@@ -35,7 +35,7 @@ public:
     // NOLINTBEGIN
     virtual ~SignalingServiceDedicatedServerConfigProvider() /*override*/ = default;
 
-    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl(::std::string const&) /*override*/;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl(::std::string const& id) /*override*/;
 
     virtual ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> getAuthToken() /*override*/;
 

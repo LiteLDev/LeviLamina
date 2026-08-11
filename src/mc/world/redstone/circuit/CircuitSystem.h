@@ -39,6 +39,10 @@ public:
 
     MCAPI void evaluate(::BlockSource* region);
 
+#ifdef LL_PLAT_C
+    MCAPI void evaluateComponents(bool bOnlyProducers);
+#endif
+
     MCAPI bool isConnectionAllowed(
         ::BaseCircuitComponent& component,
         ::BlockPos const&       componentPos,

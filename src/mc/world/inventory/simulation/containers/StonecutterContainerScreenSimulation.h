@@ -82,6 +82,9 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI ::RecipeNetId _getResultRecipeIdForInput(::ItemStack const& inputStack);
+
+    MCNAPI ::ContainerScreenActionResult
+    _tryTransferCraft(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const& dstSlot);
 #endif
     // NOLINTEND
 

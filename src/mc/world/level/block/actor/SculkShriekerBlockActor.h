@@ -71,6 +71,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _canRespond(::BlockSource const& region, ::BlockPos const& pos);
+
     MCAPI static ::Player* tryGetPlayerInHierarchy(::Actor* actor);
     // NOLINTEND
 

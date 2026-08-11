@@ -4,14 +4,27 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/script_engine/scripting/Promise.h"
 
 // auto generated forward declare list
 // clang-format off
 class Scheduler;
 namespace ScriptModuleMinecraftNet { class INativeHttpDelegate; }
+namespace ScriptModuleMinecraftNet { class ScriptHttpRequestLimitExceededError; }
+namespace ScriptModuleMinecraftNet { class ScriptInternalHttpRequestError; }
+namespace ScriptModuleMinecraftNet { class ScriptMalformedUriError; }
 namespace ScriptModuleMinecraftNet { class ScriptNetSerializationRegistry; }
+namespace ScriptModuleMinecraftNet { class ScriptRequestBodyTooLargeError; }
+namespace ScriptModuleMinecraftNet { class ScriptTLSOnlyError; }
+namespace ScriptModuleMinecraftNet { class ScriptUriNotAllowedError; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetModuleConfig; }
+namespace ScriptModuleMinecraftNet { struct ScriptNetRequest; }
+namespace ScriptModuleMinecraftNet { struct ScriptNetResponse; }
+namespace Scripting { class ScriptObjectFactory; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -47,6 +60,21 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI void cleanUp();
+
+        MCNAPI ::Scripting::Promise<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
+            ::Scripting::Error,
+            ::ScriptModuleMinecraftNet::ScriptRequestBodyTooLargeError,
+            ::ScriptModuleMinecraftNet::ScriptInternalHttpRequestError,
+            ::ScriptModuleMinecraftNet::ScriptHttpRequestLimitExceededError,
+            ::ScriptModuleMinecraftNet::ScriptTLSOnlyError,
+            ::ScriptModuleMinecraftNet::ScriptMalformedUriError,
+            ::ScriptModuleMinecraftNet::ScriptUriNotAllowedError>
+        process(
+            ::Scripting::WeakLifetimeScope const&,
+            ::Scripting::ScriptObjectFactory&                                                         factory,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
+        );
         // NOLINTEND
     };
 

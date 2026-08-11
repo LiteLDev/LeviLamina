@@ -15,9 +15,9 @@ public:
 
     virtual uint64 getSize() const = 0;
 
-    virtual ::Bedrock::Result<::gsl::span<uchar>> read(::gsl::span<uchar>) = 0;
+    virtual ::Bedrock::Result<::gsl::span<uchar>> read(::gsl::span<uchar> buffer) = 0;
 
-    virtual ::Bedrock::Result<void> seek(uint64) = 0;
+    virtual ::Bedrock::Result<void> seek(uint64 position) = 0;
 
     virtual ::Bedrock::Result<uint64> tell() = 0;
     // NOLINTEND

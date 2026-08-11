@@ -3,25 +3,33 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/game/ControlOptionType.h"
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/SceneType.h"
+#include "mc/client/gui/SoundDirection.h"
 #include "mc/client/gui/TitleMessage.h"
 #include "mc/client/gui/screens/controllers/ClientInstanceScreenController.h"
 #include "mc/client/input/vanilla/remapping/ActionEnum.h"
 #include "mc/deps/core/timing/Stopwatch.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/options/option_types/OptionID.h"
+#include "mc/world/ContainerID.h"
+#include "mc/world/actor/ai/util/BossBarColor.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class ClientInstanceScreenModel;
 class GameTipScreenController;
 class HudContainerManagerController;
+class Keymapping;
+class RemappingLayout;
 class ScoreboardScreenController;
 class UIPropertyBag;
 namespace Json { class Value; }
+namespace mce { class Color; }
 // clang-format on
 
 class HudScreenController : public ::ClientInstanceScreenController {
@@ -166,6 +174,142 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit HudScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
+
+    MCAPI void _bindActionIconForGamepad(
+        ::Remapping::ActionEnum action,
+        ::std::string const&    bindingNameOverride,
+        ::UIPropertyBag&        bag
+    ) const;
+
+    MCAPI void _bindInventoryPromptsFlyout(
+        uint                 bindingNameHash,
+        ::std::string const& bindingNameOverride,
+        ::UIPropertyBag&     bag
+    ) const;
+
+    MCAPI bool _bindKeyboardTooltip(
+        ::HudScreenController::Tooltip const& tip,
+        uint                                  bindingNameHash,
+        ::std::string const&                  bindingNameOverride,
+        ::UIPropertyBag&                      bag
+    ) const;
+
+    MCAPI void
+    _bindMenuPromptsFlyout(uint bindingNameHash, ::std::string const& bindingNameOverride, ::UIPropertyBag& bag) const;
+
+    MCAPI void _bindTooltipCollection(
+        ::std::vector<::HudScreenController::Tooltip> const& tooltips,
+        int                                                  collectionIndex,
+        uint                                                 bindingNameHash,
+        ::std::string const&                                 bindingNameOverride,
+        ::UIPropertyBag&                                     bag,
+        ::HudScreenController::Tooltips                      tooltipType
+    ) const;
+
+    MCAPI void
+    _bindTooltipFlyout(uint bindingNameHash, ::std::string const& bindingNameOverride, ::UIPropertyBag& bag) const;
+
+    MCAPI void _fireInitialControlTipsActivationEvent() const;
+
+    MCAPI ::std::string _formatButtonList(::std::vector<::std::string> buttonList) const;
+
+    MCAPI ::mce::Color _getBossColorValue(::BossBarColor barColor) const;
+
+    MCAPI ::std::string _getContextAttackButton() const;
+
+    MCAPI ::std::string _getContextChat() const;
+
+    MCAPI ::std::string _getContextCodeBuilder() const;
+
+    MCAPI ::std::string _getContextCraftingButton() const;
+
+    MCAPI ::std::string _getContextDescendButton() const;
+
+    MCAPI ::std::string _getContextDismountButton() const;
+
+    MCAPI ::std::string _getContextDropItemButton() const;
+
+    MCAPI ::std::string _getContextEmoteButton() const;
+
+    MCAPI ::std::string _getContextImmersiveReader() const;
+
+    MCAPI ::std::string _getContextInventoryButton() const;
+
+    MCAPI ::std::string _getContextJumpButton() const;
+
+    MCAPI ::std::string _getContextToggleFlight() const;
+
+    MCAPI ::std::string _getContextUseButton() const;
+
+    MCAPI ::std::string _getEmoteName(int slot);
+
+    MCAPI void _getFloatCustomizableOptionValue(::OptionID optionID);
+
+    MCAPI ::Keymapping const& _getGamepadMapping(::Remapping::ActionEnum action) const;
+
+    MCAPI float _getHudAlpha();
+
+    MCAPI ::Keymapping const& _getKeyboardMapping(::Remapping::ActionEnum action) const;
+
+    MCAPI ::Keymapping const& _getMapping(::Remapping::ActionEnum action, ::RemappingLayout const& layout) const;
+
+    MCAPI void _handleNewActionBarMessage();
+
+    MCAPI void _handleSlotSelection(int slot, ::ContainerID containerId);
+
+    MCAPI bool _isAutoSaveIconVisible();
+
+    MCAPI bool
+    _isToolTipsHidden(::HudScreenController::Tooltips tooltipType, ::HudScreenController::Tooltip const* tip) const;
+
+    MCAPI bool _isTouchActive() const;
+
+    MCAPI void _leaveControlCustomizationScreen();
+
+    MCAPI void _pushNewChatMessage(::std::string const& message, float time);
+
+    MCAPI void _pushNewSubtitleMessage(
+        ::std::string const& message,
+        float                timeSec,
+        ::SoundDirection     direction,
+        bool                 isLocalPlayer
+    );
+
+    MCAPI void _recreateSubtitleContainer();
+
+    MCAPI void _refreshSubtitleMessages();
+
+    MCAPI bool _shouldShowLocatorBar() const;
+
+    MCAPI bool _shouldShowTags() const;
+
+    MCAPI bool _showClassicUI() const;
+
+    MCAPI bool _showPaperDoll() const;
+
+    MCAPI bool _showPocketUI() const;
+
+    MCAPI bool _showSurvivalUI() const;
+
+    MCAPI void displayOpenEmoteInstructions(::HudScreenController::ButtonLists const& buttonLists) const;
+
+    MCAPI ::HudScreenController::ButtonLists const getButtonLists() const;
+
+    MCAPI ::std::string const getFormattedOpenChatMessage(::std::vector<::std::string> const& buttonList) const;
+
+    MCAPI ::std::string const getFormattedOpenEmoteMessage(::std::vector<::std::string> const& buttonList) const;
+
+    MCAPI ::HudScreenController::ButtonLists const getGamepadEmoteButtonLists() const;
+
+    MCAPI ::HudScreenController::ButtonLists const getKeyboardEmoteButtonLists() const;
+
+    MCAPI void setupControlCustomizationCallbacksForOptions(::ControlOptionType controlOptionType);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _shouldShowDefaultUseTooltip(::Block const& block);
     // NOLINTEND
 
 public:

@@ -21,7 +21,9 @@ namespace ScriptModuleMinecraftNet { class ScriptUriNotAllowedError; }
 namespace ScriptModuleMinecraftNet { class ScriptWebSocketClient; }
 namespace ScriptModuleMinecraftNet { class ScriptWebSocketConnectionFailedError; }
 namespace ScriptModuleMinecraftNet { class ScriptWebSocketLimitExceededError; }
+namespace ScriptModuleMinecraftNet { struct ScriptNetHeader; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetModuleConfig; }
+namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -42,7 +44,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void onFlushWorldAfterEvents(::ScriptDeferredFlushTracker&) /*override*/;
+        virtual void onFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
         // NOLINTEND
 
     public:
@@ -78,6 +80,21 @@ public:
         ::Scripting::WeakLifetimeScope&                                             scope,
         ::ScriptModuleMinecraftNet::ScriptNetModuleConfig                           config,
         ::std::shared_ptr<::ScriptModuleMinecraftNet::ScriptNativeWebSocketFactory> nativeFactory
+    );
+
+    MCNAPI ::Scripting::Promise<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptWebSocketClient>,
+        ::ScriptModuleMinecraftNet::ScriptWebSocketConnectionFailedError,
+        ::ScriptModuleMinecraftNet::ScriptInternalWebSocketError,
+        ::ScriptModuleMinecraftNet::ScriptWebSocketLimitExceededError,
+        ::ScriptModuleMinecraftNet::ScriptMalformedUriError,
+        ::ScriptModuleMinecraftNet::ScriptTLSOnlyError,
+        ::ScriptModuleMinecraftNet::ScriptUriNotAllowedError>
+    connect(
+        ::Scripting::ScriptObjectFactory&                                                  factory,
+        ::std::string const&                                                               uri,
+        ::std::optional<::std::vector<::ScriptModuleMinecraftNet::ScriptNetHeader>> const& userHeaders,
+        ::Scripting::WeakLifetimeScope&                                                    scope
     );
 
     MCNAPI void initEvents();

@@ -15,6 +15,7 @@ class IPackManifestFactory;
 class PackAccessStrategy;
 class PackManifest;
 class PackMetadata;
+class PackReport;
 class PackSourceReport;
 class ResourceLocation;
 class SubpackInfoCollection;
@@ -48,6 +49,8 @@ public:
         ::std::unique_ptr<::PackMetadata>          metadata
     );
 
+    MCAPI void upgradeLegacyDependencies(::std::unique_ptr<::PackCommand::UpgradeLegacyDependencies const> upgrade);
+
     MCAPI ~Pack();
     // NOLINTEND
 
@@ -76,6 +79,26 @@ public:
         ::Core::Path const&                                     zipSubDir
     );
 #endif
+
+#ifdef LL_PLAT_S
+    MCAPI static ::std::unique_ptr<::Pack> createPack(
+        ::IPackIOProvider const&                                io,
+        ::ResourceLocation const&                               fileLocation,
+        ::PackType                                              type,
+        ::PackOrigin                                            origin,
+        ::IPackManifestFactory&                                 manifestFactory,
+        ::Bedrock::NonOwnerPointer<::IContentKeyProvider const> keyProvider,
+        ::PackSourceReport*                                     report,
+        ::Core::Path const&                                     zipSubDir
+    );
+#endif
+
+    MCAPI static ::std::unique_ptr<::PackMetadata> createPackMetadata(
+        ::PackType                  type,
+        ::PackManifest&             manifest,
+        ::PackAccessStrategy const& accessStrategy,
+        ::PackReport&               report
+    );
     // NOLINTEND
 
 public:

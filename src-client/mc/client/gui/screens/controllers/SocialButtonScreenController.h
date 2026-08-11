@@ -42,6 +42,10 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
+
+    MCAPI void _onPartyChanged();
+
+    MCAPI void _updateSocialIconControl();
     // NOLINTEND
 
 public:

@@ -53,6 +53,10 @@ public:
 
     MCAPI bool operator==(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&) const;
 #endif
+
+#ifdef LL_PLAT_S
+    MCAPI bool operator==(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&) const;
+#endif
     // NOLINTEND
 
 public:
@@ -69,6 +73,12 @@ public:
 
     MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

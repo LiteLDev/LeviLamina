@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
@@ -62,6 +62,18 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+
+    MCAPI void _calculateBB();
+
+    MCAPI bool _isPosOccupiedByOtherShulker(::BlockPos blockPos) const;
+
+    MCAPI void _peekAmountTick();
+
+    MCAPI bool _tryAttachingToNeighbouringFaces(::BlockPos currentPos);
+
+    MCAPI bool _trySetNewAttachPosition(::BlockPos pos);
+
+    MCAPI bool _tryTeleportSomewhere();
 
     MCAPI void postNormalTick();
     // NOLINTEND

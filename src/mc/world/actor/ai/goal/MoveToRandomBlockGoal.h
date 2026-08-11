@@ -39,7 +39,7 @@ public:
 
     virtual bool canContinueToUse() /*override*/;
 
-    virtual void appendDebugInfo(::std::string&) const /*override*/;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual void stop() /*override*/;
 

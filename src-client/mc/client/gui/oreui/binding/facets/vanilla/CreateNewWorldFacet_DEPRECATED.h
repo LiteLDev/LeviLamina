@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/CreateOnRealmsError.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/CreateWorldError.h"
@@ -23,6 +24,7 @@ struct LevelSummary;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { class Router; }
 namespace OreUI { class WorldSettingsProvider_DEPRECATED; }
+namespace OreUI { struct LevelDataBindings; }
 // clang-format on
 
 namespace OreUI {
@@ -107,6 +109,48 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ContentAcquisition>          contentAcquisition,
         ::ui::ProgressScreenNavigation                               progressScreenNavigation
     );
+
+    MCAPI void applyTemplate(::std::string const& worldTemplateId);
+
+    MCAPI void clearErrors();
+
+    MCAPI bool consumeResetFlag() const;
+
+    MCAPI void createOnRealms();
+
+    MCAPI void createWorld();
+
+    MCAPI void createWorldOnPreviewRealm(::std::string realmId);
+
+    MCAPI ::OreUI::FacetTaskState getApplyTemplateTaskState();
+
+    MCFOLD ::std::optional<::OreUI::CreateOnRealmsError> const& getCreateOnRealmsError() const;
+
+    MCFOLD ::std::optional<::OreUI::CreateWorldError> const& getCreateWorldError() const;
+
+    MCAPI ::OreUI::LevelDataBindings& getLevelDataBindings() const;
+
+    MCAPI ::std::string const& getWorldPreviewImagePath() const;
+
+    MCAPI bool hasConfirmedPlatformLockedContent() const;
+
+    MCAPI bool hasUserChangedSettings() const;
+
+    MCAPI bool isCreatingWorld() const;
+
+    MCAPI bool isEditorWorld() const;
+
+    MCAPI bool isRandomSeedAllowed() const;
+
+    MCFOLD void selectRealmToCreateOn(::std::string const& realmId);
+
+    MCAPI void setConfirmedPlatformLockedContent(bool value);
+
+    MCAPI void setWorldPreviewImagePath(::std::string const& worldPreviewImagePath);
+
+    MCAPI void unlockTemplateSettings();
+
+    MCAPI void updateWorldPreviewImagePath();
     // NOLINTEND
 
 public:

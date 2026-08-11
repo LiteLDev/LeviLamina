@@ -55,6 +55,10 @@ public:
     MCAPI bool isInPaleOakPillar(::BlockSource const& region, ::BlockPos const& pos) const;
 #endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool isInPaleOakPillar(::BlockSource const& region, ::BlockPos const& pos) const;
+#endif
+
     MCAPI void onEvent(::BlockEvents::ActorEvent& event) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;

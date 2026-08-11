@@ -6,8 +6,11 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/controllers/ItemTakeType.h"
+#include "mc/world/containers/managers/controllers/ItemSpecialLocation.h"
+#include "mc/world/containers/managers/controllers/ItemTransferType.h"
 #include "mc/world/inventory/network/ContainerScreenContext.h"
 #include "mc/world/inventory/simulation/ContainerScreenAutoplaceBehaviour.h"
+#include "mc/world/inventory/simulation/ContainerScreenTransferBehaviour.h"
 #include "mc/world/inventory/simulation/ContainerValidationCaller.h"
 
 // auto generated forward declare list
@@ -19,6 +22,7 @@ class ItemInstance;
 struct AutoPlaceTarget;
 struct ContainerScreenActionResult;
 struct ContainerSimulationSplitStack;
+struct ContainerValidationResult;
 struct ContainerValidationSlotData;
 struct FullContainerName;
 struct ItemTransferAmount;
@@ -223,6 +227,24 @@ public:
         ::std::unique_ptr<::IContainerTransfer>&&                                 containerTransferInterface,
         ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> predictiveContainers
     );
+
+    MCNAPI ::ContainerScreenActionResult _tryTransfer(
+        ::ItemTransferType const             transferType,
+        ::ContainerValidationSlotData const& srcSlot,
+        ::ContainerValidationSlotData const& dstSlot,
+        ::ItemTransferAmount const           transferAmount,
+        ::ContainerScreenTransferBehaviour   transferBehaviour
+    );
+
+    MCNAPI ::ContainerScreenActionResult _tryTransferSpecial(
+        ::ContainerValidationSlotData const& srcSlot,
+        ::ItemTransferAmount const           transferAmount,
+        ::ItemSpecialLocation                location
+    );
+
+    MCNAPI ::ContainerScreenActionResult _updateCurrentScope(::ContainerScreenActionResult result);
+
+    MCNAPI ::ContainerScreenActionResult _updateCurrentScope(::ContainerValidationResult result);
 #endif
     // NOLINTEND
 

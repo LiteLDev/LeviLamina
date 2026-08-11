@@ -15,7 +15,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onMessageRecieved(::std::string const&) /*override*/;
+    virtual void onMessageRecieved(::std::string const& message) /*override*/;
     // NOLINTEND
 
 public:

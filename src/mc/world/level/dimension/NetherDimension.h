@@ -39,21 +39,23 @@ public:
 
     virtual bool mayRespawnViaBed() const /*override*/;
 
-    virtual ::Vec3 translatePosAcrossDimension(::Vec3 const&, ::DimensionType) const /*override*/;
+    virtual ::Vec3 translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const /*override*/;
 
     virtual ::std::unique_ptr<::WorldGenerator>
-    createGenerator(::br::worldgen::StructureSetRegistry const&) /*override*/;
+    createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
-    virtual bool levelChunkNeedsUpgrade(::LevelChunk const&) const /*override*/;
+    virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const /*override*/;
 
-    virtual void upgradeLevelChunk(::ChunkSource&, ::LevelChunk&, ::LevelChunk&) /*override*/;
+    virtual void upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk) /*override*/;
 
-    virtual void fixWallChunk(::ChunkSource&, ::LevelChunk&) /*override*/;
+    virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
-    virtual void _upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion) /*override*/;
+    virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
-    virtual ::std::unique_ptr<::ChunkSource>
-        _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource>, ::StorageVersion) /*override*/;
+    virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
+        ::std::unique_ptr<::ChunkSource> storageSource,
+        ::StorageVersion                 levelVersion
+    ) /*override*/;
     // NOLINTEND
 
 public:

@@ -58,6 +58,8 @@ public:
         ::BlockActorType                               blockActorType,
         ::SignTextSide                                 signSide
     );
+
+    MCAPI void _setMessageToSign(::std::string message);
     // NOLINTEND
 
 public:

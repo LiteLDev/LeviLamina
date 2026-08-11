@@ -94,7 +94,7 @@ public:
 
     virtual bool isSlotDisabled(int slot) const;
 
-    virtual void refreshContainer(bool);
+    virtual void refreshContainer(bool fullRefresh);
 
     virtual ::Container* _getContainer() const;
 
@@ -190,7 +190,7 @@ public:
 
     MCFOLD bool $isSlotDisabled(int slot) const;
 
-    MCFOLD void $refreshContainer(bool);
+    MCFOLD void $refreshContainer(bool fullRefresh);
 
     MCFOLD int $_getContainerOffset() const;
 

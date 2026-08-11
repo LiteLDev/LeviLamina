@@ -27,7 +27,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool* getParamStorageIsSet(::Command* cmd, int index);
+
+    MCAPI static void* getParamStorageValue(::Command* cmd, int index);
     // NOLINTEND
 
 public:

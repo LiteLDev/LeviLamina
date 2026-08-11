@@ -28,12 +28,20 @@ public:
     virtual bool test(::Block const& block, ::IRandom&) const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
+
+    virtual ~TagMatch() /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::br::worldgen::processors::BlockRules::TagMatch from(::std::string_view tag);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

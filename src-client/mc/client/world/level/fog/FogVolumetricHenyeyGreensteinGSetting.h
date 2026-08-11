@@ -13,9 +13,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FogVolumetricHenyeyGreensteinGSetting();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit FogVolumetricHenyeyGreensteinGSetting(::Core::Keyframes<float, float> henyeyGreensteinG);
+
     MCAPI ~FogVolumetricHenyeyGreensteinGSetting();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

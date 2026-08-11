@@ -6,6 +6,7 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/SceneType.h"
 #include "mc/client/gui/StoreNavigationOrigin.h"
+#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MarketplacePassTabIndex.h"
 #include "mc/client/gui/screens/controllers/PurchaseEnabledScreenController.h"
 #include "mc/client/store/iap/transactions/TransactionStatus.h"
@@ -88,6 +89,16 @@ public:
         ::StoreNavigationOrigin                              origin,
         ::sidebar::navigationLayout::Type                    sidebarLayoutType
     );
+
+    MCAPI ::ui::ViewRequest _changeTabTo(::MarketplacePassTabIndex tabIndex);
+
+    MCAPI ::std::string const _getMarketplacePassOfferPrice();
+
+    MCAPI ::std::string const _getMarketplacePassOfferString(::std::string const& locKey);
+
+    MCAPI bool _isCsbSubscribed() const;
+
+    MCAPI bool _isRealmsPlusSubscriptionActive() const;
     // NOLINTEND
 
 public:

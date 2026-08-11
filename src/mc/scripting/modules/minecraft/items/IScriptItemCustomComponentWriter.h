@@ -31,7 +31,10 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
-    tryRegisterComponentV1(::HashedString const&, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&) = 0;
+    tryRegisterComponentV1(
+        ::HashedString const&                                         componentName,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
+    ) = 0;
 
     virtual ::Scripting::Result<
         void,
@@ -40,7 +43,10 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
-    tryRegisterComponent(::HashedString const&, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&) = 0;
+    tryRegisterComponent(
+        ::HashedString const&                                         componentName,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
+    ) = 0;
     // NOLINTEND
 
 public:

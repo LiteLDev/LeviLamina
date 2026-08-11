@@ -245,7 +245,7 @@ public:
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int frame) /*override*/;
 
     virtual bool canBeCharged() const /*override*/;
 
@@ -286,6 +286,13 @@ public:
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
     MCAPI float getMovementModifier() const;
+
+    MCAPI void init(
+        ::SharedTypes::v1_26_30::ItemDocument&&         data,
+        ::SemVersion const&                             documentVersion,
+        ::std::optional<::LegacyEventItemComponentData> legacyEventData,
+        ::Experiments const&                            experiments
+    );
     // NOLINTEND
 
 public:

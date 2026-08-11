@@ -21,6 +21,7 @@ namespace Bedrock::Threading { class Mutex; }
 namespace GeometryAtlas { class IItemTile; }
 namespace GeometryAtlas { class IPaperDollTile; }
 namespace GeometryAtlas { class IRenderContext; }
+namespace GeometryAtlas { struct AllocateAtlasPayload; }
 namespace GeometryAtlas { struct RenderableUpdateCommand; }
 namespace GeometryAtlas { struct TileDefinition; }
 namespace dragon::atlas { class IAtlasHandle; }
@@ -146,12 +147,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::shared_ptr<::GeometryAtlas::IItemTile>
-    createItem(::GeometryAtlas::TileDefinition const&) /*override*/;
+    createItem(::GeometryAtlas::TileDefinition const& definition) /*override*/;
 
     virtual ::std::shared_ptr<::GeometryAtlas::IPaperDollTile>
-    createDoll(::GeometryAtlas::TileDefinition const&) /*override*/;
+    createDoll(::GeometryAtlas::TileDefinition const& definition) /*override*/;
 
-    virtual void trySubmitUpdates(::GeometryAtlas::IRenderContext&) /*override*/;
+    virtual void trySubmitUpdates(::GeometryAtlas::IRenderContext& context) /*override*/;
 
     virtual bool hasAnyUpdates() const /*override*/;
 
@@ -162,6 +163,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AtlasImpl();
+
+    MCAPI void
+    _processCommand(::GeometryAtlas::AtlasImpl::CommandArgs& args, ::GeometryAtlas::AllocateAtlasPayload&& payload);
     // NOLINTEND
 
 public:

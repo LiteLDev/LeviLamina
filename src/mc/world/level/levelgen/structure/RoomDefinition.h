@@ -13,4 +13,12 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mIsSource;
     ::ll::TypedStorage<4, 4, int>                                                 mScanIndex;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool findSource(int scanIndex);
+
+    MCAPI void setConnection(uchar const& direction, ::std::shared_ptr<::RoomDefinition> definition);
+    // NOLINTEND
 };

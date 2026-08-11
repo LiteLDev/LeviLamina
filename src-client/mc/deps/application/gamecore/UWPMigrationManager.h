@@ -67,9 +67,27 @@ public:
         // NOLINTBEGIN
         virtual ~MoveOperation() = default;
 
-        virtual ::Core::Result migrate(bool) const = 0;
+        virtual ::Core::Result migrate(bool forceCritical) const = 0;
 
         virtual void cleanup() const = 0;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI MoveOperation(
+            bool                                       critical,
+            uchar                                      maxRetries,
+            ::Core::PathBuffer<::std::string> const&   srcPath,
+            ::Core::PathBuffer<::std::string> const&   dstPath,
+            ::UWPMigrationManager::MoveOperation::Type opType
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
         // NOLINTEND
 
     public:
@@ -98,7 +116,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ::Core::Result migrate(bool) const /*override*/;
+        virtual ::Core::Result migrate(bool forceCritical) const /*override*/;
 
         virtual void cleanup() const /*override*/;
         // NOLINTEND
@@ -114,7 +132,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ::Core::Result migrate(bool) const /*override*/;
+        virtual ::Core::Result migrate(bool forceCritical) const /*override*/;
 
         virtual void cleanup() const /*override*/;
         // NOLINTEND

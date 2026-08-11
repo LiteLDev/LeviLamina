@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/DiskAccessDiagnostics.h"
+#include "mc/deps/core/file/WriteOperation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -88,6 +89,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit DiskAccessTracker(::std::unique_ptr<::Core::DiskAccessDiagnostics> diagnostics);
+
+    MCNAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation writeOperation, ::Core::PathView path);
 
 #ifdef LL_PLAT_C
     MCNAPI void _computeTrackerStats(

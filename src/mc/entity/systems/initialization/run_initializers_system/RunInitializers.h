@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void tick(::EntityRegistry&) /*override*/;
+    virtual void tick(::EntityRegistry& registry) /*override*/;
 
     virtual void singleTick(::EntityRegistry& registry, ::EntityContext& entity) /*override*/;
 

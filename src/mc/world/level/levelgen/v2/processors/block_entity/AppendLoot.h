@@ -28,6 +28,14 @@ public:
         /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
+
+    virtual ~AppendLoot() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -19,6 +19,12 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContentViews>>           mTexturePackViews;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContentViews>>           mBehaviorPackViews;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~WorldPacks();
+    // NOLINTEND
 };
 
 } // namespace World

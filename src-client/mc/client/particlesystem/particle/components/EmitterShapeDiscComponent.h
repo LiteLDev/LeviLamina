@@ -26,13 +26,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
+    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
 
-    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
+    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
 
-    virtual void parseJson(::ConstDeserializeDataParams const&) /*override*/;
+    virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
 
-    virtual void applyPreNormalizationModifiers(::Vec3&, ::RenderParams&) /*override*/;
+    virtual void applyPreNormalizationModifiers(::Vec3& direction, ::RenderParams& renderParams) /*override*/;
     // NOLINTEND
 
 public:

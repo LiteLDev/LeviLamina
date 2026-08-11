@@ -19,6 +19,7 @@ class PackAccessStrategy;
 class PackManifest;
 class ResourceLoadManager;
 class ResourcePackManager;
+namespace Json { class Value; }
 // clang-format on
 
 class I18nImpl : public ::I18n {
@@ -75,87 +76,110 @@ public:
     // NOLINTBEGIN
     virtual void clearLanguages() /*override*/;
 
-    virtual ::std::vector<::std::string> findAvailableLanguages(::ResourcePackManager&) /*override*/;
+    virtual ::std::vector<::std::string>
+    findAvailableLanguages(::ResourcePackManager& resourcePackManager) /*override*/;
 
     virtual ::std::unordered_map<::std::string, ::std::string>
-    findAvailableLanguageNames(::ResourcePackManager&) /*override*/;
+    findAvailableLanguageNames(::ResourcePackManager& resourcePackManager) /*override*/;
 
     virtual ::Bedrock::Threading::Async<void> loadLanguages(
-        ::ResourcePackManager&,
-        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>,
-        ::std::string const&
+        ::ResourcePackManager&                               resourcePackManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
+        ::std::string const&                                 initLang
     ) /*override*/;
 
-    virtual void loadAllLanguages(::ResourcePackManager&) /*override*/;
+    virtual void loadAllLanguages(::ResourcePackManager& resourcePackManager) /*override*/;
 
-    virtual ::std::vector<::std::string> getLanguageCodesFromPack(::PackAccessStrategy const&) /*override*/;
-
-    virtual void loadLanguageKeywordsFromPack(::PackManifest const&, ::PackAccessStrategy const&) /*override*/;
+    virtual ::std::vector<::std::string>
+    getLanguageCodesFromPack(::PackAccessStrategy const& accessStrategy) /*override*/;
 
     virtual void loadLanguageKeywordsFromPack(
-        ::PackManifest const&,
-        ::PackAccessStrategy const&,
-        ::std::vector<::std::string> const&,
-        ::std::optional<::std::vector<::std::string>> const&
+        ::PackManifest const&       manifest,
+        ::PackAccessStrategy const& accessStrategy
+    ) /*override*/;
+
+    virtual void loadLanguageKeywordsFromPack(
+        ::PackManifest const&                                manifest,
+        ::PackAccessStrategy const&                          accessStrategy,
+        ::std::vector<::std::string> const&                  languageCodes,
+        ::std::optional<::std::vector<::std::string>> const& additionalLocKeys
     ) /*override*/;
 
     virtual void appendLanguageStringsFromPack(
-        ::PackManifest const&,
-        ::std::multimap<::std::string, ::std::pair<::std::string, ::std::string>> const&
+        ::PackManifest const&                                                            manifest,
+        ::std::multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& localizationMapping
     ) /*override*/;
 
     virtual ::std::unordered_map<::std::string, ::std::string>
-    getLanguageKeywordsFromPack(::PackManifest const&, ::std::string const&) /*override*/;
+    getLanguageKeywordsFromPack(::PackManifest const& manifest, ::std::string const& keyword) /*override*/;
 
     virtual void loadLangaugesByLocale(
-        ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const&
+        ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& storeLocalization
     ) /*override*/;
 
     virtual void appendAdditionalTranslations(
-        ::std::unordered_map<::std::string, ::std::string> const&,
-        ::std::string const&
+        ::std::unordered_map<::std::string, ::std::string> const& translations,
+        ::std::string const&                                      keyPrefix
     ) /*override*/;
 
-    virtual void appendLanguageStrings(::PackAccessStrategy*) /*override*/;
+    virtual void appendLanguageStrings(::PackAccessStrategy* accessStrategy) /*override*/;
 
-    virtual void addI18nObserver(::I18nObserver&) /*override*/;
+    virtual void addI18nObserver(::I18nObserver& observer) /*override*/;
 
-    virtual void chooseLanguage(::std::string const&) /*override*/;
+    virtual void chooseLanguage(::std::string const& code) /*override*/;
 
     virtual ::std::string
-    get(::std::string const&,
-        ::std::vector<::std::string> const&,
-        ::std::shared_ptr<::Localization const> const) /*override*/;
+    get(::std::string const&                          id,
+        ::std::vector<::std::string> const&           params,
+        ::std::shared_ptr<::Localization const> const locale) /*override*/;
 
-    virtual ::std::string get(::std::string const&, ::std::shared_ptr<::Localization const> const) /*override*/;
+    virtual ::std::string
+    get(::std::string const& langString, ::std::shared_ptr<::Localization const> const locale) /*override*/;
 
-    virtual ::std::string getPackKeywordValue(::PackManifest const&, ::std::string const&) /*override*/;
+    virtual ::std::string getPackKeywordValue(::PackManifest const& manifest, ::std::string const& key) /*override*/;
 
-    virtual ::std::string getPackKeywordValueForTelemetry(::PackManifest const&, ::std::string const&) /*override*/;
+    virtual ::std::string
+    getPackKeywordValueForTelemetry(::PackManifest const& manifest, ::std::string const& key) /*override*/;
 
-    virtual bool hasPackKeyEntry(::PackManifest const&, ::std::string const&) /*override*/;
+    virtual bool hasPackKeyEntry(::PackManifest const& manifest, ::std::string const& key) /*override*/;
 
     virtual ::std::vector<::std::string> const& getSupportedLanguageCodes() /*override*/;
 
-    virtual ::std::string const& getLanguageName(::std::string const&) /*override*/;
+    virtual ::std::string const& getLanguageName(::std::string const& code) /*override*/;
 
-    virtual ::std::shared_ptr<::Localization const> const getLocaleFor(::std::string const&) /*override*/;
+    virtual ::std::shared_ptr<::Localization const> const getLocaleFor(::std::string const& code) /*override*/;
 
-    virtual ::std::string const& getLocaleCodeFor(::std::string const&) /*override*/;
+    virtual ::std::string const& getLocaleCodeFor(::std::string const& code) /*override*/;
 
     virtual ::gsl::not_null<::std::shared_ptr<::Localization const>> getCurrentLanguage() /*override*/;
 
     virtual bool languageSupportsHypenSplitting() /*override*/;
 
-    virtual ::std::string getLocalizedAssetFileWithFallback(::std::string const&, ::std::string const&) /*override*/;
+    virtual ::std::string getLocalizedAssetFileWithFallback(
+        ::std::string const& fileNamePrefix,
+        ::std::string const& fileNameSuffix
+    ) /*override*/;
 
-    virtual bool isPackKeyword(::std::string const&) /*override*/;
+    virtual bool isPackKeyword(::std::string const& key) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI I18nImpl();
+
+    MCAPI void _chooseLanguage(::std::shared_ptr<::ImmutableLocalization> chosen, ::I18nImpl::NotifyMode notify);
+
+    MCAPI void _findAvailableLanguages(::Json::Value const& root, ::std::vector<::std::string>& destination);
+
+    MCAPI ::std::shared_ptr<::ImmutableLocalization> _findLocaleFor(::std::string const& code);
+
+    MCAPI ::std::string _generatePackKeyPrefix(::PackManifest const& manifest);
+
+    MCAPI ::std::string& _getLocaleCodeFor(::std::string const& code);
+
+    MCAPI ::gsl::not_null<::std::shared_ptr<::ImmutableLocalization>>
+    _getPackKeywordLocale(::std::string const& langCode);
     // NOLINTEND
 
 public:

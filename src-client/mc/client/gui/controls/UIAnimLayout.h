@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class UIControl;
+class UIResolvedDef;
 // clang-format on
 
 class UIAnimLayout : public ::UIAnim {
@@ -29,13 +30,29 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    UIAnimLayout();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::shared_ptr<::UIAnim> clone() /*override*/;
 
-    virtual bool tick(::UIControl&, float const) /*override*/;
+    virtual bool tick(::UIControl& ownerControl, float const deltaTime) /*override*/;
 
-    virtual void _reset(::UIControl&) /*override*/;
+    virtual void _reset(::UIControl& ownerControl) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI UIAnimLayout(::UIResolvedDef const& def, ::UIAnimLayout::ApplyTo applyTo);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

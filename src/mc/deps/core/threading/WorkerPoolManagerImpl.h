@@ -55,8 +55,11 @@ public:
     // NOLINTBEGIN
     virtual void init() /*override*/;
 
-    virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>
-    createWorkerPool(::std::string_view, ::Core::Profile::ThreadFrameType, ::WorkerPoolConfig const&) /*override*/;
+    virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> createWorkerPool(
+        ::std::string_view               name,
+        ::Core::Profile::ThreadFrameType frameType,
+        ::WorkerPoolConfig const&        config
+    ) /*override*/;
 
     virtual void tick() /*override*/;
     // NOLINTEND

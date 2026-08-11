@@ -26,6 +26,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addSoundByName(::std::string const& name);
+
+    MCAPI void setActorDefByName(::std::string const& name);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/network/packet/SetTitlePacketPayload.h"
 #include "mc/server/commands/CommandMessage.h"
 #include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/standard/MessagingCommand.h"
@@ -12,6 +13,8 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class EntityContext;
+class Level;
 class Player;
 // clang-format on
 
@@ -41,12 +44,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _sendEvent(
+        ::Level&                                 level,
+        ::std::string const&                     sender,
+        ::std::vector<::EntityContext> const&    targets,
+        ::std::string const&                     title,
+        ::std::optional<::std::string> const&    filteredTitle,
+        ::SetTitlePacketPayload::TitleType const titleType
+    );
+
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 

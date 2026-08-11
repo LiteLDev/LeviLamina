@@ -46,7 +46,7 @@ MCAPI void log_va(
     char*                     argptr
 );
 
-MCAPI int rakDebugLog(char const*, ...);
+MCFOLD int rakDebugLog(char const* fstr, ...);
 
 MCAPI void update();
 // NOLINTEND

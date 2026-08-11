@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void render(::ScreenContext&) /*override*/;
+    virtual void render(::ScreenContext& screenContext) /*override*/;
     // NOLINTEND
 
 public:

@@ -9,6 +9,7 @@ class BuoyancyComponent;
 class CollisionBoxComponent;
 class DimensionStateComponent;
 class EntityId;
+class EntityRegistry;
 class FreezingComponent;
 class HitboxComponent;
 class JumpControlComponent;
@@ -251,6 +252,14 @@ public:
     StorageStorage& operator=(StorageStorage const&);
     StorageStorage(StorageStorage const&);
     StorageStorage();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI static ::MovementDataExtractionUtility::StorageStorage& getOrInit(::EntityRegistry& registry);
+#endif
+    // NOLINTEND
 };
 
 } // namespace MovementDataExtractionUtility

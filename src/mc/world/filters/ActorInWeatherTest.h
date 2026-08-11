@@ -38,9 +38,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool setup(::FilterTest::Definition const&, ::FilterInputs const&) /*override*/;
+    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
 
-    virtual bool evaluate(::FilterContext const&) const /*override*/;
+    virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
     virtual ::std::string_view getName() const /*override*/;
 

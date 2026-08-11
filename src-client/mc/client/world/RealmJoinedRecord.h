@@ -26,9 +26,9 @@ public:
     // NOLINTBEGIN
     virtual ::World::WorldJoinedRecordType getWorldJoinedRecordType() const /*override*/;
 
-    virtual bool operator==(::World::WorldJoinedRecord const&) const /*override*/;
+    virtual bool operator==(::World::WorldJoinedRecord const& other) const /*override*/;
 
-    virtual void serializeExtended(::Json::Value&) const /*override*/;
+    virtual void serializeExtended(::Json::Value& outJsonValue) const /*override*/;
     // NOLINTEND
 
 public:

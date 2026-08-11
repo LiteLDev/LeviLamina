@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 
+// auto generated forward declare list
+// clang-format off
+class StoreCatalogItem;
+class WorldTemplatePackManifest;
+// clang-format on
+
 namespace World {
 
 struct OwnedWorldTemplateData {
@@ -34,6 +40,15 @@ public:
     MCAPI ::World::OwnedWorldTemplateData& operator=(::World::OwnedWorldTemplateData const&);
 
     MCAPI ~OwnedWorldTemplateData();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::string
+    _formatPackKeyword(::std::string const& rawName, ::WorldTemplatePackManifest const& manifest);
+
+    MCAPI static ::World::OwnedWorldTemplateData fromStoreCatalogItem(::StoreCatalogItem const& itemData);
     // NOLINTEND
 
 public:

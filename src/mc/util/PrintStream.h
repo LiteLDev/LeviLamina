@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     virtual ~PrintStream() = default;
 
-    virtual void print(::std::string const&);
+    virtual void print(::std::string const& s);
     // NOLINTEND
 
 public:

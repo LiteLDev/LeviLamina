@@ -33,18 +33,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual void _write(::BinaryStream&) const /*override*/;
-#else // LL_PLAT_C
     virtual void _write(::BinaryStream& stream) const /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) /*override*/;
-#else // LL_PLAT_C
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:

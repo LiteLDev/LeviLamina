@@ -36,9 +36,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void render(::ScreenContext&, ::Actor&, float, float, float, float, float, float) /*override*/;
+    virtual void render(
+        ::ScreenContext& screenContext,
+        ::Actor&         entity,
+        float            time,
+        float            r,
+        float            bob,
+        float            yRot,
+        float            xRot,
+        float            scale
+    ) /*override*/;
 
-    virtual void setupAnim(::Actor&, float, float, float, float, float, float);
+    virtual void setupAnim(::Actor& entity, float time, float r, float bob, float yRot, float xRot, float scale);
     // NOLINTEND
 
 public:

@@ -103,6 +103,8 @@ public:
 
     MCNAPI void fail(::gametest::GameTestError error, bool canRetry);
 
+    MCNAPI void finish(bool canRetry);
+
     MCNAPI void removeListener(::std::shared_ptr<::gametest::IGameTestListener> listener);
 
     MCNAPI void runCallbacksOnFinish();

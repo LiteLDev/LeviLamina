@@ -97,6 +97,11 @@ public:
         ::ResourcePackManager const&        packManager,
         ::Gameface::TemporaryTextureHolder& textureHolder
     );
+
+    MCAPI bool _sendFetchAsync(
+        ::std::string_view                                                            id,
+        ::std::pair<::Gameface::ResourceRequest, ::Gameface::ResourceResponse> const& reqResponsePair
+    );
     // NOLINTEND
 
 public:

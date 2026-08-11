@@ -15,6 +15,7 @@
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemTag.h"
 #include "mc/world/item/registry/ItemRegistrationOrder.h"
+#include "mc/world/item/registry/ItemRegistryRef.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,10 +31,12 @@ class LinkedAssetValidator;
 class ResourcePackManager;
 struct ItemData;
 struct ItemIconInfo;
+struct ItemParseContext;
 struct ItemRegistryComplexAlias;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Bedrock::Threading { class Mutex; }
 namespace ItemLoaderTraits { struct Loader; }
+namespace Puv { class Input; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -158,7 +161,32 @@ public:
     // NOLINTBEGIN
     MCAPI ItemRegistry();
 
+    MCAPI void _initServerData(
+        ::std::vector<::ItemRegistry::LoadedItemAsset> const& allItemAssets,
+        ::ItemParseContext&                                   parseContext,
+        ::IMinecraftEventing&                                 eventing
+    );
+
+#ifdef LL_PLAT_C
+    MCAPI void _movePreRegistryToMainRegistry();
+
+    MCAPI void _populateVanillaItemVersionMap(
+        ::ItemRegistry::LoadedItemAsset const& loadedItemAsset,
+        ::ItemParseContext&                    parseContext
+    );
+#endif
+
     MCAPI void _preRegisterItem(::HashedString const& itemName, ::SharedPtr<::Item> item);
+
+#ifdef LL_PLAT_C
+    MCAPI ::WeakPtr<::Item>
+    _registerOrPromoteItem(::HashedString const& itemName, bool isComponentBased, ::cereal::ReflectionCtx const& ctx);
+#endif
+
+    MCAPI ::ItemRegistry::ParsedName _tryParseItemName(::Puv::Input const& input);
+
+    MCAPI ::ItemRegistryRef::LoadedItem
+    _tryRegisterAndInitItem(::ItemRegistry::LoadedItemAsset const& loadedItemAsset, ::ItemParseContext& parseContext);
 
     MCAPI void alterAvailableCreativeItems(::ActorInfoRegistry* registry, ::LevelData& levelData);
 
@@ -166,6 +194,8 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void findAllAttachableDefinitions();
+
+    MCAPI void finishedRegistration();
 #endif
 
     MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
@@ -174,6 +204,8 @@ public:
     MCFOLD ::WeakPtr<::Item> getItem(::HashedString const& id);
 
     MCAPI ::WeakPtr<::Item> getItem(short id);
+
+    MCAPI ::std::pair<::HashedString, int> getNameFromAlias(::HashedString const& name, int aux) const;
 
 #ifdef LL_PLAT_C
     MCAPI void initClient(
@@ -215,6 +247,8 @@ public:
         ::BaseGameVersion const& fromVersion
     );
 
+    MCAPI void registerValidatorIdentifier(::std::string const& str);
+
     MCAPI uint64 remapToFullLegacyNameByHash(uint64 newHash);
 
     MCAPI uint64 remapToLegacyNameByHash(uint64 newHash);
@@ -226,6 +260,18 @@ public:
     MCAPI ::std::vector<::std::string> validateServerItemComponents(::std::vector<::ItemData> const& items);
 
     MCAPI ~ItemRegistry();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static ::std::vector<::ItemRegistry::LoadedItemAsset> _loadAllItemAssets(
+        ::ResourcePackManager const&   resourcePackManager,
+        ::Experiments const&           experiments,
+        ::cereal::ReflectionCtx const& ctx
+    );
+#endif
     // NOLINTEND
 
 public:

@@ -18,7 +18,7 @@ class ItemTileImpl : public ::GeometryAtlas::IItemTile, public ::GeometryAtlas::
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void submitUpdate(::GeometryAtlas::ItemPayload&&) /*override*/;
+    virtual void submitUpdate(::GeometryAtlas::ItemPayload&& payload) /*override*/;
 
     virtual uint getUserID() const /*override*/;
 

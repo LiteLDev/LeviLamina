@@ -22,6 +22,8 @@ class BlockStateCommandParam;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Scoreboard;
+struct ScoreInfo;
 // clang-format on
 
 class NewExecuteCommand : public ::Command {
@@ -76,6 +78,12 @@ public:
         // NOLINTEND
 
     public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static void setup(::CommandRegistry& registry);
+        // NOLINTEND
+
+    public:
         // virtual function thunks
         // NOLINTBEGIN
 
@@ -116,7 +124,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::ScoreInfo> _getScoreFromSelectorOnObjective(
+        ::Scoreboard const&               scoreboard,
+        ::CommandSelector<::Actor> const& selector,
+        ::std::string const&              objectiveName,
+        ::CommandOrigin const&            origin,
+        ::CommandOutput&                  output
+    ) const;
     // NOLINTEND
 
 public:

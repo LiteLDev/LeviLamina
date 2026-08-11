@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class StrictEntityContext;
+struct StateVectorComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -12,5 +14,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();
+
+    MCAPI static void freezeMovement(::StrictEntityContext&, ::StateVectorComponent& stateVector);
     // NOLINTEND
 };

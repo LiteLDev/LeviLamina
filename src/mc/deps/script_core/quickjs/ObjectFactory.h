@@ -34,7 +34,7 @@ public:
     virtual ::Scripting::StrongTypedObjectHandle<::Scripting::PromiseType> makePromise() /*override*/;
 
     virtual ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType>
-    makeDataBuffer(uchar const*, uint64, ::entt::meta_type const&) /*override*/;
+    makeDataBuffer(uchar const* data, uint64 size, ::entt::meta_type const& dataType) /*override*/;
     // NOLINTEND
 
 public:

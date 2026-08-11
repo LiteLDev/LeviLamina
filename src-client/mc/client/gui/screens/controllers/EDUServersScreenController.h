@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/ViewRequest.h"
+#include "mc/client/gui/screens/controllers/EduRefreshType.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/BasicLockbox.h"
@@ -19,6 +20,7 @@ class EDUAddServerScreenController;
 class EDUPasscodeEntryScreenController;
 class IContentManager;
 class PlayScreenModel;
+class UIPropertyBag;
 struct PackManagerContentSource;
 struct ScreenEvent;
 namespace Bedrock::Threading { class Mutex; }
@@ -99,6 +101,30 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EDUServersScreenController(::std::shared_ptr<::PlayScreenModel> model);
+
+    MCAPI void _closeAddServerModal();
+
+    MCAPI void _closePasscodeEntryModal();
+
+    MCAPI void _closeSharePopup();
+
+    MCAPI ::std::optional<::Social::EduDedicatedServerDetails> _getServerDetails(::UIPropertyBag& bag) const;
+
+    MCAPI uint64 _getTileIndex(::UIPropertyBag& bag) const;
+
+    MCAPI void _launchShareUri(::std::string const& uri, ::std::string const& toastMsg, ::std::string const& eventName);
+
+    MCAPI void _refreshServerInfo(::std::vector<::std::string> serverIds, ::Social::EduRefreshType const& refreshType);
+
+    MCAPI void _requestAddServer(::std::string const& serverId);
+
+    MCAPI void _requestJoinServer(::Social::EduDedicatedServerDetails const& details, ::std::string const& passcode);
+
+    MCAPI void _showAddServerModal();
+
+    MCAPI void _showFetchErrorMessage(::Social::EduResponseError& error);
+
+    MCAPI void _showPasscodeEntryModal(::Social::EduDedicatedServerDetails const& details);
     // NOLINTEND
 
 public:

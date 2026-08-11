@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct CustomBiome;
+// clang-format on
+
 namespace Editor::ScriptModule {
 
 struct ScriptCustomBiomeConfig {
@@ -18,6 +23,12 @@ public:
     ScriptCustomBiomeConfig& operator=(ScriptCustomBiomeConfig const&);
     ScriptCustomBiomeConfig(ScriptCustomBiomeConfig const&);
     ScriptCustomBiomeConfig();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void addToMap(::std::map<::std::string, ::CustomBiome>& map) const;
+    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

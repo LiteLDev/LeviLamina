@@ -38,7 +38,7 @@ public:
     virtual ~CraftingContainerController() /*override*/;
 #endif
 
-    virtual ::ItemInstance const& getRecipeItem(int index) const = 0;
+    virtual ::ItemInstance const& getRecipeItem(int slot) const = 0;
 
 #ifdef LL_PLAT_S
     virtual void onRecipeSelected(::Recipe const*, uint64, bool);

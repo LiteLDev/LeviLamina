@@ -4,10 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/network/realms/RealmsAPI.h"
+#include "mc/client/realms/RealmsListState.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
+struct RealmsWorldInfo;
 namespace Realms { class RealmsList; }
 // clang-format on
 
@@ -35,6 +38,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit UnpairedRealmsListFacet(::std::shared_ptr<::Realms::RealmsList> realmsList);
+
+    MCAPI void forceFetchUnpairedRealmsList();
+
+    MCAPI ::std::optional<::RealmsAPI::Compatibility> getRealmsCompatibility() const;
+
+    MCAPI ::Realms::RealmsListState getState() const;
+
+    MCAPI ::std::vector<::RealmsWorldInfo> const& getWorldList() const;
     // NOLINTEND
 
 public:

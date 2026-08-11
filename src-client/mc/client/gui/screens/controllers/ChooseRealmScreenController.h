@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
+#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 #include "mc/client/gui/screens/controllers/SlotSelectedAction.h"
 
@@ -11,6 +12,7 @@
 // clang-format off
 class MainMenuScreenModel;
 struct RealmsWorldInfo;
+namespace Realms { struct Slot; }
 namespace Realms { struct World; }
 // clang-format on
 
@@ -59,6 +61,10 @@ public:
         ::SlotSelectedAction                     selectionAction,
         ::std::function<void()>                  onCancelCallback
     );
+
+    MCAPI ::Realms::Slot _getSlotAt(int index);
+
+    MCAPI ::ui::ViewRequest _notifyCallback(::Realms::World world);
     // NOLINTEND
 
 public:

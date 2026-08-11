@@ -18,4 +18,10 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>            mPlayer;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorDamageSource>> mDamageSource;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~PlayerDamageEvent();
+    // NOLINTEND
 };

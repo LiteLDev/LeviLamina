@@ -57,7 +57,7 @@ public:
     // NOLINTBEGIN
     virtual ~SliderComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
@@ -80,7 +80,13 @@ public:
 
     MCAPI void _finalizeSliderBox();
 
+    MCAPI void _sendSliderChangeEvent(::ScreenInputContext& context, bool finalized);
+
+    MCAPI void _setSelected(bool selected);
+
     MCAPI void _setSliderValue(float value);
+
+    MCAPI void _updateSliderFromPosition(::glm::vec2 const& pointerPosition, bool finalize);
 
     MCAPI void _updateSliderFromStepSize(int stepSize);
 

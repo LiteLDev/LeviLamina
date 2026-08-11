@@ -11,6 +11,8 @@
 
 // auto generated forward declare list
 // clang-format off
+struct JSContext;
+struct JSModuleDef;
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class IBreakpointValidator; }
 namespace Scripting { class IDebuggerController; }
@@ -72,75 +74,79 @@ public:
     virtual void moveToThread() /*override*/;
 
     virtual ::std::optional<::Scripting::ScriptContext> createContext(
-        ::Scripting::ModuleBindingBundle&&,
-        ::Scripting::IDependencyLoader*,
-        ::Scripting::IPrinter*,
-        ::Scripting::ContextConfig const&
+        ::Scripting::ModuleBindingBundle&& bindings,
+        ::Scripting::IDependencyLoader*    loader,
+        ::Scripting::IPrinter*             printer,
+        ::Scripting::ContextConfig const&  config
     ) /*override*/;
 
-    virtual void destroyContext(::Scripting::ContextId) /*override*/;
+    virtual void destroyContext(::Scripting::ContextId contextId) /*override*/;
 
     virtual ::Scripting::ResultAny runString(
-        ::Scripting::ContextId,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::optional<::Scripting::Privilege>
+        ::Scripting::ContextId                  contextId,
+        ::std::string const&                    scriptName,
+        ::std::string const&                    scriptData,
+        ::std::optional<::Scripting::Privilege> privilege
     ) /*override*/;
 
     virtual ::Scripting::ResultAny call(
-        ::Scripting::ContextId,
-        ::Scripting::TypedObjectHandle<::Scripting::ClosureType>,
-        ::entt::meta_any*,
-        uint,
-        ::entt::meta_type const&,
-        ::std::optional<::Scripting::Privilege>
+        ::Scripting::ContextId                                   contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::ClosureType> closureHandle,
+        ::entt::meta_any*                                        args,
+        uint                                                     argc,
+        ::entt::meta_type const&                                 expectedReturnType,
+        ::std::optional<::Scripting::Privilege>                  privilege
     ) /*override*/;
 
     virtual ::Scripting::ResultAny resolve(
-        ::Scripting::ContextId,
-        ::Scripting::TypedObjectHandle<::Scripting::PromiseType>,
-        ::entt::meta_any&
+        ::Scripting::ContextId                                   contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise,
+        ::entt::meta_any&                                        arg
     ) /*override*/;
 
     virtual ::Scripting::ResultAny reject(
-        ::Scripting::ContextId,
-        ::Scripting::TypedObjectHandle<::Scripting::PromiseType>,
-        ::entt::meta_any&
+        ::Scripting::ContextId                                   contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise,
+        ::entt::meta_any&                                        arg
     ) /*override*/;
 
-    virtual ::Scripting::FutureStatus
-        getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const
-        /*override*/;
+    virtual ::Scripting::FutureStatus getFutureStatus(
+        ::Scripting::ContextId                                  contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle
+    ) const /*override*/;
 
     virtual ::Scripting::ResultAny getFutureResult(
-        ::Scripting::ContextId,
-        ::Scripting::TypedObjectHandle<::Scripting::FutureType>,
-        ::entt::meta_type const&
+        ::Scripting::ContextId                                  contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle,
+        ::entt::meta_type const&                                expectedResultType
     ) const /*override*/;
 
     virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
-        executeCoroutines(::std::optional<::Scripting::Privilege>) /*override*/;
+    executeCoroutines(::std::optional<::Scripting::Privilege> privilege) /*override*/;
 
     virtual bool hasPendingJobs() /*override*/;
 
-    virtual ::Scripting::IDebuggerController*
-    enableDebugger(::Scripting::IDebuggerTransport&, ::Scripting::IBreakpointValidator&) /*override*/;
+    virtual ::Scripting::IDebuggerController* enableDebugger(
+        ::Scripting::IDebuggerTransport&   transport,
+        ::Scripting::IBreakpointValidator& validator
+    ) /*override*/;
 
     virtual void disableDebugger() /*override*/;
 
     virtual void startProfiler() /*override*/;
 
     virtual void stopProfiler(
-        ::std::function<void(::std::string_view)>,
-        ::std::optional<::std::reference_wrapper<::std::string const>>
+        ::std::function<void(::std::string_view)>                      captureCb,
+        ::std::optional<::std::reference_wrapper<::std::string const>> savePathOpt
     ) /*override*/;
 
     virtual ::Scripting::RuntimeStats computeRuntimeStats() const /*override*/;
 
     virtual ::std::optional<::Scripting::TypeNameInfo>
-    getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const /*override*/;
+    getNameForType(::Scripting::ContextId contextId, ::entt::meta_type const& type, bool allowUnknownTypes) const
+        /*override*/;
 
-    virtual ::Scripting::IWatchdog* enableWatchdog(::Scripting::WatchdogSettings) /*override*/;
+    virtual ::Scripting::IWatchdog* enableWatchdog(::Scripting::WatchdogSettings settings) /*override*/;
 
     virtual void disableWatchdog() /*override*/;
 
@@ -159,6 +165,20 @@ public:
             ::std::string(::std::string_view const&, ::std::string const&, ::std::vector<::std::string> const&)>
             normalizerFn
     );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static int
+    _moduleImportAllowed(::JSContext* ctx, char const* baseName, char const* moduleName, void* opaque);
+
+    MCNAPI static ::JSModuleDef* _moduleLoader(::JSContext* ctx, char const* moduleName, void* opaque);
+
+    MCNAPI static char*
+    _moduleNameNormalizer(::JSContext* ctx, char const* baseName, char const* moduleName, void* opaque);
+
+    MCNAPI static void _onProfilerCapture(void* opaque, char const* capture);
     // NOLINTEND
 
 public:

@@ -89,7 +89,8 @@ public:
 
     virtual ::std::string getAdditionalScreenInfo() const /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
+        /*override*/;
 
     virtual int getScreenVersion() const /*override*/;
 
@@ -142,6 +143,8 @@ public:
         bool                                     fullscreen,
         bool                                     legacySyncOnly
     );
+
+    MCAPI void _init();
     // NOLINTEND
 
 public:

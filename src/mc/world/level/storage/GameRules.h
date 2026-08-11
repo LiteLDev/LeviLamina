@@ -127,6 +127,10 @@ public:
 
     MCAPI void setMarketplaceOverrides();
 #endif
+
+#ifdef LL_PLAT_S
+    MCAPI void setMarketplaceOverrides();
+#endif
     // NOLINTEND
 
 public:

@@ -9,7 +9,7 @@ class RealKeyboardProxy : public ::IKeyboardProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void feedText(::std::string const&) /*override*/;
+    virtual void feedText(::std::string const& text) /*override*/;
     // NOLINTEND
 
 public:

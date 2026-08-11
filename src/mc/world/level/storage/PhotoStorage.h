@@ -36,6 +36,10 @@ public:
     MCAPI explicit PhotoStorage(::Core::Path const& baseDir);
 
 #ifdef LL_PLAT_C
+    MCAPI bool _addValidFile(::Core::Path path);
+
+    MCAPI bool _isValidFile(::Core::Path file);
+
     MCAPI void getLoosePhotos(::Player& owner, ::std::vector<::Core::PathBuffer<::std::string>>& result);
 
     MCAPI ::Core::PathBuffer<::std::string> getPath(::PhotoStorageContainer const& container);

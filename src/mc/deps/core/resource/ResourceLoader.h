@@ -42,17 +42,13 @@ public:
         ::gsl::span<::std::string const> extensionList
     ) const = 0;
 
-#ifdef LL_PLAT_S
-    virtual bool load(::ResourceLocationPair const&, ::std::string&, ::gsl::span<::std::string const>) const;
-#else // LL_PLAT_C
     virtual bool load(
-        ::ResourceLocationPair const&    resourceLocation,
+        ::ResourceLocationPair const&    resourceLocationPair,
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensionList
     ) const;
-#endif
 
-    virtual bool loadText(::ResourceLocation const&, ::std::string&) const;
+    virtual bool loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
     virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const& resourceLocation) const = 0;
 
@@ -60,30 +56,30 @@ public:
     virtual ::mce::Image loadTexture(::ResourceLocation const& resourceLocation) const = 0;
 
 #endif
-    virtual bool isInStreamableLocation(::ResourceLocation const&) const;
+    virtual bool isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
 
-    virtual bool isInStreamableLocation(::ResourceLocation const&, ::gsl::span<::std::string const>) const;
+    virtual bool isInStreamableLocation(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const;
 
     virtual ::Core::PathBuffer<::std::string> getPath(::ResourceLocation const& resourceLocation) const;
 
     virtual ::Core::PathBuffer<::std::string>
-    getPath(::ResourceLocation const&, ::gsl::span<::std::string const>) const;
-
-    virtual ::Core::PathBuffer<::std::string> getPathContainingResource(::ResourceLocation const&) const;
+    getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const;
 
     virtual ::Core::PathBuffer<::std::string>
-    getPathContainingResource(::ResourceLocation const&, ::gsl::span<::std::string const>) const;
+    getPathContainingResource(::ResourceLocation const& resourceLocation) const;
 
-#ifdef LL_PLAT_S
-    virtual ::std::pair<int, ::std::string_view>
-    getPackStackIndexOfResource(::ResourceLocation const&, ::gsl::span<::std::string const>) const;
-#else // LL_PLAT_C
+    virtual ::Core::PathBuffer<::std::string> getPathContainingResource(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const;
+
     virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensionList
     ) const;
-#endif
-
     // NOLINTEND
 
 public:
@@ -101,26 +97,38 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $load(::ResourceLocationPair const&, ::std::string&, ::gsl::span<::std::string const>) const;
+    MCFOLD bool $load(
+        ::ResourceLocationPair const&    resourceLocationPair,
+        ::std::string&                   resourceStream,
+        ::gsl::span<::std::string const> extensionList
+    ) const;
 
-    MCFOLD bool $loadText(::ResourceLocation const&, ::std::string&) const;
+    MCFOLD bool $loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
-    MCFOLD bool $isInStreamableLocation(::ResourceLocation const&) const;
+    MCFOLD bool $isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
 
-    MCFOLD bool $isInStreamableLocation(::ResourceLocation const&, ::gsl::span<::std::string const>) const;
+    MCFOLD bool $isInStreamableLocation(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const;
 
     MCAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;
 
     MCFOLD ::Core::PathBuffer<::std::string>
-    $getPath(::ResourceLocation const&, ::gsl::span<::std::string const>) const;
-
-    MCFOLD ::Core::PathBuffer<::std::string> $getPathContainingResource(::ResourceLocation const&) const;
+    $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const;
 
     MCFOLD ::Core::PathBuffer<::std::string>
-    $getPathContainingResource(::ResourceLocation const&, ::gsl::span<::std::string const>) const;
+    $getPathContainingResource(::ResourceLocation const& resourceLocation) const;
 
-    MCAPI ::std::pair<int, ::std::string_view>
-    $getPackStackIndexOfResource(::ResourceLocation const&, ::gsl::span<::std::string const>) const;
+    MCFOLD ::Core::PathBuffer<::std::string> $getPathContainingResource(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const;
+
+    MCAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const;
 
 
     // NOLINTEND

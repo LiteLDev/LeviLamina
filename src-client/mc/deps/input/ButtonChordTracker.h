@@ -99,6 +99,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _raiseLongestChordSequences(::ButtonChordTracker::TrackerMappingAndState& trackerData, int controllerId);
+
     MCAPI void clearMapping(int controllerId);
 
     MCAPI void setMapping(::std::vector<::ChordButtonMapping> const& inputMapping, int controllerId);

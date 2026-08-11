@@ -53,20 +53,20 @@ public:
     ) /*override*/;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension&,
-        ::BiomeSource const&,
-        ::Random&,
-        ::ChunkPos const&,
+        ::Dimension&         generator,
+        ::BiomeSource const& biomeSource,
+        ::Random&            random,
+        ::ChunkPos const&    lc,
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
 
     virtual bool isFeatureChunk(
-        ::BiomeSource const&,
-        ::Random&,
-        ::ChunkPos const&,
-        uint,
-        ::IPreliminarySurfaceProvider const&,
-        ::Dimension const&
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    pos,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&                   dimension
     ) /*override*/;
     // NOLINTEND
 

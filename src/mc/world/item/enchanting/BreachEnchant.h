@@ -22,7 +22,7 @@ public:
 
     virtual float getDamageBonus(int, ::Actor const&, ::Actor const&) const /*override*/;
 
-    virtual float getAfterBreachArmorFraction(int, float const) const /*override*/;
+    virtual float getAfterBreachArmorFraction(int level, float const armorFraction) const /*override*/;
     // NOLINTEND
 
 public:

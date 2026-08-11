@@ -37,13 +37,21 @@ public:
 
     virtual bool isServer() const = 0;
 
-    virtual void closeNetworkConnection(::NetworkIdentifier const&) = 0;
+    virtual void closeNetworkConnection(::NetworkIdentifier const& id) = 0;
 
     virtual ::NetworkIdentifier getNetworkIdentifier() const = 0;
 
-    virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const&) = 0;
+    virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const& id) = 0;
 
     virtual void setDisableLanSignaling(bool disableLanSignaling) = 0;
+
+    virtual ~RemoteConnector() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

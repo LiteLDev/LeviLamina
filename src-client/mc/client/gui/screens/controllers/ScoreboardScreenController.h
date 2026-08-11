@@ -9,8 +9,11 @@
 // auto generated forward declare list
 // clang-format off
 class ClientInstanceScreenModel;
+class ResourceLocation;
 class UserDataScreenController;
 struct ActorUniqueID;
+struct PlayerListInfo;
+struct PlayerScore;
 struct ScoreboardCacheData;
 // clang-format on
 
@@ -43,6 +46,20 @@ public:
     MCAPI ScoreboardScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::std::function<void(::ActorUniqueID const&)>  navigateToPermissions
+    );
+
+    MCAPI ::PlayerListInfo _findPlayerListInfoForId(int64 playerId) const;
+
+    MCAPI ::std::string _getPermissionIcon(::ActorUniqueID playerId) const;
+
+    MCAPI ::ResourceLocation _getScoredPlayerIconInfo(int index) const;
+
+    MCAPI ::ResourceLocation _getUnscoredPlayerIconInfo(int index) const;
+
+    MCAPI void buildCacheFromDisplayInfo(
+        ::std::vector<::ScoreboardCacheData>&                         output,
+        ::std::vector<::PlayerScore> const&                           input,
+        ::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver
     );
 
     MCAPI bool isSidebarValid();

@@ -55,7 +55,7 @@ public:
     // NOLINTBEGIN
     virtual ~AnvilContainerManagerController() /*override*/ = default;
 
-    virtual void postInit(::std::weak_ptr<::ContainerManagerController>) /*override*/;
+    virtual void postInit(::std::weak_ptr<::ContainerManagerController> self) /*override*/;
 
     virtual void updatePreviewItem() /*override*/;
 
@@ -89,12 +89,12 @@ public:
     virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
 
     virtual ::CreateContainerItemScope
-    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
+    _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const&) /*override*/;
 
     virtual void _updateItemStackRequest(
         ::ContainerScreenRequestActionType,
-        ::ContainerScreenActionResult const&,
-        ::ItemStackRequestScope&
+        ::ContainerScreenActionResult const& result,
+        ::ItemStackRequestScope&             requestScope
     ) /*override*/;
     // NOLINTEND
 
@@ -105,6 +105,8 @@ public:
     MCNAPI explicit AnvilContainerManagerController(
         ::std::weak_ptr<::AnvilContainerManagerModel> containerManagerModel
     );
+
+    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
     MCNAPI bool _mayPickup();
 

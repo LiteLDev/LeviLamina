@@ -28,9 +28,12 @@ struct ActorBlockSyncMessage;
 struct AutoPlaceItem;
 struct AutoPlaceResult;
 struct CraftableCountingData;
+struct CreateContainerItemScope;
 struct ItemStateData;
 struct ItemTransferAmount;
+struct RecipeSearchResult;
 struct SelectedSlotInfo;
+struct ShapedRecipeTriggeredEvent;
 // clang-format on
 
 class CraftingContainerManagerController : public ::ContainerManagerController {
@@ -140,7 +143,7 @@ public:
 
     virtual int handleAutoPlaceStack(
         ::SlotData const&                     srcSlot,
-        ::ItemTakeType                        takeType,
+        ::ItemTakeType                        type,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     ) /*override*/;
@@ -170,6 +173,32 @@ public:
     MCNAPI explicit CraftingContainerManagerController(
         ::std::weak_ptr<::CraftingContainerManagerModel> containerManagerModel
     );
+
+    MCNAPI void _filterRecipes();
+
+    MCNAPI ::std::vector<::RecipeSearchResult>
+    _getRecipesForItem(::ItemInstance const& recipeItem, ::std::vector<::std::string> const& tags, bool);
+
+    MCNAPI void _handleItemCraftedEvents(
+        ::ItemInstance const&               resultItem,
+        ::std::vector<short> const&         ingredientIds,
+        ::ShapedRecipeTriggeredEvent const& shapedRecipeTriggeredEvent
+    );
+
+    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+
+    MCNAPI void _handleTransferCraftExtraResults(::std::vector<::ItemInstance>& allResults);
+
+    MCNAPI ::CreateContainerItemScope _makeCreateItemScopeCrafting(
+        ::SlotData const&              srcSlot,
+        ::ItemTransferAmount const&    takeAmount,
+        ::std::vector<::ItemInstance>& allResults
+    );
+
+    MCNAPI ::CreateContainerItemScope
+    _makeCreateItemScopeCreative(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount);
+
+    MCNAPI void _updateCraftingResultItem();
 
     MCNAPI bool
     autoCraftItem(::SlotData const& recipeSlot, ::ItemCraftType craftAmount, ::std::vector<::AutoPlaceItem> const&);

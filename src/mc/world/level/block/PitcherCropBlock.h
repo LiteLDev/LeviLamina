@@ -77,6 +77,8 @@ public:
     // NOLINTBEGIN
     MCAPI PitcherCropBlock(::std::string const& nameId, int id);
 
+    MCAPI bool _grow(::BlockSource& region, ::BlockPos const& pos, bool instantGrowth) const;
+
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 

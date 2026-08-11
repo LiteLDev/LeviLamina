@@ -49,6 +49,12 @@ public:
         ::std::shared_ptr<::Realms::RealmsPlayerList>       realmsPlayerList,
         ::std::shared_ptr<::Realms::RealmsPlayerManagement> realmsManagePlayer
     );
+
+    MCFOLD ::Realms::ManageMembersStatus getManageMembersState() const;
+
+    MCFOLD ::std::vector<::Realms::PlayerInfo> const& getPlayers() const;
+
+    MCFOLD ::Realms::PlayerListState getState() const;
     // NOLINTEND
 
 public:

@@ -31,27 +31,33 @@ public:
 
     virtual void OnRemoveStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>);
 
-    virtual void OnDataChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface>) = 0;
+    virtual void OnDataChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface> dataChannel) = 0;
 
     virtual void OnRenegotiationNeeded();
 
     virtual void OnNegotiationNeededEvent(uint);
 
-    virtual void OnIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState);
+    virtual void OnIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState newState);
 
     virtual void OnStandardizedIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState);
 
     virtual void OnConnectionChange(::webrtc::PeerConnectionInterface::PeerConnectionState);
 
-    virtual void OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState) = 0;
+    virtual void OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState newState) = 0;
 
-    virtual void OnIceCandidate(::webrtc::IceCandidate const*) = 0;
+    virtual void OnIceCandidate(::webrtc::IceCandidate const* candidate) = 0;
 
-    virtual void OnIceCandidateError(::std::string const&, int, ::std::string const&, int, ::std::string const&);
+    virtual void OnIceCandidateError(
+        ::std::string const& address,
+        int                  port,
+        ::std::string const& url,
+        int                  errorCode,
+        ::std::string const& errorMessage
+    );
 
     virtual void OnIceCandidatesRemoved(::std::vector<::webrtc::Candidate> const&);
 
-    virtual void OnIceCandidateRemoved(::webrtc::IceCandidate const*);
+    virtual void OnIceCandidateRemoved(::webrtc::IceCandidate const* candidate);
 
     virtual void OnIceConnectionReceivingChange(bool);
 

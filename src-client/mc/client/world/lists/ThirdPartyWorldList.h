@@ -13,6 +13,7 @@ class IOfferRepository;
 class IThirdPartyServerRepository;
 class ProfanityContext;
 class ServerLocator;
+class ServicesManager;
 struct NetworkWorldInfo;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
@@ -56,11 +57,21 @@ public:
 
     MCAPI void _fetchWorlds(bool forceFetch);
 
+    MCAPI void _onMCTokenUpdated(::ServicesManager*);
+
+    MCAPI void _onServersChanged();
+
     MCAPI void _refreshWorlds();
+
+    MCAPI void _remove3PServersMismatchingEditorMode();
+
+    MCAPI void _runProfanityCheckOnWorlds();
 
     MCAPI ::std::optional<::NetworkWorldInfo> getWorld(::std::string const& id);
 
     MCAPI void update(double timestampMs);
+
+    MCAPI ~ThirdPartyWorldList();
     // NOLINTEND
 
 public:

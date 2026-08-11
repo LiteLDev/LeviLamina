@@ -66,17 +66,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TextComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~TextComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
-    virtual void render(::UIRenderContext&);
+    virtual void render(::UIRenderContext& context);
 
-    virtual void updateUI(::UIMeasureStrategy const& context) /*override*/;
+    virtual void updateUI(::UIMeasureStrategy const& uiMeasureStrategy) /*override*/;
 
     virtual ::std::string const& getTextToSpeechComponentValue() const /*override*/;
     // NOLINTEND
@@ -84,7 +88,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TextComponent(::UIControl& owner, ::Bedrock::NotNullNonOwnerPtr<::FontRepository const> fontRepository);
+
+    MCAPI int _getCaretPosition() const;
+
+    MCAPI ::std::string _getMeasuredText(::UIRenderContext& context);
+
+    MCAPI ::std::string calculateUpdatedText();
+
     MCAPI void setFontType(::std::string const& fontType);
+
+    MCAPI void setTextTTS(::std::string const& label);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

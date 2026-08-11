@@ -37,6 +37,18 @@ public:
 
     MCAPI SpawnActorParameters(::SpawnActorParameters const&);
 
+    MCAPI void setItem(::ItemDescriptor const& itemDescriptor);
+
+    MCAPI void setSpawnEntity(::std::string const& name);
+
+    MCAPI void setSpawnEvent(::std::string const& name);
+
+    MCAPI void setSpawnSound(::std::string const& name);
+
+    MCAPI void setSpawnTimeMax(int const& value);
+
+    MCAPI void setSpawnTimeMin(int const& value);
+
     MCAPI ~SpawnActorParameters();
     // NOLINTEND
 

@@ -131,6 +131,12 @@ public:
         bool                 leakyCornersFix
     );
 
+    MCAPI bool _neighboringBlockCheckForCreatingBarrierInDirection(
+        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
+        ::BlockPos const&                                         pos,
+        int                                                       directionToCheck
+    ) const;
+
 #ifdef LL_PLAT_C
     MCAPI void setBaseShape(::Block const& block, ::AABB& shape, bool shrink) const;
 
@@ -141,7 +147,29 @@ public:
         ::AABB&                    shape,
         bool                       shrink
     ) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool setInnerPieceShape(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    shape,
+        bool                       shrink
+    ) const;
+#endif
+
+#ifdef LL_PLAT_C
+    MCAPI bool setStepShape(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    shape,
+        bool                       shrink
+    ) const;
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI bool setStepShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,

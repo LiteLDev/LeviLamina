@@ -14,9 +14,21 @@ namespace ScriptModuleServerAdmin {
 
 class ScriptPlayerAlreadyOpError : public ::Scripting::BaseError {
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptPlayerAlreadyOpError();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };
 

@@ -41,6 +41,8 @@ public:
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
+
+    virtual ~BlockIgnore() /*override*/;
     // NOLINTEND
 
 public:
@@ -56,6 +58,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> const& STRUCTURE_BLOCK();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

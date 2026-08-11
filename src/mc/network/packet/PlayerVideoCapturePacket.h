@@ -32,17 +32,17 @@ public:
 
     virtual ::SerializationMode getSerializationMode() const /*override*/;
 
-    virtual void setSerializationMode(::SerializationMode) /*override*/;
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
 
     virtual void writeWithSerializationMode(
-        ::BinaryStream&,
-        ::cereal::ReflectionCtx const&,
-        ::std::optional<::SerializationMode>
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
     ) const /*override*/;
 
-    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
 
-    virtual void write(::BinaryStream&) const /*override*/;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void>
     read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
@@ -55,10 +55,10 @@ public:
 
     virtual ::std::string toString() const /*override*/;
 
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) /*override*/;
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     virtual ::Bedrock::Result<void>
-    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
     // NOLINTEND
 
 public:

@@ -38,16 +38,19 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Bedrock::PubSub::Subscription
-        subscribeToBossEvent(::std::function<void(::BossEventUpdateType)>) /*override*/;
+    subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(
-        ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)>
+        ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)> callback
     ) /*override*/;
 
-    virtual void broadcastBossEvent(::BossEventUpdateType) /*override*/;
+    virtual void broadcastBossEvent(::BossEventUpdateType type) /*override*/;
 
-    virtual void
-    broadcastBossEvent(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&) /*override*/;
+    virtual void broadcastBossEvent(
+        ::BossEventUpdateType    type,
+        ::ActorUniqueID const&   id,
+        ::BossEventPacket const& packet
+    ) /*override*/;
 
     virtual bool areBossEventSubscribersReady() const /*override*/;
     // NOLINTEND

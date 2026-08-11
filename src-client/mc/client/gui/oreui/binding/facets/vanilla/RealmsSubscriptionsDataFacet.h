@@ -45,6 +45,16 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsSubscriptionsDataFacet(::std::shared_ptr<::Realms::RealmsSubscriptions> realmsSubscriptions);
+
+    MCAPI bool getCanBuyCoreRealm() const;
+
+    MCAPI bool getCanBuyPlusRealm() const;
+
+    MCFOLD ::std::string const& getClientStoreId() const;
+
+    MCFOLD ::std::vector<::Realms::RealmsSubscriptionInfo> const& getRealmsSubscriptionInfo() const;
+
+    MCFOLD ::Realms::RealmsSubscriptionsState getState() const;
     // NOLINTEND
 
 public:

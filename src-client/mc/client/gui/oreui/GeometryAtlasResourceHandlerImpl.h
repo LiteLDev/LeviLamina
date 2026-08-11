@@ -37,7 +37,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Gameface::ResourceHandlerStatus
-    onResourceRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceResponse&) /*override*/;
+    onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
 
     virtual ::Gameface::ResourceHandlerStatus
     onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&) /*override*/;

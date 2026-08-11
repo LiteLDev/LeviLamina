@@ -5,12 +5,14 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/CommandGroupBase.h"
 #include "mc/client/gui/oreui/binding/methods/CallableImpl.h"
+#include "mc/client/network/realms/GenericStatus.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace OreUI { class GameDependencies; }
+namespace OreUI { class InvocationStatus; }
 namespace Realms { class RealmsSavesManager; }
 // clang-format on
 
@@ -54,6 +56,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsSavesCommandGroup(::OreUI::GameDependencies const& game);
+
+    MCAPI void _resolveStatus(
+        ::std::shared_ptr<::OreUI::InvocationStatus> const& commandStatus,
+        ::Realms::GenericStatus                             responseStatus
+    );
     // NOLINTEND
 
 public:

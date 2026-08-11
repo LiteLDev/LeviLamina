@@ -27,7 +27,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
@@ -37,7 +38,7 @@ public:
 
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const /*override*/;
+    virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const /*override*/;
 
     virtual int getEnchantSlot() const /*override*/;
 
@@ -49,7 +50,7 @@ public:
 
     virtual bool shouldUseJsonForRenderMatrix() const /*override*/;
 
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
     // NOLINTEND

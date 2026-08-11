@@ -55,7 +55,13 @@ public:
             // NOLINTEND
         };
 
-        struct ComponentMap : public ::ClientBiomeJsonDocumentHelper::ComponentMap {};
+        struct ComponentMap : public ::ClientBiomeJsonDocumentHelper::ComponentMap {
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            // NOLINTEND
+        };
 
     public:
         // member variables

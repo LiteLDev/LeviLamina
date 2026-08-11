@@ -33,9 +33,9 @@ public:
 
     virtual void OnLogMessage(::std::string const& msg, ::webrtc::LoggingSeverity severity, char const* tag);
 
-    virtual void OnLogMessage(::std::string const&, ::webrtc::LoggingSeverity);
+    virtual void OnLogMessage(::std::string const& message, ::webrtc::LoggingSeverity level);
 
-    virtual void OnLogMessage(::std::string const&) = 0;
+    virtual void OnLogMessage(::std::string const& message) = 0;
 
     virtual void OnLogMessage(::std::string_view msg, ::webrtc::LoggingSeverity severity, char const* tag);
 

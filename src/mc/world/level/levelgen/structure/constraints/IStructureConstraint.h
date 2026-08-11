@@ -17,8 +17,12 @@ public:
     // NOLINTBEGIN
     virtual ~IStructureConstraint() = default;
 
-    virtual bool
-    isSatisfied(::IBlockWorldGenAPI const&, ::BlockPos const&, ::Rotation const&, ::BlockPos const&) const = 0;
+    virtual bool isSatisfied(
+        ::IBlockWorldGenAPI const& target,
+        ::BlockPos const&          structurePos,
+        ::Rotation const&          structureRot,
+        ::BlockPos const&          centeringOffset
+    ) const = 0;
     // NOLINTEND
 
 public:

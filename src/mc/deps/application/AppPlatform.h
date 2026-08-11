@@ -78,6 +78,9 @@ class NetworkChangeObserver;
 class PushNotificationMessage;
 class RectangleArea;
 class ThrottledFileWriteManager;
+namespace ApplicationSignal { class ClipboardCopy; }
+namespace ApplicationSignal { class ClipboardPaste; }
+namespace ApplicationSignal { class ClipboardPasteRequest; }
 namespace Bedrock { class CommonPlatform; }
 namespace Social { struct UserCreationData; }
 namespace Webview { class PlatformArguments; }
@@ -228,12 +231,27 @@ public:
 
     virtual int getKeyFromKeyCode(int, int, int);
 
-    virtual void textEditComponentGainedFocus(::std::string const&, int, bool, bool, bool);
+    virtual void textEditComponentGainedFocus(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline
+    );
 
     virtual void textEditComponentLostFocus();
 
-    virtual void
-    showKeyboard(::std::string const&, int, bool, bool, bool, int const, ::glm::vec2 const&, float, ::InputMode);
+    virtual void showKeyboard(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline,
+        int const            controllerId,
+        ::glm::vec2 const&   position,
+        float                controlHeight,
+        ::InputMode          inputMode
+    );
 
     virtual void hideKeyboard();
 
@@ -249,7 +267,7 @@ public:
 
     virtual bool refocusMouse(bool lostMouse, bool oldMouseGrabbed);
 
-    virtual void setMousePointerType(::Bedrock::Input::PointerType);
+    virtual void setMousePointerType(::Bedrock::Input::PointerType pointerType);
 
     virtual void hideMousePointer();
 
@@ -305,9 +323,9 @@ public:
 
     virtual ::std::string getTermsOfUseHyperlink() const;
 
-    virtual void pickImage(::std::shared_ptr<::ImagePickingCallback>) = 0;
+    virtual void pickImage(::std::shared_ptr<::ImagePickingCallback> callback) = 0;
 
-    virtual void pickFile(::std::shared_ptr<::FilePickerSettings>);
+    virtual void pickFile(::std::shared_ptr<::FilePickerSettings> settings);
 
     virtual bool supportsAlbumExport() const;
 
@@ -341,7 +359,7 @@ public:
 
     virtual bool supportsClipboardAsyncGet() const;
 
-    virtual void setClipboard(::std::string const&) const;
+    virtual void setClipboard(::std::string const& value) const;
 
     virtual ::std::wstring getClipboardText() const;
 
@@ -364,7 +382,12 @@ public:
         ::std::function<void(::StoragePermissionResult)> resultCallback
     );
 
-    virtual void setStorageDirectory(::FileStorageDirectory, bool, ::PropertyBag const&, ::std::function<void(bool)>);
+    virtual void setStorageDirectory(
+        ::FileStorageDirectory      dir,
+        bool                        isCallback,
+        ::PropertyBag const&        extraData,
+        ::std::function<void(bool)> onComplete
+    );
 
     virtual ::FileStorageDirectory setInitialStorageDirectory(::FileStorageDirectory);
 
@@ -373,7 +396,7 @@ public:
     virtual void setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)>);
 
     virtual ::Bedrock::PubSub::Subscription
-        addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)>);
+    addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback);
 
     virtual void runStoragePermissionResultCallback(::StoragePermissionResult result);
 
@@ -486,11 +509,19 @@ public:
 
     virtual int getDisplayHeight();
 
+#ifdef LL_PLAT_S
     virtual void setScreenSize(int, int);
+#else // LL_PLAT_C
+    virtual void setScreenSize(int width, int height);
+#endif
 
-    virtual void setWindowSize(int, int);
+    virtual void setWindowSize(int width, int height);
 
+#ifdef LL_PLAT_S
+    virtual void setWindowText(::std::string const& title);
+#else // LL_PLAT_C
     virtual void setWindowText(::std::string const&);
+#endif
 
     virtual ::std::optional<::OperationMode> getOperationMode() const;
 
@@ -526,11 +557,11 @@ public:
 
     virtual ::std::string getTextBoxBackend() const = 0;
 
-    virtual void setTextBoxBackend(::std::string const&) = 0;
+    virtual void setTextBoxBackend(::std::string const& newText) = 0;
 
     virtual int getCaretPosition() const = 0;
 
-    virtual void setCaretPosition(int) = 0;
+    virtual void setCaretPosition(int position) = 0;
 
     virtual void setTextBoxSelection(::TextBoxSelection selection);
 
@@ -685,7 +716,7 @@ public:
     virtual void notifyUriListenerRegistrationDone();
 
 #endif
-    virtual void setFullscreenMode(::FullscreenMode const);
+    virtual void setFullscreenMode(::FullscreenMode const fullscreenMode);
 
     virtual bool isNetworkThrottled() const;
 
@@ -806,7 +837,11 @@ public:
 
     virtual bool isWebviewSupported() const;
 
+#ifdef LL_PLAT_S
+    virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&& args) const;
+#else // LL_PLAT_C
     virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&&) const;
+#endif
 
     virtual bool canAppSelfTerminate() const = 0;
 
@@ -899,6 +934,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AppPlatform(bool registerService, ::std::unique_ptr<::IAppPlatformImpl> impl);
+
+#ifdef LL_PLAT_C
+    MCAPI void _clipboardCopyHandler(::ApplicationSignal::ClipboardCopy const& signal);
+
+    MCAPI void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
+
+    MCAPI void _clipboardPasteRequestHandler(::ApplicationSignal::ClipboardPasteRequest const& signal);
+#endif
 
 #ifdef LL_PLAT_S
     MCAPI void _fireAppTerminated();
@@ -1093,9 +1136,9 @@ public:
 
     MCFOLD void $setScreenSize(int, int);
 
-    MCFOLD void $setWindowSize(int, int);
+    MCFOLD void $setWindowSize(int width, int height);
 
-    MCFOLD void $setWindowText(::std::string const&);
+    MCFOLD void $setWindowText(::std::string const& title);
 
     MCFOLD ::std::optional<::OperationMode> $getOperationMode() const;
 
@@ -1244,7 +1287,7 @@ public:
 
     MCFOLD void $updateBootstrapSettingsFromTreatmentsAsync();
 
-    MCFOLD void $setFullscreenMode(::FullscreenMode const);
+    MCFOLD void $setFullscreenMode(::FullscreenMode const fullscreenMode);
 
     MCAPI bool $isNetworkThrottled() const;
 
@@ -1363,7 +1406,7 @@ public:
 
     MCFOLD bool $isWebviewSupported() const;
 
-    MCFOLD ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&&) const;
+    MCFOLD ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&& args) const;
 
     MCAPI ::std::variant<::HWND__*, ::std::monostate> $getRenderSurfaceParameters() const;
 
@@ -1428,12 +1471,27 @@ public:
 
     MCFOLD int $getKeyFromKeyCode(int, int, int);
 
-    MCFOLD void $textEditComponentGainedFocus(::std::string const&, int, bool, bool, bool);
+    MCFOLD void $textEditComponentGainedFocus(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline
+    );
 
     MCFOLD void $textEditComponentLostFocus();
 
-    MCAPI void
-    $showKeyboard(::std::string const&, int, bool, bool, bool, int const, ::glm::vec2 const&, float, ::InputMode);
+    MCAPI void $showKeyboard(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline,
+        int const            controllerId,
+        ::glm::vec2 const&   position,
+        float                controlHeight,
+        ::InputMode          inputMode
+    );
 
     MCAPI void $hideKeyboard();
 
@@ -1449,7 +1507,7 @@ public:
 
     MCAPI bool $refocusMouse(bool lostMouse, bool oldMouseGrabbed);
 
-    MCFOLD void $setMousePointerType(::Bedrock::Input::PointerType);
+    MCFOLD void $setMousePointerType(::Bedrock::Input::PointerType pointerType);
 
     MCFOLD void $hideMousePointer();
 
@@ -1501,7 +1559,7 @@ public:
 
     MCAPI ::std::string $getTermsOfUseHyperlink() const;
 
-    MCFOLD void $pickFile(::std::shared_ptr<::FilePickerSettings>);
+    MCFOLD void $pickFile(::std::shared_ptr<::FilePickerSettings> settings);
 
     MCFOLD void $shareFile(::Core::Path const&, ::std::function<void(bool)>);
 
@@ -1527,7 +1585,7 @@ public:
 
     MCAPI bool $supportsClipboardAsyncGet() const;
 
-    MCFOLD void $setClipboard(::std::string const&) const;
+    MCFOLD void $setClipboard(::std::string const& value) const;
 
     MCAPI ::std::wstring $getClipboardText() const;
 
@@ -1550,7 +1608,12 @@ public:
         ::std::function<void(::StoragePermissionResult)> resultCallback
     );
 
-    MCFOLD void $setStorageDirectory(::FileStorageDirectory, bool, ::PropertyBag const&, ::std::function<void(bool)>);
+    MCFOLD void $setStorageDirectory(
+        ::FileStorageDirectory      dir,
+        bool                        isCallback,
+        ::PropertyBag const&        extraData,
+        ::std::function<void(bool)> onComplete
+    );
 
     MCFOLD ::FileStorageDirectory $setInitialStorageDirectory(::FileStorageDirectory);
 
@@ -1559,7 +1622,7 @@ public:
     MCFOLD void $setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)>);
 
     MCFOLD ::Bedrock::PubSub::Subscription
-        $addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)>);
+    $addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback);
 
     MCAPI void $runStoragePermissionResultCallback(::StoragePermissionResult result);
 

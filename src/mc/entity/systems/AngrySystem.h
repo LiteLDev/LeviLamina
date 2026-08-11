@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class AngryComponent;
+class EntityContext;
 class EntityRegistry;
 // clang-format on
 
@@ -15,6 +17,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _tickComponent(::EntityContext& entity, ::AngryComponent& angryComponent);
     // NOLINTEND
 
 public:

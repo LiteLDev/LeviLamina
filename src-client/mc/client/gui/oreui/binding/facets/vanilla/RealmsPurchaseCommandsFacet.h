@@ -40,6 +40,18 @@ public:
         ::std::shared_ptr<::Realms::RealmsPurchase>           realmsPurchase,
         ::std::shared_ptr<::Realms::RealmsPurchaseReconciler> realmsPurchaseReconciler
     );
+
+    MCAPI void fulfillPriorRealmsPurchase(::std::string const& xuid);
+
+    MCAPI void prepareAppStoreForReconciliation(::std::string const& xuid);
+
+    MCAPI void prepareAppStoreForTrialPurchases(::std::string const& xuid, ::std::string const& worldName);
+
+    MCAPI void purchaseTrial(::std::string const& xuid, ::std::string const& worldName);
+
+    MCAPI void resetPurchase();
+
+    MCAPI void resetReconciler();
     // NOLINTEND
 
 public:

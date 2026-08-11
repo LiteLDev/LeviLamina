@@ -44,6 +44,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptBlockPalette(::Scripting::WeakLifetimeScope const& scope, uint64 maxSize);
 
+    MCNAPI ::std::optional<::Scripting::ArgumentOutOfBoundsError>
+    _tryGetArgumentOutOfBoundsError(int const index) const;
+
     MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> setItem(
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem> blockPaletteItem,
         int                                                                                   index

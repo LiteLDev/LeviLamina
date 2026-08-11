@@ -82,7 +82,7 @@ public:
 
     virtual ::Bedrock::Result<void> initialize() /*override*/;
 
-    virtual ::Bedrock::Result<::gsl::span<float>> decodeInto(::Audio::AudioFrameBuffer&) /*override*/;
+    virtual ::Bedrock::Result<::gsl::span<float>> decodeInto(::Audio::AudioFrameBuffer& outputBuffer) /*override*/;
 
     virtual uchar getChannels() const /*override*/;
 
@@ -90,7 +90,7 @@ public:
 
     virtual int64 getCurrentFramePosition() const /*override*/;
 
-    virtual void setTotalSamples(uint64) /*override*/;
+    virtual void setTotalSamples(uint64 totalSamples) /*override*/;
 
     virtual ::std::optional<uint64> getTotalSamples() const /*override*/;
 
@@ -99,6 +99,14 @@ public:
     virtual uint64 getFileReadPosition() const /*override*/;
 
     virtual uint64 getSafeConsumePosition() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI bool _feedDecoder();
+#endif
     // NOLINTEND
 
 public:

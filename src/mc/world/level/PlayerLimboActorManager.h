@@ -12,7 +12,10 @@ class Actor;
 class ActorFactory;
 class ActorManager;
 class CompoundTag;
+class DimensionHeightRange;
+class IAddActorEntityProxy;
 class LevelStorage;
+class Vec3;
 // clang-format on
 
 class PlayerLimboActorManager {
@@ -39,11 +42,26 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ActorFactory> actorFactory
     );
 
+    MCAPI void clearOwnedEntityLimboForPlayer(::ActorUniqueID playerId);
+
     MCAPI void loadAllOwnedLimboActors();
+
+    MCAPI ::Actor* processOwnedAgentForPlayer(
+        ::CompoundTag&                agentCompoundTag,
+        ::IAddActorEntityProxy&       addActorEntityProxy,
+        ::DimensionHeightRange const& heightRange,
+        ::Vec3 const&                 spawnPosition
+    );
 
     MCAPI void transferActorToOwnedEntityLimbo(::ActorUniqueID playerUniqueID, ::Actor& actor);
 
     MCAPI ~PlayerLimboActorManager();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::string getOwnedEntityLimboStorageKeyForPlayer(::ActorUniqueID playerId);
     // NOLINTEND
 
 public:

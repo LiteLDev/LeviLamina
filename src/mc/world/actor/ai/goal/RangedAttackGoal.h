@@ -62,13 +62,15 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual void appendDebugInfo(::std::string&) const /*override*/;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RangedAttackGoal(::Mob& mob);
+
+    MCAPI void _dischargeCarriedItem();
     // NOLINTEND
 
 public:

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
 
 // auto generated forward declare list
@@ -11,6 +12,7 @@
 class StrictEntityContext;
 struct EmotePlayedTelemetryDataComponent;
 struct EventingDispatcherComponent;
+struct EventingRequestQueueComponent;
 struct ShouldStopEmotingRequestComponent;
 struct TickingSystemWithInfo;
 // clang-format on
@@ -27,6 +29,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _personaEmoteInputSystem(
+        ::StrictEntityContext const&                                    entity,
+        ::EventingDispatcherComponent const&                            eventingDispatcherComponent,
+        ::EmotePlayedTelemetryDataComponent const&                      emotePlayedTelemetryDataComponent,
+        ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView,
+        ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> modifier
+    );
+
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

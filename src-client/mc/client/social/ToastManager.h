@@ -62,7 +62,7 @@ public:
     // NOLINTBEGIN
     virtual ~ToastManager() /*override*/ = default;
 
-    virtual void pushToast(::ToastMessage&&) /*override*/;
+    virtual void pushToast(::ToastMessage&& message) /*override*/;
 
     virtual bool isEditorModeEnabled() const /*override*/;
 
@@ -78,9 +78,25 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager> resourcePackManager
     );
 
+    MCAPI void _destroyToast();
+
     MCAPI ::std::string _getNewRecipesText() const;
 
+    MCAPI void _handleInvite(bool parseJSON);
+
     MCAPI bool _isToastAllowed(::ToastMessageType messageType) const;
+
+    MCAPI void _reportClick();
+
+    MCAPI void _sendShowToast(bool const animateIn);
+
+    MCAPI void _sendTTS(bool useIndication, ::std::string const& message) const;
+
+    MCAPI void _setInitialToastValues();
+
+    MCAPI void _showNewToast();
+
+    MCAPI void _updateLongestRecipeText();
 
     MCAPI ::std::string getMoreRecipesTitle() const;
 

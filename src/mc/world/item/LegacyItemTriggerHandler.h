@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/container/small_vector_base.h"
 #include "mc/world/item/ILegacyItemTriggerHandler.h"
 #include "mc/world/item/LegacyItemTriggerHandlerConfig.h"
 
@@ -12,6 +13,7 @@ class DefinitionEvent;
 class DefinitionTrigger;
 class ItemStackBase;
 class RenderParams;
+struct ActorDefinitionEventStackEntry;
 // clang-format on
 
 class LegacyItemTriggerHandler : public ::ILegacyItemTriggerHandler {
@@ -30,6 +32,18 @@ public:
         ::DefinitionTrigger const&                                    trigger,
         ::RenderParams&                                               params
     ) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _executeEvent(
+        ::std::unordered_map<::std::string, ::DefinitionEvent> const&   eventHandlers,
+        ::ItemStackBase&                                                item,
+        ::std::string const&                                            name,
+        ::Bedrock::small_vector_base<::ActorDefinitionEventStackEntry>& eventStack,
+        ::RenderParams&                                                 params
+    ) const;
     // NOLINTEND
 
 public:

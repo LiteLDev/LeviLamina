@@ -41,7 +41,7 @@ public:
 
     virtual bool hasAdequateConnectedGameController() const /*override*/;
 
-    virtual bool hasAdequateConnectedGameControllers(uint64 const) const /*override*/;
+    virtual bool hasAdequateConnectedGameControllers(uint64 const playerCount) const /*override*/;
 
     virtual uint64 getMaxGameControllerButtons() const /*override*/;
 
@@ -56,7 +56,7 @@ public:
     virtual ::GameControllerErrorType getPlatformSpecificControllerError() const /*override*/;
 
     virtual void
-    setPlatformSpecificControllerErrorRetrievalFunc(::std::function<::GameControllerErrorType()>&&) /*override*/;
+    setPlatformSpecificControllerErrorRetrievalFunc(::std::function<::GameControllerErrorType()>&& lambda) /*override*/;
 
     virtual void resetClientControllerCount() /*override*/;
 

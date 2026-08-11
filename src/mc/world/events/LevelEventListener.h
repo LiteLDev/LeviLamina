@@ -33,7 +33,7 @@ public:
 
     virtual ::EventResult onLevelTick(::Level& level);
 
-    virtual ::EventResult onLevelTickStart(::Level&);
+    virtual ::EventResult onLevelTickStart(::Level& level);
 
     virtual ::EventResult onLevelTickEnd(::Level&);
 
@@ -63,7 +63,7 @@ public:
 
     MCFOLD ::EventResult $onLevelTick(::Level& level);
 
-    MCFOLD ::EventResult $onLevelTickStart(::Level&);
+    MCFOLD ::EventResult $onLevelTickStart(::Level& level);
 
     MCFOLD ::EventResult $onLevelTickEnd(::Level&);
 

@@ -53,6 +53,8 @@ public:
         ::BlockPos const&                              blockPos,
         bool                                           lockVisible
     );
+
+    MCAPI void _checkForTextObjectMessage();
     // NOLINTEND
 
 public:

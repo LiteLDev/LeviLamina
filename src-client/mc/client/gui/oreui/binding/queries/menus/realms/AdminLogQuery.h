@@ -34,6 +34,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit AdminLogQuery(::OreUI::GameDependencies const& game);
+
+    MCAPI void _updateProperties();
     // NOLINTEND
 
 public:

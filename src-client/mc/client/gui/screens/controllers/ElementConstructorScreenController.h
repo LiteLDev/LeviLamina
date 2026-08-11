@@ -61,6 +61,12 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
+
+    MCAPI void
+    _registerParticleBindings(::ElementConstructorScreenController::ParticleType type, ::std::string const& name);
+
+    MCAPI void
+    _registerParticleEventHandlers(::ElementConstructorScreenController::ParticleType type, ::std::string const& name);
     // NOLINTEND
 
 public:

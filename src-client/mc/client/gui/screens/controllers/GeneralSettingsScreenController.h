@@ -22,6 +22,7 @@ class MainMenuScreenModel;
 class StorageManagementScreenController;
 class SubscriptionsScreenController;
 class TaskGroup;
+struct PackInstanceId;
 struct PackManagerContentSourceImpl;
 namespace Json { class Value; }
 namespace MSGraph::Models { struct GraphError; }
@@ -106,7 +107,28 @@ public:
         bool                                     legacySyncOnly
     );
 
+    MCAPI bool _areAnyPackImportsPending() const;
+
+    MCAPI void _chooseLanguage(::std::string const& selectedLanguageCode, int selectedLanguageIndex);
+
+    MCAPI ::std::string _generateAccountInformation() const;
+
+    MCAPI ::std::string _generateBuildInformation() const;
+
+    MCAPI ::std::vector<int> _getGUIScaleValues() const;
+
     MCAPI void _processPendingImports();
+
+    MCAPI void _registerControllerCallbacks();
+
+    MCAPI void
+    _setGlobalStack(::std::vector<::PackInstanceId> const& modelManagerIdentities, bool anyVersion, bool saveStack);
+
+    MCAPI void _setResourcePackStack();
+
+    MCAPI void _updateProfileImage();
+
+    MCAPI void setGuiScaleOption(int guiScaleOffset);
     // NOLINTEND
 
 public:

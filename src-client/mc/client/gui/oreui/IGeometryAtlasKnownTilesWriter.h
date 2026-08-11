@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::gsl::not_null<::std::shared_ptr<::GeometryAtlas::IAtlasTile>>
-    getOrCreate(::GeometryAtlas::TileDefinition const&) = 0;
+    getOrCreate(::GeometryAtlas::TileDefinition const& definition) = 0;
 
     virtual void garbageCollect() = 0;
     // NOLINTEND

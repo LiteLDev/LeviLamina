@@ -64,6 +64,8 @@ public:
         ::StorageVersion                 v,
         ::Biome&                         defaultBiome
     );
+
+    MCNAPI void _markChunkAsImported(::ChunkPos const& pos);
     // NOLINTEND
 
 public:

@@ -7,6 +7,11 @@
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/v1_21_120/actor/ActorDefinitionTrigger.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_26_10 {
 
 struct LayEggGoalDefinition : public ::SharedTypes::BaseMoveToBlockGoalDefinition {
@@ -38,6 +43,12 @@ public:
     MCAPI ::SharedTypes::v1_26_10::LayEggGoalDefinition& operator=(::SharedTypes::v1_26_10::LayEggGoalDefinition&&);
 
     MCAPI ~LayEggGoalDefinition();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

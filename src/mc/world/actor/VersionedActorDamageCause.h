@@ -17,8 +17,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VersionedActorDamageCause();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI VersionedActorDamageCause(
+        ::std::string                           name,
+        ::SharedTypes::Legacy::ActorDamageCause cause,
+        ::Scripting::Version                    version,
+        ::std::optional<uchar>                  deprecatedMajorVersion
+    );
+
     MCAPI ::Scripting::Version getVersion() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };

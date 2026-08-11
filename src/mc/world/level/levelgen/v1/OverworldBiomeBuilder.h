@@ -10,7 +10,9 @@
 // clang-format off
 class BaseGameVersion;
 class Biome;
+class BiomeRegistry;
 class Experiments;
+struct BiomeNoiseTarget;
 // clang-format on
 
 class OverworldBiomeBuilder {
@@ -42,6 +44,47 @@ public:
     OverworldBiomeBuilder& operator=(OverworldBiomeBuilder const&);
     OverworldBiomeBuilder(OverworldBiomeBuilder const&);
     OverworldBiomeBuilder();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _addHighSlice(
+        ::std::vector<::BiomeNoiseTarget>& biomes,
+        ::ClimateUtils::Parameter const&   weirdness,
+        ::BiomeRegistry const&             biomeRegistry
+    ) const;
+
+    MCAPI void _addLowSlice(
+        ::std::vector<::BiomeNoiseTarget>& biomes,
+        ::ClimateUtils::Parameter const&   weirdness,
+        ::BiomeRegistry const&             biomeRegistry
+    ) const;
+
+    MCAPI void _addMidSlice(
+        ::std::vector<::BiomeNoiseTarget>& biomes,
+        ::ClimateUtils::Parameter const&   weirdness,
+        ::BiomeRegistry const&             biomeRegistry
+    ) const;
+
+    MCAPI void _addPeaks(
+        ::std::vector<::BiomeNoiseTarget>& biomes,
+        ::ClimateUtils::Parameter const&   weirdness,
+        ::BiomeRegistry const&             biomeRegistry
+    ) const;
+
+    MCAPI void _addSurfaceBiome(
+        ::std::vector<::BiomeNoiseTarget>& biomes,
+        ::ClimateUtils::Parameter const&   temperature,
+        ::ClimateUtils::Parameter const&   humidity,
+        ::ClimateUtils::Parameter const&   continentalness,
+        ::ClimateUtils::Parameter const&   erosion,
+        ::ClimateUtils::Parameter const&   weirdness,
+        float                              offset,
+        ::Biome const*                     second
+    ) const;
+
+    MCAPI void _populateBiomeArrays(::BiomeRegistry const& biomeRegistry) const;
+    // NOLINTEND
 
 public:
     // static variables

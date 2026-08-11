@@ -19,4 +19,10 @@ public:
     GameTestResult& operator=(GameTestResult const&);
     GameTestResult(GameTestResult const&);
     GameTestResult();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::GameTestResult const& rhs) const;
+    // NOLINTEND
 };

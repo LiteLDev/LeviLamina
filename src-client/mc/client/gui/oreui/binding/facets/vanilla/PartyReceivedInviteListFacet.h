@@ -61,6 +61,12 @@ public:
         ::World::WorldPlayerListTracker&                               worldPlayerListTracker,
         ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>          partyProvider
     );
+
+    MCAPI void _updateInvites();
+
+    MCAPI void _updateProfiles();
+
+    MCFOLD ::std::vector<::OreUI::PartyReceivedInviteData> const& getInvites() const;
     // NOLINTEND
 
 public:

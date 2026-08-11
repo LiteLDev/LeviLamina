@@ -4,10 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/events/EventCoordinator.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class EntityContext;
 class GameRules;
 class IActorManagerConnector;
@@ -38,11 +40,15 @@ public:
     // NOLINTBEGIN
     MCAPI void _onGameplayUserAdded(::EntityContext& entity);
 
+    MCAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod);
+
     MCAPI void registerGameRules(::GameRules& gameRules);
 
     MCAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector, bool isClientSide);
 
     MCAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+
+    MCAPI void sendLevelRemovedActor(::Actor& actor);
 
     MCAPI void sendLevelWeatherChanged(
         ::std::string const& dimension,

@@ -3,12 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/server/commands/ServerCommand.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
+class Level;
+struct ActorUniqueID;
 // clang-format on
 
 class ProjectCommand : public ::ServerCommand {
@@ -42,7 +45,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _cleanupOutputDirOnExportFailure(::Core::PathBuffer<::std::string> const& pathToOutputDir);
+
+    MCAPI static void _outputFormattedCommand(
+        ::ActorUniqueID                     callingPlayerUniqueId,
+        ::Level*                            level,
+        ::std::string const&                prefix,
+        ::std::string const&                commandType,
+        ::std::string const&                msg,
+        ::std::vector<::std::string> const& args
+    );
     // NOLINTEND
 
 public:

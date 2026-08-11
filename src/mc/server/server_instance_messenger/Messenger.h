@@ -29,12 +29,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void
-        enqueueMessage(::brstd::move_only_function<void()>, ::ServerInstanceMessenger::MessageAction) /*override*/;
+    virtual void enqueueMessage(
+        ::brstd::move_only_function<void()>      message,
+        ::ServerInstanceMessenger::MessageAction action
+    ) /*override*/;
 
     virtual void enqueueAndAwaitExecution(
-        ::brstd::move_only_function<void(::brstd::move_only_function<void() const>)>,
-        ::ServerInstanceMessenger::MessageAction
+        ::brstd::move_only_function<void(::brstd::move_only_function<void() const>)> message,
+        ::ServerInstanceMessenger::MessageAction                                     action
     ) /*override*/;
 
     virtual void processMessages() /*override*/;

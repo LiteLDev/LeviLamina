@@ -3,9 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/certificates/identity/PlayerAuthenticationType.h"
 #include "mc/client/game/ClientGameSetupResult.h"
 #include "mc/client/game/ClientInstanceState.h"
 #include "mc/client/game/ControlOptionType.h"
+#include "mc/client/game/DiskStatus.h"
 #include "mc/client/game/IClientInstance.h"
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/SceneType.h"
@@ -15,6 +17,7 @@
 #include "mc/client/gui/screens/models/PlayScreenDefaultTab.h"
 #include "mc/client/options/SplitScreenDirection.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
+#include "mc/client/social/connection/UIReturnTarget.h"
 #include "mc/client/store/StoreErrorCodes.h"
 #include "mc/client/util/ClipboardProxy.h"
 #include "mc/common/SubClientId.h"
@@ -105,6 +108,7 @@ class ItemRegistryRef;
 class ItemRenderer;
 class KeyboardManager;
 class LatencyGraphDisplay;
+class LegacyClientNetworkHandler;
 class Level;
 class LevelRenderer;
 class LevelRendererCameraProxy;
@@ -155,6 +159,7 @@ struct ListenerState;
 struct LocalPlayerChangedConnector;
 struct PacksInfoData;
 struct PlayerJoinWorldContext;
+struct RawGameServerToken;
 struct ScreenshotOptions;
 struct ServerSupportedAuthenticationTypes;
 struct SplitScreenInfo;
@@ -385,12 +390,14 @@ public:
 
     virtual void onDestroyMinecraftGame() /*override*/;
 
-    virtual void init(::ClientInstanceInitArguments&&) /*override*/;
+    virtual void init(::ClientInstanceInitArguments&& args) /*override*/;
 
-    virtual void
-        initSceneFactory(::std::unique_ptr<::SceneFactory>, ::std::unique_ptr<::OreUI::SceneProvider>) /*override*/;
+    virtual void initSceneFactory(
+        ::std::unique_ptr<::SceneFactory>         sceneFactory,
+        ::std::unique_ptr<::OreUI::SceneProvider> sceneProvider
+    ) /*override*/;
 
-    virtual void setUiRouter(::std::unique_ptr<::OreUI::Router>) /*override*/;
+    virtual void setUiRouter(::std::unique_ptr<::OreUI::Router> uiRouter) /*override*/;
 
     virtual void initGraphics() /*override*/;
 
@@ -400,25 +407,25 @@ public:
 
     virtual void preShutDown() /*override*/;
 
-    virtual void setGameConnectionInfo(::Social::GameConnectionInfo const&) /*override*/;
+    virtual void setGameConnectionInfo(::Social::GameConnectionInfo const& gameConnection) /*override*/;
 
     virtual ::std::optional<::Social::GameConnectionInfo> getGameConnectionInfo() /*override*/;
 
     virtual void onStartJoinGame(
-        bool,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&,
-        ::NetworkType,
-        ::Social::MultiplayerServiceIdentifier,
-        ::PlayerJoinWorldContext
+        bool                                   isLocalServer,
+        ::std::string const&                   multiplayerCorrelationId,
+        ::std::string const&                   serverName,
+        ::std::string const&                   worldName,
+        ::NetworkType                          networkType,
+        ::Social::MultiplayerServiceIdentifier service,
+        ::PlayerJoinWorldContext               context
     ) /*override*/;
 
     virtual void onCancelJoinGame() /*override*/;
 
     virtual void requestLeaveGameAsync() /*override*/;
 
-    virtual void requestLeaveGame(bool, bool) /*override*/;
+    virtual void requestLeaveGame(bool switchScreen, bool sync) /*override*/;
 
     virtual void stopPlayScreen() /*override*/;
 
@@ -434,24 +441,27 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual void frameUpdate(::FrameUpdateContext&) /*override*/;
+    virtual void frameUpdate(::FrameUpdateContext& frameUpdateContext) /*override*/;
 
     virtual void preFrameTick() /*override*/;
 
-    virtual bool update(bool) /*override*/;
+    virtual bool update(bool isInitFinished) /*override*/;
 
     virtual void endFrame() /*override*/;
 
     virtual float getFrameAlpha() /*override*/;
 
     virtual void startSubClientLateJoin(
-        bool,
-        ::std::unique_ptr<::GameModuleClient>,
-        ::std::optional<::ConnectionContextInfo>
+        bool                                     hasXBLBroadcast,
+        ::std::unique_ptr<::GameModuleClient>    gameModuleClient,
+        ::std::optional<::ConnectionContextInfo> primaryConnectionInfo
     ) /*override*/;
 
-    virtual ::Bedrock::Threading::Async<::ClientGameSetupResult>
-    setupClientGame(bool, ::ServerSupportedAuthenticationTypes, ::std::unique_ptr<::GameModuleClient>) /*override*/;
+    virtual ::Bedrock::Threading::Async<::ClientGameSetupResult> setupClientGame(
+        bool                                  joiningLocalServer,
+        ::ServerSupportedAuthenticationTypes  supportedAuth,
+        ::std::unique_ptr<::GameModuleClient> gameModuleClient
+    ) /*override*/;
 
     virtual ::BlockSource* getRegion() /*override*/;
 
@@ -471,19 +481,20 @@ public:
 
     virtual ::Actor* getCameraActor() const /*override*/;
 
-    virtual void setCameraActor(::Actor*) /*override*/;
+    virtual void setCameraActor(::Actor* cameraActor) /*override*/;
 
     virtual ::ListenerState const* getListenerState() const /*override*/;
 
     virtual ::Actor* getCameraTargetActor() const /*override*/;
 
-    virtual void setCameraTargetActor(::Actor*) /*override*/;
+    virtual void setCameraTargetActor(::Actor* cameraTargetActor) /*override*/;
 
     virtual ::WeakEntityRef getCameraEntity() const /*override*/;
 
-    virtual void getRawCameraEntities(::WeakEntityRef&, ::WeakEntityRef&) const /*override*/;
+    virtual void getRawCameraEntities(::WeakEntityRef& cameraEntity, ::WeakEntityRef& cameraTargetEntity) const
+        /*override*/;
 
-    virtual void setRawCameraEntities(::WeakEntityRef, ::WeakEntityRef) /*override*/;
+    virtual void setRawCameraEntities(::WeakEntityRef cameraEntity, ::WeakEntityRef cameraTargetEntity) /*override*/;
 
     virtual ::HitResult const& getLatestHitResult() const /*override*/;
 
@@ -517,7 +528,7 @@ public:
 
     virtual bool isPlatformNX() const /*override*/;
 
-    virtual bool isLocalSplitscreenWith(::ActorUniqueID const&) const /*override*/;
+    virtual bool isLocalSplitscreenWith(::ActorUniqueID const& id) const /*override*/;
 
     virtual bool isValidCrossPlatformSkin() const /*override*/;
 
@@ -529,21 +540,21 @@ public:
 
     virtual bool getHandlingControllerDisconnect() /*override*/;
 
-    virtual void setOpenControllerDisconnectScreen(bool) /*override*/;
+    virtual void setOpenControllerDisconnectScreen(bool open) /*override*/;
 
     virtual ::ClientPlayMode getClientPlayMode() const /*override*/;
 
-    virtual void setClientPlayMode(::ClientPlayMode const&) /*override*/;
+    virtual void setClientPlayMode(::ClientPlayMode const& mode) /*override*/;
 
     virtual ::std::function<void()> getCreditsCallback() /*override*/;
 
-    virtual void setCreditsCallback(::std::function<void()>) /*override*/;
+    virtual void setCreditsCallback(::std::function<void()> callback) /*override*/;
 
-    virtual void setupTransitionForCredits(::std::function<void()>) /*override*/;
+    virtual void setupTransitionForCredits(::std::function<void()> callback) /*override*/;
 
     virtual void refreshScreenSizeData() /*override*/;
 
-    virtual void onScreenSizeChanged(int, int, float) /*override*/;
+    virtual void onScreenSizeChanged(int width, int height, float forcedGuiScale) /*override*/;
 
     virtual void onGuiScaleOffsetChanged() /*override*/;
 
@@ -551,7 +562,7 @@ public:
 
     virtual bool hasDismissedNewPlayerFlow() const /*override*/;
 
-    virtual void quit(::std::string const&, ::std::string const&) /*override*/;
+    virtual void quit(::std::string const& src, ::std::string const& reason) /*override*/;
 
     virtual ::IMinecraftGame& getMinecraftGame_DEPRECATED() const /*override*/;
 
@@ -631,33 +642,34 @@ public:
     virtual ::std::pair<::StoreErrorCodes, ::std::string> const getMarketplaceDisabledReasonWithErrorCode() const
         /*override*/;
 
-    virtual void linkToOffer(::std::string const&, bool) /*override*/;
+    virtual void linkToOffer(::std::string const& productId, bool allowWhileInGame) /*override*/;
 
-    virtual void linkToPage(::std::string const&) /*override*/;
+    virtual void linkToPage(::std::string const& pageId) /*override*/;
 
-    virtual void linkTo3PServerOffers(::std::string const&, ::std::string const&) /*override*/;
+    virtual void linkTo3PServerOffers(::std::string const& pageId, ::std::string const& creatorName) /*override*/;
 
-    virtual void navigateToMarketplaceInventoryScreen(::InventoryTabIndex) /*override*/;
+    virtual void navigateToMarketplaceInventoryScreen(::InventoryTabIndex tabIndex) /*override*/;
 
     virtual void navigateToStoreHomeScreen() /*override*/;
 
-    virtual void navigateToCoinPurchaseScreen(int, ::std::function<void(bool, int)>) /*override*/;
+    virtual void navigateToCoinPurchaseScreen(int neededCoins, ::std::function<void(bool, int)> callback) /*override*/;
 
-    virtual void navigateToPurchaseOfferScreen(::StoreCatalogItem&, ::StoreNavigationOrigin, bool const) /*override*/;
+    virtual void
+    navigateToPurchaseOfferScreen(::StoreCatalogItem& item, ::StoreNavigationOrigin, bool const) /*override*/;
 
-    virtual void navigateToDressingRoomOfferScreen(::std::string const&) /*override*/;
+    virtual void navigateToDressingRoomOfferScreen(::std::string const& offerId) /*override*/;
 
-    virtual bool navigateToProfileScreen(::std::string const&, bool const) /*override*/;
+    virtual bool navigateToProfileScreen(::std::string const&, bool const preventProgressScreen) /*override*/;
 
-    virtual void navigateToServersScreen(bool const) /*override*/;
+    virtual void navigateToServersScreen(bool const calledFromHyperlink) /*override*/;
 
-    virtual void navigateToHowToPlayScreen(::std::string const&) /*override*/;
+    virtual void navigateToHowToPlayScreen(::std::string const& startTopic) /*override*/;
 
-    virtual void navigateToGatheringInfoScreen(bool) /*override*/;
+    virtual void navigateToGatheringInfoScreen(bool autoConnect) /*override*/;
 
-    virtual void navigateToMarketplacePassPDPScreen(::MarketplacePassTabIndex) /*override*/;
+    virtual void navigateToMarketplacePassPDPScreen(::MarketplacePassTabIndex tabIndex) /*override*/;
 
-    virtual void navigateToRealmsStoriesTransitionScreen(::Realms::World const&) /*override*/;
+    virtual void navigateToRealmsStoriesTransitionScreen(::Realms::World const& world) /*override*/;
 
     virtual void tryPushLeaveGameScreen() /*override*/;
 
@@ -667,7 +679,7 @@ public:
 
     virtual void onDimensionChangedEvent() /*override*/;
 
-    virtual void onGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual void onGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual ::std::string getTopScreenName() const /*override*/;
 
@@ -676,15 +688,15 @@ public:
     virtual void stopDestroying() /*override*/;
 
     virtual void onClientCreatedLevel(
-        ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>>,
-        ::OwnerPtr<::EntityContext>
+        ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
+        ::OwnerPtr<::EntityContext>                                          userEntity
     ) /*override*/;
 
     virtual ::PlayerAuthentication& getPlayerAuthentication() /*override*/;
 
     virtual void createPlayerAuthentication() /*override*/;
 
-    virtual void createPlayerAuthentication(uint64) /*override*/;
+    virtual void createPlayerAuthentication(uint64 clientRandomId) /*override*/;
 
     virtual ::std::string getPlatformId() const /*override*/;
 
@@ -786,25 +798,25 @@ public:
 
     virtual ::LightTexture* getLightTexture() /*override*/;
 
-    virtual void setupLevelRendering(::ClientLevel&, ::WeakEntityRef) /*override*/;
+    virtual void setupLevelRendering(::ClientLevel& level, ::WeakEntityRef cameraTargetEntity) /*override*/;
 
     virtual ::mce::ViewportInfo const& getViewportInfo() const /*override*/;
 
-    virtual void setViewportInfo(::mce::ViewportInfo const&) /*override*/;
+    virtual void setViewportInfo(::mce::ViewportInfo const& viewportInfo) /*override*/;
 
     virtual ::Vec2 getNormalizedViewportSize() const /*override*/;
 
     virtual void updateChunkRadius() /*override*/;
 
-    virtual void setUITexture(::mce::Texture*) /*override*/;
+    virtual void setUITexture(::mce::Texture* tex) /*override*/;
 
     virtual ::mce::Texture* getUITexture() /*override*/;
 
-    virtual void setLevelTexture(::mce::Texture*) /*override*/;
+    virtual void setLevelTexture(::mce::Texture* tex) /*override*/;
 
     virtual ::mce::Texture* getLevelTexture() /*override*/;
 
-    virtual void setUICursorTexture(::mce::TexturePtr) /*override*/;
+    virtual void setUICursorTexture(::mce::TexturePtr tex) /*override*/;
 
     virtual ::mce::TexturePtr getUICursorTexture() const /*override*/;
 
@@ -816,7 +828,8 @@ public:
 
     virtual void clearGraphicsCache() /*override*/;
 
-    virtual void getNormalizedUICursorTransform(::MatrixStack::MatrixStackRef&, float) /*override*/;
+    virtual void
+    getNormalizedUICursorTransform(::MatrixStack::MatrixStackRef& matrix, float cursorHalfSizeTexels) /*override*/;
 
     virtual bool shouldRenderUICursor() const /*override*/;
 
@@ -830,9 +843,9 @@ public:
 
     virtual int getGuiScaleOffset() const /*override*/;
 
-    virtual void setGuiScaleOffset(int) /*override*/;
+    virtual void setGuiScaleOffset(int guiScale) /*override*/;
 
-    virtual void renderImGui(::ScreenContext&, bool) /*override*/;
+    virtual void renderImGui(::ScreenContext& screenContext, bool drawMenuBar) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::GuiData> getGuiData() /*override*/;
 
@@ -844,7 +857,7 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::DateManager const> getDateManager() const /*override*/;
 
-    virtual void addOverrideHoursToDateTime(uint const) /*override*/;
+    virtual void addOverrideHoursToDateTime(uint const hoursToAdd) /*override*/;
 
     virtual ::ToastManager& getToastManager() /*override*/;
 
@@ -889,8 +902,10 @@ public:
 
     virtual ::WeakRef<::OreUI::UIBlockThumbnailAtlasManager> getOreUIBlockThumbnailAtlasManager() const /*override*/;
 
-    virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack>
-    prepareSceneFor(::ui::SceneType const, ::std::function<::std::shared_ptr<::AbstractScene>()>) /*override*/;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> prepareSceneFor(
+        ::ui::SceneType const                                 sceneTypeToFind,
+        ::std::function<::std::shared_ptr<::AbstractScene>()> createScreenCallback
+    ) /*override*/;
 
     virtual ::CachedScenes& getCachedScenes() /*override*/;
 
@@ -902,37 +917,42 @@ public:
 
     virtual ::MobEffectsLayout& getMobEffectsLayout() /*override*/;
 
-    virtual ::std::string emoticonifyText(::std::string const&) const /*override*/;
+    virtual ::std::string emoticonifyText(::std::string const& text) const /*override*/;
 
-    virtual ::std::string emoticonifyText(::std::string const&, bool) /*override*/;
+    virtual ::std::string emoticonifyText(::std::string const& text, bool isGameTip) /*override*/;
 
     virtual void onMobEffectsChange() /*override*/;
 
-    virtual void setUISizeAndScale(int, int, float) /*override*/;
+    virtual void setUISizeAndScale(int w, int h, float forcedGuiScale) /*override*/;
 
-    virtual void forEachVisibleScreen(::brstd::function_ref<void(::AbstractScene&)>) /*override*/;
+    virtual void forEachVisibleScreen(::brstd::function_ref<void(::AbstractScene&)> callback) /*override*/;
 
-    virtual void forEachScreen(::brstd::function_ref<bool(::AbstractScene&)>, bool) /*override*/;
+    virtual void forEachScreen(::brstd::function_ref<bool(::AbstractScene&)> callback, bool topDown) /*override*/;
 
-    virtual void forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)>, bool) const /*override*/;
+    virtual void forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)> callback, bool topDown) const
+        /*override*/;
 
     virtual bool updateSceneStack() /*override*/;
 
-    virtual void
-    forEachAlwaysAcceptInputScreen(::std::function<void(::AbstractScene&)>, ::AbstractScene const*) /*override*/;
+    virtual void forEachAlwaysAcceptInputScreen(
+        ::std::function<void(::AbstractScene&)> callback,
+        ::AbstractScene const*                  ignoreScreen
+    ) /*override*/;
 
-    virtual void forEachAlwaysAcceptInputScreenWithTop(::std::function<void(::AbstractScene&)>) /*override*/;
+    virtual void forEachAlwaysAcceptInputScreenWithTop(::std::function<void(::AbstractScene&)> callback) /*override*/;
 
-    virtual void showPlayerProfile(::std::string const&, ::std::string const&) /*override*/;
+    virtual void showPlayerProfile(::std::string const& xuid, ::std::string const& platformId) /*override*/;
 
     virtual bool isInGameInputEnabled() const /*override*/;
 
-    virtual void setInGameInputEnabled(bool) /*override*/;
+    virtual void setInGameInputEnabled(bool isEnabled) /*override*/;
 
     virtual ::Vec2 getSafeZoneScale() const /*override*/;
 
-    virtual void verifySkinApproval(::std::function<void(::std::string)> const&, ::std::function<void()> const&) const
-        /*override*/;
+    virtual void verifySkinApproval(
+        ::std::function<void(::std::string)> const& notApprovedCallback,
+        ::std::function<void()> const&              approvedCallback
+    ) const /*override*/;
 
     virtual ::InputMode getCurrentInputMode() const /*override*/;
 
@@ -942,19 +962,19 @@ public:
 
     virtual ::KeyboardManager& getKeyboardManager() /*override*/;
 
-    virtual void setLastPointerLocation(float, float, float) /*override*/;
+    virtual void setLastPointerLocation(float x, float y, float z) /*override*/;
 
     virtual void clearTouchPointerLocations() /*override*/;
 
-    virtual void clearTouchPointerLocation(int) /*override*/;
+    virtual void clearTouchPointerLocation(int id) /*override*/;
 
-    virtual void updateTouchPointerLocation(int, float, float) /*override*/;
+    virtual void updateTouchPointerLocation(int id, float x, float y) /*override*/;
 
     virtual ::Vec3 getLastPointerLocation() /*override*/;
 
-    virtual ::Vec2 getTouchPointerLocation(int) const /*override*/;
+    virtual ::Vec2 getTouchPointerLocation(int id) const /*override*/;
 
-    virtual void updateActionPointerId(int) /*override*/;
+    virtual void updateActionPointerId(int id) /*override*/;
 
     virtual int getActionPointerId() const /*override*/;
 
@@ -972,35 +992,35 @@ public:
 
     virtual ::glm::vec2 getGamepadCursorPosition() const /*override*/;
 
-    virtual void updateControlOptionState(uint, bool) /*override*/;
+    virtual void updateControlOptionState(uint id, bool active) /*override*/;
 
     virtual void clearActiveControlOptions() /*override*/;
 
     virtual ::std::set<uint> const& getActiveControlOptions() const /*override*/;
 
-    virtual ::std::vector<::OptionID> getActiveOptionIDs(::ControlOptionType) const /*override*/;
+    virtual ::std::vector<::OptionID> getActiveOptionIDs(::ControlOptionType controlOptionType) const /*override*/;
 
-    virtual void setNumberOfActiveConfigs(int) /*override*/;
+    virtual void setNumberOfActiveConfigs(int numberOfActiveConfigs) /*override*/;
 
     virtual int getNumberOfActiveConfigs() const /*override*/;
 
     virtual bool isNoConfigSelected() const /*override*/;
 
-    virtual void setNumberOfEnabledConfigs(int) /*override*/;
+    virtual void setNumberOfEnabledConfigs(int numberOfEnabledConfigs) /*override*/;
 
     virtual int getNumberOfEnabledConfigs() const /*override*/;
 
-    virtual void setWYSIWYGState(::WYSIWYGState) /*override*/;
+    virtual void setWYSIWYGState(::WYSIWYGState wysiwygState) /*override*/;
 
     virtual ::WYSIWYGState getWYSIWYGState() const /*override*/;
 
-    virtual void setOtherConfigsExistInThisCategory(bool) /*override*/;
+    virtual void setOtherConfigsExistInThisCategory(bool otherConfigsExistInThisCategory) /*override*/;
 
     virtual bool getOtherConfigsExistInThisCategory() const /*override*/;
 
-    virtual void setMoveTurnInput(::std::unique_ptr<::ClientMoveInputHandler>) /*override*/;
+    virtual void setMoveTurnInput(::std::unique_ptr<::ClientMoveInputHandler> pClientMoveInputHandler) /*override*/;
 
-    virtual void setupPersistentControls(::InputMode) /*override*/;
+    virtual void setupPersistentControls(::InputMode currentMode) /*override*/;
 
     virtual void resetPlayerMovement() /*override*/;
 
@@ -1008,7 +1028,7 @@ public:
 
     virtual void onClientInputInitComplete() /*override*/;
 
-    virtual void setClientInputHandler(::std::unique_ptr<::ClientInputHandler>) /*override*/;
+    virtual void setClientInputHandler(::std::unique_ptr<::ClientInputHandler> pClientInputHandler) /*override*/;
 
     virtual ::ClientInputHandler* getInput() const /*override*/;
 
@@ -1018,21 +1038,21 @@ public:
 
     virtual ::SubClientId getClientSubId() const /*override*/;
 
-    virtual void setSuspendInput(bool) /*override*/;
+    virtual void setSuspendInput(bool suspendInput) /*override*/;
 
-    virtual void setSuspendDirectionalInput(bool) /*override*/;
+    virtual void setSuspendDirectionalInput(bool suspendDirectionalInput) /*override*/;
 
-    virtual void setDisableInput(bool) /*override*/;
+    virtual void setDisableInput(bool disableInput) /*override*/;
 
     virtual void grabMouse() /*override*/;
 
     virtual void releaseMouse() /*override*/;
 
-    virtual void refocusMouse(bool) /*override*/;
+    virtual void refocusMouse(bool lostMouse) /*override*/;
 
-    virtual void setMouseType(::Bedrock::Input::PointerType) /*override*/;
+    virtual void setMouseType(::Bedrock::Input::PointerType type) /*override*/;
 
-    virtual void resetBai(int) /*override*/;
+    virtual void resetBai(int baiFlags) /*override*/;
 
     virtual void clearInProgressBAI() /*override*/;
 
@@ -1042,9 +1062,9 @@ public:
 
     virtual ::MusicManager* getMusicManagerNonConst() const /*override*/;
 
-    virtual void play(::std::string const&, ::Vec3 const&, float, float) /*override*/;
+    virtual void play(::std::string const& name, ::Vec3 const& pos, float volume, float pitch) /*override*/;
 
-    virtual void playUI(::std::string const&, float, float) /*override*/;
+    virtual void playUI(::std::string const& name, float volume, float pitch) /*override*/;
 
     virtual void muteAudio() /*override*/;
 
@@ -1058,62 +1078,63 @@ public:
 
     virtual bool isFullVanillaPackOnStack() const /*override*/;
 
-    virtual void onPlayerLoaded(::Player&) /*override*/;
+    virtual void onPlayerLoaded(::Player& player) /*override*/;
 
-    virtual void setClientGameMode(::GameType) /*override*/;
+    virtual void setClientGameMode(::GameType gameType) /*override*/;
 
     virtual void resetToDefaultGameMode() /*override*/;
 
     virtual ::IGameConnectionListener& getGameConnectionListener() /*override*/;
 
-    virtual void connectToThirdPartyServer(::std::string const&, int) /*override*/;
+    virtual void connectToThirdPartyServer(::std::string const& ipAddress, int port) /*override*/;
 
     virtual void startExternalNetworkWorld(
-        ::Social::GameConnectionInfo,
-        ::std::string const&,
-        ::PlayerJoinWorldContext
+        ::Social::GameConnectionInfo connection,
+        ::std::string const&         serverName,
+        ::PlayerJoinWorldContext     context
     ) /*override*/;
 
     virtual bool isReadyToReconnect() const /*override*/;
 
     virtual bool checkForPiracy() /*override*/;
 
-    virtual void updateChatFilterStatus(::ProfanityContext&) /*override*/;
+    virtual void updateChatFilterStatus(::ProfanityContext& profanityContext) /*override*/;
 
     virtual void updateControllerHandling() /*override*/;
 
-    virtual void onPlayerDestruction(::Player&) /*override*/;
+    virtual void onPlayerDestruction(::Player& player) /*override*/;
 
-    virtual void setBehaviorCommandCallback(::std::function<void(::std::string const&, ::BehaviorStatus)>) /*override*/;
+    virtual void
+    setBehaviorCommandCallback(::std::function<void(::std::string const&, ::BehaviorStatus)> callback) /*override*/;
 
-    virtual void setBehaviorCommandStatus(::std::string const&, ::BehaviorStatus) /*override*/;
+    virtual void setBehaviorCommandStatus(::std::string const& treeName, ::BehaviorStatus status) /*override*/;
 
-    virtual void setConnectGamepadScreenActive(bool) /*override*/;
+    virtual void setConnectGamepadScreenActive(bool active) /*override*/;
 
     virtual ::Bedrock::Threading::Async<::Core::PathBuffer<::std::string>>
-    requestScreenshot(::ScreenshotOptions&) /*override*/;
+    requestScreenshot(::ScreenshotOptions& screenshotOptions) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger> getDevConsoleLogger() const /*override*/;
 
     virtual ::std::shared_ptr<::FileDataRequest> requestImageFromUrl(
-        ::std::string const&,
-        ::std::function<void(::Bedrock::Http::Status, ::Core::Path const&, uint64)>
+        ::std::string const&                                                        imageUrl,
+        ::std::function<void(::Bedrock::Http::Status, ::Core::Path const&, uint64)> callback
     ) /*override*/;
 
-    virtual void setActiveFileStorageArea(::std::shared_ptr<::Core::FileStorageArea>) /*override*/;
+    virtual void setActiveFileStorageArea(::std::shared_ptr<::Core::FileStorageArea> storageArea) /*override*/;
 
     virtual void onExtendDiskSpace(
-        bool const,
-        ::std::weak_ptr<::Core::FileStorageArea> const&,
-        uint64,
-        ::std::function<void()>
+        bool const                                      bSet,
+        ::std::weak_ptr<::Core::FileStorageArea> const& storageAreaWeakPtr,
+        uint64                                          freeSpace,
+        ::std::function<void()>                         onHandledEventCallback
     ) /*override*/;
 
-    virtual void onLowDiskSpace(bool const) /*override*/;
+    virtual void onLowDiskSpace(bool const bSet) /*override*/;
 
-    virtual void onOutOfDiskSpace(bool const) /*override*/;
+    virtual void onOutOfDiskSpace(bool const bSet) /*override*/;
 
-    virtual void onCriticalDiskError(bool const, ::Core::LevelStorageState const&) /*override*/;
+    virtual void onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode) /*override*/;
 
     virtual void onLevelCorrupt() /*override*/;
 
@@ -1121,7 +1142,7 @@ public:
 
     virtual void onBeforeSimTick() /*override*/;
 
-    virtual void onTick(int, int) /*override*/;
+    virtual void onTick(int nTick, int maxTick) /*override*/;
 
     virtual void onInternetUpdate() /*override*/;
 
@@ -1141,11 +1162,13 @@ public:
 
     virtual void onAppResumed() /*override*/;
 
-    virtual void
-    onActiveResourcePacksChanged(::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const&) /*override*/;
+    virtual void onActiveResourcePacksChanged(
+        ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const& entityResourceDefGroup
+    ) /*override*/;
 
-    virtual void
-    reloadEntityRenderers(::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const&) /*override*/;
+    virtual void reloadEntityRenderers(
+        ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const& actorResourceDefinitionGroup
+    ) /*override*/;
 
     virtual ::BlockTessellator& getBlockTessellator() /*override*/;
 
@@ -1175,8 +1198,14 @@ public:
 
     virtual ::std::shared_ptr<::ITTSEventManager> getTTSEventManager() /*override*/;
 
-    virtual void
-    addTTSMessage(::std::string const&, ::ProfanityFilterContext, bool, ::std::string const&, bool, bool) /*override*/;
+    virtual void addTTSMessage(
+        ::std::string const&     message,
+        ::ProfanityFilterContext profanityFilterContext,
+        bool                     interruptible,
+        ::std::string const&     interruptibleId,
+        bool                     required,
+        bool                     disregardAppFocus
+    ) /*override*/;
 
     virtual void initCommands() /*override*/;
 
@@ -1186,15 +1215,15 @@ public:
 
     virtual double getServerConnectionTime() const /*override*/;
 
-    virtual void setServerPingTime(int) /*override*/;
+    virtual void setServerPingTime(int pingTime) /*override*/;
 
     virtual int getServerPingTime() const /*override*/;
 
-    virtual void setDefaultPlayscreenTab(::PlayScreenDefaultTab) /*override*/;
+    virtual void setDefaultPlayscreenTab(::PlayScreenDefaultTab defaultTab) /*override*/;
 
-    virtual void setClientInstanceState(::ClientInstanceState const&) /*override*/;
+    virtual void setClientInstanceState(::ClientInstanceState const& newstate) /*override*/;
 
-    virtual void setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&&) /*override*/;
+    virtual void setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&& coordinator) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> getUIEventCoordinator() /*override*/;
 
@@ -1206,7 +1235,7 @@ public:
 
     virtual ::std::chrono::steady_clock::time_point getNoBlockBreakUntil() /*override*/;
 
-    virtual void setNoBlockBreakUntil(::std::chrono::steady_clock::time_point) /*override*/;
+    virtual void setNoBlockBreakUntil(::std::chrono::steady_clock::time_point timePoint) /*override*/;
 
     virtual ::GameCallbacks& getGameCallbacks() /*override*/;
 
@@ -1226,8 +1255,11 @@ public:
 
     virtual ::PlayerCapabilities::IClientController const& getClientCapabilities() const /*override*/;
 
-    virtual ::cg::math::Rect<float>
-    calculateViewPortModifiers(::SubClientId const, uint64 const, ::SplitScreenDirection const) const /*override*/;
+    virtual ::cg::math::Rect<float> calculateViewPortModifiers(
+        ::SubClientId const          clientId,
+        uint64 const                 clientCount,
+        ::SplitScreenDirection const splitScreenConfiguration
+    ) const /*override*/;
 
     virtual ::std::weak_ptr<::IClientInstance> getWeakPtrToThis() /*override*/;
 
@@ -1250,11 +1282,11 @@ public:
 
     virtual float getRemoteServerTimeMs() const /*override*/;
 
-    virtual void setRemoteServerTimeMs(float) /*override*/;
+    virtual void setRemoteServerTimeMs(float time) /*override*/;
 
     virtual float getRemoteServerNetworkTimeMs() const /*override*/;
 
-    virtual void setRemoteServerNetworkTimeMs(float) /*override*/;
+    virtual void setRemoteServerNetworkTimeMs(float time) /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::ClientScriptManager> getClientScriptManager() /*override*/;
 
@@ -1266,13 +1298,13 @@ public:
 
     virtual ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> getLinkedAssetValidator() /*override*/;
 
-    virtual void flagDisconnectionAndNotify(::Connection::DisconnectFailReason) /*override*/;
+    virtual void flagDisconnectionAndNotify(::Connection::DisconnectFailReason disconnectReason) /*override*/;
 
-    virtual void flagDisconnectionAndNotifyWithParams(::DisconnectionScreenParams const&) /*override*/;
+    virtual void flagDisconnectionAndNotifyWithParams(::DisconnectionScreenParams const& params) /*override*/;
 
-    virtual void disconnectSubClient(::Connection::DisconnectFailReason) /*override*/;
+    virtual void disconnectSubClient(::Connection::DisconnectFailReason disconnectReason) /*override*/;
 
-    virtual void setClientUpdateAndRenderThrottling(bool, int, float) /*override*/;
+    virtual void setClientUpdateAndRenderThrottling(bool enabled, int threshold, float scalar) /*override*/;
 
     virtual bool isClientUpdateAndRenderThrottlingEnabled() const /*override*/;
 
@@ -1286,7 +1318,7 @@ public:
 
     virtual void setupPauseManagers() /*override*/;
 
-    virtual bool requestInGamePause(bool) /*override*/;
+    virtual bool requestInGamePause(bool status) /*override*/;
 
     virtual void openContentLogHistory() /*override*/;
 
@@ -1299,6 +1331,47 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ClientInstance(::ClientInstanceArguments&& args);
+
+    MCAPI ::std::unique_ptr<::LegacyClientNetworkHandler>
+    _createNetworkHandler(::PlayerAuthenticationType authType, ::RawGameServerToken&& token);
+
+    MCAPI bool _getIsConnectedToApplicationLayer() const;
+
+    MCAPI void _handleDisconnectionScreenRequests();
+
+    MCAPI bool _isEditorModeOrInEditorWorld() const;
+
+    MCAPI bool _isShowingScreen(::std::string_view screenName) const;
+
+    MCAPI void _joinWorldInProgressSubclient(::std::optional<::ConnectionContextInfo> primaryConnectionInfo);
+
+    MCAPI void _leaveGameOnUnrecoverableError(
+        ::Connection::DisconnectFailReason reason,
+        ::std::string const&               telemetryMessage,
+        ::std::string const&               errorDescriptionOverride
+    );
+
+    MCAPI void _perspectiveOptionChanged(::Option const&);
+
+    MCAPI void _requestLeaveGameImpl(bool const switchScreen, bool const sync);
+
+    MCAPI void _startDestroyingGame();
+
+    MCAPI void _startLeaveGame();
+
+    MCAPI void _startWorldPrimaryClient(::PlayerAuthenticationType authType, ::RawGameServerToken&& token);
+
+    MCAPI void
+    _tickBuildAction(::HitResult const& solidHitResult_, ::HitResult const& liquidHitResult_, bool advanceTime);
+
+    MCAPI void _updateScreenSizeVariables(::Vec2 const& totalScreenSize, ::Vec2 const& safeZone, float forcedGuiScale);
+
+    MCAPI void fireEventDiskStatus(::DiskStatus status, ::Core::LevelStorageState errorCode);
+
+    MCAPI void flagDisconnectionAndNotifyWithTarget(
+        ::DisconnectionScreenParams const& params,
+        ::Connection::UIReturnTarget       uiReturnTarget
+    );
     // NOLINTEND
 
 public:

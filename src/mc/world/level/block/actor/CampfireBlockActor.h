@@ -54,6 +54,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit CampfireBlockActor(::BlockPos const& pos);
 
+    MCAPI void _finishCooking(::BlockSource& region, int slot);
+
     MCAPI void dropAllItems(::BlockSource& region);
 
     MCAPI bool setItem(::BlockSource&, ::ItemInstance const& item);

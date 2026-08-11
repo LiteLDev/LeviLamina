@@ -33,12 +33,7 @@ public:
     // NOLINTBEGIN
     virtual ::Json::Value serialize() const /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void deserialize(::Json::Value const&) /*override*/;
-#else // LL_PLAT_C
     virtual void deserialize(::Json::Value const& root) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:

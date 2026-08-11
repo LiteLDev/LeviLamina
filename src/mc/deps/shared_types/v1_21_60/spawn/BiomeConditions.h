@@ -36,6 +36,8 @@ public:
 
     MCAPI BiomeConditions(::SharedTypes::v1_21_60::Spawn::BiomeConditions const&);
 
+    MCAPI bool operator==(::SharedTypes::v1_21_60::Spawn::BiomeConditions const&) const;
+
     MCAPI ~BiomeConditions();
     // NOLINTEND
 

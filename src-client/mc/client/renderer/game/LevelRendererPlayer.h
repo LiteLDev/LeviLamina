@@ -10,6 +10,7 @@
 #include "mc/client/renderer/texture/TextureAtlasItem.h"
 #include "mc/client/sound/ListenerState.h"
 #include "mc/common/SubClientId.h"
+#include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/container/slot_map_handle.h"
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/math/Vec3.h"
@@ -22,18 +23,21 @@
 #include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 #include "mc/deps/shared_types/legacy/LevelEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/FogDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorSoundIdentifier;
 class AmbientSoundController;
 class BaseActorRenderContext;
 class Block;
 class BlockSource;
 class ClientFrameUpdateContext;
 class CompoundTag;
+class EntityContext;
 class Font;
 class IClientInstance;
 class IRandom;
@@ -41,20 +45,26 @@ class Level;
 class LevelAnimateTickHelper;
 class LevelRenderer;
 class Matrix;
+class OptionRegistry;
 class Player;
+class Random;
 class RenderChunkShared;
 class ScreenContext;
+class ServerSoundHandle;
 class SoundMapping;
 class SoundPlayerInterface;
 class Tessellator;
+class TextureAtlas;
 class TextureTessellator;
 struct BlockDestructInfo;
 struct BreakingItemParticleData;
+struct CrackRenderObject;
 struct CrackRenderObjectCollection;
 struct DeferredSound;
 struct LevelRenderPreRenderUpdateParameters;
 struct NameTagRenderObjectCollection;
 struct ResolvedItemIconInfo;
+struct Sound;
 struct TextureUVCoordinateSet;
 struct ViewRenderObject;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
@@ -210,61 +220,80 @@ public:
 
     virtual void initResources() /*override*/;
 
-    virtual void frameUpdate(::ClientFrameUpdateContext&) /*override*/;
+    virtual void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext) /*override*/;
 
     virtual void tickLevelRendererCamera() /*override*/;
 
     virtual void tickRain() /*override*/;
 
-    virtual void onWillChangeDimension(::Player&) /*override*/;
+    virtual void onWillChangeDimension(::Player& player) /*override*/;
 
-    virtual void onDimensionChanged(::Player&) /*override*/;
+    virtual void onDimensionChanged(::Player& player) /*override*/;
 
-    virtual void recalculateRenderDistance(float const) /*override*/;
+    virtual void recalculateRenderDistance(float const renderDistanceScalar) /*override*/;
 
-    virtual void preRenderUpdate(::ScreenContext&, ::LevelRenderPreRenderUpdateParameters&) /*override*/;
+    virtual void preRenderUpdate(
+        ::ScreenContext&                        screenContext,
+        ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
+    ) /*override*/;
 
-    virtual void renderBlockEntities(::BaseActorRenderContext&, bool) /*override*/;
+    virtual void renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer) /*override*/;
 
-    virtual void updateViewArea(::LevelRenderPreRenderUpdateParameters const&) /*override*/;
+    virtual void
+    updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters) /*override*/;
 
-    virtual ::NameTagRenderObjectCollection extractNameTags(::ScreenContext&) const /*override*/;
+    virtual ::NameTagRenderObjectCollection extractNameTags(::ScreenContext& screenContext) const /*override*/;
 
-    virtual void callRenderNameTags(::ScreenContext&, ::ViewRenderObject const&, ::Font&) /*override*/;
+    virtual void
+    callRenderNameTags(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, ::Font& font) /*override*/;
 
-    virtual ::CrackRenderObjectCollection extractCracks(::ScreenContext&) const /*override*/;
+    virtual ::CrackRenderObjectCollection extractCracks(::ScreenContext& screenContext) const /*override*/;
 
-    virtual void callRenderCracks(::BaseActorRenderContext&, ::ViewRenderObject const&) /*override*/;
+    virtual void
+    callRenderCracks(::BaseActorRenderContext& renderContext, ::ViewRenderObject const& renderObj) /*override*/;
 
-    virtual bool getForceFog(::Actor const&) const /*override*/;
+    virtual bool getForceFog(::Actor const& cameraActor) const /*override*/;
 
-    virtual void setupFog(::ScreenContext&, float const) /*override*/;
+    virtual void setupFog(::ScreenContext& screenContext, float const skyIntensityOverride) /*override*/;
 
-    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) /*override*/;
+    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data) /*override*/;
 
-    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&) /*override*/;
+    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data) /*override*/;
 
     virtual void addCameraListenerToRenderChunkCoordinator() /*override*/;
 
-    virtual void notifyGeoChangedForAffectedEntities(::RenderChunkShared&, uchar) /*override*/;
-
     virtual void
-    addTerrainParticleEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float) /*override*/;
+    notifyGeoChangedForAffectedEntities(::RenderChunkShared& renderChunkShared, uchar version) /*override*/;
 
-    virtual void
-    addTerrainSlideEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float) /*override*/;
+    virtual void addTerrainParticleEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             particleCount,
+        float             velocityScalar,
+        float             emitterRadius
+    ) /*override*/;
+
+    virtual void addTerrainSlideEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             particleCount,
+        float             velocityScalar,
+        float             emitterRadius
+    ) /*override*/;
 
     virtual void addBreakingItemParticleEffect(
-        ::Vec3 const&,
-        ::BreakingItemParticleData const&,
-        ::ResolvedItemIconInfo const&
+        ::Vec3 const&                     pos,
+        ::BreakingItemParticleData const& data,
+        ::ResolvedItemIconInfo const&     textureInfo
     ) /*override*/;
 
     virtual void addBiomeTintedParticleEffect(
-        ::HashedString const&,
-        ::BlockPos const&,
-        ::Block const&,
-        ::std::optional<::mce::Color>
+        ::HashedString const&         effect,
+        ::BlockPos const&             pos,
+        ::Block const&                block,
+        ::std::optional<::mce::Color> overrideColor
     ) /*override*/;
 
     virtual float getUnderwaterVisionClarity();
@@ -275,14 +304,41 @@ public:
 
     virtual void _releaseRespectiveResources() /*override*/;
 
-    virtual void queueRenderEntities(::LevelRenderPreRenderUpdateParameters const&) /*override*/;
+    virtual void queueRenderEntities(
+        ::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters
+    ) /*override*/;
 
-    virtual void renderEntityEffects(::BaseActorRenderContext&) /*override*/;
+    virtual void renderEntityEffects(::BaseActorRenderContext& renderContext) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LevelRendererPlayer(
+        ::IClientInstance&                                           clientInstance,
+        ::std::shared_ptr<::OptionRegistry>                          options,
+        ::Level&                                                     level,
+        ::LevelRenderer&                                             levelRenderer,
+        ::WeakEntityRef                                              localUser,
+        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
+        ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const&   terrainTexture,
+        ::SoundMapping const&                                        sounds
+    );
+
+    MCAPI void _addTerrainEffect(
+        ::HashedString const& effectName,
+        ::BlockPos const&     pos,
+        ::Block const&        block,
+        ::Vec3 const&         emitterPosition,
+        float                 particleCount,
+        float                 velocityScalar,
+        float                 emitterRadius
+    );
+
+    MCAPI void _crack(::BlockSource& region, ::Block const& block, ::BlockPos const& inPos, uchar face);
+
+    MCAPI void _playBabySoundEvent(::Sound const& sound, ::Vec3 const& pos, ::Random& rand, bool isLocalPlayer) const;
+
     MCAPI void _renderHighlightSelection(
         ::BaseActorRenderContext& renderContext,
         ::BlockSource&            region,
@@ -299,17 +355,50 @@ public:
         ::BlockPos const&         pos
     ) const;
 
+    MCAPI ::Sound const& _retrieveActorSoundWithFallback(
+        ::SharedTypes::Legacy::LevelSoundEvent eventType,
+        ::SharedTypes::Legacy::LevelSoundEvent backupEventType,
+        ::ActorSoundIdentifier const&          actorSoundIdentifier
+    );
+
+    MCAPI void _spawnSmokeParticles(::ParticleType particleType, ::Vec3 const& pos, int data);
+
+    MCAPI bool blockCanHaveCracksOverlay(::Block const& block) const;
+
     MCAPI bool blockCanHaveSelectionOverlay(::Block const& block) const;
 
     MCAPI void bobHurt(::Matrix& mv, float a);
 
     MCAPI void bobView(::Matrix& mv, float a);
 
+    MCAPI ::CrackRenderObject createCrackRenderObject(
+        ::ScreenContext&  screenContext,
+        ::BlockSource&    region,
+        ::Block const&    block,
+        ::BlockPos const& h,
+        float             destroyProgress
+    ) const;
+
     MCAPI ::ViewRenderObject createViewRenderObject(::ScreenContext& screenContext, ::SubClientId clientSubId);
+
+    MCAPI void emitGrowthParticles(::Vec3 const& pos);
 
     MCAPI ::DirectionalLightRenderData getActiveDirectionalLight() const;
 
     MCAPI float getFov(float a, bool enableVariableFOV) const;
+
+    MCAPI void playDeferredSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
+
+    MCAPI void playSound(
+        ::std::string const&                 name,
+        ::Vec3 const&                        pos,
+        float                                volume,
+        float                                pitch,
+        bool                                 isLocalPlayer,
+        ::std::optional<::ServerSoundHandle> serverSoundHandle
+    ) const;
+
+    MCAPI void reinit(::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const& terrainTexture);
 
     MCAPI void renderHitSelect(
         ::BaseActorRenderContext& renderContext,
@@ -320,6 +409,26 @@ public:
 
     MCAPI void setupCamera(::mce::Camera& camera, float);
 
+    MCAPI void stopMusic();
+
+    MCAPI void stopRecord(::Vec3 const& pos);
+
+    MCAPI void stopSound(::std::string const& name);
+
+    MCAPI void stopSounds();
+
+    MCAPI void tryReassignSoundEventToVariant(::SharedTypes::Legacy::LevelSoundEvent& eventType, ::Vec3 const& pos);
+
+    MCAPI void tryReassignSoundToFallback(
+        ::SharedTypes::Legacy::LevelSoundEvent& eventType,
+        ::Sound&                                sound,
+        ::ActorSoundIdentifier const&           actorSoundIdentifier,
+        ::std::string const&                    blockType,
+        ::Random&                               random
+    );
+
+    MCAPI void updateDestroyBlock(::BlockPos const& tp, float destroyRate);
+
     MCAPI void updateDestroyProgress();
 
     MCAPI void updateListenerState(float alpha);
@@ -328,7 +437,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static float getActorShadowOffset(::EntityContext const& entity);
+
     MCAPI static ::TextureUVCoordinateSet getDestructionParticlesTexture(::IRandom& random, ::Block const& block);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

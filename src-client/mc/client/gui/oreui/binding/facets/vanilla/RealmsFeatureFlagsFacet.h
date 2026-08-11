@@ -33,6 +33,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsFeatureFlagsFacet(::std::weak_ptr<::RealmsAPI> realmsApi);
+
+    MCFOLD ::std::vector<::std::string> const& getAllFeatureFlags() const;
     // NOLINTEND
 
 public:

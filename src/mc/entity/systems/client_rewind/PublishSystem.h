@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/Optional.h"
+#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/Filter.h"
@@ -16,6 +18,7 @@
 // auto generated forward declare list
 // clang-format off
 class ReplayStateComponent;
+class StrictEntityContext;
 struct ActorDataBoundingBoxComponent;
 struct ActorDataFlagComponent;
 struct ActorDataHorseFlagComponent;
@@ -93,6 +96,25 @@ public:
     ) /*override*/;
 #endif
 
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static void tickEntity(
+        ::StrictEntityContext const&   entity,
+        ::ReplayStateComponent&        replay,
+        ::ReplayStateTrackerComponent& tracker,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::ActorDataFlagComponent const,
+            ::Optional<::ActorDataHorseFlagComponent const>,
+            ::Optional<::ActorDataJumpDurationComponent const>,
+            ::Optional<::ActorDataBoundingBoxComponent const>,
+            ::Optional<::ActorDataSeatOffsetComponent const>> const& tracked
+    );
+#endif
     // NOLINTEND
 
 public:

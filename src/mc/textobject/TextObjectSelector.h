@@ -31,7 +31,7 @@ public:
 
     virtual ::Json::Value asJsonValue() const /*override*/;
 
-    virtual ::Json::Value resolve(::ResolveData const&) const /*override*/;
+    virtual ::Json::Value resolve(::ResolveData const& resolveData) const /*override*/;
     // NOLINTEND
 
 public:

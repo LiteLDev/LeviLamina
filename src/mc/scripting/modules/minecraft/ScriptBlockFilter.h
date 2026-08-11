@@ -3,13 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class HashedString;
+namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
@@ -38,6 +41,22 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptBlockFilter(::ScriptModuleMinecraft::ScriptBlockFilter const&);
 
+    MCAPI ::Scripting::Result_deprecated<::std::optional<
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>>
+    getExcludePermutations() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getExcludeTags() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getExcludeTypes() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::optional<
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>>
+    getIncludePermutations() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getIncludeTags() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getIncludeTypes() const;
+
     MCAPI bool isValid(::Scripting::Error& error) const;
 
     MCAPI bool operator()(::Block const& block) const;
@@ -45,6 +64,26 @@ public:
     MCAPI ::ScriptModuleMinecraft::ScriptBlockFilter& operator=(::ScriptModuleMinecraft::ScriptBlockFilter&&);
 
     MCAPI ::ScriptModuleMinecraft::ScriptBlockFilter& operator=(::ScriptModuleMinecraft::ScriptBlockFilter const&);
+
+    MCAPI ::Scripting::Result_deprecated<void> setExcludePermutations(
+        ::std::optional<
+            ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>> const&
+            permutations
+    );
+
+    MCAPI ::Scripting::Result_deprecated<void> setExcludeTags(::std::optional<::std::vector<::std::string>> strings);
+
+    MCAPI ::Scripting::Result_deprecated<void> setExcludeTypes(::std::optional<::std::vector<::std::string>> strings);
+
+    MCAPI ::Scripting::Result_deprecated<void> setIncludePermutations(
+        ::std::optional<
+            ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>> const&
+            permutations
+    );
+
+    MCAPI ::Scripting::Result_deprecated<void> setIncludeTags(::std::optional<::std::vector<::std::string>> strings);
+
+    MCAPI ::Scripting::Result_deprecated<void> setIncludeTypes(::std::optional<::std::vector<::std::string>> strings);
 
     MCAPI ~ScriptBlockFilter();
     // NOLINTEND

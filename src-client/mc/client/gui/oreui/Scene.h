@@ -36,6 +36,7 @@ struct TouchPadTouchEventData;
 namespace OreUI { class IView; }
 namespace OreUI { class IViewProvider; }
 namespace OreUI { class RouteModeInputHandler; }
+namespace OreUI { class RouterLocation; }
 namespace OreUI::Debug { class ISceneDataProvider; }
 // clang-format on
 
@@ -70,7 +71,7 @@ public:
 
     virtual void init(::ScreenSizeData const&) /*override*/;
 
-    virtual void setSize(::ScreenSizeData const&) /*override*/;
+    virtual void setSize(::ScreenSizeData const& screenSizeData) /*override*/;
 
     virtual void onSetKeyboardHeight(float) /*override*/;
 
@@ -102,7 +103,7 @@ public:
 
     virtual void prepareFrame(::ScreenContext&) /*override*/;
 
-    virtual void render(::ScreenContext&, ::FrameRenderObject const&) /*override*/;
+    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const&) /*override*/;
 
     virtual void postRenderUpdate(::ScreenContext&) /*override*/;
 
@@ -174,9 +175,9 @@ public:
 
     virtual ::std::string getScreenName() const /*override*/;
 
-    virtual bool equalsScreenName(::std::string_view) const /*override*/;
+    virtual bool equalsScreenName(::std::string_view comparison) const /*override*/;
 
-    virtual bool containsScreenNameSubstring(::std::string_view) const /*override*/;
+    virtual bool containsScreenNameSubstring(::std::string_view substring) const /*override*/;
 
     virtual ::std::string getRawScreenName() const /*override*/;
 
@@ -236,7 +237,7 @@ public:
 
     virtual bool hasFinishedLoading() const /*override*/;
 
-    virtual void sendScreenEvent(::std::string const&, ::std::string const&) /*override*/;
+    virtual void sendScreenEvent(::std::string const& eventName, ::std::string const& eventData) /*override*/;
 
     virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) /*override*/;
 
@@ -250,6 +251,15 @@ public:
     virtual void onReusedViewReleased() /*override*/;
 
     virtual bool isInputEnabled() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _updateRouteAndRouteMode(
+        ::std::optional<::OreUI::RouterLocation> const& previousLocation,
+        ::std::optional<::OreUI::RouterLocation> const& currentLocation
+    );
     // NOLINTEND
 
 public:

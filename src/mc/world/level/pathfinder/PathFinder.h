@@ -5,20 +5,26 @@
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/CachedChunkBlockSource.h"
+#include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/pathfinder/BinaryHeap.h"
 #include "mc/world/level/pathfinder/CanClimbIntoNode.h"
 #include "mc/world/level/pathfinder/CanJumpIntoNode.h"
 #include "mc/world/level/pathfinder/NodeType.h"
+#include "mc/world/level/pathfinder/PathCompletionType.h"
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class Actor;
+class Block;
 class BlockSource;
+class BreakBlocksComponent;
 class NavigationComponent;
 class Path;
 class PathfinderNode;
 class Vec3;
 struct ActorPathingData;
+struct ActorUniqueID;
 // clang-format on
 
 class PathFinder {
@@ -64,8 +70,90 @@ public:
     // NOLINTBEGIN
     MCNAPI PathFinder(::BlockSource& region, ::NavigationComponent const& navigation);
 
+    MCNAPI bool _checkBlockAndNeighborsProperty(
+        ::ActorPathingData const&                                data,
+        ::BlockPos const&                                        pos,
+        ::Block const&                                           block,
+        ::BlockProperty                                          testProperty,
+        int                                                      radius,
+        ::BreakBlocksComponent const*                            breakBlocksComponent,
+        ::std::function<bool(::Block const&, ::BlockPos const&)> extraCondition
+    );
+
+    MCNAPI ::NodeType _classifyDoorNode(
+        ::ActorPathingData const& data,
+        ::Block const&            testBlock,
+        ::BlockPos const&         testPos,
+        ::BlockPos const&         lastPathPos
+    );
+
+    MCNAPI ::NodeType _classifyNode(
+        ::ActorPathingData const& data,
+        ::BlockPos const&         lastPathPos,
+        ::Block const&            testBlock,
+        ::BlockPos const&         testPos,
+        ::CanJumpIntoNode         jumpIntoNode,
+        ::CanClimbIntoNode        climbIntoNode
+    );
+
+    MCNAPI bool
+    _findNearestPathableNeighbor(::BlockPos& outPos, ::ActorPathingData const& data, ::BlockPos const& testPos);
+
     MCNAPI ::std::unique_ptr<::Path>
     _findPath(::ActorPathingData const& actorData, float xt, float yt, float zt, float maxDist);
+
+    MCNAPI ::std::unique_ptr<::Path> _findPath(
+        ::ActorPathingData const& data,
+        ::PathfinderNode*         from,
+        ::PathfinderNode*         to,
+        ::PathfinderNode const&   size,
+        float                     maxDist
+    );
+
+    MCNAPI ::AABB _getAABBForHeightComputation(::BlockPos const& pos, ::Block const& block) const;
+
+    MCNAPI float _getHeightAboveBlock(::BlockPos const& blockPos, float const mobHeight) const;
+
+    MCNAPI float _getHeightBelowBlock(::BlockPos const& blockPos, float const mobHeight) const;
+
+    MCNAPI ::PathfinderNode* _getNode(::BlockPos const& pos, ::NodeType nodeType);
+
+    MCNAPI ::PathfinderNode* _getNode(
+        ::ActorPathingData const& data,
+        ::BlockPos const&         fromPos,
+        ::BlockPos const&         blockPos,
+        ::PathfinderNode const&   size,
+        float                     jumpHeight,
+        ::CanClimbIntoNode        climbIntoNode
+    );
+
+    MCNAPI ::std::optional<::NodeType> _getPartialBlockNodeType(
+        ::BlockPos const&         currentBlockPos,
+        ::BlockPos const&         lastBlockPos,
+        ::ActorPathingData const& data
+    );
+
+    MCNAPI float _getPathfindingMalus(::ActorPathingData const& data, ::NodeType nodeType, ::BlockPos const& blockPos);
+
+    MCNAPI ::PathfinderNode*
+    _getWaterNode(::ActorPathingData const& data, ::BlockPos const& lastPos, ::BlockPos const& blockPos);
+
+    MCNAPI ::NodeType _isFreeStartNode(
+        ::ActorPathingData const& data,
+        ::AABB const&             entityAABB,
+        ::BlockPos const&         testPos,
+        ::BlockPos const&         size
+    );
+
+    MCNAPI bool _isNeighborPotentiallyValid(
+        ::PathfinderNode const& node,
+        ::PathfinderNode const& target,
+        ::BlockPos const&       offset,
+        uint                    maxDistSqr
+    );
+
+    MCNAPI ::std::unique_ptr<::Path>
+    _reconstructPath(::PathfinderNode* to, ::PathCompletionType const completionType, ::ActorUniqueID const actorId);
 
     MCNAPI ::std::unique_ptr<::Path> findPath(::Actor& from, ::Actor const& to, float maxDist);
 

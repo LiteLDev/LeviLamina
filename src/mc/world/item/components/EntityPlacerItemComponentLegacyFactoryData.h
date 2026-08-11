@@ -23,9 +23,21 @@ public:
     EntityPlacerItemComponentLegacyFactoryData();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~EntityPlacerItemComponentLegacyFactoryData() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::EntityPlacerItemComponentLegacyFactoryData& operator=(::EntityPlacerItemComponentLegacyFactoryData&&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

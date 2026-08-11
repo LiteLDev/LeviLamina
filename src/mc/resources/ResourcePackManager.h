@@ -62,39 +62,56 @@ public:
     // NOLINTBEGIN
     virtual ~ResourcePackManager() /*override*/ = default;
 
-    virtual bool load(::ResourceLocation const&, ::std::string&) const /*override*/;
+    virtual bool load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const /*override*/;
 
-    virtual bool load(::ResourceLocation const&, ::std::string&, ::gsl::span<::std::string const>) const /*override*/;
+    virtual bool load(
+        ::ResourceLocation const&        resourceLocation,
+        ::std::string&                   resourceStream,
+        ::gsl::span<::std::string const> extensionList
+    ) const /*override*/;
 
-    virtual bool load(::ResourceLocationPair const&, ::std::string&, ::gsl::span<::std::string const>) const
+    virtual bool load(
+        ::ResourceLocationPair const&    resourceLocationPair,
+        ::std::string&                   resourceStream,
+        ::gsl::span<::std::string const> extensionList
+    ) const /*override*/;
+
+    virtual bool loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const /*override*/;
+
+    virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const& resourceLocation) const
         /*override*/;
 
-    virtual bool loadText(::ResourceLocation const&, ::std::string&) const /*override*/;
-
-    virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const&) const /*override*/;
-
 #ifdef LL_PLAT_C
-    virtual ::mce::Image loadTexture(::ResourceLocation const&) const /*override*/;
+    virtual ::mce::Image loadTexture(::ResourceLocation const& resourceLocation) const /*override*/;
 
 #endif
-    virtual bool isInStreamableLocation(::ResourceLocation const&) const /*override*/;
+    virtual bool isInStreamableLocation(::ResourceLocation const& resourceLocation) const /*override*/;
 
-    virtual bool isInStreamableLocation(::ResourceLocation const&, ::gsl::span<::std::string const>) const /*override*/;
+    virtual bool isInStreamableLocation(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> getPath(::ResourceLocation const& resourceLocation) const /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> getPath(::ResourceLocation const&, ::gsl::span<::std::string const>) const
+    virtual ::Core::PathBuffer<::std::string>
+    getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const
         /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> getPathContainingResource(::ResourceLocation const&) const /*override*/;
-
     virtual ::Core::PathBuffer<::std::string>
-    getPathContainingResource(::ResourceLocation const&, ::gsl::span<::std::string const>) const /*override*/;
+    getPathContainingResource(::ResourceLocation const& resourceLocation) const /*override*/;
 
-    virtual ::std::pair<int, ::std::string_view>
-    getPackStackIndexOfResource(::ResourceLocation const&, ::gsl::span<::std::string const>) const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> getPathContainingResource(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const /*override*/;
 
-    virtual bool hasCapability(::std::string_view) const;
+    virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const /*override*/;
+
+    virtual bool hasCapability(::std::string_view requiredCapability) const;
     // NOLINTEND
 
 public:
@@ -113,7 +130,15 @@ public:
         ::brstd::move_only_function<bool(::std::unique_ptr<::ResourcePackStack>*) const> operation
     );
 
+    MCAPI void _getResourcesOfGroup(
+        ::PackInstance const&        packInstance,
+        ::std::string const&         group,
+        ::std::vector<::Core::Path>& resources
+    ) const;
+
 #ifdef LL_PLAT_C
+    MCAPI void _updateLanguageSubpacks();
+
     MCAPI ::ContentTierIncompatibleReason canSupportPacks();
 
     MCAPI void clearPackReports();

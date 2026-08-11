@@ -14,7 +14,7 @@ class AttackDamageMobEffect : public ::MobEffect {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual float getAttributeModifierValue(int, ::AttributeModifier const&) const /*override*/;
+    virtual float getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const /*override*/;
     // NOLINTEND
 
 public:

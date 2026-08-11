@@ -3,10 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/editor/script/ScriptSelectionContainer.h"
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
+namespace Editor::ScriptModule { class ScriptRelativeVolumeListBlockVolume; }
+namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
+namespace ScriptModuleMinecraft { class ScriptSimpleBlockVolume; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -29,6 +34,41 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptSelectionContainerVolume() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _add(
+        ::std::variant<
+            ::Vec3 const,
+            ::std::vector<::Vec3> const,
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toAdd
+    );
+
+    MCNAPI void _moveTo(::Vec3 const& location);
+
+    MCNAPI void _remove(
+        ::std::variant<
+            ::Vec3 const,
+            ::std::vector<::Vec3> const,
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toRemove
+    );
+
+    MCNAPI void _set(
+        ::std::variant<
+            ::Vec3 const,
+            ::std::vector<::Vec3> const,
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toSet
+    );
+
+    MCNAPI void _translate(::Vec3 const& offset);
     // NOLINTEND
 
 public:

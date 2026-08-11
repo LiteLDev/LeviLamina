@@ -7,6 +7,7 @@
 class Actor;
 class ItemActor;
 class ItemStack;
+class Level;
 class ShareableDefinition;
 // clang-format on
 
@@ -41,11 +42,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool
+    _canPickupItem(::ItemStack const& item, ::ItemStack const& carriedItem, int maxAmount, bool singularPickupOnly);
+
     MCAPI static bool _shouldReplaceItem(
         ::ItemStack const&           itemToReplace,
         ::ItemStack const&           newItem,
         ::ShareableDefinition const& shareable,
         bool                         canPickupAnyItem
     );
+
+    MCAPI static bool _useLegacySurplusRules(::Level const& level);
     // NOLINTEND
 };

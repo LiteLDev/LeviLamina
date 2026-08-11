@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::optional<::webrtc::SocketAddress> Reflect(::webrtc::SocketAddress const&) const /*override*/;
+    virtual ::std::optional<::webrtc::SocketAddress> Reflect(::webrtc::SocketAddress const& local) const /*override*/;
     // NOLINTEND
 
 public:

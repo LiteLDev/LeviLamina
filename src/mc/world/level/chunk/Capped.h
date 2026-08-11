@@ -30,17 +30,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::vector<::br::worldgen::StructureBlockInfo> finalize(
-        ::IBlockSource&,
-        ::BlockPos,
-        ::BlockPos,
-        ::std::vector<::br::worldgen::StructureBlockInfo> const&,
-        ::std::vector<::br::worldgen::StructureBlockInfo>&&,
-        ::br::worldgen::StructurePlaceSettings const&
+        ::IBlockSource&                                          region,
+        ::BlockPos                                               pos,
+        ::BlockPos                                               structurePos,
+        ::std::vector<::br::worldgen::StructureBlockInfo> const& originalBlocks,
+        ::std::vector<::br::worldgen::StructureBlockInfo>&&      processedBlocks,
+        ::br::worldgen::StructurePlaceSettings const&            settings
     ) const /*override*/;
 
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
 
-    virtual void appendMetadataKey(::Util::XXHash&) const /*override*/;
+    virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
     // NOLINTEND
 
 public:

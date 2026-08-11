@@ -95,9 +95,11 @@ public:
 
     virtual ::std::weak_ptr<::AbstractSceneProxy> getProxy() /*override*/;
 
-    virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) /*override*/;
+    virtual void setScreenState(
+        ::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& routeQueryParameters
+    ) /*override*/;
 
-    virtual ::RectangleArea getAreaOfControlByName(::std::string const&) const /*override*/;
+    virtual ::RectangleArea getAreaOfControlByName(::std::string const& controlName) const /*override*/;
 
     virtual void init(::ScreenSizeData const& screenSizeData) /*override*/;
 
@@ -142,7 +144,7 @@ public:
 
     virtual void frameUpdate(::MinecraftUIFrameUpdateContext& frameUpdateContext) /*override*/;
 
-    virtual void render(::ScreenContext&, ::FrameRenderObject const&) /*override*/;
+    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) /*override*/;
 
     virtual void applyInput(float a) /*override*/;
 
@@ -158,7 +160,7 @@ public:
     virtual void
     handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact) /*override*/;
 
-    virtual void setTextboxText(::std::string const&, ::TextboxTextUpdateReason) /*override*/;
+    virtual void setTextboxText(::std::string const& text, ::TextboxTextUpdateReason reason) /*override*/;
 
     virtual void onKeyboardDismissed() /*override*/;
 
@@ -194,9 +196,9 @@ public:
 
     virtual ::std::string getScreenName() const /*override*/;
 
-    virtual bool equalsScreenName(::std::string_view) const /*override*/;
+    virtual bool equalsScreenName(::std::string_view comparison) const /*override*/;
 
-    virtual bool containsScreenNameSubstring(::std::string_view) const /*override*/;
+    virtual bool containsScreenNameSubstring(::std::string_view substring) const /*override*/;
 
     virtual ::std::string getRoute() const /*override*/;
 
@@ -204,9 +206,10 @@ public:
 
     virtual bool getShouldSendEvents() /*override*/;
 
-    virtual void setShouldSendEvents(bool sendEvents) /*override*/;
+    virtual void setShouldSendEvents(bool shouldSendEvents) /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
+        /*override*/;
 
     virtual int getScreenVersion() const /*override*/;
 

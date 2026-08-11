@@ -15,6 +15,8 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
+namespace Editor::Network { class ServerScriptTeardownRebuildPayload; }
+namespace Editor::Settings { struct GraphicsProps; }
 // clang-format on
 
 namespace OreUI {
@@ -33,6 +35,20 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 224, ::Editor::LogMessage> mLogMessage;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ::std::string const& getContentMessage() const;
+
+        MCFOLD ::Editor::LogContext getLogContext() const;
+
+        MCFOLD ::Editor::LogLevel getLogLevel() const;
+
+        MCAPI ::std::string getTagListString() const;
+
+        MCFOLD ::std::string const& getTimeStamp() const;
         // NOLINTEND
     };
 
@@ -86,6 +102,38 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorLoggingFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+
+    MCAPI void _handleGraphicSettingsChanged(::Editor::Settings::GraphicsProps const& graphicProp);
+
+    MCAPI void _handleNewLogMessage(::Editor::LogMessage const& message);
+
+    MCAPI void _handleScriptReload(::Editor::Network::ServerScriptTeardownRebuildPayload const& payload);
+
+    MCAPI void _refreshLogMessages();
+
+    MCAPI bool _shouldFilterMessage(::Editor::LogMessage const& message);
+
+    MCAPI ::std::optional<::OreUI::EditorLoggingFacet::LogNotification> acquireNotification();
+
+    MCAPI void flush();
+
+    MCFOLD ::Editor::LogLevelFilter getLogLevelFilter() const;
+
+    MCFOLD ::std::vector<::OreUI::EditorLoggingFacet::LogMessage> const& getMessages() const;
+
+    MCFOLD uint64 const getNotificationQueueCount() const;
+
+    MCAPI bool getNotificationsEnabled() const;
+
+    MCFOLD ::HashedString const& getTagFilter() const;
+
+    MCAPI ::std::vector<::HashedString> const& getTagList() const;
+
+    MCAPI void setLogLevelFilter(::Editor::LogLevelFilter filter);
+
+    MCAPI void setNotificationsEnabled(bool isEnabled);
+
+    MCAPI void setTagFilter(::HashedString const& filter);
     // NOLINTEND
 
 public:

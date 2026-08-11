@@ -6,6 +6,7 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -45,6 +46,18 @@ public:
         ::ResourcePackManager&                               resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::cereal::ReflectionCtx const&                       ctx
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::optional<::BlockCullingData> parseBlockCullingData(
+        ::std::string_view             fileWithExtension,
+        ::std::string const&           fileData,
+        ::MolangVersion                molangVersion,
+        bool                           isBaseGamePack,
+        ::cereal::ReflectionCtx const& ctx
     );
     // NOLINTEND
 

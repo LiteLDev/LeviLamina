@@ -61,6 +61,16 @@ public:
         ::std::function<void()>                                     requestQuit,
         ::std::function<::mce::ViewportInfo()>                      getViewportInfo
     );
+
+    MCAPI bool _beginLeaveGame();
+
+    MCAPI void _finalizeLeaveGame();
+
+    MCAPI void exitApplication();
+
+    MCAPI void leaveGame();
+
+    MCAPI void leaveGameThenJoinFriendsWorld(::std::string const& serverId);
     // NOLINTEND
 
 public:

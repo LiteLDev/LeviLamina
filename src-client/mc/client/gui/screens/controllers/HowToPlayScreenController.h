@@ -54,6 +54,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI HowToPlayScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::HowToPlayTopicIndex topic);
+
+    MCAPI void _selectNewTab(bool isInitialTab, int newTabIndex);
     // NOLINTEND
 
 public:

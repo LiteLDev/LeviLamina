@@ -31,6 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _clear();
+
     MCNAPI void _createFromVector(
         ::Core::PathView                                   manifestPath,
         ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector,

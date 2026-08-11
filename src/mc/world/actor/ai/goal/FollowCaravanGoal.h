@@ -48,6 +48,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool checkCaravanType(::Mob* currentMob);
+
+    MCAPI bool firstIsLeashed(::Mob* currentMob, int counter);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

@@ -70,6 +70,9 @@ public:
     // NOLINTBEGIN
     MCAPI void _acquireAllTicks(::BlockTickingQueue& otherChunkQueue);
 
+    MCAPI void
+    _addToNextTickQueue(::BlockPos const& pos, ::Block const& block, int const tickDelay, int const priorityOffset);
+
     MCAPI void _eliminateTicksForZeroAndAbove(::BlockTickingQueue::TickDataSet& queue);
 
     MCAPI void _saveQueue(::ListTag& list, ::BlockTickingQueue::TickDataSet const& queue) const;

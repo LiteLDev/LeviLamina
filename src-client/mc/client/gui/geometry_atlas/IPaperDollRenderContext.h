@@ -17,9 +17,13 @@ public:
     // NOLINTBEGIN
     virtual ~IPaperDollRenderContext() = default;
 
-    virtual void update(::PaperDollUpdateOwnerData const&) = 0;
+    virtual void update(::PaperDollUpdateOwnerData const& data) = 0;
 
-    virtual void render(::PaperDollRenderOwnerData const&, ::OffscreenCaptureDescription const*, bool) = 0;
+    virtual void render(
+        ::PaperDollRenderOwnerData const&    data,
+        ::OffscreenCaptureDescription const* capture,
+        bool                                 isRenderingUI
+    ) = 0;
     // NOLINTEND
 
 public:

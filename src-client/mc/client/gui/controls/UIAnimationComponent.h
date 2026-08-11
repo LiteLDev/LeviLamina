@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/controls/AnimationTickResult.h"
 #include "mc/client/gui/controls/ComponentReceiveActionType.h"
 #include "mc/client/gui/controls/UIComponent.h"
 #include "mc/client/gui/screens/AnimationStatus.h"
@@ -13,6 +14,8 @@ class ScreenInputContext;
 class UIAnim;
 class UIAnimationController;
 class UIControl;
+class UIControlFactory;
+class UIResolvedDef;
 class VisualTree;
 struct ScreenEvent;
 namespace mce { struct TimeStep; }
@@ -58,7 +61,7 @@ public:
     // NOLINTBEGIN
     virtual ~UIAnimationComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
@@ -73,9 +76,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _addNextAnimation(
+        ::UIAnim&                                               anim,
+        ::std::map<::std::string, ::std::shared_ptr<::UIAnim>>& animationNames,
+        ::std::shared_ptr<::UIAnim> const&                      firstAnim,
+        ::UIControlFactory&                                     factory
+    );
+
     MCAPI ::ui::AnimationStatus _animationTick(::mce::TimeStep const& timeStep);
 
+    MCAPI ::std::shared_ptr<::UIAnim> _createAnimation(::UIResolvedDef& def, ::UIControlFactory& factory);
+
     MCAPI void _resetAnimations();
+
+    MCAPI ::AnimationTickResult
+    _tickUIAnim(::UIAnim* anim, ::std::vector<::UIAnimationComponent::NewAnimation>& newAnimsToAdd, float deltaTime);
+
+    MCAPI ::UIAnim* addAnimation(::std::string const& name, ::UIResolvedDef& def, ::UIControlFactory& factory);
 
     MCAPI void handleScreenEvent(::UIAnimationController& animationController, ::ScreenEvent const& screenEvent);
 

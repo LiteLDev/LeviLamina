@@ -5,13 +5,18 @@
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/options/GraphicsMode.h"
 #include "mc/scripting/modules/minecraft/actor/ScriptActor.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/server/commands/PlayerPermissionLevel.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Player;
 class Scoreboard;
+class ServerSoundHandle;
 class Vec3;
 class WeakEntityRef;
 struct ScoreboardId;
@@ -23,12 +28,15 @@ namespace ScriptModuleMinecraft { class ScriptPlayerInputPermissions; }
 namespace ScriptModuleMinecraft { struct ScriptActorData; }
 namespace ScriptModuleMinecraft { struct ScriptCamera; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
+namespace ScriptModuleMinecraft { struct ScriptMusicOptions; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerSoundOptions; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageError; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptScreenDisplay; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
+namespace Scripting { struct EngineError; }
 namespace Scripting { struct UnsupportedAPIError; }
 // clang-format on
 
@@ -73,15 +81,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
         lookAt(::Actor& self, ::Vec3 const& targetLocation) /*override*/;
-#else // LL_PLAT_C
-    virtual ::Scripting::
-        Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
-        lookAt(::Actor&, ::Vec3 const&) /*override*/;
-#endif
 
     virtual ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
@@ -106,7 +108,67 @@ public:
         ::Scripting::WeakLifetimeScope const&           scope
     );
 
+    MCAPI ::Scripting::Result_deprecated<void> _playOrQueueMusic(
+        ::Player&                                                    player,
+        ::std::string const&                                         trackID,
+        ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions,
+        bool                                                         shouldQueue
+    );
+
+    MCAPI ::Scripting::Result_deprecated<void> _playSoundInternal(
+        ::std::string const                                                soundID,
+        ::std::optional<::ScriptModuleMinecraft::ScriptPlayerSoundOptions> soundOptions,
+        ::std::optional<::ServerSoundHandle>                               serverSoundHandle
+    );
+
+    MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getChatDisplayName() const;
+
+    MCAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getChatMessagePrefix() const;
+
+    MCAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getChatNamePrefix() const;
+
+    MCAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getChatNameSuffix() const;
+
+    MCAPI ::Scripting::Result<::CommandPermissionLevel, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getCommandPermissionLevel() const;
+
+    MCAPI ::Scripting::Result<::GraphicsMode, ::ScriptModuleMinecraft::ScriptInvalidActorError> getGraphicsMode() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::string> getName() const;
+
+    MCAPI ::Scripting::Result_deprecated<int> getPlayerLevel() const;
+
+    MCAPI ::Scripting::Result<::PlayerPermissionLevel, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getPlayerPermissionLevel() const;
+
+    MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::EngineError>
+    getPlayfabId() const;
+
+    MCAPI ::Scripting::Result_deprecated<int> getSelectedSlot() const;
+
+    MCAPI ::Scripting::Result_deprecated<int> getTotalXpNeededForNextLevel() const;
+
+    MCAPI ::Scripting::Result_deprecated<int> getXpEarnedAtCurrentLevel() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> isEmoting() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> isFlying() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> isGliding() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> isJumping() const;
+
     MCAPI ::ScriptModuleMinecraft::ScriptPlayer& operator=(::ScriptModuleMinecraft::ScriptPlayer&&);
+
+    MCAPI ::Scripting::Result_deprecated<void>
+    playMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
+
+    MCAPI ::Scripting::Result_deprecated<void>
+    queueMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
 
     MCAPI ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::ScriptModuleMinecraft::ScriptRawMessageError>
@@ -118,6 +180,15 @@ public:
                 ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
                 var
         ) const;
+
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    setChatMessagePrefix(::std::optional<::std::string> const& prefix);
+
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    setChatNamePrefix(::std::optional<::std::string> const& prefix);
+
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    setChatNameSuffix(::std::optional<::std::string> const& suffix);
 
     MCAPI ::Player* tryGetPlayer() const;
     // NOLINTEND

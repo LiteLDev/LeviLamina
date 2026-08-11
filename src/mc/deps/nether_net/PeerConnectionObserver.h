@@ -35,25 +35,41 @@ public:
     // prevent constructor by default
     PeerConnectionObserver& operator=(PeerConnectionObserver const&);
     PeerConnectionObserver(PeerConnectionObserver const&);
-    PeerConnectionObserver();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void OnStatsDelivered(::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const&) /*override*/;
+    virtual void OnStatsDelivered(::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const& report) /*override*/;
 
     virtual void OnSignalingChange(::webrtc::PeerConnectionInterface::SignalingState) /*override*/;
 
-    virtual void OnDataChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface>) /*override*/;
+    virtual void OnDataChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface> dataChannel) /*override*/;
 
-    virtual void OnIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState) /*override*/;
+    virtual void OnIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState newState) /*override*/;
 
-    virtual void OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState) /*override*/;
+    virtual void OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState newState) /*override*/;
 
-    virtual void OnIceCandidate(::webrtc::IceCandidate const*) /*override*/;
+    virtual void OnIceCandidate(::webrtc::IceCandidate const* candidate) /*override*/;
 
-    virtual void
-    OnIceCandidateError(::std::string const&, int, ::std::string const&, int, ::std::string const&) /*override*/;
+    virtual void OnIceCandidateError(
+        ::std::string const& address,
+        int                  port,
+        ::std::string const& url,
+        int                  errorCode,
+        ::std::string const& errorMessage
+    ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI PeerConnectionObserver();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

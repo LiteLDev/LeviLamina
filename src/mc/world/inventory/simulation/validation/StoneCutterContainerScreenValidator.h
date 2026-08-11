@@ -3,14 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/inventory/simulation/validation/ContainerScreenValidatorBase.h"
 
 // auto generated forward declare list
 // clang-format off
 class ContainerScreenContext;
 class ContainerScreenValidation;
+class ItemInstance;
 struct ContainerValidationCraftInputs;
 struct ContainerValidationCraftResult;
+struct RecipeNetIdTag;
 // clang-format on
 
 class StoneCutterContainerScreenValidator : public ::ContainerScreenValidatorBase {
@@ -25,6 +28,13 @@ public:
         ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
         uchar const                                         numCrafts
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::ItemInstance
+    _getResultFromId(::ContainerScreenContext const& screenContext, ::RecipeNetId const& recipeNetId);
     // NOLINTEND
 
 public:

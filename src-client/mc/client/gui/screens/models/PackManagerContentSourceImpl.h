@@ -59,6 +59,10 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> contentSourceRepository
     );
 
+    MCAPI ::std::vector<::std::shared_ptr<::PackContentItem>> _getAllSelectedItems() const;
+
+    MCAPI void _save(bool const shouldSaveAll);
+
     MCAPI void getSortedSelectedContent(
         ::std::vector<::PackInstanceId>&                     modelManagerIdentities,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager

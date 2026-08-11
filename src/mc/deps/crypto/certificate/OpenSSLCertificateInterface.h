@@ -29,23 +29,25 @@ public:
     // NOLINTBEGIN
     virtual ~OpenSSLCertificateInterface() /*override*/ = default;
 
-    virtual ::std::string serialize(::Crypto::Certificate::Encoding) const /*override*/;
+    virtual ::std::string serialize(::Crypto::Certificate::Encoding encoding) const /*override*/;
 
-    virtual ::std::string extractPublicKey(::Crypto::Certificate::Encoding) const /*override*/;
+    virtual ::std::string extractPublicKey(::Crypto::Certificate::Encoding encoding) const /*override*/;
 
-    virtual ::std::string extractPrivateKey(::Crypto::Certificate::Encoding) const /*override*/;
+    virtual ::std::string extractPrivateKey(::Crypto::Certificate::Encoding encoding) const /*override*/;
 
     virtual ::std::string getIssuer() const /*override*/;
 
     virtual bool hasValidCertChain() const /*override*/;
 
-    virtual ::std::string
-        generateCertificateThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const
-        /*override*/;
+    virtual ::std::string generateCertificateThumbprint(
+        ::Crypto::Hash::HashType                hashFunction,
+        ::Crypto::Certificate::ThumbprintFormat formatting
+    ) const /*override*/;
 
-    virtual ::std::string
-        generatePublicKeyThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const
-        /*override*/;
+    virtual ::std::string generatePublicKeyThumbprint(
+        ::Crypto::Hash::HashType                hashFunction,
+        ::Crypto::Certificate::ThumbprintFormat formatting
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -53,6 +55,15 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
     MCNAPI OpenSSLCertificateInterface(::Crypto::Certificate::Encoding encoding, ::std::string const& certificateData);
+#endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI static ::std::string
+    _formatThumbprint(::std::string const& rawThumbprint, ::Crypto::Certificate::ThumbprintFormat formatting);
 #endif
     // NOLINTEND
 

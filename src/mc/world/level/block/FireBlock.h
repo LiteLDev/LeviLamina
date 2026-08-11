@@ -15,6 +15,7 @@ class BlockPos;
 class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
+class IRandom;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -52,6 +53,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _trySpawnSoulFire(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void checkBurn(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        int               chance,
+        ::IRandom&        random,
+        int               age,
+        ::BlockPos const& firePos
+    ) const;
+
+    MCAPI bool isValidFireLocation(::BlockSource& region, ::BlockPos const& pos) const;
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;

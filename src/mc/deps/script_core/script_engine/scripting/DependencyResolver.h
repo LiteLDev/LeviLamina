@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { struct ModuleResolveResult; }
 namespace Scripting { struct VersionRequestKey; }
 namespace Scripting { struct VersionRequestedBy; }
 // clang-format on
@@ -23,6 +24,15 @@ public:
     DependencyResolver& operator=(DependencyResolver const&);
     DependencyResolver(DependencyResolver const&);
     DependencyResolver();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::ModuleResolveResult _resolveDependencyRequests(
+        ::std::unordered_map<::Scripting::VersionRequestKey, ::std::vector<::Scripting::VersionRequestedBy>> const&
+            versionRequestTable
+    ) const;
+    // NOLINTEND
 };
 
 } // namespace Scripting

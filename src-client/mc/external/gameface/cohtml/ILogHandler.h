@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~ILogHandler() = default;
 
-    virtual void WriteLog(::cohtml::Logging::Severity, char const*, uint64) = 0;
+    virtual void WriteLog(::cohtml::Logging::Severity severity, char const* message, uint64 length) = 0;
     // NOLINTEND
 
 public:

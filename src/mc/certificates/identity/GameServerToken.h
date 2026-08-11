@@ -34,6 +34,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _checkExpiration(::WebToken const& token, int64 currentTime);
+
     MCAPI static bool _validate(
         ::WebToken const&                   token,
         ::MinecraftServiceKeyManager const& keyManager,

@@ -5,8 +5,10 @@
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/ContentType.h"
 #include "mc/client/world/IWorldResourcePackHandler.h"
+#include "mc/client/world/PackAction.h"
 #include "mc/client/world/PackActionError.h"
 #include "mc/client/world/PackDownloadError.h"
+#include "mc/client/world/PackStatus.h"
 #include "mc/client/world/PendingPackActionHash.h"
 #include "mc/client/world/PendingPackActionKey.h"
 #include "mc/client/world/PendingPackActivation.h"
@@ -14,9 +16,11 @@
 #include "mc/client/world/WorldID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/resources/PackScope.h"
 
 // auto generated forward declare list
 // clang-format off
+class ContentView;
 class IContentAcquisition;
 class IContentManager;
 class IContentManagerContext;
@@ -24,6 +28,7 @@ class IContentTierManager;
 class IEntitlementManager;
 class IResourcePackRepository;
 struct ContentItem;
+struct ContentViews;
 struct LevelSummary;
 struct PackIdVersion;
 namespace World { class IWorldResourcePackDownloader; }
@@ -31,6 +36,7 @@ namespace World { struct PackCheckResult; }
 namespace World { struct PackCollection; }
 namespace World { struct PackDetails; }
 namespace World { struct PackDownloadProgressInfo; }
+namespace World { struct PackViewAndItem; }
 namespace World { struct WorldPacks; }
 // clang-format on
 
@@ -93,70 +99,149 @@ public:
     // NOLINTBEGIN
     virtual ~WorldResourcePackHandler() /*override*/ = default;
 
-    virtual ::World::WorldPacks& loadPackContentForWorld(::LevelSummary const&) /*override*/;
+    virtual ::World::WorldPacks& loadPackContentForWorld(::LevelSummary const& levelSummary) /*override*/;
 
-    virtual ::World::PackCollection
-    getWorldPackCollection(::LevelSummary const&, ::ContentType const, bool const) /*override*/;
-
-    virtual ::std::optional<::World::PackActionError>
-    activatePack(::LevelSummary const&, ::ContentType const, ::std::string const&, bool const, bool const) /*override*/;
-
-    virtual ::std::optional<::World::PackActionError> deactivatePack(
-        ::LevelSummary const&,
-        ::ContentType const,
-        ::std::string const&,
-        bool const,
-        bool const
+    virtual ::World::PackCollection getWorldPackCollection(
+        ::LevelSummary const& levelSummary,
+        ::ContentType const   contentType,
+        bool const            isEduMode
     ) /*override*/;
 
-    virtual ::std::optional<::World::PackActionError> continuePackActivation(::LevelSummary const&) /*override*/;
+    virtual ::std::optional<::World::PackActionError> activatePack(
+        ::LevelSummary const& levelSummary,
+        ::ContentType const   contentType,
+        ::std::string const&  packId,
+        bool const            isEduMode,
+        bool const            force
+    ) /*override*/;
 
-    virtual ::std::optional<::World::PackActionError> continuePackDeactivation(::LevelSummary const&) /*override*/;
+    virtual ::std::optional<::World::PackActionError> deactivatePack(
+        ::LevelSummary const& levelSummary,
+        ::ContentType const   contentType,
+        ::std::string const&  packId,
+        bool const            isEduMode,
+        bool const            force
+    ) /*override*/;
+
+    virtual ::std::optional<::World::PackActionError>
+    continuePackActivation(::LevelSummary const& levelSummary) /*override*/;
+
+    virtual ::std::optional<::World::PackActionError>
+    continuePackDeactivation(::LevelSummary const& levelSummary) /*override*/;
 
     virtual void downloadPacks(
-        ::LevelSummary const&,
-        ::std::vector<::std::string> const&,
-        ::std::function<void()>,
-        ::std::function<void(::World::PackDownloadError)>
+        ::LevelSummary const&                             levelSummary,
+        ::std::vector<::std::string> const&               packIds,
+        ::std::function<void()>                           onCompleteCallback,
+        ::std::function<void(::World::PackDownloadError)> onErrorCallback
     ) /*override*/;
 
     virtual ::World::PackDownloadProgressInfo getDownloadPackProgress() /*override*/;
 
-    virtual void getDownloadingPackTitles(::std::function<void(::std::vector<::std::string>)>) /*override*/;
+    virtual void
+    getDownloadingPackTitles(::std::function<void(::std::vector<::std::string>)> packTitlesCallback) /*override*/;
 
     virtual void cancelDownloadPack() /*override*/;
 
     virtual void getPackSizes(
-        ::LevelSummary const&,
-        ::std::vector<::std::string> const&,
-        ::std::function<void(uint64)>,
-        ::std::function<void(::World::PackActionError)>
+        ::LevelSummary const&                           levelSummary,
+        ::std::vector<::std::string> const&             packIds,
+        ::std::function<void(uint64)>                   onCompleteCallback,
+        ::std::function<void(::World::PackActionError)> onErrorCallback
     ) /*override*/;
 
     virtual void savePacksData() /*override*/;
 
-    virtual bool hasNonAddonBehaviorPacks(::LevelSummary const&) /*override*/;
+    virtual bool hasNonAddonBehaviorPacks(::LevelSummary const& levelSummary) /*override*/;
 
-    virtual bool hasBehaviorPacks(::LevelSummary const&) /*override*/;
+    virtual bool hasBehaviorPacks(::LevelSummary const& levelSummary) /*override*/;
 
-    virtual bool hasLockedPacks(::LevelSummary const&) const /*override*/;
+    virtual bool hasLockedPacks(::LevelSummary const& levelSummary) const /*override*/;
 
     virtual ::std::optional<::World::PackActionError> changePackPriority(
-        ::LevelSummary const&,
-        ::ContentType const,
-        ::std::string const&,
-        int const,
-        int const
+        ::LevelSummary const& levelSummary,
+        ::ContentType const   contentType,
+        ::std::string const&  packId,
+        int const             fromIndex,
+        int const             toIndex
     ) /*override*/;
 
-    virtual ::World::PackCheckResult checkDlc(::std::string const&, ::PackIdVersion const&, bool const) /*override*/;
+    virtual ::World::PackCheckResult
+    checkDlc(::std::string const& levelId, ::PackIdVersion const& packIdVersion, bool const isForRealms) /*override*/;
 
-    virtual ::std::vector<::World::PackDetails>
-    getPackDetailsForWorld(::LevelSummary const&, ::std::vector<::std::string> const&) /*override*/;
+    virtual ::std::vector<::World::PackDetails> getPackDetailsForWorld(
+        ::LevelSummary const&               levelSummary,
+        ::std::vector<::std::string> const& packIds
+    ) /*override*/;
 
     virtual bool getResourcePacksDirty() /*override*/;
 
     virtual void refreshPacksData() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::World::WorldPacks&
+    _cacheWorldPackData(::World::WorldResourcePackHandler::Contexts&& contexts, ::LevelSummary const& levelSummary);
+
+    MCAPI ::std::unique_ptr<::ContentViews> _createContentViews(
+        ::World::WorldResourcePackHandler::Contexts& contexts,
+        ::ContentType                                contentType,
+        ::PackScope                                  scope
+    ) const;
+
+    MCAPI ::std::variant<::World::PackActionError, ::World::PackViewAndItem> _findPackByType(
+        ::World::WorldPacks& worldPacks,
+        ::ContentType const  contentType,
+        ::std::string const& packId
+    ) const;
+
+    MCAPI ::std::variant<::World::PackActionError, ::World::PackViewAndItem> _findPackViewAndContent(
+        ::World::WorldPacks&      worldPacks,
+        ::ContentType const       contentType,
+        ::World::PackStatus const packStatus,
+        ::std::string const&      packId
+    ) const;
+
+    MCAPI void _getMissingPackIds(
+        ::LevelSummary const&                                      levelSummary,
+        ::std::vector<::std::string> const&                        packIds,
+        ::std::function<void(::World::PackActionError)>            onErrorCallback,
+        ::std::function<void(::std::vector<::std::string> const&)> onCompleteCallback
+    );
+
+    MCAPI ::World::PackDetails _getPackDetails(
+        ::World::WorldID const                  worldID,
+        ::std::shared_ptr<::ContentItem> const& contentItem,
+        ::ContentViews const&                   contentViews,
+        ::World::PackStatus const               packStatus,
+        bool const                              isEduMode
+    );
+
+    MCAPI ::World::WorldResourcePackHandler::Contexts
+    _initializeContentManagerForWorld(::LevelSummary const& levelSummary);
+
+    MCAPI bool _needToDownloadPack(::std::shared_ptr<::ContentItem> const& contentItem) const;
+
+    MCAPI ::std::optional<::World::PackActionError> _performPackMovement(
+        ::World::PackAction const packAction,
+        ::LevelSummary const&     levelSummary,
+        ::ContentType const       contentType,
+        ::std::string const&      packId,
+        bool const                isEduMode,
+        bool const                force
+    );
+
+    MCAPI void _populatePackDetails(
+        ::World::WorldID const                    worldID,
+        ::std::vector<::World::PackDetails>&      packDetails,
+        ::Bedrock::NonOwnerPointer<::ContentView> contentView,
+        ::World::PackCollection const&            packCollection,
+        ::ContentViews const&                     contentViews,
+        ::World::PackStatus const                 packStatus,
+        bool const                                isEduMode
+    );
     // NOLINTEND
 
 public:

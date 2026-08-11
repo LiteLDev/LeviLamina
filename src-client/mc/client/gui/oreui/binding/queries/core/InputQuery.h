@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void update(double const) /*override*/;
+    virtual void update(double const time) /*override*/;
     // NOLINTEND
 
 public:

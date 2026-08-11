@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct DimensionType;
 namespace Editor { class ProjectRegion; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct ProjectRegionConfig; }
@@ -60,6 +61,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EditorProjectRegionPlayerService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI void _handleDimensionChange(::DimensionType, ::DimensionType);
     // NOLINTEND
 
 public:

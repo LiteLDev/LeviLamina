@@ -21,20 +21,22 @@ public:
     virtual ~IWorldResourcePackDownloader() = default;
 
     virtual void downloadPacks(
-        ::std::vector<::std::string> const&,
-        ::std::function<void()>,
-        ::std::function<void(::World::PackDownloadError)>
+        ::std::vector<::std::string> const&               productIds,
+        ::std::function<void()>                           onCompleteCallback,
+        ::std::function<void(::World::PackDownloadError)> onErrorCallback
     ) = 0;
 
     virtual ::World::PackDownloadProgressInfo getProgress() = 0;
 
     virtual void cancelDownloadPack() = 0;
 
-    virtual void getPackSizes(::std::vector<::std::string> const&, ::std::function<void(uint64)>) = 0;
+    virtual void
+    getPackSizes(::std::vector<::std::string> const& productIds, ::std::function<void(uint64)> onCompleteCallback) = 0;
 
-    virtual void getDownloadingPackTitles(::std::function<void(::std::vector<::std::string>)>) = 0;
+    virtual void getDownloadingPackTitles(::std::function<void(::std::vector<::std::string>)> packTitlesCallback) = 0;
 
-    virtual ::World::PackCheckResult checkDlc(::std::string const&, ::PackIdVersion const&, bool const) const = 0;
+    virtual ::World::PackCheckResult
+    checkDlc(::std::string const& levelId, ::PackIdVersion const& packIdVersion, bool const isForRealms) const = 0;
     // NOLINTEND
 
 public:

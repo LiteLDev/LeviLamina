@@ -10,9 +10,11 @@
 #include "mc/deps/core/utility/ScopeExit.h"
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
+#include "mc/network/PacketGroupDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
+class AllowListFile;
 class AppConfigs;
 class CDNConfig;
 class ConsoleInputReader;
@@ -21,14 +23,18 @@ class FileArchiver;
 class IEDUSystems;
 class IGameModuleShared;
 class LevelDbEnv;
+class LevelSettings;
 class Minecraft;
+class PermissionsFile;
 class ProfilingConfigManager;
 class ScriptDedicatedServerUtils;
 class ServerInstanceEventCoordinator;
 class ServerTextSettings;
 class SignalingService;
 class SignalingServiceSignInJob;
+class TestConfig;
 struct ImguiProfiler;
+struct PropertiesSettings;
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class ActivationArguments; }
 namespace Bedrock::Http { class DispatcherInterface; }
@@ -36,6 +42,7 @@ namespace Bedrock::Http { class DispatcherProcess; }
 namespace Bedrock::Services { class AuthHelper; }
 namespace Bedrock::Services { class DiscoveryHelper; }
 namespace CodeBuilder { class IManager; }
+namespace Core { class FilePathManager; }
 namespace Core { class FileSystem; }
 // clang-format on
 
@@ -107,7 +114,7 @@ public:
 
     virtual bool isDedicatedServer() const /*override*/;
 
-    virtual void onNetworkMaxPlayersChanged(uint) /*override*/;
+    virtual void onNetworkMaxPlayersChanged(uint newMaxPlayerCount) /*override*/;
 
     virtual ::IGameModuleShared& getGameModuleShared() /*override*/;
 
@@ -120,6 +127,17 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI DedicatedServer();
+
+    MCAPI ::DedicatedServer::ServerExitCode runDedicatedServerLoop(
+        ::Core::FilePathManager&                                     filePathManager,
+        ::PropertiesSettings const&                                  properties,
+        ::LevelSettings&                                             settings,
+        ::AllowListFile&                                             userAllowList,
+        ::std::unique_ptr<::PermissionsFile>&                        permissionsFile,
+        ::std::optional<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder,
+        ::Bedrock::ActivationArguments const&                        args,
+        ::TestConfig&                                                testConfig
+    );
 
     MCAPI ::DedicatedServer::ServerExitCode
     start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);

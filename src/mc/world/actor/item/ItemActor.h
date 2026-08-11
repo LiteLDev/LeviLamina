@@ -17,6 +17,7 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
+class ListTag;
 class Packet;
 class Player;
 class Vec3;
@@ -69,7 +70,7 @@ public:
 
     virtual ~ItemActor() /*override*/ = default;
 
-    virtual void playerTouch(::Player&) /*override*/;
+    virtual void playerTouch(::Player& player) /*override*/;
 
     virtual ::std::unique_ptr<::Packet> tryCreateAddActorPacket() /*override*/;
 
@@ -83,9 +84,9 @@ public:
 
     virtual bool isFireImmune() const /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float, ::HurtParameters const&) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float damage, ::HurtParameters const&) /*override*/;
 
-    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
     // NOLINTEND
@@ -98,6 +99,12 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+
+    MCAPI void _addComponents();
+
+    MCAPI void _dropItemList(::ListTag* itemList);
+
+    MCAPI void _validateItem();
 
 #ifdef LL_PLAT_C
     MCAPI void clientInitialize(

@@ -554,7 +554,7 @@ MCNAPI bool SocketAddressFromSockAddrStorage(::sockaddr_storage const& addr, ::w
 
 MCNAPI ::std::string SrtpCryptoSuiteToName(int crypto_suite);
 
-MCNAPI ::std::string StringFormat(char const*, ...);
+MCNAPI ::std::string StringFormat(char const* fmt, ...);
 
 MCNAPI ::std::optional<::webrtc::ConnectionRole> StringToConnectionRole(::std::string_view role_str);
 

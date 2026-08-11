@@ -8,7 +8,7 @@
 namespace webrtc::webrtc_logging_impl {
 // functions
 // NOLINTBEGIN
-MCNAPI void Log(::webrtc::webrtc_logging_impl::LogArgType const*, ...);
+MCNAPI void Log(::webrtc::webrtc_logging_impl::LogArgType const* fmt, ...);
 // NOLINTEND
 
 } // namespace webrtc::webrtc_logging_impl

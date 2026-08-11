@@ -148,6 +148,14 @@ public:
         ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>> path,
         ::std::string                                                                            msg);
 
+    MCNAPI ::Puv::Logger&
+    log(::Puv::Logger::UpgradeResultCode                                                         res,
+        ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>> src,
+        ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>> dst,
+        ::std::string                                                                            msg);
+
+    MCNAPI void merge(::Puv::Logger log);
+
     MCNAPI ~Logger();
     // NOLINTEND
 

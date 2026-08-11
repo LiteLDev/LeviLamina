@@ -25,6 +25,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _load(::Json::Value const& root, ::LevelData const& levelData);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Json::Value getLayers(::LevelData const& levelData);

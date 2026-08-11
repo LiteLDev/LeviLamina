@@ -23,9 +23,9 @@ public:
     // NOLINTBEGIN
     virtual ::std::shared_ptr<::UIAnim> clone() /*override*/;
 
-    virtual bool tick(::UIControl&, float const) /*override*/;
+    virtual bool tick(::UIControl& ownerControl, float const deltaTime) /*override*/;
 
-    virtual void _reset(::UIControl&) /*override*/;
+    virtual void _reset(::UIControl& ownerControl) /*override*/;
     // NOLINTEND
 
 public:

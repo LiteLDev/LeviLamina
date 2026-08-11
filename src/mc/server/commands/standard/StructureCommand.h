@@ -13,9 +13,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Level;
+class StructureEditorData;
 // clang-format on
 
 class StructureCommand : public ::Command {
@@ -42,7 +45,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _editorLoad(
+        ::CommandOrigin const& origin,
+        ::CommandOutput&       output,
+        ::Level&               level,
+        ::std::string const&   fullName,
+        ::BlockPos const&      loadPosition,
+        ::StructureEditorData& settings
+    ) const;
+
+    MCAPI ::std::string _getFullName() const;
     // NOLINTEND
 
 public:

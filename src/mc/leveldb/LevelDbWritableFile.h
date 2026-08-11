@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class LevelDbLazyFile;
+// clang-format on
+
 class LevelDbWritableFile : public ::leveldb::WritableFile {
 public:
     // member variables
@@ -19,13 +24,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::leveldb::Status Append(::leveldb::Slice const&) /*override*/;
+    virtual ::leveldb::Status Append(::leveldb::Slice const& slice) /*override*/;
 
     virtual ::leveldb::Status Close() /*override*/;
 
     virtual ::leveldb::Status Flush() /*override*/;
 
     virtual ::leveldb::Status Sync() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI LevelDbWritableFile(::std::string filename, ::LevelDbLazyFile&& file);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

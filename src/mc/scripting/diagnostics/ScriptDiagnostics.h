@@ -54,6 +54,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void addStatCollector(
+        uint64                                                                 collectionTickFrequency,
+        ::std::function<::std::optional<::ScriptStat>(uint64, uint64, uint64)> collectorFn,
+        ::std::function<void()>                                                enableFn,
+        ::std::function<void()>                                                disableFn,
+        ::std::function<void(bool)>                                            reloadFn
+    );
+
     MCNAPI void collectStats(uint64 currentTick);
     // NOLINTEND
 };

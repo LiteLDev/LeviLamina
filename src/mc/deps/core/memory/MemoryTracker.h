@@ -22,17 +22,33 @@ public:
 
     virtual ::Memory::MemoryCategory getCurrentCategory() const;
 
+#ifdef LL_PLAT_S
     virtual void setCurrentCategory(::Memory::MemoryCategory);
+#else // LL_PLAT_C
+    virtual void setCurrentCategory(::Memory::MemoryCategory category);
+#endif
 
     virtual uint64 getCategoryAllocationCount(uint) const;
 
+#ifdef LL_PLAT_S
     virtual uint64 getCategoryAllocatedMemory(uint) const;
+#else // LL_PLAT_C
+    virtual uint64 getCategoryAllocatedMemory(uint cat) const;
+#endif
 
     virtual uint64 getCategoryTotalAllocationCount(uint) const;
 
     virtual void publish();
 
+#ifdef LL_PLAT_S
     virtual void populateCounters(::std::vector<::Memory::MemoryCategoryCounter>&, uint64) const;
+#else // LL_PLAT_C
+    virtual void populateCounters(
+        ::std::vector<::Memory::MemoryCategoryCounter>& categoryCounters,
+        uint64                                          minimumThresholdBytes
+    ) const;
+#endif
+
     // NOLINTEND
 
 public:

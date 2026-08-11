@@ -23,7 +23,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI EditorFileStructureData(::std::string strucNamespace, ::std::string name, ::std::string path);
+
     MCNAPI ~EditorFileStructureData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

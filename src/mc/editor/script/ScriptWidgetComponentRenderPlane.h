@@ -3,11 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/RenderPlaneGridResolution.h"
 #include "mc/common/editor/WidgetComponentType.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
+namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
+namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -36,6 +41,35 @@ public:
     virtual ~ScriptWidgetComponentRenderPlane() /*override*/ = default;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::
+        Result<::ScriptModuleMinecraft::ScriptRGBA, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+        _getFillColor() const;
+
+    MCNAPI ::Scripting::Result<
+        ::Editor::Widgets::RenderPlaneGridResolution,
+        ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getGridResolution() const;
+
+    MCNAPI ::Scripting::Result<int, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getMaxSizeChunks() const;
+
+    MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getNormal() const;
+
+    MCNAPI ::Scripting::
+        Result<::ScriptModuleMinecraft::ScriptRGBA, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+        _getOutlineColor() const;
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _setFillColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _setOutlineColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
     // NOLINTEND
 
 public:

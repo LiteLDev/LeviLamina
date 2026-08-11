@@ -74,6 +74,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void pin();
+
+    MCNAPI void unpin();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
 

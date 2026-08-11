@@ -13,4 +13,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ICameraAPI>> mApi;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ::ICameraAPI& get();
+#endif
+    // NOLINTEND
 };

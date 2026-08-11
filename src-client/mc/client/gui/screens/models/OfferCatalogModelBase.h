@@ -40,19 +40,19 @@ public:
 
     virtual uint getNumActiveOfferModels() const;
 
-    virtual ::PlatformOfferModel& getOfferModel(int);
+    virtual ::PlatformOfferModel& getOfferModel(int index);
 
-    virtual ::PlatformOfferModel& getActiveOfferModel(int);
+    virtual ::PlatformOfferModel& getActiveOfferModel(int index);
 
-    virtual ::PlatformOfferModel* findOfferModelBySku(::ProductSku const&);
+    virtual ::PlatformOfferModel* findOfferModelBySku(::ProductSku const& sku);
 
-    virtual ::PlatformOfferModel* findOfferModelByMinCoins(::std::string const&);
+    virtual ::PlatformOfferModel* findOfferModelByMinCoins(::std::string const& coinsNeeded);
 
-    virtual ::PlatformOfferModel* findOfferModelByMinCoins(int const);
+    virtual ::PlatformOfferModel* findOfferModelByMinCoins(int const coinsNeeded);
 
-    virtual ::PlatformOfferModel* _findActiveOfferModelByProductId(::std::string const&);
+    virtual ::PlatformOfferModel* _findActiveOfferModelByProductId(::std::string const& productId);
 
-    virtual ::PlatformOfferModel* _findOfferModelByProductId(::std::string const&);
+    virtual ::PlatformOfferModel* _findOfferModelByProductId(::std::string const& productId);
     // NOLINTEND
 
 public:

@@ -51,7 +51,15 @@ public:
     MCAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
 
     MCAPI void setLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
+#endif
 
+    MCAPI void tick();
+
+#ifdef LL_PLAT_S
+    MCAPI ~GameSession();
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI ~GameSession();
 #endif
     // NOLINTEND

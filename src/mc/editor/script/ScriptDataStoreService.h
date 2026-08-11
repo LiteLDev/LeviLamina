@@ -4,12 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/editor/datastore/EventType.h"
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 class ScriptDeferredEventCoordinator;
+namespace Editor::DataStore { struct PayloadDescription; }
 namespace Editor::Services { class DataStoreServiceProvider; }
 namespace Editor::Services { class TelemetryServiceProvider; }
+namespace Json { class Value; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -47,6 +51,13 @@ public:
         ::Editor::Services::TelemetryServiceProvider*      telemetryService,
         ::gsl::not_null<::ScriptDeferredEventCoordinator*> eventCoordinator,
         ::Scripting::WeakLifetimeScope const&              scope
+    );
+
+    MCNAPI void _handleDataStorePayloadEvent(
+        ::HashedString const&          dataTag,
+        ::Editor::DataStore::EventType eventType,
+        ::Json::Value const&           payload,
+        ::Editor::DataStore::PayloadDescription const&
     );
 
     MCNAPI ::Editor::ScriptModule::ScriptDataStoreService&

@@ -63,7 +63,7 @@ public:
     // NOLINTBEGIN
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onComplete(::MinecraftScreenModel&) /*override*/;
+    virtual void onComplete(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -97,6 +97,8 @@ public:
     MCAPI ::std::string const getUploadErrorCode() const;
 
     MCAPI void startUpload();
+
+    MCAPI void updateText(::MinecraftScreenModel& minecraftScreenModel);
     // NOLINTEND
 
 public:

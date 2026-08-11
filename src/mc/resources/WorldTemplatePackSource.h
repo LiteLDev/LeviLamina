@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     virtual ~WorldTemplatePackSource() /*override*/ = default;
 
-    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
+    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
     // NOLINTEND
 
 public:

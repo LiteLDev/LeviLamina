@@ -11,6 +11,7 @@ class BlockPos;
 class BlockSource;
 class Random;
 struct WeightedBlock;
+struct WeightedBlockName;
 // clang-format on
 
 class VegetationFeature : public ::Feature {
@@ -21,9 +22,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VegetationFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool place(::BlockSource&, ::BlockPos const&, ::Random&) const /*override*/;
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit VegetationFeature(::std::vector<::WeightedBlockName> const& blocksToPlaceNames);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

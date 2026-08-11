@@ -13,13 +13,13 @@ public:
     // NOLINTBEGIN
     virtual ~IMarketplaceContentOffersProvider() = default;
 
-    virtual ::StoreCatalogItem const& getOfferItem(int) const = 0;
+    virtual ::StoreCatalogItem const& getOfferItem(int index) const = 0;
 
-    virtual ::StoreCatalogItem& getOfferItem(int) = 0;
+    virtual ::StoreCatalogItem& getOfferItem(int index) = 0;
 
     virtual uint64 getNumOfferItems() const = 0;
 
-    virtual void setQuery(::std::string const&) = 0;
+    virtual void setQuery(::std::string const& upsellQueryName) = 0;
 
     virtual void clearQuery() = 0;
 

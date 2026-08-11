@@ -167,6 +167,20 @@ public:
 
     MCAPI bool _attack(::Actor& entity, bool playPredictiveSound, ::Vec3 const& hitPosition);
 
+    MCAPI bool _creativeDestroyBlock(::BlockPos const& pos, uchar face);
+
+    MCAPI bool _enableBlockBreakDelay() const;
+
+    MCAPI void _sendPlayerInteractWithBlockAfterEvent(
+        ::ItemStack const& beforeItem,
+        ::ItemStack const& afterItem,
+        ::Player&          player,
+        ::BlockPos const&  at,
+        uchar              face,
+        ::Vec3 const&      hit,
+        bool               isFirstEvent
+    );
+
 #ifdef LL_PLAT_C
     MCAPI bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
 #endif

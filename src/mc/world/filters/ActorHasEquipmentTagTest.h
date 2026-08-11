@@ -17,7 +17,7 @@ public:
     // NOLINTBEGIN
     virtual ::std::string_view getName() const /*override*/;
 
-    virtual bool setup(::FilterTest::Definition const&, ::FilterInputs const&) /*override*/;
+    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
     // NOLINTEND
 
 public:

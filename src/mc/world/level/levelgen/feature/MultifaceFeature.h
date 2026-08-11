@@ -10,6 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class BlockSource;
+class Random;
 // clang-format on
 
 class MultifaceFeature : public ::IFeature {
@@ -34,6 +36,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos> _placeBlockIfPossible(
+        ::BlockSource&                 region,
+        ::BlockPos const&              pos,
+        ::Random&                      random,
+        ::gsl::span<uchar const> const placementDirections
+    ) const;
     // NOLINTEND
 
 public:

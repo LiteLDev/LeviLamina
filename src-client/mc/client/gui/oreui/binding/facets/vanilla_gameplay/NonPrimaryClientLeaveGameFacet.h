@@ -32,6 +32,10 @@ public:
         ::std::function<void()>                   requestLeaveGame,
         ::std::function<void(::std::string_view)> requestJoinGame
     );
+
+    MCAPI void leaveGame();
+
+    MCAPI void leaveGameThenJoinFriendsWorld(::std::string const& serverId);
     // NOLINTEND
 
 public:

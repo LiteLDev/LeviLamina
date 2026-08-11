@@ -19,6 +19,7 @@ class BaseAttributeMap;
 class BaseGameVersion;
 class CompoundTag;
 class Experiments;
+class TemporalAttributeBuff;
 struct EffectDuration;
 // clang-format on
 
@@ -94,30 +95,55 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MobEffect();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~MobEffect() = default;
 
     virtual void applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
-    virtual void removeEffects(::BaseAttributeMap&);
+    virtual void removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
 
     virtual void onEffectExpired(::Actor& target) const;
 
     virtual void onActorDied(::Actor& target, int amplifier) const;
 
-    virtual void onActorHurt(::Actor&, int, ::ActorDamageSource const&, float) const;
+    virtual void onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const;
 
-    virtual void applyInstantaneousEffect(::Actor*, ::Actor*, ::Actor*, int, float) const;
+    virtual void
+    applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
 
     virtual bool isInstantaneous() const;
 
-    virtual float getAttributeModifierValue(int, ::AttributeModifier const&) const;
+    virtual float getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MobEffect(
+        uint                 id,
+        ::std::string const& resourceName,
+        ::std::string const& locName,
+        bool                 isHarmful,
+        int                  color,
+        int                  icon,
+        ::std::string const& iconName,
+        bool                 drawParticles
+    );
+
+    MCAPI ::TemporalAttributeBuff
+    _createTemporalBuff(::AttributeBuff const& baseBuff, ::EffectDuration duration, int amplification) const;
+
+    MCAPI void _setParticleEffectIds(char const* particleEffectId, char const* particleEffectAmbientId);
+
+    MCAPI void addAttributeBuff(::Attribute const& attribute, ::std::shared_ptr<::AttributeBuff> buff);
+
+    MCAPI void addAttributeModifier(::Attribute const& attribute, ::std::shared_ptr<::AttributeModifier> modifier);
+
     MCAPI void applyModsAndBuffs(
         ::BaseAttributeMap& attributeMapToRemoveFrom,
         ::EffectDuration    durationTicks,
@@ -138,6 +164,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void
+    darknessEffectFactorUpdate(::MobEffect::FactorCalculationData& factorCalculationData, ::EffectDuration duration);
+
     MCAPI static ::MobEffect* getByName(::std::string const& name);
 
     MCAPI static ::std::string getNameById(uint effectId);
@@ -225,6 +254,12 @@ public:
     MCAPI static ::MobEffect*& WITHER();
 
     MCAPI static ::std::add_lvalue_reference_t<::std::unique_ptr<::MobEffect>[]> mMobEffects();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

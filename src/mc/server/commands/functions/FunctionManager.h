@@ -88,8 +88,12 @@ public:
         ::GameRule const*                       gameRule
     );
 
+    MCAPI ::CommandOrigin const& _addOriginReference(::CommandOrigin const& origin, uint amount);
+
     MCAPI int
     _processCommandStack(::FunctionEntry& toExecute, ::CommandOrigin const& origin, ::FunctionQueueOrder order);
+
+    MCAPI void _removeOriginReference(::CommandOrigin const& origin, uint amount);
 
     MCAPI ::FunctionEntry* getFunction(::std::string const& functionName);
 

@@ -61,6 +61,8 @@ public:
         ::BlockPos const& pos,
         ::ActorUniqueID
     );
+
+    MCAPI void _changeLeftTab(int dir);
     // NOLINTEND
 
 public:

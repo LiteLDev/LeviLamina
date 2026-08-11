@@ -58,6 +58,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit CurrentPartyMembersQuery(::OreUI::GameDependencies const& game);
+
+    MCAPI void _fetchData();
+
+    MCAPI void _updateInvitees();
+
+    MCAPI void _updateMembers();
     // NOLINTEND
 
 public:

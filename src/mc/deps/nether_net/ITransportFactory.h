@@ -21,19 +21,19 @@ public:
     // NOLINTBEGIN
     virtual ~ITransportFactory() = default;
 
-    virtual void setLoggingLevel(::NetherNet::LogSeverity) = 0;
+    virtual void setLoggingLevel(::NetherNet::LogSeverity severity) = 0;
 
     virtual void suspendTransport() = 0;
 
     virtual void resumeTransport() = 0;
 
     virtual ::NetherNet::INetherNetTransportInterface* createTransportInterface(
-        ::NetherNet::NetworkID const&,
-        ::NetherNet::TransportConfiguration const&,
-        ::NetherNet::INetherNetTransportInterfaceCallbacks*
+        ::NetherNet::NetworkID const&                       localUserID,
+        ::NetherNet::TransportConfiguration const&          configuration,
+        ::NetherNet::INetherNetTransportInterfaceCallbacks* pCallbacks
     ) = 0;
 
-    virtual void destroyTransportInterface(::NetherNet::INetherNetTransportInterface*) = 0;
+    virtual void destroyTransportInterface(::NetherNet::INetherNetTransportInterface* pSimpleNetworkInterface) = 0;
     // NOLINTEND
 
 public:

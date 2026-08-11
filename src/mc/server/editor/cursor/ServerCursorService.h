@@ -22,6 +22,8 @@ namespace Editor::Cursor { struct AttachmentProperties; }
 namespace Editor::Cursor { struct CursorState; }
 namespace Editor::Cursor { struct Position; }
 namespace Editor::Cursor { struct Ray; }
+namespace Editor::Network { class CursorServicePositionChangePayload; }
+namespace Editor::Network { class CursorServiceViewDistanceChangePayload; }
 // clang-format on
 
 namespace Editor::Cursor {
@@ -115,6 +117,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ServerCursorService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI void _createOrUpdateRegion(::BlockPos const& pos);
+
+    MCNAPI void _handleMaxViewDistanceChange(::Editor::Network::CursorServiceViewDistanceChangePayload const& payload);
+
+    MCNAPI void _handlePayloadPositionChange(::Editor::Network::CursorServicePositionChangePayload const& payload);
     // NOLINTEND
 
 public:

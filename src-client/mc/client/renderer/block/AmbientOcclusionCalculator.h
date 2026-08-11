@@ -12,6 +12,7 @@
 class Block;
 class BlockTessellatorCache;
 struct BrightnessPair;
+struct PrecompCache;
 // clang-format on
 
 class AmbientOcclusionCalculator {
@@ -56,6 +57,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::PrecompCache _getCache();
+
     MCAPI void calculate(uchar face);
 
     MCAPI void calculateBoxAverage(bool);

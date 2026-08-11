@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/profile/ProfilerControlAction.h"
 #include "mc/profile/ProfilerControlTarget.h"
 #include "mc/scripting/debugger/request_handlers/IScriptDebuggerRequestHandler.h"
 
@@ -11,6 +12,8 @@
 // clang-format off
 class LocalProfilerControlBroker;
 class ScriptDebugger;
+namespace Bedrock::Profiling::Control { struct ProfilerControlArgs; }
+namespace ScriptDebuggerMessages { struct DebuggerRequestMessage; }
 // clang-format on
 
 class ScriptDebuggerBaseProfilerRequestHandler : public ::IScriptDebuggerRequestHandler {
@@ -63,6 +66,13 @@ public:
     MCNAPI ScriptDebuggerBaseProfilerRequestHandler(
         ::Bedrock::NonOwnerPointer<::LocalProfilerControlBroker> profilerControlBroker,
         ::Bedrock::Profiling::Control::ProfilerControlTarget     profilerTarget
+    );
+
+    MCNAPI void _queueControlRequest(
+        ::ScriptDebuggerMessages::DebuggerRequestMessage const& request,
+        ::ScriptDebugger&                                       debugger,
+        ::Bedrock::Profiling::Control::ProfilerControlAction    action,
+        ::Bedrock::Profiling::Control::ProfilerControlArgs      args
     );
     // NOLINTEND
 

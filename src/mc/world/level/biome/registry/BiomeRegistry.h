@@ -100,9 +100,11 @@ public:
 
     MCAPI ::Biome& _register(::std::string_view name, ::BiomeIdType id);
 
+    MCAPI void _save(::LevelStorage& levelStorage) const;
+
 #ifdef LL_PLAT_C
     MCAPI
-        uint64 assignSeasonTextureRow(::BiomeRegistry::SeasonTextureRowSettings const& desiredSettings, uint64 maxSize);
+    uint64 assignSeasonTextureRow(::BiomeRegistry::SeasonTextureRowSettings const& desiredSettings, uint64 maxSize);
 #endif
 
     MCAPI ::std::vector<::std::string> const biomeGetTags(::Biome const& biome) const;

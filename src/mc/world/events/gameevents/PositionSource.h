@@ -29,6 +29,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void serializeTo(::CompoundTag& tag) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C

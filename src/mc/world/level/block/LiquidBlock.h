@@ -35,7 +35,24 @@ public:
     // NOLINTBEGIN
     MCAPI LiquidBlock(::std::string const& nameId, int id, ::Material const& material);
 
+    MCAPI int _getSlopeDistance(::BlockSource& region, ::BlockPos const& pos, int pass, int from) const;
+
+    MCAPI bool _isLiquidBlocking(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::BlockPos const& flowFromPos,
+        uchar             flowFromDirection
+    ) const;
+
     MCAPI bool _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool onlyDetectStatic) const;
+
+    MCAPI void _trySpreadTo(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        int               neighbor,
+        ::BlockPos const& flowFromPos,
+        uchar             flowFromDirection
+    ) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 

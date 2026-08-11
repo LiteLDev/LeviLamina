@@ -27,6 +27,7 @@ class StoreCatalogRepository;
 struct ContentSource;
 struct InvalidPacksFilterGroup;
 struct InvalidResourceSource;
+struct PackManagerContentSourceArgs;
 struct PackManagerContentSourceData;
 struct RealmsUnknownPackSources;
 struct WorldContentSource;
@@ -60,8 +61,8 @@ public:
         // NOLINTBEGIN
         virtual ::ContentTierInfo getContentTierInfo() const /*override*/;
 
-        virtual ::std::string const* getStoreCatalogItemAvailableDateByPackIdentityAndType(::mce::UUID const&) const
-            /*override*/;
+        virtual ::std::string const*
+        getStoreCatalogItemAvailableDateByPackIdentityAndType(::mce::UUID const& uuid) const /*override*/;
         // NOLINTEND
 
     public:
@@ -85,58 +86,76 @@ public:
     virtual ::std::unique_ptr<::WorldTemplateSource> createWorldTemplateSource() const /*override*/;
 
     virtual ::std::unique_ptr<::InvalidResourceSource>
-    createInvalidResourceSource(::InvalidPacksFilterGroup const&) const /*override*/;
+    createInvalidResourceSource(::InvalidPacksFilterGroup const& filter) const /*override*/;
 
     virtual ::std::unique_ptr<::ContentSource> createWorldPackManagerContentSource(
-        ::std::string const&,
-        ::Core::PathBuffer<::std::string>,
-        ::ContentFlags,
-        ::std::vector<::PackManagerContentSourceData>&&,
-        ::std::weak_ptr<::CachedHostPackIdProvider>
+        ::std::string const&                            worldID,
+        ::Core::PathBuffer<::std::string>               worldPath,
+        ::ContentFlags                                  flags,
+        ::std::vector<::PackManagerContentSourceData>&& data,
+        ::std::weak_ptr<::CachedHostPackIdProvider>     provider
     ) const /*override*/;
 
-    virtual ::std::unique_ptr<::ContentSource>
-    createRealmPackManagerContentSource(int64, ::ContentFlags, ::std::vector<::PackManagerContentSourceData>&&) const
-        /*override*/;
+    virtual ::std::unique_ptr<::ContentSource> createRealmPackManagerContentSource(
+        int64                                           realmID,
+        ::ContentFlags                                  flags,
+        ::std::vector<::PackManagerContentSourceData>&& data
+    ) const /*override*/;
 
     virtual ::std::unique_ptr<::ContentSource> createRealmsWorldPackManagerContentSource(
-        ::Realms::RealmId,
-        ::std::vector<::Realms::Content>&&,
-        ::ContentFlags,
-        ::std::vector<::PackManagerContentSourceData>&&
+        ::Realms::RealmId                               realmId,
+        ::std::vector<::Realms::Content>&&              serviceAppliedContent,
+        ::ContentFlags                                  flags,
+        ::std::vector<::PackManagerContentSourceData>&& data
     ) const /*override*/;
 
-    virtual ::std::unique_ptr<::ContentSource>
-    createPackManagerContentSource(::ContentType, ::ContentFlags, ::std::vector<::PackManagerContentSourceData>&&) const
-        /*override*/;
+    virtual ::std::unique_ptr<::ContentSource> createPackManagerContentSource(
+        ::ContentType                                   type,
+        ::ContentFlags                                  flags,
+        ::std::vector<::PackManagerContentSourceData>&& data
+    ) const /*override*/;
 
-    virtual ::std::unique_ptr<::CompositePackSource> createCompositePackSource(::std::vector<::PackSource*>) const
-        /*override*/;
+    virtual ::std::unique_ptr<::CompositePackSource>
+    createCompositePackSource(::std::vector<::PackSource*> sources) const /*override*/;
 
-    virtual ::PackSource* getInPackagePackSource(::PackType) const /*override*/;
+    virtual ::PackSource* getInPackagePackSource(::PackType type) const /*override*/;
 
-    virtual ::PackSource* getDirectoryPackSource(::Core::Path const&, ::PackType) const /*override*/;
+    virtual ::PackSource* getDirectoryPackSource(::Core::Path const& path, ::PackType type) const /*override*/;
 
-    virtual ::PackSource& createDirectoryPackSource(::Core::Path const&, ::PackType, ::PackOrigin) const /*override*/;
+    virtual ::PackSource&
+    createDirectoryPackSource(::Core::Path const& path, ::PackType type, ::PackOrigin origin) const /*override*/;
 
-    virtual ::PackSource& createWorldTemplatePackSource(::mce::UUID const&, ::PackType, ::PackOrigin) const
-        /*override*/;
+    virtual ::PackSource&
+    createWorldTemplatePackSource(::mce::UUID const& id, ::PackType type, ::PackOrigin origin) const /*override*/;
 
-    virtual ::ContentCatalogPackSource&
-    createContentCatalogPackSource(::std::weak_ptr<::ContentManagerUtils::ISourcesAsyncReloader>&&, bool) const
-        /*override*/;
+    virtual ::ContentCatalogPackSource& createContentCatalogPackSource(
+        ::std::weak_ptr<::ContentManagerUtils::ISourcesAsyncReloader>&& weakSourcesAsyncReloader,
+        bool                                                            enabled
+    ) const /*override*/;
 
-    virtual ::PackSource& createWorldHistoryPackSource(::Core::Path const&, ::PackType) const /*override*/;
+    virtual ::PackSource& createWorldHistoryPackSource(::Core::Path const& path, ::PackType type) const /*override*/;
 
     virtual ::RealmsUnknownPackSources& getRealmsUnknownPackSources() const /*override*/;
 
-    virtual ::std::unique_ptr<::Realms::RealmsServicePackSource>
-    createRealmsServicePackSource(int64, ::PackType, ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&&) const
-        /*override*/;
+    virtual ::std::unique_ptr<::Realms::RealmsServicePackSource> createRealmsServicePackSource(
+        int64                                                       realmId,
+        ::PackType                                                  packType,
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
+    ) const /*override*/;
 
     virtual bool allowsResourcePackDevelopment() const /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::AppPlatform> getPlatform() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::PackManagerContentSourceArgs createPackManagerArgs(
+        ::ContentType                                   type,
+        ::ContentFlags                                  flags,
+        ::std::vector<::PackManagerContentSourceData>&& data
+    ) const;
     // NOLINTEND
 
 public:

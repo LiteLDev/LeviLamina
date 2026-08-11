@@ -27,16 +27,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
+    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
 
-    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
+    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
 
-    virtual void parseJson(::ConstDeserializeDataParams const&) /*override*/;
+    virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
 
     virtual uint64 getNumberOfParticlesToEmit(
-        ::ParticleSystem::ComponentAccessParticleEmitter&,
-        ::RenderParams&,
-        ::std::chrono::nanoseconds const&
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::RenderParams&                                   renderParams,
+        ::std::chrono::nanoseconds const&                 dt
     ) /*override*/;
     // NOLINTEND
 

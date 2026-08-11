@@ -54,6 +54,38 @@ public:
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> realmsStoriesProvider,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>       profanityContext
     );
+
+    MCAPI ::std::string const& getCommentInProgressBody() const;
+
+    MCFOLD ::Realms::Stories::MemberFilterOption& getCurrentMemberFilterOption() const;
+
+    MCFOLD ::std::string const& getCurrentMemberSearchText() const;
+
+    MCFOLD ::Realms::Stories::MemberSortOption& getCurrentMemberSortOption() const;
+
+    MCFOLD ::std::string const& getCurrentStoryId() const;
+
+    MCAPI bool getNewPostAvailable() const;
+
+    MCFOLD ::std::string const& getPostInProgressBody() const;
+
+    MCFOLD ::std::string const& getStoryScreenshotSelectionFilePath() const;
+
+    MCAPI void setCommentInProgressBody(::std::string const& body);
+
+    MCAPI void setCurrentMemberFilterOption(::Realms::Stories::MemberFilterOption filterOption);
+
+    MCAPI void setCurrentMemberSearchText(::std::string const& searchText);
+
+    MCAPI void setCurrentMemberSortOption(::Realms::Stories::MemberSortOption sortOption);
+
+    MCAPI void setCurrentStoryId(::std::string const& id);
+
+    MCAPI void setNewPostAvailable(bool postAvailable);
+
+    MCAPI void setPostInProgressBody(::std::string const& body);
+
+    MCAPI void setStoryScreenshotSelectionFilePath(::std::string const& path);
     // NOLINTEND
 
 public:

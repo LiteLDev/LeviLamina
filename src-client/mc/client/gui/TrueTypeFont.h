@@ -73,11 +73,11 @@ public:
     // NOLINTBEGIN
     virtual ~TrueTypeFont() /*override*/ = default;
 
-    virtual void loadFontData(bool) /*override*/;
+    virtual void loadFontData(bool uploadTextureImmediately) /*override*/;
 
     virtual bool _supportsShadowInSingleDraw() /*override*/;
 
-    virtual ::mce::MaterialPtr& getMaterial(int, bool) const /*override*/;
+    virtual ::mce::MaterialPtr& getMaterial(int sheet, bool isOddGuiScale) const /*override*/;
 
     virtual void uploadTextureToGPU() /*override*/;
 
@@ -85,11 +85,11 @@ public:
 
     virtual int _getReplacementCharacter() /*override*/;
 
-    virtual ::ResourceLocation _getFontSheetLocation(int, bool) const /*override*/;
+    virtual ::ResourceLocation _getFontSheetLocation(int sheet, bool) const /*override*/;
 
-    virtual float _getCharWidth(int, bool) /*override*/;
+    virtual float _getCharWidth(int uniChar, bool) /*override*/;
 
-    virtual bool supportsChar(int const&) /*override*/;
+    virtual bool supportsChar(int const& character) /*override*/;
 
     virtual float getWrapHeight() const /*override*/;
 
@@ -102,25 +102,45 @@ public:
     virtual void setTextConstantsInScreenContext(::ScreenContext&, int, float, ::mce::Color const&, bool) const
         /*override*/;
 
-    virtual void reloadFontTextures(::Bedrock::NonOwnerPointer<::ResourceLoadManager> const&, bool) /*override*/;
+    virtual void reloadFontTextures(
+        ::Bedrock::NonOwnerPointer<::ResourceLoadManager> const& resourceLoadManager,
+        bool                                                     blockingLoad
+    ) /*override*/;
 
     virtual bool isReloadingTextures() /*override*/;
 
-    virtual void _scanUnicodeCharacterSize(int, int, bool) /*override*/;
+    virtual void _scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode) /*override*/;
 
     virtual ::mce::Font::Type getType(int glyphSheet) const /*override*/;
 
-    virtual void fetchPage(int) /*override*/;
+    virtual void fetchPage(int page) /*override*/;
 
-    virtual float
-    buildChar(::std::vector<::Font::GlyphQuad>&, int, ::mce::Color const&, bool, float, float, bool) /*override*/;
+    virtual float buildChar(
+        ::std::vector<::Font::GlyphQuad>& quads,
+        int                               i,
+        ::mce::Color const&               color,
+        bool                              italic,
+        float                             x,
+        float                             y,
+        bool                              unicode
+    ) /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> getUnicodeFontNameWithPage(::Core::Path const&, uchar const) const;
+    virtual ::Core::PathBuffer<::std::string>
+    getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
 
     virtual void switchFontsource(::Core::Path const&, ::Core::Path const&) /*override*/;
 
     virtual ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     getFontSources() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _loadSheetForGlyph(int codepoint, bool uploadTexture, bool forceReload);
+
+    MCAPI void
+    _uploadTextureToGPU(::ResourceLocation const& resourceLocation, ::std::shared_ptr<::cg::ImageBuffer> imageBuffer);
     // NOLINTEND
 
 public:

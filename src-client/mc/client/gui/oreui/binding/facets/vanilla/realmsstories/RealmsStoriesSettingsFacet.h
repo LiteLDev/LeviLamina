@@ -4,6 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/network/realms/OptInState.h"
+#include "mc/client/realms/PostStatus.h"
+#include "mc/client/realms/stories/FetchStatus.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -35,6 +38,24 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsStoriesSettingsFacet(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
+
+    MCAPI ::Realms::Stories::FetchStatus _getFetchState() const;
+
+    MCAPI ::Realms::OptInState _getPlayerOptInStatus() const;
+
+    MCAPI ::Realms::Stories::PostStatus _getPostState() const;
+
+    MCAPI bool _getRealmCoordinatesStatus() const;
+
+    MCAPI bool _getRealmEventsStatus() const;
+
+    MCAPI bool _getRealmNotificationsStatus() const;
+
+    MCAPI ::Realms::OptInState _getRealmOptInStatus() const;
+
+    MCAPI bool _getRealmTimelineRequired() const;
+
+    MCAPI bool _getRealmTimelineStatus() const;
     // NOLINTEND
 
 public:

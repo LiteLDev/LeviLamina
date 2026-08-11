@@ -10,6 +10,7 @@
 // clang-format off
 class Actor;
 class ItemDescriptor;
+class ItemStack;
 class Mob;
 class Path;
 // clang-format on
@@ -52,6 +53,14 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual int getRandomEatingEnd() const;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _hasSnackableItems();
+
+    MCAPI void _updateHand(::ItemStack const& item);
     // NOLINTEND
 
 public:

@@ -98,11 +98,11 @@ public:
     virtual void setMarker(char const*, uint) const;
 
     virtual void generateCPUProfileTokenStatic(
-        ::Core::Profile::CPUProfileToken&,
-        char const*,
-        ::Bedrock::Profiler::details::StaticProfLabel,
-        uint,
-        ::brstd::source_location const&
+        ::Core::Profile::CPUProfileToken&             target,
+        char const*                                   group,
+        ::Bedrock::Profiler::details::StaticProfLabel label,
+        uint                                          color,
+        ::brstd::source_location const&               location
     );
 
     virtual void generateCPUProfileTokenLegacy(

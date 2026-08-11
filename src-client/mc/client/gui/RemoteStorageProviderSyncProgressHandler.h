@@ -41,6 +41,12 @@ public:
                                                       mCompletedCallback;
         ::ll::TypedStorage<1, 1, ::std::atomic<bool>> mCompletedCallbackCalled;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void onCompleted(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> result, bool canceled);
+        // NOLINTEND
     };
 
 public:
@@ -71,11 +77,11 @@ public:
 
     virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
-    virtual void tick(::MinecraftScreenModel&) /*override*/;
+    virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void onCancel(::MinecraftScreenModel&) /*override*/;
 
-    virtual void onExit(::MinecraftScreenModel&) /*override*/;
+    virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
 

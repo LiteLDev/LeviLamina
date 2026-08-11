@@ -4,9 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/RealmJoinFailureData.h"
+#include "mc/client/world/JoinRealmWorldResult.h"
+#include "mc/client/world/JoinServerWorldResult.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/events/IMinecraftEventing.h"
+#include "mc/network/EditorConnectionJoinIntent.h"
 #include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
@@ -64,6 +69,50 @@ public:
         ::brstd::move_only_function<bool()>                  isUsingUnifiedJoinRealmFlow,
         ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager
     );
+
+    MCAPI void clearJoinExternalServerTaskState();
+
+    MCAPI void clearJoinFriendServerTaskState();
+
+    MCAPI void clearJoinLANServerTaskState();
+
+    MCAPI void clearJoinRealmTaskState();
+
+    MCAPI void clearJoinThirdPartyServerTaskState();
+
+    MCAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinExternalServerResult() const;
+
+    MCAPI ::OreUI::FacetTaskState getJoinExternalServerTaskState() const;
+
+    MCAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinFriendServerResult();
+
+    MCAPI ::OreUI::FacetTaskState const getJoinFriendServerTaskState();
+
+    MCAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinLANServerResult();
+
+    MCAPI ::OreUI::FacetTaskState const getJoinLANServerTaskState();
+
+    MCAPI ::std::optional<::OreUI::RealmJoinFailureData> const& getJoinRealmFailureData();
+
+    MCAPI ::std::optional<::World::JoinRealmWorldResult> const& getJoinRealmResult() const;
+
+    MCAPI ::OreUI::FacetTaskState getJoinRealmTaskState() const;
+
+    MCAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinThirdPartyServerResult() const;
+
+    MCAPI ::OreUI::FacetTaskState getJoinThirdPartyServerTaskState() const;
+
+    MCAPI void joinExternalServer(::std::string const& serverID);
+
+    MCAPI void joinFriendServer(::std::string const& serverID);
+
+    MCAPI void joinLanServer(::std::string const& serverID);
+
+    MCAPI void joinRealmWorld(::std::string const& realmIdString, ::IMinecraftEventing::RealmConnectionFlow fromFlow);
+
+    MCAPI void joinThirdPartyServer(::std::string const& serverID);
+
+    MCAPI void setEditorConnectionJoinIntent(::EditorConnectionJoinIntent editorConnectionJoinIntent);
     // NOLINTEND
 
 public:

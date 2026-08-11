@@ -46,9 +46,17 @@ public:
 
     virtual void tick();
 
-    virtual void evaluate(::IClientInstance&, float);
+    virtual void evaluate(::IClientInstance& client, float a);
 
-    virtual void _evaluateType(::IClientInstance&, float, ::Actor&, ::LocalPlayer&, bool, ::HitResult&, ::HitResult&);
+    virtual void _evaluateType(
+        ::IClientInstance& client,
+        float              a,
+        ::Actor&           cameraEntity,
+        ::LocalPlayer&     player,
+        bool               isPicking,
+        ::HitResult&       hitResult,
+        ::HitResult&       liquidHitResult
+    );
     // NOLINTEND
 
 public:

@@ -50,7 +50,7 @@ public:
 
     virtual bool hasAnimationFinished() const = 0;
 
-    virtual ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const&) = 0;
+    virtual ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& friendlyName) = 0;
 
     virtual ::ActorAnimationType getAnimationType() const = 0;
 

@@ -39,6 +39,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _onItemUpdated(::std::string const& id, ::std::string const& propName);
+
     MCNAPI ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> handleDataEvent(

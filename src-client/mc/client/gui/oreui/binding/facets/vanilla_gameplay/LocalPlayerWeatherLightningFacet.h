@@ -38,6 +38,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit LocalPlayerWeatherLightningFacet(::LocalPlayerChangedConnector const& localPlayerChangedConnector);
+
+    MCFOLD ::std::optional<bool> const& getIsLightning() const;
     // NOLINTEND
 
 public:

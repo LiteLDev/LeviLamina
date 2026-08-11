@@ -34,7 +34,8 @@ public:
 
     virtual ::std::string getTelemetryOverride() const /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
+        /*override*/;
     // NOLINTEND
 
 public:

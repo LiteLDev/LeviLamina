@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
+namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct ModuleBinding; }
 // clang-format on
 
 namespace Editor::API {
@@ -29,6 +31,13 @@ public:
     MCNAPI explicit EditorServerModuleFactory(::Editor::ServiceProviderCollection& managerServices);
 
     MCNAPI void _addVersions(::Editor::ServiceProviderCollection& managerServices);
+
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Editor::ServiceProviderCollection& managerServices,
+        ::Scripting::ModuleBindingBuilder&   builder,
+        bool,
+        ::std::vector<::std::string> const&
+    );
     // NOLINTEND
 
 public:

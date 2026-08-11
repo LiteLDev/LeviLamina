@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     virtual ~TooltipTriggerComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
@@ -44,6 +44,12 @@ public:
     ) /*override*/;
 
     virtual ::std::string const& getTextToSpeechComponentValue() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _updateControlVisibility();
     // NOLINTEND
 
 public:

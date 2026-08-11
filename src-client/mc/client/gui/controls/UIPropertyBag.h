@@ -108,7 +108,21 @@ public:
 
     MCAPI void append(::UIPropertyBag const& propertyBag);
 
+    MCAPI void appendNoOverwrite(::UIPropertyBag const& propertyBag);
+
     MCAPI void clearWeakRegistrations();
+
+    MCAPI void registerForPropertyChangedNotification(
+        ::std::string const&         sourcePropertyName,
+        ::std::string const&         targetPropertyName,
+        ::std::weak_ptr<::UIControl> targetControl,
+        ::std::function<void(
+            ::std::weak_ptr<::UIControl> const&,
+            ::std::string_view,
+            ::Json::Value const&,
+            ::UIPropertyBag::ContextObject
+        )> const                     callback
+    );
 
     MCAPI void set(::std::string_view key, ::mce::Color color);
 

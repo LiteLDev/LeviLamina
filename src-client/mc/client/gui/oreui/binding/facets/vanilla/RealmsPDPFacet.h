@@ -32,6 +32,8 @@ public:
         ::std::function<void()> updateRealmsTrialAvailable,
         ::std::function<bool()> checkRealmsTrialAvailable
     );
+
+    MCAPI bool isRealmsTrialAvailable() const;
     // NOLINTEND
 
 public:

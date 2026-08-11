@@ -30,9 +30,9 @@ public:
     // NOLINTBEGIN
     virtual ~DataDrivenScreenCallbacks() = default;
 
-    virtual void resolve(::DataDrivenScreenClosedReason) /*override*/;
+    virtual void resolve(::DataDrivenScreenClosedReason resolution) /*override*/;
 
-    virtual void reject(::DataDrivenScreenRejectReason) /*override*/;
+    virtual void reject(::DataDrivenScreenRejectReason rejection) /*override*/;
     // NOLINTEND
 
 public:

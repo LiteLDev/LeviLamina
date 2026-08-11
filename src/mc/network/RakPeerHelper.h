@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/raknet/StartupResult.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ConnectionDefinition;
+namespace RakNet { class RakPeerInterface; }
+namespace RakNet { struct SocketDescriptor; }
+// clang-format on
+
 class RakPeerHelper {
 public:
     // RakPeerHelper inner types declare
@@ -61,4 +68,22 @@ public:
     RakPeerHelper& operator=(RakPeerHelper const&);
     RakPeerHelper(RakPeerHelper const&);
     RakPeerHelper();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::RakNet::StartupResult _startupInternal(
+        ::gsl::not_null<::RakNet::RakPeerInterface*> peer,
+        ::ConnectionDefinition const&                definition,
+        ::RakNet::SocketDescriptor*                  sockets,
+        int&                                         socketCount,
+        int                                          ipv6Index
+    );
+
+    MCAPI ::RakNet::StartupResult peerStartup(
+        ::RakNet::RakPeerInterface*   peerIn,
+        ::ConnectionDefinition const& definition,
+        ::RakPeerHelper::PeerPurpose  purpose
+    );
+    // NOLINTEND
 };

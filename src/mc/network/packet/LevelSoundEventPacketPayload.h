@@ -7,6 +7,11 @@
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/sound/SoundEventIdentifier.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorSoundIdentifier;
+// clang-format on
+
 struct LevelSoundEventPacketPayload {
 public:
     // member variables
@@ -30,6 +35,15 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI LevelSoundEventPacketPayload(::LevelSoundEventPacketPayload const&);
+
+    MCAPI LevelSoundEventPacketPayload(
+        ::SoundEventIdentifier         soundEvent,
+        ::Vec3 const&                  pos,
+        int                            data,
+        ::ActorSoundIdentifier const&  actorSoundIdentifier,
+        bool                           isGlobal,
+        ::std::optional<::Vec3> const& fireAtPosition
+    );
 
     MCAPI ~LevelSoundEventPacketPayload();
     // NOLINTEND

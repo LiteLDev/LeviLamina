@@ -70,19 +70,23 @@ public:
 
     virtual float getUploadProgress() const;
 
+#ifdef LL_PLAT_S
     virtual void archiveAndUploadFileToRealmStorage(
         ::std::string const& uploadId,
         ::Core::Path const&  path,
         int const            slotIndex,
         ::std::string const& realmsGuid
     ) = 0;
-
-#ifdef LL_PLAT_S
-    virtual void uploadFileToRealmStorage(::std::string const&, ::Core::Path const&, int const);
 #else // LL_PLAT_C
-    virtual void uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
+    virtual void archiveAndUploadFileToRealmStorage(
+        ::std::string const& uploadId,
+        ::Core::Path const&  worldID,
+        int const            slotIndex,
+        ::std::string const& realmsGuid
+    ) = 0;
 #endif
 
+    virtual void uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
     // NOLINTEND
 
 public:

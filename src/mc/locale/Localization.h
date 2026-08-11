@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ResourcePackManager;
 struct OptionalString;
 // clang-format on
 
@@ -31,6 +32,7 @@ public:
 
 public:
     // prevent constructor by default
+    Localization& operator=(Localization const&);
     Localization();
 
 public:
@@ -38,9 +40,21 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Localization(::std::string const& code);
 
+    MCAPI Localization(::Localization const& rhs);
+
+    MCAPI Localization(::Localization&& rhs);
+
+    MCAPI Localization(::std::string const& code, ::Localization const* fallbackLocale);
+
 #ifdef LL_PLAT_C
     MCAPI ::OptionalString _get(::std::string const& id, ::std::vector<::std::string> const& params) const;
 #endif
+
+    MCAPI ::OptionalString _getSimple(::std::string const& id) const;
+
+    MCAPI void addKeys(::Localization&& from);
+
+    MCAPI void appendTranslations(::Localization const& other);
 
     MCAPI void appendTranslations(
         ::std::string const&                fileContent,
@@ -61,6 +75,11 @@ public:
     MCAPI ::std::string getIETFLanguageCode() const;
 #endif
 
+    MCAPI void loadFromResourcePackManager(
+        ::ResourcePackManager&              resourcePackManager,
+        ::std::vector<::std::string> const& blockedKeys
+    );
+
     MCAPI ~Localization();
     // NOLINTEND
 
@@ -69,7 +88,17 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI static ::std::string _getDigitGroupSeparator(::std::string const& langCode);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI static ::std::string _getDigitGroupSeparator(::std::string const& langCode);
+#endif
+
+#ifdef LL_PLAT_C
+    MCAPI static bool _isCommaSeperatedLanguage(::std::string const& langCode);
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI static bool _isCommaSeperatedLanguage(::std::string const& langCode);
 #endif
 

@@ -10,6 +10,7 @@
 // clang-format off
 class ISceneStack;
 class SceneFactory;
+struct StoreDataDrivenScreenParams;
 namespace OreUI { class RouteMatcher; }
 // clang-format on
 
@@ -31,6 +32,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::StoreDataDrivenScreenParams _getParamsFromQuery(::std::string const& url);
+
     MCAPI static ::std::string composeRouteForProduct(::std::string const& productId);
     // NOLINTEND
 

@@ -9,8 +9,10 @@
 // auto generated forward declare list
 // clang-format off
 class LibraryCollection;
+class LibraryItem;
 class LibrarySearchBarScreenController;
 class MainMenuScreenModel;
+class UIPropertyBag;
 namespace Json { class Value; }
 namespace librarySearch { struct TelemetryData; }
 // clang-format on
@@ -104,6 +106,12 @@ public:
         ::std::string const&                       categoryTitle,
         ::LibraryScreenController::OptionalFeature optionalFeatures
     );
+
+    MCAPI ::LibraryItem* _getItem(::UIPropertyBag& bag) const;
+
+    MCAPI void _initialize();
+
+    MCAPI void _initializeLibraryCollection(::std::shared_ptr<::LibraryCollection> libraryCollection);
     // NOLINTEND
 
 public:

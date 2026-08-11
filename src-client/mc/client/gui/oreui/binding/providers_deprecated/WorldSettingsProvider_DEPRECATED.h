@@ -91,6 +91,8 @@ public:
     // NOLINTBEGIN
     MCAPI bool arePacksDifferentFromSnapshotPacks() const;
 
+    MCAPI void reset();
+
     MCAPI void saveResourcePacksSnapshot();
 
     MCAPI void setContentViews(

@@ -35,9 +35,13 @@ public:
 
     MCAPI ::AABB cloneAndGrow(::Vec3 const& distance) const;
 
+    MCAPI ::AABB cloneAndGrow(float radius) const;
+
     MCAPI ::AABB cloneAndShrink(::Vec3 const& offset) const;
 
     MCAPI ::AABB cloneAndTransformByMatrix(::Matrix const& transform) const;
+
+    MCAPI ::AABB cloneAndTranslate(::Vec3 const& offset) const;
 
     MCAPI bool contains(::Vec3 const& p) const;
 

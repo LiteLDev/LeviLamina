@@ -89,8 +89,8 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
     tryRegisterComponentV1(
-        ::HashedString const&,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&
+        ::HashedString const&                                         componentName,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     ) /*override*/;
 
     virtual ::Scripting::Result<
@@ -101,24 +101,24 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
     tryRegisterComponent(
-        ::HashedString const&,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&
+        ::HashedString const&                                         componentName,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     ) /*override*/;
 
-    virtual ::std::vector<::std::string_view>
-        getValidComponentsForItem(::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>) const
-        /*override*/;
+    virtual ::std::vector<::std::string_view> getValidComponentsForItem(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle
+    ) const /*override*/;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
     tryGetCustomComponentParametersForItem(
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>,
-        ::std::string_view,
-        ::Scripting::WeakLifetimeScope const&
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle,
+        ::std::string_view                                                           componentName,
+        ::Scripting::WeakLifetimeScope const&                                        scope
     ) const /*override*/;
 
     virtual ::ScriptDeferredEventListener& getEventListener() /*override*/;
 
-    virtual void setCerealContext(::cereal::ReflectionCtx&) /*override*/;
+    virtual void setCerealContext(::cereal::ReflectionCtx& ctx) /*override*/;
 
     virtual void _onReload() /*override*/;
 
@@ -134,6 +134,20 @@ public:
         ::ItemRegistryRef                 itemRegistry,
         ::std::unique_ptr<::ScriptModuleMinecraft::IScriptItemCustomComponentSignalCollection>&& signals,
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&                            parameterCache
+    );
+
+    MCAPI void _subscribeItemsToComponents();
+
+    MCAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
+    _tryRegisterComponent(
+        ::HashedString const&                                         componentName,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     );
     // NOLINTEND
 

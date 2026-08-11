@@ -113,6 +113,24 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
+
+    MCAPI ::std::string _getHoverText(::Social::XboxLiveUserProfileData const* xboxUserProfileData) const;
+
+    MCAPI ::std::string _getLinkedAccountFirstDisplayName(int const collectionIndex) const;
+
+    MCAPI ::std::string _getLinkedAccountFriendTitleName(int const collectionIndex) const;
+
+    MCAPI ::std::string _getPlatformDisplayName(int const collectionIndex) const;
+
+    MCAPI ::std::string _getPlatformFriendTitleName(int const collectionIndex) const;
+
+    MCAPI ::std::string _getXboxFriendTitleName(int const collectionIndex) const;
+
+    MCAPI ::std::string _getXboxLiveDisplayName(::Social::XboxLiveUserProfileData const* xboxUserProfileData) const;
+
+    MCAPI void _refreshXboxLiveFriendsData();
+
+    MCAPI void _sortDataList();
     // NOLINTEND
 
 public:

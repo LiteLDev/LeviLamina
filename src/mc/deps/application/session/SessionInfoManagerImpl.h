@@ -28,12 +28,20 @@ public:
     ::ll::UntypedStorage<8, 128> mUnk1c9ab3;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    SessionInfoManagerImpl& operator=(SessionInfoManagerImpl const&);
+    SessionInfoManagerImpl(SessionInfoManagerImpl const&);
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     SessionInfoManagerImpl& operator=(SessionInfoManagerImpl const&);
     SessionInfoManagerImpl(SessionInfoManagerImpl const&);
     SessionInfoManagerImpl();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -56,9 +64,24 @@ public:
     )>&
     onCurrentSessionChanged() /*override*/;
 
-    virtual ::std::string serializeSession(::Bedrock::SessionInfo const&) const /*override*/;
+    virtual ::std::string serializeSession(::Bedrock::SessionInfo const& session) const /*override*/;
 
-    virtual ::std::shared_ptr<::Bedrock::SessionInfo> deserializeSession(::std::string_view) const /*override*/;
+    virtual ::std::shared_ptr<::Bedrock::SessionInfo> deserializeSession(::std::string_view contents) const
+        /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI SessionInfoManagerImpl();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

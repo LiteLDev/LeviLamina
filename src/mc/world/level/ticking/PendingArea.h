@@ -8,6 +8,11 @@
 #include "mc/util/Bounds.h"
 #include "mc/world/level/ticking/TickingAreaLoadMode.h"
 
+// auto generated forward declare list
+// clang-format off
+struct TickingAreaDescription;
+// clang-format on
+
 struct PendingArea {
 public:
     // member variables
@@ -22,5 +27,11 @@ public:
     ::ll::TypedStorage<1, 1, ::TickingAreaLoadMode>    mLoadMode;
     ::ll::TypedStorage<1, 1, bool>                     mCreated;
     ::ll::TypedStorage<8, 16, ::std::optional<uint64>> mScope;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::TickingAreaDescription getDescription() const;
     // NOLINTEND
 };

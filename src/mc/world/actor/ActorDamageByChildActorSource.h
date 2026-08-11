@@ -50,6 +50,8 @@ public:
 
     virtual ::std::pair<::std::string, ::std::vector<::std::string>>
     _getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const /*override*/;
+
+    virtual ~ActorDamageByChildActorSource() /*override*/;
     // NOLINTEND
 
 public:
@@ -66,6 +68,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Actor const& childActor, ::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

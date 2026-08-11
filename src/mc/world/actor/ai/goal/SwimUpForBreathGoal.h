@@ -49,6 +49,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI int _determineApproximateLiquidDepthOfMob() const;
+
+    MCAPI void _findAirPosition();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

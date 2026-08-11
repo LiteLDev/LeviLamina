@@ -24,6 +24,12 @@ public:
     WidgetAddRenderPrimComponentPayload();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~WidgetAddRenderPrimComponentPayload() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI WidgetAddRenderPrimComponentPayload(::Editor::Network::WidgetAddRenderPrimComponentPayload const&);
@@ -33,6 +39,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::Network::WidgetAddRenderPrimComponentPayload const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

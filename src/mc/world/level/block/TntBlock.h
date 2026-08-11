@@ -39,6 +39,8 @@ public:
     // NOLINTBEGIN
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
+    MCAPI void _setAllowUnderwater(::Actor* e) const;
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 

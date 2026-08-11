@@ -100,6 +100,12 @@ public:
     OverworldGenerationRulesBiomeJsonComponent();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~OverworldGenerationRulesBiomeJsonComponent() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI OverworldGenerationRulesBiomeJsonComponent(
@@ -128,6 +134,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

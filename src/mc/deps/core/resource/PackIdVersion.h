@@ -16,13 +16,25 @@ public:
     ::ll::TypedStorage<1, 1, ::PackType>    mPackType;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PackIdVersion();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PackIdVersion& operator=(PackIdVersion const&);
+    PackIdVersion();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI PackIdVersion(::PackIdVersion const&);
+#endif
+
     MCAPI PackIdVersion(::mce::UUID const& id, ::SemVersion const& version, ::PackType packType);
 
     MCAPI ::std::string asString() const;

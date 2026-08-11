@@ -11,6 +11,7 @@
 class HashedString;
 namespace Editor::Settings { struct ThemePalette; }
 namespace Editor::Settings { struct ThemeProps; }
+namespace Scripting { struct Error; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class Color; }
 // clang-format on
@@ -48,6 +49,13 @@ public:
                                                     onThemeColorUpdatedCallback,
         ::std::function<void(::std::string const&)> onThemeDeletedCallback
     );
+
+    MCNAPI ::std::unordered_map<::HashedString, ::mce::Color>
+    _cloneThemeColorProps(::std::unordered_map<::HashedString, ::mce::Color> const colorProps);
+
+    MCNAPI ::Scripting::Error _getAttemptingToModifyBuiltInThemeError(::std::string const& themeId) const;
+
+    MCNAPI ::Scripting::Error _getThemeDoesNotExistError(::std::string const& themeId, bool isCustom) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> addNewTheme(
         ::std::string const&                  id,
@@ -94,6 +102,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::std::unordered_map<::HashedString, ::Editor::Settings::ThemePalette> _getDefaultThemesMap();
+
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 

@@ -45,9 +45,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool hasEvents(void const*) const /*override*/;
+    virtual bool hasEvents(void const* token) const /*override*/;
 
-    virtual ::GameControllerEvent getNextEvent(void const*) /*override*/;
+    virtual ::GameControllerEvent getNextEvent(void const* token) /*override*/;
 
     virtual int getId() const /*override*/;
 
@@ -55,7 +55,7 @@ public:
 
     virtual bool isAdequateController() const /*override*/;
 
-    virtual void pairControllerToClient(::SubClientId) /*override*/;
+    virtual void pairControllerToClient(::SubClientId clientId) /*override*/;
 
     virtual void unpairControllerFromClient() /*override*/;
 

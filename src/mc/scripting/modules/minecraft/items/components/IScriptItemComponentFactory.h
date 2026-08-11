@@ -22,13 +22,13 @@ public:
     virtual ~IScriptItemComponentFactory() = default;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent> createComponent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>,
-        ::Scripting::WeakLifetimeScope const&
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope
     ) const = 0;
 
     virtual ::std::vector<::Scripting::ClassBinding> bind() const = 0;
 
-    virtual bool canAddOn(::ScriptModuleMinecraft::ScriptItemStack&) const = 0;
+    virtual bool canAddOn(::ScriptModuleMinecraft::ScriptItemStack& item) const = 0;
     // NOLINTEND
 
 public:

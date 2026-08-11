@@ -116,6 +116,8 @@ public:
     // NOLINTBEGIN
     MCAPI static int _getNumSides(::Block const& block);
 
+    MCAPI static bool _hasAnyFace(::Block const& block);
+
     MCAPI static ::Block const& getBlockForPlacementWorldGen(
         ::Block const&       oldBlock,
         ::Block const&       placementBlock,

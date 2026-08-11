@@ -18,8 +18,12 @@ public:
     // NOLINTBEGIN
     virtual ~IConnectionUpdateCallback() = default;
 
-    virtual ::Block const&
-    updateConnection(::BlockSource const&, ::Block const&, ::BlockPos const&, ::NeighborBlockDirections) const = 0;
+    virtual ::Block const& updateConnection(
+        ::BlockSource const&      region,
+        ::Block const&            block,
+        ::BlockPos const&         pos,
+        ::NeighborBlockDirections directionsToCheck
+    ) const = 0;
     // NOLINTEND
 
 public:

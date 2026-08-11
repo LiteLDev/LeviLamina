@@ -15,7 +15,7 @@ class VanillaMoveInputHandler : public ::ClientMoveInputHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void registerInputHandlers(::InputHandler&, ::IClientInstance const&) /*override*/;
+    virtual void registerInputHandlers(::InputHandler& inputHandler, ::IClientInstance const& client) /*override*/;
     // NOLINTEND
 
 public:

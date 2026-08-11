@@ -16,6 +16,7 @@
 // clang-format off
 class Actor;
 class BlockSource;
+class Dimension;
 class ITickingAreaView;
 class LevelStorage;
 class Random;
@@ -48,6 +49,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TickingArea();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~TickingArea() /*override*/ = default;
@@ -78,19 +83,19 @@ public:
 
     virtual ::TickingAreaLoadMode getLoadMode() const /*override*/;
 
-    virtual void setLoadMode(::TickingAreaLoadMode, ::LevelStorage&) /*override*/;
+    virtual void setLoadMode(::TickingAreaLoadMode loadMode, ::LevelStorage& levelStorage) /*override*/;
 
     virtual bool isPreloadDone() const /*override*/;
 
-    virtual void tick(::Tick const&, bool) /*override*/;
+    virtual void tick(::Tick const& currentTick, bool randomize) /*override*/;
 
-    virtual void tickSeasons(::Random&) /*override*/;
+    virtual void tickSeasons(::Random& random) /*override*/;
 
-    virtual void updatePosition(::Vec3 const&) /*override*/;
+    virtual void updatePosition(::Vec3 const& pos) /*override*/;
 
-    virtual void updateAndCenter(::LevelStorage&, ::Tick) /*override*/;
+    virtual void updateAndCenter(::LevelStorage& levelStorage, ::Tick currentLevelTick) /*override*/;
 
-    virtual ::Actor* findOwner(uchar&) /*override*/;
+    virtual ::Actor* findOwner(uchar& pendingChunks) /*override*/;
 
     virtual bool entityHasBeenFound() const /*override*/;
 
@@ -98,9 +103,14 @@ public:
 
     virtual bool isRemoved() /*override*/;
 
-    virtual void remove(::LevelStorage&) /*override*/;
+    virtual void remove(::LevelStorage& levelStorage) /*override*/;
 
-    virtual void onComponentChanged(uint, float, bool, ::LevelStorage&) /*override*/;
+    virtual void onComponentChanged(
+        uint            radius,
+        float           maxDistToPlayers,
+        bool            alwaysActive,
+        ::LevelStorage& levelStorage
+    ) /*override*/;
 
     virtual bool isScoped() const /*override*/;
 
@@ -109,6 +119,30 @@ public:
     virtual bool isDoneLoadingScoped() const /*override*/;
 
     virtual bool isStandalone() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TickingArea(
+        ::Dimension&          dimension,
+        ::mce::UUID           uniqueId,
+        ::std::string const&  name,
+        ::ActorUniqueID       entityId,
+        ::Bounds const&       bounds,
+        bool                  isCircle,
+        float                 maxDistToPlayers,
+        bool                  alwaysActive,
+        ::TickingAreaLoadMode loadMode
+    );
+
+    MCAPI void _save(::LevelStorage& levelStorage);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

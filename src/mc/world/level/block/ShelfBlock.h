@@ -17,6 +17,8 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
+class Player;
+class ShelfBlockActor;
 class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -106,7 +108,45 @@ public:
     // NOLINTBEGIN
     MCAPI ShelfBlock(::std::string const& nameId, int id);
 
+    MCAPI bool
+    _blockHasPoweredShelfType(::BlockSource const& region, ::BlockPos const& pos, ::ShelfBlock::PoweredType type) const;
+
+    MCAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*>
+    _getPoweredShelfBlockActorsForDoubleShelf(
+        ::BlockSource&    region,
+        ::BlockPos const& shelfLeft,
+        ::BlockPos const& shelfRight
+    ) const;
+
+    MCAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*>
+    _getPoweredShelfBlockActorsForTripleShelf(
+        ::BlockSource&    region,
+        ::BlockPos const& shelfLeft,
+        ::BlockPos const& shelfCenter,
+        ::BlockPos const& shelfRight
+    ) const;
+
+    MCAPI bool _isMatchingPoweredShelfInMatchingDirection(
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::BlockPos const&    neighbor
+    ) const;
+
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
+    MCAPI void
+    _setShelfData(::BlockSource& region, ::BlockPos const& pos, bool powered, ::ShelfBlock::PoweredType type) const;
+
+    MCAPI bool _swapItemsWithUnpoweredShelf(
+        ::Player&          player,
+        ::BlockPos const&  pos,
+        ::BlockSource&     region,
+        ::ShelfBlockActor& blockActor,
+        ::Vec3 const&      blockHit,
+        uchar              hitFace
+    ) const;
+
+    MCAPI void _validatePoweredShelfCurrentStateFromNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
@@ -116,6 +156,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
+
 #ifdef LL_PLAT_C
     MCAPI static ::ShelfBlock::SlotState
     getBlockSlotState(::BlockPos const& blockPos, ::Vec3 const& blockHit, uchar faceHit, ::BlockSource const& region);

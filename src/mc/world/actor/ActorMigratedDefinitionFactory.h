@@ -168,6 +168,10 @@ public:
     MCAPI void _initialize();
 #endif
 
+#ifdef LL_PLAT_S
+    MCAPI void _initialize();
+#endif
+
     MCAPI ::IJsonDefinitionSerializer* _tryGetDefinitionSerializer(::std::string_view name) const;
 
 #ifdef LL_PLAT_C
@@ -179,7 +183,13 @@ public:
     ) const;
 
     MCAPI void resetLoader();
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void resetLoader();
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI void
     setLoaderCustomData(::BedrockLoadContext customParseData, ::DeserializeDataSettings customUpgradeData) const;
 

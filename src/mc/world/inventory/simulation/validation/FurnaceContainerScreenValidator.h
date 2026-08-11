@@ -43,6 +43,8 @@ public:
         int const                 slot,
         ::ItemStack const&        item
     ) /*override*/;
+
+    virtual ~FurnaceContainerScreenValidator() /*override*/;
     // NOLINTEND
 
 public:
@@ -55,6 +57,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

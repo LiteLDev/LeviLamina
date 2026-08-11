@@ -12,6 +12,7 @@
 // clang-format off
 class RenderParams;
 struct ConstDeserializeDataParams;
+namespace Json { class Value; }
 namespace ParticleSystem { class ComponentAccessParticleEmitter; }
 namespace ParticleSystem { struct CommonParticle; }
 namespace SharedTypes::v1_20_80 { struct ParticleEffectComponent; }
@@ -67,6 +68,19 @@ public:
     ) /*override*/;
 
     virtual int getSortOrderNumber() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _extractEvent(::Json::Value const& event);
+
+    MCAPI ::ParticleSystem::ParticleMotionCollisionComponent::SweepResult _sweep(
+        ::ParticleSystem::ComponentAccessParticleEmitter&                      emitter,
+        ::ParticleSystem::ParticleMotionCollisionComponent::SweepResult const& previousRay,
+        ::Vec3 const&                                                          collisionRadius,
+        uint                                                                   iteration
+    );
     // NOLINTEND
 
 public:

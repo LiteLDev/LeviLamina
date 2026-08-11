@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class IEntitlement;
+class PackManifest;
 class PersonaClient;
 // clang-format on
 
@@ -44,6 +45,13 @@ public:
         ::PackIdVersion const& packIdentity,
         ::PersonaClient&       skinRepoInterface,
         ::IEntitlement const*  entitlement
+    );
+
+    MCAPI SkinPackModel(
+        ::PackManifest const& manifest,
+        ::PersonaClient&      skinRepoInterface,
+        ::IEntitlement const* entitlement,
+        bool                  isOfflineLoaded
     );
 
     MCAPI ::std::string const& getSkinName(int skinIndex) const;

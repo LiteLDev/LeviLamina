@@ -44,7 +44,7 @@ public:
 
     virtual ::ui::SceneType getSceneType() const /*override*/;
 
-    virtual bool onJoincodeReceived(::std::string const&) /*override*/;
+    virtual bool onJoincodeReceived(::std::string const& encodedJoincode) /*override*/;
     // NOLINTEND
 
 public:

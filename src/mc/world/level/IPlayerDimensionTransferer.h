@@ -24,36 +24,55 @@ public:
     // NOLINTBEGIN
     virtual ~IPlayerDimensionTransferer() = default;
 
+    virtual void playerSaveLimboActors(
+        ::Player&                  player,
+        ::ChangeDimensionRequest&  changeRequest,
+        ::Dimension&               toDimension,
+        ::PlayerLimboActorManager* playerLimboActorManager
+    ) = 0;
+
+    virtual void playerDestroyRemotePlayers(::GameplayUserManager& gameplayUserManager) = 0;
+
+    virtual void playerStartChangeDimensionSuspendRegion(::Player& player, ::DimensionType fromDimension) = 0;
+
     virtual void
-    playerSaveLimboActors(::Player&, ::ChangeDimensionRequest&, ::Dimension&, ::PlayerLimboActorManager*) = 0;
+    setTransitionLocation(::Player& player, ::ChangeDimensionRequest& changeRequest, ::Dimension& toDimension) = 0;
 
-    virtual void playerDestroyRemotePlayers(::GameplayUserManager&) = 0;
+    virtual void
+    syncTransitionComponentTargetPosition(::Player& player, ::ChangeDimensionRequest const& changeRequest) = 0;
 
-    virtual void playerStartChangeDimensionSuspendRegion(::Player&, ::DimensionType) = 0;
+    virtual void playerDestroyRegion(::Player& player, ::ChangeDimensionRequest const& changeRequest) = 0;
 
-    virtual void setTransitionLocation(::Player&, ::ChangeDimensionRequest&, ::Dimension&) = 0;
+    virtual void playerPrepareRegion(
+        ::Player&                       player,
+        ::ChangeDimensionRequest const& changeRequest,
+        ::Dimension const&              toDimension
+    ) = 0;
 
-    virtual void syncTransitionComponentTargetPosition(::Player&, ::ChangeDimensionRequest const&) = 0;
+    virtual bool playerWaitForServer(::Player& player, ::std::chrono::steady_clock::time_point currentTime) = 0;
 
-    virtual void playerDestroyRegion(::Player&, ::ChangeDimensionRequest const&) = 0;
+    virtual bool playerWaitForDimensionTransitionSystem(::Player const& player, ::EntityRegistry& entityRegistry) = 0;
 
-    virtual void playerPrepareRegion(::Player&, ::ChangeDimensionRequest const&, ::Dimension const&) = 0;
+    virtual void
+    sendClientRespawnMovePacketFromServer(::Player const& player, ::ChangeDimensionRequest& changeRequest) = 0;
 
-    virtual bool playerWaitForServer(::Player&, ::std::chrono::steady_clock::time_point) = 0;
+    virtual bool waitForSubChunks(::Player& player, ::Dimension const& toDimension) = 0;
 
-    virtual bool playerWaitForDimensionTransitionSystem(::Player const&, ::EntityRegistry&) = 0;
+    virtual void startWaitForRespawn(::Player const& player) = 0;
 
-    virtual void sendClientRespawnMovePacketFromServer(::Player const&, ::ChangeDimensionRequest&) = 0;
+    virtual void playerSwitchDimension(
+        ::Player&                 player,
+        ::ChangeDimensionRequest& changeRequest,
+        ::AddLimboActorHelper*    addLimboActorHelper
+    ) = 0;
 
-    virtual bool waitForSubChunks(::Player&, ::Dimension const&) = 0;
+    virtual bool doRespawnIfReady(
+        ::Player&                 player,
+        ::ChangeDimensionRequest& changeRequest,
+        ::AddLimboActorHelper*    addLimboActorHelper
+    ) = 0;
 
-    virtual void startWaitForRespawn(::Player const&) = 0;
-
-    virtual void playerSwitchDimension(::Player&, ::ChangeDimensionRequest&, ::AddLimboActorHelper*) = 0;
-
-    virtual bool doRespawnIfReady(::Player&, ::ChangeDimensionRequest&, ::AddLimboActorHelper*) = 0;
-
-    virtual void setPacketSender(::PacketSender&) = 0;
+    virtual void setPacketSender(::PacketSender& packetSender) = 0;
     // NOLINTEND
 
 public:

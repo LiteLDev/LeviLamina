@@ -34,9 +34,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ItemStack const& getItem(int) const /*override*/;
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    virtual void setItem(int, ::ItemStack const&) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     virtual ::std::string getName() const /*override*/;
 
@@ -52,31 +52,37 @@ public:
 
     virtual ::Container const* getContainer() const /*override*/;
 
-    virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
     virtual bool isEmpty() const /*override*/;
 
-    virtual bool canPushInItem(int, int, ::ItemStack const&) const /*override*/;
+    virtual bool canPushInItem(int slot, int, ::ItemStack const& item) const /*override*/;
 
-    virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
+    virtual bool canPullOutItem(int slot, int, ::ItemStack const&) const /*override*/;
 
     virtual bool addItemToFirstEmptySlot(::ItemStack const& item) /*override*/;
 
-    virtual void onChanged(::BlockSource&) /*override*/;
+    virtual void onChanged(::BlockSource& region) /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& context) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&) /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ChiseledBookshelfBlockActor(::BlockPos const& pos);
+
+    MCAPI void _setItemInternal(int slot, ::ItemStack const& item, bool isLoading);
     // NOLINTEND
 
 public:

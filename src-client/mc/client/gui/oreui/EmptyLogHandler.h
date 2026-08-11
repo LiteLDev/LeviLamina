@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     virtual ~EmptyLogHandler() /*override*/ = default;
 
-    virtual void WriteLog(::cohtml::Logging::Severity, char const*, uint64) /*override*/;
+    virtual void WriteLog(::cohtml::Logging::Severity severity, char const* message, uint64 length) /*override*/;
     // NOLINTEND
 
 public:

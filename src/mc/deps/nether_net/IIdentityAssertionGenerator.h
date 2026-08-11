@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     virtual ~IIdentityAssertionGenerator() = default;
 
-    virtual ::std::optional<::std::string> createAssertion(::std::string const&) = 0;
+    virtual ::std::optional<::std::string> createAssertion(::std::string const& fingerprints) = 0;
 
     virtual ::std::string_view idpDomain() const = 0;
 

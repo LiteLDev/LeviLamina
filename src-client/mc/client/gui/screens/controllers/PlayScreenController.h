@@ -6,10 +6,13 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/SceneType.h"
+#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
+#include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/models/PlayScreenDefaultTab.h"
 #include "mc/client/network/realms/RealmsAPI.h"
 #include "mc/client/world/LocalWorldInfo.h"
+#include "mc/client/world/NetworkWorldType.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -19,7 +22,11 @@ class DlcChecker;
 class DlcUIWrapper;
 class PlatformMultiplayerRestrictions;
 class PlayScreenModel;
+class ServicesManager;
+struct LegacyWorldInfo;
+struct NetworkWorldInfo;
 namespace Json { class Value; }
+namespace Social { struct PermissionCheckResult; }
 namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
@@ -122,6 +129,44 @@ public:
         ::ui::ScreenTechStackSelector&       screenTechStackSelector,
         ::std::string const&                 dirtyLevelId
     );
+
+    MCAPI bool _checkIfPingIsLoading(int collectionIndex);
+
+    MCAPI ::ui::ViewRequest _convertLegacyWorld(::LegacyWorldInfo const& world);
+
+    MCAPI void _displayRealmsFailedToJoinModal(::std::function<void(::ModalScreenButtonId)> callback);
+
+    MCAPI ::std::string _getCrossPlatformFriendsGridWarningText();
+
+    MCAPI ::std::string _getFriendsGridWarningText();
+
+    MCAPI ::std::string _getGeneralMultiplayerWarningText();
+
+    MCAPI ::NetworkWorldType _getNetworkWorldTypeFromCollection(::std::string const& collectionName) const;
+
+    MCAPI ::ui::ViewRequest _handleStartNetworkItem(int index, ::NetworkWorldType nwt);
+
+    MCAPI void _navigatePlayScreenTechStack(::PlayScreenDefaultTab tab);
+
+    MCAPI void _navigateToCreateWorldScreen();
+
+    MCAPI void _onMCTokenUpdated(::ServicesManager*);
+
+    MCAPI ::Social::PermissionCheckResult _parentalControlsDialogCheck();
+
+    MCAPI void _registerBindings();
+
+    MCAPI void _setOwnershipVerificationAnimationVisibleState();
+
+    MCAPI bool _shouldShowLockIcon(::LocalWorldInfo const& world) const;
+
+    MCAPI ::ui::ViewRequest _startLocalWorld(::LocalWorldInfo const& world);
+
+    MCAPI ::ui::ViewRequest _startNetworkWorld(::NetworkWorldInfo const& world, ::NetworkWorldType worldType);
+
+    MCAPI bool _worldHasHeader(::NetworkWorldType type, int collectionIndex);
+
+    MCAPI bool _worldHasImage(::NetworkWorldType type, int collectionIndex);
     // NOLINTEND
 
 public:

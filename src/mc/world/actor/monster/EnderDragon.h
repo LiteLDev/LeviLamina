@@ -9,10 +9,12 @@
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/monster/Monster.h"
 #include "mc/world/level/pathfinder/BinaryHeap.h"
+#include "mc/world/level/pathfinder/PathCompletionType.h"
 
 // auto generated forward declare list
 // clang-format off
 class AABB;
+class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
@@ -100,6 +102,17 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+
+    MCAPI bool _checkWalls(::AABB bb);
+
+    MCAPI ::ActorHurtResult _hurt(::AABB* part, ::ActorDamageSource const& source, float damage);
+
+    MCAPI void _hurtEntities(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
+
+    MCAPI void _knockBack(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
+
+    MCAPI ::std::unique_ptr<::Path>
+    _reconstructPath(::PathfinderNode& from, ::PathfinderNode& to, ::PathCompletionType const completionType);
 
     MCAPI int findClosestNode();
 

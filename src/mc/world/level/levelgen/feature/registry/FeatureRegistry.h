@@ -15,6 +15,7 @@ class IWorldRegistriesProvider;
 class LinkedAssetValidator;
 class MinEngineVersion;
 class ResourcePackManager;
+namespace Json { class Value; }
 // clang-format on
 
 class FeatureRegistry {
@@ -97,6 +98,16 @@ public:
     );
 #endif
 
+    MCAPI bool _setupFeature(
+        ::IWorldRegistriesProvider&  worldRegistries,
+        bool                         isBasePack,
+        ::ResourcePackManager const& rpm,
+        ::std::string const&         featureName,
+        ::Json::Value const&         jsonDefinition,
+        ::MinEngineVersion const&    minEngineVersion,
+        bool                         serializeFeatures
+    );
+
     MCAPI bool isFeaturePassDefined(::std::string const& featurePass) const;
 
     MCAPI void loadFromDefinitions(
@@ -120,6 +131,13 @@ public:
     MCAPI void setLargeFeaturePasses(::std::vector<::std::string> largeFeaturePasses);
 
     MCAPI void setSmallFeaturePasses(::std::vector<::std::string> smallFeaturePasses);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::string
+    _featureIdentifierFromInput(::std::string_view filePath, ::Json::Value const& jsonDefinition);
     // NOLINTEND
 
 public:

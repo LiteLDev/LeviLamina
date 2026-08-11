@@ -40,6 +40,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _placeGrownFlower(::BlockSource& region, ::BlockPos const& pos, int newAge) const;
+
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
@@ -48,6 +50,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _allNeighborsEmpty(::BlockSource& region, ::BlockPos const& pos, uchar ignore);
+
     MCAPI static void _growTreeRecursive(
         ::BlockSource&    region,
         ::BlockPos const& current,

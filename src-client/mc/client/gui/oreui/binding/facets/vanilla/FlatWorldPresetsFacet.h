@@ -29,6 +29,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI FlatWorldPresetsFacet();
+
+    MCFOLD ::std::unordered_map<::std::string, ::FlatWorldPreset> const& getPresets() const;
     // NOLINTEND
 
 public:

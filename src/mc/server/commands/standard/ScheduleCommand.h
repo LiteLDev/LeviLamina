@@ -14,6 +14,7 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class FunctionEntry;
+class FunctionManager;
 // clang-format on
 
 class ScheduleCommand : public ::Command {
@@ -76,7 +77,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::ScheduleCommand::FunctionInfo
+    _tryGetFunction(::FunctionManager& functionManager, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:

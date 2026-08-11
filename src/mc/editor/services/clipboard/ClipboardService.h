@@ -116,6 +116,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ClipboardService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI void _onItemChanged(::Editor::Services::ClipboardItem const& item) const;
+
+    MCNAPI void _sendChangeItemToClient(::mce::UUID const& id) const;
     // NOLINTEND
 
 public:

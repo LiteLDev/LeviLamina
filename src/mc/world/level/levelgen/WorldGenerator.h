@@ -29,6 +29,7 @@ class StructureFeature;
 class StructureFeatureRegistry;
 namespace br::worldgen { class ChunkAccessor; }
 namespace br::worldgen { class StructureInstance; }
+namespace br::worldgen { struct ChunkStructureAccess; }
 namespace br::worldgen { struct Structure; }
 // clang-format on
 
@@ -87,9 +88,14 @@ public:
 
     virtual void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks);
 
-    virtual void prepareHeights(::BlockVolume&, ::ChunkPos const&, ::std::vector<short>*, bool) = 0;
+    virtual void prepareHeights(
+        ::BlockVolume&        box,
+        ::ChunkPos const&     chunkPos,
+        ::std::vector<short>* ZXheights,
+        bool                  factorInBeardsAndShavers
+    ) = 0;
 
-    virtual ::BiomeArea getBiomeArea(::BoundingBox const&, uint) const = 0;
+    virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const = 0;
 
     virtual ::BiomeSource const& getBiomeSource() const = 0;
 
@@ -102,21 +108,26 @@ public:
 
     virtual void postProcessMobsAt(::BlockSource& region, ::BoundingBox const& chunkBB) const /*override*/;
 
-    virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4>) const /*override*/;
+    virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const /*override*/;
 
     virtual void debugRender();
 
-    virtual void propagateCombinedChunkSource(::ChunkSource*);
+    virtual void propagateCombinedChunkSource(::ChunkSource* chunkSource);
 
     virtual void decorateWorldGenLoadChunk(
-        ::Biome const&,
-        ::LevelChunk&,
-        ::BlockVolumeTarget&,
-        ::Random&,
-        ::ChunkPos const&
+        ::Biome const&       biome,
+        ::LevelChunk&        lc,
+        ::BlockVolumeTarget& target,
+        ::Random&            random,
+        ::ChunkPos const&    pos
     ) const = 0;
 
-    virtual void decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const = 0;
+    virtual void decorateWorldGenPostProcess(
+        ::Biome const& biome,
+        ::LevelChunk&  lc,
+        ::BlockSource& source,
+        ::Random&      random
+    ) const = 0;
 
     virtual ::std::shared_ptr<::br::worldgen::StructureInstance>
     _tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure) /*override*/;
@@ -129,6 +140,12 @@ public:
 
     MCAPI
     WorldGenerator(::Dimension& dimension, ::std::unique_ptr<::StructureFeatureRegistry> structureFeatureRegistry);
+
+    MCAPI bool _tryGenerateStructure(
+        ::br::worldgen::Structure const&      structure,
+        ::ChunkPos const&                     chunkPos,
+        ::br::worldgen::ChunkStructureAccess& structureAccess
+    );
 
     MCAPI void addHardcodedSpawnAreas(::LevelChunk& lc);
 
@@ -187,11 +204,11 @@ public:
 
     MCAPI void $postProcessMobsAt(::BlockSource& region, ::BoundingBox const& chunkBB) const;
 
-    MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4>) const;
+    MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
 
     MCFOLD void $debugRender();
 
-    MCFOLD void $propagateCombinedChunkSource(::ChunkSource*);
+    MCFOLD void $propagateCombinedChunkSource(::ChunkSource* chunkSource);
 
     MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
     $_tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure);

@@ -49,6 +49,8 @@ public:
     virtual ::std::string toString() const /*override*/;
 
     virtual ::std::string toDebugString() const /*override*/;
+
+    virtual ~ItemStack() /*override*/;
     // NOLINTEND
 
 public:
@@ -118,6 +120,12 @@ public:
 #endif
 
     MCAPI void* $ctor(::ItemStack const& rhs);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

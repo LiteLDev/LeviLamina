@@ -58,6 +58,10 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::array<::Ability const, 20> _initDefaultAbilities();
 
+#ifdef LL_PLAT_C
+    MCAPI static ::std::optional<::std::string> getDiff(::Abilities const& lhs, ::Abilities const& rhs);
+#endif
+
     MCAPI static ::AbilitiesIndex nameToAbilityIndex(::std::string const& name);
     // NOLINTEND
 

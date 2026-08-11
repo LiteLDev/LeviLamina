@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class IResourcePackRepositoryRefresher;
+class TaskGroup;
 // clang-format on
 
 class ResourcePackRepositoryRefreshQueue {
@@ -65,4 +66,14 @@ public:
     ResourcePackRepositoryRefreshQueue& operator=(ResourcePackRepositoryRefreshQueue const&);
     ResourcePackRepositoryRefreshQueue(ResourcePackRepositoryRefreshQueue const&);
     ResourcePackRepositoryRefreshQueue();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Bedrock::Threading::Async<void> _tryCompleteInitialization(::TaskGroup& taskGroup);
+
+    MCNAPI ::ResourcePackRepositoryRefreshQueue::RefreshResult refreshPacks(::TaskGroup& taskGroup);
+
+    MCNAPI ~ResourcePackRepositoryRefreshQueue();
+    // NOLINTEND
 };

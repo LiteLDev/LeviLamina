@@ -36,10 +36,13 @@ public:
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> Create() /*override*/;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    CreateAndResolve(::webrtc::SocketAddress const&, ::absl::AnyInvocable<void()>) /*override*/;
+    CreateAndResolve(::webrtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
 
-    virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    CreateAndResolve(::webrtc::SocketAddress const&, int, ::absl::AnyInvocable<void()>) /*override*/;
+    virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAndResolve(
+        ::webrtc::SocketAddress const& addr,
+        int                            family,
+        ::absl::AnyInvocable<void()>   callback
+    ) /*override*/;
     // NOLINTEND
 
 public:

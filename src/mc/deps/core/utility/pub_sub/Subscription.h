@@ -8,19 +8,20 @@
 namespace Bedrock::PubSub {
 
 class Subscription : public ::Bedrock::PubSub::SubscriptionBase {
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     Subscription& operator=(Subscription const&);
     Subscription(Subscription const&);
     Subscription();
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI ::Bedrock::PubSub::Subscription& operator=(::Bedrock::PubSub::Subscription&& conn);
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI ::Bedrock::PubSub::Subscription& operator=(::Bedrock::PubSub::Subscription&& conn);
 #endif
 

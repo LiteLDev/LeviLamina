@@ -41,6 +41,8 @@ public:
         ::Social::FriendInviteType                                 inviteEntryType,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
+
+    MCAPI ::std::string const& getActiveProfileImage() const;
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const&) const /*override*/;
+    virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const /*override*/;
     // NOLINTEND
 
 public:

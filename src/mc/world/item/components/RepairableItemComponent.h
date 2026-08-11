@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ExpressionNode;
 class HashedString;
 class ItemStack;
 class ItemStackBase;
@@ -33,6 +34,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RepairableItemComponent(::SharedTypes::v1_20_50::RepairableItemComponent component);
+
+    MCAPI int _repairItem(
+        ::ItemStackBase& materialItem,
+        ::ItemStackBase& resultItem,
+        ::ExpressionNode repairAmountExpression
+    ) const;
 
     MCAPI ::RepairItemResult
     handleItemRepair(::ItemStack& inputItem, ::ItemStack& materialItem, bool allowBidirectionalRepair) const;

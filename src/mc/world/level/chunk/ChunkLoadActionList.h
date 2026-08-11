@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/chunk/ChunkRequestListType.h"
 #include "mc/world/level/chunk/ChunksLoadedStatus.h"
 #include "mc/world/level/chunk/QueueRequestResult.h"
 #include "mc/world/level/dimension/DimensionDataSerializer.h"
@@ -35,8 +36,21 @@ public:
         ::LevelStorage&      levelStorage
     );
 
+    MCAPI void _addChunkLoadedRequestToTickingList(
+        ::ChunkLoadedRequest chunkLoadedRequest,
+        ::std::string const& dimensionPrefix,
+        ::LevelStorage&      levelStorage
+    );
+
     MCAPI int
     _clearRequest(::LevelStorage& levelStorage, ::IRequestAction* actionToRemove, ::std::string_view tickingAreaName);
+
+    MCAPI void _saveRequest(
+        ::ChunkLoadedRequest&  request,
+        ::std::string const&   dimensionPrefix,
+        ::ChunkRequestListType chunkRequestListType,
+        ::LevelStorage&        levelStorage
+    );
 
     MCAPI void _updateAsyncList(
         ::LevelStorage&                                              levelStorage,

@@ -229,6 +229,10 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI void _addHistoryItem(::std::shared_ptr<::PredictedMovementComponent::HistoryItem const> const& item);
+#endif
+
         MCAPI void _clearHistory();
 
 #ifdef LL_PLAT_C
@@ -290,6 +294,29 @@ public:
         virtual float getYHeadRot() const /*override*/;
 
         virtual bool isOnGround() const /*override*/;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI MotionHistoryItem(
+            ::Vec3 const&                                                                   motion,
+            bool                                                                            onGround,
+            bool                                                                            isMotionHintItem,
+            ::std::chrono::steady_clock::time_point const&                                  timepoint,
+            ::std::shared_ptr<::PredictedMovementComponent::MoveHistoryItem const> const&   prevMoveItem,
+            ::std::shared_ptr<::PredictedMovementComponent::MotionHistoryItem const> const& prevMotionItem,
+            bool                                                                            didAdjustTimepoint,
+            ::std::chrono::milliseconds const&                                              timepointDiff
+        );
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
         // NOLINTEND
 
     public:
@@ -369,6 +396,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PredictedMovementComponent();
+
+    MCAPI void _debugLog(
+        ::PredictedMovementSystemParams&                       params,
+        ::PredictedMovementComponent::PredictionDbgData const& debugData
+    ) const;
 
     MCAPI void reset();
 

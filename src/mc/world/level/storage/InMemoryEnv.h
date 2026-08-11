@@ -35,13 +35,19 @@ public:
 
     virtual ::leveldb::Status RemoveFile(::std::string const& f) /*override*/;
 
-    virtual ::leveldb::Status RenameFile(::std::string const& s, ::std::string const& t) /*override*/;
+    virtual ::leveldb::Status RenameFile(::std::string const& from, ::std::string const& to) /*override*/;
 
     virtual bool FileExists(::std::string const& f) /*override*/;
 
     virtual ::leveldb::Status GetChildren(::std::string const& dir, ::std::vector<::std::string>* r) /*override*/;
 
     virtual void flushToPermanentStorage() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _flushWithTransaction();
     // NOLINTEND
 
 public:

@@ -29,11 +29,13 @@ class ILevelListCache;
 class IMinecraftEventing;
 class LevelSettings;
 class ResourceLocation;
+struct ExternalServer;
 struct ImportResult;
 struct LegacyWorldInfo;
 struct LocalWorldInfo;
 struct MinecraftScreenModelContext;
 struct NetworkWorldInfo;
+struct PingedCompatibleServer;
 struct RealmsWorldInfo;
 struct WorldTemplateInfo;
 namespace Core { class Path; }
@@ -189,15 +191,15 @@ public:
     // NOLINTBEGIN
     virtual ~PlayScreenModel() /*override*/ = default;
 
-    virtual int getWorldCount(::WorldType, ::NetworkWorldType) const /*override*/;
+    virtual int getWorldCount(::WorldType worldType, ::NetworkWorldType networkType) const /*override*/;
 
-    virtual ::LocalWorldInfo const* getLocalWorldAtIndex(int const) const /*override*/;
+    virtual ::LocalWorldInfo const* getLocalWorldAtIndex(int const index) const /*override*/;
 
-    virtual ::LocalWorldInfo const* getLocalWorldById(::std::string const&) const /*override*/;
+    virtual ::LocalWorldInfo const* getLocalWorldById(::std::string const& id) const /*override*/;
 
-    virtual bool refresh(::WorldType) /*override*/;
+    virtual bool refresh(::WorldType tabType) /*override*/;
 
-    virtual void startLocalWorld(::LocalWorldInfo, ::LevelSettings const*) /*override*/;
+    virtual void startLocalWorld(::LocalWorldInfo worldInfo, ::LevelSettings const* settings) /*override*/;
 
     virtual bool isDirty() const /*override*/;
 
@@ -209,6 +211,10 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PlayScreenModel(::MinecraftScreenModelContext context);
 
+    MCAPI void _navigateToEditWorldScreen(::LocalWorldInfo const& info);
+
+    MCAPI void _populateAdditionalRealmsWorldsInfo();
+
     MCAPI void _populateLocalWorldsFromStorageSource(
         ::ILevelListCache&               levelListCache,
         ::std::vector<::LocalWorldInfo>& localWorlds,
@@ -217,11 +223,21 @@ public:
         bool                             fireTelemetry
     );
 
+    MCAPI void _populateNetworkWorlds();
+
+    MCAPI void _populateRealmsWorldsInternal(bool ofUnpairedParentRealms);
+
+    MCAPI void _remove3PServersMismatchingEditorMode();
+
+    MCAPI void _sortRealmsWorlds(::std::string const currentUserXUID, ::std::vector<::Realms::World>& worlds);
+
     MCAPI void _start3PNetworkWorld(::NetworkWorldInfo& world);
 
     MCAPI void _startFriendNetworkWorld(::NetworkWorldInfo const& world);
 
     MCAPI void _startRemoteNetworkWorld(::NetworkWorldInfo const& world);
+
+    MCAPI bool areExternalAndRemoteServerSame(::ExternalServer& externalServer, ::PingedCompatibleServer remoteServer);
 
     MCAPI void convertLegacyWorld(
         ::LegacyWorldInfo                                                                       worldInfo,

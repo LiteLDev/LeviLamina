@@ -54,7 +54,7 @@ public:
 
     virtual void playerTouch(::Player& player) /*override*/;
 
-    virtual void setAuxValue(int) /*override*/;
+    virtual void setAuxValue(int aux) /*override*/;
 
     virtual ::ItemStack _getPickupItem() const /*override*/;
 

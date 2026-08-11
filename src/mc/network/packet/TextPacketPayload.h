@@ -51,6 +51,12 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                mMessage;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mParams;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI bool operator==(::TextPacketPayload::MessageAndParams const& other) const;
+        // NOLINTEND
     };
 
     struct MessageOnly {

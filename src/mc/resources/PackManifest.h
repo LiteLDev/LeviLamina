@@ -128,6 +128,8 @@ public:
 
     MCAPI void _serializeModules(::Json::Value& destination) const;
 
+    MCAPI void _serializeVersion(::Json::Value& destination, ::SemVersion const& version) const;
+
 #ifdef LL_PLAT_C
     MCAPI ::Core::PathBuffer<::std::string> generateBaseIconPath() const;
 
@@ -156,7 +158,21 @@ public:
 
     MCAPI void setLocalizedNameKeywords(::std::unordered_map<::std::string, ::std::string> const& localizationNameMap);
 
+    MCAPI void setPackSettingsDef(
+        ::std::vector<::std::variant<
+            ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>> packSettingsDef
+    );
+
     MCAPI void setRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::PackScope StringToPackScope(::std::string const& str);
     // NOLINTEND
 
 public:

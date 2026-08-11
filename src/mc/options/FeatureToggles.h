@@ -70,7 +70,23 @@ public:
     // NOLINTBEGIN
     MCAPI explicit FeatureToggles(::AppPlatform& appPlatform);
 
+    MCAPI ::std::function<void(bool&)> _getLockIfInGameOrOptionExpectationsNotMetLockCallback(
+        ::std::vector<::FeatureOptionID> expectedDisabledOptions,
+        ::std::vector<::FeatureOptionID> expectedEnabledOptions
+    );
+
     MCAPI void _initialize(::AppPlatform& appPlatform);
+
+    MCAPI void _registerFeature(
+        ::FeatureOptionTabID             tabID,
+        ::FeatureOptionID                featureID,
+        ::std::string const&             locName,
+        ::std::string const&             saveName,
+        bool                             defaultValue,
+        ::FeatureOptionID                dependencyFeatureID,
+        ::std::function<void(::Option&)> setup,
+        ::std::function<void(bool&)>     lock
+    );
 
     MCAPI void _registerFeatures();
 

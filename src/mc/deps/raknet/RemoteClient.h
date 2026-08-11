@@ -21,6 +21,12 @@ public:
     RemoteClient& operator=(RemoteClient const&);
     RemoteClient(RemoteClient const&);
     RemoteClient();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void SendOrBuffer(char const** data, uint const* lengths, int const numParameters);
+    // NOLINTEND
 };
 
 } // namespace RakNet

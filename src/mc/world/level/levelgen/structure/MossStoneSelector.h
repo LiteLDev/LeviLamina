@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Block const& next(::Random&, int, int, int, bool) const /*override*/;
+    virtual ::Block const& next(::Random& random, int, int, int, bool) const /*override*/;
     // NOLINTEND
 
 public:

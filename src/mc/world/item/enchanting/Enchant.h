@@ -114,6 +114,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Enchant();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~Enchant() = default;
@@ -156,6 +160,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Enchant(
+        ::Enchant::Type            type,
+        ::Enchant::Frequency       frequency,
+        ::std::string_view const   stringId,
+        ::std::string_view const   scriptStringId,
+        ::std::string_view const   description,
+        ::Enchant::VillagerTrading isAvailableForVillagerTraining,
+        int                        primarySlots,
+        int                        secondarySlots
+    );
+
     MCAPI ::std::string getDescriptionId() const;
     // NOLINTEND
 
@@ -188,6 +203,12 @@ public:
     MCAPI static ::std::unordered_map<::std::string, ::SharedTypes::EnchantSlot>& mEnchantSlotTypeNameToEnumMap();
 
     MCAPI static ::std::vector<::std::unique_ptr<::Enchant>>& mEnchants();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

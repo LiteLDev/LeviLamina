@@ -56,6 +56,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>      userManager,
         ::persona::AchievementOfferCollectionManager&              achievementOfferCollectionManager
     );
+
+    MCFOLD ::OreUI::FacetPlayerAchievementData const& getData();
+
+    MCFOLD ::OreUI::AchievementsFacet::AchievementFacetStatus const& getStatus();
+
+    MCAPI void load(::std::string const& id);
     // NOLINTEND
 
 public:

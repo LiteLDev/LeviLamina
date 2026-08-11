@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct GameTestReport {
 public:
     // member variables
@@ -26,4 +31,10 @@ public:
     GameTestReport& operator=(GameTestReport const&);
     GameTestReport(GameTestReport const&);
     GameTestReport();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 };

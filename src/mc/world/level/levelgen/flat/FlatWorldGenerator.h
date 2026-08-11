@@ -54,7 +54,7 @@ public:
 
     virtual bool structurePostProcessChunk(::ChunkViewSource&) /*override*/;
 
-    virtual bool decorationPostProcessChunk(::ChunkViewSource&) /*override*/;
+    virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhood) /*override*/;
 
     virtual ::HashedString findStructureFeatureTypeAt(::BlockPos const& pos) /*override*/;
 
@@ -68,11 +68,12 @@ public:
         ::std::optional<::HashedString> biomeTag
     ) /*override*/;
 
-    virtual void prepareHeights(::BlockVolume&, ::ChunkPos const&, ::std::vector<short>*, bool) /*override*/;
+    virtual void
+    prepareHeights(::BlockVolume& box, ::ChunkPos const&, ::std::vector<short>* zxHeights, bool) /*override*/;
 
     virtual void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks) /*override*/;
 
-    virtual ::BiomeArea getBiomeArea(::BoundingBox const&, uint) const /*override*/;
+    virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
     virtual ::BlockPos findSpawnPosition() const /*override*/;
 

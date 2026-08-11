@@ -51,6 +51,8 @@ public:
         ::std::string const&                               calledFrom,
         ::std::deque<::std::unique_ptr<::ProgressHandler>> progressHandlerList
     );
+
+    MCAPI ::std::string const _getProgressMessage() const;
     // NOLINTEND
 
 public:

@@ -13,6 +13,7 @@ class BlockPos;
 class BlockSource;
 namespace ScriptModuleMinecraft { class ScriptBlockPistonComponentContainer; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -31,6 +32,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBinding bind();
+
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent>
     tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND

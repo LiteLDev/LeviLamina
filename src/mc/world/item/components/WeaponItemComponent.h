@@ -27,6 +27,12 @@ public:
     WeaponItemComponent();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~WeaponItemComponent() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI WeaponItemComponent(::WeaponItemComponent const&);
@@ -48,6 +54,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::WeaponItemComponent const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

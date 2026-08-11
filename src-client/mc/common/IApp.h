@@ -21,9 +21,9 @@ public:
 
     virtual bool wantToQuit() = 0;
 
-    virtual void setRenderingSize(int, int) = 0;
+    virtual void setRenderingSize(int w, int h) = 0;
 
-    virtual void setUISizeAndScale(int, int, float) = 0;
+    virtual void setUISizeAndScale(int w, int h, float forcedGuiScale) = 0;
 
     virtual void muteAudio() = 0;
 

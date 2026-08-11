@@ -16,32 +16,46 @@ public:
     // NOLINTBEGIN
     virtual ~IPrinter() = default;
 
-    virtual void onInfo(::Scripting::ContextId, ::std::string_view) const;
+    virtual void onInfo(::Scripting::ContextId contextId, ::std::string_view message) const;
 
-    virtual void onWarn(::Scripting::ContextId, ::std::string_view) const;
+    virtual void onWarn(::Scripting::ContextId contextId, ::std::string_view message) const;
 
-    virtual void onError(::Scripting::ContextId, ::std::string_view) const;
+    virtual void onError(::Scripting::ContextId contextId, ::std::string_view message) const;
 
-    virtual void onException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const;
+    virtual void onException(
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny
+    ) const;
 
-    virtual bool
-    shouldPrintException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const;
+    virtual bool shouldPrintException(
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny
+    ) const;
 
-    virtual void
-    onPromiseRejection(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&, bool) const;
+    virtual void onPromiseRejection(
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny,
+        bool                          isHandled
+    ) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onInfo(::Scripting::ContextId, ::std::string_view) const;
+    MCNAPI void $onInfo(::Scripting::ContextId contextId, ::std::string_view message) const;
 
-    MCNAPI void $onWarn(::Scripting::ContextId, ::std::string_view) const;
+    MCNAPI void $onWarn(::Scripting::ContextId contextId, ::std::string_view message) const;
 
-    MCNAPI void $onError(::Scripting::ContextId, ::std::string_view) const;
+    MCNAPI void $onError(::Scripting::ContextId contextId, ::std::string_view message) const;
 
-    MCNAPI bool
-    $shouldPrintException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const;
+    MCNAPI bool $shouldPrintException(
+        ::Scripting::ContextId        contextId,
+        ::Scripting::BaseError const& error,
+        ::entt::meta_any const&       errorAny
+    ) const;
 
 
     // NOLINTEND

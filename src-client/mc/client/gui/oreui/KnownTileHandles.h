@@ -57,10 +57,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::shared_ptr<::GeometryAtlas::IAtlasTile> tryGet(uint) /*override*/;
+    virtual ::std::shared_ptr<::GeometryAtlas::IAtlasTile> tryGet(uint id) /*override*/;
 
     virtual ::gsl::not_null<::std::shared_ptr<::GeometryAtlas::IAtlasTile>>
-    getOrCreate(::GeometryAtlas::TileDefinition const&) /*override*/;
+    getOrCreate(::GeometryAtlas::TileDefinition const& definition) /*override*/;
 
     virtual void garbageCollect() /*override*/;
     // NOLINTEND

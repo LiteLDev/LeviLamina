@@ -12,6 +12,7 @@
 class BlockActor;
 class BookScreenManager;
 class ClientInstanceScreenModel;
+class UIPropertyBag;
 struct PageContent;
 namespace Json { class Value; }
 // clang-format on
@@ -81,6 +82,20 @@ public:
         int                                            page,
         ::BlockActor*                                  lectern
     );
+
+    MCAPI void _addPageAt(int index, ::PageContent const& page);
+
+    MCAPI void _addPhotoPageAt(int index, ::std::string const& photoName);
+
+    MCAPI int _getPickIndex(char const* collectionPrefix, ::UIPropertyBag& bag);
+
+    MCAPI void _parsePageText(int index);
+
+    MCAPI void _setPageText(int index, ::std::string const& text);
+
+    MCAPI void _swapPages(int page1Index, int page2Index);
+
+    MCAPI void _tryFirePageTurnSound(::UIPropertyBag const& bag) const;
     // NOLINTEND
 
 public:

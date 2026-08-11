@@ -268,6 +268,8 @@ public:
 
     MCAPI bool _isRealmsPlus(::PackManifest const& manifest) const;
 
+    MCAPI ::Bedrock::Threading::Async<void> _queueForMainThread(::std::function<void()>&& callback);
+
     MCAPI void _startLocalServerAsync(
         ::std::string const&     levelId,
         ::std::string const&     levelName,
@@ -1186,6 +1188,8 @@ public:
     MCAPI void selectSlot(int slot, ::ContainerID containerId);
 
     MCAPI void sendDevConsoleMessage(::std::string const& message);
+
+    MCAPI void sendPurchaseReceiptsToServer();
 
     MCAPI void sendSetDifficultyPacket(::SharedTypes::Legacy::Difficulty value);
 

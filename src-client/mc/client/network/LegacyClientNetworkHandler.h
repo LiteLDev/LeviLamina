@@ -24,8 +24,10 @@ class AddPaintingPacket;
 class AddPlayerPacket;
 class AnimatePacket;
 class AppPlatform;
+class Block;
 class BlockActorDataPacket;
 class BlockEventPacket;
+class BlockPos;
 class ChangeDimensionPacket;
 class ClientCacheMissResponsePacket;
 class ClientLevel;
@@ -39,6 +41,7 @@ class DisconnectPacket;
 class EntityOverrides;
 class GameRulesChangedPacket;
 class HurtArmorPacket;
+class IBlockSource;
 class ILevel;
 class IPersonaNetworkHandlerDelegate;
 class InventoryContentPacket;
@@ -63,6 +66,7 @@ class PlayerListPacket;
 class PlayerSkinPacket;
 class PlayerUpdateEntityOverridesPacket;
 class RemoveActorPacket;
+class SerializedSkinRef;
 class ServerStatsPacket;
 class SetActorDataPacket;
 class SetActorLinkPacket;
@@ -80,9 +84,11 @@ class UpdateAbilitiesPacket;
 class UpdateAdventureSettingsPacket;
 class UpdateBlockPacket;
 class UpdateBlockSyncedPacket;
+struct ActorBlockSyncMessage;
 struct ClientCreateLevelArguments;
 struct LegacyClientNetworkHandlerArguments;
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class UUID; }
 // clang-format on
 
 class LegacyClientNetworkHandler : public ::ClientNetworkHandler, public ::LevelListener {
@@ -122,128 +128,136 @@ public:
     // NOLINTBEGIN
     virtual ~LegacyClientNetworkHandler() /*override*/ = default;
 
-    virtual void onPlayerReady(::Player&) /*override*/;
+    virtual void onPlayerReady(::Player& player) /*override*/;
 
-    virtual void onConnect(::NetworkIdentifier const&) /*override*/;
+    virtual void onConnect(::NetworkIdentifier const& hostId) /*override*/;
 
-    virtual void
-    onUnableToConnect(::Connection::DisconnectFailReason, ::std::string const&, ::std::string const&) /*override*/;
+    virtual void onUnableToConnect(
+        ::Connection::DisconnectFailReason discoReason,
+        ::std::string const&               messageFromServer,
+        ::std::string const&               messageBodyOverride
+    ) /*override*/;
 
     virtual bool getIsConnectedToApplicationLayer() const /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::AddActorPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::AddActorPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::AddItemActorPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::AddItemActorPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::AddPaintingPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::AddPaintingPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::AddPlayerPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::AddPlayerPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::AnimatePacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const&, ::AnimatePacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::BlockActorDataPacket>) /*override*/;
+    virtual void
+    handle(::NetworkIdentifier const& source, ::std::shared_ptr<::BlockActorDataPacket> packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::BlockEventPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::BlockEventPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ChangeDimensionPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::ChangeDimensionPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ContainerClosePacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::ContainerClosePacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ContainerOpenPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::ContainerOpenPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ContainerRegistryCleanupPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::ContainerRegistryCleanupPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ContainerSetDataPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::ContainerSetDataPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::DisconnectPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::DisconnectPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::LevelChunkPacket>) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::std::shared_ptr<::LevelChunkPacket> packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::ClientCacheMissResponsePacket>) /*override*/;
+    virtual void
+    handle(::NetworkIdentifier const& source, ::std::shared_ptr<::ClientCacheMissResponsePacket> packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::GameRulesChangedPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::GameRulesChangedPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::HurtArmorPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::HurtArmorPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::InventoryContentPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::InventoryContentPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::InventorySlotPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::InventorySlotPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::InventoryTransactionPacket>) /*override*/;
+    virtual void
+    handle(::NetworkIdentifier const&, ::std::shared_ptr<::InventoryTransactionPacket> packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::MobArmorEquipmentPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::MobArmorEquipmentPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::MobEffectPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const&, ::MobEffectPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::MobEquipmentPacket>) /*override*/;
+    virtual void
+    handle(::NetworkIdentifier const& source, ::std::shared_ptr<::MobEquipmentPacket> packetPtr) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::MoveActorAbsolutePacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::MoveActorAbsolutePacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::MoveActorDeltaPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::MoveActorDeltaPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::MovementEffectPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const&, ::MovementEffectPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::MovePlayerPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::MovePlayerPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::NetworkSettingsPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::NetworkSettingsPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::NetworkStackLatencyPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::NetworkStackLatencyPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::PlayerHotbarPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::PlayerHotbarPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::PlayerListPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::PlayerListPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::PlayerSkinPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::PlayerSkinPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::PlayerUpdateEntityOverridesPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const&, ::PlayerUpdateEntityOverridesPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::RemoveActorPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::RemoveActorPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetActorDataPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::SetActorDataPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetActorLinkPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::SetActorLinkPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetActorMotionPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const&, ::SetActorMotionPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::MotionPredictionHintsPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::MotionPredictionHintsPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetCommandsEnabledPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::SetCommandsEnabledPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetDefaultGameTypePacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::SetDefaultGameTypePacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetDifficultyPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::SetDifficultyPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetHealthPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::SetHealthPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetSpawnPositionPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::SetSpawnPositionPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetTimePacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::SetTimePacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetHudPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::SetHudPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SpawnParticleEffectPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::SpawnParticleEffectPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::StartGamePacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::StartGamePacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateBlockPacket>) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::std::shared_ptr<::UpdateBlockPacket> packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateBlockSyncedPacket>) /*override*/;
+    virtual void
+    handle(::NetworkIdentifier const& source, ::std::shared_ptr<::UpdateBlockSyncedPacket> packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::CreativeContentPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::CreativeContentPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ItemRegistryPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const&, ::ItemRegistryPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::DimensionDataPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::DimensionDataPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::UpdateAbilitiesPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::UpdateAbilitiesPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::UpdateAdventureSettingsPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::UpdateAdventureSettingsPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ServerStatsPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::ServerStatsPacket const& packet) /*override*/;
 
     virtual void onTick() /*override*/;
 
-    virtual void onEntityRemoved(::Actor&) /*override*/;
+    virtual void onEntityRemoved(::Actor& entity) /*override*/;
 
     virtual void onLevelDestruction(::std::string const&) /*override*/;
     // NOLINTEND
@@ -253,7 +267,24 @@ public:
     // NOLINTBEGIN
     MCAPI explicit LegacyClientNetworkHandler(::LegacyClientNetworkHandlerArguments&& args);
 
+    MCAPI ::std::string _getServerIdentifier() const;
+
+    MCAPI bool _shouldKeepSkinBasedOnMemory(::mce::UUID const& playerId, ::SerializedSkinRef const& skin) const;
+
     MCAPI void onSubClientConnect();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void handleUpdateBlock(
+        ::IBlockSource&                region,
+        ::BlockPos const&              pos,
+        ::Block const&                 block,
+        int                            layer,
+        int                            updateFlags,
+        ::ActorBlockSyncMessage const* syncMsg
+    );
     // NOLINTEND
 
 public:

@@ -8,6 +8,7 @@
 #include "mc/server/commands/CommandWildcardInt.h"
 #include "mc/server/commands/WildcardCommandSelector.h"
 #include "mc/world/scores/ObjectiveSortOrder.h"
+#include "mc/world/scores/PlayerScoreSetFunction.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +16,10 @@ class Actor;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Objective;
 class Scoreboard;
+struct ActorUniqueID;
+struct ScoreboardId;
 // clang-format on
 
 class ScoreboardCommand : public ::Command {
@@ -94,12 +98,45 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Objective* _getObjective(
+        ::Scoreboard const&  scoreboard,
+        ::std::string const& name,
+        bool                 forWrite,
+        ::CommandOutput&     output
+    ) const;
+
+    MCAPI ::std::vector<::ScoreboardId> _getScoreboardIdsForSelector(
+        ::Scoreboard&                             scoreboard,
+        ::WildcardCommandSelector<::Actor> const& selector,
+        ::CommandOrigin const&                    origin,
+        ::CommandOutput&                          output,
+        bool                                      shouldCreateMissingId
+    ) const;
+
+    MCAPI void addPlayerScore(
+        ::Scoreboard&                                                 scoreboard,
+        ::PlayerScoreSetFunction                                      fn,
+        ::ScoreboardId const&                                         targetId,
+        ::Objective&                                                  objective,
+        ::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver,
+        ::CommandOutput&                                              output,
+        ::ScoreboardCommand::SetScoreOutput&                          cumulativeOutput
+    ) const;
+
+    MCAPI void players(::Scoreboard& scoreboard, ::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::vector<::std::string> _getNonSortableDisplaySlots(::Scoreboard& scoreboard);
+
     MCAPI static void setup(::CommandRegistry& registry, ::ScoreboardCommand::InitProxy&& dependencies);
     // NOLINTEND
 

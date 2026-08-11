@@ -68,7 +68,13 @@ public:
     );
 
     MCAPI void _flushPlayerBreaking(::Player& player, int previousProgress);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void _flushPlayerBreaking(::Player& player, int const previousProgress);
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI void _startBreakingBlock(
         ::Player&         player,
         ::BlockPos const& blockPos,
@@ -76,7 +82,19 @@ public:
         uchar             face,
         int               previousProgress
     );
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void _startBreakingBlock(
+        ::Player&         player,
+        ::BlockPos const& blockPos,
+        ::Block const&    hitBlock,
+        uchar const       face,
+        int const         previousProgress
+    );
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI void onBreakBlock(::Player& player);
 
     MCAPI ~ScriptBlockBreakingEventListener();

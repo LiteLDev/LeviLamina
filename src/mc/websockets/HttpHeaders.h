@@ -33,4 +33,12 @@ public:
     HttpHeaders& operator=(HttpHeaders const&);
     HttpHeaders(HttpHeaders const&);
     HttpHeaders();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool getHeader(::std::string const& name, ::std::string& outValue) const;
+
+    MCNAPI ~HttpHeaders();
+    // NOLINTEND
 };

@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void sendRequest(::SentryEnvelope) /*override*/;
+    virtual void sendRequest(::SentryEnvelope sentryEvent) /*override*/;
     // NOLINTEND
 
 public:

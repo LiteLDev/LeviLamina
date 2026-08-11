@@ -29,6 +29,21 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) = 0;
+
+    virtual ~HoverRenderer() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::glm::vec2
+    _getNewCursorPosition(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

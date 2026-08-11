@@ -15,6 +15,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class StrictEntityContext;
 struct ActorTickedComponent;
 struct DeathTickingComponent;
 struct OverlayAlphaComponent;
@@ -45,8 +46,21 @@ public:
             ::AddRemove<>,
             ::GlobalRead<>,
             ::GlobalWrite<>,
-            ::EntityFactoryT<>>&
+            ::EntityFactoryT<>>& context
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _tick(
+        ::StrictEntityContext const&,
+        ::DeathTickingComponent const& deathTicking,
+        ::OverlayAlphaComponent&       overlayAlpha,
+        ::ShieldFlickerComponent&      shieldFlicker,
+        ::SwellComponent&              swell,
+        ::SynchedActorDataComponent&   synchedActorData
+    );
     // NOLINTEND
 
 public:

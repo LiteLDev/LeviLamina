@@ -57,6 +57,8 @@ public:
         ::std::weak_ptr<::EnchantingContainerManagerModel> containerManagerModel
     );
 
+    MCNAPI ::std::string _getEnchantHint(int option);
+
     MCNAPI void _setupCallbacks();
 
     MCNAPI void enchantResult(int option);

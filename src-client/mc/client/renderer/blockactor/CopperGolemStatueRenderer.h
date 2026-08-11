@@ -28,10 +28,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::SerializedActorRenderer::RenderData getRenderData(
-        ::SerializedActorRenderer::RenderType,
-        ::BlockType const&,
-        ::SerializedActorBlockActor const*,
-        ::ItemStack const*
+        ::SerializedActorRenderer::RenderType type,
+        ::BlockType const&                    block,
+        ::SerializedActorBlockActor const*    entity,
+        ::ItemStack const*                    item
     ) /*override*/;
     // NOLINTEND
 

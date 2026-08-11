@@ -16,7 +16,10 @@ class IContainerRegistryAccess;
 class IContainerRegistryTracker;
 class IDynamicContainerSerialization;
 class ItemDescriptor;
+class ItemStack;
+class Player;
 class SemVersion;
+struct ItemOnUseResult;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -53,6 +56,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
+
+    virtual ~StorageItemComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -79,6 +84,14 @@ public:
 #ifdef LL_PLAT_C
     MCAPI static ::HashedString const& getIdentifier();
 #endif
+
+    MCAPI static void use(::ItemOnUseResult& result, ::ItemStack const& item, ::Player& player);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

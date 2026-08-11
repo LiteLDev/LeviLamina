@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class IBlockWorldGenAPI;
 class ITreeCanopy;
@@ -49,6 +50,23 @@ public:
         ::TreeHelper::TreeParams const& treeParams,
         ::ITreeCanopy const*            canopy
     ) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::BlockPos _generateBranch(
+        ::IBlockWorldGenAPI&            target,
+        ::Block const&                  trunkBlock,
+        ::Block const&                  sidewaysTrunkBlock,
+        ::Random&                       random,
+        int                             treeHeight,
+        ::BlockPos                      origin,
+        ::TreeHelper::TreeParams const& treeParams,
+        ::BlockPos                      branchDirection,
+        int                             offsetFromOrigin,
+        bool                            middleContinuesUpwards
+    ) const;
     // NOLINTEND
 
 public:

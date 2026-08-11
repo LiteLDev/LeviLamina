@@ -73,6 +73,8 @@ public:
         ::std::string const&                     realmVersionName,
         ::std::function<void(bool)>              callback
     );
+
+    MCAPI void _startDownload();
     // NOLINTEND
 
 public:

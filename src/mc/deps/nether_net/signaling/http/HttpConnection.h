@@ -7,6 +7,11 @@
 #include "mc/external/sigslot/has_slots.h"
 #include "mc/external/sigslot/single_threaded.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace webrtc { class Socket; }
+// clang-format on
+
 namespace NetherNet {
 
 class HttpConnection : public ::NetherNet::ContextProxy,
@@ -32,6 +37,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~HttpConnection() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _onCloseEvent(::webrtc::Socket*, int);
+
+    MCNAPI void _onReadEvent(::webrtc::Socket*);
     // NOLINTEND
 };
 

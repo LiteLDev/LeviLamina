@@ -26,6 +26,7 @@ class ILevel;
 class Item;
 class ItemStackBase;
 class LevelChunk;
+class Recipes;
 class SaveContext;
 // clang-format on
 
@@ -118,6 +119,8 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+
+    virtual ~FurnaceBlockActor() /*override*/;
     // NOLINTEND
 
 public:
@@ -133,6 +136,10 @@ public:
         ::Block const&                         unlitFurnace,
         ::Block const&                         litFurnace
     );
+
+    MCAPI bool canBurn(::Recipes const& recipes);
+
+    MCAPI void checkForAlternativeFuelAchievement(::BlockSource& region, ::ItemStack const& item);
 
     MCAPI void checkForSmeltEverythingAchievement(::BlockSource& region);
 
@@ -170,6 +177,12 @@ public:
         ::Block const&                         unlitFurnace,
         ::Block const&                         litFurnace
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

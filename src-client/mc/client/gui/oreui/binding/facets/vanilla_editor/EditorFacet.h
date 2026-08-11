@@ -6,6 +6,7 @@
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/editor/Mode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,6 +41,24 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+
+    MCAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
+
+    MCAPI ::std::optional<::std::string> const getCursorBlockName() const;
+
+    MCAPI ::Editor::Mode getEditorMode() const;
+
+    MCAPI void navigateUri(::std::string const& uri);
+
+    MCAPI void onViewportFocusAreaResized(float width, float height, float offsetX, float offsetY);
+
+    MCAPI void openConsole();
+
+    MCAPI void openPauseMenu();
+
+    MCAPI void setEditorMode(::Editor::Mode newMode);
+
+    MCAPI bool shouldDisplayReloadModal() const;
     // NOLINTEND
 
 public:

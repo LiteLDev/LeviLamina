@@ -61,6 +61,14 @@ public:
         ::std::shared_ptr<::IFileChunkDownloader> fileDownloader
     );
 
+    MCNAPI void _writeData(
+        ::std::vector<uchar>                data,
+        uint64                              writeBytes,
+        uint64                              offset,
+        uint64                              progress,
+        ::std::function<void(uint64, bool)> writeComplete
+    );
+
     MCNAPI void downloadFile(
         ::std::string const&                                           downloadId,
         ::std::string const&                                           downloadUrl,

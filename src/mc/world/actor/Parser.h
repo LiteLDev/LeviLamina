@@ -43,6 +43,13 @@ public:
     MCAPI static bool
     parse(::Json::Value const& val, ::std::vector<::ActorDefinitionTrigger>& triggers, char const* jsonName);
 
+    MCAPI static bool parse(
+        ::Json::Value const&                  val,
+        ::SharedTypes::Legacy::FilterSubject& target,
+        char const*                           jsonName,
+        char const*                           defaultValue
+    );
+
     MCAPI static bool
     parse(::Json::Value const& val, ::EffectDuration& variable, char const* jsonName, bool convertToTicks);
 

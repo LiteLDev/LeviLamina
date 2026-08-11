@@ -28,11 +28,11 @@ public:
     // NOLINTBEGIN
     virtual ~ExperienceCostCommitObject() /*override*/ = default;
 
-    virtual bool append(::ContainerValidationCommitObject*) /*override*/;
+    virtual bool append(::ContainerValidationCommitObject* other) /*override*/;
 
-    virtual bool canCommit(::ContainerScreenContext const&) const /*override*/;
+    virtual bool canCommit(::ContainerScreenContext const& screenContext) const /*override*/;
 
-    virtual void commit(::ContainerScreenContext const&) /*override*/;
+    virtual void commit(::ContainerScreenContext const& screenContext) /*override*/;
     // NOLINTEND
 
 public:

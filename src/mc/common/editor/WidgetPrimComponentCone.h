@@ -23,6 +23,12 @@ public:
     WidgetPrimComponentCone& operator=(WidgetPrimComponentCone const&);
     WidgetPrimComponentCone(WidgetPrimComponentCone const&);
     WidgetPrimComponentCone();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::Editor::Network::WidgetPrimComponentCone const& other) const;
+    // NOLINTEND
 };
 
 } // namespace Editor::Network

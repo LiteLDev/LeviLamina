@@ -43,14 +43,19 @@ public:
     // NOLINTBEGIN
     virtual void onAppResumed() /*override*/;
 
-    virtual ::mce::RenderMaterialInfo& getMaterialInfo(::HashedString const&) /*override*/;
+    virtual ::mce::RenderMaterialInfo& getMaterialInfo(::HashedString const& name) /*override*/;
 
-    virtual void clearMaterial(::HashedString const&) /*override*/;
+    virtual void clearMaterial(::HashedString const& name) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RenderMaterialGroup();
+
+    MCAPI bool
+    _loadList(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> shaderGroup, ::ResourcePackManager& resourcePackManager);
+
     MCAPI bool loadList(
         ::Bedrock::NonOwnerPointer<::mce::ShaderGroup>       shaderGroup,
         ::ResourceLocation const&                            listPath,
@@ -74,6 +79,12 @@ public:
     MCAPI static ::mce::RenderMaterialGroup& common();
 
     MCAPI static ::mce::RenderMaterialGroup& switchable();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

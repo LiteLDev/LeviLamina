@@ -25,6 +25,12 @@ public:
     WidgetAddEntityComponentPayload();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~WidgetAddEntityComponentPayload() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI WidgetAddEntityComponentPayload(::Editor::Network::WidgetAddEntityComponentPayload const&);
@@ -40,6 +46,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::Network::WidgetAddEntityComponentPayload const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

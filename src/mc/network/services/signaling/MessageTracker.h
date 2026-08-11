@@ -4,6 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/nether_net/ESessionError.h"
+#include "mc/network/services/signaling/MessagePerformance.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace PlayerMessaging { struct NetworkID; }
+namespace mce { class UUID; }
+// clang-format on
 
 class MessageTracker {
 public:
@@ -48,4 +55,34 @@ public:
     MessageTracker& operator=(MessageTracker const&);
     MessageTracker(MessageTracker const&);
     MessageTracker();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _complete(
+        ::NetherNet::ESessionError        result,
+        ::mce::UUID                       key,
+        ::MessageTracker::MessageStatus&& value,
+        ::MessagePerformance::Status      status
+    );
+
+    MCNAPI void _continueTracking(::mce::UUID key, ::MessageTracker::MessageStatus&& value);
+
+    MCNAPI void _tryGetValue(
+        ::std::string const&                                                    messageId,
+        ::std::function<void(::mce::UUID, ::MessageTracker::MessageStatus&&)>&& fn
+    );
+
+    MCNAPI void
+    add(::std::string const& messageId, ::std::function<void(::NetherNet::ESessionError)>&& onComplete, bool isP2P);
+
+    MCNAPI void messageAccepted(::std::string const& messageId);
+
+    MCNAPI void messageSent(
+        ::std::optional<::PlayerMessaging::NetworkID> to,
+        ::std::string const&                          message,
+        ::std::string const&                          messageId,
+        ::std::error_code                             error
+    );
+    // NOLINTEND
 };

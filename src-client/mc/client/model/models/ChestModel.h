@@ -24,11 +24,27 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChestModel();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ChestModel() /*override*/ = default;
 
-    virtual void render(::ScreenContext&) /*override*/;
+    virtual void render(::ScreenContext& screenContext) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ChestModel(bool large);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

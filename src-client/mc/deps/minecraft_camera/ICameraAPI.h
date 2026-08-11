@@ -57,12 +57,11 @@ public:
         ::SharedTypes::Legacy::ActorLocation actorLoc
     ) const = 0;
 
-    virtual ::std::optional<::Vec3>
-    tryGetActorInterpolatedPosition(::WeakRef<::EntityContext> actorRef, float interpolationFactor) const = 0;
+    virtual ::std::optional<::Vec3> tryGetActorInterpolatedPosition(::WeakRef<::EntityContext>, float) const = 0;
 
     virtual ::std::optional<::Vec2> tryGetActorRotation(::WeakRef<::EntityContext const> const actorRef) const = 0;
 
-    virtual ::std::optional<::Vec3> tryGetActorPositionDelta(::WeakRef<::EntityContext> actorRef) const = 0;
+    virtual ::std::optional<::Vec3> tryGetActorPositionDelta(::WeakRef<::EntityContext>) const = 0;
 
     virtual ::std::vector<::ICameraAPI::ShakeParameters> tryGetShakeParameters(
         ::WeakRef<::EntityContext> actorRef,

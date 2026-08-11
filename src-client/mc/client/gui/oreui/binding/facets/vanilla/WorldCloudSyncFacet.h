@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/world/WorldCloudSyncResult.h"
 
@@ -37,6 +38,18 @@ public:
     virtual ~WorldCloudSyncFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void clearSyncWorldTaskState();
+
+    MCFOLD ::std::optional<::World::WorldCloudSyncResult> const& getSyncWorldResult() const;
+
+    MCFOLD ::OreUI::FacetTaskState getSyncWorldTaskState() const;
+
+    MCAPI void syncWorld(::std::string const& id);
     // NOLINTEND
 
 public:

@@ -61,21 +61,13 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const&) /*override*/;
-#else // LL_PLAT_C
     virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const& rootPath) /*override*/;
-#endif
 
     virtual bool allowContentLogWriteToDisk() /*override*/;
 
     virtual bool devHotReloadRenderResources() const /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void queueForMainThread_DEPRECATED(::std::function<void()>) /*override*/;
-#else // LL_PLAT_C
     virtual void queueForMainThread_DEPRECATED(::std::function<void()> callback) /*override*/;
-#endif
 
     virtual ::MPMCQueue<::std::function<void()>>& getMainThreadQueue() /*override*/;
 
@@ -97,15 +89,13 @@ public:
 
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const&) const /*override*/;
-#else // LL_PLAT_C
     virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const
         /*override*/;
 
+#ifdef LL_PLAT_C
     virtual void showXboxLiveUserSettings() /*override*/;
-#endif
 
+#endif
     virtual bool is24HourTimeFormat() const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> _getCurrentStoragePath() const /*override*/;
@@ -127,6 +117,8 @@ public:
 #ifdef LL_PLAT_C
     MCAPI AppPlatformWindows();
 #endif
+
+    MCAPI uint64 _findHighPerformanceThreadsCount() const;
     // NOLINTEND
 
 public:

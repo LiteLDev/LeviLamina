@@ -28,17 +28,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
+    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
 
-    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
+    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
 
-    virtual void parseJson(::ConstDeserializeDataParams const&) /*override*/;
+    virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
 
     virtual void getNextParticleSpawnOffsetAndDirection(
-        ::Vec3&,
-        ::Vec3&,
-        ::ParticleSystem::ComponentAccessParticleEmitter const&,
-        ::RenderParams&
+        ::Vec3&                                                 offset,
+        ::Vec3&                                                 direction,
+        ::ParticleSystem::ComponentAccessParticleEmitter const& emitter,
+        ::RenderParams&                                         renderParams
     ) /*override*/;
     // NOLINTEND
 

@@ -16,7 +16,8 @@ class RepositoryFactory : public ::IRepositoryFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::shared_ptr<::RepositorySources> createSources(::IResourcePackRepository const&) const /*override*/;
+    virtual ::std::shared_ptr<::RepositorySources> createSources(::IResourcePackRepository const& repository) const
+        /*override*/;
 
     virtual ::std::unique_ptr<::IPackIOProvider> createIO() const /*override*/;
     // NOLINTEND

@@ -45,7 +45,12 @@ public:
 
     virtual void mainUpdate() /*override*/;
 
+#ifdef LL_PLAT_S
     virtual void processActivationArguments(::Bedrock::ActivationArguments const&) /*override*/;
+#else // LL_PLAT_C
+    virtual void processActivationArguments(::Bedrock::ActivationArguments const& args) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:

@@ -9,6 +9,8 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class LegacyStructureSettings;
+class LegacyStructureTemplate;
 class Random;
 // clang-format on
 
@@ -17,6 +19,20 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::BlockPos _getCropOffsetFromRot(int rot, int type) const;
+
+    MCAPI void _placeCoralBase(
+        ::BlockSource&             region,
+        ::BlockPos const&          pos,
+        ::Random&                  random,
+        ::LegacyStructureTemplate& structure,
+        ::LegacyStructureSettings& settings
+    ) const;
     // NOLINTEND
 
 public:

@@ -54,6 +54,8 @@ public:
     // NOLINTBEGIN
     MCAPI bool partiallyCreateGridItems(int startIndex, int endIndex);
 
+    MCAPI void reassignGridPositions();
+
     MCAPI void refreshGridItems();
     // NOLINTEND
 

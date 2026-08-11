@@ -28,13 +28,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
     virtual bool requiresInteract() const /*override*/;
 
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& item, ::CompoundTag const* userData) const
+        /*override*/;
 
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
@@ -47,7 +48,7 @@ public:
 
     virtual bool hasCustomHoverName(::ItemStackBase const& stack) const /*override*/;
 
-    virtual bool inventoryTick(::ItemStack&, ::Level&, ::Actor&, int, bool) const /*override*/;
+    virtual bool inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const /*override*/;
 
     virtual bool isGlint(::ItemStackBase const& stack) const /*override*/;
     // NOLINTEND

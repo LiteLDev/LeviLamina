@@ -41,7 +41,7 @@ public:
 
     virtual ::Container* _tryGetContainer() const /*override*/;
 
-    virtual ::ItemContext _getItemContext(int) const /*override*/;
+    virtual ::ItemContext _getItemContext(int slot) const /*override*/;
     // NOLINTEND
 
 public:

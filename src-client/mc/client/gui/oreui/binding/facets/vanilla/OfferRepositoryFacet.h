@@ -47,6 +47,28 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit OfferRepositoryFacet(::Bedrock::NotNullNonOwnerPtr<::IOfferRepository> offerRepository);
+
+    MCAPI ::std::string const& getCoreSubscriptionPrice() const;
+
+    MCFOLD ::std::string const& getCoreTerms() const;
+
+    MCFOLD ::std::string const& getCoreTermsExtra() const;
+
+    MCAPI ::std::string const& getPlusSubscriptionPrice() const;
+
+    MCAPI ::std::string const& getPlusTerms() const;
+
+    MCFOLD ::std::string const& getPlusTermsExtra() const;
+
+    MCFOLD bool isFinishedQueryingProductsAndPurchases() const;
+
+    MCFOLD bool isRealmsCoreOfferAvailable() const;
+
+    MCAPI bool isRealmsPlusOfferAvailable() const;
+
+    MCAPI bool isRealmsTrialOfferAvailable() const;
+
+    MCAPI void setFacetDirty();
     // NOLINTEND
 
 public:

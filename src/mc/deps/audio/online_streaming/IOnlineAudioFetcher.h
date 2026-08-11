@@ -12,11 +12,11 @@ public:
 
     virtual void start() = 0;
 
-    virtual void update(float) = 0;
+    virtual void update(float deltaTimeSeconds) = 0;
 
-    virtual void notifyReadPosition(uint64) = 0;
+    virtual void notifyReadPosition(uint64 offset) = 0;
 
-    virtual void seekTo(uint64) = 0;
+    virtual void seekTo(uint64 offset) = 0;
 
     virtual void stop() = 0;
 

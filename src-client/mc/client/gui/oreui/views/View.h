@@ -80,17 +80,17 @@ public:
     // NOLINTBEGIN
     virtual ~View() /*override*/ = default;
 
-    virtual void pushCurrentScene(::OreUI::IScene&, ::OreUI::RouteMode) /*override*/;
+    virtual void pushCurrentScene(::OreUI::IScene& scene, ::OreUI::RouteMode routeMode) /*override*/;
 
     virtual bool hasScenes() const /*override*/;
 
-    virtual void removeScene(::OreUI::IScene const&) /*override*/;
+    virtual void removeScene(::OreUI::IScene const& scene) /*override*/;
 
-    virtual void update(double) /*override*/;
+    virtual void update(double time) /*override*/;
 
-    virtual void render(::ScreenContext&) /*override*/;
+    virtual void render(::ScreenContext& screenContext) /*override*/;
 
-    virtual void resize(uint, uint) /*override*/;
+    virtual void resize(uint width, uint height) /*override*/;
 
     virtual void reload() /*override*/;
 
@@ -101,8 +101,8 @@ public:
     virtual void onResume() /*override*/;
 
     virtual void onRouteChanged(
-        ::std::optional<::OreUI::RouterLocation> const&,
-        ::std::optional<::OreUI::RouterLocation> const&
+        ::std::optional<::OreUI::RouterLocation> const& previousLocation,
+        ::std::optional<::OreUI::RouterLocation> const& currentLocation
     ) /*override*/;
 
     virtual ::std::string_view getUrl() const /*override*/;
@@ -115,17 +115,17 @@ public:
 
     virtual ::OreUI::ViewState getState() const /*override*/;
 
-    virtual void setTextBoxState(::TextBoxStateChange const&) /*override*/;
+    virtual void setTextBoxState(::TextBoxStateChange const& stateChange) /*override*/;
 
     virtual void onKeyboardDismissed() /*override*/;
 
-    virtual void setCaretLocation(int) /*override*/;
+    virtual void setCaretLocation(int caretLocation) /*override*/;
 
-    virtual void triggerEvent(::std::string const&, ::std::string const&) /*override*/;
+    virtual void triggerEvent(::std::string const& eventName, ::std::string const& eventData) /*override*/;
 
     virtual ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy() /*override*/;
 
-    virtual void OnLoadFailed(char const*, char const*) /*override*/;
+    virtual void OnLoadFailed(char const* url, char const* error) /*override*/;
 
     virtual void OnReadyForBindings() /*override*/;
 
@@ -133,32 +133,37 @@ public:
 
     virtual ::cohtml::ScreenInfo OnScreenInfoRequested() /*override*/;
 
-    virtual void OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType) /*override*/;
+    virtual void OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType type) /*override*/;
 
-    virtual void OnCaretRectChanged(int, int, uint, uint) /*override*/;
+    virtual void OnCaretRectChanged(int x, int y, uint width, uint height) /*override*/;
 
-    virtual void OnCursorChanged(::cohtml::CursorTypes::Cursors, char const*, float const*, float const*) /*override*/;
+    virtual void
+    OnCursorChanged(::cohtml::CursorTypes::Cursors cursor, char const*, float const*, float const*) /*override*/;
 
-    virtual ::cohtml::IClientSideSocket*
-    OnCreateWebSocket(::cohtml::ISocketListener*, char const*, char const**, uint) /*override*/;
+    virtual ::cohtml::IClientSideSocket* OnCreateWebSocket(
+        ::cohtml::ISocketListener* listener,
+        char const*                url,
+        char const**               protocols,
+        uint                       protocolsCount
+    ) /*override*/;
 
-    virtual void OnAudioStreamCreated(int, int, int, float) /*override*/;
+    virtual void OnAudioStreamCreated(int id, int bitDepth, int channels, float samplingRate) /*override*/;
 
-    virtual void OnAudioStreamClosed(int) /*override*/;
+    virtual void OnAudioStreamClosed(int id) /*override*/;
 
-    virtual void OnAudioStreamPlay(int) /*override*/;
+    virtual void OnAudioStreamPlay(int id) /*override*/;
 
-    virtual void OnAudioStreamPause(int) /*override*/;
+    virtual void OnAudioStreamPause(int id) /*override*/;
 
-    virtual void OnAudioDataReceived(int, int, float**, int) /*override*/;
+    virtual void OnAudioDataReceived(int id, int samples, float** pcm, int channels) /*override*/;
 
-    virtual void OnAudioStreamEnded(int) /*override*/;
+    virtual void OnAudioStreamEnded(int id) /*override*/;
 
-    virtual void OnAudioStreamVolumeChanged(int, float) /*override*/;
+    virtual void OnAudioStreamVolumeChanged(int id, float volume) /*override*/;
 
-    virtual void OnClipboardTextSet(char const*, uint) /*override*/;
+    virtual void OnClipboardTextSet(char const* text, uint lengthBytes) /*override*/;
 
-    virtual void OnClipboardTextGet(::cohtml::IViewListener::IClipboardData*) /*override*/;
+    virtual void OnClipboardTextGet(::cohtml::IViewListener::IClipboardData* setDataObject) /*override*/;
 
     virtual ::OreUI::IViewTestHelper* getViewTestHelper() /*override*/;
     // NOLINTEND

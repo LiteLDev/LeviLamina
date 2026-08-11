@@ -11,7 +11,10 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptRGB; }
 namespace ScriptModuleMinecraft { class ScriptWaypoint; }
+namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
+namespace ScriptModuleMinecraft { struct ScriptWaypointTextureSelector; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -49,6 +52,25 @@ public:
                                                                mWaypoints;
     ::ll::TypedStorage<4, 4, int const>                        mMaxCount;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnInvalidWaypointRemoved;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _initializeGroupHandle();
+
+    MCAPI void _onWaypointPropertyUpdate(
+        ::std::variant<
+            bool,
+            ::std::optional<::ScriptModuleMinecraft::ScriptRGB>,
+            ::ScriptModuleMinecraft::ScriptWaypointTextureSelector,
+            ::ScriptModuleMinecraft::ScriptDimensionLocation> const& type,
+        ::WaypointGroup::WaypointHandle                              handle
+    );
+
+    MCAPI void _onWaypointRemoveEvent(::WaypointGroup::WaypointHandle handle);
+
+    MCAPI void _removeInvalidWaypoints(::std::vector<::WaypointGroup::WaypointHandle> const& handles);
     // NOLINTEND
 
 public:

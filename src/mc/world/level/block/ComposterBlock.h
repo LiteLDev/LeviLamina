@@ -21,6 +21,7 @@ class HitResult;
 class IConstBlockSource;
 class ItemStack;
 class ItemStackBase;
+class Level;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -93,6 +94,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ComposterBlock(::std::string const& nameId, int id);
+
+    MCAPI void _emitBoneMeal(::Level&, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 

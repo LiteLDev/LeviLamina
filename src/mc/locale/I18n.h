@@ -24,76 +24,84 @@ public:
 
     virtual void clearLanguages() = 0;
 
-    virtual ::std::vector<::std::string> findAvailableLanguages(::ResourcePackManager&) = 0;
+    virtual ::std::vector<::std::string> findAvailableLanguages(::ResourcePackManager& resourcePackManager) = 0;
 
-    virtual ::std::unordered_map<::std::string, ::std::string> findAvailableLanguageNames(::ResourcePackManager&) = 0;
+    virtual ::std::unordered_map<::std::string, ::std::string>
+    findAvailableLanguageNames(::ResourcePackManager& resourcePackManager) = 0;
 
     virtual ::Bedrock::Threading::Async<void> loadLanguages(
-        ::ResourcePackManager&,
-        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>,
-        ::std::string const&
+        ::ResourcePackManager&                               resourcePackManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
+        ::std::string const&                                 initLang
     ) = 0;
 
-    virtual void loadAllLanguages(::ResourcePackManager&) = 0;
+    virtual void loadAllLanguages(::ResourcePackManager& resourcePackManager) = 0;
 
-    virtual ::std::vector<::std::string> getLanguageCodesFromPack(::PackAccessStrategy const&) = 0;
+    virtual ::std::vector<::std::string> getLanguageCodesFromPack(::PackAccessStrategy const& accessStrategy) = 0;
 
-    virtual void loadLanguageKeywordsFromPack(::PackManifest const&, ::PackAccessStrategy const&) = 0;
+    virtual void
+    loadLanguageKeywordsFromPack(::PackManifest const& manifest, ::PackAccessStrategy const& accessStrategy) = 0;
 
     virtual void loadLanguageKeywordsFromPack(
-        ::PackManifest const&,
-        ::PackAccessStrategy const&,
-        ::std::vector<::std::string> const&,
-        ::std::optional<::std::vector<::std::string>> const&
+        ::PackManifest const&                                manifest,
+        ::PackAccessStrategy const&                          accessStrategy,
+        ::std::vector<::std::string> const&                  languageCodes,
+        ::std::optional<::std::vector<::std::string>> const& additionalLocKeys
     ) = 0;
 
     virtual void appendLanguageStringsFromPack(
-        ::PackManifest const&,
-        ::std::multimap<::std::string, ::std::pair<::std::string, ::std::string>> const&
+        ::PackManifest const&                                                            manifest,
+        ::std::multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& localizationMapping
     ) = 0;
 
     virtual ::std::unordered_map<::std::string, ::std::string>
-    getLanguageKeywordsFromPack(::PackManifest const&, ::std::string const&) = 0;
+    getLanguageKeywordsFromPack(::PackManifest const& manifest, ::std::string const& keyword) = 0;
 
     virtual void loadLangaugesByLocale(
-        ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const&
+        ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& storeLocalization
     ) = 0;
 
-    virtual void
-    appendAdditionalTranslations(::std::unordered_map<::std::string, ::std::string> const&, ::std::string const&) = 0;
+    virtual void appendAdditionalTranslations(
+        ::std::unordered_map<::std::string, ::std::string> const& translations,
+        ::std::string const&                                      keyPrefix
+    ) = 0;
 
-    virtual void appendLanguageStrings(::PackAccessStrategy*) = 0;
+    virtual void appendLanguageStrings(::PackAccessStrategy* accessStrategy) = 0;
 
-    virtual void addI18nObserver(::I18nObserver&) = 0;
+    virtual void addI18nObserver(::I18nObserver& observer) = 0;
 
-    virtual void chooseLanguage(::std::string const&) = 0;
+    virtual void chooseLanguage(::std::string const& code) = 0;
 
     virtual ::std::string
-    get(::std::string const&, ::std::vector<::std::string> const&, ::std::shared_ptr<::Localization const> const) = 0;
+    get(::std::string const&                          id,
+        ::std::vector<::std::string> const&           params,
+        ::std::shared_ptr<::Localization const> const locale) = 0;
 
-    virtual ::std::string get(::std::string const&, ::std::shared_ptr<::Localization const> const) = 0;
+    virtual ::std::string
+    get(::std::string const& langString, ::std::shared_ptr<::Localization const> const locale) = 0;
 
-    virtual ::std::string getPackKeywordValue(::PackManifest const&, ::std::string const&) = 0;
+    virtual ::std::string getPackKeywordValue(::PackManifest const& manifest, ::std::string const& key) = 0;
 
-    virtual ::std::string getPackKeywordValueForTelemetry(::PackManifest const&, ::std::string const&) = 0;
+    virtual ::std::string getPackKeywordValueForTelemetry(::PackManifest const& manifest, ::std::string const& key) = 0;
 
-    virtual bool hasPackKeyEntry(::PackManifest const&, ::std::string const&) = 0;
+    virtual bool hasPackKeyEntry(::PackManifest const& manifest, ::std::string const& key) = 0;
 
     virtual ::std::vector<::std::string> const& getSupportedLanguageCodes() = 0;
 
-    virtual ::std::string const& getLanguageName(::std::string const&) = 0;
+    virtual ::std::string const& getLanguageName(::std::string const& code) = 0;
 
-    virtual ::std::shared_ptr<::Localization const> const getLocaleFor(::std::string const&) = 0;
+    virtual ::std::shared_ptr<::Localization const> const getLocaleFor(::std::string const& code) = 0;
 
-    virtual ::std::string const& getLocaleCodeFor(::std::string const&) = 0;
+    virtual ::std::string const& getLocaleCodeFor(::std::string const& code) = 0;
 
     virtual ::gsl::not_null<::std::shared_ptr<::Localization const>> getCurrentLanguage() = 0;
 
     virtual bool languageSupportsHypenSplitting() = 0;
 
-    virtual ::std::string getLocalizedAssetFileWithFallback(::std::string const&, ::std::string const&) = 0;
+    virtual ::std::string
+    getLocalizedAssetFileWithFallback(::std::string const& fileNamePrefix, ::std::string const& fileNameSuffix) = 0;
 
-    virtual bool isPackKeyword(::std::string const&) = 0;
+    virtual bool isPackKeyword(::std::string const& key) = 0;
     // NOLINTEND
 
 public:

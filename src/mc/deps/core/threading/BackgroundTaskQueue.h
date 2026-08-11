@@ -35,6 +35,8 @@ public:
     // NOLINTBEGIN
     MCNAPI BackgroundTaskQueue();
 
+    MCNAPI bool _fetchAllAvailableTasks();
+
     MCNAPI void flush();
 
     MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);

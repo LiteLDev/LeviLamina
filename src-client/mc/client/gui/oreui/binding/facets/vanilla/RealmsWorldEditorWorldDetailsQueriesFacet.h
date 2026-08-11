@@ -60,6 +60,32 @@ public:
     MCAPI explicit RealmsWorldEditorWorldDetailsQueriesFacet(
         ::std::shared_ptr<::Realms::RealmsWorldEditor> worldEditor
     );
+
+    MCAPI void _refreshRealmWorldSubscriptions();
+
+    MCAPI bool areRealmTexturesRequired() const;
+
+    MCFOLD ::std::optional<::std::string> const& getFlatWorldPreset() const;
+
+    MCFOLD int getGeneratorType() const;
+
+    MCAPI ::std::string const& getRealmsDescription() const;
+
+    MCFOLD ::std::string const& getRealmsName() const;
+
+    MCAPI int getSimulationDistance() const;
+
+    MCAPI bool getStartWithBonusChest() const;
+
+    MCAPI bool getStartWithMap() const;
+
+    MCFOLD ::Realms::RealmsWorldEditorState getState() const;
+
+    MCFOLD ::Realms::RealmsWorldEditorStateStatus getStatus() const;
+
+    MCFOLD bool getUseFlatWorld() const;
+
+    MCFOLD ::std::string const& getWorldSeed() const;
     // NOLINTEND
 
 public:

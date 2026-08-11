@@ -11,6 +11,7 @@
 // clang-format off
 class EntityContext;
 class IClientInstance;
+class Mob;
 // clang-format on
 
 class VanillaCameraAPI : public ::IVanillaCameraAPI {
@@ -47,6 +48,12 @@ public:
     virtual ::SharedTypes::v1_21_100::PlayerViewMode getPlayerViewPerspectiveOption() const /*override*/;
 
     virtual ::std::optional<bool> isPlayerSleeping() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Mob* _getMob(::WeakRef<::EntityContext> const actorRef) const;
     // NOLINTEND
 
 public:

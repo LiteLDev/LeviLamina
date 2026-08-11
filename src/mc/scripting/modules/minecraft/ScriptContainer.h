@@ -17,6 +17,7 @@ namespace ScriptModuleMinecraft { class ScriptContainerSlot; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { struct ScriptContainerRulesError; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidContainerError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 // clang-format on
@@ -92,11 +93,17 @@ public:
         ::ScriptModuleMinecraft::ScriptContainerRulesError,
         ::Scripting::Error>
     addItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
+
+    MCAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidContainerError> getWeight() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::optional<::Scripting::Error> _isSlotBeyondMaxCapacity(::Container& container, int slot);
+
+    MCAPI static ::std::optional<::Scripting::Error> _isSlotInvalid(::Container& container, int slot);
+
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 

@@ -50,15 +50,28 @@ public:
 
     virtual ::BiomeSource& getSource() /*override*/;
 
-    virtual ::Biome const* getBiomeAtLocation(::BlockPos const&) const /*override*/;
+    virtual ::Biome const* getBiomeAtLocation(::BlockPos const& location) const /*override*/;
 
-    virtual ::std::optional<::mce::Color> findColorIfCustomBiome(::Biome const*) const /*override*/;
+    virtual ::std::optional<::mce::Color> findColorIfCustomBiome(::Biome const* biome) const /*override*/;
 
-    virtual void recalculateBiomes(::std::map<::std::string, ::CustomBiome> const&) /*override*/;
+    virtual void recalculateBiomes(::std::map<::std::string, ::CustomBiome> const& customBiomeMap) /*override*/;
 
-    virtual void updateColor(::std::string const&, ::mce::Color const&) /*override*/;
+    virtual void updateColor(::std::string const& biomeName, ::mce::Color const& color) /*override*/;
 
-    virtual ::Bedrock::PubSub::Subscription listenForBiomeUpdates(::std::function<void()>) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription listenForBiomeUpdates(::std::function<void()> callback) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _rebuildBiomeSource(::std::map<::std::string, ::CustomBiome> const& customBiomeMap);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::map<::std::string, ::mce::Color>
+    buildColorMap(::std::map<::std::string, ::CustomBiome> const& customBiomeMap);
     // NOLINTEND
 
 public:

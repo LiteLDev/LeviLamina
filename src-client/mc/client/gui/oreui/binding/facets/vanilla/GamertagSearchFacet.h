@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/social/XboxAPICallResult.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -47,6 +48,14 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager const> userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>  resourceAllowList
     );
+
+    MCFOLD ::std::vector<::OreUI::AddFriendUserItem> const& getDisplayableResults() const;
+
+    MCAPI ::XboxAPICallResult const getXboxAPICallResult() const;
+
+    MCAPI bool isDataLoading() const;
+
+    MCAPI void search(::std::string const& query) const;
     // NOLINTEND
 
 public:

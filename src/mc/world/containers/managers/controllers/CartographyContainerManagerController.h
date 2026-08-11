@@ -52,7 +52,7 @@ public:
     // NOLINTBEGIN
     virtual ~CartographyContainerManagerController() /*override*/ = default;
 
-    virtual void postInit(::std::weak_ptr<::ContainerManagerController>) /*override*/;
+    virtual void postInit(::std::weak_ptr<::ContainerManagerController> self) /*override*/;
 
     virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
 
@@ -88,14 +88,14 @@ public:
     virtual void _onContainerScreenAction(::ContainerScreenActionResult const& result) /*override*/;
 
     virtual ::CreateContainerItemScope
-    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
+    _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const&) /*override*/;
 
-    virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
+    virtual void _onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot) /*override*/;
 
     virtual void _updateItemStackRequest(
         ::ContainerScreenRequestActionType,
-        ::ContainerScreenActionResult const&,
-        ::ItemStackRequestScope&
+        ::ContainerScreenActionResult const& result,
+        ::ItemStackRequestScope&             requestScope
     ) /*override*/;
     // NOLINTEND
 
@@ -106,6 +106,8 @@ public:
     MCNAPI explicit CartographyContainerManagerController(
         ::std::weak_ptr<::CartographyContainerManagerModel> containerManagerModel
     );
+
+    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 #endif
     // NOLINTEND
 

@@ -41,7 +41,7 @@ public:
 
     virtual ::std::string getValue() const /*override*/;
 
-    virtual void setValue(::std::string_view) /*override*/;
+    virtual void setValue(::std::string_view value) /*override*/;
 
     virtual void commitValue() /*override*/;
     // NOLINTEND

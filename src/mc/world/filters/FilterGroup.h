@@ -7,9 +7,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class FilterInput;
 class FilterTest;
 struct FilterContext;
 struct FilterInputs;
+struct FilterParamDefinition;
 namespace Json { class Value; }
 namespace SharedTypes::v1_21_20 { struct FilterGroupData; }
 namespace SharedTypes::v1_21_20 { struct FilterTestData; }
@@ -49,6 +51,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _parseFilterParam(
+        ::std::string const&                                             filter,
+        ::std::string const&                                             member,
+        ::std::optional<::std::variant<bool, int, float, ::std::string>> param,
+        ::FilterParamDefinition const&                                   paramDef,
+        ::FilterInput&                                                   input
+    );
+
+    MCAPI bool _parseMemberCollection(
+        ::FilterGroup::CollectionType                   collectionType,
+        ::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData
+    );
+
     MCAPI bool _parseTest(::SharedTypes::v1_21_20::FilterTestData const& filterTestData);
 
     MCAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);

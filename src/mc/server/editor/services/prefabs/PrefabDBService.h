@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/PrefabSource.h"
+#include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
@@ -21,6 +23,7 @@ class Vec3;
 class WeakEntityRef;
 struct DimensionType;
 namespace Bedrock::PubSub { class Subscription; }
+namespace Editor { class EditorManager; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Prefabs { class PrefabDBPrefabInstance; }
 namespace Editor::Prefabs { class PrefabDBTemplate; }
@@ -145,6 +148,19 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit PrefabDBService(::Editor::ServiceProviderCollection& serviceProviders);
+
+    MCNAPI bool _buildManifests();
+
+    MCNAPI ::StackRefResult<::Editor::Prefabs::PrefabDBTemplate> _createPrefabTemplate(
+        ::std::string const&                   name,
+        ::std::string const&                   displayName,
+        ::std::string const&                   description,
+        ::std::string const&                   notes,
+        ::std::vector<::std::string> const&    tags,
+        ::Editor::Prefabs::PrefabSource const& source
+    );
+
+    MCNAPI void _onTickEvent(::Editor::EditorManager&);
     // NOLINTEND
 
 public:

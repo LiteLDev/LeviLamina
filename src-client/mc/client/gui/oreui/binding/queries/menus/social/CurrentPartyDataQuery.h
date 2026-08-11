@@ -39,6 +39,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CurrentPartyDataQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
+
+    MCAPI void _fetchData();
     // NOLINTEND
 
 public:

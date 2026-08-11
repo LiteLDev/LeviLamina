@@ -45,31 +45,33 @@ public:
     // NOLINTBEGIN
     virtual ~ChatLoggingEventListener() /*override*/;
 
-    virtual ::EventResult onEvent(::ChatEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::ChatEvent const& chatEvent) /*override*/;
 
     virtual ::EventResult onEvent(::ServerInstanceLeaveGameDoneEvent const&) /*override*/;
 
-    virtual ::EventResult onEvent(::PlayerSayCommandEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::PlayerSayCommandEvent const& sayEvent) /*override*/;
 
-    virtual ::EventResult onEvent(::PlayerTellCommandEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::PlayerTellCommandEvent const& tellEvent) /*override*/;
 
-    virtual ::EventResult onEvent(::PlayerTellRawCommandEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::PlayerTellRawCommandEvent const& tellRawEvent) /*override*/;
 
-    virtual ::EventResult onEvent(::PlayerTitleCommandEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::PlayerTitleCommandEvent const& titleEvent) /*override*/;
 
-    virtual ::EventResult onEvent(::PlayerTitleRawCommandEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::PlayerTitleRawCommandEvent const& titleRawEvent) /*override*/;
 
     virtual ::EventResult onServerInitializeStart(::ServerInstance& instance) /*override*/;
 
     virtual ::EventResult onLevelAddedPlayer(::Player& player) /*override*/;
 
-    virtual ::EventResult onLevelRemovedPlayer(::Player&) /*override*/;
+    virtual ::EventResult onLevelRemovedPlayer(::Player& player) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ChatLoggingEventListener();
+
+    MCNAPI void _write(::std::string const& message, bool includeTime);
     // NOLINTEND
 
 public:

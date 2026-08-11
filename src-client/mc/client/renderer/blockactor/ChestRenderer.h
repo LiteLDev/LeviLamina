@@ -13,6 +13,7 @@
 // clang-format off
 class BaseActorRenderContext;
 struct BlockActorRenderData;
+namespace mce { class TextureGroup; }
 // clang-format on
 
 class ChestRenderer : public ::BlockActorRenderer {
@@ -31,9 +32,26 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChestRenderer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void render(::BaseActorRenderContext&, ::BlockActorRenderData&) /*override*/;
+    virtual void
+    render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ChestRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

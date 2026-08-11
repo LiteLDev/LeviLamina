@@ -40,9 +40,9 @@ public:
     // NOLINTBEGIN
     virtual ::Editor::DataStore::IContentBadgeContainer::Config const& getConfig() const = 0;
 
-    virtual ::Scripting::Result_deprecated<void> setSuppressNewBadges(bool) = 0;
+    virtual ::Scripting::Result_deprecated<void> setSuppressNewBadges(bool shouldSuppress) = 0;
 
-    virtual ::Scripting::Result_deprecated<void> clearBadge(::HashedString const&) = 0;
+    virtual ::Scripting::Result_deprecated<void> clearBadge(::HashedString const& id) = 0;
 
     virtual ::Scripting::Result_deprecated<void> clearAllRegisteredBadges() = 0;
 
@@ -51,10 +51,10 @@ public:
     virtual ::std::unordered_set<::HashedString> const& getVisibleBadges() = 0;
 
     virtual ::Bedrock::PubSub::Subscription
-        onVisibleBadgesChanged(::std::function<void(::std::unordered_set<::HashedString> const&)>) = 0;
+    onVisibleBadgesChanged(::std::function<void(::std::unordered_set<::HashedString> const&)> callback) = 0;
 
     virtual ::Bedrock::PubSub::Subscription
-        onConfigChanged(::std::function<void(::Editor::DataStore::IContentBadgeContainer::Config const&)>) = 0;
+    onConfigChanged(::std::function<void(::Editor::DataStore::IContentBadgeContainer::Config const&)> callback) = 0;
     // NOLINTEND
 
 public:

@@ -5,8 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/platform/brstd/move_only_function.h"
 #include "mc/util/GridArea.h"
 #include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
+#include "mc/world/level/chunk/ChunkState.h"
+#include "mc/world/level/chunk/LevelChunkGridAreaElement.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,7 +25,9 @@ class Level;
 class LevelChunk;
 class LevelChunkBuilderData;
 class LevelChunkMetaDataDictionary;
+class LevelStorage;
 class Random;
+class TaskResult;
 struct ActorUnloadedChunkTransferEntry;
 struct ChunkDeletionMetadata;
 struct LevelChunkFinalDeleter;
@@ -79,15 +84,15 @@ public:
     virtual ::std::shared_ptr<::LevelChunk>
     getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    virtual bool structurePostProcessChunk(::ChunkViewSource&);
+    virtual bool structurePostProcessChunk(::ChunkViewSource& neighborhood);
 
-    virtual bool decorationPostProcessChunk(::ChunkViewSource&);
+    virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhood);
 
-    virtual void checkAndReplaceChunk(::ChunkViewSource&, ::LevelChunk&);
+    virtual void checkAndReplaceChunk(::ChunkViewSource& neighborhood, ::LevelChunk& lc);
 
-    virtual bool verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk&);
+    virtual bool verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk& lc);
 
-    virtual void neighborAwareChunkUpgrade(::LevelChunk&, ::ChunkViewSource&);
+    virtual void neighborAwareChunkUpgrade(::LevelChunk& levelChunk, ::ChunkViewSource& neighborhood);
 
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
@@ -163,11 +168,38 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void _checkForUnblockingChunks(::LevelChunk const& lc);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void _checkForUnblockingChunks(::LevelChunk const& lc);
+#endif
+
+    MCAPI void _checkLevelChunkForNextStage(
+        ::LevelChunk const&                                         lc,
+        ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& grid,
+        ::ChunkState                                                stateToCheck
+    );
+
+#ifdef LL_PLAT_C
     MCAPI void _createOrReplaceGridAreaMap(::std::shared_ptr<::LevelChunk> lc, bool createNeighbourGridsIfMissing);
 #endif
 
     MCAPI void _freeChunkGenerationGridMap(::ChunkPos const& cp, bool isLevelChunkDeletion);
+
+    MCAPI void _launchChunkTask(
+        ::std::string_view                          taskName,
+        ::ChunkPos const&                           chunkPos,
+        bool                                        areInTask,
+        ::brstd::move_only_function<::TaskResult()> taskFunc
+    );
+
+    MCAPI void _launchLightingTask(
+        ::std::shared_ptr<::LevelChunk> const&      lc,
+        ::std::shared_ptr<::ChunkViewSource> const& chunks,
+        bool                                        areInTask
+    );
+
+    MCAPI void _saveDirtyChunks(::LevelStorage&);
 
     MCAPI void _spawnChunkGenerationTasks(int numTasks, bool calledFromTask);
 
@@ -230,15 +262,15 @@ public:
     MCAPI ::std::shared_ptr<::LevelChunk>
     $getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    MCFOLD bool $structurePostProcessChunk(::ChunkViewSource&);
+    MCFOLD bool $structurePostProcessChunk(::ChunkViewSource& neighborhood);
 
-    MCFOLD bool $decorationPostProcessChunk(::ChunkViewSource&);
+    MCFOLD bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
 
-    MCFOLD void $checkAndReplaceChunk(::ChunkViewSource&, ::LevelChunk&);
+    MCFOLD void $checkAndReplaceChunk(::ChunkViewSource& neighborhood, ::LevelChunk& lc);
 
-    MCFOLD bool $verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk&);
+    MCFOLD bool $verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk& lc);
 
-    MCFOLD void $neighborAwareChunkUpgrade(::LevelChunk&, ::ChunkViewSource&);
+    MCFOLD void $neighborAwareChunkUpgrade(::LevelChunk& levelChunk, ::ChunkViewSource& neighborhood);
 
     MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 

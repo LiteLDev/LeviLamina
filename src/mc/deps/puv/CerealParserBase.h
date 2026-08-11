@@ -28,6 +28,12 @@ public:
     CerealParserBase();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~CerealParserBase() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
@@ -50,6 +56,12 @@ public:
 
     MCNAPI void*
     $ctor(::cereal::ReflectionCtx const& ctx, ::SemVersion parserVersion, ::Puv::VersionRange supportedRange);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

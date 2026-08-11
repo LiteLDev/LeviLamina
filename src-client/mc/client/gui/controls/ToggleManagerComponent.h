@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     virtual ~ToggleManagerComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
@@ -39,6 +39,12 @@ public:
         ::UIAnimationController& animationController,
         ::ScreenEvent const&     screenEvent
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _updateToggleGroupState(::VisualTree& visualTree, bool toggleState);
     // NOLINTEND
 
 public:

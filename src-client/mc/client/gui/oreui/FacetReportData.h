@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/resources/AllowListPath.h"
 #include "mc/client/realms/PostStatus.h"
+#include "mc/client/realms/stories/FetchStatus.h"
 #include "mc/client/services/clubs/ReportedItem.h"
 
 // auto generated forward declare list
@@ -31,6 +32,46 @@ public:
     ::ll::TypedStorage<8, 560, ::Clubs::ReportedItem>                                   mReportItem;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Realms::Stories::RealmsFeedModeration>> mFeedModeration;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string> const>                       NO_PLAYERS;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::std::string const& getAuthorXuid() const;
+
+    MCAPI ::Realms::Stories::PostStatus getDeleteStatus() const;
+
+    MCAPI bool const getEventHasCoordinates() const;
+
+    MCAPI ::std::string const& getEventMetaData() const;
+
+    MCAPI ::std::vector<::std::string> const& getEventPlayerXuids() const;
+
+    MCAPI int const getEventXCoordinate() const;
+
+    MCAPI int const getEventYCoordinate() const;
+
+    MCAPI int const getEventZCooridnate() const;
+
+    MCFOLD ::std::string const& getFeedItemId() const;
+
+    MCFOLD ::std::string const& getId() const;
+
+    MCAPI ::Realms::Stories::FetchStatus getImageStatus() const;
+
+    MCAPI bool const getIsComment() const;
+
+    MCAPI bool const getIsEvent() const;
+
+    MCAPI ::std::string const& getLastReported() const;
+
+    MCFOLD int const getReportCount() const;
+
+    MCAPI ::Realms::Stories::FetchStatus getReportStatus() const;
+
+    MCAPI ::Realms::Stories::PostStatus getReportToXboxStatus() const;
+
+    MCAPI ::std::vector<::std::string> const& getReporterXuids() const;
     // NOLINTEND
 };
 

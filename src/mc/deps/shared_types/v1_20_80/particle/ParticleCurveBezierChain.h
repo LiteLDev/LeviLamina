@@ -7,6 +7,11 @@
 #include "mc/deps/shared_types/v1_20_80/particle/BezierChainNodeMap.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleCurveBase.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_20_80 {
 
 struct ParticleCurveBezierChain : public ::SharedTypes::v1_20_80::ParticleCurveBase {
@@ -24,6 +29,12 @@ public:
     ParticleCurveBezierChain();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~ParticleCurveBezierChain() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ParticleCurveBezierChain(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
@@ -32,9 +43,21 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

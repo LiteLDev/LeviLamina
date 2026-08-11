@@ -3,8 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
@@ -15,6 +17,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IConstBlockSource;
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
@@ -23,6 +26,7 @@ struct ActorHeadWasInWaterFlagComponent;
 struct ActorRotationComponent;
 struct CamelFlagComponent;
 struct DimensionTypeComponent;
+struct GetAttachPositionViews;
 struct HorseFlagComponent;
 struct LocalConstBlockSourceFactoryComponent;
 struct MobBodyRotationComponent;
@@ -130,6 +134,20 @@ public:
             ::EntityFactoryT<>>& context,
         ::StrictEntityContext&   entityContext
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void doUnderWaterSensing(
+        ::StrictEntityContext const&                                                          entity,
+        ::StateVectorComponent const&                                                         stateVectorComponent,
+        ::UpdateWaterStateRequestComponent const&                                             request,
+        ::Optional<::ActorHeadInWaterFlagComponent const>                                     headInWater,
+        ::EntityModifier<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent> modifier,
+        ::GetAttachPositionViews const&                                                       views,
+        ::IConstBlockSource const&                                                            region
+    );
     // NOLINTEND
 
 public:

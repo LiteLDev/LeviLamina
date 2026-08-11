@@ -39,6 +39,10 @@ public:
     MCNAPI void setUnlocalizedName(::std::string const& unlocalizedName);
 #endif
 
+#ifdef LL_PLAT_S
+    MCNAPI void setUnlocalizedName(::std::string const& unlocalizedName);
+#endif
+
     MCNAPI ::Json::Value toJsonValue() const;
 
     MCNAPI ~WorldPackHistory();

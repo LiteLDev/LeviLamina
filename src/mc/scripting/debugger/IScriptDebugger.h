@@ -12,9 +12,9 @@ class IScriptDebugger {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool connect(::std::string const&, ushort) = 0;
+    virtual bool connect(::std::string const& host, ushort port) = 0;
 
-    virtual bool listen(ushort) = 0;
+    virtual bool listen(ushort port) = 0;
 
     virtual void stop() = 0;
 

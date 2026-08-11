@@ -12,6 +12,7 @@ class IMinecraftEventing;
 class LinkedAssetValidator;
 class ResourcePackManager;
 namespace SharedTypes::v1_21_90 { struct CameraPreset; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class CameraPresets {
@@ -64,6 +65,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _storeCameraList(::CameraPresets::CameraList&& list);
+
     MCNAPI void loadPresets(
         ::ResourcePackManager&                             resourcePackManager,
         ::Experiments const&                               experiments,
@@ -79,6 +82,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
     MCNAPI static bool isAllowedEaseTarget(::std::string const& easeTarget);
 
     MCNAPI static bool isVanillaCamera(::std::string const& cameraName);

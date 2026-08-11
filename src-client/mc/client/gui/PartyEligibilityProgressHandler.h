@@ -41,7 +41,8 @@ public:
 
     virtual ::std::string getTitleText() const /*override*/;
 
-    virtual void onGameEventNotification(::MinecraftScreenModel&, ::ui::GameEventNotification const&) /*override*/;
+    virtual void
+    onGameEventNotification(::MinecraftScreenModel&, ::ui::GameEventNotification const& notification) /*override*/;
     // NOLINTEND
 
 public:

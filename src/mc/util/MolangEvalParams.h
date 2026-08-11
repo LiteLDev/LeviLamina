@@ -3,11 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/MolangVariableIndex.h"
 #include "mc/util/MolangVariableMap.h"
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 class RenderParams;
+struct MolangEvalStackState;
 struct MolangScriptArg;
 // clang-format on
 
@@ -25,6 +28,18 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<uint64>>            mMissingVariableOrActorIndexStack;
     ::ll::TypedStorage<8, 8, uint64>                            mPublicAccessModeStack;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::RenderParams*>>  mRenderParams;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex variableIndex);
+
+    MCAPI uint64 popMissingVariableOrActorAddress(::HashedString const& variableName);
+
+    MCAPI void pushReturnValue();
+
+    MCAPI void restoreStackState(::MolangEvalStackState&& state);
     // NOLINTEND
 
 public:

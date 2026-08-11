@@ -32,10 +32,10 @@ public:
     virtual ~MinecraftGameTestBatchRunner() /*override*/ = default;
 
     virtual ::std::shared_ptr<::gametest::BaseGameTestInstance>
-    _createGameTestInstance(::gametest::BaseGameTestFunction&) /*override*/;
+    _createGameTestInstance(::gametest::BaseGameTestFunction& function) /*override*/;
 
     virtual void
-    _runTest(::std::shared_ptr<::gametest::BaseGameTestInstance>, ::gametest::GameTestTicker&) /*override*/;
+    _runTest(::std::shared_ptr<::gametest::BaseGameTestInstance> test, ::gametest::GameTestTicker& ticker) /*override*/;
     // NOLINTEND
 
 public:

@@ -57,6 +57,10 @@ public:
     MCAPI static void _setDepenetrationOverride(::EntityContext& entity);
 #endif
 
+#ifdef LL_PLAT_S
+    MCAPI static void _setDepenetrationOverride(::EntityContext& entity);
+#endif
+
     MCAPI static ::std::unique_ptr<::ComplexInventoryTransaction> fromType(::ComplexInventoryTransaction::Type type);
 
     MCAPI static ::std::unique_ptr<::ComplexInventoryTransaction>

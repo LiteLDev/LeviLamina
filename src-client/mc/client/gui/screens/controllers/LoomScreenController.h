@@ -70,6 +70,10 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
+
+    MCAPI void _changeLeftTab(int dir);
+
+    MCAPI void _updateVisualPatternItem();
     // NOLINTEND
 
 public:

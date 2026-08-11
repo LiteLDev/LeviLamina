@@ -24,7 +24,7 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptBreakpointValidator() /*override*/ = default;
 
-    virtual bool validatePath(::std::string_view) /*override*/;
+    virtual bool validatePath(::std::string_view sourcePath) /*override*/;
     // NOLINTEND
 
 public:

@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+
+// auto generated forward declare list
+// clang-format off
+struct PackIdVersion;
+// clang-format on
+
 struct ServicePack {
 public:
     // member variables
@@ -29,6 +37,8 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI ServicePack(::ServicePack const&);
+
+    MCNAPI ServicePack(::PackIdVersion packId, ::Core::PathBuffer<::std::string> downloadUrl);
 #endif
     // NOLINTEND
 

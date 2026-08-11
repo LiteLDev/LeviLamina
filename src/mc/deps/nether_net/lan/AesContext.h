@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/nether_net/utils/ErrorOr.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace NetherNet { struct View; }
+// clang-format on
+
 namespace NetherNet {
 
 class AesContext {
@@ -18,6 +26,14 @@ public:
     AesContext& operator=(AesContext const&);
     AesContext(AesContext const&);
     AesContext();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::NetherNet::ErrorOr<::NetherNet::View, ::std::error_code> Open(::NetherNet::View envelope);
+
+    MCNAPI ::NetherNet::ErrorOr<::NetherNet::View, ::std::error_code> Seal(::NetherNet::View plaintext);
+    // NOLINTEND
 };
 
 } // namespace NetherNet

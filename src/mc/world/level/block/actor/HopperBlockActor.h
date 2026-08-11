@@ -40,13 +40,13 @@ public:
     // NOLINTBEGIN
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& context) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual ::ItemStack const& getItem(int) const /*override*/;
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    virtual void setItem(int, ::ItemStack const&) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     virtual ::std::string getName() const /*override*/;
 
@@ -66,15 +66,19 @@ public:
 
     virtual void onRemoved(::BlockSource&) /*override*/;
 
-    virtual void onNeighborChanged(::BlockSource&, ::BlockPos const&) /*override*/;
+    virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const&) /*override*/;
 
     virtual void onMove() /*override*/;
 
-    virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&) /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
     // NOLINTEND
 
 public:
@@ -83,6 +87,8 @@ public:
     MCAPI explicit HopperBlockActor(::BlockPos const& pos);
 
     MCAPI int _countItems() const;
+
+    MCAPI void _tick(::BlockSource& region, int maxRecursion);
 
     MCAPI ::FurnaceBlockActor* getAttachedFurnace(::BlockSource& region);
 

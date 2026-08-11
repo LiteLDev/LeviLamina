@@ -46,6 +46,14 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> multiplayerServiceManager,
         ::std::function<::ClientLevel*()>                                  getCurrentLevel
     );
+
+    MCFOLD ::std::string const& getCurrentLevelId() const;
+
+    MCFOLD bool getIsHosting() const;
+
+    MCFOLD bool getIsInGame() const;
+
+    MCFOLD bool getIsInMultiplayerSession() const;
     // NOLINTEND
 
 public:

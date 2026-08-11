@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::NetherNet::ErrorOr<void, ::std::error_code> SetKey(uint64) /*override*/;
+    virtual ::NetherNet::ErrorOr<void, ::std::error_code> SetKey(uint64 id) /*override*/;
 
     virtual int Send(void const* pv, uint64 cb) /*override*/;
 

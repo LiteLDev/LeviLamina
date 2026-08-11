@@ -37,7 +37,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void addFamilyTypeByName(::std::string const& name);
+
     MCAPI void initialize(::EntityContext& entity, ::RideableComponent& component) const;
+
+    MCAPI void setDismountMode(::std::string const& mode);
     // NOLINTEND
 
 public:

@@ -82,6 +82,36 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorInputStateFacet(::Editor::ServiceProviderCollection* services);
+
+    MCAPI void _handleViewportFocusChange(bool);
+
+    MCFOLD ::std::unordered_map<::HashedString, ::std::string> const& getCursorIconStateMap() const;
+
+    MCFOLD ::std::unordered_map<
+        ::HashedString,
+        ::std::unordered_map<::HashedString, ::OreUI::EditorInputStateFacet::KeyBindingStateFacet>> const&
+    getKeyBindingStateMap() const;
+
+    MCFOLD bool isViewportFocused() const;
+
+    MCAPI bool
+    onViewportMouseButtonDown(::OreUI::EditorInputStateFacet::MouseButton button, bool shift, bool ctrl, bool alt);
+
+    MCAPI bool onViewportMouseButtonUp(
+        ::OreUI::EditorInputStateFacet::MouseButton button,
+        bool                                        shift,
+        bool                                        ctrl,
+        bool                                        alt,
+        bool                                        hasDragged
+    );
+
+    MCAPI bool onViewportMouseDelta(float dx, float dy);
+
+    MCAPI bool onViewportMouseWheel(bool wheelOut);
+
+    MCAPI void setCursorReleased(bool shouldRelease);
+
+    MCAPI void setViewportFocus(bool isFocused);
     // NOLINTEND
 
 public:

@@ -86,6 +86,10 @@ public:
         ::std::function<void(::std::string_view)> showDebugToast
     );
 
+    MCAPI void _destroyView(::OreUI::ViewId viewId);
+
+    MCAPI ::std::vector<::OreUI::ViewId> _getViewIds();
+
     MCAPI void clearUnusedCachedViews(::SubClientId subClientId);
 
     MCAPI ::OreUI::ViewId createView(

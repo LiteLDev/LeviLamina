@@ -71,6 +71,8 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    virtual ~StartGamePacket() /*override*/;
     // NOLINTEND
 
 public:
@@ -139,6 +141,12 @@ public:
         uint64                                                                     blockTypeRegistryChecksum,
         bool                                                                       isLoggingChat
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

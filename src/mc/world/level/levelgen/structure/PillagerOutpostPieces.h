@@ -12,9 +12,11 @@
 // clang-format off
 class BlockSource;
 class BoundingBox;
+class Dimension;
 class LevelChunk;
 class Random;
 class StructureManager;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class PillagerOutpostPieces {
@@ -44,6 +46,10 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        PillagerOutpostPiece();
+
+    public:
         // virtual functions
         // NOLINTBEGIN
         virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
@@ -54,12 +60,39 @@ public:
         virtual void addHardcodedSpawnAreas(::LevelChunk& chunk) const /*override*/;
 
         virtual void _handleDataMarker(
-            ::std::string const&,
-            ::BlockPos const&,
-            ::BlockSource&,
-            ::Random&,
-            ::BoundingBox const&
+            ::std::string const& markerId,
+            ::BlockPos const&    position,
+            ::BlockSource&       region,
+            ::Random&            random,
+            ::BoundingBox const& chunkBB
         ) /*override*/;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI PillagerOutpostPiece(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string                                     templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation,
+            float                                             integrity,
+            bool                                              isSatellite,
+            ::Dimension&                                      dimension
+        );
+
+        MCAPI void _addMobsFromPositions(
+            ::BoundingBox const&               chunkBB,
+            ::ActorDefinitionIdentifier const& definition,
+            ::BlockSource&                     region,
+            ::std::vector<::BlockPos> const&   entityPositions
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
         // NOLINTEND
 
     public:

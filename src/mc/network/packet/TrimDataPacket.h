@@ -35,6 +35,8 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    virtual ~TrimDataPacket() /*override*/;
     // NOLINTEND
 
 public:
@@ -42,6 +44,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::TrimDataPacket
     prepareFromRegistries(::TrimPatternRegistry const& patternRegistry, ::TrimMaterialRegistry const& materialRegistry);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

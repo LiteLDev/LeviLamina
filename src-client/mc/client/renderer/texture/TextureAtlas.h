@@ -18,11 +18,13 @@
 class AtlasItemManager;
 class ResourcePackManager;
 class TextureAtlasTile;
+struct ParsedAtlasNode;
 struct RuntimeImageGeneratorInfo;
 struct TextureAtlasResourceCallbacks;
 namespace Json { class Value; }
 namespace cg { class ImageBuffer; }
 namespace cg { class TextureSetImageContainer; }
+namespace mce { class Color; }
 namespace mce { class FileWatcherHandle; }
 namespace mce { class TextureGroup; }
 namespace mce::framebuilder { class PBRTextureDataManager; }
@@ -78,6 +80,29 @@ public:
         ::ResourceLocation const&                                              metaFile,
         ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> pbrTextureDataManager,
         ::TextureAtlas::PaddingMode                                            paddingMode
+    );
+
+    MCAPI void _addElementCollection(
+        ::ResourcePackManager&                 resourcePackManager,
+        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
+        ::Json::Value const&                   texture,
+        ::ParsedAtlasNode&                     newNode,
+        int                                    atIndex,
+        float                                  mipFadeAmount,
+        ::mce::Color const&                    mipFadeColor,
+        bool                                   isAdditive
+    );
+
+    MCAPI ::TextureAtlasResourceCallbacks _createAtlas(
+        ::Json::Value const&                               root,
+        ::std::function<void(::TextureAtlasStatus const&)> statusCallback,
+        ::std::function<void()> const                      imageAtlasFinishedCallback,
+        ::std::shared_ptr<::mce::TextureGroup>             textureGroup,
+        ::cg::MipMapSupport const                          mipMapSupport,
+        ::ResourcePackManager&                             resourcePackManager,
+        ::std::shared_ptr<::cg::ImageBuffer>               outCopyOfFinalImage,
+        ::std::shared_ptr<::std::unordered_map<::ResourceLocation, ::cg::TextureSetImageContainer>>
+            outCopyOfSourceImages
     );
 
     MCAPI ::TextureAtlasResourceCallbacks createAtlasFromJson(

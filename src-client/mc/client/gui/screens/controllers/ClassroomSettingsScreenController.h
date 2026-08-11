@@ -68,6 +68,8 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel>            model,
         ::ClassroomSettingsScreenControllerCallbacks const& screenCallbacks
     );
+
+    MCAPI void _setEduSharedResourceValue();
     // NOLINTEND
 
 public:

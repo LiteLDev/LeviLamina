@@ -9,7 +9,16 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor { struct EditorBlockPalette; }
+namespace Editor { struct EditorBlockPaletteEventActivePaletteChanged; }
+namespace Editor { struct EditorBlockPaletteEventItemUpdated; }
+namespace Editor { struct EditorBlockPaletteEventPaletteRemoved; }
+namespace Editor { struct EditorBlockPaletteEventPaletteUpdated; }
+namespace Editor { struct EditorBlockPaletteEventSelectedItemIndexChanged; }
+namespace Editor { struct ProbabilityBlockPaletteItem; }
+namespace Editor { struct SimpleBlockPaletteItem; }
 namespace Editor::Services { class EditorBlockPaletteServiceProvider; }
 // clang-format on
 
@@ -86,6 +95,51 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorBlockPaletteFacet(::Editor::ServiceProviderCollection* services);
+
+    MCAPI void _handleBlockPaletteEvent(
+        ::std::variant<
+            ::Editor::EditorBlockPaletteEventItemUpdated,
+            ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
+            ::Editor::EditorBlockPaletteEventActivePaletteChanged,
+            ::Editor::EditorBlockPaletteEventPaletteUpdated,
+            ::Editor::EditorBlockPaletteEventPaletteRemoved> const& evt
+    );
+
+    MCAPI void addOrReplaceBlockPalette(::OreUI::EditorBlockPaletteFacet::BlockPalette const& newData);
+
+    MCFOLD ::OreUI::EditorBlockPaletteFacet::BlockPalette const& getActivePalette() const;
+
+    MCAPI int getActivePaletteSelectedItemIndex() const;
+
+    MCAPI ::std::vector<::OreUI::EditorBlockPaletteFacet::BlockPalette> const& getPaletteList() const;
+
+    MCAPI void removeBlockPalette(::HashedString const& paletteId);
+
+    MCAPI void setActivePalette(::HashedString const& paletteId);
+
+    MCAPI void setActivePaletteSelectedItemIndex(int index);
+
+    MCAPI void updateBlockPaletteItem(
+        ::HashedString const&                                     paletteId,
+        int                                                       index,
+        ::OreUI::EditorBlockPaletteFacet::BlockPaletteItem const& newData
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::string _getNamespaceCorrectedName(::Block const* block);
+
+    MCAPI static ::OreUI::EditorBlockPaletteFacet::BlockPalette
+    convertToFacetPalette(::Editor::EditorBlockPalette const& nativePalette);
+
+    MCAPI static ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
+    getPaletteItemAsVariant(::OreUI::EditorBlockPaletteFacet::BlockPaletteItem const& facetItem);
+
+    MCAPI static ::OreUI::EditorBlockPaletteFacet::BlockPaletteItem getPaletteItemFromVariant(
+        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& variantItem
+    );
     // NOLINTEND
 
 public:

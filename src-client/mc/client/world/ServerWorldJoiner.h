@@ -25,6 +25,7 @@ struct PlayerJoinWorldContext;
 namespace Network { struct ServerID; }
 namespace Parties { class IPartyProvider; }
 namespace Social { class IUserManager; }
+namespace Social { class User; }
 namespace World { class ExternalServerWorldList; }
 namespace World { class FriendServerWorldList; }
 namespace World { class IServerURLResolver; }
@@ -104,6 +105,16 @@ public:
         ::std::function<void(::World::JoinServerWorldResult)> onCompleteCallback
     );
 
+    MCAPI void _joinNetworkWorld(
+        ::NetworkWorldInfo&                                                             world,
+        ::World::ServerWorldJoiner::ServerType const                                    serverType,
+        ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> onJoinServerCompleted,
+        ::std::function<void()>                                                         onJoinServerCancelled,
+        ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback
+    );
+
+    MCAPI bool _validateInternetConnection(::Social::User& user) const;
+
     MCAPI void joinExternalNetworkWorld(
         ::std::string const&                                                            id,
         ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> onJoinServerCompleted,
@@ -127,6 +138,8 @@ public:
         ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback,
         ::std::function<void()>                                                         onJoinServerCancelled
     );
+
+    MCAPI ~ServerWorldJoiner();
     // NOLINTEND
 
 public:

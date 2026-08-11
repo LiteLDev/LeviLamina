@@ -48,7 +48,8 @@ public:
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
+        /*override*/;
 
     virtual ::std::string getAdditionalScreenInfo() const /*override*/;
 

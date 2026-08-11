@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class Tag;
 namespace cereal { struct NullType; }
 // clang-format on
 
@@ -65,9 +66,9 @@ public:
 
     virtual bool write(bool value) /*override*/;
 
-    virtual bool write(schar value) /*override*/;
+    virtual bool write(schar) /*override*/;
 
-    virtual bool write(uchar value) /*override*/;
+    virtual bool write(uchar) /*override*/;
 
     virtual bool write(short value) /*override*/;
 
@@ -111,6 +112,8 @@ public:
     // NOLINTBEGIN
     MCNAPI NBTSchemaWriter();
 
+    MCNAPI bool _serializeTag(::std::unique_ptr<::Tag> tag);
+
     MCNAPI ::CompoundTag getSavedCompoundTag();
     // NOLINTEND
 
@@ -127,9 +130,9 @@ public:
 
     MCNAPI bool $write(bool value);
 
-    MCNAPI bool $write(schar value);
+    MCNAPI bool $write(schar);
 
-    MCNAPI bool $write(uchar value);
+    MCNAPI bool $write(uchar);
 
     MCNAPI bool $write(short value);
 

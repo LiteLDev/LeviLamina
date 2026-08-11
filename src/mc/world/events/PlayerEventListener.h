@@ -148,8 +148,16 @@ public:
 
     virtual ::EventResult onPlayerWaxOnWaxOff(::Player& player, int const blockID);
 
+#ifdef LL_PLAT_S
     virtual ::EventResult
     onPlayerKineticDamageDealt(::Player&, ::ActorUniqueID const&, ::DealKineticDamageComponent const&);
+#else // LL_PLAT_C
+    virtual ::EventResult onPlayerKineticDamageDealt(
+        ::Player&                           player,
+        ::ActorUniqueID const&              target,
+        ::DealKineticDamageComponent const& dealKinematicDamageComponent
+    );
+#endif
 
     virtual ::EventResult onEvent(::PlayerNotificationEvent const& event);
 

@@ -32,18 +32,26 @@ public:
     // NOLINTBEGIN
     virtual ~ObjectInspector() /*override*/ = default;
 
-    virtual bool isSameObject(::Scripting::ObjectHandle, ::Scripting::ObjectHandle) const /*override*/;
+    virtual bool isSameObject(::Scripting::ObjectHandle handleA, ::Scripting::ObjectHandle handleB) const /*override*/;
 
-    virtual bool hasBooleanPropertyValue(::Scripting::ObjectHandle, char const*, bool) const /*override*/;
+    virtual bool hasBooleanPropertyValue(::Scripting::ObjectHandle handle, char const* name, bool expectedValue) const
+        /*override*/;
 
     virtual ::std::optional<::Scripting::ResultAny>
-    getPropertyValue(::Scripting::ObjectHandle, char const*, ::entt::meta_type const&) const /*override*/;
+    getPropertyValue(::Scripting::ObjectHandle handle, char const* name, ::entt::meta_type const& expectedType) const
+        /*override*/;
 
-    virtual uint getDataBufferLength(::Scripting::ObjectHandle) const /*override*/;
+    virtual uint getDataBufferLength(::Scripting::ObjectHandle handle) const /*override*/;
 
-    virtual uint getDataBufferByteLength(::Scripting::ObjectHandle) const /*override*/;
+    virtual uint getDataBufferByteLength(::Scripting::ObjectHandle handle) const /*override*/;
 
-    virtual uchar* getDataBufferBytes(::Scripting::ObjectHandle) const /*override*/;
+    virtual uchar* getDataBufferBytes(::Scripting::ObjectHandle handle) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI uint _getPropertyAsSize(::Scripting::ObjectHandle handle, char const* propertyName) const;
     // NOLINTEND
 
 public:

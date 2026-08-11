@@ -30,6 +30,12 @@ public:
     NetworkItemStackDescriptor();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~NetworkItemStackDescriptor() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI NetworkItemStackDescriptor(::NetworkItemStackDescriptor const&);
@@ -51,6 +57,12 @@ public:
     MCAPI void* $ctor(::NetworkItemStackDescriptor const&);
 
     MCAPI void* $ctor(::ItemStack const& item);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
