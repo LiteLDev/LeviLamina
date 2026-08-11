@@ -19,7 +19,7 @@ class SimpleBlockVolume : public ::BlockVolumeBase {
 public:
     // SimpleBlockVolume inner types declare
     // clang-format off
-    class allocator;
+    template<typename T0> class allocator;
     // clang-format on
 
     // SimpleBlockVolume inner types define
@@ -40,6 +40,7 @@ public:
         Intersects = 2,
     };
 
+    template <typename T0>
     class allocator {};
 
     using CornerHandle = uchar;

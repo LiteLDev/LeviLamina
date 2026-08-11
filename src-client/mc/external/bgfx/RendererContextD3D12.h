@@ -21,6 +21,8 @@
 #include "mc/external/bgfx/RendererContextI.h"
 #include "mc/external/bgfx/Resolution.h"
 #include "mc/external/bgfx/ResourceStatesMananger.h"
+#include "mc/external/bgfx/RingBuffer.h"
+#include "mc/external/bgfx/RingBufferAllocator.h"
 #include "mc/external/bgfx/ShaderD3D12.h"
 #include "mc/external/bgfx/SwapChainDesc.h"
 #include "mc/external/bgfx/TextVideoMem.h"
@@ -38,7 +40,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace bgfx { class RingBuffer; }
 namespace bgfx { struct Attachment; }
 namespace bgfx { struct ClearQuad; }
 namespace bgfx { struct Frame; }
@@ -64,7 +65,6 @@ namespace bgfx::d3d12 { struct CommandContextD3D12; }
 namespace bgfx::d3d12 { struct CommandList; }
 namespace bgfx::d3d12 { struct CommandListD3D12; }
 namespace bgfx::d3d12 { struct ResourceCreate; }
-namespace bgfx::d3d12 { struct RingBufferAllocator; }
 namespace bgfx::d3d12 { struct TextureD3D12; }
 // clang-format on
 

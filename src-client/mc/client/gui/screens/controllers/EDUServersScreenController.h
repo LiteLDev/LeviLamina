@@ -11,6 +11,7 @@
 #include "mc/deps/core/threading/BasicLockbox.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/platform/brstd/flat_map.h"
+#include "mc/platform/threading/Mutex.h"
 #include "mc/social/EduResponseError.h"
 
 // auto generated forward declare list
@@ -23,7 +24,6 @@ class PlayScreenModel;
 class UIPropertyBag;
 struct PackManagerContentSource;
 struct ScreenEvent;
-namespace Bedrock::Threading { class Mutex; }
 namespace Json { class Value; }
 namespace Social { struct EduDedicatedServerDetails; }
 // clang-format on

@@ -4,6 +4,7 @@
 
 namespace DataStructures {
 
+template <typename T0, typename T1, int T2>
 class Heap {};
 
 } // namespace DataStructures
