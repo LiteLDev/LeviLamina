@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool AddFrameDependencyDiff(ushort fdiff);
 
-    MCNAPI ::webrtc::ArrayView<ushort const, 18446744073709546905> FrameDependenciesDiffs() const;
+    MCNAPI ::webrtc::ArrayView<ushort const> FrameDependenciesDiffs() const;
 
     MCNAPI ushort FrameId() const;
 

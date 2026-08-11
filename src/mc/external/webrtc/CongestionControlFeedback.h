@@ -56,10 +56,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool Create(
-        uchar*                                                                               buffer,
-        uint64*                                                                              position,
-        uint64                                                                               max_length,
-        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> callback
+        uchar*                                                         buffer,
+        uint64*                                                        position,
+        uint64                                                         max_length,
+        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const>)> callback
     ) const /*override*/;
 
     virtual uint64 BlockLength() const /*override*/;
@@ -83,10 +83,10 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $Create(
-        uchar*                                                                               buffer,
-        uint64*                                                                              position,
-        uint64                                                                               max_length,
-        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> callback
+        uchar*                                                         buffer,
+        uint64*                                                        position,
+        uint64                                                         max_length,
+        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const>)> callback
     ) const;
 
     MCNAPI uint64 $BlockLength() const;

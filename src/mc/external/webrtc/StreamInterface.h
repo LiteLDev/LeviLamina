@@ -29,11 +29,9 @@ public:
 
     virtual ::webrtc::StreamState GetState() const = 0;
 
-    virtual ::webrtc::StreamResult
-    Read(::webrtc::ArrayView<uchar, 18446744073709546905> data, uint64& read, int& error) = 0;
+    virtual ::webrtc::StreamResult Read(::webrtc::ArrayView<uchar> data, uint64& read, int& error) = 0;
 
-    virtual ::webrtc::StreamResult
-    Write(::webrtc::ArrayView<uchar const, 18446744073709546905> data, uint64& written, int& error) = 0;
+    virtual ::webrtc::StreamResult Write(::webrtc::ArrayView<uchar const> data, uint64& written, int& error) = 0;
 
     virtual void Close() = 0;
 
@@ -45,8 +43,7 @@ public:
     // NOLINTBEGIN
     MCNAPI StreamInterface();
 
-    MCNAPI ::webrtc::StreamResult
-    WriteAll(::webrtc::ArrayView<uchar const, 18446744073709546905> data, uint64& written, int& error);
+    MCNAPI ::webrtc::StreamResult WriteAll(::webrtc::ArrayView<uchar const> data, uint64& written, int& error);
     // NOLINTEND
 
 public:

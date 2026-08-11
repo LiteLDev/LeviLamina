@@ -43,7 +43,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::optional<::dcsctp::RestartOfAnAssociationWithNewAddressesCause>
-    Parse(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
+    Parse(::webrtc::ArrayView<uchar const> data);
     // NOLINTEND
 
 public:

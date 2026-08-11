@@ -57,10 +57,7 @@ public:
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>>
     GeneratePadding(::webrtc::DataSize size) /*override*/;
 
-    virtual void OnAbortedRetransmissions(
-        uint                                                    ssrc,
-        ::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers
-    ) /*override*/;
+    virtual void OnAbortedRetransmissions(uint ssrc, ::webrtc::ArrayView<ushort const> sequence_numbers) /*override*/;
 
     virtual ::std::optional<uint> GetRtxSsrcForMedia(uint ssrc) const /*override*/;
 
@@ -115,8 +112,7 @@ public:
 
     MCNAPI ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> $GeneratePadding(::webrtc::DataSize size);
 
-    MCNAPI void
-    $OnAbortedRetransmissions(uint ssrc, ::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers);
+    MCNAPI void $OnAbortedRetransmissions(uint ssrc, ::webrtc::ArrayView<ushort const> sequence_numbers);
 
     MCNAPI ::std::optional<uint> $GetRtxSsrcForMedia(uint ssrc) const;
 

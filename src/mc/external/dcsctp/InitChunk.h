@@ -45,8 +45,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::dcsctp::InitChunk>
-    Parse(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
+    MCNAPI static ::std::optional<::dcsctp::InitChunk> Parse(::webrtc::ArrayView<uchar const> data);
     // NOLINTEND
 
 public:

@@ -43,19 +43,17 @@ public:
         // NOLINTBEGIN
         virtual ~TransportForMediaChannels() /*override*/ = default;
 
-        virtual bool
-        SendRtp(::webrtc::ArrayView<uchar const, 18446744073709546905>, ::webrtc::PacketOptions const&) /*override*/;
+        virtual bool SendRtp(::webrtc::ArrayView<uchar const>, ::webrtc::PacketOptions const&) /*override*/;
 
-        virtual bool
-        SendRtcp(::webrtc::ArrayView<uchar const, 18446744073709546905>, ::webrtc::PacketOptions const&) /*override*/;
+        virtual bool SendRtcp(::webrtc::ArrayView<uchar const>, ::webrtc::PacketOptions const&) /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI bool $SendRtp(::webrtc::ArrayView<uchar const, 18446744073709546905>, ::webrtc::PacketOptions const&);
+        MCNAPI bool $SendRtp(::webrtc::ArrayView<uchar const>, ::webrtc::PacketOptions const&);
 
-        MCNAPI bool $SendRtcp(::webrtc::ArrayView<uchar const, 18446744073709546905>, ::webrtc::PacketOptions const&);
+        MCNAPI bool $SendRtcp(::webrtc::ArrayView<uchar const>, ::webrtc::PacketOptions const&);
 
 
         // NOLINTEND

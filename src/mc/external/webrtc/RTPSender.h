@@ -58,8 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend>
-    AllocatePacket(::webrtc::ArrayView<uint const, 18446744073709546905> csrcs);
+    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> AllocatePacket(::webrtc::ArrayView<uint const> csrcs);
 
     MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> BuildRtxPacket(::webrtc::RtpPacketToSend const& packet);
 
@@ -137,7 +136,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::ArrayView<::webrtc::RtpExtensionSize const, 18446744073709546905> FecExtensionSizes();
+    MCNAPI static ::webrtc::ArrayView<::webrtc::RtpExtensionSize const> FecExtensionSizes();
     // NOLINTEND
 
 public:

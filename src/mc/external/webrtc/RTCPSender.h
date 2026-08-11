@@ -109,7 +109,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16>   mUnk6ce37f;
+        ::ll::UntypedStorage<8, 16>   mUnke886bc;
         ::ll::UntypedStorage<8, 8>    mUnkf2560e;
         ::ll::UntypedStorage<8, 8>    mUnk151275;
         ::ll::UntypedStorage<1, 1500> mUnk3685ce;
@@ -124,10 +124,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI PacketSender(
-            ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> callback,
-            uint64                                                                               max_packet_size
-        );
+        MCNAPI
+        PacketSender(::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const>)> callback, uint64 max_packet_size);
 
         MCNAPI ~PacketSender();
         // NOLINTEND
@@ -135,10 +133,8 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(
-            ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> callback,
-            uint64                                                                               max_packet_size
-        );
+        MCNAPI void*
+        $ctor(::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const>)> callback, uint64 max_packet_size);
         // NOLINTEND
 
     public:
@@ -168,7 +164,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>  mUnkf0921b;
-        ::ll::UntypedStorage<8, 16> mUnk61cc8e;
+        ::ll::UntypedStorage<8, 16> mUnk219824;
         ::ll::UntypedStorage<8, 8>  mUnk645408;
         // NOLINTEND
 
@@ -261,10 +257,10 @@ public:
     CheckAndUpdateLayerStructure(::webrtc::VideoBitrateAllocation const& bitrate) const;
 
     MCNAPI ::std::optional<int> ComputeCompoundRTCPPacket(
-        ::webrtc::RTCPSender::FeedbackState const&              feedback_state,
-        ::webrtc::RTCPPacketType                                packet_type,
-        ::webrtc::ArrayView<ushort const, 18446744073709546905> nacks,
-        ::webrtc::RTCPSender::PacketSender&                     sender
+        ::webrtc::RTCPSender::FeedbackState const& feedback_state,
+        ::webrtc::RTCPPacketType                   packet_type,
+        ::webrtc::ArrayView<ushort const>          nacks,
+        ::webrtc::RTCPSender::PacketSender&        sender
     );
 
     MCNAPI bool ConsumeFlag(uint type, bool forced);
@@ -289,9 +285,9 @@ public:
     );
 
     MCNAPI int SendRTCP(
-        ::webrtc::RTCPSender::FeedbackState const&              feedback_state,
-        ::webrtc::RTCPPacketType                                packet_type,
-        ::webrtc::ArrayView<ushort const, 18446744073709546905> nacks
+        ::webrtc::RTCPSender::FeedbackState const& feedback_state,
+        ::webrtc::RTCPPacketType                   packet_type,
+        ::webrtc::ArrayView<ushort const>          nacks
     );
 
     MCNAPI bool Sending() const;

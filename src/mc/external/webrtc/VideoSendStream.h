@@ -168,7 +168,7 @@ public:
 
     virtual void SetStats(::webrtc::VideoSendStream::Stats const&);
 
-    virtual void SetCsrcs(::webrtc::ArrayView<uint const, 18446744073709546905>) = 0;
+    virtual void SetCsrcs(::webrtc::ArrayView<uint const>) = 0;
 
     virtual void GenerateKeyFrame(::std::vector<::std::string> const&) = 0;
 

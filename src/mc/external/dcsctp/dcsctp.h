@@ -17,7 +17,7 @@ namespace dcsctp {
 // NOLINTBEGIN
 MCNAPI ::std::string ErrorCausesToString(::dcsctp::Parameters const& parameters);
 
-MCNAPI uint GenerateCrc32C(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
+MCNAPI uint GenerateCrc32C(::webrtc::ArrayView<uchar const> data);
 
 MCNAPI ::std::string_view ToString(::dcsctp::ErrorKind error);
 

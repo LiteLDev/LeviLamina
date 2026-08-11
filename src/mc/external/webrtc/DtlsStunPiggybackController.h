@@ -26,7 +26,7 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnkdb65ce;
     ::ll::UntypedStorage<1, 1>  mUnka909f2;
     ::ll::UntypedStorage<8, 32> mUnk199e2d;
-    ::ll::UntypedStorage<8, 32> mUnkbb5977;
+    ::ll::UntypedStorage<8, 32> mUnk7473ae;
     ::ll::UntypedStorage<8, 32> mUnk3699f4;
     ::ll::UntypedStorage<8, 24> mUnka21109;
     ::ll::UntypedStorage<4, 4>  mUnkea224e;
@@ -42,10 +42,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void CapturePacket(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
+    MCNAPI void CapturePacket(::webrtc::ArrayView<uchar const> data);
 
     MCNAPI explicit DtlsStunPiggybackController(
-        ::absl::AnyInvocable<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> dtls_data_callback
+        ::absl::AnyInvocable<void(::webrtc::ArrayView<uchar const>)> dtls_data_callback
     );
 
     MCNAPI void Flush();
@@ -54,10 +54,8 @@ public:
 
     MCNAPI ::std::optional<::std::string_view> GetDataToPiggyback(::webrtc::StunMessageType stun_message_type);
 
-    MCNAPI void ReportDataPiggybacked(
-        ::std::optional<::webrtc::ArrayView<uchar, 18446744073709546905>> data,
-        ::std::optional<::std::vector<uint>>                              acks
-    );
+    MCNAPI void
+    ReportDataPiggybacked(::std::optional<::webrtc::ArrayView<uchar>> data, ::std::optional<::std::vector<uint>> acks);
 
     MCNAPI void SetDtlsFailed();
 
@@ -69,8 +67,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::absl::AnyInvocable<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> dtls_data_callback);
+    MCNAPI void* $ctor(::absl::AnyInvocable<void(::webrtc::ArrayView<uchar const>)> dtls_data_callback);
     // NOLINTEND
 
 public:

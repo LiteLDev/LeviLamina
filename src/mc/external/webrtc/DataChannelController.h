@@ -109,7 +109,7 @@ public:
     MCNAPI ::std::optional<::webrtc::DataChannelEventObserverInterface::Message> BuildObserverMessage(
         ::webrtc::StreamId                                              sid,
         ::webrtc::DataMessageType                                       type,
-        ::webrtc::ArrayView<uchar const, 18446744073709546905>          payload,
+        ::webrtc::ArrayView<uchar const>                                payload,
         ::webrtc::DataChannelEventObserverInterface::Message::Direction direction
     ) const;
 

@@ -11,10 +11,9 @@ class TransportSequenceNumber {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool
-    Parse(::webrtc::ArrayView<uchar const, 18446744073709546905> data, ushort* transport_sequence_number);
+    MCNAPI static bool Parse(::webrtc::ArrayView<uchar const> data, ushort* transport_sequence_number);
 
-    MCNAPI static bool Write(::webrtc::ArrayView<uchar, 18446744073709546905> data, ushort transport_sequence_number);
+    MCNAPI static bool Write(::webrtc::ArrayView<uchar> data, ushort transport_sequence_number);
     // NOLINTEND
 };
 

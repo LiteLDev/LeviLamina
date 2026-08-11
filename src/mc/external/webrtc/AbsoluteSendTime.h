@@ -11,7 +11,7 @@ class AbsoluteSendTime {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool Write(::webrtc::ArrayView<uchar, 18446744073709546905> data, uint time_24bits);
+    MCNAPI static bool Write(::webrtc::ArrayView<uchar> data, uint time_24bits);
     // NOLINTEND
 };
 

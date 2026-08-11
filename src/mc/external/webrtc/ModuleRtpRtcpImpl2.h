@@ -88,7 +88,7 @@ public:
     // NOLINTBEGIN
     virtual ~ModuleRtpRtcpImpl2() /*override*/;
 
-    virtual void IncomingRtcpPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> rtcp_packet) /*override*/;
+    virtual void IncomingRtcpPacket(::webrtc::ArrayView<uchar const> rtcp_packet) /*override*/;
 
     virtual void SetRemoteSSRC(uint ssrc) /*override*/;
 
@@ -178,17 +178,15 @@ public:
 
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> FetchFecPackets() /*override*/;
 
-    virtual void
-    OnAbortedRetransmissions(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) /*override*/;
+    virtual void OnAbortedRetransmissions(::webrtc::ArrayView<ushort const> sequence_numbers) /*override*/;
 
-    virtual void
-    OnPacketsAcknowledged(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) /*override*/;
+    virtual void OnPacketsAcknowledged(::webrtc::ArrayView<ushort const> sequence_numbers) /*override*/;
 
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>>
     GeneratePadding(uint64 target_size_bytes) /*override*/;
 
     virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-    GetSentRtpPacketInfos(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) const /*override*/;
+    GetSentRtpPacketInfos(::webrtc::ArrayView<ushort const> sequence_numbers) const /*override*/;
 
     virtual uint64 ExpectedPerPacketOverhead() const /*override*/;
 
@@ -247,9 +245,8 @@ public:
 
     virtual void OnReceivedNack(::std::vector<ushort> const& nack_sequence_numbers) /*override*/;
 
-    virtual void OnReceivedRtcpReportBlocks(
-        ::webrtc::ArrayView<::webrtc::ReportBlockData const, 18446744073709546905> report_blocks
-    ) /*override*/;
+    virtual void
+    OnReceivedRtcpReportBlocks(::webrtc::ArrayView<::webrtc::ReportBlockData const> report_blocks) /*override*/;
 
     virtual void OnRequestSendReport() /*override*/;
 
@@ -296,7 +293,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $IncomingRtcpPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> rtcp_packet);
+    MCNAPI void $IncomingRtcpPacket(::webrtc::ArrayView<uchar const> rtcp_packet);
 
     MCNAPI void $SetRemoteSSRC(uint ssrc);
 
@@ -381,14 +378,14 @@ public:
 
     MCNAPI ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> $FetchFecPackets();
 
-    MCNAPI void $OnAbortedRetransmissions(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers);
+    MCNAPI void $OnAbortedRetransmissions(::webrtc::ArrayView<ushort const> sequence_numbers);
 
-    MCNAPI void $OnPacketsAcknowledged(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers);
+    MCNAPI void $OnPacketsAcknowledged(::webrtc::ArrayView<ushort const> sequence_numbers);
 
     MCNAPI ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> $GeneratePadding(uint64 target_size_bytes);
 
     MCNAPI ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-    $GetSentRtpPacketInfos(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) const;
+    $GetSentRtpPacketInfos(::webrtc::ArrayView<ushort const> sequence_numbers) const;
 
     MCNAPI uint64 $ExpectedPerPacketOverhead() const;
 
@@ -446,9 +443,7 @@ public:
 
     MCNAPI void $OnReceivedNack(::std::vector<ushort> const& nack_sequence_numbers);
 
-    MCNAPI void $OnReceivedRtcpReportBlocks(
-        ::webrtc::ArrayView<::webrtc::ReportBlockData const, 18446744073709546905> report_blocks
-    );
+    MCNAPI void $OnReceivedRtcpReportBlocks(::webrtc::ArrayView<::webrtc::ReportBlockData const> report_blocks);
 
     MCNAPI void $OnRequestSendReport();
 

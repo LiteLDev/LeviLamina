@@ -131,7 +131,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void IncomingRtcpPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> rtcp_packet) = 0;
+    virtual void IncomingRtcpPacket(::webrtc::ArrayView<uchar const> rtcp_packet) = 0;
 
     virtual void SetRemoteSSRC(uint ssrc) = 0;
 
@@ -229,14 +229,14 @@ public:
 
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> FetchFecPackets() = 0;
 
-    virtual void OnAbortedRetransmissions(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) = 0;
+    virtual void OnAbortedRetransmissions(::webrtc::ArrayView<ushort const> sequence_numbers) = 0;
 
-    virtual void OnPacketsAcknowledged(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) = 0;
+    virtual void OnPacketsAcknowledged(::webrtc::ArrayView<ushort const> sequence_numbers) = 0;
 
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> GeneratePadding(uint64 target_size_bytes) = 0;
 
     virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-    GetSentRtpPacketInfos(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) const = 0;
+    GetSentRtpPacketInfos(::webrtc::ArrayView<ushort const> sequence_numbers) const = 0;
 
     virtual uint64 ExpectedPerPacketOverhead() const = 0;
 

@@ -80,7 +80,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1>  mUnkfc7a17;
         ::ll::UntypedStorage<1, 1>  mUnk5a7a37;
-        ::ll::UntypedStorage<8, 16> mUnk8fc314;
+        ::ll::UntypedStorage<8, 16> mUnk8286f5;
         // NOLINTEND
 
     public:
@@ -108,7 +108,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::optional<::dcsctp::SctpPacket>
-    Parse(::webrtc::ArrayView<uchar const, 18446744073709546905> data, ::dcsctp::DcSctpOptions const& options);
+    Parse(::webrtc::ArrayView<uchar const> data, ::dcsctp::DcSctpOptions const& options);
     // NOLINTEND
 };
 

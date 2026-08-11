@@ -17,11 +17,9 @@ class ColorSpaceExtension {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool
-    Write(::webrtc::ArrayView<uchar, 18446744073709546905> data, ::webrtc::ColorSpace const& color_space);
+    MCNAPI static bool Write(::webrtc::ArrayView<uchar> data, ::webrtc::ColorSpace const& color_space);
 
-    MCNAPI static uint64
-    WriteHdrMetadata(::webrtc::ArrayView<uchar, 18446744073709546905> data, ::webrtc::HdrMetadata const& hdr_metadata);
+    MCNAPI static uint64 WriteHdrMetadata(::webrtc::ArrayView<uchar> data, ::webrtc::HdrMetadata const& hdr_metadata);
     // NOLINTEND
 };
 

@@ -51,7 +51,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static uint GetSource(uint ssrc, ::webrtc::ArrayView<uint const, 18446744073709546905> csrcs);
+    MCNAPI static uint GetSource(uint ssrc, ::webrtc::ArrayView<uint const> csrcs);
     // NOLINTEND
 
 public:

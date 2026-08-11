@@ -219,13 +219,10 @@ public:
     virtual void
     SwitchSelectedConnection(::webrtc::Connection const* new_connection, ::webrtc::IceSwitchReason reason) /*override*/;
 
-    virtual void ForgetLearnedStateForConnections(
-        ::webrtc::ArrayView<::webrtc::Connection const* const, 18446744073709546905> connections
-    ) /*override*/;
+    virtual void
+    ForgetLearnedStateForConnections(::webrtc::ArrayView<::webrtc::Connection const* const> connections) /*override*/;
 
-    virtual bool PruneConnections(
-        ::webrtc::ArrayView<::webrtc::Connection const* const, 18446744073709546905> connections
-    ) /*override*/;
+    virtual bool PruneConnections(::webrtc::ArrayView<::webrtc::Connection const* const> connections) /*override*/;
 
     virtual ::std::optional<::webrtc::NetworkRoute> network_route() const /*override*/;
 
@@ -447,12 +444,9 @@ public:
 
     MCNAPI void $SwitchSelectedConnection(::webrtc::Connection const* new_connection, ::webrtc::IceSwitchReason reason);
 
-    MCNAPI void $ForgetLearnedStateForConnections(
-        ::webrtc::ArrayView<::webrtc::Connection const* const, 18446744073709546905> connections
-    );
+    MCNAPI void $ForgetLearnedStateForConnections(::webrtc::ArrayView<::webrtc::Connection const* const> connections);
 
-    MCNAPI bool
-    $PruneConnections(::webrtc::ArrayView<::webrtc::Connection const* const, 18446744073709546905> connections);
+    MCNAPI bool $PruneConnections(::webrtc::ArrayView<::webrtc::Connection const* const> connections);
 
     MCNAPI ::std::optional<::webrtc::NetworkRoute> $network_route() const;
 

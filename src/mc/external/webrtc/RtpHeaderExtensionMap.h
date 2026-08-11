@@ -37,9 +37,7 @@ public:
 
     MCNAPI RtpHeaderExtensionMap();
 
-    MCNAPI explicit RtpHeaderExtensionMap(
-        ::webrtc::ArrayView<::webrtc::RtpExtension const, 18446744073709546905> extensions
-    );
+    MCNAPI explicit RtpHeaderExtensionMap(::webrtc::ArrayView<::webrtc::RtpExtension const> extensions);
 
     MCNAPI explicit RtpHeaderExtensionMap(bool extmap_allow_mixed);
     // NOLINTEND
@@ -49,7 +47,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::webrtc::ArrayView<::webrtc::RtpExtension const, 18446744073709546905> extensions);
+    MCNAPI void* $ctor(::webrtc::ArrayView<::webrtc::RtpExtension const> extensions);
 
     MCNAPI void* $ctor(bool extmap_allow_mixed);
     // NOLINTEND

@@ -27,10 +27,9 @@ public:
     // NOLINTBEGIN
     virtual ~DcSctpSocketCallbacks() = default;
 
-    virtual void SendPacket(::webrtc::ArrayView<uchar const, 18446744073709546905>);
+    virtual void SendPacket(::webrtc::ArrayView<uchar const>);
 
-    virtual ::dcsctp::SendPacketStatus
-    SendPacketWithStatus(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
+    virtual ::dcsctp::SendPacketStatus SendPacketWithStatus(::webrtc::ArrayView<uchar const> data);
 
     virtual ::std::unique_ptr<::dcsctp::Timeout> CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision);
 
@@ -59,19 +58,16 @@ public:
     virtual void OnConnectionRestarted() = 0;
 
     virtual void OnStreamsResetFailed(
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
-                           outgoing_streams,
-        ::std::string_view reason
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams,
+        ::std::string_view                                                              reason
     ) = 0;
 
     virtual void OnStreamsResetPerformed(
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
-            outgoing_streams
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
     ) = 0;
 
     virtual void OnIncomingStreamsReset(
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
-            incoming_streams
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> incoming_streams
     ) = 0;
 
     virtual void OnBufferedAmountLow(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id);
@@ -90,10 +86,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $SendPacket(::webrtc::ArrayView<uchar const, 18446744073709546905>);
+    MCNAPI void $SendPacket(::webrtc::ArrayView<uchar const>);
 
-    MCNAPI ::dcsctp::SendPacketStatus
-    $SendPacketWithStatus(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
+    MCNAPI ::dcsctp::SendPacketStatus $SendPacketWithStatus(::webrtc::ArrayView<uchar const> data);
 
     MCNAPI ::std::unique_ptr<::dcsctp::Timeout> $CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision);
 

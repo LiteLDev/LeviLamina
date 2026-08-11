@@ -17,8 +17,7 @@ class RemoteEstimateSerializer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool
-    Parse(::webrtc::ArrayView<uchar const, 18446744073709546905> src, ::webrtc::NetworkStateEstimate* target) const = 0;
+    virtual bool Parse(::webrtc::ArrayView<uchar const> src, ::webrtc::NetworkStateEstimate* target) const = 0;
 
     virtual ::webrtc::BufferT<uchar, 0> Serialize(::webrtc::NetworkStateEstimate const& src) const = 0;
 

@@ -77,7 +77,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void Clear();
 
-    MCNAPI void CullAcknowledgedPackets(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers);
+    MCNAPI void CullAcknowledgedPackets(::webrtc::ArrayView<ushort const> sequence_numbers);
 
     MCNAPI void CullOldPackets();
 

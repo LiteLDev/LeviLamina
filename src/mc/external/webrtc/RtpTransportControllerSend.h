@@ -196,8 +196,8 @@ public:
     OnReceiverEstimatedMaxBitrate(::webrtc::Timestamp receive_time, ::webrtc::DataRate bitrate) /*override*/;
 
     virtual void OnReport(
-        ::webrtc::Timestamp                                                        receive_time,
-        ::webrtc::ArrayView<::webrtc::ReportBlockData const, 18446744073709546905> report_blocks
+        ::webrtc::Timestamp                                  receive_time,
+        ::webrtc::ArrayView<::webrtc::ReportBlockData const> report_blocks
     ) /*override*/;
 
     virtual void OnRttUpdate(::webrtc::Timestamp receive_time, ::webrtc::TimeDelta rtt) /*override*/;
@@ -330,10 +330,8 @@ public:
 
     MCNAPI void $OnReceiverEstimatedMaxBitrate(::webrtc::Timestamp receive_time, ::webrtc::DataRate bitrate);
 
-    MCNAPI void $OnReport(
-        ::webrtc::Timestamp                                                        receive_time,
-        ::webrtc::ArrayView<::webrtc::ReportBlockData const, 18446744073709546905> report_blocks
-    );
+    MCNAPI void
+    $OnReport(::webrtc::Timestamp receive_time, ::webrtc::ArrayView<::webrtc::ReportBlockData const> report_blocks);
 
     MCNAPI void $OnRttUpdate(::webrtc::Timestamp receive_time, ::webrtc::TimeDelta rtt);
 

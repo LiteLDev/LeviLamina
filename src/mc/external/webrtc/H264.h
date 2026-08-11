@@ -13,8 +13,7 @@ namespace webrtc::H264 { struct NaluIndex; }
 namespace webrtc::H264 {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::vector<::webrtc::H264::NaluIndex>
-FindNaluIndices(::webrtc::ArrayView<uchar const, 18446744073709546905> buffer);
+MCNAPI ::std::vector<::webrtc::H264::NaluIndex> FindNaluIndices(::webrtc::ArrayView<uchar const> buffer);
 // NOLINTEND
 
 } // namespace webrtc::H264

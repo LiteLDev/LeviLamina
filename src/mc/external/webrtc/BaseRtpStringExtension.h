@@ -11,9 +11,9 @@ class BaseRtpStringExtension {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool Parse(::webrtc::ArrayView<uchar const, 18446744073709546905> data, ::std::string* str);
+    MCNAPI static bool Parse(::webrtc::ArrayView<uchar const> data, ::std::string* str);
 
-    MCNAPI static bool Write(::webrtc::ArrayView<uchar, 18446744073709546905> data, ::std::string_view str);
+    MCNAPI static bool Write(::webrtc::ArrayView<uchar> data, ::std::string_view str);
     // NOLINTEND
 };
 

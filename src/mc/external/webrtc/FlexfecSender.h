@@ -74,14 +74,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI FlexfecSender(
-        ::webrtc::Environment const&                                                env,
-        int                                                                         payload_type,
-        uint                                                                        ssrc,
-        uint                                                                        protected_media_ssrc,
-        ::std::string_view                                                          mid,
-        ::std::vector<::webrtc::RtpExtension> const&                                rtp_header_extensions,
-        ::webrtc::ArrayView<::webrtc::RtpExtensionSize const, 18446744073709546905> extension_sizes,
-        ::webrtc::RtpState const*                                                   rtp_state
+        ::webrtc::Environment const&                          env,
+        int                                                   payload_type,
+        uint                                                  ssrc,
+        uint                                                  protected_media_ssrc,
+        ::std::string_view                                    mid,
+        ::std::vector<::webrtc::RtpExtension> const&          rtp_header_extensions,
+        ::webrtc::ArrayView<::webrtc::RtpExtensionSize const> extension_sizes,
+        ::webrtc::RtpState const*                             rtp_state
     );
     // NOLINTEND
 
@@ -89,14 +89,14 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::webrtc::Environment const&                                                env,
-        int                                                                         payload_type,
-        uint                                                                        ssrc,
-        uint                                                                        protected_media_ssrc,
-        ::std::string_view                                                          mid,
-        ::std::vector<::webrtc::RtpExtension> const&                                rtp_header_extensions,
-        ::webrtc::ArrayView<::webrtc::RtpExtensionSize const, 18446744073709546905> extension_sizes,
-        ::webrtc::RtpState const*                                                   rtp_state
+        ::webrtc::Environment const&                          env,
+        int                                                   payload_type,
+        uint                                                  ssrc,
+        uint                                                  protected_media_ssrc,
+        ::std::string_view                                    mid,
+        ::std::vector<::webrtc::RtpExtension> const&          rtp_header_extensions,
+        ::webrtc::ArrayView<::webrtc::RtpExtensionSize const> extension_sizes,
+        ::webrtc::RtpState const*                             rtp_state
     );
     // NOLINTEND
 

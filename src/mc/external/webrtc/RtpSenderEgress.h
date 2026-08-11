@@ -187,11 +187,11 @@ public:
     MCNAPI ::webrtc::RtpSendRates GetSendRates(::webrtc::Timestamp now) const;
 
     MCNAPI ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-    GetSentRtpPacketInfos(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) const;
+    GetSentRtpPacketInfos(::webrtc::ArrayView<ushort const> sequence_numbers) const;
 
     MCNAPI bool MediaHasBeenSent() const;
 
-    MCNAPI void OnAbortedRetransmissions(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers);
+    MCNAPI void OnAbortedRetransmissions(::webrtc::ArrayView<ushort const> sequence_numbers);
 
     MCNAPI void OnBatchComplete();
 

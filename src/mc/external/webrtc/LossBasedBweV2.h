@@ -283,8 +283,7 @@ public:
 
     MCNAPI explicit LossBasedBweV2(::webrtc::FieldTrialsView const* key_value_config);
 
-    MCNAPI bool
-    PushBackObservation(::webrtc::ArrayView<::webrtc::PacketResult const, 18446744073709546905> packet_results);
+    MCNAPI bool PushBackObservation(::webrtc::ArrayView<::webrtc::PacketResult const> packet_results);
 
     MCNAPI bool ReadyToUseInStartPhase() const;
 
@@ -293,9 +292,9 @@ public:
     MCNAPI void SetMinMaxBitrate(::webrtc::DataRate min_bitrate, ::webrtc::DataRate max_bitrate);
 
     MCNAPI void UpdateBandwidthEstimate(
-        ::webrtc::ArrayView<::webrtc::PacketResult const, 18446744073709546905> packet_results,
-        ::webrtc::DataRate                                                      delay_based_estimate,
-        bool                                                                    in_alr
+        ::webrtc::ArrayView<::webrtc::PacketResult const> packet_results,
+        ::webrtc::DataRate                                delay_based_estimate,
+        bool                                              in_alr
     );
 
     MCNAPI bool UseInStartPhase() const;

@@ -509,7 +509,7 @@ public:
 
     virtual int AnalyzeReverseStream(float const* const*, ::webrtc::StreamConfig const&) = 0;
 
-    virtual bool GetLinearAecOutput(::webrtc::ArrayView<::std::array<float, 160>, 18446744073709546905>) const = 0;
+    virtual bool GetLinearAecOutput(::webrtc::ArrayView<::std::array<float, 160>>) const = 0;
 
     virtual void set_stream_analog_level(int) = 0;
 

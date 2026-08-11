@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     virtual ~DcSctpSocketInterface() = default;
 
-    virtual void ReceivePacket(::webrtc::ArrayView<uchar const, 18446744073709546905> data) = 0;
+    virtual void ReceivePacket(::webrtc::ArrayView<uchar const> data) = 0;
 
     virtual uint64 MessagesReady() const = 0;
 
@@ -63,15 +63,11 @@ public:
 
     virtual ::dcsctp::SendStatus Send(::dcsctp::DcSctpMessage message, ::dcsctp::SendOptions const& send_options) = 0;
 
-    virtual ::std::vector<::dcsctp::SendStatus> SendMany(
-        ::webrtc::ArrayView<::dcsctp::DcSctpMessage, 18446744073709546905> messages,
-        ::dcsctp::SendOptions const&                                       send_options
-    ) = 0;
+    virtual ::std::vector<::dcsctp::SendStatus>
+    SendMany(::webrtc::ArrayView<::dcsctp::DcSctpMessage> messages, ::dcsctp::SendOptions const& send_options) = 0;
 
-    virtual ::dcsctp::ResetStreamsStatus ResetStreams(
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
-            outgoing_streams
-    ) = 0;
+    virtual ::dcsctp::ResetStreamsStatus
+    ResetStreams(::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams) = 0;
 
     virtual uint64 buffered_amount(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const = 0;
 

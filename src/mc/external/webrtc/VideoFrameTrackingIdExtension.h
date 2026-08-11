@@ -11,7 +11,7 @@ class VideoFrameTrackingIdExtension {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool Write(::webrtc::ArrayView<uchar, 18446744073709546905> data, ushort video_frame_tracking_id);
+    MCNAPI static bool Write(::webrtc::ArrayView<uchar> data, ushort video_frame_tracking_id);
     // NOLINTEND
 };
 

@@ -85,10 +85,8 @@ public:
 
     virtual void SetServerRole(::webrtc::SSLRole role) /*override*/;
 
-    virtual ::webrtc::SSLPeerCertificateDigestError SetPeerCertificateDigest(
-        ::std::string_view                                     digest_alg,
-        ::webrtc::ArrayView<uchar const, 18446744073709546905> digest_val
-    ) /*override*/;
+    virtual ::webrtc::SSLPeerCertificateDigestError
+    SetPeerCertificateDigest(::std::string_view digest_alg, ::webrtc::ArrayView<uchar const> digest_val) /*override*/;
 
     virtual ::std::unique_ptr<::webrtc::SSLCertChain> GetPeerSSLCertChain() const /*override*/;
 
@@ -102,11 +100,10 @@ public:
 
     virtual void SetMTU(int mtu) /*override*/;
 
-    virtual ::webrtc::StreamResult
-    Read(::webrtc::ArrayView<uchar, 18446744073709546905> data, uint64& read, int& error) /*override*/;
+    virtual ::webrtc::StreamResult Read(::webrtc::ArrayView<uchar> data, uint64& read, int& error) /*override*/;
 
     virtual ::webrtc::StreamResult
-    Write(::webrtc::ArrayView<uchar const, 18446744073709546905> data, uint64& written, int& error) /*override*/;
+    Write(::webrtc::ArrayView<uchar const> data, uint64& written, int& error) /*override*/;
 
     virtual void Close() /*override*/;
 
@@ -192,10 +189,8 @@ public:
 
     MCNAPI void $SetServerRole(::webrtc::SSLRole role);
 
-    MCNAPI ::webrtc::SSLPeerCertificateDigestError $SetPeerCertificateDigest(
-        ::std::string_view                                     digest_alg,
-        ::webrtc::ArrayView<uchar const, 18446744073709546905> digest_val
-    );
+    MCNAPI ::webrtc::SSLPeerCertificateDigestError
+    $SetPeerCertificateDigest(::std::string_view digest_alg, ::webrtc::ArrayView<uchar const> digest_val);
 
     MCNAPI ::std::unique_ptr<::webrtc::SSLCertChain> $GetPeerSSLCertChain() const;
 
@@ -209,11 +204,9 @@ public:
 
     MCNAPI void $SetMTU(int mtu);
 
-    MCNAPI ::webrtc::StreamResult
-    $Read(::webrtc::ArrayView<uchar, 18446744073709546905> data, uint64& read, int& error);
+    MCNAPI ::webrtc::StreamResult $Read(::webrtc::ArrayView<uchar> data, uint64& read, int& error);
 
-    MCNAPI ::webrtc::StreamResult
-    $Write(::webrtc::ArrayView<uchar const, 18446744073709546905> data, uint64& written, int& error);
+    MCNAPI ::webrtc::StreamResult $Write(::webrtc::ArrayView<uchar const> data, uint64& written, int& error);
 
     MCNAPI void $Close();
 

@@ -18,8 +18,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static uint64 ValueSize(::webrtc::AbsoluteCaptureTime const& extension);
 
-    MCNAPI static bool
-    Write(::webrtc::ArrayView<uchar, 18446744073709546905> data, ::webrtc::AbsoluteCaptureTime const& extension);
+    MCNAPI static bool Write(::webrtc::ArrayView<uchar> data, ::webrtc::AbsoluteCaptureTime const& extension);
     // NOLINTEND
 };
 

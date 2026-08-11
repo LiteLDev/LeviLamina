@@ -56,10 +56,8 @@ public:
 
     virtual int StartSSL() = 0;
 
-    virtual ::webrtc::SSLPeerCertificateDigestError SetPeerCertificateDigest(
-        ::std::string_view                                     digest_alg,
-        ::webrtc::ArrayView<uchar const, 18446744073709546905> digest_val
-    ) = 0;
+    virtual ::webrtc::SSLPeerCertificateDigestError
+    SetPeerCertificateDigest(::std::string_view digest_alg, ::webrtc::ArrayView<uchar const> digest_val) = 0;
 
     virtual bool SetPeerCertificateDigest(
         ::std::string_view                       digest_alg,

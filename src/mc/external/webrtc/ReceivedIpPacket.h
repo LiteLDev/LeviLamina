@@ -26,7 +26,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk7d5ad5;
+    ::ll::UntypedStorage<8, 16> mUnka482ec;
     ::ll::UntypedStorage<8, 16> mUnkb88101;
     ::ll::UntypedStorage<8, 8>  mUnk7504b1;
     ::ll::UntypedStorage<4, 4>  mUnk765430;
@@ -45,11 +45,11 @@ public:
     MCNAPI ::webrtc::ReceivedIpPacket CopyAndSet(::webrtc::ReceivedIpPacket::DecryptionInfo decryption_info) const;
 
     MCNAPI ReceivedIpPacket(
-        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload,
-        ::webrtc::SocketAddress const&                         source_address,
-        ::std::optional<::webrtc::Timestamp>                   arrival_time,
-        ::webrtc::EcnMarking                                   ecn,
-        ::webrtc::ReceivedIpPacket::DecryptionInfo             decryption
+        ::webrtc::ArrayView<uchar const>           payload,
+        ::webrtc::SocketAddress const&             source_address,
+        ::std::optional<::webrtc::Timestamp>       arrival_time,
+        ::webrtc::EcnMarking                       ecn,
+        ::webrtc::ReceivedIpPacket::DecryptionInfo decryption
     );
     // NOLINTEND
 
@@ -68,11 +68,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload,
-        ::webrtc::SocketAddress const&                         source_address,
-        ::std::optional<::webrtc::Timestamp>                   arrival_time,
-        ::webrtc::EcnMarking                                   ecn,
-        ::webrtc::ReceivedIpPacket::DecryptionInfo             decryption
+        ::webrtc::ArrayView<uchar const>           payload,
+        ::webrtc::SocketAddress const&             source_address,
+        ::std::optional<::webrtc::Timestamp>       arrival_time,
+        ::webrtc::EcnMarking                       ecn,
+        ::webrtc::ReceivedIpPacket::DecryptionInfo decryption
     );
     // NOLINTEND
 };

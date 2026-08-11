@@ -30,17 +30,15 @@ public:
 
     virtual void UpdateState() = 0;
 
-    virtual void ForgetLearnedStateForConnections(
-        ::webrtc::ArrayView<::webrtc::Connection const* const, 18446744073709546905> connections
-    ) = 0;
+    virtual void
+    ForgetLearnedStateForConnections(::webrtc::ArrayView<::webrtc::Connection const* const> connections) = 0;
 
     virtual void SendPingRequest(::webrtc::Connection const* connection) = 0;
 
     virtual void
     SwitchSelectedConnection(::webrtc::Connection const* new_connection, ::webrtc::IceSwitchReason reason) = 0;
 
-    virtual bool
-    PruneConnections(::webrtc::ArrayView<::webrtc::Connection const* const, 18446744073709546905> connections) = 0;
+    virtual bool PruneConnections(::webrtc::ArrayView<::webrtc::Connection const* const> connections) = 0;
     // NOLINTEND
 
 public:

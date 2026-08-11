@@ -66,10 +66,10 @@ public:
     ) const;
 
     MCNAPI RtpDependencyDescriptorWriter(
-        ::webrtc::ArrayView<uchar, 18446744073709546905> data,
-        ::webrtc::FrameDependencyStructure const&        structure,
-        ::std::bitset<32>                                active_chains,
-        ::webrtc::DependencyDescriptor const&            descriptor
+        ::webrtc::ArrayView<uchar>                data,
+        ::webrtc::FrameDependencyStructure const& structure,
+        ::std::bitset<32>                         active_chains,
+        ::webrtc::DependencyDescriptor const&     descriptor
     );
 
     MCNAPI int ValueSizeBits() const;
@@ -85,10 +85,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::webrtc::ArrayView<uchar, 18446744073709546905> data,
-        ::webrtc::FrameDependencyStructure const&        structure,
-        ::std::bitset<32>                                active_chains,
-        ::webrtc::DependencyDescriptor const&            descriptor
+        ::webrtc::ArrayView<uchar>                data,
+        ::webrtc::FrameDependencyStructure const& structure,
+        ::std::bitset<32>                         active_chains,
+        ::webrtc::DependencyDescriptor const&     descriptor
     );
     // NOLINTEND
 };

@@ -93,7 +93,7 @@ public:
 
     virtual ::std::map<uint, ::webrtc::RtpPayloadState> GetRtpPayloadStates() const /*override*/;
 
-    virtual void DeliverRtcp(::webrtc::ArrayView<uchar const, 18446744073709546905> packet) /*override*/;
+    virtual void DeliverRtcp(::webrtc::ArrayView<uchar const> packet) /*override*/;
 
     virtual int ProtectionRequest(
         ::webrtc::FecProtectionParams const* delta_params,
@@ -126,11 +126,10 @@ public:
 
     virtual void SetEncodingData(uint64 width, uint64 height, uint64 num_temporal_layers) /*override*/;
 
-    virtual void SetCsrcs(::webrtc::ArrayView<uint const, 18446744073709546905> csrcs) /*override*/;
+    virtual void SetCsrcs(::webrtc::ArrayView<uint const> csrcs) /*override*/;
 
     virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-    GetSentRtpPacketInfos(uint ssrc, ::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) const
-        /*override*/;
+    GetSentRtpPacketInfos(uint ssrc, ::webrtc::ArrayView<ushort const> sequence_numbers) const /*override*/;
 
     virtual void OnPacketFeedbackVector(
         ::std::vector<::webrtc::StreamFeedbackObserver::StreamPacketInfo> packet_feedback_vector
@@ -205,7 +204,7 @@ public:
 
     MCNAPI ::std::map<uint, ::webrtc::RtpPayloadState> $GetRtpPayloadStates() const;
 
-    MCNAPI void $DeliverRtcp(::webrtc::ArrayView<uchar const, 18446744073709546905> packet);
+    MCNAPI void $DeliverRtcp(::webrtc::ArrayView<uchar const> packet);
 
     MCNAPI int $ProtectionRequest(
         ::webrtc::FecProtectionParams const* delta_params,
@@ -238,10 +237,10 @@ public:
 
     MCNAPI void $SetEncodingData(uint64 width, uint64 height, uint64 num_temporal_layers);
 
-    MCNAPI void $SetCsrcs(::webrtc::ArrayView<uint const, 18446744073709546905> csrcs);
+    MCNAPI void $SetCsrcs(::webrtc::ArrayView<uint const> csrcs);
 
     MCNAPI ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-    $GetSentRtpPacketInfos(uint ssrc, ::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) const;
+    $GetSentRtpPacketInfos(uint ssrc, ::webrtc::ArrayView<ushort const> sequence_numbers) const;
 
     MCNAPI void
     $OnPacketFeedbackVector(::std::vector<::webrtc::StreamFeedbackObserver::StreamPacketInfo> packet_feedback_vector);

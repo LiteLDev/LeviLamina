@@ -67,10 +67,10 @@ public:
     MCNAPI ::webrtc::VoiceSenderInfo const* GetVoiceSenderInfoBySsrc(uint ssrc) const;
 
     MCNAPI void Initialize(
-        ::std::optional<::webrtc::VoiceMediaInfo> voice_media_info,
-        ::std::optional<::webrtc::VideoMediaInfo> video_media_info,
-        ::webrtc::ArrayView<::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>, 18446744073709546905>   rtp_senders,
-        ::webrtc::ArrayView<::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>, 18446744073709546905> rtp_receivers
+        ::std::optional<::webrtc::VoiceMediaInfo>                                   voice_media_info,
+        ::std::optional<::webrtc::VideoMediaInfo>                                   video_media_info,
+        ::webrtc::ArrayView<::webrtc::scoped_refptr<::webrtc::RtpSenderInternal>>   rtp_senders,
+        ::webrtc::ArrayView<::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>> rtp_receivers
     );
 
     MCNAPI TrackMediaInfoMap();

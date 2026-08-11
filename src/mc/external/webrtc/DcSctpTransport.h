@@ -121,8 +121,7 @@ public:
 
     virtual void set_debug_name_for_testing(char const* debug_name) /*override*/;
 
-    virtual ::dcsctp::SendPacketStatus
-    SendPacketWithStatus(::webrtc::ArrayView<uchar const, 18446744073709546905> data) /*override*/;
+    virtual ::dcsctp::SendPacketStatus SendPacketWithStatus(::webrtc::ArrayView<uchar const> data) /*override*/;
 
     virtual ::std::unique_ptr<::dcsctp::Timeout>
     CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision) /*override*/;
@@ -148,19 +147,16 @@ public:
     virtual void OnConnectionRestarted() /*override*/;
 
     virtual void OnStreamsResetFailed(
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
-                           outgoing_streams,
-        ::std::string_view reason
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams,
+        ::std::string_view                                                              reason
     ) /*override*/;
 
     virtual void OnStreamsResetPerformed(
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
-            outgoing_streams
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
     ) /*override*/;
 
     virtual void OnIncomingStreamsReset(
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
-            incoming_streams
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> incoming_streams
     ) /*override*/;
     // NOLINTEND
 
@@ -244,8 +240,7 @@ public:
 
     MCNAPI void $set_debug_name_for_testing(char const* debug_name);
 
-    MCNAPI ::dcsctp::SendPacketStatus
-    $SendPacketWithStatus(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
+    MCNAPI ::dcsctp::SendPacketStatus $SendPacketWithStatus(::webrtc::ArrayView<uchar const> data);
 
     MCNAPI ::std::unique_ptr<::dcsctp::Timeout> $CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision);
 
@@ -270,19 +265,16 @@ public:
     MCNAPI void $OnConnectionRestarted();
 
     MCNAPI void $OnStreamsResetFailed(
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
-                           outgoing_streams,
-        ::std::string_view reason
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams,
+        ::std::string_view                                                              reason
     );
 
     MCNAPI void $OnStreamsResetPerformed(
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
-            outgoing_streams
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
     );
 
     MCNAPI void $OnIncomingStreamsReset(
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
-            incoming_streams
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> incoming_streams
     );
 
 

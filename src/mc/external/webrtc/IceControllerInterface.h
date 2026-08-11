@@ -88,9 +88,9 @@ public:
 
     virtual void OnConnectionDestroyed(::webrtc::Connection const* connection) = 0;
 
-    virtual ::webrtc::ArrayView<::webrtc::Connection const* const, 18446744073709546905> GetConnections() const;
+    virtual ::webrtc::ArrayView<::webrtc::Connection const* const> GetConnections() const;
 
-    virtual ::webrtc::ArrayView<::webrtc::Connection const*, 18446744073709546905> connections() const;
+    virtual ::webrtc::ArrayView<::webrtc::Connection const*> connections() const;
 
     virtual bool HasPingableConnection() const = 0;
 
@@ -118,9 +118,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::webrtc::ArrayView<::webrtc::Connection const* const, 18446744073709546905> $GetConnections() const;
+    MCNAPI ::webrtc::ArrayView<::webrtc::Connection const* const> $GetConnections() const;
 
-    MCNAPI ::webrtc::ArrayView<::webrtc::Connection const*, 18446744073709546905> $connections() const;
+    MCNAPI ::webrtc::ArrayView<::webrtc::Connection const*> $connections() const;
 
 
     // NOLINTEND
