@@ -11,3 +11,4 @@ src/mc1
 /src-test/
 *.txt
 /vsxmake2026
+/.vs
