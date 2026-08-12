@@ -21,7 +21,7 @@ Image::Image(uint32 w, uint32 h, uint32 d, mce::ImageFormat format, mce::ImageUs
   mUsage(usage),
   mImageBytes() {}
 
-Image::Image(const mce::Image& other)
+Image::Image(mce::Image const& other)
 : imageFormat(other.imageFormat),
   mWidth(other.mWidth),
   mHeight(other.mHeight),
@@ -47,7 +47,7 @@ Image::Image(mce::Image::Storage&& blob)
 
 Image::~Image() = default;
 
-Image& Image::operator=(const Image& other) {
+Image& Image::operator=(Image const& other) {
     if (this != &other) {
         imageFormat = other.imageFormat;
         mWidth      = other.mWidth;
@@ -86,7 +86,7 @@ void Image::setImageDescription(uint32 w, uint32 h, uint32 d, mce::ImageFormat f
     resizeImageBytesToFitImageDescription();
 }
 
-void Image::copyRawImage(const mce::Image::Storage& src) { mImageBytes = src; }
+void Image::copyRawImage(mce::Image::Storage const& src) { mImageBytes = src; }
 
 Image Image::clone() const {
     Image copy;
@@ -95,7 +95,7 @@ Image Image::clone() const {
     copy.mHeight     = mHeight;
     copy.mDepth      = mDepth;
     copy.mUsage      = mUsage;
-    copy.mImageBytes = BlobHelper::clone(mImageBytes); // 深拷贝内容
+    copy.mImageBytes = mImageBytes;
     return copy;
 }
 

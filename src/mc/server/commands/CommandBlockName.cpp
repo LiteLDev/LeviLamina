@@ -4,7 +4,7 @@
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 
 std::string const& CommandBlockName::getBlockName() const {
-    return BlockTypeRegistry::get().getBlockNameFromNameHash(mBlockNameHash);
+    return BlockTypeRegistry::mBlockTypeRegistry().mValue.getBlockNameFromNameHash(mBlockNameHash);
 }
 std::string CommandBlockName::getDescriptionId() const {
     auto        nameInfo = BlockType::extractBlockNameInfo(getBlockName());

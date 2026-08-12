@@ -304,6 +304,10 @@ public:
 
     LLNDAPI static Player* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
 
+    LLNDAPI ItemStack const& getSelectedItem() const;
+
+    LLAPI void setSelectedItem(ItemStack const& item) const;
+
 public:
     // member variables
     // NOLINTBEGIN

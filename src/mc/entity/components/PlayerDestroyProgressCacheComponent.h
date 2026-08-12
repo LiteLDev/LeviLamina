@@ -14,4 +14,12 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                 mLastBlockBeingDestroyed;
     ::ll::TypedStorage<8, 16, ::ItemDescriptor>      mLastItemUsedToDestroy;
     // NOLINTEND
+
+public:
+    void reset() {
+        mCurrentToolIsOptimalToolForMining->reset();
+        mCurrentToolBlockDestroySpeed->reset();
+        mLastBlockBeingDestroyed = 0xFFFFFFFF;
+        mLastItemUsedToDestroy   = ItemDescriptor();
+    }
 };

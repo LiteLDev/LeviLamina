@@ -66,7 +66,7 @@ public:
 
     MCAPI ::CommandOutput& operator=(::CommandOutput const& rhs);
 
-    MCAPI void success(::std::string_view msgId, ::std::vector<::CommandOutputParameter> const& params);
+    MCAPI void success(::std::string_view msgId, ::std::vector<::CommandOutputParameter> const& params = {});
     // NOLINTEND
 
 public:

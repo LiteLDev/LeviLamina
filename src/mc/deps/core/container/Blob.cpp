@@ -1,6 +1,6 @@
 #include "mc/deps/core/container/Blob.h"
 #include "ll/api/memory/Memory.h"
-#include "mc/deps/core/memory/DefaultAllocator.h"
+#include "mc/deps/core/memory/IMemoryAllocator.h"
 
 using namespace mce;
 
@@ -18,7 +18,7 @@ Blob::Blob(size_type size) : mBlob(nullptr, Deleter()), mSize(size) {
     mBlob.reset(buf);
 }
 
-Blob::Blob(const value_type* ptr, size_type size) : Blob(size) {
+Blob::Blob(value_type const* ptr, size_type size) : Blob(size) {
     if (ptr && size) std::memmove(mBlob.get(), ptr, size);
 }
 
@@ -42,7 +42,7 @@ Blob& Blob::operator=(Blob&& rhs) noexcept {
     return *this;
 }
 
-Blob::Blob(const Blob& rhs) : mBlob(nullptr, Deleter()), mSize(rhs.mSize) {
+Blob::Blob(Blob const& rhs) : mBlob(nullptr, Deleter()), mSize(rhs.mSize) {
     if (rhs.mSize) {
         auto* alloc = &ll::memory::getDefaultAllocator();
         auto* buf   = static_cast<value_type*>(alloc->allocate(rhs.mSize));
@@ -52,7 +52,7 @@ Blob::Blob(const Blob& rhs) : mBlob(nullptr, Deleter()), mSize(rhs.mSize) {
     }
 }
 
-Blob& Blob::operator=(const Blob& rhs) {
+Blob& Blob::operator=(Blob const& rhs) {
     if (this != &rhs) {
         Blob tmp(rhs);
         swap(tmp);
@@ -80,7 +80,7 @@ gsl::span<unsigned char> Blob::getSpan() {
     return {p, s};
 }
 
-gsl::span<const unsigned char> Blob::getSpan() const {
+gsl::span<unsigned char const> Blob::getSpan() const {
     auto* p = mBlob.get();
     auto  s = mSize;
     if ((s == static_cast<size_type>(-1)) || (!p && s)) throw std::logic_error("invalid span");

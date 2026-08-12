@@ -34,6 +34,13 @@ public:
 
 #ifdef LL_PLAT_S
 #else // LL_PLAT_C
+
+public:
+    LLAPI void
+    add(PackInstance                                                        packInstance,
+        Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
+        bool                                                                isDependent);
+
 public:
     // prevent constructor by default
     ResourcePackStack();

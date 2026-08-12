@@ -2,6 +2,7 @@
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/utils/RandomUtils.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/entity/components/PlayerDestroyProgressCacheComponent.h"
 #include "mc/entity/components_json_legacy/NavigationComponent.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/server/ServerLevel.h"
@@ -14,10 +15,10 @@
 #include "mc/world/actor/player/PlayerItemInUse.h"
 #include "mc/world/actor/provider/MobMovement.h"
 #include "mc/world/gamemode/GameMode.h"
+#include "mc/world/gamemode/InteractionResult.h"
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/block/Block.h"
 #include "mc/world/phys/HitResult.h"
-#include "mc/world/gamemode/InteractionResult.h"
 
 
 optional_ref<SimulatedPlayer>
@@ -44,7 +45,7 @@ SimulatedPlayer::create(std::string const& name, Vec3 const& pos, DimensionType 
     return player;
 }
 
-bool SimulatedPlayer::simulateDestroyBlock(const BlockPos& pos, ScriptModuleMinecraft::ScriptFacing face) {
+bool SimulatedPlayer::simulateDestroyBlock(BlockPos const& pos, ScriptModuleMinecraft::ScriptFacing face) {
     if (isAlive()) {
         if (*mDestroyingBlockPos && *mDestroyingBlockFace) {
             if (pos == **mDestroyingBlockPos && (uchar)face == **mDestroyingBlockFace) {
@@ -82,8 +83,9 @@ void SimulatedPlayer::simulateStopMoving() {
             if constexpr (!std::is_same_v<T, sim::VoidMoveIntent>) {
                 MobMovement::setLocalMoveVelocity(mEntityContext, 0.0f, 0.0f, 0.0f);
             }
-            if constexpr (std::is_same_v<T, sim::NavigateToEntityIntent>
-                          || std::is_same_v<T, sim::NavigateToPositionsIntent>) {
+            if constexpr (
+                std::is_same_v<T, sim::NavigateToEntityIntent> || std::is_same_v<T, sim::NavigateToPositionsIntent>
+            ) {
                 auto navComponent = getEntityContext().tryGetComponent<NavigationComponent>();
                 if (navComponent && navComponent->mNavigation) {
                     navComponent->mNavigation->stop(navComponent, *this);
@@ -188,10 +190,22 @@ void SimulatedPlayer::simulateMoveToLocation(::Vec3 const& position, float speed
         ->emplace<sim::MoveToPositionIntent>(::glm::vec3{position.x, position.y, position.z}, faceTarget, speed);
 }
 
-::SimulatedPlayer* SimulatedPlayer::tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
+SimulatedPlayer* SimulatedPlayer::tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
     auto result = static_cast<SimulatedPlayer*>(Player::tryGetFromEntity(entity, includeRemoved));
     if (result && result->isSimulated()) {
         return result;
     }
     return nullptr;
+}
+
+void SimulatedPlayer::simulateStopDestroyingBlock() {
+    mDestroyProgressCache.reset();
+    mDestroyingBlock = false;
+    if (*mDestroyingBlockPos) {
+        if (isAlive()) {
+            mGameMode->stopDestroyBlock(mDestroyingBlockPos->value());
+        }
+        mDestroyingBlockPos->reset();
+    }
+    mDestroyingBlockPos->reset();
 }

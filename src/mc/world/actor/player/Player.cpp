@@ -14,10 +14,12 @@
 #include "mc/network/packet/UpdateAdventureSettingsPacket.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/world/Minecraft.h"
+#include "mc/world/actor/player/Inventory.h"
 #include "mc/world/actor/player/LayeredAbilities.h"
 #include "mc/world/actor/player/PermissionsHandler.h"
 #include "mc/world/actor/player/PlayerInventory.h"
 #include "mc/world/actor/provider/SynchedActorDataAccess.h"
+
 
 UserEntityIdentifierComponent const& Player::getUserEntityIdentifier() const {
     return *(getEntityContext().tryGetComponent<UserEntityIdentifierComponent>());
@@ -92,7 +94,7 @@ LLAPI void Player::setAbility(::AbilitiesIndex index, bool value) {
     abilities.setAbility(index, value);
     auto mayfly = abilities.getAbility(AbilitiesIndex::MayFly).mValue->mBoolVal;
     auto noclip = abilities.getAbility(AbilitiesIndex::NoClip).mValue->mBoolVal;
-    setStatusFlag(ActorFlags::Canfly, mayfly || noclip);
+    SynchedActorDataAccess::setActorFlag(getEntityContext(), ActorFlags::Canfly, mayfly || noclip);
     if (index == AbilitiesIndex::NoClip) {
         abilities.setAbility(AbilitiesIndex::Flying, value);
     }
@@ -124,4 +126,17 @@ Player* Player::tryGetFromEntity(EntityContext& entity, bool includeRemoved) {
         }
     }
     return nullptr;
+}
+
+ItemStack const& Player::getSelectedItem() const {
+    if (mInventory->mSelectedContainerId != ContainerID::Inventory) {
+        return ItemStack::EMPTY_ITEM();
+    }
+    return mInventory->mInventory->getItem(getSelectedItemSlot());
+}
+
+void Player::setSelectedItem(::ItemStack const& item) const {
+    if (mInventory->mSelectedContainerId == ContainerID::Inventory) {
+        mInventory->mInventory->setItem(getSelectedItemSlot(), item);
+    }
 }

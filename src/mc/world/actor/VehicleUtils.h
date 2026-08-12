@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class ActorUniqueID;
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -14,6 +16,8 @@ namespace VehicleUtils { struct VehicleDirections; }
 // clang-format on
 
 namespace VehicleUtils {
+LLAPI bool isPassengerOfActor(::Actor const& maybePassenger, ::ActorUniqueID const& actorID);
+
 // functions
 // NOLINTBEGIN
 MCAPI bool arePassengersOfSameActor(::Actor const& maybePassenger1, ::Actor const& maybePassenger2);

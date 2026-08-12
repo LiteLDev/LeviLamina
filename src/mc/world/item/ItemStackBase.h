@@ -65,6 +65,7 @@ public:
     LLNDAPI bool        isEnchanted() const;
     LLNDAPI bool        removeEnchants() const;
     LLAPI void          deserializeComponents(IDataInput& input);
+    LLAPI bool          operator==(ItemStackBase const& other) const;
 
 public:
     // member variables
@@ -117,7 +118,8 @@ public:
 
     MCAPI ItemStackBase(::Item const& item, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
 
-    MCAPI ItemStackBase(::std::string_view name, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
+    MCAPI
+    ItemStackBase(::std::string_view name, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
 
     MCAPI void _addCustomUserDataCommon(::std::unique_ptr<::CompoundTag>&& tag);
 

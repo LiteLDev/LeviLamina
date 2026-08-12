@@ -25,6 +25,11 @@ public:
     // NOLINTEND
 
 public:
+    UpdateAbilitiesPacket(ActorUniqueID targetPlayer, LayeredAbilities const& layeredAbilities)
+    : PayloadPacket(SerializedAbilitiesData(targetPlayer, layeredAbilities)),
+      mSerializationMode(SerializationMode::SideBySideLogOnMismatch) {}
+
+public:
     // prevent constructor by default
     UpdateAbilitiesPacket();
 

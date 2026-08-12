@@ -5,6 +5,9 @@
 namespace Bedrock {
 
 template <typename T0>
-class Owner {};
+class Owner {
+public:
+    T0 mValue;
+};
 
 } // namespace Bedrock

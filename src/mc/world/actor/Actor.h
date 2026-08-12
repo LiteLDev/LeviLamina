@@ -183,6 +183,8 @@ public:
 
     LLNDAPI bool isPlayer() const;
 
+    LLNDAPI bool isClientSide() const;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -700,7 +702,7 @@ public:
 
     MCFOLD ::std::vector<::MobEffectInstance> const& getAllEffects() const;
 
-    MCAPI ::Vec3 getAttachPos(::SharedTypes::Legacy::ActorLocation location, float alpha) const;
+    MCAPI ::Vec3 getAttachPos(::SharedTypes::Legacy::ActorLocation location, float alpha = 0.0f) const;
 
     MCAPI ::AttributeInstanceConstRef getAttribute(::Attribute const& attribute) const;
 
@@ -816,7 +818,7 @@ public:
 
     MCAPI ::ActorRuntimeID getVehicleRuntimeID() const;
 
-    MCAPI ::Vec3 getViewVector(float a) const;
+    MCAPI ::Vec3 getViewVector(float a = 0.0f) const;
 
     MCFOLD float getYHeadRot() const;
 

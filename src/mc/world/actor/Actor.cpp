@@ -29,15 +29,19 @@
 #include "mc/world/actor/ActorDamageByActorSource.h"
 #include "mc/world/actor/ActorDamageSource.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorHurtResult.h"
 #include "mc/world/actor/BuiltInActorComponents.h"
+#include "mc/world/actor/HurtParameters.h"
 #include "mc/world/actor/animation/AnimationComponent.h"
+#include "mc/world/actor/provider/SynchedActorDataAccess.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/phys/HitDetection.h"
 #include "mc/world/phys/HitResult.h"
+
 
 void Actor::refresh() { _sendDirtyActorData(); }
 
@@ -63,11 +67,15 @@ optional_ref<Actor> Actor::clone(Vec3 const& pos, std::optional<DimensionType> d
 
 std::string const& Actor::getTypeName() const { return getActorIdentifier().mCanonicalName->getString(); }
 
-class Vec3 Actor::getFeetPos() const { return CommandUtils::getFeetPos(this); }
+class Vec3 Actor::getFeetPos() const {
+    return CommandSelectorBase::getFeetPos(static_cast<int>(CurrentCmdVersion::Latest), *this);
+}
 
 class Vec3 Actor::getHeadPos() const { return getAttachPos(SharedTypes::Legacy::ActorLocation::Head); }
 
-class BlockPos Actor::getFeetBlockPos() const { return {CommandUtils::getFeetPos(this)}; }
+class BlockPos Actor::getFeetBlockPos() const {
+    return {CommandSelectorBase::getFeetPos(static_cast<int>(CurrentCmdVersion::Latest), *this)};
+}
 
 bool Actor::isSimulatedPlayer() const {
     return getEntityTypeId() == ActorType::Player && static_cast<Player const*>(this)->isSimulated();
@@ -87,7 +95,7 @@ void Actor::setOnFire(int time, bool hasEffect) {
 void Actor::stopFire() {
     if (!isClientSide()) {
         getEntityContext().removeComponent<OnFireComponent>();
-        setStatusFlag(ActorFlags::Onfire, false);
+        SynchedActorDataAccess::setActorFlag(getEntityContext(), ActorFlags::Onfire, false);
     }
 }
 
@@ -108,10 +116,10 @@ float Actor::getPosDeltaPerSecLength() const { return static_cast<float>(getVelo
 
 bool Actor::hurtByCause(float damage, ::SharedTypes::Legacy::ActorDamageCause cause, optional_ref<Actor> attacker) {
     if (attacker) {
-        return _hurt(ActorDamageByActorSource(attacker.value(), cause), damage, true, false);
+        return _hurt(ActorDamageByActorSource(attacker.value(), cause), damage, HurtParameters(true, false));
     }
     ActorDamageSource src(cause, {});
-    return _hurt(src, damage, true, false);
+    return _hurt(src, damage, HurtParameters(true, false));
 }
 
 class HitResult Actor::traceRay(
@@ -209,3 +217,5 @@ Actor* Actor::tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
 bool Actor::isType(::ActorType type) const { return getEntityTypeId() == type; }
 
 bool Actor::isPlayer() const { return mEntityContext->hasComponent<PlayerComponent>(); }
+
+bool Actor::isClientSide() const { return !mLevel; }

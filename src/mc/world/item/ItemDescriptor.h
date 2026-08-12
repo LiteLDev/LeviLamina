@@ -122,7 +122,7 @@ public:
 public:
     // prevent constructor by default
     ItemDescriptor(ItemDescriptor const&);
-    ItemDescriptor();
+    ItemDescriptor() { mImpl = nullptr; }
 
 public:
     // virtual functions

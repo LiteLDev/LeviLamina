@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/ecs/gamerefs_entity/GameRefsEntity.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
@@ -108,6 +109,9 @@ public:
             ::std::unique_ptr<::MinecraftCommands>(::MinecraftArguments::CreateMinecraftCommandsArgs&&) const>>
         mCreateMinecraftCommands;
     // NOLINTEND
+
+public:
+    LLAPI Level* getLevel() const;
 
 public:
     // prevent constructor by default

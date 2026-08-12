@@ -104,6 +104,8 @@ public:
         parse(expression, config);
     }
 
+    LLAPI MolangScriptArg const& evalGeneric(RenderParams& renderParams) const;
+
 public:
     // prevent constructor by default
     ExpressionNode(ExpressionNode const&);

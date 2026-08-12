@@ -12,6 +12,9 @@ class Actor;
 
 class OnFireSystem : public ::ITickingSystem {
 public:
+    LLAPI static void setOnFireNoEffects(Actor& actor, int seconds);
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _setOnFireImpl(::Actor& actor, int seconds, bool isInWaterOrRain, int fireProtectionLevels);

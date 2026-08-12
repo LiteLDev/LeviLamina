@@ -4,14 +4,14 @@
 #include "mc/world/item/Item.h"
 
 std::string ItemStackBase::getTypeName() const {
-    if (auto item = getItem(); item) {
+    if (auto item = mItem; item) {
         return item->getSerializedName();
     }
     return {};
 }
 
 std::string ItemStackBase::getDescriptionName() const {
-    if (auto item = getItem(); item) {
+    if (auto item = mItem; item) {
         return item->buildDescriptionName(*this);
     }
     return {};
@@ -56,4 +56,11 @@ void ItemStackBase::deserializeComponents(IDataInput& input) {
         _loadBlocksForCanPlaceOnCanDestroy(mCanDestroy, block_name_result.value());
     }
     _updateCompareHashes();
+}
+
+bool ItemStackBase::operator==(ItemStackBase const& other) const {
+    if (mCount == other.mCount) {
+        return matchesItem(other);
+    }
+    return false;
 }
