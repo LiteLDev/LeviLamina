@@ -18,12 +18,11 @@ struct TargetedConfig {
         bool alwaysLaunch = false;
     } playerInfo{};
     struct {
-        bool enable = true;
-        bool subChunkRequest = true;
-        bool rakNet = true;
-        bool itemReadUserData = true;
-        bool disconnectClient = true;
-        bool limitIPFrequency = true;
+        bool enable                      = true;
+        bool subChunkRequest             = true;
+        bool itemReadUserData            = true;
+        bool disconnectClient            = true;
+        bool limitIPFrequency            = true;
         bool simulatedPlayerChunkLoading = true;
     } vulnerabilityFixes;
 };
