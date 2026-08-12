@@ -35,6 +35,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $applyTo(::LevelData&) const;
+
 
     // NOLINTEND
 };

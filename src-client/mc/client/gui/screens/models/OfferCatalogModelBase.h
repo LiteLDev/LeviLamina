@@ -40,24 +40,40 @@ public:
 
     virtual uint getNumActiveOfferModels() const;
 
-    virtual ::PlatformOfferModel& getOfferModel(int);
+    virtual ::PlatformOfferModel& getOfferModel(int index);
 
-    virtual ::PlatformOfferModel& getActiveOfferModel(int);
+    virtual ::PlatformOfferModel& getActiveOfferModel(int index);
 
-    virtual ::PlatformOfferModel* findOfferModelBySku(::ProductSku const&);
+    virtual ::PlatformOfferModel* findOfferModelBySku(::ProductSku const& sku);
 
-    virtual ::PlatformOfferModel* findOfferModelByMinCoins(::std::string const&);
+    virtual ::PlatformOfferModel* findOfferModelByMinCoins(::std::string const& coinsNeeded);
 
-    virtual ::PlatformOfferModel* findOfferModelByMinCoins(int const);
+    virtual ::PlatformOfferModel* findOfferModelByMinCoins(int const coinsNeeded);
 
-    virtual ::PlatformOfferModel* _findActiveOfferModelByProductId(::std::string const&);
+    virtual ::PlatformOfferModel* _findActiveOfferModelByProductId(::std::string const& productId);
 
-    virtual ::PlatformOfferModel* _findOfferModelByProductId(::std::string const&);
+    virtual ::PlatformOfferModel* _findOfferModelByProductId(::std::string const& productId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI uint $getNumOfferModels() const;
 
+    MCAPI uint $getNumActiveOfferModels() const;
+
+    MCAPI ::PlatformOfferModel& $getOfferModel(int index);
+
+    MCAPI ::PlatformOfferModel& $getActiveOfferModel(int index);
+
+    MCAPI ::PlatformOfferModel* $findOfferModelBySku(::ProductSku const& sku);
+
+    MCAPI ::PlatformOfferModel* $findOfferModelByMinCoins(::std::string const& coinsNeeded);
+
+    MCAPI ::PlatformOfferModel* $findOfferModelByMinCoins(int const coinsNeeded);
+
+    MCAPI ::PlatformOfferModel* $_findActiveOfferModelByProductId(::std::string const& productId);
+
+    MCAPI ::PlatformOfferModel* $_findOfferModelByProductId(::std::string const& productId);
     // NOLINTEND
 };

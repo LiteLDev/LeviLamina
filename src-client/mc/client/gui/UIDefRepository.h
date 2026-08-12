@@ -7,6 +7,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/json/Value.h"
 #include "mc/platform/threading/SharedLock.h"
+#include "mc/resources/ResourceLoadType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -74,18 +75,19 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void loadDefsList(
-        ::ResourceLocation const&,
-        ::ResourcePackStack const&,
-        ::std::function<void(::std::vector<::PackReport>&)>
+        ::ResourceLocation const&                           defsListFile,
+        ::ResourcePackStack const&                          packStack,
+        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
     ) /*override*/;
 
     virtual void validateDefEntries(
-        ::ResourceLocation const&,
-        ::std::shared_ptr<::ResourcePackStack const>,
-        ::std::function<void(::std::vector<::PackReport>&)>
+        ::ResourceLocation const&                           defsListFile,
+        ::std::shared_ptr<::ResourcePackStack const>        packStack,
+        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
     ) const /*override*/;
 
-    virtual ::Json::Value const& findDef(::std::string const&, ::std::string const&) const /*override*/;
+    virtual ::Json::Value const& findDef(::std::string const& defNamespace, ::std::string const& defName) const
+        /*override*/;
 
     virtual ::Bedrock::Threading::SharedLock<::std::shared_mutex> acquireSharedLock() const /*override*/;
 
@@ -103,17 +105,34 @@ public:
 
     virtual bool isUIValidationDone() const /*override*/;
 
-    virtual void forEachControl(::std::function<void(::Json::Value const&, ::std::string const&)>) /*override*/;
+    virtual void
+    forEachControl(::std::function<void(::Json::Value const&, ::std::string const&)> callback) /*override*/;
 
     virtual ::Json::Value const& getGlobalVariables() const /*override*/;
 
-    virtual void translateLegacyItemIdsInRepository(::ItemRegistryRef const) /*override*/;
+    virtual void translateLegacyItemIdsInRepository(::ItemRegistryRef const itemRegistry) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit UIDefRepository(::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager);
+
+    MCAPI void _applyGlobalColorFormat();
+
+    MCAPI void _collectAllDefEntries(
+        ::ResourceLoadType                                            loadType,
+        ::ResourceLocation const&                                     defsListFile,
+        ::ResourcePackStack const&                                    packStack,
+        ::std::shared_ptr<::std::vector<::UIDefRepository::DefEntry>> allDefEntries,
+        ::std::shared_ptr<::std::vector<::PackReport>>                packReports
+    ) const;
+
+    MCAPI void _forEachControl(
+        ::Json::Value const&                                              value,
+        ::std::string const&                                              namePath,
+        ::std::function<void(::Json::Value const&, ::std::string const&)> callback
+    );
     // NOLINTEND
 
 public:
@@ -125,6 +144,40 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $loadDefsList(
+        ::ResourceLocation const&                           defsListFile,
+        ::ResourcePackStack const&                          packStack,
+        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
+    );
 
+    MCAPI void $validateDefEntries(
+        ::ResourceLocation const&                           defsListFile,
+        ::std::shared_ptr<::ResourcePackStack const>        packStack,
+        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
+    ) const;
+
+    MCAPI ::Json::Value const& $findDef(::std::string const& defNamespace, ::std::string const& defName) const;
+
+    MCAPI ::Bedrock::Threading::SharedLock<::std::shared_mutex> $acquireSharedLock() const;
+
+    MCAPI void $syncUILoad();
+
+    MCAPI void $syncUILoadDefinitions();
+
+    MCAPI void $syncUILoadDefinitionReferences();
+
+    MCAPI void $cancelUIValidation();
+
+    MCAPI bool $isLoadingDone() const;
+
+    MCAPI bool $isUILoadingDone() const;
+
+    MCAPI bool $isUIValidationDone() const;
+
+    MCAPI void $forEachControl(::std::function<void(::Json::Value const&, ::std::string const&)> callback);
+
+    MCFOLD ::Json::Value const& $getGlobalVariables() const;
+
+    MCAPI void $translateLegacyItemIdsInRepository(::ItemRegistryRef const itemRegistry);
     // NOLINTEND
 };

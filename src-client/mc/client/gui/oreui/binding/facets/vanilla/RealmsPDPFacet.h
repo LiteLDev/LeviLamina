@@ -32,6 +32,8 @@ public:
         ::std::function<void()> updateRealmsTrialAvailable,
         ::std::function<bool()> checkRealmsTrialAvailable
     );
+
+    MCAPI bool isRealmsTrialAvailable() const;
     // NOLINTEND
 
 public:
@@ -50,7 +52,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

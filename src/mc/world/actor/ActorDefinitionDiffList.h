@@ -43,6 +43,8 @@ public:
 
     MCAPI ::std::unique_ptr<::ActorDefinitionDescriptor> _getDescriptionFrom(uint64 start, uint64 end);
 
+    MCAPI void _updateStack();
+
     MCAPI void addDefinition(::std::string const& def);
 
     MCAPI void addPendingPropertyChange(uint64 overallPropertyIndex, ::std::variant<int, float, bool, uint64> value);

@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     virtual ~LegacySpringsFeature() /*override*/ = default;
 
-    virtual bool place(::BlockSource&, ::BlockPos const&, ::Random&) const /*override*/;
+    virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
     // NOLINTEND
 
 public:
@@ -52,6 +52,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+
 
     // NOLINTEND
 };

@@ -12,6 +12,7 @@
 class Block;
 class BlockPos;
 class BlockSource;
+class PulseCapacitor;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
@@ -54,6 +55,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos, bool calledFromLoad, bool turnOn) const;
+
+    MCAPI void
+    _updateState(::BlockSource& region, ::BlockPos const& pos, ::PulseCapacitor& component, bool turnOn) const;
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;

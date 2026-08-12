@@ -45,6 +45,28 @@ public:
         Rail& operator=(Rail const&);
         Rail(Rail const&);
         Rail();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI Rail(::BlockSource& region, ::BlockPos const& pos);
+
+        MCAPI ::std::shared_ptr<::BaseRailBlock::Rail> getRail(::BlockPos const& p);
+
+        MCAPI bool hasNeighborRail(::BlockPos const& pos);
+
+        MCAPI void place(int signalStrength, bool first);
+
+        MCAPI void removeSoftConnections();
+
+        MCAPI void updateConnections(int direction);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
     };
 
 public:
@@ -107,6 +129,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _createCircuitComponent(::BlockSource& region, ::BlockPos const& pos);
+
     MCAPI static bool isCorner(::BlockSource const& region, ::BlockPos const& pos);
 
     MCAPI static bool isFacingWestEast(::BlockSource const& region, ::BlockPos const& pos);

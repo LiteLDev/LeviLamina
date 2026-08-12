@@ -76,6 +76,8 @@ public:
     virtual ::CompoundTag buildUnboundDataNetworkTag() const /*override*/;
 
     virtual void initializeUnboundDataFromNetwork(::CompoundTag const& tag) /*override*/;
+
+    virtual ~BlockGeometryDescription() /*override*/;
     // NOLINTEND
 
 public:
@@ -146,6 +148,12 @@ public:
         ::BlockRendererDescription const&                       renderer,
         bool                                                    isFullBlockV1
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

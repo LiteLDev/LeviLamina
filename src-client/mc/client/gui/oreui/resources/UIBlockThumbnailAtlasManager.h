@@ -12,10 +12,13 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
+class ItemGraphics;
+class ItemStack;
 class TaskGroup;
 namespace OreUI { struct AtlasIndex; }
 namespace cg { class ImageBuffer; }
 namespace mce { class Color; }
+namespace mce { class TexturePtr; }
 // clang-format on
 
 namespace OreUI {
@@ -85,7 +88,11 @@ public:
 
     MCAPI bool _buildThumbnailAtlas(::TaskGroup& taskGroup, bool isResume);
 
+    MCAPI ::mce::TexturePtr _getAtlasTexture(::ItemStack const& item, ::ItemGraphics const& itemGraphics);
+
     MCAPI void _unloadAtlasTextures();
+
+    MCAPI ::std::shared_ptr<::OreUI::AtlasIndex> getIndex(::std::string_view atlasName) const;
 
     MCAPI bool isThumbnailAtlasEnabled() const;
 

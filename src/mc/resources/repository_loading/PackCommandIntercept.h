@@ -34,12 +34,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&&) /*override*/;
+    virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands) /*override*/;
 
     virtual ::PackCommand::PackCommandHandle
     submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&&) /*override*/;
 
-    virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&&) /*override*/;
+    virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&& commands) /*override*/;
 
     virtual ::TaskGroup& getTaskGroup() /*override*/;
     // NOLINTEND
@@ -47,6 +47,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::PackCommand::PackCommandHandle $submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands);
+
+    MCNAPI ::PackCommand::PackCommandHandle
+    $submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&&);
+
+    MCNAPI ::PackCommand::PackCommandHandle $submitRemove(::PackCommand::RemoveBatch&& commands);
+
+    MCNAPI ::TaskGroup& $getTaskGroup();
+
 
     // NOLINTEND
 };

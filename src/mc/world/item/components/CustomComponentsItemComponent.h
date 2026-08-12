@@ -58,6 +58,10 @@ public:
 
     MCAPI void _addComponent(::HashedString compName, ::cereal::DynamicValue data);
 #endif
+
+#ifdef LL_PLAT_C
+    MCAPI void _addComponent(::HashedString compName, ::cereal::DynamicValue data);
+#endif
     // NOLINTEND
 
 public:

@@ -38,12 +38,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Puv::LoadResultAny doParse(::Puv::Input const&, ::cereal::ContextArea) const /*override*/;
+    virtual ::Puv::LoadResultAny doParse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const
+        /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Puv::LoadResultAny $doParse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const;
+
 
     // NOLINTEND
 };

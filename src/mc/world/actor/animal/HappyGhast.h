@@ -64,6 +64,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+
+    MCAPI void $normalTick();
+
+    MCFOLD float $getShadowRadius() const;
+
+    MCAPI void $aiStep();
+
 
     // NOLINTEND
 };

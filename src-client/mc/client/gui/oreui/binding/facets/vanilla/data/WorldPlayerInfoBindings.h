@@ -32,6 +32,12 @@ public:
     ::ll::TypedStorage<4, 4, ::BuildPlatform>                          mPlatform;
     ::ll::TypedStorage<1, 1, bool>                                     mIsHost;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::string const& getActiveProfileImage() const;
+    // NOLINTEND
 };
 
 } // namespace OreUI

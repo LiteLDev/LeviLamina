@@ -50,6 +50,21 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _simulateRoots(
+        ::IBlockWorldGenAPI&            target,
+        ::Random&                       random,
+        ::BlockPos const&               rootPos,
+        ::BlockPos const&               newOrigin,
+        uchar const                     dir,
+        ::std::vector<::BlockPos>*      rootPositions,
+        int                             layer,
+        ::TreeHelper::TreeParams const& treeParams
+    ) const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::BlockPos> $placeRoots(

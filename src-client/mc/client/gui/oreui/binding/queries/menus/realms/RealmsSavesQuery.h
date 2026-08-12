@@ -48,6 +48,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsSavesQuery(::OreUI::GameDependencies const& game);
+
+    MCAPI void _updateActiveWorldSizeProperty();
+
+    MCAPI void _updateBackupListProperties();
     // NOLINTEND
 
 public:

@@ -100,6 +100,8 @@ public:
 
     MCFOLD int $getMaxStackSize() const;
 
+    MCAPI ::std::string $getName() const;
+
     MCFOLD void $startOpen(::Actor& actor);
 
     MCFOLD void $stopOpen(::Actor& actor);
@@ -115,6 +117,10 @@ public:
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
+
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

@@ -62,6 +62,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit LibrarySearchBarScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
+
+    MCAPI void openSearch();
     // NOLINTEND
 
 public:

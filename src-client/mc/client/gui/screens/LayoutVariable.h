@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/screens/LayoutRule.h"
+#include "mc/client/gui/screens/LayoutVariableStringType.h"
 #include "mc/client/gui/screens/LayoutVariableType.h"
 
 // auto generated forward declare list
@@ -60,6 +62,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI float _getMaxSiblingValue() const;
+
     MCAPI void _initialize(bool checkForDuplicates);
 
     MCAPI void _invalidate(::std::function<void(::VariableRef const&)> invalidCallback, bool forceInvalidation);
@@ -67,13 +71,21 @@ public:
     MCAPI void
     _invalidateDependencies(::std::function<void(::VariableRef const&)> invalidCallback, bool forceInvalidation);
 
+    MCAPI bool isSatisfiable() const;
+
     MCAPI void overrideRenderableLayoutRule(::UIControl& control, ::LayoutVariableType type);
 
     MCAPI void removeDeadDependencies();
 
     MCAPI void removeDependencies();
 
+    MCAPI ::ui::DirtyFlag satisfy();
+
     MCAPI void setOverrideValue(float inValue);
+
+    MCAPI void setRelativeLayoutRule(::UIControl& control, ::UIControl& relativeTo, ::LayoutVariableType const type);
+
+    MCAPI ::std::string toString(::LayoutVariableStringType type) const;
 
     MCAPI ~LayoutVariable();
     // NOLINTEND

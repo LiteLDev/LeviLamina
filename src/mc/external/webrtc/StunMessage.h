@@ -113,8 +113,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool
-    IsStunMethod(::webrtc::ArrayView<int, 18446744073709546905> methods, char const* data, uint64 size);
+    MCNAPI static bool IsStunMethod(::webrtc::ArrayView<int> methods, char const* data, uint64 size);
 
     MCNAPI static bool ValidateFingerprint(char const* data, uint64 size);
 

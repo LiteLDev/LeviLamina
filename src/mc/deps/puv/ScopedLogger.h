@@ -18,6 +18,12 @@ public:
     ScopedLogger& operator=(ScopedLogger const&);
     ScopedLogger(ScopedLogger const&);
     ScopedLogger();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~ScopedLogger();
+    // NOLINTEND
 };
 
 } // namespace Puv::internal

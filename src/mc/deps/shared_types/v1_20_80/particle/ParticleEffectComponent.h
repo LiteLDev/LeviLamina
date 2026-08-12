@@ -21,6 +21,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::HashedString const& $getIdentifier() const;
+
 
     // NOLINTEND
 };

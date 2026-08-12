@@ -37,7 +37,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void addConditionalGuiPassthrough(
+        ::BindingFactory const& bindingFactory,
+        uint                    areaBindingName,
+        ::std::string const&    buttonName,
+        uint                    conditionName,
+        bool                    consumeInput
+    );
+
     MCAPI void addCustomZone(::BindingFactory const& bindingFactory, uint areaBindingName, uint conditionName);
+
+    MCAPI void addTouchControlEditor(
+        ::BindingFactory const& bindingFactory,
+        uint                    areaBindingName,
+        uint                    mainPanelAreaBindingName,
+        uint                    subPanelAreaBindingName,
+        uint                    conditionBindingName
+    );
 
     MCAPI void clearControls(::InputEventQueue& eventQueue);
 

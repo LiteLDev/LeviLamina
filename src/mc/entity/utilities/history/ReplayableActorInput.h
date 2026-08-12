@@ -26,6 +26,8 @@ struct RiptideTridentSpinAttackComponent;
 struct SpinAttackResultsComponent;
 struct VehicleInputIntentComponent;
 namespace BlockCollisionsSystem { struct BlockCollisionResolutionVectorComponent; }
+namespace History { struct EntityWithCache; }
+namespace History { struct NonPlayerComponents; }
 namespace History { struct TurnInput; }
 // clang-format on
 
@@ -105,6 +107,14 @@ public:
     virtual void capture(::SpinAttackResultsComponent const& spinAttackResults) /*override*/;
 
     virtual void capture(::MovementInterpolatorComponent const& interpolator) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void applyCollisionData(::History::EntityWithCache& entity);
+
+    MCNAPI ::History::NonPlayerComponents& getOrCreateNonPlayerComponents();
     // NOLINTEND
 
 public:

@@ -46,20 +46,14 @@ MCAPI void log_va(
     char*                     argptr
 );
 
-MCAPI int rakDebugLog(char const*, ...);
+MCFOLD int rakDebugLog(char const* fstr, ...);
 
 MCAPI void update();
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
 MCAPI ::BedrockLog::CategoryLogs& sCategory();
-#endif
-
-#ifdef LL_PLAT_S
-MCAPI ::BedrockLog::CategoryLogs& sCategory();
-#endif
 // NOLINTEND
 
 } // namespace BedrockLog

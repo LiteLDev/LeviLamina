@@ -5,8 +5,10 @@
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/GameEventNotification.h"
+#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
 #include "mc/client/gui/screens/models/ContentType.h"
+#include "mc/client/gui/screens/models/PackListType.h"
 #include "mc/resources/InvalidPacksFilterGroup.h"
 #include "mc/resources/PackScope.h"
 
@@ -20,7 +22,9 @@ class IContentManagerContext;
 class MainMenuScreenModel;
 class MultiplayerLockState;
 class ResourceLocation;
+class UIPropertyBag;
 struct ContentItem;
+struct MoveResourcePackResult;
 struct PackContentItem;
 struct PackIdVersion;
 // clang-format on
@@ -111,6 +115,61 @@ public:
         ::std::function<void()>                  copyWorld,
         ::std::string                            initialPackId
     );
+
+    MCAPI void _confirmationRestrictedPacksOnWorldDialog(
+        ::PackContentItem&                               packItem,
+        ::ContentView&                                   contentView,
+        int                                              collectionIndex,
+        ::PackListType                                   fromPackList,
+        ::ResourcePacksScreenController::PackRestriction restriction
+    );
+
+    MCAPI ::ContentView* _getContentView(::UIPropertyBag* bag) const;
+
+    MCAPI ::ResourceLocation _getInvalidResource(int slot) const;
+
+    MCAPI ::ui::ViewRequest _handleAvailablePackClicked(::UIPropertyBag* bag);
+
+    MCAPI ::ui::ViewRequest _handleSortPackClicked(::UIPropertyBag* bag, int dir);
+
+    MCAPI bool _hasRestrictedContent(::ContentView& view) const;
+
+    MCAPI bool _launchPlatformLockedDialogIfNeeded(
+        ::PackContentItem&      packItem,
+        ::ContentView&          contentView,
+        int                     collectionIndex,
+        ::PackListType          fromPackList,
+        bool                    moveDependencies,
+        bool                    forceMove,
+        ::std::function<void()> moveCallback
+    );
+
+    MCAPI void _movePackAfterDataPackWarningMessage(::MoveResourcePackResult result);
+
+    MCAPI void _moveResource(
+        ::std::shared_ptr<::PackContentItem> const& item,
+        ::ContentView*                              contentView,
+        int                                         collectionIndex,
+        ::PackListType                              fromPackList,
+        bool,
+        bool forceMove
+    );
+
+    MCAPI void _registerBindings();
+
+    MCAPI void _removeSelectedPacks(int beginAtIndex);
+
+    MCAPI void _showMissingDependencyMessage(::ContentView* contentView, int index, ::PackListType fromPacks);
+
+    MCAPI void _tryMoveResource(
+        ::std::shared_ptr<::PackContentItem> const& packItem,
+        ::ContentView*                              contentView,
+        int                                         collectionIndex,
+        ::PackListType                              fromPackList,
+        bool                                        forceMove
+    );
+
+    MCAPI void activatePack(::std::string const packId);
     // NOLINTEND
 
 public:
@@ -134,6 +193,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 };

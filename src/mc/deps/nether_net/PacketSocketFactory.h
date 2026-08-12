@@ -38,7 +38,7 @@ public:
     CreateUdpSocket(::webrtc::SocketAddress const& address, ushort min_port, ushort max_port) /*override*/;
 
     virtual ::std::shared_ptr<::webrtc::AsyncPacketSocket>
-    CreateGlobalUdpSocket(::webrtc::SocketAddress const& address, ushort min_port, ushort max_port) /*override*/;
+    CreateGlobalUdpSocket(::webrtc::SocketAddress const& address, ushort minPort, ushort maxPort) /*override*/;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAsyncDnsResolver() /*override*/;
     // NOLINTEND
@@ -46,6 +46,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::unique_ptr<::webrtc::AsyncPacketSocket>
+    $CreateUdpSocket(::webrtc::SocketAddress const& address, ushort min_port, ushort max_port);
+
+    MCNAPI ::std::shared_ptr<::webrtc::AsyncPacketSocket>
+    $CreateGlobalUdpSocket(::webrtc::SocketAddress const& address, ushort minPort, ushort maxPort);
+
+    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $CreateAsyncDnsResolver();
+
 
     // NOLINTEND
 };

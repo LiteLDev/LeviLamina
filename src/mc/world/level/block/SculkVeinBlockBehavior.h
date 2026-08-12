@@ -21,32 +21,72 @@ public:
     // NOLINTBEGIN
     virtual int updateDecayDelay(int const) const /*override*/;
 
-    virtual int updateFacingData(int const, ::Block const&) const /*override*/;
+    virtual int updateFacingData(int const, ::Block const& block) const /*override*/;
 
     virtual bool canChangeBlockOnSpread() const /*override*/;
 
-    virtual bool
-    attemptSpreadVeins(::IBlockWorldGenAPI&, ::BlockPos const&, ::Block const&, int, ::SculkSpreader&) const
-        /*override*/;
-
-    virtual int attemptUseCharge(
-        ::IBlockWorldGenAPI&,
-        ::BlockSource*,
-        ::BlockPos const&,
-        ::BlockPos const&,
+    virtual bool attemptSpreadVeins(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::Block const&       block,
         int,
-        int,
-        ::Random&,
-        ::SculkSpreader&,
-        bool const
+        ::SculkSpreader&
     ) const /*override*/;
 
-    virtual void onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const /*override*/;
+    virtual int attemptUseCharge(
+        ::IBlockWorldGenAPI& target,
+        ::BlockSource*       region,
+        ::BlockPos const&,
+        ::BlockPos const& pos,
+        int               charge,
+        int,
+        ::Random&        random,
+        ::SculkSpreader& spreader,
+        bool const       spreadVeins
+    ) const /*override*/;
+
+    virtual void onDischarged(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos) const
+        /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    _cleanUpVeinsWithSculkSubstrate(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD int $updateDecayDelay(int const) const;
+
+    MCAPI int $updateFacingData(int const, ::Block const& block) const;
+
+    MCFOLD bool $canChangeBlockOnSpread() const;
+
+    MCAPI bool $attemptSpreadVeins(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::Block const&       block,
+        int,
+        ::SculkSpreader&
+    ) const;
+
+    MCAPI int $attemptUseCharge(
+        ::IBlockWorldGenAPI& target,
+        ::BlockSource*       region,
+        ::BlockPos const&,
+        ::BlockPos const& pos,
+        int               charge,
+        int,
+        ::Random&        random,
+        ::SculkSpreader& spreader,
+        bool const       spreadVeins
+    ) const;
+
+    MCAPI void $onDischarged(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos) const;
+
 
     // NOLINTEND
 };

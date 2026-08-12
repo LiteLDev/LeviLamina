@@ -71,6 +71,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
+
     MCAPI static int getDamageForName(::HashedString const& name);
     // NOLINTEND
 

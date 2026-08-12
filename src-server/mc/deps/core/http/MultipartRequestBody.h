@@ -39,7 +39,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Bedrock::Http::Internal::IRequestBody::ReadResult $read(::gsl::span<uchar>);
 
+    MCNAPI uint64 $getSize();
+
+    MCNAPI void $cancel();
+
+    MCNAPI ::std::string const& $getLoggableSource() const;
+
+    MCNAPI ::gsl::span<uchar const> $getLoggableData() const;
     // NOLINTEND
 };
 

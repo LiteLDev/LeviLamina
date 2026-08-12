@@ -68,6 +68,8 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel>            model,
         ::ClassroomSettingsScreenControllerCallbacks const& screenCallbacks
     );
+
+    MCAPI void _setEduSharedResourceValue();
     // NOLINTEND
 
 public:
@@ -82,6 +84,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 };

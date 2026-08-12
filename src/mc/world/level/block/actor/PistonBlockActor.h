@@ -9,6 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
+class Actor;
 class BlockActorDataPacket;
 class BlockSource;
 class CompoundTag;
@@ -16,6 +18,7 @@ class DataLoadHelper;
 class IConstBlockSource;
 class ILevel;
 class SaveContext;
+class Vec3;
 // clang-format on
 
 class PistonBlockActor : public ::VanillaBlockActor {
@@ -58,7 +61,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _attachedBlockWalker(
+        ::BlockSource&    region,
+        ::BlockPos const& curPos,
+        uchar             curBranchFacing,
+        uchar             pistonMoveFacing
+    );
+
+    MCAPI bool _checkAttachedBlocks(::BlockSource& region);
+
+    MCAPI void _moveCollidedEntities(::BlockSource& region);
+
+    MCAPI void _moveCollidedEntitiesHelper(
+        ::BlockSource&    region,
+        ::AABB const&     insideBlockAABB,
+        ::BlockPos const& facingDir,
+        ::Actor*          ignore,
+        uint              searchHeight
+    );
+
+    MCAPI void _spawnBlocks(::BlockSource& region);
+
+    MCAPI void _spawnMovingBlock(::BlockSource& region, ::BlockPos const& blockPos);
+
+    MCAPI void _spawnMovingBlocks(::BlockSource& region);
+
     MCAPI ::BlockPos const& getFacingDir(::IConstBlockSource const& region) const;
+
+    MCAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
     // NOLINTEND
 
 public:

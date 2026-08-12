@@ -23,15 +23,27 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk266bfd;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    AchievementEventing& operator=(AchievementEventing const&);
+    AchievementEventing(AchievementEventing const&);
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     AchievementEventing& operator=(AchievementEventing const&);
     AchievementEventing(AchievementEventing const&);
     AchievementEventing();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI AchievementEventing();
+#endif
+
     MCNAPI void AwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievementId);
 
 #ifdef LL_PLAT_C
@@ -40,6 +52,8 @@ public:
     MCNAPI void CaravanChanged(::Mob& mob, int caravanSize);
 
     MCNAPI void CauldronUsed(::Player const& player, short contentsType, uint contentsColor, short fillLevel);
+
+    MCNAPI void EndOfDay(::Player const& player);
 
     MCNAPI void ItemSmelted(::Player const& player, ::ItemDescriptor const& item, ::ItemDescriptor const& lastFuelItem);
 #endif
@@ -61,6 +75,12 @@ public:
 
     MCNAPI void waxedOrWaxedOf(::Player& player, int blockID);
 #endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };
 

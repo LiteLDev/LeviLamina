@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
+#include "mc/client/gui/oreui/routing/RouteHistoryAction.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -50,6 +51,18 @@ public:
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _navigateToManifestValidationScreen(
+        ::SceneFactory&                                      sceneFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&  sceneStack,
+        ::std::string const&                                 path,
+        ::OreUI::RouteHistoryAction const                    action,
+        ::OreUI::EntryPoints::ManifestValidation::ScreenType type
+    ) const;
     // NOLINTEND
 
 public:

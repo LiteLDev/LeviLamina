@@ -11,6 +11,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Network { class ThumbnailCacheFetchRequestPayload; }
+namespace Editor::Network { class ThumbnailCacheStorePayload; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -44,13 +46,19 @@ public:
 
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    virtual bool remove(::mce::UUID, ::std::optional<uint>) /*override*/;
+    virtual bool remove(::mce::UUID id, ::std::optional<uint> hash) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ServerThumbnailCacheService(::Editor::ServiceProviderCollection& serviceProviders);
+
+    MCNAPI void _handleFetchRequest(::Editor::Network::ThumbnailCacheFetchRequestPayload const& evt) const;
+
+    MCNAPI void _handleStoreRequest(::Editor::Network::ThumbnailCacheStorePayload const& evt);
+
+    MCNAPI void _scanFileCache();
     // NOLINTEND
 
 public:
@@ -62,6 +70,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> $init();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $quit();
+
+    MCNAPI ::std::string_view $getServiceName() const;
+
+    MCNAPI bool $remove(::mce::UUID id, ::std::optional<uint> hash);
+
 
     // NOLINTEND
 };

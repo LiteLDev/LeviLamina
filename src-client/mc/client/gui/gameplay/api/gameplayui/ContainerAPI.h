@@ -4,7 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/gameplay/api/gameplayui/AnvilInfo.h"
+#include "mc/client/gui/gameplay/api/gameplayui/ContainerItemType.h"
+#include "mc/client/gui/gameplay/data/gameplayui/ChestType.h"
 #include "mc/client/gui/gameplay/data/gameplayui/ContainerColorMode.h"
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/SlotData.h"
@@ -26,6 +29,7 @@ class FurnaceContainerManagerModel;
 class GrindstoneContainerManagerModel;
 class HopperContainerManagerModel;
 class ItemRegistryRef;
+class ItemStackBase;
 class LocalPlayer;
 class Trade2ContainerManagerModel;
 namespace GameplayUI { struct BrewingStandInfo; }
@@ -91,6 +95,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::GameplayUI::ContainerItem
+    _containerItemFromItemStack(::ItemStackBase const& item, ::GameplayUI::ContainerItemType containerItemType) const;
+
     MCAPI void _recipeAutoCraft(::ContainerEnumName collectionName, int collectionIndex, ::ItemCraftType craftType);
 
     MCAPI ::std::shared_ptr<::ContainerModel> _tryGetContainerModel(::ContainerEnumName containerName) const;
@@ -115,6 +122,8 @@ public:
 
     MCAPI ::std::vector<::GameplayUI::ContainerItem> getBundleContent(int bundleID) const;
 
+    MCAPI ::std::optional<::GameplayUI::ChestType> getChestType() const;
+
     MCAPI ::std::optional<::GameplayUI::ContainerColorMode> getContainerColorMode();
 
     MCAPI ::std::optional<::GameplayUI::ContainerItem>
@@ -134,6 +143,12 @@ public:
     MCAPI ::GameplayUI::ContainerItem getTradeScreenResultPreviewContainerItem(int index) const;
 
     MCAPI ::GameplayUI::TradeTierInfo getTradeTierInfo(int tradeTier) const;
+
+    MCAPI void onPlayerOpenContainer(
+        ::SharedTypes::Legacy::ContainerType containerType,
+        ::BlockPos const&                    blockPos,
+        ::ActorUniqueID const&               uniqueId
+    );
 
     MCAPI void performAutoTrade(int tradeTier, int tradeIndex);
 

@@ -90,20 +90,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $uploadStream(
-        ::FileInfo const&                                               file,
-        uint64                                                          streamSize,
-        ::std::string const&                                            boundary,
-        ::std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
-    );
-
-#ifdef LL_PLAT_C
     MCNAPI void $getServerMissingChunks(
         ::FileInfo const&                                     file,
         ::std::function<void(::std::vector<::FileChunkInfo>)> callback
     ) const;
 
+#ifdef LL_PLAT_S
+    MCNAPI void $confirmChunkReceived(::FileInfo const&, ::FileChunkInfo const&);
+#else // LL_PLAT_C
     MCNAPI void $confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
+#endif
 
     MCNAPI void $uploadChunk(
         ::FileInfo const&           file,
@@ -112,8 +108,14 @@ public:
         ::std::function<void(bool)> onCompleteCallback
     );
 
+    MCNAPI void $uploadStream(
+        ::FileInfo const&                                               file,
+        uint64                                                          streamSize,
+        ::std::string const&                                            boundary,
+        ::std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
+    );
+
     MCNAPI ::FileChunkInfo $getChunkInfo(::FileInfo const& file, int chunkID) const;
-#endif
 
 
     // NOLINTEND

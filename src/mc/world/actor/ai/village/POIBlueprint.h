@@ -20,4 +20,30 @@ public:
     ::ll::TypedStorage<8, 48, ::HashedString> mSoundEvent;
     ::ll::TypedStorage<1, 1, bool>            mUseBoundingBox;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    POIBlueprint();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI POIBlueprint(
+        ::std::string name,
+        ::POIType     type,
+        float         radius,
+        bool          useBoundingBox,
+        uint64        capacity,
+        uint64        weight,
+        ::std::string soundEvent,
+        ::std::string initEvent,
+        ::std::string endEvent
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };

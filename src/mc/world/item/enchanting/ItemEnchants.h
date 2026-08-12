@@ -34,6 +34,8 @@ public:
 
     MCAPI ::std::vector<::std::string> getEnchantNames() const;
 
+    MCAPI int getTotalValue(bool bookModifier) const;
+
     MCAPI bool operator==(::ItemEnchants const& rhs) const;
 
     MCAPI void setEnchantInstances(::std::array<::std::vector<::EnchantmentInstance>, 3> enchants);

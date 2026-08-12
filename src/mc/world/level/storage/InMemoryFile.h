@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+
 class InMemoryFile {
 public:
     // member variables
@@ -20,4 +23,10 @@ public:
     InMemoryFile& operator=(InMemoryFile const&);
     InMemoryFile(InMemoryFile const&);
     InMemoryFile();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Core::PathBuffer<::std::string> getFilename() const;
+    // NOLINTEND
 };

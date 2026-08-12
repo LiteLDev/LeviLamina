@@ -18,6 +18,12 @@ public:
     ProfilerCapture& operator=(ProfilerCapture const&);
     ProfilerCapture(ProfilerCapture const&);
     ProfilerCapture();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::ScriptDebuggerMessages::ProfilerCapture const& other) const;
+    // NOLINTEND
 };
 
 } // namespace ScriptDebuggerMessages

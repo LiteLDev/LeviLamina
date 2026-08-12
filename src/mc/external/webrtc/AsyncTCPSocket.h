@@ -26,7 +26,7 @@ public:
 
     virtual int Send(void const* pv, uint64 cb, ::webrtc::AsyncSocketPacketOptions const& options) /*override*/;
 
-    virtual uint64 ProcessInput(::webrtc::ArrayView<uchar const, 18446744073709546905> data) /*override*/;
+    virtual uint64 ProcessInput(::webrtc::ArrayView<uchar const> data) /*override*/;
     // NOLINTEND
 
 public:
@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI int $Send(void const* pv, uint64 cb, ::webrtc::AsyncSocketPacketOptions const& options);
 
-    MCNAPI uint64 $ProcessInput(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
+    MCNAPI uint64 $ProcessInput(::webrtc::ArrayView<uchar const> data);
 
 
     // NOLINTEND

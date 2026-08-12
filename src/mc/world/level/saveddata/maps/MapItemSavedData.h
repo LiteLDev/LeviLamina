@@ -25,6 +25,7 @@ class Packet;
 class SpinLockImpl;
 class Vec3;
 struct ClientTerrainPixel;
+namespace mce { class Color; }
 // clang-format on
 
 class MapItemSavedData {
@@ -109,6 +110,14 @@ public:
     // NOLINTBEGIN
     MCAPI MapItemSavedData(::ActorUniqueID mapId, bool isDLCworld);
 
+    MCAPI void _addDecoration(
+        ::MapDecoration::Type                  type,
+        ::MapItemTrackedActor::UniqueId const& id,
+        ::Vec3 const&                          position,
+        ::std::string const&                   label,
+        ::mce::Color const&                    color
+    );
+
     MCAPI ::std::shared_ptr<::MapItemTrackedActor> _addTrackedMapEntity(
         ::MapItemTrackedActor::UniqueId const& key,
         ::BlockSource&                         region,
@@ -117,7 +126,14 @@ public:
 
     MCAPI void _deserializeData(::CompoundTag const& tag);
 
+    MCAPI void _removeDecoration(::MapItemTrackedActor::UniqueId const& id);
+
     MCAPI void _removeTrackedMapEntity(::MapItemTrackedActor::UniqueId const& key);
+
+    MCAPI bool
+    _updateTrackedEntityDecoration(::BlockSource& region, ::std::shared_ptr<::MapItemTrackedActor> trackedActor);
+
+    MCAPI void _updateTrackedEntityDecorations(::BlockSource& region);
 
     MCAPI void copyMapData(::MapItemSavedData const& map);
 

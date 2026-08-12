@@ -103,7 +103,11 @@ public:
     // NOLINTBEGIN
     MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int, bool selected) const;
 
+#ifdef LL_PLAT_S
     MCAPI int $getEnchantSlot() const;
+#else // LL_PLAT_C
+    MCFOLD int $getEnchantSlot() const;
+#endif
 
     MCAPI bool $isValidRepairItem(
         ::ItemStackBase const&   source,

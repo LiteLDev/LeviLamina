@@ -40,7 +40,7 @@ public:
 
     virtual ::ItemInstance const& getItemInstance(int modelSlot) const /*override*/;
 
-    virtual void setItemInstance(int, ::ItemInstance const&);
+    virtual void setItemInstance(int modelSlot, ::ItemInstance const& item);
 
     virtual bool isItemInstanceBased() const /*override*/;
 
@@ -62,16 +62,56 @@ public:
 
     virtual void switchItemExpando(int itemId) /*override*/;
 
-    virtual void refreshContainer(bool) /*override*/;
+    virtual void refreshContainer(bool fullRefresh) /*override*/;
 
-    virtual int getIndexForCreativeItem(::ItemStackBase const&) const;
+    virtual int getIndexForCreativeItem(::ItemStackBase const& item) const;
 
     virtual void _init() /*override*/;
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _generateCurrentItems();
+
+    MCAPI void _refreshContainer(bool fullRefresh);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $containerContentChanged(int slot);
+
+    MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
+
+    MCAPI void $setItemInstance(int modelSlot, ::ItemInstance const& item);
+
+    MCFOLD bool $isItemInstanceBased() const;
+
+    MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
+
+    MCFOLD ::ItemStack const& $getItemStack(int modelSlot) const;
+
+    MCFOLD ::std::vector<::ItemStack> const& $getItems() const;
+
+    MCAPI ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
+
+    MCAPI int $getContainerSize() const;
+
+    MCAPI int $getFilteredContainerSize() const;
+
+    MCAPI ::ContainerExpandStatus $getItemExpandStatus(int itemId) const;
+
+    MCAPI ::std::string const& $getItemGroupName(int itemId) const;
+
+    MCAPI void $switchItemExpando(int itemId);
+
+    MCAPI void $refreshContainer(bool fullRefresh);
+
+    MCAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
+
+    MCAPI void $_init();
+
 
     // NOLINTEND
 };

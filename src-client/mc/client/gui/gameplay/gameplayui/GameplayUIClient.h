@@ -50,11 +50,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::EventResult onPlayerCreated(
-        ::LocalPlayer&         player,
-        ::persona::ProfileType personaSlot,
-        ::std::string const&   classicSkinId,
-        bool                   usingClassicSkin,
-        ::NetworkType          networkType
+        ::LocalPlayer& player,
+        ::persona::ProfileType,
+        ::std::string const&,
+        bool,
+        ::NetworkType
     ) /*override*/;
 
     virtual ::EventResult onEvent(::PlayerNotificationEvent const& event) /*override*/;
@@ -91,13 +91,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onPlayerCreated(
-        ::LocalPlayer&         player,
-        ::persona::ProfileType personaSlot,
-        ::std::string const&   classicSkinId,
-        bool                   usingClassicSkin,
-        ::NetworkType          networkType
-    );
+    MCAPI ::EventResult
+    $onPlayerCreated(::LocalPlayer& player, ::persona::ProfileType, ::std::string const&, bool, ::NetworkType);
 
     MCAPI ::EventResult $onEvent(::PlayerNotificationEvent const& event);
 

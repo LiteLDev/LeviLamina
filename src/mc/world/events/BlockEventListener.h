@@ -33,11 +33,11 @@ public:
     onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
     virtual ::EventResult onBlockDestroyedByPlayer(
-        ::Player&         player,
-        ::Block const&    destroyedBlock,
-        ::BlockPos const& pos,
-        ::ItemStackBase const&,
-        ::ItemStackBase const&
+        ::Player&              player,
+        ::Block const&         destroyedBlock,
+        ::BlockPos const&      pos,
+        ::ItemStackBase const& currentItem,
+        ::ItemStackBase const& itemBeforeBlockBreak
     );
 
     virtual ::EventResult onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
@@ -47,11 +47,21 @@ public:
 
     virtual ::EventResult onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress);
 
-    virtual ::EventResult
-    onBlockDestructionStarted(::Player&, ::BlockPos const&, ::Block const&, uchar const, int const);
+    virtual ::EventResult onBlockDestructionStarted(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    hitBlock,
+        uchar const       face,
+        int const         previousProgress
+    );
 
-    virtual ::EventResult
-    onBlockDestructionContinued(::Player&, ::BlockPos const&, ::Block const&, uchar const, int const);
+    virtual ::EventResult onBlockDestructionContinued(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        uchar const       face,
+        int const         previousProgress
+    );
 
     virtual ::EventResult onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 
@@ -68,12 +78,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ::EventResult
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+#else // LL_PLAT_C
+    MCFOLD ::EventResult
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+#endif
+
     MCFOLD ::EventResult $onBlockDestroyedByPlayer(
-        ::Player&         player,
-        ::Block const&    destroyedBlock,
-        ::BlockPos const& pos,
-        ::ItemStackBase const&,
-        ::ItemStackBase const&
+        ::Player&              player,
+        ::Block const&         destroyedBlock,
+        ::BlockPos const&      pos,
+        ::ItemStackBase const& currentItem,
+        ::ItemStackBase const& itemBeforeBlockBreak
     );
 
     MCFOLD ::EventResult $onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
@@ -83,11 +101,21 @@ public:
 
     MCFOLD ::EventResult $onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress);
 
-    MCFOLD ::EventResult
-    $onBlockDestructionStarted(::Player&, ::BlockPos const&, ::Block const&, uchar const, int const);
+    MCFOLD ::EventResult $onBlockDestructionStarted(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    hitBlock,
+        uchar const       face,
+        int const         previousProgress
+    );
 
-    MCFOLD ::EventResult
-    $onBlockDestructionContinued(::Player&, ::BlockPos const&, ::Block const&, uchar const, int const);
+    MCFOLD ::EventResult $onBlockDestructionContinued(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        uchar const       face,
+        int const         previousProgress
+    );
 
     MCFOLD ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 
@@ -102,10 +130,9 @@ public:
 
     MCFOLD ::EventResult $onUnknownBlockReceived(::Level& level, ::NewBlockID const& blockId, ushort data);
 
-#ifdef LL_PLAT_C
-    MCFOLD ::EventResult
-    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
-
+#ifdef LL_PLAT_S
+    MCAPI ::EventResult $onEvent(::BlockNotificationEvent const& event);
+#else // LL_PLAT_C
     MCFOLD ::EventResult $onEvent(::BlockNotificationEvent const& event);
 #endif
 

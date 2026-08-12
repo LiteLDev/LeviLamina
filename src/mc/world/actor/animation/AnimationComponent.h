@@ -18,6 +18,7 @@
 // clang-format off
 class Actor;
 class ActorAnimationControllerInfo;
+class ActorAnimationControllerPlayer;
 class ActorAnimationControllerStatePlayer;
 class ActorAnimationPlayer;
 class ActorSkeletalAnimationPtr;
@@ -111,15 +112,9 @@ public:
 
     virtual ::ClientAnimationComponent* tryGetClient();
 
-#ifdef LL_PLAT_S
-    virtual void visitApplyContext(
-        ::brstd::function_ref<void(::ApplyAnimationContext const&) const, void(::ApplyAnimationContext const&)>
-    ) const;
-#else // LL_PLAT_C
     virtual void visitApplyContext(
         ::brstd::function_ref<void(::ApplyAnimationContext const&) const, void(::ApplyAnimationContext const&)> visitor
     ) const;
-#endif
 
 #ifdef LL_PLAT_S
     virtual void initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)>);
@@ -155,6 +150,11 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI explicit AnimationComponent(::AnimationComponentArguments&& args);
+
+    MCAPI void _addAnimationToStatePlayer(
+        ::HashedString const&                                    friendlyName,
+        ::std::shared_ptr<::ActorAnimationControllerStatePlayer> player
+    );
 #endif
 
     MCAPI ::RenderParams& _prepRenderParamsForActor(::Actor& actor);
@@ -174,6 +174,11 @@ public:
         ::std::string const&  nextStateName,
         ::std::string const&  runtimeController
     );
+
+    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& rawAnimationName);
+
+    MCAPI ::std::shared_ptr<::ActorAnimationControllerPlayer>
+    getAnimationControllerPlayer(::HashedString const& destControllerName, bool createIfMissing);
 
     MCAPI ::ModelPartLocator* getLocator(::HashedString const& locatorNameHash);
 
@@ -244,15 +249,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCFOLD ::ClientAnimationComponent* $tryGetClient();
 
     MCAPI void $visitApplyContext(
         ::brstd::function_ref<void(::ApplyAnimationContext const&) const, void(::ApplyAnimationContext const&)> visitor
     ) const;
 
+#ifdef LL_PLAT_S
+    MCFOLD void $initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)>);
+#else // LL_PLAT_C
     MCFOLD void
     $initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)> animationComponentInitFunction);
+#endif
 
     MCFOLD void $ensureClientAnimationComponentIsInitialized();
 
@@ -260,10 +268,17 @@ public:
 
     MCFOLD void $updateQueryableGeometryBoneOrientations();
 
+#ifdef LL_PLAT_S
+    MCFOLD ::Matrix const* $getQueryableBoneOrientation(uint64) const;
+#else // LL_PLAT_C
     MCFOLD ::Matrix const* $getQueryableBoneOrientation(uint64 boneNameHash) const;
+#endif
 
     MCFOLD ::gsl::span<::SkeletalHierarchyIndex const> $getSkeletalHierarchiesToProcess() const;
 
+#ifdef LL_PLAT_S
+    MCFOLD float $_getActorRenderDeltaTime(::ActorRenderData const&) const;
+#else // LL_PLAT_C
     MCFOLD float $_getActorRenderDeltaTime(::ActorRenderData const& data) const;
 #endif
 

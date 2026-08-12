@@ -6,12 +6,23 @@
 #include "mc/client/renderer/actor/DataDrivenRenderer_tempComponent.h"
 #include "mc/client/renderer/actor/V2TempComponentRequirements.h"
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/renderer/MatrixStack.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ActorRenderData;
 class BaseActorRenderContext;
+class Block;
+class BlockType;
+class BoneOrientation;
+class DataDrivenRenderer;
+class ItemStack;
+class Mob;
 class RenderParams;
+namespace dragon { struct RenderMetadata; }
+namespace mce { class TextureGroup; }
 // clang-format on
 
 class DataDrivenRenderer_tempComponent_HumanoidAdditionalRendering : public ::DataDrivenRenderer_tempComponent {
@@ -62,11 +73,81 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void preRender(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
+    virtual void preRender(
+        ::BaseActorRenderContext& renderContext,
+        ::ActorRenderData&        actorRenderData,
+        ::RenderParams&           renderParams
+    ) /*override*/;
 
-    virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
+    virtual void render(
+        ::BaseActorRenderContext& renderContext,
+        ::ActorRenderData&        actorRenderData,
+        ::RenderParams&           renderParams
+    ) /*override*/;
 
     virtual ::V2TempComponentRequirements getV2Requirements() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI DataDrivenRenderer_tempComponent_HumanoidAdditionalRendering(
+        ::std::shared_ptr<::DataDrivenRenderer> renderer,
+        ::std::shared_ptr<::mce::TextureGroup>  textureGroup
+    );
+
+    MCNAPI void _renderChestGear(
+        ::BaseActorRenderContext&              renderContext,
+        ::dragon::RenderMetadata const         renderMetadata,
+        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
+        ::ItemStack const&                     chestGear,
+        ::Mob&                                 mob,
+        float                                  actorFrameAlpha
+    );
+
+    MCNAPI void _renderHeadGear(
+        ::BaseActorRenderContext&         renderContext,
+        ::dragon::RenderMetadata const    renderMetadata,
+        ::ItemStack const&                headGear,
+        ::Actor*                          actor,
+        ::std::vector<::BoneOrientation>* boneOrientations
+    );
+
+    MCNAPI void _renderMainHandItem(
+        ::BaseActorRenderContext&         renderContext,
+        ::RenderParams&                   renderParams,
+        ::ItemStack const&                ii,
+        ::Mob&                            mob,
+        ::std::vector<::BoneOrientation>* boneOrientations
+    );
+
+    MCNAPI void _renderOffHandItem(
+        ::BaseActorRenderContext&         renderContext,
+        ::ItemStack const&                offhandItemInstance,
+        ::Mob&                            mob,
+        ::std::vector<::BoneOrientation>* boneOrientations
+    );
+
+    MCNAPI bool _shouldRenderOffHandItem(::Mob const& mob, ::ItemStack const& offhandItemInstance);
+
+    MCNAPI void prepareCarriedOffhandItem(::Mob&, ::ItemStack const& item);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _applyBlockItemTransforms(
+        ::MatrixStack::MatrixStackRef& worldMatrix,
+        ::BlockType const*             block,
+        ::BlockShape                   blockShape,
+        bool                           isMainHand
+    );
+
+    MCNAPI static void _applyDataDrivenBlockItemTransforms(
+        ::MatrixStack::MatrixStackRef& worldMatrix,
+        ::Block const&                 block,
+        bool const                     isMainHand
+    );
     // NOLINTEND
 
 public:
@@ -76,8 +157,23 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // constructor thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI void $preRender(
+        ::BaseActorRenderContext& renderContext,
+        ::ActorRenderData&        actorRenderData,
+        ::RenderParams&           renderParams
+    );
+
+    MCNAPI void
+    $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams& renderParams);
+
+    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
     // NOLINTEND
 };

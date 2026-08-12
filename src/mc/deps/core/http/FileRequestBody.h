@@ -74,10 +74,19 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCNAPI ::Bedrock::Http::Internal::IRequestBody::ReadResult $read(::gsl::span<uchar>);
+#else // LL_PLAT_C
     MCNAPI ::Bedrock::Http::Internal::IRequestBody::ReadResult $read(::gsl::span<uchar> destination);
+#endif
 
     MCNAPI uint64 $getSize();
 
@@ -86,7 +95,6 @@ public:
     MCNAPI ::std::string const& $getLoggableSource() const;
 
     MCNAPI ::gsl::span<uchar const> $getLoggableData() const;
-#endif
 
 
     // NOLINTEND

@@ -30,6 +30,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $OnReceivedPacket(::webrtc::PacketResult const&);
+
 
     // NOLINTEND
 };

@@ -169,11 +169,17 @@ public:
     virtual ::OreUI::RouteMode getRouteMode(::std::string const& route) const /*override*/;
 
     virtual ::OreUI::RoutePrerequisite getRoutePrerequisite(::std::string const& route) const /*override*/;
+
+    virtual ~RouteMatcher() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::optional<::OreUI::RouteMatcher::RedirectEntry> _matchRedirect(::std::string const& route) const;
+
+    MCAPI ::std::optional<::OreUI::RouteMatcher::RouteEntry> _matchRoute(::std::string const& route) const;
+
     MCAPI void addRedirect(
         ::std::string const&                                 path,
         ::std::function<bool()>                              isActiveCallback,
@@ -189,6 +195,12 @@ public:
         ::std::function<bool()>                                                  isActiveCallback,
         ::std::function<void(::std::string const&, ::OreUI::RouteHistoryAction)> matchCallback
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

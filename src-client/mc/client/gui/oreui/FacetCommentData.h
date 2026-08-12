@@ -34,6 +34,32 @@ public:
     FacetCommentData& operator=(FacetCommentData const&);
     FacetCommentData(FacetCommentData const&);
     FacetCommentData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::string const& getAuthorXuid() const;
+
+    MCAPI ::Realms::Stories::PostStatus getDeleteStatus() const;
+
+    MCAPI bool const getHasLiked() const;
+
+    MCAPI bool const getHasViewed() const;
+
+    MCAPI ::std::string const& getId() const;
+
+    MCAPI ::std::string const& getParentId() const;
+
+    MCAPI ::Realms::Stories::PostStatus getReportToClubOwnerStatus() const;
+
+    MCAPI ::Realms::Stories::PostStatus getReportToXboxStatus() const;
+
+    MCAPI ::Realms::Stories::PostStatus getSetViewedStatus() const;
+
+    MCAPI ::Realms::Stories::PostStatus getToggleLikeStatus() const;
+
+    MCAPI int const getTotalLikes() const;
+    // NOLINTEND
 };
 
 } // namespace OreUI::RealmsStories

@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnkcfadc4;
-    ::ll::UntypedStorage<8, 64> mUnkfc62da;
+    ::ll::UntypedStorage<8, 64> mUnkcb88f1;
     // NOLINTEND
 
 public:
@@ -32,9 +32,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PacketSender(
-        ::dcsctp::DcSctpSocketCallbacks& callbacks,
-        ::std::function<void(::webrtc::ArrayView<uchar const, 18446744073709546905>, ::dcsctp::SendPacketStatus)>
-            on_sent_packet
+        ::dcsctp::DcSctpSocketCallbacks&                                                    callbacks,
+        ::std::function<void(::webrtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus)> on_sent_packet
     );
 
     MCNAPI bool Send(::dcsctp::SctpPacket::Builder& builder, bool write_checksum);
@@ -46,9 +45,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::dcsctp::DcSctpSocketCallbacks& callbacks,
-        ::std::function<void(::webrtc::ArrayView<uchar const, 18446744073709546905>, ::dcsctp::SendPacketStatus)>
-            on_sent_packet
+        ::dcsctp::DcSctpSocketCallbacks&                                                    callbacks,
+        ::std::function<void(::webrtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus)> on_sent_packet
     );
     // NOLINTEND
 

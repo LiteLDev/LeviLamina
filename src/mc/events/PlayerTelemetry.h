@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Player;
+// clang-format on
+
 namespace Social::Events {
 
 class PlayerTelemetry {
@@ -40,6 +45,16 @@ public:
     PlayerTelemetry& operator=(PlayerTelemetry const&);
     PlayerTelemetry(PlayerTelemetry const&);
     PlayerTelemetry();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void UpdatePlayerLoadout(::Player& player);
+#endif
+
+    MCNAPI ~PlayerTelemetry();
+    // NOLINTEND
 };
 
 } // namespace Social::Events

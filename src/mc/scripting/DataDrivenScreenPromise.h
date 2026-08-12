@@ -10,21 +10,15 @@ struct DataDrivenScreenPromise {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk277a07;
+    ::ll::TypedStorage<4, 8, ::std::optional<uint>> mFormId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataDrivenScreenPromise& operator=(DataDrivenScreenPromise const&);
-    DataDrivenScreenPromise(DataDrivenScreenPromise const&);
-    DataDrivenScreenPromise();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void resolve(::DataDrivenScreenClosedReason) = 0;
+    virtual void resolve(::DataDrivenScreenClosedReason resolution) = 0;
 
-    virtual void reject(::DataDrivenScreenRejectReason) = 0;
+    virtual void reject(::DataDrivenScreenRejectReason rejection) = 0;
     // NOLINTEND
 
 public:

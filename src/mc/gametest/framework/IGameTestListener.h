@@ -17,11 +17,15 @@ public:
 
     virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
 
-    virtual void onTestPassed(::gametest::BaseGameTestInstance&);
+    virtual void onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 
-    virtual void onTestFailed(::gametest::BaseGameTestInstance&);
+    virtual void onTestFailed(::gametest::BaseGameTestInstance& testInstance);
 
+#ifdef LL_PLAT_S
+    virtual void onTestStarted(::gametest::BaseGameTestInstance& testInstance);
+#else // LL_PLAT_C
     virtual void onTestStarted(::gametest::BaseGameTestInstance&);
+#endif
 
     virtual void onTestRetryStarted(::gametest::BaseGameTestInstance&);
 
@@ -33,11 +37,15 @@ public:
     // NOLINTBEGIN
     MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
 
-    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 
-    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
 
+#ifdef LL_PLAT_S
+    MCNAPI void $onTestStarted(::gametest::BaseGameTestInstance& testInstance);
+#else // LL_PLAT_C
     MCNAPI void $onTestStarted(::gametest::BaseGameTestInstance&);
+#endif
 
     MCNAPI void $onTestRetryStarted(::gametest::BaseGameTestInstance&);
 

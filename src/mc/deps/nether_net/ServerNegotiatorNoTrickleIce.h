@@ -38,21 +38,39 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void createAnswer(
-        ::webrtc::PeerConnectionInterface::RTCConfiguration const&,
-        ::NetherNet::ConnectRequest const&,
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& config,
+        ::NetherNet::ConnectRequest const&                         offer,
         ::brstd::move_only_function<void(
             ::Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError>
-        )>&&
+        )>&&                                                       onComplete
     ) /*override*/;
 
-    virtual void _onSetLocalDescription(::webrtc::RTCError) /*override*/;
+    virtual void _onSetLocalDescription(::webrtc::RTCError result) /*override*/;
 
-    virtual void _onLocalIceCandidate(::webrtc::IceCandidate const*) /*override*/;
+    virtual void _onLocalIceCandidate(::webrtc::IceCandidate const* iceCandidate) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _onIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState newState);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $createAnswer(
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& config,
+        ::NetherNet::ConnectRequest const&                         offer,
+        ::brstd::move_only_function<void(
+            ::Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError>
+        )>&&                                                       onComplete
+    );
+
+    MCNAPI void $_onSetLocalDescription(::webrtc::RTCError result);
+
+    MCNAPI void $_onLocalIceCandidate(::webrtc::IceCandidate const* iceCandidate);
+
 
     // NOLINTEND
 };

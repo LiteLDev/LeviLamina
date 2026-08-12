@@ -12,6 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 struct PlayerClosedContainerEvent;
 struct PlayerDimensionChangeAfterEvent;
 struct PlayerEmoteEvent;
@@ -94,6 +95,12 @@ public:
     virtual ::EventResult onEvent(::PlayerOpenedContainerEvent const& e) /*override*/;
 
     virtual ::EventResult onEvent(::PlayerClosedContainerEvent const& e) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void flushContainerCloseContext(::Player const& player);
     // NOLINTEND
 
 public:

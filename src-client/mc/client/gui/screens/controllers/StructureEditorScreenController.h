@@ -18,6 +18,7 @@ class MinecraftglTFExporter;
 class Player;
 class StructureTemplate;
 struct ActorUniqueID;
+struct TextEditScreenEventData;
 namespace Json { class Value; }
 // clang-format on
 
@@ -90,6 +91,18 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
+
+    MCAPI void _filePicker(::StructureEditorScreenController::FilePickerType op);
+
+    MCAPI ::std::string _getTextEditValue(::TextEditScreenEventData& textEditEvent) const;
+
+    MCAPI float _getTextEditValueAsFloat(::TextEditScreenEventData& textEditEvent) const;
+
+    MCAPI int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent) const;
+
+    MCAPI void _initiateFileGeneration();
+
+    MCAPI void _setSeedFromString();
     // NOLINTEND
 
 public:
@@ -106,6 +119,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onOpen();
 
+    MCAPI void $onLeave();
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
+    MCFOLD ::std::string $_getButtonADescription();
     // NOLINTEND
 };

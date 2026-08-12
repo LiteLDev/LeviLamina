@@ -14,6 +14,7 @@
 // clang-format off
 class BinaryStream;
 class BlockPalette;
+class ItemStack;
 class Player;
 class ReadOnlyBinaryStream;
 // clang-format on
@@ -86,6 +87,16 @@ public:
     MCAPI ItemUseInventoryTransaction(::ItemUseInventoryTransaction const& transaction);
 
     MCAPI ::ItemUseInventoryTransaction& operator=(::ItemUseInventoryTransaction const&);
+
+    MCAPI ::ItemUseInventoryTransaction& setSelectedItem(::ItemStack const& item);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void resendBlocksAroundArea(::Player& player, ::BlockPos const& pos, uchar facing);
+
+    MCAPI static void resendPlayerState(::Player& player);
     // NOLINTEND
 
 public:

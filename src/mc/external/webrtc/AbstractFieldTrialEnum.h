@@ -33,6 +33,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $Parse(::std::optional<::std::string>);
+
 
     // NOLINTEND
 };

@@ -87,6 +87,8 @@ public:
 
     MCAPI void preAiStep();
 
+    MCAPI void registerLoopingSounds();
+
 #ifdef LL_PLAT_C
     MCAPI void setElderGhost();
 #endif
@@ -105,6 +107,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+
+    MCAPI bool $checkSpawnRules(bool fromSpawner);
+
+    MCFOLD void $setTarget(::Actor* target);
+
+    MCAPI float $getMaxHeadXRot();
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCFOLD bool $isDarkEnoughToSpawn() const;
+
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
+
 
     // NOLINTEND
 };

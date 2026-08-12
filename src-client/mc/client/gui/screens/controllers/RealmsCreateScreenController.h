@@ -18,6 +18,8 @@
 class IEntitlementManager;
 class MainMenuScreenModel;
 class RealmsCreateParams;
+struct ProductSku;
+struct Purchase;
 namespace Json { class Value; }
 // clang-format on
 
@@ -88,6 +90,24 @@ public:
         bool                                                 isSubController,
         ::ScreenExitBehavior                                 exitBehavior
     );
+
+    MCAPI void _checkUnfulfilledPurchase();
+
+    MCAPI void _errorDialogCreateRealmFail();
+
+    MCAPI void _errorDialogFailedConditions();
+
+    MCAPI void _errorDialogInvalidName(::std::string realmName, bool genericError);
+
+    MCAPI void _fulfillPriorRealmPurchase(::std::weak_ptr<::Purchase> purchase);
+
+    MCAPI ::ProductSku const& _getProductSku() const;
+
+    MCAPI void _openPurchaseInProgress();
+
+    MCAPI void _promptForIntentMismatchOverride(::std::string const& contentId);
+
+    MCAPI void _verifyAppStoreReady(::std::function<void()> readyCallback);
     // NOLINTEND
 
 public:
@@ -105,6 +125,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onCreation();
 
+    MCAPI void $onOpen();
+
+    MCAPI void $onLeave();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

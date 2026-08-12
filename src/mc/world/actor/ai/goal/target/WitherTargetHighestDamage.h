@@ -9,6 +9,7 @@
 // clang-format off
 class Actor;
 class Mob;
+class Player;
 class WitherBoss;
 struct MobDescriptor;
 // clang-format on
@@ -45,6 +46,12 @@ public:
         bool                    mustSee,
         ::MobDescriptor const** outDescriptorMatch
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Player* getHighestDamageTarget();
     // NOLINTEND
 
 public:

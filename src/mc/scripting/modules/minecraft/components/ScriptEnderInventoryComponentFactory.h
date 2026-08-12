@@ -23,15 +23,23 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptEnderInventoryComponentFactory() /*override*/ = default;
 
-    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>
-    createComponent(::WeakEntityRef, ::Scripting::WeakLifetimeScope const&, ::std::string const&) /*override*/;
+    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent> createComponent(
+        ::WeakEntityRef                       entity,
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::string const&                  id
+    ) /*override*/;
 
-    virtual bool hasComponent(::WeakEntityRef) const /*override*/;
+    virtual bool hasComponent(::WeakEntityRef entity) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>
+    $createComponent(::WeakEntityRef entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
+
+    MCAPI bool $hasComponent(::WeakEntityRef entity) const;
+
 
     // NOLINTEND
 };

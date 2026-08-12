@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace NetherNet { struct NetworkID; }
+namespace webrtc { class SocketAddress; }
 // clang-format on
 
 namespace NetherNet {
@@ -51,6 +52,28 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~PeerRecordTable() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool AddOrUpdate(
+        ::NetherNet::NetworkID                  networkID,
+        ::webrtc::SocketAddress const&          address,
+        ::std::chrono::steady_clock::time_point timeOfDiscovery
+    );
+
+    MCNAPI bool Find(::NetherNet::NetworkID networkID, ::webrtc::SocketAddress* pOut);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::vector<::std::pair<::NetherNet::NetworkID, ::NetherNet::PeerRecordTable::PeerRecord>>
+    RemoveExpiredRecords(
+        ::NetherNet::Utils::ThreadSafe<
+            ::std::map<::NetherNet::NetworkID, ::NetherNet::PeerRecordTable::PeerRecord>>::View const& exclusiveTable
+    );
     // NOLINTEND
 };
 

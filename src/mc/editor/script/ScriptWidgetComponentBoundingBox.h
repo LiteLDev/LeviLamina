@@ -4,11 +4,21 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
+#include "mc/scripting/Axis.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
 namespace Editor::Network { class WidgetComponentStateChangePayload; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
+namespace ScriptModuleMinecraft { class ScriptRGBA; }
+namespace ScriptModuleMinecraft { class ScriptSimpleBlockVolume; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -47,9 +57,68 @@ public:
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
 
     virtual void
-    _handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const&) /*override*/;
+    _handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload) /*override*/;
 
     virtual void _onOwnerPositionUpdate() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _calculateOrientationTransformations();
+
+    MCNAPI ::Scripting::Result<::Scripting::Axis, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getEnableResizeHandles() const;
+
+    MCNAPI ::Scripting::
+        Result<::ScriptModuleMinecraft::ScriptRGBA, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+        _getHullColor() const;
+
+    MCNAPI ::Scripting::Result<::Mirror, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getMirror() const;
+
+    MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getNormalizedOrigin() const;
+
+    MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getOffset() const;
+
+    MCNAPI ::Scripting::
+        Result<::ScriptModuleMinecraft::ScriptRGBA, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+        _getOutlineColor() const;
+
+    MCNAPI ::Scripting::Result<::Rotation, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getRotation() const;
+
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getShowTerminator() const;
+
+    MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getSize() const;
+
+    MCNAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume>,
+        ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getTransformedWorldVolume() const;
+
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getVisibleHull() const;
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _setHullColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
+
+    MCNAPI ::Scripting::Result_deprecated<void> _setOffset(::Vec3 const& offset);
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _setOutlineColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _setShowTerminator(bool showTerminator);
+
+    MCNAPI ::Scripting::Result_deprecated<void> _setSize(::Vec3 const& size);
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _setVisibleHull(bool visible);
     // NOLINTEND
 
 public:
@@ -61,6 +130,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
+
+    MCNAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload);
+
+    MCNAPI void $_onOwnerPositionUpdate();
+
 
     // NOLINTEND
 };

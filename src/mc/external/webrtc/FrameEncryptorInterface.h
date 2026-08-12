@@ -18,9 +18,9 @@ public:
     virtual int Encrypt(
         ::webrtc::MediaType,
         uint,
-        ::webrtc::ArrayView<uchar const, 18446744073709546905>,
-        ::webrtc::ArrayView<uchar const, 18446744073709546905>,
-        ::webrtc::ArrayView<uchar, 18446744073709546905>,
+        ::webrtc::ArrayView<uchar const>,
+        ::webrtc::ArrayView<uchar const>,
+        ::webrtc::ArrayView<uchar>,
         uint64*
     ) = 0;
 

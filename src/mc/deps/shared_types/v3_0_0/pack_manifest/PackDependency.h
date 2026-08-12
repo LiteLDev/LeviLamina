@@ -15,6 +15,12 @@ public:
     ::ll::TypedStorage<8, 16, ::mce::UUID>  mUUID;
     ::ll::TypedStorage<8, 24, ::SemVersion> mVersion;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::PackDependency const& other) const;
+    // NOLINTEND
 };
 
 } // namespace SharedTypes::v3_0_0::PackManifestDefinition

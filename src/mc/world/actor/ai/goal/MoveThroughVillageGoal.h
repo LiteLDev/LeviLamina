@@ -37,12 +37,22 @@ public:
 
     virtual void stop() /*override*/;
 
-    virtual void appendDebugInfo(::std::string&) const /*override*/;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $canUse();
+
+    MCFOLD bool $canContinueToUse();
+
+    MCAPI void $start();
+
+    MCFOLD void $stop();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
 
     // NOLINTEND
 };

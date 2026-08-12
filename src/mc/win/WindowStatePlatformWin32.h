@@ -27,9 +27,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCNAPI bool $getClosestMonitorRect(::tagRECT const&, ::tagRECT&) const;
+#else // LL_PLAT_C
     MCNAPI bool $getClosestMonitorRect(::tagRECT const& closestToRect, ::tagRECT& result) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI ::tagRECT $_fitClientToScreen(::tagRECT const&, ::tagRECT const&, ::tagRECT const&);
+#else // LL_PLAT_C
     MCNAPI ::tagRECT $_fitClientToScreen(::tagRECT const& client, ::tagRECT const& window, ::tagRECT const& screen);
 #endif
 

@@ -35,7 +35,7 @@ public:
 
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
-    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
+    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
 
     virtual ::PackType getPackType() const /*override*/;
     // NOLINTEND
@@ -43,6 +43,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::PackOrigin $getPackOrigin() const;
+
+    MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
+
+    MCNAPI ::PackType $getPackType() const;
+
 
     // NOLINTEND
 };

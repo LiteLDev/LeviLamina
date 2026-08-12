@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class ISecureStorageKeySystem;
+class SecureStorageKey;
 namespace Core { class Path; }
 namespace Core { class PathView; }
 // clang-format on
@@ -25,9 +26,9 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual bool getData(::std::string&, ::Core::Path);
+        virtual bool getData(::std::string& output, ::Core::Path path);
 
-        virtual void setData(::std::string const&, ::Core::Path);
+        virtual void setData(::std::string const& data, ::Core::Path path);
 
         virtual ~StorageSystem() = default;
         // NOLINTEND
@@ -35,6 +36,10 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI bool $getData(::std::string& output, ::Core::Path path);
+
+        MCNAPI void $setData(::std::string const& data, ::Core::Path path);
+
 
         // NOLINTEND
     };
@@ -55,14 +60,18 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual bool getData(::std::string&, ::Core::Path) /*override*/;
+        virtual bool getData(::std::string& output, ::Core::Path path) /*override*/;
 
-        virtual void setData(::std::string const&, ::Core::Path) /*override*/;
+        virtual void setData(::std::string const& data, ::Core::Path path) /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI bool $getData(::std::string& output, ::Core::Path path);
+
+        MCNAPI void $setData(::std::string const& data, ::Core::Path path);
+
 
         // NOLINTEND
     };
@@ -97,30 +106,13 @@ public:
     virtual ~FileSecureStorage() /*override*/;
 #endif
 
-#ifdef LL_PLAT_S
-    virtual bool add(::std::string const&, ::std::string const&) /*override*/;
-#else // LL_PLAT_C
     virtual bool add(::std::string const& key, ::std::string const& value) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual bool addOrUpdate(::std::string const&, ::std::string const&) /*override*/;
-#else // LL_PLAT_C
     virtual bool addOrUpdate(::std::string const& key, ::std::string const& value) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual bool remove(::std::string const&) /*override*/;
-#else // LL_PLAT_C
     virtual bool remove(::std::string const& key) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual bool get(::std::string const&, ::std::string&) /*override*/;
-#else // LL_PLAT_C
     virtual bool get(::std::string const& key, ::std::string& outValue) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -134,9 +126,21 @@ public:
         ::FileSecureStorage::StorageSystem* storage
     );
 
+    MCNAPI ::std::string _contentKeyObfuscator(::std::string const& codedData, ::std::string const& identifier);
+
+    MCNAPI ::SecureStorageKey _getSecureStorageKey() const;
+
 #ifdef LL_PLAT_C
     MCNAPI bool _init(bool expectedFailure);
 #endif
+
+#ifdef LL_PLAT_S
+    MCNAPI bool _init(bool expectedFailure);
+#endif
+
+    MCNAPI void _initalizeSymmetricEncyrption(::std::string& symmetricKey, bool force);
+
+    MCNAPI void _rebuildSecureStorageFile();
     // NOLINTEND
 
 public:
@@ -160,7 +164,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI bool $add(::std::string const& key, ::std::string const& value);
 
     MCNAPI bool $addOrUpdate(::std::string const& key, ::std::string const& value);
@@ -168,7 +171,6 @@ public:
     MCNAPI bool $remove(::std::string const& key);
 
     MCNAPI bool $get(::std::string const& key, ::std::string& outValue);
-#endif
 
 
     // NOLINTEND

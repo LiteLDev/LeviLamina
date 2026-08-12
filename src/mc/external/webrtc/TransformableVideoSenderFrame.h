@@ -48,9 +48,9 @@ public:
     // NOLINTBEGIN
     virtual ~TransformableVideoSenderFrame() /*override*/ = default;
 
-    virtual ::webrtc::ArrayView<uchar const, 18446744073709546905> GetData() const /*override*/;
+    virtual ::webrtc::ArrayView<uchar const> GetData() const /*override*/;
 
-    virtual void SetData(::webrtc::ArrayView<uchar const, 18446744073709546905> data) /*override*/;
+    virtual void SetData(::webrtc::ArrayView<uchar const> data) /*override*/;
 
     virtual uint GetTimestamp() const /*override*/;
 
@@ -114,9 +114,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::webrtc::ArrayView<uchar const, 18446744073709546905> $GetData() const;
+    MCNAPI ::webrtc::ArrayView<uchar const> $GetData() const;
 
-    MCNAPI void $SetData(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
+    MCNAPI void $SetData(::webrtc::ArrayView<uchar const> data);
 
     MCNAPI uint $GetTimestamp() const;
 

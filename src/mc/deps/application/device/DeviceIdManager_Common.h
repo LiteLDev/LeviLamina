@@ -45,7 +45,7 @@ public:
 
     virtual bool isDeviceIdValid() const /*override*/;
 
-    virtual void _initializePlatform(::Bedrock::DeviceIDPlatformEnvironment const&) = 0;
+    virtual void _initializePlatform(::Bedrock::DeviceIDPlatformEnvironment const& environment) = 0;
     // NOLINTEND
 
 public:

@@ -29,4 +29,22 @@ public:
     ::ll::TypedStorage<8, 72, ::CrackRenderObjectCollection>        mCrackState;
     ::ll::TypedStorage<8, 40, ::NameTagRenderObjectCollection>      mNameTagState;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ViewRenderObject& operator=(ViewRenderObject const&);
+    ViewRenderObject(ViewRenderObject const&);
+    ViewRenderObject();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ViewRenderObject(::ViewRenderObject&&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };

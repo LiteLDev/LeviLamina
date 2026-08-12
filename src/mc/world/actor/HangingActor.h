@@ -75,6 +75,10 @@ public:
         int                                wouldSurviveCheckCooldown
     );
 
+    MCAPI bool _blockContainsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
+
+    MCAPI bool _blockIsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
+
     MCAPI void _calculateAABB();
 
     MCAPI void _calculateActorPositionFromPlacementPosition(::BlockPos const& blockPos);

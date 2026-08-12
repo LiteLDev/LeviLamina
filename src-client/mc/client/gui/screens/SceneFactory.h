@@ -85,6 +85,7 @@ struct ModalScreenData;
 struct PackContentItem;
 struct PackSettingsInfo;
 struct StoreDataDrivenScreenParams;
+struct UserManagementModalScreenData;
 struct WorldTemplateInfo;
 namespace Bedrock::StorageMigration { class StorageMigrationService; }
 namespace Core { class Path; }
@@ -185,7 +186,8 @@ public:
 
     virtual ::std::shared_ptr<::AbstractScene> createStartMenuScreen(bool shouldSendEvent) /*override*/;
 
-    virtual ::Json::Value createGlobalVars(::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const>) const = 0;
+    virtual ::Json::Value
+    createGlobalVars(::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> defRepository) const = 0;
     // NOLINTEND
 
 public:
@@ -219,6 +221,8 @@ public:
     ) const;
 
     MCAPI ::std::shared_ptr<::AbstractScene> _createScreen(::std::shared_ptr<::BaseScreen> newScreen);
+
+    MCAPI void _preCacheScreen(::Json::Value const& globalVars, ::std::string const& screenName);
 
     MCAPI ::std::shared_ptr<::AbstractScene> createAcceptDeclineInvitationScreen(
         ::std::string const&              title,
@@ -743,6 +747,11 @@ public:
 
     MCAPI ::std::shared_ptr<::AbstractScene> createUpsellScreen(bool isNewWorld, bool timeExpired);
 
+    MCAPI ::std::shared_ptr<::AbstractScene> createUserManagementModalScreen(
+        ::UserManagementModalScreenData const& screenData,
+        ::std::function<void(bool)>            callback
+    );
+
     MCAPI ::std::shared_ptr<::AbstractScene> createVersionUpdateScreen(::UpdateVersionScreenContext context);
 
     MCAPI ::std::shared_ptr<::AbstractScene> createWin10TrialConversionScreen();
@@ -820,6 +829,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::AbstractScene> $createDevConsole();
+
     MCAPI ::std::shared_ptr<::AbstractScene> $createTabbedUpsellScreen(::TabbedUpsellScreenDefaultTab tab);
 
     MCAPI ::std::shared_ptr<::AbstractScene> $createStoreDataDrivenScreen(

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ClassBinding; }
@@ -22,6 +25,14 @@ public:
     ScriptDataStoreMenuContainer& operator=(ScriptDataStoreMenuContainer const&);
     ScriptDataStoreMenuContainer(ScriptDataStoreMenuContainer const&);
     ScriptDataStoreMenuContainer();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> createItem(::std::string id, ::std::string const& payload);
+
+    MCNAPI ::Scripting::Result_deprecated<void> updateItem(::std::string id, ::std::string const& payload);
+    // NOLINTEND
 
 public:
     // static functions

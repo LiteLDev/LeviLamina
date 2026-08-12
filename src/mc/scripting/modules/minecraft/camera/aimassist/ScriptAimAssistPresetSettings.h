@@ -25,6 +25,33 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedBlockTagTargets() const;
+
+    MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedBlockTargets() const;
+
+    MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedEntityTargets() const;
+
+    MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedEntityTypeFamilyTargets() const;
+
+    MCAPI ::std::optional<::std::vector<::std::string>> _getLiquidTargetingItems() const;
+
+    MCAPI void setExcludedBlockTagTargets(::std::optional<::std::vector<::std::string>> blockTagTargets);
+
+    MCAPI void setExcludedBlockTargets(::std::optional<::std::vector<::std::string>> blockTargets);
+
+    MCAPI void setExcludedEntityTargets(::std::optional<::std::vector<::std::string>> entityTargets);
+
+    MCAPI void
+    setExcludedEntityTypeFamilyTargets(::std::optional<::std::vector<::std::string>> entityTypeFamilyTargets);
+
+    MCAPI void setLiquidTargetingItems(::std::optional<::std::vector<::std::string>> items);
+
+    MCAPI ~ScriptAimAssistPresetSettings();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();

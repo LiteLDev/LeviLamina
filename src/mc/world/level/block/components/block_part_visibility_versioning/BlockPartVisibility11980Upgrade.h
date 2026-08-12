@@ -33,6 +33,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $previousSchema(
+        ::rapidjson::
+            GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&
+    ) const;
+
+    MCAPI void $upgradeToNext(
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>&,
+        ::SemVersion const&
+    ) const;
+
 
     // NOLINTEND
 };

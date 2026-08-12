@@ -4,11 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/certificates/identity/web_services/IEduWebService.h"
+#include "mc/certificates/identity/web_services/SigninContext.h"
 #include "mc/deps/core/minecraft/threading/EnableQueueForMainThread.h"
 
 // auto generated forward declare list
 // clang-format off
 struct ServicePack;
+namespace Bedrock::Http { class Request; }
+namespace Bedrock::Http { class Response; }
+namespace Json { class Value; }
 namespace WebServices::EduSignin { struct SigninError; }
 namespace WebServices::EduSignin { struct SigninResponse; }
 // clang-format on
@@ -39,28 +43,76 @@ public:
 
     virtual void setEula() /*override*/;
 
-    virtual void
-    setPurchaseReceipt(::std::string const&, ::std::function<void(bool)> const&, ::std::string const&) /*override*/;
+    virtual void setPurchaseReceipt(
+        ::std::string const&               receipt,
+        ::std::function<void(bool)> const& callback,
+        ::std::string const&               anonimizedOId
+    ) /*override*/;
 
-    virtual void setSkin(::std::string const&) /*override*/;
+    virtual void setSkin(::std::string const& newSkin) /*override*/;
 
     virtual void signinForDemo(
         ::std::function<
             void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
+            callback
     ) /*override*/;
 
     virtual void signin(
         ::std::function<
-            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>,
-        ::std::string const&
+            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
+                             callback,
+        ::std::string const& delegationKey
     ) /*override*/;
 
-    virtual void sendInitialPackRequest(::std::function<void(::std::vector<::ServicePack>)>) /*override*/;
+    virtual void
+    sendInitialPackRequest(::std::function<void(::std::vector<::ServicePack>)> packReturnCallback) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void _authenticateWithService(
+        ::Bedrock::Http::Response response,
+        ::std::function<
+            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
+                                     callback,
+        ::WebServices::SigninContext context
+    );
+
+    MCNAPI ::Bedrock::Http::Request
+    getRequest(::std::string_view url, ::std::string apiVersion, bool includeAuth, ::Json::Value&& body);
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $setEula();
+
+    MCNAPI void $setPurchaseReceipt(
+        ::std::string const&               receipt,
+        ::std::function<void(bool)> const& callback,
+        ::std::string const&               anonimizedOId
+    );
+
+    MCNAPI void $setSkin(::std::string const& newSkin);
+
+    MCNAPI void $signinForDemo(
+        ::std::function<
+            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
+            callback
+    );
+
+    MCNAPI void $signin(
+        ::std::function<
+            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
+                             callback,
+        ::std::string const& delegationKey
+    );
+
+    MCNAPI void $sendInitialPackRequest(::std::function<void(::std::vector<::ServicePack>)> packReturnCallback);
+
 
     // NOLINTEND
 };

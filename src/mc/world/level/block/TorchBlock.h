@@ -71,6 +71,10 @@ public:
     MCAPI bool canBePlacedOn(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
 #endif
 
+#ifdef LL_PLAT_C
+    MCAPI bool canBePlacedOn(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
+#endif
+
     MCAPI void onPlaceTorchBlock(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;

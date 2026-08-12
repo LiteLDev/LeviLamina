@@ -51,6 +51,10 @@ public:
         ::EntityContext&                   entityContext
     );
 
+#ifdef LL_PLAT_C
+    MCAPI ::ItemStack const& _getItem();
+#endif
+
     MCAPI void init(::ItemStack const& itemToSpawn, int ticksBeforeRemoval);
 
 #ifdef LL_PLAT_C

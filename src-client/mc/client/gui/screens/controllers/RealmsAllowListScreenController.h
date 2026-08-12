@@ -16,7 +16,9 @@ class DropdownScreenController;
 class MainMenuScreenModel;
 class PlatformMultiplayerRestrictions;
 class ProgressHandler;
+class UIPropertyBag;
 namespace Json { class Value; }
+namespace Realms { struct Player; }
 namespace Social { struct PlatformUserProfileData; }
 // clang-format on
 
@@ -128,6 +130,57 @@ public:
         ::std::function<void()>                  followUpCallbackAfterCreation,
         bool                                     fromSettingsOrAllowListEntryPoint
     );
+
+    MCAPI void _buildPlayerList();
+
+    MCAPI void _clearFromFriendLists(::std::string const& xuid);
+
+    MCAPI void _finalizeLinkedAccountLoading();
+
+    MCAPI ::std::map<::std::string, ::RealmsAPI::InviteAction> _getInvitesToSend() const;
+
+    MCAPI ::RealmPlayer*
+    _getRealmPlayerAtIndex(int const index, ::RealmsAllowListScreenController::RealmPlayerList const realmPlayerList);
+
+    MCAPI ::RealmPlayer* _getRealmPlayerFromXuid(::std::string const& xuid);
+
+    MCAPI ::RealmsAllowListScreenController::RealmPlayerList const
+    _getRealmPlayerListFromCollection(::UIPropertyBag const* bag) const;
+
+    MCAPI void _handleDoesNotHavePermission(::std::function<void()> newWorldCallback);
+
+    MCAPI void _handlePlayerInvite(::RealmPlayer& player);
+
+    MCAPI void _initializePlayerList(::std::function<void()> callback);
+
+    MCAPI void _joinRealm();
+
+    MCAPI void _requestPlatformGamerpic(::Social::PlatformUserProfileData const& platformEntry);
+
+    MCAPI void _sendInvites(::std::function<void()> callback);
+
+    MCAPI void _sortPlayerList();
+
+    MCAPI void _updateLinkedAccountLoading();
+
+    MCAPI void _updatePlayerList(
+        ::std::vector<::Realms::Player> const& newPlayers,
+        ::std::vector<::Realms::Player> const& newBlockList
+    );
+
+    MCAPI void _updatePlayerlistModel(
+        ::std::string const&                               filter,
+        ::RealmsAllowListScreenController::RealmPlayerList realmPlayerList,
+        bool                                               forceUpdate
+    );
+
+    MCAPI void sendInvitesWithProgress(::std::function<void()> callback);
+
+    MCAPI void sendUserPermission(
+        ::std::string const&          xuid,
+        ::PlayerPermissionLevel const permission,
+        ::PlayerPermissionLevel const oldPermission
+    );
     // NOLINTEND
 
 public:
@@ -145,6 +198,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onLeave();
 
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI ::std::string $_getButtonBDescription();
+
+    MCAPI bool $_getGamepadHelperVisible() const;
     // NOLINTEND
 };

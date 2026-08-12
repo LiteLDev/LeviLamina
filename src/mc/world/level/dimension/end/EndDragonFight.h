@@ -10,9 +10,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDamageSource;
+class ActorSoundIdentifier;
 class BlockPatternMatcher;
 class BlockSource;
 class ChunkViewSource;
+class EnderCrystal;
+class EnderDragon;
 // clang-format on
 
 class EndDragonFight {
@@ -36,6 +40,12 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                 mPlaceNewBlocks;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkViewSource>> mSource;
         ::ll::TypedStorage<4, 12, ::BlockPos>                          mPosition;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~GateWayGenerator();
         // NOLINTEND
     };
 
@@ -75,6 +85,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _canSpawnNewGateway(::ChunkViewSource* source, ::BlockPos const& pos) const;
+
+    MCAPI void _createNewDragon();
+
+    MCAPI void _initializeDragon(::EnderDragon& enderDragon);
+
+    MCAPI void _makeEndIslandFeature(::BlockSource& region, ::BlockPos const position);
+
+    MCAPI ::ActorSoundIdentifier _makeSoundIdentifier() const;
+
+    MCAPI bool _setEndGatewayBlockActorExitPosition(
+        ::BlockSource&    entrySource,
+        ::BlockSource&    exitSource,
+        ::BlockPos const& endGatewayActorPos,
+        ::BlockPos const& destinationPos,
+        bool              lookForGateway
+    );
+
+    MCAPI void _spawnExitPortal(bool activated);
+
+    MCAPI void _spawnNewGatewayChunksTask(
+        ::std::tuple<
+            ::EndDragonFight::GatewayTask,
+            ::EndDragonFight::GateWayGenerator,
+            ::EndDragonFight::GateWayGenerator>& task
+    );
+
+    MCAPI void _updateCrystalCount();
+
+    MCAPI void _verifyExitPositionsTask(
+        ::std::tuple<
+            ::EndDragonFight::GatewayTask,
+            ::EndDragonFight::GateWayGenerator,
+            ::EndDragonFight::GateWayGenerator>& task
+    );
+
+    MCAPI void onCrystalDestroyed(::EnderCrystal const& crystal, ::ActorDamageSource const& source);
+
+    MCAPI void resetSpikeCrystals();
+
+    MCAPI void spawnNewGatewayChunks(::BlockPos const& pos, bool placeEntryBlocks, bool placeExitBlocks);
+
     MCAPI void tryRespawn();
     // NOLINTEND
 };

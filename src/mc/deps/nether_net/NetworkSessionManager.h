@@ -4,11 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/deps/nether_net/ContextProxy.h"
+#include "mc/deps/nether_net/ESessionError.h"
+#include "mc/deps/nether_net/SignalingChannelId.h"
+#include "mc/deps/nether_net/utils/ErrorOr.h"
 #include "mc/platform/threading/UniqueLock.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace NetherNet { class CandidateAdd; }
+namespace NetherNet { class ConnectError; }
+namespace NetherNet { class ConnectRequest; }
+namespace NetherNet { class ConnectResponse; }
 namespace NetherNet { class NetworkSession; }
+namespace NetherNet { struct NetworkID; }
 // clang-format on
 
 namespace NetherNet {
@@ -58,7 +66,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI bool CloseSessionWithReason(
+        ::NetherNet::NetworkID     networkIDRemote,
+        uint64                     connectionId,
+        ::NetherNet::ESessionError reason
+    );
+
+    MCNAPI ::gsl::not_null<::NetherNet::NetworkSession*> FindOrCreateSpecificSession(
+        ::NetherNet::NetworkID                                          remoteId,
+        uint64                                                          connectionId,
+        ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const& sessionsLock,
+        bool                                                            disableTrickleIce
+    );
+
+    MCNAPI void NotifyOnSessionOpen(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
+
     MCNAPI void PeriodicDeadSessionCleanupOnSignalThread();
+
+    MCNAPI ::NetherNet::ErrorOr<void, ::NetherNet::ESessionError> SendToSignalingChannel(
+        ::NetherNet::NetworkID networkIDTo,
+        ::std::variant<
+            ::NetherNet::ConnectRequest,
+            ::NetherNet::ConnectResponse,
+            ::NetherNet::ConnectError,
+            ::NetherNet::CandidateAdd> const&            signal,
+        ::std::optional<::NetherNet::SignalingChannelId> preference
+    );
     // NOLINTEND
 };
 

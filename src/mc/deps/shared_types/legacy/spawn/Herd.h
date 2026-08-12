@@ -25,6 +25,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Herd(::SharedTypes::Legacy::Spawn::Herd const&);
+
+    MCAPI bool operator==(::SharedTypes::Legacy::Spawn::Herd const&) const;
     // NOLINTEND
 
 public:

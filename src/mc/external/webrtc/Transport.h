@@ -16,9 +16,9 @@ class Transport {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool SendRtp(::webrtc::ArrayView<uchar const, 18446744073709546905>, ::webrtc::PacketOptions const&) = 0;
+    virtual bool SendRtp(::webrtc::ArrayView<uchar const>, ::webrtc::PacketOptions const&) = 0;
 
-    virtual bool SendRtcp(::webrtc::ArrayView<uchar const, 18446744073709546905>, ::webrtc::PacketOptions const&) = 0;
+    virtual bool SendRtcp(::webrtc::ArrayView<uchar const>, ::webrtc::PacketOptions const&) = 0;
 
     virtual ~Transport() = default;
     // NOLINTEND

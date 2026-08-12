@@ -12,7 +12,10 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class EntityContext;
+class Level;
 class Player;
+struct CommandOriginIdentity;
 // clang-format on
 
 class TellCommand : public ::MessagingCommand {
@@ -26,18 +29,37 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _sendEvent(
+        ::Level&                              level,
+        ::std::string const&                  sender,
+        ::std::vector<::EntityContext> const& targets,
+        ::std::string const&                  message,
+        ::std::optional<::std::string> const& filteredMessage
+    );
+
+    MCAPI static void _sendMessageToPlayer(
+        ::Player&                            player,
+        ::std::string const&                 message,
+        ::std::optional<::std::string> const filteredMessage,
+        ::std::string const&                 sender,
+        ::CommandOriginIdentity const&       identity,
+        ::Level&                             level
+    );
+
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
 
     // NOLINTEND
 };

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::JSONObject { class ValueWrapper; }
+// clang-format on
+
 namespace Bedrock::JSONObject {
 
 class ParseHandler
@@ -41,6 +46,32 @@ public:
     ParseHandler& operator=(ParseHandler const&);
     ParseHandler(ParseHandler const&);
     ParseHandler();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool Bool(bool b);
+
+    MCNAPI bool Double(double d);
+
+    MCNAPI bool Int(int i);
+
+    MCNAPI bool Int64(int64 i);
+
+    MCNAPI bool Key(char const* str, uint length, bool copy);
+
+#ifdef LL_PLAT_S
+    MCNAPI bool Null();
+#endif
+
+    MCNAPI bool String(char const* str, uint length, bool copy);
+
+    MCNAPI bool Uint(uint u);
+
+    MCNAPI bool Uint64(uint64 u);
+
+    MCNAPI bool _addObjectOrArray(::Bedrock::JSONObject::ValueWrapper const& value);
+    // NOLINTEND
 };
 
 } // namespace Bedrock::JSONObject

@@ -29,6 +29,12 @@ public:
     ThemeSettingsNewThemeCreatedPayload();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~ThemeSettingsNewThemeCreatedPayload() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ThemeSettingsNewThemeCreatedPayload(
@@ -52,6 +58,12 @@ public:
         ::std::optional<::std::string> const& name,
         ::std::optional<::std::string> const& sourceId
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

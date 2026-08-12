@@ -33,6 +33,12 @@ public:
     ActionQueue();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::AgentComponents::Actions::QueueItem pop();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void schedule(::EntityContext& entity, ::AgentComponents::Actions::QueueItem item);

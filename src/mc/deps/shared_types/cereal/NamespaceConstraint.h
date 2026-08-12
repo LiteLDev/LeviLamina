@@ -25,12 +25,22 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+
+    virtual ~NamespaceConstraint() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::string getRegexString(::std::optional<::std::string> disallowedNamespace) const;
+
     MCAPI void validateValue(::std::string_view value, ::cereal::SerializerContext& context) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -4,9 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/client/input/KeyboardManager.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
+class GuiData;
 class IClientInstance;
 class RectangleArea;
 class Vec2;
@@ -87,6 +89,16 @@ public:
         ::Vec2 const&          caretPosition,
         ::Vec2 const&          caretSize
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData const> _getGuiData() const;
+
+    MCAPI float _getGuiScale() const;
+
+    MCAPI float _getInvGuiScale() const;
     // NOLINTEND
 
 public:

@@ -13,6 +13,7 @@
 class GuiData;
 class KeyboardManager;
 struct TextBoxSelection;
+namespace OreUI::InputUtils { struct TextInputResult; }
 namespace cohtml { class IInputProxy; }
 namespace cohtml { class View; }
 namespace cohtml::TextInput { struct Selection; }
@@ -89,7 +90,11 @@ public:
 
     MCAPI void _handleLostFocus();
 
+    MCAPI void _sendTextChangedEvent(::OreUI::InputUtils::TextInputResult const& inputResult);
+
     MCAPI ::std::optional<::RectangleArea> getTextInputControlArea();
+
+    MCAPI ::std::string getTextInputText();
 
     MCAPI void setText(::std::string const& text, ::std::optional<::TextBoxSelection> const& selection);
     // NOLINTEND

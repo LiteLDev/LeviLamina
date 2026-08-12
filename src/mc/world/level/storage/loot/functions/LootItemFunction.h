@@ -61,7 +61,7 @@ public:
 
     virtual int apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
-    virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context) = 0;
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) = 0;
 
     virtual int apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 

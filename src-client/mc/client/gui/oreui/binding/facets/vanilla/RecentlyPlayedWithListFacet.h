@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/social/XboxAPICallResult.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -55,6 +56,14 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>  resourceAllowList,
         ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>       partyProvider
     );
+
+    MCFOLD ::std::vector<::OreUI::AddFriendUserItem>& getDisplayableList();
+
+    MCFOLD ::std::vector<::OreUI::SocialPlayer> const& getRecentlyPlayedWith();
+
+    MCAPI ::XboxAPICallResult const getXboxAPICallResult() const;
+
+    MCAPI bool isDataLoading() const;
     // NOLINTEND
 
 public:
@@ -76,7 +85,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

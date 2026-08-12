@@ -15,6 +15,7 @@
 class IGamefaceTextInputProxy;
 class IKeyboardProxy;
 class ITextBoxController;
+namespace ApplicationSignal { class ClipboardPaste; }
 namespace Bedrock { class SignalReceiver; }
 // clang-format on
 
@@ -125,12 +126,16 @@ public:
     virtual void setCaretPosition(int position);
 
     virtual void setIMEEnabled(bool);
+
+    virtual ~HIDController() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit HIDController(::IKeyboardProxy* keyboardProxy);
+
+    MCAPI void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
 
     MCAPI ::std::string getTextBoxBackend() const;
 
@@ -143,6 +148,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::IKeyboardProxy* keyboardProxy);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -45,6 +45,8 @@ public:
 
     MCAPI void _registerBindings();
 
+    MCAPI bool _resolveControlEnabled(::Json::Value const& formJson) const;
+
     MCAPI ::Json::Value getContentValues() const;
 
     MCAPI bool parseJson(::std::string const& formJSON, ::Json::Value& outValue);

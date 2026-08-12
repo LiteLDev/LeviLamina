@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
+// auto generated forward declare list
+// clang-format off
+class ChunkPos;
+class Dimension;
+// clang-format on
+
 class EndCityStart : public ::StructureStart {
 public:
     // member variables
@@ -23,8 +29,18 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static int getYPositionForFeature(::ChunkPos const& pos, ::Dimension& dimension);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $isValid() const;
+
+    MCAPI ::std::string_view $getStructureName() const;
+
 
     // NOLINTEND
 };

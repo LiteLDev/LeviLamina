@@ -38,10 +38,15 @@ public:
 
     virtual void fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const = 0;
 
-    virtual ::BiomeArea getBiomeArea(::BoundingBox const& box, uint scale) const = 0;
+    virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const = 0;
 
+#ifdef LL_PLAT_S
     virtual ::BiomeArea
-    getBiomeArea(::BoundingBox const& box, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const = 0;
+    getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptions) const = 0;
+#else // LL_PLAT_C
+    virtual ::BiomeArea
+    getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const = 0;
+#endif
 
     virtual bool containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const = 0;
 

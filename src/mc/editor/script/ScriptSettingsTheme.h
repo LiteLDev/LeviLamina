@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ClassBinding; }
@@ -23,6 +26,14 @@ public:
     ScriptSettingsTheme& operator=(ScriptSettingsTheme const&);
     ScriptSettingsTheme(ScriptSettingsTheme const&);
     ScriptSettingsTheme();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> deleteTheme(::std::string const& id);
+
+    MCNAPI ::Scripting::Result_deprecated<void> setCurrentTheme(::std::string const& id);
+    // NOLINTEND
 
 public:
     // static functions

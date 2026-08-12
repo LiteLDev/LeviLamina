@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual ~IEntitlementCheck() = default;
 
-    virtual bool isValid(::ContentIdentity const&) const = 0;
+    virtual bool isValid(::ContentIdentity const& identity) const = 0;
     // NOLINTEND
 
 public:

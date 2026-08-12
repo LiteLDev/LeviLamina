@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+class Random;
 // clang-format on
 
 class FloatWanderGoal : public ::BaseGoal {
@@ -47,6 +48,14 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _canReach(::Vec3 const& targetPos, float dist) const;
+
+    MCAPI ::Vec3 _chooseRandomPosition(::Vec3 const& mobPos, ::Random& random);
     // NOLINTEND
 
 public:

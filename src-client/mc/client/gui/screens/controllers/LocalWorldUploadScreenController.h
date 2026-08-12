@@ -49,6 +49,8 @@ public:
         ::ui::ScreenTechStackSelector&                        techStackSelector,
         ::std::function<void(::UploadState, ::Realms::World)> callbackAfterUpload
     );
+
+    MCAPI void _upload(int const worldIndex);
     // NOLINTEND
 
 public:
@@ -66,6 +68,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onOpen();
 
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI void $_registerEventHandlers();
     // NOLINTEND
 };

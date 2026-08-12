@@ -16,6 +16,7 @@ class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Material;
+class Random;
 class Vec3;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -49,13 +50,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _solidify(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& changedNeighbor) const;
+
+    MCAPI void emitFizzParticle(::BlockSource& region, ::BlockPos const& p) const;
+
     MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void solidify(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& changedNeighbor) const;
+
+    MCAPI void trySpreadFire(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Vec3 _getFlow(::IConstBlockSource const& region, ::BlockPos const& pos, ::Material const& material);
+
+    MCAPI static int getDepth(::IConstBlockSource const& region, ::BlockPos const& pos, ::Material const& material);
 
 #ifdef LL_PLAT_C
     MCAPI static float getSlopeAngle(::BlockSource& region, ::BlockPos const& pos, ::Material const& m);

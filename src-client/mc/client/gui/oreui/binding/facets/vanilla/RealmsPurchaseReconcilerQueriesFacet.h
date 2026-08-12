@@ -45,6 +45,10 @@ public:
     MCAPI explicit RealmsPurchaseReconcilerQueriesFacet(
         ::std::shared_ptr<::Realms::RealmsPurchaseReconciler> realmsPurchaseReconciler
     );
+
+    MCFOLD ::Realms::RealmsPurchaseReconcilerFailureReason getFailureReason() const;
+
+    MCFOLD ::Realms::RealmsPurchaseReconcilerState getState() const;
     // NOLINTEND
 
 public:
@@ -62,7 +66,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

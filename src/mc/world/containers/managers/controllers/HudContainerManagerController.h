@@ -38,9 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $registerContainerCallbacks();
-#endif
 
 
     // NOLINTEND

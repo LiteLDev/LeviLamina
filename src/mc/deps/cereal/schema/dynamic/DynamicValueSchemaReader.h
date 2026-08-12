@@ -102,6 +102,14 @@ public:
     virtual void pushElement(uint64 index) /*override*/;
 
     virtual void pop() /*override*/;
+
+    virtual ~DynamicValueSchemaReader() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

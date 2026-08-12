@@ -60,6 +60,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit PlayerPrivacyFacet(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
+
+    MCAPI ::OreUI::PlayerPrivacyFacet::PrivacyData const& getData();
+
+    MCFOLD bool getLoaded();
+
+    MCAPI void load(::std::string const& id);
     // NOLINTEND
 
 public:

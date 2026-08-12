@@ -32,13 +32,13 @@ public:
 
     virtual bool isClientSide() const = 0;
 
-    virtual ::std::unique_ptr<::Editor::IEditorPlayer> createPlayer(::Player&) = 0;
+    virtual ::std::unique_ptr<::Editor::IEditorPlayer> createPlayer(::Player& player) = 0;
 
     virtual ::std::unique_ptr<::FileArchiver::IWorldConverter> createWorldConverter(
-        ::ILevelListCache&,
-        ::Scheduler&,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>
+        ::ILevelListCache&                                              levelListCache,
+        ::Scheduler&                                                    scheduler,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
     ) = 0;
 
     virtual void cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache& levelListCache) const = 0;
@@ -57,7 +57,7 @@ public:
 
     virtual ::EditorConnectionJoinIntent getEditorConnectionJoinIntent() const = 0;
 
-    virtual void setEditorConnectionJoinIntent(::EditorConnectionJoinIntent) = 0;
+    virtual void setEditorConnectionJoinIntent(::EditorConnectionJoinIntent intent) = 0;
     // NOLINTEND
 
 public:

@@ -9,6 +9,7 @@
 // clang-format off
 class BlockSource;
 class BoundingBox;
+class Dimension;
 class Random;
 // clang-format on
 
@@ -28,8 +29,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void createMonument(::Dimension& dim, ::Random& random, int x, int z);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+    MCAPI ::std::string_view $getStructureName() const;
+
 
     // NOLINTEND
 };

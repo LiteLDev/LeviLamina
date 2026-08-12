@@ -21,12 +21,15 @@ public:
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual void render(::MinecraftUIRenderContext&, ::IClientInstance&, ::UIControl&, int) /*override*/;
+    virtual void
+    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl&, int) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl&, int);
     // NOLINTEND
 };

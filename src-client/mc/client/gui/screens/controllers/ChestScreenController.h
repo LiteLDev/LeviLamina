@@ -56,6 +56,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $_registerCoalesceOrder();
 
+    MCFOLD void $_registerAutoPlaceOrder();
     // NOLINTEND
 };

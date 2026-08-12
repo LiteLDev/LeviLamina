@@ -74,8 +74,22 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void pin();
+
+    MCNAPI void unpin();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onReduceToSingleOwner();
+
+    MCNAPI void $onPromoteToMultipleOwners();
+
+    MCNAPI void $onFinalize();
+
 
     // NOLINTEND
 };

@@ -16,6 +16,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GroupInfoComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~GroupInfoComponent() /*override*/ = default;
@@ -24,9 +28,22 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // member functions
+    // NOLINTBEGIN
+    MCAPI
+    GroupInfoComponent(::std::string_view id, ::std::string_view name, ::std::optional<::std::string> description);
+    // NOLINTEND
+
+public:
+    // constructor thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCFOLD ::Settings::ComponentState $getDefaultState() const;
     // NOLINTEND
 };
 

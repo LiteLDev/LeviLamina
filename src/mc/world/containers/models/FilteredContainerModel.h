@@ -45,9 +45,9 @@ public:
 
     virtual ::ItemInstance const& getItemInstance(int modelSlot) const /*override*/;
 
-    virtual void setItemInstance(int, ::ItemInstance const&) /*override*/;
+    virtual void setItemInstance(int modelSlot, ::ItemInstance const& item) /*override*/;
 
-    virtual void refreshContainer(bool) /*override*/;
+    virtual void refreshContainer(bool fullRefresh) /*override*/;
 
     virtual int getContainerSize() const /*override*/;
 
@@ -55,7 +55,7 @@ public:
 
     virtual bool isExpanableItemFiltered(int index) const /*override*/;
 
-    virtual int getIndexForCreativeItem(::ItemStackBase const&) const /*override*/;
+    virtual int getIndexForCreativeItem(::ItemStackBase const& item) const /*override*/;
 
     virtual void _init() /*override*/;
     // NOLINTEND
@@ -72,6 +72,8 @@ public:
         bool                                                         filter,
         ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
     );
+
+    MCAPI void _refreshContainer(bool fullRefresh);
     // NOLINTEND
 
 public:
@@ -91,6 +93,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $containerContentChanged(int slot);
+
+    MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
+
+    MCAPI void $setItemInstance(int modelSlot, ::ItemInstance const& item);
+
+    MCAPI void $refreshContainer(bool fullRefresh);
+
+    MCAPI int $getContainerSize() const;
+
+    MCAPI int $getFilteredContainerSize() const;
+
+    MCAPI bool $isExpanableItemFiltered(int index) const;
+
+    MCAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
+
+    MCAPI void $_init();
+
 
     // NOLINTEND
 };

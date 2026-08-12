@@ -49,6 +49,13 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemFunction>>
+    getFunctions();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
@@ -57,6 +64,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::LootPoolEntry const& $_getEntry() const;
+
 
     // NOLINTEND
 };

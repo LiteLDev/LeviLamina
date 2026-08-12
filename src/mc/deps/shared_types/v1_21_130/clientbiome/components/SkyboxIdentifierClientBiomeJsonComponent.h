@@ -31,6 +31,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::ClientBiomeComponentVersion $getType() const;
+
 
     // NOLINTEND
 };

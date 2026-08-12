@@ -78,6 +78,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorProjectConstantsFacet(::Editor::ServiceProviderCollection* services);
+
+    MCFOLD ::std::unordered_map<::std::string, ::OreUI::EditorProjectConstantsFacet::BlockInfo> const&
+    getBlockInfoMap() const;
+
+    MCFOLD ::std::vector<::std::string> const& getBlocknameList() const;
+
+    MCFOLD ::std::vector<::std::string> const& getEntityIdList() const;
+
+    MCFOLD ::std::unordered_map<::std::string, ::OreUI::EditorProjectConstantsFacet::EntityInfo> const&
+    getEntityInfoMap() const;
+
+    MCFOLD bool const isBlockAtlasAvailable() const;
     // NOLINTEND
 
 public:
@@ -95,7 +107,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD bool $update();
     // NOLINTEND
 };
 

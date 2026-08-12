@@ -26,6 +26,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
+
+    MCNAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    );
+
 
     // NOLINTEND
 };

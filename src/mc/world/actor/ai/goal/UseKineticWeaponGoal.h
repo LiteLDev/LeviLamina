@@ -9,6 +9,12 @@
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+namespace SharedTypes { struct FloatRange; }
+// clang-format on
+
 class UseKineticWeaponGoal : public ::MeleeAttackBaseGoal {
 public:
     // UseKineticWeaponGoal inner types define
@@ -48,6 +54,22 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _cacheDamageSettings();
+
+    MCAPI void _findRearRetreatPosition(::Actor const& target, ::SharedTypes::FloatRange distance);
+
+    MCAPI void _startCooldown(::Actor const& target);
+
+    MCAPI void _startRepositioning(::Actor const& target);
+
+    MCAPI void _tryFindRandomRetreatPosition(::SharedTypes::FloatRange distance);
+
+    MCAPI void _tryMoveToRetreatPosition(::UseKineticWeaponGoal::ForcePathRecalculation forceRecalculation);
     // NOLINTEND
 
 public:

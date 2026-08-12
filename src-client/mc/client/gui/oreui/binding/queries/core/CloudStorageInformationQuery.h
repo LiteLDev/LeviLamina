@@ -47,6 +47,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit CloudStorageInformationQuery(::OreUI::ClientDependencies const& client);
+
+    MCAPI void _tryUpdate();
     // NOLINTEND
 
 public:
@@ -58,7 +60,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $update(double);
     // NOLINTEND
 };
 

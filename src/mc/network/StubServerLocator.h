@@ -21,6 +21,19 @@ public:
     // NOLINTBEGIN
     virtual ~StubServerLocator() /*override*/ = default;
 
+#ifdef LL_PLAT_S
+    virtual void startAnnouncingServer(
+        ::std::string const&                 playerName,
+        ::std::string const&                 worldName,
+        ::GameType                           gameType,
+        int                                  numPlayers,
+        int                                  maxNumPlayers,
+        bool                                 isJoinableThroughServerScreen,
+        bool                                 isEditorWorld,
+        bool                                 isHardcore,
+        ::ServerSupportedAuthenticationTypes supportedAuth
+    ) /*override*/;
+#else // LL_PLAT_C
     virtual void startAnnouncingServer(
         ::std::string const&                 playerName,
         ::std::string const&                 worldName,
@@ -32,6 +45,7 @@ public:
         bool                                 isHardcore,
         ::ServerSupportedAuthenticationTypes supportedAuth
     ) /*override*/;
+#endif
 
     virtual void stopAnnouncingServer() /*override*/;
 
@@ -61,9 +75,47 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI void $startAnnouncingServer(
+        ::std::string const&                 playerName,
+        ::std::string const&                 worldName,
+        ::GameType                           gameType,
+        int                                  numPlayers,
+        int                                  maxNumPlayers,
+        bool                                 isJoinableThroughServerScreen,
+        bool                                 isEditorWorld,
+        bool                                 isHardcore,
+        ::ServerSupportedAuthenticationTypes supportedAuth
+    );
+#else // LL_PLAT_C
+    MCNAPI void $startAnnouncingServer(
+        ::std::string const&                 playerName,
+        ::std::string const&                 worldName,
+        ::GameType                           worldGameType,
+        int                                  numPlayers,
+        int                                  maxNumPlayers,
+        bool                                 isJoinableThroughServerScreen,
+        bool                                 isEditorWorld,
+        bool                                 isHardcore,
+        ::ServerSupportedAuthenticationTypes supportedAuth
+    );
+#endif
+
+    MCNAPI void $stopAnnouncingServer();
+
+    MCNAPI void $startServerDiscovery(::PortPair ports);
+
     MCNAPI void $addCustomServer(::AsynchronousIPResolver const& futureIP, int port);
 
     MCNAPI void $addCustomServer(::std::string const& address, int port);
+
+    MCNAPI void $stopServerDiscovery();
+
+    MCNAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
+
+    MCNAPI void $clearServerList();
+
+    MCNAPI void $update();
 
     MCNAPI float $getPingTimeForGUID(::std::string const& guid);
 

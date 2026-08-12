@@ -9,6 +9,7 @@
 #include "mc/molang/MolangVersion.h"
 #include "mc/util/IntRange.h"
 #include "mc/util/molang/ExpressionNode.h"
+#include "mc/util/molang/ExpressionOp.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
@@ -17,6 +18,7 @@ class Random;
 class RenderParams;
 struct BiomeScatterParamData;
 struct BiomeStringList;
+namespace SharedTypes::v1_21_10 { struct CoordinateRangeData; }
 namespace SharedTypes::v1_21_10 { struct ScatterParamsData; }
 // clang-format on
 
@@ -60,6 +62,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI int _eval(int evaluatedMin, int evaluatedMax, uint& stepIndex, ::Random& random) const;
+
         MCNAPI ~CoordinateRange();
         // NOLINTEND
 
@@ -109,6 +113,14 @@ public:
 
     MCAPI ScatterParams(::ScatterParams const&);
 
+    MCAPI void _fillCoordinateRangeFromData(
+        ::std::string const&                                coordinateName,
+        ::ScatterParams::CoordinateRange&                   coordinateRange,
+        ::SharedTypes::v1_21_10::CoordinateRangeData const& coordinateRangeData,
+        ::MolangVersion const&                              molangVersion,
+        ::LogArea                                           logArea
+    );
+
     MCAPI void fillFromData(
         ::SharedTypes::v1_21_10::ScatterParamsData const& data,
         ::MolangVersion                                   molangVersion,
@@ -128,6 +140,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _parseExpressionNodeFloat(
+        ::ExpressionOp       op,
+        ::std::string const& expression,
+        ::ExpressionNode&    node,
+        float                defaultValue
+    );
+
     MCAPI static void initMolangParams(::RenderParams& molangParams, ::BlockPos const& pos, ::Random& random);
 
     MCAPI static void initScatterParamIndices();

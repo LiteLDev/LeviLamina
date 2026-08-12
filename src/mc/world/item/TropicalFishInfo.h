@@ -12,4 +12,20 @@ public:
     ::ll::TypedStorage<4, 4, int>            mMarkVariant;
     ::ll::TypedStorage<8, 32, ::std::string> mName;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TropicalFishInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TropicalFishInfo(int color, int color2, int variant, int markVariant, ::std::string name);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };

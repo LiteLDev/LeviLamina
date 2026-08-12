@@ -47,6 +47,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $_cancel();
+
 
         // NOLINTEND
     };
@@ -74,12 +76,21 @@ public:
     // NOLINTBEGIN
     virtual ~DispatchQueue() /*override*/ = default;
 
-    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> send(::Bedrock::Http::Request&&) /*override*/;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response>
+    send(::Bedrock::Http::Request&& request) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _handlePendingRequest();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> $send(::Bedrock::Http::Request&& request);
+
 
     // NOLINTEND
 };

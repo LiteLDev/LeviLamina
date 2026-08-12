@@ -8,6 +8,7 @@ class Container;
 class LootPool;
 class LootTableContext;
 class Random;
+namespace Json { class Value; }
 // clang-format on
 
 class LootTable {
@@ -21,6 +22,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void deserialize(::Json::Value const& table, bool usingUpcomingCreatorFeaturesExperiment);
+
     MCAPI void fill(::Container& container, ::Random& random, ::LootTableContext& context);
 
     MCFOLD ::std::string getDir() const;

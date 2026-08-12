@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/WeakPtr.h"
 #include "mc/world/level/storage/loot/RandomValueBounds.h"
 #include "mc/world/level/storage/loot/functions/LootItemFunction.h"
 
 // auto generated forward declare list
 // clang-format off
+class Item;
 class ItemInstance;
 class ItemStack;
 class LootItemCondition;
@@ -47,6 +49,25 @@ public:
     virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(
+        ::Item const*&       inOutItemDef,
+        ::std::string const& originalItemName,
+        ::Random&            random,
+        int&                 outResultAux
+    );
+
+    MCAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(
+        ::std::string const& originalItemName,
+        ::std::string const& itemRawNameId,
+        ::Random&            random,
+        int&                 outAux,
+        ::WeakPtr<::Item>&   outItem
+    );
     // NOLINTEND
 
 public:

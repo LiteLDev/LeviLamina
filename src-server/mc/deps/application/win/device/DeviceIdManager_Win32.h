@@ -16,13 +16,13 @@ class DeviceIdManager_Win32 : public ::Bedrock::DeviceIdManager_Common {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void _initializePlatform(::Bedrock::DeviceIDPlatformEnvironment const&) /*override*/;
+    virtual void _initializePlatform(::Bedrock::DeviceIDPlatformEnvironment const& environment) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI void $_initializePlatform(::Bedrock::DeviceIDPlatformEnvironment const& environment);
     // NOLINTEND
 };
 

@@ -39,6 +39,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI bool _removeMenuItem(::std::string const& id);
+
     MCNAPI ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> handleDataEvent(

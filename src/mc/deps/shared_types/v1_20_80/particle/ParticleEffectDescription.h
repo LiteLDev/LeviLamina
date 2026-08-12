@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleBasicRenderParameters.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_20_80 {
 
 struct ParticleEffectDescription {
@@ -31,6 +36,12 @@ public:
     MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleEffectDescription const&) const;
 
     MCAPI ~ParticleEffectDescription();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

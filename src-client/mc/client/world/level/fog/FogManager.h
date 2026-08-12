@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/Keyframes.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/WeakRef.h"
 
@@ -11,6 +12,8 @@
 // clang-format off
 class FogDefinitionRegistry;
 struct FogDefinition;
+struct FogVolumetricCoefficientSetting;
+namespace SharedTypes { struct ColorNormRGB; }
 // clang-format on
 
 class FogManager : public ::Bedrock::EnableNonOwnerReferences {
@@ -54,6 +57,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB> _addColorNormRGBKeyframes(
+        ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB> const& setting,
+        ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB> const& other
+    ) const;
+
+    MCAPI void _addToSetting(
+        ::FogVolumetricCoefficientSetting&       setting,
+        ::FogVolumetricCoefficientSetting const& other,
+        float                                    renderDistance
+    ) const;
+
     MCAPI void _pushLayer(::FogManager::LayerType type, ::std::vector<::WeakRef<::FogDefinition const>> definitions);
 
     MCAPI void pushFogDefinitionAverageLayer(

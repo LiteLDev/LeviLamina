@@ -127,6 +127,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterEntityAddedConnector();
+
+#ifdef LL_PLAT_S
+    MCAPI ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
+    $getRegisterPostReloadActorConnector();
+#else // LL_PLAT_C
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
+    $getRegisterPostReloadActorConnector();
+#endif
+
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterOnRemoveActorEntityReferenceConnector();
+
 
     // NOLINTEND
 };

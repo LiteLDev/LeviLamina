@@ -21,16 +21,21 @@ public:
     virtual ~RealmsPlusPackCollector() /*override*/ = default;
 
     virtual void collect(
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>,
-        ::PersonaClient&,
-        ::std::vector<::std::shared_ptr<::SkinPackModel>>&,
-        ::std::unordered_set<::mce::UUID>&
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
+        ::PersonaClient&                                     skinRepo,
+        ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
+        ::std::unordered_set<::mce::UUID>&                   handledPackSet
     ) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $collect(
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
+        ::PersonaClient&                                     skinRepo,
+        ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
+        ::std::unordered_set<::mce::UUID>&                   handledPackSet
+    );
     // NOLINTEND
 };

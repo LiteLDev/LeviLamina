@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class ServerLevel;
+namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDependency; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct Version; }
@@ -41,6 +43,9 @@ public:
     MCNAPI explicit ScriptMinecraftModuleFactory(::ServerLevel* level);
 
     MCNAPI void _addVersions();
+
+    MCNAPI ::Scripting::ModuleBinding
+    _generateBindings(::Scripting::ModuleBindingBuilder& moduleBuilder, ::std::string const& versionPath);
     // NOLINTEND
 
 public:

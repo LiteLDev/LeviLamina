@@ -94,6 +94,8 @@ public:
         int                        seaLevel
     );
 
+    MCAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
+
     MCAPI void computeAt(::BlockPos const& worldPos);
     // NOLINTEND
 

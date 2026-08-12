@@ -13,11 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~ResourcePackListener() = default;
 
-#ifdef LL_PLAT_S
     virtual void onActiveResourcePacksChanged(::ResourcePackManager& mgr) = 0;
-#else // LL_PLAT_C
-    virtual void onActiveResourcePacksChanged(::ResourcePackManager& manager) = 0;
-#endif
 
     virtual bool onFullPackStackInvalid();
 
@@ -31,7 +27,12 @@ public:
     virtual void onResourceManagerDestroyed(::ResourcePackManager&);
 #endif
 
+#ifdef LL_PLAT_S
     virtual void onJsonResourcesChanged(::ResourcePackManager&);
+#else // LL_PLAT_C
+    virtual void onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
+#endif
+
     // NOLINTEND
 
 public:
@@ -43,9 +44,17 @@ public:
 
     MCNAPI void $onLanguageSubpacksChanged();
 
+#ifdef LL_PLAT_S
     MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
+#else // LL_PLAT_C
+    MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager&);
+#endif
 
+#ifdef LL_PLAT_S
     MCNAPI void $onJsonResourcesChanged(::ResourcePackManager&);
+#else // LL_PLAT_C
+    MCNAPI void $onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
+#endif
 
 
     // NOLINTEND

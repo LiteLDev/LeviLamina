@@ -6,15 +6,20 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/IScriptSerializable.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class LevelStorage;
 class StructureManager;
+class Vec3;
 namespace ScriptModuleMinecraft { class ScriptStructureManager; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidStructureError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
+namespace Scripting { struct InvalidArgumentError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -44,6 +49,23 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptStructureTemplate(
+        ::std::string const&                                                                id,
+        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
+        ::Scripting::WeakLifetimeScope                                                      scope,
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager> scriptStructureManager,
+        ::LevelStorage&                                                                     levelStorage
+    );
+
+    MCAPI ::Scripting::InvalidArgumentError
+    _createBoundsError(int index, ::BlockPos const& pos, ::BlockPos const& size) const;
+
+    MCAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
@@ -58,8 +80,16 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::std::string const& $getContentType() const;
+
 
     // NOLINTEND
 };

@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
+namespace Editor::Structures::PUVLoader::v0 { struct StructureMetadata; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -53,6 +54,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCNAPI static ::Editor::Structures::PUVLoader::v1::StructureMetadata
+    upgradeFromV0(::Editor::Structures::PUVLoader::v0::StructureMetadata&& legacy);
     // NOLINTEND
 
 public:

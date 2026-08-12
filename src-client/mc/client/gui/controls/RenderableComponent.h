@@ -50,6 +50,8 @@ public:
     // NOLINTBEGIN
     MCFOLD void $updateUI(::UIMeasureStrategy const& context);
 
+    MCAPI void $reset();
+
     MCFOLD bool $isRenderableComponent() const;
     // NOLINTEND
 };

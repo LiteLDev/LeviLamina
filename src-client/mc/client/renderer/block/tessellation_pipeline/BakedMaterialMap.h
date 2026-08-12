@@ -35,6 +35,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::ClientBlockPipeline::Material const> _lookupMaterialInfo(
+        ::ClientBlockPipeline::BlockSchematic const& blockSchematic,
+        ::BlockMaterialInstancesComponent const&     materialInstance,
+        ::std::string const&                         materialInstanceName
+    );
+
     MCAPI void bake(
         ::ClientBlockPipeline::BlockSchematic const& blockSchematic,
         ::BlockMaterialInstancesComponent const&     materialInstance

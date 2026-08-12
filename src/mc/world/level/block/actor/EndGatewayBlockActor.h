@@ -10,10 +10,12 @@
 // clang-format off
 class BlockActorDataPacket;
 class BlockSource;
+class BlockVolume;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class SaveContext;
+class WorldGenerator;
 // clang-format on
 
 class EndGatewayBlockActor : public ::VanillaBlockActor {
@@ -33,24 +35,54 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& context) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual void onChanged(::BlockSource&) /*override*/;
+    virtual void onChanged(::BlockSource& region) /*override*/;
 
     virtual bool hasAlphaLayer() const /*override*/;
 
-    virtual void triggerEvent(int, int) /*override*/;
+    virtual void triggerEvent(int b0, int b1) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static int _getHighestSection(::WorldGenerator& endGenerator, ::BlockVolume& box, ::BlockPos const& pos);
+
+    MCAPI static ::BlockPos findExitPortal(::WorldGenerator& endGenerator, ::BlockPos const& origin);
+
+    MCAPI static ::BlockPos findValidSpawnAround(
+        ::BlockSource&    region,
+        ::BlockPos const& around,
+        bool              searchForEndStoneOnly,
+        int               searchRadius,
+        bool              searchAboveBlock
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void $tick(::BlockSource& region);
+
+    MCFOLD void $onChanged(::BlockSource& region);
+
+    MCFOLD bool $hasAlphaLayer() const;
+
+    MCAPI void $triggerEvent(int b0, int b1);
+
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+
 
     // NOLINTEND
 };

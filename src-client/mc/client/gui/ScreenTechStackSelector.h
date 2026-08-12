@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Option;
 namespace ui { class OreUIScreenConfiguration; }
 // clang-format on
 
@@ -25,6 +26,12 @@ public:
     MCFOLD ::ui::OreUIScreenConfiguration const* _getConfiguration(::std::string const& screenName) const;
 
     MCAPI ::ui::TechStack getTechStackForScreen(::std::string const& screenName) const;
+
+    MCAPI ::ui::OreUIScreenConfiguration& registerScreen(
+        ::std::string const&       screenName,
+        ::std::optional<::Option*> isSelectedOption,
+        ::std::optional<::Option*> isForceEnabledOption
+    );
     // NOLINTEND
 };
 

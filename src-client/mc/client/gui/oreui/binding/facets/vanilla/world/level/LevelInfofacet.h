@@ -55,6 +55,14 @@ public:
         ::std::function<::LocalPlayer*()>                          getCurrentLocalPlayer,
         ::std::function<::LevelSummary*(::std::string)>            getCurrentLevelSummary
     );
+
+    MCAPI void _init();
+
+    MCAPI bool getIsInitialized() const;
+
+    MCFOLD ::OreUI::AllowListPath const& getWorldIconPath() const;
+
+    MCAPI ::std::string const& getWorldName() const;
     // NOLINTEND
 
 public:
@@ -77,7 +85,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

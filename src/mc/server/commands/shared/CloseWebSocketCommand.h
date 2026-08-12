@@ -17,7 +17,7 @@ class CloseWebSocketCommand : public ::Command {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -35,6 +35,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput&) const;
+
 
     // NOLINTEND
 };

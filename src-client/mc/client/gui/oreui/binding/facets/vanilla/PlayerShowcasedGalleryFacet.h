@@ -8,6 +8,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/identity/XUID.h"
+#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -50,6 +51,30 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
     );
+
+    MCAPI ::Bedrock::Result<void> _resetIfUserChanged(::std::string const& xuidString);
+
+    MCAPI uint64 getCount() const;
+
+    MCAPI ::OreUI::AllowListPath const& getFeaturedScreenshot() const;
+
+    MCAPI uint64 getMaxScreenshots() const;
+
+    MCAPI ::std::vector<::OreUI::GalleryScreenshot> const& getScreenshots() const;
+
+    MCAPI bool isLoadingCount() const;
+
+    MCAPI bool isLoadingFeaturedScreenshot() const;
+
+    MCAPI bool isLoadingScreenshots() const;
+
+    MCAPI void loadCount(::std::string const& xuid);
+
+    MCAPI void loadFeaturedScreenshot(::std::string const& xuid);
+
+    MCAPI void loadGallery(::std::string const& xuid);
+
+    MCAPI void loadShowcasedScreenshot(::std::string const& id) const;
     // NOLINTEND
 
 public:
@@ -70,7 +95,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

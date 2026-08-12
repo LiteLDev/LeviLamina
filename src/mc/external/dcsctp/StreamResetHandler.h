@@ -97,10 +97,8 @@ public:
     MCNAPI ::std::optional<::std::vector<::dcsctp::ReconfigurationResponseParameter>>
     Process(::dcsctp::ReConfigChunk const& chunk);
 
-    MCNAPI void ResetStreams(
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
-            outgoing_streams
-    );
+    MCNAPI void
+    ResetStreams(::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams);
 
     MCNAPI StreamResetHandler(
         ::std::string_view                         log_prefix,

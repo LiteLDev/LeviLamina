@@ -58,6 +58,8 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::function<void()>                  successCallback
     );
+
+    MCAPI void _fireTelemetry();
     // NOLINTEND
 
 public:
@@ -69,6 +71,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI void $onOpen();
+
+    MCAPI bool $canExit();
     // NOLINTEND
 };

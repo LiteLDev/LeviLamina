@@ -19,6 +19,7 @@ class ResourcePackManager;
 class TextureAtlas;
 struct BlockActorRenderData;
 namespace dragon { struct RenderMetadata; }
+namespace mce { class Color; }
 namespace mce { class TextureGroup; }
 // clang-format on
 
@@ -43,7 +44,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void render(::BaseActorRenderContext&, ::BlockActorRenderData&) /*override*/;
+    virtual void
+    render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
     // NOLINTEND
 
 public:
@@ -54,6 +56,15 @@ public:
         ::ResourcePackManager&                               resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager
     );
+
+    MCAPI void _setConstants(
+        ::BaseActorRenderContext& baseActorRenderContext,
+        int                       index,
+        ::std::string             filePath,
+        ::mce::Color const&       color
+    ) const;
+
+    MCAPI void _setupBannerConstants(::BaseActorRenderContext& baseActorRenderContext, ::BlockActor& entity);
 
     MCAPI void renderByItem(
         ::BaseActorRenderContext&       renderContext,
@@ -87,6 +98,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 };

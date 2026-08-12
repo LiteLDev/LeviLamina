@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/container/small_vector.h"
+#include "mc/platform/brstd/function_ref.h"
 
 namespace VoxelShapes {
 
@@ -22,6 +23,19 @@ public:
     Cells& operator=(Cells const&);
     Cells(Cells const&);
     Cells();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void forEachBox(
+        ::brstd::function_ref<
+            void(schar, schar, schar, schar, schar, schar) const,
+            void(schar, schar, schar, schar, schar, schar)> consumer,
+        bool                                                mergeNeighbors
+    ) const;
+
+    MCNAPI ::VoxelShapes::Cells reverseAxes(bool reverseX, bool reverseY, bool reverseZ) const;
+    // NOLINTEND
 };
 
 } // namespace VoxelShapes

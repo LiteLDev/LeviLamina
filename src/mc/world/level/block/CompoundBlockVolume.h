@@ -28,6 +28,12 @@ public:
     CompoundBlockVolume();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~CompoundBlockVolume() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI CompoundBlockVolume(::CompoundBlockVolume const& other);
@@ -55,6 +61,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::CompoundBlockVolume const& other);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

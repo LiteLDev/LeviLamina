@@ -13,6 +13,7 @@ class EntityContext;
 class GameplayUserManagerProxy;
 class ILevelStorageManagerConnector;
 class IServerMapDataManagerConnector;
+class LevelStorage;
 class MapItemSavedData;
 class Player;
 class WeakEntityRef;
@@ -73,6 +74,8 @@ public:
     MCNAPI void _forEachActivePlayer(::std::function<bool(::Player&)> callback, bool includeRemovedPlayers) const;
 
     MCNAPI void _resumePlayer(::WeakEntityRef weakEntityUser);
+
+    MCNAPI void _saveAllPlayers(::LevelStorage& levelStorage);
 
     MCNAPI void _suspendPlayer(::WeakEntityRef weakEntityUser);
 

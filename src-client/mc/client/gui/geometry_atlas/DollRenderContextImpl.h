@@ -33,15 +33,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void update(::PaperDollUpdateOwnerData const&) /*override*/;
+    virtual void update(::PaperDollUpdateOwnerData const& data) /*override*/;
 
-    virtual void render(::PaperDollRenderOwnerData const&, ::OffscreenCaptureDescription const*, bool) /*override*/;
+    virtual void render(
+        ::PaperDollRenderOwnerData const&    data,
+        ::OffscreenCaptureDescription const* capture,
+        bool                                 isRenderingUI
+    ) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $update(::PaperDollUpdateOwnerData const& data);
 
+    MCAPI void
+    $render(::PaperDollRenderOwnerData const& data, ::OffscreenCaptureDescription const* capture, bool isRenderingUI);
     // NOLINTEND
 };
 

@@ -62,18 +62,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::ArrayView<uchar, 18446744073709546905>
-    AllocateExtension(::webrtc::RTPExtensionType type, uint64 length);
+    MCNAPI ::webrtc::ArrayView<uchar> AllocateExtension(::webrtc::RTPExtensionType type, uint64 length);
 
     MCNAPI uchar* AllocatePayload(uint64 size_bytes);
 
-    MCNAPI ::webrtc::ArrayView<uchar, 18446744073709546905> AllocateRawExtension(int id, uint64 length);
+    MCNAPI ::webrtc::ArrayView<uchar> AllocateRawExtension(int id, uint64 length);
 
     MCNAPI void Clear();
 
     MCNAPI ::std::vector<uint> Csrcs() const;
 
-    MCNAPI ::webrtc::ArrayView<uchar const, 18446744073709546905> FindExtension(::webrtc::RTPExtensionType type) const;
+    MCNAPI ::webrtc::ArrayView<uchar const> FindExtension(::webrtc::RTPExtensionType type) const;
 
     MCNAPI ::webrtc::RtpPacket::ExtensionInfo& FindOrCreateExtensionInfo(int id);
 
@@ -91,7 +90,7 @@ public:
 
     MCNAPI RtpPacket(::webrtc::RtpHeaderExtensionMap const* extensions, uint64 capacity);
 
-    MCNAPI void SetCsrcs(::webrtc::ArrayView<uint const, 18446744073709546905> csrcs);
+    MCNAPI void SetCsrcs(::webrtc::ArrayView<uint const> csrcs);
 
     MCNAPI ushort SetExtensionLengthMaybeAddZeroPadding(uint64 extensions_offset);
 
@@ -99,7 +98,7 @@ public:
 
     MCNAPI bool SetPadding(uint64 padding_bytes);
 
-    MCNAPI void SetPayload(::webrtc::ArrayView<uchar const, 18446744073709546905> payload);
+    MCNAPI void SetPayload(::webrtc::ArrayView<uchar const> payload);
 
     MCNAPI uchar* SetPayloadSize(uint64 size_bytes);
 

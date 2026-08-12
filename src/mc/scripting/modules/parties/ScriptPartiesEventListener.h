@@ -40,6 +40,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::EventResult $onPartyChanged(::PartyChangedEvent const&);
+
+    MCNAPI ::EventResult $onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const&);
+
 
     // NOLINTEND
 };

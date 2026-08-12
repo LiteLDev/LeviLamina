@@ -28,16 +28,26 @@ public:
 
     virtual void onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems) /*override*/;
 
-    virtual ::ItemInstance const& getRecipeItem(int) const /*override*/;
+    virtual ::ItemInstance const& getRecipeItem(int slot) const /*override*/;
 
     virtual void clearSelectedRecipe() /*override*/;
 
-    virtual bool _canRemove(int modelSlot, int removeCount) const /*override*/;
+    virtual bool _canRemove(int slot, int removeCount) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
+
+    MCNAPI void $onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
+
+    MCNAPI ::ItemInstance const& $getRecipeItem(int slot) const;
+
+    MCNAPI void $clearSelectedRecipe();
+
+    MCNAPI bool $_canRemove(int slot, int removeCount) const;
+
 
     // NOLINTEND
 };

@@ -193,9 +193,9 @@ public:
     GetChunksToBeRetransmitted(uint64 max_size);
 
     MCNAPI ::dcsctp::OutstandingData::AckInfo HandleSack(
-        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>  cumulative_tsn_ack,
-        ::webrtc::ArrayView<::dcsctp::SackChunk::GapAckBlock const, 18446744073709546905> gap_ack_blocks,
-        bool                                                                              is_in_fast_recovery
+        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> cumulative_tsn_ack,
+        ::webrtc::ArrayView<::dcsctp::SackChunk::GapAckBlock const>                      gap_ack_blocks,
+        bool                                                                             is_in_fast_recovery
     );
 
     MCNAPI ::std::optional<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>> Insert(

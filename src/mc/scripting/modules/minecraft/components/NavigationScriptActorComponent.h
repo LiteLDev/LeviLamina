@@ -10,6 +10,7 @@
 // clang-format off
 class ActorDefinitionDescriptor;
 struct NavigationDescription;
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -61,6 +62,12 @@ public:
     virtual ::Scripting::Result_deprecated<bool> getCanJump() const;
 
     virtual ::Scripting::Result_deprecated<bool> getCanPathFromAir() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

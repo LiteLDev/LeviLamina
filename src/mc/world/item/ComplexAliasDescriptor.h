@@ -23,13 +23,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ComplexAliasDescriptor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> clone() const /*override*/;
 
     virtual bool sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const /*override*/;
 
-    virtual bool sameItem(::ItemDescriptor::ItemEntry const&, bool) const /*override*/;
+    virtual bool sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool) const /*override*/;
 
     virtual bool forEachItemUntil(::brstd::function_ref<bool(::Item const&, short)> func) const /*override*/;
 
@@ -41,7 +45,7 @@ public:
 
     virtual ::std::optional<::CompoundTag> save() const /*override*/;
 
-    virtual void serialize(::BinaryStream&) const /*override*/;
+    virtual void serialize(::BinaryStream& stream) const /*override*/;
 
     virtual ::ItemDescriptor::InternalType getType() const /*override*/;
 
@@ -49,8 +53,42 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ComplexAliasDescriptor(::std::string const& fullName);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
+
+    MCAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
+
+    MCAPI bool $sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool) const;
+
+    MCAPI bool $forEachItemUntil(::brstd::function_ref<bool(::Item const&, short)> func) const;
+
+    MCFOLD ::std::string $getFullName() const;
+
+    MCAPI ::ItemDescriptor::ItemEntry $getItem() const;
+
+    MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
+
+    MCAPI ::std::optional<::CompoundTag> $save() const;
+
+    MCAPI void $serialize(::BinaryStream& stream) const;
+
+    MCFOLD ::ItemDescriptor::InternalType $getType() const;
+
+    MCFOLD uint64 $getHash() const;
+
 
     // NOLINTEND
 };

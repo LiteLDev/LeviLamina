@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void update(double const) /*override*/;
+    virtual void update(double const time) /*override*/;
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $update(double const time);
     // NOLINTEND
 };
 

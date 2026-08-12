@@ -7,6 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class IGameplayUserManagerConnector;
+class ServerPlayer;
 struct ActorUniqueID;
 namespace ScriptModuleMinecraftServerUI { class ScriptObservableBoolean; }
 namespace ScriptModuleMinecraftServerUI { class ScriptObservableNumber; }
@@ -54,6 +57,35 @@ public:
     ScriptObservableDataStoreBinding& operator=(ScriptObservableDataStoreBinding const&);
     ScriptObservableDataStoreBinding(ScriptObservableDataStoreBinding const&);
     ScriptObservableDataStoreBinding();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI
+    ScriptObservableDataStoreBinding(::IGameplayUserManagerConnector& userManagerConnector, ::ServerPlayer& player);
+
+    MCNAPI void _onGameplayUserRemoved(::EntityContext& entity);
+
+    MCNAPI void bindObservable(
+        ::std::string const& property,
+        ::std::string const& path,
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableString>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableNumber>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableBoolean>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableUIRawMessage>> binding
+    );
+
+    MCNAPI void unbindAll();
+
+    MCNAPI void unbindObservable(::std::string const& property, ::std::string const& path);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraftServerUI

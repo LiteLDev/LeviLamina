@@ -28,6 +28,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _doIllagerBeastPostAIStepSystem(
+        ::StrictEntityContext const&,
+        ::StateVectorComponent const& stateVectorComponent,
+        ::SubBBsComponent&            subBBsComponent
+    );
+
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -59,6 +59,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _isIOS() const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ActiveDirectoryAuthenticationState $getAuthenticationState() const;

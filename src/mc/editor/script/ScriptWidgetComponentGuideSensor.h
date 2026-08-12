@@ -31,6 +31,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
+
 
     // NOLINTEND
 };

@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
+namespace Social::Events { class Event; }
 namespace Social::Events { class IEventListener; }
 namespace Social::Events { class Property; }
 namespace Social::Events { struct EventManagerArguments; }
@@ -55,13 +56,45 @@ public:
     MCNAPI void SendDelayedEventActions(uint primaryUserId);
 
     MCNAPI void SendDelayedTelemetryEvents(uint primaryUserId);
+#endif
 
+    MCNAPI void UpdateDnAPlatString();
+
+    MCNAPI ::std::string _buildDnAPlatformString();
+
+#ifdef LL_PLAT_C
     MCNAPI void addListener(::std::unique_ptr<::Social::Events::IEventListener> listener);
+#endif
 
+    MCNAPI void buildCommonProperties(
+        ::std::unordered_map<::std::string, ::Social::Events::Property>& props,
+        uint                                                             userId,
+        ::std::vector<::std::string> const&                              exclude
+    ) const;
+
+#ifdef LL_PLAT_C
     MCNAPI ::std::optional<::Social::Events::Property> getCommonProperty(::std::string const& name) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI ::std::optional<::Social::Events::Property> getCommonProperty(::std::string const& name) const;
+#endif
+
+    MCNAPI ::Social::Events::Property getGlobalProperty(::std::string const& name) const;
+
+#ifdef LL_PLAT_C
     MCNAPI ::Social::Events::Property getPlayerCommonProperty(uint userId, ::std::string const& name) const;
 #endif
+
+#ifdef LL_PLAT_S
+    MCNAPI ::Social::Events::Property getPlayerCommonProperty(uint userId, ::std::string const& name) const;
+#endif
+
+    MCNAPI ::Social::Events::Property getPlayerGlobalProperty(uint userId, ::std::string const& name) const;
+
+    MCNAPI void recordEvent(::Social::Events::Event& event);
+
+    MCNAPI void removePlayerCommonProperty(uint userId, ::std::string const& name);
 
     MCNAPI ~EventManager();
     // NOLINTEND

@@ -148,7 +148,7 @@ public:
         ::webrtc::SSLProtocolVersion    max_version
     );
 
-    MCNAPI bool HandleDtlsPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> payload);
+    MCNAPI bool HandleDtlsPacket(::webrtc::ArrayView<uchar const> payload);
 
     MCNAPI void MaybeStartDtls();
 

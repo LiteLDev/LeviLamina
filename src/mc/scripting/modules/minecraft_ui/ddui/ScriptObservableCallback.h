@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/script_core/script_engine/scripting/Closure.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { class WeakLifetimeScope; }
+// clang-format on
+
 namespace ScriptModuleMinecraftServerUI {
 
 class ScriptObservableCallback {
@@ -17,6 +25,21 @@ public:
     ScriptObservableCallback& operator=(ScriptObservableCallback const&);
     ScriptObservableCallback(ScriptObservableCallback const&);
     ScriptObservableCallback();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptObservableCallback(
+        ::std::variant<::Scripting::Closure<void()>, ::std::function<void()>> callback,
+        ::Scripting::WeakLifetimeScope&                                       scope
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraftServerUI

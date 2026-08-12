@@ -22,15 +22,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool SendVideo(
-        int                                                    payload_type,
-        ::std::optional<::webrtc::VideoCodecType>              codec_type,
-        uint                                                   rtp_timestamp,
-        ::webrtc::Timestamp                                    capture_time,
-        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload,
-        uint64                                                 encoder_output_size,
-        ::webrtc::RTPVideoHeader                               video_header,
-        ::webrtc::TimeDelta                                    expected_retransmission_time,
-        ::std::vector<uint>                                    csrcs
+        int                                       payload_type,
+        ::std::optional<::webrtc::VideoCodecType> codec_type,
+        uint                                      rtp_timestamp,
+        ::webrtc::Timestamp                       capture_time,
+        ::webrtc::ArrayView<uchar const>          payload,
+        uint64                                    encoder_output_size,
+        ::webrtc::RTPVideoHeader                  video_header,
+        ::webrtc::TimeDelta                       expected_retransmission_time,
+        ::std::vector<uint>                       csrcs
     ) = 0;
 
     virtual void SetVideoStructureAfterTransformation(::webrtc::FrameDependencyStructure const* video_structure) = 0;

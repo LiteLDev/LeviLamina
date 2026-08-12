@@ -9,13 +9,16 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class BlockVolume;
 class BoundingBox;
 class Dimension;
+class JigsawBlockInfo;
 class JigsawStructureRegistry;
 class PoolElementStructurePiece;
 class Random;
 class StructurePiece;
 class StructurePoolElement;
+class StructureTemplatePool;
 struct JigsawJunction;
 // clang-format on
 
@@ -71,6 +74,33 @@ public:
             ::BoundingBox const&,
             ::BlockPos const&
         )>  factory
+    );
+
+    MCAPI void _addPiece(
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::PoolElementStructurePiece const&                  sourcePiece,
+        ::Random&                                           random,
+        ::BlockPos const&                                   position,
+        ::Rotation const&                                   rotation,
+        ::JigsawStructureRegistry const&                    pools,
+        ::Dimension&                                        dimension,
+        ::BlockVolume&                                      box,
+        ::BlockPos const&                                   refPos
+    );
+
+    MCAPI bool _tryPlacingPiece(
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::PoolElementStructurePiece const&                  sourcePiece,
+        ::Random&                                           random,
+        ::JigsawBlockInfo const&                            sourceJigsaw,
+        ::BoundingBox const&                                sourceBB,
+        ::std::vector<::BoundingBox>&                       sourceInternalBBs,
+        ::BlockPos const&                                   attachPos,
+        ::StructureTemplatePool const*                      targetPool,
+        ::JigsawStructureRegistry const&                    pools,
+        ::Dimension&                                        dimension,
+        ::BlockVolume&                                      box,
+        ::BlockPos const&                                   refPos
     );
 
     MCAPI void addPieces(

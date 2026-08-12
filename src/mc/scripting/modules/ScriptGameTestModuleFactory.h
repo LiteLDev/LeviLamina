@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct ModuleBinding; }
 namespace gametest { class GameTestRegistry; }
 namespace mce { class UUID; }
 // clang-format on
@@ -30,6 +32,12 @@ public:
     MCNAPI explicit ScriptGameTestModuleFactory(::gametest::GameTestRegistry& gameTestRegistry);
 
     MCNAPI void _addVersions();
+
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Scripting::ModuleBindingBuilder&  moduleBuilder,
+        bool                                allowUntagged,
+        ::std::vector<::std::string> const& allowedTags
+    );
     // NOLINTEND
 
 public:

@@ -10,6 +10,9 @@
 class BlockActorDataPacket;
 class BlockSource;
 class CompoundTag;
+class Container;
+class ItemStack;
+class Vec3;
 // clang-format on
 
 class DropperBlockActor : public ::DispenserBlockActor {
@@ -27,6 +30,15 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool pushOutItems(::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool
+    _tryMoveInItemsAndDepleteStack(::Container& container, ::ItemStack& item, int stackSizeLimit, int slot, int face);
+
+    MCAPI static ::Container* getContainerAt(::BlockSource& region, ::Vec3 const& pos);
     // NOLINTEND
 
 public:

@@ -70,6 +70,8 @@ public:
 
     MCAPI void _checkHDRTexturesAvailableAndFallback(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
+    MCAPI void _unloadPanoramaTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+
     MCAPI bool arePanoramaTexturesLoadedInGroup(::std::shared_ptr<::mce::TextureGroup> textures) const;
 
     MCAPI void frameUpdate(::IClientInstance& clientInstance, ::FrameUpdateContext& frameUpdateContext);
@@ -82,6 +84,11 @@ public:
     MCAPI void unloadAssets(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
     MCAPI void updateAssets(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+
+    MCAPI void updateCubemapType(
+        ::CubemapBackgroundResources::CubemapType const& cubemapType,
+        ::std::shared_ptr<::mce::TextureGroup>           textureGroup
+    );
     // NOLINTEND
 
 public:
@@ -97,6 +104,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
     // NOLINTEND
 };

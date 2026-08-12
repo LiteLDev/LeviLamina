@@ -26,6 +26,10 @@ public:
 #ifdef LL_PLAT_C
     MCAPI static ::Scripting::ClassBinding bind();
 #endif
+
+#ifdef LL_PLAT_S
+    MCAPI static ::Scripting::ClassBinding bind();
+#endif
     // NOLINTEND
 };
 

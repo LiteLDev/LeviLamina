@@ -50,6 +50,10 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>      dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>       profanityContext
     );
+
+    MCAPI ::Realms::Stories::PostStatus _getPostCommentStatus() const;
+
+    MCAPI void _regenerateView();
     // NOLINTEND
 
 public:
@@ -71,7 +75,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

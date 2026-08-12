@@ -31,6 +31,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BiomeSource3d();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ChunkVolume::VolumeOf<::Biome> getBiomeVolumeToFill(
@@ -58,6 +62,18 @@ public:
     virtual ::BiomeSourceType const getType() const /*override*/;
 
     virtual ::Biome const* _getBiome(::GetBiomeOptions const& getBiomeOptions) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BiomeSource3d(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

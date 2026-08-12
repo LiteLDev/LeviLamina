@@ -6,12 +6,14 @@
 #include "mc/deps/core/file/OutputFileStream.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/network/TrackerType.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/profile/ProfilerLiteTelemetry.h"
 
 // auto generated forward declare list
 // clang-format off
 class _ProfilerLiteTimer;
+struct NetworkStatMetrics;
 struct ProfilerResourceUsage;
 namespace Bedrock { class ScopeExit; }
 namespace Core { class Path; }
@@ -82,6 +84,14 @@ public:
         ::ll::TypedStorage<8, 8, double>                                      mMaxTimePerLoop;
         ::ll::TypedStorage<8, 8, double>                                      mFrameAccumulatedTime;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI void resetRecursive();
+#endif
+        // NOLINTEND
     };
 
     using EventSource = ::brstd::function_ref<
@@ -140,6 +150,15 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI void _getProfileStringRecursive(
+        ::ProfilerLite::ScopedData& scope,
+        uint64&                     writeCount,
+        uint64&                     remainingLength,
+        char*&                      stringBuilderTemp
+    );
+
+    MCFOLD void _shutdown();
+
     MCAPI void applyProfilerOptions(bool isClientDiagnosticsEnabled);
 #endif
 
@@ -156,6 +175,8 @@ public:
     );
 
     MCAPI void logScreenCreationEvent(::std::string const& screenName, double creationTime, uchar clientID);
+
+    MCAPI void reset();
 #endif
 
     MCAPI void setActiveScope(::std::thread::id threadId, ::_ProfilerLiteTimer* newScope);
@@ -169,6 +190,17 @@ public:
         ::ProfilerResourceUsage const& resources,
         bool                           logPackets
     );
+#endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static void
+    _writeHeadersIfEmpty(::std::string const& header, ::Core::Path logFileName, ::Core::OutputFileStream& file);
+
+    MCAPI static void getNetworkStats(::NetworkStatMetrics& stats, uint& lastSampleNum, ::TrackerType type);
 #endif
     // NOLINTEND
 

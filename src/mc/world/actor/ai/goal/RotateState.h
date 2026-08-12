@@ -22,6 +22,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tick();
+
 
     // NOLINTEND
 };

@@ -18,8 +18,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static uint64 ValueSize(::webrtc::CorruptionDetectionMessage const& message);
 
-    MCNAPI static bool
-    Write(::webrtc::ArrayView<uchar, 18446744073709546905> data, ::webrtc::CorruptionDetectionMessage const& message);
+    MCNAPI static bool Write(::webrtc::ArrayView<uchar> data, ::webrtc::CorruptionDetectionMessage const& message);
     // NOLINTEND
 };
 

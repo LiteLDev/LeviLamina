@@ -38,6 +38,8 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI TransportProber(::std::vector<::std::string> urls, ::WorkerPool& workerPool, ::Scheduler& scheduler);
 
+    MCNAPI void _tryNextUrl(uint64 index);
+
     MCNAPI void start();
 #endif
     // NOLINTEND

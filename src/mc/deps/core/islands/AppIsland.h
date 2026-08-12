@@ -45,7 +45,12 @@ public:
 
     virtual void mainUpdate() /*override*/;
 
+#ifdef LL_PLAT_S
     virtual void processActivationArguments(::Bedrock::ActivationArguments const&) /*override*/;
+#else // LL_PLAT_C
+    virtual void processActivationArguments(::Bedrock::ActivationArguments const& args) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -81,7 +86,11 @@ public:
 
     MCNAPI void $mainUpdate();
 
+#ifdef LL_PLAT_S
     MCNAPI void $processActivationArguments(::Bedrock::ActivationArguments const&);
+#else // LL_PLAT_C
+    MCNAPI void $processActivationArguments(::Bedrock::ActivationArguments const& args);
+#endif
 
 
     // NOLINTEND

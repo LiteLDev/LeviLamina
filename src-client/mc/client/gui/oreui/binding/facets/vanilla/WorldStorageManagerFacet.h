@@ -4,7 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
+#include "mc/client/world/ClearPlayerDataType.h"
+#include "mc/client/world/DeleteWorldError.h"
+#include "mc/client/world/ExportWorldFlags.h"
 #include "mc/client/world/IWorldStorageHandler.h"
 #include "mc/client/world/InfiniteWorldConverter.h"
 #include "mc/deps/core/threading/Async.h"
@@ -47,6 +51,49 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void clearDuplicateWorldTaskState();
+
+    MCAPI void clearExportWorldResult();
+
+    MCAPI void clearMakeWorldInfinite();
+
+    MCAPI void clearPlayerData(::World::ClearPlayerDataType type, ::std::string const& worldID);
+
+    MCAPI ::std::optional<::World::DeleteWorldError> deleteWorld(::std::string const& worldID);
+
+    MCAPI void exportWorld(::std::string const& worldID, ::World::ExportWorldFlags flags);
+
+    MCAPI void exportWorldAsTemplate(::std::string const& worldID, ::World::ExportWorldFlags flags);
+
+    MCFOLD ::OreUI::FacetTaskState getClearPlayerDataTaskState() const;
+
+    MCFOLD ::std::optional<::World::IWorldStorageHandler::DuplicateWorldResult> const& getDuplicateWorldError() const;
+
+    MCFOLD ::OreUI::FacetTaskState getDuplicateWorldTaskState() const;
+
+    MCAPI ::std::optional<::World::IWorldStorageHandler::ExportWorldResult> const& getExportWorldTaskResult() const;
+
+    MCAPI ::std::optional<::World::InfiniteWorldConverter::Result> const& getMakeWorldInfiniteError() const;
+
+    MCAPI float getMakeWorldInfiniteProgress() const;
+
+    MCFOLD ::OreUI::FacetTaskState getMakeWorldInfiniteState() const;
+
+    MCAPI void makeWorldInfinite(::std::string const& worldID);
+
+    MCAPI void resetClearPlayerData();
+
+    MCAPI void resetWorldIconToDefault(::std::string const& worldID);
+
+    MCAPI void
+    saveScreenshotAsWorldIcon(::std::string const& worldID, ::std::string const& path, ::std::string const& imageID);
+
+    MCAPI void startDuplicateWorld(::std::string const& worldID);
     // NOLINTEND
 
 public:

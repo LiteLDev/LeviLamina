@@ -23,9 +23,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    OceanMonumentPiece();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) = 0;
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) = 0;
 
     virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
@@ -37,8 +41,40 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI OceanMonumentPiece(
+        int                                 genDepth,
+        int&                                orientation,
+        ::std::shared_ptr<::RoomDefinition> roomDefinition,
+        int                                 roomWidth,
+        int                                 roomHeight,
+        int                                 roomDepth
+    );
+
+    MCAPI void
+    generateDefaultFloor(::BlockSource& region, ::BoundingBox const& chunkBB, int xOff, int zOff, bool downOpening);
+
+    MCAPI void spawnElder(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y, int z);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+    MCAPI int $getWorldZ(int x, int z);
+
+    MCAPI int $getWorldX(int x, int z);
+
+    MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+
 
     // NOLINTEND
 };

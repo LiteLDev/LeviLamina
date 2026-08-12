@@ -16,6 +16,7 @@ class ScriptAsyncJobCoordinator;
 class ScriptDeferredEventCoordinator;
 class ScriptDiagnostics;
 class ScriptPluginManager;
+struct ServerPerformanceData;
 // clang-format on
 
 class ScriptTickListener : public ::LevelEventListener, public ::ScriptDeferredEventListener {
@@ -45,7 +46,7 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptTickListener() /*override*/ = default;
 
-    virtual ::EventResult onLevelTickStart(::Level&) /*override*/;
+    virtual ::EventResult onLevelTickStart(::Level& level) /*override*/;
 
     virtual ::EventResult onLevelTickEnd(::Level&) /*override*/;
 
@@ -55,8 +56,22 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::ServerPerformanceData& _getServerPerfData();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::EventResult $onLevelTickStart(::Level& level);
+
+    MCAPI ::EventResult $onLevelTickEnd(::Level&);
+
+    MCAPI void $onScriptTickStart();
+
+    MCAPI void $onScriptTickEnd();
+
 
     // NOLINTEND
 };

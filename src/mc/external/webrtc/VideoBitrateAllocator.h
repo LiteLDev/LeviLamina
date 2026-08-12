@@ -26,6 +26,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::VideoBitrateAllocation $GetAllocation(uint, uint);
+
+    MCNAPI ::webrtc::VideoBitrateAllocation $Allocate(::webrtc::VideoBitrateAllocationParameters);
+
+    MCNAPI void $SetLegacyConferenceMode(bool);
+
 
     // NOLINTEND
 };

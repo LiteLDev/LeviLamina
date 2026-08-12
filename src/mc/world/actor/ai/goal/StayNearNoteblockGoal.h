@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class Mob;
 // clang-format on
 
@@ -42,6 +43,12 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos> const _hasLastVibrationAtNoteblock();
     // NOLINTEND
 
 public:

@@ -5,6 +5,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
 
 namespace Core {
 
@@ -23,11 +24,11 @@ public:
 
     Path(PathPart const& part) : Base{std::move(part.mUtf8StdString)} {}
 
-    Path(const Path& other) = default;
+    Path(Path const& other) = default;
 
     Path(Path&& other) noexcept : Base{std::move(other.value)} {}
 
-    Path& operator=(const Path& other) {
+    Path& operator=(Path const& other) {
         if (this != &other) value = other.value;
         return *this;
     }
@@ -37,15 +38,15 @@ public:
         return *this;
     }
 
-    bool operator<(const Path& rhs) const noexcept { return value < rhs.value; }
+    bool operator<(Path const& rhs) const noexcept { return value < rhs.value; }
 
-    bool operator==(const Path& rhs) const noexcept { return value == rhs.value; }
+    bool operator==(Path const& rhs) const noexcept { return value == rhs.value; }
 
-    [[nodiscard]] const char* getUtf8CString() const noexcept { return value.c_str(); }
+    [[nodiscard]] char const* getUtf8CString() const noexcept { return value.c_str(); }
 
     [[nodiscard]] std::string_view getUtf8StringView() const noexcept { return value; }
 
-    [[nodiscard]] const std::string& getUtf8StdString() const noexcept { return value; }
+    [[nodiscard]] std::string const& getUtf8StdString() const noexcept { return value; }
 
     [[nodiscard]] size_t size() const noexcept { return value.size(); }
 
@@ -63,13 +64,11 @@ public:
 #endif
     }
 
-    [[nodiscard]] bool isDotOrDotDot() const noexcept {
-        return value == "." || value == "..";
-    }
+    [[nodiscard]] bool isDotOrDotDot() const noexcept { return value == "." || value == ".."; }
 
     // Static constant EMPTY
-    static const Path& EMPTY() {
-        static const Path emptyPath("");
+    static Path const& EMPTY() {
+        static Path const emptyPath("");
         return emptyPath;
     }
 };

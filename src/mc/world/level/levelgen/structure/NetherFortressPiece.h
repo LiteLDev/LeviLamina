@@ -11,6 +11,7 @@ class Block;
 class BlockSource;
 class BoundingBox;
 class LevelChunk;
+class NBStartPiece;
 class Random;
 // clang-format on
 
@@ -48,16 +49,66 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NetherFortressPiece();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void addHardcodedSpawnAreas(::LevelChunk& chunk) const /*override*/;
 
-    virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) /*override*/;
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit NetherFortressPiece(int genDepth);
+
+    MCAPI ::StructurePiece* generateAndAddPiece(
+        ::NBStartPiece&                                     startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction,
+        int                                                 depth,
+        bool                                                isCastle
+    );
+
+    MCAPI ::StructurePiece* generateChildForward(
+        ::NBStartPiece&                                     startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 xOff,
+        int                                                 yOff,
+        bool                                                isCastle
+    );
+
+    MCAPI ::StructurePiece* generateChildRight(
+        ::NBStartPiece&                                     startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 yOff,
+        int                                                 zOff,
+        bool                                                isCastle
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
 
     // NOLINTEND
 };

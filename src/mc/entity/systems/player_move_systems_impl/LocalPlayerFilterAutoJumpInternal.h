@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/Filter.h"
@@ -15,6 +16,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IConstBlockSource;
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
@@ -176,6 +178,108 @@ public:
             ::EntityFactoryT<>>& context,
         ::StrictEntityContext&   entity
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void commonTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::ActorMovementTickNeededComponent,
+                ::LocalPlayerComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::MovementAttributesComponent,
+                ::DimensionTypeComponent,
+                ::OnGroundFlagComponent,
+                ::StateVectorComponent,
+                ::ClientInputLockComponent>,
+            ::Write<::MoveInputComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context,
+        ::StrictEntityContext*   entity
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _setJumpingIfPlayerCanAutoJump(
+        ::StrictEntityContext const&              entity,
+        ::AABBShapeComponent const&               aabbShape,
+        ::ActorRotationComponent const&           actorRotation,
+        ::MovementAttributesComponent const&      attributes,
+        ::StateVectorComponent const&             stateVector,
+        ::ActorDataFlagComponent const&           synchedActorData,
+        ::ClientInputLockComponent const&         inputLock,
+        ::MoveInputComponent&                     moveInput,
+        ::Optional<::OnGroundFlagComponent const> isOnGround,
+        ::Optional<::PassengerComponent const>    isRiding,
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::ActorMovementTickNeededComponent,
+                ::LocalPlayerComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::MovementAttributesComponent,
+                ::DimensionTypeComponent,
+                ::OnGroundFlagComponent,
+                ::StateVectorComponent,
+                ::ClientInputLockComponent>,
+            ::Write<::MoveInputComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>&   executionContext,
+        ::IConstBlockSource const& region
+    );
     // NOLINTEND
 
 public:

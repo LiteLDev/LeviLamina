@@ -84,6 +84,8 @@ public:
     MCAPI void
     executeEvent(::BlockSource&, ::BlockPos const& pos, ::Block const&, ::std::string const& eventName, ::Actor& actor);
 
+    MCAPI void loadUserData(::CompoundTag const& tag);
+
     MCAPI void saveUserData(::CompoundTag& tag) const;
 
     MCAPI ::Actor* spawnActor(::BlockSource& region, ::Direction::Type direction);

@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_20_80 { struct ParticleEventRandomNode; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_20_80 {
@@ -45,6 +46,12 @@ public:
     MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleEventNode const&) const;
 
     MCAPI ~ParticleEventNode();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

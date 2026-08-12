@@ -88,6 +88,40 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::IncomingPacketFilterResult
+    $allowIncomingPacketId(::NetworkIdentifierWithSubId const&, ::MinecraftPacketIds, uint64);
+
+    MCNAPI ::OutgoingPacketFilterResult
+    $allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&);
+
+    MCNAPI void $onUnableToConnect(::Connection::DisconnectFailReason, ::std::string const&, ::std::string const&);
+
+    MCNAPI void $onDisconnect(
+        ::NetworkIdentifier const&,
+        ::Connection::DisconnectFailReason const,
+        ::Connection::DisconnectionStage const,
+        ::std::string const&,
+        ::std::string const&,
+        bool,
+        ::std::string const&
+    );
+
+    MCNAPI void $handle(::NetworkIdentifier const&, ::NetworkSettingsPacket const&);
+
+    MCNAPI void $handle(::NetworkIdentifier const&, ::DisconnectPacket const&);
+
+    MCNAPI void $handle(::NetworkIdentifier const&, ::NetworkStackLatencyPacket const&);
+
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ResourcePacksInfoPacket const&);
+
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ResourcePackStackPacket const&);
+
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ServerToClientHandshakePacket const&);
+
+    MCNAPI void $handle(::NetworkIdentifier const&, ::StartGamePacket const&);
+
+    MCNAPI void $onConnect(::NetworkIdentifier const&);
+
 
     // NOLINTEND
 };

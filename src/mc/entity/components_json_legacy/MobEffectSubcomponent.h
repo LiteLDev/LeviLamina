@@ -35,6 +35,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _addEffectFromJSON(::Json::Value& component);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $readfromJSON(::Json::Value& component);

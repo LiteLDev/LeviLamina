@@ -141,6 +141,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $Update();
+
+    MCAPI ::RakNet::PluginReceiveResult $OnReceive(::RakNet::Packet*);
+
+    MCAPI void $OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool);
+
+    MCAPI void
+    $OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason);
+
+    MCAPI void $OnAttach();
+
+    MCAPI void $OnDetach();
+
+    MCAPI void $OnRakPeerShutdown();
+
 
     // NOLINTEND
 };

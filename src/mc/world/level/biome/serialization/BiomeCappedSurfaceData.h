@@ -23,5 +23,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::BiomeCappedSurfaceData& operator=(::BiomeCappedSurfaceData&&);
+
+    MCAPI bool operator==(::BiomeCappedSurfaceData const& other) const;
     // NOLINTEND
 };

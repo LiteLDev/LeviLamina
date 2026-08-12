@@ -51,7 +51,7 @@ public:
 
     virtual int getValue() const /*override*/;
 
-    virtual void setValue(int) /*override*/;
+    virtual void setValue(int value) /*override*/;
 
     virtual ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
@@ -66,6 +66,10 @@ public:
         ::std::function<float()>                      getOptimalGuiScale,
         ::std::function<float()>                      getMaxGuiScale
     );
+
+    MCAPI void _updateInfo();
+
+    MCAPI void _updateOptions();
     // NOLINTEND
 
 public:
@@ -81,7 +85,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $canModify() const;
 
+    MCAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
+
+    MCAPI int $getValue() const;
+
+    MCAPI void $setValue(int value);
+
+    MCAPI ::std::optional<
+        ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
+    $getInfo() const;
     // NOLINTEND
 };
 

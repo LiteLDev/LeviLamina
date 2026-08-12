@@ -112,6 +112,36 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::ResourceLocation const& $getPackLocation() const;
+
+    MCNAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
+
+    MCNAPI void $forEachIn(
+        ::Core::Path const&                        packRelativePath,
+        ::std::function<void(::Core::Path const&)> callback,
+        bool                                       recurseAnyways
+    ) const;
+
+    MCNAPI ::PackAccessStrategyType $getStrategyType() const;
+
+    MCNAPI ::Core::PathBuffer<::std::string> const& $getSubPath() const;
+
+    MCNAPI bool $supportsSignatureVerification() const;
+
+    MCNAPI void $unload();
+
+    MCNAPI ::Bedrock::Result<::StreamableAssetSource>
+    $getStreamableSource(::Core::Path const& packRelativePath, ::std::optional<::Core::PathView> tempDirectory) const;
+
+    MCNAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
+
+    MCNAPI ::std::string $_getContentsFile();
+
+    MCNAPI ::std::string $_getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
+
+    MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
+    $_preloadSubFolders(::Core::Path const& packRelativePath) const;
+
 
     // NOLINTEND
 };

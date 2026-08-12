@@ -25,11 +25,11 @@ public:
     virtual ~IScriptBlockComponentFactory() = default;
 
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
-    createComponent(::BlockSource&, ::BlockPos const&, ::Scripting::WeakLifetimeScope const&) = 0;
+    createComponent(::BlockSource& region, ::BlockPos const& position, ::Scripting::WeakLifetimeScope const& scope) = 0;
 
     virtual ::std::vector<::Scripting::ClassBinding> bind() const = 0;
 
-    virtual bool canAddOn(::Block const&) const;
+    virtual bool canAddOn(::Block const& block) const;
 
     virtual ::std::optional<::Scripting::Release> overrideEnumVersion() const;
     // NOLINTEND
@@ -37,6 +37,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $canAddOn(::Block const& block) const;
+
+    MCAPI ::std::optional<::Scripting::Release> $overrideEnumVersion() const;
+
 
     // NOLINTEND
 };

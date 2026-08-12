@@ -31,12 +31,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::IConstBlockSource const* updateBlockSourceForEntity(::StrictEntityContext const&) /*override*/;
+    virtual ::IConstBlockSource const* updateBlockSourceForEntity(::StrictEntityContext const& entity) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::IConstBlockSource const* $updateBlockSourceForEntity(::StrictEntityContext const& entity);
+
 
     // NOLINTEND
 };

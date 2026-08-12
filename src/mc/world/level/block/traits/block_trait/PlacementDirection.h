@@ -54,8 +54,8 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual ::gsl::not_null<::Block const*> getPlacementBlock(
-            ::gsl::not_null<::Block const*>,
-            ::Actor const&,
+            ::gsl::not_null<::Block const*> block,
+            ::Actor const&                  by,
             ::BlockPos const&,
             uchar,
             ::Vec3 const&
@@ -67,6 +67,16 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+            ::gsl::not_null<::Block const*> block,
+            ::Actor const&                  by,
+            ::BlockPos const&,
+            uchar,
+            ::Vec3 const&
+        ) const;
+
+        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
+
 
         // NOLINTEND
     };
@@ -82,9 +92,9 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual ::gsl::not_null<::Block const*> getPlacementBlock(
-            ::gsl::not_null<::Block const*>,
-            ::Actor const&,
-            ::BlockPos const&,
+            ::gsl::not_null<::Block const*> block,
+            ::Actor const&                  by,
+            ::BlockPos const&               pos,
             uchar,
             ::Vec3 const&
         ) const /*override*/;
@@ -95,6 +105,16 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+            ::gsl::not_null<::Block const*> block,
+            ::Actor const&                  by,
+            ::BlockPos const&               pos,
+            uchar,
+            ::Vec3 const&
+        ) const;
+
+        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
+
 
         // NOLINTEND
     };
@@ -104,8 +124,8 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual ::gsl::not_null<::Block const*> getPlacementBlock(
-            ::gsl::not_null<::Block const*>,
-            ::Actor const&,
+            ::gsl::not_null<::Block const*> block,
+            ::Actor const&                  by,
             ::BlockPos const&,
             uchar,
             ::Vec3 const&
@@ -117,6 +137,16 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+            ::gsl::not_null<::Block const*> block,
+            ::Actor const&                  by,
+            ::BlockPos const&,
+            uchar,
+            ::Vec3 const&
+        ) const;
+
+        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
+
 
         // NOLINTEND
     };
@@ -139,6 +169,14 @@ public:
     virtual ::std::unique_ptr<::CompoundTag> _buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
     virtual ::std::string const& _getName() const /*override*/;
+
+    virtual ~PlacementDirection() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

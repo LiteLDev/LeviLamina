@@ -104,8 +104,7 @@ public:
 
     virtual void SetTargetBitrate(int);
 
-    virtual ::webrtc::ArrayView<::std::unique_ptr<::webrtc::AudioEncoder>, 18446744073709546905>
-    ReclaimContainedEncoders();
+    virtual ::webrtc::ArrayView<::std::unique_ptr<::webrtc::AudioEncoder>> ReclaimContainedEncoders();
 
     virtual bool EnableAudioNetworkAdaptor(::std::string_view);
 
@@ -134,12 +133,52 @@ public:
     virtual ::std::optional<::std::pair<::webrtc::DataRate, ::webrtc::DataRate>> GetBitrateRange() const;
 
     virtual ::webrtc::AudioEncoder::EncodedInfo
-    EncodeImpl(uint, ::webrtc::ArrayView<short const, 18446744073709546905>, ::webrtc::BufferT<uchar, 0>*) = 0;
+    EncodeImpl(uint, ::webrtc::ArrayView<short const>, ::webrtc::BufferT<uchar, 0>*) = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI int $RtpTimestampRateHz() const;
+
+    MCNAPI bool $SetFec(bool);
+
+    MCNAPI bool $SetDtx(bool);
+
+    MCNAPI bool $GetDtx() const;
+
+    MCNAPI bool $SetApplication(::webrtc::AudioEncoder::Application);
+
+    MCNAPI void $SetMaxPlaybackRate(int);
+
+    MCNAPI void $SetTargetBitrate(int);
+
+    MCNAPI ::webrtc::ArrayView<::std::unique_ptr<::webrtc::AudioEncoder>> $ReclaimContainedEncoders();
+
+    MCNAPI bool $EnableAudioNetworkAdaptor(::std::string_view);
+
+    MCNAPI void $DisableAudioNetworkAdaptor();
+
+    MCNAPI void $OnReceivedUplinkPacketLossFraction(float);
+
+    MCNAPI void $OnReceivedUplinkRecoverablePacketLossFraction(float);
+
+    MCNAPI void $OnReceivedTargetAudioBitrate(int);
+
+    MCNAPI void $OnReceivedUplinkBandwidth(int, ::std::optional<int64>);
+
+    MCNAPI void $OnReceivedUplinkAllocation(::webrtc::BitrateAllocationUpdate);
+
+    MCNAPI void $OnReceivedRtt(int);
+
+    MCNAPI void $OnReceivedOverhead(uint64);
+
+    MCNAPI void $SetReceiverFrameLengthRange(int, int);
+
+    MCNAPI ::webrtc::ANAStats $GetANAStats() const;
+
+    MCNAPI ::std::optional<::std::pair<::webrtc::DataRate, ::webrtc::DataRate>> $GetBitrateRange() const;
+
 
     // NOLINTEND
 };

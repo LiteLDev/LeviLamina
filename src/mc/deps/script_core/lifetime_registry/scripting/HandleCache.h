@@ -50,6 +50,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void _add(uint64 typeHash, uint64 keyHash, ::Scripting::ObjectHandle const& handle);
 
+    MCNAPI void _remove(uint64 typeHash, uint64 keyHash);
+
     MCNAPI ::std::optional<::Scripting::ObjectHandle> _tryGetHandle(uint64 typeHash, uint64 keyHash) const;
     // NOLINTEND
 };

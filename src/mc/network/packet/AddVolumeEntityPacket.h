@@ -84,9 +84,17 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
+#ifdef LL_PLAT_S
     MCAPI ::SerializationMode $getSerializationMode() const;
+#else // LL_PLAT_C
+    MCFOLD ::SerializationMode $getSerializationMode() const;
+#endif
 
+#ifdef LL_PLAT_S
     MCAPI void $setSerializationMode(::SerializationMode mode);
+#else // LL_PLAT_C
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
+#endif
 
     MCAPI void $writeWithSerializationMode(
         ::BinaryStream&                      stream,

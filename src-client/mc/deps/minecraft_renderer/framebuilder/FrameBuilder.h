@@ -161,7 +161,7 @@ public:
 
     virtual void resetGPUTimeData() = 0;
 
-    virtual bool supportsRenderFeature(::mce::RenderFeature const) const = 0;
+    virtual bool supportsRenderFeature(::mce::RenderFeature const feature) const = 0;
 
     virtual ::mce::framebuilder::FrameBuilder::FrameTimings getLastFrameTimings() const = 0;
 
@@ -170,125 +170,138 @@ public:
     virtual bool isDeviceRemoved();
 
     virtual ::std::optional<::std::shared_ptr<::mce::framebuilder::FrameBuilder::InitializationState>>
-    init(::mce::framebuilder::FrameBuilderInitDependencies&&) = 0;
+    init(::mce::framebuilder::FrameBuilderInitDependencies&& deps) = 0;
 
     virtual ::std::optional<::std::shared_ptr<::mce::framebuilder::FrameBuilder::InitializationState>>
-        continueInit(::std::shared_ptr<::mce::framebuilder::FrameBuilder::InitializationState>) = 0;
+    continueInit(::std::shared_ptr<::mce::framebuilder::FrameBuilder::InitializationState> state) = 0;
 
     virtual bool initialized() const = 0;
 
     virtual void destroy() = 0;
 
     virtual void loadCoreAssets(
-        ::Core::PathBuffer<::std::string> const&,
-        ::std::function<::std::string(::std::string const&, ::std::string const&)>
+        ::Core::PathBuffer<::std::string> const&                                   dataDirectory,
+        ::std::function<::std::string(::std::string const&, ::std::string const&)> loadFileDataCallback
     ) = 0;
 
     virtual ::mce::framebuilder::AsyncLoadResult loadAsyncAssets() = 0;
 
     virtual void startFrame() = 0;
 
-    virtual void endFrame(::mce::framebuilder::FrameBuilderContext&&) = 0;
+    virtual void endFrame(::mce::framebuilder::FrameBuilderContext&& frameBuilderContext) = 0;
 
-    virtual void discardFrame(bool) = 0;
+    virtual void discardFrame(bool wait) = 0;
 
-    virtual void setTerrainAtlasTexture(::mce::ClientTexture const&) = 0;
+    virtual void setTerrainAtlasTexture(::mce::ClientTexture const& texture) = 0;
 
     virtual float getTargetFrameTime() const = 0;
 
     virtual ::mce::framebuilder::FramePacingConfig getFramePacingConfig() const = 0;
 
-    virtual void setFramePacingConfig(::mce::framebuilder::FramePacingConfig const&) = 0;
+    virtual void setFramePacingConfig(::mce::framebuilder::FramePacingConfig const& config) = 0;
 
-    virtual void setDefaultActorMERSUniforms(float const, float const, float const, float const) = 0;
+    virtual void setDefaultActorMERSUniforms(
+        float const metalnessUniform,
+        float const emissiveUniform,
+        float const roughnessUniform,
+        float const subsurfaceUniform
+    ) = 0;
 
-    virtual void setDefaultParticleMERSUniforms(float const, float const, float const, float const) = 0;
+    virtual void setDefaultParticleMERSUniforms(
+        float const metalnessUniform,
+        float const emissiveUniform,
+        float const roughnessUniform,
+        float const subsurfaceUniform
+    ) = 0;
 
-    virtual void setBiomeBlendingData(::mce::framebuilder::BiomeBlendingData const&) = 0;
+    virtual void setBiomeBlendingData(::mce::framebuilder::BiomeBlendingData const& biomeBlendingData) = 0;
 
-    virtual void setActiveShadowTiles(::std::vector<::mce::framebuilder::ActiveShadowTileInfo> const&) = 0;
+    virtual void setActiveShadowTiles(::std::vector<::mce::framebuilder::ActiveShadowTileInfo> const& activeTiles) = 0;
 
-    virtual void updateSurfaceParameters(::std::variant<::HWND__*, ::std::monostate> const&) = 0;
+    virtual void updateSurfaceParameters(::std::variant<::HWND__*, ::std::monostate> const& surfaceParams) = 0;
 
-    virtual void updateWindowSize(uint const, uint const) = 0;
+    virtual void updateWindowSize(uint const width, uint const height) = 0;
 
-    virtual void updateClientViewSize(::glm::vec2 const&) = 0;
+    virtual void updateClientViewSize(::glm::vec2 const& clientViewSize) = 0;
 
-    virtual bool updateMsaaLevel(uchar const) = 0;
+    virtual bool updateMsaaLevel(uchar const level) = 0;
 
-    virtual void updateFrameRateLimit(::std::optional<int> const) = 0;
+    virtual void updateFrameRateLimit(::std::optional<int> const frameRate) = 0;
 
-    virtual void updateVSync(::dragon::platform::VerticalSync) = 0;
+    virtual void updateVSync(::dragon::platform::VerticalSync verticalSync) = 0;
 
-    virtual void updateFramePacing(bool) = 0;
+    virtual void updateFramePacing(bool enabled) = 0;
 
     virtual bool enableDynamicTextureHandles() = 0;
 
-    virtual void setDebugMode(::dragon::platform::DebugModeFlags) = 0;
+    virtual void setDebugMode(::dragon::platform::DebugModeFlags debugFlags) = 0;
 
     virtual void suspend() = 0;
 
     virtual void resume() = 0;
 
     virtual ::dragon::tasks::DeferredResult<::dragon::rendering::SharedTextureHandle> createExternalTexture(
-        ::std::optional<::std::variant<::std::monostate, ::dragon::platform::GLTextureWrapper>>
+        ::std::optional<::std::variant<::std::monostate, ::dragon::platform::GLTextureWrapper>> nativeTexture
     ) = 0;
 
     virtual void updateExternalTexture(
-        ::dragon::tasks::DeferredResult<::dragon::rendering::SharedTextureHandle>,
-        ::std::optional<::std::variant<::std::monostate, ::dragon::platform::GLTextureWrapper>>,
-        ::std::function<void(::dragon::rendering::SharedTextureHandle)>
+        ::dragon::tasks::DeferredResult<::dragon::rendering::SharedTextureHandle>               texture,
+        ::std::optional<::std::variant<::std::monostate, ::dragon::platform::GLTextureWrapper>> nativeTexture,
+        ::std::function<void(::dragon::rendering::SharedTextureHandle)> rendererCallbackUpdateDelegate
     ) = 0;
 
-    virtual ::mce::ServerResourcePointer<::dragon::ResolvedTextureResource>
-    wrapExternalTexture(::dragon::platform::RenderAPI, ::dragon::TextureDescription const&, void*) = 0;
+    virtual ::mce::ServerResourcePointer<::dragon::ResolvedTextureResource> wrapExternalTexture(
+        ::dragon::platform::RenderAPI       api,
+        ::dragon::TextureDescription const& desc,
+        void*                               externalTexture
+    ) = 0;
 
-    virtual void createRenderChunk(::dragon::RenderMetadata const&) = 0;
+    virtual void createRenderChunk(::dragon::RenderMetadata const& renderMetadata) = 0;
 
-    virtual void destroyRenderChunk(::dragon::RenderMetadata const&) = 0;
+    virtual void destroyRenderChunk(::dragon::RenderMetadata const& renderMetadata) = 0;
 
     virtual void generateRenderChunkVertexData(
-        ::RenderChunkDirectVertexData&,
-        ::std::function<::RangeIndices(::TerrainLayer const&, ::TerrainLayerLOD)>,
-        ::gsl::span<uchar const> const&,
-        uint64 const&,
-        ::mce::VertexLayout const&,
-        int const*
+        ::RenderChunkDirectVertexData&                                            renderChunkDirectVertexData,
+        ::std::function<::RangeIndices(::TerrainLayer const&, ::TerrainLayerLOD)> layerRanges,
+        ::gsl::span<uchar const> const&                                           chunkData,
+        uint64 const&                                                             vertexCount,
+        ::mce::VertexLayout const&                                                mceLayout,
+        int const*                                                                absoluteBlockPosition
     ) = 0;
 
     virtual void generateRenderChunkIndexData(
-        ::RenderChunkDirectIndexData&,
-        ::std::function<::RangeIndices(::TerrainLayer const&, ::TerrainLayerLOD)>,
-        ::gsl::span<uchar const> const&,
-        ::dragon::mesh::IndexSize const
+        ::RenderChunkDirectIndexData&                                             renderChunkDirectIndexData,
+        ::std::function<::RangeIndices(::TerrainLayer const&, ::TerrainLayerLOD)> layerRanges,
+        ::gsl::span<uchar const> const&                                           indexData,
+        ::dragon::mesh::IndexSize const                                           indexSize
     ) = 0;
 
     virtual void generateRenderChunkAdditionalVertexData(
-        ::RenderChunkDirectVertexData&,
-        ::gsl::span<uchar const> const&,
-        uint64 const&,
-        ::mce::VertexFormat const&
+        ::RenderChunkDirectVertexData&  renderChunkDirectVertexData,
+        ::gsl::span<uchar const> const& additionalData,
+        uint64 const&                   vertexCount,
+        ::mce::VertexFormat const&      additionalDataFormat
     ) = 0;
 
-    virtual void freeRenderChunkVertexData(::RenderChunkDirectVertexData&) = 0;
+    virtual void freeRenderChunkVertexData(::RenderChunkDirectVertexData& renderChunkDirectVertexData) = 0;
 
-    virtual void freeRenderChunkIndexData(::RenderChunkDirectIndexData&) = 0;
+    virtual void freeRenderChunkIndexData(::RenderChunkDirectIndexData& renderChunkDirectIndexData) = 0;
 
-    virtual void debugPrintToScreen(::std::function<void(char const*)>) = 0;
+    virtual void debugPrintToScreen(::std::function<void(char const*)> printFunction) = 0;
 
     virtual void debugDeclareSceneCamera(
-        ::mce::framebuilder::CameraDescriptionPerspective const&,
-        ::mce::framebuilder::BufferClearDescription const&
+        ::mce::framebuilder::CameraDescriptionPerspective const& cameraDescription,
+        ::mce::framebuilder::BufferClearDescription const&       bufferClearDescription
     ) = 0;
 
     virtual void debugDeclareSceneCamera(
-        ::mce::framebuilder::CameraDescriptionOrthographic const&,
-        ::mce::framebuilder::BufferClearDescription const&
+        ::mce::framebuilder::CameraDescriptionOrthographic const& cameraDescription,
+        ::mce::framebuilder::BufferClearDescription const&        bufferClearDescription
     ) = 0;
 
     virtual ::glm::vec3 getSunDir() const = 0;
 
-    virtual void setSunDir(::glm::vec3 const&) = 0;
+    virtual void setSunDir(::glm::vec3 const& sunDir) = 0;
 
     virtual ::dragon::rendering::ClipSpaceDepthMode getClipSpace() const = 0;
 
@@ -347,7 +360,7 @@ public:
     virtual ::std::shared_ptr<::mce::framebuilder::RenderingFeatureConfiguration>
     getRenderingFeatureConfiguration() = 0;
 
-    virtual void setLightingModel(::dragon::rendering::LightingModels, bool&) = 0;
+    virtual void setLightingModel(::dragon::rendering::LightingModels lightingModel, bool& modified) = 0;
 
     virtual ::glm::vec<2, ushort> getRenderResolution() const = 0;
 
@@ -355,7 +368,7 @@ public:
 
     virtual bool isUpscalingAvailable() const = 0;
 
-    virtual void setUpscaling(bool) = 0;
+    virtual void setUpscaling(bool upscale) = 0;
 
     virtual bool isUpscalingEnabled() const = 0;
 
@@ -363,10 +376,11 @@ public:
 
     virtual ::std::string_view const getUpscalingInfo() const = 0;
 
-    virtual void
-    custom(::std::function<void(::mce::framebuilder::bgfxbridge::EntityCreationContext const&)> const&) = 0;
+    virtual void custom(
+        ::std::function<void(::mce::framebuilder::bgfxbridge::EntityCreationContext const&)> const& insertCallback
+    ) = 0;
 
-    virtual void queuePreFrameTask(::std::function<void()> const&) = 0;
+    virtual void queuePreFrameTask(::std::function<void()> const& task) = 0;
 
     virtual ::LevelCullerType getLevelCullerType() const = 0;
 
@@ -376,11 +390,11 @@ public:
 
     virtual void clearRenderingResourcesCache() = 0;
 
-    virtual void updatePBRData(::mce::framebuilder::PBRTextureDataManager&) = 0;
+    virtual void updatePBRData(::mce::framebuilder::PBRTextureDataManager& pbrTextureDataManager) = 0;
 
-    virtual void updateTextureShiftData(::std::vector<::mce::TextureShiftBuffer> const&) = 0;
+    virtual void updateTextureShiftData(::std::vector<::mce::TextureShiftBuffer> const& shiftBuffers) = 0;
 
-    virtual bool shouldRenderPersistentUI(uint64) const = 0;
+    virtual bool shouldRenderPersistentUI(uint64 viewCount) const = 0;
 
     virtual bool shouldFlipTextureOrigin() const = 0;
 
@@ -391,14 +405,14 @@ public:
     virtual void
     registerWindowHandle(::std::variant<::HWND__*, ::std::monostate> const&, ushort const, int const, int const) = 0;
 
-    virtual void unregisterWindowHandle(ushort const) = 0;
+    virtual void unregisterWindowHandle(ushort const viewId) = 0;
 
     virtual ::std::string getGraphicsCapabilitiesJsonString() = 0;
 
     virtual bool hasGpuTimerSupport() const = 0;
 
     virtual ::mce::ClientResourcePointer<::dragon::ResolvedImageResource>
-    readBackTexture(::cg::ImageDescription const&, ::std::string const&) = 0;
+    readBackTexture(::cg::ImageDescription const& destinationImageDescription, ::std::string const& name) = 0;
 
     virtual ::mce::CheckedResourceService<::dragon::ResolvedTextureResource>* _getTextureResourceService() = 0;
 
@@ -411,7 +425,7 @@ public:
             ::std::reference_wrapper<::mce::framebuilder::ShadowProbeDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::ShadowAtlasFrameDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::gamecomponents::ServerGraphicsOverrideParameters const>,
-            ::std::reference_wrapper<::mce::framebuilder::VoxelVolumeDescription const>>
+            ::std::reference_wrapper<::mce::framebuilder::VoxelVolumeDescription const>> description
     ) = 0;
 
     virtual void _insert(
@@ -426,7 +440,7 @@ public:
             ::std::reference_wrapper<::mce::framebuilder::RenderSkinnedMeshDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderBlockSelectionOverlayBlockEntityDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::BlockChangesDescription const>,
-            ::std::reference_wrapper<::mce::framebuilder::RenderBatchActorDescription const>>
+            ::std::reference_wrapper<::mce::framebuilder::RenderBatchActorDescription const>> description
     ) = 0;
 
     virtual void _insert(
@@ -441,7 +455,7 @@ public:
             ::std::reference_wrapper<::mce::framebuilder::RenderCelestialBodyDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderVolumetricFogDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderWeatherDescription const>,
-            ::std::reference_wrapper<::mce::framebuilder::SkyAmbientSamplesDescription const>>
+            ::std::reference_wrapper<::mce::framebuilder::SkyAmbientSamplesDescription const>> description
     ) = 0;
 
     virtual void _insert(
@@ -450,7 +464,7 @@ public:
             ::std::reference_wrapper<::mce::framebuilder::RenderUIHudIconDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderUIMeshDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderUITextDescription const>,
-            ::std::reference_wrapper<::mce::framebuilder::RenderUIImGuiDescription const>>
+            ::std::reference_wrapper<::mce::framebuilder::RenderUIImGuiDescription const>> description
     ) = 0;
 
     virtual void _insert(
@@ -464,6 +478,7 @@ public:
             ::std::reference_wrapper<::mce::framebuilder::RenderCameraAimAssistHighlightDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::FullscreenEffectDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::gamecomponents::EditorHighlightConfiguration const>>
+            description
     ) = 0;
 
     virtual void _insert(
@@ -474,7 +489,7 @@ public:
             ::std::reference_wrapper<::mce::framebuilder::RenderEditorGizmoHandlePaneDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderEditorSelectionCursorDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderEditorBlockVolumeOutlineDescription const>,
-            ::std::reference_wrapper<::mce::framebuilder::RenderEditorRenderPlaneDescription const>>
+            ::std::reference_wrapper<::mce::framebuilder::RenderEditorRenderPlaneDescription const>> description
     ) = 0;
 
     virtual void _initiateTDR() = 0;
@@ -483,7 +498,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $isDeviceRemoved();
     // NOLINTEND
 };
 

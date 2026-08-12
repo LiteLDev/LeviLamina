@@ -50,7 +50,7 @@ public:
 
     virtual int getValue() const /*override*/;
 
-    virtual void setValue(int) /*override*/;
+    virtual void setValue(int value) /*override*/;
 
     virtual ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
@@ -74,7 +74,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $canModify() const;
 
+    MCAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
+
+    MCAPI int $getValue() const;
+
+    MCAPI void $setValue(int value);
+
+    MCFOLD ::std::optional<
+        ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
+    $getInfo() const;
+
+    MCAPI bool $flush();
     // NOLINTEND
 };
 

@@ -39,6 +39,27 @@ public:
         ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions> imageOptions;
         ::ll::TypedStorage<1, 1, bool>                           succeeded;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        FinishedRequest();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI FinishedRequest(
+            ::Gameface::ResourceResponse         response,
+            ::std::string const&                 requestUrl,
+            ::Social::ProfileImageOptions const& imageOptions,
+            bool const                           succeeded
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
     };
 
 public:
@@ -65,10 +86,12 @@ public:
     virtual ~ProfileImageResourceHandler() /*override*/ = default;
 
     virtual ::Gameface::ResourceHandlerStatus
-    onResourceRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceResponse&) /*override*/;
+    onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
 
-    virtual ::Gameface::ResourceHandlerStatus
-    onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&) /*override*/;
+    virtual ::Gameface::ResourceHandlerStatus onResourceStreamRequest(
+        ::Gameface::ResourceRequest const& request,
+        ::Gameface::ResourceStreamResponse&
+    ) /*override*/;
 
     virtual void update() /*override*/;
     // NOLINTEND
@@ -96,7 +119,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Gameface::ResourceHandlerStatus
+    $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
+    MCFOLD ::Gameface::ResourceHandlerStatus
+    $onResourceStreamRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceStreamResponse&);
+
+    MCAPI void $update();
     // NOLINTEND
 };
 

@@ -10,6 +10,7 @@
 class Block;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class Random;
 // clang-format on
 
@@ -29,12 +30,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool place(::BlockSource&, ::BlockPos const&, ::Random&) const /*override*/;
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool isValidSpringBorderBlock(::BlockType const& block, ::BlockSource& region) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
 
     // NOLINTEND
 };

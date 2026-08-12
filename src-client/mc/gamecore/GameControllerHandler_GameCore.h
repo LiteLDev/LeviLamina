@@ -4,7 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/TaskGroup.h"
+#include "mc/deps/core/threading/XTaskQueuePort.h"
 #include "mc/deps/core/threading/XTaskQueueRegistrationToken.h"
+#include "mc/external/game_input/GameInputDeviceStatus.h"
 #include "mc/input/GameControllerHandler.h"
 #include "mc/platform/threading/Mutex.h"
 
@@ -13,6 +15,7 @@
 class GameCorePlayerInput;
 class HIDController;
 struct XTaskQueueObject;
+namespace GameInput::v2 { struct IGameInputDevice; }
 // clang-format on
 
 class GameControllerHandler_GameCore : public ::GameControllerHandler {
@@ -45,12 +48,31 @@ public:
 
     virtual float normalizeAxis(float raw, float deadzone) /*override*/;
 
-    virtual void normalizeAxes(float&, float&, float) /*override*/;
+    virtual void normalizeAxes(float& ioX, float& ioY, float deadzone) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _onDeviceStatusChangedCallback(
+        uint64,
+        void*                              context,
+        ::GameInput::v2::IGameInputDevice* device,
+        uint64,
+        ::GameInput::v2::GameInputDeviceStatus currentStatus,
+        ::GameInput::v2::GameInputDeviceStatus
+    );
+
+    MCAPI static void _taskSubmittedCallback(void* context, ::XTaskQueueObject* taskQueue, ::XTaskQueuePort port);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $refresh();
 
+    MCAPI float $normalizeAxis(float raw, float deadzone);
+
+    MCAPI void $normalizeAxes(float& ioX, float& ioY, float deadzone);
     // NOLINTEND
 };

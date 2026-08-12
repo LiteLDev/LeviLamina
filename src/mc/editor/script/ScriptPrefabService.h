@@ -3,11 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Prefabs { struct PrefabDBInstanceInteractionEvent; }
+namespace Editor::ScriptModule { class ScriptPrefabTemplateInstance; }
+namespace Editor::ScriptModule { struct ScriptPrefabErrorInvalidInstance; }
+namespace Editor::ScriptModule { struct ScriptPrefabErrorServiceError; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -46,6 +52,34 @@ public:
         ::Editor::ServiceProviderCollection&  serviceProviders,
         ::Scripting::WeakLifetimeScope const& scope
     );
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptPrefabErrorServiceError> _beginCaptureMouseClicks();
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptPrefabErrorServiceError>
+    _clearSelectedPrefabInstances();
+
+    MCNAPI ::Scripting::Result<
+        void,
+        ::Editor::ScriptModule::ScriptPrefabErrorServiceError,
+        ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
+    _deletePrefabInstance(
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptPrefabTemplateInstance> instance
+    );
+
+    MCNAPI ::Scripting::Result<
+        void,
+        ::Editor::ScriptModule::ScriptPrefabErrorServiceError,
+        ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
+    _deselectPrefabInstance(
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptPrefabTemplateInstance> instance
+    );
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptPrefabErrorServiceError> _endCaptureMouseClicks();
+
+    MCNAPI void _handlePrefabInstanceInteractionEvent(::Editor::Prefabs::PrefabDBInstanceInteractionEvent const& event);
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptPrefabErrorServiceError>
+    _shouldCaptureMouseClicks(bool active);
     // NOLINTEND
 
 public:

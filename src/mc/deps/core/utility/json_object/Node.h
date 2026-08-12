@@ -7,6 +7,12 @@
 
 namespace Bedrock::JSONObject {
 
-class Node : public ::Bedrock::JSONObject::NodeBase {};
+class Node : public ::Bedrock::JSONObject::NodeBase {
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void toJSONString(::std::string& dest) const;
+    // NOLINTEND
+};
 
 } // namespace Bedrock::JSONObject

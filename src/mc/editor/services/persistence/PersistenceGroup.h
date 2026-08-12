@@ -56,6 +56,12 @@ public:
     );
 #endif
 
+    MCNAPI ::std::string _getValidKeyName(::std::string const& key) const;
+
+    MCNAPI bool _hasItem(::std::string const& itemName) const;
+
+    MCNAPI void _notifyItemChanged(::Editor::Services::PersistenceItem const& item);
+
     MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceItem>>
     createItem(::std::string const& itemName, ::std::optional<::std::string> defaultJsonValue);
 

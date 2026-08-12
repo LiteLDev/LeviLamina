@@ -41,6 +41,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsServerSettingsQuery(::OreUI::GameDependencies const& game);
+
+    MCAPI void _updateProperties();
     // NOLINTEND
 
 public:

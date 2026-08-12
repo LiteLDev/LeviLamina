@@ -70,8 +70,8 @@ public:
     MCNAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState& state);
 
     MCNAPI void EnterDeferredReset(
-        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint> sender_last_assigned_tsn,
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905> streams
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>                                   sender_last_assigned_tsn,
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> streams
     );
 
     MCNAPI ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const;
@@ -79,14 +79,14 @@ public:
     MCNAPI ::std::optional<::dcsctp::DcSctpMessage> GetNextMessage();
 
     MCNAPI void HandleForwardTsn(
-        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>                                                new_cumulative_tsn,
-        ::webrtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const, 18446744073709546905> skipped_streams
+        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>                          new_cumulative_tsn,
+        ::webrtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const> skipped_streams
     );
 
     MCNAPI ReassemblyQueue(::std::string_view log_prefix, uint64 max_size_bytes, bool use_message_interleaving);
 
     MCNAPI void ResetStreamsAndLeaveDeferredReset(
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905> stream_ids
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> stream_ids
     );
 
     MCNAPI void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const& state);

@@ -163,24 +163,24 @@ MCNAPI ::webrtc::RTCError CheckRtpParametersInvalidModificationAndValues(
 );
 
 MCNAPI ::webrtc::RTCError CheckRtpParametersInvalidModificationAndValues(
-    ::webrtc::RtpParameters const&                             old_rtp_parameters,
-    ::webrtc::RtpParameters const&                             rtp_parameters,
-    ::webrtc::ArrayView<::webrtc::Codec, 18446744073709546905> send_codecs,
-    ::std::optional<::webrtc::Codec>                           send_codec,
-    ::webrtc::FieldTrialsView const&                           field_trials
+    ::webrtc::RtpParameters const&       old_rtp_parameters,
+    ::webrtc::RtpParameters const&       rtp_parameters,
+    ::webrtc::ArrayView<::webrtc::Codec> send_codecs,
+    ::std::optional<::webrtc::Codec>     send_codec,
+    ::webrtc::FieldTrialsView const&     field_trials
 );
 
 MCNAPI ::webrtc::RTCError CheckRtpParametersValues(
-    ::webrtc::RtpParameters const&                             rtp_parameters,
-    ::webrtc::ArrayView<::webrtc::Codec, 18446744073709546905> send_codecs,
-    ::std::optional<::webrtc::Codec>                           send_codec,
-    ::webrtc::FieldTrialsView const&                           field_trials
+    ::webrtc::RtpParameters const&       rtp_parameters,
+    ::webrtc::ArrayView<::webrtc::Codec> send_codecs,
+    ::std::optional<::webrtc::Codec>     send_codec,
+    ::webrtc::FieldTrialsView const&     field_trials
 );
 
 MCNAPI ::webrtc::RTCError CheckScalabilityModeValues(
-    ::webrtc::RtpParameters const&                             rtp_parameters,
-    ::webrtc::ArrayView<::webrtc::Codec, 18446744073709546905> send_codecs,
-    ::std::optional<::webrtc::Codec>                           send_codec
+    ::webrtc::RtpParameters const&       rtp_parameters,
+    ::webrtc::ArrayView<::webrtc::Codec> send_codecs,
+    ::std::optional<::webrtc::Codec>     send_codec
 );
 
 MCNAPI void CheckValidDimensions(int width, int height, int stride_y, int stride_u, int stride_v);
@@ -193,7 +193,7 @@ MCNAPI ::webrtc::TimeDelta CompactNtpRttToTimeDelta(uint compact_ntp_interval);
 
 MCNAPI uint64 ComputeDigest(::std::string_view alg, void const* input, uint64 in_len, void* output, uint64 out_len);
 
-MCNAPI uint ComputeDtlsPacketHash(::webrtc::ArrayView<uchar const, 18446744073709546905> dtls_packet);
+MCNAPI uint ComputeDtlsPacketHash(::webrtc::ArrayView<uchar const> dtls_packet);
 
 MCNAPI uint64 ComputeHmac(
     ::std::string_view alg,
@@ -378,7 +378,7 @@ MCNAPI bool IceCredentialsChanged(
 
 MCNAPI ::std::string IceSwitchReasonToString(::webrtc::IceSwitchReason reason);
 
-MCNAPI ::webrtc::RtpPacketType InferRtpPacketType(::webrtc::ArrayView<uchar const, 18446744073709546905> packet);
+MCNAPI ::webrtc::RtpPacketType InferRtpPacketType(::webrtc::ArrayView<uchar const> packet);
 
 MCNAPI bool InitializeSSL();
 
@@ -387,9 +387,9 @@ InvokeSetParametersCallback(::absl::AnyInvocable<void(::webrtc::RTCError) &&>& c
 
 MCNAPI bool IsAudioContent(::webrtc::ContentInfo const* content);
 
-MCNAPI bool IsDtlsClientHelloPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> payload);
+MCNAPI bool IsDtlsClientHelloPacket(::webrtc::ArrayView<uchar const> payload);
 
-MCNAPI bool IsDtlsPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> payload);
+MCNAPI bool IsDtlsPacket(::webrtc::ArrayView<uchar const> payload);
 
 MCNAPI bool IsDtlsRtp(::std::string_view protocol);
 
@@ -409,9 +409,9 @@ MCNAPI bool IsPlainRtp(::std::string_view protocol);
 
 MCNAPI bool IsPlainSctp(::std::string_view protocol);
 
-MCNAPI bool IsRtcpPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> packet);
+MCNAPI bool IsRtcpPacket(::webrtc::ArrayView<uchar const> packet);
 
-MCNAPI bool IsRtpPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> packet);
+MCNAPI bool IsRtpPacket(::webrtc::ArrayView<uchar const> packet);
 
 MCNAPI bool IsRtpProtocol(::std::string_view protocol);
 
@@ -483,9 +483,9 @@ MCNAPI ::webrtc::RTCError ParseIceServersOrError(
     ::std::vector<::webrtc::RelayServerConfig>*                        turn_servers
 );
 
-MCNAPI ushort ParseRtpSequenceNumber(::webrtc::ArrayView<uchar const, 18446744073709546905> rtp_packet);
+MCNAPI ushort ParseRtpSequenceNumber(::webrtc::ArrayView<uchar const> rtp_packet);
 
-MCNAPI uint ParseRtpSsrc(::webrtc::ArrayView<uchar const, 18446744073709546905> rtp_packet);
+MCNAPI uint ParseRtpSsrc(::webrtc::ArrayView<uchar const> rtp_packet);
 
 MCNAPI ::std::optional<::webrtc::AV1Profile>
 ParseSdpForAV1Profile(::std::map<::std::string, ::std::string> const& params);
@@ -505,8 +505,8 @@ MCNAPI int ResolveHostname(::std::string_view hostname, int family, ::std::vecto
 MCNAPI ::std::vector<uchar> RtpDescriptorAuthentication(::webrtc::RTPVideoHeader const& rtp_video_header);
 
 MCNAPI int RtpHeaderExtensionSize(
-    ::webrtc::ArrayView<::webrtc::RtpExtensionSize const, 18446744073709546905> extensions,
-    ::webrtc::RtpHeaderExtensionMap const&                                      registered_extensions
+    ::webrtc::ArrayView<::webrtc::RtpExtensionSize const> extensions,
+    ::webrtc::RtpHeaderExtensionMap const&                registered_extensions
 );
 
 MCNAPI ::std::string_view RtpPacketTypeToString(::webrtc::RtpPacketType packet_type);
@@ -554,7 +554,7 @@ MCNAPI bool SocketAddressFromSockAddrStorage(::sockaddr_storage const& addr, ::w
 
 MCNAPI ::std::string SrtpCryptoSuiteToName(int crypto_suite);
 
-MCNAPI ::std::string StringFormat(char const*, ...);
+MCNAPI ::std::string StringFormat(char const* fmt, ...);
 
 MCNAPI ::std::optional<::webrtc::ConnectionRole> StringToConnectionRole(::std::string_view role_str);
 
@@ -647,11 +647,7 @@ WriteFmtpParameters(::std::map<::std::string, ::std::string> const& parameters, 
 
 MCNAPI int WriteLeb128(uint64 value, uchar* buffer);
 
-MCNAPI uint64 hex_decode_with_delimiter(
-    ::webrtc::ArrayView<char, 18446744073709546905> cbuffer,
-    ::std::string_view                              source,
-    char                                            delimiter
-);
+MCNAPI uint64 hex_decode_with_delimiter(::webrtc::ArrayView<char> cbuffer, ::std::string_view source, char delimiter);
 
 MCNAPI ::std::string hex_encode(::std::string_view str);
 

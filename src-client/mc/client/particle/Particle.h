@@ -63,21 +63,27 @@ public:
     // NOLINTBEGIN
     virtual ~Particle() = default;
 
-    virtual void init(::Vec3 const&, ::Vec3 const&, int, ::ParticleEngine&) = 0;
+    virtual void init(::Vec3 const& pos, ::Vec3 const& dir, int scale, ::ParticleEngine& engine) = 0;
 
-    virtual void addTagData(::CompoundTag const&);
+    virtual void addTagData(::CompoundTag const& tag);
 
     virtual void normalTick();
 
-    virtual void tessellate(::ParticleRenderContext const&);
+    virtual void tessellate(::ParticleRenderContext const& renderContext);
 
     virtual ::mce::TexturePtr const& getParticleTexture() const;
 
-    virtual void setEmittingEntity(::Actor&);
+    virtual void setEmittingEntity(::Actor& entity);
 
-    virtual bool _shouldUpdateVertexData(float);
+    virtual bool _shouldUpdateVertexData(float sqDist);
 
-    virtual void _calculateAmbientLight(float);
+    virtual void _calculateAmbientLight(float a);
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void move(::Vec3 const& delta);
     // NOLINTEND
 
 public:
@@ -89,6 +95,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $addTagData(::CompoundTag const& tag);
 
+    MCAPI void $normalTick();
+
+    MCAPI void $tessellate(::ParticleRenderContext const& renderContext);
+
+    MCAPI ::mce::TexturePtr const& $getParticleTexture() const;
+
+    MCFOLD void $setEmittingEntity(::Actor& entity);
+
+    MCAPI bool $_shouldUpdateVertexData(float sqDist);
+
+    MCAPI void $_calculateAmbientLight(float a);
     // NOLINTEND
 };

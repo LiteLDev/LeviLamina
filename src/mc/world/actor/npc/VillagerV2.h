@@ -12,6 +12,7 @@
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorInteraction;
+class DwellerComponent;
 class EntityContext;
 class InteractionResult;
 class Player;
@@ -52,6 +53,8 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+
+    MCAPI void _fixupVillagerProfessionSkinIfNeeded(::DwellerComponent const& dweller);
     // NOLINTEND
 
 public:

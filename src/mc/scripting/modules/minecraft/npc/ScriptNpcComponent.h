@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
 // auto generated forward declare list
@@ -20,6 +21,20 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Scripting::Result_deprecated<::std::string> getDefaultScene() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::string> getName() const;
+
+    MCAPI ::Scripting::Result_deprecated<int> getSkinIndex() const;
+
+    MCAPI ::Scripting::Result_deprecated<void> setDefaultScene(::std::string sceneId);
+
+    MCAPI ::Scripting::Result_deprecated<void> setName(::std::string name);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
@@ -34,6 +49,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $_isValid() const;
+
 
     // NOLINTEND
 };

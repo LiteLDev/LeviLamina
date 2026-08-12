@@ -15,6 +15,7 @@
 namespace Bedrock::PubSub { class Subscription; }
 namespace NetherNet { struct ILanEventHandler; }
 namespace NetherNet { struct NetworkID; }
+namespace webrtc { class AsyncPacketSocket; }
 namespace webrtc { class SocketAddress; }
 // clang-format on
 
@@ -53,28 +54,31 @@ public:
     // NOLINTBEGIN
     virtual ~LanThreadManager() /*override*/ = default;
 
-    virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler*) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler* handler) /*override*/;
 
-    virtual bool IsBroadcastDiscoveryEnabled(::NetherNet::NetworkID) /*override*/;
+    virtual bool IsBroadcastDiscoveryEnabled(::NetherNet::NetworkID id) /*override*/;
 
-    virtual void EnableBroadcastDiscovery(::NetherNet::NetworkID) /*override*/;
+    virtual void EnableBroadcastDiscovery(::NetherNet::NetworkID id) /*override*/;
 
-    virtual void DisableBroadcastDiscovery(::NetherNet::NetworkID) /*override*/;
+    virtual void DisableBroadcastDiscovery(::NetherNet::NetworkID id) /*override*/;
 
-    virtual void AddLanHost(::NetherNet::NetworkID, ::std::string const&, int) /*override*/;
+    virtual void AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ipStr, int port) /*override*/;
 
-    virtual void RemoveLanHost(::NetherNet::NetworkID) /*override*/;
+    virtual void RemoveLanHost(::NetherNet::NetworkID remote) /*override*/;
 
     virtual void SendLanBroadcastResponse(
-        ::webrtc::SocketAddress const&,
-        ::NetherNet::NetworkID,
-        ::std::vector<::std::byte>
+        ::webrtc::SocketAddress const& destination,
+        ::NetherNet::NetworkID         from,
+        ::std::vector<::std::byte>     data
     ) /*override*/;
 
-    virtual void
-        SendSignalingMessageTo(::NetherNet::NetworkID, ::NetherNet::NetworkID, ::std::vector<::std::byte>) /*override*/;
+    virtual void SendSignalingMessageTo(
+        ::NetherNet::NetworkID     networkIdFrom,
+        ::NetherNet::NetworkID     networkIdTo,
+        ::std::vector<::std::byte> data
+    ) /*override*/;
 
-    virtual bool IsNetworkIdOnLan(::NetherNet::NetworkID) /*override*/;
+    virtual bool IsNetworkIdOnLan(::NetherNet::NetworkID networkId) /*override*/;
 
     virtual void Suspend() /*override*/;
 
@@ -82,8 +86,57 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void BroadcastTask();
+
+    MCNAPI void CreateEncryptedBroadcastSocket();
+
+    MCNAPI void OnNetworkDiscoveryComplete();
+
+    MCNAPI ::std::error_code SendToHelper(
+        ::std::unique_ptr<::webrtc::AsyncPacketSocket>& socket,
+        void const*                                     data,
+        uint64                                          size,
+        ::webrtc::SocketAddress const&                  addr
+    );
+
+    MCNAPI void Shutdown();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ILanEventHandler* handler);
+
+    MCNAPI bool $IsBroadcastDiscoveryEnabled(::NetherNet::NetworkID id);
+
+    MCNAPI void $EnableBroadcastDiscovery(::NetherNet::NetworkID id);
+
+    MCNAPI void $DisableBroadcastDiscovery(::NetherNet::NetworkID id);
+
+    MCNAPI void $AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ipStr, int port);
+
+    MCNAPI void $RemoveLanHost(::NetherNet::NetworkID remote);
+
+    MCNAPI void $SendLanBroadcastResponse(
+        ::webrtc::SocketAddress const& destination,
+        ::NetherNet::NetworkID         from,
+        ::std::vector<::std::byte>     data
+    );
+
+    MCNAPI void $SendSignalingMessageTo(
+        ::NetherNet::NetworkID     networkIdFrom,
+        ::NetherNet::NetworkID     networkIdTo,
+        ::std::vector<::std::byte> data
+    );
+
+    MCNAPI bool $IsNetworkIdOnLan(::NetherNet::NetworkID networkId);
+
+    MCNAPI void $Suspend();
+
+    MCNAPI void $Resume();
+
 
     // NOLINTEND
 };

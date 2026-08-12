@@ -32,6 +32,8 @@ public:
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
+
+    virtual ~BlockConnectionRuleDescription() /*override*/;
     // NOLINTEND
 
 public:
@@ -44,6 +46,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

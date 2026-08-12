@@ -8,11 +8,21 @@
 #include "mc/client/renderer/blockactor/BlockActorRenderer.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 #include "mc/world/level/block/SignBlock.h"
+#include "mc/world/level/block/actor/SignTextSide.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseActorRenderContext;
+class Block;
+class BlockPos;
+class BlockSource;
+class IVanillaRenderBlockActorComponent;
+class Model;
+class ScreenContext;
 struct BlockActorRenderData;
+namespace mce { class TextureGroup; }
+namespace mce { struct ClientTexture; }
+namespace mce::framebuilder { struct CustomSurfaceShaderMetadata; }
 // clang-format on
 
 class SignRenderer : public ::BlockActorRenderer {
@@ -27,9 +37,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SignRenderer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void render(::BaseActorRenderContext&, ::BlockActorRenderData&) /*override*/;
+    virtual void
+    render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
 
     virtual float _getScaleFactor() const;
 
@@ -41,8 +56,52 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit SignRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+
+    MCAPI void _renderSign(
+        ::BaseActorRenderContext&                               renderContext,
+        ::Block const&                                          block,
+        float const                                             size,
+        int const                                               breakingAmount,
+        float const                                             frameAlpha,
+        ::ScreenContext&                                        screenContext,
+        ::BlockSource&                                          renderSource,
+        ::IVanillaRenderBlockActorComponent&                    renderComponent,
+        ::BlockPos const&                                       worldPos,
+        ::mce::MaterialPtr const&                               forcedMat,
+        ::mce::ClientTexture const                              forcedTex,
+        ::Model&                                                model,
+        ::mce::framebuilder::CustomSurfaceShaderMetadata const& cssMetadata
+    );
+
+    MCAPI void _renderText(
+        ::BaseActorRenderContext&            renderContext,
+        ::IVanillaRenderBlockActorComponent& renderComponent,
+        float                                size,
+        ::BlockSource const&                 renderSource,
+        ::SignTextSide                       side
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+
+    MCFOLD float $_getScaleFactor() const;
+
+    MCFOLD float $_yTextOffset() const;
+
+    MCAPI float $_zTextOffset() const;
+
+    MCFOLD int $_getSignWidth() const;
     // NOLINTEND
 };

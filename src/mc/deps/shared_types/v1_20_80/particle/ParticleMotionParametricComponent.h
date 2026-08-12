@@ -63,9 +63,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ::HashedString const& $getIdentifier() const;
-#endif
 
 
     // NOLINTEND

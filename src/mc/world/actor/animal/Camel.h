@@ -72,6 +72,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $aiStep();
+
+    MCAPI void $normalTick();
+
+    MCAPI ::Vec3 $getInterpolatedRidingOffset(float, int const) const;
+
+    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+
 
     // NOLINTEND
 };

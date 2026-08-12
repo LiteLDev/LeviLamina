@@ -28,6 +28,12 @@ public:
     ReflectProjectileDefinition();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _addProjectileToReflect(::std::string const& projectileName);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

@@ -13,6 +13,12 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Input { class ContextKeyBinding; }
+namespace Editor::Input { struct EditorKeyBindingRegistered; }
+namespace Editor::Input { struct EditorKeyBindingUnregistered; }
+namespace Editor::Input { struct EditorKeyBindingUpdated; }
+namespace Editor::Input { struct EditorMouseBindingRegistered; }
+namespace Editor::Input { struct EditorMouseBindingUnregistered; }
 namespace Editor::Services { class ClientPlayerInputServiceProvider; }
 // clang-format on
 
@@ -39,6 +45,22 @@ public:
         ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mActionId;
         ::ll::TypedStorage<1, 1, bool>                            mCanRebind;
         ::ll::TypedStorage<1, 1, bool>                            mIsModified;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        KeyBindingFacet();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI KeyBindingFacet(::Editor::Input::ContextKeyBinding const& binding, bool useDefault);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
         // NOLINTEND
     };
 
@@ -93,6 +115,46 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorInputBindingFacet(::Editor::ServiceProviderCollection* services);
+
+    MCAPI void _handleKeyBindingChanged(
+        ::std::variant<
+            ::Editor::Input::EditorKeyBindingRegistered,
+            ::Editor::Input::EditorKeyBindingUpdated,
+            ::Editor::Input::EditorKeyBindingUnregistered> const& evt
+    );
+
+    MCAPI void _handleMouseBindingChanged(
+        ::std::variant<
+            ::Editor::Input::EditorMouseBindingRegistered,
+            ::Editor::Input::EditorMouseBindingUnregistered> const& evt
+    );
+
+    MCAPI void _handleTutorialStageChangeEvent(::HashedString const&, ::HashedString const&, bool isTutorialStarted);
+
+    MCAPI void _refreshBindings();
+
+    MCFOLD ::std::unordered_map<
+        ::HashedString,
+        ::std::unordered_map<::HashedString, ::OreUI::EditorInputBindingFacet::KeyBindingFacet>> const&
+    getKeyBindings() const;
+
+    MCFOLD ::std::unordered_map<
+        ::HashedString,
+        ::std::unordered_map<::HashedString, ::OreUI::EditorInputBindingFacet::MouseBindingFacet>> const&
+    getMouseBindings() const;
+
+    MCAPI bool invokeActionCallback(::HashedString const& eventId);
+
+    MCAPI void resetKeyBinding(::HashedString const& contextId, ::HashedString const& bindingId);
+
+    MCAPI void resetModifiedKeyBindings(::std::optional<::HashedString> const& contextId);
+
+    MCAPI void updateKeyBinding(
+        ::HashedString const&     contextId,
+        ::HashedString const&     bindingId,
+        int                       key,
+        ::Editor::Input::Modifier modifier
+    );
     // NOLINTEND
 
 public:
@@ -110,7 +172,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

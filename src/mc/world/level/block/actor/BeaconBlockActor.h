@@ -58,9 +58,9 @@ public:
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& context) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual bool hasAlphaLayer() const /*override*/;
 
@@ -68,9 +68,9 @@ public:
 
     virtual bool isWithinRenderDistance(::Vec3 const& cameraPosition) const /*override*/;
 
-    virtual ::ItemStack const& getItem(int) const /*override*/;
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    virtual void setItem(int, ::ItemStack const&) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     virtual void removeItem(int slot, int count) /*override*/;
 
@@ -84,15 +84,19 @@ public:
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
     virtual ::Container* getContainer() /*override*/;
 
     virtual ::Container const* getContainer() const /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&) /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
@@ -102,9 +106,18 @@ public:
 
     MCAPI int _getEffectTier(int effectId) const;
 
+    MCAPI void
+    _notifyBeamSectionsChange(::BlockSource& region, ::std::vector<::BeaconBeamSection> const& oldBeamSections);
+
 #ifdef LL_PLAT_C
     MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI void checkShape(::BlockSource& region);
 
     MCAPI void generateBeamSections(::BlockSource& region);
@@ -128,6 +141,48 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCFOLD bool $hasAlphaLayer() const;
+
+    MCAPI bool $isPermanentlyRendered() const;
+
+    MCAPI bool $isWithinRenderDistance(::Vec3 const& cameraPosition) const;
+
+    MCFOLD ::ItemStack const& $getItem(int slot) const;
+
+    MCFOLD void $setItem(int slot, ::ItemStack const& item);
+
+    MCFOLD void $removeItem(int slot, int count);
+
+    MCAPI ::std::string $getName() const;
+
+    MCFOLD int $getContainerSize() const;
+
+    MCFOLD int $getMaxStackSize() const;
+
+    MCFOLD void $startOpen(::Actor&);
+
+    MCFOLD void $stopOpen(::Actor& actor);
+
+    MCFOLD void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    );
+
+    MCFOLD ::Container* $getContainer();
+
+    MCFOLD ::Container const* $getContainer() const;
+
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+
 
     // NOLINTEND
 };

@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+struct ActorDefinitionIdentifier;
 struct SummonSpellData;
 // clang-format on
 
@@ -48,6 +49,21 @@ public:
     virtual void stop() /*override*/;
 
     virtual void tick() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _createSpellEntity(
+        float x,
+        float z,
+        float minY,
+        float maxY,
+        float,
+        int                         lifespan,
+        ::ActorDefinitionIdentifier summonType,
+        ::std::string const&        summonEvent
+    ) const;
     // NOLINTEND
 
 public:

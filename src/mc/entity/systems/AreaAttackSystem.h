@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorOwnerComponent;
+class AreaAttackComponent;
 class EntityRegistry;
 // clang-format on
 
@@ -15,6 +17,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::AreaAttackComponent& areaAttackComponent);
     // NOLINTEND
 
 public:

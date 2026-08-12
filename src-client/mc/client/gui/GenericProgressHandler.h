@@ -33,17 +33,17 @@ public:
     // NOLINTBEGIN
     virtual ~GenericProgressHandler() /*override*/ = default;
 
-    virtual void onStart(::MinecraftScreenModel&) /*override*/;
+    virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void tick(::MinecraftScreenModel&) /*override*/;
+    virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onCancel(::MinecraftScreenModel&) /*override*/;
+    virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onExit(::MinecraftScreenModel&) /*override*/;
+    virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getTitleText() const /*override*/;
 
@@ -79,6 +79,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
+    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCFOLD void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCAPI ::std::string $getTitleText() const;
+
+    MCAPI ::std::string $getName() const;
     // NOLINTEND
 };

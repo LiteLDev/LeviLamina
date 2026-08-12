@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/animal/Animal.h"
+#include "mc/world/actor/animal/HorseFlags.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,11 +33,11 @@ public:
     // NOLINTBEGIN
     virtual ~Horse() /*override*/ = default;
 
-    virtual void die(::ActorDamageSource const& source) /*override*/;
+    virtual void die(::ActorDamageSource const& damagesource) /*override*/;
 
-    virtual void setHorseEating(bool);
+    virtual void setHorseEating(bool state);
 
-    virtual float getStandAnim(float) const;
+    virtual float getStandAnim(float a) const;
 
     virtual bool isHorseEating() const;
 
@@ -50,13 +51,13 @@ public:
 
     virtual ::ActorUniqueID getControllingPlayer() const /*override*/;
 
-    virtual bool tameToPlayer(::Player&, bool);
+    virtual bool tameToPlayer(::Player& player, bool tamingParticles);
 
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
     virtual void openContainerComponent(::Player& player) /*override*/;
 
-    virtual ::Vec3 getInterpolatedRidingOffset(float, int const) const /*override*/;
+    virtual ::Vec3 getInterpolatedRidingOffset(float a, int const) const /*override*/;
 
     virtual float getShadowRadius() const /*override*/;
 
@@ -66,7 +67,7 @@ public:
 
     virtual bool isImmobile() const /*override*/;
 
-    virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
+    virtual float causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source) /*override*/;
 
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
@@ -82,6 +83,10 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+
+    MCAPI void _setHorseFlag(::HorseFlags flag, bool shouldAddFlag);
+
+    MCAPI void openMouth();
 
     MCAPI void postAiStep();
 
@@ -111,6 +116,47 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $die(::ActorDamageSource const& damagesource);
+
+    MCAPI void $setHorseEating(bool state);
+
+    MCAPI float $getStandAnim(float a) const;
+
+    MCAPI bool $isHorseEating() const;
+
+    MCAPI bool $isMouthOpen() const;
+
+    MCAPI void $setStanding(bool value);
+
+    MCAPI void $onFailedTame();
+
+    MCAPI void $makeMad();
+
+    MCAPI ::ActorUniqueID $getControllingPlayer() const;
+
+    MCAPI bool $tameToPlayer(::Player& player, bool tamingParticles);
+
+    MCFOLD void $onSynchedDataUpdate(int dataId);
+
+    MCAPI void $openContainerComponent(::Player& player);
+
+    MCAPI ::Vec3 $getInterpolatedRidingOffset(float a, int const) const;
+
+    MCAPI float $getShadowRadius() const;
+
+    MCAPI void $feed(int itemId);
+
+    MCAPI bool $canFreeze() const;
+
+    MCAPI bool $isImmobile() const;
+
+    MCAPI float $causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source);
+
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
+
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
 
     // NOLINTEND
 };

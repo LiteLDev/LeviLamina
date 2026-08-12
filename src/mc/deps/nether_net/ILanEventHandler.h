@@ -18,18 +18,34 @@ public:
     // NOLINTBEGIN
     virtual ~ILanEventHandler() = default;
 
+#ifdef LL_PLAT_S
     virtual void OnLanEvent(::NetherNet::LanEvents::MessageSent const&);
+#else // LL_PLAT_C
+    virtual void OnLanEvent(::NetherNet::LanEvents::MessageSent const& event);
+#endif
 
-    virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const&);
+    virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event);
 
-    virtual void OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const&);
+    virtual void OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const& event);
 
-    virtual void OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const&);
+    virtual void OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const& event);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const&);
+#else // LL_PLAT_C
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const& event);
+#endif
+
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event);
+
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const& event);
+
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const& event);
+
 
     // NOLINTEND
 };

@@ -9,10 +9,12 @@
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/monster/Monster.h"
 #include "mc/world/level/pathfinder/BinaryHeap.h"
+#include "mc/world/level/pathfinder/PathCompletionType.h"
 
 // auto generated forward declare list
 // clang-format off
 class AABB;
+class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
@@ -101,6 +103,17 @@ public:
         ::EntityContext&                   entityContext
     );
 
+    MCAPI bool _checkWalls(::AABB bb);
+
+    MCAPI ::ActorHurtResult _hurt(::AABB* part, ::ActorDamageSource const& source, float damage);
+
+    MCAPI void _hurtEntities(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
+
+    MCAPI void _knockBack(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
+
+    MCAPI ::std::unique_ptr<::Path>
+    _reconstructPath(::PathfinderNode& from, ::PathfinderNode& to, ::PathCompletionType const completionType);
+
     MCAPI int findClosestNode();
 
     MCAPI ::std::unique_ptr<::Path> findPath(int startIndex, int endIndex, ::PathfinderNode* finalNode);
@@ -127,6 +140,31 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $remove();
+
+    MCAPI void $setSitting(bool value);
+
+    MCFOLD bool $canBeAffected(uint id) const;
+
+    MCAPI bool $isImmobile() const;
+
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+
+    MCAPI ::Vec3 $getHeadLookVector(float a) const;
+
+    MCAPI void $die(::ActorDamageSource const& source);
+
+    MCAPI float $getShadowRadius() const;
+
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+
+    MCFOLD bool $canBePulledIntoVehicle() const;
+
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
+
 
     // NOLINTEND
 };

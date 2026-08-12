@@ -48,6 +48,10 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $InsertDtmf(::std::string const& tones, int duration, int inter_tone_gap);
 
+    MCNAPI bool $InsertDtmf(::std::string const& tones, int duration, int inter_tone_gap, int comma_delay);
+
+    MCNAPI int $comma_delay() const;
+
 
     // NOLINTEND
 };

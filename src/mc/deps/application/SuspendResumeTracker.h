@@ -43,6 +43,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onAppResumed();
+
 
     // NOLINTEND
 };

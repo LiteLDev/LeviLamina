@@ -6,6 +6,11 @@
 #include "mc/world/level/levelgen/synth/MultiOctaveNoiseImpl.h"
 #include "mc/world/level/levelgen/synth/NormalNoiseImpl.h"
 
+// auto generated forward declare list
+// clang-format off
+class XoroshiroPositionalRandomFactory;
+// clang-format on
+
 class CavifierNoises {
 public:
     // member variables
@@ -42,5 +47,11 @@ public:
         mLayerNoiseSource;
     ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
         mCheeseNoise;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::CavifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
     // NOLINTEND
 };

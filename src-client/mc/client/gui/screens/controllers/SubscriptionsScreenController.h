@@ -44,6 +44,12 @@ public:
     // NOLINTBEGIN
     MCAPI explicit SubscriptionsScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
 
+    MCAPI bool _isCsbExpired();
+
+    MCAPI bool _isCsbSubscribed();
+
+    MCAPI bool _platformMatches();
+
     MCAPI bool shouldShowSubscriptionsTab() const;
     // NOLINTEND
 
@@ -56,6 +62,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI void $onCreation();
+
+    MCAPI void $onOpen();
     // NOLINTEND
 };

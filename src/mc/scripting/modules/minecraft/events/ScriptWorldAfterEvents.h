@@ -108,12 +108,14 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void onFlushWorldAfterEvents(::ScriptDeferredFlushTracker&) /*override*/;
+        virtual void onFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI void $onFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+
 
         // NOLINTEND
     };
@@ -479,6 +481,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::Level& $getLevel() const;
+
     MCAPI void
     $onChat(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendAfterEvent>& eventData);
 

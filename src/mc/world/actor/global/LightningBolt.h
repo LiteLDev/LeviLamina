@@ -57,6 +57,8 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+
+    MCAPI bool _shouldSetOnFire() const;
     // NOLINTEND
 
 public:

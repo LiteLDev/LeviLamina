@@ -57,17 +57,21 @@ public:
 
     virtual bool isTrusted() const /*override*/;
 
-    virtual bool hasAsset(::Core::Path const&, bool, bool) const /*override*/;
+    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
+        /*override*/;
 
-    virtual bool hasFolder(::Core::Path const&) const /*override*/;
+    virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
-    virtual bool getAsset(::Core::Path const&, ::std::string&, bool) const /*override*/;
+    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
+        /*override*/;
 
-    virtual void forEachIn(::Core::Path const&, ::std::function<void(::Core::Path const&)>, bool) const /*override*/;
+    virtual void
+    forEachIn(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback, bool) const
+        /*override*/;
 
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
-    virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const&) const /*override*/;
+    virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
     virtual ::PackAccessAssetGenerationResult generateAssetSet() /*override*/;
 
@@ -106,6 +110,38 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI uint64 $getPackSize() const;
+
+    MCNAPI ::ResourceLocation const& $getPackLocation() const;
+
+    MCNAPI ::std::string const& $getPackName() const;
+
+    MCNAPI bool $isWritable() const;
+
+    MCNAPI bool $isTrusted() const;
+
+    MCNAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+
+    MCNAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
+
+    MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
+
+    MCNAPI void
+    $forEachIn(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback, bool) const;
+
+    MCNAPI ::PackAccessStrategyType $getStrategyType() const;
+
+    MCNAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
+
+    MCNAPI ::PackAccessAssetGenerationResult $generateAssetSet();
+
+    MCNAPI void $unload();
+
+    MCNAPI ::ContentIdentity $readContentIdentity() const;
+
+    MCNAPI ::Bedrock::Result<::StreamableAssetSource>
+    $getStreamableSource(::Core::Path const&, ::std::optional<::Core::PathView>) const;
+
 
     // NOLINTEND
 };

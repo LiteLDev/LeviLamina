@@ -28,7 +28,8 @@ public:
 
         virtual ::GeometryAtlas::TileDefinition const& getDefinition() const = 0;
 
-        virtual void submitUpdate(::GeometryAtlas::IAtlasTile&, ::GeometryAtlas::InitializeCallbackPayload) const = 0;
+        virtual void
+        submitUpdate(::GeometryAtlas::IAtlasTile& tile, ::GeometryAtlas::InitializeCallbackPayload init) const = 0;
         // NOLINTEND
 
     public:
@@ -44,10 +45,10 @@ public:
     virtual ~ITileResourceResolver() = default;
 
     virtual ::std::shared_ptr<::GeometryAtlas::IAtlasTile>
-    createTile(::GeometryAtlas::IGeometryAtlas&, ::GeometryAtlas::TileDefinition const&) = 0;
+    createTile(::GeometryAtlas::IGeometryAtlas& atlas, ::GeometryAtlas::TileDefinition const& definition) = 0;
 
     virtual ::std::unique_ptr<::OreUI::ITileResourceResolver::ITileResourceRequest>
-        tryResolveRequest(::std::string_view) = 0;
+    tryResolveRequest(::std::string_view url) = 0;
     // NOLINTEND
 
 public:

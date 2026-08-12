@@ -27,6 +27,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $OnBufferedAmountChange(uint64 sent_data_size);
+
+    MCNAPI bool $IsOkToCallOnTheNetworkThread();
+
 
     // NOLINTEND
 };

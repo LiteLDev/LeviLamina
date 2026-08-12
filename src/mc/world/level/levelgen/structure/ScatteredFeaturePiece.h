@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class BlockSource;
+class BoundingBox;
 // clang-format on
 
 class ScatteredFeaturePiece : public ::StructurePiece {
@@ -59,5 +61,23 @@ public:
     ::ll::TypedStorage<4, 4, int>                                      mDepth;
     ::ll::TypedStorage<4, 4, int>                                      mHeightPosition;
     ::ll::TypedStorage<8, 160, ::ScatteredFeaturePiece::LocalRegistry> mLocalRegistry;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScatteredFeaturePiece();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScatteredFeaturePiece(int west, int floor, int north, int width, int height, int depth);
+
+    MCAPI bool updateAverageGroundHeight(::BlockSource& region, ::BoundingBox const& chunkBB, int offset);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };

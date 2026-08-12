@@ -15,4 +15,18 @@ public:
     AccessTokenInfo& operator=(AccessTokenInfo const&);
     AccessTokenInfo(AccessTokenInfo const&);
     AccessTokenInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI AccessTokenInfo(::std::string _email, int64 _expiration);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };

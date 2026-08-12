@@ -46,6 +46,8 @@ public:
         ::std::shared_ptr<::PlayScreenModel>      model,
         ::std::vector<::WorldTemplateInfo> const& customTemplates
     );
+
+    MCAPI void _handleWorldTemplateClicked(::WorldTemplateInfo const& level);
     // NOLINTEND
 
 public:

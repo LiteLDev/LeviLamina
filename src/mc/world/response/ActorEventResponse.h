@@ -33,6 +33,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::string const& $getName() const;
+
+    MCNAPI void $buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
+                                               root,
+        ::Factory<::ActorEventResponse> const& factory
+    ) const;
+
 
     // NOLINTEND
 };

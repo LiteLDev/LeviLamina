@@ -33,7 +33,7 @@ public:
     // NOLINTBEGIN
     virtual ~UnzipFileLibZip() /*override*/ = default;
 
-    virtual ::Core::ZipUtils::UnzipResult locateFile(char const*, int) /*override*/;
+    virtual ::Core::ZipUtils::UnzipResult locateFile(char const* fileName, int caseSensitivity) /*override*/;
 
     virtual ::Core::ZipUtils::UnzipResult goToFirstFile() /*override*/;
 
@@ -45,9 +45,10 @@ public:
 
     virtual ::Core::ZipUtils::UnzipResult closeCurrentFile() /*override*/;
 
-    virtual void readCurrentFileContentsIntoMemory(::std::string&) /*override*/;
+    virtual void readCurrentFileContentsIntoMemory(::std::string& str) /*override*/;
 
-    virtual void readCurrentFileContents(uint64, ::std::function<void(int, void const*)>) /*override*/;
+    virtual void
+    readCurrentFileContents(uint64 bufferSize, ::std::function<void(int, void const*)> onReadCallback) /*override*/;
 
     virtual uint64 getTotalFilesInZip() /*override*/;
 
@@ -59,6 +60,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Core::ZipUtils::UnzipResult $locateFile(char const* fileName, int caseSensitivity);
+
+    MCNAPI ::Core::ZipUtils::UnzipResult $goToFirstFile();
+
+    MCNAPI ::Core::ZipUtils::UnzipResult $goToNextFile();
+
+    MCNAPI ::std::string $getCurrentFileName() const;
+
+    MCNAPI ::Core::ZipUtils::UnzipResult $openCurrentFileForReading();
+
+    MCNAPI ::Core::ZipUtils::UnzipResult $closeCurrentFile();
+
+    MCNAPI void $readCurrentFileContentsIntoMemory(::std::string& str);
+
+    MCNAPI void $readCurrentFileContents(uint64 bufferSize, ::std::function<void(int, void const*)> onReadCallback);
+
+    MCNAPI uint64 $getTotalFilesInZip();
+
+    MCNAPI uint64 $getCurrentFileUncompressedSize();
+
+    MCNAPI bool $_isGood() const;
+
 
     // NOLINTEND
 };

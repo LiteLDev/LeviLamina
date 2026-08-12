@@ -29,6 +29,12 @@ public:
     PlanterItemComponentLegacyFactoryData();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~PlanterItemComponentLegacyFactoryData() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::PlanterItemComponentLegacyFactoryData& operator=(::PlanterItemComponentLegacyFactoryData&&);
@@ -42,6 +48,12 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

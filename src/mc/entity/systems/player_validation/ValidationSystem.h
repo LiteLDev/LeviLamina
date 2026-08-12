@@ -59,7 +59,7 @@ public:
             ::AddRemove<>,
             ::GlobalRead<>,
             ::GlobalWrite<>,
-            ::EntityFactoryT<>>&
+            ::EntityFactoryT<>>& context
     ) /*override*/;
     // NOLINTEND
 
@@ -72,6 +72,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::PlayerComponent>,
+            ::Read<::StateVectorComponent>,
+            ::Write<::ActorOwnerComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
+
 
     // NOLINTEND
 };

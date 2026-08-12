@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/entity/components_json_legacy/DwellerRole.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/platform/UUID.h"
@@ -15,11 +16,15 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Block;
+class BlockSource;
 class Dimension;
 class LevelStorage;
 class POIInstance;
 class Player;
 class Raid;
+class Vec3;
+class VillageManager;
 // clang-format on
 
 class Village {
@@ -97,13 +102,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Village(::Dimension& dimension, ::mce::UUID id, ::BlockPos const& origin);
+
+    MCAPI void _calcPOIDist();
+
     MCAPI void _clearVillagerPOIs(::ActorUniqueID const& villager);
 
     MCAPI void _createRaid();
 
+    MCAPI bool _findSpawnPointForRaid(
+        ::Vec3&     outSpawnPoint,
+        float const distanceTolerance,
+        float const boundsScaling,
+        bool        snapToSurface,
+        bool        outsideOfVillage
+    ) const;
+
+    MCAPI ::BlockSource*
+    _findSpawnableRegion(::Vec3 spawnPosition, int xzSpreadDistance, bool& outHasSpawnAreaLoaded) const;
+
+    MCAPI void _playSoundFrom(::Vec3 const& soundOrigin, ::SharedTypes::Legacy::LevelSoundEvent sound);
+
+    MCAPI void _saveVillageData(::LevelStorage& levelStorage) const;
+
+    MCAPI void _saveVillageDwellers(::LevelStorage& levelStorage) const;
+
+    MCAPI void _saveVillagePOIs(::LevelStorage& levelStorage) const;
+
     MCAPI void _saveVillagePlayerStanding(::LevelStorage& levelStorage) const;
 
+    MCAPI void _saveVillageRaid(::LevelStorage& levelStorage) const;
+
+    MCAPI void _tryAddPoiToVillage(::ActorUniqueID const& villager, ::std::weak_ptr<::POIInstance> pi);
+
     MCAPI void addActorToVillage(::DwellerRole role, ::ActorUniqueID const& actorID);
+
+    MCAPI bool addPOI(::std::weak_ptr<::POIInstance> pi);
 
     MCAPI void addVillager(::ActorUniqueID const& villagerID);
 
@@ -139,6 +173,8 @@ public:
 
     MCAPI void setSavedDwellerPosition(::DwellerRole role, ::ActorUniqueID const& id, ::BlockPos pos);
 
+    MCAPI void tick(::Tick tick, ::BlockSource& region);
+
     MCAPI void triggerRaid();
 
     MCAPI void trySetVillagerWorkTimestamp(::ActorUniqueID const& id);
@@ -149,8 +185,22 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isValidRegisteredPOI(::BlockSource& region, ::Block const& block, ::BlockPos const& position);
+
+    MCAPI static bool isVillagePOI(::VillageManager const& villageManager, ::Block const& block);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& STORAGE_KEY_PREFIX();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };

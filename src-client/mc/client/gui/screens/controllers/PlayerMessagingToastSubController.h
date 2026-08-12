@@ -37,7 +37,8 @@ public:
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    virtual void handleToastEvent(::IToastEventListener::ToastEventType const, ::ToastMessage const) /*override*/;
+    virtual void
+    handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg) /*override*/;
     // NOLINTEND
 
 public:
@@ -63,6 +64,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI void $handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg);
     // NOLINTEND
 };

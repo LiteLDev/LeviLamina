@@ -31,13 +31,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ::InputMapping const* getMapping(::std::string const&) /*override*/;
+        virtual ::InputMapping const* getMapping(::std::string const& mappingName) /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-
+        MCFOLD ::InputMapping const* $getMapping(::std::string const& mappingName);
         // NOLINTEND
     };
 
@@ -51,12 +51,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::InputMappingFactory& getInputMappingFactory(int) /*override*/;
+    virtual ::InputMappingFactory& getInputMappingFactory(int controllerId) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::InputMappingFactory& $getInputMappingFactory(int controllerId);
     // NOLINTEND
 };

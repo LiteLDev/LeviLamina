@@ -23,6 +23,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::StreamDataCounters $GetDataCounters(uint) const;
+
 
     // NOLINTEND
 };

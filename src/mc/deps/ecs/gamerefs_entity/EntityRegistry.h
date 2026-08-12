@@ -47,6 +47,13 @@ public:
 
     MCNAPI void postViewEachCount(uint64 count);
 
+#ifdef LL_PLAT_C
+    MCNAPI ::std::pair<::std::function<void(::EntityId)>, ::std::function<void(::EntityId)>> setEntityInvokeCallbacks(
+        ::std::function<void(::EntityId)>&& preInvoke,
+        ::std::function<void(::EntityId)>&& postInvoke
+    );
+#endif
+
     MCNAPI ~EntityRegistry();
     // NOLINTEND
 

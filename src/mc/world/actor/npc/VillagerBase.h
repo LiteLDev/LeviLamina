@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/Mob.h"
 
@@ -60,6 +61,8 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+
+    MCAPI void _addParticlesAroundSelf(::ParticleType particleType);
 
     MCAPI void consumeLoveFood();
 

@@ -69,6 +69,10 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $init();
+
+        MCNAPI bool $tick();
+
 
         // NOLINTEND
     };
@@ -98,6 +102,10 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $init();
+
+        MCNAPI bool $tick();
+
 
         // NOLINTEND
     };
@@ -126,6 +134,10 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $init();
+
+        MCNAPI bool $tick();
+
 
         // NOLINTEND
     };
@@ -155,6 +167,10 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $init();
+
+        MCNAPI bool $tick();
+
 
         // NOLINTEND
     };
@@ -183,6 +199,10 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $init();
+
+        MCNAPI bool $tick();
+
 
         // NOLINTEND
     };

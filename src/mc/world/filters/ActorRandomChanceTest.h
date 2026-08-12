@@ -14,7 +14,7 @@ class ActorRandomChanceTest : public ::SimpleIntFilterTest {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool evaluate(::FilterContext const&) const /*override*/;
+    virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
     virtual ::std::string_view getName() const /*override*/;
     // NOLINTEND
@@ -22,6 +22,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $evaluate(::FilterContext const& context) const;
+
+    MCNAPI ::std::string_view $getName() const;
+
 
     // NOLINTEND
 };

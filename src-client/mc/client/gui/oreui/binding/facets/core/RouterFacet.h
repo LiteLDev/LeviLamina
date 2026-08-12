@@ -39,6 +39,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RouterFacet(::OreUI::Router& router);
+
+    MCFOLD ::OreUI::RouterHistoryAdapter& getHistoryAdapter();
     // NOLINTEND
 
 public:
@@ -56,7 +58,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

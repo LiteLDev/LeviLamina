@@ -69,6 +69,16 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>      userManager,
         ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>      partyProvider
     );
+
+    MCAPI ::std::vector<::OreUI::SocialPlayer> const& getPlatformFriends() const;
+
+    MCFOLD ::OreUI::FriendsLoadingState getPlatformFriendsLoadingState() const;
+
+    MCFOLD ::std::vector<::OreUI::SocialPlayer> const& getXblFriends() const;
+
+    MCFOLD ::OreUI::FriendsLoadingState getXblFriendsLoadingState() const;
+
+    MCAPI void userControlledUpdateGameList();
     // NOLINTEND
 
 public:
@@ -92,7 +102,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

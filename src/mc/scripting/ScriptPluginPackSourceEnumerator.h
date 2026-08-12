@@ -44,6 +44,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::vector<::std::shared_ptr<::IScriptPluginSource>> const& $getPluginSources() const;

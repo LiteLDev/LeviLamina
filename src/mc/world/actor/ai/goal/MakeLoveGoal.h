@@ -37,12 +37,30 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual void appendDebugInfo(::std::string&) const /*override*/;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::VillagerBase* _findMate() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $canUse();
+
+    MCAPI void $start();
+
+    MCAPI void $stop();
+
+    MCAPI bool $canContinueToUse();
+
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
 
     // NOLINTEND
 };

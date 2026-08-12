@@ -12,4 +12,10 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mNameFilters;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>    mOnNamed;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addNameFilterByName(::std::string const& name);
+    // NOLINTEND
 };

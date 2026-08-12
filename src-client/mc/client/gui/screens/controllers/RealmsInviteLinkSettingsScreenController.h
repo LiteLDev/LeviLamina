@@ -60,6 +60,10 @@ public:
         ::Realms::World const&                   world,
         ::Realms::InviteLink const&              link
     );
+
+    MCAPI void _displayLinkErrorModal(::std::string const& title, ::std::string const& body);
+
+    MCAPI void _updateInviteLink(::Realms::InviteLink tempLink);
     // NOLINTEND
 
 public:
@@ -75,6 +79,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCFOLD bool $_doesScreenHaveExitBehavior() const;
     // NOLINTEND
 };

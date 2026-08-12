@@ -63,11 +63,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SelectionWheelComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SelectionWheelComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
@@ -82,14 +86,45 @@ public:
 
     virtual ::ComponentReceiveActionType receive(::ScreenEvent const& screenEvent) /*override*/;
 
-    virtual void onVisibilityChanged(bool) /*override*/;
+    virtual void onVisibilityChanged(bool visible) /*override*/;
 
-    virtual void onEnabledChanged(bool) /*override*/;
+    virtual void onEnabledChanged(bool enabled) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit SelectionWheelComponent(::UIControl& owner);
+
+    MCAPI void _updateControlVisibility();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
+    MCAPI void $reset();
+
+    MCAPI void $reload(::UIComponent const& rhs);
+
+    MCAPI ::ComponentReceiveActionType $receive(
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
+    );
+
+    MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
+
+    MCAPI void $onVisibilityChanged(bool visible);
+
+    MCAPI void $onEnabledChanged(bool enabled);
     // NOLINTEND
 };

@@ -34,6 +34,11 @@
 #include "mc/world/item/components/UseModifiersItemComponentLegacyFactoryData.h"
 #include "mc/world/item/components/WearableItemComponentLegacyFactoryData.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct ComponentItemComponentData_v1_20_40 {
 public:
     // ComponentItemComponentData_v1_20_40 inner types define
@@ -72,5 +77,11 @@ public:
     ::ll::TypedStorage<8, 32, ::std::optional<::UseAnimationItemComponent>>                  useAnimationItemComponent;
     ::ll::TypedStorage<8, 64, ::std::optional<::EnchantableItemComponent>>                   enchantableItemComponent;
     ::ll::TypedStorage<8, 64, ::std::optional<::InteractButtonItemComponent>> interactButtonItemComponent;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };

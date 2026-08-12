@@ -41,6 +41,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RouterQuery(::OreUI::ClientDependencies const& client);
+
+    MCAPI void _updateState();
     // NOLINTEND
 
 public:

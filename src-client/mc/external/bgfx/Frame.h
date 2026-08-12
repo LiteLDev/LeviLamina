@@ -101,9 +101,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Frame();
+
+    MCAPI void cloneRangedBindingsToRenderItem(uint _renderItemIdx, ::bgfx::RangedBindings const& _rangedBindings);
+
+    MCAPI void create();
+
     MCAPI void destroy();
 
     MCAPI void sort();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };
 

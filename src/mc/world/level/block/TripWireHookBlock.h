@@ -61,6 +61,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _emitState(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        bool              attached,
+        bool              powered,
+        bool              wasAttached,
+        bool              wasPowered
+    ) const;
+
+    MCAPI void
+    calculateState(::BlockSource& region, ::BlockPos const& pos, bool isBeingDestroyed, int wireSourceIdx) const;
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;

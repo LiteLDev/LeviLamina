@@ -63,6 +63,10 @@ public:
         ::Core::FileUploadType                                fileUploadType,
         ::std::function<void(::UploadState, ::Realms::World)> callback
     );
+
+    MCAPI void _displayPostUploadErrorPopup();
+
+    MCAPI void _startUpload();
     // NOLINTEND
 
 public:
@@ -82,6 +86,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onOpen();
 
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::std::string $getAdditionalScreenInfo() const;
     // NOLINTEND
 };

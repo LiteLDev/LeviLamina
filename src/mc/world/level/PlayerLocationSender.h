@@ -78,6 +78,14 @@ public:
         ::std::function<void(::UserEntityIdentifierComponent const&, ::Player const&, ::Player const&)> action
     );
 
+    MCAPI bool _shouldSendPositionPacket(
+        ::Vec3 const&                                     viewingPlayerPosition,
+        ::DimensionType const&                            viewingPlayerDimension,
+        bool                                              viewingPlayerIsSpectator,
+        ::std::optional<::Vec3> const&                    observedPlayerPosPrev,
+        ::PlayerLocationSender::PlayerLocationData const& observedPlayerPositionNew
+    ) const;
+
     MCAPI void _updatePlayerData(::Player const& player);
     // NOLINTEND
 

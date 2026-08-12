@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     virtual ~SliderManagerComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
@@ -44,6 +44,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
+    MCFOLD void $reset();
+
+    MCAPI ::ComponentReceiveActionType $receive(
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
+    );
     // NOLINTEND
 };

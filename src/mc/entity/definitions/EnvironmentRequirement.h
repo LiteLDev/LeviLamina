@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockDescriptor;
+// clang-format on
+
 struct EnvironmentRequirement {
 public:
     // member variables
@@ -16,4 +21,10 @@ public:
     EnvironmentRequirement& operator=(EnvironmentRequirement const&);
     EnvironmentRequirement(EnvironmentRequirement const&);
     EnvironmentRequirement();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addBlockDescriptor(::BlockDescriptor const& blockDescriptor);
+    // NOLINTEND
 };

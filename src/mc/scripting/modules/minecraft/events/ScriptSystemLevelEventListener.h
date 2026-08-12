@@ -27,12 +27,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onRunSystemTick(::ScriptDeferredFlushTracker&) /*override*/;
+    virtual void onRunSystemTick(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onRunSystemTick(::ScriptDeferredFlushTracker& deferredTracker);
+
 
     // NOLINTEND
 };

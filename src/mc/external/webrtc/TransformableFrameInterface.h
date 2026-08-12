@@ -34,9 +34,9 @@ public:
     // NOLINTBEGIN
     virtual ~TransformableFrameInterface() = default;
 
-    virtual ::webrtc::ArrayView<uchar const, 18446744073709546905> GetData() const = 0;
+    virtual ::webrtc::ArrayView<uchar const> GetData() const = 0;
 
-    virtual void SetData(::webrtc::ArrayView<uchar const, 18446744073709546905> data) = 0;
+    virtual void SetData(::webrtc::ArrayView<uchar const> data) = 0;
 
     virtual uchar GetPayloadType() const = 0;
 

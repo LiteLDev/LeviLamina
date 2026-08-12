@@ -13,6 +13,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContainerScreenContext;
 class ContainerScreenValidation;
 class EntityContext;
 class ItemInstance;
@@ -133,6 +134,8 @@ public:
     // NOLINTBEGIN
     MCAPI ItemStackRequestActionHandler(::ItemStackNetManagerServer& itemStackNetManager, ::Player& player);
 
+    MCAPI void _addResponseSlotInfo(::ItemStackRequestHandlerSlotInfo const& slotInfo, ::ItemStack const& item);
+
     MCAPI void _cacheSlotIdAssigment(
         ::ContainerRuntimeId const& containerRuntimeId,
         uchar                       requestSlot,
@@ -149,14 +152,27 @@ public:
         ::ItemStackRequestActionHandler::RemoveType removeType
     );
 
+    MCAPI ::ItemStackNetResult _handleTransfer(
+        ::ItemStackRequestActionTransferBase const& requestAction,
+        bool const                                  isSrcHintSlot,
+        bool const                                  isDstHintSlot,
+        bool const                                  isSwap
+    );
+
     MCAPI ::ItemStackRequestActionHandler::ScreenData* _tryGetCurrentScreenData() const;
 
     MCAPI ::ItemStackRequestHandlerSlotInfo
     _validateRequestSlot(::ItemStackRequestSlotInfo const& requestSlotInfo, bool isItemRequired, bool isHintSlot);
 
+    MCAPI void addStrings(::ItemStackRequestId requestId, ::std::vector<::std::string> strings);
+
 #ifdef LL_PLAT_S
     MCAPI ::std::vector<::std::string> const& getFilteredStrings(::ItemStackRequestId requestId) const;
+#endif
 
+    MCAPI ::ContainerScreenContext const& getScreenContext() const;
+
+#ifdef LL_PLAT_S
     MCAPI ::std::vector<::std::string> const& getStrings(::ItemStackRequestId requestId) const;
 
     MCAPI void normalTick();

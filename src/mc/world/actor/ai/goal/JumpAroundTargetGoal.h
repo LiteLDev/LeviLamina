@@ -90,13 +90,15 @@ public:
 
     virtual bool canBeInterrupted() /*override*/;
 
-    virtual void appendDebugInfo(::std::string&) const /*override*/;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit JumpAroundTargetGoal(::Mob& mob);
+
+    MCAPI ::std::optional<::JumpAroundTargetGoal::Jump> _calculateOptimalJumpVector(::Vec3 const& targetPosition) const;
     // NOLINTEND
 
 public:
@@ -108,6 +110,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $canUse();
+
+    MCAPI bool $canContinueToUse();
+
+    MCAPI void $start();
+
+    MCAPI void $stop();
+
+    MCAPI void $tick();
+
+    MCFOLD bool $canBeInterrupted();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
 
     // NOLINTEND
 };

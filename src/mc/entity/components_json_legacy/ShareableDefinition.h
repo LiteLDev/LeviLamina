@@ -24,6 +24,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addShareable(::Shareable const& shareable);
+
+    MCAPI void addShareableByName(::std::string const& name);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

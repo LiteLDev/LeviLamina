@@ -125,6 +125,8 @@ public:
 
     MCAPI void _cloneComponents(::ItemStackBase const& other);
 
+    MCAPI ::std::string _getHoverFormattingPrefix() const;
+
 #ifdef LL_PLAT_C
     MCAPI bool _hasFullOrPartialTag(::HashedString const& string) const;
 #endif
@@ -136,6 +138,10 @@ public:
     MCAPI void _setChargedItem(::ItemInstance const& item);
 
 #ifdef LL_PLAT_C
+    MCAPI bool _setItem(int id, bool doRemap);
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI bool _setItem(int id, bool doRemap);
 #endif
 
@@ -219,6 +225,10 @@ public:
     MCAPI ::Bedrock::Safety::RedactableString getRedactedName() const;
 
     MCAPI bool hasChargedItem() const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool hasComponent(::std::string const& name) const;
+#endif
 
     MCAPI bool hasSameAuxValue(::ItemStackBase const& other) const;
 

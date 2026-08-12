@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ClassBinding; }
+// clang-format on
+
 namespace ScriptModuleMinecraftNet {
 
 struct ScriptPacketSendBeforeEvent {
@@ -18,6 +23,12 @@ public:
     ScriptPacketSendBeforeEvent& operator=(ScriptPacketSendBeforeEvent const&);
     ScriptPacketSendBeforeEvent(ScriptPacketSendBeforeEvent const&);
     ScriptPacketSendBeforeEvent();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraftNet

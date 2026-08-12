@@ -3,13 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/puv/puv_load_data/LoadResultWithTiming.h"
 
 // auto generated forward declare list
 // clang-format off
 class IMinecraftEventing;
 class Level;
+class LinkedAssetValidator;
+class ResourcePackManager;
 struct TradeTable;
+namespace Core { class Path; }
 // clang-format on
 
 class TradeTables {
@@ -38,6 +42,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::TradeTables::TradeTableLoadData _parseAndStoreTradeTable(
+        ::Level&                                                 level,
+        ::ResourcePackManager*                                   resourceLoader,
+        ::Core::Path const&                                      tradeTablePath,
+        bool                                                     usingUpcomingCreatorFeaturesExperiment,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const validator
+    );
+
     MCAPI ::TradeTable* fetchTable(::std::string const& path);
 
     MCAPI void reload(::Level& level, bool usingUpcomingCreatorFeaturesExperiment, ::IMinecraftEventing& eventing);

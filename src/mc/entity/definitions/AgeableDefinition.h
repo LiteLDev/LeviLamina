@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
+class ItemDescriptor;
+struct ActorDefinitionFeedItem;
 struct AgeableComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -36,6 +38,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void addDropItem(::ItemDescriptor const& itemDescriptor);
+
+    MCAPI void addFeedItem(::ActorDefinitionFeedItem const& feedItem);
+
+    MCAPI void addFeedItemByName(::std::string const& itemName);
+
+    MCAPI void addPauseGrowthItem(::ItemDescriptor const& itemDescriptor);
+
+    MCAPI void addResetGrowthItem(::ItemDescriptor const& itemDescriptor);
+
     MCAPI void initialize(::EntityContext& entity, ::AgeableComponent& component) const;
 
     MCAPI ~AgeableDefinition();

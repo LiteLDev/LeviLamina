@@ -20,6 +20,7 @@ class ILevelStorageManagerConnector;
 class Level;
 class LevelStorage;
 class TickingAreaList;
+struct ActorUniqueID;
 struct PendingArea;
 struct TickingAreaDescription;
 // clang-format on
@@ -97,6 +98,8 @@ public:
         ::LevelStorage&                       levelStorage
     );
 
+    MCAPI void _deletePendingArea(::LevelStorage& levelStorage, ::PendingArea const& pendingArea);
+
     MCAPI ::std::vector<::TickingAreaDescription> _getPendingAreaDescriptionsFiltered(
         ::DimensionType                             dimensionId,
         ::std::function<bool(::PendingArea const&)> includeInList
@@ -104,7 +107,19 @@ public:
 
     MCAPI void _postReloadActorAdded(::Actor& actor);
 
+    MCAPI void
+    _savePendingArea(::LevelStorage& levelStorage, ::DimensionType dimensionId, ::PendingArea const& pendingArea);
+
     MCAPI void addEntityArea(::DimensionType dimensionId, ::Actor const& actor, ::LevelStorage& levelStorage);
+
+    MCAPI void addEntityArea(
+        ::DimensionType        dimensionId,
+        ::ActorUniqueID const& entityId,
+        ::Bounds               bounds,
+        bool                   alwaysActive,
+        float                  maxDistToPlayers,
+        ::LevelStorage&        levelStorage
+    );
 
     MCAPI void addTickingAreaListForDimension(
         ::DimensionType                             dimensionId,

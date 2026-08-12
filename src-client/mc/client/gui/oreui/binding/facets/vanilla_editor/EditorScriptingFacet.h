@@ -7,10 +7,14 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/editor/datastore/EventType.h"
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 class IClientInstance;
+namespace Editor::DataStore { struct PayloadDescription; }
+namespace Json { class Value; }
 // clang-format on
 
 namespace OreUI {
@@ -58,6 +62,30 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorScriptingFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance);
+
+    MCAPI void _handleDataStoreEvent(
+        ::HashedString const&                          dataTag,
+        ::Editor::DataStore::EventType                 eventType,
+        ::Json::Value const&                           payload,
+        ::Editor::DataStore::PayloadDescription const& desc
+    );
+
+    MCAPI void addCleanupMessage(::std::string const& id, ::std::string const& payload);
+
+    MCAPI void attachDebugger();
+
+    MCAPI void dispatchDataStoreEvent(
+        ::std::string const&                                     dataTag,
+        ::Editor::DataStore::EventType                           eventType,
+        ::std::optional<::std::string>                           payload,
+        ::std::optional<::Editor::DataStore::PayloadDescription> desc
+    );
+
+    MCAPI ::OreUI::EditorScriptingFacet::EditorRay getMouseRayCastActionPayload() const;
+
+    MCAPI void reload();
+
+    MCAPI void sendMessage(::std::string const& id, ::std::string const& payload);
     // NOLINTEND
 
 public:
@@ -75,7 +103,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD bool $update();
     // NOLINTEND
 };
 

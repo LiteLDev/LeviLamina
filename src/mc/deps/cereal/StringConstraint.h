@@ -26,6 +26,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+
+    virtual ~StringConstraint() /*override*/;
     // NOLINTEND
 
 public:
@@ -40,6 +42,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string flagsToString(::std::regex_constants::syntax_option_type flags);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

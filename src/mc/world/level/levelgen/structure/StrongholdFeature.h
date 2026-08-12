@@ -84,6 +84,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI StrongholdFeature(::VillageFeature* villages, uint seed);
+
+    MCAPI void generatePositions(
+        ::Random&                            random,
+        ::BiomeSource const&                 biomeSource,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&                   dimension
+    );
     // NOLINTEND
 
 public:

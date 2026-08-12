@@ -47,6 +47,10 @@ public:
     // NOLINTBEGIN
     MCNAPI ModalToolContainer(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
 
+    MCNAPI void _onSelectedToolUpdated(::Json::Value const& current, ::Json::Value const& prev);
+
+    MCNAPI void _onToolUpdated(::std::string const& id, ::std::string const& propName);
+
     MCNAPI ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
     MCNAPI ::Json::Value getSortOrderPayload(::Editor::DataStore::PayloadDescription const& desc) const;

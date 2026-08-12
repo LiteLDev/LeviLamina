@@ -30,6 +30,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $SetRuntimeSetting(::webrtc::AudioProcessing::RuntimeSetting);
+
 
     // NOLINTEND
 };

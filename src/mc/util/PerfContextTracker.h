@@ -46,6 +46,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $reset();
+
 
         // NOLINTEND
     };
@@ -142,6 +144,10 @@ public:
     MCNAPI PerfContextTracker();
 
 #ifdef LL_PLAT_C
+    MCNAPI bool _tryBeginContext(::std::string const& contextName, ::std::chrono::steady_clock::time_point const& now);
+
+    MCNAPI void _tryEndContext(::std::chrono::steady_clock::time_point const& now);
+
     MCNAPI void clear();
 
     MCNAPI void onAppResume();

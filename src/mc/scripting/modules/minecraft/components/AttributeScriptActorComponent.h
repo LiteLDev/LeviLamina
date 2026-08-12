@@ -12,6 +12,7 @@
 class Attribute;
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -49,6 +50,12 @@ public:
     virtual ::Scripting::Result_deprecated<void> resetToDefaultValue() const;
 
     virtual bool _isValid() const /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

@@ -9,6 +9,7 @@
 // clang-format off
 class ItemInstance;
 class ItemStack;
+class ItemStackBase;
 class LootTableContext;
 class Random;
 // clang-format on
@@ -19,16 +20,28 @@ public:
     // NOLINTBEGIN
     virtual ~RandomDyeFunction() /*override*/ = default;
 
-    virtual void apply(::ItemStack&, ::Random&, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
 
-    virtual void apply(::ItemInstance&, ::Random&, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _applyBase(::ItemStackBase& item, ::Random& random) const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
+
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
+
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
+
 
     // NOLINTEND
 };

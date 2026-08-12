@@ -30,16 +30,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::shared_ptr<::Bedrock::SessionInfo> findCrashedSessionInfo(::std::string_view) const /*override*/;
+    virtual ::std::shared_ptr<::Bedrock::SessionInfo> findCrashedSessionInfo(::std::string_view sessionId) const
+        /*override*/;
 
-    virtual void notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const&) /*override*/;
+    virtual void
+    notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const& status) /*override*/;
 
-    virtual void notifyDoneWithSession(::std::string_view) /*override*/;
+    virtual void notifyDoneWithSession(::std::string_view sessionId) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::shared_ptr<::Bedrock::SessionInfo> $findCrashedSessionInfo(::std::string_view sessionId) const;
+
+    MCNAPI void $notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const& status);
+
+    MCNAPI void $notifyDoneWithSession(::std::string_view sessionId);
+
 
     // NOLINTEND
 };

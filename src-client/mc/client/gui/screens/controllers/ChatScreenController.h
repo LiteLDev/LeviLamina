@@ -15,6 +15,8 @@
 // auto generated forward declare list
 // clang-format off
 class ClientInstanceScreenModel;
+class StringHash;
+struct HostOptionSubCommand;
 namespace AppExtensions { class IDevConsoleScreenExtension; }
 namespace Json { class Value; }
 // clang-format on
@@ -92,6 +94,32 @@ public:
         bool                                                           isDevConsole,
         ::std::unique_ptr<::AppExtensions::IDevConsoleScreenExtension> devConsoleScreenExtension
     );
+
+    MCAPI void _getBottomButtonFocusOverrideDown(::std::string& focusOverride);
+
+    MCAPI void _getBottomButtonFocusOverrideUp(::std::string& focusOverride, uint64 lastIndex);
+
+    MCAPI ::std::string _getExitMessage() const;
+
+    MCAPI ::std::string _getSendMessage() const;
+
+    MCAPI void _handleChatMessage(::std::string const& message, ::std::string const& ttsMessage);
+
+    MCAPI void _handleSelectSentMessage(::ChatScreenController::SelectionDirection direction);
+
+    MCAPI void _registerBindings();
+
+    MCAPI void _registerBindingsSubCommand(
+        ::std::vector<::HostOptionSubCommand>& subCommandButtons,
+        ::StringHash const&                    gridName,
+        ::StringHash const&                    collectionName
+    );
+
+    MCAPI void _sendChatMessage();
+
+    MCAPI void _teleportWhereHelper();
+
+    MCAPI void _teleportWhoHelper();
     // NOLINTEND
 
 public:
@@ -108,6 +136,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onInit();
 
+    MCAPI void $onOpen();
+
+    MCAPI void $onEntered();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
+    MCAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

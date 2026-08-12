@@ -36,18 +36,28 @@ public:
     virtual ~HttpSignalingClient() /*override*/ = default;
 
     virtual void SendSignal(
-        ::NetherNet::NetworkID,
-        ::NetherNet::NetworkID,
-        ::std::string const&,
-        ::std::function<void(::NetherNet::ESessionError)>&&
+        ::NetherNet::NetworkID                              from,
+        ::NetherNet::NetworkID                              to,
+        ::std::string const&                                signal,
+        ::std::function<void(::NetherNet::ESessionError)>&& onComplete
     ) /*override*/;
 
-    virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler*) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $SendSignal(
+        ::NetherNet::NetworkID                              from,
+        ::NetherNet::NetworkID                              to,
+        ::std::string const&                                signal,
+        ::std::function<void(::NetherNet::ESessionError)>&& onComplete
+    );
+
+    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
+
 
     // NOLINTEND
 };

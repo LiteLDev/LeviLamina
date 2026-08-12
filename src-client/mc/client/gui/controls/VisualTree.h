@@ -51,27 +51,27 @@ public:
     // NOLINTBEGIN
     virtual ~VisualTree() /*override*/;
 
-    virtual ::std::shared_ptr<::UIControl> getControlWithName(::std::string const&) /*override*/;
+    virtual ::std::shared_ptr<::UIControl> getControlWithName(::std::string const& name) /*override*/;
 
     virtual bool getDirty() /*override*/;
 
-    virtual bool getDirty(::ui::DirtyFlag) /*override*/;
+    virtual bool getDirty(::ui::DirtyFlag flag) /*override*/;
 
     virtual ::ui::DirtyFlag getDirtyValue() /*override*/;
 
-    virtual void addDirtyFlag(::ui::DirtyFlag) /*override*/;
+    virtual void addDirtyFlag(::ui::DirtyFlag flag) /*override*/;
 
-    virtual void measureControls(::UIControl&) /*override*/;
+    virtual void measureControls(::UIControl& measureRoot) /*override*/;
 
-    virtual void markToRemoveDeadDependencies(::std::shared_ptr<::UIControl>) /*override*/;
+    virtual void markToRemoveDeadDependencies(::std::shared_ptr<::UIControl> control) /*override*/;
 
-    virtual void updateControlCollection(::std::shared_ptr<::UIControl>) /*override*/;
+    virtual void updateControlCollection(::std::shared_ptr<::UIControl> control) /*override*/;
 
     virtual void updateControlCollectionFromRoot() /*override*/;
 
-    virtual void removeFromControlCollection(::std::shared_ptr<::UIControl>) /*override*/;
+    virtual void removeFromControlCollection(::std::shared_ptr<::UIControl> control) /*override*/;
 
-    virtual void updateControlBinds(::std::shared_ptr<::UIControl>) /*override*/;
+    virtual void updateControlBinds(::std::shared_ptr<::UIControl> control) /*override*/;
 
     virtual void updateBindsFromRoot() /*override*/;
 
@@ -119,6 +119,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::UIControl> $getControlWithName(::std::string const& name);
 
+    MCAPI bool $getDirty();
+
+    MCAPI bool $getDirty(::ui::DirtyFlag flag);
+
+    MCFOLD ::ui::DirtyFlag $getDirtyValue();
+
+    MCAPI void $addDirtyFlag(::ui::DirtyFlag flag);
+
+    MCAPI void $measureControls(::UIControl& measureRoot);
+
+    MCAPI void $markToRemoveDeadDependencies(::std::shared_ptr<::UIControl> control);
+
+    MCAPI void $updateControlCollection(::std::shared_ptr<::UIControl> control);
+
+    MCAPI void $updateControlCollectionFromRoot();
+
+    MCAPI void $removeFromControlCollection(::std::shared_ptr<::UIControl> control);
+
+    MCAPI void $updateControlBinds(::std::shared_ptr<::UIControl> control);
+
+    MCAPI void $updateBindsFromRoot();
+
+    MCAPI void $markTextEditFocusChanged();
+
+    MCAPI void $markTextEditAlwaysListeningChanged();
     // NOLINTEND
 };

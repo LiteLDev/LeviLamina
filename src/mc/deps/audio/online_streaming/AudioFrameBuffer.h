@@ -11,7 +11,7 @@ class AudioFrameBuffer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk514939;
+    ::ll::UntypedStorage<8, 16> mUnkf87a71;
     ::ll::UntypedStorage<1, 1>  mUnk2c257a;
     ::ll::UntypedStorage<8, 8>  mUnk1aadea;
     // NOLINTEND

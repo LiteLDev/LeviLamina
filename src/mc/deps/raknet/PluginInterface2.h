@@ -73,6 +73,39 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $OnAttach();
+
+    MCAPI void $OnDetach();
+
+    MCAPI void $Update();
+
+    MCAPI ::RakNet::PluginReceiveResult $OnReceive(::RakNet::Packet*);
+
+    MCAPI void $OnRakPeerStartup();
+
+    MCAPI void $OnRakPeerShutdown();
+
+    MCAPI void
+    $OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason);
+
+    MCAPI void $OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool);
+
+    MCAPI void $OnFailedConnectionAttempt(::RakNet::Packet*, ::RakNet::PI2_FailedConnectionAttemptReason);
+
+    MCAPI bool $UsesReliabilityLayer() const;
+
+    MCAPI void $OnDirectSocketSend(char const*, uint const, ::RakNet::SystemAddress);
+
+    MCAPI void $OnDirectSocketReceive(char const*, uint const, ::RakNet::SystemAddress);
+
+    MCAPI void $OnReliabilityLayerNotification(char const*, uint const, ::RakNet::SystemAddress, bool);
+
+    MCAPI void $OnInternalPacket(::RakNet::InternalPacket*, uint, ::RakNet::SystemAddress, uint, int);
+
+    MCAPI void $OnAck(uint, ::RakNet::SystemAddress, uint);
+
+    MCAPI void $OnPushBackPacket(char const*, uint const, ::RakNet::SystemAddress);
+
 
     // NOLINTEND
 };

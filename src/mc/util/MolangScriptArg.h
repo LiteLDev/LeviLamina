@@ -84,6 +84,10 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void reportGetFailure() const;
 #endif
+
+#ifdef LL_PLAT_S
+    MCAPI void reportGetFailure() const;
+#endif
     // NOLINTEND
 
 public:

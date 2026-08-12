@@ -72,6 +72,10 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::shared_ptr<::SkinRepository>      skinRepository
     );
+
+    MCAPI bool _isCustomSkin(::SkinHandle const& skin) const;
+
+    MCAPI void setPreviewSkin(::SkinHandle const& newSkin);
     // NOLINTEND
 
 public:
@@ -84,6 +88,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onOpen();
 
+    MCAPI void $onTerminate();
+
+    MCAPI ::ui::ViewRequest $tryExit();
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
+    MCAPI ::std::string $_getButtonBDescription();
     // NOLINTEND
 };

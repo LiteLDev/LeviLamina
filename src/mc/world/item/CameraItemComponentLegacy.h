@@ -81,6 +81,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::CameraItemComponentLegacy::UseAction _tryPlace(
+        ::ItemStack const& instance,
+        ::Actor&           actor,
+        ::BlockPos const&  blockPos,
+        uchar              face,
+        ::Vec3&            spawnPos
+    ) const;
+
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
     MCAPI bool init(::Json::Value const& data, ::MolangVersion);
@@ -111,7 +119,11 @@ public:
 
     MCAPI float $shutterScreenRatio() const;
 
+#ifdef LL_PLAT_S
     MCAPI float $shutterDuration() const;
+#else // LL_PLAT_C
+    MCFOLD float $shutterDuration() const;
+#endif
 
     MCAPI float $pictureDuration() const;
 

@@ -84,13 +84,8 @@ public:
 
     virtual void baseTick() /*override*/;
 
-    virtual void teleportTo(
-        ::Vec3 const& pos,
-        bool          shouldStopRiding,
-        int           cause,
-        int           sourceEntityType,
-        bool          keepVelocity
-    ) /*override*/;
+    virtual void
+    teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity) /*override*/;
 
     virtual bool canExistWhenDisallowMob() const /*override*/;
 
@@ -100,7 +95,7 @@ public:
 
     virtual void kill() /*override*/;
 
-    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
+    virtual void setOwner(::ActorUniqueID const id) /*override*/;
 
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
@@ -151,6 +146,45 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::mce::Color $getNameTagTextColor() const;
+
+    MCFOLD bool $canShowNameTag() const;
+
+    MCFOLD bool $canBePulledIntoVehicle() const;
+
+    MCFOLD bool $canBeAffected(uint id) const;
+
+    MCFOLD void $knockback(::Actor* source, int damage, float xd, float zd, ::KnockbackParameters const& parameters);
+
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI bool $createAIGoals();
+
+    MCAPI void $setCarriedItem(::ItemStack const& item);
+
+    MCAPI void $normalTick();
+
+    MCAPI void $baseTick();
+
+    MCAPI void $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity);
+
+    MCFOLD bool $canExistWhenDisallowMob() const;
+
+    MCFOLD bool $isTargetable() const;
+
+    MCAPI bool $isInvisible() const;
+
+    MCAPI void $kill();
+
+    MCAPI void $setOwner(::ActorUniqueID const id);
+
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
+
+    MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
+
 
     // NOLINTEND
 };

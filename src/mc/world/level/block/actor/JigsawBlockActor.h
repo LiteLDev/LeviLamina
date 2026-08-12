@@ -31,19 +31,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& context) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const&) const /*override*/;
 
     virtual void setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const /*override*/;
 
-    virtual void onChanged(::BlockSource&) /*override*/;
+    virtual void onChanged(::BlockSource& region) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&) /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
@@ -61,6 +61,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCFOLD ::std::vector<::std::string> $getUgcStrings(::CompoundTag const&) const;
+
+    MCFOLD void $setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
+
+    MCAPI void $onChanged(::BlockSource& region);
+
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+
 
     // NOLINTEND
 };

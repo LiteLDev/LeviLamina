@@ -43,6 +43,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _checkPressed(::BlockSource& region, ::BlockPos const& pos) const;
+
     MCFOLD void _onRedstoneUpdateDetectorRail(::BlockEvents::BlockRedstoneUpdateEvent&) const;
     // NOLINTEND
 

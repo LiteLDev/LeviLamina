@@ -47,6 +47,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit UserDataScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
 
+    MCAPI void _updatePlayerList();
+
     MCAPI ::PlayerListInfo getLocalPlayer() const;
 
     MCAPI ::PlayerListInfo getPlayerByAUID(::ActorUniqueID auid) const;
@@ -61,6 +63,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 };

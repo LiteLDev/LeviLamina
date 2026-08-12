@@ -64,32 +64,35 @@ public:
     // NOLINTBEGIN
     virtual ~Scoreboard() = default;
 
-    virtual ::DisplayObjective const*
-    setDisplayObjective(::std::string const&, ::Objective const&, ::ObjectiveSortOrder const);
+    virtual ::DisplayObjective const* setDisplayObjective(
+        ::std::string const&       displaySlotName,
+        ::Objective const&         objective,
+        ::ObjectiveSortOrder const order
+    );
 
-    virtual ::Objective* clearDisplayObjective(::std::string const&);
+    virtual ::Objective* clearDisplayObjective(::std::string const& displaySlotName);
 
-    virtual ::ScoreboardId const& createScoreboardId(::Player const&);
+    virtual ::ScoreboardId const& createScoreboardId(::Player const& player);
 
-    virtual ::ScoreboardId const& createScoreboardId(::Actor const&);
+    virtual ::ScoreboardId const& createScoreboardId(::Actor const& entity);
 
-    virtual ::ScoreboardId const& createScoreboardId(::std::string const&);
+    virtual ::ScoreboardId const& createScoreboardId(::std::string const& fakePlayer);
 
-    virtual void onObjectiveAdded(::Objective const&);
+    virtual void onObjectiveAdded(::Objective const& objective);
 
-    virtual void onObjectiveRemoved(::Objective&);
+    virtual void onObjectiveRemoved(::Objective& objective);
 
-    virtual void onScoreChanged(::ScoreboardId const&, ::Objective const&);
+    virtual void onScoreChanged(::ScoreboardId const& id, ::Objective const& obj);
 
-    virtual void onPlayerScoreRemoved(::ScoreboardId const&, ::Objective const&);
+    virtual void onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective);
 
-    virtual void onPlayerJoined(::Player const&);
+    virtual void onPlayerJoined(::Player const& player);
 
-    virtual void onPlayerIdentityUpdated(::PlayerScoreboardId const&);
+    virtual void onPlayerIdentityUpdated(::PlayerScoreboardId const& playerId);
 
     virtual void tick();
 
-    virtual void setPacketSender(::PacketSender*);
+    virtual void setPacketSender(::PacketSender* sender);
 
     virtual void writeToLevelStorage();
 
@@ -122,7 +125,13 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI ::std::vector<::PlayerScore> getDisplayInfoFiltered(::std::string const& displaySlot) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::std::vector<::PlayerScore> getDisplayInfoFiltered(::std::string const& displaySlot) const;
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI ::std::vector<::PlayerScore> getDisplayInfoSorted(
         ::std::string const&                                                       displaySlot,
         ::std::function<void(::ObjectiveSortOrder, ::std::vector<::PlayerScore>&)> sortMethod
@@ -144,6 +153,11 @@ public:
     MCAPI ::std::vector<::ScoreboardId> getTrackedIds() const;
 
 #ifdef LL_PLAT_C
+    MCAPI ::ScoreboardIdentityRef const&
+    registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI ::ScoreboardIdentityRef const&
     registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
 #endif
@@ -182,6 +196,40 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::DisplayObjective const* $setDisplayObjective(
+        ::std::string const&       displaySlotName,
+        ::Objective const&         objective,
+        ::ObjectiveSortOrder const order
+    );
+
+    MCAPI ::Objective* $clearDisplayObjective(::std::string const& displaySlotName);
+
+    MCAPI ::ScoreboardId const& $createScoreboardId(::Player const& player);
+
+    MCAPI ::ScoreboardId const& $createScoreboardId(::Actor const& entity);
+
+    MCAPI ::ScoreboardId const& $createScoreboardId(::std::string const& fakePlayer);
+
+    MCAPI void $onObjectiveAdded(::Objective const& objective);
+
+    MCAPI void $onObjectiveRemoved(::Objective& objective);
+
+    MCAPI void $onScoreChanged(::ScoreboardId const& id, ::Objective const& obj);
+
+    MCAPI void $onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective);
+
+    MCFOLD void $onPlayerJoined(::Player const& player);
+
+    MCAPI void $onPlayerIdentityUpdated(::PlayerScoreboardId const& playerId);
+
+    MCFOLD void $tick();
+
+    MCFOLD void $setPacketSender(::PacketSender* sender);
+
+    MCFOLD void $writeToLevelStorage();
+
+    MCFOLD bool $isClientSide() const;
+
 
     // NOLINTEND
 };

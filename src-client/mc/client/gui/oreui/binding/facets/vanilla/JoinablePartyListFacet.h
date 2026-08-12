@@ -61,6 +61,10 @@ public:
         ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>      partyProvider,
         ::World::WorldPlayerListTracker&                           worldPlayerListTracker
     );
+
+    MCAPI void _updateJoinableParties();
+
+    MCAPI ::std::vector<::OreUI::JoinablePartyFriend> const& getJoinablePartyFriends() const;
     // NOLINTEND
 
 public:
@@ -84,7 +88,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

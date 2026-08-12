@@ -4,6 +4,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/block/Block.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockState;
+class CommandOutput;
+class CompoundTag;
+// clang-format on
+
 class BlockStateCommandParam {
 public:
     // BlockStateCommandParam inner types define
@@ -36,6 +44,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BlockStateCommandParam(::std::string state, ::std::string value, ::BlockStateCommandParam::Type type);
+
+    MCAPI bool _createCompoundTag(::CompoundTag& tag, ::CommandOutput& output) const;
+
+    MCAPI ::BlockState const* _getBlockState(::Block const& block) const;
     // NOLINTEND
 
 public:

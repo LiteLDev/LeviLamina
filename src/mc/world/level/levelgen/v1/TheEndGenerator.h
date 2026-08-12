@@ -76,20 +76,25 @@ public:
     // NOLINTBEGIN
     virtual ~TheEndGenerator() /*override*/ = default;
 
-    virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
+    virtual void loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad) /*override*/;
 
-    virtual bool structurePostProcessChunk(::ChunkViewSource&) /*override*/;
+    virtual bool structurePostProcessChunk(::ChunkViewSource& neighborhoodIn) /*override*/;
 
-    virtual bool decorationPostProcessChunk(::ChunkViewSource&) /*override*/;
+    virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhood) /*override*/;
 
     virtual void
     postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random) /*override*/;
 
-    virtual void prepareHeights(::BlockVolume&, ::ChunkPos const&, ::std::vector<short>*, bool) /*override*/;
+    virtual void prepareHeights(
+        ::BlockVolume&        box,
+        ::ChunkPos const&     chunkPos,
+        ::std::vector<short>* ZXheights,
+        bool                  factorInBeardsAndShavers
+    ) /*override*/;
 
-    virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4>) const /*override*/;
+    virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const /*override*/;
 
-    virtual ::BiomeArea getBiomeArea(::BoundingBox const&, uint) const /*override*/;
+    virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
     virtual ::BiomeSource const& getBiomeSource() const /*override*/;
 
@@ -97,11 +102,16 @@ public:
 
     virtual ::WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const /*override*/;
 
-    virtual void
-    decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const
-        /*override*/;
+    virtual void decorateWorldGenLoadChunk(
+        ::Biome const&       biome,
+        ::LevelChunk&        lc,
+        ::BlockVolumeTarget& target,
+        ::Random&            random,
+        ::ChunkPos const&    pos
+    ) const /*override*/;
 
-    virtual void decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const
+    virtual void
+    decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
         /*override*/;
     // NOLINTEND
 
@@ -109,6 +119,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI TheEndGenerator(::Dimension& dimension, uint seed, ::Biome const* overrideBiome);
+
+    MCAPI float
+    getIslandHeightValue(int const chunkX, int const chunkZ, int const cellOffsetX, int const cellOffsetZ) const;
     // NOLINTEND
 
 public:
@@ -120,6 +133,42 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
+
+    MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
+
+    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
+
+    MCAPI void $postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
+
+    MCAPI void $prepareHeights(
+        ::BlockVolume&        box,
+        ::ChunkPos const&     chunkPos,
+        ::std::vector<short>* ZXheights,
+        bool                  factorInBeardsAndShavers
+    );
+
+    MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
+
+    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
+
+    MCAPI ::BiomeSource const& $getBiomeSource() const;
+
+    MCFOLD ::BlockPos $findSpawnPosition() const;
+
+    MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
+
+    MCFOLD void $decorateWorldGenLoadChunk(
+        ::Biome const&       biome,
+        ::LevelChunk&        lc,
+        ::BlockVolumeTarget& target,
+        ::Random&            random,
+        ::ChunkPos const&    pos
+    ) const;
+
+    MCAPI void
+    $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
+
 
     // NOLINTEND
 };

@@ -22,10 +22,10 @@ public:
     virtual ~EditorPlayerExportProjectServiceProvider() = default;
 
     virtual void beginExportProject(
-        ::WeakEntityRef,
-        ::Editor::GameOptions const&,
-        ::Editor::WorldType const,
-        ::std::function<void(::Editor::ExportResult const&, ::std::string)>
+        ::WeakEntityRef                                                     playerRef,
+        ::Editor::GameOptions const&                                        gameOptions,
+        ::Editor::WorldType const                                           editorWorldType,
+        ::std::function<void(::Editor::ExportResult const&, ::std::string)> callback
     ) = 0;
 
     virtual bool canExportProject() = 0;

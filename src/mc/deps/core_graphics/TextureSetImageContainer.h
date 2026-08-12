@@ -50,6 +50,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

@@ -33,6 +33,8 @@ public:
     virtual ::SemVersion version() const /*override*/;
 
     virtual ::Puv::Input::Data data() const /*override*/;
+
+    virtual ~JsonCppInput() /*override*/;
     // NOLINTEND
 
 public:
@@ -45,6 +47,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Json::Value json, ::SemVersion version);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -245,7 +245,7 @@ public:
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int frame) /*override*/;
 
     virtual bool canBeCharged() const /*override*/;
 
@@ -286,6 +286,13 @@ public:
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
     MCAPI float getMovementModifier() const;
+
+    MCAPI void init(
+        ::SharedTypes::v1_26_30::ItemDocument&&         data,
+        ::SemVersion const&                             documentVersion,
+        ::std::optional<::LegacyEventItemComponentData> legacyEventData,
+        ::Experiments const&                            experiments
+    );
     // NOLINTEND
 
 public:
@@ -395,7 +402,11 @@ public:
     MCAPI bool
     $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
 
+#ifdef LL_PLAT_S
     MCAPI int $getEnchantSlot() const;
+#else // LL_PLAT_C
+    MCFOLD int $getEnchantSlot() const;
+#endif
 
     MCFOLD int $getEnchantValue() const;
 
@@ -450,6 +461,9 @@ public:
 
     MCAPI void $hitBlock(::ItemStack& item, ::Block const& block, ::BlockPos const& blockPos, ::Mob& attacker) const;
 
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const;
 
     MCFOLD uchar $getMaxStackSize(::ItemDescriptor const&) const;
@@ -478,6 +492,11 @@ public:
     MCFOLD int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const;
 
     MCFOLD bool $isEmissive(int auxValue) const;
+
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int frame);
 
     MCAPI bool $canBeCharged() const;
 

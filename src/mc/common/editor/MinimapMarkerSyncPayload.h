@@ -28,6 +28,12 @@ public:
     MinimapMarkerSyncPayload();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~MinimapMarkerSyncPayload() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI MinimapMarkerSyncPayload(::Editor::Network::MinimapMarkerSyncPayload const&);
@@ -45,6 +51,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::Network::MinimapMarkerSyncPayload const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

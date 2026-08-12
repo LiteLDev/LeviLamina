@@ -84,18 +84,18 @@ public:
     // NOLINTBEGIN
     virtual ~EntitySystems() /*override*/ = default;
 
-    virtual void tickMovementCatchup(::EntityRegistry&) /*override*/;
+    virtual void tickMovementCatchup(::EntityRegistry& registry) /*override*/;
 
-    virtual void tickMovementCorrectionReplay(::EntityRegistry&) /*override*/;
+    virtual void tickMovementCorrectionReplay(::EntityRegistry& registry) /*override*/;
 
     virtual void registerTickingSystem(
-        ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const>,
-        ::std::unique_ptr<::ITickingSystem>,
-        ::SystemInfo const&,
-        ::EntitySystemTickingMode
+        ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,
+        ::std::unique_ptr<::ITickingSystem>                      system,
+        ::SystemInfo const&                                      info,
+        ::EntitySystemTickingMode                                tickingMode
     ) /*override*/;
 
-    virtual bool _hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const) const /*override*/;
+    virtual bool _hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const /*override*/;
     // NOLINTEND
 
 public:
@@ -132,6 +132,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tickMovementCatchup(::EntityRegistry& registry);
+
+    MCAPI void $tickMovementCorrectionReplay(::EntityRegistry& registry);
+
+    MCAPI void $registerTickingSystem(
+        ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,
+        ::std::unique_ptr<::ITickingSystem>                      system,
+        ::SystemInfo const&                                      info,
+        ::EntitySystemTickingMode                                tickingMode
+    );
+
+    MCAPI bool $_hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const;
+
 
     // NOLINTEND
 };

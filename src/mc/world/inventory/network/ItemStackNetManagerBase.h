@@ -141,23 +141,39 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isEnabled() const;
 
+    MCFOLD bool $retainSetItemStackNetIdVariant() const;
+
     MCAPI ::gsl::final_action<::std::function<void()>> $_tryBeginClientLegacyTransactionRequest();
 
     MCAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
     MCAPI void $onContainerScreenClose();
 
+#ifdef LL_PLAT_S
     MCFOLD ::SparseContainer* $initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
+#else // LL_PLAT_C
+    MCFOLD ::SparseContainer* $initOpenContainer(
+        ::BlockSource&             region,
+        ::FullContainerName const& openContainerId,
+        ::ContainerWeakRef const&  containerWeakRef
+    );
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $_addLegacyTransactionRequestSetItemSlot(
         ::ItemStackNetManagerScreen&,
         ::SharedTypes::Legacy::ContainerType containerType,
         int                                  slot
     );
-
-#ifdef LL_PLAT_C
-    MCFOLD bool $retainSetItemStackNetIdVariant() const;
+#else // LL_PLAT_C
+    MCFOLD void $_addLegacyTransactionRequestSetItemSlot(
+        ::ItemStackNetManagerScreen&         screen,
+        ::SharedTypes::Legacy::ContainerType containerType,
+        int                                  slot
+    );
 #endif
+
+    MCFOLD void $_initScreen(::ItemStackNetManagerScreen& screen);
 
 
     // NOLINTEND

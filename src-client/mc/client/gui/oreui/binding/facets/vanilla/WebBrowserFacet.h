@@ -71,6 +71,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit WebBrowserFacet(::std::function<void(::std::string const&)> launchUri);
+
+    MCAPI void openLink(::OreUI::WebBrowserFacet::WebBrowserLink linkHandle);
+
+    MCAPI void openLinkWithParams(::OreUI::WebBrowserFacet::WebBrowserLink linkHandle, ::std::string const& params);
+
+    MCAPI void openManageSubscriptionsStoreLink(::std::string const& storeId);
     // NOLINTEND
 
 public:
@@ -82,7 +88,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD bool $update();
     // NOLINTEND
 };
 

@@ -29,18 +29,26 @@ public:
     // NOLINTBEGIN
     virtual ~ScreenHandlerBase() = default;
 
-    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const&);
+    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction);
 
     virtual ::ItemStackNetResult endRequest();
 
     virtual void endRequestBatch();
 
-    virtual void postRequest(bool const);
+    virtual void postRequest(bool const wasSuccess);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
+
+    MCFOLD ::ItemStackNetResult $endRequest();
+
+    MCFOLD void $endRequestBatch();
+
+    MCFOLD void $postRequest(bool const wasSuccess);
+
 
     // NOLINTEND
 };

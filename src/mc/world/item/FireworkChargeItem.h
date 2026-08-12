@@ -60,6 +60,15 @@ public:
         bool                        hasFlicker
     );
 
+    MCAPI static void
+    appendColors(::Bedrock::Safety::RedactableString& hovertext, ::std::vector<uchar> const& colorList);
+
+    MCAPI static void getFormattedHoverText(
+        ::CompoundTag const&                 explosion,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        ::std::string const&                 indent
+    );
+
     MCFOLD static ::ItemInstance const& initFireworkChargeItem(
         ::ItemInstance&             itemInstance,
         ::FireworkChargeItem::Shape shape,

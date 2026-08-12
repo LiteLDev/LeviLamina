@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::Legacy { struct ExpressionNode; }
+namespace cereal { struct ReflectionCtx; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
@@ -36,6 +37,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
 
         // NOLINTEND
     };
@@ -157,6 +160,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~GeometryComponent();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

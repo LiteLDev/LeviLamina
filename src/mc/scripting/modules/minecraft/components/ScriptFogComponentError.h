@@ -20,16 +20,17 @@ public:
         InvalidFogIdentifier = 1,
     };
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ScriptFogComponentError();
 
-#else // LL_PLAT_C
-#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit ScriptFogComponentError(::ScriptModuleMinecraft::ScriptFogComponentError::Reason reason);
+#endif
+
 #ifdef LL_PLAT_S
     MCAPI explicit ScriptFogComponentError(::ScriptModuleMinecraft::ScriptFogComponentError::Reason reason);
 #endif

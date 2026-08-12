@@ -27,11 +27,11 @@ public:
 
     virtual int underflow() /*override*/;
 
-    virtual int overflow(int) /*override*/;
+    virtual int overflow(int c) /*override*/;
 
-    virtual ::std::fpos<::_Mbstatet> seekoff(int64, int, int) /*override*/;
+    virtual ::std::fpos<::_Mbstatet> seekoff(int64 off, int way, int) /*override*/;
 
-    virtual ::std::fpos<::_Mbstatet> seekpos(::std::fpos<::_Mbstatet>, int) /*override*/;
+    virtual ::std::fpos<::_Mbstatet> seekpos(::std::fpos<::_Mbstatet> pos, int) /*override*/;
 
     virtual int sync() /*override*/;
     // NOLINTEND
@@ -51,6 +51,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI int $underflow();
+
+    MCNAPI int $overflow(int c);
+
+    MCNAPI ::std::fpos<::_Mbstatet> $seekoff(int64 off, int way, int);
+
+    MCNAPI ::std::fpos<::_Mbstatet> $seekpos(::std::fpos<::_Mbstatet> pos, int);
+
+    MCNAPI int $sync();
+
 
     // NOLINTEND
 };

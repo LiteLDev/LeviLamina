@@ -5,7 +5,9 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/LevelDataBindings.h"
+#include "mc/client/realms/RealmsWorldEditorState.h"
 #include "mc/client/realms/RealmsWorldEditorStateError.h"
+#include "mc/client/realms/RealmsWorldEditorStateStatus.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/util/SubscribedValue.h"
@@ -62,6 +64,18 @@ public:
         ::TrialManager const&                                          trialManager,
         ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor
     );
+
+    MCAPI ::OreUI::LevelDataBindings& getCurrentWorldData();
+
+    MCAPI ::Realms::RealmsWorldEditorState getRealmWorldEditorState();
+
+    MCAPI ::std::optional<::Realms::RealmsWorldEditorStateError> const& getRealmWorldEditorStateError();
+
+    MCAPI ::Realms::RealmsWorldEditorStateStatus getRealmWorldEditorStateStatus();
+
+    MCAPI bool getUseRealmsWorldBackend() const;
+
+    MCAPI bool realmWorldHasBeenModified();
     // NOLINTEND
 
 public:
@@ -83,7 +97,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

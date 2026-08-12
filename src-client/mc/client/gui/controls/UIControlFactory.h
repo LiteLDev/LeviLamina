@@ -10,10 +10,13 @@
 // auto generated forward declare list
 // clang-format off
 class ControlScreenAction;
+class CustomRenderComponent;
 class FontRepository;
 class IUIDefRepository;
+class UIAnim;
 class UIControl;
 class UIControlFactoryContext;
+class UIResolvedDef;
 class UISoundPlayer;
 // clang-format on
 
@@ -48,6 +51,8 @@ public:
         bool                                                    isLowMemory
     );
 
+    MCAPI ::UIAnim* _addAnimToComponent(::std::string_view name, ::UIResolvedDef& def, ::UIControl& ownerControl);
+
     MCAPI ::std::shared_ptr<::UIControl> _createControlTree(
         ::UIControlFactoryContext const&,
         ::UIControl const&        templateControl,
@@ -65,11 +70,68 @@ public:
         bool                             isTemplateControl
     );
 
+    MCAPI ::std::shared_ptr<::UIControl> _createControlTreeFromResolvedDef(
+        ::UIControlFactoryContext const& context,
+        ::UIResolvedDef const&           resolvedDef,
+        ::UIControl*                     parentControl,
+        ::ControlScreenAction&           controlScreenAction,
+        ::ui::ChildInsertPosition        childInsertPosition,
+        bool                             isTemplateControl
+    );
+
     MCAPI ::std::shared_ptr<::UIControl> _createControlTreeRootOnly(
         ::UIControlFactoryContext const& context,
         ::std::string_view               name,
         ::ControlScreenAction&           controlScreenAction
     );
+
+    MCAPI ::std::shared_ptr<::UIControl> _createFromResolvedDef(
+        ::UIControlFactoryContext const& context,
+        ::UIResolvedDef const&           resolvedDef,
+        ::UIControl*                     parentControl,
+        ::ControlScreenAction&           controlScreenAction,
+        ::ui::ChildInsertPosition        childInsertPosition,
+        bool                             isTemplateControl
+    );
+
+    MCAPI void _createGradientRenderer(::CustomRenderComponent& customRenderComponent, ::UIResolvedDef const& def);
+
+    MCAPI void _populateButtonComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
+    MCAPI void _populateCollectionComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
+    MCAPI void _populateControl(::UIResolvedDef const& def, ::UIControl& control);
+
+    MCAPI void _populateDataBindingComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
+    MCAPI void _populateDebugRendererComponent(::UIResolvedDef const& def, ::UIControl& control);
+
+    MCAPI void _populateFocusComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
+    MCAPI void _populateGestureComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
+    MCAPI void _populateGridComponent(
+        ::UIControlFactoryContext const& context,
+        ::UIResolvedDef const&           def,
+        ::UIControl&                     ownerControl
+    );
+
+    MCAPI void _populateInputComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
+    MCAPI void _populateLayoutComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
+    MCAPI void _populatePageIndicatorManagerComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
+    MCAPI void _populateSoundComponent(::UIResolvedDef const& def, ::UIControl& ownerControl, bool alwaysCreate);
+
+    MCAPI void _populateSpriteComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
+    MCAPI void _populateTextComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
+    MCAPI void
+    _populateTextToSpeechComponent(::UIResolvedDef const& def, ::UIControl& ownerControl, int controlPriorityDefault);
+
+    MCAPI void _populateToggleComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
     MCAPI ::std::shared_ptr<::UIControl> createControlTree(
         ::UIControl const&        templateControl,

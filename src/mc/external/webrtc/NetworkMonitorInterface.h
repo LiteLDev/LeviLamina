@@ -68,6 +68,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $SupportsBindSocketToNetwork() const;
+
+    MCNAPI ::webrtc::NetworkBindingResult $BindSocketToNetwork(int, ::webrtc::IPAddress const&, ::std::string_view);
+
 
     // NOLINTEND
 };

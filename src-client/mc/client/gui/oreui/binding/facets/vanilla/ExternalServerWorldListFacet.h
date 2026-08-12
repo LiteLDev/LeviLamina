@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/world/lists/ExternalServerWorldError.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
@@ -45,6 +46,18 @@ public:
     MCAPI void _onWorldListUpdated();
 
     MCAPI void _refresh();
+
+    MCAPI ::std::optional<::World::ExternalServerWorldError>
+    addExternalServerWorld(::std::string const& name, ::std::string const& address, int port);
+
+    MCAPI ::std::optional<::World::ExternalServerWorldError>
+    editExternalServerWorld(int id, ::std::string const& name, ::std::string const& address, int port);
+
+    MCFOLD int const getAddedServerId() const;
+
+    MCFOLD ::std::vector<::OreUI::NetworkWorldData> const& getExternalServerWorlds() const;
+
+    MCAPI ::std::optional<::World::ExternalServerWorldError> removeExternalServerWorld(int id);
     // NOLINTEND
 
 public:

@@ -12,6 +12,7 @@
 // clang-format off
 class ChangeDimensionRequest;
 class DimensionManager;
+class EntityContext;
 class EntityRegistry;
 class GameplayUserManager;
 class ILevelCrashDumpManager;
@@ -50,6 +51,12 @@ public:
         ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
         ::std::unique_ptr<::ILevelCrashDumpManager>                levelCrashDumpManager
     );
+
+    MCAPI bool _isPlayerSuspended(::Player const& player) const;
+
+    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
+
+    MCAPI bool _playerChangeDimension(::Player& player, ::ChangeDimensionRequest& changeRequest);
 
     MCAPI void handleChangeDimensionRequests();
 

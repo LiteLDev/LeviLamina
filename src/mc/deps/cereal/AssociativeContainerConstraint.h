@@ -31,12 +31,20 @@ public:
     virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea req) const /*override*/;
 
     virtual ::cereal::Constraint const* subConstraint(uint64 index) const /*override*/;
+
+    virtual ~AssociativeContainerConstraint() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void validateValue(::entt::meta_associative_container cont, ::cereal::SerializerContext& context) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

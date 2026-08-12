@@ -57,6 +57,12 @@ public:
     // NOLINTBEGIN
     MCAPI Rope();
 
+#ifdef LL_PLAT_C
+    MCAPI void _finalizeBucket(::AABBBucket& bucket);
+
+    MCAPI float _solveCollisions(bool const checkDenyList);
+#endif
+
     MCAPI void initializePins(::std::optional<::RopeParams> parameters);
 
     MCAPI ~Rope();

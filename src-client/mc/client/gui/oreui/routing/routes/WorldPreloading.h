@@ -39,6 +39,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $shouldAddToConfiguration() const;
+
     MCAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,

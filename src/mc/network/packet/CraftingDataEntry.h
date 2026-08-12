@@ -5,10 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/network/packet/CraftingDataEntryType.h"
+#include "mc/platform/Result.h"
 #include "mc/world/item/NetworkItemInstanceDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
+class ReadOnlyBinaryStream;
 class Recipe;
 class Recipes;
 // clang-format on
@@ -44,6 +46,8 @@ public:
     MCAPI void addSmithingTrimRecipe(::Recipes& recipes) const;
 
     MCAPI void addUserDataShapelessRecipe(::Recipes& recipes) const;
+
+    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 #endif
     // NOLINTEND
 };

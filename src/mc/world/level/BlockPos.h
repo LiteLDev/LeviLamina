@@ -31,7 +31,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::BlockPos east() const;
+
+    MCAPI ::BlockPos north() const;
+
+    MCAPI ::BlockPos south() const;
+
     MCAPI ::std::string toString() const;
+
+    MCAPI ::BlockPos west() const;
     // NOLINTEND
 
 public:

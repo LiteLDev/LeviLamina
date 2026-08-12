@@ -9,6 +9,7 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptEffectType; }
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -24,6 +25,15 @@ public:
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>>>
         mEffects;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _generateAllEffectsHandles(::Scripting::WeakLifetimeScope& scope);
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>>
+    get(::Scripting::WeakLifetimeScope& scope, ::std::string const& effectName);
     // NOLINTEND
 
 public:

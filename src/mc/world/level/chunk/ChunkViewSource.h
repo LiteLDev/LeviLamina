@@ -51,6 +51,8 @@ public:
 
     virtual ::std::shared_ptr<::br::worldgen::StructureInstance>
     _tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure) /*override*/;
+
+    virtual ~ChunkViewSource() /*override*/;
     // NOLINTEND
 
 public:
@@ -99,6 +101,12 @@ public:
     MCAPI void* $ctor(::ChunkViewSource const& otherChunkViewSource);
 
     MCAPI void* $ctor(::ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

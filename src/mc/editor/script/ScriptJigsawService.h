@@ -4,14 +4,21 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/deps/script_core/script_engine/scripting/Promise.h"
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
 namespace Editor { class EditorPlayerServiceProvider; }
+namespace Editor::ScriptModule { class ScriptClipboardItem; }
 namespace Editor::Services { class EditorJigsawServiceProvider; }
+namespace Editor::Services { struct EditorJigsawSection; }
+namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
+namespace Scripting { struct Error; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -45,6 +52,20 @@ public:
         ::Editor::Services::EditorJigsawServiceProvider* jigsawService,
         ::Editor::EditorPlayerServiceProvider*           playerService,
         ::Scripting::WeakLifetimeScope const&            scope
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::Promise<::std::vector<::Editor::Services::EditorJigsawSection>, ::Scripting::Error>>
+    generateJigsaw(
+        ::std::string const&                               registryName,
+        ::std::string const&                               startingPool,
+        ::std::string const&                               startTarget,
+        ::Vec3 const&                                      seed,
+        int const                                          depth,
+        int const                                          maxHorizontalDistanceFromCenter,
+        bool const                                         validateRegistry,
+        ::Editor::ScriptModule::ScriptClipboardItem const& clipboardItem,
+        ::Scripting::ScriptObjectFactory&                  factory
     );
 
     MCNAPI ::Editor::ScriptModule::ScriptJigsawService& operator=(::Editor::ScriptModule::ScriptJigsawService&& other);

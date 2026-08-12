@@ -58,13 +58,9 @@ MCNAPI ::std::string const& DEVELOPMENT_BEHAVIOR_PACKS_PATH();
 MCNAPI ::std::string const& DEVELOPMENT_RESOURCE_PACKS_PATH();
 
 MCNAPI ::std::string const& DEVELOPMENT_SKIN_PACKS_PATH();
-
-MCNAPI ::std::vector<::std::string> const& EXPECTED_EXTENSIONS();
 #endif
 
-#ifdef LL_PLAT_S
 MCNAPI ::std::vector<::std::string> const& EXPECTED_EXTENSIONS();
-#endif
 
 #ifdef LL_PLAT_C
 MCNAPI ::Core::PathBuffer<::std::string> const& GLOBAL_RESOURCE_PACKS_FILENAME();

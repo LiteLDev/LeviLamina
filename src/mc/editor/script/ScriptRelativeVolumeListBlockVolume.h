@@ -66,6 +66,27 @@ public:
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toAdd);
+
+    MCNAPI void moveTo(::Vec3 const& location);
+
+    MCNAPI void remove(
+        ::std::variant<
+            ::Vec3 const,
+            ::std::vector<::Vec3> const,
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toRemove
+    );
+
+    MCNAPI void
+    set(::std::variant<
+        ::Vec3 const,
+        ::std::vector<::Vec3> const,
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toSet);
+
+    MCNAPI void translate(::Vec3 const& offset);
     // NOLINTEND
 
 public:

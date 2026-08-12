@@ -15,7 +15,9 @@
 class ICustomBiomeSource;
 class Vec2;
 struct ActorUniqueID;
+struct DimensionType;
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Network { class MinimapUIVisibilityPayload; }
 namespace Editor::Services { class MinimapItem; }
 namespace Editor::Services { struct MinimapMarkerData; }
 namespace mce { class Color; }
@@ -141,6 +143,22 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EditorServerMinimapService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI ::std::vector<::Editor::Services::MinimapMarkerData>
+    _filterOutDimension(::std::vector<::Editor::Services::MinimapMarkerData> const& markers, ::DimensionType dim);
+
+    MCNAPI ::mce::Color _getOrAssignPlayerColor(::ActorUniqueID playerId);
+
+    MCNAPI void _handleServerTick();
+
+    MCNAPI void _handleUIVisibilityPayload(::Editor::Network::MinimapUIVisibilityPayload const& payload);
+
+    MCNAPI void _sendCustomMarkerSync(::mce::UUID const& minimapId, ::Editor::Services::MinimapItem const& minimap);
+
+    MCNAPI void _sendLocationMarkerSync(::mce::UUID const& minimapId, ::Editor::Services::MinimapItem const& minimap);
+
+    MCNAPI ::Scripting::Result_deprecated<bool>
+    _setCustomBiomeInternal(::mce::UUID const& minimapId, ::WeakRef<::ICustomBiomeSource> const& customBiomeSource);
     // NOLINTEND
 
 public:

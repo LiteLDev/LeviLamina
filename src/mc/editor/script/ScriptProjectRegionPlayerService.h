@@ -4,10 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ProjectRegion; }
+namespace Editor::ScriptModule { class ScriptProjectRegion; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -32,6 +35,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<bool> disposeRegion(::std::string const& id);
+
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptProjectRegion>>
+    getCursorRegion();
+
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptProjectRegion>>
+    getSelectionRegion();
+
     MCNAPI ~ScriptProjectRegionPlayerService();
     // NOLINTEND
 

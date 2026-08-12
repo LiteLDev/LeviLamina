@@ -14,7 +14,7 @@ public:
 
     virtual void onBeforeSimTick();
 
-    virtual void onTick(int, int) = 0;
+    virtual void onTick(int nTick, int maxTick) = 0;
 
     virtual void onInternetUpdate() = 0;
 
@@ -30,6 +30,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $onBeforeSimTick();
+
 
     // NOLINTEND
 };

@@ -12,6 +12,9 @@
 // auto generated forward declare list
 // clang-format off
 class ContentCatalogService;
+struct MinecoinSearchResults;
+namespace Bedrock::Http { class Status; }
+namespace Core { class Path; }
 // clang-format on
 
 class MinecoinCatalogModel : public ::OfferCatalogModelBase {
@@ -64,8 +67,31 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _fetchKeyArtForActiveOfferModel(::MinecoinCatalogModel::ActiveModelImageTracker& modelFetchImageInfo);
+
+    MCAPI ::MinecoinCatalogModel::ActiveModelImageTracker*
+    _findActiveModelImageTrackerByProductId(::std::string const& activeModelProductId);
+
+    MCAPI void _handleOfferSearchResults(::std::weak_ptr<bool> weakExistence, ::MinecoinSearchResults const& results);
+
+    MCAPI void _onFetchKeyArtForActiveOfferModelFinished(
+        ::std::weak_ptr<bool>         weakExistence,
+        ::std::string const&          activeModelProductId,
+        ::Bedrock::Http::Status const status,
+        ::Core::Path const&           fullpath
+    );
+
+    MCAPI void
+    _onTreatmentTagsReceived(::std::weak_ptr<bool> weakExistence, ::std::vector<::std::string> const& treatments);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::OfferCatalogStatus $update();
 
+    MCAPI void $fetchAllCoinOffers();
     // NOLINTEND
 };

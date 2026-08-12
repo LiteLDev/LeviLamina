@@ -22,6 +22,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void setCause(::std::string const& causeName);
+
+    MCAPI void setDealsDamage(::std::string const& value);
+
     MCAPI ~DamageSensorTrigger();
     // NOLINTEND
 

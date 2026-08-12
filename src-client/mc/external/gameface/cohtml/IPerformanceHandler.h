@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     virtual ~IPerformanceHandler() = default;
 
-    virtual void WriteLog(char const*, uint64) = 0;
+    virtual void WriteLog(char const* message, uint64 length) = 0;
     // NOLINTEND
 
 public:

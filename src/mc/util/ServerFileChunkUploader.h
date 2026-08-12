@@ -92,7 +92,11 @@ public:
         ::std::function<void(::std::vector<::FileChunkInfo>)> callback
     ) const;
 
+#ifdef LL_PLAT_S
     MCFOLD void $confirmChunkReceived(::FileInfo const&, ::FileChunkInfo const&);
+#else // LL_PLAT_C
+    MCFOLD void $confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
+#endif
 
     MCAPI void $uploadChunk(
         ::FileInfo const&           file,

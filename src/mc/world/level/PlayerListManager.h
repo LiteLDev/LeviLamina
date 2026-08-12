@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 class IGameplayUserManagerConnector;
 class PacketSender;
 class PlayerListEntry;
@@ -52,6 +53,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _onAnyGameplayUsersRemoved();
+
+    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
+
+    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
+
 #ifdef LL_PLAT_C
     MCAPI void addPlayerEntry(::mce::UUID const& uuid, ::PlayerListEntry&& playerListEntry);
 #endif
@@ -59,6 +66,10 @@ public:
     MCAPI void initializeWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
 #ifdef LL_PLAT_C
+    MCAPI void removeByUUID(::mce::UUID const& uuid);
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI void removeByUUID(::mce::UUID const& uuid);
 #endif
 

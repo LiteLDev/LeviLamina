@@ -47,7 +47,7 @@ public:
 
     virtual int getValue() const /*override*/;
 
-    virtual void setValue(int) /*override*/;
+    virtual void setValue(int index) /*override*/;
 
     virtual ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
@@ -62,6 +62,8 @@ public:
         ::std::function<::Bedrock::PubSub::Subscription(::std::function<void(::LevelDataWrapper&)>)>
             registerLevelChangeCallback
     );
+
+    MCAPI void _updateData();
     // NOLINTEND
 
 public:
@@ -77,7 +79,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $canModify() const;
 
+    MCAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
+
+    MCAPI int $getValue() const;
+
+    MCAPI void $setValue(int index);
+
+    MCFOLD ::std::optional<
+        ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
+    $getInfo() const;
     // NOLINTEND
 };
 

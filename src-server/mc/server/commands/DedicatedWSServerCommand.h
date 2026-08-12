@@ -22,12 +22,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 };

@@ -37,14 +37,18 @@ public:
         // NOLINTBEGIN
         virtual ::GeometryAtlas::TileDefinition const& getDefinition() const /*override*/;
 
-        virtual void submitUpdate(::GeometryAtlas::IAtlasTile&, ::GeometryAtlas::InitializeCallbackPayload) const
+        virtual void
+        submitUpdate(::GeometryAtlas::IAtlasTile& tile, ::GeometryAtlas::InitializeCallbackPayload init) const
             /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCFOLD ::GeometryAtlas::TileDefinition const& $getDefinition() const;
 
+        MCAPI void
+        $submitUpdate(::GeometryAtlas::IAtlasTile& tile, ::GeometryAtlas::InitializeCallbackPayload init) const;
         // NOLINTEND
     };
 
@@ -58,16 +62,20 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::shared_ptr<::GeometryAtlas::IAtlasTile>
-    createTile(::GeometryAtlas::IGeometryAtlas&, ::GeometryAtlas::TileDefinition const&) /*override*/;
+    createTile(::GeometryAtlas::IGeometryAtlas& atlas, ::GeometryAtlas::TileDefinition const& definition) /*override*/;
 
     virtual ::std::unique_ptr<::OreUI::ITileResourceResolver::ITileResourceRequest>
-        tryResolveRequest(::std::string_view) /*override*/;
+    tryResolveRequest(::std::string_view url) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::GeometryAtlas::IAtlasTile>
+    $createTile(::GeometryAtlas::IGeometryAtlas& atlas, ::GeometryAtlas::TileDefinition const& definition);
 
+    MCAPI ::std::unique_ptr<::OreUI::ITileResourceResolver::ITileResourceRequest>
+    $tryResolveRequest(::std::string_view url);
     // NOLINTEND
 };
 

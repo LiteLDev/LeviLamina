@@ -8,8 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ResourceLocationPair;
 struct BedrockTextureData;
 namespace cg { class TextureSetDefinition; }
+namespace cg { class TextureSetImageContainer; }
 namespace cg { class TextureSetImageDescription; }
 namespace mce { class TextureContainer; }
 namespace mce { struct TextureDescription; }
@@ -33,6 +35,20 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BedrockTexture();
+
+    MCAPI ::std::optional<::ResourceLocationPair> const _getLayerLocation(
+        ::gsl::not_null<::std::shared_ptr<::cg::TextureSetDefinition>> const textureSetDefinition,
+        ::cg::TextureSetLayerType                                            layerType
+    );
+
+    MCAPI bool _loadFromImageBuffer(
+        ::cg::TextureSetImageContainer&         imageContainer,
+        ::cg::TextureSetLayerType const         textureType,
+        ::mce::TextureResourceService&          textureResourceService,
+        ::cg::TextureSetImageDescription const& setDescription,
+        ::IsMissingTexture                      isMissing,
+        ::std::string_view                      debugName
+    ) const;
 
     MCAPI ::cg::TextureSetImageDescription getTextureSetImageDescription() const;
 

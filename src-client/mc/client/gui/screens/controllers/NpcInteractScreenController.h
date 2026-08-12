@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/DeferredTextObject.h"
 #include "mc/client/gui/DirtyFlag.h"
+#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/ClientInstanceScreenController.h"
 #include "mc/world/actor/npc/action_type/Enum.h"
 #include "mc/world/events/EventResult.h"
@@ -14,8 +15,10 @@
 // clang-format off
 class ClientInstanceScreenModel;
 class Player;
+class UIPropertyBag;
 struct ActorUniqueID;
 struct INpcDialogueData;
+struct NpcGUIOffset;
 namespace Json { class Value; }
 // clang-format on
 
@@ -101,9 +104,9 @@ public:
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
-    virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData>) /*override*/;
+    virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> dialogueData) /*override*/;
 
-    virtual ::EventResult onNpcInteractScreenClose(::ActorUniqueID, bool) /*override*/;
+    virtual ::EventResult onNpcInteractScreenClose(::ActorUniqueID npcId, bool) /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
     // NOLINTEND
@@ -116,6 +119,22 @@ public:
         ::Player&                                      player,
         ::std::shared_ptr<::INpcDialogueData>          dialogueData
     );
+
+    MCAPI void _addNewDeferredButtonTexts(uint64 actionIndex);
+
+    MCAPI void _handleTextChanged(::NpcInteractScreenController::NpcTextEdit edit, int index);
+
+    MCAPI bool _isAddActionAllowed();
+
+    MCAPI ::ui::ViewRequest _leaveFrom(::NpcInteractScreenController::Section fromSection);
+
+    MCAPI void _saveEditsToServer();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _bagVecs(::UIPropertyBag& bag, ::NpcGUIOffset const& offsets);
     // NOLINTEND
 
 public:
@@ -131,6 +150,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI void $onTerminate();
+
+    MCAPI void $onCreation();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI ::EventResult $onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> dialogueData);
+
+    MCAPI ::EventResult $onNpcInteractScreenClose(::ActorUniqueID npcId, bool);
+
+    MCAPI bool $_isStillValid() const;
     // NOLINTEND
 };

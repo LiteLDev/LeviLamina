@@ -31,11 +31,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCFOLD ::SemVersion $version() const;
 
     MCFOLD ::Puv::Input::Data $data() const;
-#endif
 
 
     // NOLINTEND

@@ -87,7 +87,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD void $onOperationModeChanged(::OperationMode operationMode);
     // NOLINTEND
 };
 

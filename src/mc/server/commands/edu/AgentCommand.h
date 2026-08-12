@@ -82,7 +82,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void createAgent(::Player& player, ::CommandOrigin const& origin, ::CommandOutput& output) const;
+
+    MCAPI void reportSuccess(bool success, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
@@ -94,6 +102,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
 
     // NOLINTEND
 };

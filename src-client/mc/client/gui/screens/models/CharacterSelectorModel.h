@@ -53,6 +53,8 @@ public:
         // NOLINTBEGIN
         MCAPI bool nextPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController);
 
+        MCAPI void openCurrentPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController) const;
+
         MCAPI bool prevPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController);
         // NOLINTEND
     };
@@ -100,6 +102,8 @@ public:
     );
 
     MCAPI void _closeCreatePersonaPopup();
+
+    MCAPI void _loadContentFromSkins();
 
     MCAPI void _setUpBeforeCharacterEditorScreen();
 

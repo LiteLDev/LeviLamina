@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/container/small_vector.h"
+
 namespace VoxelShapes {
 
 class IndexMerger {
@@ -17,6 +20,23 @@ public:
     IndexMerger& operator=(IndexMerger const&);
     IndexMerger(IndexMerger const&);
     IndexMerger();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI IndexMerger(
+        ::Bedrock::small_vector<float, 12> const& first,
+        ::Bedrock::small_vector<float, 12> const& second,
+        bool                                      canTrimExcessOfFirst,
+        bool                                      canTrimExcessOfSecond
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };
 
 } // namespace VoxelShapes

@@ -86,9 +86,17 @@ public:
 
     MCAPI ::glm::ivec3 $getSpan() const;
 
+#ifdef LL_PLAT_S
     MCAPI int $getCapacity() const;
+#else // LL_PLAT_C
+    MCFOLD int $getCapacity() const;
+#endif
 
+#ifdef LL_PLAT_S
     MCAPI bool $isInside(::BlockPos const& pos) const;
+#else // LL_PLAT_C
+    MCFOLD bool $isInside(::BlockPos const& pos) const;
+#endif
 
     MCAPI void $translate(::BlockPos const& delta);
 

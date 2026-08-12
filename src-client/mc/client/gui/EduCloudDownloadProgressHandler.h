@@ -84,6 +84,8 @@ public:
         ::std::function<void(::SetDownloadProgressHandlerError)> const& setDownloadErrorsStatusCallbacks,
         ::std::function<void(bool)> const&                              setReadyToLaunch
     );
+
+    MCAPI void _leaveProgressHandler(::MinecraftScreenModel& minecraftScreenModel);
     // NOLINTEND
 
 public:
@@ -103,6 +105,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
+    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCAPI ::std::string $getTitleText() const;
+
+    MCAPI ::std::string $getName() const;
+
+    MCAPI ::std::string $getTTSProgressMessage() const;
+
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCFOLD ::ProgressAnimation $showLoadingBar() const;
     // NOLINTEND
 };

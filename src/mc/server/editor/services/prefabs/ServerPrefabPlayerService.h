@@ -11,10 +11,16 @@
 
 // auto generated forward declare list
 // clang-format off
+struct DimensionType;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Network { class PrefabDBClientInitializedPayload; }
+namespace Editor::Network { class PrefabDBClientPlayerPositionUpdatePayload; }
+namespace Editor::Network { class PrefabDBClientUserClickInstancePayload; }
 namespace Editor::Prefabs { class PrefabDBPrefabInstance; }
+namespace Editor::Prefabs { struct PrefabDBInstanceChangeEvent; }
 namespace Editor::Prefabs { struct PrefabDBInstanceInteractionEvent; }
+namespace Editor::Prefabs { struct PrefabDBTemplateChangeEvent; }
 // clang-format on
 
 namespace Editor::Services {
@@ -74,6 +80,24 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ServerPrefabPlayerService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI void
+    _buildAndSendVisibilityPayload(::DimensionType const& oldDimension, ::DimensionType const& newDimension);
+
+    MCNAPI void _handleClientInitializedPayload(::Editor::Network::PrefabDBClientInitializedPayload const& payload);
+
+    MCNAPI void _handleClientPlayerPositionUpdatePayload(
+        ::Editor::Network::PrefabDBClientPlayerPositionUpdatePayload const& payload
+    );
+
+    MCNAPI void
+    _handleClientUserClickInstancePayload(::Editor::Network::PrefabDBClientUserClickInstancePayload const& payload);
+
+    MCNAPI void _handlePrefabDBInstanceChange(::Editor::Prefabs::PrefabDBInstanceChangeEvent const& event);
+
+    MCNAPI void _handlePrefabDBTemplateChange(::Editor::Prefabs::PrefabDBTemplateChangeEvent const& event);
+
+    MCNAPI void _processPendingEvents();
     // NOLINTEND
 
 public:

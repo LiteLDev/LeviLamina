@@ -2,9 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct IScriptSerializable; }
 namespace ScriptModuleMinecraftNet { class IScriptNetSerializer; }
+namespace ScriptModuleMinecraftNet { struct ScriptNetSerializeResult; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -26,6 +31,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void registerSerializer(::std::unique_ptr<::ScriptModuleMinecraftNet::IScriptNetSerializer> serializer);
+
+    MCNAPI ::std::optional<::ScriptModuleMinecraftNet::ScriptNetSerializeResult>
+    serialize(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::IScriptSerializable> const& handle) const;
     // NOLINTEND
 
 public:

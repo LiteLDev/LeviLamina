@@ -47,6 +47,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::Path> _findNewTarget() const;
+
+    MCAPI void _moveToTarget();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

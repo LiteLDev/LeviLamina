@@ -17,13 +17,13 @@ class SmoothLightBakingStep : public ::ClientBlockPipeline::Step {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const&) const /*override*/;
+    virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::ClientBlockPipeline::StepResult $run(::ClientBlockPipeline::Inputs const& inputs) const;
     // NOLINTEND
 };
 

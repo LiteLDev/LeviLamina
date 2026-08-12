@@ -65,6 +65,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $onAppSuspended();
 
+    MCFOLD void $onAppTerminated();
     // NOLINTEND
 };

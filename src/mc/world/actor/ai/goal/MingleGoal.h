@@ -3,8 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/components/MingleComponent.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/actor/ai/goal/MoveToPOIGoal.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class MingleComponent;
+// clang-format on
 
 class MingleGoal : public ::MoveToPOIGoal {
 public:
@@ -38,8 +45,34 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _lookAt(::Actor* partner);
+
+    MCAPI void _partnerWith(::Actor& target);
+
+    MCAPI bool _validatePartnerState(
+        ::MingleComponent::MingleState expectedState,
+        ::MingleComponent&             mingleComponent,
+        bool                           requireWithinInteractRange
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $canUse();
+
+    MCAPI bool $canContinueToUse();
+
+    MCAPI void $start();
+
+    MCAPI void $stop();
+
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
 
     // NOLINTEND
 };

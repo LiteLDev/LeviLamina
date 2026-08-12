@@ -6,6 +6,8 @@
 #include "mc/client/gui/screens/models/ContentFlags.h"
 #include "mc/client/gui/screens/models/ContentSource.h"
 #include "mc/client/gui/screens/models/ContentType.h"
+#include "mc/client/gui/screens/models/PackListType.h"
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -13,6 +15,7 @@
 class IContentKeyProvider;
 class IPackManagerContentQueries;
 class IPackManifestFactory;
+class Pack;
 class PackSettingsFactory;
 struct ContentItem;
 struct PackContentItem;
@@ -63,9 +66,35 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _applySelectedPacksCache(
+        ::PackManagerContentSourceData& packData,
+        ::std::vector<::PackModel>&     selected,
+        ::std::vector<::PackModel>&     available
+    ) const;
+
+    MCAPI ::std::shared_ptr<::PackContentItem> _copyAndSetValuesFromPackContentItemAndData(
+        ::std::shared_ptr<::PackContentItem const> const& baseItem,
+        ::PackManagerContentSourceData const&             packData
+    );
+
+    MCAPI ::std::shared_ptr<::PackContentItem> _createPackContentItem(
+        ::Pack const&                                      pack,
+        ::PackModel&                                       model,
+        ::PackListType                                     listType,
+        uint64                                             position,
+        ::std::optional<::std::string>                     worldId,
+        ::std::optional<::Core::PathBuffer<::std::string>> worldPath
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $load();
+
+    MCAPI void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
 
     MCAPI void
     $_createSelectedPackContentItems(::PackManagerContentSourceData& packData, ::std::vector<::PackModel>& selected);

@@ -46,5 +46,7 @@ public:
     MCAPI void reloadTickingTextures();
 
     MCAPI void resume();
+
+    MCAPI ~MinecraftGameplayGraphicsResources();
     // NOLINTEND
 };

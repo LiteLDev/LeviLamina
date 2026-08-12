@@ -47,13 +47,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCAPI int $getBackgroundStyle(int, bool) const;
+#else // LL_PLAT_C
     MCAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const&) const;
+#else // LL_PLAT_C
     MCAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::ItemInstance const& $getRecipeItem(int) const;
+#else // LL_PLAT_C
     MCAPI ::ItemInstance const& $getRecipeItem(int index) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $canRemove(int, int) const;
+#else // LL_PLAT_C
     MCFOLD bool $canRemove(int slot, int removeCount) const;
 #endif
 

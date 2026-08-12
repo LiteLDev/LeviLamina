@@ -58,7 +58,6 @@ public:
 
     virtual ::std::string_view getServiceName() const /*override*/;
 
-#ifdef LL_PLAT_S
     virtual ::Scripting::Result_deprecated<::Bedrock::NonOwnerPointer<::Editor::API::EditorExtension>>
     registerExtension(
         ::std::string const&           extensionName,
@@ -70,79 +69,30 @@ public:
         ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options,
         ::Editor::API::ServerScriptPackType                               packType
     ) /*override*/;
-#else // LL_PLAT_C
-    virtual ::Scripting::Result_deprecated<::Bedrock::NonOwnerPointer<::Editor::API::EditorExtension>>
-    registerExtension(
-        ::std::string const&,
-        ::Scripting::WeakLifetimeScope,
-        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>,
-        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>,
-        ::std::optional<::Editor::API::EditorExtensionOptionalParameters>,
-        ::Editor::API::ServerScriptPackType
-    ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual ::Scripting::Result_deprecated<::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>>
     getExtension(::std::string const& extensionName) /*override*/;
-#else // LL_PLAT_C
-    virtual ::Scripting::Result_deprecated<::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>>
-    getExtension(::std::string const&) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual bool hasExtension(::std::string const& extensionName) /*override*/;
-#else // LL_PLAT_C
-    virtual bool hasExtension(::std::string const&) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual void forEachExtension(
         ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
-#else // LL_PLAT_C
-    virtual void forEachExtension(
-        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>
-    ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual void forEachExtensionOrdered(
         ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
-#else // LL_PLAT_C
-    virtual void forEachExtensionOrdered(
-        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>
-    ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual void forEachExtensionReverse(
         ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) /*override*/;
-#else // LL_PLAT_C
-    virtual void forEachExtensionReverse(
-        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>
-    ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerForScriptSystemRebuildEvent(
         ::std::function<::Scripting::Result_deprecated<void>(::std::optional<::Scripting::ContextId>)> handler
     ) /*override*/;
-#else // LL_PLAT_C
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerForScriptSystemRebuildEvent(
-        ::std::function<::Scripting::Result_deprecated<void>(::std::optional<::Scripting::ContextId>)>
-    ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result_deprecated<void>()> handler) /*override*/;
-#else // LL_PLAT_C
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-        registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result_deprecated<void>()>) /*override*/;
-#endif
 
     virtual ::Scripting::Result_deprecated<void> destroyRegisteredExtensions() /*override*/;
 
@@ -168,7 +118,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI ::Scripting::Result_deprecated<void> $init();
 
     MCNAPI ::Scripting::Result_deprecated<void> $ready();
@@ -213,7 +162,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $destroyRegisteredExtensions();
 
     MCNAPI ::Scripting::Result_deprecated<void> $createExtensionContexts();
-#endif
 
 
     // NOLINTEND

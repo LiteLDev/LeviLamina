@@ -12,9 +12,12 @@
 // clang-format off
 class Actor;
 class ItemDescriptor;
+class ItemStack;
 class Mob;
 class Path;
 class WeakEntityRef;
+struct DistanceSortedActor;
+struct Shareable;
 // clang-format on
 
 class PickupItemsGoal : public ::BaseGoal {
@@ -64,6 +67,27 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+
+    virtual ~PickupItemsGoal() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _dropItem(::ItemStack const& item) const;
+
+    MCAPI ::std::vector<::WeakEntityRef>
+    _filterValidTargets(::std::vector<::DistanceSortedActor> const& entities) const;
+
+    MCAPI ::Shareable const* _getShareableItem(::ItemStack const& item) const;
+
+    MCAPI bool _hasRoomForCarriedItem() const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

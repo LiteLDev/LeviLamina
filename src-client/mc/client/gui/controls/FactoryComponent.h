@@ -46,6 +46,8 @@ public:
     // NOLINTBEGIN
     MCAPI FactoryComponent(::UIControl& owner, ::std::weak_ptr<::UIControlFactory> factoryPtr);
 
+    MCAPI void _prepareControlForDestruction(::std::shared_ptr<::UIControl> control);
+
     MCAPI void addVariable(::std::string const& varName, ::Json::Value const& var);
 
     MCAPI ::std::weak_ptr<::UIControl> create(::UIPropertyBag const& properties, bool ensureCreation);

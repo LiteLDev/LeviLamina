@@ -36,6 +36,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsWorldEditorWorldDetailsCommandsFacet(::std::weak_ptr<::Realms::RealmsWorldEditor> worldEditor);
+
+    MCAPI void saveRealmDetails(::std::string const& realmId) const;
+
+    MCAPI void setRealmsAreTexturePacksRequired(bool areTexturesRequired) const;
+
+    MCAPI void setRealmsDescription(::std::string const& description) const;
+
+    MCAPI void setRealmsName(::std::string const& name) const;
     // NOLINTEND
 
 public:

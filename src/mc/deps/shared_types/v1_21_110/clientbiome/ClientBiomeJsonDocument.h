@@ -29,7 +29,13 @@ public:
         // clang-format on
 
         // ClientBiomeJsonObject inner types define
-        struct ComponentMap : public ::ClientBiomeJsonDocumentHelper::ComponentMap {};
+        struct ComponentMap : public ::ClientBiomeJsonDocumentHelper::ComponentMap {
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            // NOLINTEND
+        };
 
     public:
         // member variables

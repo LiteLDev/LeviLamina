@@ -15,6 +15,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::string_view $getStructureName() const;
+
 
     // NOLINTEND
 };

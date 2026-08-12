@@ -54,7 +54,7 @@ public:
 
     virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onRetry(::MinecraftScreenModel&) /*override*/;
+    virtual void onRetry(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -76,6 +76,8 @@ public:
         ::std::shared_ptr<::PlayScreenModel>       model,
         ::brstd::move_only_function<void()>&       reopenPasscodeEntry
     );
+
+    MCAPI void _handleErrors(::MinecraftScreenModel& minecraftScreenModel);
     // NOLINTEND
 
 public:
@@ -92,6 +94,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
+    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $onRetry(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCAPI ::std::string $getTitleText() const;
+
+    MCAPI ::std::string $getName() const;
+
+    MCFOLD ::ProgressAnimation $showLoadingBar() const;
     // NOLINTEND
 };

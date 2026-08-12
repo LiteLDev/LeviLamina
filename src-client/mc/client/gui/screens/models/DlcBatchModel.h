@@ -149,6 +149,8 @@ public:
         ::std::vector<::DlcId>         dlcIds,
         ::std::vector<::PackIdVersion> packIds
     );
+
+    MCAPI bool _canBeginDownload() const;
     // NOLINTEND
 
 public:

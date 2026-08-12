@@ -56,27 +56,48 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void downloadPacks(
-        ::std::vector<::std::string> const&,
-        ::std::function<void()>,
-        ::std::function<void(::World::PackDownloadError)>
+        ::std::vector<::std::string> const&               productIds,
+        ::std::function<void()>                           onCompleteCallback,
+        ::std::function<void(::World::PackDownloadError)> onErrorCallback
     ) /*override*/;
 
     virtual ::World::PackDownloadProgressInfo getProgress() /*override*/;
 
-    virtual void getDownloadingPackTitles(::std::function<void(::std::vector<::std::string>)>) /*override*/;
+    virtual void
+    getDownloadingPackTitles(::std::function<void(::std::vector<::std::string>)> packTitlesCallback) /*override*/;
 
     virtual void cancelDownloadPack() /*override*/;
 
-    virtual void getPackSizes(::std::vector<::std::string> const&, ::std::function<void(uint64)>) /*override*/;
+    virtual void getPackSizes(
+        ::std::vector<::std::string> const& productIds,
+        ::std::function<void(uint64)>       onCompleteCallback
+    ) /*override*/;
 
-    virtual ::World::PackCheckResult checkDlc(::std::string const&, ::PackIdVersion const&, bool const) const
+    virtual ::World::PackCheckResult
+    checkDlc(::std::string const& levelId, ::PackIdVersion const& packIdVersion, bool const isForRealms) const
         /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $downloadPacks(
+        ::std::vector<::std::string> const&               productIds,
+        ::std::function<void()>                           onCompleteCallback,
+        ::std::function<void(::World::PackDownloadError)> onErrorCallback
+    );
 
+    MCAPI ::World::PackDownloadProgressInfo $getProgress();
+
+    MCAPI void $getDownloadingPackTitles(::std::function<void(::std::vector<::std::string>)> packTitlesCallback);
+
+    MCAPI void $cancelDownloadPack();
+
+    MCAPI void
+    $getPackSizes(::std::vector<::std::string> const& productIds, ::std::function<void(uint64)> onCompleteCallback);
+
+    MCAPI ::World::PackCheckResult
+    $checkDlc(::std::string const& levelId, ::PackIdVersion const& packIdVersion, bool const isForRealms) const;
     // NOLINTEND
 };
 

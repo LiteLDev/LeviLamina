@@ -47,8 +47,14 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCNAPI ::Bedrock::BootstrapConfig::LoadResult _makeBootstrapError(char const*, ...);
+    MCNAPI ::Bedrock::BootstrapConfig::LoadResult _makeBootstrapError(char const* fmt, ...);
+#endif
 
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::BootstrapConfig::LoadResult _makeBootstrapError(char const* fmt, ...);
+#endif
+
+#ifdef LL_PLAT_S
     MCNAPI ::Bedrock::BootstrapConfig::LoadResult initialize(char const* fileName);
 #endif
     // NOLINTEND

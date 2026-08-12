@@ -49,6 +49,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI int findInventorySlotForFarmSeeds();
+
+    MCAPI bool trySowCrop(::BlockSource& region, ::BlockPos const& farmlandPos);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

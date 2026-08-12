@@ -36,6 +36,10 @@ public:
     // NOLINTBEGIN
     MCAPI PageContent(::PageContent const&);
 
+#ifdef LL_PLAT_S
+    MCAPI PageContent(::std::string nText, ::std::optional<::std::string> nFilteredText);
+#endif
+
 #ifdef LL_PLAT_C
     MCAPI PageContent(::std::string nText, ::std::optional<::std::string> nFilteredText);
 #endif

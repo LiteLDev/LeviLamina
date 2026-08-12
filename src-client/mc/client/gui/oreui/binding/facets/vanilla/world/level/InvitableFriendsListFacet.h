@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/FriendsLoadingState.h"
+#include "mc/client/social/FriendInviteType.h"
 #include "mc/client/social/InvitableFriendsHandler.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -60,6 +61,18 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>                     userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>                resourceAllowList
     );
+
+    MCAPI void _fetchInvitableFriends();
+
+    MCFOLD ::std::vector<::OreUI::InvitableFriendBindings> const& getInvitableFriends();
+
+    MCFOLD ::OreUI::FriendsLoadingState getPlatformFriendsLoadingState() const;
+
+    MCAPI ::OreUI::FriendsLoadingState getXblFriendsLoadingState() const;
+
+    MCAPI bool const hasPlatformIcons() const;
+
+    MCAPI void sendInvite(::std::string const userId, ::Social::FriendInviteType const entryType);
     // NOLINTEND
 
 public:
@@ -83,7 +96,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

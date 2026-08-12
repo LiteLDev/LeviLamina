@@ -26,7 +26,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void render(::BaseActorRenderContext&, ::BlockActorRenderData&) /*override*/;
+    virtual void
+    render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
 
     virtual void
     renderAlpha(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
@@ -35,6 +36,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
 
+    MCAPI void $renderAlpha(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 };

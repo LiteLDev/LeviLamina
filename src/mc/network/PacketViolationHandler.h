@@ -27,9 +27,9 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::PacketViolationResponse checkForViolation(
-        ::MinecraftPacketIds,
-        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const&,
-        bool*
+        ::MinecraftPacketIds                                                     packetId,
+        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result,
+        bool*                                                                    outIsNewOrUpdatedViolation
     ) /*override*/;
 
     virtual uint getTelemetryData() /*override*/;
@@ -38,6 +38,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::PacketViolationResponse $checkForViolation(
+        ::MinecraftPacketIds                                                     packetId,
+        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result,
+        bool*                                                                    outIsNewOrUpdatedViolation
+    );
+
+    MCNAPI uint $getTelemetryData();
+
 
     // NOLINTEND
 };

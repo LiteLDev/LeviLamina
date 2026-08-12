@@ -45,6 +45,13 @@ public:
         ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector
     );
 
+    MCNAPI static ::Core::Result replaceFlatFileManifest(
+        ::Core::FileSystemImpl&                            transaction,
+        ::Core::PathView                                   flatFileManifestPath,
+        ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector,
+        bool                                               keepCached
+    );
+
     MCNAPI static ::Core::Result transferFlatFileDirectory(
         ::Core::FileSystemImpl* sourceTransaction,
         ::Core::PathView        sourceDirectoryPath,

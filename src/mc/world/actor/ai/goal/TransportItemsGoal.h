@@ -84,6 +84,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _canSeeTarget(::BlockPos const& targetPosition) const;
+
+    MCAPI void _executeEvent(::TransportItemsGoal::Event event) const;
+
+    MCAPI void _reset();
+
+    MCAPI void _startCooldown();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

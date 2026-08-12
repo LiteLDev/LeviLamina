@@ -48,14 +48,26 @@ public:
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
-    virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData>) /*override*/;
+    virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> data) /*override*/;
 
-    virtual ::EventResult onNpcInteractScreenClose(::ActorUniqueID, bool) /*override*/;
+    virtual ::EventResult onNpcInteractScreenClose(::ActorUniqueID npcId, bool performClosingActions) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _leaveScreen(bool performClosingActions);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onCreation();
 
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI ::EventResult $onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> data);
+
+    MCAPI ::EventResult $onNpcInteractScreenClose(::ActorUniqueID npcId, bool performClosingActions);
     // NOLINTEND
 };

@@ -7,6 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { struct LoaderConfig; }
+namespace cereal { struct SaverConfig; }
+namespace cereal { struct SchemaReader; }
+namespace cereal { struct SchemaWriter; }
 namespace cereal::internal { class BasicSchema; }
 // clang-format on
 
@@ -18,6 +22,19 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 696, ::cereal::SerializerContext>          mContext;
     ::ll::TypedStorage<8, 8, ::cereal::internal::BasicSchema const*> mSchema;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool load(
+        ::cereal::SchemaReader&       reader,
+        ::entt::meta_handle           data,
+        ::entt::meta_any const&       loadContext,
+        ::cereal::LoaderConfig const& config
+    );
+
+    MCAPI bool save(::cereal::SchemaWriter& writer, ::entt::meta_handle data, ::cereal::SaverConfig const& config);
     // NOLINTEND
 };
 

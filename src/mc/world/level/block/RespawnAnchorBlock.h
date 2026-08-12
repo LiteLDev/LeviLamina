@@ -11,6 +11,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class ItemStack;
+class Player;
 struct BlockAnimateTickData;
 struct Brightness;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -50,6 +51,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _bumpCharge(::BlockSource& region, ::BlockPos const& pos, ::Player* source, short const delta);
+
     MCAPI static bool
     addItem(::ItemStack const& item, ::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
     // NOLINTEND

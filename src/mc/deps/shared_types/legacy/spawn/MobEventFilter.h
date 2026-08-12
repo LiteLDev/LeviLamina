@@ -10,6 +10,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mEvent;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD bool operator==(::SharedTypes::Legacy::Spawn::MobEventFilter const&) const;
+    // NOLINTEND
 };
 
 } // namespace SharedTypes::Legacy::Spawn

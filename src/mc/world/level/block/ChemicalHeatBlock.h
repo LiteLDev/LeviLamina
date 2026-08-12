@@ -8,6 +8,9 @@
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
+class BlockPos;
+class BlockSource;
+class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
@@ -30,6 +33,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ChemicalHeatBlock(::std::string const& nameId, int id);
+
+    MCAPI void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 

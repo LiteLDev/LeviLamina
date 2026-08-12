@@ -35,6 +35,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmBackupsCommandsFacet(::std::shared_ptr<::Realms::RealmsBackups> realmsBackups);
+
+    MCAPI void clearRealmBackupsState();
+
+    MCAPI void downloadRealmWorld(::std::string const& realmId, ::std::string const& realmName, int activeSlotIndex);
     // NOLINTEND
 
 public:

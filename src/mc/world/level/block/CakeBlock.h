@@ -14,6 +14,7 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class ItemInstance;
+class Player;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
@@ -50,6 +51,13 @@ public:
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    removeCakeSlice(::Player& player, ::BlockSource& region, ::BlockPos const& pos, ::Block const* cakeBlock);
     // NOLINTEND
 
 public:

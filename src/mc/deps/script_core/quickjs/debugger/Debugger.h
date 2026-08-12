@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 struct JSContext;
+struct JSRuntime;
+struct JSValue;
 // clang-format on
 
 namespace Scripting::QuickJS {
@@ -35,7 +37,11 @@ public:
     // NOLINTBEGIN
     virtual ~Debugger() /*override*/ = default;
 
-    virtual bool attach(bool, ::std::optional<::std::string>, ::std::function<void(::std::string_view)>) /*override*/;
+    virtual bool attach(
+        bool                                      performHandshake,
+        ::std::optional<::std::string>            targetModuleUuid,
+        ::std::function<void(::std::string_view)> handler
+    ) /*override*/;
 
     virtual void detach() /*override*/;
 
@@ -45,8 +51,44 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static uint ContextToId(::JSContext* ctx, void*);
+
+    MCNAPI static char const* ContextToModuleUuidLowerCase(::JSContext* ctx, void*);
+
+    MCNAPI static void MessageHandler(void* udata, char const* message, uint64 length);
+
+    MCNAPI static void NotifyResume(void* udata);
+
+    MCNAPI static char const* ToTypeName(::JSContext* ctx, ::JSValue val);
+
+    MCNAPI static void TransportClose(::JSRuntime*, void* udata);
+
+    MCNAPI static uint64 TransportPeek(void* udata);
+
+    MCNAPI static uint64 TransportRead(void* udata, char* buffer, uint64 length);
+
+    MCNAPI static uint64 TransportWrite(void* udata, char const* buffer, uint64 length);
+
+    MCNAPI static int ValidatePath(void* udata, char const* path);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $attach(
+        bool                                      performHandshake,
+        ::std::optional<::std::string>            targetModuleUuid,
+        ::std::function<void(::std::string_view)> handler
+    );
+
+    MCNAPI void $detach();
+
+    MCNAPI bool $closed() const;
+
+    MCNAPI void $pumpMessages();
+
 
     // NOLINTEND
 };

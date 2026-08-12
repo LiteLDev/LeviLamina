@@ -45,9 +45,9 @@ public:
     // NOLINTBEGIN
     virtual ~SpecificEnchantFunction() /*override*/ = default;
 
-    virtual void apply(::ItemStack&, ::Random&, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
-    virtual void apply(::ItemInstance&, ::Random&, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
@@ -62,6 +62,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+
+    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context);
+
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
+
 
     // NOLINTEND
 };

@@ -235,7 +235,7 @@ public:
     ) const;
 
     virtual void doSave(
-        ::cereal::SchemaWriter&              writer,
+        ::cereal::SchemaWriter&              value,
         ::entt::meta_any const&              any,
         ::cereal::internal::SaveState const& state
     ) const;
@@ -271,6 +271,19 @@ public:
     MCFOLD bool $doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
 
     MCFOLD ::cereal::internal::BasicSchema const& $doUnwrap(::entt::meta_any& elem, bool fillIfEmpty) const;
+
+    MCAPI void $doLoad(
+        ::cereal::SchemaReader&              reader,
+        ::entt::meta_any&                    any,
+        ::entt::meta_any const&              udata,
+        ::cereal::internal::LoadState const& state
+    ) const;
+
+    MCAPI void $doSave(
+        ::cereal::SchemaWriter&              value,
+        ::entt::meta_any const&              any,
+        ::cereal::internal::SaveState const& state
+    ) const;
 
 
     // NOLINTEND

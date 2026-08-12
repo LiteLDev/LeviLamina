@@ -49,6 +49,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager const> userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>  resourceAllowList
     );
+
+    MCFOLD ::std::vector<::OreUI::AddFriendUserItem>& getDisplayableList();
+
+    MCAPI bool isDataLoading() const;
+
+    MCAPI void load(::std::string const& xuid);
     // NOLINTEND
 
 public:
@@ -69,7 +75,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

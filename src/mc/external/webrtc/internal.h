@@ -35,8 +35,7 @@ MCNAPI void GeneratePacketMasks(
 MCNAPI void
 InsertZeroColumns(int num_zeros, uchar* new_mask, int new_mask_bytes, int num_fec_packets, int new_bit_index);
 
-MCNAPI ::webrtc::ArrayView<uchar const, 18446744073709546905>
-LookUpInFecTable(uchar const* table, int media_packet_index, int fec_index);
+MCNAPI ::webrtc::ArrayView<uchar const> LookUpInFecTable(uchar const* table, int media_packet_index, int fec_index);
 
 MCNAPI uint64 PacketMaskSize(uint64 num_sequence_numbers);
 // NOLINTEND

@@ -51,6 +51,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $handleLicenseChanged();
 
+    MCFOLD ::ui::SceneType $getSceneType() const;
+
+    MCFOLD ::std::string $_getButtonADescription();
     // NOLINTEND
 };

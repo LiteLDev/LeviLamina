@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class EntityContext;
 class Mob;
 // clang-format on
@@ -21,6 +22,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _cleanUp(::Mob& mob);
+
+    MCAPI void _tryToggleDoorState(::Block const& block, ::Mob& mob, ::BlockPos const doorPos) const;
+
     MCAPI void checkPath(::Mob& mob);
 
     MCAPI void onComponentRemoved(::EntityContext& entity);

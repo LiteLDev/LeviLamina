@@ -45,7 +45,7 @@ public:
 
     virtual void OnDOMBuilt();
 
-    virtual void OnLoadFailed(char const*, char const*);
+    virtual void OnLoadFailed(char const* url, char const* error);
 
     virtual void OnFinishLoad(char const*);
 
@@ -76,31 +76,36 @@ public:
         ::cohtml::InputEventPhase::PhaseType const
     );
 
-    virtual void OnAudioStreamCreated(int, int, int, float);
+    virtual void OnAudioStreamCreated(int id, int bitDepth, int channels, float samplingRate);
 
-    virtual void OnAudioStreamClosed(int);
+    virtual void OnAudioStreamClosed(int id);
 
-    virtual void OnAudioStreamPlay(int);
+    virtual void OnAudioStreamPlay(int id);
 
-    virtual void OnAudioStreamPause(int);
+    virtual void OnAudioStreamPause(int id);
 
-    virtual void OnAudioDataReceived(int, int, float**, int);
+    virtual void OnAudioDataReceived(int id, int samples, float** pcm, int channels);
 
-    virtual void OnAudioStreamEnded(int);
+    virtual void OnAudioStreamEnded(int id);
 
-    virtual void OnAudioStreamVolumeChanged(int, float);
+    virtual void OnAudioStreamVolumeChanged(int id, float volume);
 
-    virtual void OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType);
+    virtual void OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType type);
 
-    virtual void OnCaretRectChanged(int, int, uint, uint);
+    virtual void OnCaretRectChanged(int x, int y, uint width, uint height);
 
     virtual void OnCursorChanged(::cohtml::CursorTypes::Cursors, char const*, float const*, float const*);
 
-    virtual void OnClipboardTextSet(char const*, uint);
+    virtual void OnClipboardTextSet(char const* text, uint lengthBytes);
 
-    virtual void OnClipboardTextGet(::cohtml::IViewListener::IClipboardData*);
+    virtual void OnClipboardTextGet(::cohtml::IViewListener::IClipboardData* setDataObject);
 
-    virtual ::cohtml::IClientSideSocket* OnCreateWebSocket(::cohtml::ISocketListener*, char const*, char const**, uint);
+    virtual ::cohtml::IClientSideSocket* OnCreateWebSocket(
+        ::cohtml::ISocketListener* listener,
+        char const*                url,
+        char const**               protocols,
+        uint                       protocolsCount
+    );
     // NOLINTEND
 
 public:
@@ -114,7 +119,15 @@ public:
 
     MCNAPI void $OnDOMBuilt();
 
+    MCNAPI void $OnLoadFailed(char const* url, char const* error);
+
     MCNAPI void $OnFinishLoad(char const*);
+
+    MCNAPI void $OnReadyForBindings();
+
+    MCNAPI void $OnBindingsReleased();
+
+    MCNAPI ::cohtml::ScreenInfo $OnScreenInfoRequested();
 
     MCNAPI ::cohtml::EventAction::Actions $OnNodeTouched(
         ::cohtml::INodeProxy const*,
@@ -135,6 +148,37 @@ public:
         ::cohtml::KeyEventData const*,
         void*,
         ::cohtml::InputEventPhase::PhaseType const
+    );
+
+    MCNAPI void $OnAudioStreamCreated(int id, int bitDepth, int channels, float samplingRate);
+
+    MCNAPI void $OnAudioStreamClosed(int id);
+
+    MCNAPI void $OnAudioStreamPlay(int id);
+
+    MCNAPI void $OnAudioStreamPause(int id);
+
+    MCNAPI void $OnAudioDataReceived(int id, int samples, float** pcm, int channels);
+
+    MCNAPI void $OnAudioStreamEnded(int id);
+
+    MCNAPI void $OnAudioStreamVolumeChanged(int id, float volume);
+
+    MCNAPI void $OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType type);
+
+    MCNAPI void $OnCaretRectChanged(int x, int y, uint width, uint height);
+
+    MCNAPI void $OnCursorChanged(::cohtml::CursorTypes::Cursors, char const*, float const*, float const*);
+
+    MCNAPI void $OnClipboardTextSet(char const* text, uint lengthBytes);
+
+    MCNAPI void $OnClipboardTextGet(::cohtml::IViewListener::IClipboardData* setDataObject);
+
+    MCNAPI ::cohtml::IClientSideSocket* $OnCreateWebSocket(
+        ::cohtml::ISocketListener* listener,
+        char const*                url,
+        char const**               protocols,
+        uint                       protocolsCount
     );
     // NOLINTEND
 };

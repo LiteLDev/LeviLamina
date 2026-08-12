@@ -63,6 +63,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static bool _getObjectsFromTextObject(
+        ::Json::Value const&                   root,
+        ::TextObjectRoot&                      parsedObject,
+        ::TextObjectParser::ServerData*        serverData,
+        ::TextObjectParser::ErrorLocalization& errorLocalization
+    );
+
     MCNAPI static bool _textObjectFromJson(
         ::Json::Value const&                   root,
         ::TextObjectRoot&                      parsedObject,

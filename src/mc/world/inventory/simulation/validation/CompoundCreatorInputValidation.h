@@ -18,9 +18,13 @@ public:
     // NOLINTBEGIN
     virtual ~CompoundCreatorInputValidation() /*override*/ = default;
 
-    virtual bool
-    isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const&, int const, bool) const
-        /*override*/;
+    virtual bool isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
+        bool
+    ) const /*override*/;
 
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
@@ -31,6 +35,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
+        bool
+    ) const;
+
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+
 
     // NOLINTEND
 };

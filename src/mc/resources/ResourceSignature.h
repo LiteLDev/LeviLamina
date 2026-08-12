@@ -30,6 +30,10 @@ public:
     MCNAPI bool _areKnownFilesValid(::PackAccessStrategy const& accessStrategy, bool requiresSignaturesFile);
 #endif
 
+#ifdef LL_PLAT_S
+    MCNAPI bool _areKnownFilesValid(::PackAccessStrategy const& accessStrategy, bool requiresSignaturesFile);
+#endif
+
     MCNAPI ~ResourceSignature();
     // NOLINTEND
 

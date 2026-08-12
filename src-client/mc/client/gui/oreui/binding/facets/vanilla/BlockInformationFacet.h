@@ -25,6 +25,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BlockInformationFacet();
+
+    MCFOLD ::std::unordered_map<::HashedString, ::std::string> const& getBlockNames() const;
     // NOLINTEND
 
 public:
@@ -42,7 +44,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD bool $update();
     // NOLINTEND
 };
 

@@ -155,6 +155,17 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CaveFeature();
+
+    MCAPI bool carveEllipsoid(
+        ::IBlockWorldGenAPI&                           target,
+        ::CaveFeatureUtils::CarverConfiguration const& configuration,
+        ::Random&                                      random,
+        ::ChunkPos const&                              chunkPos,
+        ::Vec3 const&                                  startPos,
+        float                                          horizontalRadius,
+        float const                                    verticalRadius,
+        ::CaveFeatureUtils::CarvingParameters const&   carvingParameters
+    ) const;
     // NOLINTEND
 
 public:

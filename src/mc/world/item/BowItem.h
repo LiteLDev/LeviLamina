@@ -27,13 +27,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     virtual int getEnchantSlot() const /*override*/;
 
-    virtual void enchantProjectile(::ItemStackBase const&, ::Actor&) const /*override*/;
+    virtual void enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const /*override*/;
     // NOLINTEND
 
 public:
@@ -51,6 +52,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCFOLD int $getEnchantSlot() const;
+
+    MCAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
+
 
     // NOLINTEND
 };

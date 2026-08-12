@@ -14,6 +14,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ADPopupButtonAction;
 class ActiveDirectoryAuthenticationInterface;
 class ClickSourceContext;
 class MinecraftScreenModel;
@@ -65,6 +66,14 @@ public:
         ::std::unique_ptr<::ClickSourceContext>                 clickedSource,
         ::Bedrock::NotNullNonOwnerPtr<::Progress::ProgressTips> progressTips
     );
+
+    MCAPI void _announceModalDialog() const;
+
+    MCAPI void _closeModalDialog(bool doPostAction);
+
+    MCAPI void _dialogPurchaseFailed();
+
+    MCAPI void _handlePopupButton(::ADPopupButtonAction const& action);
     // NOLINTEND
 
 public:
@@ -81,6 +90,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
+    MCFOLD void $onTerminate();
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCFOLD ::ui::SceneType $getSceneType() const;
     // NOLINTEND
 };

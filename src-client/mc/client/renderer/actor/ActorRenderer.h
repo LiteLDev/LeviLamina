@@ -18,6 +18,8 @@ class Model;
 class RenderParams;
 class Vec2;
 class Vec3;
+struct ActorUniqueID;
+struct RopePoints;
 namespace mce { class TextureGroup; }
 // clang-format on
 
@@ -70,17 +72,17 @@ public:
     // NOLINTBEGIN
     virtual ~ActorRenderer() /*override*/;
 
-    virtual void render(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData) = 0;
+    virtual void render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData) = 0;
 
     virtual void renderDebug(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    virtual void renderEffects(::BaseActorRenderContext&, ::ActorRenderData&);
+    virtual void renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
 
     virtual void renderLeash(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    virtual void renderWaterHole(::BaseActorRenderContext&, ::ActorRenderData&);
+    virtual void renderWaterHole(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    virtual void addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup>);
+    virtual void addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
     virtual ::AABB getRenderBounds(::Actor const& entity) const;
 
@@ -95,11 +97,11 @@ public:
 
     virtual void setIsOnScreen(::Actor&, bool, float) const;
 
-    virtual bool shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams&) const;
+    virtual bool shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const;
 
-    virtual bool shouldUpdateEffectsIfOffScreen(::RenderParams&) const;
+    virtual bool shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const;
 
-    virtual bool shouldHideHeldItems(::RenderParams&) const;
+    virtual bool shouldHideHeldItems(::RenderParams& renderParams) const;
     // NOLINTEND
 
 public:
@@ -126,6 +128,31 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _addLeashPinToOutput(
+        ::Vec3 const&                                             fromLeashes,
+        ::Vec3 const&                                             toLeashes,
+        ::Actor const&                                            actor,
+        ::Actor const*                                            roper,
+        ::ActorUniqueID const                                     roperID,
+        uint64 const                                              ropeIndex,
+        float const                                               actorFrameAlpha,
+        ::Bedrock::small_vector_base<::ActorRenderer::LeashPins>& output
+    );
+
+    MCAPI static void _drawRopeRange(
+        ::BaseActorRenderContext& renderContext,
+        int                       begin,
+        int                       end,
+        ::Vec3 const&             basisX,
+        ::Vec3 const&             basisY,
+        ::Vec3 const&             deltaNorm,
+        ::RopePoints const&       nodes,
+        ::mce::TexturePtr&        tex,
+        float                     a,
+        ::Vec3*                   startPoint,
+        ::Vec3*                   endPoint
+    );
+
     MCAPI static void _getLeashPins(
         float                                                     actorFrameAlpha,
         ::BaseActorRenderContext&                                 renderContext,
@@ -185,13 +212,13 @@ public:
     // NOLINTBEGIN
     MCAPI void $renderDebug(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    MCFOLD void $renderEffects(::BaseActorRenderContext&, ::ActorRenderData&);
+    MCFOLD void $renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
 
     MCAPI void $renderLeash(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    MCFOLD void $renderWaterHole(::BaseActorRenderContext&, ::ActorRenderData&);
+    MCFOLD void $renderWaterHole(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    MCFOLD void $addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup>);
+    MCFOLD void $addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
     MCAPI ::AABB $getRenderBounds(::Actor const& entity) const;
 
@@ -206,11 +233,11 @@ public:
 
     MCFOLD void $setIsOnScreen(::Actor&, bool, float) const;
 
-    MCFOLD bool $shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams&) const;
+    MCFOLD bool $shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const;
 
-    MCFOLD bool $shouldUpdateEffectsIfOffScreen(::RenderParams&) const;
+    MCFOLD bool $shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const;
 
-    MCFOLD bool $shouldHideHeldItems(::RenderParams&) const;
+    MCFOLD bool $shouldHideHeldItems(::RenderParams& renderParams) const;
     // NOLINTEND
 
 public:

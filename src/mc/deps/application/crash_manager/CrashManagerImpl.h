@@ -90,21 +90,31 @@ public:
     // NOLINTBEGIN
     virtual ~CrashManagerImpl() /*override*/ = default;
 
-    virtual void initialize(::Bedrock::CrashManagerConfig const&) /*override*/;
+    virtual void initialize(::Bedrock::CrashManagerConfig const& config) /*override*/;
+
+    virtual void setCrashProcessorForFileType(
+        ::std::string_view                               fileExtension,
+        ::std::shared_ptr<::Bedrock::CrashFileProcessor> processor
+    ) /*override*/;
 
     virtual void
-        setCrashProcessorForFileType(::std::string_view, ::std::shared_ptr<::Bedrock::CrashFileProcessor>) /*override*/;
+    setCrashTelemetryProcessor(::gsl::not_null<::Bedrock::CrashTelemetryProcessor*> processor) /*override*/;
 
-    virtual void setCrashTelemetryProcessor(::gsl::not_null<::Bedrock::CrashTelemetryProcessor*>) /*override*/;
-
-    virtual void
-    processCrashes(::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>, ::Scheduler&, bool) /*override*/;
+    virtual void processCrashes(
+        ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> workerPool,
+        ::Scheduler&                                            scheduler,
+        bool                                                    isNetworkAvailable
+    ) /*override*/;
 
     virtual void notifyCrashed() /*override*/;
 
-    virtual void notifySystemError(uint, ::std::string const&) /*override*/;
+    virtual void notifySystemError(uint errorCode, ::std::string const& errorMessage) /*override*/;
 
-    virtual void recordCrashedSession(::std::string_view, ::std::string_view, int64) /*override*/;
+    virtual void recordCrashedSession(
+        ::std::string_view sessionId,
+        ::std::string_view serializedSession,
+        int64              crashTime
+    ) /*override*/;
 
     virtual void stopProcessingCrashes() /*override*/;
 
@@ -116,8 +126,53 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::Threading::Async<bool>
+    _processOneCrash(::Core::PathBuffer<::std::string> const& filePath, ::Bedrock::CrashFileProcessor* processor);
+
+    MCNAPI void _queueTask(::std::string_view name, ::std::function<void()>&& task);
+
+    MCNAPI void _resetProcessingState();
+
+    MCNAPI void _scanCrashFiles();
+#endif
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $initialize(::Bedrock::CrashManagerConfig const& config);
+
+    MCNAPI void $setCrashProcessorForFileType(
+        ::std::string_view                               fileExtension,
+        ::std::shared_ptr<::Bedrock::CrashFileProcessor> processor
+    );
+
+    MCNAPI void $setCrashTelemetryProcessor(::gsl::not_null<::Bedrock::CrashTelemetryProcessor*> processor);
+
+    MCNAPI void $processCrashes(
+        ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> workerPool,
+        ::Scheduler&                                            scheduler,
+        bool                                                    isNetworkAvailable
+    );
+
+    MCNAPI void $notifyCrashed();
+
+    MCNAPI void $notifySystemError(uint errorCode, ::std::string const& errorMessage);
+
+    MCNAPI void
+    $recordCrashedSession(::std::string_view sessionId, ::std::string_view serializedSession, int64 crashTime);
+
+    MCNAPI void $stopProcessingCrashes();
+
+    MCNAPI bool $isCrashProcessingActive() const;
+
+    MCNAPI ::std::string const& $getCrashDataRoot() const;
+
+    MCNAPI ::std::string const& $getCrashedSessionFileSuffix() const;
+
 
     // NOLINTEND
 };

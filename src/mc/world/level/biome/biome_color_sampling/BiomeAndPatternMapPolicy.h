@@ -26,12 +26,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::mce::Color get(::BlockSource&, ::BlockPos const&) const /*override*/;
+    virtual ::mce::Color get(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::mce::Color $get(::BlockSource& region, ::BlockPos const& pos) const;
+
 
     // NOLINTEND
 };

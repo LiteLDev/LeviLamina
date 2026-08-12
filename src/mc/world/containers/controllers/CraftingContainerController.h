@@ -38,7 +38,7 @@ public:
     virtual ~CraftingContainerController() /*override*/;
 #endif
 
-    virtual ::ItemInstance const& getRecipeItem(int index) const = 0;
+    virtual ::ItemInstance const& getRecipeItem(int slot) const = 0;
 
 #ifdef LL_PLAT_S
     virtual void onRecipeSelected(::Recipe const*, uint64, bool);
@@ -89,15 +89,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCAPI void $onRecipeSelected(::Recipe const*, uint64, bool);
+#else // LL_PLAT_C
     MCAPI void $onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
+#endif
 
     MCAPI void $clearSelectedRecipe();
 
+#ifdef LL_PLAT_S
+    MCAPI ::Recipe const* $getSelectedRecipe() const;
+#else // LL_PLAT_C
     MCFOLD ::Recipe const* $getSelectedRecipe() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void $setGhostItem(::ItemInstance const&, int, bool);
+#else // LL_PLAT_C
     MCAPI void $setGhostItem(::ItemInstance const& item, int slot, bool showStackSize);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::ItemInstance const& $getGhostItem(int) const;
+#else // LL_PLAT_C
     MCAPI ::ItemInstance const& $getGhostItem(int slot) const;
 #endif
 

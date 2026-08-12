@@ -69,6 +69,16 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _disableCoreTextEdit();
+
+    MCAPI void _enableCoreTextEdit();
+
+    MCAPI void _notifyCoreTextEdit(bool textChanged);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $update();

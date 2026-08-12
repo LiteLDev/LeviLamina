@@ -51,6 +51,7 @@ public:
 
 public:
     // prevent constructor by default
+    RenderMaterial& operator=(RenderMaterial const&);
     RenderMaterial();
 
 public:
@@ -63,12 +64,16 @@ public:
     virtual void parseShader(::Json::Value const& root) /*override*/;
 
     virtual void appendShaderPathForGfxAPI() /*override*/;
+
+    virtual ~RenderMaterial() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RenderMaterial(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
+
+    MCAPI RenderMaterial(::mce::RenderMaterial const& parent);
 
     MCAPI ::mce::ActorMaterialVariation
     getActorVariation(::mce::MaterialRenderType renderType, bool pointLightShadingEnabled);
@@ -83,6 +88,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

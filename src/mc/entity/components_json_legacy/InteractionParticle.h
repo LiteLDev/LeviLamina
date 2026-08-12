@@ -23,4 +23,12 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                   mOffsetTowardsInteractor;
     ::ll::TypedStorage<1, 1, ::InteractionParticle::CopperEventType> mCopperEventType;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void setCopperEventType(::std::string const& name);
+
+    MCAPI void setParticleType(::std::string const& name);
+    // NOLINTEND
 };

@@ -25,9 +25,9 @@ public:
     // NOLINTBEGIN
     virtual ~ExplorationMapFunction() /*override*/ = default;
 
-    virtual void apply(::ItemStack&, ::Random&, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext& context) /*override*/;
 
-    virtual void apply(::ItemInstance&, ::Random&, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemInstance& item, ::Random&, ::LootTableContext& context) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
@@ -35,6 +35,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
+
+    MCAPI void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
+
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
+
 
     // NOLINTEND
 };

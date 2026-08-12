@@ -103,7 +103,8 @@ public:
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
+        /*override*/;
 
     virtual ::ui::SceneType getSceneType() const /*override*/;
 
@@ -142,6 +143,14 @@ public:
         ::GameType                                              gameType,
         bool                                                    isCancellable
     );
+
+    MCAPI bool _isInCancellableState() const;
+
+    MCAPI void _openConfirmationDialog();
+
+    MCAPI void _setupProgressScreen(bool const loadAssets);
+
+    MCAPI void _updateProgressMessage(int64 const& timeNow, bool force);
     // NOLINTEND
 
 public:
@@ -179,6 +188,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onCreation();
 
+    MCAPI void $onOpen();
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCFOLD ::std::string $getAdditionalScreenInfo() const;
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+
+    MCFOLD ::ui::SceneType $getSceneType() const;
+
+    MCAPI bool $_getGamepadHelperVisible() const;
+
+    MCFOLD ::std::string $_getButtonADescription();
     // NOLINTEND
 };

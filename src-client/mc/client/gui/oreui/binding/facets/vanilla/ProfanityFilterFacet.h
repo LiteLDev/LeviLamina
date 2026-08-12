@@ -36,6 +36,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ProfanityFilterFacet(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> profanityContext);
+
+    MCAPI bool isProfanityInString(::std::string const& stringToCheck) const;
     // NOLINTEND
 
 public:

@@ -49,6 +49,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $postInit();
+
+    MCNAPI void $releaseResources();
+
+    MCNAPI void $containerContentChanged(int slot);
+
+    MCNAPI bool $isValid();
+
+    MCNAPI ::ContainerWeakRef $getContainerWeakRef() const;
+
+    MCNAPI ::Container* $_getContainer() const;
+
+    MCNAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+
 
     // NOLINTEND
 };

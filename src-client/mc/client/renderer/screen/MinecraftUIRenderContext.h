@@ -119,34 +119,35 @@ public:
     // NOLINTBEGIN
     virtual ~MinecraftUIRenderContext() /*override*/;
 
-    virtual int getLineLength(::Font&, ::std::string const&, float, bool) const /*override*/;
+    virtual int getLineLength(::Font& font, ::std::string const& text, float fontSize, bool showColorSymbol) const
+        /*override*/;
 
     virtual float getTextAlpha() const /*override*/;
 
-    virtual void setTextAlpha(float) /*override*/;
+    virtual void setTextAlpha(float alpha) /*override*/;
 
     virtual void drawDebugText(
-        ::RectangleArea const&,
-        ::std::string&&,
-        ::mce::Color const&,
-        float,
-        ::ui::TextAlignment,
-        ::TextMeasureData const&,
-        ::CaretMeasureData const&
+        ::RectangleArea const&    rect,
+        ::std::string&&           text,
+        ::mce::Color const&       color,
+        float                     alpha,
+        ::ui::TextAlignment       alignment,
+        ::TextMeasureData const&  textData,
+        ::CaretMeasureData const& caretData
     ) /*override*/;
 
     virtual void drawText(
-        ::Font&,
-        ::RectangleArea const&,
-        ::std::string&&,
-        ::mce::Color const&,
-        float,
-        ::ui::TextAlignment,
-        ::TextMeasureData const&,
-        ::CaretMeasureData const&
+        ::Font&                   font,
+        ::RectangleArea const&    rect,
+        ::std::string&&           text,
+        ::mce::Color const&       color,
+        float                     alpha,
+        ::ui::TextAlignment       alignment,
+        ::TextMeasureData const&  textData,
+        ::CaretMeasureData const& caretData
     ) /*override*/;
 
-    virtual void flushText(float, ::std::optional<float>) /*override*/;
+    virtual void flushText(float deltaTime, ::std::optional<float> obfuscateSwitchTime) /*override*/;
 
     virtual void drawImage(
         ::mce::ClientTexture const& texture,
@@ -157,31 +158,39 @@ public:
         bool const                  colorCorrected
     ) /*override*/;
 
-    virtual void drawNineslice(::mce::ClientTexture const&, ::NinesliceInfo const&) /*override*/;
+    virtual void drawNineslice(::mce::ClientTexture const& texture, ::NinesliceInfo const& info) /*override*/;
 
-    virtual void flushImages(::mce::Color const&, float, ::HashedString const&) /*override*/;
+    virtual void
+    flushImages(::mce::Color const& color, float alpha, ::HashedString const& materialNameHash) /*override*/;
 
-    virtual ::mce::TexturePtr getTexture(::ResourceLocation const&, bool) const /*override*/;
+    virtual ::mce::TexturePtr getTexture(::ResourceLocation const& resourceLocation, bool forceReload) const
+        /*override*/;
 
-    virtual ::mce::TexturePtr getZippedTexture(::Core::Path const&, ::ResourceLocation const&, bool) const /*override*/;
+    virtual ::mce::TexturePtr getZippedTexture(
+        ::Core::Path const&       zippedFolderPath,
+        ::ResourceLocation const& resourceLocation,
+        bool                      forceReload
+    ) const /*override*/;
 
-    virtual bool unloadTexture(::ResourceLocation const&) /*override*/;
+    virtual bool unloadTexture(::ResourceLocation const& resourceLocation) /*override*/;
 
-    virtual ::UITextureInfoPtr getUITextureInfo(::ResourceLocation const&, bool) const /*override*/;
+    virtual ::UITextureInfoPtr getUITextureInfo(::ResourceLocation const& resourceLocation, bool forceReload) const
+        /*override*/;
 
-    virtual void touchTexture(::ResourceLocation const&) /*override*/;
+    virtual void touchTexture(::ResourceLocation const& resourceLocation) /*override*/;
 
-    virtual void beginSharedMeshBatch(::ComponentRenderBatch&) /*override*/;
+    virtual void beginSharedMeshBatch(::ComponentRenderBatch& renderBatch) /*override*/;
 
-    virtual void endSharedMeshBatch(::ComponentRenderBatch&) /*override*/;
+    virtual void endSharedMeshBatch(::ComponentRenderBatch& renderBatch) /*override*/;
 
-    virtual void reserveSharedMeshBatch(uint64) /*override*/;
+    virtual void reserveSharedMeshBatch(uint64 vertexCount) /*override*/;
 
     virtual uint64 getSharedMeshBatchVertexCount() const /*override*/;
 
-    virtual void drawRectangle(::RectangleArea const&, ::mce::Color const&, float, int) /*override*/;
+    virtual void
+    drawRectangle(::RectangleArea const& rect, ::mce::Color const& color, float alpha, int thickness) /*override*/;
 
-    virtual void fillRectangle(::RectangleArea const&, ::mce::Color const&, float) /*override*/;
+    virtual void fillRectangle(::RectangleArea const& rect, ::mce::Color const& color, float alpha) /*override*/;
 
     virtual void increaseStencilRef() /*override*/;
 
@@ -189,13 +198,13 @@ public:
 
     virtual void resetStencilRef() /*override*/;
 
-    virtual void fillRectangleStencil(::RectangleArea const&) /*override*/;
+    virtual void fillRectangleStencil(::RectangleArea const& rect) /*override*/;
 
-    virtual void enableScissorTest(::RectangleArea const&) /*override*/;
+    virtual void enableScissorTest(::RectangleArea const& rect) /*override*/;
 
     virtual void disableScissorTest() /*override*/;
 
-    virtual void setClippingRectangle(::RectangleArea const&) /*override*/;
+    virtual void setClippingRectangle(::RectangleArea const& rect) /*override*/;
 
     virtual void setFullClippingRectangle() /*override*/;
 
@@ -211,15 +220,15 @@ public:
 
     virtual ::UIMeasureStrategy& getMeasureStrategy() /*override*/;
 
-    virtual void snapImageSizeToGrid(::glm::vec2&) const /*override*/;
+    virtual void snapImageSizeToGrid(::glm::vec2& size) const /*override*/;
 
-    virtual void snapImagePositionToGrid(::glm::vec2&) const /*override*/;
+    virtual void snapImagePositionToGrid(::glm::vec2& position) const /*override*/;
 
-    virtual void notifyImageEstimate(uint64) /*override*/;
+    virtual void notifyImageEstimate(uint64 imageCount) /*override*/;
 
-    virtual bool updateCustom(::gsl::not_null<::CustomRenderComponent*>) /*override*/;
+    virtual bool updateCustom(::gsl::not_null<::CustomRenderComponent*> customRenderer) /*override*/;
 
-    virtual void renderCustom(::gsl::not_null<::CustomRenderComponent*>, int) /*override*/;
+    virtual void renderCustom(::gsl::not_null<::CustomRenderComponent*> customRenderer, int pass) /*override*/;
     // NOLINTEND
 
 public:
@@ -258,6 +267,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI int $getLineLength(::Font& font, ::std::string const& text, float fontSize, bool showColorSymbol) const;
+
+    MCFOLD float $getTextAlpha() const;
+
+    MCAPI void $setTextAlpha(float alpha);
+
+    MCAPI void $drawDebugText(
+        ::RectangleArea const&    rect,
+        ::std::string&&           text,
+        ::mce::Color const&       color,
+        float                     alpha,
+        ::ui::TextAlignment       alignment,
+        ::TextMeasureData const&  textData,
+        ::CaretMeasureData const& caretData
+    );
+
+    MCAPI void $drawText(
+        ::Font&                   font,
+        ::RectangleArea const&    rect,
+        ::std::string&&           text,
+        ::mce::Color const&       color,
+        float                     alpha,
+        ::ui::TextAlignment       alignment,
+        ::TextMeasureData const&  textData,
+        ::CaretMeasureData const& caretData
+    );
+
+    MCAPI void $flushText(float deltaTime, ::std::optional<float> obfuscateSwitchTime);
+
     MCAPI void $drawImage(
         ::mce::ClientTexture const& texture,
         ::glm::vec2 const&          position,
@@ -266,5 +304,73 @@ public:
         ::glm::vec2 const&          uvSize,
         bool const                  colorCorrected
     );
+
+    MCAPI void $drawNineslice(::mce::ClientTexture const& texture, ::NinesliceInfo const& info);
+
+    MCAPI void $flushImages(::mce::Color const& color, float alpha, ::HashedString const& materialNameHash);
+
+    MCAPI ::mce::TexturePtr $getTexture(::ResourceLocation const& resourceLocation, bool forceReload) const;
+
+    MCAPI ::mce::TexturePtr $getZippedTexture(
+        ::Core::Path const&       zippedFolderPath,
+        ::ResourceLocation const& resourceLocation,
+        bool                      forceReload
+    ) const;
+
+    MCAPI bool $unloadTexture(::ResourceLocation const& resourceLocation);
+
+    MCAPI ::UITextureInfoPtr $getUITextureInfo(::ResourceLocation const& resourceLocation, bool forceReload) const;
+
+    MCAPI void $touchTexture(::ResourceLocation const& resourceLocation);
+
+    MCAPI void $beginSharedMeshBatch(::ComponentRenderBatch& renderBatch);
+
+    MCAPI void $endSharedMeshBatch(::ComponentRenderBatch& renderBatch);
+
+    MCAPI void $reserveSharedMeshBatch(uint64 vertexCount);
+
+    MCAPI uint64 $getSharedMeshBatchVertexCount() const;
+
+    MCAPI void $drawRectangle(::RectangleArea const& rect, ::mce::Color const& color, float alpha, int thickness);
+
+    MCAPI void $fillRectangle(::RectangleArea const& rect, ::mce::Color const& color, float alpha);
+
+    MCAPI void $increaseStencilRef();
+
+    MCAPI void $decreaseStencilRef();
+
+    MCAPI void $resetStencilRef();
+
+    MCAPI void $fillRectangleStencil(::RectangleArea const& rect);
+
+    MCAPI void $enableScissorTest(::RectangleArea const& rect);
+
+    MCAPI void $disableScissorTest();
+
+    MCAPI void $setClippingRectangle(::RectangleArea const& rect);
+
+    MCAPI void $setFullClippingRectangle();
+
+    MCAPI void $saveCurrentClippingRectangle();
+
+    MCAPI void $restoreSavedClippingRectangle();
+
+    MCAPI ::RectangleArea $getFullClippingRectangle() const;
+
+    MCAPI void $cleanup();
+
+    MCAPI void $removePersistentMeshes();
+
+    MCFOLD ::UIMeasureStrategy& $getMeasureStrategy();
+
+    MCAPI void $snapImageSizeToGrid(::glm::vec2& size) const;
+
+    MCAPI void $snapImagePositionToGrid(::glm::vec2& position) const;
+
+    MCAPI void $notifyImageEstimate(uint64 imageCount);
+
+    MCAPI bool $updateCustom(::gsl::not_null<::CustomRenderComponent*> customRenderer);
+
+    MCAPI void $renderCustom(::gsl::not_null<::CustomRenderComponent*> customRenderer, int pass);
     // NOLINTEND
 };

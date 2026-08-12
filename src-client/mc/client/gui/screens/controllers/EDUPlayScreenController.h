@@ -44,7 +44,7 @@ public:
 
     virtual ::ui::SceneType getSceneType() const /*override*/;
 
-    virtual bool onJoincodeReceived(::std::string const&) /*override*/;
+    virtual bool onJoincodeReceived(::std::string const& encodedJoincode) /*override*/;
     // NOLINTEND
 
 public:
@@ -62,6 +62,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onEntered();
 
+    MCAPI void $onOpen();
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCFOLD ::ui::SceneType $getSceneType() const;
+
+    MCAPI bool $onJoincodeReceived(::std::string const& encodedJoincode);
     // NOLINTEND
 };

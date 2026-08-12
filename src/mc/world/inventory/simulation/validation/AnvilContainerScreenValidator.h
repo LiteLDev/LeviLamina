@@ -20,16 +20,25 @@ public:
     virtual bool isCraftingImplemented() /*override*/;
 
     virtual ::ContainerValidationCraftResult getCraftResult(
-        ::ContainerScreenContext const&,
-        ::ContainerScreenValidation&,
-        ::std::unique_ptr<::ContainerValidationCraftInputs>,
-        uchar const
+        ::ContainerScreenContext const&                     screenContext,
+        ::ContainerScreenValidation&                        screenValidation,
+        ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
+        uchar const                                         numCrafts
     ) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $isCraftingImplemented();
+
+    MCAPI ::ContainerValidationCraftResult $getCraftResult(
+        ::ContainerScreenContext const&                     screenContext,
+        ::ContainerScreenValidation&                        screenValidation,
+        ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
+        uchar const                                         numCrafts
+    );
+
 
     // NOLINTEND
 };

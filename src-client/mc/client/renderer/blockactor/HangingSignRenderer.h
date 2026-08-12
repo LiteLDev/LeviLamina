@@ -10,6 +10,7 @@
 // clang-format off
 class BaseActorRenderContext;
 struct BlockActorRenderData;
+namespace mce { class TextureGroup; }
 // clang-format on
 
 class HangingSignRenderer : public ::SignRenderer {
@@ -20,9 +21,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    HangingSignRenderer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void render(::BaseActorRenderContext&, ::BlockActorRenderData&) /*override*/;
+    virtual void
+    render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
 
     virtual float _getScaleFactor() const /*override*/;
 
@@ -34,8 +40,28 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit HangingSignRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    // NOLINTEND
+
+public:
+    // constructor thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+
+    MCAPI float $_getScaleFactor() const;
+
+    MCAPI float $_yTextOffset() const;
+
+    MCAPI float $_zTextOffset() const;
+
+    MCFOLD int $_getSignWidth() const;
     // NOLINTEND
 };

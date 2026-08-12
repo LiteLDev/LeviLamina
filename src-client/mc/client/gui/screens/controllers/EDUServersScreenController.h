@@ -5,11 +5,13 @@
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/ViewRequest.h"
+#include "mc/client/gui/screens/controllers/EduRefreshType.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/BasicLockbox.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/platform/brstd/flat_map.h"
+#include "mc/platform/threading/Mutex.h"
 #include "mc/social/EduResponseError.h"
 
 // auto generated forward declare list
@@ -19,9 +21,9 @@ class EDUAddServerScreenController;
 class EDUPasscodeEntryScreenController;
 class IContentManager;
 class PlayScreenModel;
+class UIPropertyBag;
 struct PackManagerContentSource;
 struct ScreenEvent;
-namespace Bedrock::Threading { class Mutex; }
 namespace Json { class Value; }
 namespace Social { struct EduDedicatedServerDetails; }
 // clang-format on
@@ -99,6 +101,30 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EDUServersScreenController(::std::shared_ptr<::PlayScreenModel> model);
+
+    MCAPI void _closeAddServerModal();
+
+    MCAPI void _closePasscodeEntryModal();
+
+    MCAPI void _closeSharePopup();
+
+    MCAPI ::std::optional<::Social::EduDedicatedServerDetails> _getServerDetails(::UIPropertyBag& bag) const;
+
+    MCAPI uint64 _getTileIndex(::UIPropertyBag& bag) const;
+
+    MCAPI void _launchShareUri(::std::string const& uri, ::std::string const& toastMsg, ::std::string const& eventName);
+
+    MCAPI void _refreshServerInfo(::std::vector<::std::string> serverIds, ::Social::EduRefreshType const& refreshType);
+
+    MCAPI void _requestAddServer(::std::string const& serverId);
+
+    MCAPI void _requestJoinServer(::Social::EduDedicatedServerDetails const& details, ::std::string const& passcode);
+
+    MCAPI void _showAddServerModal();
+
+    MCAPI void _showFetchErrorMessage(::Social::EduResponseError& error);
+
+    MCAPI void _showPasscodeEntryModal(::Social::EduDedicatedServerDetails const& details);
     // NOLINTEND
 
 public:
@@ -110,6 +136,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onOpen();
 
+    MCAPI void $onTerminate();
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND
 };

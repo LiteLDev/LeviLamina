@@ -7,6 +7,11 @@
 #include "mc/world/actor/ai/goal/MoveTowardsTargetGoal.h"
 #include "mc/world/level/Tick.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class FollowTargetLeaderGoal : public ::MoveTowardsTargetGoal {
 public:
     // member variables
@@ -33,6 +38,14 @@ public:
     virtual bool canContinueToUse() /*override*/;
 
     virtual void stop() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _determineMovePos();
+
+    MCAPI bool _evaluateLeaderFilters(::Actor const* actor) const;
     // NOLINTEND
 
 public:

@@ -38,8 +38,9 @@ public:
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::Molang::details::IComplexExpression> clone() const /*override*/;
 
-    virtual void
-    replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>&) /*override*/;
+    virtual void replaceArrayVariables(
+        ::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap
+    ) /*override*/;
 
     virtual void validateArrayVariables() const /*override*/;
 
@@ -53,6 +54,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::unique_ptr<::Molang::details::IComplexExpression> $clone() const;
+
+    MCNAPI void
+    $replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap);
+
+    MCNAPI void $validateArrayVariables() const;
+
+    MCNAPI ::ExpressionOp $getOp() const;
+
+    MCNAPI bool $needsToCompile() const;
+
+    MCNAPI ::Molang::details::SourceTree* $getSource();
+
 
     // NOLINTEND
 };

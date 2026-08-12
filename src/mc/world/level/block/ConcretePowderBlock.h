@@ -12,6 +12,7 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class HashedString;
 class ItemInstance;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace mce { class Color; }
@@ -41,6 +42,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ConcretePowderBlock(::std::string const& nameId, int id);
+
+    MCAPI bool _tryTouchWater(::BlockSource& region, ::BlockPos const& pos, ::std::optional<::HashedString> name) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND

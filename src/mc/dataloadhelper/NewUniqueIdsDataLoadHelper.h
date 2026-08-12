@@ -66,6 +66,14 @@ public:
     virtual bool shouldResetTime() /*override*/;
 
     virtual ::DataLoadHelperType getType() const /*override*/;
+
+    virtual ~NewUniqueIdsDataLoadHelper() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

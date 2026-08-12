@@ -49,10 +49,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void archiveAndUploadFileToRealmStorage(
-        ::std::string const&,
-        ::Core::Path const&,
-        int const,
-        ::std::string const&
+        ::std::string const& uploadId,
+        ::Core::Path const&  path,
+        int const            slotIndex,
+        ::std::string const& realmsGuid
     ) /*override*/;
 
     virtual void
@@ -82,6 +82,8 @@ public:
         ::ResourcePackPathLifetimeHelpers::ResourcePackPathCache&  resourcePackPathCache
     );
 #endif
+
+    MCAPI void _addZipPath(::Core::PathBuffer<::std::string> const& resourceZipPath);
 
     MCAPI ::Bedrock::Threading::Async<void> uploadResourcePack(
         ::std::string const&                     resourcePackName,
@@ -121,6 +123,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $archiveAndUploadFileToRealmStorage(
+        ::std::string const& uploadId,
+        ::Core::Path const&  path,
+        int const            slotIndex,
+        ::std::string const& realmsGuid
+    );
+
+    MCAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
+
 
     // NOLINTEND
 };

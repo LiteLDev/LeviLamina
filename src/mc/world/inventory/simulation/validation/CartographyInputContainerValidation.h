@@ -17,9 +17,13 @@ public:
     // NOLINTBEGIN
     virtual ~CartographyInputContainerValidation() /*override*/ = default;
 
-    virtual bool
-    isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const&, int const, bool) const
-        /*override*/;
+    virtual bool isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
+        bool
+    ) const /*override*/;
 
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
     // NOLINTEND
@@ -27,6 +31,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
+        bool
+    ) const;
+
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+
 
     // NOLINTEND
 };

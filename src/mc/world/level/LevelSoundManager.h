@@ -155,6 +155,14 @@ public:
         bool                                                   isServerAuthSoundEnabled
     );
 
+    MCAPI void _queueSoundPacket(
+        ::std::variant<
+            ::LevelSoundManager::QueuedSoundSendPacket,
+            ::LevelSoundManager::QueuedSoundBroadcastPacket,
+            ::LevelSoundManager::QueuedSoundBroadcastUserIdPacket,
+            ::LevelSoundManager::QueuedSoundBroadcastMultipleUserIdsPacket> packet
+    );
+
     MCAPI void broadcastSoundEvent(
         ::IDimension&                  dimension,
         ::SoundEventIdentifier const&  soundEvent,
@@ -164,6 +172,17 @@ public:
         bool                           isGlobal,
         ::Player*                      primaryLocalPlayer,
         ::std::optional<::Vec3> const& fireAtPosition
+    );
+
+    MCAPI void broadcastSoundEvent(
+        ::IDimension&                          dimension,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorSoundIdentifier const&          actorSoundIdentifier,
+        bool                                   isGlobal,
+        ::Player*                              primaryLocalPlayer,
+        ::std::optional<::Vec3> const&         fireAtPosition
     );
 
     MCAPI void playPredictiveSynchronizedSound(
@@ -215,6 +234,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Bedrock::PubSub::Connector<
+        void(::SoundEventIdentifier const&, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool)>&
+    $getOnLevelSoundEventConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<
+        void(::std::string const&, ::Vec3 const&, float, float, ::std::optional<::ServerSoundHandle>)>&
+    $getOnLevelSoundEventWithVolumeAndPitchConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::std::string const&)>& $getOnStopLevelSoundEventConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopAllLevelSoundsEventConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopMusicEventConnector();
+
 
     // NOLINTEND
 };

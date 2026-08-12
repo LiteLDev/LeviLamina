@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandSelector.h"
+#include "mc/server/commands/CommandSelectorResults.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,6 +14,7 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class MobEffect;
+struct EffectDuration;
 // clang-format on
 
 class EffectCommand : public ::Command {
@@ -38,7 +40,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void
+    _add(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output, ::EffectDuration duration) const;
+
+    MCAPI void _clearAllEffects(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output) const;
+
+    MCAPI void _clearEffect(
+        ::CommandSelectorResults<::Actor>& targets,
+        ::CommandOutput&                   output,
+        ::MobEffect const&                 effect,
+        bool                               throwsErrorOnNoEffect
+    ) const;
     // NOLINTEND
 
 public:
@@ -50,6 +68,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
 
     // NOLINTEND
 };

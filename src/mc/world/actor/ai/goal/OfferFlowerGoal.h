@@ -48,7 +48,7 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual void appendDebugInfo(::std::string&) const /*override*/;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
     // NOLINTEND
 
 public:
@@ -66,6 +66,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $canUse();
+
+    MCAPI bool $canContinueToUse();
+
+    MCAPI void $start();
+
+    MCAPI void $stop();
+
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
 
     // NOLINTEND
 };

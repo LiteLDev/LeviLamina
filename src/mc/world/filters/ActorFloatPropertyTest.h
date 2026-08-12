@@ -29,9 +29,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool setup(::FilterTest::Definition const&, ::FilterInputs const&) /*override*/;
+    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
 
-    virtual bool evaluate(::FilterContext const&) const /*override*/;
+    virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
     virtual ::std::string_view getName() const /*override*/;
 
@@ -47,6 +47,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+
+    MCNAPI bool $evaluate(::FilterContext const& context) const;
+
+    MCNAPI ::std::string_view $getName() const;
+
+    MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getValue() const;
+
+    MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getDomain() const;
+
+    MCNAPI ::Json::Value $_serializeValue() const;
+
+    MCNAPI ::Json::Value $_serializeDomain() const;
+
 
     // NOLINTEND
 };

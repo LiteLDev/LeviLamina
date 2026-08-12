@@ -48,6 +48,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AddExternalServerScreenController(::std::shared_ptr<::MainMenuScreenModel> model, int externalServerId);
+
+    MCAPI void _saveFormDataThen(::std::function<void()> callback);
     // NOLINTEND
 
 public:
@@ -59,6 +61,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
+    MCAPI void $onOpen();
     // NOLINTEND
 };

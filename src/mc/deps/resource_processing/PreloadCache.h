@@ -60,11 +60,21 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit PreloadCache(::Bedrock::Resources::PreloadCache::SharedOnlyConstructionTag);
 
+    MCNAPI ::std::shared_ptr<::Bedrock::Resources::Archive::TOCReader>
+    _cacheTOCReader(::Core::Path const& archivePath) const;
+
+    MCNAPI ::Bedrock::Resources::PreloadedPathHandle _findPreloadedPath(
+        ::Bedrock::Resources::PreloadCache::PreloadedContentMaps const& contentMaps,
+        ::Core::Path const&                                             cleanPath
+    ) const;
+
     MCNAPI ::Bedrock::Resources::PreloadState _getAsset(
         ::Bedrock::Resources::PreloadCache::PreloadedContentMaps const& contentMaps,
         ::Core::Path const&                                             path,
         ::std::string*                                                  assetData
     ) const;
+
+    MCNAPI bool _isNegativelyCached(::Core::Path const& archivePath) const;
 
     MCNAPI ::Bedrock::Resources::PreloadedPathHandle
     addPreloadedPath(::Core::Path const& path, ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> archiveReader);
@@ -76,6 +86,16 @@ public:
 
     MCNAPI ::Bedrock::Resources::PreloadState
     hasAssetFallback(::Core::Path const& path, ::Core::Path const& archivePath) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _preloadedPathDeleter(
+        ::std::weak_ptr<::Bedrock::Resources::PreloadCache> weakThis,
+        ::Core::Path const&                                 path,
+        ::Bedrock::Resources::Archive::Reader*              reader
+    );
     // NOLINTEND
 
 public:

@@ -56,7 +56,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCNAPI bool $isItemAllowed(::ItemStackBase const&) const;
+#else // LL_PLAT_C
     MCNAPI bool $isItemAllowed(::ItemStackBase const& item) const;
 #endif
 

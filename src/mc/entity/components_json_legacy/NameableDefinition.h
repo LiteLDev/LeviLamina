@@ -27,6 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void addNameAction(::NameAction const& nameAction);
+
     MCAPI void initialize(::EntityContext& entity, ::NameableComponent& component) const;
     // NOLINTEND
 

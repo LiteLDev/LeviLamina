@@ -35,6 +35,10 @@ public:
         ::std::string const&  sourceFilePathWithExtension
     );
 
+#ifdef LL_PLAT_C
+    MCAPI ::std::shared_ptr<::ActorAnimationControllerState>& addState(::HashedString const& name);
+#endif
+
     MCAPI void resolveTransitionStateIndices();
 
     MCAPI ~ActorAnimationController();

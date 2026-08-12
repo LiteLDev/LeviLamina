@@ -26,13 +26,7 @@ tryTransferLeashedActors(::Actor& holderActor, ::BlockPos const& pos, ::ItemInst
 
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
 MCNAPI ::Vec3 const& DEFAULT_KNOT_OFFSET();
-#endif
-
-#ifdef LL_PLAT_S
-MCNAPI ::Vec3 const& DEFAULT_KNOT_OFFSET();
-#endif
 // NOLINTEND
 
 } // namespace LeashKnotUtility

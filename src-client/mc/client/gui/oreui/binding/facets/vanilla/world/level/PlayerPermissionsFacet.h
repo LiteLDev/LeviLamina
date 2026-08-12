@@ -7,10 +7,12 @@
 #include "mc/client/commands/PlayerPermissionsLevelListener.h"
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/world/level/PlayerPermissionsActionState.h"
+#include "mc/client/gui/oreui/binding/facets/vanilla/world/level/PlayerPermissionsError.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -86,6 +88,54 @@ public:
         ::std::function<bool()>              isPrimaryClient,
         ::std::function<bool()>              isHostingLocalDedicatedServer
     );
+
+    MCAPI bool _evaluateCanKickPlayer(::ActorUniqueID playerId);
+
+    MCAPI void _evaluateStates();
+
+    MCAPI void _initResources();
+
+    MCAPI void _reloadPermissions();
+
+    MCAPI bool _validateLocalPlayer();
+
+    MCAPI bool areCheatsEnabled() const;
+
+    MCAPI bool canEditPermissions() const;
+
+    MCAPI bool canKickPlayer() const;
+
+    MCAPI void clearErrorFlag(::OreUI::PlayerPermissionsError error);
+
+    MCAPI void enableCheats();
+
+    MCAPI ::std::optional<::PlayerPermissionLevel> const& getCurrentPlayerPermissionLevel() const;
+
+    MCAPI ::OreUI::PlayerPermissionsActionState const& getKickCommandState() const;
+
+    MCAPI bool getOperatorCommandsRevokedFlag() const;
+
+    MCFOLD bool getPlayerIdInvalidFlag() const;
+
+    MCFOLD ::std::vector<::OreUI::PlayerAbilityBindings> const& getPlayerPermissionList() const;
+
+    MCAPI bool getPlayerPermissionsMissingFlag() const;
+
+    MCAPI bool getSelectedPlayerLeftFlag() const;
+
+    MCAPI bool getSelectedPlayerPermissionsChangedFlag() const;
+
+    MCAPI bool isWorldTemplateOptionsLocked() const;
+
+    MCAPI void kickPlayer(::std::string playerId);
+
+    MCAPI void loadPlayerPermissions(::std::string playerId);
+
+    MCAPI void requestSavePermissions();
+
+    MCAPI void setPlayerPermission(::std::string playerId, ::AbilitiesIndex abilityIndex, bool isEnabled);
+
+    MCAPI void setPlayerPermissionLevel(::std::string playerId, ::PlayerPermissionLevel playerPermissionLevel);
     // NOLINTEND
 
 public:
@@ -112,7 +162,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

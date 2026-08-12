@@ -14,6 +14,8 @@ class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
 class Block;
+class BlockPos;
+class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
@@ -55,15 +57,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     virtual void normalTick() /*override*/;
 
     virtual float getShadowRadius() const /*override*/;
 
-    virtual float causeFallDamageToActor(float, float, ::ActorDamageSource) /*override*/;
+    virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
 
-    virtual void teleportTo(::Vec3 const&, bool, int, int, bool) /*override*/;
+    virtual void teleportTo(
+        ::Vec3 const& pos,
+        bool          shouldStopRiding,
+        int           cause,
+        int           sourceEntityType,
+        bool          keepVelocity
+    ) /*override*/;
 
     virtual bool canChangeDimensionsUsingPortal() const /*override*/;
 
@@ -85,6 +93,8 @@ public:
         ::EntityContext&                   entityContext
     );
 
+    MCAPI bool _isBeingPushedUp(::Block const& pushingBlock, ::BlockSource& region, ::BlockPos const blockPos) const;
+
     MCAPI void breakBlock();
 
     MCAPI void doNormalTick(::ITickDelegate& tickDelegate);
@@ -105,6 +115,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $normalTick();
+
+    MCFOLD float $getShadowRadius() const;
+
+    MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
+
+    MCFOLD void
+    $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+
+    MCAPI bool $canChangeDimensionsUsingPortal() const;
+
+    MCAPI void $onSynchedDataUpdate(int dataId);
+
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float, ::HurtParameters const&);
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
 
     // NOLINTEND
 };

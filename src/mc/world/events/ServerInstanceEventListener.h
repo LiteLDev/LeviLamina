@@ -80,6 +80,8 @@ public:
 
     MCFOLD ::EventResult $onStartLeaveGame(::ServerInstance& instance);
 
+    MCFOLD ::EventResult $onEvent(::ServerInstanceNotificationEvent const& event);
+
 
     // NOLINTEND
 };

@@ -101,6 +101,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit MeleeAttackBaseGoal(::Mob& mob);
 
+    MCAPI void _attemptAttackTarget(::Actor& target, bool canReachTarget, bool hasLineOfSight);
+
     MCAPI void _attemptMoveToTarget(::Actor const& target);
 
     MCAPI void _attemptMoveToTargetPosition(::Actor const& target, bool canReachTarget, float targetDistanceSq);
@@ -112,6 +114,8 @@ public:
     MCAPI bool _isNavigationDoneOrStuck() const;
 
     MCAPI bool _shouldRecalculatePath(bool canReachTarget) const;
+
+    MCAPI bool _targetPositionPutsMobInSun();
 
     MCAPI void _tryLookAtTarget(::Actor const& target) const;
 

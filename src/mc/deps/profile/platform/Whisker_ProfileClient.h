@@ -73,7 +73,7 @@ public:
         char const*                                   group,
         ::Bedrock::Profiler::details::StaticProfLabel label,
         uint                                          color,
-        ::brstd::source_location const&
+        ::brstd::source_location const&               location
     ) /*override*/;
     // NOLINTEND
 
@@ -123,7 +123,7 @@ public:
         char const*                                   group,
         ::Bedrock::Profiler::details::StaticProfLabel label,
         uint                                          color,
-        ::brstd::source_location const&
+        ::brstd::source_location const&               location
     );
 
 

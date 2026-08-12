@@ -23,31 +23,32 @@ public:
     virtual ~EditorServerExportProjectServiceProvider() = default;
 
     virtual ::Bedrock::PubSub::Subscription addExportBeginTask(
-        ::std::function<void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&)>
+        ::std::function<void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&)> fn
     ) = 0;
 
     virtual ::Bedrock::PubSub::Subscription addExportCopyCompleteTask(
         ::std::function<
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
     ) = 0;
 
     virtual ::Bedrock::PubSub::Subscription
-        addExportLevelDataMutationTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)>) = 0;
+    addExportLevelDataMutationTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)> fn) = 0;
 
     virtual ::Bedrock::PubSub::Subscription addExportPreFileRemovalTask(
         ::std::function<
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
     ) = 0;
 
     virtual ::Bedrock::PubSub::Subscription
-        addExportLevelDataFinalizeTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)>) = 0;
+    addExportLevelDataFinalizeTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)> fn) = 0;
 
     virtual ::Bedrock::PubSub::Subscription addExportPrePackageTask(
         ::std::function<
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
     ) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription addExportCleanupTask(::std::function<void(::FileArchiver::ExportType)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription
+    addExportCleanupTask(::std::function<void(::FileArchiver::ExportType)> fn) = 0;
 
     virtual ::std::shared_ptr<::FileArchiver::InterventionPublishers> getInterventionPublisherTable() = 0;
     // NOLINTEND

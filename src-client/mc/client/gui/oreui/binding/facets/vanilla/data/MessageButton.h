@@ -34,6 +34,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit MessageButton(::ButtonData const& button);
 
+    MCAPI void openExternalLink();
+
     MCAPI ::OreUI::MessageButton& operator=(::OreUI::MessageButton&&);
 
     MCAPI ~MessageButton();

@@ -186,6 +186,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI int $GetPlayoutUnderrunCount() const;
+
+    MCNAPI ::std::optional<::webrtc::AudioDeviceModule::Stats> $GetStats() const;
+
 
     // NOLINTEND
 };

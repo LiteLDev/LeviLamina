@@ -137,6 +137,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::VideoSendStream* $CreateVideoSendStream(
+        ::webrtc::VideoSendStream::Config,
+        ::webrtc::VideoEncoderConfig,
+        ::std::unique_ptr<::webrtc::FecController>
+    );
+
+    MCNAPI ::webrtc::PayloadTypeSuggester* $GetPayloadTypeSuggester();
+
+    MCNAPI void $SetPayloadTypeSuggester(::webrtc::PayloadTypeSuggester*);
+
 
     // NOLINTEND
 };

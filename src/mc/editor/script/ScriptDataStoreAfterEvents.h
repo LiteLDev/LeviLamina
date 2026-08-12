@@ -4,11 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/editor/datastore/EventType.h"
 #include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 class ScriptDeferredFlushTracker;
+namespace Editor::DataStore { struct PayloadDescription; }
 namespace Json { class Value; }
 namespace ScriptModuleMinecraft { struct ScriptAfterEventMetadata; }
 namespace Scripting { class ModuleBindingBuilder; }
@@ -32,12 +35,14 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker&) /*override*/;
+        virtual void onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+
 
         // NOLINTEND
     };
@@ -57,6 +62,22 @@ public:
     ScriptDataStoreAfterEvents& operator=(ScriptDataStoreAfterEvents const&);
     ScriptDataStoreAfterEvents(ScriptDataStoreAfterEvents const&);
     ScriptDataStoreAfterEvents();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _handleDataStorePayloadEvent(
+        ::HashedString const& dataTag,
+        ::Editor::DataStore::EventType,
+        ::Json::Value const&                           payload,
+        ::Editor::DataStore::PayloadDescription const& desc
+    );
+
+    MCNAPI ::Editor::ScriptModule::ScriptDataStoreAfterEvents&
+    operator=(::Editor::ScriptModule::ScriptDataStoreAfterEvents&& rhs);
+
+    MCNAPI ~ScriptDataStoreAfterEvents();
+    // NOLINTEND
 
 public:
     // static functions

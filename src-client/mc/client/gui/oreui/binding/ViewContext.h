@@ -33,7 +33,7 @@ public:
 
     virtual void onBindingsReleased() /*override*/;
 
-    virtual void update(double const) /*override*/;
+    virtual void update(double const time) /*override*/;
 
     virtual ::std::vector<::OreUI::Debug::QueryInformation> getQueryInformation() const /*override*/;
 
@@ -43,7 +43,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onReadyForBindings();
 
+    MCAPI void $onSuspend();
+
+    MCFOLD void $onBindingsReleased();
+
+    MCAPI void $update(double const time);
+
+    MCAPI ::std::vector<::OreUI::Debug::QueryInformation> $getQueryInformation() const;
+
+    MCAPI ::std::vector<::OreUI::Detail::ICommandGroup*> $getCommands() const;
     // NOLINTEND
 };
 

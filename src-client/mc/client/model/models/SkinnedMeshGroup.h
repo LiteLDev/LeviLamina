@@ -11,6 +11,7 @@ class ClientPBRTextureData;
 class ExpressionNode;
 class MaterialVariants;
 class Matrix;
+class ModelPart;
 class RenderParams;
 class ScreenContext;
 class SkinnedMesh;
@@ -30,8 +31,19 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SkinnedMeshGroup();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SkinnedMeshGroup(
+        ::ModelPart& modelPart,
+        int          skinnedMeshGroupIdentifier,
+        bool         isUniqueGroup,
+        uint64       skinnedMeshGroupIndex
+    );
+
     MCAPI void copyBoneMatrixToSkinnedMesh(
         int                            meshIndex,
         int                            partIndex,
@@ -57,7 +69,15 @@ public:
         ::std::optional<::MERSUniformData> const& mersUniforms
     );
 
+    MCAPI void registerPart(::ModelPart& part, int groupIndex);
+
     MCAPI ~SkinnedMeshGroup();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

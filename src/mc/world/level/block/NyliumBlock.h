@@ -12,6 +12,7 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class IRandom;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
@@ -43,6 +44,20 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _isGrowthBlockingHalfSlabBlock(::Block const& block);
+
+    MCAPI static bool _isGrowthBlockingStairBlock(::Block const& block);
+
+    MCAPI static ::Block const& crimsonBlockProvider(::IRandom& random);
+
+    MCAPI static ::Block const& netherSproutBlockProvider(::IRandom& random);
+
+    MCAPI static ::Block const& warpedBlockProvider(::IRandom& random);
     // NOLINTEND
 
 public:

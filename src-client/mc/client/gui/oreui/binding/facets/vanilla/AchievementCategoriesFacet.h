@@ -30,6 +30,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AchievementCategoriesFacet();
+
+    MCFOLD ::std::vector<::OreUI::FacetAchievementCategoryData> const& getReleaseCategoryData() const;
+
+    MCFOLD ::std::vector<::OreUI::FacetAchievementCategoryData> const& getStandardCategoryData() const;
     // NOLINTEND
 
 public:
@@ -47,7 +51,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD bool $update();
     // NOLINTEND
 };
 

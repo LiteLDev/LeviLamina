@@ -41,6 +41,12 @@ public:
     JigsawStructureBuilder();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~JigsawStructureBuilder() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI JigsawStructureBuilder(::std::string_view key, ::HashedString type);
@@ -60,6 +66,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string_view key, ::HashedString type);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

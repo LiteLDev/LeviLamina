@@ -110,6 +110,8 @@ public:
     virtual void pushElement(uint64 index) /*override*/;
 
     virtual void pop() /*override*/;
+
+    virtual ~StrictRapidJSONSchemaReader() /*override*/;
     // NOLINTEND
 
 public:
@@ -134,6 +136,12 @@ public:
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

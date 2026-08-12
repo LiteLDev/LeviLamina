@@ -55,6 +55,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI ::std::optional<::webrtc::SdpVideoFormat> $OnResolutionChange(::webrtc::RenderResolution const&);
+
 
         // NOLINTEND
     };
@@ -80,6 +82,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::vector<::webrtc::SdpVideoFormat> $GetImplementations() const;
+
+    MCNAPI ::webrtc::VideoEncoderFactory::CodecSupport
+    $QueryCodecSupport(::webrtc::SdpVideoFormat const&, ::std::optional<::std::string>) const;
+
+    MCNAPI ::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface> $GetEncoderSelector() const;
+
 
     // NOLINTEND
 };

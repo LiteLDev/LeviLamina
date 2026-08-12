@@ -30,6 +30,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void addTrustItemByName(::std::string const& name);
+
     MCAPI void initialize(::EntityContext&, ::TrustingComponent& component) const;
     // NOLINTEND
 

@@ -36,21 +36,9 @@ MCAPI bool isSurface_1_18(::BlockType const& blockType);
 
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
 MCAPI ::CaveFeatureUtils::CarverConfiguration const& Configuration_1_16();
-#endif
 
-#ifdef LL_PLAT_S
-MCAPI ::CaveFeatureUtils::CarverConfiguration const& Configuration_1_16();
-#endif
-
-#ifdef LL_PLAT_C
 MCAPI ::CaveFeatureUtils::CarverConfiguration const& Configuration_1_18();
-#endif
-
-#ifdef LL_PLAT_S
-MCAPI ::CaveFeatureUtils::CarverConfiguration const& Configuration_1_18();
-#endif
 // NOLINTEND
 
 } // namespace CaveFeatureUtils

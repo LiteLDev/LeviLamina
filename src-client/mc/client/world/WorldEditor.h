@@ -83,6 +83,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::LevelSummary& _addLevelSummary(::World::WorldID const& worldID);
 
+    MCAPI void _addWorldEditorEntry(
+        ::World::WorldID const&                               worldID,
+        ::World::IWorldStorageHandler::CachedWorldData const& cachedWorldData
+    );
+
     MCAPI bool _closeWorld(::World::WorldID const& worldID);
 
     MCAPI void _onWorldIconUpdated(::World::WorldID const& worldID);
@@ -176,7 +181,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onLevelDeleted(::std::string const& levelId);
 
+    MCAPI void $onLevelUpdated(::std::string const& levelId);
     // NOLINTEND
 };
 

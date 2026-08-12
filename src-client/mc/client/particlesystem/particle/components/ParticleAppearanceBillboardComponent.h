@@ -36,26 +36,41 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
+    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
 
-    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
+    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
 
-    virtual void parseJson(::ConstDeserializeDataParams const&) /*override*/;
+    virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
 
     virtual void updateParticleAppearance(
-        ::ParticleSystem::ComponentAccessParticleEmitter&,
-        ::ParticleSystem::CommonParticle&,
-        ::RenderParams&
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::ParticleSystem::CommonParticle&                 particle,
+        ::RenderParams&                                   renderParams
     ) /*override*/;
 
-    virtual void
-    updateEmitterAppearance(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&) /*override*/;
+    virtual void updateEmitterAppearance(
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::RenderParams&                                   renderParams
+    ) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
+    MCAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+
+    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
+
+    MCAPI void $updateParticleAppearance(
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::ParticleSystem::CommonParticle&                 particle,
+        ::RenderParams&                                   renderParams
+    );
+
+    MCAPI void
+    $updateEmitterAppearance(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
     // NOLINTEND
 };
 

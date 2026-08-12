@@ -43,7 +43,7 @@ public:
     // NOLINTBEGIN
     virtual ~MarketplacePassWorldTemplateManager() /*override*/ = default;
 
-    virtual void _templateDownloadedCallback(::std::string const&, bool) /*override*/;
+    virtual void _templateDownloadedCallback(::std::string const& templateId, bool success) /*override*/;
     // NOLINTEND
 
 public:
@@ -58,6 +58,10 @@ public:
         ::IContentAcquisition&                                   contentAquisition,
         ::MarketplaceServicesManager&                            marketplaceServicesManager
     );
+
+    MCAPI void _localWorldUpdateCallback(::std::pair<::std::string, bool> const& updatedTemplateData);
+
+    MCAPI void _onOfferPurchased(::std::string const& productId);
 
     MCAPI void _prepareOffers();
 
@@ -91,7 +95,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
     // NOLINTEND
 };
 

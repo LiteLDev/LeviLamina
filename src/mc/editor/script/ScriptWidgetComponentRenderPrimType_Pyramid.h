@@ -33,6 +33,12 @@ public:
     ScriptWidgetComponentRenderPrimType_Pyramid();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Pyramid const& other) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();

@@ -97,6 +97,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+
+    MCAPI bool $structurePostProcessChunk(::ChunkViewSource&);
+
+    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource&);
+
+    MCAPI void $prepareHeights(::BlockVolume&, ::ChunkPos const&, ::std::vector<short>*, bool);
+
+    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const&, uint) const;
+
+    MCAPI ::BiomeSource const& $getBiomeSource() const;
+
+    MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
+
+    MCAPI ::BlockPos $findSpawnPosition() const;
+
+    MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4>) const;
+
+    MCAPI void
+    $decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const;
+
+    MCAPI void $decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const;
+
 
     // NOLINTEND
 };

@@ -13,6 +13,7 @@
 // auto generated forward declare list
 // clang-format off
 class IOptionRegistry;
+class IStoreCatalogItem;
 class MinecraftScreenModel;
 class PartySystemSubController;
 class PerfTurtleScreenController;
@@ -58,7 +59,7 @@ public:
 
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
-    virtual void showToast(::ToastMessage, bool) /*override*/;
+    virtual void showToast(::ToastMessage message, bool animateIn) /*override*/;
 
     virtual void removeToast() /*override*/;
 
@@ -75,6 +76,10 @@ public:
         ::ToastManager&                                    toastManager,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
+
+    MCAPI ::IStoreCatalogItem const* _getAchievementPersonaPiece();
+
+    MCAPI ::std::string readToastData(::std::string const& field_name) const;
     // NOLINTEND
 
 public:
@@ -92,6 +97,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCFOLD ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
+    MCAPI void $showToast(::ToastMessage message, bool animateIn);
+
+    MCAPI void $removeToast();
+
+    MCAPI void $refreshToast();
     // NOLINTEND
 };

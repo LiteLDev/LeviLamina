@@ -4,10 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/events/AggregationEventListener.h"
+#include "mc/platform/brstd/flat_map.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Json { class Value; }
 namespace Social::Events { class Event; }
+namespace Social::Events { class Property; }
 // clang-format on
 
 namespace Social::Events {
@@ -41,11 +44,32 @@ public:
     // NOLINTBEGIN
     virtual ~OneDSEditorEventListener() /*override*/ = default;
 
-    virtual void sendEvent(::Social::Events::Event const&) /*override*/;
+    virtual void sendEvent(::Social::Events::Event const& event) /*override*/;
 
     virtual int getEventTagsFilter() const /*override*/;
 
     virtual void _flushEventQueue() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _addDynamicPropertiesFromEvent(
+        ::Json::Value& properties,
+        ::brstd::flat_map<
+            ::std::string,
+            ::std::vector<::Social::Events::Property>,
+            ::std::less<::std::string>,
+            ::std::vector<::std::string>,
+            ::std::vector<::std::vector<::Social::Events::Property>>> const& dynamicProperties
+    );
+
+    MCNAPI ::std::vector<::std::string> _buildEventPayloads(
+        ::std::vector<::Social::Events::Event>                            events,
+        ::std::function<void(::std::string const&, ::std::string const&)> onEventSerialized
+    );
+
+    MCNAPI bool _sendBatch();
     // NOLINTEND
 
 public:
@@ -63,6 +87,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $sendEvent(::Social::Events::Event const& event);
+
+    MCNAPI int $getEventTagsFilter() const;
+
+    MCNAPI void $_flushEventQueue();
+
 
     // NOLINTEND
 };

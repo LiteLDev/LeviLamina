@@ -33,11 +33,11 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ByteBufferReader(::webrtc::ByteBufferWriter const& buf);
 
-    MCNAPI explicit ByteBufferReader(::webrtc::ArrayView<uchar const, 18446744073709546905> bytes);
+    MCNAPI explicit ByteBufferReader(::webrtc::ArrayView<uchar const> bytes);
 
     MCNAPI bool Consume(uint64 size);
 
-    MCNAPI bool ReadBytes(::webrtc::ArrayView<uchar, 18446744073709546905> val);
+    MCNAPI bool ReadBytes(::webrtc::ArrayView<uchar> val);
 
     MCNAPI bool ReadString(::std::string* val, uint64 len);
 
@@ -59,7 +59,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::ByteBufferWriter const& buf);
 
-    MCNAPI void* $ctor(::webrtc::ArrayView<uchar const, 18446744073709546905> bytes);
+    MCNAPI void* $ctor(::webrtc::ArrayView<uchar const> bytes);
     // NOLINTEND
 };
 

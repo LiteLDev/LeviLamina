@@ -3,12 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ECSScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class LeashableComponent;
 class LeashableDefinition;
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -16,6 +19,24 @@ namespace ScriptModuleMinecraft {
 
 class ScriptLeashableComponent
 : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::LeashableComponent, ::LeashableDefinition> {
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Scripting::Result_deprecated<float> getHardDistance() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getIsLeashed() const;
+
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+    getLeashHolder() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getLeashHolderActorId() const;
+
+    MCAPI ::Scripting::Result_deprecated<float> getMaxDistance() const;
+
+    MCAPI ::Scripting::Result_deprecated<float> getSoftDistance() const;
+    // NOLINTEND
+
 public:
     // static functions
     // NOLINTBEGIN

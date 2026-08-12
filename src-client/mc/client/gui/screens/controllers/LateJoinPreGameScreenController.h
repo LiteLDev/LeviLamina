@@ -56,6 +56,14 @@ public:
         ::std::function<void()> const&            userReadyCallback,
         bool                                      hasXBLBroadcast
     );
+
+    MCAPI void _checkPremiumAccessAndShowUpsell(::std::function<void(bool)> callback);
+
+    MCAPI void _handleUserReadyToJoinGame();
+
+    MCAPI void _promptForPlatformConnection();
+
+    MCAPI void _warnRestrictedPlatformMultiplayer();
     // NOLINTEND
 
 public:
@@ -71,6 +79,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onOpen();
 
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::std::string $_getButtonBDescription();
     // NOLINTEND
 };

@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class BoundingBox;
+class Vec3;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -14,6 +16,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+
+    MCAPI static ::BoundingBox dilate(::BoundingBox const& box, ::Vec3 const& size);
+
+    MCAPI static ::Vec3 getCenter(::BoundingBox const& box);
+
+    MCAPI static ::Vec3 getSpan(::BoundingBox const& box);
+
+    MCAPI static ::BoundingBox translate(::BoundingBox const& box, ::Vec3 const& delta);
     // NOLINTEND
 };
 

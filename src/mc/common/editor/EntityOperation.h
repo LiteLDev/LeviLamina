@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Level;
 namespace Editor { class ServiceProviderCollection; }
 namespace Scripting { struct EnumBinding; }
 // clang-format on
@@ -43,9 +44,20 @@ public:
 
     virtual ::std::string_view getName() /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection&) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection& services) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection&) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& services) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> _loadEntity(::Level* level);
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo);
+
+    MCNAPI ::Scripting::Result_deprecated<void> _saveEntity(::Level* level);
     // NOLINTEND
 
 public:
@@ -57,6 +69,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::string_view $getName();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $_undo(::Editor::ServiceProviderCollection& services);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $_redo(::Editor::ServiceProviderCollection& services);
+
 
     // NOLINTEND
 };

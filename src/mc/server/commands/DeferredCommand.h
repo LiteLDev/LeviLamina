@@ -27,12 +27,14 @@ public:
     // NOLINTBEGIN
     virtual ~DeferredCommand() /*override*/ = default;
 
-    virtual void execute(::MinecraftCommands&) /*override*/;
+    virtual void execute(::MinecraftCommands& commands) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $execute(::MinecraftCommands& commands);
+
 
     // NOLINTEND
 };

@@ -30,6 +30,28 @@ public:
     ScriptAllowList();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleServerAdmin::ScriptAllowListModificationError,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    add(::std::variant<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>,
+        ::std::string> const& playerData);
+
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleServerAdmin::ScriptAllowListModificationError,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    remove(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>,
+            ::std::string> const& playerData
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();

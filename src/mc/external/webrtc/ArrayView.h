@@ -4,7 +4,7 @@
 
 namespace webrtc {
 
-template <typename T0, int T1>
+template <typename T0, ::std::ptrdiff_t T1>
 class ArrayView {};
 
 } // namespace webrtc

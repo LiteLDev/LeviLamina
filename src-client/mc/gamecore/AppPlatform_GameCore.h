@@ -71,8 +71,12 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> getUserStorageRootPath() const /*override*/;
 
-    virtual void
-    setStorageDirectory(::FileStorageDirectory, bool, ::PropertyBag const&, ::std::function<void(bool)>) /*override*/;
+    virtual void setStorageDirectory(
+        ::FileStorageDirectory      dir,
+        bool                        isCallback,
+        ::PropertyBag const&        extraData,
+        ::std::function<void(bool)> onComplete
+    ) /*override*/;
 
     virtual bool usesAsyncOptionSaving() const /*override*/;
 
@@ -90,11 +94,17 @@ public:
 
     virtual void _fireAppFocusLost() /*override*/;
 
-    virtual void textEditComponentGainedFocus(::std::string const&, int, bool, bool, bool) /*override*/;
+    virtual void textEditComponentGainedFocus(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline
+    ) /*override*/;
 
     virtual void textEditComponentLostFocus() /*override*/;
 
-    virtual void setClipboard(::std::string const&) const /*override*/;
+    virtual void setClipboard(::std::string const& value) const /*override*/;
 
     virtual ::std::wstring getClipboardText() const /*override*/;
 
@@ -117,11 +127,11 @@ public:
 
     virtual int getScreenHeight() const /*override*/;
 
-    virtual void setScreenSize(int, int) /*override*/;
+    virtual void setScreenSize(int width, int height) /*override*/;
 
-    virtual void setWindowSize(int, int) /*override*/;
+    virtual void setWindowSize(int width, int height) /*override*/;
 
-    virtual void screenToClient(int&, int&) const;
+    virtual void screenToClient(int& x, int& y) const;
 
     virtual bool hasBuyButtonWhenInvalidLicense() /*override*/;
 
@@ -147,7 +157,7 @@ public:
 
     virtual uint64 getTotalPhysicalMemory() const /*override*/;
 
-    virtual void setFullscreenMode(::FullscreenMode const) /*override*/;
+    virtual void setFullscreenMode(::FullscreenMode const fullscreenMode) /*override*/;
 
     virtual bool isWebviewSupported() const /*override*/;
 
@@ -162,7 +172,7 @@ public:
     virtual bool isInternetAvailable() const /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-        addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)>) /*override*/;
+    addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback) /*override*/;
 
     virtual bool isHandheldDevice() const;
 
@@ -176,16 +186,152 @@ public:
 
     virtual int getPlatformDpi() const /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> _getUserFolderFromXUID(::std::string_view) = 0;
+    virtual ::Core::PathBuffer<::std::string> _getUserFolderFromXUID(::std::string_view xuid) = 0;
 
-    virtual void _retrieveSavedWindowSize(::tagRECT&) = 0;
+    virtual void _retrieveSavedWindowSize(::tagRECT& size) = 0;
 
     virtual ::Bedrock::CommonPlatform* getPlatformShim() const /*override*/;
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _onInviteReceived(void* context, char const* inviteUri);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
 
+    MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
+
+    MCFOLD bool $canLaunchUri(::std::string const& uri);
+
+    MCAPI void $launchUri(::std::string const& uri);
+
+    MCAPI ::Core::PathBuffer<::std::string> $getPackagePath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $getLoggingPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $getDataUrl() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $getUserStorageRootPath() const;
+
+    MCAPI void $setStorageDirectory(
+        ::FileStorageDirectory      dir,
+        bool                        isCallback,
+        ::PropertyBag const&        extraData,
+        ::std::function<void(bool)> onComplete
+    );
+
+    MCFOLD bool $usesAsyncOptionSaving() const;
+
+    MCFOLD bool $supportsKeyboardMouse() const;
+
+    MCFOLD void $updateKeyboard();
+
+    MCAPI void $initializeOnScreenKeyboard(::Bedrock::NotNullNonOwnerPtr<::ITextBoxController>);
+
+    MCFOLD void $deinitializeOnScreenKeyboard();
+
+    MCFOLD bool $supportsMSAA() const;
+
+    MCAPI void $_fireAppFocusGained();
+
+    MCAPI void $_fireAppFocusLost();
+
+    MCAPI void $textEditComponentGainedFocus(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline
+    );
+
+    MCAPI void $textEditComponentLostFocus();
+
+    MCFOLD void $setClipboard(::std::string const& value) const;
+
+    MCAPI ::std::wstring $getClipboardText() const;
+
+    MCFOLD void $swapBuffers();
+
+    MCFOLD void $discardBackbuffer();
+
+    MCAPI ::std::string $createUUID();
+
+    MCFOLD auto $getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
+
+    MCFOLD bool $supportsVibration() const;
+
+    MCFOLD bool $supportsFliteTTS() const;
+
+    MCFOLD bool $getSimulateTouchWithMouse() const;
+
+    MCAPI int $getScreenWidth() const;
+
+    MCAPI int $getScreenHeight() const;
+
+    MCAPI void $setScreenSize(int width, int height);
+
+    MCAPI void $setWindowSize(int width, int height);
+
+    MCFOLD void $screenToClient(int& x, int& y) const;
+
+    MCFOLD bool $hasBuyButtonWhenInvalidLicense();
+
+    MCAPI ::std::string $getApplicationId() const;
+
+    MCFOLD bool $isMouseInsideClient() const;
+
+    MCFOLD bool $canScroll() const;
+
+    MCFOLD bool $isRemoteSession() const;
+
+    MCFOLD bool $isMouseClickLockEnabled() const;
+
+    MCFOLD bool $isMouseSonarEnabled() const;
+
+    MCFOLD uint $getMouseClickLockTime() const;
+
+    MCAPI uint64 $getFreeMemory() const;
+
+    MCAPI uint64 $getMemoryLimit() const;
+
+    MCAPI uint64 $getUsedMemory();
+
+    MCAPI uint64 $getTotalPhysicalMemory() const;
+
+    MCAPI void $setFullscreenMode(::FullscreenMode const fullscreenMode);
+
+    MCFOLD bool $isWebviewSupported() const;
+
+    MCAPI ::std::variant<::HWND__*, ::std::monostate> $getRenderSurfaceParameters() const;
+
+    MCAPI bool $isLANAvailable() const;
+
+    MCAPI bool $isNetworkAllowed() const;
+
+    MCAPI bool $isNetworkAvailable() const;
+
+    MCAPI bool $isInternetAvailable() const;
+
+    MCAPI ::Bedrock::PubSub::Subscription
+    $addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback);
+
+    MCFOLD bool $isHandheldDevice() const;
+
+    MCAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
+
+    MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
+
+    MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
+
+    MCFOLD bool $compareAppReceiptToLocalReceipt(::std::string const&);
+
+    MCAPI int $getPlatformDpi() const;
+
+    MCAPI ::Bedrock::CommonPlatform* $getPlatformShim() const;
     // NOLINTEND
 };

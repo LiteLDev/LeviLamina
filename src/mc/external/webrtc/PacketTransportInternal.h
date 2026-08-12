@@ -46,7 +46,7 @@ public:
     virtual bool receiving() const = 0;
 
     virtual int
-    SendPacket(char const* data, uint64 size, ::webrtc::AsyncSocketPacketOptions const& options, int flags) = 0;
+    SendPacket(char const* data, uint64 len, ::webrtc::AsyncSocketPacketOptions const& options, int flags) = 0;
 
     virtual int SetOption(::webrtc::Socket::Option opt, int value) = 0;
 

@@ -35,6 +35,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NetworkWorldData();
+
     MCAPI ~NetworkWorldData();
     // NOLINTEND
 
@@ -47,6 +49,12 @@ public:
         ::NetworkWorldInfo const&                                  networkWorldInfo,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

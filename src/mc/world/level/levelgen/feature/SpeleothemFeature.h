@@ -29,12 +29,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const&) const /*override*/;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+
 
     // NOLINTEND
 };

@@ -2,6 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core_graphics/TextureSetLayerType.h"
+
+// auto generated forward declare list
+// clang-format off
+class AbstractTextureAccessor;
+class ResourceLocation;
+namespace cg { struct ImageDescription; }
+// clang-format on
+
 class TextureAtlasTile {
 public:
     // member variables
@@ -24,4 +34,15 @@ public:
     TextureAtlasTile& operator=(TextureAtlasTile const&);
     TextureAtlasTile(TextureAtlasTile const&);
     TextureAtlasTile();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _calculateTileDimensions(
+        ::AbstractTextureAccessor const&         textureAccessor,
+        ::ResourceLocation const&                resourceLocation,
+        ::std::optional<::cg::ImageDescription>& optImageDescription,
+        ::cg::TextureSetLayerType const          textureSetLayerType
+    );
+    // NOLINTEND
 };

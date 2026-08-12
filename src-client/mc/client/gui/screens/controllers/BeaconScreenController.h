@@ -62,6 +62,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $_isStillValid() const;
 
+    MCAPI void $_registerCoalesceOrder();
+
+    MCAPI void $_registerAutoPlaceOrder();
     // NOLINTEND
 };

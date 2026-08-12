@@ -28,6 +28,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::HardwareMemoryTier $getHardwareMemoryTier() const;
+
 
     // NOLINTEND
 };

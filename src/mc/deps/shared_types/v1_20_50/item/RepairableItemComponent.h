@@ -29,6 +29,12 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::ItemDescriptor>> mItems;
         ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode>                mRepairAmount;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI bool operator==(::SharedTypes::v1_20_50::RepairableItemComponent::RepairItemEntry const& a) const;
+        // NOLINTEND
     };
 
 public:

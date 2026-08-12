@@ -61,6 +61,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _registerPool(::WorkerPool& pool);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string_view name, ::Scheduler& owner);

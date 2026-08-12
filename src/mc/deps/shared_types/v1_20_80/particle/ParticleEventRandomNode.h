@@ -13,6 +13,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float> mWeight;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleEventRandomNode const&) const;
+    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_20_80

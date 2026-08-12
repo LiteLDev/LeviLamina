@@ -27,6 +27,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $execute();
+
+    MCFOLD bool $isDone();
+
 
     // NOLINTEND
 };

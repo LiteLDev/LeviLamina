@@ -294,20 +294,57 @@ public:
 
     MCNAPI bool $hasCustomGroup(::mce::UUID const& minimapId, ::std::string const& iconIdentifier) const;
 
+#ifdef LL_PLAT_S
     MCNAPI void $setMinimapUIVisible(::mce::UUID const&, bool);
+#else // LL_PLAT_C
+    MCNAPI void $setMinimapUIVisible(::mce::UUID const& minimapId, bool visible);
+#endif
 
+#ifdef LL_PLAT_S
     MCNAPI bool $queryPosition(::mce::UUID const&, float, float, float&, ::std::string&, ::std::string&);
+#else // LL_PLAT_C
+    MCNAPI bool $queryPosition(
+        ::mce::UUID const& minimapId,
+        float              worldX,
+        float              worldZ,
+        float&             outY,
+        ::std::string&     outBiomeName,
+        ::std::string&     outBlockName
+    );
+#endif
 
+#ifdef LL_PLAT_S
     MCNAPI ::std::string $generateMinimapImage(::mce::UUID const&, ::Vec3 const&);
+#else // LL_PLAT_C
+    MCNAPI ::std::string $generateMinimapImage(::mce::UUID const& minimapId, ::Vec3 const& playerPosition);
+#endif
 
+#ifdef LL_PLAT_S
     MCNAPI ::std::vector<::Editor::Services::MinimapMarkerData>
     $getAllMarkers(::mce::UUID const&, ::DimensionType) const;
+#else // LL_PLAT_C
+    MCNAPI ::std::vector<::Editor::Services::MinimapMarkerData>
+    $getAllMarkers(::mce::UUID const& minimapId, ::DimensionType currentDimension) const;
+#endif
 
+#ifdef LL_PLAT_S
     MCNAPI ::Bedrock::PubSub::Subscription $listenForMinimapDataChanged(::std::function<void(::mce::UUID const&)>);
+#else // LL_PLAT_C
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $listenForMinimapDataChanged(::std::function<void(::mce::UUID const&)> callback);
+#endif
 
+#ifdef LL_PLAT_S
     MCNAPI ::Bedrock::PubSub::Subscription $listenForMarkersChanged(::std::function<void(::mce::UUID const&)>);
+#else // LL_PLAT_C
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForMarkersChanged(::std::function<void(::mce::UUID const&)> callback);
+#endif
 
+#ifdef LL_PLAT_S
     MCNAPI ::Bedrock::PubSub::Subscription $listenForMeMarkerChanged(::std::function<void()>);
+#else // LL_PLAT_C
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForMeMarkerChanged(::std::function<void()> callback);
+#endif
 
 
     // NOLINTEND

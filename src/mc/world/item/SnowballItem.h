@@ -28,11 +28,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     virtual ::SnowballItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
 
@@ -62,6 +64,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+
+    MCFOLD ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+
+    MCAPI ::SnowballItem& $setDescriptionId(::std::string const& descriptionId);
+
+    MCAPI ::Actor* $createProjectileActor(
+        ::BlockSource&     region,
+        ::ItemStack const& stack,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      aimDirection
+    ) const;
+
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+
 
     // NOLINTEND
 };

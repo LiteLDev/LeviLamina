@@ -19,9 +19,24 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FogVolumetricCoefficientSetting();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FogVolumetricCoefficientSetting(
+        ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB> const& scattering,
+        ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB> const& absorption
+    );
+
     MCAPI ~FogVolumetricCoefficientSetting();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

@@ -32,6 +32,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BlockSource const& getBlockSource() const /*override*/;
+
+    virtual ~ActorInternalEvent() /*override*/;
     // NOLINTEND
 
 public:
@@ -44,6 +46,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCFOLD void* $ctor(::BlockPos pos, ::Actor& entity, ::std::string const& name);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

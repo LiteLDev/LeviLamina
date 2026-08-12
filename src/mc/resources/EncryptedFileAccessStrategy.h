@@ -80,6 +80,9 @@ public:
         bool                                                               canRecurse,
         ::std::optional<::std::unordered_map<::Core::Path, ::std::string>> assetSet
     );
+
+    MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
+    _loadArchive(::Core::PathView packRelativeArchiveFile, ::std::string const& key) const;
     // NOLINTEND
 
 public:
@@ -87,6 +90,13 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool
     _getContentIdentityFromEncryptedStream(::std::string& stream, ::ContentIdentity& contentIdentity);
+
+    MCNAPI static bool _transformStream(
+        ::gsl::span<char const> input,
+        ::gsl::span<char>       output,
+        ::std::string const&    key,
+        uint64&                 bytesWritten
+    );
 
     MCNAPI static void _transformStream(
         ::std::string&           stream,

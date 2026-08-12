@@ -61,9 +61,7 @@ public:
 
         virtual void OnReceivedNack(::std::vector<ushort> const& nack_sequence_numbers) = 0;
 
-        virtual void OnReceivedRtcpReportBlocks(
-            ::webrtc::ArrayView<::webrtc::ReportBlockData const, 18446744073709546905> report_blocks
-        ) = 0;
+        virtual void OnReceivedRtcpReportBlocks(::webrtc::ArrayView<::webrtc::ReportBlockData const> report_blocks) = 0;
 
         virtual ~ModuleRtpRtcp() = default;
         // NOLINTEND
@@ -346,15 +344,15 @@ public:
 
     MCNAPI void HandleXrReceiveReferenceTime(uint sender_ssrc, ::webrtc::rtcp::Rrtr const& rrtr);
 
-    MCNAPI void IncomingPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> packet);
+    MCNAPI void IncomingPacket(::webrtc::ArrayView<uchar const> packet);
 
     MCNAPI ::std::optional<::webrtc::TimeDelta> LastRtt() const;
 
     MCNAPI ::std::optional<::webrtc::TimeDelta> OnPeriodicRttUpdate(::webrtc::Timestamp newer_than, bool sending);
 
     MCNAPI bool ParseCompoundPacket(
-        ::webrtc::ArrayView<uchar const, 18446744073709546905> packet,
-        ::webrtc::RTCPReceiver::PacketInformation*             packet_information
+        ::webrtc::ArrayView<uchar const>           packet,
+        ::webrtc::RTCPReceiver::PacketInformation* packet_information
     );
 
     MCNAPI RTCPReceiver(

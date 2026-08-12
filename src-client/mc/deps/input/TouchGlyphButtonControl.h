@@ -158,6 +158,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD uint $getHoldButtonId() const;
 
+    MCAPI int $getActivePointerId() const;
+
+    MCAPI bool $releaseOnClear() const;
+
+    MCAPI void $render(::InputRenderContext& context) const;
+
+    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
+
+    MCAPI void $release(::InputEventQueue& eventQueue);
     // NOLINTEND
 };

@@ -6,6 +6,7 @@
 // clang-format off
 class Attribute;
 class AttributeInstance;
+class AttributeInstanceRef;
 class BaseAttributeMap;
 class CompoundTag;
 class ListTag;
@@ -15,6 +16,11 @@ class SharedAttributes {
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::AttributeInstanceRef
+    _legacyGetInstance(::BaseAttributeMap& attributes, ::std::string const& attributeName);
+
+    MCAPI static ::std::string const& _legacyGetName(::std::string const& attributeName);
+
     MCAPI static ::std::unique_ptr<::CompoundTag> _saveAttribute(::AttributeInstance const& instance);
 
     MCAPI static void loadAttributes(::BaseAttributeMap* attributes, ::ListTag const* list);

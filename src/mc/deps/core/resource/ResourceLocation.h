@@ -44,14 +44,26 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                             mFullHash;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ResourceLocation();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ResourceLocation& operator=(ResourceLocation const&);
+    ResourceLocation();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ResourceLocation(::Core::PathView path);
+
+#ifdef LL_PLAT_C
+    MCAPI ResourceLocation(::ResourceLocation const& rhs);
+#endif
 
     MCAPI ResourceLocation(::Core::PathView path, ::ResourceFileSystem fileSystem);
 

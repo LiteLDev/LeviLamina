@@ -11,9 +11,11 @@
 // clang-format off
 class IMinecraftApp;
 namespace Automation { class AutomationSession; }
+namespace CodeBuilder { class GameContext; }
 namespace CodeBuilder { struct AgentMessage; }
 namespace CodeBuilder { struct ChatMessage; }
 namespace CodeBuilder { struct CommandMessage; }
+namespace CodeBuilder { struct CommandRequest; }
 namespace CodeBuilder { struct ErrorMessage; }
 namespace CodeBuilder { struct EventMessage; }
 class ActivationUri;
@@ -51,41 +53,17 @@ public:
     // NOLINTBEGIN
     virtual ~AutomationClient() /*override*/ = default;
 
-#ifdef LL_PLAT_S
     virtual void onUri(::ActivationUri const& uri) /*override*/;
-#else // LL_PLAT_C
-    virtual void onUri(::ActivationUri const&) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual void send(::CodeBuilder::AgentMessage const& message) /*override*/;
-#else // LL_PLAT_C
-    virtual void send(::CodeBuilder::AgentMessage const&) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual void send(::CodeBuilder::CommandMessage const& message) /*override*/;
-#else // LL_PLAT_C
-    virtual void send(::CodeBuilder::CommandMessage const&) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual void send(::CodeBuilder::ErrorMessage const& message) /*override*/;
-#else // LL_PLAT_C
-    virtual void send(::CodeBuilder::ErrorMessage const&) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual void send(::CodeBuilder::EventMessage const& message) /*override*/;
-#else // LL_PLAT_C
-    virtual void send(::CodeBuilder::EventMessage const&) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual void send(::CodeBuilder::ChatMessage const& message) /*override*/;
-#else // LL_PLAT_C
-    virtual void send(::CodeBuilder::ChatMessage const&) /*override*/;
-#endif
 
     virtual void tick() /*override*/;
 
@@ -103,9 +81,13 @@ public:
 
     MCNAPI void _forEachSession(::std::function<bool(::Automation::AutomationSession&)> const& callback);
 
+    MCNAPI bool _tryAddCommand(::CodeBuilder::CommandRequest&& commandRequest);
+
     MCNAPI ::std::shared_ptr<::Automation::AutomationSession> createSession();
 
     MCNAPI ::std::shared_ptr<::Automation::AutomationSession> getDefaultSession();
+
+    MCNAPI ::std::shared_ptr<::CodeBuilder::GameContext> getGameContext() const;
     // NOLINTEND
 
 public:
@@ -117,7 +99,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI void $onUri(::ActivationUri const& uri);
 
     MCNAPI void $send(::CodeBuilder::AgentMessage const& message);
@@ -137,7 +118,6 @@ public:
     MCNAPI void $onLevelDestruction(::std::string const&);
 
     MCNAPI void $playerListChanged();
-#endif
 
 
     // NOLINTEND

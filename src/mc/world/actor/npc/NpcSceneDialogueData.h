@@ -75,7 +75,11 @@ public:
 
     MCFOLD ::npc::ActionContainer const* $getActionsContainer() const;
 
+#ifdef LL_PLAT_S
     MCAPI ::ActorUniqueID $getActorUniqueID();
+#else // LL_PLAT_C
+    MCFOLD ::ActorUniqueID $getActorUniqueID();
+#endif
 
     MCFOLD ::Actor* $getActor();
 

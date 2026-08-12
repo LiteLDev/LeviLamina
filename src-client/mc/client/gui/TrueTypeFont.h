@@ -73,11 +73,11 @@ public:
     // NOLINTBEGIN
     virtual ~TrueTypeFont() /*override*/ = default;
 
-    virtual void loadFontData(bool) /*override*/;
+    virtual void loadFontData(bool uploadTextureImmediately) /*override*/;
 
     virtual bool _supportsShadowInSingleDraw() /*override*/;
 
-    virtual ::mce::MaterialPtr& getMaterial(int, bool) const /*override*/;
+    virtual ::mce::MaterialPtr& getMaterial(int sheet, bool isOddGuiScale) const /*override*/;
 
     virtual void uploadTextureToGPU() /*override*/;
 
@@ -85,11 +85,11 @@ public:
 
     virtual int _getReplacementCharacter() /*override*/;
 
-    virtual ::ResourceLocation _getFontSheetLocation(int, bool) const /*override*/;
+    virtual ::ResourceLocation _getFontSheetLocation(int sheet, bool) const /*override*/;
 
-    virtual float _getCharWidth(int, bool) /*override*/;
+    virtual float _getCharWidth(int uniChar, bool) /*override*/;
 
-    virtual bool supportsChar(int const&) /*override*/;
+    virtual bool supportsChar(int const& character) /*override*/;
 
     virtual float getWrapHeight() const /*override*/;
 
@@ -102,20 +102,31 @@ public:
     virtual void setTextConstantsInScreenContext(::ScreenContext&, int, float, ::mce::Color const&, bool) const
         /*override*/;
 
-    virtual void reloadFontTextures(::Bedrock::NonOwnerPointer<::ResourceLoadManager> const&, bool) /*override*/;
+    virtual void reloadFontTextures(
+        ::Bedrock::NonOwnerPointer<::ResourceLoadManager> const& resourceLoadManager,
+        bool                                                     blockingLoad
+    ) /*override*/;
 
     virtual bool isReloadingTextures() /*override*/;
 
-    virtual void _scanUnicodeCharacterSize(int, int, bool) /*override*/;
+    virtual void _scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode) /*override*/;
 
     virtual ::mce::Font::Type getType(int glyphSheet) const /*override*/;
 
-    virtual void fetchPage(int) /*override*/;
+    virtual void fetchPage(int page) /*override*/;
 
-    virtual float
-    buildChar(::std::vector<::Font::GlyphQuad>&, int, ::mce::Color const&, bool, float, float, bool) /*override*/;
+    virtual float buildChar(
+        ::std::vector<::Font::GlyphQuad>& quads,
+        int                               i,
+        ::mce::Color const&               color,
+        bool                              italic,
+        float                             x,
+        float                             y,
+        bool                              unicode
+    ) /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> getUnicodeFontNameWithPage(::Core::Path const&, uchar const) const;
+    virtual ::Core::PathBuffer<::std::string>
+    getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
 
     virtual void switchFontsource(::Core::Path const&, ::Core::Path const&) /*override*/;
 
@@ -124,8 +135,74 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _loadSheetForGlyph(int codepoint, bool uploadTexture, bool forceReload);
+
+    MCAPI void
+    _uploadTextureToGPU(::ResourceLocation const& resourceLocation, ::std::shared_ptr<::cg::ImageBuffer> imageBuffer);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $loadFontData(bool uploadTextureImmediately);
 
+    MCFOLD bool $_supportsShadowInSingleDraw();
+
+    MCAPI ::mce::MaterialPtr& $getMaterial(int sheet, bool isOddGuiScale) const;
+
+    MCAPI void $uploadTextureToGPU();
+
+    MCAPI void $unloadTextures();
+
+    MCFOLD int $_getReplacementCharacter();
+
+    MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool) const;
+
+    MCAPI float $_getCharWidth(int uniChar, bool);
+
+    MCAPI bool $supportsChar(int const& character);
+
+    MCAPI float $getWrapHeight() const;
+
+    MCFOLD float $getScaleFactor() const;
+
+    MCFOLD bool $isScreenPixelAligned() const;
+
+    MCFOLD bool $materialCanBeOverridden() const;
+
+    MCFOLD void $setTextConstantsInScreenContext(::ScreenContext&, int, float, ::mce::Color const&, bool) const;
+
+    MCAPI void $reloadFontTextures(
+        ::Bedrock::NonOwnerPointer<::ResourceLoadManager> const& resourceLoadManager,
+        bool                                                     blockingLoad
+    );
+
+    MCFOLD bool $isReloadingTextures();
+
+    MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
+
+    MCFOLD ::mce::Font::Type $getType(int glyphSheet) const;
+
+    MCAPI void $fetchPage(int page);
+
+    MCAPI float $buildChar(
+        ::std::vector<::Font::GlyphQuad>& quads,
+        int                               i,
+        ::mce::Color const&               color,
+        bool                              italic,
+        float                             x,
+        float                             y,
+        bool                              unicode
+    );
+
+    MCAPI ::Core::PathBuffer<::std::string>
+    $getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
+
+    MCFOLD void $switchFontsource(::Core::Path const&, ::Core::Path const&);
+
+    MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
+    $getFontSources() const;
     // NOLINTEND
 };

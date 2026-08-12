@@ -45,6 +45,8 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI static ::std::string _getName(::CompoundType type);
+
     MCAPI static ::std::string getCompoundFormula(::ItemInstance const& instance);
 #endif
 

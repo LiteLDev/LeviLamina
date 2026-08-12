@@ -3,10 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/Result.h"
 #include "mc/world/level/biome/serialization/BiomeCappedSurfaceData.h"
 #include "mc/world/level/biome/serialization/BiomeMesaSurfaceData.h"
 #include "mc/world/level/biome/serialization/BiomeNoiseGradientSurfaceData.h"
 #include "mc/world/level/biome/serialization/BiomeSurfaceMaterialData.h"
+
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
 
 struct BiomeSurfaceBuilderData {
 public:
@@ -20,5 +27,19 @@ public:
     ::ll::TypedStorage<4, 16, ::std::optional<::BiomeMesaSurfaceData>>           mMesaSurface;
     ::ll::TypedStorage<8, 80, ::std::optional<::BiomeCappedSurfaceData>>         mCappedSurface;
     ::ll::TypedStorage<8, 120, ::std::optional<::BiomeNoiseGradientSurfaceData>> mNoiseGradientSurface;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator==(::BiomeSurfaceBuilderData const& other) const;
+
+    MCAPI void write(::BinaryStream& stream) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Bedrock::Result<::BiomeSurfaceBuilderData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

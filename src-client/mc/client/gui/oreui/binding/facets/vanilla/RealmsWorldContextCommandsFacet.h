@@ -35,6 +35,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsWorldContextCommandsFacet(::std::shared_ptr<::Realms::RealmsWorldContext> realmsWorldContext);
+
+    MCAPI void fetchRealmsWorld(::std::string const& realmId);
+
+    MCAPI void resetWorldContext();
     // NOLINTEND
 
 public:

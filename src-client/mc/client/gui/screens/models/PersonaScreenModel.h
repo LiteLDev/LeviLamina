@@ -63,7 +63,7 @@ public:
     // NOLINTBEGIN
     virtual ~PersonaScreenModel() /*override*/ = default;
 
-    virtual void update(::ui::DirtyFlag&) /*override*/;
+    virtual void update(::ui::DirtyFlag& dirtyFlags) /*override*/;
 
     virtual ::SkinHandle const& getSelectedSkinHandle() const /*override*/;
     // NOLINTEND
@@ -136,6 +136,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $update(::ui::DirtyFlag& dirtyFlags);
 
+    MCAPI ::SkinHandle const& $getSelectedSkinHandle() const;
     // NOLINTEND
 };

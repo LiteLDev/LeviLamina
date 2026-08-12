@@ -18,4 +18,10 @@ public:
     ::ll::TypedStorage<8, 48, ::HashedString>                                      mContainerName;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ParticleSystem::ParticleEffect>> mPtr;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::ParticleSystem::ParticleEffect> getEffectPtr();
+    // NOLINTEND
 };

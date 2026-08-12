@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ClassBinding; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptEquippableComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
@@ -15,8 +20,16 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $_isValid() const;
+
 
     // NOLINTEND
 };

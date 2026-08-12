@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 class EntityRegistry;
+namespace NpcComponents { struct LeaveMenuCountdown; }
 // clang-format on
 
 class NpcSystem : public ::ITickingSystem {
@@ -15,6 +17,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    tickCountdown(::EntityContext& entity, ::NpcComponents::LeaveMenuCountdown& leaveMenuCountdownComponent);
     // NOLINTEND
 
 public:

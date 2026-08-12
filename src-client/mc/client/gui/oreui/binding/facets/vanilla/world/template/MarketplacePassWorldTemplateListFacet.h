@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/SeeMoreRouteData.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -58,6 +59,25 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>               dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
+
+    MCAPI ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings> _getMarketplacePassWorldTemplates() const;
+
+    MCAPI ::OreUI::SeeMoreRouteData _getSeeMoreRouteData() const;
+
+    MCAPI void _updateBindings(
+        ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings>&& templateBindings,
+        ::OreUI::SeeMoreRouteData&&                                    seeMoreRouteData
+    );
+
+    MCAPI void clearRefreshTaskState();
+
+    MCFOLD ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings> const& getMarketplacePassWorldTemplates() const;
+
+    MCAPI ::OreUI::FacetTaskState getRefreshTaskState() const;
+
+    MCFOLD ::std::optional<::OreUI::SeeMoreRouteData> const& getSeeMoreRouteData() const;
+
+    MCAPI void refreshOffers();
     // NOLINTEND
 
 public:
@@ -80,7 +100,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

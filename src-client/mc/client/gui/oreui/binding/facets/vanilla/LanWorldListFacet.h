@@ -42,6 +42,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit LanWorldListFacet(::World::LanServerWorldList& lanServerWorldList);
+
+    MCFOLD ::std::vector<::OreUI::LanWorld>& getLanWorlds();
     // NOLINTEND
 
 public:

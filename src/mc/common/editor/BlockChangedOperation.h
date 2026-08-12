@@ -10,6 +10,8 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class CompoundTag;
+class Level;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Transactions { struct BlockChangeIntentData; }
 // clang-format on
@@ -39,6 +41,22 @@ public:
     virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection& services) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& services) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo) const;
+
+    MCNAPI ::Scripting::Result_deprecated<void> _setBlock(
+        ::Level&          level,
+        ::BlockSource&    region,
+        uint const&       blockToPlace,
+        uint const&       extraBlockToPlace,
+        ::CompoundTag*    blockData,
+        ::BlockPos const& pos
+    ) const;
     // NOLINTEND
 
 public:

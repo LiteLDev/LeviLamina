@@ -70,6 +70,10 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
+
+    MCAPI void _changeLeftTab(int dir);
+
+    MCAPI void _updateVisualPatternItem();
     // NOLINTEND
 
 public:
@@ -86,6 +90,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCFOLD bool $_isStillValid() const;
+
+    MCAPI void $_registerCoalesceOrder();
+
+    MCAPI void $_registerAutoPlaceOrder();
+
+    MCAPI ::ItemStackBase const&
+    $_getVisualItemStackImpl(::std::string const& collectionName, int collectionIndex) const;
     // NOLINTEND
 };

@@ -54,6 +54,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::Actor* _revive(::BlockSource& region, ::BeehiveBlockActor::Occupant const& occupant, uchar spawnDirection);
+
+    MCAPI bool _tickOccupant(::BlockSource& region, ::BeehiveBlockActor::Occupant& occupant);
+
     MCAPI void evictAll(::BlockSource& region, bool angry);
 
     MCAPI void saveUserData(::CompoundTag& tag) const;

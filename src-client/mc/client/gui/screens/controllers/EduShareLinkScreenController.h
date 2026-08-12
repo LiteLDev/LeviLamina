@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/controllers/EduShareLinkItem.h"
+#include "mc/client/gui/screens/controllers/EduShareMethodType.h"
+#include "mc/client/gui/screens/controllers/EduShareUriType.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 #include "mc/options/EduSharedUriResource.h"
 
@@ -79,6 +81,27 @@ public:
         ::LibraryItem const&                     item,
         ::std::optional<::EduSharedUriResource>  resource
     );
+
+    MCAPI ::std::string _appendAdditionalResources(::std::string const& url);
+
+    MCAPI void _clearAdditionalUriResource();
+
+    MCAPI void _closeActiveScreen();
+
+    MCAPI ::std::string _getResourceAddedText() const;
+
+    MCAPI ::std::string _getTeamsAdvancedShareTitle() const;
+
+    MCAPI ::std::string _getTeamsBodyText() const;
+
+    MCAPI void _openScreen(::EduShareLinkScreenController::ScreenState state);
+
+    MCAPI void _registerShareDialogHandlers(::std::string const& copyUri);
+
+    MCAPI void _screenTTS(::std::string const& title, ::std::string const& contents, ::std::string const& extra);
+
+    MCAPI void
+    _sendNotification(::EduShareUriType shareType, ::EduShareMethodType methodType, ::std::string const& toastMessage);
     // NOLINTEND
 
 public:
@@ -94,6 +117,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND
 };

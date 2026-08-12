@@ -30,12 +30,16 @@ public:
     // NOLINTBEGIN
     virtual bool isDedicatedServer() const /*override*/;
 
-    virtual bool canChangePermission(::ServerPlayer const&) const /*override*/;
+    virtual bool canChangePermission(::ServerPlayer const& player) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $isDedicatedServer() const;
+
+    MCNAPI bool $canChangePermission(::ServerPlayer const& player) const;
+
 
     // NOLINTEND
 };

@@ -32,6 +32,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isComplete() const;
+
+    MCAPI ::std::optional<::gametest::GameTestError> $getError();
+
 
     // NOLINTEND
 };

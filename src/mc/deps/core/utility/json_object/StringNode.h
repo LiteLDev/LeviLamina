@@ -29,6 +29,12 @@ public:
     StringNode& operator=(StringNode const&);
     StringNode(StringNode const&);
     StringNode();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool set(::std::string_view str, bool copy);
+    // NOLINTEND
 };
 
 } // namespace Bedrock::JSONObject

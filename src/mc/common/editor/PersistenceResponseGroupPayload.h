@@ -64,6 +64,12 @@ public:
     MCNAPI void* $ctor(::std::string requestId);
 #endif
     // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Editor::Network

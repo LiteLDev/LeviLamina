@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Mob;
 struct Tick;
 // clang-format on
 
@@ -42,6 +43,16 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual ::ActorUniqueID _findTarget(::MobDescriptor const** outMobDescriptor);
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _isTargetInCooldown(::MobDescriptor const& descriptor) const;
+
+    MCAPI bool _selectTarget();
+
+    MCAPI bool isTargetVisible(::Mob const& mob, float maxDistance, float maxHeight) const;
     // NOLINTEND
 
 public:

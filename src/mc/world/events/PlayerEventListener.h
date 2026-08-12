@@ -148,8 +148,16 @@ public:
 
     virtual ::EventResult onPlayerWaxOnWaxOff(::Player& player, int const blockID);
 
+#ifdef LL_PLAT_S
     virtual ::EventResult
     onPlayerKineticDamageDealt(::Player&, ::ActorUniqueID const&, ::DealKineticDamageComponent const&);
+#else // LL_PLAT_C
+    virtual ::EventResult onPlayerKineticDamageDealt(
+        ::Player&                           player,
+        ::ActorUniqueID const&              target,
+        ::DealKineticDamageComponent const& dealKinematicDamageComponent
+    );
+#endif
 
     virtual ::EventResult onEvent(::PlayerNotificationEvent const& event);
 
@@ -176,7 +184,11 @@ public:
 
     MCFOLD ::EventResult $onPlayerSaved(::Player& player);
 
+#ifdef LL_PLAT_S
     MCFOLD ::EventResult $onPlayerInput(::EntityContext&);
+#else // LL_PLAT_C
+    MCFOLD ::EventResult $onPlayerInput(::EntityContext& entity);
+#endif
 
     MCFOLD ::EventResult $onPlayerAuthInputReceived(::Player&);
 
@@ -184,7 +196,11 @@ public:
 
     MCFOLD ::EventResult $onPlayerTurn(::Player& player, ::Vec2& turnDelta);
 
+#ifdef LL_PLAT_S
     MCFOLD ::EventResult $onCameraSetPlayerRot(::Player&, ::Vec2 const&);
+#else // LL_PLAT_C
+    MCFOLD ::EventResult $onCameraSetPlayerRot(::Player& player, ::Vec2 const& rotation);
+#endif
 
     MCFOLD ::EventResult $onStartDestroyBlock(::Player& player, ::BlockPos const& pos, uchar& face);
 
@@ -264,18 +280,28 @@ public:
 
     MCFOLD ::EventResult $onPlayerWaxOnWaxOff(::Player& player, int const blockID);
 
+#ifdef LL_PLAT_S
     MCFOLD ::EventResult
     $onPlayerKineticDamageDealt(::Player&, ::ActorUniqueID const&, ::DealKineticDamageComponent const&);
+#else // LL_PLAT_C
+    MCFOLD ::EventResult $onPlayerKineticDamageDealt(
+        ::Player&                           player,
+        ::ActorUniqueID const&              target,
+        ::DealKineticDamageComponent const& dealKinematicDamageComponent
+    );
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI ::EventResult $onEvent(::PlayerNotificationEvent const& event);
+#else // LL_PLAT_C
+    MCFOLD ::EventResult $onEvent(::PlayerNotificationEvent const& event);
+#endif
 
     MCFOLD ::EventResult $onShowDataDrivenScreen(::LocalPlayer&, ::std::string const&, uint, ::std::optional<uint>);
 
     MCFOLD ::EventResult $onCloseDataDrivenScreen(::LocalPlayer&, uint);
 
     MCFOLD ::EventResult $onCloseAllDataDrivenScreens(::LocalPlayer&);
-
-#ifdef LL_PLAT_C
-    MCFOLD ::EventResult $onEvent(::PlayerNotificationEvent const& event);
-#endif
 
 
     // NOLINTEND

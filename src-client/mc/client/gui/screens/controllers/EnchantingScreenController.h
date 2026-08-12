@@ -12,6 +12,7 @@ class BlockPos;
 class ClientInstanceScreenModel;
 class EnchantingContainerManagerController;
 class Player;
+class UIPropertyBag;
 struct ActorUniqueID;
 // clang-format on
 
@@ -55,6 +56,10 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
+
+    MCAPI ::ui::ViewRequest _enchantmentClicked(int option);
+
+    MCAPI ::ui::ViewRequest _onOptionButtonSelected(::UIPropertyBag* bag);
     // NOLINTEND
 
 public:
@@ -71,6 +76,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onLeave();
 
+    MCFOLD bool $_isStillValid() const;
+
+    MCAPI void $_registerCoalesceOrder();
+
+    MCAPI void $_registerAutoPlaceOrder();
+
+    MCAPI ::ui::ViewRequest $_onContainerSlotSelected(::std::string const& collectionName, int index);
+
+    MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
     // NOLINTEND
 };

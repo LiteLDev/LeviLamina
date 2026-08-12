@@ -16,7 +16,8 @@ public:
 
     virtual ::ContentTierInfo getContentTierInfo() const = 0;
 
-    virtual ::std::string const* getStoreCatalogItemAvailableDateByPackIdentityAndType(::mce::UUID const&) const = 0;
+    virtual ::std::string const*
+    getStoreCatalogItemAvailableDateByPackIdentityAndType(::mce::UUID const& uuid) const = 0;
     // NOLINTEND
 
 public:

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
+class TextPacket;
 // clang-format on
 
 struct ChatEvent {
@@ -24,9 +25,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChatEvent();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ChatEvent(::WeakRef<::EntityContext> sender, ::TextPacket const& packet);
+
     MCAPI ~ChatEvent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

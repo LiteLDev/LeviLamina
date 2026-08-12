@@ -3,11 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor { class EditorManager; }
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Services { class TransactionManagerServiceProvider; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
@@ -92,6 +95,33 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptMeshCacheService(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const&);
+
+    MCNAPI void
+    _finishActiveCommit(::std::string const& requestId, bool clientSuccess, ::std::string const& clientError);
+
+    MCNAPI void _onLevelTick(::Editor::EditorManager&);
+
+    MCNAPI void _processPendingRevertChunk();
+
+    MCNAPI void _rejectCommitPromise(::std::string const& requestId, ::std::string const& errorCode);
+
+    MCNAPI void _resolveCommitPromise(
+        ::std::string const& requestId,
+        bool                 isSuccess,
+        int                  blockCount,
+        ::std::string const& errorMessage
+    );
+
+    MCNAPI void _revertAppliedBlocksAndDiscard(
+        ::Editor::Services::TransactionManagerServiceProvider& transactionManager,
+        ::std::function<void()>                                onComplete
+    );
+
+    MCNAPI void _sendCommitCancelIfNeeded();
+
+    MCNAPI ::Scripting::Result_deprecated<void> cancelCommit(::std::string const& requestId);
+
+    MCNAPI ::Scripting::Result_deprecated<void> unloadMesh(::std::string const& meshId);
 
     MCNAPI ~ScriptMeshCacheService();
     // NOLINTEND

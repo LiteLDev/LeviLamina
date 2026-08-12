@@ -22,6 +22,7 @@ class PersonaClient;
 class SkinHandle;
 namespace mce { class Color; }
 namespace mce { class UUID; }
+namespace persona { class PieceOfferWrapper; }
 namespace persona { struct FreeItemState; }
 namespace persona::color { class ColorInfo; }
 // clang-format on
@@ -58,9 +59,9 @@ public:
     // NOLINTBEGIN
     virtual ~PersonaScreenModelCommon() = default;
 
-    virtual void update(::ui::DirtyFlag&);
+    virtual void update(::ui::DirtyFlag& dirtyFlags);
 
-    virtual void updateSkin(::persona::PersonaCharacterHandle const&, ::SkinHandle);
+    virtual void updateSkin(::persona::PersonaCharacterHandle const& characterHandle, ::SkinHandle handle);
     // NOLINTEND
 
 public:
@@ -127,6 +128,9 @@ public:
 
     MCAPI void fireEventPersonaAvatarUpdated(::PersonaAppearance const& oldAppearance, bool isBeingDeleted);
 
+    MCAPI ::persona::PieceOfferWrapper
+    getEmotePieceOfferFromAppearance(::persona::PersonaCharacterHandle const& handle, int emoteIndex);
+
     MCAPI ::SkinHandle getPersonaClassicSkinHandle(::persona::PersonaCharacterHandle const& handle);
 
     MCAPI ::SkinHandle getPersonaSkinHandle(::persona::PersonaCharacterHandle const& handle);
@@ -166,6 +170,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $update(::ui::DirtyFlag& dirtyFlags);
 
+    MCAPI void $updateSkin(::persona::PersonaCharacterHandle const& characterHandle, ::SkinHandle handle);
     // NOLINTEND
 };

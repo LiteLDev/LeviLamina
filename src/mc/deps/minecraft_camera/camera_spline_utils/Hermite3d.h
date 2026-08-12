@@ -31,11 +31,23 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCAPI ::glm::vec3 $eval(float) const;
+#else // LL_PLAT_C
     MCAPI ::glm::vec3 $eval(float t) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::CameraSplineUtils::SplineType $getType() const;
+#else // LL_PLAT_C
     MCFOLD ::CameraSplineUtils::SplineType $getType() const;
 #endif
 

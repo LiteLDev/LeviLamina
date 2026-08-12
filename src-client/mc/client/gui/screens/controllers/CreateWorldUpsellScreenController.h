@@ -52,6 +52,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
+    MCAPI ::std::string $getAdditionalScreenInfo() const;
+
+    MCAPI void $onCreation();
+
+    MCAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

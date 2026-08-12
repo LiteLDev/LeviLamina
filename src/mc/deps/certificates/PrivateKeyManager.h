@@ -23,6 +23,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isValid() const /*override*/;
+
+    virtual ~PrivateKeyManager() /*override*/;
     // NOLINTEND
 
 public:
@@ -50,6 +52,12 @@ public:
     MCNAPI void*
     $ctor(::std::string const& publicKey, ::std::string const& privateKey, ::Crypto::Asymmetric::System system);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

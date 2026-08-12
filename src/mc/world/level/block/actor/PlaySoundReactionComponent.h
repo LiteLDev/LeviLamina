@@ -24,12 +24,14 @@ public:
     // NOLINTBEGIN
     virtual ~PlaySoundReactionComponent() /*override*/ = default;
 
-    virtual void _onEnd(::LabTableReaction&, ::BlockSource&) /*override*/;
+    virtual void _onEnd(::LabTableReaction& owner, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
+
 
     // NOLINTEND
 };

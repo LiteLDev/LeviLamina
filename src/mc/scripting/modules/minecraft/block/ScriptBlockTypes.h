@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -31,6 +32,25 @@ public:
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>>
         mBlockAliases;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _generateAllBlockHandles(::Scripting::WeakLifetimeScope& scope);
+
+    MCAPI void _registerBlockTypeAlias(
+        ::std::string                                                                  blockName,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType> blockHandle
+    );
+
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    getAllBlockTypes(::Scripting::WeakLifetimeScope& scope);
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    get_V010(::Scripting::WeakLifetimeScope& scope, ::std::string const& blockName);
+
+    MCAPI ~ScriptBlockTypes();
     // NOLINTEND
 
 public:

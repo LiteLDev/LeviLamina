@@ -61,6 +61,12 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
+
+    MCAPI void
+    _registerParticleBindings(::ElementConstructorScreenController::ParticleType type, ::std::string const& name);
+
+    MCAPI void
+    _registerParticleEventHandlers(::ElementConstructorScreenController::ParticleType type, ::std::string const& name);
     // NOLINTEND
 
 public:
@@ -77,6 +83,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $_isStillValid() const;
 
+    MCAPI void $_registerCoalesceOrder();
+
+    MCAPI void $_registerAutoPlaceOrder();
+
+    MCAPI ::std::string $_getButtonADescription();
+
+    MCAPI ::std::string $_getButtonXDescription();
     // NOLINTEND
 };

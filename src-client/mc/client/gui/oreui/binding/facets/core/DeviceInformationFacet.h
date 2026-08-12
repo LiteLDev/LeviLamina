@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/input/InputMethod.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
@@ -104,6 +105,62 @@ public:
         ::IContentManager&                                                  contentManager,
         ::std::unique_ptr<::OreUI::IStorageInfoUpdater>                     storageInfoUpdater
     );
+
+    MCAPI void _fillStorageInfo();
+
+    MCAPI int _getAppDisplayHeight() const;
+
+    MCAPI int _getAppDisplayWidth() const;
+
+    MCAPI float _getAppPixelsPerMilimeter() const;
+
+    MCAPI void changeStorage();
+
+    MCAPI int defaultNetworkMaxPlayers() const;
+
+    MCFOLD ::std::vector<::Social::MultiplayerServiceIdentifier> const& getActiveMultiplayerServiceIds() const;
+
+    MCAPI ::OreUI::FacetTaskState getChangeStorageProgress() const;
+
+    MCAPI int getDisplayHeight() const;
+
+    MCAPI int getDisplayWidth() const;
+
+    MCFOLD int getGuiScaleBase() const;
+
+    MCAPI int getGuiScaleModifier() const;
+
+    MCAPI ::std::vector<::OreUI::InputMethod> const& getInputMethods() const;
+
+    MCFOLD bool getIsLowMemoryDevice() const;
+
+    MCAPI float getPixelsPerMillimeter() const;
+
+    MCAPI ::OreUI::DeviceInformationFacet::Platform getPlatform() const;
+
+    MCFOLD ::std::string const& getStorageAvailableSize() const;
+
+    MCAPI uint64 getStorageSize() const;
+
+    MCAPI ::FileStorageDirectory getStorageType() const;
+
+    MCFOLD uint64 getStorageUsed() const;
+
+    MCAPI bool getSupportsSizeQuery() const;
+
+    MCAPI bool isLANAllowed() const;
+
+    MCAPI bool isOnline() const;
+
+    MCAPI bool isStorageFull() const;
+
+    MCAPI bool isStorageLow() const;
+
+    MCAPI bool onlyCellularAvailable() const;
+
+    MCAPI bool showCellularDataFee() const;
+
+    MCAPI bool supportsManualAddedServers() const;
     // NOLINTEND
 
 public:
@@ -126,7 +183,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $update();
 
+    MCAPI void $onOperationModeChanged(::OperationMode operationMode);
+
+    MCAPI void $onLowDiskSpace(bool const);
+
+    MCAPI void $onOutOfDiskSpace(bool const);
     // NOLINTEND
 };
 

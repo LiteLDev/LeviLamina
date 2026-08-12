@@ -96,6 +96,14 @@ public:
     virtual void pushElement(uint64 index) /*override*/;
 
     virtual void pop() /*override*/;
+
+    virtual ~NBTSchemaReader() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

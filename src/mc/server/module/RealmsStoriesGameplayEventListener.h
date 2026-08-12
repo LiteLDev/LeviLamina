@@ -9,9 +9,11 @@
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/PlayerEventListener.h"
+#include "mc/world/level/storage/RealmEventId.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class IRealmEventLogger;
 class ItemEnchants;
 class ItemInstance;
@@ -23,6 +25,7 @@ struct ActorAcquiredItemEvent;
 struct ActorKilledEvent;
 struct DimensionType;
 struct PlayerUseNameTagEvent;
+namespace Json { class Value; }
 // clang-format on
 
 class RealmsStoriesGameplayEventListener : public ::EventListenerDispatcher<::ActorEventListener>,
@@ -38,11 +41,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::EventResult onEvent(::ActorAcquiredItemEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::ActorAcquiredItemEvent const& actorAcquiredItemEvent) /*override*/;
 
-    virtual ::EventResult onEvent(::ActorKilledEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::ActorKilledEvent const& actorKilledEvent) /*override*/;
 
-    virtual ::EventResult onEvent(::PlayerUseNameTagEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::PlayerUseNameTagEvent const& playerUseNameTagEvent) /*override*/;
 
     virtual ::EventResult onPlayerMove(::Player& player) /*override*/;
 
@@ -51,7 +54,7 @@ public:
     virtual ::EventResult
     onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension) /*override*/;
 
-    virtual ::EventResult onPlayerPoweredBeacon(::Player const& player, int level) /*override*/;
+    virtual ::EventResult onPlayerPoweredBeacon(::Player const& player, int) /*override*/;
 
     virtual ::EventResult onPlayerCraftedItem(
         ::Player&                   player,
@@ -72,8 +75,59 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void
+    _publishEventForRealmsService(::RealmEventId id, ::std::string const& xuid, ::Json::Value const& metadata) const;
+
+    MCNAPI void _publishLocationWorldEventIfFirstTime(::RealmEventId id, ::Player const& player);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Player const* _getActorFullyAuthenticatedPlayer(::Actor const* actor);
+
+    MCNAPI static ::std::set<::std::string> _getXuidsInKillProximity(::Actor const& killedActor, float xz, float y);
+
+    MCNAPI static ::std::string _playerXuidsToString(::std::set<::std::string> const& xuids);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::EventResult $onEvent(::ActorAcquiredItemEvent const& actorAcquiredItemEvent);
+
+    MCNAPI ::EventResult $onEvent(::ActorKilledEvent const& actorKilledEvent);
+
+    MCNAPI ::EventResult $onEvent(::PlayerUseNameTagEvent const& playerUseNameTagEvent);
+
+    MCNAPI ::EventResult $onPlayerMove(::Player& player);
+
+    MCNAPI ::EventResult $onPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn);
+
+    MCNAPI ::EventResult
+    $onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
+
+    MCNAPI ::EventResult $onPlayerPoweredBeacon(::Player const& player, int);
+
+    MCNAPI ::EventResult $onPlayerCraftedItem(
+        ::Player&                   player,
+        ::ItemInstance const&       craftedItem,
+        bool                        recipeBook,
+        bool                        hadSearchString,
+        bool                        craftedAutomatically,
+        int                         startingTabId,
+        int                         endingTabId,
+        int                         numTabsChanged,
+        bool                        filterOn,
+        bool                        recipeBookShown,
+        ::std::vector<short> const& ingredientItemIDs
+    );
+
+    MCNAPI ::EventResult
+    $onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
+
 
     // NOLINTEND
 };

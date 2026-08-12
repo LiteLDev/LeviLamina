@@ -54,6 +54,12 @@ public:
         // NOLINTEND
 
     public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        // NOLINTEND
+
+    public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
@@ -80,6 +86,12 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~HorizonBlendKeyFrames();
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
@@ -214,18 +226,18 @@ public:
     virtual ~AtmosphericScattering() /*override*/ = default;
 
     virtual void loadDataSync(
-        ::cereal::ReflectionCtx const&,
-        ::ResourcePackManager&,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::ResourcePackManager&                             resourcePackManager,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     ) /*override*/;
 
     virtual ::Puv::LoadResultAny loadFromString(
-        ::cereal::ReflectionCtx const&,
-        ::std::string const&,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::std::string const&                               atmosphereJson,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     ) /*override*/;
 
-    virtual void _setDefaultIdentifierImpl(::HashedString const&) /*override*/;
+    virtual void _setDefaultIdentifierImpl(::HashedString const& defaultIdentifier) /*override*/;
     // NOLINTEND
 
 public:
@@ -235,6 +247,18 @@ public:
         ::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& atmosphereSettings,
         float                                                                 timeOfDay
     ) const;
+
+    MCNAPI ::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const&
+    findAtmosphereSettings(::HashedString const& identifier) const;
+
+    MCNAPI bool setAtmosphereSettings(
+        ::HashedString const&                                                 identifier,
+        ::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& inAtmosphereSettings
+    );
+
+    MCNAPI void setDefaultAtmosphereSettings(
+        ::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& inAtmosphereSettings
+    );
     // NOLINTEND
 
 public:
@@ -255,6 +279,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $loadDataSync(
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::ResourcePackManager&                             resourcePackManager,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
 
+    MCNAPI ::Puv::LoadResultAny $loadFromString(
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::std::string const&                               atmosphereJson,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
+
+    MCNAPI void $_setDefaultIdentifierImpl(::HashedString const& defaultIdentifier);
     // NOLINTEND
 };

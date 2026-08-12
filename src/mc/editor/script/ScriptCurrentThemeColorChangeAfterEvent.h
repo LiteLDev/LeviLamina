@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class ScriptRGBA; }
+namespace Scripting { struct ClassBinding; }
+// clang-format on
+
 namespace Editor::ScriptModule {
 
 struct ScriptCurrentThemeColorChangeAfterEvent {
@@ -17,6 +23,25 @@ public:
     ScriptCurrentThemeColorChangeAfterEvent& operator=(ScriptCurrentThemeColorChangeAfterEvent const&);
     ScriptCurrentThemeColorChangeAfterEvent(ScriptCurrentThemeColorChangeAfterEvent const&);
     ScriptCurrentThemeColorChangeAfterEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI
+    ScriptCurrentThemeColorChangeAfterEvent(::std::string colorKey, ::ScriptModuleMinecraft::ScriptRGBA const& color);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

@@ -15,6 +15,13 @@ public:
     ::ll::TypedStorage<8, 56, ::SharedTypes::v1_20_80::ColorGradient> mInterpolatedColor;
     ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode>  mInterpolantExpr;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool
+    operator==(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const& other) const;
+    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper

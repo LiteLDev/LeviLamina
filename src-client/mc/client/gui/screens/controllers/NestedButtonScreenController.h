@@ -39,6 +39,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
     // NOLINTEND
 };

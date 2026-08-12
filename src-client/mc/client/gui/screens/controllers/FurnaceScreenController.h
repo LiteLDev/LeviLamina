@@ -121,7 +121,7 @@ public:
 
     virtual ::ui::ViewRequest _onContainerSlotHovered(::std::string const& collectionName, int index) /*override*/;
 
-    virtual bool _isInCreativeContainer(::std::string const&) const /*override*/;
+    virtual bool _isInCreativeContainer(::std::string const& containerName) const /*override*/;
 
     virtual void _sendFlyingItem(
         ::ItemStackBase const& item,
@@ -143,6 +143,20 @@ public:
         ::ActorUniqueID                                uniqueId,
         ::HashedString const&                          recipeTag
     );
+
+    MCAPI int _findNextLeftSideTab(int dir) const;
+
+    MCAPI void _handleClearGrid();
+
+    MCAPI bool _isRecipeIngredientSelected(::std::string const& collectionName, int collectionIndex) const;
+
+    MCAPI void _refreshFilters(int tabIndex, bool forceRefresh);
+
+    MCAPI void _savePlayerOptions();
+
+    MCAPI void _selectRecipe(::std::string const& collectionName, int collectionIndex);
+
+    MCAPI void _setLeftSideTab(int tabIndex);
     // NOLINTEND
 
 public:
@@ -160,6 +174,57 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI void $onEntered();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCFOLD bool $_isStillValid() const;
+
+    MCAPI void $_handlePlaceAll(::std::string const& collectionName, int index);
+
+    MCAPI void $_handlePlaceOne(::std::string const& collectionName, int index);
+
+    MCAPI void $_registerCoalesceOrder();
+
+    MCAPI void $_registerAutoPlaceOrder();
+
+    MCAPI ::std::string $_getCollectionName(::UIPropertyBag* bag) const;
+
+    MCAPI ::SlotData $_reevaluateSlotData(::SlotData&& slotData) const;
+
+    MCAPI ::ItemStackBase const&
+    $_getVisualItemStackImpl(::std::string const& collectionName, int collectionIndex) const;
+
+    MCAPI bool $_shouldSwap(
+        ::std::string const& collectionName,
+        int                  collectionIndex,
+        ::std::string const& otherCollectionName,
+        int                  otherCollectionIndex
+    ) const;
+
+    MCAPI void $_handleSelectSlot(::std::string const& collectionName, int collectionIndex);
+
+    MCAPI ::std::string $_getButtonADescription();
+
+    MCAPI ::std::string $_getButtonBDescription();
+
+    MCAPI ::std::string $_getButtonXDescription();
+
+    MCAPI ::std::string $_getButtonYDescription();
+
+    MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
+
+    MCAPI bool $_isInCreativeContainer(::std::string const& containerName) const;
+
+    MCAPI void $_sendFlyingItem(
+        ::ItemStackBase const& item,
+        ::std::string const&   fromName,
+        int                    fromIndex,
+        ::std::string const&   toName,
+        int                    toIndex,
+        ::FadeInIconBehavior   fadeInIconBehavior
+    );
     // NOLINTEND
 };

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/inventory/network/ItemStackNetResult.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
 
 // auto generated forward declare list
@@ -12,6 +13,7 @@ class ContainerScreenContext;
 class ItemStack;
 class ItemStackRequestActionCraftBase;
 struct FullContainerName;
+struct RecipeNetIdTag;
 // clang-format on
 
 class CraftHandlerTrade : public ::CraftHandlerBase {
@@ -35,7 +37,8 @@ public:
     // NOLINTBEGIN
     virtual ~CraftHandlerTrade() /*override*/ = default;
 
-    virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const&) /*override*/;
+    virtual ::ItemStackNetResult
+    _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
 
     virtual ::ItemStackNetResult handleConsumedItem(
         ::FullContainerName const& openContainerNetId,
@@ -47,8 +50,26 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::ItemStackNetResult _initResultItem(::RecipeNetId const& tradeRecipeNetId, uchar const numCrafts);
+
+    MCAPI ::ItemStackNetResult _initTrade2Consumes();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
+
+    MCAPI ::ItemStackNetResult $handleConsumedItem(
+        ::FullContainerName const& openContainerNetId,
+        uchar const                slot,
+        ::ItemStack const&         consumedItem
+    );
+
+    MCAPI void $_postCraftRequest(bool const wasSuccess);
+
 
     // NOLINTEND
 };

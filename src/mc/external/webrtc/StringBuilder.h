@@ -20,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::StringBuilder& AppendFormat(char const*, ...);
+    MCNAPI ::webrtc::StringBuilder& AppendFormat(char const* fmt, ...);
 
     MCNAPI ::webrtc::StringBuilder& operator<<(int i);
 

@@ -95,19 +95,19 @@ public:
 
     virtual void issueDPIChange(float dpi) /*override*/;
 
-    virtual void issueOrientationChange(::DisplayOrientation const&) /*override*/;
+    virtual void issueOrientationChange(::DisplayOrientation const& orientation) /*override*/;
 
     virtual bool _preAppCreation(::Bedrock::ActivationArguments const&) /*override*/;
 
-    virtual void _processActivationArguments(::Bedrock::ActivationArguments const&) /*override*/;
+    virtual void _processActivationArguments(::Bedrock::ActivationArguments const& args) /*override*/;
 
-    virtual bool _postAppCreation(::Bedrock::ActivationArguments const&) /*override*/;
+    virtual bool _postAppCreation(::Bedrock::ActivationArguments const& actArgs) /*override*/;
 
-    virtual bool _update(bool) /*override*/;
+    virtual bool _update(bool canRender) /*override*/;
 
-    virtual void pushNotificationReceived_Shim(::PushNotificationMessage const&) /*override*/;
+    virtual void pushNotificationReceived_Shim(::PushNotificationMessage const& msg) /*override*/;
 
-    virtual void notifyUriListeners_Shim(::ActivationUri const&) /*override*/;
+    virtual void notifyUriListeners_Shim(::ActivationUri const& uri) /*override*/;
 
     virtual ::std::string getDeviceId_Shim() const /*override*/;
 
@@ -119,9 +119,67 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void setRemoteSession(bool value);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void onProtocolActivation(void* context, char const* uri);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $updatePlatformInfo();
 
+    MCAPI bool $updatePlatformGraphicsInfo();
+
+    MCAPI void $issueShutdown();
+
+    MCAPI void $issueBack();
+
+    MCFOLD void $issueLowMemory();
+
+    MCAPI void $issueFocusLost();
+
+    MCAPI void $issueFocusGained();
+
+    MCFOLD void $issueInputPaneVisible();
+
+    MCFOLD void $issueInputPaneHidden();
+
+    MCFOLD void $issueSuspendWarning();
+
+    MCAPI void $issueVisibilityChange(bool visible);
+
+    MCAPI void $issueWindowSizeChange(int width, int height);
+
+    MCAPI void $issueDPIChange(float dpi);
+
+    MCAPI void $issueOrientationChange(::DisplayOrientation const& orientation);
+
+    MCAPI bool $_preAppCreation(::Bedrock::ActivationArguments const&);
+
+    MCAPI void $_processActivationArguments(::Bedrock::ActivationArguments const& args);
+
+    MCAPI bool $_postAppCreation(::Bedrock::ActivationArguments const& actArgs);
+
+    MCAPI bool $_update(bool canRender);
+
+    MCAPI void $pushNotificationReceived_Shim(::PushNotificationMessage const& msg);
+
+    MCAPI void $notifyUriListeners_Shim(::ActivationUri const& uri);
+
+    MCAPI ::std::string $getDeviceId_Shim() const;
+
+    MCFOLD bool $_isShuttingDown();
+
+    MCFOLD bool $_isShutdown();
+
+    MCFOLD void $resetCallback();
     // NOLINTEND
 };
 

@@ -4,12 +4,15 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class Release; }
 namespace Scripting { class RuntimeConditions; }
 namespace Scripting { class TypeMapBuilder; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ConstantFactory; }
 namespace Scripting { struct FunctionBinding; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ObjectFactory; }
+namespace Scripting { struct TaggedBinding; }
 // clang-format on
 
 namespace Scripting {
@@ -62,6 +65,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI bool _allowed(
+        ::std::vector<::Scripting::Release> const& releases,
+        bool                                       allowUntagged,
+        ::std::vector<::std::string> const&        additionalTags
+    ) const;
+
     MCNAPI ::Scripting::ModuleBinding build(
         bool                                  allowUntagged,
         ::std::vector<::std::string> const&   additionalTags,
@@ -69,6 +78,22 @@ public:
     );
 
     MCNAPI ::Scripting::ModuleBindingBuilder& createTypeMap(::Scripting::TypeMapBuilder& typeMapBuilder);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static bool _assertClassMemberSymbolDoNotExist(
+        ::Scripting::ClassBinding const&  classBinding,
+        ::std::string const&              name,
+        ::Scripting::TaggedBinding const& binding
+    );
+
+    MCNAPI static bool _assertModuleMemberSymbolDoNotExist(
+        ::Scripting::ModuleBinding const& moduleBinding,
+        ::std::string const&              name,
+        ::Scripting::TaggedBinding const& binding
+    );
     // NOLINTEND
 
 public:

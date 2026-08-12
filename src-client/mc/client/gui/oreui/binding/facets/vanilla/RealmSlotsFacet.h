@@ -57,6 +57,28 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmSlotsFacet(::std::shared_ptr<::PlayScreenModel> playScreenModel);
+
+    MCAPI void activateSlot(int index);
+
+    MCAPI void confirm();
+
+    MCAPI bool didFailToActivateSlot() const;
+
+    MCAPI bool didFailToQuerySelectedRealmDetails() const;
+
+    MCFOLD ::std::vector<::OreUI::RealmSlot> const& getRealmSlots() const;
+
+    MCAPI void getSelectedRealmDetails(::std::string const& realmId);
+
+    MCAPI bool isLoading() const;
+
+    MCAPI bool isShowingConfirmationModal() const;
+
+    MCAPI bool isSlotSelected() const;
+
+    MCAPI void reset();
+
+    MCAPI void selectSlot(int index);
     // NOLINTEND
 
 public:

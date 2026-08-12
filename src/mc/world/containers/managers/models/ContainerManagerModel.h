@@ -123,6 +123,8 @@ public:
     MCAPI ::std::shared_ptr<::ContainerModel> _getContainer(::ContainerEnumName collectionEnumName) const;
 
 #ifdef LL_PLAT_C
+    MCAPI void addDynamicContainer(::std::shared_ptr<::ContainerModel> model);
+
     MCAPI ::std::string getBlockDisplayName(::BlockPos const& blockPos) const;
 
     MCAPI ::HashedString getBlockLocName(::BlockPos const& blockPos) const;

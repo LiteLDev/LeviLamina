@@ -103,6 +103,8 @@ public:
 
     MCNAPI void fail(::gametest::GameTestError error, bool canRetry);
 
+    MCNAPI void finish(bool canRetry);
+
     MCNAPI void removeListener(::std::shared_ptr<::gametest::IGameTestListener> listener);
 
     MCNAPI void runCallbacksOnFinish();
@@ -132,6 +134,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $initialize();
+
     MCNAPI void $spawnStructure();
 
     MCNAPI void $_rerun();

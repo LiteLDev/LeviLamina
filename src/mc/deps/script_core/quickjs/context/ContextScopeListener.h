@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     virtual ~ContextScopeListener() /*override*/ = default;
 
-    virtual void onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry&) /*override*/;
+    virtual void onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry& registry) /*override*/;
 
     virtual void onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&) /*override*/;
     // NOLINTEND
@@ -40,6 +40,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry& registry);
+
+    MCNAPI void $onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&);
+
 
     // NOLINTEND
 };

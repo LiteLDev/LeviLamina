@@ -26,14 +26,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::EventResult onObjectiveRemoved(::std::string const&) /*override*/;
+    virtual ::EventResult onObjectiveRemoved(::std::string const& objective) /*override*/;
 
-    virtual ::EventResult onScoreboardIdentityRemoved(::ScoreboardId const&) /*override*/;
+    virtual ::EventResult onScoreboardIdentityRemoved(::ScoreboardId const& id) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::EventResult $onObjectiveRemoved(::std::string const& objective);
+
+    MCAPI ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const& id);
+
 
     // NOLINTEND
 };

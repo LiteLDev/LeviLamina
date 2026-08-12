@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     virtual ~MinecraftIdentityAssertion() /*override*/ = default;
 
-    virtual ::std::optional<::std::string> createAssertion(::std::string const&) /*override*/;
+    virtual ::std::optional<::std::string> createAssertion(::std::string const& fingerprints) /*override*/;
 
     virtual ::std::string_view idpDomain() const /*override*/;
     // NOLINTEND
@@ -55,6 +55,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::optional<::std::string> $createAssertion(::std::string const& fingerprints);
+
+    MCNAPI ::std::string_view $idpDomain() const;
+
 
     // NOLINTEND
 };

@@ -60,6 +60,12 @@ public:
         : mType(type),
           mMessage(message),
           mParams(params) {}
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI bool operator==(::TextPacketPayload::MessageAndParams const& other) const;
+        // NOLINTEND
     };
 
     struct MessageOnly {

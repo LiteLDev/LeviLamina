@@ -114,6 +114,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Enchant();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~Enchant() = default;
@@ -156,6 +160,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Enchant(
+        ::Enchant::Type            type,
+        ::Enchant::Frequency       frequency,
+        ::std::string_view const   stringId,
+        ::std::string_view const   scriptStringId,
+        ::std::string_view const   description,
+        ::Enchant::VillagerTrading isAvailableForVillagerTraining,
+        int                        primarySlots,
+        int                        secondarySlots
+    );
+
     MCAPI ::std::string getDescriptionId() const;
     // NOLINTEND
 
@@ -191,6 +206,12 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $isCompatibleWith(::Enchant::Type type) const;
@@ -199,7 +220,33 @@ public:
 
     MCAPI int $getMaxCost(int level) const;
 
+    MCFOLD int $getMinLevel() const;
+
     MCFOLD int $getMaxLevel() const;
+
+    MCFOLD int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
+
+    MCFOLD float $getAfterBreachArmorFraction(int, float) const;
+
+    MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
+
+    MCFOLD void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
+
+    MCFOLD void $doPostPiercingAttack(::Actor& attacker, int enchantLevel) const;
+
+    MCFOLD void $doPostItemHurtActor(::Actor&, ::Actor&, int) const;
+
+    MCFOLD void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
+
+    MCFOLD bool $isMeleeDamageEnchant() const;
+
+    MCFOLD bool $isProtectionEnchant() const;
+
+    MCFOLD bool $isTreasureOnly() const;
+
+    MCFOLD bool $isDiscoverable() const;
+
+    MCFOLD bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
 
 
     // NOLINTEND

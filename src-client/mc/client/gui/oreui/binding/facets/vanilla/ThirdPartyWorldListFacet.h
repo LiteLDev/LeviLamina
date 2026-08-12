@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/ThirdPartyServersStatus.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -53,6 +54,18 @@ public:
         ::Bedrock::NonOwnerPointer<::IAppPlatform> const&          appPlatform,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
+
+    MCAPI void _onWorldListUpdated();
+
+    MCAPI void _refresh();
+
+    MCFOLD ::std::vector<::OreUI::NetworkWorldData> const& getCreatorWorlds() const;
+
+    MCFOLD ::std::vector<::OreUI::NetworkWorldData> const& getFeaturedWorlds() const;
+
+    MCFOLD ::OreUI::FacetTaskState const getFetchThirdPartyWorldsTaskState() const;
+
+    MCFOLD ::OreUI::ThirdPartyServersStatus const getThirdPartyServersStatus() const;
     // NOLINTEND
 
 public:
@@ -74,7 +87,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

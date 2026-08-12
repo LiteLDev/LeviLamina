@@ -16,12 +16,12 @@ public:
     // NOLINTBEGIN
     virtual ~EduDeeplinkObserver() /*override*/ = default;
 
-    virtual bool onJoincodeReceived(::std::string const&);
+    virtual bool onJoincodeReceived(::std::string const& encodedJoincode);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI bool $onJoincodeReceived(::std::string const& encodedJoincode);
     // NOLINTEND
 };

@@ -14,6 +14,7 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class CommandBlockActor;
 class ItemInstance;
 class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -62,6 +63,15 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommandBlock(::std::string const& nameId, int id, ::CommandBlockMode mode);
+
+    MCAPI void _executeChain(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool _executeChainBlock(
+        ::BlockSource&       region,
+        ::BlockPos const&    pos,
+        ::CommandBlockActor& blockActor,
+        bool                 fromTickQueue
+    ) const;
 
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 

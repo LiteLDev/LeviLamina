@@ -11,8 +11,11 @@
 class IUIDefRepository;
 class IUIRepository;
 class ResourcePackManager;
+class UIResolvedDef;
 namespace UI::Resources { struct DefinitionPropertyNames; }
 namespace UI::Resources { struct ResolvedDefinition; }
+namespace UI::Resources { struct ResolvedPropertyData; }
+namespace UI::Resources { struct ResolvedTextureData; }
 // clang-format on
 
 namespace UI::Resources {
@@ -48,6 +51,14 @@ public:
         ::ResourcePackManager&                                  resourcePackManager
     );
 
+    MCAPI ::std::vector<::UI::Resources::ResolvedPropertyData> _evaluateProperties(
+        ::UIResolvedDef const&              resolvedDef,
+        ::std::vector<::std::string> const& propertiesToResolve
+    ) const;
+
+    MCAPI ::std::vector<::UI::Resources::ResolvedTextureData>
+    _evaluateTextures(::UIResolvedDef const& resolvedDef, ::std::vector<::std::string> const& texturesToResolve) const;
+
     MCAPI bool doesDefinitionContainNonBaseGameTextures(
         ::std::vector<::UI::Resources::ResolvedDefinition> const& definitions
     ) const;
@@ -75,7 +86,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
     // NOLINTEND
 };
 

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/persona/TextureTint.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -11,11 +12,18 @@
 class IAdvancedGraphicsOptions;
 class IPersonaImageProvider;
 class IPersonaPieceProvider;
+class Pack;
+class PersonaPiece;
 class ResourceLoadManager;
 class ResourcePackManager;
 class TaskGroup;
+class TintMapColor;
 struct PersonaCharacter;
+struct PersonaTextureResources;
 struct TextureHotReloader;
+namespace Json { class Value; }
+namespace mce { class TextureGroup; }
+namespace persona { struct TextureTint; }
 // clang-format on
 
 class PersonaTextureBuilder {
@@ -55,6 +63,48 @@ public:
     );
 
     MCNAPI ~PersonaTextureBuilder();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _addClothingMap(
+        ::PersonaTextureResources&      textureResources,
+        ::std::shared_ptr<::Pack const> clothingSourcePack,
+        ::std::string const&            mapId,
+        ::std::string                   clothingMapPath
+    );
+
+    MCNAPI static void _addPieceTextureToMap(
+        ::PersonaTextureResources& textureResources,
+        ::std::string const&       pieceId,
+        ::persona::TextureTint     texture,
+        bool                       isAnimated
+    );
+
+    MCNAPI static void _addTextureToConfiguration(
+        ::mce::TextureGroup&          textureGroup,
+        ::persona::TextureTint const& texture,
+        ::Json::Value&                pieceTextureData,
+        bool                          validateFileExists
+    );
+
+    MCNAPI static void _ensureCPUImageDataIsLoaded(
+        ::mce::TextureGroup&             textureGroup,
+        ::persona::TextureTint const&    texture,
+        ::persona::TextureTint::PathType pathType,
+        bool                             validateFileExists
+    );
+
+    MCNAPI static void _readTexturesFromJsonIntoMap(
+        ::PersonaTextureResources& textureResources,
+        ::PersonaPiece const&      personaPiece,
+        ::std::string const&       sourceObjectKey,
+        ::TintMapColor&            pieceTintBaseColor,
+        ::TintMapColor&            pieceTintColor,
+        bool                       useTint,
+        bool                       useIndexedIds
+    );
     // NOLINTEND
 
 public:

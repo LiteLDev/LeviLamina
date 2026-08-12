@@ -73,6 +73,8 @@ public:
 
     MCAPI int getTradeExpToNextRequirement(uint currentExp) const;
 
+    MCAPI int getTradeIndex(int tier, int index) const;
+
     MCAPI bool hasAvailableTradeWithSecondItem() const;
 #endif
     // NOLINTEND

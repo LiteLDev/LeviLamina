@@ -51,20 +51,20 @@ public:
     virtual bool shouldPostProcessMobs() const /*override*/;
 
     virtual bool isFeatureChunk(
-        ::BiomeSource const&,
-        ::Random&,
-        ::ChunkPos const&,
-        uint,
-        ::IPreliminarySurfaceProvider const&,
-        ::Dimension const&
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    pos,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&                   dimension
     ) /*override*/;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension&,
-        ::BiomeSource const&,
-        ::Random&,
-        ::ChunkPos const&,
-        ::IPreliminarySurfaceProvider const&
+        ::Dimension&                         dimension,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    cp,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
     // NOLINTEND
 
@@ -83,6 +83,39 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::gsl::span<::BiomeIdType const> $getRequiredBiomes() const;
+
+    MCAPI bool $getNearestGeneratedFeature(
+        ::Dimension&                           dimension,
+        ::BiomeSource const&                   biomeSource,
+        ::BlockPos const&                      origin,
+        ::BlockPos&                            pos,
+        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
+        bool                                   mustBeInNewChunks,
+        ::std::optional<::HashedString> const& biomeTag
+    );
+
+    MCFOLD bool $shouldAddHardcodedSpawnAreas() const;
+
+    MCFOLD bool $shouldPostProcessMobs() const;
+
+    MCAPI bool $isFeatureChunk(
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    pos,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&                   dimension
+    );
+
+    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+        ::Dimension&                         dimension,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    cp,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
+
 
     // NOLINTEND
 };

@@ -55,6 +55,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::CompoundTag& _getOrCreateComponentScope(::CompoundTag& tag, ::std::string const& componentName);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& INTERNAL_COMPONENTS();

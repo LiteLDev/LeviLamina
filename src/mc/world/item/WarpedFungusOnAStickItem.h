@@ -21,6 +21,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $isHandEquipped() const;
+
+    MCFOLD bool $requiresInteract() const;
+
+#ifdef LL_PLAT_S
+    MCAPI int $getEnchantSlot() const;
+#else // LL_PLAT_C
+    MCFOLD int $getEnchantSlot() const;
+#endif
+
+    MCFOLD int $getEnchantValue() const;
+
 
     // NOLINTEND
 };

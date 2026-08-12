@@ -38,6 +38,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _updatePlatformStoreIcon();
+
+    MCAPI ~PlatformStoreIconModel();
     // NOLINTEND
 
 public:

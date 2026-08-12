@@ -60,6 +60,8 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ClassroomModeNetworkHandler(bool isDedicatedServer);
 
+    MCNAPI void _connect(::std::string const& address);
+
 #ifdef LL_PLAT_S
     MCNAPI void setAutomationClient(::Bedrock::NonOwnerPointer<::Automation::AutomationClient> client);
 #endif

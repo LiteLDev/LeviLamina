@@ -97,6 +97,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::std::string $toString() const;
+
 
         // NOLINTEND
     };
@@ -229,6 +231,10 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI void _addHistoryItem(::std::shared_ptr<::PredictedMovementComponent::HistoryItem const> const& item);
+#endif
+
         MCAPI void _clearHistory();
 
 #ifdef LL_PLAT_C
@@ -293,8 +299,57 @@ public:
         // NOLINTEND
 
     public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI MotionHistoryItem(
+            ::Vec3 const&                                                                   motion,
+            bool                                                                            onGround,
+            bool                                                                            isMotionHintItem,
+            ::std::chrono::steady_clock::time_point const&                                  timepoint,
+            ::std::shared_ptr<::PredictedMovementComponent::MoveHistoryItem const> const&   prevMoveItem,
+            ::std::shared_ptr<::PredictedMovementComponent::MotionHistoryItem const> const& prevMotionItem,
+            bool                                                                            didAdjustTimepoint,
+            ::std::chrono::milliseconds const&                                              timepointDiff
+        );
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
+
+    public:
         // virtual function thunks
         // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        MCAPI bool $isValidStartItem() const;
+#else // LL_PLAT_C
+        MCFOLD bool $isValidStartItem() const;
+#endif
+
+        MCAPI bool $isAddedActorItem() const;
+
+        MCAPI bool $isMotionHintItem() const;
+
+        MCAPI ::Vec3 const& $getPos() const;
+
+#ifdef LL_PLAT_S
+        MCAPI ::Vec2 const& $getRot() const;
+#else // LL_PLAT_C
+        MCFOLD ::Vec2 const& $getRot() const;
+#endif
+
+        MCAPI float $getYHeadRot() const;
+
+#ifdef LL_PLAT_S
+        MCAPI bool $isOnGround() const;
+#else // LL_PLAT_C
+        MCFOLD bool $isOnGround() const;
+#endif
+
 
         // NOLINTEND
     };
@@ -337,6 +392,20 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCFOLD bool $isValidStartItem() const;
+
+        MCFOLD bool $isAddedActorItem() const;
+
+        MCFOLD bool $isMotionHintItem() const;
+
+        MCFOLD ::Vec3 const& $getPos() const;
+
+        MCAPI ::Vec2 const& $getRot() const;
+
+        MCAPI float $getYHeadRot() const;
+
+        MCFOLD bool $isOnGround() const;
+
 
         // NOLINTEND
     };
@@ -369,6 +438,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PredictedMovementComponent();
+
+    MCAPI void _debugLog(
+        ::PredictedMovementSystemParams&                       params,
+        ::PredictedMovementComponent::PredictionDbgData const& debugData
+    ) const;
 
     MCAPI void reset();
 

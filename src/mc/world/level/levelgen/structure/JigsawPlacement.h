@@ -15,11 +15,13 @@ class Block;
 class BlockPos;
 class BoundingBox;
 class Dimension;
+class JigsawBlockInfo;
 class JigsawStructureRegistry;
 class PoolElementStructurePiece;
 class Random;
 class StructurePiece;
 class StructurePoolElement;
+class StructureTemplatePool;
 struct JigsawJunction;
 // clang-format on
 
@@ -92,6 +94,26 @@ public:
         ::Random&                                           random,
         ::JigsawStructureRegistry const&                    pools,
         ::Dimension&                                        dimension
+    );
+
+    MCAPI void _addPiece(
+        ::PoolElementStructurePiece const&         sourcePiece,
+        ::BlockPos const&                          position,
+        ::Rotation const&                          rotation,
+        ::BlockPos const&                          refPos,
+        uint64                                     contextDepth,
+        ::PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
+    );
+
+    MCAPI bool _tryPlacingPiece(
+        ::PoolElementStructurePiece const&         sourcePiece,
+        ::BoundingBox const&                       sourceBB,
+        ::JigsawBlockInfo const&                   sourceJigsaw,
+        ::BlockPos const&                          attachPos,
+        ::StructureTemplatePool const*             targetPool,
+        ::BlockPos const&                          refPos,
+        uint64                                     contextDepth,
+        ::PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
     );
 
     MCAPI void addPieces(

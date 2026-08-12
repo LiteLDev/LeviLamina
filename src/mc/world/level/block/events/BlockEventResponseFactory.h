@@ -17,7 +17,7 @@ public:
     // NOLINTBEGIN
     virtual ~BlockEventResponseFactory() /*override*/ = default;
 
-    virtual void initializeFactory(::PackLoadInfo const&) /*override*/;
+    virtual void initializeFactory(::PackLoadInfo const& packLoadInfo) /*override*/;
 
     virtual void initSchema() /*override*/;
     // NOLINTEND
@@ -25,6 +25,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $initializeFactory(::PackLoadInfo const& packLoadInfo);
+
+    MCAPI void $initSchema();
+
 
     // NOLINTEND
 };

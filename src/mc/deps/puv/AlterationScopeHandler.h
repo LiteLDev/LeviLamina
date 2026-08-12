@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Puv::internal { struct AlterationNode; }
+// clang-format on
+
 namespace Puv::internal {
 
 struct AlterationScopeHandler {
@@ -17,6 +22,18 @@ public:
     AlterationScopeHandler& operator=(AlterationScopeHandler const&);
     AlterationScopeHandler(AlterationScopeHandler const&);
     AlterationScopeHandler();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI AlterationScopeHandler(::Puv::internal::AlterationNode const*& node, uint id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };
 
 } // namespace Puv::internal

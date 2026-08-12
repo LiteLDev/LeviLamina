@@ -60,21 +60,37 @@ public:
     virtual void onMakeObject(
         ::Scripting::LifetimeRegistry&,
         ::Scripting::ObjectHandle,
-        ::entt::meta_type const&,
-        uint
+        ::entt::meta_type const& type,
+        uint                     size
     ) /*override*/;
 
     virtual void onDestroyObject(
         ::Scripting::LifetimeRegistry&,
         ::Scripting::ObjectHandle,
-        ::entt::meta_type const&,
-        uint
+        ::entt::meta_type const& type,
+        uint                     size
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(::entt::meta_type const& type);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void
+    $onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const& type, uint size);
+
+    MCNAPI void $onDestroyObject(
+        ::Scripting::LifetimeRegistry&,
+        ::Scripting::ObjectHandle,
+        ::entt::meta_type const& type,
+        uint                     size
+    );
+
 
     // NOLINTEND
 };

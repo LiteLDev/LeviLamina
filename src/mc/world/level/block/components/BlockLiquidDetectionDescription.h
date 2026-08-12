@@ -34,6 +34,8 @@ public:
     virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
+
+    virtual ~BlockLiquidDetectionDescription() /*override*/;
     // NOLINTEND
 
 public:
@@ -46,6 +48,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

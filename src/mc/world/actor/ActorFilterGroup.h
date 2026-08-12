@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class FilterInput;
 struct VariantParameterListConst;
 namespace Json { class Value; }
 // clang-format on
@@ -62,7 +63,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _addLegacyFilter(
+        ::std::string const&                     name,
+        ::ActorFilterGroup::LegacyMapping const& legacy,
+        ::FilterInput const&                     filterInput
+    );
+
+    MCAPI bool
+    _parseMemberCollectionJSONCpp(::FilterGroup::CollectionType collectionType, ::Json::Value const& jsonVal);
+
     MCAPI bool _parseObjectJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
+
+    MCAPI bool _processLegacyArray(
+        ::std::string const&                     name,
+        ::Json::Value const&                     jsonVal,
+        ::ActorFilterGroup::LegacyMapping const& legacy
+    );
+
+    MCAPI bool _processLegacyMember(
+        ::std::string const&                     name,
+        ::Json::Value const&                     jsonVal,
+        ::ActorFilterGroup::LegacyMapping const& legacy
+    );
 
     MCAPI bool evaluateActor(::Actor const& e, ::VariantParameterListConst const& params) const;
     // NOLINTEND

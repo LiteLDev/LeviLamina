@@ -41,7 +41,7 @@ public:
     virtual ::Scripting::Result_deprecated<bool> trackBlockChangeVolume(::BlockVolumeBase const& volume) = 0;
 
     virtual ::Scripting::Result_deprecated<bool>
-    addEntityOperation(::Actor* entity, ::Editor::Transactions::EntityOperation::OperationType const type) = 0;
+    addEntityOperation(::Actor*, ::Editor::Transactions::EntityOperation::OperationType const) = 0;
 
     virtual ::Scripting::Result_deprecated<int> commitTrackedChanges() = 0;
 

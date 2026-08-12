@@ -35,9 +35,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual float _getCharWidth(int, bool) /*override*/;
+    virtual float _getCharWidth(int uniChar, bool forceUnicode) /*override*/;
 
-    virtual bool supportsChar(int const&) /*override*/;
+    virtual bool supportsChar(int const& character) /*override*/;
 
     virtual float getWrapHeight() const /*override*/;
 
@@ -49,27 +49,40 @@ public:
 
     virtual void uploadTextureToGPU() /*override*/;
 
-    virtual void setTextConstantsInScreenContext(::ScreenContext&, int, float, ::mce::Color const&, bool) const
-        /*override*/;
+    virtual void setTextConstantsInScreenContext(
+        ::ScreenContext& screenContext,
+        int,
+        float               guiScale,
+        ::mce::Color const& textColor,
+        bool                hasShadow
+    ) const /*override*/;
 
     virtual ::Vec2 getTranslationFactor() const /*override*/;
 
-    virtual void _scanUnicodeCharacterSize(int, int, bool) /*override*/;
+    virtual void _scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode) /*override*/;
 
     virtual bool _supportsShadowInSingleDraw() /*override*/;
 
-    virtual ::ResourceLocation _getFontSheetLocation(int, bool) const /*override*/;
+    virtual ::ResourceLocation _getFontSheetLocation(int sheet, bool) const /*override*/;
 
-    virtual ::mce::MaterialPtr const& getMaterial(int, bool) const /*override*/;
+    virtual ::mce::MaterialPtr const& getMaterial(int sheet, bool isOddGuiScale) const /*override*/;
 
     virtual ::mce::Font::Type getType(int glyphSheet) const /*override*/;
 
     virtual void loadFontData(bool) /*override*/;
 
-    virtual float
-    buildChar(::std::vector<::Font::GlyphQuad>&, int, ::mce::Color const&, bool, float, float, bool) /*override*/;
+    virtual float buildChar(
+        ::std::vector<::Font::GlyphQuad>& quads,
+        int                               i,
+        ::mce::Color const&               color,
+        bool                              italic,
+        float                             x,
+        float                             y,
+        bool                              unicode
+    ) /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> getUnicodeFontNameWithPage(::Core::Path const&, uchar const) const;
+    virtual ::Core::PathBuffer<::std::string>
+    getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
 
     virtual int _getReplacementCharacter() /*override*/;
 
@@ -89,6 +102,8 @@ public:
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
         bool                                   uploadOnConstruction
     );
+
+    MCAPI void _loadMsdfFontInformation(::Core::Path const& fontName, uchar const page);
     // NOLINTEND
 
 public:
@@ -104,6 +119,62 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI float $_getCharWidth(int uniChar, bool forceUnicode);
 
+    MCAPI bool $supportsChar(int const& character);
+
+    MCAPI float $getWrapHeight() const;
+
+    MCAPI float $getScaleFactor() const;
+
+    MCFOLD bool $isScreenPixelAligned() const;
+
+    MCFOLD bool $materialCanBeOverridden() const;
+
+    MCFOLD void $uploadTextureToGPU();
+
+    MCAPI void $setTextConstantsInScreenContext(
+        ::ScreenContext& screenContext,
+        int,
+        float               guiScale,
+        ::mce::Color const& textColor,
+        bool                hasShadow
+    ) const;
+
+    MCAPI ::Vec2 $getTranslationFactor() const;
+
+    MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
+
+    MCFOLD bool $_supportsShadowInSingleDraw();
+
+    MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool) const;
+
+    MCAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
+
+    MCFOLD ::mce::Font::Type $getType(int glyphSheet) const;
+
+    MCAPI void $loadFontData(bool);
+
+    MCAPI float $buildChar(
+        ::std::vector<::Font::GlyphQuad>& quads,
+        int                               i,
+        ::mce::Color const&               color,
+        bool                              italic,
+        float                             x,
+        float                             y,
+        bool                              unicode
+    );
+
+    MCAPI ::Core::PathBuffer<::std::string>
+    $getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
+
+    MCFOLD int $_getReplacementCharacter();
+
+    MCAPI ::std::string $_remapString(::std::string_view str) const;
+
+    MCAPI void $switchFontsource(::Core::Path const&, ::Core::Path const&);
+
+    MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
+    $getFontSources() const;
     // NOLINTEND
 };

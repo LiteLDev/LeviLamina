@@ -35,8 +35,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::dcsctp::StateCookie>
-    Deserialize(::webrtc::ArrayView<uchar const, 18446744073709546905> cookie);
+    MCNAPI static ::std::optional<::dcsctp::StateCookie> Deserialize(::webrtc::ArrayView<uchar const> cookie);
     // NOLINTEND
 };
 

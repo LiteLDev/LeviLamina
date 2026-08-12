@@ -70,11 +70,11 @@ public:
 
     virtual void start() /*override*/;
 
-    virtual void update(float) /*override*/;
+    virtual void update(float deltaTimeSeconds) /*override*/;
 
-    virtual void notifyReadPosition(uint64) /*override*/;
+    virtual void notifyReadPosition(uint64 offset) /*override*/;
 
-    virtual void seekTo(uint64) /*override*/;
+    virtual void seekTo(uint64 offset) /*override*/;
 
     virtual void stop() /*override*/;
 
@@ -85,6 +85,14 @@ public:
     virtual uint64 getTotalBytesRequested() const /*override*/;
 
     virtual uint getTotalRetries() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void _tryIssueRequest();
+#endif
     // NOLINTEND
 
 public:
@@ -102,6 +110,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $start();
+
+    MCNAPI void $update(float deltaTimeSeconds);
+
+    MCNAPI void $notifyReadPosition(uint64 offset);
+
+    MCNAPI void $seekTo(uint64 offset);
+
+    MCNAPI void $stop();
+
+    MCNAPI bool $isFetching() const;
+
+    MCNAPI uint64 $getNextFetchOffset() const;
+
+    MCNAPI uint64 $getTotalBytesRequested() const;
+
+    MCNAPI uint $getTotalRetries() const;
+
 
     // NOLINTEND
 };

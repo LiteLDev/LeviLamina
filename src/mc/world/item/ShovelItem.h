@@ -51,7 +51,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI int $getEnchantSlot() const;
+#else // LL_PLAT_C
+    MCFOLD int $getEnchantSlot() const;
+#endif
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;

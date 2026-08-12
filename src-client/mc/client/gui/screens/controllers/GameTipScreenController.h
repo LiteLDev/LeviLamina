@@ -7,6 +7,7 @@
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/screens/controllers/ClientInstanceScreenController.h"
 #include "mc/client/social/IToastEventListener.h"
+#include "mc/client/tutorial/game_tip_constants/Animation.h"
 #include "mc/client/tutorial/game_tip_constants/Interruption.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/input/InputMode.h"
@@ -15,6 +16,7 @@
 // clang-format off
 class GameTip;
 class HudContainerManagerController;
+class Option;
 class ToastMessage;
 // clang-format on
 
@@ -51,14 +53,43 @@ public:
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    virtual void handleToastEvent(::IToastEventListener::ToastEventType const, ::ToastMessage const) /*override*/;
+    virtual void
+    handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg) /*override*/;
 
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _addInterruption(::GameTipConstants::Interruption interruption);
+
+    MCAPI void _destroyActiveTip();
+
+    MCAPI void _displayActiveTip(::GameTipConstants::Animation const animation);
+
+    MCAPI void _displayNewTip(::std::shared_ptr<::GameTip> const& tip);
+
+    MCAPI void _gametipOptionCallback(::Option const& gametipEnabled);
+
+    MCAPI void _instantiateTips();
+
+    MCAPI void _removeInterruption(::GameTipConstants::Interruption interruption);
+
+    MCAPI void _stopDisplayingActiveTip();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onOpen();
 
+    MCFOLD void $onTerminate();
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI void $handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg);
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 };

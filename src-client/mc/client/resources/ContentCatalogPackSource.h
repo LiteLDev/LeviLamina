@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/resources/IContentCatalogPackSource.h"
 #include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/SharedAsync.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -39,7 +40,7 @@ public:
     // NOLINTBEGIN
     virtual ~ContentCatalogPackSource() /*override*/ = default;
 
-    virtual void setEnabled(bool) /*override*/;
+    virtual void setEnabled(bool enabled) /*override*/;
 
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
 
@@ -49,8 +50,20 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::Threading::Async<void> _load();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $setEnabled(bool enabled);
 
+    MCAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&&);
+
+    MCAPI ::PackType $getPackType() const;
+
+    MCAPI void $refreshCatalogItems(::IPackManifestFactory&);
     // NOLINTEND
 };

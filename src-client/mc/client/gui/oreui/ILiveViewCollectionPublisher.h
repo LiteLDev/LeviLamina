@@ -12,7 +12,7 @@ public:
 
     virtual uint allocateHandle() = 0;
 
-    virtual void markChanged(uint) = 0;
+    virtual void markChanged(uint handle) = 0;
     // NOLINTEND
 
 public:

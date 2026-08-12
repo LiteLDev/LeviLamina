@@ -32,6 +32,12 @@ public:
     ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                           mMutex;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::FramesToPaintQueue::ViewFrame>> mFrames;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void clear(::OreUI::ViewId viewId);
+    // NOLINTEND
 };
 
 } // namespace OreUI

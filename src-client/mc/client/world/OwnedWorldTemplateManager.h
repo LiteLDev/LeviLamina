@@ -73,11 +73,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::World::DownloadWorldTemplateError> downloadWorldTemplate(
-        ::std::string const&,
-        ::std::function<void(::std::optional<::World::DownloadWorldTemplateError>)>
+        ::std::string const&                                                        id,
+        ::std::function<void(::std::optional<::World::DownloadWorldTemplateError>)> callback
     ) /*override*/;
 
-    virtual void _templateDownloadedCallback(::std::string const&, bool) /*override*/;
+    virtual void _templateDownloadedCallback(::std::string const& templateId, bool success) /*override*/;
     // NOLINTEND
 
 public:
@@ -97,6 +97,12 @@ public:
         ::IContentAcquisition&                                  contentAquisition
     );
 
+    MCAPI void _localWorldUpdateCallback(::std::pair<::std::string, bool> const& updatedTemplateData);
+
+    MCAPI ::std::vector<::std::string> _populateListWithLocalTemplates();
+
+    MCAPI void _populateListWithOwnedNonLocalTemplates(::std::vector<::std::string> const& localPremiumTemplates);
+
     MCAPI void getMarketplaceIdFromLocalId(
         ::std::string const&                                        localId,
         ::std::function<void(::std::optional<::std::string const>)> callback
@@ -106,6 +112,8 @@ public:
     importWorldTemplate(::std::function<void(::std::optional<::ImportFailure>, ::std::string const&)> callback);
 
     MCAPI void isTemplateOwned(::std::string const& templateId, ::std::function<void(bool)> callback);
+
+    MCAPI void refresh();
     // NOLINTEND
 
 public:
@@ -129,7 +137,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::optional<::World::DownloadWorldTemplateError> $downloadWorldTemplate(
+        ::std::string const&                                                        id,
+        ::std::function<void(::std::optional<::World::DownloadWorldTemplateError>)> callback
+    );
 
+    MCAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
     // NOLINTEND
 };
 

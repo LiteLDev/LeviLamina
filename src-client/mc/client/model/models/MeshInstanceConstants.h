@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/renderer/CameraMatrices.h"
 
+// auto generated forward declare list
+// clang-format off
+class ScreenContext;
+// clang-format on
+
 class MeshInstanceConstants {
 public:
     // member variables
@@ -21,5 +26,21 @@ public:
     ::ll::TypedStorage<4, 8, ::glm::vec2>             UV_ROTATION;
     ::ll::TypedStorage<4, 8, ::glm::vec2>             UV_SCALE;
     ::ll::TypedStorage<4, 192, ::mce::CameraMatrices> mCamera;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MeshInstanceConstants();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit MeshInstanceConstants(::ScreenContext& screenContext);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };

@@ -15,6 +15,7 @@ class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
 class EntityContext;
+class Vec3;
 struct ActorDefinitionIdentifier;
 struct HurtParameters;
 struct VariantParameterList;
@@ -71,6 +72,8 @@ public:
         ::EntityContext&                   entityContext,
         ::mce::Color const&                inkParticleColor
     );
+
+    MCAPI ::Vec3 _randomInkDir();
 
     MCAPI void postAiStep();
 

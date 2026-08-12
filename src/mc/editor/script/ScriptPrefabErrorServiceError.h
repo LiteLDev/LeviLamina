@@ -7,6 +7,22 @@
 
 namespace Editor::ScriptModule {
 
-struct ScriptPrefabErrorServiceError : public ::Scripting::BaseError {};
+struct ScriptPrefabErrorServiceError : public ::Scripting::BaseError {
+public:
+    // prevent constructor by default
+    ScriptPrefabErrorServiceError();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit ScriptPrefabErrorServiceError(::std::string const& message);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+};
 
 } // namespace Editor::ScriptModule

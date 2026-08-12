@@ -14,6 +14,7 @@
 // clang-format off
 class BinaryStream;
 class BlockPalette;
+class ItemStack;
 class Player;
 class ReadOnlyBinaryStream;
 // clang-format on
@@ -63,6 +64,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::ItemUseOnActorInventoryTransaction& operator=(::ItemUseOnActorInventoryTransaction const&);
+
+    MCAPI ::ItemUseOnActorInventoryTransaction& setSelectedItem(::ItemStack const& item);
     // NOLINTEND
 
 public:

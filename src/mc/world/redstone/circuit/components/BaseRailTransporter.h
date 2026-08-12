@@ -57,6 +57,8 @@ public:
 
     MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
+    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
+
 
     // NOLINTEND
 };

@@ -11,7 +11,7 @@ class SimpleStringBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk45806d;
+    ::ll::UntypedStorage<8, 16> mUnkb514f3;
     ::ll::UntypedStorage<8, 8>  mUnkffdc98;
     // NOLINTEND
 
@@ -24,9 +24,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::SimpleStringBuilder& AppendFormat(char const*, ...);
+    MCNAPI ::webrtc::SimpleStringBuilder& AppendFormat(char const* fmt, ...);
 
-    MCNAPI explicit SimpleStringBuilder(::webrtc::ArrayView<char, 18446744073709546905> buffer);
+    MCNAPI explicit SimpleStringBuilder(::webrtc::ArrayView<char> buffer);
 
     MCNAPI ::webrtc::SimpleStringBuilder& operator<<(char ch);
 
@@ -44,7 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::ArrayView<char, 18446744073709546905> buffer);
+    MCNAPI void* $ctor(::webrtc::ArrayView<char> buffer);
     // NOLINTEND
 };
 

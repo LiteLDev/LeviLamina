@@ -35,10 +35,10 @@ public:
     virtual uint64 BlockLength() const /*override*/;
 
     virtual bool Create(
-        uchar*                                                                               packet,
-        uint64*                                                                              index,
-        uint64                                                                               max_length,
-        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> callback
+        uchar*                                                         packet,
+        uint64*                                                        index,
+        uint64                                                         max_length,
+        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const>)> callback
     ) const /*override*/;
     // NOLINTEND
 
@@ -70,10 +70,10 @@ public:
     MCNAPI uint64 $BlockLength() const;
 
     MCNAPI bool $Create(
-        uchar*                                                                               packet,
-        uint64*                                                                              index,
-        uint64                                                                               max_length,
-        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> callback
+        uchar*                                                         packet,
+        uint64*                                                        index,
+        uint64                                                         max_length,
+        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const>)> callback
     ) const;
 
 

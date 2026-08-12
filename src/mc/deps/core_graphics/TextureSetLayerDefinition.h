@@ -38,6 +38,8 @@ public:
         ::cg::TextureSetLayerType const&                                            type,
         ::std::variant<::ResourceLocationPair, ::ColorChannel, ::mce::Color> const& var
     );
+
+    MCAPI ::std::optional<::std::string> hasValidationError() const;
 #endif
     // NOLINTEND
 
@@ -50,6 +52,12 @@ public:
         ::std::variant<::ResourceLocationPair, ::ColorChannel, ::mce::Color> const& var
     );
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class InMemoryFile;
+namespace Core { class Path; }
+// clang-format on
+
 class InMemoryFileStorage {
 public:
     // member variables
@@ -17,4 +23,12 @@ public:
     InMemoryFileStorage& operator=(InMemoryFileStorage const&);
     InMemoryFileStorage(InMemoryFileStorage const&);
     InMemoryFileStorage();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool deleteFile(::Core::Path const& fileName);
+
+    MCNAPI bool findFile(::Core::Path const& fileName, ::std::shared_ptr<::InMemoryFile>& outFile);
+    // NOLINTEND
 };

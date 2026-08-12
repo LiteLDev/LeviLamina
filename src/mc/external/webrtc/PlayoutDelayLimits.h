@@ -16,8 +16,7 @@ class PlayoutDelayLimits {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool
-    Write(::webrtc::ArrayView<uchar, 18446744073709546905> data, ::webrtc::VideoPlayoutDelay const& playout_delay);
+    MCNAPI static bool Write(::webrtc::ArrayView<uchar> data, ::webrtc::VideoPlayoutDelay const& playout_delay);
     // NOLINTEND
 };
 

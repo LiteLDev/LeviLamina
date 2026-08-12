@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     virtual ~TransformableAudioFrameInterface() /*override*/ = default;
 
-    virtual ::webrtc::ArrayView<uint const, 18446744073709546905> GetContributingSources() const = 0;
+    virtual ::webrtc::ArrayView<uint const> GetContributingSources() const = 0;
 
     virtual ::std::optional<ushort> const SequenceNumber() const = 0;
 
@@ -40,6 +40,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::TransformableAudioFrameInterface::FrameType $Type() const;
+
+    MCNAPI bool $CanSetAudioLevel() const;
+
+    MCNAPI void $SetAudioLevel(::std::optional<uchar>);
+
 
     // NOLINTEND
 };

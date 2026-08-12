@@ -9,6 +9,7 @@
 // clang-format off
 class LibrarySearchBarScreenController;
 class MainMenuScreenModel;
+class UIPropertyBag;
 struct EDULibraryCategory;
 namespace Json { class Value; }
 // clang-format on
@@ -52,6 +53,8 @@ public:
         ::std::vector<::EDULibraryCategory>      libraryCategories,
         bool                                     firstPage
     );
+
+    MCAPI ::EDULibraryCategory* _getCategory(::UIPropertyBag const& bag);
     // NOLINTEND
 
 public:
@@ -72,6 +75,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
+    MCAPI void $onOpen();
     // NOLINTEND
 };

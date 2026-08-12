@@ -41,6 +41,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit RealmsStoriesSessionsFacet(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
 
+    MCAPI ::Realms::Stories::FetchStatus _getFetchSessionsState() const;
+
     MCAPI void _regenerateView();
     // NOLINTEND
 

@@ -62,5 +62,7 @@ public:
     MCAPI void mergeNeighborhoods(::Actor& owner);
 
     MCAPI void updateNeighborhoodData(::Actor const& owner);
+
+    MCAPI bool validateVariantEntityTypes(::Actor const& e0, ::Actor const& e1) const;
     // NOLINTEND
 };

@@ -30,6 +30,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::std::unique_ptr<::ScreenController> $makeScreenController(::std::shared_ptr<::MainMenuScreenModel>);
     // NOLINTEND
 };

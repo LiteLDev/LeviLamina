@@ -21,9 +21,9 @@ public:
     // NOLINTBEGIN
     virtual bool isValid() const = 0;
 
-    virtual ::Bedrock::Result<void> getAsset(::Core::Path const&, ::std::string&) const = 0;
+    virtual ::Bedrock::Result<void> getAsset(::Core::Path const& path, ::std::string& contents) const = 0;
 
-    virtual bool hasAsset(::Core::Path const&) const = 0;
+    virtual bool hasAsset(::Core::Path const& path) const = 0;
     // NOLINTEND
 
 public:

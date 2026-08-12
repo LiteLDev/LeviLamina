@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class Mob;
 // clang-format on
 
@@ -46,7 +47,7 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual void appendDebugInfo(::std::string&) const /*override*/;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
     // NOLINTEND
 
 public:
@@ -61,6 +62,8 @@ public:
         ::std::string const&      preferredActorType,
         ::ActorFilterGroup const& filters
     );
+
+    MCAPI ::gsl::span<::gsl::not_null<::Actor*>> _findCandidateMobs();
     // NOLINTEND
 
 public:
@@ -80,6 +83,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $canUse();
+
+    MCAPI bool $canContinueToUse();
+
+    MCAPI void $start();
+
+    MCAPI void $stop();
+
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
 
     // NOLINTEND
 };

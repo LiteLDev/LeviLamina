@@ -100,6 +100,11 @@ public:
     MCAPI ButtonBlock(::std::string const& nameId, int id, ::Material const& material, bool sensitive);
 
     MCAPI void
+    _buttonUnpressed(::BlockSource& region, ::Block const& buttonBlock, ::Vec3 const& pos, ::Actor* sourceActor) const;
+
+    MCAPI void _checkPressed(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void
     buttonPressed(::BlockSource& region, ::Block const& buttonBlock, ::Vec3 const& pos, ::Actor* sourceActor) const;
 
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;

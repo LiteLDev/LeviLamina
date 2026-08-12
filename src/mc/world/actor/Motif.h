@@ -46,8 +46,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Motif();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Motif(::std::string name, int w, int h, ::glm::vec4 UVs, bool isPublic, bool isSplitMeshPainting);
+
     MCFOLD ::std::string const getName() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };

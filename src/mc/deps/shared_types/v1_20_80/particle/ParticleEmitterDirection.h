@@ -15,6 +15,27 @@ public:
     ::ll::TypedStorage<4, 8, ::std::optional<::SharedTypes::v1_20_80::DirectionType>> mDirectionString;
     ::ll::TypedStorage<8, 152, ::std::optional<::std::array<::SharedTypes::Legacy::ExpressionNode, 3>>> mDirectionExpr;
     // NOLINTEND
+
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ParticleEmitterDirection();
+
+#endif
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit ParticleEmitterDirection(::std::array<::SharedTypes::Legacy::ExpressionNode, 3> exprArray);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_20_80

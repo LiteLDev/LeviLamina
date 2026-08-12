@@ -63,7 +63,7 @@ public:
     // NOLINTBEGIN
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onComplete(::MinecraftScreenModel&) /*override*/;
+    virtual void onComplete(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -97,6 +97,8 @@ public:
     MCAPI ::std::string const getUploadErrorCode() const;
 
     MCAPI void startUpload();
+
+    MCAPI void updateText(::MinecraftScreenModel& minecraftScreenModel);
     // NOLINTEND
 
 public:
@@ -113,6 +115,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
+    MCFOLD void $onComplete(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCAPI ::std::string $getTitleText() const;
+
+    MCAPI ::std::string $getName() const;
+
+    MCFOLD ::ProgressAnimation $showLoadingBar() const;
     // NOLINTEND
 };

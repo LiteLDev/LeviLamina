@@ -36,6 +36,26 @@ public:
         ::ll::TypedStorage<4, 4, ::OreUI::EntryPoints::RouteFlags const>  flags;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::IEntryPoint>> definition;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        EntryPoint();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI EntryPoint(
+            ::std::string const&                    route,
+            ::OreUI::EntryPoints::RouteFlags const  flags,
+            ::std::unique_ptr<::OreUI::IEntryPoint> definition
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
     };
 
 public:

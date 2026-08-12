@@ -16,6 +16,9 @@ class AnimationComponentGroup {
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::unordered_map<::AnimationComponentID, ::std::weak_ptr<::AnimationComponent>>&
+    _getAllAnimationComponents(::AnimationComponentGroupType groupType);
+
     MCAPI static ::std::shared_ptr<::AnimationComponent>
     getAnimationComponent(::AnimationComponentGroupType groupType, ::AnimationComponentID ownerUUID);
 

@@ -16,7 +16,8 @@ public:
     // NOLINTBEGIN
     virtual ~IceControllerFactoryInterface() = default;
 
-    virtual ::std::unique_ptr<::webrtc::IceControllerInterface> Create(::webrtc::IceControllerFactoryArgs const&) = 0;
+    virtual ::std::unique_ptr<::webrtc::IceControllerInterface>
+    Create(::webrtc::IceControllerFactoryArgs const& args) = 0;
     // NOLINTEND
 
 public:

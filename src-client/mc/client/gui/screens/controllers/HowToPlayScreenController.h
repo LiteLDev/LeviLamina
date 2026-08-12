@@ -54,6 +54,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI HowToPlayScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::HowToPlayTopicIndex topic);
+
+    MCAPI void _selectNewTab(bool isInitialTab, int newTabIndex);
     // NOLINTEND
 
 public:
@@ -65,6 +67,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onOpen();
 
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI bool $bind(
+        ::std::string const& bindingName,
+        uint                 bindingNameHash,
+        ::std::string const& bindingNameOverride,
+        ::UIPropertyBag&     bag
+    );
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCFOLD ::std::string $_getButtonADescription();
     // NOLINTEND
 };

@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
+class BlockSource;
 class ItemDescriptor;
 class Mob;
 // clang-format on
@@ -61,7 +62,7 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual void appendDebugInfo(::std::string&) const /*override*/;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual void start() /*override*/;
 
@@ -69,8 +70,30 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _findTargetBlock();
+
+    MCAPI bool _isValidTarget(::BlockSource& region, ::BlockPos& pos) const;
+
+    MCAPI void _moveToBlock();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $canUse();
+
+    MCAPI bool $canContinueToUse();
+
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
+    MCAPI void $start();
+
+    MCAPI void $stop();
+
 
     // NOLINTEND
 };

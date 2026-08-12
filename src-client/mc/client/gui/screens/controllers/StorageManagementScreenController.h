@@ -18,6 +18,7 @@ class MainMenuScreenModel;
 class StorageDependencyScreenController;
 class StorageManagementScreenControllerProxy;
 struct ContentItem;
+struct LegacyWorldInfo;
 // clang-format on
 
 class StorageManagementScreenController : public ::MainMenuScreenController {
@@ -77,6 +78,14 @@ public:
         ::IContentManager&                       manager,
         bool                                     legacySyncOnly
     );
+
+    MCAPI void _convertLegacyWorld(::LegacyWorldInfo const& world);
+
+    MCAPI ::LegacyWorldInfo _getLegacyWorld(int worldIndex);
+
+    MCAPI ::std::string _getLegacyWorldsSize(uint numberElements, uint64 size);
+
+    MCAPI ::LegacyWorldInfo _getRetailToPreviewWorld(int worldIndex);
     // NOLINTEND
 
 public:
@@ -88,6 +97,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

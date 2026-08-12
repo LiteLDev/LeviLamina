@@ -12,6 +12,7 @@
 class CommandRegistry;
 struct ServerScriptManagerEvents;
 namespace ScriptModuleMinecraft { class CommandClosureStorage; }
+namespace ScriptModuleMinecraft { struct ScriptCustomCommandError; }
 namespace ScriptModuleMinecraft { struct ScriptCustomCommandResult; }
 // clang-format on
 
@@ -118,6 +119,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CustomCommandRegistry(::ServerScriptManagerEvents& events, ::CommandRegistry& commandRegistry);
+
+    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandError> _checkNamespaceConsistency(
+        ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations const& registrations,
+        ::std::string_view const                                                    newNamespace
+    ) const;
+
+    MCAPI ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations&
+    _getOrCreatePendingRegistrationsForPack(::std::string const& packUUID, ::std::string_view const newNamespace);
     // NOLINTEND
 
 public:

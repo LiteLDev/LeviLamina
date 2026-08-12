@@ -14,4 +14,10 @@ public:
     PackSourceReport& operator=(PackSourceReport const&);
     PackSourceReport(PackSourceReport const&);
     PackSourceReport();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void merge(::PackSourceReport&& other);
+    // NOLINTEND
 };

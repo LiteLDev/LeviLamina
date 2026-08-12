@@ -22,6 +22,12 @@ public:
     WidgetPrimComponentPyramid& operator=(WidgetPrimComponentPyramid const&);
     WidgetPrimComponentPyramid(WidgetPrimComponentPyramid const&);
     WidgetPrimComponentPyramid();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::Editor::Network::WidgetPrimComponentPyramid const& other) const;
+    // NOLINTEND
 };
 
 } // namespace Editor::Network

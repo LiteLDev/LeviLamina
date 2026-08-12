@@ -37,14 +37,26 @@ public:
     // NOLINTBEGIN
     virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
 
-    virtual void renderEffects(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
+    virtual void renderEffects(
+        ::BaseActorRenderContext& renderContext,
+        ::ActorRenderData&        actorRenderData,
+        ::RenderParams&           renderParams
+    ) /*override*/;
 
-    virtual ::AABB getRenderBounds(::Actor const&) const /*override*/;
+    virtual ::AABB getRenderBounds(::Actor const& entity) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&);
 
+    MCNAPI void $renderEffects(
+        ::BaseActorRenderContext& renderContext,
+        ::ActorRenderData&        actorRenderData,
+        ::RenderParams&           renderParams
+    );
+
+    MCNAPI ::AABB $getRenderBounds(::Actor const& entity) const;
     // NOLINTEND
 };

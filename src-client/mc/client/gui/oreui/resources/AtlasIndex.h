@@ -36,6 +36,12 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                                       mThumbnailHeight;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::OreUI::AtlasIndex::ItemEntry>> mItems;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addItem(::std::string const& item, ::OreUI::AtlasIndex::ItemEntry const& entry);
+    // NOLINTEND
 };
 
 } // namespace OreUI

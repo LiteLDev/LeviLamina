@@ -6,6 +6,7 @@
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
 // auto generated forward declare list
@@ -33,10 +34,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::Scripting::Result_deprecated<int> getAdditionalSlotsPerStrength() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getCanBeSiphonedFrom() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::string> getContainerType() const;
+
+    MCAPI ::Scripting::Result_deprecated<int> getInventorySize() const;
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>>
+    getOrCreateContainerV1();
+
     MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getOrCreateContainerV2();
+
+    MCAPI ::Scripting::Result_deprecated<bool> getPrivate() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getRestrictToOwner() const;
     // NOLINTEND
 
 public:

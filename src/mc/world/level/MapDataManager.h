@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class DimensionManager;
 class IGameplayUserManagerConnector;
 class ILevelStorageManagerConnector;
@@ -16,6 +17,7 @@ class IMapDataManagerOptions;
 class LevelStorage;
 class MapItemSavedData;
 class PacketSender;
+struct DimensionType;
 // clang-format on
 
 class MapDataManager {
@@ -42,7 +44,7 @@ public:
     // NOLINTBEGIN
     virtual ~MapDataManager();
 
-    virtual void registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector&);
+    virtual void registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
     virtual ::MapItemSavedData& createMapSavedData(::ActorUniqueID const& uuid);
 
@@ -59,6 +61,17 @@ public:
         ::LevelStorage*                             levelStorage,
         ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
         ::std::function<::ActorUniqueID()>          getNewUniqueID
+    );
+
+    MCAPI ::MapItemSavedData* _loadMapData(::ActorUniqueID const& uuid);
+
+    MCAPI void _onSaveLevelData(::LevelStorage& levelStorage);
+
+    MCAPI ::MapItemSavedData& createMapSavedData(
+        ::std::vector<::ActorUniqueID> const& mapIds,
+        ::BlockPos const&                     origin,
+        ::DimensionType                       dimension,
+        int                                   returnScaleLevel
     );
 
     MCAPI void registerOnSaveLevelDataSubscription(::ILevelStorageManagerConnector& levelStorageManagerConnector);
@@ -84,7 +97,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector&);
+    MCFOLD void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
     MCAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
 

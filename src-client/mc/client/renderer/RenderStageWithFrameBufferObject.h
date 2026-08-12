@@ -36,6 +36,14 @@ public:
     virtual void postRender(::ScreenContext& screenContext) /*override*/;
 
     virtual void setupStage(::ScreenContext& screenContext, bool const clearBuffer);
+
+    virtual ~RenderStageWithFrameBufferObject() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

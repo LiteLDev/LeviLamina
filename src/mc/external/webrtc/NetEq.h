@@ -109,19 +109,12 @@ public:
     // NOLINTBEGIN
     virtual ~NetEq() = default;
 
-    virtual int InsertPacket(::webrtc::RTPHeader const&, ::webrtc::ArrayView<uchar const, 18446744073709546905>);
+    virtual int InsertPacket(::webrtc::RTPHeader const&, ::webrtc::ArrayView<uchar const>);
 
-    virtual int InsertPacket(
-        ::webrtc::RTPHeader const&,
-        ::webrtc::ArrayView<uchar const, 18446744073709546905>,
-        ::webrtc::Timestamp
-    );
+    virtual int InsertPacket(::webrtc::RTPHeader const&, ::webrtc::ArrayView<uchar const>, ::webrtc::Timestamp);
 
-    virtual int InsertPacket(
-        ::webrtc::RTPHeader const&,
-        ::webrtc::ArrayView<uchar const, 18446744073709546905>,
-        ::webrtc::RtpPacketInfo const&
-    );
+    virtual int
+    InsertPacket(::webrtc::RTPHeader const&, ::webrtc::ArrayView<uchar const>, ::webrtc::RtpPacketInfo const&);
 
     virtual void InsertEmptyPacket(::webrtc::RTPHeader const&) = 0;
 
@@ -179,6 +172,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI int $InsertPacket(::webrtc::RTPHeader const&, ::webrtc::ArrayView<uchar const>);
+
+    MCNAPI int $InsertPacket(::webrtc::RTPHeader const&, ::webrtc::ArrayView<uchar const>, ::webrtc::Timestamp);
+
+    MCNAPI int
+    $InsertPacket(::webrtc::RTPHeader const&, ::webrtc::ArrayView<uchar const>, ::webrtc::RtpPacketInfo const&);
+
+    MCNAPI bool $CreateDecoder(int);
+
+    MCNAPI ::std::optional<::webrtc::NetEq::DecoderFormat> $GetDecoderFormat(int) const;
+
+    MCNAPI ::std::optional<::webrtc::NetEq::DecoderFormat> $GetCurrentDecoderFormat() const;
+
 
     // NOLINTEND
 };

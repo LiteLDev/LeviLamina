@@ -3,8 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/platform/threading/SharedLock.h"
 #include "mc/platform/threading/UniqueLock.h"
+
+// auto generated forward declare list
+// clang-format off
+class Localization;
+// clang-format on
 
 class ImmutableLocalization {
 public:
@@ -41,4 +47,14 @@ public:
     ImmutableLocalization& operator=(ImmutableLocalization const&);
     ImmutableLocalization(ImmutableLocalization const&);
     ImmutableLocalization();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _setValue(::std::shared_ptr<::Localization const> value);
+
+    MCNAPI void modifyAdditive(::brstd::function_ref<void(::Localization&)> modifier);
+
+    MCNAPI void modifyReplace(::brstd::function_ref<void(::Localization&)> modifier);
+    // NOLINTEND
 };

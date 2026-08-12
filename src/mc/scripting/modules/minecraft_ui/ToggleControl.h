@@ -12,6 +12,7 @@
 class Player;
 namespace Json { class Value; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageError; }
+namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 // clang-format on
 
 namespace ScriptModuleMinecraftServerUI {
@@ -35,12 +36,31 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
-    buildJson(::Player&, ::CurrentCmdVersion) const /*override*/;
+    buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ToggleControl(
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>                  label,
+        ::std::optional<bool>                                                                              defaultValue,
+        ::std::optional<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> tooltip
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
+    $buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
+
 
     // NOLINTEND
 };

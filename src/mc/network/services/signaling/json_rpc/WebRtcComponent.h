@@ -33,12 +33,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initialize(::std::shared_ptr<::JsonRpc::JsonRpcProvider>) /*override*/;
+    virtual void initialize(::std::shared_ptr<::JsonRpc::JsonRpcProvider> provider) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void sendTurnConfigRequest();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $initialize(::std::shared_ptr<::JsonRpc::JsonRpcProvider> provider);
+
 
     // NOLINTEND
 };

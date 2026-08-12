@@ -15,6 +15,7 @@ struct DimensionTypeComponent;
 struct GainedRaidOmenAtPositionComponent;
 struct RaidTriggerComponent;
 struct TickingSystemWithInfo;
+struct VillageManagerComponent;
 // clang-format on
 
 class RaidTriggerSystem {
@@ -30,6 +31,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _doRaidTriggerSystem(
+        ::DimensionTypeComponent const&            dimensionTypeComponent,
+        ::GainedRaidOmenAtPositionComponent const& gainedRaidOmen,
+        ::ActorOwnerComponent&                     actorOwnerComponent,
+        ::VillageManagerComponent const&           villageManagerComponent
+    );
+
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

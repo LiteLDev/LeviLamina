@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     virtual ~InMemoryWritableFile() /*override*/ = default;
 
-    virtual ::leveldb::Status Append(::leveldb::Slice const&) /*override*/;
+    virtual ::leveldb::Status Append(::leveldb::Slice const& data) /*override*/;
 
     virtual ::leveldb::Status Close() /*override*/;
 
@@ -32,6 +32,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::leveldb::Status $Append(::leveldb::Slice const& data);
+
+    MCNAPI ::leveldb::Status $Close();
+
+    MCNAPI ::leveldb::Status $Flush();
+
+    MCNAPI ::leveldb::Status $Sync();
+
 
     // NOLINTEND
 };

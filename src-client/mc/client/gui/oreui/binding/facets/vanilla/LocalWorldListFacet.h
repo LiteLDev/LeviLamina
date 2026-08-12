@@ -50,6 +50,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>     resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> accessibilityProvider
     );
+
+    MCAPI ::std::vector<::OreUI::LocalWorldData> _readLocalWorlds() const;
+
+    MCFOLD ::std::vector<::OreUI::LocalWorldData> const& getLocalWorlds() const;
+
+    MCFOLD bool getOtherStorageContainsWorlds() const;
     // NOLINTEND
 
 public:
@@ -72,7 +78,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

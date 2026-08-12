@@ -12,7 +12,9 @@
 // clang-format off
 class IdentityDefinition;
 class Level;
+class Objective;
 class Scoreboard;
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardListener; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardObjective; }
@@ -58,8 +60,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>
+    _getOrCreateScoreboardObjective(::Objective const& objective);
+
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>
     getOrCreateScoreboardIdentity(::IdentityDefinition const& identity);
+
+    MCAPI ::std::optional<::ScoreboardId> tryGetScoreboardParticipantScoreboardId(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+            ::std::string> const& participant
+    ) const;
     // NOLINTEND
 
 public:

@@ -89,6 +89,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions
     );
 
+    MCAPI void _registerMenuButton(::std::string const& buttonName, bool suspendable);
+
     MCAPI void
     getCursorPos(float& xCursor, float& yCursor, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client) const;
 

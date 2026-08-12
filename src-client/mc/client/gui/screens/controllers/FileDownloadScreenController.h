@@ -73,6 +73,8 @@ public:
         ::std::string const&                     realmVersionName,
         ::std::function<void(bool)>              callback
     );
+
+    MCAPI void _startDownload();
     // NOLINTEND
 
 public:
@@ -92,6 +94,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI ::std::string $getAdditionalScreenInfo() const;
     // NOLINTEND
 };

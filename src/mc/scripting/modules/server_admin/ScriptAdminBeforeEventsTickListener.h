@@ -35,6 +35,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onRunSystemTick(::ScriptDeferredFlushTracker&);
+
 
     // NOLINTEND
 };

@@ -51,7 +51,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD ::Settings::ComponentState $getDefaultState() const;
     // NOLINTEND
 };
 

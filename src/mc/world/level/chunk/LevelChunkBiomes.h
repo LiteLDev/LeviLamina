@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/container/small_vector_base.h"
+#include "mc/platform/threading/UniqueLock.h"
 #include "mc/world/level/biome/BiomeIdType.h"
 #include "mc/world/level/block/chunk_volume/VolumeOf.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
@@ -50,6 +51,12 @@ public:
     MCAPI void makeUniformBiomes(::Biome const& biome);
 
     MCAPI void pruneBiomesSubChunk3D(ushort subChunkIndex, ::SubChunkStorageUnit::PruneType pruneType);
+
+    MCAPI void rebuildMissingBiomeSubChunks(
+        ushort                                                       numSubChunksToCreate,
+        ushort                                                       dimensionSubchunkHeight,
+        ::Bedrock::Threading::UniqueLock<::std::shared_mutex> const& lock
+    );
 
     MCAPI void setBiomeFromVolume(::ChunkVolume::VolumeOf<::Biome> const& volume, ushort dimensionNumSubChunks);
 

@@ -12,7 +12,7 @@ public:
     // NOLINTBEGIN
     virtual ~IPacketSerializationController() = default;
 
-    virtual ::std::optional<::SerializationMode> getOverrideModeForPacket(::MinecraftPacketIds) const = 0;
+    virtual ::std::optional<::SerializationMode> getOverrideModeForPacket(::MinecraftPacketIds id) const = 0;
     // NOLINTEND
 
 public:

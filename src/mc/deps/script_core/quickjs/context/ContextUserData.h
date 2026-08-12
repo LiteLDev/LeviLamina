@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/script_core/quickjs/context/ParseContext.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting::QuickJS { struct ParseContextData; }
+// clang-format on
+
 namespace Scripting::QuickJS {
 
 class ContextUserData {
@@ -30,6 +38,24 @@ public:
     ContextUserData& operator=(ContextUserData const&);
     ContextUserData(ContextUserData const&);
     ContextUserData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::QuickJS::ParseContextData const& peekParseContext() const;
+
+    MCNAPI void popParseContext();
+
+    MCNAPI void pushParseContext(
+        ::Scripting::QuickJS::ParseContext       context,
+        ::entt::meta_type const&                 type,
+        ::std::variant<::std::string_view, uint> arg
+    );
+
+    MCNAPI void resetParseContextUntilVariant(bool removeVariant);
+
+    MCNAPI ~ContextUserData();
+    // NOLINTEND
 };
 
 } // namespace Scripting::QuickJS

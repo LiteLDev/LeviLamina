@@ -34,7 +34,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void* $more(uint);
 
+    MCAPI uint $getSize();
     // NOLINTEND
 };
 

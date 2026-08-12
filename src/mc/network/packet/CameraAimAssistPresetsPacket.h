@@ -63,6 +63,8 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual ~CameraAimAssistPresetsPacket() /*override*/;
     // NOLINTEND
 
 public:
@@ -75,6 +77,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::CameraAimAssistPresetsPacketPayload payload);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

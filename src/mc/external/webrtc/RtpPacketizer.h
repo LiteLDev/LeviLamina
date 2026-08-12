@@ -46,17 +46,17 @@ public:
 
     virtual uint64 NumPackets() const = 0;
 
-    virtual bool NextPacket(::webrtc::RtpPacketToSend* packet) = 0;
+    virtual bool NextPacket(::webrtc::RtpPacketToSend* rtp_packet) = 0;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::webrtc::RtpPacketizer> Create(
-        ::std::optional<::webrtc::VideoCodecType>              type,
-        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits             limits,
-        ::webrtc::RTPVideoHeader const&                        rtp_video_header
+        ::std::optional<::webrtc::VideoCodecType>  type,
+        ::webrtc::ArrayView<uchar const>           payload,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
+        ::webrtc::RTPVideoHeader const&            rtp_video_header
     );
 
     MCNAPI static ::std::vector<int>

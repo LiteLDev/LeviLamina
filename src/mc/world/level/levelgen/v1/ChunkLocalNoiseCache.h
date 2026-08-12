@@ -37,4 +37,10 @@ public:
     ::ll::TypedStorage<4, 4, int const>                                          mCellCountXZ;
     ::ll::TypedStorage<8, 24, ::std::vector<::ChunkLocalNoiseCache::CacheEntry>> mNoiseCacheEntries;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~ChunkLocalNoiseCache();
+    // NOLINTEND
 };

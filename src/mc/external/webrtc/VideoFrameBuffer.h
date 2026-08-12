@@ -46,7 +46,7 @@ public:
     CropAndScale(int offset_x, int offset_y, int crop_width, int crop_height, int scaled_width, int scaled_height);
 
     virtual ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
-        GetMappedFrameBuffer(::webrtc::ArrayView<::webrtc::VideoFrameBuffer::Type, 18446744073709546905>);
+        GetMappedFrameBuffer(::webrtc::ArrayView<::webrtc::VideoFrameBuffer::Type>);
 
     virtual ::std::string storage_representation() const;
 
@@ -56,11 +56,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::I420BufferInterface const* $GetI420() const;
+
     MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
     $CropAndScale(int offset_x, int offset_y, int crop_width, int crop_height, int scaled_width, int scaled_height);
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
-        $GetMappedFrameBuffer(::webrtc::ArrayView<::webrtc::VideoFrameBuffer::Type, 18446744073709546905>);
+        $GetMappedFrameBuffer(::webrtc::ArrayView<::webrtc::VideoFrameBuffer::Type>);
 
     MCNAPI ::std::string $storage_representation() const;
 

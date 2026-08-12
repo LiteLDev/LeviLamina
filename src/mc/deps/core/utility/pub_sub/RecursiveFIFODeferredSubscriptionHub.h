@@ -41,6 +41,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Bedrock::PubSub::DeferredSubscriptionHub::HubType $getHubType() const;
+
+    MCNAPI void $_enqueue(
+        ::brstd::move_only_function<void()> fn,
+        ::Bedrock::PubSub::ConnectPosition  at,
+        ::std::optional<int>                group
+    );
+
+    MCNAPI void $_runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&& entry);
+
 
     // NOLINTEND
 };

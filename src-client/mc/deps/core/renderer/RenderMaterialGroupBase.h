@@ -20,9 +20,9 @@ public:
     // NOLINTBEGIN
     virtual ~RenderMaterialGroupBase() = default;
 
-    virtual ::mce::RenderMaterialInfo& getMaterialInfo(::HashedString const&) = 0;
+    virtual ::mce::RenderMaterialInfo& getMaterialInfo(::HashedString const& name) = 0;
 
-    virtual void clearMaterial(::HashedString const&) = 0;
+    virtual void clearMaterial(::HashedString const& name) = 0;
     // NOLINTEND
 
 public:

@@ -17,6 +17,7 @@ class WeakEntityRef;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class GameOptions; }
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Network { class EditorRealmsStatusPayload; }
 namespace Editor::Services { struct EditorRealmsWorld; }
 namespace Editor::Services { struct EditorRealmsWorldSlot; }
 // clang-format on
@@ -112,6 +113,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EditorRealmsService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI void _handleServiceStatusPayload(::Editor::Network::EditorRealmsStatusPayload const& payload);
     // NOLINTEND
 
 public:
@@ -169,9 +172,17 @@ public:
 
     MCNAPI void $loadRealmsWorldList();
 
+#ifdef LL_PLAT_S
     MCNAPI void $loadRealmsWorldSlots(::std::string const&);
+#else // LL_PLAT_C
+    MCNAPI void $loadRealmsWorldSlots(::std::string const& worldId);
+#endif
 
+#ifdef LL_PLAT_S
     MCNAPI void $downloadRealmWorld(::std::string const&, int const);
+#else // LL_PLAT_C
+    MCNAPI void $downloadRealmWorld(::std::string const& worldId, int const slotId);
+#endif
 
     MCNAPI bool const $canUploadWorld() const;
 

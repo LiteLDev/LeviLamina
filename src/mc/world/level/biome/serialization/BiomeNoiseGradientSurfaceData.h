@@ -22,6 +22,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool operator==(::BiomeNoiseGradientSurfaceData const& other) const;
+
     MCAPI ~BiomeNoiseGradientSurfaceData();
     // NOLINTEND
 

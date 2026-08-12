@@ -45,12 +45,12 @@ public:
     virtual ~WorldTemplateHandler() /*override*/ = default;
 
     virtual void loadTemplate(
-        ::std::string const&,
-        ::std::function<void(::std::variant<::World::WorldID, ::World::IWorldTemplateHandler::Result>)>
+        ::std::string const&                                                                            templateId,
+        ::std::function<void(::std::variant<::World::WorldID, ::World::IWorldTemplateHandler::Result>)> onComplete
     ) /*override*/;
 
     virtual ::std::optional<::World::IWorldTemplateHandler::WriteTemplateError>
-    saveTemplate(::LevelSummary const&) const /*override*/;
+    saveTemplate(::LevelSummary const& levelSummary) const /*override*/;
 
     virtual bool isTemplateExportEnabled() const /*override*/;
 
@@ -60,7 +60,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $loadTemplate(
+        ::std::string const&                                                                            templateId,
+        ::std::function<void(::std::variant<::World::WorldID, ::World::IWorldTemplateHandler::Result>)> onComplete
+    );
 
+    MCAPI ::std::optional<::World::IWorldTemplateHandler::WriteTemplateError>
+    $saveTemplate(::LevelSummary const& levelSummary) const;
+
+    MCFOLD bool $isTemplateExportEnabled() const;
+
+    MCAPI ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& $getLocalTemplates() const;
     // NOLINTEND
 };
 

@@ -24,11 +24,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     virtual ::RecordItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
     // NOLINTEND
@@ -58,6 +60,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+
+    MCFOLD ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI ::RecordItem& $setDescriptionId(::std::string const& descriptionId);
+
 
     // NOLINTEND
 };

@@ -14,12 +14,12 @@ class PremiumOwnedCachePackEntitlementValidator : public ::IPremiumCachePackEnti
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool isEntitlementValid(::IEntitlement const&) const /*override*/;
+    virtual bool isEntitlementValid(::IEntitlement const& entitlement) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $isEntitlementValid(::IEntitlement const& entitlement) const;
     // NOLINTEND
 };

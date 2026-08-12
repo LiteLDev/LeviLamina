@@ -55,6 +55,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::vector<::BlockCustomComponentsComponent::ExecutableComponent> _gatherComponentsToExecute() const;
+
     MCAPI void finalize(
         ::WeakRef<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry> const& registry,
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&                  parameterCache

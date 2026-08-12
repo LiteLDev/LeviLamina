@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/LevelSummaryBindings.h"
+#include "mc/client/realms/RealmsBackupsState.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -46,6 +47,10 @@ public:
         ::std::shared_ptr<::Realms::RealmsBackups>                 realmsBackups,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
+
+    MCFOLD ::OreUI::LevelSummaryBindings& getCurrentWorldSummary();
+
+    MCAPI ::Realms::RealmsBackupsState getRealmBackupsState();
     // NOLINTEND
 
 public:
@@ -66,7 +71,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

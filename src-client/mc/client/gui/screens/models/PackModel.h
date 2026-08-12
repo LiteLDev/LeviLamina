@@ -22,8 +22,24 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PackModel();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~PackModel() = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PackModel(::std::shared_ptr<::Pack const> pack, ::std::string const& subpackName);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };

@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 class IGameplayUserManagerConnector;
 // clang-format on
 
@@ -22,6 +23,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
+
+    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
+
     MCAPI void registerWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
     // NOLINTEND
 };

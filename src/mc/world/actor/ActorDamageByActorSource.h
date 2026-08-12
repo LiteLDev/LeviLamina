@@ -57,6 +57,8 @@ public:
 
     virtual ::std::pair<::std::string, ::std::vector<::std::string>>
     _getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const /*override*/;
+
+    virtual ~ActorDamageByActorSource() /*override*/;
     // NOLINTEND
 
 public:
@@ -72,13 +74,27 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isEntitySource() const;
 
+#ifdef LL_PLAT_S
     MCAPI bool $getIsCreative() const;
+#else // LL_PLAT_C
+    MCFOLD bool $getIsCreative() const;
+#endif
 
+#ifdef LL_PLAT_S
     MCAPI bool $getIsWorldBuilder() const;
+#else // LL_PLAT_C
+    MCFOLD bool $getIsWorldBuilder() const;
+#endif
 
     MCFOLD ::ActorUniqueID $getEntityUniqueID() const;
 

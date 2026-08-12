@@ -32,7 +32,7 @@ public:
 
     virtual ::Json::Value asJsonValue() const /*override*/;
 
-    virtual ::Json::Value resolve(::ResolveData const&) const /*override*/;
+    virtual ::Json::Value resolve(::ResolveData const& resolveData) const /*override*/;
     // NOLINTEND
 
 public:
@@ -48,6 +48,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::string $asString() const;
+
+    MCNAPI ::Json::Value $asJsonValue() const;
+
+    MCNAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
+
 
     // NOLINTEND
 };

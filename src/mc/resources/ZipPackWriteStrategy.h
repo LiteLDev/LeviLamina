@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void writeAsset(::PackWriteStrategy::FileName, ::std::string const&) /*override*/;
+    virtual void writeAsset(::PackWriteStrategy::FileName path, ::std::string const& fileContent) /*override*/;
     // NOLINTEND
 
 public:
@@ -60,6 +60,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $writeAsset(::PackWriteStrategy::FileName path, ::std::string const& fileContent);
+
 
     // NOLINTEND
 };

@@ -37,6 +37,8 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI uint64 _decodeNormally(::Audio::AudioFrameBuffer& outputBuffer);
+
     MCNAPI ::Bedrock::Result<::gsl::span<float>>
     fillPcm(::Audio::AudioFrameBuffer& outputBuffer, ::std::chrono::steady_clock::time_point now);
 #endif

@@ -37,6 +37,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::unique_ptr<::Core::FileSystemImpl> $createTransaction(::Core::FileAccessType);
+
 
     // NOLINTEND
 };

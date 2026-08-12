@@ -38,6 +38,8 @@ public:
         ::Vec3 const&                 positionDifference,
         float                         maxMoveSpeed
     );
+
+    MCAPI bool shouldSlowSpeed(::MoveControlComponent const& parent, ::Mob const& mob, float const endDistanceSqr);
     // NOLINTEND
 
 public:

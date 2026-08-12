@@ -14,6 +14,7 @@ class MinecraftUIRenderContext;
 class UIControl;
 class UICustomRenderer;
 class UIScene;
+namespace mce { class TextureGroup; }
 // clang-format on
 
 class HudHeartRenderer : public ::MinecraftUICustomRenderer {
@@ -98,6 +99,12 @@ public:
     render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int) /*override*/;
 
     virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _loadHeartTextures(::mce::TextureGroup& textureGroup, bool isHardcore);
     // NOLINTEND
 
 public:

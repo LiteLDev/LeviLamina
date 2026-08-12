@@ -61,6 +61,20 @@ public:
     virtual void start() /*override*/;
 
     virtual void stop() /*override*/;
+
+    virtual ~AvoidBlockGoal() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _findTargetBlock();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

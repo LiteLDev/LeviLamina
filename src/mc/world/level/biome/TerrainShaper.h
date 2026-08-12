@@ -22,6 +22,18 @@ public:
         ::ll::TypedStorage<4, 4, float const> mRidges;
         ::ll::TypedStorage<4, 4, float const> mWeirdness;
         // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static float getContinents(::TerrainShaper::Point const& point);
+
+        MCAPI static float getErosion(::TerrainShaper::Point const& point);
+
+        MCFOLD static float getRidges(::TerrainShaper::Point const& point);
+
+        MCFOLD static float getWeirdness(::TerrainShaper::Point const& point);
+        // NOLINTEND
     };
 
 public:
@@ -43,7 +55,46 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> buildErosionJaggednessSpline(
+        float const jaggednessFactorAtPeakRidgeAndErosionIndex0,
+        float const jaggednessFactorAtPeakRidgeAndErosionIndex1,
+        float const jaggednessFactorAtHighRidgeAndErosionIndex0,
+        float const jaggednessFactorAtHighRidgeAndErosionIndex1
+    );
+
+    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> buildErosionOffsetSpline(
+        ::std::string const& name,
+        float                lowValley,
+        float                hill,
+        float                tallHill,
+        float                mountainFactor,
+        float                plain,
+        float                swamp,
+        bool                 includeExtremeHills,
+        bool                 saddle
+    );
+
+    MCAPI static ::ToFloatFunction<::TerrainShaper::Point>
+    buildMountainRidgeSplineWithPoints(float modulation, bool saddle);
+
     MCAPI static ::TerrainShaper buildOverworld();
+
+    MCAPI static ::ToFloatFunction<::TerrainShaper::Point>
+    buildRidgeJaggednessSpline(float const jaggednessFactorAtPeakRidge, float const jaggednessFactorAtHighRidge);
+
+    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> buildWeirdnessJaggednessSpline(float const jaggednessFactor);
+
+    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> getErosionFactor(float baseValue, bool shatteredTerrain);
+
+    MCAPI static ::ToFloatFunction<::TerrainShaper::Point> ridgeSpline(
+        ::std::string const& name,
+        float                valley,
+        float                low,
+        float                mid,
+        float                high,
+        float                peaks,
+        float                minValleySteepness
+    );
     // NOLINTEND
 
 public:

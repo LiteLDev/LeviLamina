@@ -54,6 +54,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI HangingSignBlock(::std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
+
+    MCAPI bool _canAttachTo(::BlockSource& region, ::BlockPos const attachPos, uchar attachFace, uchar ourFace) const;
     // NOLINTEND
 
 public:

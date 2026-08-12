@@ -5,11 +5,13 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/util/ProfanityFilterContext.h"
 
 // auto generated forward declare list
 // clang-format off
 class ITTSEventManager;
 class Option;
+namespace OreUI { struct ScreenReaderOptions; }
 // clang-format on
 
 namespace OreUI {
@@ -51,6 +53,20 @@ public:
     );
 
     MCAPI void _registerObservers();
+
+    MCAPI void clear();
+
+    MCFOLD bool getIsChatTextToSpeechEnabled() const;
+
+    MCAPI bool getIsIdle() const;
+
+    MCFOLD bool getIsUITextToSpeechEnabled() const;
+
+    MCAPI void read(
+        ::std::string const&                textToRead,
+        ::ProfanityFilterContext            profanityFilterContext,
+        ::OreUI::ScreenReaderOptions const& options
+    );
     // NOLINTEND
 
 public:

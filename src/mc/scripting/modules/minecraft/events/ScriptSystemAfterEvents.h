@@ -38,12 +38,14 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void onFlushSystemAfterEvents(::ScriptDeferredFlushTracker&) /*override*/;
+        virtual void onFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI void $onFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+
 
         // NOLINTEND
     };

@@ -22,6 +22,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD void addItem(::ItemDescriptor const& itemDescriptor);
+
     MCAPI ~GiveableTrigger();
     // NOLINTEND
 

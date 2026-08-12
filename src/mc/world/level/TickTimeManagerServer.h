@@ -84,6 +84,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $update();
+
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry const> const $getWorldClockRegistry() const;
+
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry> const $getWorldClockRegistry();
+
 
     // NOLINTEND
 };

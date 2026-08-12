@@ -3,11 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/systems/ITickingSystem.h"
 
 // auto generated forward declare list
 // clang-format off
+class ActorOwnerComponent;
+class EntityContext;
 class EntityRegistry;
+class FireAnimationTrackerComponent;
+struct OnFireComponent;
 // clang-format on
 
 class FireAnimationTrackerSystem : public ::ITickingSystem {
@@ -23,9 +28,24 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI static void _tickFireAnimationTrackerComponent(
+        ::EntityContext&                    entity,
+        ::ActorOwnerComponent&              actorOwnerComponent,
+        ::FireAnimationTrackerComponent&    fireAnimationTrackerComponent,
+        ::Optional<::OnFireComponent const> onFireComponent
+    );
+#endif
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void $tick(::EntityRegistry&);
+#else // LL_PLAT_C
     MCAPI void $tick(::EntityRegistry& registry);
 #endif
 

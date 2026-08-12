@@ -12,6 +12,10 @@
 namespace ClientBlockPipeline { class Inputs; }
 namespace ClientBlockPipeline { class Material; }
 namespace ClientBlockPipeline { class StepResult; }
+namespace ClientBlockPipeline { struct FaceNormalAttributes; }
+namespace ClientBlockPipeline { struct ImageUvFaceAttributes; }
+namespace ClientBlockPipeline { struct PositionVertexAttributes; }
+namespace ClientBlockPipeline { struct QuadIndicesFaceAttributes; }
 // clang-format on
 
 namespace ClientBlockPipeline {
@@ -31,13 +35,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const&) const /*override*/;
+    virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _runUvGeneration(
+        ::ClientBlockPipeline::QuadIndicesFaceAttributes const& faceIndices,
+        ::ClientBlockPipeline::PositionVertexAttributes const&  vertexPositions,
+        ::ClientBlockPipeline::FaceNormalAttributes const&      faceNormals,
+        ::ClientBlockPipeline::ImageUvFaceAttributes&           overridenFaceImageUvs
+    ) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::ClientBlockPipeline::StepResult $run(::ClientBlockPipeline::Inputs const& inputs) const;
     // NOLINTEND
 };
 

@@ -18,7 +18,7 @@ public:
     virtual ~BrewingStandInputContainerValidation() /*override*/ = default;
 
     virtual bool
-    isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const&, int const, bool) const
+    isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool) const
         /*override*/;
 
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
@@ -27,6 +27,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isItemAllowedInSlot(
+        ::ContainerScreenContext const&,
+        int const,
+        ::ItemStackBase const& item,
+        int const,
+        bool
+    ) const;
+
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+
 
     // NOLINTEND
 };

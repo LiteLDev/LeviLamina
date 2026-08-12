@@ -15,8 +15,12 @@
 // clang-format off
 namespace NetherNet { class CandidateAdd; }
 namespace NetherNet { class ConnectError; }
+namespace NetherNet { class ConnectRequest; }
 namespace NetherNet { class ConnectResponse; }
+namespace NetherNet { class ContextProxy; }
+namespace NetherNet { class PeerConnectionObserver; }
 namespace webrtc { class IceCandidate; }
+namespace webrtc { class PeerConnectionFactory; }
 namespace webrtc { class PeerConnectionInterface; }
 namespace webrtc { class RTCError; }
 namespace webrtc { class SessionDescriptionInterface; }
@@ -45,32 +49,84 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void createOffer(
-        ::webrtc::PeerConnectionInterface::RTCConfiguration const&,
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& config,
         ::brstd::move_only_function<void(
             ::Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError>
-        )>&&
+        )>&&                                                       onComplete
     );
 
-    virtual ::NetherNet::ESessionError checkTimeout(::std::chrono::seconds) const /*override*/;
+    virtual ::NetherNet::ESessionError checkTimeout(::std::chrono::seconds timeout) const /*override*/;
 
-    virtual void _onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const&) /*override*/;
+    virtual void
+    _onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const& offerOrError) /*override*/;
 
-    virtual void _onSetLocalDescription(::webrtc::RTCError) /*override*/;
+    virtual void _onSetLocalDescription(::webrtc::RTCError result) /*override*/;
 
-    virtual void onRemoteAnswer(::NetherNet::ConnectResponse const&) /*override*/;
+    virtual void onRemoteAnswer(::NetherNet::ConnectResponse const& answer) /*override*/;
 
-    virtual void onRemoteError(::NetherNet::ConnectError const&) /*override*/;
+    virtual void onRemoteError(::NetherNet::ConnectError const& error) /*override*/;
 
-    virtual void _onSetRemoteDescription(::webrtc::RTCError) /*override*/;
+    virtual void _onSetRemoteDescription(::webrtc::RTCError result) /*override*/;
 
-    virtual void _onLocalIceCandidate(::webrtc::IceCandidate const*);
+    virtual void _onLocalIceCandidate(::webrtc::IceCandidate const* iceCandidate);
 
-    virtual void onRemoteIceCandidate(::NetherNet::CandidateAdd const&) /*override*/;
+    virtual void onRemoteIceCandidate(::NetherNet::CandidateAdd const& candidate) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ClientNegotiator(
+        ::NetherNet::ContextProxy const&                                           ctx,
+        ::webrtc::scoped_refptr<::webrtc::PeerConnectionFactory>                   factory,
+        ::webrtc::scoped_refptr<::NetherNet::PeerConnectionObserver>               observer,
+        ::brstd::move_only_function<void(::std::variant<
+                                         ::NetherNet::ConnectRequest,
+                                         ::NetherNet::ConnectResponse,
+                                         ::NetherNet::ConnectError,
+                                         ::NetherNet::CandidateAdd> const&) const> sendMessage,
+        uint64                                                                     sessionId
+    );
+
+    MCNAPI void _completeAndClearConnection(
+        ::Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError> result
+    );
+
+    MCNAPI void _onIceConnectionChanged(::webrtc::PeerConnectionInterface::IceConnectionState newState);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $createOffer(
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& config,
+        ::brstd::move_only_function<void(
+            ::Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError>
+        )>&&                                                       onComplete
+    );
+
+    MCNAPI ::NetherNet::ESessionError $checkTimeout(::std::chrono::seconds timeout) const;
+
+    MCNAPI void $_onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const& offerOrError);
+
+    MCNAPI void $_onSetLocalDescription(::webrtc::RTCError result);
+
+    MCNAPI void $onRemoteAnswer(::NetherNet::ConnectResponse const& answer);
+
+    MCNAPI void $onRemoteError(::NetherNet::ConnectError const& error);
+
+    MCNAPI void $_onSetRemoteDescription(::webrtc::RTCError result);
+
+    MCNAPI void $_onLocalIceCandidate(::webrtc::IceCandidate const* iceCandidate);
+
+    MCNAPI void $onRemoteIceCandidate(::NetherNet::CandidateAdd const& candidate);
+
 
     // NOLINTEND
 };

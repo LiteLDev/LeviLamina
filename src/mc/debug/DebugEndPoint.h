@@ -61,12 +61,24 @@ public:
         // NOLINTEND
 
     public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+
+    public:
         // virtual function thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_S
         MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager& mgr);
+#else // LL_PLAT_C
+        MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
+#endif
 
+#ifdef LL_PLAT_S
         MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
+#else // LL_PLAT_C
+        MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager&);
 #endif
 
 
@@ -139,16 +151,26 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
     MCNAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
+#else // LL_PLAT_C
+    MCNAPI void $log(::LogArea const, ::LogLevel const, char const*);
+#endif
 
     MCNAPI void $flush();
 
+#ifdef LL_PLAT_S
     MCNAPI void $setEnabled(bool newState);
+#else // LL_PLAT_C
+    MCNAPI void $setEnabled(bool);
+#endif
 
     MCNAPI bool $isEnabled() const;
 
     MCNAPI bool $logOnlyOnce() const;
 
+#ifdef LL_PLAT_S
     MCNAPI void $contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
+#else // LL_PLAT_C
+    MCNAPI void $contentAssert(::LogArea const, ::LogLevel const, char const*);
 #endif
 
 

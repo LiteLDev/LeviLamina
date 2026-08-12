@@ -16,6 +16,7 @@ class BlockSource;
 class GetCollisionShapeInterface;
 class HashedString;
 class IConstBlockSource;
+class Random;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -94,6 +95,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _createParticles(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool down);
+
+    MCAPI static bool _getFlowDownward(::Block const& block);
+
     MCAPI static bool addBubbleColumnSegment(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static bool shouldDragDown(::Block const& block);

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/network/ItemStackNetIdVariant.h"
 #include "mc/world/inventory/network/ItemStackNetResult.h"
 #include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
@@ -57,8 +58,23 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI int _getExperienceFromItem(::ItemStack const& stack) const;
+
+    MCAPI bool
+    _resolveNetIdAndValidate(::ContainerEnumName containerNetId, uchar slot, ::ItemStackNetIdVariant const& netId);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::ItemStack _getResultItemWithNoEnchants(
+        ::ItemStack&                      result,
+        ::std::vector<::ItemStack> const& inputItems,
+        bool&                             onlyHasCurses
+    );
+
     MCAPI static ::std::pair<::ItemStack, ::ItemStackNetIdVariant>
     getResultItem(::ItemStack const& input, ::ItemStack const& additional);
     // NOLINTEND

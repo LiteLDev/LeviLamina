@@ -33,7 +33,7 @@ public:
 
     virtual ::std::map<uint, ::webrtc::RtpPayloadState> GetRtpPayloadStates() const = 0;
 
-    virtual void DeliverRtcp(::webrtc::ArrayView<uchar const, 18446744073709546905> packet) = 0;
+    virtual void DeliverRtcp(::webrtc::ArrayView<uchar const> packet) = 0;
 
     virtual void OnBitrateAllocationUpdated(::webrtc::VideoBitrateAllocation const& bitrate) = 0;
 
@@ -49,12 +49,10 @@ public:
 
     virtual void SetEncodingData(uint64 width, uint64 height, uint64 num_temporal_layers) = 0;
 
-    virtual void SetCsrcs(::webrtc::ArrayView<uint const, 18446744073709546905> csrcs) = 0;
+    virtual void SetCsrcs(::webrtc::ArrayView<uint const> csrcs) = 0;
 
-    virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info> GetSentRtpPacketInfos(
-        uint                                                    ssrc,
-        ::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers
-    ) const = 0;
+    virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
+    GetSentRtpPacketInfos(uint ssrc, ::webrtc::ArrayView<ushort const> sequence_numbers) const = 0;
 
     virtual void SetFecAllowed(bool fec_allowed) = 0;
 

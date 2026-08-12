@@ -40,19 +40,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     virtual ::Actor* createProjectileActor(
         ::BlockSource&     region,
         ::ItemStack const& stack,
         ::Vec3 const&      pos,
-        ::Vec3 const&      aimDirection
+        ::Vec3 const&      direction
     ) const /*override*/;
 
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
@@ -64,9 +65,10 @@ public:
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const
         /*override*/;
 
-    virtual bool isValidAuxValue(int) const /*override*/;
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
     // NOLINTEND
 
 public:
@@ -86,6 +88,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+
+    MCAPI ::Actor* $createProjectileActor(
+        ::BlockSource&     region,
+        ::ItemStack const& stack,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      direction
+    ) const;
+
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
+
+    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const;
+
+    MCAPI bool $isValidAuxValue(int auxValue) const;
+
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
 
     // NOLINTEND
 };

@@ -11,6 +11,9 @@
 class ServerLevel;
 namespace ScriptModuleMinecraft { class IScriptItemCustomComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentsRegistry; }
+namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct ContextConfig; }
+namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDependency; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct Version; }
@@ -48,6 +51,13 @@ public:
         ::WeakRef<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry const> blockCustomComponentRegistry,
         bool                                                                          importRestricted
     );
+
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Scripting::ModuleBindingBuilder&                 moduleBuilder,
+        ::std::optional<::Scripting::ContextConfig> const& contextConfig,
+        bool                                               allowUntagged,
+        ::std::vector<::std::string> const&                additionalTags
+    );
     // NOLINTEND
 
 public:
@@ -55,7 +65,13 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::Scripting::Version version);
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::Scripting::Version version);
+#endif
+
+#ifdef LL_PLAT_C
     MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
 #endif
     // NOLINTEND

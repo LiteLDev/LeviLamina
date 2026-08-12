@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { struct ModuleDescriptor; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -17,6 +18,12 @@ public:
     MCNAPI ScriptMinecraftServerUIPrivateBindingsModuleFactory();
 
     MCNAPI void _addVersions();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor();
     // NOLINTEND
 
 public:

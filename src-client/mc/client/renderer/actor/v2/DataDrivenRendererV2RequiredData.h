@@ -8,6 +8,7 @@ class DataDrivenRenderer;
 class GameVersion;
 class HashedString;
 class MinecraftGameplayGraphicsResources;
+struct DataDrivenRendererPreprocessingContext;
 // clang-format on
 
 class DataDrivenRendererV2RequiredData {
@@ -76,6 +77,17 @@ public:
         ::HashedString const&                          name,
         ::std::shared_ptr<::DataDrivenRenderer> const& renderer,
         ::MinecraftGameplayGraphicsResources&          graphicsResources
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static bool _tryAddRenderer(
+        ::HashedString const&                          name,
+        ::std::shared_ptr<::DataDrivenRenderer> const& renderer,
+        ::DataDrivenRendererPreprocessingContext&      ctx,
+        bool                                           supportPlayers
     );
     // NOLINTEND
 

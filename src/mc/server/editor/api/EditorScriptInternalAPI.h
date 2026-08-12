@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ClassBinding; }
+// clang-format on
+
 namespace Editor::API {
 
 class EditorScriptInternalAPI {
@@ -20,6 +25,12 @@ public:
     EditorScriptInternalAPI& operator=(EditorScriptInternalAPI const&);
     EditorScriptInternalAPI(EditorScriptInternalAPI const&);
     EditorScriptInternalAPI();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
 };
 
 } // namespace Editor::API

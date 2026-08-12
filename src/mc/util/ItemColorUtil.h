@@ -18,13 +18,7 @@ MCNAPI ::ItemColor fromColor(::mce::Color const& color);
 
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
 MCNAPI ::std::array<::std::pair<::ItemColor, int>, 16> const& itemColorToRGB();
-#endif
-
-#ifdef LL_PLAT_S
-MCNAPI ::std::array<::std::pair<::ItemColor, int>, 16> const& itemColorToRGB();
-#endif
 // NOLINTEND
 
 } // namespace ItemColorUtil

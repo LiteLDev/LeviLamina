@@ -64,6 +64,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $_isStillValid() const;
 
+    MCAPI void $_registerCoalesceOrder();
+
+    MCAPI void $_registerAutoPlaceOrder();
+
+    MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
     // NOLINTEND
 };

@@ -10,6 +10,7 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class ResourcePackStack;
 // clang-format on
 
 class PackStackCommand : public ::ServerCommand {
@@ -42,18 +43,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void
+    outputPackStack(::CommandOutput& output, ::ResourcePackStack const& stack, bool isVerbose, bool excludeVanilla);
+
+    MCAPI static void outputWorldTemplateData(
+        ::CommandOutput&     output,
+        ::std::string const& worldTemplateID,
+        ::std::string const& worldTemplateVersion,
+        bool                 isVerbose
+    );
+
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
 
     // NOLINTEND
 };

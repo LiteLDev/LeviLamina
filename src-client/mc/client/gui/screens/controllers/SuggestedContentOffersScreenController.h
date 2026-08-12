@@ -51,6 +51,8 @@ public:
         ::std::string const&                     defaultTitleString,
         ::std::string const&                     optionalBindingSuffix
     );
+
+    MCAPI ::std::string _getSuggestedOffersTitle() const;
     // NOLINTEND
 
 public:
@@ -68,6 +70,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onCreation();
 
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 };

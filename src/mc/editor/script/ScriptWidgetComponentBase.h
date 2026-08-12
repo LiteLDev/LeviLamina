@@ -5,12 +5,19 @@
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
 #include "mc/editor/script/ScriptWidgetComponent_WidgetInterface.h"
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class WidgetComponentStateChangePayload; }
+namespace Editor::ScriptModule { class ScriptWidget; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentBaseOptions; }
+namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace Scripting { struct ClassBinding; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -46,9 +53,24 @@ public:
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const = 0;
 
     virtual void
-    _handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const&) /*override*/;
+    _handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload) /*override*/;
 
     virtual void _onOwnerPositionUpdate() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptWidgetComponentBase(
+        ::Editor::ServiceProviderCollection&                                      serviceProviders,
+        ::mce::UUID const&                                                        componentId,
+        ::std::string const&                                                      componentName,
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>  owner,
+        ::Editor::ScriptModule::ScriptWidgetService&                              parentService,
+        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentBaseOptions> options
+    );
+
+    MCNAPI ::Vec3 const getWorldPosition() const;
     // NOLINTEND
 
 public:
@@ -58,8 +80,18 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload);
+
+    MCNAPI void $_onOwnerPositionUpdate();
+
 
     // NOLINTEND
 };

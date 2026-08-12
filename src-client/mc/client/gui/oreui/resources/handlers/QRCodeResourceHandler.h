@@ -14,6 +14,7 @@ namespace Gameface { class ResourceStreamResponse; }
 namespace Gameface { class TemporaryTextureHolder; }
 namespace Gameface { struct ResourceRequest; }
 namespace OreUI { class ResourceAllowList; }
+namespace mce { class Color; }
 // clang-format on
 
 namespace OreUI {
@@ -46,6 +47,15 @@ public:
     ) /*override*/;
 
     virtual void update() /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::optional<::mce::Color> _getColorFromQueryParameter(
+        ::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& queryParameters,
+        ::std::string const&                                                      parameterName
+    );
     // NOLINTEND
 
 public:

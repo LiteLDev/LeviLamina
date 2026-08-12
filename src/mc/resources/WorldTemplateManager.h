@@ -54,59 +54,28 @@ public:
 
     virtual uint64 getWorldTemplateSize() const /*override*/;
 
-#ifdef LL_PLAT_S
     virtual ::WorldTemplateInfo const& getWorldTemplateAtIndex(int index) const /*override*/;
-#else // LL_PLAT_C
-    virtual ::WorldTemplateInfo const& getWorldTemplateAtIndex(int) const /*override*/;
-#endif
 
     virtual ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& getLocalTemplates() const /*override*/;
 
-#ifdef LL_PLAT_S
     virtual ::WorldTemplateInfo const*
     findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs) const /*override*/;
-#else // LL_PLAT_C
-    virtual ::WorldTemplateInfo const* findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const&) const
-        /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual ::WorldTemplateInfo const* findInstalledWorldTemplate(::PackIdVersion const& packIdentityToFind) const
         /*override*/;
-#else // LL_PLAT_C
-    virtual ::WorldTemplateInfo const* findInstalledWorldTemplate(::PackIdVersion const&) const /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual void forEachWorldTemplate(::std::function<void(::WorldTemplateInfo const&)> const& callback) const
         /*override*/;
-#else // LL_PLAT_C
-    virtual void forEachWorldTemplate(::std::function<void(::WorldTemplateInfo const&)> const&) const /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual void deleteWorldTemplateAndFiles(::PackIdVersion const& packIdentity) /*override*/;
-#else // LL_PLAT_C
-    virtual void deleteWorldTemplateAndFiles(::PackIdVersion const&) /*override*/;
-#endif
 
     virtual bool isInitialized() const /*override*/;
 
-#ifdef LL_PLAT_S
     virtual ::Bedrock::PubSub::Subscription registerModifiedCallback(
         ::std::function<void(::std::pair<::std::string, bool> const&)> newCallbackFunction
     ) /*override*/;
-#else // LL_PLAT_C
-    virtual ::Bedrock::PubSub::Subscription
-        registerModifiedCallback(::std::function<void(::std::pair<::std::string, bool> const&)>) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual ::WorldTemplateCollectionView createView(::mce::UUID const& toView) const /*override*/;
-#else // LL_PLAT_C
-    virtual ::WorldTemplateCollectionView createView(::mce::UUID const&) const /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -116,7 +85,13 @@ public:
 
 #ifdef LL_PLAT_C
     MCNAPI void _initialize(::WorldTemplateManagerInitData&& data);
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI void _initialize(::WorldTemplateManagerInitData&& data);
+#endif
+
+#ifdef LL_PLAT_C
     MCNAPI void addKnownPackFromImport(::Pack const& pack);
 
     MCNAPI ::Core::PathBuffer<::std::string> getWorldTemplatesPath() const;
@@ -149,7 +124,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI void $flushResourceLoaderTasks();
 
     MCNAPI void $populateWorldTemplates();
@@ -175,7 +149,6 @@ public:
     $registerModifiedCallback(::std::function<void(::std::pair<::std::string, bool> const&)> newCallbackFunction);
 
     MCNAPI ::WorldTemplateCollectionView $createView(::mce::UUID const& toView) const;
-#endif
 
 
     // NOLINTEND

@@ -36,6 +36,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $OnTransportClosed(::webrtc::RTCError error);
+
 
     // NOLINTEND
 };

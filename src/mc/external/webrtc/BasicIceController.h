@@ -55,10 +55,9 @@ public:
 
     virtual void OnConnectionDestroyed(::webrtc::Connection const* connection) /*override*/;
 
-    virtual ::webrtc::ArrayView<::webrtc::Connection const* const, 18446744073709546905> GetConnections() const
-        /*override*/;
+    virtual ::webrtc::ArrayView<::webrtc::Connection const* const> GetConnections() const /*override*/;
 
-    virtual ::webrtc::ArrayView<::webrtc::Connection const*, 18446744073709546905> connections() const /*override*/;
+    virtual ::webrtc::ArrayView<::webrtc::Connection const*> connections() const /*override*/;
 
     virtual bool HasPingableConnection() const /*override*/;
 
@@ -137,9 +136,9 @@ public:
 
     MCNAPI void $OnConnectionDestroyed(::webrtc::Connection const* connection);
 
-    MCNAPI ::webrtc::ArrayView<::webrtc::Connection const* const, 18446744073709546905> $GetConnections() const;
+    MCNAPI ::webrtc::ArrayView<::webrtc::Connection const* const> $GetConnections() const;
 
-    MCNAPI ::webrtc::ArrayView<::webrtc::Connection const*, 18446744073709546905> $connections() const;
+    MCNAPI ::webrtc::ArrayView<::webrtc::Connection const*> $connections() const;
 
     MCNAPI bool $HasPingableConnection() const;
 

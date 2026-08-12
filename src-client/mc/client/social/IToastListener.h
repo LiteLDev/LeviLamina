@@ -11,7 +11,7 @@ class IToastListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void showToast(::ToastMessage, bool) = 0;
+    virtual void showToast(::ToastMessage message, bool animateIn) = 0;
 
     virtual void removeToast() = 0;
 

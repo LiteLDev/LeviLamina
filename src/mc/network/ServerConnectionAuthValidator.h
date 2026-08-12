@@ -4,10 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/network/connection/DisconnectFailReason.h"
 
 // auto generated forward declare list
 // clang-format off
+class BaseConnectionRequest;
 class MinecraftServiceKeyManager;
+struct PlayerAuthenticationInfo;
 // clang-format on
 
 class ServerConnectionAuthValidator {
@@ -18,5 +21,12 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager>> mMinecraftServiceKeys;
     ::ll::TypedStorage<1, 1, bool>                                                         mAllowSelfSigned;
     ::ll::TypedStorage<1, 1, bool>                                                         mAllowExpiredTokens;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::variant<::PlayerAuthenticationInfo, ::Connection::DisconnectFailReason>
+    _validateBase(::BaseConnectionRequest const& connectionRequest) const;
     // NOLINTEND
 };

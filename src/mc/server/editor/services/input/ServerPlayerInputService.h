@@ -95,6 +95,15 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ServerPlayerInputService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI void
+    _sendCursorPayload(::HashedString const& contextId, ::std::optional<::Editor::Input::MouseCursorIconType> icon);
+
+    MCNAPI bool _updateKeyBindingProcessingState(
+        ::HashedString const&       contextId,
+        ::HashedString const&       bindingId,
+        ::std::optional<int> const& state
+    );
     // NOLINTEND
 
 public:

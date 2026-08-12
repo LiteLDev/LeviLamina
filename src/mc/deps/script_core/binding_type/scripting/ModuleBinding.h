@@ -41,11 +41,15 @@ public:
 
 public:
     // prevent constructor by default
+    ModuleBinding& operator=(ModuleBinding const&);
+    ModuleBinding(ModuleBinding const&);
     ModuleBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ModuleBinding(::Scripting::ModuleBinding&&);
+
     MCNAPI ModuleBinding(
         ::Scripting::ModuleDescriptor                descriptor_,
         ::std::vector<::Scripting::ModuleDependency> dependencies_,

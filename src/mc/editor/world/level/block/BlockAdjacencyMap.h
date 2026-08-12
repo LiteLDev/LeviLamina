@@ -26,6 +26,8 @@ public:
     // NOLINTBEGIN
     MCNAPI BlockAdjacencyMap(::Editor::BlockAdjacencyMap const& rhs);
 
+    MCNAPI void add(::BlockPos const& pos);
+
     MCNAPI void translate(::BlockPos const& offset);
     // NOLINTEND
 

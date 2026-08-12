@@ -21,17 +21,17 @@ public:
     virtual ~IEntitySystems() = default;
 
     virtual void registerTickingSystem(
-        ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const>,
-        ::std::unique_ptr<::ITickingSystem>,
-        ::SystemInfo const&,
-        ::EntitySystemTickingMode
+        ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,
+        ::std::unique_ptr<::ITickingSystem>                      system,
+        ::SystemInfo const&                                      info,
+        ::EntitySystemTickingMode                                tickingMode
     ) = 0;
 
-    virtual bool _hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const) const = 0;
+    virtual bool _hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const = 0;
 
-    virtual void tickMovementCatchup(::EntityRegistry&) = 0;
+    virtual void tickMovementCatchup(::EntityRegistry& registry) = 0;
 
-    virtual void tickMovementCorrectionReplay(::EntityRegistry&) = 0;
+    virtual void tickMovementCorrectionReplay(::EntityRegistry& registry) = 0;
     // NOLINTEND
 
 public:

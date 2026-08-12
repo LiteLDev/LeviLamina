@@ -34,13 +34,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit RtcEventRtcpPacketOutgoing(::webrtc::ArrayView<uchar const, 18446744073709546905> packet);
+    MCNAPI explicit RtcEventRtcpPacketOutgoing(::webrtc::ArrayView<uchar const> packet);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::ArrayView<uchar const, 18446744073709546905> packet);
+    MCNAPI void* $ctor(::webrtc::ArrayView<uchar const> packet);
     // NOLINTEND
 
 public:

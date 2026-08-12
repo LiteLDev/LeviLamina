@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/input/TouchControl.h"
 #include "mc/deps/input/TouchTurnControlState.h"
+#include "mc/deps/input/TouchTurnState.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -57,6 +58,10 @@ public:
     );
 
     MCAPI void addPreviousActivePointer(int pointerId);
+
+    MCAPI void incrementMoveDelta(::InputEventQueue& eventQueue, float x, float y, int yAxisInversionFactor);
+
+    MCAPI void switchState(::InputEventQueue& eventQueue, ::TouchTurnState newState);
     // NOLINTEND
 
 public:
@@ -77,6 +82,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
     // NOLINTEND
 };

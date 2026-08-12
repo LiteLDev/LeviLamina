@@ -33,6 +33,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::BiomeOverworldGenRulesData& operator=(::BiomeOverworldGenRulesData&&);
 
+    MCAPI bool operator==(::BiomeOverworldGenRulesData const& other) const;
+
     MCAPI ~BiomeOverworldGenRulesData();
     // NOLINTEND
 

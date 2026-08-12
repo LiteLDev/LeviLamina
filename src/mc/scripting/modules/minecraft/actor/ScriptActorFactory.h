@@ -19,6 +19,12 @@ class ScriptActorFactory {
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _processCreatedHandle(
+        ::Actor const&                                                              actor,
+        ::Scripting::WeakLifetimeScope const&                                       scope,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>& handle
+    );
+
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>
     getHandle(::Actor const& actor, ::Scripting::WeakLifetimeScope const& scope);
 

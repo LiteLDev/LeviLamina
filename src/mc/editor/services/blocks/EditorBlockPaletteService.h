@@ -29,6 +29,7 @@ namespace Editor::Network { class BlockPaletteItemChangedPayload; }
 namespace Editor::Network { class BlockPaletteRemovedPayload; }
 namespace Editor::Network { class BlockPaletteSelectedIndexChangedPayload; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
+namespace Scripting { struct Error; }
 // clang-format on
 
 namespace Editor::Services {
@@ -125,6 +126,8 @@ public:
     MCNAPI ::Scripting::ArgumentOutOfBoundsError _getIndexOutOfBoundsError(int param, int argIndex, int max) const;
 
     MCNAPI ::Editor::EditorBlockPalette* _getPalette(::HashedString const& paletteId) const;
+
+    MCNAPI ::Scripting::Error _getPaletteIdNotFoundError(::HashedString const& paletteId) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> _removePalette(::HashedString const& paletteId);
 

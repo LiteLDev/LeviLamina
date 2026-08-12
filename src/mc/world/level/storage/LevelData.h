@@ -27,6 +27,7 @@
 #include "mc/world/level/NetherWorldType.h"
 #include "mc/world/level/SpawnSettings.h"
 #include "mc/world/level/Tick.h"
+#include "mc/world/level/WorldVersion.h"
 #include "mc/world/level/levelgen/flat/FlatWorldPresetID.h"
 #include "mc/world/level/storage/AdventureSettings.h"
 #include "mc/world/level/storage/CloudSaveLevelInfo.h"
@@ -198,6 +199,8 @@ public:
 
     MCFOLD ::LevelDataValue* _getValue(::HashedString const& key);
 
+    MCAPI void _initLevelDataPropertyPublishers();
+
 #ifdef LL_PLAT_C
     MCAPI void _resetDefaultAdvancedSettingsData(bool isTrial);
 
@@ -223,6 +226,10 @@ public:
     MCAPI ::GeneratorType getGenerator() const;
 
 #ifdef LL_PLAT_C
+    MCAPI void getTagData(::CompoundTag const& tag);
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI void getTagData(::CompoundTag const& tag);
 #endif
 
@@ -253,6 +260,10 @@ public:
     MCAPI void setBiomeOverride(::std::string const& biomeName);
 #endif
 
+#ifdef LL_PLAT_S
+    MCAPI void setBiomeOverride(::std::string const& biomeName);
+#endif
+
     MCAPI void setCheatsEnabled(bool cheatsEnabled);
 
 #ifdef LL_PLAT_C
@@ -269,7 +280,13 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void setEducationOid(::std::string const& educationOid);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI void setEducationOid(::std::string const& educationOid);
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI void setFlatWorldPreset(::FlatWorldPresetID preset);
 #endif
 
@@ -278,6 +295,10 @@ public:
     MCAPI void setGameType(::GameType type);
 
 #ifdef LL_PLAT_C
+    MCAPI void setGenerator(::GeneratorType version);
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI void setGenerator(::GeneratorType version);
 #endif
 
@@ -291,6 +312,10 @@ public:
     MCAPI void setSeed(::LevelSeed64 seed);
 #endif
 
+#ifdef LL_PLAT_S
+    MCAPI void setSeed(::LevelSeed64 seed);
+#endif
+
     MCAPI void setServerChunkTickRange(uint newRange);
 
     MCAPI void setSpawnPos(::BlockPos const& spawn);
@@ -300,6 +325,8 @@ public:
     MCAPI void setWorldClockRegistry(::Bedrock::NonOwnerPointer<::WorldClockRegistry const> registry);
 
     MCAPI void setWorldTemplateOptionLocked(bool isLocked);
+
+    MCAPI void setWorldVersion(::WorldVersion version);
 
 #ifdef LL_PLAT_C
     MCAPI bool shouldAchievementsBeDisabled(bool isTrialMode, bool hasBehaviourPack) const;

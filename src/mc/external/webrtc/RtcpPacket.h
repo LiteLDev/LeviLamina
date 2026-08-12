@@ -29,10 +29,10 @@ public:
     virtual uint64 BlockLength() const = 0;
 
     virtual bool Create(
-        uchar*                                                                               packet,
-        uint64*                                                                              index,
-        uint64                                                                               max_length,
-        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> callback
+        uchar*                                                         packet,
+        uint64*                                                        index,
+        uint64                                                         max_length,
+        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const>)> callback
     ) const = 0;
     // NOLINTEND
 
@@ -42,9 +42,9 @@ public:
     MCNAPI uint64 HeaderLength() const;
 
     MCNAPI bool OnBufferFull(
-        uchar*                                                                               packet,
-        uint64*                                                                              index,
-        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> callback
+        uchar*                                                         packet,
+        uint64*                                                        index,
+        ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const>)> callback
     ) const;
     // NOLINTEND
 

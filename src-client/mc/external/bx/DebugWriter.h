@@ -24,7 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI int $write(void const*, int, ::bx::Error*);
     // NOLINTEND
 };
 

@@ -19,6 +19,7 @@ class Dimension;
 class DimensionRegistry;
 class IDimensionFactory;
 class ILevelStorageManagerConnector;
+class LevelStorage;
 struct DimensionIdType;
 struct DimensionType;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
@@ -79,6 +80,10 @@ public:
 
     MCAPI void _registerCustomDimensionWithFactory(::std::string_view name, ::DimensionType type);
 
+#ifdef LL_PLAT_C
+    MCAPI void _registerFixedVanillaDimensionIds();
+#endif
+
     MCFOLD void forEachDimension(::std::function<bool(::Dimension&)> callback);
 
     MCFOLD void forEachDimension(::std::function<bool(::Dimension const&)> callback) const;
@@ -93,6 +98,8 @@ public:
         ::ILevelStorageManagerConnector& levelStorageManagerConnector,
         ::DimensionDefinitionGroup       dimensionDefinitionGroup
     );
+
+    MCAPI void serverSaveDimensionNameIdStoreTable(::LevelStorage& levelStorage) const;
     // NOLINTEND
 
 public:
@@ -111,6 +118,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Bedrock::PubSub::Connector<void(::DimensionManager&)>& $getOnReadyForCustomDimensionRegistrationConnector();
+
+#ifdef LL_PLAT_S
+    MCAPI ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
+#else // LL_PLAT_C
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
+#endif
+
 
     // NOLINTEND
 };

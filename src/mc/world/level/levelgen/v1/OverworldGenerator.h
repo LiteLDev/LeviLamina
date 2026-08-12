@@ -77,49 +77,99 @@ public:
 
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
-    virtual bool structurePostProcessChunk(::ChunkViewSource&) /*override*/;
+    virtual bool structurePostProcessChunk(::ChunkViewSource& neighborhoodIn) /*override*/;
 
-    virtual bool decorationPostProcessChunk(::ChunkViewSource&) /*override*/;
+    virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhoodIn) /*override*/;
 
-    virtual ::Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(::ChunkPos const&) const = 0;
+    virtual ::Util::MultidimensionalArray<float, 5, 5, 41>
+    generateDensityCellsForChunk(::ChunkPos const& chunkPos) const = 0;
 
     virtual ::WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const /*override*/;
 
-    virtual void prepareHeights(::BlockVolume&, ::ChunkPos const&, ::std::vector<short>*, bool) /*override*/;
+    virtual void prepareHeights(
+        ::BlockVolume&        box,
+        ::ChunkPos const&     chunkPos,
+        ::std::vector<short>* ZXheights,
+        bool                  factorInBeardsAndShavers
+    ) /*override*/;
 
-    virtual ::BiomeArea getBiomeArea(::BoundingBox const&, uint) const /*override*/;
+    virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
     virtual int getLevelGenHeight() const = 0;
 
     virtual ::std::optional<::XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const = 0;
 
-    virtual ::std::unique_ptr<::Aquifer>
-    tryMakeAquifer(::ChunkPos const&, ::SurfaceLevelCache const&, short, short, short) const;
+    virtual ::std::unique_ptr<::Aquifer> tryMakeAquifer(
+        ::ChunkPos const&          chunkPos,
+        ::SurfaceLevelCache const& surfaceLevelCache,
+        short                      minHeight,
+        short                      levelGenHeight,
+        short                      seaLevel
+    ) const;
 
-    virtual void
-    decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const
-        /*override*/;
+    virtual void decorateWorldGenLoadChunk(
+        ::Biome const&       biome,
+        ::LevelChunk&        lc,
+        ::BlockVolumeTarget& target,
+        ::Random&            random,
+        ::ChunkPos const&    pos
+    ) const /*override*/;
 
-    virtual ::ChunkLocalNoiseCache createNoiseCache(::ChunkPos) const;
+    virtual ::ChunkLocalNoiseCache createNoiseCache(::ChunkPos chunkPos) const;
 
     virtual ::PerlinSimplexNoise const& getSurfaceNoise() = 0;
 
     virtual ::std::unique_ptr<::PerlinSimplexNoise> const& getMaterialAdjNoise() const = 0;
 
     virtual void _prepareHeights(
-        ::BlockVolume&,
-        ::ChunkPos const&,
-        ::ChunkLocalNoiseCache const&,
-        ::Aquifer*,
-        ::std::function<void(::BlockPos const&, ::Block const&, int)>&&,
-        bool,
-        ::std::vector<short>*
+        ::BlockVolume&                                                  box,
+        ::ChunkPos const&                                               chunkPos,
+        ::ChunkLocalNoiseCache const&                                   chunkLocalNoiseCache,
+        ::Aquifer*                                                      aquiferPtr,
+        ::std::function<void(::BlockPos const&, ::Block const&, int)>&& tickUpdateFn,
+        bool                                                            factorInBeardsAndShavers,
+        ::std::vector<short>*                                           ZXheights
     ) = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+
+    MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
+
+    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhoodIn);
+
+    MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
+
+    MCAPI void $prepareHeights(
+        ::BlockVolume&        box,
+        ::ChunkPos const&     chunkPos,
+        ::std::vector<short>* ZXheights,
+        bool                  factorInBeardsAndShavers
+    );
+
+    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
+
+    MCFOLD ::std::unique_ptr<::Aquifer> $tryMakeAquifer(
+        ::ChunkPos const&          chunkPos,
+        ::SurfaceLevelCache const& surfaceLevelCache,
+        short                      minHeight,
+        short                      levelGenHeight,
+        short                      seaLevel
+    ) const;
+
+    MCAPI void $decorateWorldGenLoadChunk(
+        ::Biome const&       biome,
+        ::LevelChunk&        lc,
+        ::BlockVolumeTarget& target,
+        ::Random&            random,
+        ::ChunkPos const&    pos
+    ) const;
+
+    MCAPI ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos chunkPos) const;
+
 
     // NOLINTEND
 };

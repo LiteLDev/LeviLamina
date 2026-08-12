@@ -67,6 +67,8 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual ~SpawnParticleEffectPacket() /*override*/;
     // NOLINTEND
 
 public:
@@ -79,6 +81,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SpawnParticleEffectPacketPayload payload);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

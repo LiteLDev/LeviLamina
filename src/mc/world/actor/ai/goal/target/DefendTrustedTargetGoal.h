@@ -10,6 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+struct ActorUniqueID;
+struct TrustComponent;
 // clang-format on
 
 class DefendTrustedTargetGoal : public ::NearestAttackableTargetGoal {
@@ -38,6 +40,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit DefendTrustedTargetGoal(::Mob& mob);
+
+    MCAPI ::ActorUniqueID _findTrustedTarget(::TrustComponent const& trust);
     // NOLINTEND
 
 public:

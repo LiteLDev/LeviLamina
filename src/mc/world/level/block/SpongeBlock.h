@@ -27,6 +27,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _attemptAbsorbWater(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool _performAbsorbWater(::BlockSource& region, ::BlockPos const& startPos) const;
+
+    MCAPI void _setShouldDry(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void _spawnAbsorbParticles(::BlockSource& region, ::BlockPos const& pos) const;
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;

@@ -46,6 +46,8 @@ public:
         ::std::shared_ptr<::Social::FriendList>                   friendList,
         ::Bedrock::NonOwnerPointer<::Parties::PartyTravelManager> partyTravelManager
     );
+
+    MCFOLD ::std::vector<::OreUI::FriendWorld> const& getFriendWorlds() const;
     // NOLINTEND
 
 public:
@@ -67,7 +69,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

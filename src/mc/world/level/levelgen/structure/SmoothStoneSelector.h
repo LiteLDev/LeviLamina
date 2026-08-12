@@ -40,12 +40,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Block const& next(::Random&, int, int, int, bool) const /*override*/;
+    virtual ::Block const& next(::Random& random, int, int, int, bool isEdge) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Block const& $next(::Random& random, int, int, int, bool isEdge) const;
+
 
     // NOLINTEND
 };

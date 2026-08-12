@@ -25,7 +25,18 @@ public:
     // prevent constructor by default
     SessionInfo& operator=(SessionInfo const&);
     SessionInfo(SessionInfo const&);
-    SessionInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI SessionInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };
 
 } // namespace Bedrock

@@ -41,7 +41,7 @@ public:
 
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    virtual void destroy(::Actor* sourceActor);
+    virtual void destroy(::Actor* source);
 
     virtual void normalTick() /*override*/;
 
@@ -96,6 +96,8 @@ public:
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+
+    MCAPI void $destroy(::Actor* source);
 
     MCAPI void $normalTick();
 

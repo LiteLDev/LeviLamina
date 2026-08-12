@@ -9,8 +9,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorOwnerComponent;
+class BlockSourceComponent;
+class DimensionStateComponent;
 class EntityContext;
 class EntityRegistry;
+class LoadedChunksComponent;
+class LoadingStateComponent;
 // clang-format on
 
 class ClientLoadingProgressTickingSystem : public ::ITickingSystem {
@@ -29,6 +34,15 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI static void _calculateLoadingProgressView(
+        ::ActorOwnerComponent&     actorOwnerComponent,
+        ::BlockSourceComponent&    blockSourceComponent,
+        ::DimensionStateComponent& dimensionStateComponent,
+        ::LoadedChunksComponent&   loadedChunksComponent,
+        ::LoadingStateComponent&   loadingStateComponent,
+        bool                       isTextureGroupReloading
+    );
+
     MCAPI static float getLoadingProgress(::WeakRef<::EntityContext> entityRef);
 
     MCAPI static ::LoadingState getLoadingState(::WeakRef<::EntityContext> entityRef);
@@ -42,7 +56,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCAPI void $tick(::EntityRegistry&);
+#else // LL_PLAT_C
     MCAPI void $tick(::EntityRegistry& registry);
 #endif
 

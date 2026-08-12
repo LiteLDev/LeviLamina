@@ -33,11 +33,9 @@ public:
 
     virtual void Close() /*override*/;
 
-    virtual ::webrtc::StreamResult
-    Read(::webrtc::ArrayView<uchar, 18446744073709546905> buffer, uint64& read, int&) /*override*/;
+    virtual ::webrtc::StreamResult Read(::webrtc::ArrayView<uchar> buffer, uint64& read, int&) /*override*/;
 
-    virtual ::webrtc::StreamResult
-    Write(::webrtc::ArrayView<uchar const, 18446744073709546905> data, uint64& written, int&) /*override*/;
+    virtual ::webrtc::StreamResult Write(::webrtc::ArrayView<uchar const> data, uint64& written, int&) /*override*/;
 
     virtual bool Flush() /*override*/;
 
@@ -51,10 +49,9 @@ public:
 
     MCNAPI void $Close();
 
-    MCNAPI ::webrtc::StreamResult $Read(::webrtc::ArrayView<uchar, 18446744073709546905> buffer, uint64& read, int&);
+    MCNAPI ::webrtc::StreamResult $Read(::webrtc::ArrayView<uchar> buffer, uint64& read, int&);
 
-    MCNAPI ::webrtc::StreamResult
-    $Write(::webrtc::ArrayView<uchar const, 18446744073709546905> data, uint64& written, int&);
+    MCNAPI ::webrtc::StreamResult $Write(::webrtc::ArrayView<uchar const> data, uint64& written, int&);
 
     MCNAPI bool $Flush();
 

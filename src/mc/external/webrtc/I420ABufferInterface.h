@@ -24,6 +24,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::VideoFrameBuffer::Type $type() const;
+
 
     // NOLINTEND
 };

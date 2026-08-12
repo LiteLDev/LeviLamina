@@ -8,11 +8,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseActorRenderContext;
 class IClientInstance;
 class MinecraftUIRenderContext;
 class UIControl;
 class UICustomRenderer;
 class UIScene;
+struct UIItemRenderInfo;
 namespace ui { struct FlyingItem; }
 // clang-format on
 
@@ -36,6 +38,27 @@ public:
     render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
 
     virtual ::UIBatchType getBatchType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _renderGuiIcon(
+        ::MinecraftUIRenderContext& renderContext,
+        ::IClientInstance&          client,
+        ::ui::FlyingItem&           item,
+        float                       x,
+        float                       y,
+        float                       transparency,
+        float                       scale,
+        int                         zOrder
+    );
+
+    MCAPI void _renderMesh(
+        ::MinecraftUIRenderContext& renderContext,
+        ::BaseActorRenderContext&   entityRenderContext,
+        ::UIItemRenderInfo const&   itemRenderInfo
+    );
     // NOLINTEND
 
 public:

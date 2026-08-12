@@ -43,6 +43,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI uint64 getIngredientsHashOffset(int simulatedWidth, int simulatedHeight, int offsetX, int offsetY) const;
+
+    MCAPI bool matches(::CraftingContainer const& craftSlots, int xOffs, int yOffs, bool xFlip) const;
     // NOLINTEND
 
 public:

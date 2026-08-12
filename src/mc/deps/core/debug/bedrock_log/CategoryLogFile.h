@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/diagnostics/bedrock_log/LogChannel.h"
+
 namespace BedrockLog {
 
 struct CategoryLogFile {
@@ -18,6 +21,12 @@ public:
     CategoryLogFile& operator=(CategoryLogFile const&);
     CategoryLogFile(CategoryLogFile const&);
     CategoryLogFile();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void AddChannel(::BedrockLog::LogChannel channel);
+    // NOLINTEND
 };
 
 } // namespace BedrockLog

@@ -74,6 +74,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ::EventResult $onEvent(::ActorNotificationEvent const& event);
+#else // LL_PLAT_C
+    MCFOLD ::EventResult $onEvent(::ActorNotificationEvent const& event);
+#endif
+
     MCFOLD ::EventResult $onActorDefinitionEvent(
         ::Actor&                                  actor,
         ::std::string const&                      event,

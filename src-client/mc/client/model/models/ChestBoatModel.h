@@ -6,10 +6,12 @@
 #include "mc/client/model/geom/ModelPart.h"
 #include "mc/client/model/models/Model.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
+#include "mc/deps/shared_types/legacy/Side.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Boat;
 class GeometryPtr;
 class ScreenContext;
 // clang-format on
@@ -60,6 +62,15 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ChestBoatModel(::GeometryPtr source);
+
+    MCAPI void _animatePaddle(
+        ::ModelPart&        paddle,
+        ::ScreenContext&    screenContext,
+        ::Boat const&       boat,
+        ::SharedTypes::Side side,
+        float               scale,
+        float               a
+    );
     // NOLINTEND
 
 public:

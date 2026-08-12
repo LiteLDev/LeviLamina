@@ -78,7 +78,7 @@ public:
 
     virtual void prepareFrame(::ScreenContext& screenContext) /*override*/;
 
-    virtual void render(::ScreenContext&, ::FrameRenderObject const&) /*override*/;
+    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) /*override*/;
 
     virtual void postRenderUpdate(::ScreenContext& screenContext) /*override*/;
 
@@ -104,9 +104,9 @@ public:
 
     virtual ::std::string getScreenName() const /*override*/;
 
-    virtual bool equalsScreenName(::std::string_view) const /*override*/;
+    virtual bool equalsScreenName(::std::string_view comparison) const /*override*/;
 
-    virtual bool containsScreenNameSubstring(::std::string_view) const /*override*/;
+    virtual bool containsScreenNameSubstring(::std::string_view substring) const /*override*/;
 
     virtual bool isPlayScreen() const /*override*/;
 
@@ -116,27 +116,34 @@ public:
 
     virtual bool _isPlayerSuspended() const;
 
-    virtual void _renderLevelPrep(::ScreenContext&, ::LevelRenderer&, ::Actor&);
+    virtual void
+    _renderLevelPrep(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer, ::Actor& cameraEntity);
 
-    virtual void _renderLevel(::ScreenContext&, ::FrameRenderObject const&);
+    virtual void _renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    virtual void _preLevelRender(::ScreenContext&);
+    virtual void _preLevelRender(::ScreenContext& screenContext);
 
-    virtual void _postLevelRender(::ScreenContext&, ::LevelRenderer&);
+    virtual void _postLevelRender(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
 
-    virtual bool _shouldRenderFirstPersonObjects(::LevelRenderer&) const;
+    virtual bool _shouldRenderFirstPersonObjects(::LevelRenderer& levelRenderer) const;
 
-    virtual bool _updateFreeformPickDirection(float, ::Vec3&, ::Vec3&, ::HitResult&, ::HitResult&);
+    virtual bool _updateFreeformPickDirection(
+        float,
+        ::Vec3&      outSrc,
+        ::Vec3&      outDir,
+        ::HitResult& outHitResult,
+        ::HitResult& outLiquidHit
+    );
 
-    virtual void _saveMatrices(::mce::Camera&);
+    virtual void _saveMatrices(::mce::Camera& camera);
 
-    virtual void _renderTransparentFirstPerson3DObjects(::ScreenContext&, ::LevelRenderer&);
+    virtual void _renderTransparentFirstPerson3DObjects(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
 
-    virtual void _renderItemInHand(::ScreenContext&, ::Player&);
+    virtual void _renderItemInHand(::ScreenContext& screenContext, ::Player& player);
 
-    virtual void _prepareCuller(::mce::Camera&, ::Frustum&);
+    virtual void _prepareCuller(::mce::Camera& camera, ::Frustum& frustumData);
 
-    virtual void _localPlayerTurned(float);
+    virtual void _localPlayerTurned(float yawDegrees);
 
     virtual float _getPickRange();
 
@@ -148,6 +155,80 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $applyInput(float a);
 
+    MCAPI void $prepareFrame(::ScreenContext& screenContext);
+
+    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+
+    MCFOLD void $postRenderUpdate(::ScreenContext& screenContext);
+
+    MCFOLD void $onFocusGained();
+
+    MCFOLD bool $renderGameBehind() const;
+
+    MCAPI void $tick(int nTick, int maxTick);
+
+    MCFOLD bool $isShowingMenu() const;
+
+    MCFOLD bool $isModal() const;
+
+    MCFOLD bool $renderOnlyWhenTopMost() const;
+
+    MCAPI bool $shouldStealMouse() const;
+
+    MCAPI void $handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact);
+
+    MCAPI void $handlePointerPressed(bool pressed);
+
+    MCAPI void $init(::ScreenSizeData const& screenSizeData);
+
+    MCAPI ::std::string $getScreenName() const;
+
+    MCAPI bool $equalsScreenName(::std::string_view comparison) const;
+
+    MCAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
+
+    MCFOLD bool $isPlayScreen() const;
+
+    MCFOLD ::RectangleArea $getAreaOfControlByName(::std::string const&) const;
+
+    MCFOLD bool $forceUpdateActiveSceneStackWhenPushed() const;
+
+    MCAPI bool $_isPlayerSuspended() const;
+
+    MCAPI void $_renderLevelPrep(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer, ::Actor& cameraEntity);
+
+    MCAPI void $_renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+
+    MCFOLD void $_preLevelRender(::ScreenContext& screenContext);
+
+    MCAPI void $_postLevelRender(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
+
+    MCAPI bool $_shouldRenderFirstPersonObjects(::LevelRenderer& levelRenderer) const;
+
+    MCAPI bool $_updateFreeformPickDirection(
+        float,
+        ::Vec3&      outSrc,
+        ::Vec3&      outDir,
+        ::HitResult& outHitResult,
+        ::HitResult& outLiquidHit
+    );
+
+    MCAPI void $_saveMatrices(::mce::Camera& camera);
+
+    MCAPI void $_renderTransparentFirstPerson3DObjects(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
+
+    MCAPI void $_renderItemInHand(::ScreenContext& screenContext, ::Player& player);
+
+    MCAPI void $_prepareCuller(::mce::Camera& camera, ::Frustum& frustumData);
+
+    MCFOLD void $_localPlayerTurned(float yawDegrees);
+
+    MCAPI float $_getPickRange();
+
+    MCFOLD bool $_shouldPushHUD();
+
+    MCFOLD void $_updateInGameCursor();
     // NOLINTEND
 };

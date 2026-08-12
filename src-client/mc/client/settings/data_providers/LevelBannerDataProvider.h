@@ -60,7 +60,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD bool $canModify() const;
     // NOLINTEND
 };
 

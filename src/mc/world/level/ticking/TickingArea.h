@@ -16,6 +16,7 @@
 // clang-format off
 class Actor;
 class BlockSource;
+class Dimension;
 class ITickingAreaView;
 class LevelStorage;
 class Random;
@@ -48,6 +49,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TickingArea();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~TickingArea() /*override*/ = default;
@@ -78,19 +83,19 @@ public:
 
     virtual ::TickingAreaLoadMode getLoadMode() const /*override*/;
 
-    virtual void setLoadMode(::TickingAreaLoadMode, ::LevelStorage&) /*override*/;
+    virtual void setLoadMode(::TickingAreaLoadMode loadMode, ::LevelStorage& levelStorage) /*override*/;
 
     virtual bool isPreloadDone() const /*override*/;
 
-    virtual void tick(::Tick const&, bool) /*override*/;
+    virtual void tick(::Tick const& currentTick, bool randomize) /*override*/;
 
-    virtual void tickSeasons(::Random&) /*override*/;
+    virtual void tickSeasons(::Random& random) /*override*/;
 
-    virtual void updatePosition(::Vec3 const&) /*override*/;
+    virtual void updatePosition(::Vec3 const& pos) /*override*/;
 
-    virtual void updateAndCenter(::LevelStorage&, ::Tick) /*override*/;
+    virtual void updateAndCenter(::LevelStorage& levelStorage, ::Tick currentLevelTick) /*override*/;
 
-    virtual ::Actor* findOwner(uchar&) /*override*/;
+    virtual ::Actor* findOwner(uchar& pendingChunks) /*override*/;
 
     virtual bool entityHasBeenFound() const /*override*/;
 
@@ -98,9 +103,14 @@ public:
 
     virtual bool isRemoved() /*override*/;
 
-    virtual void remove(::LevelStorage&) /*override*/;
+    virtual void remove(::LevelStorage& levelStorage) /*override*/;
 
-    virtual void onComponentChanged(uint, float, bool, ::LevelStorage&) /*override*/;
+    virtual void onComponentChanged(
+        uint            radius,
+        float           maxDistToPlayers,
+        bool            alwaysActive,
+        ::LevelStorage& levelStorage
+    ) /*override*/;
 
     virtual bool isScoped() const /*override*/;
 
@@ -112,8 +122,95 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TickingArea(
+        ::Dimension&          dimension,
+        ::mce::UUID           uniqueId,
+        ::std::string const&  name,
+        ::ActorUniqueID       entityId,
+        ::Bounds const&       bounds,
+        bool                  isCircle,
+        float                 maxDistToPlayers,
+        bool                  alwaysActive,
+        ::TickingAreaLoadMode loadMode
+    );
+
+    MCAPI void _save(::LevelStorage& levelStorage);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::mce::UUID const& $getId() const;
+
+    MCFOLD ::std::string const& $getName() const;
+
+    MCFOLD ::ActorUniqueID const& $getEntityId() const;
+
+    MCAPI ::Bounds const $getBoundsCopy() const;
+
+    MCAPI bool $isEntityOwned() const;
+
+#ifdef LL_PLAT_S
+    MCAPI bool $isAlwaysActive() const;
+#else // LL_PLAT_C
+    MCFOLD bool $isAlwaysActive() const;
+#endif
+
+    MCAPI float $getMaxDistToPlayers() const;
+
+    MCAPI ::ITickingAreaView const& $getView() const;
+
+    MCAPI ::ITickingAreaView& $getView();
+
+    MCAPI ::WeakRef<::BlockSource> const $getBlockSource() const;
+
+    MCAPI ::WeakRef<::BlockSource> $getBlockSource();
+
+    MCAPI ::TickingAreaDescription $getDescription() const;
+
+    MCAPI ::TickingAreaLoadMode $getLoadMode() const;
+
+    MCAPI void $setLoadMode(::TickingAreaLoadMode loadMode, ::LevelStorage& levelStorage);
+
+    MCAPI bool $isPreloadDone() const;
+
+    MCAPI void $tick(::Tick const& currentTick, bool randomize);
+
+    MCAPI void $tickSeasons(::Random& random);
+
+    MCAPI void $updatePosition(::Vec3 const& pos);
+
+    MCAPI void $updateAndCenter(::LevelStorage& levelStorage, ::Tick currentLevelTick);
+
+    MCAPI ::Actor* $findOwner(uchar& pendingChunks);
+
+    MCAPI bool $entityHasBeenFound() const;
+
+    MCAPI void $setEntityFound();
+
+    MCAPI bool $isRemoved();
+
+    MCAPI void $remove(::LevelStorage& levelStorage);
+
+    MCAPI void
+    $onComponentChanged(uint radius, float maxDistToPlayers, bool alwaysActive, ::LevelStorage& levelStorage);
+
+    MCFOLD bool $isScoped() const;
+
+    MCFOLD ::std::optional<uint64> const& $getScope() const;
+
+    MCFOLD bool $isDoneLoadingScoped() const;
+
+    MCAPI bool $isStandalone() const;
+
 
     // NOLINTEND
 };

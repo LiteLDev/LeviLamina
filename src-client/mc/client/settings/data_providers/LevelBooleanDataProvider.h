@@ -40,7 +40,7 @@ public:
 
     virtual bool getValue() const /*override*/;
 
-    virtual void setValue(bool) /*override*/;
+    virtual void setValue(bool value) /*override*/;
     // NOLINTEND
 
 public:
@@ -68,7 +68,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $canModify() const;
 
+    MCFOLD bool $getValue() const;
+
+    MCAPI void $setValue(bool value);
     // NOLINTEND
 };
 

@@ -35,5 +35,7 @@ public:
 
     MCAPI ::StructurePoolElement const&
     registerEmptyElement(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> manager);
+
+    MCAPI ~JigsawStructureElementRegistry();
     // NOLINTEND
 };

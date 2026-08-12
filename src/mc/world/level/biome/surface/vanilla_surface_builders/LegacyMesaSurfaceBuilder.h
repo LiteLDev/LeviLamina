@@ -39,6 +39,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::BlockColor getBand(int worldX, int y, int worldZ, ::PerlinSimplexNoise const& noiseBuf) const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $initBuilder(::LevelSeed64 levelSeed);

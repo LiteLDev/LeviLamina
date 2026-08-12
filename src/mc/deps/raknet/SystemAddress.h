@@ -23,6 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void FixForIPVersion(::RakNet::SystemAddress const& boundAddressToSocket);
+
     MCAPI bool FromString(char const* str, char portDelineator, int ipVersion);
 
     MCAPI ::std::string GetIPString() const;

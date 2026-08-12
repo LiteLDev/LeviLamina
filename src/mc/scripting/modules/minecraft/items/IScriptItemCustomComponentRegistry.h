@@ -23,12 +23,14 @@ public:
     // NOLINTBEGIN
     virtual ::ScriptDeferredEventListener& getEventListener() = 0;
 
-    virtual void setCerealContext(::cereal::ReflectionCtx&);
+    virtual void setCerealContext(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $setCerealContext(::cereal::ReflectionCtx& ctx);
+
 
     // NOLINTEND
 };

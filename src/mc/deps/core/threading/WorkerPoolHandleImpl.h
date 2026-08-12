@@ -37,6 +37,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorkerPool> $get() const;
+
 
     // NOLINTEND
 };

@@ -15,12 +15,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onMessageRecieved(::std::string const&) /*override*/;
+    virtual void onMessageRecieved(::std::string const& message) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $onMessageRecieved(::std::string const& message);
     // NOLINTEND
 };

@@ -82,9 +82,9 @@ public:
 
     virtual ::ScriptDebuggerSettings const& getSettings() const /*override*/;
 
-    virtual bool connect(::std::string const&, ushort) /*override*/;
+    virtual bool connect(::std::string const& host, ushort port) /*override*/;
 
-    virtual bool listen(ushort) /*override*/;
+    virtual bool listen(ushort port) /*override*/;
 
     virtual void stop() /*override*/;
 
@@ -94,12 +94,21 @@ public:
 
     virtual bool isStatPublisherEnabled() const /*override*/;
 
-    virtual void publishStats(uint64, ::std::vector<::ScriptStat> const&) /*override*/;
+    virtual void publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void
+    _handleDebuggerRequestMessage(::ScriptDebuggerMessages::DebuggerRequestMessage const& debuggerRequestPayload);
+
+    MCNAPI ::std::string _sanitizeHostName(::std::string const& host) const;
+
+    MCNAPI bool _tryAttachRuntime(bool expectRuntime);
+
+    MCNAPI bool _trySelectTarget();
+
     MCNAPI void registerDebuggerRequestHandler(
         ::std::string_view                                                                                command,
         ::std::function<void(::ScriptDebuggerMessages::DebuggerRequestMessage const&, ::ScriptDebugger&)> handler
@@ -118,6 +127,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::ScriptDebuggerSettings const& $getSettings() const;
+
+    MCNAPI bool $connect(::std::string const& host, ushort port);
+
+    MCNAPI bool $listen(ushort port);
+
+    MCNAPI void $stop();
+
+    MCNAPI void $startProfiler();
+
+    MCNAPI ::std::vector<::Core::Path> $stopProfiler();
+
+    MCNAPI bool $isStatPublisherEnabled() const;
+
+    MCNAPI void $publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats);
+
 
     // NOLINTEND
 };

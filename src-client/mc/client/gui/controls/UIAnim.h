@@ -9,6 +9,7 @@
 // clang-format off
 class UIAnimationComponent;
 class UIControl;
+class UIResolvedDef;
 // clang-format on
 
 class UIAnim {
@@ -41,6 +42,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    UIAnim();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~UIAnim() = default;
@@ -49,13 +54,13 @@ public:
 
     virtual char const* getInitialValueKey() const;
 
-    virtual bool tick(::UIControl&, float const);
+    virtual bool tick(::UIControl& ownerControl, float const deltaTime);
 
-    virtual void updateProperties(::UIAnimationComponent&);
+    virtual void updateProperties(::UIAnimationComponent& animComponent);
 
-    virtual void onResourcesLoaded(::UIAnimationComponent&);
+    virtual void onResourcesLoaded(::UIAnimationComponent& animComponent);
 
-    virtual void _reset(::UIControl&);
+    virtual void _reset(::UIControl& ownerControl);
 
     virtual void _play();
     // NOLINTEND
@@ -63,14 +68,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI UIAnim(::ui::AnimationType animType, ::UIResolvedDef const& def);
+
     MCAPI bool _hasEndEventId(uint id, ::std::set<void const*>& otherAnimations) const;
 
     MCAPI bool _hasPlayEventId(uint playEventId, ::std::set<void const*>& otherAnimations) const;
+
+    MCAPI void destroy();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::UIAnim> $clone();
 
+    MCAPI char const* $getInitialValueKey() const;
+
+    MCAPI bool $tick(::UIControl& ownerControl, float const deltaTime);
+
+    MCAPI void $updateProperties(::UIAnimationComponent& animComponent);
+
+    MCAPI void $onResourcesLoaded(::UIAnimationComponent& animComponent);
+
+    MCAPI void $_reset(::UIControl& ownerControl);
+
+    MCAPI void $_play();
     // NOLINTEND
 };

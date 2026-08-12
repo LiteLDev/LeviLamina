@@ -22,12 +22,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void createItem(::ItemStack const&, ::std::shared_ptr<::SimpleSparseContainer>) /*override*/;
+    virtual void
+    createItem(::ItemStack const& item, ::std::shared_ptr<::SimpleSparseContainer> createdOutputContainer) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $createItem(::ItemStack const& item, ::std::shared_ptr<::SimpleSparseContainer> createdOutputContainer);
+
 
     // NOLINTEND
 };

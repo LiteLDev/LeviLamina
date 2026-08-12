@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/realms/OpenAndCloseRealmManager.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
@@ -38,6 +39,12 @@ public:
     MCAPI explicit OpenAndCloseRealmCommandsFacet(
         ::std::shared_ptr<::Realms::OpenAndCloseRealmManager> openAndCloseRealmManager
     );
+
+    MCAPI void closeRealm(int64 realmId);
+
+    MCAPI ::Realms::OpenAndCloseRealmManager::RequestQueueStatus getStatus() const;
+
+    MCAPI void openRealm(int64 realmId);
     // NOLINTEND
 
 public:
@@ -55,7 +62,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

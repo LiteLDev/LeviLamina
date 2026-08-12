@@ -50,14 +50,19 @@ public:
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual bool update(::IClientInstance&, ::UIControl&, ::UIScene const&) /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
 
-    virtual void render(::MinecraftUIRenderContext&, ::IClientInstance&, ::UIControl&, int) /*override*/;
+    virtual void
+    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
+    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
     // NOLINTEND
 };

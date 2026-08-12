@@ -7,7 +7,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class ClientParticleInitializationComponent;
+class ClientParticleTerminationComponent;
+class ClientParticleTrackingComponent;
+class EntityContext;
 class EntityRegistry;
+class ParticleSystemEngine;
+struct ActorComponent;
 // clang-format on
 
 class ParticleTrackingSystem : public ::ITickingSystem {
@@ -27,6 +33,25 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _tickClientParticleComponent(
+        ::EntityContext& entity,
+        ::ActorComponent const&,
+        ::ClientParticleInitializationComponent& clientParticleComponent,
+        ::ParticleSystemEngine&                  particleSystemEngine
+    );
+
+    MCNAPI static void tickClientParticleTrackingComponent(
+        ::EntityContext& entity,
+        ::ActorComponent const&,
+        ::ClientParticleTrackingComponent&    clientParticleTrackingComponent,
+        ::ClientParticleTerminationComponent& clientParticleTerminationComponent,
+        ::ParticleSystemEngine&               particleSystemEngine
+    );
     // NOLINTEND
 
 public:

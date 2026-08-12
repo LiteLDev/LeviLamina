@@ -48,6 +48,12 @@ public:
             CandidateInfo& operator=(CandidateInfo const&);
             CandidateInfo(CandidateInfo const&);
             CandidateInfo();
+
+        public:
+            // member functions
+            // NOLINTBEGIN
+            MCNAPI ::Json::Value toJson() const;
+            // NOLINTEND
         };
 
         struct CandidatePairInfo {
@@ -154,6 +160,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit Statistics(::NetherNet::PeerConnectionObserver& peerObserver);
+
+    MCNAPI void _onIceCandidateError(
+        ::std::string const& address,
+        int                  port,
+        ::std::string const& url,
+        int                  errorCode,
+        ::std::string const& errorMessage
+    );
 
     MCNAPI void addSnapshot(
         ::gsl::span<::std::reference_wrapper<::webrtc::RTCTransportStats const>>          transportsStats,

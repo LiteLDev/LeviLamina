@@ -65,6 +65,8 @@ public:
 
     MCAPI ::ui::ViewRequest
     receiveEvent(uint buttonId, ::ButtonEventType buttonType, ::std::string const& collectionName, int collectionIndex);
+
+    MCAPI ~ContainerInteractionStateMachine();
     // NOLINTEND
 
 public:

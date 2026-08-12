@@ -162,6 +162,8 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
+    MCAPI uint computeRawSerializationIdHashForNetwork() const;
+
     MCAPI ::Block const& copyState(::Block const& fromBlock, ::BlockState const& state) const;
 
     MCAPI void executeItemEvent(

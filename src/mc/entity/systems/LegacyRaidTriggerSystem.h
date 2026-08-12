@@ -15,6 +15,7 @@ struct DimensionTypeComponent;
 struct RaidTriggerComponent;
 struct StateVectorComponent;
 struct TickingSystemWithInfo;
+struct VillageManagerComponent;
 // clang-format on
 
 class LegacyRaidTriggerSystem {
@@ -30,6 +31,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _doRaidTriggerSystem(
+        ::DimensionTypeComponent const&  dimensionTypeComponent,
+        ::StateVectorComponent const&    stateVectorComponent,
+        ::ActorOwnerComponent&           actorOwnerComponent,
+        ::VillageManagerComponent const& villageManagerComponent
+    );
+
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

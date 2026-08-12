@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorOwnerComponent;
+class AmbientSoundComponent;
 class EntityRegistry;
 // clang-format on
 
@@ -23,9 +25,22 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI static void _tickAmbientSoundComponent(
+        ::ActorOwnerComponent&   actorOwnerComponent,
+        ::AmbientSoundComponent& ambientSoundComponent
+    );
+#endif
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void $tick(::EntityRegistry&);
+#else // LL_PLAT_C
     MCAPI void $tick(::EntityRegistry& registry);
 #endif
 

@@ -12,6 +12,7 @@
 class Biome;
 class BiomeRegistry;
 class Block;
+class BlockPos;
 class BlockSource;
 class Random;
 // clang-format on
@@ -64,12 +65,30 @@ public:
     // NOLINTBEGIN
     virtual ::StructurePieceType getType() const /*override*/;
 
-    virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) /*override*/;
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _addNetherrackDripColumn(::Random& random, ::BlockSource& region, ::BlockPos const pos);
+
+    MCAPI void _maybeReplaceGoldBlock(::Random& random, ::BlockSource& region, ::BlockPos const pos);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Block const& _getRandomFacingStairs(::Random& random, ::Block const& stairBlock);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::StructurePieceType $getType() const;
+
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
 
     // NOLINTEND
 };

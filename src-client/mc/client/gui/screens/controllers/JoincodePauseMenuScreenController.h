@@ -56,6 +56,10 @@ public:
         ::std::shared_ptr<::PauseScreenModel> model,
         ::std::vector<::ActorUniqueID> const& clientIds
     );
+
+    MCAPI ::std::string _joincodeUri();
+
+    MCAPI void _launchShareUri(::std::string const& uri, ::std::string const& toastMsg, ::std::string const& eventName);
     // NOLINTEND
 
 public:
@@ -67,6 +71,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI void $onServerInvalidated(::EDUDiscovery::ServerInvalidationDetails const&);
+
+    MCAPI void $onJoinCodeGenerated(::EDUDiscovery::JoinCode const&);
+
+    MCAPI void $onCredentialsInvalidated();
     // NOLINTEND
 };

@@ -30,6 +30,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $ShouldRequestPermission(::webrtc::SocketAddress const&);
+
 
     // NOLINTEND
 };

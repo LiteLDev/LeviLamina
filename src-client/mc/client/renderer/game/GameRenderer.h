@@ -131,6 +131,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::FrameAnomalyDetector> const& frameAnomalyDetector
     );
 
+    MCAPI void _checkAndDrawInputUI(::ScreenContext& screenContext);
+
     MCAPI ::std::weak_ptr<::PlayerRenderView> addPlayerRenderView(::LevelRenderer& renderer);
 
     MCAPI void createRenderGraph(::mce::RenderContext& renderContext, bool onResume);

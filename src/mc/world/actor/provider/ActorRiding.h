@@ -37,13 +37,7 @@ setVehicle(::EntityContext& provider, ::StrictEntityContext vehicleContext, ::Ac
 
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
 MCAPI ::std::vector<::StrictActorIDEntityContextPair> const& STRICTACTORIDENTITYCONTEXTPAIR_EMPTY_VECTOR();
-#endif
-
-#ifdef LL_PLAT_S
-MCAPI ::std::vector<::StrictActorIDEntityContextPair> const& STRICTACTORIDENTITYCONTEXTPAIR_EMPTY_VECTOR();
-#endif
 // NOLINTEND
 
 } // namespace ActorRiding

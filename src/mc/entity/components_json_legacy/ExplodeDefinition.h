@@ -41,6 +41,10 @@ public:
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity, ::ExplodeComponent& component) const;
 
+    MCAPI void setParticleDefinitionByName(::std::string const& name);
+
+    MCAPI void setSoundDefinitionByName(::std::string const& name);
+
     MCAPI void uninitialize(::EntityContext& entity) const;
     // NOLINTEND
 

@@ -18,18 +18,23 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BaseActorRenderContext;
 class Block;
 class BlockSource;
 class IClientInstance;
 class IRenderChunkGarbage;
+class IVanillaRenderBlockActorComponent;
 class MinecraftUIRenderContext;
 class RenderChunkBuilder;
 class RenderChunkInstanced;
 class RenderChunkSorterSharedInfo;
+class Tessellator;
 class UIControl;
 class UICustomRenderer;
+class UIPropertyBag;
 struct ActorBlockSyncMessage;
 struct OffscreenCaptureDescription;
+namespace ClientBlockPipeline { class TessellatorContext; }
 namespace mce::StructureVolumeOffscreenUtils { struct StructureVolumeCaptureRequestInfo; }
 // clang-format on
 
@@ -65,7 +70,12 @@ public:
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual void render(::MinecraftUIRenderContext&, ::IClientInstance&, ::UIControl&, int) /*override*/;
+    virtual void render(
+        ::MinecraftUIRenderContext& renderContext,
+        ::IClientInstance&          client,
+        ::UIControl&                owner,
+        int                         pass
+    ) /*override*/;
 
     virtual void onSourceDestroyed(::BlockSource& source) /*override*/;
 
@@ -91,12 +101,47 @@ public:
     // NOLINTBEGIN
     MCAPI StructureVolumeRenderer();
 
+    MCAPI float _getAndResetFloatValue(::UIPropertyBag& bag, ::std::string const& key) const;
+
+    MCAPI void _initializeChunkBuilder(
+        ::ClientBlockPipeline::TessellatorContext& pipelineContext,
+        ::BlockSource&                             region,
+        ::Tessellator&                             tessellator,
+        ::AABB const&                              area
+    );
+
+    MCAPI void _onAreaChanged(::AABB const& newArea);
+
+    MCAPI void _render(
+        ::MinecraftUIRenderContext& renderContext,
+        ::BlockSource&              region,
+        ::IClientInstance&          client,
+        ::UIControl&                owner,
+        int,
+        ::OffscreenCaptureDescription const&                                                     captureDescription,
+        ::std::optional<::mce::StructureVolumeOffscreenUtils::StructureVolumeCaptureRequestInfo> requestInfo
+    );
+
+    MCAPI bool _renderBlocks(::BaseActorRenderContext& renderContext, ::BlockSource& region, ::AABB const& area);
+
     MCAPI void _renderThumbnailOffscreen(
         ::MinecraftUIRenderContext&                                                    renderContext,
         ::BlockSource&                                                                 region,
         ::IClientInstance&                                                             client,
         ::OffscreenCaptureDescription const&                                           captureDescription,
         ::mce::StructureVolumeOffscreenUtils::StructureVolumeCaptureRequestInfo const& requestInfo
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::BlockPos> _generateChunkStartPositions(::AABB const& area);
+
+    MCAPI static void _iterateOverBlockEntities(
+        ::BlockSource&                                                     region,
+        ::AABB const&                                                      area,
+        ::std::function<void(::IVanillaRenderBlockActorComponent&)> const& processBlockActor
     );
     // NOLINTEND
 
@@ -109,6 +154,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
+    MCAPI void
+    $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
+
+    MCAPI void $onSourceDestroyed(::BlockSource& source);
+
+    MCAPI void $onBlockChanged(
+        ::BlockSource&                 source,
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            updateFlags,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget      eventTarget,
+        ::Actor*                       blockChangeSource
+    );
+
+    MCAPI void $onAppResumed();
+
+    MCAPI void $onAppSuspended();
     // NOLINTEND
 };

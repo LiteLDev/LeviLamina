@@ -42,6 +42,8 @@ public:
         ::OreUI::RouteType               routeType
     );
 
+    MCAPI bool _isRealmsStoriesScreen(::std::string const& routeName) const;
+
     MCFOLD ::std::string const& getFragment() const;
 
     MCFOLD ::std::string const& getPath() const;

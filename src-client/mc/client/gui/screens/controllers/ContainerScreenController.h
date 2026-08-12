@@ -14,6 +14,7 @@
 #include "mc/client/gui/screens/controllers/ProgressiveTakeBarLocation.h"
 #include "mc/client/gui/screens/controllers/ProgressiveTakeButtonData.h"
 #include "mc/client/gui/screens/controllers/TypeInContainer.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/containers/SlotData.h"
 #include "mc/world/item/ItemGroup.h"
@@ -29,6 +30,7 @@ class ItemStackBase;
 class UIPropertyBag;
 struct AutoPlaceItem;
 struct ItemStateData;
+struct ItemTransferAmount;
 struct SelectedSlotInfo;
 namespace Json { class Value; }
 // clang-format on
@@ -193,7 +195,7 @@ public:
     virtual ::ProgressiveTakeBarLocation
     _getProgressiveBarDirection(::std::string const& collectionName, int collectionIndex) const;
 
-    virtual bool _isInCreativeContainer(::std::string const&) const;
+    virtual bool _isInCreativeContainer(::std::string const& containerName) const;
 
     virtual bool _getGestureControlEnabled() const /*override*/;
     // NOLINTEND
@@ -206,6 +208,10 @@ public:
         ::InteractionModel                             interactionModel
     );
 
+    MCAPI bool _canProgressiveTakeFromCollection() const;
+
+    MCAPI void _compareStatesForFlyingItems();
+
     MCAPI ::ItemStack const& _getItemStack(::std::string const& collectionName, int collectionIndex) const;
 
     MCAPI ::ItemStackBase const&
@@ -217,6 +223,13 @@ public:
 
     MCAPI void _handleAutoPlace(int amount, ::std::string const& collectionName, int index);
 
+    MCAPI void
+    _handleDropItem(::std::string const& collectionName, int collectionIndex, ::ItemTransferAmount transferAmount);
+
+    MCAPI void _handleDropSelectedItem(::ItemTransferAmount transferAmount);
+
+    MCAPI void _handleSplit(::std::string const& collectionName, int collectionIndex);
+
     MCAPI void _handleTakeAll(::std::string const& collectionName, int index);
 
     MCAPI void _handleTakeAmount(int amount, ::std::string const& collectionName, int index);
@@ -224,6 +237,31 @@ public:
     MCAPI void _handleUnselectSlot();
 
     MCAPI bool _isCursorSelectedActive() const;
+
+    MCAPI bool _isInValidCraftingResultContainer(::std::string_view collectionName, int collectionIndex) const;
+
+    MCAPI void _loadLastSelectedSlot();
+
+    MCAPI bool _moveItemFromSlotIntoStorageItem(
+        ::std::string const& collectionName,
+        int                  collectionIndex,
+        ::ItemStack const&   toStorageItem
+    );
+
+    MCAPI bool _moveSelectedItemFromStorageItem(
+        ::ItemStack const&   fromStorageItem,
+        int                  selectedItemIdx,
+        ::std::string const& collectionName,
+        int                  collectionIndex
+    );
+
+    MCAPI bool _moveTopItemFromStorageItem(
+        ::ItemStack const&   fromStorageItem,
+        ::std::string const& collectionName,
+        int                  collectionIndex
+    );
+
+    MCAPI void _playSound(::SharedTypes::Legacy::LevelSoundEvent type);
 
     MCAPI void _postSetSelectedSlot(
         ::SelectedSlotInfo const& selected,
@@ -233,6 +271,8 @@ public:
     );
 
     MCAPI void _registerEventHandlersForStateMachine(uint buttonId);
+
+    MCAPI void _saveLastSelectedSlot();
 
     MCAPI void _stopSplitting();
 
@@ -344,7 +384,7 @@ public:
     MCAPI ::ProgressiveTakeBarLocation
     $_getProgressiveBarDirection(::std::string const& collectionName, int collectionIndex) const;
 
-    MCFOLD bool $_isInCreativeContainer(::std::string const&) const;
+    MCFOLD bool $_isInCreativeContainer(::std::string const& containerName) const;
 
     MCAPI bool $_getGestureControlEnabled() const;
     // NOLINTEND

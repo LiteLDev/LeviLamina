@@ -31,6 +31,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>&);
+
+    MCAPI void $load(::std::string const&);
+
 
     // NOLINTEND
 };

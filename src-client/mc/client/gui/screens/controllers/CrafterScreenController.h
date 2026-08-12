@@ -53,6 +53,8 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
+
+    MCAPI void _setToggledStateForSlot(int slot, bool shouldEnable);
     // NOLINTEND
 
 public:
@@ -69,6 +71,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
 
+    MCAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

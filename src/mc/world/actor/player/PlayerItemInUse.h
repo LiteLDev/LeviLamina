@@ -30,7 +30,13 @@ public:
     MCAPI int getDuration(::EntityContext const& owner) const;
 
     MCAPI int getUsedDuration(::EntityContext const& owner) const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI int getUsedDuration(::EntityContext const& owner) const;
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI void releaseUsing(::Player& player);
 
     MCAPI void

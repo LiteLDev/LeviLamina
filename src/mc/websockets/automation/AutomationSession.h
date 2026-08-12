@@ -6,10 +6,13 @@
 #include "mc/codebuilder/EncryptionCipherMode.h"
 #include "mc/codebuilder/IRequestHandler.h"
 #include "mc/deps/code_builder/platform/WebviewObserver.h"
+#include "mc/websockets/CloseStatusCode.h"
 #include "mc/websockets/WSConnectionResult.h"
 
 // auto generated forward declare list
 // clang-format off
+class CommandOrigin;
+class RakWebSocketDataFrame;
 namespace Automation { class AutomationClient; }
 namespace CodeBuilder { struct ChatSubscription; }
 namespace CodeBuilder { struct CommandRequest; }
@@ -54,39 +57,46 @@ public:
     // NOLINTBEGIN
     virtual ~AutomationSession() /*override*/ = default;
 
-    virtual void onMessageRecieved(::std::string const&) /*override*/;
+    virtual void onMessageRecieved(::std::string const& message) /*override*/;
 
-    virtual void agentCommand(::std::string const&, ::CodeBuilder::CommandRequest&&) /*override*/;
+    virtual void agentCommand(::std::string const& requestId, ::CodeBuilder::CommandRequest&& request) /*override*/;
 
-    virtual void command(::std::string const&, ::CodeBuilder::CommandRequest&&) /*override*/;
+    virtual void command(::std::string const& requestId, ::CodeBuilder::CommandRequest&& request) /*override*/;
 
-    virtual void chatSubscribe(::std::string const&, ::CodeBuilder::ChatSubscription&&) /*override*/;
+    virtual void
+    chatSubscribe(::std::string const& requestId, ::CodeBuilder::ChatSubscription&& subscription) /*override*/;
 
-    virtual void chatUnsubscribe(::std::string const&, ::std::string const&) /*override*/;
+    virtual void chatUnsubscribe(::std::string const&, ::std::string const& subscriptionId) /*override*/;
 
     virtual void chatUnsubscribeAll(::std::string const&) /*override*/;
 
-    virtual void dataBlock(::std::string const&) /*override*/;
+    virtual void dataBlock(::std::string const& requestId) /*override*/;
 
-    virtual void dataItem(::std::string const&) /*override*/;
+    virtual void dataItem(::std::string const& requestId) /*override*/;
 
-    virtual void dataMob(::std::string const&) /*override*/;
+    virtual void dataMob(::std::string const& requestId) /*override*/;
 
-    virtual void dataTutorial(::std::string const&, ::std::string const&) /*override*/;
+    virtual void dataTutorial(::std::string const& requestId, ::std::string const& tutorialPath) /*override*/;
 
-    virtual void dataFile(::std::string const&, bool const, ::std::string const&, ::std::string const&) /*override*/;
+    virtual void dataFile(
+        ::std::string const& requestId,
+        bool const           isRead,
+        ::std::string const& filePath,
+        ::std::string const& fileContents
+    ) /*override*/;
 
-    virtual void dataFilePath(::std::string const&, ::std::string const&) /*override*/;
+    virtual void dataFilePath(::std::string const& requestId, ::std::string const& filePath) /*override*/;
 
-    virtual bool encryptConnection(::std::string const&, ::CodeBuilder::EncryptionRequest const&) /*override*/;
+    virtual bool
+    encryptConnection(::std::string const& requestId, ::CodeBuilder::EncryptionRequest const& request) /*override*/;
 
-    virtual void subscribe(::std::string const&, ::std::string const&) /*override*/;
+    virtual void subscribe(::std::string const& requestId, ::std::string const& eventId) /*override*/;
 
-    virtual void unsubscribe(::std::string const&, ::std::string const&) /*override*/;
+    virtual void unsubscribe(::std::string const& requestId, ::std::string const& eventId) /*override*/;
 
-    virtual void error(::std::string const&, ::CodeBuilder::ErrorMessage const&) /*override*/;
+    virtual void error(::std::string const&, ::CodeBuilder::ErrorMessage const& message) /*override*/;
 
-    virtual bool tutorialCached(::std::string const&) /*override*/;
+    virtual bool tutorialCached(::std::string const& tutorialPath) /*override*/;
     // NOLINTEND
 
 public:
@@ -95,6 +105,18 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI explicit AutomationSession(::Automation::AutomationClient& owner);
 #endif
+
+    MCNAPI ::std::unique_ptr<::CommandOrigin> _createCommandOrigin(::std::string const& requestId);
+
+    MCNAPI void _errorEncryptionRequired(::std::string const& requestId);
+
+    MCNAPI void _handleIncomingMessage(::RakWebSocketDataFrame const& frame);
+
+    MCNAPI void _handleOnClose(::CloseStatusCode code, ::std::string const& reason);
+
+    MCNAPI void _handleOnConnected(::std::string const& activeSubProtocol);
+
+    MCNAPI void _send(::std::string const& messageBody);
 
     MCNAPI ::WSConnectionResult
     connect(::std::string const& serverUri, ::std::vector<::std::string> const& subProtocols);
@@ -106,6 +128,8 @@ public:
         ::CodeBuilder::EncryptionCipherMode cipherMode,
         ::std::string&
     );
+
+    MCNAPI void receive(::std::string const& payload);
 
 #ifdef LL_PLAT_C
     MCNAPI void setLocalConnectionHandler(::std::function<void(::std::string const&)> sendHandler);
@@ -123,6 +147,45 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onMessageRecieved(::std::string const& message);
+
+    MCNAPI void $agentCommand(::std::string const& requestId, ::CodeBuilder::CommandRequest&& request);
+
+    MCNAPI void $command(::std::string const& requestId, ::CodeBuilder::CommandRequest&& request);
+
+    MCNAPI void $chatSubscribe(::std::string const& requestId, ::CodeBuilder::ChatSubscription&& subscription);
+
+    MCNAPI void $chatUnsubscribe(::std::string const&, ::std::string const& subscriptionId);
+
+    MCNAPI void $chatUnsubscribeAll(::std::string const&);
+
+    MCNAPI void $dataBlock(::std::string const& requestId);
+
+    MCNAPI void $dataItem(::std::string const& requestId);
+
+    MCNAPI void $dataMob(::std::string const& requestId);
+
+    MCNAPI void $dataTutorial(::std::string const& requestId, ::std::string const& tutorialPath);
+
+    MCNAPI void $dataFile(
+        ::std::string const& requestId,
+        bool const           isRead,
+        ::std::string const& filePath,
+        ::std::string const& fileContents
+    );
+
+    MCNAPI void $dataFilePath(::std::string const& requestId, ::std::string const& filePath);
+
+    MCNAPI bool $encryptConnection(::std::string const& requestId, ::CodeBuilder::EncryptionRequest const& request);
+
+    MCNAPI void $subscribe(::std::string const& requestId, ::std::string const& eventId);
+
+    MCNAPI void $unsubscribe(::std::string const& requestId, ::std::string const& eventId);
+
+    MCNAPI void $error(::std::string const&, ::CodeBuilder::ErrorMessage const& message);
+
+    MCNAPI bool $tutorialCached(::std::string const& tutorialPath);
+
 
     // NOLINTEND
 };

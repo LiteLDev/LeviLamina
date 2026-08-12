@@ -161,11 +161,17 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ::std::optional<int> getState(::BlockType const&, int) const = 0;
+        virtual ::std::optional<int> getState(::BlockType const& blockType, int blockData) const = 0;
 
-        virtual ::Block const* setState(::BlockType const&, int, int) const = 0;
+        virtual ::Block const* setState(::BlockType const& blockType, int blockData, int stateData) const = 0;
 
         virtual ~AlteredStateCollection() = default;
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static bool _checkVersioningRequirements(::SemVersion const& removedSupportVersion);
         // NOLINTEND
 
     public:
@@ -226,9 +232,9 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ::std::optional<int> getState(::BlockType const&, int) const /*override*/;
+        virtual ::std::optional<int> getState(::BlockType const& blockType, int blockData) const /*override*/;
 
-        virtual ::Block const* setState(::BlockType const&, int, int) const /*override*/;
+        virtual ::Block const* setState(::BlockType const& blockType, int blockData, int stateData) const /*override*/;
         // NOLINTEND
 
     public:
@@ -245,6 +251,10 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::std::optional<int> $getState(::BlockType const& blockType, int blockData) const;
+
+        MCAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
+
 
         // NOLINTEND
     };
@@ -275,9 +285,9 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ::std::optional<int> getState(::BlockType const&, int) const /*override*/;
+        virtual ::std::optional<int> getState(::BlockType const& blockType, int) const /*override*/;
 
-        virtual ::Block const* setState(::BlockType const&, int, int) const /*override*/;
+        virtual ::Block const* setState(::BlockType const& blockType, int blockData, int stateData) const /*override*/;
         // NOLINTEND
 
     public:
@@ -292,6 +302,10 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::std::optional<int> $getState(::BlockType const& blockType, int) const;
+
+        MCAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
+
 
         // NOLINTEND
     };
@@ -1061,7 +1075,11 @@ public:
 
     MCFOLD bool $mayPick() const;
 
+#ifdef LL_PLAT_S
     MCFOLD bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
+#else // LL_PLAT_C
+    MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
+#endif
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 

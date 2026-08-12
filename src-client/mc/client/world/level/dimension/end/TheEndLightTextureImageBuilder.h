@@ -40,6 +40,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI bool $buildImage(
+        ::BaseLightData const& lightData,
+        ::mce::Image*          targetImage,
+        uint                   imageLength,
+        float                  a,
+        float                  ambientBoost,
+        bool                   clampToMinimum
+    );
     // NOLINTEND
 };

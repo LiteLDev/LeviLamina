@@ -81,6 +81,13 @@ public:
     // NOLINTBEGIN
     MCAPI SpeleothemBlock(::std::string const& nameId, int id, ::HashedString const& blockToGrowOn);
 
+    MCAPI ::SpeleothemThickness _calculateSpeleothemThickness(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        uchar             tipDirection,
+        bool              mergeOpposingTips
+    ) const;
+
     MCAPI void _createMergedTips(::BlockSource& region, ::Block const& tipBlock, ::BlockPos const& tipPos) const;
 
     MCAPI void _createSpeleothem(

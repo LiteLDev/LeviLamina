@@ -33,6 +33,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $_isValid() const;
+
 
     // NOLINTEND
 };

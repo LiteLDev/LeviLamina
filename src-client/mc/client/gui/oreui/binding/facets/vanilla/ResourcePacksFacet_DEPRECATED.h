@@ -5,11 +5,16 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/FacetResourcePackId.h"
+#include "mc/client/gui/oreui/binding/facets/vanilla/FindPackFlags.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/Prompt.h"
+#include "mc/client/gui/oreui/binding/facets/vanilla/data/PromptActionVariant.h"
 #include "mc/client/gui/screens/models/ContentType.h"
 #include "mc/client/gui/screens/models/PackListType.h"
+#include "mc/client/services/content/PackSelectResult.h"
+#include "mc/client/services/download/DlcCheckResult.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/resources/PackScope.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,12 +36,14 @@ class MainMenuScreenModel;
 struct ContentItem;
 struct ContentViews;
 struct DlcValidationState;
+struct LevelSummary;
 struct PackContentItem;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { class IResourceAwaiter; }
 namespace OreUI { class Router; }
 namespace OreUI { class WorldSettingsProvider_DEPRECATED; }
 namespace OreUI { struct FacetResourcePack; }
+namespace OreUI { struct PromptAction; }
 // clang-format on
 
 namespace OreUI {
@@ -229,6 +236,108 @@ public:
         ::OreUI::Router&                                                  router,
         ::std::shared_ptr<::MainMenuScreenModel>                          mainMenuScreenModel
     );
+
+    MCAPI void _activatePack(::OreUI::ResourcePacksFacet_DEPRECATED::PackActivationRequest request);
+
+    MCAPI ::std::unique_ptr<::ContentViews> _createContentViewsFor(::ContentType contentType, ::PackScope scope) const;
+
+    MCAPI void _deactivatePack(::OreUI::FacetResourcePackId const& packId);
+
+    MCAPI ::std::optional<::OreUI::ResourcePacksFacet_DEPRECATED::PackViewAndItem> _findPackVectorInView(
+        ::OreUI::FacetResourcePackId const& fromPackId,
+        ::FindPackFlags                     findPackFlags,
+        ::ContentViews*                     contentView
+    );
+
+    MCAPI ::std::optional<::OreUI::ResourcePacksFacet_DEPRECATED::PackViewAndItem>
+    _findPackViewAndContent(::OreUI::FacetResourcePackId const& fromPackId, ::FindPackFlags findPackFlags);
+
+    MCAPI ::OreUI::ResourcePacksFacet_DEPRECATED::ResourcePacksFacetStatus _handleDlcCheckError(::DlcCheckResult error);
+
+    MCAPI void _initialize(::LevelSummary& levelSummary);
+
+    MCAPI void _movePackOnDataWarning();
+
+    MCAPI void _populatePackDetailsFromView(
+        ::std::vector<::OreUI::FacetResourcePack>& oldPackDetails,
+        ::std::vector<::OreUI::FacetResourcePack>& packDetails,
+        ::ContentView*                             view,
+        ::ContentType                              contentType
+    );
+
+    MCAPI void
+    _reserveMemoryUpfrontOnPackCollection(::OreUI::ResourcePacksFacet_DEPRECATED::PackCollection& packCollection);
+
+    MCAPI void _showNoInternetPrompt();
+
+    MCAPI void _showPackActivationErrorPrompt();
+
+    MCAPI void _showPackSelectErrorPrompt(::PackSelectResult const& result);
+
+    MCAPI void _showPackSettings(::OreUI::FacetResourcePackId const& packId);
+
+    MCAPI void _showUnspecifiedErrorPrompt();
+
+    MCAPI void _tryActivatePack(::OreUI::ResourcePacksFacet_DEPRECATED::PackActivationRequest request);
+
+    MCAPI void _updateContentView(
+        ::OreUI::ResourcePacksFacet_DEPRECATED::PackCollection& oldPackCollection,
+        ::OreUI::ResourcePacksFacet_DEPRECATED::PackCollection& packCollection,
+        ::ContentViews&                                         contentView
+    );
+
+    MCAPI void changePackPriority(::std::string const& packId, int prevIndex, int newIndex);
+
+    MCAPI void clearLastActivatedPackId();
+
+    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getActiveBehaviorPacks() const;
+
+    MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getActiveTexturePacks() const;
+
+    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getAvailableBehaviorPacks() const;
+
+    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getAvailableTexturePacks() const;
+
+    MCAPI float getDownloadProgress() const;
+
+    MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getGlobalTexturePacks() const;
+
+    MCAPI float getImportProgress() const;
+
+    MCAPI ::OreUI::FacetResourcePackId const& getLastactivatedPackId() const;
+
+    MCFOLD ::OreUI::FacetResourcePackId const& getMarketplacePackId() const;
+
+    MCAPI ::OreUI::Prompt const& getPrompt() const;
+
+    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getRealmsTexturePacks() const;
+
+    MCAPI ::OreUI::ResourcePacksFacet_DEPRECATED::FacetPromptDetails const& getResourcePackToDownload() const;
+
+    MCAPI ::OreUI::ResourcePacksFacet_DEPRECATED::ResourcePacksFacetStatus getStatus() const;
+
+    MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getUnownedTexturePacks() const;
+
+    MCAPI bool isRealmsPlusSubscriptionActive() const;
+
+    MCAPI bool isRealmsPlusSupported() const;
+
+    MCAPI void notifyDownloadCancellation();
+
+    MCAPI void requestPackActivation(::OreUI::FacetResourcePackId const& packId, bool force);
+
+    MCAPI void requestPackDeactivation(::OreUI::FacetResourcePackId const& packId);
+
+    MCAPI void requestToShowPackSettings(::OreUI::FacetResourcePackId const& packId);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::OreUI::PromptAction _getActionForActionType(
+        ::OreUI::ResourcePacksFacet_DEPRECATED::PromptActionType type,
+        ::OreUI::PromptActionVariant                             variant
+    );
     // NOLINTEND
 
 public:
@@ -260,7 +369,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

@@ -113,6 +113,24 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
+
+    MCAPI ::std::string _getHoverText(::Social::XboxLiveUserProfileData const* xboxUserProfileData) const;
+
+    MCAPI ::std::string _getLinkedAccountFirstDisplayName(int const collectionIndex) const;
+
+    MCAPI ::std::string _getLinkedAccountFriendTitleName(int const collectionIndex) const;
+
+    MCAPI ::std::string _getPlatformDisplayName(int const collectionIndex) const;
+
+    MCAPI ::std::string _getPlatformFriendTitleName(int const collectionIndex) const;
+
+    MCAPI ::std::string _getXboxFriendTitleName(int const collectionIndex) const;
+
+    MCAPI ::std::string _getXboxLiveDisplayName(::Social::XboxLiveUserProfileData const* xboxUserProfileData) const;
+
+    MCAPI void _refreshXboxLiveFriendsData();
+
+    MCAPI void _sortDataList();
     // NOLINTEND
 
 public:
@@ -127,6 +145,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $queueTitleNarration();
 
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCFOLD ::std::string $_getButtonADescription();
+
+    MCAPI ::std::string $_getButtonXDescription();
+
+    MCAPI ::std::string $_getButtonYDescription();
     // NOLINTEND
 };

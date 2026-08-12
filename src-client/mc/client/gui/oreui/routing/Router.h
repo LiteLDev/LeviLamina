@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/oreui/routing/RouteHistoryAction.h"
 #include "mc/client/gui/oreui/routing/RouterAction.h"
 #include "mc/client/gui/oreui/routing/RouterHistory.h"
 #include "mc/client/gui/oreui/routing/RouterLocation.h"
@@ -11,11 +12,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class AbstractScene;
 class ISceneStack;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace OreUI { class IRouteMatcher; }
 namespace OreUI { class IRoutePrerequisiteHandler; }
 namespace OreUI { class RouterEventing; }
+namespace OreUI { struct RouteAction; }
 // clang-format on
 
 namespace OreUI {
@@ -86,7 +89,25 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&   sceneStack
     );
 
+    MCAPI void _handleSceneStackPop(
+        ::std::shared_ptr<::AbstractScene> const& newTopScreen,
+        bool,
+        ::std::optional<::OreUI::RouteAction> const& routeAction
+    );
+
+    MCAPI void _handleSceneStackPush(
+        ::std::shared_ptr<::AbstractScene> const&    newScreen,
+        ::std::optional<::OreUI::RouteAction> const& routeAction
+    );
+
+    MCAPI void _onChange(
+        ::std::optional<::OreUI::RouterLocation> const& oldLocation,
+        ::std::optional<::OreUI::RouterLocation> const& currentLocation
+    );
+
     MCAPI bool _pushRoute(::std::string const& route, ::OreUI::Router::RouterPushMode mode);
+
+    MCAPI void _replaceCurrentRouteInHistory(::std::string const& newRoute, ::OreUI::RouteHistoryAction action);
 
     MCAPI ::std::optional<::OreUI::RouterLocation> getCurrentLocation() const;
 

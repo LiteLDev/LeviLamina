@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockTessellator;
 class ChunkSource;
 class ChunkViewSource;
@@ -19,6 +20,7 @@ class RenderChunkCoordinator;
 class RenderChunkGeometry;
 class RuntimeLocalLightingConfig;
 class Tessellator;
+struct AirAndSimpleBlockBits;
 struct BlockQueueEntry;
 struct RenderChunkQuadInfo;
 namespace ClientBlockPipeline { class BlockTessellatorPipeline; }
@@ -100,6 +102,16 @@ public:
     );
 
     MCAPI ~RenderChunkBuilder();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void checkNeighborBlockIsAirOrSimpleBlock(
+        ::Block const&           block,
+        uint64 const             blockBitsetIndex,
+        ::AirAndSimpleBlockBits& airAndSimpleBlocks
+    );
     // NOLINTEND
 
 public:

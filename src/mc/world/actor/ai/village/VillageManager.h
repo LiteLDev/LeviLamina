@@ -17,6 +17,7 @@
 class BlockSource;
 class Dimension;
 class ILevelStorageManagerConnector;
+class LevelStorage;
 class POIInstance;
 class Vec3;
 class Village;
@@ -94,9 +95,10 @@ public:
     // NOLINTBEGIN
     virtual ~VillageManager() /*override*/ = default;
 
-    virtual ::std::weak_ptr<::Village> fetchClosestVillage(::BlockPos const&, int, uint) const /*override*/;
+    virtual ::std::weak_ptr<::Village>
+    fetchClosestVillage(::BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const /*override*/;
 
-    virtual ::std::weak_ptr<::Village> getVillageByID(::mce::UUID const&) const /*override*/;
+    virtual ::std::weak_ptr<::Village> getVillageByID(::mce::UUID const& villageID) const /*override*/;
     // NOLINTEND
 
 public:
@@ -106,9 +108,13 @@ public:
 
     MCAPI void _assignPOIOnly(::std::shared_ptr<::POIInstance>&& pi);
 
+    MCAPI void _loadPOIBlueprints();
+
     MCAPI void _processNextUnclusteredPOIQuery();
 
     MCAPI void _removeEligibleVillages();
+
+    MCAPI void _saveAllVillages(::LevelStorage& levelStorage);
 
     MCAPI void _tryAssignPOIOrCreateVillage(::std::shared_ptr<::POIInstance>&& pi);
 
@@ -139,6 +145,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::weak_ptr<::Village>
+    $fetchClosestVillage(::BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const;
+
+    MCAPI ::std::weak_ptr<::Village> $getVillageByID(::mce::UUID const& villageID) const;
+
 
     // NOLINTEND
 };

@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/websockets/CloseStatusCode.h"
+
+// auto generated forward declare list
+// clang-format off
+class RakWebSocketDataFrame;
+// clang-format on
+
 class RakWebSocketDataFrameParser {
 public:
     // member variables
@@ -18,4 +26,13 @@ public:
     RakWebSocketDataFrameParser& operator=(RakWebSocketDataFrameParser const&);
     RakWebSocketDataFrameParser(RakWebSocketDataFrameParser const&);
     RakWebSocketDataFrameParser();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::std::shared_ptr<::RakWebSocketDataFrame>
+    _failReadFrame(::std::string const& error, ::CloseStatusCode code);
+
+    MCNAPI ~RakWebSocketDataFrameParser();
+    // NOLINTEND
 };

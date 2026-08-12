@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptPrimitiveShape; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleDebugUtilities {
@@ -24,6 +25,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptDebugShape() = default;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

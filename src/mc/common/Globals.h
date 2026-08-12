@@ -443,11 +443,11 @@ makeServerDiscoveryService(::Bedrock::Services::DiscoveryConfig const& discovery
 #endif
 
 #ifdef LL_PLAT_C
-MCAPI int nvFPrintf(::_iobuf*, char const*, ...);
+MCAPI int nvFPrintf(::_iobuf* stream, char const* fmt, ...);
 
-MCAPI int nvSWprintf(wchar_t*, uint64, wchar_t const*, ...);
+MCAPI int nvSWprintf(wchar_t* dst, uint64 dstLen, wchar_t const* fmt, ...);
 
-MCAPI int nvSprintf(char*, uint64, char const*, ...);
+MCAPI int nvSprintf(char* dst, uint64 dstLen, char const* fmt, ...);
 
 MCAPI ::std::ostream& operator<<(::std::ostream& os, ::cg::TextureSetLayerType const& type);
 

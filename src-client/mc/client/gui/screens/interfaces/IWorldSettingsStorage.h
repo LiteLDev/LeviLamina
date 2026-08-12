@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual ~IWorldSettingsStorage() = default;
 
-    virtual bool hasAvailableSpaceForLevel(::std::shared_ptr<::Core::FileStorageArea>) = 0;
+    virtual bool hasAvailableSpaceForLevel(::std::shared_ptr<::Core::FileStorageArea> sptStorageArea) = 0;
 
     virtual void saveWorld() = 0;
 

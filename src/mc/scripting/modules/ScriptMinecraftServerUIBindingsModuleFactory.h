@@ -8,6 +8,10 @@
 // auto generated forward declare list
 // clang-format off
 class IGameplayUserManagerConnector;
+namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct ModuleBinding; }
+namespace Scripting { struct ModuleDependency; }
+namespace Scripting { struct Version; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -30,6 +34,18 @@ public:
     MCNAPI explicit ScriptMinecraftServerUIBindingsModuleFactory(::IGameplayUserManagerConnector* userManagerConnector);
 
     MCNAPI void _addVersions();
+
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Scripting::ModuleBindingBuilder&  moduleBuilder,
+        bool                                allowUntagged,
+        ::std::vector<::std::string> const& allowedTags
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::Scripting::Version version);
     // NOLINTEND
 
 public:

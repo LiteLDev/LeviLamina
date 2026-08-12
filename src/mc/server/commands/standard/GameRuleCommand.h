@@ -10,7 +10,9 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class GameRule;
 class GameRules;
+namespace Json { class Value; }
 // clang-format on
 
 class GameRuleCommand : public ::Command {
@@ -52,18 +54,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void
+    createJsonIndex(::std::string const& ruleName, ::GameRule const& rule, ::Json::Value& json, ::std::string* value);
+
     MCAPI static void setup(::CommandRegistry& registry, ::GameRuleCommand::InitProxy&& dependencies);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
 
     // NOLINTEND
 };

@@ -40,7 +40,7 @@ public:
 
     virtual int Send(void const* pv, uint64 cb, ::webrtc::AsyncSocketPacketOptions const& options) = 0;
 
-    virtual uint64 ProcessInput(::webrtc::ArrayView<uchar const, 18446744073709546905> data) = 0;
+    virtual uint64 ProcessInput(::webrtc::ArrayView<uchar const> data) = 0;
 
     virtual ::webrtc::SocketAddress GetLocalAddress() const /*override*/;
 

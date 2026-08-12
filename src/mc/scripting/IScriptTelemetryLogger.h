@@ -25,6 +25,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onPluginDiscovery(::ScriptPluginManagerResult const& pluginManagerResult);
+
+    MCNAPI void $onPluginRun(::ScriptPluginManagerResult const& pluginManagerResult);
+
+    MCNAPI void $onDebuggerListen(bool autoAttach);
+
+    MCNAPI void $onDebuggerConnect(bool autoAttach, int retries);
+
 
     // NOLINTEND
 };

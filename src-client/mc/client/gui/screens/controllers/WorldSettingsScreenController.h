@@ -4,17 +4,21 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
+#include "mc/client/gui/ViewRequest.h"
+#include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenMode.h"
 #include "mc/client/gui/screens/controllers/WorldMultiplayerLockState.h"
 #include "mc/client/gui/screens/interfaces/IWorldSettingsStorage.h"
 #include "mc/client/gui/screens/rules/WorldSettingsRules.h"
 #include "mc/client/network/realms/World.h"
+#include "mc/client/world/PostCreateWorldAction.h"
 #include "mc/deps/cereal/schema/dynamic/NullType.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/Result.h"
+#include "mc/server/commands/PlayerPermissionLevel.h"
 #include "mc/world/level/LevelListCacheObserver.h"
 #include "mc/world/level/NetherWorldType.h"
 #include "mc/world/level/SpawnSettings.h"
@@ -32,6 +36,7 @@ class LevelData;
 class MainMenuScreenModel;
 class PlatformMultiplayerRestrictions;
 class WorldSettingsScreenControllerProxy;
+struct GameRuleId;
 struct PackManagerContentSource;
 namespace Core { class FileStorageArea; }
 namespace EduCloud { struct IEduCloudSaveSystem; }
@@ -130,7 +135,7 @@ public:
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
-    virtual bool hasAvailableSpaceForLevel(::std::shared_ptr<::Core::FileStorageArea>) /*override*/;
+    virtual bool hasAvailableSpaceForLevel(::std::shared_ptr<::Core::FileStorageArea> sptStorageArea) /*override*/;
 
     virtual void saveWorld() /*override*/;
 
@@ -160,6 +165,59 @@ public:
         ::std::string                            initialPackId,
         bool                                     unhideServerSettings
     );
+
+    MCAPI bool _canChangeWorldOption() const;
+
+    MCAPI bool _canEditDifficulty();
+
+    MCAPI void _copyAndSetDataHelper(::std::function<void(::LevelData&)> setDataCallback);
+
+    MCAPI ::ui::ViewRequest _copyWorld(::std::function<void(::LevelData&)> setDataCallback, bool leaveScreen);
+
+    MCAPI ::ui::ViewRequest _createWorld(::PostCreateWorldAction postCreateWorldAction);
+
+    MCAPI int _getDifficulty();
+
+    MCAPI bool _getMultiplayerEnabled() const;
+
+    MCAPI ::std::string _getPlatformMultiplayerWarningText() const;
+
+    MCAPI ::std::string _getWorldName();
+
+    MCAPI ::std::string _getXBLMultiplayerWarningText() const;
+
+    MCAPI void _init();
+
+    MCAPI bool _isGameRuleEnabled() const;
+
+    MCAPI bool _passedLockedContentCheck();
+
+    MCAPI void _selectRealm(::std::function<void(::Realms::World)> callback);
+
+    MCAPI void _setAllowCheatsHelper(bool value);
+
+    MCAPI void _setDefaultPermissionLevelHelper(::PlayerPermissionLevel value);
+
+    MCAPI void _setGameRule(bool value, ::GameRuleId gameRuleId, bool suppressOuput);
+
+    MCAPI void _setGameRule(int value, ::GameRuleId gameRuleId, bool suppressOuput);
+
+    MCAPI void _setLevelEditorWorldFlag();
+
+    MCAPI void _setMultiplayerEnabled(bool value);
+
+    MCAPI void _setWorldGameModeHelper(int value);
+
+    MCAPI void _setWorldName(::std::string value);
+
+    MCAPI void _setWorldTypeHelper(int value);
+
+    MCAPI ::ui::ViewRequest _startEducationWorld(bool shouldHost);
+
+    MCAPI void confirmationExperimentalGameplayDialog(
+        ::std::string const&                         messageId,
+        ::std::function<void(::ModalScreenButtonId)> callback
+    );
     // NOLINTEND
 
 public:
@@ -186,6 +244,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onCreation();
 
+    MCAPI void $onOpen();
+
+    MCAPI void $onTerminate();
+
+    MCAPI void $onLevelDeleted(::std::string const& levelId);
+
+    MCAPI void $onStorageChanged();
+
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI bool $hasAvailableSpaceForLevel(::std::shared_ptr<::Core::FileStorageArea> sptStorageArea);
+
+    MCAPI void $saveWorld();
+
+    MCFOLD ::LevelSummary& $getLevelSummary();
+
+    MCAPI ::LevelData& $getLevelData();
+
+    MCAPI void $_registerControllerCallbacks();
+
+    MCAPI void $_displayLockedWorldPopup();
     // NOLINTEND
 };

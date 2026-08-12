@@ -26,6 +26,7 @@
 #include <cmath>              // Common mathematics functions
 #include <complex>            // Complex number type
 #include <condition_variable> // condition variable
+#include <cstddef>            // Standard size and pointer difference types
 #include <cstdio>             // C Standard Input/Output library
 #include <cstdlib>            // C Standard General Utilities Library
 #include <cstring>            // C string handling
@@ -405,7 +406,12 @@ public:
 }
 
 namespace rtc {
-template<class T, size_t N = size_t(-4711ll)>
+template<class T, ::std::ptrdiff_t N = -4711>
+class ArrayView;
+}
+
+namespace webrtc {
+template<class T, ::std::ptrdiff_t N = -4711>
 class ArrayView;
 }
 

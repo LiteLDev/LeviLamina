@@ -62,6 +62,13 @@ public:
             void(::std::string const&, uint, ::std::variant<double, float, bool, ::std::string, ::Vec3> const*)>
             callback
     );
+
+    MCAPI ::BlockActorDynamicPropertiesComponent::SetResult remove(
+        ::std::string const& key,
+        ::std::function<
+            void(::std::string const&, uint, ::std::variant<double, float, bool, ::std::string, ::Vec3> const*)>
+            callback
+    );
     // NOLINTEND
 
 public:

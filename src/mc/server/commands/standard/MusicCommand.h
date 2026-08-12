@@ -64,7 +64,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _handleActionQueueOrPlay(::CompoundTag& data, ::CommandOutput& output) const;
+
+    MCAPI void _handleActionStop(::CompoundTag& data, ::CommandOutput& output) const;
+
+    MCAPI void _handleActionVolume(::CompoundTag& data, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
@@ -76,6 +86,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
 
     // NOLINTEND
 };

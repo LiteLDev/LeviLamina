@@ -11,6 +11,7 @@ class Actor;
 class BlockPos;
 class BlockSource;
 class Experiments;
+class Random;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
@@ -34,6 +35,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI EyeblossomBlock(::std::string const& nameId, int id);
+
+    MCAPI void
+    _updateEyeblossomState(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool isMainBlock) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND

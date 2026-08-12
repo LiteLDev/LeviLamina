@@ -18,12 +18,15 @@ class SensorResponseConstraint
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea contextArea) const
+        /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea contextArea) const;
+
 
     // NOLINTEND
 };

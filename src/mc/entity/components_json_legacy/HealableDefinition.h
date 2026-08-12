@@ -22,6 +22,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addFeedItem(::FeedItem const& feedItem);
+
+    MCAPI void addFeedItemByName(::std::string const& itemName);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

@@ -14,6 +14,7 @@ class IContentTierManager;
 class ISceneStack;
 class PackManifestFactory;
 class SceneFactory;
+struct ContentItem;
 struct PackContentItem;
 namespace OreUI { class RouteMatcher; }
 // clang-format on
@@ -50,12 +51,30 @@ public:
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const /*override*/;
+
+    virtual ~PackSettings() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::PackContentItem> _findPackFromId(
+        ::std::string_view                                     contentId,
+        ::std::string_view                                     levelId,
+        ::std::vector<::std::shared_ptr<::ContentItem>> const& contentItems
+    ) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

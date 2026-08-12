@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class WorldTemplateManager;
+struct WorldTemplateInfo;
 namespace OreUI { class IResourceAllowList; }
 // clang-format on
 
@@ -40,6 +41,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager>      worldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
+
+    MCAPI ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& getTemplates() const;
     // NOLINTEND
 
 public:
@@ -60,7 +63,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

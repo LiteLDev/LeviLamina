@@ -319,7 +319,7 @@ public:
 
     virtual void addUser(::OwnerPtr<::EntityContext> userEntity) = 0;
 
-    virtual ::Actor* addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>) = 0;
+    virtual ::Actor* addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) = 0;
 
     virtual ::Actor* putEntity(
         ::BlockSource&              region,
@@ -330,7 +330,7 @@ public:
 
     virtual ::Actor* putEntity(::BlockSource& region, ::ActorUniqueID id, ::OwnerPtr<::EntityContext> entity) = 0;
 
-    virtual void removeDisplayEntity(::WeakEntityRef) = 0;
+    virtual void removeDisplayEntity(::WeakEntityRef entity) = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::DisplayActorManager> getDisplayActorManager() = 0;
 
@@ -1160,7 +1160,7 @@ public:
 
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const = 0;
 
-    virtual void clearAllGenerationRequests(::NetworkIdentifier const&, ::SubClientId) = 0;
+    virtual void clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() = 0;
 
@@ -1214,6 +1214,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::TradeTables* $getTradeTables();
+
+    MCAPI ::Level* $asLevel();
+
     MCFOLD ::ClientLevel* $asClientLevel();
 
 

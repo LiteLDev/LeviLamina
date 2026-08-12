@@ -44,11 +44,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TextEditComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~TextEditComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reload(::UIComponent const& rhs) /*override*/;
 
@@ -61,7 +65,7 @@ public:
         ::ScreenEvent const&     screenEvent
     ) /*override*/;
 
-    virtual void onVisibilityChanged(bool) /*override*/;
+    virtual void onVisibilityChanged(bool visible) /*override*/;
 
     virtual ::std::string const& getTextToSpeechComponentValue() const /*override*/;
     // NOLINTEND
@@ -69,6 +73,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit TextEditComponent(::UIControl& owner);
+
+    MCAPI void _hidePlaceHolderControl();
+
+    MCAPI void _showPlaceHolderControl();
+
     MCAPI bool _textFitsInControl(::std::string const& text) const;
 
     MCAPI void deselectControl();
@@ -95,8 +105,29 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // constructor thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+
+    MCAPI void $reload(::UIComponent const& rhs);
+
+    MCAPI void $reset();
+
+    MCAPI ::ComponentReceiveActionType $receive(
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
+    );
+
+    MCAPI void $onVisibilityChanged(bool visible);
+
+    MCAPI ::std::string const& $getTextToSpeechComponentValue() const;
     // NOLINTEND
 };

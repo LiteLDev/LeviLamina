@@ -59,11 +59,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void Add(::webrtc::ArrayView<uchar const, 18446744073709546905> packet);
+    MCNAPI void Add(::webrtc::ArrayView<uchar const> packet);
 
-    MCNAPI bool AddIfUnique(::webrtc::ArrayView<uchar const, 18446744073709546905> packet);
+    MCNAPI bool AddIfUnique(::webrtc::ArrayView<uchar const> packet);
 
-    MCNAPI ::webrtc::ArrayView<uchar const, 18446744073709546905> GetNext();
+    MCNAPI ::webrtc::ArrayView<uchar const> GetNext();
 
     MCNAPI void Prune(
         ::absl::

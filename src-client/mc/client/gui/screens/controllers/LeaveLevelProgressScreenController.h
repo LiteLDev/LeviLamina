@@ -73,6 +73,14 @@ public:
         bool                                               loadAssets,
         bool                                               forceRenderBelow
     );
+
+    MCAPI void _closeEduCloudConflictPopup();
+
+    MCAPI bool _exitingErrorScreen() const;
+
+    MCAPI ::std::chrono::milliseconds const _getEduCloudIsDoneInterval() const;
+
+    MCAPI void _showEduCloudConflictPopup();
     // NOLINTEND
 
 public:
@@ -90,6 +98,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
+    MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::std::string $getAdditionalScreenInfo() const;
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCFOLD ::ui::SceneType $getSceneType() const;
+
+    MCAPI void $onLeave();
+
+    MCAPI void $onReload();
+
+    MCFOLD ::std::string $_getButtonADescription();
     // NOLINTEND
 };

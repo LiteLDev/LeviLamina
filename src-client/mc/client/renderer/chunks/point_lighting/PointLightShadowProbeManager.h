@@ -16,6 +16,7 @@ namespace PointLighting { class PointLightShadowProbe; }
 namespace PointLighting { struct AnalyticLightResources; }
 namespace dragon::atlas { class IAtlasHandle; }
 namespace dragon::atlas { class IAtlasUserOperations; }
+namespace dragon::atlas { struct AtlasTileHandle; }
 namespace mce { struct PointLightParameters; }
 namespace mce { struct TextureResourceService; }
 namespace mce::framebuilder { struct PointLightShadowParameters; }
@@ -85,6 +86,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::optional<::dragon::atlas::AtlasTileHandle>
+    _invalidateProbeFaceTile(::PointLighting::PointLightShadowProbe& probe, int faceIdx);
+
     MCAPI ::std::pair<
         ::std::optional<::mce::framebuilder::ShadowProbeDescription>,
         ::mce::framebuilder::ShadowAtlasFrameDescription>
@@ -112,7 +116,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $atCapacity() const;
 
+    MCAPI bool $canReserve(::BlockPos const&) const;
+
+    MCAPI bool $acquired(::BlockPos const&) const;
+
+    MCAPI void $reserve(
+        ::BlockPos const&,
+        ::mce::PointLightParameters const&,
+        float const,
+        ::PointLighting::AnalyticLightResources&
+    );
+
+    MCAPI void $release(::BlockPos const&, ::PointLighting::AnalyticLightResources&);
+
+    MCAPI void $advance(::BlockPos const&, ::PointLighting::AnalyticLightResources&, float);
+
+    MCAPI void $finalize(::BlockPos const&, ::PointLighting::AnalyticLightResources&);
     // NOLINTEND
 };
 

@@ -29,6 +29,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _applyEnchantmentsToProjectile(::Mob const& owner, ::Actor& projectile);
+
     MCAPI ::Actor* shootProjectileFromDefinition(
         ::ActorDefinitionIdentifier const& identifier,
         ::Mob*                             owner,

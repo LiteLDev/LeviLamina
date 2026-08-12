@@ -30,4 +30,12 @@ public:
     ::ll::TypedStorage<4, 4, ::ProgressiveTakeBarLocation>                    mCurrentBarLocation;
     ::ll::TypedStorage<4, 8, ::Vec2>                                          mBarOnScreenPosition;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool isActiveContainerSlot(::std::string const& collectionName, int collectionIndex) const;
+
+    MCAPI void updateStoredValuePointer();
+    // NOLINTEND
 };

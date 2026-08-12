@@ -11,9 +11,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockSource;
 class ComponentItem;
 class Container;
+class ItemStack;
 class SemVersion;
 class Vec3;
 struct ActorDefinitionIdentifier;
@@ -46,12 +48,16 @@ public:
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
 
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
+
+    virtual ~EntityPlacerItemComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EntityPlacerItemComponent(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
+
+    MCAPI void _setActorCustomName(::Actor& actor, ::ItemStack const& item) const;
 
     MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
@@ -72,6 +78,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

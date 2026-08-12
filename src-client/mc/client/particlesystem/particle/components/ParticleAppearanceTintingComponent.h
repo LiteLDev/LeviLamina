@@ -69,6 +69,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _parseColorBlock(::ConstDeserializeDataParams const& deserializeDataParams, float value);
+
+    MCAPI void _parseGradientBlock(::ConstDeserializeDataParams const& deserializeDataParams);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);

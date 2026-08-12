@@ -33,6 +33,12 @@ public:
     DataDrivenUIGenericNode();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~DataDrivenUIGenericNode() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI DataDrivenUIGenericNode(::OreUI::DataDrivenUIGenericNode const& other);
@@ -78,6 +84,12 @@ public:
             ::OreUI::DataDrivenUIGenericNode,
             ::std::allocator<::OreUI::DataDrivenUIGenericNode>> const& childrenNodes
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

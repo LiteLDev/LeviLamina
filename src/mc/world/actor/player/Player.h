@@ -452,15 +452,15 @@ public:
 
     virtual bool canChangeDimensionsUsingPortal() const /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void changeDimensionWithCredits(::DimensionType);
-#else // LL_PLAT_C
     virtual void changeDimensionWithCredits(::DimensionType dimension);
+
+#ifdef LL_PLAT_S
+    virtual void tickWorld(::Tick const&);
+#else // LL_PLAT_C
+    virtual void tickWorld(::Tick const& currentTick);
 #endif
 
-    virtual void tickWorld(::Tick const&);
-
-    virtual void frameUpdate(::FrameUpdateContextBase&) = 0;
+    virtual void frameUpdate(::FrameUpdateContextBase& frameUpdateContextBase) = 0;
 
     virtual ::std::vector<::ChunkPos> const& getTickingOffsets() const;
 
@@ -476,11 +476,7 @@ public:
 
     virtual bool isFireImmune() const /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void checkMovementStats(::Vec3 const&);
-#else // LL_PLAT_C
     virtual void checkMovementStats(::Vec3 const& d);
-#endif
 
     virtual ::HashedString getCurrentStructureFeature() const;
 
@@ -544,21 +540,21 @@ public:
 
     virtual void openPortfolio();
 
+#ifdef LL_PLAT_S
     virtual void openBook(int, bool, int, ::BlockActor*);
-
-#ifdef LL_PLAT_S
-    virtual void openTrading(::ActorUniqueID const&, bool);
 #else // LL_PLAT_C
+    virtual void openBook(int bookSlot, bool editable, int page, ::BlockActor* lectern);
+#endif
+
     virtual void openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen);
-#endif
-
-    virtual void openChalkboard(::ChalkboardBlockActor&, bool);
 
 #ifdef LL_PLAT_S
-    virtual void openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData>);
+    virtual void openChalkboard(::ChalkboardBlockActor&, bool);
 #else // LL_PLAT_C
-    virtual void openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
+    virtual void openChalkboard(::ChalkboardBlockActor& chalkboard, bool showLockToggle);
 #endif
+
+    virtual void openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
 
     virtual void openInventory();
 
@@ -571,46 +567,24 @@ public:
     virtual void
     displayClientMessage(::std::string const& message, ::std::optional<::std::string> const filteredMessage);
 
-#ifdef LL_PLAT_S
-    virtual void displayTextObjectMessage(::TextObjectRoot const&, ::std::string const&, ::std::string const&);
-#else // LL_PLAT_C
     virtual void displayTextObjectMessage(
         ::TextObjectRoot const& textObject,
         ::std::string const&    fromXuid,
         ::std::string const&    fromPlatformId
     );
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void
-    displayTextObjectWhisperMessage(::ResolvedTextObject const&, ::std::string const&, ::std::string const&);
-#else // LL_PLAT_C
     virtual void displayTextObjectWhisperMessage(
         ::ResolvedTextObject const& resolvedTextObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     );
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void displayTextObjectWhisperMessage(::std::string const&, ::std::string const&, ::std::string const&);
-#else // LL_PLAT_C
     virtual void displayTextObjectWhisperMessage(
         ::std::string const& message,
         ::std::string const& xuid,
         ::std::string const& platformId
     );
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void displayWhisperMessage(
-        ::std::string const&,
-        ::std::string const&,
-        ::std::optional<::std::string> const,
-        ::std::string const&,
-        ::std::string const&
-    );
-#else // LL_PLAT_C
     virtual void displayWhisperMessage(
         ::std::string const&                 author,
         ::std::string const&                 message,
@@ -618,7 +592,6 @@ public:
         ::std::string const&                 xuid,
         ::std::string const&                 platformId
     );
-#endif
 
     virtual float getShadowRadius() const /*override*/;
 
@@ -632,19 +605,15 @@ public:
 
     virtual bool canStartSleepInBed();
 
-#ifdef LL_PLAT_S
-    virtual void sendInventory(bool) /*override*/;
-#else // LL_PLAT_C
     virtual void sendInventory(bool shouldSelectSlot) /*override*/;
-#endif
+
+    virtual void openSign(::BlockPos const& position, bool isFrontSide);
 
 #ifdef LL_PLAT_S
-    virtual void openSign(::BlockPos const&, bool);
-#else // LL_PLAT_C
-    virtual void openSign(::BlockPos const& position, bool isFrontSide);
-#endif
-
     virtual void playEmote(::std::string const&, bool const);
+#else // LL_PLAT_C
+    virtual void playEmote(::std::string const& pieceId, bool const playChatMessage);
+#endif
 
     virtual bool isSilentObserver() const /*override*/;
 
@@ -703,11 +672,7 @@ public:
 
     virtual bool consumeTotem() /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual bool isActorRelevant(::Actor const&);
-#else // LL_PLAT_C
     virtual bool isActorRelevant(::Actor const& actor);
-#endif
 
     virtual float getMapDecorationRotation() const /*override*/;
 
@@ -740,11 +705,7 @@ public:
     virtual void
     sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction> transaction) const = 0;
 
-#ifdef LL_PLAT_S
-    virtual void sendNetworkPacket(::Packet&) const;
-#else // LL_PLAT_C
     virtual void sendNetworkPacket(::Packet& packet) const;
-#endif
 
     virtual bool canExistWhenDisallowMob() const /*override*/;
 
@@ -778,15 +739,27 @@ public:
 
     virtual ::std::optional<::PlayerPartyInfo> getPartyInfo_UNTRUSTED() const;
 
+#ifdef LL_PLAT_S
     virtual void requestMissingSubChunk(::SubChunkPos const&);
+#else // LL_PLAT_C
+    virtual void requestMissingSubChunk(::SubChunkPos const& scp);
+#endif
 
     virtual uchar getMaxChunkBuildRadius() const;
 
     virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
 
+#ifdef LL_PLAT_S
     virtual void setBehaviorCommandStatus(::std::string const&, ::BehaviorStatus);
+#else // LL_PLAT_C
+    virtual void setBehaviorCommandStatus(::std::string const& name, ::BehaviorStatus status);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void setRemotePlayerTicked(bool);
+#else // LL_PLAT_C
+    virtual void setRemotePlayerTicked(bool ticked);
+#endif
 
     virtual ::std::unique_ptr<::ISparseContainerSetListener> createSparseContainerListener();
 
@@ -845,7 +818,34 @@ public:
     MCAPI bool _canChangeGameType(::GameType newGameType) const;
 #endif
 
+    MCAPI bool _checkAndFixSpawnPosition(
+        ::Vec3&                                        spawnPosition,
+        ::std::vector<::gsl::not_null<::BlockSource*>> regions,
+        bool                                           adjustYToSolidGround,
+        bool                                           searchUp,
+        bool                                           positionFromSave
+    );
+
+#ifdef LL_PLAT_C
+    MCAPI bool _findFallbackSpawnPosition(
+        ::Vec3&                                        spawnPosition,
+        ::std::vector<::gsl::not_null<::BlockSource*>> regions,
+        uint const                                     maxDistance,
+        bool const                                     checkStoredFallback
+    );
+#endif
+
+    MCAPI void _handleCarriedItemInteractText();
+
+    MCAPI bool _isChunkSourceLoaded(::Vec3 const& spawnPosition, ::BlockSource const& region) const;
+
     MCAPI void _setPlayerGameType(::GameType gameType);
+
+    MCAPI bool _validateSpawnPositionAvailability(
+        ::Vec3 const&       pos,
+        ::BlockSource*      blockSourceChunkCheck,
+        ::Vec3 const* const AABBoffset
+    ) const;
 
     MCAPI ::ActorHurtResult attack(
         ::Actor&                                       actor,
@@ -865,7 +865,11 @@ public:
 
     MCAPI void causeFoodExhaustion(float exhaustionAmount);
 
+    MCAPI bool checkBed(::BlockSource* spawnBlockSource, ::Vec3 const* const positionToCheck);
+
     MCAPI bool checkNeedAutoJump(float inputMoveX, float inputMoveZ);
+
+    MCAPI bool checkSpawnBlock(::BlockSource const& region) const;
 
     MCAPI void completeUsingItem();
 
@@ -952,6 +956,8 @@ public:
 
     MCAPI bool isFlying() const;
 
+    MCAPI bool isForcedRespawn() const;
+
     MCAPI bool isHiddenFrom(::Mob& target) const;
 
     MCAPI bool isItemOnCooldown(::HashedString const& category) const;
@@ -967,6 +973,17 @@ public:
         bool                          isGlobal
     );
 
+    MCAPI void playPredictiveSynchronizedSound(
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        bool                                   isGlobal
+    );
+
+#ifdef LL_PLAT_S
+    MCAPI void recheckSpawnPosition();
+#endif
+
 #ifdef LL_PLAT_C
     MCAPI void registerTrackedBoss(::ActorUniqueID mob);
 #endif
@@ -979,6 +996,8 @@ public:
 
     MCAPI void setAgent(::Agent* agent);
 
+    MCAPI void setBedRespawnPosition(::BlockPos const& bedPosition);
+
     MCAPI void setChunkRadius(uint chunkRadius);
 
     MCAPI void setCommandPermissions(::CommandPermissionLevel permissions);
@@ -990,6 +1009,8 @@ public:
     MCAPI void setPlayerUIItem(::PlayerUISlot slot, ::ItemStack const& item, bool forceBalance);
 
     MCAPI void setRespawnPosition(::BlockPos const& inRespawnPosition, ::DimensionType dimension);
+
+    MCAPI void setRespawnPositionCandidate();
 
     MCAPI ::ItemStack const& setSelectedSlot(int slot);
 
@@ -1111,7 +1132,13 @@ public:
 
     MCAPI bool $canChangeDimensionsUsingPortal() const;
 
+    MCFOLD void $changeDimensionWithCredits(::DimensionType dimension);
+
+#ifdef LL_PLAT_S
     MCAPI void $tickWorld(::Tick const&);
+#else // LL_PLAT_C
+    MCAPI void $tickWorld(::Tick const& currentTick);
+#endif
 
     MCAPI ::std::vector<::ChunkPos> const& $getTickingOffsets() const;
 
@@ -1127,7 +1154,9 @@ public:
 
     MCAPI bool $isFireImmune() const;
 
-    MCFOLD void $checkMovementStats(::Vec3 const&);
+    MCFOLD void $checkMovementStats(::Vec3 const& d);
+
+    MCAPI ::HashedString $getCurrentStructureFeature() const;
 
     MCFOLD bool $isAutoJumpEnabled() const;
 
@@ -1146,6 +1175,8 @@ public:
     MCAPI void $dropEquipmentOnDeath(::ActorDamageSource const& source);
 
     MCAPI void $dropEquipmentOnDeath();
+
+    MCFOLD void $clearVanishEnchantedItemsOnDeath();
 
     MCAPI bool $drop(::ItemStack const& item, bool const randomly);
 
@@ -1185,16 +1216,68 @@ public:
 
     MCAPI void $damageCarriedItemOnAttack(::Actor& target, float damageDealtToTarget);
 
-    MCFOLD void $openChalkboard(::ChalkboardBlockActor&, bool);
+    MCFOLD void $openPortfolio();
 
+#ifdef LL_PLAT_S
+    MCFOLD void $openBook(int, bool, int, ::BlockActor*);
+#else // LL_PLAT_C
+    MCFOLD void $openBook(int bookSlot, bool editable, int page, ::BlockActor* lectern);
+#endif
+
+    MCFOLD void $openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen);
+
+#ifdef LL_PLAT_S
+    MCFOLD void $openChalkboard(::ChalkboardBlockActor&, bool);
+#else // LL_PLAT_C
+    MCFOLD void $openChalkboard(::ChalkboardBlockActor& chalkboard, bool showLockToggle);
+#endif
+
+    MCFOLD void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
+
+    MCFOLD void $openInventory();
+
+#ifdef LL_PLAT_S
     MCAPI void $displayChatMessage(
         ::std::string const&                 author,
         ::std::string const&                 message,
         ::std::optional<::std::string> const filteredMessage
     );
+#else // LL_PLAT_C
+    MCFOLD void $displayChatMessage(
+        ::std::string const&                 author,
+        ::std::string const&                 message,
+        ::std::optional<::std::string> const filteredMessage
+    );
+#endif
 
     MCAPI void
     $displayClientMessage(::std::string const& message, ::std::optional<::std::string> const filteredMessage);
+
+    MCFOLD void $displayTextObjectMessage(
+        ::TextObjectRoot const& textObject,
+        ::std::string const&    fromXuid,
+        ::std::string const&    fromPlatformId
+    );
+
+    MCFOLD void $displayTextObjectWhisperMessage(
+        ::ResolvedTextObject const& resolvedTextObject,
+        ::std::string const&        xuid,
+        ::std::string const&        platformId
+    );
+
+    MCFOLD void $displayTextObjectWhisperMessage(
+        ::std::string const& message,
+        ::std::string const& xuid,
+        ::std::string const& platformId
+    );
+
+    MCFOLD void $displayWhisperMessage(
+        ::std::string const&                 author,
+        ::std::string const&                 message,
+        ::std::optional<::std::string> const filteredMessage,
+        ::std::string const&                 xuid,
+        ::std::string const&                 platformId
+    );
 
     MCAPI float $getShadowRadius() const;
 
@@ -1208,11 +1291,23 @@ public:
 
     MCAPI bool $canStartSleepInBed();
 
+    MCFOLD void $sendInventory(bool shouldSelectSlot);
+
+    MCFOLD void $openSign(::BlockPos const& position, bool isFrontSide);
+
+#ifdef LL_PLAT_S
     MCFOLD void $playEmote(::std::string const&, bool const);
+#else // LL_PLAT_C
+    MCFOLD void $playEmote(::std::string const& pieceId, bool const playChatMessage);
+#endif
 
     MCAPI bool $isSilentObserver() const;
 
     MCAPI void $useItem(::ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem);
+
+    MCFOLD bool $isLoading() const;
+
+    MCFOLD bool $isPlayerInitialized() const;
 
     MCFOLD void $stopLoading();
 
@@ -1250,6 +1345,8 @@ public:
 
     MCAPI bool $consumeTotem();
 
+    MCFOLD bool $isActorRelevant(::Actor const& actor);
+
     MCFOLD float $getMapDecorationRotation() const;
 
     MCAPI void
@@ -1261,9 +1358,15 @@ public:
 
     MCAPI void $stopSwimming();
 
+    MCFOLD void $onSuspension();
+
+    MCFOLD void $onLinkedSlotsChanged();
+
     MCFOLD bool $canBePulledIntoVehicle() const;
 
     MCAPI void $feed(int itemId);
+
+    MCFOLD void $sendNetworkPacket(::Packet& packet) const;
 
     MCFOLD bool $canExistWhenDisallowMob() const;
 
@@ -1293,13 +1396,29 @@ public:
 
     MCAPI void $doExitWaterSplashEffect();
 
+    MCFOLD ::std::optional<::PlayerPartyInfo> $getPartyInfo_UNTRUSTED() const;
+
+#ifdef LL_PLAT_S
     MCFOLD void $requestMissingSubChunk(::SubChunkPos const&);
+#else // LL_PLAT_C
+    MCFOLD void $requestMissingSubChunk(::SubChunkPos const& scp);
+#endif
+
+    MCFOLD uchar $getMaxChunkBuildRadius() const;
 
     MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
+#ifdef LL_PLAT_S
     MCFOLD void $setBehaviorCommandStatus(::std::string const&, ::BehaviorStatus);
+#else // LL_PLAT_C
+    MCFOLD void $setBehaviorCommandStatus(::std::string const& name, ::BehaviorStatus status);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $setRemotePlayerTicked(bool);
+#else // LL_PLAT_C
+    MCFOLD void $setRemotePlayerTicked(bool ticked);
+#endif
 
     MCFOLD ::std::unique_ptr<::ISparseContainerSetListener> $createSparseContainerListener();
 
@@ -1324,73 +1443,9 @@ public:
 
     MCAPI ::HashedString const& $getActorRendererId() const;
 
-    MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
-
-#ifdef LL_PLAT_C
-    MCFOLD void $changeDimensionWithCredits(::DimensionType dimension);
-
-    MCAPI ::HashedString $getCurrentStructureFeature() const;
-
-    MCFOLD void $clearVanishEnchantedItemsOnDeath();
-
-    MCFOLD void $openPortfolio();
-
-    MCFOLD void $openBook(int, bool, int, ::BlockActor*);
-
-    MCFOLD void $openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen);
-
-    MCFOLD void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
-
-    MCFOLD void $openInventory();
-
-    MCFOLD void $displayTextObjectMessage(
-        ::TextObjectRoot const& textObject,
-        ::std::string const&    fromXuid,
-        ::std::string const&    fromPlatformId
-    );
-
-    MCFOLD void $displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& resolvedTextObject,
-        ::std::string const&        xuid,
-        ::std::string const&        platformId
-    );
-
-    MCFOLD void $displayTextObjectWhisperMessage(
-        ::std::string const& message,
-        ::std::string const& xuid,
-        ::std::string const& platformId
-    );
-
-    MCFOLD void $displayWhisperMessage(
-        ::std::string const&                 author,
-        ::std::string const&                 message,
-        ::std::optional<::std::string> const filteredMessage,
-        ::std::string const&                 xuid,
-        ::std::string const&                 platformId
-    );
-
-    MCFOLD void $sendInventory(bool shouldSelectSlot);
-
-    MCFOLD void $openSign(::BlockPos const& position, bool isFrontSide);
-
-    MCFOLD bool $isLoading() const;
-
-    MCFOLD bool $isPlayerInitialized() const;
-
-    MCFOLD bool $isActorRelevant(::Actor const& actor);
-
-    MCFOLD void $onSuspension();
-
-    MCFOLD void $onLinkedSlotsChanged();
-
-    MCFOLD void $sendNetworkPacket(::Packet& packet) const;
-
-    MCFOLD ::std::optional<::PlayerPartyInfo> $getPartyInfo_UNTRUSTED() const;
-
-    MCFOLD uchar $getMaxChunkBuildRadius() const;
-
     MCFOLD void $_serverInitItemStackIds();
-#endif
+
+    MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
 
 
     // NOLINTEND

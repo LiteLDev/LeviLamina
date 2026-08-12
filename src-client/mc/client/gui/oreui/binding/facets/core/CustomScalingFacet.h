@@ -51,6 +51,18 @@ public:
     MCAPI explicit CustomScalingFacet(
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::IClientInstance>()> getClientInstance
     );
+
+    MCFOLD int getFixedGuiScaleModifier() const;
+
+    MCAPI bool getGuiAccessibilityScaling() const;
+
+    MCFOLD int getMaxFixedGuiScaleModifier() const;
+
+    MCFOLD int getMinFixedGuiScaleModifier() const;
+
+    MCAPI char const* getScalingModeOverride() const;
+
+    MCAPI void setFixedGuiScaleModifier(int fixedGuiScaleModifier);
     // NOLINTEND
 
 public:
@@ -68,7 +80,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

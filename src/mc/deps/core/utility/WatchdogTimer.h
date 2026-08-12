@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Scheduler;
+class TaskResult;
 class WorkerPool;
 // clang-format on
 
@@ -43,6 +44,8 @@ public:
         ::std::chrono::nanoseconds                                 deadline,
         bool                                                       assertOnDeadline
     );
+
+    MCNAPI ::TaskResult _watchdogTimerThreadRoutine();
 
     MCNAPI void terminateWatchdogTimer();
 #endif

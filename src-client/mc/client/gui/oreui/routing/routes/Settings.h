@@ -17,6 +17,7 @@ class SceneFactory;
 class ServerInstance;
 class TaskGroup;
 namespace OreUI { class RouteMatcher; }
+namespace OreUI { struct RouteAction; }
 namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
@@ -47,9 +48,11 @@ public:
     // NOLINTBEGIN
     virtual bool shouldAddToConfiguration() const /*override*/;
 
-    virtual void
-    addToMatcher(::OreUI::RouteMatcher&, ::SceneFactory&, ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&) const
-        /*override*/;
+    virtual void addToMatcher(
+        ::OreUI::RouteMatcher&                              routeMatcher,
+        ::SceneFactory&                                     sceneFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -64,6 +67,17 @@ public:
         ::std::weak_ptr<::RealmsAPI>          realms,
         ::ui::ScreenTechStackSelector&        screenTechStackSelector
     );
+
+    MCAPI void _navigateToScreen(
+        ::SettingsTabIndex                                  tabIndex,
+        ::std::string const&                                path,
+        ::SceneFactory&                                     sceneFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack,
+        ::OreUI::RouteAction const&                         routeAction,
+        bool                                                fullscreen,
+        bool                                                skipLegacyProgress,
+        bool                                                legacySyncOnly
+    ) const;
     // NOLINTEND
 
 public:
@@ -106,7 +120,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $shouldAddToConfiguration() const;
 
+    MCAPI void $addToMatcher(
+        ::OreUI::RouteMatcher&                              routeMatcher,
+        ::SceneFactory&                                     sceneFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
+    ) const;
     // NOLINTEND
 };
 

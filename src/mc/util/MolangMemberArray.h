@@ -11,6 +11,7 @@
 #include "mc/util/MolangStruct_RGBA.h"
 #include "mc/util/MolangStruct_RotYAndPosY.h"
 #include "mc/util/MolangStruct_SpeedAndDirection.h"
+#include "mc/util/MolangStruct_TRS.h"
 #include "mc/util/MolangStruct_TentacleAngleAndSwimRotation.h"
 #include "mc/util/MolangStruct_UV.h"
 #include "mc/util/MolangStruct_XY.h"
@@ -55,6 +56,10 @@ public:
 
     MCAPI MolangMemberArray(::MolangStruct_BaseAndPattern, int base, int pattern);
 
+#ifdef LL_PLAT_S
+    MCAPI MolangMemberArray(::MolangStruct_MinAndMax, ::MolangMemberArray&& min, ::MolangMemberArray&& max);
+#endif
+
 #ifdef LL_PLAT_C
     MCAPI MolangMemberArray(::MolangStruct_MinAndMax, ::MolangMemberArray&& min, ::MolangMemberArray&& max);
 #endif
@@ -68,6 +73,15 @@ public:
     MCAPI MolangMemberArray(::MolangStruct_TentacleAngleAndSwimRotation, float tentacleAngle, float swimRotation);
 
     MCAPI MolangMemberArray(::MolangStruct_UV, float u, float v);
+
+    MCAPI MolangMemberArray(
+        ::MolangStruct_TRS,
+        ::MolangMemberArray&& translation,
+        ::MolangMemberArray&& rotation,
+        ::MolangMemberArray&& scale
+    );
+
+    MCAPI void add(::HashedString const& name, ::MolangScriptArg const& value);
 
     MCAPI ::MolangScriptArg& getOrAdd(::HashedString const& name);
     // NOLINTEND

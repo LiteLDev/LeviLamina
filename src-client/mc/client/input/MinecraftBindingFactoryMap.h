@@ -25,7 +25,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ::std::function<bool()> getBooleanBinding(uint) const /*override*/;
+        virtual ::std::function<bool()> getBooleanBinding(uint name) const /*override*/;
 
         virtual ::std::function<float()> getFloatBinding(uint) const /*override*/;
 
@@ -49,7 +49,25 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCAPI ::std::function<bool()> $getBooleanBinding(uint name) const;
 
+        MCAPI ::std::function<float()> $getFloatBinding(uint) const;
+
+        MCAPI ::std::function<::std::string()> $getStringBinding(uint) const;
+
+        MCAPI ::std::function<::glm::vec2()> $getPointBinding(uint) const;
+
+        MCAPI ::std::function<::RectangleArea()> $getAreaBinding(uint) const;
+
+        MCAPI ::std::function<void(::RectangleArea)> $getDynamicAreaBinding(uint) const;
+
+        MCAPI ::std::function<void(float)> $getFloatSetter(uint) const;
+
+        MCFOLD void $setCustomAreaBinding(::std::string const&, ::RectangleArea);
+
+        MCFOLD void $removeCustomAreaBinding(::std::string const&);
+
+        MCFOLD ::std::vector<uint> $getCustomAreaBindingNames() const;
         // NOLINTEND
     };
 
@@ -63,12 +81,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BindingFactory const& getBindingFactory(int) const /*override*/;
+    virtual ::BindingFactory const& getBindingFactory(int controllerId) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::BindingFactory const& $getBindingFactory(int controllerId) const;
     // NOLINTEND
 };

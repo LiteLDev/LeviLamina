@@ -20,6 +20,7 @@ class EntityRegistry;
 class IAddActorEntityProxy;
 class ILevelChunkEventManagerConnector;
 class ILevelStorageManagerConnector;
+class LevelChunk;
 class LevelStorage;
 class WeakEntityRef;
 struct ActorUniqueID;
@@ -51,6 +52,10 @@ public:
         ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
         ::Bedrock::NotNullNonOwnerPtr<::ActorManager>              actorManager
     );
+
+    MCAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
+
+    MCAPI void _onRemoveActorEntityReferences(::Actor& actor);
 
     MCAPI void _saveAllAutonomousActors(::LevelStorage& levelStorage);
 

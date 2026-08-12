@@ -44,4 +44,14 @@ public:
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ContentItemCollection>>>    mSelectedView;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ContentItem const>>>         mSelectedItems;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::vector<::std::shared_ptr<::ContentItem const>> getAndExpandSelectedItems() const;
+
+    MCAPI ::ContentItemCollection& getSelectedView();
+
+    MCAPI ::std::array<::gsl::not_null<::std::shared_ptr<::StorageManagementViews::ContentTab>>, 6> getTabs();
+    // NOLINTEND
 };

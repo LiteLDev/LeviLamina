@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BaseBlockLocationIterator;
 class Block;
 class BlockPalette;
 class BlockPos;
@@ -71,6 +72,14 @@ public:
     );
 #endif
 
+    MCNAPI void _editorFillBlockInfo(
+        ::BlockSource&                                 region,
+        ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator,
+        ::BlockPos const&                              posMin,
+        ::BlockPos const&                              size,
+        ::BlockPos const&                              structureOffset
+    );
+
     MCNAPI void editorFillFromWorld(
         ::BlockSource&             region,
         ::StructureSettings const& structureSettings,
@@ -81,6 +90,14 @@ public:
         ::BlockSource&                                 region,
         ::StructureSettings const&                     structureSettings,
         ::Editor::RelativeVolumeListBlockVolume const& volume
+    );
+
+    MCNAPI void editorFillFromWorld(
+        ::BlockSource&                                 region,
+        ::StructureSettings const&                     structureSettings,
+        ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator,
+        ::BlockPos const&                              posMin,
+        ::BlockPos const&                              span
     );
 
     MCNAPI void placeStructureTemplateInWorldForEditor(

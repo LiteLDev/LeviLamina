@@ -13,6 +13,7 @@
 // auto generated forward declare list
 // clang-format off
 class PlayerMessagingService;
+struct MessageData;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct MessageImage; }
 // clang-format on
@@ -44,6 +45,25 @@ public:
         ::ll::TypedStorage<8, 232, ::std::optional<::OreUI::MessageGamedrop>> mGamedrop;
         ::ll::TypedStorage<1, 1, ::PlayerMessaging::MessageStyle>             mStyle;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        FacetMessage();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI FacetMessage(
+            ::MessageData const&                                       message,
+            ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
     };
 
     struct FacetMessageList {
@@ -74,6 +94,20 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void reportClick(
+        ::std::string const& messageID,
+        ::std::string const& instanceID,
+        ::std::string const& surface,
+        ::std::string const& buttonID
+    );
+
+    MCAPI void
+    reportDismiss(::std::string const& messageID, ::std::string const& instanceID, ::std::string const& surface);
     // NOLINTEND
 
 public:

@@ -2,10 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/script_core/runtime/scripting/Result.h"
+
 // auto generated forward declare list
 // clang-format off
 class Potion;
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EngineError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -15,6 +19,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::Potion const>>> mPotion;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Scripting::Result<::std::optional<int>, ::Scripting::EngineError> _getDurationTicks() const;
     // NOLINTEND
 
 public:

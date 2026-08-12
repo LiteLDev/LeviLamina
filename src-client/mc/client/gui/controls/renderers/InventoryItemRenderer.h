@@ -8,6 +8,7 @@
 #include "mc/client/gui/controls/renderers/MinecraftUICustomRenderer.h"
 #include "mc/client/gui/screens/UIBatchType.h"
 #include "mc/client/renderer/ActorShaderManager.h"
+#include "mc/client/renderer/actor/ItemRenderChunkType.h"
 #include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
@@ -129,6 +130,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::UIItemRenderInfo getItemRenderInfo(::ItemStack const& item);
+
+    MCAPI static ::ItemRenderChunkType getRenderTypeFromItem(::ItemStack const& item);
     // NOLINTEND
 
 public:

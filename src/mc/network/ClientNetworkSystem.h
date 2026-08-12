@@ -150,6 +150,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Social::GameConnectionInfo const& $getConnectionInfo() const;
+
+    MCAPI ::std::optional<::std::string> $getNetworkInfoString() const;
+
 
     // NOLINTEND
 };

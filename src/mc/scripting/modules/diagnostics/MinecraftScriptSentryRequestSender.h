@@ -29,12 +29,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void sendRequest(::SentryEnvelope) /*override*/;
+    virtual void sendRequest(::SentryEnvelope sentryEvent) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $sendRequest(::SentryEnvelope sentryEvent);
+
 
     // NOLINTEND
 };

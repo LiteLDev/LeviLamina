@@ -33,8 +33,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string GetRfc4572Fingerprint() const;
 
-    MCNAPI
-    SSLFingerprint(::std::string_view algorithm, ::webrtc::ArrayView<uchar const, 18446744073709546905> digest_view);
+    MCNAPI SSLFingerprint(::std::string_view algorithm, ::webrtc::ArrayView<uchar const> digest_view);
 
     MCNAPI ::std::string ToString() const;
 
@@ -60,8 +59,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::std::string_view algorithm, ::webrtc::ArrayView<uchar const, 18446744073709546905> digest_view);
+    MCNAPI void* $ctor(::std::string_view algorithm, ::webrtc::ArrayView<uchar const> digest_view);
     // NOLINTEND
 };
 

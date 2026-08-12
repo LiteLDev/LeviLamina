@@ -7,12 +7,15 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/threading/Mutex.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorAnimationControllerInfo;
+class MinEngineVersion;
 class ResourceLoadManager;
 class ResourcePackManager;
+namespace Core { class Path; }
 // clang-format on
 
 class ActorAnimationControllerGroup : public ::Bedrock::EnableNonOwnerReferences {
@@ -36,6 +39,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorAnimationControllerGroup();
+
+    MCAPI void _loadActorAnimationController(
+        ::std::string const&      fileData,
+        ::Core::Path const&       filenameWithExtension,
+        ::MinEngineVersion const& minEngineVersion,
+        ::CurrentCmdVersion const packCommandVersion
+    );
 
     MCAPI ::std::shared_ptr<::ActorAnimationControllerInfo> getActorAnimationControllerInfo(::HashedString const& name);
 

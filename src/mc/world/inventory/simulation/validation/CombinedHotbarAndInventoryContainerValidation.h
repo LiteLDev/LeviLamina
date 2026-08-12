@@ -28,6 +28,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool
+    $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
+
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+
+    MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
+
 
     // NOLINTEND
 };

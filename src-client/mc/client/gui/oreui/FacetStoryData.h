@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/resources/AllowListPath.h"
 #include "mc/client/realms/PostStatus.h"
+#include "mc/client/realms/stories/FetchStatus.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -38,6 +39,54 @@ public:
     FacetStoryData& operator=(FacetStoryData const&);
     FacetStoryData(FacetStoryData const&);
     FacetStoryData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::string const& getAuthorXuid() const;
+
+    MCAPI ::Realms::Stories::FetchStatus getCommentsStatus() const;
+
+    MCAPI ::Realms::Stories::PostStatus getDeleteStatus() const;
+
+    MCAPI bool getEventHasCoordinates() const;
+
+    MCAPI ::std::string const& getEventMetadata() const;
+
+    MCAPI ::std::vector<::std::string> const& getEventPlayerXuids() const;
+
+    MCAPI int getEventXCoordinate() const;
+
+    MCAPI int getEventYCoordinate() const;
+
+    MCAPI int getEventZCoordinate() const;
+
+    MCAPI bool getHasLiked() const;
+
+    MCAPI bool getHasViewed() const;
+
+    MCAPI ::std::string const& getId() const;
+
+    MCAPI ::Realms::Stories::FetchStatus getImageStatus() const;
+
+    MCAPI bool getIsEvent() const;
+
+    MCAPI bool getIsEventLoaded() const;
+
+    MCAPI int getNumComments() const;
+
+    MCAPI ::Realms::Stories::PostStatus getReportToClubOwnerStatus() const;
+
+    MCAPI ::Realms::Stories::PostStatus getReportToXboxStatus() const;
+
+    MCAPI ::Realms::Stories::PostStatus getSetViewedStatus() const;
+
+    MCAPI ::Realms::Stories::PostStatus getToggleLikeStatus() const;
+
+    MCAPI int getTotalLikes() const;
+
+    MCAPI void setHasViewed(bool value);
+    // NOLINTEND
 };
 
 } // namespace OreUI::RealmsStories

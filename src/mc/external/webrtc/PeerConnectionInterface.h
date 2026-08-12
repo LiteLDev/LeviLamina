@@ -487,8 +487,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::webrtc::RTCError $RemoveTrackOrError(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> a1);
+
+    MCNAPI void $ClearStatsCache();
+
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::DataChannelInterface>>
+    $CreateDataChannelOrError(::std::string const& a1, ::webrtc::DataChannelInit const* a2);
+
     MCNAPI ::webrtc::scoped_refptr<::webrtc::DataChannelInterface>
     $CreateDataChannel(::std::string const& label, ::webrtc::DataChannelInit const* config);
+
+    MCNAPI void $SetLocalDescription(
+        ::std::unique_ptr<::webrtc::SessionDescriptionInterface>                a1,
+        ::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> a2
+    );
+
+    MCNAPI void $SetLocalDescription(::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface> a1);
+
+    MCNAPI void $SetLocalDescription(::webrtc::SetSessionDescriptionObserver* a1);
+
+    MCNAPI void
+    $SetRemoteDescription(::webrtc::SetSessionDescriptionObserver* a1, ::webrtc::SessionDescriptionInterface* a2);
+
+    MCNAPI void
+    $AddIceCandidate(::std::unique_ptr<::webrtc::IceCandidate> a1, ::std::function<void(::webrtc::RTCError)> a2);
+
+    MCNAPI bool $RemoveIceCandidates(::std::vector<::webrtc::Candidate> const& a1);
 
 
     // NOLINTEND

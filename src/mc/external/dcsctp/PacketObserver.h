@@ -18,10 +18,9 @@ public:
     // NOLINTBEGIN
     virtual ~PacketObserver() = default;
 
-    virtual void OnSentPacket(::dcsctp::TimeMs now, ::webrtc::ArrayView<uchar const, 18446744073709546905> payload) = 0;
+    virtual void OnSentPacket(::dcsctp::TimeMs now, ::webrtc::ArrayView<uchar const> payload) = 0;
 
-    virtual void
-    OnReceivedPacket(::dcsctp::TimeMs now, ::webrtc::ArrayView<uchar const, 18446744073709546905> payload) = 0;
+    virtual void OnReceivedPacket(::dcsctp::TimeMs now, ::webrtc::ArrayView<uchar const> payload) = 0;
     // NOLINTEND
 
 public:

@@ -54,6 +54,8 @@ public:
 
     MCAPI ::std::vector<::World::MarketplaceWorldTemplateData> const _getTemplates() const;
 
+    MCAPI void _onOfferPurchased(::std::string const& productId);
+
     MCAPI void _prepareOffers();
 
     MCAPI void update(double);

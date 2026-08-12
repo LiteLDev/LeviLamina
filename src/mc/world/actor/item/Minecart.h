@@ -90,6 +90,8 @@ public:
 
     MCAPI void _registerLoopingSounds();
 
+    MCAPI void dropMinecartWithContentsAndRemove(::std::string_view vanillaMinecartName, bool dropMinecartComponents);
+
 #ifdef LL_PLAT_C
     MCAPI ::Block const* getDisplayBlock() const;
 
@@ -99,6 +101,8 @@ public:
     MCAPI void postNormalTick(::BlockPos const& preNormalTickBlockPos);
 
     MCAPI ::BlockPos preNormalTick();
+
+    MCAPI void setDisplayBlock(::Block const& block);
     // NOLINTEND
 
 public:

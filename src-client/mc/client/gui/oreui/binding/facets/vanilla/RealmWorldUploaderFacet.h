@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/UploadToRealmsError.h"
 #include "mc/client/network/realms/RealmId.h"
@@ -84,6 +85,20 @@ public:
         ::std::shared_ptr<::PlayScreenModel>     playScreenModel,
         ::OreUI::Router&                         uiRouter
     );
+
+    MCAPI bool choosePreviewRealm() const;
+
+    MCAPI void clearUploadWorldToRealmTaskState();
+
+    MCAPI ::std::optional<::OreUI::UploadToRealmsError> const& getUploadWorldToRealmError() const;
+
+    MCAPI ::OreUI::FacetTaskState getUploadWorldToRealmTaskState() const;
+
+    MCFOLD int64 getUploadedRealmWorldId() const;
+
+    MCAPI void setPreviewRealmForUpload(::std::string const& realmIdStr);
+
+    MCAPI void uploadWorldToRealm(::std::string const& worldID);
     // NOLINTEND
 
 public:
@@ -106,7 +121,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

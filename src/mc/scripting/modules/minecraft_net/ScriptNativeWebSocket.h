@@ -37,7 +37,7 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptNativeWebSocket() /*override*/ = default;
 
-    virtual void onMessage(::std::string_view) /*override*/;
+    virtual void onMessage(::std::string_view message) /*override*/;
 
     virtual void onClose(uint) /*override*/;
     // NOLINTEND
@@ -45,6 +45,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onMessage(::std::string_view message);
+
+    MCNAPI void $onClose(uint);
+
 
     // NOLINTEND
 };

@@ -23,7 +23,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $playerListChanged();
     // NOLINTEND
 };
 

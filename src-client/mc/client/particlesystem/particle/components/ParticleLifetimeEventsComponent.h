@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 struct ConstDeserializeDataParams;
+namespace Json { class Value; }
 namespace ParticleSystem { class ComponentAccessParticleEmitter; }
 namespace ParticleSystem { struct CommonParticle; }
 namespace SharedTypes::v1_20_80 { struct ParticleEffectComponent; }
@@ -51,6 +52,12 @@ public:
         ::std::chrono::nanoseconds const                  lastAge,
         ::std::chrono::nanoseconds                        age
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _parseEvent(::Json::Value const& event, ::std::vector<::HashedString>& eventList);
     // NOLINTEND
 
 public:

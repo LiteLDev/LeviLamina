@@ -88,6 +88,15 @@ public:
         ::std::optional<::SemVersion>                     releasedMinFormatVersion
     );
 
+    MCAPI static ::std::shared_ptr<::ItemComponent>
+    constructItemComponent(::std::string const& name, ::cereal::ReflectionCtx const& ctx);
+
+    MCAPI static void deprecateComponentStartingFromVersion(
+        ::std::string const&           name,
+        ::SemVersion const             deprecatedVersion,
+        ::cereal::ReflectionCtx const& ctx
+    );
+
     MCAPI static ::std::optional<::SemVersion>
     getReleasedMinFormatVersionForAnyComponent(::cereal::ReflectionCtx const& ctx);
 

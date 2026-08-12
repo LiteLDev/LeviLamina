@@ -30,6 +30,8 @@ public:
     virtual uint64 _getMinCurveNodesAllowed();
 
     virtual uint64 _getMaxCurveNodesAllowed();
+
+    virtual ~ParticleCurveSimpleBase() /*override*/;
     // NOLINTEND
 
 public:
@@ -42,6 +44,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

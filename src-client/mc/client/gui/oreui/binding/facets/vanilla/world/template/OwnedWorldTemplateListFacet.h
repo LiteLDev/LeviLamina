@@ -46,6 +46,10 @@ public:
         ::World::OwnedWorldTemplateManager&                        ownedWorldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
+
+    MCAPI void _refresh();
+
+    MCFOLD ::std::vector<::OreUI::OwnedWorldTemplateDataBindings> const& getOwnedTemplateWorldsList();
     // NOLINTEND
 
 public:
@@ -66,7 +70,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

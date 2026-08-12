@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/NetworkWorldDetails.h"
+#include "mc/client/gui/oreui/binding/facets/vanilla/NetworkWorldType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -52,6 +53,14 @@ public:
         ::World::ExternalServerWorldList&                          externalServerWorldList,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
+
+    MCAPI void _onWorldListUpdated();
+
+    MCFOLD ::OreUI::NetworkWorldDetails const& getCurrentNetworkWorldDetails() const;
+
+    MCAPI bool hasLoadedDetails() const;
+
+    MCAPI void loadNetworkWorldDetails(::std::string const& id, ::OreUI::NetworkWorldType const worldType);
     // NOLINTEND
 
 public:
@@ -73,7 +82,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

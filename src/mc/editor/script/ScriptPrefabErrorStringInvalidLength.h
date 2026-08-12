@@ -21,6 +21,18 @@ public:
     ScriptPrefabErrorStringInvalidLength& operator=(ScriptPrefabErrorStringInvalidLength const&);
     ScriptPrefabErrorStringInvalidLength(ScriptPrefabErrorStringInvalidLength const&);
     ScriptPrefabErrorStringInvalidLength();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptPrefabErrorStringInvalidLength(::std::string const& s, int len, int maxLen);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

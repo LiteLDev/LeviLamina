@@ -161,10 +161,16 @@ public:
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorSneakingStateAfterEventIntermediateData>& eventData
     );
 
+#ifdef LL_PLAT_S
     virtual void onDataDrivenActorEventSend(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>&
             dataDrivenActorEventSend
     );
+#else // LL_PLAT_C
+    virtual void onDataDrivenActorEventSend(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>& eventData
+    );
+#endif
 
     virtual void
     onActorUpgrade(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorUpgradeAfterEventIntermediateData>& eventData);
@@ -291,25 +297,49 @@ public:
     virtual void
     onTripTripWire(::std::shared_ptr<::ScriptModuleMinecraft::ScriptTripWireTripAfterEventIntermediateData>& eventData);
 
+#ifdef LL_PLAT_S
     virtual void onItemCompleteUse(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>& itemEvent
     );
+#else // LL_PLAT_C
+    virtual void onItemCompleteUse(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>& eventData
+    );
+#endif
 
+#ifdef LL_PLAT_S
     virtual void onItemReleaseUse(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>& itemEvent
     );
+#else // LL_PLAT_C
+    virtual void onItemReleaseUse(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>& eventData
+    );
+#endif
 
+#ifdef LL_PLAT_S
     virtual void onItemStartUse(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>& itemEvent
     );
+#else // LL_PLAT_C
+    virtual void onItemStartUse(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>& eventData
+    );
+#endif
 
     virtual void onItemStartUseOn(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent>& eventData
     );
 
+#ifdef LL_PLAT_S
     virtual void onItemStopUse(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>& itemEvent
     );
+#else // LL_PLAT_C
+    virtual void onItemStopUse(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>& eventData
+    );
+#endif
 
     virtual void onItemStopUseOn(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent>& eventData
@@ -318,8 +348,13 @@ public:
     virtual void
     onItemUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseAfterEvent>& eventData);
 
+#ifdef LL_PLAT_S
     virtual void
     onItemUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>& itemEvent);
+#else // LL_PLAT_C
+    virtual void
+    onItemUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>& eventData);
+#endif
 
     virtual void onProjectileHitBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>& eventData
@@ -349,6 +384,14 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptServerMessageAfterEvent>& eventData
     );
 
+    MCAPI void $onWeatherChanged(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEventIntermediateData>& eventData
+    );
+
+    MCAPI void $onWorldInitialize(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEventIntermediateData>& eventData
+    );
+
     MCFOLD void $onActorAddEffect(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorAddEffectAfterEventIntermediateData>& eventData
     );
@@ -371,6 +414,17 @@ public:
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEventIntermediateData>& eventData
     );
 
+    MCAPI void $onActorHitBlock(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEventIntermediateData>& eventData
+    );
+
+    MCAPI void $onActorHitEntity(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEventIntermediateData>& eventData
+    );
+
+    MCAPI void
+    $onActorHurt(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHurtAfterEventIntermediateData>& eventData);
+
     MCFOLD void $onActorItemDrop(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemDropAfterEventIntermediateData>& eventData
     );
@@ -382,12 +436,28 @@ public:
     MCFOLD void
     $onActorLoad(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorLoadAfterEvent>& eventData);
 
+    MCAPI void $onActorRemoved(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const&           removedActor,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>& eventData
+    );
+
     MCFOLD void
     $onActorSpawn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorSpawnAfterEvent>& eventData);
 
     MCFOLD void $onActorStartSneaking(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorSneakingStateAfterEventIntermediateData>& eventData
     );
+
+#ifdef LL_PLAT_S
+    MCAPI void $onDataDrivenActorEventSend(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>&
+            dataDrivenActorEventSend
+    );
+#else // LL_PLAT_C
+    MCAPI void $onDataDrivenActorEventSend(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>& eventData
+    );
+#endif
 
     MCFOLD void $onActorUpgrade(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorUpgradeAfterEventIntermediateData>& eventData
@@ -437,6 +507,12 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent>&
             inventoryEvent
     );
+
+    MCAPI void
+    $onPlayerJoin(::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEventIntermediateData>& eventData);
+
+    MCAPI void
+    $onPlayerLeave(::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEventIntermediateData>& eventData);
 
     MCFOLD void $onPlayerSpawn(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerSpawnAfterEvent>& eventData
@@ -510,9 +586,49 @@ public:
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptTripWireTripAfterEventIntermediateData>& eventData
     );
 
+#ifdef LL_PLAT_S
+    MCAPI void $onItemCompleteUse(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>& itemEvent
+    );
+#else // LL_PLAT_C
+    MCAPI void $onItemCompleteUse(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>& eventData
+    );
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI void $onItemReleaseUse(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>& itemEvent
+    );
+#else // LL_PLAT_C
+    MCAPI void $onItemReleaseUse(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>& eventData
+    );
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI void $onItemStartUse(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>& itemEvent
+    );
+#else // LL_PLAT_C
+    MCAPI void $onItemStartUse(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>& eventData
+    );
+#endif
+
     MCFOLD void $onItemStartUseOn(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent>& eventData
     );
+
+#ifdef LL_PLAT_S
+    MCAPI void $onItemStopUse(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>& itemEvent
+    );
+#else // LL_PLAT_C
+    MCAPI void $onItemStopUse(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>& eventData
+    );
+#endif
 
     MCFOLD void $onItemStopUseOn(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent>& eventData
@@ -520,6 +636,14 @@ public:
 
     MCFOLD void
     $onItemUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseAfterEvent>& eventData);
+
+#ifdef LL_PLAT_S
+    MCAPI void
+    $onItemUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>& itemEvent);
+#else // LL_PLAT_C
+    MCAPI void
+    $onItemUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>& eventData);
+#endif
 
     MCFOLD void $onProjectileHitBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>& eventData

@@ -50,6 +50,7 @@ class LevelSeed64;
 class Material;
 class SubChunkPos;
 class Vec3;
+class WeakEntityRef;
 struct ActorBlockSyncMessage;
 struct ActorDefinitionIdentifier;
 struct BiomeIdLatticeBatch;
@@ -359,6 +360,26 @@ public:
     );
 #endif
 
+#ifdef LL_PLAT_S
+    MCAPI void _blockChanged(
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 previousBlock,
+        int                            updateFlags,
+        bool                           fireEvent,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::Actor*                       blockChangeSource
+    );
+#endif
+
+    MCAPI void _fetchEntityHelper(
+        ::WeakEntityRef const&                              entityRef,
+        ::gsl::span<::gsl::not_null<::Actor const*>> const& ignoredEntities,
+        ::AABB const&                                       bb,
+        bool                                                useHitbox
+    );
+
     MCAPI ::Brightness
     _getRawBrightness(::BlockPos const& pos, ::Brightness skyDarken, bool propagate, bool accountForNight) const;
 
@@ -551,6 +572,10 @@ public:
 
     MCAPI bool $isInstaticking(::BlockPos const& pos) const;
 
+    MCAPI void $addListener(::BlockSourceListener& l);
+
+    MCAPI void $removeListener(::BlockSourceListener& l);
+
     MCAPI ::LevelChunk* $getChunk(int x, int z) const;
 
     MCAPI ::LevelChunk* $getChunk(::ChunkPos const& pos) const;
@@ -597,6 +622,12 @@ public:
 
     MCAPI bool $hasChunk(::ChunkPos const& pos, bool serverSideOnly) const;
 
+    MCAPI bool $hasChunksAt(::Bounds const& bounds, bool ignoreClientChunk) const;
+
+    MCAPI bool $hasChunksAt(::BlockPos const& pos, int r, bool ignoreClientChunk) const;
+
+    MCAPI bool $hasChunksAt(::AABB const& bb, bool ignoreClientChunk) const;
+
     MCAPI bool $areChunksFullyLoaded(::BlockPos const& pos, int r) const;
 
     MCAPI bool $containsAnyLiquid(::AABB const& box) const;
@@ -604,6 +635,16 @@ public:
     MCAPI bool $containsMaterial(::AABB const& box, ::SharedTypes::v1_26_20::MaterialType material) const;
 
     MCAPI void $blockEvent(::BlockPos const& pos, int b0, int b1);
+
+    MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
+    $fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities);
+
+    MCAPI ::gsl::span<::gsl::not_null<::Actor*>> $fetchEntities(
+        ::ActorType                     entityTypeId,
+        ::AABB const&                   bb,
+        ::Actor const*                  except,
+        ::std::function<bool(::Actor*)> selector
+    );
 
     MCAPI void
     $fetchAABBs(::std::vector<::AABB>& shapes, ::AABB const& intersectTestBox, bool withUnloadedChunks) const;

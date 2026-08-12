@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/CreatePreviewRealmFromSubscriptionResult.h"
 #include "mc/client/network/realms/RealmId.h"
@@ -45,6 +46,19 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit CreatePreviewRealmFacet(::std::shared_ptr<::PlayScreenModel> playScreenModel);
+
+    MCAPI void activateNewPreviewRealm(bool inWorldCreation);
+
+    MCAPI void createPreviewRealmFromSubscriptionId(::std::string const& realmId);
+
+    MCAPI ::std::optional<::OreUI::CreatePreviewRealmFromSubscriptionResult> const&
+    getCreatePreviewRealmFromSubscriptionResult() const;
+
+    MCAPI ::OreUI::FacetTaskState const getCreatePreviewRealmFromSubscriptionTaskState() const;
+
+    MCAPI ::std::string getCreatedPreviewRealmId() const;
+
+    MCAPI void reset();
     // NOLINTEND
 
 public:

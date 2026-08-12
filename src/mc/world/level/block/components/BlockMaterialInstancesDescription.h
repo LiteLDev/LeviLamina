@@ -79,6 +79,8 @@ public:
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
+
+    virtual ~BlockMaterialInstancesDescription() /*override*/;
     // NOLINTEND
 
 public:
@@ -130,6 +132,12 @@ public:
         bool                 alphaMaskedTint,
         bool                 dithering
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

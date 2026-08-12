@@ -75,6 +75,10 @@ public:
 
     MCAPI bool canInteract() const;
 
+    MCAPI bool canPaddle() const;
+
+    MCAPI ::std::string getBoatExitText() const;
+
     MCAPI ::InputMode getCurrentInputMode() const;
 
     MCAPI void getCursorPos(float& xCursor, float& yCursor) const;

@@ -150,7 +150,7 @@ public:
     MCAPI void flush();
 #endif
 
-    MCAPI void log(bool, ::LogLevel, ::LogArea, ...);
+    MCAPI void log(bool logOnlyOnce, ::LogLevel level, ::LogArea area, ...);
 
     MCAPI void registerEndPoint(::Bedrock::typeid_t<::ContentLog> id, ::gsl::not_null<::ContentLogEndPoint*> endPoint);
 

@@ -65,6 +65,8 @@ public:
     MCAPI void _registerBindings();
 
     MCAPI void _registerEventHandlers();
+
+    MCAPI void _showModal(::std::string const& modalName);
     // NOLINTEND
 
 public:

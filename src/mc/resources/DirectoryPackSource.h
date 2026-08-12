@@ -11,6 +11,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class IPackIOProvider;
+struct DirectoryPackSourceOptions;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 namespace Core { class Path; }
@@ -31,6 +33,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DirectoryPackSource();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~DirectoryPackSource() /*override*/ = default;
@@ -39,12 +45,14 @@ public:
 
     virtual ::PackType getPackType() const /*override*/;
 
-    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
+    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit DirectoryPackSource(::DirectoryPackSourceOptions options);
+
     MCAPI void deleteAllPacksAndReset();
     // NOLINTEND
 
@@ -52,11 +60,29 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void checkAndRemoveIncompletePacks(::Core::Path const& path);
+
+    MCAPI static void checkAndRemoveIncompletePacks(
+        ::Core::Path const&      path,
+        ::IPackIOProvider const& io,
+        bool                     saveEncryptedWorldTemplatePacksAsZips
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::PackOrigin $getPackOrigin() const;
+
+    MCFOLD ::PackType $getPackType() const;
+
+    MCAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
+
 
     // NOLINTEND
 };

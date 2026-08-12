@@ -50,6 +50,16 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::BlockPos _getHomePos() const;
+
+    MCAPI bool _hasRequiredComponents() const;
+
+    MCAPI bool _isInHomeDimension() const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

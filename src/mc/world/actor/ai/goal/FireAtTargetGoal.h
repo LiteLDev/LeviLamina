@@ -12,6 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class Mob;
 // clang-format on
 
@@ -66,6 +67,19 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit FireAtTargetGoal(::Mob& mob);
+
+    MCAPI bool _isTargetWithinRange(::Vec3 const& targetPosition) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Vec3 getAnchorAndOffsetPosition(
+        ::Actor const&                          actor,
+        ::SharedTypes::Legacy::ProjectileAnchor anchor,
+        ::Vec3 const&                           offset,
+        bool                                    applyRotation
+    );
     // NOLINTEND
 
 public:

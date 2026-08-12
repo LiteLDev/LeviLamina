@@ -102,7 +102,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void ReceivePacket(::webrtc::ArrayView<uchar const, 18446744073709546905> data) /*override*/;
+    virtual void ReceivePacket(::webrtc::ArrayView<uchar const> data) /*override*/;
 
     virtual uint64 MessagesReady() const /*override*/;
 
@@ -122,13 +122,12 @@ public:
     Send(::dcsctp::DcSctpMessage message, ::dcsctp::SendOptions const& send_options) /*override*/;
 
     virtual ::std::vector<::dcsctp::SendStatus> SendMany(
-        ::webrtc::ArrayView<::dcsctp::DcSctpMessage, 18446744073709546905> messages,
-        ::dcsctp::SendOptions const&                                       send_options
+        ::webrtc::ArrayView<::dcsctp::DcSctpMessage> messages,
+        ::dcsctp::SendOptions const&                 send_options
     ) /*override*/;
 
     virtual ::dcsctp::ResetStreamsStatus ResetStreams(
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
-            outgoing_streams
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
     ) /*override*/;
 
     virtual ::dcsctp::SocketState state() const /*override*/;
@@ -225,8 +224,7 @@ public:
 
     MCNAPI ::webrtc::TimeDelta OnInitTimerExpiry();
 
-    MCNAPI void
-    OnSentPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> packet, ::dcsctp::SendPacketStatus status);
+    MCNAPI void OnSentPacket(::webrtc::ArrayView<uchar const> packet, ::dcsctp::SendPacketStatus status);
 
     MCNAPI ::webrtc::TimeDelta OnShutdownTimerExpiry();
 
@@ -255,7 +253,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $ReceivePacket(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
+    MCNAPI void $ReceivePacket(::webrtc::ArrayView<uchar const> data);
 
     MCNAPI uint64 $MessagesReady() const;
 
@@ -273,15 +271,11 @@ public:
 
     MCNAPI ::dcsctp::SendStatus $Send(::dcsctp::DcSctpMessage message, ::dcsctp::SendOptions const& send_options);
 
-    MCNAPI ::std::vector<::dcsctp::SendStatus> $SendMany(
-        ::webrtc::ArrayView<::dcsctp::DcSctpMessage, 18446744073709546905> messages,
-        ::dcsctp::SendOptions const&                                       send_options
-    );
+    MCNAPI ::std::vector<::dcsctp::SendStatus>
+    $SendMany(::webrtc::ArrayView<::dcsctp::DcSctpMessage> messages, ::dcsctp::SendOptions const& send_options);
 
-    MCNAPI ::dcsctp::ResetStreamsStatus $ResetStreams(
-        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
-            outgoing_streams
-    );
+    MCNAPI ::dcsctp::ResetStreamsStatus
+    $ResetStreams(::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams);
 
     MCNAPI ::dcsctp::SocketState $state() const;
 

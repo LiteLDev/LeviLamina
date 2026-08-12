@@ -17,6 +17,7 @@ struct PingedCompatibleServer;
 struct PortPair;
 struct ServerSupportedAuthenticationTypes;
 namespace Bedrock::Threading { class Mutex; }
+namespace NetherNet { struct NetworkID; }
 // clang-format on
 
 class NetherNetServerLocator : public ::StubServerLocator {
@@ -75,20 +76,20 @@ public:
     virtual ~NetherNetServerLocator() /*override*/ = default;
 
     virtual void startAnnouncingServer(
-        ::std::string const&,
-        ::std::string const&,
-        ::GameType,
-        int,
-        int,
-        bool,
-        bool,
-        bool,
-        ::ServerSupportedAuthenticationTypes
+        ::std::string const&                 playerName,
+        ::std::string const&                 worldName,
+        ::GameType                           gameType,
+        int                                  numPlayers,
+        int                                  maxNumPlayers,
+        bool                                 isJoinableThroughServerScreen,
+        bool                                 isEditorWorld,
+        bool                                 isHardcore,
+        ::ServerSupportedAuthenticationTypes supportedAuth
     ) /*override*/;
 
     virtual void stopAnnouncingServer() /*override*/;
 
-    virtual void startServerDiscovery(::PortPair) /*override*/;
+    virtual void startServerDiscovery(::PortPair ports) /*override*/;
 
     virtual void stopServerDiscovery() /*override*/;
 
@@ -107,6 +108,14 @@ public:
         ::Bedrock::NonOwnerPointer<::AppPlatform> const&      appPlatform,
         ::Bedrock::NonOwnerPointer<::SignalingService>        signalingService
     );
+
+    MCNAPI void _cacheDiscoveryResponseData();
+
+    MCNAPI void _onDiscoveryResponse(::NetherNet::NetworkID const& networkID, ::gsl::span<char const> responseData);
+
+    MCNAPI void _setDiscoveryRequestCallback(bool enable);
+
+    MCNAPI void _setDiscoveryResponseCallback(bool enable);
     // NOLINTEND
 
 public:
@@ -122,6 +131,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $startAnnouncingServer(
+        ::std::string const&                 playerName,
+        ::std::string const&                 worldName,
+        ::GameType                           gameType,
+        int                                  numPlayers,
+        int                                  maxNumPlayers,
+        bool                                 isJoinableThroughServerScreen,
+        bool                                 isEditorWorld,
+        bool                                 isHardcore,
+        ::ServerSupportedAuthenticationTypes supportedAuth
+    );
+
+    MCNAPI void $stopAnnouncingServer();
+
+    MCNAPI void $startServerDiscovery(::PortPair ports);
+
+    MCNAPI void $stopServerDiscovery();
+
+    MCNAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
+
+    MCNAPI void $clearServerList();
+
+    MCNAPI void $update();
+
 
     // NOLINTEND
 };

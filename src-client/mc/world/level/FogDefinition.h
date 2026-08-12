@@ -8,10 +8,13 @@
 #include "mc/client/world/level/fog/FogVolumetricDensitySetting.h"
 #include "mc/client/world/level/fog/FogVolumetricHenyeyGreensteinGSetting.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
+class SemVersion;
 struct FogDistanceSetting;
+namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct FogDefinition {
@@ -97,6 +100,13 @@ public:
     );
 
     MCAPI ~FogDefinition();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FogDefinition>>
+    _buildFogDefinitionSchema_common(::SemVersion version);
     // NOLINTEND
 
 public:

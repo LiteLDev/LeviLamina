@@ -15,10 +15,13 @@ class BaseActorRenderContext;
 class BlockPos;
 class BlockSource;
 class ItemStack;
+class ScreenContext;
 class Vec3;
 struct BlockActorRenderData;
 struct Brightness;
 namespace dragon { struct RenderMetadata; }
+namespace mce { class MaterialPtr; }
+namespace mce { struct ClientTexture; }
 // clang-format on
 
 class DecoratedPotRenderer : public ::BlockActorRenderer {
@@ -45,12 +48,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void render(::BaseActorRenderContext&, ::BlockActorRenderData&) /*override*/;
+    virtual void
+    render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _renderFacesWithActorTexture(
+        ::dragon::RenderMetadata const&       renderMetadata,
+        ::ScreenContext&                      screenContext,
+        ::std::array<::std::string, 4> const& sherdNames,
+        ::mce::MaterialPtr const&             forcedMaterial,
+        ::mce::ClientTexture const&           forcedTexture
+    );
+
+    MCAPI void _setModelMaterial(::DecoratedPotRenderer::ModelMaterial const& modelMaterial);
+
     MCAPI void renderInGui(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
@@ -81,8 +95,14 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::array<::std::string, 4> _getSherdsFromPotItem(::ItemStack const& decoratedPotItem);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 };

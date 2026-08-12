@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Pack;
 class WorldPackHistory;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
@@ -50,6 +51,11 @@ public:
     MCNAPI explicit WorldHistoryPackSource(::WorldHistoryPackSourceOptions options);
 
 #ifdef LL_PLAT_C
+    MCNAPI void _addPackFromHistoryPack(
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>& packs,
+        ::WorldPackHistory const&                                  worldPackHistory
+    ) const;
+
     MCNAPI ::Bedrock::Threading::Async<void> saveHistoryFile();
 
     MCNAPI ::Bedrock::Threading::Async<void>

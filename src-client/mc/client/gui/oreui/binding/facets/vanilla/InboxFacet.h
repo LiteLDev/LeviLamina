@@ -18,6 +18,7 @@ class IClientInstance;
 class IEntitlementManager;
 class PlayerMessagingService;
 class RealmsAPI;
+namespace Invites { struct Invite; }
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { class InboxSession; }
 namespace OreUI { struct MessageImage; }
@@ -68,6 +69,22 @@ public:
         ::ll::TypedStorage<4, 4, ::Invites::Invite::InvitationStatus>          mInvitationStatus;
         ::ll::TypedStorage<1, 1, ::PlayerMessaging::MessageStyle>              mStyle;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        InboxMessageData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI explicit InboxMessageData(::Invites::Invite const& invite);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
     };
 
     struct FacetInboxCategoryData {
@@ -90,6 +107,16 @@ public:
         ::ll::TypedStorage<1, 1, bool> mShowOnlyFriendInvites;
         ::ll::TypedStorage<1, 1, bool> mDirty;
         ::ll::TypedStorage<1, 1, bool> mSaved;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void toggleInvitesBadges();
+
+        MCAPI void toggleMessageBadges();
+
+        MCAPI void toggleOnlyFriendInvites();
         // NOLINTEND
     };
 
@@ -123,6 +150,39 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
         ::Bedrock::NotNullNonOwnerPtr<::Realms::InvitesService>    invitesService
     );
+
+    MCAPI void acceptInvitation(::std::string const& instanceId);
+
+    MCAPI void deleteAllRead();
+
+    MCAPI void deleteNotification(::std::string const& messageId, ::std::string const& instanceId);
+
+    MCAPI ::std::vector<::OreUI::InboxFacet::FacetInboxCategoryData> const& getCategoryData();
+
+    MCAPI ::std::vector<::OreUI::InboxFacet::InboxMessageData> const& getData() const;
+
+    MCAPI bool getRealmsSubscriber() const;
+
+    MCAPI ::OreUI::InboxFacet::InboxSettings const& getSettings() const;
+
+    MCFOLD bool isMarketplacePassSubscriber();
+
+    MCAPI void markAllRead();
+
+    MCAPI bool messagingServiceFailed() const;
+
+    MCAPI void rejectInvitation(::std::string const& instanceId);
+
+    MCAPI void reloadInvites();
+
+    MCAPI void
+    reportClick(::std::string const& messageId, ::std::string const& instanceId, ::std::string const& buttonId);
+
+    MCAPI void requestMessages(::std::string const& categoryId);
+
+    MCAPI void saveSettings();
+
+    MCAPI void setNotificationRead(::std::string const& instanceId);
     // NOLINTEND
 
 public:
@@ -147,7 +207,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

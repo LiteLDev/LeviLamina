@@ -27,6 +27,12 @@ public:
     NetworkItemInstanceDescriptor();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~NetworkItemInstanceDescriptor() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit NetworkItemInstanceDescriptor(::ItemInstance const& item);
@@ -44,6 +50,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ItemInstance const& item);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -35,16 +35,22 @@ public:
     // NOLINTBEGIN
     virtual ~ScreenHandlerBeacon() /*override*/ = default;
 
-    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const&) /*override*/;
+    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
 
     virtual ::ItemStackNetResult endRequest() /*override*/;
 
-    virtual void postRequest(bool const) /*override*/;
+    virtual void postRequest(bool const wasSuccess) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
+
+    MCAPI ::ItemStackNetResult $endRequest();
+
+    MCAPI void $postRequest(bool const wasSuccess);
+
 
     // NOLINTEND
 };

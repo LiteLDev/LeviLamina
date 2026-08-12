@@ -4,11 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/websockets/CloseStatusCode.h"
+#include "mc/websockets/OpCode.h"
 #include "mc/websockets/WSConnectionResult.h"
 
 // auto generated forward declare list
 // clang-format off
 class RakWebSocketDataFrame;
+namespace RakNet { class BitStream; }
 // clang-format on
 
 class RakWebSocket {
@@ -73,17 +75,17 @@ public:
     // NOLINTBEGIN
     virtual ~RakWebSocket() = default;
 
-    virtual ::WSConnectionResult connect(::std::string const&, ::std::vector<::std::string> const&);
+    virtual ::WSConnectionResult connect(::std::string const& uri, ::std::vector<::std::string> const& subProtocols);
 
-    virtual ::WSConnectionResult connect(::std::string const&);
+    virtual ::WSConnectionResult connect(::std::string const& uri);
 
     virtual bool isReady() const;
 
-    virtual void setOnMessageReceivedHandler(::std::function<void(::RakWebSocketDataFrame const&)> const&);
+    virtual void setOnMessageReceivedHandler(::std::function<void(::RakWebSocketDataFrame const&)> const& handler);
 
-    virtual void setOnCloseHandler(::std::function<void(::CloseStatusCode, ::std::string const&)> const&);
+    virtual void setOnCloseHandler(::std::function<void(::CloseStatusCode, ::std::string const&)> const& handler);
 
-    virtual void setOnConnectedHandler(::std::function<void(::std::string const&)> const&);
+    virtual void setOnConnectedHandler(::std::function<void(::std::string const&)> const& handler);
 
     virtual void tick();
 
@@ -97,14 +99,37 @@ public:
     // NOLINTBEGIN
     MCNAPI void _close(::CloseStatusCode code);
 
+    MCNAPI void _fail(::std::string const& error, ::CloseStatusCode code);
+
+    MCNAPI bool
+    _processPacket(::std::function<void(::RakNet::BitStream&)> const& processStep, bool acceptNewConnection);
+
     MCNAPI void _reset();
 
     MCNAPI bool _sendCloseFrame(::CloseStatusCode code, ::std::string const& reason);
+
+    MCNAPI bool _sendNonControlFrame(uchar const* payload, uint64 size, ::OpCode opCode);
+
+    MCNAPI bool _sendTextFrame(::std::string const& text);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::WSConnectionResult $connect(::std::string const& uri, ::std::vector<::std::string> const& subProtocols);
+
+    MCNAPI ::WSConnectionResult $connect(::std::string const& uri);
+
+    MCNAPI bool $isReady() const;
+
+    MCNAPI void $setOnMessageReceivedHandler(::std::function<void(::RakWebSocketDataFrame const&)> const& handler);
+
+    MCNAPI void $setOnCloseHandler(::std::function<void(::CloseStatusCode, ::std::string const&)> const& handler);
+
+    MCNAPI void $setOnConnectedHandler(::std::function<void(::std::string const&)> const& handler);
+
+    MCNAPI void $tick();
+
 
     // NOLINTEND
 };

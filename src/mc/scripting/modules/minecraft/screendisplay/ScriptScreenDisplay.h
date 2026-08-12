@@ -4,9 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
+class Player;
+namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
+namespace ScriptModuleMinecraft { struct ScriptRawMessageError; }
+namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
+namespace ScriptModuleMinecraft { struct ScriptTitleDisplayOptions; }
+namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -17,6 +25,69 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntityRef;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageError> _getJsonString(
+        ::Player& player,
+        ::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+            text
+    ) const;
+
+    MCAPI ::Scripting::
+        Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+        setActionBar(
+            ::std::variant<
+                ::std::string,
+                ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+                ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+                text
+        ) const;
+
+    MCAPI ::Scripting::Result_deprecated<void> setActionBar_V010(
+        ::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+            text
+    ) const;
+
+    MCAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptRawMessageError,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::Scripting::ArgumentOutOfBoundsError>
+    setTitle(
+        ::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+                                                                            title,
+        ::std::optional<::ScriptModuleMinecraft::ScriptTitleDisplayOptions> options
+    ) const;
+
+    MCAPI ::Scripting::
+        Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+        updateSubtitle(
+            ::std::variant<
+                ::std::string,
+                ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+                ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+                subtitle
+        ) const;
+
+    MCAPI ::Scripting::Result_deprecated<void> updateSubtitle_V010(
+        ::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+            subtitle
+    ) const;
     // NOLINTEND
 
 public:

@@ -27,7 +27,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
@@ -37,7 +38,7 @@ public:
 
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const /*override*/;
+    virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const /*override*/;
 
     virtual int getEnchantSlot() const /*override*/;
 
@@ -49,7 +50,7 @@ public:
 
     virtual bool shouldUseJsonForRenderMatrix() const /*override*/;
 
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
     // NOLINTEND
@@ -69,6 +70,33 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+
+    MCFOLD bool $isHandEquipped() const;
+
+    MCFOLD bool $requiresInteract() const;
+
+    MCAPI ::std::string $getInteractText(::Player const& player) const;
+
+    MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const;
+
+    MCAPI int $getEnchantSlot() const;
+
+    MCFOLD int $getEnchantValue() const;
+
+    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+
+    MCFOLD bool $shouldEmitInUseGameEvents() const;
+
+    MCFOLD bool $shouldUseJsonForRenderMatrix() const;
+
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+
 
     // NOLINTEND
 };

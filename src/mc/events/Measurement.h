@@ -30,6 +30,14 @@ public:
     Measurement& operator=(Measurement const&);
     Measurement(Measurement const&);
     Measurement();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void updateMeasurement(::Social::Events::Measurement const& newMeasure);
+
+    MCNAPI ~Measurement();
+    // NOLINTEND
 };
 
 } // namespace Social::Events

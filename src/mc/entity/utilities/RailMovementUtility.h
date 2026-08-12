@@ -70,7 +70,13 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI static bool getPos(::IConstBlockSource const& region, ::Vec3& valueVec, ::Vec3 pos);
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI static bool getPos(::IConstBlockSource const& region, ::Vec3& valueVec, ::Vec3 pos);
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI static bool getPosOffs(::IConstBlockSource const& region, ::Vec3& valueVec, ::Vec3 pos, float offs);
 #endif
     // NOLINTEND

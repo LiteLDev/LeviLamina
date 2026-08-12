@@ -55,7 +55,8 @@ public:
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -89,6 +90,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI ::ui::SceneType $getSceneType() const;
+
+    MCAPI void $onOpen();
+
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
     // NOLINTEND
 };

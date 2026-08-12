@@ -27,6 +27,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::std::optional<::gametest::GameTestError>
+    _executeWithoutFail(::std::optional<::gametest::GameTestError> const& error);
+
+    MCNAPI ::std::optional<::gametest::GameTestError> _tick(int currentTick);
+
     MCNAPI ::gametest::GameTestSequence& thenExecute(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
     MCNAPI ::gametest::GameTestSequence&

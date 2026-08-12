@@ -80,6 +80,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit PlayerStatisticsFacet(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
+
+    MCFOLD ::std::vector<::OreUI::PlayerStatisticsFacet::Statistic> const& getData();
+
+    MCFOLD bool getLoaded();
+
+    MCAPI void load(::std::string const& id);
     // NOLINTEND
 
 public:
@@ -97,7 +103,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

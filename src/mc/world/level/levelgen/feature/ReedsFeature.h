@@ -16,12 +16,14 @@ class ReedsFeature : public ::Feature {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool place(::BlockSource&, ::BlockPos const&, ::Random&) const /*override*/;
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
 
     // NOLINTEND
 };

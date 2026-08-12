@@ -31,16 +31,16 @@ public:
 
     virtual ::std::vector<::std::string> getJigsawRegistryList() = 0;
 
-    virtual ::JigsawStructureRegistry* getJigsawRegistry(::std::string const&) = 0;
+    virtual ::JigsawStructureRegistry* getJigsawRegistry(::std::string const& registryName) = 0;
 
     virtual void setJigsawRegistry(
-        ::std::string const&,
-        ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>,
-        bool
+        ::std::string const& registryName,
+        ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> data,
+        bool shouldSaveFiles
     ) = 0;
 
     virtual ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>
-    getJigsawRegistryJson(::std::string const&) = 0;
+    getJigsawRegistryJson(::std::string const& registryName) = 0;
 
     virtual void generateJigsawPreview(
         ::std::string const&,
@@ -54,17 +54,17 @@ public:
         ::WeakEntityRef
     ) = 0;
 
-    virtual ::JigsawEditorData const getJigsawBlockData(::BlockPos&, ::WeakEntityRef) = 0;
+    virtual ::JigsawEditorData const getJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef) = 0;
 
-    virtual void deleteJigsawRegistry(::std::string const&) = 0;
+    virtual void deleteJigsawRegistry(::std::string const& registryName) = 0;
 
-    virtual void setJigsawBlockData(::BlockPos&, ::WeakEntityRef, ::JigsawEditorData) = 0;
+    virtual void setJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef, ::JigsawEditorData jigsawData) = 0;
 
     virtual ::Bedrock::PubSub::Subscription
-        listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)>) = 0;
+    listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)> callback) = 0;
 
     virtual ::Bedrock::PubSub::Subscription listenForGenerateJigsawPreview(
-        ::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)>
+        ::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)> callback
     ) = 0;
     // NOLINTEND
 

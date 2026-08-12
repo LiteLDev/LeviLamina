@@ -34,6 +34,26 @@ public:
         ::ll::TypedStorage<4, 4, ::ui::NameResolutionScope> scope;
         ::ll::TypedStorage<8, 64, ::std::function<void(::UIControl&, ::std::shared_ptr<::UIControl>)>> setter;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ControlResolutionInfo();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ControlResolutionInfo(
+            ::std::string const&                                                aTargetControlName,
+            ::ui::NameResolutionScope                                           aScope,
+            ::std::function<void(::UIControl&, ::std::shared_ptr<::UIControl>)> aSetter
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
     };
 
     using CompIdType = uint64;
@@ -97,6 +117,18 @@ public:
     // NOLINTBEGIN
     MCAPI void _propagateLockStateChange(bool broadcastEvent);
 
+    MCAPI void _registerControlNameResolver(
+        ::std::string const&                                                controlName,
+        ::ui::NameResolutionScope                                           scope,
+        ::std::function<void(::UIControl&, ::std::shared_ptr<::UIControl>)> setter
+    );
+
+    MCAPI void _registerPostCreateCallback(::std::function<void(::UIControl&)> setter);
+
+    MCAPI void _resolveControlNames(::UIControl& rootControl);
+
+    MCAPI void _resolvePostCreate();
+
     MCAPI void _setCachedPosition() const;
 
     MCAPI void _setPositionDirty();
@@ -122,9 +154,21 @@ public:
 
     MCAPI ::std::shared_ptr<::UIControl> moveChild(int index, bool notify);
 
+    MCAPI void notifyBindingsUpdated(
+        ::std::vector<::std::string> controlList,
+        ::std::string                propertyName,
+        bool                         value,
+        bool                         siblingScope
+    );
+
     MCAPI void popBackChild();
 
     MCAPI void popFrontChild();
+
+    MCAPI void processPropertyBags(
+        ::std::unique_ptr<::UIPropertyBag> propertyBag,
+        ::std::unique_ptr<::UIPropertyBag> propertyBagForChildren
+    );
 
     MCAPI void reloadFromControl(::UIControl const& control);
 

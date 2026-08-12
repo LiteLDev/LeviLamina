@@ -42,6 +42,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _addTransaction(
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> parent,
+        ::std::unique_ptr<::PositionTrackingDB::OperationBase>          newTransaction
+    );
+
 #ifdef LL_PLAT_C
     MCAPI void deserialize(::CompoundTag const& tag);
 #endif

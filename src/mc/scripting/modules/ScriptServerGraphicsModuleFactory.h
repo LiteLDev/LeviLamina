@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class ServerLevel;
+namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct ModuleBinding; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -30,6 +32,12 @@ public:
     MCNAPI explicit ScriptServerGraphicsModuleFactory(::ServerLevel* serverLevel);
 
     MCNAPI void _addVersions();
+
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Scripting::ModuleBindingBuilder&  moduleBuilder,
+        bool                                allowUntagged,
+        ::std::vector<::std::string> const& allowedTags
+    );
     // NOLINTEND
 
 public:

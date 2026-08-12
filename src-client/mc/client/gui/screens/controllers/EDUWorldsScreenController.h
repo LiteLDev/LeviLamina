@@ -12,7 +12,9 @@
 class DlcUIWrapper;
 class IContentManager;
 class PlayScreenModel;
+class UIPropertyBag;
 class WorldsClipboardScreenController;
+struct LocalWorldInfo;
 struct PackManagerContentSource;
 namespace EduCloud { struct IEduCloudSaveSystem; }
 namespace Json { class Value; }
@@ -78,6 +80,14 @@ public:
     // NOLINTBEGIN
     MCAPI explicit EDUWorldsScreenController(::std::shared_ptr<::PlayScreenModel> model);
 
+    MCAPI void _closeEduCloudConflictPopup(bool keepLocal);
+
+    MCAPI uint64 _getTileIndex(::UIPropertyBag& bag) const;
+
+    MCAPI void _openWorldSettings(::std::string const& levelId);
+
+    MCAPI void _openWorldSettings(::LocalWorldInfo* worldInfo);
+
     MCAPI void _registerBindings();
 
     MCAPI void _registerControllerCallbacks();
@@ -85,6 +95,12 @@ public:
     MCAPI void _registerEventHandlers();
 
     MCAPI void _registerSubControllers();
+
+    MCAPI void _showEduCloudConflictPopup();
+
+    MCAPI void _startWorld(::std::string const& levelId, ::EDUWorldsScreenController::StartWorldCaller caller);
+
+    MCAPI void _startWorld(::LocalWorldInfo* worldInfo, ::EDUWorldsScreenController::StartWorldCaller caller);
     // NOLINTEND
 
 public:

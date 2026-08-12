@@ -62,6 +62,20 @@ public:
         ::std::vector<::std::unique_ptr<::ControlConfiguration>> controlConfigurations,
         ::std::vector<::std::function<::RectangleArea()>> const& reservedAreas
     );
+
+    MCAPI int _getNumberOfActiveControlConfigurations() const;
+
+    MCAPI ::RectangleArea _getRectangleAreaOfConfiguration(::ControlConfiguration* cc) const;
+
+    MCAPI bool _isColliding(::RectangleArea const& rect, uint excludedId) const;
+
+    MCAPI void _playBumpingSound(::InputEventQueue& eventQueue);
+
+    MCAPI void _pushControlsInsideSafeArea();
+
+    MCAPI void _setControlConfigurationActive(::InputEventQueue& eventQueue, ::ControlConfiguration* cc, bool active);
+
+    MCAPI void checkForOverlaps();
     // NOLINTEND
 
 public:
@@ -81,6 +95,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
 
+    MCAPI void $render(::InputRenderContext& context) const;
     // NOLINTEND
 };

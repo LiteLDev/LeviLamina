@@ -96,16 +96,57 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $hostServer();
 
+#ifdef LL_PLAT_S
+    MCNAPI ::Social::EduJoinerResponse $tryAcceptJoiner(::std::string const&, ::std::string const&);
+#else // LL_PLAT_C
     MCNAPI ::Social::EduJoinerResponse
     $tryAcceptJoiner(::std::string const& sessionToken, ::std::string const& joinerToHostNonce);
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI ::std::string $getHostToJoinerNonce(::std::string const&) const;
+#else // LL_PLAT_C
     MCNAPI ::std::string $getHostToJoinerNonce(::std::string const& sessionToken) const;
+#endif
 
     MCNAPI ::Bedrock::Threading::Async<void> $onNextFetchJoiners();
-#endif
+
+    MCNAPI ::Bedrock::Threading::Async<::Social::EduFetchTenantSettingsResponse> $requestTenantSettings();
+
+    MCNAPI ::Bedrock::Threading::Async<::Social::EduFetchServersResponse> $requestBroadcastedServers();
+
+    MCNAPI ::Bedrock::Threading::Async<::Social::EduFetchServersResponse>
+    $requestServerInfo(::std::vector<::std::string> const& currentServerIds);
+
+    MCNAPI ::Bedrock::Threading::Async<::Social::EduAddServerResponse> $requestAddServer(::std::string const& serverId);
+
+    MCNAPI ::Bedrock::Threading::Async<::Social::EduJoinServerResponse>
+    $requestJoinServer(::std::string const& serverId, ::std::string const& passcode);
+
+    MCNAPI void $saveCachedServersToDisk(
+        ::brstd::flat_map<
+            ::std::string,
+            ::Social::EduDedicatedServerDetails,
+            ::std::less<::std::string>,
+            ::std::vector<::std::string>,
+            ::std::vector<::Social::EduDedicatedServerDetails>> const& servers
+    );
+
+    MCNAPI ::brstd::flat_map<
+        ::std::string,
+        ::Social::EduDedicatedServerDetails,
+        ::std::less<::std::string>,
+        ::std::vector<::std::string>,
+        ::std::vector<::Social::EduDedicatedServerDetails>>
+    $loadCachedServersFromDisk();
+
+    MCNAPI ::Social::EduHeadlessConnectionHandshake $getHandshake() const;
+
+    MCNAPI ::std::string $getHostIp() const;
+
+    MCNAPI int $getHostPort() const;
 
 
     // NOLINTEND

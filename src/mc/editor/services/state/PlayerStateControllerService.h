@@ -4,7 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/Mode.h"
 #include "mc/editor/services/IEditorService.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Editor { class ServiceProviderCollection; }
+// clang-format on
 
 namespace Editor::Services {
 
@@ -42,6 +48,14 @@ public:
     virtual void _onEnterCrosshairMode();
 
     virtual void _onExitCrosshairMode();
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
+
+    MCNAPI void _syncFlyingNoClip(::Editor::ServiceProviderCollection&);
     // NOLINTEND
 
 public:

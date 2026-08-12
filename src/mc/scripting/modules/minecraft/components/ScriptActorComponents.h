@@ -31,6 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::unordered_map<
+        ::std::string_view,
+        ::std::shared_ptr<::ScriptModuleMinecraft::IScriptActorComponentFactory>> const&
+    _getOrCreateActorComponentFactories() const;
+
     MCAPI ::std::vector<::std::string_view> getSupportedComponentIds(::WeakRef<::EntityContext> entityRef) const;
 
     MCAPI ::std::shared_ptr<::ScriptModuleMinecraft::IScriptActorComponentFactory> const&

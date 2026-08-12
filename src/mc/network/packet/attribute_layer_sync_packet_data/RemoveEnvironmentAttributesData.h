@@ -22,6 +22,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator==(::AttributeLayerSyncPacketData::RemoveEnvironmentAttributesData const& rhs) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bind(::cereal::ReflectionCtx& ctx);

@@ -35,7 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI ::Bedrock::NonOwnerPointer<::AppExtensions::IAppExtensions> $tryGetExtensions() const;
     // NOLINTEND
 };
 

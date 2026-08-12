@@ -113,6 +113,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RamAttackGoal(::Mob& mob);
+
+    MCAPI void _findTreeBehindTarget();
+
+    MCAPI bool _initiateRamAttack();
+
+    MCAPI void _tryKnockbackTarget();
     // NOLINTEND
 
 public:

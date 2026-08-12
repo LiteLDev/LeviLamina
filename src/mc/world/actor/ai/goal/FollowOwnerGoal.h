@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+class NavigationComponent;
 class Player;
 struct DimensionType;
 // clang-format on
@@ -62,6 +63,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit FollowOwnerGoal(::Mob& mob);
+
+    MCAPI bool _canReachOwner(::Mob& owner, ::NavigationComponent& navigationComponent) const;
+
+    MCAPI void _tryToTeleport(::Mob& owner) const;
     // NOLINTEND
 
 public:

@@ -32,15 +32,15 @@ public:
     // NOLINTBEGIN
     virtual ~IStorageManagementModel() = default;
 
-    virtual bool isPremiumLocked(::PackManifest const&) const = 0;
+    virtual bool isPremiumLocked(::PackManifest const& manifest) const = 0;
 
-    virtual ::IStorageManagementModel::PremiumWorldInfo getWorldInfo(::std::string const&) const = 0;
+    virtual ::IStorageManagementModel::PremiumWorldInfo getWorldInfo(::std::string const& worldId) const = 0;
 
     virtual ::I18n& getI18n() const = 0;
 
     virtual void clearCompletedDownloads() = 0;
 
-    virtual void navigateToDeleteProgressScreen(::std::vector<::std::shared_ptr<::ContentItem const>>) = 0;
+    virtual void navigateToDeleteProgressScreen(::std::vector<::std::shared_ptr<::ContentItem const>> toDelete) = 0;
     // NOLINTEND
 
 public:

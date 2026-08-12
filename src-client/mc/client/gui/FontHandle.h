@@ -38,6 +38,12 @@ public:
     // NOLINTBEGIN
     MCAPI FontHandle(::FontHandle defaultFont, ::std::string const& newFontAlias);
 
+    MCAPI FontHandle(
+        ::std::shared_ptr<::Font>                       defaultFont,
+        uint64 const                                    fontId,
+        ::Bedrock::NotNullNonOwnerPtr<::FontRepository> fontRepository
+    );
+
     MCAPI ::Font& getFont() const;
 
     MCAPI ::FontHandle& operator=(::FontHandle const&);

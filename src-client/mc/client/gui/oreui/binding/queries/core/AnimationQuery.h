@@ -36,6 +36,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AnimationQuery(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
+
+    MCAPI void _updateProperty();
     // NOLINTEND
 
 public:

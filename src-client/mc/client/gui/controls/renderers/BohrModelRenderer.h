@@ -78,14 +78,30 @@ public:
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual void render(::MinecraftUIRenderContext&, ::IClientInstance&, ::UIControl&, int) /*override*/;
+    virtual void render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl&, int) /*override*/;
 
-    virtual bool update(::IClientInstance&, ::UIControl&, ::UIScene const&) /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BohrModelRenderer();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl&, int);
+
+    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
     // NOLINTEND
 };

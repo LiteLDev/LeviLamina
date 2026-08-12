@@ -4,8 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/item/ItemStack.h"
 #include "mc/world/level/Tick.h"
+#include "mc/world/level/block/VaultBlockState.h"
 #include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
@@ -98,6 +100,8 @@ public:
 
         MCAPI static void emitDeactivationParticles(::BlockSource& region, ::BlockPos pos);
 #endif
+
+        MCAPI static void removeDisplayEntity(::VaultBlockActor::VaultClientData& clientData);
         // NOLINTEND
     };
 
@@ -105,6 +109,29 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
+        MCAPI static void cycleDisplayItemFromLootTable(
+            ::BlockSource&                        region,
+            ::VaultBlockState                     blockState,
+            ::VaultBlockActor::VaultConfig const& config,
+            ::VaultBlockActor::VaultSharedData&   sharedData
+        );
+
+        MCAPI static void onTransitionBetweenStates(
+            ::BlockSource&                        region,
+            ::BlockPos                            pos,
+            ::VaultBlockActor::VaultConfig const& config,
+            ::VaultBlockActor::VaultSharedData&   sharedData,
+            ::VaultBlockState                     oldState,
+            ::VaultBlockState                     newState
+        );
+
+        MCAPI static void playInsertFailSound(
+            ::BlockSource&                         region,
+            ::BlockPos                             pos,
+            ::VaultBlockActor::VaultServerData&    serverData,
+            ::SharedTypes::Legacy::LevelSoundEvent sound
+        );
+
         MCAPI static void tryInsertKey(
             ::BlockSource&                        region,
             ::Player&                             player,
@@ -112,6 +139,14 @@ public:
             ::VaultBlockActor::VaultConfig const& config,
             ::VaultBlockActor::VaultSharedData&   sharedData,
             ::VaultBlockActor::VaultServerData&   serverData
+        );
+
+        MCAPI static void updateConnectedPlayersWithinRange(
+            ::BlockSource&                            region,
+            ::BlockPos                                pos,
+            ::VaultBlockActor::VaultServerData const& serverData,
+            ::VaultBlockActor::VaultSharedData&       sharedData,
+            float                                     range
         );
         // NOLINTEND
     };
@@ -136,13 +171,13 @@ public:
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& context) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&) /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
@@ -170,6 +205,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+
+    MCAPI void $_onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
+
 
     // NOLINTEND
 };

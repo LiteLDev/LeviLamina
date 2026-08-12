@@ -88,7 +88,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI ::Settings::ComponentState $getDefaultState() const;
     // NOLINTEND
 };
 

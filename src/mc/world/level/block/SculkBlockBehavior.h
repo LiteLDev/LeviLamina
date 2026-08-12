@@ -25,19 +25,23 @@ public:
 
     virtual bool canChangeBlockOnSpread() const /*override*/;
 
-    virtual bool
-    attemptSpreadVeins(::IBlockWorldGenAPI&, ::BlockPos const&, ::Block const&, int, ::SculkSpreader&) const
-        /*override*/;
+    virtual bool attemptSpreadVeins(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::Block const&       block,
+        int,
+        ::SculkSpreader&
+    ) const /*override*/;
 
     virtual int attemptUseCharge(
-        ::IBlockWorldGenAPI&,
-        ::BlockSource*,
-        ::BlockPos const&,
-        ::BlockPos const&,
+        ::IBlockWorldGenAPI& target,
+        ::BlockSource*       region,
+        ::BlockPos const&    originPos,
+        ::BlockPos const&    pos,
+        int                  charge,
         int,
-        int,
-        ::Random&,
-        ::SculkSpreader&,
+        ::Random&        random,
+        ::SculkSpreader& spreader,
         bool const
     ) const /*override*/;
 
@@ -47,6 +51,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD int $updateDecayDelay(int const) const;
+
+    MCAPI int $updateFacingData(int const, ::Block const&) const;
+
+    MCFOLD bool $canChangeBlockOnSpread() const;
+
+    MCAPI bool $attemptSpreadVeins(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::Block const&       block,
+        int,
+        ::SculkSpreader&
+    ) const;
+
+    MCAPI int $attemptUseCharge(
+        ::IBlockWorldGenAPI& target,
+        ::BlockSource*       region,
+        ::BlockPos const&    originPos,
+        ::BlockPos const&    pos,
+        int                  charge,
+        int,
+        ::Random&        random,
+        ::SculkSpreader& spreader,
+        bool const
+    ) const;
+
+    MCFOLD void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
+
 
     // NOLINTEND
 };

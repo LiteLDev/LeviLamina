@@ -69,14 +69,7 @@ public:
     // NOLINTBEGIN
     virtual ~PackSourceFactory() /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
-        ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const&,
-        ::mce::UUID const&,
-        ::PackType,
-        ::PackOrigin
-    ) /*override*/;
-#else // LL_PLAT_C
+#ifdef LL_PLAT_C
     virtual ::TreatmentPackSource&
     createTreatmentPackSource(::Core::Path const& path, ::PackType packType) /*override*/;
 
@@ -85,116 +78,56 @@ public:
 
     virtual void removeFromTreatmentPackSource(::Core::Path const& fullPathToPack) /*override*/;
 
+#endif
     virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
         ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager,
         ::mce::UUID const&                                                  worldTemplateId,
         ::PackType                                                          packType,
         ::PackOrigin                                                        packOrigin
     ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
-        ::std::unique_ptr<::WorldTemplateCollectionView>,
-        ::mce::UUID const&,
-        ::PackType,
-        ::PackOrigin
-    ) /*override*/;
-#else // LL_PLAT_C
     virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
         ::std::unique_ptr<::WorldTemplateCollectionView> view,
         ::mce::UUID const&                               worldTemplateId,
         ::PackType                                       packType,
         ::PackOrigin                                     packOrigin
     ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::WorldTemplatePackSource* getWorldTemplatePackSource(::mce::UUID const&, ::PackType) const /*override*/;
-#else // LL_PLAT_C
     virtual ::WorldTemplatePackSource*
     getWorldTemplatePackSource(::mce::UUID const& worldTemplateId, ::PackType packType) const /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::DirectoryPackSource&
-    createDirectoryPackSource(::Core::Path const&, ::PackType, ::PackOrigin, bool) /*override*/;
-#else // LL_PLAT_C
     virtual ::DirectoryPackSource& createDirectoryPackSource(
         ::Core::Path const& path,
         ::PackType          packType,
         ::PackOrigin        packOrigin,
         bool                isDevDirectory
     ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::DirectoryPackSource* getDirectoryPackSource(::Core::Path const&, ::PackType) const /*override*/;
-#else // LL_PLAT_C
     virtual ::DirectoryPackSource* getDirectoryPackSource(::Core::Path const& path, ::PackType packType) const
         /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::InPackagePackSource& createInPackagePackSource(::PackType) /*override*/;
-#else // LL_PLAT_C
     virtual ::InPackagePackSource& createInPackagePackSource(::PackType packType) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::InPackagePackSource* getInPackagePackSource(::PackType) /*override*/;
-#else // LL_PLAT_C
     virtual ::InPackagePackSource* getInPackagePackSource(::PackType packType) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::WorldHistoryPackSource& createWorldHistoryPackSource(::Core::Path const&, ::PackType) /*override*/;
-#else // LL_PLAT_C
     virtual ::WorldHistoryPackSource&
     createWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::WorldHistoryPackSource* getWorldHistoryPackSource(::Core::Path const&, ::PackType) const /*override*/;
-#else // LL_PLAT_C
     virtual ::WorldHistoryPackSource*
     getWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) const /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::DirectoryPackSource* getDirectoryPackSourceContaining(::PackIdVersion const&) const /*override*/;
-#else // LL_PLAT_C
     virtual ::DirectoryPackSource* getDirectoryPackSourceContaining(::PackIdVersion const& packId) const /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void removeFromDirectoryPackSource(::Core::Path const&) /*override*/;
-#else // LL_PLAT_C
     virtual void removeFromDirectoryPackSource(::Core::Path const& fullPathToPack) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::std::unique_ptr<::Realms::RealmsServicePackSource> createRealmsServicePackSource(
-        int64,
-        ::PackType,
-        ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&&
-    ) /*override*/;
-#else // LL_PLAT_C
     virtual ::std::unique_ptr<::Realms::RealmsServicePackSource> createRealmsServicePackSource(
         int64                                                       realmId,
         ::PackType                                                  packType,
         ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
     ) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::std::unique_ptr<::CompositePackSource>
-        createCompositePackSource(::std::vector<::PackSource*>) /*override*/;
-#else // LL_PLAT_C
     virtual ::std::unique_ptr<::CompositePackSource>
     createCompositePackSource(::std::vector<::PackSource*> sources) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -237,13 +170,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ::TreatmentPackSource& $createTreatmentPackSource(::Core::Path const& path, ::PackType packType);
-
-    MCAPI ::TreatmentPackSource* $getTreatmentPackSource(::Core::Path const& path, ::PackType packType) const;
-
-    MCAPI void $removeFromTreatmentPackSource(::Core::Path const& fullPathToPack);
-
     MCAPI ::WorldTemplatePackSource& $createWorldTemplatePackSource(
         ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager,
         ::mce::UUID const&                                                  worldTemplateId,
@@ -290,6 +216,13 @@ public:
     );
 
     MCAPI ::std::unique_ptr<::CompositePackSource> $createCompositePackSource(::std::vector<::PackSource*> sources);
+
+#ifdef LL_PLAT_C
+    MCAPI ::TreatmentPackSource& $createTreatmentPackSource(::Core::Path const& path, ::PackType packType);
+
+    MCAPI ::TreatmentPackSource* $getTreatmentPackSource(::Core::Path const& path, ::PackType packType) const;
+
+    MCAPI void $removeFromTreatmentPackSource(::Core::Path const& fullPathToPack);
 #endif
 
 

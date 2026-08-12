@@ -19,6 +19,7 @@
 #include "mc/deps/minecraft_renderer/game/FrustumCullerType.h"
 #include "mc/deps/minecraft_renderer/game/LevelCullerType.h"
 #include "mc/deps/minecraft_renderer/game/ShadowContext.h"
+#include "mc/deps/minecraft_renderer/game/TerrainLayerLOD.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 #include "mc/deps/minecraft_renderer/resources/ClientTexture.h"
 #include "mc/deps/renderer/Camera.h"
@@ -33,6 +34,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class Actor;
 class BaseActorRenderContext;
 class BiomeBlendingMapRenderer;
@@ -46,20 +48,24 @@ class IClientInstance;
 class IConstBlockSource;
 class IVanillaRenderBlockActorComponent;
 class Level;
+class LevelBuilder;
 class LevelCullerBase;
 class LevelRenderer;
 class LevelRendererCameraProxy;
 class LocalPlayer;
+class Player;
 class RenderChunkInstanced;
 class RenderChunkShared;
 class ResourcePackManager;
 class ScreenContext;
 class WeatherRenderer;
+struct BaseSceneDirectionalLightRenderData;
 struct ChunkRenderObjectCollection;
 struct CrackRenderObjectCollection;
 struct LevelRenderPreRenderUpdateParameters;
 struct NameTagRenderObjectCollection;
 struct OccluderFace;
+struct TerrainLayer;
 struct ViewRenderObject;
 namespace mce { class TextureGroup; }
 namespace mce { class TexturePtr; }
@@ -351,47 +357,55 @@ public:
 
     virtual void initResources();
 
-    virtual void frameUpdate(::ClientFrameUpdateContext&);
+    virtual void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 
     virtual void tickLevelRendererCamera();
 
     virtual void tickRain();
 
-    virtual void updateViewArea(::LevelRenderPreRenderUpdateParameters const&);
+    virtual void updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
-    virtual void callRenderNameTags(::ScreenContext&, ::ViewRenderObject const&, ::Font&);
+    virtual void callRenderNameTags(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, ::Font& font);
 
-    virtual ::NameTagRenderObjectCollection extractNameTags(::ScreenContext&) const;
+    virtual ::NameTagRenderObjectCollection extractNameTags(::ScreenContext& screenContext) const;
 
-    virtual void callRenderCracks(::BaseActorRenderContext&, ::ViewRenderObject const&);
+    virtual void callRenderCracks(::BaseActorRenderContext& renderContext, ::ViewRenderObject const& renderObj);
 
-    virtual ::CrackRenderObjectCollection extractCracks(::ScreenContext&) const;
+    virtual ::CrackRenderObjectCollection extractCracks(::ScreenContext& screenContext) const;
 
-    virtual void renderEntityEffects(::BaseActorRenderContext&);
+    virtual void renderEntityEffects(::BaseActorRenderContext& renderContext);
 
-    virtual void renderBlockEntities(::BaseActorRenderContext&, bool);
+    virtual void renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
 
-    virtual void setViewArea(::LevelRenderPreRenderUpdateParameters const&);
+    virtual void setViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
-    virtual bool getForceFog(::Actor const&) const;
+    virtual bool getForceFog(::Actor const& cameraActor) const;
 
-    virtual void setupFog(::ScreenContext&, float const);
+    virtual void setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
 
     virtual float getAmbientBrightness() const;
 
-    virtual void recalculateRenderDistance(float const);
+    virtual void recalculateRenderDistance(float const renderDistanceScalar);
 
-    virtual void preRenderUpdate(::ScreenContext&, ::LevelRenderPreRenderUpdateParameters&);
+    virtual void preRenderUpdate(
+        ::ScreenContext&                        screenContext,
+        ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
+    );
 
-    virtual void render(::BaseActorRenderContext&, ::ViewRenderObject const&, ::IClientInstance&);
+    virtual void render(
+        ::BaseActorRenderContext& baseEntityRenderContext,
+        ::ViewRenderObject const& renderObj,
+        ::IClientInstance&        ci
+    );
 
     virtual void postRenderUpdate();
 
-    virtual void notifyGeoChangedForAffectedEntities(::RenderChunkShared&, uchar);
+    virtual void notifyGeoChangedForAffectedEntities(::RenderChunkShared& renderChunkShared, uchar version);
 
     virtual void updateLevelCullerType(::LevelCullerType const newLevelCullerType) = 0;
 
-    virtual void queueRenderEntities(::LevelRenderPreRenderUpdateParameters const&);
+    virtual void
+    queueRenderEntities(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
     virtual void _releaseRespectiveResources();
 
@@ -405,7 +419,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _addToRenderChunkQueue(
+        ::ChunkRenderObjectCollection&           collection,
+        ::TerrainMaterialVariationManager const& terrainVariationMgr,
+        ::TerrainLayer const&                    layer,
+        ::TerrainLayerLOD const                  layerLOD,
+        ::RenderChunkInstanced const&            renderChunkInstanced,
+        uint64                                   chunkIdx,
+        ::BlockPos const&                        chunkPos
+    );
+
+    MCAPI ::std::shared_ptr<::LevelCullerBase> _createCuller(
+        ::LevelCullerType                      type,
+        ::std::weak_ptr<::LevelRendererCamera> levelRendererCamera,
+        ::LevelBuilder&                        levelBuilder
+    );
+
+    MCAPI ::LevelRendererCamera::ResolvedFogVolumetricCoefficientSetting
+    _getCurrentCoefficientFogSetting(::FogDefinition::CoefficientSettingType settingType) const;
+
+    MCAPI ::LevelRendererCamera::ResolvedFogVolumetricHenyeyGreensteinGSetting
+    _getCurrentHenyeyGreensteinGFogSetting(::FogDefinition::HenyeyGreensteinGSettingType settingType) const;
+
+    MCAPI void _initCubemapTextures(::Dimension const& dimension);
+
+    MCAPI void _releaseResources();
+
+    MCAPI void
+    _resortNearbyChunks(::Vec3 const& viewPos, ::GridArea<::std::shared_ptr<::RenderChunkInstanced>> const& viewArea);
+
+    MCAPI bool _shouldRenderLeashedEntity(::Actor* actor, ::Vec3 cameraPos);
+
+    MCAPI void _tryInsertBlockEntityIntoRenderQueues(
+        ::IVanillaRenderBlockActorComponent*                            renderComponent,
+        ::std::map<::ChunkPos, ::std::unordered_set<::BlockPos>> const& skipList
+    );
+
+    MCAPI ::GridArea<::std::shared_ptr<::RenderChunkInstanced>>& _viewAreaMutable();
+
     MCAPI bool cullerIsVisible(::Vec3 const& point, float radius) const;
+
+    MCAPI ::LevelRendererCamera::RainState doRainUpdate();
 
     MCAPI void doneQueuingChunks();
 
@@ -421,6 +475,12 @@ public:
 
     MCAPI uint64 getRenderChunkInstancedEstimatedIndexMemoryUsed();
 
+    MCAPI bool isAABBVisible(::AABB const& bb, bool useFastCulling) const;
+
+    MCAPI void onViewRadiusChanged(bool resetAll);
+
+    MCAPI void preDimensionChanged(::Player& player);
+
     MCAPI void queueChunk(
         ::ChunkRenderObjectCollection&                          collection,
         ::RenderChunkInstanced const&                           renderChunkInstanced,
@@ -434,14 +494,89 @@ public:
 
     MCAPI void renderChunkVisibilityChanged(::RenderChunkShared& renderChunkShared, bool visibilityMatrixChanged);
 
+    MCAPI void renderSky(
+        ::ScreenContext&                             screenContext,
+        ::ViewRenderObject const&                    renderObj,
+        ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData
+    ) const;
+
     MCAPI void setDirLightShadowRenderChunksPerfCounter(int chunkCount);
 
     MCAPI bool shouldCullThisFrame(uint64 lastNumRenderChunksVisibleFromCullingPoint);
+
+    MCAPI void updateFarChunksDistance();
+
+    MCAPI void updatePerChunkFaceSortState(::Vec3 const& viewPos, ::Vec3 const& viewDir, bool isOrthoCamera);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addCameraListenerToRenderChunkCoordinator();
 
+    MCAPI void $onAppSuspended();
+
+    MCAPI void $onAppResumed();
+
+    MCAPI void $onDeviceLost();
+
+    MCFOLD void $onLowMemory();
+
+    MCFOLD void $initResources();
+
+    MCFOLD void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
+
+    MCAPI void $tickLevelRendererCamera();
+
+    MCAPI void $tickRain();
+
+    MCAPI void $updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+
+    MCFOLD void $callRenderNameTags(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, ::Font& font);
+
+    MCAPI ::NameTagRenderObjectCollection $extractNameTags(::ScreenContext& screenContext) const;
+
+    MCFOLD void $callRenderCracks(::BaseActorRenderContext& renderContext, ::ViewRenderObject const& renderObj);
+
+    MCAPI ::CrackRenderObjectCollection $extractCracks(::ScreenContext& screenContext) const;
+
+    MCFOLD void $renderEntityEffects(::BaseActorRenderContext& renderContext);
+
+    MCAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
+
+    MCAPI void $setViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+
+    MCFOLD bool $getForceFog(::Actor const& cameraActor) const;
+
+    MCAPI void $setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
+
+    MCAPI float $getAmbientBrightness() const;
+
+    MCAPI void $recalculateRenderDistance(float const renderDistanceScalar);
+
+    MCAPI void $preRenderUpdate(
+        ::ScreenContext&                        screenContext,
+        ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
+    );
+
+    MCAPI void $render(
+        ::BaseActorRenderContext& baseEntityRenderContext,
+        ::ViewRenderObject const& renderObj,
+        ::IClientInstance&        ci
+    );
+
+    MCFOLD void $postRenderUpdate();
+
+    MCFOLD void $notifyGeoChangedForAffectedEntities(::RenderChunkShared& renderChunkShared, uchar version);
+
+    MCAPI void $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+
+    MCFOLD void $_releaseRespectiveResources();
+
+    MCAPI void $setupViewArea();
+
+    MCAPI ::FogDefinition::DistanceSettingType $_getFogDistanceSettingType() const;
+
+    MCAPI ::FogDefinition::DensitySettingType $_getFogDensitySettingType() const;
     // NOLINTEND
 };

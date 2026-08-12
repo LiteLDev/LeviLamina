@@ -7,7 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorOwnerComponent;
+class EntityContext;
 class EntityRegistry;
+class RailActivatorComponent;
 // clang-format on
 
 class RailActivatorSystem : public ::ITickingSystem {
@@ -15,6 +18,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _tickComponent(
+        ::EntityContext&          entity,
+        ::ActorOwnerComponent&    actorOwnerComponent,
+        ::RailActivatorComponent& railActivatorComponent
+    );
     // NOLINTEND
 
 public:

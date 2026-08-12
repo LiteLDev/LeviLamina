@@ -63,6 +63,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _messagePlayers(::std::string message);
+
+    MCAPI void _showTrialReminder(bool force);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
@@ -94,9 +102,17 @@ public:
 
     MCAPI void $setTrialMode(bool isEnabled);
 
+#ifdef LL_PLAT_S
     MCAPI bool $isInTrialMode();
+#else // LL_PLAT_C
+    MCFOLD bool $isInTrialMode();
+#endif
 
+#ifdef LL_PLAT_S
     MCAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
+#else // LL_PLAT_C
+    MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
+#endif
 
 
     // NOLINTEND

@@ -34,12 +34,7 @@ public:
     // NOLINTBEGIN
     virtual ::Json::Value serialize() const /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void deserialize(::Json::Value const&) /*override*/;
-#else // LL_PLAT_C
     virtual void deserialize(::Json::Value const& root) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -89,11 +84,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ::Json::Value $serialize() const;
 
     MCAPI void $deserialize(::Json::Value const& root);
-#endif
 
 
     // NOLINTEND

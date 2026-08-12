@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class PageIndicatorManagerComponent;
 class UIControl;
 // clang-format on
 
@@ -36,7 +37,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void
+    _findCorrespondingDescendant(::std::shared_ptr<::UIControl> child, bool const isSelected, uint64& countFound);
+
     MCAPI void _registerWithManager();
+
+    MCAPI ::PageIndicatorManagerComponent* getPageIndicatorManager();
+
+    MCAPI void notifyGridCompletedConstruction(uint64);
+
+    MCAPI void notifySubPageChanged(uint64 newPage);
     // NOLINTEND
 
 public:

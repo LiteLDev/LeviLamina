@@ -52,6 +52,8 @@ public:
     virtual bool equals(::Tag const& rhs) const /*override*/;
 
     virtual void deleteChildren() /*override*/;
+
+    virtual ~ListTag() /*override*/;
     // NOLINTEND
 
 public:
@@ -60,6 +62,12 @@ public:
     MCAPI void add(::std::unique_ptr<::Tag> tag);
 
     MCAPI ::std::unique_ptr<::ListTag> copyList() const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

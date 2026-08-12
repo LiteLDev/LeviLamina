@@ -28,21 +28,33 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool carveEllipsoidVolume(
-        ::IBlockWorldGenAPI&,
+        ::IBlockWorldGenAPI& target,
         ::CaveFeatureUtils::CarverConfiguration const&,
-        ::Random&,
-        ::ChunkPos const&,
-        ::Vec3 const&,
-        ::BoundingBox const&,
-        float,
-        float,
-        ::CaveFeatureUtils::CarvingParameters const&
+        ::Random&                                    random,
+        ::ChunkPos const&                            pos,
+        ::Vec3 const&                                startPos,
+        ::BoundingBox const&                         volume,
+        float                                        rad,
+        float                                        yRad,
+        ::CaveFeatureUtils::CarvingParameters const& carveValues
     ) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $carveEllipsoidVolume(
+        ::IBlockWorldGenAPI& target,
+        ::CaveFeatureUtils::CarverConfiguration const&,
+        ::Random&                                    random,
+        ::ChunkPos const&                            pos,
+        ::Vec3 const&                                startPos,
+        ::BoundingBox const&                         volume,
+        float                                        rad,
+        float                                        yRad,
+        ::CaveFeatureUtils::CarvingParameters const& carveValues
+    ) const;
+
 
     // NOLINTEND
 };

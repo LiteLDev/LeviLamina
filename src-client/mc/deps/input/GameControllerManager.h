@@ -41,7 +41,7 @@ public:
 
     virtual bool hasAdequateConnectedGameController() const /*override*/;
 
-    virtual bool hasAdequateConnectedGameControllers(uint64 const) const /*override*/;
+    virtual bool hasAdequateConnectedGameControllers(uint64 const playerCount) const /*override*/;
 
     virtual uint64 getMaxGameControllerButtons() const /*override*/;
 
@@ -56,7 +56,7 @@ public:
     virtual ::GameControllerErrorType getPlatformSpecificControllerError() const /*override*/;
 
     virtual void
-    setPlatformSpecificControllerErrorRetrievalFunc(::std::function<::GameControllerErrorType()>&&) /*override*/;
+    setPlatformSpecificControllerErrorRetrievalFunc(::std::function<::GameControllerErrorType()>&& lambda) /*override*/;
 
     virtual void resetClientControllerCount() /*override*/;
 
@@ -81,9 +81,15 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::weak_ptr<::IGameController> $getGameController(int id);
 
+    MCAPI ::std::vector<::std::weak_ptr<::IGameController>> $getConnectedGameControllers();
+
     MCAPI ::std::vector<::std::weak_ptr<::IGameController>> $getGameControllersInUse();
 
     MCAPI bool $hasAdequateConnectedGameController() const;
+
+    MCAPI bool $hasAdequateConnectedGameControllers(uint64 const playerCount) const;
+
+    MCFOLD uint64 $getMaxGameControllerButtons() const;
 
     MCAPI void $registerConsumer(void const* token);
 
@@ -94,6 +100,8 @@ public:
     MCFOLD ::ControllerRefreshState $getControllerRefreshState() const;
 
     MCAPI ::GameControllerErrorType $getPlatformSpecificControllerError() const;
+
+    MCAPI void $setPlatformSpecificControllerErrorRetrievalFunc(::std::function<::GameControllerErrorType()>&& lambda);
 
     MCAPI void $resetClientControllerCount();
 

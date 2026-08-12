@@ -28,12 +28,20 @@ public:
     ::ll::UntypedStorage<8, 128> mUnk1c9ab3;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    SessionInfoManagerImpl& operator=(SessionInfoManagerImpl const&);
+    SessionInfoManagerImpl(SessionInfoManagerImpl const&);
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     SessionInfoManagerImpl& operator=(SessionInfoManagerImpl const&);
     SessionInfoManagerImpl(SessionInfoManagerImpl const&);
     SessionInfoManagerImpl();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -56,14 +64,52 @@ public:
     )>&
     onCurrentSessionChanged() /*override*/;
 
-    virtual ::std::string serializeSession(::Bedrock::SessionInfo const&) const /*override*/;
+    virtual ::std::string serializeSession(::Bedrock::SessionInfo const& session) const /*override*/;
 
-    virtual ::std::shared_ptr<::Bedrock::SessionInfo> deserializeSession(::std::string_view) const /*override*/;
+    virtual ::std::shared_ptr<::Bedrock::SessionInfo> deserializeSession(::std::string_view contents) const
+        /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI SessionInfoManagerImpl();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $initialize();
+
+    MCNAPI void $beginNewSession();
+
+    MCNAPI ::std::shared_ptr<::Bedrock::SessionInfo const> $getCurrentSession() const;
+
+    MCNAPI ::Bedrock::AccessUpdateEditor<
+        ::std::shared_ptr<::Bedrock::SessionInfo>,
+        ::Bedrock::SessionInfoManagerImpl,
+        ::Bedrock::Detail::AccessUpdateEditorAccessor<::std::shared_ptr<::Bedrock::SessionInfo>, void>,
+        ::Bedrock::Threading::Mutex>
+    $editCurrentSession();
+
+    MCNAPI ::Bedrock::PubSub::Connector<void(
+        ::Bedrock::NonOwnerPointer<::Bedrock::SessionInfoManager> const&,
+        ::std::shared_ptr<::Bedrock::SessionInfo const> const&
+    )>&
+    $onCurrentSessionChanged();
+
+    MCNAPI ::std::string $serializeSession(::Bedrock::SessionInfo const& session) const;
+
+    MCNAPI ::std::shared_ptr<::Bedrock::SessionInfo> $deserializeSession(::std::string_view contents) const;
+
 
     // NOLINTEND
 };

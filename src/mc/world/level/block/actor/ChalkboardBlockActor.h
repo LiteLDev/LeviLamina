@@ -76,6 +76,12 @@ public:
         ::ll::TypedStorage<1, 1, bool>                    mChunkFound;
         ::ll::TypedStorage<8, 8, ::ChalkboardBlockActor*> mBoard;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI bool confirmedBroken(::ChalkboardBlockActor& compare, ::BlockSource& region) const;
+        // NOLINTEND
     };
 
 public:
@@ -104,23 +110,23 @@ public:
     // NOLINTBEGIN
     virtual ~ChalkboardBlockActor() /*override*/ = default;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& context) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual void onChanged(::BlockSource&) /*override*/;
+    virtual void onChanged(::BlockSource& region) /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual ::std::string getImmersiveReaderText(::BlockSource&) /*override*/;
+    virtual ::std::string getImmersiveReaderText(::BlockSource& region) /*override*/;
 
-    virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const&) const /*override*/;
+    virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const& tag) const /*override*/;
 
-    virtual void setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const /*override*/;
+    virtual void setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&) /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
@@ -149,6 +155,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::vector<::BlockPos>
+    calculateAllBlocks(::BlockPos const& basePos, ::ChalkboardSize boardSize, int dir);
+
     MCAPI static bool canCreateChalkboard(
         ::Actor*                   creator,
         ::BlockSource&             region,
@@ -185,6 +194,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI void $onChanged(::BlockSource& region);
+
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI ::std::string $getImmersiveReaderText(::BlockSource& region);
+
+    MCAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const& tag) const;
+
+    MCAPI void $setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
+
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+
 
     // NOLINTEND
 };

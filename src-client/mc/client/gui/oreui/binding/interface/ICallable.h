@@ -30,11 +30,11 @@ public:
 
     virtual void success() = 0;
 
-    virtual void fail(int error) = 0;
+    virtual void fail(int) = 0;
 
     virtual void fail() = 0;
 
-    virtual void progress(uchar progress) = 0;
+    virtual void progress(uchar) = 0;
     // NOLINTEND
 
 public:

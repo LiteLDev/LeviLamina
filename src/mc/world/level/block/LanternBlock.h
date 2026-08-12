@@ -42,6 +42,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _couldHang(::BlockSource& region, ::BlockPos const& pos) const;
+
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 

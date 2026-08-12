@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class IBlockWorldGenAPI;
 class Random;
@@ -39,6 +40,18 @@ public:
         ::std::vector<::BlockPos> const&,
         ::std::vector<::ITreeCanopy::BranchSize> const&
     ) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos> _fillLayer(
+        ::IBlockWorldGenAPI&            target,
+        ::BlockPos const&               pos,
+        ::Block const&                  leavesBlock,
+        int                             radius,
+        ::TreeHelper::TreeParams const& treeParams
+    ) const;
     // NOLINTEND
 
 public:

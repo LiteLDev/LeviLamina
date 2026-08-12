@@ -106,9 +106,8 @@ public:
 
     virtual void StopInternal() /*override*/;
 
-    virtual ::webrtc::RTCError SetCodecPreferences(
-        ::webrtc::ArrayView<::webrtc::RtpCodecCapability, 18446744073709546905> codec_capabilities
-    ) /*override*/;
+    virtual ::webrtc::RTCError
+    SetCodecPreferences(::webrtc::ArrayView<::webrtc::RtpCodecCapability> codec_capabilities) /*override*/;
 
     virtual ::std::vector<::webrtc::RtpCodecCapability> codec_preferences() const /*override*/;
 
@@ -117,7 +116,7 @@ public:
     virtual ::std::vector<::webrtc::RtpHeaderExtensionCapability> GetNegotiatedHeaderExtensions() const /*override*/;
 
     virtual ::webrtc::RTCError SetHeaderExtensionsToNegotiate(
-        ::webrtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const, 18446744073709546905> header_extensions
+        ::webrtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const> header_extensions
     ) /*override*/;
     // NOLINTEND
 
@@ -252,7 +251,7 @@ public:
     MCNAPI void $StopInternal();
 
     MCNAPI ::webrtc::RTCError
-    $SetCodecPreferences(::webrtc::ArrayView<::webrtc::RtpCodecCapability, 18446744073709546905> codec_capabilities);
+    $SetCodecPreferences(::webrtc::ArrayView<::webrtc::RtpCodecCapability> codec_capabilities);
 
     MCNAPI ::std::vector<::webrtc::RtpCodecCapability> $codec_preferences() const;
 
@@ -261,7 +260,7 @@ public:
     MCNAPI ::std::vector<::webrtc::RtpHeaderExtensionCapability> $GetNegotiatedHeaderExtensions() const;
 
     MCNAPI ::webrtc::RTCError $SetHeaderExtensionsToNegotiate(
-        ::webrtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const, 18446744073709546905> header_extensions
+        ::webrtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const> header_extensions
     );
 
 

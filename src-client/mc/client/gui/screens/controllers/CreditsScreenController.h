@@ -55,6 +55,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $onOpen();
 
+    MCAPI void $onTerminate();
     // NOLINTEND
 };

@@ -35,7 +35,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void $initBuilder(::LevelSeed64 levelSeed);
+#else // LL_PLAT_C
+    MCFOLD void $initBuilder(::LevelSeed64 levelSeed);
+#endif
 
     MCAPI void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
 

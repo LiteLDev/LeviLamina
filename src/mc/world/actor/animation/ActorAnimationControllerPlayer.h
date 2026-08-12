@@ -45,21 +45,24 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void applyToPose(
-        ::ApplyAnimationContext const&,
-        ::RenderParams&,
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>&,
-        float
+        ::ApplyAnimationContext const&                                                    applyContext,
+        ::RenderParams&                                                                   renderParams,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
+        float                                                                             blendWeight
     ) /*override*/;
 
     virtual void resetAnimation() /*override*/;
 
-    virtual void bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&) /*override*/;
+    virtual void bindParticleEffects(
+        ::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap
+    ) /*override*/;
 
-    virtual void bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&) /*override*/;
+    virtual void
+    bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap) /*override*/;
 
     virtual bool hasAnimationFinished() const /*override*/;
 
-    virtual ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const&) /*override*/;
+    virtual ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& friendlyName) /*override*/;
 
     virtual ::ActorAnimationType getAnimationType() const /*override*/;
 
@@ -77,6 +80,16 @@ public:
         ::AnimationComponent&                                      animationComponent,
         ::ExpressionNode const&                                    blendExpression,
         ::std::set<::HashedString, ::Util::HashStringHashGreater>& animationControllerNameStack
+    );
+
+    MCAPI void blendViaShortestPath(
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>> const&
+            blendOutBoneOrientationsMap,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>> const&
+              blendInBoneOrientationsMap,
+        float blendInWeight,
+        float blendWeight
     );
 
 #ifdef LL_PLAT_C
@@ -102,6 +115,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $applyToPose(
+        ::ApplyAnimationContext const&                                                    applyContext,
+        ::RenderParams&                                                                   renderParams,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
+        float                                                                             blendWeight
+    );
+
+    MCAPI void $resetAnimation();
+
+    MCAPI void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
+
+    MCAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
+
+    MCAPI bool $hasAnimationFinished() const;
+
+    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const& friendlyName);
+
+    MCFOLD ::ActorAnimationType $getAnimationType() const;
+
+    MCAPI ::HashedString const& $getRawName() const;
+
+    MCAPI void $visit(::AnimationVisitor&& dispatcher);
+
 
     // NOLINTEND
 };

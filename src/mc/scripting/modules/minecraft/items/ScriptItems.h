@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -44,6 +45,30 @@ public:
             unordered_map<::std::string, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>>
                                    mThirdPartyItems;
     ::ll::TypedStorage<1, 1, bool> mRegisteredItems;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    _registerItemType(
+        ::std::unordered_map<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>& registry,
+        ::Scripting::WeakLifetimeScope                                                      scope,
+        ::std::string                                                                       itemName,
+        bool                                                                                allowAirBlockItem
+    );
+
+    MCAPI void _registerItems(::Scripting::WeakLifetimeScope& scope, bool allowAirBlockItem);
+
+    MCAPI void _tryRegisterItemTypeAlias(::HashedString const& aliasName);
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    get(::Scripting::WeakLifetimeScope& scope, ::std::string const& itemName, bool allowAirBlockItem);
+
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    getAll(::Scripting::WeakLifetimeScope& scope, bool allowAirBlockItem);
     // NOLINTEND
 
 public:

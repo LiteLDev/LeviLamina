@@ -34,6 +34,8 @@ public:
 
     MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<0>
     insert(::std::string_view keyStr, ::Bedrock::JSONObject::ValueWrapper const& value, bool copyKey);
+
+    MCNAPI bool setContents(::Bedrock::JSONObject::ValueWrapper const& contents);
     // NOLINTEND
 };
 

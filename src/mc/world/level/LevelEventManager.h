@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class IDimension;
 class LevelEventCoordinator;
 class PacketSender;
 class UserEntityIdentifierComponent;
@@ -71,11 +72,25 @@ public:
         int                                    data,
         ::UserEntityIdentifierComponent const* userIdentifierToExclude
     );
+
+    MCAPI void
+    broadcastLocalEvent(::IDimension& dimension, ::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
+    $getLevelEventDataConnector();
+
+#ifdef LL_PLAT_S
+    MCAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
+    $getLevelEventCompoundTagConnector();
+#else // LL_PLAT_C
+    MCFOLD ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
+    $getLevelEventCompoundTagConnector();
+#endif
+
 
     // NOLINTEND
 };

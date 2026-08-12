@@ -60,6 +60,108 @@ public:
     ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int, int>>      mPerformAutoTrade;
     ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string>> mSetPreviewItemName;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void autoCraftAllItemsFromRecipe(::ContainerEnumName sourceName, int sourceIndex);
+
+    MCAPI void autoCraftOneItemFromRecipe(::ContainerEnumName sourceName, int sourceIndex);
+
+    MCAPI void autoPlaceItems(::ContainerEnumName sourceName, int sourceIndex);
+
+    MCAPI void closeContainer();
+
+    MCAPI void coalesceItems(::ContainerEnumName destinationName, int destinationIndex, ::ContainerEnumName sourceName);
+
+    MCAPI void coalesceOrAutoPlaceItems(::ContainerEnumName destinationName, int destinationIndex);
+
+    MCAPI void dropAllItems(::ContainerEnumName sourceName, int sourceIndex);
+
+    MCAPI void dropOneItem(::ContainerEnumName sourceName, int sourceIndex);
+
+    MCAPI void performAutoTrade(int tradeTier, int tradeIndex);
+
+    MCAPI void placeAllItems(
+        ::ContainerEnumName selectedName,
+        int                 selectedIndex,
+        ::ContainerEnumName destinationName,
+        int                 destinationIndex
+    );
+
+    MCAPI void placeAmountOfItems(
+        ::ContainerEnumName selectedName,
+        int                 selectedIndex,
+        ::ContainerEnumName destinationName,
+        int                 destinationIndex,
+        int                 amount
+    );
+
+    MCAPI void placeOneItem(
+        ::ContainerEnumName selectedName,
+        int                 selectedIndex,
+        ::ContainerEnumName destinationName,
+        int                 destinationIndex
+    );
+
+    MCAPI void pullInIngredientsForSelectedTrade();
+
+    MCAPI void resetSplitStack();
+
+    MCAPI void selectRecipe(::ContainerEnumName sourceName, int sourceIndex, bool displayOnly);
+
+    MCAPI void selectTrade(int tradeTier, int tradeIndex);
+
+    MCAPI void setDistributeAllSource(::ContainerEnumName sourceName, int sourceIndex);
+
+    MCAPI void setPreviewItemName(::std::string name);
+
+    MCAPI void setRecipeBookFiltering(bool filtering);
+
+    MCAPI void setRecipeBookSearchString(::std::string searchText);
+
+    MCAPI void splitMultipleItems(
+        ::ContainerEnumName selectedName,
+        int                 selectedIndex,
+        ::ContainerEnumName destinationName,
+        int                 destinationIndex
+    );
+
+    MCAPI void splitMultipleItemsTouch(
+        ::ContainerEnumName selectedName,
+        int                 selectedIndex,
+        ::ContainerEnumName destinationName,
+        int                 destinationIndex
+    );
+
+    MCAPI void splitSingleItem(
+        ::ContainerEnumName sourceName,
+        int                 sourceIndex,
+        ::ContainerEnumName destinationName,
+        int                 destinationIndex
+    );
+
+    MCAPI void takeAllItems(
+        ::ContainerEnumName destinationName,
+        int                 destinationIndex,
+        ::ContainerEnumName sourceName,
+        int                 sourceIndex
+    );
+
+    MCAPI void takeHalfItems(
+        ::ContainerEnumName destinationName,
+        int                 destinationIndex,
+        ::ContainerEnumName sourceName,
+        int                 sourceIndex
+    );
+
+    MCAPI void takeOneItem(
+        ::ContainerEnumName destinationName,
+        int                 destinationIndex,
+        ::ContainerEnumName sourceName,
+        int                 sourceIndex
+    );
+    // NOLINTEND
 };
 
 } // namespace OreUI

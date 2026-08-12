@@ -32,6 +32,12 @@ public:
         LookAtLocation& operator=(LookAtLocation const&);
         LookAtLocation(LookAtLocation const&);
         LookAtLocation();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void setLocation(::std::string const& str);
+        // NOLINTEND
     };
 
 public:
@@ -56,6 +62,16 @@ public:
     LookedAtDefinition& operator=(LookedAtDefinition const&);
     LookedAtDefinition(LookedAtDefinition const&);
     LookedAtDefinition();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void setFieldOfView(float const& fieldOfViewInDegrees);
+
+    MCAPI void setLineOfSightObstructionType(::std::string const& str);
+
+    MCAPI void setSetTargetMode(::std::string const& str);
+    // NOLINTEND
 
 public:
     // static functions

@@ -11,6 +11,8 @@
 // clang-format off
 class FocusManagerProxy;
 class UIControl;
+struct SweepDescription;
+struct SweepResult;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
@@ -57,12 +59,33 @@ public:
     // NOLINTBEGIN
     MCAPI FocusManager();
 
+    MCAPI ::std::shared_ptr<::UIControl> _findFocusContainerControlFor(::std::shared_ptr<::UIControl> forControl) const;
+
+    MCAPI ::SweepResult _getControlAtFocusPoint(
+        ::SweepDescription const&                            desc,
+        ::std::vector<::std::shared_ptr<::UIControl>> const& controls
+    );
+
+    MCAPI ::std::shared_ptr<::UIControl> _getLastGoodFocusedControl(::std::shared_ptr<::UIControl> oldFocusedControl);
+
+    MCAPI void _setFocusControlFromIndex(int focusControlIndex, bool overrideLastFocus);
+
     MCAPI void _setFocusControlInternal(::UIControl const& control, bool allowDefault, bool overrideLastFocus);
+
+    MCAPI void _sweepForClosestControl(::std::shared_ptr<::UIControl> focusedControl);
+
+    MCAPI ::SweepResult _sweepForControlDirectional(
+        ::SweepDescription const&                            desc,
+        ::std::vector<::std::shared_ptr<::UIControl>> const& controls,
+        bool                                                 hasWrapped
+    );
 
     MCAPI void
     _sweepToNextFocusObject(::ui::CardinalDirection direction, bool overrideOrigin, ::glm::vec2 const& overridePos);
 
     MCAPI void _updateLostFocusControlList(::std::weak_ptr<::UIControl> control);
+
+    MCAPI void _updateRootOfFocusTree();
 
     MCAPI void addControl(::UIControl& control);
 

@@ -54,6 +54,34 @@ public:
     MCAPI explicit RealmsWorldEditorGameRulesQueriesFacet(
         ::std::shared_ptr<::Realms::RealmsWorldEditor> realmsWorldEditor
     );
+
+    MCAPI void _refreshRealmWorldSubscriptions();
+
+    MCFOLD bool getFireSpreads() const;
+
+    MCAPI bool getImmediateRespawn() const;
+
+    MCAPI bool getMobsDropLoot() const;
+
+    MCFOLD bool getNaturalRegeneration() const;
+
+    MCFOLD bool getRecipesUnlock() const;
+
+    MCFOLD bool getRespawnBlocksExplode() const;
+
+    MCAPI int getRespawnRadius() const;
+
+    MCFOLD bool getShowCoordinates() const;
+
+    MCFOLD bool getShowDaysPlayed() const;
+
+    MCAPI bool getSleepSkipNight() const;
+
+    MCAPI int getSleepSkipNightPercent() const;
+
+    MCAPI bool getTNTExplodes() const;
+
+    MCAPI bool getTileDrops() const;
     // NOLINTEND
 
 public:
@@ -71,7 +99,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCFOLD bool $update();
     // NOLINTEND
 };
 

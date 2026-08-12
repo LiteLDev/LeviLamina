@@ -26,26 +26,43 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
+    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
 
-    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
+    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
 
-    virtual void parseJson(::ConstDeserializeDataParams const&) /*override*/;
+    virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
 
     virtual uint64 getNumberOfParticlesToEmit(
-        ::ParticleSystem::ComponentAccessParticleEmitter&,
-        ::RenderParams&,
-        ::std::chrono::nanoseconds const&
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::RenderParams&                                   renderParams,
+        ::std::chrono::nanoseconds const&                 dt
     ) /*override*/;
 
-    virtual uint64
-    getNumberOfManualParticlesAllowed(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&) /*override*/;
+    virtual uint64 getNumberOfManualParticlesAllowed(
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::RenderParams&                                   renderParams
+    ) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
+    MCAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+
+    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
+
+    MCFOLD uint64 $getNumberOfParticlesToEmit(
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::RenderParams&                                   renderParams,
+        ::std::chrono::nanoseconds const&                 dt
+    );
+
+    MCAPI uint64 $getNumberOfManualParticlesAllowed(
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::RenderParams&                                   renderParams
+    );
     // NOLINTEND
 };
 

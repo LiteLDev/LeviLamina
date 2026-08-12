@@ -35,6 +35,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit MarketplaceSuggestionsFacet(::std::shared_ptr<::SuggestedContentOffersProvider> offersProvider);
+
+    MCAPI ::std::optional<::OreUI::SeeMoreRouteData> const& getSeeMoreRouteData();
     // NOLINTEND
 
 public:
@@ -52,7 +54,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

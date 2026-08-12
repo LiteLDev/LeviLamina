@@ -37,30 +37,49 @@ public:
     // NOLINTBEGIN
     virtual int getNumRenderPasses() /*override*/;
 
-    virtual ::BatchKey createBatchKey(int) /*override*/;
+    virtual ::BatchKey createBatchKey(int pass) /*override*/;
 
-    virtual void tryPreRenderSetup(int) /*override*/;
+    virtual void tryPreRenderSetup(int pass) /*override*/;
 
     virtual ::std::unique_ptr<::MinecraftUIPersistentMeshItem>
-    createPersistentMesh(::ComponentRenderBatch const&) /*override*/;
+    createPersistentMesh(::ComponentRenderBatch const& batch) /*override*/;
 
-    virtual void configureUnbatchedRenderContext(::OffscreenCaptureDescription const&, bool) /*override*/;
+    virtual void
+    configureUnbatchedRenderContext(::OffscreenCaptureDescription const& capture, bool isDrawingUI) /*override*/;
 
-    virtual void beginSharedMeshBatch(::ComponentRenderBatch const&) /*override*/;
+    virtual void beginSharedMeshBatch(::ComponentRenderBatch const& batch) /*override*/;
 
-    virtual void render(::InventoryItemRenderOwnerData const&, int, float) /*override*/;
+    virtual void render(::InventoryItemRenderOwnerData const& data, int pass, float alpha) /*override*/;
 
     virtual bool endSharedMeshBatch(
-        ::ComponentRenderBatch&,
-        ::MinecraftUIPersistentMeshItem&,
-        ::OffscreenCaptureDescription const&
+        ::ComponentRenderBatch&              renderBatch,
+        ::MinecraftUIPersistentMeshItem&     persistentMeshItem,
+        ::OffscreenCaptureDescription const& capture
     ) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI int $getNumRenderPasses();
 
+    MCAPI ::BatchKey $createBatchKey(int pass);
+
+    MCAPI void $tryPreRenderSetup(int pass);
+
+    MCAPI ::std::unique_ptr<::MinecraftUIPersistentMeshItem> $createPersistentMesh(::ComponentRenderBatch const& batch);
+
+    MCAPI void $configureUnbatchedRenderContext(::OffscreenCaptureDescription const& capture, bool isDrawingUI);
+
+    MCAPI void $beginSharedMeshBatch(::ComponentRenderBatch const& batch);
+
+    MCAPI void $render(::InventoryItemRenderOwnerData const& data, int pass, float alpha);
+
+    MCAPI bool $endSharedMeshBatch(
+        ::ComponentRenderBatch&              renderBatch,
+        ::MinecraftUIPersistentMeshItem&     persistentMeshItem,
+        ::OffscreenCaptureDescription const& capture
+    );
     // NOLINTEND
 };
 

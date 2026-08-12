@@ -59,7 +59,7 @@ public:
 
     MCAPI void Free();
 
-    MCAPI RakString(char const*, ...);
+    MCAPI RakString(char const* format, ...);
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(char const*, ...);
+    MCAPI void* $ctor(char const* format, ...);
     // NOLINTEND
 };
 

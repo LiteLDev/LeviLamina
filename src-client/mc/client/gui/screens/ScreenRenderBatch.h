@@ -5,9 +5,12 @@
 // auto generated forward declare list
 // clang-format off
 class ComponentRenderBatch;
+class UIControl;
 class UICustomRenderer;
 struct BatchClippingState;
 struct BatchKey;
+struct BatchVisualState;
+struct ClippedControlMetadata;
 struct RenderControlMetadata;
 struct TextureState;
 // clang-format on
@@ -19,6 +22,31 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::RenderControlMetadata>>       mRenderControls;
     ::ll::TypedStorage<8, 24, ::std::vector<::ComponentRenderBatch>>        mRenderBatches;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::TextureState>> mTextureStates;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _addRenderControl(
+        ::UIControl&                control,
+        ::BatchClippingState const& batchClippingState,
+        ::BatchVisualState const&   batchVisualState,
+        ::ClippedControlMetadata&   clippedControlData,
+        bool                        hasRenderableComponent
+    );
+
+    MCAPI bool _populateRenderControlsCollection(
+        ::UIControl&                control,
+        ::BatchClippingState const& batchClippingState,
+        ::BatchClippingState const& unclippedBatchClippingState,
+        ::BatchVisualState const&   batchVisualState,
+        ::ClippedControlMetadata&   clippedControlData,
+        bool                        checkIfRendered
+    );
+
+    MCAPI void _storeTextureState(::UIControl& control, bool state);
+
+    MCAPI ~ScreenRenderBatch();
     // NOLINTEND
 
 public:

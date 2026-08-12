@@ -67,6 +67,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>
+    _createCategoryHandle(::std::string const& categoryId) const;
+
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>
+    _createPresetHandle(::std::string const& presetId) const;
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>>
+    _getOrCreateCategoryHandle(::std::string const& categoryId) const;
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>>
+    _getOrCreatePresetHandle(::std::string const& presetId) const;
+
     MCAPI ::ScriptModuleMinecraft::ScriptAimAssistRegistry&
     operator=(::ScriptModuleMinecraft::ScriptAimAssistRegistry const&);
 

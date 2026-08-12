@@ -24,6 +24,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+
+    virtual ~EnumConstraint() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

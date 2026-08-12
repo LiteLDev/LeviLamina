@@ -29,6 +29,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _storePreviousRideStats(
+        ::StrictEntityContext const&,
+        ::StateVectorComponent const&     stateVectorComponent,
+        ::VanillaClientGameplayComponent& vanillaClientGameplayComponent
+    );
+
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -33,8 +33,20 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _say(::std::string const& text, ::std::string const& chatColor) const;
+
+    MCNAPI void _showTestSummaryIfAllDone() const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance&);
+
+    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance&);
+
 
     // NOLINTEND
 };

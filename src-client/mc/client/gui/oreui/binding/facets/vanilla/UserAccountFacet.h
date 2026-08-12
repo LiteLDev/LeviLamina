@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/UserPermissions.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/UserPermissionsFEWrapper.h"
@@ -75,6 +76,64 @@ public:
         ::std::shared_ptr<::Social::User>                    user,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
     );
+
+    MCAPI bool _isMarketplacePassSubscriptionActive() const;
+
+    MCAPI bool _isRealmsPlusSubscriptionActive() const;
+
+    MCAPI void _onEntitlementsInventoryRefreshed();
+
+    MCAPI void clearAccountUnlinkState();
+
+    MCAPI ::OreUI::FacetTaskState getAccountUnlinkState();
+
+    MCFOLD ::std::string const& getBanExpiration() const;
+
+    MCAPI ::std::string const& getBanReason() const;
+
+    MCFOLD ::std::string const& getCurrentPlatformId() const;
+
+    MCAPI ::std::string const& getCurrentXuid() const;
+
+    MCAPI ::std::string getMarketplaceDisabledReason() const;
+
+    MCAPI ::std::optional<::Social::UserPlatformConnectionResult> const& getSignInToPlatformNetworkResult() const;
+
+    MCAPI ::OreUI::FacetTaskState getSignInToPlatformNetworkState();
+
+    MCFOLD ::OreUI::UserPermissionsFEWrapper const& getUserPermissions() const;
+
+    MCFOLD bool hasPremiumNetworkAccess() const;
+
+    MCAPI bool hasValidCrossPlatformSkin() const;
+
+    MCAPI bool isBanned() const;
+
+    MCAPI bool isLoggedInWithMicrosoftAccount() const;
+
+    MCAPI bool isMarketplaceDisabled() const;
+
+    MCAPI bool isMarketplacePassSubscriptionActive() const;
+
+    MCAPI bool isRealmsPlusSubscriptionActive() const;
+
+    MCAPI bool isSignInInProgress() const;
+
+    MCAPI bool isSignedInPlatformNetwork() const;
+
+    MCAPI void manageMicrosoftAccount();
+
+    MCAPI void resetSignInToPlatformNetwork();
+
+    MCAPI void showPremiumNetworkUpsellModal();
+
+    MCAPI void signInToPlatformNetwork(bool isUserInitiated);
+
+    MCAPI void signOutOfMicrosoftAccount();
+
+    MCAPI void unlinkMicrosoftAccount();
+
+    MCAPI void updateMultiplayerPrivilegeUsingSystemModal();
     // NOLINTEND
 
 public:
@@ -96,7 +155,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

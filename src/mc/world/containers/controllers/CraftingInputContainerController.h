@@ -26,7 +26,7 @@ public:
 
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const /*override*/;
 
-    virtual ::ItemInstance const& getRecipeItem(int) const /*override*/;
+    virtual ::ItemInstance const& getRecipeItem(int slot) const /*override*/;
 
     virtual void clearSelectedRecipe() /*override*/;
     // NOLINTEND
@@ -47,6 +47,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
+
+    MCNAPI ::ItemInstance const& $getRecipeItem(int slot) const;
+
+    MCNAPI void $clearSelectedRecipe();
+
 
     // NOLINTEND
 };

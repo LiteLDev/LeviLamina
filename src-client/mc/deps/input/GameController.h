@@ -45,9 +45,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool hasEvents(void const*) const /*override*/;
+    virtual bool hasEvents(void const* token) const /*override*/;
 
-    virtual ::GameControllerEvent getNextEvent(void const*) /*override*/;
+    virtual ::GameControllerEvent getNextEvent(void const* token) /*override*/;
 
     virtual int getId() const /*override*/;
 
@@ -55,7 +55,7 @@ public:
 
     virtual bool isAdequateController() const /*override*/;
 
-    virtual void pairControllerToClient(::SubClientId) /*override*/;
+    virtual void pairControllerToClient(::SubClientId clientId) /*override*/;
 
     virtual void unpairControllerFromClient() /*override*/;
 
@@ -67,6 +67,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $hasEvents(void const* token) const;
 
+    MCAPI ::GameControllerEvent $getNextEvent(void const* token);
+
+    MCAPI int $getId() const;
+
+    MCFOLD bool $isConnected() const;
+
+    MCFOLD bool $isAdequateController() const;
+
+    MCAPI void $pairControllerToClient(::SubClientId clientId);
+
+    MCFOLD void $unpairControllerFromClient();
+
+    MCAPI bool $isControllerPairedToClient() const;
+
+    MCAPI ::std::optional<::SubClientId> $getPairedClientId() const;
     // NOLINTEND
 };

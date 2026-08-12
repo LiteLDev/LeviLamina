@@ -30,6 +30,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $execute();
+
+    MCAPI bool $isDone();
+
+    MCAPI void $tick();
+
 
     // NOLINTEND
 };

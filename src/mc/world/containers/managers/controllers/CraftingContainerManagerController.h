@@ -28,9 +28,12 @@ struct ActorBlockSyncMessage;
 struct AutoPlaceItem;
 struct AutoPlaceResult;
 struct CraftableCountingData;
+struct CreateContainerItemScope;
 struct ItemStateData;
 struct ItemTransferAmount;
+struct RecipeSearchResult;
 struct SelectedSlotInfo;
+struct ShapedRecipeTriggeredEvent;
 // clang-format on
 
 class CraftingContainerManagerController : public ::ContainerManagerController {
@@ -79,6 +82,20 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $onBlockChanged(
+            ::BlockSource&                 source,
+            ::BlockPos const&              pos,
+            uint                           layer,
+            ::Block const&                 block,
+            ::Block const&                 oldBlock,
+            int                            updateFlags,
+            ::ActorBlockSyncMessage const* syncMsg,
+            ::BlockChangedEventTarget      eventTarget,
+            ::Actor*                       blockChangeSource
+        );
+
+        MCNAPI void $onSourceDestroyed(::BlockSource& source);
+
 
         // NOLINTEND
     };
@@ -140,7 +157,7 @@ public:
 
     virtual int handleAutoPlaceStack(
         ::SlotData const&                     srcSlot,
-        ::ItemTakeType                        takeType,
+        ::ItemTakeType                        type,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     ) /*override*/;
@@ -170,6 +187,32 @@ public:
     MCNAPI explicit CraftingContainerManagerController(
         ::std::weak_ptr<::CraftingContainerManagerModel> containerManagerModel
     );
+
+    MCNAPI void _filterRecipes();
+
+    MCNAPI ::std::vector<::RecipeSearchResult>
+    _getRecipesForItem(::ItemInstance const& recipeItem, ::std::vector<::std::string> const& tags, bool);
+
+    MCNAPI void _handleItemCraftedEvents(
+        ::ItemInstance const&               resultItem,
+        ::std::vector<short> const&         ingredientIds,
+        ::ShapedRecipeTriggeredEvent const& shapedRecipeTriggeredEvent
+    );
+
+    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+
+    MCNAPI void _handleTransferCraftExtraResults(::std::vector<::ItemInstance>& allResults);
+
+    MCNAPI ::CreateContainerItemScope _makeCreateItemScopeCrafting(
+        ::SlotData const&              srcSlot,
+        ::ItemTransferAmount const&    takeAmount,
+        ::std::vector<::ItemInstance>& allResults
+    );
+
+    MCNAPI ::CreateContainerItemScope
+    _makeCreateItemScopeCreative(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount);
+
+    MCNAPI void _updateCraftingResultItem();
 
     MCNAPI bool
     autoCraftItem(::SlotData const& recipeSlot, ::ItemCraftType craftAmount, ::std::vector<::AutoPlaceItem> const&);
@@ -223,6 +266,48 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $isOutputSlot(::std::string const& collectionName) const;
+
+    MCNAPI bool $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
+
+    MCNAPI bool $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+
+    MCNAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+
+    MCNAPI bool $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+
+    MCNAPI bool $handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+
+    MCNAPI int $handleAutoPlace(
+        ::SlotData const&                     srcSlot,
+        int                                   amount,
+        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
+        ::std::vector<::AutoPlaceResult>&     destinations
+    );
+
+    MCNAPI int $handleAutoPlaceStack(
+        ::SlotData const&                     srcSlot,
+        ::ItemTakeType                        type,
+        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
+        ::std::vector<::AutoPlaceResult>&     destinations
+    );
+
+    MCNAPI void $handleSplitSingle(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+
+    MCNAPI void $handleSplitMultiple(
+        ::SelectedSlotInfo const& selected,
+        ::ItemInstance const&     itemTemplate,
+        ::SlotData const&         dstSlot
+    );
+
+    MCNAPI bool $handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type);
+
+    MCNAPI bool $handleDrop(::SlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
+
+    MCNAPI void $closeContainers();
+
+    MCNAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
+
 
     // NOLINTEND
 };

@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Item;
 class ItemInstance;
 class ItemStack;
 class LootTableContext;
@@ -19,16 +21,33 @@ public:
     // NOLINTBEGIN
     virtual ~SetDataFromColorIndexFunction() /*override*/ = default;
 
-    virtual void apply(::ItemStack&, ::Random&, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
-    virtual void apply(::ItemInstance&, ::Random&, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _applyImpl(
+        ::Item const*&       inOutItemDef,
+        ::Actor const*       thisEntity,
+        ::std::string const& originalItemName,
+        int&                 outResultAux
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
+
 
     // NOLINTEND
 };

@@ -15,6 +15,7 @@ class BindingFactory;
 class IGameController;
 class InputEventQueue;
 struct ControllerIDtoClientMap;
+struct GameControllerButtonEvent;
 struct GameControllerInputMapping;
 struct GameControllerStickEvent;
 struct InputMapping;
@@ -150,6 +151,22 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI GameControllerMapper();
+
+    MCAPI void _enqueueButtonDownUpEvents(
+        ::InputEventQueue&                            eventQueue,
+        ::GameControllerMapper::GamepadStickTurnData& turnData,
+        ::DirectionId                                 direction
+    );
+
+    MCAPI void _handleButtonEvent(
+        ::InputEventQueue&                 eventQueue,
+        ::GameControllerButtonEvent const& buttonEvent,
+        int                                controllerId,
+        int                                alternateControllerId
+    );
+
+    MCAPI void
+    _handleStickEvent(::InputEventQueue& eventQueue, ::GameControllerStickEvent const& stickEvent, int controllerId);
     // NOLINTEND
 
 public:

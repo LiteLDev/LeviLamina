@@ -114,6 +114,23 @@ public:
 
     MCAPI ::PackSettings* _getWorldPackSettings(::PackManifest const& manifest, ::std::optional<::std::string> worldId);
 
+    MCAPI ::std::unique_ptr<::SharedTypes::v1_21_100::PackSettingsDefinition::Document>
+    _loadUserOverridesFromFile(::Core::Path const& path) const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool _saveUserOverridesToFile(
+        ::SharedTypes::v1_21_100::PackSettingsDefinition::Document doc,
+        ::Core::Path const&                                        path
+    ) const;
+
+    MCAPI void _syncPackSettingsToSaveDoc(
+        ::mce::UUID                                                 packId,
+        ::PackSettings const&                                       packSettings,
+        ::SharedTypes::v1_21_100::PackSettingsDefinition::Document& userOverrides,
+        bool                                                        includeTimestamp
+    ) const;
+#endif
+
     MCAPI ::PackSettings* getPackSettings(::PackManifest const& manifest, ::std::optional<::std::string> worldId);
 
     MCAPI bool loadPerWorldUserOverrides(::std::string const& worldId, ::Core::Path const& worldPath);
@@ -138,6 +155,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD uint64 $getAccessTimestamp() const;
+
 
     // NOLINTEND
 };

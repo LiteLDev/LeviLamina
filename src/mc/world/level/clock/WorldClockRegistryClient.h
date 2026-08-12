@@ -43,7 +43,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
+    MCAPI void $tick(::PacketSender&, ::LevelData const&);
+#else // LL_PLAT_C
     MCAPI void $tick(::PacketSender&, ::LevelData const& levelData);
 #endif
 

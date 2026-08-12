@@ -32,9 +32,29 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorDocumentDataParams();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ActorDocumentDataParams(
+        ::ComponentStorageLoadDataRefVariant<
+            ::SharedTypes::v1_26_30::ActorDefinitions,
+            ::SharedTypes::Beta::ActorDefinitions> value,
+        ::SemVersion const&                        formatVersion,
+        ::MinEngineVersion const&                  minEngineVersion,
+        bool const                                 isBaseGamePack,
+        ::JsonBetaState const                      canUseBeta
+    );
+
     MCAPI ~ActorDocumentDataParams();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 
 public:

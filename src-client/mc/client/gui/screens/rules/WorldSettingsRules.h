@@ -54,6 +54,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _isCrossPlatformPlayEnabled() const;
+
     MCAPI bool _isPlatformServiceMultiplayerConnected() const;
 
     MCAPI bool isMultiplayerSupported() const;

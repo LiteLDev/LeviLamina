@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool _hasPropertyValue(::PropertyComponent const&) const /*override*/;
+    virtual bool _hasPropertyValue(::PropertyComponent const& component) const /*override*/;
 
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
     // NOLINTEND
@@ -43,6 +43,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $_hasPropertyValue(::PropertyComponent const& component) const;
+
+    MCNAPI ::LootItemCondition::ConditionType $getConditionType() const;
+
 
     // NOLINTEND
 };

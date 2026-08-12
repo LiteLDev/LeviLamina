@@ -39,6 +39,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::unordered_map<
+        ::std::string_view,
+        ::std::shared_ptr<::ScriptModuleMinecraft::IScriptBlockComponentFactory>> const&
+    getOrCreateBlockComponentFactories() const;
+
     MCAPI ::std::vector<::std::string_view> getSupportedComponentIds(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> const& permutation,
         bool                                                                                         includeCustom

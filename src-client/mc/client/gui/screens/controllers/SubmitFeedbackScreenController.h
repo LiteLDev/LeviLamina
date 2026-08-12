@@ -51,6 +51,10 @@ public:
         ::std::string const&                     itemId,
         int                                      feedbackTextLimit
     );
+
+    MCAPI void _displayResponseStatusDialog(bool receivedSuccessResponse);
+
+    MCAPI void _setResponseMessage();
     // NOLINTEND
 
 public:
@@ -63,6 +67,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $tick();
 
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND
 };

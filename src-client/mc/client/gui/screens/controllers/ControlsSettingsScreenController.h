@@ -3,15 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
 #include "mc/client/input/KeyboardType.h"
 #include "mc/deps/input/InputBindingMode.h"
+#include "mc/deps/input/InputMode.h"
+#include "mc/options/option_types/OptionID.h"
 
 // auto generated forward declare list
 // clang-format off
 class GamePadRemappingLayout;
 class KeyboardRemappingLayout;
 class MainMenuScreenModel;
+class RemappingLayout;
+struct RawInputScreenEventData;
 // clang-format on
 
 class ControlsSettingsScreenController : public ::SettingsScreenControllerBase {
@@ -113,6 +118,45 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::vector<::std::string> const&      disabledInputMappings
     );
+
+    MCAPI bool _canSetCommandMacroCommandAtIndex(
+        int                                                     collectionIndex,
+        ::ControlsSettingsScreenController::KeyboardLayoutInfo& layout
+    ) const;
+
+    MCFOLD bool _commandMacrosAllowed() const;
+
+    MCAPI void _generateBindingInfo(
+        ::std::vector<::ControlsSettingsScreenController::BindingInfo>& bindings,
+        ::RemappingLayout&                                              layout,
+        uint                                                            layoutStartIndex
+    );
+
+    MCAPI void _generateKeyboardBindingInfo(
+        ::ControlsSettingsScreenController::KeyboardLayoutInfo& keyboardInfo,
+        uint                                                    layoutStartIndex
+    );
+
+    MCAPI ::std::string _getBindingText(
+        ::std::vector<::ControlsSettingsScreenController::BindingInfo>& bindings,
+        int                                                             collectionIndex,
+        ::RemappingLayout&                                              layout
+    );
+
+    MCAPI int _getIndexAdjustmentOffsetFromCollectionGroup(::std::string const& collectionGroup, int gridIndex);
+
+    MCAPI bool
+    _mapRawInputToLayout(::RemappingLayout& layout, int keymappingIndex, ::RawInputScreenEventData& rawInputData);
+
+    MCAPI ::ui::ViewRequest _resetAllBindingsToDefault(::InputMode inputMode);
+
+    MCAPI void _setCommandMacroCommandAtIndex(int collectionIndex, ::std::string const command);
+
+    MCAPI void
+    setUpCallbacksForBooleanInputOption(::OptionID optionID, ::InputMode inputMode, ::std::string const& toggleName);
+
+    MCAPI void
+    setUpCallbacksForFloatInputOption(::OptionID optionID, ::InputMode inputMode, ::std::string const& sliderName);
     // NOLINTEND
 
 public:
@@ -131,6 +175,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $_registerControllerCallbacks();
 
+    MCAPI void $onTerminate();
+
+    MCAPI bool $canExit();
     // NOLINTEND
 };

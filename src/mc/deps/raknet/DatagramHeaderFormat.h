@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace RakNet { class BitStream; }
+// clang-format on
+
 struct DatagramHeaderFormat {
 public:
     // member variables
@@ -22,4 +27,10 @@ public:
     DatagramHeaderFormat& operator=(DatagramHeaderFormat const&);
     DatagramHeaderFormat(DatagramHeaderFormat const&);
     DatagramHeaderFormat();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void Serialize(::RakNet::BitStream* b);
+    // NOLINTEND
 };

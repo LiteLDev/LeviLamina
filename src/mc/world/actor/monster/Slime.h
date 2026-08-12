@@ -93,6 +93,8 @@ public:
 
     MCAPI void _justLanded();
 
+    MCAPI void _setSlimeSize(int size);
+
     MCAPI void postNormalTick(bool wasOnGround);
     // NOLINTEND
 

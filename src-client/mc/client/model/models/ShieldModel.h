@@ -32,6 +32,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void render(::ScreenContext& screenContext) /*override*/;
+
+    virtual ~ShieldModel() /*override*/;
     // NOLINTEND
 
 public:
@@ -44,6 +46,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::GeometryPtr source);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

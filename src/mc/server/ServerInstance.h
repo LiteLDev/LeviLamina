@@ -221,7 +221,7 @@ public:
 
     virtual void onGameModeChanged() /*override*/;
 
-    virtual void onTick(int, int) /*override*/;
+    virtual void onTick(int nTick, int maxTick) /*override*/;
 
     virtual void onInternetUpdate() /*override*/;
 
@@ -231,11 +231,11 @@ public:
 
     virtual void onRequestResourceReload() /*override*/;
 
-    virtual void onLowDiskSpace(bool const) /*override*/;
+    virtual void onLowDiskSpace(bool const bSet) /*override*/;
 
-    virtual void onOutOfDiskSpace(bool const) /*override*/;
+    virtual void onOutOfDiskSpace(bool const bSet) /*override*/;
 
-    virtual void onCriticalDiskError(bool const, ::Core::LevelStorageState const&) /*override*/;
+    virtual void onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode) /*override*/;
 
     virtual void onAppSuspended() /*override*/;
 
@@ -248,6 +248,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ServerInstance(::ServerInstanceArguments&& args);
+
+    MCAPI void _resetServerScriptManager();
+
+    MCAPI bool _useClientSideChunkGeneration(::LevelData* levelData) const;
 
 #ifdef LL_PLAT_C
     MCAPI void finishLoadingLinkedAssets(::ResourcePackManager& rpm);
@@ -307,6 +311,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onLowMemory(::LowMemorySeverity);
+
+    MCAPI void $onLevelCorrupt();
+
+    MCFOLD void $onGameModeChanged();
+
+    MCFOLD void $onTick(int nTick, int maxTick);
+
+    MCFOLD void $onInternetUpdate();
+
+    MCFOLD void $onGameSessionReset();
+
+    MCFOLD void $onLevelExit();
+
+    MCAPI void $onRequestResourceReload();
+
+    MCAPI void $onLowDiskSpace(bool const bSet);
+
+    MCAPI void $onOutOfDiskSpace(bool const bSet);
+
+    MCAPI void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
+
+    MCAPI void $onAppSuspended();
+
+    MCAPI void $onAppResumed();
+
+    MCFOLD void $updateScreens();
+
 
     // NOLINTEND
 };

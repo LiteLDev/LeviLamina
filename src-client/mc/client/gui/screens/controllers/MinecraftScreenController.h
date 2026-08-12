@@ -9,6 +9,7 @@
 #include "mc/client/gui/screens/ScreenController.h"
 #include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/controllers/ModalScreenButtonMode.h"
+#include "mc/client/gui/screens/controllers/SafeZoneBuffer.h"
 #include "mc/client/gui/screens/controllers/ScreenExitBehavior.h"
 #include "mc/client/gui/screens/controllers/UpdateSliderProgressMode.h"
 #include "mc/client/social/UserPlatformConnectionResult.h"
@@ -223,14 +224,26 @@ public:
 
     MCAPI void _gateRealmsWhenCrossPlatformIsDisabled(::std::function<void()> callback);
 
+    MCAPI int
+    _getStepSliderValue(::std::function<int()> getValue, ::std::string const& valueBindingName, bool continuousUpdate);
+
     MCAPI void _handleSignInFailure(
         ::Social::MultiIdentitySigninResult const&                 signInResult,
         ::std::function<void(::Social::MultiIdentitySigninResult)> callback,
         bool                                                       isAutoSignIn
     );
 
+    MCAPI bool _isApprovedLink(::std::string const& hyperlink) const;
+
+    MCAPI ::ui::ViewRequest _onModalEventReceived(::ModalScreenButtonId modalResult, bool buttonClosesModal);
+
     MCAPI void
     _promptEduSwitchAccounts(bool showModal, ::std::string const& buttonName, ::LastClickedSource lastClickedSource);
+
+    MCAPI bool _resolveSafeZoneVisibility(::SafeZoneBuffer buffer) const;
+
+    MCAPI ::std::string const
+    _retrieveBindingValueFromPropertyBag(::std::string const& bindingName, ::UIPropertyBag& propertyBag) const;
 
     MCAPI void _showLiveMultiplayerModal();
 

@@ -53,7 +53,7 @@ public:
     virtual void Stop();
 
     virtual ::webrtc::RTCError
-    SetCodecPreferences(::webrtc::ArrayView<::webrtc::RtpCodecCapability, 18446744073709546905> codec_capabilities) = 0;
+    SetCodecPreferences(::webrtc::ArrayView<::webrtc::RtpCodecCapability> codec_capabilities) = 0;
 
     virtual ::std::vector<::webrtc::RtpCodecCapability> codec_preferences() const = 0;
 
@@ -62,7 +62,7 @@ public:
     virtual ::std::vector<::webrtc::RtpHeaderExtensionCapability> GetNegotiatedHeaderExtensions() const = 0;
 
     virtual ::webrtc::RTCError SetHeaderExtensionsToNegotiate(
-        ::webrtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const, 18446744073709546905> header_extensions
+        ::webrtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const> header_extensions
     ) = 0;
 
     virtual ~RtpTransceiverInterface() /*override*/;
@@ -78,6 +78,14 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $SetDirection(::webrtc::RtpTransceiverDirection new_direction);
+
+    MCNAPI ::webrtc::RTCError $SetDirectionWithError(::webrtc::RtpTransceiverDirection new_direction);
+
+    MCNAPI ::std::optional<::webrtc::RtpTransceiverDirection> $fired_direction() const;
+
+    MCNAPI ::webrtc::RTCError $StopStandard();
+
+    MCNAPI void $StopInternal();
 
     MCNAPI void $Stop();
 

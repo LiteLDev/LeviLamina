@@ -23,7 +23,7 @@ public:
     // NOLINTBEGIN
     virtual ~IQuery() = default;
 
-    virtual void update(double time) = 0;
+    virtual void update(double) = 0;
 
     virtual bool isValid() const = 0;
 

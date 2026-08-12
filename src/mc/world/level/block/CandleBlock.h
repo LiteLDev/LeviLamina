@@ -58,6 +58,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _forEachCandle(
+        ::Block const&                                  block,
+        ::BlockPos const&                               pos,
+        ::brstd::function_ref<void(::Vec3 const&, int)> callback
+    );
+
     MCAPI static bool tryLightFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor);
     // NOLINTEND
 

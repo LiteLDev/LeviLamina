@@ -43,6 +43,8 @@ public:
     // NOLINTBEGIN
     MCAPI
     PlayerRespawnFacet(::LocalPlayerChangedConnector const& localPlayerChangedConnector, ::PacketSender& packetSender);
+
+    MCAPI void _respawn();
     // NOLINTEND
 
 public:
@@ -60,7 +62,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCAPI bool $update();
     // NOLINTEND
 };
 

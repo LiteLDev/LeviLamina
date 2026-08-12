@@ -11,8 +11,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockSource;
 class IRandom;
+class ItemStack;
+struct ResourceDropsContext;
 // clang-format on
 
 class Explosion {
@@ -50,6 +53,19 @@ public:
     MCAPI bool explode(::IRandom& random);
 
     MCAPI ~Explosion();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _spawnExtraResourcesAndMergeItemDropsForBlock(
+        ::BlockSource&                                       region,
+        ::BlockPos const&                                    blockPos,
+        ::Block const&                                       block,
+        ::IRandom&                                           random,
+        ::ResourceDropsContext const&                        resourceDropsContext,
+        ::std::vector<::std::pair<::ItemStack, ::BlockPos>>& itemStacks
+    );
     // NOLINTEND
 
 public:

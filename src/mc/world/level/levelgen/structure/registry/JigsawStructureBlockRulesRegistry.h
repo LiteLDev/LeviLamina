@@ -65,5 +65,7 @@ public:
         ::std::unique_ptr<::std::vector<
             ::std::unique_ptr<::StructurePoolBlockRule, ::std::default_delete<::StructurePoolBlockRule>>>>&& ruleList
     );
+
+    MCAPI ~JigsawStructureBlockRulesRegistry();
     // NOLINTEND
 };

@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool setup(::FilterTest::Definition const&, ::FilterInputs const&) /*override*/;
+    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
 
     virtual ::std::optional<::std::variant<bool, int, float, ::std::string>> getValue() const /*override*/;
 
@@ -38,6 +38,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+
+    MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getValue() const;
+
+    MCNAPI ::Json::Value $_serializeValue() const;
+
 
     // NOLINTEND
 };

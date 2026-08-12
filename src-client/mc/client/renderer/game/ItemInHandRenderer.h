@@ -11,7 +11,9 @@
 #include "mc/deps/minecraft_renderer/game/ItemContextFlags.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
+#include "mc/deps/renderer/MatrixStack.h"
 #include "mc/world/item/ItemStack.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,11 +22,14 @@ class BannerBlockActor;
 class BaseActorRenderContext;
 class Block;
 class BlockTessellator;
+class BlockType;
 class ConduitBlockActor;
 class DecoratedPotBlockActor;
 class IClientInstance;
 class ItemRenderCall;
+class Level;
 class Mob;
+class Player;
 class SerializedActorBlockActor;
 class Tessellator;
 class TextureTessellator;
@@ -152,8 +157,104 @@ public:
         ::std::shared_ptr<::mce::TextureGroup> textureGroup
     );
 
+    MCAPI void _applyDefaultItemTransforms(
+        ::MatrixStack::MatrixStackRef& worldMatrix,
+        ::ItemStack const&             item,
+        bool                           isInHandItem,
+        ::BlockType const*             blockType,
+        ::BlockShape                   blockShape,
+        ::ItemRenderCall const*        renderObjectCall,
+        float                          heldItemScale,
+        bool                           posAndRotSetByJSON
+    );
+
+    MCAPI bool _areNotMatchingChemistrySticks(::ItemStack& itemBefore, ::ItemStack const& itemAfter);
+
+    MCAPI ::ItemRenderCall* _getRenderCall(::Mob* mob, ::ItemStack const& itemInstance, int fallbackFrame);
+
+    MCAPI void _pushSparklerParticles(::BaseActorRenderContext& renderContext, ::ItemStack const& item, ::Level& level);
+
     MCAPI ::ItemRenderCall&
     _rebuildItem(::BaseActorRenderContext& renderContext, ::Mob* mob, ::ItemStack const& item, int fallbackFrame);
+
+    MCAPI void _renderBannerBlockItem(
+        ::BaseActorRenderContext&           renderContext,
+        ::dragon::RenderMetadata const      renderMetadata,
+        ::ItemStack const&                  item,
+        ::Actor&                            entity,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        float                               frameAlpha,
+        float                               scale
+    ) const;
+
+    MCAPI void _renderChestBlockItem(
+        ::BaseActorRenderContext&      renderContext,
+        ::dragon::RenderMetadata const renderMetadata,
+        ::BlockType const*             blockType,
+        ::Actor&                       entity,
+        bool const                     isInHandItem
+    ) const;
+
+    MCAPI void _renderConduitBlockItem(
+        ::BaseActorRenderContext&           renderContext,
+        ::dragon::RenderMetadata const      renderMetadata,
+        ::Actor&                            entity,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        float                               frameAlpha
+    ) const;
+
+    MCAPI void _renderCopperGolemStatueBlockItem(
+        ::BaseActorRenderContext&      renderContext,
+        ::dragon::RenderMetadata const renderMetadata,
+        ::ItemStack const&             item,
+        ::Actor&                       entity,
+        bool const                     isFirstPerson,
+        bool const                     isInHandItem
+    ) const;
+
+    MCAPI void _renderDecoratedPotBlockItem(
+        ::BaseActorRenderContext&      renderContext,
+        ::dragon::RenderMetadata const renderMetadata,
+        ::ItemStack const&             item,
+        ::Actor&                       entity,
+        bool const                     isFirstPerson
+    ) const;
+
+    MCAPI void
+    _renderFishingRod(::BaseActorRenderContext& renderContext, ::ItemStack const& item, ::Actor& entity) const;
+
+    MCAPI void _renderGlowstickBlockItem(
+        ::BaseActorRenderContext&           renderContext,
+        ::dragon::RenderMetadata const      renderMetadata,
+        ::ItemStack const&                  item,
+        ::Actor&                            entity,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        float                               frameAlpha,
+        ::ItemContextFlags                  itemFlags,
+        float                               scale
+    );
+
+    MCAPI void _renderMiniMapHand(::BaseActorRenderContext& renderContext, ::Player& player, bool inOffhand);
+
+    MCAPI void _renderPhotoMapItem(
+        ::BaseActorRenderContext& renderContext,
+        ::Player&                 player,
+        float const               frameAlpha,
+        bool const                isMainHand
+    );
+
+    MCAPI void _renderShulkerBoxBlockItem(
+        ::BaseActorRenderContext&           renderContext,
+        ::dragon::RenderMetadata const      renderMetadata,
+        ::ItemStack const&                  item,
+        ::Actor&                            entity,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        float                               frameAlpha
+    ) const;
 
     MCAPI void _tessellateBlockItem(::Tessellator& tessellator, ::BlockTessellator& t, ::Block const& block);
 
@@ -165,6 +266,14 @@ public:
         int                       fallbackFrame,
         ushort&                   heightOut,
         ushort&                   widthOut
+    );
+
+    MCAPI void _transformWorldMatrixFromJson(
+        ::MatrixStack::MatrixStackRef& worldMatrix,
+        ::ItemStack const&             item,
+        bool const                     isMainHand,
+        ::ItemContextFlags             itemFlags,
+        float                          textureScale
     );
 
     MCAPI void clearRenderObjects();
@@ -203,12 +312,21 @@ public:
     );
 
     MCAPI void
+    renderOffhandItem(::BaseActorRenderContext& renderContext, ::Player& player, ::ItemContextFlags itemFlags);
+
+    MCAPI void
     tessellateAtFrame(::BaseActorRenderContext& renderContext, ::Mob* mob, ::ItemStack const& item, int frame);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::dragon::RenderMetadata _createRenderMetadata(
+        ::BaseActorRenderContext const& renderContext,
+        ::Actor const&                  entity,
+        ::ItemStack const&              item
+    );
+
     MCAPI static bool canTessellateAsBlockItem(::ItemStack const& item);
     // NOLINTEND
 
