@@ -62,10 +62,12 @@ public:
     // NOLINTEND
 
 #ifdef LL_PLAT_S
+public:
+    HitResult() = default;
+
 #else // LL_PLAT_C
 public:
-    // prevent constructor by default
-    HitResult();
+    HitResult() = default;
 
 #endif
 public:

@@ -4,6 +4,10 @@
 
 namespace texd {
 
-struct CompressedBlockInfo {};
+struct CompressedBlockInfo {
+    uint   width;
+    uint   height;
+    uint64 sizeInBytes;
+};
 
 } // namespace texd
