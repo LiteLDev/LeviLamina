@@ -1,3 +1,4 @@
+#include "ll/api/service/TargetedBedrock.h"
 #include "ll/core/LeviLamina.h"
 
 #include <chrono>
@@ -31,7 +32,6 @@
 #include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/DedicatedServer.h"
 #include "mc/server/ServerInstance.h"
-#include "mc/server/commands/StopCommand.h"
 
 #include "mc/deps/core/file/Path.h"
 #include "mc/deps/core/resource/PackOrigin.h"
@@ -135,8 +135,8 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
     case CTRL_C_EVENT:
     case CTRL_CLOSE_EVENT:
     case CTRL_SHUTDOWN_EVENT: {
-        if (StopCommand::mServer()) {
-            StopCommand::mServer()->requestServerShutdown();
+        if (ll::service::getDedicatedServer()) {
+            ll::service::getDedicatedServer()->requestServerShutdown();
         } else {
             std::terminate();
         }
@@ -152,8 +152,11 @@ void unixSignalHandler(int signum) {
     switch (signum) {
     case SIGINT:
     case SIGTERM: {
-        if (StopCommand::mServer()) StopCommand::mServer()->requestServerShutdown();
-        else std::terminate();
+        if (ll::service::getDedicatedServer()) {
+            ll::service::getDedicatedServer()->requestServerShutdown();
+        } else {
+            std::terminate();
+        }
         break;
     }
     default:
@@ -309,7 +312,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     ::BaseGameVersion const&                                        baseGameVersion,
     bool                                                            includeEditorPacks
 ) {
-    repo->forEachPack([&](const ::ResourcePack& pack) {
+    repo->forEachPack([&](::ResourcePack const& pack) {
         if (pack.mPack->mManifest->mPackType == PackType::Behavior) {
             auto packPath = pack.mPack->mManifest->mLocation->mPath->value;
             if (packPath.find(pl::pl_mods_path) != std::string::npos) {
