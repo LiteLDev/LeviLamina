@@ -84,4 +84,12 @@ public:
 
     MCAPI bool tryToMigrate(::Actor& owner, ::Village* oldVillage, ::Village* newVillage);
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::unordered_map<::std::string, ::DwellerRole> const& DWELLING_ROLES();
+
+    MCAPI static ::std::unordered_map<::std::string, ::DwellerComponent::DwellingType> const& DWELLING_TYPES();
+    // NOLINTEND
 };

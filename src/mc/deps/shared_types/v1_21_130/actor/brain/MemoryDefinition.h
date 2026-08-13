@@ -31,6 +31,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& MEMORY_NAME();
+
+    MCAPI static ::std::string_view const& MEMORY_PERSISTENCE();
+
+    MCAPI static ::std::string_view const& MEMORY_TYPE();
+
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

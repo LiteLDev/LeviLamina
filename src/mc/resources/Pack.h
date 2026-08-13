@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -99,6 +100,12 @@ public:
         ::PackAccessStrategy const& accessStrategy,
         ::PackReport&               report
     );
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Core::PathBuffer<::std::string> const& EDUCATION_METADATA_FILE();
     // NOLINTEND
 
 public:

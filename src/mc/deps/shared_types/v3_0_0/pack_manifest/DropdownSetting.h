@@ -41,6 +41,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& TYPE_NAME();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&);

@@ -144,6 +144,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static uint const& CACHE_VERSION();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $loadFontData(bool uploadTextureImmediately);

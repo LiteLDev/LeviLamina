@@ -20,6 +20,16 @@ MCNAPI void applyStep(
     float         correctionEpsilonSquared
 );
 
+MCNAPI void beginRandomSwim(
+    ::Mob&  mob,
+    ::Vec3& randomSwimTarget,
+    ::Vec3& randomSwimLastPosition,
+    ::Tick& randomSwimNoProgressTicks,
+    int     searchRadius,
+    bool    avoidSurface,
+    float   yawPerTick
+);
+
 MCNAPI float computeBaseUnderwaterStepPerTick(::Mob const& mob, float defaultStepPerTick);
 
 MCNAPI void randomSwimTick(

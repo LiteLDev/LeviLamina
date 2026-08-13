@@ -75,6 +75,14 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string const& DIFF_ATTRIBUTES_SIZE();
+
+    MCAPI static ::std::string const& DIFF_DIRTY_ATTRIBUTES();
+
+    MCAPI static ::std::string const& DIFF_DIRTY_ATTRIBUTES_SIZE();
+
+    MCAPI static ::std::string const& DIFF_NO_ATTRIBUTES();
+
     MCAPI static ::AttributeInstance& mInvalidInstance();
     // NOLINTEND
 

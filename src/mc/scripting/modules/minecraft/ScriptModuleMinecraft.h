@@ -5,16 +5,23 @@
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/world/persistence/DynamicPropertyDefinePropertyError.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class Block;
 class Dimension;
+class PlayerUpdateEntityOverridesPacket;
+class PropertyComponent;
+class PropertyMetadata;
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptBiomeType; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
+namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { struct IScriptAfterEventSignalBuilder; }
 namespace ScriptModuleMinecraft { struct ScriptBiomeFillOptions; }
 namespace ScriptModuleMinecraft { struct ScriptUnloadedChunksError; }
@@ -22,12 +29,36 @@ namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct EnumBinding; }
+namespace Scripting { struct Error; }
 namespace Scripting { struct InvalidArgumentError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 // functions
 // NOLINTBEGIN
+MCNAPI ::Scripting::Error
+_handleDefinePropertyError(::DynamicPropertyDefinePropertyError error, ::std::string const& identifier);
+
+MCNAPI ::std::optional<::Scripting::Error> _tryQueueUpdateForOverridenProperty(
+    ::Actor&                                          actor,
+    ::PropertyComponent const&                        props,
+    ::PlayerUpdateEntityOverridesPacket&              packet,
+    ::PropertyMetadata const&                         propertyMetadata,
+    ::std::variant<float, bool, ::std::string> const& value
+);
+
+MCNAPI ::std::optional<::Scripting::Error> _tryQueueUpdateForRemovedOverride(
+    ::Actor&                   actor,
+    ::PropertyComponent const& props,
+    ::PropertyMetadata const&  propertyMetadata
+);
+
+MCNAPI ::std::optional<::Scripting::Error> _validatePropertyMetadata(
+    ::PropertyMetadata const* propertyMetadata,
+    ::Actor const*            actor,
+    ::std::string const&      identifier
+);
+
 MCNAPI ::Scripting::EnumBinding bindActorHealCause();
 
 MCNAPI ::Scripting::EnumBinding bindActorLocatorEnum();
@@ -276,6 +307,13 @@ fillBiomes(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>> const& volume,
     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType> const&                biomeType,
     ::ScriptModuleMinecraft::ScriptBiomeFillOptions const&                                               options
+);
+
+MCNAPI ::std::string getScriptScoreboardParticipantName(
+    ::std::variant<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+        ::std::string> const& participant
 );
 // NOLINTEND
 

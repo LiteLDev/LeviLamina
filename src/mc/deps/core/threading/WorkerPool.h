@@ -6,11 +6,13 @@
 #include "mc/deps/core/container/MovePriorityQueue.h"
 #include "mc/deps/core/threading/BackgroundTaskBase.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/platform/brstd/flat_set.h"
 
 // auto generated forward declare list
 // clang-format off
 class BackgroundTaskBase;
 class Scheduler;
+namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class WorkerPool : public ::Bedrock::EnableNonOwnerReferences {
@@ -64,6 +66,15 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void _registerPool(::WorkerPool& pool);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::brstd::flat_set<::WorkerPool*, ::std::less<::WorkerPool*>, ::std::vector<::WorkerPool*>>&
+    sAllPools();
+
+    MCNAPI static ::Bedrock::Threading::Mutex& sAllPoolsMutex();
     // NOLINTEND
 
 public:

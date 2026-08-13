@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/data_structures/List.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { class BitStream; }
@@ -66,6 +69,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::RakNet::RakString::SharedString& emptyString();
+
+    MCAPI static ::DataStructures::List<::RakNet::RakString::SharedString*>& freeList();
     // NOLINTEND
 
 public:

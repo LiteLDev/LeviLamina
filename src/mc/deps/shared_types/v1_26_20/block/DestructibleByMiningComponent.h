@@ -52,7 +52,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& DestroySpeedId();
+
+    MCAPI static ::std::string_view const& ItemId();
+
     MCAPI static ::std::string_view const& NameId();
+
+    MCAPI static ::std::string_view const& SecondsToDestroyId();
+
+    MCAPI static ::std::string_view const& SpecificSpeedsId();
     // NOLINTEND
 };
 

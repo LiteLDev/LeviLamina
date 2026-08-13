@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersionConstant;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -66,6 +67,14 @@ public:
         operator=(::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
 
         MCAPI ~ClientBiomeJsonObject();
+#endif
+        // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI static ::SemVersionConstant const& VERSION();
 #endif
         // NOLINTEND
 

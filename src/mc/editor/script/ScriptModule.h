@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,6 +21,8 @@ namespace Scripting { struct InterfaceBinding; }
 namespace Editor::ScriptModule {
 // functions
 // NOLINTBEGIN
+MCNAPI ::Scripting::Result_deprecated<void> _validateStructureName(::std::string const& structureName);
+
 MCNAPI ::Scripting::EnumBinding bindAxisEnums();
 
 MCNAPI ::Scripting::EnumBinding bindPlaneEnums();

@@ -62,6 +62,14 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& ARCHIVE_DIR();
 
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& HOME_DIR();
+
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& PERSONA_TEST_DIR();
+
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& REALM_WORLDS_DIR();
+
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& RESOURCE_PACKS_DIR();
+
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& WORLDS_DIR();
     // NOLINTEND
 

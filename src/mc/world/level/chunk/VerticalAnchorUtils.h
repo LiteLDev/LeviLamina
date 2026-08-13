@@ -10,6 +10,8 @@ namespace br::worldgen { class WorldGenContext; }
 namespace br::worldgen::VerticalAnchorUtils {
 // functions
 // NOLINTBEGIN
+MCAPI int aboveBottomHandler(::br::worldgen::WorldGenContext const& heightAccessor, int v);
+
 #ifdef LL_PLAT_S
 MCFOLD int absoluteHandler(::br::worldgen::WorldGenContext const&, int v);
 #endif
@@ -17,6 +19,10 @@ MCFOLD int absoluteHandler(::br::worldgen::WorldGenContext const&, int v);
 #ifdef LL_PLAT_C
 MCFOLD int absoluteHandler(::br::worldgen::WorldGenContext const&, int v);
 #endif
+
+MCAPI int belowTopHandler(::br::worldgen::WorldGenContext const& heightAccessor, int v);
+
+MCAPI int seaLevelHandler(::br::worldgen::WorldGenContext const& heightAccessor, int v);
 // NOLINTEND
 
 } // namespace br::worldgen::VerticalAnchorUtils

@@ -10,6 +10,7 @@
 // clang-format off
 class AABB;
 class Vec3;
+namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -43,6 +44,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_COLOR();
     // NOLINTEND
 
 public:

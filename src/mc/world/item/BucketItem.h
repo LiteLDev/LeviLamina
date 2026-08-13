@@ -131,6 +131,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::BucketItem::FillTypeEntityData> const& mFillTypeEntityData();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::Item& $setIconInfo(::std::string const& name, int id);

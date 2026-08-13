@@ -93,6 +93,20 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::mce::TexturePtr& FLAME_ATLAS();
+
+    MCAPI static ::mce::TexturePtr& FORCEFIELD_ATLAS();
+
+    MCAPI static ::mce::TexturePtr& ITEMS_ATLAS();
+
+    MCAPI static ::mce::TexturePtr& PARTICLE_ATLAS();
+
+    MCAPI static ::mce::TexturePtr& TERRAIN_ATLAS();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $addTagData(::CompoundTag const& tag);

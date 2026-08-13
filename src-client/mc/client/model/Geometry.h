@@ -16,6 +16,7 @@
 // clang-format off
 class JsonValueHierarchy;
 class ModelPartLocator;
+class SemVersionConstant;
 struct TextureUVCoordinateSet;
 namespace Json { class Value; }
 // clang-format on
@@ -227,5 +228,17 @@ public:
     MCAPI ::Geometry::Node const* getNode(::std::string_view name) const;
 
     MCAPI void toJson(::Json::Value& root) const;
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::SemVersionConstant const& mDataDrivenEnderDragonSupportedVersion();
+
+    MCAPI static ::SemVersionConstant const& mDataDrivenRenderingSupportedVersion();
+
+    MCAPI static ::SemVersionConstant const& mDrownedParentFieldSupportedVersion();
+
+    MCAPI static ::SemVersionConstant const& mParentFieldSupportedVersion();
     // NOLINTEND
 };

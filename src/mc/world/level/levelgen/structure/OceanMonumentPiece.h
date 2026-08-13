@@ -59,6 +59,16 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int const& mLeftWingIndex();
+
+    MCAPI static int const& mPenthouseIndex();
+
+    MCAPI static int const& mRightWingIndex();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
 

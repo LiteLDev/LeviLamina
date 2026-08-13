@@ -63,6 +63,8 @@ public:
 
     MCNAPI static ::Core::Path const& MANIFEST_PATH();
 
+    MCNAPI static ::Core::Path const& MANIFEST_PATH_OLD();
+
     MCNAPI static ::std::unordered_map<::std::string, ::std::vector<char> const>& mAlternateContentKeys();
 
     MCNAPI static ::std::unordered_map<::std::string, ::std::vector<char> const>& mContentKeys();

@@ -37,6 +37,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::HashedString const& COOLDOWN_CATEGORY();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;

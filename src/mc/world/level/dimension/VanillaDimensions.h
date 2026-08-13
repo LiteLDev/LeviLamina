@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
+#include "mc/util/BidirectionalUnorderedMap.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,6 +35,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::DimensionType> const& DimensionMap();
+
     MCAPI static ::DimensionType const& Nether();
 
     MCAPI static ::DimensionType const& Overworld();

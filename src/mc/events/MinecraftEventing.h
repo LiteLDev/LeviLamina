@@ -154,7 +154,10 @@ namespace Social::Events { class IEventListener; }
 namespace Social::Events { class Measurement; }
 namespace Social::Events { class MobTelemetry; }
 namespace Social::Events { class OptionChange; }
+namespace Social::Events { class PlayerTelemetry; }
 namespace Social::Events { class Property; }
+namespace Social::Events { class RealtimeRoute; }
+namespace Social::Events { class ScreenFlow; }
 namespace Social::Events { class TelemetryHeartbeat; }
 namespace Social::Events { struct ServerTelemetryData; }
 namespace Webview { struct TelemetryCommonProperties; }
@@ -2438,7 +2441,21 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::Social::Events::AchievementEventing>& mAchievementEventing();
 
+    MCAPI static ::std::map<::std::string, int>& mCachedUUIDs();
+
     MCAPI static ::Social::Events::MobTelemetry& mMobTelemetry();
+
+    MCAPI static ::std::unordered_map<uint, ::Social::Events::PlayerTelemetry>& mPlayerTelemetry();
+
+    MCAPI static ::Social::Events::RealtimeRoute& mRealtimeRoute();
+
+    MCAPI static ::Social::Events::ScreenFlow& mScreenFlow();
+
+    MCAPI static ::Bedrock::Threading::Mutex& sHeartbeatMutex();
+
+    MCAPI static ::Bedrock::Threading::Mutex& sMutex();
+
+    MCAPI static ::Bedrock::Threading::Mutex& sPlayerTelemetryMutex();
     // NOLINTEND
 
 public:

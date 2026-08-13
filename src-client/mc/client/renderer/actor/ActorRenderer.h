@@ -18,8 +18,10 @@ class Model;
 class RenderParams;
 class Vec2;
 class Vec3;
+struct ActorTextureInfo;
 struct ActorUniqueID;
 struct RopePoints;
+namespace mce { class Mesh; }
 namespace mce { class TextureGroup; }
 // clang-format on
 
@@ -180,6 +182,16 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Vec2 const& DEFAULT_RENDER_BOUNDS();
+
+    MCAPI static ::mce::MaterialPtr& mFlameMaterial();
+
+    MCAPI static ::mce::Mesh& mFlameMesh();
+
+    MCAPI static ::ActorTextureInfo& mFlameTexture();
+
+    MCAPI static ::mce::MaterialPtr& mLeashMat();
+
+    MCAPI static ::mce::TexturePtr& mLeashTexture();
     // NOLINTEND
 
 public:

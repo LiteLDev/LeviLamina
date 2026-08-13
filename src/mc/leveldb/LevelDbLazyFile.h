@@ -28,4 +28,10 @@ public:
 
     MCNAPI ~LevelDbLazyFile();
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::atomic<uint64>& mFileCount();
+    // NOLINTEND
 };

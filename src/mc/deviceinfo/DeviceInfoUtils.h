@@ -16,4 +16,10 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::DeviceMemoryTier determineMemoryTier(::BaseGameVersion const& version);
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::DeviceMemoryTier& mDefaultMemoryTier();
+    // NOLINTEND
 };

@@ -6,12 +6,15 @@
 // clang-format off
 class Actor;
 class EntityContext;
+class HashedString;
 class RenderParams;
 // clang-format on
 
 namespace LegacyMolangVariableUpdate {
 // functions
 // NOLINTBEGIN
+MCAPI ::std::array<::HashedString, 24> getEnderDragonHistoricalFrameVariables();
+
 MCAPI void initializeAgent(::EntityContext& entityContext);
 
 #ifdef LL_PLAT_C

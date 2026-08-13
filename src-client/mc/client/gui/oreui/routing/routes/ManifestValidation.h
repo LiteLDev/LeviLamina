@@ -68,7 +68,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<char const[20]> BASE_SCREEN_ID();
+
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[29]> ROUTE_STORAGE();
     // NOLINTEND
 
 public:

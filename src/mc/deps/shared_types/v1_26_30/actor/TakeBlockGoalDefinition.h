@@ -59,6 +59,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static bool const& DEFAULT_AFFECTED_BY_GRIEFING_RULE();
+
+    MCAPI static bool const& DEFAULT_REQUIRES_LINE_OF_SIGHT();
+
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
+#include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/inventory/transaction/InventorySource.h"
 #include "mc/world/inventory/transaction/InventoryTransactionError.h"
 
@@ -57,6 +58,13 @@ public:
     MCAPI static ::Bedrock::Result<::InventoryTransaction> deserialize(::ReadOnlyBinaryStream& stream);
 
     MCAPI static ::std::string const getInventoryTransactionErrorName(::InventoryTransactionError type);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BidirectionalUnorderedMap<::InventoryTransactionError, ::std::string> const&
+    inventoryTransactionErrorMap();
     // NOLINTEND
 
 public:

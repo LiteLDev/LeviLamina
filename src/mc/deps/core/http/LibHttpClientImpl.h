@@ -11,6 +11,7 @@
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
 namespace Bedrock::Http::Internal { class IResponseBody; }
+namespace Bedrock::Threading { class Mutex; }
 struct HC_CALL;
 // clang-format on
 
@@ -61,6 +62,12 @@ public:
     _requestBodyRead(::HC_CALL* call, uint64, uint64 bytesAvailable, void*, uchar* destination, uint64* bytesWritten);
 
     MCNAPI static HRESULT _responseBodyWrite(::HC_CALL* call, uchar const* source, uint64 bytesAvailable, void*);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::Bedrock::Threading::Mutex& sWeakThisMutex();
     // NOLINTEND
 
 public:

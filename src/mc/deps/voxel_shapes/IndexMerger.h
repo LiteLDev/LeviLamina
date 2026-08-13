@@ -33,6 +33,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::Bedrock::small_vector<float, 12> const& emptyShapeCoords();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
 

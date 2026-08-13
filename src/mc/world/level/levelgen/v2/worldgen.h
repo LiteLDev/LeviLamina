@@ -10,11 +10,15 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class BoundingBox;
 class ChunkPos;
 class IRandom;
 class IStructureTemplate;
+class JigsawStructureRegistry;
 class StructurePoolElement;
 class StructureTemplatePool;
+namespace JigsawStructureUtils { class MetadataCache; }
+namespace SharedTypes::v1_21_80 { class JigsawBlockMetadata; }
 namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadata; }
 namespace br::worldgen { struct StructurePlaceSettings; }
 namespace br::worldgen { struct StructureProcessor; }
@@ -23,10 +27,34 @@ namespace br::worldgen { struct StructureProcessor; }
 namespace br::worldgen {
 // functions
 // NOLINTBEGIN
+MCAPI int expansionHackCalc(
+    ::JigsawStructureUtils::MetadataCache&                             cache,
+    ::BlockPos const&                                                  offset,
+    ::Rotation                                                         rotation,
+    ::BoundingBox const&                                               box,
+    ::std::vector<::SharedTypes::v1_21_80::JigsawBlockMetadata> const& targetJigsaws,
+    ::std::vector<uint64> const&                                       targetJigsawIndexes,
+    ::JigsawStructureRegistry const&                                   pools
+);
+
+MCAPI void expansionHackEval(int expandTo, ::BoundingBox& box);
+
 MCAPI ::std::vector<uint64> getJigsawBlockIds(::StructureTemplatePool const& pool);
 
 MCAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> const&
 getProjectionProcessors(::Projection projection);
+
+MCFOLD int noopCalc(
+    ::JigsawStructureUtils::MetadataCache&,
+    ::BlockPos const&,
+    ::Rotation,
+    ::BoundingBox const&,
+    ::std::vector<::SharedTypes::v1_21_80::JigsawBlockMetadata> const&,
+    ::std::vector<uint64> const&,
+    ::JigsawStructureRegistry const&
+);
+
+MCFOLD void noopEval(int, ::BoundingBox&);
 
 MCAPI bool placeInWorld(
     ::IStructureTemplate const&                   tmpl,

@@ -49,6 +49,16 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static int const& DEFAULT_INTERVAL();
+
+    MCAPI static int const& DEFAULT_SEARCH_HEIGHT();
+
+    MCAPI static int const& DEFAULT_SEARCH_RANGE();
+
+    MCAPI static float const& DEFAULT_SPRINT_SPEED_MODIFIER();
+
+    MCAPI static float const& DEFAULT_WALK_SPEED_MODIFIER();
+
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 

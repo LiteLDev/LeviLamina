@@ -43,17 +43,23 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static ::Vec3 const& HALF();
+#endif
 
     MCAPI static ::Vec3 const& MAX();
 
     MCAPI static ::Vec3 const& MIN();
 
+#ifdef LL_PLAT_C
     MCAPI static ::Vec3 const& NEG_UNIT_X();
+#endif
 
     MCAPI static ::Vec3 const& NEG_UNIT_Y();
 
+#ifdef LL_PLAT_C
     MCAPI static ::Vec3 const& NEG_UNIT_Z();
+#endif
 
     MCAPI static ::Vec3 const& ONE();
 

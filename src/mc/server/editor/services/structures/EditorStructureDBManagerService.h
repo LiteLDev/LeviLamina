@@ -135,6 +135,18 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string const& EDITOR_PROJECT_STRUCTUREDB_FOLDER();
+
+    MCNAPI static ::std::string const& LEVELDB_STRUCTURE_TAG_PREFIX();
+
+    MCNAPI static ::std::string const& STRUCTURE_EXT();
+
+    MCNAPI static ::std::string const& STRUCTURE_FOLDER();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);

@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/threading/BasicLockbox.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
+
 namespace Bedrock::Http {
 
 class RequestLogBridge {
@@ -147,6 +155,14 @@ public:
         SharedState(SharedState const&);
         SharedState();
     };
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::Bedrock::Threading::
+        BasicLockbox<::Bedrock::Http::RequestLogBridge::SharedState, ::Bedrock::Threading::Mutex>&
+        s_state();
+    // NOLINTEND
 };
 
 } // namespace Bedrock::Http

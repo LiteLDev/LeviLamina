@@ -54,6 +54,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::EducationOptions& DEFAULT_OPTION();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ResourcePackManager* packMan);

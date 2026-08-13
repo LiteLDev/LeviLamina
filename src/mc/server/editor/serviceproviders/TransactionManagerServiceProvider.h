@@ -72,6 +72,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static ::std::add_lvalue_reference_t<char const[79]> ERROR_BUSY_SERVICE();
+
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> ERROR_NO_OPEN_TRANSACTION();
     // NOLINTEND
 

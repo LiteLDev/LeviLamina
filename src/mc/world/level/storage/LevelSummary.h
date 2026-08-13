@@ -192,6 +192,10 @@ public:
 
     MCAPI static ::std::string const& INVALID_LEVEL_ID();
 
+    MCAPI static ::std::string const& SCREENSHOT_WORLD_ICON_FILENAME_EXTENSION();
+
+    MCAPI static ::std::string const& SCREENSHOT_WORLD_ICON_FILENAME_PREFIX();
+
     MCAPI static ::Core::PathBuffer<::std::string> const& WORLD_ICON_FILENAME();
     // NOLINTEND
 

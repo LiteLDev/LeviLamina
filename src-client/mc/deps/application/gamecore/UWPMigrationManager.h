@@ -206,6 +206,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static ::std::string& sErrors();
+
+    MCNAPI static ::std::string_view const& sLogsFileName();
+
     MCNAPI static ::UWPMigrationManager::MigrationState& sMigrationState();
     // NOLINTEND
 

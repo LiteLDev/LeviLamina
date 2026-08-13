@@ -157,6 +157,12 @@ public:
         // NOLINTEND
 
     public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::add_lvalue_reference_t<char const[18]> SIGN_PERSIST_FORMATTING_TAG();
+        // NOLINTEND
+
+    public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();

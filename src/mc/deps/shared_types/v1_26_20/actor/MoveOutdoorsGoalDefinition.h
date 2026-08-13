@@ -22,6 +22,18 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static float const& DEFAULT_COOLDOWN_TIMEOUT();
+
+    MCAPI static float const& DEFAULT_GOAL_RADIUS();
+
+    MCAPI static int const& DEFAULT_SEARCH_COUNT();
+
+    MCAPI static int const& DEFAULT_SEARCH_HEIGHT();
+
+    MCAPI static int const& DEFAULT_SEARCH_RANGE();
+
+    MCAPI static float const& DEFAULT_SPEED_MULTIPLIER();
+
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

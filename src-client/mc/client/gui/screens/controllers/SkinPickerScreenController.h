@@ -79,6 +79,14 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& MINECON_2012_CAPE_ID();
+
+    MCAPI static ::std::string const& MOJANG_CAPE_ID();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void*

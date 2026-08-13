@@ -52,6 +52,8 @@ public:
 
     MCNAPI static ::std::unique_ptr<::std::thread>& mCrashDumpLog_logThread();
 
+    MCNAPI static ::Bedrock::Threading::Mutex& mCrashDumpThreadMutex();
+
     MCNAPI static ::std::condition_variable& mCrashDumpThreadMutexCV();
 
     MCNAPI static ::Bedrock::Threading::Mutex& mEventDataMutex();

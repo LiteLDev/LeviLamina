@@ -10,6 +10,8 @@
 class CommandOrigin;
 class CommandOutput;
 class Level;
+struct SnapshotFilenameAndLength;
+namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class SaveCommand : public ::ServerCommand {
@@ -45,6 +47,16 @@ public:
     MCAPI static bool saveHold(::Level& level);
 
     MCAPI static bool saveResume(::Level& level);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::SnapshotFilenameAndLength>& mSaveAllFileList();
+
+    MCAPI static ::Bedrock::Threading::Mutex& mSaveAllMutex();
+
+    MCAPI static ::SaveCommand::State& mState();
     // NOLINTEND
 
 public:

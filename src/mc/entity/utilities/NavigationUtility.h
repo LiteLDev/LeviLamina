@@ -72,6 +72,10 @@ MCNAPI bool isInNode(::Mob const& mob, ::BlockPos const& nodePos);
 
 MCNAPI bool isStairBlockFacingMob(::Mob const& mob, ::BlockPos const& blockPos);
 
+MCNAPI bool moveCondition(::Mob const& mob, ::Block const& block);
+
+MCNAPI bool swimCondition(::Mob const&, ::BlockSource& region, int gridPosX, int gridPosY, int gridPosZ);
+
 MCNAPI void trimPathFromSun(::Mob const& mob);
 // NOLINTEND
 

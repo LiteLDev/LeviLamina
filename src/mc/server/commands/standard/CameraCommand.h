@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BaseGameVersion;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -122,6 +123,12 @@ public:
     );
 
     MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BaseGameVersion const& REMOVE_IGNORE_STARTING_VALUE_COMPONENT_VERSION();
     // NOLINTEND
 
 public:

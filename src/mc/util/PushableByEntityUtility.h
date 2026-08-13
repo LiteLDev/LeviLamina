@@ -6,11 +6,16 @@
 // clang-format off
 class Actor;
 class Vec3;
+struct PushableByEntityComponent;
+struct PushablePreset;
 // clang-format on
 
 namespace PushableByEntityUtility {
 // functions
 // NOLINTBEGIN
+MCAPI ::PushablePreset const&
+getPreset(::Actor const& owner, ::PushableByEntityComponent const& component, ::Actor const& other);
+
 MCAPI void pullToRide(::Actor& owner, ::Actor& other);
 
 MCAPI void push(::Actor& owner, ::Vec3 const& vec);

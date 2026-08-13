@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersionConstant;
 namespace SharedTypes { struct ColorNormRGB; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -334,6 +335,12 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::std::string>                                                  mFormatVersion;
         ::ll::TypedStorage<8, 1480, ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings> mFogSettings;
+        // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::SemVersionConstant const& VERSION();
         // NOLINTEND
     };
 

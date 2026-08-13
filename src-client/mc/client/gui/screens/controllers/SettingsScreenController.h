@@ -174,6 +174,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::unordered_map<int, ::SettingsScreenController::SettingsScreenTabInfo> const& mScreenInfo();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(

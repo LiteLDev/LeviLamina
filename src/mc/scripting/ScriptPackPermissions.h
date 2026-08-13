@@ -33,7 +33,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI static ::std::string const& sWildCardModuleName();
+#endif
     // NOLINTEND
 
 public:

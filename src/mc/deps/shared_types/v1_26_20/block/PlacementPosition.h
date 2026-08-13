@@ -25,6 +25,14 @@ public:
         ::Bedrock::EnumSet<::SharedTypes::v1_26_20::BlockDefinition::PlacementPosition::EnabledState, 2>>
         mEnabledStates;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& BLOCK_FACE_ID();
+
+    MCAPI static ::std::string_view const& VERTICAL_HALF_ID();
+    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_26_20::BlockDefinition

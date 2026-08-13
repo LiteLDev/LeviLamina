@@ -8,4 +8,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, int64> mActorUniqueId;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::PlayerScoreboardId const& INVALID();
+    // NOLINTEND
 };

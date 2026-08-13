@@ -61,6 +61,14 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& DEPRECATED_FILTERS_FIELD();
+
+    MCAPI static ::std::string_view const& DEPRECATED_FUNCTIONS_FIELD();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_21_30::TradeItem&&);

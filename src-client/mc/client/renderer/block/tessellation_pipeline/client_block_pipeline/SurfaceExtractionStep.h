@@ -9,7 +9,9 @@
 // clang-format off
 class Matrix;
 class Vec3;
+namespace BlockGeoType { class GeoTypeResolver; }
 namespace ClientBlockPipeline { class Inputs; }
+namespace ClientBlockPipeline { class Material; }
 namespace ClientBlockPipeline { class StepResult; }
 namespace ClientBlockPipeline { struct BlockLookupData; }
 // clang-format on
@@ -28,6 +30,18 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Matrix
     _getUnitCubeWorldTransform(::ClientBlockPipeline::BlockLookupData const& blockData, ::Vec3 const& localPosition);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BlockGeoType::GeoTypeResolver& mGeoTypeResolver();
+
+    MCAPI static float& mLastPositionRandom();
+
+    MCAPI static ::ClientBlockPipeline::Material const*& mLastResolvedMaterial();
+
+    MCAPI static uchar& mLastTextureIndex();
     // NOLINTEND
 
 public:

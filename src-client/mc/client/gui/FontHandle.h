@@ -53,6 +53,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::FontHandle& INVALID_FONT_HANDLE();
+
+    MCAPI static ::FontHandle& TEST_FONT_HANDLE();
     // NOLINTEND
 
 public:

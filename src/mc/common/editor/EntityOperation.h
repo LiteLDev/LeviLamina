@@ -67,6 +67,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string const& DEFAULT_OPERATION_NAME();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::string_view $getName();

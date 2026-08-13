@@ -14,6 +14,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersionConstant;
 namespace SharedTypes::v3_0_0::PackManifestDefinition { struct Module; }
 namespace SharedTypes::v3_0_0::PackManifestDefinition { struct Subpack; }
 namespace cereal { struct ReflectionCtx; }
@@ -73,6 +74,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:

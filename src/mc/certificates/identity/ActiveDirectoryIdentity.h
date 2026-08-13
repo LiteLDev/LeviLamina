@@ -111,6 +111,20 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static ::std::string const& IS_VALID_FIELD();
+
+    MCNAPI static ::std::string const& JWT_EXPIRATION_FIELD();
+
+    MCNAPI static ::std::string const& JWT_REQUEST_ID_FIELD();
+
+    MCNAPI static ::std::string const& PAYLOAD_FIELD();
+
+    MCNAPI static ::std::string const& PUBLIC_KEY();
+
+    MCNAPI static ::std::string const& REQUEST_ID_FIELD();
+
+    MCNAPI static ::std::string const& RESPONSE_FIELD();
+
     MCNAPI static ::std::string& mCachedServiceEndpoint();
     // NOLINTEND
 

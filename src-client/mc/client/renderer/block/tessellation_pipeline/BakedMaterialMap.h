@@ -46,6 +46,12 @@ public:
         ::BlockMaterialInstancesComponent const&     materialInstance
     );
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<char const[83]> MATERIAL_INSTANCE_FIND_ERROR();
+    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline

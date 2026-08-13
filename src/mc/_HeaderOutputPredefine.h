@@ -163,7 +163,6 @@ template <typename Category, typename Type>
 
 // stb C++ Library
 #include "stb_truetype.h"
-struct stbi__context;
 
 struct HWND__;
 struct HKEY__;

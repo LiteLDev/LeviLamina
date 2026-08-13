@@ -22,6 +22,8 @@ class TextureAtlasItem;
 class Vec3;
 struct TextureItem;
 struct TextureUVCoordinateSet;
+namespace Bedrock::Threading { class Mutex; }
+namespace BlockGeometry { struct Model; }
 namespace BlockTessellationFallbackUtils { struct TessellationConfigInfo; }
 namespace Json { class Value; }
 // clang-format on
@@ -163,15 +165,25 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string const& NORMAL_SOUND();
 
+    MCAPI static ::std::unordered_map<::std::string, ::BlockGraphics*>& mBlockLookupMap();
+
+    MCAPI static ::Bedrock::Threading::Mutex& mBlockModelAccess();
+
     MCAPI static ::std::unordered_map<uint, ::BlockGraphics*>& mBlocks();
 
     MCAPI static ::std::unique_ptr<::BlockGraphics>& mDummyBlock();
 
     MCAPI static bool& mInitialized();
 
+    MCAPI static ::std::map<::std::string, ::std::unique_ptr<::BlockGeometry::Model>>& mModels();
+
+    MCAPI static ::std::vector<::std::unique_ptr<::BlockGraphics>>& mOwnedBlocks();
+
     MCAPI static ::std::weak_ptr<::AtlasItemManager>& mTerrainTextureAtlas();
 
     MCAPI static ::std::unordered_set<uint>& mVanillaBlocksWithFallbackToOldTessellation();
+
+    MCAPI static ::std::unordered_map<::std::string, ::TextureAtlasItem>& sComplexTextureItems();
     // NOLINTEND
 
 public:

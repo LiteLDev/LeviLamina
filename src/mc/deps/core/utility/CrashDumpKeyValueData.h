@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct CrashDumpFormatEntryImpl;
+// clang-format on
+
 struct CrashDumpKeyValueData {
 public:
     // member variables
@@ -17,4 +22,10 @@ public:
     CrashDumpKeyValueData& operator=(CrashDumpKeyValueData const&);
     CrashDumpKeyValueData(CrashDumpKeyValueData const&);
     CrashDumpKeyValueData();
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::add_lvalue_reference_t<::CrashDumpFormatEntryImpl const[4]> kFormat();
+    // NOLINTEND
 };

@@ -34,6 +34,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::FogVolumetricCoefficientSetting const& ZERO_SETTING();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
 

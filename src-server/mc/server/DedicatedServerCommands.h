@@ -30,4 +30,10 @@ public:
         ::ScriptSettings*  scriptSettings
     );
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::std::string>& mSaveAllFileList();
+    // NOLINTEND
 };

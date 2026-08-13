@@ -17,6 +17,7 @@ class Dimension;
 class JigsawStructureElementRegistry;
 class ServerLevel;
 namespace br::worldgen { class PoolElementStructureSection; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class JigsawStructurePostprocessAction : public ::IRequestAction {
@@ -47,6 +48,12 @@ public:
 
     MCAPI static ::std::unique_ptr<::JigsawStructurePostprocessAction>
     load(::CompoundTag const& tag, ::JigsawStructureElementRegistry const& elementReg);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::cereal::ReflectionCtx>& mCerealContext();
     // NOLINTEND
 
 public:

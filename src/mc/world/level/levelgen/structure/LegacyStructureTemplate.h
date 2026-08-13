@@ -104,7 +104,31 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string const& AUTHOR_TAG();
+
+    MCAPI static ::std::string const& BLOCKS_TAG();
+
+    MCAPI static ::std::string const& BLOCK_TAG_NBT();
+
+    MCAPI static ::std::string const& BLOCK_TAG_POS();
+
+    MCAPI static ::std::string const& BLOCK_TAG_STATE();
+
+    MCAPI static ::std::string const& DATA_VERSION_TAG();
+
+    MCAPI static ::std::string const& ENTITIES_TAG();
+
+    MCAPI static ::std::string const& ENTITY_TAG_BLOCKPOS();
+
+    MCAPI static ::std::string const& ENTITY_TAG_NBT();
+
+    MCAPI static ::std::string const& ENTITY_TAG_POS();
+
     MCAPI static ::std::string const& MINECRAFT_PREFIX();
+
+    MCAPI static ::std::string const& PALETTE_TAG();
+
+    MCAPI static ::std::string const& SIZE_TAG();
     // NOLINTEND
 
 public:

@@ -87,6 +87,12 @@ public:
 
     MCAPI void setHasViewed(bool value);
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<char const[28]> NAME();
+    // NOLINTEND
 };
 
 } // namespace OreUI::RealmsStories

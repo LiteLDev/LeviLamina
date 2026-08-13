@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/inventory/network/SparseContainer.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
@@ -71,6 +72,13 @@ public:
     MCNAPI static ::std::string const
     getPushSlotPredictionResultName(::SparseContainerClient::PushSlotPredictionResult result);
 #endif
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::BidirectionalUnorderedMap<::SparseContainerClient::PushSlotPredictionResult, ::std::string> const&
+    pushSlotPredictionResultMap();
     // NOLINTEND
 
 public:

@@ -25,7 +25,27 @@ public:
         Count       = 9,
     };
 
-    struct Names {};
+    struct Names {
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::string_view const& BLOCK_POS();
+
+        MCAPI static ::std::string_view const& BLOCK_POS_VEC();
+
+        MCAPI static ::std::string_view const& BOOL();
+
+        MCAPI static ::std::string_view const& ENTITY_REF();
+
+        MCAPI static ::std::string_view const& FLOAT();
+
+        MCAPI static ::std::string_view const& INT();
+
+        MCAPI static ::std::string_view const& POI_MEMORY();
+
+        MCAPI static ::std::string_view const& STRING();
+        // NOLINTEND
+    };
 };
 
 } // namespace SharedTypes::v1_21_130::Brain

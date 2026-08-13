@@ -32,6 +32,12 @@ public:
     // NOLINTBEGIN
     virtual ~LibHttpClientInstance() = default;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::Bedrock::Threading::Mutex& sMutex();
+    // NOLINTEND
 };
 
 } // namespace Bedrock::Http

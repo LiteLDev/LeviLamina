@@ -4,19 +4,25 @@
 
 // auto generated inclusion list
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
+#include "mc/client/social/XsapiHandle.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Social { class GameConnectionInfo; }
+namespace cohtml { class Binder; }
 namespace Social { class MultiplayerPlatformFactory; }
 namespace Social { struct MultiplayerPlatformFactoryData; }
+namespace Social { struct PlayerProfileState; }
 // clang-format on
 
 namespace Social {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
+MCNAPI void CoherentBind(::cohtml::Binder* binder, ::Social::PlayerProfileState* state);
+
 MCNAPI ::std::string bedrockClientErrorToString(int errorCode);
 
 MCNAPI ::brstd::move_only_function<::std::unique_ptr<::Social::MultiplayerPlatformFactory>()>
@@ -37,6 +43,9 @@ MCNAPI ::std::string
 sanitizeDisplayName(::std::string_view input, uint64 maxLength, ::std::function<bool(int)> validCharFn);
 
 #ifdef LL_PLAT_C
+MCNAPI ::Bedrock::Threading::Async<::std::pair<::std::error_code, ::Social::XsapiHandle<::XUser*>>>
+signInCompleteHelper(::XUser* user, HRESULT hr);
+
 MCNAPI ::std::string xblErrorToString(int errorCode);
 #endif
 // NOLINTEND

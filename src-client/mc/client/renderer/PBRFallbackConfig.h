@@ -9,6 +9,7 @@
 // clang-format off
 class IMinecraftEventing;
 class ResourcePackManager;
+class SemVersionConstant;
 struct PBRFallbackSettings;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -34,6 +35,12 @@ public:
         PBRFallbackConfigSettings& operator=(PBRFallbackConfigSettings const&);
         PBRFallbackConfigSettings(PBRFallbackConfigSettings const&);
         PBRFallbackConfigSettings();
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCNAPI static ::SemVersionConstant const& VERSION();
+        // NOLINTEND
     };
 
 public:
@@ -68,6 +75,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindPBRFallbackParameters(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& PAYLOAD_KEY();
     // NOLINTEND
 
 public:

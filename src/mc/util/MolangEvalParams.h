@@ -45,6 +45,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::RenderParams& mErrorRenderParams();
+
     MCAPI static ::MolangEvalParams& mThreadLocalMolangEvalParams();
     // NOLINTEND
 };

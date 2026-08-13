@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersionConstant;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -44,6 +45,12 @@ public:
         // NOLINTEND
 
     public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::SemVersionConstant const& VERSION();
+        // NOLINTEND
+
+    public:
         // constructor thunks
         // NOLINTBEGIN
         MCFOLD void* $ctor(::SharedTypes::v1_26_30::BiomeJsonDocument::BiomeJsonObject const&);
@@ -67,6 +74,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 };
 

@@ -11,6 +11,7 @@
 // clang-format off
 class ActorOwnerComponent;
 class BlockSourceComponent;
+class ChunkPos;
 class DimensionStateComponent;
 class EntityContext;
 class EntityRegistry;
@@ -51,6 +52,12 @@ public:
 
     MCAPI static bool hasFinishedLoading(::WeakRef<::EntityContext> entityRef);
 #endif
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::ChunkPos> const& mChunksNeededForLoadOffsets();
     // NOLINTEND
 
 public:

@@ -9,6 +9,7 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
+class DedicatedServer;
 // clang-format on
 
 class StopCommand : public ::Command {
@@ -16,6 +17,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::DedicatedServer*& mServer();
     // NOLINTEND
 
 public:

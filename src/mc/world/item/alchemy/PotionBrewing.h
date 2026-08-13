@@ -66,8 +66,16 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::vector<::PotionBrewing::Mix<::ItemInstance>>& mChemistryMixes();
+
     MCAPI static ::std::vector<::PotionBrewing::Mix<::Item const&>>& mContainerMixes();
 
     MCAPI static ::std::vector<::PotionBrewing::Mix<::ItemDescriptor>>& mPotionMixes();
+
+    MCAPI static ::std::vector<::PotionBrewing::Ingredient>& mValidContainers();
+
+    MCAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidIngredients();
+
+    MCAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidRecipeInputs();
     // NOLINTEND
 };

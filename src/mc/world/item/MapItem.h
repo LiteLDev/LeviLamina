@@ -115,6 +115,8 @@ public:
 
     MCAPI static ::std::string const& TAG_MAP_SCALE();
 
+    MCAPI static ::std::string const& TAG_MAP_SCALING();
+
     MCAPI static ::std::string const& TAG_MAP_UUID();
     // NOLINTEND
 

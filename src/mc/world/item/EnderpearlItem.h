@@ -26,6 +26,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::HashedString const& COOLDOWN();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;

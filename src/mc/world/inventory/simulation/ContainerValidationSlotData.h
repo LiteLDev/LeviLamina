@@ -29,6 +29,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::ContainerValidationSlotData const& AUTOPLACE();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C

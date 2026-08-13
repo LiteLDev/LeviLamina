@@ -32,6 +32,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[30]> SCREEN_NAME();
     // NOLINTEND
 
 public:

@@ -42,6 +42,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& AllowedFacesId();
+
+    MCAPI static ::std::string_view const& BlockFilterId();
+
     MCAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };

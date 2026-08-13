@@ -47,6 +47,14 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::unordered_map<::std::string, ::EducationMetadata::ContentType> const& STRING_TO_CONTENT_TYPE();
+
+    MCNAPI static ::std::unordered_map<::std::string, ::EducationMetadata::UserType> const& STRING_TO_USER_TYPE();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::EducationMetadata const& other);

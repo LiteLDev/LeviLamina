@@ -129,6 +129,24 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& ACTIONS_TAG();
+
+    MCAPI static ::std::string const& INTERACTIVE_TAG();
+
+    MCAPI static ::std::string const& NAME_RAW_TEXT_TAG();
+
+    MCAPI static ::std::string const& PLAYER_ID_TAG();
+
+    MCAPI static ::std::string const& PLAYER_SCENE_MAPPING_TAG();
+
+    MCAPI static ::std::string const& SCENE_NAME_TAG();
+
+    MCAPI static ::std::string const& URL_TAG();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::NpcComponent&& rhs);

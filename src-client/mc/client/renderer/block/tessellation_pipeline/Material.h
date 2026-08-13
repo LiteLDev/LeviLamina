@@ -57,6 +57,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::TextureUVCoordinateSet> const& EMPTY_TEXTURES();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::vector<::TextureUVCoordinateSet> const& uvSets, ::BlockRenderLayer terrainLayer);

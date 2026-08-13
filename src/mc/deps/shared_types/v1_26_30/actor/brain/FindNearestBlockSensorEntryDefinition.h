@@ -58,6 +58,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& TYPE_NAME();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_26_30::Brain::MemorySensors::FindNearestBlockSensorEntryDefinition const&);

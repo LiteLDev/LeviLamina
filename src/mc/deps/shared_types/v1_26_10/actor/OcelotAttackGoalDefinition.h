@@ -26,7 +26,27 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& COOLDOWN_TIME_PROP_NAME();
+
+    MCAPI static ::std::string_view const& MAX_DISTANCE_PROP_NAME();
+
+    MCAPI static ::std::string_view const& MAX_HEAD_ROTATION_X_PROP_NAME();
+
+    MCAPI static ::std::string_view const& MAX_HEAD_ROTATION_Y_PROP_NAME();
+
+    MCAPI static ::std::string_view const& MAX_SNEAK_RANGE_PROP_NAME();
+
+    MCAPI static ::std::string_view const& MAX_SPRINT_RANGE_PROP_NAME();
+
     MCAPI static ::std::string_view const& NAME();
+
+    MCAPI static ::std::string_view const& REACH_MULTIPLIER_PROP_NAME();
+
+    MCAPI static ::std::string_view const& SNEAK_SPEED_MULTIPLIER_PROP_NAME();
+
+    MCAPI static ::std::string_view const& SPRINT_SPEED_MULTIPLIER_PROP_NAME();
+
+    MCAPI static ::std::string_view const& WALK_SPEED_MULTIPLIER_PROP_NAME();
     // NOLINTEND
 };
 

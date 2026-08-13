@@ -13,4 +13,10 @@ public:
     ::ll::TypedStorage<4, 28, ::FogDistanceSetting>   mDistanceSetting;
     ::ll::TypedStorage<4, 44, ::FogTransitionSetting> mTransitionSetting;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::FogSetting const& ZERO_SETTING();
+    // NOLINTEND
 };

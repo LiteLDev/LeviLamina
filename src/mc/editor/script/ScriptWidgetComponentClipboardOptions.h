@@ -10,6 +10,7 @@
 // clang-format off
 class AABB;
 class Vec3;
+namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -51,6 +52,22 @@ public:
     MCNAPI static ::Scripting::Result_deprecated<void> validateOffsetValues(::Vec3 const& offset);
 
     MCNAPI static ::Scripting::Result_deprecated<void> validateOriginValues(::Vec3 const& origin);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::Vec3 const& DEFAULT_CLIPBOARD_OFFSET();
+
+    MCNAPI static ::Vec3 const& DEFAULT_CLIPBOARD_ORIGIN();
+
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HIGHLIGHT_HULL_COLOR();
+
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HIGHLIGHT_OUTLINE_COLOR();
+
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HULL_COLOR();
+
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTLINE_COLOR();
     // NOLINTEND
 
 public:

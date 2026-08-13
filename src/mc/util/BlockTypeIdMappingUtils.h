@@ -13,6 +13,8 @@ class BlockType;
 namespace BlockTypeIdMappingUtils {
 // functions
 // NOLINTBEGIN
+MCAPI void addBlockTypeIdMapping(::BlockType const& blockType, uint64 legacyId);
+
 MCAPI void addBlockTypeIdMappings();
 // NOLINTEND
 

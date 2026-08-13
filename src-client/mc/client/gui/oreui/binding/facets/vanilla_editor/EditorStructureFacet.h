@@ -8,6 +8,7 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/editor/selection/SelectionVolumeUpdate.h"
+#include "mc/editor/structure/StructureSource.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -142,6 +143,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+
+    MCAPI static ::std::map<::Editor::StructureSource, ::std::string> const& SOURCE_STRING();
     // NOLINTEND
 
 public:

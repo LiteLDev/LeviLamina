@@ -25,6 +25,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& GeometryId();
+
+    MCAPI static ::std::string_view const& MaterialInstancesId();
+
     MCAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };

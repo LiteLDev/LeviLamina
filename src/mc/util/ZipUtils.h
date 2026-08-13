@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/file/ZipResult.h"
+#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/util/UnzipResult.h"
 
 // auto generated forward declare list
@@ -18,6 +19,8 @@ namespace Core::ZipUtils { class ZipSettings; }
 namespace Core::ZipUtils {
 // functions
 // NOLINTBEGIN
+MCAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _zipEncodedPathToUTF8(::Core::PathView path);
+
 MCAPI bool getFilenames(
     ::Core::PathView                                  zipPath,
     ::std::vector<::Core::PathBuffer<::std::string>>& result,

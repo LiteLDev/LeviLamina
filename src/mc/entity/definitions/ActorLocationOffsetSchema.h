@@ -5,4 +5,10 @@
 // auto generated inclusion list
 #include "mc/entity/definitions/LookedAtDefinition.h"
 
-struct ActorLocationOffsetSchema {};
+struct ActorLocationOffsetSchema {
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+};

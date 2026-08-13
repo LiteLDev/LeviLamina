@@ -14,4 +14,10 @@ public:
     ColorChannel& operator=(ColorChannel const&);
     ColorChannel(ColorChannel const&);
     ColorChannel();
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::ColorChannel const& INVALID();
+    // NOLINTEND
 };

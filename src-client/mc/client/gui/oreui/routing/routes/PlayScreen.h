@@ -63,6 +63,8 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> EDITOR_ROUTE();
 
+    MCAPI static ::std::add_lvalue_reference_t<char const[13]> LEGACY_ROUTE();
+
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
     // NOLINTEND
 

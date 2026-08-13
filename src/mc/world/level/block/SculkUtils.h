@@ -8,6 +8,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class CompoundTag;
+class IBlockWorldGenAPI;
 class Random;
 // clang-format on
 
@@ -23,6 +24,8 @@ MCAPI void addChargePopEffects(::BlockSource& region, ::CompoundTag const& data,
 
 MCAPI void addChargePopEffects(::BlockSource& region, ::BlockPos const& pos, ::Random& random);
 #endif
+
+MCAPI bool canSpreadIntoBlock(::IBlockWorldGenAPI& target, ::Block const& block, ::BlockPos const& pos);
 
 MCAPI ::std::set<::Block const*> generateSculkReplaceableBlocks();
 

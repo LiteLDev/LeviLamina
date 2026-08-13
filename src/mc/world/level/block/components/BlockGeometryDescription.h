@@ -119,17 +119,29 @@ public:
     // NOLINTBEGIN
     MCAPI static ::HashedString const& CROSS_GEO_NAME();
 
+    MCAPI static ::std::string const& CULLING_LAYER_DOCUMENTATION();
+
     MCAPI static ::HashedString const& CULLING_LAYER_LEAVES();
+
+    MCAPI static ::std::string const& CULLING_LAYER_NAME_CONSTRAINT();
 
     MCAPI static ::HashedString const& CULLING_LAYER_UNDEFINED();
 
     MCAPI static ::HashedString const& CULLING_SHAPE_DEFAULT();
 
+    MCAPI static ::std::string const& CULLING_SHAPE_DOCUMENTATION();
+
+    MCAPI static ::std::string const& CULLING_SHAPE_NAME_CONSTRAINT();
+
     MCAPI static ::HashedString const& FULL_BLOCK_GEO_NAME();
 
     MCAPI static ::HashedString const& FULL_BLOCK_GEO_NAME_V1();
 
+    MCAPI static ::std::string const& GEO_NAME_CONSTRAINT();
+
     MCAPI static ::std::string const& NameID();
+
+    MCAPI static ::std::string const& UV_LOCKING_CONSTRAINT();
     // NOLINTEND
 
 public:

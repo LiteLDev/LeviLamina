@@ -2,11 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/strict/EntityModifier.h"
+
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
 class InteractPacket;
 class InventoryPacketHandler;
+class StrictEntityContext;
+struct ServerPlayerCurrentMovementComponent;
+struct ServerPlayerInteractComponent;
+struct ServerPlayerInventoryTransactionComponent;
 struct ServerPlayerMovementComponent;
 struct TickingSystemWithInfo;
 // clang-format on
@@ -14,6 +21,15 @@ struct TickingSystemWithInfo;
 namespace ServerPlayerInputSystem {
 // functions
 // NOLINTBEGIN
+MCAPI void _tickPlayerMovement(
+    ::StrictEntityContext&           entity,
+    ::ServerPlayerMovementComponent& serverPlayerMovement,
+    ::EntityModifier<
+        ::ServerPlayerCurrentMovementComponent,
+        ::ServerPlayerInventoryTransactionComponent,
+        ::ServerPlayerInteractComponent> modifier
+);
+
 MCAPI ::TickingSystemWithInfo create();
 
 MCAPI bool onInteractPacket(::ServerPlayerMovementComponent& component, ::InteractPacket const& packet);

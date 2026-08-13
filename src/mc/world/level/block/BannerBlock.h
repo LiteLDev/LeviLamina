@@ -76,6 +76,20 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::AABB& EAST_AABB();
+
+    MCAPI static ::AABB& NORTH_AABB();
+
+    MCAPI static ::AABB& SOUTH_AABB();
+
+    MCAPI static ::AABB& STANDING_AABB();
+
+    MCAPI static ::AABB& WEST_AABB();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& nameId, int id, bool onGround);

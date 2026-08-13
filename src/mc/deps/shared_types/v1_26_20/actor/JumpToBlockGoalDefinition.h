@@ -45,6 +45,20 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static float const& DEFAULT_MAX_VELOCITY();
+
+    MCAPI static int const& DEFAULT_MIN_DISTANCE();
+
+    MCAPI static int const& DEFAULT_MIN_PATH_LENGTH();
+
+    MCAPI static float const& DEFAULT_PREFERRED_BLOCKS_CHANCE();
+
+    MCAPI static float const& DEFAULT_SCALE_FACTOR();
+
+    MCAPI static int const& DEFAULT_SEARCH_HEIGHT();
+
+    MCAPI static int const& DEFAULT_SEARCH_WIDTH();
+
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

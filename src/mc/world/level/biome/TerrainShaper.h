@@ -34,6 +34,18 @@ public:
 
         MCFOLD static float getWeirdness(::TerrainShaper::Point const& point);
         // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::ToFloatFunction<::TerrainShaper::Point>& CONTINENTS_EXTRACTOR();
+
+        MCAPI static ::ToFloatFunction<::TerrainShaper::Point>& EROSION_EXTRACTOR();
+
+        MCAPI static ::ToFloatFunction<::TerrainShaper::Point>& RIDGES_EXTRACTOR();
+
+        MCAPI static ::ToFloatFunction<::TerrainShaper::Point>& WEIRDNESS_EXTRACTOR();
+        // NOLINTEND
     };
 
 public:

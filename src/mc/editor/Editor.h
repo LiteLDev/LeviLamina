@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+namespace Editor { struct LocalizationEntry; }
 // clang-format on
 
 namespace Editor {
@@ -20,6 +21,10 @@ MCNAPI ::Bedrock::Result<::CompoundTag> compoundTagFromString(::std::string_view
 #endif
 
 MCNAPI ::Bedrock::Result<::std::string> compoundTagToString(::CompoundTag const& tag);
+
+#ifdef LL_PLAT_C
+MCNAPI ::std::string getLocalizedString(::std::variant<::std::string, ::Editor::LocalizationEntry> const& locale);
+#endif
 // NOLINTEND
 
 // static variables

@@ -29,6 +29,12 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_70::ClientBiomeFoliageColorMap> mColorMap;
         // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::add_lvalue_reference_t<char const[18]> SCHEMA_NAME();
+        // NOLINTEND
     };
 
 public:

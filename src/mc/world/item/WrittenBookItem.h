@@ -104,7 +104,9 @@ public:
 
     MCAPI static ::std::string_view const& TAG_TITLE();
 
+#ifdef LL_PLAT_C
     MCAPI static ::std::string_view const& TAG_XUID();
+#endif
     // NOLINTEND
 
 public:

@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersionConstant;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -44,6 +45,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Vec3 const& DEFAULT_FRIEND_SEARCH_AREA();
+
+    MCAPI static ::SemVersionConstant const& JSONUTIL_DROP_UNRECOGNIZED_FIELDS_VERSION();
 
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND

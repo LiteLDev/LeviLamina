@@ -7,6 +7,11 @@
 #include "mc/deps/shared_types/v1_20_50/item/ItemDeprecatedComponentData.h"
 #include "mc/deps/shared_types/v1_21_10/item/ComponentItemComponentData.h"
 
+// auto generated forward declare list
+// clang-format off
+class SemVersionConstant;
+// clang-format on
+
 struct ComponentItemData_v1_21_10 {
 public:
     // member variables
@@ -14,5 +19,11 @@ public:
     ::ll::TypedStorage<8, 96, ::SharedTypes::v1_20_20::ItemDescription>              mDescription;
     ::ll::TypedStorage<8, 1032, ::SharedTypes::v1_21_10::ComponentItemComponentData> mItemComponents;
     ::ll::TypedStorage<8, 872, ::SharedTypes::v1_20_50::ItemDeprecatedComponentData> mDeprecatedItemComponents;
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 };

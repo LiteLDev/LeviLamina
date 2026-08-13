@@ -353,6 +353,10 @@ public:
 
     MCAPI static ::ItemStackBase::ComparisonOptions const& COMPARISONOPTIONS_RELEVANTUSERDATA();
 
+    MCAPI static ::std::string const& TAG_CAN_DESTROY();
+
+    MCAPI static ::std::string const& TAG_CAN_PLACE_ON();
+
     MCAPI static ::std::string const& TAG_CHARGED_ITEM();
 
     MCAPI static ::std::string const& TAG_DISPLAY();
@@ -366,6 +370,10 @@ public:
     MCAPI static ::std::string const& TAG_LORE();
 
     MCAPI static ::std::string const& TAG_REPAIR_COST();
+
+    MCAPI static ::std::string const& TAG_STORE_CAN_DESTROY();
+
+    MCAPI static ::std::string const& TAG_STORE_CAN_PLACE_ON();
 
     MCAPI static ::std::string const& TAG_UNBREAKABLE();
     // NOLINTEND

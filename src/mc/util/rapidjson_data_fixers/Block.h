@@ -33,6 +33,14 @@ MCNAPI void applyLambdaToDescriptionObject(
     )> const& callback
 );
 
+MCNAPI void legacyFindIfMissingFieldAndRemoveComponent(
+    ::rapidjson::
+        GenericMemberIterator<0, ::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>
+                         componentsIte,
+    ::std::string const& componentName,
+    ::std::string const& fieldName
+);
+
 MCNAPI void legacyRemoveComponentIfMissingField(
     ::rapidjson::GenericDocument<
         ::rapidjson::UTF8<char>,
@@ -66,6 +74,12 @@ MCNAPI void removeDuplicateComponents(
         ::rapidjson::UTF8<char>,
         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
         ::rapidjson::CrtAllocator>& document
+);
+
+MCNAPI void removeDuplicateComponentsInComponentsSection(
+    ::rapidjson::
+        GenericMemberIterator<0, ::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>&
+            componentsListIter
 );
 
 MCNAPI void renameComponent(

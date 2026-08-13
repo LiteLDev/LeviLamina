@@ -53,6 +53,14 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static ::std::add_lvalue_reference_t<char const[5]> CATEGORY_CORE();
+
+    MCNAPI static ::std::add_lvalue_reference_t<char const[13]> CATEGORY_EXPERIMENTAL();
+
+    MCNAPI static ::std::add_lvalue_reference_t<char const[10]> CATEGORY_EXTENSION();
+
+    MCNAPI static ::std::add_lvalue_reference_t<char const[9]> PROPERTY_CATEGORY();
+
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_DATA();
     // NOLINTEND
 

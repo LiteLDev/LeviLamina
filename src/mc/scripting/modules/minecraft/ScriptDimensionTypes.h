@@ -49,6 +49,12 @@ public:
 
     MCAPI static ::std::string toString(::DimensionType const& type);
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& sMinecraftNamespace();
+    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

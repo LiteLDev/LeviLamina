@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct CrashDumpFormatEntryImpl;
+// clang-format on
+
 struct CrashDumpFrameData {
 public:
     // member variables
@@ -20,4 +25,10 @@ public:
     CrashDumpFrameData& operator=(CrashDumpFrameData const&);
     CrashDumpFrameData(CrashDumpFrameData const&);
     CrashDumpFrameData();
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::add_lvalue_reference_t<::CrashDumpFormatEntryImpl const[7]> kFormat();
+    // NOLINTEND
 };

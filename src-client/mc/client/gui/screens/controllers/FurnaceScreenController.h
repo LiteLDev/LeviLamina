@@ -160,6 +160,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::unordered_map<int, ::FurnaceScreenController::CategoryTabInfo> const& mCategoryTabs();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(

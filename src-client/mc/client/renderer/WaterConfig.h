@@ -16,6 +16,7 @@ class LinkedAssetValidator;
 class LocalPlayer;
 class ResourcePackManager;
 class SemVersion;
+class SemVersionConstant;
 namespace Editor::Services { class ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
@@ -149,6 +150,12 @@ public:
         WaterConfigSettingsV0& operator=(WaterConfigSettingsV0 const&);
         WaterConfigSettingsV0(WaterConfigSettingsV0 const&);
         WaterConfigSettingsV0();
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCNAPI static ::SemVersionConstant const& VERSION();
+        // NOLINTEND
     };
 
     struct WaterConfigSettingsV1 {
@@ -527,6 +534,12 @@ public:
         ::LocalPlayer&                                         localPlayer,
         ::cereal::ReflectionCtx const&                         ctx
     );
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& PAYLOAD_KEY();
     // NOLINTEND
 
 public:

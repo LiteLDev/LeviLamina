@@ -90,6 +90,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static ::std::chrono::nanoseconds const& WORLD_SAVE_FLUSH_INTERVAL();
+
     MCNAPI static ::std::chrono::nanoseconds const& WORLD_SAVE_MENU_FLUSH_INTERVAL();
     // NOLINTEND
 

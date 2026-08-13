@@ -9,10 +9,12 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionGroup;
+class Attribute;
 class EntityContext;
 class ItemStack;
 struct ActorDefinitionIdentifier;
 struct VariantParameterList;
+namespace mce { class UUID; }
 // clang-format on
 
 class Zombie : public ::HumanoidMonster {
@@ -50,6 +52,14 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::mce::UUID const& SPAWN_BONUS_UUID();
+
+    MCAPI static ::Attribute const& SPAWN_REINFORCEMENTS_CHANCE();
     // NOLINTEND
 
 public:

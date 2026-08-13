@@ -43,6 +43,12 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                        mTooltip;
         ::ll::TypedStorage<1, 1, bool>                                  mClickable;
         // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::add_lvalue_reference_t<char const[24]> NAME();
+        // NOLINTEND
     };
 
     struct MapDimensions {
@@ -51,6 +57,12 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, int> mWidth;
         ::ll::TypedStorage<4, 4, int> mHeight;
+        // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::add_lvalue_reference_t<char const[20]> NAME();
         // NOLINTEND
     };
 
@@ -65,6 +77,12 @@ public:
         ::ll::TypedStorage<4, 4, float>                                      mViewCenterZ;
         ::ll::TypedStorage<1, 1, bool>                                       mIsMeMarkerOnMap;
         // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::add_lvalue_reference_t<char const[18]> NAME();
+        // NOLINTEND
     };
 
     struct MinimapHoverInfo {
@@ -75,6 +93,12 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string> mBiomeName;
         ::ll::TypedStorage<8, 32, ::std::string> mBlockName;
         ::ll::TypedStorage<1, 1, bool>           mValid;
+        // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::add_lvalue_reference_t<char const[23]> NAME();
         // NOLINTEND
     };
 

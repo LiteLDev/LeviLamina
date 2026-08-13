@@ -23,6 +23,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<::std::string const[20]> STRUCTURE_SHIPWRECK_TYPES();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::StructurePieceType $getType() const;

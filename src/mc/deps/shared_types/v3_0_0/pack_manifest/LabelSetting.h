@@ -14,6 +14,12 @@ public:
     ::ll::TypedStorage<1, 1, ::SharedTypes::v3_0_0::PackManifestDefinition::SettingType> mType;
     ::ll::TypedStorage<8, 32, ::std::string>                                             mText;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& TYPE_NAME();
+    // NOLINTEND
 };
 
 } // namespace SharedTypes::v3_0_0::PackManifestDefinition

@@ -6,6 +6,7 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/screens/controllers/CreateWorldOrRealm.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/resources/InvalidPacksFilterGroup.h"
 
 // auto generated forward declare list
@@ -74,6 +75,14 @@ public:
     MCAPI void _fetchDownloadedWorldTemplates();
 
     MCAPI void _handleWorldTemplateClicked(::WorldTemplateInfo const& level);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Core::PathBuffer<::std::string> const& DEFAULT_WORLD_SCREENSHOT();
+
+    MCAPI static ::std::string const& INVALID_WORLD_SCREENSHOT();
     // NOLINTEND
 
 public:

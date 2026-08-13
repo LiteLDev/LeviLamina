@@ -24,6 +24,16 @@ public:
     ::ll::TypedStorage<2, 2, ::SharedTypes::Facing> mDirection;
     ::ll::TypedStorage<1, 1, uchar>                 mPartCount;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& DIRECTION_ID();
+
+    MCAPI static ::std::string_view const& ENABLED_STATES_ID();
+
+    MCAPI static ::std::string_view const& PART_COUNT_ID();
+    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_26_20::BlockDefinition
