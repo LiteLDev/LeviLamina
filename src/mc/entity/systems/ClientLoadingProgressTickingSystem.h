@@ -23,12 +23,7 @@ class ClientLoadingProgressTickingSystem : public ::ITickingSystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual void tick(::EntityRegistry&) /*override*/;
-#else // LL_PLAT_C
     virtual void tick(::EntityRegistry& registry) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -63,11 +58,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $tick(::EntityRegistry&);
-#else // LL_PLAT_C
     MCAPI void $tick(::EntityRegistry& registry);
-#endif
 
 
     // NOLINTEND

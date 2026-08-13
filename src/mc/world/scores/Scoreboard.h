@@ -123,13 +123,7 @@ public:
 
     MCAPI ::ObjectiveCriteria* getCriteria(::std::string const& criteriaName) const;
 
-#ifdef LL_PLAT_C
     MCAPI ::std::vector<::PlayerScore> getDisplayInfoFiltered(::std::string const& displaySlot) const;
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI ::std::vector<::PlayerScore> getDisplayInfoFiltered(::std::string const& displaySlot) const;
-#endif
 
 #ifdef LL_PLAT_C
     MCAPI ::std::vector<::PlayerScore> getDisplayInfoSorted(
@@ -152,15 +146,8 @@ public:
 
     MCAPI ::std::vector<::ScoreboardId> getTrackedIds() const;
 
-#ifdef LL_PLAT_C
     MCAPI ::ScoreboardIdentityRef const&
     registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI ::ScoreboardIdentityRef const&
-    registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
-#endif
 
     MCAPI bool removeObjective(::Objective* objective);
 

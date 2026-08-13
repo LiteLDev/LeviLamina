@@ -44,6 +44,8 @@ MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMess
     ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& text
 );
 
+MCNAPI ::cereal::DynamicValue toObject(::ScriptModuleMinecraftServerUI::ButtonBinding const& binding);
+
 MCNAPI ::cereal::DynamicValue toObject(
     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableCallback> const& binding
 );
@@ -56,8 +58,6 @@ MCNAPI ::cereal::DynamicValue toObject(
         ::ScriptModuleMinecraftServerUI::ScriptUIRawMessage> const& binding
 );
 
-MCNAPI ::cereal::DynamicValue toObject(::ScriptModuleMinecraftServerUI::ButtonBinding const& binding);
-
 MCNAPI ::cereal::DynamicValue toObject(::ScriptModuleMinecraftServerUI::CustomFormButtonData const& data);
 
 MCNAPI void tryBind(
@@ -65,6 +65,13 @@ MCNAPI void tryBind(
     ::std::string const&                                               property,
     ::std::string const&                                               path,
     ::ScriptModuleMinecraftServerUI::CustomFormButtonData&             data
+);
+
+MCNAPI void tryBind(
+    ::ScriptModuleMinecraftServerUI::ScriptObservableDataStoreBinding& binding,
+    ::std::string const&                                               property,
+    ::std::string const&                                               path,
+    ::ScriptModuleMinecraftServerUI::ButtonBinding const&              value
 );
 
 MCNAPI void tryBind(
@@ -83,13 +90,6 @@ MCNAPI void tryBind(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableString>,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableUIRawMessage>,
         ::ScriptModuleMinecraftServerUI::ScriptUIRawMessage> const& value
-);
-
-MCNAPI void tryBind(
-    ::ScriptModuleMinecraftServerUI::ScriptObservableDataStoreBinding& binding,
-    ::std::string const&                                               property,
-    ::std::string const&                                               path,
-    ::ScriptModuleMinecraftServerUI::ButtonBinding const&              value
 );
 // NOLINTEND
 

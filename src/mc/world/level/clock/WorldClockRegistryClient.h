@@ -18,12 +18,7 @@ public:
     // NOLINTBEGIN
     virtual ~WorldClockRegistryClient() /*override*/ = default;
 
-#ifdef LL_PLAT_S
-    virtual void tick(::PacketSender&, ::LevelData const&) /*override*/;
-#else // LL_PLAT_C
     virtual void tick(::PacketSender&, ::LevelData const& levelData) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -43,11 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $tick(::PacketSender&, ::LevelData const&);
-#else // LL_PLAT_C
     MCAPI void $tick(::PacketSender&, ::LevelData const& levelData);
-#endif
 
 
     // NOLINTEND

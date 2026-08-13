@@ -35,13 +35,9 @@ public:
     MCNAPI void setLocalizedNames(::std::unordered_map<::std::string, ::std::string> localizedMap);
 
     MCNAPI void setPackIdVersion(::PackIdVersion const& packIdVersion);
-
-    MCNAPI void setUnlocalizedName(::std::string const& unlocalizedName);
 #endif
 
-#ifdef LL_PLAT_S
     MCNAPI void setUnlocalizedName(::std::string const& unlocalizedName);
-#endif
 
     MCNAPI ::Json::Value toJsonValue() const;
 

@@ -17,15 +17,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI static ::SharedTypes::v1_21_30::TradeTableData
     upgrade(::TradeTableLoadSystem::TradeTableDataLegacySlice&& legacySlice);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI static ::SharedTypes::v1_21_30::TradeTableData
-    upgrade(::TradeTableLoadSystem::TradeTableDataLegacySlice&& legacySlice);
-#endif
     // NOLINTEND
 };
 

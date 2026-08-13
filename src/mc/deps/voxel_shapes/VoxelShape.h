@@ -49,13 +49,7 @@ public:
 
     MCNAPI ::VoxelShapes::VoxelShape& operator=(::VoxelShapes::VoxelShape&&);
 
-#ifdef LL_PLAT_C
     MCNAPI bool operator==(::VoxelShapes::VoxelShape const& rhs) const;
-#endif
-
-#ifdef LL_PLAT_S
-    MCNAPI bool operator==(::VoxelShapes::VoxelShape const& rhs) const;
-#endif
 
     MCNAPI ::VoxelShapes::SerializableVoxelShape toSerializable() const;
 

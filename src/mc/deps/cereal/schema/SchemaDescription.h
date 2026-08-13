@@ -64,9 +64,9 @@ public:
 
     MCAPI SchemaDescription(::cereal::SchemaDescription const&);
 
-    MCAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription const&);
-
     MCAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription&&);
+
+    MCAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription const&);
 
     MCAPI ~SchemaDescription();
     // NOLINTEND

@@ -177,16 +177,11 @@ public:
     // NOLINTBEGIN
     virtual ~ItemStackNetManagerClient() /*override*/ = default;
 
-#ifdef LL_PLAT_S
-    virtual ::SparseContainer*
-    initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&) /*override*/;
-#else // LL_PLAT_C
     virtual ::SparseContainer* initOpenContainer(
         ::BlockSource&             region,
         ::FullContainerName const& openContainerId,
         ::ContainerWeakRef const&  containerWeakRef
     ) /*override*/;
-#endif
 
     virtual ::ItemStackRequestId getRequestId() const /*override*/;
 
@@ -263,15 +258,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI ::SparseContainer* $initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
-#else // LL_PLAT_C
     MCNAPI ::SparseContainer* $initOpenContainer(
         ::BlockSource&             region,
         ::FullContainerName const& openContainerId,
         ::ContainerWeakRef const&  containerWeakRef
     );
-#endif
 
     MCNAPI ::ItemStackRequestId $getRequestId() const;
 

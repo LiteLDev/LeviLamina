@@ -36,18 +36,10 @@ public:
     // NOLINTBEGIN
     virtual void hostServer();
 
-#ifdef LL_PLAT_S
-    virtual ::Social::EduJoinerResponse tryAcceptJoiner(::std::string const&, ::std::string const&);
-#else // LL_PLAT_C
     virtual ::Social::EduJoinerResponse
     tryAcceptJoiner(::std::string const& sessionToken, ::std::string const& joinerToHostNonce);
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::std::string getHostToJoinerNonce(::std::string const&) const;
-#else // LL_PLAT_C
     virtual ::std::string getHostToJoinerNonce(::std::string const& sessionToken) const;
-#endif
 
     virtual ::Bedrock::Threading::Async<void> onNextFetchJoiners();
 
@@ -100,18 +92,10 @@ public:
     // NOLINTBEGIN
     MCNAPI void $hostServer();
 
-#ifdef LL_PLAT_S
-    MCNAPI ::Social::EduJoinerResponse $tryAcceptJoiner(::std::string const&, ::std::string const&);
-#else // LL_PLAT_C
     MCNAPI ::Social::EduJoinerResponse
     $tryAcceptJoiner(::std::string const& sessionToken, ::std::string const& joinerToHostNonce);
-#endif
 
-#ifdef LL_PLAT_S
-    MCNAPI ::std::string $getHostToJoinerNonce(::std::string const&) const;
-#else // LL_PLAT_C
     MCNAPI ::std::string $getHostToJoinerNonce(::std::string const& sessionToken) const;
-#endif
 
     MCNAPI ::Bedrock::Threading::Async<void> $onNextFetchJoiners();
 

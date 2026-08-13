@@ -17,13 +17,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ::Bedrock::PubSub::Subscription& operator=(::Bedrock::PubSub::Subscription&& conn);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI ::Bedrock::PubSub::Subscription& operator=(::Bedrock::PubSub::Subscription&& conn);
-#endif
 
     MCAPI ~Subscription();
     // NOLINTEND

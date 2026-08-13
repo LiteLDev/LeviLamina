@@ -28,11 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual void addHitResult(::HitResult, ::HitResult) /*override*/;
-#else // LL_PLAT_C
     virtual void addHitResult(::HitResult solidHit, ::HitResult liquidHit) /*override*/;
-#endif
 
     virtual void clear() /*override*/;
 
@@ -42,11 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $addHitResult(::HitResult, ::HitResult);
-#else // LL_PLAT_C
     MCAPI void $addHitResult(::HitResult solidHit, ::HitResult liquidHit);
-#endif
 
     MCAPI void $clear();
 

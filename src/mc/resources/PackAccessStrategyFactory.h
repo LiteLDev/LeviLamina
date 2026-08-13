@@ -16,13 +16,7 @@ class PackAccessStrategyFactory {
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI static ::PackAccessStrategies create(::AnyAccessStrategyOptions const& create);
-#endif
-
-#ifdef LL_PLAT_S
-    MCNAPI static ::PackAccessStrategies create(::AnyAccessStrategyOptions const& create);
-#endif
 
     MCNAPI static ::PackAccessStrategies createForDirectory(::DirectoryAccessStrategyOptions const& create);
 

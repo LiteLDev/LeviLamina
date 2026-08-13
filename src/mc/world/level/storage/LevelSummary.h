@@ -161,13 +161,9 @@ public:
     MCAPI void setCloudSave(::CloudSaveLevelInfo const& value);
 
     MCAPI ::LevelSummary& setId(::std::string Id);
-
-    MCAPI ::LevelSummary& setName(::std::string Name);
 #endif
 
-#ifdef LL_PLAT_S
     MCAPI ::LevelSummary& setName(::std::string Name);
-#endif
 
     MCAPI ~LevelSummary();
     // NOLINTEND

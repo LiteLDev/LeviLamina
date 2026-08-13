@@ -139,6 +139,7 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void setBaseShape(::Block const& block, ::AABB& shape, bool shrink) const;
+#endif
 
     MCAPI bool setInnerPieceShape(
         ::Block const&             block,
@@ -147,19 +148,7 @@ public:
         ::AABB&                    shape,
         bool                       shrink
     ) const;
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI bool setInnerPieceShape(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    shape,
-        bool                       shrink
-    ) const;
-#endif
-
-#ifdef LL_PLAT_C
     MCAPI bool setStepShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -167,17 +156,6 @@ public:
         ::AABB&                    shape,
         bool                       shrink
     ) const;
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI bool setStepShape(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    shape,
-        bool                       shrink
-    ) const;
-#endif
     // NOLINTEND
 
 public:

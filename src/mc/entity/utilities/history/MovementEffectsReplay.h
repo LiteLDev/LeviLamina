@@ -31,11 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual void advanceFrame(::EntityContext&) const /*override*/;
-#else // LL_PLAT_C
     virtual void advanceFrame(::EntityContext& entity) const /*override*/;
-#endif
 
 #ifdef LL_PLAT_S
     virtual void advanceLiveFrame(::Actor&, ::std::optional<uint64>) /*override*/;
@@ -49,11 +45,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void $advanceFrame(::EntityContext&) const;
-#else // LL_PLAT_C
     MCNAPI void $advanceFrame(::EntityContext& entity) const;
-#endif
 
 #ifdef LL_PLAT_S
     MCNAPI void $advanceLiveFrame(::Actor&, ::std::optional<uint64>);

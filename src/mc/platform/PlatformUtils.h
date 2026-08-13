@@ -10,13 +10,9 @@ namespace Bedrock::PlatformUtils {
 // NOLINTBEGIN
 MCNAPI ::Core::PathBuffer<::std::string> const& getExternalStoragePath();
 
-#ifdef LL_PLAT_S
 MCNAPI ::std::string const& getPackageFamilyName();
-#endif
 
 #ifdef LL_PLAT_C
-MCNAPI ::std::string const& getPackageFamilyName();
-
 MCNAPI ::Core::PathBuffer<::std::string> getUWPInstallationPath();
 #endif
 

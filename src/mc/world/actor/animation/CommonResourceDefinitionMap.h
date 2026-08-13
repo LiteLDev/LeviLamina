@@ -28,13 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
-#endif
 
 #ifdef LL_PLAT_C
     MCAPI uint64 getQueryableGeometryBoneIndexByNameHash(uint64 boneNameHash) const;

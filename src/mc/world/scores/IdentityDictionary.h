@@ -27,15 +27,8 @@ public:
     // NOLINTBEGIN
     MCAPI bool clearIdentity(::ScoreboardId const& scoreboardId);
 
-#ifdef LL_PLAT_C
     MCAPI ::ScoreboardId const&
     convertFakeToReal(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI ::ScoreboardId const&
-    convertFakeToReal(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
-#endif
 
     MCAPI ::ScoreboardId const& getScoreboardId(::std::string const& fakePlayerName) const;
 

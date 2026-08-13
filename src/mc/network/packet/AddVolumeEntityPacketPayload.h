@@ -43,9 +43,9 @@ public:
         ::MinEngineVersion const& minEngineVersion
     );
 
-    MCAPI ::AddVolumeEntityPacketPayload& operator=(::AddVolumeEntityPacketPayload const& other);
-
     MCAPI ::AddVolumeEntityPacketPayload& operator=(::AddVolumeEntityPacketPayload&& other);
+
+    MCAPI ::AddVolumeEntityPacketPayload& operator=(::AddVolumeEntityPacketPayload const& other);
 
     MCAPI ~AddVolumeEntityPacketPayload();
     // NOLINTEND

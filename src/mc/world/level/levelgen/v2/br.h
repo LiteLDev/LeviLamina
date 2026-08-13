@@ -31,17 +31,17 @@ findMobsPiece(::br::LevelChunkDataRegistry const& reg, ::br::StructureKey key, :
 MCAPI ::std::vector<::std::string> getStructureTypes(::br::LevelChunkDataRegistry const& reg, ::Vec3 pos);
 
 MCAPI void insertStructure(
-    ::br::LevelChunkDataRegistry& reg,
-    ::BoundingBox                 chunkBB,
-    ::br::StructureKey            key,
-    ::StructureStart const&       instance
-);
-
-MCAPI void insertStructure(
     ::br::LevelChunkDataRegistry&            reg,
     ::BoundingBox                            chunkBB,
     ::br::StructureKey                       key,
     ::br::worldgen::StructureInstance const& instance
+);
+
+MCAPI void insertStructure(
+    ::br::LevelChunkDataRegistry& reg,
+    ::BoundingBox                 chunkBB,
+    ::br::StructureKey            key,
+    ::StructureStart const&       instance
 );
 
 MCAPI bool serialize(::IDataOutput& stream, ::br::LevelChunkDataRegistry const& val);

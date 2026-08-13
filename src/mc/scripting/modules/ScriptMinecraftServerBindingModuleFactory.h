@@ -63,13 +63,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::Scripting::Version version);
-#endif
-
-#ifdef LL_PLAT_S
-    MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::Scripting::Version version);
-#endif
 
 #ifdef LL_PLAT_C
     MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);

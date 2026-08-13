@@ -51,13 +51,7 @@ public:
 
     MCFOLD void _onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-#ifdef LL_PLAT_C
     MCAPI bool isInPaleOakPillar(::BlockSource const& region, ::BlockPos const& pos) const;
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI bool isInPaleOakPillar(::BlockSource const& region, ::BlockPos const& pos) const;
-#endif
 
     MCAPI void onEvent(::BlockEvents::ActorEvent& event) const;
 

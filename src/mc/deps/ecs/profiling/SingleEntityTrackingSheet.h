@@ -36,11 +36,7 @@ public:
 
     virtual void zeroAllTimes() /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void reserveEntity(::EntityId) /*override*/;
-#else // LL_PLAT_C
     virtual void reserveEntity(::EntityId entity) /*override*/;
-#endif
 
 #ifdef LL_PLAT_S
     virtual void reserveSystems(uint64) /*override*/;
@@ -89,11 +85,7 @@ public:
 
     MCNAPI void $zeroAllTimes();
 
-#ifdef LL_PLAT_S
-    MCNAPI void $reserveEntity(::EntityId);
-#else // LL_PLAT_C
     MCNAPI void $reserveEntity(::EntityId entity);
-#endif
 
 #ifdef LL_PLAT_S
     MCNAPI void $reserveSystems(uint64);

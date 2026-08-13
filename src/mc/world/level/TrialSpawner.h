@@ -133,13 +133,7 @@ public:
 
     MCAPI ::SpawnData const* getOrCreateNextSpawnData(::Random& random);
 
-#ifdef LL_PLAT_C
     MCAPI ::TrialSpawner::SpawningLogicState getSpawningLogicState(::BlockSource& region) const;
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI ::TrialSpawner::SpawningLogicState getSpawningLogicState(::BlockSource& region) const;
-#endif
 
     MCAPI void load(::CompoundTag const& data, ::TrialSpawnerConfigRegistry const& configRegistry);
 

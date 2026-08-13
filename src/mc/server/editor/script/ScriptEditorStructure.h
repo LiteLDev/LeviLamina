@@ -43,25 +43,12 @@ public:
     MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
     getDisplayName() const;
 
-#ifdef LL_PLAT_C
     MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
     getNormalizedOrigin() const;
-#endif
-
-#ifdef LL_PLAT_S
-    MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-    getNormalizedOrigin() const;
-#endif
 
     MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getNotes() const;
 
-#ifdef LL_PLAT_C
     MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getOffset() const;
-#endif
-
-#ifdef LL_PLAT_S
-    MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getOffset() const;
-#endif
 
     MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
     getOriginalWorldLocation() const;
@@ -83,13 +70,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI static ::Scripting::ClassBinding bindScript();
-#endif
-
-#ifdef LL_PLAT_C
-    MCNAPI static ::Scripting::ClassBinding bindScript();
-#endif
     // NOLINTEND
 };
 

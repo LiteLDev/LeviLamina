@@ -68,6 +68,7 @@ public:
         ::PackSourceReport*                                     report,
         ::Core::Path const&                                     zipSubDir
     );
+#endif
 
     MCAPI static ::std::unique_ptr<::Pack> createPack(
         ::IPackIOProvider const&                                io,
@@ -79,20 +80,6 @@ public:
         ::PackSourceReport*                                     report,
         ::Core::Path const&                                     zipSubDir
     );
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI static ::std::unique_ptr<::Pack> createPack(
-        ::IPackIOProvider const&                                io,
-        ::ResourceLocation const&                               fileLocation,
-        ::PackType                                              type,
-        ::PackOrigin                                            origin,
-        ::IPackManifestFactory&                                 manifestFactory,
-        ::Bedrock::NonOwnerPointer<::IContentKeyProvider const> keyProvider,
-        ::PackSourceReport*                                     report,
-        ::Core::Path const&                                     zipSubDir
-    );
-#endif
 
     MCAPI static ::std::unique_ptr<::PackMetadata> createPackMetadata(
         ::PackType                  type,

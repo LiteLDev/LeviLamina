@@ -124,13 +124,9 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI bool operator==(::GameRules const& rhs) const;
-
-    MCAPI void setMarketplaceOverrides();
 #endif
 
-#ifdef LL_PLAT_S
     MCAPI void setMarketplaceOverrides();
-#endif
     // NOLINTEND
 
 public:

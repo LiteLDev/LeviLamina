@@ -344,13 +344,7 @@ public:
 
     MCAPI void doDeleteContainerManager(bool forceDisconnect);
 
-#ifdef LL_PLAT_C
     MCAPI void doInitialSpawn();
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI void doInitialSpawn();
-#endif
 
     MCAPI ::std::string getLanguageCode() const;
 

@@ -557,3 +557,5 @@ fabric.properties
 /builder/
 /vsxmake2026
 /.vs
+/test/include_all_c.h
+/test/include_all_s.h
