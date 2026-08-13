@@ -47,70 +47,69 @@ int printfbufc(char const* format, va_list pargs) {
     return retval;
 }
 
-// TODO: Fix this
-// LL_STATIC_HOOK(BedrockLogOutHook, HookPriority::Normal, BedrockLogOut, void, uint priority, char const* pszFormat,
-// ...) try {
-//     bool        success = false;
-//     std::string buffer;
-//     va_list     va;
-//     va_start(va, pszFormat);
-//     auto bufferCount = printfbufc(pszFormat, va);
-//     if (bufferCount >= 0) {
-//         success = true;
-//     }
-//     if (success && bufferCount > 0) {
-//         buffer = std::string(bufferCount, '\0');
-//         vsnprintf(buffer.data(), buffer.size() + 1, pszFormat, va);
-//     }
-//     va_end(va);
+LL_STATIC_HOOK(BedrockLogOutHook, HookPriority::Normal, BedrockLogOut, void, uint priority, char const* pszFormat, ...)
+try {
+    bool        success = false;
+    std::string buffer;
+    va_list     va;
+    va_start(va, pszFormat);
+    auto bufferCount = printfbufc(pszFormat, va);
+    if (bufferCount >= 0) {
+        success = true;
+    }
+    if (success && bufferCount > 0) {
+        buffer = std::string(bufferCount, '\0');
+        vsnprintf(buffer.data(), buffer.size() + 1, pszFormat, va);
+    }
+    va_end(va);
 
-//     if (!success) {
-//         serverLogger->fatal("!!! Unable to format log output message !!!");
-//         return;
-//     }
-//     if (buffer.ends_with('\n')) {
-//         buffer.pop_back();
-//         if (buffer.ends_with('\r')) {
-//             buffer.pop_back();
-//         }
-//     }
-//     std::istringstream iss(std::move(buffer));
+    if (!success) {
+        serverLogger->fatal("!!! Unable to format log output message !!!");
+        return;
+    }
+    if (buffer.ends_with('\n')) {
+        buffer.pop_back();
+        if (buffer.ends_with('\r')) {
+            buffer.pop_back();
+        }
+    }
+    std::istringstream iss(std::move(buffer));
 
-//     bool knownPriority{true};
+    bool knownPriority{true};
 
-//     io::LogLevel level;
+    io::LogLevel level;
 
-//     switch (priority) {
-//     case 1:
-//         level = io::LogLevel::Debug;
-//         break;
-//     case 2:
-//         level = io::LogLevel::Info;
-//         break;
-//     case 8:
-//         level = io::LogLevel::Error;
-//         break;
-//     case 4:
-//     default:
-//         knownPriority = false;
-//         level         = io::LogLevel::Warn;
-//         break;
-//     }
+    switch (priority) {
+    case 1:
+        level = io::LogLevel::Debug;
+        break;
+    case 2:
+        level = io::LogLevel::Info;
+        break;
+    case 8:
+        level = io::LogLevel::Error;
+        break;
+    case 4:
+    default:
+        knownPriority = false;
+        level         = io::LogLevel::Warn;
+        break;
+    }
 
-//     std::string line;
-//     while (std::getline(iss, line)) {
-//         if (!tryModifyBedrockLogInfo(priority, line)) continue;
-//         if (!knownPriority) {
-//             line = fmt::format("<LVL|{}> {}", priority, line);
-//         }
-//         serverLogger->log(level, string_utils::replaceMcToAnsiCode(line));
-//     }
-// } catch (...) {
-//     try {
-//         serverLogger->fatal("Fail to format [{}] {}", priority, pszFormat);
-//         error_utils::printCurrentException(*serverLogger, io::LogLevel::Fatal);
-//     } catch (...) {}
-// }
+    std::string line;
+    while (std::getline(iss, line)) {
+        if (!tryModifyBedrockLogInfo(priority, line)) continue;
+        if (!knownPriority) {
+            line = fmt::format("<LVL|{}> {}", priority, line);
+        }
+        serverLogger->log(level, string_utils::replaceMcToAnsiCode(line));
+    }
+} catch (...) {
+    try {
+        serverLogger->fatal("Fail to format [{}] {}", priority, pszFormat);
+        error_utils::printCurrentException(*serverLogger, io::LogLevel::Fatal);
+    } catch (...) {}
+}
 
 // TODO: Fix this
 // LL_TYPE_INSTANCE_HOOK(
@@ -152,7 +151,7 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 // TODO: Fix this
-using HookReg = memory::HookRegistrar<DiagnosticsLogHook, SetOfflinePingResponseHook>;
+using HookReg = memory::HookRegistrar<DiagnosticsLogHook, SetOfflinePingResponseHook, BedrockLogOutHook>;
 
 static HookReg hookRegister;
 
