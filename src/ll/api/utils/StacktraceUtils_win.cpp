@@ -1,6 +1,8 @@
+#include "HashUtils.h"
 #include "ll/api/utils/StacktraceUtils.h"
 
 #include <cstddef>
+#include <limits>
 #include <mutex>
 
 #include "ll/api/io/FileUtils.h"
@@ -19,15 +21,74 @@
 #include <stacktrace>
 
 namespace ll {
-LLNDAPI Stacktrace Stacktrace::current(size_t skip, size_t maxDepth) {
+Stacktrace Stacktrace::current(size_t skip, size_t maxDepth) {
     auto       s = std::stacktrace::current(skip + 1, maxDepth);
     Stacktrace res;
     res.entries.reserve(s.size());
     for (auto& entry : s) {
         res.entries.emplace_back(entry.native_handle());
     }
-    res.hash = std::hash<std::stacktrace>{}(s);
+    res.hash = ll::hash_utils::HashCombiner{}.addRange(res.entries);
     return res;
+}
+Stacktrace Stacktrace::fromThread(std::thread& thread) {
+    if (!thread.joinable()) return {};
+
+    ll::Stacktrace result{};
+
+    struct ThreadHandle {
+        HANDLE mHandle{};
+
+        explicit ThreadHandle(DWORD id)
+        : mHandle(OpenThread(THREAD_GET_CONTEXT | THREAD_SUSPEND_RESUME | THREAD_QUERY_INFORMATION, false, id)) {}
+        ~ThreadHandle() {
+            if (mHandle) CloseHandle(mHandle);
+        }
+    } threadHandle{GetThreadId(thread.native_handle())};
+    if (!threadHandle.mHandle) return result;
+
+    struct SuspendGuard {
+        HANDLE mHandle{};
+        DWORD  mResult{std::numeric_limits<DWORD>::max()};
+
+        explicit SuspendGuard(HANDLE threadHandle) : mHandle(threadHandle), mResult(SuspendThread(threadHandle)) {}
+        ~SuspendGuard() {
+            if (mResult != std::numeric_limits<DWORD>::max()) ResumeThread(mHandle);
+        }
+    } suspendGuard{threadHandle.mHandle};
+    if (suspendGuard.mResult == std::numeric_limits<DWORD>::max()) return result;
+
+    CONTEXT context{};
+    context.ContextFlags = CONTEXT_FULL;
+    if (!GetThreadContext(threadHandle.mHandle, &context)) return result;
+
+    STACKFRAME64 stackFrame{};
+    stackFrame.AddrPC.Offset    = context.Rip;
+    stackFrame.AddrPC.Mode      = AddrModeFlat;
+    stackFrame.AddrFrame.Offset = context.Rbp;
+    stackFrame.AddrFrame.Mode   = AddrModeFlat;
+    stackFrame.AddrStack.Offset = context.Rsp;
+    stackFrame.AddrStack.Mode   = AddrModeFlat;
+
+    auto processHandle = GetCurrentProcess();
+
+    while (StackWalk64(
+        IMAGE_FILE_MACHINE_AMD64,
+        processHandle,
+        threadHandle.mHandle,
+        &stackFrame,
+        &context,
+        nullptr,
+        SymFunctionTableAccess64,
+        SymGetModuleBase64,
+        nullptr
+    )) {
+        if (stackFrame.AddrPC.Offset == 0) break;
+        result.entries.emplace_back(reinterpret_cast<void*>(stackFrame.AddrPC.Offset));
+    }
+
+    result.hash = ll::hash_utils::HashCombiner{}.addRange(result.entries);
+    return result;
 }
 } // namespace ll
 
