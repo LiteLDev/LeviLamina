@@ -31,9 +31,7 @@ Stacktrace Stacktrace::current(size_t skip, size_t maxDepth) {
     res.hash = ll::hash_utils::HashCombiner{}.addRange(res.entries);
     return res;
 }
-Stacktrace Stacktrace::fromThread(std::thread& thread) {
-    if (!thread.joinable()) return {};
-
+Stacktrace Stacktrace::fromThreadId(ulong threadId) {
     ll::Stacktrace result{};
 
     struct ThreadHandle {
@@ -44,23 +42,27 @@ Stacktrace Stacktrace::fromThread(std::thread& thread) {
         ~ThreadHandle() {
             if (mHandle) CloseHandle(mHandle);
         }
-    } threadHandle{GetThreadId(thread.native_handle())};
-    if (!threadHandle.mHandle) return result;
+
+        operator HANDLE() const { return mHandle; }
+    } threadHandle{threadId};
+    if (!threadHandle) return result;
 
     struct SuspendGuard {
         HANDLE mHandle{};
-        DWORD  mResult{std::numeric_limits<DWORD>::max()};
+        bool   mResult{false};
 
-        explicit SuspendGuard(HANDLE threadHandle) : mHandle(threadHandle), mResult(SuspendThread(threadHandle)) {}
+        explicit SuspendGuard(HANDLE threadHandle)
+        : mHandle(threadHandle),
+          mResult(SuspendThread(threadHandle) != std::numeric_limits<DWORD>::max()) {}
         ~SuspendGuard() {
-            if (mResult != std::numeric_limits<DWORD>::max()) ResumeThread(mHandle);
+            if (mResult) ResumeThread(mHandle);
         }
-    } suspendGuard{threadHandle.mHandle};
-    if (suspendGuard.mResult == std::numeric_limits<DWORD>::max()) return result;
+    } suspendGuard{threadHandle};
+    if (!suspendGuard.mResult) return result;
 
     CONTEXT context{};
     context.ContextFlags = CONTEXT_FULL;
-    if (!GetThreadContext(threadHandle.mHandle, &context)) return result;
+    if (!GetThreadContext(threadHandle, &context)) return result;
 
     STACKFRAME64 stackFrame{};
     stackFrame.AddrPC.Offset    = context.Rip;
@@ -75,7 +77,7 @@ Stacktrace Stacktrace::fromThread(std::thread& thread) {
     while (StackWalk64(
         IMAGE_FILE_MACHINE_AMD64,
         processHandle,
-        threadHandle.mHandle,
+        threadHandle,
         &stackFrame,
         &context,
         nullptr,
@@ -89,6 +91,9 @@ Stacktrace Stacktrace::fromThread(std::thread& thread) {
 
     result.hash = ll::hash_utils::HashCombiner{}.addRange(result.entries);
     return result;
+}
+Stacktrace Stacktrace::fromThread(std::thread& thread) {
+    return thread.joinable() ? fromThreadId(GetThreadId(thread.native_handle())) : Stacktrace{};
 }
 } // namespace ll
 

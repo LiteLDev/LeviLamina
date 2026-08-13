@@ -29,6 +29,8 @@ class Stacktrace {
 
 public:
     LLNDAPI static Stacktrace current(size_t skip = 0, size_t maxDepth = ~0ull);
+    /** @warning Native Windows thread ID (DWORD), not std::thread::id. */
+    LLNDAPI static Stacktrace fromThreadId(/* DWORD */ ulong threadId);
     LLNDAPI static Stacktrace fromThread(std::thread& thread);
 
     uint64 getHash() const { return hash; }
