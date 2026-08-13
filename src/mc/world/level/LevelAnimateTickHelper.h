@@ -106,6 +106,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI static ::BaseGameVersion const& MIN_TIME_LIMITED_JAVA_PARITY_VERSION();
+#endif
     // NOLINTEND
 };

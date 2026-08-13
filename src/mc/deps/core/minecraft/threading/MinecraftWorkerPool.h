@@ -41,6 +41,8 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& ASYNC();
 
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& CONNECTEDSTORAGE();
+
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& DISK();
 
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& GAMEFACE_LAYOUT();
@@ -56,5 +58,7 @@ public:
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING();
 
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING_HELPERS();
+
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& WATCHDOG();
     // NOLINTEND
 };

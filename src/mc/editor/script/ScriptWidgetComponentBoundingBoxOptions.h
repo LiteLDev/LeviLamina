@@ -10,6 +10,7 @@
 // clang-format off
 class AABB;
 class Vec3;
+namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -56,6 +57,18 @@ public:
 
     MCNAPI static ::Scripting::Result_deprecated<void>
     validateSizeValues(::Vec3 const& size, ::Vec3 const& minSize, ::Vec3 const& maxSize);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HULL_COLOR();
+
+    MCNAPI static ::Vec3 const& DEFAULT_NORMALIZED_ORIGIN();
+
+    MCNAPI static ::Vec3 const& DEFAULT_OFFSET();
+
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTLINE_COLOR();
     // NOLINTEND
 
 public:

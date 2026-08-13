@@ -107,6 +107,36 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::ArmorStand::Pose const& POSE_ATHENA();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_BRANDISH();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_CANCAN_A();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_CANCAN_B();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_DEFAULT();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_ENTERTAIN();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_HERO();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_HONOR();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_RIPOSTE();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_SALUTE();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_SOLEMN();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_ZERO_ROTATION();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_ZOMBIE();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(

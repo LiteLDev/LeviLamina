@@ -19,6 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::HashedString const& EmptyID();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::HashedString const& $getIdentifier() const;

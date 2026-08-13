@@ -4,6 +4,12 @@
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockFluidContainerComponentV1 {};
+class ScriptBlockFluidContainerComponentV1 {
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& ComponentId();
+    // NOLINTEND
+};
 
 } // namespace ScriptModuleMinecraft

@@ -19,7 +19,14 @@ MCNAPI ::Core::PathBuffer<::std::string> addServiceLocator(::Core::PathBuffer<::
 
 MCNAPI ::Core::PathBuffer<::std::string>
     addServiceLocator(::Core::PathBuffer<::std::string> (*fn)(::AppPlatform const&));
+#endif
 
+#ifdef LL_PLAT_S
+MCNAPI ::Core::PathBuffer<::std::string>
+    addServiceLocator(::Core::PathBuffer<::std::string> (*fn)(::AppPlatform const&));
+#endif
+
+#ifdef LL_PLAT_C
 MCNAPI ::ResourcePackPaths::AllPaths getAllPaths(::AppPlatform& platform);
 
 MCNAPI ::Core::PathBuffer<::std::string> getCachedBehaviorPacksPath(::AppPlatform& platform);
@@ -31,13 +38,25 @@ MCNAPI ::Core::PathBuffer<::std::string> getGlobalResourcePacksPath();
 MCNAPI ::Core::PathBuffer<::std::string> getPremiumBehaviorPackPath(::AppPlatform const& platform);
 
 MCNAPI ::Core::PathBuffer<::std::string> getPremiumPackPath(::AppPlatform const& platform);
+#endif
 
+#ifdef LL_PLAT_S
+MCNAPI ::Core::PathBuffer<::std::string> getPremiumPackPath(::AppPlatform const& platform);
+#endif
+
+#ifdef LL_PLAT_C
 MCNAPI ::Core::PathBuffer<::std::string> getPremiumResourcePackPath(::AppPlatform const& platform);
 
 MCNAPI ::Core::PathBuffer<::std::string> getPremiumSkinPackPath(::AppPlatform const& platform);
 
 MCNAPI ::Core::PathBuffer<::std::string> getPremiumWorldTemplatePath(::AppPlatform const& platform);
+#endif
 
+#ifdef LL_PLAT_S
+MCNAPI ::Core::PathBuffer<::std::string> getPremiumWorldTemplatePath(::AppPlatform const& platform);
+#endif
+
+#ifdef LL_PLAT_C
 MCNAPI ::Core::PathBuffer<::std::string> getTemporaryPremiumBehaviorPacksPath(::AppPlatform& platform);
 
 MCNAPI ::Core::PathBuffer<::std::string> getTemporaryPremiumResourcePacksPath(::AppPlatform& platform);

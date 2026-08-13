@@ -542,7 +542,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static ::std::string const& EXTENSION_ADDON();
+#endif
 
     MCAPI static ::std::string const& EXTENSION_PROJECT();
 

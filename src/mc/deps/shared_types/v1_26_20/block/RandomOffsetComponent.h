@@ -36,6 +36,16 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NameId();
+
+    MCAPI static ::std::string_view const& RangeId();
+
+    MCAPI static ::std::string_view const& StepsId();
+
+    MCAPI static ::std::string_view const& XId();
+
+    MCAPI static ::std::string_view const& YId();
+
+    MCAPI static ::std::string_view const& ZId();
     // NOLINTEND
 };
 

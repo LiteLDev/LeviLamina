@@ -79,6 +79,14 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string const& DIFF_LAYER_AT();
+#endif
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();

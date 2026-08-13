@@ -47,6 +47,10 @@ public:
     // NOLINTBEGIN
     MCAPI static bool& sIsIconVisible();
 
+    MCAPI static ::std::
+        unordered_map<::SubClientId, ::std::vector<::PlatformStoreIconModel::PlatformStoreIconVisibility*>>&
+        sPlatformStoreIconVisibilityStacks();
+
     MCAPI static ::Bedrock::Threading::Mutex& sStacksMutex();
     // NOLINTEND
 };

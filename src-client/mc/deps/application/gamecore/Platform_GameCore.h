@@ -131,6 +131,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& sAppName();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $updatePlatformInfo();

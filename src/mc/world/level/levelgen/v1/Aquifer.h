@@ -100,6 +100,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::array<::std::pair<int, int>, 13> const& chunkOffset();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(

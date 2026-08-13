@@ -51,6 +51,8 @@ public:
     MCAPI static ::BaseGameVersion const& ANY();
 
     MCAPI static ::BaseGameVersion const& EMPTY();
+
+    MCAPI static ::BaseGameVersion const& INCOMPATIBLE();
     // NOLINTEND
 
 public:

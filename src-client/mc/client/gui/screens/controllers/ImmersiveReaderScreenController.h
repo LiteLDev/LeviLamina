@@ -13,6 +13,7 @@
 // clang-format off
 class ClientInstanceScreenModel;
 class ImmersiveReaderObserver;
+class ImmersiveReaderToken;
 // clang-format on
 
 class ImmersiveReaderScreenController : public ::ClientInstanceScreenController {
@@ -74,6 +75,12 @@ public:
     ImmersiveReaderScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::std::string readerText);
 
     MCAPI void _launchReader();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::ImmersiveReaderToken>& mReaderToken();
     // NOLINTEND
 
 public:

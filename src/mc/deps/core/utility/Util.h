@@ -6,6 +6,7 @@
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/utility/NumberConversionResult.h"
 #include "mc/deps/core/utility/buffer_span.h"
+#include "mc/platform/brstd/flat_set.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
 
 // auto generated forward declare list
@@ -22,6 +23,15 @@ namespace Util {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
+MCNAPI void _breakIntoWordsAndFindProfanity(
+    ::std::string_view                                                                          str,
+    ::std::vector<::std::pair<int, int>> const&                                                 originalStrIndexes,
+    ::brstd::flat_set<char, ::std::less<char>, ::std::vector<char>> const&                      escapeChars,
+    ::std::set<::std::pair<int, int>>&                                                          profanityLocations,
+    ::std::unordered_map<::std::string, int, ::Util::string_hash, ::std::equal_to<void>> const& exactMap,
+    ::std::unordered_set<::std::string, ::Util::string_hash, ::std::equal_to<void>> const&      containsSet
+);
+
 MCNAPI ::std::vector<::std::string> _getStringsFromViews(::std::vector<::std::string_view> const& views);
 #endif
 
@@ -29,7 +39,19 @@ MCNAPI ::std::vector<::std::string> _getStringsFromViews(::std::vector<::std::st
 MCNAPI ::std::vector<::std::string> _getStringsFromViews(::std::vector<::std::string_view> const& views);
 #endif
 
+MCNAPI void _logIfValidLogArea(::LogArea logArea, ::std::string const& msg);
+
 #ifdef LL_PLAT_C
+MCNAPI void _recordProfanityLocationInWord(
+    ::std::string_view                                                                          word,
+    ::std::vector<::std::pair<int, int>> const&                                                 originalStrIndexes,
+    int                                                                                         start,
+    int                                                                                         end,
+    ::std::set<::std::pair<int, int>>&                                                          profanityLocations,
+    ::std::unordered_map<::std::string, int, ::Util::string_hash, ::std::equal_to<void>> const& exactMap,
+    ::std::unordered_set<::std::string, ::Util::string_hash, ::std::equal_to<void>> const&      containsSet
+);
+
 MCNAPI int _splitInto(
     ::std::string const&                str,
     ::std::vector<::std::string> const& delims,
@@ -243,6 +265,8 @@ MCNAPI bool validateIdentifier(
     bool                                       allowMinecraftNamespace,
     ::std::pair<::std::string, ::std::string>* idNameOut
 );
+
+MCNAPI bool validateIdentifierChunk(::std::string const& chunk, ::LogArea logArea);
 // NOLINTEND
 
 // static variables

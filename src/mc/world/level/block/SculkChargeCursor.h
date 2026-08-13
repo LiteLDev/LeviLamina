@@ -8,6 +8,9 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class DefaultSculkBehavior;
+class SculkBlockBehavior;
+class SculkVeinBlockBehavior;
 // clang-format on
 
 class SculkChargeCursor {
@@ -27,5 +30,15 @@ public:
     MCAPI void load(::CompoundTag const& tag);
 
     MCAPI void save(::CompoundTag& tag) const;
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::DefaultSculkBehavior const& sDefaultSculkBehavior();
+
+    MCAPI static ::SculkBlockBehavior const& sSculkBlockBehavior();
+
+    MCAPI static ::SculkVeinBlockBehavior const& sSculkVeinBlockBehavior();
     // NOLINTEND
 };

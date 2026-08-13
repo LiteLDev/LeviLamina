@@ -113,6 +113,8 @@ public:
     MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& ARCHIVE_EXTENSION();
 
     MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& ARCHIVE_FOLDER();
+
+    MCNAPI static ::Core::PathBuffer<::std::string> const& PACK_IMPORT_LOCK_FILE();
     // NOLINTEND
 
 public:

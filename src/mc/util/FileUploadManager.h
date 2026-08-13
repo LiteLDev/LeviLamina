@@ -115,6 +115,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& BOUNDARY();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);

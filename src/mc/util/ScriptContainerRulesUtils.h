@@ -14,6 +14,11 @@ namespace ScriptModuleMinecraft { struct ScriptContainerRulesError; }
 namespace ScriptContainerRulesUtils {
 // functions
 // NOLINTBEGIN
+MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptContainerRulesError> canAddItemToContainer(
+    ::ItemStack const&                                                    item,
+    ::std::optional<::ScriptModuleMinecraft::ScriptContainerRules> const& containerRules
+);
+
 MCNAPI int getPerItemWeight(::ItemStackBase const& item);
 
 MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptContainerRulesError> isItemAllowedInContainer(

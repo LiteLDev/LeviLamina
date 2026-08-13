@@ -90,7 +90,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI static ::EducationServicesEnvironment& mCachedEnvironment();
+#endif
     // NOLINTEND
 
 public:

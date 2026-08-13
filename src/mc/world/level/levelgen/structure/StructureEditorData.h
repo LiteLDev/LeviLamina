@@ -51,7 +51,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static ::std::string const& DEFAULT_EXPORT_NAME();
+#endif
 
     MCAPI static ::std::string const& DEFAULT_STRUCTURE_NAMESPACE();
 

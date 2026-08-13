@@ -14,6 +14,12 @@ public:
     ::ll::TypedStorage<1, 1, bool>           shouldPlayInBackground;
     ::ll::TypedStorage<1, 1, bool>           shouldPlayWhenPlatformTTSEnabled;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<char const[25]> NAME();
+    // NOLINTEND
 };
 
 } // namespace OreUI

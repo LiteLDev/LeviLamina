@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 class ItemInstance;
 class ItemStack;
 class LootItemCondition;
@@ -73,6 +74,16 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, bool usingUpcomingCreatorFeaturesExperiment);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::unordered_map<
+        ::HashedString,
+        ::std::function<::std::unique_ptr<
+            ::LootItemFunction>(::Json::Value&, ::std::vector<::std::unique_ptr<::LootItemCondition>>&)>> const&
+    mLootingFunctions();
     // NOLINTEND
 
 public:

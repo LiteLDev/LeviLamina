@@ -45,6 +45,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::
+        unordered_map<::SharedTypes::v1_26_20::ConnectionType, ::Bedrock::EnumSet<::ConnectionID, 4> const> const&
+        CONNECTION_TO_MASK();
+
     MCAPI static ::std::string const& NameID();
     // NOLINTEND
 

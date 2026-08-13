@@ -221,6 +221,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int const& NO_BLOCK_INDEX_VALUE();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::StructureTemplate&& other);

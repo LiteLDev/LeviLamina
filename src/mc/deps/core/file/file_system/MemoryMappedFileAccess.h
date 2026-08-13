@@ -151,6 +151,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::FileAccessTransforms const& EMPTY_TRANSFORMS();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(

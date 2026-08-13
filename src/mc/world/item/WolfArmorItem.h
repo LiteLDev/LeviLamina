@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/world/item/components/ComponentItem.h"
 
 // auto generated forward declare list
@@ -15,6 +16,7 @@ class ItemStack;
 class ItemStackBase;
 class Level;
 class Mob;
+struct DurabilityThreshold;
 struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
@@ -46,6 +48,14 @@ public:
     virtual int getArmorValue() const /*override*/;
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent getBreakSound() const /*override*/;
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::SharedTypes::Legacy::ActorDamageCause> const& ABSORBABLE_DAMAGE_CAUSES();
+
+    MCAPI static ::std::vector<::DurabilityThreshold> const& DURABILITY_THRESHOLDS();
     // NOLINTEND
 
 public:

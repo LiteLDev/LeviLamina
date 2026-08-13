@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/script_core/binding_factory/scripting/GenericModuleBindingFactory.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace mce { class UUID; }
+// clang-format on
+
 class ScriptPartiesModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
     // member variables
@@ -17,4 +22,10 @@ public:
     ScriptPartiesModuleFactory& operator=(ScriptPartiesModuleFactory const&);
     ScriptPartiesModuleFactory(ScriptPartiesModuleFactory const&);
     ScriptPartiesModuleFactory();
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::mce::UUID& ModuleUUID();
+    // NOLINTEND
 };

@@ -50,6 +50,12 @@ public:
 
     MCAPI void setString(::std::string dataStoreName, ::std::string property, ::std::string path, ::std::string data);
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<char const[36]> NAME();
+    // NOLINTEND
 };
 
 } // namespace OreUI

@@ -60,7 +60,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static ::std::string const& WILDCARD_TOKEN();
+#endif
     // NOLINTEND
 
 public:

@@ -79,7 +79,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI static char const*& ModuleName();
+#endif
 
     MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND

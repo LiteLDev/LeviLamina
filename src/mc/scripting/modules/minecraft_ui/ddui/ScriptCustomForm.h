@@ -97,6 +97,12 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind(::IGameplayUserManagerConnector& userManagerConnector);
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static char const* const& FORM_ID();
+    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraftServerUI

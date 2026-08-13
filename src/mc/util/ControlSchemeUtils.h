@@ -40,6 +40,8 @@ MCNAPI ::std::string_view getRootInheritedCamera(
     ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& presets
 );
 
+MCNAPI bool isSchemeAllowedByCamera(::std::string_view cameraName, ::ControlScheme::Scheme scheme);
+
 MCNAPI void populateControlSchemeServerComponents(
     ::ServerCameraAllowedControlSchemesComponent&               allowedSchemesComponent,
     ::ServerCameraDefaultControlSchemesComponent&               defaultSchemesComponent,

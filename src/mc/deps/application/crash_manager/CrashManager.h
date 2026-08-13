@@ -52,6 +52,14 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::add_lvalue_reference_t<char const[6]> DEFAULT_CRASH_DIRECTORY_NAME();
+#endif
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
 

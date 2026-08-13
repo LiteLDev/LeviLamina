@@ -40,6 +40,10 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
+
+    MCAPI static ::std::string const& PrecipitationBehaviorID();
+
+    MCAPI static ::std::string const& SchemaID();
     // NOLINTEND
 
 public:

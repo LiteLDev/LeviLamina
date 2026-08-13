@@ -195,6 +195,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string const& CELEBRATION_EVENT();
+
+    MCAPI static ::std::string const& RAID_EXPIRY_EVENT();
+
     MCAPI static ::std::string const& STORAGE_KEY_PREFIX();
     // NOLINTEND
 

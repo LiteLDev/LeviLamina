@@ -10,6 +10,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::NullLogger& instance();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $Logv(char const* format, char* ap);

@@ -146,6 +146,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::bitset<196608>& mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
+
+    MCAPI static ::std::bitset<196608>& mOuterEdgeOfComputationBits();
+
     MCAPI static ::SpinLockImpl& sDarkSpinLock();
 
     MCAPI static ::std::unique_ptr<::SubChunk>& sFullyDarkSubChunk();

@@ -35,6 +35,12 @@ public:
         // NOLINTEND
 
     public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::string_view const& ConstraintDescription();
+        // NOLINTEND
+
+    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
@@ -171,13 +177,27 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& BoneVisibilityId();
+
+    MCAPI static ::std::string_view const& CullingId();
+
+    MCAPI static ::std::string_view const& CullingLayerId();
+
     MCAPI static ::std::string const& CullingLayerRegex();
 
     MCAPI static ::std::string const& CullingShapeNameRegex();
 
     MCAPI static ::std::string const& GeoNameDocumentation();
 
+    MCAPI static ::std::string_view const& IdentifierId();
+
+    MCAPI static ::std::array<::std::string_view, 3> const& InvalidVanillaGeometryForBoneVis();
+
+    MCAPI static ::std::string_view const& NWayVisualRotationId();
+
     MCAPI static ::std::string_view const& NameId();
+
+    MCAPI static ::std::string_view const& UVLockId();
     // NOLINTEND
 
 public:

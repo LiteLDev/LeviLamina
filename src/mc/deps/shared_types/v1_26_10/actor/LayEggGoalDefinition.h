@@ -54,6 +54,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& DEFAULT_EGG_TYPE();
+
     MCAPI static ::std::vector<::std::string> const& DEFAULT_TARGET_BLOCKS();
 
     MCAPI static ::std::vector<::std::string> const& DEFAULT_TARGET_MATERIALS_ABOVE_BLOCK_STRINGS();

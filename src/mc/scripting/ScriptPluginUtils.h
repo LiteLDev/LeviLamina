@@ -26,6 +26,8 @@ MCNAPI ::ScriptRuntimeType GetRuntimeTypeFromFileExtension(::std::string const& 
 #endif
 
 #ifdef LL_PLAT_C
+MCNAPI ::ScriptRuntimeType GetRuntimeTypeFromFileExtension(::std::string const& fileExt);
+
 MCNAPI ::std::string JavaScriptModuleNameNormalizer(
     ::std::string_view                  baseName,
     ::std::string const&                moduleName,
@@ -34,6 +36,12 @@ MCNAPI ::std::string JavaScriptModuleNameNormalizer(
 #endif
 
 #ifdef LL_PLAT_S
+MCNAPI ::std::string JavaScriptModuleNameNormalizer(
+    ::std::string_view                  baseName,
+    ::std::string const&                moduleName,
+    ::std::vector<::std::string> const& knownModuleNames
+);
+
 MCNAPI ::std::string SanitizeRuntimeName(::std::string const& runtimeName);
 
 MCNAPI ::Scripting::Version SemVersionToScriptVer(::SemVersion const& semVer);

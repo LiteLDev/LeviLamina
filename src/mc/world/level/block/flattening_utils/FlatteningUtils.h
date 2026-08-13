@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockType;
 class CompoundTagUpdaterContext;
 class SemVersionConstant;
@@ -24,6 +25,11 @@ MCAPI void addUpdate(
     ::FlatteningUtils::LegacyBlockInfo const&                                legacyBlockInfo,
     ::std::vector<::std::shared_ptr<::FlatteningUtils::RemovedState>> const& removedStates
 );
+
+#ifdef LL_PLAT_C
+MCAPI void
+assignPreFlatteningDestructionParticlesTexture(::Block const& block, ::std::string& texture, ushort& auxValue);
+#endif
 
 MCAPI ::std::vector<::WeakPtr<::BlockType const>>
 getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);

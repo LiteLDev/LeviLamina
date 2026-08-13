@@ -35,6 +35,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string const& RAW_TEXT_SELECTOR_KEY();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::string $asString() const;

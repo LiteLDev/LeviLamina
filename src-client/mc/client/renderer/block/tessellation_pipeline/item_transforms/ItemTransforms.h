@@ -9,13 +9,27 @@
 // auto generated forward declare list
 // clang-format off
 class Matrix;
+class Vec3;
 namespace Json { class Value; }
 // clang-format on
 
 namespace ClientBlockPipeline::ItemTransforms {
 // functions
 // NOLINTBEGIN
+MCAPI ::Matrix _constructFixSpaceTransform(::ClientBlockPipeline::ItemTransforms::Type const& type);
+
+MCAPI ::Matrix constructTransform(
+    ::ClientBlockPipeline::ItemTransforms::Type const& type,
+    ::Vec3 const&                                      translation,
+    ::Vec3 const&                                      rotation,
+    ::Vec3 const&                                      scale,
+    ::Vec3 const&                                      rotationPivot,
+    ::Vec3 const&                                      scalePivot
+);
+
 MCAPI ::Matrix getDefaultTransformMatrix(::ClientBlockPipeline::ItemTransforms::Type const& type);
+
+MCAPI ::Geometry::ItemDisplayTransform getDefaultTransforms(::ClientBlockPipeline::ItemTransforms::Type const& type);
 
 MCAPI ::Matrix getFixSpaceTransformMatrix(::ClientBlockPipeline::ItemTransforms::Type const& type);
 

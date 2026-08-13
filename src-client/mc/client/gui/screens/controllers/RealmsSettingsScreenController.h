@@ -324,6 +324,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& DEFAULT_SAVES_TAB_FOCUS();
+
+    MCAPI static ::std::string const& SAVES_BUTTON_FOCUS_CONTROL();
     // NOLINTEND
 
 public:

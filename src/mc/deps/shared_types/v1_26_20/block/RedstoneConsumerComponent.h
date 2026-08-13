@@ -15,7 +15,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& MinPowerId();
+
     MCAPI static ::std::string_view const& NameId();
+
+    MCAPI static ::std::string_view const& PropagatesPowerId();
     // NOLINTEND
 };
 

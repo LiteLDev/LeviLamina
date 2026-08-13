@@ -15,7 +15,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& AllowsWireStepDownId();
+
     MCAPI static ::std::string_view const& NameId();
+
+    MCAPI static ::std::string_view const& RedstoneConductorId();
     // NOLINTEND
 };
 

@@ -1010,11 +1010,19 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& HOME_PATH();
 
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& LOG_PATH();
+
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& SETTINGS_PATH();
 
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& SHADERCACHE_PATH();
+
+#ifdef LL_PLAT_C
     MCAPI static bool& mIsInitialized();
 
     MCAPI static ::ActivationUri& mPendingProtocolActivation();
+
+    MCAPI static ::Bedrock::Threading::Mutex& mProtocolMutex();
+#endif
     // NOLINTEND
 
 public:

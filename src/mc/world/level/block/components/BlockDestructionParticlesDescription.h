@@ -51,6 +51,18 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
+
+    MCAPI static ::std::string const& ParticleCountID();
+
+    MCAPI static ::std::string const& SchemaID();
+
+    MCAPI static ::std::string const& TextureID();
+
+    MCAPI static ::std::string const& TintMethodID();
+
+    MCAPI static ::SemVersion const& Version1_21_70();
+
+    MCAPI static ::SemVersion const& Version1_21_90();
     // NOLINTEND
 
 public:

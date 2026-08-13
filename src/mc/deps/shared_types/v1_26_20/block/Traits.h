@@ -38,6 +38,18 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& CONNECTION_ID();
+
+    MCAPI static ::std::string_view const& MULTI_BLOCK_ID();
+
+    MCAPI static ::std::string_view const& PLACEMENT_DIRECTION_ID();
+
+    MCAPI static ::std::string_view const& PLACEMENT_POSITION_ID();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

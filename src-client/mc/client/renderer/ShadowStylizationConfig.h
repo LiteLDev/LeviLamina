@@ -116,6 +116,14 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& PAYLOAD_KEY();
+
+    MCNAPI static ::std::string_view const& SHADOW_STYLIZATION_GLOBAL_CONFIG_FILE();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();

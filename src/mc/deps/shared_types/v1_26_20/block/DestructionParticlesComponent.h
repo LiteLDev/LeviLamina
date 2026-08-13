@@ -20,6 +20,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NameId();
+
+    MCAPI static ::std::string_view const& ParticleCountId();
+
+    MCAPI static ::std::string_view const& TextureId();
+
+    MCAPI static ::std::string_view const& TintMethodId();
     // NOLINTEND
 };
 

@@ -139,6 +139,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::unordered_map<::LogArea, bool> const& mAssertAreas();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S

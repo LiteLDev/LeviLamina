@@ -21,6 +21,7 @@ namespace OreUI { struct DebugData; }
 namespace cohtml { class IAllocator; }
 namespace cohtml { class IFileSystemReader; }
 namespace cohtml { class ITimeZoneProvider; }
+namespace cohtml { class IVirtualAllocator; }
 namespace cohtml { class Library; }
 namespace cohtml { class System; }
 namespace cohtml { class SystemRenderer; }
@@ -97,6 +98,12 @@ public:
     MCAPI void update(double time);
 
     MCAPI ~Library();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::cohtml::IVirtualAllocator>& mVirtualAllocator();
     // NOLINTEND
 };
 

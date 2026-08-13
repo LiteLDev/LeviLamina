@@ -36,6 +36,12 @@ public:
         // NOLINTEND
 
     public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::string_view const& ConstraintDescription();
+        // NOLINTEND
+
+    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
@@ -54,6 +60,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& IntervalRangeId();
+
+    MCAPI static ::std::string_view const& LoopingId();
+
     MCAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };

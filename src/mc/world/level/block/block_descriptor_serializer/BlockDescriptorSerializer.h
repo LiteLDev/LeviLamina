@@ -11,6 +11,8 @@ namespace BlockDescriptorSerializer { struct BlockDescriptorProxy; }
 namespace BlockDescriptorSerializer {
 // functions
 // NOLINTBEGIN
+MCAPI ::BlockDescriptor _validateAndCreateFromString(::std::string const& str);
+
 MCAPI void fromProxy(::BlockDescriptor& instance, ::BlockDescriptorSerializer::BlockDescriptorProxy& proxy);
 // NOLINTEND
 

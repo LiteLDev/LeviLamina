@@ -293,15 +293,21 @@ public:
 
     MCAPI static ::mce::Color const& BLUE();
 
+#ifdef LL_PLAT_C
     MCAPI static ::mce::Color const& CYAN();
+#endif
 
     MCAPI static ::mce::Color const& GREEN();
 
+#ifdef LL_PLAT_C
     MCAPI static ::mce::Color const& GREY();
+#endif
 
     MCAPI static ::mce::Color const& NIL();
 
+#ifdef LL_PLAT_C
     MCAPI static ::mce::Color const& ORANGE();
+#endif
 
     MCAPI static ::mce::Color const& PINK();
 

@@ -47,6 +47,12 @@ public:
         HistoryTimestampData& operator=(HistoryTimestampData const&);
         HistoryTimestampData(HistoryTimestampData const&);
         HistoryTimestampData();
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static uint& mSequenceIdGenerator();
+        // NOLINTEND
     };
 
     struct HistoryItem {

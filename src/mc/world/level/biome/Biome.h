@@ -106,6 +106,8 @@ public:
 
     MCAPI static ::mce::Color const& DEFAULT_GRASS_TINT();
 
+    MCAPI static ::mce::Color const& DEFAULT_UNDERWATER_COLOR();
+
     MCAPI static ::mce::Color const& DEFAULT_WATER_COLOR();
 
     MCAPI static ::mce::Color const& DEFAULT_WATER_TINT();

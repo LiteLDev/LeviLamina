@@ -67,7 +67,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI static char const*& _cacheRecordFileName();
+#endif
     // NOLINTEND
 };
 

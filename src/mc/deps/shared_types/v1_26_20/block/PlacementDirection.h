@@ -30,6 +30,20 @@ public:
     ::ll::TypedStorage<4, 8, ::std::optional<float>>                                 mYRotationOffset;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::BlockDescriptor>> mBlocksToCornerWith;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& CARDINAL_ID();
+
+    MCAPI static ::std::string_view const& CORNER_AND_CARDINAL_ID();
+
+    MCAPI static ::std::string_view const& ENABLED_STATES_ID();
+
+    MCAPI static ::std::string_view const& FACING_ID();
+
+    MCAPI static ::std::string_view const& SIXTEEN_WAY_ROTATION_ID();
+    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_26_20::BlockDefinition

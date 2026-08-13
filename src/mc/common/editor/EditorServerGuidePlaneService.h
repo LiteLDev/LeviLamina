@@ -90,6 +90,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& serviceName();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);

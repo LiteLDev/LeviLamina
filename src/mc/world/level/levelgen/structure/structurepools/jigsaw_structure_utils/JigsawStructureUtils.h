@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class CompoundTag;
 namespace JigsawStructureUtils { struct JigsawBlockMetadataCacheHandle; }
 // clang-format on
 
@@ -22,6 +23,8 @@ MCAPI bool canAttach(
 );
 
 MCAPI uchar getFrontFacing(::JigsawStructureUtils::JigsawBlockMetadataCacheHandle cacheHandle, ::Rotation rotation);
+
+MCAPI ::std::string getSerializationIdString(::CompoundTag const& blockIdTag);
 // NOLINTEND
 
 } // namespace JigsawStructureUtils

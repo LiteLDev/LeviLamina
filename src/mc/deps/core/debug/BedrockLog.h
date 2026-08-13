@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace BedrockLog { class LogAreaFilter; }
 namespace BedrockLog { struct CategoryLogs; }
 namespace Core { class Path; }
 class LogSettingsUpdater;
@@ -17,11 +18,26 @@ class LogSettingsUpdater;
 namespace BedrockLog {
 // functions
 // NOLINTBEGIN
+MCAPI bool
+_constructAreaFilterFromString(::std::string const& filterString, ::BedrockLog::LogAreaFilter& logAreaFilter);
+
+#ifdef LL_PLAT_S
+MCAPI ::std::string _constructAreaFilterStringFromFilter(::BedrockLog::LogAreaFilter const& filter);
+#endif
+
+MCAPI bool _constructPriorityFilterFromString(::std::string const& filterString, uint& logPriority);
+
+#ifdef LL_PLAT_S
+MCAPI ::std::string _constructPriorityFilterStringFromFilter(uint filter);
+#endif
+
 MCAPI void _initAreaFilterMap();
 
 MCAPI void _initPriorityFilterMap();
 
 MCAPI void closeAndResetAllLogs();
+
+MCAPI void closeAndResetLog(::BedrockLog::LogCategory category);
 
 MCAPI void createLog(
     ::Core::Path const&       _path,

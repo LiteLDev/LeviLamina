@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersionConstant;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -41,6 +42,12 @@ public:
         MCAPI BiomeJsonObject(::SharedTypes::v1_26_0::BiomeJsonDocument::BiomeJsonObject const&);
 
         MCAPI ~BiomeJsonObject();
+        // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::SemVersionConstant const& VERSION();
         // NOLINTEND
 
     public:

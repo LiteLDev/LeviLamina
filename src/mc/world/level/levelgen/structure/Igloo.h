@@ -37,6 +37,18 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR();
+
+    MCAPI static ::std::string const& STRUCTURE_LOCATION_IGLOO_TRAPDOOR();
+
+    MCAPI static ::std::string const& STRUCTURE_LOCATION_LABORATORY();
+
+    MCAPI static ::std::string const& STRUCTURE_LOCATION_LADDER();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::StructurePieceType $getType() const;

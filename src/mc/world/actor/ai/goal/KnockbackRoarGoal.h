@@ -13,6 +13,7 @@
 // clang-format off
 class EntityContext;
 class Mob;
+class SemVersionConstant;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -57,6 +58,12 @@ public:
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::KnockbackRoarGoal::KnockbackRoarDefinition>>&
                 root
         );
+        // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::SemVersionConstant const& JSONUTIL_DROP_UNRECOGNIZED_FIELDS_VERSION();
         // NOLINTEND
     };
 

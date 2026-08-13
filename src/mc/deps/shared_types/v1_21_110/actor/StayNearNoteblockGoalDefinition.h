@@ -20,6 +20,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static float const& DEFAULT_SPEED();
+
+    MCAPI static float const& DEFAULT_START_DISTANCE();
+
+    MCAPI static float const& DEFAULT_STOP_DISTANCE();
+
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

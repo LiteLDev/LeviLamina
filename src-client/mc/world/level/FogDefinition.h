@@ -114,13 +114,51 @@ public:
     // NOLINTBEGIN
     MCAPI static ::FogDistanceSetting const& DEFAULT_DISTANCE_AIR_SETTING();
 
+    MCAPI static ::FogDistanceSetting const& DEFAULT_DISTANCE_LAVA_RESISTANCE_SETTING();
+
+    MCAPI static ::FogDistanceSetting const& DEFAULT_DISTANCE_LAVA_SETTING();
+
     MCAPI static ::FogDistanceSetting const& DEFAULT_DISTANCE_NETHER_AIR_SETTING();
+
+    MCAPI static ::FogDistanceSetting const& DEFAULT_DISTANCE_POWDER_SNOW_SETTING();
 
     MCAPI static ::FogDistanceSetting const& DEFAULT_DISTANCE_WATER_SETTING();
 
+    MCAPI static ::FogDistanceSetting const& DEFAULT_DISTANCE_WEATHER_SETTING();
+
+    MCAPI static ::FogSetting const& DEFAULT_FOG_AIR_SETTING();
+
     MCAPI static ::FogDefinition const& DEFAULT_FOG_DEFINITION();
 
+    MCAPI static ::FogSetting const& DEFAULT_FOG_LAVA_RESISTANCE_SETTING();
+
+    MCAPI static ::FogSetting const& DEFAULT_FOG_LAVA_SETTING();
+
+    MCAPI static ::FogSetting const& DEFAULT_FOG_NETHER_AIR_SETTING();
+
+    MCAPI static ::FogSetting const& DEFAULT_FOG_POWDER_SNOW_SETTING();
+
+    MCAPI static ::FogSetting const& DEFAULT_FOG_WATER_SETTING();
+
+    MCAPI static ::FogSetting const& DEFAULT_FOG_WEATHER_SETTING();
+
+    MCAPI static ::FogVolumetricCoefficientSetting const& DEFAULT_VOLUME_COEFFICIENT_AIR_SETTING();
+
+    MCAPI static ::FogVolumetricCoefficientSetting const& DEFAULT_VOLUME_COEFFICIENT_CLOUD_SETTING();
+
+    MCAPI static ::FogVolumetricCoefficientSetting const& DEFAULT_VOLUME_COEFFICIENT_WATER_SETTING();
+
+    MCAPI static ::FogVolumetricHenyeyGreensteinGSetting const& DEFAULT_VOLUME_HENYEY_GREENSTEIN_G_AIR_SETTING();
+
+    MCAPI static ::FogVolumetricHenyeyGreensteinGSetting const& DEFAULT_VOLUME_HENYEY_GREENSTEIN_G_WATER_SETTING();
+
     MCAPI static ::FogDefinition const& DEFERRED_DEFAULT_FOG_DEFINITION();
+
+    MCAPI static ::FogVolumetricDensitySetting const& DEFERRED_DEFAULT_VOLUME_DENSITY_AIR_SETTING();
+
+    MCAPI static ::FogVolumetricDensitySetting const& DEFERRED_DEFAULT_VOLUME_DENSITY_WATER_SETTING();
+
+    MCAPI static ::FogVolumetricDensitySetting const& DEFERRED_DEFAULT_VOLUME_DENSITY_WEATHER_SETTING();
     // NOLINTEND
 
 public:

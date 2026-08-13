@@ -129,6 +129,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& DIFF_ITEM_NULL();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

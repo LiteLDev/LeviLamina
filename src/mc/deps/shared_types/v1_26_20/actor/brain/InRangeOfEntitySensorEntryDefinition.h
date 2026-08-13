@@ -68,6 +68,24 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& ENTERED_RANGE_RESPONSE_NAME();
+
+    MCAPI static ::std::string_view const& EXITED_RANGE_RESPONSE_NAME();
+
+    MCAPI static ::std::string_view const& OUT_OF_RANGE_RESPONSE_NAME();
+
+    MCAPI static ::std::string_view const& SEARCH_RANGE_NAME();
+
+    MCAPI static ::std::string_view const& TARGET_ENTITY_MEMORY_NAME();
+
+    MCAPI static ::std::string_view const& TYPE_NAME();
+
+    MCAPI static ::std::string_view const& WITHIN_RANGE_RESPONSE_NAME();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_26_20::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition const&);

@@ -15,6 +15,7 @@ class IMinecraftEventing;
 class IWorldRegistriesProvider;
 class MinEngineVersion;
 class ResourcePackManager;
+class SemVersionConstant;
 namespace SharedTypes::v1_21_20 { struct AutomaticFeatureRulesData; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -82,6 +83,12 @@ public:
         ::IWorldRegistriesProvider&                                     worldRegistries,
         ::std::unordered_map<::HashedString, ::BiomeDecorationFeature>& biomeDecorationFeatureMap
     ) const;
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::SemVersionConstant const& SCHEMA_VERSION_1();
     // NOLINTEND
 
 public:

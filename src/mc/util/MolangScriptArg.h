@@ -93,9 +93,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_break();
+
+    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_emptyStringHash();
+
     MCAPI static ::MolangScriptArg const& mDefaultReturnValue_float0();
 
     MCAPI static ::MolangScriptArg const& mDefaultReturnValue_float1();
+
+    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_floatNeg1();
+
+    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_molangActorIdEmptyArrayPtr();
 
     MCAPI static ::MolangScriptArg const& mDefaultReturnValue_structUV0();
     // NOLINTEND

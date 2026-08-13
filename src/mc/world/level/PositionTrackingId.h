@@ -19,5 +19,7 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::PositionTrackingId const& INVALID_ID();
+
+    MCAPI static uint& sNextId();
     // NOLINTEND
 };

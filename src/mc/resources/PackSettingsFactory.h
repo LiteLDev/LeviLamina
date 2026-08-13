@@ -7,6 +7,7 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/platform/UUID.h"
+#include "mc/platform/brstd/basic_cstring_view.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -144,6 +145,16 @@ public:
         ::std::unordered_map<::std::string, ::PackSettingValueAndDefault> const& packSettingsNameValueMap
     ) const;
 #endif
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::brstd::basic_cstring_view<char, ::std::char_traits<char>> const&
+    GLOBAL_RESOURCE_PACK_SETTINGS_FILENAME();
+
+    MCAPI static ::brstd::basic_cstring_view<char, ::std::char_traits<char>> const&
+    WORLD_BEHAVIOR_PACK_SETTINGS_FILENAME();
     // NOLINTEND
 
 public:

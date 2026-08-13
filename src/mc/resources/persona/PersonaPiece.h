@@ -142,6 +142,10 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& GEOMETRY_SOURCES_KEY();
+
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::string const& TEXTURE_SOURCES_KEY();
+#endif
     // NOLINTEND
 
 public:

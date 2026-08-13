@@ -25,6 +25,7 @@ class PathfinderNode;
 class Vec3;
 struct ActorPathingData;
 struct ActorUniqueID;
+struct PreferredPathDescription;
 // clang-format on
 
 class PathFinder {
@@ -177,6 +178,12 @@ public:
         ::PathFinder::ExtractionPurpose purpose,
         ::std::optional<::Vec3>         targetPos
     );
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::PreferredPathDescription const& DEFAULT_DESC();
     // NOLINTEND
 
 public:

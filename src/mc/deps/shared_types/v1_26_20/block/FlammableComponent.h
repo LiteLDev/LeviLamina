@@ -38,6 +38,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& CATCH_CHANCE_ID();
+
+    MCAPI static ::std::string_view const& DESTROY_CHANCE_ID();
+
+    MCAPI static ::std::string_view const& LAVA_FLAMMABLE_ID();
+
     MCAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };

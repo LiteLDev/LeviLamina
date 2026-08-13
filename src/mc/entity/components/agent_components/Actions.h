@@ -17,6 +17,7 @@ namespace AgentComponents::Actions { struct InspectItemCount; }
 namespace AgentComponents::Actions { struct InspectItemDetail; }
 namespace AgentComponents::Actions { struct InspectItemSpace; }
 namespace AgentComponents::Actions { struct PlaceBlock; }
+namespace AgentComponents::Actions { struct QueueItem; }
 namespace AgentComponents::Actions { struct Till; }
 namespace AgentComponents::Actions { struct TransferItemTo; }
 namespace AgentComponents::Actions { struct Turn; }
@@ -56,6 +57,8 @@ MCAPI void
 _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::TransferItemTo const& action);
 
 MCAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Turn const& action);
+
+MCAPI void startAction(::EntityContext& entity, ::AgentComponents::Actions::QueueItem const& item);
 // NOLINTEND
 
 } // namespace AgentComponents::Actions

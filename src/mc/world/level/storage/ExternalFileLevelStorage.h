@@ -21,6 +21,9 @@ namespace Core { class Result; }
 namespace ExternalFileLevelStorage {
 // functions
 // NOLINTBEGIN
+MCNAPI ::Bedrock::Result<void>
+_readLevelDataFromFile(::Core::Path const& datFilename, ::std::string const& worldID, ::LevelData& levelData);
+
 MCNAPI void copyLevelInfoToDiskCache(::Core::Path const& levelRootPath, bool onlyIfNotExisting);
 
 MCNAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(
@@ -32,6 +35,8 @@ MCNAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(
 #ifdef LL_PLAT_C
 MCNAPI bool isLevelCloudSave(::Core::Path const& directory);
 #endif
+
+MCNAPI void makeReadableLevelnameFile(::Core::Path const& fullPath, ::std::string const& name);
 
 MCNAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::LevelData& levelData);
 
@@ -61,6 +66,9 @@ MCNAPI void saveLevelData(
     bool                 ignoreCache
 );
 
+MCNAPI void
+saveLevelDataToPath(::Core::Path const& fullPath, ::std::string const& levelId, ::LevelData const& levelData);
+
 #ifdef LL_PLAT_C
 MCNAPI void syncLevelInfoCache(::std::unordered_set<::Core::PathBuffer<::std::string>> const& levelRootPaths);
 
@@ -68,6 +76,8 @@ MCNAPI ::Core::Result unMarkLevelAsCloudSave(::Core::Path const& directory);
 
 MCNAPI ::Core::Result unMarkLevelForSync(::Core::Path const& directory, bool deleteWorldFolderIfEmpty);
 #endif
+
+MCNAPI ::Core::Result validateLevelDat(::Core::Path filePath);
 // NOLINTEND
 
 } // namespace ExternalFileLevelStorage

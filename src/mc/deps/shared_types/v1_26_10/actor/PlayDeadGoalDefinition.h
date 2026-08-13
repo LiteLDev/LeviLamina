@@ -48,6 +48,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static float const& DEFAULT_DURATION();
+
+    MCAPI static float const& DEFAULT_RANDOM_START_CHANCE();
+
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 

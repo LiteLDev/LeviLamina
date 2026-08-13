@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/util/Reference.h"
+#include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/TintMethod.h"
 #include "mc/world/level/block/components/BlockMaterialInstancePackedBools.h"
@@ -29,6 +30,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~BlockMaterialInstance();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::BlockRenderLayer> const& renderLayerNameBiMap();
     // NOLINTEND
 
 public:

@@ -29,6 +29,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::ActorAnimationControllerPtr const& NONE();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ActorAnimationControllerGroup& group, ::HashedString const& name);

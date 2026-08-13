@@ -137,6 +137,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::unordered_set<::ChunkPos> const& SPAWN_RING_OFFSETS();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Level& level, ::IMinecraftEventing& eventing);

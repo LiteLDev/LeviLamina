@@ -30,6 +30,12 @@ public:
         ::ll::TypedStorage<8, 8, uint64 const> mThumbnailWidth;
         ::ll::TypedStorage<8, 8, uint64 const> mThumbnailHeight;
         // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::add_lvalue_reference_t<char const[16]> NAME();
+        // NOLINTEND
     };
 
     struct BlockInfo {
@@ -39,6 +45,12 @@ public:
         ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mLabel;
         ::ll::TypedStorage<4, 20, ::std::optional<::mce::Color>>  mAverageColor;
         // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::add_lvalue_reference_t<char const[16]> NAME();
+        // NOLINTEND
     };
 
     struct EntityInfo {
@@ -46,6 +58,12 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mLabel;
+        // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::add_lvalue_reference_t<char const[17]> NAME();
         // NOLINTEND
     };
 

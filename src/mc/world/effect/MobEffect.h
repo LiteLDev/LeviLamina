@@ -185,6 +185,8 @@ public:
 
     MCAPI static ::MobEffect*& BLINDNESS();
 
+    MCAPI static ::MobEffect*& BREATH_OF_THE_NAUTILUS();
+
     MCAPI static ::MobEffect*& CONDUIT_POWER();
 
     MCAPI static ::MobEffect*& CONFUSION();
@@ -234,6 +236,8 @@ public:
     MCAPI static ::MobEffect*& OOZING();
 
     MCAPI static ::MobEffect*& POISON();
+
+    MCAPI static ::MobEffect*& RAID_OMEN();
 
     MCAPI static ::MobEffect*& REGENERATION();
 

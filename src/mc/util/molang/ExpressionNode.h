@@ -194,6 +194,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)>&
+    _defaultUnknownQueryFunction();
+
     MCAPI static ::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)>&
     mGetParticleTintFunc();
 

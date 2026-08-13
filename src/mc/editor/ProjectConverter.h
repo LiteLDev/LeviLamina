@@ -89,6 +89,14 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string const& WORLD_BEHAVIOR_PACKS_FILE();
+
+    MCNAPI static ::std::string const& WORLD_RESOURCE_PACKS_FILE();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(

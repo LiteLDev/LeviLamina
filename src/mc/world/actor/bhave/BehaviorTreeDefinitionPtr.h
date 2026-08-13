@@ -15,4 +15,10 @@ public:
     ::ll::TypedStorage<8, 8, ::AutomationBehaviorTreeGroup*> mGroup;
     ::ll::TypedStorage<8, 8, ::BehaviorTreeDefinition*>      mPtr;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BehaviorTreeDefinitionPtr const& NONE();
+    // NOLINTEND
 };

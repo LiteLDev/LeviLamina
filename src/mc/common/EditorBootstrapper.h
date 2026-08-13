@@ -49,6 +49,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static ::std::string const& JOIN_INTENT_ARGUMENT_KEY();
+
+#ifdef LL_PLAT_C
     MCNAPI static ::std::optional<::EditorConnectionJoinIntent>& msGlobalEditorJoinIntentOverride();
+#endif
     // NOLINTEND
 };

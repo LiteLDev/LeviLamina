@@ -40,7 +40,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<char const[23]> INVENTORY_ROUTE();
+
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[19]> STORE_ROUTE();
     // NOLINTEND
 
 public:

@@ -104,7 +104,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& ACTOR_IDENTIFIER_TAG_NAME();
+
+    MCAPI static ::std::string_view const& ACTOR_TAG_NAME();
+
     MCAPI static ::std::string_view const& POSE_TAG_NAME();
+
+    MCAPI static ::std::string_view const& SAVE_DATA_TAG_NAME();
     // NOLINTEND
 
 public:

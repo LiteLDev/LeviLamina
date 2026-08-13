@@ -5,4 +5,10 @@
 // auto generated inclusion list
 #include "mc/entity/definitions/OffspringDefinition.h"
 
-struct DenySameParentsVariantDataSchema {};
+struct DenySameParentsVariantDataSchema {
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+};

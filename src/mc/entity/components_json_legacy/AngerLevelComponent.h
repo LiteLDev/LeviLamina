@@ -98,6 +98,16 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int const& DEFAULT_ANGRY_BOOST();
+
+    MCAPI static int const& DEFAULT_ANGRY_THRESHOLD();
+
+    MCAPI static int const& DEFAULT_MAX_ANGER_LEVEL();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

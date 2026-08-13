@@ -53,6 +53,16 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string const& DIFF_COMMAND_PERMISSION();
+
+    MCAPI static ::std::string const& DIFF_PLAYER_PERMISSION();
+#endif
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

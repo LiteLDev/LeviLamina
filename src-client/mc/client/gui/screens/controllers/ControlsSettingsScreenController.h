@@ -162,6 +162,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::function<::std::string(::std::string const&, float, bool)>& floatSliderLabellerAsInt();
+
     MCAPI static ::std::function<::std::string(::std::string const&, float, bool)>& floatSliderLabellerAsPercentInt();
     // NOLINTEND
 

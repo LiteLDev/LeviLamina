@@ -86,7 +86,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI static ::Editor::Prefabs::PrefabStructurePositionCalculator::TemplateStructureInfo& EMPTY_STRUCTURE_INFO();
+#endif
     // NOLINTEND
 
 public:

@@ -293,7 +293,23 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string const& ASSET_EXTRACTION_ERROR();
+
+    MCAPI static ::std::string const& ENTITY_REGISTRY_CREATION_ERROR();
+
+    MCAPI static ::std::string const& FINAL_LEVEL_STORAGE_STATE_ERROR();
+
+    MCAPI static ::std::string const& HOST_MULTIPLAYER_ERROR();
+
+    MCAPI static ::std::string const& INITIAL_LEVEL_STORAGE_STATE_ERROR();
+
+    MCAPI static ::std::string const& LEVEL_STORAGE_CREATION_ERROR();
+
+    MCAPI static ::std::string const& PACK_SOURCE_LOADING_ERROR();
+
+#ifdef LL_PLAT_C
     MCAPI static ::std::string const& POST_INIT_ERROR();
+#endif
     // NOLINTEND
 
 public:

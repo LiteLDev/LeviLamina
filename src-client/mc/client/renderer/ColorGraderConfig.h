@@ -14,6 +14,7 @@ class HashedString;
 class LinkedAssetValidator;
 class LocalPlayer;
 class ResourcePackManager;
+class SemVersionConstant;
 namespace Editor::Services { class ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
@@ -185,6 +186,12 @@ public:
         ColorGradingParametersSrcV0& operator=(ColorGradingParametersSrcV0 const&);
         ColorGradingParametersSrcV0(ColorGradingParametersSrcV0 const&);
         ColorGradingParametersSrcV0();
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCNAPI static ::SemVersionConstant const& VERSION();
+        // NOLINTEND
     };
 
     struct ColorGradingParametersSrcV1 {
@@ -271,6 +278,12 @@ public:
         // NOLINTEND
 
     public:
+        // static variables
+        // NOLINTBEGIN
+        MCNAPI static ::SemVersionConstant const& VERSION();
+        // NOLINTEND
+
+    public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::ColorGraderConfig::ColorGradingParametersSrcV1 const&);
@@ -348,6 +361,12 @@ public:
         ::LocalPlayer&                                         localPlayer,
         ::cereal::ReflectionCtx const&                         ctx
     );
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& PAYLOAD_KEY();
     // NOLINTEND
 
 public:

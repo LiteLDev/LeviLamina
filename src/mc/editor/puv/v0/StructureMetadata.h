@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersionConstant;
 namespace Puv { class Input; }
 namespace Puv { class Logger; }
 namespace cereal { struct ReflectionCtx; }
@@ -52,6 +53,12 @@ public:
 
     MCNAPI static ::Editor::Structures::PUVLoader::v0::StructureMetadata
     parseLegacy(::Puv::Input const& input, ::Puv::Logger& logger, ::gsl::not_null<::cereal::ReflectionCtx const*> ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 };
 

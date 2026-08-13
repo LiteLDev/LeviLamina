@@ -86,6 +86,22 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::atomic<int64>& mEmitterLifetimeCounter();
+
+    MCAPI static ::std::atomic<int64>& mEmitterRateCounter();
+
+    MCAPI static ::std::atomic<int64>& mParticleAppearanceCounter();
+
+    MCAPI static ::std::atomic<int64>& mParticleEmitterTickCount();
+
+    MCAPI static ::std::atomic<int64>& mParticleLifetimeCounter();
+
+    MCAPI static ::std::atomic<int64>& mParticleMotionCounter();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
 

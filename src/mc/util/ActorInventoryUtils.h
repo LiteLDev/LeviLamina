@@ -24,6 +24,18 @@ MCAPI void forEachItemOnActor(
     ::std::function<void(::ItemStack const&)> callback
 );
 
+MCAPI void forEachItemOnActorHotbar(
+    ::Actor const&                            actor,
+    ::CommandIntegerRange const&              slot,
+    ::std::function<void(::ItemStack const&)> callback
+);
+
+MCAPI void forEachItemOnActorInventory(
+    ::Actor const&                            actor,
+    ::CommandIntegerRange const&              slot,
+    ::std::function<void(::ItemStack const&)> callback
+);
+
 MCAPI ::ItemStack const* getItem(::Actor const& actor, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, int slotId);
 // NOLINTEND
 

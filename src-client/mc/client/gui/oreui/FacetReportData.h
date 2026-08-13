@@ -73,6 +73,12 @@ public:
 
     MCAPI ::std::vector<::std::string> const& getReporterXuids() const;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<char const[29]> NAME();
+    // NOLINTEND
 };
 
 } // namespace OreUI::RealmsStories

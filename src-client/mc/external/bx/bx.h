@@ -59,6 +59,8 @@ MCAPI void memSet(void* _dst, uchar _ch, uint64 _numBytes);
 
 MCAPI void mtxInverse(float* _result, float const* _a);
 
+MCAPI void mtxMul(float* _result, float const* _a, float const* _b);
+
 MCAPI void mtxOrtho(
     float* _result,
     float  _left,

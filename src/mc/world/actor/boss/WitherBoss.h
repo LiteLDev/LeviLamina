@@ -29,6 +29,7 @@ struct ActorUniqueID;
 struct HurtEffectsSettings;
 struct HurtParameters;
 struct VariantParameterList;
+namespace mce { class UUID; }
 // clang-format on
 
 class WitherBoss : public ::Monster {
@@ -161,6 +162,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool canDestroy(::Block const& block, ::WitherBoss::WitherAttackType attackType);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::mce::UUID const& MAX_HEALTH_CAP_UUID();
     // NOLINTEND
 
 public:

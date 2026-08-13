@@ -90,6 +90,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<int const[4][2]> HEAD_DIRECTION_OFFSETS();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& nameId, int id);

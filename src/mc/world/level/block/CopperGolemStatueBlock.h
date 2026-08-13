@@ -48,6 +48,14 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static ::std::array<::std::string_view, 4> const& POSES();
+#endif
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);

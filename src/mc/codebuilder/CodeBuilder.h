@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/codebuilder/EncryptionCipherMode.h"
+
 // auto generated forward declare list
 // clang-format off
 struct MCRESULT;
@@ -20,6 +23,8 @@ namespace CodeBuilder {
 // functions
 // NOLINTBEGIN
 MCNAPI ::MCRESULT deserialize(::Json::Value const& json, ::CodeBuilder::RequestHeader& result);
+
+MCNAPI bool fromString(::std::string const& modeString, ::CodeBuilder::EncryptionCipherMode& mode);
 
 MCNAPI ::std::string serialize(::CodeBuilder::AgentMessage const& message);
 

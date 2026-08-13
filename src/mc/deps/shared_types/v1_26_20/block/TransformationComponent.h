@@ -28,6 +28,16 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NameId();
+
+    MCAPI static ::std::string_view const& RotationId();
+
+    MCAPI static ::std::string_view const& RotationPivotId();
+
+    MCAPI static ::std::string_view const& ScaleId();
+
+    MCAPI static ::std::string_view const& ScalePivotId();
+
+    MCAPI static ::std::string_view const& TranslationId();
     // NOLINTEND
 };
 

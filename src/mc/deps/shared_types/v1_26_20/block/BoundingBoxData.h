@@ -14,6 +14,14 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3> mOrigin;
     ::ll::TypedStorage<4, 12, ::Vec3> mSize;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& OriginId();
+
+    MCAPI static ::std::string_view const& SizeId();
+    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_26_20::BlockDefinition

@@ -132,6 +132,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string const& LEGACY_CONSOLE_PLAYER_PREFIX();
+
     MCAPI static ::std::string const& LOCAL_PLAYER_EDITOR_TAG();
 
     MCAPI static ::std::string const& LOCAL_PLAYER_TAG();

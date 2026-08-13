@@ -47,7 +47,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static ::std::add_lvalue_reference_t<char const[46]> DEFAULT_DISPLAY_NAME();
+
+#ifdef LL_PLAT_S
+    MCNAPI static ::std::add_lvalue_reference_t<char const[27]> DEFAULT_ID();
+#endif
+
+#ifdef LL_PLAT_C
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> DEFAULT_ID();
+#endif
     // NOLINTEND
 
 public:

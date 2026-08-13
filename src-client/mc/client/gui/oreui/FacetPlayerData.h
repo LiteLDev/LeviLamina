@@ -50,6 +50,12 @@ public:
 
     MCFOLD ::std::string const& getXuid() const;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<char const[29]> NAME();
+    // NOLINTEND
 };
 
 } // namespace OreUI::RealmsStories

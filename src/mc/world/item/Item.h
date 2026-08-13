@@ -495,6 +495,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::SemVersionConstant const& DATA_DRIVEN_NEXT_VERSION();
+
     MCAPI static ::SemVersionConstant const& DATA_DRIVEN_VERSION();
 
     MCAPI static ::std::string const& ICON_DESCRIPTION_PREFIX();

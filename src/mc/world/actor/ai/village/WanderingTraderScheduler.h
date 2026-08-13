@@ -38,4 +38,10 @@ public:
 
     MCAPI void writeSaveData() const;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<float> const& CHANCE_TO_SPAWN_PER_DAY();
+    // NOLINTEND
 };

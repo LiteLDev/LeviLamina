@@ -21,7 +21,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& ConnectedFacesId();
+
     MCAPI static ::std::string_view const& NameId();
+
+    MCAPI static ::std::string_view const& PowerId();
+
+    MCAPI static ::std::string_view const& StronglyPoweredFaceId();
+
+    MCAPI static ::std::string_view const& TransformRelativeId();
     // NOLINTEND
 };
 

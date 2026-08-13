@@ -59,6 +59,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static ::HashedString const& EMPTY_ID();
+
     MCNAPI static ::HashedString const& UNIT_CUBE_ID();
     // NOLINTEND
 };

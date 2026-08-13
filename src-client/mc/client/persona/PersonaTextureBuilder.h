@@ -111,6 +111,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& BASE_FACE_TEXTURE_ID();
+
+    MCNAPI static ::std::string const& BASE_TEXTURE_ID();
+
+    MCNAPI static ::std::string const& PERSONA_ANIMATED_ATLAS_TEST_PATH();
+
+    MCNAPI static ::std::string const& PERSONA_ATLAS_TEST_PATH();
     // NOLINTEND
 
 public:

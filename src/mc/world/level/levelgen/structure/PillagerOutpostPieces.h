@@ -115,4 +115,10 @@ public:
 
         // NOLINTEND
     };
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::array<::std::string_view, 7>& MSC_FEATURES();
+    // NOLINTEND
 };

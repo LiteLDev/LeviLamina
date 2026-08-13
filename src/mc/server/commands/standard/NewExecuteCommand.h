@@ -84,6 +84,52 @@ public:
         // NOLINTEND
 
     public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static char const*& SUBCOMMAND_ALIGN();
+
+        MCAPI static char const*& SUBCOMMAND_ANCHORED();
+
+        MCAPI static char const*& SUBCOMMAND_AS();
+
+        MCAPI static char const*& SUBCOMMAND_AT();
+
+        MCAPI static char const*& SUBCOMMAND_FACING();
+
+        MCAPI static char const*& SUBCOMMAND_IF();
+
+        MCAPI static char const*& SUBCOMMAND_IN();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_ALIGN();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_ANCHORED();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_AS();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_AT();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_FACING();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_IF_UNLESS();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_IN();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_POSITIONED();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_ROTATED();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_RUN();
+
+        MCAPI static char const*& SUBCOMMAND_POSITIONED();
+
+        MCAPI static char const*& SUBCOMMAND_ROTATED();
+
+        MCAPI static char const*& SUBCOMMAND_RUN();
+
+        MCAPI static char const*& SUBCOMMAND_UNLESS();
+        // NOLINTEND
+
+    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI ::std::string $getCommandName() const;

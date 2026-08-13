@@ -112,7 +112,23 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& AlphaMaskedTintId();
+
+    MCAPI static ::std::string_view const& AmbientOcclusionId();
+
+    MCAPI static ::std::string_view const& DitheringId();
+
+    MCAPI static ::std::string_view const& FaceDimmingId();
+
+    MCAPI static ::std::string_view const& IsotropicId();
+
     MCAPI static ::std::string_view const& NameId();
+
+    MCAPI static ::std::string_view const& RenderMethodId();
+
+    MCAPI static ::std::string_view const& TextureId();
+
+    MCAPI static ::std::string_view const& TintMethodId();
     // NOLINTEND
 
 public:
