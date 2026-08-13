@@ -30,7 +30,7 @@ Please refer to [Install on Server](https://lamina.levimc.org/user_guides/instal
 
 ## Star History
 
-![Star History Chart](https://api.star-history.com/svg?repos=LiteLDev/LeviLamina&type=Date)
+![Star History Chart](https://star-history.dera.page/svg?repos=LiteLDev/LeviLamina&type=Date)
 
 ## Acknowledgements
 
