@@ -56,6 +56,7 @@ public:
     MolangScriptArg(ItemStackBase const& item)
     : mType(MolangScriptArgType::MolangItemStackBasePtr),
       mPOD(std::addressof(item)) {}
+    MolangScriptArg(float val) : mType(MolangScriptArgType::Float), mPOD(val) {}
 
     template <ll::concepts::IsInTypes<MolangScriptArgData> T>
     MolangScriptArg(T const& val) : mType(MolangScriptArgType::Variant),

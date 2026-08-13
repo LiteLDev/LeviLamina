@@ -45,6 +45,14 @@ public:
         error(fmt::vformat(fmt.get(), fmt::make_format_args(_args, args...)));
     }
 
+    CommandOutput() {
+        mType          = CommandOutputType::None;
+        mBag           = {};
+        mMessages      = {};
+        mSuccessCount  = 0;
+        mHasPlayerText = false;
+    }
+
 public:
     // member functions
     // NOLINTBEGIN

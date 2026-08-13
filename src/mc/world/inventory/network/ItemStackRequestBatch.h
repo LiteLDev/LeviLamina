@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/inventory/network/ItemStackRequestData.h"
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
