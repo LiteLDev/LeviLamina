@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/levelgen/v2/PoolElementStructureSection.h"
+
 
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"

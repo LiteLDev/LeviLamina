@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/levelgen/structure/StructureAnimationData.h"
 
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"

@@ -16,9 +16,12 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     TESTOOKVERSION,
     HookPriority::Normal,
     StartMenuScreenController,
-    &StartMenuScreenController::_registerBindings,
-    void
+    &StartMenuScreenController::$ctor,
+    void*,
+    ::std::shared_ptr<::MainMenuScreenModel>             model,
+    ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
 ) {
+    auto result = origin(model, entitlementManager);
     bindString(
         StringHash("#gettime"),
         []() -> auto {
@@ -30,7 +33,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         },
         []() -> bool { return true; }
     );
-    origin();
+    return result;
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
@@ -53,27 +56,27 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
             redactedString->push_back('\n');
         }
     }
-    hovertext.append("§8");
-    hovertext.append(stack.getTypeName());
-    hovertext.append("§r");
-    uint64 max = stack.getItem()->getMaxDamage();
+    hovertext  += "§8";
+    hovertext  += stack.getTypeName();
+    hovertext  += "§r";
+    uint64 max  = stack.mItem->getMaxDamage();
     if (max != 0) {
-        uint64 current = max - stack.getDamageValue();
-        hovertext.append(fmt::format("\n§7耐久: {} / {}§r", current, max));
+        uint64 current  = max - stack.getDamageValue();
+        hovertext      += fmt::format("\n§7耐久: {} / {}§r", current, max);
     }
 
     if (stack.mChargedItem && stack.mItem && stack.getTypeName() == "minecraft:crossbow") {
-        hovertext.append(fmt::format("\n§7弹药: {}§r", stack.mChargedItem->toString()));
+        hovertext += fmt::format("\n§7弹药: {}§r", stack.mChargedItem->toString());
     }
 
     auto foodComp = (stack.mItem->getFood());
 
     if (foodComp) {
-        auto hunger             = ll::memory::dAccess<int>(foodComp, 16);
-        auto saturationModifier = ll::memory::dAccess<float>(foodComp, 20);
-        auto saturation         = saturationModifier * 2.0f * static_cast<float>(hunger);
-        hovertext.append(fmt::format("\n§7饥饿值: {}§r", hunger));
-        hovertext.append(fmt::format("\n§7饱和度: {:.2f}§r", saturation));
+        auto hunger              = ll::memory::dAccess<int>(foodComp, 16);
+        auto saturationModifier  = ll::memory::dAccess<float>(foodComp, 20);
+        auto saturation          = saturationModifier * 2.0f * static_cast<float>(hunger);
+        hovertext               += fmt::format("\n§7饥饿值: {}§r", hunger);
+        hovertext               += fmt::format("\n§7饱和度: {:.2f}§r", saturation);
     }
 }
 } // namespace ll::test_jsonui
