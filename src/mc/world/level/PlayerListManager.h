@@ -65,13 +65,7 @@ public:
 
     MCAPI void initializeWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-#ifdef LL_PLAT_C
     MCAPI void removeByUUID(::mce::UUID const& uuid);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI void removeByUUID(::mce::UUID const& uuid);
-#endif
 
     MCAPI void setPlayerLocationReceiver(::Bedrock::NonOwnerPointer<::PlayerLocationReceiver> playerLocationReceiver);
 

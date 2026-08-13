@@ -45,13 +45,7 @@ public:
         ::VariantParameterListConst const&        list
     ) const;
 
-#ifdef LL_PLAT_S
     MCAPI ::ActorDefinitionEvent& operator=(::ActorDefinitionEvent const&);
-#endif
-
-#ifdef LL_PLAT_C
-    MCAPI ::ActorDefinitionEvent& operator=(::ActorDefinitionEvent const&);
-#endif
 
 #ifdef LL_PLAT_S
     MCAPI void setName(::std::string name);

@@ -14,17 +14,9 @@ namespace Bedrock::DDUI::PathUtility {
 MCAPI ::std::optional<::std::variant<double, bool, ::std::string>>
 convertToPrimitive(::cereal::DynamicValue const& obj);
 
-#ifdef LL_PLAT_C
 MCAPI ::nonstd::
     expected<::std::vector<::std::variant<::std::string, uint>>, ::Bedrock::DDUI::PathUtility::PathQueryError>
     parsePath(::std::string const& wholePath);
-#endif
-
-#ifdef LL_PLAT_S
-MCAPI ::nonstd::
-    expected<::std::vector<::std::variant<::std::string, uint>>, ::Bedrock::DDUI::PathUtility::PathQueryError>
-    parsePath(::std::string const& wholePath);
-#endif
 
 MCAPI ::std::string rebuildPath(
     ::std::string const&                                      datastore,

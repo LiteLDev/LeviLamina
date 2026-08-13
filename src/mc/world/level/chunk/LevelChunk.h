@@ -311,6 +311,7 @@ public:
         short                                      absoluteIndex,
         ::std::optional<::DeserializationChanges*> deserializationChanges
     );
+#endif
 
     MCAPI void deserializeSubChunk(
         uchar                                      idx,
@@ -318,16 +319,6 @@ public:
         ::std::optional<schar>                     absoluteIndex,
         ::std::optional<::DeserializationChanges*> deserializationChanges
     );
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI void deserializeSubChunk(
-        uchar                                      idx,
-        ::IDataInput&                              stream,
-        ::std::optional<schar>                     absoluteIndex,
-        ::std::optional<::DeserializationChanges*> deserializationChanges
-    );
-#endif
 
     MCAPI void fetchBlocks(::BlockPos const& volumeOrigin, ::BlockVolume& volume) const;
 

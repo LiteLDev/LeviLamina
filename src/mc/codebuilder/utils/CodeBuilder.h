@@ -26,9 +26,9 @@ MCNAPI ::Json::Value createObject(::Actor const& actor);
 
 MCNAPI ::Json::Value createObject(::LevelChunk const& chunk);
 
-MCNAPI ::Json::Value createObject(::ItemStackBase const& item);
-
 MCNAPI ::Json::Value createObject(::ItemDescriptor const& item);
+
+MCNAPI ::Json::Value createObject(::ItemStackBase const& item);
 
 MCNAPI ::Json::Value createObject(::Player const& player);
 

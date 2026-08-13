@@ -72,35 +72,19 @@ public:
     // NOLINTBEGIN
     virtual ~SparseContainer() /*override*/ = default;
 
-#ifdef LL_PLAT_S
-    virtual ::ItemStack const& getItem(int) const /*override*/;
-#else // LL_PLAT_C
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
-#endif
 
     virtual int getContainerSize() const /*override*/;
 
     virtual int getMaxStackSize() const /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void containerContentChanged(int) /*override*/;
-#else // LL_PLAT_C
     virtual void containerContentChanged(int slot) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void setItem(int, ::ItemStack const&) /*override*/;
-#else // LL_PLAT_C
     virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
-#endif
 
     virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void startOpen(::Actor&) /*override*/;
-#else // LL_PLAT_C
     virtual void startOpen(::Actor& actor) /*override*/;
-#endif
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
@@ -221,27 +205,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::ItemStack const& $getItem(int) const;
-#else // LL_PLAT_C
     MCAPI ::ItemStack const& $getItem(int slot) const;
-#endif
 
     MCAPI int $getContainerSize() const;
 
     MCAPI int $getMaxStackSize() const;
 
 #ifdef LL_PLAT_S
-    MCAPI void $containerContentChanged(int);
+    MCAPI void $containerContentChanged(int slot);
 #else // LL_PLAT_C
     MCFOLD void $containerContentChanged(int slot);
 #endif
 
-#ifdef LL_PLAT_S
-    MCAPI void $setItem(int, ::ItemStack const&);
-#else // LL_PLAT_C
     MCAPI void $setItem(int slot, ::ItemStack const& item);
-#endif
 
 #ifdef LL_PLAT_S
     MCAPI void $serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>);
@@ -249,11 +225,7 @@ public:
     MCFOLD void $serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>);
 #endif
 
-#ifdef LL_PLAT_S
-    MCAPI void $startOpen(::Actor&);
-#else // LL_PLAT_C
     MCAPI void $startOpen(::Actor& actor);
-#endif
 
     MCAPI void $stopOpen(::Actor& actor);
 

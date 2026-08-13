@@ -65,13 +65,7 @@ public:
         bool                                       recurseAnyways
     ) const;
 
-#ifdef LL_PLAT_C
     MCAPI void generateAssetSet();
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI void generateAssetSet();
-#endif
 
 #ifdef LL_PLAT_C
     MCAPI ::Core::PathBuffer<::std::string> getIconPath(::PackIconType iconType) const;

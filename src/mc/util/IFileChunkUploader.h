@@ -56,11 +56,7 @@ public:
         ::std::function<void(::std::vector<::FileChunkInfo>)> callback
     ) const;
 
-#ifdef LL_PLAT_S
-    virtual void confirmChunkReceived(::FileInfo const&, ::FileChunkInfo const&);
-#else // LL_PLAT_C
     virtual void confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
-#endif
 
     virtual void uploadChunk(
         ::FileInfo const&           file,
@@ -95,11 +91,7 @@ public:
         ::std::function<void(::std::vector<::FileChunkInfo>)> callback
     ) const;
 
-#ifdef LL_PLAT_S
-    MCNAPI void $confirmChunkReceived(::FileInfo const&, ::FileChunkInfo const&);
-#else // LL_PLAT_C
     MCNAPI void $confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
-#endif
 
     MCNAPI void $uploadChunk(
         ::FileInfo const&           file,

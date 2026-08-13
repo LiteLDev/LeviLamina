@@ -20,11 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ::glm::vec3 eval(float) const /*override*/;
-#else // LL_PLAT_C
     virtual ::glm::vec3 eval(float t) const /*override*/;
-#endif
 
     virtual ::CameraSplineUtils::SplineType getType() const /*override*/;
     // NOLINTEND
@@ -32,11 +28,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::glm::vec3 $eval(float) const;
-#else // LL_PLAT_C
     MCAPI ::glm::vec3 $eval(float t) const;
-#endif
 
 #ifdef LL_PLAT_S
     MCAPI ::CameraSplineUtils::SplineType $getType() const;

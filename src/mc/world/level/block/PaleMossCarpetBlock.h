@@ -76,13 +76,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI static bool isBottom(::Block const& block);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI static bool isBottom(::Block const& block);
-#endif
 
     MCAPI static bool isTop(::Block const& block);
 

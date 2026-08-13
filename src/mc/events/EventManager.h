@@ -72,23 +72,11 @@ public:
         ::std::vector<::std::string> const&                              exclude
     ) const;
 
-#ifdef LL_PLAT_C
     MCNAPI ::std::optional<::Social::Events::Property> getCommonProperty(::std::string const& name) const;
-#endif
-
-#ifdef LL_PLAT_S
-    MCNAPI ::std::optional<::Social::Events::Property> getCommonProperty(::std::string const& name) const;
-#endif
 
     MCNAPI ::Social::Events::Property getGlobalProperty(::std::string const& name) const;
 
-#ifdef LL_PLAT_C
     MCNAPI ::Social::Events::Property getPlayerCommonProperty(uint userId, ::std::string const& name) const;
-#endif
-
-#ifdef LL_PLAT_S
-    MCNAPI ::Social::Events::Property getPlayerCommonProperty(uint userId, ::std::string const& name) const;
-#endif
 
     MCNAPI ::Social::Events::Property getPlayerGlobalProperty(uint userId, ::std::string const& name) const;
 

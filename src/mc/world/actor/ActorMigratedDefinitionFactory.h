@@ -181,13 +181,9 @@ public:
             ::SharedTypes::Legacy::ActorDocumentCorrected,
             ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
     ) const;
-
-    MCAPI void resetLoader();
 #endif
 
-#ifdef LL_PLAT_S
     MCAPI void resetLoader();
-#endif
 
 #ifdef LL_PLAT_C
     MCAPI void

@@ -68,13 +68,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI static ::std::string sanitizePathPrefixForDisplay(::std::string_view text);
-#endif
-
-#ifdef LL_PLAT_S
-    MCNAPI static ::std::string sanitizePathPrefixForDisplay(::std::string_view text);
-#endif
     // NOLINTEND
 
 public:

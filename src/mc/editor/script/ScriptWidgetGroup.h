@@ -107,15 +107,8 @@ public:
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
     _scriptSetVisible(bool visible);
 
-#ifdef LL_PLAT_S
     MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>>
     getWidget(::mce::UUID const& widgetId) const;
-#endif
-
-#ifdef LL_PLAT_C
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>>
-    getWidget(::mce::UUID const& widgetId) const;
-#endif
     // NOLINTEND
 
 public:

@@ -721,13 +721,9 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI ::std::string getServerName() const;
-
-    MCAPI void onReady_ClientGeneration(::Player& newPlayer, ::NetworkIdentifier const& source);
 #endif
 
-#ifdef LL_PLAT_S
     MCAPI void onReady_ClientGeneration(::Player& newPlayer, ::NetworkIdentifier const& source);
-#endif
 
     MCAPI void onStartShutdown();
 

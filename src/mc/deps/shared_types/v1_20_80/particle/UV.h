@@ -39,13 +39,9 @@ public:
     MCAPI UV(::SharedTypes::v1_20_80::UV&&);
 
     MCAPI UV(::SharedTypes::v1_20_80::UV const&);
-
-    MCAPI bool operator==(::SharedTypes::v1_20_80::UV const&) const;
 #endif
 
-#ifdef LL_PLAT_S
     MCAPI bool operator==(::SharedTypes::v1_20_80::UV const&) const;
-#endif
 
 #ifdef LL_PLAT_C
     MCAPI ~UV();

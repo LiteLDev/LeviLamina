@@ -31,13 +31,7 @@ MCAPI ::BiomeColorSampling::MapPolicy const& getMapPolicy(::TintMethod tint);
 
 MCFOLD int getMapWaterColor(::Biome const& biome, ::BlockPos const&);
 
-#ifdef LL_PLAT_C
 MCAPI ::std::vector<::BlockPos> const& getPattern(::BiomeColorSampling::Pattern pattern);
-#endif
-
-#ifdef LL_PLAT_S
-MCAPI ::std::vector<::BlockPos> const& getPattern(::BiomeColorSampling::Pattern pattern);
-#endif
 
 #ifdef LL_PLAT_C
 MCAPI ::BiomeColorSampling::TessellationPolicy const& getTessellationPolicy(::TintMethod tint);

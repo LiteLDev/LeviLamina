@@ -21,9 +21,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ResultAny();
 
-    MCNAPI ::Scripting::ResultAny& operator=(::Scripting::ResultAny const& rhs);
-
     MCNAPI ::Scripting::ResultAny& operator=(::Scripting::ResultAny&& rhs);
+
+    MCNAPI ::Scripting::ResultAny& operator=(::Scripting::ResultAny const& rhs);
 
     MCNAPI ::entt::meta_any toAny();
 

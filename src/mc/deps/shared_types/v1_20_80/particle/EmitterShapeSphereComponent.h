@@ -50,13 +50,9 @@ public:
 
     MCAPI ::SharedTypes::v1_20_80::EmitterShapeSphereComponent&
     operator=(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
-
-    MCAPI bool operator==(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&) const;
 #endif
 
-#ifdef LL_PLAT_S
     MCAPI bool operator==(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&) const;
-#endif
     // NOLINTEND
 
 public:

@@ -40,18 +40,9 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_S
         virtual void onActiveResourcePacksChanged(::ResourcePackManager& mgr) /*override*/;
-#else // LL_PLAT_C
-        virtual void onActiveResourcePacksChanged(::ResourcePackManager&) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
         virtual void onResourceManagerDestroyed(::ResourcePackManager& mgr) /*override*/;
-#else // LL_PLAT_C
-        virtual void onResourceManagerDestroyed(::ResourcePackManager&) /*override*/;
-#endif
-
         // NOLINTEND
 
     public:
@@ -69,17 +60,9 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-#ifdef LL_PLAT_S
         MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager& mgr);
-#else // LL_PLAT_C
-        MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
-#endif
 
-#ifdef LL_PLAT_S
         MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
-#else // LL_PLAT_C
-        MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager&);
-#endif
 
 
         // NOLINTEND
@@ -102,19 +85,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual void log(::LogArea const area, ::LogLevel const level, char const* message) /*override*/;
-#else // LL_PLAT_C
-    virtual void log(::LogArea const, ::LogLevel const, char const*) /*override*/;
-#endif
 
     virtual void flush() /*override*/;
 
-#ifdef LL_PLAT_S
     virtual void setEnabled(bool newState) /*override*/;
-#else // LL_PLAT_C
-    virtual void setEnabled(bool) /*override*/;
-#endif
 
     virtual bool isEnabled() const /*override*/;
 
@@ -155,19 +130,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
-#else // LL_PLAT_C
-    MCNAPI void $log(::LogArea const, ::LogLevel const, char const*);
-#endif
 
     MCNAPI void $flush();
 
-#ifdef LL_PLAT_S
     MCNAPI void $setEnabled(bool newState);
-#else // LL_PLAT_C
-    MCNAPI void $setEnabled(bool);
-#endif
 
     MCNAPI bool $isEnabled() const;
 

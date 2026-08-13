@@ -27,17 +27,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>&) /*override*/;
-#else // LL_PLAT_C
     virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void load(::std::string const&) /*override*/;
-#else // LL_PLAT_C
     virtual void load(::std::string const& valueString) /*override*/;
-#endif
 
     virtual void load(::std::map<::std::string, ::std::string>& propertyMap) /*override*/;
     // NOLINTEND
@@ -104,14 +96,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>&);
-#else // LL_PLAT_C
     MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
-#endif
 
 #ifdef LL_PLAT_S
-    MCAPI void $load(::std::string const&);
+    MCAPI void $load(::std::string const& valueString);
 #else // LL_PLAT_C
     MCFOLD void $load(::std::string const& valueString);
 #endif

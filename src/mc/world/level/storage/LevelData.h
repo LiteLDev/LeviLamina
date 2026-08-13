@@ -225,13 +225,7 @@ public:
 
     MCAPI ::GeneratorType getGenerator() const;
 
-#ifdef LL_PLAT_C
     MCAPI void getTagData(::CompoundTag const& tag);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI void getTagData(::CompoundTag const& tag);
-#endif
 
     MCAPI bool hasCloudSaveAssociation() const;
 
@@ -256,13 +250,9 @@ public:
     MCAPI void resetDefaultCheatSettingsData();
 
     MCAPI void resetSettingsForRandomSeed();
-
-    MCAPI void setBiomeOverride(::std::string const& biomeName);
 #endif
 
-#ifdef LL_PLAT_S
     MCAPI void setBiomeOverride(::std::string const& biomeName);
-#endif
 
     MCAPI void setCheatsEnabled(bool cheatsEnabled);
 
@@ -278,13 +268,7 @@ public:
 
     MCAPI void setEducationFeaturesEnabled(bool educationEnabled);
 
-#ifdef LL_PLAT_C
     MCAPI void setEducationOid(::std::string const& educationOid);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI void setEducationOid(::std::string const& educationOid);
-#endif
 
 #ifdef LL_PLAT_C
     MCAPI void setFlatWorldPreset(::FlatWorldPresetID preset);
@@ -294,13 +278,7 @@ public:
 
     MCAPI void setGameType(::GameType type);
 
-#ifdef LL_PLAT_C
     MCAPI void setGenerator(::GeneratorType version);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI void setGenerator(::GeneratorType version);
-#endif
 
     MCAPI void setIsHardcore(bool value);
 
@@ -308,13 +286,7 @@ public:
 
     MCAPI void setOverworldTimeSetting(int time);
 
-#ifdef LL_PLAT_C
     MCAPI void setSeed(::LevelSeed64 seed);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI void setSeed(::LevelSeed64 seed);
-#endif
 
     MCAPI void setServerChunkTickRange(uint newRange);
 

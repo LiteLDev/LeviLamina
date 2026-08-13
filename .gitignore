@@ -12,3 +12,5 @@ src/mc1
 *.txt
 /vsxmake2026
 /.vs
+/test/include_all_c.h
+/test/include_all_s.h

@@ -912,13 +912,9 @@ public:
         ::std::string const&   _cmdLine,
         uint                   cursorPositionUnsafe
     ) const;
-
-    MCAPI ::std::string getCommandName(::std::string const& commandLine) const;
 #endif
 
-#ifdef LL_PLAT_S
     MCAPI ::std::string getCommandName(::std::string const& commandLine) const;
-#endif
 
     MCAPI ::CommandSyntaxInformation
     getCommandOverloadSyntaxInformation(::CommandOrigin const& origin, ::std::string const& commandName) const;

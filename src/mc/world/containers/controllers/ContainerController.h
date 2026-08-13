@@ -31,35 +31,15 @@ public:
     // NOLINTBEGIN
     virtual ~ContainerController() = default;
 
-#ifdef LL_PLAT_S
-    virtual ::ItemInstance const& getRecipeItem(int) const;
-#else // LL_PLAT_C
     virtual ::ItemInstance const& getRecipeItem(int slot) const;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual bool canRemove(int, int) const;
-#else // LL_PLAT_C
     virtual bool canRemove(int slot, int removeCount) const;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual bool isItemAllowed(::ItemStackBase const&) const;
-#else // LL_PLAT_C
     virtual bool isItemAllowed(::ItemStackBase const& item) const;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const&) const;
-#else // LL_PLAT_C
     virtual bool isItemFiltered(::Recipes const& recipes, ::ItemStackBase const& item) const;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual int getBackgroundStyle(int, bool) const;
-#else // LL_PLAT_C
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const;
-#endif
 
 #ifdef LL_PLAT_S
     virtual ::ItemSetType
@@ -149,31 +129,23 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI ::ItemInstance const& $getRecipeItem(int) const;
+    MCAPI ::ItemInstance const& $getRecipeItem(int slot) const;
 #else // LL_PLAT_C
     MCFOLD ::ItemInstance const& $getRecipeItem(int slot) const;
 #endif
 
-#ifdef LL_PLAT_S
-    MCAPI bool $canRemove(int, int) const;
-#else // LL_PLAT_C
     MCAPI bool $canRemove(int slot, int removeCount) const;
-#endif
 
 #ifdef LL_PLAT_S
-    MCAPI bool $isItemAllowed(::ItemStackBase const&) const;
+    MCAPI bool $isItemAllowed(::ItemStackBase const& item) const;
 #else // LL_PLAT_C
     MCFOLD bool $isItemAllowed(::ItemStackBase const& item) const;
 #endif
 
-#ifdef LL_PLAT_S
-    MCAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const&) const;
-#else // LL_PLAT_C
     MCAPI bool $isItemFiltered(::Recipes const& recipes, ::ItemStackBase const& item) const;
-#endif
 
 #ifdef LL_PLAT_S
-    MCAPI int $getBackgroundStyle(int, bool) const;
+    MCAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
 #else // LL_PLAT_C
     MCFOLD int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
 #endif

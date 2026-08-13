@@ -169,7 +169,7 @@ public:
 
     MCAPI void addShapedRecipe(
         ::std::string                         recipeId,
-        ::ItemInstance const&                 result,
+        ::std::vector<::ItemInstance> const&  result,
         ::std::vector<::std::string> const&   rows,
         ::std::vector<::Recipes::Type> const& types,
         ::std::vector<::HashedString> const&  tags,
@@ -194,7 +194,7 @@ public:
 
     MCAPI void addShapedRecipe(
         ::std::string                         recipeId,
-        ::std::vector<::ItemInstance> const&  result,
+        ::ItemInstance const&                 result,
         ::std::vector<::std::string> const&   rows,
         ::std::vector<::Recipes::Type> const& types,
         ::std::vector<::HashedString> const&  tags,

@@ -160,6 +160,7 @@ public:
 
 #ifdef LL_PLAT_S
     MCAPI explicit ActorDefinition(::std::string const& id);
+#endif
 
     MCAPI ::ActorDefinitionParseStatus parse(
         ::ActorDocumentDataParams    deserializeDataParams,
@@ -168,39 +169,17 @@ public:
         ::Experiments const&         experiments,
         ::LogArea                    logArea
     );
-#endif
 
-#ifdef LL_PLAT_C
-    MCAPI ::ActorDefinitionParseStatus parse(
-        ::ActorDocumentDataParams    deserializeDataParams,
-        ::ActorDefinitionDescriptor& desc,
-        ::ActorFactory&              actorFactory,
-        ::Experiments const&         experiments,
-        ::LogArea                    logArea
-    );
-#endif
-
-#ifdef LL_PLAT_S
     MCAPI bool parseEntityDescription(
         ::cereal::DynamicValue const& description,
         ::SemVersion const&           formatVersion,
         ::PackLoadContext const&      packLoadContext
     );
-#endif
-
-#ifdef LL_PLAT_C
-    MCAPI bool parseEntityDescription(
-        ::cereal::DynamicValue const& description,
-        ::SemVersion const&           formatVersion,
-        ::PackLoadContext const&      packLoadContext
-    );
-#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI static void parseEvents(
         ::std::unordered_map<::std::string, ::ActorDefinitionEvent>& eventHandlers,
         ::cereal::DynamicValue const&                                root,
@@ -210,19 +189,6 @@ public:
         ::Experiments const&                                         experiments,
         ::JsonBetaState                                              useBetaFeatures
     );
-#endif
-
-#ifdef LL_PLAT_C
-    MCAPI static void parseEvents(
-        ::std::unordered_map<::std::string, ::ActorDefinitionEvent>& eventHandlers,
-        ::cereal::DynamicValue const&                                root,
-        ::MinEngineVersion const&                                    minEngineVersion,
-        ::SemVersion const&                                          formatVersion,
-        ::ActorEventResponseFactory*                                 responseFactory,
-        ::Experiments const&                                         experiments,
-        ::JsonBetaState                                              useBetaFeatures
-    );
-#endif
     // NOLINTEND
 
 public:

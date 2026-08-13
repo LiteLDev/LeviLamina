@@ -107,13 +107,7 @@ public:
 
     MCAPI void _sendSyncWorldClockState(::PacketSender& packetSender) const;
 
-#ifdef LL_PLAT_C
     MCAPI ::WorldClock& operator=(::WorldClock const& rhs);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI ::WorldClock& operator=(::WorldClock const& rhs);
-#endif
 
 #ifdef LL_PLAT_C
     MCAPI void tick();
