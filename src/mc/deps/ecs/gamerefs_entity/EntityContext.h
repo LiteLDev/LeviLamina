@@ -65,6 +65,6 @@ public:
 public:
     // prevent constructor by default
     EntityContext& operator=(EntityContext const&);
-    EntityContext(EntityContext const&);
+    EntityContext(EntityContext const&) = default;
     EntityContext();
 };

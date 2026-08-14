@@ -88,13 +88,13 @@ public:
 #ifdef LL_PLAT_S
 public:
     // prevent constructor by default
-    RenderParams& operator=(RenderParams const&);
-    RenderParams();
+    RenderParams& operator=(RenderParams const&) = default;
+    RenderParams()                               = default;
 
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    RenderParams();
+    RenderParams() = default;
 
 #endif
 public:

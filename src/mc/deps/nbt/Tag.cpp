@@ -24,3 +24,5 @@ std::string Tag::toSnbt(SnbtFormat snbtFormat, uchar indent) const noexcept {
 std::string CompoundTagVariant::toSnbt(SnbtFormat snbtFormat, uchar indent) const noexcept {
     return std::visit([&](auto& v) { return ll::nbt::detail::TypedToSnbt(v, indent, snbtFormat); }, mTagStorage);
 }
+
+bool Tag::equals(Tag const& rhs) const { return getId() == rhs.getId(); }

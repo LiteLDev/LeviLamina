@@ -25,8 +25,8 @@ public:
 
 public:
     // prevent constructor by default
-    CommandOutputMessage& operator=(CommandOutputMessage const&);
-    CommandOutputMessage();
+    CommandOutputMessage& operator=(CommandOutputMessage const& rhs) = default;
+    CommandOutputMessage()                                           = default;
 
 public:
     // member functions

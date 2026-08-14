@@ -73,7 +73,7 @@ public:
 public:
     // prevent constructor by default
     MolangScriptArg& operator=(MolangScriptArg const&);
-    MolangScriptArg();
+    MolangScriptArg() = default;
 
 public:
     // member functions
