@@ -53,6 +53,7 @@ inline constexpr std::uint64_t ProtocolErrorRuntimeId     = hash_utils::doHash(C
 inline constexpr std::array<std::string_view, 1> ReservedProtocolNamespaces{"levilamina"};
 
 enum class WireErrorCode : std::uint16_t {
+    None                    = 0x0000,
     MalformedControl        = 0x0101,
     InvalidState            = 0x0102,
     UnexpectedMessage       = 0x0103,
