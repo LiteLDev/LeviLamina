@@ -36,6 +36,7 @@ struct Manifest {
     std::optional<data::Version>               version{};
     std::optional<std::string>                 author{};
     std::optional<std::string>                 description{};
+    std::optional<std::string>                 protocolNamespace{};
     std::optional<SmallStringMap<std::string>> extraInfo{};
     std::optional<SmallDenseSet<Dependency>>   dependencies{};
     std::optional<SmallDenseSet<Dependency>>   optionalDependencies{};
