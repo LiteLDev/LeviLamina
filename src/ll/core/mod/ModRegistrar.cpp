@@ -30,6 +30,7 @@
 #include "ll/core/LeviLamina.h"
 #include "ll/core/mod/ModLoadPlanner.h"
 #include "ll/core/mod/NativeModManager.h"
+#include "ll/core/protocol/RuntimeIdentity.h"
 
 #include "nlohmann/json.hpp"
 
@@ -148,6 +149,10 @@ Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
         using namespace pl;
         if (manifest.type == pl_mod_manager_name) {
             return makeSuccessed();
+        }
+        if (auto protocolNamespace = protocol::detail::validateManifestProtocolNamespace(manifest);
+            !protocolNamespace) {
+            return forwardError(protocolNamespace.error());
         }
         if (std::string dirName = string_utils::u8str2str(dir.filename().u8string()); manifest.name != dirName) {
             return makeI18nStringError<"Mod name {0} do not match folder {1}">(manifest.name, dirName);
