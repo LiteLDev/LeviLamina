@@ -35,13 +35,18 @@ inline constexpr VersionRange SupportedCoreProtocolVersions{
     return nullptr;
 }
 
-// The v1 suffix versions wire-identity derivation, not the core protocol or codec schema. Changing either domain
-// changes every derived runtime ID and therefore requires an explicit wire-identity migration.
-inline constexpr char PayloadHashDomainBytes[] = "ll.protocol.payload.v1\0";
-inline constexpr char ControlHashDomainBytes[] = "ll.protocol.control.v1\0";
+// The v1 suffixes version independent wire domains, not the core protocol or codec schema. Changing a domain
+// changes its derived runtime IDs or transcript digest and therefore requires an explicit wire migration.
+inline constexpr char PayloadHashDomainBytes[]    = "ll.protocol.payload.v1\0";
+inline constexpr char ControlHashDomainBytes[]    = "ll.protocol.control.v1\0";
+inline constexpr char TranscriptHashDomainBytes[] = "ll.protocol.transcript.v1\0";
 
 inline constexpr std::string_view PayloadHashDomain{PayloadHashDomainBytes, sizeof(PayloadHashDomainBytes) - 1};
 inline constexpr std::string_view ControlHashDomain{ControlHashDomainBytes, sizeof(ControlHashDomainBytes) - 1};
+inline constexpr std::string_view TranscriptHashDomain{
+    TranscriptHashDomainBytes,
+    sizeof(TranscriptHashDomainBytes) - 1
+};
 
 inline constexpr std::uint64_t HelloRuntimeId             = hash_utils::doHash(ControlHashDomain, "hello");
 inline constexpr std::uint64_t HelloAckRuntimeId          = hash_utils::doHash(ControlHashDomain, "hello_ack");

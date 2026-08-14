@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 
 #include "ll/core/protocol/ControlCodec.h"
+#include "ll/core/protocol/Transcript.h"
 
 #include <string_view>
 
@@ -221,3 +222,44 @@ TEST(ProtocolControlCodecTest, RejectsMissingReorderedAndTrailingControlData) {
         )
     );
 }
+
+TEST(ProtocolTranscriptTest, IsDeterministicAndSensitiveToChunkBytes) {
+    detail::Hello hello{
+        header(),
+        nonce(std::byte{1}
+        ),
+        {1, 1},
+        transportLimits(),
+        {}
+    };
+    detail::Transcript first;
+    detail::Transcript second;
+    ASSERT_TRUE(first.add(detail::ControlMessage{hello}, 1));
+    ASSERT_TRUE(second.add(detail::ControlMessage{hello}, 1));
+    EXPECT_EQ(first.finish(), second.finish());
+
+    hello.header.messageSequence = 2;
+    detail::Transcript changed;
+    ASSERT_TRUE(changed.add(detail::ControlMessage{hello}, 1));
+    EXPECT_NE(first.finish(), changed.finish());
+
+    detail::Transcript excludesRuntimeMessages;
+    EXPECT_FALSE(excludesRuntimeMessages.add(
+        detail::ControlMessage{
+            detail::Ready{header(), EndpointRole::Server, {}}
+    },
+        1
+    ));
+}
+
+TEST(ProtocolTranscriptTest, OmitsOnlyNegotiationDigest) {
+    detail::NegotiationResult result{header(), 1, 1, 2, 0, 1, 0, 0, {}, {}, {}};
+    detail::Transcript        first;
+    ASSERT_TRUE(first.add(detail::ControlMessage{result}, 1));
+    result.transcriptDigest[0] = std::byte{0xFF};
+    detail::Transcript second;
+    ASSERT_TRUE(second.add(detail::ControlMessage{result}, 1));
+    EXPECT_EQ(first.finish(), second.finish());
+}
+
+} // namespace ll::protocol::test
