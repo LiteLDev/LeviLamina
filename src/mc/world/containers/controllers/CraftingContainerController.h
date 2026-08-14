@@ -40,11 +40,7 @@ public:
 
     virtual ::ItemInstance const& getRecipeItem(int slot) const = 0;
 
-#ifdef LL_PLAT_S
-    virtual void onRecipeSelected(::Recipe const*, uint64, bool);
-#else // LL_PLAT_C
     virtual void onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
-#endif
 
     virtual void clearSelectedRecipe();
 
@@ -80,11 +76,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $onRecipeSelected(::Recipe const*, uint64, bool);
-#else // LL_PLAT_C
     MCAPI void $onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
-#endif
 
     MCAPI void $clearSelectedRecipe();
 
