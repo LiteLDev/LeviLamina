@@ -33,10 +33,10 @@ bool strictlySorted(std::vector<T> const& values, Projection projection) noexcep
     return std::ranges::adjacent_find(values, std::ranges::greater_equal{}, projection) == values.end();
 }
 
-bool validFeatures(std::vector<FeatureDeclaration> const& features) noexcept {
+bool validFeatures(std::vector<WireFeatureDeclaration> const& features) noexcept {
     return features.size() <= Limits::MaxDeclaredFeatures
-        && strictlySorted(features, [](FeatureDeclaration const& value) { return value.name.value(); })
-        && std::ranges::all_of(features, [](FeatureDeclaration const& value) { return value.versions.valid(); });
+        && strictlySorted(features, [](WireFeatureDeclaration const& value) { return value.name.value(); })
+        && std::ranges::all_of(features, [](WireFeatureDeclaration const& value) { return value.versions.valid(); });
 }
 
 bool validSelectedFeatures(std::vector<SelectedFeature> const& features) noexcept {
@@ -99,7 +99,7 @@ Expected<> writeTransportLimits(Encoder& out, TransportLimits const& value) noex
     return out.writeU32(value.burstBytes);
 }
 
-Expected<> writeFeatureDeclaration(Encoder& out, FeatureDeclaration const& value) noexcept {
+Expected<> writeFeatureDeclaration(Encoder& out, WireFeatureDeclaration const& value) noexcept {
     if (!value.versions.valid()) return makeCodecError(CodecErrc::InvalidValue, "feature range");
     if (auto result = out.writeString(value.name.value(), Limits::MaxFeatureNameBytes); !result) return result;
     if (auto result = out.writeU16(value.versions.min); !result) return result;
@@ -246,7 +246,7 @@ Expected<FeatureName> readFeatureName(Decoder& in) noexcept {
     return parsed;
 }
 
-Expected<FeatureDeclaration> readFeatureDeclaration(Decoder& in) noexcept {
+Expected<WireFeatureDeclaration> readFeatureDeclaration(Decoder& in) noexcept {
     auto name = readFeatureName(in);
     if (!name) return forwardError(name.error());
     auto min = in.readU16();
@@ -257,7 +257,7 @@ Expected<FeatureDeclaration> readFeatureDeclaration(Decoder& in) noexcept {
     if (!requiredValue) return forwardError(requiredValue.error());
     VersionRange versions{*min, *max};
     if (!versions.valid()) return makeCodecError(CodecErrc::InvalidValue, "feature range");
-    return FeatureDeclaration{std::move(*name), versions, *requiredValue};
+    return WireFeatureDeclaration{std::move(*name), versions, *requiredValue};
 }
 
 Expected<SelectedFeature> readSelectedFeature(Decoder& in) noexcept {
@@ -310,7 +310,7 @@ Expected<ModuleDeclaration> readModule(Decoder& in) noexcept {
     if (!requirement) return forwardError(requirement.error());
     if (*requirement > static_cast<std::uint8_t>(ModuleRequirement::RequiredOnBoth))
         return makeCodecError(CodecErrc::InvalidValue);
-    auto features = readList<FeatureDeclaration>(in, Limits::MaxDeclaredFeatures, readFeatureDeclaration);
+    auto features = readList<WireFeatureDeclaration>(in, Limits::MaxDeclaredFeatures, readFeatureDeclaration);
     if (!features) return forwardError(features.error());
     if (!validFeatures(*features)) return makeCodecError(CodecErrc::InvalidValue, "feature ordering");
     return ModuleDeclaration{
@@ -596,7 +596,7 @@ Expected<ControlMessage> readHelloBody(Decoder& in, ControlHeader const& header)
     if (!range.valid()) return makeCodecError(CodecErrc::InvalidValue);
     auto limits = readTransportLimits(in);
     if (!limits) return forwardError(limits.error());
-    auto features = readList<FeatureDeclaration>(in, Limits::MaxDeclaredFeatures, readFeatureDeclaration);
+    auto features = readList<WireFeatureDeclaration>(in, Limits::MaxDeclaredFeatures, readFeatureDeclaration);
     if (!features) return forwardError(features.error());
     if (!validFeatures(*features)) return makeCodecError(CodecErrc::InvalidValue);
     return ControlMessage{

@@ -25,12 +25,12 @@ struct ControlHeader {
     auto operator<=>(ControlHeader const&) const = default;
 };
 
-struct FeatureDeclaration {
+struct WireFeatureDeclaration {
     FeatureName  name;
     VersionRange versions;
     bool         required{};
 
-    auto operator<=>(FeatureDeclaration const&) const = default;
+    auto operator<=>(WireFeatureDeclaration const&) const = default;
 };
 
 struct SelectedFeature {
@@ -60,11 +60,11 @@ struct SemanticVersion {
 };
 
 struct ModuleDeclaration {
-    ModuleId                        id;
-    SemanticVersion                 version;
-    VersionRange                    protocolVersions;
-    ModuleRequirement               requirement{};
-    std::vector<FeatureDeclaration> features;
+    ModuleId                            id;
+    SemanticVersion                     version;
+    VersionRange                        protocolVersions;
+    ModuleRequirement                   requirement{};
+    std::vector<WireFeatureDeclaration> features;
 
     auto operator<=>(ModuleDeclaration const&) const = default;
 };
@@ -108,11 +108,11 @@ struct PayloadResult {
 };
 
 struct Hello {
-    ControlHeader                   header;
-    Nonce                           serverNonce;
-    VersionRange                    coreProtocols;
-    TransportLimits                 limits;
-    std::vector<FeatureDeclaration> features;
+    ControlHeader                       header;
+    Nonce                               serverNonce;
+    VersionRange                        coreProtocols;
+    TransportLimits                     limits;
+    std::vector<WireFeatureDeclaration> features;
 
     auto operator<=>(Hello const&) const = default;
 };
