@@ -74,18 +74,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::std::vector<::webrtc::DataChannelStats> $GetDataChannelStats() const;
-
-    MCNAPI void $NoteDataAddedEvent();
-
-    MCNAPI void $OnSctpDataChannelStateChanged(int channel_id, ::webrtc::DataChannelInterface::DataState state);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

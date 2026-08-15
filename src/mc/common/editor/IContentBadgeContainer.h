@@ -56,12 +56,6 @@ public:
     virtual ::Bedrock::PubSub::Subscription
     onConfigChanged(::std::function<void(::Editor::DataStore::IContentBadgeContainer::Config const&)> callback) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::DataStore

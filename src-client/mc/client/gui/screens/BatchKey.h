@@ -37,8 +37,6 @@ public:
 
     MCAPI BatchKey(::BatchKey const& rha);
 
-    MCAPI BatchKey(int depth, float alpha, ::BatchClippingState const& clippingState);
-
     MCAPI bool operator==(::BatchKey const& rhs) const;
 
     MCAPI ~BatchKey();

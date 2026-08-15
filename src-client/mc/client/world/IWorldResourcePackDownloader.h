@@ -38,12 +38,6 @@ public:
     virtual ::World::PackCheckResult
     checkDlc(::std::string const& levelId, ::PackIdVersion const& packIdVersion, bool const isForRealms) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace World

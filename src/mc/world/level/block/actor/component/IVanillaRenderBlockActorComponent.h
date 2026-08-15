@@ -52,10 +52,4 @@ public:
 
     virtual void _resetAABB() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

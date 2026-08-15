@@ -80,9 +80,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const& event);
 
     MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event);
+#endif
 
 
     // NOLINTEND

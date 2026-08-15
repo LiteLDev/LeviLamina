@@ -72,10 +72,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI explicit AggregationEventListener(::Core::Path const& logFileName);
-#endif
-
 #ifdef LL_PLAT_C
     MCNAPI explicit AggregationEventListener(::Core::Path const& logFileName);
 

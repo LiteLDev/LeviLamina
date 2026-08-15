@@ -47,15 +47,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI Event(
-        uint                                                              id,
-        ::std::string const&                                              eventName,
-        ::std::unordered_map<::std::string, ::Social::Events::Property>&& commonProperties,
-        int                                                               eventTags
-    );
-#endif
-
 #ifdef LL_PLAT_C
     MCNAPI Event(
         uint                                                              id,
@@ -75,13 +66,7 @@ public:
     MCNAPI ::Json::Value measurementsAsJsonValue() const;
 
     MCNAPI ::Json::Value propertiesAsJsonValue() const;
-#endif
 
-#ifdef LL_PLAT_S
-    MCNAPI ~Event();
-#endif
-
-#ifdef LL_PLAT_C
     MCNAPI ~Event();
 #endif
     // NOLINTEND

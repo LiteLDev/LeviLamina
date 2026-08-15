@@ -39,8 +39,6 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $canAddOn(::Block const& block) const;
 
-    MCAPI ::std::optional<::Scripting::Release> $overrideEnumVersion() const;
-
 
     // NOLINTEND
 };

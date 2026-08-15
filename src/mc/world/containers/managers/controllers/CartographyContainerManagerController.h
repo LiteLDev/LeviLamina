@@ -122,6 +122,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $postInit(::std::weak_ptr<::ContainerManagerController> self);
 
     MCNAPI bool $isOutputSlot(::std::string const& collectionName) const;
@@ -166,6 +167,7 @@ public:
         ::ContainerScreenActionResult const& result,
         ::ItemStackRequestScope&             requestScope
     );
+#endif
 
 
     // NOLINTEND

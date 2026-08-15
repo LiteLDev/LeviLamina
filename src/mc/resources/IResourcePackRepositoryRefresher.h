@@ -17,10 +17,4 @@ public:
 
     virtual ::Bedrock::Threading::Async<void> reloadUserPacks() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

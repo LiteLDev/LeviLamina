@@ -51,27 +51,12 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI ScriptInternalPlayerServiceContext(::Editor::ScriptModule::ScriptInternalPlayerServiceContext const&);
-#endif
 
-#ifdef LL_PLAT_S
     MCNAPI ScriptInternalPlayerServiceContext(
         ::Editor::ServiceProviderCollection&  playerServices,
         ::Scripting::WeakLifetimeScope const& scope
     );
-#endif
 
-#ifdef LL_PLAT_C
-    MCNAPI ScriptInternalPlayerServiceContext(
-        ::Editor::ServiceProviderCollection&  playerServices,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
-#endif
-
-#ifdef LL_PLAT_S
-    MCNAPI ~ScriptInternalPlayerServiceContext();
-#endif
-
-#ifdef LL_PLAT_C
     MCNAPI ~ScriptInternalPlayerServiceContext();
 #endif
     // NOLINTEND

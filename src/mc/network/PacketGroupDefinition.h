@@ -63,10 +63,4 @@ public:
                                                                          mPacketGroups;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPacketLimitAlgorithm>> mDefaultAlgorithm;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PacketGroupDefinition();
-    // NOLINTEND
 };

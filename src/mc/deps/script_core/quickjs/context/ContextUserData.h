@@ -53,8 +53,6 @@ public:
     );
 
     MCNAPI void resetParseContextUntilVariant(bool removeVariant);
-
-    MCNAPI ~ContextUserData();
     // NOLINTEND
 };
 

@@ -17,10 +17,4 @@ public:
     // NOLINTBEGIN
     virtual ::HandlerResult handleEvent(::ClientInstanceGameplayEvent<void> const&) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

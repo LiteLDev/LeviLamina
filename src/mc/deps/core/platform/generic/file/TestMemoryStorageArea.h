@@ -48,30 +48,6 @@ public:
 
     virtual ::Core::Result _commit() /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::Core::FileSystemImpl> $createTransaction(::Core::FileAccessType);
-
-    MCNAPI bool $supportsSizeQuery() const;
-
-    MCNAPI ::Core::Result $getUsedSize(uint64&);
-
-    MCNAPI uint64 $getTotalSize() const;
-
-    MCNAPI bool $supportsExtendSize() const;
-
-    MCNAPI bool $canExtendSize() const;
-
-    MCNAPI void $preemptiveExtendSize(uint64 const, ::std::function<void()>, ::std::function<void()>);
-
-    MCNAPI uint64 $getTransactionWriteSizeLimit() const;
-
-    MCNAPI ::Core::Result $_commit();
-
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock

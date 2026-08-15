@@ -11,10 +11,4 @@ public:
     // NOLINTBEGIN
     virtual void NextPendingCallbackScheduled(::XTaskQueuePort, uint64, uint64);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $NextPendingCallbackScheduled(::XTaskQueuePort, uint64, uint64);
-    // NOLINTEND
 };

@@ -43,12 +43,6 @@ public:
             ::Json::Value const&                     sessionSummary
         ) = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:

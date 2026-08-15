@@ -78,8 +78,6 @@ public:
 
     MCAPI ::std::string $getTTSProgressMessage() const;
 
-    MCAPI ::std::string $getTitleText() const;
-
     MCFOLD ::ProgressAnimation $showLoadingBar() const;
     // NOLINTEND
 };

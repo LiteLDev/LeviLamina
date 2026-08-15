@@ -23,7 +23,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const;
+#endif
 
 
     // NOLINTEND

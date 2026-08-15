@@ -30,14 +30,6 @@ public:
     // NOLINTBEGIN
     virtual ::Core::Result _write(void const*, uint64) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::Core::Result $_write(void const*, uint64);
-
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock

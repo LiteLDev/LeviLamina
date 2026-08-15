@@ -30,31 +30,4 @@ public:
     FilterParamDefinition& operator=(FilterParamDefinition const&);
     FilterParamDefinition(FilterParamDefinition const&);
     FilterParamDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI FilterParamDefinition(
-        ::FilterParamType        type,
-        ::FilterParamRequirement requirement,
-        ::std::string            description,
-        ::FilterInput            def,
-        ::FilterStringMap        stringMap
-    );
-
-    MCNAPI FilterParamDefinition(
-        ::FilterParamType        type,
-        ::FilterParamRequirement requirement,
-        ::std::string            description,
-        ::FilterParamOption      opt,
-        ::FilterInput            def,
-        ::FilterStringMap        stringMap
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

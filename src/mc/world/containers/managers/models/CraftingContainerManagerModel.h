@@ -135,41 +135,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
-#else // LL_PLAT_C
+#ifdef LL_PLAT_C
     MCFOLD ::std::vector<::ItemStack> $getItemCopies() const;
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void $setSlot(int, ::ItemStack const&, bool);
-#else // LL_PLAT_C
     MCFOLD void $setSlot(int, ::ItemStack const&, bool);
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI ::ItemStack const& $getSlot(int) const;
-#else // LL_PLAT_C
     MCFOLD ::ItemStack const& $getSlot(int) const;
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void $setData(int, int);
-#else // LL_PLAT_C
     MCFOLD void $setData(int, int);
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void $broadcastChanges();
-#else // LL_PLAT_C
     MCFOLD void $broadcastChanges();
-#endif
 
     MCAPI bool $isValid(float pickRange);
 
     MCAPI bool $tick();
 
     MCAPI ::ContainerScreenContext $_postInit();
+#endif
 
 
     // NOLINTEND

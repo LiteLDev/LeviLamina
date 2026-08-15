@@ -20,12 +20,6 @@ public:
 
     virtual void removePacks(::std::vector<::gsl::not_null<::Pack const*>> const& packs) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace PackCommand

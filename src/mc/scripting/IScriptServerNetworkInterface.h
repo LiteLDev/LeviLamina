@@ -37,10 +37,4 @@ public:
     virtual ::Scripting::Result<void, ::Scripting::EngineError>
     savePlayerPermission(::Player const& player, ::PlayerPermissionLevel permission) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

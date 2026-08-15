@@ -31,10 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI PackIdVersion(::PackIdVersion const&);
-#endif
-
     MCAPI PackIdVersion(::mce::UUID const& id, ::SemVersion const& version, ::PackType packType);
 
     MCAPI ::std::string asString() const;

@@ -36,16 +36,6 @@ public:
 
     virtual ~SSNTSNResetRequestParameter() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $SerializeTo(::std::vector<uchar>&) const;
-
-    MCNAPI ::std::string $ToString() const;
-
-
-    // NOLINTEND
 };
 
 } // namespace dcsctp

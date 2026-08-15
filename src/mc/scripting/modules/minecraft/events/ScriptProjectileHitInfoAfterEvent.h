@@ -38,18 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptProjectileHitInfoAfterEvent(
-        ::ProjectileHitEvent const&           projectileHitEvent,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
-
     MCAPI ~ScriptProjectileHitInfoAfterEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

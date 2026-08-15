@@ -35,8 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AddVolumeEntityPacketPayload(::AddVolumeEntityPacketPayload const& other);
-
     MCAPI AddVolumeEntityPacketPayload(
         ::EntityContext const&    entity,
         ::CompoundTag             components,

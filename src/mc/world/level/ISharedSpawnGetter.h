@@ -15,10 +15,4 @@ public:
 
     virtual ::BlockPos const& getSharedSpawnPosition() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

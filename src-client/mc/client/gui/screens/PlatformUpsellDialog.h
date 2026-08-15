@@ -15,10 +15,4 @@ public:
 
     virtual void show(::std::shared_ptr<::Social::User> const user, ::std::function<void(bool)> callback) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

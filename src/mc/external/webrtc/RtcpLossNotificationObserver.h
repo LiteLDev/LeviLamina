@@ -12,12 +12,6 @@ public:
 
     virtual void OnReceivedLossNotification(uint, ushort, ushort, bool) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

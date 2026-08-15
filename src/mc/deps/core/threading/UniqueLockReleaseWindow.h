@@ -24,12 +24,6 @@ public:
     UniqueLockReleaseWindow& operator=(UniqueLockReleaseWindow const&);
     UniqueLockReleaseWindow(UniqueLockReleaseWindow const&);
     UniqueLockReleaseWindow();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~UniqueLockReleaseWindow();
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Threading

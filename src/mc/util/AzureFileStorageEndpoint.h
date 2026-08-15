@@ -44,21 +44,4 @@ public:
     virtual void
     downloadSingleFile(::Core::Path const&, ::AzureFileDownloader&, ::std::function<void(::DownloaderResult)>) const;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::Bedrock::Http::Request $makeListFilesRequest(::Core::Path const&) const;
-
-    MCNAPI void $sendListFilesRequest(
-        ::Bedrock::Http::Request&,
-        ::TaskGroup&,
-        ::std::function<void(::Bedrock::Http::Response const&, ::std::string const&)>
-    ) const;
-
-    MCNAPI void
-    $downloadSingleFile(::Core::Path const&, ::AzureFileDownloader&, ::std::function<void(::DownloaderResult)>) const;
-
-
-    // NOLINTEND
 };

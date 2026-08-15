@@ -37,12 +37,6 @@ public:
 
         virtual bool tick() = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     class OneshotStage : public ::TickingQueue::Stage {
@@ -64,16 +58,6 @@ public:
         virtual void init() /*override*/;
 
         virtual bool tick() /*override*/;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI void $init();
-
-        MCNAPI bool $tick();
-
-
         // NOLINTEND
     };
 
@@ -98,16 +82,6 @@ public:
 
         virtual bool tick() /*override*/;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI void $init();
-
-        MCNAPI bool $tick();
-
-
-        // NOLINTEND
     };
 
     class SleepStage : public ::TickingQueue::Stage {
@@ -129,16 +103,6 @@ public:
         virtual void init() /*override*/;
 
         virtual bool tick() /*override*/;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI void $init();
-
-        MCNAPI bool $tick();
-
-
         // NOLINTEND
     };
 
@@ -163,16 +127,6 @@ public:
 
         virtual bool tick() /*override*/;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI void $init();
-
-        MCNAPI bool $tick();
-
-
-        // NOLINTEND
     };
 
     class WaitForSignalStage : public ::TickingQueue::Stage {
@@ -194,16 +148,6 @@ public:
         virtual void init() /*override*/;
 
         virtual bool tick() /*override*/;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI void $init();
-
-        MCNAPI bool $tick();
-
-
         // NOLINTEND
     };
 

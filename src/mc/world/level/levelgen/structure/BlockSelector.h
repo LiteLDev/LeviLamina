@@ -16,10 +16,4 @@ public:
 
     virtual ::Block const& next(::Random&, int, int, int, bool) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

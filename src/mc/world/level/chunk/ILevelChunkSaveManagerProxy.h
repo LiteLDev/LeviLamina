@@ -45,10 +45,4 @@ public:
 
     virtual void startLeaveGame() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

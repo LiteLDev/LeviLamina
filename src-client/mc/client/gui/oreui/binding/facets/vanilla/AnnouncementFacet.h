@@ -49,21 +49,6 @@ public:
     public:
         // prevent constructor by default
         FacetMessage();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI FacetMessage(
-            ::MessageData const&                                       message,
-            ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     struct FacetMessageList {

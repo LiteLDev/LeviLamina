@@ -19,10 +19,4 @@ public:
         ::std::unordered_map<::std::string, ::std::string> const& additionalProperties
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

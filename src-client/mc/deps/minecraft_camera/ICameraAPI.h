@@ -92,10 +92,4 @@ public:
 
     virtual bool isAlive(::WeakRef<::EntityContext> const actorRef) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

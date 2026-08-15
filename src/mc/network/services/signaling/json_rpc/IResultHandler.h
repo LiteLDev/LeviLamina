@@ -23,12 +23,6 @@ public:
     virtual void
     call(::Bedrock::Result<::Json::Value, ::JsonRpc::JsonRpcError>&& value, ::cereal::ReflectionCtx& cerealContext) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace JsonRpc

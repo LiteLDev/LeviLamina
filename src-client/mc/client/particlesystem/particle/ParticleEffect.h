@@ -65,8 +65,6 @@ public:
     );
 
     MCAPI bool isManualEmitter() const;
-
-    MCAPI ~ParticleEffect();
     // NOLINTEND
 
 public:

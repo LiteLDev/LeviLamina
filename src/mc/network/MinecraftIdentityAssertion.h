@@ -55,9 +55,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI ::std::optional<::std::string> $createAssertion(::std::string const& fingerprints);
 
     MCNAPI ::std::string_view $idpDomain() const;
+#endif
 
 
     // NOLINTEND

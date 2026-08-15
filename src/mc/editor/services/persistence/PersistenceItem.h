@@ -36,26 +36,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PersistenceItem(
-        ::std::string const&                     key,
-        ::Core::PathBuffer<::std::string> const& path,
-        bool const                               replication,
-        ::cereal::ReflectionCtx&                 ctx
-    );
-
     MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _getFilePath();
 
     MCNAPI ::std::string const& fetchItemPayload();
 
     MCNAPI void save();
-
-    MCNAPI ~PersistenceItem();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

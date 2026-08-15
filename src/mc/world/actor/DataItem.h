@@ -23,10 +23,4 @@ public:
 
     virtual ::std::unique_ptr<::DataItem> clone() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

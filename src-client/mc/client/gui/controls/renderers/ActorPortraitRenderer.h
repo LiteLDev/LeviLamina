@@ -60,20 +60,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _prependTransform(
-        ::Matrix&                            mat,
-        ::glm::vec2 const&                   ownerPos,
-        ::glm::vec2 const&                   ownerScale,
-        int                                  ownerLayer,
-        float                                invScale,
-        ::ActorPortraitRenderer::Args const& args,
-        ::Mob const&                         mob
-    ) const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;

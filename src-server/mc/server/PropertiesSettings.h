@@ -134,16 +134,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mConvertWorldToEditorProject;
     ::ll::TypedStorage<4, 4, ::ServerEditorConnectionPolicy>                      mEditorConnectionPolicy;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PropertiesSettings();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -161,6 +161,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
 
     MCNAPI void $onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
@@ -213,6 +214,7 @@ public:
 
     MCNAPI ::Bedrock::PubSub::Subscription
     $subscribeToOnCompositionsReloadedAsync(::std::function<void()>&& onCompositionsReloadedAsyncCallback);
+#endif
 
 
     // NOLINTEND

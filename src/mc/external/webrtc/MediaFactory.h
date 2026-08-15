@@ -24,12 +24,6 @@ public:
     virtual ::std::unique_ptr<::webrtc::MediaEngineInterface>
     CreateMediaEngine(::webrtc::Environment const&, ::webrtc::PeerConnectionFactoryDependencies&) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

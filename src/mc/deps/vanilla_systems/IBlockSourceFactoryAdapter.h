@@ -17,12 +17,6 @@ public:
 
     virtual ::std::unique_ptr<::VanillaSystems::IOwnedConstBlockSource> createBlockSource() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace VanillaSystems

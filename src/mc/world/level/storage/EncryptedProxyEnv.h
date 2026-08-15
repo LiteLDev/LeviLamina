@@ -41,23 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI EncryptedProxyEnv(
-        ::leveldb::Env*          env,
-        ::ContentIdentity const& contentIdentity,
-        ::std::string const&     contentKey,
-        ::EncryptedProxyReadMode mode
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::leveldb::Status $NewSequentialFile(::std::string const& f, ::leveldb::SequentialFile** r);

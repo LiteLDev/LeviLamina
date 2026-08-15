@@ -62,12 +62,6 @@ public:
     MCNAPI static ::std::vector<int>
     SplitAboutEqually(int payload_len, ::webrtc::RtpPacketizer::PayloadSizeLimits const& limits);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

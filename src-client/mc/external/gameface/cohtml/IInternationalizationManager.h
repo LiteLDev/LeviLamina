@@ -38,20 +38,6 @@ public:
         ::cohtml::IInternationalizationManager::TextDirectionResult* result
     ) const;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::cohtml::i18n::IBreakIterator* $CreateBreakIterator(::cohtml::i18n::BreakIteratorBoundary type);
-
-    MCNAPI ::cohtml::i18n::TextDirection $ComputeBaseDirection(char const* utfBuffer, uint size) const;
-
-    MCNAPI ::cohtml::i18n::TextDirection $ComputeTextDirection(
-        char const*                                                  utfBuffer,
-        uint                                                         size,
-        ::cohtml::IInternationalizationManager::TextDirectionResult* result
-    ) const;
-    // NOLINTEND
 };
 
 } // namespace cohtml

@@ -30,14 +30,6 @@ public:
 
     virtual uint getSize() /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void* $more(uint);
-
-    MCAPI uint $getSize();
-    // NOLINTEND
 };
 
 } // namespace bx

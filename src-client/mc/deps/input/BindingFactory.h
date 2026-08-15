@@ -33,10 +33,4 @@ public:
 
     virtual ::std::vector<uint> getCustomAreaBindingNames() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

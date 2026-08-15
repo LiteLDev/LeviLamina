@@ -28,17 +28,4 @@ public:
     virtual ::std::pair<::std::string, ::std::vector<::std::string>>
     _getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
-
-    MCAPI ::ActorType $getEntityType() const;
-
-    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
-    $_getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const;
-
-
-    // NOLINTEND
 };

@@ -110,12 +110,6 @@ public:
     virtual bool
     isBlockTypeInSelectionList(::Block const& block, ::std::vector<::std::string> const& allowList) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::BlockUtils

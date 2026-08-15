@@ -29,17 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI BindingInfo(
-        ::std::string                  label,
-        bool                           canRebind,
-        ::std::optional<::std::string> tooltip,
-        ::std::optional<::std::string> actionId,
-        ::std::optional<::std::string> bindingCategory,
-        ::std::optional<int>           bindingPriority
-    );
-#endif
-
     MCNAPI ::Editor::Input::BindingInfo& operator=(::Editor::Input::BindingInfo const&);
 
     MCNAPI ~BindingInfo();
@@ -49,12 +38,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

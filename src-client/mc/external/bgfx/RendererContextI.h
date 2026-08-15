@@ -230,8 +230,6 @@ public:
     MCFOLD void
     $wrapExternalTexture(::bgfx::TextureHandle _handle, ::bgfx::RendererType::Enum _type, void* _texturePtr, void* ref);
 
-    MCAPI void $destroyShaderBuffer(::bgfx::ShaderBufferHandle _handle);
-
     MCFOLD void $schedulePreBlasSkinningDispatch(
         ::bgfx::VertexBufferHandle _preSkinVBHandle,
         uint                       _preSkinVertOffset,

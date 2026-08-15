@@ -79,12 +79,6 @@ public:
 
     virtual void pop() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace cereal

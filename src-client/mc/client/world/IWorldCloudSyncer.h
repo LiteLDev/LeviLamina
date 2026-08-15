@@ -31,12 +31,6 @@ public:
     virtual void
     setCloudSaved(::World::WorldID const&, bool, ::std::function<void(::World::WorldCloudSyncResult)> const&) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace World

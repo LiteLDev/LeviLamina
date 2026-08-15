@@ -42,10 +42,4 @@ public:
         ::std::vector<::std::shared_ptr<::ContainerValidationCommitObject>>& objectList
     );
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

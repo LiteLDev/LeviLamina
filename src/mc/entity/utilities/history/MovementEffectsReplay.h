@@ -41,11 +41,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $advanceFrame(::EntityContext& entity) const;
 
     MCNAPI void $advanceLiveFrame(::Actor& actor, ::std::optional<uint64>);
 
     MCNAPI ::std::bitset<2> $getCorrectionTypeBitset() const;
+#endif
 
 
     // NOLINTEND

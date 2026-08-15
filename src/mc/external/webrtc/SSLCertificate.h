@@ -36,12 +36,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::webrtc::SSLCertificateStats> GetStats() const;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -27,16 +27,6 @@ public:
 
     virtual bool isComplete() const;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI bool $isAsync() const;
-
-    MCAPI bool $isComplete() const;
-
-
-    // NOLINTEND
 };
 
 } // namespace PositionTrackingDB

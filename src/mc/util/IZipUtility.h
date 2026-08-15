@@ -76,12 +76,6 @@ public:
         ::Core::ZipUtils::UnzipSettings const& unzipSettings
     ) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Core::ZipUtils

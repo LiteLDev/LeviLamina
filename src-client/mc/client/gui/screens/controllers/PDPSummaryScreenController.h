@@ -30,10 +30,4 @@ public:
     // NOLINTBEGIN
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-    // NOLINTEND
 };

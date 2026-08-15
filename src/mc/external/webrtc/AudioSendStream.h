@@ -157,12 +157,6 @@ public:
 
     virtual ::webrtc::AudioSendStream::Stats GetStats(bool) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

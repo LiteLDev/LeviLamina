@@ -32,12 +32,6 @@ public:
     virtual void
     bind(::Scripting::ModuleBindingBuilder& modulebindingBuilder, ::entt::meta_any& classBindingAny) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

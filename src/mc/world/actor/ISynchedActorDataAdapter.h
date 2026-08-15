@@ -21,10 +21,4 @@ public:
     virtual ::SynchedActorDataSerializer::DeserializeResult
     deserialize(::DataItem const& from, ::SynchedActorDataSerializer::DeserializeArgs& args) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

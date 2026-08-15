@@ -49,10 +49,4 @@ public:
 
     MCAPI static ::std::add_lvalue_reference_t<char const[20]> SATURATION_MODIFIER();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -31,12 +31,4 @@ public:
 
     virtual void applyTo(::LevelData&) const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $applyTo(::LevelData&) const;
-
-
-    // NOLINTEND
 };

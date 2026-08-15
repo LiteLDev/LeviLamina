@@ -25,12 +25,6 @@ public:
         bool                                 isRenderingUI
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace GeometryAtlas::details

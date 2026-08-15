@@ -44,10 +44,4 @@ public:
 
     virtual ::std::shared_ptr<::UIControl> getControlWithName(::std::string const& name) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

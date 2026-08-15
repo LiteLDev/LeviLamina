@@ -21,12 +21,6 @@ public:
 
     virtual void SetTarget(void* target) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace cohtml

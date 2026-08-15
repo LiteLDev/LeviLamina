@@ -12,10 +12,4 @@ public:
 
     virtual double calculateDeltaTimeAndReset() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

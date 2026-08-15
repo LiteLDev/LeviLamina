@@ -248,12 +248,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Core::FileSystem& get();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Core

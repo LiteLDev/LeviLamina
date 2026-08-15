@@ -37,20 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptStat(
-        ::std::string                                name,
-        ::std::variant<int64, ::std::string>         value,
-        ::std::optional<::ScriptStat::Type>          type,
-        ::std::optional<::std::vector<::ScriptStat>> children
-    );
-
-    MCNAPI ScriptStat(
-        ::std::string                                                        name,
-        ::std::optional<::std::vector<::std::variant<int64, ::std::string>>> values,
-        ::std::optional<::ScriptStat::Type>                                  type,
-        ::std::optional<::std::vector<::ScriptStat>>                         children
-    );
-
     MCNAPI ::ScriptStat& addChild(::ScriptStat&& child);
 
     MCNAPI ::ScriptStat& operator=(::ScriptStat const&);
@@ -60,12 +46,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

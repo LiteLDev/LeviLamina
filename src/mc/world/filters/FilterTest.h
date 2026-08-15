@@ -94,8 +94,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
-
     MCNAPI void $finalizeParsedValue(::IWorldRegistriesProvider& registries);
 
     MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getDomain() const;

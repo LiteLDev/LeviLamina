@@ -44,10 +44,4 @@ public:
 
     virtual ::std::shared_ptr<::LevelChunk> getAvailableChunk(::ChunkPos const& cp) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

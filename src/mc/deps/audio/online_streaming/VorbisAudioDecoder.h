@@ -112,6 +112,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI ::Bedrock::Result<void> $initialize();
 
     MCNAPI ::Bedrock::Result<::gsl::span<float>> $decodeInto(::Audio::AudioFrameBuffer& outputBuffer);
@@ -131,6 +132,7 @@ public:
     MCNAPI uint64 $getFileReadPosition() const;
 
     MCNAPI uint64 $getSafeConsumePosition() const;
+#endif
 
 
     // NOLINTEND

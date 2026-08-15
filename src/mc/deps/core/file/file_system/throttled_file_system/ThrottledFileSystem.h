@@ -98,63 +98,6 @@ public:
 
     virtual void _initializeInternal() /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::Core::Result
-    $_openFile(::std::unique_ptr<::Core::FileImpl>&, ::Core::PathView, ::Core::FileOpenMode, ::Core::FileBufferingMode);
-
-    MCNAPI bool $_fileExists(::Core::PathView);
-
-    MCNAPI ::Core::Result $_deleteFile(::Core::PathView);
-
-    MCNAPI ::Core::Result $_getFileSize(::Core::PathView, uint64*);
-
-    MCNAPI ::Core::Result $_renameFile(::Core::PathView, ::Core::PathView);
-
-    MCNAPI ::Core::Result $_createEmptyFile(::Core::PathView fileName);
-
-    MCNAPI ::Core::Result $_createOneDirectory(::Core::PathView);
-
-    MCNAPI ::Core::Result $_createDirectoryRecursively(::Core::PathView directoryPath);
-
-    MCNAPI bool $_directoryExists(::Core::PathView);
-
-    MCNAPI ::Core::Result $_deleteEmptyDirectory(::Core::PathView);
-
-    MCNAPI ::Core::Result $_renameDirectory(::Core::PathView, ::Core::PathView);
-
-    MCNAPI ::Core::Result $_iterateOverDirectory(
-        ::Core::PathView,
-        ::Core::DirectoryIterationFlags,
-        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
-    );
-
-    MCNAPI bool $_fileOrDirectoryExists(::Core::PathView);
-
-    MCNAPI ::Core::Result $_getEntryType(::Core::PathView, ::Core::FileType&);
-
-    MCNAPI ::Core::Result $_getLastModificationTime(::Core::PathView, int64*);
-
-    MCNAPI ::Core::Result $_copyTimeAndAccessRights(::Core::PathView, ::Core::PathView);
-
-    MCNAPI ::Core::Result $_addIgnoredThrottlePath(::Core::PathView);
-
-    MCNAPI ::Core::Result $_removeIgnoredThrottlePath(::Core::PathView);
-
-    MCNAPI ::Core::Result $_endTransaction();
-
-    MCNAPI bool $shouldCommit();
-
-    MCNAPI ::Core::CrossStorageCopyMode $getCrossStorageCopyMode();
-
-    MCNAPI ::Core::Result $_deleteFilePriority(::Core::PathView filePath);
-
-    MCNAPI void $_initializeInternal();
-
-
-    // NOLINTEND
 };
 
 } // namespace Core

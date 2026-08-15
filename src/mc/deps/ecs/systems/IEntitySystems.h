@@ -33,10 +33,4 @@ public:
 
     virtual void tickMovementCorrectionReplay(::EntityRegistry& registry) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

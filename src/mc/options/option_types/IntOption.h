@@ -116,9 +116,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
 
     MCAPI void $load(::std::string const& valueString);
+#endif
 
 
     // NOLINTEND

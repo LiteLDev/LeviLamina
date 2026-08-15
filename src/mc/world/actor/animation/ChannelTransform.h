@@ -30,19 +30,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChannelTransform(::ExpressionNode const& expression, int axisIndex);
-
     MCAPI void animate(
         ::RenderParams&     renderParams,
         ::BoneOrientation&  destBoneOrientation,
         float               scale,
         ::BoneTransformType boneTransformType
     ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

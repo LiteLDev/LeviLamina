@@ -45,12 +45,6 @@ public:
 
     virtual void SetTransportOverhead(::webrtc::DataSize overhead_per_packet) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

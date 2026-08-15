@@ -22,10 +22,4 @@ public:
 
     virtual ::Bedrock::PubSub::Connector<void(::Actor&)>& getRegisterOnRemoveActorEntityReferenceConnector() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

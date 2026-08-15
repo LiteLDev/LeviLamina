@@ -35,16 +35,6 @@ public:
     ScriptNamespaceNameError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptNamespaceNameError(
-        ::std::string const&                                      name,
-        ::std::string const&                                      message,
-        ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
@@ -53,12 +43,6 @@ public:
 
     MCAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::EngineError>
     validate(::std::string const& name, bool allowMinecraftNamespace, bool allowMultipleNamespaces);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

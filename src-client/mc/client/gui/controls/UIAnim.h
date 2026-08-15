@@ -68,19 +68,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UIAnim(::ui::AnimationType animType, ::UIResolvedDef const& def);
-
     MCAPI bool _hasEndEventId(uint id, ::std::set<void const*>& otherAnimations) const;
 
     MCAPI bool _hasPlayEventId(uint playEventId, ::std::set<void const*>& otherAnimations) const;
 
     MCAPI void destroy();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

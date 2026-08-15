@@ -71,12 +71,6 @@ public:
         ::std::function<void(::Editor::Network::INetworkPayload const&)> fnSubscriber
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Network

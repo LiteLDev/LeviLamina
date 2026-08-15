@@ -39,10 +39,4 @@ public:
 
     virtual void taskComplete(::gsl::not_null<::BackgroundTaskBase*> task) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

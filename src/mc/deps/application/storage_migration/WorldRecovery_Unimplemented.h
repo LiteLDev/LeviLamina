@@ -36,6 +36,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $initialize();
 
     MCNAPI ::std::tuple<
@@ -48,6 +49,7 @@ public:
         );
 
     MCNAPI ::Core::PathBuffer<::std::string> const& $getRecoveryDestinationPath() const;
+#endif
 
 
     // NOLINTEND

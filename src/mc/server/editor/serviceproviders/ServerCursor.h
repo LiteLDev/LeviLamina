@@ -46,8 +46,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $setCursorState(::Editor::Cursor::CursorState&& state);
 
-    MCNAPI ::Scripting::Result_deprecated<::BlockPos> $moveCursor(::glm::ivec3 const& offset);
-
 
     // NOLINTEND
 };

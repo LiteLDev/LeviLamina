@@ -12,10 +12,4 @@ public:
 
     virtual void fireEventReceivedUniqueLauncherSessionId(::std::string const& launcherSessionId) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -31,14 +31,4 @@ public:
 
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI bool $applies(::Random&, ::LootTableContext&);
-
-    MCNAPI ::LootItemCondition::ConditionType $getConditionType() const;
-
-
-    // NOLINTEND
 };

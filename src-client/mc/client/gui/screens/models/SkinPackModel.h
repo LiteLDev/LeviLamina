@@ -47,13 +47,6 @@ public:
         ::IEntitlement const*  entitlement
     );
 
-    MCAPI SkinPackModel(
-        ::PackManifest const& manifest,
-        ::PersonaClient&      skinRepoInterface,
-        ::IEntitlement const* entitlement,
-        bool                  isOfflineLoaded
-    );
-
     MCAPI ::std::string const& getSkinName(int skinIndex) const;
     // NOLINTEND
 

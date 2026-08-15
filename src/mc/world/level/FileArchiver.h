@@ -269,12 +269,6 @@ public:
             ::std::optional<::FileArchiver::WorldConverterExportSettings> const        exportSetting
         ) = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     struct InterventionPublishers {

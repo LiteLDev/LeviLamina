@@ -124,25 +124,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TickingArea(
-        ::Dimension&          dimension,
-        ::mce::UUID           uniqueId,
-        ::std::string const&  name,
-        ::ActorUniqueID       entityId,
-        ::Bounds const&       bounds,
-        bool                  isCircle,
-        float                 maxDistToPlayers,
-        bool                  alwaysActive,
-        ::TickingAreaLoadMode loadMode
-    );
-
     MCAPI void _save(::LevelStorage& levelStorage);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

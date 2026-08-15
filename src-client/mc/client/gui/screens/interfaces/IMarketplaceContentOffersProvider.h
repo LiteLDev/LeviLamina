@@ -33,10 +33,4 @@ public:
 
     virtual ::std::function<bool(::StoreCatalogItem const&)> _getFilterFunction() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

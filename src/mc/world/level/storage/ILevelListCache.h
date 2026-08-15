@@ -116,10 +116,4 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> const getBasePath() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

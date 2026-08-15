@@ -72,12 +72,6 @@ public:
 
         virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view key) const = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     template <typename T0, typename T1>
@@ -91,12 +85,6 @@ public:
 
         virtual ::Bedrock::JSONObject::Node*
         setValueForKey(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value) = 0;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
         // NOLINTEND
     };
 

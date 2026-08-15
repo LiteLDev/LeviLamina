@@ -24,12 +24,6 @@ public:
 
     virtual void onTapRecognized(::Vec2 const& position) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

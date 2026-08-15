@@ -20,18 +20,6 @@ public:
 
     virtual ~I210BufferInterface() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::webrtc::VideoFrameBuffer::Type $type() const;
-
-    MCNAPI int $ChromaWidth() const;
-
-    MCNAPI int $ChromaHeight() const;
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

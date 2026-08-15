@@ -17,12 +17,6 @@ public:
 
     virtual ::std::optional<::webrtc::SocketAddress> Reflect(::webrtc::SocketAddress const& local) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

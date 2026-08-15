@@ -22,10 +22,4 @@ public:
 
     virtual ~IDynamicContainerSerialization() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

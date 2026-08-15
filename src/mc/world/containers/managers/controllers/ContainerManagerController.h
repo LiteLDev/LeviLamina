@@ -380,43 +380,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $postInit(::std::weak_ptr<::ContainerManagerController> self);
-#else // LL_PLAT_C
+#ifdef LL_PLAT_C
     MCFOLD void $postInit(::std::weak_ptr<::ContainerManagerController> self);
-#endif
 
     MCAPI void $registerContainerCallbacks();
 
-#ifdef LL_PLAT_S
-    MCAPI void $setPreviewItemName(::Bedrock::Safety::RedactableString const& name);
-#else // LL_PLAT_C
     MCFOLD void $setPreviewItemName(::Bedrock::Safety::RedactableString const& name);
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void $setItemName(::Bedrock::Safety::RedactableString const& name);
-#else // LL_PLAT_C
     MCFOLD void $setItemName(::Bedrock::Safety::RedactableString const& name);
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI ::Bedrock::Safety::RedactableString const& $getPreviewItemName() const;
-#else // LL_PLAT_C
     MCFOLD ::Bedrock::Safety::RedactableString const& $getPreviewItemName() const;
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI ::Bedrock::Safety::RedactableString const& $getItemName() const;
-#else // LL_PLAT_C
     MCFOLD ::Bedrock::Safety::RedactableString const& $getItemName() const;
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void $updatePreviewItem();
-#else // LL_PLAT_C
     MCFOLD void $updatePreviewItem();
-#endif
 
     MCAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
 
@@ -474,60 +451,25 @@ public:
 
     MCAPI void $closeContainers();
 
-#ifdef LL_PLAT_S
-    MCAPI bool $isOutputSlot(::std::string const& collectionName) const;
-#else // LL_PLAT_C
     MCFOLD bool $isOutputSlot(::std::string const& collectionName) const;
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void $_updateItemStackRequest(
-        ::ContainerScreenRequestActionType,
-        ::ContainerScreenActionResult const&,
-        ::ItemStackRequestScope&
-    );
-#else // LL_PLAT_C
     MCFOLD void $_updateItemStackRequest(
         ::ContainerScreenRequestActionType,
         ::ContainerScreenActionResult const&,
         ::ItemStackRequestScope&
     );
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI ::CreateContainerItemScope $_makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&);
-#else // LL_PLAT_C
     MCAPI ::CreateContainerItemScope
     $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount);
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void $_onItemTransferredFrom(::ItemInstance const&, ::SlotData const&);
-#else // LL_PLAT_C
     MCAPI void $_onItemTransferredFrom(::ItemInstance const& stack, ::SlotData const& srcSlot);
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void $_onItemTransferredTo(::ItemInstance const&, ::SlotData const&);
-#else // LL_PLAT_C
     MCAPI void $_onItemTransferredTo(::ItemInstance const& stack, ::SlotData const& dstSlot);
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void $_onItemAcquired(::ItemInstance const&, ::SlotData const&);
-#else // LL_PLAT_C
     MCFOLD void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void $_onItemPlaced(::ItemInstance const&, ::SlotData const&);
-#else // LL_PLAT_C
     MCFOLD void $_onItemPlaced(::ItemInstance const& stack, ::SlotData const& dstSlot);
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void $_onContainerScreenAction(::ContainerScreenActionResult const&);
-#else // LL_PLAT_C
     MCFOLD void $_onContainerScreenAction(::ContainerScreenActionResult const& result);
 #endif
 

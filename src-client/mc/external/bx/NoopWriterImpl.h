@@ -28,18 +28,6 @@ public:
 
     virtual int write(void const*, int, ::bx::Error*) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI bool $open(::bx::FilePath const&, bool, ::bx::Error*);
-
-    MCAPI void $close();
-
-    MCAPI int64 $seek(int64, ::bx::Whence::Enum);
-
-    MCAPI int $write(void const*, int, ::bx::Error*);
-    // NOLINTEND
 };
 
 } // namespace bx

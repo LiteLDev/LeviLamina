@@ -62,18 +62,6 @@ public:
         // prevent constructor by default
         AnnounceServerData& operator=(AnnounceServerData const&);
         AnnounceServerData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI AnnounceServerData(::RakNetServerLocator::AnnounceServerData const& announceData);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     class NatHolePuncherFunctor {

@@ -143,6 +143,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $initialize(::Bedrock::CrashManagerConfig const& config);
 
     MCNAPI void $setCrashProcessorForFileType(
@@ -172,6 +173,7 @@ public:
     MCNAPI ::std::string const& $getCrashDataRoot() const;
 
     MCNAPI ::std::string const& $getCrashedSessionFileSuffix() const;
+#endif
 
 
     // NOLINTEND

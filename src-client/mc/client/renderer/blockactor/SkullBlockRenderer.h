@@ -55,13 +55,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SkullBlockRenderer(
-        ::std::shared_ptr<::ActorResourceDefinition> const definition,
-        ::std::shared_ptr<::mce::TextureGroup>             textureGroup,
-        ::BaseGameVersion const&                           baseGameVersion,
-        ::Experiments const&
-    );
-
     MCAPI void renderInGui(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
@@ -87,12 +80,6 @@ public:
         float                           animationValue,
         bool                            isGlint
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

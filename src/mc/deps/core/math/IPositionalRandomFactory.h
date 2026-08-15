@@ -18,10 +18,4 @@ public:
 
     virtual ::std::unique_ptr<::IRandom> forString(::std::string const& s) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

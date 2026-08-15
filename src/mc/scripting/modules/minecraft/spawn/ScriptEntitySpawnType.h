@@ -22,10 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ~ScriptEntitySpawnType();
-#endif
-
 #ifdef LL_PLAT_S
     MCAPI ~ScriptEntitySpawnType();
 #endif

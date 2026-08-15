@@ -28,14 +28,6 @@ public:
     // NOLINTBEGIN
     virtual ::EventResult onRealmsStory(::std::string const&) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::EventResult $onRealmsStory(::std::string const&);
-
-
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraftRealms

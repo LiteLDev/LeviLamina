@@ -14,21 +14,9 @@ namespace Editor::ScriptModule {
 
 class ScriptWidgetComponentErrorInvalidComponent : public ::Scripting::BaseError {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentErrorInvalidComponent();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bindError();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

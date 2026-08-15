@@ -45,19 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI
-    LevelRendererCameraListeners(::IClientInstance& clientInstance, ::Level& level, ::LevelRenderer& levelRenderer);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $onWillChangeDimension(::Player& player);

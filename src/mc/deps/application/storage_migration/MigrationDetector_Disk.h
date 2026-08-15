@@ -39,16 +39,6 @@ public:
 
     virtual void _runDetector(::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles> $getFoundFiles() const;
-
-    MCNAPI void $_runDetector(::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>);
-
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::StorageMigration

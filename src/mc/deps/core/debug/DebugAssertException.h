@@ -21,12 +21,4 @@ public:
     // NOLINTBEGIN
     virtual char const* what() const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI char const* $what() const;
-
-
-    // NOLINTEND
 };

@@ -75,11 +75,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI JsonRpcProvider(
-        ::std::shared_ptr<::ISignalingJsonRpcInterop>         signalingServiceInterop,
-        ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> components
-    );
-
     MCNAPI void _expirePendingResult(::std::string const& id);
 
     MCNAPI void
@@ -89,12 +84,6 @@ public:
 
     MCNAPI ::std::unique_ptr<::std::string, ::std::function<void(::std::string*)>>
     registerJsonRpcMethod(::std::string method, ::std::unique_ptr<::JsonRpc::IResultHandler> handler);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

@@ -26,12 +26,6 @@ public:
         ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::webrtc::RTCCertificate>) &&> callback
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

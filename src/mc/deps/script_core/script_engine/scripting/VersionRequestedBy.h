@@ -28,26 +28,6 @@ public:
     VersionRequestedBy& operator=(VersionRequestedBy const&);
     VersionRequestedBy(VersionRequestedBy const&);
     VersionRequestedBy();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI VersionRequestedBy(
-        ::Scripting::Version          version_,
-        ::Scripting::Version          originalVersion,
-        ::Scripting::ModuleDescriptor by_,
-        bool                          supported_,
-        bool                          missing_,
-        bool                          explicitRequest_,
-        bool                          promotion_
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Scripting

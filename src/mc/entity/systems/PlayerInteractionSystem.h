@@ -28,12 +28,6 @@ public:
         virtual ::InteractionResult
         getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction) const = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     template <typename T0>

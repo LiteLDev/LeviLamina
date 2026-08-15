@@ -50,26 +50,6 @@ public:
 
     virtual ::Bedrock::Http::ResponseBodyType getType() const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::std::error_code $start(::std::optional<uint64>);
-
-    MCNAPI ::std::error_code $write(::gsl::span<uchar const>);
-
-    MCNAPI void $complete();
-
-    MCNAPI void $cancel();
-
-    MCNAPI ::std::string const& $getLoggableDestination() const;
-
-    MCNAPI ::gsl::span<uchar const> $getLoggableData() const;
-
-    MCNAPI ::Bedrock::Http::ResponseBodyType $getType() const;
-
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Http

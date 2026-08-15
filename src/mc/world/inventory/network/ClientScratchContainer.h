@@ -26,6 +26,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCNAPI void $serverInitItemStackIds(
@@ -33,6 +34,7 @@ public:
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
+#endif
 
 
     // NOLINTEND

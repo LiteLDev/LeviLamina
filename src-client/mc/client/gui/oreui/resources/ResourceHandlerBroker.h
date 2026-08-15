@@ -32,12 +32,6 @@ public:
 
     virtual ::cohtml::IAsyncResourceHandler* getCohtmlHandler() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Gameface

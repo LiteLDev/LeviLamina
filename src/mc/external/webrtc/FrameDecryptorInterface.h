@@ -54,12 +54,6 @@ public:
 
     virtual uint64 GetMaxPlaintextByteSize(::webrtc::MediaType, uint64) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

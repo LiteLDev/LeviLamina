@@ -47,10 +47,4 @@ public:
 
     virtual ::AuthenticationUIState doSignIn(::AuthenticationUIState currentState) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

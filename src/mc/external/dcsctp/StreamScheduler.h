@@ -42,12 +42,6 @@ public:
 
         virtual uint64 bytes_to_send_in_next_message() const = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     class VirtualTime : public ::webrtc::StrongAlias<::dcsctp::VirtualTimeTag, double> {};

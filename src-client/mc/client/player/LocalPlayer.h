@@ -104,12 +104,6 @@ public:
 
         virtual void onRegionDestroyed() = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     class EmoteExpediateData {

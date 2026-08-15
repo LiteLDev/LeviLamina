@@ -64,6 +64,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $clearAllEntities();
 
     MCNAPI void $zeroAllTimes();
@@ -89,6 +90,7 @@ public:
         ::std::vector<
             ::Bedrock::small_vector<::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>>, 400>>>
     $exportData() const;
+#endif
 
 
     // NOLINTEND

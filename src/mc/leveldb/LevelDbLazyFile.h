@@ -25,8 +25,6 @@ public:
     MCNAPI ::leveldb::Status Close();
 
     MCNAPI ::leveldb::Status Flush();
-
-    MCNAPI ~LevelDbLazyFile();
     // NOLINTEND
 
 public:

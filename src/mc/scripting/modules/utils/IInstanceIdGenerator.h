@@ -10,10 +10,4 @@ public:
 
     virtual uint generate() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

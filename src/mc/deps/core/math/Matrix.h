@@ -25,11 +25,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI Matrix(::glm::vec4 const& row0, ::glm::vec4 const& row1, ::glm::vec4 const& row2, ::glm::vec4 const& row3);
-
     MCAPI bool operator==(::Matrix const& rhs) const;
-
-    MCAPI void rotate(float a, ::glm::vec3 const& axis);
 
     MCAPI void rotate(float a, float x, float y, float z);
 
@@ -49,11 +45,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Matrix const& IDENTITY();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

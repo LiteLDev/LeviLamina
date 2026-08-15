@@ -83,10 +83,4 @@ public:
 
     virtual ::DepenetrationComponent& getDepenetrationComponent() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

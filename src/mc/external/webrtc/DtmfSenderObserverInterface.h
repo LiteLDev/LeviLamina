@@ -14,16 +14,6 @@ public:
 
     virtual ~DtmfSenderObserverInterface() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $OnToneChange(::std::string const&, ::std::string const&);
-
-    MCNAPI void $OnToneChange(::std::string const&);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

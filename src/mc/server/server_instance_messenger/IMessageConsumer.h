@@ -12,12 +12,6 @@ public:
 
     virtual void processMessages() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ServerInstanceMessenger

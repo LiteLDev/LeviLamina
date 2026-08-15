@@ -43,16 +43,4 @@ public:
 
     MCNAPI static ::PackIdVersion const& EDUResourcePack();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $loadFromData(::IAppConfigData const&);
-
-    MCNAPI ::EducationEditionOffer $getEducationEditionOffering() const;
-
-    MCNAPI ::std::unique_ptr<::IContentAccessibilityProvider> $createContentAccessibility() const;
-
-
-    // NOLINTEND
 };

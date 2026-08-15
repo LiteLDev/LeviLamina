@@ -23,18 +23,6 @@ public:
 public:
     // prevent constructor by default
     UserPermissionFEWrapper();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit UserPermissionFEWrapper(::Social::PermissionCheckResult userPermission);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

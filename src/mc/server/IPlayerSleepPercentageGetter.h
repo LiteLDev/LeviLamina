@@ -10,10 +10,4 @@ public:
 
     virtual float getPlayerSleepPercentageGoal() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -36,16 +36,6 @@ public:
 
     virtual ::EventResult onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const&) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::EventResult $onPartyChanged(::PartyChangedEvent const&);
-
-    MCNAPI ::EventResult $onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const&);
-
-
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleParties

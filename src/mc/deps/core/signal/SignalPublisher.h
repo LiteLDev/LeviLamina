@@ -30,12 +30,6 @@ public:
     makePublisher(bool isWrapped, uint64 unwrappedSize);
 #endif
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Detail

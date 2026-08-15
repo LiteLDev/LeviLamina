@@ -26,21 +26,6 @@ public:
     EditorJigsawRegistry& operator=(EditorJigsawRegistry const&);
     EditorJigsawRegistry(EditorJigsawRegistry const&);
     EditorJigsawRegistry();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI EditorJigsawRegistry(
-        ::std::unique_ptr<::JigsawStructureRegistry>                                                          registry,
-        ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> jigsawJson
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

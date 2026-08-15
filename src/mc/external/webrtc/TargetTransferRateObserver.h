@@ -20,14 +20,6 @@ public:
 
     virtual void OnStartRateUpdate(::webrtc::DataRate);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $OnStartRateUpdate(::webrtc::DataRate);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

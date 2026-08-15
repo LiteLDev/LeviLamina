@@ -71,6 +71,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI ::ContainerScreenActionResult $tryTakeAmount(
         ::ContainerValidationSlotData const& dstSlot,
         int                                  amount,
@@ -94,6 +95,7 @@ public:
     MCNAPI void $_registerCoalesceOrder();
 
     MCNAPI void $_registerAutoPlaceOrder();
+#endif
 
 
     // NOLINTEND

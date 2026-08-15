@@ -125,6 +125,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $update();
 
     MCNAPI void $initRealmsFileDownloader(
@@ -147,17 +148,10 @@ public:
         ::std::function<void(::DownloaderResult)> callback
     );
 
-#ifdef LL_PLAT_S
-    MCNAPI void $downloadFile(
-        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>,
-        ::std::function<void(::DownloaderState)>
-    );
-#else // LL_PLAT_C
     MCNAPI void $downloadFile(
         ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)> dataCallback,
         ::std::function<void(::DownloaderState)>                                                         endCallback
     );
-#endif
 
     MCNAPI bool $canCancelDownload() const;
 
@@ -170,6 +164,7 @@ public:
     MCNAPI float $getDownloadProgress() const;
 
     MCNAPI ::Bedrock::Http::Request $_makeRequest();
+#endif
 
 
     // NOLINTEND

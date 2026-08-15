@@ -46,8 +46,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _createGamefaceTexture(::ScreenContext& screenContext);
-
-    MCAPI ~ViewRenderer();
     // NOLINTEND
 };
 

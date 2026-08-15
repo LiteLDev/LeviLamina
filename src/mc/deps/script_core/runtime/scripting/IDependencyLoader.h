@@ -17,12 +17,6 @@ public:
 
     virtual ::std::optional<::Scripting::ScriptData> onLoadScript(::std::string const& name) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Scripting

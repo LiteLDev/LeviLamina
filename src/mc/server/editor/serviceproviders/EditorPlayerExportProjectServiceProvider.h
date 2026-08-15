@@ -32,12 +32,6 @@ public:
 
     virtual ::Editor::ProjectExportStatus getExportStatus() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

@@ -57,8 +57,6 @@ public:
 
     MCFOLD bool $nextBoolean();
 
-    MCAPI float $nextFloat();
-
     MCAPI double $nextDouble();
 
     MCAPI double $nextGaussianDouble();

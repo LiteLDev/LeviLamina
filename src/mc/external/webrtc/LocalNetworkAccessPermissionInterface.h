@@ -26,14 +26,6 @@ public:
         ::absl::AnyInvocable<void(::webrtc::LocalNetworkAccessPermissionStatus)>
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI bool $ShouldRequestPermission(::webrtc::SocketAddress const&);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

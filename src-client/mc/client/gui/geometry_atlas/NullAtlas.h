@@ -45,20 +45,6 @@ public:
 
     virtual bool hasAnyUpdates() const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(::std::vector<uint> const&)>& $getTileChangeConnector();
-
-    MCAPI ::std::shared_ptr<::GeometryAtlas::IItemTile> $createItem(::GeometryAtlas::TileDefinition const&);
-
-    MCAPI ::std::shared_ptr<::GeometryAtlas::IPaperDollTile> $createDoll(::GeometryAtlas::TileDefinition const&);
-
-    MCAPI void $trySubmitUpdates(::GeometryAtlas::IRenderContext&);
-
-    MCAPI bool $hasAnyUpdates() const;
-    // NOLINTEND
 };
 
 } // namespace GeometryAtlas

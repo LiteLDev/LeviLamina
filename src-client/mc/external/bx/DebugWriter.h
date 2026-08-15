@@ -20,12 +20,6 @@ public:
 
     virtual ~DebugWriter() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI int $write(void const*, int, ::bx::Error*);
-    // NOLINTEND
 };
 
 } // namespace bx

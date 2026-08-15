@@ -40,7 +40,5 @@ public:
         ::Social::Events::PrivacyTagEnterprise privacyTag
     ) const;
 #endif
-
-    MCNAPI ~DBStorageFolderWatcher();
     // NOLINTEND
 };

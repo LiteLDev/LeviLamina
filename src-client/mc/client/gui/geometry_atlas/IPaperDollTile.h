@@ -20,12 +20,6 @@ public:
 
     virtual void submitUpdate(::GeometryAtlas::PaperDollPayload&& payload) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace GeometryAtlas

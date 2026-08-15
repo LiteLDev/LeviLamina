@@ -41,9 +41,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $setRequest(::Json::Value& request);
 
     MCNAPI ::std::optional<::Json::Value> $verify(::Json::Value&& response);
+#endif
 
 
     // NOLINTEND

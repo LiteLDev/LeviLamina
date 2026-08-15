@@ -75,14 +75,6 @@ public:
 
     virtual void SetSendCodecChangedCallback(::absl::AnyInvocable<void()>) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $SetEncoderSelector(uint, ::webrtc::VideoEncoderFactory::EncoderSelectorInterface*);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -26,21 +26,9 @@ public:
     ScriptInvalidFormModificationError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptInvalidFormModificationError(::std::string formId);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

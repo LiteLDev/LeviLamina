@@ -106,12 +106,6 @@ public:
         // NOLINTBEGIN
         MCAPI static bool _checkVersioningRequirements(::SemVersion const& removedSupportVersion);
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     struct HorizontalDirectionBits {

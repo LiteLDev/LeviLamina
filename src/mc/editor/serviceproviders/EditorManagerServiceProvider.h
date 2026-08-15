@@ -27,12 +27,6 @@ public:
     virtual ::Bedrock::PubSub::Subscription
     registerLevelTickSubscriber(::std::function<void(::Editor::EditorManager&)> func) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor

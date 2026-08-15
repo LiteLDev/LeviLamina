@@ -24,12 +24,6 @@ public:
 
     virtual void clearMaterial(::HashedString const& name) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace mce

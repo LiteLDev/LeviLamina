@@ -73,8 +73,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TextEditComponent(::UIControl& owner);
-
     MCAPI void _hidePlaceHolderControl();
 
     MCAPI void _showPlaceHolderControl();
@@ -102,12 +100,6 @@ public:
     MCAPI bool trySetText(::std::string text);
 
     MCAPI void updateCaretBlink(float dt);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

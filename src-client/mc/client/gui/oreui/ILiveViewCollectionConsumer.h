@@ -12,12 +12,6 @@ public:
 
     virtual ::std::vector<uint> consumeChangedHandles() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

@@ -24,12 +24,6 @@ public:
 
     virtual ::Scripting::Result_deprecated<bool> _discard(::Editor::ServiceProviderCollection&) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Transactions

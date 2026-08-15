@@ -19,10 +19,4 @@ public:
     LevelEventHandlerRegistrar& operator=(LevelEventHandlerRegistrar const&);
     LevelEventHandlerRegistrar(LevelEventHandlerRegistrar const&);
     LevelEventHandlerRegistrar();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~LevelEventHandlerRegistrar();
-    // NOLINTEND
 };

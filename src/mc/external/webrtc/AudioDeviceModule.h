@@ -182,16 +182,6 @@ public:
 
     virtual ~AudioDeviceModule() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI int $GetPlayoutUnderrunCount() const;
-
-    MCNAPI ::std::optional<::webrtc::AudioDeviceModule::Stats> $GetStats() const;
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

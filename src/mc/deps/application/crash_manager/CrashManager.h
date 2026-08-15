@@ -58,12 +58,6 @@ public:
     MCNAPI static ::std::add_lvalue_reference_t<char const[6]> DEFAULT_CRASH_DIRECTORY_NAME();
 #endif
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock

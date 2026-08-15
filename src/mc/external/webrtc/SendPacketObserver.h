@@ -17,12 +17,6 @@ public:
 
     virtual void OnSendPacket(::std::optional<ushort>, ::webrtc::Timestamp, uint) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -103,21 +103,6 @@ public:
     public:
         // prevent constructor by default
         PlayerProfileWrapper();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI PlayerProfileWrapper(
-            ::Social::PlayerProfileState                            inState,
-            ::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper&& inData
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:

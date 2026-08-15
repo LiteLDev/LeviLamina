@@ -21,23 +21,6 @@ public:
 public:
     // prevent constructor by default
     Route();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Route(
-        ::std::string const&             fileName,
-        ::std::string const&             route,
-        ::OreUI::RouteMode const         mode,
-        ::OreUI::RoutePrerequisite const prerequisite
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

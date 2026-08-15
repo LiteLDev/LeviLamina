@@ -41,10 +41,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $send(void const* data);
 
     MCNAPI ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)>
     $getConnectOp(::std::function<void(void const*)>&& handler);
+#endif
 
 
     // NOLINTEND

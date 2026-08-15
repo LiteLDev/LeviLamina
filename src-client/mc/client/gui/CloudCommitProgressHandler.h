@@ -52,30 +52,4 @@ public:
 
     virtual ::std::string getName() const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
-
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
-
-    MCAPI void $onRetry(::MinecraftScreenModel&);
-
-    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
-
-    MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
-
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
-
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
-
-    MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
-
-    MCAPI ::ProgressAnimation $showLoadingBar() const;
-
-    MCAPI ::std::string $getTitleText() const;
-
-    MCAPI ::std::string $getName() const;
-    // NOLINTEND
 };

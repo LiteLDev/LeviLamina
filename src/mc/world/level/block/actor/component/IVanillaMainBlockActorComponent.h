@@ -70,10 +70,4 @@ public:
 
     virtual void _setCustomNameSaved(bool saveCustomName) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -89,19 +89,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ContextObject(
-        ::Scripting::ContextId                                     contextId,
-        ::JSContext*                                               jsContext,
-        ::Scripting::WeakLifetimeScope                             scope,
-        ::Scripting::ModuleBindingBundle&&                         bindings,
-        ::std::unique_ptr<::Scripting::ScriptObjectFactory>&&      factory,
-        ::std::unique_ptr<::Scripting::QuickJS::ObjectInspector>&& inspector,
-        ::Scripting::IPrinter*                                     printer,
-        ::Scripting::IDependencyLoader*                            loader,
-        ::JSRuntime*,
-        ::Scripting::ContextConfig const& contextConfig
-    );
-
     MCNAPI void _resolvePromise(::JSValue jsResolutionFunc, ::entt::meta_any& arg);
 
     MCNAPI ::Scripting::ResultAny call(
@@ -115,8 +102,6 @@ public:
     checkModuleImportAllowed(::std::string const& baseName, ::std::string const& moduleName, bool dynamicImport) const;
 
     MCNAPI void processUnhandledPromiseRejection();
-
-    MCNAPI ~ContextObject();
     // NOLINTEND
 
 public:
@@ -171,12 +156,6 @@ public:
     );
 
     MCNAPI static int _moduleInitializer(::JSContext* ctx, ::JSModuleDef* jsModuleDef);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

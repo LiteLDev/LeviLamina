@@ -40,18 +40,6 @@ public:
 
     virtual void shutdown() /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> $send(::Bedrock::Http::Request&&);
-
-    MCNAPI void $initialize();
-
-    MCNAPI void $shutdown();
-
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Http

@@ -26,10 +26,4 @@ public:
 
     virtual void registerServerInstanceHandler(::ServerInstanceEventCoordinator& serverInstanceCoordinator) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

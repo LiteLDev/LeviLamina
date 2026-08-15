@@ -33,18 +33,6 @@ public:
     ScriptPrefabTemplateMetadata& operator=(ScriptPrefabTemplateMetadata const&);
     ScriptPrefabTemplateMetadata(ScriptPrefabTemplateMetadata const&);
     ScriptPrefabTemplateMetadata();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptPrefabTemplateMetadata(::WeakRef<::Editor::Prefabs::PrefabDBTemplate const> templateRef);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

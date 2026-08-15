@@ -20,10 +20,4 @@ public:
 
     virtual void onOpen() /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $onOpen();
-    // NOLINTEND
 };

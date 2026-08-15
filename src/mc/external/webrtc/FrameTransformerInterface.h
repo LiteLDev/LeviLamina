@@ -31,21 +31,6 @@ public:
 
     virtual ~FrameTransformerInterface() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $RegisterTransformedFrameCallback(::webrtc::scoped_refptr<::webrtc::TransformedFrameCallback>);
-
-    MCNAPI void
-        $RegisterTransformedFrameSinkCallback(::webrtc::scoped_refptr<::webrtc::TransformedFrameCallback>, uint);
-
-    MCNAPI void $UnregisterTransformedFrameCallback();
-
-    MCNAPI void $UnregisterTransformedFrameSinkCallback(uint);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

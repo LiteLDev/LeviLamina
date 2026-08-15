@@ -131,6 +131,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $postInit(::std::weak_ptr<::ContainerManagerController> self);
 
     MCNAPI void $updatePreviewItem();
@@ -171,6 +172,7 @@ public:
         ::ContainerScreenActionResult const& result,
         ::ItemStackRequestScope&             requestScope
     );
+#endif
 
 
     // NOLINTEND

@@ -60,9 +60,11 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+#ifdef LL_PLAT_S
         MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager& mgr);
 
         MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
+#endif
 
 
         // NOLINTEND
@@ -130,6 +132,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
 
     MCNAPI void $flush();
@@ -140,10 +143,7 @@ public:
 
     MCNAPI bool $logOnlyOnce() const;
 
-#ifdef LL_PLAT_S
     MCNAPI void $contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
-#else // LL_PLAT_C
-    MCNAPI void $contentAssert(::LogArea const, ::LogLevel const, char const*);
 #endif
 
 

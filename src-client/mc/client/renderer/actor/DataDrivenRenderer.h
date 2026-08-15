@@ -73,11 +73,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataDrivenRenderer(
-        ::std::shared_ptr<::ActorResourceDefinition> definition,
-        ::std::shared_ptr<::mce::TextureGroup>       textureGroup
-    );
-
     MCAPI void addGuardianAdditionalRendering();
 
     MCAPI void addHumanoidAdditionalRendering(::std::shared_ptr<::mce::TextureGroup> textureGroup);
@@ -89,12 +84,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void getLeashOffsets(::Actor& actor, bool legacyOffset, ::Bedrock::small_vector_base<::Vec3>& output);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

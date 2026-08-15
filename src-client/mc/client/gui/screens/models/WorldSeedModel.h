@@ -31,19 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldSeedModel(::std::string const& productId, ::std::string const& title, ::std::string const& seed);
-
     MCAPI void setImagePath(
         ::Core::Path const&                                               fullpath,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
     );
-
-    MCAPI ~WorldSeedModel();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

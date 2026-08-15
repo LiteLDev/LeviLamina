@@ -59,12 +59,6 @@ public:
 
         virtual void OnTurnPortClosed() = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:

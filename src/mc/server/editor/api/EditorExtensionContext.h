@@ -63,24 +63,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI EditorExtensionContext(
-        ::Player&                                                           player,
-        ::Editor::ServiceProviderCollection&                                serviceProviders,
-        ::Editor::Services::EditorSettingsServiceProvider*                  settingsService,
-        ::Editor::Services::TransactionManagerServiceProvider*              transactionManagerServiceProvider,
-        ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider>       clipboardServiceRef,
-        ::Editor::Services::EditorBlockPaletteServiceProvider*              blockPaletteService,
-        ::Editor::Services::BrushShapeManagerServiceProvider*               brushShapeService,
-        ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> serverStructureServiceWeakRef,
-        ::std::weak_ptr<::Editor::Services::EditorMinimapServiceProvider>   minimapServiceWeakRef,
-        ::Scripting::WeakLifetimeScope                                      scope,
-        ::Editor::API::EditorExtension&                                     extension
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
@@ -89,12 +71,6 @@ public:
     MCNAPI static ::std::optional<::std::unique_ptr<::Editor::API::EditorExtensionContext>>
     tryCreate(::Player& player, ::Scripting::WeakLifetimeScope scope, ::Editor::API::EditorExtension& extension);
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

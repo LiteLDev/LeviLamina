@@ -19,12 +19,6 @@ public:
     virtual ::std::unique_ptr<::webrtc::RtpTransportControllerSendInterface>
     Create(::webrtc::RtpTransportConfig const& config) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

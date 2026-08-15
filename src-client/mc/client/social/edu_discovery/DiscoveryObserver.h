@@ -30,13 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onServerInvalidated(::EDUDiscovery::ServerInvalidationDetails const&);
-
     MCNAPI void $onHeartbeat();
-
-    MCNAPI void $onJoinCodeGenerated(::EDUDiscovery::JoinCode const&);
-
-    MCNAPI void $onCredentialsInvalidated();
     // NOLINTEND
 };
 

@@ -154,10 +154,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI explicit ActorDefinition(::std::string const& id);
-#endif
-
 #ifdef LL_PLAT_S
     MCAPI explicit ActorDefinition(::std::string const& id);
 #endif

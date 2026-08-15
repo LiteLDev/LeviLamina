@@ -28,12 +28,6 @@ public:
     MCNAPI ::WorkerPool& operator*() const;
 #endif
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock

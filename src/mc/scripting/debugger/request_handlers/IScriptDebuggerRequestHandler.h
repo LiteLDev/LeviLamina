@@ -19,14 +19,4 @@ public:
 
     virtual void onDisconnect(::ScriptDebugger& debugger);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $update(::ScriptDebugger& debugger);
-
-    MCNAPI void $onDisconnect(::ScriptDebugger& debugger);
-
-
-    // NOLINTEND
 };

@@ -76,29 +76,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ClientNegotiator(
-        ::NetherNet::ContextProxy const&                                           ctx,
-        ::webrtc::scoped_refptr<::webrtc::PeerConnectionFactory>                   factory,
-        ::webrtc::scoped_refptr<::NetherNet::PeerConnectionObserver>               observer,
-        ::brstd::move_only_function<void(::std::variant<
-                                         ::NetherNet::ConnectRequest,
-                                         ::NetherNet::ConnectResponse,
-                                         ::NetherNet::ConnectError,
-                                         ::NetherNet::CandidateAdd> const&) const> sendMessage,
-        uint64                                                                     sessionId
-    );
-
     MCNAPI void _completeAndClearConnection(
         ::Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError> result
     );
 
     MCNAPI void _onIceConnectionChanged(::webrtc::PeerConnectionInterface::IceConnectionState newState);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:
@@ -110,8 +92,6 @@ public:
             ::Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError>
         )>&&                                                       onComplete
     );
-
-    MCNAPI ::NetherNet::ESessionError $checkTimeout(::std::chrono::seconds timeout) const;
 
     MCNAPI void $_onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const& offerOrError);
 

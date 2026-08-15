@@ -31,12 +31,6 @@ public:
         virtual void
         submitUpdate(::GeometryAtlas::IAtlasTile& tile, ::GeometryAtlas::InitializeCallbackPayload init) const = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:
@@ -49,12 +43,6 @@ public:
 
     virtual ::std::unique_ptr<::OreUI::ITileResourceResolver::ITileResourceRequest>
     tryResolveRequest(::std::string_view url) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

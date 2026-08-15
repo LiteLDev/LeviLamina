@@ -74,53 +74,6 @@ public:
 
     virtual void OnInterestingUsage(int);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $OnAddStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>);
-
-    MCNAPI void $OnRemoveStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>);
-
-    MCNAPI void $OnRenegotiationNeeded();
-
-    MCNAPI void $OnNegotiationNeededEvent(uint);
-
-    MCNAPI void $OnIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState newState);
-
-    MCNAPI void $OnStandardizedIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState);
-
-    MCNAPI void $OnConnectionChange(::webrtc::PeerConnectionInterface::PeerConnectionState);
-
-    MCNAPI void $OnIceCandidateError(
-        ::std::string const& address,
-        int                  port,
-        ::std::string const& url,
-        int                  errorCode,
-        ::std::string const& errorMessage
-    );
-
-    MCNAPI void $OnIceCandidatesRemoved(::std::vector<::webrtc::Candidate> const&);
-
-    MCNAPI void $OnIceCandidateRemoved(::webrtc::IceCandidate const* candidate);
-
-    MCNAPI void $OnIceConnectionReceivingChange(bool);
-
-    MCNAPI void $OnIceSelectedCandidatePairChanged(::webrtc::CandidatePairChangeEvent const&);
-
-    MCNAPI void $OnAddTrack(
-        ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>,
-        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&
-    );
-
-    MCNAPI void $OnTrack(::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>);
-
-    MCNAPI void $OnRemoveTrack(::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>);
-
-    MCNAPI void $OnInterestingUsage(int);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

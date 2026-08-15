@@ -16,12 +16,6 @@ public:
 
     virtual ::NetherNet::ErrorOr<void, ::std::error_code> SetKey(uint64 id) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace NetherNet

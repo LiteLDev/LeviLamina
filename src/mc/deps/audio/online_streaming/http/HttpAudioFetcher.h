@@ -110,6 +110,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $start();
 
     MCNAPI void $update(float deltaTimeSeconds);
@@ -127,6 +128,7 @@ public:
     MCNAPI uint64 $getTotalBytesRequested() const;
 
     MCNAPI uint $getTotalRetries() const;
+#endif
 
 
     // NOLINTEND

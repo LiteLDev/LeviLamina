@@ -64,7 +64,5 @@ public:
         ::ConsoleChunkBlender::ShiftBlockTypes const shiftBlockType,
         ::OverworldBlendRules const&                 blendRules
     );
-
-    MCNAPI ~ConsoleChunkBlender();
     // NOLINTEND
 };

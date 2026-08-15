@@ -21,12 +21,6 @@ public:
 
     virtual void fromString(::RakNet::RakNetGUID& guid, char const* source) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace World

@@ -31,12 +31,6 @@ public:
 
     virtual ::TaskGroup& getTaskGroup() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace PackCommand

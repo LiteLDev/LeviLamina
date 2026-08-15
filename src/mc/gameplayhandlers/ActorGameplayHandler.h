@@ -26,10 +26,4 @@ public:
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::MutableActorGameplayEvent<::CoordinatorResult>& event) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

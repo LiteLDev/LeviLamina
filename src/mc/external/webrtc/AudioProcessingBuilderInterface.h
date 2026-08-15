@@ -21,12 +21,6 @@ public:
 
     virtual ::webrtc::scoped_refptr<::webrtc::AudioProcessing> Build(::webrtc::Environment const&) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

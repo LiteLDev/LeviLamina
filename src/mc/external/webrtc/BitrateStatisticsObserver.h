@@ -12,12 +12,6 @@ public:
 
     virtual void Notify(uint, uint, uint) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

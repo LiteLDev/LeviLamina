@@ -35,12 +35,6 @@ public:
 
     virtual bool isReferenceType() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Scripting::Reflection

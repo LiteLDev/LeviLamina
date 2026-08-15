@@ -34,18 +34,6 @@ public:
     ::ll::TypedStorage<1, 1, ::OreUI::NetworkWorldType>                     type;
     ::ll::TypedStorage<1, 1, bool>                                          mIsSupportedForPartyTravel;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI NetworkWorldDetails();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

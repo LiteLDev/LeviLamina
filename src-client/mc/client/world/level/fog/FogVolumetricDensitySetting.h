@@ -22,12 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FogVolumetricDensitySetting(
-        ::Core::Keyframes<float, float> maxDensity,
-        ::Core::Keyframes<float, float> maxDensityHeight,
-        ::Core::Keyframes<float, float> zeroDensityHeight
-    );
-
     MCAPI ~FogVolumetricDensitySetting();
     // NOLINTEND
 
@@ -35,12 +29,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::FogVolumetricDensitySetting const& ZERO_SETTING();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

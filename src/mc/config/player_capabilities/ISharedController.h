@@ -21,12 +21,6 @@ public:
 
     virtual bool canOpenChat(::PlayerCapabilities::IPlayerData const& player) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace PlayerCapabilities

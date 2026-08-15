@@ -15,12 +15,6 @@ public:
     // NOLINTBEGIN
     virtual ::std::shared_ptr<::GeometryAtlas::IAtlasTile> tryGet(uint id) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

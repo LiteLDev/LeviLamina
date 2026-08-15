@@ -48,18 +48,6 @@ public:
 
     virtual ::Bedrock::Threading::Async<void> onNextFetchJoiners() /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $hostServer();
-
-    MCNAPI ::Social::EduJoinerResponse $tryAcceptJoiner(::std::string const&, ::std::string const&);
-
-    MCNAPI ::std::string $getHostToJoinerNonce(::std::string const&) const;
-
-    MCNAPI ::Bedrock::Threading::Async<void> $onNextFetchJoiners();
-    // NOLINTEND
 };
 
 } // namespace Social

@@ -41,8 +41,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
-
     MCFOLD ::ItemStackNetResult $endRequest();
 
     MCFOLD void $endRequestBatch();

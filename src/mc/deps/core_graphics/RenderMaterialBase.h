@@ -111,15 +111,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::std::string $buildHeader(::std::set<::std::string> const&);
-#else // LL_PLAT_C
+#ifdef LL_PLAT_C
     MCAPI ::std::string $buildHeader(::std::set<::std::string> const& defines);
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void $parseShader(::Json::Value const&);
-#else // LL_PLAT_C
     MCAPI void $parseShader(::Json::Value const& root);
 #endif
 

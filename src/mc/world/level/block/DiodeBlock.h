@@ -79,10 +79,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCFOLD int $getVariant(::Block const& block) const;
 
     MCAPI int $getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
@@ -90,8 +86,6 @@ public:
     MCAPI int $getSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
     MCFOLD bool $isSignalSource() const;
-
-    MCAPI bool $isLocked(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $isSameDiode(::Block const& block) const;
 
@@ -104,8 +98,6 @@ public:
     MCAPI bool $shouldTurnOn(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI int $getInputSignal(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI bool $isAlternateInput(::Block const& block) const;
 
     MCAPI int $getAlternateSignal(::BlockSource& region, ::BlockPos const& pos) const;
 

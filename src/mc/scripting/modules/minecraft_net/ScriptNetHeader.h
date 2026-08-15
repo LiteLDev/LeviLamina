@@ -26,15 +26,6 @@ public:
     ScriptNetHeader();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptNetHeader(
-        ::std::string const&                                                         key,
-        ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> value
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
@@ -43,12 +34,6 @@ public:
         ::std::vector<::ScriptModuleMinecraftNet::ScriptNetHeader> const&          userHeaders,
         ::std::optional<::std::unordered_map<::std::string, ::std::string>> const& configSessionHeaders
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

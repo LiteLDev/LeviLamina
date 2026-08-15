@@ -67,12 +67,6 @@ public:
         ::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)> callback
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

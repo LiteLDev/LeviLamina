@@ -34,10 +34,4 @@ public:
 
     virtual ::std::optional<::SubClientId> getPairedClientId() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

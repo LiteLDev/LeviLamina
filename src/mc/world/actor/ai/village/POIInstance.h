@@ -41,27 +41,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI POIInstance(
-        ::BlockPos const& pos,
-        bool              useBoundingBox,
-        ::std::string     name,
-        ::POIType         type,
-        float             radius,
-        uint64            maxCapacity,
-        uint64            weight,
-        ::std::string     soundEvent,
-        ::std::string     initEvent,
-        ::std::string     endEvent
-    );
-
     MCAPI ::AABB getSecondBlockFullAABB(::BlockSource& region);
 
     MCAPI void trySpawnParticles(::BlockSource& region, ::Random& random, int particleType) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

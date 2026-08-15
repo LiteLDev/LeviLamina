@@ -71,24 +71,6 @@ public:
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI EndCityPiece(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
-            ::std::string                                     templateName,
-            ::BlockPos const&                                 origin,
-            ::Rotation                                        rotation,
-            bool                                              overwrite
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI ::StructurePieceType $getType() const;
@@ -122,12 +104,6 @@ public:
         ) = 0;
 
         virtual ~SectionGenerator() = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
         // NOLINTEND
     };
 

@@ -40,12 +40,6 @@ public:
         ::OffscreenCaptureDescription const& capture
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace GeometryAtlas::details

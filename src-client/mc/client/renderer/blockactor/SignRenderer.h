@@ -58,8 +58,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SignRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-
     MCAPI void _renderSign(
         ::BaseActorRenderContext&                               renderContext,
         ::Block const&                                          block,
@@ -83,12 +81,6 @@ public:
         ::BlockSource const&                 renderSource,
         ::SignTextSide                       side
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

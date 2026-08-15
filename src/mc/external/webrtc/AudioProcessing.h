@@ -535,12 +535,6 @@ public:
 
     virtual ::webrtc::AudioProcessing::Config GetConfig() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

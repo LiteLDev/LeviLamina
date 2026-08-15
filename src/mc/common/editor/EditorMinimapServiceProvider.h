@@ -134,12 +134,6 @@ public:
 
     virtual ::Bedrock::PubSub::Subscription listenForMeMarkerChanged(::std::function<void()> callback) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

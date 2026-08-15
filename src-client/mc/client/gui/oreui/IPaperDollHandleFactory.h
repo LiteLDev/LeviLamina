@@ -19,12 +19,6 @@ public:
     virtual ::std::shared_ptr<::GeometryAtlas::PaperDollHandle>
     createDoll(::std::unique_ptr<::PropertyBag> bag) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

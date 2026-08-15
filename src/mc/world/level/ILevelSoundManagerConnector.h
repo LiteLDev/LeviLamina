@@ -36,10 +36,4 @@ public:
 
     virtual ::Bedrock::PubSub::Connector<void()>& getOnStopMusicEventConnector() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

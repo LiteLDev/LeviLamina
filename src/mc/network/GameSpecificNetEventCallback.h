@@ -16,12 +16,4 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::ResourcePackClientResponsePacket const& packet);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::ResourcePackClientResponsePacket const& packet);
-
-
-    // NOLINTEND
 };

@@ -71,30 +71,6 @@ public:
 
         virtual void cleanup() const = 0;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI MoveOperation(
-            bool                                       critical,
-            uchar                                      maxRetries,
-            ::Core::PathBuffer<::std::string> const&   srcPath,
-            ::Core::PathBuffer<::std::string> const&   dstPath,
-            ::UWPMigrationManager::MoveOperation::Type opType
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     struct OperationResult {

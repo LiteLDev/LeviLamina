@@ -32,10 +32,4 @@ public:
 
     virtual float getSmoothRotationSpeed() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -80,21 +80,6 @@ public:
 
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler*) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $SendSignal(
-        ::NetherNet::NetworkID,
-        ::NetherNet::NetworkID,
-        ::std::string const&,
-        ::std::function<void(::NetherNet::ESessionError)>&&
-    );
-
-    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler*);
-
-
-    // NOLINTEND
 };
 
 } // namespace NetherNet

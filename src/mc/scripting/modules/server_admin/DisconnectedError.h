@@ -26,21 +26,9 @@ public:
     DisconnectedError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI DisconnectedError(::std::string const& message, ::std::string const& playerId);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

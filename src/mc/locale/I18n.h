@@ -103,10 +103,4 @@ public:
 
     virtual bool isPackKeyword(::std::string const& key) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

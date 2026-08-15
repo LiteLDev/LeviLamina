@@ -16,18 +16,6 @@ public:
 public:
     // prevent constructor by default
     AllowListQRCode();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AllowListQRCode(::std::string id, ::std::string target);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

@@ -44,10 +44,4 @@ public:
         ::std::vector<::ITreeCanopy::BranchSize> const&
     ) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

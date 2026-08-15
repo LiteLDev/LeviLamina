@@ -38,12 +38,6 @@ public:
 
     virtual uint64 getSafeConsumePosition() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Audio

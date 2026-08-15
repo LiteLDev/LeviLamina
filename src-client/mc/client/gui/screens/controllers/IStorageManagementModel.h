@@ -42,10 +42,4 @@ public:
 
     virtual void navigateToDeleteProgressScreen(::std::vector<::std::shared_ptr<::ContentItem const>> toDelete) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

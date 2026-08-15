@@ -38,27 +38,6 @@ public:
 
     virtual void OnRttUpdate(::webrtc::Timestamp receive_time, ::webrtc::TimeDelta rtt);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void
-    $OnTransportFeedback(::webrtc::Timestamp receive_time, ::webrtc::rtcp::TransportFeedback const& feedback);
-
-    MCNAPI void $OnCongestionControlFeedback(
-        ::webrtc::Timestamp                              receive_time,
-        ::webrtc::rtcp::CongestionControlFeedback const& feedback
-    );
-
-    MCNAPI void $OnReceiverEstimatedMaxBitrate(::webrtc::Timestamp receive_time, ::webrtc::DataRate bitrate);
-
-    MCNAPI void
-    $OnReport(::webrtc::Timestamp receive_time, ::webrtc::ArrayView<::webrtc::ReportBlockData const> report_blocks);
-
-    MCNAPI void $OnRttUpdate(::webrtc::Timestamp receive_time, ::webrtc::TimeDelta rtt);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

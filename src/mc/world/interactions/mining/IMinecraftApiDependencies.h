@@ -12,12 +12,6 @@ public:
 
     virtual void finishMiningHook() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Interactions::Mining

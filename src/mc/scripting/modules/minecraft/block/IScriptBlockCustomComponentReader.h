@@ -32,12 +32,6 @@ public:
         ::Scripting::WeakLifetimeScope const& scope
     ) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

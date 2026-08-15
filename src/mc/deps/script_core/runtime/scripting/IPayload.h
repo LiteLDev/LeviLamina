@@ -37,11 +37,13 @@ public:
     MCNAPI ::Scripting::ResultAny
     $runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>);
 
+#ifdef LL_PLAT_S
     MCNAPI ::Scripting::ResultAny $runOn(
         ::Scripting::ContextId                  contextId,
         ::Scripting::StringBasedRuntime&        runtime,
         ::std::optional<::Scripting::Privilege> privilege
     );
+#endif
 
 
     // NOLINTEND

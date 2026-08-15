@@ -31,15 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChatEvent(::WeakRef<::EntityContext> sender, ::TextPacket const& packet);
-
     MCAPI ~ChatEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

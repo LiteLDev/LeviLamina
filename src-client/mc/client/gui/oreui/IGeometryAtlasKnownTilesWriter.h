@@ -27,12 +27,6 @@ public:
 
     virtual void garbageCollect() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

@@ -38,29 +38,6 @@ public:
 
     virtual void finalize(::BlockPos const&, ::PointLighting::AnalyticLightResources&) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI bool $atCapacity() const;
-
-    MCAPI bool $canReserve(::BlockPos const&) const;
-
-    MCAPI bool $acquired(::BlockPos const&) const;
-
-    MCAPI void $reserve(
-        ::BlockPos const&,
-        ::mce::PointLightParameters const&,
-        float const,
-        ::PointLighting::AnalyticLightResources&
-    );
-
-    MCAPI void $release(::BlockPos const&, ::PointLighting::AnalyticLightResources&);
-
-    MCAPI void $advance(::BlockPos const&, ::PointLighting::AnalyticLightResources&, float);
-
-    MCAPI void $finalize(::BlockPos const&, ::PointLighting::AnalyticLightResources&);
-    // NOLINTEND
 };
 
 } // namespace PointLighting

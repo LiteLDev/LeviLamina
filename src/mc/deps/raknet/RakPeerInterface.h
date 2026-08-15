@@ -298,12 +298,6 @@ public:
     // NOLINTBEGIN
     MCAPI static uint64 Get64BitUniqueRandomNumber();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace RakNet

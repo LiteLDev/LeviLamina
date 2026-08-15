@@ -123,12 +123,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::webrtc::TaskQueueBase* Current();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

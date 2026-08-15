@@ -86,16 +86,7 @@ public:
 
     MCAPI void _makeScrollBarVisible();
 
-    MCAPI void _setContentOffset(
-        ::LayoutComponent& layout,
-        ::glm::vec2        offset,
-        ::glm::vec2 const& scrollContentSize,
-        ::glm::vec2 const& scrollViewPortSize
-    );
-
     MCAPI ::ui::AnimationStatus _updateDynamicsAndScrollPosition(::mce::TimeStep const& timeStep);
-
-    MCAPI void _updateScroll(::glm::vec2 const& delta, bool updateScrollBoxLayout);
 
     MCAPI void _updateScrollBoxSize();
 

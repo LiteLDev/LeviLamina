@@ -26,10 +26,4 @@ public:
 
     virtual ::std::string getCorrelationId() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -39,10 +39,4 @@ public:
 
     virtual ::SubClientId getClientSubId() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

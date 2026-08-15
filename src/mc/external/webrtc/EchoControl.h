@@ -54,14 +54,6 @@ public:
 
     virtual ~EchoControl() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $SetCaptureOutputUsage(bool);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

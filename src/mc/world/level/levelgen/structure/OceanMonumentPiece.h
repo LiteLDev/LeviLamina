@@ -43,15 +43,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OceanMonumentPiece(
-        int                                 genDepth,
-        int&                                orientation,
-        ::std::shared_ptr<::RoomDefinition> roomDefinition,
-        int                                 roomWidth,
-        int                                 roomHeight,
-        int                                 roomDepth
-    );
-
     MCAPI void
     generateDefaultFloor(::BlockSource& region, ::BoundingBox const& chunkBB, int xOff, int zOff, bool downOpening);
 
@@ -66,12 +57,6 @@ public:
     MCAPI static int const& mPenthouseIndex();
 
     MCAPI static int const& mRightWingIndex();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

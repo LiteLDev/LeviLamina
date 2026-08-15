@@ -22,12 +22,6 @@ public:
     virtual ::mce::TexturePtr
     getTexture(::ResourceLocation const&, bool, ::std::optional<uint>, ::cg::TextureSetLayerType const) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace mce

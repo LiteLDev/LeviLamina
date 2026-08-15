@@ -18,10 +18,4 @@ public:
 
     virtual void setEnabled(bool enabled) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

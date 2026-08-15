@@ -76,19 +76,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
 
     MCAPI void $clearSelectedRecipe();
 
-#ifdef LL_PLAT_S
-    MCAPI ::Recipe const* $getSelectedRecipe() const;
-#else // LL_PLAT_C
     MCFOLD ::Recipe const* $getSelectedRecipe() const;
-#endif
 
     MCAPI void $setGhostItem(::ItemInstance const& item, int slot, bool showStackSize);
 
     MCAPI ::ItemInstance const& $getGhostItem(int slot) const;
+#endif
 
 
     // NOLINTEND

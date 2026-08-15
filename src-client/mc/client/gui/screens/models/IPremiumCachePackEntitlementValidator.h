@@ -15,10 +15,4 @@ public:
 
     virtual bool isEntitlementValid(::IEntitlement const& entitlement) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

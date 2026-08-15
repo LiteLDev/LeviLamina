@@ -17,12 +17,4 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
-
-
-    // NOLINTEND
 };

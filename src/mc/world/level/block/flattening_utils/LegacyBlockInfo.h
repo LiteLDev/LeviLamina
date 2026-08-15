@@ -29,25 +29,6 @@ public:
 public:
     // prevent constructor by default
     LegacyBlockInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LegacyBlockInfo(
-        int                                                      legacyId_,
-        ::HashedString                                           legacyFullName_,
-        ::HashedString                                           legacyRawName_,
-        uchar                                                    maxAuxValue_,
-        ::std::vector<::FlatteningUtils::BlockNameRefAuxVariant> newBlockNameAuxVariants_,
-        int                                                      startVariant
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace FlatteningUtils

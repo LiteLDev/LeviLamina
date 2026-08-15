@@ -53,11 +53,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DownloadableTemplateManagerBase(
-        ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
-        ::IContentAcquisition&                                   contentAquisition
-    );
-
     MCAPI bool canDownloadBeCancelled(::std::string const& templateId) const;
 
     MCAPI void cancelDownload(::std::string const& templateId);
@@ -69,12 +64,6 @@ public:
     MCAPI ::std::string getDownloadingProgressBytes(::std::string const& templateId) const;
 
     MCAPI bool isDownloadingStep2Started(::std::string const& templateId) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

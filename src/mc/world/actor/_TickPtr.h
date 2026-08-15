@@ -10,10 +10,4 @@ public:
 
     virtual ~_TickPtr() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

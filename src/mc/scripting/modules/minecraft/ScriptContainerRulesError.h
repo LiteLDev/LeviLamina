@@ -36,23 +36,11 @@ public:
     ScriptContainerRulesError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptContainerRulesError(::std::string const& errorMessage);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
 
     MCAPI static ::Scripting::EnumBinding bindReasonEnum();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

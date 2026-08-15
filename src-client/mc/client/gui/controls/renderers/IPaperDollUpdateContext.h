@@ -50,10 +50,4 @@ public:
 
     virtual void playUI(::std::string const& name, float volume, float pitch) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

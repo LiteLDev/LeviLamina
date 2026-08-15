@@ -50,8 +50,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>>
     getOrCreateItem(::std::string const& itemName, ::std::optional<::std::string> defaultJsonValue);
-
-    MCNAPI ~ScriptPersistenceGroup();
     // NOLINTEND
 
 public:

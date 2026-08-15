@@ -49,10 +49,4 @@ public:
 
     virtual void tryRotateTowardsAimAssist() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -291,17 +291,15 @@ public:
     );
 #endif
 
-#ifdef LL_PLAT_S
-    MCAPI ::EventResult $onEvent(::PlayerNotificationEvent const& event);
-#else // LL_PLAT_C
-    MCFOLD ::EventResult $onEvent(::PlayerNotificationEvent const& event);
-#endif
-
     MCFOLD ::EventResult $onShowDataDrivenScreen(::LocalPlayer&, ::std::string const&, uint, ::std::optional<uint>);
 
     MCFOLD ::EventResult $onCloseDataDrivenScreen(::LocalPlayer&, uint);
 
     MCFOLD ::EventResult $onCloseAllDataDrivenScreens(::LocalPlayer&);
+
+#ifdef LL_PLAT_C
+    MCFOLD ::EventResult $onEvent(::PlayerNotificationEvent const& event);
+#endif
 
 
     // NOLINTEND

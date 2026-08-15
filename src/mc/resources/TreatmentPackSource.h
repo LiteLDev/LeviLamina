@@ -43,11 +43,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI ::PackOrigin $getPackOrigin() const;
 
     MCNAPI ::PackType $getPackType() const;
 
     MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
+#endif
 
 
     // NOLINTEND

@@ -33,8 +33,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit BlockDescriptorProxy(::SharedTypes::Legacy::BlockDescriptor desc);
 
-    MCAPI BlockDescriptorProxy(::std::string name, ::std::vector<::BlockDescriptor::State> states, ::std::string tags);
-
     MCAPI ~BlockDescriptorProxy();
     // NOLINTEND
 

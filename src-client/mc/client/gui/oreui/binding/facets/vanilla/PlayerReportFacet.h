@@ -73,18 +73,6 @@ public:
     public:
         // prevent constructor by default
         DropdownOption();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI DropdownOption(::std::string label, int value);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     struct ChatSelection {

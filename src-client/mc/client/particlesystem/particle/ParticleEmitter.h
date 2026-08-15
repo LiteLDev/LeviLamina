@@ -100,12 +100,6 @@ public:
 
     MCAPI static ::std::atomic<int64>& mParticleMotionCounter();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ParticleSystem

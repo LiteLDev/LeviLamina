@@ -48,12 +48,6 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI DataTransferServiceRequestDefaultBiomeConfigResponsePayload(
-        ::mce::UUID const                                       requestId,
-        ::std::string const&                                    biomeIdentifier,
-        ::Editor::Network::BiomeConfigIdentifierMappings const& mappings
-    );
-
     MCNAPI ::Editor::Network::DataTransferServiceRequestDefaultBiomeConfigResponsePayload&
     operator=(::Editor::Network::DataTransferServiceRequestDefaultBiomeConfigResponsePayload const&);
 #endif
@@ -63,12 +57,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

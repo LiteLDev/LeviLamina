@@ -69,14 +69,6 @@ public:
     MCNAPI void setTokens(::Identity::EduAuthTokenPair tokens);
 #endif
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $authenticateSilentlyCredentialed();
-
-
-    // NOLINTEND
 };
 
 } // namespace Identity

@@ -15,10 +15,4 @@ public:
         ::std::string const&       loadInstanceId
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

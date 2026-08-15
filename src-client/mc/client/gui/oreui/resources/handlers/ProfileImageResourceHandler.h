@@ -43,23 +43,6 @@ public:
     public:
         // prevent constructor by default
         FinishedRequest();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI FinishedRequest(
-            ::Gameface::ResourceResponse         response,
-            ::std::string const&                 requestUrl,
-            ::Social::ProfileImageOptions const& imageOptions,
-            bool const                           succeeded
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:

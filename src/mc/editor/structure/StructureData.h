@@ -22,8 +22,6 @@ public:
     // NOLINTBEGIN
     MCNAPI StructureData(::Editor::StructureData const&);
 
-    MCNAPI StructureData(::std::string structureNamespace, ::std::string structureName);
-
     MCNAPI ~StructureData();
     // NOLINTEND
 

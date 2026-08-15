@@ -417,31 +417,12 @@ MCAPI ::std::string _appendToLocTable(
     ::std::string const&                                      keyPrefix,
     ::std::string const&                                      keySuffix
 );
-
-MCAPI ::ShadowRenderingParameters::ShadowMap _calculateCascade(
-    float                                                     fov,
-    float                                                     aspectRatio,
-    float                                                     resolution,
-    ::mce::framebuilder::ShadowRange const&                   range,
-    ::glm::mat4x4 const&                                      playerView,
-    ::glm::vec3 const&                                        viewPos,
-    ::glm::vec3 const&                                        up,
-    ::glm::mat4x4 const&                                      worldToLight,
-    ::glm::mat4x4 const&                                      lightToWorld,
-    ::glm::vec3 const&                                        playerPosition,
-    float                                                     maxWorldTexelSnappingPosition,
-    float const                                               zNear,
-    float const                                               maxShadowFrustumRadius,
-    ::mce::framebuilder::PerCascadeRenderingParameters const& renderingParameters
-);
 #endif
 
 MCAPI void _checkTickedActorsForOutOfWorld(::ActorOwnerComponent& actorOwnerComponent);
 
 #ifdef LL_PLAT_C
 MCAPI bool _chunkSeesSkyDirectly(::BlockPos const& worldMin, ::BlockSource& region);
-
-MCAPI ::glm::vec3 _clampShadowAngle(::glm::vec3 const& lightDir, ::glm::vec3 const& up, float shadowClampAngle);
 
 MCAPI bool _clientHasMenuUI(::IClientInstance const* client);
 
@@ -1061,10 +1042,6 @@ MCAPI ::std::string keyLookup(
 );
 #endif
 
-#ifdef LL_PLAT_C
-MCAPI ::glm::vec3 makeAchromatopsiaXLinked(::glm::vec3 fragment);
-#endif
-
 MCAPI ::TextPacket makeAuthorMessage(
     ::TextPacketType               t,
     ::std::string                  author,
@@ -1075,21 +1052,9 @@ MCAPI ::TextPacket makeAuthorMessage(
     ::std::string                  platformId
 );
 
-#ifdef LL_PLAT_C
-MCAPI ::glm::vec3 makeCool(::glm::vec3 fragment);
-
-MCAPI ::glm::vec3 makeDeuteranopia(::glm::vec3 fragment);
-
-MCAPI ::glm::vec3 makeGrayscale(::glm::vec3 fragment);
-#endif
-
 MCAPI ::std::string makeGuestDisplayName(::std::string hostName, ::SubClientId subclientId);
 
 MCAPI ::mce::UUID makeGuestUUID(::mce::UUID const& hostUuid, ::SubClientId subclientId);
-
-#ifdef LL_PLAT_C
-MCAPI ::glm::vec3 makeInverted(::glm::vec3 fragment);
-#endif
 
 #ifdef LL_PLAT_S
 MCAPI ::TextPacket makeMessageOnly(
@@ -1141,22 +1106,12 @@ MCAPI ::mce::UUID makePlayerUUIDForPsnId(::std::string const& psnId);
 
 MCAPI ::mce::UUID makePlayerUUIDForXUID(::std::string const& xuid);
 
-#ifdef LL_PLAT_C
-MCAPI ::glm::vec3 makeProtanopia(::glm::vec3 fragment);
-
-MCAPI ::glm::vec3 makeSepia(::glm::vec3 fragment);
-#endif
-
 #ifdef LL_PLAT_S
 MCAPI ::std::shared_ptr<::Bedrock::Services::IDiscoveryService>
 makeServerDiscoveryService(::Bedrock::Services::DiscoveryConfig const& discoveryConfig);
 #endif
 
 #ifdef LL_PLAT_C
-MCAPI ::glm::vec3 makeTritanopia(::glm::vec3 fragment);
-
-MCAPI ::glm::vec3 makeWarm(::glm::vec3 fragment);
-
 MCAPI int nvFPrintf(::_iobuf* stream, char const* fmt, ...);
 
 MCAPI int nvSWprintf(wchar_t* dst, uint64 dstLen, wchar_t const* fmt, ...);
@@ -1196,8 +1151,6 @@ MCAPI bool parseTradeGroupJson(
 #ifdef LL_PLAT_C
 MCAPI ::std::string pascalCaseConverter(::std::string const& inString, bool pascalCase);
 
-MCAPI void readUV(::glm::vec2& uv, ::Json::Value const& value);
-
 MCAPI void receiptPrinter_Amazon(
     ::std::vector<::std::weak_ptr<::Purchase>> const& purchases,
     ::ReceiptFulfillment::ReceiptData const&          receiptData
@@ -1214,14 +1167,6 @@ MCAPI void recursiveMerge(
 
 MCAPI void
 registerBedrockEffectComponents(::ParticleSystem::ParticleEffectComponentRegistry& particleComponentRegistry);
-
-MCAPI void removeFromCollection(
-    ::std::vector<::std::shared_ptr<::UIControl>>& controls,
-    ::std::map<::std::vector<::std::shared_ptr<::UIControl>>*, ::std::vector<::std::shared_ptr<::UIControl>>>&
-                            controlsToRemove,
-    ::UIControl&            control,
-    ::ControlCollectionFlag flag
-);
 
 MCAPI ::mce::framebuilder::FrameBuilder* renderDragonFrameBuilder();
 

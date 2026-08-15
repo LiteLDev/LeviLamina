@@ -35,21 +35,6 @@ public:
 
     virtual ~I444BufferInterface() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::webrtc::VideoFrameBuffer::Type $type() const;
-
-    MCNAPI int $ChromaWidth() const;
-
-    MCNAPI int $ChromaHeight() const;
-
-    MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
-    $CropAndScale(int offset_x, int offset_y, int crop_width, int crop_height, int scaled_width, int scaled_height);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -210,24 +210,6 @@ public:
 
     virtual ::webrtc::VideoEncoder::EncoderInfo GetEncoderInfo() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $SetFecControllerOverride(::webrtc::FecControllerOverride*);
-
-    MCNAPI int $InitEncode(::webrtc::VideoCodec const*, int, uint64);
-
-    MCNAPI int $InitEncode(::webrtc::VideoCodec const*, ::webrtc::VideoEncoder::Settings const&);
-
-    MCNAPI void $OnPacketLossRateUpdate(float);
-
-    MCNAPI void $OnRttUpdate(int64);
-
-    MCNAPI void $OnLossNotification(::webrtc::VideoEncoder::LossNotification const&);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -77,12 +77,6 @@ public:
 
     virtual bool SetRtpTransport(::webrtc::RtpTransportInternal* rtp_transport) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

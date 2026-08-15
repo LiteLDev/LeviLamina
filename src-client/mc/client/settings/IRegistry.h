@@ -58,12 +58,6 @@ public:
         ::Settings::BannerComponent>>>
     getSetting(::std::string_view settingId) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Settings

@@ -43,12 +43,6 @@ public:
 
     virtual void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const& state) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace dcsctp

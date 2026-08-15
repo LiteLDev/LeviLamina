@@ -67,10 +67,4 @@ public:
 
     virtual bool _isValidIndex(uint index) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

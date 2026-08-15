@@ -35,12 +35,6 @@ public:
 
     virtual bool isInBounds(::BlockPos const& relativePos, ::BlockPos const& dimensions) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline::WorldView

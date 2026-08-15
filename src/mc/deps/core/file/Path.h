@@ -17,14 +17,6 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit Path(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& rhs);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI explicit Path(::Core::PathBuffer<::std::string> const& rhs);
-#endif
-
-#ifdef LL_PLAT_C
     MCAPI explicit Path(::Core::PathBuffer<::std::string> const& rhs);
 #endif
     // NOLINTEND

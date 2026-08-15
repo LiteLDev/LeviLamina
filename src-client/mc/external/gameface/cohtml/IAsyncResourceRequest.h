@@ -45,12 +45,6 @@ public:
 
     virtual ::cohtml::IAsyncResourceRequest::FallbackURLsData GetFallbackURLs() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace cohtml

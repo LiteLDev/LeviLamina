@@ -56,8 +56,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::webrtc::I420BufferInterface const* $GetI420() const;
-
     MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
     $CropAndScale(int offset_x, int offset_y, int crop_width, int crop_height, int scaled_width, int scaled_height);
 

@@ -52,8 +52,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Motif(::std::string name, int w, int h, ::glm::vec4 UVs, bool isPublic, bool isSplitMeshPainting);
-
     MCFOLD ::std::string const getName() const;
     // NOLINTEND
 
@@ -161,11 +159,5 @@ public:
     MCAPI static ::Motif const& mWind();
 
     MCAPI static ::Motif const& mWither();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

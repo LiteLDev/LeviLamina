@@ -89,10 +89,4 @@ public:
         ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

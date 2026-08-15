@@ -26,8 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateDataResponsePacketPayload(::StructureTemplateDataResponsePacketPayload const& other);
-
     MCAPI StructureTemplateDataResponsePacketPayload(
         ::std::string const&             structureName,
         ::std::unique_ptr<::CompoundTag> structureTag,

@@ -24,12 +24,6 @@ public:
     virtual ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType>
     makeDataBuffer(uchar const* data, uint64 size, ::entt::meta_type const& dataType) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Scripting

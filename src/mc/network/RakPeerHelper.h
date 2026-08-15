@@ -46,12 +46,6 @@ public:
 
         virtual ushort getDefaultGamePortv6() const = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:

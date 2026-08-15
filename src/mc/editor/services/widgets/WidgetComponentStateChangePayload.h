@@ -306,27 +306,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI WidgetComponentStateChangePayload(
-        ::mce::UUID const& serviceId,
-        ::mce::UUID const& groupId,
-        ::mce::UUID const& widgetId,
-        ::mce::UUID const& componentId,
-        ::std::variant<
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateBoundingBox,
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateClipboard,
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity,
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGizmo,
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateSpline,
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateText,
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateVolumeOutline,
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateVolumeOutlineVolumeUpdate,
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateNULL,
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid,
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateRenderPlane>&& data
-    );
-#endif
-
 #ifdef LL_PLAT_C
     MCNAPI WidgetComponentStateChangePayload(
         ::mce::UUID const& serviceId,

@@ -48,12 +48,6 @@ public:
 
     virtual bool isAllPlanesVisible() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

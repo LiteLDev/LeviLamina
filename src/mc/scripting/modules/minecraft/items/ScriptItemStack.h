@@ -55,13 +55,6 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptItemStack(::ScriptModuleMinecraft::ScriptItemStack const&);
 
-    MCAPI ScriptItemStack(
-        ::Scripting::WeakLifetimeScope&                                                      scope,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeHandle,
-        int                                                                                  amount,
-        int                                                                                  data
-    );
-
     MCAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::UnsupportedAPIError>
     _validateDynamicProperty(
         ::std::string const&                                              key,

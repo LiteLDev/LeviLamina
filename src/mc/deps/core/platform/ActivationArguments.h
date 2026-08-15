@@ -35,8 +35,6 @@ public:
 #endif
 
     MCNAPI void preParseArguments();
-
-    MCNAPI ~ActivationArguments();
     // NOLINTEND
 
 public:

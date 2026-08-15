@@ -22,12 +22,6 @@ public:
     virtual void
         OnResourceUsageStateMeasured(::webrtc::scoped_refptr<::webrtc::Resource>, ::webrtc::ResourceUsageState) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -33,12 +33,6 @@ public:
 
     virtual uchar* getDataBufferBytes(::Scripting::ObjectHandle handle) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Scripting

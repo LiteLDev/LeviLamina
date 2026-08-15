@@ -45,8 +45,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Random();
-
     MCAPI Random(uint seed, bool onlyUsedDeterministically);
 
 #ifdef LL_PLAT_C

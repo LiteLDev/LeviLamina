@@ -52,10 +52,4 @@ public:
 
     virtual ::INetworkGameConnector& getNetworkGameConnector() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

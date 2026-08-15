@@ -23,16 +23,6 @@ public:
 
     virtual ~DataChannelObserver() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $OnBufferedAmountChange(uint64 sent_data_size);
-
-    MCNAPI bool $IsOkToCallOnTheNetworkThread();
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

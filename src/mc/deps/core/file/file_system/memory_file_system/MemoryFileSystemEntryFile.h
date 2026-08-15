@@ -28,16 +28,6 @@ public:
 
     virtual uint64 getSize() const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI bool $canRemove() const;
-
-    MCNAPI uint64 $getSize() const;
-
-
-    // NOLINTEND
 };
 
 } // namespace Core

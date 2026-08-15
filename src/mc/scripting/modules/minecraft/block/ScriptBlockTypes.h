@@ -49,8 +49,6 @@ public:
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     get_V010(::Scripting::WeakLifetimeScope& scope, ::std::string const& blockName);
-
-    MCAPI ~ScriptBlockTypes();
     // NOLINTEND
 
 public:

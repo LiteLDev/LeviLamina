@@ -25,12 +25,6 @@ public:
 
     virtual bool hasAsset(::Core::Path const& path) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Resources::Archive

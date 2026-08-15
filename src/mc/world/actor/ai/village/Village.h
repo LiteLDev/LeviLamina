@@ -102,8 +102,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Village(::Dimension& dimension, ::mce::UUID id, ::BlockPos const& origin);
-
     MCAPI void _calcPOIDist();
 
     MCAPI void _clearVillagerPOIs(::ActorUniqueID const& villager);
@@ -200,11 +198,5 @@ public:
     MCAPI static ::std::string const& RAID_EXPIRY_EVENT();
 
     MCAPI static ::std::string const& STORAGE_KEY_PREFIX();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

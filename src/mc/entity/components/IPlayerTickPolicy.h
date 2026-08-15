@@ -24,10 +24,4 @@ public:
 
     virtual bool isStrictDismount() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -39,10 +39,4 @@ public:
 
     virtual ::Bedrock::PubSub::Subscription listenForBiomeUpdates(::std::function<void()> callback) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -44,20 +44,4 @@ public:
 
     virtual void _phaseTransitionEnded(::std::string const&, ::std::string const&);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $tick(::PacketSender&);
-
-    MCNAPI void $_initialize();
-
-    MCNAPI void $_phaseChangedWithoutTransition(::std::string const&, ::std::string const&);
-
-    MCNAPI void $_phaseTransitionStarted(::std::string const&, ::std::string const&, int, int);
-
-    MCNAPI void $_phaseTransitionEnded(::std::string const&, ::std::string const&);
-
-
-    // NOLINTEND
 };

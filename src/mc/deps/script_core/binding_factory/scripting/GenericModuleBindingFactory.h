@@ -44,26 +44,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ModuleData(::Scripting::GenericModuleBindingFactory::ModuleData const&);
-
-        MCNAPI ModuleData(
-            ::std::string                                  _alias,
-            ::Scripting::Version&&                         _version,
-            ::std::function<::std::optional<::Scripting::ModuleBinding>(
-                ::Scripting::ModuleBindingBuilder&,
-                ::std::optional<::Scripting::ContextConfig> const&
-            )>&&                                           _moduleCreatorFn,
-            ::std::vector<::Scripting::ModuleDependency>&& _dependencies,
-            bool                                           _importRestricted
-        );
-
         MCNAPI ~ModuleData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
         // NOLINTEND
 
     public:

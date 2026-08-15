@@ -210,18 +210,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI
-        Client(::std::unique_ptr<::ConnectionRequest> primaryRequest, ::PlayerAuthenticationInfo primaryPlayerInfo);
-
         MCAPI void addSubClientPlayerInfo(::SubClientId subClientId, ::PlayerAuthenticationInfo playerInfo);
 
         MCAPI void removeSubClientPlayerInfo(::SubClientId subClientId);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
         // NOLINTEND
     };
 
