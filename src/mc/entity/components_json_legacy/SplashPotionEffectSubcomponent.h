@@ -38,11 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $readfromJSON(::Json::Value& component);
 
-    MCAPI void $writetoJSON(::Json::Value&) const;
-
     MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
-
-    MCAPI char const* $getName() const;
 
 
     // NOLINTEND

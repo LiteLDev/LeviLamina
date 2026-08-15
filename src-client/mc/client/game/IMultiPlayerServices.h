@@ -15,10 +15,4 @@ public:
 
     virtual bool isPlayingLevel() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

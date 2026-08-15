@@ -29,12 +29,6 @@ public:
     virtual ::Bedrock::PubSub::Subscription
     registerDimensionChange(::std::function<void(::DimensionType, ::DimensionType)> fn) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor

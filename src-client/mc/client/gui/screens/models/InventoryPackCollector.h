@@ -34,18 +34,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit InventoryPackCollector(::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const& catalog);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $collect(

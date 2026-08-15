@@ -44,12 +44,6 @@ public:
 
     virtual void resetTimings() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Scripting

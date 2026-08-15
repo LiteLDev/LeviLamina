@@ -40,18 +40,6 @@ public:
     ClientMessageDeliveryNotification& operator=(ClientMessageDeliveryNotification const&);
     ClientMessageDeliveryNotification(ClientMessageDeliveryNotification const&);
     ClientMessageDeliveryNotification();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ClientMessageDeliveryNotification(::std::string messageId);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace JsonRpc

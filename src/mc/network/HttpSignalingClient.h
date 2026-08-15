@@ -49,6 +49,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $SendSignal(
         ::NetherNet::NetworkID                              from,
         ::NetherNet::NetworkID                              to,
@@ -57,6 +58,7 @@ public:
     );
 
     MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
+#endif
 
 
     // NOLINTEND

@@ -16,10 +16,6 @@ class ScriptWidgetErrorInvalidObject : public ::Scripting::BaseError {
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI ScriptWidgetErrorInvalidObject();
-#endif
-
 #ifdef LL_PLAT_C
     MCNAPI ScriptWidgetErrorInvalidObject();
 #endif

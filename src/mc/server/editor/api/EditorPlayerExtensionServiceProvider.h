@@ -35,12 +35,6 @@ public:
         ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
     getInternalServiceContext(::Scripting::WeakLifetimeScope const& scope) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::API

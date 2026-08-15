@@ -56,8 +56,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void tick();
-
-    MCNAPI ~ScriptAsyncJoinEventSignal();
     // NOLINTEND
 };
 

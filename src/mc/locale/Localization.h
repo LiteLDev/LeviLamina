@@ -40,12 +40,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Localization(::std::string const& code);
 
-    MCAPI Localization(::Localization const& rhs);
-
-    MCAPI Localization(::Localization&& rhs);
-
-    MCAPI Localization(::std::string const& code, ::Localization const* fallbackLocale);
-
 #ifdef LL_PLAT_C
     MCAPI ::OptionalString _get(::std::string const& id, ::std::vector<::std::string> const& params) const;
 #endif

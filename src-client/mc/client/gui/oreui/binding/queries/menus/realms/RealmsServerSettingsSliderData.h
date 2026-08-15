@@ -31,19 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsServerSettingsSliderData(
-        ::std::string                                name,
-        ::OreUI::Detail::IPropertyObject*            parent,
-        ::Realms::ServerSettings::SliderValue const& values
-    );
-
     MCAPI void update(::Realms::ServerSettings::SliderValue const& values);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

@@ -65,12 +65,6 @@ public:
 
         virtual void notifyDoneWithSession(::std::string_view sessionId) = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:
@@ -90,12 +84,6 @@ public:
     ) = 0;
 
     virtual void doneCrashProcessing() = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

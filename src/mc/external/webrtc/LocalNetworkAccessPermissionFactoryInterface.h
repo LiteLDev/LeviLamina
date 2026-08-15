@@ -17,12 +17,6 @@ public:
 
     virtual ::std::unique_ptr<::webrtc::LocalNetworkAccessPermissionInterface> Create() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -60,12 +60,6 @@ public:
 
     virtual ::std::optional<int> GetBaseMinimumPlayoutDelayMs(uint) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

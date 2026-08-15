@@ -40,8 +40,6 @@ public:
     MCAPI void setEntityPriorities(::std::unordered_map<::std::string, int> entityPriorities);
 
     MCAPI void setEntityTypeFamilyPriorities(::std::unordered_map<::std::string, int> entityTypeFamilyPriorities);
-
-    MCAPI ~ScriptAimAssistCategorySettings();
     // NOLINTEND
 
 public:

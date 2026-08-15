@@ -17,12 +17,6 @@ public:
 
     virtual void _disconnect(::Bedrock::PubSub::Detail::SubscriptionBodyBase& body) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::PubSub::Detail

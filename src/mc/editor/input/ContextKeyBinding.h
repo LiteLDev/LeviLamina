@@ -36,8 +36,6 @@ public:
         ::Editor::Input::BindingInfo const&                                                                 info,
         ::std::function<void(::Editor::Input::KeyBinding const&, ::Editor::Input::KeyBinding const&, bool)> modifiedFn
     );
-
-    MCNAPI ~ContextKeyBinding();
 #endif
     // NOLINTEND
 

@@ -22,12 +22,6 @@ public:
 
     virtual void pumpMessages() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Scripting

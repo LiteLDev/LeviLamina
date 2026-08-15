@@ -19,14 +19,6 @@ public:
 
     virtual void DataCountersUpdated(::webrtc::StreamDataCounters const&, uint) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::webrtc::StreamDataCounters $GetDataCounters(uint) const;
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -101,12 +101,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void mapContainerToRoot(::std::string const& containerName, ::std::string const& root);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $shutdown();
-    // NOLINTEND
 };
 
 } // namespace Core

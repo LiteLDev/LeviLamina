@@ -28,12 +28,6 @@ public:
 
     virtual ::std::vector<::Scripting::ClassBinding> bind() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

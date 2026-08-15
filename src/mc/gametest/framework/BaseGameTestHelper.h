@@ -300,12 +300,6 @@ public:
         ::std::function<::std::optional<::gametest::GameTestError>()> doneFn
     );
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace gametest

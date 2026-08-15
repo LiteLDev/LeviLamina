@@ -62,10 +62,4 @@ public:
 
     virtual void onStartShutdown() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

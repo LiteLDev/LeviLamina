@@ -18,12 +18,6 @@ public:
 
     virtual bool open(::bx::FilePath const&, ::bx::Error*) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace bx

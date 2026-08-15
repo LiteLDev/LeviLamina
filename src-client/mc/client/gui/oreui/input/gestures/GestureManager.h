@@ -19,12 +19,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::OreUI::GestureRecognizerBase>>> mRecognizers;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~GestureManager();
-    // NOLINTEND
 };
 
 } // namespace OreUI

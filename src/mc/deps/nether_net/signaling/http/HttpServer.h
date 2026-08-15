@@ -52,12 +52,6 @@ public:
 
     MCNAPI void _onListenReadEvent(::webrtc::Socket*);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace NetherNet

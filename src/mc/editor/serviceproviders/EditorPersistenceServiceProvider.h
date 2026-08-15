@@ -68,12 +68,6 @@ public:
     virtual ::Scripting::Result_deprecated<void>
     syncAndSaveGroup(::StackRefResult<::Editor::Services::PersistenceGroup> group) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

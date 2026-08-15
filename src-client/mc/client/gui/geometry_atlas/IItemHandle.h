@@ -29,12 +29,6 @@ public:
         ::brstd::function_ref<void(::InventoryItemRenderer&) const, void(::InventoryItemRenderer&)> visitor
     ) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace GeometryAtlas

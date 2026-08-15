@@ -24,26 +24,4 @@ public:
 public:
     // prevent constructor by default
     POIBlueprint();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI POIBlueprint(
-        ::std::string name,
-        ::POIType     type,
-        float         radius,
-        bool          useBoundingBox,
-        uint64        capacity,
-        uint64        weight,
-        ::std::string soundEvent,
-        ::std::string initEvent,
-        ::std::string endEvent
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

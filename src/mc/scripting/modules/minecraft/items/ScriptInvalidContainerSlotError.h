@@ -14,21 +14,9 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptInvalidContainerSlotError : public ::Scripting::BaseError {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptInvalidContainerSlotError();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

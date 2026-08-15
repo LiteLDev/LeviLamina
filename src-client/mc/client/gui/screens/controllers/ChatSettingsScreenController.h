@@ -63,20 +63,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChatSettingsScreenController(
-        ::std::shared_ptr<::ClientInstanceScreenModel> clientModel,
-        ::std::function<void()>                        refreshChatCallback
-    );
-
     MCAPI void _handleFontColorChanged(int fontColorIndex, ::ChatSettingsScreenController::ColorSubsection colorType);
 
     MCAPI void _setInitialSettings();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

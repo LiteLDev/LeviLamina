@@ -27,12 +27,6 @@ public:
         ::webrtc::scoped_refptr<::webrtc::AudioDecoderFactory>
     ) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

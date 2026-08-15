@@ -16,14 +16,6 @@ public:
 
     virtual void Flush();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $Flush();
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

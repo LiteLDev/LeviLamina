@@ -22,12 +22,6 @@ public:
 
     virtual void OnReceivedPacket(::dcsctp::TimeMs now, ::webrtc::ArrayView<uchar const> payload) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace dcsctp

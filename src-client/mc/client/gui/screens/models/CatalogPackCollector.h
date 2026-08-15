@@ -47,15 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CatalogPackCollector(::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const& catalog);
-
     MCAPI void _search();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

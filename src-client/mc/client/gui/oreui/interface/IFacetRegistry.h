@@ -58,12 +58,6 @@ public:
 
     virtual ::std::vector<::std::string> const& update(::OreUI::FacetBinder& binder) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

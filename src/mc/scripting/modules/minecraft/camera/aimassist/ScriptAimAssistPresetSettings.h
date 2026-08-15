@@ -47,8 +47,6 @@ public:
     setExcludedEntityTypeFamilyTargets(::std::optional<::std::vector<::std::string>> entityTypeFamilyTargets);
 
     MCAPI void setLiquidTargetingItems(::std::optional<::std::vector<::std::string>> items);
-
-    MCAPI ~ScriptAimAssistPresetSettings();
     // NOLINTEND
 
 public:

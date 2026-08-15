@@ -27,14 +27,4 @@ public:
 
     virtual void load(::std::string const&) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>&);
-
-    MCAPI void $load(::std::string const&);
-
-
-    // NOLINTEND
 };

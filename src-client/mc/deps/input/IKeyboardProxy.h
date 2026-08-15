@@ -10,10 +10,4 @@ public:
 
     virtual ~IKeyboardProxy() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -24,10 +24,4 @@ public:
 
     virtual ::std::vector<::Core::Path> stopProfiler() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

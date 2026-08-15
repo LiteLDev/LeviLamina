@@ -27,10 +27,4 @@ public:
 
     virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

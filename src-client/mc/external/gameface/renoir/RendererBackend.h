@@ -240,8 +240,6 @@ public:
 
     MCNAPI void $EndGPUPerformanceTiming(uint);
 
-    MCNAPI bool $ReadTexture(::renoir::TextureObject, ::renoir::UpdateBox const&, void*);
-
     MCNAPI bool $ReadVertexBuffer(::renoir::VertexBufferObject, void*);
 
     MCNAPI bool $ReadIndexBuffer(::renoir::IndexBufferObject, void*);

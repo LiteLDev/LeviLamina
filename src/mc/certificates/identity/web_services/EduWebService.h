@@ -88,6 +88,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $setEula();
 
     MCNAPI void $setPurchaseReceipt(
@@ -112,6 +113,7 @@ public:
     );
 
     MCNAPI void $sendInitialPackRequest(::std::function<void(::std::vector<::ServicePack>)> packReturnCallback);
+#endif
 
 
     // NOLINTEND

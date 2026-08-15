@@ -19,21 +19,9 @@ public:
     ScriptItemCustomComponentReloadVersionError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptItemCustomComponentReloadVersionError(::HashedString const& componentName);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

@@ -27,12 +27,6 @@ public:
         ::std::shared_ptr<::Editor::EditorStructureTemplate const>>>
     getStructureData(::mce::UUID const& id) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::StructureDataCache

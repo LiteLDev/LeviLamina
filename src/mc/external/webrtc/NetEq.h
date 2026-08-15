@@ -168,25 +168,6 @@ public:
 
     virtual int SyncBufferSizeMs() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI int $InsertPacket(::webrtc::RTPHeader const&, ::webrtc::ArrayView<uchar const>);
-
-    MCNAPI int $InsertPacket(::webrtc::RTPHeader const&, ::webrtc::ArrayView<uchar const>, ::webrtc::Timestamp);
-
-    MCNAPI int
-    $InsertPacket(::webrtc::RTPHeader const&, ::webrtc::ArrayView<uchar const>, ::webrtc::RtpPacketInfo const&);
-
-    MCNAPI bool $CreateDecoder(int);
-
-    MCNAPI ::std::optional<::webrtc::NetEq::DecoderFormat> $GetDecoderFormat(int) const;
-
-    MCNAPI ::std::optional<::webrtc::NetEq::DecoderFormat> $GetCurrentDecoderFormat() const;
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

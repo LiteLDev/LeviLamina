@@ -15,10 +15,4 @@ public:
 
     virtual void refreshContent(::LinksToStyle const& linksToStyle) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

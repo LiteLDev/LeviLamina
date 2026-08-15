@@ -51,8 +51,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DirectoryPackSource(::DirectoryPackSourceOptions options);
-
     MCAPI void deleteAllPacksAndReset();
     // NOLINTEND
 
@@ -66,12 +64,6 @@ public:
         ::IPackIOProvider const& io,
         bool                     saveEncryptedWorldTemplatePacksAsZips
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

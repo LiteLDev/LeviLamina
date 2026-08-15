@@ -68,41 +68,6 @@ public:
 
     virtual bool isMigrationUIActive() const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $initialize(
-        ::Bedrock::StorageMigration::StorageMigrationInputs const&,
-        ::Core::Path const&,
-        ::std::function<::std::shared_ptr<::Bedrock::StorageMigration::StorageMigrator>(
-            ::Bedrock::StorageMigration::StorageMigrationInputs const&,
-            ::Core::Path const&,
-            ::std::string const&
-        )>,
-        ::Bedrock::StorageMigration::StorageMigrationType
-    );
-
-    MCNAPI bool $checkMigrationPreviouslyCompleted();
-
-    MCNAPI bool $checkMigrationInProgress();
-
-    MCNAPI ::std::shared_ptr<::Bedrock::StorageMigration::ManifestData> $loadManifest();
-
-    MCNAPI void $setMigrationUIActive(bool);
-
-    MCNAPI ::Bedrock::StorageMigration::StorageMigrationType $getMigrationType() const;
-
-    MCNAPI ::Bedrock::StorageMigration::StorageMigrationInputs const& $getInputs() const;
-
-    MCNAPI ::std::shared_ptr<::Bedrock::StorageMigration::MigrationDetector> $getDetector() const;
-
-    MCNAPI ::std::shared_ptr<::Bedrock::StorageMigration::StorageMigrator> $getMigrator() const;
-
-    MCNAPI bool $isMigrationUIActive() const;
-
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::StorageMigration

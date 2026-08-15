@@ -193,10 +193,4 @@ public:
 
     virtual void blockEvent(::BlockPos const& pos, int b0, int b1) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

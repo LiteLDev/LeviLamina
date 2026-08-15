@@ -61,10 +61,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ResourceLocation(::Core::PathView path);
 
-#ifdef LL_PLAT_C
-    MCAPI ResourceLocation(::ResourceLocation const& rhs);
-#endif
-
     MCAPI ResourceLocation(::Core::PathView path, ::ResourceFileSystem fileSystem);
 
     MCAPI ::Core::PathBuffer<::std::string> getFullPath() const;

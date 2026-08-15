@@ -20,14 +20,6 @@ public:
 
     virtual ~I420ABufferInterface() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::webrtc::VideoFrameBuffer::Type $type() const;
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -29,17 +29,4 @@ public:
         ::Factory<::EventResponse> const&                                                                       factory
     ) const;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
-
-    MCNAPI void $buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
-        ::Factory<::EventResponse> const&                                                                       factory
-    ) const;
-
-
-    // NOLINTEND
 };

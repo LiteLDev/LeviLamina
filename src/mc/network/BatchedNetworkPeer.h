@@ -102,11 +102,6 @@ public:
 
     MCAPI void $update();
 
-    MCAPI ::NetworkPeer::DataStatus $_receivePacket(
-        ::std::string&                                                    outData,
-        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
-    );
-
 
     // NOLINTEND
 };

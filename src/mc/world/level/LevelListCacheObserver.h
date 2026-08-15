@@ -35,6 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
 
     MCNAPI void $onLevelUpdated(::std::string const& levelId);
@@ -44,6 +45,7 @@ public:
     MCNAPI void $onSummaryUpdated(::std::string const& levelId);
 
     MCNAPI void $onStorageChanged();
+#endif
 
 
     // NOLINTEND

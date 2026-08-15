@@ -119,7 +119,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI int64 $_getUnixTime();
+#endif
 
 
     // NOLINTEND

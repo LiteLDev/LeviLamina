@@ -40,12 +40,6 @@ public:
 
     virtual bool PruneConnections(::webrtc::ArrayView<::webrtc::Connection const* const> connections) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

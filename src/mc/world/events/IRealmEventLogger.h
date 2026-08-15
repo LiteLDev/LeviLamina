@@ -10,10 +10,4 @@ public:
 
     virtual void logEvent(::std::string const& message) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

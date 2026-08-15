@@ -30,12 +30,6 @@ public:
     virtual ::OreUI::Status
     init(::std::unordered_map<::std::string, ::std::variant<double, bool, ::std::string>> const&) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

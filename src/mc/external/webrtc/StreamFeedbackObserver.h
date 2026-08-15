@@ -38,12 +38,6 @@ public:
         ::std::vector<::webrtc::StreamFeedbackObserver::StreamPacketInfo> packet_feedback_vector
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

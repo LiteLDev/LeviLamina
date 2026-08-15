@@ -78,6 +78,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI ::std::string $serialize(::Crypto::Certificate::Encoding encoding) const;
 
     MCNAPI ::std::string $extractPublicKey(::Crypto::Certificate::Encoding encoding) const;
@@ -97,6 +98,7 @@ public:
         ::Crypto::Hash::HashType                hashFunction,
         ::Crypto::Certificate::ThumbprintFormat formatting
     ) const;
+#endif
 
 
     // NOLINTEND

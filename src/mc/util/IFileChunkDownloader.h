@@ -71,10 +71,4 @@ public:
     MCNAPI static ::std::add_lvalue_reference_t<char const* const[9]> DownloaderResultStrings();
 #endif
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

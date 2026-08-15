@@ -74,8 +74,6 @@ public:
 
     MCNAPI void $onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo);
 
-    MCNAPI void $onMessageRecieved(::std::string const& message);
-
     MCNAPI void $fireCodeBuilderLoadPerformance(
         ::std::string const&        stage,
         uint64                      tutorialSize,
@@ -85,6 +83,10 @@ public:
 
     MCNAPI void
     $fireCodeBuilderRunPerformance(::std::string const& stage, ::std::chrono::milliseconds elapsedTimeMS) const;
+
+#ifdef LL_PLAT_C
+    MCNAPI void $onMessageRecieved(::std::string const& message);
+#endif
 
 
     // NOLINTEND

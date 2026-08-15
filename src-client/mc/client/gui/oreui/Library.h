@@ -96,8 +96,6 @@ public:
     MCAPI void initializeViewsCoordinator(::std::function<void(::std::string_view)> showDebugToast);
 
     MCAPI void update(double time);
-
-    MCAPI ~Library();
     // NOLINTEND
 
 public:

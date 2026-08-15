@@ -58,12 +58,6 @@ public:
 
     virtual void expose(::cohtml::Binder* binder, void* object) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI::Detail

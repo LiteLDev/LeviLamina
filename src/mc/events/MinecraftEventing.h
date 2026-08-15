@@ -2760,14 +2760,6 @@ public:
         ::Social::ServiceState     serviceState
     );
 
-    MCAPI void $fireEventNPLNRpcFailure(
-        int                                     rpcType,
-        int                                     statusCode,
-        ::Social::MultiplayerState              multiplayerState,
-        ::Social::ServiceState                  serviceState,
-        ::std::optional<::std::chrono::seconds> requiredDelay
-    );
-
     MCAPI void $fireEventSignInToIdentity(
         ::IMinecraftEventing::SignInAccountType accountType,
         ::Social::IdentitySignInTrigger         trigger,

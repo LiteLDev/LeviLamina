@@ -36,12 +36,6 @@ public:
 
     virtual void SetBufferedAmountLowThreshold(int channel_id, uint64 bytes) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -52,12 +52,6 @@ public:
     virtual ::std::string
     computeSharedSecret(::std::string const& myPrivateKey, ::std::string const& peerPublicKey) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Crypto::Asymmetric

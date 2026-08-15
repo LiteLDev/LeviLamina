@@ -28,24 +28,9 @@ public:
     ScriptFormVisibilityError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptFormVisibilityError(
-        ::std::string                                                    formId,
-        ::ScriptModuleMinecraftServerUI::ScriptFormVisibilityErrorReason reason
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

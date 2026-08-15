@@ -46,10 +46,4 @@ public:
 
     virtual void broadcastChanges() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

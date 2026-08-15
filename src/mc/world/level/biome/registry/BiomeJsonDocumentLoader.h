@@ -36,26 +36,4 @@ public:
 public:
     // prevent constructor by default
     BiomeJsonDocumentLoader();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BiomeJsonDocumentLoader(
-        ::cereal::ReflectionCtx&                           ctx,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
-        ::BiomeJsonDocumentGlue&                           biomeJsonDocumentGlue,
-        ::BiomeRegistry const&                             biomeRegistry,
-        ::Core::Path const&                                resourceName,
-        bool                                               isBaseGamePack,
-        ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>&
-             biomeIdToResolvedData,
-        bool betaApis
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

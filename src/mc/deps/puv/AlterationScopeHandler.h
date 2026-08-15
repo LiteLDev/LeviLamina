@@ -22,18 +22,6 @@ public:
     AlterationScopeHandler& operator=(AlterationScopeHandler const&);
     AlterationScopeHandler(AlterationScopeHandler const&);
     AlterationScopeHandler();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI AlterationScopeHandler(::Puv::internal::AlterationNode const*& node, uint id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Puv::internal

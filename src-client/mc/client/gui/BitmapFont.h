@@ -85,23 +85,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BitmapFont(
-        ::Core::Path const&                    asciiName,
-        ::Core::Path const&                    unicodeName,
-        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
-        bool                                   uploadOnConstruction
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI float $_getCharWidth(int uniChar, bool forceUnicode);

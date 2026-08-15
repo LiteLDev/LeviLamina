@@ -35,12 +35,6 @@ public:
         ::Crypto::Certificate::ThumbprintFormat formatting
     ) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Crypto::Certificate

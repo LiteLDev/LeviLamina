@@ -49,12 +49,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPrefabTemplate(
-        ::WeakRef<::Editor::Prefabs::PrefabDBTemplate> templateRef,
-        ::Editor::ServiceProviderCollection&           serviceProviders,
-        ::Scripting::WeakLifetimeScope const&          scope
-    );
-
     MCNAPI ::Scripting::Result<::std::string, ::Editor::ScriptModule::ScriptPrefabErrorInvalidTemplate>
     _getDescription() const;
 
@@ -99,12 +93,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

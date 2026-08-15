@@ -10,10 +10,4 @@ public:
 
     virtual ~ContainerContentChangeListener() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

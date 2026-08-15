@@ -23,19 +23,6 @@ public:
     ParticleEmitterDirection();
 
 #endif
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI explicit ParticleEmitterDirection(::std::array<::SharedTypes::Legacy::ExpressionNode, 3> exprArray);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_20_80

@@ -30,10 +30,4 @@ public:
         ::std::vector<::SharedTypes::v1_20_60::BlockSpecifier> const& blockSpecifiers
     );
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

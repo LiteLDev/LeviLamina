@@ -29,10 +29,4 @@ public:
 
     virtual ::std::string getAppSessionId() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

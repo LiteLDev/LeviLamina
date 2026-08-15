@@ -22,12 +22,6 @@ public:
     EditorScriptAPI& operator=(EditorScriptAPI const&);
     EditorScriptAPI(EditorScriptAPI const&);
     EditorScriptAPI();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~EditorScriptAPI();
-    // NOLINTEND
 };
 
 } // namespace Editor::API

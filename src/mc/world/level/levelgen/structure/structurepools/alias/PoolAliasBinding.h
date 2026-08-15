@@ -49,10 +49,4 @@ public:
 
     virtual ~PoolAliasBinding() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

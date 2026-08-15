@@ -36,12 +36,6 @@ public:
 
     virtual void progress(uchar) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI::Detail

@@ -19,10 +19,4 @@ public:
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::MutableServerNetworkGameplayEvent<::CoordinatorResult>& event) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

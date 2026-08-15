@@ -21,12 +21,6 @@ public:
 
     virtual ::std::string_view getComponentName() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace AtomicClientEntity

@@ -32,7 +32,5 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::shared_ptr<::RakWebSocketDataFrame>
     _failReadFrame(::std::string const& error, ::CloseStatusCode code);
-
-    MCNAPI ~RakWebSocketDataFrameParser();
     // NOLINTEND
 };

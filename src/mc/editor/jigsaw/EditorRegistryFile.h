@@ -21,8 +21,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI EditorRegistryFile(::Editor::Services::EditorRegistryFile const&);
-
-    MCNAPI EditorRegistryFile(::std::string const& fileName, ::std::string const& fileJson);
     // NOLINTEND
 
 public:

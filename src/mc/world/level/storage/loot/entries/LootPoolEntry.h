@@ -47,10 +47,4 @@ public:
     MCAPI static ::std::unique_ptr<::LootPoolEntry>
     deserialize(::Json::Value const& entryJson, bool usingUpcomingCreatorFeaturesExperiment);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

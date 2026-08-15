@@ -21,12 +21,6 @@ public:
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace br::worldgen::processors::BlockRules

@@ -65,8 +65,6 @@ public:
         ::Vec3 const&               cameraPos,
         ::ParticleRenderData const& particleRenderData
     );
-
-    MCAPI ~ParticleRenderer();
     // NOLINTEND
 
 public:

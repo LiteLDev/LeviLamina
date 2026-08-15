@@ -58,10 +58,4 @@ public:
 
     MCAPI static ::MoveInputComponent* getMoveInput(::IClientInstance& client);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

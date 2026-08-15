@@ -24,10 +24,4 @@ public:
 
     virtual void setLightningTime(int lightningTime) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

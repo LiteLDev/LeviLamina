@@ -10,10 +10,4 @@ public:
 
     virtual void flushToPermanentStorage() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

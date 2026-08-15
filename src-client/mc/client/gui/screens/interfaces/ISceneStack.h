@@ -219,10 +219,4 @@ public:
 
     virtual ::Bedrock::PubSub::Subscription registerSceneStackDestroyedListener(::std::function<void()> callback) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -22,10 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI PackDiscoveryError(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
-#endif
-
 #ifdef LL_PLAT_C
     MCNAPI PackDiscoveryError(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
 #endif

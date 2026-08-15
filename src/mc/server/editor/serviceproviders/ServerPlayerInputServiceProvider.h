@@ -64,12 +64,6 @@ public:
     virtual ::std::optional<::Editor::Input::BindingCategoryInfo>
     tryGetBindingCategoryInfo(::std::string const& id) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

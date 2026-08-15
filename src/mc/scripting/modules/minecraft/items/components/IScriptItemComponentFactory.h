@@ -30,12 +30,6 @@ public:
 
     virtual bool canAddOn(::ScriptModuleMinecraft::ScriptItemStack& item) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

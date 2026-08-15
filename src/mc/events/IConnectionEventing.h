@@ -49,10 +49,4 @@ public:
 
     virtual void fireEventOnSuccessfulClientLogin(::Level const* level) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

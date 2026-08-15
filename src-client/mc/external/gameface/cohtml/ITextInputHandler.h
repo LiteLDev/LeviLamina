@@ -31,25 +31,6 @@ public:
 
     virtual void OnBlur(::cohtml::IInputProxy*);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $OnSelectionChanged(::cohtml::IInputProxy* proxy, ::cohtml::TextInput::Selection selection);
-
-    MCNAPI void $OnTextChanged(
-        ::cohtml::IInputProxy* proxy,
-        char const*            addedChars,
-        uint                   addedCount,
-        char const*            removedChars,
-        uint                   removedCount,
-        uint                   index
-    );
-
-    MCNAPI void $OnFocus(::cohtml::IInputProxy* proxy);
-
-    MCNAPI void $OnBlur(::cohtml::IInputProxy*);
-    // NOLINTEND
 };
 
 } // namespace cohtml

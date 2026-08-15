@@ -32,12 +32,4 @@ public:
 
     virtual ::ui::SceneType getSceneType() const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI ::ui::SceneType $getSceneType() const;
-    // NOLINTEND
 };

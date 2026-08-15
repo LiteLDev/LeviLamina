@@ -68,26 +68,6 @@ public:
         // NOLINTBEGIN
         virtual ~PredictiveContainer() = default;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI PredictiveContainer(
-            ::Container&                                     backingContainer,
-            ::SparseContainerBackingSetType                  backingSetType,
-            bool                                             isItemStackNetManagerEnabled,
-            ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
-            ::std::unique_ptr<::IPlayerContainerSetter>      playerContainerSetter
-        );
-#endif
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     struct OpenSessionContainerData {
@@ -141,17 +121,9 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCNAPI ClientScreenData(::ItemStackNetManagerClient::ClientScreenData&&);
-
         MCNAPI ::ItemStackNetManagerClient::ClientScreenData&
         operator=(::ItemStackNetManagerClient::ClientScreenData&&);
 #endif
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
         // NOLINTEND
     };
 
@@ -258,6 +230,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI ::SparseContainer* $initOpenContainer(
         ::BlockSource&             region,
         ::FullContainerName const& openContainerId,
@@ -270,20 +243,12 @@ public:
 
     MCNAPI ::gsl::final_action<::std::function<void()>> $_tryBeginClientLegacyTransactionRequest();
 
-#ifdef LL_PLAT_S
-    MCNAPI void
-    $_addLegacyTransactionRequestSetItemSlot(::ItemStackNetManagerScreen&, ::SharedTypes::Legacy::ContainerType, int);
-#else // LL_PLAT_C
     MCNAPI void $_addLegacyTransactionRequestSetItemSlot(
         ::ItemStackNetManagerScreen&         screen,
         ::SharedTypes::Legacy::ContainerType containerType,
         int                                  slot
     );
-#endif
 
-#ifdef LL_PLAT_S
-    MCNAPI void $_initScreen(::ItemStackNetManagerScreen&);
-#else // LL_PLAT_C
     MCNAPI void $_initScreen(::ItemStackNetManagerScreen& screen);
 #endif
 

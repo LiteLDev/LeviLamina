@@ -32,12 +32,6 @@ public:
 
     virtual void send(char const* buffer, uint64 length) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Scripting

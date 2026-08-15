@@ -87,30 +87,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI bool $ordered() const;
-
-    MCNAPI ::std::optional<int> $maxRetransmitsOpt() const;
-
-    MCNAPI ::std::optional<int> $maxPacketLifeTime() const;
-
-    MCNAPI ::std::string $protocol() const;
-
-    MCNAPI bool $negotiated() const;
-
-    MCNAPI ::webrtc::PriorityValue $priority() const;
-
-    MCNAPI ::webrtc::RTCError $error() const;
-
-    MCNAPI bool $Send(::webrtc::DataBuffer const& buffer);
-
-    MCNAPI void $SendAsync(::webrtc::DataBuffer buffer, ::absl::AnyInvocable<void(::webrtc::RTCError) &&> on_complete);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

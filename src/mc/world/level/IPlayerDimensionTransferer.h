@@ -74,10 +74,4 @@ public:
 
     virtual void setPacketSender(::PacketSender& packetSender) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

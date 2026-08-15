@@ -185,6 +185,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI ::ContainerScreenActionResult
     $tryPlaceOne(::ContainerValidationSlotData const& srcSlot, ::ContainerValidationSlotData const& dstSlot);
 
@@ -256,6 +257,7 @@ public:
     MCNAPI void $_registerCoalesceOrder();
 
     MCNAPI void $_registerAutoPlaceOrder();
+#endif
 
 
     // NOLINTEND

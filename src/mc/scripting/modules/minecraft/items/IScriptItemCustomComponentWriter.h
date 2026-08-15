@@ -48,12 +48,6 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

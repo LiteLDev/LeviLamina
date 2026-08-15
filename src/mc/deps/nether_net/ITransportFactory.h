@@ -35,12 +35,6 @@ public:
 
     virtual void destroyTransportInterface(::NetherNet::INetherNetTransportInterface* pSimpleNetworkInterface) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace NetherNet

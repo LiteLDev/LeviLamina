@@ -290,12 +290,6 @@ public:
 
     virtual bool isSupportingLegacyWorlds() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Settings::RegistryBuilder

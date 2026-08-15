@@ -25,12 +25,6 @@ public:
         ::std::function<void(::Bedrock::Http::Response const&)> callback
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraftNet

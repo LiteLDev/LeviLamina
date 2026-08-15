@@ -48,7 +48,5 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void setValue(::std::string const& name, ::std::variant<float, bool, ::std::string> const& value);
 #endif
-
-    MCNAPI ~PackSettings();
     // NOLINTEND
 };

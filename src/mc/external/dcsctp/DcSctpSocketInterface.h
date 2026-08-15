@@ -85,14 +85,6 @@ public:
 
     virtual ::dcsctp::SctpImplementation peer_implementation() const;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::dcsctp::SctpImplementation $peer_implementation() const;
-
-
-    // NOLINTEND
 };
 
 } // namespace dcsctp

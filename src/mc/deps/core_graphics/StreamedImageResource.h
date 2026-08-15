@@ -43,23 +43,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI bool $isEmpty() const;
-#else // LL_PLAT_C
+#ifdef LL_PLAT_C
     MCFOLD bool $isEmpty() const;
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI bool $isValid() const;
-#else // LL_PLAT_C
     MCFOLD bool $isValid() const;
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI uint $getSize() const;
-#else // LL_PLAT_C
     MCFOLD uint $getSize() const;
-#endif
 
     MCAPI ::cg::ImageBuffer const* $getImage(uint mipLevel) const;
 
@@ -68,6 +57,7 @@ public:
     MCAPI void $addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd);
 
     MCAPI ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource> $unwrapImageData();
+#endif
 
 
     // NOLINTEND

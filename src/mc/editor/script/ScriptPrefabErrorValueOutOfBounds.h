@@ -7,18 +7,6 @@
 
 namespace Editor::ScriptModule {
 
-struct ScriptPrefabErrorValueOutOfBounds : public ::Scripting::BaseError {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptPrefabErrorValueOutOfBounds();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-};
+struct ScriptPrefabErrorValueOutOfBounds : public ::Scripting::BaseError {};
 
 } // namespace Editor::ScriptModule

@@ -94,12 +94,6 @@ public:
         ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

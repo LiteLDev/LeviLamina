@@ -26,18 +26,6 @@ public:
 public:
     // prevent constructor by default
     CommonProperties();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CommonProperties(::std::string_view id, ::OreUI::Detail::IPropertyObject* parent);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

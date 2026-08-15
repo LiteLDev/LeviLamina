@@ -30,10 +30,4 @@ public:
 
     virtual bool readStructure(::StructureTemplate& structureTemplate) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -21,12 +21,6 @@ public:
 
     virtual void UnsetRemb() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

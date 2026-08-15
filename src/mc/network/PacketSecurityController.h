@@ -52,21 +52,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI PacketSecurityController(
-        ::NetworkIdentifier const&                                     netId,
-        ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::PacketViolationResponse $checkForViolation(

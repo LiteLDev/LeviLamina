@@ -27,12 +27,6 @@ public:
 
     virtual ::ChunkPos getPos() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace br::worldgen

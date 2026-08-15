@@ -20,10 +20,4 @@ public:
 
     virtual void recordEvent(::Social::Events::Event& event) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -24,12 +24,6 @@ public:
 
         virtual ~Sink() = default;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:
@@ -38,12 +32,6 @@ public:
     virtual void SetSink(::webrtc::AudioSource::Sink* sink) = 0;
 
     virtual ~AudioSource() = default;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

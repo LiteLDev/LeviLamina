@@ -7,18 +7,6 @@
 
 namespace Editor::ScriptModule {
 
-struct ScriptPrefabErrorInvalidName : public ::Scripting::BaseError {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptPrefabErrorInvalidName();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-};
+struct ScriptPrefabErrorInvalidName : public ::Scripting::BaseError {};
 
 } // namespace Editor::ScriptModule

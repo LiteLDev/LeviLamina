@@ -26,14 +26,6 @@ public:
 
     virtual ~CustomProcessing() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $SetRuntimeSetting(::webrtc::AudioProcessing::RuntimeSetting);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

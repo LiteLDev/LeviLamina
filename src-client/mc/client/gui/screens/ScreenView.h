@@ -241,13 +241,6 @@ public:
 
     MCAPI void _handleDirtyVisualTree(bool overrideFocusControl, bool doAllBinds);
 
-    MCAPI void _handlePointerLocation(
-        ::glm::vec2 const& position,
-        ::FocusImpact      focusImpact,
-        bool               forceHandleWhenMotionless,
-        bool               isRightStickScrolling
-    );
-
     MCAPI void _handleStickScrolling(::DirectionId directionId);
 
     MCAPI bool _isFocusEnabled(::std::shared_ptr<::UIControl> const& control) const;
@@ -279,13 +272,6 @@ public:
 
     MCAPI void _selectControl(::UIControl& control, bool isHandlingTextChar);
 
-    MCAPI void _selectNextFocusObject(
-        ::ui::CardinalDirection direction,
-        bool                    overrideOrigin,
-        ::glm::vec2 const       overridePos,
-        bool                    isRightStickScrolling
-    );
-
     MCAPI void _sendScrollEvent(::UIControl& parent, float delta) const;
 
     MCAPI void _setGamepadCursorFocusMode(bool focusModeEnabled);
@@ -312,9 +298,6 @@ public:
     MCAPI ::std::string getScreenName() const;
 
     MCAPI void handleButtonEvent(uint buttonId, ::ButtonState buttonState, ::FocusImpact focusImpact);
-
-    MCAPI bool
-    handlePointerLocation(::glm::vec2 const& position, bool forceMotionlessPointer, ::FocusImpact focusImpact);
 
     MCAPI bool isGamepadDeflectionModeEnabled() const;
 

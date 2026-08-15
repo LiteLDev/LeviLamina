@@ -12,12 +12,6 @@ public:
 
     virtual int64 TimeNanos() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

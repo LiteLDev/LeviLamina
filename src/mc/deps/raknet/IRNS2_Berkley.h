@@ -20,12 +20,6 @@ public:
     virtual ::RakNet::RNS2BindResult
     Bind(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace RakNet

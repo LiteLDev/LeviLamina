@@ -32,14 +32,6 @@ public:
 
     virtual void OnBufferedAmountLow(int channel_id) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $OnTransportClosed(::webrtc::RTCError error);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

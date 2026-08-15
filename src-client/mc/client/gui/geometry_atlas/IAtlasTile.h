@@ -19,12 +19,6 @@ public:
 
     virtual ::dragon::atlas::AtlasTileHandle getBackendID() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace GeometryAtlas

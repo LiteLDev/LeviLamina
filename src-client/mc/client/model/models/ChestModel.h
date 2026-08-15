@@ -36,18 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ChestModel(bool large);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $render(::ScreenContext& screenContext);

@@ -73,18 +73,6 @@ public:
     public:
         // prevent constructor by default
         InboxMessageData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit InboxMessageData(::Invites::Invite const& invite);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     struct FacetInboxCategoryData {

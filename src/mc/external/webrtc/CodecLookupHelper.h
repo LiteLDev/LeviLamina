@@ -20,12 +20,6 @@ public:
 
     virtual ::webrtc::CodecVendor* GetCodecVendor() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

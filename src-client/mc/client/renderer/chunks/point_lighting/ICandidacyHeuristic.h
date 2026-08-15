@@ -34,12 +34,6 @@ public:
 
     virtual float computeScore(::BlockPos const&, ::PointLighting::ManagedPointLight const&) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI bool $reject(::SubChunkPos const& subChunkPos) const;
-    // NOLINTEND
 };
 
 } // namespace PointLighting

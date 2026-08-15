@@ -39,12 +39,6 @@ public:
 
     MCNAPI static char const* const& kVideoKind();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

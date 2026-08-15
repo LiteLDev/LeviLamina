@@ -33,19 +33,4 @@ public:
     // NOLINTBEGIN
     virtual ~ContainerScreenActionScope() = default;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI
-    ContainerScreenActionScope(::ContainerScreenSimulation& simulation, ::ContainerScreenActionScope* parentScope);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

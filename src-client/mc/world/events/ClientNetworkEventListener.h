@@ -18,10 +18,4 @@ public:
 
     virtual ::EventResult onMessage(::ClientMessageEvent const& messageEvent);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::EventResult $onMessage(::ClientMessageEvent const& messageEvent);
-    // NOLINTEND
 };

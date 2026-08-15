@@ -15,10 +15,4 @@ public:
 
     virtual void applyTo(::LevelData&) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

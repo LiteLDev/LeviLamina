@@ -23,12 +23,6 @@ public:
 
     virtual ::std::vector<::OreUI::Detail::ICommandGroup*> getCommands() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI::Debug

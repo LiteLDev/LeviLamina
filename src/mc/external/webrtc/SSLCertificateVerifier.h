@@ -17,12 +17,6 @@ public:
 
     virtual bool Verify(::webrtc::SSLCertificate const&) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

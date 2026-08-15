@@ -35,17 +35,6 @@ public:
 
     virtual char const* getDescription() const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI bool
-    $tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
-
-    MCAPI char const* $getDescription() const;
-
-
-    // NOLINTEND
 };
 
 } // namespace PositionTrackingDB

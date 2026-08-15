@@ -40,11 +40,11 @@ public:
     MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const& event);
 #endif
 
-    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event);
-
+#ifdef LL_PLAT_C
     MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const& event);
 
     MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const& event);
+#endif
 
 
     // NOLINTEND

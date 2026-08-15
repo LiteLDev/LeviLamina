@@ -14,21 +14,9 @@ namespace Editor::ScriptModule {
 
 class ScriptTransactionManagerErrorNoChanges : public ::Scripting::BaseError {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptTransactionManagerErrorNoChanges();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bindError();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

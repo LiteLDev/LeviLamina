@@ -24,9 +24,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI ::ContainerScreenActionResult $tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs);
-
-    MCNAPI ::ContainerValidationCraftResult $getCraftPreview();
+#endif
 
 
     // NOLINTEND

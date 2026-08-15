@@ -37,10 +37,4 @@ public:
         ::PlatformMultiplayerRestrictions>(::std::shared_ptr<::MinecraftScreenModel>, ::IClientInstance&)>&
     sFactory();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -40,18 +40,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI GalleryScreenshot(
-        ::Screenshots::GalleryScreenshot const&                    screenshot,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
-    );
-
-    MCAPI GalleryScreenshot(
-        ::Screenshots::ShowcasedScreenshot const&                  showcasedScreenshot,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
-    );
-
-    MCAPI GalleryScreenshot(
         ::std::string          id,
         ::OreUI::AllowListPath thumbnail,
         ::OreUI::AllowListPath image,

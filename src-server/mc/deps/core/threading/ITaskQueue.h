@@ -46,10 +46,4 @@ public:
 
     virtual HRESULT Terminate(bool wait, void* callbackContext, void (*callback)(void*)) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

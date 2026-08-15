@@ -22,12 +22,6 @@ public:
 
     virtual void RemoveNameForAddress(::webrtc::IPAddress const&, ::std::function<void(bool)>) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

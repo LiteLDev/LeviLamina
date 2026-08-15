@@ -42,15 +42,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Entry(::mce::UUID const& uuid, ::std::string const& xuid);
-
         MCNAPI ~Entry();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
         // NOLINTEND
 
     public:

@@ -10,10 +10,4 @@ public:
 
     virtual char const* getJsonName() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -27,10 +27,4 @@ public:
         ::std::unique_ptr<::CompoundTag> saveTag
     ) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

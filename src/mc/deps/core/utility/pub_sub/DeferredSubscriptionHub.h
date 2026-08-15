@@ -58,12 +58,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::Bedrock::PubSub::DeferredSubscriptionHub> makePriorityHub();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::PubSub

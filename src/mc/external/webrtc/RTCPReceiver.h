@@ -65,12 +65,6 @@ public:
 
         virtual ~ModuleRtpRtcp() = default;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     class NonSenderRttStats {

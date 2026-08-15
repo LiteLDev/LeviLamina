@@ -20,10 +20,4 @@ public:
     virtual ::std::unique_ptr<::OceanMonumentPiece>
     create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

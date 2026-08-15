@@ -32,10 +32,4 @@ public:
 
     virtual void unload() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

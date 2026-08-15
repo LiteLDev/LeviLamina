@@ -29,12 +29,4 @@ public:
     // NOLINTBEGIN
     MCAPI bool _canAttack(::Actor* projectileOwnerActor, ::Actor* hitActor) const;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI char const* $getName() const;
-
-
-    // NOLINTEND
 };

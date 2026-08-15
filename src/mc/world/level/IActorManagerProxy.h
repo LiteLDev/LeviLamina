@@ -29,10 +29,4 @@ public:
 
     virtual void deleteActorFromWorldInLevelChunk(::Actor const& actor) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

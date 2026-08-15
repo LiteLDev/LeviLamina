@@ -34,12 +34,6 @@ public:
 
     virtual ::OreUI::RoutePrerequisite getRoutePrerequisite(::std::string const& route) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

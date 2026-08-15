@@ -16,24 +16,12 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptSpawnRulesInvalidRegistryError : public ::Scripting::BaseError {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptSpawnRulesInvalidRegistryError();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
 
     MCAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError>
     validate(::ScriptModuleMinecraft::ScriptCustomSpawnRulesRegistry const& registry);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

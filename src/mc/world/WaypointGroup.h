@@ -39,10 +39,4 @@ public:
 
     virtual bool remove(::WaypointGroup::WaypointHandle const& handle) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -50,18 +50,6 @@ public:
     public:
         // prevent constructor by default
         KeyBindingFacet();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI KeyBindingFacet(::Editor::Input::ContextKeyBinding const& binding, bool useDefault);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     struct MouseBindingFacet {

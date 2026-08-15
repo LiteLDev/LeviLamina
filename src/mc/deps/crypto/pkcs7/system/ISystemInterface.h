@@ -12,12 +12,6 @@ public:
 
     virtual ::std::vector<uchar> verifyAndReadPKCS7Data(::std::string const&) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Crypto::Pkcs7

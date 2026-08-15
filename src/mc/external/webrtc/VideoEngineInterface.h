@@ -51,12 +51,6 @@ public:
 
     virtual ::std::vector<::webrtc::Codec> LegacyRecvCodecs(bool) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

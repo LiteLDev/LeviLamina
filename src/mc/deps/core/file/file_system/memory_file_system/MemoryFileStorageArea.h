@@ -33,14 +33,6 @@ public:
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::Core::FileSystemImpl> $createTransaction(::Core::FileAccessType);
-
-
-    // NOLINTEND
 };
 
 } // namespace Core

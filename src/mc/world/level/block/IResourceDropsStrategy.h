@@ -18,10 +18,4 @@ public:
 
     virtual ::ResourceDrops getResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

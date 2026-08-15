@@ -32,23 +32,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid);
-#else // LL_PLAT_C
-    MCFOLD void $onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid);
-#endif
-
     MCFOLD void $onUserDisconnectedBecauseConcurrentLogin(::std::string const&);
 
-#ifdef LL_PLAT_S
-    MCAPI void $onPlayerJoinedLobby(::Social::OnlineId const& player, ::Social::Nonce const& nonce);
-#else // LL_PLAT_C
-    MCFOLD void $onPlayerJoinedLobby(::Social::OnlineId const& player, ::Social::Nonce const& nonce);
-#endif
+#ifdef LL_PLAT_C
+    MCFOLD void $onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid);
 
-#ifdef LL_PLAT_S
-    MCAPI void $onPlayerLeftLobby(::Social::OnlineId const&);
-#else // LL_PLAT_C
+    MCFOLD void $onPlayerJoinedLobby(::Social::OnlineId const& player, ::Social::Nonce const& nonce);
+
     MCFOLD void $onPlayerLeftLobby(::Social::OnlineId const&);
 #endif
 

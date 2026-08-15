@@ -41,7 +41,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+#endif
 
 
     // NOLINTEND

@@ -47,18 +47,6 @@ public:
     public:
         // prevent constructor by default
         CreditsContent();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI CreditsContent(::std::string const& text, int height, bool centered, int paddingAfter);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     using clock_type = ::std::chrono::steady_clock;

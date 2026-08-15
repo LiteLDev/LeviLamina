@@ -31,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InventoryAction();
-
     MCAPI InventoryAction(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
 
     MCAPI ::InventoryAction& operator=(::InventoryAction const&);

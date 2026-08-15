@@ -51,10 +51,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value const& object, bool);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

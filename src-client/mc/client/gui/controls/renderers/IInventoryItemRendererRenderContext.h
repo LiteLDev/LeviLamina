@@ -33,10 +33,4 @@ public:
         ::std::optional<::TextureUVCoordinateSet> const& customIconUVCoords
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

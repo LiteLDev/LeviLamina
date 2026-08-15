@@ -30,19 +30,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI ::std::error_code $start(::std::optional<uint64>);
-
-    MCNAPI ::std::error_code $write(::gsl::span<uchar const> source);
-
-    MCNAPI void $complete();
-
-    MCNAPI void $cancel();
 
     MCNAPI ::std::string const& $getLoggableDestination() const;
 
     MCNAPI ::gsl::span<uchar const> $getLoggableData() const;
 
     MCNAPI ::Bedrock::Http::ResponseBodyType $getType() const;
+#endif
 
 
     // NOLINTEND

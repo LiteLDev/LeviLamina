@@ -18,21 +18,9 @@ public:
     ScriptAllowListModificationError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptAllowListModificationError(::std::string const& msg);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

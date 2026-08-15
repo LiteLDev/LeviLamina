@@ -49,12 +49,6 @@ public:
 
     virtual ::std::vector<::OreUI::Detail::IProperty*> properties() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI::Detail

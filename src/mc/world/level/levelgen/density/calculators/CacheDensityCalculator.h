@@ -54,12 +54,4 @@ public:
 
     virtual void fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const;
-
-
-    // NOLINTEND
 };

@@ -25,12 +25,6 @@ public:
 
     virtual void EnableRetransmitDetection(uint, bool) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

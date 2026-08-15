@@ -18,8 +18,6 @@ class PacksModelFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::PackInstanceId> deserializeFile(::std::istream& file);
-
     MCAPI static void loadPacks(
         ::std::vector<::PackInstanceId> const&                            packInstanceIds,
         ::PackSource&                                                     packSource,

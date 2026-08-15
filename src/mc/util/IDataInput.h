@@ -49,10 +49,4 @@ public:
 
     MCAPI ::std::string readString();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -40,10 +40,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI AchievementEventing();
-#endif
-
     MCNAPI void AwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievementId);
 
 #ifdef LL_PLAT_C
@@ -75,12 +71,6 @@ public:
 
     MCNAPI void waxedOrWaxedOf(::Player& player, int blockID);
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

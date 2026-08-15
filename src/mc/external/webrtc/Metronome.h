@@ -22,14 +22,6 @@ public:
 
     virtual ::webrtc::TimeDelta TickPeriod() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $RequestCallOnNextTick(::absl::AnyInvocable<void() &&>);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

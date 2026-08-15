@@ -31,15 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI explicit ScriptGuidePlane(::Editor::GuidePlaneData const& data);
-#endif
-
 #ifdef LL_PLAT_C
     MCNAPI explicit ScriptGuidePlane(::Editor::GuidePlaneData const& data);
 #endif
-
-    MCNAPI ~ScriptGuidePlane();
     // NOLINTEND
 
 public:

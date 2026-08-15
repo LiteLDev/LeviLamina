@@ -15,16 +15,4 @@ public:
 public:
     // prevent constructor by default
     MobEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI MobEvent(::std::string name, ::std::string localizableName, bool val);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

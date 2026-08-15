@@ -29,16 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI explicit TimeMarker(::TimeMarkerData const& data);
-#endif
-
     MCAPI ::TimeMarkerData toData() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

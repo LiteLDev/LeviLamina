@@ -38,24 +38,6 @@ public:
 
     virtual void serializeExtended(::Json::Value& outJsonValue) const = 0;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WorldJoinedRecord(::std::string const& name, ::GameType gameType, bool isEditorWorld);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace World

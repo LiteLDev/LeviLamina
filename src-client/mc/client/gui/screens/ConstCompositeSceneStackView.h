@@ -22,7 +22,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string getTopScreenName() const;
-
-    MCAPI ~ConstCompositeSceneStackView();
     // NOLINTEND
 };

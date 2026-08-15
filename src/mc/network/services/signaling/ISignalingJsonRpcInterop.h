@@ -45,10 +45,4 @@ public:
 
     virtual void onTurnConfigFailure(::Bedrock::ErrorInfo<::NetherNet::ESessionError> const& error) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -28,10 +28,4 @@ public:
 
     virtual void startLocalWorld(::LocalWorldInfo worldInfo, ::LevelSettings const* settings) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

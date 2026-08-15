@@ -27,25 +27,9 @@ public:
     ScriptInvalidItemStackError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptInvalidItemStackError(
-        ::ScriptModuleMinecraft::ErrorMemberType                                      memberType,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> itemType,
-        ::std::string_view                                                            functionName
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

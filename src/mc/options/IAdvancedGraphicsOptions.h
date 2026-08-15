@@ -76,10 +76,4 @@ public:
 
     MCNAPI static ::std::string_view const& RAY_TRACING_TAG();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

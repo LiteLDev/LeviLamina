@@ -27,14 +27,6 @@ public:
 
     virtual ~FieldTrialStructListBase() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI bool $Parse(::std::optional<::std::string>);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

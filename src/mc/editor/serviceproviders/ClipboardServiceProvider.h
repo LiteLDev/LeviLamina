@@ -70,12 +70,6 @@ public:
     virtual ::Bedrock::PubSub::Subscription
     listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)> callback) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

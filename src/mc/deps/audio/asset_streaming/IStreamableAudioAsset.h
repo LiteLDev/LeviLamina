@@ -21,12 +21,6 @@ public:
 
     virtual ::Bedrock::Result<uint64> tell() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Audio

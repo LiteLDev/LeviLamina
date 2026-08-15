@@ -45,12 +45,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void logMessage(::NetherNet::LogSeverity level, char const* fmt, ...) const;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace NetherNet

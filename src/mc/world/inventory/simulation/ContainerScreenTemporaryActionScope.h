@@ -23,21 +23,4 @@ public:
     // NOLINTBEGIN
     virtual ~ContainerScreenTemporaryActionScope() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ContainerScreenTemporaryActionScope(
-        ::ContainerScreenSimulation&  simulation,
-        ::ContainerScreenActionScope* parentScope
-    );
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

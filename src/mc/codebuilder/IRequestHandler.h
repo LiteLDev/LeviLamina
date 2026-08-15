@@ -53,12 +53,6 @@ public:
 
     virtual bool tutorialCached(::std::string const& tutorialPath) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace CodeBuilder

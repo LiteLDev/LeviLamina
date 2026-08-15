@@ -23,12 +23,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

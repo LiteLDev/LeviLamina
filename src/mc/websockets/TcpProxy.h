@@ -34,10 +34,4 @@ public:
 
     virtual ::RakNet::SystemAddress nextLostConnection() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

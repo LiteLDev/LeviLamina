@@ -28,16 +28,6 @@ public:
         ::IImageCache&              textureGroup
     );
 
-    MCNAPI static void _readTextureIntoAtlas(
-        ::cg::ImageBuffer&            atlasImage,
-        ::persona::TextureTint const& textureTint,
-        ::cg::ImageBuffer const&      sourceImage,
-        ::cg::ImageBuffer const*      srcTintMapImage,
-        ::cg::ImageBuffer const*      srcClothingLayerMapImage,
-        ::TextureUVCoordinateSet&     uvs,
-        ::glm::ivec2 const*           maxDimensionsSlice
-    );
-
     MCNAPI static bool
     _validateAnimatedTextureType(::persona::AnimatedTextureType type, uint width, uint height, int frames);
 

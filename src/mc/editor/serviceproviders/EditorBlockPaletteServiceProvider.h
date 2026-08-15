@@ -72,12 +72,6 @@ public:
                              ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)> callback
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

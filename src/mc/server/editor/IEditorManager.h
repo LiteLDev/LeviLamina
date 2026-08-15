@@ -59,12 +59,6 @@ public:
 
     virtual void setEditorConnectionJoinIntent(::EditorConnectionJoinIntent intent) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor

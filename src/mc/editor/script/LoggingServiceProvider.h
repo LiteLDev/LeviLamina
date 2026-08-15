@@ -47,12 +47,6 @@ public:
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     listenForLogMessage(::std::function<void(::Editor::LogMessage const&)> func) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

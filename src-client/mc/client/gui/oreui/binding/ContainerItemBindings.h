@@ -39,15 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContainerItemBindings(::OreUI::Detail::IPropertyObject* parent, ::GameplayUI::ContainerItem item);
-
     MCAPI void update(::GameplayUI::ContainerItem const& item);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

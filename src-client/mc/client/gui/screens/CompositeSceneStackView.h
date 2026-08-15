@@ -67,8 +67,6 @@ public:
     MCAPI void onGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI bool update();
-
-    MCAPI ~CompositeSceneStackView();
     // NOLINTEND
 
 public:

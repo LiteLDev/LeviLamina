@@ -36,18 +36,6 @@ public:
 
     virtual void SetAudioLevel(::std::optional<uchar>);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::webrtc::TransformableAudioFrameInterface::FrameType $Type() const;
-
-    MCNAPI bool $CanSetAudioLevel() const;
-
-    MCNAPI void $SetAudioLevel(::std::optional<uchar>);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

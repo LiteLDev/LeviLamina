@@ -66,14 +66,6 @@ public:
 
     MCAPI bool $isComplete() const;
 
-    MCAPI bool $_init(
-        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
-        ::PositionTrackingDB::TrackingRecord&                           record
-    );
-
-    MCAPI bool
-    $_tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
-
     MCAPI bool
     $_quit(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 

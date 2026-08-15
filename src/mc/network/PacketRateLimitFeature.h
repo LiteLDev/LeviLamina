@@ -17,18 +17,4 @@ public:
     PacketRateLimitFeature& operator=(PacketRateLimitFeature const&);
     PacketRateLimitFeature(PacketRateLimitFeature const&);
     PacketRateLimitFeature();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit PacketRateLimitFeature(
-        ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

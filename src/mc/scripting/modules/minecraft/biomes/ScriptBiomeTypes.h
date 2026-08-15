@@ -34,8 +34,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _generateAllBiomeTypeHandles(::Scripting::WeakLifetimeScope& scope);
-
-    MCAPI ~ScriptBiomeTypes();
     // NOLINTEND
 
 public:

@@ -26,8 +26,6 @@ public:
     // NOLINTBEGIN
     MCAPI AllowListProfileImage(::OreUI::AllowListProfileImage const&);
 
-    MCAPI AllowListProfileImage(::std::string id, ::Social::ProfileImageOptions const& imageOptions);
-
     MCAPI void invalidate();
 
     MCAPI ::OreUI::AllowListProfileImage& operator=(::OreUI::AllowListProfileImage const&);

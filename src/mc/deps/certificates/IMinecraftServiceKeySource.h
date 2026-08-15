@@ -21,10 +21,4 @@ public:
 
     virtual ::std::optional<::DiscoveryEnvironment> getDiscoveryEnvironment() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

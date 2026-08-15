@@ -130,6 +130,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI ::std::optional<::Scripting::ScriptContext> $createContext(
         ::Scripting::ModuleBindingBundle&& bindings,
         ::Scripting::IDependencyLoader*    loader,
@@ -196,6 +197,7 @@ public:
 
     MCNAPI ::std::optional<::Scripting::TypeNameInfo>
     $getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const;
+#endif
 
 
     // NOLINTEND

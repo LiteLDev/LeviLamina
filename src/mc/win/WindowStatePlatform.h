@@ -24,6 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI bool $getWindowRect(::HWND__* window, ::tagRECT& result) const;
 
     MCNAPI bool $getClientRect(::HWND__* window, ::tagRECT& result) const;
@@ -31,6 +32,7 @@ public:
     MCNAPI bool $getWindowShowCommand(::HWND__* window, int& result) const;
 
     MCNAPI bool $getAdjustedWindowRect(::tagRECT const& clientRect, ::tagRECT& windowRect) const;
+#endif
 
 
     // NOLINTEND

@@ -95,12 +95,6 @@ public:
 
     virtual bool isDeferredExperimentEnabled() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

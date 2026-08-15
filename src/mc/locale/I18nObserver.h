@@ -23,10 +23,4 @@ public:
 
     virtual void onLanguagesLoaded() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

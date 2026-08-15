@@ -55,12 +55,6 @@ public:
 
         virtual ::std::string get2x2Secret(::Random& random) = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     struct PlacementData {
@@ -123,31 +117,6 @@ public:
             ::Random&            random,
             ::BoundingBox const& chunkBB
         ) /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI WoodlandMansionPiece(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
-            ::std::string const&                              templateName,
-            ::BlockPos const&                                 origin,
-            ::Rotation                                        rotation
-        );
-
-        MCAPI WoodlandMansionPiece(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
-            ::std::string const&                              templateName,
-            ::BlockPos const&                                 origin,
-            ::Rotation                                        rotation,
-            ::Mirror                                          mirror
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
         // NOLINTEND
 
     public:

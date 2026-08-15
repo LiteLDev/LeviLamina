@@ -25,14 +25,6 @@ public:
 
     virtual void setCerealContext(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $setCerealContext(::cereal::ReflectionCtx& ctx);
-
-
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

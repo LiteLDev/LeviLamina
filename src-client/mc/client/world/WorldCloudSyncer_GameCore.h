@@ -56,22 +56,6 @@ public:
         ::std::function<void(::World::WorldCloudSyncResult)> const&
     ) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $syncWorld(::World::WorldID const&, ::std::function<void(::World::WorldCloudSyncResult)> const&);
-
-    MCAPI ::Core::ContainerSyncState $getSyncState(::World::WorldID const&) const;
-
-    MCAPI ::std::optional<uint64> $getConsumedRemoteStorageQuota(::World::WorldID const&) const;
-
-    MCAPI void
-    $setLocalOnly(::World::WorldID const&, bool, ::std::function<void(::World::WorldCloudSyncResult)> const&);
-
-    MCAPI void
-    $setCloudSaved(::World::WorldID const&, bool, ::std::function<void(::World::WorldCloudSyncResult)> const&);
-    // NOLINTEND
 };
 
 } // namespace World

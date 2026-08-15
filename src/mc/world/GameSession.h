@@ -55,10 +55,6 @@ public:
 
     MCAPI void tick();
 
-#ifdef LL_PLAT_S
-    MCAPI ~GameSession();
-#endif
-
 #ifdef LL_PLAT_C
     MCAPI ~GameSession();
 #endif

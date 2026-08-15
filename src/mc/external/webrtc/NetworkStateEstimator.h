@@ -26,14 +26,6 @@ public:
 
     virtual ~NetworkStateEstimator() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $OnReceivedPacket(::webrtc::PacketResult const&);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -49,6 +49,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $postInit();
 
     MCNAPI void $releaseResources();
@@ -62,6 +63,7 @@ public:
     MCNAPI ::Container* $_getContainer() const;
 
     MCNAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+#endif
 
 
     // NOLINTEND

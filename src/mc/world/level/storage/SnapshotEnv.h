@@ -32,12 +32,6 @@ public:
         DeleteFileEntry& operator=(DeleteFileEntry const&);
         DeleteFileEntry(DeleteFileEntry const&);
         DeleteFileEntry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~DeleteFileEntry();
-        // NOLINTEND
     };
 
 public:

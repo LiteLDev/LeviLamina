@@ -23,10 +23,4 @@ public:
 
     virtual ::std::weak_ptr<::Village> getVillageByID(::mce::UUID const& villageID) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

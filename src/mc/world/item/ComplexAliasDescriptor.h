@@ -53,18 +53,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ComplexAliasDescriptor(::std::string const& fullName);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;

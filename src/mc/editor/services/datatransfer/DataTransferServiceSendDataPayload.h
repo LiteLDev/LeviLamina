@@ -43,17 +43,7 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI DataTransferServiceSendDataPayload(::Editor::Network::DataTransferServiceSendDataPayload const&);
-#endif
 
-    MCNAPI DataTransferServiceSendDataPayload(
-        ::std::string const&                                                      collectionName,
-        ::std::string const&                                                      identifier,
-        ::std::string const&                                                      jsonData,
-        bool                                                                      lockToBiome,
-        ::std::optional<::Editor::Network::DataTransferServiceSendNewDataOptions> options
-    );
-
-#ifdef LL_PLAT_C
     MCNAPI ::Editor::Network::DataTransferServiceSendDataPayload&
     operator=(::Editor::Network::DataTransferServiceSendDataPayload&&);
 

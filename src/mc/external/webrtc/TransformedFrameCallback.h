@@ -28,14 +28,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $StartShortCircuiting();
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -17,12 +17,6 @@ public:
 
     virtual void FrameCountUpdated(::webrtc::FrameCounts const&, uint) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

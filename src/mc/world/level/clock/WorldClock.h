@@ -93,13 +93,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldClock();
-
 #ifdef LL_PLAT_C
     MCAPI explicit WorldClock(::WorldClockData const& data);
 #endif
-
-    MCAPI WorldClock(::WorldClock const& rhs);
 
     MCAPI void _sendAddTimeMarker(::PacketSender& packetSender) const;
 

@@ -30,12 +30,6 @@ public:
         ::LocalServerLauncher::ServerLaunchResult&&              result
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace LocalServerLauncher

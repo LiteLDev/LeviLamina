@@ -12,12 +12,6 @@ public:
 
     virtual void sanitize() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace EAS

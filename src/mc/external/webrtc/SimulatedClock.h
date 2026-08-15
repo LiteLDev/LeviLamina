@@ -35,16 +35,6 @@ public:
 
     virtual ::webrtc::NtpTime ConvertTimestampToNtpTime(::webrtc::Timestamp) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::webrtc::Timestamp $CurrentTime();
-
-    MCNAPI ::webrtc::NtpTime $ConvertTimestampToNtpTime(::webrtc::Timestamp);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

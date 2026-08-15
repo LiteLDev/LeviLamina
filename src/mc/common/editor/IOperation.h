@@ -24,12 +24,6 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& services) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Transactions

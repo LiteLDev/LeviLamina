@@ -40,12 +40,6 @@ public:
 
         virtual ~Source() = default;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:
@@ -58,12 +52,6 @@ public:
     virtual void Mix(uint64, ::webrtc::AudioFrame*) = 0;
 
     virtual ~AudioMixer() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

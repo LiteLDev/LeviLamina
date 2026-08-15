@@ -21,10 +21,4 @@ public:
 
     virtual ~IPacketSecurityHandler() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

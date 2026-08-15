@@ -494,12 +494,6 @@ public:
 
     virtual void _initiateTDR() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI bool $isDeviceRemoved();
-    // NOLINTEND
 };
 
 } // namespace mce::framebuilder

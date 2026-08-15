@@ -31,12 +31,6 @@ public:
         ::ScriptModuleMinecraftNet::ScriptSerializableParseError>
     deserialize(::std::string const& body, ::std::string const& identifier, ::Scripting::WeakLifetimeScope& scope) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraftNet

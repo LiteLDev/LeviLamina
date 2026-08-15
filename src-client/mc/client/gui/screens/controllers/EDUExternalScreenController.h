@@ -27,20 +27,4 @@ public:
 public:
     // prevent constructor by default
     EDUExternalScreenController();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EDUExternalScreenController(
-        ::std::shared_ptr<::MinecraftScreenModel> model,
-        ::std::function<void()>                   storageLocationChangedCallback,
-        ::std::function<uint64()>                 worldCountCallback
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

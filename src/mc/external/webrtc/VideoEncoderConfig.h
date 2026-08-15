@@ -45,18 +45,6 @@ public:
 
         virtual ~EncoderSpecificSettings() /*override*/ = default;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI void $FillVideoCodecVp8(::webrtc::VideoCodecVP8*) const;
-
-        MCNAPI void $FillVideoCodecVp9(::webrtc::VideoCodecVP9*) const;
-
-        MCNAPI void $FillVideoCodecAv1(::webrtc::VideoCodecAV1*) const;
-
-
-        // NOLINTEND
     };
 
     class VideoStreamFactoryInterface : public ::webrtc::RefCountInterface {
@@ -67,12 +55,6 @@ public:
         CreateEncoderStreams(::webrtc::FieldTrialsView const&, int, int, ::webrtc::VideoEncoderConfig const&) = 0;
 
         virtual ~VideoStreamFactoryInterface() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
         // NOLINTEND
     };
 
@@ -96,14 +78,6 @@ public:
 
         virtual ~Av1EncoderSpecificSettings() /*override*/ = default;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI void $FillVideoCodecAv1(::webrtc::VideoCodecAV1*) const;
-
-
-        // NOLINTEND
     };
 
     class Vp8EncoderSpecificSettings : public ::webrtc::VideoEncoderConfig::EncoderSpecificSettings {
@@ -126,14 +100,6 @@ public:
 
         virtual ~Vp8EncoderSpecificSettings() /*override*/ = default;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI void $FillVideoCodecVp8(::webrtc::VideoCodecVP8*) const;
-
-
-        // NOLINTEND
     };
 
     class Vp9EncoderSpecificSettings : public ::webrtc::VideoEncoderConfig::EncoderSpecificSettings {
@@ -155,14 +121,6 @@ public:
         virtual void FillVideoCodecVp9(::webrtc::VideoCodecVP9*) const /*override*/;
 
         virtual ~Vp9EncoderSpecificSettings() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI void $FillVideoCodecVp9(::webrtc::VideoCodecVP9*) const;
-
-
         // NOLINTEND
     };
 

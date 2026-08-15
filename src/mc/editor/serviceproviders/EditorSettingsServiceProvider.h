@@ -71,12 +71,6 @@ public:
 
     virtual ::Bedrock::PubSub::Subscription listenForThemeDeleted(::std::function<void(::std::string const&)> func) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

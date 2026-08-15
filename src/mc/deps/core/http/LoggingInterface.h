@@ -17,12 +17,6 @@ public:
 
     virtual void writeToDebugger(char const* area, ::HCTraceLevel level, char const* message) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Http

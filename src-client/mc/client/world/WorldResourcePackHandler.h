@@ -285,13 +285,6 @@ public:
 
     MCFOLD void $cancelDownloadPack();
 
-    MCAPI void $getPackSizes(
-        ::LevelSummary const&                           levelSummary,
-        ::std::vector<::std::string> const&             packIds,
-        ::std::function<void(uint64)>                   onCompleteCallback,
-        ::std::function<void(::World::PackActionError)> onErrorCallback
-    );
-
     MCAPI void $savePacksData();
 
     MCAPI bool $hasNonAddonBehaviorPacks(::LevelSummary const& levelSummary);

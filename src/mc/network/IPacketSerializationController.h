@@ -14,10 +14,4 @@ public:
 
     virtual ::std::optional<::SerializationMode> getOverrideModeForPacket(::MinecraftPacketIds id) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

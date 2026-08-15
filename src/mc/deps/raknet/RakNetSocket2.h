@@ -35,14 +35,6 @@ public:
 
     virtual void SetMulticastInterface(int interfaceIndex);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $SetMulticastInterface(int interfaceIndex);
-
-
-    // NOLINTEND
 };
 
 } // namespace RakNet

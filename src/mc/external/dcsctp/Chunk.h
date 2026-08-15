@@ -14,12 +14,6 @@ public:
 
     virtual ::std::string ToString() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace dcsctp

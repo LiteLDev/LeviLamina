@@ -94,15 +94,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SelectionWheelComponent(::UIControl& owner);
-
     MCAPI void _updateControlVisibility();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

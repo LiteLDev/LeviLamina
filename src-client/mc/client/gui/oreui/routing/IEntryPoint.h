@@ -28,12 +28,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

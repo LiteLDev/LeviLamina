@@ -37,10 +37,4 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::optional<::BlockPos> _place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

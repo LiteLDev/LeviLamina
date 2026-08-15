@@ -88,14 +88,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI bool $StartAecDump(::_iobuf* file, int64 max_size_bytes);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

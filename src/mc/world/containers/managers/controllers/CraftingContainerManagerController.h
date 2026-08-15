@@ -82,6 +82,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCNAPI void $onBlockChanged(
             ::BlockSource&                 source,
             ::BlockPos const&              pos,
@@ -95,6 +96,7 @@ public:
         );
 
         MCNAPI void $onSourceDestroyed(::BlockSource& source);
+#endif
 
 
         // NOLINTEND
@@ -266,6 +268,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI bool $isOutputSlot(::std::string const& collectionName) const;
 
     MCNAPI bool $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
@@ -307,6 +310,7 @@ public:
     MCNAPI void $closeContainers();
 
     MCNAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
+#endif
 
 
     // NOLINTEND

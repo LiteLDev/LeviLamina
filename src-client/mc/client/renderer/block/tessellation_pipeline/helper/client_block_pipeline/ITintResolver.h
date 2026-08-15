@@ -40,12 +40,6 @@ public:
         ::BlockPos const&                        relativePos,
         ::BiomeTintCache*                        biomeTintCache);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline

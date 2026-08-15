@@ -61,18 +61,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI PeerConnectionObserver();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $OnStatsDelivered(::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const& report);

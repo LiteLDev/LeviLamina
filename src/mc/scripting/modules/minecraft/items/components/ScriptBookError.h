@@ -33,23 +33,11 @@ public:
     ScriptBookError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptBookError(::std::string_view name, ::ScriptModuleMinecraft::ScriptBookError::Reason reason);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
 
     MCAPI static ::Scripting::EnumBinding bindReasonEnum();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

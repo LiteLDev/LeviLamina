@@ -23,12 +23,6 @@ public:
 
     virtual void sendMouseMoveEvent(::Vec2 const& pos) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

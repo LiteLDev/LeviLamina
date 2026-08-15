@@ -18,21 +18,9 @@ public:
     ScriptPlaceJigsawError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptPlaceJigsawError(::std::string message);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

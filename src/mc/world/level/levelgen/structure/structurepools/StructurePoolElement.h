@@ -59,12 +59,6 @@ public:
 
         virtual bool isLegacyStructure() const = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     class LazyTemplate : public ::StructurePoolElement::ITemplate {

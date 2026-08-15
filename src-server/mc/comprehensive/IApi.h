@@ -15,10 +15,4 @@ public:
 
     virtual HRESULT QueryApi(::ApiId id, void** ptr) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -40,22 +40,6 @@ public:
     public:
         // prevent constructor by default
         EntryPoint();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI EntryPoint(
-            ::std::string const&                    route,
-            ::OreUI::EntryPoints::RouteFlags const  flags,
-            ::std::unique_ptr<::OreUI::IEntryPoint> definition
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:

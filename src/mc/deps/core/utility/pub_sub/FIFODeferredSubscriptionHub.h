@@ -39,21 +39,6 @@ public:
         ::std::optional<int>
     ) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $flushPendingEvents();
-
-    MCNAPI ::Bedrock::PubSub::DeferredSubscriptionHub::HubType $getHubType() const;
-
-    MCNAPI bool $_runOneEvent();
-
-    MCNAPI void
-        $_enqueue(::brstd::move_only_function<void()>, ::Bedrock::PubSub::ConnectPosition, ::std::optional<int>);
-
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::PubSub

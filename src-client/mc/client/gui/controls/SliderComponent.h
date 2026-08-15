@@ -86,8 +86,6 @@ public:
 
     MCAPI void _setSliderValue(float value);
 
-    MCAPI void _updateSliderFromPosition(::glm::vec2 const& pointerPosition, bool finalize);
-
     MCAPI void _updateSliderFromStepSize(int stepSize);
 
     MCAPI bool getSliderSelected() const;

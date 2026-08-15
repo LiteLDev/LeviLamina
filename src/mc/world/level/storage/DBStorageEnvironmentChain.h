@@ -30,12 +30,6 @@ public:
     DBStorageEnvironmentChain();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DBStorageEnvironmentChain();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::FlushableEnv> createFlushableEnv(

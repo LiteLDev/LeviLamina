@@ -262,11 +262,6 @@ public:
 
         MCNAPI void $parseTurnConfig(::Json::Value const& config);
 
-        MCNAPI void $setTurnConfig(
-            ::std::vector<::NetherNet::StunRelayServer>&& config,
-            ::std::chrono::steady_clock::time_point       expiration
-        );
-
         MCNAPI void $onTurnConfigFailure(::Bedrock::ErrorInfo<::NetherNet::ESessionError> const& error);
 
 

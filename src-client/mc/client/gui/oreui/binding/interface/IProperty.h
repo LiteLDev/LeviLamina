@@ -31,12 +31,6 @@ public:
 
     virtual void updateParent(::OreUI::Detail::IPropertyObject* parent) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI::Detail

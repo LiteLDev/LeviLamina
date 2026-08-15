@@ -29,12 +29,6 @@ public:
 
     virtual ::WeakRef<::Editor::ProjectRegion> getRegion(::mce::UUID const& id) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

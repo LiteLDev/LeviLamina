@@ -21,12 +21,6 @@ public:
 
     virtual ::RakNet::RNS2RecvStruct* AllocRNS2RecvStruct(char const* file, uint line) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace RakNet

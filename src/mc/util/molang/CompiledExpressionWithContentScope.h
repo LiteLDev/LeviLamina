@@ -39,23 +39,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI CompiledExpressionWithContentScope(
-        ::Molang::details::Program       instructions,
-        ::Bedrock::StaticOptimizedString expressionString,
-        ::MolangVersion                  version,
-        bool                             hasVariableAssignments
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::Molang::details::IComplexExpression> $clone() const;

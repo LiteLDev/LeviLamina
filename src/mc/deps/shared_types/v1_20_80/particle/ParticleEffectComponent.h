@@ -23,14 +23,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::HashedString const& EmptyID();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::HashedString const& $getIdentifier() const;
-
-
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_20_80

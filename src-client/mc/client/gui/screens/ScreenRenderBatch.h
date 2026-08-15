@@ -45,8 +45,6 @@ public:
     );
 
     MCAPI void _storeTextureState(::UIControl& control, bool state);
-
-    MCAPI ~ScreenRenderBatch();
     // NOLINTEND
 
 public:

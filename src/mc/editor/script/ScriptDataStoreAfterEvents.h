@@ -75,8 +75,6 @@ public:
 
     MCNAPI ::Editor::ScriptModule::ScriptDataStoreAfterEvents&
     operator=(::Editor::ScriptModule::ScriptDataStoreAfterEvents&& rhs);
-
-    MCNAPI ~ScriptDataStoreAfterEvents();
     // NOLINTEND
 
 public:

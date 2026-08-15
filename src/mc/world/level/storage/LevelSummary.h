@@ -81,31 +81,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI LevelSummary();
-#endif
-
 #ifdef LL_PLAT_C
     MCAPI LevelSummary();
-#endif
 
-#ifdef LL_PLAT_S
     MCAPI LevelSummary(::LevelSummary const&);
-#endif
 
-#ifdef LL_PLAT_C
-    MCAPI LevelSummary(::LevelSummary const&);
-#endif
-
-    MCAPI LevelSummary(
-        ::std::string const& levelId,
-        ::LevelData const&   levelData,
-        ::Core::Path const&  levelDirectory,
-        ::Core::Path const&  levelInfoDirectory,
-        bool                 isBetaRetailLevel
-    );
-
-#ifdef LL_PLAT_C
     MCAPI LevelSummary(
         ::std::string const&                  id,
         ::std::string const&                  name,

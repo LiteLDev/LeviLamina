@@ -26,12 +26,6 @@ public:
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)> func) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

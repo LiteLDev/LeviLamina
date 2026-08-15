@@ -90,25 +90,12 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI BlockGeometryComponent();
-#endif
-
-    MCAPI
-    BlockGeometryComponent(::BlockGeometryDescription const& blockGeometryDescription, ::BlockType const* blockType);
-
-#ifdef LL_PLAT_C
     MCAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent&&);
 
     MCAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent const&);
 #endif
 
     MCAPI ~BlockGeometryComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

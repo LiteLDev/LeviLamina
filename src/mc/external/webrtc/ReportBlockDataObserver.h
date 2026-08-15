@@ -17,12 +17,6 @@ public:
 
     virtual void OnReportBlockDataUpdated(::webrtc::ReportBlockData) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

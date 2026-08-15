@@ -22,20 +22,4 @@ public:
 public:
     // prevent constructor by default
     ActorUnloadedChunkTransferEntry();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ActorUnloadedChunkTransferEntry(
-        ::ChunkKey&                      fromChunkKey,
-        ::std::string&                   actorStorageKey,
-        ::std::unique_ptr<::CompoundTag> actorTag
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -18,12 +18,6 @@ public:
     PathSwapper& operator=(PathSwapper const&);
     PathSwapper(PathSwapper const&);
     PathSwapper();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~PathSwapper();
-    // NOLINTEND
 };
 
 } // namespace Puv::internal

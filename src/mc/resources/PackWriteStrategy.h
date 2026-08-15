@@ -29,10 +29,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Core::Path getPath(::PackWriteStrategy::FileName path);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

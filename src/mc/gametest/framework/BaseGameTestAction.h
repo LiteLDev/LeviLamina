@@ -29,12 +29,6 @@ public:
 
     virtual ::std::optional<::gametest::GameTestError> run() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace gametest

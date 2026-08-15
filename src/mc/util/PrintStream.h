@@ -16,12 +16,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void println(::std::string const& s);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $print(::std::string const& s);
-
-
-    // NOLINTEND
 };

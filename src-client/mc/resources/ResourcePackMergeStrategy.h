@@ -15,10 +15,4 @@ public:
 
     virtual void mergeFiles(::std::vector<::LoadedResourceData> const& fileStack) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

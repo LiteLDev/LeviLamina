@@ -30,14 +30,6 @@ public:
         // NOLINTBEGIN
         virtual void onFlushWorldAfterEvents(::ScriptDeferredFlushTracker&) /*override*/;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI void $onFlushWorldAfterEvents(::ScriptDeferredFlushTracker&);
-
-
-        // NOLINTEND
     };
 
 public:

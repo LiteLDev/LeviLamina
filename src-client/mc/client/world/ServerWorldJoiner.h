@@ -138,8 +138,6 @@ public:
         ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback,
         ::std::function<void()>                                                         onJoinServerCancelled
     );
-
-    MCAPI ~ServerWorldJoiner();
     // NOLINTEND
 
 public:

@@ -42,25 +42,6 @@ public:
     public:
         // prevent constructor by default
         SoundEventInfo();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI SoundEventInfo(
-            ::std::string                 soundName,
-            float                         volume,
-            float                         pitch,
-            ::std::chrono::milliseconds   minTimeBetweenPlays,
-            ::ScreenEventType             screenEventType,
-            ::SoundEventConditions const& screenEventConditions
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:

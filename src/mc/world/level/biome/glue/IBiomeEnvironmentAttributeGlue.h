@@ -15,10 +15,4 @@ public:
 
     virtual void applyToBiome(::Biome&, ::std::string const&, ::entt::meta_any const&) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

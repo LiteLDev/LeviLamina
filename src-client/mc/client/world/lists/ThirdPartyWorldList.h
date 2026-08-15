@@ -70,8 +70,6 @@ public:
     MCAPI ::std::optional<::NetworkWorldInfo> getWorld(::std::string const& id);
 
     MCAPI void update(double timestampMs);
-
-    MCAPI ~ThirdPartyWorldList();
     // NOLINTEND
 
 public:

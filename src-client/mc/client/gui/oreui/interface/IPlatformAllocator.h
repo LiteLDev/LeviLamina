@@ -24,12 +24,6 @@ public:
 
     virtual bool virtualFree(void* ptr, uint size, int flags) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

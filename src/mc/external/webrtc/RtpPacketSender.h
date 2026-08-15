@@ -19,14 +19,6 @@ public:
 
     virtual void RemovePacketsForSsrc(uint ssrc);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $RemovePacketsForSsrc(uint ssrc);
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

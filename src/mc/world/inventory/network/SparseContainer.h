@@ -205,33 +205,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
     MCAPI int $getContainerSize() const;
 
     MCAPI int $getMaxStackSize() const;
 
-#ifdef LL_PLAT_S
-    MCAPI void $containerContentChanged(int slot);
-#else // LL_PLAT_C
     MCFOLD void $containerContentChanged(int slot);
-#endif
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-#ifdef LL_PLAT_S
-    MCAPI void $serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>);
-#else // LL_PLAT_C
     MCFOLD void $serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>);
-#endif
 
     MCAPI void $startOpen(::Actor& actor);
 
     MCAPI void $stopOpen(::Actor& actor);
 
-#ifdef LL_PLAT_S
-    MCAPI void $removeItem(int slot, int count);
-#else // LL_PLAT_C
     MCFOLD void $removeItem(int slot, int count);
 #endif
 

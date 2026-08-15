@@ -28,8 +28,6 @@ public:
 
     MCFOLD void $_onTick(::LabTableReaction&, ::BlockSource&);
 
-    MCAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
-
 
     // NOLINTEND
 };

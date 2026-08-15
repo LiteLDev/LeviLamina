@@ -49,26 +49,6 @@ public:
 
     virtual ~NV12Buffer() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::webrtc::scoped_refptr<::webrtc::I420BufferInterface> $ToI420();
-
-    MCNAPI int $width() const;
-
-    MCNAPI int $height() const;
-
-    MCNAPI int $StrideY() const;
-
-    MCNAPI int $StrideUV() const;
-
-    MCNAPI uchar const* $DataY() const;
-
-    MCNAPI uchar const* $DataUV() const;
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

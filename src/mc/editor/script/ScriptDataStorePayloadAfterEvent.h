@@ -24,21 +24,9 @@ public:
     ScriptDataStorePayloadAfterEvent();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptDataStorePayloadAfterEvent(::std::string const& dataTag, ::std::string const& payload);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

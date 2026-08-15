@@ -38,6 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
 
     MCNAPI void $onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
@@ -47,6 +48,7 @@ public:
     MCNAPI void $clearSelectedRecipe();
 
     MCNAPI bool $_canRemove(int slot, int removeCount) const;
+#endif
 
 
     // NOLINTEND

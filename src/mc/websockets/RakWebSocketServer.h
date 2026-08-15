@@ -58,18 +58,4 @@ public:
 
     virtual uint _genMaskingKey() const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI bool $isReady() const;
-
-    MCNAPI void $tick();
-
-    MCNAPI void $_updateState();
-
-    MCNAPI uint $_genMaskingKey() const;
-
-
-    // NOLINTEND
 };

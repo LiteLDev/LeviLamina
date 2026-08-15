@@ -10,10 +10,4 @@ public:
 
     virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

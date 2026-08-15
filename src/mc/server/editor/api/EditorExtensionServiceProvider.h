@@ -66,12 +66,6 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> createExtensionContexts() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::API

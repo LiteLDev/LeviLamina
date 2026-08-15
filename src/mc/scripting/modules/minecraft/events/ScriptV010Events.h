@@ -294,8 +294,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptV010Events(::ScriptModuleMinecraft::ScriptV010Events&&);
-
     MCAPI ScriptV010Events(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::Level*> level);
 
     MCAPI void

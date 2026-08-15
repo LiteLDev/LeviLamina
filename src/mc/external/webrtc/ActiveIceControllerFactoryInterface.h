@@ -19,12 +19,6 @@ public:
     virtual ::std::unique_ptr<::webrtc::ActiveIceControllerInterface>
     Create(::webrtc::ActiveIceControllerFactoryArgs const&) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

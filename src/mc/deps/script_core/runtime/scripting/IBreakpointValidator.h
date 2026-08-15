@@ -12,12 +12,6 @@ public:
 
     virtual bool validatePath(::std::string_view const) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Scripting

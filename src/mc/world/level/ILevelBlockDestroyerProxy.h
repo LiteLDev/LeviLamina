@@ -27,10 +27,4 @@ public:
     virtual void
     dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor const* actorContext) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

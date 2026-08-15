@@ -33,12 +33,6 @@ public:
 #endif
 
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Memory

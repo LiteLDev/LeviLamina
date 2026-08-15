@@ -15,10 +15,4 @@ public:
 
     virtual ::EntityContext* getLocalPlayerEntityContext() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

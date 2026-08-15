@@ -45,12 +45,6 @@ public:
 
     virtual void ResetGPUMemoryTrackerPeaks() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace cohtml

@@ -38,10 +38,4 @@ public:
 
     virtual void setGuiScale(float scale) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

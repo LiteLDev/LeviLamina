@@ -34,14 +34,6 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> const& configure(::Core::Path const&) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::Core::PathBuffer<::std::string> const& $configure(::Core::Path const&);
-
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock

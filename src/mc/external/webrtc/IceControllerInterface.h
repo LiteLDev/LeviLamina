@@ -114,16 +114,6 @@ public:
 
     virtual ::std::vector<::webrtc::Connection const*> PruneConnections() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::webrtc::ArrayView<::webrtc::Connection const* const> $GetConnections() const;
-
-    MCNAPI ::webrtc::ArrayView<::webrtc::Connection const*> $connections() const;
-
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

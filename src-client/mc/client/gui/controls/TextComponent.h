@@ -88,8 +88,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TextComponent(::UIControl& owner, ::Bedrock::NotNullNonOwnerPtr<::FontRepository const> fontRepository);
-
     MCAPI int _getCaretPosition() const;
 
     MCAPI ::std::string _getMeasuredText(::UIRenderContext& context);
@@ -99,12 +97,6 @@ public:
     MCAPI void setFontType(::std::string const& fontType);
 
     MCAPI void setTextTTS(::std::string const& label);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

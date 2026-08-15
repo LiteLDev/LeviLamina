@@ -86,29 +86,4 @@ public:
 
     virtual ::Biome const* _getBiome(::GetBiomeOptions const&) const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::ChunkVolume::VolumeOf<::Biome>
-    $getBiomeVolumeToFill(short, ::BlockPos, uint, ::ChunkLocalNoiseCache const*) const;
-
-    MCAPI void $fillBiomes(::LevelChunk&, ::ChunkLocalNoiseCache const*) const;
-
-    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const&, uint) const;
-
-    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const&, uint, ::GetBiomeOptions const&) const;
-
-    MCAPI bool $containsOnly(int, int, int, int, ::gsl::span<::BiomeIdType const>) const;
-
-    MCAPI bool $hasBiomeById(::BiomeIdType) const;
-
-    MCAPI bool $hasBiomeByNameHash(::BiomeHashType) const;
-
-    MCAPI ::BiomeSourceType const $getType() const;
-
-    MCAPI ::Biome const* $_getBiome(::GetBiomeOptions const&) const;
-
-
-    // NOLINTEND
 };

@@ -98,8 +98,6 @@ public:
 
     MCFOLD ::EventResult $onItemDefinitionEventTriggered(::ItemStackBase const& item, ::std::string const& event);
 
-    MCAPI ::EventResult $onEvent(::ItemNotificationEvent const& event);
-
 
     // NOLINTEND
 };

@@ -20,10 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI explicit ScriptMalformedUriError(::std::string message);
-#endif
-
 #ifdef LL_PLAT_S
     MCNAPI explicit ScriptMalformedUriError(::std::string message);
 #endif

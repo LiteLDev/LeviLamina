@@ -43,13 +43,11 @@ public:
     // NOLINTBEGIN
     MCFOLD ::std::string const& $getRawDialogueText() const;
 
-#ifdef LL_PLAT_S
-    MCAPI ::std::string const& $getNameRawText() const;
-#else // LL_PLAT_C
+    MCFOLD bool $isRemoteFire();
+
+#ifdef LL_PLAT_C
     MCFOLD ::std::string const& $getNameRawText() const;
 #endif
-
-    MCFOLD bool $isRemoteFire();
 
 
     // NOLINTEND

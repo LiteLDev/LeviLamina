@@ -42,10 +42,4 @@ public:
 
     virtual ::cg::ImageBuffer const& getMissingImageBuffer() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -15,12 +15,6 @@ public:
 
     virtual int64 seek(int64 _offset, ::bx::Whence::Enum _whence) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace bx

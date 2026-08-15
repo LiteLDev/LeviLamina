@@ -25,12 +25,6 @@ public:
 
     virtual void forEachIn(::brstd::function_ref<void(::std::string_view, ::gsl::span<uchar>)> callback) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Resources::Archive
