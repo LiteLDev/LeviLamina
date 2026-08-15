@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/bgfx/Enum.h"
+#include "mc/external/bgfx/d3d12/heap_property/Enum.h"
 
 namespace bgfx::d3d12 {
 
