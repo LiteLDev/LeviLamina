@@ -111,23 +111,23 @@ try {
     } catch (...) {}
 }
 
-// TODO: Fix this
-// LL_TYPE_INSTANCE_HOOK(
-//     AppendLogEntryMetadataHook,
-//     HookPriority::Normal,
-//     ::BedrockLog::LogDetails,
-//     &::BedrockLog::LogDetails::_appendLogEntryMetadata,
-//     void,
-//     std::string&,
-//     std::string,
-//     ::LogAreaID,
-//     uint,
-//     std::string,
-//     int,
-//     int
-// ) {
-//     // Block from adding LOG metadata
-// }
+LL_TYPE_INSTANCE_HOOK(
+    AppendLogEntryMetadataHook,
+    HookPriority::Normal,
+    ::BedrockLog::LogDetails,
+    &::BedrockLog::LogDetails::_makeLogString,
+    std::string,
+    std::string        timestamp,
+    LogAreaID          area,
+    uint               priority,
+    std::string        functionName,
+    int                lineNumber,
+    int                messageId,
+    std::string const& logMessage
+) {
+    // Block from adding LOG metadata
+    return logMessage;
+}
 
 LL_TYPE_INSTANCE_HOOK(
     SetOfflinePingResponseHook,
