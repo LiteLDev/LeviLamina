@@ -1,8 +1,12 @@
 #include "mc/util/molang/ExpressionNode.h"
 
+#include "ll/api/memory/Symbol.h"
 #include "mc/util/MolangQueryFunction.h"
 #include "mc/world/actor/RenderParams.h"
+#include "mc/world/level/storage/AllExperiments.h"
 #include "mc/world/level/storage/Experiments.h"
+
+using ll::memory_literals::operator""_sym;
 
 MolangScriptArg const& ExpressionNode::evalGeneric(RenderParams& renderParams) const {
     if (auto const& impl = std::get<0>(*mImpl)) return impl->evalGeneric(renderParams);
@@ -43,15 +47,16 @@ ExpressionNode::queryFunctionAccessorFromString(
         bool experimentsEnabled = true;
 
         if (!queryFunction.mExperiments->empty()) {
-            // TODO: Fix this, need anonymous namespace
-            // Experiments* experiments = ExpressionNode::getExperiments();
+            auto experiments =
+                (Experiments*)"?mExperiments@ExpressionNodeAnon@?A0x7FAA17FF@@3VExperimentStorage@@A.llvm.7928722031444509472"_sym
+                    .resolve();
 
-            // for (auto const experiment : queryFunction.mExperiments.get()) {
-            //     if (!experiments->isExperimentEnabled(experiment)) {
-            //         experimentsEnabled = false;
-            //         break;
-            //     }
-            // }
+            for (auto const experiment : queryFunction.mExperiments.get()) {
+                if (!experiments->isExperimentEnabled(static_cast<AllExperiments>(experiment))) {
+                    experimentsEnabled = false;
+                    break;
+                }
+            }
         }
 
         if (!experimentsEnabled) {

@@ -5,7 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/level/storage/ExperimentStorage.h"
 
+enum class AllExperiments : int;
+
 class Experiments : public ::ExperimentStorage {
+public:
+    LLNDAPI bool isExperimentEnabled(AllExperiments experiment) const;
+
 public:
     // member functions
     // NOLINTBEGIN
