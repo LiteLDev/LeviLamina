@@ -97,6 +97,17 @@ TEST(ProtocolCodecTest, RejectsInvalidUtf8AndOverflowingVaruintOnDecode) {
     EXPECT_FALSE(overflowDecoder.readVarUint());
 }
 
+TEST(ProtocolCodecTest, RoundTripsEmptyString) {
+    Encoder encoder{1};
+    ASSERT_TRUE(encoder.writeString({}, 0));
+
+    Decoder decoder{encoder.bytes(), encoder.size()};
+    auto    value = decoder.readString(0);
+    ASSERT_TRUE(value);
+    EXPECT_TRUE(value->empty());
+    EXPECT_TRUE(decoder.requireFullyConsumed());
+}
+
 struct TestPayload {};
 struct TestCodec {
     Expected<>            encode(Encoder&, TestPayload const&, SchemaVersion) const { return {}; }

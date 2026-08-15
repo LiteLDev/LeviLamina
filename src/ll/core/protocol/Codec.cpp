@@ -15,6 +15,8 @@ namespace ll::protocol {
 namespace detail {
 
 bool validUtf8(std::string_view value) noexcept {
+    if (value.empty()) return true;
+
     constexpr std::array<std::uint32_t, 5> MinCodePoint{0, 0, 0x80, 0x800, 0x10000};
 
     auto const* current = reinterpret_cast<unsigned char const*>(value.data());
@@ -290,15 +292,16 @@ Expected<std::string> Decoder::readString(std::size_t maxBytes) noexcept {
         return forwardError(bytes.error());
     }
 
-    std::string result;
-    try {
-        result.assign(reinterpret_cast<char const*>(bytes->data()), bytes->size());
-    } catch (...) {
-        return makeCodecError(CodecErrc::ExceptionEscaped);
+    std::string_view const value{reinterpret_cast<char const*>(bytes->data()), bytes->size()};
+    if (!detail::validUtf8(value)) {
+        return makeCodecError(CodecErrc::InvalidUtf8);
     }
 
-    if (!detail::validUtf8(result)) {
-        return makeCodecError(CodecErrc::InvalidUtf8);
+    std::string result;
+    try {
+        result.assign(value);
+    } catch (...) {
+        return makeCodecError(CodecErrc::ExceptionEscaped);
     }
 
     return result;
