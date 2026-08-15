@@ -150,8 +150,8 @@ LL_TYPE_INSTANCE_HOOK(
     return origin(data, dataSize);
 }
 
-// TODO: Fix this
-using HookReg = memory::HookRegistrar<DiagnosticsLogHook, SetOfflinePingResponseHook, BedrockLogOutHook>;
+using HookReg = memory::
+    HookRegistrar<DiagnosticsLogHook, SetOfflinePingResponseHook, BedrockLogOutHook, AppendLogEntryMetadataHook>;
 
 static HookReg hookRegister;
 
