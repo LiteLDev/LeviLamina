@@ -264,6 +264,49 @@ TEST(ProtocolControlCodecTest, RejectsMissingReorderedAndTrailingControlData) {
     );
 }
 
+TEST(ProtocolControlCodecTest, RejectsCumulativeChunkTotalsBeforeRetention) {
+    detail::DeclarationAssembler declaration;
+    ASSERT_TRUE(declaration.push(
+        detail::Declaration{header(2), EndpointRole::Server, 1, 0, 2, 1, 0, {module("example:one")}, {}}
+    ));
+    EXPECT_FALSE(declaration.push(
+        detail::Declaration{header(3), EndpointRole::Server, 1, 1, 2, 1, 0, {module("example:two")}, {}}
+    ));
+
+    detail::TranscriptDigest           digest{};
+    detail::NegotiationResultAssembler result;
+    ASSERT_TRUE(result.push(
+        detail::NegotiationResult{
+            header(2),
+            1,
+            1,
+            1,
+            0,
+            2,
+            1,
+            0,
+            {{moduleId("example:one"), detail::NegotiationStatus::Enabled, 1, detail::WireErrorCode::None, {}}},
+            {},
+            digest
+        }
+    ));
+    EXPECT_FALSE(result.push(
+        detail::NegotiationResult{
+            header(3),
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            0,
+            {{moduleId("example:two"), detail::NegotiationStatus::Enabled, 1, detail::WireErrorCode::None, {}}},
+            {},
+            digest
+        }
+    ));
+}
+
 TEST(ProtocolTranscriptTest, IsDeterministicAndSensitiveToChunkBytes) {
     detail::Hello hello{
         header(),

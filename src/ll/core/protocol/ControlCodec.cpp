@@ -948,6 +948,9 @@ packNegotiationResult(NegotiationResultSource source, CoreVersion protocol, std:
 
 struct DeclarationAssembler::Impl {
     std::vector<Declaration> chunks;
+    std::size_t              moduleCount{};
+    std::size_t              payloadCount{};
+    std::size_t              featureCount{};
 };
 
 DeclarationAssembler::DeclarationAssembler() : mImpl(std::make_unique<Impl>()) {}
@@ -957,6 +960,18 @@ DeclarationAssembler::DeclarationAssembler(DeclarationAssembler&&) noexcept     
 DeclarationAssembler& DeclarationAssembler::operator=(DeclarationAssembler&&) noexcept = default;
 
 Expected<> DeclarationAssembler::push(Declaration chunk) noexcept {
+    if (chunk.totalModuleCount > Limits::MaxDeclaredModules || chunk.totalPayloadCount > Limits::MaxDeclaredPayloads) {
+        return malformed("declaration totals");
+    }
+    if (auto validation = validateChunk(
+            chunk.chunkIndex,
+            chunk.chunkCount,
+            Limits::MaxDeclarationChunks,
+            chunk.modules.size() + chunk.payloads.size()
+        );
+        !validation) {
+        return forwardError(validation.error());
+    }
     if (chunk.chunkIndex != mImpl->chunks.size()) return malformed("chunk index");
     if (!mImpl->chunks.empty()) {
         auto const& first    = mImpl->chunks.front();
@@ -975,6 +990,25 @@ Expected<> DeclarationAssembler::push(Declaration chunk) noexcept {
             return malformed("chunk ordering");
     }
 
+    if (mImpl->moduleCount > chunk.totalModuleCount
+        || chunk.modules.size() > chunk.totalModuleCount - mImpl->moduleCount
+        || mImpl->payloadCount > chunk.totalPayloadCount
+        || chunk.payloads.size() > chunk.totalPayloadCount - mImpl->payloadCount) {
+        return malformed("declaration cumulative totals");
+    }
+
+    auto featureCount = mImpl->featureCount;
+    for (auto const& module : chunk.modules) {
+        if (featureCount > Limits::MaxDeclaredFeatures
+            || module.features.size() > Limits::MaxDeclaredFeatures - featureCount) {
+            return malformed("declaration feature total");
+        }
+        featureCount += module.features.size();
+    }
+
+    mImpl->moduleCount  += chunk.modules.size();
+    mImpl->payloadCount += chunk.payloads.size();
+    mImpl->featureCount  = featureCount;
     mImpl->chunks.emplace_back(std::move(chunk));
     return {};
 }
@@ -993,13 +1027,6 @@ Expected<DeclarationSource> DeclarationAssembler::finish() noexcept {
         || result.modules.size() > Limits::MaxDeclaredModules || result.payloads.size() > Limits::MaxDeclaredPayloads)
         return malformed("declaration totals");
 
-    std::size_t featureCount{};
-    for (auto const& module : result.modules) {
-        if (module.features.size() > Limits::MaxDeclaredFeatures - featureCount)
-            return malformed("declaration feature total");
-        featureCount += module.features.size();
-    }
-
     for (auto const& payload : result.payloads) {
         if (!std::ranges::binary_search(result.modules, payload.id.module(), {}, [](auto const& module) {
                 return module.id.value();
@@ -1011,6 +1038,9 @@ Expected<DeclarationSource> DeclarationAssembler::finish() noexcept {
 
 struct NegotiationResultAssembler::Impl {
     std::vector<NegotiationResult> chunks;
+    std::size_t                    moduleCount{};
+    std::size_t                    payloadCount{};
+    std::size_t                    featureCount{};
 };
 
 NegotiationResultAssembler::NegotiationResultAssembler() : mImpl(std::make_unique<Impl>()) {}
@@ -1020,6 +1050,19 @@ NegotiationResultAssembler::NegotiationResultAssembler(NegotiationResultAssemble
 NegotiationResultAssembler& NegotiationResultAssembler::operator=(NegotiationResultAssembler&&) noexcept = default;
 
 Expected<> NegotiationResultAssembler::push(NegotiationResult chunk) noexcept {
+    if (chunk.totalModuleResultCount > Limits::MaxResultModules
+        || chunk.totalPayloadResultCount > Limits::MaxResultPayloads) {
+        return malformed("result totals");
+    }
+    if (auto validation = validateChunk(
+            chunk.chunkIndex,
+            chunk.chunkCount,
+            Limits::MaxNegotiationResultChunks,
+            chunk.modules.size() + chunk.payloads.size()
+        );
+        !validation) {
+        return forwardError(validation.error());
+    }
     if (chunk.chunkIndex != mImpl->chunks.size()) return malformed("result chunk index");
     if (!mImpl->chunks.empty()) {
         auto const& first    = mImpl->chunks.front();
@@ -1042,6 +1085,25 @@ Expected<> NegotiationResultAssembler::push(NegotiationResult chunk) noexcept {
             return malformed("result ordering");
     }
 
+    if (mImpl->moduleCount > chunk.totalModuleResultCount
+        || chunk.modules.size() > chunk.totalModuleResultCount - mImpl->moduleCount
+        || mImpl->payloadCount > chunk.totalPayloadResultCount
+        || chunk.payloads.size() > chunk.totalPayloadResultCount - mImpl->payloadCount) {
+        return malformed("result cumulative totals");
+    }
+
+    constexpr auto MaxResultFeatures = static_cast<std::size_t>(Limits::MaxDeclaredFeatures) * 2;
+    auto           featureCount      = mImpl->featureCount;
+    for (auto const& module : chunk.modules) {
+        if (featureCount > MaxResultFeatures || module.features.size() > MaxResultFeatures - featureCount) {
+            return malformed("result feature total");
+        }
+        featureCount += module.features.size();
+    }
+
+    mImpl->moduleCount  += chunk.modules.size();
+    mImpl->payloadCount += chunk.payloads.size();
+    mImpl->featureCount  = featureCount;
     mImpl->chunks.emplace_back(std::move(chunk));
     return {};
 }
@@ -1067,13 +1129,6 @@ Expected<NegotiationResultSource> NegotiationResultAssembler::finish() noexcept 
     if (result.modules.size() != first.totalModuleResultCount || result.payloads.size() != first.totalPayloadResultCount
         || result.modules.size() > Limits::MaxResultModules || result.payloads.size() > Limits::MaxResultPayloads)
         return malformed("result totals");
-
-    std::size_t    featureCount{};
-    constexpr auto MaxResultFeatures = static_cast<std::size_t>(Limits::MaxDeclaredFeatures) * 2;
-    for (auto const& module : result.modules) {
-        if (module.features.size() > MaxResultFeatures - featureCount) return malformed("result feature total");
-        featureCount += module.features.size();
-    }
 
     return result;
 }
