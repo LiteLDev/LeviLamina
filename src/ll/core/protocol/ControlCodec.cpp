@@ -774,47 +774,43 @@ Expected<ControlMessage> decodeControl(
     return result;
 }
 
-enum class ChunkAppendResult : std::uint8_t {
-    Added,
-    Full,
-};
-
 template <class Chunk, class Entry>
-Expected<ChunkAppendResult> tryAppendChunkEntry(
-    Chunk&              chunk,
-    std::vector<Entry>& destination,
-    Entry const&        entry,
-    CoreVersion         protocol,
-    std::size_t         maxBody
-) noexcept {
-    destination.push_back(entry);
-    auto encoded = encodeControl(ControlMessage{chunk}, protocol, true, maxBody);
-    if (encoded) return ChunkAppendResult::Added;
-
-    destination.pop_back();
-    auto& error = encoded.error();
-    if (error.isA<CodecErrorInfo>() && error.as<CodecErrorInfo>().code == CodecErrc::SizeLimitExceeded) {
-        return ChunkAppendResult::Full;
-    }
-    return forwardError(error);
-}
-
-template <class Chunk, class Entry>
-Expected<> appendChunkEntries(
+Expected<std::size_t> appendLongestFittingPrefix(
     Chunk&                    chunk,
     std::vector<Entry>&       destination,
     std::vector<Entry> const& source,
-    std::size_t&              nextEntry,
+    std::size_t               nextEntry,
     CoreVersion               protocol,
     std::size_t               maxBody
 ) noexcept {
-    while (nextEntry < source.size()) {
-        auto result = tryAppendChunkEntry(chunk, destination, source[nextEntry], protocol, maxBody);
-        if (!result) return forwardError(result.error());
-        if (*result == ChunkAppendResult::Full) return {};
-        ++nextEntry;
+    destination.clear();
+    auto const remaining = source.size() - nextEntry;
+    if (remaining == 0) return 0;
+
+    std::size_t accepted{};
+    std::size_t rejected = remaining + 1;
+    while (accepted + 1 < rejected) {
+        auto const candidate = accepted + (rejected - accepted) / 2;
+        destination.assign(source.begin() + nextEntry, source.begin() + nextEntry + candidate);
+
+        auto encoded = encodeControl(ControlMessage{chunk}, protocol, true, maxBody);
+        if (encoded) {
+            accepted = candidate;
+            continue;
+        }
+
+        auto& error = encoded.error();
+        if (error.isA<CodecErrorInfo>() && error.as<CodecErrorInfo>().code == CodecErrc::SizeLimitExceeded) {
+            rejected = candidate;
+            continue;
+        }
+
+        destination.clear();
+        return forwardError(error);
     }
-    return {};
+
+    destination.assign(source.begin() + nextEntry, source.begin() + nextEntry + accepted);
+    return accepted;
 }
 
 template <class Chunk>
@@ -859,16 +855,15 @@ Expected<std::vector<Chunk>> packChunks(
         auto const moduleCountBefore  = nextModule;
         auto const payloadCountBefore = nextPayload;
 
-        if (auto result = appendChunkEntries(current, current.modules, modules, nextModule, protocol, maxBody);
-            !result) {
-            return forwardError(result.error());
-        }
+        auto moduleCount = appendLongestFittingPrefix(current, current.modules, modules, nextModule, protocol, maxBody);
+        if (!moduleCount) return forwardError(moduleCount.error());
+        nextModule += *moduleCount;
 
         if (nextModule == modules.size()) {
-            if (auto result = appendChunkEntries(current, current.payloads, payloads, nextPayload, protocol, maxBody);
-                !result) {
-                return forwardError(result.error());
-            }
+            auto payloadCount =
+                appendLongestFittingPrefix(current, current.payloads, payloads, nextPayload, protocol, maxBody);
+            if (!payloadCount) return forwardError(payloadCount.error());
+            nextPayload += *payloadCount;
         }
 
         bool const addedEntry = nextModule != moduleCountBefore || nextPayload != payloadCountBefore;

@@ -160,6 +160,47 @@ TEST(ProtocolControlCodecTest, PacksAndReassemblesDeclarationDeterministically) 
     EXPECT_EQ(complete->payloads.size(), 6U);
 }
 
+TEST(ProtocolControlCodecTest, PacksTheLongestPrefixAtExactBodyBoundary) {
+    auto firstModule  = module("example:one");
+    auto secondModule = module("example:two");
+
+    detail::Declaration oneEntry{header(2), EndpointRole::Server, 9, 0, 2, 2, 0, {firstModule}, {}};
+    auto                oneEntryBody = detail::encodeControl(detail::ControlMessage{oneEntry}, 1);
+    ASSERT_TRUE(oneEntryBody) << oneEntryBody.error().message();
+
+    detail::Declaration twoEntries{
+        header(2),
+        EndpointRole::Server,
+        9,
+        0,
+        2,
+        2,
+        0,
+        {firstModule, secondModule},
+        {}
+    };
+    auto twoEntryBody = detail::encodeControl(detail::ControlMessage{twoEntries}, 1);
+    ASSERT_TRUE(twoEntryBody) << twoEntryBody.error().message();
+    ASSERT_GT(twoEntryBody->size(), oneEntryBody->size());
+
+    detail::DeclarationSource source{
+        header(2),
+        EndpointRole::Server,
+        9,
+        {std::move(firstModule), std::move(secondModule)},
+        {}
+    };
+    auto chunks = detail::packDeclaration(std::move(source), 1, oneEntryBody->size());
+    ASSERT_TRUE(chunks) << chunks.error().message();
+    ASSERT_EQ(chunks->size(), 2U);
+    ASSERT_EQ((*chunks)[0].modules.size(), 1U);
+    ASSERT_EQ((*chunks)[1].modules.size(), 1U);
+
+    auto firstChunkBody = detail::encodeControl(detail::ControlMessage{(*chunks)[0]}, 1, true, oneEntryBody->size());
+    ASSERT_TRUE(firstChunkBody) << firstChunkBody.error().message();
+    EXPECT_EQ(firstChunkBody->size(), oneEntryBody->size());
+}
+
 TEST(ProtocolControlCodecTest, PacksAndReassemblesNegotiationResult) {
     detail::TranscriptDigest digest{};
     digest[3] = std::byte{0x77};
