@@ -5,14 +5,17 @@
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 
-#define LL_CONFIG_IMPL(CLAZZ, PATH)                                                                                    \
+#define LL_CONFIG_IMPL(CLAZZ, PATH, VALIDATOR)                                                                         \
     CLAZZ& get##CLAZZ() {                                                                                              \
         static CLAZZ config = []() {                                                                                   \
             CLAZZ res;                                                                                                 \
             try {                                                                                                      \
-                if (config::loadConfig(res, getSelfModIns()->getConfigDir() / PATH)) {                                 \
+                bool const noNeedRewrite = config::loadConfig(res, getSelfModIns()->getConfigDir() / PATH);            \
+                if (auto validation = VALIDATOR(res); !validation) {                                                   \
+                    getLogger().error("{0} validation failed: {1}"_tr(#CLAZZ, validation.error().message()));          \
                     return res;                                                                                        \
                 }                                                                                                      \
+                if (noNeedRewrite) return res;                                                                         \
             } catch (...) {                                                                                            \
                 getLogger().error("{0} load failed"_tr(#CLAZZ));                                                       \
                 error_utils::printCurrentException(getLogger());                                                       \
@@ -34,6 +37,10 @@
     bool save##CLAZZ() {                                                                                               \
         bool res{};                                                                                                    \
         try {                                                                                                          \
+            if (auto validation = VALIDATOR(get##CLAZZ()); !validation) {                                              \
+                getLogger().error("{0} validation failed: {1}"_tr(#CLAZZ, validation.error().message()));              \
+                return false;                                                                                          \
+            }                                                                                                          \
             res = config::saveConfig(get##CLAZZ(), getSelfModIns()->getConfigDir() / PATH);                            \
         } catch (...) {                                                                                                \
             res = false;                                                                                               \
