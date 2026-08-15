@@ -5,13 +5,13 @@
 
 namespace ll::event::inline player {
 
-class PlayerJumpEvent final : public PlayerEvent {
+class PlayerJumpEvent final : public Cancellable<PlayerEvent> {
     Vec3 const mFromPosition;
     Vec3 const mToPosition;
 
 public:
     constexpr explicit PlayerJumpEvent(Player& player, Vec3 const& fromPos, Vec3 const& toPos)
-    : PlayerEvent(player),
+    : Cancellable(player),
       mFromPosition(fromPos),
       mToPosition(toPos) {}
 
