@@ -95,7 +95,7 @@ public:
     ::PacketPriority                        mPriority;
     ::NetworkPeer::Reliability              mReliability;
     ::SubClientId                           mSenderSubId;
-    bool                                    mIsHandled;
+    mutable bool                            mIsHandled;
     ::std::chrono::steady_clock::time_point mReceiveTimepoint;
     ::IPacketHandlerDispatcher const*       mHandler;
     ::Compressibility                       mCompressible;

@@ -12,12 +12,12 @@ namespace ll::network {
 class RuntimePacket final : public ::Packet {
     friend class ll::network::Packet;
 
-    std::unique_ptr<ll::network::Packet>    ownedPacket;
-    optional_ref<ll::network::Packet const> packet;
-    PacketRuntimeId                         runtimeId{};
+    std::unique_ptr<ll::network::Packet>    mOwnedPacket;
+    optional_ref<ll::network::Packet const> mPacket;
+    PacketRuntimeId                         mRuntimeId{};
 
-    RuntimePacket(ll::network::Packet const& packet) : packet(packet) {
-        runtimeId     = packet.getRuntimeId();
+    RuntimePacket(ll::network::Packet const& packet) : mPacket(packet) {
+        mRuntimeId    = packet.getRuntimeId();
         mReliability  = packet.mReliability;
         mPriority     = packet.mPriority;
         mCompressible = packet.mCompressible;
@@ -28,41 +28,41 @@ public:
     RuntimePacket() = default;
 
     RuntimePacket(std::unique_ptr<ll::network::Packet> packet)
-    : ownedPacket(std::move(packet)),
-      packet(ownedPacket.get()) {
-        if (packet) {
-            runtimeId     = packet->getRuntimeId();
-            mReliability  = packet->mReliability;
-            mPriority     = packet->mPriority;
-            mCompressible = packet->mCompressible;
-            mSenderSubId  = packet->mSenderSubId;
+    : mOwnedPacket(std::move(packet)),
+      mPacket(mOwnedPacket.get()) {
+        if (mPacket) {
+            mRuntimeId    = mPacket->getRuntimeId();
+            mReliability  = mPacket->mReliability;
+            mPriority     = mPacket->mPriority;
+            mCompressible = mPacket->mCompressible;
+            mSenderSubId  = mPacket->mSenderSubId;
         }
     }
 
-    [[nodiscard]] constexpr PacketRuntimeId getRuntimeId() const { return runtimeId; }
+    [[nodiscard]] constexpr PacketRuntimeId getRuntimeId() const { return mRuntimeId; }
 
-    [[nodiscard]] bool           isOwned() const { return ownedPacket != nullptr; }
-    [[nodiscard]] constexpr bool hasPacket() const { return packet.has_value(); }
+    [[nodiscard]] bool           isOwned() const { return mOwnedPacket != nullptr; }
+    [[nodiscard]] constexpr bool hasPacket() const { return mPacket.has_value(); }
 
-    [[nodiscard]] constexpr optional_ref<ll::network::Packet const> getPacket() const { return packet; }
+    [[nodiscard]] constexpr optional_ref<ll::network::Packet const> getPacket() const { return mPacket; }
 
-    [[nodiscard]] constexpr optional_ref<ll::network::Packet> getOwnedPacket() const { return ownedPacket.get(); }
+    [[nodiscard]] constexpr optional_ref<ll::network::Packet> getmOwnedPacket() const { return mOwnedPacket.get(); }
 
     constexpr void movePacket(std::unique_ptr<ll::network::Packet> newPacket) {
-        ownedPacket = std::move(newPacket);
-        packet      = ownedPacket.get();
+        mOwnedPacket = std::move(newPacket);
+        mPacket      = mOwnedPacket.get();
     }
 
     [[nodiscard]] constexpr std::unique_ptr<ll::network::Packet> releasePacket() {
-        packet = nullptr;
-        return std::move(ownedPacket);
+        mPacket = nullptr;
+        return std::move(mOwnedPacket);
     }
 
 private:
-    [[nodiscard]] MinecraftPacketIds getId() const override;
-    [[nodiscard]] std::string_view   getName() const override;
-    void                             write(BinaryStream&) const override;
-    Bedrock::Result<void>            _read(ReadOnlyBinaryStream&) override;
+    LLNDAPI MinecraftPacketIds getId() const override;
+    LLNDAPI std::string_view getName() const override;
+    LLAPI void               write(BinaryStream&) const override;
+    LLAPI Bedrock::Result<void> _read(ReadOnlyBinaryStream&) override;
 };
 
 }; // namespace ll::network

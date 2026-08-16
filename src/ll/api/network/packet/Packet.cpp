@@ -15,51 +15,30 @@ namespace ll::network {
 
 PacketRuntimeId Packet::getRuntimeId() const { return ll::hash_utils::doHash(getName()); }
 
-void Packet::sendToServer() const {
-    auto level = ll::service::getMinecraft(true)->getLevel();
-    if (!level) return;
-    RuntimePacket packet(*this);
-    level->getPacketSender()->sendToServer(packet);
+void Packet::sendTo(Player const& player) const { RuntimePacket{*this}.sendTo(player); }
+
+void Packet::sendTo(BlockPos const& pos, DimensionType dimId, optional_ref<Player const> except) const {
+    RuntimePacket{*this}.sendTo(pos, dimId, except);
 }
 
-void Packet::sendToClient(::NetworkIdentifier const& identifier, ::SubClientId clientId) const {
-    ll::service::getLevel().transform([&](auto& level) {
-        RuntimePacket packet(*this);
-        level.getPacketSender()->sendToClient(identifier, packet, clientId);
-        return true;
-    });
+void Packet::sendTo(Actor const& actor, optional_ref<Player const> except) const {
+    RuntimePacket{*this}.sendTo(actor, except);
 }
 
-void Packet::sendToClient(::UserEntityIdentifierComponent const* user) {
-    ll::service::getLevel().transform([&](auto& level) {
-        RuntimePacket packet(*this);
-        level.getPacketSender()->sendToClient(user, packet);
-        return true;
-    });
+void Packet::sendToClient(NetworkIdentifier const& identifier, SubClientId clientId) const {
+    RuntimePacket{*this}.sendToClient(identifier, clientId);
 }
 
-
-void Packet::sendToClients(::std::vector<::NetworkIdentifierWithSubId> const& users) {
-    ll::service::getLevel().transform([&](auto& level) {
-        RuntimePacket packet(*this);
-        level.getPacketSender()->sendToClients(users, packet);
-        return true;
-    });
+void Packet::sendToClient(NetworkIdentifierWithSubId const& identifierWithSubId) const {
+    RuntimePacket{*this}.sendToClient(identifierWithSubId);
 }
 
-void Packet::sendBroadcast() {
-    ll::service::getLevel().transform([&](auto& level) {
-        RuntimePacket packet(*this);
-        level.getPacketSender()->sendBroadcast(packet);
-        return true;
-    });
+void Packet::sendToClients() const { RuntimePacket{*this}.sendToClients(); }
+
+void Packet::sendToClients(NetworkIdentifier const& exceptId, SubClientId exceptSubid) const {
+    RuntimePacket{*this}.sendToClients(exceptId, exceptSubid);
 }
 
-void Packet::sendBroadcast(::NetworkIdentifier const& identifier, ::SubClientId clientId) {
-    ll::service::getLevel().transform([&](auto& level) {
-        RuntimePacket packet(*this);
-        level.getPacketSender()->sendBroadcast(identifier, clientId, packet);
-        return true;
-    });
-}
+void Packet::sendToServer() const { RuntimePacket{*this}.sendToServer(); }
+
 } // namespace ll::network
