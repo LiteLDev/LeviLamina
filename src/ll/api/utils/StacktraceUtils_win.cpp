@@ -31,9 +31,7 @@ Stacktrace Stacktrace::current(size_t skip, size_t maxDepth) {
     res.hash = ll::hash_utils::HashCombiner{}.addRange(res.entries);
     return res;
 }
-Stacktrace Stacktrace::fromThreadId(ulong threadId) {
-    ll::Stacktrace result{};
-
+Stacktrace Stacktrace::fromThread(std::thread::id id) {
     struct ThreadHandle {
         HANDLE mHandle{};
 
@@ -44,8 +42,8 @@ Stacktrace Stacktrace::fromThreadId(ulong threadId) {
         }
 
         operator HANDLE() const { return mHandle; }
-    } threadHandle{threadId};
-    if (!threadHandle) return result;
+    } threadHandle{id._Get_underlying_id()};
+    if (!threadHandle) return {};
 
     struct SuspendGuard {
         HANDLE mHandle{};
@@ -57,12 +55,17 @@ Stacktrace Stacktrace::fromThreadId(ulong threadId) {
         ~SuspendGuard() {
             if (mResult) ResumeThread(mHandle);
         }
-    } suspendGuard{threadHandle};
-    if (!suspendGuard.mResult) return result;
+    };
+    std::optional<SuspendGuard> suspendGuard;
+    if (id._Get_underlying_id() != GetCurrentThreadId()) {
+        if (!suspendGuard.emplace(threadHandle).mResult) {
+            return {};
+        }
+    }
 
     CONTEXT context{};
     context.ContextFlags = CONTEXT_FULL;
-    if (!GetThreadContext(threadHandle, &context)) return result;
+    if (!GetThreadContext(threadHandle, &context)) return {};
 
     STACKFRAME64 stackFrame{};
     stackFrame.AddrPC.Offset    = context.Rip;
@@ -73,6 +76,7 @@ Stacktrace Stacktrace::fromThreadId(ulong threadId) {
     stackFrame.AddrStack.Mode   = AddrModeFlat;
 
     auto processHandle = GetCurrentProcess();
+    ll::Stacktrace result{};
 
     while (StackWalk64(
         IMAGE_FILE_MACHINE_AMD64,
@@ -91,9 +95,6 @@ Stacktrace Stacktrace::fromThreadId(ulong threadId) {
 
     result.hash = ll::hash_utils::HashCombiner{}.addRange(result.entries);
     return result;
-}
-Stacktrace Stacktrace::fromThread(std::thread& thread) {
-    return thread.joinable() ? fromThreadId(GetThreadId(thread.native_handle())) : Stacktrace{};
 }
 } // namespace ll
 
