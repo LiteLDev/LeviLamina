@@ -13,6 +13,7 @@
 #include "ll/core/protocol/DescriptorState.h"
 #include "ll/core/protocol/ModuleCatalog.h"
 #include "ll/core/protocol/PayloadRegistryInternal.h"
+#include "ll/core/protocol/ProtocolRuntime.h"
 #include "ll/core/protocol/RuntimeIdentity.h"
 
 namespace ll::protocol {
@@ -239,6 +240,10 @@ Expected<ModuleRegistration> PayloadRegistry::registerModuleOwned(
     ProtocolNamespace const&         protocolNamespace
 ) noexcept {
     try {
+        if (auto initialized = detail::ProtocolRuntime::getInstance().initialize(); !initialized) {
+            return forwardError(initialized.error());
+        }
+
         auto id = makeModuleId(protocolNamespace, definition.name);
         if (!id) {
             return forwardError(id.error());
@@ -367,6 +372,9 @@ Expected<PayloadRegistration> PayloadRegistry::registerPayloadErased(
         }
         if (mImpl->attachedPayloads.size() >= Limits::MaxDeclaredPayloads) {
             return makeRegistrationError(RegistrationErrc::InvalidLimit, "payload declaration count");
+        }
+        if (auto installed = detail::ProtocolRuntime::getInstance().installPayloadSlot(*id, runtimeId); !installed) {
+            return forwardError(installed.error());
         }
 
         auto generation = ++mImpl->lastPayloadGeneration[*id];

@@ -7,6 +7,8 @@
 #include <vector>
 
 #include "ll/api/mod/Mod.h"
+#include "ll/api/network/packet/Packet.h"
+#include "ll/api/network/packet/PacketRegistrar.h"
 #include "ll/api/protocol/Error.h"
 #include "ll/api/protocol/Limits.h"
 #include "ll/api/protocol/PayloadRegistry.h"
@@ -178,6 +180,8 @@ TEST(ProtocolRegistryTest, PreservesRuntimeTombstoneAndAdvancesGeneration) {
     auto const runtimeId       = first->runtimeId();
     auto const firstGeneration = first->generation();
     EXPECT_TRUE(first->reset());
+    EXPECT_NE(network::PacketRegistrar::getInstance().createPacket(runtimeId), nullptr);
+    EXPECT_TRUE(network::PacketRegistrar::getInstance().getHandler(runtimeId));
 
     auto second = registry.registerPayload<TestPayload>(*module, payloadDefinition(), TestCodec{});
     ASSERT_TRUE(second);
