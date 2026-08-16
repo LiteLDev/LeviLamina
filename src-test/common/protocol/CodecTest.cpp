@@ -5,8 +5,13 @@
 
 #include <array>
 #include <string>
+#include <utility>
 
 namespace ll::protocol::test {
+
+static_assert(!noexcept(std::declval<Encoder&>().writeBytes(std::declval<std::span<std::byte const>>())));
+static_assert(!noexcept(std::declval<Decoder&>().readBytes(0)));
+static_assert(!noexcept(std::declval<Decoder&>().readString(0)));
 
 TEST(ProtocolCodecTest, EncodesCanonicalPrimitiveSequence) {
     Encoder encoder{64};

@@ -35,14 +35,14 @@ public:
 
     LLNDAPI std::string takeBuffer() noexcept;
 
-    LLNDAPI Expected<> writeU8(std::uint8_t value) noexcept;
-    LLNDAPI Expected<> writeU16(std::uint16_t value) noexcept;
-    LLNDAPI Expected<> writeU32(std::uint32_t value) noexcept;
-    LLNDAPI Expected<> writeU64(std::uint64_t value) noexcept;
-    LLNDAPI Expected<> writeVarUint(std::uint32_t value) noexcept;
-    LLNDAPI Expected<> writeBool(bool value) noexcept;
-    LLNDAPI Expected<> writeBytes(std::span<std::byte const> value) noexcept;
-    LLNDAPI Expected<> writeString(std::string_view value, std::size_t maxBytes) noexcept;
+    LLNDAPI Expected<> writeU8(std::uint8_t value);
+    LLNDAPI Expected<> writeU16(std::uint16_t value);
+    LLNDAPI Expected<> writeU32(std::uint32_t value);
+    LLNDAPI Expected<> writeU64(std::uint64_t value);
+    LLNDAPI Expected<> writeVarUint(std::uint32_t value);
+    LLNDAPI Expected<> writeBool(bool value);
+    LLNDAPI Expected<> writeBytes(std::span<std::byte const> value);
+    LLNDAPI Expected<> writeString(std::string_view value, std::size_t maxBytes);
 };
 
 class Decoder {
@@ -62,16 +62,16 @@ public:
     LLNDAPI std::size_t size() const noexcept;
     LLNDAPI std::size_t remaining() const noexcept;
 
-    LLNDAPI Expected<std::uint8_t> readU8() noexcept;
-    LLNDAPI Expected<std::uint16_t> readU16() noexcept;
-    LLNDAPI Expected<std::uint32_t> readU32() noexcept;
-    LLNDAPI Expected<std::uint64_t> readU64() noexcept;
-    LLNDAPI Expected<std::uint32_t> readVarUint() noexcept;
-    LLNDAPI Expected<bool> readBool() noexcept;
-    LLNDAPI Expected<std::span<std::byte const>> readBytes(std::size_t length) noexcept;
-    LLNDAPI Expected<std::string> readString(std::size_t maxBytes) noexcept;
+    LLNDAPI Expected<std::uint8_t> readU8();
+    LLNDAPI Expected<std::uint16_t> readU16();
+    LLNDAPI Expected<std::uint32_t> readU32();
+    LLNDAPI Expected<std::uint64_t> readU64();
+    LLNDAPI Expected<std::uint32_t> readVarUint();
+    LLNDAPI Expected<bool> readBool();
+    LLNDAPI Expected<std::span<std::byte const>> readBytes(std::size_t length);
+    LLNDAPI Expected<std::string> readString(std::size_t maxBytes);
 
-    LLNDAPI Expected<> requireFullyConsumed() const noexcept;
+    LLNDAPI Expected<> requireFullyConsumed() const;
 };
 
 template <class C, class T>

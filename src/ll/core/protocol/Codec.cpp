@@ -1,14 +1,12 @@
 #include "ll/api/protocol/Codec.h"
 
-#include "ll/api/protocol/Error.h"
-#include "mc/deps/core/utility/BinaryStream.h"
-#include "mc/deps/core/utility/ReadOnlyBinaryStream.h"
-
 #include <array>
 #include <bit>
 #include <cstring>
 #include <limits>
 #include <utility>
+
+#include "ll/api/protocol/Error.h"
 
 namespace ll::protocol {
 
@@ -81,39 +79,32 @@ T littleEndianValue(std::array<std::byte, sizeof(T)> bytes) noexcept {
 
 class Encoder::Impl {
 public:
-    std::string  buffer;
-    BinaryStream stream{buffer};
-    std::size_t  limit;
+    std::string buffer;
+    std::size_t limit;
 
     explicit Impl(std::size_t limit) : limit(limit) { buffer.reserve(std::min<std::size_t>(limit, 4096)); }
 
-    Expected<> append(std::span<std::byte const> value) noexcept {
+    Expected<> append(std::span<std::byte const> value) {
         if (value.size() > limit - buffer.size()) {
             return makeCodecError(CodecErrc::SizeLimitExceeded);
         }
 
-        try {
-            stream.write(reinterpret_cast<char const*>(value.data()), value.size());
-            return {};
-        } catch (...) {
-            return makeCodecError(CodecErrc::ExceptionEscaped);
-        }
+        buffer.append(reinterpret_cast<char const*>(value.data()), value.size());
+        return {};
     }
 };
 
 class Decoder::Impl {
 public:
     std::span<std::byte const> input;
-    ReadOnlyBinaryStream       stream;
     std::size_t                cursor{};
     bool                       sizeLimitExceeded{};
 
     explicit Impl(std::span<std::byte const> input, bool sizeLimitExceeded = false)
     : input(input),
-      stream(std::string_view{reinterpret_cast<char const*>(input.data()), input.size()}, false),
       sizeLimitExceeded(sizeLimitExceeded) {}
 
-    Expected<std::span<std::byte const>> read(std::size_t length) noexcept {
+    Expected<std::span<std::byte const>> read(std::size_t length) {
         if (sizeLimitExceeded) {
             return makeCodecError(CodecErrc::SizeLimitExceeded);
         }
@@ -121,10 +112,9 @@ public:
             return makeCodecError(CodecErrc::Truncated);
         }
 
-        auto result  = input.subspan(cursor, length);
-        cursor      += length;
+        auto result = input.subspan(cursor, length);
 
-        stream.mReadPointer = cursor;
+        cursor += length;
         return result;
     }
 };
@@ -144,39 +134,41 @@ std::span<std::byte const> Encoder::bytes() const noexcept {
 
 std::string Encoder::takeBuffer() noexcept { return std::move(mImpl->buffer); }
 
-Expected<> Encoder::writeU8(std::uint8_t value) noexcept {
+Expected<> Encoder::writeU8(std::uint8_t value) {
     auto bytes = detail::littleEndianBytes(value);
     return mImpl->append(bytes);
 }
-Expected<> Encoder::writeU16(std::uint16_t value) noexcept {
+Expected<> Encoder::writeU16(std::uint16_t value) {
     auto bytes = detail::littleEndianBytes(value);
     return mImpl->append(bytes);
 }
-Expected<> Encoder::writeU32(std::uint32_t value) noexcept {
+Expected<> Encoder::writeU32(std::uint32_t value) {
     auto bytes = detail::littleEndianBytes(value);
     return mImpl->append(bytes);
 }
-Expected<> Encoder::writeU64(std::uint64_t value) noexcept {
+Expected<> Encoder::writeU64(std::uint64_t value) {
     auto bytes = detail::littleEndianBytes(value);
     return mImpl->append(bytes);
 }
-Expected<> Encoder::writeVarUint(std::uint32_t value) noexcept {
+Expected<> Encoder::writeVarUint(std::uint32_t value) {
     std::array<std::byte, 5> bytes{};
     std::size_t              size{};
     do {
-        auto current   = static_cast<std::uint8_t>(value & 0x7FU);
-        value        >>= 7U;
+        auto current = static_cast<std::uint8_t>(value & 0x7FU);
+
+        value >>= 7U;
         if (value != 0) {
             current |= 0x80U;
         }
+
         bytes[size++] = static_cast<std::byte>(current);
     } while (value != 0);
 
     return mImpl->append(std::span{bytes}.first(size));
 }
-Expected<> Encoder::writeBool(bool value) noexcept { return writeU8(value ? 1 : 0); }
-Expected<> Encoder::writeBytes(std::span<std::byte const> value) noexcept { return mImpl->append(value); }
-Expected<> Encoder::writeString(std::string_view value, std::size_t maxBytes) noexcept {
+Expected<> Encoder::writeBool(bool value) { return writeU8(value ? 1 : 0); }
+Expected<> Encoder::writeBytes(std::span<std::byte const> value) { return mImpl->append(value); }
+Expected<> Encoder::writeString(std::string_view value, std::size_t maxBytes) {
     if (value.size() > maxBytes || value.size() > std::numeric_limits<std::uint32_t>::max()) {
         return makeCodecError(CodecErrc::SizeLimitExceeded);
     }
@@ -213,8 +205,8 @@ std::size_t Decoder::remaining() const noexcept {
     return mImpl->input.size() - mImpl->cursor;
 }
 
-Expected<std::span<std::byte const>> Decoder::readBytes(std::size_t length) noexcept { return mImpl->read(length); }
-Expected<std::uint8_t>               Decoder::readU8() noexcept {
+Expected<std::span<std::byte const>> Decoder::readBytes(std::size_t length) { return mImpl->read(length); }
+Expected<std::uint8_t>               Decoder::readU8() {
     auto bytes = readBytes(1);
     if (!bytes) {
         return forwardError(bytes.error());
@@ -223,7 +215,7 @@ Expected<std::uint8_t>               Decoder::readU8() noexcept {
 }
 
 template <class T>
-Expected<T> readLittleEndian(Decoder& decoder) noexcept {
+Expected<T> readLittleEndian(Decoder& decoder) {
     auto bytes = decoder.readBytes(sizeof(T));
     if (!bytes) {
         return forwardError(bytes.error());
@@ -234,10 +226,10 @@ Expected<T> readLittleEndian(Decoder& decoder) noexcept {
     return detail::littleEndianValue<T>(valueBytes);
 }
 
-Expected<std::uint16_t> Decoder::readU16() noexcept { return readLittleEndian<std::uint16_t>(*this); }
-Expected<std::uint32_t> Decoder::readU32() noexcept { return readLittleEndian<std::uint32_t>(*this); }
-Expected<std::uint64_t> Decoder::readU64() noexcept { return readLittleEndian<std::uint64_t>(*this); }
-Expected<std::uint32_t> Decoder::readVarUint() noexcept {
+Expected<std::uint16_t> Decoder::readU16() { return readLittleEndian<std::uint16_t>(*this); }
+Expected<std::uint32_t> Decoder::readU32() { return readLittleEndian<std::uint32_t>(*this); }
+Expected<std::uint64_t> Decoder::readU64() { return readLittleEndian<std::uint64_t>(*this); }
+Expected<std::uint32_t> Decoder::readVarUint() {
     constexpr std::size_t  MaxBytes         = 5;
     constexpr std::uint8_t PayloadMask      = 0x7F;
     constexpr std::uint8_t ContinuationMask = 0x80;
@@ -268,7 +260,7 @@ Expected<std::uint32_t> Decoder::readVarUint() noexcept {
     }
     return makeCodecError(CodecErrc::InvalidValue, "unterminated varuint");
 }
-Expected<bool> Decoder::readBool() noexcept {
+Expected<bool> Decoder::readBool() {
     auto value = readU8();
     if (!value) {
         return forwardError(value.error());
@@ -278,7 +270,7 @@ Expected<bool> Decoder::readBool() noexcept {
     }
     return *value != 0;
 }
-Expected<std::string> Decoder::readString(std::size_t maxBytes) noexcept {
+Expected<std::string> Decoder::readString(std::size_t maxBytes) {
     auto length = readVarUint();
     if (!length) {
         return forwardError(length.error());
@@ -297,17 +289,10 @@ Expected<std::string> Decoder::readString(std::size_t maxBytes) noexcept {
         return makeCodecError(CodecErrc::InvalidUtf8);
     }
 
-    std::string result;
-    try {
-        result.assign(value);
-    } catch (...) {
-        return makeCodecError(CodecErrc::ExceptionEscaped);
-    }
-
-    return result;
+    return std::string{value};
 }
 
-Expected<> Decoder::requireFullyConsumed() const noexcept {
+Expected<> Decoder::requireFullyConsumed() const {
     if (mImpl->sizeLimitExceeded || mImpl->cursor > mImpl->input.size()) {
         return makeCodecError(CodecErrc::SizeLimitExceeded);
     }
