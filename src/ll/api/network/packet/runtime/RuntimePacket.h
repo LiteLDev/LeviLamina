@@ -27,15 +27,15 @@ class RuntimePacket final : public ::Packet {
 public:
     RuntimePacket() = default;
 
-    RuntimePacket(std::unique_ptr<ll::network::Packet> packet)
-    : ownedPacket(std::move(packet)),
+    explicit RuntimePacket(std::unique_ptr<ll::network::Packet> newPacket)
+    : ownedPacket(std::move(newPacket)),
       packet(ownedPacket.get()) {
-        if (packet) {
-            runtimeId     = packet->getRuntimeId();
-            mReliability  = packet->mReliability;
-            mPriority     = packet->mPriority;
-            mCompressible = packet->mCompressible;
-            mSenderSubId  = packet->mSenderSubId;
+        if (ownedPacket) {
+            runtimeId     = ownedPacket->getRuntimeId();
+            mReliability  = ownedPacket->mReliability;
+            mPriority     = ownedPacket->mPriority;
+            mCompressible = ownedPacket->mCompressible;
+            mSenderSubId  = ownedPacket->mSenderSubId;
         }
     }
 
