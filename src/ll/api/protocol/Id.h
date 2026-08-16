@@ -18,7 +18,7 @@ class ProtocolNamespace {
     explicit ProtocolNamespace(std::string value) : mValue(std::move(value)) {}
 
 public:
-    LLNDAPI static Expected<ProtocolNamespace> parse(std::string_view value) noexcept;
+    LLNDAPI static Expected<ProtocolNamespace> parse(std::string_view value);
 
     [[nodiscard]] std::string const& str() const noexcept { return mValue; }
     [[nodiscard]] std::string_view   value() const noexcept { return mValue; }
@@ -34,7 +34,7 @@ class ModuleName {
     explicit ModuleName(std::string value) : mValue(std::move(value)) {}
 
 public:
-    LLNDAPI static Expected<ModuleName> parse(std::string_view value) noexcept;
+    LLNDAPI static Expected<ModuleName> parse(std::string_view value);
 
     [[nodiscard]] std::string const& str() const noexcept { return mValue; }
     [[nodiscard]] std::string_view   value() const noexcept { return mValue; }
@@ -50,7 +50,7 @@ class PayloadName {
     explicit PayloadName(std::string value) : mValue(std::move(value)) {}
 
 public:
-    LLNDAPI static Expected<PayloadName> parse(std::string_view value) noexcept;
+    LLNDAPI static Expected<PayloadName> parse(std::string_view value);
 
     [[nodiscard]] std::string const& str() const noexcept { return mValue; }
     [[nodiscard]] std::string_view   value() const noexcept { return mValue; }
@@ -66,7 +66,7 @@ class FeatureName {
     explicit FeatureName(std::string value) : mValue(std::move(value)) {}
 
 public:
-    LLNDAPI static Expected<FeatureName> parse(std::string_view value) noexcept;
+    LLNDAPI static Expected<FeatureName> parse(std::string_view value);
 
     [[nodiscard]] std::string const& str() const noexcept { return mValue; }
     [[nodiscard]] std::string_view   value() const noexcept { return mValue; }
@@ -83,7 +83,7 @@ class ModuleId {
     ModuleId(std::string value, std::size_t separator) : mValue(std::move(value)), mSeparator(separator) {}
 
 public:
-    LLNDAPI static Expected<ModuleId> parse(std::string_view value) noexcept;
+    LLNDAPI static Expected<ModuleId> parse(std::string_view value);
 
     [[nodiscard]] std::string const& str() const noexcept { return mValue; }
     [[nodiscard]] std::string_view   value() const noexcept { return mValue; }
@@ -106,7 +106,7 @@ class PayloadId {
       mPayloadSeparator(payloadSeparator) {}
 
 public:
-    LLNDAPI static Expected<PayloadId> parse(std::string_view value) noexcept;
+    LLNDAPI static Expected<PayloadId> parse(std::string_view value);
 
     [[nodiscard]] std::string const& str() const noexcept { return mValue; }
     [[nodiscard]] std::string_view   value() const noexcept { return mValue; }
@@ -119,9 +119,9 @@ public:
     auto operator<=>(PayloadId const&) const = default;
 };
 
-LLNDAPI Expected<ModuleId> makeModuleId(ProtocolNamespace const& protocolNamespace, ModuleName const& name) noexcept;
+LLNDAPI Expected<ModuleId> makeModuleId(ProtocolNamespace const& protocolNamespace, ModuleName const& name);
 
-LLNDAPI Expected<PayloadId> makePayloadId(ModuleId const& module, PayloadName const& name) noexcept;
+LLNDAPI Expected<PayloadId> makePayloadId(ModuleId const& module, PayloadName const& name);
 
 } // namespace ll::protocol
 

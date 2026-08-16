@@ -1,7 +1,6 @@
 #include "ll/api/protocol/Id.h"
 
 #include <string>
-#include <utility>
 
 #include "ll/api/protocol/Error.h"
 #include "ll/api/protocol/Limits.h"
@@ -62,17 +61,13 @@ bool validFeatureName(std::string_view value) noexcept {
     return true;
 }
 
-Unexpected tooLong(std::string_view type) noexcept {
-    return makeIdentityError(IdentityErrc::TooLong, std::string{type});
-}
+Unexpected tooLong(std::string_view type) { return makeIdentityError(IdentityErrc::TooLong, std::string{type}); }
 
-Unexpected invalid(std::string_view type) noexcept {
-    return makeIdentityError(IdentityErrc::InvalidSyntax, std::string{type});
-}
+Unexpected invalid(std::string_view type) { return makeIdentityError(IdentityErrc::InvalidSyntax, std::string{type}); }
 
 } // namespace detail
 
-Expected<ProtocolNamespace> ProtocolNamespace::parse(std::string_view value) noexcept {
+Expected<ProtocolNamespace> ProtocolNamespace::parse(std::string_view value) {
     if (value.size() > Limits::MaxProtocolNamespaceBytes) {
         return detail::tooLong("protocol namespace");
     }
@@ -83,7 +78,7 @@ Expected<ProtocolNamespace> ProtocolNamespace::parse(std::string_view value) noe
     return ProtocolNamespace{std::string{value}};
 }
 
-Expected<ModuleName> ModuleName::parse(std::string_view value) noexcept {
+Expected<ModuleName> ModuleName::parse(std::string_view value) {
     if (value.size() > Limits::MaxModuleNameBytes) {
         return detail::tooLong("module name");
     }
@@ -94,7 +89,7 @@ Expected<ModuleName> ModuleName::parse(std::string_view value) noexcept {
     return ModuleName{std::string{value}};
 }
 
-Expected<PayloadName> PayloadName::parse(std::string_view value) noexcept {
+Expected<PayloadName> PayloadName::parse(std::string_view value) {
     if (value.size() > Limits::MaxPayloadNameBytes) {
         return detail::tooLong("payload name");
     }
@@ -105,7 +100,7 @@ Expected<PayloadName> PayloadName::parse(std::string_view value) noexcept {
     return PayloadName{std::string{value}};
 }
 
-Expected<FeatureName> FeatureName::parse(std::string_view value) noexcept {
+Expected<FeatureName> FeatureName::parse(std::string_view value) {
     if (value.size() > Limits::MaxFeatureNameBytes) {
         return detail::tooLong("feature name");
     }
@@ -116,7 +111,7 @@ Expected<FeatureName> FeatureName::parse(std::string_view value) noexcept {
     return FeatureName{std::string{value}};
 }
 
-Expected<ModuleId> ModuleId::parse(std::string_view value) noexcept {
+Expected<ModuleId> ModuleId::parse(std::string_view value) {
     if (value.size() > Limits::MaxModuleIdBytes) {
         return detail::tooLong("module ID");
     }
@@ -132,7 +127,7 @@ Expected<ModuleId> ModuleId::parse(std::string_view value) noexcept {
     return ModuleId{std::string{value}, separator};
 }
 
-Expected<PayloadId> PayloadId::parse(std::string_view value) noexcept {
+Expected<PayloadId> PayloadId::parse(std::string_view value) {
     if (value.size() > Limits::MaxPayloadIdBytes) {
         return detail::tooLong("payload ID");
     }
@@ -153,7 +148,7 @@ Expected<PayloadId> PayloadId::parse(std::string_view value) noexcept {
     return PayloadId{std::string{value}, namespaceSeparator, payloadSeparator};
 }
 
-Expected<ModuleId> makeModuleId(ProtocolNamespace const& protocolNamespace, ModuleName const& name) noexcept {
+Expected<ModuleId> makeModuleId(ProtocolNamespace const& protocolNamespace, ModuleName const& name) {
     std::string value;
     value.reserve(protocolNamespace.value().size() + 1 + name.value().size());
     value.append(protocolNamespace.value());
@@ -163,7 +158,7 @@ Expected<ModuleId> makeModuleId(ProtocolNamespace const& protocolNamespace, Modu
     return ModuleId::parse(value);
 }
 
-Expected<PayloadId> makePayloadId(ModuleId const& module, PayloadName const& name) noexcept {
+Expected<PayloadId> makePayloadId(ModuleId const& module, PayloadName const& name) {
     std::string value;
     value.reserve(module.value().size() + 1 + name.value().size());
     value.append(module.value());

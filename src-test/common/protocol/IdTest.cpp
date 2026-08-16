@@ -12,6 +12,8 @@
 
 namespace ll::protocol::test {
 
+static_assert(!noexcept(FeatureName::parse(std::string_view{})));
+
 TEST(ProtocolIdTest, ParsesCanonicalLocalValues) {
     auto protocolNamespace = ProtocolNamespace::parse("example.mod-1");
     auto moduleName        = ModuleName::parse("world_sync");
