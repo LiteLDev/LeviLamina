@@ -129,7 +129,7 @@ public:
 
     virtual void _onReload() /*override*/;
 
-    virtual ~ScriptBlockCustomComponentsRegistry() /*override*/ = default;
+    virtual ~ScriptBlockCustomComponentsRegistry() /*override*/;
 
     virtual ::std::vector<::std::string_view> getValidComponentsForBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> const& permutation

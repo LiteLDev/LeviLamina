@@ -22,17 +22,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI PackDiscoveryError(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
-#endif
     // NOLINTEND
 
 public:

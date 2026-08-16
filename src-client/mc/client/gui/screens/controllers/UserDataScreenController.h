@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UserDataScreenController() /*override*/ = default;
+    virtual ~UserDataScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

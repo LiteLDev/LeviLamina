@@ -66,7 +66,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientNetworkSystem() /*override*/ = default;
+    virtual ~ClientNetworkSystem() /*override*/;
 
     virtual ::Social::GameConnectionInfo const& getConnectionInfo() const /*override*/;
 

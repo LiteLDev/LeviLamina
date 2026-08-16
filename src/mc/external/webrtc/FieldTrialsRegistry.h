@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FieldTrialsRegistry() /*override*/ = default;
+    virtual ~FieldTrialsRegistry() /*override*/;
 
     virtual ::std::string Lookup(::std::string_view key) const /*override*/;
 

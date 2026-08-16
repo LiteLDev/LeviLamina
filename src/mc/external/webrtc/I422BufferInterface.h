@@ -33,7 +33,7 @@ public:
         int scaled_height
     ) /*override*/;
 
-    virtual ~I422BufferInterface() /*override*/ = default;
+    virtual ~I422BufferInterface() /*override*/;
     // NOLINTEND
 };
 

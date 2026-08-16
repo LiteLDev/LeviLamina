@@ -17,7 +17,7 @@ class MediaFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MediaFactory() = default;
+    virtual ~MediaFactory();
 
     virtual ::std::unique_ptr<::webrtc::Call> CreateCall(::webrtc::CallConfig) = 0;
 

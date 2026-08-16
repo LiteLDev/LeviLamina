@@ -12,7 +12,7 @@ class Flexfec03HeaderReader : public ::webrtc::FecHeaderReader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Flexfec03HeaderReader() /*override*/ = default;
+    virtual ~Flexfec03HeaderReader() /*override*/;
 
     virtual bool ReadFecHeader(::webrtc::ForwardErrorCorrection::ReceivedFecPacket* fec_packet) const /*override*/;
     // NOLINTEND

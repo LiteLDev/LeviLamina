@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SettingsGroupInfoQuery() /*override*/ = default;
+    virtual ~SettingsGroupInfoQuery() /*override*/;
     // NOLINTEND
 
 public:

@@ -55,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BatchedNetworkPeer() /*override*/ = default;
+    virtual ~BatchedNetworkPeer() /*override*/;
 
     virtual void flush(::std::function<void()>&& callback) /*override*/;
 
@@ -88,6 +88,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $flush(::std::function<void()>&& callback);
@@ -98,6 +104,11 @@ public:
     MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
     MCAPI void $update();
+
+    MCAPI ::NetworkPeer::DataStatus $_receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    );
 
 
     // NOLINTEND

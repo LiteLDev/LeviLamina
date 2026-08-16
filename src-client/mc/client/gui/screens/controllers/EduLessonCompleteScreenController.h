@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EduLessonCompleteScreenController() /*override*/ = default;
+    virtual ~EduLessonCompleteScreenController() /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
     // NOLINTEND
@@ -58,6 +58,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

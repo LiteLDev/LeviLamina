@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     virtual void OnComplete(::std::vector<::webrtc::StatsReport const*> const&) = 0;
 
-    virtual ~StatsObserver() /*override*/ = default;
+    virtual ~StatsObserver() /*override*/;
     // NOLINTEND
 };
 

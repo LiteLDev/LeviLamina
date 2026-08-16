@@ -43,7 +43,7 @@ public:
 
         virtual void FillVideoCodecAv1(::webrtc::VideoCodecAV1*) const;
 
-        virtual ~EncoderSpecificSettings() /*override*/ = default;
+        virtual ~EncoderSpecificSettings() /*override*/;
         // NOLINTEND
     };
 
@@ -54,7 +54,7 @@ public:
         virtual ::std::vector<::webrtc::VideoStream>
         CreateEncoderStreams(::webrtc::FieldTrialsView const&, int, int, ::webrtc::VideoEncoderConfig const&) = 0;
 
-        virtual ~VideoStreamFactoryInterface() /*override*/ = default;
+        virtual ~VideoStreamFactoryInterface() /*override*/;
         // NOLINTEND
     };
 

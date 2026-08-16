@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptExportManager() = default;
+    virtual ~ScriptExportManager();
     // NOLINTEND
 
 public:
@@ -44,6 +44,12 @@ public:
     MCNAPI static ::Scripting::ClassBinding bindClass();
 
     MCNAPI static ::Scripting::EnumBinding bindExportResultEnums();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

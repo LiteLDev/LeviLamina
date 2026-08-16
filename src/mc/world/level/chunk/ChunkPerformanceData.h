@@ -108,7 +108,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChunkPerformanceData() /*override*/ = default;
+    virtual ~ChunkPerformanceData() /*override*/;
 
 #ifdef LL_PLAT_S
     virtual void visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)>);
@@ -125,6 +125,12 @@ public:
     MCAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int);
 
     MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

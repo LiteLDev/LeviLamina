@@ -100,7 +100,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~RegionListener() = default;
+        virtual ~RegionListener();
 
         virtual void onRegionDestroyed() = 0;
         // NOLINTEND
@@ -224,7 +224,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalPlayer() /*override*/ = default;
+    virtual ~LocalPlayer() /*override*/;
 
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
@@ -511,6 +511,12 @@ public:
         ::PlayerAuthenticationInfo const& authInfo,
         ::EntityContext&                  entityContext
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

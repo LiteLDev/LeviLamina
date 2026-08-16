@@ -8,7 +8,7 @@ class INetworkPayload {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~INetworkPayload() = default;
+    virtual ~INetworkPayload();
 
     virtual char const* getPayloadName() const = 0;
 

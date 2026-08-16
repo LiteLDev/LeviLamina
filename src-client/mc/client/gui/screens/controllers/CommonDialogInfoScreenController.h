@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommonDialogInfoScreenController() /*override*/ = default;
+    virtual ~CommonDialogInfoScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
     // NOLINTEND

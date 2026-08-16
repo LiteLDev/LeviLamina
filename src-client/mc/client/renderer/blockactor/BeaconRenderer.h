@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BeaconRenderer() /*override*/ = default;
+    virtual ~BeaconRenderer() /*override*/;
 
     virtual void
     render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
@@ -66,6 +66,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

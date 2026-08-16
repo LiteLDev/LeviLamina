@@ -43,6 +43,28 @@ public:
     public:
         // prevent constructor by default
         FinishedRequest();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI FinishedRequest(
+            ::Gameface::ResourceResponse         response,
+            ::std::string const&                 requestUrl,
+            ::Social::ProfileImageOptions const& imageOptions,
+            bool const                           succeeded
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::Gameface::ResourceResponse         response,
+            ::std::string const&                 requestUrl,
+            ::Social::ProfileImageOptions const& imageOptions,
+            bool const                           succeeded
+        );
+        // NOLINTEND
     };
 
 public:
@@ -66,7 +88,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ProfileImageResourceHandler() /*override*/ = default;
+    virtual ~ProfileImageResourceHandler() /*override*/;
 
     virtual ::Gameface::ResourceHandlerStatus
     onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
@@ -97,6 +119,12 @@ public:
         ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>            userManager
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

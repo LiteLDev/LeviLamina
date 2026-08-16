@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WinMain() = default;
+    virtual ~WinMain();
 
     virtual void _processProtocolActivationArguments(::Bedrock::ActivationArguments& args);
 
@@ -38,6 +38,12 @@ public:
     virtual void _postWindowCreationSetup(::HWND__* hwnd) = 0;
 
     virtual ::gsl::not_null<::Bedrock::ApplicationInitHandler*> _getAppInitHandler() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

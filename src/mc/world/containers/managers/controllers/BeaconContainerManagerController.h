@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BeaconContainerManagerController() /*override*/ = default;
+    virtual ~BeaconContainerManagerController() /*override*/;
 
     virtual bool handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
     // NOLINTEND
@@ -97,6 +97,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::weak_ptr<::BeaconContainerManagerModel> ptrModel);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

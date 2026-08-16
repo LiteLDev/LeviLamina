@@ -26,7 +26,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~ConnectionCallbacks() = default;
+        virtual ~ConnectionCallbacks();
 
         virtual bool
         onNewIncomingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer) = 0;
@@ -60,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Connector() = default;
+    virtual ~Connector();
 
     virtual ::std::string getLocalIp();
 
@@ -77,6 +77,12 @@ public:
     virtual ushort getIPv6Port() const;
 
     virtual ::TransportLayer getNetworkType() const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

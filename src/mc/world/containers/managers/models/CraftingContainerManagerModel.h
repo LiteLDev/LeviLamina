@@ -58,7 +58,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftingContainerManagerModel() /*override*/ = default;
+    virtual ~CraftingContainerManagerModel() /*override*/;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
@@ -130,6 +130,12 @@ public:
         ::std::string const& inventorySearch
     );
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

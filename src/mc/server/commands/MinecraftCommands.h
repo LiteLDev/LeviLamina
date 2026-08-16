@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftCommands() = default;
+    virtual ~MinecraftCommands();
     // NOLINTEND
 
 public:
@@ -130,6 +130,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::MinecraftCommandsArguments&& args);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

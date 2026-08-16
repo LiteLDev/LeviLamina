@@ -20,7 +20,7 @@ class IMinecraftApp {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMinecraftApp() = default;
+    virtual ~IMinecraftApp();
 
 #ifdef LL_PLAT_C
     virtual ::Bedrock::NonOwnerPointer<::EDUSystems> getEDUSystems() = 0;
@@ -49,5 +49,11 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const = 0;
 
     virtual bool requestInGamePause(::SubClientId const& subClient, bool status) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

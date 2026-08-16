@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncOptionsDataProvider() /*override*/ = default;
+    virtual ~AsyncOptionsDataProvider() /*override*/;
 
     virtual void setChangeListener(::std::function<void()> callback) /*override*/;
 
@@ -58,6 +58,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::unique_ptr<::Settings::IOptionsDataProvider> delegateProvider);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

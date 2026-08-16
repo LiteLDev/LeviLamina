@@ -17,7 +17,7 @@ class IPaperDollRenderContext {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPaperDollRenderContext() = default;
+    virtual ~IPaperDollRenderContext();
 
     virtual float getDebugSkinSpeedMultiplier() = 0;
 

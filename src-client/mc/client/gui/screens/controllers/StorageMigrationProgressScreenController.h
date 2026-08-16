@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageMigrationProgressScreenController() /*override*/ = default;
+    virtual ~StorageMigrationProgressScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

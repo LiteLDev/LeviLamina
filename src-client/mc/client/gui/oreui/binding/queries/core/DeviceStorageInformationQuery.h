@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeviceStorageInformationQuery() /*override*/ = default;
+    virtual ~DeviceStorageInformationQuery() /*override*/;
 
     virtual void update(double) /*override*/;
 

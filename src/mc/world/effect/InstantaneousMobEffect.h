@@ -9,11 +9,17 @@ class InstantaneousMobEffect : public ::MobEffect {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InstantaneousMobEffect() /*override*/ = default;
+    virtual ~InstantaneousMobEffect() /*override*/;
 
     virtual bool isInstantaneous() const /*override*/;
 
     virtual bool isDurationEffectTick(int remainingDuration, int) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

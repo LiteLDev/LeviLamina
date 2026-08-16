@@ -26,13 +26,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ExperienceRewardCommitObject() /*override*/ = default;
+    virtual ~ExperienceRewardCommitObject() /*override*/;
 
     virtual bool append(::ContainerValidationCommitObject* other) /*override*/;
 
     virtual bool canCommit(::ContainerScreenContext const&) const /*override*/;
 
     virtual void commit(::ContainerScreenContext const& screenContext) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

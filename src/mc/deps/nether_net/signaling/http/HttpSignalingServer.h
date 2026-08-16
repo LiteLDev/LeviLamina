@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HttpSignalingServer() /*override*/ = default;
+    virtual ~HttpSignalingServer() /*override*/;
 
     virtual void SendSignal(
         ::NetherNet::NetworkID,

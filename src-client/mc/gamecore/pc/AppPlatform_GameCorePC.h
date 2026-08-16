@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AppPlatform_GameCorePC() /*override*/ = default;
+    virtual ~AppPlatform_GameCorePC() /*override*/;
 
     virtual void showKeyboard(
         ::std::string const& currentText,
@@ -182,6 +182,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $showKeyboard(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline,
+        int const            controllerId,
+        ::glm::vec2 const&   position,
+        float                controlHeight,
+        ::InputMode          inputMode
+    );
+
     MCAPI void $hideKeyboard();
 
     MCAPI void $updateTextEditBoxPosition(

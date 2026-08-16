@@ -101,7 +101,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MobEffect() = default;
+    virtual ~MobEffect();
 
     virtual void applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
@@ -124,6 +124,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MobEffect(
+        uint                 id,
+        ::std::string const& resourceName,
+        ::std::string const& locName,
+        bool                 isHarmful,
+        int                  color,
+        int                  icon,
+        ::std::string const& iconName,
+        bool                 drawParticles
+    );
+
     MCAPI ::TemporalAttributeBuff
     _createTemporalBuff(::AttributeBuff const& baseBuff, ::EffectDuration duration, int amplification) const;
 
@@ -247,6 +258,21 @@ public:
     MCAPI static ::MobEffect*& WITHER();
 
     MCAPI static ::std::add_lvalue_reference_t<::std::unique_ptr<::MobEffect>[]> mMobEffects();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        uint                 id,
+        ::std::string const& resourceName,
+        ::std::string const& locName,
+        bool                 isHarmful,
+        int                  color,
+        int                  icon,
+        ::std::string const& iconName,
+        bool                 drawParticles
+    );
     // NOLINTEND
 
 public:

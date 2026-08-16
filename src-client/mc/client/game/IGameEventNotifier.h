@@ -9,7 +9,7 @@ class IGameEventNotifier {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGameEventNotifier() = default;
+    virtual ~IGameEventNotifier();
 
     virtual void onGameEventNotification(::ui::GameEventNotification notification) = 0;
     // NOLINTEND

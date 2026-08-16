@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChemistryTableBlockActor() /*override*/ = default;
+    virtual ~ChemistryTableBlockActor() /*override*/;
 
     virtual ::Container* getContainer() /*override*/;
 

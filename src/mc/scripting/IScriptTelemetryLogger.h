@@ -11,7 +11,7 @@ class IScriptTelemetryLogger {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptTelemetryLogger() = default;
+    virtual ~IScriptTelemetryLogger();
 
     virtual void onPluginDiscovery(::ScriptPluginManagerResult const& pluginManagerResult);
 

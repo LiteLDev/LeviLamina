@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PartyChatMemberQuery() /*override*/ = default;
+    virtual ~PartyChatMemberQuery() /*override*/;
     // NOLINTEND
 
 public:

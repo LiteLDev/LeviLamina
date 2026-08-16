@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StunUInt16ListAttribute() /*override*/ = default;
+    virtual ~StunUInt16ListAttribute() /*override*/;
 
     virtual ::webrtc::StunAttributeValueType value_type() const /*override*/;
 

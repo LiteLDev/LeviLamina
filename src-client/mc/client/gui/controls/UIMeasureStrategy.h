@@ -17,7 +17,7 @@ class UIMeasureStrategy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UIMeasureStrategy() = default;
+    virtual ~UIMeasureStrategy();
 
     virtual ::MeasureResult measureText(
         ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> const& font,

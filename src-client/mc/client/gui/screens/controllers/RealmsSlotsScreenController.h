@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsSlotsScreenController() /*override*/ = default;
+    virtual ~RealmsSlotsScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 

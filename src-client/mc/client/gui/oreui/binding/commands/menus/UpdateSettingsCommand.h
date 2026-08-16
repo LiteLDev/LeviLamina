@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UpdateSettingsCommand() /*override*/ = default;
+    virtual ~UpdateSettingsCommand() /*override*/;
     // NOLINTEND
 
 public:
@@ -49,6 +49,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

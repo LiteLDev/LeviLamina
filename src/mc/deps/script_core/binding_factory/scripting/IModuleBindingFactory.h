@@ -17,7 +17,7 @@ class IModuleBindingFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IModuleBindingFactory() = default;
+    virtual ~IModuleBindingFactory();
 
     virtual ::std::string getName() const = 0;
 

@@ -487,14 +487,6 @@ public:
         bool              singleSide
     );
 
-    MCAPI bool tessellateDragonEgg(
-        ::Tessellator&    tessellator,
-        ::Block const&    block,
-        ::BlockPos const& pos,
-        bool              render,
-        int               allowedFaces
-    );
-
     MCAPI bool
     tessellateDriedGhastInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& position);
 

@@ -15,13 +15,19 @@ class OnPlayerPlacingTrigger : public ::DefinitionTrigger, public ::IBlockCompon
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OnPlayerPlacingTrigger() = default;
+    virtual ~OnPlayerPlacingTrigger();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void onEvent(::BlockEvents::BlockPlayerPlacingEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -19,12 +19,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SavedDataStorage() = default;
+    virtual ~SavedDataStorage();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool loadAndSet(::SavedData& inoutData, ::std::string const& id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

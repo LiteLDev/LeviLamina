@@ -13,7 +13,7 @@ class SendPacketObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SendPacketObserver() = default;
+    virtual ~SendPacketObserver();
 
     virtual void OnSendPacket(::std::optional<ushort>, ::webrtc::Timestamp, uint) = 0;
     // NOLINTEND

@@ -53,7 +53,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~PacketSender() = default;
+        virtual ~PacketSender();
 
         virtual void SendPacket(
             ::std::unique_ptr<::webrtc::RtpPacketToSend> packet,

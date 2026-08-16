@@ -59,7 +59,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecoinCatalogModel() /*override*/ = default;
+    virtual ~MinecoinCatalogModel() /*override*/;
 
     virtual ::OfferCatalogStatus update() /*override*/;
 
@@ -85,6 +85,12 @@ public:
 
     MCAPI void
     _onTreatmentTagsReceived(::std::weak_ptr<bool> weakExistence, ::std::vector<::std::string> const& treatments);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

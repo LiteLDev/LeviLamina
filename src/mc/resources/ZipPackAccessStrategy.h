@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ZipPackAccessStrategy() /*override*/ = default;
+    virtual ~ZipPackAccessStrategy() /*override*/;
 
     virtual uint64 getPackSize() const /*override*/;
 
@@ -118,6 +118,12 @@ public:
                         fileAccess,
         ::ZipPackArgs&& args
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

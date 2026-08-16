@@ -8,7 +8,7 @@ class ISystemInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISystemInterface() = default;
+    virtual ~ISystemInterface();
 
     virtual ::std::vector<uchar> verifyAndReadPKCS7Data(::std::string const&) const = 0;
     // NOLINTEND

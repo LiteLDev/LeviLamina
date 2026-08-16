@@ -11,7 +11,7 @@ class ParamStorageBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParamStorageBase() = default;
+    virtual ~ParamStorageBase();
 
     virtual void* getParamStorageValue() = 0;
 

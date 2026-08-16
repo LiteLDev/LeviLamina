@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorProjectRegionPlayerService() /*override*/ = default;
+    virtual ~EditorProjectRegionPlayerService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

@@ -14,7 +14,7 @@ class ActorGameplayHandler : public ::GameplayHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorGameplayHandler() /*override*/ = default;
+    virtual ~ActorGameplayHandler() /*override*/;
 
     virtual ::HandlerResult handleEvent(::ActorGameplayEvent<void> const&) = 0;
 

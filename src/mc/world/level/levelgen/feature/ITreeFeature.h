@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITreeFeature() /*override*/ = default;
+    virtual ~ITreeFeature() /*override*/;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const = 0;
     // NOLINTEND
@@ -36,5 +36,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<::BlockPos> _place(::IFeature::PlacementContext const& context) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

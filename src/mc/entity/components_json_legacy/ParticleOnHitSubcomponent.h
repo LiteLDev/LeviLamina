@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleOnHitSubcomponent() /*override*/ = default;
+    virtual ~ParticleOnHitSubcomponent() /*override*/;
 
     virtual void readfromJSON(::Json::Value& value) /*override*/;
 
@@ -47,6 +47,12 @@ public:
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
     virtual char const* getName() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

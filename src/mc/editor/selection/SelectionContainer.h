@@ -20,7 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SelectionContainer() = default;
+    virtual ~SelectionContainer();
     // NOLINTEND
 };
 

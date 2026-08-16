@@ -19,7 +19,7 @@ class IScriptItemCustomComponentSignalCollection : public ::ScriptDeferredEventL
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptItemCustomComponentSignalCollection() /*override*/ = default;
+    virtual ~IScriptItemCustomComponentSignalCollection() /*override*/;
 
     virtual void registerClosures(
         ::HashedString const&                                         componentName,

@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TouchTurnInteractControl() /*override*/ = default;
+    virtual ~TouchTurnInteractControl() /*override*/;
 
     virtual void
     tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor) /*override*/;
@@ -77,6 +77,12 @@ public:
         ::std::function<bool()>                           condition,
         ::std::function<::std::vector<::RectangleArea>()> inactiveAreas
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

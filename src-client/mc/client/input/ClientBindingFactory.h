@@ -84,7 +84,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientBindingFactory() /*override*/ = default;
+    virtual ~ClientBindingFactory() /*override*/;
 
     virtual ::std::function<bool()> getBooleanBinding(uint name) const /*override*/;
 
@@ -128,6 +128,12 @@ public:
     MCAPI void setupFloatBindings();
 
     MCAPI void setupFloatSetters();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

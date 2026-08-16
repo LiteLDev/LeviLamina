@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ExternalDataServerLevel() /*override*/ = default;
+    virtual ~ExternalDataServerLevel() /*override*/;
 
     virtual bool isInWorldAndNotShowingAnyMenuScreens() const /*override*/;
 
@@ -44,6 +44,12 @@ public:
     virtual ::InputMode getInputMode() const /*override*/;
 
     virtual ::GameType getDefaultGameType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

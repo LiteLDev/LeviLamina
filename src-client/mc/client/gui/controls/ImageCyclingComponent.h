@@ -22,13 +22,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ImageCyclingComponent() /*override*/ = default;
+    virtual ~ImageCyclingComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void _postCreate() /*override*/;
 
     virtual void _updateSubPage() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -55,9 +55,7 @@ public:
 
     MCAPI MolangMemberArray(::MolangStruct_BaseAndPattern, int base, int pattern);
 
-#ifdef LL_PLAT_C
     MCAPI MolangMemberArray(::MolangStruct_MinAndMax, ::MolangMemberArray&& min, ::MolangMemberArray&& max);
-#endif
 
     MCAPI MolangMemberArray(::MolangStruct_PoseIndexAndHurtTime, int poseIndex, int hurtTime);
 
@@ -68,6 +66,13 @@ public:
     MCAPI MolangMemberArray(::MolangStruct_TentacleAngleAndSwimRotation, float tentacleAngle, float swimRotation);
 
     MCAPI MolangMemberArray(::MolangStruct_UV, float u, float v);
+
+    MCAPI MolangMemberArray(
+        ::MolangStruct_TRS,
+        ::MolangMemberArray&& translation,
+        ::MolangMemberArray&& rotation,
+        ::MolangMemberArray&& scale
+    );
 
     MCAPI void add(::HashedString const& name, ::MolangScriptArg const& value);
 
@@ -91,9 +96,7 @@ public:
 
     MCAPI void* $ctor(::MolangStruct_BaseAndPattern, int base, int pattern);
 
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(::MolangStruct_MinAndMax, ::MolangMemberArray&& min, ::MolangMemberArray&& max);
-#endif
 
     MCAPI void* $ctor(::MolangStruct_PoseIndexAndHurtTime, int poseIndex, int hurtTime);
 
@@ -104,5 +107,12 @@ public:
     MCAPI void* $ctor(::MolangStruct_TentacleAngleAndSwimRotation, float tentacleAngle, float swimRotation);
 
     MCAPI void* $ctor(::MolangStruct_UV, float u, float v);
+
+    MCAPI void* $ctor(
+        ::MolangStruct_TRS,
+        ::MolangMemberArray&& translation,
+        ::MolangMemberArray&& rotation,
+        ::MolangMemberArray&& scale
+    );
     // NOLINTEND
 };

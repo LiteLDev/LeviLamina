@@ -94,7 +94,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NpcInteractScreenController() /*override*/ = default;
+    virtual ~NpcInteractScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

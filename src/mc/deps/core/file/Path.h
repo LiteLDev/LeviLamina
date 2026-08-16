@@ -17,8 +17,10 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit Path(::Core::PathBuffer<::std::string> const& rhs);
+    MCAPI explicit Path(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& rhs);
 #endif
+
+    MCAPI explicit Path(::Core::PathBuffer<::std::string> const& rhs);
     // NOLINTEND
 
 public:
@@ -31,8 +33,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void* $ctor(::Core::PathBuffer<::std::string> const& rhs);
+    MCAPI void* $ctor(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& rhs);
 #endif
+
+    MCFOLD void* $ctor(::Core::PathBuffer<::std::string> const& rhs);
     // NOLINTEND
 };
 

@@ -15,7 +15,7 @@ public:
 
     virtual uint64 size() const = 0;
 
-    virtual ~EncodedImageBufferInterface() /*override*/;
+    virtual ~EncodedImageBufferInterface() /*override*/ = default;
     // NOLINTEND
 
 public:

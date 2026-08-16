@@ -51,7 +51,7 @@ public:
 
     virtual void SetStereoChannelSwapping(bool) = 0;
 
-    virtual ~AudioState() /*override*/ = default;
+    virtual ~AudioState() /*override*/;
     // NOLINTEND
 };
 

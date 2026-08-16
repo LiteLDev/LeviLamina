@@ -19,6 +19,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit FogVolumetricHenyeyGreensteinGSetting(::Core::Keyframes<float, float> henyeyGreensteinG);
+
     MCAPI ~FogVolumetricHenyeyGreensteinGSetting();
     // NOLINTEND
 
@@ -26,6 +28,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::FogVolumetricHenyeyGreensteinGSetting const& ZERO_SETTING();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Core::Keyframes<float, float> henyeyGreensteinG);
     // NOLINTEND
 
 public:

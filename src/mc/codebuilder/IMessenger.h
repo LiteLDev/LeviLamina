@@ -25,7 +25,7 @@ class IMessenger : public ::Bedrock::EnableNonOwnerReferences, public ::CodeBuil
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMessenger() /*override*/ = default;
+    virtual ~IMessenger() /*override*/;
 
     virtual void
     onAgentAction(::AgentActionType actionType, ::std::string const& requestId, ::Json::Value const& result) const = 0;

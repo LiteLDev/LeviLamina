@@ -14,13 +14,19 @@ class CustomFrameUpdateComponent : public ::UIComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CustomFrameUpdateComponent() /*override*/ = default;
+    virtual ~CustomFrameUpdateComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
     virtual bool isCustomFrameUpdateComponent() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -34,7 +34,7 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~HeartbeatAckChunk() /*override*/;
+    virtual ~HeartbeatAckChunk() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -41,7 +41,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~EncoderSelectorInterface() = default;
+        virtual ~EncoderSelectorInterface();
 
         virtual void OnCurrentEncoder(::webrtc::SdpVideoFormat const&) = 0;
 
@@ -68,7 +68,7 @@ public:
 
     virtual ::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface> GetEncoderSelector() const;
 
-    virtual ~VideoEncoderFactory() = default;
+    virtual ~VideoEncoderFactory();
     // NOLINTEND
 };
 

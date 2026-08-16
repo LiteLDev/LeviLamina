@@ -16,7 +16,7 @@ class FecController {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FecController() = default;
+    virtual ~FecController();
 
     virtual void SetProtectionCallback(::webrtc::VCMProtectionCallback*) = 0;
 

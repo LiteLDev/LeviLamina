@@ -11,7 +11,13 @@ class WebSocketInterface_windows : public ::Bedrock::Http::WebSocketInterfaceInt
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WebSocketInterface_windows() /*override*/ = default;
+    virtual ~WebSocketInterface_windows() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

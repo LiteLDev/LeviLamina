@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourceLoader() /*override*/ = default;
+    virtual ~ResourceLoader() /*override*/;
 
     virtual bool load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const = 0;
 

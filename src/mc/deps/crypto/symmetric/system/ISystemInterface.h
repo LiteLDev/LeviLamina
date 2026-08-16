@@ -8,7 +8,7 @@ class ISystemInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISystemInterface() = default;
+    virtual ~ISystemInterface();
 
     virtual void init(::std::string const& key, ::std::string const& IV) = 0;
 

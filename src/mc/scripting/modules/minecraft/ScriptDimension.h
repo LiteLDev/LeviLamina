@@ -79,7 +79,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDimension() = default;
+    virtual ~ScriptDimension();
     // NOLINTEND
 
 public:
@@ -166,6 +166,12 @@ public:
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>
     getOrCreateHandle(::DimensionType id, ::Level& level, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

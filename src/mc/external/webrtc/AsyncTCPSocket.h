@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncTCPSocket() /*override*/ = default;
+    virtual ~AsyncTCPSocket() /*override*/;
 
     virtual int Send(void const* pv, uint64 cb, ::webrtc::AsyncSocketPacketOptions const& options) /*override*/;
 

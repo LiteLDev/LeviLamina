@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsServerSettingsCommandGroup() /*override*/ = default;
+    virtual ~RealmsServerSettingsCommandGroup() /*override*/;
     // NOLINTEND
 
 public:
@@ -58,6 +58,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

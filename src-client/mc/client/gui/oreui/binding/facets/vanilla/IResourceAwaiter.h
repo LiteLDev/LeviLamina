@@ -16,7 +16,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IResourceAwaiter() = default;
+    virtual ~IResourceAwaiter();
 
     virtual ::OreUI::IResourceAwaiter::Status updateStatus() = 0;
 

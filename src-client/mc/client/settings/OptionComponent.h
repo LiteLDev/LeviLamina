@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OptionComponent() /*override*/ = default;
+    virtual ~OptionComponent() /*override*/;
 
     virtual ::Settings::ComponentState getDefaultState() const /*override*/;
     // NOLINTEND
@@ -63,6 +63,12 @@ public:
         ::std::optional<::std::string>                      description,
         ::std::unique_ptr<::Settings::IOptionsDataProvider> dataProvider
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

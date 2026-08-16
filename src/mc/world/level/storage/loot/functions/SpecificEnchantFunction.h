@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SpecificEnchantFunction() /*override*/ = default;
+    virtual ~SpecificEnchantFunction() /*override*/;
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
@@ -57,6 +57,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

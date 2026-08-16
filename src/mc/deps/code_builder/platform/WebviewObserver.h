@@ -16,7 +16,7 @@ class WebviewObserver : public ::Core::Observer<::WebviewObserver, ::Core::Singl
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WebviewObserver() /*override*/ = default;
+    virtual ~WebviewObserver() /*override*/;
 
     virtual void onLoadingBegin();
 

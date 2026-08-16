@@ -11,7 +11,7 @@ class ILayoutContentRefreshable {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILayoutContentRefreshable() = default;
+    virtual ~ILayoutContentRefreshable();
 
     virtual void refreshContent(::LinksToStyle const& linksToStyle) = 0;
     // NOLINTEND

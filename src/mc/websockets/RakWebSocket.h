@@ -73,7 +73,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RakWebSocket() = default;
+    virtual ~RakWebSocket();
 
     virtual ::WSConnectionResult connect(::std::string const& uri, ::std::vector<::std::string> const& subProtocols);
 

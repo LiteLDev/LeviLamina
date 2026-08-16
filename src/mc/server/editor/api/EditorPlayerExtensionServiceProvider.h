@@ -21,7 +21,7 @@ class EditorPlayerExtensionServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorPlayerExtensionServiceProvider() = default;
+    virtual ~EditorPlayerExtensionServiceProvider();
 
     virtual ::Scripting::Result_deprecated<void>
     startExtensions(::std::optional<::Scripting::ContextId> optionalContextId) = 0;

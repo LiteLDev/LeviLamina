@@ -15,7 +15,7 @@ class IScreenController {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScreenController() = default;
+    virtual ~IScreenController();
 
     virtual void preFrameTick() = 0;
 

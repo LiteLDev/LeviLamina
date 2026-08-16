@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RNS2_Berkley() /*override*/ = default;
+    virtual ~RNS2_Berkley() /*override*/;
 
     virtual void SetMulticastInterface(int interfaceIndex) /*override*/;
     // NOLINTEND
@@ -51,6 +51,12 @@ public:
     MCAPI static void GetSystemAddressIPV4And6(int rns2Socket, ::RakNet::SystemAddress* systemAddressOut);
 
     MCAPI static uint RecvFromLoop(void* arguments);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

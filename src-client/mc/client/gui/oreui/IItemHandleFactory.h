@@ -14,7 +14,7 @@ class IItemHandleFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IItemHandleFactory() = default;
+    virtual ~IItemHandleFactory();
 
     virtual ::std::shared_ptr<::GeometryAtlas::IItemHandle>
     createItem(::std::string_view name, ::std::unique_ptr<::PropertyBag> bag) const = 0;

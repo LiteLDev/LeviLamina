@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UnzipFileMinizip() /*override*/ = default;
+    virtual ~UnzipFileMinizip() /*override*/;
 
     virtual ::Core::ZipUtils::UnzipResult locateFile(char const* fileName, int caseSensitivity) /*override*/;
 
@@ -49,6 +49,12 @@ public:
     virtual uint64 getCurrentFileUncompressedSize() /*override*/;
 
     virtual bool _isGood() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

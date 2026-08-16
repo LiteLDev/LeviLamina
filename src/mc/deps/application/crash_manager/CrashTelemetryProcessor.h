@@ -14,7 +14,7 @@ class CrashTelemetryProcessor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CrashTelemetryProcessor() = default;
+    virtual ~CrashTelemetryProcessor();
 
     virtual void sendCrashTelemetryNow(::std::shared_ptr<::Bedrock::SessionInfo> session) = 0;
 
@@ -23,6 +23,12 @@ public:
     virtual void sendBatchedCrashTelemetry() = 0;
 
     virtual void sendCrashStatusTelemetry(::Bedrock::CrashUploadStatus const& status) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

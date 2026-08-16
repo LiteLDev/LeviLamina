@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IOptionLevelDataPropertyHandler() /*override*/ = default;
+    virtual ~IOptionLevelDataPropertyHandler() /*override*/;
     // NOLINTEND
 };
 

@@ -58,7 +58,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataChannelEventObserverInterface() = default;
+    virtual ~DataChannelEventObserverInterface();
 
     virtual void OnMessage(::webrtc::DataChannelEventObserverInterface::Message const&) = 0;
     // NOLINTEND

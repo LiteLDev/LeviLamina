@@ -55,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerDimensionTransferer() /*override*/ = default;
+    virtual ~PlayerDimensionTransferer() /*override*/;
 
     virtual void playerSaveLimboActors(
         ::Player&                  player,
@@ -148,6 +148,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $playerSaveLimboActors(
@@ -178,6 +184,8 @@ public:
     $getOnAnyPlayerChangeDimensionPreSuspendRegionConnector();
 
     MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector();
+
+    MCAPI bool $playerWaitForServer(::Player& player, ::std::chrono::steady_clock::time_point currentTime);
 
     MCAPI bool $playerWaitForDimensionTransitionSystem(::Player const& player, ::EntityRegistry& entityRegistry);
 

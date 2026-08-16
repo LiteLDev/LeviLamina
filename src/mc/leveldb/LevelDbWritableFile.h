@@ -34,6 +34,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI LevelDbWritableFile(::std::string filename, ::LevelDbLazyFile&& file);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string filename, ::LevelDbLazyFile&& file);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::leveldb::Status $Append(::leveldb::Slice const& slice);

@@ -6,7 +6,7 @@ class IFileReadAccess {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFileReadAccess() = default;
+    virtual ~IFileReadAccess();
 
     virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const = 0;
     // NOLINTEND

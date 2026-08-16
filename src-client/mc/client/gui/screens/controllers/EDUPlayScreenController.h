@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUPlayScreenController() /*override*/ = default;
+    virtual ~EDUPlayScreenController() /*override*/;
 
     virtual void onEntered() /*override*/;
 

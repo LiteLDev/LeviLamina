@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameControllerManager() /*override*/ = default;
+    virtual ~GameControllerManager() /*override*/;
 
     virtual ::std::weak_ptr<::IGameController> getGameController(int id) /*override*/;
 

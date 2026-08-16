@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActiveDirectoryModalsScreenController() /*override*/ = default;
+    virtual ~ActiveDirectoryModalsScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -46,6 +46,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::ActiveDirectoryModalArgs args);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

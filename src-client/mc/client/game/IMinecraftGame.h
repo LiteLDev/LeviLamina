@@ -169,7 +169,7 @@ public:
     // NOLINTBEGIN
     virtual void initialize() = 0;
 
-    virtual ~IMinecraftGame() /*override*/ = default;
+    virtual ~IMinecraftGame() /*override*/;
 
     virtual void update() = 0;
 

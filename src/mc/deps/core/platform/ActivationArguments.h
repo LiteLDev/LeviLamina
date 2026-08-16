@@ -35,6 +35,8 @@ public:
 #endif
 
     MCNAPI void preParseArguments();
+
+    MCNAPI ~ActivationArguments();
     // NOLINTEND
 
 public:
@@ -43,6 +45,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(int argc, char** const argv);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

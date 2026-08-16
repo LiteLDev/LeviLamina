@@ -228,7 +228,7 @@ public:
 
     virtual void UpdateRtxSsrc(uint) = 0;
 
-    virtual ~VideoReceiveStreamInterface() /*override*/ = default;
+    virtual ~VideoReceiveStreamInterface() /*override*/;
     // NOLINTEND
 };
 

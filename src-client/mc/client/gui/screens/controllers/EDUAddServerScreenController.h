@@ -21,6 +21,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUAddServerScreenController() /*override*/ = default;
+    virtual ~EDUAddServerScreenController() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

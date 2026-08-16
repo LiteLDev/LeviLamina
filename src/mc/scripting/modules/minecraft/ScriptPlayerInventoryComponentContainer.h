@@ -18,7 +18,7 @@ class ScriptPlayerInventoryComponentContainer : public ::ScriptModuleMinecraft::
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptPlayerInventoryComponentContainer() /*override*/ = default;
+    virtual ~ScriptPlayerInventoryComponentContainer() /*override*/;
 
     virtual ::Container* _tryGetContainer() const /*override*/;
 
@@ -29,6 +29,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bindV010();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

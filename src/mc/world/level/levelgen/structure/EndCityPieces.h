@@ -71,6 +71,30 @@ public:
         // NOLINTEND
 
     public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI EndCityPiece(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string                                     templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation,
+            bool                                              overwrite
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string                                     templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation,
+            bool                                              overwrite
+        );
+        // NOLINTEND
+
+    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI ::StructurePieceType $getType() const;
@@ -103,7 +127,7 @@ public:
             ::Random&                                                                  random
         ) = 0;
 
-        virtual ~SectionGenerator() = default;
+        virtual ~SectionGenerator();
         // NOLINTEND
     };
 

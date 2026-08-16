@@ -73,7 +73,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TCPInterface() = default;
+    virtual ~TCPInterface();
 
     virtual void Send(char const* data, uint length, ::RakNet::SystemAddress const& systemAddress, bool broadcast);
 
@@ -133,6 +133,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

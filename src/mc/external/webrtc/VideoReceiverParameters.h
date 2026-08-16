@@ -11,7 +11,7 @@ struct VideoReceiverParameters : public ::webrtc::MediaChannelParameters {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VideoReceiverParameters() /*override*/;
+    virtual ~VideoReceiverParameters() /*override*/ = default;
     // NOLINTEND
 
 public:

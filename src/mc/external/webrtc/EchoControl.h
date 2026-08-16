@@ -52,7 +52,7 @@ public:
 
     virtual bool ActiveProcessing() const = 0;
 
-    virtual ~EchoControl() = default;
+    virtual ~EchoControl();
     // NOLINTEND
 };
 

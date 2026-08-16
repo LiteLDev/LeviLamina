@@ -44,7 +44,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~TaskQueueTimeout() /*override*/ = default;
+        virtual ~TaskQueueTimeout() /*override*/;
 
         virtual void Start(
             ::dcsctp::DurationMs                                duration_ms,

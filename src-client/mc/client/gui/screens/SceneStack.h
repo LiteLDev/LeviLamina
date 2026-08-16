@@ -58,7 +58,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~SceneStackEvent() = default;
+        virtual ~SceneStackEvent();
         // NOLINTEND
     };
 
@@ -73,7 +73,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~PushScreenEvent() /*override*/ = default;
+        virtual ~PushScreenEvent() /*override*/;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -89,7 +95,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~PopScreenEvent() /*override*/ = default;
+        virtual ~PopScreenEvent() /*override*/;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -105,7 +117,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~PopRangeOfTypeScreenEvent() /*override*/ = default;
+        virtual ~PopRangeOfTypeScreenEvent() /*override*/;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -121,7 +139,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~FlushScreenEvent() /*override*/ = default;
+        virtual ~FlushScreenEvent() /*override*/;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -129,7 +153,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~ReloadScreenEvent() /*override*/ = default;
+        virtual ~ReloadScreenEvent() /*override*/;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

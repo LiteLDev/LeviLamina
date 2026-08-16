@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NullSocketServer() /*override*/ = default;
+    virtual ~NullSocketServer() /*override*/;
 
     virtual bool Wait(::webrtc::TimeDelta max_wait_duration, bool) /*override*/;
 

@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TabbedUpsellScreenController() /*override*/ = default;
+    virtual ~TabbedUpsellScreenController() /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -44,6 +44,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::TabbedUpsellScreenDefaultTab tab);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

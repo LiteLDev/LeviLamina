@@ -62,7 +62,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrushShapeManagerService() /*override*/ = default;
+    virtual ~BrushShapeManagerService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

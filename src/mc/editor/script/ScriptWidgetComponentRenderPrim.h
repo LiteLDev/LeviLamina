@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentRenderPrim() /*override*/ = default;
+    virtual ~ScriptWidgetComponentRenderPrim() /*override*/;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
     // NOLINTEND
@@ -52,6 +52,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

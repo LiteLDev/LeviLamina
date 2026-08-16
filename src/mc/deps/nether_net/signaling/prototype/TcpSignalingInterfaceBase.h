@@ -49,7 +49,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Peer() /*override*/ = default;
+        virtual ~Peer() /*override*/;
         // NOLINTEND
     };
 
@@ -69,7 +69,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TcpSignalingInterfaceBase() /*override*/ = default;
+    virtual ~TcpSignalingInterfaceBase() /*override*/;
 
     virtual void SendSignal(
         ::NetherNet::NetworkID,

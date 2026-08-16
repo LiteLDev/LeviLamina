@@ -53,7 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerPermissionsManager() = default;
+    virtual ~PlayerPermissionsManager();
 
     virtual bool hasPlayerPermissions(::ActorUniqueID playerId) const;
     // NOLINTEND
@@ -104,6 +104,12 @@ public:
         ::Bedrock::NonOwnerPointer<::PlayerListManager>      playerListManager,
         ::std::function<::Player*()>                         getPrimaryLocalPlayer
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

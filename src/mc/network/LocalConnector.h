@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalConnector() /*override*/ = default;
+    virtual ~LocalConnector() /*override*/;
 
     virtual ::std::string getLocalIp() /*override*/;
 
@@ -62,6 +62,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::LocalConnectivitySystem& sLocalConnectivitySystem();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

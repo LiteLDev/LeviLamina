@@ -16,7 +16,7 @@ class FrameTransformerHost {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FrameTransformerHost() = default;
+    virtual ~FrameTransformerHost();
 
     virtual void SetFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> a1) = 0;
     // NOLINTEND

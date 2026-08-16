@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HttpSignalingClient() /*override*/ = default;
+    virtual ~HttpSignalingClient() /*override*/;
 
     virtual void SendSignal(
         ::NetherNet::NetworkID                              from,
@@ -44,6 +44,12 @@ public:
 
     virtual ::Bedrock::PubSub::Subscription
     RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

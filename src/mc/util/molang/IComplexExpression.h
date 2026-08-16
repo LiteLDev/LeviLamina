@@ -22,7 +22,7 @@ class IComplexExpression {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IComplexExpression() = default;
+    virtual ~IComplexExpression();
 
     virtual ::std::unique_ptr<::Molang::details::IComplexExpression> clone() const = 0;
 

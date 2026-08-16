@@ -19,7 +19,7 @@ class ILevelChunkSaveManagerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILevelChunkSaveManagerProxy() = default;
+    virtual ~ILevelChunkSaveManagerProxy();
 
     virtual ::WeakRef<::Dimension> getRandomDimension(::DimensionManager& dimensionManager) const = 0;
 

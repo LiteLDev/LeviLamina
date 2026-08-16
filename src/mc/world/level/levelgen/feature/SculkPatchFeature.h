@@ -31,9 +31,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SculkPatchFeature() /*override*/ = default;
+    virtual ~SculkPatchFeature() /*override*/;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

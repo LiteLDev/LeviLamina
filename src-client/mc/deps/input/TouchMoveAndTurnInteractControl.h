@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TouchMoveAndTurnInteractControl() /*override*/ = default;
+    virtual ~TouchMoveAndTurnInteractControl() /*override*/;
 
     virtual void
     tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor) /*override*/;
@@ -90,6 +90,12 @@ public:
         float                 y0,
         float                 joystickRadius
     ) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

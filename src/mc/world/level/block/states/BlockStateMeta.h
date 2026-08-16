@@ -33,10 +33,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockStateMeta(::BlockState const& blockState, ::BlockStateDefinition const& def);
+
     MCAPI bool const getBool(int index) const;
 
     MCAPI int const getInt(int index) const;
 
     MCAPI ::std::string const& getString(int index) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockState const& blockState, ::BlockStateDefinition const& def);
     // NOLINTEND
 };

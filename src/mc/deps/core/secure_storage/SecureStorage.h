@@ -23,11 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~SecureStorage() = default;
-#else // LL_PLAT_C
     virtual ~SecureStorage();
-#endif
 
     virtual bool add(::std::string const& key, ::std::string const& value) = 0;
 

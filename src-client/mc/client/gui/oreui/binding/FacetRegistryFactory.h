@@ -43,6 +43,26 @@ public:
     public:
         // prevent constructor by default
         FacetData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI FacetData(
+            char const*                                                                         name,
+            ::OreUI::FacetAvailability                                                          availability,
+            ::std::function<::std::unique_ptr<::OreUI::IFacet>(::OreUI::FacetRegistryLocation)> constructor
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            char const*                                                                         name,
+            ::OreUI::FacetAvailability                                                          availability,
+            ::std::function<::std::unique_ptr<::OreUI::IFacet>(::OreUI::FacetRegistryLocation)> constructor
+        );
+        // NOLINTEND
     };
 
     using FacetConstructor = ::std::function<::std::unique_ptr<::OreUI::IFacet>(::OreUI::FacetRegistryLocation)>;

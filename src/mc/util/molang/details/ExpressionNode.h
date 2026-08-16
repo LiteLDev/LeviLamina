@@ -48,6 +48,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ExpressionNode(::Molang::details::ExpressionNode&& rhs);
+
+    MCNAPI ExpressionNode(::Molang::details::ExpressionNode const& rhs);
+
     MCNAPI bool _checkAllOperationsAreValid() const;
 
     MCNAPI bool _optimize(::MolangVersion const version, ::RenderParams& outRenderParams, int recursionDepth);
@@ -145,6 +149,14 @@ public:
         ::Molang::details::ExpressionNode const& memberAccessorNode,
         ::MolangScriptArg const&                 value
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Molang::details::ExpressionNode&& rhs);
+
+    MCNAPI void* $ctor(::Molang::details::ExpressionNode const& rhs);
     // NOLINTEND
 
 public:

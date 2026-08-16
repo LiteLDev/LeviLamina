@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FogDefinitionRegistry() /*override*/ = default;
+    virtual ~FogDefinitionRegistry() /*override*/;
     // NOLINTEND
 
 public:
@@ -64,6 +64,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -456,7 +456,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMinecraftEventing() /*override*/ = default;
+    virtual ~IMinecraftEventing() /*override*/;
 
     virtual void init(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform) = 0;
 
@@ -2059,6 +2059,12 @@ public:
     virtual void fireEventOnlineAudioStreamEnded(::OnlineAudioStreamEnded const& telemetry) = 0;
 
     virtual void fireEventDimensionTransfer(::DimensionTransferTelemetryData const& data) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

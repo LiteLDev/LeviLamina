@@ -64,7 +64,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkPeer() = default;
+    virtual ~NetworkPeer();
 
     virtual void
     sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible) = 0;

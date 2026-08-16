@@ -18,6 +18,6 @@ public:
 
     virtual void onEndTakingPicture(::Player& player, ::Actor* camera, ::Actor* target) = 0;
 
-    virtual ~CameraCallbacks() = default;
+    virtual ~CameraCallbacks();
     // NOLINTEND
 };

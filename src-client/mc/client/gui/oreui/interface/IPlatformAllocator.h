@@ -8,7 +8,7 @@ class IPlatformAllocator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPlatformAllocator() = default;
+    virtual ~IPlatformAllocator();
 
     virtual void* allocate(uint size) = 0;
 

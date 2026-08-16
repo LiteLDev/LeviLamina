@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorChunkSource() /*override*/ = default;
+    virtual ~EditorChunkSource() /*override*/;
 
     virtual bool canCreateViews() const /*override*/;
 
@@ -52,6 +52,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Dimension* dimension, int side, ::std::vector<::std::unique_ptr<::LevelChunk>> levelChunks);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

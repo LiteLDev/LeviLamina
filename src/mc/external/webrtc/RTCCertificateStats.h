@@ -38,7 +38,7 @@ public:
 
     virtual char const* type() const /*override*/;
 
-    virtual ~RTCCertificateStats() /*override*/ = default;
+    virtual ~RTCCertificateStats() /*override*/;
     // NOLINTEND
 
 public:

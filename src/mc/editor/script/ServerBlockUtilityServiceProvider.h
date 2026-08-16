@@ -17,7 +17,7 @@ class ServerBlockUtilityServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerBlockUtilityServiceProvider() = default;
+    virtual ~ServerBlockUtilityServiceProvider();
 
     virtual ::Editor::BlockUtils::CommonBlockUtilityServiceProvider& getCommonInterface() = 0;
 

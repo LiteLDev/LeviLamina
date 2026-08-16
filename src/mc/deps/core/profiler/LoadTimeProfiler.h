@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LoadTimeProfiler() /*override*/ = default;
+    virtual ~LoadTimeProfiler() /*override*/;
     // NOLINTEND
 
 public:
@@ -40,6 +40,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

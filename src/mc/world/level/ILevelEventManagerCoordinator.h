@@ -16,7 +16,7 @@ class ILevelEventManagerCoordinator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILevelEventManagerCoordinator() = default;
+    virtual ~ILevelEventManagerCoordinator();
 
     virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
     getLevelEventDataConnector() = 0;

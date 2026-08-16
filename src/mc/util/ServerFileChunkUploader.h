@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerFileChunkUploader() /*override*/ = default;
+    virtual ~ServerFileChunkUploader() /*override*/;
 
     virtual void initFileUploader(
         ::std::string const&        uploadId,
@@ -74,6 +74,12 @@ public:
     virtual float getUploadProgress(::FileInfo const& file) const /*override*/;
 
     virtual ::FileChunkInfo getChunkInfo(::FileInfo const& file, int chunkID) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -8,7 +8,7 @@ class IMinecraftApiDependencies {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMinecraftApiDependencies() = default;
+    virtual ~IMinecraftApiDependencies();
 
     virtual void finishMiningHook() = 0;
     // NOLINTEND

@@ -18,7 +18,7 @@ public:
 
     virtual void DeRegisterStreamFeedbackObserver(::webrtc::StreamFeedbackObserver* observer) = 0;
 
-    virtual ~StreamFeedbackProvider() = default;
+    virtual ~StreamFeedbackProvider();
     // NOLINTEND
 };
 

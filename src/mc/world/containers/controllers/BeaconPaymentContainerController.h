@@ -15,9 +15,15 @@ class BeaconPaymentContainerController : public ::ContainerController {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BeaconPaymentContainerController() /*override*/ = default;
+    virtual ~BeaconPaymentContainerController() /*override*/;
 
     virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtpPacketizer() = default;
+    virtual ~RtpPacketizer();
 
     virtual uint64 NumPackets() const = 0;
 

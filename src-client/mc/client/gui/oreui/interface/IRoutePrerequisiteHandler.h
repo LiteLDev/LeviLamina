@@ -12,7 +12,7 @@ class IRoutePrerequisiteHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRoutePrerequisiteHandler() = default;
+    virtual ~IRoutePrerequisiteHandler();
 
     virtual ::OreUI::RoutePrerequisiteState
     handleRoutePrerequisites(::OreUI::RoutePrerequisite prerequisite, ::std::string const& newRoute) = 0;

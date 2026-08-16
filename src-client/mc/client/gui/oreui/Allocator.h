@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Allocator() /*override*/ = default;
+    virtual ~Allocator() /*override*/;
 
     virtual void* Allocate(uint size, ::cohtml::MemTags::MemTagsType tag) /*override*/;
 
@@ -39,6 +39,12 @@ public:
     VirtualAllocate(void* hint, uint size, int protection, int flags, ::cohtml::MemTags::MemTagsType) /*override*/;
 
     virtual bool VirtualFree(void* ptr, uint size, int flags, ::cohtml::MemTags::MemTagsType) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

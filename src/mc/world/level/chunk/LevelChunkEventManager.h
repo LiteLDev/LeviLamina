@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelChunkEventManager() /*override*/ = default;
+    virtual ~LevelChunkEventManager() /*override*/;
 
     virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, int)>&
     getOnChunkLoadedConnector() /*override*/;
@@ -70,6 +70,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::unique_ptr<::ILevelChunkEventManagerProxy> levelChunkEventManagerProxy);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

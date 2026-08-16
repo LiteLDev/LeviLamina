@@ -31,4 +31,16 @@ public:
 public:
     // prevent constructor by default
     MeshInstanceConstants();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit MeshInstanceConstants(::ScreenContext& screenContext);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScreenContext& screenContext);
+    // NOLINTEND
 };

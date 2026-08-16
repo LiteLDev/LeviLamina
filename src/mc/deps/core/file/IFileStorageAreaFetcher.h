@@ -15,7 +15,7 @@ class IFileStorageAreaFetcher {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFileStorageAreaFetcher() = default;
+    virtual ~IFileStorageAreaFetcher();
 
     virtual ::Core::Result
     getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path) const = 0;

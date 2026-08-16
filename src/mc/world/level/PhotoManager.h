@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PhotoManager() = default;
+    virtual ~PhotoManager();
 
     virtual ::Bedrock::PubSub::Connector<void(
         ::cg::ImageBuffer&,
@@ -86,6 +86,12 @@ public:
 #ifdef LL_PLAT_S
     MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, bool isClientSide);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ThumbnailCacheStorePayload() /*override*/ = default;
+    virtual ~ThumbnailCacheStorePayload() /*override*/;
     // NOLINTEND
 
 public:
@@ -56,6 +56,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::mce::UUID const& id, uint hash, ::Editor::ThumbnailFileBytes const& data);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

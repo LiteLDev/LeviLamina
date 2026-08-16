@@ -50,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TextEditComponent() /*override*/ = default;
+    virtual ~TextEditComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -73,6 +73,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit TextEditComponent(::UIControl& owner);
+
     MCAPI void _hidePlaceHolderControl();
 
     MCAPI void _showPlaceHolderControl();
@@ -100,6 +102,18 @@ public:
     MCAPI bool trySetText(::std::string text);
 
     MCAPI void updateCaretBlink(float dt);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UIControl& owner);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

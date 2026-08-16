@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtcEventProbeResultFailure() /*override*/ = default;
+    virtual ~RtcEventProbeResultFailure() /*override*/;
 
     virtual ::webrtc::RtcEvent::Type GetType() const /*override*/;
 

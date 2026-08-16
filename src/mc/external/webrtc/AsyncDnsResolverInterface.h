@@ -17,7 +17,7 @@ class AsyncDnsResolverInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncDnsResolverInterface() = default;
+    virtual ~AsyncDnsResolverInterface();
 
     virtual void Start(::webrtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) = 0;
 

@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DragonHeadModel() /*override*/ = default;
+    virtual ~DragonHeadModel() /*override*/;
 
     virtual void render(::ScreenContext& screenContext) /*override*/;
 
@@ -49,6 +49,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::GeometryPtr source);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

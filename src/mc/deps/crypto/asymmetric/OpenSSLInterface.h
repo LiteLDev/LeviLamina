@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OpenSSLInterface() /*override*/ = default;
+    virtual ~OpenSSLInterface() /*override*/;
 
     virtual bool generateKeyPair(::std::string& privateKey, ::std::string& publicKey) /*override*/;
 
@@ -75,6 +75,12 @@ public:
 
     virtual ::std::string
     computeSharedSecret(::std::string const& myPrivateKey, ::std::string const& peerPublicKey) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

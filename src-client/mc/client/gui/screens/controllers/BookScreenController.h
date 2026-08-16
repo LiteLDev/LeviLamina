@@ -59,7 +59,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BookScreenController() /*override*/ = default;
+    virtual ~BookScreenController() /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 

@@ -23,9 +23,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeferredCompiledCommand() /*override*/ = default;
+    virtual ~DeferredCompiledCommand() /*override*/;
 
     virtual void execute(::MinecraftCommands&) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

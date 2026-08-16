@@ -12,11 +12,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DimensionBrightnessRamp() = default;
+    virtual ~DimensionBrightnessRamp();
 
     virtual void buildBrightnessRamp();
 
     virtual float getBaseAmbientValue() const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

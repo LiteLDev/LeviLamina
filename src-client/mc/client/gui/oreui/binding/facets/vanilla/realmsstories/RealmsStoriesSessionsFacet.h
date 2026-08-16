@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsStoriesSessionsFacet() /*override*/ = default;
+    virtual ~RealmsStoriesSessionsFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -56,6 +56,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -13,7 +13,7 @@ class IGestureListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGestureListener() = default;
+    virtual ~IGestureListener();
 
     virtual void onPanRecognized(::Vec2 const& gestureBeginPos, ::Vec2 const& currentPos, ::Vec2 const& delta) = 0;
 

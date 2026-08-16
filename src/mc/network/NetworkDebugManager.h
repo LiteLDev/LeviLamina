@@ -85,7 +85,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkDebugManager() /*override*/ = default;
+    virtual ~NetworkDebugManager() /*override*/;
     // NOLINTEND
 
 public:
@@ -104,6 +104,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

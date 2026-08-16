@@ -92,7 +92,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerLevel() /*override*/ = default;
+    virtual ~ServerLevel() /*override*/;
 
     virtual bool initialize(
         ::std::string const&   levelName,

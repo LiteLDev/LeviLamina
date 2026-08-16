@@ -61,7 +61,7 @@ public:
 
     virtual void NotifyFirstPacketSent() = 0;
 
-    virtual ~RtpSenderInternal() /*override*/;
+    virtual ~RtpSenderInternal() /*override*/ = default;
     // NOLINTEND
 
 public:

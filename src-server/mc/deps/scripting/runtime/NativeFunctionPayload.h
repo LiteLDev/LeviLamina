@@ -40,13 +40,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NativeFunctionPayload() /*override*/ = default;
+    virtual ~NativeFunctionPayload() /*override*/;
 
     virtual ::Scripting::ResultAny runOn(
         ::Scripting::ContextId      contextId,
         ::Scripting::NativeRuntime& runtime,
         ::std::optional<::Scripting::Privilege>
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

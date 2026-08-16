@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     virtual void OnSetLocalDescriptionComplete(::webrtc::RTCError error) = 0;
 
-    virtual ~SetLocalDescriptionObserverInterface() /*override*/;
+    virtual ~SetLocalDescriptionObserverInterface() /*override*/ = default;
     // NOLINTEND
 
 public:

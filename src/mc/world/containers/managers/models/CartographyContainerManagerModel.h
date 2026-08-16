@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CartographyContainerManagerModel() /*override*/ = default;
+    virtual ~CartographyContainerManagerModel() /*override*/;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
@@ -37,6 +37,12 @@ public:
     virtual bool isValid(float pickRange) /*override*/;
 
     virtual ::ContainerScreenContext _postInit() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

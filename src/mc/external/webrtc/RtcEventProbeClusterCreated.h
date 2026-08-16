@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtcEventProbeClusterCreated() /*override*/ = default;
+    virtual ~RtcEventProbeClusterCreated() /*override*/;
 
     virtual ::webrtc::RtcEvent::Type GetType() const /*override*/;
 

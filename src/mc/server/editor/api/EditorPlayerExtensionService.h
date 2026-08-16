@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorPlayerExtensionService() /*override*/ = default;
+    virtual ~EditorPlayerExtensionService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

@@ -15,7 +15,7 @@ class RelayPortFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RelayPortFactoryInterface() = default;
+    virtual ~RelayPortFactoryInterface();
 
     virtual ::std::unique_ptr<::webrtc::Port>
     Create(::webrtc::CreateRelayPortArgs const& args, ::std::shared_ptr<::webrtc::AsyncPacketSocket> udp_socket) = 0;

@@ -18,7 +18,7 @@ class CustomBiomeManagerProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CustomBiomeManagerProvider() = default;
+    virtual ~CustomBiomeManagerProvider();
 
     virtual ::WeakRef<::ICustomBiomeSource> buildCustomSource(::CustomBiomeSourceConfig const& config) = 0;
 

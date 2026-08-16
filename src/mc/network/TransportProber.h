@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TransportProber() /*override*/ = default;
+    virtual ~TransportProber() /*override*/;
     // NOLINTEND
 
 public:
@@ -50,6 +50,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::vector<::std::string> urls, ::WorkerPool& workerPool, ::Scheduler& scheduler);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

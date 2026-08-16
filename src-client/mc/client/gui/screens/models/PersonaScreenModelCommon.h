@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PersonaScreenModelCommon() = default;
+    virtual ~PersonaScreenModelCommon();
 
     virtual void update(::ui::DirtyFlag& dirtyFlags);
 

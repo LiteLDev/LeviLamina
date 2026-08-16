@@ -55,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibrarySearchBarScreenController() /*override*/ = default;
+    virtual ~LibrarySearchBarScreenController() /*override*/;
     // NOLINTEND
 
 public:

@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MeshUnloadPayload() /*override*/ = default;
+    virtual ~MeshUnloadPayload() /*override*/;
     // NOLINTEND
 
 public:

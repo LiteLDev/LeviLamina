@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VanillaSceneFactory() /*override*/ = default;
+    virtual ~VanillaSceneFactory() /*override*/;
 
     virtual ::Json::Value createGlobalVars(::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> defRepository) const
         /*override*/;
@@ -70,6 +70,12 @@ public:
         ::brstd::move_only_function<::std::shared_ptr<::BaseScreen>(::SceneCreationUtils::ScreenCreator&)>&&
             devConsoleScreenFactory
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

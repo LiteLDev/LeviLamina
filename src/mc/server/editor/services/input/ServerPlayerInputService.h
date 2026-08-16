@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerPlayerInputService() /*override*/ = default;
+    virtual ~ServerPlayerInputService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

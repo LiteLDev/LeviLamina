@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SignScreenController() /*override*/ = default;
+    virtual ~SignScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -71,6 +71,12 @@ public:
         ::BlockActorType                               blockActorType,
         ::SignTextSide                                 signSide
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

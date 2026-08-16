@@ -21,7 +21,7 @@ class ObserverBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ObserverBlock() /*override*/ = default;
+    virtual ~ObserverBlock() /*override*/;
 
     virtual int getVariant(::Block const& block) const /*override*/;
 
@@ -63,6 +63,12 @@ public:
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

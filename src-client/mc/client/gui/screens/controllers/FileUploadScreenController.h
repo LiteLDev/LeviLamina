@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileUploadScreenController() /*override*/ = default;
+    virtual ~FileUploadScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 

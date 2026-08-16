@@ -36,9 +36,7 @@ public:
     // NOLINTBEGIN
     MCAPI PageContent(::PageContent const&);
 
-#ifdef LL_PLAT_C
     MCAPI PageContent(::std::string nText, ::std::optional<::std::string> nFilteredText);
-#endif
 
     MCAPI ::std::unique_ptr<::CompoundTag> createTag() const;
 
@@ -70,9 +68,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::PageContent const&);
 
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(::std::string nText, ::std::optional<::std::string> nFilteredText);
-#endif
     // NOLINTEND
 
 public:

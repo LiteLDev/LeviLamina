@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FlyingItemRenderer() /*override*/ = default;
+    virtual ~FlyingItemRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -59,6 +59,12 @@ public:
         ::BaseActorRenderContext&   entityRenderContext,
         ::UIItemRenderInfo const&   itemRenderInfo
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

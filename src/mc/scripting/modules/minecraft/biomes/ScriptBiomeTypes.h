@@ -34,12 +34,20 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _generateAllBiomeTypeHandles(::Scripting::WeakLifetimeScope& scope);
+
+    MCAPI ~ScriptBiomeTypes();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind(::Bedrock::NonOwnerPointer<::BiomeRegistry> biomeRegistry);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

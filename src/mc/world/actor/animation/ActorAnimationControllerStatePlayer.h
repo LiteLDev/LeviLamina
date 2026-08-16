@@ -69,10 +69,34 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI ActorAnimationControllerStatePlayer(
+        ::HashedString const&                                      friendlyName,
+        ::ActorAnimationControllerPlayer&                          owner,
+        ::std::shared_ptr<::ActorAnimationControllerState>         animationControllerState,
+        ::AnimationComponent&                                      animationComponent,
+        ::ExpressionNode const&                                    blendExpression,
+        ::std::set<::HashedString, ::Util::HashStringHashGreater>& animationControllerNameStack
+    );
+
     MCAPI void addAnimation(
         ::AnimationComponent&       animationComponent,
         ::HashedString const&       friendlyName,
         ::ActorSkeletalAnimationPtr animation
+    );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::HashedString const&                                      friendlyName,
+        ::ActorAnimationControllerPlayer&                          owner,
+        ::std::shared_ptr<::ActorAnimationControllerState>         animationControllerState,
+        ::AnimationComponent&                                      animationComponent,
+        ::ExpressionNode const&                                    blendExpression,
+        ::std::set<::HashedString, ::Util::HashStringHashGreater>& animationControllerNameStack
     );
 #endif
     // NOLINTEND

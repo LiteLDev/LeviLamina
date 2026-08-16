@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BeaconBlock() /*override*/ = default;
+    virtual ~BeaconBlock() /*override*/;
 
     virtual bool isInteractiveBlock() const /*override*/;
     // NOLINTEND
@@ -30,6 +30,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

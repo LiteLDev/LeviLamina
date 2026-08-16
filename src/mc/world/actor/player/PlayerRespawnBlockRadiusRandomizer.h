@@ -22,4 +22,16 @@ public:
 public:
     // prevent constructor by default
     PlayerRespawnBlockRadiusRandomizer();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PlayerRespawnBlockRadiusRandomizer(uint spawnRadius, ::XoroshiroRandom& random);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uint spawnRadius, ::XoroshiroRandom& random);
+    // NOLINTEND
 };

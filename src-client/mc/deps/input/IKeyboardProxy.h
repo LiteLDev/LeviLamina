@@ -8,6 +8,6 @@ public:
     // NOLINTBEGIN
     virtual void feedText(::std::string const& text) = 0;
 
-    virtual ~IKeyboardProxy() = default;
+    virtual ~IKeyboardProxy();
     // NOLINTEND
 };

@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SocketDispatcher() /*override*/ = default;
+    virtual ~SocketDispatcher() /*override*/;
 
     virtual bool Create(int family, int type) /*override*/;
 

@@ -35,7 +35,7 @@ public:
 
     virtual void WakeUp() = 0;
 
-    virtual ~SocketServer() /*override*/;
+    virtual ~SocketServer() /*override*/ = default;
     // NOLINTEND
 
 public:

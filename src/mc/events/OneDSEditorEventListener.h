@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OneDSEditorEventListener() /*override*/ = default;
+    virtual ~OneDSEditorEventListener() /*override*/;
 
     virtual void sendEvent(::Social::Events::Event const& event) /*override*/;
 
@@ -82,6 +82,12 @@ public:
     MCNAPI static ::std::string const& ONEDS_URL();
 
     MCNAPI static ::std::string const& PARTA_IDENTIFIER();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

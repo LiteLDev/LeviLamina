@@ -9,7 +9,7 @@ class IMultiPlayerServices {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMultiPlayerServices() = default;
+    virtual ~IMultiPlayerServices();
 
     virtual bool checkMultiPlayerPermission(::std::optional<::Social::MultiplayerServiceIdentifier> service) = 0;
 

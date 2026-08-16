@@ -64,7 +64,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SendQueue() = default;
+    virtual ~SendQueue();
 
     virtual ::std::optional<::dcsctp::SendQueue::DataToSend> Produce(::webrtc::Timestamp now, uint64 max_size) = 0;
 

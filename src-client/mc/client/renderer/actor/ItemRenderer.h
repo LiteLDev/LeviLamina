@@ -61,7 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemRenderer() /*override*/ = default;
+    virtual ~ItemRenderer() /*override*/;
 
     virtual void render(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData) /*override*/;
     // NOLINTEND
@@ -211,6 +211,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup, bool supportsNewVertexFormat);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

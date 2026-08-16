@@ -204,6 +204,18 @@ public:
     public:
         // prevent constructor by default
         SoftEnum();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI SoftEnum(::std::string const& name, ::std::vector<::std::string> values);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::std::string const& name, ::std::vector<::std::string> values);
+        // NOLINTEND
     };
 
     class Symbol {

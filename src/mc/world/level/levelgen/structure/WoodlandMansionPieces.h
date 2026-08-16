@@ -39,7 +39,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~FloorRoomCollection() = default;
+        virtual ~FloorRoomCollection();
 
         virtual ::std::string get1x1(::Random& random) = 0;
 
@@ -120,6 +120,44 @@ public:
         // NOLINTEND
 
     public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI WoodlandMansionPiece(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string const&                              templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation
+        );
+
+        MCAPI WoodlandMansionPiece(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string const&                              templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation,
+            ::Mirror                                          mirror
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string const&                              templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation
+        );
+
+        MCAPI void* $ctor(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string const&                              templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation,
+            ::Mirror                                          mirror
+        );
+        // NOLINTEND
+
+    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI ::StructurePieceType $getType() const;
@@ -142,7 +180,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~FirstFloorRoomCollection() /*override*/ = default;
+        virtual ~FirstFloorRoomCollection() /*override*/;
 
         virtual ::std::string get1x1(::Random& random) /*override*/;
 
@@ -157,6 +195,12 @@ public:
         virtual ::std::string get2x2(::Random& random) /*override*/;
 
         virtual ::std::string get2x2Secret(::Random& random) /*override*/;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -275,7 +319,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~SecondFloorRoomCollection() /*override*/ = default;
+        virtual ~SecondFloorRoomCollection() /*override*/;
 
         virtual ::std::string get1x1(::Random& random) /*override*/;
 
@@ -290,6 +334,12 @@ public:
         virtual ::std::string get2x2(::Random& random) /*override*/;
 
         virtual ::std::string get2x2Secret(::Random& random) /*override*/;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:

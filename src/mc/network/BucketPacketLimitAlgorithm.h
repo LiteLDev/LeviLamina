@@ -36,7 +36,7 @@ public:
 
     virtual uint checkPacket(::MinecraftPacketIds packet) /*override*/;
 
-    virtual ~BucketPacketLimitAlgorithm() /*override*/ = default;
+    virtual ~BucketPacketLimitAlgorithm() /*override*/;
     // NOLINTEND
 
 public:
@@ -63,6 +63,12 @@ public:
         uint                                                       maxBucketSize,
         ::std::function<::std::chrono::steady_clock::time_point()> getTime
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -14,9 +14,21 @@ namespace ScriptModuleServerAdmin {
 
 class ScriptCannotDeopPlayerError : public ::Scripting::BaseError {
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptCannotDeopPlayerError();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

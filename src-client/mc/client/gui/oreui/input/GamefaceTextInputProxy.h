@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GamefaceTextInputProxy() /*override*/ = default;
+    virtual ~GamefaceTextInputProxy() /*override*/;
 
     virtual void imeStartComposition() /*override*/;
 
@@ -53,6 +53,12 @@ public:
     virtual ::std::string getText() const /*override*/;
 
     virtual ::TextBoxSelection getSelection() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

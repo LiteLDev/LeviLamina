@@ -25,6 +25,24 @@ public:
     BlockChangeIntentData& operator=(BlockChangeIntentData const&);
     BlockChangeIntentData(BlockChangeIntentData const&);
     BlockChangeIntentData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI BlockChangeIntentData(
+        uint                blockRuntimeId,
+        uint                extraBlockRuntimeId,
+        ::BlockActor const* blockActor,
+        ::BlockPos const&   pos
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(uint blockRuntimeId, uint extraBlockRuntimeId, ::BlockActor const* blockActor, ::BlockPos const& pos);
+    // NOLINTEND
 };
 
 } // namespace Editor::Transactions

@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MoveTowardsRestrictionGoal() /*override*/ = default;
+    virtual ~MoveTowardsRestrictionGoal() /*override*/;
 
     virtual bool canContinueToUse() /*override*/;
 

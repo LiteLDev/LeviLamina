@@ -14,7 +14,7 @@ class IOffscreenPaperDollRenderer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IOffscreenPaperDollRenderer() = default;
+    virtual ~IOffscreenPaperDollRenderer();
 
     virtual void cleanup() = 0;
 

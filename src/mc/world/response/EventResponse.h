@@ -18,7 +18,7 @@ class EventResponse : public ::SharedTypes::Legacy::EventResponseBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EventResponse() = default;
+    virtual ~EventResponse();
 
     virtual ::std::string const& getName() const;
 

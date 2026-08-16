@@ -19,6 +19,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MarketplacePassPurchaseErrorScreenController() /*override*/ = default;
+    virtual ~MarketplacePassPurchaseErrorScreenController() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

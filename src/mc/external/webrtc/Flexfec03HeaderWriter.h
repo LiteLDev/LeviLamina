@@ -13,7 +13,7 @@ class Flexfec03HeaderWriter : public ::webrtc::FecHeaderWriter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Flexfec03HeaderWriter() /*override*/ = default;
+    virtual ~Flexfec03HeaderWriter() /*override*/;
 
     virtual uint64 MinPacketMaskSize(uchar const* packet_mask, uint64 packet_mask_size) const /*override*/;
 

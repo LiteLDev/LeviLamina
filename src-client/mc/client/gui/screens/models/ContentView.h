@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContentView() /*override*/ = default;
+    virtual ~ContentView() /*override*/;
     // NOLINTEND
 
 public:
@@ -59,6 +59,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::weak_ptr<::IContentManager> contentManager);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

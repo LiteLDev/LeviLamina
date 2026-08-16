@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EduHeadlessServerResolvingProgressHandler() /*override*/ = default;
+    virtual ~EduHeadlessServerResolvingProgressHandler() /*override*/;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -89,6 +89,12 @@ public:
         ::std::shared_ptr<::PlayScreenModel>       model,
         ::brstd::move_only_function<void()>&       reopenPasscodeEntry
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

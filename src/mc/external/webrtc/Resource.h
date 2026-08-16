@@ -16,7 +16,7 @@ class Resource : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Resource() /*override*/ = default;
+    virtual ~Resource() /*override*/;
 
     virtual ::std::string Name() const = 0;
 

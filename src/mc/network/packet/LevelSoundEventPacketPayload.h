@@ -36,6 +36,15 @@ public:
     // NOLINTBEGIN
     MCAPI LevelSoundEventPacketPayload(::LevelSoundEventPacketPayload const&);
 
+    MCAPI LevelSoundEventPacketPayload(
+        ::SoundEventIdentifier         soundEvent,
+        ::Vec3 const&                  pos,
+        int                            data,
+        ::ActorSoundIdentifier const&  actorSoundIdentifier,
+        bool                           isGlobal,
+        ::std::optional<::Vec3> const& fireAtPosition
+    );
+
     MCAPI ~LevelSoundEventPacketPayload();
     // NOLINTEND
 
@@ -43,6 +52,15 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::LevelSoundEventPacketPayload const&);
+
+    MCAPI void* $ctor(
+        ::SoundEventIdentifier         soundEvent,
+        ::Vec3 const&                  pos,
+        int                            data,
+        ::ActorSoundIdentifier const&  actorSoundIdentifier,
+        bool                           isGlobal,
+        ::std::optional<::Vec3> const& fireAtPosition
+    );
     // NOLINTEND
 
 public:

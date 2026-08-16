@@ -10,11 +10,17 @@ class FakeBatteryMonitorInterface : public ::BatteryMonitorInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FakeBatteryMonitorInterface() /*override*/ = default;
+    virtual ~FakeBatteryMonitorInterface() /*override*/;
 
     virtual ::BatteryStatus getBatteryStatus() const /*override*/;
 
     virtual float getBatteryLevel() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

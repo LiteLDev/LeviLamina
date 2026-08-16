@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClassroomModeNetworkHandler() /*override*/ = default;
+    virtual ~ClassroomModeNetworkHandler() /*override*/;
 
     virtual ::IncomingPacketFilterResult allowIncomingPacketId(
         ::NetworkIdentifierWithSubId const& id,

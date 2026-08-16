@@ -9,12 +9,18 @@ class PauseScreenModel : public ::ClientInstanceScreenModel {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PauseScreenModel() /*override*/ = default;
+    virtual ~PauseScreenModel() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void fireFriendsDrawerOpenedEvent();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

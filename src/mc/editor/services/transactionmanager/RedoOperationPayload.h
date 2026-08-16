@@ -11,7 +11,13 @@ class RedoOperationPayload : public ::Editor::Network::NetworkPayload<::Editor::
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RedoOperationPayload() /*override*/ = default;
+    virtual ~RedoOperationPayload() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

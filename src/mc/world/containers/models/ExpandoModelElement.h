@@ -18,4 +18,17 @@ public:
 public:
     // prevent constructor by default
     ExpandoModelElement();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI
+    ExpandoModelElement(::ItemInstance const& _item, ::ContainerExpandStatus _status, ::std::string const& _groupName);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ItemInstance const& _item, ::ContainerExpandStatus _status, ::std::string const& _groupName);
+    // NOLINTEND
 };

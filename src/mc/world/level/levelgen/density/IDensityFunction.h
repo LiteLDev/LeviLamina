@@ -18,7 +18,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDensityFunction() = default;
+    virtual ~IDensityFunction();
 
     virtual ushort addToCalculators(::DensityCalculators&, ::DensityFunctionRegistry const&) const = 0;
     // NOLINTEND

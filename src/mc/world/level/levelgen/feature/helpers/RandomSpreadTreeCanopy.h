@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RandomSpreadTreeCanopy() /*override*/ = default;
+    virtual ~RandomSpreadTreeCanopy() /*override*/;
 
     virtual ::std::optional<::BlockPos> placeCanopy(
         ::IBlockWorldGenAPI& target,
@@ -57,6 +57,12 @@ public:
         ::std::vector<::BlockPos> const& attachmentPositions,
         ::std::vector<::ITreeCanopy::BranchSize> const&
     ) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -16,7 +16,7 @@ class IGameModuleShared : public ::AppExtensions::AppExtensionsNonOwner {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGameModuleShared() /*override*/ = default;
+    virtual ~IGameModuleShared() /*override*/;
 
     virtual ::std::unique_ptr<::GameModuleServer> createGameModuleServer() = 0;
 

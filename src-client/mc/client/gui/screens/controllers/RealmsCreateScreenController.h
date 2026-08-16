@@ -67,7 +67,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsCreateScreenController() /*override*/ = default;
+    virtual ~RealmsCreateScreenController() /*override*/;
 
     virtual void onCreation() /*override*/;
 

@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DimensionRegistry() /*override*/ = default;
+    virtual ~DimensionRegistry() /*override*/;
     // NOLINTEND
 
 public:
@@ -42,6 +42,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

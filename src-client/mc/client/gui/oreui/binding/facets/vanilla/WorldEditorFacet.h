@@ -86,7 +86,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldEditorFacet() /*override*/ = default;
+    virtual ~WorldEditorFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -159,6 +159,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::WorldSettingsRules                                       worldSettingsRules
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Container() = default;
+    virtual ~Container();
 
     virtual void clear() = 0;
     // NOLINTEND

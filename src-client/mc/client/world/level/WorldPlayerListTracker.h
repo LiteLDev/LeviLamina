@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldPlayerListTracker() = default;
+    virtual ~WorldPlayerListTracker();
 
     virtual ::std::vector<::mce::UUID> const& getPlayerList();
 
@@ -75,6 +75,12 @@ public:
         ::std::function<::LocalPlayer*()> getCurrentLocalPlayer,
         ::LocalPlayerChangedConnector     localPlayerChangedConnector
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

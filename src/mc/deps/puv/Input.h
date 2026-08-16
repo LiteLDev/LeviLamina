@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Input() = default;
+    virtual ~Input();
 
     virtual ::SemVersion version() const = 0;
 

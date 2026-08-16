@@ -11,7 +11,7 @@ class ILocalPlayerEntityGetter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILocalPlayerEntityGetter() = default;
+    virtual ~ILocalPlayerEntityGetter();
 
     virtual ::EntityContext* getLocalPlayerEntityContext() const = 0;
     // NOLINTEND

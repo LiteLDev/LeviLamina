@@ -11,7 +11,7 @@ class IStreamableAudioAsset {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IStreamableAudioAsset() = default;
+    virtual ~IStreamableAudioAsset();
 
     virtual uint64 getSize() const = 0;
 

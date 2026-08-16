@@ -52,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AppConfigs() /*override*/ = default;
+    virtual ~AppConfigs() /*override*/;
 
     virtual void loadFromData(::IAppConfigData const&);
 

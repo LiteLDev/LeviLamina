@@ -17,7 +17,7 @@ class ServerDataTransferServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerDataTransferServiceProvider() = default;
+    virtual ~ServerDataTransferServiceProvider();
 
     virtual void requestBiomeConfigs(
         ::std::string const& biomeIdentifier,

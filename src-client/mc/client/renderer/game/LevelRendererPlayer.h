@@ -216,7 +216,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelRendererPlayer() /*override*/ = default;
+    virtual ~LevelRendererPlayer() /*override*/;
 
     virtual void initResources() /*override*/;
 
@@ -314,6 +314,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LevelRendererPlayer(
+        ::IClientInstance&                                           clientInstance,
+        ::std::shared_ptr<::OptionRegistry>                          options,
+        ::Level&                                                     level,
+        ::LevelRenderer&                                             levelRenderer,
+        ::WeakEntityRef                                              localUser,
+        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
+        ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const&   terrainTexture,
+        ::SoundMapping const&                                        sounds
+    );
+
     MCAPI void _addTerrainEffect(
         ::HashedString const& effectName,
         ::BlockPos const&     pos,
@@ -429,6 +440,21 @@ public:
     MCAPI static float getActorShadowOffset(::EntityContext const& entity);
 
     MCAPI static ::TextureUVCoordinateSet getDestructionParticlesTexture(::IRandom& random, ::Block const& block);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::IClientInstance&                                           clientInstance,
+        ::std::shared_ptr<::OptionRegistry>                          options,
+        ::Level&                                                     level,
+        ::LevelRenderer&                                             levelRenderer,
+        ::WeakEntityRef                                              localUser,
+        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
+        ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const&   terrainTexture,
+        ::SoundMapping const&                                        sounds
+    );
     // NOLINTEND
 
 public:

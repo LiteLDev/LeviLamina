@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     virtual int Size() = 0;
 
-    virtual ~FieldTrialListBase() /*override*/;
+    virtual ~FieldTrialListBase() /*override*/ = default;
     // NOLINTEND
 
 public:

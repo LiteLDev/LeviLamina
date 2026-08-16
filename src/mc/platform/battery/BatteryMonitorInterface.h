@@ -10,7 +10,7 @@ class BatteryMonitorInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BatteryMonitorInterface() = default;
+    virtual ~BatteryMonitorInterface();
 
     virtual ::BatteryStatus getBatteryStatus() const = 0;
 

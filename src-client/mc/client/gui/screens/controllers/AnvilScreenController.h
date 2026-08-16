@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AnvilScreenController() /*override*/ = default;
+    virtual ~AnvilScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

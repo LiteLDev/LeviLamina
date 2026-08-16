@@ -53,6 +53,18 @@ public:
                 ::br::ChunkEntity>>>
         mData;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI LevelChunkDataRegistry();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 };
 
 } // namespace br

@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockEventBase() = default;
+    virtual ~BlockEventBase();
 
     virtual ::Block const& getBlock() const;
 

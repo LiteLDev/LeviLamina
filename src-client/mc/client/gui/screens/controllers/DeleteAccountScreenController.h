@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeleteAccountScreenController() /*override*/ = default;
+    virtual ~DeleteAccountScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
     // NOLINTEND
@@ -45,6 +45,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

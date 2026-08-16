@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     virtual void containerContentChanged(int) /*override*/;
 
-    virtual ~LegacyActorArmorChangedListener() /*override*/ = default;
+    virtual ~LegacyActorArmorChangedListener() /*override*/;
     // NOLINTEND
 
 public:
@@ -42,6 +42,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void initializeEntity(::EntityContext& entity);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

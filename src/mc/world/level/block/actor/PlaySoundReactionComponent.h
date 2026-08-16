@@ -22,9 +22,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlaySoundReactionComponent() /*override*/ = default;
+    virtual ~PlaySoundReactionComponent() /*override*/;
 
     virtual void _onEnd(::LabTableReaction& owner, ::BlockSource& region) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

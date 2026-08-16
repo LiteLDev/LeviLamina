@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileWriterImpl() /*override*/ = default;
+    virtual ~FileWriterImpl() /*override*/;
 
     virtual bool open(::bx::FilePath const& _filePath, bool _append, ::bx::Error* _err) /*override*/;
 

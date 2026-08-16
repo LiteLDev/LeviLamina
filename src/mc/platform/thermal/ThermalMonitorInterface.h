@@ -9,7 +9,7 @@ class ThermalMonitorInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ThermalMonitorInterface() = default;
+    virtual ~ThermalMonitorInterface();
 
     virtual ::ThermalState getThermalState() const = 0;
 

@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CerealDocumentUpgradeStep() = default;
+    virtual ~CerealDocumentUpgradeStep();
     // NOLINTEND
 
 public:

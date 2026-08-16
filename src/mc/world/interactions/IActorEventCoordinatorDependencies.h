@@ -17,7 +17,7 @@ class IActorEventCoordinatorDependencies {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IActorEventCoordinatorDependencies() = default;
+    virtual ~IActorEventCoordinatorDependencies();
 
     virtual void sendActorUseItemEvent(::EntityContext& actor, ::ItemStack& item, ::ItemUseMethod useMethod) = 0;
     // NOLINTEND

@@ -59,7 +59,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrushableBlockActor() /*override*/ = default;
+    virtual ~BrushableBlockActor() /*override*/;
 
     virtual void serverInitItemStackIds(
         int                                            containerSlot,

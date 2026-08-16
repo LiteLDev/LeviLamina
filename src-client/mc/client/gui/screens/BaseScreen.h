@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseScreen() /*override*/ = default;
+    virtual ~BaseScreen() /*override*/;
 
     virtual void setupForRendering(::ScreenContext& screenContext);
 
@@ -249,6 +249,12 @@ public:
         float                  px,
         float                  py
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

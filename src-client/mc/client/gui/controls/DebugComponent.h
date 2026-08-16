@@ -20,11 +20,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DebugComponent() /*override*/ = default;
+    virtual ~DebugComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

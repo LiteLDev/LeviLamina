@@ -13,7 +13,7 @@ class IIslandCore {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IIslandCore() = default;
+    virtual ~IIslandCore();
 
     virtual ushort getId() = 0;
 

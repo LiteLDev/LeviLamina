@@ -9,7 +9,7 @@ class NullSecureStorage : public ::SecureStorage {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NullSecureStorage() /*override*/ = default;
+    virtual ~NullSecureStorage() /*override*/;
 
     virtual bool add(::std::string const&, ::std::string const&) /*override*/;
 
@@ -18,6 +18,12 @@ public:
     virtual bool remove(::std::string const&) /*override*/;
 
     virtual bool get(::std::string const&, ::std::string&) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

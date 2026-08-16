@@ -96,7 +96,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataBackedAppConfigs() /*override*/ = default;
+    virtual ~DataBackedAppConfigs() /*override*/;
 
     virtual bool arePremiumSkinPacksAllowed() const /*override*/;
 

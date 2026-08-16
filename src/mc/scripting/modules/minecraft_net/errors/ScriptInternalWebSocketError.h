@@ -25,9 +25,21 @@ public:
     ScriptInternalWebSocketError(ScriptInternalWebSocketError const&);
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptInternalWebSocketError();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

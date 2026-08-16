@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CartographyScreenController() /*override*/ = default;
+    virtual ~CartographyScreenController() /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
 

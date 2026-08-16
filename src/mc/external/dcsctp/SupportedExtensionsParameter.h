@@ -35,7 +35,7 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~SupportedExtensionsParameter() /*override*/;
+    virtual ~SupportedExtensionsParameter() /*override*/ = default;
     // NOLINTEND
 
 public:

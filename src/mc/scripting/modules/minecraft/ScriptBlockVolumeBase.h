@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptBlockVolumeBase() /*override*/ = default;
+    virtual ~ScriptBlockVolumeBase() /*override*/;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
     getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) = 0;
@@ -69,6 +69,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

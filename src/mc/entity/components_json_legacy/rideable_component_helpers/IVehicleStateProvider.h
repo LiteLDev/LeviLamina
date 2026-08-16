@@ -15,7 +15,7 @@ class IVehicleStateProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IVehicleStateProvider() = default;
+    virtual ~IVehicleStateProvider();
 
     virtual bool canAddPassenger(
         ::std::vector<::StrictActorIDEntityContextPair> const& vehiclePassengers,

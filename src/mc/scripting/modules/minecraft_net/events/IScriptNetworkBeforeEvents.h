@@ -19,7 +19,7 @@ class IScriptNetworkBeforeEvents {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptNetworkBeforeEvents() = default;
+    virtual ~IScriptNetworkBeforeEvents();
 
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent>>
@@ -28,6 +28,12 @@ public:
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent>>
     onBeforePacketSend(::OutgoingPacketEvent const& packetEvent) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

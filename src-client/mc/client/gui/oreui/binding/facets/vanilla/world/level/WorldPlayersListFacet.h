@@ -80,7 +80,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldPlayersListFacet() /*override*/ = default;
+    virtual ~WorldPlayersListFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -158,6 +158,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::TrialManager>                      trialManager,
         ::std::function<::ClientLevel*()>                                  getCurrentLevel
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

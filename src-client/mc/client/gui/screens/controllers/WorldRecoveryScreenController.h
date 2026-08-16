@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldRecoveryScreenController() /*override*/ = default;
+    virtual ~WorldRecoveryScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

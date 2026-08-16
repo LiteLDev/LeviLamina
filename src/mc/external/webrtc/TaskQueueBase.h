@@ -96,7 +96,7 @@ public:
         ::webrtc::Location const&                             location
     ) = 0;
 
-    virtual ~TaskQueueBase() = default;
+    virtual ~TaskQueueBase();
     // NOLINTEND
 
 public:

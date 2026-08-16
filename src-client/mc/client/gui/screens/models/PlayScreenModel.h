@@ -195,7 +195,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayScreenModel() /*override*/ = default;
+    virtual ~PlayScreenModel() /*override*/;
 
     virtual int getWorldCount(::WorldType worldType, ::NetworkWorldType networkType) const /*override*/;
 

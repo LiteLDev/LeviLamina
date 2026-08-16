@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WebRTCNetworkPeer() /*override*/ = default;
+    virtual ~WebRTCNetworkPeer() /*override*/;
 
     virtual void
     sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility) /*override*/;
@@ -47,6 +47,12 @@ public:
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

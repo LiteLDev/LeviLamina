@@ -18,7 +18,7 @@ class UnownedCatalogCollector : public ::CatalogPackCollector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UnownedCatalogCollector() /*override*/ = default;
+    virtual ~UnownedCatalogCollector() /*override*/;
 
     virtual void collect(
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
@@ -26,6 +26,12 @@ public:
         ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
         ::std::unordered_set<::mce::UUID>&                   handledPackSet
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

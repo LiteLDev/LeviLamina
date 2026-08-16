@@ -40,7 +40,7 @@ public:
 
     virtual char const* type() const /*override*/;
 
-    virtual ~RTCCodecStats() /*override*/ = default;
+    virtual ~RTCCodecStats() /*override*/;
     // NOLINTEND
 
 public:

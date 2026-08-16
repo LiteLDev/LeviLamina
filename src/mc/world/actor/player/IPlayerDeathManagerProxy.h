@@ -12,7 +12,7 @@ class IPlayerDeathManagerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPlayerDeathManagerProxy() = default;
+    virtual ~IPlayerDeathManagerProxy();
 
     virtual ::Actor* fetchActor(::ActorUniqueID actorUniqueID) const = 0;
 

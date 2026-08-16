@@ -16,7 +16,7 @@ class IOperation {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IOperation() = default;
+    virtual ~IOperation();
 
     virtual ::std::string_view getName() = 0;
 

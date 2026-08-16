@@ -30,7 +30,7 @@ class PrefabDBServerPlayerServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PrefabDBServerPlayerServiceProvider() = default;
+    virtual ~PrefabDBServerPlayerServiceProvider();
 
     virtual ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>
     getInstancesInChunk(::DimensionType const& dimension, ::ChunkPos const& chunkPos) const = 0;

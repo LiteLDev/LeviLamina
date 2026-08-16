@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerFormScreenController() /*override*/ = default;
+    virtual ~ServerFormScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 

@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptServerNetworkInterface() /*override*/ = default;
+    virtual ~ScriptServerNetworkInterface() /*override*/;
 
     virtual ::Scripting::Result<int64, ::Scripting::EngineError> getPlayerPingInMs(::Player const& player) const
         /*override*/;
@@ -59,6 +59,12 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result<::UserEntityIdentifierComponent const*, ::Scripting::EngineError>
     _getNetIdentity(::Player const& player) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

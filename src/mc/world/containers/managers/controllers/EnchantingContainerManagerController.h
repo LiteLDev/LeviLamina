@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EnchantingContainerManagerController() /*override*/ = default;
+    virtual ~EnchantingContainerManagerController() /*override*/;
 
     virtual bool handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
 
@@ -79,6 +79,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::weak_ptr<::EnchantingContainerManagerModel> containerManagerModel);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -13,7 +13,7 @@ class ReportBlockDataObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ReportBlockDataObserver() = default;
+    virtual ~ReportBlockDataObserver();
 
     virtual void OnReportBlockDataUpdated(::webrtc::ReportBlockData) = 0;
     // NOLINTEND

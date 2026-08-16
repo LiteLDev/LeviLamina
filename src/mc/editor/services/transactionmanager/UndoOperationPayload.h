@@ -11,7 +11,13 @@ class UndoOperationPayload : public ::Editor::Network::NetworkPayload<::Editor::
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UndoOperationPayload() /*override*/ = default;
+    virtual ~UndoOperationPayload() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

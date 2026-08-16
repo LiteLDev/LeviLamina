@@ -17,6 +17,18 @@ public:
     PayloadEventDispatcher& operator=(PayloadEventDispatcher const&);
     PayloadEventDispatcher(PayloadEventDispatcher const&);
     PayloadEventDispatcher();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~PayloadEventDispatcher();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Editor::DataStore

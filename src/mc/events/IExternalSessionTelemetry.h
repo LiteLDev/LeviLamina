@@ -6,7 +6,7 @@ class IExternalSessionTelemetry {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IExternalSessionTelemetry() = default;
+    virtual ~IExternalSessionTelemetry();
 
     virtual void fireEventReceivedUniqueWebSessionId(::std::string const& webSessionId) = 0;
 

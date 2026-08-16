@@ -16,7 +16,7 @@ class PacketObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PacketObserver() = default;
+    virtual ~PacketObserver();
 
     virtual void OnSentPacket(::dcsctp::TimeMs now, ::webrtc::ArrayView<uchar const> payload) = 0;
 

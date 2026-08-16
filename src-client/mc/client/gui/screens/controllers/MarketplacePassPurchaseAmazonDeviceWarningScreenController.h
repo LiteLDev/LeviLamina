@@ -18,7 +18,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MarketplacePassPurchaseAmazonDeviceWarningScreenController() /*override*/ = default;
+    virtual ~MarketplacePassPurchaseAmazonDeviceWarningScreenController() /*override*/;
     // NOLINTEND
 
 public:
@@ -33,6 +33,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

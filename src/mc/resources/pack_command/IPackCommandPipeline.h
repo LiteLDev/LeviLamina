@@ -20,7 +20,7 @@ class IPackCommandPipeline : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPackCommandPipeline() /*override*/ = default;
+    virtual ~IPackCommandPipeline() /*override*/;
 
     virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands) = 0;
 

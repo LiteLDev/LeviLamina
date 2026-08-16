@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RouterFacet() /*override*/ = default;
+    virtual ~RouterFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -53,6 +53,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::Router& router);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

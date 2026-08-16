@@ -46,11 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~RenderMaterialBase() = default;
-#else // LL_PLAT_C
     virtual ~RenderMaterialBase();
-#endif
 
     virtual void parseRuntimeStates(::Json::Value const& root) = 0;
 

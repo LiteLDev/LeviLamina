@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MemoryFileHandle() /*override*/ = default;
+    virtual ~MemoryFileHandle() /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> _getPath() const /*override*/;
 

@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HudBubblesRenderer() /*override*/ = default;
+    virtual ~HudBubblesRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -63,6 +63,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

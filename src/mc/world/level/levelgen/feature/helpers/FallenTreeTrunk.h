@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FallenTreeTrunk() /*override*/ = default;
+    virtual ~FallenTreeTrunk() /*override*/;
 
     virtual int getTreeHeight(::Random& random) const /*override*/;
 

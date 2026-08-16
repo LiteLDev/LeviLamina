@@ -48,13 +48,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameTestRuleHelper() /*override*/ = default;
+    virtual ~GameTestRuleHelper() /*override*/;
 
     virtual void addRuleToClear(int ruleID) /*override*/;
 
     virtual void clearRules() /*override*/;
 
     virtual void restoreRules() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

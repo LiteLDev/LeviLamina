@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChalkboardScreenController() /*override*/ = default;
+    virtual ~ChalkboardScreenController() /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 

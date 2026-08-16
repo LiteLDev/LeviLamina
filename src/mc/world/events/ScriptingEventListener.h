@@ -18,7 +18,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptingEventListener() = default;
+    virtual ~ScriptingEventListener();
 
     virtual ::EventResult onEvent(::ScriptingNotificationEvent const& event);
     // NOLINTEND

@@ -209,11 +209,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~ServerInstance() /*override*/;
-#else // LL_PLAT_C
-    virtual ~ServerInstance() /*override*/ = default;
-#endif
 
     virtual void onLowMemory(::LowMemorySeverity) /*override*/;
 

@@ -9,7 +9,7 @@ class ClientScriptEventListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientScriptEventListener() = default;
+    virtual ~ClientScriptEventListener();
 
     virtual ::EventResult onScriptKeyEvent(::std::string const& eventID, ::std::string const& additionalInfo);
     // NOLINTEND

@@ -19,7 +19,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibraryProgressHandler() /*override*/ = default;
+    virtual ~LibraryProgressHandler() /*override*/;
 
     virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& container) const /*override*/;
 
@@ -46,6 +46,12 @@ public:
         ::std::function<void()>                                  cancelCallback,
         ::std::vector<::std::pair<::std::string, ::std::string>> properties
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

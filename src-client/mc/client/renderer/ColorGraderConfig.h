@@ -306,7 +306,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ColorGraderConfig() /*override*/ = default;
+    virtual ~ColorGraderConfig() /*override*/;
 
     virtual void loadDataSync(
         ::cereal::ReflectionCtx const&                     ctx,

@@ -19,7 +19,7 @@ class EditorProjectRegionPlayerServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorProjectRegionPlayerServiceProvider() = default;
+    virtual ~EditorProjectRegionPlayerServiceProvider();
 
     virtual ::WeakRef<::Editor::ProjectRegion> createRegion(::Editor::ProjectRegionConfig const& config) = 0;
 

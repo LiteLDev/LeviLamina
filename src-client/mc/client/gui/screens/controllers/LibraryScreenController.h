@@ -68,7 +68,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibraryScreenController() /*override*/ = default;
+    virtual ~LibraryScreenController() /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 

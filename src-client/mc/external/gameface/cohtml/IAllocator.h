@@ -25,7 +25,7 @@ public:
 
     virtual bool VirtualFree(void*, uint, int, ::cohtml::MemTags::MemTagsType) = 0;
 
-    virtual ~IAllocator() = default;
+    virtual ~IAllocator();
     // NOLINTEND
 };
 

@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureDeleteResultPayload() /*override*/ = default;
+    virtual ~StructureDeleteResultPayload() /*override*/;
     // NOLINTEND
 
 public:

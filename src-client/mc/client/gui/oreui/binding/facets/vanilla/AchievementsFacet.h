@@ -62,7 +62,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AchievementsFacet() /*override*/ = default;
+    virtual ~AchievementsFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -101,6 +101,12 @@ public:
         ::gsl::not_null<::Option*>                                        manualTrackingOption,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

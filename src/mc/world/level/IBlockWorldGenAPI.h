@@ -26,7 +26,7 @@ class IBlockWorldGenAPI {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBlockWorldGenAPI() = default;
+    virtual ~IBlockWorldGenAPI();
 
     virtual bool canGetChunk() const;
 

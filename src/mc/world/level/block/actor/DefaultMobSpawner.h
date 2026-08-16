@@ -21,9 +21,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DefaultMobSpawner() /*override*/ = default;
+    virtual ~DefaultMobSpawner() /*override*/;
 
     virtual ::BlockPos const& getPos() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

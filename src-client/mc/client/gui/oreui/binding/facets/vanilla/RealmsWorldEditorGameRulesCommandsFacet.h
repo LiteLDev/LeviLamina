@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsWorldEditorGameRulesCommandsFacet() /*override*/ = default;
+    virtual ~RealmsWorldEditorGameRulesCommandsFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -76,6 +76,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsWorldEditor> realmsWorldEditor);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

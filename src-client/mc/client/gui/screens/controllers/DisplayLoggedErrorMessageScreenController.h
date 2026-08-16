@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DisplayLoggedErrorMessageScreenController() /*override*/ = default;
+    virtual ~DisplayLoggedErrorMessageScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

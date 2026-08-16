@@ -17,7 +17,7 @@ class RtpPacketPacer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtpPacketPacer() = default;
+    virtual ~RtpPacketPacer();
 
     virtual void CreateProbeClusters(::std::vector<::webrtc::ProbeClusterConfig> probe_cluster_configs) = 0;
 

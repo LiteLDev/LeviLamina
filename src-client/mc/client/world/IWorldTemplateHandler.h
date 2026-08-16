@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IWorldTemplateHandler() = default;
+    virtual ~IWorldTemplateHandler();
 
     virtual void loadTemplate(
         ::std::string const&                                                                            templateId,

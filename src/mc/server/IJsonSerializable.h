@@ -11,7 +11,7 @@ class IJsonSerializable {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IJsonSerializable() = default;
+    virtual ~IJsonSerializable();
 
     virtual ::Json::Value serialize() const = 0;
 

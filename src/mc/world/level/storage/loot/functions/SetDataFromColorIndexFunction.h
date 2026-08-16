@@ -19,7 +19,7 @@ class SetDataFromColorIndexFunction : public ::LootItemFunction {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetDataFromColorIndexFunction() /*override*/ = default;
+    virtual ~SetDataFromColorIndexFunction() /*override*/;
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
@@ -37,6 +37,12 @@ public:
         ::std::string const& originalItemName,
         int&                 outResultAux
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

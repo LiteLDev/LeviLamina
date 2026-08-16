@@ -21,7 +21,7 @@ class Library {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Library() = default;
+    virtual ~Library();
 
     virtual ::cohtml::System* CreateSystem(::cohtml::SystemSettings const&) = 0;
 

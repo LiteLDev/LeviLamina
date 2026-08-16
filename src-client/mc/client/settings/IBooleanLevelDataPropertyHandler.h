@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBooleanLevelDataPropertyHandler() /*override*/ = default;
+    virtual ~IBooleanLevelDataPropertyHandler() /*override*/;
     // NOLINTEND
 };
 

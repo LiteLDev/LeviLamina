@@ -12,9 +12,15 @@ struct ContainerTransferScope {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContainerTransferScope() = default;
+    virtual ~ContainerTransferScope();
 
     virtual void createItem(::ItemStack const& item, ::std::shared_ptr<::SimpleSparseContainer> createdOutputContainer);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

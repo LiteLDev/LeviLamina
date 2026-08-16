@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenReaderFacet() /*override*/ = default;
+    virtual ~ScreenReaderFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -83,6 +83,12 @@ public:
         ::gsl::not_null<::Option*>          chatTextToSpeechOption,
         ::gsl::not_null<::Option*>          uiTextToSpeechOption
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

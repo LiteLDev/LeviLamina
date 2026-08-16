@@ -88,7 +88,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CrashManagerImpl() /*override*/ = default;
+    virtual ~CrashManagerImpl() /*override*/;
 
     virtual void initialize(::Bedrock::CrashManagerConfig const& config) /*override*/;
 

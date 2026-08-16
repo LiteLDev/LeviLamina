@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AnimatedGifRenderer() /*override*/ = default;
+    virtual ~AnimatedGifRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -45,6 +45,24 @@ public:
     virtual ::UIBatchType getBatchType() const /*override*/;
 
     virtual int getCustomId() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI AnimatedGifRenderer();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

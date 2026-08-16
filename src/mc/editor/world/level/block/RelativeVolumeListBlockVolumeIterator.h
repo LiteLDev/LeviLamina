@@ -28,13 +28,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RelativeVolumeListBlockVolumeIterator() /*override*/ = default;
+    virtual ~RelativeVolumeListBlockVolumeIterator() /*override*/;
 
     virtual bool isValid() const /*override*/;
 
     virtual void _begin() /*override*/;
 
     virtual void _end() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

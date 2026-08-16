@@ -29,6 +29,28 @@ public:
 public:
     // prevent constructor by default
     ExposedRouterLocation();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ExposedRouterLocation(
+        ::OreUI::Detail::IPropertyObject* parent,
+        ::std::string const&              path,
+        ::std::string const&              query,
+        ::std::string const&              fragment
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::OreUI::Detail::IPropertyObject* parent,
+        ::std::string const&              path,
+        ::std::string const&              query,
+        ::std::string const&              fragment
+    );
+    // NOLINTEND
 };
 
 } // namespace OreUI

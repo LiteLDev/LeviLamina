@@ -18,9 +18,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InMemoryRandomAccessFile() /*override*/ = default;
+    virtual ~InMemoryRandomAccessFile() /*override*/;
 
     virtual ::leveldb::Status Read(uint64 offset, uint64 n, ::leveldb::Slice* result, char* scratch) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

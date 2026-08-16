@@ -12,9 +12,15 @@ class AesAdapter : public ::webrtc::AsyncSocketAdapter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AesAdapter() /*override*/ = default;
+    virtual ~AesAdapter() /*override*/;
 
     virtual ::NetherNet::ErrorOr<void, ::std::error_code> SetKey(uint64 id) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ThrottledFile() /*override*/ = default;
+    virtual ~ThrottledFile() /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> _getPath() const /*override*/;
 

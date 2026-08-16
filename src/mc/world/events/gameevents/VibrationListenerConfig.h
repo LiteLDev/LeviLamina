@@ -15,7 +15,7 @@ class VibrationListenerConfig {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VibrationListenerConfig() = default;
+    virtual ~VibrationListenerConfig();
 
     virtual void
     onSignalReceive(::BlockSource&, ::BlockPos const&, ::GameEvent const&, ::Actor*, float, uint, ::Actor*) = 0;

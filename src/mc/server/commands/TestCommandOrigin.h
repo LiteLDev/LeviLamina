@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TestCommandOrigin() /*override*/ = default;
+    virtual ~TestCommandOrigin() /*override*/;
 
     virtual ::std::string const& getRequestId() const /*override*/;
 

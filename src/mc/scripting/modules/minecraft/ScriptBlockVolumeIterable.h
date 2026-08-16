@@ -8,7 +8,7 @@ class ScriptBlockVolumeIterable {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptBlockVolumeIterable() = default;
+    virtual ~ScriptBlockVolumeIterable();
     // NOLINTEND
 };
 

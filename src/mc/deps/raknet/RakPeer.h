@@ -251,7 +251,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RakPeer() /*override*/ = default;
+    virtual ~RakPeer() /*override*/;
 
     virtual void InitializeConfiguration(::std::unique_ptr<::RakNet::ShadowBanList> banList) /*override*/;
 

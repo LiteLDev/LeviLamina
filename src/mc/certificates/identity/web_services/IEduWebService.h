@@ -17,7 +17,7 @@ struct IEduWebService {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEduWebService() = default;
+    virtual ~IEduWebService();
 
     virtual void setEula() = 0;
 
@@ -43,6 +43,12 @@ public:
     ) = 0;
 
     virtual void sendInitialPackRequest(::std::function<void(::std::vector<::ServicePack>)> packReturnCallback) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

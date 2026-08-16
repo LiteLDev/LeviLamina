@@ -6,7 +6,7 @@ class IMovementStop {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMovementStop() = default;
+    virtual ~IMovementStop();
 
     virtual bool isRiding() const = 0;
 

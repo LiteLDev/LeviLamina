@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Certificate() /*override*/ = default;
+    virtual ~Certificate() /*override*/;
 
     virtual ::std::string serialize(::Crypto::Certificate::Encoding encoding) const /*override*/;
 
@@ -59,6 +59,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Crypto::Certificate::Encoding encoding, ::std::string const& certificateData);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

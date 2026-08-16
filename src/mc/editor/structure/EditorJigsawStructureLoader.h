@@ -22,17 +22,35 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorJigsawStructureLoader() /*override*/ = default;
+    virtual ~EditorJigsawStructureLoader() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI EditorJigsawStructureLoader(
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
+
     MCNAPI ::std::map<::Editor::Services::JigsawJsonType, ::std::string>
     createEmptyJigsawFiles(::cereal::ReflectionCtx& ctx);
 
     MCNAPI void loadJigsawStructureData(
         ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>& data
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

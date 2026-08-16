@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BufferedResponseBody() /*override*/ = default;
+    virtual ~BufferedResponseBody() /*override*/;
 
     virtual ::std::error_code start(::std::optional<uint64> size) /*override*/;
 
@@ -40,6 +40,12 @@ public:
     virtual ::gsl::span<uchar const> getLoggableData() const /*override*/;
 
     virtual ::Bedrock::Http::ResponseBodyType getType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

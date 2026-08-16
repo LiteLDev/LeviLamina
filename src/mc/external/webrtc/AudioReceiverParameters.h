@@ -11,7 +11,7 @@ struct AudioReceiverParameters : public ::webrtc::MediaChannelParameters {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AudioReceiverParameters() /*override*/;
+    virtual ~AudioReceiverParameters() /*override*/ = default;
     // NOLINTEND
 
 public:

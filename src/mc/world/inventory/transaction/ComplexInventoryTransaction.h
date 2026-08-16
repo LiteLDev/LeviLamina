@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ComplexInventoryTransaction() = default;
+    virtual ~ComplexInventoryTransaction();
 
     virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
@@ -75,6 +75,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::BidirectionalUnorderedMap<::ComplexInventoryTransaction::Type, ::std::string> const&
     transactionTypeMap();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

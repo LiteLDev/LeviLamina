@@ -14,7 +14,7 @@ class ITickDelegate {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITickDelegate() = default;
+    virtual ~ITickDelegate();
 
     virtual void onLand(::FallingBlock const& block, ::IBlockSource& region, ::BlockPos const& pos) = 0;
 

@@ -34,7 +34,7 @@ public:
 
     virtual void DeRegisterStreamFeedbackObserver(::webrtc::StreamFeedbackObserver* observer) /*override*/;
 
-    virtual ~TransportFeedbackDemuxer() /*override*/;
+    virtual ~TransportFeedbackDemuxer() /*override*/ = default;
     // NOLINTEND
 
 public:

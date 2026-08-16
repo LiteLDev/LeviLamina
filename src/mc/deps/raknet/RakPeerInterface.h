@@ -33,7 +33,7 @@ class RakPeerInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RakPeerInterface() = default;
+    virtual ~RakPeerInterface();
 
     virtual void InitializeConfiguration(::std::unique_ptr<::RakNet::ShadowBanList> banList) = 0;
 

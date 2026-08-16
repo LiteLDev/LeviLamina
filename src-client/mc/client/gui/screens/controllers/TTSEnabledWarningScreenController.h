@@ -19,13 +19,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TTSEnabledWarningScreenController() /*override*/ = default;
+    virtual ~TTSEnabledWarningScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
     virtual ::ui::SceneType getSceneType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

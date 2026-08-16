@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PremiumCachePackCollector() /*override*/ = default;
+    virtual ~PremiumCachePackCollector() /*override*/;
 
     virtual bool exhausted() const /*override*/;
 
@@ -48,6 +48,12 @@ public:
         ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
         ::std::unordered_set<::mce::UUID>&                   handledPackSet
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

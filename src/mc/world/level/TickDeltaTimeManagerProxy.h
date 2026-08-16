@@ -16,11 +16,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TickDeltaTimeManagerProxy() /*override*/ = default;
+    virtual ~TickDeltaTimeManagerProxy() /*override*/;
 
     virtual void start() /*override*/;
 
     virtual double calculateDeltaTimeAndReset() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

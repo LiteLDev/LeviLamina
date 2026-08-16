@@ -102,7 +102,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptFormPromiseTracker() /*override*/ = default;
+    virtual ~ScriptFormPromiseTracker() /*override*/;
 
     virtual ::EventResult onEvent(::PlayerFormResponseEvent const& formResponseEvent) /*override*/;
 

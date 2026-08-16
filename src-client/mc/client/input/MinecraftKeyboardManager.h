@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftKeyboardManager() /*override*/ = default;
+    virtual ~MinecraftKeyboardManager() /*override*/;
 
     virtual bool tryEnableKeyboard(
         ::std::string const& currentText,
@@ -105,6 +105,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static int& mGlobalKeyboardOwnerId();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

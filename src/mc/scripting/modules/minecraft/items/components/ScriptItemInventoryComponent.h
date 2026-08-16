@@ -24,7 +24,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptItemInventoryComponent() /*override*/ = default;
+    virtual ~ScriptItemInventoryComponent() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

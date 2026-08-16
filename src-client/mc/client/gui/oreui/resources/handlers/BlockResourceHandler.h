@@ -52,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockResourceHandler() /*override*/ = default;
+    virtual ~BlockResourceHandler() /*override*/;
 
     virtual void update() /*override*/;
 
@@ -65,6 +65,12 @@ public:
     virtual void onViewCreate(::IClientInstance& primaryClient) /*override*/;
 
     virtual void onAppPreSuspend() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

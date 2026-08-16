@@ -8,7 +8,7 @@ class RtcpCnameCallback {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtcpCnameCallback() = default;
+    virtual ~RtcpCnameCallback();
 
     virtual void OnCname(uint, ::std::string_view) = 0;
     // NOLINTEND

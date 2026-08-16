@@ -13,7 +13,7 @@ class VideoBitrateAllocationObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VideoBitrateAllocationObserver() = default;
+    virtual ~VideoBitrateAllocationObserver();
 
     virtual void OnBitrateAllocationUpdated(::webrtc::VideoBitrateAllocation const&) = 0;
     // NOLINTEND

@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UIComponent() = default;
+    virtual ~UIComponent();
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const = 0;
 

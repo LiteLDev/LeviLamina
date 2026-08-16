@@ -42,7 +42,7 @@ class PeerConnectionSdpMethods {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PeerConnectionSdpMethods() = default;
+    virtual ~PeerConnectionSdpMethods();
 
     virtual ::std::string session_id() const = 0;
 

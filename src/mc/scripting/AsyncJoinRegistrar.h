@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncJoinRegistrar() /*override*/ = default;
+    virtual ~AsyncJoinRegistrar() /*override*/;
 
     virtual ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> registerAsyncJoinCallback(
         ::brstd::move_only_function<void(
@@ -55,6 +55,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Minecraft& minecraft);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

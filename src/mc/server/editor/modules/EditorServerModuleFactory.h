@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorServerModuleFactory() /*override*/ = default;
+    virtual ~EditorServerModuleFactory() /*override*/;
     // NOLINTEND
 
 public:
@@ -50,6 +50,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& managerServices);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

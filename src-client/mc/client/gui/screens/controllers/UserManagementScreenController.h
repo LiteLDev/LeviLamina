@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UserManagementScreenController() /*override*/ = default;
+    virtual ~UserManagementScreenController() /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -55,6 +55,12 @@ public:
         ::UserManagementModalScreenData const&    screenData,
         ::std::function<void(bool)>               callback
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -16,9 +16,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ZipProgress() = default;
+    virtual ~ZipProgress();
 
     virtual void clear();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

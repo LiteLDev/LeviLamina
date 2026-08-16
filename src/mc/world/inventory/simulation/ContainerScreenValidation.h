@@ -51,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContainerScreenValidation() = default;
+    virtual ~ContainerScreenValidation();
 
     virtual ::ContainerValidationResult
     tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);

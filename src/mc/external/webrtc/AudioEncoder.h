@@ -76,7 +76,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AudioEncoder() = default;
+    virtual ~AudioEncoder();
 
     virtual int SampleRateHz() const = 0;
 

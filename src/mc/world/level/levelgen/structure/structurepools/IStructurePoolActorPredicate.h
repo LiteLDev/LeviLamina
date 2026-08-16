@@ -11,7 +11,7 @@ class IStructurePoolActorPredicate {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IStructurePoolActorPredicate() = default;
+    virtual ~IStructurePoolActorPredicate();
 
     virtual bool test(::std::string const& actor) const = 0;
 

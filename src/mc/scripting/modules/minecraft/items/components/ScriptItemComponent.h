@@ -43,6 +43,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptItemComponent(::ScriptModuleMinecraft::ScriptItemComponent const&);
+
+    MCAPI ScriptItemComponent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope,
+        ::std::string                                                                  id
+    );
     // NOLINTEND
 
 public:
@@ -55,6 +61,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemComponent const&);
+
+    MCAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope,
+        ::std::string                                                                  id
+    );
     // NOLINTEND
 
 public:

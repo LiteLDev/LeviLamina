@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WrappingActiveIceController() /*override*/ = default;
+    virtual ~WrappingActiveIceController() /*override*/;
 
     virtual void SetIceConfig(::webrtc::IceConfig const& config) /*override*/;
 

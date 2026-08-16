@@ -55,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourcePackOverridesFacet() /*override*/ = default;
+    virtual ~ResourcePackOverridesFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -84,6 +84,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IUIRepository>          uiRepository,
         ::ResourcePackManager&                                  resourcePackManager
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

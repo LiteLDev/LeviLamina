@@ -16,7 +16,7 @@ class IgniteSubcomponent : public ::OnHitSubcomponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IgniteSubcomponent() /*override*/ = default;
+    virtual ~IgniteSubcomponent() /*override*/;
 
     virtual void readfromJSON(::Json::Value&) /*override*/;
 
@@ -25,6 +25,12 @@ public:
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent&) /*override*/;
 
     virtual char const* getName() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

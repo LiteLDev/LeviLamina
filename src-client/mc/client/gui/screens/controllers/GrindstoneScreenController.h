@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GrindstoneScreenController() /*override*/ = default;
+    virtual ~GrindstoneScreenController() /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
 
@@ -68,6 +68,12 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::Player&, ::BlockPos const& pos, ::ActorUniqueID);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -95,6 +95,22 @@ public:
     public:
         // prevent constructor by default
         LookupByNameImplReturnType();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI LookupByNameImplReturnType(::Block const* block, bool resolveBlockType);
+
+        MCAPI LookupByNameImplReturnType(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::Block const* block, bool resolveBlockType);
+
+        MCAPI void* $ctor(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
+        // NOLINTEND
     };
 
     using BlockAliasLookupMap = ::std::unordered_map<::HashedString, ::HashedString>;

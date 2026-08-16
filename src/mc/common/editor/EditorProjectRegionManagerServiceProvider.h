@@ -24,7 +24,7 @@ class EditorProjectRegionManagerServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorProjectRegionManagerServiceProvider() = default;
+    virtual ~EditorProjectRegionManagerServiceProvider();
 
     virtual ::WeakRef<::Editor::ProjectRegion> createRegion(
         ::Dimension&                         dimension,

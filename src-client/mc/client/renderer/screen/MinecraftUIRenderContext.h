@@ -363,6 +363,10 @@ public:
 
     MCFOLD ::UIMeasureStrategy& $getMeasureStrategy();
 
+    MCAPI void $snapImageSizeToGrid(::glm::vec2& size) const;
+
+    MCAPI void $snapImagePositionToGrid(::glm::vec2& position) const;
+
     MCAPI void $notifyImageEstimate(uint64 imageCount);
 
     MCAPI bool $updateCustom(::gsl::not_null<::CustomRenderComponent*> customRenderer);

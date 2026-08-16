@@ -50,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ImageResource() = default;
+    virtual ~ImageResource();
 
     virtual bool isEmpty() const = 0;
 

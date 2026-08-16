@@ -46,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActionComponent() /*override*/ = default;
+    virtual ~ActionComponent() /*override*/;
 
     virtual ::Settings::ComponentState getDefaultState() const /*override*/;
     // NOLINTEND
@@ -83,6 +83,12 @@ public:
         ::std::optional<::Settings::AsyncProgressInfo>     asyncProgressInfo,
         ::std::unique_ptr<::Settings::IActionDataProvider> dataProvider
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

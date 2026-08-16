@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftingInputContainerController() /*override*/ = default;
+    virtual ~CraftingInputContainerController() /*override*/;
 
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const /*override*/;
 
@@ -42,6 +42,12 @@ public:
         ::std::vector<::RecipeIngredient> const& ingredients
     );
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

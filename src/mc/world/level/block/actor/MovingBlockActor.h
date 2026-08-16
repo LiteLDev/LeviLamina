@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MovingBlockActor() /*override*/ = default;
+    virtual ~MovingBlockActor() /*override*/;
 
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
@@ -76,6 +76,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

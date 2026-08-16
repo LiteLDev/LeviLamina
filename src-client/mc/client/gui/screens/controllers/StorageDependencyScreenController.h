@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageDependencyScreenController() /*override*/ = default;
+    virtual ~StorageDependencyScreenController() /*override*/;
     // NOLINTEND
 
 public:

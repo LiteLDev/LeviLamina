@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IStringLevelDataPropertyHandler() /*override*/ = default;
+    virtual ~IStringLevelDataPropertyHandler() /*override*/;
     // NOLINTEND
 };
 

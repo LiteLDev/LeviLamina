@@ -62,7 +62,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockGraphics() = default;
+    virtual ~BlockGraphics();
 
     virtual ::BlockRenderLayer getRenderLayer(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -184,6 +184,12 @@ public:
     MCAPI static ::std::unordered_set<uint>& mVanillaBlocksWithFallbackToOldTessellation();
 
     MCAPI static ::std::unordered_map<::std::string, ::TextureAtlasItem>& sComplexTextureItems();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

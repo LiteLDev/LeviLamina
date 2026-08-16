@@ -68,6 +68,22 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI LocalNetworkPeer();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
@@ -78,6 +94,11 @@ public:
     MCNAPI bool $isLocal() const;
 
     MCNAPI bool $isEncrypted() const;
+
+    MCNAPI ::NetworkPeer::DataStatus $_receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    );
 #endif
 
 

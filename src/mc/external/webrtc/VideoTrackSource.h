@@ -64,7 +64,7 @@ public:
 
     virtual ::webrtc::VideoSourceInterface<::webrtc::VideoFrame>* source() = 0;
 
-    virtual ~VideoTrackSource() /*override*/;
+    virtual ~VideoTrackSource() /*override*/ = default;
     // NOLINTEND
 
 public:

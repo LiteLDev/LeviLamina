@@ -36,7 +36,7 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~AbortChunk() /*override*/;
+    virtual ~AbortChunk() /*override*/ = default;
     // NOLINTEND
 
 public:

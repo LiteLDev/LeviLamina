@@ -40,6 +40,12 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Localization(::std::string const& code);
 
+    MCAPI Localization(::Localization&& rhs);
+
+    MCAPI Localization(::Localization const& rhs);
+
+    MCAPI Localization(::std::string const& code, ::Localization const* fallbackLocale);
+
 #ifdef LL_PLAT_C
     MCAPI ::OptionalString _get(::std::string const& id, ::std::vector<::std::string> const& params) const;
 #endif
@@ -111,6 +117,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& code);
+
+    MCAPI void* $ctor(::Localization&& rhs);
+
+    MCAPI void* $ctor(::Localization const& rhs);
+
+    MCAPI void* $ctor(::std::string const& code, ::Localization const* fallbackLocale);
     // NOLINTEND
 
 public:

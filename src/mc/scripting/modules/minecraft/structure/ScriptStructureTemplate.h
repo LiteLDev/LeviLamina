@@ -51,6 +51,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptStructureTemplate(
+        ::std::string const&                                                                id,
+        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
+        ::Scripting::WeakLifetimeScope                                                      scope,
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager> scriptStructureManager,
+        ::LevelStorage&                                                                     levelStorage
+    );
+
     MCAPI ::Scripting::InvalidArgumentError
     _createBoundsError(int index, ::BlockPos const& pos, ::BlockPos const& size) const;
 
@@ -69,6 +77,18 @@ public:
     MCAPI static ::Scripting::EnumBinding bindRotationEnum();
 
     MCAPI static ::Scripting::EnumBinding bindStructureSaveModeEnum();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&                                                                id,
+        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
+        ::Scripting::WeakLifetimeScope                                                      scope,
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager> scriptStructureManager,
+        ::LevelStorage&                                                                     levelStorage
+    );
     // NOLINTEND
 
 public:

@@ -15,7 +15,7 @@ class EditorManagerServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorManagerServiceProvider() = default;
+    virtual ~EditorManagerServiceProvider();
 
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() = 0;
 

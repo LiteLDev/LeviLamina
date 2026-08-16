@@ -61,7 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Particle() = default;
+    virtual ~Particle();
 
     virtual void init(::Vec3 const& pos, ::Vec3 const& dir, int scale, ::ParticleEngine& engine) = 0;
 

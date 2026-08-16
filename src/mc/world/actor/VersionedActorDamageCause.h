@@ -23,6 +23,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI VersionedActorDamageCause(
+        ::std::string                           name,
+        ::SharedTypes::Legacy::ActorDamageCause cause,
+        ::Scripting::Version                    version,
+        ::std::optional<uchar>                  deprecatedMajorVersion
+    );
+
     MCAPI ::Scripting::Version getVersion() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string                           name,
+        ::SharedTypes::Legacy::ActorDamageCause cause,
+        ::Scripting::Version                    version,
+        ::std::optional<uchar>                  deprecatedMajorVersion
+    );
     // NOLINTEND
 };

@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorEventResponseFactory() /*override*/ = default;
+    virtual ~ActorEventResponseFactory() /*override*/;
     // NOLINTEND
 
 public:
@@ -38,6 +38,12 @@ public:
     MCAPI void initSchema();
 
     MCAPI void initializeFactory(::PackLoadContext const& packLoadContext);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

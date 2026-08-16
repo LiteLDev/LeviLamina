@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IntOption() /*override*/ = default;
+    virtual ~IntOption() /*override*/;
 
     virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) /*override*/;
 
@@ -111,6 +111,12 @@ public:
         ::GameVersion        version
     );
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

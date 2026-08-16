@@ -16,7 +16,7 @@ class StructureDataCacheServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureDataCacheServiceProvider() = default;
+    virtual ~StructureDataCacheServiceProvider();
 
     virtual void registerStructureDataProvider(
         ::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider> providerRef

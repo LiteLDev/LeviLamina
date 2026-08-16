@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtcEventDtlsTransportState() /*override*/ = default;
+    virtual ~RtcEventDtlsTransportState() /*override*/;
 
     virtual ::webrtc::RtcEvent::Type GetType() const /*override*/;
 

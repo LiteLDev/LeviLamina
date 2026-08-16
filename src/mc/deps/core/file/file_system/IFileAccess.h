@@ -16,7 +16,7 @@ class IFileAccess : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFileAccess() /*override*/ = default;
+    virtual ~IFileAccess() /*override*/;
 
     virtual void* fopen(::Core::PathView filePath, ::std::string const& mode) = 0;
 

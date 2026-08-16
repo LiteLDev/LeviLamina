@@ -53,7 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FontAlias() /*override*/ = default;
+    virtual ~FontAlias() /*override*/;
 
     virtual float _getCharWidth(int uniChar, bool forceUnicode) /*override*/;
 
@@ -127,6 +127,12 @@ public:
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontReferenceForSheet(int const& sheet) const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontReferenceForUnicode(int const& character) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

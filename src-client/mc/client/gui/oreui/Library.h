@@ -96,12 +96,20 @@ public:
     MCAPI void initializeViewsCoordinator(::std::function<void(::std::string_view)> showDebugToast);
 
     MCAPI void update(double time);
+
+    MCAPI ~Library();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::cohtml::IVirtualAllocator>& mVirtualAllocator();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

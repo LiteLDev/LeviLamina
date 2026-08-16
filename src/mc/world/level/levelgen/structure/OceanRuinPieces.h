@@ -69,6 +69,34 @@ public:
         // NOLINTEND
 
     public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI OceanRuinPiece(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string                                     templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation,
+            float                                             integrity,
+            bool                                              isLarge,
+            ::OceanTempCategory                               type
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string                                     templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation,
+            float                                             integrity,
+            bool                                              isLarge,
+            ::OceanTempCategory                               type
+        );
+        // NOLINTEND
+
+    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI ::StructurePieceType $getType() const;

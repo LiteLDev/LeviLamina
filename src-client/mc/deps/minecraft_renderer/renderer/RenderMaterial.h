@@ -73,6 +73,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit RenderMaterial(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
 
+    MCAPI RenderMaterial(::mce::RenderMaterial const& parent);
+
     MCAPI ::mce::ActorMaterialVariation
     getActorVariation(::mce::MaterialRenderType renderType, bool pointLightShadingEnabled);
 
@@ -86,6 +88,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
+
+    MCAPI void* $ctor(::mce::RenderMaterial const& parent);
     // NOLINTEND
 
 public:

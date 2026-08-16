@@ -7,6 +7,18 @@
 
 namespace Editor::ScriptModule {
 
-struct ScriptPrefabErrorInvalidTemplate : public ::Scripting::BaseError {};
+struct ScriptPrefabErrorInvalidTemplate : public ::Scripting::BaseError {
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptPrefabErrorInvalidTemplate();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
+};
 
 } // namespace Editor::ScriptModule

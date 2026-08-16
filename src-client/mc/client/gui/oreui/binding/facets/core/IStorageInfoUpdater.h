@@ -13,7 +13,7 @@ class IStorageInfoUpdater {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IStorageInfoUpdater() = default;
+    virtual ~IStorageInfoUpdater();
 
     virtual bool update(
         bool&   supportsSizeQuery,

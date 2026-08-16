@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRequestAction() = default;
+    virtual ~IRequestAction();
 
     virtual void execute(::ServerLevel& level, ::Dimension& dimension) = 0;
 

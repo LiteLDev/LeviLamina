@@ -33,12 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~BlockPaletteItemChangedPayload() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~BlockPaletteItemChangedPayload() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:

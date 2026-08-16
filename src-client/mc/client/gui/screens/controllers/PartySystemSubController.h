@@ -61,7 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PartySystemSubController() /*override*/ = default;
+    virtual ~PartySystemSubController() /*override*/;
 
     virtual void
     handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg) /*override*/;

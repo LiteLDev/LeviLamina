@@ -21,9 +21,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScanSurfaceFeature() /*override*/ = default;
+    virtual ~ScanSurfaceFeature() /*override*/;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

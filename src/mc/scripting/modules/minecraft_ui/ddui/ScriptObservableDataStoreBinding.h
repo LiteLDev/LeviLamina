@@ -61,6 +61,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI
+    ScriptObservableDataStoreBinding(::IGameplayUserManagerConnector& userManagerConnector, ::ServerPlayer& player);
+
     MCNAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
     MCNAPI void bindObservable(
@@ -76,6 +79,12 @@ public:
     MCNAPI void unbindAll();
 
     MCNAPI void unbindObservable(::std::string const& property, ::std::string const& path);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::IGameplayUserManagerConnector& userManagerConnector, ::ServerPlayer& player);
     // NOLINTEND
 };
 

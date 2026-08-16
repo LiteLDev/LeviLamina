@@ -30,7 +30,7 @@ class VoiceEngineInterface : public ::webrtc::RtpHeaderExtensionQueryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VoiceEngineInterface() /*override*/ = default;
+    virtual ~VoiceEngineInterface() /*override*/;
 
     virtual void Init() = 0;
 

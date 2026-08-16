@@ -62,7 +62,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemStackNetManagerServer() /*override*/ = default;
+    virtual ~ItemStackNetManagerServer() /*override*/;
 
     virtual ::ItemStackRequestId getRequestId() const /*override*/;
 
@@ -114,6 +114,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ServerPlayer& serverPlayer, bool isEnabled);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

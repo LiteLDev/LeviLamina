@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandOrigin() = default;
+    virtual ~CommandOrigin();
 
     virtual ::std::string const& getRequestId() const = 0;
 
@@ -134,6 +134,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

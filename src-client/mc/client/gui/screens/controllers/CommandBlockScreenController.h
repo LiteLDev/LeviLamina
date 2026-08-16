@@ -49,7 +49,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandBlockScreenController() /*override*/ = default;
+    virtual ~CommandBlockScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 

@@ -17,12 +17,18 @@ class BackgroundRenderer : public ::MinecraftUICustomRenderer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BackgroundRenderer() /*override*/ = default;
+    virtual ~BackgroundRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
     virtual void
     render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl&, int) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

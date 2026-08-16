@@ -22,7 +22,7 @@ class IPlayerDimensionTransferer : public ::IPlayerDimensionTransferConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPlayerDimensionTransferer() = default;
+    virtual ~IPlayerDimensionTransferer();
 
     virtual void playerSaveLimboActors(
         ::Player&                  player,

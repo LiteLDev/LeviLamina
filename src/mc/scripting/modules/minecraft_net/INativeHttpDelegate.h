@@ -15,7 +15,7 @@ class INativeHttpDelegate {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~INativeHttpDelegate() = default;
+    virtual ~INativeHttpDelegate();
 
     virtual bool isInitialized() const = 0;
 

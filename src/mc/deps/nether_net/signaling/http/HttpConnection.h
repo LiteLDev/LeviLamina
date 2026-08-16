@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HttpConnection() /*override*/ = default;
+    virtual ~HttpConnection() /*override*/;
     // NOLINTEND
 
 public:

@@ -53,7 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorScriptingFacet() /*override*/ = default;
+    virtual ~EditorScriptingFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -98,6 +98,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

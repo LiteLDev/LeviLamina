@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StreamFeedbackObserver() = default;
+    virtual ~StreamFeedbackObserver();
 
     virtual void OnPacketFeedbackVector(
         ::std::vector<::webrtc::StreamFeedbackObserver::StreamPacketInfo> packet_feedback_vector

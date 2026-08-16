@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FriendsListFacet() /*override*/ = default;
+    virtual ~FriendsListFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -97,6 +97,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>      userManager,
         ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>      partyProvider
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

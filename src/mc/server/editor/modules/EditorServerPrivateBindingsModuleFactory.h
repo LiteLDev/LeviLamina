@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorServerPrivateBindingsModuleFactory() /*override*/ = default;
+    virtual ~EditorServerPrivateBindingsModuleFactory() /*override*/;
     // NOLINTEND
 
 public:
@@ -58,6 +58,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& managerServices);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

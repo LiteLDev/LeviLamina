@@ -602,7 +602,7 @@ public:
     // NOLINTBEGIN
     virtual void initialize() /*override*/;
 
-    virtual ~MinecraftGame() /*override*/ = default;
+    virtual ~MinecraftGame() /*override*/;
 
     virtual bool stop() /*override*/;
 
@@ -1312,6 +1312,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit MinecraftGame(::MinecraftGameArguments&& args);
+
     MCAPI void _InitComplete();
 
     MCAPI void _LoadRendererAssets();
@@ -1707,6 +1709,12 @@ public:
     MCAPI void updateAudio(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client, ::Timer const& timer);
 
     MCAPI void updateGraphics(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client, ::Timer const& timer);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::MinecraftGameArguments&& args);
     // NOLINTEND
 
 public:

@@ -8,7 +8,7 @@ class IEnvironmentAttribute {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEnvironmentAttribute() = default;
+    virtual ~IEnvironmentAttribute();
 
     virtual void sanitize() = 0;
     // NOLINTEND

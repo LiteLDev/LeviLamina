@@ -39,7 +39,7 @@ public:
 
     virtual int AttachmentId() const = 0;
 
-    virtual ~RtpReceiverInternal() /*override*/;
+    virtual ~RtpReceiverInternal() /*override*/ = default;
     // NOLINTEND
 
 public:

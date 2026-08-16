@@ -13,7 +13,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TextureOffset() = default;
+    virtual ~TextureOffset();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

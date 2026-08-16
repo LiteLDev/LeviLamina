@@ -50,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BasicNetworkManager() /*override*/ = default;
+    virtual ~BasicNetworkManager() /*override*/;
 
     virtual void StartUpdating() /*override*/;
 

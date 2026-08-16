@@ -55,6 +55,13 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptItemStack(::ScriptModuleMinecraft::ScriptItemStack const&);
 
+    MCAPI ScriptItemStack(
+        ::Scripting::WeakLifetimeScope&                                                      scope,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeHandle,
+        int                                                                                  amount,
+        int                                                                                  data
+    );
+
     MCAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::UnsupportedAPIError>
     _validateDynamicProperty(
         ::std::string const&                                              key,
@@ -134,6 +141,13 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStack const&);
+
+    MCAPI void* $ctor(
+        ::Scripting::WeakLifetimeScope&                                                      scope,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeHandle,
+        int                                                                                  amount,
+        int                                                                                  data
+    );
     // NOLINTEND
 
 public:

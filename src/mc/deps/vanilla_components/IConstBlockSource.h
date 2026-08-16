@@ -26,7 +26,7 @@ class IConstBlockSource {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IConstBlockSource() = default;
+    virtual ~IConstBlockSource();
 
     virtual ::Block const& getBlock(::BlockPos const& pos) const = 0;
 

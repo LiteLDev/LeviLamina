@@ -31,9 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI explicit ScriptGuidePlane(::Editor::GuidePlaneData const& data);
-#endif
+
+    MCNAPI ~ScriptGuidePlane();
     // NOLINTEND
 
 public:
@@ -45,9 +45,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Editor::GuidePlaneData const& data);
-#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

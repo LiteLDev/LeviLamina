@@ -13,7 +13,7 @@ class FieldTrialListWrapper {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FieldTrialListWrapper() = default;
+    virtual ~FieldTrialListWrapper();
 
     virtual void WriteElement(void*, int) = 0;
 

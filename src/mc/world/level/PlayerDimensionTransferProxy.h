@@ -22,7 +22,7 @@ class PlayerDimensionTransferProxy : public ::IPlayerDimensionTransferProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerDimensionTransferProxy() /*override*/ = default;
+    virtual ~PlayerDimensionTransferProxy() /*override*/;
 
     virtual void playerDimensionChangedEvent(
         ::Player&       player,
@@ -66,6 +66,12 @@ public:
     hasSubChunksAt(::Player const& player, ::BlockPos const& min, ::BlockPos const& max) const /*override*/;
 
     virtual void transferTickingArea(::Actor& actor, ::Dimension& dimension) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

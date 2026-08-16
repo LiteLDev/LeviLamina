@@ -28,7 +28,7 @@ class GameModuleServer : public ::AppExtensions::AppExtensionsNonOwner {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameModuleServer() /*override*/ = default;
+    virtual ~GameModuleServer() /*override*/;
 
     virtual void init(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level) = 0;
 

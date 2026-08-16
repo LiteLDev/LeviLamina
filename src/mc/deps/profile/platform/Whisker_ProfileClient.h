@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Whisker_ProfileClient() /*override*/ = default;
+    virtual ~Whisker_ProfileClient() /*override*/;
 
     virtual void onFrameTransition(uchar previousFrameType) /*override*/;
 
@@ -94,6 +94,12 @@ public:
         ::std::thread::id                     thread
     ) const;
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

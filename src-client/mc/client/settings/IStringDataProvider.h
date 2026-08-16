@@ -11,7 +11,7 @@ class IStringDataProvider : public ::Settings::IDataProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IStringDataProvider() /*override*/ = default;
+    virtual ~IStringDataProvider() /*override*/;
 
     virtual ::std::string getValue() const = 0;
 

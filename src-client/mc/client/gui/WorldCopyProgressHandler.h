@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldCopyProgressHandler() /*override*/ = default;
+    virtual ~WorldCopyProgressHandler() /*override*/;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -91,6 +91,12 @@ public:
         ::std::function<void(::LevelData&)>                       setDataCallback,
         ::std::function<void(::WorldCopyProgressHandler::Result)> onCompleteCallback
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

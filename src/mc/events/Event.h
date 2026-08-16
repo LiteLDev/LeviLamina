@@ -47,14 +47,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI Event(
         uint                                                              id,
         ::std::string const&                                              eventName,
         ::std::unordered_map<::std::string, ::Social::Events::Property>&& commonProperties,
         int                                                               eventTags
     );
-#endif
 
     MCNAPI bool _areUniquePropertiesEqual(::Social::Events::Event const& other) const;
 
@@ -66,30 +64,26 @@ public:
     MCNAPI ::Json::Value measurementsAsJsonValue() const;
 
     MCNAPI ::Json::Value propertiesAsJsonValue() const;
+#endif
 
     MCNAPI ~Event();
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(
         uint                                                              id,
         ::std::string const&                                              eventName,
         ::std::unordered_map<::std::string, ::Social::Events::Property>&& commonProperties,
         int                                                               eventTags
     );
-#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

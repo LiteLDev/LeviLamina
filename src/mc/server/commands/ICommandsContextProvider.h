@@ -16,7 +16,7 @@ class ICommandsContextProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ICommandsContextProvider() = default;
+    virtual ~ICommandsContextProvider();
 
     virtual ::ILevel* getLevel() = 0;
 

@@ -38,9 +38,15 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Duration() = default;
+        virtual ~Duration();
 
         virtual void reset();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -144,6 +150,10 @@ public:
     MCNAPI PerfContextTracker();
 
 #ifdef LL_PLAT_C
+    MCNAPI bool _tryBeginContext(::std::string const& contextName, ::std::chrono::steady_clock::time_point const& now);
+
+    MCNAPI void _tryEndContext(::std::chrono::steady_clock::time_point const& now);
+
     MCNAPI void clear();
 
     MCNAPI void onAppResume();

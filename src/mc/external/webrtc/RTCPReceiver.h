@@ -63,7 +63,7 @@ public:
 
         virtual void OnReceivedRtcpReportBlocks(::webrtc::ArrayView<::webrtc::ReportBlockData const> report_blocks) = 0;
 
-        virtual ~ModuleRtpRtcp() = default;
+        virtual ~ModuleRtpRtcp();
         // NOLINTEND
     };
 

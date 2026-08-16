@@ -35,11 +35,26 @@ public:
     ScriptTickingAreaError();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptTickingAreaError(
+        ::std::string const&                                    message,
+        ::ScriptModuleMinecraft::ScriptTickingAreaError::Reason reason
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
 
     MCAPI static ::Scripting::EnumBinding bindReasonEnum();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& message, ::ScriptModuleMinecraft::ScriptTickingAreaError::Reason reason);
     // NOLINTEND
 };
 

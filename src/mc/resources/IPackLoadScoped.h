@@ -6,6 +6,6 @@ struct IPackLoadScoped {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPackLoadScoped() = default;
+    virtual ~IPackLoadScoped();
     // NOLINTEND
 };

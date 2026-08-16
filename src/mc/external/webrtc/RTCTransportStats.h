@@ -51,7 +51,7 @@ public:
 
     virtual char const* type() const /*override*/;
 
-    virtual ~RTCTransportStats() /*override*/ = default;
+    virtual ~RTCTransportStats() /*override*/;
     // NOLINTEND
 
 public:

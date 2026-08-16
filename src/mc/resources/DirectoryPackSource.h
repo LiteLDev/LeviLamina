@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DirectoryPackSource() /*override*/ = default;
+    virtual ~DirectoryPackSource() /*override*/;
 
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
@@ -51,6 +51,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit DirectoryPackSource(::DirectoryPackSourceOptions options);
+
     MCAPI void deleteAllPacksAndReset();
     // NOLINTEND
 
@@ -64,6 +66,12 @@ public:
         ::IPackIOProvider const& io,
         bool                     saveEncryptedWorldTemplatePacksAsZips
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::DirectoryPackSourceOptions options);
     // NOLINTEND
 
 public:

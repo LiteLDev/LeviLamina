@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Int64Option() /*override*/ = default;
+    virtual ~Int64Option() /*override*/;
 
     virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>&) /*override*/;
 

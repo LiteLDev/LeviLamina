@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RegisteredResourceHandler() /*override*/ = default;
+    virtual ~RegisteredResourceHandler() /*override*/;
 
     virtual ::Gameface::ResourceHandlerStatus
     onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
@@ -49,6 +49,12 @@ public:
     ) /*override*/;
 
     virtual void update() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

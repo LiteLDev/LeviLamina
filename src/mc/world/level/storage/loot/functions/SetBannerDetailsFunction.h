@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetBannerDetailsFunction() /*override*/ = default;
+    virtual ~SetBannerDetailsFunction() /*override*/;
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
@@ -53,6 +53,12 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     _parseBannerPattern(::std::vector<::std::pair<uchar, ::ItemColor>>& patternVec, ::Json::Value const& object);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

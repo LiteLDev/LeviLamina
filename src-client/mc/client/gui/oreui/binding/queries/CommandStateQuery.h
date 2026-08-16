@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandStateQuery() /*override*/ = default;
+    virtual ~CommandStateQuery() /*override*/;
     // NOLINTEND
 
 public:

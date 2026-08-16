@@ -11,7 +11,7 @@ class IAddActorEntityProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAddActorEntityProxy() = default;
+    virtual ~IAddActorEntityProxy();
 
     virtual void initializeActor(::Actor& actor) = 0;
 

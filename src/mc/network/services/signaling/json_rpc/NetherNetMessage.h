@@ -41,6 +41,18 @@ public:
     NetherNetMessage& operator=(NetherNetMessage const&);
     NetherNetMessage(NetherNetMessage const&);
     NetherNetMessage();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI NetherNetMessage(::std::string netherNetId, ::std::string message);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string netherNetId, ::std::string message);
+    // NOLINTEND
 };
 
 } // namespace JsonRpc

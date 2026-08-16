@@ -100,7 +100,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PackSettingsFactory() = default;
+    virtual ~PackSettingsFactory();
 
     virtual uint64 getAccessTimestamp() const;
     // NOLINTEND
@@ -161,6 +161,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(uint64 maxGlobalPackSettingEntriesPerFile, ::std::optional<::Core::PathView> globalPathRoot);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -73,6 +73,18 @@ public:
     public:
         // prevent constructor by default
         DropdownOption();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI DropdownOption(::std::string label, int value);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::std::string label, int value);
+        // NOLINTEND
     };
 
     struct ChatSelection {
@@ -125,7 +137,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerReportFacet() /*override*/ = default;
+    virtual ~PlayerReportFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -165,6 +177,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&    clientInstance,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

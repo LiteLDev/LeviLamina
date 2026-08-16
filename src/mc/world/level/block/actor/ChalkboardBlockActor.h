@@ -108,7 +108,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChalkboardBlockActor() /*override*/ = default;
+    virtual ~ChalkboardBlockActor() /*override*/;
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
@@ -189,6 +189,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

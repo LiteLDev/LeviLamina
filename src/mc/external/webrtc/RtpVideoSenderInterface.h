@@ -56,7 +56,7 @@ public:
 
     virtual void SetFecAllowed(bool fec_allowed) = 0;
 
-    virtual ~RtpVideoSenderInterface() /*override*/;
+    virtual ~RtpVideoSenderInterface() /*override*/ = default;
     // NOLINTEND
 
 public:

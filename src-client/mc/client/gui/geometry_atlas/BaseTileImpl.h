@@ -17,6 +17,18 @@ class BaseTileImpl : public ::GeometryAtlas::CommandDispatcher {
 public:
     // prevent constructor by default
     BaseTileImpl();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BaseTileImpl(::GeometryAtlas::CommandDispatcherArgs&& args, ::GeometryAtlas::InsertTilePayload payload);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::GeometryAtlas::CommandDispatcherArgs&& args, ::GeometryAtlas::InsertTilePayload payload);
+    // NOLINTEND
 };
 
 } // namespace GeometryAtlas

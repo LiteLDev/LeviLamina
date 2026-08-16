@@ -28,6 +28,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PackModel() = default;
+    virtual ~PackModel();
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PackModel(::std::shared_ptr<::Pack const> pack, ::std::string const& subpackName);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::Pack const> pack, ::std::string const& subpackName);
     // NOLINTEND
 };

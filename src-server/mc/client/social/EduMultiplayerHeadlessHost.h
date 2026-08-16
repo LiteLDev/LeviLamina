@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EduMultiplayerHeadlessHost() /*override*/ = default;
+    virtual ~EduMultiplayerHeadlessHost() /*override*/;
 
     virtual void hostServer() /*override*/;
 

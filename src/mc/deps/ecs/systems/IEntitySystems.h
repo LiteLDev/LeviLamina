@@ -18,7 +18,7 @@ class IEntitySystems {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEntitySystems() = default;
+    virtual ~IEntitySystems();
 
     virtual void registerTickingSystem(
         ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,
@@ -32,5 +32,11 @@ public:
     virtual void tickMovementCatchup(::EntityRegistry& registry) = 0;
 
     virtual void tickMovementCorrectionReplay(::EntityRegistry& registry) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

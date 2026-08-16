@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SubmitFeedbackScreenController() /*override*/ = default;
+    virtual ~SubmitFeedbackScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

@@ -48,7 +48,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~DataChannel() /*override*/ = default;
+        virtual ~DataChannel() /*override*/;
 
         virtual void OnStateChange() /*override*/;
 
@@ -62,11 +62,27 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI DataChannel(
+            ::NetherNet::ContextProxy const&                              ctx,
+            ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose,
+            ::brstd::move_only_function<void(uchar const*, uint64)>       onData
+        );
+
         MCNAPI void _trySend();
 
         MCNAPI void send(::webrtc::CopyOnWriteBuffer buffer);
 
         MCNAPI void setChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface> channel);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(
+            ::NetherNet::ContextProxy const&                              ctx,
+            ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose,
+            ::brstd::move_only_function<void(uchar const*, uint64)>       onData
+        );
         // NOLINTEND
 
     public:
@@ -104,7 +120,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PacketQueue(
+        ::NetherNet::ContextProxy const&                              ctx,
+        ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose
+    );
+
     MCNAPI void _sendFragment(uchar header, uchar const* payload, uint64 payloadSize, ::NetherNet::ESendType type);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::NetherNet::ContextProxy const& ctx, ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose);
     // NOLINTEND
 };
 

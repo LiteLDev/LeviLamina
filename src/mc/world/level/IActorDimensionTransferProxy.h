@@ -14,7 +14,7 @@ class IActorDimensionTransferProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IActorDimensionTransferProxy() = default;
+    virtual ~IActorDimensionTransferProxy();
 
     virtual void transferTickingArea(::Actor& actor, ::Dimension& dimension) const = 0;
 

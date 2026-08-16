@@ -21,7 +21,7 @@ class ScriptNpcComponentFactory
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptNpcComponentFactory() /*override*/ = default;
+    virtual ~ScriptNpcComponentFactory() /*override*/;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent> createComponent(
         ::WeakEntityRef                       entity,
@@ -30,6 +30,12 @@ public:
     ) /*override*/;
 
     virtual bool hasComponent(::WeakEntityRef entity) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

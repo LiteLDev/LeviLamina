@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AddPlayerPacket() /*override*/ = default;
+    virtual ~AddPlayerPacket() /*override*/;
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
@@ -79,6 +79,12 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::Player& p);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

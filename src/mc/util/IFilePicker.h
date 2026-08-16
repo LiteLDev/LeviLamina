@@ -12,7 +12,7 @@ class IFilePicker {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFilePicker() = default;
+    virtual ~IFilePicker();
 
     virtual void initFilePick(::Core::Path const& filePath, ::std::function<void(bool, ::FileInfo)> callback) = 0;
 

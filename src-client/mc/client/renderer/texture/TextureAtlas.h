@@ -70,7 +70,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TextureAtlas() /*override*/ = default;
+    virtual ~TextureAtlas() /*override*/;
     // NOLINTEND
 
 public:
@@ -162,5 +162,11 @@ public:
         ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> pbrTextureDataManager,
         ::TextureAtlas::PaddingMode                                            paddingMode
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

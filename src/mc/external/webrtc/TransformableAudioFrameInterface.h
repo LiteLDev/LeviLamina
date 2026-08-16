@@ -20,7 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TransformableAudioFrameInterface() /*override*/ = default;
+    virtual ~TransformableAudioFrameInterface() /*override*/;
 
     virtual ::webrtc::ArrayView<uint const> GetContributingSources() const = 0;
 

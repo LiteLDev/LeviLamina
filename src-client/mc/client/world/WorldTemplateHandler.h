@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldTemplateHandler() /*override*/ = default;
+    virtual ~WorldTemplateHandler() /*override*/;
 
     virtual void loadTemplate(
         ::std::string const&                                                                            templateId,
@@ -55,6 +55,12 @@ public:
     virtual bool isTemplateExportEnabled() const /*override*/;
 
     virtual ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& getLocalTemplates() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

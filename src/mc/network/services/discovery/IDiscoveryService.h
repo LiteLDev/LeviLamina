@@ -17,7 +17,7 @@ class IDiscoveryService {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDiscoveryService() = default;
+    virtual ~IDiscoveryService();
 
     virtual ::Bedrock::Threading::CachedAsync<::std::shared_ptr<::Bedrock::Services::EnvironmentQueryResponse const>>
     getServiceEndpoints() const = 0;

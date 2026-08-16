@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelChunkSaveManagerProxy() /*override*/ = default;
+    virtual ~LevelChunkSaveManagerProxy() /*override*/;
 
     virtual ::WeakRef<::Dimension> getRandomDimension(::DimensionManager& dimensionManager) const /*override*/;
 
@@ -61,6 +61,12 @@ public:
     virtual void queueTaskForChunkSave(::brstd::move_only_function<::TaskResult()>&& task) /*override*/;
 
     virtual void startLeaveGame() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

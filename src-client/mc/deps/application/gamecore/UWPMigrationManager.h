@@ -65,11 +65,35 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~MoveOperation() = default;
+        virtual ~MoveOperation();
 
         virtual ::Core::Result migrate(bool forceCritical) const = 0;
 
         virtual void cleanup() const = 0;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI MoveOperation(
+            bool                                       critical,
+            uchar                                      maxRetries,
+            ::Core::PathBuffer<::std::string> const&   srcPath,
+            ::Core::PathBuffer<::std::string> const&   dstPath,
+            ::UWPMigrationManager::MoveOperation::Type opType
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(
+            bool                                       critical,
+            uchar                                      maxRetries,
+            ::Core::PathBuffer<::std::string> const&   srcPath,
+            ::Core::PathBuffer<::std::string> const&   dstPath,
+            ::UWPMigrationManager::MoveOperation::Type opType
+        );
         // NOLINTEND
     };
 

@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Signaler() /*override*/ = default;
+    virtual ~Signaler() /*override*/;
 
     virtual void Signal();
 

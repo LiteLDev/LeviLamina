@@ -14,7 +14,7 @@ struct IBiomeComponentGlue {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBiomeComponentGlue() = default;
+    virtual ~IBiomeComponentGlue();
 
     virtual bool
     resolveAndValidate(::entt::meta_any const& biomeJsonComponent, ::BiomeRegistry const& biomeRegistry) = 0;

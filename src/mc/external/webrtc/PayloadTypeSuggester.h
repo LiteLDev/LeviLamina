@@ -18,7 +18,7 @@ class PayloadTypeSuggester {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PayloadTypeSuggester() = default;
+    virtual ~PayloadTypeSuggester();
 
     virtual ::webrtc::RTCErrorOr<::webrtc::PayloadType>
     SuggestPayloadType(::std::string const& mid, ::webrtc::Codec codec) = 0;

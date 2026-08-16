@@ -15,7 +15,7 @@ class NpcEventListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NpcEventListener() = default;
+    virtual ~NpcEventListener();
 
     virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> data);
 

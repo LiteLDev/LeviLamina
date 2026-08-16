@@ -16,13 +16,19 @@ class ScriptItemDurabilityComponent : public ::ScriptModuleMinecraft::ScriptItem
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptItemDurabilityComponent() /*override*/ = default;
+    virtual ~ScriptItemDurabilityComponent() /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -40,5 +40,13 @@ public:
         ::Social::Events::PrivacyTagEnterprise privacyTag
     ) const;
 #endif
+
+    MCNAPI ~DBStorageFolderWatcher();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

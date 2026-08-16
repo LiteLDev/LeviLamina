@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISignalingServiceConfigProvider() /*override*/ = default;
+    virtual ~ISignalingServiceConfigProvider() /*override*/;
 
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl(::std::string const& id) = 0;
 

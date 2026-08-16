@@ -61,7 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PointLightShadowProbeManager() /*override*/ = default;
+    virtual ~PointLightShadowProbeManager() /*override*/;
 
     virtual bool atCapacity() const /*override*/;
 

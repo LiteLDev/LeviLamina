@@ -20,7 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenControllerProxy() = default;
+    virtual ~ScreenControllerProxy();
 
     virtual ::std::shared_ptr<::MainMenuScreenModel> getMainMenuScreenModel();
     // NOLINTEND

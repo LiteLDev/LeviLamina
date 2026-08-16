@@ -12,7 +12,7 @@ public:
 
     virtual void OnToneChange(::std::string const&);
 
-    virtual ~DtmfSenderObserverInterface() = default;
+    virtual ~DtmfSenderObserverInterface();
     // NOLINTEND
 };
 

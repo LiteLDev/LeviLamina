@@ -131,7 +131,7 @@ public:
 
     virtual ::webrtc::TaskQueueBase* worker_thread() const = 0;
 
-    virtual ~Call() = default;
+    virtual ~Call();
     // NOLINTEND
 };
 

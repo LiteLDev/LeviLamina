@@ -76,7 +76,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptTickingAreaManager() /*override*/ = default;
+    virtual ~ScriptTickingAreaManager() /*override*/;
 
     virtual ::EventResult onEvent(::LevelTickingAreaFinishedLoadingEvent const& event) /*override*/;
     // NOLINTEND
@@ -96,6 +96,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

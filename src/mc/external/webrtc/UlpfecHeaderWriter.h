@@ -13,7 +13,7 @@ class UlpfecHeaderWriter : public ::webrtc::FecHeaderWriter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UlpfecHeaderWriter() /*override*/ = default;
+    virtual ~UlpfecHeaderWriter() /*override*/;
 
     virtual uint64 MinPacketMaskSize(uchar const*, uint64 packet_mask_size) const /*override*/;
 

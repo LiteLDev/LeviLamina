@@ -14,7 +14,7 @@ class ILifetimeObjectListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILifetimeObjectListener() = default;
+    virtual ~ILifetimeObjectListener();
 
     virtual void
     onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint) = 0;

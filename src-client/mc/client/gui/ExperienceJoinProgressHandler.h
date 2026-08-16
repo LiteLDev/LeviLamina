@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ExperienceJoinProgressHandler() /*override*/ = default;
+    virtual ~ExperienceJoinProgressHandler() /*override*/;
 
     virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
@@ -68,6 +68,12 @@ public:
         ::std::function<void()>       cancelCallback,
         ::std::shared_ptr<bool const> joinRequestComplete
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

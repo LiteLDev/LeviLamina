@@ -10,13 +10,19 @@ class FakeThermalMonitorInterface : public ::ThermalMonitorInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FakeThermalMonitorInterface() /*override*/ = default;
+    virtual ~FakeThermalMonitorInterface() /*override*/;
 
     virtual ::ThermalState getThermalState() const /*override*/;
 
     virtual float getThermalValueCelsius() const /*override*/;
 
     virtual bool isLowBatteryModeEnabled() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

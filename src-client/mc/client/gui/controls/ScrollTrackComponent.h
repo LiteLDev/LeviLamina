@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScrollTrackComponent() /*override*/ = default;
+    virtual ~ScrollTrackComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -37,6 +37,12 @@ public:
         ::UIAnimationController& animationController,
         ::ScreenEvent const&     screenEvent
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

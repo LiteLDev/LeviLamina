@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TransformableFrameInterface() = default;
+    virtual ~TransformableFrameInterface();
 
     virtual ::webrtc::ArrayView<uchar const> GetData() const = 0;
 

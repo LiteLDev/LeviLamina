@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FeaturedWorldTemplateManager() /*override*/ = default;
+    virtual ~FeaturedWorldTemplateManager() /*override*/;
     // NOLINTEND
 
 public:
@@ -71,6 +71,12 @@ public:
         ::ServicesManager&                                       servicesManager,
         ::MarketplaceServicesManager&                            marketplaceServicesManager
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

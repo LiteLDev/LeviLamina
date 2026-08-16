@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContentLogFileDeleteProgressHandler() /*override*/ = default;
+    virtual ~ContentLogFileDeleteProgressHandler() /*override*/;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -63,6 +63,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ContentLogFileDeleteProgressHandler::FileDeleteTarget target);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

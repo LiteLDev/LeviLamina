@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldConversionCompleteScreenController() /*override*/ = default;
+    virtual ~WorldConversionCompleteScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
     // NOLINTEND
@@ -51,6 +51,12 @@ public:
         ::std::string const&                              levelId,
         ::std::function<void()>                           cancelCallback
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

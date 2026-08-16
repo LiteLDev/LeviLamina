@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftHandlerBase() = default;
+    virtual ~CraftHandlerBase();
 
     virtual ::ItemStackNetResult handleConsumedItem(
         ::FullContainerName const& openContainerNetId,
@@ -66,6 +66,12 @@ public:
     handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction, ::ItemStackNetResult currentResult);
 
     MCAPI void postRequest(bool wasSuccess);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

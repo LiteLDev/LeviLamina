@@ -43,7 +43,7 @@ public:
 
     virtual ::webrtc::Socket* Accept(::webrtc::SocketAddress* paddr) /*override*/;
 
-    virtual ~SSLAdapter() /*override*/;
+    virtual ~SSLAdapter() /*override*/ = default;
     // NOLINTEND
 
 public:

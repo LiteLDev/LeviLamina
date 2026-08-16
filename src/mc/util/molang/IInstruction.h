@@ -13,7 +13,7 @@ class IInstruction {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IInstruction() = default;
+    virtual ~IInstruction();
 
     virtual ::Molang::details::IInstruction* cloneAt(void*) const = 0;
 

@@ -11,7 +11,7 @@ class ResourcePackMergeStrategy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourcePackMergeStrategy() = default;
+    virtual ~ResourcePackMergeStrategy();
 
     virtual void mergeFiles(::std::vector<::LoadedResourceData> const& fileStack) = 0;
     // NOLINTEND

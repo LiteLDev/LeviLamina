@@ -26,7 +26,51 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI GraphicsOverrideParameterPacketPayload(
+        ::GraphicsOverrideParameterType       inParamId,
+        ::std::string const&                  biomeId,
+        ::std::optional<::std::string> const& playerId
+    );
+
+    MCAPI GraphicsOverrideParameterPacketPayload(
+        ::GraphicsOverrideParameterType       paramId,
+        float                                 floatValue,
+        ::std::string const&                  biomeId,
+        ::std::optional<::std::string> const& playerId
+    );
+
+    MCAPI GraphicsOverrideParameterPacketPayload(
+        ::GraphicsOverrideParameterType       paramId,
+        ::std::unordered_map<float, ::Vec3>&& keyframes,
+        ::std::string const&                  biomeId,
+        ::std::optional<::std::string> const& playerId
+    );
+
     MCAPI ~GraphicsOverrideParameterPacketPayload();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::GraphicsOverrideParameterType       inParamId,
+        ::std::string const&                  biomeId,
+        ::std::optional<::std::string> const& playerId
+    );
+
+    MCAPI void* $ctor(
+        ::GraphicsOverrideParameterType       paramId,
+        float                                 floatValue,
+        ::std::string const&                  biomeId,
+        ::std::optional<::std::string> const& playerId
+    );
+
+    MCAPI void* $ctor(
+        ::GraphicsOverrideParameterType       paramId,
+        ::std::unordered_map<float, ::Vec3>&& keyframes,
+        ::std::string const&                  biomeId,
+        ::std::optional<::std::string> const& playerId
+    );
     // NOLINTEND
 
 public:

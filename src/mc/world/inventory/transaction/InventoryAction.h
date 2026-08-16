@@ -31,6 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI InventoryAction();
+
     MCAPI InventoryAction(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
 
     MCAPI ::InventoryAction& operator=(::InventoryAction const&);
@@ -43,6 +45,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
     // NOLINTEND
 

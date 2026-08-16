@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SelectionServiceServer() /*override*/ = default;
+    virtual ~SelectionServiceServer() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

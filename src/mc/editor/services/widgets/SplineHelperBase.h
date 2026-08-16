@@ -13,7 +13,7 @@ class SplineHelperBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SplineHelperBase() = default;
+    virtual ~SplineHelperBase();
 
     virtual ::std::optional<::std::vector<::Vec3>> calculateInterpolatedPoints(
         ::std::vector<::Vec3> const& controlPoints,

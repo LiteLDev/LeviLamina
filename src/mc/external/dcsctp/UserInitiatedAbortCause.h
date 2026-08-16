@@ -35,7 +35,7 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~UserInitiatedAbortCause() /*override*/;
+    virtual ~UserInitiatedAbortCause() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -14,7 +14,7 @@ class IContentTierManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IContentTierManager() /*override*/ = default;
+    virtual ~IContentTierManager() /*override*/;
 
     virtual ::ContentTierInfo getContentTierInfo() const = 0;
 

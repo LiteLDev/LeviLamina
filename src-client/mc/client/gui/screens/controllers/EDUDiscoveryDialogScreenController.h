@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUDiscoveryDialogScreenController() /*override*/ = default;
+    virtual ~EDUDiscoveryDialogScreenController() /*override*/;
     // NOLINTEND
 
 public:
@@ -50,5 +50,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::EDUDiscoveryDialogCallbacks callbacks);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

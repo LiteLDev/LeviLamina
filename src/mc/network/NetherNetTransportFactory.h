@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetherNetTransportFactory() = default;
+    virtual ~NetherNetTransportFactory();
 
     virtual ::std::unique_ptr<
         ::NetherNet::INetherNetTransportInterface,
@@ -45,6 +45,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI static void setLoggingVerbosity(::Option const& loggingOption);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

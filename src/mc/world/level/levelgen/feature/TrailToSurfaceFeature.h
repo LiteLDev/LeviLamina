@@ -44,6 +44,30 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TrailToSurfaceFeature(
+        ::std::string const&                                                       feature,
+        ::HashedString const&                                                      hangingBlock,
+        ::HashedString const&                                                      trailBlock,
+        ::std::vector<::std::reference_wrapper<::HashedString const>> const&       replaceableBlocks,
+        ::brstd::function_ref<bool(::IBlockWorldGenAPI const&, ::BlockPos const&)> isValidFeaturePos
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&                                                       feature,
+        ::HashedString const&                                                      hangingBlock,
+        ::HashedString const&                                                      trailBlock,
+        ::std::vector<::std::reference_wrapper<::HashedString const>> const&       replaceableBlocks,
+        ::brstd::function_ref<bool(::IBlockWorldGenAPI const&, ::BlockPos const&)> isValidFeaturePos
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;

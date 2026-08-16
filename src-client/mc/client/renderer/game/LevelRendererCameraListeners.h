@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelRendererCameraListeners() /*override*/ = default;
+    virtual ~LevelRendererCameraListeners() /*override*/;
 
     virtual void onWillChangeDimension(::Player& player) /*override*/;
 
@@ -42,6 +42,19 @@ public:
     virtual void onChunkReloaded(::ChunkSource&, ::LevelChunk& lc) /*override*/;
 
     virtual void updateLevelCullerType(::LevelCullerType const newLevelCullerType) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI
+    LevelRendererCameraListeners(::IClientInstance& clientInstance, ::Level& level, ::LevelRenderer& levelRenderer);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::IClientInstance& clientInstance, ::Level& level, ::LevelRenderer& levelRenderer);
     // NOLINTEND
 
 public:

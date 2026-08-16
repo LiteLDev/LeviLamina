@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ICommandGroup() = default;
+    virtual ~ICommandGroup();
 
     virtual char const* const name() const = 0;
 

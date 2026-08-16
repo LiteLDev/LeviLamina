@@ -19,7 +19,7 @@ class UnzipFile {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UnzipFile() = default;
+    virtual ~UnzipFile();
 
     virtual ::Core::ZipUtils::UnzipResult locateFile(char const* fileName, int caseSensitivity) = 0;
 

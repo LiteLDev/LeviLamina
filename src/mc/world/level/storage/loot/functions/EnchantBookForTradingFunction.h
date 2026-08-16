@@ -46,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EnchantBookForTradingFunction() /*override*/ = default;
+    virtual ~EnchantBookForTradingFunction() /*override*/;
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
 
@@ -65,6 +65,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<::EnchantmentInstance> _trySelectEnchantmentFromOptions(::Random& random) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

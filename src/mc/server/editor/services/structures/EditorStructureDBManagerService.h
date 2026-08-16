@@ -53,7 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorStructureDBManagerService() /*override*/ = default;
+    virtual ~EditorStructureDBManagerService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

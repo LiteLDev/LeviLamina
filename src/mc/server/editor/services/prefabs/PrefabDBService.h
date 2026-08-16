@@ -61,7 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PrefabDBService() /*override*/ = default;
+    virtual ~PrefabDBService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

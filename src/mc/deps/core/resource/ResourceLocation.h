@@ -61,6 +61,10 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ResourceLocation(::Core::PathView path);
 
+#ifdef LL_PLAT_C
+    MCAPI ResourceLocation(::ResourceLocation const& rhs);
+#endif
+
     MCAPI ResourceLocation(::Core::PathView path, ::ResourceFileSystem fileSystem);
 
     MCAPI ::Core::PathBuffer<::std::string> getFullPath() const;
@@ -80,6 +84,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Core::PathView path);
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ResourceLocation const& rhs);
+#endif
 
     MCAPI void* $ctor(::Core::PathView path, ::ResourceFileSystem fileSystem);
     // NOLINTEND

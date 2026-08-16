@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MultifaceSpreader() = default;
+    virtual ~MultifaceSpreader();
 
     virtual bool _canSpreadFrom(::Block const& block, uchar const facing) const;
 

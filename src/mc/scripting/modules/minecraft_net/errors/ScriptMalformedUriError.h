@@ -20,9 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI explicit ScriptMalformedUriError(::std::string message);
-#endif
     // NOLINTEND
 
 public:
@@ -34,9 +32,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI void* $ctor(::std::string message);
-#endif
     // NOLINTEND
 };
 

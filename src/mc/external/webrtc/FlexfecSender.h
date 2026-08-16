@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FlexfecSender() /*override*/ = default;
+    virtual ~FlexfecSender() /*override*/;
 
     virtual ::webrtc::VideoFecGenerator::FecType GetFecType() const /*override*/;
 

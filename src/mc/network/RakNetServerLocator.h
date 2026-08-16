@@ -62,6 +62,18 @@ public:
         // prevent constructor by default
         AnnounceServerData& operator=(AnnounceServerData const&);
         AnnounceServerData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI AnnounceServerData(::RakNetServerLocator::AnnounceServerData const& announceData);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::RakNetServerLocator::AnnounceServerData const& announceData);
+        // NOLINTEND
     };
 
     class NatHolePuncherFunctor {
@@ -181,7 +193,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RakNetServerLocator() /*override*/ = default;
+    virtual ~RakNetServerLocator() /*override*/;
 
     virtual void startAnnouncingServer(
         ::std::string const&                 playerName,
@@ -293,6 +305,12 @@ public:
         ::std::function<::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>()>
             createUniqueRakPeerFunc
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

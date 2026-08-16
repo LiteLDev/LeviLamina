@@ -71,6 +71,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptWorld(::ScriptModuleMinecraft::ScriptWorld&&);
+
+    MCAPI ScriptWorld(
+        ::Scripting::WeakLifetimeScope const&                scope,
+        ::gsl::not_null<::ServerLevel*>                      level,
+        ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners,
+        ::Scripting::DependencyLocator&                      locator,
+        ::Scripting::ContextConfig const&                    config,
+        ::Scripting::Version                                 serverModuleVersion
+    );
+
     MCAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> _playOrQueueMusic(
         ::std::string const&                                         trackID,
         ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions,
@@ -123,6 +134,21 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptWorld&&);
+
+    MCAPI void* $ctor(
+        ::Scripting::WeakLifetimeScope const&                scope,
+        ::gsl::not_null<::ServerLevel*>                      level,
+        ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners,
+        ::Scripting::DependencyLocator&                      locator,
+        ::Scripting::ContextConfig const&                    config,
+        ::Scripting::Version                                 serverModuleVersion
+    );
     // NOLINTEND
 
 public:

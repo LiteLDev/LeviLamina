@@ -124,11 +124,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~ResourcePackRepository() /*override*/;
-#else // LL_PLAT_C
-    virtual ~ResourcePackRepository() /*override*/ = default;
-#endif
 
     virtual void getResourcePacksByPackId(
         ::std::vector<::PackInstanceId> const& packInstanceIds,

@@ -11,7 +11,7 @@ class IBlockEventExecutor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBlockEventExecutor() = default;
+    virtual ~IBlockEventExecutor();
 
     virtual ::BlockEvents::EventType getEventType() const = 0;
     // NOLINTEND

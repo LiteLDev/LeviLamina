@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GroundedConstraint() /*override*/ = default;
+    virtual ~GroundedConstraint() /*override*/;
 
     virtual bool isSatisfied(
         ::IBlockWorldGenAPI const& target,
@@ -47,6 +47,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::StructureTemplate& structure, int groundLevel);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

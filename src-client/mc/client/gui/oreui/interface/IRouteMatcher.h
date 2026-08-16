@@ -14,7 +14,7 @@ class IRouteMatcher {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRouteMatcher() = default;
+    virtual ~IRouteMatcher();
 
     virtual void navigateTo(::std::string const& route, ::OreUI::RouteHistoryAction action) const = 0;
 

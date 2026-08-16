@@ -93,9 +93,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WorldClock();
+
 #ifdef LL_PLAT_C
     MCAPI explicit WorldClock(::WorldClockData const& data);
 #endif
+
+    MCAPI WorldClock(::WorldClock const& rhs);
 
     MCAPI void _sendAddTimeMarker(::PacketSender& packetSender) const;
 
@@ -121,9 +125,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::WorldClockData const& data);
 #endif
+
+    MCAPI void* $ctor(::WorldClock const& rhs);
     // NOLINTEND
 
 public:

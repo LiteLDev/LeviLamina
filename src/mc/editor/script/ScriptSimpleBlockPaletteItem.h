@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptSimpleBlockPaletteItem() /*override*/ = default;
+    virtual ~ScriptSimpleBlockPaletteItem() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> setBlock(
         ::std::variant<
@@ -54,6 +54,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

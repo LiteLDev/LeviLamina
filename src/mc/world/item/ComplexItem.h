@@ -17,7 +17,7 @@ class ComplexItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ComplexItem() /*override*/ = default;
+    virtual ~ComplexItem() /*override*/;
 
     virtual bool isComplex() const /*override*/;
 

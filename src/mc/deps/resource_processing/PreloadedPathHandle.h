@@ -32,6 +32,11 @@ public:
     // NOLINTBEGIN
     MCNAPI PreloadedPathHandle(::Bedrock::Resources::PreloadedPathHandle const&);
 
+    MCNAPI PreloadedPathHandle(
+        ::Core::Path const&                                      root,
+        ::std::shared_ptr<::Bedrock::Resources::Archive::Reader> backingObject
+    );
+
     MCNAPI void forEach(::brstd::function_ref<void(::Core::Path const&)> callback) const;
 
     MCNAPI ~PreloadedPathHandle();
@@ -41,6 +46,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Bedrock::Resources::PreloadedPathHandle const&);
+
+    MCNAPI void*
+    $ctor(::Core::Path const& root, ::std::shared_ptr<::Bedrock::Resources::Archive::Reader> backingObject);
     // NOLINTEND
 
 public:

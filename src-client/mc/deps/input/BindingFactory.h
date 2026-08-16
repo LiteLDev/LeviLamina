@@ -11,7 +11,7 @@ class BindingFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BindingFactory() = default;
+    virtual ~BindingFactory();
 
     virtual ::std::function<bool()> getBooleanBinding(uint name) const = 0;
 

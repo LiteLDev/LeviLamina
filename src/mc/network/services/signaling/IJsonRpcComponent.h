@@ -11,7 +11,7 @@ class IJsonRpcComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IJsonRpcComponent() = default;
+    virtual ~IJsonRpcComponent();
 
     virtual void initialize(::std::shared_ptr<::JsonRpc::JsonRpcProvider> provider) = 0;
     // NOLINTEND

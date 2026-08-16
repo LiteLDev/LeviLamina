@@ -58,7 +58,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DropdownScreenController() /*override*/ = default;
+    virtual ~DropdownScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
     // NOLINTEND
@@ -91,6 +91,12 @@ public:
     );
 
     MCAPI void updateDropdownCollectionSize(int const& collectionSize);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

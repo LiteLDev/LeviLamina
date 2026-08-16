@@ -15,7 +15,7 @@ class IRepositoryLoader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRepositoryLoader() = default;
+    virtual ~IRepositoryLoader();
 
     virtual ::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData>
     buildTaskData(::RepositoryLoading::BuildTaskDataOptions const& ops) = 0;

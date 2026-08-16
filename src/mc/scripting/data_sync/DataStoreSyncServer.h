@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataStoreSyncServer() /*override*/ = default;
+    virtual ~DataStoreSyncServer() /*override*/;
 
     virtual void clear(::std::string const& dataStoreName, bool addToOutgoingChanges) /*override*/;
 
@@ -40,6 +40,12 @@ public:
         ::std::string const& path,
         bool                 value
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

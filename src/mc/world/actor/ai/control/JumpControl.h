@@ -17,7 +17,7 @@ class JumpControl : public ::Control {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~JumpControl() /*override*/ = default;
+    virtual ~JumpControl() /*override*/;
 
     virtual void initializeInternal(::Mob& mob, ::JumpControlDescription const* description);
 
@@ -34,6 +34,12 @@ public:
     virtual void setJumpType(::JumpControlComponent& parent, ::JumpType type);
 
     virtual void resetSpeedModifier(::JumpControlComponent const& parent, ::Mob& mob);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

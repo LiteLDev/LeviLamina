@@ -117,7 +117,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NatPunchthroughClient() /*override*/ = default;
+    virtual ~NatPunchthroughClient() /*override*/;
 
     virtual void Update() /*override*/;
 

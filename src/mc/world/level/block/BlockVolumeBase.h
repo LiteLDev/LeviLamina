@@ -17,7 +17,7 @@ class BlockVolumeBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockVolumeBase() = default;
+    virtual ~BlockVolumeBase();
 
     virtual ::BoundingBox getBoundingBox() const = 0;
 

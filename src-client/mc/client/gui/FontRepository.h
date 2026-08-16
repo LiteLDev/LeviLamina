@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FontRepository() /*override*/ = default;
+    virtual ~FontRepository() /*override*/;
 
     virtual void onAppSuspended() /*override*/;
 

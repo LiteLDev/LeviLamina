@@ -13,7 +13,7 @@ class IScriptSentryPlugin {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptSentryPlugin() = default;
+    virtual ~IScriptSentryPlugin();
 
     virtual void setSentryLogger(::std::unique_ptr<::ScriptSentryLogger> sentryLogger) = 0;
 

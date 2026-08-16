@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IStorageManagementModel() = default;
+    virtual ~IStorageManagementModel();
 
     virtual bool isPremiumLocked(::PackManifest const& manifest) const = 0;
 

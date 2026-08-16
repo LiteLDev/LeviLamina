@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FlatFile() /*override*/ = default;
+    virtual ~FlatFile() /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> _getPath() const /*override*/;
 
@@ -91,6 +91,12 @@ public:
         uint64                              seekPos,
         uint64                              fileSize
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

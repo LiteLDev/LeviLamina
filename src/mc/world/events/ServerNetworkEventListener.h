@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerNetworkEventListener() = default;
+    virtual ~ServerNetworkEventListener();
 
     virtual ::EventResult onEvent(::ServerNetworkGameplayNotificationEvent const& event);
 

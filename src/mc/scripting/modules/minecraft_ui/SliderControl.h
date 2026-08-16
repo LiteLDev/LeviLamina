@@ -43,6 +43,32 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI SliderControl(
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>                  label,
+        float                                                                                              minValue,
+        float                                                                                              maxValue,
+        ::std::optional<float>                                                                             step,
+        ::std::optional<int>                                                                               defaultValue,
+        ::std::optional<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> tooltip
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>                  label,
+        float                                                                                              minValue,
+        float                                                                                              maxValue,
+        ::std::optional<float>                                                                             step,
+        ::std::optional<int>                                                                               defaultValue,
+        ::std::optional<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> tooltip
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>

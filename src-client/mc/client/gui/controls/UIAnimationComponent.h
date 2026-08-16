@@ -59,7 +59,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UIAnimationComponent() /*override*/ = default;
+    virtual ~UIAnimationComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -99,6 +99,12 @@ public:
     MCAPI bool hasAnimationWithEndEventId(uint id) const;
 
     MCAPI bool hasAnimationWithPlayAndEndEventIds(uint playEventId, uint endEventId) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -306,7 +306,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI WidgetComponentStateChangePayload(
         ::mce::UUID const& serviceId,
         ::mce::UUID const& groupId,
@@ -325,7 +324,6 @@ public:
             ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid,
             ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateRenderPlane>&& data
     );
-#endif
     // NOLINTEND
 
 public:
@@ -337,7 +335,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(
         ::mce::UUID const& serviceId,
         ::mce::UUID const& groupId,
@@ -356,7 +353,6 @@ public:
             ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid,
             ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateRenderPlane>&& data
     );
-#endif
     // NOLINTEND
 
 public:

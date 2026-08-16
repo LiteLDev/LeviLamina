@@ -23,7 +23,7 @@ class IView : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IView() /*override*/ = default;
+    virtual ~IView() /*override*/;
 
     virtual void pushCurrentScene(::OreUI::IScene& scene, ::OreUI::RouteMode routeMode) = 0;
 
@@ -71,6 +71,12 @@ public:
     virtual ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy() = 0;
 
     virtual ::OreUI::IViewTestHelper* getViewTestHelper() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

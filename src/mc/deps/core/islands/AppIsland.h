@@ -27,11 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~AppIsland() /*override*/;
-#else // LL_PLAT_C
-    virtual ~AppIsland() /*override*/ = default;
-#endif
 
     virtual ushort getId() /*override*/;
 

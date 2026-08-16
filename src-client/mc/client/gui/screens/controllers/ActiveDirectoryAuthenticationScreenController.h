@@ -46,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActiveDirectoryAuthenticationScreenController() /*override*/ = default;
+    virtual ~ActiveDirectoryAuthenticationScreenController() /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 

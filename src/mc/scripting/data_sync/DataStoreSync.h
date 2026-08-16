@@ -72,11 +72,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~DataStoreSync() = default;
-#else // LL_PLAT_C
     virtual ~DataStoreSync();
-#endif
 
     virtual void clear(::std::string const& datastoreName, bool addToOutgoingChanges);
 

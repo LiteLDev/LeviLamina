@@ -61,7 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SelectionServiceProvider() = default;
+    virtual ~SelectionServiceProvider();
 
     virtual ::Editor::Selection::SelectionContainerVolume const& containerVolume() const = 0;
 
@@ -93,6 +93,12 @@ public:
         ::std::string const&                                                 toBlockIdentifier,
         ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
     ) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

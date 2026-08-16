@@ -15,11 +15,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VillageStart() /*override*/ = default;
+    virtual ~VillageStart() /*override*/;
 
     virtual bool isValid() const /*override*/;
 
     virtual ::std::string_view getStructureName() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

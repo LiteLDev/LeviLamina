@@ -37,6 +37,8 @@ public:
 
     MCAPI BatchKey(::BatchKey const& rha);
 
+    MCAPI BatchKey(int depth, float alpha, ::BatchClippingState const& clippingState);
+
     MCAPI bool operator==(::BatchKey const& rhs) const;
 
     MCAPI ~BatchKey();
@@ -48,6 +50,8 @@ public:
     MCAPI void* $ctor(::BatchKey&& rha);
 
     MCAPI void* $ctor(::BatchKey const& rha);
+
+    MCAPI void* $ctor(int depth, float alpha, ::BatchClippingState const& clippingState);
     // NOLINTEND
 
 public:

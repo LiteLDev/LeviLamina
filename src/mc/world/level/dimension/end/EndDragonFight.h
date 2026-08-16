@@ -41,6 +41,18 @@ public:
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkViewSource>> mSource;
         ::ll::TypedStorage<4, 12, ::BlockPos>                          mPosition;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~GateWayGenerator();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
     };
 
 public:

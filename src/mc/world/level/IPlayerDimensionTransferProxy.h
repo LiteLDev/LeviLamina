@@ -21,7 +21,7 @@ class IPlayerDimensionTransferProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPlayerDimensionTransferProxy() = default;
+    virtual ~IPlayerDimensionTransferProxy();
 
     virtual void
     playerDimensionChangedEvent(::Player& player, ::DimensionType fromDimensionId, ::DimensionType toDimensionId) = 0;

@@ -35,6 +35,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AddVolumeEntityPacketPayload(::AddVolumeEntityPacketPayload const& other);
+
     MCAPI AddVolumeEntityPacketPayload(
         ::EntityContext const&    entity,
         ::CompoundTag             components,
@@ -51,6 +53,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::AddVolumeEntityPacketPayload const& other);
+
     MCAPI void*
     $ctor(::EntityContext const& entity, ::CompoundTag components, ::MinEngineVersion const& minEngineVersion);
     // NOLINTEND

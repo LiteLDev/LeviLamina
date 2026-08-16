@@ -91,6 +91,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI DataDrivenRenderer_tempComponent_HumanoidAdditionalRendering(
+        ::std::shared_ptr<::DataDrivenRenderer> renderer,
+        ::std::shared_ptr<::mce::TextureGroup>  textureGroup
+    );
+
     MCNAPI void _renderChestGear(
         ::BaseActorRenderContext&              renderContext,
         ::dragon::RenderMetadata const         renderMetadata,
@@ -149,6 +154,13 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::Core::PathBuffer<::std::string> const& ELYTRA_TEXTURE_LOCATION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
 public:

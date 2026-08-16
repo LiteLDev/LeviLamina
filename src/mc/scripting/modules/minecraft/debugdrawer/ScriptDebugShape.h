@@ -24,13 +24,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDebugShape() = default;
+    virtual ~ScriptDebugShape();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

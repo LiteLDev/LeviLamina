@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ConduitCageModel() /*override*/ = default;
+    virtual ~ConduitCageModel() /*override*/;
 
     virtual void render(::ScreenContext& screenContext) /*override*/;
     // NOLINTEND
@@ -42,6 +42,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(int u, int v, int tw, int th);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

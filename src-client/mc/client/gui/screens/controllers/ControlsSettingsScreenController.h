@@ -102,7 +102,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ControlsSettingsScreenController() /*override*/ = default;
+    virtual ~ControlsSettingsScreenController() /*override*/;
 
     virtual void _registerControllerCallbacks();
 

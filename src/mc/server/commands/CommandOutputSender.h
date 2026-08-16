@@ -31,11 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~CommandOutputSender() = default;
-#else // LL_PLAT_C
     virtual ~CommandOutputSender();
-#endif
 
     virtual void send(::CommandOrigin const& origin, ::CommandOutput const& output);
 
@@ -62,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

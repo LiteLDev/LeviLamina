@@ -31,6 +31,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI PackIdVersion(::PackIdVersion const&);
+#endif
+
     MCAPI PackIdVersion(::mce::UUID const& id, ::SemVersion const& version, ::PackType packType);
 
     MCAPI ::std::string asString() const;
@@ -53,6 +57,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::PackIdVersion const&);
+#endif
+
     MCAPI void* $ctor(::mce::UUID const& id, ::SemVersion const& version, ::PackType packType);
     // NOLINTEND
 };

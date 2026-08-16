@@ -35,4 +35,16 @@ public:
     ViewRenderObject& operator=(ViewRenderObject const&);
     ViewRenderObject(ViewRenderObject const&);
     ViewRenderObject();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ViewRenderObject(::ViewRenderObject&&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ViewRenderObject&&);
+    // NOLINTEND
 };

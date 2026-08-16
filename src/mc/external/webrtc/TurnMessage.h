@@ -16,7 +16,7 @@ public:
 
     virtual ::webrtc::StunMessage* CreateNew() const /*override*/;
 
-    virtual ~TurnMessage() /*override*/;
+    virtual ~TurnMessage() /*override*/ = default;
     // NOLINTEND
 
 public:

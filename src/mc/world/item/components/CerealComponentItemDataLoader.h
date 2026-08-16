@@ -23,4 +23,17 @@ public:
 public:
     // prevent constructor by default
     CerealComponentItemDataLoader();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI
+    CerealComponentItemDataLoader(::BedrockLoadContext const& bedrockLoadContext, ::cereal::ReflectionCtx const& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BedrockLoadContext const& bedrockLoadContext, ::cereal::ReflectionCtx const& ctx);
+    // NOLINTEND
 };

@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SliderManagerComponent() /*override*/ = default;
+    virtual ~SliderManagerComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -39,6 +39,12 @@ public:
         ::UIAnimationController& animationController,
         ::ScreenEvent const&     screenEvent
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

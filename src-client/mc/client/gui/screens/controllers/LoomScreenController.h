@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LoomScreenController() /*override*/ = default;
+    virtual ~LoomScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -85,6 +85,12 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -87,7 +87,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorProjectConstantsFacet() /*override*/ = default;
+    virtual ~EditorProjectConstantsFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -120,6 +120,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Editor::ServiceProviderCollection* services);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

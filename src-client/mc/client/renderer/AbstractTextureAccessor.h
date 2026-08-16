@@ -17,7 +17,7 @@ class AbstractTextureAccessor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AbstractTextureAccessor() = default;
+    virtual ~AbstractTextureAccessor();
 
     virtual ::cg::ImageBuffer*
     insertImageIntoCache(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer&& imageBuffer) = 0;

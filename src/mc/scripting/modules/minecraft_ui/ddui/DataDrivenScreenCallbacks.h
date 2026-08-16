@@ -28,11 +28,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataDrivenScreenCallbacks() = default;
+    virtual ~DataDrivenScreenCallbacks();
 
     virtual void resolve(::DataDrivenScreenClosedReason resolution) /*override*/;
 
     virtual void reject(::DataDrivenScreenRejectReason rejection) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -17,7 +17,7 @@ class IInventoryItemRenderContext {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IInventoryItemRenderContext() = default;
+    virtual ~IInventoryItemRenderContext();
 
     virtual int getNumRenderPasses() = 0;
 

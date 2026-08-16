@@ -13,9 +13,15 @@ class ISyncStreamReader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISyncStreamReader() = default;
+    virtual ~ISyncStreamReader();
 
     virtual ::cohtml::ISyncStreamReader* getCohtmlReader() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

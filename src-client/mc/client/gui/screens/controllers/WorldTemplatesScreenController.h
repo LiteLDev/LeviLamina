@@ -50,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldTemplatesScreenController() /*override*/ = default;
+    virtual ~WorldTemplatesScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 

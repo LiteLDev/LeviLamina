@@ -16,7 +16,7 @@ class Metronome {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Metronome() = default;
+    virtual ~Metronome();
 
     virtual void RequestCallOnNextTick(::absl::AnyInvocable<void() &&>);
 

@@ -221,7 +221,7 @@ class ILevel : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILevel() /*override*/ = default;
+    virtual ~ILevel() /*override*/;
 
     virtual bool initialize(
         ::std::string const&   levelName,

@@ -22,7 +22,7 @@ class EditorRealmsServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorRealmsServiceProvider() = default;
+    virtual ~EditorRealmsServiceProvider();
 
     virtual ::std::vector<::Editor::Services::EditorRealmsWorld> const getRealmWorldlist() const = 0;
 

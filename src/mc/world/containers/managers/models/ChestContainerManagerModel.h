@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChestContainerManagerModel() /*override*/ = default;
+    virtual ~ChestContainerManagerModel() /*override*/;
 
     virtual bool isValid(float pickRange) /*override*/;
 
@@ -56,6 +56,12 @@ public:
 
     MCAPI void*
     $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos, ::BlockActorType blockActorType);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

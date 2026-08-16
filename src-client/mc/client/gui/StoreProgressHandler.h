@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StoreProgressHandler() /*override*/ = default;
+    virtual ~StoreProgressHandler() /*override*/;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -65,6 +65,12 @@ public:
         ::std::function<void(bool&)> tickCallback,
         ::std::function<void()>      cancelCallback
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

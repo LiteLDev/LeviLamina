@@ -51,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Cache2DDensityCalculator() /*override*/ = default;
+    virtual ~Cache2DDensityCalculator() /*override*/;
 
     virtual void fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const /*override*/;
     // NOLINTEND

@@ -6,7 +6,7 @@ class WindowStateStorage {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WindowStateStorage() = default;
+    virtual ~WindowStateStorage();
 
     virtual void writeRect(::tagRECT const& rect) = 0;
 

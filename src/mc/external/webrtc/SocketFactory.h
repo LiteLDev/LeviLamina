@@ -13,7 +13,7 @@ class SocketFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SocketFactory() = default;
+    virtual ~SocketFactory();
 
     virtual ::webrtc::Socket* CreateSocket(int family, int type) = 0;
     // NOLINTEND

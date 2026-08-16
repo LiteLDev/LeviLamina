@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WaypointGroup() = default;
+    virtual ~WaypointGroup();
 
     virtual bool has(::WaypointGroup::WaypointHandle const& handle) const = 0;
 

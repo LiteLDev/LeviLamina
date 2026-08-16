@@ -24,7 +24,7 @@ class BiomeSource {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BiomeSource() = default;
+    virtual ~BiomeSource();
 
     virtual ::ChunkVolume::VolumeOf<::Biome> getBiomeVolumeToFill(
         short                         chunkHeight,

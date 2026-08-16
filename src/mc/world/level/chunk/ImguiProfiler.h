@@ -112,7 +112,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Timer() = default;
+        virtual ~Timer();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -166,7 +172,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ImguiProfiler() /*override*/ = default;
+    virtual ~ImguiProfiler() /*override*/;
     // NOLINTEND
 
 public:
@@ -200,6 +206,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

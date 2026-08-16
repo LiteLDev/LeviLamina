@@ -29,6 +29,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI UIModification(::Json::Value& baseArray, bool isControlsArray);
+
     MCAPI int _findIndex(::UICondition const& condition, ::UIOperation operation, ::PackReportInfo& packReportInfo);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Json::Value& baseArray, bool isControlsArray);
     // NOLINTEND
 };

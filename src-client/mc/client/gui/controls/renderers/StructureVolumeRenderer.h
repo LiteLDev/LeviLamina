@@ -66,7 +66,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureVolumeRenderer() /*override*/ = default;
+    virtual ~StructureVolumeRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 

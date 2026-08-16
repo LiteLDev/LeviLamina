@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentBase() = default;
+    virtual ~ScriptWidgetComponentBase();
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const = 0;
 
@@ -61,6 +61,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptWidgetComponentBase(
+        ::Editor::ServiceProviderCollection&                                      serviceProviders,
+        ::mce::UUID const&                                                        componentId,
+        ::std::string const&                                                      componentName,
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>  owner,
+        ::Editor::ScriptModule::ScriptWidgetService&                              parentService,
+        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentBaseOptions> options
+    );
+
     MCNAPI ::Vec3 const getWorldPosition() const;
     // NOLINTEND
 
@@ -68,6 +77,19 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Editor::ServiceProviderCollection&                                      serviceProviders,
+        ::mce::UUID const&                                                        componentId,
+        ::std::string const&                                                      componentName,
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>  owner,
+        ::Editor::ScriptModule::ScriptWidgetService&                              parentService,
+        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentBaseOptions> options
+    );
     // NOLINTEND
 
 public:

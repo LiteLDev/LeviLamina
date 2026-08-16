@@ -16,7 +16,7 @@ class IAppPlatform : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAppPlatform() /*override*/ = default;
+    virtual ~IAppPlatform() /*override*/;
 
     virtual bool restartRequested() = 0;
 

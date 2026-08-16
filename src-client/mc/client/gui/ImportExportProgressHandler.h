@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ImportExportProgressHandler() /*override*/ = default;
+    virtual ~ImportExportProgressHandler() /*override*/;
 
     virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -60,6 +60,12 @@ public:
         ::std::string const&                                            defaultProgressMessage,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> archiverProgress
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

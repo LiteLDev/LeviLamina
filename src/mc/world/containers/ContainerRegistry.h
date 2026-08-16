@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContainerRegistry() /*override*/ = default;
+    virtual ~ContainerRegistry() /*override*/;
 
     virtual ::std::unique_ptr<::ListTag>
     serializeContainerContent(::FullContainerName const& name, ::SaveContext const& saveContext) /*override*/;

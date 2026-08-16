@@ -19,7 +19,7 @@ class NetEqFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetEqFactory() = default;
+    virtual ~NetEqFactory();
 
     virtual ::std::unique_ptr<::webrtc::NetEq> Create(
         ::webrtc::Environment const&,

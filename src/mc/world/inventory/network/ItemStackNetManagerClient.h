@@ -66,7 +66,35 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~PredictiveContainer() = default;
+        virtual ~PredictiveContainer();
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI PredictiveContainer(
+            ::Container&                                     backingContainer,
+            ::SparseContainerBackingSetType                  backingSetType,
+            bool                                             isItemStackNetManagerEnabled,
+            ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
+            ::std::unique_ptr<::IPlayerContainerSetter>      playerContainerSetter
+        );
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI void* $ctor(
+            ::Container&                                     backingContainer,
+            ::SparseContainerBackingSetType                  backingSetType,
+            bool                                             isItemStackNetManagerEnabled,
+            ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
+            ::std::unique_ptr<::IPlayerContainerSetter>      playerContainerSetter
+        );
+#endif
         // NOLINTEND
     };
 
@@ -121,8 +149,18 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
+        MCNAPI ClientScreenData(::ItemStackNetManagerClient::ClientScreenData&&);
+
         MCNAPI ::ItemStackNetManagerClient::ClientScreenData&
         operator=(::ItemStackNetManagerClient::ClientScreenData&&);
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI void* $ctor(::ItemStackNetManagerClient::ClientScreenData&&);
 #endif
         // NOLINTEND
     };
@@ -147,7 +185,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemStackNetManagerClient() /*override*/ = default;
+    virtual ~ItemStackNetManagerClient() /*override*/;
 
     virtual ::SparseContainer* initOpenContainer(
         ::BlockSource&             region,
@@ -225,6 +263,12 @@ public:
 
     MCNAPI void trySendBatch();
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FishingHook() /*override*/ = default;
+    virtual ~FishingHook() /*override*/;
 
     virtual void remove() /*override*/;
 
@@ -84,6 +84,12 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

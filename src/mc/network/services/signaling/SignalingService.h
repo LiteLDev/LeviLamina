@@ -85,7 +85,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Connection() /*override*/ = default;
+        virtual ~Connection() /*override*/;
 
         virtual void onConnect() /*override*/;
 
@@ -169,7 +169,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Channel() /*override*/ = default;
+        virtual ~Channel() /*override*/;
 
         virtual void SendSignal(
             ::NetherNet::NetworkID                              from,
@@ -180,6 +180,12 @@ public:
 
         virtual ::Bedrock::PubSub::Subscription
         RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -218,7 +224,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~JsonRpcInterop() /*override*/ = default;
+        virtual ~JsonRpcInterop() /*override*/;
 
         virtual ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>> sendJsonRpcTo(
             ::PlayerMessaging::NetworkID          networkIdTo,
@@ -245,6 +251,12 @@ public:
         // NOLINTEND
 
     public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+
+    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>> $sendJsonRpcTo(
@@ -261,6 +273,11 @@ public:
         MCNAPI void $parseSignal(::NetherNet::NetworkID fromNetworkID, ::std::string message, ::std::string messageId);
 
         MCNAPI void $parseTurnConfig(::Json::Value const& config);
+
+        MCNAPI void $setTurnConfig(
+            ::std::vector<::NetherNet::StunRelayServer>&& config,
+            ::std::chrono::steady_clock::time_point       expiration
+        );
 
         MCNAPI void $onTurnConfigFailure(::Bedrock::ErrorInfo<::NetherNet::ESessionError> const& error);
 
@@ -292,7 +309,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SignalingService() /*override*/ = default;
+    virtual ~SignalingService() /*override*/;
     // NOLINTEND
 
 public:
@@ -319,5 +336,11 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing>   eventing,
         ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> additionalJsonRpcComponents
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

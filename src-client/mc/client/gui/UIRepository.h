@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UIRepository() /*override*/ = default;
+    virtual ~UIRepository() /*override*/;
 
     virtual void clearLoadedUITextureInfo() /*override*/;
 
@@ -58,6 +58,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ResourceLoader& resourceLoader);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

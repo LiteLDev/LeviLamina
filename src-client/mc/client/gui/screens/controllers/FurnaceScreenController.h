@@ -77,7 +77,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FurnaceScreenController() /*override*/ = default;
+    virtual ~FurnaceScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

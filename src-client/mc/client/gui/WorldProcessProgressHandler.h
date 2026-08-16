@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldProcessProgressHandler() /*override*/ = default;
+    virtual ~WorldProcessProgressHandler() /*override*/;
 
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -70,6 +70,12 @@ public:
         ::std::function<float()>            tickCallback,
         ::std::function<::LoadingState()>   getLoadingStateCallback
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

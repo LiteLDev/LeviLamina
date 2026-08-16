@@ -52,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetGroup() = default;
+    virtual ~ScriptWidgetGroup();
 
     virtual void _performDeleteGroup() /*override*/;
 
@@ -128,6 +128,12 @@ public:
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

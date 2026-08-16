@@ -33,13 +33,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenHandlerBeacon() /*override*/ = default;
+    virtual ~ScreenHandlerBeacon() /*override*/;
 
     virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
 
     virtual ::ItemStackNetResult endRequest() /*override*/;
 
     virtual void postRequest(bool const wasSuccess) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

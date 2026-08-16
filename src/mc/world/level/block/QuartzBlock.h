@@ -17,13 +17,19 @@ class QuartzBlock : public ::RotatedPillarBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~QuartzBlock() /*override*/ = default;
+    virtual ~QuartzBlock() /*override*/;
 
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -9,7 +9,7 @@ class IAppConfigData {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAppConfigData() = default;
+    virtual ~IAppConfigData();
 
     virtual ::Bedrock::typeid_t<::IAppConfigData> getType() const = 0;
     // NOLINTEND

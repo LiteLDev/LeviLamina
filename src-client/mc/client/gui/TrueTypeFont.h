@@ -71,7 +71,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TrueTypeFont() /*override*/ = default;
+    virtual ~TrueTypeFont() /*override*/;
 
     virtual void loadFontData(bool uploadTextureImmediately) /*override*/;
 
@@ -147,6 +147,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static uint const& CACHE_VERSION();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

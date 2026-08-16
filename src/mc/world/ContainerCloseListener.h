@@ -13,6 +13,6 @@ public:
     // NOLINTBEGIN
     virtual void containerClosed(::Actor& actor) = 0;
 
-    virtual ~ContainerCloseListener() = default;
+    virtual ~ContainerCloseListener();
     // NOLINTEND
 };

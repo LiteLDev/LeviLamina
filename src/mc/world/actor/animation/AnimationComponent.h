@@ -104,11 +104,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~AnimationComponent() = default;
-#else // LL_PLAT_C
     virtual ~AnimationComponent();
-#endif
 
     virtual ::ClientAnimationComponent* tryGetClient();
 

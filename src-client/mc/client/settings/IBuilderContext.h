@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBuilderContext() = default;
+    virtual ~IBuilderContext();
 
     virtual bool isPreGame() const = 0;
 

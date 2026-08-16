@@ -47,6 +47,18 @@ public:
     public:
         // prevent constructor by default
         CreditsContent();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI CreditsContent(::std::string const& text, int height, bool centered, int paddingAfter);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::std::string const& text, int height, bool centered, int paddingAfter);
+        // NOLINTEND
     };
 
     using clock_type = ::std::chrono::steady_clock;
@@ -78,7 +90,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CreditsRenderer() /*override*/ = default;
+    virtual ~CreditsRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -104,6 +116,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::UIResolvedDef const& def);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

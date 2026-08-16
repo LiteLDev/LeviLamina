@@ -22,9 +22,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientInstanceLocalPlayerEntityGetter() /*override*/ = default;
+    virtual ~ClientInstanceLocalPlayerEntityGetter() /*override*/;
 
     virtual ::EntityContext* getLocalPlayerEntityContext() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

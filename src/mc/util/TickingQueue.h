@@ -31,7 +31,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Stage() = default;
+        virtual ~Stage();
 
         virtual void init() = 0;
 

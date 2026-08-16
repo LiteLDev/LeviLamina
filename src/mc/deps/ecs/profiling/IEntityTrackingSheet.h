@@ -19,7 +19,7 @@ class IEntityTrackingSheet {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEntityTrackingSheet() = default;
+    virtual ~IEntityTrackingSheet();
 
     virtual void clearAllEntities() = 0;
 

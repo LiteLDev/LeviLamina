@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BufferedReadAdapter() /*override*/ = default;
+    virtual ~BufferedReadAdapter() /*override*/;
 
     virtual int Send(void const* pv, uint64 cb) /*override*/;
 

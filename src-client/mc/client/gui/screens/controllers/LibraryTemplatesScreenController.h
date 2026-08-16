@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibraryTemplatesScreenController() /*override*/ = default;
+    virtual ~LibraryTemplatesScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
     // NOLINTEND

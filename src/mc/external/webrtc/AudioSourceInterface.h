@@ -58,7 +58,7 @@ public:
 
     virtual ::webrtc::AudioOptions const options() const;
 
-    virtual ~AudioSourceInterface() /*override*/;
+    virtual ~AudioSourceInterface() /*override*/ = default;
     // NOLINTEND
 
 public:

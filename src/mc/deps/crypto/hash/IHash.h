@@ -8,7 +8,7 @@ class IHash {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IHash() = default;
+    virtual ~IHash();
 
     virtual void reset() = 0;
 

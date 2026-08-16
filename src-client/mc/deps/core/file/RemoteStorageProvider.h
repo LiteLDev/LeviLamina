@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RemoteStorageProvider() = default;
+    virtual ~RemoteStorageProvider();
 
     virtual void shutdown();
 

@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncUDPSocket() /*override*/ = default;
+    virtual ~AsyncUDPSocket() /*override*/;
 
     virtual ::webrtc::SocketAddress GetLocalAddress() const /*override*/;
 

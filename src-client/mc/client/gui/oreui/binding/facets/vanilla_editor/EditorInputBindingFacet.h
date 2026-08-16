@@ -50,6 +50,18 @@ public:
     public:
         // prevent constructor by default
         KeyBindingFacet();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI KeyBindingFacet(::Editor::Input::ContextKeyBinding const& binding, bool useDefault);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::Editor::Input::ContextKeyBinding const& binding, bool useDefault);
+        // NOLINTEND
     };
 
     struct MouseBindingFacet {
@@ -94,7 +106,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorInputBindingFacet() /*override*/ = default;
+    virtual ~EditorInputBindingFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -155,6 +167,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Editor::ServiceProviderCollection* services);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

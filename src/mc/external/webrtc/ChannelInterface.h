@@ -27,7 +27,7 @@ class ChannelInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChannelInterface() = default;
+    virtual ~ChannelInterface();
 
     virtual ::webrtc::MediaType media_type() const = 0;
 

@@ -18,7 +18,7 @@ class RTCCertificateGeneratorInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RTCCertificateGeneratorInterface() = default;
+    virtual ~RTCCertificateGeneratorInterface();
 
     virtual void GenerateCertificateAsync(
         ::webrtc::KeyParams const&                                                       key_params,

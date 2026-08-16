@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameInputErrorScreenController() /*override*/ = default;
+    virtual ~GameInputErrorScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -43,6 +43,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::function<void()> callback);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

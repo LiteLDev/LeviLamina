@@ -11,7 +11,7 @@ struct IntProviderType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IntProviderType() = default;
+    virtual ~IntProviderType();
 
     virtual int sample(::IRandom& random) const = 0;
 

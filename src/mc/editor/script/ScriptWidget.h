@@ -74,7 +74,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidget() = default;
+    virtual ~ScriptWidget();
 
     virtual ::AABB const& _getWorldBounds() const /*override*/;
 
@@ -199,6 +199,12 @@ public:
         ::Scripting::WeakLifetimeScope const&                                         scope
     );
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

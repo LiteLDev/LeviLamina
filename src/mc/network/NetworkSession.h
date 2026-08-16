@@ -21,7 +21,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkSession() /*override*/ = default;
+    virtual ~NetworkSession() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

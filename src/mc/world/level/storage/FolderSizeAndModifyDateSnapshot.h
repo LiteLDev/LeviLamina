@@ -47,8 +47,20 @@ public:
     FolderSizeAndModifyDateSnapshot();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~FolderSizeAndModifyDateSnapshot();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::Result<::FolderSizeAndModifyDateSnapshot> CaptureSnapshot(::Core::Path const& path);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

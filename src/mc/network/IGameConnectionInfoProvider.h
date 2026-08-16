@@ -13,11 +13,17 @@ class IGameConnectionInfoProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGameConnectionInfoProvider() = default;
+    virtual ~IGameConnectionInfoProvider();
 
     virtual ::Social::GameConnectionInfo const& getConnectionInfo() const = 0;
 
     virtual ::std::optional<::std::string> getNetworkInfoString() const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

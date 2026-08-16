@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsWorldPackEditorCommandsFacet() /*override*/ = default;
+    virtual ~RealmsWorldPackEditorCommandsFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -77,6 +77,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

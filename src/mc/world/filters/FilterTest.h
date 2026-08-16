@@ -66,7 +66,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FilterTest() = default;
+    virtual ~FilterTest();
 
     virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 

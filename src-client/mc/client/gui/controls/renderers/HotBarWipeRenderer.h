@@ -16,7 +16,7 @@ class HotBarWipeRenderer : public ::MinecraftUICustomRenderer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HotBarWipeRenderer() /*override*/ = default;
+    virtual ~HotBarWipeRenderer() /*override*/;
 
     virtual void
     drawRectangle(::ScreenContext& screenContext, ::UIControl& owner, float percentage, ::mce::Color const& color);

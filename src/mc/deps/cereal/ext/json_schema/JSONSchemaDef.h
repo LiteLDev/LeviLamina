@@ -28,6 +28,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit JSONSchemaDef(::cereal::internal::SchemaInfo const& info);
+
+    MCAPI JSONSchemaDef(::cereal::SchemaDescription const& schemaInfo, ::cereal::ext::internal::OutRefsMap& outRefs);
+
     MCAPI void normalizeRefs(
         ::cereal::ext::internal::OutRefsMap&                                         outRefs,
         ::std::unordered_map<::std::string, ::cereal::ext::internal::JSONSchemaDef>& defsMap
@@ -38,6 +42,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::cereal::internal::SchemaInfo const& info);
+
+    MCAPI void* $ctor(::cereal::SchemaDescription const& schemaInfo, ::cereal::ext::internal::OutRefsMap& outRefs);
     // NOLINTEND
 };
 

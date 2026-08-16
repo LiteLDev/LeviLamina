@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorServerPersistenceService() /*override*/ = default;
+    virtual ~EditorServerPersistenceService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

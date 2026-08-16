@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmRegionSettingsQueriesFacet() /*override*/ = default;
+    virtual ~RealmRegionSettingsQueriesFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -75,6 +75,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::weak_ptr<::Realms::RealmsRegionSettings> realmsRegionSettings);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

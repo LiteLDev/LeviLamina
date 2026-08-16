@@ -23,13 +23,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DefaultUIScreenSetupCleanupStrategy() /*override*/ = default;
+    virtual ~DefaultUIScreenSetupCleanupStrategy() /*override*/;
 
     virtual void setupScreen(::ScreenContext& screenContext) /*override*/;
 
     virtual void cleanupScreen(::ScreenContext& screenContext) /*override*/;
 
     virtual ::EyeRenderingModeBit getEyeRenderingMode() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

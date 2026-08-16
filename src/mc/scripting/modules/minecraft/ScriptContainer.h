@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptContainer() = default;
+    virtual ~ScriptContainer();
 
     virtual ::Scripting::Result_deprecated<int> getSize() const;
 
@@ -105,6 +105,12 @@ public:
     MCAPI static ::std::optional<::Scripting::Error> _isSlotInvalid(::Container& container, int slot);
 
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
