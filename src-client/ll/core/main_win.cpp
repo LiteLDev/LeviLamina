@@ -11,6 +11,7 @@
 #include "ll/core/CrashLogger.h"
 #include "ll/core/command/BuiltinCommands.h"
 #include "ll/core/mod/ModRegistrar.h"
+#include "ll/core/protocol/ProtocolRuntime.h"
 #include "ll/core/tweak/VulnerabilityFixes.h"
 
 #include "mc/client/game/ClientInstance.h"
@@ -65,6 +66,11 @@ void leviLaminaMain() {
     CrashLogger::init();
 
     command::registerCommands();
+
+    if (auto initialized = protocol::initializeRuntime(); !initialized) {
+        getLogger().error("Protocol runtime initialization failed");
+        initialized.error().log(getLogger());
+    }
 
     mod::ModRegistrar::getInstance().loadAllMods();
 
