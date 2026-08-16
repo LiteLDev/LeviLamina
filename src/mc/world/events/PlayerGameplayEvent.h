@@ -7,6 +7,7 @@
 #include "mc/world/events/PlayerAddLevelEvent.h"
 #include "mc/world/events/PlayerArmorExchangeEvent.h"
 #include "mc/world/events/PlayerCloseContainerEvent.h"
+#include "mc/world/events/PlayerClosedContainerEvent.h"
 #include "mc/world/events/PlayerDamageEvent.h"
 #include "mc/world/events/PlayerDataDrivenScreenClosedEvent.h"
 #include "mc/world/events/PlayerDestroyBlockEvent.h"
@@ -31,6 +32,7 @@
 #include "mc/world/events/PlayerInteractWithEntityBeforeEvent.h"
 #include "mc/world/events/PlayerInventoryItemChangeEvent.h"
 #include "mc/world/events/PlayerOpenContainerEvent.h"
+#include "mc/world/events/PlayerOpenedContainerEvent.h"
 #include "mc/world/events/PlayerRespawnEvent.h"
 #include "mc/world/events/PlayerSayCommandEvent.h"
 #include "mc/world/events/PlayerScriptInputEvent.h"
@@ -66,7 +68,9 @@ struct PlayerGameplayEvent<void> : ConstEventVariant<
                                        PlayerInputModeChangeEvent,
                                        PlayerInitialSpawnEvent,
                                        PlayerOpenContainerEvent,
+                                       PlayerOpenedContainerEvent,
                                        PlayerCloseContainerEvent,
+                                       PlayerClosedContainerEvent,
                                        PlayerHasInvalidContainerEvent,
                                        PlayerShootArrowEvent,
                                        PlayerSwingStartEvent,

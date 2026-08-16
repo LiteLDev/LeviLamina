@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/world/events/ActorInsideBlockEvent.h"
 #include "mc/world/events/ActorStandOnBlockEvent.h"
 #include "mc/world/events/BlockPatternPostEvent.h"
@@ -26,20 +27,19 @@ struct BlockGameplayEvent<void> : ConstEventVariant<BlockPatternPostEvent> {};
 
 template <>
 struct BlockGameplayEvent<CoordinatorResult> : ConstEventVariant<
-                                                   ActorInsideBlockEvent,     // 0
-                                                   ActorStandOnBlockEvent,    // 1
-                                                   BlockPatternPreEvent,      // 2
-                                                   BlockRandomTickEvent,      // 3
-                                                   ChestBlockTryPairEvent,    // 4
-                                                   PistonActionEvent,         // 5
-                                                   LeverActionEvent,          // 6
-                                                   ButtonPushEvent,           // 7
-                                                   PressurePlatePushEvent,    // 8
-                                                   PressurePlatePopEvent,     // 9
-                                                   TargetBlockHitEvent,       // 10
-                                                   TripWireTripEvent,         // 11
-                                                   BlockTryPlaceByPlayerEvent // 12
-                                                   > {};
+                                                   ActorInsideBlockEvent,
+                                                   ActorStandOnBlockEvent,
+                                                   BlockPatternPreEvent,
+                                                   BlockRandomTickEvent,
+                                                   ChestBlockTryPairEvent,
+                                                   PistonActionEvent,
+                                                   LeverActionEvent,
+                                                   ButtonPushEvent,
+                                                   PressurePlatePushEvent,
+                                                   PressurePlatePopEvent,
+                                                   TargetBlockHitEvent,
+                                                   TripWireTripEvent,
+                                                   BlockTryPlaceByPlayerEvent> {};
 
 template <>
 struct BlockGameplayEvent<std::optional<std::string>> : ConstEventVariant<CraftUISetResultNameEvent> {};
