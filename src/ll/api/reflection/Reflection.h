@@ -95,6 +95,29 @@ constexpr bool has_value_deserializer_v = requires(std::remove_cvref_t<J> const&
 };
 
 template <typename T, typename J, typename F>
+constexpr bool has_inplace_deserializer_v = requires(std::remove_cvref_t<T>& t, J&& j, F const& f) {
+    {
+        Serializer<std::remove_cvref_t<T>, std::remove_cvref_t<J>>::deserialize(t, std::forward<J>(j), f)
+        } -> std::convertible_to<ll::Expected<>>;
+} || requires(std::remove_cvref_t<T>& t, J&& j) {
+    {
+        Serializer<std::remove_cvref_t<T>, std::remove_cvref_t<J>>::deserialize(t, std::forward<J>(j))
+        } -> std::convertible_to<ll::Expected<>>;
+} || requires(std::remove_cvref_t<T>& t, J&& j, F const& f) {
+    { Serializer<std::remove_cvref_t<T>>::deserialize(t, std::forward<J>(j), f) } -> std::convertible_to<ll::Expected<>>;
+} || requires(std::remove_cvref_t<T>& t, J&& j) {
+    { Serializer<std::remove_cvref_t<T>>::deserialize(t, std::forward<J>(j)) } -> std::convertible_to<ll::Expected<>>;
+} || requires(std::remove_cvref_t<T>& t, J&& j, F const& f) {
+    {
+        Serializer<std::remove_cvref_t<T>>::template deserialize<std::remove_cvref_t<J>>(t, std::forward<J>(j), f)
+        } -> std::convertible_to<ll::Expected<>>;
+} || requires(std::remove_cvref_t<T>& t, J&& j) {
+    {
+        Serializer<std::remove_cvref_t<T>>::template deserialize<std::remove_cvref_t<J>>(t, std::forward<J>(j))
+        } -> std::convertible_to<ll::Expected<>>;
+};
+
+template <typename T, typename J, typename F>
 constexpr bool has_inplace_serializer_v = requires(
     T const& t,
     std::remove_cvref_t<J>& j,

@@ -84,6 +84,10 @@ template <class T, class J, IsKeyFormatter F>
 inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<0>)
     requires(use_convertible_deserialize_fallback_v<T, J, F>);
 
+template <class T, class J, IsKeyFormatter F>
+inline Expected<> deserialize_inplace_impl(T& t, J&& j, F const& keyFormatter)
+    requires(detail::has_inplace_deserializer_v<std::remove_cvref_t<T>, J, F>);
+
 template <class T, class V>
 inline void replace_deserialized_value(T& target, V&& value);
 
@@ -93,10 +97,14 @@ template <class T, class J, IsKeyFormatter F>
 inline Expected<> deserialize(T& t, J&& j, F const& keyFormatter) noexcept
 try {
     using RT = std::remove_cvref_t<T>;
-    auto value = deserialize_impl<RT>(std::forward<J>(j), keyFormatter, meta::PriorityTag<11>{});
-    if (!value) return forwardError(value.error());
-    replace_deserialized_value(t, std::move(*value));
-    return {};
+    if constexpr (detail::has_inplace_deserializer_v<RT, J, F>) {
+        return deserialize_inplace_impl(t, std::forward<J>(j), keyFormatter);
+    } else {
+        auto value = deserialize_impl<RT>(std::forward<J>(j), keyFormatter, meta::PriorityTag<11>{});
+        if (!value) return forwardError(value.error());
+        replace_deserialized_value(t, std::move(*value));
+        return {};
+    }
 } catch (...) {
     return makeExceptionError();
 }
@@ -126,6 +134,34 @@ constexpr bool can_deserialize_to_v =
         deserialize_impl<T>(std::forward<J>(j), keyFormatter, meta::PriorityTag<11>{});
     };
 
+template <class T, class J, IsKeyFormatter F>
+constexpr bool can_deserialize_construct_from_inplace_v =
+    std::is_default_constructible_v<std::remove_cvref_t<T>>
+    && detail::has_inplace_deserializer_v<std::remove_cvref_t<T>, J, F>;
+
+template <class T, class J, IsKeyFormatter F>
+inline Expected<> deserialize_inplace_impl(T& t, J&& j, F const& keyFormatter)
+    requires(detail::has_inplace_deserializer_v<std::remove_cvref_t<T>, J, F>)
+{
+    using RT = std::remove_cvref_t<T>;
+    using JT = std::remove_cvref_t<J>;
+    if constexpr (requires { Serializer<RT, JT>::deserialize(t, std::forward<J>(j), keyFormatter); }) {
+        return Serializer<RT, JT>::deserialize(t, std::forward<J>(j), keyFormatter);
+    } else if constexpr (requires { Serializer<RT, JT>::deserialize(t, std::forward<J>(j)); }) {
+        return Serializer<RT, JT>::deserialize(t, std::forward<J>(j));
+    } else if constexpr (requires { Serializer<RT>::deserialize(t, std::forward<J>(j), keyFormatter); }) {
+        return Serializer<RT>::deserialize(t, std::forward<J>(j), keyFormatter);
+    } else if constexpr (requires { Serializer<RT>::deserialize(t, std::forward<J>(j)); }) {
+        return Serializer<RT>::deserialize(t, std::forward<J>(j));
+    } else if constexpr (requires {
+                             Serializer<RT>::template deserialize<JT>(t, std::forward<J>(j), keyFormatter);
+                         }) {
+        return Serializer<RT>::template deserialize<JT>(t, std::forward<J>(j), keyFormatter);
+    } else {
+        return Serializer<RT>::template deserialize<JT>(t, std::forward<J>(j));
+    }
+}
+
 template <class T, class V>
 inline void replace_deserialized_value(T& target, V&& value) {
     using target_type = std::remove_cvref_t<T>;
@@ -152,9 +188,17 @@ inline void replace_deserialized_value(T& target, V&& value) {
 
 template <class T, class J, IsKeyFormatter F>
 inline Expected<std::remove_cvref_t<T>> deserialize_construct(J&& j, F const& keyFormatter)
-    requires(can_deserialize_to_v<T, J, F>)
+    requires(can_deserialize_to_v<T, J, F> || can_deserialize_construct_from_inplace_v<T, J, F>)
 {
-    return deserialize_impl<T>(std::forward<J>(j), keyFormatter, meta::PriorityTag<11>{});
+    using RT = std::remove_cvref_t<T>;
+    if constexpr (can_deserialize_construct_from_inplace_v<RT, J, F>) {
+        RT value{};
+        auto res = deserialize(value, std::forward<J>(j), keyFormatter);
+        if (!res) return forwardError(res.error());
+        return value;
+    } else {
+        return deserialize_impl<T>(std::forward<J>(j), keyFormatter, meta::PriorityTag<11>{});
+    }
 }
 
 template <class T, class V>
@@ -238,13 +282,7 @@ inline Expected<> member_deserialize_impl(T& t, J&& j, F const& keyFormatter) {
         }
     }
     decltype(auto) child = object_child_at(std::forward<J>(j), key);
-    auto value = deserialize_construct<std::remove_cvref_t<decltype(t.*MemberPtr)>>(
-        std::forward<decltype(child)>(child),
-        keyFormatter
-    );
-    if (!value) return forwardError(value.error());
-    replace_deserialized_value(t.*MemberPtr, std::move(*value));
-    return {};
+    return deserialize(t.*MemberPtr, std::forward<decltype(child)>(child), keyFormatter);
 }
 
 template <auto MemberPtr, class T, class D, class J, IsKeyFormatter F>
@@ -259,13 +297,7 @@ inline Expected<> member_deserialize_or_impl(T& t, J&& j, D&& defaultValue, F co
     }
 
     decltype(auto) child = object_child_at(std::forward<J>(j), key);
-    auto value = deserialize_construct<std::remove_cvref_t<decltype(t.*MemberPtr)>>(
-        std::forward<decltype(child)>(child),
-        keyFormatter
-    );
-    if (!value) return forwardError(value.error());
-    replace_deserialized_value(t.*MemberPtr, std::move(*value));
-    return {};
+    return deserialize(t.*MemberPtr, std::forward<decltype(child)>(child), keyFormatter);
 }
 
 template <auto MemberPtr, class T, class J, IsKeyFormatter F>
@@ -279,13 +311,7 @@ inline Expected<> member_deserialize_default_impl(T& t, J&& j, F const& keyForma
     }
 
     decltype(auto) child = object_child_at(std::forward<J>(j), key);
-    auto value = deserialize_construct<std::remove_cvref_t<decltype(t.*MemberPtr)>>(
-        std::forward<decltype(child)>(child),
-        keyFormatter
-    );
-    if (!value) return forwardError(value.error());
-    replace_deserialized_value(t.*MemberPtr, std::move(*value));
-    return {};
+    return deserialize(t.*MemberPtr, std::forward<decltype(child)>(child), keyFormatter);
 }
 
 template <ll::FixedString Key, bool AllowOptionalMissing, class T, class J, IsKeyFormatter F>
@@ -304,10 +330,7 @@ inline Expected<> field_deserialize_impl(T& t, J&& j, F const& keyFormatter) {
     }
 
     decltype(auto) child = object_child_at(std::forward<J>(j), key);
-    auto value = deserialize_construct<std::remove_cvref_t<T>>(std::forward<decltype(child)>(child), keyFormatter);
-    if (!value) return forwardError(value.error());
-    replace_deserialized_value(t, std::move(*value));
-    return {};
+    return deserialize(t, std::forward<decltype(child)>(child), keyFormatter);
 }
 
 template <ll::FixedString Key, class T, class D, class J, IsKeyFormatter F>
@@ -322,10 +345,7 @@ inline Expected<> field_deserialize_or_impl(T& t, J&& j, D&& defaultValue, F con
     }
 
     decltype(auto) child = object_child_at(std::forward<J>(j), key);
-    auto value = deserialize_construct<std::remove_cvref_t<T>>(std::forward<decltype(child)>(child), keyFormatter);
-    if (!value) return forwardError(value.error());
-    replace_deserialized_value(t, std::move(*value));
-    return {};
+    return deserialize(t, std::forward<decltype(child)>(child), keyFormatter);
 }
 
 template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
@@ -339,10 +359,7 @@ inline Expected<> field_deserialize_default_impl(T& t, J&& j, F const& keyFormat
     }
 
     decltype(auto) child = object_child_at(std::forward<J>(j), key);
-    auto value = deserialize_construct<std::remove_cvref_t<T>>(std::forward<decltype(child)>(child), keyFormatter);
-    if (!value) return forwardError(value.error());
-    replace_deserialized_value(t, std::move(*value));
-    return {};
+    return deserialize(t, std::forward<decltype(child)>(child), keyFormatter);
 }
 
 } // namespace
