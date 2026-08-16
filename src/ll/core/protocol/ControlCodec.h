@@ -20,14 +20,14 @@ namespace ll::protocol::detail {
     CoreVersion           coreProtocol,
     bool                  includeNegotiationDigest = true,
     std::size_t           maxBody                  = Limits::MaxControlBody
-) noexcept;
+);
 
 [[nodiscard]] Expected<ControlMessage> decodeControl(
     std::uint64_t              runtimeId,
     std::span<std::byte const> body,
     CoreVersion                coreProtocol,
     std::size_t                maxBody = Limits::MaxControlBody
-) noexcept;
+);
 
 struct DeclarationSource {
     ControlHeader                   firstHeader;
@@ -48,10 +48,10 @@ struct NegotiationResultSource {
 };
 
 [[nodiscard]] Expected<std::vector<Declaration>>
-packDeclaration(DeclarationSource source, CoreVersion coreProtocol, std::size_t maxBody) noexcept;
+packDeclaration(DeclarationSource source, CoreVersion coreProtocol, std::size_t maxBody);
 
 [[nodiscard]] Expected<std::vector<NegotiationResult>>
-packNegotiationResult(NegotiationResultSource source, CoreVersion coreProtocol, std::size_t maxBody) noexcept;
+packNegotiationResult(NegotiationResultSource source, CoreVersion coreProtocol, std::size_t maxBody);
 
 class DeclarationAssembler {
     struct Impl;
@@ -67,8 +67,8 @@ public:
     DeclarationAssembler(DeclarationAssembler const&)            = delete;
     DeclarationAssembler& operator=(DeclarationAssembler const&) = delete;
 
-    [[nodiscard]] Expected<>                  push(Declaration chunk) noexcept;
-    [[nodiscard]] Expected<DeclarationSource> finish() noexcept;
+    [[nodiscard]] Expected<>                  push(Declaration chunk);
+    [[nodiscard]] Expected<DeclarationSource> finish();
 };
 
 class NegotiationResultAssembler {
@@ -85,8 +85,8 @@ public:
     NegotiationResultAssembler(NegotiationResultAssembler const&)            = delete;
     NegotiationResultAssembler& operator=(NegotiationResultAssembler const&) = delete;
 
-    [[nodiscard]] Expected<>                        push(NegotiationResult chunk) noexcept;
-    [[nodiscard]] Expected<NegotiationResultSource> finish() noexcept;
+    [[nodiscard]] Expected<>                        push(NegotiationResult chunk);
+    [[nodiscard]] Expected<NegotiationResultSource> finish();
 };
 
 } // namespace ll::protocol::detail

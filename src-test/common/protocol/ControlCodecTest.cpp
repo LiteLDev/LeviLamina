@@ -1,8 +1,11 @@
 #include "gtest/gtest.h"
 
+#include "ll/api/protocol/Codec.h"
+#include "ll/api/protocol/Error.h"
 #include "ll/core/protocol/ControlCodec.h"
 #include "ll/core/protocol/Transcript.h"
 
+#include <limits>
 #include <string_view>
 
 namespace ll::protocol::test {
@@ -68,8 +71,7 @@ TEST(ProtocolControlCodecTest, RoundTripsEveryControlMessage) {
     expectRoundTrip(
         detail::Hello{
             header(),
-            nonce(std::byte{1}
-            ),
+            nonce(std::byte{1}),
             {1, 1},
             transportLimits(),
             {{featureName("core.delta"), {1, 2}, true}}
@@ -273,7 +275,7 @@ TEST(ProtocolControlCodecTest, RejectsCumulativeChunkTotalsBeforeRetention) {
         detail::Declaration{header(3), EndpointRole::Server, 1, 1, 2, 1, 0, {module("example:two")}, {}}
     ));
 
-    detail::TranscriptDigest           digest{};
+    detail::TranscriptDigest digest{};
     detail::NegotiationResultAssembler result;
     ASSERT_TRUE(result.push(
         detail::NegotiationResult{
@@ -307,11 +309,133 @@ TEST(ProtocolControlCodecTest, RejectsCumulativeChunkTotalsBeforeRetention) {
     ));
 }
 
+TEST(ProtocolControlCodecTest, RejectsImpossibleListBeforeEntryAllocation) {
+    Encoder body{Limits::MaxControlBody};
+    ASSERT_TRUE(body.writeU8(1));
+    ASSERT_TRUE(body.writeU64(1));
+    ASSERT_TRUE(body.writeU32(1));
+    ASSERT_TRUE(body.writeBytes(nonce(std::byte{1})));
+    ASSERT_TRUE(body.writeU16(1));
+    ASSERT_TRUE(body.writeU16(1));
+    auto limits = transportLimits();
+    ASSERT_TRUE(body.writeU32(limits.maxControlBody));
+    ASSERT_TRUE(body.writeU32(limits.maxPayloadBody));
+    ASSERT_TRUE(body.writeU32(limits.packetsPerSecond));
+    ASSERT_TRUE(body.writeU32(limits.bytesPerSecond));
+    ASSERT_TRUE(body.writeU32(limits.burstPackets));
+    ASSERT_TRUE(body.writeU32(limits.burstBytes));
+    ASSERT_TRUE(body.writeVarUint(Limits::MaxDeclaredFeatures));
+
+    auto decoded = detail::decodeControl(detail::HelloRuntimeId, body.bytes(), 1);
+    ASSERT_FALSE(decoded);
+    ASSERT_TRUE(decoded.error().isA<CodecErrorInfo>());
+    EXPECT_EQ(decoded.error().as<CodecErrorInfo>().code, CodecErrc::Truncated);
+}
+
+TEST(ProtocolControlCodecTest, RejectsUnknownControlIdBeforeBodyParsing) {
+    auto decoded = detail::decodeControl(0xFFFFFFFFFFFFFFFFULL, {}, 1);
+    ASSERT_FALSE(decoded);
+    ASSERT_TRUE(decoded.error().isA<ProtocolErrorInfo>());
+    EXPECT_EQ(decoded.error().as<ProtocolErrorInfo>().code, ProtocolErrc::UnexpectedMessage);
+}
+
+TEST(ProtocolControlCodecTest, RejectsDanglingPayloadModuleReferences) {
+    detail::DeclarationSource declaration{
+        header(2),
+        EndpointRole::Server,
+        1,
+        {},
+        {payload("example:missing/state", 42)}
+    };
+    EXPECT_FALSE(detail::packDeclaration(std::move(declaration), 1, Limits::MaxControlBody));
+
+    detail::TranscriptDigest           digest{};
+    detail::NegotiationResultSource result{
+        header(2),
+        1,
+        1,
+        1,
+        {},
+        {{payloadId("example:missing/state"),
+          42,
+          PayloadDirection::ServerToClient,
+          detail::NegotiationStatus::Disabled,
+          detail::WireErrorCode::UnknownPayload,
+          0,
+          0}},
+        digest
+    };
+    EXPECT_FALSE(detail::packNegotiationResult(std::move(result), 1, Limits::MaxControlBody));
+}
+
+TEST(ProtocolControlCodecTest, ClosesAssemblerAfterMalformedChunk) {
+    detail::DeclarationAssembler assembler;
+    auto first = detail::Declaration{
+        header(std::numeric_limits<std::uint32_t>::max()),
+        EndpointRole::Server,
+        1,
+        0,
+        2,
+        1,
+        0,
+        {module("example:one")},
+        {}
+    };
+    EXPECT_FALSE(assembler.push(std::move(first)));
+
+    auto replacement = detail::Declaration{
+        header(2), EndpointRole::Server, 1, 0, 1, 1, 0, {module("example:one")}, {}
+    };
+    EXPECT_FALSE(assembler.push(std::move(replacement)));
+    EXPECT_FALSE(assembler.finish());
+}
+
+TEST(ProtocolControlCodecTest, AcceptsChunkSequenceAtUint32Boundary) {
+    detail::DeclarationAssembler assembler;
+    ASSERT_TRUE(assembler.push(detail::Declaration{
+        header(std::numeric_limits<std::uint32_t>::max() - 1),
+        EndpointRole::Server,
+        1,
+        0,
+        2,
+        2,
+        0,
+        {module("example:one")},
+        {}
+    }));
+    ASSERT_TRUE(assembler.push(detail::Declaration{
+        header(std::numeric_limits<std::uint32_t>::max()),
+        EndpointRole::Server,
+        1,
+        1,
+        2,
+        2,
+        0,
+        {module("example:two")},
+        {}
+    }));
+    EXPECT_TRUE(assembler.finish());
+}
+
+TEST(ProtocolControlCodecTest, RejectsUseAfterAssemblerMove) {
+    detail::DeclarationAssembler source;
+    detail::DeclarationAssembler destination{std::move(source)};
+
+    EXPECT_FALSE(source.push(detail::Declaration{
+        header(2), EndpointRole::Server, 1, 0, 1, 1, 0, {module("example:one")}, {}
+    }));
+    EXPECT_FALSE(source.finish());
+
+    ASSERT_TRUE(destination.push(detail::Declaration{
+        header(2), EndpointRole::Server, 1, 0, 1, 1, 0, {module("example:one")}, {}
+    }));
+    EXPECT_TRUE(destination.finish());
+}
+
 TEST(ProtocolTranscriptTest, IsDeterministicAndSensitiveToChunkBytes) {
     detail::Hello hello{
         header(),
-        nonce(std::byte{1}
-        ),
+        nonce(std::byte{1}),
         {1, 1},
         transportLimits(),
         {}

@@ -48,7 +48,7 @@ Transcript::~Transcript() = default;
 Transcript::Transcript(Transcript&&) noexcept            = default;
 Transcript& Transcript::operator=(Transcript&&) noexcept = default;
 
-Expected<> Transcript::add(ControlMessage const& message, CoreVersion coreProtocol) noexcept {
+Expected<> Transcript::add(ControlMessage const& message, CoreVersion coreProtocol) {
     if (mImpl->digest) return makeProtocolError(ProtocolErrc::InvalidState, "transcript already finalized");
     if (std::holds_alternative<Ready>(message) || std::holds_alternative<ProtocolErrorMessage>(message)) {
         return makeProtocolError(ProtocolErrc::UnexpectedMessage, "message is excluded from transcript");
@@ -69,7 +69,7 @@ Expected<> Transcript::add(ControlMessage const& message, CoreVersion coreProtoc
     return {};
 }
 
-TranscriptDigest Transcript::finish() noexcept {
+TranscriptDigest Transcript::finish() {
     if (!mImpl->digest) mImpl->digest = toTranscriptDigest(mImpl->hash.final());
     return *mImpl->digest;
 }

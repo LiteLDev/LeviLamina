@@ -11,7 +11,19 @@
 
 namespace ll::protocol::detail {
 
-Unexpected malformed(std::string context = {}) noexcept {
+constexpr std::size_t MinFeatureDeclarationBytes = 1 + 1 + 2 + 2 + 1; // name + versions + required
+constexpr std::size_t MinSelectedFeatureBytes    = 1 + 1 + 2;         // name + selected version
+constexpr std::size_t MinModuleDeclarationBytes =
+    1 + 3 + 3 + 4 + 1 + 1; // ID + semantic version + protocol range + requirement + feature count
+constexpr std::size_t MinPayloadDeclarationBytes =
+    1 + 5 + 8 + 1 + 1 + 1 + 2 + 4; // ID + runtime ID + enums + schema count/schema + maximum size
+constexpr std::size_t MinModuleResultBytes =
+    1 + 3 + 1 + 2 + 2 + 1; // ID + status + selected protocol + reason + feature count
+constexpr std::size_t MinPayloadResultBytes =
+    1 + 5 + 8 + 1 + 1 + 2 + 2 + 4; // ID + runtime ID + enums + reason + selected schema/maximum size
+constexpr std::size_t SchemaVersionBytes = sizeof(std::uint16_t);
+
+Unexpected malformed(std::string context = {}) {
     return makeProtocolError(ProtocolErrc::DeclarationMalformed, std::move(context));
 }
 
@@ -50,6 +62,59 @@ bool validSchemas(std::vector<SchemaVersion> const& schemas) noexcept {
         && strictlySorted(schemas, [](SchemaVersion value) { return value; }) && schemas.front() != 0;
 }
 
+template <class ModuleEntry>
+bool validCumulativeFeatureCount(std::vector<ModuleEntry> const& modules, std::size_t maxFeatures) noexcept {
+    std::size_t featureCount{};
+    for (auto const& module : modules) {
+        if (featureCount > maxFeatures || module.features.size() > maxFeatures - featureCount) {
+            return false;
+        }
+        featureCount += module.features.size();
+    }
+
+    return true;
+}
+
+template <class ModuleEntry, class PayloadEntry>
+bool entriesFitDeclaredTotals(
+    std::vector<ModuleEntry> const&  modules,
+    std::size_t                      totalModules,
+    std::vector<PayloadEntry> const& payloads,
+    std::size_t                      totalPayloads
+) noexcept {
+    return modules.size() <= totalModules && payloads.size() <= totalPayloads;
+}
+
+template <class ModuleEntry, class PayloadEntry>
+bool payloadModulesExist(std::vector<ModuleEntry> const& modules, std::vector<PayloadEntry> const& payloads) noexcept {
+    return std::ranges::all_of(payloads, [&](auto const& payload) {
+        return std::ranges::binary_search(modules, payload.id.module(), {}, [](auto const& module) {
+            return module.id.value();
+        });
+    });
+}
+
+Expected<> validateChunkMetadata(
+    ControlHeader const& header,
+    std::uint16_t        chunkIndex,
+    std::uint16_t        chunkCount,
+    std::uint16_t        maxChunks
+) {
+    if (header.schema == 0 || header.handshakeId == 0 || header.messageSequence == 0 || chunkCount == 0
+        || chunkCount > maxChunks || chunkIndex >= chunkCount
+        || static_cast<std::uint32_t>(chunkCount - chunkIndex - 1)
+               > std::numeric_limits<std::uint32_t>::max() - header.messageSequence) {
+        return malformed("chunk metadata");
+    }
+    return {};
+}
+
+bool knownControlRuntimeId(std::uint64_t runtimeId) noexcept {
+    return runtimeId == HelloRuntimeId || runtimeId == HelloAckRuntimeId || runtimeId == DeclarationRuntimeId
+        || runtimeId == NegotiationResultRuntimeId || runtimeId == ReadyRuntimeId
+        || runtimeId == ProtocolErrorRuntimeId;
+}
+
 bool validWireError(std::uint16_t value) noexcept {
     switch (static_cast<WireErrorCode>(value)) {
     case WireErrorCode::None:
@@ -80,7 +145,7 @@ bool validWireError(std::uint16_t value) noexcept {
     return false;
 }
 
-Expected<> writeHeader(Encoder& out, ControlHeader const& value, std::uint8_t expectedSchema) noexcept {
+Expected<> writeHeader(Encoder& out, ControlHeader const& value, std::uint8_t expectedSchema) {
     if (value.schema != expectedSchema || value.handshakeId == 0 || value.messageSequence == 0) {
         return makeProtocolError(ProtocolErrc::InvalidControlSchema);
     }
@@ -89,7 +154,7 @@ Expected<> writeHeader(Encoder& out, ControlHeader const& value, std::uint8_t ex
     return out.writeU32(value.messageSequence);
 }
 
-Expected<> writeTransportLimits(Encoder& out, TransportLimits const& value) noexcept {
+Expected<> writeTransportLimits(Encoder& out, TransportLimits const& value) {
     if (!validLimits(value)) return makeCodecError(CodecErrc::InvalidValue, "transport limits");
     if (auto result = out.writeU32(value.maxControlBody); !result) return result;
     if (auto result = out.writeU32(value.maxPayloadBody); !result) return result;
@@ -99,7 +164,7 @@ Expected<> writeTransportLimits(Encoder& out, TransportLimits const& value) noex
     return out.writeU32(value.burstBytes);
 }
 
-Expected<> writeFeatureDeclaration(Encoder& out, WireFeatureDeclaration const& value) noexcept {
+Expected<> writeFeatureDeclaration(Encoder& out, WireFeatureDeclaration const& value) {
     if (!value.versions.valid()) return makeCodecError(CodecErrc::InvalidValue, "feature range");
     if (auto result = out.writeString(value.name.value(), Limits::MaxFeatureNameBytes); !result) return result;
     if (auto result = out.writeU16(value.versions.min); !result) return result;
@@ -107,14 +172,14 @@ Expected<> writeFeatureDeclaration(Encoder& out, WireFeatureDeclaration const& v
     return out.writeBool(value.required);
 }
 
-Expected<> writeSelectedFeature(Encoder& out, SelectedFeature const& value) noexcept {
+Expected<> writeSelectedFeature(Encoder& out, SelectedFeature const& value) {
     if (value.version == 0) return makeCodecError(CodecErrc::InvalidValue, "selected feature");
     if (auto result = out.writeString(value.name.value(), Limits::MaxFeatureNameBytes); !result) return result;
     return out.writeU16(value.version);
 }
 
 template <class T, class Writer>
-Expected<> writeList(Encoder& out, std::vector<T> const& values, std::size_t maxCount, Writer writer) noexcept {
+Expected<> writeList(Encoder& out, std::vector<T> const& values, std::size_t maxCount, Writer writer) {
     if (values.size() > maxCount || values.size() > std::numeric_limits<std::uint32_t>::max()) {
         return makeCodecError(CodecErrc::SizeLimitExceeded, "list count");
     }
@@ -125,7 +190,7 @@ Expected<> writeList(Encoder& out, std::vector<T> const& values, std::size_t max
     return {};
 }
 
-Expected<> writeModule(Encoder& out, ModuleDeclaration const& value) noexcept {
+Expected<> writeModule(Encoder& out, ModuleDeclaration const& value) {
     if (!value.protocolVersions.valid() || !validFeatures(value.features)
         || value.requirement > ModuleRequirement::RequiredOnBoth) {
         return makeCodecError(CodecErrc::InvalidValue, "module declaration");
@@ -140,7 +205,7 @@ Expected<> writeModule(Encoder& out, ModuleDeclaration const& value) noexcept {
     return writeList(out, value.features, Limits::MaxDeclaredFeatures, writeFeatureDeclaration);
 }
 
-Expected<> writePayload(Encoder& out, PayloadDeclaration const& value) noexcept {
+Expected<> writePayload(Encoder& out, PayloadDeclaration const& value) {
     if (value.runtimeId == 0 || value.maxEncodedSize == 0 || value.maxEncodedSize > Limits::MaxPayloadBody
         || !validSchemas(value.schemas) || value.direction > PayloadDirection::ServerToClient
         || value.requirement > PayloadRequirement::Required) {
@@ -161,7 +226,7 @@ Expected<> writePayload(Encoder& out, PayloadDeclaration const& value) noexcept 
     return out.writeU32(value.maxEncodedSize);
 }
 
-Expected<> writeModuleResult(Encoder& out, ModuleResult const& value) noexcept {
+Expected<> writeModuleResult(Encoder& out, ModuleResult const& value) {
     if (value.status > NegotiationStatus::Enabled) {
         return makeCodecError(CodecErrc::InvalidValue, "module result status");
     }
@@ -179,7 +244,7 @@ Expected<> writeModuleResult(Encoder& out, ModuleResult const& value) noexcept {
     return writeList(out, value.features, Limits::MaxDeclaredFeatures, writeSelectedFeature);
 }
 
-Expected<> writePayloadResult(Encoder& out, PayloadResult const& value) noexcept {
+Expected<> writePayloadResult(Encoder& out, PayloadResult const& value) {
     if (value.status > NegotiationStatus::Enabled || value.direction > PayloadDirection::ServerToClient) {
         return makeCodecError(CodecErrc::InvalidValue, "payload result enum");
     }
@@ -202,12 +267,7 @@ Expected<> writePayloadResult(Encoder& out, PayloadResult const& value) noexcept
     return out.writeU32(value.selectedMaxEncodedSize);
 }
 
-template <class T>
-Expected<T> required(Expected<T> value) noexcept {
-    return value;
-}
-
-Expected<ControlHeader> readHeader(Decoder& in, std::uint8_t expectedSchema) noexcept {
+Expected<ControlHeader> readHeader(Decoder& in, std::uint8_t expectedSchema) {
     auto schema = in.readU8();
     if (!schema) return forwardError(schema.error());
     auto handshake = in.readU64();
@@ -220,7 +280,7 @@ Expected<ControlHeader> readHeader(Decoder& in, std::uint8_t expectedSchema) noe
     return ControlHeader{*schema, *handshake, *sequence};
 }
 
-Expected<TransportLimits> readTransportLimits(Decoder& in) noexcept {
+Expected<TransportLimits> readTransportLimits(Decoder& in) {
     auto control = in.readU32();
     if (!control) return forwardError(control.error());
     auto payload = in.readU32();
@@ -238,7 +298,7 @@ Expected<TransportLimits> readTransportLimits(Decoder& in) noexcept {
     return result;
 }
 
-Expected<FeatureName> readFeatureName(Decoder& in) noexcept {
+Expected<FeatureName> readFeatureName(Decoder& in) {
     auto raw = in.readString(Limits::MaxFeatureNameBytes);
     if (!raw) return forwardError(raw.error());
     auto parsed = FeatureName::parse(*raw);
@@ -246,7 +306,7 @@ Expected<FeatureName> readFeatureName(Decoder& in) noexcept {
     return parsed;
 }
 
-Expected<WireFeatureDeclaration> readFeatureDeclaration(Decoder& in) noexcept {
+Expected<WireFeatureDeclaration> readFeatureDeclaration(Decoder& in) {
     auto name = readFeatureName(in);
     if (!name) return forwardError(name.error());
     auto min = in.readU16();
@@ -260,7 +320,7 @@ Expected<WireFeatureDeclaration> readFeatureDeclaration(Decoder& in) noexcept {
     return WireFeatureDeclaration{std::move(*name), versions, *requiredValue};
 }
 
-Expected<SelectedFeature> readSelectedFeature(Decoder& in) noexcept {
+Expected<SelectedFeature> readSelectedFeature(Decoder& in) {
     auto name = readFeatureName(in);
     if (!name) return forwardError(name.error());
     auto version = in.readU16();
@@ -270,10 +330,13 @@ Expected<SelectedFeature> readSelectedFeature(Decoder& in) noexcept {
 }
 
 template <class T, class Reader>
-Expected<std::vector<T>> readList(Decoder& in, std::size_t maxCount, Reader reader) noexcept {
+Expected<std::vector<T>> readList(Decoder& in, std::size_t maxCount, std::size_t minEncodedEntrySize, Reader reader) {
     auto count = in.readVarUint();
     if (!count) return forwardError(count.error());
     if (*count > maxCount) return makeCodecError(CodecErrc::SizeLimitExceeded, "list count");
+    if (minEncodedEntrySize == 0 || *count > in.remaining() / minEncodedEntrySize) {
+        return makeCodecError(CodecErrc::Truncated, "list entries");
+    }
 
     std::vector<T> result;
     result.reserve(*count);
@@ -287,7 +350,33 @@ Expected<std::vector<T>> readList(Decoder& in, std::size_t maxCount, Reader read
     return result;
 }
 
-Expected<ModuleDeclaration> readModule(Decoder& in) noexcept {
+template <class ModuleEntry, class Reader>
+Expected<std::vector<ModuleEntry>> readModuleList(
+    Decoder&    in,
+    std::size_t maxModuleCount,
+    std::size_t minEncodedEntrySize,
+    std::size_t maxFeatureCount,
+    Reader      reader
+) {
+    std::size_t featureCount{};
+    return readList<ModuleEntry>(
+        in,
+        maxModuleCount,
+        minEncodedEntrySize,
+        [&](Decoder& decoder) -> Expected<ModuleEntry> {
+            auto module = reader(decoder);
+            if (!module) return forwardError(module.error());
+
+            if (featureCount > maxFeatureCount || module->features.size() > maxFeatureCount - featureCount) {
+                return makeCodecError(CodecErrc::SizeLimitExceeded, "module feature count");
+            }
+            featureCount += module->features.size();
+            return std::move(*module);
+        }
+    );
+}
+
+Expected<ModuleDeclaration> readModule(Decoder& in) {
     auto rawId = in.readString(Limits::MaxModuleIdBytes);
     if (!rawId) return forwardError(rawId.error());
     auto id = ModuleId::parse(*rawId);
@@ -310,9 +399,16 @@ Expected<ModuleDeclaration> readModule(Decoder& in) noexcept {
     if (!requirement) return forwardError(requirement.error());
     if (*requirement > static_cast<std::uint8_t>(ModuleRequirement::RequiredOnBoth))
         return makeCodecError(CodecErrc::InvalidValue);
-    auto features = readList<WireFeatureDeclaration>(in, Limits::MaxDeclaredFeatures, readFeatureDeclaration);
+    auto features = readList<WireFeatureDeclaration>(
+        in,
+        Limits::MaxDeclaredFeatures,
+        MinFeatureDeclarationBytes,
+        readFeatureDeclaration
+    );
     if (!features) return forwardError(features.error());
-    if (!validFeatures(*features)) return makeCodecError(CodecErrc::InvalidValue, "feature ordering");
+    if (!strictlySorted(*features, [](WireFeatureDeclaration const& value) { return value.name.value(); })) {
+        return makeCodecError(CodecErrc::InvalidValue, "feature ordering");
+    }
     return ModuleDeclaration{
         std::move(*id),
         {static_cast<std::uint16_t>(*major), static_cast<std::uint16_t>(*minor), static_cast<std::uint16_t>(*patch)},
@@ -322,7 +418,7 @@ Expected<ModuleDeclaration> readModule(Decoder& in) noexcept {
     };
 }
 
-Expected<PayloadDeclaration> readPayload(Decoder& in) noexcept {
+Expected<PayloadDeclaration> readPayload(Decoder& in) {
     auto rawId = in.readString(Limits::MaxPayloadIdBytes);
     if (!rawId) return forwardError(rawId.error());
     auto id = PayloadId::parse(*rawId);
@@ -334,8 +430,9 @@ Expected<PayloadDeclaration> readPayload(Decoder& in) noexcept {
     auto requirement = in.readU8();
     if (!requirement) return forwardError(requirement.error());
     if (*runtimeId == 0 || *direction > 1 || *requirement > 1) return makeCodecError(CodecErrc::InvalidValue);
-    auto schemas =
-        readList<SchemaVersion>(in, Limits::MaxSchemasPerPayload, [](Decoder& decoder) { return decoder.readU16(); });
+    auto schemas = readList<SchemaVersion>(in, Limits::MaxSchemasPerPayload, SchemaVersionBytes, [](Decoder& decoder) {
+        return decoder.readU16();
+    });
     if (!schemas) return forwardError(schemas.error());
     auto maxSize = in.readU32();
     if (!maxSize) return forwardError(maxSize.error());
@@ -351,14 +448,14 @@ Expected<PayloadDeclaration> readPayload(Decoder& in) noexcept {
     };
 }
 
-Expected<WireErrorCode> readWireError(Decoder& in) noexcept {
+Expected<WireErrorCode> readWireError(Decoder& in) {
     auto raw = in.readU16();
     if (!raw) return forwardError(raw.error());
     if (!validWireError(*raw)) return makeCodecError(CodecErrc::InvalidValue, "wire error code");
     return static_cast<WireErrorCode>(*raw);
 }
 
-Expected<ModuleResult> readModuleResult(Decoder& in) noexcept {
+Expected<ModuleResult> readModuleResult(Decoder& in) {
     auto rawId = in.readString(Limits::MaxModuleIdBytes);
     if (!rawId) return forwardError(rawId.error());
     auto id = ModuleId::parse(*rawId);
@@ -369,11 +466,14 @@ Expected<ModuleResult> readModuleResult(Decoder& in) noexcept {
     if (!protocol) return forwardError(protocol.error());
     auto reason = readWireError(in);
     if (!reason) return forwardError(reason.error());
-    auto features = readList<SelectedFeature>(in, Limits::MaxDeclaredFeatures, readSelectedFeature);
+    auto features =
+        readList<SelectedFeature>(in, Limits::MaxDeclaredFeatures, MinSelectedFeatureBytes, readSelectedFeature);
     if (!features) return forwardError(features.error());
     if (*status > 1 || (*status == 1) != (*protocol != 0) || (*status == 1) != (*reason == WireErrorCode::None)
-        || (*status == 0 && !features->empty()) || !validSelectedFeatures(*features))
+        || (*status == 0 && !features->empty())
+        || !strictlySorted(*features, [](SelectedFeature const& value) { return value.name.value(); })) {
         return makeCodecError(CodecErrc::InvalidValue);
+    }
     return ModuleResult{
         std::move(*id),
         static_cast<NegotiationStatus>(*status),
@@ -383,7 +483,7 @@ Expected<ModuleResult> readModuleResult(Decoder& in) noexcept {
     };
 }
 
-Expected<PayloadResult> readPayloadResult(Decoder& in) noexcept {
+Expected<PayloadResult> readPayloadResult(Decoder& in) {
     auto rawId = in.readString(Limits::MaxPayloadIdBytes);
     if (!rawId) return forwardError(rawId.error());
     auto id = PayloadId::parse(*rawId);
@@ -414,7 +514,7 @@ Expected<PayloadResult> readPayloadResult(Decoder& in) noexcept {
     };
 }
 
-Expected<Nonce> readNonce(Decoder& in) noexcept {
+Expected<Nonce> readNonce(Decoder& in) {
     auto bytes = in.readBytes(16);
     if (!bytes) return forwardError(bytes.error());
 
@@ -425,20 +525,13 @@ Expected<Nonce> readNonce(Decoder& in) noexcept {
     return result;
 }
 
-Expected<TranscriptDigest> readDigest(Decoder& in) noexcept {
+Expected<TranscriptDigest> readDigest(Decoder& in) {
     auto bytes = in.readBytes(32);
     if (!bytes) return forwardError(bytes.error());
 
     TranscriptDigest result{};
     std::ranges::copy(*bytes, result.begin());
     return result;
-}
-
-Expected<>
-validateChunk(std::uint16_t index, std::uint16_t count, std::uint16_t maxChunks, std::size_t entries) noexcept {
-    if (count == 0 || count > maxChunks || index >= count || (count != 1 && entries == 0))
-        return malformed("chunk metadata");
-    return {};
 }
 
 std::uint64_t controlRuntimeId(ControlMessage const& message) noexcept {
@@ -456,7 +549,7 @@ std::uint64_t controlRuntimeId(ControlMessage const& message) noexcept {
     );
 }
 
-Expected<> writeControlBody(Encoder& out, Hello const& value) noexcept {
+Expected<> writeControlBody(Encoder& out, Hello const& value) {
     if (!nonzero(value.serverNonce) || !value.coreProtocols.valid() || !validFeatures(value.features)) {
         return makeCodecError(CodecErrc::InvalidValue);
     }
@@ -467,7 +560,7 @@ Expected<> writeControlBody(Encoder& out, Hello const& value) noexcept {
     return writeList(out, value.features, Limits::MaxDeclaredFeatures, writeFeatureDeclaration);
 }
 
-Expected<> writeControlBody(Encoder& out, HelloAck const& value) noexcept {
+Expected<> writeControlBody(Encoder& out, HelloAck const& value) {
     if (!nonzero(value.echoedServerNonce) || !nonzero(value.clientNonce) || value.selectedCoreProtocol == 0
         || !validSelectedFeatures(value.features)) {
         return makeCodecError(CodecErrc::InvalidValue);
@@ -479,24 +572,23 @@ Expected<> writeControlBody(Encoder& out, HelloAck const& value) noexcept {
     return writeList(out, value.features, Limits::MaxDeclaredFeatures, writeSelectedFeature);
 }
 
-Expected<> writeControlBody(Encoder& out, Declaration const& value) noexcept {
+Expected<> writeControlBody(Encoder& out, Declaration const& value) {
     if (value.senderRole != EndpointRole::Client && value.senderRole != EndpointRole::Server) {
         return makeCodecError(CodecErrc::InvalidValue);
     }
     if (value.totalModuleCount > Limits::MaxDeclaredModules || value.totalPayloadCount > Limits::MaxDeclaredPayloads
+        || !entriesFitDeclaredTotals(value.modules, value.totalModuleCount, value.payloads, value.totalPayloadCount)
+        || !validCumulativeFeatureCount(value.modules, Limits::MaxDeclaredFeatures)
         || !strictlySorted(value.modules, [](auto const& entry) { return entry.id.value(); })
         || !strictlySorted(value.payloads, [](auto const& entry) { return entry.id.value(); })) {
         return malformed();
     }
-    if (auto result = validateChunk(
-            value.chunkIndex,
-            value.chunkCount,
-            Limits::MaxDeclarationChunks,
-            value.modules.size() + value.payloads.size()
-        );
+    if (auto result =
+            validateChunkMetadata(value.header, value.chunkIndex, value.chunkCount, Limits::MaxDeclarationChunks);
         !result) {
         return result;
     }
+    if (value.chunkCount != 1 && value.modules.empty() && value.payloads.empty()) return malformed("empty chunk");
     if (auto result = out.writeU8(static_cast<std::uint8_t>(value.senderRole)); !result) return result;
     if (auto result = out.writeU64(value.registryRevision); !result) return result;
     if (auto result = out.writeU16(value.chunkIndex); !result) return result;
@@ -507,22 +599,26 @@ Expected<> writeControlBody(Encoder& out, Declaration const& value) noexcept {
     return writeList(out, value.payloads, Limits::MaxDeclaredPayloads, writePayload);
 }
 
-Expected<> writeControlBody(Encoder& out, NegotiationResult const& value, bool includeDigest) noexcept {
+Expected<> writeControlBody(Encoder& out, NegotiationResult const& value, bool includeDigest) {
     if (value.selectedCoreProtocol == 0 || value.totalModuleResultCount > Limits::MaxResultModules
         || value.totalPayloadResultCount > Limits::MaxResultPayloads
+        || !entriesFitDeclaredTotals(
+            value.modules,
+            value.totalModuleResultCount,
+            value.payloads,
+            value.totalPayloadResultCount
+        )
+        || !validCumulativeFeatureCount(value.modules, static_cast<std::size_t>(Limits::MaxDeclaredFeatures) * 2)
         || !strictlySorted(value.modules, [](auto const& entry) { return entry.id.value(); })
         || !strictlySorted(value.payloads, [](auto const& entry) { return entry.id.value(); })) {
         return malformed();
     }
-    if (auto result = validateChunk(
-            value.chunkIndex,
-            value.chunkCount,
-            Limits::MaxNegotiationResultChunks,
-            value.modules.size() + value.payloads.size()
-        );
+    if (auto result =
+            validateChunkMetadata(value.header, value.chunkIndex, value.chunkCount, Limits::MaxNegotiationResultChunks);
         !result) {
         return result;
     }
+    if (value.chunkCount != 1 && value.modules.empty() && value.payloads.empty()) return malformed("empty chunk");
     if (auto result = out.writeU16(value.selectedCoreProtocol); !result) return result;
     if (auto result = out.writeU64(value.serverRegistryRevision); !result) return result;
     if (auto result = out.writeU64(value.clientRegistryRevision); !result) return result;
@@ -539,7 +635,7 @@ Expected<> writeControlBody(Encoder& out, NegotiationResult const& value, bool i
     return includeDigest ? out.writeBytes(value.transcriptDigest) : Expected<>{};
 }
 
-Expected<> writeControlBody(Encoder& out, Ready const& value) noexcept {
+Expected<> writeControlBody(Encoder& out, Ready const& value) {
     if (value.senderRole != EndpointRole::Client && value.senderRole != EndpointRole::Server) {
         return makeCodecError(CodecErrc::InvalidValue, "ready sender role");
     }
@@ -547,7 +643,7 @@ Expected<> writeControlBody(Encoder& out, Ready const& value) noexcept {
     return out.writeBytes(value.transcriptDigest);
 }
 
-Expected<> writeControlBody(Encoder& out, ProtocolErrorMessage const& value) noexcept {
+Expected<> writeControlBody(Encoder& out, ProtocolErrorMessage const& value) {
     if (value.code == WireErrorCode::None || !validWireError(static_cast<std::uint16_t>(value.code))) {
         return makeCodecError(CodecErrc::InvalidValue);
     }
@@ -562,7 +658,7 @@ Expected<std::string> encodeControl(
     CoreVersion           coreProtocol,
     bool                  includeNegotiationDigest,
     std::size_t           maxBody
-) noexcept {
+) {
     auto const* definition = findCoreProtocolDefinition(coreProtocol);
     if (!definition) return makeProtocolError(ProtocolErrc::VersionIncompatible);
 
@@ -585,7 +681,7 @@ Expected<std::string> encodeControl(
     return out.takeBuffer();
 }
 
-Expected<ControlMessage> readHelloBody(Decoder& in, ControlHeader const& header) noexcept {
+Expected<ControlMessage> readHelloBody(Decoder& in, ControlHeader const& header) {
     auto nonce = readNonce(in);
     if (!nonce) return forwardError(nonce.error());
     auto min = in.readU16();
@@ -596,15 +692,22 @@ Expected<ControlMessage> readHelloBody(Decoder& in, ControlHeader const& header)
     if (!range.valid()) return makeCodecError(CodecErrc::InvalidValue);
     auto limits = readTransportLimits(in);
     if (!limits) return forwardError(limits.error());
-    auto features = readList<WireFeatureDeclaration>(in, Limits::MaxDeclaredFeatures, readFeatureDeclaration);
+    auto features = readList<WireFeatureDeclaration>(
+        in,
+        Limits::MaxDeclaredFeatures,
+        MinFeatureDeclarationBytes,
+        readFeatureDeclaration
+    );
     if (!features) return forwardError(features.error());
-    if (!validFeatures(*features)) return makeCodecError(CodecErrc::InvalidValue);
+    if (!strictlySorted(*features, [](WireFeatureDeclaration const& value) { return value.name.value(); })) {
+        return makeCodecError(CodecErrc::InvalidValue);
+    }
     return ControlMessage{
         Hello{header, *nonce, range, *limits, std::move(*features)}
     };
 }
 
-Expected<ControlMessage> readHelloAckBody(Decoder& in, ControlHeader const& header) noexcept {
+Expected<ControlMessage> readHelloAckBody(Decoder& in, ControlHeader const& header) {
     auto echoed = readNonce(in);
     if (!echoed) return forwardError(echoed.error());
     auto client = readNonce(in);
@@ -614,15 +717,18 @@ Expected<ControlMessage> readHelloAckBody(Decoder& in, ControlHeader const& head
     if (*selected == 0) return makeCodecError(CodecErrc::InvalidValue);
     auto limits = readTransportLimits(in);
     if (!limits) return forwardError(limits.error());
-    auto features = readList<SelectedFeature>(in, Limits::MaxDeclaredFeatures, readSelectedFeature);
+    auto features =
+        readList<SelectedFeature>(in, Limits::MaxDeclaredFeatures, MinSelectedFeatureBytes, readSelectedFeature);
     if (!features) return forwardError(features.error());
-    if (!validSelectedFeatures(*features)) return makeCodecError(CodecErrc::InvalidValue);
+    if (!strictlySorted(*features, [](SelectedFeature const& value) { return value.name.value(); })) {
+        return makeCodecError(CodecErrc::InvalidValue);
+    }
     return ControlMessage{
         HelloAck{header, *echoed, *client, *selected, *limits, std::move(*features)}
     };
 }
 
-Expected<ControlMessage> readDeclarationBody(Decoder& in, ControlHeader const& header) noexcept {
+Expected<ControlMessage> readDeclarationBody(Decoder& in, ControlHeader const& header) {
     auto role = in.readU8();
     if (!role) return forwardError(role.error());
     if (*role > 1) return makeCodecError(CodecErrc::InvalidValue);
@@ -639,18 +745,24 @@ Expected<ControlMessage> readDeclarationBody(Decoder& in, ControlHeader const& h
     if (*totalModules > Limits::MaxDeclaredModules || *totalPayloads > Limits::MaxDeclaredPayloads) {
         return makeCodecError(CodecErrc::SizeLimitExceeded);
     }
-    auto modules = readList<ModuleDeclaration>(in, *totalModules, readModule);
+    if (auto result = validateChunkMetadata(header, *index, *count, Limits::MaxDeclarationChunks); !result) {
+        return forwardError(result.error());
+    }
+    auto modules = readModuleList<ModuleDeclaration>(
+        in,
+        *totalModules,
+        MinModuleDeclarationBytes,
+        Limits::MaxDeclaredFeatures,
+        readModule
+    );
     if (!modules) return forwardError(modules.error());
-    auto payloads = readList<PayloadDeclaration>(in, *totalPayloads, readPayload);
+    auto payloads = readList<PayloadDeclaration>(in, *totalPayloads, MinPayloadDeclarationBytes, readPayload);
     if (!payloads) return forwardError(payloads.error());
     if (!strictlySorted(*modules, [](auto const& entry) { return entry.id.value(); })
         || !strictlySorted(*payloads, [](auto const& entry) { return entry.id.value(); })) {
         return malformed();
     }
-    if (auto result = validateChunk(*index, *count, Limits::MaxDeclarationChunks, modules->size() + payloads->size());
-        !result) {
-        return forwardError(result.error());
-    }
+    if (*count != 1 && modules->empty() && payloads->empty()) return malformed("empty chunk");
     return ControlMessage{
         Declaration{
                     header, static_cast<EndpointRole>(*role),
@@ -665,7 +777,7 @@ Expected<ControlMessage> readDeclarationBody(Decoder& in, ControlHeader const& h
     };
 }
 
-Expected<ControlMessage> readNegotiationResultBody(Decoder& in, ControlHeader const& header) noexcept {
+Expected<ControlMessage> readNegotiationResultBody(Decoder& in, ControlHeader const& header) {
     auto selected = in.readU16();
     if (!selected) return forwardError(selected.error());
     if (*selected == 0) return makeCodecError(CodecErrc::InvalidValue);
@@ -684,9 +796,18 @@ Expected<ControlMessage> readNegotiationResultBody(Decoder& in, ControlHeader co
     if (*totalModules > Limits::MaxResultModules || *totalPayloads > Limits::MaxResultPayloads) {
         return makeCodecError(CodecErrc::SizeLimitExceeded);
     }
-    auto modules = readList<ModuleResult>(in, *totalModules, readModuleResult);
+    if (auto result = validateChunkMetadata(header, *index, *count, Limits::MaxNegotiationResultChunks); !result) {
+        return forwardError(result.error());
+    }
+    auto modules = readModuleList<ModuleResult>(
+        in,
+        *totalModules,
+        MinModuleResultBytes,
+        static_cast<std::size_t>(Limits::MaxDeclaredFeatures) * 2,
+        readModuleResult
+    );
     if (!modules) return forwardError(modules.error());
-    auto payloads = readList<PayloadResult>(in, *totalPayloads, readPayloadResult);
+    auto payloads = readList<PayloadResult>(in, *totalPayloads, MinPayloadResultBytes, readPayloadResult);
     if (!payloads) return forwardError(payloads.error());
     auto digest = readDigest(in);
     if (!digest) return forwardError(digest.error());
@@ -694,11 +815,7 @@ Expected<ControlMessage> readNegotiationResultBody(Decoder& in, ControlHeader co
         || !strictlySorted(*payloads, [](auto const& entry) { return entry.id.value(); })) {
         return malformed();
     }
-    if (auto result =
-            validateChunk(*index, *count, Limits::MaxNegotiationResultChunks, modules->size() + payloads->size());
-        !result) {
-        return forwardError(result.error());
-    }
+    if (*count != 1 && modules->empty() && payloads->empty()) return malformed("empty chunk");
     return ControlMessage{
         NegotiationResult{
                           header, *selected,
@@ -715,7 +832,7 @@ Expected<ControlMessage> readNegotiationResultBody(Decoder& in, ControlHeader co
     };
 }
 
-Expected<ControlMessage> readReadyBody(Decoder& in, ControlHeader const& header) noexcept {
+Expected<ControlMessage> readReadyBody(Decoder& in, ControlHeader const& header) {
     auto role = in.readU8();
     if (!role) return forwardError(role.error());
     if (*role > 1) return makeCodecError(CodecErrc::InvalidValue);
@@ -726,7 +843,7 @@ Expected<ControlMessage> readReadyBody(Decoder& in, ControlHeader const& header)
     };
 }
 
-Expected<ControlMessage> readProtocolErrorBody(Decoder& in, ControlHeader const& header) noexcept {
+Expected<ControlMessage> readProtocolErrorBody(Decoder& in, ControlHeader const& header) {
     auto code = readWireError(in);
     if (!code) return forwardError(code.error());
     auto fatal = in.readBool();
@@ -741,7 +858,7 @@ Expected<ControlMessage> readProtocolErrorBody(Decoder& in, ControlHeader const&
     };
 }
 
-Expected<ControlMessage> readControlBody(std::uint64_t runtimeId, Decoder& in, ControlHeader const& header) noexcept {
+Expected<ControlMessage> readControlBody(std::uint64_t runtimeId, Decoder& in, ControlHeader const& header) {
     if (runtimeId == HelloRuntimeId) return readHelloBody(in, header);
     if (runtimeId == HelloAckRuntimeId) return readHelloAckBody(in, header);
     if (runtimeId == DeclarationRuntimeId) return readDeclarationBody(in, header);
@@ -751,14 +868,11 @@ Expected<ControlMessage> readControlBody(std::uint64_t runtimeId, Decoder& in, C
     return makeProtocolError(ProtocolErrc::UnexpectedMessage);
 }
 
-Expected<ControlMessage> decodeControl(
-    std::uint64_t              runtimeId,
-    std::span<std::byte const> body,
-    CoreVersion                coreProtocol,
-    std::size_t                maxBody
-) noexcept {
+Expected<ControlMessage>
+decodeControl(std::uint64_t runtimeId, std::span<std::byte const> body, CoreVersion coreProtocol, std::size_t maxBody) {
     auto const* definition = findCoreProtocolDefinition(coreProtocol);
     if (!definition) return makeProtocolError(ProtocolErrc::VersionIncompatible);
+    if (!knownControlRuntimeId(runtimeId)) return makeProtocolError(ProtocolErrc::UnexpectedMessage);
 
     if (body.size() > maxBody || body.size() > Limits::MaxControlBody)
         return makeCodecError(CodecErrc::SizeLimitExceeded);
@@ -782,15 +896,19 @@ Expected<std::size_t> appendLongestFittingPrefix(
     std::size_t               nextEntry,
     CoreVersion               protocol,
     std::size_t               maxBody
-) noexcept {
+) {
     destination.clear();
+    if (nextEntry > source.size()) {
+        return makeCodecError(CodecErrc::InvalidValue, "chunk source offset");
+    }
     auto const remaining = source.size() - nextEntry;
     if (remaining == 0) return 0;
 
     std::size_t accepted{};
-    std::size_t rejected = remaining + 1;
-    while (accepted + 1 < rejected) {
-        auto const candidate = accepted + (rejected - accepted) / 2;
+    std::size_t upperBound = remaining;
+    while (accepted < upperBound) {
+        auto const distance  = upperBound - accepted;
+        auto const candidate = accepted + distance / 2 + distance % 2;
         destination.assign(source.begin() + nextEntry, source.begin() + nextEntry + candidate);
 
         auto encoded = encodeControl(ControlMessage{chunk}, protocol, true, maxBody);
@@ -801,7 +919,7 @@ Expected<std::size_t> appendLongestFittingPrefix(
 
         auto& error = encoded.error();
         if (error.isA<CodecErrorInfo>() && error.as<CodecErrorInfo>().code == CodecErrc::SizeLimitExceeded) {
-            rejected = candidate;
+            upperBound = candidate - 1;
             continue;
         }
 
@@ -814,7 +932,7 @@ Expected<std::size_t> appendLongestFittingPrefix(
 }
 
 template <class Chunk>
-Expected<> finalizeChunkMetadata(std::vector<Chunk>& chunks) noexcept {
+Expected<> finalizeChunkMetadata(std::vector<Chunk>& chunks) {
     auto const chunkCount = static_cast<std::uint16_t>(chunks.size());
     auto const sequence   = chunks.front().header.messageSequence;
     if (static_cast<std::uint32_t>(chunkCount - 1) > std::numeric_limits<std::uint32_t>::max() - sequence) {
@@ -836,13 +954,13 @@ Expected<std::vector<Chunk>> packChunks(
     std::size_t                      maxBody,
     CoreVersion                      protocol,
     ChunkFactory                     makeChunk
-) noexcept {
+) {
     if (maxChunks == 0 || maxChunks > std::numeric_limits<std::uint16_t>::max()) {
         return makeCodecError(CodecErrc::InvalidValue, "chunk limit");
     }
 
     std::vector<Chunk> chunks;
-    chunks.reserve(std::min(maxChunks, modules.size() + payloads.size() + 1));
+    chunks.reserve(maxChunks);
 
     std::size_t nextModule{};
     std::size_t nextPayload{};
@@ -883,11 +1001,18 @@ Expected<std::vector<Chunk>> packChunks(
 }
 
 Expected<std::vector<Declaration>>
-packDeclaration(DeclarationSource source, CoreVersion protocol, std::size_t maxBody) noexcept {
-    if (source.modules.size() > Limits::MaxDeclaredModules || source.payloads.size() > Limits::MaxDeclaredPayloads
+packDeclaration(DeclarationSource source, CoreVersion protocol, std::size_t maxBody) {
+    auto const* definition = findCoreProtocolDefinition(protocol);
+    if (!definition || source.firstHeader.schema != definition->controlSchema || source.firstHeader.handshakeId == 0
+        || source.firstHeader.messageSequence == 0
+        || (source.senderRole != EndpointRole::Client && source.senderRole != EndpointRole::Server)
+        || source.modules.size() > Limits::MaxDeclaredModules || source.payloads.size() > Limits::MaxDeclaredPayloads
+        || !validCumulativeFeatureCount(source.modules, Limits::MaxDeclaredFeatures)
         || !strictlySorted(source.modules, [](auto const& e) { return e.id.value(); })
-        || !strictlySorted(source.payloads, [](auto const& e) { return e.id.value(); }))
+        || !strictlySorted(source.payloads, [](auto const& e) { return e.id.value(); })
+        || !payloadModulesExist(source.modules, source.payloads)) {
         return malformed();
+    }
 
     auto totalModules  = static_cast<std::uint32_t>(source.modules.size());
     auto totalPayloads = static_cast<std::uint32_t>(source.payloads.size());
@@ -914,11 +1039,17 @@ packDeclaration(DeclarationSource source, CoreVersion protocol, std::size_t maxB
 }
 
 Expected<std::vector<NegotiationResult>>
-packNegotiationResult(NegotiationResultSource source, CoreVersion protocol, std::size_t maxBody) noexcept {
-    if (source.modules.size() > Limits::MaxResultModules || source.payloads.size() > Limits::MaxResultPayloads
+packNegotiationResult(NegotiationResultSource source, CoreVersion protocol, std::size_t maxBody) {
+    auto const* definition = findCoreProtocolDefinition(protocol);
+    if (!definition || source.firstHeader.schema != definition->controlSchema || source.firstHeader.handshakeId == 0
+        || source.firstHeader.messageSequence == 0 || source.selectedCoreProtocol == 0
+        || source.modules.size() > Limits::MaxResultModules || source.payloads.size() > Limits::MaxResultPayloads
+        || !validCumulativeFeatureCount(source.modules, static_cast<std::size_t>(Limits::MaxDeclaredFeatures) * 2)
         || !strictlySorted(source.modules, [](auto const& e) { return e.id.value(); })
-        || !strictlySorted(source.payloads, [](auto const& e) { return e.id.value(); }))
+        || !strictlySorted(source.payloads, [](auto const& e) { return e.id.value(); })
+        || !payloadModulesExist(source.modules, source.payloads)) {
         return malformed();
+    }
 
     auto totalModules  = static_cast<std::uint32_t>(source.modules.size());
     auto totalPayloads = static_cast<std::uint32_t>(source.payloads.size());
@@ -951,6 +1082,15 @@ struct DeclarationAssembler::Impl {
     std::size_t              moduleCount{};
     std::size_t              payloadCount{};
     std::size_t              featureCount{};
+    bool                     accepting{true};
+
+    void invalidate() noexcept {
+        chunks.clear();
+        moduleCount  = 0;
+        payloadCount = 0;
+        featureCount = 0;
+        accepting    = false;
+    }
 };
 
 DeclarationAssembler::DeclarationAssembler() : mImpl(std::make_unique<Impl>()) {}
@@ -959,20 +1099,27 @@ DeclarationAssembler::~DeclarationAssembler()                                   
 DeclarationAssembler::DeclarationAssembler(DeclarationAssembler&&) noexcept            = default;
 DeclarationAssembler& DeclarationAssembler::operator=(DeclarationAssembler&&) noexcept = default;
 
-Expected<> DeclarationAssembler::push(Declaration chunk) noexcept {
-    if (chunk.totalModuleCount > Limits::MaxDeclaredModules || chunk.totalPayloadCount > Limits::MaxDeclaredPayloads) {
-        return malformed("declaration totals");
-    }
-    if (auto validation = validateChunk(
-            chunk.chunkIndex,
-            chunk.chunkCount,
-            Limits::MaxDeclarationChunks,
-            chunk.modules.size() + chunk.payloads.size()
-        );
+Expected<> DeclarationAssembler::push(Declaration chunk) {
+    if (!mImpl) return malformed("declaration assembler was moved from");
+    if (!mImpl->accepting) return malformed("declaration assembler is closed");
+    auto reject = [&](std::string context) -> Expected<> {
+        mImpl->invalidate();
+        return malformed(std::move(context));
+    };
+
+    if (auto validation =
+            validateChunkMetadata(chunk.header, chunk.chunkIndex, chunk.chunkCount, Limits::MaxDeclarationChunks);
         !validation) {
-        return forwardError(validation.error());
+        return reject("chunk metadata");
     }
-    if (chunk.chunkIndex != mImpl->chunks.size()) return malformed("chunk index");
+    if (chunk.totalModuleCount > Limits::MaxDeclaredModules || chunk.totalPayloadCount > Limits::MaxDeclaredPayloads
+        || (chunk.senderRole != EndpointRole::Client && chunk.senderRole != EndpointRole::Server)
+        || (chunk.chunkCount != 1 && chunk.modules.empty() && chunk.payloads.empty())
+        || !strictlySorted(chunk.modules, [](auto const& entry) { return entry.id.value(); })
+        || !strictlySorted(chunk.payloads, [](auto const& entry) { return entry.id.value(); })) {
+        return reject("declaration totals");
+    }
+    if (chunk.chunkIndex != mImpl->chunks.size()) return reject("chunk index");
     if (!mImpl->chunks.empty()) {
         auto const& first    = mImpl->chunks.front();
         auto const& previous = mImpl->chunks.back();
@@ -981,58 +1128,65 @@ Expected<> DeclarationAssembler::push(Declaration chunk) noexcept {
             || chunk.senderRole != first.senderRole || chunk.registryRevision != first.registryRevision
             || chunk.chunkCount != first.chunkCount || chunk.totalModuleCount != first.totalModuleCount
             || chunk.totalPayloadCount != first.totalPayloadCount)
-            return malformed("inconsistent chunk");
-        if (!previous.payloads.empty() && !chunk.modules.empty()) return malformed("modules after payloads");
+            return reject("inconsistent chunk");
+        if (!previous.payloads.empty() && !chunk.modules.empty()) return reject("modules after payloads");
         if ((!previous.modules.empty() && !chunk.modules.empty()
              && previous.modules.back().id.value() >= chunk.modules.front().id.value())
             || (!previous.payloads.empty() && !chunk.payloads.empty()
                 && previous.payloads.back().id.value() >= chunk.payloads.front().id.value()))
-            return malformed("chunk ordering");
+            return reject("chunk ordering");
     }
 
     if (mImpl->moduleCount > chunk.totalModuleCount
         || chunk.modules.size() > chunk.totalModuleCount - mImpl->moduleCount
         || mImpl->payloadCount > chunk.totalPayloadCount
         || chunk.payloads.size() > chunk.totalPayloadCount - mImpl->payloadCount) {
-        return malformed("declaration cumulative totals");
+        return reject("declaration cumulative totals");
     }
 
     auto featureCount = mImpl->featureCount;
     for (auto const& module : chunk.modules) {
         if (featureCount > Limits::MaxDeclaredFeatures
             || module.features.size() > Limits::MaxDeclaredFeatures - featureCount) {
-            return malformed("declaration feature total");
+            return reject("declaration feature total");
         }
         featureCount += module.features.size();
     }
 
-    mImpl->moduleCount  += chunk.modules.size();
-    mImpl->payloadCount += chunk.payloads.size();
-    mImpl->featureCount  = featureCount;
     mImpl->chunks.emplace_back(std::move(chunk));
+    auto const& retained  = mImpl->chunks.back();
+    mImpl->moduleCount   += retained.modules.size();
+    mImpl->payloadCount  += retained.payloads.size();
+    mImpl->featureCount   = featureCount;
     return {};
 }
-Expected<DeclarationSource> DeclarationAssembler::finish() noexcept {
-    if (mImpl->chunks.empty() || mImpl->chunks.size() != mImpl->chunks.front().chunkCount)
+Expected<DeclarationSource> DeclarationAssembler::finish() {
+    if (!mImpl) return malformed("declaration assembler was moved from");
+    if (!mImpl->accepting) return malformed("declaration assembler is closed");
+    if (mImpl->chunks.empty() || mImpl->chunks.size() != mImpl->chunks.front().chunkCount) {
+        mImpl->invalidate();
         return malformed("incomplete declaration");
+    }
 
     auto&             first = mImpl->chunks.front();
     DeclarationSource result{first.header, first.senderRole, first.registryRevision, {}, {}};
+    result.modules.reserve(first.totalModuleCount);
+    result.payloads.reserve(first.totalPayloadCount);
     for (auto& chunk : mImpl->chunks) {
         std::ranges::move(chunk.modules, std::back_inserter(result.modules));
         std::ranges::move(chunk.payloads, std::back_inserter(result.payloads));
     }
 
-    if (result.modules.size() != first.totalModuleCount || result.payloads.size() != first.totalPayloadCount
-        || result.modules.size() > Limits::MaxDeclaredModules || result.payloads.size() > Limits::MaxDeclaredPayloads)
+    if (result.modules.size() != first.totalModuleCount || result.payloads.size() != first.totalPayloadCount) {
+        mImpl->invalidate();
         return malformed("declaration totals");
-
-    for (auto const& payload : result.payloads) {
-        if (!std::ranges::binary_search(result.modules, payload.id.module(), {}, [](auto const& module) {
-                return module.id.value();
-            }))
-            return malformed("payload module reference");
     }
+
+    if (!payloadModulesExist(result.modules, result.payloads)) {
+        mImpl->invalidate();
+        return malformed("payload module reference");
+    }
+    mImpl->invalidate();
     return result;
 }
 
@@ -1041,6 +1195,15 @@ struct NegotiationResultAssembler::Impl {
     std::size_t                    moduleCount{};
     std::size_t                    payloadCount{};
     std::size_t                    featureCount{};
+    bool                           accepting{true};
+
+    void invalidate() noexcept {
+        chunks.clear();
+        moduleCount  = 0;
+        payloadCount = 0;
+        featureCount = 0;
+        accepting    = false;
+    }
 };
 
 NegotiationResultAssembler::NegotiationResultAssembler() : mImpl(std::make_unique<Impl>()) {}
@@ -1049,21 +1212,27 @@ NegotiationResultAssembler::~NegotiationResultAssembler()                       
 NegotiationResultAssembler::NegotiationResultAssembler(NegotiationResultAssembler&&) noexcept            = default;
 NegotiationResultAssembler& NegotiationResultAssembler::operator=(NegotiationResultAssembler&&) noexcept = default;
 
-Expected<> NegotiationResultAssembler::push(NegotiationResult chunk) noexcept {
-    if (chunk.totalModuleResultCount > Limits::MaxResultModules
-        || chunk.totalPayloadResultCount > Limits::MaxResultPayloads) {
-        return malformed("result totals");
-    }
-    if (auto validation = validateChunk(
-            chunk.chunkIndex,
-            chunk.chunkCount,
-            Limits::MaxNegotiationResultChunks,
-            chunk.modules.size() + chunk.payloads.size()
-        );
+Expected<> NegotiationResultAssembler::push(NegotiationResult chunk) {
+    if (!mImpl) return malformed("result assembler was moved from");
+    if (!mImpl->accepting) return malformed("result assembler is closed");
+    auto reject = [&](std::string context) -> Expected<> {
+        mImpl->invalidate();
+        return malformed(std::move(context));
+    };
+
+    if (auto validation =
+            validateChunkMetadata(chunk.header, chunk.chunkIndex, chunk.chunkCount, Limits::MaxNegotiationResultChunks);
         !validation) {
-        return forwardError(validation.error());
+        return reject("result chunk metadata");
     }
-    if (chunk.chunkIndex != mImpl->chunks.size()) return malformed("result chunk index");
+    if (chunk.totalModuleResultCount > Limits::MaxResultModules
+        || chunk.totalPayloadResultCount > Limits::MaxResultPayloads || chunk.selectedCoreProtocol == 0
+        || (chunk.chunkCount != 1 && chunk.modules.empty() && chunk.payloads.empty())
+        || !strictlySorted(chunk.modules, [](auto const& entry) { return entry.id.value(); })
+        || !strictlySorted(chunk.payloads, [](auto const& entry) { return entry.id.value(); })) {
+        return reject("result totals");
+    }
+    if (chunk.chunkIndex != mImpl->chunks.size()) return reject("result chunk index");
     if (!mImpl->chunks.empty()) {
         auto const& first    = mImpl->chunks.front();
         auto const& previous = mImpl->chunks.back();
@@ -1076,40 +1245,45 @@ Expected<> NegotiationResultAssembler::push(NegotiationResult chunk) noexcept {
             || chunk.totalModuleResultCount != first.totalModuleResultCount
             || chunk.totalPayloadResultCount != first.totalPayloadResultCount
             || chunk.transcriptDigest != first.transcriptDigest)
-            return malformed("inconsistent result chunk");
-        if (!previous.payloads.empty() && !chunk.modules.empty()) return malformed("result modules after payloads");
+            return reject("inconsistent result chunk");
+        if (!previous.payloads.empty() && !chunk.modules.empty()) return reject("result modules after payloads");
         if ((!previous.modules.empty() && !chunk.modules.empty()
              && previous.modules.back().id.value() >= chunk.modules.front().id.value())
             || (!previous.payloads.empty() && !chunk.payloads.empty()
                 && previous.payloads.back().id.value() >= chunk.payloads.front().id.value()))
-            return malformed("result ordering");
+            return reject("result ordering");
     }
 
     if (mImpl->moduleCount > chunk.totalModuleResultCount
         || chunk.modules.size() > chunk.totalModuleResultCount - mImpl->moduleCount
         || mImpl->payloadCount > chunk.totalPayloadResultCount
         || chunk.payloads.size() > chunk.totalPayloadResultCount - mImpl->payloadCount) {
-        return malformed("result cumulative totals");
+        return reject("result cumulative totals");
     }
 
     constexpr auto MaxResultFeatures = static_cast<std::size_t>(Limits::MaxDeclaredFeatures) * 2;
     auto           featureCount      = mImpl->featureCount;
     for (auto const& module : chunk.modules) {
         if (featureCount > MaxResultFeatures || module.features.size() > MaxResultFeatures - featureCount) {
-            return malformed("result feature total");
+            return reject("result feature total");
         }
         featureCount += module.features.size();
     }
 
-    mImpl->moduleCount  += chunk.modules.size();
-    mImpl->payloadCount += chunk.payloads.size();
-    mImpl->featureCount  = featureCount;
     mImpl->chunks.emplace_back(std::move(chunk));
+    auto const& retained  = mImpl->chunks.back();
+    mImpl->moduleCount   += retained.modules.size();
+    mImpl->payloadCount  += retained.payloads.size();
+    mImpl->featureCount   = featureCount;
     return {};
 }
-Expected<NegotiationResultSource> NegotiationResultAssembler::finish() noexcept {
-    if (mImpl->chunks.empty() || mImpl->chunks.size() != mImpl->chunks.front().chunkCount)
+Expected<NegotiationResultSource> NegotiationResultAssembler::finish() {
+    if (!mImpl) return malformed("result assembler was moved from");
+    if (!mImpl->accepting) return malformed("result assembler is closed");
+    if (mImpl->chunks.empty() || mImpl->chunks.size() != mImpl->chunks.front().chunkCount) {
+        mImpl->invalidate();
         return malformed("incomplete result");
+    }
 
     auto&                   first = mImpl->chunks.front();
     NegotiationResultSource result{
@@ -1121,15 +1295,25 @@ Expected<NegotiationResultSource> NegotiationResultAssembler::finish() noexcept 
         {},
         first.transcriptDigest
     };
+    result.modules.reserve(first.totalModuleResultCount);
+    result.payloads.reserve(first.totalPayloadResultCount);
     for (auto& chunk : mImpl->chunks) {
         std::ranges::move(chunk.modules, std::back_inserter(result.modules));
         std::ranges::move(chunk.payloads, std::back_inserter(result.payloads));
     }
 
-    if (result.modules.size() != first.totalModuleResultCount || result.payloads.size() != first.totalPayloadResultCount
-        || result.modules.size() > Limits::MaxResultModules || result.payloads.size() > Limits::MaxResultPayloads)
+    if (result.modules.size() != first.totalModuleResultCount
+        || result.payloads.size() != first.totalPayloadResultCount) {
+        mImpl->invalidate();
         return malformed("result totals");
+    }
 
+    if (!payloadModulesExist(result.modules, result.payloads)) {
+        mImpl->invalidate();
+        return malformed("result payload module reference");
+    }
+
+    mImpl->invalidate();
     return result;
 }
 

@@ -21,8 +21,8 @@ public:
     Transcript(Transcript const&)            = delete;
     Transcript& operator=(Transcript const&) = delete;
 
-    [[nodiscard]] Expected<>       add(ControlMessage const& message, CoreVersion coreProtocol) noexcept;
-    [[nodiscard]] TranscriptDigest finish() noexcept;
+    [[nodiscard]] Expected<>       add(ControlMessage const& message, CoreVersion coreProtocol);
+    [[nodiscard]] TranscriptDigest finish();
 };
 
 } // namespace ll::protocol::detail
