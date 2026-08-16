@@ -88,10 +88,12 @@ try {
     case 2:
         level = io::LogLevel::Info;
         break;
+    case 4:
+        level = io::LogLevel::Warn;
+        break;
     case 8:
         level = io::LogLevel::Error;
         break;
-    case 4:
     default:
         knownPriority = false;
         level         = io::LogLevel::Warn;
