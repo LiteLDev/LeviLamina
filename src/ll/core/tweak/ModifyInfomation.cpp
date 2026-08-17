@@ -38,35 +38,16 @@ LL_STATIC_HOOK(
 
 auto serverLogger = io::LoggerRegistry::getInstance().getOrCreate("Server");
 
-int printfbufc(char const* format, va_list pargs) {
-    int     retval;
-    va_list argcopy;
-    va_copy(argcopy, pargs);
-    retval = vsnprintf(nullptr, 0, format, argcopy);
-    va_end(argcopy);
-    return retval;
-}
-
 LL_STATIC_HOOK(BedrockLogOutHook, HookPriority::Normal, BedrockLogOut, void, uint priority, char const* pszFormat, ...)
 try {
-    bool        success = false;
     std::string buffer;
     va_list     va;
     va_start(va, pszFormat);
-    auto bufferCount = printfbufc(pszFormat, va);
-    if (bufferCount >= 0) {
-        success = true;
-    }
-    if (success && bufferCount > 0) {
-        buffer = std::string(bufferCount, '\0');
-        vsnprintf(buffer.data(), buffer.size() + 1, pszFormat, va);
+    if (auto msg = va_arg(va, char const*); msg) {
+        buffer = msg;
     }
     va_end(va);
 
-    if (!success) {
-        serverLogger->fatal("!!! Unable to format log output message !!!");
-        return;
-    }
     if (buffer.ends_with('\n')) {
         buffer.pop_back();
         if (buffer.ends_with('\r')) {
