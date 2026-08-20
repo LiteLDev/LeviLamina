@@ -35,7 +35,9 @@ struct PayloadRegistryAccess {
 
     static Expected<> activateOwner(PayloadRegistry& registry, mod::Mod const& owner) noexcept;
     static std::shared_ptr<RegistrySnapshot const> snapshot(PayloadRegistry const& registry) noexcept;
+
     static std::shared_ptr<DescriptorState> findState(PayloadRegistry const& registry, PayloadId const& id) noexcept;
+    static std::shared_ptr<DescriptorState> findState(PayloadRegistry const& registry, std::type_index type) noexcept;
 };
 
 } // namespace ll::protocol::detail

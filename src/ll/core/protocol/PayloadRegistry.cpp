@@ -706,6 +706,14 @@ PayloadRegistryAccess::findState(PayloadRegistry const& registry, PayloadId cons
     return found == registry.mImpl->payloadStates.end() ? nullptr : found->second;
 }
 
+std::shared_ptr<DescriptorState>
+PayloadRegistryAccess::findState(PayloadRegistry const& registry, std::type_index type) noexcept {
+    std::scoped_lock lock{registry.mImpl->writerMutex};
+
+    auto found = registry.mImpl->registeredTypes.find(type);
+    return found == registry.mImpl->registeredTypes.end() ? nullptr : found->second;
+}
+
 } // namespace detail
 
 } // namespace ll::protocol
