@@ -32,18 +32,27 @@ Expected<std::shared_ptr<ProtocolSession>> SessionManager::open(
         {
             std::scoped_lock lock{mMutex};
 
+            auto found = std::ranges::find_if(mSessions, [&](auto const& entry) {
+                auto const& candidate = entry.first;
+                return candidate.endpointInstanceId == key.endpointInstanceId && candidate.role == key.role
+                    && candidate.connection == key.connection && candidate.subClientId == key.subClientId;
+            });
+
+            if (found != mSessions.end()) {
+                if (found->first.generation == generation) {
+                    return makeSessionError(SessionErrc::WrongState, "session already exists");
+                }
+                if (found->first.generation > generation) {
+                    return makeSessionError(SessionErrc::WrongGeneration);
+                }
+            }
+
             session = std::make_shared<ProtocolSession>(
                 SessionIdentity{key, handshakeId},
                 std::move(registry),
                 std::move(transport),
                 limits
             );
-
-            auto found = std::ranges::find_if(mSessions, [&](auto const& entry) {
-                auto const& candidate = entry.first;
-                return candidate.endpointInstanceId == key.endpointInstanceId && candidate.role == key.role
-                    && candidate.connection == key.connection && candidate.subClientId == key.subClientId;
-            });
 
             if (found != mSessions.end()) {
                 auto node = mSessions.extract(found);

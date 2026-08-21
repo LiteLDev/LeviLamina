@@ -163,6 +163,21 @@ TEST(ProtocolLifecycleTest, ReconnectRevokesOldGenerationAndRejectsStaleCallback
     EXPECT_EQ(coordinator.findSession("peer", 0, *secondGeneration), *current);
 }
 
+TEST(ProtocolLifecycleTest, DuplicateSessionOpenCannotRestartHandshake) {
+    detail::LifecycleCoordinator coordinator{35, EndpointRole::Server};
+
+    auto generation = coordinator.openConnection("peer");
+    ASSERT_TRUE(generation);
+    auto first = openLifecycleSession(coordinator, "peer", 0, *generation, 1);
+    ASSERT_TRUE(first);
+
+    auto duplicate = openLifecycleSession(coordinator, "peer", 0, *generation, 2);
+    ASSERT_FALSE(duplicate);
+    EXPECT_EQ(lifecycleSessionCode(duplicate.error()), SessionErrc::WrongState);
+    EXPECT_EQ(coordinator.findSession("peer", 0, *generation), *first);
+    EXPECT_EQ((*first)->state(), SessionState::Handshaking);
+}
+
 TEST(ProtocolLifecycleTest, RuntimeShutdownClosesAllConnectionsExactlyOnce) {
     detail::LifecycleCoordinator coordinator{34, EndpointRole::Server};
 
@@ -184,6 +199,11 @@ TEST(ProtocolLifecycleTest, RuntimeShutdownClosesAllConnectionsExactlyOnce) {
     EXPECT_EQ(coordinator.currentGeneration("first"), 0);
     EXPECT_EQ(coordinator.currentGeneration("second"), 0);
     EXPECT_TRUE(coordinator.activeSessions().empty());
+
+    auto reopened = coordinator.openConnection("late");
+    ASSERT_FALSE(reopened);
+    ASSERT_TRUE(reopened.error().isA<LifecycleErrorInfo>());
+    EXPECT_EQ(reopened.error().as<LifecycleErrorInfo>().code, LifecycleErrc::RuntimeStopping);
 }
 
 } // namespace ll::protocol::test

@@ -16,22 +16,17 @@
 namespace ll::protocol::detail {
 
 class LifecycleCoordinator {
-    std::uint64_t                                      mEndpointInstanceId;
-    EndpointRole                                       mRole;
-    mutable std::mutex                                 mMutex;
-    std::uint64_t                                      mNextGeneration{1};
+    std::uint64_t                                     mEndpointInstanceId;
+    EndpointRole                                      mRole;
+    mutable std::mutex                                mMutex;
+    bool                                              mStopping{};
+    std::uint64_t                                     mNextGeneration{1};
     std::map<std::string, std::uint64_t, std::less<>> mConnections;
-    SessionManager                                     mSessions;
+    SessionManager                                    mSessions;
 
-    static void finalize(
-        std::shared_ptr<ProtocolSession> const& session,
-        ProtocolCloseReason                    reason
-    ) noexcept;
+    static void finalize(std::shared_ptr<ProtocolSession> const& session, ProtocolCloseReason reason) noexcept;
 
-    static void finalize(
-        SessionManager::SessionMap sessions,
-        ProtocolCloseReason        reason
-    ) noexcept;
+    static void finalize(SessionManager::SessionMap sessions, ProtocolCloseReason reason) noexcept;
 
 public:
     LifecycleCoordinator(std::uint64_t endpointInstanceId, EndpointRole role) noexcept;
@@ -44,7 +39,7 @@ public:
     [[nodiscard]] EndpointRole  role() const noexcept { return mRole; }
 
     [[nodiscard]] Expected<std::uint64_t> openConnection(std::string const& connection) noexcept;
-    [[nodiscard]] std::uint64_t            currentGeneration(std::string_view connection) const noexcept;
+    [[nodiscard]] std::uint64_t           currentGeneration(std::string_view connection) const noexcept;
 
     [[nodiscard]] Expected<std::shared_ptr<ProtocolSession>> openSession(
         std::string_view                        connection,
@@ -60,17 +55,13 @@ public:
     findSession(std::string_view connection, std::uint8_t subClientId, std::uint64_t generation) const noexcept;
 
     bool closeSubclient(
-        std::string_view     connection,
+        std::string_view    connection,
         std::uint8_t        subClientId,
         std::uint64_t       generation,
         ProtocolCloseReason reason
     ) noexcept;
 
-    bool closeConnection(
-        std::string_view     connection,
-        std::uint64_t       generation,
-        ProtocolCloseReason reason
-    ) noexcept;
+    bool closeConnection(std::string_view connection, std::uint64_t generation, ProtocolCloseReason reason) noexcept;
 
     void closeAll(ProtocolCloseReason reason) noexcept;
 

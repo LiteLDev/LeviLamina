@@ -11,11 +11,8 @@
 namespace ll::protocol::detail {
 
 class ProtocolLifecycleEventEmitter
-: public event::Emitter<
-      [](auto&&...) { return nullptr; },
-      ProtocolEstablishedEvent,
-      ProtocolClosedEvent,
-      ProtocolErrorEvent> {};
+: public event::
+      Emitter<[](auto&&...) { return nullptr; }, ProtocolEstablishedEvent, ProtocolClosedEvent, ProtocolErrorEvent> {};
 
 LifecycleCoordinator::LifecycleCoordinator(std::uint64_t endpointInstanceId, EndpointRole role) noexcept
 : mEndpointInstanceId(endpointInstanceId),
@@ -54,6 +51,8 @@ Expected<std::uint64_t> LifecycleCoordinator::openConnection(std::string const& 
         std::uint64_t              generation{};
         {
             std::scoped_lock lock{mMutex};
+
+            if (mStopping) return makeLifecycleError(LifecycleErrc::RuntimeStopping);
             if (mNextGeneration == (std::numeric_limits<std::uint64_t>::max)()) {
                 return makeProtocolError(ProtocolErrc::InternalFailure, "connection generation exhausted");
             }
@@ -95,17 +94,16 @@ Expected<std::shared_ptr<ProtocolSession>> LifecycleCoordinator::openSession(
     TransportLimits                         limits
 ) noexcept {
     try {
-        std::shared_ptr<ProtocolSession> previous;
-
         auto result = [&]() -> Expected<std::shared_ptr<ProtocolSession>> {
             std::scoped_lock lock{mMutex};
+
+            if (mStopping) return makeLifecycleError(LifecycleErrc::RuntimeStopping);
 
             auto const found = mConnections.find(connection);
             if (found == mConnections.end() || generation == 0 || found->second != generation) {
                 return makeSessionError(SessionErrc::WrongGeneration);
             }
 
-            previous = mSessions.extract(connection, subClientId, generation);
             return mSessions.open(
                 std::string{connection},
                 subClientId,
@@ -116,8 +114,6 @@ Expected<std::shared_ptr<ProtocolSession>> LifecycleCoordinator::openSession(
                 limits
             );
         }();
-
-        finalize(previous, ProtocolCloseReason::ConnectionClosed);
         return result;
     } catch (...) {
         return makeExceptionError();
@@ -179,6 +175,9 @@ void LifecycleCoordinator::closeAll(ProtocolCloseReason reason) noexcept {
     SessionManager::SessionMap sessions;
     {
         std::scoped_lock lock{mMutex};
+
+        if (reason == ProtocolCloseReason::RuntimeStopping) mStopping = true;
+
         mConnections.clear();
         sessions = mSessions.extractAll();
     }
