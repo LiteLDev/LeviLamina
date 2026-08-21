@@ -89,8 +89,12 @@ ModuleDefinition moduleDefinition(std::string_view name = "main") {
 
 PayloadDefinition payloadDefinition(std::string_view name = "message") {
     return PayloadDefinition{
-        .name           = *PayloadName::parse(name),
-        .direction      = PayloadDirection::ClientToServer,
+        .name = *PayloadName::parse(name),
+#if defined(LL_PLAT_C)
+        .direction = PayloadDirection::ClientToServer,
+#else
+        .direction = PayloadDirection::ServerToClient,
+#endif
         .requirement    = PayloadRequirement::Required,
         .schemas        = {1},
         .maxEncodedSize = 1024,
@@ -228,9 +232,13 @@ TEST(ProtocolRegistryTest, RejectsTombstoneDirectionChange) {
     ASSERT_TRUE(first);
     ASSERT_TRUE(first->reset());
 
-    auto incompatible      = payloadDefinition();
+    auto incompatible = payloadDefinition();
+#if defined(LL_PLAT_C)
     incompatible.direction = PayloadDirection::ServerToClient;
-    auto second            = registry.registerPayload<TestPayload>(*module, std::move(incompatible), TestCodec{});
+#else
+    incompatible.direction = PayloadDirection::ClientToServer;
+#endif
+    auto second = registry.registerPayload<TestPayload>(*module, std::move(incompatible), TestCodec{});
     ASSERT_FALSE(second);
     EXPECT_EQ(registrationCode(second.error()), RegistrationErrc::TombstoneMismatch);
 

@@ -237,27 +237,20 @@ TEST(ProtocolPayloadDispatcherTest, RejectsNegotiatedPayloadWithoutLocalHandler)
     auto registration = registry.registerPayload<HandlerlessPayload>(
         *module,
         PayloadDefinition{
-            .name           = *PayloadName::parse("message"),
-            .direction      = PayloadDirection::ServerToClient,
+            .name = *PayloadName::parse("message"),
+#if defined(LL_PLAT_C)
+            .direction = PayloadDirection::ServerToClient,
+#else
+            .direction = PayloadDirection::ClientToServer,
+#endif
             .schemas        = {1},
             .maxEncodedSize = 64,
         },
         U32Codec<HandlerlessPayload>{}
     );
-    ASSERT_TRUE(registration);
-
-    auto snapshot   = detail::PayloadRegistryAccess::snapshot(registry);
-    auto descriptor = registry.findPayload(registration->id());
-    ASSERT_NE(descriptor, nullptr);
-
-    auto activeClient = makeActiveSession(EndpointRole::Client, snapshot, *descriptor);
-    auto valuePacket  = packet(*descriptor);
-    ASSERT_TRUE(valuePacket);
-    auto rejected = detail::PayloadDispatcher{}.dispatch(activeClient, **valuePacket);
-    ASSERT_FALSE(rejected);
-    EXPECT_EQ(protocolCode(rejected.error()), ProtocolErrc::UnknownPayload);
-
-    EXPECT_TRUE(registration->reset());
+    ASSERT_FALSE(registration);
+    ASSERT_TRUE(registration.error().isA<RegistrationErrorInfo>());
+    EXPECT_EQ(registration.error().as<RegistrationErrorInfo>().code, RegistrationErrc::InvalidDirection);
     EXPECT_TRUE(module->reset());
 }
 

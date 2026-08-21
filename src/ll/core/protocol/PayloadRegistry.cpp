@@ -328,6 +328,17 @@ Expected<PayloadRegistration> PayloadRegistry::registerPayloadErased(
             return forwardError(normalized.error());
         }
 
+#ifdef LL_PLAT_C
+        constexpr auto LocalRole = EndpointRole::Client;
+#elifdef LL_PLAT_S
+        constexpr auto LocalRole = EndpointRole::Server;
+#else
+#error "A protocol endpoint role is required"
+#endif
+        if (canReceive(LocalRole, definition.direction) && !callbacks.dispatch) {
+            return makeRegistrationError(RegistrationErrc::InvalidDirection, "an inbound payload requires a handler");
+        }
+
         auto moduleState = module.mImpl->state;
         auto owner       = moduleState->owner.lock();
         if (!owner) {

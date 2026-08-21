@@ -32,7 +32,8 @@ enum class ModuleRequirement : std::uint8_t {
 }
 
 [[nodiscard]] constexpr bool canReceive(EndpointRole role, PayloadDirection direction) noexcept {
-    return !canSend(role, direction);
+    return (role == EndpointRole::Client && direction == PayloadDirection::ServerToClient)
+        || (role == EndpointRole::Server && direction == PayloadDirection::ClientToServer);
 }
 
 } // namespace ll::protocol
