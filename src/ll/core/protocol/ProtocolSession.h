@@ -13,6 +13,7 @@
 #include "ll/api/protocol/PayloadContext.h"
 #include "ll/core/protocol/Negotiator.h"
 #include "ll/core/protocol/SessionState.h"
+#include "ll/core/protocol/ConnectionKey.h"
 
 namespace ll::protocol::detail {
 
@@ -78,11 +79,11 @@ public:
         std::chrono::steady_clock::time_point   now = std::chrono::steady_clock::now()
     );
 
-    [[nodiscard]] SessionIdentity const&                 identity() const noexcept { return mIdentity; }
-    [[nodiscard]] std::uint64_t                          generation() const noexcept { return mIdentity.generation; }
-    [[nodiscard]] EndpointRole                           role() const noexcept { return mIdentity.key.role; }
-    [[nodiscard]] SessionState                           state() const noexcept;
-    [[nodiscard]] bool                                   active(std::uint64_t generation) const noexcept;
+    [[nodiscard]] SessionIdentity const& identity() const noexcept { return mIdentity; }
+    [[nodiscard]] std::uint64_t          generation() const noexcept { return mIdentity.key.generation; }
+    [[nodiscard]] EndpointRole           role() const noexcept { return mIdentity.key.role; }
+    [[nodiscard]] SessionState           state() const noexcept;
+    [[nodiscard]] bool                   active(std::uint64_t generation) const noexcept;
     [[nodiscard]] std::shared_ptr<SessionSnapshot const> snapshot(std::uint64_t generation) const noexcept;
 
     [[nodiscard]] Expected<> transition(SessionState expected, SessionState next) noexcept;

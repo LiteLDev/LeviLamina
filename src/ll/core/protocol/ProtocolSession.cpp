@@ -48,13 +48,14 @@ SessionState ProtocolSession::state() const noexcept {
 
 bool ProtocolSession::active(std::uint64_t generation) const noexcept {
     std::scoped_lock lock{mMutex};
-    return generation == mIdentity.generation && mState == SessionState::Active;
+    return generation == mIdentity.key.generation && mState == SessionState::Active;
 }
 
 std::shared_ptr<SessionSnapshot const> ProtocolSession::snapshot(std::uint64_t generation) const noexcept {
     try {
         std::scoped_lock lock{mMutex};
-        if (generation != mIdentity.generation) return nullptr;
+        if (generation != mIdentity.key.generation) return nullptr;
+
         return snapshotLocked();
     } catch (...) {
         return nullptr;
@@ -218,7 +219,7 @@ Expected<PreparedOutbound> ProtocolSession::prepareOutbound(std::type_index type
         std::shared_ptr<SessionTransport> transport;
         {
             std::scoped_lock lock{mMutex};
-            if (generation != mIdentity.generation) return makeSessionError(SessionErrc::WrongGeneration);
+            if (generation != mIdentity.key.generation) return makeSessionError(SessionErrc::WrongGeneration);
 
             if (mState == SessionState::Closing || mState == SessionState::Closed) {
                 return makeSessionError(SessionErrc::Closed);
@@ -303,7 +304,7 @@ Expected<> ProtocolSession::sendPrepared(
         {
             std::scoped_lock lock{mMutex};
 
-            if (generation != mIdentity.generation) return makeSessionError(SessionErrc::WrongGeneration);
+            if (generation != mIdentity.key.generation) return makeSessionError(SessionErrc::WrongGeneration);
             if (mState != SessionState::Active) return makeSessionError(SessionErrc::Closed);
             if (!mTransport) return makeSessionError(SessionErrc::TransportUnavailable);
 
@@ -437,7 +438,7 @@ PeerIdentityView SessionView::peer() const& noexcept {
 
     return {
         mSnapshot->identity.key.endpointInstanceId,
-        mSnapshot->identity.generation,
+        mSnapshot->identity.key.generation,
         mSnapshot->identity.key.subClientId,
         mSnapshot->identity.key.connection,
     };

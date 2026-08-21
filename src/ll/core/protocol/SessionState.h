@@ -3,27 +3,10 @@
 #include <chrono>
 #include <cstddef>
 #include <cstdint>
-#include <string>
 
-#include "ll/api/protocol/Direction.h"
 #include "ll/core/protocol/ControlMessage.h"
 
 namespace ll::protocol::detail {
-
-struct SessionKey {
-    std::uint64_t endpointInstanceId{};
-    EndpointRole  role{};
-    std::string   connection;
-    std::uint8_t  subClientId{};
-
-    auto operator<=>(SessionKey const&) const = default;
-};
-
-struct SessionIdentity {
-    SessionKey    key;
-    std::uint64_t generation{};
-    std::uint64_t handshakeId{};
-};
 
 class RateBudget {
     std::uint64_t                         mRate{};
