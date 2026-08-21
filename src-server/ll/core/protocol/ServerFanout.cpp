@@ -24,7 +24,7 @@ struct Target {
 
 using CohortKey = std::tuple<SchemaVersion, std::uint64_t, std::uint32_t>;
 
-Error cloneError(Error& source) noexcept {
+Error cloneError(Error& source) {
     if (source.isA<IdentityErrorInfo>()) {
         auto& info = source.as<IdentityErrorInfo>();
         return Error{makeIdentityError(info.code, info.context)};
