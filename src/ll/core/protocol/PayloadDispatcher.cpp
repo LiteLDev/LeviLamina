@@ -36,6 +36,9 @@ Expected<> PayloadDispatcher::dispatch(
         if (descriptor->runtimeId() != runtimeId || descriptor->generation() != negotiated->descriptorGeneration) {
             return makeSessionError(SessionErrc::RegistryChanged, negotiated->payload.id.str());
         }
+        if (!state->active()) {
+            return makeSessionError(SessionErrc::RegistryChanged, negotiated->payload.id.str());
+        }
         if (descriptor->definition().direction != negotiated->payload.direction
             || !canReceive(session->role(), descriptor->definition().direction)) {
             return makeSessionError(SessionErrc::WrongDirection, negotiated->payload.id.str());

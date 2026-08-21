@@ -170,7 +170,20 @@ TEST(ProtocolPayloadDispatcherTest, GatesHandlerByStateDirectionSchemasAndGenera
     ASSERT_NE(descriptor, nullptr);
 
     auto activeServer = makeActiveSession(EndpointRole::Server, snapshot, *descriptor);
-    auto validPacket  = packet(*descriptor);
+
+    auto unrelatedOwner = std::make_shared<DispatcherTestMod>("ProtocolDispatcherUnrelated", "dispatcher_unrelated");
+    unrelatedOwner->enable();
+    auto unrelatedModule = registry.registerModule(
+        ModuleDefinition{
+            .name             = *ModuleName::parse("main"),
+            .version          = {1, 0, 0},
+            .protocolVersions = {1, 1},
+    },
+        unrelatedOwner
+    );
+    ASSERT_TRUE(unrelatedModule);
+
+    auto validPacket = packet(*descriptor);
     ASSERT_TRUE(validPacket);
     ASSERT_TRUE(detail::PayloadDispatcher{}.dispatch(activeServer, **validPacket));
     EXPECT_EQ(handled, 1);
@@ -216,6 +229,7 @@ TEST(ProtocolPayloadDispatcherTest, GatesHandlerByStateDirectionSchemasAndGenera
     ASSERT_FALSE(generationFailure);
     EXPECT_EQ(sessionCode(generationFailure.error()), SessionErrc::RegistryChanged);
     EXPECT_EQ(handled, 1);
+    EXPECT_TRUE(unrelatedModule->reset());
     EXPECT_TRUE(module->reset());
 }
 

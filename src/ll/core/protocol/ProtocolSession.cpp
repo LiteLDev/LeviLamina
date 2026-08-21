@@ -242,10 +242,6 @@ Expected<PreparedOutbound> ProtocolSession::prepareOutbound(std::type_index type
         std::optional<NegotiatedPayloadBinding> negotiated;
         {
             std::scoped_lock lock{mMutex};
-            if (!mRegistry || registry.revision() != mRegistry->revision) {
-                return makeSessionError(SessionErrc::RegistryChanged);
-            }
-
             auto found =
                 std::ranges::find(mPayloads, descriptor->runtimeId(), [](NegotiatedPayloadBinding const& binding) {
                     return binding.payload.runtimeId;
@@ -354,10 +350,6 @@ Expected<> ProtocolSession::validateInbound(
     std::scoped_lock lock{mMutex};
 
     if (mState != SessionState::Active) return makeSessionError(SessionErrc::WrongState);
-    if (!mRegistry || PayloadRegistry::getInstance().revision() != mRegistry->revision) {
-        return makeSessionError(SessionErrc::RegistryChanged);
-    }
-
     auto const* coreDefinition = findCoreProtocolDefinition(mCoreProtocol);
     if (!coreDefinition || envelopeSchema != coreDefinition->payloadEnvelopeSchema) {
         return makeProtocolError(ProtocolErrc::InvalidSchema, "payload envelope schema");
