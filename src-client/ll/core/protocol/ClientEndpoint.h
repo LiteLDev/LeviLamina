@@ -59,3 +59,10 @@ public:
 [[nodiscard]] std::shared_ptr<ClientEndpoint> getClientEndpoint() noexcept;
 
 } // namespace ll::protocol::detail
+
+namespace ll::protocol::client {
+
+[[nodiscard]] Expected<> initializeClientEndpoint() noexcept;
+void                     shutdownClientEndpoint() noexcept;
+
+} // namespace ll::protocol::client

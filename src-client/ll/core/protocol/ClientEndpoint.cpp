@@ -170,3 +170,30 @@ std::shared_ptr<ClientEndpoint> getClientEndpoint() noexcept {
 }
 
 } // namespace ll::protocol::detail
+
+namespace ll::protocol::client {
+
+Expected<> initializeClientEndpoint() noexcept {
+    try {
+        std::scoped_lock lock{detail::ClientEndpointMutex};
+
+        if (detail::CurrentClientEndpoint) return {};
+
+        detail::CurrentClientEndpoint =
+            std::make_shared<detail::ClientEndpoint>(detail::NextClientEndpointInstanceId.fetch_add(1));
+        return {};
+    } catch (...) {
+        return makeExceptionError();
+    }
+}
+
+void shutdownClientEndpoint() noexcept {
+    std::shared_ptr<detail::ClientEndpoint> endpoint;
+    {
+        std::scoped_lock lock{detail::ClientEndpointMutex};
+        endpoint = std::exchange(detail::CurrentClientEndpoint, nullptr);
+    }
+    if (endpoint) endpoint->closeAll(ProtocolCloseReason::RuntimeStopping);
+}
+
+} // namespace ll::protocol::client
