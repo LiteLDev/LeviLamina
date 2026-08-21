@@ -205,7 +205,7 @@ TEST(ProtocolServerFanoutTest, HandlesSchemaCohortsDuplicatesAndMixedFailures) {
     server::FanoutResult     result{.requested = 7, .attempted = 7};
     FanoutPayload            value{42};
 
-    auto sent = detail::sendServerFanout(sessions, indices, typeid(FanoutPayload), &value, result, 1);
+    auto sent = server::detail::ServerAccess::sendErased(sessions, indices, typeid(FanoutPayload), &value, result, 1);
 
     ASSERT_TRUE(sent) << sent.error().message();
     EXPECT_EQ(*encodeCount, 3);

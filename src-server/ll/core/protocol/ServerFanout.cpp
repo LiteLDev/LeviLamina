@@ -7,9 +7,12 @@
 #include "ll/core/protocol/ProtocolSession.h"
 #include "ll/core/protocol/RegistrationLease.h"
 
-namespace ll::protocol::detail {
+namespace ll::protocol::server::detail {
 
 namespace server_fanout_detail {
+
+using ProtocolSession  = ll::protocol::detail::ProtocolSession;
+using PreparedOutbound = ll::protocol::detail::PreparedOutbound;
 
 struct Target {
     std::size_t                      recipientIndex{};
@@ -56,12 +59,12 @@ Error cloneError(Error& source) noexcept {
 
 } // namespace server_fanout_detail
 
-Expected<> sendServerFanout(
+Expected<> ServerAccess::sendErased(
     std::span<Session const>     sessions,
     std::span<std::size_t const> recipientIndices,
     std::type_index              type,
     void const*                  payload,
-    server::FanoutResult&        result,
+    FanoutResult&                result,
     std::size_t                  maximumReportedFailures
 ) noexcept {
     try {
@@ -71,9 +74,9 @@ Expected<> sendServerFanout(
 
         std::map<server_fanout_detail::CohortKey, std::vector<server_fanout_detail::Target>> cohorts;
         for (std::size_t index = 0; index < sessions.size(); ++index) {
-            auto session = SessionAccess::lock(sessions[index]);
+            auto session = ll::protocol::detail::SessionAccess::lock(sessions[index]);
 
-            auto generation = SessionAccess::generation(sessions[index]);
+            auto generation = ll::protocol::detail::SessionAccess::generation(sessions[index]);
             auto view       = sessions[index].view();
             if (!session) {
                 recordFanoutFailure(
@@ -115,7 +118,10 @@ Expected<> sendServerFanout(
         for (auto& [_, targets] : cohorts) {
             auto& first = targets.front();
 
-            auto lease = RegistrationLease::acquire(first.prepared.state, first.prepared.binding.descriptorGeneration);
+            auto lease = ll::protocol::detail::RegistrationLease::acquire(
+                first.prepared.state,
+                first.prepared.binding.descriptorGeneration
+            );
             if (!lease) {
                 auto& error = lease.error();
                 for (auto& target : targets) {
@@ -173,4 +179,4 @@ Expected<> sendServerFanout(
     }
 }
 
-} // namespace ll::protocol::detail
+} // namespace ll::protocol::server::detail

@@ -27,31 +27,35 @@ void clearServerSessionSource(ServerSessionSource const& source) noexcept {
     if (CurrentServerSessionSource.get() == &source) CurrentServerSessionSource.reset();
 }
 
-Expected<Session> resolveServerSession(NetworkIdentifierWithSubId const& recipient) noexcept {
-    std::shared_ptr<ServerSessionSource> source;
+} // namespace ll::protocol::detail
+
+namespace ll::protocol::server::detail {
+
+Expected<Session> ServerAccess::resolve(NetworkIdentifierWithSubId const& recipient) noexcept {
+    std::shared_ptr<ll::protocol::detail::ServerSessionSource> source;
     {
-        std::scoped_lock lock{ServerSessionSourceMutex};
-        source = CurrentServerSessionSource;
+        std::scoped_lock lock{ll::protocol::detail::ServerSessionSourceMutex};
+        source = ll::protocol::detail::CurrentServerSessionSource;
     }
     if (!source) return makeSessionError(SessionErrc::TransportUnavailable);
     return source->resolve(recipient);
 }
 
-Expected<std::vector<Session>> snapshotServerSessions() noexcept {
-    std::shared_ptr<ServerSessionSource> source;
+Expected<std::vector<Session>> ServerAccess::snapshot() noexcept {
+    std::shared_ptr<ll::protocol::detail::ServerSessionSource> source;
     {
-        std::scoped_lock lock{ServerSessionSourceMutex};
-        source = CurrentServerSessionSource;
+        std::scoped_lock lock{ll::protocol::detail::ServerSessionSourceMutex};
+        source = ll::protocol::detail::CurrentServerSessionSource;
     }
     if (!source) return makeSessionError(SessionErrc::TransportUnavailable);
     return source->snapshotActive();
 }
 
-Expected<> validateServerFanoutThread() noexcept {
-    std::shared_ptr<ServerSessionSource> source;
+Expected<> ServerAccess::validateThread() noexcept {
+    std::shared_ptr<ll::protocol::detail::ServerSessionSource> source;
     {
-        std::scoped_lock lock{ServerSessionSourceMutex};
-        source = CurrentServerSessionSource;
+        std::scoped_lock lock{ll::protocol::detail::ServerSessionSourceMutex};
+        source = ll::protocol::detail::CurrentServerSessionSource;
     }
     if (!source) return makeSessionError(SessionErrc::TransportUnavailable);
 
@@ -59,12 +63,12 @@ Expected<> validateServerFanoutThread() noexcept {
     return {};
 }
 
-} // namespace ll::protocol::detail
+} // namespace ll::protocol::server::detail
 
 namespace ll::protocol::server {
 
 Expected<Session> getSession(NetworkIdentifierWithSubId const& recipient) noexcept {
-    return detail::resolveServerSession(recipient);
+    return detail::ServerAccess::resolve(recipient);
 }
 
 } // namespace ll::protocol::server
