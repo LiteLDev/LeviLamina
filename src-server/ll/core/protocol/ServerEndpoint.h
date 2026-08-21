@@ -71,3 +71,10 @@ public:
 [[nodiscard]] std::shared_ptr<ServerEndpoint> getServerEndpoint() noexcept;
 
 } // namespace ll::protocol::detail
+
+namespace ll::protocol::server {
+
+[[nodiscard]] Expected<> initializeServerEndpoint() noexcept;
+void                     shutdownServerEndpoint() noexcept;
+
+} // namespace ll::protocol::server

@@ -27,6 +27,7 @@
 #include "ll/core/io/Output.h"
 #include "ll/core/mod/ModRegistrar.h"
 #include "ll/core/protocol/ProtocolRuntime.h"
+#include "ll/core/protocol/ServerEndpoint.h"
 #include "ll/core/tweak/VulnerabilityFixes.h"
 
 #include "mc/scripting/ServerScriptManager.h"
@@ -202,6 +203,11 @@ void leviLaminaMain() {
 
     if (auto initialized = protocol::initializeRuntime(); !initialized) {
         getLogger().error("Protocol runtime initialization failed");
+        initialized.error().log(getLogger());
+    }
+
+    if (auto initialized = protocol::server::initializeServerEndpoint(); !initialized) {
+        getLogger().error("Protocol server endpoint initialization failed");
         initialized.error().log(getLogger());
     }
 

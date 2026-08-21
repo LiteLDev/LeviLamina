@@ -240,3 +240,35 @@ std::shared_ptr<ServerEndpoint> getServerEndpoint() noexcept {
 }
 
 } // namespace ll::protocol::detail
+
+namespace ll::protocol::server {
+
+Expected<> initializeServerEndpoint() noexcept {
+    try {
+        std::scoped_lock lock{detail::ServerEndpointMutex};
+        if (detail::CurrentServerEndpoint) return {};
+
+        auto endpoint = std::make_shared<detail::ServerEndpoint>(detail::NextServerEndpointInstanceId.fetch_add(1));
+        if (auto installed = detail::setServerSessionSource(endpoint); !installed) return installed;
+
+        detail::CurrentServerEndpoint = std::move(endpoint);
+        return {};
+    } catch (...) {
+        return makeExceptionError();
+    }
+}
+
+void shutdownServerEndpoint() noexcept {
+    std::shared_ptr<detail::ServerEndpoint> endpoint;
+    {
+        std::scoped_lock lock{detail::ServerEndpointMutex};
+        endpoint = std::exchange(detail::CurrentServerEndpoint, nullptr);
+    }
+
+    if (endpoint) {
+        detail::clearServerSessionSource(*endpoint);
+        endpoint->closeAll(ProtocolCloseReason::RuntimeStopping);
+    }
+}
+
+} // namespace ll::protocol::server
