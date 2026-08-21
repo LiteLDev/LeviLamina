@@ -4,10 +4,18 @@
 #include <ranges>
 #include <utility>
 
+#include "ll/api/event/Emitter.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/protocol/Error.h"
 
 namespace ll::protocol::detail {
+
+class ProtocolLifecycleEventEmitter
+: public event::Emitter<
+      [](auto&&...) { return nullptr; },
+      ProtocolEstablishedEvent,
+      ProtocolClosedEvent,
+      ProtocolErrorEvent> {};
 
 LifecycleCoordinator::LifecycleCoordinator(std::uint64_t endpointInstanceId, EndpointRole role) noexcept
 : mEndpointInstanceId(endpointInstanceId),
