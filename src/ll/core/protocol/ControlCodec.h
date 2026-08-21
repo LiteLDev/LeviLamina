@@ -58,7 +58,7 @@ class DeclarationAssembler {
     std::unique_ptr<Impl> mImpl;
 
 public:
-    DeclarationAssembler();
+    explicit DeclarationAssembler(CoreVersion protocol = 1, std::size_t maxBody = Limits::MaxControlBody);
     ~DeclarationAssembler();
 
     DeclarationAssembler(DeclarationAssembler&&) noexcept;
@@ -76,7 +76,7 @@ class NegotiationResultAssembler {
     std::unique_ptr<Impl> mImpl;
 
 public:
-    NegotiationResultAssembler();
+    explicit NegotiationResultAssembler(CoreVersion protocol = 1, std::size_t maxBody = Limits::MaxControlBody);
     ~NegotiationResultAssembler();
 
     NegotiationResultAssembler(NegotiationResultAssembler&&) noexcept;

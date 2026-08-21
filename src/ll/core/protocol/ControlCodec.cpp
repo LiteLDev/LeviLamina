@@ -1083,6 +1083,8 @@ struct DeclarationAssembler::Impl {
     std::size_t              payloadCount{};
     std::size_t              featureCount{};
     bool                     accepting{true};
+    CoreVersion              protocol{1};
+    std::size_t              maxBody{Limits::MaxControlBody};
 
     void invalidate() noexcept {
         chunks.clear();
@@ -1093,7 +1095,11 @@ struct DeclarationAssembler::Impl {
     }
 };
 
-DeclarationAssembler::DeclarationAssembler() : mImpl(std::make_unique<Impl>()) {}
+DeclarationAssembler::DeclarationAssembler(CoreVersion protocol, std::size_t maxBody)
+: mImpl(std::make_unique<Impl>()) {
+    mImpl->protocol = protocol;
+    mImpl->maxBody  = maxBody;
+}
 
 DeclarationAssembler::~DeclarationAssembler()                                          = default;
 DeclarationAssembler::DeclarationAssembler(DeclarationAssembler&&) noexcept            = default;
@@ -1172,9 +1178,9 @@ Expected<DeclarationSource> DeclarationAssembler::finish() {
     DeclarationSource result{first.header, first.senderRole, first.registryRevision, {}, {}};
     result.modules.reserve(first.totalModuleCount);
     result.payloads.reserve(first.totalPayloadCount);
-    for (auto& chunk : mImpl->chunks) {
-        std::ranges::move(chunk.modules, std::back_inserter(result.modules));
-        std::ranges::move(chunk.payloads, std::back_inserter(result.payloads));
+    for (auto const& chunk : mImpl->chunks) {
+        std::ranges::copy(chunk.modules, std::back_inserter(result.modules));
+        std::ranges::copy(chunk.payloads, std::back_inserter(result.payloads));
     }
 
     if (result.modules.size() != first.totalModuleCount || result.payloads.size() != first.totalPayloadCount) {
@@ -1186,6 +1192,13 @@ Expected<DeclarationSource> DeclarationAssembler::finish() {
         mImpl->invalidate();
         return malformed("payload module reference");
     }
+
+    auto canonical = packDeclaration(result, mImpl->protocol, mImpl->maxBody);
+    if (!canonical || *canonical != mImpl->chunks) {
+        mImpl->invalidate();
+        return malformed("non-canonical declaration chunking");
+    }
+
     mImpl->invalidate();
     return result;
 }
@@ -1196,6 +1209,8 @@ struct NegotiationResultAssembler::Impl {
     std::size_t                    payloadCount{};
     std::size_t                    featureCount{};
     bool                           accepting{true};
+    CoreVersion                    protocol{1};
+    std::size_t                    maxBody{Limits::MaxControlBody};
 
     void invalidate() noexcept {
         chunks.clear();
@@ -1206,7 +1221,11 @@ struct NegotiationResultAssembler::Impl {
     }
 };
 
-NegotiationResultAssembler::NegotiationResultAssembler() : mImpl(std::make_unique<Impl>()) {}
+NegotiationResultAssembler::NegotiationResultAssembler(CoreVersion protocol, std::size_t maxBody)
+: mImpl(std::make_unique<Impl>()) {
+    mImpl->protocol = protocol;
+    mImpl->maxBody  = maxBody;
+}
 
 NegotiationResultAssembler::~NegotiationResultAssembler()                                                = default;
 NegotiationResultAssembler::NegotiationResultAssembler(NegotiationResultAssembler&&) noexcept            = default;
@@ -1297,9 +1316,10 @@ Expected<NegotiationResultSource> NegotiationResultAssembler::finish() {
     };
     result.modules.reserve(first.totalModuleResultCount);
     result.payloads.reserve(first.totalPayloadResultCount);
-    for (auto& chunk : mImpl->chunks) {
-        std::ranges::move(chunk.modules, std::back_inserter(result.modules));
-        std::ranges::move(chunk.payloads, std::back_inserter(result.payloads));
+
+    for (auto const& chunk : mImpl->chunks) {
+        std::ranges::copy(chunk.modules, std::back_inserter(result.modules));
+        std::ranges::copy(chunk.payloads, std::back_inserter(result.payloads));
     }
 
     if (result.modules.size() != first.totalModuleResultCount
@@ -1311,6 +1331,12 @@ Expected<NegotiationResultSource> NegotiationResultAssembler::finish() {
     if (!payloadModulesExist(result.modules, result.payloads)) {
         mImpl->invalidate();
         return malformed("result payload module reference");
+    }
+
+    auto canonical = packNegotiationResult(result, mImpl->protocol, mImpl->maxBody);
+    if (!canonical || *canonical != mImpl->chunks) {
+        mImpl->invalidate();
+        return malformed("non-canonical result chunking");
     }
 
     mImpl->invalidate();

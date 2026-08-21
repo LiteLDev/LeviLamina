@@ -71,7 +71,8 @@ TEST(ProtocolControlCodecTest, RoundTripsEveryControlMessage) {
     expectRoundTrip(
         detail::Hello{
             header(),
-            nonce(std::byte{1}),
+            nonce(std::byte{1}
+            ),
             {1, 1},
             transportLimits(),
             {{featureName("core.delta"), {1, 2}, true}}
@@ -154,7 +155,7 @@ TEST(ProtocolControlCodecTest, PacksAndReassemblesDeclarationDeterministically) 
         EXPECT_LE(encoded->size(), 180U);
     }
 
-    detail::DeclarationAssembler assembler;
+    detail::DeclarationAssembler assembler{1, 180};
     for (auto& chunk : *chunks) ASSERT_TRUE(assembler.push(std::move(chunk)));
     auto complete = assembler.finish();
     ASSERT_TRUE(complete) << complete.error().message();
@@ -226,7 +227,7 @@ TEST(ProtocolControlCodecTest, PacksAndReassemblesNegotiationResult) {
     ASSERT_TRUE(chunks) << chunks.error().message();
     ASSERT_GT(chunks->size(), 1U);
 
-    detail::NegotiationResultAssembler assembler;
+    detail::NegotiationResultAssembler assembler{1, 190};
     for (auto& chunk : *chunks) ASSERT_TRUE(assembler.push(std::move(chunk)));
     auto complete = assembler.finish();
     ASSERT_TRUE(complete) << complete.error().message();
@@ -266,6 +267,17 @@ TEST(ProtocolControlCodecTest, RejectsMissingReorderedAndTrailingControlData) {
     );
 }
 
+TEST(ProtocolControlCodecTest, RejectsNonCanonicalUnderfilledChunks) {
+    detail::DeclarationAssembler assembler;
+    ASSERT_TRUE(
+        assembler.push(detail::Declaration{header(2), EndpointRole::Server, 1, 0, 2, 2, 0, {module("example:one")}, {}})
+    );
+    ASSERT_TRUE(
+        assembler.push(detail::Declaration{header(3), EndpointRole::Server, 1, 1, 2, 2, 0, {module("example:two")}, {}})
+    );
+    EXPECT_FALSE(assembler.finish());
+}
+
 TEST(ProtocolControlCodecTest, RejectsCumulativeChunkTotalsBeforeRetention) {
     detail::DeclarationAssembler declaration;
     ASSERT_TRUE(declaration.push(
@@ -275,7 +287,7 @@ TEST(ProtocolControlCodecTest, RejectsCumulativeChunkTotalsBeforeRetention) {
         detail::Declaration{header(3), EndpointRole::Server, 1, 1, 2, 1, 0, {module("example:two")}, {}}
     ));
 
-    detail::TranscriptDigest digest{};
+    detail::TranscriptDigest           digest{};
     detail::NegotiationResultAssembler result;
     ASSERT_TRUE(result.push(
         detail::NegotiationResult{
@@ -340,16 +352,11 @@ TEST(ProtocolControlCodecTest, RejectsUnknownControlIdBeforeBodyParsing) {
 }
 
 TEST(ProtocolControlCodecTest, RejectsDanglingPayloadModuleReferences) {
-    detail::DeclarationSource declaration{
-        header(2),
-        EndpointRole::Server,
-        1,
-        {},
-        {payload("example:missing/state", 42)}
-    };
+    detail::DeclarationSource
+        declaration{header(2), EndpointRole::Server, 1, {}, {payload("example:missing/state", 42)}};
     EXPECT_FALSE(detail::packDeclaration(std::move(declaration), 1, Limits::MaxControlBody));
 
-    detail::TranscriptDigest           digest{};
+    detail::TranscriptDigest        digest{};
     detail::NegotiationResultSource result{
         header(2),
         1,
@@ -370,7 +377,7 @@ TEST(ProtocolControlCodecTest, RejectsDanglingPayloadModuleReferences) {
 
 TEST(ProtocolControlCodecTest, ClosesAssemblerAfterMalformedChunk) {
     detail::DeclarationAssembler assembler;
-    auto first = detail::Declaration{
+    auto                         first = detail::Declaration{
         header(std::numeric_limits<std::uint32_t>::max()),
         EndpointRole::Server,
         1,
@@ -383,16 +390,13 @@ TEST(ProtocolControlCodecTest, ClosesAssemblerAfterMalformedChunk) {
     };
     EXPECT_FALSE(assembler.push(std::move(first)));
 
-    auto replacement = detail::Declaration{
-        header(2), EndpointRole::Server, 1, 0, 1, 1, 0, {module("example:one")}, {}
-    };
+    auto replacement = detail::Declaration{header(2), EndpointRole::Server, 1, 0, 1, 1, 0, {module("example:one")}, {}};
     EXPECT_FALSE(assembler.push(std::move(replacement)));
     EXPECT_FALSE(assembler.finish());
 }
 
 TEST(ProtocolControlCodecTest, AcceptsChunkSequenceAtUint32Boundary) {
-    detail::DeclarationAssembler assembler;
-    ASSERT_TRUE(assembler.push(detail::Declaration{
+    auto oneEntry = detail::Declaration{
         header(std::numeric_limits<std::uint32_t>::max() - 1),
         EndpointRole::Server,
         1,
@@ -402,18 +406,36 @@ TEST(ProtocolControlCodecTest, AcceptsChunkSequenceAtUint32Boundary) {
         0,
         {module("example:one")},
         {}
-    }));
-    ASSERT_TRUE(assembler.push(detail::Declaration{
-        header(std::numeric_limits<std::uint32_t>::max()),
-        EndpointRole::Server,
-        1,
-        1,
-        2,
-        2,
-        0,
-        {module("example:two")},
-        {}
-    }));
+    };
+    auto oneEntryBody = detail::encodeControl(detail::ControlMessage{oneEntry}, 1);
+    ASSERT_TRUE(oneEntryBody);
+    detail::DeclarationAssembler assembler{1, oneEntryBody->size()};
+    ASSERT_TRUE(assembler.push(
+        detail::Declaration{
+            header(std::numeric_limits<std::uint32_t>::max() - 1),
+            EndpointRole::Server,
+            1,
+            0,
+            2,
+            2,
+            0,
+            {module("example:one")},
+            {}
+        }
+    ));
+    ASSERT_TRUE(assembler.push(
+        detail::Declaration{
+            header(std::numeric_limits<std::uint32_t>::max()),
+            EndpointRole::Server,
+            1,
+            1,
+            2,
+            2,
+            0,
+            {module("example:two")},
+            {}
+        }
+    ));
     EXPECT_TRUE(assembler.finish());
 }
 
@@ -421,21 +443,22 @@ TEST(ProtocolControlCodecTest, RejectsUseAfterAssemblerMove) {
     detail::DeclarationAssembler source;
     detail::DeclarationAssembler destination{std::move(source)};
 
-    EXPECT_FALSE(source.push(detail::Declaration{
-        header(2), EndpointRole::Server, 1, 0, 1, 1, 0, {module("example:one")}, {}
-    }));
+    EXPECT_FALSE(
+        source.push(detail::Declaration{header(2), EndpointRole::Server, 1, 0, 1, 1, 0, {module("example:one")}, {}})
+    );
     EXPECT_FALSE(source.finish());
 
-    ASSERT_TRUE(destination.push(detail::Declaration{
-        header(2), EndpointRole::Server, 1, 0, 1, 1, 0, {module("example:one")}, {}
-    }));
+    ASSERT_TRUE(destination.push(
+        detail::Declaration{header(2), EndpointRole::Server, 1, 0, 1, 1, 0, {module("example:one")}, {}}
+    ));
     EXPECT_TRUE(destination.finish());
 }
 
 TEST(ProtocolTranscriptTest, IsDeterministicAndSensitiveToChunkBytes) {
     detail::Hello hello{
         header(),
-        nonce(std::byte{1}),
+        nonce(std::byte{1}
+        ),
         {1, 1},
         transportLimits(),
         {}
