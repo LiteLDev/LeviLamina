@@ -125,32 +125,45 @@ Encoder::~Encoder()                             = default;
 Encoder::Encoder(Encoder&&) noexcept            = default;
 Encoder& Encoder::operator=(Encoder&&) noexcept = default;
 
-std::size_t Encoder::size() const noexcept { return mImpl->buffer.size(); }
-std::size_t Encoder::maxSize() const noexcept { return mImpl->limit; }
+std::size_t Encoder::size() const noexcept { return mImpl ? mImpl->buffer.size() : 0; }
+std::size_t Encoder::maxSize() const noexcept { return mImpl ? mImpl->limit : 0; }
 
 std::span<std::byte const> Encoder::bytes() const noexcept {
+    if (!mImpl) {
+        return {};
+    }
     return {reinterpret_cast<std::byte const*>(mImpl->buffer.data()), mImpl->buffer.size()};
 }
 
-std::string Encoder::takeBuffer() noexcept { return std::move(mImpl->buffer); }
+std::string Encoder::takeBuffer() noexcept { return mImpl ? std::move(mImpl->buffer) : std::string{}; }
 
 Expected<> Encoder::writeU8(std::uint8_t value) {
+    if (!mImpl) return makeCodecError(CodecErrc::InvalidValue, "encoder was moved from");
+
     auto bytes = detail::littleEndianBytes(value);
     return mImpl->append(bytes);
 }
 Expected<> Encoder::writeU16(std::uint16_t value) {
+    if (!mImpl) return makeCodecError(CodecErrc::InvalidValue, "encoder was moved from");
+
     auto bytes = detail::littleEndianBytes(value);
     return mImpl->append(bytes);
 }
 Expected<> Encoder::writeU32(std::uint32_t value) {
+    if (!mImpl) return makeCodecError(CodecErrc::InvalidValue, "encoder was moved from");
+
     auto bytes = detail::littleEndianBytes(value);
     return mImpl->append(bytes);
 }
 Expected<> Encoder::writeU64(std::uint64_t value) {
+    if (!mImpl) return makeCodecError(CodecErrc::InvalidValue, "encoder was moved from");
+
     auto bytes = detail::littleEndianBytes(value);
     return mImpl->append(bytes);
 }
 Expected<> Encoder::writeVarUint(std::uint32_t value) {
+    if (!mImpl) return makeCodecError(CodecErrc::InvalidValue, "encoder was moved from");
+
     std::array<std::byte, 5> bytes{};
     std::size_t              size{};
     do {
@@ -167,8 +180,14 @@ Expected<> Encoder::writeVarUint(std::uint32_t value) {
     return mImpl->append(std::span{bytes}.first(size));
 }
 Expected<> Encoder::writeBool(bool value) { return writeU8(value ? 1 : 0); }
-Expected<> Encoder::writeBytes(std::span<std::byte const> value) { return mImpl->append(value); }
+Expected<> Encoder::writeBytes(std::span<std::byte const> value) {
+    if (!mImpl) return makeCodecError(CodecErrc::InvalidValue, "encoder was moved from");
+
+    return mImpl->append(value);
+}
 Expected<> Encoder::writeString(std::string_view value, std::size_t maxBytes) {
+    if (!mImpl) return makeCodecError(CodecErrc::InvalidValue, "encoder was moved from");
+
     if (value.size() > maxBytes || value.size() > std::numeric_limits<std::uint32_t>::max()) {
         return makeCodecError(CodecErrc::SizeLimitExceeded);
     }
@@ -197,16 +216,20 @@ Decoder::~Decoder()                             = default;
 Decoder::Decoder(Decoder&&) noexcept            = default;
 Decoder& Decoder::operator=(Decoder&&) noexcept = default;
 
-std::size_t Decoder::size() const noexcept { return mImpl->input.size(); }
+std::size_t Decoder::size() const noexcept { return mImpl ? mImpl->input.size() : 0; }
 std::size_t Decoder::remaining() const noexcept {
-    if (mImpl->sizeLimitExceeded || mImpl->cursor > mImpl->input.size()) {
+    if (!mImpl || mImpl->sizeLimitExceeded || mImpl->cursor > mImpl->input.size()) {
         return 0;
     }
+
     return mImpl->input.size() - mImpl->cursor;
 }
 
-Expected<std::span<std::byte const>> Decoder::readBytes(std::size_t length) { return mImpl->read(length); }
-Expected<std::uint8_t>               Decoder::readU8() {
+Expected<std::span<std::byte const>> Decoder::readBytes(std::size_t length) {
+    if (!mImpl) return makeCodecError(CodecErrc::InvalidValue, "decoder was moved from");
+    return mImpl->read(length);
+}
+Expected<std::uint8_t> Decoder::readU8() {
     auto bytes = readBytes(1);
     if (!bytes) {
         return forwardError(bytes.error());
@@ -293,6 +316,8 @@ Expected<std::string> Decoder::readString(std::size_t maxBytes) {
 }
 
 Expected<> Decoder::requireFullyConsumed() const {
+    if (!mImpl) return makeCodecError(CodecErrc::InvalidValue, "decoder was moved from");
+
     if (mImpl->sizeLimitExceeded || mImpl->cursor > mImpl->input.size()) {
         return makeCodecError(CodecErrc::SizeLimitExceeded);
     }

@@ -113,6 +113,26 @@ TEST(ProtocolCodecTest, RoundTripsEmptyString) {
     EXPECT_TRUE(decoder.requireFullyConsumed());
 }
 
+TEST(ProtocolCodecTest, MovedFromCodecObjectsFailSafely) {
+    Encoder sourceEncoder{8};
+    Encoder targetEncoder{std::move(sourceEncoder)};
+    EXPECT_EQ(sourceEncoder.size(), 0U);
+    EXPECT_EQ(sourceEncoder.maxSize(), 0U);
+    EXPECT_TRUE(sourceEncoder.bytes().empty());
+    EXPECT_TRUE(sourceEncoder.takeBuffer().empty());
+    EXPECT_FALSE(sourceEncoder.writeU8(1));
+    EXPECT_TRUE(targetEncoder.writeU8(1));
+
+    std::array input{std::byte{0x01}};
+    Decoder    sourceDecoder{input, input.size()};
+    Decoder    targetDecoder{std::move(sourceDecoder)};
+    EXPECT_EQ(sourceDecoder.size(), 0U);
+    EXPECT_EQ(sourceDecoder.remaining(), 0U);
+    EXPECT_FALSE(sourceDecoder.readU8());
+    EXPECT_FALSE(sourceDecoder.requireFullyConsumed());
+    EXPECT_EQ(*targetDecoder.readU8(), 1U);
+}
+
 struct TestPayload {};
 struct TestCodec {
     Expected<>            encode(Encoder&, TestPayload const&, SchemaVersion) const { return {}; }
