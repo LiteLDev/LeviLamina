@@ -100,6 +100,45 @@ TEST(ProtocolLifecycleTest, PreservesAndSeparatesNonzeroSubclients) {
     EXPECT_EQ(coordinator.currentGeneration("peer"), *generation);
 }
 
+TEST(ProtocolLifecycleTest, ConnectionWideCloseIsIdempotentAndClosesEverySubclient) {
+    detail::LifecycleCoordinator coordinator{32, EndpointRole::Server};
+
+    auto generation = coordinator.openConnection("peer");
+    ASSERT_TRUE(generation);
+
+    auto primary = openLifecycleSession(coordinator, "peer", 0, *generation, 1);
+    auto child   = openLifecycleSession(coordinator, "peer", 9, *generation, 2);
+    ASSERT_TRUE(primary);
+    ASSERT_TRUE(child);
+
+    std::size_t         closedEvents{};
+    ProtocolCloseReason observedReason{};
+
+    bool nestedCloseSucceeded{};
+
+    auto listener =
+        ll::event::EventBus::getInstance().emplaceListener<ProtocolClosedEvent>([&](ProtocolClosedEvent& event) {
+            ++closedEvents;
+            observedReason = event.reason();
+            if (coordinator.closeConnection("peer", *generation, ProtocolCloseReason::ConnectionClosed)) {
+                nestedCloseSucceeded = true;
+            }
+        });
+
+    ASSERT_TRUE(listener);
+
+    EXPECT_TRUE(coordinator.closeConnection("peer", *generation, ProtocolCloseReason::ConnectionClosed));
+    EXPECT_FALSE(coordinator.closeConnection("peer", *generation, ProtocolCloseReason::ConnectionClosed));
+    EXPECT_EQ((*primary)->state(), SessionState::Closed);
+    EXPECT_EQ((*child)->state(), SessionState::Closed);
+    EXPECT_EQ(coordinator.currentGeneration("peer"), 0);
+    EXPECT_EQ(closedEvents, 2);
+    EXPECT_EQ(observedReason, ProtocolCloseReason::ConnectionClosed);
+    EXPECT_FALSE(nestedCloseSucceeded);
+
+    EXPECT_TRUE(ll::event::EventBus::getInstance().removeListener<ProtocolClosedEvent>(listener));
+}
+
 TEST(ProtocolLifecycleTest, ReconnectRevokesOldGenerationAndRejectsStaleCallbacks) {
     detail::LifecycleCoordinator coordinator{33, EndpointRole::Client};
 
@@ -122,6 +161,29 @@ TEST(ProtocolLifecycleTest, ReconnectRevokesOldGenerationAndRejectsStaleCallback
     auto current = openLifecycleSession(coordinator, "peer", 0, *secondGeneration, 3);
     ASSERT_TRUE(current);
     EXPECT_EQ(coordinator.findSession("peer", 0, *secondGeneration), *current);
+}
+
+TEST(ProtocolLifecycleTest, RuntimeShutdownClosesAllConnectionsExactlyOnce) {
+    detail::LifecycleCoordinator coordinator{34, EndpointRole::Server};
+
+    auto firstGeneration  = coordinator.openConnection("first");
+    auto secondGeneration = coordinator.openConnection("second");
+    ASSERT_TRUE(firstGeneration);
+    ASSERT_TRUE(secondGeneration);
+
+    auto first  = openLifecycleSession(coordinator, "first", 0, *firstGeneration, 1);
+    auto second = openLifecycleSession(coordinator, "second", 4, *secondGeneration, 2);
+    ASSERT_TRUE(first);
+    ASSERT_TRUE(second);
+
+    coordinator.closeAll(ProtocolCloseReason::RuntimeStopping);
+    coordinator.closeAll(ProtocolCloseReason::RuntimeStopping);
+
+    EXPECT_EQ((*first)->state(), SessionState::Closed);
+    EXPECT_EQ((*second)->state(), SessionState::Closed);
+    EXPECT_EQ(coordinator.currentGeneration("first"), 0);
+    EXPECT_EQ(coordinator.currentGeneration("second"), 0);
+    EXPECT_TRUE(coordinator.activeSessions().empty());
 }
 
 } // namespace ll::protocol::test
