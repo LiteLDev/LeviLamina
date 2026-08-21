@@ -39,10 +39,14 @@ public:
     [[nodiscard]] std::shared_ptr<ProtocolSession>
     find(std::string_view connection, std::uint8_t subClientId, std::uint64_t generation) const noexcept;
 
-    [[nodiscard]] bool close(std::string_view connection, std::uint8_t subClientId, std::uint64_t generation) noexcept;
+    [[nodiscard]] std::shared_ptr<ProtocolSession>
+    extract(std::string_view connection, std::uint8_t subClientId, std::uint64_t generation) noexcept;
+
+    [[nodiscard]] SessionMap extractConnection(std::string_view connection, std::uint64_t generation) noexcept;
+
+    [[nodiscard]] SessionMap extractAll() noexcept;
 
     [[nodiscard]] std::vector<std::shared_ptr<ProtocolSession>> activeSessions() const;
-    void                                                        closeAll() noexcept;
 };
 
 } // namespace ll::protocol::detail

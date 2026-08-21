@@ -84,29 +84,51 @@ SessionManager::find(std::string_view connection, std::uint8_t subClientId, std:
     }
 }
 
-bool SessionManager::close(std::string_view connection, std::uint8_t subClientId, std::uint64_t generation) noexcept {
+std::shared_ptr<ProtocolSession>
+SessionManager::extract(std::string_view connection, std::uint8_t subClientId, std::uint64_t generation) noexcept {
     try {
-        SessionKey key{mEndpointInstanceId, mRole, std::string{connection}, subClientId};
+        ConnectionKey key{mEndpointInstanceId, mRole, std::string{connection}, subClientId, generation};
 
         std::shared_ptr<ProtocolSession> session;
         {
             std::scoped_lock lock{mMutex};
 
             auto found = mSessions.find(key);
-            if (found == mSessions.end() || found->second->generation() != generation) {
-                return false;
-            }
+            if (found == mSessions.end()) return nullptr;
 
             session = std::move(found->second);
             mSessions.erase(found);
         }
 
-        session->beginClosing();
-        session->close();
-        return true;
+        return session;
     } catch (...) {
-        return false;
+        return nullptr;
     }
+}
+
+SessionManager::SessionMap
+SessionManager::extractConnection(std::string_view connection, std::uint64_t generation) noexcept {
+    SessionMap       result;
+    std::scoped_lock lock{mMutex};
+
+    for (auto current = mSessions.begin(); current != mSessions.end();) {
+        if (current->first.connection == connection && current->first.generation == generation) {
+            auto extracted = mSessions.extract(current++);
+            result.insert(std::move(extracted));
+        } else {
+            ++current;
+        }
+    }
+
+    return result;
+}
+
+SessionManager::SessionMap SessionManager::extractAll() noexcept {
+    SessionMap result;
+
+    std::scoped_lock lock{mMutex};
+    result.swap(mSessions);
+    return result;
 }
 
 std::vector<std::shared_ptr<ProtocolSession>> SessionManager::activeSessions() const {
@@ -120,19 +142,6 @@ std::vector<std::shared_ptr<ProtocolSession>> SessionManager::activeSessions() c
     }
 
     return result;
-}
-
-void SessionManager::closeAll() noexcept {
-    std::map<SessionKey, std::shared_ptr<ProtocolSession>> sessions;
-    {
-        std::scoped_lock lock{mMutex};
-        sessions.swap(mSessions);
-    }
-
-    for (auto const& session : sessions | std::views::values) {
-        session->beginClosing();
-        session->close();
-    }
 }
 
 } // namespace ll::protocol::detail
