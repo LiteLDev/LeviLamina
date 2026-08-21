@@ -166,6 +166,10 @@ Expected<> RuntimePacketAdapter::installPayloadSlot(PayloadId const& id, std::ui
             }
             return makeRegistrationError(RegistrationErrc::RuntimeIdCollision, id.str());
         }
+        if (mImpl->payloadSlots.size() > Limits::MaxDeclaredPayloads) {
+            mImpl->payloadSlots.erase(slot);
+            return makeRegistrationError(RegistrationErrc::InvalidLimit, "permanent payload slot count");
+        }
 
         Expected<> registered;
         try {

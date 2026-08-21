@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <atomic>
 #include <cassert>
+#include <limits>
 #include <mutex>
 #include <unordered_map>
 #include <unordered_set>
@@ -373,11 +374,15 @@ Expected<PayloadRegistration> PayloadRegistry::registerPayloadErased(
         if (mImpl->attachedPayloads.size() >= Limits::MaxDeclaredPayloads) {
             return makeRegistrationError(RegistrationErrc::InvalidLimit, "payload declaration count");
         }
+        auto& lastGeneration = mImpl->lastPayloadGeneration[*id];
+        if (lastGeneration == std::numeric_limits<std::uint64_t>::max()) {
+            return makeRegistrationError(RegistrationErrc::InvalidLimit, "payload generation exhausted");
+        }
         if (auto installed = detail::ProtocolRuntime::getInstance().installPayloadSlot(*id, runtimeId); !installed) {
             return forwardError(installed.error());
         }
 
-        auto generation = ++mImpl->lastPayloadGeneration[*id];
+        auto generation = ++lastGeneration;
         auto descriptor = std::make_shared<PayloadDescriptor const>(
             *id,
             moduleState->descriptor->id(),
