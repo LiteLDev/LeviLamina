@@ -10,7 +10,7 @@
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/server/ServerInstance.h"
 
-namespace ll::protocol::server::hooks {
+namespace ll::protocol::detail {
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
     ProtocolServerConnectHook,
@@ -21,7 +21,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     NetworkIdentifier const& id
 ) {
     origin(id);
-    if (auto endpoint = detail::getServerEndpoint()) {
+    if (auto endpoint = getServerEndpoint()) {
         endpoint->observeConnection(id);
     }
 }
@@ -36,7 +36,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     SubClientId                      subClientId,
     Connection::DisconnectFailReason reason
 ) {
-    if (auto endpoint = detail::getServerEndpoint()) {
+    if (auto endpoint = getServerEndpoint()) {
         endpoint->closeSubclient(id, static_cast<std::uint8_t>(subClientId));
     }
 
@@ -55,7 +55,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     std::string const&               message,
     std::optional<std::string>       filteredMessage
 ) {
-    if (auto endpoint = detail::getServerEndpoint()) {
+    if (auto endpoint = getServerEndpoint()) {
         endpoint->closeSubclient(id, static_cast<std::uint8_t>(subClientId));
     }
 
@@ -71,7 +71,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     NetworkIdentifier const&         id,
     Connection::DisconnectFailReason reason
 ) {
-    if (auto endpoint = detail::getServerEndpoint()) {
+    if (auto endpoint = getServerEndpoint()) {
         endpoint->closeSubclient(id, static_cast<std::uint8_t>(SubClientId::PrimaryClient));
     }
 
@@ -92,7 +92,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     bool                                   skipMessage,
     std::string const&                     telemetry
 ) {
-    if (auto endpoint = detail::getServerEndpoint()) {
+    if (auto endpoint = getServerEndpoint()) {
         endpoint->closeConnection(id);
     }
 
@@ -112,7 +112,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     bool                                   skipMessage,
     Json::Value const&                     summary
 ) {
-    if (auto endpoint = detail::getServerEndpoint()) {
+    if (auto endpoint = getServerEndpoint()) {
         endpoint->closeConnection(id);
     }
 
@@ -128,7 +128,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     Connection::DisconnectFailReason reason,
     bool                             skipMessage
 ) {
-    if (auto endpoint = detail::getServerEndpoint()) {
+    if (auto endpoint = getServerEndpoint()) {
         endpoint->closeAll(ProtocolCloseReason::ConnectionClosed);
     }
 
@@ -144,7 +144,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     Connection::DisconnectFailReason reason,
     bool                             skipMessage
 ) {
-    if (auto endpoint = detail::getServerEndpoint()) {
+    if (auto endpoint = getServerEndpoint()) {
         endpoint->closeAll(ProtocolCloseReason::ConnectionClosed);
     }
 
@@ -158,8 +158,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     &ServerInstance::leaveGameSync,
     void
 ) {
-    shutdownServerEndpoint();
+    server::shutdownServerEndpoint();
     origin();
 }
 
-} // namespace ll::protocol::server::hooks
+} // namespace ll::protocol::detail

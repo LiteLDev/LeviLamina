@@ -29,33 +29,33 @@ void clearServerSessionSource(ServerSessionSource const& source) noexcept {
 
 } // namespace ll::protocol::detail
 
-namespace ll::protocol::server::detail {
+namespace ll::protocol::detail {
 
 Expected<Session> ServerAccess::resolve(NetworkIdentifierWithSubId const& recipient) noexcept {
-    std::shared_ptr<ll::protocol::detail::ServerSessionSource> source;
+    std::shared_ptr<ServerSessionSource> source;
     {
-        std::scoped_lock lock{ll::protocol::detail::ServerSessionSourceMutex};
-        source = ll::protocol::detail::CurrentServerSessionSource;
+        std::scoped_lock lock{ServerSessionSourceMutex};
+        source = CurrentServerSessionSource;
     }
     if (!source) return makeSessionError(SessionErrc::TransportUnavailable);
     return source->resolve(recipient);
 }
 
 Expected<std::vector<Session>> ServerAccess::snapshot() noexcept {
-    std::shared_ptr<ll::protocol::detail::ServerSessionSource> source;
+    std::shared_ptr<ServerSessionSource> source;
     {
-        std::scoped_lock lock{ll::protocol::detail::ServerSessionSourceMutex};
-        source = ll::protocol::detail::CurrentServerSessionSource;
+        std::scoped_lock lock{ServerSessionSourceMutex};
+        source = CurrentServerSessionSource;
     }
     if (!source) return makeSessionError(SessionErrc::TransportUnavailable);
     return source->snapshotActive();
 }
 
 Expected<> ServerAccess::validateThread() noexcept {
-    std::shared_ptr<ll::protocol::detail::ServerSessionSource> source;
+    std::shared_ptr<ServerSessionSource> source;
     {
-        std::scoped_lock lock{ll::protocol::detail::ServerSessionSourceMutex};
-        source = ll::protocol::detail::CurrentServerSessionSource;
+        std::scoped_lock lock{ServerSessionSourceMutex};
+        source = CurrentServerSessionSource;
     }
     if (!source) return makeSessionError(SessionErrc::TransportUnavailable);
 
@@ -63,12 +63,12 @@ Expected<> ServerAccess::validateThread() noexcept {
     return {};
 }
 
-} // namespace ll::protocol::server::detail
+} // namespace ll::protocol::detail
 
 namespace ll::protocol::server {
 
 Expected<Session> getSession(NetworkIdentifierWithSubId const& recipient) noexcept {
-    return detail::ServerAccess::resolve(recipient);
+    return ll::protocol::detail::ServerAccess::resolve(recipient);
 }
 
 } // namespace ll::protocol::server

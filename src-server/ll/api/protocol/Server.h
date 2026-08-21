@@ -42,7 +42,7 @@ LLNDAPI Expected<Session> getSession(NetworkIdentifierWithSubId const& recipient
 
 } // namespace ll::protocol::server
 
-namespace ll::protocol::server::detail {
+namespace ll::protocol::detail {
 
 struct ServerAccess {
     LLNDAPI static Expected<Session>              resolve(NetworkIdentifierWithSubId const& recipient) noexcept;
@@ -55,13 +55,13 @@ struct ServerAccess {
         std::span<std::size_t const> recipientIndices,
         std::type_index              type,
         void const*                  payload,
-        FanoutResult&                result,
+        server::FanoutResult&        result,
         std::size_t                  maximumReportedFailures
     ) noexcept;
 };
 
 inline void recordFanoutFailure(
-    FanoutResult&              result,
+    server::FanoutResult&      result,
     std::size_t                index,
     std::optional<SessionView> session,
     Error                      error,
@@ -87,7 +87,7 @@ Expected<> validateServerPayload() noexcept {
     return {};
 }
 
-} // namespace ll::protocol::server::detail
+} // namespace ll::protocol::detail
 
 namespace ll::protocol::server {
 
@@ -95,8 +95,12 @@ template <class T>
 Expected<FanoutResult>
 sendTo(std::span<NetworkIdentifierWithSubId const> recipients, T const& payload, FanoutOptions options = {}) noexcept {
     try {
-        if (auto valid = detail::validateServerPayload<T>(); !valid) return forwardError(valid.error());
-        if (auto thread = detail::ServerAccess::validateThread(); !thread) return forwardError(thread.error());
+        if (auto valid = ll::protocol::detail::validateServerPayload<T>(); !valid) {
+            return forwardError(valid.error());
+        }
+        if (auto thread = ll::protocol::detail::ServerAccess::validateThread(); !thread) {
+            return forwardError(thread.error());
+        }
 
         FanoutResult result{.requested = recipients.size()};
 
@@ -110,9 +114,15 @@ sendTo(std::span<NetworkIdentifierWithSubId const> recipients, T const& payload,
         indices.reserve(recipients.size());
 
         for (std::size_t index = 0; index < recipients.size(); ++index) {
-            auto resolved = detail::ServerAccess::resolve(recipients[index]);
+            auto resolved = ll::protocol::detail::ServerAccess::resolve(recipients[index]);
             if (!resolved) {
-                detail::recordFanoutFailure(result, index, std::nullopt, std::move(resolved.error()), maximum);
+                ll::protocol::detail::recordFanoutFailure(
+                    result,
+                    index,
+                    std::nullopt,
+                    std::move(resolved.error()),
+                    maximum
+                );
                 continue;
             }
 
@@ -121,7 +131,8 @@ sendTo(std::span<NetworkIdentifierWithSubId const> recipients, T const& payload,
             indices.emplace_back(index);
         }
 
-        if (auto sent = detail::ServerAccess::sendErased(sessions, indices, typeid(T), &payload, result, maximum);
+        if (auto sent =
+                ll::protocol::detail::ServerAccess::sendErased(sessions, indices, typeid(T), &payload, result, maximum);
             !sent) {
             return forwardError(sent.error());
         }
@@ -135,10 +146,14 @@ sendTo(std::span<NetworkIdentifierWithSubId const> recipients, T const& payload,
 template <class T>
 Expected<FanoutResult> broadcast(T const& payload, FanoutOptions options = {}) noexcept {
     try {
-        if (auto valid = detail::validateServerPayload<T>(); !valid) return forwardError(valid.error());
-        if (auto thread = detail::ServerAccess::validateThread(); !thread) return forwardError(thread.error());
+        if (auto valid = ll::protocol::detail::validateServerPayload<T>(); !valid) {
+            return forwardError(valid.error());
+        }
+        if (auto thread = ll::protocol::detail::ServerAccess::validateThread(); !thread) {
+            return forwardError(thread.error());
+        }
 
-        auto sessions = detail::ServerAccess::snapshot();
+        auto sessions = ll::protocol::detail::ServerAccess::snapshot();
         if (!sessions) return forwardError(sessions.error());
 
         FanoutResult result{.requested = sessions->size(), .attempted = sessions->size()};
@@ -151,7 +166,14 @@ Expected<FanoutResult> broadcast(T const& payload, FanoutOptions options = {}) n
             indices[index] = index;
         }
 
-        if (auto sent = detail::ServerAccess::sendErased(*sessions, indices, typeid(T), &payload, result, maximum);
+        if (auto sent = ll::protocol::detail::ServerAccess::sendErased(
+                *sessions,
+                indices,
+                typeid(T),
+                &payload,
+                result,
+                maximum
+            );
             !sent) {
             return forwardError(sent.error());
         }

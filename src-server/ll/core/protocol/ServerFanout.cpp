@@ -7,12 +7,7 @@
 #include "ll/core/protocol/ProtocolSession.h"
 #include "ll/core/protocol/RegistrationLease.h"
 
-namespace ll::protocol::server::detail {
-
-namespace server_fanout_detail {
-
-using ProtocolSession  = ll::protocol::detail::ProtocolSession;
-using PreparedOutbound = ll::protocol::detail::PreparedOutbound;
+namespace ll::protocol::detail {
 
 struct Target {
     std::size_t                      recipientIndex{};
@@ -57,14 +52,12 @@ Error cloneError(Error& source) {
     return Error{makeStringError(source.message())};
 }
 
-} // namespace server_fanout_detail
-
 Expected<> ServerAccess::sendErased(
     std::span<Session const>     sessions,
     std::span<std::size_t const> recipientIndices,
     std::type_index              type,
     void const*                  payload,
-    FanoutResult&                result,
+    server::FanoutResult&        result,
     std::size_t                  maximumReportedFailures
 ) noexcept {
     try {
@@ -72,7 +65,7 @@ Expected<> ServerAccess::sendErased(
             return makeProtocolError(ProtocolErrc::InternalFailure, "invalid fan-out input");
         }
 
-        std::map<server_fanout_detail::CohortKey, std::vector<server_fanout_detail::Target>> cohorts;
+        std::map<CohortKey, std::vector<Target>> cohorts;
         for (std::size_t index = 0; index < sessions.size(); ++index) {
             auto session = ll::protocol::detail::SessionAccess::lock(sessions[index]);
 
@@ -101,7 +94,7 @@ Expected<> ServerAccess::sendErased(
                 continue;
             }
 
-            auto key = server_fanout_detail::CohortKey{
+            auto key = CohortKey{
                 prepared->binding.payload.schema,
                 prepared->binding.descriptorGeneration,
                 prepared->binding.payload.maxEncodedSize,
@@ -129,7 +122,7 @@ Expected<> ServerAccess::sendErased(
                         result,
                         target.recipientIndex,
                         std::move(target.view),
-                        server_fanout_detail::cloneError(error),
+                        cloneError(error),
                         maximumReportedFailures
                     );
                 }
@@ -149,7 +142,7 @@ Expected<> ServerAccess::sendErased(
                         result,
                         target.recipientIndex,
                         std::move(target.view),
-                        server_fanout_detail::cloneError(error),
+                        cloneError(error),
                         maximumReportedFailures
                     );
                 }
@@ -179,4 +172,4 @@ Expected<> ServerAccess::sendErased(
     }
 }
 
-} // namespace ll::protocol::server::detail
+} // namespace ll::protocol::detail
