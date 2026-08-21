@@ -8,8 +8,9 @@ namespace config_detail {
 Expected<> validateLeviConfig(LeviConfig& config) noexcept {
     auto validation = protocol::detail::validateProtocolConfig(config.targeted.protocol);
     if (!validation) {
-        config.targeted.protocol.enabled = false;
+        config.targeted.protocol = {};
     }
+
     return validation;
 }
 
