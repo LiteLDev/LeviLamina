@@ -1,6 +1,5 @@
 #include "ll/core/protocol/SessionManager.h"
 
-#include <limits>
 #include <ranges>
 #include <utility>
 
@@ -15,38 +14,44 @@ SessionManager::SessionManager(std::uint64_t endpointInstanceId, EndpointRole ro
 Expected<std::shared_ptr<ProtocolSession>> SessionManager::open(
     std::string                             connection,
     std::uint8_t                            subClientId,
+    std::uint64_t                           generation,
     std::uint64_t                           handshakeId,
     std::shared_ptr<RegistrySnapshot const> registry,
     std::shared_ptr<SessionTransport>       transport,
     TransportLimits                         limits
 ) noexcept {
     try {
-        if (handshakeId == 0 || !registry || !transport) {
+        if (generation == 0 || handshakeId == 0 || !registry || !transport) {
             return makeProtocolError(ProtocolErrc::InternalFailure, "invalid session input");
         }
 
-        SessionKey key{mEndpointInstanceId, mRole, std::move(connection), subClientId};
+        ConnectionKey key{mEndpointInstanceId, mRole, std::move(connection), subClientId, generation};
 
         std::shared_ptr<ProtocolSession> previous;
         std::shared_ptr<ProtocolSession> session;
         {
             std::scoped_lock lock{mMutex};
 
-            if (mNextGeneration == (std::numeric_limits<std::uint64_t>::max)()) {
-                return makeProtocolError(ProtocolErrc::InternalFailure, "session generation exhausted");
-            }
-            auto const generation = mNextGeneration++;
-
             session = std::make_shared<ProtocolSession>(
-                SessionIdentity{key, generation, handshakeId},
+                SessionIdentity{key, handshakeId},
                 std::move(registry),
                 std::move(transport),
                 limits
             );
 
-            if (auto found = mSessions.find(key); found != mSessions.end()) {
-                previous      = std::move(found->second);
-                found->second = session;
+            auto found = std::ranges::find_if(mSessions, [&](auto const& entry) {
+                auto const& candidate = entry.first;
+                return candidate.endpointInstanceId == key.endpointInstanceId && candidate.role == key.role
+                    && candidate.connection == key.connection && candidate.subClientId == key.subClientId;
+            });
+
+            if (found != mSessions.end()) {
+                auto node = mSessions.extract(found);
+
+                previous              = std::move(node.mapped());
+                node.key().generation = generation;
+                node.mapped()         = session;
+                mSessions.insert(std::move(node));
             } else {
                 mSessions.emplace(std::move(key), session);
             }
@@ -66,14 +71,12 @@ Expected<std::shared_ptr<ProtocolSession>> SessionManager::open(
 std::shared_ptr<ProtocolSession>
 SessionManager::find(std::string_view connection, std::uint8_t subClientId, std::uint64_t generation) const noexcept {
     try {
-        SessionKey key{mEndpointInstanceId, mRole, std::string{connection}, subClientId};
+        ConnectionKey key{mEndpointInstanceId, mRole, std::string{connection}, subClientId, generation};
 
         std::scoped_lock lock{mMutex};
 
         auto found = mSessions.find(key);
-        if (found == mSessions.end() || found->second->generation() != generation) {
-            return nullptr;
-        }
+        if (found == mSessions.end()) return nullptr;
 
         return found->second;
     } catch (...) {
