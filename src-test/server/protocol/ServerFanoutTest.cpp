@@ -10,6 +10,7 @@
 #include "ll/core/protocol/PayloadRegistryInternal.h"
 #include "ll/core/protocol/ProtocolEnvelopePacket.h"
 #include "ll/core/protocol/ProtocolSession.h"
+#include "ll/core/protocol/ServerEndpoint.h"
 #include "ll/core/protocol/ServerSessionSource.h"
 
 namespace ll::protocol::test {
@@ -225,9 +226,20 @@ TEST(ProtocolServerFanoutTest, HandlesSchemaCohortsDuplicatesAndMixedFailures) {
         detail::SessionAccess::makeSession(second),
     };
     *onEncode = [source, third] { source->sessions.emplace_back(detail::SessionAccess::makeSession(third)); };
-    ASSERT_TRUE(detail::setServerSessionSource(source));
+
+    auto endpoint = detail::getServerEndpoint();
+    if (endpoint) detail::clearServerSessionSource(*endpoint);
+
+    auto installed = detail::setServerSessionSource(source);
+    if (!installed && endpoint) {
+        EXPECT_TRUE(detail::setServerSessionSource(endpoint));
+    }
+    ASSERT_TRUE(installed);
+
     auto broadcast = server::broadcast(FanoutPayload{43});
     detail::clearServerSessionSource(*source);
+    if (endpoint) EXPECT_TRUE(detail::setServerSessionSource(endpoint));
+
     *onEncode = {};
 
     ASSERT_TRUE(broadcast) << broadcast.error().message();
