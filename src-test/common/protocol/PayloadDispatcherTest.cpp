@@ -76,8 +76,7 @@ std::shared_ptr<detail::ProtocolSession> makeActiveSession(
 ) {
     auto session = std::make_shared<detail::ProtocolSession>(
         detail::SessionIdentity{
-            {41, role, "dispatcher-peer", 0},
-            1,
+            {41, role, "dispatcher-peer", 0, 1},
             91
     },
         snapshot,
@@ -201,8 +200,7 @@ TEST(ProtocolPayloadDispatcherTest, GatesHandlerByStateDirectionSchemasAndGenera
 
     auto inactive = std::make_shared<detail::ProtocolSession>(
         detail::SessionIdentity{
-            {42, EndpointRole::Server, "inactive-peer", 0},
-            1,
+            {42, EndpointRole::Server, "inactive-peer", 0, 1},
             92
     },
         snapshot,

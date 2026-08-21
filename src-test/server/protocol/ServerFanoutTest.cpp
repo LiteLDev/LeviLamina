@@ -88,8 +88,7 @@ std::shared_ptr<detail::ProtocolSession> activeFanoutSession(
     // clang-format off
     auto session = std::make_shared<detail::ProtocolSession>(
         detail::SessionIdentity{
-            {endpoint, EndpointRole::Server, "fanout-peer", 0},
-            1,
+            {endpoint, EndpointRole::Server, "fanout-peer", 0, 1},
             endpoint
         },
         registry,

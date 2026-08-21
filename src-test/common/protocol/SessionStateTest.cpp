@@ -47,8 +47,7 @@ std::shared_ptr<detail::RegistrySnapshot const> registry(std::uint64_t revision 
 std::shared_ptr<detail::ProtocolSession> session(EndpointRole role = EndpointRole::Server) {
     return std::make_shared<detail::ProtocolSession>(
         detail::SessionIdentity{
-            {9, role, "test-connection", 0},
-            1,
+            {9, role, "test-connection", 0, 1},
             77
         },
         registry(),
@@ -134,27 +133,27 @@ TEST(ProtocolSessionStateTest, RejectsReplayGapAndStaleHandshake) {
     ASSERT_TRUE(value->validateInboundControl({1, 77, 2}, 16));
 }
 
-TEST(ProtocolSessionStateTest, ManagerRevokesOldGenerationAndSeparatesSubclients) {
+TEST(ProtocolSessionStateTest, ManagerReplacesSessionAndSeparatesSubclients) {
     detail::SessionManager manager{15, EndpointRole::Server};
 
     auto transport = std::make_shared<FakeTransport>();
-    auto first     = manager.open("peer", 0, 1, registry(), transport, limits());
+    auto first     = manager.open("peer", 0, 1, 1, registry(), transport, limits());
     ASSERT_TRUE(first);
 
-    auto secondSubclient = manager.open("peer", 1, 2, registry(), transport, limits());
+    auto secondSubclient = manager.open("peer", 1, 1, 2, registry(), transport, limits());
     ASSERT_TRUE(secondSubclient);
     EXPECT_EQ((*first)->generation(), 1);
-    EXPECT_EQ((*secondSubclient)->generation(), 2);
+    EXPECT_EQ((*secondSubclient)->generation(), 1);
     EXPECT_EQ(manager.find("peer", 0, 1), *first);
-    EXPECT_EQ(manager.find("peer", 1, 2), *secondSubclient);
+    EXPECT_EQ(manager.find("peer", 1, 1), *secondSubclient);
 
-    auto replacement = manager.open("peer", 0, 3, registry(), transport, limits());
+    auto replacement = manager.open("peer", 0, 2, 3, registry(), transport, limits());
     ASSERT_TRUE(replacement);
-    EXPECT_EQ((*replacement)->generation(), 3);
+    EXPECT_EQ((*replacement)->generation(), 2);
     EXPECT_EQ((*first)->state(), SessionState::Closed);
     EXPECT_EQ(manager.find("peer", 0, 1), nullptr);
-    EXPECT_EQ(manager.find("peer", 0, 3), *replacement);
-    EXPECT_EQ(manager.find("peer", 1, 2), *secondSubclient);
+    EXPECT_EQ(manager.find("peer", 0, 2), *replacement);
+    EXPECT_EQ(manager.find("peer", 1, 1), *secondSubclient);
 }
 
 TEST(ProtocolSessionStateTest, RejectsInvalidTransitionsAndReadyDigestMismatch) {
