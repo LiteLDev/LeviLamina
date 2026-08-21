@@ -83,12 +83,18 @@ class ModuleId {
     ModuleId(std::string value, std::size_t separator) : mValue(std::move(value)), mSeparator(separator) {}
 
 public:
+    LLNDAPI static ModuleId const&    INVALID() noexcept;
     LLNDAPI static Expected<ModuleId> parse(std::string_view value);
 
     [[nodiscard]] std::string const& str() const noexcept { return mValue; }
     [[nodiscard]] std::string_view   value() const noexcept { return mValue; }
-    [[nodiscard]] std::string_view   protocolNamespace() const noexcept { return value().substr(0, mSeparator); }
-    [[nodiscard]] std::string_view   name() const noexcept { return value().substr(mSeparator + 1); }
+
+    [[nodiscard]] std::string_view protocolNamespace() const noexcept {
+        return mSeparator == std::string::npos ? std::string_view{} : value().substr(0, mSeparator);
+    }
+    [[nodiscard]] std::string_view name() const noexcept {
+        return mSeparator == std::string::npos ? std::string_view{} : value().substr(mSeparator + 1);
+    }
 
     [[nodiscard]] explicit operator std::string_view() const noexcept { return value(); }
 
@@ -106,13 +112,21 @@ class PayloadId {
       mPayloadSeparator(payloadSeparator) {}
 
 public:
+    LLNDAPI static PayloadId const&    INVALID() noexcept;
     LLNDAPI static Expected<PayloadId> parse(std::string_view value);
 
     [[nodiscard]] std::string const& str() const noexcept { return mValue; }
     [[nodiscard]] std::string_view   value() const noexcept { return mValue; }
-    [[nodiscard]] std::string_view protocolNamespace() const noexcept { return value().substr(0, mNamespaceSeparator); }
-    [[nodiscard]] std::string_view module() const noexcept { return value().substr(0, mPayloadSeparator); }
-    [[nodiscard]] std::string_view name() const noexcept { return value().substr(mPayloadSeparator + 1); }
+
+    [[nodiscard]] std::string_view protocolNamespace() const noexcept {
+        return mNamespaceSeparator == std::string::npos ? std::string_view{} : value().substr(0, mNamespaceSeparator);
+    }
+    [[nodiscard]] std::string_view module() const noexcept {
+        return mPayloadSeparator == std::string::npos ? std::string_view{} : value().substr(0, mPayloadSeparator);
+    }
+    [[nodiscard]] std::string_view name() const noexcept {
+        return mPayloadSeparator == std::string::npos ? std::string_view{} : value().substr(mPayloadSeparator + 1);
+    }
 
     [[nodiscard]] explicit operator std::string_view() const noexcept { return value(); }
 

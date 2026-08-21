@@ -97,6 +97,23 @@ TEST(ProtocolIdTest, RejectsMalformedStableIds) {
     EXPECT_FALSE(PayloadId::parse("example:module/payload:extra"));
 }
 
+TEST(ProtocolIdTest, InvalidStableIdsAreEmptyAndCannotBeParsed) {
+    auto const& module = ModuleId::INVALID();
+    EXPECT_TRUE(module.value().empty());
+    EXPECT_TRUE(module.protocolNamespace().empty());
+    EXPECT_TRUE(module.name().empty());
+    EXPECT_FALSE(ModuleId::parse(module.value()));
+    EXPECT_EQ(&module, &ModuleId::INVALID());
+
+    auto const& payload = PayloadId::INVALID();
+    EXPECT_TRUE(payload.value().empty());
+    EXPECT_TRUE(payload.protocolNamespace().empty());
+    EXPECT_TRUE(payload.module().empty());
+    EXPECT_TRUE(payload.name().empty());
+    EXPECT_FALSE(PayloadId::parse(payload.value()));
+    EXPECT_EQ(&payload, &PayloadId::INVALID());
+}
+
 TEST(ProtocolVersionTest, SelectsHighestCommonVersion) {
     VersionRange local{1, 5};
     VersionRange peer{3, 7};

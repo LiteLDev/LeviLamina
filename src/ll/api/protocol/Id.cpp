@@ -1,5 +1,6 @@
 #include "ll/api/protocol/Id.h"
 
+#include <algorithm>
 #include <string>
 
 #include "ll/api/protocol/Error.h"
@@ -24,13 +25,7 @@ bool validSimpleName(std::string_view value) noexcept {
         return false;
     }
 
-    for (char character : value.substr(1)) {
-        if (!isSimpleTail(character)) {
-            return false;
-        }
-    }
-
-    return true;
+    return std::ranges::all_of(value.substr(1), isSimpleTail);
 }
 
 bool validPayloadName(std::string_view value) noexcept {
@@ -38,13 +33,9 @@ bool validPayloadName(std::string_view value) noexcept {
         return false;
     }
 
-    for (char character : value.substr(1)) {
-        if (!isSimpleTail(character) && character != '/') {
-            return false;
-        }
-    }
-
-    return true;
+    return std::ranges::all_of(value.substr(1), [](char character) {
+        return isSimpleTail(character) || character == '/';
+    });
 }
 
 bool validFeatureName(std::string_view value) noexcept {
@@ -52,13 +43,7 @@ bool validFeatureName(std::string_view value) noexcept {
         return false;
     }
 
-    for (char character : value.substr(1)) {
-        if (!isSimpleTail(character)) {
-            return false;
-        }
-    }
-
-    return true;
+    return std::ranges::all_of(value.substr(1), isSimpleTail);
 }
 
 Unexpected tooLong(std::string_view type) { return makeIdentityError(IdentityErrc::TooLong, std::string{type}); }
@@ -111,6 +96,11 @@ Expected<FeatureName> FeatureName::parse(std::string_view value) {
     return FeatureName{std::string{value}};
 }
 
+ModuleId const& ModuleId::INVALID() noexcept {
+    static ModuleId const Invalid{"", std::string::npos};
+    return Invalid;
+}
+
 Expected<ModuleId> ModuleId::parse(std::string_view value) {
     if (value.size() > Limits::MaxModuleIdBytes) {
         return detail::tooLong("module ID");
@@ -125,6 +115,11 @@ Expected<ModuleId> ModuleId::parse(std::string_view value) {
     }
 
     return ModuleId{std::string{value}, separator};
+}
+
+PayloadId const& PayloadId::INVALID() noexcept {
+    static PayloadId const Invalid{"", std::string::npos, std::string::npos};
+    return Invalid;
 }
 
 Expected<PayloadId> PayloadId::parse(std::string_view value) {

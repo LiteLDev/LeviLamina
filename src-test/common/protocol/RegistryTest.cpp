@@ -192,6 +192,30 @@ TEST(ProtocolRegistryTest, PreservesRuntimeTombstoneAndAdvancesGeneration) {
     EXPECT_TRUE(module->reset());
 }
 
+TEST(ProtocolRegistryTest, MovedFromRegistrationAccessorsAreNeutral) {
+    auto owner = std::make_shared<TestMod>("ProtocolRegistryMoved", "registry_moved");
+    owner->enable();
+    auto& registry = PayloadRegistry::getInstance();
+
+    auto module = registry.registerModule(moduleDefinition(), owner);
+    ASSERT_TRUE(module);
+    auto payload = registry.registerPayload<TestPayload>(*module, payloadDefinition(), TestCodec{});
+    ASSERT_TRUE(payload);
+
+    auto movedPayload = std::move(*payload);
+    EXPECT_FALSE(*payload);
+    EXPECT_EQ(&payload->id(), &PayloadId::INVALID());
+    EXPECT_EQ(payload->runtimeId(), 0);
+    EXPECT_EQ(payload->generation(), 0);
+
+    EXPECT_TRUE(movedPayload.reset());
+    auto movedModule = std::move(*module);
+    EXPECT_FALSE(*module);
+    EXPECT_EQ(&module->id(), &ModuleId::INVALID());
+    EXPECT_EQ(module->generation(), 0);
+    EXPECT_TRUE(movedModule.reset());
+}
+
 TEST(ProtocolRegistryTest, RejectsTombstoneDirectionChange) {
     auto owner = std::make_shared<TestMod>("ProtocolRegistryTombstone", "registry_tombstone");
     owner->enable();

@@ -581,8 +581,12 @@ ModuleRegistration& ModuleRegistration::operator=(ModuleRegistration&& other) no
 
 ModuleRegistration::operator bool() const noexcept { return mImpl != nullptr; }
 
-ModuleId const& ModuleRegistration::id() const noexcept { return mImpl->state->descriptor->id(); }
-std::uint64_t   ModuleRegistration::generation() const noexcept { return mImpl->state->descriptor->generation(); }
+ModuleId const& ModuleRegistration::id() const noexcept {
+    return mImpl ? mImpl->state->descriptor->id() : ModuleId::INVALID();
+}
+std::uint64_t ModuleRegistration::generation() const noexcept {
+    return mImpl ? mImpl->state->descriptor->generation() : 0;
+}
 
 bool ModuleRegistration::active() const noexcept {
     return mImpl && mImpl->state->lifecycle.load(std::memory_order_acquire) == detail::DescriptorLifecycle::Active;
@@ -624,9 +628,15 @@ PayloadRegistration& PayloadRegistration::operator=(PayloadRegistration&& other)
 
 PayloadRegistration::operator bool() const noexcept { return mImpl != nullptr; }
 
-PayloadId const& PayloadRegistration::id() const noexcept { return mImpl->state->descriptor()->id(); }
-std::uint64_t    PayloadRegistration::runtimeId() const noexcept { return mImpl->state->descriptor()->runtimeId(); }
-std::uint64_t    PayloadRegistration::generation() const noexcept { return mImpl->state->descriptor()->generation(); }
+PayloadId const& PayloadRegistration::id() const noexcept {
+    return mImpl ? mImpl->state->descriptor()->id() : PayloadId::INVALID();
+}
+std::uint64_t PayloadRegistration::runtimeId() const noexcept {
+    return mImpl ? mImpl->state->descriptor()->runtimeId() : 0;
+}
+std::uint64_t PayloadRegistration::generation() const noexcept {
+    return mImpl ? mImpl->state->descriptor()->generation() : 0;
+}
 
 bool PayloadRegistration::active() const noexcept { return mImpl && mImpl->state->active(); }
 
