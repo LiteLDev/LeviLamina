@@ -703,7 +703,7 @@ Expected<> PayloadRegistryAccess::activateOwner(PayloadRegistry& registry, mod::
                 );
             }
         }
-        for (auto const& [_, state] : registry.mImpl->payloadStates) {
+        for (auto const& state : registry.mImpl->payloadStates | std::views::values) {
             if (registry.mImpl->attachedPayloads.contains(state.get())
                 && payload_registry_detail::sameOwner(state->owner(), owner)) {
                 changed |= state->activate();
