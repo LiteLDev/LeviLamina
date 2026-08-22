@@ -48,12 +48,12 @@ TEST(ProtocolErrorTest, UsesSeparateErrorFamilies) {
 }
 
 TEST(ProtocolConfigTest, AcceptsDocumentedDefaults) {
-    EXPECT_TRUE(detail::validateProtocolConfig(detail::ProtocolConfig{}));
-    EXPECT_TRUE(detail::validateProtocolConfig(detail::ServerProtocolConfig{}));
+    EXPECT_TRUE(detail::validateProtocolConfig(ClientProtocolConfig{}));
+    EXPECT_TRUE(detail::validateProtocolConfig(ServerProtocolConfig{}));
 }
 
 TEST(ProtocolConfigTest, RejectsZeroAndValuesAboveHardCeilings) {
-    detail::ProtocolConfig config;
+    ClientProtocolConfig config;
 
     config.limits.maxPayloadBody = 0;
     EXPECT_FALSE(detail::validateProtocolConfig(config));
@@ -84,7 +84,7 @@ TEST(ProtocolConfigTest, RejectsZeroAndValuesAboveHardCeilings) {
 }
 
 TEST(ProtocolConfigTest, ValidatesRequiredModuleIdsAndDuplicates) {
-    detail::ServerProtocolConfig config;
+    ServerProtocolConfig config;
     config.requiredModules = {"example:one", "example:two"};
     EXPECT_TRUE(detail::validateProtocolConfig(config));
 

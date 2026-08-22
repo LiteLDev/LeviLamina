@@ -5,7 +5,7 @@
 
 namespace ll {
 struct TargetedConfig {
-    protocol::detail::ProtocolConfig                           protocol{};
+    protocol::ClientProtocolConfig                             protocol{};
     bool                                                       showOutputWindow         = false;
     ll::reflection::Dispatcher<bool, ForceEnableCheatCommands> forceEnableCheatCommands = true;
     struct {

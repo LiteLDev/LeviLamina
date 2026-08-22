@@ -11,7 +11,7 @@
 
 namespace ll {
 struct TargetedConfig {
-    protocol::detail::ServerProtocolConfig                               protocol{};
+    protocol::ServerProtocolConfig                                       protocol{};
     ll::reflection::Dispatcher<bool, Statistics>                         enableStatistics = true;
     reflection::Dispatcher<SimpleServerLoggerConfig, SimpleServerLogger> simpleServerLogger{};
     ll::reflection::Dispatcher<bool, ForceEnableCheatCommands>           forceEnableCheatCommands = true;

@@ -7,7 +7,7 @@
 #include "ll/api/Expected.h"
 #include "ll/api/protocol/Limits.h"
 
-namespace ll::protocol::detail {
+namespace ll::protocol {
 
 struct ProtocolLimitsConfig {
     std::uint32_t maxPayloadBody{Limits::MaxPayloadBody};
@@ -18,7 +18,7 @@ struct ProtocolLimitsConfig {
     std::uint32_t handshakeTimeoutSeconds{Limits::MaxHandshakeTimeoutSeconds};
 };
 
-struct ProtocolConfig {
+struct ClientProtocolConfig {
     bool                 enabled{true};
     ProtocolLimitsConfig limits{};
 };
@@ -30,8 +30,12 @@ struct ServerProtocolConfig {
     ProtocolLimitsConfig     limits{};
 };
 
-Expected<> validateProtocolConfig(ProtocolConfig const& config) noexcept;
+namespace detail {
 
-Expected<> validateProtocolConfig(ServerProtocolConfig const& config) noexcept;
+Expected<> validateProtocolConfig(ClientProtocolConfig const& config) noexcept;
 
-} // namespace ll::protocol::detail
+Expected<> validateProtocolConfig(ServerProtocolConfig const& config);
+
+} // namespace detail
+
+} // namespace ll::protocol

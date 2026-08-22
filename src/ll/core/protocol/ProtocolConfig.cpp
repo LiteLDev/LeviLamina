@@ -11,7 +11,11 @@ namespace ll::protocol::detail {
 namespace protocol_config_detail {
 
 Expected<> invalidLimit(std::string_view name) noexcept {
-    return makeStringError("invalid protocol configuration limit: " + std::string{name});
+    try {
+        return makeStringError("invalid protocol configuration limit: " + std::string{name});
+    } catch (...) {
+        return makeExceptionError();
+    }
 }
 
 Expected<> validateLimits(ProtocolLimitsConfig const& limits) noexcept {
@@ -38,11 +42,11 @@ Expected<> validateLimits(ProtocolLimitsConfig const& limits) noexcept {
 
 } // namespace protocol_config_detail
 
-Expected<> validateProtocolConfig(ProtocolConfig const& config) noexcept {
+Expected<> validateProtocolConfig(ClientProtocolConfig const& config) noexcept {
     return protocol_config_detail::validateLimits(config.limits);
 }
 
-Expected<> validateProtocolConfig(ServerProtocolConfig const& config) noexcept {
+Expected<> validateProtocolConfig(ServerProtocolConfig const& config) {
     auto limits = protocol_config_detail::validateLimits(config.limits);
     if (!limits) {
         return forwardError(limits.error());
