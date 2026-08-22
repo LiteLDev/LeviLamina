@@ -335,10 +335,6 @@ Expected<PayloadRegistration> PayloadRegistry::registerPayloadErased(
 #else
 #error "A protocol endpoint role is required"
 #endif
-        if (canReceive(LocalRole, definition.direction) && !callbacks.dispatch) {
-            return makeRegistrationError(RegistrationErrc::InvalidDirection, "an inbound payload requires a handler");
-        }
-
         auto moduleState = module.mImpl->state;
         auto owner       = moduleState->owner.lock();
         if (!owner) {
@@ -374,6 +370,9 @@ Expected<PayloadRegistration> PayloadRegistry::registerPayloadErased(
                 || previousDescriptor->definition().direction != definition.direction) {
                 return makeRegistrationError(RegistrationErrc::TombstoneMismatch, id->str());
             }
+        }
+        if (canReceive(LocalRole, definition.direction) && !callbacks.dispatch) {
+            return makeRegistrationError(RegistrationErrc::InvalidDirection, "an inbound payload requires a handler");
         }
         if (mImpl->registeredTypes.contains(type)) {
             return makeRegistrationError(RegistrationErrc::DuplicateType, type.name());
