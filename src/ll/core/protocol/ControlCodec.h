@@ -13,7 +13,7 @@
 
 namespace ll::protocol::detail {
 
-[[nodiscard]] std::uint64_t controlRuntimeId(ControlMessage const& message) noexcept;
+[[nodiscard]] std::uint64_t controlRuntimeId(ControlMessage const& message);
 
 [[nodiscard]] Expected<std::string> encodeControl(
     ControlMessage const& message,

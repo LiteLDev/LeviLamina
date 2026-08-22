@@ -42,9 +42,9 @@ public:
     [[nodiscard]] std::shared_ptr<ProtocolSession>
     extract(std::string_view connection, std::uint8_t subClientId, std::uint64_t generation) noexcept;
 
-    [[nodiscard]] SessionMap extractConnection(std::string_view connection, std::uint64_t generation) noexcept;
+    [[nodiscard]] SessionMap extractConnection(std::string_view connection, std::uint64_t generation);
 
-    [[nodiscard]] SessionMap extractAll() noexcept;
+    [[nodiscard]] SessionMap extractAll();
 
     [[nodiscard]] std::vector<std::shared_ptr<ProtocolSession>> activeSessions() const;
 };

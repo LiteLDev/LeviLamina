@@ -10,7 +10,7 @@ namespace ll::protocol::detail {
 std::mutex                           ServerSessionSourceMutex;
 std::shared_ptr<ServerSessionSource> CurrentServerSessionSource;
 
-Expected<> setServerSessionSource(std::shared_ptr<ServerSessionSource> source) noexcept {
+Expected<> setServerSessionSource(std::shared_ptr<ServerSessionSource> source) {
     if (!source) return makeProtocolError(ProtocolErrc::InternalFailure, "null server session source");
 
     std::scoped_lock lock{ServerSessionSourceMutex};
@@ -22,7 +22,7 @@ Expected<> setServerSessionSource(std::shared_ptr<ServerSessionSource> source) n
     return {};
 }
 
-void clearServerSessionSource(ServerSessionSource const& source) noexcept {
+void clearServerSessionSource(ServerSessionSource const& source) {
     std::scoped_lock lock{ServerSessionSourceMutex};
     if (CurrentServerSessionSource.get() == &source) CurrentServerSessionSource.reset();
 }
@@ -31,7 +31,7 @@ void clearServerSessionSource(ServerSessionSource const& source) noexcept {
 
 namespace ll::protocol::detail {
 
-Expected<Session> ServerAccess::resolve(NetworkIdentifierWithSubId const& recipient) noexcept {
+Expected<Session> ServerAccess::resolve(NetworkIdentifierWithSubId const& recipient) {
     std::shared_ptr<ServerSessionSource> source;
     {
         std::scoped_lock lock{ServerSessionSourceMutex};
@@ -41,7 +41,7 @@ Expected<Session> ServerAccess::resolve(NetworkIdentifierWithSubId const& recipi
     return source->resolve(recipient);
 }
 
-Expected<std::vector<Session>> ServerAccess::snapshot() noexcept {
+Expected<std::vector<Session>> ServerAccess::snapshot() {
     std::shared_ptr<ServerSessionSource> source;
     {
         std::scoped_lock lock{ServerSessionSourceMutex};
@@ -51,7 +51,7 @@ Expected<std::vector<Session>> ServerAccess::snapshot() noexcept {
     return source->snapshotActive();
 }
 
-Expected<> ServerAccess::validateThread() noexcept {
+Expected<> ServerAccess::validateThread() {
     std::shared_ptr<ServerSessionSource> source;
     {
         std::scoped_lock lock{ServerSessionSourceMutex};
@@ -67,7 +67,7 @@ Expected<> ServerAccess::validateThread() noexcept {
 
 namespace ll::protocol::server {
 
-Expected<Session> getSession(NetworkIdentifierWithSubId const& recipient) noexcept {
+Expected<Session> getSession(NetworkIdentifierWithSubId const& recipient) {
     return ll::protocol::detail::ServerAccess::resolve(recipient);
 }
 

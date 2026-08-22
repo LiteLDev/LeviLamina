@@ -14,13 +14,13 @@ class ServerSessionSource {
 public:
     virtual ~ServerSessionSource() = default;
 
-    [[nodiscard]] virtual bool              isOnEndpointThread() const noexcept                           = 0;
-    [[nodiscard]] virtual Expected<Session> resolve(NetworkIdentifierWithSubId const& recipient) noexcept = 0;
-    [[nodiscard]] virtual Expected<std::vector<Session>> snapshotActive() noexcept                        = 0;
+    [[nodiscard]] virtual bool                           isOnEndpointThread() const                           = 0;
+    [[nodiscard]] virtual Expected<Session>              resolve(NetworkIdentifierWithSubId const& recipient) = 0;
+    [[nodiscard]] virtual Expected<std::vector<Session>> snapshotActive()                                     = 0;
 };
 
-[[nodiscard]] Expected<> setServerSessionSource(std::shared_ptr<ServerSessionSource> source) noexcept;
+[[nodiscard]] Expected<> setServerSessionSource(std::shared_ptr<ServerSessionSource> source);
 
-void clearServerSessionSource(ServerSessionSource const& source) noexcept;
+void clearServerSessionSource(ServerSessionSource const& source);
 
 } // namespace ll::protocol::detail

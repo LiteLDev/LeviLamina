@@ -11,7 +11,7 @@ namespace ll::protocol::detail {
 
 namespace module_catalog_detail {
 
-Expected<> normalize(ModuleDefinition& definition) noexcept {
+Expected<> normalize(ModuleDefinition& definition) {
     if (!definition.protocolVersions.valid()) {
         return makeRegistrationError(RegistrationErrc::InvalidLimit, "module protocol version range");
     }
@@ -80,7 +80,7 @@ Expected<std::shared_ptr<ModuleState>> ModuleCatalog::registerModule(
     }
 }
 
-void ModuleCatalog::restore(ModuleId const& id, std::shared_ptr<ModuleState> previous) noexcept {
+void ModuleCatalog::restore(ModuleId const& id, std::shared_ptr<ModuleState> previous) {
     auto current = mModules.find(id);
     if (previous) {
         assert(current != mModules.end());
@@ -90,7 +90,7 @@ void ModuleCatalog::restore(ModuleId const& id, std::shared_ptr<ModuleState> pre
     }
 }
 
-std::shared_ptr<ModuleState> ModuleCatalog::find(ModuleId const& id) const noexcept {
+std::shared_ptr<ModuleState> ModuleCatalog::find(ModuleId const& id) const {
     auto found = mModules.find(id);
     return found == mModules.end() ? nullptr : found->second;
 }

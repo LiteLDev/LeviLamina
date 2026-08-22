@@ -83,16 +83,16 @@ class ModuleId {
     ModuleId(std::string value, std::size_t separator) : mValue(std::move(value)), mSeparator(separator) {}
 
 public:
-    LLNDAPI static ModuleId const&    INVALID() noexcept;
+    LLNDAPI static ModuleId const&    INVALID();
     LLNDAPI static Expected<ModuleId> parse(std::string_view value);
 
     [[nodiscard]] std::string const& str() const noexcept { return mValue; }
     [[nodiscard]] std::string_view   value() const noexcept { return mValue; }
 
-    [[nodiscard]] std::string_view protocolNamespace() const noexcept {
+    [[nodiscard]] std::string_view protocolNamespace() const {
         return mSeparator == std::string::npos ? std::string_view{} : value().substr(0, mSeparator);
     }
-    [[nodiscard]] std::string_view name() const noexcept {
+    [[nodiscard]] std::string_view name() const {
         return mSeparator == std::string::npos ? std::string_view{} : value().substr(mSeparator + 1);
     }
 
@@ -112,19 +112,19 @@ class PayloadId {
       mPayloadSeparator(payloadSeparator) {}
 
 public:
-    LLNDAPI static PayloadId const&    INVALID() noexcept;
+    LLNDAPI static PayloadId const&    INVALID();
     LLNDAPI static Expected<PayloadId> parse(std::string_view value);
 
     [[nodiscard]] std::string const& str() const noexcept { return mValue; }
     [[nodiscard]] std::string_view   value() const noexcept { return mValue; }
 
-    [[nodiscard]] std::string_view protocolNamespace() const noexcept {
+    [[nodiscard]] std::string_view protocolNamespace() const {
         return mNamespaceSeparator == std::string::npos ? std::string_view{} : value().substr(0, mNamespaceSeparator);
     }
-    [[nodiscard]] std::string_view module() const noexcept {
+    [[nodiscard]] std::string_view module() const {
         return mPayloadSeparator == std::string::npos ? std::string_view{} : value().substr(0, mPayloadSeparator);
     }
-    [[nodiscard]] std::string_view name() const noexcept {
+    [[nodiscard]] std::string_view name() const {
         return mPayloadSeparator == std::string::npos ? std::string_view{} : value().substr(mPayloadSeparator + 1);
     }
 
@@ -143,42 +143,32 @@ namespace std {
 
 template <>
 struct hash<ll::protocol::ProtocolNamespace> {
-    size_t operator()(ll::protocol::ProtocolNamespace const& value) const noexcept {
-        return hash<string_view>{}(value.value());
-    }
+    size_t operator()(ll::protocol::ProtocolNamespace const& value) const { return hash<string_view>{}(value.value()); }
 };
 
 template <>
 struct hash<ll::protocol::ModuleName> {
-    size_t operator()(ll::protocol::ModuleName const& value) const noexcept {
-        return hash<string_view>{}(value.value());
-    }
+    size_t operator()(ll::protocol::ModuleName const& value) const { return hash<string_view>{}(value.value()); }
 };
 
 template <>
 struct hash<ll::protocol::PayloadName> {
-    size_t operator()(ll::protocol::PayloadName const& value) const noexcept {
-        return hash<string_view>{}(value.value());
-    }
+    size_t operator()(ll::protocol::PayloadName const& value) const { return hash<string_view>{}(value.value()); }
 };
 
 template <>
 struct hash<ll::protocol::FeatureName> {
-    size_t operator()(ll::protocol::FeatureName const& value) const noexcept {
-        return hash<string_view>{}(value.value());
-    }
+    size_t operator()(ll::protocol::FeatureName const& value) const { return hash<string_view>{}(value.value()); }
 };
 
 template <>
 struct hash<ll::protocol::ModuleId> {
-    size_t operator()(ll::protocol::ModuleId const& value) const noexcept { return hash<string_view>{}(value.value()); }
+    size_t operator()(ll::protocol::ModuleId const& value) const { return hash<string_view>{}(value.value()); }
 };
 
 template <>
 struct hash<ll::protocol::PayloadId> {
-    size_t operator()(ll::protocol::PayloadId const& value) const noexcept {
-        return hash<string_view>{}(value.value());
-    }
+    size_t operator()(ll::protocol::PayloadId const& value) const { return hash<string_view>{}(value.value()); }
 };
 
 } // namespace std

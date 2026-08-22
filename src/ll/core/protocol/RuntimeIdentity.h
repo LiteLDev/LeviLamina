@@ -20,14 +20,14 @@ class CoreProtocolOwner final {
 
 [[nodiscard]] CoreProtocolOwner const& getCoreProtocolOwner() noexcept;
 
-[[nodiscard]] std::uint64_t payloadRuntimeId(PayloadId const& id) noexcept;
+[[nodiscard]] std::uint64_t payloadRuntimeId(PayloadId const& id);
 
-[[nodiscard]] bool isReservedProtocolNamespace(std::string_view value) noexcept;
+[[nodiscard]] bool isReservedProtocolNamespace(std::string_view value);
 
-Expected<> validateManifestProtocolNamespace(mod::Manifest const& manifest) noexcept;
+Expected<> validateManifestProtocolNamespace(mod::Manifest const& manifest);
 
-Expected<ProtocolNamespace> resolveModProtocolNamespace(mod::Manifest const& manifest) noexcept;
+Expected<ProtocolNamespace> resolveModProtocolNamespace(mod::Manifest const& manifest);
 
-ProtocolNamespace const& resolveCoreProtocolNamespace(CoreProtocolOwner const&) noexcept;
+ProtocolNamespace const& resolveCoreProtocolNamespace(CoreProtocolOwner const&);
 
 } // namespace ll::protocol::detail

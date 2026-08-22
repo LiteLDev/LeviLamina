@@ -25,9 +25,9 @@ public:
         DescriptorLifecycle              lifecycle
     ) noexcept;
 
-    void restore(ModuleId const& id, std::shared_ptr<ModuleState> previous) noexcept;
+    void restore(ModuleId const& id, std::shared_ptr<ModuleState> previous);
 
-    [[nodiscard]] std::shared_ptr<ModuleState>              find(ModuleId const& id) const noexcept;
+    [[nodiscard]] std::shared_ptr<ModuleState>              find(ModuleId const& id) const;
     [[nodiscard]] std::vector<std::shared_ptr<ModuleState>> states() const;
 };
 

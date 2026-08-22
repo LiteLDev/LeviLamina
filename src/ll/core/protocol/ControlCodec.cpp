@@ -27,7 +27,7 @@ Unexpected malformed(std::string context = {}) {
     return makeProtocolError(ProtocolErrc::DeclarationMalformed, std::move(context));
 }
 
-bool nonzero(Nonce const& nonce) noexcept {
+bool nonzero(Nonce const& nonce) {
     return std::ranges::any_of(nonce, [](std::byte value) { return value != std::byte{}; });
 }
 
@@ -41,23 +41,23 @@ bool validLimits(TransportLimits const& value) noexcept {
 }
 
 template <class T, class Projection>
-bool strictlySorted(std::vector<T> const& values, Projection projection) noexcept {
+bool strictlySorted(std::vector<T> const& values, Projection projection) {
     return std::ranges::adjacent_find(values, std::ranges::greater_equal{}, projection) == values.end();
 }
 
-bool validFeatures(std::vector<WireFeatureDeclaration> const& features) noexcept {
+bool validFeatures(std::vector<WireFeatureDeclaration> const& features) {
     return features.size() <= Limits::MaxDeclaredFeatures
         && strictlySorted(features, [](WireFeatureDeclaration const& value) { return value.name.value(); })
         && std::ranges::all_of(features, [](WireFeatureDeclaration const& value) { return value.versions.valid(); });
 }
 
-bool validSelectedFeatures(std::vector<SelectedFeature> const& features) noexcept {
+bool validSelectedFeatures(std::vector<SelectedFeature> const& features) {
     return features.size() <= Limits::MaxDeclaredFeatures
         && strictlySorted(features, [](SelectedFeature const& value) { return value.name.value(); })
         && std::ranges::all_of(features, [](SelectedFeature const& value) { return value.version != 0; });
 }
 
-bool validSchemas(std::vector<SchemaVersion> const& schemas) noexcept {
+bool validSchemas(std::vector<SchemaVersion> const& schemas) {
     return !schemas.empty() && schemas.size() <= Limits::MaxSchemasPerPayload
         && strictlySorted(schemas, [](SchemaVersion value) { return value; }) && schemas.front() != 0;
 }
@@ -86,7 +86,7 @@ bool entriesFitDeclaredTotals(
 }
 
 template <class ModuleEntry, class PayloadEntry>
-bool payloadModulesExist(std::vector<ModuleEntry> const& modules, std::vector<PayloadEntry> const& payloads) noexcept {
+bool payloadModulesExist(std::vector<ModuleEntry> const& modules, std::vector<PayloadEntry> const& payloads) {
     return std::ranges::all_of(payloads, [&](auto const& payload) {
         return std::ranges::binary_search(modules, payload.id.module(), {}, [](auto const& module) {
             return module.id.value();
@@ -534,7 +534,7 @@ Expected<TranscriptDigest> readDigest(Decoder& in) {
     return result;
 }
 
-std::uint64_t controlRuntimeId(ControlMessage const& message) noexcept {
+std::uint64_t controlRuntimeId(ControlMessage const& message) {
     return std::visit(
         [](auto const& value) -> std::uint64_t {
             using T = std::remove_cvref_t<decltype(value)>;

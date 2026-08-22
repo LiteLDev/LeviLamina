@@ -20,7 +20,7 @@ constexpr bool isSimpleTail(char value) noexcept {
     return isLowerAlphaNumeric(value) || value == '_' || value == '.' || value == '-';
 }
 
-bool validSimpleName(std::string_view value) noexcept {
+bool validSimpleName(std::string_view value) {
     if (value.empty() || !isLowerAlphaNumeric(value.front())) {
         return false;
     }
@@ -28,7 +28,7 @@ bool validSimpleName(std::string_view value) noexcept {
     return std::ranges::all_of(value.substr(1), isSimpleTail);
 }
 
-bool validPayloadName(std::string_view value) noexcept {
+bool validPayloadName(std::string_view value) {
     if (value.empty() || !isLowerAlphaNumeric(value.front())) {
         return false;
     }
@@ -38,7 +38,7 @@ bool validPayloadName(std::string_view value) noexcept {
     });
 }
 
-bool validFeatureName(std::string_view value) noexcept {
+bool validFeatureName(std::string_view value) {
     if (value.empty() || !isLower(value.front())) {
         return false;
     }
@@ -46,9 +46,13 @@ bool validFeatureName(std::string_view value) noexcept {
     return std::ranges::all_of(value.substr(1), isSimpleTail);
 }
 
-Unexpected tooLong(std::string_view type) { return makeIdentityError(IdentityErrc::TooLong, std::string{type}); }
+Unexpected tooLong(std::string_view type) noexcept {
+    return makeIdentityError(IdentityErrc::TooLong, std::string{type});
+}
 
-Unexpected invalid(std::string_view type) { return makeIdentityError(IdentityErrc::InvalidSyntax, std::string{type}); }
+Unexpected invalid(std::string_view type) noexcept {
+    return makeIdentityError(IdentityErrc::InvalidSyntax, std::string{type});
+}
 
 } // namespace detail
 
@@ -96,7 +100,7 @@ Expected<FeatureName> FeatureName::parse(std::string_view value) {
     return FeatureName{std::string{value}};
 }
 
-ModuleId const& ModuleId::INVALID() noexcept {
+ModuleId const& ModuleId::INVALID() {
     static ModuleId const Invalid{"", std::string::npos};
     return Invalid;
 }
@@ -117,7 +121,7 @@ Expected<ModuleId> ModuleId::parse(std::string_view value) {
     return ModuleId{std::string{value}, separator};
 }
 
-PayloadId const& PayloadId::INVALID() noexcept {
+PayloadId const& PayloadId::INVALID() {
     static PayloadId const Invalid{"", std::string::npos, std::string::npos};
     return Invalid;
 }

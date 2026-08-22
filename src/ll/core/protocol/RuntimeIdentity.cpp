@@ -13,7 +13,7 @@ namespace ll::protocol::detail {
 
 namespace runtime_identity_detail {
 
-Expected<ProtocolNamespace> parseOwnedNamespace(std::string_view value) noexcept {
+Expected<ProtocolNamespace> parseOwnedNamespace(std::string_view value) {
     auto parsed = ProtocolNamespace::parse(value);
     if (!parsed) {
         return forwardError(parsed.error());
@@ -32,15 +32,13 @@ CoreProtocolOwner const& getCoreProtocolOwner() noexcept {
     return owner;
 }
 
-std::uint64_t payloadRuntimeId(PayloadId const& id) noexcept {
-    return hash_utils::doHash(PayloadHashDomain, id.value());
-}
+std::uint64_t payloadRuntimeId(PayloadId const& id) { return hash_utils::doHash(PayloadHashDomain, id.value()); }
 
-bool isReservedProtocolNamespace(std::string_view value) noexcept {
+bool isReservedProtocolNamespace(std::string_view value) {
     return std::ranges::contains(ReservedProtocolNamespaces, value);
 }
 
-Expected<> validateManifestProtocolNamespace(mod::Manifest const& manifest) noexcept {
+Expected<> validateManifestProtocolNamespace(mod::Manifest const& manifest) {
     if (manifest.protocolNamespace) {
         auto parsed = runtime_identity_detail::parseOwnedNamespace(*manifest.protocolNamespace);
         if (!parsed) {
@@ -58,13 +56,13 @@ Expected<> validateManifestProtocolNamespace(mod::Manifest const& manifest) noex
     return {};
 }
 
-Expected<ProtocolNamespace> resolveModProtocolNamespace(mod::Manifest const& manifest) noexcept {
+Expected<ProtocolNamespace> resolveModProtocolNamespace(mod::Manifest const& manifest) {
     return runtime_identity_detail::parseOwnedNamespace(
         manifest.protocolNamespace ? std::string_view{*manifest.protocolNamespace} : std::string_view{manifest.name}
     );
 }
 
-ProtocolNamespace const& resolveCoreProtocolNamespace(CoreProtocolOwner const&) noexcept {
+ProtocolNamespace const& resolveCoreProtocolNamespace(CoreProtocolOwner const&) {
     static ProtocolNamespace const value = ProtocolNamespace::parse(ReservedProtocolNamespaces.front()).value();
     return value;
 }

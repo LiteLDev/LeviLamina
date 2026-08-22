@@ -15,7 +15,7 @@
 
 namespace ll::protocol::detail {
 
-void updateHash(Crypto::Hash::Hash& hash, std::span<std::byte const> input) noexcept {
+void updateHash(Crypto::Hash::Hash& hash, std::span<std::byte const> input) {
     constexpr auto MaxUpdateSize = static_cast<std::size_t>(std::numeric_limits<uint>::max());
     while (!input.empty()) {
         auto const size = std::min(input.size(), MaxUpdateSize);
@@ -24,7 +24,7 @@ void updateHash(Crypto::Hash::Hash& hash, std::span<std::byte const> input) noex
     }
 }
 
-TranscriptDigest toTranscriptDigest(std::string const& binaryDigest) noexcept {
+TranscriptDigest toTranscriptDigest(std::string const& binaryDigest) {
     TranscriptDigest result{};
     if (binaryDigest.size() != result.size()) return result;
 

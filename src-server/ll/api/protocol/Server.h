@@ -38,17 +38,17 @@ struct FanoutResult {
     bool                       failuresTruncated{};
 };
 
-LLNDAPI Expected<Session> getSession(NetworkIdentifierWithSubId const& recipient) noexcept;
+LLNDAPI Expected<Session> getSession(NetworkIdentifierWithSubId const& recipient);
 
 } // namespace ll::protocol::server
 
 namespace ll::protocol::detail {
 
 struct ServerAccess {
-    LLNDAPI static Expected<Session>              resolve(NetworkIdentifierWithSubId const& recipient) noexcept;
-    LLNDAPI static Expected<std::vector<Session>> snapshot() noexcept;
+    LLNDAPI static Expected<Session>              resolve(NetworkIdentifierWithSubId const& recipient);
+    LLNDAPI static Expected<std::vector<Session>> snapshot();
 
-    LLNDAPI static Expected<> validateThread() noexcept;
+    LLNDAPI static Expected<> validateThread();
 
     LLNDAPI static Expected<> sendErased(
         std::span<Session const>     sessions,
@@ -76,7 +76,7 @@ inline void recordFanoutFailure(
 }
 
 template <class T>
-Expected<> validateServerPayload() noexcept {
+Expected<> validateServerPayload() {
     auto descriptor = PayloadRegistry::getInstance().findPayload<T>();
     if (!descriptor) return makeSessionError(SessionErrc::NotNegotiated);
 

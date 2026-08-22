@@ -115,8 +115,7 @@ SessionManager::extract(std::string_view connection, std::uint8_t subClientId, s
     }
 }
 
-SessionManager::SessionMap
-SessionManager::extractConnection(std::string_view connection, std::uint64_t generation) noexcept {
+SessionManager::SessionMap SessionManager::extractConnection(std::string_view connection, std::uint64_t generation) {
     SessionMap       result;
     std::scoped_lock lock{mMutex};
 
@@ -132,7 +131,7 @@ SessionManager::extractConnection(std::string_view connection, std::uint64_t gen
     return result;
 }
 
-SessionManager::SessionMap SessionManager::extractAll() noexcept {
+SessionManager::SessionMap SessionManager::extractAll() {
     SessionMap result;
 
     std::scoped_lock lock{mMutex};
