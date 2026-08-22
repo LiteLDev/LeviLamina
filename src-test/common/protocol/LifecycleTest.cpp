@@ -23,9 +23,7 @@ public:
 };
 
 std::shared_ptr<detail::RegistrySnapshot const> lifecycleRegistry() {
-    auto registry      = std::make_shared<detail::RegistrySnapshot>();
-    registry->revision = 1;
-    return registry;
+    return detail::PayloadRegistryAccess::snapshot(PayloadRegistry::getInstance());
 }
 
 detail::TransportLimits lifecycleLimits() {
@@ -251,6 +249,36 @@ TEST(ProtocolLifecycleTest, RuntimeShutdownClosesAllConnectionsExactlyOnce) {
     ASSERT_FALSE(reopened);
     ASSERT_TRUE(reopened.error().isA<LifecycleErrorInfo>());
     EXPECT_EQ(reopened.error().as<LifecycleErrorInfo>().code, LifecycleErrc::RuntimeStopping);
+}
+
+TEST(ProtocolLifecycleTest, RegistryChangeClosesSessionsButPreservesConnectionGeneration) {
+    detail::LifecycleCoordinator coordinator{37, EndpointRole::Server};
+
+    auto generation = coordinator.openConnection("peer");
+    ASSERT_TRUE(generation);
+    auto session = openLifecycleSession(coordinator, "peer", 0, *generation, 1);
+    ASSERT_TRUE(session);
+
+    std::size_t         closedEvents{};
+    ProtocolCloseReason observedReason{};
+    auto                listener =
+        ll::event::EventBus::getInstance().emplaceListener<ProtocolClosedEvent>([&](ProtocolClosedEvent& event) {
+            ++closedEvents;
+            observedReason = event.reason();
+        });
+    ASSERT_TRUE(listener);
+
+    coordinator.invalidateSessions(ProtocolCloseReason::RegistryChanged);
+    EXPECT_EQ((*session)->state(), SessionState::Closed);
+    EXPECT_EQ(coordinator.currentGeneration("peer"), *generation);
+    EXPECT_EQ(closedEvents, 1);
+    EXPECT_EQ(observedReason, ProtocolCloseReason::RegistryChanged);
+
+    auto replacement = openLifecycleSession(coordinator, "peer", 0, *generation, 2);
+    ASSERT_TRUE(replacement);
+    EXPECT_EQ(coordinator.findSession("peer", 0, *generation), *replacement);
+
+    EXPECT_TRUE(ll::event::EventBus::getInstance().removeListener<ProtocolClosedEvent>(listener));
 }
 
 } // namespace ll::protocol::test

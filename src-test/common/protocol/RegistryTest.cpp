@@ -42,10 +42,14 @@ struct OtherPayload {
 };
 
 struct TestCodec {
+    std::shared_ptr<std::size_t> encodeCalls;
+
     Expected<> encode(Encoder& out, TestPayload const& value, SchemaVersion schema) const {
         if (schema != 1) {
             return makeCodecError(CodecErrc::UnsupportedSchema);
         }
+
+        if (encodeCalls) ++*encodeCalls;
 
         return out.writeU32(value.value);
     }
@@ -111,19 +115,23 @@ RegistrationErrc registrationCode(Error& error) {
 TEST(ProtocolRegistryTest, KeepsDisabledOwnerPendingUntilActivation) {
     auto  owner    = std::make_shared<TestMod>("ProtocolRegistryPending", "registry_pending");
     auto& registry = PayloadRegistry::getInstance();
+    auto  revision = registry.revision();
 
     auto module = registry.registerModule(moduleDefinition(), owner);
     ASSERT_TRUE(module);
     EXPECT_FALSE(module->active());
+    EXPECT_EQ(registry.revision(), revision);
 
     auto payload = registry.registerPayload<TestPayload>(*module, payloadDefinition(), TestCodec{});
     ASSERT_TRUE(payload);
     EXPECT_FALSE(payload->active());
+    EXPECT_EQ(registry.revision(), revision);
     EXPECT_EQ(registry.findModule(module->id()), nullptr);
     EXPECT_EQ(registry.findPayload(payload->id()), nullptr);
 
     owner->enable();
     ASSERT_TRUE(detail::PayloadRegistryAccess::activateOwner(registry, *owner));
+    EXPECT_GT(registry.revision(), revision);
     EXPECT_TRUE(module->active());
     EXPECT_TRUE(payload->active());
     EXPECT_EQ(registry.findModule(module->id())->generation(), module->generation());
@@ -184,6 +192,7 @@ TEST(ProtocolRegistryTest, PreservesRuntimeTombstoneAndAdvancesGeneration) {
     auto const runtimeId       = first->runtimeId();
     auto const firstGeneration = first->generation();
     EXPECT_TRUE(first->reset());
+    EXPECT_TRUE(first->reset());
     EXPECT_NE(network::PacketRegistrar::getInstance().createPacket(runtimeId), nullptr);
     EXPECT_TRUE(network::PacketRegistrar::getInstance().getHandler(runtimeId));
 
@@ -193,6 +202,7 @@ TEST(ProtocolRegistryTest, PreservesRuntimeTombstoneAndAdvancesGeneration) {
     EXPECT_GT(second->generation(), firstGeneration);
 
     EXPECT_TRUE(second->reset());
+    EXPECT_TRUE(module->reset());
     EXPECT_TRUE(module->reset());
 }
 
@@ -389,6 +399,82 @@ TEST(ProtocolRegistryTest, DrainOwnerRevokesAllOwnedDescriptors) {
     EXPECT_FALSE(payload->active());
     EXPECT_EQ(registry.findModule(module->id()), nullptr);
     EXPECT_EQ(registry.findPayload(payload->id()), nullptr);
+
+    EXPECT_TRUE(payload->reset());
+    EXPECT_TRUE(module->reset());
+}
+
+TEST(ProtocolRegistryTest, DisabledOwnerCannotAcquireNewLease) {
+    auto owner = std::make_shared<TestMod>("ProtocolRegistryDisabledSend", "registry_disabled_send");
+    owner->enable();
+
+    auto& registry = PayloadRegistry::getInstance();
+    auto  module   = registry.registerModule(moduleDefinition(), owner);
+    ASSERT_TRUE(module);
+    auto payload = registry.registerPayload<TestPayload>(*module, payloadDefinition(), TestCodec{});
+    ASSERT_TRUE(payload);
+
+    auto state = detail::PayloadRegistryAccess::findState(registry, payload->id());
+    ASSERT_NE(state, nullptr);
+
+    owner->disable();
+    auto lease = detail::RegistrationLease::acquire(state, payload->generation());
+    ASSERT_FALSE(lease);
+    ASSERT_TRUE(lease.error().isA<LifecycleErrorInfo>());
+    EXPECT_EQ(lease.error().as<LifecycleErrorInfo>().code, LifecycleErrc::Draining);
+
+    ASSERT_TRUE(registry.drainOwner(*owner));
+    EXPECT_TRUE(payload->reset());
+    EXPECT_TRUE(module->reset());
+}
+
+TEST(ProtocolRegistryTest, OwnerDrainRequiresExactOwnerIdentity) {
+    auto owner    = std::make_shared<TestMod>("ProtocolRegistryIdentity", "registry_identity");
+    auto impostor = std::make_shared<TestMod>("ProtocolRegistryIdentity", "registry_identity");
+    owner->enable();
+    impostor->enable();
+
+    auto& registry = PayloadRegistry::getInstance();
+    auto  module   = registry.registerModule(moduleDefinition(), owner);
+    ASSERT_TRUE(module);
+    auto payload = registry.registerPayload<TestPayload>(*module, payloadDefinition(), TestCodec{});
+    ASSERT_TRUE(payload);
+
+    ASSERT_TRUE(registry.drainOwner(*impostor));
+    EXPECT_TRUE(module->active());
+    EXPECT_TRUE(payload->active());
+    EXPECT_NE(registry.findPayload(payload->id()), nullptr);
+
+    ASSERT_TRUE(registry.drainOwner(*owner));
+    EXPECT_TRUE(payload->reset());
+    EXPECT_TRUE(module->reset());
+}
+
+TEST(ProtocolRegistryTest, OwnerDrainDestroysCallbacksBeforeReturning) {
+    auto owner = std::make_shared<TestMod>("ProtocolRegistryCallbackDrain", "registry_callback_drain");
+    owner->enable();
+
+    auto& registry = PayloadRegistry::getInstance();
+    auto  module   = registry.registerModule(moduleDefinition(), owner);
+    ASSERT_TRUE(module);
+
+    auto encodeCalls = std::make_shared<std::size_t>();
+    auto payload     = registry.registerPayload<TestPayload>(*module, payloadDefinition(), TestCodec{encodeCalls});
+    ASSERT_TRUE(payload);
+
+    auto state = detail::PayloadRegistryAccess::findState(registry, payload->id());
+    ASSERT_NE(state, nullptr);
+
+    TestPayload value{42};
+    ASSERT_TRUE(state->encode(&value, 1, 1024));
+    EXPECT_EQ(*encodeCalls, 1);
+
+    ASSERT_TRUE(registry.drainOwner(*owner));
+    auto afterDrain = state->encode(&value, 1, 1024);
+    ASSERT_FALSE(afterDrain);
+    ASSERT_TRUE(afterDrain.error().isA<LifecycleErrorInfo>());
+    EXPECT_EQ(afterDrain.error().as<LifecycleErrorInfo>().code, LifecycleErrc::Draining);
+    EXPECT_EQ(*encodeCalls, 1);
 
     EXPECT_TRUE(payload->reset());
     EXPECT_TRUE(module->reset());
