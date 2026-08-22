@@ -1,5 +1,7 @@
 #include "ll/core/protocol/ServerProtocolRuntime.h"
 
+#include "ll/api/thread/ServerThreadExecutor.h"
+#include "ll/core/protocol/ModLifecycleIntegration.h"
 #include "ll/core/protocol/ProtocolRuntime.h"
 #include "ll/core/protocol/ServerEndpoint.h"
 #include "ll/core/protocol/ServerLoginIntegration.h"
@@ -20,10 +22,26 @@ Expected<> initialize() {
         return initialized;
     }
 
+    if (auto initialized = initializeModLifecycleIntegration(
+            [] {
+                detail::getServerLoginIntegration().closeAll();
+                if (auto endpoint = detail::getServerEndpoint()) {
+                    endpoint->invalidateSessions(ProtocolCloseReason::RegistryChanged);
+                }
+            },
+            [](std::function<void()> task) { thread::ServerThreadExecutor::getDefault().execute(std::move(task)); }
+        );
+        !initialized) {
+        shutdownLoginIntegration();
+        shutdownServerEndpoint();
+        return initialized;
+    }
+
     return {};
 }
 
 void shutdown() {
+    shutdownModLifecycleIntegration();
     shutdownLoginIntegration();
     shutdownServerEndpoint();
 }

@@ -1,7 +1,9 @@
 #include "ll/core/protocol/ClientProtocolRuntime.h"
 
+#include "ll/api/thread/ClientThreadExecutor.h"
 #include "ll/core/protocol/ClientEndpoint.h"
 #include "ll/core/protocol/ClientLoginIntegration.h"
+#include "ll/core/protocol/ModLifecycleIntegration.h"
 #include "ll/core/protocol/ProtocolRuntime.h"
 
 namespace ll::protocol::client {
@@ -20,10 +22,26 @@ Expected<> initialize() {
         return initialized;
     }
 
+    if (auto initialized = initializeModLifecycleIntegration(
+            [] {
+                detail::getClientLoginIntegration().closeAll();
+                if (auto endpoint = detail::getClientEndpoint()) {
+                    endpoint->invalidateSessions(ProtocolCloseReason::RegistryChanged);
+                }
+            },
+            [](std::function<void()> task) { thread::ClientThreadExecutor::getDefault().execute(std::move(task)); }
+        );
+        !initialized) {
+        shutdownLoginIntegration();
+        shutdownClientEndpoint();
+        return initialized;
+    }
+
     return {};
 }
 
 void shutdown() {
+    shutdownModLifecycleIntegration();
     shutdownLoginIntegration();
     shutdownClientEndpoint();
 }
