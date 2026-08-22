@@ -1,4 +1,5 @@
 #include "ll/core/protocol/ClientEndpoint.h"
+#include "ll/core/protocol/ClientLoginIntegration.h"
 
 #include <memory>
 #include <string>
@@ -26,6 +27,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     if (accepted) {
         if (auto endpoint = getClientEndpoint()) {
             endpoint->observeConnection(id);
+            getClientLoginIntegration().observeConnection(id);
         }
     }
 
@@ -45,6 +47,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     bool                                   skipMessage,
     Json::Value const&                     summary
 ) {
+    getClientLoginIntegration().closeConnection(id);
     if (auto endpoint = getClientEndpoint()) {
         endpoint->closeConnection(id);
     }
@@ -61,6 +64,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     Connection::DisconnectFailReason reason,
     bool                             skipMessage
 ) {
+    getClientLoginIntegration().closeAll();
     if (auto endpoint = getClientEndpoint()) {
         endpoint->closeAll(ProtocolCloseReason::ConnectionClosed);
     }
@@ -77,6 +81,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     Connection::DisconnectFailReason reason,
     bool                             skipMessage
 ) {
+    getClientLoginIntegration().closeAll();
     if (auto endpoint = getClientEndpoint()) {
         endpoint->closeAll(ProtocolCloseReason::ConnectionClosed);
     }
@@ -92,6 +97,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     void,
     Connection::DisconnectFailReason reason
 ) {
+    getClientLoginIntegration().closeAll();
     if (auto endpoint = getClientEndpoint()) {
         endpoint->closeAll(ProtocolCloseReason::ConnectionClosed);
     }
@@ -113,6 +119,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     bool                                   skipMessage,
     std::string const&                     telemetry
 ) {
+    getClientLoginIntegration().closeConnection(id);
     if (auto endpoint = getClientEndpoint()) {
         endpoint->closeConnection(id);
     }
@@ -127,6 +134,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     &ClientInstance::$onCancelJoinGame,
     void
 ) {
+    getClientLoginIntegration().closeAll();
     if (auto endpoint = getClientEndpoint()) {
         endpoint->closeAll(ProtocolCloseReason::ConnectionClosed);
     }
@@ -141,6 +149,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     &ClientInstance::$onLevelExit,
     void
 ) {
+    getClientLoginIntegration().closeAll();
     if (auto endpoint = getClientEndpoint()) {
         endpoint->closeAll(ProtocolCloseReason::ConnectionClosed);
     }
@@ -155,6 +164,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     &ClientInstance::$onAppSuspensionDisconnect,
     void
 ) {
+    getClientLoginIntegration().closeAll();
     if (auto endpoint = getClientEndpoint()) {
         endpoint->closeAll(ProtocolCloseReason::ConnectionClosed);
     }
