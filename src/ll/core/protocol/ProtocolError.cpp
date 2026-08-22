@@ -97,4 +97,34 @@ WireErrorCode toWireErrorCode(TransportErrc code) noexcept {
     return WireErrorCode::InternalFailure;
 }
 
+ProtocolErrc classifyProtocolError(ll::Error& error, ProtocolErrc fallback) noexcept {
+    if (error.isA<ProtocolErrorInfo>()) return error.as<ProtocolErrorInfo>().code;
+
+    if (error.isA<CodecErrorInfo>()) {
+        return error.as<CodecErrorInfo>().code == CodecErrc::UnsupportedSchema ? ProtocolErrc::InvalidSchema : fallback;
+    }
+
+    if (error.isA<SessionErrorInfo>()) {
+        switch (error.as<SessionErrorInfo>().code) {
+        case SessionErrc::NotNegotiated:
+            return ProtocolErrc::UnknownPayload;
+        case SessionErrc::WrongDirection:
+            return ProtocolErrc::UnexpectedMessage;
+        case SessionErrc::RateLimited:
+            return ProtocolErrc::RateLimitExceeded;
+        case SessionErrc::WrongState:
+        case SessionErrc::RegistryChanged:
+            return ProtocolErrc::InvalidState;
+        case SessionErrc::NotFound:
+        case SessionErrc::Closed:
+        case SessionErrc::WrongGeneration:
+        case SessionErrc::WrongThread:
+        case SessionErrc::TransportUnavailable:
+            return ProtocolErrc::InternalFailure;
+        }
+    }
+
+    return fallback;
+}
+
 } // namespace ll::protocol::detail
