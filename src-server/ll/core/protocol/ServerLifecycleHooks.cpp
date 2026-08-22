@@ -167,7 +167,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     &ServerInstance::leaveGameSync,
     void
 ) {
-    server::shutdownServerEndpoint();
+    server::shutdown();
     origin();
 }
 

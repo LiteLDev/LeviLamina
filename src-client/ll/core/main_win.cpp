@@ -11,8 +11,7 @@
 #include "ll/core/CrashLogger.h"
 #include "ll/core/command/BuiltinCommands.h"
 #include "ll/core/mod/ModRegistrar.h"
-#include "ll/core/protocol/ClientEndpoint.h"
-#include "ll/core/protocol/ProtocolRuntime.h"
+#include "ll/core/protocol/ClientProtocolRuntime.h"
 #include "ll/core/tweak/VulnerabilityFixes.h"
 
 #include "mc/client/game/ClientInstance.h"
@@ -68,13 +67,8 @@ void leviLaminaMain() {
 
     command::registerCommands();
 
-    if (auto initialized = protocol::initializeRuntime(); !initialized) {
-        getLogger().error("Protocol runtime initialization failed");
-        initialized.error().log(getLogger());
-    }
-
-    if (auto initialized = protocol::client::initializeClientEndpoint(); !initialized) {
-        getLogger().error("Protocol client endpoint initialization failed");
+    if (auto initialized = protocol::client::initialize(); !initialized) {
+        getLogger().error("Protocol initialization failed");
         initialized.error().log(getLogger());
     }
 
@@ -219,7 +213,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     MainGameCore::WndProc::WndProcParams params
 ) {
     setGamingStatus(GamingStatus::Stopping);
-    protocol::client::shutdownClientEndpoint();
+    protocol::client::shutdown();
     mod::ModRegistrar::getInstance().disableAllMods();
     setGamingStatus(GamingStatus::Default);
     return origin(params);
