@@ -1,0 +1,686 @@
+#include "ll/core/protocol/ServerLoginIntegration.h"
+
+#include <algorithm>
+#include <atomic>
+#include <chrono>
+#include <climits>
+#include <map>
+#include <mutex>
+#include <optional>
+#include <random>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "ll/api/protocol/Error.h"
+#include "ll/api/protocol/PayloadRegistry.h"
+#include "ll/api/service/Bedrock.h"
+#include "ll/api/thread/ServerThreadExecutor.h"
+#include "ll/core/Config.h"
+#include "ll/core/protocol/ControlPackets.h"
+#include "ll/core/protocol/DeferredLoginContinuation.h"
+#include "ll/core/protocol/Discovery.h"
+#include "ll/core/protocol/HandshakeCoordinator.h"
+#include "ll/core/protocol/PayloadDispatcher.h"
+#include "ll/core/protocol/PayloadRegistryInternal.h"
+#include "ll/core/protocol/ProtocolEnvelopePacket.h"
+#include "ll/core/protocol/ProtocolError.h"
+#include "ll/core/protocol/ProtocolRuntime.h"
+#include "ll/core/protocol/ServerEndpoint.h"
+#include "ll/core/protocol/ServerInboundGate.h"
+#include "ll/core/protocol/ServerTransport.h"
+
+#include "mc/deps/certificates/WebToken.h"
+#include "mc/network/ConnectionRequest.h"
+#include "mc/network/IPacketSecurityController.h"
+#include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/NetworkConnection.h"
+#include "mc/network/NetworkIdentifierWithSubId.h"
+#include "mc/network/PacketViolationResponse.h"
+#include "mc/network/ServerNetworkHandler.h"
+#include "mc/network/connection/DisconnectFailReason.h"
+
+namespace ll::protocol::detail {
+
+namespace server_login_detail {
+
+TransportLimits configuredLimits() {
+    auto const& limits = ll::getLeviConfig().targeted.protocol.limits;
+    return {
+        Limits::MaxControlBody,
+        limits.maxPayloadBody,
+        limits.maxPacketsPerSecond,
+        limits.maxBytesPerSecond,
+        limits.burstPackets,
+        limits.burstBytes,
+    };
+}
+
+Nonce randomNonce() {
+    std::random_device random;
+    for (std::size_t attempt = 0; attempt < 16; ++attempt) {
+        Nonce nonce{};
+        for (auto& value : nonce) {
+            value = static_cast<std::byte>(random() & 0xFFU);
+        }
+
+        if (nonce != Nonce{}) return nonce;
+    }
+
+    return {};
+}
+
+} // namespace server_login_detail
+
+struct ServerLoginIntegration::Impl {
+    struct DiscoveryRecord {
+        std::optional<DiscoveryMarker>             marker;
+        std::shared_ptr<data::CancellableCallback> deadline;
+    };
+
+    struct Entry {
+        ServerInboundGateKey                       key;
+        NetworkIdentifier                          networkId;
+        std::mutex                                 mutex;
+        std::uint64_t                              handshakeId{};
+        std::shared_ptr<ProtocolSession>           session;
+        std::shared_ptr<ServerTransport>           transport;
+        std::unique_ptr<HandshakeCoordinator>      handshake;
+        std::shared_ptr<DeferredLoginContinuation> continuation;
+        std::shared_ptr<data::CancellableCallback> deadline;
+        std::atomic_bool                           terminating{};
+
+        Entry(ServerInboundGateKey valueKey, NetworkIdentifier const& valueNetworkId)
+        : key(std::move(valueKey)),
+          networkId(valueNetworkId) {}
+    };
+
+    std::mutex                                             mutex;
+    std::map<ServerInboundGateKey, std::shared_ptr<Entry>> entries;
+    std::map<ServerInboundGateKey, DiscoveryRecord>        discoveries;
+    ServerInboundGate                                      gate;
+    std::atomic_bool                                       initialized{};
+    std::atomic_bool                                       stopping{};
+
+    [[nodiscard]] std::uint64_t allocateHandshakeId() noexcept {
+        try {
+            std::random_device random;
+            for (std::size_t attempt = 0; attempt < 16; ++attempt) {
+                std::uint64_t result{};
+                for (std::size_t index = 0; index < sizeof(result); ++index) {
+                    result |= static_cast<std::uint64_t>(random() & 0xFFU) << (index * CHAR_BIT);
+                }
+
+                if (result != 0) return result;
+            }
+        } catch (...) {}
+
+        return 0;
+    }
+
+    std::shared_ptr<Entry> find(ServerInboundGateKey const& key) {
+        std::scoped_lock lock{mutex};
+
+        auto found = entries.find(key);
+        return found == entries.end() ? nullptr : found->second;
+    }
+
+    std::shared_ptr<Entry> extract(ServerInboundGateKey const& key) {
+        std::scoped_lock lock{mutex};
+
+        auto found = entries.find(key);
+        if (found == entries.end()) return nullptr;
+
+        auto entry = std::move(found->second);
+
+        entries.erase(found);
+        return entry;
+    }
+
+    std::optional<DiscoveryMarker> findDiscovery(ServerInboundGateKey const& key) {
+        std::scoped_lock lock{mutex};
+
+        auto discovered = discoveries.find(key);
+        return discovered == discoveries.end() ? std::nullopt : discovered->second.marker;
+    }
+
+    void eraseDiscovery(ServerInboundGateKey const& key) {
+        std::shared_ptr<data::CancellableCallback> deadline;
+        {
+            std::scoped_lock lock{mutex};
+
+            auto discovered = discoveries.extract(key);
+            if (!discovered.empty()) deadline = std::move(discovered.mapped().deadline);
+        }
+
+        if (deadline) deadline->cancel();
+    }
+
+    void expireDiscovery(ServerInboundGateKey const& key) {
+        std::scoped_lock lock{mutex};
+        discoveries.erase(key);
+    }
+
+    void cancel(std::shared_ptr<Entry> const& entry) {
+        if (!entry) return;
+
+        gate.revoke(entry->key);
+        if (entry->deadline) entry->deadline->cancel();
+        if (entry->continuation) (void)entry->continuation->cancel();
+    }
+
+    Expected<> send(std::shared_ptr<Entry> const& entry, HandshakeProgress const& progress) {
+        for (auto const& message : progress.outbound) {
+            auto packet = ControlPacket::create(
+                message,
+                entry->handshake->coreProtocol(),
+                static_cast<SubClientId>(entry->key.subClientId),
+                entry->handshake->limits().maxControlBody
+            );
+
+            if (!packet) return forwardError(packet.error());
+            if (auto sent = entry->transport->sendControl(std::move(*packet)); !sent) return sent;
+        }
+
+        return {};
+    }
+
+    bool rejectPending(std::shared_ptr<Entry> const& entry, ProtocolErrc error) {
+        if (!entry || entry->terminating.exchange(true, std::memory_order_acq_rel)) return false;
+
+        cancel(entry);
+        extract(entry->key);
+
+        if (auto endpoint = getServerEndpoint()) {
+            endpoint->reportProtocolError(entry->session, error);
+            endpoint->closeSubclient(entry->networkId, entry->key.subClientId, ProtocolCloseReason::ProtocolError);
+        }
+        return true;
+    }
+
+    void terminate(std::shared_ptr<Entry> const& entry, std::size_t packetSize, ProtocolErrc error) {
+        if (!rejectPending(entry, error)) return;
+
+        auto controller = [&]() -> std::shared_ptr<IPacketSecurityController> {
+            auto current = getServerEndpoint();
+            if (!current) return {};
+
+            auto* connection = current->findLiveConnection(entry->networkId, entry->key.generation);
+            return connection ? connection->mPacketSecurityController : nullptr;
+        }();
+
+        thread::ServerThreadExecutor::getDefault().execute(
+            [key = entry->key, id = entry->networkId, controller = std::move(controller), packetSize]() mutable {
+                auto endpoint = getServerEndpoint();
+                auto handler  = service::getServerNetworkHandler();
+                if (!endpoint || !handler || endpoint->currentGeneration(id) != key.generation) return;
+
+                auto* connection = endpoint->findLiveConnection(id, key.generation);
+                if (!connection) return;
+
+                if (controller) {
+                    handler->handlePacketViolation(
+                        controller,
+                        {},
+                        PacketViolationResponse::TerminateConnection,
+                        MinecraftPacketIds::LeviLaminaRuntimePacket,
+                        "LeviLamina protocol violation",
+                        connection->mId,
+                        static_cast<SubClientId>(key.subClientId),
+                        static_cast<SubClientId>(key.subClientId),
+                        static_cast<uint>(std::min<std::size_t>(packetSize, UINT_MAX))
+                    );
+                } else {
+                    handler->disconnectClient(
+                        connection->mId,
+                        static_cast<SubClientId>(key.subClientId),
+                        Connection::DisconnectFailReason::BadPacket
+                    );
+                }
+            }
+        );
+    }
+};
+
+ServerLoginIntegration::ServerLoginIntegration() : mImpl(std::make_unique<Impl>()) {}
+ServerLoginIntegration::~ServerLoginIntegration() = default;
+
+Expected<> ServerLoginIntegration::initialize() {
+    if (mImpl->initialized.exchange(true, std::memory_order_acq_rel)) return {};
+
+    mImpl->stopping.store(false, std::memory_order_release);
+
+    auto result = ProtocolRuntime::getInstance().setReceiver(*this);
+    if (!result) {
+        mImpl->initialized.store(false, std::memory_order_release);
+    }
+
+    return result;
+}
+
+void ServerLoginIntegration::shutdown() {
+    if (mImpl->stopping.exchange(true, std::memory_order_acq_rel)) return;
+
+    closeAll();
+}
+
+void ServerLoginIntegration::observeConnectionRequest(
+    NetworkIdentifier const& id,
+    ConnectionRequest const& request
+) noexcept {
+    try {
+        if (!ll::getLeviConfig().targeted.protocol.enabled || mImpl->stopping.load(std::memory_order_acquire)) return;
+
+        auto endpoint = getServerEndpoint();
+        if (!endpoint) return;
+
+        auto generation = endpoint->currentGeneration(id);
+        if (generation == 0) return;
+
+        std::optional<DiscoveryMarker> marker;
+        if (request.mRawToken) {
+            auto parsed = parseDiscoveryMarker(request.mRawToken->mDataInfo);
+            if (parsed) marker = std::move(*parsed);
+        }
+
+        auto key = ServerInboundGateKey{
+            id.toString(),
+            static_cast<std::uint8_t>(SubClientId::PrimaryClient),
+            generation,
+        };
+
+        auto timeout  = std::chrono::seconds{ll::getLeviConfig().targeted.protocol.limits.handshakeTimeoutSeconds};
+        auto deadline = thread::ServerThreadExecutor::getDefault().executeAfter(
+            [this, key] { mImpl->expireDiscovery(key); },
+            timeout
+        );
+
+        bool inserted;
+        try {
+            std::scoped_lock lock{mImpl->mutex};
+            inserted = mImpl->discoveries.try_emplace(key, Impl::DiscoveryRecord{std::move(marker), deadline}).second;
+        } catch (...) {
+            if (deadline) deadline->cancel();
+            throw;
+        }
+
+        if (!inserted && deadline) deadline->cancel();
+    } catch (...) {}
+}
+
+ServerLoginIntegration::HandshakeDisposition
+ServerLoginIntegration::handleHandshake(ServerNetworkHandler& handler, NetworkIdentifierWithSubId const& sender) {
+    auto const& id          = sender.id;
+    auto const  subClientId = sender.subClientId;
+
+    try {
+        auto const& config = ll::getLeviConfig().targeted.protocol;
+        if (!config.enabled || mImpl->stopping.load(std::memory_order_acquire)) {
+            return HandshakeDisposition::ContinueVanilla;
+        }
+
+        auto endpoint = getServerEndpoint();
+        if (!endpoint) return HandshakeDisposition::ContinueVanilla;
+
+        auto generation = endpoint->currentGeneration(id);
+        if (generation == 0) return HandshakeDisposition::ContinueVanilla;
+
+        ServerInboundGateKey key{id.toString(), static_cast<std::uint8_t>(subClientId), generation};
+
+        if (auto duplicate = mImpl->find(key)) {
+            endpoint->reportProtocolError(duplicate->session, ProtocolErrc::UnexpectedMessage);
+
+            handler.disconnectClient(id, subClientId, Connection::DisconnectFailReason::UnexpectedPacket);
+            return HandshakeDisposition::Rejected;
+        }
+
+        auto marker = mImpl->findDiscovery(key);
+
+        if (!marker) {
+            mImpl->eraseDiscovery(key);
+            if (!config.requireLoader) return HandshakeDisposition::ContinueVanilla;
+
+            endpoint->reportProtocolError(nullptr, ProtocolErrc::InvalidControlSchema);
+
+            handler.disconnectClient(
+                id,
+                subClientId,
+                Connection::DisconnectFailReason::ClientSettingsIncompatibleWithServer
+            );
+            return HandshakeDisposition::Rejected;
+        }
+
+        auto selected = marker->protocols.highestCommon(SupportedCoreProtocolVersions);
+        if (!selected) {
+            mImpl->eraseDiscovery(key);
+            endpoint->reportProtocolError(nullptr, ProtocolErrc::VersionIncompatible);
+
+            handler.disconnectClient(id, subClientId, Connection::DisconnectFailReason::VersionMismatch);
+            return HandshakeDisposition::Rejected;
+        }
+
+        auto handshakeId = mImpl->allocateHandshakeId();
+        if (handshakeId == 0) {
+            mImpl->eraseDiscovery(key);
+            endpoint->reportProtocolError(nullptr, ProtocolErrc::InternalFailure);
+
+            handler.disconnectClient(id, subClientId, Connection::DisconnectFailReason::UnrecoverableError);
+            return HandshakeDisposition::Rejected;
+        }
+
+        auto limits    = server_login_detail::configuredLimits();
+        auto registry  = PayloadRegistryAccess::snapshot(PayloadRegistry::getInstance());
+        auto transport = std::make_shared<ServerTransport>(sender, generation);
+
+        auto session = endpoint->openSession(sender, generation, handshakeId, registry, transport, limits);
+        if (!session) {
+            mImpl->eraseDiscovery(key);
+            endpoint->reportProtocolError(nullptr, ProtocolErrc::InternalFailure);
+
+            handler.disconnectClient(id, subClientId, Connection::DisconnectFailReason::UnrecoverableError);
+            return HandshakeDisposition::Rejected;
+        }
+
+        auto entry = std::make_shared<Impl::Entry>(key, id);
+
+        entry->handshakeId = handshakeId;
+        entry->session     = *session;
+        entry->transport   = std::move(transport);
+        entry->handshake =
+            std::make_unique<HandshakeCoordinator>(EndpointRole::Server, *session, std::move(registry), limits);
+        entry->continuation = std::make_shared<DeferredLoginContinuation>((*session)->identity().key, handshakeId);
+
+        bool inserted;
+        {
+            std::scoped_lock lock{mImpl->mutex};
+            inserted = mImpl->entries.try_emplace(key, entry).second;
+        }
+        if (!inserted) {
+            entry->continuation->cancel();
+
+            endpoint->reportProtocolError(entry->session, ProtocolErrc::UnexpectedMessage);
+
+            handler.disconnectClient(id, subClientId, Connection::DisconnectFailReason::UnexpectedPacket);
+            return HandshakeDisposition::Rejected;
+        }
+        mImpl->eraseDiscovery(key);
+
+        if (!mImpl->gate.grant(key, limits)) {
+            mImpl->cancel(mImpl->extract(key));
+
+            endpoint->reportProtocolError(entry->session, ProtocolErrc::InternalFailure);
+
+            handler.disconnectClient(id, subClientId, Connection::DisconnectFailReason::UnrecoverableError);
+            return HandshakeDisposition::Rejected;
+        }
+
+        auto timeout    = std::chrono::seconds{config.limits.handshakeTimeoutSeconds};
+        entry->deadline = thread::ServerThreadExecutor::getDefault().executeAfter(
+            [this, key, handshakeId] {
+                auto entry = mImpl->find(key);
+                if (!entry || entry->handshakeId != handshakeId) return;
+
+                std::scoped_lock entryLock{entry->mutex};
+                if (!entry->terminating.exchange(true, std::memory_order_acq_rel)) {
+                    mImpl->cancel(entry);
+                    mImpl->extract(key);
+
+                    auto endpoint = getServerEndpoint();
+                    auto handler  = service::getServerNetworkHandler();
+                    if (!endpoint || !handler || endpoint->currentGeneration(entry->networkId) != key.generation) {
+                        return;
+                    }
+
+                    auto* connection = endpoint->findLiveConnection(entry->networkId, key.generation);
+                    if (!connection) return;
+
+                    endpoint->reportProtocolError(entry->session, ProtocolErrc::Timeout);
+
+                    endpoint->closeSubclient(entry->networkId, key.subClientId, ProtocolCloseReason::Timeout);
+                    handler->disconnectClient(
+                        connection->mId,
+                        static_cast<SubClientId>(key.subClientId),
+                        Connection::DisconnectFailReason::Timeout
+                    );
+                }
+            },
+            timeout
+        );
+
+        auto progress = entry->handshake->startServer(*selected, server_login_detail::randomNonce());
+        if (!progress) {
+            auto error = classifyProtocolError(progress.error(), ProtocolErrc::InvalidControlSchema);
+
+            mImpl->terminate(entry, 0, error);
+            return HandshakeDisposition::Rejected;
+        }
+        if (auto sent = mImpl->send(entry, *progress); !sent) {
+            auto error = classifyProtocolError(sent.error(), ProtocolErrc::InternalFailure);
+
+            mImpl->terminate(entry, 0, error);
+            return HandshakeDisposition::Rejected;
+        }
+
+        return HandshakeDisposition::Deferred;
+    } catch (...) {
+        if (auto endpoint = getServerEndpoint()) {
+            endpoint->reportProtocolError(nullptr, ProtocolErrc::InternalFailure);
+        }
+
+        handler.disconnectClient(id, subClientId, Connection::DisconnectFailReason::UnrecoverableError);
+        return HandshakeDisposition::Rejected;
+    }
+}
+
+ServerLoginIntegration::InboundDisposition
+ServerLoginIntegration::filterIncoming(NetworkIdentifierWithSubId const& sender, std::size_t packetSize) {
+    auto endpoint = getServerEndpoint();
+    if (!endpoint) return InboundDisposition::UseNativePolicy;
+
+    auto generation = endpoint->currentGeneration(sender.id);
+    if (generation == 0) return InboundDisposition::UseNativePolicy;
+
+    auto key = ServerInboundGateKey{
+        sender.id.toString(),
+        static_cast<std::uint8_t>(sender.subClientId),
+        generation,
+    };
+    if (!mImpl->gate.contains(key)) return InboundDisposition::UseNativePolicy;
+    if (mImpl->gate.admit(key, packetSize)) return InboundDisposition::Allowed;
+
+    mImpl->rejectPending(mImpl->find(key), ProtocolErrc::RateLimitExceeded);
+    return InboundDisposition::Rejected;
+}
+
+void ServerLoginIntegration::closeSubclient(NetworkIdentifier const& id, std::uint8_t subClientId) {
+    auto endpoint = getServerEndpoint();
+
+    auto generation = endpoint ? endpoint->currentGeneration(id) : 0;
+    if (generation == 0) return;
+
+    auto key = ServerInboundGateKey{id.toString(), subClientId, generation};
+    mImpl->eraseDiscovery(key);
+    mImpl->cancel(mImpl->extract(key));
+}
+
+void ServerLoginIntegration::closeConnection(NetworkIdentifier const& id) {
+    auto endpoint = getServerEndpoint();
+
+    auto generation = endpoint ? endpoint->currentGeneration(id) : 0;
+    if (generation == 0) return;
+
+    std::vector<std::shared_ptr<Impl::Entry>>               removed;
+    std::vector<std::shared_ptr<data::CancellableCallback>> discoveryDeadlines;
+    {
+        std::scoped_lock lock{mImpl->mutex};
+
+        auto const connection = id.toString();
+        for (auto it = mImpl->entries.begin(); it != mImpl->entries.end();) {
+            if (it->first.connection == connection && it->first.generation == generation) {
+                removed.push_back(std::move(it->second));
+                it = mImpl->entries.erase(it);
+            } else {
+                ++it;
+            }
+        }
+        for (auto it = mImpl->discoveries.begin(); it != mImpl->discoveries.end();) {
+            if (it->first.connection == connection && it->first.generation == generation) {
+                discoveryDeadlines.push_back(std::move(it->second.deadline));
+                it = mImpl->discoveries.erase(it);
+            } else {
+                ++it;
+            }
+        }
+    }
+
+    for (auto const& deadline : discoveryDeadlines) {
+        if (deadline) deadline->cancel();
+    }
+
+    for (auto const& entry : removed) {
+        mImpl->cancel(entry);
+    }
+}
+
+void ServerLoginIntegration::closeAll() {
+    std::map<ServerInboundGateKey, std::shared_ptr<Impl::Entry>> removed;
+    std::map<ServerInboundGateKey, Impl::DiscoveryRecord>        removedDiscoveries;
+    {
+        std::scoped_lock lock{mImpl->mutex};
+
+        removed.swap(mImpl->entries);
+        removedDiscoveries.swap(mImpl->discoveries);
+    }
+
+    mImpl->gate.clear();
+    for (auto const& discovery : removedDiscoveries | std::views::values) {
+        if (discovery.deadline) discovery.deadline->cancel();
+    }
+
+    for (auto const& entry : removed | std::views::values) {
+        mImpl->cancel(entry);
+    }
+}
+
+Expected<> ServerLoginIntegration::receive(
+    NetworkIdentifier const& networkId,
+    NetEventCallback&        callback,
+    ControlPacket const&     packet
+) {
+    auto endpoint = getServerEndpoint();
+    if (!endpoint) return makeSessionError(SessionErrc::TransportUnavailable);
+
+    auto generation = endpoint->currentGeneration(networkId);
+
+    auto key = ServerInboundGateKey{
+        networkId.toString(),
+        static_cast<std::uint8_t>(packet.mSenderSubId),
+        generation,
+    };
+
+    auto entry = mImpl->find(key);
+    if (!entry || generation == 0) {
+        return makeSessionError(SessionErrc::NotNegotiated);
+    }
+
+    Expected<> result;
+    bool       resumeLogin{};
+    {
+        std::scoped_lock entryLock{entry->mutex};
+        result = [&]() -> Expected<> {
+            if (entry->terminating.load(std::memory_order_acquire)) {
+                return makeSessionError(SessionErrc::Closed);
+            }
+
+            auto message = packet.decode(entry->handshake->coreProtocol(), entry->handshake->limits().maxControlBody);
+            if (!message) return forwardError(message.error());
+
+            auto progress = entry->handshake->receive(std::move(*message), packet.body().size());
+            if (!progress) return forwardError(progress.error());
+
+            HandshakeProgress outbound{std::move(progress->outbound), false};
+            if (auto sent = mImpl->send(entry, outbound); !sent) return sent;
+
+            if (!progress->protocolReady) return {};
+
+            mImpl->gate.revoke(key);
+            if (entry->deadline) entry->deadline->cancel();
+            resumeLogin = true;
+            return {};
+        }();
+    }
+
+    if (result && resumeLogin) {
+        result = entry->continuation->consume([&]() -> Expected<> {
+            auto currentEndpoint = getServerEndpoint();
+            if (!currentEndpoint || currentEndpoint != endpoint
+                || currentEndpoint->currentGeneration(networkId) != key.generation) {
+                return makeSessionError(SessionErrc::WrongGeneration);
+            }
+
+            auto* connection = currentEndpoint->findLiveConnection(networkId, key.generation);
+            if (!connection || !(connection->mId == networkId)) {
+                return makeTransportError(TransportErrc::EndpointGone);
+            }
+
+            return invokeOriginalClientHandshake(
+                callback,
+                NetworkIdentifierWithSubId{
+                    connection->mId,
+                    static_cast<SubClientId>(key.subClientId),
+                }
+            );
+        });
+        if (result) result = endpoint->activateSession(entry->session);
+    }
+
+    if (!result) {
+        auto error = classifyProtocolError(result.error(), ProtocolErrc::InvalidControlSchema);
+        mImpl->terminate(entry, packet.body().size(), error);
+    }
+
+    return result;
+}
+
+Expected<> ServerLoginIntegration::receive(
+    NetworkIdentifier const&           networkId,
+    [[maybe_unused]] NetEventCallback& callback,
+    ProtocolEnvelopePacket const&      packet
+) {
+    auto endpoint = getServerEndpoint();
+    if (!endpoint) return makeSessionError(SessionErrc::TransportUnavailable);
+
+    auto generation = endpoint->currentGeneration(networkId);
+    if (generation == 0) return makeSessionError(SessionErrc::WrongGeneration);
+
+    auto session = endpoint->findSession(networkId, static_cast<std::uint8_t>(packet.mSenderSubId), generation);
+
+    auto result = PayloadDispatcher{}.dispatch(session, packet);
+    if (!result) {
+        auto key = ServerInboundGateKey{
+            networkId.toString(),
+            static_cast<std::uint8_t>(packet.mSenderSubId),
+            generation,
+        };
+
+        auto error = classifyProtocolError(result.error(), ProtocolErrc::MalformedPayload);
+        mImpl->terminate(mImpl->find(key), packet.body().size(), error);
+    }
+
+    return result;
+}
+
+ServerLoginIntegration& getServerLoginIntegration() {
+    static ServerLoginIntegration integration;
+    return integration;
+}
+
+} // namespace ll::protocol::detail
+
+namespace ll::protocol::server {
+
+Expected<> initializeLoginIntegration() { return detail::getServerLoginIntegration().initialize(); }
+
+void shutdownLoginIntegration() { detail::getServerLoginIntegration().shutdown(); }
+
+} // namespace ll::protocol::server
