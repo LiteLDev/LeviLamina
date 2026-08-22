@@ -321,7 +321,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     ::BaseGameVersion const&                                        baseGameVersion,
     bool                                                            includeEditorPacks
 ) {
-    repo->forEachPack([&](const ::ResourcePack& pack) {
+    repo->forEachPack([&](::ResourcePack const& pack) {
         if (pack.mPack->mManifest->mPackType == PackType::Behavior) {
             auto packPath = pack.mPack->mManifest->mLocation->mPath->value;
             if (packPath.find(pl::pl_mods_path) != std::string::npos) {
