@@ -12,6 +12,7 @@
 #include "ll/api/protocol/Error.h"
 #include "ll/api/protocol/Limits.h"
 #include "ll/core/protocol/DescriptorState.h"
+#include "ll/core/protocol/ModLifecycleIntegration.h"
 #include "ll/core/protocol/ModuleCatalog.h"
 #include "ll/core/protocol/PayloadRegistryInternal.h"
 #include "ll/core/protocol/ProtocolRuntime.h"
@@ -82,9 +83,12 @@ public:
 
     Expected<> unregisterPayload(std::shared_ptr<detail::DescriptorState> const& state, bool wait) noexcept {
         try {
+            bool visibleChanged{};
             {
                 std::scoped_lock lock{writerMutex};
                 if (attachedPayloads.erase(state.get()) != 0) {
+                    visibleChanged = state->lifecycle() == detail::DescriptorLifecycle::Active;
+
                     auto type = registeredTypes.find(state->type());
                     if (type != registeredTypes.end() && type->second == state) {
                         registeredTypes.erase(type);
@@ -95,6 +99,8 @@ public:
                             module->payloadCount.fetch_sub(1, std::memory_order_acq_rel);
                         assert(previous != 0);
                         if (previous == 1 && module->closeRequested.load(std::memory_order_acquire)) {
+                            visibleChanged |= module->lifecycle.load(std::memory_order_acquire)
+                                           == detail::DescriptorLifecycle::Active;
                             attachedModules.erase(module.get());
                             module->lifecycle.store(detail::DescriptorLifecycle::Inactive, std::memory_order_release);
                         }
@@ -103,9 +109,14 @@ public:
                         return drained;
                     }
 
-                    publishLocked();
+                    if (visibleChanged) publishLocked();
                 }
             }
+
+            if (visibleChanged) {
+                detail::notifyRegistryChanged();
+            }
+
             return state->drain(wait);
         } catch (...) {
             return makeExceptionError();
@@ -114,7 +125,7 @@ public:
 
     Expected<> unregisterModule(std::shared_ptr<detail::ModuleState> const& state, bool wait) noexcept {
         try {
-            std::scoped_lock lock{writerMutex};
+            std::unique_lock lock{writerMutex};
             if (!attachedModules.contains(state.get())) {
                 return {};
             }
@@ -130,10 +141,19 @@ public:
                 return {};
             }
 
+            auto const visibleChanged =
+                state->lifecycle.load(std::memory_order_acquire) == detail::DescriptorLifecycle::Active;
+
             attachedModules.erase(state.get());
             state->lifecycle.store(detail::DescriptorLifecycle::Inactive, std::memory_order_release);
 
-            publishLocked();
+            if (visibleChanged) publishLocked();
+            lock.unlock();
+
+            if (visibleChanged) {
+                detail::notifyRegistryChanged();
+            }
+
             return {};
         } catch (...) {
             return makeExceptionError();
@@ -201,9 +221,26 @@ Expected<> normalize(PayloadDefinition& definition) {
     return {};
 }
 
-bool sameOwner(std::weak_ptr<mod::Mod> const& weak, mod::Mod const& owner) noexcept {
-    auto current = weak.lock();
-    return current && current.get() == &owner;
+bool sameOwner(detail::ModuleState const& state, std::string_view owner, mod::Mod const* identity = nullptr) noexcept {
+    if (!state.descriptor || state.descriptor->owner() != owner) return false;
+    if (!identity) return true;
+
+    auto current = state.owner.lock();
+    return current && current.get() == identity;
+}
+
+bool sameOwner(
+    detail::DescriptorState const& state,
+    std::string_view               owner,
+    mod::Mod const*                identity = nullptr
+) noexcept {
+    auto descriptor = state.descriptor();
+    if (!descriptor || descriptor->owner() != owner) return false;
+
+    if (!identity) return true;
+
+    auto current = state.owner().lock();
+    return current && current.get() == identity;
 }
 
 } // namespace payload_registry_detail
@@ -292,6 +329,7 @@ Expected<ModuleRegistration> PayloadRegistry::registerModuleOwned(
         if (!registered) {
             return forwardError(registered.error());
         }
+
         state            = std::move(*registered);
         registeredModule = true;
 
@@ -302,12 +340,15 @@ Expected<ModuleRegistration> PayloadRegistry::registerModuleOwned(
         attachedModule = mImpl->attachedModules.emplace(state.get()).second;
         assert(attachedModule);
 
-        mImpl->publishLocked();
+        if (lifecycle == detail::DescriptorLifecycle::Active) mImpl->publishLocked();
+
         rollback.commit();
         lock.unlock();
 
         ModuleRegistration registration;
         registration.mImpl = std::move(registrationImpl);
+
+        if (lifecycle == detail::DescriptorLifecycle::Active) detail::notifyRegistryChanged();
         return registration;
     } catch (...) {
         return makeExceptionError();
@@ -466,12 +507,14 @@ Expected<PayloadRegistration> PayloadRegistry::registerPayloadErased(
         moduleState->payloadCount.fetch_add(1, std::memory_order_release);
         incrementedPayloadCount = true;
 
-        mImpl->publishLocked();
+        if (lifecycle == detail::DescriptorLifecycle::Active) mImpl->publishLocked();
         rollback.commit();
         lock.unlock();
 
         PayloadRegistration registration;
         registration.mImpl = std::move(registrationImpl);
+
+        if (lifecycle == detail::DescriptorLifecycle::Active) detail::notifyRegistryChanged();
         return registration;
     } catch (...) {
         return makeExceptionError();
@@ -523,22 +566,26 @@ std::vector<std::shared_ptr<PayloadDescriptor const>> PayloadRegistry::payloads(
 }
 
 Expected<> PayloadRegistry::drainOwner(mod::Mod const& owner) noexcept {
+    return drainOwnerOwned(owner.getName(), &owner);
+}
+
+Expected<> PayloadRegistry::drainOwnerOwned(std::string_view owner, mod::Mod const* identity) noexcept {
     try {
         std::vector<std::shared_ptr<detail::DescriptorState>> draining;
+        bool                                                  visibleChanged{};
         {
             std::scoped_lock lock{mImpl->writerMutex};
 
-            bool changed = false;
             for (auto const& [_, state] : mImpl->payloadStates) {
                 if (state->lifecycle() != detail::DescriptorLifecycle::Inactive
-                    && payload_registry_detail::sameOwner(state->owner(), owner)) {
+                    && payload_registry_detail::sameOwner(*state, owner, identity)) {
                     draining.emplace_back(state);
                 }
             }
             for (auto const& state : draining) {
                 if (mImpl->attachedPayloads.erase(state.get()) != 0) {
-                    changed   = true;
-                    auto type = mImpl->registeredTypes.find(state->type());
+                    visibleChanged |= state->lifecycle() == detail::DescriptorLifecycle::Active;
+                    auto type       = mImpl->registeredTypes.find(state->type());
                     if (type != mImpl->registeredTypes.end() && type->second == state) {
                         mImpl->registeredTypes.erase(type);
                     }
@@ -552,16 +599,24 @@ Expected<> PayloadRegistry::drainOwner(mod::Mod const& owner) noexcept {
                 state->drain(false);
             }
             for (auto const& module : mImpl->moduleCatalog.states()) {
-                if (payload_registry_detail::sameOwner(module->owner, owner)) {
-                    changed |= mImpl->attachedModules.erase(module.get()) != 0;
+                if (payload_registry_detail::sameOwner(*module, owner, identity)) {
+                    if (mImpl->attachedModules.erase(module.get()) != 0) {
+                        visibleChanged |=
+                            module->lifecycle.load(std::memory_order_acquire) == detail::DescriptorLifecycle::Active;
+                    }
                     module->lifecycle.store(detail::DescriptorLifecycle::Inactive, std::memory_order_release);
                 }
             }
 
-            if (changed) {
+            if (visibleChanged) {
                 mImpl->publishLocked();
             }
         }
+
+        if (visibleChanged) {
+            detail::notifyRegistryChanged();
+        }
+
         for (auto const& state : draining) {
             if (auto drained = state->drain(true); !drained) {
                 return drained;
@@ -572,6 +627,25 @@ Expected<> PayloadRegistry::drainOwner(mod::Mod const& owner) noexcept {
         return makeExceptionError();
     }
 }
+
+namespace detail {
+
+Expected<> PayloadRegistryAccess::drainOwner(PayloadRegistry& registry, std::string_view owner) noexcept {
+    return registry.drainOwnerOwned(owner, nullptr);
+}
+
+bool PayloadRegistryAccess::currentThreadOwns(PayloadRegistry const& registry, std::string_view owner) noexcept {
+    try {
+        std::scoped_lock lock{registry.mImpl->writerMutex};
+        return std::ranges::any_of(registry.mImpl->payloadStates | std::views::values, [&](auto const& state) {
+            return payload_registry_detail::sameOwner(*state, owner) && state->ownedByCurrentThread();
+        });
+    } catch (...) {
+        return true;
+    }
+}
+
+} // namespace detail
 
 ModuleRegistration::ModuleRegistration() noexcept = default;
 ModuleRegistration::~ModuleRegistration() noexcept {
@@ -687,30 +761,42 @@ Expected<> PayloadRegistryAccess::activateOwner(PayloadRegistry& registry, mod::
             return makeRegistrationError(RegistrationErrc::OwnerDisabled, owner.getName());
         }
 
-        std::scoped_lock lock{registry.mImpl->writerMutex};
+        return activateOwner(registry, owner.getName());
+    } catch (...) {
+        return makeExceptionError();
+    }
+}
 
-        bool changed = false;
-        for (auto const& module : registry.mImpl->moduleCatalog.states()) {
-            if (registry.mImpl->attachedModules.contains(module.get())
-                && payload_registry_detail::sameOwner(module->owner, owner)) {
-                auto expected  = DescriptorLifecycle::Pending;
-                changed       |= module->lifecycle.compare_exchange_strong(
-                    expected,
-                    DescriptorLifecycle::Active,
-                    std::memory_order_acq_rel
-                );
+Expected<> PayloadRegistryAccess::activateOwner(PayloadRegistry& registry, std::string_view owner) noexcept {
+    try {
+        bool changed{};
+        {
+            std::scoped_lock lock{registry.mImpl->writerMutex};
+
+            for (auto const& module : registry.mImpl->moduleCatalog.states()) {
+                if (registry.mImpl->attachedModules.contains(module.get())
+                    && payload_registry_detail::sameOwner(*module, owner)) {
+                    auto expected  = DescriptorLifecycle::Pending;
+                    changed       |= module->lifecycle.compare_exchange_strong(
+                        expected,
+                        DescriptorLifecycle::Active,
+                        std::memory_order_acq_rel
+                    );
+                }
+            }
+            for (auto const& state : registry.mImpl->payloadStates | std::views::values) {
+                if (registry.mImpl->attachedPayloads.contains(state.get())
+                    && payload_registry_detail::sameOwner(*state, owner)) {
+                    changed |= state->activate();
+                }
+            }
+
+            if (changed) {
+                registry.mImpl->publishLocked();
             }
         }
-        for (auto const& state : registry.mImpl->payloadStates | std::views::values) {
-            if (registry.mImpl->attachedPayloads.contains(state.get())
-                && payload_registry_detail::sameOwner(state->owner(), owner)) {
-                changed |= state->activate();
-            }
-        }
+        if (changed) notifyRegistryChanged();
 
-        if (changed) {
-            registry.mImpl->publishLocked();
-        }
         return {};
     } catch (...) {
         return makeExceptionError();

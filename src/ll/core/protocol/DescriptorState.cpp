@@ -69,6 +69,8 @@ std::size_t DescriptorState::inFlight() const {
     return mInFlight;
 }
 
+bool DescriptorState::ownedByCurrentThread() const { return descriptor_state_detail::currentThreadOwns(this); }
+
 bool DescriptorState::activate() {
     std::scoped_lock lock{mMutex};
     if (mLifecycle != DescriptorLifecycle::Pending) {

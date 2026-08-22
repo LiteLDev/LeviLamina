@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <memory>
+#include <string_view>
 #include <typeindex>
 #include <unordered_map>
 #include <vector>
@@ -34,6 +35,9 @@ struct PayloadRegistryAccess {
     );
 
     static Expected<> activateOwner(PayloadRegistry& registry, mod::Mod const& owner) noexcept;
+    static Expected<> activateOwner(PayloadRegistry& registry, std::string_view owner) noexcept;
+    static Expected<> drainOwner(PayloadRegistry& registry, std::string_view owner) noexcept;
+    static bool       currentThreadOwns(PayloadRegistry const& registry, std::string_view owner) noexcept;
     static std::shared_ptr<RegistrySnapshot const> snapshot(PayloadRegistry const& registry) noexcept;
 
     static std::shared_ptr<DescriptorState> findState(PayloadRegistry const& registry, PayloadId const& id);

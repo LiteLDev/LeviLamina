@@ -65,6 +65,7 @@ public:
     [[nodiscard]] DescriptorLifecycle lifecycle() const;
     [[nodiscard]] bool                active() const;
     [[nodiscard]] std::size_t         inFlight() const;
+    [[nodiscard]] bool                ownedByCurrentThread() const;
 
     bool       activate();
     Expected<> drain(bool wait);

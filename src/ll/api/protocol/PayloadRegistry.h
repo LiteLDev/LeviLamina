@@ -118,6 +118,7 @@ class PayloadRegistry {
 
     Expected<> resetModule(std::shared_ptr<detail::ModuleState> const& state, bool wait) noexcept;
     Expected<> resetPayload(std::shared_ptr<detail::DescriptorState> const& state, bool wait) noexcept;
+    Expected<> drainOwnerOwned(std::string_view owner, mod::Mod const* identity) noexcept;
 
     friend detail::PayloadRegistryAccess;
     friend ModuleRegistration;
