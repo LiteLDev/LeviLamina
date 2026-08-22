@@ -29,10 +29,11 @@ public:
 
     LLNDAPI explicit operator bool() const noexcept;
 
-    LLNDAPI PayloadId const& id() const noexcept;
+    LLNDAPI PayloadId const& id() const;
     LLNDAPI std::uint64_t runtimeId() const noexcept;
     LLNDAPI std::uint64_t generation() const noexcept;
-    LLNDAPI bool          active() const noexcept;
+
+    LLNDAPI bool active() const;
 
     LLAPI Expected<> reset() noexcept;
 };

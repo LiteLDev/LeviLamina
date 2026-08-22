@@ -31,13 +31,13 @@ struct PayloadRegistryAccess {
         ModuleDefinition                 definition,
         std::shared_ptr<mod::Mod> const& owner,
         CoreProtocolOwner const&         authority
-    ) noexcept;
+    );
 
     static Expected<> activateOwner(PayloadRegistry& registry, mod::Mod const& owner) noexcept;
     static std::shared_ptr<RegistrySnapshot const> snapshot(PayloadRegistry const& registry) noexcept;
 
-    static std::shared_ptr<DescriptorState> findState(PayloadRegistry const& registry, PayloadId const& id) noexcept;
-    static std::shared_ptr<DescriptorState> findState(PayloadRegistry const& registry, std::type_index type) noexcept;
+    static std::shared_ptr<DescriptorState> findState(PayloadRegistry const& registry, PayloadId const& id);
+    static std::shared_ptr<DescriptorState> findState(PayloadRegistry const& registry, std::type_index type);
 };
 
 } // namespace ll::protocol::detail

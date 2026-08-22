@@ -154,7 +154,7 @@ public:
     RollbackGuard(RollbackGuard const&)            = delete;
     RollbackGuard& operator=(RollbackGuard const&) = delete;
 
-    ~RollbackGuard() noexcept {
+    ~RollbackGuard() noexcept(noexcept(mRollback())) {
         if (mArmed) {
             mRollback();
         }
@@ -163,7 +163,7 @@ public:
     void commit() noexcept { mArmed = false; }
 };
 
-Expected<> normalize(PayloadDefinition& definition) noexcept {
+Expected<> normalize(PayloadDefinition& definition) {
     switch (definition.direction) {
     case PayloadDirection::ClientToServer:
     case PayloadDirection::ServerToClient:
@@ -270,7 +270,7 @@ Expected<ModuleRegistration> PayloadRegistry::registerModuleOwned(
 
         std::shared_ptr<detail::ModuleState> state;
 
-        auto rollback = payload_registry_detail::RollbackGuard{[&]() noexcept {
+        auto rollback = payload_registry_detail::RollbackGuard{[&]() {
             if (attachedModule) {
                 mImpl->attachedModules.erase(state.get());
             }
@@ -422,7 +422,7 @@ Expected<PayloadRegistration> PayloadRegistry::registerPayloadErased(
 
         std::shared_ptr<detail::DescriptorState> previousPayload;
 
-        auto rollback = payload_registry_detail::RollbackGuard{[&]() noexcept {
+        auto rollback = payload_registry_detail::RollbackGuard{[&]() {
             if (incrementedPayloadCount) {
                 [[maybe_unused]] auto const previous =
                     moduleState->payloadCount.fetch_sub(1, std::memory_order_acq_rel);
@@ -490,25 +490,25 @@ std::uint64_t PayloadRegistry::revision() const noexcept {
     return mImpl->currentSnapshot.load(std::memory_order_acquire)->revision;
 }
 
-std::shared_ptr<ModuleDescriptor const> PayloadRegistry::findModule(ModuleId const& id) const noexcept {
+std::shared_ptr<ModuleDescriptor const> PayloadRegistry::findModule(ModuleId const& id) const {
     auto snapshot = mImpl->currentSnapshot.load(std::memory_order_acquire);
     auto found    = snapshot->modulesById.find(id);
     return found == snapshot->modulesById.end() ? nullptr : found->second;
 }
 
-std::shared_ptr<PayloadDescriptor const> PayloadRegistry::findPayload(PayloadId const& id) const noexcept {
+std::shared_ptr<PayloadDescriptor const> PayloadRegistry::findPayload(PayloadId const& id) const {
     auto snapshot = mImpl->currentSnapshot.load(std::memory_order_acquire);
     auto found    = snapshot->payloadsById.find(id);
     return found == snapshot->payloadsById.end() ? nullptr : found->second;
 }
 
-std::shared_ptr<PayloadDescriptor const> PayloadRegistry::findPayload(std::uint64_t runtimeId) const noexcept {
+std::shared_ptr<PayloadDescriptor const> PayloadRegistry::findPayload(std::uint64_t runtimeId) const {
     auto snapshot = mImpl->currentSnapshot.load(std::memory_order_acquire);
     auto found    = snapshot->payloadsByRuntimeId.find(runtimeId);
     return found == snapshot->payloadsByRuntimeId.end() ? nullptr : found->second;
 }
 
-std::shared_ptr<PayloadDescriptor const> PayloadRegistry::findPayload(std::type_index type) const noexcept {
+std::shared_ptr<PayloadDescriptor const> PayloadRegistry::findPayload(std::type_index type) const {
     auto snapshot = mImpl->currentSnapshot.load(std::memory_order_acquire);
     auto found    = snapshot->payloadsByType.find(type);
     return found == snapshot->payloadsByType.end() ? nullptr : found->second;
@@ -596,10 +596,8 @@ ModuleRegistration& ModuleRegistration::operator=(ModuleRegistration&& other) no
 
 ModuleRegistration::operator bool() const noexcept { return mImpl != nullptr; }
 
-ModuleId const& ModuleRegistration::id() const noexcept {
-    return mImpl ? mImpl->state->descriptor->id() : ModuleId::INVALID();
-}
-std::uint64_t ModuleRegistration::generation() const noexcept {
+ModuleId const& ModuleRegistration::id() const { return mImpl ? mImpl->state->descriptor->id() : ModuleId::INVALID(); }
+std::uint64_t   ModuleRegistration::generation() const noexcept {
     return mImpl ? mImpl->state->descriptor->generation() : 0;
 }
 
@@ -643,7 +641,7 @@ PayloadRegistration& PayloadRegistration::operator=(PayloadRegistration&& other)
 
 PayloadRegistration::operator bool() const noexcept { return mImpl != nullptr; }
 
-PayloadId const& PayloadRegistration::id() const noexcept {
+PayloadId const& PayloadRegistration::id() const {
     return mImpl ? mImpl->state->descriptor()->id() : PayloadId::INVALID();
 }
 std::uint64_t PayloadRegistration::runtimeId() const noexcept {
@@ -653,7 +651,7 @@ std::uint64_t PayloadRegistration::generation() const noexcept {
     return mImpl ? mImpl->state->descriptor()->generation() : 0;
 }
 
-bool PayloadRegistration::active() const noexcept { return mImpl && mImpl->state->active(); }
+bool PayloadRegistration::active() const { return mImpl && mImpl->state->active(); }
 
 Expected<> PayloadRegistration::reset() noexcept {
     if (!mImpl) {
@@ -675,7 +673,7 @@ Expected<ModuleRegistration> PayloadRegistryAccess::registerCoreModule(
     ModuleDefinition                 definition,
     std::shared_ptr<mod::Mod> const& owner,
     CoreProtocolOwner const&         authority
-) noexcept {
+) {
     if (!owner) {
         return makeRegistrationError(RegistrationErrc::OwnerUnavailable);
     }
@@ -724,7 +722,7 @@ std::shared_ptr<RegistrySnapshot const> PayloadRegistryAccess::snapshot(PayloadR
 }
 
 std::shared_ptr<DescriptorState>
-PayloadRegistryAccess::findState(PayloadRegistry const& registry, PayloadId const& id) noexcept {
+PayloadRegistryAccess::findState(PayloadRegistry const& registry, PayloadId const& id) {
     std::scoped_lock lock{registry.mImpl->writerMutex};
 
     auto found = registry.mImpl->payloadStates.find(id);
@@ -732,7 +730,7 @@ PayloadRegistryAccess::findState(PayloadRegistry const& registry, PayloadId cons
 }
 
 std::shared_ptr<DescriptorState>
-PayloadRegistryAccess::findState(PayloadRegistry const& registry, std::type_index type) noexcept {
+PayloadRegistryAccess::findState(PayloadRegistry const& registry, std::type_index type) {
     std::scoped_lock lock{registry.mImpl->writerMutex};
 
     auto found = registry.mImpl->registeredTypes.find(type);

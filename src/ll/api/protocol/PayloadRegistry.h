@@ -164,12 +164,12 @@ public:
 
     LLNDAPI std::uint64_t revision() const noexcept;
 
-    LLNDAPI std::shared_ptr<ModuleDescriptor const> findModule(ModuleId const& id) const noexcept;
-    LLNDAPI std::shared_ptr<PayloadDescriptor const> findPayload(PayloadId const& id) const noexcept;
-    LLNDAPI std::shared_ptr<PayloadDescriptor const> findPayload(std::uint64_t runtimeId) const noexcept;
+    LLNDAPI std::shared_ptr<ModuleDescriptor const> findModule(ModuleId const& id) const;
+    LLNDAPI std::shared_ptr<PayloadDescriptor const> findPayload(PayloadId const& id) const;
+    LLNDAPI std::shared_ptr<PayloadDescriptor const> findPayload(std::uint64_t runtimeId) const;
 
     template <class T>
-    [[nodiscard]] std::shared_ptr<PayloadDescriptor const> findPayload() const noexcept {
+    [[nodiscard]] std::shared_ptr<PayloadDescriptor const> findPayload() const {
         return findPayload(typeid(T));
     }
 
@@ -179,7 +179,7 @@ public:
     LLNDAPI Expected<> drainOwner(mod::Mod const& owner) noexcept;
 
 private:
-    std::shared_ptr<PayloadDescriptor const> findPayload(std::type_index type) const noexcept;
+    [[nodiscard]] std::shared_ptr<PayloadDescriptor const> findPayload(std::type_index type) const;
 };
 
 } // namespace ll::protocol

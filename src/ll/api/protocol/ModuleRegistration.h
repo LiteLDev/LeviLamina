@@ -29,7 +29,7 @@ public:
 
     [[nodiscard]] LLAPI explicit operator bool() const noexcept;
 
-    LLNDAPI ModuleId const& id() const noexcept;
+    LLNDAPI ModuleId const& id() const;
     LLNDAPI std::uint64_t generation() const noexcept;
     LLNDAPI bool          active() const noexcept;
 
