@@ -39,12 +39,12 @@ struct HandlerlessPayload {
 
 template <class T>
 struct U32Codec {
-    Expected<> encode(Encoder& out, T const& value, SchemaVersion schema) const noexcept {
+    Expected<> encode(Encoder& out, T const& value, SchemaVersion schema) const {
         if (schema != 1) return makeCodecError(CodecErrc::UnsupportedSchema);
         return out.writeU32(value.value);
     }
 
-    Expected<T> decode(Decoder& in, SchemaVersion schema) const noexcept {
+    Expected<T> decode(Decoder& in, SchemaVersion schema) const {
         if (schema != 1) return makeCodecError(CodecErrc::UnsupportedSchema);
         auto value = in.readU32();
         if (!value) return forwardError(value.error());

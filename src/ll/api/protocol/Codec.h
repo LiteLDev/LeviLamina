@@ -7,6 +7,7 @@
 #include <span>
 #include <string>
 #include <string_view>
+#include <type_traits>
 
 #include "ll/api/Expected.h"
 #include "ll/api/base/Macro.h"
@@ -75,9 +76,10 @@ public:
 };
 
 template <class C, class T>
-concept PayloadCodec = requires(C const& codec, Encoder& out, Decoder& in, T const& value, SchemaVersion schema) {
-    { codec.encode(out, value, schema) } -> std::same_as<Expected<>>;
-    { codec.decode(in, schema) } -> std::same_as<Expected<T>>;
-};
+concept PayloadCodec = std::is_nothrow_move_constructible_v<C>
+                    && requires(C const& codec, Encoder& out, Decoder& in, T const& value, SchemaVersion schema) {
+                           { codec.encode(out, value, schema) } -> std::same_as<Expected<>>;
+                           { codec.decode(in, schema) } -> std::same_as<Expected<T>>;
+                       };
 
 } // namespace ll::protocol

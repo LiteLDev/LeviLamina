@@ -38,14 +38,14 @@ struct CountingCodec {
     std::shared_ptr<std::size_t>           encodeCount;
     std::shared_ptr<std::function<void()>> onEncode;
 
-    Expected<> encode(Encoder& out, FanoutPayload const& value, SchemaVersion schema) const noexcept {
+    Expected<> encode(Encoder& out, FanoutPayload const& value, SchemaVersion schema) const {
         ++*encodeCount;
         if (*onEncode) (*onEncode)();
         if (schema != 1 && schema != 2) return makeCodecError(CodecErrc::UnsupportedSchema);
         return out.writeU32(value.value);
     }
 
-    Expected<FanoutPayload> decode(Decoder& in, SchemaVersion schema) const noexcept {
+    Expected<FanoutPayload> decode(Decoder& in, SchemaVersion schema) const {
         if (schema != 1 && schema != 2) return makeCodecError(CodecErrc::UnsupportedSchema);
 
         auto value = in.readU32();
@@ -128,11 +128,11 @@ public:
 
     [[nodiscard]] bool isOnEndpointThread() const noexcept override { return true; }
 
-    Expected<Session> resolve(NetworkIdentifierWithSubId const&) noexcept override {
+    Expected<Session> resolve(NetworkIdentifierWithSubId const&) override {
         return makeSessionError(SessionErrc::NotFound);
     }
 
-    Expected<std::vector<Session>> snapshotActive() noexcept override { return sessions; }
+    Expected<std::vector<Session>> snapshotActive() override { return sessions; }
 };
 
 } // namespace

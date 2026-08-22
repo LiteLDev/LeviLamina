@@ -42,7 +42,7 @@ struct OtherPayload {
 };
 
 struct TestCodec {
-    Expected<> encode(Encoder& out, TestPayload const& value, SchemaVersion schema) const noexcept {
+    Expected<> encode(Encoder& out, TestPayload const& value, SchemaVersion schema) const {
         if (schema != 1) {
             return makeCodecError(CodecErrc::UnsupportedSchema);
         }
@@ -50,7 +50,7 @@ struct TestCodec {
         return out.writeU32(value.value);
     }
 
-    Expected<TestPayload> decode(Decoder& in, SchemaVersion schema) const noexcept {
+    Expected<TestPayload> decode(Decoder& in, SchemaVersion schema) const {
         if (schema != 1) {
             return makeCodecError(CodecErrc::UnsupportedSchema);
         }
@@ -65,11 +65,11 @@ struct TestCodec {
 };
 
 struct OtherCodec {
-    Expected<> encode(Encoder& out, OtherPayload const& value, SchemaVersion) const noexcept {
+    Expected<> encode(Encoder& out, OtherPayload const& value, SchemaVersion) const {
         return out.writeU32(value.value);
     }
 
-    Expected<OtherPayload> decode(Decoder& in, SchemaVersion) const noexcept {
+    Expected<OtherPayload> decode(Decoder& in, SchemaVersion) const {
         auto value = in.readU32();
         if (!value) {
             return forwardError(value.error());
