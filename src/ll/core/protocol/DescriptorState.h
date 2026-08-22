@@ -62,21 +62,21 @@ public:
     [[nodiscard]] std::weak_ptr<mod::Mod>                  owner() const noexcept { return mOwner; }
     [[nodiscard]] std::type_index                          type() const noexcept { return mType; }
 
-    [[nodiscard]] DescriptorLifecycle lifecycle() const noexcept;
-    [[nodiscard]] bool                active() const noexcept;
-    [[nodiscard]] std::size_t         inFlight() const noexcept;
+    [[nodiscard]] DescriptorLifecycle lifecycle() const;
+    [[nodiscard]] bool                active() const;
+    [[nodiscard]] std::size_t         inFlight() const;
 
-    bool       activate() noexcept;
-    Expected<> drain(bool wait) noexcept;
+    bool       activate();
+    Expected<> drain(bool wait);
 
-    bool acquireLease(std::uint64_t generation) noexcept;
-    void releaseLease() noexcept;
+    bool acquireLease(std::uint64_t generation);
+    void releaseLease();
 
     Expected<std::string> encode(void const* value, SchemaVersion schema, std::size_t maxEncodedSize) const noexcept;
     Expected<>
     dispatch(PayloadContext const& context, std::span<std::byte const> body, SchemaVersion schema) const noexcept;
 
-    [[nodiscard]] bool hasHandler() const noexcept;
+    [[nodiscard]] bool hasHandler() const;
 };
 
 } // namespace ll::protocol::detail

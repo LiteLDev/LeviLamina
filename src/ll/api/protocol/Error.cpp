@@ -194,56 +194,70 @@ IdentityErrorInfo::IdentityErrorInfo(IdentityErrc code, std::string context)
 : code(code),
   context(detail::boundedContext(std::move(context))) {}
 
-std::string IdentityErrorInfo::message(std::string_view) const noexcept {
+std::string IdentityErrorInfo::message(std::string_view) const noexcept try {
     return detail::formatMessage("protocol identity error", detail::describe(code), context);
+} catch (...) {
+    return {};
 }
 
 RegistrationErrorInfo::RegistrationErrorInfo(RegistrationErrc code, std::string context)
 : code(code),
   context(detail::boundedContext(std::move(context))) {}
 
-std::string RegistrationErrorInfo::message(std::string_view) const noexcept {
+std::string RegistrationErrorInfo::message(std::string_view) const noexcept try {
     return detail::formatMessage("protocol registration error", detail::describe(code), context);
+} catch (...) {
+    return {};
 }
 
 CodecErrorInfo::CodecErrorInfo(CodecErrc code, std::string context)
 : code(code),
   context(detail::boundedContext(std::move(context))) {}
 
-std::string CodecErrorInfo::message(std::string_view) const noexcept {
+std::string CodecErrorInfo::message(std::string_view) const noexcept try {
     return detail::formatMessage("protocol codec error", detail::describe(code), context);
+} catch (...) {
+    return {};
 }
 
 SessionErrorInfo::SessionErrorInfo(SessionErrc code, std::string context)
 : code(code),
   context(detail::boundedContext(std::move(context))) {}
 
-std::string SessionErrorInfo::message(std::string_view) const noexcept {
+std::string SessionErrorInfo::message(std::string_view) const noexcept try {
     return detail::formatMessage("protocol session error", detail::describe(code), context);
+} catch (...) {
+    return {};
 }
 
 ProtocolErrorInfo::ProtocolErrorInfo(ProtocolErrc code, std::string context)
 : code(code),
   context(detail::boundedContext(std::move(context))) {}
 
-std::string ProtocolErrorInfo::message(std::string_view) const noexcept {
+std::string ProtocolErrorInfo::message(std::string_view) const noexcept try {
     return detail::formatMessage("protocol error", detail::describe(code), context);
+} catch (...) {
+    return {};
 }
 
 LifecycleErrorInfo::LifecycleErrorInfo(LifecycleErrc code, std::string context)
 : code(code),
   context(detail::boundedContext(std::move(context))) {}
 
-std::string LifecycleErrorInfo::message(std::string_view) const noexcept {
+std::string LifecycleErrorInfo::message(std::string_view) const noexcept try {
     return detail::formatMessage("protocol lifecycle error", detail::describe(code), context);
+} catch (...) {
+    return {};
 }
 
 TransportErrorInfo::TransportErrorInfo(TransportErrc code, std::string context)
 : code(code),
   context(detail::boundedContext(std::move(context))) {}
 
-std::string TransportErrorInfo::message(std::string_view) const noexcept {
+std::string TransportErrorInfo::message(std::string_view) const noexcept try {
     return detail::formatMessage("protocol transport error", detail::describe(code), context);
+} catch (...) {
+    return {};
 }
 
 Unexpected makeIdentityError(IdentityErrc code, std::string context) noexcept {

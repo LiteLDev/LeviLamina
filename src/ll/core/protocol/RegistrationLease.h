@@ -25,13 +25,13 @@ public:
     RegistrationLease& operator=(RegistrationLease&& other) noexcept;
 
     [[nodiscard]] static Expected<RegistrationLease>
-    acquire(std::shared_ptr<DescriptorState> state, std::uint64_t generation) noexcept;
+    acquire(std::shared_ptr<DescriptorState> state, std::uint64_t generation);
 
     [[nodiscard]] explicit operator bool() const noexcept { return mState != nullptr; }
 
     [[nodiscard]] DescriptorState& state() const noexcept { return *mState; }
 
-    void reset() noexcept;
+    void reset();
 };
 
 } // namespace ll::protocol::detail

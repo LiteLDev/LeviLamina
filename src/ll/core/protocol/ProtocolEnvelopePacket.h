@@ -31,7 +31,7 @@ public:
         std::string   body,
         SubClientId   senderSubId = SubClientId::PrimaryClient,
         std::size_t   maxBody     = Limits::MaxPayloadBody
-    );
+    ) noexcept;
 
     [[nodiscard]] std::uint8_t               envelopeSchema() const noexcept { return mEnvelopeSchema; }
     [[nodiscard]] SchemaVersion              payloadSchema() const noexcept { return mPayloadSchema; }

@@ -34,6 +34,12 @@ RuntimePacketAdapter& ProtocolRuntime::adapter() noexcept { return mImpl->adapte
 
 namespace ll::protocol {
 
-Expected<> initializeRuntime() noexcept { return detail::ProtocolRuntime::getInstance().initialize(); }
+Expected<> initializeRuntime() noexcept {
+    try {
+        return detail::ProtocolRuntime::getInstance().initialize();
+    } catch (...) {
+        return makeExceptionError();
+    }
+}
 
 } // namespace ll::protocol

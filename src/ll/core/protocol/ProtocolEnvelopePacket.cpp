@@ -17,7 +17,7 @@ namespace ll::protocol::detail {
     return nonstd::make_unexpected(Bedrock::ErrorInfo<>{std::error_code{}});
 }
 
-[[nodiscard]] static bool supportedEnvelopeSchema(std::uint8_t schema) noexcept {
+[[nodiscard]] static bool supportedEnvelopeSchema(std::uint8_t schema) {
     return std::ranges::any_of(CoreProtocolDefinitions, [schema](CoreProtocolDefinition const& definition) {
         return definition.payloadEnvelopeSchema == schema;
     });
@@ -34,7 +34,7 @@ Expected<std::unique_ptr<ProtocolEnvelopePacket>> ProtocolEnvelopePacket::create
     std::string   body,
     SubClientId   senderSubId,
     std::size_t   maxBody
-) {
+) noexcept {
     try {
         auto const* definition = findCoreProtocolDefinition(coreProtocol);
         if (!definition) {

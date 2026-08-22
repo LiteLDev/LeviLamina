@@ -205,15 +205,19 @@ bool RuntimePacketAdapter::hasPayloadSlot(PayloadId const& id, std::uint64_t run
 }
 
 Expected<> RuntimePacketAdapter::setReceiver(RuntimePacketReceiver& receiver) noexcept {
-    RuntimePacketReceiver* expected{};
-    if (mImpl->receiver.compare_exchange_strong(expected, &receiver, std::memory_order_acq_rel)) {
-        return {};
-    }
-    if (expected == &receiver) {
-        return {};
-    }
+    try {
+        RuntimePacketReceiver* expected{};
+        if (mImpl->receiver.compare_exchange_strong(expected, &receiver, std::memory_order_acq_rel)) {
+            return {};
+        }
+        if (expected == &receiver) {
+            return {};
+        }
 
-    return makeLifecycleError(LifecycleErrc::InFlight, "protocol runtime receiver already installed");
+        return makeLifecycleError(LifecycleErrc::InFlight, "protocol runtime receiver already installed");
+    } catch (...) {
+        return makeExceptionError();
+    }
 }
 
 } // namespace ll::protocol::detail

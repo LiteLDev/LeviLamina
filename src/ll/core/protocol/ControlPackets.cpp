@@ -35,7 +35,7 @@ Expected<std::unique_ptr<ControlPacket>> ControlPacket::create(
     CoreVersion           coreProtocol,
     SubClientId           senderSubId,
     std::size_t           maxBody
-) {
+) noexcept {
     try {
         auto runtimeId = controlRuntimeId(message);
         auto encoded   = encodeControl(message, coreProtocol, true, maxBody);
@@ -56,7 +56,7 @@ std::span<std::byte const> ControlPacket::body() const noexcept {
     return {reinterpret_cast<std::byte const*>(mBody.data()), mBody.size()};
 }
 
-Expected<ControlMessage> ControlPacket::decode(CoreVersion coreProtocol, std::size_t maxBody) const {
+Expected<ControlMessage> ControlPacket::decode(CoreVersion coreProtocol, std::size_t maxBody) const noexcept {
     try {
         return decodeControl(mRuntimeId, body(), coreProtocol, maxBody);
     } catch (...) {
@@ -100,7 +100,7 @@ std::string_view ControlPacket::getName() const { return "LeviLaminaControlPacke
 
 ll::network::PacketRuntimeId ControlPacket::getRuntimeId() const { return mRuntimeId; }
 
-bool isControlRuntimeId(std::uint64_t runtimeId) noexcept {
+bool isControlRuntimeId(std::uint64_t runtimeId) {
     return std::ranges::find(ControlRuntimeIds, runtimeId) != ControlRuntimeIds.end();
 }
 

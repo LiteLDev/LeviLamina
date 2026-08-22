@@ -12,14 +12,14 @@ namespace descriptor_state_detail {
 
 thread_local std::unordered_map<DescriptorState const*, std::size_t> CurrentLeases;
 
-bool currentThreadOwns(DescriptorState const* state) noexcept {
+bool currentThreadOwns(DescriptorState const* state) {
     auto const found = CurrentLeases.find(state);
     return found != CurrentLeases.end() && found->second != 0;
 }
 
 void recordAcquire(DescriptorState const* state) { ++CurrentLeases[state]; }
 
-void recordRelease(DescriptorState const* state) noexcept {
+void recordRelease(DescriptorState const* state) {
     auto found = CurrentLeases.find(state);
     if (found == CurrentLeases.end()) {
         return;
@@ -54,22 +54,22 @@ void DescriptorState::finalizeIfDrainedLocked() noexcept {
     }
 }
 
-DescriptorLifecycle DescriptorState::lifecycle() const noexcept {
+DescriptorLifecycle DescriptorState::lifecycle() const {
     std::scoped_lock lock{mMutex};
     return mLifecycle;
 }
 
-bool DescriptorState::active() const noexcept {
+bool DescriptorState::active() const {
     std::scoped_lock lock{mMutex};
     return mLifecycle == DescriptorLifecycle::Active;
 }
 
-std::size_t DescriptorState::inFlight() const noexcept {
+std::size_t DescriptorState::inFlight() const {
     std::scoped_lock lock{mMutex};
     return mInFlight;
 }
 
-bool DescriptorState::activate() noexcept {
+bool DescriptorState::activate() {
     std::scoped_lock lock{mMutex};
     if (mLifecycle != DescriptorLifecycle::Pending) {
         return false;
@@ -79,7 +79,7 @@ bool DescriptorState::activate() noexcept {
     return true;
 }
 
-Expected<> DescriptorState::drain(bool wait) noexcept {
+Expected<> DescriptorState::drain(bool wait) {
     std::unique_lock lock{mMutex};
     if (mLifecycle == DescriptorLifecycle::Inactive) {
         return {};
@@ -100,7 +100,7 @@ Expected<> DescriptorState::drain(bool wait) noexcept {
     return {};
 }
 
-bool DescriptorState::acquireLease(std::uint64_t generation) noexcept {
+bool DescriptorState::acquireLease(std::uint64_t generation) {
     std::scoped_lock lock{mMutex};
     if (mLifecycle != DescriptorLifecycle::Active || mDescriptor->generation() != generation) {
         return false;
@@ -122,7 +122,7 @@ bool DescriptorState::acquireLease(std::uint64_t generation) noexcept {
     return true;
 }
 
-void DescriptorState::releaseLease() noexcept {
+void DescriptorState::releaseLease() {
     std::scoped_lock lock{mMutex};
 
     descriptor_state_detail::recordRelease(this);
@@ -170,32 +170,39 @@ Expected<> DescriptorState::dispatch(
     }
 }
 
-bool DescriptorState::hasHandler() const noexcept {
+bool DescriptorState::hasHandler() const {
     std::scoped_lock lock{mMutex};
     return static_cast<bool>(mCallbacks.dispatch);
 }
 
-RegistrationLease::~RegistrationLease() { reset(); }
+RegistrationLease::~RegistrationLease() {
+    try {
+        reset();
+    } catch (...) {}
+}
 
 RegistrationLease::RegistrationLease(RegistrationLease&& other) noexcept : mState(std::move(other.mState)) {}
 
 RegistrationLease& RegistrationLease::operator=(RegistrationLease&& other) noexcept {
     if (this != &other) {
-        reset();
+        try {
+            reset();
+        } catch (...) {}
+
         mState = std::move(other.mState);
     }
     return *this;
 }
 
 Expected<RegistrationLease>
-RegistrationLease::acquire(std::shared_ptr<DescriptorState> state, std::uint64_t generation) noexcept {
+RegistrationLease::acquire(std::shared_ptr<DescriptorState> state, std::uint64_t generation) {
     if (!state || !state->acquireLease(generation)) {
         return makeLifecycleError(LifecycleErrc::Draining);
     }
     return RegistrationLease{std::move(state)};
 }
 
-void RegistrationLease::reset() noexcept {
+void RegistrationLease::reset() {
     if (mState) {
         mState->releaseLease();
         mState.reset();

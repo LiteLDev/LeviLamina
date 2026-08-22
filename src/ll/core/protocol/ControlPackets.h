@@ -27,11 +27,11 @@ public:
         CoreVersion           coreProtocol,
         SubClientId           senderSubId = SubClientId::PrimaryClient,
         std::size_t           maxBody     = Limits::MaxControlBody
-    );
+    ) noexcept;
 
     [[nodiscard]] std::span<std::byte const> body() const noexcept;
     [[nodiscard]] Expected<ControlMessage>
-    decode(CoreVersion coreProtocol, std::size_t maxBody = Limits::MaxControlBody) const;
+    decode(CoreVersion coreProtocol, std::size_t maxBody = Limits::MaxControlBody) const noexcept;
 
     void                                write(BinaryStream& stream) const override;
     [[nodiscard]] Bedrock::Result<void> read(ReadOnlyBinaryStream& stream) override;
@@ -40,6 +40,6 @@ public:
     [[nodiscard]] ll::network::PacketRuntimeId getRuntimeId() const override;
 };
 
-[[nodiscard]] bool isControlRuntimeId(std::uint64_t runtimeId) noexcept;
+[[nodiscard]] bool isControlRuntimeId(std::uint64_t runtimeId);
 
 } // namespace ll::protocol::detail
