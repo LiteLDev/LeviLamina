@@ -67,6 +67,7 @@ public:
         ProtocolCloseReason      reason = ProtocolCloseReason::ConnectionClosed
     ) noexcept;
     void closeAll(ProtocolCloseReason reason);
+    void invalidateSessions(ProtocolCloseReason reason);
 
     [[nodiscard]] NetworkConnection*
     findLiveConnection(NetworkIdentifier const& id, std::uint64_t generation) const noexcept;

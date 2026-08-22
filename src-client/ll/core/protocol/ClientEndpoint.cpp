@@ -163,6 +163,8 @@ void ClientEndpoint::closeAll(ProtocolCloseReason reason) {
     mLifecycle.closeAll(reason);
 }
 
+void ClientEndpoint::invalidateSessions(ProtocolCloseReason reason) { mLifecycle.invalidateSessions(reason); }
+
 Expected<Session> ClientEndpoint::currentSession() noexcept {
     try {
         std::string   key;

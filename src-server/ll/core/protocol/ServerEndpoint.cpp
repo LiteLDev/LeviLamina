@@ -227,6 +227,8 @@ void ServerEndpoint::closeAll(ProtocolCloseReason reason) {
     mLifecycle.closeAll(reason);
 }
 
+void ServerEndpoint::invalidateSessions(ProtocolCloseReason reason) { mLifecycle.invalidateSessions(reason); }
+
 NetworkConnection*
 ServerEndpoint::findLiveConnection(NetworkIdentifier const& id, std::uint64_t generation) const noexcept {
     try {

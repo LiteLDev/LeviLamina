@@ -7,6 +7,8 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/protocol/Error.h"
+#include "ll/api/protocol/PayloadRegistry.h"
+#include "ll/core/protocol/PayloadRegistryInternal.h"
 
 namespace ll::protocol::detail {
 
@@ -95,6 +97,8 @@ Expected<std::shared_ptr<ProtocolSession>> LifecycleCoordinator::openSession(
     TransportLimits                         limits
 ) noexcept {
     try {
+        auto const registryRevision = registry ? registry->revision : 0;
+
         auto result = [&]() -> Expected<std::shared_ptr<ProtocolSession>> {
             std::scoped_lock lock{mMutex};
 
@@ -115,6 +119,19 @@ Expected<std::shared_ptr<ProtocolSession>> LifecycleCoordinator::openSession(
                 limits
             );
         }();
+
+        if (result) {
+            auto currentRegistry = PayloadRegistryAccess::snapshot(PayloadRegistry::getInstance());
+            if (!currentRegistry || currentRegistry->revision != registryRevision) {
+                auto const& key = (*result)->identity().key;
+
+                auto stale = mSessions.extract(key.connection, key.subClientId, key.generation);
+                finalize(stale, ProtocolCloseReason::RegistryChanged);
+
+                return makeSessionError(SessionErrc::RegistryChanged);
+            }
+        }
+
         return result;
     } catch (...) {
         return makeExceptionError();
@@ -217,6 +234,15 @@ bool LifecycleCoordinator::closeConnection(
 
     finalize(std::move(sessions), reason);
     return true;
+}
+
+void LifecycleCoordinator::invalidateSessions(ProtocolCloseReason reason) {
+    SessionManager::SessionMap sessions;
+    {
+        std::scoped_lock lock{mMutex};
+        sessions = mSessions.extractAll();
+    }
+    finalize(std::move(sessions), reason);
 }
 
 void LifecycleCoordinator::closeAll(ProtocolCloseReason reason) {

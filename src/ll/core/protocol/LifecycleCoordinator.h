@@ -67,6 +67,8 @@ public:
 
     bool closeConnection(std::string_view connection, std::uint64_t generation, ProtocolCloseReason reason);
 
+    void invalidateSessions(ProtocolCloseReason reason);
+
     void closeAll(ProtocolCloseReason reason);
 
     [[nodiscard]] std::vector<std::shared_ptr<ProtocolSession>> activeSessions() const;

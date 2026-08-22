@@ -59,6 +59,7 @@ public:
         ProtocolCloseReason      reason = ProtocolCloseReason::ConnectionClosed
     ) noexcept;
     void closeAll(ProtocolCloseReason reason);
+    void invalidateSessions(ProtocolCloseReason reason);
 
     [[nodiscard]] Expected<Session> currentSession() noexcept;
 };
