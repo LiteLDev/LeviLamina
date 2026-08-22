@@ -57,6 +57,14 @@ inline constexpr std::uint64_t ProtocolErrorRuntimeId     = hash_utils::doHash(C
 
 inline constexpr std::array<std::string_view, 1> ReservedProtocolNamespaces{"levilamina"};
 
+inline constexpr std::string_view DiscoveryRootKey        = "ModLoader";
+inline constexpr std::string_view DiscoveryIdKey          = "id";
+inline constexpr std::string_view DiscoveryProtocolMinKey = "protocolMin";
+inline constexpr std::string_view DiscoveryProtocolMaxKey = "protocolMax";
+inline constexpr std::string_view DiscoveryVersionKey     = "version";
+inline constexpr std::string_view DiscoveryBuildKey       = "build";
+inline constexpr std::string_view DiscoveryLoaderId       = "levilamina";
+
 enum class WireErrorCode : std::uint16_t {
     None                    = 0x0000,
     MalformedControl        = 0x0101,
