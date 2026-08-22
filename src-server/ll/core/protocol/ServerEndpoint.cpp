@@ -28,12 +28,16 @@ std::mutex                      ServerEndpointMutex;
 std::shared_ptr<ServerEndpoint> CurrentServerEndpoint;
 std::atomic_uint64_t            NextServerEndpointInstanceId{1};
 
-ServerEndpoint::ServerEndpoint(std::uint64_t endpointInstanceId) noexcept
+ServerEndpoint::ServerEndpoint(std::uint64_t endpointInstanceId)
 : mLifecycle(endpointInstanceId, EndpointRole::Server) {}
 
-ServerEndpoint::~ServerEndpoint() { closeAll(ProtocolCloseReason::RuntimeStopping); }
+ServerEndpoint::~ServerEndpoint() {
+    try {
+        closeAll(ProtocolCloseReason::RuntimeStopping);
+    } catch (...) {}
+}
 
-bool ServerEndpoint::isOnEndpointThread() const noexcept {
+bool ServerEndpoint::isOnEndpointThread() const {
     std::scoped_lock lock{mMutex};
     return mEndpointThread != std::thread::id{} && mEndpointThread == std::this_thread::get_id();
 }
@@ -76,7 +80,7 @@ Expected<std::vector<Session>> ServerEndpoint::snapshotActive() noexcept {
     }
 }
 
-void ServerEndpoint::observeConnection(NetworkIdentifier const& id) noexcept {
+void ServerEndpoint::observeConnection(NetworkIdentifier const& id) {
     std::string   connection;
     std::uint64_t generationValue{};
     try {
@@ -90,7 +94,7 @@ void ServerEndpoint::observeConnection(NetworkIdentifier const& id) noexcept {
         std::scoped_lock lock{mMutex};
 
         mEndpointThread = std::this_thread::get_id();
-        
+
         mConnections.erase(connection);
         mConnections.emplace(connection, ConnectionRecord{id, generationValue});
     } catch (...) {
@@ -157,6 +161,23 @@ Expected<std::shared_ptr<ProtocolSession>> ServerEndpoint::openSession(
     }
 }
 
+Expected<> ServerEndpoint::activateSession(std::shared_ptr<ProtocolSession> const& session) {
+    return mLifecycle.activateSession(session);
+}
+
+void ServerEndpoint::reportProtocolError(std::shared_ptr<ProtocolSession> const& session, ProtocolErrc error) {
+    mLifecycle.reportProtocolError(session, error);
+}
+
+std::shared_ptr<ProtocolSession>
+ServerEndpoint::findSession(NetworkIdentifier const& id, std::uint8_t subClientId, std::uint64_t generation) noexcept {
+    try {
+        return mLifecycle.findSession(id.toString(), subClientId, generation);
+    } catch (...) {
+        return {};
+    }
+}
+
 void ServerEndpoint::closeSubclient(
     NetworkIdentifier const& id,
     std::uint8_t             subClientId,
@@ -198,7 +219,7 @@ void ServerEndpoint::closeConnection(NetworkIdentifier const& id, ProtocolCloseR
     } catch (...) {}
 }
 
-void ServerEndpoint::closeAll(ProtocolCloseReason reason) noexcept {
+void ServerEndpoint::closeAll(ProtocolCloseReason reason) {
     {
         std::scoped_lock lock{mMutex};
         mConnections.clear();
@@ -234,7 +255,7 @@ ServerEndpoint::findLiveConnection(NetworkIdentifier const& id, std::uint64_t ge
     return nullptr;
 }
 
-std::shared_ptr<ServerEndpoint> getServerEndpoint() noexcept {
+std::shared_ptr<ServerEndpoint> getServerEndpoint() {
     std::scoped_lock lock{ServerEndpointMutex};
     return CurrentServerEndpoint;
 }
@@ -258,7 +279,7 @@ Expected<> initializeServerEndpoint() noexcept {
     }
 }
 
-void shutdownServerEndpoint() noexcept {
+void shutdownServerEndpoint() {
     std::shared_ptr<detail::ServerEndpoint> endpoint;
     {
         std::scoped_lock lock{detail::ServerEndpointMutex};

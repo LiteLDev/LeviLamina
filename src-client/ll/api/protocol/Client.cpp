@@ -5,7 +5,7 @@
 
 namespace ll::protocol::client {
 
-Expected<Session> currentSession() noexcept {
+Expected<Session> currentSession() {
     auto endpoint = detail::getClientEndpoint();
     return endpoint ? endpoint->currentSession() : makeSessionError(SessionErrc::TransportUnavailable);
 }

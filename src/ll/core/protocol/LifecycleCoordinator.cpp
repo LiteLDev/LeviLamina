@@ -19,12 +19,13 @@ LifecycleCoordinator::LifecycleCoordinator(std::uint64_t endpointInstanceId, End
   mRole(role),
   mSessions(endpointInstanceId, role) {}
 
-LifecycleCoordinator::~LifecycleCoordinator() { closeAll(ProtocolCloseReason::RuntimeStopping); }
+LifecycleCoordinator::~LifecycleCoordinator() {
+    try {
+        closeAll(ProtocolCloseReason::RuntimeStopping);
+    } catch (...) {}
+}
 
-void LifecycleCoordinator::finalize(
-    std::shared_ptr<ProtocolSession> const& session,
-    ProtocolCloseReason                     reason
-) noexcept {
+void LifecycleCoordinator::finalize(std::shared_ptr<ProtocolSession> const& session, ProtocolCloseReason reason) {
     if (!session || !session->beginClosing()) return;
 
     auto snapshot = session->snapshot(session->generation());
@@ -41,7 +42,7 @@ void LifecycleCoordinator::finalize(
     session->close();
 }
 
-void LifecycleCoordinator::finalize(SessionManager::SessionMap sessions, ProtocolCloseReason reason) noexcept {
+void LifecycleCoordinator::finalize(SessionManager::SessionMap sessions, ProtocolCloseReason reason) {
     for (auto const& session : sessions | std::views::values) finalize(session, reason);
 }
 
@@ -124,9 +125,56 @@ std::shared_ptr<ProtocolSession> LifecycleCoordinator::findSession(
     std::string_view connection,
     std::uint8_t     subClientId,
     std::uint64_t    generation
-) const noexcept {
+) const {
     if (currentGeneration(connection) != generation) return nullptr;
     return mSessions.find(connection, subClientId, generation);
+}
+
+Expected<> LifecycleCoordinator::activateSession(std::shared_ptr<ProtocolSession> const& session) noexcept {
+    try {
+        if (!session || session->identity().key.endpointInstanceId != mEndpointInstanceId
+            || session->identity().key.role != mRole) {
+            return makeSessionError(SessionErrc::WrongGeneration);
+        }
+
+        auto const& key = session->identity().key;
+        if (findSession(key.connection, key.subClientId, key.generation) != session) {
+            return makeSessionError(SessionErrc::WrongGeneration);
+        }
+
+        if (auto activated = session->activate(); !activated) return activated;
+
+        auto snapshot = session->snapshot(session->generation());
+        if (!snapshot) return makeSessionError(SessionErrc::WrongGeneration);
+
+        try {
+            ll::event::EventBus::getInstance().publish(ProtocolEstablishedEvent{SessionAccess::makeSession(session)});
+        } catch (...) {}
+
+        return {};
+    } catch (...) {
+        return makeExceptionError();
+    }
+}
+
+void LifecycleCoordinator::reportProtocolError(std::shared_ptr<ProtocolSession> const& session, ProtocolErrc error) {
+    try {
+        std::optional<SessionView> view;
+        if (session) {
+            auto const& key = session->identity().key;
+            if (key.endpointInstanceId != mEndpointInstanceId || key.role != mRole
+                || findSession(key.connection, key.subClientId, key.generation) != session) {
+                return;
+            }
+
+            auto snapshot = session->snapshot(key.generation);
+            if (!snapshot) return;
+
+            view.emplace(SessionAccess::makeView(std::move(snapshot)));
+        }
+
+        ll::event::EventBus::getInstance().publish(ProtocolErrorEvent{std::move(view), error});
+    } catch (...) {}
 }
 
 bool LifecycleCoordinator::closeSubclient(
@@ -134,7 +182,7 @@ bool LifecycleCoordinator::closeSubclient(
     std::uint8_t        subClientId,
     std::uint64_t       generation,
     ProtocolCloseReason reason
-) noexcept {
+) {
     std::shared_ptr<ProtocolSession> session;
     {
         std::scoped_lock lock{mMutex};
@@ -155,7 +203,7 @@ bool LifecycleCoordinator::closeConnection(
     std::string_view    connection,
     std::uint64_t       generation,
     ProtocolCloseReason reason
-) noexcept {
+) {
     SessionManager::SessionMap sessions;
     {
         std::scoped_lock lock{mMutex};
@@ -171,7 +219,7 @@ bool LifecycleCoordinator::closeConnection(
     return true;
 }
 
-void LifecycleCoordinator::closeAll(ProtocolCloseReason reason) noexcept {
+void LifecycleCoordinator::closeAll(ProtocolCloseReason reason) {
     SessionManager::SessionMap sessions;
     {
         std::scoped_lock lock{mMutex};

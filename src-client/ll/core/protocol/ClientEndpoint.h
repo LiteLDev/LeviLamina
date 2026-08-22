@@ -27,14 +27,14 @@ class ClientEndpoint final {
     LifecycleCoordinator            mLifecycle;
 
 public:
-    explicit ClientEndpoint(std::uint64_t endpointInstanceId) noexcept;
+    explicit ClientEndpoint(std::uint64_t endpointInstanceId);
 
     ClientEndpoint(ClientEndpoint const&)            = delete;
     ClientEndpoint& operator=(ClientEndpoint const&) = delete;
 
-    [[nodiscard]] bool isOnEndpointThread() const noexcept;
+    [[nodiscard]] bool isOnEndpointThread() const;
 
-    void observeConnection(NetworkIdentifier const& id) noexcept;
+    void observeConnection(NetworkIdentifier const& id);
 
     [[nodiscard]] std::uint64_t currentGeneration(NetworkIdentifier const& id) const noexcept;
     [[nodiscard]] Expected<std::shared_ptr<ProtocolSession>> openSession(
@@ -47,22 +47,29 @@ public:
         TransportLimits                         limits
     ) noexcept;
 
+    [[nodiscard]] Expected<> activateSession(std::shared_ptr<ProtocolSession> const& session);
+
+    void reportProtocolError(std::shared_ptr<ProtocolSession> const& session, ProtocolErrc error);
+
+    [[nodiscard]] std::shared_ptr<ProtocolSession>
+    findSession(NetworkIdentifier const& id, std::uint8_t subClientId, std::uint64_t generation) noexcept;
+
     void closeConnection(
         NetworkIdentifier const& id,
         ProtocolCloseReason      reason = ProtocolCloseReason::ConnectionClosed
     ) noexcept;
-    void closeAll(ProtocolCloseReason reason) noexcept;
+    void closeAll(ProtocolCloseReason reason);
 
     [[nodiscard]] Expected<Session> currentSession() noexcept;
 };
 
-[[nodiscard]] std::shared_ptr<ClientEndpoint> getClientEndpoint() noexcept;
+[[nodiscard]] std::shared_ptr<ClientEndpoint> getClientEndpoint();
 
 } // namespace ll::protocol::detail
 
 namespace ll::protocol::client {
 
 [[nodiscard]] Expected<> initializeClientEndpoint() noexcept;
-void                     shutdownClientEndpoint() noexcept;
+void                     shutdownClientEndpoint();
 
 } // namespace ll::protocol::client

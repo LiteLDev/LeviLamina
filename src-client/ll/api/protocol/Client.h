@@ -6,6 +6,6 @@
 
 namespace ll::protocol::client {
 
-LLNDAPI Expected<Session> currentSession() noexcept;
+LLNDAPI Expected<Session> currentSession();
 
 } // namespace ll::protocol::client

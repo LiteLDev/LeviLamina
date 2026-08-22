@@ -19,15 +19,15 @@ std::mutex                      ClientEndpointMutex;
 std::shared_ptr<ClientEndpoint> CurrentClientEndpoint;
 std::atomic_uint64_t            NextClientEndpointInstanceId{1};
 
-ClientEndpoint::ClientEndpoint(std::uint64_t endpointInstanceId) noexcept
+ClientEndpoint::ClientEndpoint(std::uint64_t endpointInstanceId)
 : mLifecycle(endpointInstanceId, EndpointRole::Client) {}
 
-bool ClientEndpoint::isOnEndpointThread() const noexcept {
+bool ClientEndpoint::isOnEndpointThread() const {
     std::scoped_lock lock{mMutex};
     return mEndpointThread != std::thread::id{} && mEndpointThread == std::this_thread::get_id();
 }
 
-void ClientEndpoint::observeConnection(NetworkIdentifier const& id) noexcept {
+void ClientEndpoint::observeConnection(NetworkIdentifier const& id) {
     std::string   key;
     std::uint64_t generationValue{};
     try {
@@ -114,6 +114,29 @@ Expected<std::shared_ptr<ProtocolSession>> ClientEndpoint::openSession(
     }
 }
 
+Expected<> ClientEndpoint::activateSession(std::shared_ptr<ProtocolSession> const& session) {
+    return mLifecycle.activateSession(session);
+}
+
+void ClientEndpoint::reportProtocolError(std::shared_ptr<ProtocolSession> const& session, ProtocolErrc error) {
+    mLifecycle.reportProtocolError(session, error);
+}
+
+std::shared_ptr<ProtocolSession>
+ClientEndpoint::findSession(NetworkIdentifier const& id, std::uint8_t subClientId, std::uint64_t generation) noexcept {
+    try {
+        std::string key;
+        {
+            std::scoped_lock lock{mMutex};
+            if (!mConnection || !(mConnection->id == id) || mConnection->generation != generation) return {};
+            key = mConnection->key;
+        }
+        return mLifecycle.findSession(key, subClientId, generation);
+    } catch (...) {
+        return {};
+    }
+}
+
 void ClientEndpoint::closeConnection(NetworkIdentifier const& id, ProtocolCloseReason reason) noexcept {
     try {
         std::string   key;
@@ -132,7 +155,7 @@ void ClientEndpoint::closeConnection(NetworkIdentifier const& id, ProtocolCloseR
     } catch (...) {}
 }
 
-void ClientEndpoint::closeAll(ProtocolCloseReason reason) noexcept {
+void ClientEndpoint::closeAll(ProtocolCloseReason reason) {
     {
         std::scoped_lock lock{mMutex};
         mConnection.reset();
@@ -164,7 +187,7 @@ Expected<Session> ClientEndpoint::currentSession() noexcept {
     }
 }
 
-std::shared_ptr<ClientEndpoint> getClientEndpoint() noexcept {
+std::shared_ptr<ClientEndpoint> getClientEndpoint() {
     std::scoped_lock lock{ClientEndpointMutex};
     return CurrentClientEndpoint;
 }
@@ -187,7 +210,7 @@ Expected<> initializeClientEndpoint() noexcept {
     }
 }
 
-void shutdownClientEndpoint() noexcept {
+void shutdownClientEndpoint() {
     std::shared_ptr<detail::ClientEndpoint> endpoint;
     {
         std::scoped_lock lock{detail::ClientEndpointMutex};

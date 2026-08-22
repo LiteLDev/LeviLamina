@@ -31,17 +31,17 @@ class ServerEndpoint final : public ServerSessionSource {
     LifecycleCoordinator                                 mLifecycle;
 
 public:
-    explicit ServerEndpoint(std::uint64_t endpointInstanceId) noexcept;
+    explicit ServerEndpoint(std::uint64_t endpointInstanceId);
     ~ServerEndpoint() override;
 
     ServerEndpoint(ServerEndpoint const&)            = delete;
     ServerEndpoint& operator=(ServerEndpoint const&) = delete;
 
-    [[nodiscard]] bool                           isOnEndpointThread() const noexcept override;
+    [[nodiscard]] bool                           isOnEndpointThread() const override;
     [[nodiscard]] Expected<Session>              resolve(NetworkIdentifierWithSubId const& recipient) noexcept override;
     [[nodiscard]] Expected<std::vector<Session>> snapshotActive() noexcept override;
 
-    void observeConnection(NetworkIdentifier const& id) noexcept;
+    void observeConnection(NetworkIdentifier const& id);
 
     [[nodiscard]] std::uint64_t currentGeneration(NetworkIdentifier const& id) const noexcept;
     [[nodiscard]] Expected<std::shared_ptr<ProtocolSession>> openSession(
@@ -52,6 +52,10 @@ public:
         std::shared_ptr<SessionTransport>       transport,
         TransportLimits                         limits
     ) noexcept;
+    [[nodiscard]] Expected<> activateSession(std::shared_ptr<ProtocolSession> const& session);
+    void                     reportProtocolError(std::shared_ptr<ProtocolSession> const& session, ProtocolErrc error);
+    [[nodiscard]] std::shared_ptr<ProtocolSession>
+    findSession(NetworkIdentifier const& id, std::uint8_t subClientId, std::uint64_t generation) noexcept;
 
     void closeSubclient(
         NetworkIdentifier const& id,
@@ -62,19 +66,19 @@ public:
         NetworkIdentifier const& id,
         ProtocolCloseReason      reason = ProtocolCloseReason::ConnectionClosed
     ) noexcept;
-    void closeAll(ProtocolCloseReason reason) noexcept;
+    void closeAll(ProtocolCloseReason reason);
 
     [[nodiscard]] NetworkConnection*
     findLiveConnection(NetworkIdentifier const& id, std::uint64_t generation) const noexcept;
 };
 
-[[nodiscard]] std::shared_ptr<ServerEndpoint> getServerEndpoint() noexcept;
+[[nodiscard]] std::shared_ptr<ServerEndpoint> getServerEndpoint();
 
 } // namespace ll::protocol::detail
 
 namespace ll::protocol::server {
 
 [[nodiscard]] Expected<> initializeServerEndpoint() noexcept;
-void                     shutdownServerEndpoint() noexcept;
+void                     shutdownServerEndpoint();
 
 } // namespace ll::protocol::server

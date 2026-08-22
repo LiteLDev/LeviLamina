@@ -24,9 +24,9 @@ class LifecycleCoordinator {
     std::map<std::string, std::uint64_t, std::less<>> mConnections;
     SessionManager                                    mSessions;
 
-    static void finalize(std::shared_ptr<ProtocolSession> const& session, ProtocolCloseReason reason) noexcept;
+    static void finalize(std::shared_ptr<ProtocolSession> const& session, ProtocolCloseReason reason);
 
-    static void finalize(SessionManager::SessionMap sessions, ProtocolCloseReason reason) noexcept;
+    static void finalize(SessionManager::SessionMap sessions, ProtocolCloseReason reason);
 
 public:
     LifecycleCoordinator(std::uint64_t endpointInstanceId, EndpointRole role) noexcept;
@@ -52,18 +52,22 @@ public:
     ) noexcept;
 
     [[nodiscard]] std::shared_ptr<ProtocolSession>
-    findSession(std::string_view connection, std::uint8_t subClientId, std::uint64_t generation) const noexcept;
+    findSession(std::string_view connection, std::uint8_t subClientId, std::uint64_t generation) const;
+
+    [[nodiscard]] Expected<> activateSession(std::shared_ptr<ProtocolSession> const& session) noexcept;
+
+    void reportProtocolError(std::shared_ptr<ProtocolSession> const& session, ProtocolErrc error);
 
     bool closeSubclient(
         std::string_view    connection,
         std::uint8_t        subClientId,
         std::uint64_t       generation,
         ProtocolCloseReason reason
-    ) noexcept;
+    );
 
-    bool closeConnection(std::string_view connection, std::uint64_t generation, ProtocolCloseReason reason) noexcept;
+    bool closeConnection(std::string_view connection, std::uint64_t generation, ProtocolCloseReason reason);
 
-    void closeAll(ProtocolCloseReason reason) noexcept;
+    void closeAll(ProtocolCloseReason reason);
 
     [[nodiscard]] std::vector<std::shared_ptr<ProtocolSession>> activeSessions() const;
 };

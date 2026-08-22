@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 
 #include <memory>
+#include <optional>
 #include <string_view>
 #include <vector>
 
@@ -176,6 +177,52 @@ TEST(ProtocolLifecycleTest, DuplicateSessionOpenCannotRestartHandshake) {
     EXPECT_EQ(lifecycleSessionCode(duplicate.error()), SessionErrc::WrongState);
     EXPECT_EQ(coordinator.findSession("peer", 0, *generation), *first);
     EXPECT_EQ((*first)->state(), SessionState::Handshaking);
+}
+
+TEST(ProtocolLifecycleTest, ProtocolErrorEventPreservesLiveSessionAndRejectsStaleSession) {
+    detail::LifecycleCoordinator coordinator{36, EndpointRole::Server};
+
+    auto generation = coordinator.openConnection("peer");
+    ASSERT_TRUE(generation);
+    auto session = openLifecycleSession(coordinator, "peer", 3, *generation, 1);
+    ASSERT_TRUE(session);
+
+    std::size_t                 events{};
+    ProtocolErrc                observedError{};
+    std::optional<std::uint8_t> observedSubClientId;
+    std::uint64_t               observedGeneration{};
+
+    auto listener =
+        ll::event::EventBus::getInstance().emplaceListener<ProtocolErrorEvent>([&](ProtocolErrorEvent& event) {
+            ++events;
+            observedError = event.error();
+            if (event.session()) {
+                observedSubClientId = event.session()->peer().subClientId;
+                observedGeneration  = event.session()->peer().connectionGeneration;
+            } else {
+                observedSubClientId.reset();
+                observedGeneration = 0;
+            }
+        });
+    ASSERT_TRUE(listener);
+
+    coordinator.reportProtocolError(*session, ProtocolErrc::DigestMismatch);
+    EXPECT_EQ(events, 1);
+    EXPECT_EQ(observedError, ProtocolErrc::DigestMismatch);
+    ASSERT_TRUE(observedSubClientId);
+    EXPECT_EQ(*observedSubClientId, 3);
+    EXPECT_EQ(observedGeneration, *generation);
+
+    EXPECT_TRUE(coordinator.closeSubclient("peer", 3, *generation, ProtocolCloseReason::ProtocolError));
+    coordinator.reportProtocolError(*session, ProtocolErrc::ReplayDetected);
+    EXPECT_EQ(events, 1);
+
+    coordinator.reportProtocolError(nullptr, ProtocolErrc::VersionIncompatible);
+    EXPECT_EQ(events, 2);
+    EXPECT_EQ(observedError, ProtocolErrc::VersionIncompatible);
+    EXPECT_FALSE(observedSubClientId);
+
+    EXPECT_TRUE(ll::event::EventBus::getInstance().removeListener<ProtocolErrorEvent>(listener));
 }
 
 TEST(ProtocolLifecycleTest, RuntimeShutdownClosesAllConnectionsExactlyOnce) {
