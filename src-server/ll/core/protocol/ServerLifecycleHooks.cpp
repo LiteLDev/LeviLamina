@@ -1,4 +1,6 @@
 #include "ll/core/protocol/ServerEndpoint.h"
+#include "ll/core/protocol/ServerLoginIntegration.h"
+#include "ll/core/protocol/ServerProtocolRuntime.h"
 
 #include <optional>
 #include <string>
@@ -36,6 +38,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     SubClientId                      subClientId,
     Connection::DisconnectFailReason reason
 ) {
+    getServerLoginIntegration().closeSubclient(id, static_cast<std::uint8_t>(subClientId));
     if (auto endpoint = getServerEndpoint()) {
         endpoint->closeSubclient(id, static_cast<std::uint8_t>(subClientId));
     }
@@ -55,6 +58,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     std::string const&               message,
     std::optional<std::string>       filteredMessage
 ) {
+    getServerLoginIntegration().closeSubclient(id, static_cast<std::uint8_t>(subClientId));
     if (auto endpoint = getServerEndpoint()) {
         endpoint->closeSubclient(id, static_cast<std::uint8_t>(subClientId));
     }
@@ -71,6 +75,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     NetworkIdentifier const&         id,
     Connection::DisconnectFailReason reason
 ) {
+    getServerLoginIntegration().closeSubclient(id, static_cast<std::uint8_t>(SubClientId::PrimaryClient));
     if (auto endpoint = getServerEndpoint()) {
         endpoint->closeSubclient(id, static_cast<std::uint8_t>(SubClientId::PrimaryClient));
     }
@@ -92,6 +97,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     bool                                   skipMessage,
     std::string const&                     telemetry
 ) {
+    getServerLoginIntegration().closeConnection(id);
     if (auto endpoint = getServerEndpoint()) {
         endpoint->closeConnection(id);
     }
@@ -112,6 +118,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     bool                                   skipMessage,
     Json::Value const&                     summary
 ) {
+    getServerLoginIntegration().closeConnection(id);
     if (auto endpoint = getServerEndpoint()) {
         endpoint->closeConnection(id);
     }
@@ -128,6 +135,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     Connection::DisconnectFailReason reason,
     bool                             skipMessage
 ) {
+    getServerLoginIntegration().closeAll();
     if (auto endpoint = getServerEndpoint()) {
         endpoint->closeAll(ProtocolCloseReason::ConnectionClosed);
     }
@@ -144,6 +152,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     Connection::DisconnectFailReason reason,
     bool                             skipMessage
 ) {
+    getServerLoginIntegration().closeAll();
     if (auto endpoint = getServerEndpoint()) {
         endpoint->closeAll(ProtocolCloseReason::ConnectionClosed);
     }
