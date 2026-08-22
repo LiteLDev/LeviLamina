@@ -5,6 +5,7 @@
 #include <string>
 
 #include "ll/api/mod/Mod.h"
+#include "ll/api/protocol/Error.h"
 #include "ll/api/protocol/PayloadRegistry.h"
 #include "ll/api/protocol/Server.h"
 #include "ll/core/protocol/PayloadRegistryInternal.h"
@@ -57,22 +58,25 @@ struct CountingCodec {
 class FanoutTransport final : public detail::SessionTransport {
 public:
     std::size_t sends{};
+    bool        rejectSends{};
 
     [[nodiscard]] bool isOnEndpointThread() const noexcept override { return true; }
 
     Expected<> send(std::unique_ptr<detail::ProtocolEnvelopePacket>) override {
+        if (rejectSends) return makeTransportError(TransportErrc::SendFailed);
+
         ++sends;
         return {};
     }
 };
 
-detail::TransportLimits fanoutLimits(std::uint32_t burstPackets = Limits::DefaultBurstPackets) {
+detail::TransportLimits fanoutLimits() {
     return {
         Limits::MaxControlBody,
         Limits::DefaultPayloadBody,
         Limits::DefaultPacketsPerSecond,
         Limits::DefaultBytesPerSecond,
-        burstPackets,
+        Limits::DefaultBurstPackets,
         Limits::DefaultBurstBytes,
     };
 }
@@ -83,8 +87,7 @@ std::shared_ptr<detail::ProtocolSession> activeFanoutSession(
     std::shared_ptr<FanoutTransport> const&                transport,
     PayloadDescriptor const&                               descriptor,
     SchemaVersion                                          schema          = 1,
-    std::uint32_t                                          selectedMaximum = 0,
-    std::uint32_t                                          burstPackets    = Limits::DefaultBurstPackets
+    std::uint32_t                                          selectedMaximum = 0
 ) {
     // clang-format off
     auto session = std::make_shared<detail::ProtocolSession>(
@@ -94,7 +97,7 @@ std::shared_ptr<detail::ProtocolSession> activeFanoutSession(
         },
         registry,
         transport,
-        fanoutLimits(burstPackets)
+        fanoutLimits()
     );
     // clang-format on
 
@@ -104,7 +107,7 @@ std::shared_ptr<detail::ProtocolSession> activeFanoutSession(
         .coreProtocol           = 1,
         .serverRegistryRevision = registry->revision,
         .clientRegistryRevision = 1,
-        .limits                 = fanoutLimits(burstPackets),
+        .limits                 = fanoutLimits(),
         .payloads               = {{
             descriptor.id(),
             descriptor.runtimeId(),
@@ -178,17 +181,18 @@ TEST(ProtocolServerFanoutTest, HandlesSchemaCohortsDuplicatesAndMixedFailures) {
     auto thirdTransport   = std::make_shared<FanoutTransport>();
     auto closedTransport  = std::make_shared<FanoutTransport>();
     auto smallTransport   = std::make_shared<FanoutTransport>();
-    auto limitedTransport = std::make_shared<FanoutTransport>();
+    auto failingTransport = std::make_shared<FanoutTransport>();
     auto first            = activeFanoutSession(101, snapshot, firstTransport, *descriptor);
     auto second           = activeFanoutSession(102, snapshot, secondTransport, *descriptor);
     auto third            = activeFanoutSession(103, snapshot, thirdTransport, *descriptor, 2);
     auto closed           = activeFanoutSession(104, snapshot, closedTransport, *descriptor);
     auto small            = activeFanoutSession(105, snapshot, smallTransport, *descriptor, 1, 2);
-    auto limited          = activeFanoutSession(106, snapshot, limitedTransport, *descriptor, 1, 0, 1);
+    auto failing          = activeFanoutSession(106, snapshot, failingTransport, *descriptor);
 
-    auto limitedHandle = detail::SessionAccess::makeSession(limited);
-    ASSERT_TRUE(limitedHandle.send(FanoutPayload{1}));
-    *encodeCount = 0;
+    auto failingHandle = detail::SessionAccess::makeSession(failing);
+    ASSERT_TRUE(failingHandle.send(FanoutPayload{1}));
+    failingTransport->rejectSends = true;
+    *encodeCount                  = 0;
     closed->close();
 
     std::vector<Session> sessions{
@@ -197,7 +201,7 @@ TEST(ProtocolServerFanoutTest, HandlesSchemaCohortsDuplicatesAndMixedFailures) {
         detail::SessionAccess::makeSession(third),
         detail::SessionAccess::makeSession(closed),
         detail::SessionAccess::makeSession(small),
-        limitedHandle,
+        failingHandle,
         detail::SessionAccess::makeSession(first),
     };
 
@@ -218,7 +222,7 @@ TEST(ProtocolServerFanoutTest, HandlesSchemaCohortsDuplicatesAndMixedFailures) {
     EXPECT_EQ(thirdTransport->sends, 1);
     EXPECT_EQ(closedTransport->sends, 0);
     EXPECT_EQ(smallTransport->sends, 0);
-    EXPECT_EQ(limitedTransport->sends, 1);
+    EXPECT_EQ(failingTransport->sends, 1);
 
     auto source      = std::make_shared<FanoutSessionSource>();
     source->sessions = {
