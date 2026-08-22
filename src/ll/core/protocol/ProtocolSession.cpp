@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <iterator>
+#include <limits>
 #include <utility>
 
 #include "ll/api/protocol/Error.h"
@@ -29,6 +30,7 @@ ProtocolSession::ProtocolSession(
 std::shared_ptr<SessionSnapshot const> ProtocolSession::snapshotLocked() const {
     std::vector<NegotiatedPayload> payloads;
     payloads.reserve(mPayloads.size());
+
     std::ranges::transform(mPayloads, std::back_inserter(payloads), &NegotiatedPayloadBinding::payload);
 
     return std::make_shared<SessionSnapshot const>(SessionSnapshot{
@@ -41,12 +43,12 @@ std::shared_ptr<SessionSnapshot const> ProtocolSession::snapshotLocked() const {
     });
 }
 
-SessionState ProtocolSession::state() const noexcept {
+SessionState ProtocolSession::state() const {
     std::scoped_lock lock{mMutex};
     return mState;
 }
 
-bool ProtocolSession::active(std::uint64_t generation) const noexcept {
+bool ProtocolSession::active(std::uint64_t generation) const {
     std::scoped_lock lock{mMutex};
     return generation == mIdentity.key.generation && mState == SessionState::Active;
 }
@@ -62,7 +64,7 @@ std::shared_ptr<SessionSnapshot const> ProtocolSession::snapshot(std::uint64_t g
     }
 }
 
-Expected<> ProtocolSession::transition(SessionState expected, SessionState next) noexcept {
+Expected<> ProtocolSession::transition(SessionState expected, SessionState next) {
     std::scoped_lock lock{mMutex};
     if (mState != expected) return makeSessionError(SessionErrc::WrongState);
 
@@ -71,13 +73,15 @@ Expected<> ProtocolSession::transition(SessionState expected, SessionState next)
               || (expected == SessionState::ReadyLocal && next == SessionState::ProtocolReady)
               || (expected == SessionState::ProtocolReady && next == SessionState::Active)
               || (expected == SessionState::Closing && next == SessionState::Closed);
-    if (!valid) return makeProtocolError(ProtocolErrc::InvalidState, "invalid session transition");
+    if (!valid) {
+        return makeProtocolError(ProtocolErrc::InvalidState, "invalid session transition");
+    }
 
     mState = next;
     return {};
 }
 
-Expected<> ProtocolSession::validateInboundControl(ControlHeader const& header, std::size_t decodedBytes) noexcept {
+Expected<> ProtocolSession::validateInboundControl(ControlHeader const& header, std::size_t decodedBytes) {
     std::scoped_lock lock{mMutex};
     if (mState == SessionState::Closing || mState == SessionState::Closed) {
         return makeSessionError(SessionErrc::Closed);
@@ -103,17 +107,36 @@ Expected<> ProtocolSession::validateInboundControl(ControlHeader const& header, 
     return {};
 }
 
-Expected<ControlHeader> ProtocolSession::nextOutboundHeader(std::uint8_t schema) noexcept {
+Expected<ControlHeader> ProtocolSession::nextOutboundHeader(std::uint8_t schema) {
+    auto headers = reserveOutboundHeaders(schema, 1);
+    if (!headers) return forwardError(headers.error());
+
+    return headers->front();
+}
+
+Expected<std::vector<ControlHeader>> ProtocolSession::reserveOutboundHeaders(std::uint8_t schema, std::size_t count) {
     std::scoped_lock lock{mMutex};
     if (mState == SessionState::Closing || mState == SessionState::Closed) {
         return makeSessionError(SessionErrc::Closed);
     }
-    if (mHandshakeMessages >= Limits::MaxHandshakeMessages) {
+
+    if (count == 0
+        || count > Limits::MaxHandshakeMessages
+                       - std::min<std::size_t>(mHandshakeMessages, Limits::MaxHandshakeMessages)) {
         return makeProtocolError(ProtocolErrc::DeclarationMalformed, "handshake message budget");
     }
+    if (count - 1 > (std::numeric_limits<std::uint32_t>::max)() - mNextOutboundSequence) {
+        return makeProtocolError(ProtocolErrc::SequenceMismatch, "outbound sequence exhausted");
+    }
 
-    ++mHandshakeMessages;
-    return ControlHeader{schema, mIdentity.handshakeId, mNextOutboundSequence++};
+    std::vector<ControlHeader> headers;
+    headers.reserve(count);
+    for (std::size_t index = 0; index < count; ++index) {
+        headers.push_back(ControlHeader{schema, mIdentity.handshakeId, mNextOutboundSequence++});
+    }
+
+    mHandshakeMessages += static_cast<std::uint32_t>(count);
+    return headers;
 }
 
 Expected<> ProtocolSession::installNegotiation(NegotiationPlan plan, TranscriptDigest digest) noexcept {
@@ -154,7 +177,7 @@ Expected<> ProtocolSession::installNegotiation(NegotiationPlan plan, TranscriptD
     }
 }
 
-Expected<> ProtocolSession::acceptPeerReady(TranscriptDigest const& digest) noexcept {
+Expected<> ProtocolSession::acceptPeerReady(TranscriptDigest const& digest) {
     std::scoped_lock lock{mMutex};
     if (mState != SessionState::ReadyLocal) return makeSessionError(SessionErrc::WrongState);
     if (digest != mDigest) return makeProtocolError(ProtocolErrc::DigestMismatch);
@@ -163,11 +186,9 @@ Expected<> ProtocolSession::acceptPeerReady(TranscriptDigest const& digest) noex
     return {};
 }
 
-Expected<> ProtocolSession::activate() noexcept {
-    return transition(SessionState::ProtocolReady, SessionState::Active);
-}
+Expected<> ProtocolSession::activate() { return transition(SessionState::ProtocolReady, SessionState::Active); }
 
-bool ProtocolSession::beginClosing() noexcept {
+bool ProtocolSession::beginClosing() {
     std::scoped_lock lock{mMutex};
     if (mState == SessionState::Closing || mState == SessionState::Closed) return false;
 
@@ -175,7 +196,7 @@ bool ProtocolSession::beginClosing() noexcept {
     return true;
 }
 
-void ProtocolSession::close() noexcept {
+void ProtocolSession::close() {
     std::scoped_lock lock{mMutex};
     mState = SessionState::Closed;
     mTransport.reset();
@@ -242,6 +263,7 @@ Expected<PreparedOutbound> ProtocolSession::prepareOutbound(std::type_index type
         std::optional<NegotiatedPayloadBinding> negotiated;
         {
             std::scoped_lock lock{mMutex};
+
             auto found =
                 std::ranges::find(mPayloads, descriptor->runtimeId(), [](NegotiatedPayloadBinding const& binding) {
                     return binding.payload.runtimeId;
@@ -346,7 +368,7 @@ Expected<> ProtocolSession::validateInbound(
     SchemaVersion                         schema,
     std::size_t                           bodySize,
     std::chrono::steady_clock::time_point now
-) noexcept {
+) {
     std::scoped_lock lock{mMutex};
 
     if (mState != SessionState::Active) return makeSessionError(SessionErrc::WrongState);
@@ -376,7 +398,7 @@ SessionView SessionAccess::makeView(std::shared_ptr<SessionSnapshot const> snaps
     return SessionView{std::move(snapshot)};
 }
 
-PayloadContext SessionAccess::makeContext(std::shared_ptr<ProtocolSession> const& session) noexcept {
+PayloadContext SessionAccess::makeContext(std::shared_ptr<ProtocolSession> const& session) {
     auto handle = makeSession(session);
     return PayloadContext{handle, handle.view()};
 }
@@ -402,12 +424,12 @@ Expected<> Session::sendErased(std::type_index type, void const* payload) const 
     return session->send(type, payload, mGeneration);
 }
 
-Session::operator bool() const noexcept {
+Session::operator bool() const {
     auto session = mSession.lock();
     return session && session->generation() == mGeneration && session->state() != SessionState::Closed;
 }
 
-bool Session::active() const noexcept {
+bool Session::active() const {
     auto session = mSession.lock();
     return session && session->active(mGeneration);
 }
@@ -438,24 +460,26 @@ PeerIdentityView SessionView::peer() const& noexcept {
 CoreVersion   SessionView::coreProtocol() const noexcept { return mSnapshot ? mSnapshot->coreProtocol : 0; }
 std::uint64_t SessionView::registryRevision() const noexcept { return mSnapshot ? mSnapshot->registryRevision : 0; }
 std::span<NegotiatedModule const> SessionView::modules() const& noexcept {
-    return mSnapshot ? std::span<NegotiatedModule const>{mSnapshot->modules} : std::span<NegotiatedModule const>{};
+    return mSnapshot ? std::span<NegotiatedModule const>{mSnapshot->modules.data(), mSnapshot->modules.size()}
+                     : std::span<NegotiatedModule const>{};
 }
 std::span<NegotiatedPayload const> SessionView::payloads() const& noexcept {
-    return mSnapshot ? std::span<NegotiatedPayload const>{mSnapshot->payloads} : std::span<NegotiatedPayload const>{};
+    return mSnapshot ? std::span<NegotiatedPayload const>{mSnapshot->payloads.data(), mSnapshot->payloads.size()}
+                     : std::span<NegotiatedPayload const>{};
 }
-NegotiatedModule const* SessionView::findModule(ModuleId const& id) const& noexcept {
+NegotiatedModule const* SessionView::findModule(ModuleId const& id) const& {
     if (!mSnapshot) return nullptr;
 
     auto found = std::ranges::find(mSnapshot->modules, id, &NegotiatedModule::id);
     return found == mSnapshot->modules.end() ? nullptr : &*found;
 }
-NegotiatedPayload const* SessionView::findPayload(PayloadId const& id) const& noexcept {
+NegotiatedPayload const* SessionView::findPayload(PayloadId const& id) const& {
     if (!mSnapshot) return nullptr;
 
     auto found = std::ranges::find(mSnapshot->payloads, id, &NegotiatedPayload::id);
     return found == mSnapshot->payloads.end() ? nullptr : &*found;
 }
-NegotiatedPayload const* SessionView::findPayload(std::uint64_t runtimeId) const& noexcept {
+NegotiatedPayload const* SessionView::findPayload(std::uint64_t runtimeId) const& {
     if (!mSnapshot) return nullptr;
 
     auto found = std::ranges::find(mSnapshot->payloads, runtimeId, &NegotiatedPayload::runtimeId);

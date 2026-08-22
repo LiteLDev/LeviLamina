@@ -74,22 +74,25 @@ public:
     LLNDAPI SessionState     state() const noexcept;
     LLNDAPI EndpointRole     role() const noexcept;
     LLNDAPI PeerIdentityView peer() const& noexcept;
-    PeerIdentityView         peer() const&& = delete;
+
+    PeerIdentityView peer() const&& = delete;
 
     LLNDAPI CoreVersion coreProtocol() const noexcept;
     LLNDAPI std::uint64_t registryRevision() const noexcept;
 
     LLNDAPI std::span<NegotiatedModule const> modules() const& noexcept;
     LLNDAPI std::span<NegotiatedPayload const> payloads() const& noexcept;
-    std::span<NegotiatedModule const>          modules() const&&  = delete;
-    std::span<NegotiatedPayload const>         payloads() const&& = delete;
 
-    LLNDAPI NegotiatedModule const*  findModule(ModuleId const& id) const& noexcept;
-    LLNDAPI NegotiatedPayload const* findPayload(PayloadId const& id) const& noexcept;
-    LLNDAPI NegotiatedPayload const* findPayload(std::uint64_t runtimeId) const& noexcept;
-    NegotiatedModule const*          findModule(ModuleId const& id) const&&       = delete;
-    NegotiatedPayload const*         findPayload(PayloadId const& id) const&&     = delete;
-    NegotiatedPayload const*         findPayload(std::uint64_t runtimeId) const&& = delete;
+    std::span<NegotiatedModule const>  modules() const&&  = delete;
+    std::span<NegotiatedPayload const> payloads() const&& = delete;
+
+    LLNDAPI NegotiatedModule const*  findModule(ModuleId const& id) const&;
+    LLNDAPI NegotiatedPayload const* findPayload(PayloadId const& id) const&;
+    LLNDAPI NegotiatedPayload const* findPayload(std::uint64_t runtimeId) const&;
+
+    NegotiatedModule const*  findModule(ModuleId const& id) const&&       = delete;
+    NegotiatedPayload const* findPayload(PayloadId const& id) const&&     = delete;
+    NegotiatedPayload const* findPayload(std::uint64_t runtimeId) const&& = delete;
 };
 
 } // namespace ll::protocol

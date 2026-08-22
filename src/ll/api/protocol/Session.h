@@ -27,8 +27,8 @@ class Session {
 public:
     Session() noexcept = default;
 
-    LLNDAPI explicit    operator bool() const noexcept;
-    LLNDAPI bool        active() const noexcept;
+    LLNDAPI explicit    operator bool() const;
+    LLNDAPI bool        active() const;
     LLNDAPI SessionView view() const noexcept;
 
     template <class T>
