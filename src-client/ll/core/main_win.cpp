@@ -67,9 +67,11 @@ void leviLaminaMain() {
 
     command::registerCommands();
 
-    if (auto initialized = protocol::client::initialize(); !initialized) {
-        getLogger().error("Protocol initialization failed");
-        initialized.error().log(getLogger());
+    if (config.targeted.protocol.enabled) {
+        if (auto initialized = protocol::client::initialize(); !initialized) {
+            getLogger().error("Protocol initialization failed");
+            initialized.error().log(getLogger());
+        }
     }
 
     mod::ModRegistrar::getInstance().loadAllMods();
