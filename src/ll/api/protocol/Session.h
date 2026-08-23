@@ -31,10 +31,17 @@ public:
     LLNDAPI bool        active() const;
     LLNDAPI SessionView view() const noexcept;
 
+#ifdef LL_PLAT_C
+    template <class T>
+    Expected<> sendToServer(T const& payload) const noexcept {
+        return sendErased(typeid(T), &payload);
+    }
+#elifdef LL_PLAT_S
     template <class T>
     Expected<> send(T const& payload) const noexcept {
         return sendErased(typeid(T), &payload);
     }
+#endif
 };
 
 } // namespace ll::protocol
