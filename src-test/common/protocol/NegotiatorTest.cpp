@@ -131,6 +131,40 @@ TEST(ProtocolNegotiatorTest, RejectsMissingRequiredRoleAndRuntimeIdentityMismatc
     EXPECT_EQ(protocolCode(collision.error()), ProtocolErrc::IdentityCollision);
 }
 
+TEST(ProtocolNegotiatorTest, ServerPolicyTightensRequiredModulesWithoutRelaxingDescriptors) {
+    // clang-format off
+    detail::RegistrySnapshot snapshot;
+    snapshot.revision = 9;
+    snapshot.modules.emplace_back(std::make_shared<ModuleDescriptor>(
+        *ModuleId::parse("negotiator:policy"),
+        ModuleDefinition{
+            .name             = *ModuleName::parse("policy"),
+            .version          = {1, 0, 0},
+            .protocolVersions = {1, 1},
+            .requirement      = ModuleRequirement::Optional,
+        },
+        "NegotiatorPolicy",
+        1
+    ));
+    // clang-format on
+
+    std::vector required{*ModuleId::parse("negotiator:policy")};
+    auto        server = detail::makeDeclaration(snapshot, EndpointRole::Server, {1, 7, 1}, required);
+    ASSERT_TRUE(server) << server.error().message();
+    ASSERT_EQ(server->modules.size(), 1);
+    EXPECT_EQ(server->modules.front().requirement, ModuleRequirement::RequiredOnClient);
+
+    auto missingClient = declaration(EndpointRole::Client, {}, {}, 10);
+    auto negotiation   = detail::negotiate(*server, missingClient, 1, limits());
+    ASSERT_FALSE(negotiation);
+    EXPECT_EQ(protocolCode(negotiation.error()), ProtocolErrc::RequirementUnsatisfied);
+
+    std::vector unknown{*ModuleId::parse("negotiator:unknown")};
+    auto        absent = detail::makeDeclaration(snapshot, EndpointRole::Server, {1, 7, 1}, unknown);
+    ASSERT_FALSE(absent);
+    EXPECT_EQ(protocolCode(absent.error()), ProtocolErrc::RequirementUnsatisfied);
+}
+
 TEST(ProtocolNegotiatorTest, DisablesOptionalModuleWhenRequiredPayloadIsIncompatible) {
     auto server = declaration(
         EndpointRole::Server,

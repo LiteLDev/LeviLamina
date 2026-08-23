@@ -104,9 +104,17 @@ SemanticVersion toWireVersion(data::Version const& version) noexcept {
 
 } // namespace negotiator_detail
 
-Expected<DeclarationSource>
-makeDeclaration(RegistrySnapshot const& snapshot, EndpointRole role, ControlHeader firstHeader) {
+Expected<DeclarationSource> makeDeclaration(
+    RegistrySnapshot const&   snapshot,
+    EndpointRole              role,
+    ControlHeader             firstHeader,
+    std::span<ModuleId const> requiredModules
+) {
     try {
+        if (role != EndpointRole::Server && !requiredModules.empty()) {
+            return makeProtocolError(ProtocolErrc::InternalFailure, "client declaration policy");
+        }
+
         DeclarationSource result{.firstHeader = firstHeader, .senderRole = role, .registryRevision = snapshot.revision};
         result.modules.reserve(snapshot.modules.size());
         result.payloads.reserve(snapshot.payloads.size());
@@ -133,6 +141,26 @@ makeDeclaration(RegistrySnapshot const& snapshot, EndpointRole role, ControlHead
                     std::move(features)
                 }
             );
+        }
+
+        for (auto const& required : requiredModules) {
+            auto declaration =
+                std::ranges::find(result.modules, required, [](auto const& module) { return module.id; });
+            if (declaration == result.modules.end()) {
+                return makeProtocolError(ProtocolErrc::RequirementUnsatisfied, required.str());
+            }
+
+            switch (declaration->requirement) {
+            case ModuleRequirement::Optional:
+                declaration->requirement = ModuleRequirement::RequiredOnClient;
+                break;
+            case ModuleRequirement::RequiredOnServer:
+                declaration->requirement = ModuleRequirement::RequiredOnBoth;
+                break;
+            case ModuleRequirement::RequiredOnClient:
+            case ModuleRequirement::RequiredOnBoth:
+                break;
+            }
         }
 
         for (auto const& descriptor : snapshot.payloads) {

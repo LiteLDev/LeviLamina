@@ -66,12 +66,14 @@ HandshakeCoordinator::HandshakeCoordinator(
     EndpointRole                            role,
     std::shared_ptr<ProtocolSession>        session,
     std::shared_ptr<RegistrySnapshot const> registry,
-    TransportLimits                         limits
+    TransportLimits                         limits,
+    std::vector<ModuleId>                   requiredModules
 )
 : mRole(role),
   mSession(std::move(session)),
   mRegistry(std::move(registry)),
   mLimits(limits),
+  mRequiredModules(std::move(requiredModules)),
   mDeclarationAssembler(1, limits.maxControlBody),
   mResultAssembler(1, limits.maxControlBody) {}
 
@@ -117,7 +119,7 @@ Expected<std::vector<ControlMessage>> HandshakeCoordinator::makeLocalDeclaration
     auto firstHeader = mSession->nextOutboundHeader(definition->controlSchema);
     if (!firstHeader) return forwardError(firstHeader.error());
 
-    auto declaration = makeDeclaration(*mRegistry, mRole, *firstHeader);
+    auto declaration = makeDeclaration(*mRegistry, mRole, *firstHeader, mRequiredModules);
     if (!declaration) return forwardError(declaration.error());
 
     auto chunks = packDeclaration(*declaration, mCoreProtocol, mLimits.maxControlBody);

@@ -36,6 +36,7 @@ class HandshakeCoordinator final {
     std::shared_ptr<RegistrySnapshot const> mRegistry;
     CoreVersion                             mCoreProtocol{};
     TransportLimits                         mLimits{};
+    std::vector<ModuleId>                   mRequiredModules;
     Nonce                                   mServerNonce{};
     Nonce                                   mClientNonce{};
     Step                                    mStep{Step::Initial};
@@ -56,7 +57,8 @@ public:
         EndpointRole                            role,
         std::shared_ptr<ProtocolSession>        session,
         std::shared_ptr<RegistrySnapshot const> registry,
-        TransportLimits                         limits
+        TransportLimits                         limits,
+        std::vector<ModuleId>                   requiredModules = {}
     );
 
     HandshakeCoordinator(HandshakeCoordinator const&)            = delete;

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <span>
 #include <vector>
 
 #include "ll/api/Expected.h"
@@ -20,8 +21,12 @@ struct NegotiationPlan {
     std::vector<NegotiatedPayload> payloads;
 };
 
-[[nodiscard]] Expected<DeclarationSource>
-makeDeclaration(RegistrySnapshot const& snapshot, EndpointRole role, ControlHeader firstHeader);
+[[nodiscard]] Expected<DeclarationSource> makeDeclaration(
+    RegistrySnapshot const&   snapshot,
+    EndpointRole              role,
+    ControlHeader             firstHeader,
+    std::span<ModuleId const> requiredModules = {}
+);
 
 [[nodiscard]] Expected<NegotiationPlan> negotiate(
     DeclarationSource const& server,

@@ -62,6 +62,22 @@ TransportLimits configuredLimits() {
     };
 }
 
+Expected<std::vector<ModuleId>> configuredRequiredModules() {
+    std::vector<ModuleId> result;
+
+    auto const& configured = ll::getLeviConfig().targeted.protocol.requiredModules;
+    result.reserve(configured.size());
+
+    for (auto const& value : configured) {
+        auto parsed = ModuleId::parse(value);
+        if (!parsed) return forwardError(parsed.error());
+
+        result.emplace_back(std::move(*parsed));
+    }
+
+    return result;
+}
+
 std::string_view disconnectMessage(Connection::DisconnectFailReason reason) noexcept {
     switch (reason) {
     case Connection::DisconnectFailReason::ClientSettingsIncompatibleWithServer:
@@ -430,6 +446,19 @@ ServerLoginIntegration::handleHandshake(ServerNetworkHandler&, NetworkIdentifier
             return HandshakeDisposition::Rejected;
         }
 
+        auto requiredModules = server_login_detail::configuredRequiredModules();
+        if (!requiredModules) {
+            mImpl->eraseDiscovery(key);
+            endpoint->reportProtocolError(nullptr, ProtocolErrc::InternalFailure);
+
+            server_login_detail::disconnectPrelogin(
+                id,
+                subClientId,
+                Connection::DisconnectFailReason::UnrecoverableError
+            );
+            return HandshakeDisposition::Rejected;
+        }
+
         auto limits    = server_login_detail::configuredLimits();
         auto registry  = PayloadRegistryAccess::snapshot(PayloadRegistry::getInstance());
         auto transport = std::make_shared<ServerTransport>(sender, generation);
@@ -452,8 +481,13 @@ ServerLoginIntegration::handleHandshake(ServerNetworkHandler&, NetworkIdentifier
         entry->handshakeId = handshakeId;
         entry->session     = *session;
         entry->transport   = std::move(transport);
-        entry->handshake =
-            std::make_unique<HandshakeCoordinator>(EndpointRole::Server, *session, std::move(registry), limits);
+        entry->handshake   = std::make_unique<HandshakeCoordinator>(
+            EndpointRole::Server,
+            *session,
+            std::move(registry),
+            limits,
+            std::move(*requiredModules)
+        );
         entry->continuation = std::make_shared<DeferredLoginContinuation>((*session)->identity().key, handshakeId);
 
         bool inserted;
