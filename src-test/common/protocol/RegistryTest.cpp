@@ -12,6 +12,7 @@
 #include "ll/api/protocol/Error.h"
 #include "ll/api/protocol/Limits.h"
 #include "ll/api/protocol/PayloadRegistry.h"
+#include "ll/core/protocol/ModLifecycleIntegration.h"
 #include "ll/core/protocol/PayloadRegistryInternal.h"
 #include "ll/core/protocol/RegistrationLease.h"
 
@@ -270,6 +271,42 @@ TEST(ProtocolRegistryTest, RejectsNamespaceOwnedByAnotherMod) {
     ASSERT_FALSE(second);
     EXPECT_EQ(registrationCode(second.error()), RegistrationErrc::NamespaceOwned);
     EXPECT_TRUE(first->reset());
+}
+
+TEST(ProtocolRegistryTest, RejectsNamespaceClaimByDifferentLiveIdentityWithSameName) {
+    auto firstOwner  = std::make_shared<TestMod>("ProtocolRegistrySameName", "registry_same_name_identity");
+    auto secondOwner = std::make_shared<TestMod>("ProtocolRegistrySameName", "registry_same_name_identity");
+
+    firstOwner->enable();
+    secondOwner->enable();
+    auto& registry = PayloadRegistry::getInstance();
+
+    auto first = registry.registerModule(moduleDefinition("first"), firstOwner);
+    ASSERT_TRUE(first);
+
+    auto second = registry.registerModule(moduleDefinition("second"), secondOwner);
+    ASSERT_FALSE(second);
+    EXPECT_EQ(registrationCode(second.error()), RegistrationErrc::NamespaceOwned);
+    EXPECT_TRUE(first->reset());
+}
+
+TEST(ProtocolRegistryTest, PrepareModDisableDrainsOwnerBeforeModCallback) {
+    auto owner = std::make_shared<TestMod>("ProtocolRegistryPrepareDisable", "registry_prepare_disable");
+    owner->enable();
+    auto& registry = PayloadRegistry::getInstance();
+
+    auto module = registry.registerModule(moduleDefinition(), owner);
+    ASSERT_TRUE(module);
+    auto payload = registry.registerPayload<TestPayload>(*module, payloadDefinition(), TestCodec{});
+    ASSERT_TRUE(payload);
+    ASSERT_NE(registry.findPayload(payload->id()), nullptr);
+
+    ASSERT_TRUE(prepareModDisable(*owner));
+    EXPECT_EQ(registry.findPayload(payload->id()), nullptr);
+    EXPECT_FALSE(payload->active());
+    EXPECT_FALSE(module->active());
+    EXPECT_TRUE(payload->reset());
+    EXPECT_TRUE(module->reset());
 }
 
 TEST(ProtocolRegistryTest, ResetWaitsForAnExistingLeaseAndRevokesLookupFirst) {

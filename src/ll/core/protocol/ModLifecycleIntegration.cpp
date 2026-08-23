@@ -115,9 +115,8 @@ bool defer(DeferredAction action, std::string_view owner) noexcept {
 
 Expected<> prepare(mod::Mod const& owner, DeferredAction action) {
     auto& registry = PayloadRegistry::getInstance();
-    if (!PayloadRegistryAccess::currentThreadOwns(registry, owner.getName())) return {};
 
-    auto drained = PayloadRegistryAccess::drainOwner(registry, owner.getName());
+    auto drained = registry.drainOwner(owner);
     if (drained) return {};
 
     auto& error = drained.error();
@@ -250,7 +249,7 @@ Expected<> prepareModUnload(mod::Mod const& owner) {
 }
 
 Expected<> finalizeModUnload(mod::Mod const& owner) noexcept {
-    return detail::PayloadRegistryAccess::drainOwner(PayloadRegistry::getInstance(), owner.getName());
+    return PayloadRegistry::getInstance().drainOwner(owner);
 }
 
 } // namespace ll::protocol
