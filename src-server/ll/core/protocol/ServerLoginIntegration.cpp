@@ -9,6 +9,7 @@
 #include <optional>
 #include <random>
 #include <string>
+#include <string_view>
 #include <utility>
 #include <vector>
 
@@ -36,9 +37,14 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/NetworkConnection.h"
 #include "mc/network/NetworkIdentifierWithSubId.h"
+#include "mc/network/NetworkSystem.h"
+#include "mc/network/PacketSender.h"
 #include "mc/network/PacketViolationResponse.h"
+#include "mc/network/RemoteConnector.h"
 #include "mc/network/ServerNetworkHandler.h"
+#include "mc/network/ServerNetworkSystem.h"
 #include "mc/network/connection/DisconnectFailReason.h"
+#include "mc/network/packet/DisconnectPacket.h"
 
 namespace ll::protocol::detail {
 
@@ -54,6 +60,53 @@ TransportLimits configuredLimits() {
         limits.burstPackets,
         limits.burstBytes,
     };
+}
+
+std::string_view disconnectMessage(Connection::DisconnectFailReason reason) noexcept {
+    switch (reason) {
+    case Connection::DisconnectFailReason::ClientSettingsIncompatibleWithServer:
+        return "LeviLamina is required to join this server.";
+    case Connection::DisconnectFailReason::VersionMismatch:
+        return "Incompatible LeviLamina protocol version.";
+    case Connection::DisconnectFailReason::Timeout:
+        return "LeviLamina protocol negotiation timed out.";
+    case Connection::DisconnectFailReason::BadPacket:
+    case Connection::DisconnectFailReason::UnexpectedPacket:
+        return "Invalid LeviLamina protocol packet.";
+    default:
+        return "LeviLamina protocol negotiation failed.";
+    }
+}
+
+void disconnectPrelogin(NetworkIdentifier const& id, SubClientId subClientId, Connection::DisconnectFailReason reason) {
+    auto endpoint = getServerEndpoint();
+    if (!endpoint) return;
+
+    auto generation = endpoint->currentGeneration(id);
+    if (generation == 0) return;
+
+    thread::ServerThreadExecutor::getDefault().execute([id, subClientId, reason, generation] {
+        auto endpoint = getServerEndpoint();
+        auto handler  = service::getServerNetworkHandler();
+        if (!endpoint || !handler || endpoint->currentGeneration(id) != generation) return;
+
+        auto* connection = endpoint->findLiveConnection(id, generation);
+        if (!connection) return;
+
+        auto connectionId = connection->mId;
+
+        auto message = std::string{disconnectMessage(reason)};
+        try {
+            DisconnectPacket packet{
+                DisconnectPacketPayload{reason, message, std::nullopt}
+            };
+            handler->mPacketSender->sendToClient(connectionId, packet, subClientId);
+        } catch (...) {}
+
+        auto& network = handler->mNetwork;
+        network.onConnectionClosed(connectionId, reason, message, {}, false, {});
+        network.getRemoteConnector()->closeNetworkConnection(connectionId);
+    });
 }
 
 Nonce randomNonce() {
@@ -231,7 +284,7 @@ struct ServerLoginIntegration::Impl {
                         static_cast<uint>(std::min<std::size_t>(packetSize, UINT_MAX))
                     );
                 } else {
-                    handler->disconnectClient(
+                    server_login_detail::disconnectPrelogin(
                         connection->mId,
                         static_cast<SubClientId>(key.subClientId),
                         Connection::DisconnectFailReason::BadPacket
@@ -310,7 +363,7 @@ void ServerLoginIntegration::observeConnectionRequest(
 }
 
 ServerLoginIntegration::HandshakeDisposition
-ServerLoginIntegration::handleHandshake(ServerNetworkHandler& handler, NetworkIdentifierWithSubId const& sender) {
+ServerLoginIntegration::handleHandshake(ServerNetworkHandler&, NetworkIdentifierWithSubId const& sender) {
     auto const& id          = sender.id;
     auto const  subClientId = sender.subClientId;
 
@@ -331,7 +384,11 @@ ServerLoginIntegration::handleHandshake(ServerNetworkHandler& handler, NetworkId
         if (auto duplicate = mImpl->find(key)) {
             endpoint->reportProtocolError(duplicate->session, ProtocolErrc::UnexpectedMessage);
 
-            handler.disconnectClient(id, subClientId, Connection::DisconnectFailReason::UnexpectedPacket);
+            server_login_detail::disconnectPrelogin(
+                id,
+                subClientId,
+                Connection::DisconnectFailReason::UnexpectedPacket
+            );
             return HandshakeDisposition::Rejected;
         }
 
@@ -343,7 +400,7 @@ ServerLoginIntegration::handleHandshake(ServerNetworkHandler& handler, NetworkId
 
             endpoint->reportProtocolError(nullptr, ProtocolErrc::InvalidControlSchema);
 
-            handler.disconnectClient(
+            server_login_detail::disconnectPrelogin(
                 id,
                 subClientId,
                 Connection::DisconnectFailReason::ClientSettingsIncompatibleWithServer
@@ -356,7 +413,7 @@ ServerLoginIntegration::handleHandshake(ServerNetworkHandler& handler, NetworkId
             mImpl->eraseDiscovery(key);
             endpoint->reportProtocolError(nullptr, ProtocolErrc::VersionIncompatible);
 
-            handler.disconnectClient(id, subClientId, Connection::DisconnectFailReason::VersionMismatch);
+            server_login_detail::disconnectPrelogin(id, subClientId, Connection::DisconnectFailReason::VersionMismatch);
             return HandshakeDisposition::Rejected;
         }
 
@@ -365,7 +422,11 @@ ServerLoginIntegration::handleHandshake(ServerNetworkHandler& handler, NetworkId
             mImpl->eraseDiscovery(key);
             endpoint->reportProtocolError(nullptr, ProtocolErrc::InternalFailure);
 
-            handler.disconnectClient(id, subClientId, Connection::DisconnectFailReason::UnrecoverableError);
+            server_login_detail::disconnectPrelogin(
+                id,
+                subClientId,
+                Connection::DisconnectFailReason::UnrecoverableError
+            );
             return HandshakeDisposition::Rejected;
         }
 
@@ -378,7 +439,11 @@ ServerLoginIntegration::handleHandshake(ServerNetworkHandler& handler, NetworkId
             mImpl->eraseDiscovery(key);
             endpoint->reportProtocolError(nullptr, ProtocolErrc::InternalFailure);
 
-            handler.disconnectClient(id, subClientId, Connection::DisconnectFailReason::UnrecoverableError);
+            server_login_detail::disconnectPrelogin(
+                id,
+                subClientId,
+                Connection::DisconnectFailReason::UnrecoverableError
+            );
             return HandshakeDisposition::Rejected;
         }
 
@@ -401,7 +466,11 @@ ServerLoginIntegration::handleHandshake(ServerNetworkHandler& handler, NetworkId
 
             endpoint->reportProtocolError(entry->session, ProtocolErrc::UnexpectedMessage);
 
-            handler.disconnectClient(id, subClientId, Connection::DisconnectFailReason::UnexpectedPacket);
+            server_login_detail::disconnectPrelogin(
+                id,
+                subClientId,
+                Connection::DisconnectFailReason::UnexpectedPacket
+            );
             return HandshakeDisposition::Rejected;
         }
         mImpl->eraseDiscovery(key);
@@ -411,7 +480,11 @@ ServerLoginIntegration::handleHandshake(ServerNetworkHandler& handler, NetworkId
 
             endpoint->reportProtocolError(entry->session, ProtocolErrc::InternalFailure);
 
-            handler.disconnectClient(id, subClientId, Connection::DisconnectFailReason::UnrecoverableError);
+            server_login_detail::disconnectPrelogin(
+                id,
+                subClientId,
+                Connection::DisconnectFailReason::UnrecoverableError
+            );
             return HandshakeDisposition::Rejected;
         }
 
@@ -438,7 +511,7 @@ ServerLoginIntegration::handleHandshake(ServerNetworkHandler& handler, NetworkId
                     endpoint->reportProtocolError(entry->session, ProtocolErrc::Timeout);
 
                     endpoint->closeSubclient(entry->networkId, key.subClientId, ProtocolCloseReason::Timeout);
-                    handler->disconnectClient(
+                    server_login_detail::disconnectPrelogin(
                         connection->mId,
                         static_cast<SubClientId>(key.subClientId),
                         Connection::DisconnectFailReason::Timeout
@@ -468,7 +541,7 @@ ServerLoginIntegration::handleHandshake(ServerNetworkHandler& handler, NetworkId
             endpoint->reportProtocolError(nullptr, ProtocolErrc::InternalFailure);
         }
 
-        handler.disconnectClient(id, subClientId, Connection::DisconnectFailReason::UnrecoverableError);
+        server_login_detail::disconnectPrelogin(id, subClientId, Connection::DisconnectFailReason::UnrecoverableError);
         return HandshakeDisposition::Rejected;
     }
 }
