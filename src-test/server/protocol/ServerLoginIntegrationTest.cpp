@@ -77,6 +77,19 @@ TEST(ServerLoginIntegrationTest, ContinuationInvokerFailureIsTerminal) {
     EXPECT_FALSE(continuation.cancel());
 }
 
+TEST(ServerLoginIntegrationTest, ContinuationInvokerExceptionIsContainedAndTerminal) {
+    detail::DeferredLoginContinuation continuation{
+        detail::ConnectionKey{1, EndpointRole::Server, "peer", 0, 7},
+        11,
+    };
+
+    auto result = continuation.consume([]() -> Expected<> { throw 17; });
+    EXPECT_FALSE(result);
+    EXPECT_EQ(continuation.state(), detail::DeferredLoginContinuation::State::Cancelled);
+    EXPECT_FALSE(continuation.consume([]() -> Expected<> { return {}; }));
+    EXPECT_FALSE(continuation.cancel());
+}
+
 TEST(ServerLoginIntegrationTest, ConcurrentContinuationConsumeInvokesExactlyOnce) {
     std::atomic_uint                  calls{};
     detail::DeferredLoginContinuation continuation{

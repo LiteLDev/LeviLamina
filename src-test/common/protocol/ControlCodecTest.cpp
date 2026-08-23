@@ -67,6 +67,21 @@ void expectRoundTrip(T message, std::uint64_t runtimeId) {
     EXPECT_EQ(*decoded, source);
 }
 
+void expectEveryTruncationAndTrailingByteRejected(detail::ControlMessage const& message) {
+    auto encoded = detail::encodeControl(message, 1);
+    ASSERT_TRUE(encoded) << encoded.error().message();
+
+    auto const runtimeId = detail::controlRuntimeId(message);
+    for (std::size_t size = 0; size < encoded->size(); ++size) {
+        auto body = std::span<std::byte const>{reinterpret_cast<std::byte const*>(encoded->data()), size};
+        EXPECT_FALSE(detail::decodeControl(runtimeId, body, 1)) << "accepted prefix of " << size << " bytes";
+    }
+
+    encoded->push_back('\0');
+    auto body = std::span<std::byte const>{reinterpret_cast<std::byte const*>(encoded->data()), encoded->size()};
+    EXPECT_FALSE(detail::decodeControl(runtimeId, body, 1));
+}
+
 TEST(ProtocolControlCodecTest, RoundTripsEveryControlMessage) {
     expectRoundTrip(
         detail::Hello{
@@ -136,6 +151,24 @@ TEST(ProtocolControlCodecTest, RoundTripsEveryControlMessage) {
     expectRoundTrip(
         detail::ProtocolErrorMessage{header(4), detail::WireErrorCode::InvalidState, true, 3, "bad state"},
         detail::ProtocolErrorRuntimeId
+    );
+}
+
+TEST(ProtocolControlCodecTest, RejectsEveryTruncationAndTrailingByteForVariableAndFixedMessages) {
+    expectEveryTruncationAndTrailingByteRejected(
+        detail::ControlMessage{detail::Hello{
+            header(),
+            nonce(std::byte{1}),
+            {1, 1},
+            transportLimits(),
+            {{featureName("core.delta"), {1, 2}, true}},
+        }}
+    );
+
+    detail::TranscriptDigest digest{};
+    digest.front() = std::byte{0x42};
+    expectEveryTruncationAndTrailingByteRejected(
+        detail::ControlMessage{detail::Ready{header(4), EndpointRole::Client, digest}}
     );
 }
 

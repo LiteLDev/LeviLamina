@@ -111,6 +111,34 @@ TEST(ProtocolRuntimePacketTransportTest, RejectsInvalidSchemaLengthAndTrailingBy
     EXPECT_FALSE(deserialize(packet, std::string{"\x01\x01\x00\x01\x00\x00\x00xy", 9}));
 }
 
+TEST(ProtocolRuntimePacketTransportTest, RejectsEveryEnvelopeTruncationWithoutPartialMutation) {
+    auto outbound =
+        detail::ProtocolEnvelopePacket::create(9, 1, 3, std::string{"payload"}, SubClientId::PrimaryClient, 64);
+    ASSERT_TRUE(outbound);
+    auto encoded = serialize(**outbound);
+
+    detail::ProtocolEnvelopePacket inbound{9, 64};
+
+    auto initial =
+        detail::ProtocolEnvelopePacket::create(9, 1, 7, std::string{"stable"}, SubClientId::PrimaryClient, 64);
+    ASSERT_TRUE(initial);
+    ASSERT_TRUE(deserialize(inbound, serialize(**initial)));
+
+    for (std::size_t size = 0; size < encoded.size(); ++size) {
+        EXPECT_FALSE(deserialize(inbound, encoded.substr(0, size))) << "accepted prefix of " << size << " bytes";
+        EXPECT_EQ(inbound.envelopeSchema(), 1);
+        EXPECT_EQ(inbound.payloadSchema(), 7);
+        EXPECT_EQ(
+            std::string_view(reinterpret_cast<char const*>(inbound.body().data()), inbound.body().size()),
+            "stable"
+        );
+    }
+
+    encoded.push_back('\0');
+    EXPECT_FALSE(deserialize(inbound, std::move(encoded)));
+    EXPECT_EQ(inbound.payloadSchema(), 7);
+}
+
 TEST(ProtocolRuntimePacketTransportTest, EnforcesPermanentPayloadSlotCap) {
     auto outbound = detail::ProtocolEnvelopePacket::create(1, 1, 1, std::string{"ab"}, SubClientId::PrimaryClient, 2);
     ASSERT_TRUE(outbound);
