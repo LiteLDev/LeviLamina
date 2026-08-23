@@ -46,14 +46,4 @@ std::string SymbolView::toString() const {
     }
     return res;
 }
-std::vector<Symbol> Symbol::fromAddress(void* func) {
-    std::vector<Symbol> result;
-    size_t              length{};
-    auto                symbols = pl::symbol_provider::pl_lookup_symbol(func, &length);
-    for (size_t i = 0; i < length; i++) {
-        result.emplace_back(symbols[i]);
-    }
-    if (symbols) pl::symbol_provider::pl_free_lookup_result(symbols);
-    return result;
-}
 } // namespace ll::memory
