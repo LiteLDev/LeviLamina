@@ -34,10 +34,15 @@ public:
 
 class PayloadRegistry::Impl {
 public:
+    struct NamespaceOwner {
+        std::string             name;
+        std::weak_ptr<mod::Mod> identity;
+    };
+
     mutable std::mutex writerMutex;
 
-    detail::ModuleCatalog                        moduleCatalog;
-    std::unordered_map<std::string, std::string> namespaceOwners;
+    detail::ModuleCatalog                           moduleCatalog;
+    std::unordered_map<std::string, NamespaceOwner> namespaceOwners;
 
     std::unordered_map<PayloadId, std::shared_ptr<detail::DescriptorState>>       payloadStates;
     std::unordered_map<PayloadId, std::uint64_t>                                  lastPayloadGeneration;
@@ -295,17 +300,23 @@ Expected<ModuleRegistration> PayloadRegistry::registerModuleOwned(
 
         auto namespaceValue = protocolNamespace.str();
         auto namespaceOwner = mImpl->namespaceOwners.find(namespaceValue);
-        if (namespaceOwner != mImpl->namespaceOwners.end() && namespaceOwner->second != owner->getName()) {
-            return makeRegistrationError(RegistrationErrc::NamespaceOwned, namespaceValue);
+        if (namespaceOwner != mImpl->namespaceOwners.end()) {
+            auto currentOwner = namespaceOwner->second.identity.lock();
+            if ((currentOwner && currentOwner.get() != owner.get())
+                || (!currentOwner && namespaceOwner->second.name != owner->getName())) {
+                return makeRegistrationError(RegistrationErrc::NamespaceOwned, namespaceValue);
+            }
         }
 
         auto previousModule = mImpl->moduleCatalog.find(*id);
 
         bool insertedNamespace{};
+        bool updatedNamespace{};
         bool registeredModule{};
         bool attachedModule{};
 
         std::shared_ptr<detail::ModuleState> state;
+        std::weak_ptr<mod::Mod>              previousNamespaceIdentity;
 
         auto rollback = payload_registry_detail::RollbackGuard{[&]() {
             if (attachedModule) {
@@ -316,11 +327,18 @@ Expected<ModuleRegistration> PayloadRegistry::registerModuleOwned(
             }
             if (insertedNamespace) {
                 mImpl->namespaceOwners.erase(namespaceValue);
+            } else if (updatedNamespace) {
+                namespaceOwner->second.identity = std::move(previousNamespaceIdentity);
             }
         }};
 
         if (namespaceOwner == mImpl->namespaceOwners.end()) {
-            insertedNamespace = mImpl->namespaceOwners.emplace(namespaceValue, owner->getName()).second;
+            insertedNamespace =
+                mImpl->namespaceOwners.emplace(namespaceValue, Impl::NamespaceOwner{owner->getName(), owner}).second;
+        } else if (namespaceOwner->second.identity.expired()) {
+            previousNamespaceIdentity       = namespaceOwner->second.identity;
+            namespaceOwner->second.identity = owner;
+            updatedNamespace                = true;
         }
 
         auto lifecycle =
