@@ -8,6 +8,7 @@
 #include "ll/api/event/EventBus.h"
 #include "ll/api/protocol/Error.h"
 #include "ll/api/protocol/PayloadRegistry.h"
+#include "ll/core/LeviLamina.h"
 #include "ll/core/protocol/PayloadRegistryInternal.h"
 
 namespace ll::protocol::detail {
@@ -165,6 +166,12 @@ Expected<> LifecycleCoordinator::activateSession(std::shared_ptr<ProtocolSession
         if (!snapshot) return makeSessionError(SessionErrc::WrongGeneration);
 
         try {
+            if (mRole == EndpointRole::Client) {
+                ll::getLogger().info("Connected to a server running LeviLamina");
+            } else {
+                ll::getLogger().info("A client {} running LeviLamina connected", key.connection);
+            }
+
             ll::event::EventBus::getInstance().publish(ProtocolEstablishedEvent{SessionAccess::makeSession(session)});
         } catch (...) {}
 
