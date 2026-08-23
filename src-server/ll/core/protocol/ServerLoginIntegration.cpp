@@ -486,10 +486,20 @@ ServerLoginIntegration::filterIncoming(NetworkIdentifierWithSubId const& sender,
         static_cast<std::uint8_t>(sender.subClientId),
         generation,
     };
-    if (!mImpl->gate.contains(key)) return InboundDisposition::UseNativePolicy;
-    if (mImpl->gate.admit(key, packetSize)) return InboundDisposition::Allowed;
+    if (mImpl->gate.contains(key)) {
+        if (mImpl->gate.admit(key, packetSize)) return InboundDisposition::Allowed;
 
-    mImpl->rejectPending(mImpl->find(key), ProtocolErrc::RateLimitExceeded);
+        mImpl->rejectPending(mImpl->find(key), ProtocolErrc::RateLimitExceeded);
+        return InboundDisposition::Rejected;
+    }
+
+    auto entry = mImpl->find(key);
+    if (!entry || !entry->session || entry->session->state() != SessionState::Active) {
+        return InboundDisposition::UseNativePolicy;
+    }
+    if (entry->session->admitInbound(packetSize)) return InboundDisposition::UseNativePolicy;
+
+    mImpl->rejectPending(entry, ProtocolErrc::RateLimitExceeded);
     return InboundDisposition::Rejected;
 }
 

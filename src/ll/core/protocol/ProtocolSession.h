@@ -104,6 +104,9 @@ public:
     [[nodiscard]] Expected<>
     sendPrepared(PreparedOutbound const& prepared, std::string const& body, std::uint64_t generation) noexcept;
 
+    [[nodiscard]] Expected<>
+    admitInbound(std::size_t packetSize, std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now());
+
     [[nodiscard]] Expected<> validateInbound(
         std::uint64_t                         runtimeId,
         std::uint8_t                          envelopeSchema,

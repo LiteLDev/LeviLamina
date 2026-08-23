@@ -362,6 +362,17 @@ Expected<> ProtocolSession::sendPrepared(
     }
 }
 
+Expected<> ProtocolSession::admitInbound(std::size_t packetSize, std::chrono::steady_clock::time_point now) {
+    std::scoped_lock lock{mMutex};
+
+    if (mState != SessionState::Active) return makeSessionError(SessionErrc::WrongState);
+    if (!mInboundBudget.consume(packetSize, now)) {
+        return makeProtocolError(ProtocolErrc::RateLimitExceeded);
+    }
+
+    return {};
+}
+
 Expected<> ProtocolSession::validateInbound(
     std::uint64_t                         runtimeId,
     std::uint8_t                          envelopeSchema,
@@ -385,7 +396,9 @@ Expected<> ProtocolSession::validateInbound(
     if (!canReceive(role(), found->payload.direction)) return makeSessionError(SessionErrc::WrongDirection);
     if (schema != found->payload.schema) return makeProtocolError(ProtocolErrc::InvalidSchema);
     if (bodySize > found->payload.maxEncodedSize) return makeProtocolError(ProtocolErrc::MalformedPayload);
-    if (!mInboundBudget.consume(bodySize, now)) return makeProtocolError(ProtocolErrc::RateLimitExceeded);
+    if (role() != EndpointRole::Server && !mInboundBudget.consume(bodySize, now)) {
+        return makeProtocolError(ProtocolErrc::RateLimitExceeded);
+    }
 
     return {};
 }
