@@ -46,7 +46,12 @@ Expected<> ClientTransport::sendLogical(std::unique_ptr<ll::network::Packet> pac
             return makeTransportError(TransportErrc::RuntimePacketUnavailable, "invalid RuntimePacket envelope");
         }
 
-        minecraft->mPacketSender.sendToServer(runtime);
+        try {
+            minecraft->mPacketSender.sendToServer(runtime);
+        } catch (...) {
+            return makeTransportError(TransportErrc::SendFailed, "Minecraft packet sender threw while sending");
+        }
+
         return {};
     } catch (...) {
         return makeExceptionError();

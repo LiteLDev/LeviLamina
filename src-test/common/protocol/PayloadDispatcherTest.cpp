@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 
 #include <memory>
+#include <stdexcept>
 #include <string>
 
 #include "ll/api/mod/Mod.h"
@@ -37,6 +38,10 @@ struct HandlerlessPayload {
     std::uint32_t value{};
 };
 
+struct ThrowingPayload {
+    std::uint32_t value{};
+};
+
 template <class T>
 struct U32Codec {
     Expected<> encode(Encoder& out, T const& value, SchemaVersion schema) const {
@@ -49,6 +54,17 @@ struct U32Codec {
         auto value = in.readU32();
         if (!value) return forwardError(value.error());
         return T{*value};
+    }
+};
+
+struct ThrowingDecodeCodec {
+    Expected<> encode(Encoder& out, ThrowingPayload const& value, SchemaVersion schema) const {
+        if (schema != 1) return makeCodecError(CodecErrc::UnsupportedSchema);
+        return out.writeU32(value.value);
+    }
+
+    Expected<ThrowingPayload> decode(Decoder&, SchemaVersion) const {
+        throw std::runtime_error{"codec decode failure"};
     }
 };
 
@@ -265,6 +281,63 @@ TEST(ProtocolPayloadDispatcherTest, RejectsNegotiatedPayloadWithoutLocalHandler)
     ASSERT_FALSE(registration);
     ASSERT_TRUE(registration.error().isA<RegistrationErrorInfo>());
     EXPECT_EQ(registration.error().as<RegistrationErrorInfo>().code, RegistrationErrc::InvalidDirection);
+    EXPECT_TRUE(module->reset());
+}
+
+TEST(ProtocolPayloadDispatcherTest, ClassifiesEscapedCodecExceptionWithoutInvokingHandler) {
+    auto owner = std::make_shared<DispatcherTestMod>("ProtocolDispatcherException", "dispatcher_exception");
+    owner->enable();
+
+    auto& registry = PayloadRegistry::getInstance();
+    auto  module   = registry.registerModule(
+        ModuleDefinition{
+            .name             = *ModuleName::parse("main"),
+            .version          = {1, 0, 0},
+            .protocolVersions = {1, 1},
+    },
+        owner
+    );
+    ASSERT_TRUE(module);
+
+#ifdef LL_PLAT_C
+    constexpr auto LocalRole = EndpointRole::Client;
+    constexpr auto Direction = PayloadDirection::ServerToClient;
+#elifdef LL_PLAT_S
+    constexpr auto LocalRole = EndpointRole::Server;
+    constexpr auto Direction = PayloadDirection::ClientToServer;
+#endif
+
+    std::size_t handled{};
+    auto        registration = registry.registerPayload<ThrowingPayload>(
+        *module,
+        PayloadDefinition{
+            .name           = *PayloadName::parse("message"),
+            .direction      = Direction,
+            .schemas        = {1},
+            .maxEncodedSize = 64,
+        },
+        ThrowingDecodeCodec{},
+        [&handled](PayloadContext const&, ThrowingPayload&&) -> Expected<> {
+            ++handled;
+            return {};
+        }
+    );
+    ASSERT_TRUE(registration);
+
+    auto snapshot   = detail::PayloadRegistryAccess::snapshot(registry);
+    auto descriptor = registry.findPayload(registration->id());
+    ASSERT_NE(descriptor, nullptr);
+    auto session = makeActiveSession(LocalRole, snapshot, *descriptor);
+
+    auto encodedPacket = packet(*descriptor);
+    ASSERT_TRUE(encodedPacket);
+    auto dispatched = detail::PayloadDispatcher{}.dispatch(session, **encodedPacket);
+    ASSERT_FALSE(dispatched);
+    ASSERT_TRUE(dispatched.error().isA<CodecErrorInfo>());
+    EXPECT_EQ(dispatched.error().as<CodecErrorInfo>().code, CodecErrc::ExceptionEscaped);
+    EXPECT_EQ(handled, 0);
+
+    EXPECT_TRUE(registration->reset());
     EXPECT_TRUE(module->reset());
 }
 

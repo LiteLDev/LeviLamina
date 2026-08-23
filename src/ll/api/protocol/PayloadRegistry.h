@@ -14,6 +14,7 @@
 #include "ll/api/base/Macro.h"
 #include "ll/api/mod/NativeMod.h"
 #include "ll/api/protocol/Codec.h"
+#include "ll/api/protocol/Error.h"
 #include "ll/api/protocol/ModuleDescriptor.h"
 #include "ll/api/protocol/ModuleRegistration.h"
 #include "ll/api/protocol/PayloadDescriptor.h"
@@ -53,7 +54,13 @@ Expected<PayloadCallbacks> makePayloadCallbacks(Codec codec, PayloadHandler<T> h
             try {
                 Encoder encoder{maxEncodedSize};
 
-                auto encoded = codecState->encode(encoder, *static_cast<T const*>(rawValue), schema);
+                auto encoded = [&]() noexcept -> Expected<> {
+                    try {
+                        return codecState->encode(encoder, *static_cast<T const*>(rawValue), schema);
+                    } catch (...) {
+                        return makeCodecError(CodecErrc::ExceptionEscaped, "payload codec encode");
+                    }
+                }();
                 if (!encoded) {
                     return forwardError(encoded.error());
                 }
@@ -73,7 +80,13 @@ Expected<PayloadCallbacks> makePayloadCallbacks(Codec codec, PayloadHandler<T> h
                 try {
                     Decoder decoder{body, body.size()};
 
-                    auto decoded = codecState->decode(decoder, schema);
+                    auto decoded = [&]() noexcept -> Expected<T> {
+                        try {
+                            return codecState->decode(decoder, schema);
+                        } catch (...) {
+                            return makeCodecError(CodecErrc::ExceptionEscaped, "payload codec decode");
+                        }
+                    }();
                     if (!decoded) {
                         return forwardError(decoded.error());
                     }

@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 
+#include <stdexcept>
 #include <string>
 
 #include "nlohmann/json.hpp"
@@ -7,11 +8,26 @@
 #include "ll/api/mod/Manifest.h"
 #include "ll/api/protocol/Error.h"
 #include "ll/api/protocol/Limits.h"
+#include "ll/api/protocol/PayloadRegistry.h"
 #include "ll/api/reflection/Deserialization.h"
 #include "ll/api/reflection/Serialization.h"
 #include "ll/core/protocol/ProtocolConfig.h"
 
 namespace ll::protocol::test {
+
+namespace {
+
+struct ThrowingEncodePayload {};
+
+struct ThrowingEncodeCodec {
+    Expected<> encode(Encoder&, ThrowingEncodePayload const&, SchemaVersion) const {
+        throw std::runtime_error{"codec encode failure"};
+    }
+
+    Expected<ThrowingEncodePayload> decode(Decoder&, SchemaVersion) const { return ThrowingEncodePayload{}; }
+};
+
+} // namespace
 
 static_assert(Limits::MaxDeclaredModules == 512);
 static_assert(Limits::MaxDeclaredPayloads == 2048);
@@ -45,6 +61,21 @@ TEST(ProtocolErrorTest, UsesSeparateErrorFamilies) {
     EXPECT_TRUE(codec.error().isA<CodecErrorInfo>());
     EXPECT_TRUE(state.error().isA<SessionErrorInfo>());
     EXPECT_TRUE(wire.error().isA<ProtocolErrorInfo>());
+}
+
+TEST(ProtocolErrorTest, ClassifiesEscapedEncodeExceptionAtCodecBoundary) {
+    auto callbacks = detail::makePayloadCallbacks<ThrowingEncodePayload>(
+        ThrowingEncodeCodec{},
+        PayloadHandler<ThrowingEncodePayload>{}
+    );
+    ASSERT_TRUE(callbacks);
+
+    ThrowingEncodePayload payload;
+
+    auto encoded = callbacks->encode(&payload, 1, 64);
+    ASSERT_FALSE(encoded);
+    ASSERT_TRUE(encoded.error().isA<CodecErrorInfo>());
+    EXPECT_EQ(encoded.error().as<CodecErrorInfo>().code, CodecErrc::ExceptionEscaped);
 }
 
 TEST(ProtocolConfigTest, AcceptsDocumentedDefaults) {
