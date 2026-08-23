@@ -14,7 +14,7 @@
 
 namespace ll::protocol::detail {
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolServerDiscoveryHook,
     HookPriority::Highest,
     ServerNetworkHandler,
@@ -32,7 +32,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     return result;
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolServerLoginHandshakeHook,
     HookPriority::Highest,
     ServerNetworkHandler,
@@ -53,7 +53,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     }
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolServerPreloginRuntimePacketGateHook,
     HookPriority::Highest,
     ServerNetworkHandler,
@@ -83,11 +83,20 @@ invokeOriginalClientHandshake(NetEventCallback& callback, NetworkIdentifierWithS
         ClientToServerHandshakePacket packet;
         packet.mSenderSubId = sender.subClientId;
 
-        reinterpret_cast<ProtocolServerLoginHandshakeHook*>(&callback)->origin(sender.id, packet);
+        auto* hook = static_cast<ProtocolServerLoginHandshakeHook*>(static_cast<void*>(&callback));
+        hook->origin(sender.id, packet);
         return {};
     } catch (...) {
         return makeExceptionError();
     }
+}
+
+void registerServerLoginHooks() {
+    static memory::HookRegistrar<
+        ProtocolServerDiscoveryHook,
+        ProtocolServerLoginHandshakeHook,
+        ProtocolServerPreloginRuntimePacketGateHook>
+        hooks;
 }
 
 } // namespace ll::protocol::detail

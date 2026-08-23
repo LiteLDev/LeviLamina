@@ -14,7 +14,7 @@
 
 namespace ll::protocol::detail {
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolClientOutgoingConnectionHook,
     HookPriority::Normal,
     NetworkSystem,
@@ -34,7 +34,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     return accepted;
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolClientNetworkConnectionClosedHook,
     HookPriority::High,
     NetworkSystem,
@@ -55,7 +55,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(id, reason, message, body, skipMessage, summary);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolClientAllConnectionsClosedHook,
     HookPriority::High,
     NetworkSystem,
@@ -72,7 +72,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(reason, skipMessage);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolClientAllRemoteConnectionsClosedHook,
     HookPriority::High,
     NetworkSystem,
@@ -89,7 +89,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(reason, skipMessage);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolClientOutgoingConnectionFailedHook,
     HookPriority::High,
     NetworkSystem,
@@ -105,7 +105,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(reason);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolClientHandlerDisconnectHook,
     HookPriority::High,
     ClientNetworkHandler,
@@ -127,7 +127,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(id, reason, stage, message, body, skipMessage, telemetry);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolClientCancelJoinHook,
     HookPriority::High,
     ClientInstance,
@@ -142,7 +142,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin();
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolClientLevelExitHook,
     HookPriority::High,
     ClientInstance,
@@ -157,7 +157,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin();
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolClientSuspensionDisconnectHook,
     HookPriority::High,
     ClientInstance,
@@ -170,6 +170,20 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     }
 
     origin();
+}
+
+void registerClientLifecycleHooks() {
+    static memory::HookRegistrar<
+        ProtocolClientOutgoingConnectionHook,
+        ProtocolClientNetworkConnectionClosedHook,
+        ProtocolClientAllConnectionsClosedHook,
+        ProtocolClientAllRemoteConnectionsClosedHook,
+        ProtocolClientOutgoingConnectionFailedHook,
+        ProtocolClientHandlerDisconnectHook,
+        ProtocolClientCancelJoinHook,
+        ProtocolClientLevelExitHook,
+        ProtocolClientSuspensionDisconnectHook>
+        hooks;
 }
 
 } // namespace ll::protocol::detail

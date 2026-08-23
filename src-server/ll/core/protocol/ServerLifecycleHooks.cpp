@@ -14,7 +14,7 @@
 
 namespace ll::protocol::detail {
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolServerConnectHook,
     HookPriority::Normal,
     ServerNetworkHandler,
@@ -28,7 +28,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     }
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolServerDisconnectClientHook,
     HookPriority::High,
     ServerNetworkHandler,
@@ -46,7 +46,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(id, subClientId, reason);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolServerDisconnectClientWithMessageHook,
     HookPriority::High,
     ServerNetworkHandler,
@@ -66,7 +66,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(id, subClientId, reason, message, std::move(filteredMessage));
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolServerDisconnectPrimaryClientHook,
     HookPriority::High,
     ServerNetworkHandler,
@@ -83,7 +83,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(id, reason);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolServerHandlerDisconnectHook,
     HookPriority::High,
     ServerNetworkHandler,
@@ -105,7 +105,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(id, reason, stage, message, body, skipMessage, telemetry);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolServerNetworkConnectionClosedHook,
     HookPriority::High,
     NetworkSystem,
@@ -126,7 +126,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(id, reason, message, body, skipMessage, summary);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolServerAllConnectionsClosedHook,
     HookPriority::High,
     NetworkSystem,
@@ -143,7 +143,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(reason, skipMessage);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolServerAllRemoteConnectionsClosedHook,
     HookPriority::High,
     NetworkSystem,
@@ -160,7 +160,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(reason, skipMessage);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolServerStoppingHook,
     HookPriority::High,
     ServerInstance,
@@ -169,6 +169,20 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 ) {
     server::shutdown();
     origin();
+}
+
+void registerServerLifecycleHooks() {
+    static memory::HookRegistrar<
+        ProtocolServerConnectHook,
+        ProtocolServerDisconnectClientHook,
+        ProtocolServerDisconnectClientWithMessageHook,
+        ProtocolServerDisconnectPrimaryClientHook,
+        ProtocolServerHandlerDisconnectHook,
+        ProtocolServerNetworkConnectionClosedHook,
+        ProtocolServerAllConnectionsClosedHook,
+        ProtocolServerAllRemoteConnectionsClosedHook,
+        ProtocolServerStoppingHook>
+        hooks;
 }
 
 } // namespace ll::protocol::detail

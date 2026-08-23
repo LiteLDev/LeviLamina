@@ -6,6 +6,13 @@
 #include "ll/core/protocol/ServerEndpoint.h"
 #include "ll/core/protocol/ServerLoginIntegration.h"
 
+namespace ll::protocol::detail {
+
+void registerServerLifecycleHooks();
+void registerServerLoginHooks();
+
+} // namespace ll::protocol::detail
+
 namespace ll::protocol::server {
 
 Expected<> initialize() {
@@ -36,6 +43,9 @@ Expected<> initialize() {
         shutdownServerEndpoint();
         return initialized;
     }
+
+    detail::registerServerLifecycleHooks();
+    detail::registerServerLoginHooks();
 
     return {};
 }

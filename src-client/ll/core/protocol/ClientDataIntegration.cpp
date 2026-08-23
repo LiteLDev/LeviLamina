@@ -18,7 +18,7 @@ Expected<> addClientDiscoveryMarker(Json::Value& root) {
     return injectDiscoveryMarker(root, version.to_string(), build);
 }
 
-LL_AUTO_TYPE_STATIC_HOOK(
+LL_TYPE_STATIC_HOOK(
     ProtocolClientDataMarkerHook,
     HookPriority::Highest,
     BaseConnectionRequest,
@@ -30,5 +30,7 @@ LL_AUTO_TYPE_STATIC_HOOK(
     addClientDiscoveryMarker(root);
     origin(root, skinInfo);
 }
+
+void registerClientDataHook() { static memory::HookRegistrar<ProtocolClientDataMarkerHook> hook; }
 
 } // namespace ll::protocol::detail

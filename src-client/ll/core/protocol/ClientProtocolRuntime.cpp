@@ -6,6 +6,14 @@
 #include "ll/core/protocol/ModLifecycleIntegration.h"
 #include "ll/core/protocol/ProtocolRuntime.h"
 
+namespace ll::protocol::detail {
+
+void registerClientDataHook();
+void registerClientLifecycleHooks();
+void registerClientLoginHooks();
+
+} // namespace ll::protocol::detail
+
 namespace ll::protocol::client {
 
 Expected<> initialize() {
@@ -36,6 +44,10 @@ Expected<> initialize() {
         shutdownClientEndpoint();
         return initialized;
     }
+
+    detail::registerClientDataHook();
+    detail::registerClientLifecycleHooks();
+    detail::registerClientLoginHooks();
 
     return {};
 }

@@ -8,7 +8,7 @@
 
 namespace ll::protocol::detail {
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolClientLoginTimeoutHook,
     HookPriority::Highest,
     ClientInstance,
@@ -20,7 +20,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     return origin(isInitFinished);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ProtocolClientPlayStatusHook,
     HookPriority::Highest,
     ClientNetworkHandler,
@@ -47,6 +47,10 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         _disconnectFromServer(id);
         return;
     }
+}
+
+void registerClientLoginHooks() {
+    static memory::HookRegistrar<ProtocolClientLoginTimeoutHook, ProtocolClientPlayStatusHook> hooks;
 }
 
 } // namespace ll::protocol::detail
