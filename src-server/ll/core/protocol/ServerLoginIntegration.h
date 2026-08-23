@@ -42,7 +42,11 @@ public:
     [[nodiscard]] HandshakeDisposition
     handleHandshake(ServerNetworkHandler& handler, NetworkIdentifierWithSubId const& sender);
 
-    void observeConnectionRequest(NetworkIdentifier const& id, ConnectionRequest const& request) noexcept;
+    void observeConnectionRequest(
+        NetworkIdentifier const& id,
+        std::uint8_t             subClientId,
+        ConnectionRequest const& request
+    ) noexcept;
 
     [[nodiscard]] InboundDisposition filterIncoming(NetworkIdentifierWithSubId const& sender, std::size_t packetSize);
 

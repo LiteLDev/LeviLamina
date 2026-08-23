@@ -76,6 +76,7 @@ struct ClientLoginIntegration::Impl {
 
     struct Key {
         std::string   connection;
+        std::uint8_t  subClientId{};
         std::uint64_t generation{};
         auto          operator<=>(Key const&) const = default;
     };
@@ -143,7 +144,7 @@ struct ClientLoginIntegration::Impl {
             auto packet = ControlPacket::create(
                 message,
                 entry->handshake->coreProtocol(),
-                SubClientId::PrimaryClient,
+                static_cast<SubClientId>(entry->key.subClientId),
                 entry->handshake->limits().maxControlBody
             );
 
@@ -182,7 +183,10 @@ void ClientLoginIntegration::observeConnection(NetworkIdentifier const& id) noex
         auto generation = endpoint ? endpoint->currentGeneration(id) : 0;
         if (generation == 0) return;
 
-        auto entry = std::make_shared<Impl::Entry>(Impl::Key{id.toString(), generation}, id);
+        auto entry = std::make_shared<Impl::Entry>(
+            Impl::Key{id.toString(), static_cast<std::uint8_t>(SubClientId::PrimaryClient), generation},
+            id
+        );
         if (!ll::getLeviConfig().targeted.protocol.enabled) entry->state = Impl::State::Vanilla;
 
         std::scoped_lock lock{mImpl->mutex};
@@ -261,15 +265,22 @@ void ClientLoginIntegration::pollTimeouts(ClientInstance& client) noexcept {
     } catch (...) {}
 }
 
-ClientLoginIntegration::LoginSuccessDisposition
-ClientLoginIntegration::beforePlayStatus(NetworkIdentifier const& id, PlayStatus status) noexcept {
+ClientLoginIntegration::LoginSuccessDisposition ClientLoginIntegration::beforePlayStatus(
+    NetworkIdentifier const& id,
+    std::uint8_t             subClientId,
+    PlayStatus               status
+) noexcept {
     try {
+        if (!ll::getLeviConfig().targeted.protocol.enabled) {
+            return LoginSuccessDisposition::ContinueVanilla;
+        }
+
         auto endpoint = getClientEndpoint();
 
         auto generation = endpoint ? endpoint->currentGeneration(id) : 0;
         if (generation == 0) return LoginSuccessDisposition::Reject;
 
-        auto entry = mImpl->find({id.toString(), generation});
+        auto entry = mImpl->find({id.toString(), subClientId, generation});
         if (!entry) return LoginSuccessDisposition::ContinueVanilla;
 
         std::scoped_lock lock{entry->mutex};
@@ -298,14 +309,15 @@ ClientLoginIntegration::beforePlayStatus(NetworkIdentifier const& id, PlayStatus
     }
 }
 
-Expected<> ClientLoginIntegration::completeLoginSuccess(NetworkIdentifier const& id) noexcept {
+Expected<>
+ClientLoginIntegration::completeLoginSuccess(NetworkIdentifier const& id, std::uint8_t subClientId) noexcept {
     try {
         auto endpoint = getClientEndpoint();
 
         auto generation = endpoint ? endpoint->currentGeneration(id) : 0;
         if (generation == 0) return makeSessionError(SessionErrc::WrongGeneration);
 
-        auto entry = mImpl->find({id.toString(), generation});
+        auto entry = mImpl->find({id.toString(), subClientId, generation});
         if (!entry) return makeSessionError(SessionErrc::NotFound);
 
         std::scoped_lock lock{entry->mutex};
@@ -337,9 +349,23 @@ Expected<> ClientLoginIntegration::receive(
         auto generation = endpoint->currentGeneration(networkId);
         if (generation == 0) return makeSessionError(SessionErrc::WrongGeneration);
 
-        Impl::Key key{networkId.toString(), generation};
+        Impl::Key key{
+            networkId.toString(),
+            static_cast<std::uint8_t>(packet.mSenderSubId),
+            generation,
+        };
 
         auto entry = mImpl->find(key);
+        if (!entry && key.subClientId != static_cast<std::uint8_t>(SubClientId::PrimaryClient)
+            && mImpl->find({key.connection, static_cast<std::uint8_t>(SubClientId::PrimaryClient), key.generation})) {
+            auto candidate = std::make_shared<Impl::Entry>(key, networkId);
+            {
+                std::scoped_lock lock{mImpl->mutex};
+                auto [position, inserted] = mImpl->entries.try_emplace(key, candidate);
+
+                entry = inserted ? std::move(candidate) : position->second;
+            }
+        }
         if (!entry) return makeSessionError(SessionErrc::NotFound);
 
         Expected<> result;
@@ -351,9 +377,7 @@ Expected<> ClientLoginIntegration::receive(
                 }
 
                 if (entry->state == Impl::State::AwaitingServer) {
-                    if (packet.getRuntimeId() != HelloRuntimeId
-                        || static_cast<std::uint8_t>(packet.mSenderSubId)
-                               != static_cast<std::uint8_t>(SubClientId::PrimaryClient)) {
+                    if (packet.getRuntimeId() != HelloRuntimeId) {
                         return makeProtocolError(ProtocolErrc::UnexpectedMessage);
                     }
 
@@ -434,7 +458,11 @@ Expected<> ClientLoginIntegration::receive(
 
         auto generation = endpoint ? endpoint->currentGeneration(networkId) : 0;
         if (generation != 0) {
-            mImpl->fail(mImpl->find({networkId.toString(), generation}), callback, ProtocolErrc::InternalFailure);
+            mImpl->fail(
+                mImpl->find({networkId.toString(), static_cast<std::uint8_t>(packet.mSenderSubId), generation}),
+                callback,
+                ProtocolErrc::InternalFailure
+            );
         }
 
         return makeExceptionError();
@@ -457,7 +485,11 @@ Expected<> ClientLoginIntegration::receive(
     auto result = PayloadDispatcher{}.dispatch(session, packet);
     if (!result) {
         auto error = classifyProtocolError(result.error(), ProtocolErrc::MalformedPayload);
-        mImpl->fail(mImpl->find({networkId.toString(), generation}), callback, error);
+        mImpl->fail(
+            mImpl->find({networkId.toString(), static_cast<std::uint8_t>(packet.mSenderSubId), generation}),
+            callback,
+            error
+        );
     }
 
     return result;

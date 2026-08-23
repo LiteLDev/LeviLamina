@@ -35,8 +35,9 @@ public:
     void closeAll() noexcept;
     void pollTimeouts(ClientInstance& client) noexcept;
 
-    [[nodiscard]] LoginSuccessDisposition beforePlayStatus(NetworkIdentifier const& id, PlayStatus status) noexcept;
-    [[nodiscard]] Expected<>              completeLoginSuccess(NetworkIdentifier const& id) noexcept;
+    [[nodiscard]] LoginSuccessDisposition
+    beforePlayStatus(NetworkIdentifier const& id, std::uint8_t subClientId, PlayStatus status) noexcept;
+    [[nodiscard]] Expected<> completeLoginSuccess(NetworkIdentifier const& id, std::uint8_t subClientId) noexcept;
 
     [[nodiscard]] Expected<>
     receive(NetworkIdentifier const& networkId, NetEventCallback& callback, ControlPacket const& packet) override;

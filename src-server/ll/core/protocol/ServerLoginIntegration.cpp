@@ -266,6 +266,7 @@ void ServerLoginIntegration::shutdown() {
 
 void ServerLoginIntegration::observeConnectionRequest(
     NetworkIdentifier const& id,
+    std::uint8_t             subClientId,
     ConnectionRequest const& request
 ) noexcept {
     try {
@@ -285,7 +286,7 @@ void ServerLoginIntegration::observeConnectionRequest(
 
         auto key = ServerInboundGateKey{
             id.toString(),
-            static_cast<std::uint8_t>(SubClientId::PrimaryClient),
+            subClientId,
             generation,
         };
 

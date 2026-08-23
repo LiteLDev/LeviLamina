@@ -29,14 +29,16 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     NetworkIdentifier const& id,
     PlayStatusPacket const&  packet
 ) {
-    auto disposition = getClientLoginIntegration().beforePlayStatus(id, packet.mStatus);
+    auto const subClientId = static_cast<std::uint8_t>(packet.mSenderSubId);
+
+    auto disposition = getClientLoginIntegration().beforePlayStatus(id, subClientId, packet.mStatus);
     switch (disposition) {
     case ClientLoginIntegration::LoginSuccessDisposition::ContinueVanilla:
         origin(id, packet);
         return;
     case ClientLoginIntegration::LoginSuccessDisposition::ActivateAfterOrigin:
         origin(id, packet);
-        if (!getClientLoginIntegration().completeLoginSuccess(id)) {
+        if (!getClientLoginIntegration().completeLoginSuccess(id, subClientId)) {
             _disconnectFromServer(id);
         }
 

@@ -25,7 +25,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 ) {
     auto result = origin(id, packet);
     if (result && packet.mConnectionRequest) {
-        getServerLoginIntegration().observeConnectionRequest(id, *packet.mConnectionRequest);
+        getServerLoginIntegration()
+            .observeConnectionRequest(id, static_cast<std::uint8_t>(packet.mSenderSubId), *packet.mConnectionRequest);
     }
 
     return result;
