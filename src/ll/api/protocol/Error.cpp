@@ -28,8 +28,6 @@ std::string_view describe(IdentityErrc code) {
         return "invalid syntax";
     case IdentityErrc::TooLong:
         return "value is too long";
-    case IdentityErrc::NamespaceMismatch:
-        return "namespace mismatch";
     }
     return "unknown identity error";
 }
@@ -178,8 +176,6 @@ std::string_view describe(TransportErrc code) {
         return "transport endpoint no longer exists";
     case TransportErrc::RuntimePacketUnavailable:
         return "RuntimePacket transport is unavailable";
-    case TransportErrc::MinecraftRejected:
-        return "Minecraft rejected the packet";
     case TransportErrc::ReconstructedSizeExceeded:
         return "reconstructed packet size exceeds the transport limit";
     case TransportErrc::SendFailed:

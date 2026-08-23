@@ -90,7 +90,6 @@ WireErrorCode toWireErrorCode(TransportErrc code) noexcept {
     case TransportErrc::ReconstructedSizeExceeded:
         return WireErrorCode::SizeLimitExceeded;
     case TransportErrc::RuntimePacketUnavailable:
-    case TransportErrc::MinecraftRejected:
     case TransportErrc::SendFailed:
         return WireErrorCode::InternalFailure;
     }

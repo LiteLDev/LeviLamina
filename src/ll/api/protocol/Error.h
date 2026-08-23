@@ -12,7 +12,6 @@ namespace ll::protocol {
 enum class IdentityErrc : std::uint8_t {
     InvalidSyntax,
     TooLong,
-    NamespaceMismatch,
 };
 
 enum class RegistrationErrc : std::uint8_t {
@@ -87,7 +86,6 @@ enum class LifecycleErrc : std::uint8_t {
 enum class TransportErrc : std::uint8_t {
     EndpointGone,
     RuntimePacketUnavailable,
-    MinecraftRejected,
     ReconstructedSizeExceeded,
     SendFailed,
 };
