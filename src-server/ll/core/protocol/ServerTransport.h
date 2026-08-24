@@ -22,7 +22,7 @@ class ServerTransport final : public SessionTransport {
     [[nodiscard]] Expected<> sendLogical(std::unique_ptr<ll::network::Packet> packet) noexcept;
 
 public:
-    ServerTransport(NetworkIdentifierWithSubId const& recipient, std::uint64_t generation);
+    ServerTransport(NetworkIdentifierWithSubId recipient, std::uint64_t generation);
 
     [[nodiscard]] bool       isOnEndpointThread() const override;
     [[nodiscard]] Expected<> send(std::unique_ptr<ProtocolEnvelopePacket> packet) noexcept override;

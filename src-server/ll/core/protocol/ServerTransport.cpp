@@ -4,19 +4,14 @@
 
 #include "ll/api/network/packet/runtime/RuntimePacket.h"
 #include "ll/api/protocol/Error.h"
-#include "ll/api/service/Bedrock.h"
 #include "ll/core/protocol/ControlPackets.h"
 #include "ll/core/protocol/ProtocolEnvelopePacket.h"
 #include "ll/core/protocol/ServerEndpoint.h"
 
-#include "mc/network/NetworkConnection.h"
-#include "mc/network/PacketSender.h"
-#include "mc/network/ServerNetworkHandler.h"
-
 namespace ll::protocol::detail {
 
-ServerTransport::ServerTransport(NetworkIdentifierWithSubId const& recipient, std::uint64_t generation)
-: mRecipient(recipient),
+ServerTransport::ServerTransport(NetworkIdentifierWithSubId recipient, std::uint64_t generation)
+: mRecipient(std::move(recipient)),
   mGeneration(generation) {}
 
 bool ServerTransport::isOnEndpointThread() const {
@@ -31,9 +26,7 @@ Expected<> ServerTransport::sendLogical(std::unique_ptr<ll::network::Packet> pac
         auto endpoint = getServerEndpoint();
         if (!endpoint || !endpoint->isOnEndpointThread()) return makeSessionError(SessionErrc::WrongThread);
 
-        auto* connection = endpoint->findLiveConnection(mRecipient.id, mGeneration);
-        auto  handler    = service::getServerNetworkHandler();
-        if (!connection || !handler || !handler->mPacketSender) {
+        if (!endpoint->findLiveConnection(mRecipient.id, mGeneration)) {
             return makeSessionError(SessionErrc::TransportUnavailable);
         }
 
@@ -43,7 +36,7 @@ Expected<> ServerTransport::sendLogical(std::unique_ptr<ll::network::Packet> pac
         }
 
         try {
-            handler->mPacketSender->sendToClient(connection->mId, runtime, mRecipient.subClientId);
+            runtime.sendToClient(mRecipient);
         } catch (...) {
             return makeTransportError(TransportErrc::SendFailed, "Minecraft packet sender threw while sending");
         }
