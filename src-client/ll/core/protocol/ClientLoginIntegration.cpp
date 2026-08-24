@@ -118,7 +118,8 @@ struct ClientLoginIntegration::Impl {
         return true;
     }
 
-    void fail(std::shared_ptr<Entry> const& entry, NetEventCallback& callback, ProtocolErrc error) {
+    void
+    fail(std::shared_ptr<Entry> const& entry, NetEventCallback& callback, ProtocolErrc error, bool disconnect = true) {
         if (!entry) return;
         {
             std::scoped_lock lock{entry->mutex};
@@ -136,7 +137,7 @@ struct ClientLoginIntegration::Impl {
             return;
         }
 
-        static_cast<ClientNetworkHandler&>(callback)._disconnectFromServer(entry->networkId);
+        if (disconnect) static_cast<ClientNetworkHandler&>(callback)._disconnectFromServer(entry->networkId);
     }
 
     Expected<> send(std::shared_ptr<Entry> const& entry, HandshakeProgress const& progress) {
@@ -369,6 +370,7 @@ Expected<> ClientLoginIntegration::receive(
         if (!entry) return makeSessionError(SessionErrc::NotFound);
 
         Expected<> result;
+        bool       peerReportedError{};
         {
             std::scoped_lock lock{entry->mutex};
             result = [&]() -> Expected<> {
@@ -428,13 +430,18 @@ Expected<> ClientLoginIntegration::receive(
                     return mImpl->send(entry, *progress);
                 }
 
-                if (entry->state != Impl::State::Negotiating || !entry->handshake) {
+                if (!entry->handshake) {
                     return makeProtocolError(ProtocolErrc::UnexpectedMessage);
                 }
 
                 auto decoded =
                     packet.decode(entry->handshake->coreProtocol(), entry->handshake->limits().maxControlBody);
                 if (!decoded) return forwardError(decoded.error());
+
+                peerReportedError = std::holds_alternative<ProtocolErrorMessage>(*decoded);
+                if (entry->state != Impl::State::Negotiating && !peerReportedError) {
+                    return makeProtocolError(ProtocolErrc::UnexpectedMessage);
+                }
 
                 auto progress = entry->handshake->receive(std::move(*decoded), packet.body().size());
                 if (!progress) return forwardError(progress.error());
@@ -449,7 +456,7 @@ Expected<> ClientLoginIntegration::receive(
 
         if (!result) {
             auto error = classifyProtocolError(result.error(), ProtocolErrc::InvalidControlSchema);
-            mImpl->fail(entry, callback, error);
+            mImpl->fail(entry, callback, error, !peerReportedError);
         }
 
         return result;

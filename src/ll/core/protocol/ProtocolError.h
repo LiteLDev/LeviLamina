@@ -8,6 +8,8 @@ namespace ll::protocol::detail {
 
 [[nodiscard]] WireErrorCode toWireErrorCode(ProtocolErrc code) noexcept;
 
+[[nodiscard]] ProtocolErrc fromWireErrorCode(WireErrorCode code) noexcept;
+
 [[nodiscard]] WireErrorCode toPayloadWireErrorCode(CodecErrc code) noexcept;
 
 [[nodiscard]] WireErrorCode toWireErrorCode(SessionErrc code) noexcept;

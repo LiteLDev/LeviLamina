@@ -34,6 +34,21 @@ inline constexpr std::array ControlSlots{
 };
 // clang-format on
 
+bool shouldLogIngressFailure(Error& error) noexcept {
+    if (error.isA<ProtocolErrorInfo>()) {
+        return error.as<ProtocolErrorInfo>().code == ProtocolErrc::InternalFailure;
+    }
+    if (error.isA<CodecErrorInfo>()) {
+        return error.as<CodecErrorInfo>().code == CodecErrc::ExceptionEscaped;
+    }
+    if (error.isA<SessionErrorInfo>()) {
+        auto code = error.as<SessionErrorInfo>().code;
+        return code == SessionErrc::WrongThread || code == SessionErrc::TransportUnavailable;
+    }
+
+    return true;
+}
+
 struct RuntimePacketAdapter::Impl {
     class Handler final : public ll::network::IPacketHandler {
         Impl& mOwner;
@@ -78,7 +93,7 @@ struct RuntimePacketAdapter::Impl {
             }
 
             auto result = dispatchSafely(*receiver, networkId, callback, packet);
-            if (!result) {
+            if (!result && shouldLogIngressFailure(result.error())) {
                 ll::getLogger().error(
                     "Protocol RuntimePacket ingress failed for runtime ID {}: {}",
                     packet.getRuntimeId(),

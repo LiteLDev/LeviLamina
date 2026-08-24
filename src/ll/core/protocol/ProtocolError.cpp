@@ -42,6 +42,53 @@ WireErrorCode toWireErrorCode(ProtocolErrc code) noexcept {
     return WireErrorCode::InternalFailure;
 }
 
+ProtocolErrc fromWireErrorCode(WireErrorCode code) noexcept {
+    switch (code) {
+    case WireErrorCode::MalformedControl:
+        return ProtocolErrc::InvalidControlSchema;
+    case WireErrorCode::InvalidState:
+        return ProtocolErrc::InvalidState;
+    case WireErrorCode::UnexpectedMessage:
+    case WireErrorCode::WrongDirection:
+        return ProtocolErrc::UnexpectedMessage;
+    case WireErrorCode::SequenceMismatch:
+        return ProtocolErrc::SequenceMismatch;
+    case WireErrorCode::ReplayDetected:
+        return ProtocolErrc::ReplayDetected;
+    case WireErrorCode::HandshakeIdMismatch:
+        return ProtocolErrc::HandshakeIdMismatch;
+    case WireErrorCode::VersionIncompatible:
+        return ProtocolErrc::VersionIncompatible;
+    case WireErrorCode::RequirementUnsatisfied:
+        return ProtocolErrc::RequirementUnsatisfied;
+    case WireErrorCode::DigestMismatch:
+        return ProtocolErrc::DigestMismatch;
+    case WireErrorCode::DeclarationMalformed:
+        return ProtocolErrc::DeclarationMalformed;
+    case WireErrorCode::IdentityCollision:
+        return ProtocolErrc::IdentityCollision;
+    case WireErrorCode::UnknownPayload:
+        return ProtocolErrc::UnknownPayload;
+    case WireErrorCode::InvalidSchema:
+        return ProtocolErrc::InvalidSchema;
+    case WireErrorCode::MalformedPayload:
+    case WireErrorCode::SizeLimitExceeded:
+        return ProtocolErrc::MalformedPayload;
+    case WireErrorCode::RateLimitExceeded:
+    case WireErrorCode::HandshakeBudgetExceeded:
+        return ProtocolErrc::RateLimitExceeded;
+    case WireErrorCode::Timeout:
+        return ProtocolErrc::Timeout;
+    case WireErrorCode::RegistryChanged:
+        return ProtocolErrc::InvalidState;
+    case WireErrorCode::None:
+    case WireErrorCode::EndpointGone:
+    case WireErrorCode::InternalFailure:
+        return ProtocolErrc::InternalFailure;
+    }
+    return ProtocolErrc::InternalFailure;
+}
+
 WireErrorCode toPayloadWireErrorCode(CodecErrc code) noexcept {
     switch (code) {
     case CodecErrc::UnsupportedSchema:

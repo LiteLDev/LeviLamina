@@ -179,6 +179,40 @@ TEST(ProtocolHandshakeCoordinatorTest, RejectsIncompatibleOrOutOfOrderControl) {
     EXPECT_EQ(serverSession->state(), SessionState::Handshaking);
 }
 
+TEST(ProtocolHandshakeCoordinatorTest, PreservesPeerProtocolErrorCodeAndDiagnostic) {
+    auto registry = emptyRegistry(1);
+    auto session  = handshakeSession(EndpointRole::Client, registry);
+
+    detail::HandshakeCoordinator client{EndpointRole::Client, session, registry, handshakeLimits()};
+
+    detail::Hello hello{
+        {1, 77, 1},
+        handshakeNonce(1),
+        {1, 1},
+        handshakeLimits(),
+        {},
+    };
+    ASSERT_TRUE(client.acceptServerHello(std::move(hello), handshakeNonce(2), 32));
+
+    // clang-format off
+    auto result = client.receive(
+        detail::ControlMessage{detail::ProtocolErrorMessage{
+            {1, 77, 2},
+            detail::WireErrorCode::RequirementUnsatisfied,
+            true,
+            1,
+            "example:gameplay",
+        }},
+        32
+    );
+    // clang-format on
+
+    ASSERT_FALSE(result);
+    ASSERT_TRUE(result.error().isA<ProtocolErrorInfo>());
+    EXPECT_EQ(result.error().as<ProtocolErrorInfo>().code, ProtocolErrc::RequirementUnsatisfied);
+    EXPECT_EQ(result.error().as<ProtocolErrorInfo>().context, "example:gameplay");
+}
+
 TEST(ProtocolHandshakeCoordinatorTest, RejectsInvalidAcceptedLimitsBeforeStateMutation) {
     auto                         registry = emptyRegistry(1);
     auto                         session  = handshakeSession(EndpointRole::Server, registry);

@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <atomic>
 #include <chrono>
-#include <climits>
 #include <map>
 #include <mutex>
 #include <optional>
@@ -18,6 +17,7 @@
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/thread/ServerThreadExecutor.h"
 #include "ll/core/Config.h"
+#include "ll/core/protocol/Constants.h"
 #include "ll/core/protocol/ControlPackets.h"
 #include "ll/core/protocol/DeferredLoginContinuation.h"
 #include "ll/core/protocol/Discovery.h"
@@ -33,13 +33,10 @@
 
 #include "mc/deps/certificates/WebToken.h"
 #include "mc/network/ConnectionRequest.h"
-#include "mc/network/IPacketSecurityController.h"
-#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/NetworkConnection.h"
 #include "mc/network/NetworkIdentifierWithSubId.h"
 #include "mc/network/NetworkSystem.h"
 #include "mc/network/PacketSender.h"
-#include "mc/network/PacketViolationResponse.h"
 #include "mc/network/RemoteConnector.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/ServerNetworkSystem.h"
@@ -94,35 +91,88 @@ std::string_view disconnectMessage(Connection::DisconnectFailReason reason) noex
     }
 }
 
-void disconnectPrelogin(NetworkIdentifier const& id, SubClientId subClientId, Connection::DisconnectFailReason reason) {
+Connection::DisconnectFailReason disconnectReason(ProtocolErrc error) noexcept {
+    switch (error) {
+    case ProtocolErrc::VersionIncompatible:
+        return Connection::DisconnectFailReason::VersionMismatch;
+    case ProtocolErrc::RequirementUnsatisfied:
+        return Connection::DisconnectFailReason::ClientSettingsIncompatibleWithServer;
+    case ProtocolErrc::Timeout:
+        return Connection::DisconnectFailReason::Timeout;
+    case ProtocolErrc::InternalFailure:
+        return Connection::DisconnectFailReason::UnrecoverableError;
+    default:
+        return Connection::DisconnectFailReason::BadPacket;
+    }
+}
+
+std::string peerDiagnostic(Error& error) {
+    if (error.isA<ProtocolErrorInfo>()) return error.as<ProtocolErrorInfo>().context;
+    if (error.isA<CodecErrorInfo>()) return error.as<CodecErrorInfo>().context;
+    if (error.isA<SessionErrorInfo>()) return error.as<SessionErrorInfo>().context;
+    return {};
+}
+
+std::string disconnectMessage(ProtocolErrc error, std::string_view diagnostic) {
+    switch (error) {
+    case ProtocolErrc::RequirementUnsatisfied: {
+        std::string message{"Required LeviLamina capability is unavailable"};
+        if (!diagnostic.empty()) message.append(": ").append(diagnostic);
+
+        message.push_back('.');
+        return message;
+    }
+    case ProtocolErrc::VersionIncompatible:
+        return "Incompatible LeviLamina protocol version.";
+    case ProtocolErrc::Timeout:
+        return "LeviLamina protocol negotiation timed out.";
+    case ProtocolErrc::RateLimitExceeded:
+        return "LeviLamina protocol rate limit exceeded.";
+    case ProtocolErrc::InternalFailure:
+        return "LeviLamina protocol negotiation failed.";
+    default:
+        return "Invalid LeviLamina protocol packet.";
+    }
+}
+
+bool isPeerFailure(ProtocolErrc error) noexcept { return error != ProtocolErrc::InternalFailure; }
+
+void disconnectPrelogin(
+    NetworkIdentifier const&         id,
+    SubClientId                      subClientId,
+    Connection::DisconnectFailReason reason,
+    std::string                      message = {}
+) {
     auto endpoint = getServerEndpoint();
     if (!endpoint) return;
 
     auto generation = endpoint->currentGeneration(id);
     if (generation == 0) return;
 
-    thread::ServerThreadExecutor::getDefault().execute([id, subClientId, reason, generation] {
-        auto endpoint = getServerEndpoint();
-        auto handler  = service::getServerNetworkHandler();
-        if (!endpoint || !handler || endpoint->currentGeneration(id) != generation) return;
+    thread::ServerThreadExecutor::getDefault().execute(
+        [id, subClientId, reason, generation, message = std::move(message)]() mutable {
+            auto endpoint = getServerEndpoint();
+            auto handler  = service::getServerNetworkHandler();
+            if (!endpoint || !handler || endpoint->currentGeneration(id) != generation) return;
 
-        auto* connection = endpoint->findLiveConnection(id, generation);
-        if (!connection) return;
+            auto* connection = endpoint->findLiveConnection(id, generation);
+            if (!connection) return;
 
-        auto connectionId = connection->mId;
+            auto connectionId = connection->mId;
 
-        auto message = std::string{disconnectMessage(reason)};
-        try {
-            DisconnectPacket packet{
-                DisconnectPacketPayload{reason, message, std::nullopt}
-            };
-            handler->mPacketSender->sendToClient(connectionId, packet, subClientId);
-        } catch (...) {}
+            if (message.empty()) message = disconnectMessage(reason);
+            try {
+                DisconnectPacket packet{
+                    DisconnectPacketPayload{reason, message, std::nullopt}
+                };
+                handler->mPacketSender->sendToClient(connectionId, packet, subClientId);
+            } catch (...) {}
 
-        auto& network = handler->mNetwork;
-        network.onConnectionClosed(connectionId, reason, message, {}, false, {});
-        network.getRemoteConnector()->closeNetworkConnection(connectionId);
-    });
+            auto& network = handler->mNetwork;
+            network.onConnectionClosed(connectionId, reason, message, {}, false, {});
+            network.getRemoteConnector()->closeNetworkConnection(connectionId);
+        }
+    );
 }
 
 Nonce randomNonce() {
@@ -267,46 +317,57 @@ struct ServerLoginIntegration::Impl {
         return true;
     }
 
-    void terminate(std::shared_ptr<Entry> const& entry, std::size_t packetSize, ProtocolErrc error) {
+    Expected<> notifyPeer(
+        std::shared_ptr<Entry> const& entry,
+        ProtocolErrc                  error,
+        std::uint32_t                 offendingMessageSequence,
+        std::string                   diagnostic
+    ) {
+        if (!entry || !entry->session || !entry->handshake || !entry->transport) return {};
+
+        auto const  coreProtocol = entry->handshake->coreProtocol();
+        auto const* definition   = findCoreProtocolDefinition(coreProtocol);
+        if (!definition) return {};
+
+        auto header = entry->session->nextOutboundHeader(definition->controlSchema);
+        if (!header) return forwardError(header.error());
+
+        // clang-format off
+        auto packet = ControlPacket::create(
+            ControlMessage{
+                ProtocolErrorMessage{
+                    *header,
+                    toWireErrorCode(error),
+                    true, offendingMessageSequence,
+                    std::move(diagnostic),
+                }
+            },
+            coreProtocol,
+            static_cast<SubClientId>(entry->key.subClientId),
+            entry->handshake->limits().maxControlBody
+        );
+        // clang-format on
+
+        if (!packet) return forwardError(packet.error());
+        return entry->transport->sendControl(std::move(*packet));
+    }
+
+    void terminate(
+        std::shared_ptr<Entry> const& entry,
+        ProtocolErrc                  error,
+        std::uint32_t                 offendingMessageSequence = 0,
+        std::string const&            diagnostic               = {},
+        bool                          notify                   = true
+    ) {
+        if (!entry) return;
+        if (notify) (void)notifyPeer(entry, error, offendingMessageSequence, diagnostic);
         if (!rejectPending(entry, error)) return;
 
-        auto controller = [&]() -> std::shared_ptr<IPacketSecurityController> {
-            auto current = getServerEndpoint();
-            if (!current) return {};
-
-            auto* connection = current->findLiveConnection(entry->networkId, entry->key.generation);
-            return connection ? connection->mPacketSecurityController : nullptr;
-        }();
-
-        thread::ServerThreadExecutor::getDefault().execute(
-            [key = entry->key, id = entry->networkId, controller = std::move(controller), packetSize]() mutable {
-                auto endpoint = getServerEndpoint();
-                auto handler  = service::getServerNetworkHandler();
-                if (!endpoint || !handler || endpoint->currentGeneration(id) != key.generation) return;
-
-                auto* connection = endpoint->findLiveConnection(id, key.generation);
-                if (!connection) return;
-
-                if (controller) {
-                    handler->handlePacketViolation(
-                        controller,
-                        {},
-                        PacketViolationResponse::TerminateConnection,
-                        MinecraftPacketIds::LeviLaminaRuntimePacket,
-                        "LeviLamina protocol violation",
-                        connection->mId,
-                        static_cast<SubClientId>(key.subClientId),
-                        static_cast<SubClientId>(key.subClientId),
-                        static_cast<uint>(std::min<std::size_t>(packetSize, UINT_MAX))
-                    );
-                } else {
-                    server_login_detail::disconnectPrelogin(
-                        connection->mId,
-                        static_cast<SubClientId>(key.subClientId),
-                        Connection::DisconnectFailReason::BadPacket
-                    );
-                }
-            }
+        server_login_detail::disconnectPrelogin(
+            entry->networkId,
+            static_cast<SubClientId>(entry->key.subClientId),
+            server_login_detail::disconnectReason(error),
+            server_login_detail::disconnectMessage(error, diagnostic)
         );
     }
 };
@@ -559,13 +620,13 @@ ServerLoginIntegration::handleHandshake(ServerNetworkHandler&, NetworkIdentifier
         if (!progress) {
             auto error = classifyProtocolError(progress.error(), ProtocolErrc::InvalidControlSchema);
 
-            mImpl->terminate(entry, 0, error);
+            mImpl->terminate(entry, error);
             return HandshakeDisposition::Rejected;
         }
         if (auto sent = mImpl->send(entry, *progress); !sent) {
             auto error = classifyProtocolError(sent.error(), ProtocolErrc::InternalFailure);
 
-            mImpl->terminate(entry, 0, error);
+            mImpl->terminate(entry, error);
             return HandshakeDisposition::Rejected;
         }
 
@@ -596,7 +657,7 @@ ServerLoginIntegration::filterIncoming(NetworkIdentifierWithSubId const& sender,
     if (mImpl->gate.contains(key)) {
         if (mImpl->gate.admit(key, packetSize)) return InboundDisposition::Allowed;
 
-        mImpl->rejectPending(mImpl->find(key), ProtocolErrc::RateLimitExceeded);
+        mImpl->terminate(mImpl->find(key), ProtocolErrc::RateLimitExceeded);
         return InboundDisposition::Rejected;
     }
 
@@ -606,7 +667,7 @@ ServerLoginIntegration::filterIncoming(NetworkIdentifierWithSubId const& sender,
     }
     if (entry->session->admitInbound(packetSize)) return InboundDisposition::UseNativePolicy;
 
-    mImpl->rejectPending(entry, ProtocolErrc::RateLimitExceeded);
+    mImpl->terminate(entry, ProtocolErrc::RateLimitExceeded);
     return InboundDisposition::Rejected;
 }
 
@@ -701,8 +762,10 @@ Expected<> ServerLoginIntegration::receive(
         return makeSessionError(SessionErrc::NotNegotiated);
     }
 
-    Expected<> result;
-    bool       resumeLogin{};
+    Expected<>    result;
+    std::uint32_t offendingMessageSequence{};
+    bool          peerReportedError{};
+    bool          resumeLogin{};
     {
         std::scoped_lock entryLock{entry->mutex};
         result = [&]() -> Expected<> {
@@ -712,6 +775,10 @@ Expected<> ServerLoginIntegration::receive(
 
             auto message = packet.decode(entry->handshake->coreProtocol(), entry->handshake->limits().maxControlBody);
             if (!message) return forwardError(message.error());
+
+            offendingMessageSequence =
+                std::visit([](auto const& value) { return value.header.messageSequence; }, *message);
+            peerReportedError = std::holds_alternative<ProtocolErrorMessage>(*message);
 
             auto progress = entry->handshake->receive(std::move(*message), packet.body().size());
             if (!progress) return forwardError(progress.error());
@@ -753,8 +820,12 @@ Expected<> ServerLoginIntegration::receive(
     }
 
     if (!result) {
+        auto diagnostic = server_login_detail::peerDiagnostic(result.error());
+
         auto error = classifyProtocolError(result.error(), ProtocolErrc::InvalidControlSchema);
-        mImpl->terminate(entry, packet.body().size(), error);
+        mImpl->terminate(entry, error, offendingMessageSequence, diagnostic, !peerReportedError);
+
+        if (server_login_detail::isPeerFailure(error)) return {};
     }
 
     return result;
@@ -781,8 +852,10 @@ Expected<> ServerLoginIntegration::receive(
             generation,
         };
 
-        auto error = classifyProtocolError(result.error(), ProtocolErrc::MalformedPayload);
-        mImpl->terminate(mImpl->find(key), packet.body().size(), error);
+        auto diagnostic = server_login_detail::peerDiagnostic(result.error());
+        auto error      = classifyProtocolError(result.error(), ProtocolErrc::MalformedPayload);
+        mImpl->terminate(mImpl->find(key), error, 0, diagnostic);
+        if (server_login_detail::isPeerFailure(error)) return {};
     }
 
     return result;

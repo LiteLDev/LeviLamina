@@ -68,7 +68,7 @@ LL_TYPE_INSTANCE_HOOK(
         case ServerLoginIntegration::InboundDisposition::Allowed:
             return IncomingPacketFilterResult::Allowed;
         case ServerLoginIntegration::InboundDisposition::Rejected:
-            return IncomingPacketFilterResult::RejectedWithDisconnect;
+            return IncomingPacketFilterResult::RejectedSilently;
         case ServerLoginIntegration::InboundDisposition::UseNativePolicy:
             break;
         }

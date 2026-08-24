@@ -9,6 +9,7 @@
 #include "ll/api/protocol/Limits.h"
 #include "ll/core/protocol/Constants.h"
 #include "ll/core/protocol/Negotiator.h"
+#include "ll/core/protocol/ProtocolError.h"
 
 namespace ll::protocol::detail {
 
@@ -260,7 +261,7 @@ HandshakeCoordinator::acceptServerHello(Hello hello, Nonce clientNonce, std::siz
 
 Expected<HandshakeProgress> HandshakeCoordinator::receive(ControlMessage message, std::size_t decodedBytes) {
     try {
-        if (mStep == Step::Failed || mStep == Step::ProtocolReady || !mSession || mCoreProtocol == 0) {
+        if (mStep == Step::Failed || !mSession || mCoreProtocol == 0) {
             return fail(Error{makeProtocolError(ProtocolErrc::UnexpectedMessage)});
         }
 
@@ -268,8 +269,11 @@ Expected<HandshakeProgress> HandshakeCoordinator::receive(ControlMessage message
         if (auto valid = mSession->validateInboundControl(header, decodedBytes); !valid) {
             return fail(std::move(valid.error()));
         }
-        if (std::holds_alternative<ProtocolErrorMessage>(message)) {
-            return fail(Error{makeProtocolError(ProtocolErrc::UnexpectedMessage, "peer protocol error")});
+        if (auto* peerError = std::get_if<ProtocolErrorMessage>(&message)) {
+            return fail(Error{makeProtocolError(fromWireErrorCode(peerError->code), std::move(peerError->diagnostic))});
+        }
+        if (mStep == Step::ProtocolReady) {
+            return fail(Error{makeProtocolError(ProtocolErrc::UnexpectedMessage)});
         }
 
         HandshakeProgress progress;
