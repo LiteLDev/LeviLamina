@@ -11,21 +11,22 @@ MinecraftPacketIds RuntimePacket::getId() const { return MinecraftPacketIds::Lev
 std::string_view RuntimePacket::getName() const { return "LeviLaminaRuntimePacket"; }
 
 void RuntimePacket::write(BinaryStream& bs) const {
-    bs.writeUnsignedInt64(runtimeId, "RuntimeId", "The runtime id of the packet");
-    packet->write(bs);
+    bs.writeUnsignedInt64(mRuntimeId, "RuntimeId", "The runtime id of the packet");
+    mPacket->write(bs);
 }
 
 Bedrock::Result<void> RuntimePacket::_read(ReadOnlyBinaryStream& bs) {
     if (auto res = bs.getUnsignedInt64(); res) {
-        runtimeId = res.value();
+        mRuntimeId = res.value();
     } else {
         return nonstd::make_unexpected(res.error());
     }
-    movePacket(PacketRegistrar::getInstance().createPacket(runtimeId));
-    if (!ownedPacket) {
-        return nonstd::make_unexpected(Bedrock::ErrorInfo<>{std::error_code{}});
+    movePacket(PacketRegistrar::getInstance().createPacket(mRuntimeId));
+    if (!mOwnedPacket) { // Ingore invalid packet
+        bs.mReadPointer = bs.mView.size();
+        return {};
     }
-    return ownedPacket->read(bs);
+    return mOwnedPacket->read(bs);
 }
 
 }; // namespace ll::network

@@ -29,6 +29,7 @@ class Stacktrace {
 
 public:
     LLNDAPI static Stacktrace current(size_t skip = 0, size_t maxDepth = ~0ull);
+    LLNDAPI static Stacktrace fromThread(std::thread::id id);
 
     uint64 getHash() const { return hash; }
 

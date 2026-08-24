@@ -44,8 +44,6 @@ class Symbol {
 public:
     [[nodiscard]] explicit constexpr Symbol(std::string symbol) : sym(std::move(symbol)) {}
 
-    LLNDAPI static std::vector<Symbol> fromAddress(void*);
-
     [[nodiscard]] constexpr size_t size() const { return sym.size(); }
 
     [[nodiscard]] constexpr SymbolView view() const { return SymbolView{sym}; }

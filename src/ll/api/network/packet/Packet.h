@@ -12,6 +12,9 @@
 #include "mc/network/NetworkPeer.h"
 #include "mc/platform/Result.h"
 
+class Player;
+class Actor;
+class BlockPos;
 class BinaryStream;
 class IPacketHandlerDispatcher;
 class ReadOnlyBinaryStream;
@@ -19,6 +22,7 @@ class NetworkIdentifier;
 class NetEventCallback;
 class UserEntityIdentifierComponent;
 struct NetworkIdentifierWithSubId;
+struct DimensionType;
 
 namespace ll::network {
 
@@ -49,14 +53,19 @@ public:
     [[nodiscard]] virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream&) = 0;
     [[nodiscard]] virtual ::std::string_view      getName() const               = 0;
 
-    [[nodiscard]] virtual PacketRuntimeId getRuntimeId() const;
+    [[nodiscard]] LLNDAPI virtual PacketRuntimeId getRuntimeId() const;
+
+    LLAPI void sendTo(Player const& player) const;
+    LLAPI void sendTo(BlockPos const& pos, DimensionType dimId, optional_ref<Player const> except = std::nullopt) const;
+    LLAPI void sendTo(Actor const& actor, optional_ref<Player const> except = std::nullopt) const;
+
+    LLAPI void sendToClient(NetworkIdentifier const& identifier, ::SubClientId clientId) const;
+    LLAPI void sendToClient(NetworkIdentifierWithSubId const& identifierWithSubId) const;
+
+    LLAPI void sendToClients() const;
+    LLAPI void sendToClients(NetworkIdentifier const& exceptId, ::SubClientId exceptSubid) const;
 
     LLAPI void sendToServer() const;
-    LLAPI void sendToClient(::NetworkIdentifier const& identifier, ::SubClientId clientId) const;
-    LLAPI void sendToClient(::UserEntityIdentifierComponent const*);
-    LLAPI void sendToClients(::std::vector<::NetworkIdentifierWithSubId> const&);
-    LLAPI void sendBroadcast();
-    LLAPI void sendBroadcast(::NetworkIdentifier const&, ::SubClientId);
 };
 
 class IPacketHandler {

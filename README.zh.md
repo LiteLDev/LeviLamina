@@ -30,7 +30,7 @@ LeviLamina 是一个非官方的模组加载器，旨在为基岩版提供必不
 
 ## 星标蹭蹭涨
 
-![星标历史图](https://api.star-history.com/svg?repos=LiteLDev/LeviLamina&type=Date)
+![星标历史图](https://star-history.dera.page/svg?repos=LiteLDev/LeviLamina&type=Date)
 
 ## 致谢
 
