@@ -4,6 +4,11 @@
 
 #include "ll/api/protocol/Error.h"
 #include "ll/api/protocol/Server.h"
+#include "ll/api/service/Bedrock.h"
+
+#include "mc/network/ServerNetworkHandler.h"
+#include "mc/server/ServerPlayer.h"
+#include "mc/world/actor/player/Player.h"
 
 namespace ll::protocol::detail {
 
@@ -69,6 +74,33 @@ namespace ll::protocol::server {
 
 Expected<Session> getSession(NetworkIdentifierWithSubId const& recipient) {
     return ll::protocol::detail::ServerAccess::resolve(recipient);
+}
+
+Expected<Session> getSession(Player const& recipient) {
+    return getSession(NetworkIdentifierWithSubId{recipient.getNetworkIdentifier(), recipient.getClientSubId()});
+}
+
+optional_ref<ServerPlayer> getPlayer(SessionView const& session) {
+    if (!session || session.role() != EndpointRole::Server || session.state() != SessionState::Active) {
+        return std::nullopt;
+    }
+
+    auto const peer = session.peer();
+    auto const current =
+        getSession(NetworkIdentifierWithSubId{peer.networkIdentifier, static_cast<SubClientId>(peer.subClientId)});
+    if (!current) return std::nullopt;
+
+    auto const currentView = current->view();
+    auto const currentPeer = currentView.peer();
+    if (currentPeer.endpointInstanceId != peer.endpointInstanceId
+        || currentPeer.connectionGeneration != peer.connectionGeneration) {
+        return std::nullopt;
+    }
+
+    auto handler = service::getServerNetworkHandler();
+    if (!handler) return std::nullopt;
+
+    return handler->_getServerPlayer(peer.networkIdentifier, static_cast<SubClientId>(peer.subClientId));
 }
 
 } // namespace ll::protocol::server

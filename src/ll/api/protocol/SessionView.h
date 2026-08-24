@@ -11,6 +11,8 @@
 #include "ll/api/protocol/Id.h"
 #include "ll/api/protocol/Version.h"
 
+#include "mc/network/NetworkIdentifier.h"
+
 namespace ll::protocol {
 
 enum class SessionState : std::uint8_t {
@@ -49,10 +51,11 @@ struct NegotiatedPayload {
 };
 
 struct PeerIdentityView {
-    std::uint64_t    endpointInstanceId{};
-    std::uint64_t    connectionGeneration{};
-    std::uint8_t     subClientId{};
-    std::string_view connection;
+    std::uint64_t     endpointInstanceId{};
+    std::uint64_t     connectionGeneration{};
+    std::uint8_t      subClientId{};
+    std::string_view  connection;
+    NetworkIdentifier networkIdentifier;
 };
 
 namespace detail {
@@ -73,7 +76,7 @@ public:
 
     LLNDAPI SessionState     state() const noexcept;
     LLNDAPI EndpointRole     role() const noexcept;
-    LLNDAPI PeerIdentityView peer() const& noexcept;
+    LLNDAPI PeerIdentityView peer() const&;
 
     PeerIdentityView peer() const&& = delete;
 

@@ -48,7 +48,8 @@ public:
         std::uint64_t                           handshakeId,
         std::shared_ptr<RegistrySnapshot const> registry,
         std::shared_ptr<SessionTransport>       transport,
-        TransportLimits                         limits
+        TransportLimits                         limits,
+        NetworkIdentifier const&                networkIdentifier = {}
     ) noexcept;
 
     [[nodiscard]] std::shared_ptr<ProtocolSession>

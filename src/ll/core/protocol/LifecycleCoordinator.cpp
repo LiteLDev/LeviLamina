@@ -95,7 +95,8 @@ Expected<std::shared_ptr<ProtocolSession>> LifecycleCoordinator::openSession(
     std::uint64_t                           handshakeId,
     std::shared_ptr<RegistrySnapshot const> registry,
     std::shared_ptr<SessionTransport>       transport,
-    TransportLimits                         limits
+    TransportLimits                         limits,
+    NetworkIdentifier const&                networkIdentifier
 ) noexcept {
     try {
         auto const registryRevision = registry ? registry->revision : 0;
@@ -117,7 +118,8 @@ Expected<std::shared_ptr<ProtocolSession>> LifecycleCoordinator::openSession(
                 handshakeId,
                 std::move(registry),
                 std::move(transport),
-                limits
+                limits,
+                networkIdentifier
             );
         }();
 

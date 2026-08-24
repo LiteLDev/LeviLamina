@@ -11,6 +11,16 @@
 #include "ll/core/protocol/ProtocolEnvelopePacket.h"
 #include "ll/core/protocol/RegistrationLease.h"
 
+NetherNet::NetworkID::NetworkID() = default;
+
+NetherNet::P2P::NetworkID::NetworkID(NetherNet::P2P::NetworkID const&) = default;
+
+NetherNet::P2P::NetworkID& NetherNet::P2P::NetworkID::operator=(NetherNet::P2P::NetworkID const&) = default;
+
+NetherNet::Realms::NetworkID::NetworkID(NetherNet::Realms::NetworkID const&) = default;
+
+NetherNet::Realms::NetworkID& NetherNet::Realms::NetworkID::operator=(NetherNet::Realms::NetworkID const&) = default;
+
 namespace ll::protocol::detail {
 
 ProtocolSession::ProtocolSession(
@@ -460,7 +470,7 @@ SessionState SessionView::state() const noexcept { return mSnapshot ? mSnapshot-
 EndpointRole SessionView::role() const noexcept {
     return mSnapshot ? mSnapshot->identity.key.role : EndpointRole::Client;
 }
-PeerIdentityView SessionView::peer() const& noexcept {
+PeerIdentityView SessionView::peer() const& {
     if (!mSnapshot) return {};
 
     return {
@@ -468,6 +478,7 @@ PeerIdentityView SessionView::peer() const& noexcept {
         mSnapshot->identity.key.generation,
         mSnapshot->identity.key.subClientId,
         mSnapshot->identity.key.connection,
+        mSnapshot->identity.networkIdentifier,
     };
 }
 CoreVersion   SessionView::coreProtocol() const noexcept { return mSnapshot ? mSnapshot->coreProtocol : 0; }

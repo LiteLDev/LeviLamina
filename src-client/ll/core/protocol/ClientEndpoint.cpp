@@ -5,14 +5,6 @@
 
 #include "ll/api/protocol/Error.h"
 
-NetherNet::P2P::NetworkID::NetworkID(NetherNet::P2P::NetworkID const&) = default;
-
-NetherNet::P2P::NetworkID& NetherNet::P2P::NetworkID::operator=(NetherNet::P2P::NetworkID const&) = default;
-
-NetherNet::Realms::NetworkID::NetworkID(NetherNet::Realms::NetworkID const&) = default;
-
-NetherNet::Realms::NetworkID& NetherNet::Realms::NetworkID::operator=(NetherNet::Realms::NetworkID const&) = default;
-
 namespace ll::protocol::detail {
 
 std::mutex                      ClientEndpointMutex;
@@ -89,7 +81,8 @@ Expected<std::shared_ptr<ProtocolSession>> ClientEndpoint::openSession(
             handshakeId,
             std::move(registry),
             std::move(transport),
-            limits
+            limits,
+            id
         );
         if (!session) return session;
 

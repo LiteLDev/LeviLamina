@@ -18,7 +18,8 @@ Expected<std::shared_ptr<ProtocolSession>> SessionManager::open(
     std::uint64_t                           handshakeId,
     std::shared_ptr<RegistrySnapshot const> registry,
     std::shared_ptr<SessionTransport>       transport,
-    TransportLimits                         limits
+    TransportLimits                         limits,
+    NetworkIdentifier const&                networkIdentifier
 ) noexcept {
     try {
         if (generation == 0 || handshakeId == 0 || !registry || !transport) {
@@ -48,7 +49,7 @@ Expected<std::shared_ptr<ProtocolSession>> SessionManager::open(
             }
 
             session = std::make_shared<ProtocolSession>(
-                SessionIdentity{key, handshakeId},
+                SessionIdentity{key, handshakeId, networkIdentifier},
                 std::move(registry),
                 std::move(transport),
                 limits

@@ -6,6 +6,8 @@
 
 #include "ll/api/protocol/Direction.h"
 
+#include "mc/network/NetworkIdentifier.h"
+
 namespace ll::protocol::detail {
 
 struct ConnectionKey {
@@ -19,8 +21,9 @@ struct ConnectionKey {
 };
 
 struct SessionIdentity {
-    ConnectionKey key;
-    std::uint64_t handshakeId{};
+    ConnectionKey     key;
+    std::uint64_t     handshakeId{};
+    NetworkIdentifier networkIdentifier;
 };
 
 } // namespace ll::protocol::detail

@@ -18,7 +18,7 @@ public:
     [[nodiscard]] Session const&     session() const noexcept { return mSession; }
     [[nodiscard]] SessionView const& view() const noexcept { return mView; }
     [[nodiscard]] EndpointRole       role() const noexcept { return mView.role(); }
-    [[nodiscard]] PeerIdentityView   peer() const noexcept { return mView.peer(); }
+    [[nodiscard]] PeerIdentityView   peer() const { return mView.peer(); }
 };
 
 } // namespace ll::protocol

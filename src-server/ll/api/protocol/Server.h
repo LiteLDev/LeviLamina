@@ -15,7 +15,11 @@
 #include "ll/api/protocol/PayloadRegistry.h"
 #include "ll/api/protocol/Session.h"
 
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/network/NetworkIdentifierWithSubId.h"
+
+class Player;
+class ServerPlayer;
 
 namespace ll::protocol::server {
 
@@ -39,6 +43,9 @@ struct FanoutResult {
 };
 
 LLNDAPI Expected<Session> getSession(NetworkIdentifierWithSubId const& recipient);
+LLNDAPI Expected<Session> getSession(Player const& recipient);
+
+LLNDAPI optional_ref<ServerPlayer> getPlayer(SessionView const& session);
 
 } // namespace ll::protocol::server
 
