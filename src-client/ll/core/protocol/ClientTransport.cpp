@@ -4,13 +4,9 @@
 
 #include "ll/api/network/packet/runtime/RuntimePacket.h"
 #include "ll/api/protocol/Error.h"
-#include "ll/api/service/Bedrock.h"
 #include "ll/core/protocol/ClientEndpoint.h"
 #include "ll/core/protocol/ControlPackets.h"
 #include "ll/core/protocol/ProtocolEnvelopePacket.h"
-
-#include "mc/network/PacketSender.h"
-#include "mc/world/Minecraft.h"
 
 namespace ll::protocol::detail {
 
@@ -36,9 +32,6 @@ Expected<> ClientTransport::sendLogical(std::unique_ptr<ll::network::Packet> pac
             return makeSessionError(SessionErrc::WrongGeneration);
         }
 
-        auto minecraft = service::getMinecraft(true);
-        if (!minecraft) return makeSessionError(SessionErrc::TransportUnavailable);
-
         packet->mSenderSubId = mPeer.subClientId;
 
         ll::network::RuntimePacket runtime{std::move(packet)};
@@ -47,7 +40,7 @@ Expected<> ClientTransport::sendLogical(std::unique_ptr<ll::network::Packet> pac
         }
 
         try {
-            minecraft->mPacketSender.sendToServer(runtime);
+            runtime.sendToServer();
         } catch (...) {
             return makeTransportError(TransportErrc::SendFailed, "Minecraft packet sender threw while sending");
         }
