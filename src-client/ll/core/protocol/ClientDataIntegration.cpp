@@ -3,6 +3,7 @@
 #include "ll/api/Versions.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/core/Config.h"
+#include "ll/core/LeviLamina.h"
 #include "ll/core/protocol/Discovery.h"
 
 #include "mc/network/BaseConnectionRequest.h"
@@ -27,7 +28,9 @@ LL_TYPE_STATIC_HOOK(
     Json::Value&              root,
     ConnectionSkinInfo const& skinInfo
 ) {
-    addClientDiscoveryMarker(root);
+    if (auto marker = addClientDiscoveryMarker(root); !marker) {
+        marker.error().log(ll::getLogger());
+    }
     origin(root, skinInfo);
 }
 
