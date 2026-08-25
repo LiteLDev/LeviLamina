@@ -488,7 +488,9 @@ public:
         };
 
         [&]<std::size_t... I>(std::index_sequence<I...>) {
-            ((*index == I ? (decoded.emplace(decode.template operator()<I>()), true) : false) || ...);
+            static_cast<void>(
+                ((*index == I ? (decoded.emplace(decode.template operator()<I>()), true) : false) || ...)
+            );
         }(std::index_sequence_for<T...>{});
 
         return std::move(*decoded);
