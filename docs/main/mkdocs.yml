@@ -29,6 +29,18 @@ nav:
           - developer_guides/how_to_guides/coro_guide.md
           - developer_guides/how_to_guides/build_guide.md
 
+      - Protocol:
+          - Introduction: developer_guides/protocol/introduction.md
+          - Creating a Payload: developer_guides/protocol/creating_payload.md
+          - Registering a Payload: developer_guides/protocol/registering_payload.md
+          - Sending Payloads: developer_guides/protocol/sending_payload.md
+          - Receiving Payloads: developer_guides/protocol/receiving_payload.md
+          - Lifecycle: developer_guides/protocol/lifecycle.md
+          - Compatibility: developer_guides/protocol/compatibility.md
+          - Versioning: developer_guides/protocol/versioning.md
+          - Migration and Release Note: developer_guides/protocol/migration.md
+          - Limitations: developer_guides/protocol/limitations.md
+
       - FAQ: developer_guides/faq.md
 
       - Architecture: developer_guides/architecture.md
@@ -50,6 +62,7 @@ nav:
           - Memory & Hook: api_reference/memory.md
           - Mod: api_reference/mod.md
           - Network: api_reference/network.md
+          - Protocol: api_reference/protocol.md
           - Reflection: api_reference/reflection.md
           - Service: api_reference/service.md
           - Thread: api_reference/thread.md
@@ -118,7 +131,11 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.smartsymbols
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist
