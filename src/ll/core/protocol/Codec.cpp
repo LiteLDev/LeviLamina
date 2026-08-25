@@ -273,6 +273,25 @@ Expected<> Encoder::writeBytes(std::span<std::byte const> value) {
 
     return mImpl->append(value);
 }
+Expected<> Encoder::writeByteArray(std::span<std::byte const> value, std::size_t maxBytes) {
+    if (!mImpl) return makeCodecError(CodecErrc::InvalidValue, "encoder was moved from");
+    if (value.size() > maxBytes || value.size() > std::numeric_limits<std::uint32_t>::max()) {
+        return makeCodecError(CodecErrc::SizeLimitExceeded, "byte array");
+    }
+
+    std::size_t prefixSize = 1;
+    for (auto remaining = static_cast<std::uint32_t>(value.size()); remaining >= 0x80U; remaining >>= 7U) {
+        ++prefixSize;
+    }
+    if (prefixSize + value.size() > mImpl->limit - mImpl->buffer.size()) {
+        return makeCodecError(CodecErrc::SizeLimitExceeded, "byte array");
+    }
+
+    if (auto encodedSize = writeVarUint(static_cast<std::uint32_t>(value.size())); !encodedSize) {
+        return encodedSize;
+    }
+    return writeBytes(value);
+}
 Expected<> Encoder::writeString(std::string_view value, std::size_t maxBytes) {
     if (!mImpl) return makeCodecError(CodecErrc::InvalidValue, "encoder was moved from");
 
@@ -316,6 +335,17 @@ std::size_t Decoder::remaining() const noexcept {
 Expected<std::span<std::byte const>> Decoder::readBytes(std::size_t length) {
     if (!mImpl) return makeCodecError(CodecErrc::InvalidValue, "decoder was moved from");
     return mImpl->read(length);
+}
+Expected<std::vector<std::byte>> Decoder::readByteArray(std::size_t maxBytes) {
+    auto length = readVarUint();
+    if (!length) return forwardError(length.error());
+
+    if (*length > maxBytes) return makeCodecError(CodecErrc::SizeLimitExceeded, "byte array");
+
+    auto bytes = readBytes(*length);
+    if (!bytes) return forwardError(bytes.error());
+
+    return std::vector<std::byte>{bytes->begin(), bytes->end()};
 }
 Expected<std::uint8_t> Decoder::readU8() {
     auto bytes = readBytes(1);
