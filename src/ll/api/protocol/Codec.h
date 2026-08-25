@@ -235,10 +235,12 @@ public:
 
         std::optional<Expected<>> encoded;
         [&]<std::size_t... I>(std::index_sequence<I...>) {
-            ((value.index() == I
-                  ? (encoded.emplace(std::invoke(std::get<I>(writers), *this, std::get<I>(value))), true)
-                  : false)
-             || ...);
+            static_cast<void>(
+                ((value.index() == I
+                      ? (encoded.emplace(std::invoke(std::get<I>(writers), *this, std::get<I>(value))), true)
+                      : false)
+                 || ...)
+            );
         }(std::index_sequence_for<T...>{});
 
         return std::move(*encoded);
