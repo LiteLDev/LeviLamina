@@ -108,21 +108,23 @@ struct PayloadResult {
 };
 
 struct Hello {
-    ControlHeader                       header;
-    Nonce                               serverNonce;
-    VersionRange                        coreProtocols;
-    TransportLimits                     limits;
+    ControlHeader   header;
+    Nonce           serverNonce;
+    VersionRange    coreProtocols;
+    TransportLimits limits;
+    // Reserved for negotiated core capabilities. Core protocol v1 requires this list to be empty.
     std::vector<WireFeatureDeclaration> features;
 
     auto operator<=>(Hello const&) const = default;
 };
 
 struct HelloAck {
-    ControlHeader                header;
-    Nonce                        echoedServerNonce;
-    Nonce                        clientNonce;
-    CoreVersion                  selectedCoreProtocol{};
-    TransportLimits              acceptedLimits;
+    ControlHeader   header;
+    Nonce           echoedServerNonce;
+    Nonce           clientNonce;
+    CoreVersion     selectedCoreProtocol{};
+    TransportLimits acceptedLimits;
+    // Reserved for selected core capabilities. Core protocol v1 requires this list to be empty.
     std::vector<SelectedFeature> features;
 
     auto operator<=>(HelloAck const&) const = default;
