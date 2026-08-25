@@ -100,4 +100,24 @@ TEST(ProtocolRuntimeIdentityTest, MapsProtocolErrorsToFrozenWireCodes) {
     EXPECT_EQ(detail::toWireErrorCode(TransportErrc::EndpointGone), detail::WireErrorCode::EndpointGone);
 }
 
+TEST(ProtocolRuntimeIdentityTest, ClassifiesLocalIngressFailuresAsInternal) {
+    Expected<> escaped = makeCodecError(CodecErrc::ExceptionEscaped, "payload codec decode");
+    EXPECT_EQ(
+        detail::classifyProtocolError(escaped.error(), ProtocolErrc::MalformedPayload),
+        ProtocolErrc::InternalFailure
+    );
+
+    Expected<> malformed = makeCodecError(CodecErrc::InvalidValue, "payload field");
+    EXPECT_EQ(
+        detail::classifyProtocolError(malformed.error(), ProtocolErrc::MalformedPayload),
+        ProtocolErrc::MalformedPayload
+    );
+
+    Expected<> local = makeStringError("payload handler failed");
+    EXPECT_EQ(
+        detail::classifyProtocolError(local.error(), ProtocolErrc::MalformedPayload),
+        ProtocolErrc::InternalFailure
+    );
+}
+
 } // namespace ll::protocol::test

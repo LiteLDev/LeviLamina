@@ -147,7 +147,14 @@ ProtocolErrc classifyProtocolError(ll::Error& error, ProtocolErrc fallback) noex
     if (error.isA<ProtocolErrorInfo>()) return error.as<ProtocolErrorInfo>().code;
 
     if (error.isA<CodecErrorInfo>()) {
-        return error.as<CodecErrorInfo>().code == CodecErrc::UnsupportedSchema ? ProtocolErrc::InvalidSchema : fallback;
+        switch (error.as<CodecErrorInfo>().code) {
+        case CodecErrc::UnsupportedSchema:
+            return ProtocolErrc::InvalidSchema;
+        case CodecErrc::ExceptionEscaped:
+            return ProtocolErrc::InternalFailure;
+        default:
+            return fallback;
+        }
     }
 
     if (error.isA<SessionErrorInfo>()) {
@@ -170,7 +177,7 @@ ProtocolErrc classifyProtocolError(ll::Error& error, ProtocolErrc fallback) noex
         }
     }
 
-    return fallback;
+    return ProtocolErrc::InternalFailure;
 }
 
 } // namespace ll::protocol::detail
