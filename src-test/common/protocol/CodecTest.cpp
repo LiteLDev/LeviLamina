@@ -4,8 +4,16 @@
 #include "ll/api/protocol/Error.h"
 
 #include <array>
+#include <bit>
+#include <cstdint>
+#include <limits>
+#include <map>
+#include <optional>
 #include <string>
+#include <unordered_map>
 #include <utility>
+#include <variant>
+#include <vector>
 
 namespace ll::protocol::test {
 
@@ -100,6 +108,21 @@ TEST(ProtocolCodecTest, RejectsInvalidUtf8AndOverflowingVaruintOnDecode) {
     };
     Decoder overflowDecoder{overflow, overflow.size()};
     EXPECT_FALSE(overflowDecoder.readVarUint());
+
+    std::array overflowingVarLong{
+        std::byte{0xFF},
+        std::byte{0xFF},
+        std::byte{0xFF},
+        std::byte{0xFF},
+        std::byte{0xFF},
+        std::byte{0xFF},
+        std::byte{0xFF},
+        std::byte{0xFF},
+        std::byte{0xFF},
+        std::byte{0x02},
+    };
+    Decoder varLongDecoder{overflowingVarLong, overflowingVarLong.size()};
+    EXPECT_FALSE(varLongDecoder.readVarLong());
 }
 
 TEST(ProtocolCodecTest, RoundTripsEmptyString) {
