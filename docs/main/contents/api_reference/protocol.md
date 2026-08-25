@@ -4,7 +4,7 @@
 
 ## Overview
 
-The `ll::protocol` API provides typed, negotiated payload exchange between the supported dedicated-server and remote- client targets. It combines mod-owned wire identities, bounded codecs, login-time capability negotiation, revocable sessions, typed payload dispatch, and server fan-out.
+The `ll::protocol` API provides typed, negotiated payload exchange between the supported dedicated-server and client targets. It combines mod-owned wire identities, bounded codecs, login-time capability negotiation, revocable sessions, typed payload dispatch, and server fan-out.
 
 Payload declarations and codecs are common API. Session acquisition and some send operations are target-specific. Include the common surface with:
 
