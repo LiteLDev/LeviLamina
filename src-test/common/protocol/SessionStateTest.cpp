@@ -269,8 +269,8 @@ TEST(ProtocolSessionStateTest, ActiveInboundGateChargesPacketBeforeDecodeOnBothE
 
         detail::NegotiationPlan plan{
             .coreProtocol           = 1,
-            .serverRegistryRevision = 1,
-            .clientRegistryRevision = 2,
+            .serverRegistryRevision = role == EndpointRole::Server ? 1U : 2U,
+            .clientRegistryRevision = role == EndpointRole::Client ? 1U : 2U,
             .limits                 = constrained,
         };
         detail::TranscriptDigest digest{};
