@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstddef>
 #include <cstdint>
 #include <memory>
 
@@ -7,6 +8,7 @@
 
 enum class PlayStatus : int;
 class ClientInstance;
+struct NetworkIdentifierWithSubId;
 
 namespace ll::protocol::detail {
 
@@ -15,6 +17,11 @@ class ClientLoginIntegration final : public RuntimePacketReceiver {
     std::unique_ptr<Impl> mImpl;
 
 public:
+    enum class InboundDisposition : std::uint8_t {
+        Rejected,
+        UseNativePolicy,
+    };
+
     enum class LoginSuccessDisposition : std::uint8_t {
         ContinueVanilla,
         ActivateAfterOrigin,
@@ -34,6 +41,12 @@ public:
     void closeConnection(NetworkIdentifier const& id) noexcept;
     void closeAll() noexcept;
     void pollTimeouts(ClientInstance& client) noexcept;
+
+    [[nodiscard]] InboundDisposition filterIncoming(
+        NetEventCallback&                  callback,
+        NetworkIdentifierWithSubId const& sender,
+        std::size_t                       packetSize
+    );
 
     [[nodiscard]] LoginSuccessDisposition
     beforePlayStatus(NetworkIdentifier const& id, std::uint8_t subClientId, PlayStatus status) noexcept;

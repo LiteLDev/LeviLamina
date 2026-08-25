@@ -225,6 +225,35 @@ void ClientLoginIntegration::closeAll() noexcept {
     } catch (...) {}
 }
 
+ClientLoginIntegration::InboundDisposition ClientLoginIntegration::filterIncoming(
+    NetEventCallback&                  callback,
+    NetworkIdentifierWithSubId const& sender,
+    std::size_t                       packetSize
+) {
+    auto endpoint = getClientEndpoint();
+    if (!endpoint) return InboundDisposition::UseNativePolicy;
+
+    auto generation = endpoint->currentGeneration(sender.id);
+    if (generation == 0) return InboundDisposition::UseNativePolicy;
+
+    auto entry = mImpl->find({sender.id.toString(), static_cast<std::uint8_t>(sender.subClientId), generation});
+    if (!entry) return InboundDisposition::UseNativePolicy;
+
+    std::shared_ptr<ProtocolSession> session;
+    {
+        std::scoped_lock lock{entry->mutex};
+        if (entry->state != Impl::State::Active || !entry->session) {
+            return InboundDisposition::UseNativePolicy;
+        }
+        session = entry->session;
+    }
+
+    if (session->admitInbound(packetSize)) return InboundDisposition::UseNativePolicy;
+
+    mImpl->fail(entry, callback, ProtocolErrc::RateLimitExceeded);
+    return InboundDisposition::Rejected;
+}
+
 void ClientLoginIntegration::pollTimeouts(ClientInstance& client) noexcept {
     try {
         std::vector<std::shared_ptr<Impl::Entry>> entries;

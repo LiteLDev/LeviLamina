@@ -385,11 +385,10 @@ Expected<> ProtocolSession::admitInbound(std::size_t packetSize, std::chrono::st
 }
 
 Expected<> ProtocolSession::validateInbound(
-    std::uint64_t                         runtimeId,
-    std::uint8_t                          envelopeSchema,
-    SchemaVersion                         schema,
-    std::size_t                           bodySize,
-    std::chrono::steady_clock::time_point now
+    std::uint64_t runtimeId,
+    std::uint8_t  envelopeSchema,
+    SchemaVersion schema,
+    std::size_t   bodySize
 ) {
     std::scoped_lock lock{mMutex};
 
@@ -407,9 +406,6 @@ Expected<> ProtocolSession::validateInbound(
     if (!canReceive(role(), found->payload.direction)) return makeSessionError(SessionErrc::WrongDirection);
     if (schema != found->payload.schema) return makeProtocolError(ProtocolErrc::InvalidSchema);
     if (bodySize > found->payload.maxEncodedSize) return makeProtocolError(ProtocolErrc::MalformedPayload);
-    if (role() != EndpointRole::Server && !mInboundBudget.consume(bodySize, now)) {
-        return makeProtocolError(ProtocolErrc::RateLimitExceeded);
-    }
 
     return {};
 }

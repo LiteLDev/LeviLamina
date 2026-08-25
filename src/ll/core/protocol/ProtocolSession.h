@@ -111,8 +111,7 @@ public:
         std::uint64_t                         runtimeId,
         std::uint8_t                          envelopeSchema,
         SchemaVersion                         schema,
-        std::size_t                           bodySize,
-        std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now()
+        std::size_t                           bodySize
     );
 
     [[nodiscard]] std::optional<NegotiatedPayloadBinding> findNegotiated(std::uint64_t runtimeId) const noexcept;

@@ -260,30 +260,32 @@ TEST(ProtocolSessionStateTest, RateBudgetRefillsWithoutUnboundedBurst) {
     EXPECT_FALSE(budget.consume(1, now + 10s));
 }
 
-TEST(ProtocolSessionStateTest, ActiveServerInboundGateChargesPacketBeforeDecode) {
-    auto value = session(EndpointRole::Server);
-    ASSERT_TRUE(value->transition(SessionState::Handshaking, SessionState::Negotiating));
+TEST(ProtocolSessionStateTest, ActiveInboundGateChargesPacketBeforeDecodeOnBothEndpoints) {
+    for (auto role : {EndpointRole::Server, EndpointRole::Client}) {
+        auto value = session(role);
+        ASSERT_TRUE(value->transition(SessionState::Handshaking, SessionState::Negotiating));
 
-    auto constrained = limits(1);
+        auto constrained = limits(1);
 
-    detail::NegotiationPlan plan{
-        .coreProtocol           = 1,
-        .serverRegistryRevision = 1,
-        .clientRegistryRevision = 2,
-        .limits                 = constrained,
-    };
-    detail::TranscriptDigest digest{};
+        detail::NegotiationPlan plan{
+            .coreProtocol           = 1,
+            .serverRegistryRevision = 1,
+            .clientRegistryRevision = 2,
+            .limits                 = constrained,
+        };
+        detail::TranscriptDigest digest{};
 
-    digest.front() = std::byte{1};
-    ASSERT_TRUE(value->installNegotiation(std::move(plan), digest));
-    ASSERT_TRUE(value->acceptPeerReady(digest));
-    ASSERT_TRUE(value->activate());
+        digest.front() = std::byte{1};
+        ASSERT_TRUE(value->installNegotiation(std::move(plan), digest));
+        ASSERT_TRUE(value->acceptPeerReady(digest));
+        ASSERT_TRUE(value->activate());
 
-    auto now = std::chrono::steady_clock::time_point{};
-    EXPECT_TRUE(value->admitInbound(32, now));
-    auto limited = value->admitInbound(1, now);
-    ASSERT_FALSE(limited);
-    EXPECT_EQ(protocolCode(limited.error()), ProtocolErrc::RateLimitExceeded);
+        auto now = std::chrono::steady_clock::time_point{};
+        EXPECT_TRUE(value->admitInbound(32, now));
+        auto limited = value->admitInbound(1, now);
+        ASSERT_FALSE(limited);
+        EXPECT_EQ(protocolCode(limited.error()), ProtocolErrc::RateLimitExceeded);
+    }
 }
 
 TEST(ProtocolSessionStateTest, RateBudgetDiscardsFractionalCreditWhileFull) {

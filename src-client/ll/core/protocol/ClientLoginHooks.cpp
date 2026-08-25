@@ -4,6 +4,9 @@
 
 #include "mc/client/game/ClientInstance.h"
 #include "mc/client/network/ClientNetworkHandler.h"
+#include "mc/network/IncomingPacketFilterResult.h"
+#include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/NetworkIdentifierWithSubId.h"
 #include "mc/network/packet/PlayStatusPacket.h"
 
 namespace ll::protocol::detail {
@@ -18,6 +21,28 @@ LL_TYPE_INSTANCE_HOOK(
 ) {
     getClientLoginIntegration().pollTimeouts(*this);
     return origin(isInitFinished);
+}
+
+LL_TYPE_INSTANCE_HOOK(
+    ProtocolClientRuntimePacketGateHook,
+    HookPriority::Highest,
+    ClientNetworkHandler,
+    &ClientNetworkHandler::$allowIncomingPacketId,
+    IncomingPacketFilterResult,
+    NetworkIdentifierWithSubId const& sender,
+    MinecraftPacketIds                packetId,
+    uint64                            packetSize
+) {
+    if (packetId == MinecraftPacketIds::LeviLaminaRuntimePacket) {
+        switch (getClientLoginIntegration().filterIncoming(*this, sender, static_cast<std::size_t>(packetSize))) {
+        case ClientLoginIntegration::InboundDisposition::Rejected:
+            return IncomingPacketFilterResult::RejectedSilently;
+        case ClientLoginIntegration::InboundDisposition::UseNativePolicy:
+            break;
+        }
+    }
+
+    return origin(sender, packetId, packetSize);
 }
 
 LL_TYPE_INSTANCE_HOOK(
@@ -50,7 +75,11 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 void registerClientLoginHooks() {
-    static memory::HookRegistrar<ProtocolClientLoginTimeoutHook, ProtocolClientPlayStatusHook> hooks;
+    static memory::HookRegistrar<
+        ProtocolClientLoginTimeoutHook,
+        ProtocolClientRuntimePacketGateHook,
+        ProtocolClientPlayStatusHook>
+        hooks;
 }
 
 } // namespace ll::protocol::detail
