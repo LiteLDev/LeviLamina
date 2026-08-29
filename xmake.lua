@@ -32,7 +32,7 @@ add_requires("pcg_cpp v1.0.0")
 add_requires("pfr 2.1.1")
 add_requires("demangler v17.0.7")
 add_requires("levibuildscript 0.6.1")
-add_requires("preloader v1.15.7")
+add_requires("preloader v1.16.0")
 add_requires("symbolprovider v1.3.0")
 add_requires("trampoline 2024.11.7")
 
@@ -51,11 +51,11 @@ end
 
 if is_server then
     if is_windows then
-        add_requires("bedrockdata v26.20.5-server.7")
+        add_requires("bedrockdata v26.32.2-server.1")
     end
 else
     if is_windows then
-        add_requires("bedrockdata v26.20.4-client.7")
+        add_requires("bedrockdata v26.32.2-client.1")
     end
 end
 
