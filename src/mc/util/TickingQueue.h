@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/BasicTimer.h"
+#include "mc/util/Signal.h"
+
 class TickingQueue {
 public:
     // TickingQueue inner types declare
@@ -19,14 +23,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnka8e8d0;
+        ::ll::TypedStorage<1, 1, bool> mInitRan;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Stage& operator=(Stage const&);
-        Stage(Stage const&);
-        Stage();
 
     public:
         // virtual functions
@@ -43,14 +41,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnkad904f;
+        ::ll::TypedStorage<8, 64, ::std::function<void()>> mInitFn;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        OneshotStage& operator=(OneshotStage const&);
-        OneshotStage(OneshotStage const&);
-        OneshotStage();
 
     public:
         // virtual functions
@@ -65,15 +57,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnkfd1804;
-        ::ll::UntypedStorage<8, 64> mUnkf9c2b2;
+        ::ll::TypedStorage<8, 64, ::std::function<void()>> mInitFn;
+        ::ll::TypedStorage<8, 64, ::std::function<bool()>> mTickFn;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PollingStage& operator=(PollingStage const&);
-        PollingStage(PollingStage const&);
-        PollingStage();
 
     public:
         // virtual functions
@@ -88,14 +74,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnkbe3fd7;
+        ::ll::TypedStorage<8, 80, ::BasicTimer> mBasicTimer;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SleepStage& operator=(SleepStage const&);
-        SleepStage(SleepStage const&);
-        SleepStage();
 
     public:
         // virtual functions
@@ -108,17 +88,17 @@ public:
 
     class WaitForCallbackStage : public ::TickingQueue::Stage {
     public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnkd65908;
-        ::ll::UntypedStorage<1, 1>  mUnk91a803;
-        // NOLINTEND
+        // WaitForCallbackStage inner types define
+        using Callback = ::std::function<void()>;
+
+        using InitFunction = ::std::function<void(::std::function<void()>)>;
 
     public:
-        // prevent constructor by default
-        WaitForCallbackStage& operator=(WaitForCallbackStage const&);
-        WaitForCallbackStage(WaitForCallbackStage const&);
-        WaitForCallbackStage();
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 64, ::std::function<void(::std::function<void()>)>> mInitFn;
+        ::ll::TypedStorage<1, 1, ::Signal>                                        mSignal;
+        // NOLINTEND
 
     public:
         // virtual functions
@@ -133,7 +113,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkdc7ca4;
+        ::ll::TypedStorage<8, 8, ::Signal&> mSignal;
         // NOLINTEND
 
     public:
@@ -154,13 +134,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk882097;
-    ::ll::UntypedStorage<4, 4>  mUnk174484;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::TickingQueue::Stage>>> mStages;
+    ::ll::TypedStorage<4, 4, uint>                                                     mCurrentStage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TickingQueue& operator=(TickingQueue const&);
-    TickingQueue(TickingQueue const&);
-    TickingQueue();
 };

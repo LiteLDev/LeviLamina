@@ -17,17 +17,8 @@ class DataDrivenRenderer_tempComponent_VillagerAdditionalRendering : public ::Da
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnka5cae0;
+    ::ll::TypedStorage<1, 1, bool> mIsWitch;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataDrivenRenderer_tempComponent_VillagerAdditionalRendering&
-    operator=(DataDrivenRenderer_tempComponent_VillagerAdditionalRendering const&);
-    DataDrivenRenderer_tempComponent_VillagerAdditionalRendering(
-        DataDrivenRenderer_tempComponent_VillagerAdditionalRendering const&
-    );
-    DataDrivenRenderer_tempComponent_VillagerAdditionalRendering();
 
 public:
     // virtual functions
@@ -41,8 +32,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
+    MCFOLD ::V2TempComponentRequirements $getV2Requirements() const;
 
-    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams&);
+    MCAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams&);
     // NOLINTEND
 };

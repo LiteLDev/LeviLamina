@@ -6,21 +6,21 @@ class SoundMapping {
 public:
     // SoundMapping inner types declare
     // clang-format off
-    struct ActorInteractiveSounds;
-    struct BlockSounds;
-    struct EntitySoundList;
-    struct EntitySounds;
     struct SoundVariantCompare;
+    struct EntitySounds;
+    struct EntitySoundList;
+    struct BlockSounds;
+    struct ActorInteractiveSounds;
     // clang-format on
 
     // SoundMapping inner types define
-    struct ActorInteractiveSounds {};
-
-    struct BlockSounds {};
-
-    struct EntitySoundList {};
+    struct SoundVariantCompare {};
 
     struct EntitySounds {};
 
-    struct SoundVariantCompare {};
+    struct EntitySoundList {};
+
+    struct BlockSounds {};
+
+    struct ActorInteractiveSounds {};
 };

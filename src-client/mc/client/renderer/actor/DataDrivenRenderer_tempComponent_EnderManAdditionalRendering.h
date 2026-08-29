@@ -10,6 +10,8 @@
 // clang-format off
 class ActorRenderData;
 class BaseActorRenderContext;
+class BlockTessellator;
+class DataDrivenRenderer;
 class RenderParams;
 // clang-format on
 
@@ -17,18 +19,9 @@ class DataDrivenRenderer_tempComponent_EnderManAdditionalRendering : public ::Da
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk4f2b11;
-    ::ll::UntypedStorage<8, 16> mUnk492167;
+    ::ll::TypedStorage<8, 8, ::BlockTessellator*>                    mBlockTessellator;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DataDrivenRenderer>> mRenderer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataDrivenRenderer_tempComponent_EnderManAdditionalRendering&
-    operator=(DataDrivenRenderer_tempComponent_EnderManAdditionalRendering const&);
-    DataDrivenRenderer_tempComponent_EnderManAdditionalRendering(
-        DataDrivenRenderer_tempComponent_EnderManAdditionalRendering const&
-    );
-    DataDrivenRenderer_tempComponent_EnderManAdditionalRendering();
 
 public:
     // virtual functions
@@ -42,8 +35,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
+    MCFOLD ::V2TempComponentRequirements $getV2Requirements() const;
 
-    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams&);
+    MCAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams&);
     // NOLINTEND
 };

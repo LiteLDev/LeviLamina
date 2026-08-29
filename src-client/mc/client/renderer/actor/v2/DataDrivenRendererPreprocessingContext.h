@@ -2,18 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class MinecraftGameplayGraphicsResources;
+struct ProcessedDataDrivenRenderers;
+namespace mce { struct BufferResourceService; }
+// clang-format on
+
 struct DataDrivenRendererPreprocessingContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkedf941;
-    ::ll::UntypedStorage<8, 16> mUnk4cb674;
-    ::ll::UntypedStorage<8, 8>  mUnk61744b;
+    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::ProcessedDataDrivenRenderers>> mResources;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::mce::BufferResourceService>>           mBufferResourceService;
+    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::MinecraftGameplayGraphicsResources>>
+        mMinecraftGameplayGraphicsResources;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataDrivenRendererPreprocessingContext& operator=(DataDrivenRendererPreprocessingContext const&);
-    DataDrivenRendererPreprocessingContext(DataDrivenRendererPreprocessingContext const&);
-    DataDrivenRendererPreprocessingContext();
 };
