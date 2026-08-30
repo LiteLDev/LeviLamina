@@ -40,10 +40,6 @@ LL_TYPE_INSTANCE_HOOK(
     serverInstance = this;
     return res;
 }
-LL_TYPE_INSTANCE_HOOK(ServerInstanceDestructor, HookPriority::High, ServerInstance, &ServerInstance::$dtor, void) {
-    serverInstance = nullptr;
-    origin();
-}
 
 // ClientInstance
 LL_TYPE_INSTANCE_HOOK(
@@ -134,7 +130,7 @@ optional_ref<CommandRegistry> getCommandRegistry(bool isClientSide) {
     return nullptr;
 }
 
-using HookReg = memory::HookRegistrar<ServerInstanceConstructor, ServerInstanceDestructor, ClientInstanceConstructor>;
+using HookReg = memory::HookRegistrar<ServerInstanceConstructor, ClientInstanceConstructor>;
 
 static HookReg hookRegister;
 
