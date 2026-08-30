@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ByValueLevelDataOverride() /*override*/;
+    virtual ~ByValueLevelDataOverride() /*override*/ = default;
 
     virtual void applyTo(::LevelData&) const /*override*/;
     // NOLINTEND

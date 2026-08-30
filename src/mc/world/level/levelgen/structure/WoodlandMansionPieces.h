@@ -39,7 +39,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~FloorRoomCollection();
+        virtual ~FloorRoomCollection() = default;
 
         virtual ::std::string get1x1(::Random& random) = 0;
 

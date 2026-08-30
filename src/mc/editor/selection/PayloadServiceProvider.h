@@ -20,7 +20,7 @@ class PayloadServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PayloadServiceProvider();
+    virtual ~PayloadServiceProvider() = default;
 
     virtual ::Scripting::Result_deprecated<void> dispatchToSelf(::Editor::Network::INetworkPayload& payload) = 0;
 

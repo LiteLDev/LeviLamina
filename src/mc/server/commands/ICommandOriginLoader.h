@@ -12,7 +12,7 @@ class ICommandOriginLoader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ICommandOriginLoader();
+    virtual ~ICommandOriginLoader() = default;
 
     virtual ::std::unique_ptr<::CommandOrigin> load(::CompoundTag const& tag) = 0;
     // NOLINTEND

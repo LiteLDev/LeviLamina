@@ -14,7 +14,7 @@ class ActiveIceControllerFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActiveIceControllerFactoryInterface();
+    virtual ~ActiveIceControllerFactoryInterface() = default;
 
     virtual ::std::unique_ptr<::webrtc::ActiveIceControllerInterface>
     Create(::webrtc::ActiveIceControllerFactoryArgs const&) = 0;

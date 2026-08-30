@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VideoFecGenerator();
+    virtual ~VideoFecGenerator() = default;
 
     virtual ::webrtc::VideoFecGenerator::FecType GetFecType() const = 0;
 

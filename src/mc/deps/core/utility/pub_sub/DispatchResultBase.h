@@ -20,7 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DispatchResultBase();
+    virtual ~DispatchResultBase() = default;
     // NOLINTEND
 };
 

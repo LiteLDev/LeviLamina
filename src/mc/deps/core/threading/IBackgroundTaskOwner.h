@@ -18,7 +18,7 @@ class IBackgroundTaskOwner {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBackgroundTaskOwner();
+    virtual ~IBackgroundTaskOwner() = default;
 
     virtual ::Bedrock::Threading::Async<void> queue_DEPRECATED(
         ::TaskStartInfo const&                        startInfo,

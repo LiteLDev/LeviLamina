@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FrameDecryptorInterface() /*override*/;
+    virtual ~FrameDecryptorInterface() /*override*/ = default;
 
     virtual ::webrtc::FrameDecryptorInterface::Result Decrypt(
         ::webrtc::MediaType,

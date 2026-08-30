@@ -14,7 +14,7 @@ class IServerURLResolver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IServerURLResolver();
+    virtual ~IServerURLResolver() = default;
 
     virtual bool
     fromStringExplicitPort(::PingedCompatibleServer& server, char const* str, ushort port, int ipVersion) = 0;

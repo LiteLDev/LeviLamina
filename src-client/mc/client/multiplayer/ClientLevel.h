@@ -78,7 +78,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientLevel() /*override*/;
+    virtual ~ClientLevel() /*override*/ = default;
 
     virtual bool initialize(
         ::std::string const&   levelName,

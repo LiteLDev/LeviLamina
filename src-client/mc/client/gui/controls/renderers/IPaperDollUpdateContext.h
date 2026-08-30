@@ -20,7 +20,7 @@ class IPaperDollUpdateContext {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPaperDollUpdateContext();
+    virtual ~IPaperDollUpdateContext() = default;
 
     virtual ::brstd::move_only_function<void(::std::string_view) const> getRemoveSkinFunction() = 0;
 

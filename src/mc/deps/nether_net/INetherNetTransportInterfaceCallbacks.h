@@ -17,7 +17,7 @@ class INetherNetTransportInterfaceCallbacks {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~INetherNetTransportInterfaceCallbacks();
+    virtual ~INetherNetTransportInterfaceCallbacks() = default;
 
     virtual void OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint*) = 0;
 

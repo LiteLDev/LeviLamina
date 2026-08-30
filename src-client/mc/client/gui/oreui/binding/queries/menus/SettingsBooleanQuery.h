@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SettingsBooleanQuery() /*override*/;
+    virtual ~SettingsBooleanQuery() /*override*/ = default;
     // NOLINTEND
 
 public:

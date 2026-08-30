@@ -38,7 +38,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~EnchantingContainerManagerController() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~EnchantingContainerManagerController() /*override*/;
+#endif
 
     virtual bool handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
 

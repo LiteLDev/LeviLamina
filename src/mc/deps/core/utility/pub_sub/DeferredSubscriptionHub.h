@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeferredSubscriptionHub();
+    virtual ~DeferredSubscriptionHub() = default;
 
     virtual uint64 runDeferredEvents(uint64 maxToRun) = 0;
 

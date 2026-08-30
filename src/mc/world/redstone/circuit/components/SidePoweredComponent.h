@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SidePoweredComponent() /*override*/;
+    virtual ~SidePoweredComponent() /*override*/ = default;
 
     virtual uchar getPoweroutDirection() const /*override*/;
 

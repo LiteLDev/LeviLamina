@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseGameTestAction();
+    virtual ~BaseGameTestAction() = default;
 
     virtual ::std::optional<::gametest::GameTestError> run() = 0;
     // NOLINTEND

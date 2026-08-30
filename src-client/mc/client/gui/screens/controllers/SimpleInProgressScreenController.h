@@ -16,7 +16,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SimpleInProgressScreenController() /*override*/;
+    virtual ~SimpleInProgressScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
     // NOLINTEND

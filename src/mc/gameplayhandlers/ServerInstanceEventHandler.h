@@ -15,7 +15,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerInstanceEventHandler() /*override*/;
+    virtual ~ServerInstanceEventHandler() /*override*/ = default;
 
     virtual ::HandlerResult handleEvent(::ServerInstanceGameplayEvent<void> const&) = 0;
     // NOLINTEND

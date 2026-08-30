@@ -122,7 +122,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LegacyStatsCollector() /*override*/;
+    virtual ~LegacyStatsCollector() /*override*/ = default;
 
     virtual void AddLocalAudioTrack(::webrtc::AudioTrackInterface* audio_track, uint ssrc) /*override*/;
 

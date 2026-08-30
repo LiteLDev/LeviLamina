@@ -6,7 +6,7 @@ class IDataOutput {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDataOutput();
+    virtual ~IDataOutput() = default;
 
     virtual void writeString(::std::string_view v) = 0;
 

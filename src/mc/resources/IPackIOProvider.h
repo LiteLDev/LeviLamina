@@ -16,7 +16,7 @@ class IPackIOProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPackIOProvider();
+    virtual ~IPackIOProvider() = default;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> getFileAccess(::ResourceFileSystem system) const = 0;
 

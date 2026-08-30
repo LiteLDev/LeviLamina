@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BasicRegatheringController() /*override*/;
+    virtual ~BasicRegatheringController() /*override*/ = default;
     // NOLINTEND
 
 public:

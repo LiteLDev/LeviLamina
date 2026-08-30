@@ -49,7 +49,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~EditorReplicationService() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~EditorReplicationService() /*override*/;
+#endif
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

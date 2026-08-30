@@ -14,7 +14,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPlayerTickPolicy();
+    virtual ~IPlayerTickPolicy() = default;
 
     virtual uint64 getMaxTickCount(uint64, bool) const = 0;
 

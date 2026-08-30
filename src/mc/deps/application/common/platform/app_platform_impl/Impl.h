@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Impl() /*override*/;
+    virtual ~Impl() /*override*/ = default;
 
     virtual ::IPlatformScreenshots& getPlatformScreenshots() /*override*/;
 

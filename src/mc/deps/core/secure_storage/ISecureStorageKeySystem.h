@@ -11,7 +11,7 @@ class ISecureStorageKeySystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISecureStorageKeySystem();
+    virtual ~ISecureStorageKeySystem() = default;
 
     virtual ::SecureStorageKey getSecureStorageKey(::std::string const&) = 0;
 

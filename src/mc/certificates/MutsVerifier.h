@@ -31,7 +31,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~MutsVerifier() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~MutsVerifier() /*override*/;
+#endif
 
     virtual void setRequest(::Json::Value& request) /*override*/;
 

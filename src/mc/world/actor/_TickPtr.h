@@ -8,6 +8,6 @@ public:
     // NOLINTBEGIN
     virtual void invalidate() = 0;
 
-    virtual ~_TickPtr();
+    virtual ~_TickPtr() = default;
     // NOLINTEND
 };

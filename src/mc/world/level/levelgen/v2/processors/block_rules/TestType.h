@@ -15,7 +15,7 @@ struct TestType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TestType();
+    virtual ~TestType() = default;
 
     virtual bool test(::Block const& block, ::IRandom& random) const = 0;
 

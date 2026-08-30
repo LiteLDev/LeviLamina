@@ -34,7 +34,7 @@ class IDataDrivenUIRepository : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDataDrivenUIRepository() /*override*/;
+    virtual ~IDataDrivenUIRepository() /*override*/ = default;
 
     virtual void load(::ResourcePackManager const& resourcePackManager) = 0;
 

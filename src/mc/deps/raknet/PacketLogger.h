@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PacketLogger() /*override*/;
+    virtual ~PacketLogger() /*override*/ = default;
 
     virtual void FormatLine(
         char*,

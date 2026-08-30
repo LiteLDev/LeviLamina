@@ -20,7 +20,7 @@ class EditorServerExportProjectServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorServerExportProjectServiceProvider();
+    virtual ~EditorServerExportProjectServiceProvider() = default;
 
     virtual ::Bedrock::PubSub::Subscription addExportBeginTask(
         ::std::function<void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&)> fn

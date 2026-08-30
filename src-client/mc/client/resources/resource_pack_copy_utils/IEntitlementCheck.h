@@ -13,7 +13,7 @@ class IEntitlementCheck {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEntitlementCheck();
+    virtual ~IEntitlementCheck() = default;
 
     virtual bool isValid(::ContentIdentity const& identity) const = 0;
     // NOLINTEND

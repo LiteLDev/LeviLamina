@@ -77,7 +77,7 @@ class IScriptWorldAfterEvents {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptWorldAfterEvents();
+    virtual ~IScriptWorldAfterEvents() = default;
 
     virtual ::Level& getLevel() const = 0;
 

@@ -20,7 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ICallable();
+    virtual ~ICallable() = default;
 
     virtual char const* const name() const = 0;
 

@@ -47,7 +47,7 @@ public:
 
     virtual uchar const* DataUV() const /*override*/;
 
-    virtual ~NV12Buffer() /*override*/;
+    virtual ~NV12Buffer() /*override*/ = default;
     // NOLINTEND
 };
 

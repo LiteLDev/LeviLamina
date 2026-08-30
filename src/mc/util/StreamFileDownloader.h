@@ -47,7 +47,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~StreamFileDownloader() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~StreamFileDownloader() /*override*/;
+#endif
 
     virtual void update() /*override*/;
 

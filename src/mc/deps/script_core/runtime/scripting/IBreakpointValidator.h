@@ -8,7 +8,7 @@ class IBreakpointValidator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBreakpointValidator();
+    virtual ~IBreakpointValidator() = default;
 
     virtual bool validatePath(::std::string_view const) = 0;
     // NOLINTEND

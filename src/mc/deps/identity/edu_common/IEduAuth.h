@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEduAuth() /*override*/;
+    virtual ~IEduAuth() /*override*/ = default;
 
     virtual void Authenticate(
         ::Identity::AuthArgs const&,

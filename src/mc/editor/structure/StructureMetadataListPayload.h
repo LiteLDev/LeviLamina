@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureMetadataListPayload() /*override*/;
+    virtual ~StructureMetadataListPayload() /*override*/ = default;
     // NOLINTEND
 
 public:

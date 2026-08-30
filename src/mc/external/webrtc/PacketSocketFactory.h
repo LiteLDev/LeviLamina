@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PacketSocketFactory();
+    virtual ~PacketSocketFactory() = default;
 
     virtual ::std::unique_ptr<::webrtc::AsyncPacketSocket>
     CreateUdpSocket(::webrtc::SocketAddress const& address, ushort min_port, ushort max_port) = 0;

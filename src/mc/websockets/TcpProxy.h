@@ -12,7 +12,7 @@ class TcpProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TcpProxy();
+    virtual ~TcpProxy() = default;
 
     virtual bool start(ushort port, ushort maxIncomming, ushort maxOutgoing) = 0;
 

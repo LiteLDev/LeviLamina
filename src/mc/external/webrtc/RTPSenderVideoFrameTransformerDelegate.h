@@ -47,7 +47,7 @@ public:
 
     virtual void StartShortCircuiting() /*override*/;
 
-    virtual ~RTPSenderVideoFrameTransformerDelegate() /*override*/;
+    virtual ~RTPSenderVideoFrameTransformerDelegate() /*override*/ = default;
     // NOLINTEND
 
 public:

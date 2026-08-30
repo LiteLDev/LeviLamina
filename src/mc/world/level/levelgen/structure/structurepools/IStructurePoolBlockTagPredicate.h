@@ -13,7 +13,7 @@ class IStructurePoolBlockTagPredicate {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IStructurePoolBlockTagPredicate();
+    virtual ~IStructurePoolBlockTagPredicate() = default;
 
     virtual bool test(::Block const& block, ::CompoundTag const& tag) const = 0;
 

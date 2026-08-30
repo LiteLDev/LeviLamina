@@ -11,7 +11,7 @@ class PlayerListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerListener();
+    virtual ~PlayerListener() = default;
 
     virtual void onWillChangeDimension(::Player& player);
 

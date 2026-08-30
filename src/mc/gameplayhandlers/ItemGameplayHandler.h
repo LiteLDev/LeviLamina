@@ -14,7 +14,7 @@ class ItemGameplayHandler : public ::GameplayHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemGameplayHandler() /*override*/;
+    virtual ~ItemGameplayHandler() /*override*/ = default;
 
     virtual ::HandlerResult handleEvent(::ItemGameplayEvent<void> const&) = 0;
 

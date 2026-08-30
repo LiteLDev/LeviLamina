@@ -14,7 +14,7 @@ class IIslandManager {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IIslandManager();
+    virtual ~IIslandManager() = default;
 
     virtual bool registerIsland(::Bedrock::IslandRegistrationInfo&) = 0;
 

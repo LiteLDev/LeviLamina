@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OfferCatalogModelBase();
+    virtual ~OfferCatalogModelBase() = default;
 
     virtual ::OfferCatalogStatus update() = 0;
 

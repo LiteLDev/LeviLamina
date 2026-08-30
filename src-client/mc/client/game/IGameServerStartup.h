@@ -18,7 +18,7 @@ class IGameServerStartup {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGameServerStartup();
+    virtual ~IGameServerStartup() = default;
 
     virtual bool canStartLocalServer() const = 0;
 

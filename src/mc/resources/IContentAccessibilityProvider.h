@@ -14,7 +14,7 @@ class IContentAccessibilityProvider : public ::IContentKeyProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IContentAccessibilityProvider() /*override*/;
+    virtual ~IContentAccessibilityProvider() /*override*/ = default;
 
     virtual bool canAccess(::ContentIdentity const& contentIdentity) const = 0;
     // NOLINTEND

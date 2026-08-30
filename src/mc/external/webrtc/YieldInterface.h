@@ -8,7 +8,7 @@ class YieldInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~YieldInterface();
+    virtual ~YieldInterface() = default;
 
     virtual void YieldExecution() = 0;
     // NOLINTEND

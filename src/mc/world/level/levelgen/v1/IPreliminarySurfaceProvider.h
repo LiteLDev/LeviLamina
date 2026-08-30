@@ -9,7 +9,7 @@ class IPreliminarySurfaceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPreliminarySurfaceProvider();
+    virtual ~IPreliminarySurfaceProvider() = default;
 
     virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const = 0;
     // NOLINTEND

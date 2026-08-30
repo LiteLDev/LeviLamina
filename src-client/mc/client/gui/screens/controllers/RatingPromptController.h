@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RatingPromptController() /*override*/;
+    virtual ~RatingPromptController() /*override*/ = default;
     // NOLINTEND
 
 public:

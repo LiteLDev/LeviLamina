@@ -23,7 +23,7 @@ class IWorldPackCollectionManager {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IWorldPackCollectionManager();
+    virtual ~IWorldPackCollectionManager() = default;
 
     virtual void tick() = 0;
 

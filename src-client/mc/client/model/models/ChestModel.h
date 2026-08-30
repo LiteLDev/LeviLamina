@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChestModel() /*override*/;
+    virtual ~ChestModel() /*override*/ = default;
 
     virtual void render(::ScreenContext& screenContext) /*override*/;
     // NOLINTEND

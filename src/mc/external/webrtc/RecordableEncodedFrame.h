@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RecordableEncodedFrame();
+    virtual ~RecordableEncodedFrame() = default;
 
     virtual ::webrtc::scoped_refptr<::webrtc::EncodedImageBufferInterface const> encoded_buffer() const = 0;
 

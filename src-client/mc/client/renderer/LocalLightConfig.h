@@ -83,7 +83,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalLightConfig() /*override*/;
+    virtual ~LocalLightConfig() /*override*/ = default;
     // NOLINTEND
 
 public:

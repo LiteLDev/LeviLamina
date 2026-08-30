@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LruCacheFileSystem() /*override*/;
+    virtual ~LruCacheFileSystem() /*override*/ = default;
 
     virtual ::Core::CrossStorageCopyMode getCrossStorageCopyMode() /*override*/;
 

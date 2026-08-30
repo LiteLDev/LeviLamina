@@ -62,7 +62,11 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        virtual ~BlockChangeListener() /*override*/ = default;
+#else // LL_PLAT_C
         virtual ~BlockChangeListener() /*override*/;
+#endif
 
         virtual void onBlockChanged(
             ::BlockSource&                 source,
@@ -142,7 +146,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~CraftingContainerManagerController() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~CraftingContainerManagerController() /*override*/;
+#endif
 
     virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
 

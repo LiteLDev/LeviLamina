@@ -19,7 +19,7 @@ class EditorPlayerExportProjectServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorPlayerExportProjectServiceProvider();
+    virtual ~EditorPlayerExportProjectServiceProvider() = default;
 
     virtual void beginExportProject(
         ::WeakEntityRef                                                     playerRef,

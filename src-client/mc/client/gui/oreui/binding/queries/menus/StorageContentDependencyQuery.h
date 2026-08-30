@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageContentDependencyQuery() /*override*/;
+    virtual ~StorageContentDependencyQuery() /*override*/ = default;
     // NOLINTEND
 
 public:

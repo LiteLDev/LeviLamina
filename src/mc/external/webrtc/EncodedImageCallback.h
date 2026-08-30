@@ -49,7 +49,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EncodedImageCallback();
+    virtual ~EncodedImageCallback() = default;
 
     virtual ::webrtc::EncodedImageCallback::Result OnEncodedImage(
         ::webrtc::EncodedImage const&      encoded_image,

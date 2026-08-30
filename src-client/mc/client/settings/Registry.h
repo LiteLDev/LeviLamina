@@ -69,7 +69,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Registry() /*override*/;
+    virtual ~Registry() /*override*/ = default;
 
     virtual ::std::vector<::std::string_view> getSettingsGroups() const /*override*/;
 

@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtcEvent();
+    virtual ~RtcEvent() = default;
 
     virtual ::webrtc::RtcEvent::Type GetType() const = 0;
 

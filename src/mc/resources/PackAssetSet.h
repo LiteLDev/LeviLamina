@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PackAssetSet();
+    virtual ~PackAssetSet() = default;
 
     virtual void addAsset(::Core::Path path, ::std::string key) = 0;
 

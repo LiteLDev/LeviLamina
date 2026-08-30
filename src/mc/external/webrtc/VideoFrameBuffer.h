@@ -50,7 +50,7 @@ public:
 
     virtual ::std::string storage_representation() const;
 
-    virtual ~VideoFrameBuffer() /*override*/;
+    virtual ~VideoFrameBuffer() /*override*/ = default;
     // NOLINTEND
 
 public:

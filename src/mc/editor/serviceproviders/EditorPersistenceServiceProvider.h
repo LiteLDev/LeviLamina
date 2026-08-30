@@ -19,7 +19,7 @@ class EditorPersistenceServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorPersistenceServiceProvider();
+    virtual ~EditorPersistenceServiceProvider() = default;
 
     virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> getOrCreateGroup(
         ::std::string const&                                      namespacedName,

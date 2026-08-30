@@ -51,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFeature();
+    virtual ~IFeature() = default;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const = 0;
 

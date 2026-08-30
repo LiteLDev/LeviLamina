@@ -14,7 +14,7 @@ class SignalPublisher {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SignalPublisher();
+    virtual ~SignalPublisher() = default;
 
     virtual void send(void const* data) = 0;
 

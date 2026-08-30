@@ -8,6 +8,6 @@ public:
     // NOLINTBEGIN
     virtual void containerContentChanged(int slot) = 0;
 
-    virtual ~ContainerContentChangeListener();
+    virtual ~ContainerContentChangeListener() = default;
     // NOLINTEND
 };

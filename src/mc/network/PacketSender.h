@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PacketSender() /*override*/;
+    virtual ~PacketSender() /*override*/ = default;
 
     virtual bool isInitialized() const = 0;
 

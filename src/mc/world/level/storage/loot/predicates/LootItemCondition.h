@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LootItemCondition();
+    virtual ~LootItemCondition() = default;
 
     virtual bool applies(::Random& random, ::LootTableContext& context) = 0;
 

@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WndProc();
+    virtual ~WndProc() = default;
 
     virtual ::std::optional<int64> onClose(::MainGameCore::WndProc::WndProcParams params);
 

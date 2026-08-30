@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CreateSessionDescriptionObserverOperationWrapper() /*override*/;
+    virtual ~CreateSessionDescriptionObserverOperationWrapper() /*override*/ = default;
 
     virtual void OnSuccess(::webrtc::SessionDescriptionInterface* desc) /*override*/;
 

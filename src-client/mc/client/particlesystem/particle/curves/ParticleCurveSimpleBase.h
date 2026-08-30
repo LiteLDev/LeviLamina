@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleCurveSimpleBase() /*override*/;
+    virtual ~ParticleCurveSimpleBase() /*override*/ = default;
 
     virtual void parseJson(
         ::ConstDeserializeDataParams const& deserializeDataParams,

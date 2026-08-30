@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IInvocationStateTracker();
+    virtual ~IInvocationStateTracker() = default;
 
     virtual ::Bedrock::PubSub::Subscription onChange(
         ::OreUI::Detail::IdType const& id,

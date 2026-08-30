@@ -16,7 +16,7 @@ class IGameControllerManager {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGameControllerManager();
+    virtual ~IGameControllerManager() = default;
 
     virtual ::std::weak_ptr<::IGameController> getGameController(int id) = 0;
 

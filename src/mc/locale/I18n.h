@@ -20,7 +20,7 @@ class I18n {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~I18n();
+    virtual ~I18n() = default;
 
     virtual void clearLanguages() = 0;
 

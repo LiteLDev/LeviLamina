@@ -11,7 +11,7 @@ class AutoThread : public ::webrtc::Thread {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AutoThread() /*override*/;
+    virtual ~AutoThread() /*override*/ = default;
     // NOLINTEND
 };
 

@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PackManagerContentSourceImpl() /*override*/;
+    virtual ~PackManagerContentSourceImpl() /*override*/ = default;
 
     virtual void save() /*override*/;
 

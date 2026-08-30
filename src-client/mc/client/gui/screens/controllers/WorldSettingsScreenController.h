@@ -119,7 +119,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldSettingsScreenController() /*override*/;
+    virtual ~WorldSettingsScreenController() /*override*/ = default;
 
     virtual void onCreation() /*override*/;
 

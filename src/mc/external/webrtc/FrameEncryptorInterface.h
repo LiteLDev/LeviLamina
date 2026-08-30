@@ -13,7 +13,7 @@ class FrameEncryptorInterface : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FrameEncryptorInterface() /*override*/;
+    virtual ~FrameEncryptorInterface() /*override*/ = default;
 
     virtual int Encrypt(
         ::webrtc::MediaType,

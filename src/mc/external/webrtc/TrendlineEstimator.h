@@ -72,7 +72,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TrendlineEstimator() /*override*/;
+    virtual ~TrendlineEstimator() /*override*/ = default;
 
     virtual void Update(
         double recv_delta_ms,

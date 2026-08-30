@@ -8,7 +8,7 @@ class Parameter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Parameter();
+    virtual ~Parameter() = default;
 
     virtual void SerializeTo(::std::vector<uchar>& out) const = 0;
 

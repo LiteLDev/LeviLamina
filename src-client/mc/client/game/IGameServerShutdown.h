@@ -6,7 +6,7 @@ struct IGameServerShutdown {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGameServerShutdown();
+    virtual ~IGameServerShutdown() = default;
 
     virtual void requestLeaveGame(bool switchScreen, bool sync) = 0;
 

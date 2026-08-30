@@ -8,7 +8,7 @@ class IOnlineAudioFetcher {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IOnlineAudioFetcher();
+    virtual ~IOnlineAudioFetcher() = default;
 
     virtual void start() = 0;
 

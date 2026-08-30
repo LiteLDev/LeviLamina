@@ -16,7 +16,7 @@ class IWorldsProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IWorldsProvider();
+    virtual ~IWorldsProvider() = default;
 
     virtual int getWorldCount(::WorldType worldType, ::NetworkWorldType networkType) const = 0;
 

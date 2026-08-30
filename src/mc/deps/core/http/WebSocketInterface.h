@@ -18,7 +18,7 @@ class WebSocketInterface : public ::Bedrock::ImplBase<::Bedrock::Http::WebSocket
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WebSocketInterface() /*override*/;
+    virtual ~WebSocketInterface() /*override*/ = default;
 
     virtual HRESULT connect(
         char const*,

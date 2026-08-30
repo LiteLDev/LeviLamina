@@ -19,7 +19,7 @@ public:
 
     virtual int StrideUV() const = 0;
 
-    virtual ~BiplanarYuvBuffer() /*override*/;
+    virtual ~BiplanarYuvBuffer() /*override*/ = default;
     // NOLINTEND
 };
 

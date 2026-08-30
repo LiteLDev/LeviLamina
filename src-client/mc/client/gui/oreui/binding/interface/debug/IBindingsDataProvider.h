@@ -17,7 +17,7 @@ class IBindingsDataProvider : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBindingsDataProvider() /*override*/;
+    virtual ~IBindingsDataProvider() /*override*/ = default;
 
     virtual ::std::vector<::OreUI::Debug::QueryInformation> getQueryInformation() const = 0;
 

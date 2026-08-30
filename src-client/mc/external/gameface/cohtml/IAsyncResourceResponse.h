@@ -65,7 +65,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAsyncResourceResponse();
+    virtual ~IAsyncResourceResponse() = default;
 
     virtual void* GetSpace(uint64) = 0;
 

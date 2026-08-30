@@ -11,7 +11,7 @@ class IScriptDebuggerRequestHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptDebuggerRequestHandler();
+    virtual ~IScriptDebuggerRequestHandler() = default;
 
     virtual void registerHandlers(::ScriptDebugger& debugger) = 0;
 

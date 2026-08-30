@@ -72,7 +72,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InGamePlayScreen() /*override*/;
+    virtual ~InGamePlayScreen() /*override*/ = default;
 
     virtual void applyInput(float a) /*override*/;
 

@@ -15,7 +15,7 @@ class IAsyncResourceHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAsyncResourceHandler();
+    virtual ~IAsyncResourceHandler() = default;
 
     virtual void
     OnResourceRequest(::cohtml::IAsyncResourceRequest const* request, ::cohtml::IAsyncResourceResponse* response) = 0;

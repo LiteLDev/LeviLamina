@@ -13,7 +13,7 @@ class DecodedImageCallback {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DecodedImageCallback();
+    virtual ~DecodedImageCallback() = default;
 
     virtual int Decoded(::webrtc::VideoFrame&) = 0;
 

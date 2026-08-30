@@ -9,6 +9,6 @@ class CodeScreenControllerProxy : public ::ScreenControllerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CodeScreenControllerProxy() /*override*/;
+    virtual ~CodeScreenControllerProxy() /*override*/ = default;
     // NOLINTEND
 };

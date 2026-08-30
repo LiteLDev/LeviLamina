@@ -8,7 +8,7 @@ class IScriptRef {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptRef();
+    virtual ~IScriptRef() = default;
 
     virtual void onReduceToSingleOwner() = 0;
 

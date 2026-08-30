@@ -11,7 +11,7 @@ class IMinecraftEventingProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMinecraftEventingProvider();
+    virtual ~IMinecraftEventingProvider() = default;
 
     virtual ::IPurchaseEventing& getPurchaseEventing() = 0;
     // NOLINTEND

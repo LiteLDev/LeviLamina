@@ -6,6 +6,6 @@ struct ContainerValidationCraftInputs {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContainerValidationCraftInputs();
+    virtual ~ContainerValidationCraftInputs() = default;
     // NOLINTEND
 };

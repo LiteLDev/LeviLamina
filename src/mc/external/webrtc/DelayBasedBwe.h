@@ -87,7 +87,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DelayBasedBwe();
+    virtual ~DelayBasedBwe() = default;
     // NOLINTEND
 
 public:

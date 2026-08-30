@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ThrottledFileSystem() /*override*/;
+    virtual ~ThrottledFileSystem() /*override*/ = default;
 
     virtual ::Core::Result _openFile(
         ::std::unique_ptr<::Core::FileImpl>&,

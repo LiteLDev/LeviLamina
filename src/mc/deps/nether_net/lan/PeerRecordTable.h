@@ -51,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PeerRecordTable() /*override*/;
+    virtual ~PeerRecordTable() /*override*/ = default;
     // NOLINTEND
 
 public:

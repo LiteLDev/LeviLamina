@@ -21,7 +21,7 @@ class ICustomBiomeSource : public ::EnableGetWeakRef<::ICustomBiomeSource> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ICustomBiomeSource();
+    virtual ~ICustomBiomeSource() = default;
 
     virtual ::mce::UUID const& getId() = 0;
 

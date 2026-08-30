@@ -15,7 +15,7 @@ class ITouchSystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITouchSystem();
+    virtual ~ITouchSystem() = default;
 
     virtual void sendTouchEvents(::std::vector<::OreUI::TouchEventData> const& events) = 0;
 

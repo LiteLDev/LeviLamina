@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HowToPlayScreenController() /*override*/;
+    virtual ~HowToPlayScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 

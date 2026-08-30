@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LogSink();
+    virtual ~LogSink() = default;
 
     virtual void OnLogMessage(::std::string const& msg, ::webrtc::LoggingSeverity severity, char const* tag);
 

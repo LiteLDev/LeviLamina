@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LateJoinPreGameScreenController() /*override*/;
+    virtual ~LateJoinPreGameScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 

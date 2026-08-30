@@ -14,7 +14,7 @@ struct IBlockActorComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBlockActorComponent();
+    virtual ~IBlockActorComponent() = default;
 
     virtual void save(::CompoundTag& parentTag) const = 0;
 

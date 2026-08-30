@@ -13,7 +13,7 @@ class MdnsResponderInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MdnsResponderInterface();
+    virtual ~MdnsResponderInterface() = default;
 
     virtual void CreateNameForAddress(
         ::webrtc::IPAddress const&,

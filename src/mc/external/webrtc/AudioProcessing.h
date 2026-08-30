@@ -461,7 +461,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AudioProcessing() /*override*/;
+    virtual ~AudioProcessing() /*override*/ = default;
 
     virtual int Initialize() = 0;
 

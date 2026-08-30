@@ -25,6 +25,6 @@ public:
         ::FullContainerName const&         name
     ) = 0;
 
-    virtual ~IContainerRegistryAccess();
+    virtual ~IContainerRegistryAccess() = default;
     // NOLINTEND
 };

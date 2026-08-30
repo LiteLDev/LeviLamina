@@ -24,7 +24,7 @@ class ClipboardServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClipboardServiceProvider();
+    virtual ~ClipboardServiceProvider() = default;
 
     virtual ::mce::UUID const& getPrimaryItemId() = 0;
 

@@ -47,7 +47,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~DateManager() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~DateManager() /*override*/;
+#endif
 
     virtual int64 _getUnixTime();
     // NOLINTEND

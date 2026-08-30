@@ -19,7 +19,7 @@ class IFoodItemComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFoodItemComponent();
+    virtual ~IFoodItemComponent() = default;
 
     virtual int getNutrition() const = 0;
 

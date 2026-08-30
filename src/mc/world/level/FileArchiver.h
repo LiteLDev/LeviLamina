@@ -162,7 +162,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~ProgressReporter() /*override*/;
+        virtual ~ProgressReporter() /*override*/ = default;
 
         virtual void clear() /*override*/;
         // NOLINTEND
@@ -251,7 +251,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~IWorldConverter();
+        virtual ~IWorldConverter() = default;
 
         virtual void enqueueConvertImportingWorldTasks(
             ::std::shared_ptr<::FileArchiver::Result>&                      sharedResult,

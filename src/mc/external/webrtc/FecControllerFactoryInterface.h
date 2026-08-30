@@ -14,7 +14,7 @@ class FecControllerFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FecControllerFactoryInterface();
+    virtual ~FecControllerFactoryInterface() = default;
 
     virtual ::std::unique_ptr<::webrtc::FecController> CreateFecController(::webrtc::Environment const&) = 0;
     // NOLINTEND

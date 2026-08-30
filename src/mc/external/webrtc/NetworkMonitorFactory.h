@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual ::webrtc::NetworkMonitorInterface* CreateNetworkMonitor(::webrtc::FieldTrialsView const&) = 0;
 
-    virtual ~NetworkMonitorFactory();
+    virtual ~NetworkMonitorFactory() = default;
     // NOLINTEND
 };
 

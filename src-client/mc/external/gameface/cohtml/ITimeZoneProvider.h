@@ -8,7 +8,7 @@ class ITimeZoneProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITimeZoneProvider();
+    virtual ~ITimeZoneProvider() = default;
 
     virtual void GetLocalTimezoneName(double timeMsUtc, char* buffer, uint64 maxBufferSize) = 0;
 

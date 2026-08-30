@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MeshCommitCancelPayload() /*override*/;
+    virtual ~MeshCommitCancelPayload() /*override*/ = default;
     // NOLINTEND
 
 public:

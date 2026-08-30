@@ -6,7 +6,7 @@ class IPlayerSleepPercentageGetter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPlayerSleepPercentageGetter();
+    virtual ~IPlayerSleepPercentageGetter() = default;
 
     virtual float getPlayerSleepPercentageGoal() const = 0;
     // NOLINTEND

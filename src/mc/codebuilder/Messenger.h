@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Messenger() /*override*/;
+    virtual ~Messenger() /*override*/ = default;
 
     virtual void
     onAgentAction(::AgentActionType actionType, ::std::string const& requestId, ::Json::Value const& result) const

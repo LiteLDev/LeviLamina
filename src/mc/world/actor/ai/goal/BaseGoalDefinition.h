@@ -18,7 +18,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseGoalDefinition();
+    virtual ~BaseGoalDefinition() = default;
 
     virtual bool validateMobType(::Mob&) const;
 

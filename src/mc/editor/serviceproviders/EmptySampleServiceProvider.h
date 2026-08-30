@@ -8,7 +8,7 @@ class EmptySampleServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EmptySampleServiceProvider();
+    virtual ~EmptySampleServiceProvider() = default;
 
     virtual void SampleMethod() const = 0;
     // NOLINTEND

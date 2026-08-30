@@ -70,7 +70,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChatScreenController() /*override*/;
+    virtual ~ChatScreenController() /*override*/ = default;
 
     virtual void onInit() /*override*/;
 

@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RequestLoadRealmsWorldSlotsPayload() /*override*/;
+    virtual ~RequestLoadRealmsWorldSlotsPayload() /*override*/ = default;
     // NOLINTEND
 
 public:

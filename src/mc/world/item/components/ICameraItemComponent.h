@@ -16,7 +16,7 @@ class ICameraItemComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ICameraItemComponent();
+    virtual ~ICameraItemComponent() = default;
 
     virtual float blackBarsDuration() const = 0;
 

@@ -43,7 +43,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~DevConsoleCommandOrigin() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~DevConsoleCommandOrigin() /*override*/;
+#endif
 
     virtual ::std::string const& getRequestId() const /*override*/;
 

@@ -27,7 +27,7 @@ class CommonBlockUtilityServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommonBlockUtilityServiceProvider();
+    virtual ~CommonBlockUtilityServiceProvider() = default;
 
     virtual ::std::set<::ChunkPos> getChunksFromAABB(::AABB const& aabb) const = 0;
 

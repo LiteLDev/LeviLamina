@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPropertyObject();
+    virtual ~IPropertyObject() = default;
 
     virtual char const* objectName() const = 0;
 

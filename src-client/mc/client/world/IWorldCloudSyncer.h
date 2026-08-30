@@ -17,7 +17,7 @@ class IWorldCloudSyncer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IWorldCloudSyncer();
+    virtual ~IWorldCloudSyncer() = default;
 
     virtual void syncWorld(::World::WorldID const&, ::std::function<void(::World::WorldCloudSyncResult)> const&) = 0;
 

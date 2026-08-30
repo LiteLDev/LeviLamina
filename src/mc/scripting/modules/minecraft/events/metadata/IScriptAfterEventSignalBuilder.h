@@ -16,7 +16,7 @@ struct IScriptAfterEventSignalBuilder {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptAfterEventSignalBuilder();
+    virtual ~IScriptAfterEventSignalBuilder() = default;
 
     virtual ::ScriptModuleMinecraft::ScriptAfterEventSignalHandle
     createSignal(::Scripting::WeakLifetimeScope& scope) const = 0;

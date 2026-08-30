@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContainerScreenTemporaryActionScope() /*override*/;
+    virtual ~ContainerScreenTemporaryActionScope() /*override*/ = default;
     // NOLINTEND
 
 public:

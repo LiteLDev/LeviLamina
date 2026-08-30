@@ -11,7 +11,7 @@ class IAsyncInfo {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAsyncInfo();
+    virtual ~IAsyncInfo() = default;
 
     virtual ::Bedrock::Threading::AsyncStatus getStatus() const = 0;
 

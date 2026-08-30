@@ -11,7 +11,7 @@ class IFileSystemReader : public ::renoir::IFileManipulator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFileSystemReader() /*override*/;
+    virtual ~IFileSystemReader() /*override*/ = default;
     // NOLINTEND
 };
 

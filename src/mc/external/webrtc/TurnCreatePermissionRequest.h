@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TurnCreatePermissionRequest() /*override*/;
+    virtual ~TurnCreatePermissionRequest() /*override*/ = default;
 
     virtual void OnSent() /*override*/;
 

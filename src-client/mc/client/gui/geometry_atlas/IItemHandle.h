@@ -17,7 +17,7 @@ class IItemHandle {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IItemHandle();
+    virtual ~IItemHandle() = default;
 
     virtual bool isAnimated() const = 0;
 

@@ -91,7 +91,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InviteScreenController() /*override*/;
+    virtual ~InviteScreenController() /*override*/ = default;
 
     virtual void queueTitleNarration() /*override*/;
 

@@ -15,7 +15,11 @@ class BeaconPaymentContainerController : public ::ContainerController {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~BeaconPaymentContainerController() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~BeaconPaymentContainerController() /*override*/;
+#endif
 
     virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const /*override*/;
     // NOLINTEND

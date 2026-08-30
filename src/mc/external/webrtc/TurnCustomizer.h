@@ -18,7 +18,7 @@ public:
 
     virtual bool AllowChannelData(::webrtc::PortInterface*, void const*, uint64, bool) = 0;
 
-    virtual ~TurnCustomizer();
+    virtual ~TurnCustomizer() = default;
     // NOLINTEND
 };
 

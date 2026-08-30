@@ -16,7 +16,7 @@ class IVillageManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IVillageManager() /*override*/;
+    virtual ~IVillageManager() /*override*/ = default;
 
     virtual ::std::weak_ptr<::Village>
     fetchClosestVillage(::BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const = 0;

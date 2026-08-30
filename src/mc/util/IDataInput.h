@@ -9,7 +9,7 @@ class IDataInput {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDataInput();
+    virtual ~IDataInput() = default;
 
     virtual ::Bedrock::Result<::std::string> readStringResult() = 0;
 

@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PDPSection();
+    virtual ~PDPSection() = default;
 
     virtual ::std::unique_ptr<::ScreenController> makeScreenController(::std::shared_ptr<::MainMenuScreenModel>);
     // NOLINTEND

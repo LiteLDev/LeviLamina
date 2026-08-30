@@ -12,7 +12,7 @@ class IPackManagerContentQueries {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPackManagerContentQueries();
+    virtual ~IPackManagerContentQueries() = default;
 
     virtual ::ContentTierInfo getContentTierInfo() const = 0;
 

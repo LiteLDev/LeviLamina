@@ -14,7 +14,7 @@ class ISystemInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISystemInterface();
+    virtual ~ISystemInterface() = default;
 
     virtual bool generateKeyPair(::std::string& privateKey, ::std::string& publicKey) = 0;
 

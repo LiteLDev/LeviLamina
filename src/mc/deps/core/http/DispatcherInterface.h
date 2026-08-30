@@ -18,7 +18,7 @@ class DispatcherInterface : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DispatcherInterface() /*override*/;
+    virtual ~DispatcherInterface() /*override*/ = default;
 
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> send(::Bedrock::Http::Request&& request) = 0;
     // NOLINTEND

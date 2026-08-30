@@ -18,7 +18,7 @@ class IResultHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IResultHandler();
+    virtual ~IResultHandler() = default;
 
     virtual void
     call(::Bedrock::Result<::Json::Value, ::JsonRpc::JsonRpcError>&& value, ::cereal::ReflectionCtx& cerealContext) = 0;

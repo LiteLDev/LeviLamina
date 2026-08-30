@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual void OnStateChange(::webrtc::SctpTransportInformation) = 0;
 
-    virtual ~SctpTransportObserverInterface();
+    virtual ~SctpTransportObserverInterface() = default;
     // NOLINTEND
 };
 

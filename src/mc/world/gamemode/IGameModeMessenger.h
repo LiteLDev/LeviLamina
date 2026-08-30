@@ -19,7 +19,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGameModeMessenger();
+    virtual ~IGameModeMessenger() = default;
 
     virtual ::gsl::final_action<::std::function<void()>> createBlockBreakCaptureScope(
         ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)> callback

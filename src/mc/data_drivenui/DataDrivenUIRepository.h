@@ -60,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataDrivenUIRepository() /*override*/;
+    virtual ~DataDrivenUIRepository() /*override*/ = default;
 
     virtual void onActiveResourcePacksChanged(::ResourcePackManager&) /*override*/;
 

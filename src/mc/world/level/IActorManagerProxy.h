@@ -15,7 +15,7 @@ class IActorManagerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IActorManagerProxy();
+    virtual ~IActorManagerProxy() = default;
 
     virtual void initializeActor(::Actor& actor) = 0;
 

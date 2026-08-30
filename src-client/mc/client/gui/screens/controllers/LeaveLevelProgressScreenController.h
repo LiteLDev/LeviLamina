@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LeaveLevelProgressScreenController() /*override*/;
+    virtual ~LeaveLevelProgressScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 

@@ -186,7 +186,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RakNetConnector() /*override*/;
+    virtual ~RakNetConnector() /*override*/ = default;
 
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 

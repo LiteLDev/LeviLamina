@@ -8,7 +8,7 @@ class IScene {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScene();
+    virtual ~IScene() = default;
 
     virtual void onLoadFailed(char const*, char const*) = 0;
 

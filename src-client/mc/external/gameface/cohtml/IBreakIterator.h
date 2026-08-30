@@ -8,7 +8,7 @@ class IBreakIterator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBreakIterator();
+    virtual ~IBreakIterator() = default;
 
     virtual void Destroy() = 0;
 

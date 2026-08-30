@@ -15,7 +15,7 @@ class ISceneFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISceneFactory();
+    virtual ~ISceneFactory() = default;
 
     virtual ::std::shared_ptr<::AbstractScene> createTabbedUpsellScreen(::TabbedUpsellScreenDefaultTab tab) = 0;
 

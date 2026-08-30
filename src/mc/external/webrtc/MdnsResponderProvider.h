@@ -13,7 +13,7 @@ class MdnsResponderProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MdnsResponderProvider();
+    virtual ~MdnsResponderProvider() = default;
 
     virtual ::webrtc::MdnsResponderInterface* GetMdnsResponder() const = 0;
     // NOLINTEND

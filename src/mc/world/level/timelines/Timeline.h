@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Timeline();
+    virtual ~Timeline() = default;
 
     virtual void tick(::PacketSender&);
 

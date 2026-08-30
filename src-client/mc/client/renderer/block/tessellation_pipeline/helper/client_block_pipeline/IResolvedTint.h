@@ -13,7 +13,7 @@ struct IResolvedTint {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IResolvedTint();
+    virtual ~IResolvedTint() = default;
 
     virtual ::mce::Color const& get(int materialInstanceId, uchar facing) const = 0;
     // NOLINTEND

@@ -21,7 +21,7 @@ class DataStoreServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataStoreServiceProvider();
+    virtual ~DataStoreServiceProvider() = default;
 
     virtual ::Editor::DataStore::IContentBadgeContainer& getContentBadgeContainer() = 0;
 

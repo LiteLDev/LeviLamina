@@ -6,7 +6,7 @@ class IUIEventTelemetry {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IUIEventTelemetry();
+    virtual ~IUIEventTelemetry() = default;
 
     virtual void fireScreenLoadTimeUpdateEvent(
         uint const&                userId,

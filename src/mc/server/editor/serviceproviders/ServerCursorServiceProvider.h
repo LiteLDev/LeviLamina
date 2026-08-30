@@ -26,7 +26,7 @@ class ServerCursorServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerCursorServiceProvider();
+    virtual ~ServerCursorServiceProvider() = default;
 
     virtual ::StackRefResult<::Editor::Cursor::ServerCursor> getCursor() const = 0;
 

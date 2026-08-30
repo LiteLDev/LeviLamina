@@ -65,7 +65,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DensityFunctionBiomeSource() /*override*/;
+    virtual ~DensityFunctionBiomeSource() /*override*/ = default;
 
     virtual ::ChunkVolume::VolumeOf<::Biome>
     getBiomeVolumeToFill(short, ::BlockPos, uint, ::ChunkLocalNoiseCache const*) const /*override*/;

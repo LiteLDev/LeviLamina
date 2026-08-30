@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual void OnFirstPacketSent(::webrtc::MediaType) = 0;
 
-    virtual ~RtpSenderObserverInterface();
+    virtual ~RtpSenderObserverInterface() = default;
     // NOLINTEND
 };
 

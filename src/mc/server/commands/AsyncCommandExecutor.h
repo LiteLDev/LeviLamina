@@ -55,6 +55,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncCommandExecutor() /*override*/;
+    virtual ~AsyncCommandExecutor() /*override*/ = default;
     // NOLINTEND
 };

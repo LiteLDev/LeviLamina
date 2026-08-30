@@ -8,7 +8,7 @@ class ILiveViewCollectionPublisher {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILiveViewCollectionPublisher();
+    virtual ~ILiveViewCollectionPublisher() = default;
 
     virtual uint allocateHandle() = 0;
 

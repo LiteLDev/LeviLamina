@@ -14,7 +14,7 @@ class IGameTestHelperProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGameTestHelperProvider();
+    virtual ~IGameTestHelperProvider() = default;
 
     virtual ::std::unique_ptr<::gametest::BaseGameTestHelper>
     createGameTestHelper(::gametest::BaseGameTestInstance& testInstance) = 0;

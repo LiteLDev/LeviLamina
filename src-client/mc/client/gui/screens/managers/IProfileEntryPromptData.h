@@ -6,7 +6,7 @@ class IProfileEntryPromptData {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IProfileEntryPromptData();
+    virtual ~IProfileEntryPromptData() = default;
 
     virtual bool allowedToOpenCheck() const = 0;
 

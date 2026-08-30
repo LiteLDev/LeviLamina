@@ -36,7 +36,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~StreamProducer();
+        virtual ~StreamProducer() = default;
 
         virtual ::std::optional<::dcsctp::SendQueue::DataToSend> Produce(::webrtc::Timestamp now, uint64 max_size) = 0;
 

@@ -8,7 +8,7 @@ class RtcpRttStats {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtcpRttStats();
+    virtual ~RtcpRttStats() = default;
 
     virtual void OnRttUpdate(int64) = 0;
     // NOLINTEND

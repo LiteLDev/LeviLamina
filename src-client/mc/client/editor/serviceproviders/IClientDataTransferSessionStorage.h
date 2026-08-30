@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IClientDataTransferSessionStorage();
+    virtual ~IClientDataTransferSessionStorage() = default;
     // NOLINTEND
 };
 

@@ -19,7 +19,7 @@ class StubServerLocator : public ::ServerLocator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StubServerLocator() /*override*/;
+    virtual ~StubServerLocator() /*override*/ = default;
 
 #ifdef LL_PLAT_S
     virtual void startAnnouncingServer(

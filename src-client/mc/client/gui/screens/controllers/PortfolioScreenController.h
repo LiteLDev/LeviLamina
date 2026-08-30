@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PortfolioScreenController() /*override*/;
+    virtual ~PortfolioScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 

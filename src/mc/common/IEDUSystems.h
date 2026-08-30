@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEDUSystems() /*override*/;
+    virtual ~IEDUSystems() /*override*/ = default;
 
     virtual ::Identity::IEduAuth& getEduAuth() const = 0;
 

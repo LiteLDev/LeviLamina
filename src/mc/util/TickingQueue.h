@@ -29,7 +29,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Stage();
+        virtual ~Stage() = default;
 
         virtual void init() = 0;
 

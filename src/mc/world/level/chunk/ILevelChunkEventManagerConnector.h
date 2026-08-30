@@ -15,7 +15,7 @@ class ILevelChunkEventManagerConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILevelChunkEventManagerConnector();
+    virtual ~ILevelChunkEventManagerConnector() = default;
 
     virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, int)>& getOnChunkLoadedConnector() = 0;
 

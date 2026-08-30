@@ -20,7 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TransformableVideoFrameInterface() /*override*/;
+    virtual ~TransformableVideoFrameInterface() /*override*/ = default;
 
     virtual bool IsKeyFrame() const = 0;
 

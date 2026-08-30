@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRegistry();
+    virtual ~IRegistry() = default;
 
     virtual ::std::vector<::std::string_view> getSettingsGroups() const = 0;
 

@@ -13,7 +13,7 @@ class IWorldSettingsStorage {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IWorldSettingsStorage();
+    virtual ~IWorldSettingsStorage() = default;
 
     virtual bool hasAvailableSpaceForLevel(::std::shared_ptr<::Core::FileStorageArea> sptStorageArea) = 0;
 

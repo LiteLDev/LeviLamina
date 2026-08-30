@@ -58,7 +58,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~SceneStackEvent();
+        virtual ~SceneStackEvent() = default;
         // NOLINTEND
     };
 

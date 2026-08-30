@@ -19,7 +19,7 @@ class ITransportFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITransportFactory();
+    virtual ~ITransportFactory() = default;
 
     virtual void setLoggingLevel(::NetherNet::LogSeverity severity) = 0;
 

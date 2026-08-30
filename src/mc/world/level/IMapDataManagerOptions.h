@@ -11,7 +11,7 @@ class IMapDataManagerOptions {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMapDataManagerOptions();
+    virtual ~IMapDataManagerOptions() = default;
 
     virtual bool isPremiumWorldTemplate() const = 0;
 

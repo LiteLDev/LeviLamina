@@ -120,7 +120,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Enchant();
+    virtual ~Enchant() = default;
 
     virtual bool isCompatibleWith(::Enchant::Type type) const;
 

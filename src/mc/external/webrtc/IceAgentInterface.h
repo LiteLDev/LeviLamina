@@ -18,7 +18,7 @@ class IceAgentInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IceAgentInterface();
+    virtual ~IceAgentInterface() = default;
 
     virtual int64 GetLastPingSentMs() const = 0;
 

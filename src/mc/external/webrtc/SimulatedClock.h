@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SimulatedClock() /*override*/;
+    virtual ~SimulatedClock() /*override*/ = default;
 
     virtual ::webrtc::Timestamp CurrentTime() /*override*/;
 

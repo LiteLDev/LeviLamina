@@ -26,7 +26,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~ConnectionCallbacks();
+        virtual ~ConnectionCallbacks() = default;
 
         virtual bool
         onNewIncomingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer) = 0;

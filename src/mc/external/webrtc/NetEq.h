@@ -107,7 +107,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetEq();
+    virtual ~NetEq() = default;
 
     virtual int InsertPacket(::webrtc::RTPHeader const&, ::webrtc::ArrayView<uchar const>);
 

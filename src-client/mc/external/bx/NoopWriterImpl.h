@@ -18,7 +18,7 @@ class NoopWriterImpl : public ::bx::FileWriterI {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NoopWriterImpl() /*override*/;
+    virtual ~NoopWriterImpl() /*override*/ = default;
 
     virtual bool open(::bx::FilePath const&, bool, ::bx::Error*) /*override*/;
 

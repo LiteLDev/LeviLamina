@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VoidGenerator() /*override*/;
+    virtual ~VoidGenerator() /*override*/ = default;
 
     virtual ::BiomeSource const& getBiomeSource() const /*override*/;
 

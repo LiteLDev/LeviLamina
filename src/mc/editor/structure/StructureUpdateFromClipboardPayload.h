@@ -29,7 +29,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~StructureUpdateFromClipboardPayload() /*override*/;
+#else // LL_PLAT_C
+    virtual ~StructureUpdateFromClipboardPayload() /*override*/ = default;
+#endif
+
     // NOLINTEND
 
 public:

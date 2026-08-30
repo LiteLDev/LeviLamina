@@ -8,7 +8,7 @@ class IVanillaSystemsEventingAdapter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IVanillaSystemsEventingAdapter();
+    virtual ~IVanillaSystemsEventingAdapter() = default;
 
     virtual void doFireEventActorValueValidationFailed(::std::string const& invalidValue, char const* caller) = 0;
     // NOLINTEND

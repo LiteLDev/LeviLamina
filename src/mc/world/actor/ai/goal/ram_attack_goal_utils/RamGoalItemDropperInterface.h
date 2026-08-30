@@ -13,7 +13,7 @@ class RamGoalItemDropperInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RamGoalItemDropperInterface();
+    virtual ~RamGoalItemDropperInterface() = default;
 
     virtual void tryDropHorn(::Vec3 dropPos) const = 0;
 

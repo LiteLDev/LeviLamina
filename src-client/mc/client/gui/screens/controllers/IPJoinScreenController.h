@@ -45,6 +45,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPJoinScreenController() /*override*/;
+    virtual ~IPJoinScreenController() /*override*/ = default;
     // NOLINTEND
 };

@@ -13,7 +13,7 @@ struct INpcDialogueData {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~INpcDialogueData();
+    virtual ~INpcDialogueData() = default;
 
     virtual ::std::string const& getDialogueText() const = 0;
 

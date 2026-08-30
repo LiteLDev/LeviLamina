@@ -14,7 +14,7 @@ struct HeightProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HeightProvider();
+    virtual ~HeightProvider() = default;
 
     virtual int sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const = 0;
     // NOLINTEND

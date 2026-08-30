@@ -16,7 +16,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SharedRecursiveMutexBase();
+    virtual ~SharedRecursiveMutexBase() = default;
 
     virtual bool _threadHoldsSharedLock(::std::thread::id) = 0;
 

@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageMigrationProgressScreenModel() /*override*/;
+    virtual ~StorageMigrationProgressScreenModel() /*override*/ = default;
     // NOLINTEND
 
 public:

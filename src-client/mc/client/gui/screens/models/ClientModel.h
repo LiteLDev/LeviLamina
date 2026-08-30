@@ -20,7 +20,7 @@ class ClientModel {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientModel();
+    virtual ~ClientModel() = default;
 
     virtual bool hasCommandsEnabled() const = 0;
 

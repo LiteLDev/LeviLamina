@@ -31,6 +31,6 @@ public:
 
     virtual uint64 getSize() = 0;
 
-    virtual ~IContainerRegistryTracker();
+    virtual ~IContainerRegistryTracker() = default;
     // NOLINTEND
 };

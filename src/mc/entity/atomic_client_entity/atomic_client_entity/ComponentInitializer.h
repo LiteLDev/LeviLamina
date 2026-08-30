@@ -14,7 +14,7 @@ class ComponentInitializer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ComponentInitializer();
+    virtual ~ComponentInitializer() = default;
 
     virtual void
     initializeFromStorage(::EntityContext&, ::cereal::ComponentStorage const&, ::std::string const&) const = 0;

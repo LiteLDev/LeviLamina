@@ -12,7 +12,7 @@ class PlatformMultiplayerRestrictions {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlatformMultiplayerRestrictions();
+    virtual ~PlatformMultiplayerRestrictions() = default;
 
     virtual bool platformRestrictsMultiplayer() const = 0;
 

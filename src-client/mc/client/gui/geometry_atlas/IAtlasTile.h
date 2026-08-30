@@ -13,7 +13,7 @@ class IAtlasTile {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAtlasTile();
+    virtual ~IAtlasTile() = default;
 
     virtual uint getUserID() const = 0;
 

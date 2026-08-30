@@ -52,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActiveDirectoryIdentity() /*override*/;
+    virtual ~ActiveDirectoryIdentity() /*override*/ = default;
     // NOLINTEND
 
 public:

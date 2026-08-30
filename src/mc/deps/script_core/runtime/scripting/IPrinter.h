@@ -14,7 +14,7 @@ class IPrinter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPrinter();
+    virtual ~IPrinter() = default;
 
     virtual void onInfo(::Scripting::ContextId contextId, ::std::string_view message) const;
 

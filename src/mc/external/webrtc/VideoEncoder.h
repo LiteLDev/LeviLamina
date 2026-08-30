@@ -95,7 +95,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~RateControlParameters();
+        virtual ~RateControlParameters() = default;
         // NOLINTEND
     };
 
@@ -186,7 +186,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VideoEncoder();
+    virtual ~VideoEncoder() = default;
 
     virtual void SetFecControllerOverride(::webrtc::FecControllerOverride*);
 

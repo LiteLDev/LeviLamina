@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IOptionRegistry() /*override*/;
+    virtual ~IOptionRegistry() /*override*/ = default;
 
     virtual ::std::shared_ptr<::IOptionRegistry> sharedFromThis() = 0;
 

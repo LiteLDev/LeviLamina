@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PackModel();
+    virtual ~PackModel() = default;
     // NOLINTEND
 
 public:

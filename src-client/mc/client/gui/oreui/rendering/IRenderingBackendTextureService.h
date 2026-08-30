@@ -20,7 +20,7 @@ class IRenderingBackendTextureService {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRenderingBackendTextureService();
+    virtual ~IRenderingBackendTextureService() = default;
 
     virtual void createClearTexture(
         ::dragon::TextureDescription const&                              desc,

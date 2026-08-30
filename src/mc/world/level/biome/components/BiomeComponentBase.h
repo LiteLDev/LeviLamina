@@ -6,6 +6,6 @@ struct BiomeComponentBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BiomeComponentBase();
+    virtual ~BiomeComponentBase() = default;
     // NOLINTEND
 };

@@ -22,7 +22,7 @@ public:
 
         virtual int NumPreferredChannels() const = 0;
 
-        virtual ~Sink();
+        virtual ~Sink() = default;
         // NOLINTEND
     };
 
@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     virtual void SetSink(::webrtc::AudioSource::Sink* sink) = 0;
 
-    virtual ~AudioSource();
+    virtual ~AudioSource() = default;
     // NOLINTEND
 
 public:

@@ -17,7 +17,7 @@ class IEditorPlayer : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEditorPlayer() /*override*/;
+    virtual ~IEditorPlayer() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() = 0;
 

@@ -13,7 +13,7 @@ class ILifetimeScopeListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILifetimeScopeListener();
+    virtual ~ILifetimeScopeListener() = default;
 
     virtual void onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry& registry) = 0;
 

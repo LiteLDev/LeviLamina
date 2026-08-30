@@ -17,7 +17,7 @@ class EmitterInitialComponentBase : public ::ParticleSystem::EffectComponentBase
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EmitterInitialComponentBase() /*override*/;
+    virtual ~EmitterInitialComponentBase() /*override*/ = default;
 
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const /*override*/;
 

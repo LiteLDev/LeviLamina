@@ -64,7 +64,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Viewer();
+        virtual ~Viewer() = default;
 
         virtual ::gsl::not_null<::Bedrock::DataStore const*> getOwningDataStore() const = 0;
 

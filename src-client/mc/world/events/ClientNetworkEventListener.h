@@ -14,7 +14,7 @@ class ClientNetworkEventListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientNetworkEventListener();
+    virtual ~ClientNetworkEventListener() = default;
 
     virtual ::EventResult onMessage(::ClientMessageEvent const& messageEvent);
     // NOLINTEND

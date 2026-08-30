@@ -29,7 +29,7 @@ class EditorMinimapServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorMinimapServiceProvider();
+    virtual ~EditorMinimapServiceProvider() = default;
 
     virtual ::WeakRef<::Editor::Services::MinimapItem>
     createMinimap(int mapWidth, int mapHeight, ::Editor::Services::MinimapViewType minimapViewType) = 0;

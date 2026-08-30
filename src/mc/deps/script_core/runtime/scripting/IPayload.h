@@ -19,7 +19,7 @@ class IPayload {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPayload();
+    virtual ~IPayload() = default;
 
     virtual ::Scripting::ResultAny
     runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>);

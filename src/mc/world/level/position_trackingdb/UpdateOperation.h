@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UpdateOperation() /*override*/;
+    virtual ~UpdateOperation() /*override*/ = default;
 
     virtual bool tick(
         ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>,

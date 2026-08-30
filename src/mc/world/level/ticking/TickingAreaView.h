@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TickingAreaView() /*override*/;
+    virtual ~TickingAreaView() /*override*/ = default;
 
     virtual void init(::Bounds const& bounds, bool isCircle) /*override*/;
 

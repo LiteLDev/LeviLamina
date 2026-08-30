@@ -29,7 +29,7 @@ public:
 
     virtual void UnregisterTransformedFrameSinkCallback(uint);
 
-    virtual ~FrameTransformerInterface() /*override*/;
+    virtual ~FrameTransformerInterface() /*override*/ = default;
     // NOLINTEND
 };
 

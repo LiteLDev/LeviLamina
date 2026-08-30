@@ -47,7 +47,7 @@ public:
     // NOLINTBEGIN
     virtual ::webrtc::AudioProcessorInterface::AudioProcessorStatistics GetStats(bool) = 0;
 
-    virtual ~AudioProcessorInterface() /*override*/;
+    virtual ~AudioProcessorInterface() /*override*/ = default;
     // NOLINTEND
 };
 

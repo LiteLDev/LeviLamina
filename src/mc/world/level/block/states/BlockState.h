@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockState();
+    virtual ~BlockState() = default;
 
     virtual ::std::unique_ptr<::Tag> _toNBT(int val) const = 0;
 

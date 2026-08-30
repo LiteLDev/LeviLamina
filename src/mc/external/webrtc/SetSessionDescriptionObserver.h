@@ -20,7 +20,7 @@ public:
 
     virtual void OnFailure(::webrtc::RTCError) = 0;
 
-    virtual ~SetSessionDescriptionObserver() /*override*/;
+    virtual ~SetSessionDescriptionObserver() /*override*/ = default;
     // NOLINTEND
 };
 

@@ -11,7 +11,7 @@ class IGamefaceTextInputProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGamefaceTextInputProxy();
+    virtual ~IGamefaceTextInputProxy() = default;
 
     virtual void imeStartComposition() = 0;
 

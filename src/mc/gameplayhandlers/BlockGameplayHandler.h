@@ -14,7 +14,7 @@ class BlockGameplayHandler : public ::GameplayHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockGameplayHandler() /*override*/;
+    virtual ~BlockGameplayHandler() /*override*/ = default;
 
     virtual ::HandlerResult handleEvent(::BlockGameplayEvent<void> const&) = 0;
 

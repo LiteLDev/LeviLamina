@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TcpClientSignalingInterfaceImpl() /*override*/;
+    virtual ~TcpClientSignalingInterfaceImpl() /*override*/ = default;
     // NOLINTEND
 };
 

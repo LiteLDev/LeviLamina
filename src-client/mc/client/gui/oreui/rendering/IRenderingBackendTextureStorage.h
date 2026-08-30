@@ -29,7 +29,7 @@ class IRenderingBackendTextureStorage {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRenderingBackendTextureStorage();
+    virtual ~IRenderingBackendTextureStorage() = default;
 
     virtual void wrapUserRenderTarget(
         ::mce::ClientTexture             texture,

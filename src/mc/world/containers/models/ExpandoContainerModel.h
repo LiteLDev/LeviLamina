@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ExpandoContainerModel() /*override*/;
+    virtual ~ExpandoContainerModel() /*override*/ = default;
 
     virtual void containerContentChanged(int slot) /*override*/;
 

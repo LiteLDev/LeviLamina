@@ -15,7 +15,7 @@ class ITextBoxController : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITextBoxController() /*override*/;
+    virtual ~ITextBoxController() /*override*/ = default;
 
     virtual void setTextBoxState(int controllerId, ::TextBoxStateChange const& stateChange) = 0;
 

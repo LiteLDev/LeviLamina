@@ -6,7 +6,7 @@ class UISoundPlayer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UISoundPlayer();
+    virtual ~UISoundPlayer() = default;
 
     virtual void play(::std::string const& name, float volume, float pitch) const;
     // NOLINTEND

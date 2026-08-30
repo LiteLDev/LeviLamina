@@ -100,7 +100,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~RegionListener();
+        virtual ~RegionListener() = default;
 
         virtual void onRegionDestroyed() = 0;
         // NOLINTEND

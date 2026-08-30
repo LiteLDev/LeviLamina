@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftGraphics() /*override*/;
+    virtual ~MinecraftGraphics() /*override*/ = default;
 
     virtual void onAppSuspended() /*override*/;
 

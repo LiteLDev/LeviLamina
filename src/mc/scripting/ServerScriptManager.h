@@ -134,7 +134,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerScriptManager() /*override*/;
+    virtual ~ServerScriptManager() /*override*/ = default;
 
     virtual ::EventResult onServerUpdateEnd(::ServerInstance& instance) /*override*/;
 

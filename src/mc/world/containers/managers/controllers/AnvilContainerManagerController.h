@@ -53,7 +53,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~AnvilContainerManagerController() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~AnvilContainerManagerController() /*override*/;
+#endif
 
     virtual void postInit(::std::weak_ptr<::ContainerManagerController> self) /*override*/;
 

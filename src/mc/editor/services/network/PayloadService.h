@@ -127,7 +127,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PayloadService() /*override*/;
+    virtual ~PayloadService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

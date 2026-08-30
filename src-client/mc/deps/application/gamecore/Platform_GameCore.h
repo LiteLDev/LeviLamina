@@ -67,7 +67,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Platform_GameCore() /*override*/;
+    virtual ~Platform_GameCore() /*override*/ = default;
 
     virtual bool updatePlatformInfo() /*override*/;
 

@@ -25,6 +25,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IItemComponentLegacyFactoryData();
+    virtual ~IItemComponentLegacyFactoryData() = default;
     // NOLINTEND
 };

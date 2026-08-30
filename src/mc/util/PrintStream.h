@@ -6,7 +6,7 @@ class PrintStream {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PrintStream();
+    virtual ~PrintStream() = default;
 
     virtual void print(::std::string const& s);
     // NOLINTEND

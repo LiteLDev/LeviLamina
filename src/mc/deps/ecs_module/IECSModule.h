@@ -15,7 +15,7 @@ class IECSModule {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IECSModule();
+    virtual ~IECSModule() = default;
 
     virtual void initRegistry(::EntityRegistry& registry) = 0;
 

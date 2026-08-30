@@ -16,7 +16,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IVersionedContentItemCollection();
+    virtual ~IVersionedContentItemCollection() = default;
 
     virtual void appendLatest(
         ::ContentItemCollectionVersion&                                         version,

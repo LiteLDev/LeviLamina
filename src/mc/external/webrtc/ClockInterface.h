@@ -8,7 +8,7 @@ class ClockInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClockInterface();
+    virtual ~ClockInterface() = default;
 
     virtual int64 TimeNanos() const = 0;
     // NOLINTEND

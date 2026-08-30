@@ -16,7 +16,7 @@ class IRideableActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRideableActor();
+    virtual ~IRideableActor() = default;
 
     virtual ::ActorUniqueID const& getOrCreateUniqueID() const = 0;
 

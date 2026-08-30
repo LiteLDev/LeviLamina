@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPropertyGetter();
+    virtual ~IPropertyGetter() = default;
 
     virtual ::entt::meta_any get(::entt::meta_handle) = 0;
 

@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ImportContext();
+    virtual ~ImportContext() = default;
 
     virtual ::Core::PathBuffer<::std::string> generatePackFolderName(::PackManifest const& manifest) = 0;
 

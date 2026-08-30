@@ -48,7 +48,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~DataChannel() /*override*/;
+        virtual ~DataChannel() /*override*/ = default;
 
         virtual void OnStateChange() /*override*/;
 

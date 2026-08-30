@@ -87,7 +87,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TransportFeedback() /*override*/;
+    virtual ~TransportFeedback() /*override*/ = default;
 
     virtual uint64 BlockLength() const /*override*/;
 

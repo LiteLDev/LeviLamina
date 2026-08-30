@@ -37,6 +37,6 @@ public:
     virtual void
     reloadPacketLimitConfig(::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder) = 0;
 
-    virtual ~IPacketSecurityController() /*override*/;
+    virtual ~IPacketSecurityController() /*override*/ = default;
     // NOLINTEND
 };

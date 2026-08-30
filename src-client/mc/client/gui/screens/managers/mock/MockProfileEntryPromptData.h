@@ -17,7 +17,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MockProfileEntryPromptData() /*override*/;
+    virtual ~MockProfileEntryPromptData() /*override*/ = default;
 
     virtual bool allowedToOpenCheck() const /*override*/;
 

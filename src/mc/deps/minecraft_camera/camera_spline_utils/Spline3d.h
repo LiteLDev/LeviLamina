@@ -11,7 +11,7 @@ struct Spline3d {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Spline3d();
+    virtual ~Spline3d() = default;
 
     virtual ::glm::vec3 eval(float t) const = 0;
 

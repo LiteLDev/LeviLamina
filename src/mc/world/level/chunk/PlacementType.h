@@ -15,7 +15,7 @@ class PlacementType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlacementType();
+    virtual ~PlacementType() = default;
 
     virtual bool
     isSpawnPositionOk(::BlockSource& region, ::BlockPos pos, ::br::spawn::EntityType const& type) const = 0;

@@ -81,7 +81,11 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        virtual ~HistoryItem() = default;
+#else // LL_PLAT_C
         virtual ~HistoryItem();
+#endif
 
         virtual bool isValidStartItem() const = 0;
 

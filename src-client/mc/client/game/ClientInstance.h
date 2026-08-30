@@ -384,7 +384,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientInstance() /*override*/;
+    virtual ~ClientInstance() /*override*/ = default;
 
     virtual void onInitMinecraftGame() /*override*/;
 

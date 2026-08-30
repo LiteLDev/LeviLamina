@@ -20,7 +20,7 @@ class ILevelSoundManagerConnector : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILevelSoundManagerConnector() /*override*/;
+    virtual ~ILevelSoundManagerConnector() /*override*/ = default;
 
     virtual ::Bedrock::PubSub::Connector<
         void(::SoundEventIdentifier const&, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool)>&

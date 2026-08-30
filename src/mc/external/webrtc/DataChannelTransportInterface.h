@@ -17,7 +17,7 @@ class DataChannelTransportInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataChannelTransportInterface();
+    virtual ~DataChannelTransportInterface() = default;
 
     virtual ::webrtc::RTCError OpenChannel(int channel_id, ::webrtc::PriorityValue priority) = 0;
 

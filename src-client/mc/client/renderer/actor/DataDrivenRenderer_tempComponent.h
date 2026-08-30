@@ -18,7 +18,7 @@ class DataDrivenRenderer_tempComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataDrivenRenderer_tempComponent();
+    virtual ~DataDrivenRenderer_tempComponent() = default;
 
     virtual void preRender(
         ::BaseActorRenderContext& renderContext,

@@ -11,7 +11,7 @@ class IRandom {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRandom();
+    virtual ~IRandom() = default;
 
     virtual int nextInt() = 0;
 

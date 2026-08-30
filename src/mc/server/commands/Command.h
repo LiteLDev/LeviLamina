@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Command();
+    virtual ~Command() = default;
 
     virtual bool collectOptionalArguments();
 

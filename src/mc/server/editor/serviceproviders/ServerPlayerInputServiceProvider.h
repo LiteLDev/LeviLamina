@@ -21,7 +21,7 @@ class ServerPlayerInputServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerPlayerInputServiceProvider();
+    virtual ~ServerPlayerInputServiceProvider() = default;
 
     virtual ::Scripting::Result_deprecated<void> registerKeyBinding(
         ::HashedString const&               contextId,

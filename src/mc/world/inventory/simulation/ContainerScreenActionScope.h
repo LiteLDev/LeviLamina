@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContainerScreenActionScope();
+    virtual ~ContainerScreenActionScope() = default;
     // NOLINTEND
 
 public:

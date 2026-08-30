@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RobustThroughputEstimator() /*override*/;
+    virtual ~RobustThroughputEstimator() /*override*/ = default;
 
     virtual void
     IncomingPacketFeedbackVector(::std::vector<::webrtc::PacketResult> const& packet_feedback_vector) /*override*/;

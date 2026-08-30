@@ -17,7 +17,11 @@ struct IEduWebService {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~IEduWebService() = default;
+#else // LL_PLAT_C
     virtual ~IEduWebService();
+#endif
 
     virtual void setEula() = 0;
 

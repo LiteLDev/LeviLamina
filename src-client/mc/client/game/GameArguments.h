@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameArguments() /*override*/;
+    virtual ~GameArguments() /*override*/ = default;
 
     virtual void tick() /*override*/;
 

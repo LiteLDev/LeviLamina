@@ -23,7 +23,7 @@ class MediaReceiveChannelInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MediaReceiveChannelInterface();
+    virtual ~MediaReceiveChannelInterface() = default;
 
     virtual ::webrtc::VideoMediaReceiveChannelInterface* AsVideoReceiveChannel() = 0;
 

@@ -6,7 +6,7 @@ struct IGameModeTimer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGameModeTimer();
+    virtual ~IGameModeTimer() = default;
 
     virtual double getDestroyProgressSeconds() const = 0;
 

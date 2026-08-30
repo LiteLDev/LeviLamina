@@ -11,7 +11,7 @@ struct IPlayerData {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPlayerData();
+    virtual ~IPlayerData() = default;
 
     virtual bool isAbilityEnabled(::AbilitiesIndex ability) const = 0;
 

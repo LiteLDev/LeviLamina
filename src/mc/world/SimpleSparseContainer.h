@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SimpleSparseContainer() /*override*/;
+    virtual ~SimpleSparseContainer() /*override*/ = default;
 
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 

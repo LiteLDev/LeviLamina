@@ -17,7 +17,7 @@ class Interface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Interface();
+    virtual ~Interface() = default;
 
     virtual ::ClientBlockPipeline::WorldView::LocalInfo getLocalInfo(::BlockPos const& relativePos) const = 0;
 

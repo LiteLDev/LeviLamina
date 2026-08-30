@@ -19,7 +19,7 @@ class IGetPlacementBlockCallback {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGetPlacementBlockCallback();
+    virtual ~IGetPlacementBlockCallback() = default;
 
     virtual ::gsl::not_null<::Block const*> getPlacementBlock(
         ::gsl::not_null<::Block const*>,

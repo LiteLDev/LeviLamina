@@ -21,7 +21,7 @@ class ITintResolver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITintResolver();
+    virtual ~ITintResolver() = default;
 
     virtual ::mce::Color _get(
         ::Block const&    block,

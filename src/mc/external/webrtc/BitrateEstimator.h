@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BitrateEstimator();
+    virtual ~BitrateEstimator() = default;
 
     virtual void Update(::webrtc::Timestamp at_time, ::webrtc::DataSize amount, bool in_alr);
 

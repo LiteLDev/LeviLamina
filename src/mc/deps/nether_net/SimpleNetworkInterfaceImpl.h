@@ -66,7 +66,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SimpleNetworkInterfaceImpl() /*override*/;
+    virtual ~SimpleNetworkInterfaceImpl() /*override*/ = default;
 
     virtual bool SendPacket(
         ::NetherNet::NetworkID remoteId,

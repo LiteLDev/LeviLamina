@@ -71,7 +71,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MockTextFilteringProcessor() /*override*/;
+    virtual ~MockTextFilteringProcessor() /*override*/ = default;
 
     virtual ::CallbackToken processAnonymousMessages(
         ::TextProcessingEventOrigin,

@@ -15,7 +15,7 @@ class IFunctionEntry {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFunctionEntry();
+    virtual ~IFunctionEntry() = default;
 
     virtual void
     execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order) = 0;

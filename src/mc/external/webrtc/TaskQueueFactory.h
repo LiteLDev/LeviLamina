@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TaskQueueFactory();
+    virtual ~TaskQueueFactory() = default;
 
     virtual ::std::unique_ptr<::webrtc::TaskQueueBase, ::webrtc::TaskQueueDeleter>
     CreateTaskQueue(::std::string_view name, ::webrtc::TaskQueueFactory::Priority priority) const = 0;

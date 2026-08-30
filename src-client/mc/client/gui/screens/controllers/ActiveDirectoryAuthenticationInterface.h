@@ -18,7 +18,7 @@ class ActiveDirectoryAuthenticationInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActiveDirectoryAuthenticationInterface();
+    virtual ~ActiveDirectoryAuthenticationInterface() = default;
 
     virtual ::ActiveDirectoryAuthenticationState getAuthenticationState() const = 0;
 

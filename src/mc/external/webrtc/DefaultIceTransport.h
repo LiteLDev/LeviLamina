@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DefaultIceTransport() /*override*/;
+    virtual ~DefaultIceTransport() /*override*/ = default;
 
     virtual ::webrtc::IceTransportInternal* internal() /*override*/;
     // NOLINTEND

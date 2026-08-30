@@ -16,7 +16,7 @@ class IConnectionUpdateCallback {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IConnectionUpdateCallback();
+    virtual ~IConnectionUpdateCallback() = default;
 
     virtual ::Block const& updateConnection(
         ::BlockSource const&      region,

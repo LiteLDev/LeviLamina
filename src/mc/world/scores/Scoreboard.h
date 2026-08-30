@@ -52,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Scoreboard();
+    virtual ~Scoreboard() = default;
 
     virtual ::DisplayObjective const* setDisplayObjective(
         ::std::string const&       displaySlotName,

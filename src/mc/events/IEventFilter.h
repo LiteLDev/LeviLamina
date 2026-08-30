@@ -6,7 +6,7 @@ class IEventFilter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEventFilter();
+    virtual ~IEventFilter() = default;
 
     virtual void setAcceptNewEvents(bool) = 0;
     // NOLINTEND

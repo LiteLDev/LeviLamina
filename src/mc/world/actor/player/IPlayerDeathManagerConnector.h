@@ -14,7 +14,7 @@ class IPlayerDeathManagerConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPlayerDeathManagerConnector();
+    virtual ~IPlayerDeathManagerConnector() = default;
 
     virtual ::Bedrock::PubSub::Connector<void(::Player&)>& getOnPlayerDeathConnector() = 0;
     // NOLINTEND

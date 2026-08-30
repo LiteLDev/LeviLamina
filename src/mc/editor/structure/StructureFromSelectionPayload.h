@@ -29,7 +29,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~StructureFromSelectionPayload() /*override*/;
+#else // LL_PLAT_C
+    virtual ~StructureFromSelectionPayload() /*override*/ = default;
+#endif
+
     // NOLINTEND
 
 public:

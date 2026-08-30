@@ -134,7 +134,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HudScreenController() /*override*/;
+    virtual ~HudScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

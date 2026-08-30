@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BasicPortAllocator() /*override*/;
+    virtual ~BasicPortAllocator() /*override*/ = default;
 
     virtual void SetNetworkIgnoreMask(int network_ignore_mask) /*override*/;
 

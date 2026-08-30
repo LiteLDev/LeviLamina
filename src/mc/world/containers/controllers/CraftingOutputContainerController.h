@@ -22,7 +22,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~CraftingOutputContainerController() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~CraftingOutputContainerController() /*override*/;
+#endif
 
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const /*override*/;
 

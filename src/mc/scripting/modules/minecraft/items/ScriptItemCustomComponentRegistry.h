@@ -79,7 +79,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptItemCustomComponentRegistry() /*override*/;
+    virtual ~ScriptItemCustomComponentRegistry() /*override*/ = default;
 
     virtual ::Scripting::Result<
         void,

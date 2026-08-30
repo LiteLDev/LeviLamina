@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MigrationDetector_Disk() /*override*/;
+    virtual ~MigrationDetector_Disk() /*override*/ = default;
 
     virtual ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles> getFoundFiles() const /*override*/;
 

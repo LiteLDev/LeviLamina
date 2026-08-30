@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StunErrorCodeAttribute() /*override*/;
+    virtual ~StunErrorCodeAttribute() /*override*/ = default;
 
     virtual ::webrtc::StunAttributeValueType value_type() const /*override*/;
 

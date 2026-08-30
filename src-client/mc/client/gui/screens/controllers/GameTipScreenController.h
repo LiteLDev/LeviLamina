@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameTipScreenController() /*override*/;
+    virtual ~GameTipScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 

@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FlatSurfaceDensityCalculator() /*override*/;
+    virtual ~FlatSurfaceDensityCalculator() /*override*/ = default;
 
     virtual void fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const /*override*/;
     // NOLINTEND

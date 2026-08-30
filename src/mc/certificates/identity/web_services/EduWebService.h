@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EduWebService() /*override*/;
+    virtual ~EduWebService() /*override*/ = default;
 
     virtual void setEula() /*override*/;
 

@@ -15,7 +15,7 @@ class ISignalingServiceTelemetry {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISignalingServiceTelemetry();
+    virtual ~ISignalingServiceTelemetry() = default;
 
     virtual void
     fireEventSignalServiceConnect(::SignalServiceConnectStage stage, ::Json::Value const& properties) const = 0;

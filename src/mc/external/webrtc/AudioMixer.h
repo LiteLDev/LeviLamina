@@ -38,7 +38,7 @@ public:
 
         virtual int PreferredSampleRate() const = 0;
 
-        virtual ~Source();
+        virtual ~Source() = default;
         // NOLINTEND
     };
 
@@ -51,7 +51,7 @@ public:
 
     virtual void Mix(uint64, ::webrtc::AudioFrame*) = 0;
 
-    virtual ~AudioMixer() /*override*/;
+    virtual ~AudioMixer() /*override*/ = default;
     // NOLINTEND
 };
 

@@ -16,7 +16,7 @@ struct ILanEventHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILanEventHandler();
+    virtual ~ILanEventHandler() = default;
 
 #ifdef LL_PLAT_S
     virtual void OnLanEvent(::NetherNet::LanEvents::MessageSent const&);

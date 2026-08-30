@@ -66,7 +66,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~HttpAudioFetcher() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~HttpAudioFetcher() /*override*/;
+#endif
 
     virtual void start() /*override*/;
 

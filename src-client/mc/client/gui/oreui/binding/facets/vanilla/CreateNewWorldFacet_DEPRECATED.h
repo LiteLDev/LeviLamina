@@ -91,7 +91,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CreateNewWorldFacet_DEPRECATED() /*override*/;
+    virtual ~CreateNewWorldFacet_DEPRECATED() /*override*/ = default;
 
     virtual bool update() /*override*/;
 

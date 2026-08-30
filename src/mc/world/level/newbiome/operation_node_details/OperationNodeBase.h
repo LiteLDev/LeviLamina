@@ -15,7 +15,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OperationNodeBase();
+    virtual ~OperationNodeBase() = default;
 
     virtual void init(int64 seed);
     // NOLINTEND

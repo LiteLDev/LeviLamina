@@ -116,7 +116,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~ResourceLoadManager() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ResourceLoadManager() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:

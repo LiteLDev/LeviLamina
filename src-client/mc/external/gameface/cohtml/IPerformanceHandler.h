@@ -8,7 +8,7 @@ class IPerformanceHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPerformanceHandler();
+    virtual ~IPerformanceHandler() = default;
 
     virtual void WriteLog(char const* message, uint64 length) = 0;
     // NOLINTEND

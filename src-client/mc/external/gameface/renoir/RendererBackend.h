@@ -97,7 +97,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RendererBackend();
+    virtual ~RendererBackend() = default;
 
     virtual void FillCaps(::renoir::RendererCaps& outCaps) = 0;
 

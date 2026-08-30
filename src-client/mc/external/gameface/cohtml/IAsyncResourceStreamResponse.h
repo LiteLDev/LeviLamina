@@ -20,7 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAsyncResourceStreamResponse();
+    virtual ~IAsyncResourceStreamResponse() = default;
 
     virtual void SetStreamReader(::cohtml::ISyncStreamReader*) = 0;
 

@@ -30,7 +30,7 @@ struct IReplayableActorInput {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IReplayableActorInput();
+    virtual ~IReplayableActorInput() = default;
 
     virtual void preApplyInput(::EntityContext& e) = 0;
 

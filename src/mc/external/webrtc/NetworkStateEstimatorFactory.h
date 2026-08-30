@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::webrtc::NetworkStateEstimator> Create(::webrtc::FieldTrialsView const*) = 0;
 
-    virtual ~NetworkStateEstimatorFactory();
+    virtual ~NetworkStateEstimatorFactory() = default;
     // NOLINTEND
 };
 

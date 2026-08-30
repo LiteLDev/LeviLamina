@@ -12,7 +12,7 @@ class IEventRecorder {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEventRecorder();
+    virtual ~IEventRecorder() = default;
 
     virtual uint getPrimaryLocalUser() const = 0;
 

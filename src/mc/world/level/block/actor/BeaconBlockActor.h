@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BeaconBlockActor() /*override*/;
+    virtual ~BeaconBlockActor() /*override*/ = default;
 
     virtual void tick(::BlockSource& region) /*override*/;
 

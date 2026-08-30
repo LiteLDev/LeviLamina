@@ -21,7 +21,7 @@ public:
 
     virtual bool IsOkToCallOnTheNetworkThread();
 
-    virtual ~DataChannelObserver();
+    virtual ~DataChannelObserver() = default;
     // NOLINTEND
 };
 

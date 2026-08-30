@@ -22,7 +22,7 @@ class LoggingServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LoggingServiceProvider();
+    virtual ~LoggingServiceProvider() = default;
 
 #ifdef LL_PLAT_S
     virtual void

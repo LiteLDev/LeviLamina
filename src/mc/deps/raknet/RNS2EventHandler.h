@@ -13,7 +13,7 @@ class RNS2EventHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RNS2EventHandler();
+    virtual ~RNS2EventHandler() = default;
 
     virtual void OnRNS2Recv(::RakNet::RNS2RecvStruct* recvStruct) = 0;
 

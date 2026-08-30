@@ -26,7 +26,7 @@ public:
         ::absl::AnyInvocable<bool(::webrtc::RtpPacketReceived const&)>
     ) = 0;
 
-    virtual ~PacketReceiver();
+    virtual ~PacketReceiver() = default;
     // NOLINTEND
 };
 

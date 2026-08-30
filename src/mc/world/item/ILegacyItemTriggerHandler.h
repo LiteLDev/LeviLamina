@@ -14,7 +14,7 @@ class ILegacyItemTriggerHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILegacyItemTriggerHandler();
+    virtual ~ILegacyItemTriggerHandler() = default;
 
     virtual bool executeTrigger(
         ::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers,

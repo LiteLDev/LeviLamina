@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SettingsActionQuery() /*override*/;
+    virtual ~SettingsActionQuery() /*override*/ = default;
     // NOLINTEND
 
 public:

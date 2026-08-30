@@ -417,7 +417,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftEventing() /*override*/;
+    virtual ~MinecraftEventing() /*override*/ = default;
 
     virtual ::IPurchaseEventing& getPurchaseEventing() /*override*/;
 

@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CrashSessionFileImpl() /*override*/;
+    virtual ~CrashSessionFileImpl() /*override*/ = default;
 
     virtual ::Core::PathBuffer<::std::string> const& configure(::Core::Path const&) /*override*/;
     // NOLINTEND

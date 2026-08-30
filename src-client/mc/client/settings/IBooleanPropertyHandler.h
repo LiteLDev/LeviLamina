@@ -11,7 +11,7 @@ class IBooleanPropertyHandler : public ::Settings::IPropertyHandler<bool> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBooleanPropertyHandler() /*override*/;
+    virtual ~IBooleanPropertyHandler() /*override*/ = default;
     // NOLINTEND
 };
 

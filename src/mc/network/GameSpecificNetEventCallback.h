@@ -12,7 +12,7 @@ class GameSpecificNetEventCallback {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameSpecificNetEventCallback();
+    virtual ~GameSpecificNetEventCallback() = default;
 
     virtual void handle(::NetworkIdentifier const& source, ::ResourcePackClientResponsePacket const& packet);
     // NOLINTEND

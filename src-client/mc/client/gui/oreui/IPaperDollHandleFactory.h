@@ -14,7 +14,7 @@ class IPaperDollHandleFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPaperDollHandleFactory();
+    virtual ~IPaperDollHandleFactory() = default;
 
     virtual ::std::shared_ptr<::GeometryAtlas::PaperDollHandle>
     createDoll(::std::unique_ptr<::PropertyBag> bag) const = 0;

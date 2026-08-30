@@ -22,7 +22,7 @@ class IZipUtility {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IZipUtility();
+    virtual ~IZipUtility() = default;
 
     virtual ::Bedrock::Result<void>
     zip(::Core::Path const&                  inputPath,

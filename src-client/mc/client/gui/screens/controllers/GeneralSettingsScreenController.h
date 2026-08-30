@@ -83,7 +83,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GeneralSettingsScreenController() /*override*/;
+    virtual ~GeneralSettingsScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

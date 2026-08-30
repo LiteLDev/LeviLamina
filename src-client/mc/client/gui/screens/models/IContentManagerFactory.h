@@ -37,7 +37,7 @@ class IContentManagerFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IContentManagerFactory();
+    virtual ~IContentManagerFactory() = default;
 
     virtual ::std::unique_ptr<::WorldContentSource> createWorldContentSource() const = 0;
 

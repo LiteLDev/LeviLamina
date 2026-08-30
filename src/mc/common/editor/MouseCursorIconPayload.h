@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MouseCursorIconPayload() /*override*/;
+    virtual ~MouseCursorIconPayload() /*override*/ = default;
     // NOLINTEND
 
 public:

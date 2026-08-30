@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RTCCertificateGenerator() /*override*/;
+    virtual ~RTCCertificateGenerator() /*override*/ = default;
 
     virtual void GenerateCertificateAsync(
         ::webrtc::KeyParams const&                                                       key_params,

@@ -8,7 +8,7 @@ class BitrateStatisticsObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BitrateStatisticsObserver();
+    virtual ~BitrateStatisticsObserver() = default;
 
     virtual void Notify(uint, uint, uint) = 0;
     // NOLINTEND

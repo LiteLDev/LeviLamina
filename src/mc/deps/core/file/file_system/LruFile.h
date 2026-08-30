@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LruFile() /*override*/;
+    virtual ~LruFile() /*override*/ = default;
 
     virtual ::Core::PathBuffer<::std::string> _getPath() const /*override*/;
 

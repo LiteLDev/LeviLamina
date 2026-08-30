@@ -26,7 +26,7 @@ class IEditorManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEditorManager() /*override*/;
+    virtual ~IEditorManager() /*override*/ = default;
 
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() = 0;
 
