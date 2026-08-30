@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UIAnim();
+    virtual ~UIAnim() = default;
 
     virtual ::std::shared_ptr<::UIAnim> clone();
 

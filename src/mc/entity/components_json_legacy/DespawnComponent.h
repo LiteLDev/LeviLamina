@@ -26,7 +26,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~IWorldAccessor();
+        virtual ~IWorldAccessor() = default;
 
         virtual ::Player* fetchAnyInteractablePlayer(::Vec3 const& searchPos, float maxDist) const = 0;
 

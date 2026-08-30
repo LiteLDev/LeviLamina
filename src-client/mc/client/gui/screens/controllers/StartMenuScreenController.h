@@ -111,7 +111,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StartMenuScreenController() /*override*/;
+    virtual ~StartMenuScreenController() /*override*/ = default;
 
     virtual void handleLicenseChanged() /*override*/;
 

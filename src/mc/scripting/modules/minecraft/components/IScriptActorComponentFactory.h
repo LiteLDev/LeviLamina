@@ -19,7 +19,7 @@ class IScriptActorComponentFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptActorComponentFactory();
+    virtual ~IScriptActorComponentFactory() = default;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>
     createComponent(::WeakEntityRef entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id) = 0;

@@ -17,7 +17,7 @@ class AudioProcessingBuilderInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AudioProcessingBuilderInterface();
+    virtual ~AudioProcessingBuilderInterface() = default;
 
     virtual ::webrtc::scoped_refptr<::webrtc::AudioProcessing> Build(::webrtc::Environment const&) = 0;
     // NOLINTEND

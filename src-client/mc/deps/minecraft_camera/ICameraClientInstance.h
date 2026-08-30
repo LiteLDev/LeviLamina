@@ -14,7 +14,7 @@ class ICameraClientInstance {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ICameraClientInstance();
+    virtual ~ICameraClientInstance() = default;
 
     virtual float getFrameAlpha() = 0;
 

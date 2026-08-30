@@ -16,7 +16,7 @@ class IPaperDollTile : public ::GeometryAtlas::IAtlasTile {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPaperDollTile() /*override*/;
+    virtual ~IPaperDollTile() /*override*/ = default;
 
     virtual void submitUpdate(::GeometryAtlas::PaperDollPayload&& payload) = 0;
     // NOLINTEND

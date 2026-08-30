@@ -85,7 +85,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Connection() /*override*/;
+        virtual ~Connection() /*override*/ = default;
 
         virtual void onConnect() /*override*/;
 

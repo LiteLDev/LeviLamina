@@ -53,7 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LinearUpscaleDensityCalculator() /*override*/;
+    virtual ~LinearUpscaleDensityCalculator() /*override*/ = default;
 
     virtual void fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const /*override*/;
     // NOLINTEND

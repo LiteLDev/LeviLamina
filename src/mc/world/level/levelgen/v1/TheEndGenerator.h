@@ -74,7 +74,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TheEndGenerator() /*override*/;
+    virtual ~TheEndGenerator() /*override*/ = default;
 
     virtual void loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad) /*override*/;
 

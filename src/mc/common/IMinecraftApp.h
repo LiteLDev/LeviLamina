@@ -20,9 +20,11 @@ class IMinecraftApp {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~IMinecraftApp();
+#else // LL_PLAT_C
+    virtual ~IMinecraftApp() = default;
 
-#ifdef LL_PLAT_C
     virtual ::Bedrock::NonOwnerPointer<::EDUSystems> getEDUSystems() = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::EDUSystems const> getEDUSystems() const = 0;
@@ -30,8 +32,8 @@ public:
     virtual ::std::shared_ptr<::OptionRegistry> getPrimaryUserOptions() = 0;
 
     virtual ::std::shared_ptr<::OptionRegistry const> getPrimaryUserOptions() const = 0;
-
 #endif
+
     virtual ::Bedrock::NotNullNonOwnerPtr<::Minecraft> getPrimaryMinecraft() = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> getAutomationClient() const = 0;

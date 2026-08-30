@@ -17,7 +17,7 @@ class Timeout {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Timeout();
+    virtual ~Timeout() = default;
 
     virtual void
     Start(::dcsctp::DurationMs duration_ms, ::webrtc::StrongAlias<::dcsctp::TimeoutTag, uint64> timeout_id) = 0;

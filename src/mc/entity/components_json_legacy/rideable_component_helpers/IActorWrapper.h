@@ -13,7 +13,7 @@ class IActorWrapper {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IActorWrapper();
+    virtual ~IActorWrapper() = default;
 
     virtual ::Actor& getWrappedObject() = 0;
     // NOLINTEND

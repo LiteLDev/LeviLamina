@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUPasscodeEntryScreenController() /*override*/;
+    virtual ~EDUPasscodeEntryScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
     // NOLINTEND

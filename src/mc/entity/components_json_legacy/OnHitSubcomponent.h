@@ -13,7 +13,7 @@ class OnHitSubcomponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OnHitSubcomponent();
+    virtual ~OnHitSubcomponent() = default;
 
     virtual void readfromJSON(::Json::Value& component) = 0;
 

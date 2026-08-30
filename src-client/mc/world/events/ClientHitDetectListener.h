@@ -14,7 +14,7 @@ class ClientHitDetectListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientHitDetectListener();
+    virtual ~ClientHitDetectListener() = default;
 
     virtual ::EventResult onChangedHitResult(::HitResult& hitResult);
 

@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CompositeMediaEngine() /*override*/;
+    virtual ~CompositeMediaEngine() /*override*/ = default;
 
     virtual bool Init() /*override*/;
 

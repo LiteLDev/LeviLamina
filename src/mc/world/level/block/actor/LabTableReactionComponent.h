@@ -12,7 +12,7 @@ class LabTableReactionComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LabTableReactionComponent();
+    virtual ~LabTableReactionComponent() = default;
 
     virtual void _onStart(::LabTableReaction&, ::BlockSource&);
 

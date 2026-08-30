@@ -16,7 +16,7 @@ struct IMovementCorrection {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMovementCorrection();
+    virtual ~IMovementCorrection() = default;
 
     virtual ::AdvanceFrameResult
     getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const& snapshot);

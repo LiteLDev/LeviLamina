@@ -11,7 +11,7 @@ class IPathBlockSource {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPathBlockSource();
+    virtual ~IPathBlockSource() = default;
 
     virtual bool isInWater() const = 0;
 

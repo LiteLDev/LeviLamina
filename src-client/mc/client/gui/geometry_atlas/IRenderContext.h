@@ -16,7 +16,7 @@ class IRenderContext {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRenderContext();
+    virtual ~IRenderContext() = default;
 
     virtual ::dragon::atlas::IAtlasUserOperations& getFrontend() = 0;
 

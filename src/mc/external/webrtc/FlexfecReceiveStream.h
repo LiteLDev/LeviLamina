@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FlexfecReceiveStream() /*override*/;
+    virtual ~FlexfecReceiveStream() /*override*/ = default;
 
     virtual void SetRtcpMode(::webrtc::RtcpMode) = 0;
 

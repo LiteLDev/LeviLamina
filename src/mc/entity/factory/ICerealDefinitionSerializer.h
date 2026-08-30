@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ICerealDefinitionSerializer();
+    virtual ~ICerealDefinitionSerializer() = default;
 
     virtual ::std::shared_ptr<::IDefinitionInstance> serializeDefinitionInstance(
         ::rapidjson::

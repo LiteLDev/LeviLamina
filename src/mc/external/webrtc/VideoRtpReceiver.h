@@ -49,7 +49,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~SourceCallback() /*override*/;
+        virtual ~SourceCallback() /*override*/ = default;
 
         virtual void OnGenerateKeyFrame() /*override*/;
 

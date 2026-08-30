@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureQueryResultPayload() /*override*/;
+    virtual ~StructureQueryResultPayload() /*override*/ = default;
     // NOLINTEND
 
 public:

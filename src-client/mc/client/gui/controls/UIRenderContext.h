@@ -28,7 +28,7 @@ class UIRenderContext {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UIRenderContext();
+    virtual ~UIRenderContext() = default;
 
     virtual int getLineLength(::Font& font, ::std::string const& text, float fontSize, bool showColorSymbol) const = 0;
 

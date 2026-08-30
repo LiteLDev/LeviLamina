@@ -12,7 +12,7 @@ class IImageCache {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IImageCache();
+    virtual ~IImageCache() = default;
 
     virtual ::cg::ImageBuffer* getCachedImage(::ResourceLocation const& resourceLocation) = 0;
 

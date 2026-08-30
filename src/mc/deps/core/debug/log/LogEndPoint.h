@@ -8,7 +8,7 @@ class LogEndPoint {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LogEndPoint();
+    virtual ~LogEndPoint() = default;
 
     virtual void log(char const*) = 0;
 

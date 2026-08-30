@@ -11,7 +11,7 @@ class ISourcesAsyncReloader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISourcesAsyncReloader();
+    virtual ~ISourcesAsyncReloader() = default;
 
     virtual ::Bedrock::Threading::Async<void> reloadSourcesAsync(bool saveSources) = 0;
     // NOLINTEND

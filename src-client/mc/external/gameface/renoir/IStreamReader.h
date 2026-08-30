@@ -8,7 +8,7 @@ class IStreamReader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IStreamReader();
+    virtual ~IStreamReader() = default;
 
     virtual uint GetSize() = 0;
 

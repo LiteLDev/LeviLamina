@@ -13,7 +13,7 @@ struct ISharedController {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISharedController();
+    virtual ~ISharedController() = default;
 
     virtual bool canChat(::PlayerCapabilities::IPlayerData const& player) const = 0;
 

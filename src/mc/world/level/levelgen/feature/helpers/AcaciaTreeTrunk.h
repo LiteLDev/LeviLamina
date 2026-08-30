@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AcaciaTreeTrunk() /*override*/;
+    virtual ~AcaciaTreeTrunk() /*override*/ = default;
 
     virtual int getTreeHeight(::Random& random) const /*override*/;
 

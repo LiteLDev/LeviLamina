@@ -25,7 +25,7 @@ class EditorExtensionServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorExtensionServiceProvider();
+    virtual ~EditorExtensionServiceProvider() = default;
 
     virtual ::Scripting::Result_deprecated<::Bedrock::NonOwnerPointer<::Editor::API::EditorExtension>>
     registerExtension(

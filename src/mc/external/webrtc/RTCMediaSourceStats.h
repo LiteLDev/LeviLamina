@@ -35,7 +35,7 @@ public:
 
     virtual char const* type() const /*override*/;
 
-    virtual ~RTCMediaSourceStats() /*override*/;
+    virtual ~RTCMediaSourceStats() /*override*/ = default;
     // NOLINTEND
 
 public:

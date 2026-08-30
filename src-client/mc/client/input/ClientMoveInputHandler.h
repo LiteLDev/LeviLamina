@@ -17,7 +17,7 @@ class ClientMoveInputHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientMoveInputHandler();
+    virtual ~ClientMoveInputHandler() = default;
 
     virtual void registerInputHandlers(::InputHandler& inputHandler, ::IClientInstance const& client) = 0;
     // NOLINTEND

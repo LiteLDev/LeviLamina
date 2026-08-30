@@ -6,7 +6,7 @@ struct IInstanceIdGenerator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IInstanceIdGenerator();
+    virtual ~IInstanceIdGenerator() = default;
 
     virtual uint generate() = 0;
     // NOLINTEND

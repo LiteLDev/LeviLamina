@@ -11,7 +11,7 @@ struct IBiomeEnvironmentAttributeGlue {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBiomeEnvironmentAttributeGlue();
+    virtual ~IBiomeEnvironmentAttributeGlue() = default;
 
     virtual void applyToBiome(::Biome&, ::std::string const&, ::entt::meta_any const&) const = 0;
     // NOLINTEND

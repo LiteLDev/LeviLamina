@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommonGameModeMessenger() /*override*/;
+    virtual ~CommonGameModeMessenger() /*override*/ = default;
 
     virtual ::gsl::final_action<::std::function<void()>> createBlockBreakCaptureScope(
         ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)> callback

@@ -15,7 +15,7 @@ struct ChunkStructureAccess {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChunkStructureAccess();
+    virtual ~ChunkStructureAccess() = default;
 
     virtual ::std::shared_ptr<::br::worldgen::StructureInstance const>
     getStructureInstance(::br::worldgen::Structure const& structure) const = 0;

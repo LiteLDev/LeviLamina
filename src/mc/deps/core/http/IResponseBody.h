@@ -11,7 +11,7 @@ class IResponseBody {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IResponseBody();
+    virtual ~IResponseBody() = default;
 
     virtual ::std::error_code start(::std::optional<uint64> size) = 0;
 

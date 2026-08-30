@@ -18,7 +18,7 @@ class DefaultIceTransportFactory : public ::webrtc::IceTransportFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DefaultIceTransportFactory() /*override*/;
+    virtual ~DefaultIceTransportFactory() /*override*/ = default;
 
     virtual ::webrtc::scoped_refptr<::webrtc::IceTransportInterface> CreateIceTransport(
         ::std::string const&       transport_name,

@@ -28,7 +28,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~CraftingInputUIContainerModel() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~CraftingInputUIContainerModel() /*override*/;
+#endif
 
     virtual int _getContainerOffset() const /*override*/;
     // NOLINTEND

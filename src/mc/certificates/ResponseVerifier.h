@@ -11,7 +11,7 @@ class ResponseVerifier {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResponseVerifier();
+    virtual ~ResponseVerifier() = default;
 
     virtual void setRequest(::Json::Value& request) = 0;
 

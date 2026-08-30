@@ -19,7 +19,7 @@ class IScriptNetSerializer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptNetSerializer();
+    virtual ~IScriptNetSerializer() = default;
 
     virtual ::std::string const& getContentType() const = 0;
 

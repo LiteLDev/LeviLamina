@@ -29,7 +29,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~TransportProber() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~TransportProber() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:

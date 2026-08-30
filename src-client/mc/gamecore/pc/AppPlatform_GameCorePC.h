@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AppPlatform_GameCorePC() /*override*/;
+    virtual ~AppPlatform_GameCorePC() /*override*/ = default;
 
     virtual void showKeyboard(
         ::std::string const& currentText,

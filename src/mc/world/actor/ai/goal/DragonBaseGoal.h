@@ -31,6 +31,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DragonBaseGoal() /*override*/;
+    virtual ~DragonBaseGoal() /*override*/ = default;
     // NOLINTEND
 };

@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerMessagingToastSubController() /*override*/;
+    virtual ~PlayerMessagingToastSubController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

@@ -17,7 +17,7 @@ class IFacet : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFacet() /*override*/;
+    virtual ~IFacet() /*override*/ = default;
 
     virtual void unbind(::OreUI::FacetBinder& binder) = 0;
 

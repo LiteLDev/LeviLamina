@@ -12,7 +12,7 @@ class ILevelRandom {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILevelRandom();
+    virtual ~ILevelRandom() = default;
 
     virtual ::IRandom& getIRandom() = 0;
 

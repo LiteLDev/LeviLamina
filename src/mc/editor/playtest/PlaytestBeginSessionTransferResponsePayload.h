@@ -30,7 +30,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~PlaytestBeginSessionTransferResponsePayload() /*override*/;
+#else // LL_PLAT_C
+    virtual ~PlaytestBeginSessionTransferResponsePayload() /*override*/ = default;
+#endif
+
     // NOLINTEND
 
 public:

@@ -142,7 +142,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~ServerPlayer() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ServerPlayer() /*override*/;
+#endif
 
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;

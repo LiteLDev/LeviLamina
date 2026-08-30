@@ -24,7 +24,7 @@ public:
 
     virtual void SetRuntimeSetting(::webrtc::AudioProcessing::RuntimeSetting);
 
-    virtual ~CustomProcessing();
+    virtual ~CustomProcessing() = default;
     // NOLINTEND
 };
 

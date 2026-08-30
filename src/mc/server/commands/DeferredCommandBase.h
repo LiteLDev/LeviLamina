@@ -11,7 +11,7 @@ class DeferredCommandBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeferredCommandBase();
+    virtual ~DeferredCommandBase() = default;
 
     virtual void execute(::MinecraftCommands& commands) = 0;
     // NOLINTEND

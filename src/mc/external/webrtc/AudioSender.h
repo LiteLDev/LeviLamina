@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual void SendAudioData(::std::unique_ptr<::webrtc::AudioFrame>) = 0;
 
-    virtual ~AudioSender();
+    virtual ~AudioSender() = default;
     // NOLINTEND
 };
 

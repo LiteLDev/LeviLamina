@@ -78,7 +78,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IceControllerInterface();
+    virtual ~IceControllerInterface() = default;
 
     virtual void SetIceConfig(::webrtc::IceConfig const& config) = 0;
 

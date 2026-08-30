@@ -19,7 +19,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ConstantBufferConstantsBase();
+    virtual ~ConstantBufferConstantsBase() = default;
 
     virtual void init() = 0;
     // NOLINTEND

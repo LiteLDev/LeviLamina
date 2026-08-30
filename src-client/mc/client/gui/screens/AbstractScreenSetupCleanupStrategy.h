@@ -14,7 +14,7 @@ class AbstractScreenSetupCleanupStrategy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AbstractScreenSetupCleanupStrategy();
+    virtual ~AbstractScreenSetupCleanupStrategy() = default;
 
     virtual void setupScreen(::ScreenContext& screenContext);
 

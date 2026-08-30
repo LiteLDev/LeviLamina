@@ -11,7 +11,11 @@ class ResourcePackListener {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~ResourcePackListener() = default;
+#else // LL_PLAT_C
     virtual ~ResourcePackListener();
+#endif
 
     virtual void onActiveResourcePacksChanged(::ResourcePackManager& mgr) = 0;
 

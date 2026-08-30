@@ -61,7 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PersonaScreenModel() /*override*/;
+    virtual ~PersonaScreenModel() /*override*/ = default;
 
     virtual void update(::ui::DirtyFlag& dirtyFlags) /*override*/;
 

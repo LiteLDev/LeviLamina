@@ -16,7 +16,7 @@ struct ExternalDataInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ExternalDataInterface();
+    virtual ~ExternalDataInterface() = default;
 
     virtual bool isInWorldAndNotShowingAnyMenuScreens() const = 0;
 

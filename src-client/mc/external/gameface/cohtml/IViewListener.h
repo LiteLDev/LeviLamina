@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IViewListener();
+    virtual ~IViewListener() = default;
 
     virtual bool OnNavigateTo(char const*);
 

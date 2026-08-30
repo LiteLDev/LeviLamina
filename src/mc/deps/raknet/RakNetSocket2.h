@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RakNetSocket2();
+    virtual ~RakNetSocket2() = default;
 
     virtual int Send(::RakNet::RNS2_SendParameters* sendParameters, char const* file, uint line) = 0;
 

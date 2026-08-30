@@ -20,7 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseLightTextureImageBuilder();
+    virtual ~BaseLightTextureImageBuilder() = default;
 
     virtual void init(::Dimension* d);
 

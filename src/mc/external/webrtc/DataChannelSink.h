@@ -17,7 +17,7 @@ class DataChannelSink {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataChannelSink();
+    virtual ~DataChannelSink() = default;
 
     virtual void
     OnDataReceived(int channel_id, ::webrtc::DataMessageType type, ::webrtc::CopyOnWriteBuffer const& buffer) = 0;

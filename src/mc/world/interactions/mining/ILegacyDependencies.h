@@ -8,7 +8,7 @@ class ILegacyDependencies {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILegacyDependencies();
+    virtual ~ILegacyDependencies() = default;
 
     virtual void hurtAndBreak(int damage) = 0;
     // NOLINTEND

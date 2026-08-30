@@ -17,7 +17,7 @@ class INeighborAwareChunkUpgrader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~INeighborAwareChunkUpgrader();
+    virtual ~INeighborAwareChunkUpgrader() = default;
 
     virtual ::NeighborAwareBlockUpdateType
     getUpdateType(::Block const& block, ::NeighborAwareBlockUpgradeVersionType neighborAwareUpgradeVersion) const = 0;

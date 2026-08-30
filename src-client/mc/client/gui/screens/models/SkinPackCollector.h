@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SkinPackCollector();
+    virtual ~SkinPackCollector() = default;
 
     virtual void start(bool allowed);
 

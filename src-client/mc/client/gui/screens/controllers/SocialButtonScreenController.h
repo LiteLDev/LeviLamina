@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SocialButtonScreenController() /*override*/;
+    virtual ~SocialButtonScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:

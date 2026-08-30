@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUWorldTemplatesScreenController() /*override*/;
+    virtual ~EDUWorldTemplatesScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 

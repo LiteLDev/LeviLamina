@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PermissionsScreenController() /*override*/;
+    virtual ~PermissionsScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 

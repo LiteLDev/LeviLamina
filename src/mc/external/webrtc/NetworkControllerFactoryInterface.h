@@ -15,7 +15,7 @@ class NetworkControllerFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkControllerFactoryInterface();
+    virtual ~NetworkControllerFactoryInterface() = default;
 
     virtual ::std::unique_ptr<::webrtc::NetworkControllerInterface>
     Create(::webrtc::NetworkControllerConfig config) = 0;

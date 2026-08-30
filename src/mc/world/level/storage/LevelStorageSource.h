@@ -28,7 +28,7 @@ class LevelStorageSource : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelStorageSource() /*override*/;
+    virtual ~LevelStorageSource() /*override*/ = default;
 
     virtual ::std::string const& getName() const = 0;
 

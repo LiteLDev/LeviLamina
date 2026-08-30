@@ -6,7 +6,7 @@ struct ISystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISystem();
+    virtual ~ISystem() = default;
 
     virtual void registerEvents(::entt::dispatcher& dispatcher);
     // NOLINTEND

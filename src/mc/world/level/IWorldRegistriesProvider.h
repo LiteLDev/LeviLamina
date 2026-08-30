@@ -26,7 +26,7 @@ class IWorldRegistriesProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IWorldRegistriesProvider();
+    virtual ~IWorldRegistriesProvider() = default;
 
     virtual ::BiomeRegistry const& getBiomeRegistry() const = 0;
 

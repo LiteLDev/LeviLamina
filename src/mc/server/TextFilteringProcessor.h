@@ -20,7 +20,7 @@ class TextFilteringProcessor : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TextFilteringProcessor() /*override*/;
+    virtual ~TextFilteringProcessor() /*override*/ = default;
 
     virtual ::CallbackToken processAnonymousMessages(
         ::TextProcessingEventOrigin,

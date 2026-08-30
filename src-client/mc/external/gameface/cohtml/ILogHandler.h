@@ -11,7 +11,7 @@ class ILogHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILogHandler();
+    virtual ~ILogHandler() = default;
 
     virtual void WriteLog(::cohtml::Logging::Severity severity, char const* message, uint64 length) = 0;
     // NOLINTEND

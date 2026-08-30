@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CatalogPackCollector() /*override*/;
+    virtual ~CatalogPackCollector() /*override*/ = default;
 
     virtual void start(bool allowed) /*override*/;
 

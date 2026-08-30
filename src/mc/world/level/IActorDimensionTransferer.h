@@ -16,7 +16,7 @@ class IActorDimensionTransferer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IActorDimensionTransferer();
+    virtual ~IActorDimensionTransferer() = default;
 
     virtual void setupActorForTransfer(::Actor& actor) = 0;
 

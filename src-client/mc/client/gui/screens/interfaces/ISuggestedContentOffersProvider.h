@@ -18,7 +18,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISuggestedContentOffersProvider();
+    virtual ~ISuggestedContentOffersProvider() = default;
 
     virtual ::StoreCatalogItem const&
     getOfferItem(::ISuggestedContentOffersProvider::CollectionType type, int index) const = 0;

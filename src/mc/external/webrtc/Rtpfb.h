@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Rtpfb() /*override*/;
+    virtual ~Rtpfb() /*override*/ = default;
     // NOLINTEND
 
 public:

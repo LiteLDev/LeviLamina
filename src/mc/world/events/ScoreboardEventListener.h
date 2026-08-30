@@ -14,7 +14,7 @@ class ScoreboardEventListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScoreboardEventListener();
+    virtual ~ScoreboardEventListener() = default;
 
     virtual ::EventResult onObjectiveAdded(::std::string const&);
 

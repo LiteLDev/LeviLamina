@@ -65,7 +65,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Scene() /*override*/;
+    virtual ~Scene() /*override*/ = default;
 
     virtual void onCreation() /*override*/;
 

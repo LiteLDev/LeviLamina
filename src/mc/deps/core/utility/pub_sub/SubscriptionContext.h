@@ -8,7 +8,7 @@ class SubscriptionContext {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SubscriptionContext();
+    virtual ~SubscriptionContext() = default;
 
     virtual void to_string(::std::string&) = 0;
     // NOLINTEND

@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentBase();
+    virtual ~ScriptWidgetComponentBase() = default;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const = 0;
 

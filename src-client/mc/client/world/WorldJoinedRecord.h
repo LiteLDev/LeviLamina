@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldJoinedRecord();
+    virtual ~WorldJoinedRecord() = default;
 
     virtual ::World::WorldJoinedRecordType getWorldJoinedRecordType() const = 0;
 

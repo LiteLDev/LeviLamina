@@ -17,7 +17,7 @@ class TextureGroupBase : public ::std::enable_shared_from_this<::mce::TextureGro
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TextureGroupBase();
+    virtual ~TextureGroupBase() = default;
 
     virtual ::mce::TexturePtr
     getTexture(::ResourceLocation const&, bool, ::std::optional<uint>, ::cg::TextureSetLayerType const) = 0;

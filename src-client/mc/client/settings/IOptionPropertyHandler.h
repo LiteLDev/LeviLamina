@@ -17,7 +17,7 @@ class IOptionPropertyHandler : public ::Settings::IPropertyHandler<int> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IOptionPropertyHandler() /*override*/;
+    virtual ~IOptionPropertyHandler() /*override*/ = default;
 
     virtual ::std::vector<::Settings::OptionData> getOptions() = 0;
 

@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HttpServer() /*override*/;
+    virtual ~HttpServer() /*override*/ = default;
 
     virtual ::Bedrock::Threading::Async<::Bedrock::Result<::NetherNet::HttpResponse>>
     onRequest(::NetherNet::HttpRequest request) = 0;

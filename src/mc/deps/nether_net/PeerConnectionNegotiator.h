@@ -151,7 +151,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PeerConnectionNegotiator() /*override*/;
+    virtual ~PeerConnectionNegotiator() /*override*/ = default;
 
     virtual ::NetherNet::ESessionError checkTimeout(::std::chrono::seconds timeout) const;
 

@@ -8,7 +8,7 @@ struct ParticleCurveBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleCurveBase();
+    virtual ~ParticleCurveBase() = default;
     // NOLINTEND
 };
 

@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ICandidacyHeuristic();
+    virtual ~ICandidacyHeuristic() = default;
 
     virtual bool reject(::SubChunkPos const& subChunkPos) const;
 

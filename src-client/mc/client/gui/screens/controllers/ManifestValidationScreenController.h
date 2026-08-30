@@ -56,7 +56,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ManifestValidationScreenController() /*override*/;
+    virtual ~ManifestValidationScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

@@ -50,7 +50,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~CartographyContainerManagerController() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~CartographyContainerManagerController() /*override*/;
+#endif
 
     virtual void postInit(::std::weak_ptr<::ContainerManagerController> self) /*override*/;
 

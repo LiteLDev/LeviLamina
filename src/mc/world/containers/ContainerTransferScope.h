@@ -12,7 +12,11 @@ struct ContainerTransferScope {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~ContainerTransferScope() = default;
+#else // LL_PLAT_C
     virtual ~ContainerTransferScope();
+#endif
 
     virtual void createItem(::ItemStack const& item, ::std::shared_ptr<::SimpleSparseContainer> createdOutputContainer);
     // NOLINTEND

@@ -14,7 +14,7 @@ class TargetTransferRateObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TargetTransferRateObserver();
+    virtual ~TargetTransferRateObserver() = default;
 
     virtual void OnTargetTransferRate(::webrtc::TargetTransferRate) = 0;
 

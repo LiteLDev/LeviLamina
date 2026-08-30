@@ -16,7 +16,7 @@ class IMainMenuScreenModel {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMainMenuScreenModel();
+    virtual ~IMainMenuScreenModel() = default;
 
     virtual void navigateToDlcProgressScreen(
         ::std::vector<::DlcId> const&     dlcIds,

@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AbstractFieldTrialEnum() /*override*/;
+    virtual ~AbstractFieldTrialEnum() /*override*/ = default;
 
     virtual bool Parse(::std::optional<::std::string>) /*override*/;
     // NOLINTEND

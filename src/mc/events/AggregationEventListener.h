@@ -45,7 +45,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~AggregationEventListener() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~AggregationEventListener() /*override*/;
+#endif
 
     virtual void recordEvent(
         ::Social::Events::Event const&                   event,

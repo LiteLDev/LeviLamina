@@ -27,7 +27,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~OpenSSLCertificateInterface() /*override*/;
+#else // LL_PLAT_C
+    virtual ~OpenSSLCertificateInterface() /*override*/ = default;
+#endif
 
     virtual ::std::string serialize(::Crypto::Certificate::Encoding encoding) const /*override*/;
 

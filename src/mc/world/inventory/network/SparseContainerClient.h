@@ -29,7 +29,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~SparseContainerClient() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~SparseContainerClient() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:

@@ -13,7 +13,7 @@ class RtpPacketSinkInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtpPacketSinkInterface();
+    virtual ~RtpPacketSinkInterface() = default;
 
     virtual void OnRtpPacket(::webrtc::RtpPacketReceived const& parsed_packet) = 0;
     // NOLINTEND

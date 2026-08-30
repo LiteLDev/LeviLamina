@@ -13,7 +13,7 @@ class FrameCountObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FrameCountObserver();
+    virtual ~FrameCountObserver() = default;
 
     virtual void FrameCountUpdated(::webrtc::FrameCounts const&, uint) = 0;
     // NOLINTEND

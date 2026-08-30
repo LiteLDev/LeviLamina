@@ -78,7 +78,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~VorbisAudioDecoder() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~VorbisAudioDecoder() /*override*/;
+#endif
 
     virtual ::Bedrock::Result<void> initialize() /*override*/;
 

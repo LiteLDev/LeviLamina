@@ -18,7 +18,7 @@ class IWorldResourcePackDownloader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IWorldResourcePackDownloader();
+    virtual ~IWorldResourcePackDownloader() = default;
 
     virtual void downloadPacks(
         ::std::vector<::std::string> const&               productIds,

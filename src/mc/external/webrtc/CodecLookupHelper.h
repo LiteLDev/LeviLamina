@@ -14,7 +14,7 @@ class CodecLookupHelper {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CodecLookupHelper();
+    virtual ~CodecLookupHelper() = default;
 
     virtual ::webrtc::PayloadTypeSuggester* PayloadTypeSuggester() = 0;
 

@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelRendererCameraListeners() /*override*/;
+    virtual ~LevelRendererCameraListeners() /*override*/ = default;
 
     virtual void onWillChangeDimension(::Player& player) /*override*/;
 

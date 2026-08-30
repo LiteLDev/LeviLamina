@@ -51,7 +51,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~NativeRuntime() /*override*/;
+#else // LL_PLAT_C
+    virtual ~NativeRuntime() /*override*/ = default;
+#endif
 
     virtual ::std::optional<::Scripting::ScriptContext> createContext(
         ::Scripting::ModuleBindingBundle&& bindings,

@@ -18,7 +18,7 @@ class DtlsTransportFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DtlsTransportFactory();
+    virtual ~DtlsTransportFactory() = default;
 
     virtual ::std::unique_ptr<::webrtc::DtlsTransportInternal> CreateDtlsTransport(
         ::webrtc::IceTransportInternal*,

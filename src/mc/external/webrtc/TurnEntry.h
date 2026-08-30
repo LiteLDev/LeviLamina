@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TurnEntry() /*override*/;
+    virtual ~TurnEntry() /*override*/ = default;
     // NOLINTEND
 
 public:

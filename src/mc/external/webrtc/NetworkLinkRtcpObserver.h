@@ -21,7 +21,7 @@ class NetworkLinkRtcpObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkLinkRtcpObserver();
+    virtual ~NetworkLinkRtcpObserver() = default;
 
     virtual void
     OnTransportFeedback(::webrtc::Timestamp receive_time, ::webrtc::rtcp::TransportFeedback const& feedback);

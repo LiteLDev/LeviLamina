@@ -17,7 +17,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAsyncResourceRequest();
+    virtual ~IAsyncResourceRequest() = default;
 
     virtual uint GetId() const = 0;
 

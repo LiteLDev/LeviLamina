@@ -63,7 +63,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ConnectedStorageProvider_GameCore() /*override*/;
+    virtual ~ConnectedStorageProvider_GameCore() /*override*/ = default;
 
     virtual void shutdown() /*override*/;
 

@@ -343,7 +343,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelRendererCamera();
+    virtual ~LevelRendererCamera() = default;
 
     virtual void addCameraListenerToRenderChunkCoordinator();
 

@@ -6,7 +6,7 @@ class IEventTime {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEventTime();
+    virtual ~IEventTime() = default;
 
     virtual double getSecondsSinceLaunch_DEPRECATED() const = 0;
     // NOLINTEND

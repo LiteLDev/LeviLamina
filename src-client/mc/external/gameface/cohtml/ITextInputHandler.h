@@ -14,7 +14,7 @@ class ITextInputHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITextInputHandler();
+    virtual ~ITextInputHandler() = default;
 
     virtual void OnSelectionChanged(::cohtml::IInputProxy* proxy, ::cohtml::TextInput::Selection selection);
 

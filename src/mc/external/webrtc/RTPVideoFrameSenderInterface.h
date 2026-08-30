@@ -37,7 +37,7 @@ public:
 
     virtual void SetVideoLayersAllocationAfterTransformation(::webrtc::VideoLayersAllocation allocation) = 0;
 
-    virtual ~RTPVideoFrameSenderInterface();
+    virtual ~RTPVideoFrameSenderInterface() = default;
     // NOLINTEND
 };
 

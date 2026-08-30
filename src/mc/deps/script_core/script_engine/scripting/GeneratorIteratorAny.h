@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GeneratorIteratorAny() /*override*/;
+    virtual ~GeneratorIteratorAny() /*override*/ = default;
     // NOLINTEND
 
 public:

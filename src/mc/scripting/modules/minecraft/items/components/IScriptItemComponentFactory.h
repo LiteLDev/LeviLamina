@@ -19,7 +19,7 @@ class IScriptItemComponentFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptItemComponentFactory();
+    virtual ~IScriptItemComponentFactory() = default;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent> createComponent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,

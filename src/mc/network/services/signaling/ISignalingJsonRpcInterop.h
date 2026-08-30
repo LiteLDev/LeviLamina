@@ -21,7 +21,7 @@ class ISignalingJsonRpcInterop {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISignalingJsonRpcInterop();
+    virtual ~ISignalingJsonRpcInterop() = default;
 
     virtual ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>> sendJsonRpcTo(
         ::PlayerMessaging::NetworkID          networkIdTo,

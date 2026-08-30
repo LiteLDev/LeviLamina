@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IConnectionEventing();
+    virtual ~IConnectionEventing() = default;
 
     virtual void fireServerConnectionEvent(
         ::IConnectionEventing::ServerConnectionOutcome outcome,

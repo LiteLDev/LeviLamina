@@ -18,7 +18,7 @@ public:
 
     virtual void OnError(::webrtc::RTCError) = 0;
 
-    virtual ~DtlsTransportObserverInterface();
+    virtual ~DtlsTransportObserverInterface() = default;
     // NOLINTEND
 };
 

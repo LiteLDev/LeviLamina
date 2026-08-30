@@ -18,7 +18,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RenderMaterialGroupBase();
+    virtual ~RenderMaterialGroupBase() = default;
 
     virtual ::mce::RenderMaterialInfo& getMaterialInfo(::HashedString const& name) = 0;
 

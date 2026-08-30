@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RestartServiceRestartResponsePayload() /*override*/;
+    virtual ~RestartServiceRestartResponsePayload() /*override*/ = default;
     // NOLINTEND
 
 public:

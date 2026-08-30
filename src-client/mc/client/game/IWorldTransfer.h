@@ -17,7 +17,7 @@ struct IWorldTransfer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IWorldTransfer();
+    virtual ~IWorldTransfer() = default;
 
     virtual void setWorldTransferAction(
         ::std::variant<

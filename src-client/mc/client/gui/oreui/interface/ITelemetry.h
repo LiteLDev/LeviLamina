@@ -16,7 +16,7 @@ class ITelemetry {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITelemetry();
+    virtual ~ITelemetry() = default;
 
     virtual void fireEvent(
         ::std::string const&                                eventName,

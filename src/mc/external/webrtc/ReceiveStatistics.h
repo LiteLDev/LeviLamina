@@ -17,7 +17,7 @@ class ReceiveStatistics : public ::webrtc::ReceiveStatisticsProvider, public ::w
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ReceiveStatistics() /*override*/;
+    virtual ~ReceiveStatistics() /*override*/ = default;
 
     virtual ::webrtc::StreamStatistician* GetStatistician(uint) const = 0;
 

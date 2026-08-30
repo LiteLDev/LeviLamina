@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalAudioSinkAdapter() /*override*/;
+    virtual ~LocalAudioSinkAdapter() /*override*/ = default;
 
     virtual void OnData(
         void const* audio_data,

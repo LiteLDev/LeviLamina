@@ -55,7 +55,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~CrashHandler();
+        virtual ~CrashHandler() = default;
 
         virtual ::std::shared_ptr<::Bedrock::SessionInfo>
         findCrashedSessionInfo(::std::string_view sessionId) const = 0;
@@ -70,7 +70,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CrashFileProcessor();
+    virtual ~CrashFileProcessor() = default;
 
     virtual bool
     getSessionIDFromFile(::std::string& outSessionID, ::Core::PathBuffer<::std::string> const& filePath) const = 0;

@@ -42,7 +42,7 @@ public:
 
     virtual void RemoveSink(::webrtc::AudioTrackSinkInterface* sink) /*override*/;
 
-    virtual ~LocalAudioSource() /*override*/;
+    virtual ~LocalAudioSource() /*override*/ = default;
     // NOLINTEND
 
 public:

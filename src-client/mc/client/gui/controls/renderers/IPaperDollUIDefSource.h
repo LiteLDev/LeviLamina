@@ -6,7 +6,7 @@ class IPaperDollUIDefSource {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPaperDollUIDefSource();
+    virtual ~IPaperDollUIDefSource() = default;
 
     virtual bool getAsBool(::std::string_view key, bool defaultValue) const = 0;
 

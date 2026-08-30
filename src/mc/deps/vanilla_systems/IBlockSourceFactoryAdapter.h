@@ -13,7 +13,7 @@ class IBlockSourceFactoryAdapter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBlockSourceFactoryAdapter();
+    virtual ~IBlockSourceFactoryAdapter() = default;
 
     virtual ::std::unique_ptr<::VanillaSystems::IOwnedConstBlockSource> createBlockSource() = 0;
     // NOLINTEND

@@ -16,7 +16,7 @@ struct ISharedData {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISharedData();
+    virtual ~ISharedData() = default;
 
     virtual ::std::optional<bool> isGameRuleEnabled(::GameRuleId) const = 0;
 

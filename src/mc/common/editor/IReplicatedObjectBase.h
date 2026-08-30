@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IReplicatedObjectBase();
+    virtual ~IReplicatedObjectBase() = default;
 
     virtual bool load(::std::string&&) = 0;
 

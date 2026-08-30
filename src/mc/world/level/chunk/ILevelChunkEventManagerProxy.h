@@ -12,7 +12,7 @@ class ILevelChunkEventManagerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILevelChunkEventManagerProxy();
+    virtual ~ILevelChunkEventManagerProxy() = default;
 
     virtual bool isReadOnly(::LevelChunk const& levelChunk) const = 0;
 

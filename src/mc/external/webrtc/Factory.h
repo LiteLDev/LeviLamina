@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Factory() /*override*/;
+    virtual ~Factory() /*override*/ = default;
     // NOLINTEND
 };
 

@@ -14,7 +14,7 @@ class IContentKeyProvider : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IContentKeyProvider() /*override*/;
+    virtual ~IContentKeyProvider() /*override*/ = default;
 
     virtual ::std::string getContentKey(::ContentIdentity const& contentIdentity) const = 0;
 

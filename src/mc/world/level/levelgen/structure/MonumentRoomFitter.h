@@ -13,7 +13,7 @@ class MonumentRoomFitter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MonumentRoomFitter();
+    virtual ~MonumentRoomFitter() = default;
 
     virtual bool fits(::RoomDefinition const& definition) const = 0;
 

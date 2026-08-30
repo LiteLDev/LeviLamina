@@ -37,7 +37,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~SceneElement();
+        virtual ~SceneElement() = default;
         // NOLINTEND
     };
 
@@ -64,7 +64,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISceneStack() /*override*/;
+    virtual ~ISceneStack() /*override*/ = default;
 
     virtual void reload() = 0;
 

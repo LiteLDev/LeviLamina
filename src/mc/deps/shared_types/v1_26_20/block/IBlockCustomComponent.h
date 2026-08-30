@@ -19,7 +19,7 @@ public:
 
     virtual bool hasPlayerPlacingEvent() const = 0;
 
-    virtual ~IBlockCustomComponent();
+    virtual ~IBlockCustomComponent() = default;
     // NOLINTEND
 };
 

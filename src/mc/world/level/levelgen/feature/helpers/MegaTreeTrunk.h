@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MegaTreeTrunk() /*override*/;
+    virtual ~MegaTreeTrunk() /*override*/ = default;
 
     virtual int getTreeHeight(::Random& random) const /*override*/;
 

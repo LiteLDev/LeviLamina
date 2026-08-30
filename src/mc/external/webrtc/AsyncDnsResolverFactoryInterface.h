@@ -17,7 +17,7 @@ class AsyncDnsResolverFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncDnsResolverFactoryInterface();
+    virtual ~AsyncDnsResolverFactoryInterface() = default;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
     CreateAndResolve(::webrtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) = 0;

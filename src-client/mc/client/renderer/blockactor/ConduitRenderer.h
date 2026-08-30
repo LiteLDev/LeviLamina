@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ConduitRenderer() /*override*/;
+    virtual ~ConduitRenderer() /*override*/ = default;
 
     virtual void onAppSuspended() /*override*/;
 

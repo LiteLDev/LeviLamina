@@ -23,7 +23,7 @@ class EditorJigsawServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorJigsawServiceProvider();
+    virtual ~EditorJigsawServiceProvider() = default;
 
     virtual ::std::string getJigsawExportDirectory() = 0;
 

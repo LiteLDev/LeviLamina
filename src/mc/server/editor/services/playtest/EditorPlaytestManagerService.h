@@ -86,7 +86,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorPlaytestManagerService() /*override*/;
+    virtual ~EditorPlaytestManagerService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

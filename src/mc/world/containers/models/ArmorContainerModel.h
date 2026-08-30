@@ -29,7 +29,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~ArmorContainerModel() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ArmorContainerModel() /*override*/;
+#endif
 
     virtual void postInit() /*override*/;
 

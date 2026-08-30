@@ -14,7 +14,7 @@ class IObjectInspector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IObjectInspector();
+    virtual ~IObjectInspector() = default;
 
     virtual bool isSameObject(::Scripting::ObjectHandle handleA, ::Scripting::ObjectHandle handleB) const = 0;
 

@@ -65,7 +65,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~MoveOperation();
+        virtual ~MoveOperation() = default;
 
         virtual ::Core::Result migrate(bool forceCritical) const = 0;
 

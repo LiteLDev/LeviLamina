@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFileChunkDownloader();
+    virtual ~IFileChunkDownloader() = default;
 
     virtual void update() = 0;
 

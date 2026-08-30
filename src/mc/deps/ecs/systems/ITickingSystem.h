@@ -16,7 +16,11 @@ class ITickingSystem : public ::ISystem {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~ITickingSystem() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ITickingSystem() /*override*/;
+#endif
 
     virtual void tick(::EntityRegistry& registry) = 0;
 

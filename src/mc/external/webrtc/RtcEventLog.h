@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtcEventLog();
+    virtual ~RtcEventLog() = default;
 
     virtual bool StartLogging(::std::unique_ptr<::webrtc::RtcEventLogOutput>, int64) = 0;
 

@@ -18,7 +18,7 @@ class IEntryPoint {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEntryPoint();
+    virtual ~IEntryPoint() = default;
 
     virtual bool shouldAddToConfiguration() const = 0;
 

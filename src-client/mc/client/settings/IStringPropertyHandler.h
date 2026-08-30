@@ -11,7 +11,7 @@ class IStringPropertyHandler : public ::Settings::IPropertyHandler<::std::string
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IStringPropertyHandler() /*override*/;
+    virtual ~IStringPropertyHandler() /*override*/ = default;
     // NOLINTEND
 };
 

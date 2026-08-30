@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AzureFileStorageEndpoint();
+    virtual ~AzureFileStorageEndpoint() = default;
 
     virtual ::Bedrock::Http::Request makeListFilesRequest(::Core::Path const&) const;
 

@@ -27,7 +27,7 @@ public:
 
     virtual ::webrtc::MediaStreamTrackInterface* FindVideoTrack(::std::string const& id) = 0;
 
-    virtual ~StreamCollectionInterface() /*override*/;
+    virtual ~StreamCollectionInterface() /*override*/ = default;
     // NOLINTEND
 };
 

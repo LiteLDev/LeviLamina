@@ -20,7 +20,7 @@ class ServerLocator : public ::NetworkEnableDisableListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerLocator() /*override*/;
+    virtual ~ServerLocator() /*override*/ = default;
 
     virtual void startAnnouncingServer(
         ::std::string const&                 playerName,

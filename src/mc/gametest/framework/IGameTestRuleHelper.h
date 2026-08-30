@@ -8,7 +8,7 @@ class IGameTestRuleHelper {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGameTestRuleHelper();
+    virtual ~IGameTestRuleHelper() = default;
 
     virtual void addRuleToClear(int ruleID) = 0;
 

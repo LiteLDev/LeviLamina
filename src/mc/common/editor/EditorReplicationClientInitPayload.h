@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorReplicationClientInitPayload() /*override*/;
+    virtual ~EditorReplicationClientInitPayload() /*override*/ = default;
     // NOLINTEND
 
 public:

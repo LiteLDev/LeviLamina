@@ -49,7 +49,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseGameTestHelper() /*override*/;
+    virtual ~BaseGameTestHelper() /*override*/ = default;
 
     virtual void succeedWhenEntityPresent(
         ::ActorDefinitionIdentifier const& actorIdentifier,

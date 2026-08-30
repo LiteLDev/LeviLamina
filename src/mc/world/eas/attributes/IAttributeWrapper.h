@@ -13,7 +13,7 @@ class IAttributeWrapper {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAttributeWrapper();
+    virtual ~IAttributeWrapper() = default;
 
     virtual ::EAS::EnvironmentAttributeData toData() const = 0;
 

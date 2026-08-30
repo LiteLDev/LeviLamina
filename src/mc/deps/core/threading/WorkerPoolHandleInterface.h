@@ -16,7 +16,7 @@ class WorkerPoolHandleInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorkerPoolHandleInterface();
+    virtual ~WorkerPoolHandleInterface() = default;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::WorkerPool> get() const = 0;
     // NOLINTEND

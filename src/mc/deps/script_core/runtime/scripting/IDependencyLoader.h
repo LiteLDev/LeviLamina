@@ -13,7 +13,7 @@ class IDependencyLoader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDependencyLoader();
+    virtual ~IDependencyLoader() = default;
 
     virtual ::std::optional<::Scripting::ScriptData> onLoadScript(::std::string const& name) = 0;
     // NOLINTEND

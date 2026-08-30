@@ -33,7 +33,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~HttpSignalingClient() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~HttpSignalingClient() /*override*/;
+#endif
 
     virtual void SendSignal(
         ::NetherNet::NetworkID                              from,

@@ -16,7 +16,11 @@ class CreativeContainerController : public ::CraftingContainerController {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~CreativeContainerController() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~CreativeContainerController() /*override*/;
+#endif
 
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const /*override*/;
 

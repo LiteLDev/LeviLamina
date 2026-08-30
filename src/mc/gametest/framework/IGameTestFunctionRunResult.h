@@ -13,7 +13,7 @@ class IGameTestFunctionRunResult {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGameTestFunctionRunResult();
+    virtual ~IGameTestFunctionRunResult() = default;
 
     virtual bool isComplete() const = 0;
 

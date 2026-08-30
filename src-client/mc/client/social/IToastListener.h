@@ -17,6 +17,6 @@ public:
 
     virtual void refreshToast() = 0;
 
-    virtual ~IToastListener();
+    virtual ~IToastListener() = default;
     // NOLINTEND
 };

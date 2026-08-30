@@ -106,7 +106,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftingScreenController() /*override*/;
+    virtual ~CraftingScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 

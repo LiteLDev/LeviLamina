@@ -60,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ToastManager() /*override*/;
+    virtual ~ToastManager() /*override*/ = default;
 
     virtual void pushToast(::ToastMessage&& message) /*override*/;
 

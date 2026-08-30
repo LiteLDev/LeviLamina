@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DownloadableTemplateManagerBase() /*override*/;
+    virtual ~DownloadableTemplateManagerBase() /*override*/ = default;
 
     virtual ::std::optional<::World::DownloadWorldTemplateError> downloadWorldTemplate(
         ::std::string const&                                                        templateId,

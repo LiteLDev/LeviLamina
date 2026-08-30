@@ -14,7 +14,7 @@ class OperationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OperationBase();
+    virtual ~OperationBase() = default;
 
     virtual bool tick(
         ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,

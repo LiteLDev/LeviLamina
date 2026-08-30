@@ -14,7 +14,7 @@ class VideoBitrateAllocator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VideoBitrateAllocator();
+    virtual ~VideoBitrateAllocator() = default;
 
     virtual ::webrtc::VideoBitrateAllocation GetAllocation(uint, uint);
 

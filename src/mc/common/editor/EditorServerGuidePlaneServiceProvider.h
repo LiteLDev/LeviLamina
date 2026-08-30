@@ -19,7 +19,7 @@ class EditorServerGuidePlaneServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorServerGuidePlaneServiceProvider();
+    virtual ~EditorServerGuidePlaneServiceProvider() = default;
 
     virtual ::Scripting::Result_deprecated<::mce::UUID> addPlane(
         ::Vec3 const&       origin,

@@ -11,7 +11,7 @@ class IBooleanDataProvider : public ::Settings::IDataProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBooleanDataProvider() /*override*/;
+    virtual ~IBooleanDataProvider() /*override*/ = default;
 
     virtual bool getValue() const = 0;
 

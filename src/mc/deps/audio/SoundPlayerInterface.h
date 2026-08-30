@@ -24,7 +24,7 @@ class SoundPlayerInterface : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SoundPlayerInterface() /*override*/;
+    virtual ~SoundPlayerInterface() /*override*/ = default;
 
     virtual uint64 play(
         ::std::string const&                 name,

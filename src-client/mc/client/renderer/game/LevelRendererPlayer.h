@@ -216,7 +216,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelRendererPlayer() /*override*/;
+    virtual ~LevelRendererPlayer() /*override*/ = default;
 
     virtual void initResources() /*override*/;
 

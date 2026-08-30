@@ -49,7 +49,7 @@ public:
     // NOLINTBEGIN
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    virtual ~EditorServerMinimapService() /*override*/;
+    virtual ~EditorServerMinimapService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

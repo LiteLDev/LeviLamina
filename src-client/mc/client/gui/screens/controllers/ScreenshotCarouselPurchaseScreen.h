@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenshotCarouselPurchaseScreen() /*override*/;
+    virtual ~ScreenshotCarouselPurchaseScreen() /*override*/ = default;
 
     virtual ::std::string getAdditionalScreenInfo() const /*override*/;
 

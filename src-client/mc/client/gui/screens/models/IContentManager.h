@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IContentManager();
+    virtual ~IContentManager() = default;
 
     virtual ::ContentSource* loadContent(::ContentType contentType, ::ContentFlags flags) = 0;
 

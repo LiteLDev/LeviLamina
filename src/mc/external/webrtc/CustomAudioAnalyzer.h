@@ -19,7 +19,7 @@ public:
 
     virtual ::std::string ToString() const = 0;
 
-    virtual ~CustomAudioAnalyzer();
+    virtual ~CustomAudioAnalyzer() = default;
     // NOLINTEND
 };
 

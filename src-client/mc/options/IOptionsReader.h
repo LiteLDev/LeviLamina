@@ -17,7 +17,7 @@ class IOptionsReader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IOptionsReader();
+    virtual ~IOptionsReader() = default;
 
     virtual ::gsl::not_null<::Option const*> get(::OptionID optionId) const = 0;
 

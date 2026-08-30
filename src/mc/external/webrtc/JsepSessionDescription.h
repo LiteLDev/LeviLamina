@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~JsepSessionDescription() /*override*/;
+    virtual ~JsepSessionDescription() /*override*/ = default;
 
     virtual ::std::unique_ptr<::webrtc::SessionDescriptionInterface> Clone() const /*override*/;
 

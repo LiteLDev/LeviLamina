@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtpPacketizerVp8() /*override*/;
+    virtual ~RtpPacketizerVp8() /*override*/ = default;
 
     virtual uint64 NumPackets() const /*override*/;
 

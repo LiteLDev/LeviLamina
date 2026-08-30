@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorEventListener();
+    virtual ~ActorEventListener() = default;
 
     virtual ::EventResult onEvent(::ActorNotificationEvent const& event);
 

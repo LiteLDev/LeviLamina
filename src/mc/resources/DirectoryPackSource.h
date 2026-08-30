@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DirectoryPackSource() /*override*/;
+    virtual ~DirectoryPackSource() /*override*/ = default;
 
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 

@@ -129,7 +129,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RTPSenderVideo() /*override*/;
+    virtual ~RTPSenderVideo() /*override*/ = default;
 
     virtual bool SendVideo(
         int                                       payload_type,

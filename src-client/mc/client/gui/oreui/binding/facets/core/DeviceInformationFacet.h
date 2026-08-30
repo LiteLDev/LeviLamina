@@ -85,7 +85,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeviceInformationFacet() /*override*/;
+    virtual ~DeviceInformationFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
 

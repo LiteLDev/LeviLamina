@@ -66,7 +66,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~PredictiveContainer();
+        virtual ~PredictiveContainer() = default;
         // NOLINTEND
 
     public:
@@ -185,7 +185,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~ItemStackNetManagerClient() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ItemStackNetManagerClient() /*override*/;
+#endif
 
     virtual ::SparseContainer* initOpenContainer(
         ::BlockSource&             region,

@@ -17,7 +17,7 @@ class LocalNetworkAccessPermissionInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalNetworkAccessPermissionInterface();
+    virtual ~LocalNetworkAccessPermissionInterface() = default;
 
     virtual bool ShouldRequestPermission(::webrtc::SocketAddress const&);
 

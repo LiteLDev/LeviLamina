@@ -20,7 +20,7 @@ class SSLAdapterFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SSLAdapterFactory();
+    virtual ~SSLAdapterFactory() = default;
 
     virtual void SetMode(::webrtc::SSLMode) = 0;
 

@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CauldronBlockActor() /*override*/;
+    virtual ~CauldronBlockActor() /*override*/ = default;
 
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 

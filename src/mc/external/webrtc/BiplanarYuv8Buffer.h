@@ -15,7 +15,7 @@ public:
 
     virtual uchar const* DataUV() const = 0;
 
-    virtual ~BiplanarYuv8Buffer() /*override*/;
+    virtual ~BiplanarYuv8Buffer() /*override*/ = default;
     // NOLINTEND
 };
 

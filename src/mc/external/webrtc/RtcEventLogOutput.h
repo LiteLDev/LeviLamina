@@ -8,7 +8,7 @@ class RtcEventLogOutput {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtcEventLogOutput();
+    virtual ~RtcEventLogOutput() = default;
 
     virtual bool IsActive() const = 0;
 

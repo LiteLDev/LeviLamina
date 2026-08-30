@@ -9,6 +9,6 @@ class EntityComponentFactoryBase : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EntityComponentFactoryBase() /*override*/;
+    virtual ~EntityComponentFactoryBase() /*override*/ = default;
     // NOLINTEND
 };

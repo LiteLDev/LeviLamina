@@ -93,7 +93,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OpenSSLAdapter() /*override*/;
+    virtual ~OpenSSLAdapter() /*override*/ = default;
 
     virtual void SetIgnoreBadCert(bool ignore) /*override*/;
 

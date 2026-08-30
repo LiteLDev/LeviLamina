@@ -51,7 +51,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~ITemplate();
+        virtual ~ITemplate() = default;
 
         virtual ::std::vector<::JigsawBlockInfo> const& getJigsawMarkers() const = 0;
 

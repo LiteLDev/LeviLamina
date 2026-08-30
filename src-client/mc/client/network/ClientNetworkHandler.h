@@ -248,7 +248,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientNetworkHandler() /*override*/;
+    virtual ~ClientNetworkHandler() /*override*/ = default;
 
     virtual void handle(::NetworkIdentifier const& source, ::ActorEventPacket const& packet) /*override*/;
 

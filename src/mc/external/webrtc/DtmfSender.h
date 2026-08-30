@@ -54,7 +54,7 @@ public:
 
     virtual int comma_delay() const /*override*/;
 
-    virtual ~DtmfSender() /*override*/;
+    virtual ~DtmfSender() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -17,7 +17,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockCancellableEventBase() /*override*/;
+    virtual ~BlockCancellableEventBase() /*override*/ = default;
     // NOLINTEND
 };
 

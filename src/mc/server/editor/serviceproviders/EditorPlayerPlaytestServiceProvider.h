@@ -18,7 +18,7 @@ class EditorPlayerPlaytestServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorPlayerPlaytestServiceProvider();
+    virtual ~EditorPlayerPlaytestServiceProvider() = default;
 
     virtual ::Editor::Playtest::SessionResult getPlaytestSessionAvailability(::WeakEntityRef playerRef) = 0;
 

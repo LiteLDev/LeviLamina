@@ -9,7 +9,7 @@ class IPacketLimitAlgorithm {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPacketLimitAlgorithm();
+    virtual ~IPacketLimitAlgorithm() = default;
 
     virtual ::std::unique_ptr<::IPacketLimitAlgorithm> copy() const = 0;
 

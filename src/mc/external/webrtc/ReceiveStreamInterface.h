@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ReceiveStreamInterface();
+    virtual ~ReceiveStreamInterface() = default;
     // NOLINTEND
 };
 

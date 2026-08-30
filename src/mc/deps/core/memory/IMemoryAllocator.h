@@ -8,7 +8,7 @@ class IMemoryAllocator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMemoryAllocator();
+    virtual ~IMemoryAllocator() = default;
 
     virtual void* allocate(uint64 size) = 0;
 

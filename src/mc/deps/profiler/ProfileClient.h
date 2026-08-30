@@ -28,7 +28,7 @@ class ProfileClient {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ProfileClient();
+    virtual ~ProfileClient() = default;
 
     virtual void initializeProfile();
 

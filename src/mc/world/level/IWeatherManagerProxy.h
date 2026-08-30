@@ -6,7 +6,7 @@ class IWeatherManagerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IWeatherManagerProxy();
+    virtual ~IWeatherManagerProxy() = default;
 
     virtual float getRainLevel() const = 0;
 

@@ -14,7 +14,7 @@ class IGameController {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGameController();
+    virtual ~IGameController() = default;
 
     virtual bool hasEvents(void const* token) const = 0;
 

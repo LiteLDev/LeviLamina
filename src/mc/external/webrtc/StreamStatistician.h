@@ -14,7 +14,7 @@ class StreamStatistician {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StreamStatistician();
+    virtual ~StreamStatistician() = default;
 
     virtual ::webrtc::RtpReceiveStats GetStats() const = 0;
 

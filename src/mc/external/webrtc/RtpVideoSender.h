@@ -81,7 +81,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtpVideoSender() /*override*/;
+    virtual ~RtpVideoSender() /*override*/ = default;
 
     virtual void SetSending(bool enabled) /*override*/;
 

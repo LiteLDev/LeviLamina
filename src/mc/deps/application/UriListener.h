@@ -11,7 +11,11 @@ class UriListener {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~UriListener() = default;
+#else // LL_PLAT_C
     virtual ~UriListener();
+#endif
 
     virtual void onUri(::ActivationUri const& uri) = 0;
 

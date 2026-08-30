@@ -12,7 +12,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResetCallbackObject();
+    virtual ~ResetCallbackObject() = default;
 
     virtual void resetCallback() = 0;
     // NOLINTEND

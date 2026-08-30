@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenHandlerBase();
+    virtual ~ScreenHandlerBase() = default;
 
     virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction);
 

@@ -15,7 +15,7 @@ class MigrationDetector : public ::std::enable_shared_from_this<::Bedrock::Stora
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MigrationDetector();
+    virtual ~MigrationDetector() = default;
 
     virtual ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles> getFoundFiles() const = 0;
 

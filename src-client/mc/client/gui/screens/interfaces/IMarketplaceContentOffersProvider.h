@@ -11,7 +11,7 @@ class IMarketplaceContentOffersProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMarketplaceContentOffersProvider();
+    virtual ~IMarketplaceContentOffersProvider() = default;
 
     virtual ::StoreCatalogItem const& getOfferItem(int index) const = 0;
 

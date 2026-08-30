@@ -18,7 +18,7 @@ class ItemEventResponseFactory : public ::EventResponseFactory, public ::IPackLo
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemEventResponseFactory() /*override*/;
+    virtual ~ItemEventResponseFactory() /*override*/ = default;
 
     virtual void initializeFactory(::PackLoadInfo const& packLoadInfo) /*override*/;
 

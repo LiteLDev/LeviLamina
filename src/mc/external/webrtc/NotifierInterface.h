@@ -17,7 +17,7 @@ public:
 
     virtual void UnregisterObserver(::webrtc::ObserverInterface* a1) = 0;
 
-    virtual ~NotifierInterface();
+    virtual ~NotifierInterface() = default;
     // NOLINTEND
 
 public:

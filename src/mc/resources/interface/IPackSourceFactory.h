@@ -30,7 +30,7 @@ class IPackSourceFactory : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPackSourceFactory() /*override*/;
+    virtual ~IPackSourceFactory() /*override*/ = default;
 
 #ifdef LL_PLAT_C
     virtual ::TreatmentPackSource& createTreatmentPackSource(::Core::Path const& path, ::PackType packType) = 0;

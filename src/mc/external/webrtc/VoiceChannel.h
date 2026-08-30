@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VoiceChannel() /*override*/;
+    virtual ~VoiceChannel() /*override*/ = default;
 
     virtual ::webrtc::VideoChannel* AsVideoChannel() /*override*/;
 

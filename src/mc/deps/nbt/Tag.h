@@ -86,7 +86,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Tag();
+    virtual ~Tag() = default;
 
     virtual void deleteChildren();
 

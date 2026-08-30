@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptPlugin() /*override*/;
+    virtual ~ScriptPlugin() /*override*/ = default;
 
     virtual ::std::optional<::Scripting::ScriptData> onLoadScript(::std::string const& name) /*override*/;
 

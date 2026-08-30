@@ -18,7 +18,7 @@ public:
 
     virtual int StrideA() const = 0;
 
-    virtual ~I420ABufferInterface() /*override*/;
+    virtual ~I420ABufferInterface() /*override*/ = default;
     // NOLINTEND
 };
 

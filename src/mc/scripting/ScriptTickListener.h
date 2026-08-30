@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptTickListener() /*override*/;
+    virtual ~ScriptTickListener() /*override*/ = default;
 
     virtual ::EventResult onLevelTickStart(::Level& level) /*override*/;
 

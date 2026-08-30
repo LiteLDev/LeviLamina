@@ -11,7 +11,7 @@ class IPremiumCachePackEntitlementValidator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPremiumCachePackEntitlementValidator();
+    virtual ~IPremiumCachePackEntitlementValidator() = default;
 
     virtual bool isEntitlementValid(::IEntitlement const& entitlement) const = 0;
     // NOLINTEND

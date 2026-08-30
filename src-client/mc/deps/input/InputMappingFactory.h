@@ -11,7 +11,7 @@ class InputMappingFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InputMappingFactory();
+    virtual ~InputMappingFactory() = default;
 
     virtual ::InputMapping const* getMapping(::std::string const& mappingName) = 0;
     // NOLINTEND

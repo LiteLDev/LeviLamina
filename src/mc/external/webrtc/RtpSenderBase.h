@@ -39,7 +39,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~SetStreamsObserver();
+        virtual ~SetStreamsObserver() = default;
 
         virtual void OnSetStreams() = 0;
         // NOLINTEND

@@ -14,7 +14,7 @@ class IResourceDropsStrategy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IResourceDropsStrategy();
+    virtual ~IResourceDropsStrategy() = default;
 
     virtual ::ResourceDrops getResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const = 0;
     // NOLINTEND

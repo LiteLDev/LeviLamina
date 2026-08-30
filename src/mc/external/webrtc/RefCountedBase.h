@@ -20,7 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RefCountedBase();
+    virtual ~RefCountedBase() = default;
     // NOLINTEND
 };
 

@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual void OnRemoteNetworkEstimate(::webrtc::NetworkStateEstimate estimate) = 0;
 
-    virtual ~NetworkStateEstimateObserver();
+    virtual ~NetworkStateEstimateObserver() = default;
     // NOLINTEND
 };
 

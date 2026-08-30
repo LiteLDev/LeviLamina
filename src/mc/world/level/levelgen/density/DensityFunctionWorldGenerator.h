@@ -66,7 +66,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DensityFunctionWorldGenerator() /*override*/;
+    virtual ~DensityFunctionWorldGenerator() /*override*/ = default;
 
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 

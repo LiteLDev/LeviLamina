@@ -17,7 +17,7 @@ class ActorEventResponse {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorEventResponse();
+    virtual ~ActorEventResponse() = default;
 
     virtual ::std::string const& getName() const;
 

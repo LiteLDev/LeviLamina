@@ -13,7 +13,7 @@ struct ISignalingEventHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISignalingEventHandler();
+    virtual ~ISignalingEventHandler() = default;
 
     virtual void OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event);
     // NOLINTEND

@@ -16,7 +16,7 @@ class SSLCertificate {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SSLCertificate();
+    virtual ~SSLCertificate() = default;
 
     virtual ::std::unique_ptr<::webrtc::SSLCertificate> Clone() const = 0;
 

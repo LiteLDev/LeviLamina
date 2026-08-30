@@ -25,7 +25,7 @@ class DcSctpSocketCallbacks {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DcSctpSocketCallbacks();
+    virtual ~DcSctpSocketCallbacks() = default;
 
     virtual void SendPacket(::webrtc::ArrayView<uchar const>);
 

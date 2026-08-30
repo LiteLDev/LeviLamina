@@ -9,7 +9,7 @@ class IScreenSettings {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScreenSettings();
+    virtual ~IScreenSettings() = default;
 
     virtual bool getScreenIsNotFlushable() const = 0;
 

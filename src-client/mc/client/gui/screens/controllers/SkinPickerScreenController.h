@@ -50,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SkinPickerScreenController() /*override*/;
+    virtual ~SkinPickerScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 

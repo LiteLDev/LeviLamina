@@ -104,7 +104,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISurfaceBuilder();
+    virtual ~ISurfaceBuilder() = default;
 
     virtual void initBuilder(::LevelSeed64 levelSeed) = 0;
 

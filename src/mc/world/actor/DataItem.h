@@ -51,7 +51,7 @@ protected:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataItem();
+    virtual ~DataItem() = default;
 
     virtual ushort getId() const = 0;
 

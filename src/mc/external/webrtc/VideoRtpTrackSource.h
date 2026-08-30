@@ -27,7 +27,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Callback();
+        virtual ~Callback() = default;
 
         virtual void OnGenerateKeyFrame() = 0;
 

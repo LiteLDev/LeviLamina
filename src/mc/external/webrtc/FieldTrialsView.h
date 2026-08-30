@@ -8,7 +8,7 @@ class FieldTrialsView {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FieldTrialsView();
+    virtual ~FieldTrialsView() = default;
 
     virtual ::std::string Lookup(::std::string_view key) const = 0;
     // NOLINTEND

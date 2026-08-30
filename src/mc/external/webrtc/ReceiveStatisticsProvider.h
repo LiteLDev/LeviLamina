@@ -13,7 +13,7 @@ class ReceiveStatisticsProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ReceiveStatisticsProvider();
+    virtual ~ReceiveStatisticsProvider() = default;
 
     virtual ::std::vector<::webrtc::rtcp::ReportBlock> RtcpReportBlocks(uint64) = 0;
     // NOLINTEND

@@ -47,6 +47,6 @@ public:
 
     virtual void forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const = 0;
 
-    virtual ~PoolAliasBinding();
+    virtual ~PoolAliasBinding() = default;
     // NOLINTEND
 };

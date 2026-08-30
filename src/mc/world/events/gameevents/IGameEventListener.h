@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGameEventListener();
+    virtual ~IGameEventListener() = default;
 
     virtual void handleGameEvent(
         ::GameEvent const&        gameEvent,

@@ -15,7 +15,7 @@ class ITrait {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITrait();
+    virtual ~ITrait() = default;
 
     virtual void applyToBlockType(::BlockType& blockType) const = 0;
 

@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SizerWriter() /*override*/;
+    virtual ~SizerWriter() /*override*/ = default;
 
     virtual int64 seek(int64, ::bx::Whence::Enum) /*override*/;
 

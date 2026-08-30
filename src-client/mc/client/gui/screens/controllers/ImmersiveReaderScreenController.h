@@ -59,7 +59,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ImmersiveReaderScreenController() /*override*/;
+    virtual ~ImmersiveReaderScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 

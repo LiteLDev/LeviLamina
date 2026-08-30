@@ -32,7 +32,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~CraftingContainerController() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~CraftingContainerController() /*override*/;
+#endif
 
     virtual ::ItemInstance const& getRecipeItem(int slot) const = 0;
 

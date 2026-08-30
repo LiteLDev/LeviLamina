@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptInventoryComponentContainer() /*override*/;
+    virtual ~ScriptInventoryComponentContainer() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<int> getEmptySlotsCount() const /*override*/;
 

@@ -56,7 +56,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWaypoint();
+    virtual ~ScriptWaypoint() = default;
 
     virtual ::std::unique_ptr<::ServerWaypoint> createWaypoint() const = 0;
 

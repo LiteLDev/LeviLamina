@@ -15,7 +15,7 @@ class IEntityRegistryOwner : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEntityRegistryOwner() /*override*/;
+    virtual ~IEntityRegistryOwner() /*override*/ = default;
 
     virtual ::StackRefResult<::EntityRegistry> getEntityRegistry() = 0;
 

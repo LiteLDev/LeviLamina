@@ -8,7 +8,7 @@ class Chunk {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Chunk();
+    virtual ~Chunk() = default;
 
     virtual void SerializeTo(::std::vector<uchar>& out) const = 0;
 

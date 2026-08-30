@@ -8,7 +8,7 @@ class RandomGenerator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RandomGenerator();
+    virtual ~RandomGenerator() = default;
 
     virtual bool Init(void const* seed, uint64 len);
 

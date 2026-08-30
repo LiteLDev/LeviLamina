@@ -17,7 +17,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFeature();
+    virtual ~IFeature() = default;
 
     virtual bool isEnabled() const = 0;
 

@@ -82,7 +82,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EntitySystems() /*override*/;
+    virtual ~EntitySystems() /*override*/ = default;
 
     virtual void tickMovementCatchup(::EntityRegistry& registry) /*override*/;
 

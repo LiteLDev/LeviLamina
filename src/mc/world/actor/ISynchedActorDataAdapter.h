@@ -14,7 +14,7 @@ struct ISynchedActorDataAdapter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISynchedActorDataAdapter();
+    virtual ~ISynchedActorDataAdapter() = default;
 
     virtual ::std::unique_ptr<::DataItem> serialize(::EntityContext const& from) const = 0;
 

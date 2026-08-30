@@ -13,7 +13,7 @@ struct ParticleEffectComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleEffectComponent();
+    virtual ~ParticleEffectComponent() = default;
 
     virtual ::HashedString const& getIdentifier() const;
     // NOLINTEND

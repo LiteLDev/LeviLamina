@@ -28,6 +28,6 @@ public:
 
     virtual bool isPaused() = 0;
 
-    virtual ~IAsyncJoinRegistrar();
+    virtual ~IAsyncJoinRegistrar() = default;
     // NOLINTEND
 };

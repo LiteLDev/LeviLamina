@@ -11,7 +11,7 @@ class ILegacyItemUseTransactionSubject {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILegacyItemUseTransactionSubject();
+    virtual ~ILegacyItemUseTransactionSubject() = default;
 
     virtual bool isServerAuthBlockBreakingEnabled() const = 0;
 

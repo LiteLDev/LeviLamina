@@ -17,7 +17,7 @@ class IContainerManager {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IContainerManager();
+    virtual ~IContainerManager() = default;
 
     virtual ::ContainerID getContainerId() const = 0;
 

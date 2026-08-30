@@ -11,7 +11,7 @@ class ISyncStreamReader : public ::renoir::IStreamReader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISyncStreamReader() /*override*/;
+    virtual ~ISyncStreamReader() /*override*/ = default;
     // NOLINTEND
 };
 

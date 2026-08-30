@@ -24,7 +24,7 @@ public:
 
     virtual void OnRouteChange(::webrtc::NetworkRouteChange const&) = 0;
 
-    virtual ~NetworkStateEstimator();
+    virtual ~NetworkStateEstimator() = default;
     // NOLINTEND
 };
 

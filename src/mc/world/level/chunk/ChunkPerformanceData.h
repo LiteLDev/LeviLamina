@@ -108,7 +108,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~ChunkPerformanceData() /*override*/;
+#else // LL_PLAT_C
+    virtual ~ChunkPerformanceData() /*override*/ = default;
+#endif
 
 #ifdef LL_PLAT_S
     virtual void visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)>);

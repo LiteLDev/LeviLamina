@@ -17,7 +17,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IHandlerFactory();
+    virtual ~IHandlerFactory() = default;
 
     virtual ::cohtml::IEventHandler* makeHandler() const = 0;
     // NOLINTEND

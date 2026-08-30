@@ -62,7 +62,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageMigrator();
+    virtual ~StorageMigrator() = default;
 
     virtual bool doQuickCompletionCheck() = 0;
 

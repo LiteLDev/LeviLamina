@@ -602,7 +602,7 @@ public:
     // NOLINTBEGIN
     virtual void initialize() /*override*/;
 
-    virtual ~MinecraftGame() /*override*/;
+    virtual ~MinecraftGame() /*override*/ = default;
 
     virtual bool stop() /*override*/;
 

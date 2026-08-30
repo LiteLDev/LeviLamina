@@ -18,7 +18,7 @@ class IStructurePoolBlockPredicate {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IStructurePoolBlockPredicate();
+    virtual ~IStructurePoolBlockPredicate() = default;
 
     virtual bool test(::Block const& block, ::IRandom& random) const = 0;
 

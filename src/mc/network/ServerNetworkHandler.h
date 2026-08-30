@@ -317,7 +317,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerNetworkHandler() /*override*/;
+    virtual ~ServerNetworkHandler() /*override*/ = default;
 
     virtual void onValidPacketReceived(
         ::NetworkIdentifier const& netId,

@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileResponseBody() /*override*/;
+    virtual ~FileResponseBody() /*override*/ = default;
 
     virtual ::std::error_code start(::std::optional<uint64>) /*override*/;
 

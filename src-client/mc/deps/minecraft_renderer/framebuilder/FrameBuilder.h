@@ -140,7 +140,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~InitializationState();
+        virtual ~InitializationState() = default;
         // NOLINTEND
     };
 
@@ -151,7 +151,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FrameBuilder() /*override*/;
+    virtual ~FrameBuilder() /*override*/ = default;
 
     virtual bool enabled() const = 0;
 

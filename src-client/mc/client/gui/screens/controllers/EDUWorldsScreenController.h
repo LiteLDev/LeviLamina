@@ -60,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUWorldsScreenController() /*override*/;
+    virtual ~EDUWorldsScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 

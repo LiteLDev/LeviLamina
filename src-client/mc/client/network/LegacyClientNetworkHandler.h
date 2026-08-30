@@ -126,7 +126,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LegacyClientNetworkHandler() /*override*/;
+    virtual ~LegacyClientNetworkHandler() /*override*/ = default;
 
     virtual void onPlayerReady(::Player& player) /*override*/;
 

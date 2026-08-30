@@ -17,7 +17,7 @@ class ModeServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ModeServiceProvider();
+    virtual ~ModeServiceProvider() = default;
 
     virtual ::Editor::Mode getMode() const = 0;
 

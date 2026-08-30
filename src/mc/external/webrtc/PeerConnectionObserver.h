@@ -23,7 +23,7 @@ class PeerConnectionObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PeerConnectionObserver();
+    virtual ~PeerConnectionObserver() = default;
 
     virtual void OnSignalingChange(::webrtc::PeerConnectionInterface::SignalingState) = 0;
 

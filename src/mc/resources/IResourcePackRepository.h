@@ -35,7 +35,7 @@ class IResourcePackRepository : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IResourcePackRepository() /*override*/;
+    virtual ~IResourcePackRepository() /*override*/ = default;
 
     virtual void getResourcePacksByPackId(
         ::std::vector<::PackInstanceId> const& packInstanceIds,

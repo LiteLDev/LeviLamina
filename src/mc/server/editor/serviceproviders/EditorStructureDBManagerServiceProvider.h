@@ -19,7 +19,7 @@ class EditorStructureDBManagerServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorStructureDBManagerServiceProvider();
+    virtual ~EditorStructureDBManagerServiceProvider() = default;
 
     virtual ::std::optional<::std::string> createNewEditorProjectStructure(
         ::Editor::EditorStructureTemplate const& templateData,

@@ -75,7 +75,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~ComponentBase();
+        virtual ~ComponentBase() = default;
         // NOLINTEND
     };
 

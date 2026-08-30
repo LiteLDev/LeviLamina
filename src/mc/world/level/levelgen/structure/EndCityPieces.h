@@ -127,7 +127,7 @@ public:
             ::Random&                                                                  random
         ) = 0;
 
-        virtual ~SectionGenerator();
+        virtual ~SectionGenerator() = default;
         // NOLINTEND
     };
 

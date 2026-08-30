@@ -16,7 +16,7 @@ struct IReplayStatePolicy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IReplayStatePolicy();
+    virtual ~IReplayStatePolicy() = default;
 
     virtual bool isReplayNeeded(::AdvanceFrameResult result) const = 0;
 

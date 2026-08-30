@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VideoDecoderFactory();
+    virtual ~VideoDecoderFactory() = default;
 
     virtual ::std::vector<::webrtc::SdpVideoFormat> GetSupportedFormats() const = 0;
 

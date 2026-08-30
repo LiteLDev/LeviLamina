@@ -39,7 +39,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~SignalingServiceSignInJob() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~SignalingServiceSignInJob() /*override*/;
+#endif
 
     virtual void OnLanEvent(::NetherNet::LanEvents::MessageSent const& event) /*override*/;
 

@@ -33,7 +33,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~PlayerReportingSignalHandler() = default;
+#else // LL_PLAT_C
     virtual ~PlayerReportingSignalHandler();
+#endif
+
     // NOLINTEND
 
 public:

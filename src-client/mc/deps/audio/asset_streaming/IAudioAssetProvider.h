@@ -15,7 +15,7 @@ class IAudioAssetProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAudioAssetProvider();
+    virtual ~IAudioAssetProvider() = default;
 
     virtual ::std::unique_ptr<::Audio::IStreamableAudioAsset> openStreamableAudioAsset(
         ::ResourceLocation const&         resourceLocation,

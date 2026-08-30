@@ -18,7 +18,7 @@ class ITickingAreaView {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITickingAreaView();
+    virtual ~ITickingAreaView() = default;
 
     virtual void init(::Bounds const& bounds, bool isCircle) = 0;
 

@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerInventory() /*override*/;
+    virtual ~PlayerInventory() /*override*/ = default;
 
     virtual void containerSizeChanged(int size) /*override*/;
 

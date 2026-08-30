@@ -11,7 +11,7 @@ class IRandomSeeded {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRandomSeeded();
+    virtual ~IRandomSeeded() = default;
 
     virtual void setSeed(int64 seed) = 0;
 

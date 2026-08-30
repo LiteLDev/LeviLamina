@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CodeScreenController() /*override*/;
+    virtual ~CodeScreenController() /*override*/ = default;
 
     virtual void onInit() /*override*/;
 

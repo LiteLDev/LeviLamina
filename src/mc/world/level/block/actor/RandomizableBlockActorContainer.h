@@ -17,7 +17,7 @@ class RandomizableBlockActorContainer : public ::RandomizableBlockActorContainer
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RandomizableBlockActorContainer() /*override*/;
+    virtual ~RandomizableBlockActorContainer() /*override*/ = default;
 
     virtual void setContainerChanged(int slot) /*override*/;
 

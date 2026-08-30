@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldActivitySessionTracker() /*override*/;
+    virtual ~WorldActivitySessionTracker() /*override*/ = default;
 
     virtual ::EventResult onClientEnteredWorld(::ClientInstance& instance) /*override*/;
     // NOLINTEND

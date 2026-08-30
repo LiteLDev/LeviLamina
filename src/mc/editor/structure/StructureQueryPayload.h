@@ -30,7 +30,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~StructureQueryPayload() /*override*/;
+#else // LL_PLAT_C
+    virtual ~StructureQueryPayload() /*override*/ = default;
+#endif
+
     // NOLINTEND
 
 public:

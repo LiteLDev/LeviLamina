@@ -14,7 +14,7 @@ class IResourceRepositories {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IResourceRepositories();
+    virtual ~IResourceRepositories() = default;
 
     virtual void fillPackAssociations(::std::vector<::gsl::not_null<::PackCommand::PackAssociations*>>& packs) = 0;
 

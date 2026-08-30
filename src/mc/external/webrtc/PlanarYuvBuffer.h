@@ -21,7 +21,7 @@ public:
 
     virtual int StrideV() const = 0;
 
-    virtual ~PlanarYuvBuffer() /*override*/;
+    virtual ~PlanarYuvBuffer() /*override*/ = default;
     // NOLINTEND
 };
 

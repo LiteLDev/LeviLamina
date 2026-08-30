@@ -26,7 +26,7 @@ class INetworkGameConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~INetworkGameConnector();
+    virtual ~INetworkGameConnector() = default;
 
     virtual void joinRealmsGame(
         ::Realms::World const&              realm,

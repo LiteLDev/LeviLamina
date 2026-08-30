@@ -33,7 +33,7 @@ public:
         int scaled_height
     ) /*override*/;
 
-    virtual ~NV12BufferInterface() /*override*/;
+    virtual ~NV12BufferInterface() /*override*/ = default;
     // NOLINTEND
 };
 

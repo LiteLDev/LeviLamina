@@ -11,7 +11,7 @@ class ISharedSpawnGetter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISharedSpawnGetter();
+    virtual ~ISharedSpawnGetter() = default;
 
     virtual ::BlockPos const& getSharedSpawnPosition() const = 0;
     // NOLINTEND

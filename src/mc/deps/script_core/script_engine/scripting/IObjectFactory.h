@@ -17,7 +17,7 @@ class IObjectFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IObjectFactory();
+    virtual ~IObjectFactory() = default;
 
     virtual ::Scripting::StrongTypedObjectHandle<::Scripting::PromiseType> makePromise() = 0;
 

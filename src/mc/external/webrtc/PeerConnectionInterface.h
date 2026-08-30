@@ -475,7 +475,7 @@ public:
 
     virtual ::webrtc::NetworkControllerInterface* GetNetworkController() = 0;
 
-    virtual ~PeerConnectionInterface() /*override*/;
+    virtual ~PeerConnectionInterface() /*override*/ = default;
     // NOLINTEND
 
 public:

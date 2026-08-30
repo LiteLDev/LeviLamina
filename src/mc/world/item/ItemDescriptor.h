@@ -85,7 +85,7 @@ public:
 
         virtual ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> resolve() const;
 
-        virtual ~BaseDescriptor();
+        virtual ~BaseDescriptor() = default;
         // NOLINTEND
 
     public:

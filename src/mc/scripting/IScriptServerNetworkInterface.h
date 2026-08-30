@@ -19,7 +19,7 @@ class IScriptServerNetworkInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptServerNetworkInterface();
+    virtual ~IScriptServerNetworkInterface() = default;
 
     virtual ::Scripting::Result<int64, ::Scripting::EngineError> getPlayerPingInMs(::Player const& player) const = 0;
 

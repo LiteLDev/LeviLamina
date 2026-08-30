@@ -54,7 +54,7 @@ public:
 
     virtual int StrideV() const /*override*/;
 
-    virtual ~I444Buffer() /*override*/;
+    virtual ~I444Buffer() /*override*/ = default;
     // NOLINTEND
 };
 

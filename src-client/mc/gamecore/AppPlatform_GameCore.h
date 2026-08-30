@@ -53,7 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AppPlatform_GameCore() /*override*/;
+    virtual ~AppPlatform_GameCore() /*override*/ = default;
 
     virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename) /*override*/;
 

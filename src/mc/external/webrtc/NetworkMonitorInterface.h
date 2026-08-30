@@ -52,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkMonitorInterface();
+    virtual ~NetworkMonitorInterface() = default;
 
     virtual void Start() = 0;
 

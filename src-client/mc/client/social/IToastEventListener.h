@@ -17,6 +17,6 @@ public:
     // NOLINTBEGIN
     virtual void handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg) = 0;
 
-    virtual ~IToastEventListener();
+    virtual ~IToastEventListener() = default;
     // NOLINTEND
 };

@@ -65,7 +65,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GestureRecognizerBase();
+    virtual ~GestureRecognizerBase() = default;
 
     virtual void onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches);
 

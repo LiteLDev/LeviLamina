@@ -86,7 +86,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TaskQueueImpl() /*override*/;
+    virtual ~TaskQueueImpl() /*override*/ = default;
 
     virtual ::XTaskQueueObject* GetHandle() /*override*/;
 

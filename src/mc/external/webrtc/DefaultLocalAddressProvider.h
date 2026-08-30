@@ -13,7 +13,7 @@ class DefaultLocalAddressProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DefaultLocalAddressProvider();
+    virtual ~DefaultLocalAddressProvider() = default;
 
     virtual bool GetDefaultLocalAddress(int family, ::webrtc::IPAddress* ipaddr) const = 0;
     // NOLINTEND

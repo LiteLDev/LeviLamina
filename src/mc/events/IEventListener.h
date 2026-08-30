@@ -17,7 +17,7 @@ class IEventListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEventListener();
+    virtual ~IEventListener() = default;
 
     virtual void
     recordEvent(::Social::Events::Event const& event, ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform) = 0;

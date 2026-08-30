@@ -13,7 +13,7 @@ struct IScriptSerializable {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptSerializable();
+    virtual ~IScriptSerializable() = default;
 
     virtual ::std::string const& getContentType() const = 0;
     // NOLINTEND

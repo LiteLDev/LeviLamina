@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::webrtc::NetworkStatePredictor> CreateNetworkStatePredictor() = 0;
 
-    virtual ~NetworkStatePredictorFactoryInterface();
+    virtual ~NetworkStatePredictorFactoryInterface() = default;
     // NOLINTEND
 };
 

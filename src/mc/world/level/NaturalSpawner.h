@@ -59,7 +59,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NaturalSpawner() /*override*/;
+    virtual ~NaturalSpawner() /*override*/ = default;
 
     virtual ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
     filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const /*override*/;

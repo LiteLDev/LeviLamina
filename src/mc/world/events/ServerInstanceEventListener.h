@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerInstanceEventListener();
+    virtual ~ServerInstanceEventListener() = default;
 
     virtual ::EventResult onServerInitializeStart(::ServerInstance& instance);
 

@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WriteBufferedFileStorageArea() /*override*/;
+    virtual ~WriteBufferedFileStorageArea() /*override*/ = default;
 
     virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) /*override*/;
 

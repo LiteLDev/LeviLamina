@@ -19,6 +19,6 @@ public:
 
     virtual uint getTelemetryData() = 0;
 
-    virtual ~IPacketSecurityHandler();
+    virtual ~IPacketSecurityHandler() = default;
     // NOLINTEND
 };

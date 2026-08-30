@@ -24,7 +24,7 @@ class ReassemblyStreams {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ReassemblyStreams();
+    virtual ~ReassemblyStreams() = default;
 
     virtual int
     Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data) = 0;

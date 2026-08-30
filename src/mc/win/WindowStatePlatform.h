@@ -6,7 +6,7 @@ class WindowStatePlatform {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WindowStatePlatform();
+    virtual ~WindowStatePlatform() = default;
 
     virtual bool getWindowRect(::HWND__* window, ::tagRECT& result) const;
 

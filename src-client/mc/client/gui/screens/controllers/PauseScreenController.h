@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PauseScreenController() /*override*/;
+    virtual ~PauseScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 

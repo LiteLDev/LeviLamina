@@ -19,7 +19,7 @@ class IGeometryAtlas {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGeometryAtlas();
+    virtual ~IGeometryAtlas() = default;
 
     virtual ::Bedrock::PubSub::Connector<void(::std::vector<uint> const&)>& getTileChangeConnector() = 0;
 

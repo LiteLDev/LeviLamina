@@ -111,7 +111,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SoundMapping();
+    virtual ~SoundMapping() = default;
     // NOLINTEND
 
 public:

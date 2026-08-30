@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelStorage();
+    virtual ~LevelStorage() = default;
 
     virtual void addStorageObserver(::std::unique_ptr<::LevelStorageObserver> observer) = 0;
 

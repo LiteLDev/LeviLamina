@@ -12,7 +12,7 @@ class ITextObject {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITextObject();
+    virtual ~ITextObject() = default;
 
     virtual ::std::string asString() const = 0;
 

@@ -13,7 +13,7 @@ class LocalNetworkAccessPermissionFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalNetworkAccessPermissionFactoryInterface();
+    virtual ~LocalNetworkAccessPermissionFactoryInterface() = default;
 
     virtual ::std::unique_ptr<::webrtc::LocalNetworkAccessPermissionInterface> Create() = 0;
     // NOLINTEND

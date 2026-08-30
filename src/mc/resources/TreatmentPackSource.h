@@ -31,7 +31,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~TreatmentPackSource() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~TreatmentPackSource() /*override*/;
+#endif
 
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 

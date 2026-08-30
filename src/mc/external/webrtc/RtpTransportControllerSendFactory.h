@@ -20,7 +20,7 @@ public:
     virtual ::std::unique_ptr<::webrtc::RtpTransportControllerSendInterface>
     Create(::webrtc::RtpTransportConfig const& config) /*override*/;
 
-    virtual ~RtpTransportControllerSendFactory() /*override*/;
+    virtual ~RtpTransportControllerSendFactory() /*override*/ = default;
     // NOLINTEND
 
 public:
