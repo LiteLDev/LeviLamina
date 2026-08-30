@@ -17,7 +17,7 @@ class TessellationPolicy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TessellationPolicy() = default;
+    virtual ~TessellationPolicy();
 
     virtual ::mce::Color
     get(::Block const&          block,

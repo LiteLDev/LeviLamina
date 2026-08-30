@@ -11,7 +11,7 @@ class ScriptDeferredEventListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDeferredEventListener() = default;
+    virtual ~ScriptDeferredEventListener();
 
     virtual void onRunSystemTick(::ScriptDeferredFlushTracker& deferredTracker);
 
@@ -36,6 +36,12 @@ public:
     virtual void onScriptTickStart();
 
     virtual void onScriptTickEnd();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

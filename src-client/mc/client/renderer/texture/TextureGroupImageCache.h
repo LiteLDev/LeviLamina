@@ -27,12 +27,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TextureGroupImageCache() /*override*/ = default;
+    virtual ~TextureGroupImageCache() /*override*/;
 
     virtual ::cg::ImageBuffer* getCachedImage(::ResourceLocation const& resourceLocation) /*override*/;
 
     virtual ::cg::ImageBuffer*
     insertImageIntoCache(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer&& imageBuffer) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

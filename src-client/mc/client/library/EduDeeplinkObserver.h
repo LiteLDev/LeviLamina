@@ -14,7 +14,7 @@ class EduDeeplinkObserver : public ::Core::Observer<::EduDeeplinkObserver, ::Cor
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EduDeeplinkObserver() /*override*/ = default;
+    virtual ~EduDeeplinkObserver() /*override*/;
 
     virtual bool onJoincodeReceived(::std::string const& encodedJoincode);
     // NOLINTEND

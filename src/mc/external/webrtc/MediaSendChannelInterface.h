@@ -29,7 +29,7 @@ class MediaSendChannelInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MediaSendChannelInterface() = default;
+    virtual ~MediaSendChannelInterface();
 
     virtual ::webrtc::VideoMediaSendChannelInterface* AsVideoSendChannel() = 0;
 

@@ -38,7 +38,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ActorDocumentDataParams(
+        ::ComponentStorageLoadDataRefVariant<
+            ::SharedTypes::v1_26_30::ActorDefinitions,
+            ::SharedTypes::Beta::ActorDefinitions> value,
+        ::SemVersion const&                        formatVersion,
+        ::MinEngineVersion const&                  minEngineVersion,
+        bool const                                 isBaseGamePack,
+        ::JsonBetaState const                      canUseBeta
+    );
+
     MCAPI ~ActorDocumentDataParams();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ComponentStorageLoadDataRefVariant<
+            ::SharedTypes::v1_26_30::ActorDefinitions,
+            ::SharedTypes::Beta::ActorDefinitions> value,
+        ::SemVersion const&                        formatVersion,
+        ::MinEngineVersion const&                  minEngineVersion,
+        bool const                                 isBaseGamePack,
+        ::JsonBetaState const                      canUseBeta
+    );
     // NOLINTEND
 
 public:

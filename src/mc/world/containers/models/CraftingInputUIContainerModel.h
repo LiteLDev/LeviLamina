@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftingInputUIContainerModel() /*override*/ = default;
+    virtual ~CraftingInputUIContainerModel() /*override*/;
 
     virtual int _getContainerOffset() const /*override*/;
     // NOLINTEND
@@ -47,6 +47,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::ContainerEnumName containerName, ::Player& player, bool workBench);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

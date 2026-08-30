@@ -78,7 +78,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VorbisAudioDecoder() /*override*/ = default;
+    virtual ~VorbisAudioDecoder() /*override*/;
 
     virtual ::Bedrock::Result<void> initialize() /*override*/;
 
@@ -107,6 +107,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI bool _feedDecoder();
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

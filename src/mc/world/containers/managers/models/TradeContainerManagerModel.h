@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TradeContainerManagerModel() /*override*/ = default;
+    virtual ~TradeContainerManagerModel() /*override*/;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
@@ -44,6 +44,12 @@ public:
 
     MCFOLD ::std::string getDisplayName();
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

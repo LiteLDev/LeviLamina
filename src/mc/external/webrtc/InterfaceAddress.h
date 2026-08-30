@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InterfaceAddress() /*override*/;
+    virtual ~InterfaceAddress() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -8,7 +8,7 @@ class TelemetryServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TelemetryServiceProvider() = default;
+    virtual ~TelemetryServiceProvider();
 
     virtual void fireEditorEventToolActivated(::std::string const& toolName) = 0;
 

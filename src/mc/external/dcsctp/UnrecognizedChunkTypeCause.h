@@ -35,7 +35,7 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~UnrecognizedChunkTypeCause() /*override*/;
+    virtual ~UnrecognizedChunkTypeCause() /*override*/ = default;
     // NOLINTEND
 
 public:

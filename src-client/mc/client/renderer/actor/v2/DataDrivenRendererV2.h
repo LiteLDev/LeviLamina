@@ -10,40 +10,36 @@
 class Actor;
 class ActorRenderer;
 struct GameplayRelatedRenderData;
+struct ProcessedDataDrivenRenderers;
+struct RequestedDataDrivenRender;
 // clang-format on
 
 class DataDrivenRendererV2 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnka39496;
-    ::ll::UntypedStorage<1, 1>  mUnkfd63fe;
-    ::ll::UntypedStorage<1, 1>  mUnk148bd0;
-    ::ll::UntypedStorage<8, 24> mUnkdc6c83;
-    ::ll::UntypedStorage<8, 24> mUnkad1326;
-    ::ll::UntypedStorage<8, 24> mUnk8db07d;
+    ::ll::TypedStorage<8, 8, ::ProcessedDataDrivenRenderers const*>       mV2BakedRenderers;
+    ::ll::TypedStorage<1, 1, bool>                                        mRenderActorsWithAttachables;
+    ::ll::TypedStorage<1, 1, bool>                                        mVersionLessThanOrEqualToVersion_1_16_210;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RequestedDataDrivenRender>> mRequestedActors;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Actor*>>                    mOnFireActors;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Actor*>>                    mLeashedActors;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataDrivenRendererV2& operator=(DataDrivenRendererV2 const&);
-    DataDrivenRendererV2(DataDrivenRendererV2 const&);
-    DataDrivenRendererV2();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI uint generateFrame(::GameplayRelatedRenderData const& renderData);
+    MCAPI uint generateFrame(::GameplayRelatedRenderData const& renderData);
 
-    MCNAPI bool
+    MCAPI bool
     tryAddActor(::Actor& actor, ::std::shared_ptr<::ActorRenderer> const& renderer, ::ShadowContext shadowContext);
 
-    MCNAPI ~DataDrivenRendererV2();
+    MCAPI ~DataDrivenRendererV2();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

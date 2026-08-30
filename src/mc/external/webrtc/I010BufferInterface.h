@@ -18,7 +18,7 @@ public:
 
     virtual int ChromaHeight() const /*override*/;
 
-    virtual ~I010BufferInterface() /*override*/ = default;
+    virtual ~I010BufferInterface() /*override*/;
     // NOLINTEND
 };
 

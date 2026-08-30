@@ -20,7 +20,7 @@ class TransactionManagerServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TransactionManagerServiceProvider() = default;
+    virtual ~TransactionManagerServiceProvider();
 
     virtual void addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext> transactionContext) = 0;
 

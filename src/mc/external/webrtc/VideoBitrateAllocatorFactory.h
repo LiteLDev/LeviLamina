@@ -15,7 +15,7 @@ class VideoBitrateAllocatorFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VideoBitrateAllocatorFactory() = default;
+    virtual ~VideoBitrateAllocatorFactory();
 
     virtual ::std::unique_ptr<::webrtc::VideoBitrateAllocator>
     Create(::webrtc::Environment const&, ::webrtc::VideoCodec const&) = 0;

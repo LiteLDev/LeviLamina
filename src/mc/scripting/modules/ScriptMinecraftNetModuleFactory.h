@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptMinecraftNetModuleFactory() /*override*/ = default;
+    virtual ~ScriptMinecraftNetModuleFactory() /*override*/;
     // NOLINTEND
 
 public:
@@ -74,5 +74,11 @@ public:
         ::ServerLevel*                                                              level,
         ::std::shared_ptr<::ScriptModuleMinecraftNet::ScriptNativeWebSocketFactory> webSocketFactory
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

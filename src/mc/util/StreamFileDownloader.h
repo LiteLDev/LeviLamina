@@ -47,11 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~StreamFileDownloader() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~StreamFileDownloader() /*override*/;
-#endif
 
     virtual void update() /*override*/;
 
@@ -75,17 +71,10 @@ public:
         ::std::function<void(::DownloaderResult)> callback
     ) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void downloadFile(
-        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>,
-        ::std::function<void(::DownloaderState)>
-    ) /*override*/;
-#else // LL_PLAT_C
     virtual void downloadFile(
         ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)> dataCallback,
         ::std::function<void(::DownloaderState)>                                                         endCallback
     ) /*override*/;
-#endif
 
     virtual bool canCancelDownload() const /*override*/;
 

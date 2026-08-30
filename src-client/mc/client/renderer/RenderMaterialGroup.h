@@ -51,6 +51,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RenderMaterialGroup();
+
     MCAPI bool
     _loadList(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> shaderGroup, ::ResourcePackManager& resourcePackManager);
 
@@ -77,6 +79,12 @@ public:
     MCAPI static ::mce::RenderMaterialGroup& common();
 
     MCAPI static ::mce::RenderMaterialGroup& switchable();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

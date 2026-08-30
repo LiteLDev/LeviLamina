@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EncyclopediaScreenController() /*override*/ = default;
+    virtual ~EncyclopediaScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -58,6 +58,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::EncyclopediaTopicIndex topic);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -15,11 +15,17 @@ class DimensionChangeProgressHandler : public ::WorldGenerationProgressHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DimensionChangeProgressHandler() /*override*/ = default;
+    virtual ~DimensionChangeProgressHandler() /*override*/;
 
     virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

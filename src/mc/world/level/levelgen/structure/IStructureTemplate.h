@@ -16,7 +16,7 @@ class IStructureTemplate {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IStructureTemplate() = default;
+    virtual ~IStructureTemplate();
 
     virtual ::br::worldgen::StructureTemplateBlockPalette randomPalette(::BlockPos randomPosSeed) const = 0;
 

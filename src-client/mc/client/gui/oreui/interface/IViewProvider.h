@@ -18,7 +18,7 @@ class IViewProvider : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IViewProvider() /*override*/ = default;
+    virtual ~IViewProvider() /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::OreUI::IView> get(::OreUI::ViewId viewId) const = 0;
 

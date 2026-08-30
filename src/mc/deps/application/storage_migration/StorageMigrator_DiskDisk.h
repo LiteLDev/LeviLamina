@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageMigrator_DiskDisk() /*override*/ = default;
+    virtual ~StorageMigrator_DiskDisk() /*override*/;
 
     virtual bool doQuickCompletionCheck() /*override*/;
 

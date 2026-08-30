@@ -27,7 +27,7 @@ public:
 
     virtual void UnregisterObserver() = 0;
 
-    virtual ~DtlsTransportInterface() /*override*/;
+    virtual ~DtlsTransportInterface() /*override*/ = default;
     // NOLINTEND
 
 public:

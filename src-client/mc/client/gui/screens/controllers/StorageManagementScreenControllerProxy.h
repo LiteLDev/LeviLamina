@@ -16,6 +16,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageManagementScreenControllerProxy() /*override*/ = default;
+    virtual ~StorageManagementScreenControllerProxy() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -151,7 +151,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PeerConnectionNegotiator() /*override*/ = default;
+    virtual ~PeerConnectionNegotiator() /*override*/;
 
     virtual ::NetherNet::ESessionError checkTimeout(::std::chrono::seconds timeout) const;
 
@@ -169,8 +169,42 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI PeerConnectionNegotiator(
+        ::NetherNet::ContextProxy const&                                           ctx,
+        ::webrtc::scoped_refptr<::webrtc::PeerConnectionFactory>                   factory,
+        ::webrtc::scoped_refptr<::NetherNet::PeerConnectionObserver>               observer,
+        ::brstd::move_only_function<void(::std::variant<
+                                         ::NetherNet::ConnectRequest,
+                                         ::NetherNet::ConnectResponse,
+                                         ::NetherNet::ConnectError,
+                                         ::NetherNet::CandidateAdd> const&) const> sendMessage,
+        uint64                                                                     sessionId
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::NetherNet::ContextProxy const&                                           ctx,
+        ::webrtc::scoped_refptr<::webrtc::PeerConnectionFactory>                   factory,
+        ::webrtc::scoped_refptr<::NetherNet::PeerConnectionObserver>               observer,
+        ::brstd::move_only_function<void(::std::variant<
+                                         ::NetherNet::ConnectRequest,
+                                         ::NetherNet::ConnectResponse,
+                                         ::NetherNet::ConnectError,
+                                         ::NetherNet::CandidateAdd> const&) const> sendMessage,
+        uint64                                                                     sessionId
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::NetherNet::ESessionError $checkTimeout(::std::chrono::seconds timeout) const;
+
     MCNAPI void $onRemoteAnswer(::NetherNet::ConnectResponse const& answer);
 
     MCNAPI void $onRemoteError(::NetherNet::ConnectError const& error);

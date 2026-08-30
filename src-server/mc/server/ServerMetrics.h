@@ -11,7 +11,7 @@ class ServerMetrics {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerMetrics() = default;
+    virtual ~ServerMetrics();
 
     virtual void sendPeriodicMetrics(::ServerInstance& serverInstance) = 0;
 

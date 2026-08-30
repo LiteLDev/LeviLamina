@@ -93,7 +93,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IWorldStorageHandler() = default;
+    virtual ~IWorldStorageHandler();
 
     virtual ::std::
         variant<::World::IWorldStorageHandler::ReadWorldError, ::World::IWorldStorageHandler::CachedWorldData>
@@ -143,6 +143,12 @@ public:
         ::World::ClearPlayerDataType                                               type,
         ::std::optional<::World::IWorldStorageHandler::StartClearPlayerDataError>& error
     ) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

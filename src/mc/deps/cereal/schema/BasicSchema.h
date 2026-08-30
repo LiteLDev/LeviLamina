@@ -217,7 +217,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BasicSchema() = default;
+    virtual ~BasicSchema();
 
     virtual bool isGreedy(::entt::meta_ctx const& ctx) const;
 

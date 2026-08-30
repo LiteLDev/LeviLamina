@@ -11,7 +11,7 @@ class LoggingInterface : public ::Bedrock::ImplBase<::Bedrock::Http::LoggingInte
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LoggingInterface() /*override*/ = default;
+    virtual ~LoggingInterface() /*override*/;
 
     virtual uint64 threadId() = 0;
 

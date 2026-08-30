@@ -67,6 +67,8 @@ public:
     MCAPI void onGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI bool update();
+
+    MCAPI ~CompositeSceneStackView();
     // NOLINTEND
 
 public:
@@ -76,5 +78,11 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& mainStack,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& clientInstanceStack
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

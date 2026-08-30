@@ -67,7 +67,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftServiceKeyManager() /*override*/ = default;
+    virtual ~MinecraftServiceKeyManager() /*override*/;
     // NOLINTEND
 
 public:
@@ -121,5 +121,11 @@ public:
         ::std::function<::Bedrock::Threading::Async<::std::optional<
             ::std::unordered_map<::std::string, ::std::string>>>(::TaskGroup&, ::std::string const&, bool)> keysFn
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

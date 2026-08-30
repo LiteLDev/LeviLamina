@@ -25,4 +25,16 @@ public:
     TestConfig& operator=(TestConfig const&);
     TestConfig(TestConfig const&);
     TestConfig();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit TestConfig(::std::string const& fileName);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string const& fileName);
+    // NOLINTEND
 };

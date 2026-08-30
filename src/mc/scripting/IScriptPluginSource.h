@@ -11,7 +11,7 @@ class IScriptPluginSource {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptPluginSource() = default;
+    virtual ~IScriptPluginSource();
 
     virtual ::PackManifest const& getManifest() = 0;
 

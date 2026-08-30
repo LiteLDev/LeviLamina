@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptClientDiagnosticsListener() /*override*/ = default;
+    virtual ~ScriptClientDiagnosticsListener() /*override*/;
 
     virtual ::EventResult onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent) /*override*/;
     // NOLINTEND
@@ -44,6 +44,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ServerNetworkEventCoordinator& networkEventCoordinator);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

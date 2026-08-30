@@ -52,6 +52,14 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void UpdatePlayerLoadout(::Player& player);
 #endif
+
+    MCNAPI ~PlayerTelemetry();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

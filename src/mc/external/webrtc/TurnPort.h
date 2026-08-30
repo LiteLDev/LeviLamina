@@ -51,7 +51,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~CallbacksForTest() = default;
+        virtual ~CallbacksForTest();
 
         virtual void OnTurnCreatePermissionResult(int) = 0;
 

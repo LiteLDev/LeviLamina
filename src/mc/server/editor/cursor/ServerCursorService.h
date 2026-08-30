@@ -56,7 +56,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerCursorService() /*override*/ = default;
+    virtual ~ServerCursorService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

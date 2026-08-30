@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IApplicationDataStores() /*override*/ = default;
+    virtual ~IApplicationDataStores() /*override*/;
 
     virtual void init() = 0;
 

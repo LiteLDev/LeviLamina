@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrewingStandBlockActor() /*override*/ = default;
+    virtual ~BrewingStandBlockActor() /*override*/;
 
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 

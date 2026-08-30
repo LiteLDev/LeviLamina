@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MangroveTreeRoots() /*override*/ = default;
+    virtual ~MangroveTreeRoots() /*override*/;
 
     virtual ::std::optional<::BlockPos> placeRoots(
         ::IBlockWorldGenAPI& target,

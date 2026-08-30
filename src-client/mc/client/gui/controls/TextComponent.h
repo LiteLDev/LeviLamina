@@ -72,7 +72,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TextComponent() /*override*/ = default;
+    virtual ~TextComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -88,6 +88,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TextComponent(::UIControl& owner, ::Bedrock::NotNullNonOwnerPtr<::FontRepository const> fontRepository);
+
     MCAPI int _getCaretPosition() const;
 
     MCAPI ::std::string _getMeasuredText(::UIRenderContext& context);
@@ -97,6 +99,18 @@ public:
     MCAPI void setFontType(::std::string const& fontType);
 
     MCAPI void setTextTTS(::std::string const& label);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UIControl& owner, ::Bedrock::NotNullNonOwnerPtr<::FontRepository const> fontRepository);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

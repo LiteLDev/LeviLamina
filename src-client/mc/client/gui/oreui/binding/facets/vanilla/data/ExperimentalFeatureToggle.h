@@ -40,6 +40,15 @@ public:
 
     MCAPI ExperimentalFeatureToggle(::OreUI::ExperimentalFeatureToggle const&);
 
+    MCAPI ExperimentalFeatureToggle(
+        ::LevelDataWrapper&        levelData,
+        ::std::string const&       fourCc,
+        ::AllExperiments const     experiment,
+        ::std::string const&       title,
+        ::std::string const&       description,
+        ::ExperimentCategory const category
+    );
+
     MCAPI bool getIsEnabled() const;
 
     MCAPI bool getIsTogglePermanentlyDisabled();
@@ -55,6 +64,15 @@ public:
     MCFOLD void* $ctor(::OreUI::ExperimentalFeatureToggle&&);
 
     MCFOLD void* $ctor(::OreUI::ExperimentalFeatureToggle const&);
+
+    MCAPI void* $ctor(
+        ::LevelDataWrapper&        levelData,
+        ::std::string const&       fourCc,
+        ::AllExperiments const     experiment,
+        ::std::string const&       title,
+        ::std::string const&       description,
+        ::ExperimentCategory const category
+    );
     // NOLINTEND
 
 public:

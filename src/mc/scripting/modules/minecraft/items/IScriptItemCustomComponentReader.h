@@ -19,7 +19,7 @@ class IScriptItemCustomComponentReader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptItemCustomComponentReader() = default;
+    virtual ~IScriptItemCustomComponentReader();
 
     virtual ::std::vector<::std::string_view> getValidComponentsForItem(
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle
@@ -31,6 +31,12 @@ public:
         ::std::string_view                                                           componentName,
         ::Scripting::WeakLifetimeScope const&                                        scope
     ) const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

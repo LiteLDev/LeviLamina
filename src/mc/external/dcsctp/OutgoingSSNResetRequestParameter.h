@@ -38,7 +38,7 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~OutgoingSSNResetRequestParameter() /*override*/;
+    virtual ~OutgoingSSNResetRequestParameter() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -64,7 +64,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InvocationStateTracker() /*override*/ = default;
+    virtual ~InvocationStateTracker() /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription onChange(
         ::OreUI::Detail::IdType const& id,
@@ -93,6 +93,12 @@ public:
     ) /*override*/;
 
     virtual void remove(::OreUI::Detail::IdType const& id) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

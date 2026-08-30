@@ -75,7 +75,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TCPPort() /*override*/ = default;
+    virtual ~TCPPort() /*override*/;
 
     virtual ::webrtc::Connection*
     CreateConnection(::webrtc::Candidate const& address, ::webrtc::PortInterface::CandidateOrigin origin) /*override*/;

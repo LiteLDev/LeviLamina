@@ -91,7 +91,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BiomeRegistry() /*override*/ = default;
+    virtual ~BiomeRegistry() /*override*/;
     // NOLINTEND
 
 public:
@@ -153,6 +153,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

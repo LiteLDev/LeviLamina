@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorServerRealmsService() /*override*/ = default;
+    virtual ~EditorServerRealmsService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -73,6 +73,12 @@ public:
     MCNAPI void _handleRealmWorldSlotsDownloadPayload(::Editor::Network::RealmWorldSlotsDownloadPayload const& payload);
 
     MCNAPI void _handleRealmWorldUploadResponse(::Editor::Network::RealmWorldUploadResponsePayload const& payload);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

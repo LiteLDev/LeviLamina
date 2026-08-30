@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SuggestedContentOffersScreenController() /*override*/ = default;
+    virtual ~SuggestedContentOffersScreenController() /*override*/;
 
     virtual void onCreation() /*override*/;
 

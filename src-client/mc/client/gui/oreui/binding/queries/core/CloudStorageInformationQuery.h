@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CloudStorageInformationQuery() /*override*/ = default;
+    virtual ~CloudStorageInformationQuery() /*override*/;
 
     virtual void update(double) /*override*/;
     // NOLINTEND
@@ -55,6 +55,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

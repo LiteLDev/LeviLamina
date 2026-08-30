@@ -32,6 +32,34 @@ public:
 public:
     // prevent constructor by default
     ChatMessageObject();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ChatMessageObject(
+        ::OreUI::Detail::IPropertyObject*                 parent,
+        ::std::string                                     id,
+        uint                                              order,
+        ::Bedrock::Safety::RedactableString               content,
+        ::std::string                                     senderXuid,
+        ::Social::ChatMessageType                         type,
+        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> profanityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::OreUI::Detail::IPropertyObject*                 parent,
+        ::std::string                                     id,
+        uint                                              order,
+        ::Bedrock::Safety::RedactableString               content,
+        ::std::string                                     senderXuid,
+        ::Social::ChatMessageType                         type,
+        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> profanityContext
+    );
+    // NOLINTEND
 };
 
 } // namespace OreUI

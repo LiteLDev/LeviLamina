@@ -8,7 +8,7 @@ class ILegacyActorDependencies {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILegacyActorDependencies() = default;
+    virtual ~ILegacyActorDependencies();
 
     virtual bool isRemoved() = 0;
     // NOLINTEND

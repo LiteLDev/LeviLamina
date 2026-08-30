@@ -25,6 +25,24 @@ public:
     ScriptObservableCallback& operator=(ScriptObservableCallback const&);
     ScriptObservableCallback(ScriptObservableCallback const&);
     ScriptObservableCallback();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptObservableCallback(
+        ::std::variant<::Scripting::Closure<void()>, ::std::function<void()>> callback,
+        ::Scripting::WeakLifetimeScope&                                       scope
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::std::variant<::Scripting::Closure<void()>, ::std::function<void()>> callback,
+        ::Scripting::WeakLifetimeScope&                                       scope
+    );
+    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraftServerUI

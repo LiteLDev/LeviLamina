@@ -34,7 +34,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SizeSectionModel() = default;
+    virtual ~SizeSectionModel();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -35,7 +35,7 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~HeartbeatInfoParameter() /*override*/;
+    virtual ~HeartbeatInfoParameter() /*override*/ = default;
     // NOLINTEND
 
 public:

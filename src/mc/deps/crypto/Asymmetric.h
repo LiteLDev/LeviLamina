@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Asymmetric() /*override*/ = default;
+    virtual ~Asymmetric() /*override*/;
 
     virtual bool generateKeyPair(::std::string& privateKey, ::std::string& publicKey) /*override*/;
 
@@ -78,6 +78,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Crypto::Asymmetric::System system);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

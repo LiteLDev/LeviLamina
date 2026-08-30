@@ -25,12 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~ContextMessageLogger() = default;
-#else // LL_PLAT_C
     virtual ~ContextMessageLogger();
-#endif
-
     // NOLINTEND
 
 public:

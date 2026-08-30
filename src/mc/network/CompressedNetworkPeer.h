@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CompressedNetworkPeer() /*override*/ = default;
+    virtual ~CompressedNetworkPeer() /*override*/;
 
     virtual void sendPacket(
         ::std::string const&       data,
@@ -36,6 +36,12 @@ public:
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

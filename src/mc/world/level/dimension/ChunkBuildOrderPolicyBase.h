@@ -12,7 +12,7 @@ class ChunkBuildOrderPolicyBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChunkBuildOrderPolicyBase() = default;
+    virtual ~ChunkBuildOrderPolicyBase();
 
     virtual int getChunkRebuildPriority(::ChunkPos const& cp) const = 0;
 

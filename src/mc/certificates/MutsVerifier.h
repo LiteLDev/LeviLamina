@@ -31,11 +31,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MutsVerifier() /*override*/ = default;
+    virtual ~MutsVerifier() /*override*/;
 
     virtual void setRequest(::Json::Value& request) /*override*/;
 
     virtual ::std::optional<::Json::Value> verify(::Json::Value&& response) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -22,9 +22,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemReactionComponent() /*override*/ = default;
+    virtual ~ItemReactionComponent() /*override*/;
 
     virtual void _onEnd(::LabTableReaction& owner, ::BlockSource& region) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

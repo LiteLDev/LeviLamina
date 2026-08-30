@@ -6,7 +6,7 @@ class IScreenChangedEventing {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScreenChangedEventing() = default;
+    virtual ~IScreenChangedEventing();
 
     virtual void fireEventScreenChanged(
         uint const&                                               userId,

@@ -55,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MakeInfiniteProgressHandler() /*override*/ = default;
+    virtual ~MakeInfiniteProgressHandler() /*override*/;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -93,6 +93,12 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::LevelSummary const& editedLevel, ::StorageVersion storageVersion, ::std::function<void()> callback);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

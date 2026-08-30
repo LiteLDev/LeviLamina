@@ -27,7 +27,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~MaterialHelper() = default;
+        virtual ~MaterialHelper();
 
         virtual bool isFoundationBlock(::Block const& block) const;
 
@@ -36,6 +36,12 @@ public:
         virtual bool isLavaBlock(::Block const& block) const;
 
         virtual bool isSolidBlock(::Block const& block) const;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:

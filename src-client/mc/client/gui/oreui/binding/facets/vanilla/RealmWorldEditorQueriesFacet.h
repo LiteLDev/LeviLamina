@@ -51,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmWorldEditorQueriesFacet() /*override*/ = default;
+    virtual ~RealmWorldEditorQueriesFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -92,6 +92,12 @@ public:
         ::TrialManager const&                                          trialManager,
         ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

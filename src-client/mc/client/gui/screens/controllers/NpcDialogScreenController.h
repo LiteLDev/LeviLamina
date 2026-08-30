@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NpcDialogScreenController() /*override*/ = default;
+    virtual ~NpcDialogScreenController() /*override*/;
 
     virtual void onCreation() /*override*/;
 
@@ -57,6 +57,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _leaveScreen(bool performClosingActions);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

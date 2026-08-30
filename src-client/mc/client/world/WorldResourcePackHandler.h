@@ -97,7 +97,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldResourcePackHandler() /*override*/ = default;
+    virtual ~WorldResourcePackHandler() /*override*/;
 
     virtual ::World::WorldPacks& loadPackContentForWorld(::LevelSummary const& levelSummary) /*override*/;
 
@@ -245,6 +245,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::World::WorldPacks& $loadPackContentForWorld(::LevelSummary const& levelSummary);
@@ -284,6 +290,13 @@ public:
     MCAPI void $getDownloadingPackTitles(::std::function<void(::std::vector<::std::string>)> packTitlesCallback);
 
     MCFOLD void $cancelDownloadPack();
+
+    MCAPI void $getPackSizes(
+        ::LevelSummary const&                           levelSummary,
+        ::std::vector<::std::string> const&             packIds,
+        ::std::function<void(uint64)>                   onCompleteCallback,
+        ::std::function<void(::World::PackActionError)> onErrorCallback
+    );
 
     MCAPI void $savePacksData();
 

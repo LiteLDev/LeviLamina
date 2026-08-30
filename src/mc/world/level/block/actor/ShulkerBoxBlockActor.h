@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ShulkerBoxBlockActor() /*override*/ = default;
+    virtual ~ShulkerBoxBlockActor() /*override*/;
 
     virtual ::std::string getName() const /*override*/;
 
@@ -75,6 +75,12 @@ public:
 #ifdef LL_PLAT_C
     MCAPI static bool itemAllowedInSlot(int, ::ItemStackBase const& item, int);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -19,7 +19,7 @@ class IControl {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IControl() = default;
+    virtual ~IControl();
 
     virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const = 0;

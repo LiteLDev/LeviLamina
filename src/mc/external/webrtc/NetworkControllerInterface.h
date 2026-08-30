@@ -25,7 +25,7 @@ class NetworkControllerInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkControllerInterface() = default;
+    virtual ~NetworkControllerInterface();
 
     virtual ::webrtc::NetworkControlUpdate OnNetworkAvailability(::webrtc::NetworkAvailability msg) = 0;
 

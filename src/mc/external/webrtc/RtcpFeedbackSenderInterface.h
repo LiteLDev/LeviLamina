@@ -13,7 +13,7 @@ class RtcpFeedbackSenderInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtcpFeedbackSenderInterface() = default;
+    virtual ~RtcpFeedbackSenderInterface();
 
     virtual void SendCombinedRtcpPacket(::std::vector<::std::unique_ptr<::webrtc::rtcp::RtcpPacket>> rtcp_packets) = 0;
 

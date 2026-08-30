@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MarketplacePassWorldTemplateManager() /*override*/ = default;
+    virtual ~MarketplacePassWorldTemplateManager() /*override*/;
 
     virtual void _templateDownloadedCallback(::std::string const& templateId, bool success) /*override*/;
     // NOLINTEND
@@ -90,6 +90,12 @@ public:
         ::IContentAcquisition&                                   contentAquisition,
         ::MarketplaceServicesManager&                            marketplaceServicesManager
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

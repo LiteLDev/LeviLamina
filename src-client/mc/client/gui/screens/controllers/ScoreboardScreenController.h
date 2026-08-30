@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScoreboardScreenController() /*override*/ = default;
+    virtual ~ScoreboardScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
     // NOLINTEND

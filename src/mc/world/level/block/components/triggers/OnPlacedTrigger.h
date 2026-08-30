@@ -15,13 +15,19 @@ class OnPlacedTrigger : public ::DefinitionTrigger, public ::IBlockComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OnPlacedTrigger() = default;
+    virtual ~OnPlacedTrigger();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void onEvent(::BlockEvents::BlockPlaceEvent const& eventData) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

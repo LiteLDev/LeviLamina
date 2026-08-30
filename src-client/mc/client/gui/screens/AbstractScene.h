@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AbstractScene() = default;
+    virtual ~AbstractScene();
 
     virtual void init(::ScreenSizeData const& screenSizeData) = 0;
 

@@ -18,7 +18,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SerializationTraitsSupport() = default;
+    virtual ~SerializationTraitsSupport();
     // NOLINTEND
 };
 

@@ -37,6 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SkinnedMeshGroup(
+        ::ModelPart& modelPart,
+        int          skinnedMeshGroupIdentifier,
+        bool         isUniqueGroup,
+        uint64       skinnedMeshGroupIndex
+    );
+
     MCAPI void copyBoneMatrixToSkinnedMesh(
         int                            meshIndex,
         int                            partIndex,
@@ -65,6 +72,13 @@ public:
     MCAPI void registerPart(::ModelPart& part, int groupIndex);
 
     MCAPI ~SkinnedMeshGroup();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::ModelPart& modelPart, int skinnedMeshGroupIdentifier, bool isUniqueGroup, uint64 skinnedMeshGroupIndex);
     // NOLINTEND
 
 public:

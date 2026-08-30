@@ -72,6 +72,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptModalFormData(::ScriptModuleMinecraftServerUI::ScriptModalFormData&&);
+
     MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     _buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
 
@@ -152,12 +154,26 @@ public:
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> label,
         ::std::optional<bool>                                                             defaultValue
     );
+
+    MCNAPI ~ScriptModalFormData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptModalFormData&&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

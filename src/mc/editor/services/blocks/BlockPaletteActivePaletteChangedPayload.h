@@ -24,12 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~BlockPaletteActivePaletteChangedPayload() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~BlockPaletteActivePaletteChangedPayload() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:

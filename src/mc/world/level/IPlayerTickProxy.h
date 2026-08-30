@@ -15,7 +15,7 @@ class IPlayerTickProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPlayerTickProxy() = default;
+    virtual ~IPlayerTickProxy();
 
     virtual void
     preReplicationTick(::ServerPlayer& serverPlayer, ::Tick const& currentTick, ::EntityContext& userEntity) = 0;

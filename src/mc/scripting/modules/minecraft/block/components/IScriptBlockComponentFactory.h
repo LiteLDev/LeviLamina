@@ -22,7 +22,7 @@ class IScriptBlockComponentFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptBlockComponentFactory() = default;
+    virtual ~IScriptBlockComponentFactory();
 
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
     createComponent(::BlockSource& region, ::BlockPos const& position, ::Scripting::WeakLifetimeScope const& scope) = 0;

@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TooltipTriggerComponent() /*override*/ = default;
+    virtual ~TooltipTriggerComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -50,6 +50,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _updateControlVisibility();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

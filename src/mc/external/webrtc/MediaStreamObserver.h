@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MediaStreamObserver() /*override*/ = default;
+    virtual ~MediaStreamObserver() /*override*/;
 
     virtual void OnChanged() /*override*/;
     // NOLINTEND

@@ -34,6 +34,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void const _generateCodenames(
+        ::std::vector<::std::string> const& treatments,
+        ::std::vector<::std::string>&       codenamesInUse,
+        ::std::stringstream&                inoutStream
+    );
+
     MCAPI void generateNewCodenames(
         ::std::vector<::std::string> const& realmFeatures,
         ::std::vector<::std::string> const& treatments

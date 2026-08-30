@@ -27,7 +27,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Callback() = default;
+        virtual ~Callback();
 
         virtual void OnGenerateKeyFrame() = 0;
 
@@ -64,7 +64,7 @@ public:
 
     virtual void RemoveEncodedSink(::webrtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* sink) /*override*/;
 
-    virtual ~VideoRtpTrackSource() /*override*/;
+    virtual ~VideoRtpTrackSource() /*override*/ = default;
     // NOLINTEND
 
 public:

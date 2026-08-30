@@ -11,7 +11,7 @@ class ICrashFileApi {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ICrashFileApi() = default;
+    virtual ~ICrashFileApi();
 
     virtual ::std::string_view getSaveRoot() const = 0;
 

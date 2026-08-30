@@ -14,9 +14,21 @@ namespace ScriptModuleDiagnostics {
 
 struct ScriptSentryAlreadyInitializedError : public ::Scripting::BaseError {
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptSentryAlreadyInitializedError();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

@@ -16,7 +16,7 @@ class IItemTile : public ::GeometryAtlas::IAtlasTile {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IItemTile() /*override*/ = default;
+    virtual ~IItemTile() /*override*/;
 
     virtual void submitUpdate(::GeometryAtlas::ItemPayload&& payload) = 0;
     // NOLINTEND

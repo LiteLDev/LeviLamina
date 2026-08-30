@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AdhocScreenController() /*override*/ = default;
+    virtual ~AdhocScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
     // NOLINTEND
@@ -39,6 +39,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

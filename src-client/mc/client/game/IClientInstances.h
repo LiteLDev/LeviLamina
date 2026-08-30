@@ -15,7 +15,7 @@ class IClientInstances {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IClientInstances() = default;
+    virtual ~IClientInstances();
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> getPrimaryClientInstance() = 0;
 

@@ -21,7 +21,7 @@ class IDependencies {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDependencies() = default;
+    virtual ~IDependencies();
 
     virtual ::ServiceReference<::IMinecraftEventing> getEventing() = 0;
 

@@ -165,7 +165,7 @@ public:
 
         virtual ::Block const* setState(::BlockType const& blockType, int blockData, int stateData) const = 0;
 
-        virtual ~AlteredStateCollection() = default;
+        virtual ~AlteredStateCollection();
         // NOLINTEND
 
     public:

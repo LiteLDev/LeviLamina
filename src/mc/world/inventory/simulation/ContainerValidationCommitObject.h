@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContainerValidationCommitObject() = default;
+    virtual ~ContainerValidationCommitObject();
 
     virtual bool append(::ContainerValidationCommitObject* other) = 0;
 

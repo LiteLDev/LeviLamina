@@ -60,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourcePackManager() /*override*/ = default;
+    virtual ~ResourcePackManager() /*override*/;
 
     virtual bool load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const /*override*/;
 
@@ -216,6 +216,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager,
         bool                                                              needsToInitialize
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

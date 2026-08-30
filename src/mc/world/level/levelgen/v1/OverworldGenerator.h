@@ -73,7 +73,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OverworldGenerator() /*override*/ = default;
+    virtual ~OverworldGenerator() /*override*/;
 
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 

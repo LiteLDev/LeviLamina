@@ -23,13 +23,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ExplorationMapFunction() /*override*/ = default;
+    virtual ~ExplorationMapFunction() /*override*/;
 
     virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext& context) /*override*/;
 
     virtual void apply(::ItemInstance& item, ::Random&, ::LootTableContext& context) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

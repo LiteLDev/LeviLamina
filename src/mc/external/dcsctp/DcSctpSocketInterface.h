@@ -29,7 +29,7 @@ class DcSctpSocketInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DcSctpSocketInterface() = default;
+    virtual ~DcSctpSocketInterface();
 
     virtual void ReceivePacket(::webrtc::ArrayView<uchar const> data) = 0;
 

@@ -19,6 +19,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ResultAny();
+
     MCNAPI ::Scripting::ResultAny& operator=(::Scripting::ResultAny&& rhs);
 
     MCNAPI ::Scripting::ResultAny& operator=(::Scripting::ResultAny const& rhs);
@@ -36,6 +38,12 @@ public:
     MCNAPI static ::Scripting::ResultAny makeErrorFromAny(::entt::meta_any&& errorAny);
 
     MCNAPI static ::Scripting::ResultAny makeResultFromAny(::entt::meta_any const& resultAny);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

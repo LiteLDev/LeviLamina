@@ -11,7 +11,7 @@ class IScriptStatPublisher {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptStatPublisher() = default;
+    virtual ~IScriptStatPublisher();
 
     virtual bool isStatPublisherEnabled() const = 0;
 

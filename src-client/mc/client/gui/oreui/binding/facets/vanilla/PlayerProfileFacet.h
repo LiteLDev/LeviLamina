@@ -103,6 +103,22 @@ public:
     public:
         // prevent constructor by default
         PlayerProfileWrapper();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI PlayerProfileWrapper(
+            ::Social::PlayerProfileState                            inState,
+            ::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper&& inData
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void*
+        $ctor(::Social::PlayerProfileState inState, ::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper&& inData);
+        // NOLINTEND
     };
 
 public:
@@ -131,7 +147,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerProfileFacet() /*override*/ = default;
+    virtual ~PlayerProfileFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -173,6 +189,12 @@ public:
         ::std::shared_ptr<::Social::ProfileSystem>                         profileSystem,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>         resourceAllowList
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -60,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkSessionManager() /*override*/ = default;
+    virtual ~NetworkSessionManager() /*override*/;
     // NOLINTEND
 
 public:
@@ -92,6 +92,12 @@ public:
             ::NetherNet::CandidateAdd> const&            signal,
         ::std::optional<::NetherNet::SignalingChannelId> preference
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

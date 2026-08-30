@@ -8,7 +8,7 @@ class ILiveViewCollectionConsumer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILiveViewCollectionConsumer() = default;
+    virtual ~ILiveViewCollectionConsumer();
 
     virtual ::std::vector<uint> consumeChangedHandles() = 0;
     // NOLINTEND

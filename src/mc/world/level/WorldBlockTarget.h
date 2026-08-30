@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldBlockTarget() /*override*/ = default;
+    virtual ~WorldBlockTarget() /*override*/;
 
     virtual bool canGetChunk() const /*override*/;
 
@@ -98,6 +98,12 @@ public:
     virtual ::WorldGenContext const& getContext() /*override*/;
 
     virtual void disableBlockSimple() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

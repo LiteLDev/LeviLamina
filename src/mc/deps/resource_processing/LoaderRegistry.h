@@ -33,11 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~LoaderRegistry() = default;
-#else // LL_PLAT_C
     virtual ~LoaderRegistry();
-#endif
 
     virtual ::Puv::
         Loader<::SharedTypes::v1_20_80::ParticleEffectData, ::SharedTypes::v1_20_80::ParticleEffectData> const&

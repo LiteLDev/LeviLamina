@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelEventListener() = default;
+    virtual ~LevelEventListener();
 
     virtual ::EventResult onLevelInitialized(::Level& level);
 

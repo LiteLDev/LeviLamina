@@ -107,7 +107,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsAllowListScreenController() /*override*/ = default;
+    virtual ~RealmsAllowListScreenController() /*override*/;
 
     virtual void onLeave() /*override*/;
 

@@ -47,9 +47,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI AllowListEntry(
+        ::std::string name,
+        ::mce::UUID   uuid,
+        ::std::string xuid,
+        ::std::string psnId,
+        ::std::string nsaId,
+        bool          ignorePLayerLimit
+    );
+
 #ifdef LL_PLAT_S
     MCNAPI ::AllowListEntry& operator=(::AllowListEntry&&);
 #endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::std::string name,
+        ::mce::UUID   uuid,
+        ::std::string xuid,
+        ::std::string psnId,
+        ::std::string nsaId,
+        bool          ignorePLayerLimit
+    );
     // NOLINTEND
 
 public:

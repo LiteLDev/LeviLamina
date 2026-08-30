@@ -18,7 +18,7 @@ class PrefabDBServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PrefabDBServiceProvider() = default;
+    virtual ~PrefabDBServiceProvider();
 
     virtual ::WeakRef<::Editor::Prefabs::PrefabDBTemplate const> getTemplate(::mce::UUID const& templateId) const = 0;
 

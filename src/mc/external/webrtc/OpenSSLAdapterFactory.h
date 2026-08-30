@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OpenSSLAdapterFactory() /*override*/ = default;
+    virtual ~OpenSSLAdapterFactory() /*override*/;
 
     virtual void SetMode(::webrtc::SSLMode) /*override*/;
 

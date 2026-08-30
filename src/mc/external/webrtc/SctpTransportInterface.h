@@ -27,7 +27,7 @@ public:
 
     virtual void UnregisterObserver() = 0;
 
-    virtual ~SctpTransportInterface() /*override*/;
+    virtual ~SctpTransportInterface() /*override*/ = default;
     // NOLINTEND
 
 public:

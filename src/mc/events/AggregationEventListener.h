@@ -45,11 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~AggregationEventListener() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~AggregationEventListener() /*override*/;
-#endif
 
     virtual void recordEvent(
         ::Social::Events::Event const&                   event,
@@ -74,7 +70,13 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI explicit AggregationEventListener(::Core::Path const& logFileName);
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI explicit AggregationEventListener(::Core::Path const& logFileName);
+#endif
+
+#ifdef LL_PLAT_C
     MCNAPI AggregationEventListener(
         uint                regBatchSize,
         uint                regSendInterval,
@@ -96,7 +98,13 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Core::Path const& logFileName);
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::Core::Path const& logFileName);
+#endif
+
+#ifdef LL_PLAT_C
     MCNAPI void*
     $ctor(uint regBatchSize, uint regSendInterval, uint throttledSendInterval, ::Core::Path const& logFileName);
 #endif

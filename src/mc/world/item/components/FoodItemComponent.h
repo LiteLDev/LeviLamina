@@ -58,7 +58,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FoodItemComponent() /*override*/ = default;
+    virtual ~FoodItemComponent() /*override*/;
 
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 

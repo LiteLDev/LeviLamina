@@ -13,7 +13,7 @@ class PublisherDisconnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PublisherDisconnector() = default;
+    virtual ~PublisherDisconnector();
 
     virtual void _disconnect(::Bedrock::PubSub::Detail::SubscriptionBodyBase& body) = 0;
     // NOLINTEND

@@ -53,7 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenshotGalleryFacet() /*override*/ = default;
+    virtual ~ScreenshotGalleryFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -128,6 +128,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

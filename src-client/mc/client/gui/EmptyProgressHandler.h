@@ -15,7 +15,7 @@ class EmptyProgressHandler : public ::ProgressHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EmptyProgressHandler() /*override*/ = default;
+    virtual ~EmptyProgressHandler() /*override*/;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 

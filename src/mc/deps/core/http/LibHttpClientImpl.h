@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibHttpClientImpl() /*override*/ = default;
+    virtual ~LibHttpClientImpl() /*override*/;
 
     virtual void initialize() /*override*/;
 

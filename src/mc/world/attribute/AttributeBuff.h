@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AttributeBuff() = default;
+    virtual ~AttributeBuff();
 
     virtual bool isInstantaneous() const = 0;
 

@@ -12,7 +12,7 @@ class ICommandDispatcher {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ICommandDispatcher() = default;
+    virtual ~ICommandDispatcher();
 
     virtual int performCommand(::CommandOrigin const& origin, ::Command& command) = 0;
     // NOLINTEND

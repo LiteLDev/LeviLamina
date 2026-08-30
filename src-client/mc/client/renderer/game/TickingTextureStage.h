@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TickingTextureStage() /*override*/ = default;
+    virtual ~TickingTextureStage() /*override*/;
 
     virtual void preRender(::ScreenContext& screenContext) /*override*/;
 
@@ -48,6 +48,12 @@ public:
     MCNAPI void createRenderTarget(::mce::RenderContext& renderContext);
 
     MCNAPI void resetStage();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

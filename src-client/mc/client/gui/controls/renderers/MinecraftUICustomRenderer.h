@@ -19,7 +19,7 @@ class MinecraftUICustomRenderer : public ::UICustomRenderer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftUICustomRenderer() /*override*/ = default;
+    virtual ~MinecraftUICustomRenderer() /*override*/;
 
     virtual void frameUpdate(::UIFrameUpdateContext& frameUpdateContext, ::UIControl& owner) /*override*/;
 
@@ -34,6 +34,12 @@ public:
     virtual void preRenderSetup(::UIRenderContext& renderContext) /*override*/;
 
     virtual void preRenderSetup(::MinecraftUIRenderContext& renderContext);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

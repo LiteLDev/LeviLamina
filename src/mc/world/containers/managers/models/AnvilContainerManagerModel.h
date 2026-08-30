@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AnvilContainerManagerModel() /*override*/ = default;
+    virtual ~AnvilContainerManagerModel() /*override*/;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
@@ -52,6 +52,12 @@ public:
 
     MCAPI void fireItemEnchantedEvent(::ItemInstance const& item);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

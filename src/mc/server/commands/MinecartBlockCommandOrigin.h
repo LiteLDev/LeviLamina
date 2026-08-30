@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecartBlockCommandOrigin() /*override*/ = default;
+    virtual ~MinecartBlockCommandOrigin() /*override*/;
 
     virtual ::BlockPos getBlockPosition() const /*override*/;
 
@@ -69,6 +69,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockSource& region, ::ActorUniqueID const& minecartId);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

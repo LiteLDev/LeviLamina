@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BeaconContainerManagerModel() /*override*/ = default;
+    virtual ~BeaconContainerManagerModel() /*override*/;
 
     virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
@@ -50,6 +50,12 @@ public:
 
     MCAPI bool isSelected(int iSlot, bool isSecondary);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataDrivenModel() /*override*/ = default;
+    virtual ~DataDrivenModel() /*override*/;
     // NOLINTEND
 
 public:
@@ -129,5 +129,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

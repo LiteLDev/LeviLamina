@@ -8,7 +8,7 @@ struct IBiomeJsonComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBiomeJsonComponent() = default;
+    virtual ~IBiomeJsonComponent();
     // NOLINTEND
 };
 

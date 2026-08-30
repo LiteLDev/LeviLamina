@@ -15,7 +15,7 @@ class ResourceHandlerBroker {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourceHandlerBroker() = default;
+    virtual ~ResourceHandlerBroker();
 
     virtual void update() = 0;
 
@@ -31,6 +31,12 @@ public:
     virtual void onAppPreSuspend() = 0;
 
     virtual ::cohtml::IAsyncResourceHandler* getCohtmlHandler() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -70,7 +70,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerPermissionsFacet() /*override*/ = default;
+    virtual ~PlayerPermissionsFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -157,6 +157,12 @@ public:
         ::std::function<bool()>              isPrimaryClient,
         ::std::function<bool()>              isHostingLocalDedicatedServer
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

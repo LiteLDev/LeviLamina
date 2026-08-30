@@ -20,13 +20,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RemovedState() = default;
+    virtual ~RemovedState();
 
     virtual void addValue(::CompoundTag const& tag) = 0;
 
     virtual void match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const = 0;
 
     virtual uint64 valueCount() const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

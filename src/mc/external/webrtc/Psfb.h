@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Psfb() /*override*/ = default;
+    virtual ~Psfb() /*override*/;
     // NOLINTEND
 
 public:

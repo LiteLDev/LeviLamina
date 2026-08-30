@@ -64,5 +64,13 @@ public:
         ::ConsoleChunkBlender::ShiftBlockTypes const shiftBlockType,
         ::OverworldBlendRules const&                 blendRules
     );
+
+    MCNAPI ~ConsoleChunkBlender();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

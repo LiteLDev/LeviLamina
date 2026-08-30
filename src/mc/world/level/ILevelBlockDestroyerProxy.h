@@ -15,7 +15,7 @@ class ILevelBlockDestroyerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILevelBlockDestroyerProxy() = default;
+    virtual ~ILevelBlockDestroyerProxy();
 
     virtual void sendEvents(
         ::LevelEventManager& levelEventManager,

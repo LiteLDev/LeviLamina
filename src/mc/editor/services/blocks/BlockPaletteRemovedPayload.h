@@ -24,12 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~BlockPaletteRemovedPayload() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~BlockPaletteRemovedPayload() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:

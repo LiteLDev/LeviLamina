@@ -50,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TransactionManagerService() /*override*/ = default;
+    virtual ~TransactionManagerService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

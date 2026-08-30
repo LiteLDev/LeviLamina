@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptItemEnchantmentComponent() /*override*/ = default;
+    virtual ~ScriptItemEnchantmentComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -38,6 +38,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -12,7 +12,7 @@ class IActiveDirectoryIdentityTelemetry {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IActiveDirectoryIdentityTelemetry() = default;
+    virtual ~IActiveDirectoryIdentityTelemetry();
 
     virtual void fireEventSignInEdu(
         ::std::string const&                                            mutsUserId,

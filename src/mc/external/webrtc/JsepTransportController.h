@@ -163,7 +163,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~JsepTransportController() /*override*/ = default;
+    virtual ~JsepTransportController() /*override*/;
 
     virtual ::webrtc::RTCErrorOr<::webrtc::PayloadType>
     SuggestPayloadType(::std::string const& mid, ::webrtc::Codec codec) /*override*/;

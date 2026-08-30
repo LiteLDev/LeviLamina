@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEntitySystemsCollection() = default;
+    virtual ~IEntitySystemsCollection();
 
     virtual void registerTickingSystem(
         ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,

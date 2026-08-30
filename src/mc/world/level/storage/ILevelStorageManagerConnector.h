@@ -14,7 +14,7 @@ class ILevelStorageManagerConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILevelStorageManagerConnector() = default;
+    virtual ~ILevelStorageManagerConnector();
 
     virtual ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& getOnSaveConnector() = 0;
 

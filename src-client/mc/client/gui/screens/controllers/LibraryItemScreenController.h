@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibraryItemScreenController() /*override*/ = default;
+    virtual ~LibraryItemScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

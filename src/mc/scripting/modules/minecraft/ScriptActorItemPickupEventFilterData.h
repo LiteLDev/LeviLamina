@@ -30,6 +30,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptActorItemPickupEventFilterData(
+        ::Scripting::WeakLifetimeScope           scope,
+        ::ScriptModuleMinecraft::ScriptActorData actorData,
+        ::std::vector<::ItemStack>               items
+    );
+
     MCAPI ~ScriptActorItemPickupEventFilterData();
     // NOLINTEND
 
@@ -43,6 +49,16 @@ public:
     );
 
     MCAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilterData create(
+        ::Scripting::WeakLifetimeScope           scope,
+        ::ScriptModuleMinecraft::ScriptActorData actorData,
+        ::std::vector<::ItemStack>               items
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
         ::Scripting::WeakLifetimeScope           scope,
         ::ScriptModuleMinecraft::ScriptActorData actorData,
         ::std::vector<::ItemStack>               items

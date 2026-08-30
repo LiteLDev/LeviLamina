@@ -56,6 +56,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI explicit TradeItemCollections(::UIPropertyBag const& bag);
+
         MCAPI int getTierIndex() const;
 
         MCAPI int getTradeIndex() const;
@@ -67,6 +69,12 @@ public:
         MCAPI bool hasTradeItem2Collection() const;
 
         MCAPI bool hasValidTradeToggleCollections() const;
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::UIPropertyBag const& bag);
         // NOLINTEND
     };
 
@@ -93,7 +101,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Trade2ScreenController() /*override*/ = default;
+    virtual ~Trade2ScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

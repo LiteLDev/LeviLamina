@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TapRecognizer() /*override*/ = default;
+    virtual ~TapRecognizer() /*override*/;
 
     virtual void onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches) /*override*/;
 
@@ -36,6 +36,12 @@ public:
     ) /*override*/;
 
     virtual void onGestureRecognized() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

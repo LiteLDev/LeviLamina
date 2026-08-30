@@ -23,7 +23,7 @@ class IEduSsoStrategy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEduSsoStrategy() = default;
+    virtual ~IEduSsoStrategy();
 
     virtual ::Json::Value clientConfig(::Json::Value const& loginResponse) const = 0;
 

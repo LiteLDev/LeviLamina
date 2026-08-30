@@ -14,7 +14,7 @@ class IContentSourceRepository {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IContentSourceRepository() = default;
+    virtual ~IContentSourceRepository();
 
     virtual void deletePackFiles(::ResourceLocation const& packLocation) = 0;
 

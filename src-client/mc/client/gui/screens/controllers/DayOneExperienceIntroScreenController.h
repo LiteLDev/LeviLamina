@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DayOneExperienceIntroScreenController() /*override*/ = default;
+    virtual ~DayOneExperienceIntroScreenController() /*override*/;
 
     virtual ::std::string getAdditionalScreenInfo() const /*override*/;
 
@@ -48,6 +48,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

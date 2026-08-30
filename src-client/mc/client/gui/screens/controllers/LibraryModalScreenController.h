@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibraryModalScreenController() /*override*/ = default;
+    virtual ~LibraryModalScreenController() /*override*/;
 
     virtual ::ui::SceneType getSceneType() const /*override*/;
 

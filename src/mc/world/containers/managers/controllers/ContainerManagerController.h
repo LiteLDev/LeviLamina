@@ -68,11 +68,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~ContainerManagerController() = default;
-#else // LL_PLAT_C
     virtual ~ContainerManagerController();
-#endif
 
     virtual void postInit(::std::weak_ptr<::ContainerManagerController> self);
 

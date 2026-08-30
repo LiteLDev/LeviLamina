@@ -50,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CartographyContainerManagerController() /*override*/ = default;
+    virtual ~CartographyContainerManagerController() /*override*/;
 
     virtual void postInit(::std::weak_ptr<::ContainerManagerController> self) /*override*/;
 
@@ -117,6 +117,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::weak_ptr<::CartographyContainerManagerModel> containerManagerModel);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

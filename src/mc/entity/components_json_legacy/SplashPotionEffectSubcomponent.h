@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SplashPotionEffectSubcomponent() /*override*/ = default;
+    virtual ~SplashPotionEffectSubcomponent() /*override*/;
 
     virtual void readfromJSON(::Json::Value& component) /*override*/;
 

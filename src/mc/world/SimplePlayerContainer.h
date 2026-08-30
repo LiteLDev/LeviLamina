@@ -27,11 +27,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SimplePlayerContainer() /*override*/ = default;
+    virtual ~SimplePlayerContainer() /*override*/;
 
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

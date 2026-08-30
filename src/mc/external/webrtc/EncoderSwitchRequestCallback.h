@@ -13,7 +13,7 @@ class EncoderSwitchRequestCallback {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EncoderSwitchRequestCallback() = default;
+    virtual ~EncoderSwitchRequestCallback();
 
     virtual void RequestEncoderFallback() = 0;
 

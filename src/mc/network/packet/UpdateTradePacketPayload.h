@@ -28,4 +28,16 @@ public:
     // prevent constructor by default
     UpdateTradePacketPayload& operator=(UpdateTradePacketPayload const&);
     UpdateTradePacketPayload();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI UpdateTradePacketPayload(::UpdateTradePacketPayload const& other);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UpdateTradePacketPayload const& other);
+    // NOLINTEND
 };

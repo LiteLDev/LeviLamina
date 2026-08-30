@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITreeCanopy() = default;
+    virtual ~ITreeCanopy();
 
     virtual ::std::optional<::BlockPos> placeCanopy(
         ::IBlockWorldGenAPI&,

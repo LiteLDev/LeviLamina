@@ -24,13 +24,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StackPanelComponent() /*override*/ = default;
+    virtual ~StackPanelComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
     virtual void onNotifyChildRemoved() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

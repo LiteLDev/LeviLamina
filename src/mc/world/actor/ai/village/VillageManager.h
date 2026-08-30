@@ -93,7 +93,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VillageManager() /*override*/ = default;
+    virtual ~VillageManager() /*override*/;
 
     virtual ::std::weak_ptr<::Village>
     fetchClosestVillage(::BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const /*override*/;
@@ -140,6 +140,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Dimension& dimension);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

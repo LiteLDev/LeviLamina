@@ -11,7 +11,7 @@ class IActionDataProvider : public ::Settings::IDataProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IActionDataProvider() /*override*/ = default;
+    virtual ~IActionDataProvider() /*override*/;
 
     virtual bool flush();
     // NOLINTEND

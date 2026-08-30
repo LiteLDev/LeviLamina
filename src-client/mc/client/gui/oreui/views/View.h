@@ -78,7 +78,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~View() /*override*/ = default;
+    virtual ~View() /*override*/;
 
     virtual void pushCurrentScene(::OreUI::IScene& scene, ::OreUI::RouteMode routeMode) /*override*/;
 

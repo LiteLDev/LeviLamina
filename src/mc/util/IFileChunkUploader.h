@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFileChunkUploader() = default;
+    virtual ~IFileChunkUploader();
 
     virtual void initFileUploader(
         ::std::string const&        uploadId,

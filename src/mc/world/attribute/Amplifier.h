@@ -6,7 +6,7 @@ class Amplifier {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Amplifier() = default;
+    virtual ~Amplifier();
 
     virtual float getAmount(int amplification, float scale) const;
 

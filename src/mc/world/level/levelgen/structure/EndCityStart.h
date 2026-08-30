@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EndCityStart() /*override*/ = default;
+    virtual ~EndCityStart() /*override*/;
 
     virtual bool isValid() const /*override*/;
 
@@ -32,6 +32,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int getYPositionForFeature(::ChunkPos const& pos, ::Dimension& dimension);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VideoRtpSender() /*override*/ = default;
+    virtual ~VideoRtpSender() /*override*/;
 
     virtual void OnChanged() /*override*/;
 

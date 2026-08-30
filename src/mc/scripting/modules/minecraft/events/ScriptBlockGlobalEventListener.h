@@ -64,7 +64,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptBlockGlobalEventListener() /*override*/ = default;
+    virtual ~ScriptBlockGlobalEventListener() /*override*/;
 
     virtual ::EventResult onEvent(::PistonActionEvent const& eventData) /*override*/;
 
@@ -127,6 +127,12 @@ public:
         uchar const       face,
         int const         previousProgress
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

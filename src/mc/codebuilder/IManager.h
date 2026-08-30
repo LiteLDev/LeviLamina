@@ -18,7 +18,7 @@ class IManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IManager() /*override*/ = default;
+    virtual ~IManager() /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> getAutomationClient() const = 0;
 

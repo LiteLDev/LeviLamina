@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AcceptDeclineInvitationScreenController() /*override*/ = default;
+    virtual ~AcceptDeclineInvitationScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

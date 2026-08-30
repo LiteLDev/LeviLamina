@@ -14,7 +14,7 @@ class MediaEngineInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MediaEngineInterface() = default;
+    virtual ~MediaEngineInterface();
 
     virtual bool Init() = 0;
 

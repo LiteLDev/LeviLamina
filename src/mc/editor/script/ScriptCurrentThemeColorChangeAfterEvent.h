@@ -25,9 +25,22 @@ public:
     ScriptCurrentThemeColorChangeAfterEvent();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI
+    ScriptCurrentThemeColorChangeAfterEvent(::std::string colorKey, ::ScriptModuleMinecraft::ScriptRGBA const& color);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string colorKey, ::ScriptModuleMinecraft::ScriptRGBA const& color);
     // NOLINTEND
 };
 

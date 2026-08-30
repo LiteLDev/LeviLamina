@@ -23,7 +23,7 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~IForwardTsnChunk() /*override*/;
+    virtual ~IForwardTsnChunk() /*override*/ = default;
     // NOLINTEND
 
 public:

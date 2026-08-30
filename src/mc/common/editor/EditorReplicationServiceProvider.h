@@ -20,7 +20,7 @@ class EditorReplicationServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorReplicationServiceProvider() = default;
+    virtual ~EditorReplicationServiceProvider();
 
     virtual bool isServer() const = 0;
 

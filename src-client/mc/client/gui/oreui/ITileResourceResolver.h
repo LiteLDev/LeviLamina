@@ -24,7 +24,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~ITileResourceRequest() = default;
+        virtual ~ITileResourceRequest();
 
         virtual ::GeometryAtlas::TileDefinition const& getDefinition() const = 0;
 
@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITileResourceResolver() = default;
+    virtual ~ITileResourceResolver();
 
     virtual ::std::shared_ptr<::GeometryAtlas::IAtlasTile>
     createTile(::GeometryAtlas::IGeometryAtlas& atlas, ::GeometryAtlas::TileDefinition const& definition) = 0;

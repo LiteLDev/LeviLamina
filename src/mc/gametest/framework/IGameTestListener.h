@@ -13,7 +13,7 @@ class IGameTestListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IGameTestListener() = default;
+    virtual ~IGameTestListener();
 
     virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
 

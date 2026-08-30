@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Spawner() = default;
+    virtual ~Spawner();
 
     virtual void initializeServerSide(::ResourcePackManager& rpm, ::IWorldRegistriesProvider& registries) = 0;
 

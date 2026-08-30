@@ -27,7 +27,7 @@ class EditorBlockPaletteServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorBlockPaletteServiceProvider() = default;
+    virtual ~EditorBlockPaletteServiceProvider();
 
     virtual ::std::vector<::std::shared_ptr<::Editor::EditorBlockPalette>> const& getPaletteList() const = 0;
 
@@ -71,6 +71,12 @@ public:
                              ::Editor::EditorBlockPaletteEventPaletteUpdated,
                              ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)> callback
     ) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

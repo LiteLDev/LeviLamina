@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptPrefabService() = default;
+    virtual ~ScriptPrefabService();
     // NOLINTEND
 
 public:
@@ -93,6 +93,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void*
     $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

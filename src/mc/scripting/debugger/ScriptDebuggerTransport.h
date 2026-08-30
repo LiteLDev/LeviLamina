@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDebuggerTransport() /*override*/ = default;
+    virtual ~ScriptDebuggerTransport() /*override*/;
 
     virtual bool listen(ushort port) /*override*/;
 
@@ -48,6 +48,12 @@ public:
     virtual bool receive(char* buffer, uint64 length) /*override*/;
 
     virtual void send(char const* buffer, uint64 length) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

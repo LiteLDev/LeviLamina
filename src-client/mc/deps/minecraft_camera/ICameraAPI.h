@@ -50,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ICameraAPI() = default;
+    virtual ~ICameraAPI();
 
     virtual ::std::optional<::Vec3> tryGetActorRelativeLocation(
         ::WeakRef<::EntityContext> const     actorRef,

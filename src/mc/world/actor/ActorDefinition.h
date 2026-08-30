@@ -154,9 +154,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI explicit ActorDefinition(::std::string const& id);
-#endif
 
     MCAPI ::ActorDefinitionParseStatus parse(
         ::ActorDocumentDataParams    deserializeDataParams,
@@ -190,8 +188,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void* $ctor(::std::string const& id);
-#endif
     // NOLINTEND
 };

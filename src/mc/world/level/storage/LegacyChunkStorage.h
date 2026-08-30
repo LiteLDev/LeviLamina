@@ -46,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LegacyChunkStorage() /*override*/ = default;
+    virtual ~LegacyChunkStorage() /*override*/;
 
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
@@ -77,6 +77,12 @@ public:
         ::StorageVersion                 v,
         ::Biome&                         defaultBiome
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

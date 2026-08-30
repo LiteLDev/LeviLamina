@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RenderableComponent() /*override*/ = default;
+    virtual ~RenderableComponent() /*override*/;
 
     virtual void updateUI(::UIMeasureStrategy const& context);
 

@@ -8,7 +8,7 @@ class RtcpLossNotificationObserver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtcpLossNotificationObserver() = default;
+    virtual ~RtcpLossNotificationObserver();
 
     virtual void OnReceivedLossNotification(uint, ushort, ushort, bool) = 0;
     // NOLINTEND

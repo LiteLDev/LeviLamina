@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Random() /*override*/ = default;
+    virtual ~Random() /*override*/;
 
     virtual bool nextBoolean() /*override*/;
 
@@ -45,6 +45,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Random();
+
     MCAPI Random(uint seed, bool onlyUsedDeterministically);
 
 #ifdef LL_PLAT_C
@@ -61,7 +63,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

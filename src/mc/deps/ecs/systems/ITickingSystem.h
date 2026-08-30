@@ -16,13 +16,19 @@ class ITickingSystem : public ::ISystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITickingSystem() /*override*/ = default;
+    virtual ~ITickingSystem() /*override*/;
 
     virtual void tick(::EntityRegistry& registry) = 0;
 
     virtual void singleTick(::EntityRegistry& registry, ::EntityContext& entity);
 
     virtual void singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

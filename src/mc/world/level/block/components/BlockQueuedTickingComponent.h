@@ -19,6 +19,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockQueuedTickingComponent() = default;
+    virtual ~BlockQueuedTickingComponent();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

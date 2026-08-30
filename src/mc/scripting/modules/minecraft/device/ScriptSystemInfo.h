@@ -22,13 +22,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptSystemInfo() = default;
+    virtual ~ScriptSystemInfo();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

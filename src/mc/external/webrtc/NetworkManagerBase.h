@@ -44,7 +44,7 @@ public:
 
     virtual bool GetDefaultLocalAddress(int family, ::webrtc::IPAddress* ipaddr) const /*override*/;
 
-    virtual ~NetworkManagerBase() /*override*/;
+    virtual ~NetworkManagerBase() /*override*/ = default;
     // NOLINTEND
 
 public:

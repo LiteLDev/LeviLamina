@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ProjectConverter() /*override*/ = default;
+    virtual ~ProjectConverter() /*override*/;
 
     virtual void enqueueConvertImportingWorldTasks(
         ::std::shared_ptr<::FileArchiver::Result>&                      sharedResult,
@@ -105,6 +105,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

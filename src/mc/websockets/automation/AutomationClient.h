@@ -51,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AutomationClient() /*override*/ = default;
+    virtual ~AutomationClient() /*override*/;
 
     virtual void onUri(::ActivationUri const& uri) /*override*/;
 

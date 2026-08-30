@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseBlockLocationIterator() = default;
+    virtual ~BaseBlockLocationIterator();
 
     virtual bool operator==(::BaseBlockLocationIterator const&) const;
 

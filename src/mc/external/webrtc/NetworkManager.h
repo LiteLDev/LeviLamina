@@ -81,7 +81,7 @@ public:
 
     virtual void set_vpn_list(::std::vector<::webrtc::NetworkMask> const& vpn);
 
-    virtual ~NetworkManager() /*override*/;
+    virtual ~NetworkManager() /*override*/ = default;
     // NOLINTEND
 
 public:

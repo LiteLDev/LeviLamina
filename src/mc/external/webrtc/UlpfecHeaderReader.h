@@ -12,7 +12,7 @@ class UlpfecHeaderReader : public ::webrtc::FecHeaderReader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UlpfecHeaderReader() /*override*/ = default;
+    virtual ~UlpfecHeaderReader() /*override*/;
 
     virtual bool ReadFecHeader(::webrtc::ForwardErrorCorrection::ReceivedFecPacket* fec_packet) const /*override*/;
     // NOLINTEND

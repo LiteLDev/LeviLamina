@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorServerPlayer() /*override*/ = default;
+    virtual ~EditorServerPlayer() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

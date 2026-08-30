@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UICustomRenderer() = default;
+    virtual ~UICustomRenderer();
 
     virtual void preRenderSetup(::UIRenderContext& renderContext);
 
@@ -57,6 +57,12 @@ public:
     virtual void collectScreenEvents(::std::queue<::ScreenEvent, ::std::deque<::ScreenEvent>>& screenEvents);
 
     virtual ::UIItemRenderInfo getItemRenderInfo() const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

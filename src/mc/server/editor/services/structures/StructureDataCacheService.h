@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureDataCacheService() /*override*/ = default;
+    virtual ~StructureDataCacheService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

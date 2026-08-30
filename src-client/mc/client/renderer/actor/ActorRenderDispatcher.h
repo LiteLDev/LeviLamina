@@ -51,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorRenderDispatcher() = default;
+    virtual ~ActorRenderDispatcher();
     // NOLINTEND
 
 public:
@@ -105,6 +105,12 @@ public:
 
     MCAPI void
     renderWaterHole(::BaseActorRenderContext& actorRenderContext, ::Actor& actor, ::Vec3 const& cameraTargetPos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

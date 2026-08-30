@@ -14,6 +14,6 @@ public:
     // NOLINTBEGIN
     virtual void exportImagesToAlbum(::PDFOptions, ::std::function<void(::std::optional<::PDFError>)>) = 0;
 
-    virtual ~PDFWriter() = default;
+    virtual ~PDFWriter();
     // NOLINTEND
 };

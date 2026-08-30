@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PluginInterface2() = default;
+    virtual ~PluginInterface2();
 
     virtual void OnAttach();
 

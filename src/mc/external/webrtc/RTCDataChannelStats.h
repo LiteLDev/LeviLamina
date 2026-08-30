@@ -43,7 +43,7 @@ public:
 
     virtual char const* type() const /*override*/;
 
-    virtual ~RTCDataChannelStats() /*override*/ = default;
+    virtual ~RTCDataChannelStats() /*override*/;
     // NOLINTEND
 
 public:

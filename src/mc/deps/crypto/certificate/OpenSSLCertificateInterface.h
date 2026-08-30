@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OpenSSLCertificateInterface() /*override*/ = default;
+    virtual ~OpenSSLCertificateInterface() /*override*/;
 
     virtual ::std::string serialize(::Crypto::Certificate::Encoding encoding) const /*override*/;
 
@@ -73,6 +73,12 @@ public:
 #ifdef LL_PLAT_S
     MCNAPI void* $ctor(::Crypto::Certificate::Encoding encoding, ::std::string const& certificateData);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

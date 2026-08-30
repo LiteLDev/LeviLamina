@@ -25,6 +25,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FogVolumetricCoefficientSetting(
+        ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB> const& scattering,
+        ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB> const& absorption
+    );
+
     MCAPI ~FogVolumetricCoefficientSetting();
     // NOLINTEND
 
@@ -32,6 +37,15 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::FogVolumetricCoefficientSetting const& ZERO_SETTING();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB> const& scattering,
+        ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB> const& absorption
+    );
     // NOLINTEND
 
 public:

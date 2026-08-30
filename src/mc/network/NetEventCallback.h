@@ -266,7 +266,7 @@ public:
     // NOLINTBEGIN
     virtual void onPlayerReady(::Player& player);
 
-    virtual ~NetEventCallback() /*override*/ = default;
+    virtual ~NetEventCallback() /*override*/;
 
     virtual void onConnect(::NetworkIdentifier const& id);
 
@@ -1052,6 +1052,12 @@ public:
     virtual void handle(::NetworkIdentifier const&, ::ServerPresenceInfoPacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::ClientboundUpdateSoundDataPacket const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

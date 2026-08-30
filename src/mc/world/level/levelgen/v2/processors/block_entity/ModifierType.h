@@ -15,7 +15,7 @@ struct ModifierType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ModifierType() = default;
+    virtual ~ModifierType();
 
     virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom& random, ::CompoundTag const* existingTag) const = 0;
 

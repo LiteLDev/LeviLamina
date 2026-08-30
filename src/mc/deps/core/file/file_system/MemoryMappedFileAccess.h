@@ -124,7 +124,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MemoryMappedFileAccess() /*override*/ = default;
+    virtual ~MemoryMappedFileAccess() /*override*/;
 
     virtual void* fopen(::Core::PathView filePath, ::std::string const& mode) /*override*/;
 
@@ -163,6 +163,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const& inner,
         ::std::unique_ptr<::FileAccessTransforms>           transforms
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

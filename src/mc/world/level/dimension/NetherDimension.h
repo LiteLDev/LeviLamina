@@ -23,7 +23,7 @@ class NetherDimension : public ::Dimension {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetherDimension() /*override*/ = default;
+    virtual ~NetherDimension() /*override*/;
 
     virtual void init(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
@@ -56,6 +56,12 @@ public:
         ::std::unique_ptr<::ChunkSource> storageSource,
         ::StorageVersion                 levelVersion
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

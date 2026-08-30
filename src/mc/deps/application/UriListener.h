@@ -11,12 +11,18 @@ class UriListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UriListener() = default;
+    virtual ~UriListener();
 
     virtual void onUri(::ActivationUri const& uri) = 0;
 
     virtual void tick() = 0;
 
     virtual void executeStartupUris() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

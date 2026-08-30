@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptRelativeVolumeListBlockVolume() /*override*/ = default;
+    virtual ~ScriptRelativeVolumeListBlockVolume() /*override*/;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
     getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) /*override*/;
@@ -105,6 +105,12 @@ public:
     MCNAPI void* $ctor(::Vec3 const& location, ::std::optional<::Vec3> const& origin);
 
     MCNAPI void* $ctor(::std::vector<::Vec3> const& locations, ::std::optional<::Vec3> const& origin);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

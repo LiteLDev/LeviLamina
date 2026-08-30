@@ -63,6 +63,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit NetherFortressPiece(int genDepth);
+
     MCAPI ::StructurePiece* generateAndAddPiece(
         ::NBStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
@@ -92,6 +94,12 @@ public:
         int                                                 zOff,
         bool                                                isCastle
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(int genDepth);
     // NOLINTEND
 
 public:

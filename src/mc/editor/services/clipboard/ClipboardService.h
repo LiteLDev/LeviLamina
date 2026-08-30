@@ -46,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClipboardService() /*override*/ = default;
+    virtual ~ClipboardService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

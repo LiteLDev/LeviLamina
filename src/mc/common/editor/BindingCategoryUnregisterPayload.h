@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BindingCategoryUnregisterPayload() /*override*/ = default;
+    virtual ~BindingCategoryUnregisterPayload() /*override*/;
     // NOLINTEND
 
 public:

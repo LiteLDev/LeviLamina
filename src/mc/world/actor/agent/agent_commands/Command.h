@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Command() = default;
+    virtual ~Command();
 
     virtual void execute();
 
@@ -42,6 +42,12 @@ public:
     virtual void tick();
 
     virtual void fireCommandDoneEvent();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

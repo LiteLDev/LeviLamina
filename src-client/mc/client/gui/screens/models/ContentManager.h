@@ -105,7 +105,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContentManager() /*override*/ = default;
+    virtual ~ContentManager() /*override*/;
 
     virtual ::ContentSource* loadContent(::ContentType contentType, ::ContentFlags flags) /*override*/;
 

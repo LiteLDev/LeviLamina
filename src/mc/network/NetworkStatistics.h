@@ -69,7 +69,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkStatistics() /*override*/ = default;
+    virtual ~NetworkStatistics() /*override*/;
 
     virtual void packetSentTo(::NetworkIdentifier const& target, ::Packet const& packet, uint size) /*override*/;
 
@@ -126,6 +126,12 @@ public:
         ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

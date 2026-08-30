@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtcEventDtlsWritableState() /*override*/ = default;
+    virtual ~RtcEventDtlsWritableState() /*override*/;
 
     virtual ::webrtc::RtcEvent::Type GetType() const /*override*/;
 

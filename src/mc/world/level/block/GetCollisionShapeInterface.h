@@ -14,7 +14,7 @@ class GetCollisionShapeInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GetCollisionShapeInterface() = default;
+    virtual ~GetCollisionShapeInterface();
 
     virtual float getFeetAttachPosY() const = 0;
 

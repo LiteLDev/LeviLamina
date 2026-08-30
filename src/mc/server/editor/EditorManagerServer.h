@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorManagerServer() /*override*/ = default;
+    virtual ~EditorManagerServer() /*override*/;
 
     virtual bool isClientSide() const /*override*/;
 

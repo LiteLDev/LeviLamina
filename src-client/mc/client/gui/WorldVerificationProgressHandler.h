@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldVerificationProgressHandler() /*override*/ = default;
+    virtual ~WorldVerificationProgressHandler() /*override*/;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -75,6 +75,12 @@ public:
         ::std::unique_ptr<::PackAccessStrategy>                    levelAccess,
         ::std::function<void(::WorldVerificationResult)>           callback
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

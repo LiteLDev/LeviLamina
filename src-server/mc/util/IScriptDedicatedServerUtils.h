@@ -11,7 +11,7 @@ class IScriptDedicatedServerUtils {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptDedicatedServerUtils() = default;
+    virtual ~IScriptDedicatedServerUtils();
 
     virtual void stopServer() = 0;
 

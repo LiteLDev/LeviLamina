@@ -24,11 +24,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DefaultLevelDrawSetupCleanupStrategy() /*override*/ = default;
+    virtual ~DefaultLevelDrawSetupCleanupStrategy() /*override*/;
 
     virtual void setupScreen(::ScreenContext& screenContext) /*override*/;
 
     virtual ::EyeRenderingModeBit getEyeRenderingMode() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

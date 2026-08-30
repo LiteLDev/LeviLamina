@@ -15,7 +15,7 @@ class BeaconPaymentContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BeaconPaymentContainerValidation() /*override*/ = default;
+    virtual ~BeaconPaymentContainerValidation() /*override*/;
 
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
@@ -32,6 +32,12 @@ public:
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
     virtual bool canDestroy(::ContainerScreenContext const& screenContext) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

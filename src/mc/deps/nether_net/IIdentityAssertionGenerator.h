@@ -8,7 +8,7 @@ class IIdentityAssertionGenerator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IIdentityAssertionGenerator() = default;
+    virtual ~IIdentityAssertionGenerator();
 
     virtual ::std::optional<::std::string> createAssertion(::std::string const& fingerprints) = 0;
 

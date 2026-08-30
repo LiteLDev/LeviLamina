@@ -26,7 +26,13 @@ public:
 
     virtual uint checkPacket(::MinecraftPacketIds packet) /*override*/;
 
-    virtual ~CompositePacketLimitAlgorithm() /*override*/ = default;
+    virtual ~CompositePacketLimitAlgorithm() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

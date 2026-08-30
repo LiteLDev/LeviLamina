@@ -11,7 +11,7 @@ struct IHitResultContainer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IHitResultContainer() = default;
+    virtual ~IHitResultContainer();
 
     virtual void addHitResult(::HitResult solidHit, ::HitResult liquidHit) = 0;
 

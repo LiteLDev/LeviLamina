@@ -210,9 +210,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI
+        Client(::std::unique_ptr<::ConnectionRequest> primaryRequest, ::PlayerAuthenticationInfo primaryPlayerInfo);
+
         MCAPI void addSubClientPlayerInfo(::SubClientId subClientId, ::PlayerAuthenticationInfo playerInfo);
 
         MCAPI void removeSubClientPlayerInfo(::SubClientId subClientId);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void*
+        $ctor(::std::unique_ptr<::ConnectionRequest> primaryRequest, ::PlayerAuthenticationInfo primaryPlayerInfo);
         // NOLINTEND
     };
 
@@ -307,7 +317,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerNetworkHandler() /*override*/ = default;
+    virtual ~ServerNetworkHandler() /*override*/;
 
     virtual void onValidPacketReceived(
         ::NetworkIdentifier const& netId,

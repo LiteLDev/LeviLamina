@@ -15,7 +15,7 @@ class ScriptPrintLogger : public ::Scripting::IPrinter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptPrintLogger() /*override*/ = default;
+    virtual ~ScriptPrintLogger() /*override*/;
 
     virtual void onInfo(::Scripting::ContextId, ::std::string_view message) const /*override*/;
 
@@ -36,6 +36,12 @@ public:
         ::entt::meta_any const&,
         bool isHandled
     ) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -18,7 +18,7 @@ class ISignalingInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISignalingInterface() = default;
+    virtual ~ISignalingInterface();
 
     virtual void SendSignal(
         ::NetherNet::NetworkID                              from,

@@ -6,7 +6,7 @@ class ITaskExecutionContext {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITaskExecutionContext() = default;
+    virtual ~ITaskExecutionContext();
 
     virtual bool isAsync() const = 0;
 

@@ -14,9 +14,15 @@ class BarrierBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BarrierBlock() /*override*/ = default;
+    virtual ~BarrierBlock() /*override*/;
 
     virtual float getShadeBrightness(::Block const& block) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

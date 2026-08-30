@@ -84,7 +84,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InventoryItemRenderer() /*override*/ = default;
+    virtual ~InventoryItemRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 

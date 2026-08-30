@@ -19,7 +19,7 @@ class MineshaftFeature : public ::StructureFeature {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MineshaftFeature() /*override*/ = default;
+    virtual ~MineshaftFeature() /*override*/;
 
     virtual bool isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
@@ -39,6 +39,12 @@ public:
         ::ChunkPos const&                    lc,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

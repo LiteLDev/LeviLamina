@@ -36,7 +36,7 @@ public:
     virtual bool
     _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const = 0;
 
-    virtual ~LootPoolEntry() = default;
+    virtual ~LootPoolEntry();
 
     virtual ::LootPoolEntry::EntryType getEntryType() const = 0;
     // NOLINTEND

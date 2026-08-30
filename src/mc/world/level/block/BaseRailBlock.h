@@ -49,6 +49,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI Rail(::BlockSource& region, ::BlockPos const& pos);
+
         MCAPI ::std::shared_ptr<::BaseRailBlock::Rail> getRail(::BlockPos const& p);
 
         MCAPI bool hasNeighborRail(::BlockPos const& pos);
@@ -58,6 +60,12 @@ public:
         MCAPI void removeSoftConnections();
 
         MCAPI void updateConnections(int direction);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::BlockSource& region, ::BlockPos const& pos);
         // NOLINTEND
     };
 

@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsApplyContentProgressHandler() /*override*/ = default;
+    virtual ~RealmsApplyContentProgressHandler() /*override*/;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -62,6 +62,12 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::std::string const& title, ::std::function<bool()> tickCallback, ::std::function<void()> cancelCallback);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

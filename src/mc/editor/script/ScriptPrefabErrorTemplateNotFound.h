@@ -7,6 +7,18 @@
 
 namespace Editor::ScriptModule {
 
-struct ScriptPrefabErrorTemplateNotFound : public ::Scripting::BaseError {};
+struct ScriptPrefabErrorTemplateNotFound : public ::Scripting::BaseError {
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptPrefabErrorTemplateNotFound();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
+};
 
 } // namespace Editor::ScriptModule

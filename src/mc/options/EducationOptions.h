@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EducationOptions() /*override*/ = default;
+    virtual ~EducationOptions() /*override*/;
 
     virtual void onActiveResourcePacksChanged(::ResourcePackManager& manager) /*override*/;
     // NOLINTEND
@@ -63,6 +63,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ResourcePackManager* packMan);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

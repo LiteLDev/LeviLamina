@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TouchTapOrHoldGlyphButtonControl() /*override*/ = default;
+    virtual ~TouchTapOrHoldGlyphButtonControl() /*override*/;
 
     virtual void render(::InputRenderContext& context) const /*override*/;
 
@@ -87,6 +87,12 @@ public:
         int                                uvHeight,
         float                              glyphScale
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

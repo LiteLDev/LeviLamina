@@ -46,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InvitableFriendsListFacet() /*override*/ = default;
+    virtual ~InvitableFriendsListFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -91,6 +91,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>                     userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>                resourceAllowList
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

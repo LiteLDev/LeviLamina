@@ -15,7 +15,7 @@ class IPaperDollRenderContext {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPaperDollRenderContext() = default;
+    virtual ~IPaperDollRenderContext();
 
     virtual void update(::PaperDollUpdateOwnerData const& data) = 0;
 

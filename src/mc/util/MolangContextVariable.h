@@ -21,4 +21,16 @@ public:
 public:
     // prevent constructor by default
     MolangContextVariable();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit MolangContextVariable(::HashedString value);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::HashedString value);
+    // NOLINTEND
 };

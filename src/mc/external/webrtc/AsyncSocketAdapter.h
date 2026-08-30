@@ -70,7 +70,7 @@ public:
 
     virtual void OnCloseEvent(::webrtc::Socket* socket, int err);
 
-    virtual ~AsyncSocketAdapter() /*override*/;
+    virtual ~AsyncSocketAdapter() /*override*/ = default;
     // NOLINTEND
 
 public:

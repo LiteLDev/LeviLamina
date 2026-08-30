@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     virtual int FindUnusedId() /*override*/;
 
-    virtual ~UsedRtpHeaderExtensionIds() /*override*/;
+    virtual ~UsedRtpHeaderExtensionIds() /*override*/ = default;
     // NOLINTEND
 
 public:

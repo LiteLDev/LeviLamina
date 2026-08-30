@@ -65,11 +65,19 @@ public:
 
     MCAPI ::ui::ViewRequest
     receiveEvent(uint buttonId, ::ButtonEventType buttonType, ::std::string const& collectionName, int collectionIndex);
+
+    MCAPI ~ContainerInteractionStateMachine();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -172,7 +172,7 @@ public:
 
     virtual ::webrtc::AudioMixer::Source* source() = 0;
 
-    virtual ~AudioReceiveStreamInterface() /*override*/ = default;
+    virtual ~AudioReceiveStreamInterface() /*override*/;
     // NOLINTEND
 };
 

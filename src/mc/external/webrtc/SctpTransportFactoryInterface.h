@@ -15,7 +15,7 @@ class SctpTransportFactoryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SctpTransportFactoryInterface() = default;
+    virtual ~SctpTransportFactoryInterface();
 
     virtual ::std::unique_ptr<::webrtc::SctpTransportInternal>
     CreateSctpTransport(::webrtc::Environment const& env, ::webrtc::DtlsTransportInternal* transport) = 0;

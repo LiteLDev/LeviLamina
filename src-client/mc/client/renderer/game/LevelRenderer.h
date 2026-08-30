@@ -138,7 +138,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelRenderer() /*override*/ = default;
+    virtual ~LevelRenderer() /*override*/;
 
     virtual void onAppSuspended() /*override*/;
 

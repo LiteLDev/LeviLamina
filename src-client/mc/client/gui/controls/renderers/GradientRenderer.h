@@ -33,12 +33,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GradientRenderer() /*override*/ = default;
+    virtual ~GradientRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
     virtual void
     render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

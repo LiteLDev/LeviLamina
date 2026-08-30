@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemEventListener() = default;
+    virtual ~ItemEventListener();
 
     virtual ::EventResult onInventoryItemOpened(bool workbench);
 

@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldHistoryPackSource() /*override*/ = default;
+    virtual ~WorldHistoryPackSource() /*override*/;
 
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
@@ -67,6 +67,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::WorldHistoryPackSourceOptions options);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

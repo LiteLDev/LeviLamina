@@ -13,7 +13,7 @@ class IRepositoryFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRepositoryFactory() = default;
+    virtual ~IRepositoryFactory();
 
     virtual ::std::shared_ptr<::RepositorySources> createSources(::IResourcePackRepository const& repository) const = 0;
 

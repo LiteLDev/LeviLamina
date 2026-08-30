@@ -40,6 +40,28 @@ public:
 public:
     // prevent constructor by default
     StorageContentItem();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StorageContentItem(
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList,
+        ::World::IWorldCloudSyncer const&                                 worldCloudSyncer,
+        ::std::shared_ptr<::ContentItem const> const&                     contentItem,
+        bool                                                              isSelected
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList,
+        ::World::IWorldCloudSyncer const&                                 worldCloudSyncer,
+        ::std::shared_ptr<::ContentItem const> const&                     contentItem,
+        bool                                                              isSelected
+    );
+    // NOLINTEND
 };
 
 } // namespace OreUI

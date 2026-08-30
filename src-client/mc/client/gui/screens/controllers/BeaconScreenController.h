@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BeaconScreenController() /*override*/ = default;
+    virtual ~BeaconScreenController() /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
 
@@ -57,6 +57,12 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -28,7 +28,7 @@ public:
 
     virtual void PullRenderData(int, int, uint64, uint64, void*, int64*, int64*) = 0;
 
-    virtual ~AudioTransport() = default;
+    virtual ~AudioTransport();
     // NOLINTEND
 };
 

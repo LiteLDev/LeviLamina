@@ -16,9 +16,7 @@ class ScriptWidgetErrorInvalidObject : public ::Scripting::BaseError {
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI ScriptWidgetErrorInvalidObject();
-#endif
     // NOLINTEND
 
 public:
@@ -30,9 +28,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor();
-#endif
     // NOLINTEND
 };
 

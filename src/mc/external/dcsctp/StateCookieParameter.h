@@ -35,7 +35,7 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~StateCookieParameter() /*override*/;
+    virtual ~StateCookieParameter() /*override*/ = default;
     // NOLINTEND
 
 public:

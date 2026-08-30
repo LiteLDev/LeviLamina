@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OpenSSLDigest() /*override*/ = default;
+    virtual ~OpenSSLDigest() /*override*/;
 
     virtual uint64 Size() const /*override*/;
 

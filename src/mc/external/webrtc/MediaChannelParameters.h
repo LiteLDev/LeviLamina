@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MediaChannelParameters() = default;
+    virtual ~MediaChannelParameters();
 
     virtual ::std::map<::std::string, ::std::string> ToStringMap() const;
     // NOLINTEND

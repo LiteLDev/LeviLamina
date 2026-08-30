@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MemoryBlock() = default;
+    virtual ~MemoryBlock();
 
     virtual void* more(uint) /*override*/;
 

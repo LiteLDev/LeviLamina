@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AutoSocketServerThread() /*override*/ = default;
+    virtual ~AutoSocketServerThread() /*override*/;
     // NOLINTEND
 };
 

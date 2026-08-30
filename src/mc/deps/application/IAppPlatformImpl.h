@@ -25,7 +25,7 @@ class IAppPlatformImpl {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAppPlatformImpl() = default;
+    virtual ~IAppPlatformImpl();
 
 #ifdef LL_PLAT_C
     virtual ::Bedrock::NonOwnerPointer<::SuspendHandler>

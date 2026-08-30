@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TurnChannelBindRequest() /*override*/ = default;
+    virtual ~TurnChannelBindRequest() /*override*/;
 
     virtual void OnSent() /*override*/;
 

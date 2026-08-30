@@ -15,4 +15,16 @@ public:
 public:
     // prevent constructor by default
     MobEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI MobEvent(::std::string name, ::std::string localizableName, bool val);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string name, ::std::string localizableName, bool val);
+    // NOLINTEND
 };

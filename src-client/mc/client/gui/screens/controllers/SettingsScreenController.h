@@ -81,7 +81,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SettingsScreenController() /*override*/ = default;
+    virtual ~SettingsScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 

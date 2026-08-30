@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OcelotSitOnBlockGoal() /*override*/ = default;
+    virtual ~OcelotSitOnBlockGoal() /*override*/;
 
     virtual bool canUse() /*override*/;
 
@@ -43,6 +43,12 @@ public:
     virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

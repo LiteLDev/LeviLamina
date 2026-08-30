@@ -78,7 +78,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDebugger() /*override*/ = default;
+    virtual ~ScriptDebugger() /*override*/;
 
     virtual ::ScriptDebuggerSettings const& getSettings() const /*override*/;
 

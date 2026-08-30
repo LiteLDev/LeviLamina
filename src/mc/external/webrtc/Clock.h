@@ -14,7 +14,7 @@ class Clock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Clock() = default;
+    virtual ~Clock();
 
     virtual ::webrtc::Timestamp CurrentTime() = 0;
 

@@ -13,7 +13,7 @@ class AudioFrameProcessor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AudioFrameProcessor() = default;
+    virtual ~AudioFrameProcessor();
 
     virtual void Process(::std::unique_ptr<::webrtc::AudioFrame>) = 0;
 

@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ModalDialogPopup() /*override*/ = default;
+    virtual ~ModalDialogPopup() /*override*/;
 
     virtual void onOpen() /*override*/;
     // NOLINTEND

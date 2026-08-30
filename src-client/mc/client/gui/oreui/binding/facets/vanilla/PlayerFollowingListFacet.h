@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerFollowingListFacet() /*override*/ = default;
+    virtual ~PlayerFollowingListFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -70,6 +70,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager const> userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>  resourceAllowList
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

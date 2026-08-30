@@ -51,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NativeRuntime() /*override*/ = default;
+    virtual ~NativeRuntime() /*override*/;
 
     virtual ::std::optional<::Scripting::ScriptContext> createContext(
         ::Scripting::ModuleBindingBundle&& bindings,
@@ -125,6 +125,12 @@ public:
 
     virtual ::std::optional<::Scripting::TypeNameInfo>
     getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

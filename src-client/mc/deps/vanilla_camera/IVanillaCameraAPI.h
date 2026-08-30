@@ -78,7 +78,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IVanillaCameraAPI() = default;
+    virtual ~IVanillaCameraAPI();
 
     virtual ::std::optional<::IVanillaCameraAPI::DamageBobParameters>
     tryGetDamageBobParameters(::WeakRef<::EntityContext> const actorRef, float frameInterpolation) const = 0;

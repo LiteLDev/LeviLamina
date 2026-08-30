@@ -13,7 +13,7 @@ class AsyncDnsResolverResult {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncDnsResolverResult() = default;
+    virtual ~AsyncDnsResolverResult();
 
     virtual bool GetResolvedAddress(int family, ::webrtc::SocketAddress* addr) const = 0;
 

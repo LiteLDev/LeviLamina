@@ -16,7 +16,7 @@ class PreviewContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PreviewContainerValidation() /*override*/ = default;
+    virtual ~PreviewContainerValidation() /*override*/;
 
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
@@ -33,6 +33,12 @@ public:
         ::Container const&              container,
         int const                       slot
     ) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

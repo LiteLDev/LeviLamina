@@ -89,7 +89,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ProgressScreenController() /*override*/ = default;
+    virtual ~ProgressScreenController() /*override*/;
 
     virtual void onCreation() /*override*/;
 

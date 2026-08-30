@@ -46,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldClockRegistryServer() /*override*/ = default;
+    virtual ~WorldClockRegistryServer() /*override*/;
 
     virtual void tick(::PacketSender& packetSender, ::LevelData const& levelData) /*override*/;
     // NOLINTEND
@@ -73,6 +73,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::cereal::ReflectionCtx& cerealContext);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

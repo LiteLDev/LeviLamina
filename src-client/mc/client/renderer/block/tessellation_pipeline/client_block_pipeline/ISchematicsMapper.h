@@ -24,7 +24,7 @@ struct ISchematicsMapper {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISchematicsMapper() = default;
+    virtual ~ISchematicsMapper();
 
     virtual void execute(
         ::std::vector<::ClientBlockPipeline::CustomGeometryBox>&  customBoxes,

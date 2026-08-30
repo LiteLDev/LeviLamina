@@ -25,7 +25,7 @@ class ITickingArea {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITickingArea() = default;
+    virtual ~ITickingArea();
 
     virtual ::mce::UUID const& getId() const = 0;
 

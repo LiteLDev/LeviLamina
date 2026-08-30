@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RandomBlockStateFunction() /*override*/ = default;
+    virtual ~RandomBlockStateFunction() /*override*/;
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
@@ -48,6 +48,12 @@ public:
     // NOLINTBEGIN
     MCAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult
     _remapComplexAliasBlock(int randomInt, ::Block const*& inOutItemBlock, ::std::string const& originalNameStr);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

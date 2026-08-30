@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftIdentityAssertion() /*override*/ = default;
+    virtual ~MinecraftIdentityAssertion() /*override*/;
 
     virtual ::std::optional<::std::string> createAssertion(::std::string const& fingerprints) /*override*/;
 

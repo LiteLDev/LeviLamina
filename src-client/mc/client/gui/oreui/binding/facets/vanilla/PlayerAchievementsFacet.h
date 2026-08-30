@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerAchievementsFacet() /*override*/ = default;
+    virtual ~PlayerAchievementsFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -78,6 +78,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>      userManager,
         ::persona::AchievementOfferCollectionManager&              achievementOfferCollectionManager
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

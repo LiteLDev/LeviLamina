@@ -36,7 +36,7 @@ public:
 
     virtual char const* type() const /*override*/;
 
-    virtual ~RTCPeerConnectionStats() /*override*/ = default;
+    virtual ~RTCPeerConnectionStats() /*override*/;
     // NOLINTEND
 
 public:

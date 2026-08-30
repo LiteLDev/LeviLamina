@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsStoriesReportsQueriesFacet() /*override*/ = default;
+    virtual ~RealmsStoriesReportsQueriesFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -80,6 +80,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>          profanityContext,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

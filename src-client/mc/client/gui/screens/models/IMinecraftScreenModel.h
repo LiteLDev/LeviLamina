@@ -19,7 +19,7 @@ class IMinecraftScreenModel {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMinecraftScreenModel() = default;
+    virtual ~IMinecraftScreenModel();
 
     virtual ::SubClientId getSubClientId() const = 0;
 

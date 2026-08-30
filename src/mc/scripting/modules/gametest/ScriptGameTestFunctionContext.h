@@ -28,7 +28,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptGameTestFunctionContext() /*override*/ = default;
+    virtual ~ScriptGameTestFunctionContext() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

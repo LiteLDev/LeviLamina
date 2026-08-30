@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CreativeItemRegistry() /*override*/ = default;
+    virtual ~CreativeItemRegistry() /*override*/;
     // NOLINTEND
 
 public:
@@ -69,6 +69,12 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void* $ctor();
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

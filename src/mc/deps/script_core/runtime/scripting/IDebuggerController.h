@@ -8,7 +8,7 @@ class IDebuggerController {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDebuggerController() = default;
+    virtual ~IDebuggerController();
 
     virtual bool attach(
         bool                                      performHandshake,

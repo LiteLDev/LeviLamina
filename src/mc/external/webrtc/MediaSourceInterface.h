@@ -25,7 +25,7 @@ public:
 
     virtual bool remote() const = 0;
 
-    virtual ~MediaSourceInterface() /*override*/ = default;
+    virtual ~MediaSourceInterface() /*override*/;
     // NOLINTEND
 };
 

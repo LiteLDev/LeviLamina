@@ -18,6 +18,18 @@ public:
     TypeNameInfo& operator=(TypeNameInfo const&);
     TypeNameInfo(TypeNameInfo const&);
     TypeNameInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI TypeNameInfo(::std::string bindingName, ::std::string typeName, bool bound);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string bindingName, ::std::string typeName, bool bound);
+    // NOLINTEND
 };
 
 } // namespace Scripting

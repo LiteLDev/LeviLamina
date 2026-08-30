@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BannerModel() /*override*/ = default;
+    virtual ~BannerModel() /*override*/;
     // NOLINTEND
 
 public:
@@ -39,5 +39,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(uint textureWidth, uint textureHeight);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -26,7 +26,7 @@ class EditorSettingsServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorSettingsServiceProvider() = default;
+    virtual ~EditorSettingsServiceProvider();
 
     virtual ::Editor::Settings::Audio& getAudioSettings() = 0;
 

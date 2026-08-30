@@ -25,7 +25,7 @@ class IDimension {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDimension() = default;
+    virtual ~IDimension();
 
     virtual bool isNaturalDimension() const = 0;
 
@@ -59,6 +59,12 @@ public:
     ) const = 0;
 
     virtual void updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorDimensionTransferer() /*override*/ = default;
+    virtual ~ActorDimensionTransferer() /*override*/;
 
     virtual void setupActorForTransfer(::Actor& actor) /*override*/;
 
@@ -67,6 +67,12 @@ public:
         ::std::unique_ptr<::IActorDimensionTransferProxy> actorDimensionTransferProxy,
         ::Bedrock::NotNullNonOwnerPtr<::ActorManager>     actorManager
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

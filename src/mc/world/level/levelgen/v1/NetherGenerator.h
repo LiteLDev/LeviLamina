@@ -73,7 +73,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetherGenerator() /*override*/ = default;
+    virtual ~NetherGenerator() /*override*/;
 
     virtual void loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad) /*override*/;
 

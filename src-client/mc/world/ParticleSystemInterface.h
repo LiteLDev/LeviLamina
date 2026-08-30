@@ -18,7 +18,7 @@ class ParticleSystemInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleSystemInterface() = default;
+    virtual ~ParticleSystemInterface();
 
     virtual float getDistanceToCameraSqr(::Vec3 const& pos) const = 0;
 

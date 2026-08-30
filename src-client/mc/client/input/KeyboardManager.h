@@ -12,7 +12,7 @@ class KeyboardManager {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~KeyboardManager() = default;
+    virtual ~KeyboardManager();
 
     virtual bool tryEnableKeyboard(
         ::std::string const& currentText,

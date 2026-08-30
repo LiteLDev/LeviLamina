@@ -31,13 +31,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TreatmentPackSource() /*override*/ = default;
+    virtual ~TreatmentPackSource() /*override*/;
 
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
     virtual ::PackType getPackType() const /*override*/;
 
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

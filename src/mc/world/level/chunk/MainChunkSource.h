@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MainChunkSource() /*override*/ = default;
+    virtual ~MainChunkSource() /*override*/;
 
     virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const& cp) /*override*/;
 
@@ -45,6 +45,12 @@ public:
     virtual bool canCreateViews() const /*override*/;
 
     virtual void setLevelChunk(::std::shared_ptr<::LevelChunk> lc) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

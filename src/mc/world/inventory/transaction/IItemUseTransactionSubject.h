@@ -23,7 +23,7 @@ class IItemUseTransactionSubject {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IItemUseTransactionSubject() = default;
+    virtual ~IItemUseTransactionSubject();
 
     virtual bool isAlive() const = 0;
 

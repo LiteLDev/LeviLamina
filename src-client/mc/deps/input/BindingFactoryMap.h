@@ -11,7 +11,7 @@ class BindingFactoryMap {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BindingFactoryMap() = default;
+    virtual ~BindingFactoryMap();
 
     virtual ::BindingFactory const& getBindingFactory(int controllerId) const = 0;
     // NOLINTEND

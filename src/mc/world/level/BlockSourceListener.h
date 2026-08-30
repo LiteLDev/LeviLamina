@@ -19,7 +19,7 @@ class BlockSourceListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockSourceListener() = default;
+    virtual ~BlockSourceListener();
 
     virtual void onSourceCreated(::BlockSource& source);
 

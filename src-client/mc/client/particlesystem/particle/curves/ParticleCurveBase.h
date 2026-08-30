@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleCurveBase() = default;
+    virtual ~ParticleCurveBase();
 
     virtual void
     initializeFromData(::SharedTypes::v1_20_80::ParticleCurveBase& data, ::HashedString const& curveName) = 0;
@@ -38,6 +38,12 @@ public:
     virtual void evaluateCurve(::RenderParams& renderParams) = 0;
 
     virtual ::ParticleSystem::ParticleCurveType getCurveType() const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TCPConnection() /*override*/ = default;
+    virtual ~TCPConnection() /*override*/;
 
     virtual int Send(void const* data, uint64 size, ::webrtc::AsyncSocketPacketOptions const& options) /*override*/;
 

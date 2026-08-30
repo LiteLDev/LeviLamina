@@ -13,7 +13,7 @@ class IScriptSentryRequestSender {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptSentryRequestSender() = default;
+    virtual ~IScriptSentryRequestSender();
 
     virtual void sendRequest(::SentryEnvelope sentryEvent) = 0;
     // NOLINTEND

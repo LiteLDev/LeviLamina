@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDebuggerWatchdog() /*override*/ = default;
+    virtual ~ScriptDebuggerWatchdog() /*override*/;
 
     virtual bool requireClose() const /*override*/;
 
@@ -32,13 +32,17 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $requireClose() const;
 
-#ifdef LL_PLAT_S
     MCNAPI void $startListenTimeout(::std::chrono::seconds duration);
-#endif
 
     MCNAPI bool $listenTimeoutExpired() const;
 

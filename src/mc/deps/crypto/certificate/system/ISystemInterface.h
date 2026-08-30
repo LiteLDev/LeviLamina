@@ -13,7 +13,7 @@ class ISystemInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISystemInterface() = default;
+    virtual ~ISystemInterface();
 
     virtual ::std::string serialize(::Crypto::Certificate::Encoding encoding) const = 0;
 

@@ -136,7 +136,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContentLog() /*override*/ = default;
+    virtual ~ContentLog() /*override*/;
     // NOLINTEND
 
 public:
@@ -163,6 +163,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

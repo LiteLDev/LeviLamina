@@ -26,6 +26,30 @@ public:
 public:
     // prevent constructor by default
     SettingsConfirmationRequest();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SettingsConfirmationRequest(
+        ::OreUI::Detail::IPropertyObject* parent,
+        ::std::string                     title,
+        ::std::string                     description,
+        ::std::string                     acceptLabel,
+        ::std::string                     cancelLabel
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::OreUI::Detail::IPropertyObject* parent,
+        ::std::string                     title,
+        ::std::string                     description,
+        ::std::string                     acceptLabel,
+        ::std::string                     cancelLabel
+    );
+    // NOLINTEND
 };
 
 } // namespace OreUI

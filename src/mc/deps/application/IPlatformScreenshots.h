@@ -11,7 +11,7 @@ class IPlatformScreenshots {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPlatformScreenshots() = default;
+    virtual ~IPlatformScreenshots();
 
     virtual ::std::optional<::ScreenshotOptions> getExtraLevelSaveDataIconParams(::std::string const&) const = 0;
     // NOLINTEND

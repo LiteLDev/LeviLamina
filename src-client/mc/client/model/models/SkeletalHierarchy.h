@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SkeletalHierarchy() = default;
+    virtual ~SkeletalHierarchy();
     // NOLINTEND
 
 public:
@@ -35,5 +35,11 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::vector<::std::unique_ptr<::SkeletalHierarchy>>& _globalSkeletalHierarchies();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

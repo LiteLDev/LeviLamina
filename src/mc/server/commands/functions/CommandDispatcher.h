@@ -15,9 +15,15 @@ class CommandDispatcher : public ::ICommandDispatcher {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandDispatcher() /*override*/ = default;
+    virtual ~CommandDispatcher() /*override*/;
 
     virtual int performCommand(::CommandOrigin const& origin, ::Command& command) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

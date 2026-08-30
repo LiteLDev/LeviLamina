@@ -15,7 +15,7 @@ class IStructureConstraint {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IStructureConstraint() = default;
+    virtual ~IStructureConstraint();
 
     virtual bool isSatisfied(
         ::IBlockWorldGenAPI const& target,

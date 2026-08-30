@@ -49,6 +49,8 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI ActiveDirectoryPopup(::ActiveDirectoryPopup&&);
+
     MCNAPI ActiveDirectoryPopup(::ActiveDirectoryPopup const&);
 
     MCNAPI ::std::string getTTSMessageBody() const;
@@ -78,6 +80,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::ActiveDirectoryPopup&&);
+
     MCNAPI void* $ctor(::ActiveDirectoryPopup const&);
 #endif
     // NOLINTEND

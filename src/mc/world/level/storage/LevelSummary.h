@@ -81,11 +81,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI LevelSummary();
 
     MCAPI LevelSummary(::LevelSummary const&);
 
+    MCAPI LevelSummary(
+        ::std::string const& levelId,
+        ::LevelData const&   levelData,
+        ::Core::Path const&  levelDirectory,
+        ::Core::Path const&  levelInfoDirectory,
+        bool                 isBetaRetailLevel
+    );
+
+#ifdef LL_PLAT_C
     MCAPI LevelSummary(
         ::std::string const&                  id,
         ::std::string const&                  name,
@@ -178,11 +186,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::LevelSummary const&);
 
+    MCAPI void* $ctor(
+        ::std::string const& levelId,
+        ::LevelData const&   levelData,
+        ::Core::Path const&  levelDirectory,
+        ::Core::Path const&  levelInfoDirectory,
+        bool                 isBetaRetailLevel
+    );
+
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::std::string const&                  id,
         ::std::string const&                  name,

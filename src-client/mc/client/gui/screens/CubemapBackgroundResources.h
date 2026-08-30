@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CubemapBackgroundResources() /*override*/ = default;
+    virtual ~CubemapBackgroundResources() /*override*/;
 
     virtual void onActiveResourcePacksChanged(::ResourcePackManager&) /*override*/;
     // NOLINTEND

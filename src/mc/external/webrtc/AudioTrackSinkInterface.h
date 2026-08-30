@@ -27,7 +27,7 @@ public:
 
     virtual int NumPreferredChannels() const;
 
-    virtual ~AudioTrackSinkInterface() = default;
+    virtual ~AudioTrackSinkInterface();
     // NOLINTEND
 
 public:

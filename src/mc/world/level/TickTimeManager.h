@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TickTimeManager() = default;
+    virtual ~TickTimeManager();
 
     virtual void update();
 

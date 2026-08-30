@@ -11,7 +11,7 @@ struct IServerNetworkController {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IServerNetworkController() = default;
+    virtual ~IServerNetworkController();
 
     virtual bool isDedicatedServer() const = 0;
 

@@ -92,7 +92,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourcePacksScreenController() /*override*/ = default;
+    virtual ~ResourcePacksScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

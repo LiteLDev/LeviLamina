@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OnlineSafetyDialogScreenController() /*override*/ = default;
+    virtual ~OnlineSafetyDialogScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -47,6 +47,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::OnlineSafetyProgressHandler& handler);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

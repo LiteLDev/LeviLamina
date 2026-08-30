@@ -19,7 +19,7 @@ class IScriptBlockCustomComponentReader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptBlockCustomComponentReader() = default;
+    virtual ~IScriptBlockCustomComponentReader();
 
     virtual ::std::vector<::std::string_view> getValidComponentsForBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> const& permutation
@@ -31,6 +31,12 @@ public:
         ::std::string_view                    componentName,
         ::Scripting::WeakLifetimeScope const& scope
     ) const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

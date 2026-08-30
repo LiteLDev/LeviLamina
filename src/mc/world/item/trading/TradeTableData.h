@@ -19,4 +19,24 @@ public:
 public:
     // prevent constructor by default
     TradeTableData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TradeTableData(
+        ::SharedTypes::v1_21_30::TradeTableData parsedData,
+        ::ItemRegistryRef const                 itemRegistry,
+        bool                                    usingUpcomingCreatorFeaturesExperiment
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::SharedTypes::v1_21_30::TradeTableData parsedData,
+        ::ItemRegistryRef const                 itemRegistry,
+        bool                                    usingUpcomingCreatorFeaturesExperiment
+    );
+    // NOLINTEND
 };

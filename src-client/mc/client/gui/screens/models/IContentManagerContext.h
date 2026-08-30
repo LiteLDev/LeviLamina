@@ -19,7 +19,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IContentManagerContext() = default;
+    virtual ~IContentManagerContext();
 
     virtual ::ContentView&
     getContentView(::brstd::move_only_function<bool(::std::shared_ptr<::ContentItem const> const&)> predicate) = 0;

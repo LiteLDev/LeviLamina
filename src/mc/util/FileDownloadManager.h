@@ -39,11 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~FileDownloadManager() = default;
-#else // LL_PLAT_C
     virtual ~FileDownloadManager();
-#endif
 
     virtual void update();
 
@@ -59,6 +55,14 @@ public:
     MCNAPI FileDownloadManager(
         ::std::shared_ptr<::IFilePicker>          filePicker,
         ::std::shared_ptr<::IFileChunkDownloader> fileDownloader
+    );
+
+    MCNAPI void _writeData(
+        ::std::vector<uchar>                data,
+        uint64                              writeBytes,
+        uint64                              offset,
+        uint64                              progress,
+        ::std::function<void(uint64, bool)> writeComplete
     );
 
     MCNAPI void downloadFile(

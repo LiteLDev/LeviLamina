@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EmoteWheelScreenController() /*override*/ = default;
+    virtual ~EmoteWheelScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -62,6 +62,12 @@ public:
         ::std::shared_ptr<::ClientInstanceScreenModel> clientModel,
         ::std::shared_ptr<::PersonaScreenModelCommon>  model
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

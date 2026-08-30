@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LabTableReaction() = default;
+    virtual ~LabTableReaction();
     // NOLINTEND
 
 public:
@@ -45,5 +45,11 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::LabTableReaction>
     createReaction(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

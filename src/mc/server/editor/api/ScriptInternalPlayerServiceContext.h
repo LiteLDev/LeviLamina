@@ -51,6 +51,7 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI ScriptInternalPlayerServiceContext(::Editor::ScriptModule::ScriptInternalPlayerServiceContext const&);
+#endif
 
     MCNAPI ScriptInternalPlayerServiceContext(
         ::Editor::ServiceProviderCollection&  playerServices,
@@ -58,7 +59,6 @@ public:
     );
 
     MCNAPI ~ScriptInternalPlayerServiceContext();
-#endif
     // NOLINTEND
 
 public:
@@ -66,18 +66,16 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptInternalPlayerServiceContext const&);
+#endif
 
     MCNAPI void*
     $ctor(::Editor::ServiceProviderCollection& playerServices, ::Scripting::WeakLifetimeScope const& scope);
-#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

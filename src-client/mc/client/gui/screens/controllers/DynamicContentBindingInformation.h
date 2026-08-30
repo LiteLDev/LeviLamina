@@ -17,9 +17,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DynamicContentBindingInformation() = default;
+    virtual ~DynamicContentBindingInformation();
 
     virtual void createBindingData(::Json::Value const& contentData);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

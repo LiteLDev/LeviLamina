@@ -38,7 +38,7 @@ class IRuntime {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRuntime() = default;
+    virtual ~IRuntime();
 
     virtual ::Scripting::IRuntimeMetadata* getMetadata() const;
 

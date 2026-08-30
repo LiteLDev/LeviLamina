@@ -53,11 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~ContainerScreenSimulation() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~ContainerScreenSimulation() /*override*/;
-#endif
 
     virtual ::ContainerScreenActionResult
     tryPlaceOne(::ContainerValidationSlotData const& srcSlot, ::ContainerValidationSlotData const& dstSlot);

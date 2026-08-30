@@ -65,6 +65,8 @@ public:
         ::Vec3 const&               cameraPos,
         ::ParticleRenderData const& particleRenderData
     );
+
+    MCAPI ~ParticleRenderer();
     // NOLINTEND
 
 public:
@@ -73,5 +75,11 @@ public:
     MCAPI static int64& mParticleRenderBucketCount();
 
     MCAPI static int64& mParticleRenderParticleCount();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

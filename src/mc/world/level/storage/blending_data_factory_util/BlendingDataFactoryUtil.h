@@ -26,6 +26,11 @@ MCNAPI void iterateDownCellColumnUntil(
     ::std::function<
         bool(::SubChunk const&, ::BlendingDataFactoryUtil::BorderCellEntry&, ::ChunkLocalHeight, ushort, int)> callback
 );
+
+MCNAPI void processBorderCells(
+    ::LevelChunk::Neighbors                         neighbors,
+    ::std::function<void(uint64, int, int, uint64)> forCellColumnFunc
+);
 // NOLINTEND
 
 } // namespace BlendingDataFactoryUtil

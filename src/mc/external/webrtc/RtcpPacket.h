@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtcpPacket() = default;
+    virtual ~RtcpPacket();
 
     virtual uint64 BlockLength() const = 0;
 

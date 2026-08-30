@@ -138,7 +138,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AudioSendStream() /*override*/ = default;
+    virtual ~AudioSendStream() /*override*/;
 
     virtual ::webrtc::AudioSendStream::Config const& GetConfig() const = 0;
 

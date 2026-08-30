@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HudContainerManagerController() /*override*/ = default;
+    virtual ~HudContainerManagerController() /*override*/;
 
     virtual void registerContainerCallbacks() /*override*/;
     // NOLINTEND
@@ -33,6 +33,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void refreshHotbar();
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

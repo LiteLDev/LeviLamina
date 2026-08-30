@@ -8,7 +8,7 @@ class FileSizePresetToken {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileSizePresetToken() = default;
+    virtual ~FileSizePresetToken();
     // NOLINTEND
 };
 

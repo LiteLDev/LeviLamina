@@ -47,12 +47,20 @@ public:
     setExcludedEntityTypeFamilyTargets(::std::optional<::std::vector<::std::string>> entityTypeFamilyTargets);
 
     MCAPI void setLiquidTargetingItems(::std::optional<::std::vector<::std::string>> items);
+
+    MCAPI ~ScriptAimAssistPresetSettings();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

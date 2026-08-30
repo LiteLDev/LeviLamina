@@ -81,7 +81,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~HistoryItem() = default;
+        virtual ~HistoryItem();
 
         virtual bool isValidStartItem() const = 0;
 
@@ -98,6 +98,12 @@ public:
         virtual float getYHeadRot() const = 0;
 
         virtual bool isOnGround() const = 0;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -202,13 +208,19 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~RuntimePredictionData() = default;
+        virtual ~RuntimePredictionData();
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI void reset();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -302,6 +314,40 @@ public:
         virtual float getYHeadRot() const /*override*/;
 
         virtual bool isOnGround() const /*override*/;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI MotionHistoryItem(
+            ::Vec3 const&                                                                   motion,
+            bool                                                                            onGround,
+            bool                                                                            isMotionHintItem,
+            ::std::chrono::steady_clock::time_point const&                                  timepoint,
+            ::std::shared_ptr<::PredictedMovementComponent::MoveHistoryItem const> const&   prevMoveItem,
+            ::std::shared_ptr<::PredictedMovementComponent::MotionHistoryItem const> const& prevMotionItem,
+            bool                                                                            didAdjustTimepoint,
+            ::std::chrono::milliseconds const&                                              timepointDiff
+        );
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI void* $ctor(
+            ::Vec3 const&                                                                   motion,
+            bool                                                                            onGround,
+            bool                                                                            isMotionHintItem,
+            ::std::chrono::steady_clock::time_point const&                                  timepoint,
+            ::std::shared_ptr<::PredictedMovementComponent::MoveHistoryItem const> const&   prevMoveItem,
+            ::std::shared_ptr<::PredictedMovementComponent::MotionHistoryItem const> const& prevMotionItem,
+            bool                                                                            didAdjustTimepoint,
+            ::std::chrono::milliseconds const&                                              timepointDiff
+        );
+#endif
         // NOLINTEND
 
     public:

@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/renderer/actor/v2/PreviousTransformationData.h"
+
 struct DataDrivenRendererContinuousData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 144> mUnk6f66c8;
+    ::ll::TypedStorage<8, 144, ::PreviousTransformationData> mPreviousTransformationData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataDrivenRendererContinuousData& operator=(DataDrivenRendererContinuousData const&);
-    DataDrivenRendererContinuousData(DataDrivenRendererContinuousData const&);
-    DataDrivenRendererContinuousData();
 };

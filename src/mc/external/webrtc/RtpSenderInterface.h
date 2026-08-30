@@ -70,7 +70,7 @@ public:
 
     virtual void SetFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> a1) /*override*/;
 
-    virtual ~RtpSenderInterface() /*override*/ = default;
+    virtual ~RtpSenderInterface() /*override*/;
     // NOLINTEND
 
 public:

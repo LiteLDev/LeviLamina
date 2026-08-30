@@ -97,7 +97,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OverworldGeneratorMultinoise() /*override*/ = default;
+    virtual ~OverworldGeneratorMultinoise() /*override*/;
 
     virtual ::BiomeSource const& getBiomeSource() const /*override*/;
 

@@ -51,12 +51,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptProjectRegion() = default;
+    virtual ~ScriptProjectRegion();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptProjectRegion(
+        ::WeakRef<::Editor::ProjectRegion>                        region,
+        ::Editor::ScriptModule::ScriptProjectRegionPlayerService* owner,
+        ::Scripting::WeakLifetimeScope const&                     scope
+    );
+
     MCNAPI ::Scripting::Error _getInvalidRegionError() const;
 
     MCNAPI ::Scripting::Error _getLocationError(::Vec3 const& location) const;
@@ -94,6 +100,22 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::WeakRef<::Editor::ProjectRegion>                        region,
+        ::Editor::ScriptModule::ScriptProjectRegionPlayerService* owner,
+        ::Scripting::WeakLifetimeScope const&                     scope
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

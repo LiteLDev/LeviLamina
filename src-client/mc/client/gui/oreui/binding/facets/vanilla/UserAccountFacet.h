@@ -63,7 +63,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UserAccountFacet() /*override*/ = default;
+    virtual ~UserAccountFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -150,6 +150,12 @@ public:
         ::std::shared_ptr<::Social::User>                    user,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

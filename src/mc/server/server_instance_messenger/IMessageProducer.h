@@ -12,7 +12,7 @@ class IMessageProducer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMessageProducer() = default;
+    virtual ~IMessageProducer();
 
     virtual void
     enqueueMessage(::brstd::move_only_function<void()> message, ::ServerInstanceMessenger::MessageAction action) = 0;

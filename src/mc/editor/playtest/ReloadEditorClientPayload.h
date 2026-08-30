@@ -12,7 +12,13 @@ class ReloadEditorClientPayload
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ReloadEditorClientPayload() /*override*/ = default;
+    virtual ~ReloadEditorClientPayload() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

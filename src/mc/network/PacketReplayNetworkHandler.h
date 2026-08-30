@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PacketReplayNetworkHandler() /*override*/ = default;
+    virtual ~PacketReplayNetworkHandler() /*override*/;
 
     virtual ::IncomingPacketFilterResult
     allowIncomingPacketId(::NetworkIdentifierWithSubId const&, ::MinecraftPacketIds, uint64) /*override*/;

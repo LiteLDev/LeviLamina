@@ -11,7 +11,7 @@ class InputMappingFactoryMap {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InputMappingFactoryMap() = default;
+    virtual ~InputMappingFactoryMap();
 
     virtual ::InputMappingFactory& getInputMappingFactory(int controllerId) = 0;
     // NOLINTEND

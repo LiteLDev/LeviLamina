@@ -93,6 +93,9 @@ public:
 
     MCAPI void $cancelDownloadPack();
 
+    MCAPI void
+    $getPackSizes(::std::vector<::std::string> const& productIds, ::std::function<void(uint64)> onCompleteCallback);
+
     MCAPI ::World::PackCheckResult
     $checkDlc(::std::string const& levelId, ::PackIdVersion const& packIdVersion, bool const isForRealms) const;
     // NOLINTEND

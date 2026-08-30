@@ -18,4 +18,21 @@ public:
 public:
     // prevent constructor by default
     ActorAnimationControllerStateTransition();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ActorAnimationControllerStateTransition(
+        ::std::string const&  targetStateName,
+        ::std::string const&  expression,
+        ::MolangVersion const molangVersion
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::string const& targetStateName, ::std::string const& expression, ::MolangVersion const molangVersion);
+    // NOLINTEND
 };

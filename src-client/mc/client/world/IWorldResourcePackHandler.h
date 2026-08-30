@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IWorldResourcePackHandler() = default;
+    virtual ~IWorldResourcePackHandler();
 
     virtual ::World::WorldPacks& loadPackContentForWorld(::LevelSummary const& levelSummary) = 0;
 

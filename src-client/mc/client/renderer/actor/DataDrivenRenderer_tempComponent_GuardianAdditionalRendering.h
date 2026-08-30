@@ -4,11 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/actor/DataDrivenRenderer_tempComponent.h"
+#include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
+#include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorRenderData;
 class BaseActorRenderContext;
+class DataDrivenModel;
+class DataDrivenRenderer;
+class ModelPart;
 class RenderParams;
 // clang-format on
 
@@ -16,23 +21,14 @@ class DataDrivenRenderer_tempComponent_GuardianAdditionalRendering : public ::Da
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk5801c0;
-    ::ll::UntypedStorage<1, 1>  mUnk69ac9d;
-    ::ll::UntypedStorage<8, 8>  mUnkbe28c9;
-    ::ll::UntypedStorage<8, 8>  mUnk113049;
-    ::ll::UntypedStorage<8, 32> mUnk57b43a;
-    ::ll::UntypedStorage<8, 32> mUnk1e9457;
-    ::ll::UntypedStorage<8, 16> mUnk6fa7d7;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DataDrivenRenderer>> mRenderer;
+    ::ll::TypedStorage<1, 1, bool>                                   mRenderingInventory;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DataDrivenModel>>   mGhostModel;
+    ::ll::TypedStorage<8, 8, ::ModelPart*>                           mHead;
+    ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                     mElderSkin;
+    ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                     mBeamSkin;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                    mBeamMaterial;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataDrivenRenderer_tempComponent_GuardianAdditionalRendering&
-    operator=(DataDrivenRenderer_tempComponent_GuardianAdditionalRendering const&);
-    DataDrivenRenderer_tempComponent_GuardianAdditionalRendering(
-        DataDrivenRenderer_tempComponent_GuardianAdditionalRendering const&
-    );
-    DataDrivenRenderer_tempComponent_GuardianAdditionalRendering();
 
 public:
     // virtual functions
@@ -49,12 +45,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $preRender(
+    MCAPI void $preRender(
         ::BaseActorRenderContext& renderContext,
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     );
 
-    MCNAPI void $render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&);
+    MCFOLD void $render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&);
     // NOLINTEND
 };

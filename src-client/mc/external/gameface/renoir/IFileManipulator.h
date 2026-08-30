@@ -13,7 +13,7 @@ class IFileManipulator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFileManipulator() = default;
+    virtual ~IFileManipulator();
 
     virtual bool EnumerateFolder(char const* path) = 0;
 

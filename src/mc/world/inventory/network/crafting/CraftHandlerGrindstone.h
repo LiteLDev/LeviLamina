@@ -49,7 +49,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftHandlerGrindstone() /*override*/ = default;
+    virtual ~CraftHandlerGrindstone() /*override*/;
 
     virtual ::ItemStackNetResult
     _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
@@ -77,6 +77,12 @@ public:
 
     MCAPI static ::std::pair<::ItemStack, ::ItemStackNetIdVariant>
     getResultItem(::ItemStack const& input, ::ItemStack const& additional);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

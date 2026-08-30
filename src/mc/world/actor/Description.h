@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     virtual char const* getJsonName() const = 0;
 
-    virtual ~Description() = default;
+    virtual ~Description();
 
 #ifdef LL_PLAT_S
     virtual void deserializeData(::DeserializeDataParams deserializeDataParams);

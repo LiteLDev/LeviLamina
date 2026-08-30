@@ -14,7 +14,7 @@ class NetworkChangeObserver : public ::Core::Observer<::NetworkChangeObserver, :
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkChangeObserver() /*override*/ = default;
+    virtual ~NetworkChangeObserver() /*override*/;
 
     virtual void onNetworkConfigurationChanged() = 0;
     // NOLINTEND

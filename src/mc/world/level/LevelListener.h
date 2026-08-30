@@ -29,7 +29,7 @@ class LevelListener : public ::BlockSourceListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelListener() /*override*/ = default;
+    virtual ~LevelListener() /*override*/;
 
     virtual void allChanged();
 
@@ -170,6 +170,12 @@ public:
 #endif
 
     virtual void onLevelDataWorldTemplateOptionsUnlocked();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

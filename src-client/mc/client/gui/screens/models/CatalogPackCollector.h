@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CatalogPackCollector() /*override*/ = default;
+    virtual ~CatalogPackCollector() /*override*/;
 
     virtual void start(bool allowed) /*override*/;
 
@@ -47,7 +47,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit CatalogPackCollector(::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const& catalog);
+
     MCAPI void _search();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const& catalog);
     // NOLINTEND
 
 public:

@@ -20,7 +20,7 @@ public:
 
     virtual bool SendRtcp(::webrtc::ArrayView<uchar const>, ::webrtc::PacketOptions const&) = 0;
 
-    virtual ~Transport() = default;
+    virtual ~Transport();
     // NOLINTEND
 };
 

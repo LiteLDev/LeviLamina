@@ -12,6 +12,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ControlOption() = default;
+    virtual ~ControlOption();
     // NOLINTEND
 };

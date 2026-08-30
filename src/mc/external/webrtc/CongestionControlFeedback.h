@@ -64,7 +64,7 @@ public:
 
     virtual uint64 BlockLength() const /*override*/;
 
-    virtual ~CongestionControlFeedback() /*override*/;
+    virtual ~CongestionControlFeedback() /*override*/ = default;
     // NOLINTEND
 
 public:

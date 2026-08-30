@@ -19,7 +19,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BellModel() /*override*/ = default;
+    virtual ~BellModel() /*override*/;
     // NOLINTEND
 
 public:

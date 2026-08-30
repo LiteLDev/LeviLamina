@@ -6,7 +6,7 @@ class GameCallbacks {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameCallbacks() = default;
+    virtual ~GameCallbacks();
 
     virtual void onLevelCorrupt() = 0;
 
@@ -25,6 +25,12 @@ public:
     virtual void onRequestResourceReload() = 0;
 
     virtual void updateScreens() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

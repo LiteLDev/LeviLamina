@@ -17,7 +17,7 @@ public:
 
     virtual ushort const* DataV() const = 0;
 
-    virtual ~PlanarYuv16BBuffer() /*override*/ = default;
+    virtual ~PlanarYuv16BBuffer() /*override*/;
     // NOLINTEND
 };
 

@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MobEffectSubcomponent() /*override*/ = default;
+    virtual ~MobEffectSubcomponent() /*override*/;
 
     virtual void readfromJSON(::Json::Value& component) /*override*/;
 
@@ -38,6 +38,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _addEffectFromJSON(::Json::Value& component);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

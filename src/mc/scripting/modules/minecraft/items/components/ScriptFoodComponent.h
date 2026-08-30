@@ -11,7 +11,13 @@ class ScriptFoodComponent : public ::ScriptModuleMinecraft::ScriptItemComponent 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptFoodComponent() /*override*/ = default;
+    virtual ~ScriptFoodComponent() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

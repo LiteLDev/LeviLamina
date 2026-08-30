@@ -142,7 +142,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleEmitterActual() /*override*/ = default;
+    virtual ~ParticleEmitterActual() /*override*/;
 
     virtual void setActorBindInfo(
         ::Dimension*          dimension,
@@ -330,6 +330,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::Color& mParticleInitialColor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

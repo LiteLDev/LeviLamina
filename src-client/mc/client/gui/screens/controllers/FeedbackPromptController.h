@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FeedbackPromptController() /*override*/ = default;
+    virtual ~FeedbackPromptController() /*override*/;
     // NOLINTEND
 
 public:

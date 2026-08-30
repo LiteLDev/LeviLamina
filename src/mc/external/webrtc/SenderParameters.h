@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     virtual ::std::map<::std::string, ::std::string> ToStringMap() const /*override*/;
 
-    virtual ~SenderParameters() /*override*/;
+    virtual ~SenderParameters() /*override*/ = default;
     // NOLINTEND
 
 public:

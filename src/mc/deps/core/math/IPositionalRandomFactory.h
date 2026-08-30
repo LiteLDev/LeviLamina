@@ -12,7 +12,7 @@ class IPositionalRandomFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPositionalRandomFactory() = default;
+    virtual ~IPositionalRandomFactory();
 
     virtual ::std::unique_ptr<::IRandom> forBlockPos(::BlockPos const& blockPos) const = 0;
 

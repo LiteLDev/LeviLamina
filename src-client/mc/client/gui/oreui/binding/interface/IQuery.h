@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IQuery() = default;
+    virtual ~IQuery();
 
     virtual void update(double) = 0;
 
@@ -36,6 +36,12 @@ public:
     virtual void destroy(::OreUI::Detail::Binder const& binder) = 0;
 
     virtual ::Bedrock::PubSub::Subscription setObserver(::std::function<void()> const& observer) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

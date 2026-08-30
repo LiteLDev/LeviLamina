@@ -21,7 +21,7 @@ class ScriptEnderInventoryComponentFactory : public ::ScriptModuleMinecraft::Gen
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptEnderInventoryComponentFactory() /*override*/ = default;
+    virtual ~ScriptEnderInventoryComponentFactory() /*override*/;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent> createComponent(
         ::WeakEntityRef                       entity,
@@ -30,6 +30,12 @@ public:
     ) /*override*/;
 
     virtual bool hasComponent(::WeakEntityRef entity) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

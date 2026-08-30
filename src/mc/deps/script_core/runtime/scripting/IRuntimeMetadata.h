@@ -20,7 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRuntimeMetadata() = default;
+    virtual ~IRuntimeMetadata();
     // NOLINTEND
 };
 

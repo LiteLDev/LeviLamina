@@ -16,7 +16,7 @@ class IAudioDecoder {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAudioDecoder() = default;
+    virtual ~IAudioDecoder();
 
     virtual ::Bedrock::Result<void> initialize() = 0;
 

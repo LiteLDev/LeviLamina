@@ -13,7 +13,7 @@ class IPassengerActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPassengerActor() = default;
+    virtual ~IPassengerActor();
 
     virtual bool canBePulledIntoVehicle() const = 0;
 

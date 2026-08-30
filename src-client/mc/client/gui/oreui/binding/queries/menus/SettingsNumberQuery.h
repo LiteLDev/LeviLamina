@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SettingsNumberQuery() /*override*/ = default;
+    virtual ~SettingsNumberQuery() /*override*/;
     // NOLINTEND
 
 public:

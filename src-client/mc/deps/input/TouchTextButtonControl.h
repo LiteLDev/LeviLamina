@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TouchTextButtonControl() /*override*/ = default;
+    virtual ~TouchTextButtonControl() /*override*/;
 
     virtual void render(::InputRenderContext& context) const /*override*/;
     // NOLINTEND
@@ -75,6 +75,12 @@ public:
         int                                    touchStateRequirement,
         bool                                   extendButtonPressOutsideUntilReleased
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

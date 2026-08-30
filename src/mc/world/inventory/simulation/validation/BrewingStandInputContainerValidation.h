@@ -15,13 +15,19 @@ class BrewingStandInputContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrewingStandInputContainerValidation() /*override*/ = default;
+    virtual ~BrewingStandInputContainerValidation() /*override*/;
 
     virtual bool
     isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool) const
         /*override*/;
 
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

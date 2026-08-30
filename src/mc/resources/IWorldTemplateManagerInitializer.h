@@ -12,7 +12,7 @@ class IWorldTemplateManagerInitializer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IWorldTemplateManagerInitializer() = default;
+    virtual ~IWorldTemplateManagerInitializer();
 
     virtual ::WorldTemplateManagerInitData buildInitData() = 0;
 

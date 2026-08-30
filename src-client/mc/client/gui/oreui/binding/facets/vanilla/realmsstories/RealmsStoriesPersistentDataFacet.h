@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsStoriesPersistentDataFacet() /*override*/ = default;
+    virtual ~RealmsStoriesPersistentDataFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -101,6 +101,12 @@ public:
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> realmsStoriesProvider,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>       profanityContext
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

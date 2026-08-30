@@ -384,7 +384,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientInstance() /*override*/ = default;
+    virtual ~ClientInstance() /*override*/;
 
     virtual void onInitMinecraftGame() /*override*/;
 
@@ -2106,6 +2106,11 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger> $getDevConsoleLogger() const;
 
+    MCAPI ::std::shared_ptr<::FileDataRequest> $requestImageFromUrl(
+        ::std::string const&                                                        imageUrl,
+        ::std::function<void(::Bedrock::Http::Status, ::Core::Path const&, uint64)> callback
+    );
+
     MCAPI void $setActiveFileStorageArea(::std::shared_ptr<::Core::FileStorageArea> storageArea);
 
     MCAPI void $onExtendDiskSpace(
@@ -2219,6 +2224,8 @@ public:
     MCAPI ::ClientScriptEventCoordinator& $getClientScriptEventCoordinator();
 
     MCAPI ::std::chrono::steady_clock::time_point $getNoBlockBreakUntil();
+
+    MCAPI void $setNoBlockBreakUntil(::std::chrono::steady_clock::time_point timePoint);
 
     MCFOLD ::GameCallbacks& $getGameCallbacks();
 

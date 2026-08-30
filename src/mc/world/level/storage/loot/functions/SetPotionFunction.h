@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetPotionFunction() /*override*/ = default;
+    virtual ~SetPotionFunction() /*override*/;
 
     virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext& context) /*override*/;
 
@@ -39,6 +39,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

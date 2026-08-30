@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GamePadRemappingLayout() /*override*/ = default;
+    virtual ~GamePadRemappingLayout() /*override*/;
 
     virtual void setMappingWithRawInput(::std::string const& action, int key, ::RawInputType type) /*override*/;
 
@@ -58,6 +58,12 @@ public:
     MCAPI ::std::string getKeySpriteName(int key) const;
 
     MCAPI ::std::string getKeyTextName(int key, bool checkUserConfiguredButtonSwapping) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

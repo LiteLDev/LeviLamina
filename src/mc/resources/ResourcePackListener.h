@@ -11,7 +11,7 @@ class ResourcePackListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourcePackListener() = default;
+    virtual ~ResourcePackListener();
 
     virtual void onActiveResourcePacksChanged(::ResourcePackManager& mgr) = 0;
 
@@ -33,6 +33,12 @@ public:
     virtual void onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
 #endif
 
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

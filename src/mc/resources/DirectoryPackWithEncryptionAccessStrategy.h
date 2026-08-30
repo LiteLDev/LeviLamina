@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DirectoryPackWithEncryptionAccessStrategy() /*override*/ = default;
+    virtual ~DirectoryPackWithEncryptionAccessStrategy() /*override*/;
 
     virtual uint64 getPackSize() const /*override*/;
 
@@ -105,6 +105,12 @@ public:
         ::IFileAccess&                                                    fileAccess,
         ::IPackIOProvider const&                                          io
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

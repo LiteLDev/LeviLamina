@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseGameTestBatchRunner() = default;
+    virtual ~BaseGameTestBatchRunner();
 
     virtual ::std::shared_ptr<::gametest::BaseGameTestInstance>
     _createGameTestInstance(::gametest::BaseGameTestFunction& function) = 0;
@@ -60,6 +60,12 @@ public:
     MCNAPI void _runBatch(int batchIndex);
 
     MCNAPI void forceStop();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

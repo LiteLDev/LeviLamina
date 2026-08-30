@@ -19,7 +19,7 @@ class ParticleAppearanceComponentBase : public ::ParticleSystem::EffectComponent
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleAppearanceComponentBase() /*override*/ = default;
+    virtual ~ParticleAppearanceComponentBase() /*override*/;
 
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const /*override*/;
 

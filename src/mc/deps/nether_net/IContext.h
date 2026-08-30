@@ -19,7 +19,7 @@ class IContext : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IContext() /*override*/ = default;
+    virtual ~IContext() /*override*/;
 
     virtual ::NetherNet::RtcThreadManager const& getSignalThread() const = 0;
 
@@ -44,6 +44,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void logMessage(::NetherNet::LogSeverity level, char const* fmt, ...) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

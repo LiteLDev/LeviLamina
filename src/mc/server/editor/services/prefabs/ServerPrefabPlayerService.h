@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerPrefabPlayerService() /*override*/ = default;
+    virtual ~ServerPrefabPlayerService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

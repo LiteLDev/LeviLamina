@@ -18,7 +18,7 @@ class ServerPrefabPlayerServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerPrefabPlayerServiceProvider() = default;
+    virtual ~ServerPrefabPlayerServiceProvider();
 
     virtual void shouldCaptureMouseClicks(bool const active) = 0;
 

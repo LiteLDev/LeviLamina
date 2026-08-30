@@ -15,7 +15,7 @@ class IInventoryItemRendererRenderContext {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IInventoryItemRendererRenderContext() = default;
+    virtual ~IInventoryItemRendererRenderContext();
 
     virtual void setHUDOpacity(float opacity) = 0;
 

@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Command() = default;
+    virtual ~Command();
 
     virtual bool collectOptionalArguments();
 

@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldStorageInfoQuery() /*override*/ = default;
+    virtual ~WorldStorageInfoQuery() /*override*/;
 
     virtual void onLevelUpdated(::std::string const& levelId) /*override*/;
 

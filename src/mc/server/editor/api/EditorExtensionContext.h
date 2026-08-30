@@ -59,7 +59,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorExtensionContext() /*override*/ = default;
+    virtual ~EditorExtensionContext() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI EditorExtensionContext(
+        ::Player&                                                           player,
+        ::Editor::ServiceProviderCollection&                                serviceProviders,
+        ::Editor::Services::EditorSettingsServiceProvider*                  settingsService,
+        ::Editor::Services::TransactionManagerServiceProvider*              transactionManagerServiceProvider,
+        ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider>       clipboardServiceRef,
+        ::Editor::Services::EditorBlockPaletteServiceProvider*              blockPaletteService,
+        ::Editor::Services::BrushShapeManagerServiceProvider*               brushShapeService,
+        ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> serverStructureServiceWeakRef,
+        ::std::weak_ptr<::Editor::Services::EditorMinimapServiceProvider>   minimapServiceWeakRef,
+        ::Scripting::WeakLifetimeScope                                      scope,
+        ::Editor::API::EditorExtension&                                     extension
+    );
     // NOLINTEND
 
 public:
@@ -71,6 +89,30 @@ public:
     MCNAPI static ::std::optional<::std::unique_ptr<::Editor::API::EditorExtensionContext>>
     tryCreate(::Player& player, ::Scripting::WeakLifetimeScope scope, ::Editor::API::EditorExtension& extension);
 #endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Player&                                                           player,
+        ::Editor::ServiceProviderCollection&                                serviceProviders,
+        ::Editor::Services::EditorSettingsServiceProvider*                  settingsService,
+        ::Editor::Services::TransactionManagerServiceProvider*              transactionManagerServiceProvider,
+        ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider>       clipboardServiceRef,
+        ::Editor::Services::EditorBlockPaletteServiceProvider*              blockPaletteService,
+        ::Editor::Services::BrushShapeManagerServiceProvider*               brushShapeService,
+        ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> serverStructureServiceWeakRef,
+        ::std::weak_ptr<::Editor::Services::EditorMinimapServiceProvider>   minimapServiceWeakRef,
+        ::Scripting::WeakLifetimeScope                                      scope,
+        ::Editor::API::EditorExtension&                                     extension
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

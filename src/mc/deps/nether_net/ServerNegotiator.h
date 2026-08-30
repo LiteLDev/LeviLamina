@@ -70,11 +70,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ServerNegotiator(
+        ::NetherNet::ContextProxy const&                                           ctx,
+        ::webrtc::scoped_refptr<::webrtc::PeerConnectionFactory>                   factory,
+        ::webrtc::scoped_refptr<::NetherNet::PeerConnectionObserver>               observer,
+        ::brstd::move_only_function<void(::std::variant<
+                                         ::NetherNet::ConnectRequest,
+                                         ::NetherNet::ConnectResponse,
+                                         ::NetherNet::ConnectError,
+                                         ::NetherNet::CandidateAdd> const&) const> sendMessage,
+        uint64                                                                     sessionId
+    );
+
     MCNAPI void _completeAndClearConnection(
         ::Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError> result
     );
 
     MCNAPI void _onIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState newState);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::NetherNet::ContextProxy const&                                           ctx,
+        ::webrtc::scoped_refptr<::webrtc::PeerConnectionFactory>                   factory,
+        ::webrtc::scoped_refptr<::NetherNet::PeerConnectionObserver>               observer,
+        ::brstd::move_only_function<void(::std::variant<
+                                         ::NetherNet::ConnectRequest,
+                                         ::NetherNet::ConnectResponse,
+                                         ::NetherNet::ConnectError,
+                                         ::NetherNet::CandidateAdd> const&) const> sendMessage,
+        uint64                                                                     sessionId
+    );
     // NOLINTEND
 
 public:

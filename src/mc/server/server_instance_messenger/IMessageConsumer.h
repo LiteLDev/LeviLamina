@@ -8,7 +8,7 @@ class IMessageConsumer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMessageConsumer() = default;
+    virtual ~IMessageConsumer();
 
     virtual void processMessages() = 0;
     // NOLINTEND

@@ -46,7 +46,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~AudioDataProxy() /*override*/ = default;
+        virtual ~AudioDataProxy() /*override*/;
 
         virtual void OnData(::webrtc::AudioSinkInterface::Data const& audio) /*override*/;
         // NOLINTEND

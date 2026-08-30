@@ -29,7 +29,7 @@ public:
 
     virtual ::webrtc::MediaStreamTrackInterface::TrackState state() const = 0;
 
-    virtual ~MediaStreamTrackInterface() /*override*/ = default;
+    virtual ~MediaStreamTrackInterface() /*override*/;
     // NOLINTEND
 
 public:

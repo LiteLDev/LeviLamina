@@ -51,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TouchGlyphButtonControl() /*override*/ = default;
+    virtual ~TouchGlyphButtonControl() /*override*/;
 
     virtual uint getHoldButtonId() const /*override*/;
 

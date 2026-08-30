@@ -38,6 +38,13 @@ public:
 
     MCNAPI VoxelShape(::VoxelShapes::VoxelShape const&);
 
+    MCNAPI VoxelShape(
+        ::VoxelShapes::Cells               cells,
+        ::Bedrock::small_vector<float, 12> xCoords,
+        ::Bedrock::small_vector<float, 12> yCoords,
+        ::Bedrock::small_vector<float, 12> zCoords
+    );
+
     MCNAPI ::VoxelShapes::VoxelShape computeFaceShape(uchar face) const;
 
     MCNAPI ::VoxelShapes::VoxelShape& operator=(::VoxelShapes::VoxelShape&&);
@@ -99,6 +106,13 @@ public:
     MCNAPI void* $ctor(::VoxelShapes::VoxelShape&&);
 
     MCNAPI void* $ctor(::VoxelShapes::VoxelShape const&);
+
+    MCNAPI void* $ctor(
+        ::VoxelShapes::Cells               cells,
+        ::Bedrock::small_vector<float, 12> xCoords,
+        ::Bedrock::small_vector<float, 12> yCoords,
+        ::Bedrock::small_vector<float, 12> zCoords
+    );
     // NOLINTEND
 
 public:

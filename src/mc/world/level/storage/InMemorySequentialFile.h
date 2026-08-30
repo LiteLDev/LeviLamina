@@ -19,11 +19,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InMemorySequentialFile() /*override*/ = default;
+    virtual ~InMemorySequentialFile() /*override*/;
 
     virtual ::leveldb::Status Read(uint64 n, ::leveldb::Slice* result, char* scratch) /*override*/;
 
     virtual ::leveldb::Status Skip(uint64 n) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

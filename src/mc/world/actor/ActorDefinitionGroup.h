@@ -89,7 +89,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorDefinitionGroup() /*override*/ = default;
+    virtual ~ActorDefinitionGroup() /*override*/;
     // NOLINTEND
 
 public:
@@ -163,5 +163,11 @@ public:
         ::Experiments const&                               experiments,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

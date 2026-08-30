@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptPlaytestLauncher() = default;
+    virtual ~ScriptPlaytestLauncher();
     // NOLINTEND
 
 public:
@@ -37,6 +37,12 @@ public:
     MCNAPI static ::Scripting::ClassBinding bindClass();
 
     MCNAPI static ::Scripting::EnumBinding bindSessionResultEnums();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

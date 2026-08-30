@@ -73,6 +73,18 @@ public:
     public:
         // prevent constructor by default
         InboxMessageData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI explicit InboxMessageData(::Invites::Invite const& invite);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::Invites::Invite const& invite);
+        // NOLINTEND
     };
 
     struct FacetInboxCategoryData {
@@ -122,7 +134,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InboxFacet() /*override*/ = default;
+    virtual ~InboxFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -190,6 +202,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
         ::Bedrock::NotNullNonOwnerPtr<::Realms::InvitesService>    invitesService
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -38,6 +38,26 @@ public:
     public:
         // prevent constructor by default
         ControlResolutionInfo();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ControlResolutionInfo(
+            ::std::string const&                                                aTargetControlName,
+            ::ui::NameResolutionScope                                           aScope,
+            ::std::function<void(::UIControl&, ::std::shared_ptr<::UIControl>)> aSetter
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::std::string const&                                                aTargetControlName,
+            ::ui::NameResolutionScope                                           aScope,
+            ::std::function<void(::UIControl&, ::std::shared_ptr<::UIControl>)> aSetter
+        );
+        // NOLINTEND
     };
 
     using CompIdType = uint64;

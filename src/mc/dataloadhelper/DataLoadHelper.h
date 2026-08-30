@@ -21,7 +21,7 @@ class DataLoadHelper {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataLoadHelper() = default;
+    virtual ~DataLoadHelper();
 
     virtual ::Vec3 loadPosition(::Vec3 const& position) = 0;
 

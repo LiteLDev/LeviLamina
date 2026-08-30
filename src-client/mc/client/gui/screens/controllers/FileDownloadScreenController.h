@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileDownloadScreenController() /*override*/ = default;
+    virtual ~FileDownloadScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

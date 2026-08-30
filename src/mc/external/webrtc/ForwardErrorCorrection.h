@@ -58,7 +58,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Packet() = default;
+        virtual ~Packet();
 
         virtual int AddRef();
 

@@ -16,7 +16,7 @@ class IDimensionFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDimensionFactory() = default;
+    virtual ~IDimensionFactory();
 
     virtual ::OwnerPtr<::Dimension> create(::std::string const& dimensionName) const = 0;
 

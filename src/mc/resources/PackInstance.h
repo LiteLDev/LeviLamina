@@ -43,6 +43,13 @@ public:
         ::PackSettings*                                    packSettings
     );
 
+    MCAPI PackInstance(
+        ::gsl::not_null<::std::shared_ptr<::ResourcePack>> pack,
+        ::std::string const&                               subpackName,
+        bool                                               isDependent,
+        ::PackSettings*                                    packSettings
+    );
+
     MCAPI bool hasResource(::Core::Path const& resourceName) const;
 
     MCAPI ~PackInstance();
@@ -54,6 +61,13 @@ public:
     MCAPI void* $ctor(
         ::gsl::not_null<::std::shared_ptr<::ResourcePack>> pack,
         int                                                subpackIndex,
+        bool                                               isDependent,
+        ::PackSettings*                                    packSettings
+    );
+
+    MCAPI void* $ctor(
+        ::gsl::not_null<::std::shared_ptr<::ResourcePack>> pack,
+        ::std::string const&                               subpackName,
         bool                                               isDependent,
         ::PackSettings*                                    packSettings
     );

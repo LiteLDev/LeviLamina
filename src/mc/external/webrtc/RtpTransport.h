@@ -97,7 +97,7 @@ public:
 
     virtual void OnWritableState(::webrtc::PacketTransportInternal* packet_transport);
 
-    virtual ~RtpTransport() /*override*/;
+    virtual ~RtpTransport() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChunkBuildOrderPolicy() /*override*/ = default;
+    virtual ~ChunkBuildOrderPolicy() /*override*/;
 
     virtual int getChunkRebuildPriority(::ChunkPos const& cp) const /*override*/;
 
@@ -68,6 +68,12 @@ public:
     ) /*override*/;
 
     virtual void updateInfluences() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

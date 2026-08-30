@@ -22,9 +22,31 @@ public:
     IndexMerger();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI IndexMerger(
+        ::Bedrock::small_vector<float, 12> const& first,
+        ::Bedrock::small_vector<float, 12> const& second,
+        bool                                      canTrimExcessOfFirst,
+        bool                                      canTrimExcessOfSecond
+    );
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::small_vector<float, 12> const& emptyShapeCoords();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Bedrock::small_vector<float, 12> const& first,
+        ::Bedrock::small_vector<float, 12> const& second,
+        bool                                      canTrimExcessOfFirst,
+        bool                                      canTrimExcessOfSecond
+    );
     // NOLINTEND
 };
 

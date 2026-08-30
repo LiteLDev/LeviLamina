@@ -37,6 +37,8 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI ServicePack(::ServicePack const&);
+
+    MCNAPI ServicePack(::PackIdVersion packId, ::Core::PathBuffer<::std::string> downloadUrl);
 #endif
     // NOLINTEND
 
@@ -45,6 +47,8 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::ServicePack const&);
+
+    MCNAPI void* $ctor(::PackIdVersion packId, ::Core::PathBuffer<::std::string> downloadUrl);
 #endif
     // NOLINTEND
 };

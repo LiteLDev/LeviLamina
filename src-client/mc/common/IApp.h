@@ -9,7 +9,7 @@ class IApp : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IApp() /*override*/ = default;
+    virtual ~IApp() /*override*/;
 
     virtual void init() = 0;
 

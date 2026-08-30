@@ -135,6 +135,50 @@ public:
 public:
     // prevent constructor by default
     SystemParams();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SystemParams(
+        ::StrictExecutionContext<
+            ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+            ::Read<>,
+            ::Write<
+                ::AABBShapeComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataDirtyFlagsComponent,
+                ::DepenetrationComponent,
+                ::OffsetsComponent>,
+            ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& c,
+        float                    sneakHeight,
+        bool                     isClientSide
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::StrictExecutionContext<
+            ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+            ::Read<>,
+            ::Write<
+                ::AABBShapeComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataDirtyFlagsComponent,
+                ::DepenetrationComponent,
+                ::OffsetsComponent>,
+            ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& c,
+        float                    sneakHeight,
+        bool                     isClientSide
+    );
+    // NOLINTEND
 };
 
 } // namespace UpdateBoundingBox

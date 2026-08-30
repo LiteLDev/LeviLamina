@@ -16,7 +16,7 @@ class IAppExtensionsNonOwner {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAppExtensionsNonOwner() = default;
+    virtual ~IAppExtensionsNonOwner();
 
     virtual ::Bedrock::NonOwnerPointer<::AppExtensions::IAppExtensions> tryGetExtensions() const = 0;
     // NOLINTEND

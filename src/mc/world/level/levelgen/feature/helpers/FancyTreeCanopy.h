@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FancyTreeCanopy() /*override*/ = default;
+    virtual ~FancyTreeCanopy() /*override*/;
 
     virtual ::std::optional<::BlockPos> placeCanopy(
         ::IBlockWorldGenAPI&             target,
@@ -52,6 +52,12 @@ public:
         int                             radius,
         ::TreeHelper::TreeParams const& treeParams
     ) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

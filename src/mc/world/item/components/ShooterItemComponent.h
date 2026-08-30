@@ -65,7 +65,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ShooterItemComponent() /*override*/ = default;
+    virtual ~ShooterItemComponent() /*override*/;
 
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
@@ -106,6 +106,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

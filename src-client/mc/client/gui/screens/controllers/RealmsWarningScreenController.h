@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsWarningScreenController() /*override*/ = default;
+    virtual ~RealmsWarningScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

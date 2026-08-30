@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     virtual bool IsIdUsed(int new_id) /*override*/;
 
-    virtual ~UsedPayloadTypes() /*override*/;
+    virtual ~UsedPayloadTypes() /*override*/ = default;
     // NOLINTEND
 
 public:

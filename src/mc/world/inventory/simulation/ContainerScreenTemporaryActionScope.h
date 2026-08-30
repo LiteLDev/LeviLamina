@@ -21,6 +21,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContainerScreenTemporaryActionScope() /*override*/ = default;
+    virtual ~ContainerScreenTemporaryActionScope() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ContainerScreenTemporaryActionScope(
+        ::ContainerScreenSimulation&  simulation,
+        ::ContainerScreenActionScope* parentScope
+    );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::ContainerScreenSimulation& simulation, ::ContainerScreenActionScope* parentScope);
+#endif
     // NOLINTEND
 };

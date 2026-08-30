@@ -26,13 +26,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldMultiplayerLockState() /*override*/ = default;
+    virtual ~WorldMultiplayerLockState() /*override*/;
 
     virtual bool isLocked() const /*override*/;
 
     virtual void setLockedByBehaviorPack(bool isLocked) /*override*/;
 
     virtual void setLockedByResourcePack(bool isLocked) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

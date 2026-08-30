@@ -23,7 +23,7 @@ class INetherNetTransportInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~INetherNetTransportInterface() = default;
+    virtual ~INetherNetTransportInterface();
 
     virtual bool SendPacket(
         ::NetherNet::NetworkID remoteId,

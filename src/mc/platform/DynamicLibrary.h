@@ -19,7 +19,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Impl() = default;
+        virtual ~Impl();
 
         virtual ::Bedrock::Result<void*> loadLibrary(::std::string const&) = 0;
 

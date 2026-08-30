@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BitmapFont() /*override*/ = default;
+    virtual ~BitmapFont() /*override*/;
 
     virtual float _getCharWidth(int uniChar, bool forceUnicode) /*override*/;
 
@@ -82,6 +82,34 @@ public:
 
     virtual ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     getFontSources() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BitmapFont(
+        ::Core::Path const&                    asciiName,
+        ::Core::Path const&                    unicodeName,
+        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
+        bool                                   uploadOnConstruction
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Core::Path const&                    asciiName,
+        ::Core::Path const&                    unicodeName,
+        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
+        bool                                   uploadOnConstruction
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

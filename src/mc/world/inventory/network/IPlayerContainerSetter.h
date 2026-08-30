@@ -11,7 +11,7 @@ class IPlayerContainerSetter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPlayerContainerSetter() = default;
+    virtual ~IPlayerContainerSetter();
 
     virtual void setArmor(int slot, ::ItemStack const& item) = 0;
 

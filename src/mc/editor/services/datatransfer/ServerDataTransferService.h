@@ -137,7 +137,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerDataTransferService() /*override*/ = default;
+    virtual ~ServerDataTransferService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

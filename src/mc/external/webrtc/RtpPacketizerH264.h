@@ -58,7 +58,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtpPacketizerH264() /*override*/ = default;
+    virtual ~RtpPacketizerH264() /*override*/;
 
     virtual uint64 NumPackets() const /*override*/;
 

@@ -6,7 +6,7 @@ class IScriptDebuggerWatchdog {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptDebuggerWatchdog() = default;
+    virtual ~IScriptDebuggerWatchdog();
 
     virtual bool requireClose() const = 0;
 

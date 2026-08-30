@@ -31,5 +31,13 @@ public:
     convertFakeToReal(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
 
     MCAPI ::ScoreboardId const& getScoreboardId(::std::string const& fakePlayerName) const;
+
+    MCAPI ~IdentityDictionary();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeferredScriptCommand() /*override*/ = default;
+    virtual ~DeferredScriptCommand() /*override*/;
 
     virtual void execute(::MinecraftCommands& commands) /*override*/;
     // NOLINTEND
@@ -69,6 +69,12 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
             ::ScriptModuleMinecraft::ScriptCommandError> promise
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

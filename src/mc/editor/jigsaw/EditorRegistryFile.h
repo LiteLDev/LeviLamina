@@ -21,12 +21,16 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI EditorRegistryFile(::Editor::Services::EditorRegistryFile const&);
+
+    MCNAPI EditorRegistryFile(::std::string const& fileName, ::std::string const& fileJson);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::Services::EditorRegistryFile const&);
+
+    MCNAPI void* $ctor(::std::string const& fileName, ::std::string const& fileJson);
     // NOLINTEND
 };
 

@@ -14,7 +14,7 @@ class IMessenger {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMessenger() = default;
+    virtual ~IMessenger();
 
     virtual ::ServerInstanceMessenger::IMessageProducer& getProducer() = 0;
 

@@ -15,6 +15,8 @@ namespace UI::Resources {
 MCAPI void CoherentBind(::cohtml::Binder* binder, ::UI::Resources::ResolvedTextureData* data);
 
 MCAPI void CoherentBind(::cohtml::Binder* binder, ::UI::Resources::ResolvedPropertyData* data);
+
+MCAPI ::std::string toString(::glm::vec2 const& vec);
 // NOLINTEND
 
 } // namespace UI::Resources

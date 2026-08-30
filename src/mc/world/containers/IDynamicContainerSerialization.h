@@ -20,6 +20,6 @@ public:
 
     virtual bool hasContainer(::FullContainerName const& name) const = 0;
 
-    virtual ~IDynamicContainerSerialization() = default;
+    virtual ~IDynamicContainerSerialization();
     // NOLINTEND
 };

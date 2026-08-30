@@ -20,4 +20,16 @@ public:
     FilterInputDefinition& operator=(FilterInputDefinition const&);
     FilterInputDefinition(FilterInputDefinition const&);
     FilterInputDefinition();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI FilterInputDefinition(::FilterInput f, ::std::string const& d);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::FilterInput f, ::std::string const& d);
+    // NOLINTEND
 };

@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SkinPackModel() = default;
+    virtual ~SkinPackModel();
     // NOLINTEND
 
 public:
@@ -47,6 +47,13 @@ public:
         ::IEntitlement const*  entitlement
     );
 
+    MCAPI SkinPackModel(
+        ::PackManifest const& manifest,
+        ::PersonaClient&      skinRepoInterface,
+        ::IEntitlement const* entitlement,
+        bool                  isOfflineLoaded
+    );
+
     MCAPI ::std::string const& getSkinName(int skinIndex) const;
     // NOLINTEND
 
@@ -55,6 +62,13 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::PackIdVersion const& packIdentity, ::PersonaClient& skinRepoInterface, ::IEntitlement const* entitlement);
+
+    MCAPI void* $ctor(
+        ::PackManifest const& manifest,
+        ::PersonaClient&      skinRepoInterface,
+        ::IEntitlement const* entitlement,
+        bool                  isOfflineLoaded
+    );
     // NOLINTEND
 
 public:

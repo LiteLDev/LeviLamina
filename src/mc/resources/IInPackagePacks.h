@@ -51,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IInPackagePacks() = default;
+    virtual ~IInPackagePacks();
 
     virtual ::std::vector<::IInPackagePacks::MetaData> getPacks(::PackType packType) const = 0;
     // NOLINTEND

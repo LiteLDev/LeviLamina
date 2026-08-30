@@ -179,7 +179,7 @@ public:
 
     virtual void OnLifecycleEnd(::dcsctp::LifecycleId lifecycle_id) /*override*/;
 
-    virtual ~CallbackDeferrer() /*override*/;
+    virtual ~CallbackDeferrer() /*override*/ = default;
     // NOLINTEND
 
 public:

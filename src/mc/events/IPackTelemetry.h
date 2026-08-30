@@ -6,6 +6,6 @@ class IPackTelemetry {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPackTelemetry() = default;
+    virtual ~IPackTelemetry();
     // NOLINTEND
 };

@@ -13,7 +13,7 @@ class IEventHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEventHandler() = default;
+    virtual ~IEventHandler();
 
     virtual void Invoke(::cohtml::ArgumentsBinder* binder) = 0;
 

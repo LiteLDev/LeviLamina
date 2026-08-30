@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     virtual void SetFecAllowed(bool fec_allowed) = 0;
 
-    virtual ~FecControllerOverride() = default;
+    virtual ~FecControllerOverride();
     // NOLINTEND
 };
 

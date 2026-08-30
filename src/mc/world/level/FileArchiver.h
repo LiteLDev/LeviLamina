@@ -162,7 +162,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~ProgressReporter() /*override*/ = default;
+        virtual ~ProgressReporter() /*override*/;
 
         virtual void clear() /*override*/;
         // NOLINTEND
@@ -251,7 +251,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~IWorldConverter() = default;
+        virtual ~IWorldConverter();
 
         virtual void enqueueConvertImportingWorldTasks(
             ::std::shared_ptr<::FileArchiver::Result>&                      sharedResult,
@@ -395,7 +395,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileArchiver() /*override*/ = default;
+    virtual ~FileArchiver() /*override*/;
 
     virtual ::std::shared_ptr<::FilePickerSettings>
     generateFilePickerSettings(::std::vector<::FileArchiver::ExportType> const& types, ::std::string const&) const;
@@ -566,6 +566,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                     levelDbEnv,
         ::std::function<void(::std::string const&)>                     displayMessageFunction
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

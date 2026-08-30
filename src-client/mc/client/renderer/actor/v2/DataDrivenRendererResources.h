@@ -2,21 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class DataDrivenRenderer_tempComponent;
+class ExpressionNode;
+// clang-format on
+
 struct DataDrivenRendererResources {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkdc3e99;
-    ::ll::UntypedStorage<8, 24> mUnk430c5f;
-    ::ll::UntypedStorage<8, 24> mUnkbf533a;
-    ::ll::UntypedStorage<8, 24> mUnk3ce70a;
-    ::ll::UntypedStorage<8, 24> mUnkf0bb73;
-    ::ll::UntypedStorage<8, 24> mUnkff7eb4;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>> mSetupExpressionNodes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>> mGlobalScaleExpressionNodes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec3>>      mGlobalScaleConstants;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>             mConditionalControllerExpressionOffsets;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>> mConditionalControllerExpressions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DataDrivenRenderer_tempComponent*>> mTempComponents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataDrivenRendererResources& operator=(DataDrivenRendererResources const&);
-    DataDrivenRendererResources(DataDrivenRendererResources const&);
-    DataDrivenRendererResources();
 };

@@ -21,7 +21,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HudScreenCapabilities() /*override*/ = default;
+    virtual ~HudScreenCapabilities() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

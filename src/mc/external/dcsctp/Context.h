@@ -19,7 +19,7 @@ class Context {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Context() = default;
+    virtual ~Context();
 
     virtual bool is_connection_established() const = 0;
 

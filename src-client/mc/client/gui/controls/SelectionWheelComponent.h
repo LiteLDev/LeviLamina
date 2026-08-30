@@ -69,7 +69,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SelectionWheelComponent() /*override*/ = default;
+    virtual ~SelectionWheelComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -94,7 +94,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit SelectionWheelComponent(::UIControl& owner);
+
     MCAPI void _updateControlVisibility();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UIControl& owner);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

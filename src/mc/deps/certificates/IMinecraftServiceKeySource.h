@@ -15,7 +15,7 @@ class IMinecraftServiceKeySource {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMinecraftServiceKeySource() = default;
+    virtual ~IMinecraftServiceKeySource();
 
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getAuthServiceUrl() const = 0;
 

@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ProgressHandler() = default;
+    virtual ~ProgressHandler();
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) = 0;
 

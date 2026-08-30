@@ -51,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ToastScreenController() /*override*/ = default;
+    virtual ~ToastScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 

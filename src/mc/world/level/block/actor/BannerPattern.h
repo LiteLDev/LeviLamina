@@ -32,6 +32,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BannerPattern(::std::string const& name, ::std::string const& nameID, bool hiddenFromCrafting);
+
+    MCAPI BannerPattern(
+        ::std::string const&             name,
+        ::std::string const&             nameID,
+        ::std::function<::ItemStack()>&& itemFunctor,
+        short                            patternItemType
+    );
+
+    MCAPI BannerPattern(
+        ::std::string const&             name,
+        ::std::string const&             nameID,
+        ::std::function<::ItemStack()>&& itemFunctor,
+        short                            patternItemType,
+        bool                             ignoreAux
+    );
+
+    MCAPI BannerPattern(
+        ::std::string const& name,
+        ::std::string const& nameID,
+        ::std::string const& row1,
+        ::std::string const& row2,
+        ::std::string const& row3
+    );
+
     MCAPI bool hasPattern() const;
 
     MCAPI bool matchesPatternItem(::ItemStackBase const& item) const;
@@ -41,5 +66,34 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::vector<::BannerPattern> const& mPatterns();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, ::std::string const& nameID, bool hiddenFromCrafting);
+
+    MCAPI void* $ctor(
+        ::std::string const&             name,
+        ::std::string const&             nameID,
+        ::std::function<::ItemStack()>&& itemFunctor,
+        short                            patternItemType
+    );
+
+    MCAPI void* $ctor(
+        ::std::string const&             name,
+        ::std::string const&             nameID,
+        ::std::function<::ItemStack()>&& itemFunctor,
+        short                            patternItemType,
+        bool                             ignoreAux
+    );
+
+    MCAPI void* $ctor(
+        ::std::string const& name,
+        ::std::string const& nameID,
+        ::std::string const& row1,
+        ::std::string const& row2,
+        ::std::string const& row3
+    );
     // NOLINTEND
 };

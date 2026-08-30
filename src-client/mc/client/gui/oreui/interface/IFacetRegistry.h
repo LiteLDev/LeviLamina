@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFacetRegistry() /*override*/ = default;
+    virtual ~IFacetRegistry() /*override*/;
 
     virtual void registerFacet(
         ::std::string const&                                         name,

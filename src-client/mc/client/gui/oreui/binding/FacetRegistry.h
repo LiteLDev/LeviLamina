@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FacetRegistry() /*override*/ = default;
+    virtual ~FacetRegistry() /*override*/;
 
     virtual void registerFacet(
         ::std::string const&                                         name,

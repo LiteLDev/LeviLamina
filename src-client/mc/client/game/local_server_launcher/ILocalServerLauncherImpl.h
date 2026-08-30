@@ -17,7 +17,7 @@ class ILocalServerLauncherImpl {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILocalServerLauncherImpl() = default;
+    virtual ~ILocalServerLauncherImpl();
 
     virtual ::std::unique_ptr<::LocalServerLauncher::IGameInterface> createGameInterface() = 0;
 

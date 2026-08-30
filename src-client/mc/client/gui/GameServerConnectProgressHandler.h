@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameServerConnectProgressHandler() /*override*/ = default;
+    virtual ~GameServerConnectProgressHandler() /*override*/;
 
     virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
@@ -79,6 +79,12 @@ public:
         ::std::function<void(::std::unordered_map<::std::string, ::std::string>&)> eventPropertyCallback,
         ::std::function<void()>                                                    abortCallback
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

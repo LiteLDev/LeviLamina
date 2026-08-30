@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerThumbnailCacheService() /*override*/ = default;
+    virtual ~ServerThumbnailCacheService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 

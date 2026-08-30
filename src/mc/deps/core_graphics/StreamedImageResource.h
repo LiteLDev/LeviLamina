@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StreamedImageResource() /*override*/ = default;
+    virtual ~StreamedImageResource() /*override*/;
 
     virtual bool isEmpty() const /*override*/;
 
@@ -38,6 +38,12 @@ public:
 
     virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource>
     unwrapImageData() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

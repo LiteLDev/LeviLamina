@@ -75,7 +75,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncDnsResolver() /*override*/ = default;
+    virtual ~AsyncDnsResolver() /*override*/;
 
     virtual void
     Start(::webrtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;

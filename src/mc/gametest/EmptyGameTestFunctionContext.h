@@ -9,6 +9,6 @@ class EmptyGameTestFunctionContext : public ::gametest::IGameTestFunctionContext
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EmptyGameTestFunctionContext() /*override*/ = default;
+    virtual ~EmptyGameTestFunctionContext() /*override*/;
     // NOLINTEND
 };

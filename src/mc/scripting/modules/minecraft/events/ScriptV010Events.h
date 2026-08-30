@@ -294,6 +294,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptV010Events(::ScriptModuleMinecraft::ScriptV010Events&&);
+
     MCAPI ScriptV010Events(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::Level*> level);
 
     MCAPI void
@@ -316,6 +318,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptV010Events&&);
+
     MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::Level*> level);
     // NOLINTEND
 

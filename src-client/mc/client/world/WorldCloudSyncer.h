@@ -18,7 +18,7 @@ class WorldCloudSyncer : public ::World::IWorldCloudSyncer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldCloudSyncer() /*override*/ = default;
+    virtual ~WorldCloudSyncer() /*override*/;
 
     virtual void syncWorld(
         ::World::WorldID const&,
@@ -40,6 +40,12 @@ public:
         bool,
         ::std::function<void(::World::WorldCloudSyncResult)> const& onComplete
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

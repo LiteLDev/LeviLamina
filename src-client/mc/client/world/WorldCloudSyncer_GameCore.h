@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldCloudSyncer_GameCore() /*override*/ = default;
+    virtual ~WorldCloudSyncer_GameCore() /*override*/;
 
     virtual void
     syncWorld(::World::WorldID const&, ::std::function<void(::World::WorldCloudSyncResult)> const&) /*override*/;

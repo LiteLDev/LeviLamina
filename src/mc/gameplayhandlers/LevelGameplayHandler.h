@@ -14,7 +14,7 @@ class LevelGameplayHandler : public ::GameplayHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelGameplayHandler() /*override*/ = default;
+    virtual ~LevelGameplayHandler() /*override*/;
 
     virtual ::HandlerResult handleEvent(::LevelGameplayEvent<void> const&) = 0;
 

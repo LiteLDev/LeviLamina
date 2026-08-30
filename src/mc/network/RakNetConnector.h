@@ -39,7 +39,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~ConnectionCallbacks() /*override*/ = default;
+        virtual ~ConnectionCallbacks() /*override*/;
 
         virtual void
         onAllConnectionsClosed(::Connection::DisconnectFailReason discoReason, bool skipDisconnectMessage) = 0;
@@ -54,6 +54,12 @@ public:
             ::std::string const&    payload,
             ::std::function<void()> errorCallback
         ) = 0;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -126,6 +132,11 @@ public:
         // NOLINTBEGIN
         MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
 
+        MCAPI ::NetworkPeer::DataStatus $_receivePacket(
+            ::std::string&                                                    outData,
+            ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+        );
+
         MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
         MCAPI void $update();
@@ -175,7 +186,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RakNetConnector() /*override*/ = default;
+    virtual ~RakNetConnector() /*override*/;
 
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 

@@ -8,9 +8,15 @@ class ServerRestartServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerRestartServiceProvider() = default;
+    virtual ~ServerRestartServiceProvider();
 
     virtual void requestReloadScriptsAndFunctions() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

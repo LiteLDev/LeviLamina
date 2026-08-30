@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScrollViewComponent() /*override*/ = default;
+    virtual ~ScrollViewComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -86,7 +86,16 @@ public:
 
     MCAPI void _makeScrollBarVisible();
 
+    MCAPI void _setContentOffset(
+        ::LayoutComponent& layout,
+        ::glm::vec2        offset,
+        ::glm::vec2 const& scrollContentSize,
+        ::glm::vec2 const& scrollViewPortSize
+    );
+
     MCAPI ::ui::AnimationStatus _updateDynamicsAndScrollPosition(::mce::TimeStep const& timeStep);
+
+    MCAPI void _updateScroll(::glm::vec2 const& delta, bool updateScrollBoxLayout);
 
     MCAPI void _updateScrollBoxSize();
 
@@ -110,6 +119,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::UIControl& owner);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -145,7 +145,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemInHandRenderer() /*override*/ = default;
+    virtual ~ItemInHandRenderer() /*override*/;
     // NOLINTEND
 
 public:
@@ -177,12 +177,32 @@ public:
     MCAPI ::ItemRenderCall&
     _rebuildItem(::BaseActorRenderContext& renderContext, ::Mob* mob, ::ItemStack const& item, int fallbackFrame);
 
+    MCAPI void _renderBannerBlockItem(
+        ::BaseActorRenderContext&           renderContext,
+        ::dragon::RenderMetadata const      renderMetadata,
+        ::ItemStack const&                  item,
+        ::Actor&                            entity,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        float                               frameAlpha,
+        float                               scale
+    ) const;
+
     MCAPI void _renderChestBlockItem(
         ::BaseActorRenderContext&      renderContext,
         ::dragon::RenderMetadata const renderMetadata,
         ::BlockType const*             blockType,
         ::Actor&                       entity,
         bool const                     isInHandItem
+    ) const;
+
+    MCAPI void _renderConduitBlockItem(
+        ::BaseActorRenderContext&           renderContext,
+        ::dragon::RenderMetadata const      renderMetadata,
+        ::Actor&                            entity,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        float                               frameAlpha
     ) const;
 
     MCAPI void _renderCopperGolemStatueBlockItem(
@@ -205,6 +225,18 @@ public:
     MCAPI void
     _renderFishingRod(::BaseActorRenderContext& renderContext, ::ItemStack const& item, ::Actor& entity) const;
 
+    MCAPI void _renderGlowstickBlockItem(
+        ::BaseActorRenderContext&           renderContext,
+        ::dragon::RenderMetadata const      renderMetadata,
+        ::ItemStack const&                  item,
+        ::Actor&                            entity,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        float                               frameAlpha,
+        ::ItemContextFlags                  itemFlags,
+        float                               scale
+    );
+
     MCAPI void _renderMiniMapHand(::BaseActorRenderContext& renderContext, ::Player& player, bool inOffhand);
 
     MCAPI void _renderPhotoMapItem(
@@ -213,6 +245,16 @@ public:
         float const               frameAlpha,
         bool const                isMainHand
     );
+
+    MCAPI void _renderShulkerBoxBlockItem(
+        ::BaseActorRenderContext&           renderContext,
+        ::dragon::RenderMetadata const      renderMetadata,
+        ::ItemStack const&                  item,
+        ::Actor&                            entity,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        float                               frameAlpha
+    ) const;
 
     MCAPI void _tessellateBlockItem(::Tessellator& tessellator, ::BlockTessellator& t, ::Block const& block);
 
@@ -296,5 +338,11 @@ public:
         ::BlockTessellator&                    commonRenderer,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

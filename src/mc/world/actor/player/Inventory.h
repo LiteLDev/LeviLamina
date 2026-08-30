@@ -14,7 +14,7 @@ class Inventory : public ::FillingContainer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Inventory() /*override*/ = default;
+    virtual ~Inventory() /*override*/;
 
     virtual void init() /*override*/;
 
@@ -43,6 +43,12 @@ public:
     MCAPI void setupDefault();
 
     MCAPI void tick(int selectedSlot);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

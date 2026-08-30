@@ -30,6 +30,12 @@ public:
     DBStorageEnvironmentChain();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~DBStorageEnvironmentChain();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::FlushableEnv> createFlushableEnv(
@@ -37,5 +43,11 @@ public:
         ::std::shared_ptr<::Core::FileStorageArea> storageAreaForLevel,
         ::Core::Path const&                        dbPath
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

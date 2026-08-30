@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorVolumeHighlightRenderer() /*override*/ = default;
+    virtual ~EditorVolumeHighlightRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -97,6 +97,12 @@ public:
         ::AABB const&             area,
         ::Vec3 const&             offset
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

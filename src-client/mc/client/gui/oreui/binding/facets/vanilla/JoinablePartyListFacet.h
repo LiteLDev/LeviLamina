@@ -46,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~JoinablePartyListFacet() /*override*/ = default;
+    virtual ~JoinablePartyListFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -83,6 +83,12 @@ public:
         ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>      partyProvider,
         ::World::WorldPlayerListTracker&                           worldPlayerListTracker
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

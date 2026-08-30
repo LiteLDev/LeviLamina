@@ -23,11 +23,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CustomBlockStateVariant() /*override*/ = default;
+    virtual ~CustomBlockStateVariant() /*override*/;
 
     virtual ::std::unique_ptr<::Tag> _toNBT(int val) const /*override*/;
 
     virtual ::std::optional<int> _fromNBT(::Tag const& tag) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

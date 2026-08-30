@@ -22,11 +22,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CrafterContainerManagerModel() /*override*/ = default;
+    virtual ~CrafterContainerManagerModel() /*override*/;
 
     virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
     virtual ::ContainerScreenContext _postInit() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

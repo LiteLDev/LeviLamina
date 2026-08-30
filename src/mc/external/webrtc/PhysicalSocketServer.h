@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PhysicalSocketServer() /*override*/ = default;
+    virtual ~PhysicalSocketServer() /*override*/;
 
     virtual ::webrtc::Socket* CreateSocket(int family, int type) /*override*/;
 

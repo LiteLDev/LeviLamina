@@ -22,6 +22,18 @@ public:
     EditorScriptAPI& operator=(EditorScriptAPI const&);
     EditorScriptAPI(EditorScriptAPI const&);
     EditorScriptAPI();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~EditorScriptAPI();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Editor::API

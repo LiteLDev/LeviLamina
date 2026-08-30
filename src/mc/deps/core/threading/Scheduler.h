@@ -83,12 +83,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~Scheduler() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~Scheduler() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:

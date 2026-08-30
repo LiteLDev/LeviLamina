@@ -8,7 +8,7 @@ class IVirtualAllocator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IVirtualAllocator() = default;
+    virtual ~IVirtualAllocator();
 
     virtual uint64 GetAllocationPageSize() const = 0;
 

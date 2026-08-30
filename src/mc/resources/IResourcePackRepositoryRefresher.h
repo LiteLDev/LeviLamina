@@ -9,7 +9,7 @@ class IResourcePackRepositoryRefresher {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IResourcePackRepositoryRefresher() = default;
+    virtual ~IResourcePackRepositoryRefresher();
 
     virtual ::Bedrock::Threading::Async<void> initialize() = 0;
 

@@ -17,7 +17,7 @@ class IPendingOperation {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPendingOperation() = default;
+    virtual ~IPendingOperation();
 
     virtual ::std::unique_ptr<::Editor::Transactions::IOperation>
     _commit(::Editor::ServiceProviderCollection& services) = 0;

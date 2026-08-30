@@ -172,7 +172,7 @@ public:
 
     virtual void GenerateKeyFrame(::std::vector<::std::string> const&) = 0;
 
-    virtual ~VideoSendStream() = default;
+    virtual ~VideoSendStream();
     // NOLINTEND
 };
 

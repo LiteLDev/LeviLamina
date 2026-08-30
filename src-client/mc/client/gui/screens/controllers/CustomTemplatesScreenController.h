@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CustomTemplatesScreenController() /*override*/ = default;
+    virtual ~CustomTemplatesScreenController() /*override*/;
 
     virtual void onCreation() /*override*/;
 
@@ -55,6 +55,12 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::std::shared_ptr<::PlayScreenModel> model, ::std::vector<::WorldTemplateInfo> const& customTemplates);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

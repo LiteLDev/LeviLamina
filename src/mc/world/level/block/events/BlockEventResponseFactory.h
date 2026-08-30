@@ -15,7 +15,7 @@ class BlockEventResponseFactory : public ::EventResponseFactory, public ::IPackL
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockEventResponseFactory() /*override*/ = default;
+    virtual ~BlockEventResponseFactory() /*override*/;
 
     virtual void initializeFactory(::PackLoadInfo const& packLoadInfo) /*override*/;
 

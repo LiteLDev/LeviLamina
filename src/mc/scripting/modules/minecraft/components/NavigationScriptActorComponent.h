@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NavigationScriptActorComponent() /*override*/ = default;
+    virtual ~NavigationScriptActorComponent() /*override*/;
 
     virtual ::Scripting::Result_deprecated<bool> getIsAmphibious() const;
 
@@ -68,6 +68,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

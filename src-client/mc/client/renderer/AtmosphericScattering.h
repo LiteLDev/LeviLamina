@@ -223,7 +223,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AtmosphericScattering() /*override*/ = default;
+    virtual ~AtmosphericScattering() /*override*/;
 
     virtual void loadDataSync(
         ::cereal::ReflectionCtx const&                     ctx,

@@ -24,7 +24,7 @@ class ParticleEmitter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleEmitter() = default;
+    virtual ~ParticleEmitter();
 
     virtual void setActorBindInfo(
         ::Dimension*          dimension,

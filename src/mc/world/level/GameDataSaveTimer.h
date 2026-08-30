@@ -2,32 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/threading/CountTracker.h"
+
 class GameDataSaveTimer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc691c4;
-    ::ll::UntypedStorage<8, 8>  mUnk4b0009;
-    ::ll::UntypedStorage<8, 8>  mUnk2d9edd;
-    ::ll::UntypedStorage<8, 16> mUnk88c27e;
-    ::ll::UntypedStorage<1, 1>  mUnk55e648;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mNextSaveDataTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds const>        mSaveTimeInterval;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mNextStorageCheckTime;
+    ::ll::TypedStorage<8, 16, ::Bedrock::Threading::CountTracker>     mDeferStorageActionsRefCount;
+    ::ll::TypedStorage<1, 1, bool>                                    mWasStoragePreviouslyDeferred;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GameDataSaveTimer& operator=(GameDataSaveTimer const&);
-    GameDataSaveTimer(GameDataSaveTimer const&);
-    GameDataSaveTimer();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~GameDataSaveTimer();
+    MCAPI ~GameDataSaveTimer();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

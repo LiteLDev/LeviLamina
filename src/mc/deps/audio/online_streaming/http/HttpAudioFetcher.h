@@ -66,7 +66,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HttpAudioFetcher() /*override*/ = default;
+    virtual ~HttpAudioFetcher() /*override*/;
 
     virtual void start() /*override*/;
 
@@ -105,6 +105,12 @@ public:
         ::Audio::OnlineStreamConfig const&
     )> createFetcherFactory(::Bedrock::NotNullNonOwnerPtr<::TaskGroup> const& taskGroup);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

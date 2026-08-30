@@ -21,6 +21,18 @@ public:
     ScriptClientFilesystemService& operator=(ScriptClientFilesystemService const&);
     ScriptClientFilesystemService(ScriptClientFilesystemService const&);
     ScriptClientFilesystemService();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~ScriptClientFilesystemService();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

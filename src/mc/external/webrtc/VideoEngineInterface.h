@@ -24,7 +24,7 @@ class VideoEngineInterface : public ::webrtc::RtpHeaderExtensionQueryInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VideoEngineInterface() /*override*/ = default;
+    virtual ~VideoEngineInterface() /*override*/;
 
     virtual ::std::unique_ptr<::webrtc::VideoMediaSendChannelInterface> CreateSendChannel(
         ::webrtc::Environment const&,

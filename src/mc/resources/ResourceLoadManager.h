@@ -116,7 +116,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourceLoadManager() /*override*/ = default;
+    virtual ~ResourceLoadManager() /*override*/;
     // NOLINTEND
 
 public:
@@ -194,6 +194,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor();
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

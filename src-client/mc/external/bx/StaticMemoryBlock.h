@@ -18,7 +18,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StaticMemoryBlock() = default;
+    virtual ~StaticMemoryBlock();
 
     virtual void* more(uint _size) /*override*/;
 

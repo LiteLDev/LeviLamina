@@ -46,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TransformableVideoSenderFrame() /*override*/ = default;
+    virtual ~TransformableVideoSenderFrame() /*override*/;
 
     virtual ::webrtc::ArrayView<uchar const> GetData() const /*override*/;
 

@@ -25,7 +25,7 @@ public:
     // NOLINTBEGIN
     virtual bool Parse(::std::optional<::std::string> str_value) /*override*/;
 
-    virtual ~FieldTrialFlag() /*override*/;
+    virtual ~FieldTrialFlag() /*override*/ = default;
     // NOLINTEND
 
 public:

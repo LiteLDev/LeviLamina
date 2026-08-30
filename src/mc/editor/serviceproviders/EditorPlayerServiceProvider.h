@@ -19,7 +19,7 @@ class EditorPlayerServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorPlayerServiceProvider() = default;
+    virtual ~EditorPlayerServiceProvider();
 
     virtual ::Player* getPlayer() const = 0;
 

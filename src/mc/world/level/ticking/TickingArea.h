@@ -55,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TickingArea() /*override*/ = default;
+    virtual ~TickingArea() /*override*/;
 
     virtual ::mce::UUID const& getId() const /*override*/;
 
@@ -124,7 +124,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TickingArea(
+        ::Dimension&          dimension,
+        ::mce::UUID           uniqueId,
+        ::std::string const&  name,
+        ::ActorUniqueID       entityId,
+        ::Bounds const&       bounds,
+        bool                  isCircle,
+        float                 maxDistToPlayers,
+        bool                  alwaysActive,
+        ::TickingAreaLoadMode loadMode
+    );
+
     MCAPI void _save(::LevelStorage& levelStorage);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Dimension&          dimension,
+        ::mce::UUID           uniqueId,
+        ::std::string const&  name,
+        ::ActorUniqueID       entityId,
+        ::Bounds const&       bounds,
+        bool                  isCircle,
+        float                 maxDistToPlayers,
+        bool                  alwaysActive,
+        ::TickingAreaLoadMode loadMode
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

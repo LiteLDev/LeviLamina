@@ -35,7 +35,7 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~ProtocolViolationCause() /*override*/;
+    virtual ~ProtocolViolationCause() /*override*/ = default;
     // NOLINTEND
 
 public:

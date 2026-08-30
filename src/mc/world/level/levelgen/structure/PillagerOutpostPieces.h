@@ -71,11 +71,35 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI PillagerOutpostPiece(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string                                     templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation,
+            float                                             integrity,
+            bool                                              isSatellite,
+            ::Dimension&                                      dimension
+        );
+
         MCAPI void _addMobsFromPositions(
             ::BoundingBox const&               chunkBB,
             ::ActorDefinitionIdentifier const& definition,
             ::BlockSource&                     region,
             ::std::vector<::BlockPos> const&   entityPositions
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string                                     templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation,
+            float                                             integrity,
+            bool                                              isSatellite,
+            ::Dimension&                                      dimension
         );
         // NOLINTEND
 

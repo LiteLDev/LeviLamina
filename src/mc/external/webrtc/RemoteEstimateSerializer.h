@@ -21,7 +21,7 @@ public:
 
     virtual ::webrtc::BufferT<uchar, 0> Serialize(::webrtc::NetworkStateEstimate const& src) const = 0;
 
-    virtual ~RemoteEstimateSerializer() = default;
+    virtual ~RemoteEstimateSerializer();
     // NOLINTEND
 };
 

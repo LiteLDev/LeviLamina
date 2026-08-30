@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LoomContainerManagerModel() /*override*/ = default;
+    virtual ~LoomContainerManagerModel() /*override*/;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
@@ -46,6 +46,12 @@ public:
 #ifdef LL_PLAT_C
     MCFOLD void fireItemAcquiredEvent(::ItemInstance const& item, int count);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

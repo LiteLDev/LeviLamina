@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileReaderImpl() /*override*/ = default;
+    virtual ~FileReaderImpl() /*override*/;
 
     virtual bool open(::bx::FilePath const&, ::bx::Error*) /*override*/;
 

@@ -16,13 +16,19 @@ class ScriptSelectionContainerEntity : public ::Editor::ScriptModule::ScriptSele
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptSelectionContainerEntity() /*override*/ = default;
+    virtual ~ScriptSelectionContainerEntity() /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

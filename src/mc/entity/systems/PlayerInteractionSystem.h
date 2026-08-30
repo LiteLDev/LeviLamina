@@ -23,7 +23,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~InteractionMappingBase() = default;
+        virtual ~InteractionMappingBase();
 
         virtual ::InteractionResult
         getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction) const = 0;

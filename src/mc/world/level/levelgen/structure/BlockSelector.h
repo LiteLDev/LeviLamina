@@ -12,7 +12,7 @@ class BlockSelector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockSelector() = default;
+    virtual ~BlockSelector();
 
     virtual ::Block const& next(::Random&, int, int, int, bool) const = 0;
     // NOLINTEND

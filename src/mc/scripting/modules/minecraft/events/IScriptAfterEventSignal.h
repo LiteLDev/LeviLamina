@@ -13,7 +13,7 @@ class IScriptAfterEventSignal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IScriptAfterEventSignal() = default;
+    virtual ~IScriptAfterEventSignal();
 
     virtual void preFlush() = 0;
 

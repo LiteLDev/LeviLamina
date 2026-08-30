@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PaneContainer() /*override*/ = default;
+    virtual ~PaneContainer() /*override*/;
 
     virtual void clear() /*override*/;
     // NOLINTEND
@@ -50,6 +50,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_DATA();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

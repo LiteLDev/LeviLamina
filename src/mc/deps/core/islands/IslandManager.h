@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IslandManager() /*override*/ = default;
+    virtual ~IslandManager() /*override*/;
 
     virtual bool registerIsland(::Bedrock::IslandRegistrationInfo&) /*override*/;
 

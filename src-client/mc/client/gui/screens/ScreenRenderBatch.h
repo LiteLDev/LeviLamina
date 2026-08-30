@@ -45,6 +45,8 @@ public:
     );
 
     MCAPI void _storeTextureState(::UIControl& control, bool state);
+
+    MCAPI ~ScreenRenderBatch();
     // NOLINTEND
 
 public:
@@ -63,5 +65,11 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::std::string, ::std::pair<int, int>>& GRID_DIMENSIONS();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

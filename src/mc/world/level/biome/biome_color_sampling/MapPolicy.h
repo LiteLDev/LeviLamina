@@ -15,7 +15,7 @@ class MapPolicy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MapPolicy() = default;
+    virtual ~MapPolicy();
 
     virtual ::mce::Color get(::BlockSource& region, ::BlockPos const& pos) const = 0;
     // NOLINTEND

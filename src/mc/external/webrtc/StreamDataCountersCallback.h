@@ -13,7 +13,7 @@ class StreamDataCountersCallback {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StreamDataCountersCallback() = default;
+    virtual ~StreamDataCountersCallback();
 
     virtual ::webrtc::StreamDataCounters GetDataCounters(uint) const;
 

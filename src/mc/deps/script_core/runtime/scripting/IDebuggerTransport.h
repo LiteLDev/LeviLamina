@@ -8,7 +8,7 @@ class IDebuggerTransport {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDebuggerTransport() = default;
+    virtual ~IDebuggerTransport();
 
     virtual bool listen(ushort port) = 0;
 

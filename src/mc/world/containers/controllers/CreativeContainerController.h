@@ -16,7 +16,7 @@ class CreativeContainerController : public ::CraftingContainerController {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CreativeContainerController() /*override*/ = default;
+    virtual ~CreativeContainerController() /*override*/;
 
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const /*override*/;
 
@@ -25,6 +25,12 @@ public:
     virtual ::ItemInstance const& getRecipeItem(int index) const /*override*/;
 
     virtual bool canRemove(int slot, int removeCount) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -22,7 +22,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptValue() = default;
+    virtual ~ScriptValue();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

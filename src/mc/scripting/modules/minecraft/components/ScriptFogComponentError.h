@@ -27,9 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI explicit ScriptFogComponentError(::ScriptModuleMinecraft::ScriptFogComponentError::Reason reason);
-#endif
     // NOLINTEND
 
 public:
@@ -41,9 +39,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptFogComponentError::Reason reason);
-#endif
     // NOLINTEND
 };
 

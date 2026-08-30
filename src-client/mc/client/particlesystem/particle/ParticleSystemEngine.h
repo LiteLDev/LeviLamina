@@ -71,7 +71,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleSystemEngine() /*override*/ = default;
+    virtual ~ParticleSystemEngine() /*override*/;
     // NOLINTEND
 
 public:
@@ -139,5 +139,11 @@ public:
         ::std::weak_ptr<::LightPropagation::LightVolumeManager> lightVolumeManager,
         ::LightTexture&                                         lightTexture
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

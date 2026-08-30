@@ -66,7 +66,7 @@ public:
 
     virtual void OnSctpDataChannelStateChanged(int channel_id, ::webrtc::DataChannelInterface::DataState state);
 
-    virtual ~PeerConnectionInternal() /*override*/;
+    virtual ~PeerConnectionInternal() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -13,7 +13,7 @@ class ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContainerValidationBase() = default;
+    virtual ~ContainerValidationBase();
 
     virtual bool isValidSlotForContainer(
         ::ContainerScreenContext const& screenContext,

@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ElementConstructorScreenController() /*override*/ = default;
+    virtual ~ElementConstructorScreenController() /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
 
@@ -78,6 +78,12 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

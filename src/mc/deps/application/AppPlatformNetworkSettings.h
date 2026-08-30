@@ -9,9 +9,15 @@ class AppPlatformNetworkSettings : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AppPlatformNetworkSettings() /*override*/ = default;
+    virtual ~AppPlatformNetworkSettings() /*override*/;
 
     virtual bool requiresNetworkOutageMessaging() const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

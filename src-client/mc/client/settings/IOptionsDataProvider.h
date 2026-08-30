@@ -17,7 +17,7 @@ class IOptionsDataProvider : public ::Settings::IDataProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IOptionsDataProvider() /*override*/ = default;
+    virtual ~IOptionsDataProvider() /*override*/;
 
     virtual ::gsl::span<::Settings::OptionData const> getOptions() const = 0;
 

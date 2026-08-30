@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftHandlerCrafting() /*override*/ = default;
+    virtual ~CraftHandlerCrafting() /*override*/;
 
     virtual ::ItemStackNetResult handleConsumedItem(
         ::FullContainerName const& openContainerNetId,
@@ -52,6 +52,12 @@ public:
     _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
 
     virtual ::Recipes const* _getLevelRecipes() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

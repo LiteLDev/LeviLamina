@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Watchdog() /*override*/ = default;
+    virtual ~Watchdog() /*override*/;
 
     virtual void
     setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler) /*override*/;
@@ -75,6 +75,12 @@ public:
     MCNAPI static int _stackOverflowHandler(::JSContext* ctx, void* runtimeOpaque);
 
     MCNAPI static int _timeoutHandler(::JSContext* ctx, void* runtimeOpaque);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -12,7 +12,7 @@ class ImageExportSubController : public ::ClientInstanceScreenController {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ImageExportSubController() /*override*/ = default;
+    virtual ~ImageExportSubController() /*override*/;
     // NOLINTEND
 
 public:
@@ -20,6 +20,12 @@ public:
     // NOLINTBEGIN
     MCAPI ::ui::ViewRequest
     handleImagesExport(::std::vector<::Core::PathBuffer<::Core::BasicStackString<char, 1024>>> const& toExport);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

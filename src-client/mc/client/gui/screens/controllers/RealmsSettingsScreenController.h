@@ -190,7 +190,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsSettingsScreenController() /*override*/ = default;
+    virtual ~RealmsSettingsScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 

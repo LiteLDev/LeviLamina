@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContentCatalogPackSource() /*override*/ = default;
+    virtual ~ContentCatalogPackSource() /*override*/;
 
     virtual void setEnabled(bool enabled) /*override*/;
 
@@ -53,6 +53,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Bedrock::Threading::Async<void> _load();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

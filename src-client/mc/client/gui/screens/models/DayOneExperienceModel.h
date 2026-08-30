@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DayOneExperienceModel() /*override*/ = default;
+    virtual ~DayOneExperienceModel() /*override*/;
     // NOLINTEND
 
 public:

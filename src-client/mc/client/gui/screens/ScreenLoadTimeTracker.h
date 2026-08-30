@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenLoadTimeTracker() /*override*/ = default;
+    virtual ~ScreenLoadTimeTracker() /*override*/;
     // NOLINTEND
 
 public:
@@ -44,6 +44,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::IUIEventTelemetry& eventing);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

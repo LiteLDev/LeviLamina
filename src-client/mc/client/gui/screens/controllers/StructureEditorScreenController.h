@@ -67,7 +67,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureEditorScreenController() /*override*/ = default;
+    virtual ~StructureEditorScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 

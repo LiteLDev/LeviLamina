@@ -13,7 +13,7 @@ class RtpPacketSender {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtpPacketSender() = default;
+    virtual ~RtpPacketSender();
 
     virtual void EnqueuePackets(::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> packets) = 0;
 

@@ -53,7 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelListCache() /*override*/ = default;
+    virtual ~LevelListCache() /*override*/;
 
     virtual void addLevel(::std::string const& levelId, ::LevelData&& levelData) /*override*/;
 

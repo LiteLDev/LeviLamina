@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TouchMapper() /*override*/ = default;
+    virtual ~TouchMapper() /*override*/;
 
     virtual void setMapping(
         ::InputEventQueue&      eventQueue,
@@ -73,6 +73,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::function<::std::vector<::RectangleArea>()> areaFunc);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

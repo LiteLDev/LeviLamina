@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RakTcpProxy() /*override*/ = default;
+    virtual ~RakTcpProxy() /*override*/;
 
     virtual bool start(ushort port, ushort maxIncomming, ushort maxOutgoing) /*override*/;
 
@@ -48,6 +48,12 @@ public:
     virtual ::RakNet::SystemAddress nextFailedConnectionAttempt() /*override*/;
 
     virtual ::RakNet::SystemAddress nextLostConnection() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -72,7 +72,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleEngine() /*override*/ = default;
+    virtual ~ParticleEngine() /*override*/;
     // NOLINTEND
 
 public:
@@ -122,5 +122,11 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::Level& level, ::Bedrock::NotNullNonOwnerPtr<::SeasonsRenderer> seasons, ::LightTexture& lightTexture);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

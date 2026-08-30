@@ -21,7 +21,7 @@ class ScriptNavigationHoverComponentFactory : public ::ScriptModuleMinecraft::Ge
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptNavigationHoverComponentFactory() /*override*/ = default;
+    virtual ~ScriptNavigationHoverComponentFactory() /*override*/;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent> createComponent(
         ::WeakEntityRef                       entity,
@@ -30,6 +30,12 @@ public:
     ) /*override*/;
 
     virtual bool hasComponent(::WeakEntityRef entity) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

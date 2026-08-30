@@ -30,8 +30,20 @@ public:
     Token();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit Token(::std::string const& str);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::vector<::Token> tokenize(::std::string const& str);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string const& str);
     // NOLINTEND
 };

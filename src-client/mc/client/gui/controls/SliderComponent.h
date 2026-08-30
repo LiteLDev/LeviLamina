@@ -55,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SliderComponent() /*override*/ = default;
+    virtual ~SliderComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -86,6 +86,8 @@ public:
 
     MCAPI void _setSliderValue(float value);
 
+    MCAPI void _updateSliderFromPosition(::glm::vec2 const& pointerPosition, bool finalize);
+
     MCAPI void _updateSliderFromStepSize(int stepSize);
 
     MCAPI bool getSliderSelected() const;
@@ -93,6 +95,12 @@ public:
     MCAPI void setNumberSteps(int steps);
 
     MCAPI void setSliderValue(float value);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

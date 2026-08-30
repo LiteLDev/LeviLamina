@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HorseContainerManagerModel() /*override*/ = default;
+    virtual ~HorseContainerManagerModel() /*override*/;
 
     virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
@@ -31,6 +31,12 @@ public:
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
     virtual ::ContainerScreenContext _postInit() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

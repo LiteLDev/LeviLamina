@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TheEndDimension() /*override*/ = default;
+    virtual ~TheEndDimension() /*override*/;
 
     virtual void startLeaveGame() /*override*/;
 
@@ -85,6 +85,12 @@ public:
         ::std::unique_ptr<::ChunkSource> storageSource,
         ::StorageVersion                 levelVersion
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

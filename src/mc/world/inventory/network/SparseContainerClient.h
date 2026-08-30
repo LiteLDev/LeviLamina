@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SparseContainerClient() /*override*/ = default;
+    virtual ~SparseContainerClient() /*override*/;
     // NOLINTEND
 
 public:
@@ -79,6 +79,12 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::BidirectionalUnorderedMap<::SparseContainerClient::PushSlotPredictionResult, ::std::string> const&
     pushSlotPredictionResultMap();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

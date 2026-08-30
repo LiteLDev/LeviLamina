@@ -24,6 +24,28 @@ public:
     ScopedPath& operator=(ScopedPath const&);
     ScopedPath(ScopedPath const&);
     ScopedPath();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI
+    ScopedPath(::Bedrock::small_vector<::Puv::internal::PathElement, 1>& path, ::Puv::internal::PathElement point);
+
+    MCNAPI ~ScopedPath();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::Bedrock::small_vector<::Puv::internal::PathElement, 1>& path, ::Puv::internal::PathElement point);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Puv::internal

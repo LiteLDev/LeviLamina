@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StonecutterContainerManagerModel() /*override*/ = default;
+    virtual ~StonecutterContainerManagerModel() /*override*/;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
@@ -50,6 +50,12 @@ public:
 
     MCAPI ::std::vector<::std::pair<::ItemInstance, ::RecipeNetId>> getResultForItem(::ItemStack const& item);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

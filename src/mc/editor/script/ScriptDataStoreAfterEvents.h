@@ -75,6 +75,8 @@ public:
 
     MCNAPI ::Editor::ScriptModule::ScriptDataStoreAfterEvents&
     operator=(::Editor::ScriptModule::ScriptDataStoreAfterEvents&& rhs);
+
+    MCNAPI ~ScriptDataStoreAfterEvents();
     // NOLINTEND
 
 public:
@@ -92,6 +94,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata const& mMetadata();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

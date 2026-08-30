@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MemoryWriter() /*override*/ = default;
+    virtual ~MemoryWriter() /*override*/;
 
     virtual int64 seek(int64 _offset, ::bx::Whence::Enum _whence) /*override*/;
 

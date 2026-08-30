@@ -12,7 +12,7 @@ class ISparseContainerSetListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISparseContainerSetListener() = default;
+    virtual ~ISparseContainerSetListener();
 
     virtual void preSetItem(::Container* container, int slot, bool isEmptyItem, ::ItemStack* item) = 0;
 

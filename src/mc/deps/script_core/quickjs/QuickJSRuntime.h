@@ -67,7 +67,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~QuickJSRuntime() /*override*/ = default;
+    virtual ~QuickJSRuntime() /*override*/;
 
     virtual ::Scripting::IRuntimeMetadata* getMetadata() const /*override*/;
 
@@ -193,6 +193,12 @@ public:
             ::std::string(::std::string_view const&, ::std::string const&, ::std::vector<::std::string> const&)>
             normalizerFn
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

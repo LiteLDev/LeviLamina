@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RenderControllerGroup() /*override*/ = default;
+    virtual ~RenderControllerGroup() /*override*/;
     // NOLINTEND
 
 public:
@@ -52,6 +52,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

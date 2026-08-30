@@ -6,7 +6,7 @@ class ITickDeltaTimeManagerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITickDeltaTimeManagerProxy() = default;
+    virtual ~ITickDeltaTimeManagerProxy();
 
     virtual void start() = 0;
 

@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorkerPool() /*override*/ = default;
+    virtual ~WorkerPool() /*override*/;
     // NOLINTEND
 
 public:
@@ -81,5 +81,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string_view name, ::Scheduler& owner);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

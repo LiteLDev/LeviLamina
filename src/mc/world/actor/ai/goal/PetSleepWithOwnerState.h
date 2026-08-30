@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PetSleepWithOwnerState() = default;
+    virtual ~PetSleepWithOwnerState();
 
     virtual void tick();
 

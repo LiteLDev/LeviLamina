@@ -39,7 +39,7 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~InitChunk() /*override*/;
+    virtual ~InitChunk() /*override*/ = default;
     // NOLINTEND
 
 public:

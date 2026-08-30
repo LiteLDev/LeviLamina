@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CompositePackSource() /*override*/ = default;
+    virtual ~CompositePackSource() /*override*/;
 
     virtual void
     forEachPackShared(::brstd::function_ref<void(::gsl::not_null<::std::shared_ptr<::Pack>>)> callback) /*override*/;
@@ -39,6 +39,12 @@ public:
 #ifdef LL_PLAT_C
     MCAPI ::std::vector<::PackSource*> getPackSources();
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

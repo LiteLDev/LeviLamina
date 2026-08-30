@@ -14,7 +14,7 @@ class ControlScreenAction {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ControlScreenAction() = default;
+    virtual ~ControlScreenAction();
 
     virtual bool getDirty() = 0;
 

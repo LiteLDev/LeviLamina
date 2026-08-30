@@ -180,7 +180,7 @@ public:
 
     virtual ::std::optional<::webrtc::AudioDeviceModule::Stats> GetStats() const;
 
-    virtual ~AudioDeviceModule() /*override*/ = default;
+    virtual ~AudioDeviceModule() /*override*/;
     // NOLINTEND
 };
 

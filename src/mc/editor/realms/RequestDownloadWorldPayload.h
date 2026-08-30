@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RequestDownloadWorldPayload() /*override*/ = default;
+    virtual ~RequestDownloadWorldPayload() /*override*/;
     // NOLINTEND
 
 public:

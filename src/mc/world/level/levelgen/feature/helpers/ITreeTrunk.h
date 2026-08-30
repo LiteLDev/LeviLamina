@@ -16,7 +16,7 @@ class ITreeTrunk {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITreeTrunk() = default;
+    virtual ~ITreeTrunk();
 
     virtual ::std::optional<::BlockPos> placeTrunk(
         ::IBlockWorldGenAPI&            target,

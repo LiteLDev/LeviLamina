@@ -85,7 +85,7 @@ public:
     // NOLINTBEGIN
     virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
-    virtual ~ItemActor() /*override*/ = default;
+    virtual ~ItemActor() /*override*/;
 
     virtual void playerTouch(::Player& player) /*override*/;
 
@@ -147,6 +147,12 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

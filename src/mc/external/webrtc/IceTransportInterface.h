@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     virtual ::webrtc::IceTransportInternal* internal() = 0;
 
-    virtual ~IceTransportInterface() /*override*/;
+    virtual ~IceTransportInterface() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MemoryFileSystemEntry() = default;
+    virtual ~MemoryFileSystemEntry();
 
     virtual bool canRemove() const = 0;
 

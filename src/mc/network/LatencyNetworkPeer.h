@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LatencyNetworkPeer() /*override*/ = default;
+    virtual ~LatencyNetworkPeer() /*override*/;
 
     virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
 

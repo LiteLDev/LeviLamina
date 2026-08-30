@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockEventBlockTypeExecutor() /*override*/ = default;
+    virtual ~BlockEventBlockTypeExecutor() /*override*/;
     // NOLINTEND
 
 public:
@@ -40,6 +40,12 @@ public:
     // NOLINTBEGIN
     MCAPI void
     setOwnerSubscription(uint64 typeId, ::Bedrock::PubSub::Subscription&& subscription, bool assertOnDuplicate);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

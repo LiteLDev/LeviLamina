@@ -18,9 +18,21 @@ public:
     ScriptCannotKickPlayerError();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit ScriptCannotKickPlayerError(::std::string const& playerType);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string const& playerType);
     // NOLINTEND
 };
 
