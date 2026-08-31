@@ -183,7 +183,12 @@ public:
 #ifdef LL_MEMORY_DEBUG
     static DebugAllocator<MimallocMemoryAllocator> ins;
 #else
+#ifdef LL_PLAT_S
     static MimallocMemoryAllocator ins;
+#else
+    // In some reasons, mimalloc crashes on client, so we use std memory allocator on client.
+    static StdMemoryAllocator ins;
+#endif
 #endif
     return ins;
 }

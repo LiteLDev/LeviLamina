@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.32.0] - 2026-08-31
+
+### Added
+
+- Added ll::Stacktrace::fromThread @zimuya4153
+- Added ll::Stacktrace::fromThreadId @zimuya4153
+
+### Changed
+
+- Adapted to Minecraft 26.32.2 @OEOTYAN @ShrBox @Lovelylavender4 @KawaiiNahida
+- Allowed non-finite numeric values for DDUI @OEOTYAN
+- Optimized the `ll::Stacktrace` @zimuya4153
+- Fixed logger output level @zimuya4153
+- Removed `ll::symbol::Symbol::fromAddress` because it has long been deprecated
+- Disabled mimalloc on client because it crashes
+
+### Fixed
+
+- Fixed RuntimePacket issue @zimuya4153
+- Fixed SAPI event template @zimuya4153
+
 ## [26.20.7] - 2026-08-01
 
 ### Added
@@ -1696,7 +1717,8 @@ For lip and tooth-hub test only.
 [#1822]: https://github.com/LiteLDev/LeviLamina/issues/1822
 [#1824]: https://github.com/LiteLDev/LeviLamina/issues/1824
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.7...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.0...HEAD
+[26.32.0]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.7...v26.32.0
 [26.20.7]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.6...v26.20.7
 [26.20.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.5...v26.20.6
 [26.20.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.4...v26.20.5
