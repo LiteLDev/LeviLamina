@@ -215,30 +215,34 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 LL_AUTO_TYPE_INSTANCE_HOOK(
     PatchVersionBinding,
     HookPriority::Normal,
-    StartMenuScreenController,
-    &StartMenuScreenController::$ctor,
-    void*,
-    ::std::shared_ptr<::MainMenuScreenModel>             model,
-    ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
+    ScreenController,
+    &ScreenController::bindString,
+    void,
+    StringHash const&                                bindingName,
+    brstd::move_only_function<::std::string() const> callback,
+    brstd::move_only_function<bool() const>          condition
 ) {
-    auto result = origin(model, entitlementManager);
-    bindString(
-        StringHash("#version"),
-        []() -> auto {
-            auto gameVer   = getGameVersion();
-            auto loaderVer = getLoaderVersion();
-            return fmt::format(
-                "v{}.{}/LeviLamina-{}.{}.{}",
-                gameVer.minor,
-                gameVer.patch,
-                loaderVer.major,
-                loaderVer.minor,
-                loaderVer.patch
-            );
-        },
-        []() -> auto { return true; }
-    );
-    return result;
+    static auto hash = StringHash("#version");
+    if (bindingName == hash) {
+        origin(
+            bindingName,
+            []() -> auto {
+                auto gameVer   = getGameVersion();
+                auto loaderVer = getLoaderVersion();
+                return fmt::format(
+                    "v{}.{}/LeviLamina-{}.{}.{}",
+                    gameVer.minor,
+                    gameVer.patch,
+                    loaderVer.major,
+                    loaderVer.minor,
+                    loaderVer.patch
+                );
+            },
+            []() -> auto { return true; }
+        );
+    } else {
+        origin(bindingName, std::move(callback), std::move(condition));
+    }
 }
 } // namespace ll
 
