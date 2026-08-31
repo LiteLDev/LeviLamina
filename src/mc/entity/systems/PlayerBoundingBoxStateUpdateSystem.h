@@ -42,7 +42,6 @@ struct PlayerComponent;
 struct PlayerInputRequestComponent;
 struct RenderRotationComponent;
 struct StandAnimationComponent;
-struct TickingSystemWithInfo;
 struct VanillaOffsetComponent;
 struct VehicleComponent;
 // clang-format on
@@ -157,8 +156,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-
     MCAPI static void tickPlayerBoundingBoxStateUpdateSystem(
         ::StrictEntityContext const&   context,
         ::AABBShapeComponent const&    aabb,

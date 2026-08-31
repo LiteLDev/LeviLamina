@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkcadee7;
-    ::ll::UntypedStorage<8, 8>  mUnk45a519;
+    ::ll::UntypedStorage<8, 8>  mUnka7e97e;
     // NOLINTEND
 
 public:
@@ -17,18 +17,6 @@ public:
     DiscoveryRequest& operator=(DiscoveryRequest const&);
     DiscoveryRequest(DiscoveryRequest const&);
     DiscoveryRequest();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DiscoveryRequest();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace NetherNet::LanEvents

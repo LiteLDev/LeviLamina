@@ -14,12 +14,7 @@ class ActorBubbleColumnStateSystem : public ::ITickingSystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual void tick(::EntityRegistry&) /*override*/;
-#else // LL_PLAT_C
     virtual void tick(::EntityRegistry& registry) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -30,11 +25,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

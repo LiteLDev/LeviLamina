@@ -19,18 +19,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ui::AxisOffset>>    axisOffsets;
     ::ll::TypedStorage<4, 4, ::ui::LayoutAxisOffsetContainerType> containerType;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~AxisOffsetContainer();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ui

@@ -55,20 +55,12 @@ public:
     MCAPI void
     generateDefaultFloor(::BlockSource& region, ::BoundingBox const& chunkBB, int xOff, int zOff, bool downOpening);
 
-    MCAPI void spawnElder(::BlockSource& region, ::BoundingBox const& x, int y, int z, int);
+    MCAPI void spawnElder(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y, int z);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int& mGridroomLeftWingConnectIndex();
-
-    MCAPI static int& mGridroomRightWingConnectIndex();
-
-    MCAPI static int& mGridroomSourceIndex();
-
-    MCAPI static int& mGridroomTopConnectIndex();
-
     MCAPI static int const& mLeftWingIndex();
 
     MCAPI static int const& mPenthouseIndex();
@@ -101,11 +93,5 @@ public:
     MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

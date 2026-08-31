@@ -10,7 +10,6 @@
 class Actor;
 class CompoundTag;
 class DataLoadHelper;
-class Level;
 // clang-format on
 
 struct TimerComponent {
@@ -32,10 +31,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCAPI int getRandomTime(::Actor& actor);
-
-    MCAPI uint64 getTimeStamp(::Level const& level);
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 

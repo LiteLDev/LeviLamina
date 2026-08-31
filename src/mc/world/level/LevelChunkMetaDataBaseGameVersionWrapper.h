@@ -18,22 +18,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LevelChunkMetaDataBaseGameVersionWrapper();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LevelChunkMetaDataBaseGameVersionWrapper(::BaseGameVersion const& baseGameVersion);
+    MCAPI void initializeLevelChunkMetaData(::LevelChunkMetaData& metaData, bool use3DBiomeMaps) const;
 
-    MCNAPI void initializeLevelChunkMetaData(::LevelChunkMetaData& metaData, bool use3DBiomeMaps) const;
-
-    MCNAPI void updateLevelChunkMetaDataForSaving(::LevelChunkMetaData& metaData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::BaseGameVersion const& baseGameVersion);
+    MCAPI void updateLevelChunkMetaDataForSaving(::LevelChunkMetaData& metaData) const;
     // NOLINTEND
 };

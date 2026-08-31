@@ -56,8 +56,6 @@ public:
 
     MCAPI ::cereal::LogCheckpoint getLogCheckpoint();
 
-    MCAPI bool hasErrors() const;
-
     MCAPI void log(::cereal::ResultCode res, ::Bedrock::StaticOptimizedString msg);
 
     MCAPI void popContext();

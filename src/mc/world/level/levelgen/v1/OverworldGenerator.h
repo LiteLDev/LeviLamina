@@ -18,15 +18,12 @@ class Biome;
 class BiomeArea;
 class Block;
 class BlockPos;
-class BlockSource;
-class BlockTickingQueue;
 class BlockVolume;
 class BlockVolumeTarget;
 class BoundingBox;
 class ChunkLocalNoiseCache;
 class ChunkPos;
 class ChunkViewSource;
-class Dimension;
 class LevelChunk;
 class PerlinSimplexNoise;
 class SurfaceLevelCache;
@@ -74,13 +71,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    OverworldGenerator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OverworldGenerator() /*override*/;
+    virtual ~OverworldGenerator() /*override*/ = default;
 
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
@@ -140,39 +133,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OverworldGenerator(::Dimension& dimension, bool isLegacyWorld);
-
-    MCAPI void buildSurfaces(
-        ::OverworldGenerator::ThreadData& thread,
-        ::BlockVolume&                    blocks,
-        ::LevelChunk&                     levelChunk,
-        ::ChunkPos const&                 chunkPos,
-        ::SurfaceLevelCache const&        surfaceLevelCache
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void
-    _fixWaterAlongEdges(::LevelChunk const& lc, ::BlockSource& source, ::BlockTickingQueue& instaTickQueue);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, bool isLegacyWorld);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
@@ -200,7 +160,7 @@ public:
         short                      seaLevel
     ) const;
 
-    MCFOLD void $decorateWorldGenLoadChunk(
+    MCAPI void $decorateWorldGenLoadChunk(
         ::Biome const&       biome,
         ::LevelChunk&        lc,
         ::BlockVolumeTarget& target,
@@ -211,13 +171,5 @@ public:
     MCAPI ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos chunkPos) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForChunkSource();
-
-    MCNAPI static void** $vftableForIPreliminarySurfaceProvider();
     // NOLINTEND
 };

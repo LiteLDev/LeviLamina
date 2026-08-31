@@ -39,15 +39,6 @@ public:
 
     MCAPI BatchKey(int depth, float alpha, ::BatchClippingState const& clippingState);
 
-    MCAPI BatchKey(
-        int                         depth,
-        float                       alpha,
-        ::mce::Color const&         color,
-        ::ResourceLocation const&   resourceLocation,
-        ::BatchClippingState const& clippingState,
-        ::UIMaterialType            materialType
-    );
-
     MCAPI bool operator==(::BatchKey const& rhs) const;
 
     MCAPI ~BatchKey();
@@ -61,15 +52,6 @@ public:
     MCAPI void* $ctor(::BatchKey const& rha);
 
     MCAPI void* $ctor(int depth, float alpha, ::BatchClippingState const& clippingState);
-
-    MCAPI void* $ctor(
-        int                         depth,
-        float                       alpha,
-        ::mce::Color const&         color,
-        ::ResourceLocation const&   resourceLocation,
-        ::BatchClippingState const& clippingState,
-        ::UIMaterialType            materialType
-    );
     // NOLINTEND
 
 public:

@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorCommandOrigin() /*override*/ = default;
+    virtual ~ActorCommandOrigin() /*override*/;
 
     virtual ::std::string const& getRequestId() const /*override*/;
 
@@ -68,15 +68,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit ActorCommandOrigin(::Actor& origin);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor& origin);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

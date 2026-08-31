@@ -5,7 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/network/EditorConnectionJoinIntent.h"
 #include "mc/world/level/FileArchiver.h"
 
 // auto generated forward declare list
@@ -17,7 +18,6 @@ class Player;
 class Scheduler;
 namespace Editor { class IEditorPlayer; }
 namespace Editor { class ServiceProviderCollection; }
-namespace Scripting { struct ContextId; }
 // clang-format on
 
 namespace Editor {
@@ -47,16 +47,17 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> scriptingTeardown() = 0;
 
-    virtual ::Scripting::Result_deprecated<void>
-    scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) = 0;
+    virtual ::Scripting::Result_deprecated<void> scriptingRebuild() = 0;
 
     virtual void tryClearPlaytestRoundtripInfo() = 0;
-    // NOLINTEND
 
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
+    virtual bool isEditorModeOrInEditorWorld() const = 0;
 
+    virtual bool isEditorModeEnabled() const = 0;
+
+    virtual ::EditorConnectionJoinIntent getEditorConnectionJoinIntent() const = 0;
+
+    virtual void setEditorConnectionJoinIntent(::EditorConnectionJoinIntent intent) = 0;
     // NOLINTEND
 };
 

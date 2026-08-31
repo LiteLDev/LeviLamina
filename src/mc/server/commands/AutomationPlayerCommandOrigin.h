@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AutomationPlayerCommandOrigin() /*override*/ = default;
+    virtual ~AutomationPlayerCommandOrigin() /*override*/;
 
     virtual ::std::string getName() const /*override*/;
 
@@ -62,6 +62,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::string $getName() const;
@@ -81,11 +87,5 @@ public:
     MCAPI bool $isValid() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

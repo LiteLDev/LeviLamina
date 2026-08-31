@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 namespace Editor::Services {
 
@@ -33,7 +33,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~IEditorService() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~IEditorService() /*override*/;
+#endif
 
     virtual ::Scripting::Result_deprecated<void> init() = 0;
 
@@ -46,6 +50,14 @@ public:
     virtual bool isServiceInitialized() const;
 
     virtual bool isServiceReady() const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

@@ -12,7 +12,6 @@
 // clang-format off
 class UIControl;
 class VariableRef;
-struct PostOperation;
 // clang-format on
 
 class LayoutVariable {
@@ -63,12 +62,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LayoutVariable(::UIControl& control, ::LayoutVariableType type);
-
-    MCAPI void _addDependsOnMeEntriesForInvalidation(bool checkForDuplicates);
-
-    MCAPI void _clearSatisfied();
-
     MCAPI float _getMaxSiblingValue() const;
 
     MCAPI void _initialize(bool checkForDuplicates);
@@ -78,21 +71,9 @@ public:
     MCAPI void
     _invalidateDependencies(::std::function<void(::VariableRef const&)> invalidCallback, bool forceInvalidation);
 
-    MCAPI void _removeDependsOnMeEntries();
-
-    MCAPI void addPostComputationalNeeds(::std::vector<::PostOperation>& postOperations, ::VariableRef& var);
-
-    MCAPI void clearOverrideValue();
-
-    MCAPI void initialize();
-
     MCAPI bool isSatisfiable() const;
 
-    MCAPI void overrideGridLayoutRule(::UIControl& control, ::UIControl& type, ::LayoutVariableType);
-
     MCAPI void overrideRenderableLayoutRule(::UIControl& control, ::LayoutVariableType type);
-
-    MCAPI void overrideStackPanelLayoutRule(::UIControl& control, ::UIControl& parent, ::LayoutVariableType type);
 
     MCAPI void removeDeadDependencies();
 
@@ -100,23 +81,13 @@ public:
 
     MCAPI ::ui::DirtyFlag satisfy();
 
-    MCAPI void setGridItemLayoutRule(::UIControl& control, ::UIControl& parent, ::LayoutVariableType type);
-
     MCAPI void setOverrideValue(float inValue);
 
-    MCAPI void setRelativeLayoutRule(::UIControl& control, ::UIControl& relativeTo, ::LayoutVariableType type);
-
-    MCAPI void setStackPanelItemLayoutRule(::UIControl& control, ::UIControl& parent, ::LayoutVariableType type);
+    MCAPI void setRelativeLayoutRule(::UIControl& control, ::UIControl& relativeTo, ::LayoutVariableType const type);
 
     MCAPI ::std::string toString(::LayoutVariableStringType type) const;
 
     MCAPI ~LayoutVariable();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& control, ::LayoutVariableType type);
     // NOLINTEND
 
 public:

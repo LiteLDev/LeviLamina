@@ -9,7 +9,6 @@
 // clang-format off
 class BaseActorRenderContext;
 class BlockActor;
-class ClientPBRTextureData;
 class Model;
 class ScreenContext;
 class Tessellator;
@@ -49,14 +48,6 @@ public:
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::Model&                        model,
-        ::ClientPBRTextureData const&   actorTextureData,
-        ::mce::MaterialPtr const&       forcedMaterial
-    ) const;
-
-    MCAPI void _renderModel(
-        ::ScreenContext&                screenContext,
-        ::dragon::RenderMetadata const& renderMetadata,
-        ::Model&                        model,
         ::ActorTextureInfo const&       actorTextureInfo,
         ::mce::MaterialPtr const&       forcedMaterial,
         ::mce::ClientTexture const&     forcedTexture
@@ -84,7 +75,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -12,8 +12,3 @@ enum class SubCommand : int {
 };
 
 }
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::AgentCommands::SubCommand>();
-// clang-format on

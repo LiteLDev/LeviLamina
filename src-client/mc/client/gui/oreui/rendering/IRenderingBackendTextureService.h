@@ -47,18 +47,6 @@ public:
 
     virtual ::std::string createIdentifier(::std::string identifier) = 0;
     // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::Gameface::IRenderingBackendTextureService> create();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Gameface

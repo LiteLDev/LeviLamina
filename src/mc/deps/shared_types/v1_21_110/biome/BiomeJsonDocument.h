@@ -78,12 +78,6 @@ public:
         // NOLINTEND
 
     public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
         // constructor thunks
         // NOLINTBEGIN
         MCFOLD void* $ctor(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject const&);
@@ -111,11 +105,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_110::BiomeJsonDocument& operator=(::SharedTypes::v1_21_110::BiomeJsonDocument&&);
+    MCAPI ::SharedTypes::v1_21_110::BiomeJsonDocument& operator=(::SharedTypes::v1_21_110::BiomeJsonDocument&&);
 
-    MCFOLD ::SharedTypes::v1_21_110::BiomeJsonDocument& operator=(::SharedTypes::v1_21_110::BiomeJsonDocument const&);
-
-    MCAPI ~BiomeJsonDocument();
+    MCAPI ::SharedTypes::v1_21_110::BiomeJsonDocument& operator=(::SharedTypes::v1_21_110::BiomeJsonDocument const&);
     // NOLINTEND
 
 public:
@@ -130,12 +122,6 @@ public:
     MCAPI static ::std::string const& REGEX_BIOME_IDENTIFIER();
 
     MCAPI static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

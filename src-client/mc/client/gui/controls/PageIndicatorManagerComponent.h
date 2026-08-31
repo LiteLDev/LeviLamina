@@ -45,13 +45,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PageIndicatorManagerComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PageIndicatorManagerComponent() /*override*/ = default;
+    virtual ~PageIndicatorManagerComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -60,41 +56,24 @@ public:
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&         context,
-        ::ScreenInputContext& screenEvent,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     ) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PageIndicatorManagerComponent(::UIControl& owner);
-
-    MCAPI void _broadcastNewHoverSliceButtonEvent(
-        ::ScreenInputContext& context,
-        uint64                newSubPage,
-        bool                  isInteracted,
-        uint                  pressedButton
-    );
-
-    MCFOLD ::Bedrock::PubSub::Subscription registerListener(::std::function<void(uint64)> callback);
-
     MCAPI ::Bedrock::PubSub::Subscription
     registerListenerWithExpectedPageCount(uint64 expectedPageCount, ::std::function<void(uint64)> callback);
-
-    MCAPI void setNextSubPageBinding(uint binding);
-
-    MCFOLD void setPrevSubPageBinding(uint binding);
-
-    MCAPI void setTargetManagerToCompare(::std::shared_ptr<::UIControl> targetControlWithManagerToCompare);
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -106,8 +85,12 @@ public:
 
     MCAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType
-    $receive(::VisualTree& context, ::ScreenInputContext& screenEvent, ::UIAnimationController&, ::ScreenEvent const&);
+    MCAPI ::ComponentReceiveActionType $receive(
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
+    );
     // NOLINTEND
 
 public:

@@ -24,14 +24,24 @@ public:
     ::ll::UntypedStorage<4, 8>  mUnk3b2cd2;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PersistenceRequestGroupPayload& operator=(PersistenceRequestGroupPayload const&);
     PersistenceRequestGroupPayload();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PersistenceRequestGroupPayload& operator=(PersistenceRequestGroupPayload const&);
+    PersistenceRequestGroupPayload(PersistenceRequestGroupPayload const&);
+    PersistenceRequestGroupPayload();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI PersistenceRequestGroupPayload(::Editor::Network::PersistenceRequestGroupPayload const&);
 
     MCNAPI PersistenceRequestGroupPayload(
@@ -43,6 +53,7 @@ public:
 
     MCNAPI ::Editor::Network::PersistenceRequestGroupPayload&
     operator=(::Editor::Network::PersistenceRequestGroupPayload&&);
+#endif
     // NOLINTEND
 
 public:
@@ -54,6 +65,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void* $ctor(::Editor::Network::PersistenceRequestGroupPayload const&);
 
     MCNAPI void* $ctor(
@@ -62,12 +74,7 @@ public:
         ::Editor::Services::PersistenceScope scope,
         ::std::optional<int>                 version
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+#endif
     // NOLINTEND
 };
 

@@ -59,22 +59,14 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual ~ClientboundDebugRendererPacket() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI ClientboundDebugRendererPacket();
-
-    MCAPI explicit ClientboundDebugRendererPacket(::ClientboundDebugRendererPacketPayload payload);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ClientboundDebugRendererPacketPayload payload);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

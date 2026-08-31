@@ -22,12 +22,6 @@ public:
     // NOLINTBEGIN
     MCNAPI LogContent(::Editor::LogContent const&);
 
-#ifdef LL_PLAT_C
-    MCNAPI ::std::string const& getMessageStr() const;
-
-    MCNAPI ::std::string const& getSubMessageStr() const;
-#endif
-
     MCNAPI ~LogContent();
     // NOLINTEND
 

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/diagnostics/LogAreaID.h"
-#include "mc/platform/diagnostics/bedrock_log/LogChannel.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -55,20 +54,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LogDetails(::BedrockLog::LogChannel channel);
-
-    MCAPI void _appendLogEntryMetadata(
-        ::std::string& logEntry,
-        ::std::string  timestamp,
-        ::LogAreaID    area,
-        uint           priority,
-        ::std::string  functionName,
-        int            lineNumber,
-        int            _messageId
-    );
-
-    MCAPI ::std::string _getCurrentTimestamp();
-
     MCAPI void _logToFile(::std::string const& debugEvent);
 
     MCAPI void _log_va(
@@ -93,8 +78,6 @@ public:
 
     MCAPI void _openLogFile();
 
-    MCAPI void _updateAllSettings(::LogSettingsUpdater& _settings);
-
     MCAPI void closeLog();
 
     MCAPI void createLog(
@@ -103,7 +86,7 @@ public:
         ::std::string const&  _debugLogTimestamp,
         bool                  createLogFile,
         ::LogSettingsUpdater* _settings,
-        double                _logCycleInS
+        double const          _logCycleInS
     );
 
 #ifdef LL_PLAT_S
@@ -117,20 +100,6 @@ public:
 #endif
 
     MCAPI void updateLogSetting(::std::string const& setting, bool newValue);
-
-    MCAPI ~LogDetails();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BedrockLog::LogChannel channel);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

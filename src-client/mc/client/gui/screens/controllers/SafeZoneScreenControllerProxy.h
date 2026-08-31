@@ -16,12 +16,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SafeZoneScreenControllerProxy() /*override*/ = default;
+    virtual ~SafeZoneScreenControllerProxy() /*override*/;
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

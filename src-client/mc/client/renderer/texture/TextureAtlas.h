@@ -15,15 +15,11 @@
 
 // auto generated forward declare list
 // clang-format off
-class AbstractTextureAccessor;
 class AtlasItemManager;
 class ResourcePackManager;
-class TextureAtlasItem;
 class TextureAtlasTile;
 struct ParsedAtlasNode;
-struct ParsedAtlasNodeElement;
 struct RuntimeImageGeneratorInfo;
-struct TextureAtlasItemTextureSetTranslation;
 struct TextureAtlasResourceCallbacks;
 namespace Json { class Value; }
 namespace cg { class ImageBuffer; }
@@ -37,6 +33,8 @@ namespace mce::framebuilder { class PBRTextureDataManager; }
 class TextureAtlas : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // TextureAtlas inner types define
+    enum class PaddingMode : int {};
+
     using SourceImageBuffers = ::std::unordered_map<::ResourceLocation, ::cg::TextureSetImageContainer>;
 
     using TextureAtlasTiles = ::std::vector<::TextureAtlasTile>;
@@ -59,7 +57,8 @@ public:
     ::ll::TypedStorage<8, 64, ::ImageResourceManager>                                      mResourceManager;
     ::ll::TypedStorage<8, 24, ::std::vector<::mce::FileWatcherHandle>>                     mFileWatcherHandle;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::weak_ptr<::RuntimeImageGeneratorInfo>>> mRuntimeImageGenerators;
-    ::ll::TypedStorage<8, 88, ::cg::TextureAtlas>                                          mTextureAtlas;
+    ::ll::TypedStorage<4, 4, ::TextureAtlas::PaddingMode>                                  mPaddingMode;
+    ::ll::TypedStorage<8, 96, ::cg::TextureAtlas>                                          mTextureAtlas;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager>>
         mPBRTextureDataManager;
     // NOLINTEND
@@ -79,7 +78,8 @@ public:
     // NOLINTBEGIN
     MCAPI TextureAtlas(
         ::ResourceLocation const&                                              metaFile,
-        ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> pbrTextureDataManager
+        ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> pbrTextureDataManager,
+        ::TextureAtlas::PaddingMode                                            paddingMode
     );
 
     MCAPI void _addElementCollection(
@@ -93,51 +93,17 @@ public:
         bool                                   isAdditive
     );
 
-    MCAPI ::TextureAtlasTile* _addTile(
-        ::std::vector<::TextureAtlasTile>& textureAtlasTiles,
-        bool                               quad,
-        float                              fadePerMipAmount,
-        ::ParsedAtlasNodeElement&          element
-    );
-
-    MCAPI void _calculateAtlasTilesDimensions(
-        ::AbstractTextureAccessor&         textureAccessor,
-        ::std::vector<::TextureAtlasTile>& textureAtlasTiles,
-        uint                               maxTileDimension
-    );
-
     MCAPI ::TextureAtlasResourceCallbacks _createAtlas(
         ::Json::Value const&                               root,
         ::std::function<void(::TextureAtlasStatus const&)> statusCallback,
-        ::std::function<void()>                            imageAtlasFinishedCallback,
+        ::std::function<void()> const                      imageAtlasFinishedCallback,
         ::std::shared_ptr<::mce::TextureGroup>             textureGroup,
-        ::cg::MipMapSupport                                mipMapSupport,
+        ::cg::MipMapSupport const                          mipMapSupport,
         ::ResourcePackManager&                             resourcePackManager,
         ::std::shared_ptr<::cg::ImageBuffer>               outCopyOfFinalImage,
         ::std::shared_ptr<::std::unordered_map<::ResourceLocation, ::cg::TextureSetImageContainer>>
             outCopyOfSourceImages
     );
-
-    MCAPI ::std::vector<::TextureAtlasTile> _generateAtlasTileList();
-
-    MCAPI void _loadAtlasNodes(
-        ::ResourcePackManager&                 resourcePackManager,
-        ::Json::Value const&                   root,
-        ::std::vector<::ParsedAtlasNode>&      atlasNodes,
-        ::std::shared_ptr<::mce::TextureGroup> textureGroup
-    );
-
-    MCAPI void _loadRuntimeImageAtlasNodes(::std::vector<::ParsedAtlasNode>& atlasNodes);
-
-    MCAPI bool _readNode(
-        ::ResourcePackManager&                 resourcePackManager,
-        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
-        ::Json::Value const&                   jsonNode,
-        ::ParsedAtlasNode&                     node,
-        bool                                   isRefreshing
-    );
-
-    MCAPI void addRuntimeImageGenerator(::std::weak_ptr<::RuntimeImageGeneratorInfo> info);
 
     MCAPI ::TextureAtlasResourceCallbacks createAtlasFromJson(
         ::Json::Value const&                               json,
@@ -164,15 +130,7 @@ public:
             outCopyOfSourceImages
     );
 
-    MCAPI uint getColorMipCount() const;
-
     MCAPI ::ResourceLocation const& getPathFromName(::std::string const& name) const;
-
-    MCAPI ::TextureAtlasItem const& getTextureItem(::std::string const& textureName) const;
-
-    MCAPI ::TextureAtlasItemTextureSetTranslation const& getTextureItemTextureSetTranslation(int index) const;
-
-    MCAPI uint64 getUsedMemory() const;
 
     MCAPI ::TextureAtlasResourceCallbacks loadMetaFile(
         ::ResourcePackManager&                             resourcePackManager,
@@ -201,7 +159,8 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::ResourceLocation const&                                              metaFile,
-        ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> pbrTextureDataManager
+        ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> pbrTextureDataManager,
+        ::TextureAtlas::PaddingMode                                            paddingMode
     );
     // NOLINTEND
 
@@ -209,11 +168,5 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

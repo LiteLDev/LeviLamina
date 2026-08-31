@@ -18,12 +18,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SkeletalHierarchyBone() = default;
+    virtual ~SkeletalHierarchyBone();
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

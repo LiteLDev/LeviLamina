@@ -19,10 +19,4 @@ public:
 
     virtual void setPlayerUIItem(int slot, ::ItemStack const& item) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

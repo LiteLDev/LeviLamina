@@ -15,7 +15,6 @@
 // clang-format off
 class AppPlatform;
 class IPacketSerializationController;
-class NetherNetTransportFactory;
 class NetworkDebugManager;
 class NetworkIdentifier;
 class NetworkSessionOwner;
@@ -26,7 +25,7 @@ class SignalingServiceSignInJob;
 struct ConnectionDefinition;
 struct NetworkSettingOptions;
 struct NetworkSystemToggles;
-struct PortMappingInfo;
+struct PortConfiguration;
 namespace NetherNet { struct NetworkID; }
 namespace PlayerMessaging { struct NetworkID; }
 // clang-format on
@@ -45,17 +44,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerNetworkSystem() /*override*/ = default;
+    virtual ~ServerNetworkSystem() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerNetworkSystem(
-        ::brstd::function_ref<::NetworkSystem::Dependencies()>          dependencies,
-        ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>()> stats
-    );
-
     MCAPI ServerNetworkSystem(
         ::Scheduler&                                                 receiveThread,
         ::std::vector<::std::string> const&                          overrideBroadcastAddresses,
@@ -64,17 +58,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>                 appPlatform,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner>         networkSessionOwner,
         ::NetworkSettingOptions const&                               networkSettingOption,
-        ::PortMappingInfo const&                                     portMappingInfo,
+        ::PortConfiguration const&                                   portConfig,
         ::NetherNet::LogSeverity                                     defaultLogSeverity,
         ::std::optional<::NetherNet::NetworkID>                      networkId,
         ::Bedrock::NonOwnerPointer<::SignalingService>               signalingService,
         ::std::optional<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder,
         ::std::unique_ptr<::IPacketSerializationController>          packetController
-    );
-
-    MCAPI ::std::unique_ptr<::NetworkStatistics> _createNetworkStatistics(
-        ::NetworkSystemToggles const&                            networkToggles,
-        ::Bedrock::NonOwnerPointer<::NetworkDebugManager> const& networkDebugManager
     );
 
 #ifdef LL_PLAT_C
@@ -86,39 +75,16 @@ public:
 
     MCAPI ::NetworkIdentifier getLocalNetworkId() const;
 
-    MCAPI ::std::string getMultiplayerCorrelationId() const;
-
     MCAPI bool host(::ConnectionDefinition const& definition);
 
+#ifdef LL_PLAT_S
     MCAPI void reloadPacketLimitConfig(::PacketGroupDefinition::PacketGroupBuilder&& packetGroupBuilder);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::NetworkSystem::Dependencies _createConstructionDependencies(
-        ::ServerNetworkSystem*                               pThis,
-        ::Scheduler&                                         receiveThread,
-        ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
-        ::NetworkSystemToggles const&                        networkToggles,
-        ::NetherNetTransportFactory const&                   transportFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>         appPlatform,
-        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
-        ::NetworkSettingOptions const&                       networkSettingOptions,
-        ::std::optional<::NetherNet::NetworkID>              networkId,
-        ::Bedrock::NonOwnerPointer<::SignalingService>       signalingService,
-        ::std::unique_ptr<::IPacketSerializationController>  packetController
-    );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::brstd::function_ref<::NetworkSystem::Dependencies()>          dependencies,
-        ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>()> stats
-    );
-
     MCAPI void* $ctor(
         ::Scheduler&                                                 receiveThread,
         ::std::vector<::std::string> const&                          overrideBroadcastAddresses,
@@ -127,7 +93,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>                 appPlatform,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner>         networkSessionOwner,
         ::NetworkSettingOptions const&                               networkSettingOption,
-        ::PortMappingInfo const&                                     portMappingInfo,
+        ::PortConfiguration const&                                   portConfig,
         ::NetherNet::LogSeverity                                     defaultLogSeverity,
         ::std::optional<::NetherNet::NetworkID>                      networkId,
         ::Bedrock::NonOwnerPointer<::SignalingService>               signalingService,
@@ -137,14 +103,8 @@ public:
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForNetworkEnableDisableListener();
-
-    MCNAPI static void** $vftableForConnectionCallbacks();
-
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForIPSupportInterface();
+    MCAPI void $dtor();
     // NOLINTEND
 };

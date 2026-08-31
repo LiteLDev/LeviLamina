@@ -27,19 +27,8 @@ public:
     public:
         // prevent constructor by default
         SpatialLayer& operator=(SpatialLayer const&);
+        SpatialLayer(SpatialLayer const&);
         SpatialLayer();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI SpatialLayer(::webrtc::VideoLayersAllocation::SpatialLayer const&);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::webrtc::VideoLayersAllocation::SpatialLayer const&);
-        // NOLINTEND
     };
 
 public:

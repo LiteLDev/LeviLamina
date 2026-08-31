@@ -64,6 +64,8 @@ public:
     virtual void onBindingsReleased() /*override*/;
 
     virtual void update(double const time) /*override*/;
+
+    virtual ~CommandRegistry() /*override*/;
     // NOLINTEND
 
 public:
@@ -76,6 +78,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onReadyForBindings();
@@ -85,12 +93,6 @@ public:
     MCFOLD void $onBindingsReleased();
 
     MCFOLD void $update(double const time);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

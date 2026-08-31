@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace webrtc { class IceTransportInit; }
 namespace webrtc { class IceTransportInterface; }
-namespace webrtc { struct IceTransportInit; }
 // clang-format on
 
 namespace webrtc {
@@ -21,12 +21,6 @@ public:
 
     virtual ::webrtc::scoped_refptr<::webrtc::IceTransportInterface>
     CreateIceTransport(::std::string const& transport_name, int component, ::webrtc::IceTransportInit init) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

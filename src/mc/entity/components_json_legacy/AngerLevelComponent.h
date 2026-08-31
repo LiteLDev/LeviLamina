@@ -80,8 +80,6 @@ public:
     // NOLINTBEGIN
     MCAPI void _decrementAnger(::Actor* owner, ::ILevel const& level);
 
-    MCAPI ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> _getListeningSoundEvent(::Actor& actor) const;
-
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI bool belowAngryThreshold(::ActorUniqueID id) const;
@@ -92,11 +90,7 @@ public:
 
     MCAPI ::std::optional<::std::pair<::Actor*, int>> getTopActiveNuisance(::Actor* owner, ::ILevel const& level) const;
 
-    MCAPI bool isAngry() const;
-
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
-
-    MCAPI void tick(::Actor* owner, ::ILevel const& level);
 
     MCAPI void tryIncreaseAngerAt(::Actor& owner, ::Actor& nuisance, int anger, bool playSounds);
 
@@ -106,15 +100,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS();
-
     MCAPI static int const& DEFAULT_ANGRY_BOOST();
 
     MCAPI static int const& DEFAULT_ANGRY_THRESHOLD();
 
     MCAPI static int const& DEFAULT_MAX_ANGER_LEVEL();
-
-    MCAPI static bool const& DEFAULT_SHOULD_REMOVE_TARGET();
     // NOLINTEND
 
 public:

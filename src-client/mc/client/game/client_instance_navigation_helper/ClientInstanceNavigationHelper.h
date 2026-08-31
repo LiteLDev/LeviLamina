@@ -15,8 +15,6 @@ namespace ClientInstanceNavigationHelper { struct CoinPurchaseScreenParams; }
 namespace ClientInstanceNavigationHelper {
 // functions
 // NOLINTBEGIN
-MCNAPI void navigateToCoinPurchaseScreen(::ClientInstanceNavigationHelper::CoinPurchaseScreenParams& params);
-
 MCNAPI void navigateToCoinPurchaseScreen_AssumingHasQueriedProducts(
     ::ClientInstanceNavigationHelper::CoinPurchaseScreenParams& params
 );
@@ -37,8 +35,6 @@ MCNAPI void navigateToStoreDataDrivenScreen(
     ::ISceneFactory&                     sceneFactory,
     ::ILayoutContentRefreshable&         existingController
 );
-
-MCNAPI void navigateToStoreHomeScreen(bool isPreGame, ::ISceneStack& sceneStack, ::ISceneFactory& sceneFactory);
 
 MCNAPI void popBackToOrCreateNewStoreDataDrivenScreen(
     ::StoreDataDrivenScreenParams const& params,

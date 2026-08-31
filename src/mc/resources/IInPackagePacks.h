@@ -55,10 +55,4 @@ public:
 
     virtual ::std::vector<::IInPackagePacks::MetaData> getPacks(::PackType packType) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

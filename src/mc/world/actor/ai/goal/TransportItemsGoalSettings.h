@@ -43,16 +43,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TransportItemsGoalSettings& operator=(TransportItemsGoalSettings const&);
-    TransportItemsGoalSettings(TransportItemsGoalSettings const&);
-    TransportItemsGoalSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::TransportItemsGoalSettings& operator=(::TransportItemsGoalSettings&&);
-
     MCAPI ~TransportItemsGoalSettings();
     // NOLINTEND
 

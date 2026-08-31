@@ -22,8 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> _findDeltaLevel(::BlockSource& region, ::BlockPos cursor) const;
-
     MCAPI bool _isValidPlacement(::BlockSource& region, ::BlockPos cursor) const;
     // NOLINTEND
 
@@ -33,11 +31,5 @@ public:
     MCAPI bool $place(::BlockSource& region, ::BlockPos const& centerPos, ::Random& random) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

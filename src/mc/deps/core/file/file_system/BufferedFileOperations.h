@@ -20,17 +20,10 @@ public:
         ::Core::PathView        sourceFilePath,
         ::Core::FileSystemImpl* pTargetTransaction,
         ::Core::PathView        targetFilePath,
-        uint64                  startPosition,
-        uint64                  sectionSize,
+        uint64 const            startPosition,
+        uint64 const            sectionSize,
         uint64&                 outBytesWritten,
         uint64&                 outBytesRemaining
-    );
-
-    MCNAPI static ::Core::Result copyDirectory(
-        ::Core::FileSystemImpl* pSourceTransaction,
-        ::Core::PathView        sourceDirectoryPath,
-        ::Core::FileSystemImpl* pTargetTransaction,
-        ::Core::PathView        targetDirectoryPath
     );
 
     MCNAPI static ::Core::Result copyFile(
@@ -48,13 +41,6 @@ public:
         uint64                  startPosition,
         uint64&                 outBytesWritten,
         uint64&                 outBytesRemaining
-    );
-
-    MCNAPI static ::Core::Result moveDirectory(
-        ::Core::FileSystemImpl* pSourceTransaction,
-        ::Core::PathView        sourceDirectoryPath,
-        ::Core::FileSystemImpl* pTargetTransaction,
-        ::Core::PathView        targetDirectoryPath
     );
 
     MCNAPI static ::Core::Result moveFile(

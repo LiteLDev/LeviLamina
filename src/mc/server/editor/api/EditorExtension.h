@@ -4,9 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/deps/scripting/script_engine/Closure.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/deps/script_core/script_engine/scripting/Closure.h"
 #include "mc/editor/script/ServerScriptPackType.h"
 
 // auto generated forward declare list
@@ -49,6 +50,7 @@ public:
     // NOLINTBEGIN
     MCNAPI EditorExtension(::Editor::API::EditorExtension const&);
 
+#ifdef LL_PLAT_S
     MCNAPI EditorExtension(
         ::std::string const&           name,
         ::Scripting::WeakLifetimeScope scope,
@@ -60,17 +62,14 @@ public:
         ::Editor::API::ServerScriptPackType                               sourcePackType
     );
 
-    MCNAPI void _setDescription(::std::string const& value);
-
-    MCNAPI void _setNotes(::std::string const& value);
-
-    MCNAPI void _setToolGroup(::std::string const& value);
-
     MCNAPI ::Scripting::Result_deprecated<void> executeActivation(::Editor::API::EditorExtensionContext& context);
 
     MCNAPI ::Scripting::Result_deprecated<void> executeShutdown(::Editor::API::EditorExtensionContext& context);
+#endif
 
     MCNAPI ::Editor::API::EditorExtension& operator=(::Editor::API::EditorExtension const&);
+
+    MCNAPI void setTrackingScope(::Scripting::StrongTypedObjectHandle<::Editor::API::EditorExtension> object);
     // NOLINTEND
 
 public:
@@ -84,6 +83,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::API::EditorExtension const&);
 
+#ifdef LL_PLAT_S
     MCNAPI void* $ctor(
         ::std::string const&           name,
         ::Scripting::WeakLifetimeScope scope,
@@ -94,6 +94,7 @@ public:
         ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options,
         ::Editor::API::ServerScriptPackType                               sourcePackType
     );
+#endif
     // NOLINTEND
 
 public:

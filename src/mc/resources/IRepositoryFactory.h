@@ -19,10 +19,4 @@ public:
 
     virtual ::std::unique_ptr<::IPackIOProvider> createIO() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/WeakPtr.h"
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
@@ -18,8 +17,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
-class BlockType;
 class CompoundTag;
 class DefinitionEvent;
 class Experiments;
@@ -31,7 +28,6 @@ class PackLoadRequirement;
 class ResourcePackManager;
 struct BlockComponentGroupDescription;
 struct BlockDefinition;
-struct BlockPermutationDescription;
 namespace JsonUtil { class EmptyClass; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -56,26 +52,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>       mResourcePackLocation;
         ::ll::TypedStorage<8, 32, ::std::string>       mResourceFileLocation;
         ::ll::TypedStorage<8, 16, ::Json::Value>       mRoot;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI BlockResource();
-
-        MCAPI ~BlockResource();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -112,33 +88,6 @@ public:
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockDescription>>& description
     );
 
-    MCAPI void _buildBlockMenuCategorySchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockDescription>>& description
-    );
-
-    MCAPI bool _checkInvalidPermutationComponents(::BlockComponentGroupDescription const& componentGroupDescription);
-
-    MCAPI bool _loadBlockDescription(
-        ::Json::Value const&     root,
-        ::BlockDescription&      desc,
-        ::JsonBetaState&         canUseBeta,
-        ::PackLoadContext const& packLoadContext,
-        ::SemVersion const&      jsonVersion
-    );
-
-    MCAPI bool _loadComponents(
-        ::Json::Value const& root,
-        ::BlockDefinition&   definition,
-        ::PackLoadContext&   packLoadContext,
-        ::JsonBetaState      canUseBeta
-    );
-
-    MCAPI void
-    _loadComponentsForLegacyCompabitility(::SemVersion const& originalJsonVersion, ::BlockDefinition& definition);
-
-    MCAPI bool
-    _loadEvents(::Json::Value const& root, ::BlockDefinition& definition, ::PackLoadContext& packLoadContext);
-
     MCAPI bool _parseComponents(
         ::Json::Value const&              blockRoot,
         ::BlockComponentGroupDescription& componentGroupDescription,
@@ -152,11 +101,6 @@ public:
     MCAPI ::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory
     _stringToCreativeItemCategory(::std::string const& category, ::std::string const& blockIdentifier);
 
-    MCAPI void
-    _upgradeComponentsForLegacyCompatibility(::SemVersion const& originalJsonVersion, ::BlockDefinition& definition);
-
-    MCAPI bool _validateAndAssignBlockId(::BlockDescription& desc, bool isFromBaseGamePack);
-
     MCAPI bool _validatePrereleaseRequirements(
         ::LogArea                                   logArea,
         ::std::string const&                        jsonType,
@@ -164,34 +108,19 @@ public:
         ::std::optional<::SemVersion> const&        releaseVersion,
         ::std::vector<::PackLoadRequirement> const& requirements,
         ::PackLoadContext const&                    packLoadContext,
-        ::JsonBetaState                             canUseBeta
+        ::JsonBetaState const                       canUseBeta
     ) const;
-
-    MCAPI void buildBlockSchema();
 
     MCAPI void digestServerBlockProperties(::std::vector<::std::pair<::std::string, ::CompoundTag>> const& blocks);
 
     MCAPI ::std::unique_ptr<::BlockDefinition>
     generateBlockDefinition(::BlockDefinitionGroup::BlockResource const& resource, ::PackLoadContext& packLoadContext);
 
-    MCAPI bool generateBlockResource(
-        ::Json::Value const&                   root,
-        ::PackLoadContext const&               packLoadContext,
-        ::SemVersion const&                    originalJsonVersion,
-        ::BlockDefinitionGroup::BlockResource& out
-    );
-
     MCAPI ::std::vector<::std::pair<::std::string, ::CompoundTag>> generateServerBlockProperties() const;
 
     MCAPI ::std::vector<::BlockDefinition const*> getBlockDefinitions() const;
 
-    MCAPI void initBlockFromDefinition(::Block& block, ::BlockPermutationDescription const& definition);
-
-    MCAPI void initBlockTypeFromDefinition(::BlockType& blockType, ::BlockDefinition const& definition);
-
     MCAPI void initializeBlockFromDefinition(::BlockDefinition const& definition, ::Level& level);
-
-    MCAPI void initializeBlocks(::Level& level);
 
     MCAPI ::std::unique_ptr<::BlockDefinition> loadResource(
         ::std::string                            upgradedJsonData,
@@ -206,27 +135,11 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
-    MCAPI void registerBlockDefinition(::std::unique_ptr<::BlockDefinition> blockDef);
-
-    MCAPI void registerBlockFromDefinition(::BlockDefinition const& definition, bool);
-
-    MCAPI void registerBlocks();
-
-    MCAPI ::WeakPtr<::BlockType> registerDataDrivenBlock(::BlockDescription const& desc);
+    MCAPI void registerBlockFromDefinition(::BlockDefinition const& definition, bool assertIfAlreadyExists);
 
     MCAPI ::BlockDefinition const* tryGetBlockDefinition(::std::string const& name) const;
 
     MCAPI ~BlockDefinitionGroup();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool
-    _validatedMultiBlockBaseComponentConstraints(::BlockComponentGroupDescription const& descriptionGroup);
-
-    MCAPI static bool
-    _validatedMultiBlockPermComponentConstraints(::BlockComponentGroupDescription const& descriptionGroup);
     // NOLINTEND
 
 public:

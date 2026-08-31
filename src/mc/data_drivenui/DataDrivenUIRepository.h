@@ -12,7 +12,6 @@
 class ResourceLoadManager;
 class ResourcePackManager;
 namespace Bedrock::PubSub { class Subscription; }
-namespace Puv { class Logger; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct ContainerFixedGridLayout; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct ContainerLayout; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct Context; }
@@ -30,6 +29,7 @@ namespace SharedTypes::v1_21_130::DataDrivenUI { struct PanelCloseButton; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct PanelDecoration; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct PanelSpacing; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct PanelText; }
+namespace SharedTypes::v1_21_130::DataDrivenUI { struct ScrollableGridLayout; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct UIComposition; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct UIRoot; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct Visibility; }
@@ -60,27 +60,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~DataDrivenUIRepository() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~DataDrivenUIRepository() /*override*/;
-#endif
 
     virtual void onActiveResourcePacksChanged(::ResourcePackManager&) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void onJsonResourcesChanged(::ResourcePackManager&) /*override*/;
-#else // LL_PLAT_C
     virtual void onJsonResourcesChanged(::ResourcePackManager& resourcePackManager) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void load(::ResourcePackManager const&) /*override*/;
-#else // LL_PLAT_C
     virtual void load(::ResourcePackManager const& resourcePackManager) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
@@ -95,44 +82,17 @@ public:
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelSpacing>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>> const&
-    getComposition(::std::string const&) const /*override*/;
-#else // LL_PLAT_C
-    virtual ::std::vector<::std::variant<
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormButton>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDivider>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDropdown>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormScrollView>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSlider>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSwitch>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormTextField>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelCloseButton>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelSpacing>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ScrollableGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>> const&
     getComposition(::std::string const& identifier) const /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::std::vector<::std::variant<
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerLayout>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Context>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Panel>>> const& getRoot(::std::string const&) const
-        /*override*/;
-#else // LL_PLAT_C
     virtual ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Context>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Panel>>> const&
     getRoot(::std::string const& identifier) const /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
@@ -147,37 +107,13 @@ public:
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelSpacing>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>>
-    getExtensionPointContents(::std::string const&) const /*override*/;
-#else // LL_PLAT_C
-    virtual ::std::vector<::std::variant<
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormButton>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDivider>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDropdown>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormScrollView>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSlider>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSwitch>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormTextField>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelCloseButton>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelSpacing>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ScrollableGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>>
     getExtensionPointContents(::std::string const& name) const /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::Bedrock::PubSub::Subscription
-    subscribeToOnCompositionsReloadedAsync(::std::function<void()>&&) /*override*/;
-#else // LL_PLAT_C
     virtual ::Bedrock::PubSub::Subscription
     subscribeToOnCompositionsReloadedAsync(::std::function<void()>&& onCompositionsReloadedAsyncCallback) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -188,8 +124,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::ResourcePackManager&                               resourcePackManager
     );
-
-    MCNAPI void _collectExtensionPoints();
 
     MCNAPI void _initializeLoaders(
         ::Puv::SlicedLoader<
@@ -202,23 +136,14 @@ public:
             nullptr_t,
             nullptr_t,
             ::SharedTypes::v1_21_130::DataDrivenUI::UIComposition>& compositionLoader,
-        bool                                                        isBuiltinPack
+        bool const                                                  isBuiltinPack
     );
-
-    MCNAPI bool _isExtensionPointDefined(::std::string const& name) const;
-
-    MCNAPI void _loadAllDataDrivenUIData(::ResourcePackManager const& resourcePackManager);
 
     MCNAPI void
-    _parseAndLoadUICompositionData(char const* filenameStr, ::std::string const& fileData, bool isBuiltinPack);
+    _parseAndLoadUICompositionData(char const* filenameStr, ::std::string const& fileData, bool const isBuiltinPack);
 
-    MCNAPI void _parseAndLoadUIRootData(char const* filenameStr, ::std::string const& fileData, bool isBuiltinPack);
-
-    MCNAPI void _validateUICompositionDoc(
-        ::SharedTypes::v1_21_130::DataDrivenUI::UIComposition const& uiComposition,
-        bool                                                         isBuiltinPack,
-        ::Puv::Logger&                                               logger
-    );
+    MCNAPI void
+    _parseAndLoadUIRootData(char const* filenameStr, ::std::string const& fileData, bool const isBuiltinPack);
 #endif
     // NOLINTEND
 
@@ -231,12 +156,6 @@ public:
         ::ResourcePackManager&                               resourcePackManager
     );
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -263,6 +182,7 @@ public:
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelSpacing>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ScrollableGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>> const&
     $getComposition(::std::string const& identifier) const;
@@ -287,6 +207,7 @@ public:
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelSpacing>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ScrollableGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>>
     $getExtensionPointContents(::std::string const& name) const;
@@ -296,13 +217,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIDataDrivenUIRepository();
-
-    MCNAPI static void** $vftableForResourcePackListener();
     // NOLINTEND
 };

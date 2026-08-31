@@ -16,10 +16,10 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doShulkerPostAiStepSystem(
-        ::StrictEntityContext const& actorRotationComponent,
-        ::ActorRotationComponent&    mobBodyRotationComponent,
-        ::MobBodyRotationComponent&  stateVectorComponent,
-        ::StateVectorComponent&
+        ::StrictEntityContext const&,
+        ::ActorRotationComponent&   actorRotationComponent,
+        ::MobBodyRotationComponent& mobBodyRotationComponent,
+        ::StateVectorComponent&     stateVectorComponent
     );
 
     MCAPI static ::TickingSystemWithInfo createSystem();

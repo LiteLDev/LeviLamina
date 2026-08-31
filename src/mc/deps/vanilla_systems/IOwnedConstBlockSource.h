@@ -18,12 +18,6 @@ public:
 
     virtual ::IConstBlockSource const* updateBlockSourceForEntity(::StrictEntityContext const& entity) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace VanillaSystems

@@ -2,13 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct ContextConfig; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -26,15 +22,6 @@ public:
     ScriptDataStorePaneContainer& operator=(ScriptDataStorePaneContainer const&);
     ScriptDataStorePaneContainer(ScriptDataStorePaneContainer const&);
     ScriptDataStorePaneContainer();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void>
-    createPane(::Scripting::ContextConfig const& contextConfig, ::std::string id);
-
-    MCNAPI ::Scripting::Result_deprecated<void> destroyPane(::std::string id);
-    // NOLINTEND
 
 public:
     // static functions

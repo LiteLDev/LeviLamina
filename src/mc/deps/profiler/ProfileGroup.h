@@ -19,24 +19,6 @@ public:
     ProfileGroup& operator=(ProfileGroup const&);
     ProfileGroup(ProfileGroup const&);
     ProfileGroup();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::std::string const& getName() const;
-
-    MCNAPI void setEnabledFlags(uchar flags);
-
-    MCNAPI void setEnabledFlagsToGlobalDefault();
-
-    MCNAPI ~ProfileGroup();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Core::Profile

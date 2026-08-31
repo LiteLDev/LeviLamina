@@ -5,19 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-class MinEngineVersion;
 class RenderControllerInfo;
-class RenderControllerPtr;
 class ResourceLoadManager;
 class ResourcePackManager;
-class SemVersion;
-class TaskResult;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class RenderControllerGroup : public ::Bedrock::EnableNonOwnerReferences {
@@ -45,19 +39,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RenderControllerGroup();
-
-    MCNAPI ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RenderControllerGroup>>
-    _buildRenderControllerFileSchema(::SemVersion const& formatVersion);
-
-    MCNAPI void _loadRenderController(
-        ::std::string const&      fileData,
-        ::MinEngineVersion const& minEngineVersion,
-        ::std::string const&      filenameWithExtension
-    );
-
-    MCNAPI ::TaskResult _tryLoadRenderControllers(::ResourcePackManager& resourcePackManager);
-
-    MCNAPI ::RenderControllerPtr getRenderController(::HashedString const& name);
 
     MCNAPI ::std::shared_ptr<::RenderControllerInfo> getRenderControllerInfo(::HashedString const& name);
 

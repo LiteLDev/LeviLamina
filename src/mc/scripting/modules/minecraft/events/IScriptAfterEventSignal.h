@@ -23,7 +23,7 @@ public:
 
     virtual uint64 getSubscriberCount() const;
 
-    virtual void enqueueClosureRemovalForActor(::ActorUniqueID const& id);
+    virtual void enqueueClosureRemovalForActor(::ActorUniqueID const&);
 
     virtual bool isActorSignal() const;
     // NOLINTEND
@@ -33,7 +33,7 @@ public:
     // NOLINTBEGIN
     MCFOLD uint64 $getSubscriberCount() const;
 
-    MCFOLD void $enqueueClosureRemovalForActor(::ActorUniqueID const& id);
+    MCFOLD void $enqueueClosureRemovalForActor(::ActorUniqueID const&);
 
     MCFOLD bool $isActorSignal() const;
 

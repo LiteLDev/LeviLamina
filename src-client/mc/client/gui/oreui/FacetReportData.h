@@ -7,12 +7,9 @@
 #include "mc/client/realms/PostStatus.h"
 #include "mc/client/realms/stories/FetchStatus.h"
 #include "mc/client/services/clubs/ReportedItem.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
-class DateManager;
-class ProfanityContext;
 namespace Realms::Stories { class RealmsFeedModeration; }
 // clang-format on
 
@@ -38,25 +35,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FacetReportData& operator=(FacetReportData const&);
-    FacetReportData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FacetReportData(::OreUI::RealmsStories::FacetReportData const&);
-
-    MCAPI FacetReportData(::OreUI::RealmsStories::FacetReportData&&);
-
-    MCAPI FacetReportData(
-        ::Clubs::ReportedItem                                    feedItem,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager const>       dateManager,
-        ::OreUI::AllowListPath                                   imagePath,
-        ::std::weak_ptr<::Realms::Stories::RealmsFeedModeration> feedModeration,
-        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>        profanityContext
-    );
-
     MCFOLD ::std::string const& getAuthorXuid() const;
 
     MCAPI ::Realms::Stories::PostStatus getDeleteStatus() const;
@@ -83,7 +63,7 @@ public:
 
     MCAPI bool const getIsEvent() const;
 
-    MCFOLD ::std::string const& getLastReported() const;
+    MCAPI ::std::string const& getLastReported() const;
 
     MCFOLD int const getReportCount() const;
 
@@ -91,37 +71,13 @@ public:
 
     MCAPI ::Realms::Stories::PostStatus getReportToXboxStatus() const;
 
-    MCFOLD ::std::vector<::std::string> const& getReporterXuids() const;
-
-    MCAPI ~FacetReportData();
+    MCAPI ::std::vector<::std::string> const& getReporterXuids() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::RealmsStories::FacetReportData const&);
-
-    MCAPI void* $ctor(::OreUI::RealmsStories::FacetReportData&&);
-
-    MCAPI void* $ctor(
-        ::Clubs::ReportedItem                                    feedItem,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager const>       dateManager,
-        ::OreUI::AllowListPath                                   imagePath,
-        ::std::weak_ptr<::Realms::Stories::RealmsFeedModeration> feedModeration,
-        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>        profanityContext
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI static ::std::add_lvalue_reference_t<char const[29]> NAME();
     // NOLINTEND
 };
 

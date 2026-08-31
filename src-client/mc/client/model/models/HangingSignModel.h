@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class ScreenContext;
 // clang-format on
 
@@ -34,28 +33,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI HangingSignModel();
-
-    MCAPI void evaluateAndSetVisibleParts(::Block const& block);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $render(::ScreenContext& screenContext);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

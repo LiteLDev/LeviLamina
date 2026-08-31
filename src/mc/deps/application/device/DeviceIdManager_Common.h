@@ -35,7 +35,7 @@ public:
     // NOLINTBEGIN
     virtual void initialize() /*override*/;
 
-    virtual void updateDeviceId(bool const) /*override*/;
+    virtual void updateDeviceId(bool const isAnonymous) /*override*/;
 
     virtual ::std::string const& getDeviceId() const /*override*/;
 
@@ -65,7 +65,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $initialize();
 
-    MCNAPI void $updateDeviceId(bool const);
+    MCNAPI void $updateDeviceId(bool const isAnonymous);
 
     MCNAPI ::std::string const& $getDeviceId() const;
 

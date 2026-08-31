@@ -47,9 +47,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+    MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCFOLD void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+    MCAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
     MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
 
@@ -63,12 +63,6 @@ public:
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::RenderParams&                                   renderParams
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -3,16 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 #include "mc/world/item/ItemInstance.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class ContainerScreenContext;
 class ItemStack;
-class Player;
 // clang-format on
 
 class CrafterContainerManagerModel : public ::LevelContainerManagerModel {
@@ -23,13 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CrafterContainerManagerModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CrafterContainerManagerModel() /*override*/ = default;
+    virtual ~CrafterContainerManagerModel() /*override*/;
 
     virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
@@ -37,19 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI CrafterContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
-#ifdef LL_PLAT_C
-    MCAPI ::ItemInstance getLastCraftableItem() const;
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

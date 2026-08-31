@@ -34,12 +34,6 @@ public:
     // NOLINTBEGIN
     MCAPI void applyUpdate(::Bedrock::DDUI::DataStoreUpdate const& change);
 
-    MCAPI bool canClientUpdateProperty(
-        ::std::string const& dataStoreName,
-        ::std::string const& propertyName,
-        ::std::string const& path
-    );
-
     MCAPI void setPropertyUpdateAllowed(
         ::std::string const& dataStoreName,
         ::std::string const& propertyName,
@@ -62,12 +56,6 @@ public:
     MCFOLD void $assertAppropriateThread() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -35,18 +35,6 @@ public:
         PoolEntry& operator=(PoolEntry const&);
         PoolEntry(PoolEntry const&);
         PoolEntry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PoolEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -90,14 +78,6 @@ public:
     MCNAPI void $tick();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForImplBase();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };
 

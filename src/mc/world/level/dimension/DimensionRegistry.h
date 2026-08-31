@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DimensionRegistry() /*override*/ = default;
+    virtual ~DimensionRegistry() /*override*/;
     // NOLINTEND
 
 public:
@@ -35,27 +35,19 @@ public:
     // NOLINTBEGIN
     MCAPI DimensionRegistry();
 
-    MCFOLD void forEachDimension(::std::function<bool(::Dimension&)> callback);
-
-    MCFOLD void forEachDimension(::std::function<bool(::Dimension const&)> callback) const;
-
-    MCAPI ::WeakRef<::Dimension> getDimensionAtIndex(uint index) const;
-
-    MCFOLD uint64 getNumDimensions() const;
-
-    MCAPI bool isEmpty() const;
-
-    MCAPI ::WeakRef<::Dimension> lookupById(::DimensionIdType id) const;
-
     MCAPI ::WeakRef<::Dimension> registerDimension(::DimensionIdType id, ::OwnerPtr<::Dimension> dimension);
-
-    MCAPI void shutdown();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

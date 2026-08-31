@@ -26,7 +26,5 @@ public:
     MCAPI void addChannelTransform(::ExpressionNode const& expression, ::Vec3 const& axis);
 
     MCAPI void addChannelTransform(::ExpressionNode const& expression, int axisIndex);
-
-    MCAPI float getFirstChannelFloat(uint64 axisIndex) const;
     // NOLINTEND
 };

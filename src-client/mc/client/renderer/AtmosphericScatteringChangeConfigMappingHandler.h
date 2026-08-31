@@ -6,10 +6,4 @@
 #include "mc/common/editor/IClientDataTransferConfigurationMappingHandler.h"
 
 class AtmosphericScatteringChangeConfigMappingHandler
-: public ::Editor::Services::IClientDataTransferConfigurationMappingHandler {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
-};
+: public ::Editor::Services::IClientDataTransferConfigurationMappingHandler {};

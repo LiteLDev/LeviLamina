@@ -43,12 +43,6 @@ public:
 
     MCAPI bool $virtualFree(void* ptr, uint size, int flags);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace OreUI

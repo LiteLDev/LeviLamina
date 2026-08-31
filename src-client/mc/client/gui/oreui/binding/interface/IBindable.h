@@ -8,7 +8,7 @@ class IBindable {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBindable() = default;
+    virtual ~IBindable();
 
     virtual void onReadyForBindings() = 0;
 
@@ -20,15 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

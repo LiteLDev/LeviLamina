@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/VideoCodecType.h"
 
 // auto generated forward declare list
@@ -45,7 +46,7 @@ public:
 
     virtual uint64 NumPackets() const = 0;
 
-    virtual bool NextPacket(::webrtc::RtpPacketToSend* packet) = 0;
+    virtual bool NextPacket(::webrtc::RtpPacketToSend* rtp_packet) = 0;
     // NOLINTEND
 
 public:
@@ -53,19 +54,13 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::webrtc::RtpPacketizer> Create(
         ::std::optional<::webrtc::VideoCodecType>  type,
-        ::rtc::ArrayView<uchar const>              payload,
+        ::webrtc::ArrayView<uchar const>           payload,
         ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
         ::webrtc::RTPVideoHeader const&            rtp_video_header
     );
 
     MCNAPI static ::std::vector<int>
     SplitAboutEqually(int payload_len, ::webrtc::RtpPacketizer::PayloadSizeLimits const& limits);
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

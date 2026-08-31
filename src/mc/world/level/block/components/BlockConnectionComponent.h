@@ -49,43 +49,20 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockConnectionComponent& operator=(BlockConnectionComponent const&);
-    BlockConnectionComponent(BlockConnectionComponent const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockConnectionComponent();
-
     MCAPI void addCallback(
         ::BlockType&                                               blockType,
-        ::NeighborBlockDirections                                  neighborBlockDirections,
+        ::NeighborBlockDirections const&                           neighborBlockDirections,
         ::std::unique_ptr<::BlockTrait::IConnectionUpdateCallback> callback,
         int                                                        updateFlags
     );
 
     MCAPI ::Block const& handleConnectionUpdate(
-        ::BlockSource&            region,
-        ::Block const&            block,
-        ::BlockPos const&         pos,
-        ::NeighborBlockDirections neighborDirections
+        ::BlockSource&                   region,
+        ::Block const&                   block,
+        ::BlockPos const&                pos,
+        ::NeighborBlockDirections const& neighborDirections
     ) const;
-
-    MCAPI ::BlockConnectionComponent& operator=(::BlockConnectionComponent&&);
-
-    MCAPI ~BlockConnectionComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

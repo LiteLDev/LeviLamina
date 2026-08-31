@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/TelemetryServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 
@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TelemetryService() /*override*/ = default;
+    virtual ~TelemetryService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -48,7 +48,8 @@ public:
 
     virtual void fireRedoEvent(::std::string const& transactionName) /*override*/;
 
-    virtual void fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const) /*override*/;
+    virtual void
+    fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const modifiers) /*override*/;
 
     virtual void fireEditorScriptEvent(
         ::std::string const& source,
@@ -77,6 +78,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void> $init();
@@ -93,7 +100,7 @@ public:
 
     MCNAPI void $fireRedoEvent(::std::string const& transactionName);
 
-    MCNAPI void $fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const);
+    MCNAPI void $fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const modifiers);
 
     MCNAPI void
     $fireEditorScriptEvent(::std::string const& source, ::std::string const& eventName, ::std::string const& metadata);

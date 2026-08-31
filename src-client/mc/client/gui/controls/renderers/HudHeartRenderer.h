@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AttributeInstanceConstRef;
 class IClientInstance;
 class MinecraftUIRenderContext;
 class UIControl;
@@ -85,42 +84,33 @@ public:
     ::ll::TypedStorage<8, 24, ::HudHeartRenderer::HeartIconData>    mFullIcon;
     ::ll::TypedStorage<8, 24, ::HudHeartRenderer::HeartIconData>    mHalfIcon;
     ::ll::TypedStorage<8, 640, ::std::array<::mce::TexturePtr, 20>> mHeartTextures;
-    ::ll::TypedStorage<8, 11040, ::std::array<::mce::Mesh, 20>>     mHeartMeshes;
+    ::ll::TypedStorage<8, 11840, ::std::array<::mce::Mesh, 20>>     mHeartMeshes;
     ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec3>>           mIconPosition;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HudHeartRenderer() /*override*/ = default;
+    virtual ~HudHeartRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
     virtual void
-    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int) /*override*/;
+    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int) /*override*/;
 
-    virtual bool update(::IClientInstance& client, ::UIControl&, ::UIScene const&) /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HudHeartRenderer();
-
     MCAPI void _loadHeartTextures(::mce::TextureGroup& textureGroup, bool isHardcore);
     // NOLINTEND
 
 public:
-    // static functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static ::HudHeartRenderer::SanitizedHealthData
-    getSanitizedHealthData(::AttributeInstanceConstRef health, ::AttributeInstanceConstRef absorption, int oldHealth);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -128,9 +118,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int);
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl&, ::UIScene const&);
+    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
     // NOLINTEND
 
 public:

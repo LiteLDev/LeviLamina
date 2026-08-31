@@ -13,10 +13,6 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 
 class CraftingTableBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    CraftingTableBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isCraftingBlock() const /*override*/;
@@ -27,15 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CraftingTableBlock(::std::string const& nameId, int id);
-
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -43,7 +31,7 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isCraftingBlock() const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

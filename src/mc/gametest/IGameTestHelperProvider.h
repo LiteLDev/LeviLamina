@@ -21,12 +21,6 @@ public:
 
     virtual ::std::unique_ptr<::gametest::IGameTestHelperProvider> clone() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace gametest

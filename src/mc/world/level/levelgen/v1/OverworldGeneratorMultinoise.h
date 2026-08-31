@@ -77,39 +77,6 @@ public:
         ::ll::TypedStorage<8, 904, ::OverworldNoises3d const>      mCommonNoise;
         ::ll::TypedStorage<8, 32, ::DepthBasedBlockSupplier const> mDeepslateSupplier;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Noises& operator=(Noises const&);
-        Noises(Noises const&);
-        Noises();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Noises(::OverworldGeneratorMultinoise::Noises&&);
-
-        MCAPI ~Noises();
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static ::OverworldGeneratorMultinoise::Noises
-        make(::XoroshiroPositionalRandomFactory const& randomFactory);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::OverworldGeneratorMultinoise::Noises&&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -130,7 +97,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OverworldGeneratorMultinoise() /*override*/;
+    virtual ~OverworldGeneratorMultinoise() /*override*/ = default;
 
     virtual ::BiomeSource const& getBiomeSource() const /*override*/;
 
@@ -154,7 +121,7 @@ public:
     virtual ::std::unique_ptr<::PerlinSimplexNoise> const& getMaterialAdjNoise() const /*override*/;
 
     virtual void
-    decorateWorldGenPostProcess(::Biome const& lc, ::LevelChunk& source, ::BlockSource& random, ::Random&) const
+    decorateWorldGenPostProcess(::Biome const&, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
         /*override*/;
 
     virtual void _prepareHeights(
@@ -186,24 +153,11 @@ public:
     // NOLINTBEGIN
     MCAPI OverworldGeneratorMultinoise(::Dimension& dimension, ::LevelSeed64 seed, ::Biome const* biomeOverride);
 
-    MCAPI ::TerrainInfo _computeOffsetAndFactor(::DividedPos2d<4> worldQuartPos) const;
-
     MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(
         ::ChunkPos const&             chunkPos,
         ::ChunkLocalNoiseCache const& chunkLocalNoiseCache,
         ::NoodleCavifier*             noodleCavifier,
         ::OreVeinifier*               oreVeinifier
-    ) const;
-
-    MCAPI ::OverworldGeneratorMultinoise::BlockGenerationResult const _updateNoiseAndGenerateBaseBlock(
-        float                 noiseValue,
-        ::BlockPos const&     worldPosition,
-        short                 aquiferPtr,
-        ::Aquifer*            shouldTickUpdate,
-        bool                  chunkBlender,
-        ::ChunkBlender const* stone,
-        ::Block const&        oreVeinifier,
-        ::OreVeinifier*
     ) const;
     // NOLINTEND
 
@@ -216,8 +170,6 @@ public:
         ::ChunkBlender const*  testFixedChunkBlender,
         ::ChunkBlenderFactory& chunkBlenderFactory
     );
-
-    MCAPI static ::std::unique_ptr<::PerlinSimplexNoise> createMaterialAdjNoise(uint seed);
 
     MCAPI static ::ChunkLocalNoiseCache createNoiseCache(
         ::ChunkPos                 chunkPos,
@@ -245,12 +197,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::BiomeSource const& $getBiomeSource() const;
@@ -275,7 +221,7 @@ public:
     MCAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
 
     MCAPI void
-    $decorateWorldGenPostProcess(::Biome const& lc, ::LevelChunk& source, ::BlockSource& random, ::Random&) const;
+    $decorateWorldGenPostProcess(::Biome const&, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
 
     MCAPI void $_prepareHeights(
         ::BlockVolume&                                                  box,
@@ -300,13 +246,5 @@ public:
     MCAPI void $_clearBlendingCache();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIPreliminarySurfaceProvider();
-
-    MCNAPI static void** $vftableForChunkSource();
     // NOLINTEND
 };

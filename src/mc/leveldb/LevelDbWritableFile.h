@@ -37,8 +37,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI LevelDbWritableFile(::std::string filename, ::LevelDbLazyFile&& file);
-
-    MCNAPI ::leveldb::Status SyncDirIfManifest();
     // NOLINTEND
 
 public:
@@ -59,11 +57,5 @@ public:
     MCNAPI ::leveldb::Status $Sync();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

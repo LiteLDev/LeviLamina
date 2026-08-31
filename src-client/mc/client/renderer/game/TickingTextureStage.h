@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IClientInstance;
 class ScreenContext;
 struct FrameRenderObject;
 namespace mce { class RenderContext; }
@@ -38,25 +37,17 @@ public:
 
     virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) /*override*/;
 
-    virtual void postRender(::ScreenContext&) /*override*/;
+    virtual void postRender(::ScreenContext& screenContext) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit TickingTextureStage(::IClientInstance& client);
-
     MCNAPI void _createRenderTarget(::mce::Texture& atlasTexture, ::mce::RenderContext& renderContext);
 
     MCNAPI void createRenderTarget(::mce::RenderContext& renderContext);
 
     MCNAPI void resetStage();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::IClientInstance& client);
     // NOLINTEND
 
 public:
@@ -72,7 +63,7 @@ public:
 
     MCNAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    MCNAPI void $postRender(::ScreenContext&);
+    MCNAPI void $postRender(::ScreenContext& screenContext);
     // NOLINTEND
 
 public:

@@ -19,8 +19,6 @@ MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptContainerRulesError> canAd
     ::std::optional<::ScriptModuleMinecraft::ScriptContainerRules> const& containerRules
 );
 
-MCNAPI int getItemStackWeight(::ItemStackBase const& item);
-
 MCNAPI int getPerItemWeight(::ItemStackBase const& item);
 
 MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptContainerRulesError> isItemAllowedInContainer(

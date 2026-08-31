@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/RtpPacketizer.h"
 #include "mc/external/webrtc/VideoFrameType.h"
 
@@ -28,7 +29,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1>  mUnk460320;
         ::ll::UntypedStorage<1, 1>  mUnk22da0a;
-        ::ll::UntypedStorage<8, 16> mUnka91bd0;
+        ::ll::UntypedStorage<8, 16> mUnk6f91f4;
         ::ll::UntypedStorage<4, 4>  mUnk7a6ef0;
         // NOLINTEND
 
@@ -87,7 +88,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RtpPacketizerAv1(
-        ::rtc::ArrayView<uchar const>              payload,
+        ::webrtc::ArrayView<uchar const>           payload,
         ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
         ::webrtc::VideoFrameType                   frame_type,
         bool                                       is_last_frame_in_picture
@@ -98,18 +99,23 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::vector<::webrtc::RtpPacketizerAv1::Packet> Packetize(
-        ::rtc::ArrayView<::webrtc::RtpPacketizerAv1::Obu const> obus,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits              limits
+        ::webrtc::ArrayView<::webrtc::RtpPacketizerAv1::Obu const> obus,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits                 limits
     );
 
-    MCNAPI static ::std::vector<::webrtc::RtpPacketizerAv1::Obu> ParseObus(::rtc::ArrayView<uchar const> payload);
+    MCNAPI static ::std::vector<::webrtc::RtpPacketizerAv1::Packet> PacketizeInternal(
+        ::webrtc::ArrayView<::webrtc::RtpPacketizerAv1::Obu const> obus,
+        ::webrtc::RtpPacketizer::PayloadSizeLimits                 limits
+    );
+
+    MCNAPI static ::std::vector<::webrtc::RtpPacketizerAv1::Obu> ParseObus(::webrtc::ArrayView<uchar const> payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::rtc::ArrayView<uchar const>              payload,
+        ::webrtc::ArrayView<uchar const>           payload,
         ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
         ::webrtc::VideoFrameType                   frame_type,
         bool                                       is_last_frame_in_picture

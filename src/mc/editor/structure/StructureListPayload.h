@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureListPayload() /*override*/ = default;
+    virtual ~StructureListPayload() /*override*/;
     // NOLINTEND
 
 public:
@@ -38,9 +38,9 @@ public:
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

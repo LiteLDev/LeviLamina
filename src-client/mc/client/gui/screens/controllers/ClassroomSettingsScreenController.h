@@ -69,10 +69,6 @@ public:
         ::ClassroomSettingsScreenControllerCallbacks const& screenCallbacks
     );
 
-    MCAPI ::std::string _getEduSharedResourceName() const;
-
-    MCAPI void _registerEventHandlers();
-
     MCAPI void _setEduSharedResourceValue();
     // NOLINTEND
 
@@ -91,13 +87,5 @@ public:
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

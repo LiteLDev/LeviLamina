@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
 
 // auto generated forward declare list
@@ -20,24 +19,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerMovementSettingsManager();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerMovementSettingsManager(
-        ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry
-    );
-
     MCAPI ::PlayerMovementSettings const& getPlayerMovementSettings() const;
 
     MCAPI void setPlayerMovementSettings(::PlayerMovementSettings const& settings);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry);
     // NOLINTEND
 };

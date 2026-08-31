@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/server/editor/api/EditorPlayerExtensionServiceProvider.h"
 
@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorPlayerExtensionService() /*override*/;
+    virtual ~EditorPlayerExtensionService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -69,30 +69,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI explicit EditorPlayerExtensionService(::Editor::ServiceProviderCollection& providers);
+#endif
 
     MCNAPI ::Scripting::Result_deprecated<void>
     _createAndStartExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    _createExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
-
     MCNAPI ::Scripting::Result_deprecated<void> _destroyExtensionContexts();
-
-    MCNAPI ::Scripting::Result_deprecated<void>
-    _handleStartExtensions(::std::optional<::Scripting::ContextId> optionalContextId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
@@ -119,14 +111,6 @@ public:
     $getInternalServiceContext(::Scripting::WeakLifetimeScope const& scope);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIEditorService();
-
-    MCNAPI static void** $vftableForEditorPlayerExtensionServiceProvider();
     // NOLINTEND
 };
 

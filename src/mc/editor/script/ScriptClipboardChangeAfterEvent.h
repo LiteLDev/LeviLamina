@@ -24,21 +24,9 @@ public:
     ScriptClipboardChangeAfterEvent();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ScriptClipboardChangeAfterEvent();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

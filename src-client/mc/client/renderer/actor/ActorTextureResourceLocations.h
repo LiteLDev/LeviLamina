@@ -21,8 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorTextureResourceLocations(::ActorTextureResourceLocations&&);
-
     MCAPI ActorTextureResourceLocations(::ActorTextureResourceLocations const&);
 
     MCFOLD ::ActorTextureResourceLocations& operator=(::ActorTextureResourceLocations&&);
@@ -35,9 +33,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ActorTextureResourceLocations&&);
-
-    MCFOLD void* $ctor(::ActorTextureResourceLocations const&);
+    MCAPI void* $ctor(::ActorTextureResourceLocations const&);
     // NOLINTEND
 
 public:

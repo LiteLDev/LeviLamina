@@ -41,8 +41,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SafetyDialogScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
-
-    MCAPI void _registerProgressBindings();
     // NOLINTEND
 
 public:
@@ -54,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -10,7 +10,6 @@
 // clang-format off
 class Actor;
 class BlockSource;
-class CompoundTag;
 class ITickingAreaView;
 class LevelStorage;
 class Random;
@@ -86,17 +85,5 @@ public:
     virtual bool isDoneLoadingScoped() const = 0;
 
     virtual bool isStandalone() const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::CompoundTag serialize() const;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

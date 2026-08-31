@@ -8,18 +8,13 @@
 // auto generated forward declare list
 // clang-format off
 class UIControl;
-class UIFrameUpdateContext;
 // clang-format on
 
 class CustomFrameUpdateComponent : public ::UIComponent {
 public:
-    // prevent constructor by default
-    CustomFrameUpdateComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CustomFrameUpdateComponent() /*override*/ = default;
+    virtual ~CustomFrameUpdateComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -29,17 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit CustomFrameUpdateComponent(::UIControl& owner);
-
-    MCAPI void frameUpdate(::UIFrameUpdateContext& frameUpdateContext, ::UIControl& owner);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

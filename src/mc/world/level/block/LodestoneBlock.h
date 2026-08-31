@@ -6,37 +6,7 @@
 #include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockType.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-class BlockSource;
-class LodestoneBlockActor;
-class Material;
-// clang-format on
-
 class LodestoneBlock : public ::ActorBlock {
-public:
-    // prevent constructor by default
-    LodestoneBlock();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LodestoneBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::LodestoneBlockActor* getBlockActor(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
 public:
     // vftables
     // NOLINTBEGIN

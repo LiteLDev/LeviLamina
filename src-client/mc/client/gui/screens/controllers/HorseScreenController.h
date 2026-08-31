@@ -78,12 +78,4 @@ public:
 
     MCAPI void $_registerAutoPlaceOrder();
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-    // NOLINTEND
 };

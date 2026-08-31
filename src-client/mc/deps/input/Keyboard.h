@@ -136,8 +136,6 @@ public:
 
     MCAPI static ::std::array<::std::string_view, 256>& _keyNames();
 
-    MCAPI static uchar& _lastTextId();
-
     MCAPI static ::std::vector<::TextInput>& _nativeTextInputs();
 
     MCAPI static int& _nativeTextInputsIndex();

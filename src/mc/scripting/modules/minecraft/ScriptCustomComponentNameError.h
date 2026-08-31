@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,19 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptCustomComponentNameError();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptCustomComponentNameError(
-        ::HashedString const&                                           componentName,
-        ::ScriptModuleMinecraft::ScriptCustomComponentNameError::Reason reason
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
@@ -54,13 +41,6 @@ public:
     MCAPI static ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentNameError, ::Scripting::EngineError>
         validate(::HashedString const& componentName);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::HashedString const& componentName, ::ScriptModuleMinecraft::ScriptCustomComponentNameError::Reason reason);
     // NOLINTEND
 };
 

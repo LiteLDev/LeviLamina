@@ -18,23 +18,28 @@ class Vec2Constraint : public ::cereal::ConstraintHandle<::Vec2Constraint> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::cereal::BasicNumericConstraint<float>> mXConstraint;
-    ::ll::TypedStorage<8, 40, ::cereal::BasicNumericConstraint<float>> mYConstraint;
+    ::ll::TypedStorage<8, 48, ::cereal::BasicNumericConstraint<float>> mXConstraint;
+    ::ll::TypedStorage<8, 48, ::cereal::BasicNumericConstraint<float>> mYConstraint;
+    // NOLINTEND
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea contextArea) const
+        /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea contextArea) const;
-
-    MCAPI ::Vec2Constraint& range(::Vec2 min, ::Vec2 max, bool exclusive);
-
     MCAPI void validateValue(::Vec2 const& comp, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea contextArea) const;
+
+
     // NOLINTEND
 };

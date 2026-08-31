@@ -18,23 +18,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RenderMaterialGroupBase();
+    virtual ~RenderMaterialGroupBase() = default;
 
     virtual ::mce::RenderMaterialInfo& getMaterialInfo(::HashedString const& name) = 0;
 
     virtual void clearMaterial(::HashedString const& name) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

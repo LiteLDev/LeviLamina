@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor::Prefabs { class PrefabDBTemplate; }
-namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -31,42 +30,20 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptPrefabTemplateMetadata& operator=(ScriptPrefabTemplateMetadata const&);
+    ScriptPrefabTemplateMetadata(ScriptPrefabTemplateMetadata const&);
     ScriptPrefabTemplateMetadata();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPrefabTemplateMetadata(::Editor::ScriptModule::ScriptPrefabTemplateMetadata const&);
-
     MCNAPI explicit ScriptPrefabTemplateMetadata(::WeakRef<::Editor::Prefabs::PrefabDBTemplate const> templateRef);
-
-    MCNAPI ::Editor::ScriptModule::ScriptPrefabTemplateMetadata&
-    operator=(::Editor::ScriptModule::ScriptPrefabTemplateMetadata&&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptPrefabTemplateMetadata&
-    operator=(::Editor::ScriptModule::ScriptPrefabTemplateMetadata const&);
-
-    MCNAPI ~ScriptPrefabTemplateMetadata();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptPrefabTemplateMetadata const&);
-
     MCNAPI void* $ctor(::WeakRef<::Editor::Prefabs::PrefabDBTemplate const> templateRef);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

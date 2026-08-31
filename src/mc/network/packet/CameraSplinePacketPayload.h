@@ -13,20 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_26_0::CameraSplineDefinition>> mSplines;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraSplinePacketPayload();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit CameraSplinePacketPayload(::std::vector<::SharedTypes::v1_26_0::CameraSplineDefinition> splines);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::SharedTypes::v1_26_0::CameraSplineDefinition> splines);
-    // NOLINTEND
 };

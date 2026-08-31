@@ -39,14 +39,14 @@ public:
     virtual bool equals(::Tag const& rhs) const /*override*/;
 
     virtual uint64 hash() const /*override*/;
+
+    virtual ~StringTag() /*override*/;
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::string data);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

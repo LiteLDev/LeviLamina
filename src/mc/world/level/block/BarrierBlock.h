@@ -12,27 +12,17 @@ class Block;
 
 class BarrierBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    BarrierBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BarrierBlock() /*override*/ = default;
+    virtual ~BarrierBlock() /*override*/;
 
     virtual float getShadeBrightness(::Block const& block) const /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI BarrierBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

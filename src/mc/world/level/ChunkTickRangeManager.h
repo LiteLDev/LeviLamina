@@ -12,7 +12,6 @@ class ChunkSource;
 class Dimension;
 class ILevelChunkEventManagerConnector;
 class LevelChunk;
-class LevelSettings;
 // clang-format on
 
 class ChunkTickRangeManager {
@@ -25,17 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChunkTickRangeManager();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChunkTickRangeManager(uint chunkTickRange, uint maxSimRadiusInChunks);
-
-    MCAPI void _onChunkLoaded(::ChunkSource& levelChunk, ::LevelChunk& closestPlayerDistanceSquared, int);
-
-    MCAPI uint getAdjustedChunkTickRange(::LevelSettings const& levelSettings);
+    MCAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
 
     MCAPI bool isChunkInTickRange(::LevelChunk const& lc, ::std::optional<int> minDistToPlayer) const;
 
@@ -49,11 +40,5 @@ public:
     ) const;
 
     MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uint chunkTickRange, uint maxSimRadiusInChunks);
     // NOLINTEND
 };

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/dcsctp/Parameter.h"
 #include "mc/external/dcsctp/TLVTrait.h"
+#include "mc/external/webrtc/ArrayView.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,13 +35,13 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~SupportedExtensionsParameter() /*override*/;
+    virtual ~SupportedExtensionsParameter() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::dcsctp::SupportedExtensionsParameter> Parse(::rtc::ArrayView<uchar const> data);
+    MCNAPI static ::std::optional<::dcsctp::SupportedExtensionsParameter> Parse(::webrtc::ArrayView<uchar const> data);
     // NOLINTEND
 
 public:

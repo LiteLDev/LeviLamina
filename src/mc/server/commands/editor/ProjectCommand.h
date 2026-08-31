@@ -10,7 +10,6 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
-class CommandRegistry;
 class Level;
 struct ActorUniqueID;
 // clang-format on
@@ -54,19 +53,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void _cleanupOutputDirOnExportFailure(::Core::PathBuffer<::std::string> const& pathToOutputDir);
 
-    MCAPI static void _exportSubcommand(
-        ::CommandOrigin const&                  output,
-        ::CommandOutput&                        commandExportType,
-        ::ProjectCommand::ExportSubcommandTypes callingPlayerUniqueId,
-        ::ActorUniqueID
-    );
-
-    MCAPI static ::Core::PathBuffer<::std::string> _getLevelExportPath(
-        ::ActorUniqueID      callingPlayerUniqueId,
-        ::Level*             level,
-        ::std::string const& exportFileExtension
-    );
-
     MCAPI static void _outputFormattedCommand(
         ::ActorUniqueID                     callingPlayerUniqueId,
         ::Level*                            level,
@@ -75,24 +61,6 @@ public:
         ::std::string const&                msg,
         ::std::vector<::std::string> const& args
     );
-
-    MCAPI static void _reportErrorToUser(
-        ::ActorUniqueID                     callingPlayerUniqueId,
-        ::Level*                            level,
-        ::std::string const&                commandType,
-        ::std::string const&                msg,
-        ::std::vector<::std::string> const& args
-    );
-
-    MCAPI static void _reportToUser(
-        ::ActorUniqueID                     callingPlayerUniqueId,
-        ::Level*                            level,
-        ::std::string const&                commandType,
-        ::std::string const&                msg,
-        ::std::vector<::std::string> const& args
-    );
-
-    MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
@@ -102,17 +70,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::ProjectCommand::ExportSubcommandTypes>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::ProjectCommand::Subcommand>();
-// clang-format on

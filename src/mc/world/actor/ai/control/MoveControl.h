@@ -29,8 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveControl();
-
     MCAPI float
     calculateMoveSpeed(::MoveControlComponent const& parent, ::Mob& mob, ::Vec3 const& endPosition, float maxMoveSpeed);
 
@@ -41,19 +39,7 @@ public:
         float                         maxMoveSpeed
     );
 
-    MCAPI bool shouldSlowSpeed(::MoveControlComponent const& parent, ::Mob const& mob, float endDistanceSqr);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& MIN_SPEED();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI bool shouldSlowSpeed(::MoveControlComponent const& parent, ::Mob const& mob, float const endDistanceSqr);
     // NOLINTEND
 
 public:

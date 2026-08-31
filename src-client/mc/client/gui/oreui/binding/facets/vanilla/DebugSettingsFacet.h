@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ namespace OreUI { struct BiomeData; }
 
 namespace OreUI {
 
-class DebugSettingsFacet : public ::OreUI::FacetBase<::OreUI::DebugSettingsFacet> {
+class DebugSettingsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::DebugSettingsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -61,11 +61,11 @@ public:
 
     MCFOLD int getSpawnDimension() const;
 
-    MCFOLD bool isEnableBiomeOverride() const;
+    MCAPI bool isEnableBiomeOverride() const;
 
     MCFOLD bool isEnableSpawnBiome() const;
 
-    MCAPI void setBiomeOverride(int);
+    MCAPI void setBiomeOverride(int biomeIndex);
 
     MCAPI void setEnableBiomeOverride(bool enable);
 
@@ -77,7 +77,7 @@ public:
 
     MCAPI void setGameVersionOverride(::std::string const& version);
 
-    MCAPI void setSpawnBiome(int);
+    MCAPI void setSpawnBiome(int biomeIndex);
 
     MCAPI void setSpawnDimension(int spawnDimensionIndex);
     // NOLINTEND
@@ -97,13 +97,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI bool $update();
     // NOLINTEND
 };
 

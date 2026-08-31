@@ -61,42 +61,20 @@ public:
 
     MCAPI void _closeScreen(::std::string const& popupControlId);
 
-    MCAPI void _openConnectingScreen();
-
     MCAPI void _openEntryScreen();
 
     MCAPI void _openErrorScreen(::EDUDiscovery::Error const& error);
-
-    MCAPI void _openFoundScreen(::std::string hostUsername, ::std::string worldName);
 
     MCAPI void _openIPEntryScreen();
 
     MCAPI void
     _openScreen(::std::string const& popupControlId, ::std::string const& ttsTitle, ::std::string const& ttsContent);
 
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerConnectingScreenHandlers();
-
-    MCAPI void _registerEntryScreenBindings();
-
-    MCAPI void _registerEntryScreenHandlers();
-
-    MCAPI void _registerErrorScreenHandlers();
-
-    MCAPI void _registerEventHandlers(::std::string const& popupButtonName);
-
-    MCAPI void _registerFoundServerHandlers();
-
-    MCAPI void _registerIPJoinHandlers();
-
     MCAPI void _requestJoinServer(
         ::std::function<
             void(::std::shared_ptr<::JoincodeEntryScreenController>, ::EDUDiscovery::JoinServerQueryState const&)>
             joinCallback
     );
-
-    MCAPI bool canQuery() const;
 
     MCAPI void queryJoincode(::std::string const& encodedJoincode);
     // NOLINTEND
@@ -105,13 +83,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::string const& popupButtonName);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

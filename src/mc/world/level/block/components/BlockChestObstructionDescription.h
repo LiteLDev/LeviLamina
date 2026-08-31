@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockChestObstructionDescription : public ::BlockComponentDescription {
@@ -18,10 +17,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::ChestObstructionRule> mChestObstructionRule;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockChestObstructionDescription();
 
 public:
     // virtual functions
@@ -34,27 +29,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BlockChestObstructionDescription(::ChestObstructionRule obstructionRule);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ChestObstructionRule obstructionRule);
     // NOLINTEND
 
 public:

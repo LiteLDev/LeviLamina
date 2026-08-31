@@ -74,12 +74,6 @@ public:
     );
 
     MCAPI void _refreshContainer(bool fullRefresh);
-
-    MCAPI void setFiltering(bool filter);
-
-#ifdef LL_PLAT_C
-    MCAPI void setFilteringRule(::std::function<::FilterResult(::ItemInstance const&, bool)> rule);
-#endif
     // NOLINTEND
 
 public:
@@ -105,7 +99,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $containerContentChanged(int slot);
+    MCAPI void $containerContentChanged(int slot);
 
     MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
 
@@ -113,22 +107,16 @@ public:
 
     MCAPI void $refreshContainer(bool fullRefresh);
 
-    MCFOLD int $getContainerSize() const;
+    MCAPI int $getContainerSize() const;
 
-    MCFOLD int $getFilteredContainerSize() const;
+    MCAPI int $getFilteredContainerSize() const;
 
     MCAPI bool $isExpanableItemFiltered(int index) const;
 
     MCAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
 
-    MCFOLD void $_init();
+    MCAPI void $_init();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

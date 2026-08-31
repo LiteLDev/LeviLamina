@@ -22,20 +22,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addExplodePosition(::Vec3 const& position);
-
 #ifdef LL_PLAT_C
     MCAPI void load(::CompoundTag const& data);
 #endif
 
     MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
+#ifdef LL_PLAT_C
     MCAPI ~ParticlesBlockExplosionEvent();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };

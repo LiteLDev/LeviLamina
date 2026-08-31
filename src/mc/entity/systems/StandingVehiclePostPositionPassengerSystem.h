@@ -24,16 +24,16 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _impl(
-        ::StrictEntityContext&              passengerComponent,
-        ::PassengerComponent const&         setPositionRequest,
-        ::ActorSetPositionRequestComponent& horseView,
+        ::StrictEntityContext&,
+        ::PassengerComponent const&         passengerComponent,
+        ::ActorSetPositionRequestComponent& setPositionRequest,
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::HorseFlagComponent>,
             ::StandAnimationComponent const,
             ::RenderRotationComponent const,
             ::Include<::VehicleComponent>,
-            ::RenderPositionComponent const>
+            ::RenderPositionComponent const> horseView
     );
 
     MCAPI static ::TickingSystemWithInfo createSystem();

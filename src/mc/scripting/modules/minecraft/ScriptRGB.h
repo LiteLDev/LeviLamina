@@ -22,19 +22,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptRGB() = default;
+    virtual ~ScriptRGB();
 
     virtual bool isValid() const;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptRGB();
-
-    MCAPI explicit ScriptRGB(::mce::Color const& color);
-
-    MCFOLD ::mce::Color const& getColor() const;
     // NOLINTEND
 
 public:
@@ -44,11 +34,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::mce::Color const& color);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

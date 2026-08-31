@@ -25,18 +25,12 @@ public:
 
 public:
     // prevent constructor by default
-    ResourceRequest& operator=(ResourceRequest const&);
+    ResourceRequest();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourceRequest();
-
-    MCAPI ResourceRequest(::Gameface::ResourceRequest const&);
-
     MCAPI explicit ResourceRequest(::cohtml::IAsyncResourceRequest const& request);
-
-    MCAPI ::Gameface::ResourceRequest& operator=(::Gameface::ResourceRequest&&);
 
     MCAPI ~ResourceRequest();
     // NOLINTEND
@@ -44,10 +38,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Gameface::ResourceRequest const&);
-
     MCAPI void* $ctor(::cohtml::IAsyncResourceRequest const& request);
     // NOLINTEND
 

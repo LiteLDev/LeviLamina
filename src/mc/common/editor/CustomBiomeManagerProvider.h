@@ -26,12 +26,6 @@ public:
 
     virtual ::WeakRef<::ICustomBiomeSource> getCustomSource(::mce::UUID const& id) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor

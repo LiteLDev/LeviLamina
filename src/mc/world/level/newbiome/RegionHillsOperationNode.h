@@ -42,28 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RegionHillsOperationNode(
-        uint                                                         seedMixup,
-        ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>& parent,
-        ::std::shared_ptr<::OperationNode<int, ::Pos2d>>&            riverOperationNode,
-        ::BiomeRegistry const&                                       biomeRegistry
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        uint                                                         seedMixup,
-        ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>& parent,
-        ::std::shared_ptr<::OperationNode<int, ::Pos2d>>&            riverOperationNode,
-        ::BiomeRegistry const&                                       biomeRegistry
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $_fillArea(
@@ -73,7 +51,7 @@ public:
         int                                                                  pw
     ) const;
 
-    MCFOLD ::std::tuple<::Pos2d, ::Pos2d> $_getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const;
+    MCAPI ::std::tuple<::Pos2d, ::Pos2d> $_getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const;
 
 
     // NOLINTEND

@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsPlusPurchaseWarningScreenController() /*override*/ = default;
+    virtual ~RealmsPlusPurchaseWarningScreenController() /*override*/;
     // NOLINTEND
 
 public:
@@ -35,8 +35,6 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::function<void()>                  callback
     );
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -46,10 +44,8 @@ public:
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
+    MCAPI void $dtor();
     // NOLINTEND
 };

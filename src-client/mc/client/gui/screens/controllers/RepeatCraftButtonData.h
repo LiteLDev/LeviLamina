@@ -40,7 +40,5 @@ public:
             void(::ItemStackBase const&, ::std::string const&, int, ::std::string const&, int, ::FadeInIconBehavior)>
             sendFlyingItem
     );
-
-    MCAPI void reset();
     // NOLINTEND
 };

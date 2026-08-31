@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { struct AudioOptions; }
 namespace webrtc { class AudioTrackSinkInterface; }
+namespace webrtc { struct AudioOptions; }
 // clang-format on
 
 namespace webrtc {
@@ -37,12 +37,6 @@ public:
         // NOLINTEND
 
     public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
@@ -62,9 +56,9 @@ public:
 
     virtual void RemoveSink(::webrtc::AudioTrackSinkInterface* sink);
 
-    virtual ::cricket::AudioOptions const options() const;
+    virtual ::webrtc::AudioOptions const options() const;
 
-    virtual ~AudioSourceInterface() /*override*/;
+    virtual ~AudioSourceInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -86,7 +80,7 @@ public:
 
     MCNAPI void $RemoveSink(::webrtc::AudioTrackSinkInterface* sink);
 
-    MCNAPI ::cricket::AudioOptions const $options() const;
+    MCNAPI ::webrtc::AudioOptions const $options() const;
 
 
     // NOLINTEND

@@ -119,43 +119,9 @@ public:
     MCAPI void
     _getClippedInfo(::glm::vec2& clipPos, ::glm::vec2& clipSize, ::glm::vec2& clipUV, ::glm::vec2& clipUVSize) const;
 
-    MCAPI bool _handleTextureChange(::mce::TexturePtr const& texture);
-
-    MCAPI bool getBilinearEnabled() const;
-
-    MCAPI float getClipRatio() const;
-
-    MCFOLD ::mce::Color const& getColor() const;
-
-    MCFOLD ::ui::SliceSize const& getNineSliceSize() const;
-
-    MCFOLD ::ResourceLocation const& getResourceLocation() const;
-
-    MCFOLD ::mce::TexturePtr& getTexture();
-
-    MCAPI ::UIMaterialType getUIMaterialType() const;
-
-    MCFOLD ::glm::vec2 const& getUVSize() const;
-
-    MCFOLD ::Core::PathBuffer<::std::string> const& getZipFolder() const;
-
     MCAPI void render(::UIRenderContext& context);
 
-    MCAPI void setBilinearEnabled(bool enabled);
-
-    MCAPI void setClipRatio(float clipRatio);
-
-    MCAPI void setColor(::mce::Color const& tint);
-
-    MCAPI void setGrayscaleEnabled(bool enabled);
-
-    MCAPI void setNineSliceSize(::ui::SliceSize const& sliceSize);
-
     MCAPI void setResourceLocation(::ResourceLocation const& resourceLocation);
-
-    MCAPI void setUV(::glm::vec2 const& uv);
-
-    MCAPI void setUVSize(::glm::vec2 const& uvSize);
 
     MCAPI void setZipFolder(::Core::PathView zipFolder);
     // NOLINTEND
@@ -178,11 +144,5 @@ public:
     MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
     MCFOLD void $reset();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SpawnChanceSubcomponent() /*override*/ = default;
+    virtual ~SpawnChanceSubcomponent() /*override*/;
 
     virtual void readfromJSON(::Json::Value& component) /*override*/;
 
@@ -42,15 +42,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI SpawnChanceSubcomponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

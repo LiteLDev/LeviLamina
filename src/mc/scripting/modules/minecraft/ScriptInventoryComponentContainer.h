@@ -4,14 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptContainer.h"
 
 // auto generated forward declare list
 // clang-format off
 class Container;
 class ItemContext;
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -25,13 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptInventoryComponentContainer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptInventoryComponentContainer() /*override*/;
+    virtual ~ScriptInventoryComponentContainer() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<int> getEmptySlotsCount() const /*override*/;
 
@@ -41,28 +36,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    ScriptInventoryComponentContainer(::WeakEntityRef const& entityRef, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bindV010();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::WeakEntityRef const& entityRef, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

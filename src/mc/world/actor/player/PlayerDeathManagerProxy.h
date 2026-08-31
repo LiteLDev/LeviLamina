@@ -21,13 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerDeathManagerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerDeathManagerProxy() /*override*/ = default;
+    virtual ~PlayerDeathManagerProxy() /*override*/;
 
     virtual ::Actor* fetchActor(::ActorUniqueID actorUniqueID) const /*override*/;
 
@@ -37,15 +33,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit PlayerDeathManagerProxy(::ServerLevel& serverLevel);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerLevel& serverLevel);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

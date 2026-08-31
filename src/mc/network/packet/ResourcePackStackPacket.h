@@ -5,27 +5,22 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/ResourcePackStackPacketPayload.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
-#include "mc/util/BaseGameVersion.h"
-#include "mc/world/level/PackInstanceId.h"
-#include "mc/world/level/storage/ExperimentStorage.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class Experiments;
 class ReadOnlyBinaryStream;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class ResourcePackStackPacket : public ::Packet {
+class ResourcePackStackPacket : public ::ll::PayloadPacket<::ResourcePackStackPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>> mTexturePackIdsAndVersions;
-    ::ll::TypedStorage<8, 32, ::BaseGameVersion>               mBaseGameVersion;
-    ::ll::TypedStorage<1, 1, bool>                             mTexturePackRequired;
-    ::ll::TypedStorage<8, 72, ::ExperimentStorage>             mExperiments;
-    ::ll::TypedStorage<1, 1, bool>                             mIncludeEditorPacks;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:
@@ -35,9 +30,35 @@ public:
 
     virtual ::std::string_view getName() const /*override*/;
 
+    virtual ::SerializationMode getSerializationMode() const /*override*/;
+
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
+
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual bool disallowBatching() const /*override*/;
+
+    virtual bool isValid() const /*override*/;
+
+    virtual uint64 getMaxSize() const /*override*/;
+
+    virtual ::std::string toString() const /*override*/;
+
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
     // NOLINTEND
 
 public:
@@ -45,25 +66,7 @@ public:
     // NOLINTBEGIN
     MCAPI ResourcePackStackPacket();
 
-    MCAPI ResourcePackStackPacket(
-        ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
-        ::BaseGameVersion const&        baseGameVersion,
-        bool                            texturePackRequired,
-        ::Experiments const&            experiments,
-        bool                            includeEditorPacks
-    );
-
-#ifdef LL_PLAT_C
-    MCFOLD ::BaseGameVersion const& getBaseGameVersion() const;
-
-    MCFOLD ::Experiments const& getExperiments() const;
-
-    MCFOLD ::std::vector<::PackInstanceId> const& getTexturePackIdsAndVersions() const;
-
-    MCFOLD bool includeEditorPacks() const;
-
-    MCFOLD bool isTexturePackRequired() const;
-#endif
+    MCAPI explicit ResourcePackStackPacket(::ResourcePackStackPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -71,13 +74,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(
-        ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
-        ::BaseGameVersion const&        baseGameVersion,
-        bool                            texturePackRequired,
-        ::Experiments const&            experiments,
-        bool                            includeEditorPacks
-    );
+    MCAPI void* $ctor(::ResourcePackStackPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -87,9 +84,34 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
+    MCFOLD ::SerializationMode $getSerializationMode() const;
+
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
+
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
+
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
     MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    MCFOLD bool $disallowBatching() const;
+
+    MCAPI bool $isValid() const;
+
+    MCFOLD uint64 $getMaxSize() const;
+
+    MCAPI ::std::string $toString() const;
+
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

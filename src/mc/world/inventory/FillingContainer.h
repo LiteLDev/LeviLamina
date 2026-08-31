@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/Container.h"
 
 // auto generated forward declare list
@@ -26,10 +25,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mItems;
     ::ll::TypedStorage<8, 8, ::Player*>                   mPlayer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FillingContainer();
 
 public:
     // virtual functions
@@ -78,33 +73,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FillingContainer(::Player* player, int numTotalSlots, ::SharedTypes::Legacy::ContainerType containerType);
-
     MCAPI int _addResource(::ItemStack const& item);
-
-    MCAPI void _doDrop(::ItemStack& item, bool randomly);
-
-    MCAPI int _getFreeSlot() const;
 
     MCAPI int _getSlotWithRemainingSpace(::ItemStack const& newItem) const;
 
-    MCAPI bool _isCreative() const;
-
     MCAPI void _release(int slot);
-
-    MCFOLD int getHotbarSize() const;
 
     MCAPI int getSlotWithItem(::ItemStack const& item, bool checkAux, bool checkData) const;
 
-    MCAPI bool hasResource(int type);
-
     MCAPI bool removeResource(int type);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player* player, int numTotalSlots, ::SharedTypes::Legacy::ContainerType containerType);
     // NOLINTEND
 
 public:
@@ -134,7 +111,7 @@ public:
 
     MCAPI void $loadFromTag(::ListTag const& inventoryList);
 
-    MCFOLD void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 

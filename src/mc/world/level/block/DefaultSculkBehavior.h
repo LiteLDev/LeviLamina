@@ -34,12 +34,12 @@ public:
     ) const /*override*/;
 
     virtual int attemptUseCharge(
-        ::IBlockWorldGenAPI& charge,
-        ::BlockSource*       decayDelay,
+        ::IBlockWorldGenAPI&,
+        ::BlockSource*,
         ::BlockPos const&,
         ::BlockPos const&,
-        int,
-        int,
+        int charge,
+        int decayDelay,
         ::Random&,
         ::SculkSpreader&,
         bool const
@@ -66,12 +66,12 @@ public:
     ) const;
 
     MCAPI int $attemptUseCharge(
-        ::IBlockWorldGenAPI& charge,
-        ::BlockSource*       decayDelay,
+        ::IBlockWorldGenAPI&,
+        ::BlockSource*,
         ::BlockPos const&,
         ::BlockPos const&,
-        int,
-        int,
+        int charge,
+        int decayDelay,
         ::Random&,
         ::SculkSpreader&,
         bool const
@@ -80,11 +80,5 @@ public:
     MCFOLD void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

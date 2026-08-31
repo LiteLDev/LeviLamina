@@ -32,18 +32,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                                  protocol;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Gameface::IResourceHandler>> resourceHandler;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ResourceHandlerData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -56,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourceHandlerBrokerImpl() /*override*/ = default;
+    virtual ~ResourceHandlerBrokerImpl() /*override*/;
 
     virtual void OnResourceRequest(
         ::cohtml::IAsyncResourceRequest const* request,
@@ -87,6 +75,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void
@@ -113,14 +107,6 @@ public:
     MCAPI void $onAppPreSuspend();
 
     MCFOLD ::cohtml::IAsyncResourceHandler* $getCohtmlHandler();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIAsyncResourceHandler();
-
-    MCNAPI static void** $vftableForResourceHandlerBroker();
     // NOLINTEND
 };
 

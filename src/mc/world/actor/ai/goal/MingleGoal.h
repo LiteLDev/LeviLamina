@@ -11,8 +11,6 @@
 // clang-format off
 class Actor;
 class MingleComponent;
-class Mob;
-struct ActorUniqueID;
 // clang-format on
 
 class MingleGoal : public ::MoveToPOIGoal {
@@ -29,10 +27,6 @@ public:
     ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mDesiredPartnerType;
     ::ll::TypedStorage<4, 4, float>                         mMingleDistanceSquared;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MingleGoal();
 
 public:
     // virtual functions
@@ -53,37 +47,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MingleGoal(::Mob& actor);
-
-    MCAPI void _findNewPartner(::ActorUniqueID previousPartnerId);
-
-    MCAPI bool _isSuitablePartner(::Actor& partner, ::ActorUniqueID previousPartnerId);
-
     MCAPI void _lookAt(::Actor* partner);
 
     MCAPI void _partnerWith(::Actor& target);
-
-    MCAPI void _tickMingling(::MingleComponent& mingleComponent);
-
-    MCAPI void _tickPartneredActive(::MingleComponent& mingleComponent);
-
-    MCAPI void _tickPartneredPassive(::MingleComponent& mingleComponent);
-
-    MCAPI void _tickUnavailable(::MingleComponent& mingleComponent);
-
-    MCAPI bool _tryPathToPartner(::Actor& partner);
 
     MCAPI bool _validatePartnerState(
         ::MingleComponent::MingleState expectedState,
         ::MingleComponent&             mingleComponent,
         bool                           requireWithinInteractRange
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& actor);
     // NOLINTEND
 
 public:
@@ -102,11 +74,5 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

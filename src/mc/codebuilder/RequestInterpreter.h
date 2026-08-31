@@ -37,8 +37,6 @@ public:
         ::Json::Value const&                body,
         ::IMinecraftEventing*               eventing
     ) const;
-
-    MCNAPI ~RequestInterpreter();
     // NOLINTEND
 
 public:
@@ -51,12 +49,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -35,22 +35,10 @@ public:
         bool          useBoundingBox,
         uint64        capacity,
         uint64        weight,
-        ::std::string soundEvent
-    );
-
-    MCAPI POIBlueprint(
-        ::std::string name,
-        ::POIType     type,
-        float         radius,
-        bool          useBoundingBox,
-        uint64        capacity,
-        uint64        weight,
         ::std::string soundEvent,
         ::std::string initEvent,
         ::std::string endEvent
     );
-
-    MCAPI ~POIBlueprint();
     // NOLINTEND
 
 public:
@@ -63,25 +51,9 @@ public:
         bool          useBoundingBox,
         uint64        capacity,
         uint64        weight,
-        ::std::string soundEvent
-    );
-
-    MCAPI void* $ctor(
-        ::std::string name,
-        ::POIType     type,
-        float         radius,
-        bool          useBoundingBox,
-        uint64        capacity,
-        uint64        weight,
         ::std::string soundEvent,
         ::std::string initEvent,
         ::std::string endEvent
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

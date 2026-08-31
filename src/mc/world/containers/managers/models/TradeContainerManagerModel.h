@@ -3,17 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ContainerScreenContext;
 class ItemStack;
-class MerchantRecipe;
-class Player;
-struct ActorUniqueID;
 // clang-format on
 
 class TradeContainerManagerModel : public ::LevelContainerManagerModel {
@@ -24,13 +19,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TradeContainerManagerModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TradeContainerManagerModel() /*override*/ = default;
+    virtual ~TradeContainerManagerModel() /*override*/;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
@@ -48,27 +39,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
-
 #ifdef LL_PLAT_C
     MCAPI int getAvailableRecipeListSize();
 
-    MCAPI ::MerchantRecipe* getCurrentRecipe(int index);
-
     MCFOLD ::std::string getDisplayName();
-
-    MCFOLD ::Actor* getEntity() const;
-
-    MCAPI void recipeChanged();
-
-    MCAPI void setCurrentRecipeIndex(int index);
 #endif
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -15,39 +15,33 @@ class BlockActorLevelListener : public ::LevelListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockActorLevelListener() /*override*/ = default;
+    virtual ~BlockActorLevelListener() /*override*/;
 
-    virtual void onChunkLoaded(::ChunkSource& lc, ::LevelChunk&) /*override*/;
+    virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
     virtual void onSubChunkLoaded(
-        ::ChunkSource& lc,
-        ::LevelChunk&  absoluteSubChunkIndex,
-        short          subChunkVisibilityChanged,
-        bool
+        ::ChunkSource&,
+        ::LevelChunk& lc,
+        short         absoluteSubChunkIndex,
+        bool          subChunkVisibilityChanged
     ) /*override*/;
 
     virtual void onChunkUnloaded(::LevelChunk& lc) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI BlockActorLevelListener();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onChunkLoaded(::ChunkSource& lc, ::LevelChunk&);
+    MCAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 
     MCAPI void
-    $onSubChunkLoaded(::ChunkSource& lc, ::LevelChunk& absoluteSubChunkIndex, short subChunkVisibilityChanged, bool);
+    $onSubChunkLoaded(::ChunkSource&, ::LevelChunk& lc, short absoluteSubChunkIndex, bool subChunkVisibilityChanged);
 
     MCAPI void $onChunkUnloaded(::LevelChunk& lc);
 

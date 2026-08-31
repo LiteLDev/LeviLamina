@@ -24,7 +24,6 @@ class EditorVolumeHighlightRendererInstanceData;
 class IClientInstance;
 class MinecraftUIRenderContext;
 class RenderChunkCoordinator;
-class RenderChunkInstanced;
 class Tessellator;
 class UIControl;
 class UICustomRenderer;
@@ -49,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorVolumeHighlightRenderer() /*override*/ = default;
+    virtual ~EditorVolumeHighlightRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -74,11 +73,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EditorVolumeHighlightRenderer();
-
     MCAPI ::std::vector<::BlockPos> _generateChunkStartPositions(::AABB const& area) const;
-
-    MCAPI ::RenderChunkInstanced& _getRenderChunkInstanced(::BlockPos const& chunkPos);
 
     MCAPI void _initializeChunkBuilder(
         ::ClientBlockPipeline::TessellatorContext& pipelineContext,
@@ -105,9 +100,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

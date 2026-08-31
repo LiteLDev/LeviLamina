@@ -48,15 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StayNearNoteblockGoal(::Mob& mob);
-
     MCAPI ::std::optional<::BlockPos> const _hasLastVibrationAtNoteblock();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

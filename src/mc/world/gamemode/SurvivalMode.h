@@ -12,7 +12,6 @@ class Block;
 class BlockPos;
 class InteractionResult;
 class ItemStack;
-class Player;
 class Vec3;
 // clang-format on
 
@@ -27,13 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SurvivalMode();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool attack(::Actor& entity) /*override*/;
+    virtual bool attack(::Actor& entity, ::Vec3 const& hitPosition) /*override*/;
 
     virtual bool interact(::Actor& entity, ::Vec3 const& location) /*override*/;
 
@@ -70,29 +65,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SurvivalMode(::Player& player);
-
     MCAPI void _messagePlayers(::std::string message);
 
     MCAPI void _showTrialReminder(bool force);
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static bool& mTrialHasEnded();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $attack(::Actor& entity);
+    MCAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
 
     MCAPI bool $interact(::Actor& entity, ::Vec3 const& location);
 
@@ -121,9 +102,17 @@ public:
 
     MCAPI void $setTrialMode(bool isEnabled);
 
+#ifdef LL_PLAT_S
+    MCAPI bool $isInTrialMode();
+#else // LL_PLAT_C
     MCFOLD bool $isInTrialMode();
+#endif
 
+#ifdef LL_PLAT_S
     MCAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
+#else // LL_PLAT_C
+    MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
+#endif
 
 
     // NOLINTEND

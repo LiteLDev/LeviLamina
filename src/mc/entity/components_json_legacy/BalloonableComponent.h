@@ -7,7 +7,6 @@
 class Actor;
 class ActorInteraction;
 class InteractionResult;
-class ItemStack;
 class Player;
 // clang-format on
 
@@ -15,10 +14,6 @@ class BalloonableComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool attach(::Actor& owner, ::Actor& attacher, ::ItemStack& item);
-
-    MCAPI void detach(::Actor& owner, ::Actor& balloon);
-
     MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 };

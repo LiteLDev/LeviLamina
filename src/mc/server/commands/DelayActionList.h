@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 class DelayRequest;
 class Dimension;
 class ICommandOriginLoader;
@@ -38,23 +37,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DelayActionList() = default;
+    virtual ~DelayActionList();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DelayActionList();
-
-    MCAPI void _loadRequest(
-        ::Dimension&                  dimension,
-        ::std::string const&          key,
-        ::CompoundTag const&          tag,
-        ::ICommandOriginLoader&       loader,
-        uint64                        currentTick,
-        ::std::vector<::std::string>& invalidRequestsOut
-    );
-
     MCAPI void _loadRequests(
         ::Dimension&            dimension,
         ::LevelStorage&         levelStorage,
@@ -70,13 +58,7 @@ public:
         bool            allowDuplicates
     );
 
-    MCAPI void
-    _saveRequest(::DelayRequest& request, ::std::string const& dimensionPrefix, ::LevelStorage& levelStorage);
-
     MCAPI int clearRequestWithAction(::LevelStorage& levelStorage, ::gsl::not_null<::IRequestAction*> actionToRemove);
-
-    MCAPI void
-    loadRequests(::Dimension& dimension, ::LevelStorage& storage, ::ICommandOriginLoader& loader, uint64 currentTick);
 
     MCAPI ::QueueRequestResult queueRequestOrExecuteAction(
         ::DelayRequest request,
@@ -89,9 +71,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

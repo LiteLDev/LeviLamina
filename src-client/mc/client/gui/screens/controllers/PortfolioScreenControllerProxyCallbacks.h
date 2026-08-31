@@ -27,29 +27,4 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<void(uint64)>>                    mCreatePhotoItem;
     ::ll::TypedStorage<8, 64, ::std::function<void()>>                          mLeaveScreen;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PortfolioScreenControllerProxyCallbacks& operator=(PortfolioScreenControllerProxyCallbacks const&);
-    PortfolioScreenControllerProxyCallbacks();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PortfolioScreenControllerProxyCallbacks(::PortfolioScreenControllerProxyCallbacks const&);
-
-    MCAPI ~PortfolioScreenControllerProxyCallbacks();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PortfolioScreenControllerProxyCallbacks const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

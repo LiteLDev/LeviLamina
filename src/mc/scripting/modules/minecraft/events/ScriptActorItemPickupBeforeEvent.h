@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
-struct ActorBeforeAcquireItemEvent;
 namespace ScriptModuleMinecraft { class ScriptActor; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -25,29 +23,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptActorItemPickupBeforeEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptActorItemPickupBeforeEvent(
-        ::ActorBeforeAcquireItemEvent const&  acquireItemEvent,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::ActorBeforeAcquireItemEvent const& acquireItemEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

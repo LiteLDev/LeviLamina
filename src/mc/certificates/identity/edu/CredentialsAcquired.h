@@ -16,45 +16,11 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk7e4275;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     CredentialsAcquired& operator=(CredentialsAcquired const&);
     CredentialsAcquired(CredentialsAcquired const&);
     CredentialsAcquired();
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    CredentialsAcquired& operator=(CredentialsAcquired const&);
-    CredentialsAcquired();
-
-#endif
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI CredentialsAcquired(::edu::auth::CredentialsAcquired const&);
-
-    MCNAPI ~CredentialsAcquired();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::edu::auth::CredentialsAcquired const&);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace edu::auth

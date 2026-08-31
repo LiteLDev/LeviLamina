@@ -67,15 +67,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SwimWithEntityGoal(::Mob& mob);
-
     MCAPI bool _setWantedMob();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

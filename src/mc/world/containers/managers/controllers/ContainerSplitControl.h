@@ -14,20 +14,4 @@ public:
     ::ll::TypedStorage<8, 40, ::SlotData>                    slot;
     ::ll::TypedStorage<4, 4, int>                            addedCount;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~ContainerSplitControl();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };

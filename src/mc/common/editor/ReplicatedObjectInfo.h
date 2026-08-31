@@ -30,8 +30,6 @@ public:
     MCNAPI ReplicatedObjectInfo(::Editor::Network::ReplicatedObjectInfo const& other);
 
     MCNAPI void operator=(::Editor::Network::ReplicatedObjectInfo const& other);
-
-    MCNAPI ~ReplicatedObjectInfo();
     // NOLINTEND
 
 public:
@@ -46,12 +44,6 @@ public:
     MCNAPI void* $ctor(::Editor::Network::ReplicatedObjectInfo&& other);
 
     MCNAPI void* $ctor(::Editor::Network::ReplicatedObjectInfo const& other);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

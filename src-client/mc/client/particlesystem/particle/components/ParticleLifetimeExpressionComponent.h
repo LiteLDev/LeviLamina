@@ -62,12 +62,6 @@ public:
 
     MCAPI void $setParticleLifetime(::ParticleSystem::CommonParticle& particle, ::RenderParams& renderParams);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace ParticleSystem

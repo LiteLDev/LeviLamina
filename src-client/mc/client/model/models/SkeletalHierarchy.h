@@ -20,19 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SkeletalHierarchy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SkeletalHierarchy() = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SkeletalHierarchy(::DataDrivenGeometry const& dataDrivenGeometry);
+    virtual ~SkeletalHierarchy();
     // NOLINTEND
 
 public:
@@ -48,14 +38,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DataDrivenGeometry const& dataDrivenGeometry);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerFormScreenController() /*override*/;
+    virtual ~ServerFormScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -60,10 +60,6 @@ public:
     MCAPI void _createScreen(::std::string const& formJson);
 
     MCAPI ::std::string _parseRawText(::Json::Value const& value) const;
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -79,12 +75,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onOpen();
@@ -92,13 +82,5 @@ public:
     MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification event);
 
     MCAPI void $onTerminate();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

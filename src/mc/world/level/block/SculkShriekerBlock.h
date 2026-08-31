@@ -9,20 +9,14 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
 class EntityContext;
-class Material;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class SculkShriekerBlock : public ::ActorBlock {
-public:
-    // prevent constructor by default
-    SculkShriekerBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,7 +26,7 @@ public:
 
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
     virtual int getVariant(::Block const& block) const /*override*/;
     // NOLINTEND
@@ -40,17 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SculkShriekerBlock(::std::string const& nameId, int id, ::Material const& material);
-
-    MCAPI void _onStandOn(::BlockSource& region, ::Actor& actor, ::BlockPos const& pos) const;
-
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -62,7 +46,7 @@ public:
 
     MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCFOLD bool $canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
     MCAPI int $getVariant(::Block const& block) const;
 

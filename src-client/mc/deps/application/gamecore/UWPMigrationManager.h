@@ -65,7 +65,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~MoveOperation();
+        virtual ~MoveOperation() = default;
 
         virtual ::Core::Result migrate(bool forceCritical) const = 0;
 
@@ -94,24 +94,6 @@ public:
             ::Core::PathBuffer<::std::string> const&   dstPath,
             ::UWPMigrationManager::MoveOperation::Type opType
         );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -146,12 +128,6 @@ public:
 
         MCNAPI void $cleanup() const;
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
     struct MoveFileOperation : public ::UWPMigrationManager::MoveOperation {
@@ -170,12 +146,6 @@ public:
 
         MCNAPI void $cleanup() const;
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
     struct MoveSecureStorageOperation : public ::UWPMigrationManager::MoveOperation {
@@ -193,12 +163,6 @@ public:
         MCNAPI ::Core::Result $migrate(bool) const;
 
         MCNAPI void $cleanup() const;
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -230,21 +194,13 @@ public:
         uint                                     migrationVersion
     );
 
-    MCNAPI ::UWPMigrationManager::Status getStatus() const;
-
     MCNAPI ::Bedrock::Result<void> migrateFromUWP();
-
-    MCNAPI bool onLatestMigration() const;
-
-    MCNAPI ~UWPMigrationManager();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::string getLastMigrationErrorsAsJson();
-
-    MCNAPI static ::UWPMigrationManager::MigrationState getMigrationState();
     // NOLINTEND
 
 public:
@@ -267,11 +223,5 @@ public:
         ::Core::PathBuffer<::std::string> const& uwpInstallationPath,
         uint                                     migrationVersion
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

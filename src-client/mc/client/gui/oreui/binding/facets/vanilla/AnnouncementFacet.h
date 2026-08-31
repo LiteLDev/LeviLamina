@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/MessageButton.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/MessageGamedrop.h"
 #include "mc/client/services/messaging/player_messaging/MessageStyle.h"
@@ -20,7 +20,7 @@ namespace OreUI { struct MessageImage; }
 
 namespace OreUI {
 
-class AnnouncementFacet : public ::OreUI::FacetBase<::OreUI::AnnouncementFacet> {
+class AnnouncementFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::AnnouncementFacet> {
 public:
     // AnnouncementFacet inner types declare
     // clang-format off
@@ -48,38 +48,24 @@ public:
 
     public:
         // prevent constructor by default
-        FacetMessage& operator=(FacetMessage const&);
-        FacetMessage(FacetMessage const&);
         FacetMessage();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FacetMessage(::OreUI::AnnouncementFacet::FacetMessage&&);
-
         MCAPI FacetMessage(
             ::MessageData const&                                       message,
             ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
         );
-
-        MCAPI ~FacetMessage();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::OreUI::AnnouncementFacet::FacetMessage&&);
-
         MCAPI void* $ctor(
             ::MessageData const&                                       message,
             ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
         );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -87,7 +73,6 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int>                                                      mMessageCount;
         ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::AnnouncementFacet::FacetMessage>> mMessages;
         // NOLINTEND
     };
@@ -99,7 +84,7 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
     ::ll::TypedStorage<1, 1, ::PlayerMessaging::MessagingFacetStatus>                     mStatus;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                     mLastRefresh;
-    ::ll::TypedStorage<8, 32, ::OreUI::AnnouncementFacet::FacetMessageList>               mFacetMessageData;
+    ::ll::TypedStorage<8, 24, ::OreUI::AnnouncementFacet::FacetMessageList>               mFacetMessageData;
     // NOLINTEND
 
 public:
@@ -117,13 +102,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnnouncementFacet(
-        ::PlayerMessagingService&                                         service,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
-    );
-
-    MCAPI void _getMessageData();
-
     MCAPI void reportClick(
         ::std::string const& messageID,
         ::std::string const& instanceID,
@@ -139,15 +117,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::PlayerMessagingService&                                         service,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
-    );
     // NOLINTEND
 
 public:

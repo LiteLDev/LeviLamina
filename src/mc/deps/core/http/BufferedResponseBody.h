@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BufferedResponseBody() /*override*/ = default;
+    virtual ~BufferedResponseBody() /*override*/;
 
     virtual ::std::error_code start(::std::optional<uint64> size) /*override*/;
 
@@ -43,15 +43,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI ::gsl::span<uchar const> get() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::shared_ptr<::Bedrock::Http::BufferedResponseBody> create();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -72,12 +66,6 @@ public:
     MCNAPI ::Bedrock::Http::ResponseBodyType $getType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

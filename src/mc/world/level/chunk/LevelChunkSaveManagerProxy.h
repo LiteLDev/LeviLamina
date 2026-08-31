@@ -14,7 +14,6 @@ class Dimension;
 class DimensionManager;
 class LevelChunk;
 class Random;
-class Scheduler;
 class TaskGroup;
 class TaskResult;
 // clang-format on
@@ -36,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelChunkSaveManagerProxy() /*override*/ = default;
+    virtual ~LevelChunkSaveManagerProxy() /*override*/;
 
     virtual ::WeakRef<::Dimension> getRandomDimension(::DimensionManager& dimensionManager) const /*override*/;
 
@@ -65,15 +64,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI LevelChunkSaveManagerProxy(::Random& random, ::Scheduler& scheduler);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Random& random, ::Scheduler& scheduler);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

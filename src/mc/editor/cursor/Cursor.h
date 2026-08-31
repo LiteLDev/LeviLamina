@@ -3,15 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 namespace Editor::Cursor { struct AttachmentProperties; }
 namespace Editor::Cursor { struct CursorState; }
-namespace Editor::Cursor { struct Position; }
-namespace Editor::Cursor { struct Ray; }
 // clang-format on
 
 namespace Editor::Cursor {
@@ -31,11 +29,12 @@ public:
     // prevent constructor by default
     Cursor& operator=(Cursor const&);
     Cursor(Cursor const&);
+    Cursor();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Cursor() = default;
+    virtual ~Cursor();
 
     virtual void setCursorState(::Editor::Cursor::CursorState&& state);
 
@@ -49,33 +48,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI Cursor();
-
-    MCNAPI ::std::optional<::Editor::Cursor::Position>& _getBlockPosition();
-
-#ifdef LL_PLAT_C
-    MCNAPI ::Editor::Cursor::Position& _getManualBlockPosition();
-
-    MCNAPI ::Editor::Cursor::Ray& _getRay();
-#endif
-
-    MCNAPI ::Editor::Cursor::AttachmentProperties getAttachmentProperties() const;
-
-    MCNAPI ::std::optional<::Editor::Cursor::Position> const& getBlockPosition() const;
-
-    MCNAPI ::Editor::Cursor::CursorState getCursorState() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::Editor::Cursor::Ray const& getRay() const;
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

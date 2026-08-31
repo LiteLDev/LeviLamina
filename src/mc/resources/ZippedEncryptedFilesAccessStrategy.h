@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/Result.h"
 #include "mc/resources/EncryptedFileAccessStrategy.h"
 #include "mc/resources/PackAccessStrategyType.h"
 
@@ -15,8 +16,10 @@ class IContentKeyProvider;
 class IPackIOProvider;
 class PackAccessStrategy;
 class ResourceLocation;
+struct StreamableAssetSource;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 class ZippedEncryptedFilesAccessStrategy : public ::EncryptedFileAccessStrategy {
@@ -52,6 +55,12 @@ public:
     virtual ::Core::PathBuffer<::std::string> const& getSubPath() const /*override*/;
 
     virtual bool supportsSignatureVerification() const /*override*/;
+
+    virtual void unload() /*override*/;
+
+    virtual ::Bedrock::Result<::StreamableAssetSource>
+    getStreamableSource(::Core::Path const& packRelativePath, ::std::optional<::Core::PathView> tempDirectory) const
+        /*override*/;
 
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
@@ -119,6 +128,11 @@ public:
 
     MCNAPI bool $supportsSignatureVerification() const;
 
+    MCNAPI void $unload();
+
+    MCNAPI ::Bedrock::Result<::StreamableAssetSource>
+    $getStreamableSource(::Core::Path const& packRelativePath, ::std::optional<::Core::PathView> tempDirectory) const;
+
     MCNAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 
     MCNAPI ::std::string $_getContentsFile();
@@ -129,11 +143,5 @@ public:
     $_preloadSubFolders(::Core::Path const& packRelativePath) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

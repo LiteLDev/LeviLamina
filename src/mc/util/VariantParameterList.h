@@ -8,7 +8,6 @@ class Actor;
 class BlockPos;
 class Mob;
 class Player;
-struct VariantParameterListConst;
 // clang-format on
 
 struct VariantParameterList {
@@ -24,11 +23,5 @@ public:
     ::ll::TypedStorage<8, 8, ::BlockPos const*> mBlock;
     ::ll::TypedStorage<8, 8, ::Actor*>          mDamager;
     ::ll::TypedStorage<8, 8, ::Actor*>          mHolder;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit operator ::VariantParameterListConst() const;
     // NOLINTEND
 };

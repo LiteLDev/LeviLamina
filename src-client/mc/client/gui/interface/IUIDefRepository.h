@@ -59,10 +59,4 @@ public:
 
     virtual void translateLegacyItemIdsInRepository(::ItemRegistryRef const itemRegistry) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

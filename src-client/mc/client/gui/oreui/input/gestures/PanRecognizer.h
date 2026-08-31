@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace OreUI { class IGestureListener; }
-namespace OreUI { struct PanGestureParameters; }
 namespace OreUI { struct TouchEventData; }
 // clang-format on
 
@@ -30,18 +28,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PanRecognizer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PanRecognizer() /*override*/ = default;
+    virtual ~PanRecognizer() /*override*/;
 
     virtual void onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches) /*override*/;
 
-    virtual void
-    onTouchesMoved(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const&) /*override*/;
+    virtual void onTouchesMoved(
+        ::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches
+    ) /*override*/;
 
     virtual void onTouchesEnded(
         ::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches
@@ -51,27 +46,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI PanRecognizer(
-        ::OreUI::IGestureListener&                            gestureListener,
-        int                                                   priority,
-        ::OreUI::PanGestureParameters const&                  parameters,
-        float                                                 pixelsPerCm,
-        ::std::function<::std::chrono::milliseconds()> const& getTime
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::OreUI::IGestureListener&                            gestureListener,
-        int                                                   priority,
-        ::OreUI::PanGestureParameters const&                  parameters,
-        float                                                 pixelsPerCm,
-        ::std::function<::std::chrono::milliseconds()> const& getTime
-    );
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -79,18 +56,13 @@ public:
     // NOLINTBEGIN
     MCAPI void $onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches);
 
-    MCAPI void $onTouchesMoved(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const&);
+    MCAPI void
+    $onTouchesMoved(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches);
 
     MCAPI void
     $onTouchesEnded(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches);
 
     MCAPI void $onGestureRecognized();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class MediaReceiveChannelInterface; }
 namespace webrtc { class DtlsTransportInterface; }
+namespace webrtc { class MediaReceiveChannelInterface; }
 namespace webrtc { class MediaStreamInterface; }
 // clang-format on
 
@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     virtual void Stop() = 0;
 
-    virtual void SetMediaChannel(::cricket::MediaReceiveChannelInterface* media_channel) = 0;
+    virtual void SetMediaChannel(::webrtc::MediaReceiveChannelInterface* media_channel) = 0;
 
     virtual void SetupMediaChannel(uint ssrc) = 0;
 
@@ -39,7 +39,7 @@ public:
 
     virtual int AttachmentId() const = 0;
 
-    virtual ~RtpReceiverInternal() /*override*/;
+    virtual ~RtpReceiverInternal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,12 +55,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

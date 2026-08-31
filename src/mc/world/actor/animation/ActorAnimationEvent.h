@@ -27,8 +27,6 @@ public:
 
 public:
     // prevent constructor by default
-    ActorAnimationEvent& operator=(ActorAnimationEvent const&);
-    ActorAnimationEvent(ActorAnimationEvent const&);
     ActorAnimationEvent();
 
 public:
@@ -42,8 +40,6 @@ public:
     );
 
     MCAPI void fire(::RenderParams& renderParams, ::Actor* actor) const;
-
-    MCAPI ::ActorAnimationEvent& operator=(::ActorAnimationEvent&&);
 
     MCAPI ~ActorAnimationEvent();
     // NOLINTEND

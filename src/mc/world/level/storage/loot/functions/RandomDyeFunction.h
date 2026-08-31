@@ -12,14 +12,13 @@ class ItemStack;
 class ItemStackBase;
 class LootTableContext;
 class Random;
-namespace mce { class Color; }
 // clang-format on
 
 class RandomDyeFunction : public ::LootItemFunction {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RandomDyeFunction() /*override*/ = default;
+    virtual ~RandomDyeFunction() /*override*/;
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
 
@@ -32,25 +31,23 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _applyBase(::ItemStackBase& item, ::Random& random) const;
+    // NOLINTEND
 
-    MCAPI ::mce::Color _getRandomArmorColor(::Random& random) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

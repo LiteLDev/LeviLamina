@@ -50,20 +50,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SendEventGoal(::Mob& caster, ::std::vector<::SendEventData> const& spellTypes);
-
-    MCAPI int _selectBestSpell();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& caster, ::std::vector<::SendEventData> const& spellTypes);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $appendDebugInfo(::std::string& str) const;

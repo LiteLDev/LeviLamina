@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PistonConsumer() /*override*/ = default;
+    virtual ~PistonConsumer() /*override*/;
 
     virtual bool canConsumePowerAnyDirection() const /*override*/;
 
@@ -31,10 +31,10 @@ public:
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     virtual bool addSource(
-        ::CircuitSceneGraph&         info,
-        ::CircuitTrackingInfo const& dampening,
-        int&                         bDirectlyPowered,
-        bool&
+        ::CircuitSceneGraph&         graph,
+        ::CircuitTrackingInfo const& info,
+        int&                         dampening,
+        bool&                        bDirectlyPowered
     ) /*override*/;
 
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
@@ -44,14 +44,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PistonConsumer();
-
-    MCAPI void setBlockPowerFace(uchar blockFace);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -62,7 +66,7 @@ public:
     MCFOLD bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     MCAPI bool
-    $addSource(::CircuitSceneGraph& info, ::CircuitTrackingInfo const& dampening, int& bDirectlyPowered, bool&);
+    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
 

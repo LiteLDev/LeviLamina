@@ -20,25 +20,6 @@ public:
 public:
     // prevent constructor by default
     ActorDefinitionEndedEvent& operator=(ActorDefinitionEndedEvent const&);
+    ActorDefinitionEndedEvent(ActorDefinitionEndedEvent const&);
     ActorDefinitionEndedEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ActorDefinitionEndedEvent(::ActorDefinitionEndedEvent const&);
-
-    MCAPI ~ActorDefinitionEndedEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ActorDefinitionEndedEvent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

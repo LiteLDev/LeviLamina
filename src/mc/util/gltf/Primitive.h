@@ -14,14 +14,6 @@ public:
         UnsignedShort = 5123,
         Float         = 5126,
     };
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static int getComponentTypeByteSize(::glTF::Primitive::ComponentType componentType);
-#endif
-    // NOLINTEND
 };
 
 } // namespace glTF

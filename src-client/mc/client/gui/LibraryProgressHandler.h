@@ -61,10 +61,4 @@ public:
 
     MCAPI ::std::string $getName() const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

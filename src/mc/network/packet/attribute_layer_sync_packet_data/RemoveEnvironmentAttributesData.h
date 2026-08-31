@@ -22,15 +22,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RemoveEnvironmentAttributesData& operator=(RemoveEnvironmentAttributesData const&);
-    RemoveEnvironmentAttributesData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RemoveEnvironmentAttributesData(::AttributeLayerSyncPacketData::RemoveEnvironmentAttributesData const&);
-
     MCAPI bool operator==(::AttributeLayerSyncPacketData::RemoveEnvironmentAttributesData const& rhs) const;
     // NOLINTEND
 
@@ -38,12 +31,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bind(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::AttributeLayerSyncPacketData::RemoveEnvironmentAttributesData const&);
     // NOLINTEND
 };
 

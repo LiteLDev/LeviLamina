@@ -35,10 +35,4 @@ public:
         ::MolangVariableMap const& molangVariables
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

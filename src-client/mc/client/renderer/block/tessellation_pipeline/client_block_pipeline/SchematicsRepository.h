@@ -74,7 +74,7 @@ public:
     ) const;
 
     MCAPI ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic> _loadSchematic(
-        ::GeometryPtr                                           geoPtr,
+        ::GeometryPtr const                                     geoPtr,
         ::BlockCullingData const*                               cullingDataPtr,
         ::HashedString const&                                   cullingLayer,
         ::BlockTransformationComponent const*                   transformComponent,
@@ -83,14 +83,6 @@ public:
         ::std::variant<bool, ::std::set<::HashedString>> const& lockUVs,
         ::Experiments const*
     );
-
-    MCAPI bool _validateSchematic(
-        ::HashedString const&                  name,
-        ::ClientBlockPipeline::BlockSchematic& schematic,
-        bool                                   checkAllPartsWithinBufferLimit
-    );
-
-    MCFOLD ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository> getMaterialRepo() const;
 
     MCAPI void initialize();
 
@@ -101,8 +93,6 @@ public:
         ::BlockCullingGroup&                  cullingGroup,
         ::Experiments const*                  experiments
     );
-
-    MCFOLD void setValidation(::ClientBlockPipeline::SchematicsRepository::Validation schematicValidation);
 
     MCAPI bool validateTransformedBounds(::Block const& block) const;
     // NOLINTEND

@@ -18,10 +18,4 @@ public:
 
     virtual ::Bedrock::PubSub::Connector<void()>& getOnWakeUpAllPlayersConnector() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

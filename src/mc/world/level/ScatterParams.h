@@ -90,14 +90,6 @@ public:
         ScatteredPositions& operator=(ScatteredPositions const&);
         ScatteredPositions(ScatteredPositions const&);
         ScatteredPositions();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI bool empty();
-
-        MCNAPI ::BlockPos nextPos();
-        // NOLINTEND
     };
 
 public:
@@ -112,12 +104,11 @@ public:
 public:
     // prevent constructor by default
     ScatterParams& operator=(ScatterParams const&);
+    ScatterParams();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScatterParams();
-
     MCAPI ScatterParams(::ScatterParams&&);
 
     MCAPI ScatterParams(::ScatterParams const&);
@@ -149,7 +140,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static void _parseExpressionNodeFloat(
+    MCAPI static void _parseExpressionNodeFloat(
         ::ExpressionOp       op,
         ::std::string const& expression,
         ::ExpressionNode&    node,
@@ -164,8 +155,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ScatterParams&&);
 
     MCAPI void* $ctor(::ScatterParams const&);

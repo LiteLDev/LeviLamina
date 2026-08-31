@@ -15,25 +15,8 @@ public:
 public:
     // prevent constructor by default
     PluginDetails& operator=(PluginDetails const&);
+    PluginDetails(PluginDetails const&);
     PluginDetails();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI PluginDetails(::ScriptDebuggerMessages::PluginDetails const&);
-
-    MCNAPI PluginDetails(::std::string name, ::std::string moduleId);
-
-    MCNAPI ::ScriptDebuggerMessages::PluginDetails& operator=(::ScriptDebuggerMessages::PluginDetails&&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptDebuggerMessages::PluginDetails const&);
-
-    MCNAPI void* $ctor(::std::string name, ::std::string moduleId);
-    // NOLINTEND
 };
 
 } // namespace ScriptDebuggerMessages

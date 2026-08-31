@@ -4,9 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
 
@@ -15,15 +14,9 @@
 class Vec3;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Prefabs { class PrefabDBPrefabInstance; }
-namespace Editor::ScriptModule { class ScriptPrefabTemplate; }
-namespace Editor::ScriptModule { class ScriptPrefabTemplateInstanceStructure; }
 namespace Editor::ScriptModule { struct ScriptPrefabErrorInvalidInstance; }
-namespace Editor::ScriptModule { struct ScriptPrefabErrorInvalidTemplate; }
-namespace Editor::ScriptModule { struct ScriptPrefabErrorServiceError; }
-namespace Editor::ScriptModule { struct ScriptPrefabErrorValueOutOfBounds; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -50,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptPrefabTemplateInstance() = default;
+    virtual ~ScriptPrefabTemplateInstance();
     // NOLINTEND
 
 public:
@@ -62,13 +55,6 @@ public:
         ::Scripting::WeakLifetimeScope const&                scope
     );
 
-    MCNAPI ::Scripting::Result<
-        void,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance,
-        ::Editor::ScriptModule::ScriptPrefabErrorServiceError,
-        ::Scripting::Error>
-    _bakeInstance();
-
     MCNAPI ::Scripting::Result<::Mirror, ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
     _getInstanceMirror() const;
 
@@ -76,31 +62,6 @@ public:
     _getInstanceRotation() const;
 
     MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance> _getPosition() const;
-
-    MCNAPI ::Scripting::Result<
-        ::std::vector<
-            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptPrefabTemplateInstanceStructure>>,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
-    _getStructureRefs() const;
-
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptPrefabTemplate>,
-        ::Editor::ScriptModule::ScriptPrefabErrorServiceError,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidTemplate>
-    _getTemplate() const;
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
-    _setInstanceMirror(::Mirror mirror);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
-    _setInstanceRotation(::Rotation rotation);
-
-    MCNAPI ::Scripting::Result<
-        void,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance,
-        ::Editor::ScriptModule::ScriptPrefabErrorValueOutOfBounds>
-    _setPosition(::Vec3 const& position);
     // NOLINTEND
 
 public:
@@ -120,9 +81,9 @@ public:
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

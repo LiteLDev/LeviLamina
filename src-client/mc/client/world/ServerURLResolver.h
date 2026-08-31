@@ -17,7 +17,7 @@ class ServerURLResolver : public ::World::IServerURLResolver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerURLResolver() /*override*/ = default;
+    virtual ~ServerURLResolver() /*override*/;
 
     virtual bool
     fromStringExplicitPort(::PingedCompatibleServer& server, char const* str, ushort port, int ipVersion) /*override*/;
@@ -26,17 +26,17 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $fromStringExplicitPort(::PingedCompatibleServer& server, char const* str, ushort port, int ipVersion);
 
     MCAPI void $fromString(::RakNet::RakNetGUID& guid, char const* source);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

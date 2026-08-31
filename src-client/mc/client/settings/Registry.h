@@ -69,7 +69,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Registry() /*override*/;
+    virtual ~Registry() /*override*/ = default;
 
     virtual ::std::vector<::std::string_view> getSettingsGroups() const /*override*/;
 
@@ -92,6 +92,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void refresh();
+
     MCAPI void refresh(::std::string_view id);
 
     MCAPI void registerSettingsFactory(
@@ -107,12 +109,6 @@ public:
             ::Settings::GroupInfoComponent,
             ::Settings::BannerComponent>>>()>&& factory
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -134,12 +130,6 @@ public:
         ::Settings::GroupInfoComponent,
         ::Settings::BannerComponent>>>
     $getSetting(::std::string_view settingId) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

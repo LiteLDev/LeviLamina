@@ -21,13 +21,9 @@ MCAPI float getMovementSpeed(::EntityContext const& provider);
 
 MCAPI void initializeMob(::EntityContext& provider);
 
-MCAPI bool isFrictionDiscarded(::EntityContext const& provider);
-
 MCAPI void resetLocalMoveVelocity(::EntityContext& provider);
 
 MCAPI void setAirSpeed(::EntityContext& provider, float flySpeed);
-
-MCAPI void setDiscardFriction(::EntityContext& provider, bool discardFriction);
 
 MCAPI void setLocalMoveVelocity(::EntityContext& provider, ::Vec3 const& localMoveVelocity);
 

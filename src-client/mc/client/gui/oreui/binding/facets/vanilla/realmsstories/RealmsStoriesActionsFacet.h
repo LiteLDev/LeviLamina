@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/network/realms/OptInState.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ namespace Realms::Stories { class FacetStateManager; }
 
 namespace OreUI {
 
-class RealmsStoriesActionsFacet : public ::OreUI::FacetBase<::OreUI::RealmsStoriesActionsFacet> {
+class RealmsStoriesActionsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsStoriesActionsFacet> {
 public:
     // RealmsStoriesActionsFacet inner types define
     enum class OptInTelemetryUserState : int {
@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsStoriesActionsFacet() /*override*/ = default;
+    virtual ~RealmsStoriesActionsFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -49,8 +49,6 @@ public:
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> realmsStoriesProvider,
         ::std::shared_ptr<::MainMenuScreenModel>                mainMenuScreenModel
     );
-
-    MCAPI void _blockPlayerFromRealm(::std::string const& xuid);
 
     MCAPI void _clearDeleteStatus(::std::string const& feedItemId);
 
@@ -108,8 +106,6 @@ public:
 
     MCAPI void _postStory();
 
-    MCAPI void _removePlayerFromRealm(::std::string const& xuid);
-
     MCAPI void _reportFeedItemToXbox(
         ::std::string const& feedItemId,
         ::std::string const& feedItemRoot,
@@ -126,8 +122,6 @@ public:
     );
 
     MCAPI void _reportToClubOwner(::std::string const& feedItemId, ::std::string const& feedItemRoot);
-
-    MCAPI void _resetManageMembersStatus();
 
     MCAPI void _resetProvider();
 
@@ -167,6 +161,12 @@ public:
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> realmsStoriesProvider,
         ::std::shared_ptr<::MainMenuScreenModel>                mainMenuScreenModel
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -10,6 +10,7 @@
 class Block;
 class BlockPos;
 class BlockSource;
+class HashedString;
 class Random;
 // clang-format on
 
@@ -17,8 +18,9 @@ class BlockBlobFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
-    ::ll::TypedStorage<4, 4, int>            mStartRadius;
+    ::ll::TypedStorage<8, 8, ::Block const&>                                                       mBlock;
+    ::ll::TypedStorage<4, 4, int>                                                                  mStartRadius;
+    ::ll::TypedStorage<8, 8, ::std::vector<::std::reference_wrapper<::HashedString const>> const&> mPlaceableOnBlocks;
     // NOLINTEND
 
 public:
@@ -31,18 +33,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockBlobFeature(::Block const& block, int radius);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Block const& block, int radius);
     // NOLINTEND
 
 public:

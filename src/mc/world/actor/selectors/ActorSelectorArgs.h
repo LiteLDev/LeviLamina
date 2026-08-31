@@ -46,25 +46,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorSelectorArgs();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorSelectorArgs(::ActorSelectorArgs const&);
-
-    MCAPI ::ActorSelectorArgs& operator=(::ActorSelectorArgs&&);
-
-    MCAPI ::ActorSelectorArgs& operator=(::ActorSelectorArgs const&);
-
     MCAPI ~ActorSelectorArgs();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorSelectorArgs const&);
     // NOLINTEND
 
 public:

@@ -13,6 +13,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::vector<::ComponentInfo> generateDetailedComponentInfo();
 
-    MCNAPI static ::std::string generateName(::std::string name);
+    MCNAPI static ::std::string generateName(::std::string_view name);
     // NOLINTEND
 };

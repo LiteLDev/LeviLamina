@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/RtpPacketMediaType.h"
 
 // auto generated forward declare list
@@ -66,15 +67,9 @@ public:
 
         virtual void OnBatchComplete();
 
-        virtual void OnAbortedRetransmissions(uint ssrc, ::rtc::ArrayView<ushort const> sequence_numbers);
+        virtual void OnAbortedRetransmissions(uint ssrc, ::webrtc::ArrayView<ushort const> sequence_numbers);
 
         virtual ::std::optional<uint> GetRtxSsrcForMedia(uint ssrc) const;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
         // NOLINTEND
     };
 
@@ -83,7 +78,6 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnka88eef;
     ::ll::UntypedStorage<8, 8>   mUnk53e6d5;
-    ::ll::UntypedStorage<8, 8>   mUnkaa4288;
     ::ll::UntypedStorage<1, 1>   mUnk1f6b2d;
     ::ll::UntypedStorage<1, 1>   mUnk7939ad;
     ::ll::UntypedStorage<1, 1>   mUnkec2099;
@@ -100,7 +94,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk748863;
     ::ll::UntypedStorage<8, 8>   mUnk28105c;
     ::ll::UntypedStorage<8, 8>   mUnk339522;
-    ::ll::UntypedStorage<8, 304> mUnk36dce0;
+    ::ll::UntypedStorage<8, 224> mUnk36dce0;
     ::ll::UntypedStorage<1, 1>   mUnk7216c2;
     ::ll::UntypedStorage<8, 8>   mUnk71fc1b;
     ::ll::UntypedStorage<8, 8>   mUnk1df9c2;
@@ -123,7 +117,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void CreateProbeClusters(::rtc::ArrayView<::webrtc::ProbeClusterConfig const> probe_cluster_configs);
+    MCNAPI void CreateProbeClusters(::webrtc::ArrayView<::webrtc::ProbeClusterConfig const> probe_cluster_configs);
 
     MCNAPI ::webrtc::Timestamp CurrentTime() const;
 
@@ -159,6 +153,8 @@ public:
     MCNAPI void ProcessPackets();
 
     MCNAPI ::webrtc::DataSize QueueSizeData() const;
+
+    MCNAPI uint64 QueueSizePackets() const;
 
     MCNAPI void RemovePacketsForSsrc(uint ssrc);
 

@@ -26,6 +26,7 @@ namespace SharedTypes::v1_21_130::DataDrivenUI { struct PanelCloseButton; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct PanelDecoration; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct PanelSpacing; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct PanelText; }
+namespace SharedTypes::v1_21_130::DataDrivenUI { struct ScrollableGridLayout; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct Visibility; }
 // clang-format on
 
@@ -51,6 +52,7 @@ public:
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelSpacing>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ScrollableGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>> const&
     getComposition(::std::string const& identifier) const = 0;
@@ -75,17 +77,12 @@ public:
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelSpacing>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ScrollableGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>>
     getExtensionPointContents(::std::string const& name) const = 0;
 
     virtual ::Bedrock::PubSub::Subscription
     subscribeToOnCompositionsReloadedAsync(::std::function<void()>&& onCompositionsReloadedAsyncCallback) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

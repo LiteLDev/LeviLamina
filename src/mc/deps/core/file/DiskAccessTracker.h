@@ -90,7 +90,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit DiskAccessTracker(::std::unique_ptr<::Core::DiskAccessDiagnostics> diagnostics);
 
-    MCNAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation path, ::Core::PathView);
+    MCNAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation writeOperation, ::Core::PathView path);
 
 #ifdef LL_PLAT_C
     MCNAPI void _computeTrackerStats(
@@ -136,30 +136,14 @@ public:
             shouldRepeatLowTelemetryFunc
     );
 
-    MCNAPI void showVerboseLogs(bool showLogs);
-
     MCNAPI void update();
 #endif
-
-    MCNAPI ~DiskAccessTracker();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Core::DiskAccessTracker& getDiskAccessTracker();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::unique_ptr<::Core::DiskAccessDiagnostics> diagnostics);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

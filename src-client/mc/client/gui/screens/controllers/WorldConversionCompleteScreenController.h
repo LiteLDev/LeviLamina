@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldConversionCompleteScreenController() /*override*/ = default;
+    virtual ~WorldConversionCompleteScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
     // NOLINTEND
@@ -41,10 +41,6 @@ public:
         ::std::string const&                              levelId,
         ::std::function<void()>                           cancelCallback
     );
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -58,16 +54,14 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
+    MCAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

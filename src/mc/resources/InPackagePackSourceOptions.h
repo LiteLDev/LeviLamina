@@ -16,16 +16,4 @@ public:
     InPackagePackSourceOptions& operator=(InPackagePackSourceOptions const&);
     InPackagePackSourceOptions(InPackagePackSourceOptions const&);
     InPackagePackSourceOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~InPackagePackSourceOptions();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/PartyPresence.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/SocialPresence.h"
 #include "mc/client/gui/oreui/interface/ProfileImageState.h"
@@ -25,12 +25,11 @@ namespace Social { class IUserManager; }
 namespace Social { class MultiplayerServiceManager; }
 namespace Social { class ProfileSystem; }
 namespace Social { struct PlayerProfile; }
-namespace Social { struct SocialChangeResult; }
 // clang-format on
 
 namespace OreUI {
 
-class PlayerProfileFacet : public ::OreUI::FacetBase<::OreUI::PlayerProfileFacet> {
+class PlayerProfileFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PlayerProfileFacet> {
 public:
     // PlayerProfileFacet inner types declare
     // clang-format off
@@ -57,8 +56,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI PlayerProfileDataWrapper();
-
         MCAPI ::RelationshipStatus favoriteStatus() const;
 
         MCFOLD ::std::string const& getOfflineName() const;
@@ -69,17 +66,17 @@ public:
 
         MCFOLD ::std::string const& getPlatformName() const;
 
-        MCFOLD ::std::string const& getPlayingOnRealmId() const;
+        MCAPI ::std::string const& getPlayingOnRealmId() const;
 
-        MCFOLD ::std::string const& getPlayingOnServerId() const;
+        MCAPI ::std::string const& getPlayingOnServerId() const;
 
-        MCFOLD ::OreUI::SocialPresence getPresence() const;
+        MCAPI ::OreUI::SocialPresence getPresence() const;
 
-        MCFOLD ::std::string const& getPresenceMessage() const;
+        MCAPI ::std::string const& getPresenceMessage() const;
 
         MCFOLD ::std::string const& getRealName() const;
 
-        MCFOLD ::Social::RelationToCurrentUser getRelationship() const;
+        MCAPI ::Social::RelationToCurrentUser getRelationship() const;
 
         MCFOLD ::std::string const& getTitleName() const;
 
@@ -92,20 +89,6 @@ public:
         MCAPI bool isBlocked() const;
 
         MCAPI bool isMuted() const;
-
-        MCAPI ~PlayerProfileDataWrapper();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -180,15 +163,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>         resourceAllowList
     );
 
-    MCAPI void _applySocialChange(::Social::SocialChangeResult const& result);
-
-    MCAPI bool
-    _isInSameGame(::Social::PlayerProfile const& playerProfile, ::std::vector<::std::string> const& uids) const;
-
     MCAPI ::OreUI::PlayerProfileFacet::PlayerProfileWrapper&
     _updateTrackedProfile(::Social::PlayerProfile const& playerProfile);
-
-    MCAPI void fetchOfflineProfile();
 
     MCFOLD ::std::vector<::OreUI::PlayerProfileFacet::PlayerProfileWrapper> const& getTrackedProfiles() const;
 
@@ -225,12 +201,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

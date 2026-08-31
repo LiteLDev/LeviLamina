@@ -29,26 +29,6 @@ public:
         ::ll::TypedStorage<8, 64, ::std::function<void(::Actor&, ::CompoundTag const&)>> mCreateAndLoadComponentFunc;
         ::ll::TypedStorage<8, 64, ::std::function<void(::Actor const&, ::CompoundTag&)>> mSaveComponentFunc;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ComponentInfo& operator=(ComponentInfo const&);
-        ComponentInfo(ComponentInfo const&);
-        ComponentInfo();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::InternalComponentRegistry::ComponentInfo& operator=(::InternalComponentRegistry::ComponentInfo&&);
-
-        MCAPI ~ComponentInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -70,8 +50,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _initializeComponents(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) const;
-
-    MCAPI void addComponentSaveData(::Actor const& owner, ::CompoundTag& tag);
 
     MCAPI void initializeComponents(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) const;
     // NOLINTEND
@@ -100,11 +78,5 @@ public:
     MCAPI void $registerComponents();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IRandom;
 class Vec2;
 // clang-format on
 
@@ -20,22 +19,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SimplexNoise();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SimplexNoise(::IRandom& random, bool parityInitialization);
-
     MCAPI float _getValue(::Vec2 const& vin) const;
 
     MCAPI float _getValue(::Vec3 const& vin) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IRandom& random, bool parityInitialization);
     // NOLINTEND
 };

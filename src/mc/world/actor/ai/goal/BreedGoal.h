@@ -49,8 +49,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit BreedGoal(::Mob& animal);
 
-    MCAPI void _breed();
-
     MCAPI bool _isCloseEnoughToBreed(::Vec3 pos1, ::Vec2 size1, ::Vec3 pos2, ::Vec2 size2) const;
 
     MCAPI ::Mob* _moveToFreePartner() const;

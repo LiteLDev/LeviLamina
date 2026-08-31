@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/editor/services/datastore/DataStoreService.h"
 
@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerDataStoreService() /*override*/ = default;
+    virtual ~ServerDataStoreService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -39,8 +39,8 @@ public:
         bool
     ) /*override*/;
 
-    virtual ::Json::Value _getPayload(::HashedString const&, ::Editor::DataStore::PayloadDescription const&) const
-        /*override*/;
+    virtual ::Json::Value
+    _getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -53,6 +53,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -70,7 +76,8 @@ public:
         bool
     );
 
-    MCNAPI ::Json::Value $_getPayload(::HashedString const&, ::Editor::DataStore::PayloadDescription const&) const;
+    MCNAPI ::Json::Value
+    $_getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const&) const;
 
 
     // NOLINTEND

@@ -21,12 +21,6 @@ public:
     // NOLINTBEGIN
     virtual void onCommand(::CommandOrigin const& origin, ::CommandOutput const& output) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace CodeBuilder

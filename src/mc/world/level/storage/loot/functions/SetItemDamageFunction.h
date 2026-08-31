@@ -10,8 +10,10 @@
 // clang-format off
 class ItemInstance;
 class ItemStack;
+class LootItemCondition;
 class LootTableContext;
 class Random;
+namespace Json { class Value; }
 // clang-format on
 
 class SetItemDamageFunction : public ::LootItemFunction {
@@ -24,27 +26,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetItemDamageFunction() /*override*/ = default;
+    virtual ~SetItemDamageFunction() /*override*/;
 
-    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
-    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCFOLD ::RandomValueBounds getDamage() const;
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
+    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
+    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 

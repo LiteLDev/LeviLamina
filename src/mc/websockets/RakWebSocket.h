@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class RakWebSocketDataFrame;
-class TcpProxy;
 namespace RakNet { class BitStream; }
 // clang-format on
 
@@ -74,7 +73,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RakWebSocket();
+    virtual ~RakWebSocket() = default;
 
     virtual ::WSConnectionResult connect(::std::string const& uri, ::std::vector<::std::string> const& subProtocols);
 
@@ -98,53 +97,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RakWebSocket(::std::unique_ptr<::TcpProxy> proxy, bool isServer);
-
     MCNAPI void _close(::CloseStatusCode code);
 
-    MCNAPI void _createWebSocketKey();
-
     MCNAPI void _fail(::std::string const& error, ::CloseStatusCode code);
-
-    MCNAPI ::std::string _generateBase64SHA1Key(::std::string const& key);
-
-    MCNAPI void _processDataFrames(::RakNet::BitStream& newIncoming);
 
     MCNAPI bool
     _processPacket(::std::function<void(::RakNet::BitStream&)> const& processStep, bool acceptNewConnection);
 
     MCNAPI void _reset();
 
-    MCNAPI bool _resolveURI();
-
-    MCNAPI bool _sendCloseFrame(::CloseStatusCode reason, ::std::string const&);
-
-    MCNAPI bool _sendControlFrame(uchar const* payload, uint64 size, ::OpCode opCode);
+    MCNAPI bool _sendCloseFrame(::CloseStatusCode code, ::std::string const& reason);
 
     MCNAPI bool _sendNonControlFrame(uchar const* payload, uint64 size, ::OpCode opCode);
 
     MCNAPI bool _sendTextFrame(::std::string const& text);
-
-    MCNAPI void
-    _splitWebSocketURI(::std::string const& uri, ::std::string& scheme, ::std::string& host, ::std::string& path);
-
-    MCNAPI void _subProcessHttpResponse(::RakNet::BitStream& newIncoming);
-
-    MCNAPI void _validateFields();
-
-    MCNAPI bool _validateWebSocketURI();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::unique_ptr<::TcpProxy> proxy, bool isServer);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -165,11 +131,5 @@ public:
     MCNAPI void $tick();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

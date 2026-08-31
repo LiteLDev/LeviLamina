@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class IDefinitionInstance;
-// clang-format on
-
 class DefinitionInstanceGroup {
 public:
     // member variables
@@ -23,15 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void add(::std::shared_ptr<::IDefinitionInstance> const& definition);
-
-    MCNAPI void clear();
-
     MCNAPI void combine(::DefinitionInstanceGroup const& other);
-
-    MCNAPI bool contains(::DefinitionInstanceGroup const& other) const;
-
-    MCNAPI bool overlaps(::DefinitionInstanceGroup const& other) const;
 
     MCNAPI void subtract(::DefinitionInstanceGroup const& other);
     // NOLINTEND

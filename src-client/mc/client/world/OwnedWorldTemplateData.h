@@ -4,14 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
-class IEntitlementManager;
 class StoreCatalogItem;
 class WorldTemplatePackManifest;
-struct WorldTemplateInfo;
 // clang-format on
 
 namespace World {
@@ -32,18 +29,15 @@ public:
 
 public:
     // prevent constructor by default
+    OwnedWorldTemplateData(OwnedWorldTemplateData const&);
     OwnedWorldTemplateData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OwnedWorldTemplateData(::World::OwnedWorldTemplateData const&);
-
     MCAPI ::std::string const& getCreator() const;
 
     MCAPI ::World::OwnedWorldTemplateData& operator=(::World::OwnedWorldTemplateData const&);
-
-    MCAPI ::World::OwnedWorldTemplateData& operator=(::World::OwnedWorldTemplateData&&);
 
     MCAPI ~OwnedWorldTemplateData();
     // NOLINTEND
@@ -55,23 +49,12 @@ public:
     _formatPackKeyword(::std::string const& rawName, ::WorldTemplatePackManifest const& manifest);
 
     MCAPI static ::World::OwnedWorldTemplateData fromStoreCatalogItem(::StoreCatalogItem const& itemData);
-
-    MCAPI static ::World::OwnedWorldTemplateData fromWorldTemplateInfo(
-        ::WorldTemplateInfo const&                           templateData,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
-    );
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> DEFAULT_UNKNOWN_ID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::World::OwnedWorldTemplateData const&);
     // NOLINTEND
 
 public:

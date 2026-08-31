@@ -57,10 +57,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCAPI void _monitorSitting();
-
-    MCAPI ::std::optional<::ExpiringTick> getDashCooldown() const;
     // NOLINTEND
 
 public:
@@ -85,11 +81,5 @@ public:
     MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

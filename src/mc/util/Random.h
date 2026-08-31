@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Random() /*override*/ = default;
+    virtual ~Random() /*override*/;
 
     virtual bool nextBoolean() /*override*/;
 
@@ -66,6 +66,12 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

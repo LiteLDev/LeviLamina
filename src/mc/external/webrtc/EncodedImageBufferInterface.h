@@ -13,17 +13,15 @@ public:
     // NOLINTBEGIN
     virtual uchar const* data() const = 0;
 
-    virtual uchar* data() = 0;
-
     virtual uint64 size() const = 0;
 
     virtual ~EncodedImageBufferInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -31,20 +31,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI TransactionFrame(::Core::FileAccessType accessType, ::Core::PathView path);
-
-    MCNAPI ~TransactionFrame();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Core::FileAccessType accessType, ::Core::PathView path);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

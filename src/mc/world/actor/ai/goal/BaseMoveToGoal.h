@@ -72,39 +72,19 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BaseMoveToGoal(::Mob& mob, float speedMultiplier, float cooldownTimeout, float goalRadius);
-
-    MCAPI ::BlockPos _blockAboveTarget() const;
-
-    MCAPI void _checkIfStuck();
-
-    MCFOLD bool _isCooldownActive() const;
-
-    MCAPI void setTargetPositionOffset(::Vec3 const& offset);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speedMultiplier, float cooldownTimeout, float goalRadius);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();
 
     MCAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCFOLD void $start();
 
     MCAPI void $stop();
 
     MCAPI void $tick();
 
-    MCFOLD bool $hasReachedTarget() const;
+    MCAPI bool $hasReachedTarget() const;
 
     MCAPI int $_nextStartTick();
 
@@ -117,11 +97,5 @@ public:
     MCFOLD void $setInterval(int const interval);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

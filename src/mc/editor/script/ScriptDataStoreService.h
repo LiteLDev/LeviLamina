@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 #include "mc/editor/datastore/EventType.h"
 
 // auto generated forward declare list
@@ -30,6 +30,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkd49f60;
     ::ll::UntypedStorage<8, 32> mUnk8cb4e5;
     ::ll::UntypedStorage<8, 32> mUnk68c06f;
+    ::ll::UntypedStorage<8, 32> mUnkfeac0b;
     ::ll::UntypedStorage<8, 32> mUnk58830f;
     ::ll::UntypedStorage<8, 32> mUnk2e76b8;
     ::ll::UntypedStorage<8, 32> mUnk4248d0;
@@ -61,10 +62,6 @@ public:
 
     MCNAPI ::Editor::ScriptModule::ScriptDataStoreService&
     operator=(::Editor::ScriptModule::ScriptDataStoreService&& other);
-
-    MCNAPI void sendNetworkEvent(::std::string dataTag, ::std::string payload);
-
-    MCNAPI void sendNotificationEvent(::std::string const& dataTag, ::std::string const& payload);
 
     MCNAPI ~ScriptDataStoreService();
     // NOLINTEND

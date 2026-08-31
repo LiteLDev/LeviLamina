@@ -11,50 +11,23 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class HashedString;
 struct BlockGraphicsModeChangeContext;
 // clang-format on
 
 class SeasonsAgnosticLeavesBlock : public ::LeavesBlock {
 public:
-    // prevent constructor by default
-    SeasonsAgnosticLeavesBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BlockRenderLayer getRenderLayer(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const
+    virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
         /*override*/;
 
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SeasonsAgnosticLeavesBlock(
-        ::std::string const&                           nameId,
-        int                                            id,
-        ::HashedString const&                          sapling,
-        ::std::optional<::LeavesBlock::ParticleParams> particleParams
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&                           nameId,
-        int                                            id,
-        ::HashedString const&                          sapling,
-        ::std::optional<::LeavesBlock::ParticleParams> particleParams
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const;
+    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 

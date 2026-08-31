@@ -10,7 +10,7 @@ class ContainerScreenControllerProxy : public ::ScreenControllerProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 384, ::ContainerScreenControllerProxyCallbacks const> mCallbacks;
+    ::ll::TypedStorage<8, 320, ::ContainerScreenControllerProxyCallbacks const> mCallbacks;
     // NOLINTEND
 
 public:
@@ -23,11 +23,5 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

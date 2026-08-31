@@ -27,9 +27,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TerrainBurstReactionComponent() /*override*/ = default;
+    virtual ~TerrainBurstReactionComponent() /*override*/;
 
     virtual void _onEnd(::LabTableReaction& owner, ::BlockSource& region) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -38,11 +44,5 @@ public:
     MCAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -15,7 +15,7 @@ class SystemFilePicker : public ::IFilePicker, public ::std::enable_shared_from_
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SystemFilePicker() /*override*/ = default;
+    virtual ~SystemFilePicker() /*override*/;
 
     virtual void
     initFilePick(::Core::Path const& filePath, ::std::function<void(bool, ::FileInfo)> callback) /*override*/;
@@ -32,17 +32,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI SystemFilePicker();
-
-    MCNAPI ::FileInfo _fillFileInfo(::Core::Path const& filePath);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/options/oreui/PlayScreenWorldLayoutMode.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ namespace Bedrock::PubSub { class Subscription; }
 
 namespace OreUI {
 
-class ScreenSpecificOptionsFacet : public ::OreUI::FacetBase<::OreUI::ScreenSpecificOptionsFacet> {
+class ScreenSpecificOptionsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ScreenSpecificOptionsFacet> {
 public:
     // member variables
     // NOLINTBEGIN

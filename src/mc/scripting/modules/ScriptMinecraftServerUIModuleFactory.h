@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_factory/GenericModuleBindingFactory.h"
+#include "mc/deps/script_core/binding_factory/scripting/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,8 +40,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& LegacyModuleName();
-
     MCNAPI static char const*& ModuleName();
 
     MCNAPI static ::mce::UUID const& ModuleUUID();

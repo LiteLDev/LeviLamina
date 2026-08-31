@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class CopyOnWriteBuffer; }
+namespace webrtc { class CopyOnWriteBuffer; }
 namespace webrtc { class RTCError; }
 // clang-format on
 
@@ -20,7 +20,7 @@ public:
     virtual ~DataChannelSink() = default;
 
     virtual void
-    OnDataReceived(int channel_id, ::webrtc::DataMessageType type, ::rtc::CopyOnWriteBuffer const& buffer) = 0;
+    OnDataReceived(int channel_id, ::webrtc::DataMessageType type, ::webrtc::CopyOnWriteBuffer const& buffer) = 0;
 
     virtual void OnChannelClosing(int channel_id) = 0;
 
@@ -31,12 +31,6 @@ public:
     virtual void OnTransportClosed(::webrtc::RTCError error);
 
     virtual void OnBufferedAmountLow(int channel_id) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

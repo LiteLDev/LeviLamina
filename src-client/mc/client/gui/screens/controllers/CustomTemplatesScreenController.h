@@ -10,7 +10,6 @@
 // clang-format off
 class DlcUIWrapper;
 class PlayScreenModel;
-struct PackIdVersion;
 struct WorldTemplateInfo;
 // clang-format on
 
@@ -33,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CustomTemplatesScreenController() /*override*/ = default;
+    virtual ~CustomTemplatesScreenController() /*override*/;
 
     virtual void onCreation() /*override*/;
 
@@ -48,13 +47,7 @@ public:
         ::std::vector<::WorldTemplateInfo> const& customTemplates
     );
 
-    MCAPI void _createWorldTemplate(::PackIdVersion const& packId, ::std::function<void()> failureCallback);
-
     MCAPI void _handleWorldTemplateClicked(::WorldTemplateInfo const& level);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEvents();
     // NOLINTEND
 
 public:
@@ -62,6 +55,12 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::std::shared_ptr<::PlayScreenModel> model, ::std::vector<::WorldTemplateInfo> const& customTemplates);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

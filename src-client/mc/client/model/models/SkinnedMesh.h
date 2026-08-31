@@ -25,8 +25,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                   mShouldDrawThisFrame;
     ::ll::TypedStorage<8, 24, ::std::vector<::ModelPart*>>           mSkinnedParts;
-    ::ll::TypedStorage<8, 552, ::mce::Mesh>                          mSkinnedMeshQuads;
-    ::ll::TypedStorage<8, 552, ::mce::Mesh>                          mSkinnedMeshTris;
+    ::ll::TypedStorage<8, 592, ::mce::Mesh>                          mSkinnedMeshQuads;
+    ::ll::TypedStorage<8, 592, ::mce::Mesh>                          mSkinnedMeshTris;
     ::ll::TypedStorage<8, 24, ::std::vector<::glm::mat4x4>>          mBoneMatrices;
     ::ll::TypedStorage<8, 24, ::std::vector<::glm::mat4x4>>          mPreviousBoneMatrices;
     ::ll::TypedStorage<4, 24, ::std::pair<::glm::vec3, ::glm::vec3>> mBounds;
@@ -34,11 +34,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                                    mTotalVertices;
     ::ll::TypedStorage<1, 1, bool>                                   mUseBones;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SkinnedMesh& operator=(SkinnedMesh const&);
-    SkinnedMesh(SkinnedMesh const&);
 
 public:
     // member functions
@@ -63,14 +58,6 @@ public:
         ::ShadowContext                           shadowContext,
         bool                                      isDitheringEnabled
     );
-
-    MCAPI ::mce::Mesh const& getMesh() const;
-
-    MCAPI ::SkinnedMesh& operator=(::SkinnedMesh&&);
-
-    MCAPI void registerPart(::ModelPart& part, int groupIndex, int meshIndex);
-
-    MCAPI void setMesh(::mce::Mesh&& mesh);
 
     MCAPI ~SkinnedMesh();
     // NOLINTEND

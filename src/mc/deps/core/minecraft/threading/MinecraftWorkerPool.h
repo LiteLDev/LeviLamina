@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class WorkerPool;
-struct AllWorkerConfigurations;
 // clang-format on
 
 class MinecraftWorkerPool {
@@ -33,18 +32,6 @@ public:
     MCNAPI static void createSingletons();
 
     MCNAPI static void destroySingletons();
-
-#ifdef LL_PLAT_C
-    MCNAPI static ::WorkerPool& getASYNCOrDISKWorkerPoolForLoading();
-#endif
-
-    MCNAPI static ::std::optional<::AllWorkerConfigurations> const getAllWorkerConfigurations();
-
-#ifdef LL_PLAT_C
-    MCNAPI static uint64 getAudioThreadMask();
-#endif
-
-    MCNAPI static void initializeDefaults();
 
     MCNAPI static void loadWorkerConfigurations(uint highPowerCores, uint totalCores);
     // NOLINTEND

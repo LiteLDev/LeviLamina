@@ -69,12 +69,8 @@ public:
         ::FilterInput const&                     filterInput
     );
 
-    MCAPI bool _handleUnknownMember(::std::string const& name, ::Json::Value const& jsonVal);
-
     MCAPI bool
     _parseMemberCollectionJSONCpp(::FilterGroup::CollectionType collectionType, ::Json::Value const& jsonVal);
-
-    MCAPI bool _parseMemberJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
 
     MCAPI bool _parseObjectJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
 

@@ -17,9 +17,9 @@ public:
     MCAPI static ::TickingSystemWithInfo createSystem();
 
     MCAPI static void doTick(
-        ::MoveInputComponent const&       input,
-        ::PlayerInputModeComponent const& localVelocity,
-        ::LocalMoveVelocityComponent&
+        ::MoveInputComponent const& input,
+        ::PlayerInputModeComponent const&,
+        ::LocalMoveVelocityComponent& localVelocity
     );
     // NOLINTEND
 };

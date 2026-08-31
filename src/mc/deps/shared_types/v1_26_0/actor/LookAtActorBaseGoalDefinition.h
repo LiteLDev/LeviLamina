@@ -29,12 +29,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::string_view filterEnding);
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_26_0

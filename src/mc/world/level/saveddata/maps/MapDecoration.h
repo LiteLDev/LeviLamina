@@ -68,24 +68,6 @@ public:
         ::std::string const&  label,
         ::mce::Color const&   color
     );
-
-    MCFOLD ::mce::Color const& getColor() const;
-
-    MCFOLD ::MapDecoration::Type getImg() const;
-
-    MCFOLD ::std::string const& getLabel() const;
-
-    MCFOLD schar getRot() const;
-
-    MCFOLD schar getX() const;
-
-    MCFOLD schar getY() const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool isRenderedOnFrame() const;
-#endif
-
-    MCAPI ~MapDecoration();
     // NOLINTEND
 
 public:
@@ -99,11 +81,5 @@ public:
         ::std::string const&  label,
         ::mce::Color const&   color
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

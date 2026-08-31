@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
-#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/animal/Animal.h"
 
@@ -19,6 +18,7 @@ class DataLoadHelper;
 class EntityContext;
 class Mob;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 // clang-format on
 
 class Wolf : public ::Animal {
@@ -44,7 +44,7 @@ public:
 
     virtual bool load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual void onBorn(::Actor& parentRight, ::Actor&) /*override*/;
+    virtual void onBorn(::Actor&, ::Actor& parentRight) /*override*/;
 
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
@@ -57,7 +57,7 @@ public:
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
     // NOLINTEND
 
 public:
@@ -69,26 +69,9 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _avoidSnowBury();
-
     MCAPI void _updateTintColor();
 
-    MCAPI float getHeadRollAngle(float a);
-
-    MCAPI float getShakeAnim() const;
-
-    MCAPI float getTailAngle();
-
-    MCAPI bool isShaking() const;
-
     MCAPI void postNormalTick();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::optional<::SharedTypes::Legacy::LevelSoundEvent>
-    getCustomHurtSound(::Mob const& mob, ::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:
@@ -108,11 +91,11 @@ public:
 
     MCAPI bool $load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $onBorn(::Actor& parentRight, ::Actor&);
+    MCAPI void $onBorn(::Actor&, ::Actor& parentRight);
 
     MCAPI void $onSynchedDataUpdate(int dataId);
 
-    MCAPI void $setSitting(bool value);
+    MCFOLD void $setSitting(bool value);
 
     MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
@@ -120,7 +103,8 @@ public:
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
 
     // NOLINTEND

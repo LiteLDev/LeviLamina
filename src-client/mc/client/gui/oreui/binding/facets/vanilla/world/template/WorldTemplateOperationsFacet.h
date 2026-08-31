@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/world/template/DownloadWorldTemplateStatus.h"
@@ -20,7 +20,7 @@ namespace World { class OwnedWorldTemplateManager; }
 
 namespace OreUI {
 
-class WorldTemplateOperationsFacet : public ::OreUI::FacetBase<::OreUI::WorldTemplateOperationsFacet> {
+class WorldTemplateOperationsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::WorldTemplateOperationsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -62,8 +62,6 @@ public:
 
     MCAPI void _beginTemplateDownload();
 
-    MCAPI void _handleInitialisingState();
-
     MCAPI void _updateDownloadProgress();
 
     MCAPI bool canDownloadBeCancelled();
@@ -76,7 +74,7 @@ public:
 
     MCFOLD ::std::string const& getDownloadingProgressBytes();
 
-    MCFOLD float getDownloadingProgressPercent();
+    MCAPI float getDownloadingProgressPercent();
 
     MCAPI ::std::optional<::OreUI::DownloadWorldTemplateStatus> const& getDownloadingStatus();
 
@@ -84,9 +82,9 @@ public:
 
     MCFOLD ::OreUI::FacetTaskState getDownloadingTaskState();
 
-    MCFOLD ::std::string const& getImportedPackName();
+    MCAPI ::std::string const& getImportedPackName();
 
-    MCFOLD ::std::optional<::ImportFailure> const& getImportingTaskResult();
+    MCAPI ::std::optional<::ImportFailure> const& getImportingTaskResult();
 
     MCFOLD ::OreUI::FacetTaskState getImportingTaskState();
 
@@ -118,12 +116,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

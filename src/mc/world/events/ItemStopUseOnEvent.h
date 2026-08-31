@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mActor;
     ::ll::TypedStorage<4, 12, ::BlockPos>      mBlockPosition;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ItemStopUseOnEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

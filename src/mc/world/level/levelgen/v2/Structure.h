@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class PoolAliasBinding;
 struct BiomeIdType;
 namespace br::worldgen { class GenerationStub; }
@@ -56,10 +55,6 @@ public:
 
     MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
     generate(::br::worldgen::GenerationContext& context) const;
-
-    MCAPI bool isValidBiome(::br::worldgen::GenerationContext const& context, ::BlockPos pos) const;
-
-    MCAPI bool operator==(::br::worldgen::Structure const& rhs) const;
     // NOLINTEND
 
 public:
@@ -72,12 +67,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

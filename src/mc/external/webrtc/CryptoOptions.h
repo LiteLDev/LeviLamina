@@ -2,17 +2,43 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace webrtc { class FieldTrialsView; }
+// clang-format on
+
 namespace webrtc {
 
 struct CryptoOptions {
 public:
     // CryptoOptions inner types declare
     // clang-format off
+    class EphemeralKeyExchangeCipherGroups;
     struct SFrame;
     struct Srtp;
     // clang-format on
 
     // CryptoOptions inner types define
+    class EphemeralKeyExchangeCipherGroups {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 24> mUnk1d51d2;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        EphemeralKeyExchangeCipherGroups& operator=(EphemeralKeyExchangeCipherGroups const&);
+        EphemeralKeyExchangeCipherGroups(EphemeralKeyExchangeCipherGroups const&);
+        EphemeralKeyExchangeCipherGroups();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI void Update(::webrtc::FieldTrialsView const* field_trials, ::std::vector<ushort> const* disabled_groups);
+        // NOLINTEND
+    };
+
     struct SFrame {
     public:
         // member variables
@@ -47,8 +73,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 4> mUnk3ce9db;
-    ::ll::UntypedStorage<1, 1> mUnk364cb9;
+    ::ll::UntypedStorage<1, 4>  mUnk3ce9db;
+    ::ll::UntypedStorage<1, 1>  mUnk364cb9;
+    ::ll::UntypedStorage<8, 24> mUnk86fac7;
     // NOLINTEND
 
 public:
@@ -60,11 +87,13 @@ public:
     // NOLINTBEGIN
     MCNAPI CryptoOptions();
 
-    MCNAPI CryptoOptions(::webrtc::CryptoOptions const& other);
+    MCNAPI CryptoOptions(::webrtc::CryptoOptions const&);
 
     MCNAPI ::std::vector<int> GetSupportedDtlsSrtpCryptoSuites() const;
 
     MCNAPI bool operator!=(::webrtc::CryptoOptions const& other) const;
+
+    MCNAPI ::webrtc::CryptoOptions& operator=(::webrtc::CryptoOptions&&);
 
     MCNAPI bool operator==(::webrtc::CryptoOptions const& other) const;
 
@@ -76,7 +105,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::webrtc::CryptoOptions const& other);
+    MCNAPI void* $ctor(::webrtc::CryptoOptions const&);
     // NOLINTEND
 
 public:

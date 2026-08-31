@@ -9,7 +9,6 @@
 // clang-format off
 namespace ClientBlockPipeline { class Description; }
 namespace ClientBlockPipeline { class Inputs; }
-namespace ClientBlockPipeline { class Step; }
 // clang-format on
 
 namespace ClientBlockPipeline {
@@ -30,18 +29,6 @@ public:
         ::ll::TypedStorage<8, 8, uint64>                             mDependentsCount;
         ::ll::TypedStorage<8, 40, ::ClientBlockPipeline::StepResult> mResult;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI StepCache();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
     };
 
     using CallbackFunctionType = ::std::function<void(::ClientBlockPipeline::Inputs const&)>;
@@ -60,16 +47,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _buildCache();
-
-    MCAPI void _collectInputsFromDependencies(uint64 stepId, ::ClientBlockPipeline::Inputs& inputs);
-
-    MCAPI void _onStepCompleted(::ClientBlockPipeline::Step const& step);
-
-    MCAPI void _populateInitialSteps();
-
-    MCAPI bool _runStep(::ClientBlockPipeline::Inputs const& globalInputs, ::ClientBlockPipeline::Step const* step);
-
-    MCAPI void _sendOutputs();
 
     MCAPI ::ClientBlockPipeline::Instance&
     addOnCompletion(::std::function<void(::ClientBlockPipeline::Inputs const&)> callback);

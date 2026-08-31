@@ -56,38 +56,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Test();
-
-    MCAPI explicit Test(::br::worldgen::processors::BlockRules::BlockMatch match);
-
-    MCAPI explicit Test(::br::worldgen::processors::BlockRules::BlockStateMatch match);
-
-    MCAPI explicit Test(::br::worldgen::processors::BlockRules::RandomBlockMatch match);
-
-    MCAPI explicit Test(::br::worldgen::processors::BlockRules::RandomBlockStateMatch match);
-
-    MCAPI explicit Test(::br::worldgen::processors::BlockRules::TagMatch match);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::BlockMatch match);
-
-    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::BlockStateMatch match);
-
-    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::RandomBlockMatch match);
-
-    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::RandomBlockStateMatch match);
-
-    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::TagMatch match);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $test(::Block const& block, ::IRandom& random) const;

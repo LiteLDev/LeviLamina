@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class RenderParams;
-namespace SharedTypes::Legacy { struct DefinitionTrigger; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -31,10 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DefinitionTrigger(::SharedTypes::Legacy::DefinitionTrigger trigger);
-
-    MCAPI bool canTrigger(::RenderParams& params) const;
-
     MCAPI ::DefinitionTrigger& operator=(::DefinitionTrigger&&);
 
     MCAPI ~DefinitionTrigger();
@@ -47,19 +41,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::DefinitionTrigger trigger);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
 };
-
-// free functions
-// NOLINTBEGIN
-MCAPI bool operator==(::DefinitionTrigger const& a, ::DefinitionTrigger const& b);
-// NOLINTEND

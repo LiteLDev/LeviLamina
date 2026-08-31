@@ -95,7 +95,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -111,7 +111,7 @@ public:
 
     MCFOLD ::std::optional<::Vec2> $getRotation() const;
 
-    MCFOLD ::Level* $getLevel() const;
+    MCAPI ::Level* $getLevel() const;
 
     MCFOLD ::Dimension* $getDimension() const;
 

@@ -4,22 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
 #include "mc/scripting/Plane.h"
 
 // auto generated forward declare list
 // clang-format off
 class Vec2;
-namespace Editor { class ServiceProviderCollection; }
-namespace Editor::ScriptModule { class ScriptWidget; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
-namespace Editor::ScriptModule { class ScriptWidgetComponentGridOptions; }
-namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { struct ClassBinding; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -44,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentGrid() /*override*/ = default;
+    virtual ~ScriptWidgetComponentGrid() /*override*/;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
     // NOLINTEND
@@ -52,15 +46,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentGrid(
-        ::Editor::ServiceProviderCollection&                                      serviceProviders,
-        ::mce::UUID const&                                                        componentId,
-        ::std::string const&                                                      componentName,
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>  owner,
-        ::Editor::ScriptModule::ScriptWidgetService&                              parentService,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentGridOptions> options
-    );
-
     MCNAPI ::Scripting::
         Result<::ScriptModuleMinecraft::ScriptRGBA, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
         _getGridColor() const;
@@ -75,16 +60,10 @@ public:
     _getPlane() const;
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setGridColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _setGridCount(::Vec2 const& gridCount);
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _setGridSize(::Vec2 const& gridSize);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setPlane(::Scripting::Plane plane);
     // NOLINTEND
 
 public:
@@ -94,16 +73,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Editor::ServiceProviderCollection&                                      serviceProviders,
-        ::mce::UUID const&                                                        componentId,
-        ::std::string const&                                                      componentName,
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>  owner,
-        ::Editor::ScriptModule::ScriptWidgetService&                              parentService,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentGridOptions> options
-    );
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -112,12 +84,6 @@ public:
     MCNAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

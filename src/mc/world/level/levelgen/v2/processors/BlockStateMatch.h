@@ -30,12 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::br::worldgen::processors::BlockRules::BlockStateMatch from(::Block const& block);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $test(::Block const& block, ::IRandom&) const;

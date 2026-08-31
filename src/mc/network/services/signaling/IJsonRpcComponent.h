@@ -15,10 +15,4 @@ public:
 
     virtual void initialize(::std::shared_ptr<::JsonRpc::JsonRpcProvider> provider) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

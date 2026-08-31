@@ -4,8 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/binding_type/scripting/ClassBindingBuilder.h"
 #include "mc/entity/enums/ClientInputLockCategory.h"
 
 // auto generated forward declare list
@@ -26,16 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<bool> _getPermissionCategoryV1(::ClientInputLockCategory category) const;
-
-    MCAPI ::Scripting::Result_deprecated<bool> _getPermissionCategoryV2(::ClientInputLockCategory category) const;
-
-    MCAPI ::Scripting::Result_deprecated<void>
-    _setPermissionCategoryV1(::ClientInputLockCategory category, bool isEnabled);
-
-    MCAPI ::Scripting::Result_deprecated<void>
-    _setPermissionCategoryV2(::ClientInputLockCategory category, bool isEnabled);
-
     MCAPI ::ClientInputLockComponent* _tryGetClientInputLockComponent() const;
     // NOLINTEND
 

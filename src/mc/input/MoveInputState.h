@@ -49,16 +49,4 @@ public:
     ::ll::TypedStorage<1, 1, uchar>                     mLookNormalDirField;
     ::ll::TypedStorage<1, 1, uchar>                     mLookSmoothDirField;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool checkFlag(::MoveInputState::Flag flag) const;
-
-    MCNAPI void setFlag(::MoveInputState::Flag flag, bool value);
-
-#ifdef LL_PLAT_C
-    MCNAPI bool wantsSneak() const;
-#endif
-    // NOLINTEND
 };

@@ -12,16 +12,4 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>  mData;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mActorId;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~DebugInfoPacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

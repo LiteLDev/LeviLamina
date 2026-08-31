@@ -3,15 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::ScriptModule { class ScriptClipboardItem; }
-namespace Editor::Services { class ClipboardServiceProvider; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -32,35 +27,9 @@ public:
     ScriptClipboardService();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptClipboardService(
-        ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider> serviceRef,
-        ::Scripting::WeakLifetimeScope const&                         scope
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>>
-    create();
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>>
-    getPrimaryItem();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider> serviceRef,
-        ::Scripting::WeakLifetimeScope const&                         scope
-    );
     // NOLINTEND
 };
 

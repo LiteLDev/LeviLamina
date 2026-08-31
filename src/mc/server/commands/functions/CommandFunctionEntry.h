@@ -23,23 +23,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandFunctionEntry() /*override*/ = default;
+    virtual ~CommandFunctionEntry() /*override*/;
 
     virtual void
-    execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder) /*override*/;
+    execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder);
+    MCAPI void $execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

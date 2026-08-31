@@ -8,8 +8,6 @@
 namespace Bedrock::PlatformUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::string createUUID();
-
 MCNAPI ::Core::PathBuffer<::std::string> const& getExternalStoragePath();
 
 MCNAPI ::std::string const& getPackageFamilyName();
@@ -19,10 +17,6 @@ MCNAPI ::Core::PathBuffer<::std::string> getUWPInstallationPath();
 #endif
 
 MCNAPI void initializeDeviceIdForDev(::std::string& deviceId, bool isAnonymous);
-
-#ifdef LL_PLAT_S
-MCNAPI bool isCentennial();
-#endif
 
 #ifdef LL_PLAT_C
 MCNAPI void setAppDataFolderName(::std::string_view folderName);

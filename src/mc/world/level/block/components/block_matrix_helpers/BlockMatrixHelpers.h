@@ -14,7 +14,7 @@ class Vec3;
 namespace BlockMatrixHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI ::Matrix const bakeRotationMatrix(int x, int y, int z);
+MCAPI ::Matrix const bakeRotationMatrix(int const x, int const y, int const z);
 
 MCAPI ::Matrix calculateTransformMatrix(
     ::Vec3 const&                                       translation,

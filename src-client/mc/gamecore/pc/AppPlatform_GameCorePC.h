@@ -19,7 +19,6 @@
 class FilePickerSettings;
 class ImagePickingCallback;
 class RectangleArea;
-namespace Bedrock { class Platform_GameCore; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -44,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AppPlatform_GameCorePC() /*override*/;
+    virtual ~AppPlatform_GameCorePC() /*override*/ = default;
 
     virtual void showKeyboard(
         ::std::string const& currentText,
@@ -61,9 +60,9 @@ public:
     virtual void hideKeyboard() /*override*/;
 
     virtual void updateTextEditBoxPosition(
+        ::RectangleArea const& controlPosition,
         ::RectangleArea const& selectionPosition,
-        ::RectangleArea const& guiScale,
-        float const
+        float const            guiScale
     ) /*override*/;
 
     virtual float getKeyboardHeight() const /*override*/;
@@ -181,40 +180,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AppPlatform_GameCorePC(
-        ::HWND__*                                      hWnd,
-        ::std::string const&                           dataFolder,
-        ::std::string_view                             appName,
-        int                                            screenWidth,
-        int                                            screenHeight,
-        ::gsl::not_null<::Bedrock::Platform_GameCore*> platformGameCore
-    );
-
-    MCAPI void _initializeDataTransferManager();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::HWND__*                                      hWnd,
-        ::std::string const&                           dataFolder,
-        ::std::string_view                             appName,
-        int                                            screenWidth,
-        int                                            screenHeight,
-        ::gsl::not_null<::Bedrock::Platform_GameCore*> platformGameCore
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $showKeyboard(
@@ -231,8 +196,11 @@ public:
 
     MCAPI void $hideKeyboard();
 
-    MCAPI void
-    $updateTextEditBoxPosition(::RectangleArea const& selectionPosition, ::RectangleArea const& guiScale, float const);
+    MCAPI void $updateTextEditBoxPosition(
+        ::RectangleArea const& controlPosition,
+        ::RectangleArea const& selectionPosition,
+        float const            guiScale
+    );
 
     MCAPI float $getKeyboardHeight() const;
 
@@ -324,11 +292,11 @@ public:
 
     MCAPI bool $getSimulateTouchWithMouse() const;
 
-    MCFOLD float $getDefaultSafeZoneScaleX() const;
+    MCAPI float $getDefaultSafeZoneScaleX() const;
 
-    MCFOLD float $getDefaultSafeZoneScaleY() const;
+    MCAPI float $getDefaultSafeZoneScaleY() const;
 
-    MCFOLD float $getDefaultSafeZoneScaleAll() const;
+    MCAPI float $getDefaultSafeZoneScaleAll() const;
 
     MCFOLD float $getDefaultScreenPositionX() const;
 
@@ -345,13 +313,5 @@ public:
     MCAPI bool $isInvertScrollEnabled() const;
 
     MCFOLD ::UIScalingRules $getPlatformUIScalingRules() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForISecureStorageKeySystem();
-
-    MCNAPI static void** $vftableForIAppPlatform();
     // NOLINTEND
 };

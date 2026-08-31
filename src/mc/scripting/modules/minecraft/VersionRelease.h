@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/Version.h"
+#include "mc/deps/script_core/scripting/Version.h"
 
 namespace ScriptModuleMinecraft::Releases {
 
@@ -13,18 +13,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::Scripting::Version> version;
     ::ll::TypedStorage<8, 40, ::Scripting::Version> commonDependencyVersion;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~VersionRelease();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

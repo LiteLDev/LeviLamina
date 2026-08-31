@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -27,8 +26,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool operator==(::BiomeSurfaceMaterialData const&) const;
-
-    MCAPI void write(::BinaryStream& stream) const;
     // NOLINTEND
 
 public:

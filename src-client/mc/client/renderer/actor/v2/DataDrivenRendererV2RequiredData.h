@@ -2,11 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/renderer/actor/v2/DataDrivenV2ResetPoint.h"
+#include "mc/deps/core/string/HashedString.h"
+
 // auto generated forward declare list
 // clang-format off
+class ActorRenderer;
 class DataDrivenRenderer;
 class GameVersion;
-class HashedString;
 class MinecraftGameplayGraphicsResources;
 struct DataDrivenRendererContinuousData;
 struct DataDrivenRendererPreprocessingContext;
@@ -25,89 +29,59 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 48> mUnk1f3522;
-        ::ll::UntypedStorage<8, 16> mUnk2bf92a;
-        ::ll::UntypedStorage<8, 8>  mUnk85d17b;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LateRenderer& operator=(LateRenderer const&);
-        LateRenderer(LateRenderer const&);
-        LateRenderer();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~LateRenderer();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
+        ::ll::TypedStorage<8, 48, ::HashedString>                        name;
+        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DataDrivenRenderer>> renderer;
+        ::ll::TypedStorage<8, 8, ::ActorRenderer const*>                 rendererKey;
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk27d3c0;
-    ::ll::UntypedStorage<8, 8>   mUnk6818f6;
-    ::ll::UntypedStorage<1, 1>   mUnk6ed104;
-    ::ll::UntypedStorage<1, 1>   mUnk37f415;
-    ::ll::UntypedStorage<4, 4>   mUnk918898;
-    ::ll::UntypedStorage<4, 4>   mUnk81b805;
-    ::ll::UntypedStorage<8, 208> mUnke8c231;
-    ::ll::UntypedStorage<8, 24>  mUnk99ab58;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ProcessedDataDrivenRenderers>>     mProcessedData;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DataDrivenRendererContinuousData>> mContinuousData;
+    ::ll::TypedStorage<1, 1, bool>                                                  mEnabled;
+    ::ll::TypedStorage<1, 1, bool>                       mActorsWithAttachablesEnabledAndPlayers;
+    ::ll::TypedStorage<4, 4, uint>                       mDisabledRenderersBeforeRebuild;
+    ::ll::TypedStorage<4, 4, uint>                       mCurrentDisabledRendererCount;
+    ::ll::TypedStorage<8, 208, ::DataDrivenV2ResetPoint> mResetPoint;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DataDrivenRendererV2RequiredData::LateRenderer>> mLateRenderers;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DataDrivenRendererV2RequiredData& operator=(DataDrivenRendererV2RequiredData const&);
-    DataDrivenRendererV2RequiredData(DataDrivenRendererV2RequiredData const&);
     DataDrivenRendererV2RequiredData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DataDrivenRendererV2RequiredData(
+    MCAPI DataDrivenRendererV2RequiredData(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
         ::MinecraftGameplayGraphicsResources&                                                graphicsResources,
         ::GameVersion const&                                                                 gameVersion
     );
 
-    MCNAPI bool forceReinitialize(
+    MCAPI bool forceReinitialize(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
         ::MinecraftGameplayGraphicsResources&                                                graphicsResources,
         ::GameVersion const&                                                                 gameVersion
     );
 
-    MCNAPI ::DataDrivenRendererContinuousData* getDataDrivenRendererContinuousData() const;
+    MCAPI void rebuildLateRenderers(::MinecraftGameplayGraphicsResources& graphicsResources);
 
-    MCNAPI ::ProcessedDataDrivenRenderers const* getProcessedDataDrivenRenderers() const;
+    MCAPI bool removeRenderer(::std::shared_ptr<::DataDrivenRenderer> const& renderer);
 
-    MCNAPI void rebuildLateRenderers(::MinecraftGameplayGraphicsResources& graphicsResources);
-
-    MCNAPI bool removeRenderer(::std::shared_ptr<::DataDrivenRenderer> const& renderer);
-
-    MCNAPI bool renderActorsWithAttachablesEquipped() const;
-
-    MCNAPI bool shouldRebuild() const;
-
-    MCNAPI bool tryLateAddRenderer(
+    MCAPI bool tryLateAddRenderer(
         ::HashedString const&                          name,
         ::std::shared_ptr<::DataDrivenRenderer> const& renderer,
         ::MinecraftGameplayGraphicsResources&          graphicsResources
     );
-
-    MCNAPI ~DataDrivenRendererV2RequiredData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _tryAddRenderer(
+    MCAPI static bool _tryAddRenderer(
         ::HashedString const&                          name,
         ::std::shared_ptr<::DataDrivenRenderer> const& renderer,
         ::DataDrivenRendererPreprocessingContext&      ctx,
@@ -118,16 +92,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
         ::MinecraftGameplayGraphicsResources&                                                graphicsResources,
         ::GameVersion const&                                                                 gameVersion
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -33,6 +33,7 @@ public:
         IntPropertyValueCondition      = 17,
         FloatPropertyValueCondition    = 18,
         EnumPropertyValueCondition     = 19,
+        CurrentBiomeHasTag             = 20,
     };
 
 public:
@@ -49,11 +50,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value const& object, bool);
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

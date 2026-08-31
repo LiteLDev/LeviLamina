@@ -4,7 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/util/MolangScriptArg.h"
+
+struct MolangScriptArg;
 
 struct MolangMemberVariable {
 public:
@@ -21,12 +22,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ~MolangMemberVariable();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -14,6 +14,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                          mName;
     ::ll::TypedStorage<4, 4, int>                                                     mParsedNodeIndex;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::TextureUVCoordinateSet>>> mTextureUVs;
+    ::ll::TypedStorage<1, 1, bool>                                                    mIsAdditive;
     // NOLINTEND
 
 public:
@@ -26,9 +27,7 @@ public:
     // NOLINTBEGIN
     MCAPI TextureAtlasItem(::TextureAtlasItem const&);
 
-    MCAPI TextureAtlasItem(::std::string const& name, uint64 count);
-
-    MCAPI ::TextureAtlasItem& operator=(::TextureAtlasItem&&);
+    MCAPI TextureAtlasItem(::std::string const& name, uint64 count, bool isAdditive);
 
     MCAPI ~TextureAtlasItem();
     // NOLINTEND
@@ -38,7 +37,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::TextureAtlasItem const&);
 
-    MCAPI void* $ctor(::std::string const& name, uint64 count);
+    MCAPI void* $ctor(::std::string const& name, uint64 count, bool isAdditive);
     // NOLINTEND
 
 public:

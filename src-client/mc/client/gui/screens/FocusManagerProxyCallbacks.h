@@ -14,16 +14,4 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<bool(::std::string const&)>>       mSetFocusControl;
     ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::UIControl>()>> mGetFocusedControl;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~FocusManagerProxyCallbacks();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

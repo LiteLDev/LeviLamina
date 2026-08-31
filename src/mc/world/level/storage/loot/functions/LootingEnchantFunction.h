@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LootingEnchantFunction() /*override*/ = default;
+    virtual ~LootingEnchantFunction() /*override*/;
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
@@ -37,8 +37,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI int _getLootingEnchantLevel(::LootTableContext& context) const;
+    // NOLINTEND
 
-    MCFOLD ::RandomValueBounds getDamage() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -51,11 +55,5 @@ public:
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -39,6 +39,8 @@ public:
     // NOLINTBEGIN
     MCAPI FilterGroupData();
 
+    MCAPI bool operator==(::SharedTypes::v1_21_20::FilterGroupData const&) const;
+
     MCAPI ~FilterGroupData();
     // NOLINTEND
 

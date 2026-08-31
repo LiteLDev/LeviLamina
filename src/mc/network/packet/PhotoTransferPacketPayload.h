@@ -25,22 +25,19 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>  mNewPhotoName;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     PhotoTransferPacketPayload();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PhotoTransferPacketPayload(::PhotoTransferPacketPayload const&);
-
 #ifdef LL_PLAT_C
     MCAPI explicit PhotoTransferPacketPayload(::std::string const& photoName);
 #endif
-
-    MCAPI ::PhotoTransferPacketPayload& operator=(::PhotoTransferPacketPayload&&);
-
-    MCAPI ::PhotoTransferPacketPayload& operator=(::PhotoTransferPacketPayload const&);
 
     MCAPI ~PhotoTransferPacketPayload();
     // NOLINTEND
@@ -56,8 +53,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PhotoTransferPacketPayload const&);
-
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::std::string const& photoName);
 #endif
@@ -66,6 +61,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

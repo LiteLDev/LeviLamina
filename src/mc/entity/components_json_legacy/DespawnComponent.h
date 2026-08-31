@@ -42,12 +42,6 @@ public:
 
         virtual void resetActorNoActionTime(::Actor& actor) = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     class WorldAccessor : public ::DespawnComponent::IWorldAccessor {

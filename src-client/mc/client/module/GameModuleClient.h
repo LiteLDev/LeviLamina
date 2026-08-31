@@ -11,6 +11,7 @@
 class ActorMigratedDefinitionFactory;
 class BaseGameVersion;
 class ClientInputMappingFactory;
+class ClientLevel;
 class CommandRegistry;
 class Experiments;
 class GameModuleDocumentation;
@@ -18,7 +19,6 @@ class IClientInstance;
 class IResourcePackRepository;
 class ItemRegistryRef;
 class Level;
-class MultiPlayerLevel;
 class ResourcePackStack;
 class ServerboundDiagnosticsPacket;
 // clang-format on
@@ -40,10 +40,10 @@ public:
     virtual void init(::IClientInstance& client, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level) = 0;
 
     virtual void configureLevel(
-        ::IClientInstance&                                       client,
-        ::Bedrock::NotNullNonOwnerPtr<::MultiPlayerLevel> const& level,
-        ::Experiments const&                                     experiments,
-        ::BaseGameVersion const&                                 baseGameVersion
+        ::IClientInstance&                                  client,
+        ::Bedrock::NotNullNonOwnerPtr<::ClientLevel> const& level,
+        ::Experiments const&                                experiments,
+        ::BaseGameVersion const&                            baseGameVersion
     ) = 0;
 
     virtual void deconfigureLevel(::IClientInstance& client) = 0;
@@ -63,7 +63,7 @@ public:
 
     virtual void setupStandardCommands(::CommandRegistry& commandRegistry) = 0;
 
-    virtual void setupStartMenuScreenCommands(::CommandRegistry&) = 0;
+    virtual void setupStartMenuScreenCommands(::CommandRegistry& commandRegistry) = 0;
 
     virtual void setupUI() = 0;
 
@@ -79,29 +79,5 @@ public:
     ) const = 0;
 
     virtual ::ServerboundDiagnosticsPacket createServerboundDiagnosticsPacket() = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GameModuleClient();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

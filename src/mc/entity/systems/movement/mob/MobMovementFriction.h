@@ -21,11 +21,11 @@ MCAPI void applyFrictionAndDrag(
     ::ActorDataFlagComponent const&            actorDataFlagComponent,
     ::MovementAttributesComponent const&       movementAttributesComponent,
     ::FrictionModifierOverrideComponent const* frictionModifierOverrideComponent,
-    float                                      friction,
-    float                                      drag,
-    ::MobMovementFriction::ModifierType        modifierToUseForFriction,
-    bool                                       isVex,
-    bool                                       doesVerticalFriction,
+    float const                                friction,
+    float const                                drag,
+    ::MobMovementFriction::ModifierType const  modifierToUseForFriction,
+    bool const                                 isVex,
+    bool const                                 doesVerticalFriction,
     ::StateVectorComponent&                    stateVectorComponent
 );
 

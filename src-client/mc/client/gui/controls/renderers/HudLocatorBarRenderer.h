@@ -13,11 +13,9 @@
 class IClientInstance;
 class MinecraftUIRenderContext;
 class NinePatchLayer;
-class ScreenContext;
 class UIControl;
 class UICustomRenderer;
 class UIScene;
-namespace mce { class TextureGroup; }
 // clang-format on
 
 class HudLocatorBarRenderer : public ::MinecraftUICustomRenderer {
@@ -39,7 +37,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NinePatchLayer>>     mBackgroundTexture;
     ::ll::TypedStorage<1, 1, bool>                                    mHasLoadedIconTextures;
     ::ll::TypedStorage<8, 192, ::std::array<::mce::TexturePtr, 6>>    mTextures;
-    ::ll::TypedStorage<8, 3312, ::std::array<::mce::Mesh, 6>>         mMeshes;
+    ::ll::TypedStorage<8, 3552, ::std::array<::mce::Mesh, 6>>         mMeshes;
     ::ll::TypedStorage<4, 8, ::Vec2>                                  mBackgroundSize;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastRenderCall;
     // NOLINTEND
@@ -61,12 +59,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI HudLocatorBarRenderer();
-
-    MCAPI bool _areIconTexturesValid() const;
-
-    MCAPI void _loadIconTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-
-    MCAPI bool _validateIconMeshes(::ScreenContext& screenContext, float barHeight);
     // NOLINTEND
 
 public:
@@ -78,7 +70,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

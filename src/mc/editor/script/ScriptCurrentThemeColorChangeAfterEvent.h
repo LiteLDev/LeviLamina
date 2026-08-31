@@ -29,8 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI
     ScriptCurrentThemeColorChangeAfterEvent(::std::string colorKey, ::ScriptModuleMinecraft::ScriptRGBA const& color);
-
-    MCNAPI ~ScriptCurrentThemeColorChangeAfterEvent();
     // NOLINTEND
 
 public:
@@ -43,12 +41,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string colorKey, ::ScriptModuleMinecraft::ScriptRGBA const& color);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

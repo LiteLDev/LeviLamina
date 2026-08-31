@@ -12,9 +12,7 @@ class CompoundTag;
 class HashedString;
 class PropertyContainer;
 class PropertyGroup;
-class RenderParams;
 class Tag;
-struct MolangScriptArg;
 struct PropertySyncData;
 // clang-format on
 
@@ -42,11 +40,6 @@ public:
     // NOLINTBEGIN
     MCAPI PropertyComponent(::PropertyComponent&&);
 
-    MCAPI PropertyComponent(
-        ::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup,
-        ::RenderParams&                                           renderParams
-    );
-
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void
@@ -54,17 +47,7 @@ public:
 
     MCAPI bool getBool(uint64 h) const;
 
-    MCAPI float getFloat(uint64 h) const;
-
-    MCAPI int getInt(uint64 h) const;
-
-    MCAPI bool getMolangValue(uint64 propertyNameHash, ::MolangScriptArg& out) const;
-
     MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64 h) const;
-
-    MCAPI ::HashedString const& getString(uint64 h) const;
-
-    MCAPI bool hasDirtyProperties() const;
 
     MCAPI ::PropertySyncData packAllSyncData() const;
 
@@ -80,22 +63,12 @@ public:
 
     MCAPI ::std::optional<bool> tryGetBool(uint64 h) const;
 
-    MCAPI ::std::optional<float> tryGetFloat(uint64 h) const;
-
-    MCAPI ::std::optional<int> tryGetInt(uint64 h) const;
-
     MCAPI ::HashedString const* tryGetString(uint64 h) const;
-
-    MCAPI ::std::optional<::std::variant<int, float, bool, ::std::string>>
-    tryGetValueVariant(uint64 propertyNameHash) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::PropertyComponent&&);
-
-    MCAPI void*
-    $ctor(::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup, ::RenderParams& renderParams);
     // NOLINTEND
 };

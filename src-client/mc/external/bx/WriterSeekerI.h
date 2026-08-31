@@ -8,6 +8,12 @@
 
 namespace bx {
 
-struct WriterSeekerI : public ::bx::WriterI, public ::bx::SeekerI {};
+struct WriterSeekerI : public ::bx::WriterI, public ::bx::SeekerI {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~WriterSeekerI() /*override*/ = default;
+    // NOLINTEND
+};
 
 } // namespace bx

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/AbstractTextureAccessor.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core_graphics/TextureSetLayerType.h"
 
 // auto generated forward declare list
@@ -12,7 +11,6 @@
 class ResourceLocation;
 struct BedrockTextureData;
 namespace cg { class ImageBuffer; }
-namespace mce { class TextureGroup; }
 namespace mce { struct TextureDescription; }
 // clang-format on
 
@@ -55,18 +53,6 @@ public:
     ) const /*override*/;
 
     virtual ::cg::ImageBuffer const& getMissingImageBuffer() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit TextureAccessor(::Bedrock::NotNullNonOwnerPtr<::mce::TextureGroup> textureGroup);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
 public:

@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     virtual int Size() = 0;
 
-    virtual ~FieldTrialListBase() /*override*/;
+    virtual ~FieldTrialListBase() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -45,12 +45,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

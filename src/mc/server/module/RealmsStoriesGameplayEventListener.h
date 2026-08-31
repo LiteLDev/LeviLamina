@@ -1,15 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/storage/RealmsStoriesData.h"
+#include "mc/world/events/IRealmEventLogger.h"
 
 // auto generated inclusion list
 #include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
-#include "mc/world/events/IRealmEventLogger.h"
 #include "mc/world/events/PlayerEventListener.h"
 #include "mc/world/level/storage/RealmEventId.h"
-#include "mc/world/level/storage/RealmsStoriesData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +18,6 @@ class IRealmEventLogger;
 class ItemEnchants;
 class ItemInstance;
 class ItemStack;
-class LevelStorage;
 class Player;
 class RealmsStoriesData;
 class Vec3;
@@ -40,10 +39,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RealmsStoriesGameplayEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::EventResult onEvent(::ActorAcquiredItemEvent const& actorAcquiredItemEvent) /*override*/;
@@ -59,7 +54,7 @@ public:
     virtual ::EventResult
     onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension) /*override*/;
 
-    virtual ::EventResult onPlayerPoweredBeacon(::Player const& player, int level) /*override*/;
+    virtual ::EventResult onPlayerPoweredBeacon(::Player const& player, int) /*override*/;
 
     virtual ::EventResult onPlayerCraftedItem(
         ::Player&                   player,
@@ -82,21 +77,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RealmsStoriesGameplayEventListener(
-        ::LevelStorage&                        levelStorage,
-        ::std::unique_ptr<::IRealmEventLogger> realmEventLogger
-    );
-
-    MCNAPI void _checkForBiomeRealmEvents(::Player const& player);
-
-    MCNAPI void _checkForStructureRealmEvents(::Player const& player);
-
-    MCNAPI void _handleDragonKilledEvent(::Actor const& killedActor);
-
-    MCNAPI void _handlePillagerKilledEvent(::Actor const& killedActor, ::ActorKilledEvent const& actorKilledEvent);
-
-    MCNAPI void _handleWitherKilledEvent(::Actor const& killedActor);
-
     MCNAPI void
     _publishEventForRealmsService(::RealmEventId id, ::std::string const& xuid, ::Json::Value const& metadata) const;
 
@@ -111,12 +91,6 @@ public:
     MCNAPI static ::std::set<::std::string> _getXuidsInKillProximity(::Actor const& killedActor, float xz, float y);
 
     MCNAPI static ::std::string _playerXuidsToString(::std::set<::std::string> const& xuids);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::LevelStorage& levelStorage, ::std::unique_ptr<::IRealmEventLogger> realmEventLogger);
     // NOLINTEND
 
 public:
@@ -135,7 +109,7 @@ public:
     MCNAPI ::EventResult
     $onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
-    MCNAPI ::EventResult $onPlayerPoweredBeacon(::Player const& player, int level);
+    MCNAPI ::EventResult $onPlayerPoweredBeacon(::Player const& player, int);
 
     MCNAPI ::EventResult $onPlayerCraftedItem(
         ::Player&                   player,
@@ -155,13 +129,5 @@ public:
     $onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEventListenerDispatcherActorEventListener();
-
-    MCNAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
     // NOLINTEND
 };

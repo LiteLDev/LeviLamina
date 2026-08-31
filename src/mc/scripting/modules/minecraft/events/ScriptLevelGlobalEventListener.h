@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/LevelEventListener.h"
@@ -17,8 +17,6 @@ class Player;
 struct LevelGameRuleChangeEvent;
 struct ScriptingWorldInitializeEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
-namespace ScriptModuleMinecraft { class ScriptV010Events; }
-namespace ScriptModuleMinecraft { class ScriptWorldAfterEvents; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -74,23 +72,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void registerListener(
-        ::Scripting::WeakLifetimeScope const&                                     scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptV010Events> handle
-    );
-
-    MCFOLD void registerListener(
-        ::Scripting::WeakLifetimeScope const&                                           scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldAfterEvents> handle
-    );
-
-    MCFOLD void
-    unregisterListener(::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& eventData);
@@ -114,12 +95,6 @@ public:
     MCAPI ::EventResult $onLevelRemovedActor(::Actor& actor);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

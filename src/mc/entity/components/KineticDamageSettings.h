@@ -27,12 +27,11 @@ public:
     // prevent constructor by default
     KineticDamageSettings& operator=(KineticDamageSettings const&);
     KineticDamageSettings(KineticDamageSettings const&);
+    KineticDamageSettings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI KineticDamageSettings();
-
     MCAPI explicit KineticDamageSettings(::SharedTypes::v1_21_90::KineticWeaponItemComponent const& data);
     // NOLINTEND
 
@@ -45,8 +44,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SharedTypes::v1_21_90::KineticWeaponItemComponent const& data);
     // NOLINTEND
 };

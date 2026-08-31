@@ -3,23 +3,35 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_factory/GenericModuleBindingFactory.h"
+#include "mc/deps/script_core/binding_factory/scripting/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
+class IGameplayUserManagerConnector;
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDependency; }
-namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct Version; }
 namespace mce { class UUID; }
 // clang-format on
 
 class ScriptMinecraftServerUIBindingsModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk14071d;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptMinecraftServerUIBindingsModuleFactory& operator=(ScriptMinecraftServerUIBindingsModuleFactory const&);
+    ScriptMinecraftServerUIBindingsModuleFactory(ScriptMinecraftServerUIBindingsModuleFactory const&);
+    ScriptMinecraftServerUIBindingsModuleFactory();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptMinecraftServerUIBindingsModuleFactory();
+    MCNAPI explicit ScriptMinecraftServerUIBindingsModuleFactory(::IGameplayUserManagerConnector* userManagerConnector);
 
     MCNAPI void _addVersions();
 
@@ -34,10 +46,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::Scripting::Version version);
-
-    MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::std::vector<::Scripting::Version> versions);
-
-    MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
     // NOLINTEND
 
 public:
@@ -51,7 +59,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void* $ctor(::IGameplayUserManagerConnector* userManagerConnector);
     // NOLINTEND
 
 public:

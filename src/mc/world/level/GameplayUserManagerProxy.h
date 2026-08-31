@@ -12,7 +12,7 @@ class GameplayUserManagerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameplayUserManagerProxy() = default;
+    virtual ~GameplayUserManagerProxy();
 
     virtual ::std::optional<::std::string>
     validatePlayerName(::std::string const& playerName, ::GameplayUserManager const& gameplayUserManager) const;
@@ -20,6 +20,12 @@ public:
     virtual bool shouldGeneratePlayerIndex() const;
 
     virtual void reloadActor(::Actor& actor) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -33,11 +39,5 @@ public:
     MCNAPI void $reloadActor(::Actor& actor) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -46,13 +46,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RendererDebugLayerOutputManager() /*override*/ = default;
+    virtual ~RendererDebugLayerOutputManager() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void debugMessageCallback(char const* msg);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

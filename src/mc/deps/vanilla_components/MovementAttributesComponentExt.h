@@ -11,7 +11,6 @@ class HashedString;
 struct AttributeData;
 struct MovementAttributeEntry;
 struct MovementAttributesComponent;
-struct SlimMovementAttributeEntry;
 // clang-format on
 
 namespace MovementAttributesComponentExt {
@@ -27,8 +26,6 @@ MCAPI ::brstd::flat_map<
     ::std::less<::HashedString>,
     ::std::vector<::HashedString>,
     ::std::vector<::MovementAttributeEntry>> const& getAttributeMap();
-
-MCAPI ::gsl::span<::SlimMovementAttributeEntry const> getSlimAttributesFromMap();
 // NOLINTEND
 
 } // namespace MovementAttributesComponentExt

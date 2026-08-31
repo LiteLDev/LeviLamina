@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandBlockManager() /*override*/ = default;
+    virtual ~CommandBlockManager() /*override*/;
 
     virtual void init() /*override*/;
 
@@ -77,6 +77,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $init();
@@ -91,9 +97,9 @@ public:
 
     MCAPI ::CommandBlockMode $getCommandBlockTypeMode() const;
 
-    MCFOLD bool $isConditionalMode() const;
+    MCAPI bool $isConditionalMode() const;
 
-    MCFOLD bool $isRedstoneMode() const;
+    MCAPI bool $isRedstoneMode() const;
 
     MCAPI bool $getLastPerformedConditionalMode();
 

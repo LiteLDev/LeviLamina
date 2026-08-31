@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/InstancedThreadLocalValue.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/ChunkPos.h"
@@ -26,6 +27,10 @@ class LevelChunk;
 class Random;
 class StructureFeature;
 class StructureFeatureRegistry;
+namespace br::worldgen { class ChunkAccessor; }
+namespace br::worldgen { class StructureInstance; }
+namespace br::worldgen { struct ChunkStructureAccess; }
+namespace br::worldgen { struct Structure; }
 // clang-format on
 
 class WorldGenerator : public ::ChunkSource, public ::IPreliminarySurfaceProvider {
@@ -54,6 +59,8 @@ public:
     ::ll::TypedStorage<8, 72, ::std::condition_variable>                    mStructureInstanceWaitVar;
     ::ll::TypedStorage<4, 4, ::std::atomic<int>>                            mActiveStructureInstanceCreateCount;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>>             mVisitedPositions;
+    ::ll::TypedStorage<4, 4, ::Bedrock::Threading::InstancedThreadLocalValue<::br::worldgen::ChunkAccessor*>>
+        mThreadLocalHeightmapProvider;
     // NOLINTEND
 
 public:
@@ -121,6 +128,9 @@ public:
         ::BlockSource& source,
         ::Random&      random
     ) const = 0;
+
+    virtual ::std::shared_ptr<::br::worldgen::StructureInstance>
+    _tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure) /*override*/;
     // NOLINTEND
 
 public:
@@ -131,15 +141,19 @@ public:
     MCAPI
     WorldGenerator(::Dimension& dimension, ::std::unique_ptr<::StructureFeatureRegistry> structureFeatureRegistry);
 
+    MCAPI bool _tryGenerateStructure(
+        ::br::worldgen::Structure const&      structure,
+        ::ChunkPos const&                     chunkPos,
+        ::br::worldgen::ChunkStructureAccess& structureAccess
+    );
+
     MCAPI void addHardcodedSpawnAreas(::LevelChunk& lc);
 
     MCAPI ::std::vector<short> computeChunkHeightMap(::ChunkPos const& pos);
 
-    MCFOLD ::StructureFeatureRegistry& getStructureFeatureRegistry() const;
-
     MCAPI void postProcessStructureFeatures(::BlockSource& region, ::Random& random, int chunkX, int chunkZ);
 
-    MCAPI void postProcessStructures(::BlockSource& region, ::Random& chunkX, int chunkZ, int);
+    MCAPI void postProcessStructures(::BlockSource& region, ::Random&, int chunkX, int chunkZ);
 
     MCAPI void preProcessStructures(::Dimension& dimension, ::ChunkPos const& cp, ::BiomeSource const& biomeSource);
 
@@ -150,15 +164,7 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider
     );
 
-    MCAPI void tick();
-
     MCAPI void waitForStructures();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static uint64 const& TICKING_QUEUE_PASS_LIMIT();
     // NOLINTEND
 
 public:
@@ -203,6 +209,9 @@ public:
     MCFOLD void $debugRender();
 
     MCFOLD void $propagateCombinedChunkSource(::ChunkSource* chunkSource);
+
+    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
+    $_tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure);
 
 
     // NOLINTEND

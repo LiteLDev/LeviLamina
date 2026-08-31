@@ -212,48 +212,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static auto createContextObjects(
-        ::StrictExecutionContext<
-            ::Filter<
-                ::InterpolateMovementNeededComponent,
-                ::BoatFlagComponent,
-                ::FreezeImmuneFlagComponent,
-                ::IsDeadFlagComponent,
-                ::PlayerComponent,
-                ::WasInWaterFlagComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::ActorMovementTickNeededComponent,
-                ::ActorGameTypeComponent,
-                ::DimensionTypeComponent,
-                ::MovementAbilitiesComponent>,
-            ::Write<
-                ::BlockMovementSlowdownMultiplierComponent,
-                ::FallDistanceComponent,
-                ::InsideBlockComponent,
-                ::StateVectorComponent>,
-            ::AddRemove<
-                ::BlockMovementSlowdownAppliedComponent,
-                ::FreezingComponent,
-                ::IgnoresEntityInsideFlagComponent,
-                ::InsideBubbleColumnBlockComponent,
-                ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
-                ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
-                ::InsideGenericBlockComponent,
-                ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
-                ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
-                ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
-                ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-                ::InsideWebBlockComponent>,
-            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(

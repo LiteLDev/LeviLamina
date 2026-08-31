@@ -28,21 +28,11 @@ public:
     // NOLINTBEGIN
     MCAPI
     UpdateVersionScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::UpdateVersionScreenContext context);
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::UpdateVersionScreenContext context);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

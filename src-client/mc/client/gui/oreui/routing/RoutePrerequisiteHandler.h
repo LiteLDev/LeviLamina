@@ -33,27 +33,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RoutePrerequisiteHandler() /*override*/ = default;
+    virtual ~RoutePrerequisiteHandler() /*override*/;
 
     virtual ::OreUI::RoutePrerequisiteState
     handleRoutePrerequisites(::OreUI::RoutePrerequisite prerequisite, ::std::string const& newRoute) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI RoutePrerequisiteHandler(
-        ::IMinecraftGame&                                       minecraftGame,
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client
-    );
-
-    MCAPI ::OreUI::RoutePrerequisiteState _handleXboxLivePrerequisites(::std::string const& newRoute) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftGame& minecraftGame, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

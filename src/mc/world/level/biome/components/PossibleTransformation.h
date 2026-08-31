@@ -21,27 +21,18 @@ public:
 
 public:
     // prevent constructor by default
+    PossibleTransformation& operator=(PossibleTransformation const&);
     PossibleTransformation();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI PossibleTransformation(::PossibleTransformation const&);
-
-    MCAPI ::PossibleTransformation& operator=(::PossibleTransformation const&);
-
-    MCAPI ~PossibleTransformation();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::PossibleTransformation const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

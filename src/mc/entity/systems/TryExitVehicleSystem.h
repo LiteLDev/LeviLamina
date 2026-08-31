@@ -14,13 +14,10 @@
 class StrictEntityContext;
 struct ActorDataControllingSeatIndexComponent;
 struct ActorDataFlagComponent;
-struct ActorMovementTickNeededComponent;
 struct BoatFlagComponent;
 struct ExitFromPassengerFlagComponent;
 struct InterpolateMovementNeededComponent;
-struct LocalPlayerComponent;
 struct MobFlagComponent;
-struct MobIsJumpingFlagComponent;
 struct MovementAttributesComponent;
 struct PassengerComponent;
 struct StopRidingRequestComponent;
@@ -31,23 +28,6 @@ struct VehicleComponent;
 namespace TryExitVehicleSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _tick(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent, ::MobIsJumpingFlagComponent>,
-        ::PassengerComponent const> view,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::InterpolateMovementNeededComponent>,
-        ::Exclude<::BoatFlagComponent>,
-        ::Optional<::MobFlagComponent const>,
-        ::MovementAttributesComponent const,
-        ::VehicleComponent const,
-        ::ActorDataFlagComponent const,
-        ::ActorDataControllingSeatIndexComponent const>                              vehiclesPlayerIsJumping,
-    ::EntityModifier<::StopRidingRequestComponent, ::ExitFromPassengerFlagComponent> modifier
-);
-
 MCAPI void _tickTryExitVehicle(
     ::StrictEntityContext const& entity,
     ::PassengerComponent const&  passengerComponent,

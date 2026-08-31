@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ILevel;
 class RenderParams;
 // clang-format on
 
@@ -32,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandResponseBase() = default;
+    virtual ~CommandResponseBase();
 
     virtual ::CommandOriginSystem _getCommandOriginSystem() const;
     // NOLINTEND
@@ -42,8 +41,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void _addCommand(::std::string const& entry);
 
-    MCNAPI void _compileCommands(::ILevel& level) const;
-
     MCNAPI void _executeAction(::RenderParams& params) const;
     // NOLINTEND
 
@@ -51,6 +48,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& NameID();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

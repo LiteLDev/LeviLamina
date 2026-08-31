@@ -11,11 +11,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class DimensionManager;
 class EntityContext;
 class IGameplayUserManagerConnector;
-class IMapDataManagerOptions;
-class LevelStorage;
 class MapItemSavedData;
 struct ActorUniqueID;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
@@ -34,13 +31,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerMapDataManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerMapDataManager() /*override*/ = default;
+    virtual ~ServerMapDataManager() /*override*/;
 
     virtual void
     registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector) /*override*/;
@@ -57,25 +50,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerMapDataManager(
-        ::DimensionManager&                         dimensionManager,
-        ::LevelStorage*                             levelStorage,
-        ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
-        ::std::function<::ActorUniqueID()>          getNewUniqueID
-    );
-
     MCAPI void _onGameplayUserAdded(::EntityContext& entity);
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::DimensionManager&                         dimensionManager,
-        ::LevelStorage*                             levelStorage,
-        ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
-        ::std::function<::ActorUniqueID()>          getNewUniqueID
-    );
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -92,13 +73,5 @@ public:
     MCAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIServerMapDataManagerConnector();
-
-    MCNAPI static void** $vftableForMapDataManager();
     // NOLINTEND
 };

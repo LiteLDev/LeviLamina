@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,6 +20,18 @@ public:
     virtual ~ServerDataTransferServiceProvider() = default;
 
     virtual void requestBiomeConfigs(
+        ::std::string const& biomeIdentifier,
+        ::std::function<void(
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&
+        )> const&            callback
+    ) = 0;
+
+    virtual void requestDefaultBiomeConfigs(
         ::std::string const& biomeIdentifier,
         ::std::function<void(
             ::std::string const&,
@@ -82,12 +94,6 @@ public:
     virtual ::Scripting::Result_deprecated<void> closeSession(::std::string const& collectionName) = 0;
 
     virtual bool isDeferredExperimentEnabled() const = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

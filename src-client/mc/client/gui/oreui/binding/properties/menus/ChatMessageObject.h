@@ -31,15 +31,11 @@ public:
 
 public:
     // prevent constructor by default
-    ChatMessageObject& operator=(ChatMessageObject const&);
-    ChatMessageObject(ChatMessageObject const&);
     ChatMessageObject();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChatMessageObject(::OreUI::ChatMessageObject&&);
-
     MCAPI ChatMessageObject(
         ::OreUI::Detail::IPropertyObject*                 parent,
         ::std::string                                     id,
@@ -54,8 +50,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ChatMessageObject&&);
-
     MCAPI void* $ctor(
         ::OreUI::Detail::IPropertyObject*                 parent,
         ::std::string                                     id,
@@ -65,12 +59,6 @@ public:
         ::Social::ChatMessageType                         type,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> profanityContext
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

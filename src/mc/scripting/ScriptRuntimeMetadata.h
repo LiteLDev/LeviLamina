@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/IRuntimeMetadata.h"
+#include "mc/deps/script_core/runtime/scripting/IRuntimeMetadata.h"
 
 struct ScriptRuntimeMetadata : public ::Scripting::IRuntimeMetadata {
 public:

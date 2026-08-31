@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ActorDamageSource>> mSource;
     ::ll::TypedStorage<4, 4, ::ActorType>                             mDamageChildType;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorDiedEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -216,9 +216,12 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     PatchVersionBinding,
     HookPriority::Normal,
     StartMenuScreenController,
-    &StartMenuScreenController::_registerBindings,
-    void
+    &StartMenuScreenController::$ctor,
+    void*,
+    ::std::shared_ptr<::MainMenuScreenModel>             model,
+    ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
 ) {
+    auto result = origin(model, entitlementManager);
     bindString(
         StringHash("#version"),
         []() -> auto {
@@ -235,7 +238,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         },
         []() -> auto { return true; }
     );
-    origin();
+    return result;
 }
 } // namespace ll
 

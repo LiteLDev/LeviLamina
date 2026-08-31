@@ -20,6 +20,7 @@
 // auto generated forward declare list
 // clang-format off
 class ContentItemCollection;
+class ContentLogFileEndPoint;
 class GameEditionProperties;
 class IAdvancedGraphicsOptions;
 class IOptionRegistry;
@@ -31,6 +32,7 @@ class PacketSender;
 class ProfanityContext;
 class SoundOptions;
 class StoreCatalogRepository;
+class TaskGroup;
 class TrialManager;
 class WorldSettingsRules;
 struct SettingsScreenCapabilities;
@@ -278,17 +280,15 @@ public:
     virtual ::std::optional<::std::reference_wrapper<::ContentItemCollection>> const
     getVisibleContentItemCollection(::StorageManager::ContentType type) const = 0;
 
-    virtual void navigateToDeleteContentLogScreen() = 0;
+    virtual bool isCloudStorageManagerEnabled() const = 0;
 
-    virtual void navigateToDeleteScriptDiagnosticScreen() = 0;
+    virtual ::TaskGroup& getIOTaskGroup() = 0;
+
+    virtual ::Bedrock::NonOwnerPointer<::ContentLogFileEndPoint const> getContentLogFileEndPoint() const = 0;
 
     virtual ::std::string getCurrentContentLogFileName() = 0;
-    // NOLINTEND
 
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+    virtual bool isSupportingLegacyWorlds() const = 0;
     // NOLINTEND
 };
 

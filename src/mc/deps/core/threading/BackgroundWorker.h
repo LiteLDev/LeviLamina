@@ -82,39 +82,21 @@ public:
         ::WorkerPool&                                 workerPool
     );
 
-    MCNAPI void _doNoWorkDelay();
-
+#ifdef LL_PLAT_C
     MCNAPI bool _processNextTask(::RunTaskOptions const& options);
+#endif
 
-    MCNAPI ::BackgroundWorker::RunOneResult _runOneTask(::RunTaskOptions const& options);
-
-    MCNAPI ::std::shared_ptr<::BackgroundTaskBase> _tryPop(::WorkerPool& pool);
-
-    MCNAPI uint64 getApproximateTaskCount() const;
-
-    MCNAPI ::RunTaskOptions getRunOptions();
-
-    MCNAPI ::std::thread::id getThreadId() const;
-
-    MCNAPI bool isIdle() const;
-
-    MCNAPI bool processTaskSync(::RunTaskOptions const& options);
+#ifdef LL_PLAT_S
+    MCNAPI bool _processNextTask(::RunTaskOptions const& options);
+#endif
 
     MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task);
 
     MCNAPI void requestStop(bool wait);
 
-    MCNAPI void resortPriorityQueue();
-
     MCNAPI void start();
 
     MCNAPI void wake();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::BackgroundWorker* getLocal();
     // NOLINTEND
 
 public:

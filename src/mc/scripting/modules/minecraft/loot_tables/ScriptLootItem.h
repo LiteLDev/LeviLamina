@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/loot_tables/ScriptLootPoolEntry.h"
 
 // auto generated forward declare list
 // clang-format off
 class LootItem;
 class LootPoolEntry;
+namespace ScriptModuleMinecraft { class ScriptLootItemCondition; }
 namespace ScriptModuleMinecraft { class ScriptLootItemFunction; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -21,6 +22,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::LootItem const&> mLootItem;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::std::optional<
+            ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemCondition>>>>
+        mConditions;
     ::ll::TypedStorage<
         8,
         32,
@@ -60,12 +67,6 @@ public:
     MCFOLD ::LootPoolEntry const& $_getEntry() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

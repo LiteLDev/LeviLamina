@@ -62,8 +62,6 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void clientInitialize(int dir, ::std::string const& motifName);
 #endif
-
-    MCFOLD ::Motif const& getCurrentMotif() const;
     // NOLINTEND
 
 public:

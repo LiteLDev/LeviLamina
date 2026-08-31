@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/entity/utilities/ExternalDataInterface.h"
 #include "mc/input/ClientPlayMode.h"
@@ -11,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ILevel;
 struct AdventureSettings;
 // clang-format on
 
@@ -31,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ExternalDataServerLevel() /*override*/ = default;
+    virtual ~ExternalDataServerLevel() /*override*/;
 
     virtual bool isInWorldAndNotShowingAnyMenuScreens() const /*override*/;
 
@@ -49,15 +47,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI explicit ExternalDataServerLevel(::Bedrock::NotNullNonOwnerPtr<::ILevel const> level);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ILevel const> level);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

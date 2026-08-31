@@ -17,6 +17,7 @@ struct SoundInstanceProperties;
 namespace Core { class Path; }
 namespace Core { class PathView; }
 class SoundItem;
+struct PlaySoundOptions;
 // clang-format on
 
 class SoundPlayerInterface : public ::Bedrock::EnableNonOwnerReferences {
@@ -33,6 +34,8 @@ public:
         ::std::optional<::ServerSoundHandle> serverSoundHandle
     ) = 0;
 
+    virtual uint64 play(::PlaySoundOptions options) = 0;
+
     virtual uint64 playUI(::std::string const& name, float volume, float pitch) = 0;
 
     virtual void playMusic(::std::string const& eventName, float volume, uint& playlistIndex) = 0;
@@ -43,7 +46,7 @@ public:
 
     virtual bool isPlayingMusicEvent(::std::string const& eventName) const = 0;
 
-    virtual bool isPlayingMusic(::Core::PathView soundName) const = 0;
+    virtual bool isPlayingMusic(::Core::PathView soundPath) const = 0;
 
     virtual void fadeToStopMusic(float fadeSeconds) = 0;
 
@@ -57,6 +60,8 @@ public:
 
     virtual void stop(uint64 handle) = 0;
 
+    virtual void stop(::ServerSoundHandle serverSoundHandle) = 0;
+
     virtual void stopAllSounds() = 0;
 
     virtual void pauseAllPlayingSounds() = 0;
@@ -65,9 +70,9 @@ public:
 
     virtual void pauseMusic(bool state) = 0;
 
-    virtual ::Core::PathBuffer<::std::string> const getCurrentlyPlayingMusicName() = 0;
+    virtual ::Core::PathBuffer<::std::string> const getCurrentlyPlayingMusicPath() = 0;
 
-    virtual bool getItem(::std::string const& eventName, ::Core::PathView soundName, ::SoundItem& soundItem) const = 0;
+    virtual bool getItem(::std::string const& eventName, ::Core::PathView soundPath, ::SoundItem& soundItem) const = 0;
 
     virtual uint64 registerLoop(
         ::std::string const&                        name,
@@ -91,16 +96,8 @@ public:
         ::std::function<void(::SoundInstanceProperties&)>&& getSoundProperties
     ) = 0;
 
-    virtual void stopAllDelayedSoundActions() = 0;
-
     virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64 handle) const = 0;
 
     virtual ::std::optional<::LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64 handle) const = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

@@ -19,10 +19,4 @@ public:
 
     virtual void sendChunkLoadTelemetryData() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

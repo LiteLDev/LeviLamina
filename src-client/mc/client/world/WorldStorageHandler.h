@@ -129,34 +129,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldStorageHandler(
-        ::Core::PathBuffer<::std::string> const&                          workingDirectory,
-        ::ILevelListCache&                                                levelListCache,
-        ::IContentManager&                                                contentManager,
-        ::FileArchiver&                                                   fileArchiver,
-        ::Social::IUserManager&                                           userManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                       levelDbEnv
-    );
-
-    MCAPI ::World::IWorldStorageHandler::DuplicateWorldResult _canCreateCopy(::World::WorldID const& worldId) const;
-
     MCAPI void _exportWorld(
         ::World::WorldID const&                                                 worldId,
-        ::FileArchiver::ExportType                                              exportType,
+        ::FileArchiver::ExportType const                                        exportType,
         ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
     );
-
-    MCAPI uint64 _getWorldSizeInBytes(::World::WorldID const& worldId) const;
-
-    MCAPI ::std::string _makeBackupOfLevel(::World::WorldID const& id);
-
-    MCAPI void _onDuplicateWorldSuccess(
-        ::std::string const&                     worldId,
-        ::Core::PathBuffer<::std::string> const& worldPath,
-        ::std::function<void(::World::WorldID const&, ::World::IWorldStorageHandler::DuplicateWorldResult)> const&
-            onComplete
-    ) const;
 
     MCAPI void _onExportComplete(
         ::FileArchiverOutcome                                                   outcome,
@@ -164,27 +141,11 @@ public:
         ::std::shared_ptr<::FilePickerSettings>                                 settings
     );
 
-    MCAPI void _scheduleCheckUserStorageAsync() const;
-
     MCAPI void _setupExportWorld(
         ::World::WorldID const&                                                 worldId,
-        ::FileArchiver::ExportType                                              exportType,
+        ::FileArchiver::ExportType const                                        exportType,
         ::World::ExportWorldFlags                                               flags,
         ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Core::PathBuffer<::std::string> const&                          workingDirectory,
-        ::ILevelListCache&                                                levelListCache,
-        ::IContentManager&                                                contentManager,
-        ::FileArchiver&                                                   fileArchiver,
-        ::Social::IUserManager&                                           userManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                       levelDbEnv
     );
     // NOLINTEND
 
@@ -238,14 +199,6 @@ public:
 
     MCAPI void
     $resetWorldIcon(::World::WorldID const& worldId, ::std::function<void(::World::WorldID const&)> onComplete);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIWorldStorageHandler();
-
-    MCNAPI static void** $vftableForEnableQueueForMainThread();
     // NOLINTEND
 };
 

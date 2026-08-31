@@ -45,14 +45,6 @@ public:
             ::Core::Profile::ProfileGroupManager&    profileGroupManager,
             ::Bedrock::JSONObject::ObjectNode const& profileObject
         );
-
-        MCNAPI ~Impl();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -70,18 +62,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ProfilingConfigManager() /*override*/ = default;
+    virtual ~ProfilingConfigManager() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ProfilingConfigManager();
-
-    MCNAPI void init(
-        ::Core::Profile::ProfileGroupManager&    profileGroupManager,
-        ::Bedrock::JSONObject::ObjectNode const& profileObject
-    );
     // NOLINTEND
 
 public:
@@ -94,6 +81,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

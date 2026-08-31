@@ -11,15 +11,15 @@ class IConfigListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IConfigListener() = default;
+    virtual ~IConfigListener();
 
     virtual void onConfigChanged(::Config const& c) = 0;
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

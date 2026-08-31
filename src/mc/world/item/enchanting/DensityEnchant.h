@@ -20,7 +20,7 @@ public:
 
     virtual int getMaxLevel() const /*override*/;
 
-    virtual float getDamageBonus(int level, ::Actor const& attacker, ::Actor const&) const /*override*/;
+    virtual float getDamageBonus(int level, ::Actor const&, ::Actor const& attacker) const /*override*/;
     // NOLINTEND
 
 public:
@@ -32,14 +32,8 @@ public:
 
     MCFOLD int $getMaxLevel() const;
 
-    MCAPI float $getDamageBonus(int level, ::Actor const& attacker, ::Actor const&) const;
+    MCAPI float $getDamageBonus(int level, ::Actor const&, ::Actor const& attacker) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

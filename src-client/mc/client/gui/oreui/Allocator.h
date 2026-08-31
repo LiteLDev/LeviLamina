@@ -22,13 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Allocator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Allocator() /*override*/ = default;
+    virtual ~Allocator() /*override*/;
 
     virtual void* Allocate(uint size, ::cohtml::MemTags::MemTagsType tag) /*override*/;
 
@@ -47,15 +43,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit Allocator(::std::unique_ptr<::OreUI::IPlatformAllocator> platformAllocator);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::OreUI::IPlatformAllocator> platformAllocator);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

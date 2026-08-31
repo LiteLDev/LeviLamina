@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
@@ -22,11 +21,25 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
 
-    MCAPI void validateValue(int64 value, ::cereal::SerializerContext& context) const;
+    virtual ~EnumConstraint() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
+
     // NOLINTEND
 
 public:

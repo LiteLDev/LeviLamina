@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Mob;
 struct ActorDefinitionIdentifier;
 struct SummonSpellData;
@@ -55,26 +54,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SummonActorGoal(::Mob& caster, ::std::vector<::SummonSpellData> const& spellTypes);
-
     MCAPI void _createSpellEntity(
-        float                       x,
-        float                       z,
-        float                       minY,
-        float                       maxY,
-        float                       lifespan,
-        int                         summonType,
-        ::ActorDefinitionIdentifier summonEvent,
-        ::std::string const&
+        float x,
+        float z,
+        float minY,
+        float maxY,
+        float,
+        int                         lifespan,
+        ::ActorDefinitionIdentifier summonType,
+        ::std::string const&        summonEvent
     ) const;
-
-    MCAPI int _selectBestSpell(::Actor& target) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& caster, ::std::vector<::SummonSpellData> const& spellTypes);
     // NOLINTEND
 
 public:

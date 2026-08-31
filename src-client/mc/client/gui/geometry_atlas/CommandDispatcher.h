@@ -7,9 +7,11 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace GeometryAtlas { class InitializeCallbackPayload; }
 namespace GeometryAtlas { struct AllocateAtlasPayload; }
 namespace GeometryAtlas { struct AllocateBackendPayload; }
 namespace GeometryAtlas { struct InsertTilePayload; }
+namespace GeometryAtlas { struct PaperDollTransformPayload; }
 namespace GeometryAtlas { struct RemoveTilePayload; }
 namespace GeometryAtlas { struct UIItemPayload; }
 // clang-format on
@@ -40,7 +42,9 @@ public:
             ::GeometryAtlas::AllocateBackendPayload,
             ::GeometryAtlas::UIItemPayload,
             ::GeometryAtlas::InsertTilePayload,
-            ::GeometryAtlas::RemoveTilePayload>&& command
+            ::GeometryAtlas::RemoveTilePayload,
+            ::GeometryAtlas::PaperDollTransformPayload,
+            ::GeometryAtlas::InitializeCallbackPayload>&& command
     );
     // NOLINTEND
 };

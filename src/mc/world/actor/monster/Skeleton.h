@@ -65,8 +65,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCAPI void setWitherParent(::WitherBoss* wither);
     // NOLINTEND
 
 public:
@@ -88,7 +86,7 @@ public:
 
     MCAPI bool $canBeAffected(uint effectId) const;
 
-    MCFOLD void $setTarget(::Actor* target);
+    MCAPI void $setTarget(::Actor* target);
 
     MCAPI void $normalTick();
 

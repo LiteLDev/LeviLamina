@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ImpactDamageSubcomponent() /*override*/ = default;
+    virtual ~ImpactDamageSubcomponent() /*override*/;
 
     virtual void readfromJSON(::Json::Value& component) /*override*/;
 
@@ -48,15 +48,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI ImpactDamageSubcomponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

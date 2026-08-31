@@ -16,7 +16,7 @@ class GenericMoveControl : public ::MoveControl {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GenericMoveControl() /*override*/ = default;
+    virtual ~GenericMoveControl() /*override*/;
 
     virtual void initializeInternal(::Mob& mob, ::MoveControlDescription const* description) /*override*/;
 
@@ -24,15 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI GenericMoveControl();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

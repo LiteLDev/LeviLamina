@@ -11,8 +11,6 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class Level;
-class Player;
 // clang-format on
 
 class ResourceUriCommand : public ::Command {
@@ -39,16 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _executeClear(::Level& level, ::Player* originPlayer, ::CommandOutput& output) const;
-
-    MCAPI void _executeNamed(::Level& level, ::Player* originPlayer, ::CommandOutput& output) const;
-
-    MCAPI void _executeUriOnly(::Level& level, ::Player* originPlayer, ::CommandOutput& output) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
@@ -61,15 +49,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::ResourceUriCommand::ActionType>();
-// clang-format on

@@ -13,10 +13,4 @@ public:
 
     virtual ::Bedrock::typeid_t<::IAppConfigData> getType() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

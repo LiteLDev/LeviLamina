@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CompoundCreatorScreenController() /*override*/ = default;
+    virtual ~CompoundCreatorScreenController() /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
 
@@ -48,10 +48,6 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
-
-    MCAPI void _registerInputStateMachine();
-
-    MCAPI void _registerOutputStateMachine();
     // NOLINTEND
 
 public:
@@ -66,22 +62,20 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $_isStillValid() const;
+    MCAPI bool $_isStillValid() const;
 
     MCAPI ::std::string $_getButtonXDescription();
 
     MCAPI void $_registerCoalesceOrder();
 
     MCAPI void $_registerAutoPlaceOrder();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

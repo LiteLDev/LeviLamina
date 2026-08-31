@@ -10,9 +10,6 @@
 // clang-format off
 namespace ClientBlockPipeline { class Inputs; }
 namespace ClientBlockPipeline { class StepResult; }
-namespace ClientBlockPipeline { struct FaceDimmingAttributes; }
-namespace ClientBlockPipeline { struct FaceNormalAttributes; }
-namespace ClientBlockPipeline { struct MaterialFaceAttributes; }
 // clang-format on
 
 namespace ClientBlockPipeline {
@@ -25,31 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FaceDimmingStep();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit FaceDimmingStep(::ClientBlockPipeline::DimensionDimmingScalars const& dimmingScalars);
-
-    MCAPI void _run(
-        ::ClientBlockPipeline::FaceNormalAttributes const&   faceNormals,
-        ::ClientBlockPipeline::FaceDimmingAttributes&        faceDimming,
-        ::ClientBlockPipeline::MaterialFaceAttributes const& materials
-    ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ClientBlockPipeline::DimensionDimmingScalars const& dimmingScalars);
     // NOLINTEND
 
 public:

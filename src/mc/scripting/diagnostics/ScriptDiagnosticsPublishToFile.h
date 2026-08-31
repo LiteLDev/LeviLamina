@@ -46,18 +46,6 @@ public:
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI explicit StreamFlusher(::Core::Path const& streamPath);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::Core::Path const& streamPath);
-        // NOLINTEND
-
-    public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
@@ -69,12 +57,6 @@ public:
         MCNAPI ::Core::Result $_flushBuffer(void const* data, uint64 amount);
 
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -117,8 +99,6 @@ public:
     );
 
     MCNAPI bool _createNewCapture(::Core::Path capturePath);
-
-    MCNAPI bool _cyclePreviousCaptures();
 
     MCNAPI ::Core::Path _getCapturePath(int captureIndex) const;
 

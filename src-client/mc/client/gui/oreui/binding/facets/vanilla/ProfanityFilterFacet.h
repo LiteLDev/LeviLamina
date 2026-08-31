@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -13,7 +13,7 @@ class ProfanityContext;
 
 namespace OreUI {
 
-class ProfanityFilterFacet : public ::OreUI::FacetBase<::OreUI::ProfanityFilterFacet> {
+class ProfanityFilterFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ProfanityFilterFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ProfanityFilterFacet() /*override*/ = default;
+    virtual ~ProfanityFilterFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -50,6 +50,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> profanityContext);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

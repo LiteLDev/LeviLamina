@@ -12,7 +12,6 @@
 class Biome;
 class BiomeArea;
 class BlockPos;
-class BlockPosIterator;
 class BoundingBox;
 class ChunkLocalNoiseCache;
 class LevelChunk;
@@ -39,10 +38,15 @@ public:
 
     virtual void fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const = 0;
 
-    virtual ::BiomeArea getBiomeArea(::BoundingBox const& box, uint scale) const = 0;
+    virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const = 0;
 
+#ifdef LL_PLAT_S
     virtual ::BiomeArea
-    getBiomeArea(::BoundingBox const& box, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const = 0;
+    getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptions) const = 0;
+#else // LL_PLAT_C
+    virtual ::BiomeArea
+    getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const = 0;
+#endif
 
     virtual bool containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const = 0;
 
@@ -53,20 +57,6 @@ public:
     virtual ::BiomeSourceType const getType() const = 0;
 
     virtual ::Biome const* _getBiome(::GetBiomeOptions const& getBiomeOptions) const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Biome const* getBiome(::BlockPos const& blockPos) const;
-
-    MCFOLD ::Biome const* getBiome(::GetBiomeOptions const& getBiomeOptions) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::BlockPosIterator getAreaIterator(::BoundingBox const& areaBounds, uint scale);
     // NOLINTEND
 
 public:

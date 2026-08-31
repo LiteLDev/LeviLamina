@@ -47,7 +47,7 @@ public:
         float            scale
     ) /*override*/;
 
-    virtual void setupAnim(::Actor& bob, float yRot, float xRot, float, float, float, float);
+    virtual void setupAnim(::Actor& entity, float time, float r, float bob, float yRot, float xRot, float scale);
     // NOLINTEND
 
 public:
@@ -76,12 +76,6 @@ public:
         float            scale
     );
 
-    MCAPI void $setupAnim(::Actor& bob, float yRot, float xRot, float, float, float, float);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI void $setupAnim(::Actor& entity, float time, float r, float bob, float yRot, float xRot, float scale);
     // NOLINTEND
 };

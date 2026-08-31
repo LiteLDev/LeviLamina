@@ -378,10 +378,6 @@ public:
 
     MCAPI void destroyAccelerationStructure(::bgfx::AccelerationStructureHandle _handle);
 
-    MCAPI void destroyDynamicIndexBufferInternal(::bgfx::DynamicIndexBufferHandle _handle);
-
-    MCAPI void destroyDynamicVertexBufferInternal(::bgfx::DynamicVertexBufferHandle _handle);
-
     MCAPI void destroyFrameBuffer(::bgfx::FrameBufferHandle _handle);
 
     MCAPI void destroyIndexBuffer(::bgfx::IndexBufferHandle _handle);
@@ -392,15 +388,11 @@ public:
 
     MCAPI void destroyVertexBuffer(::bgfx::VertexBufferHandle _handle);
 
-    MCAPI void destroyVertexBufferInternal(::bgfx::VertexBufferHandle _handle);
-
     MCAPI ::bgfx::VertexDeclHandle findVertexDecl(::bgfx::VertexDecl const& _decl);
 
     MCAPI void flushTextureUpdateBatch(::bgfx::CommandBuffer& _cmdbuf);
 
     MCAPI uint frame(uint _flags);
-
-    MCAPI void freeAllHandles(::bgfx::Frame* _frame);
 
     MCAPI ::bgfx::Stats const getPerfStats();
 
@@ -415,11 +407,6 @@ public:
     MCAPI void rendererExecCommands(::bgfx::CommandBuffer& _cmdbuf);
 
     MCAPI void reset(uint _width, uint _height, uint _flags);
-
-    MCAPI void
-    resizeTexture(::bgfx::TextureHandle _handle, ushort _width, ushort _height, uchar _numMips, ushort _numLayers);
-
-    MCAPI void setName(::bgfx::TextureHandle _handle, ::bx::StringView const& _name);
 
     MCAPI void setName(::bgfx::ShaderHandle _handle, ::bx::StringView const& _name);
 
@@ -446,8 +433,6 @@ public:
 
     MCAPI void
     updateOffset(::bgfx::DynamicVertexBufferHandle _handle, uint _offset, uint _declStride, ::bgfx::Memory const* _mem);
-
-    MCAPI void updatePerfStats();
 
     MCAPI void updateTexture(
         ::bgfx::TextureHandle _handle,

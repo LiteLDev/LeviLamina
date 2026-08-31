@@ -34,12 +34,6 @@ public:
 
     MCAPI ::dragon::atlas::AtlasTileHandle $getBackendID() const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace GeometryAtlas

@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BackwardsCompatTextureInfo;
 class BannerModel;
 class BaseActorRenderContext;
 class BlockActor;
@@ -58,18 +57,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager
     );
 
-    MCAPI void _addTextureName(
-        ::std::string const&                                     fileName,
-        ::std::vector<::std::string>&                            textureList,
-        ::std::map<::std::string, ::BackwardsCompatTextureInfo>& backCompatMap
-    ) const;
-
-    MCAPI ::std::array<::glm::vec4, 4>
-    _getBasePBRTextureData(::BaseActorRenderContext& baseActorRenderContext, ::std::string filePath) const;
-
-    MCAPI ::glm::vec4
-    _getTextureUVAndScale(::std::string const& fileName, ::BackwardsCompatTextureInfo const& backCompatInfo) const;
-
     MCAPI void _setConstants(
         ::BaseActorRenderContext& baseActorRenderContext,
         int                       index,
@@ -78,12 +65,6 @@ public:
     ) const;
 
     MCAPI void _setupBannerConstants(::BaseActorRenderContext& baseActorRenderContext, ::BlockActor& entity);
-
-    MCAPI void _setupTextureAtlas(
-        ::std::shared_ptr<::mce::TextureGroup>               textureGroup,
-        ::ResourcePackManager&                               resourcePackManager,
-        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager
-    );
 
     MCAPI void renderByItem(
         ::BaseActorRenderContext&       renderContext,
@@ -118,11 +99,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

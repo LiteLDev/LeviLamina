@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ namespace Realms { class RealmsPurchaseReconciler; }
 
 namespace OreUI {
 
-class RealmsPurchaseCommandsFacet : public ::OreUI::FacetBase<::OreUI::RealmsPurchaseCommandsFacet> {
+class RealmsPurchaseCommandsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsPurchaseCommandsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

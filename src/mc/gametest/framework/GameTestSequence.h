@@ -42,16 +42,12 @@ public:
 
     MCNAPI void thenFail(::gametest::GameTestError error);
 
-    MCNAPI ::gametest::GameTestSequence& thenIdle(int tickDelay);
-
     MCNAPI void thenSucceed();
 
     MCNAPI ::gametest::GameTestSequence& thenWait(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
     MCNAPI ::gametest::GameTestSequence&
     thenWaitAfter(int tickDelay, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
-
-    MCNAPI bool tickAndFailIfNotComplete(int currentTick);
     // NOLINTEND
 };
 

@@ -50,12 +50,6 @@ public:
 
     MCAPI ::mce::Color $get(::Block const&) const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace BiomeColorSampling

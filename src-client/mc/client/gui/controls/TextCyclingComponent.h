@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TextCyclingComponent() /*override*/ = default;
+    virtual ~TextCyclingComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -31,9 +31,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void _initTextComponent();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -44,11 +44,5 @@ public:
     MCAPI void $_postCreate();
 
     MCAPI void $_updateSubPage();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

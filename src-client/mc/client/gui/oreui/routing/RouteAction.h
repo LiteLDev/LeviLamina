@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RouteAction(::std::string const& route, ::OreUI::RouteHistoryAction action);
+    MCAPI RouteAction(::std::string const& route, ::OreUI::RouteHistoryAction const action);
 
     MCAPI ~RouteAction();
     // NOLINTEND
@@ -30,7 +30,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::std::string const& route, ::OreUI::RouteHistoryAction action);
+    MCAPI void* $ctor(::std::string const& route, ::OreUI::RouteHistoryAction const action);
     // NOLINTEND
 
 public:

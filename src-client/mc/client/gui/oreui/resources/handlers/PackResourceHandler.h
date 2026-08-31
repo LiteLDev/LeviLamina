@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PackResourceHandler() /*override*/ = default;
+    virtual ~PackResourceHandler() /*override*/;
 
     virtual ::Gameface::ResourceHandlerStatus
     onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
@@ -51,20 +51,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackResourceHandler(
-        ::ResourcePackManager const&        packManager,
-        ::Gameface::TemporaryTextureHolder& temporaryTextureHolder
-    );
-
     MCAPI ::std::optional<::ResourceLocation>
     _getAssetResourceLocationFromResourcePackManager(::Gameface::ResourceRequest const& request) const;
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::ResourcePackManager const& packManager, ::Gameface::TemporaryTextureHolder& temporaryTextureHolder);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

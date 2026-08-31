@@ -17,10 +17,4 @@ public:
 
     virtual bool canChangePermission(::ServerPlayer const& player) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

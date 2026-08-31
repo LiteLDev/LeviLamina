@@ -32,6 +32,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mGuiScaleSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mGuiAccessibilityScalingSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mSceneSizeChangedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mLanguageChangedSubscription;
     ::ll::TypedStorage<8, 24, ::std::vector<::Settings::OptionData>> mDropdownOptions;
     // NOLINTEND
 
@@ -92,15 +93,9 @@ public:
 
     MCAPI void $setValue(int value);
 
-    MCFOLD ::std::optional<
+    MCAPI ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
     $getInfo() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

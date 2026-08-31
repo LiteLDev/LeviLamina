@@ -5,15 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/StubServerLocator.h"
-#include "mc/platform/Result.h"
 #include "mc/platform/threading/UniqueLock.h"
 #include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
-class BinaryStream;
-class ReadOnlyBinaryStream;
 class SignalingService;
 struct NetherNetConnector;
 struct PingedCompatibleServer;
@@ -52,24 +49,6 @@ public:
         ServerData& operator=(ServerData const&);
         ServerData(ServerData const&);
         ServerData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::NetherNetServerLocator::ServerData& operator=(::NetherNetServerLocator::ServerData&&);
-
-        MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
-
-        MCNAPI void write(::BinaryStream& stream) const;
-
-        MCNAPI ~ServerData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -97,20 +76,20 @@ public:
     virtual ~NetherNetServerLocator() /*override*/;
 
     virtual void startAnnouncingServer(
-        ::std::string const& playerName,
-        ::std::string const& worldName,
-        ::GameType           gameType,
-        int                  numPlayers,
-        int                  maxNumPlayers,
-        bool                 isEditorWorld,
-        bool                 isHardcore,
-        bool                 supportedAuth,
-        ::ServerSupportedAuthenticationTypes
+        ::std::string const&                 playerName,
+        ::std::string const&                 worldName,
+        ::GameType                           gameType,
+        int                                  numPlayers,
+        int                                  maxNumPlayers,
+        bool                                 isJoinableThroughServerScreen,
+        bool                                 isEditorWorld,
+        bool                                 isHardcore,
+        ::ServerSupportedAuthenticationTypes supportedAuth
     ) /*override*/;
 
     virtual void stopAnnouncingServer() /*override*/;
 
-    virtual void startServerDiscovery(::PortPair) /*override*/;
+    virtual void startServerDiscovery(::PortPair ports) /*override*/;
 
     virtual void stopServerDiscovery() /*override*/;
 
@@ -134,20 +113,9 @@ public:
 
     MCNAPI void _onDiscoveryResponse(::NetherNet::NetworkID const& networkID, ::gsl::span<char const> responseData);
 
-    MCNAPI void _pruneStaleServers(::std::chrono::seconds staleAfter);
-
     MCNAPI void _setDiscoveryRequestCallback(bool enable);
 
     MCNAPI void _setDiscoveryResponseCallback(bool enable);
-
-    MCNAPI void _setIsDiscovering(bool isDiscovering);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::PingedCompatibleServer
-    _transformFrom(::NetherNet::NetworkID const& networkID, ::NetherNetServerLocator::ServerData&& serverData);
     // NOLINTEND
 
 public:
@@ -170,20 +138,20 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $startAnnouncingServer(
-        ::std::string const& playerName,
-        ::std::string const& worldName,
-        ::GameType           gameType,
-        int                  numPlayers,
-        int                  maxNumPlayers,
-        bool                 isEditorWorld,
-        bool                 isHardcore,
-        bool                 supportedAuth,
-        ::ServerSupportedAuthenticationTypes
+        ::std::string const&                 playerName,
+        ::std::string const&                 worldName,
+        ::GameType                           gameType,
+        int                                  numPlayers,
+        int                                  maxNumPlayers,
+        bool                                 isJoinableThroughServerScreen,
+        bool                                 isEditorWorld,
+        bool                                 isHardcore,
+        ::ServerSupportedAuthenticationTypes supportedAuth
     );
 
     MCNAPI void $stopAnnouncingServer();
 
-    MCNAPI void $startServerDiscovery(::PortPair);
+    MCNAPI void $startServerDiscovery(::PortPair ports);
 
     MCNAPI void $stopServerDiscovery();
 
@@ -194,11 +162,5 @@ public:
     MCNAPI void $update();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -7,10 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct FeatureParserContext;
 struct FeatureResult;
-struct SupportedFeatureSchema;
-struct SupportedFeatureUpgrader;
 // clang-format on
 
 class FeatureLoader {
@@ -18,29 +15,5 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 168, ::Puv::Loader<::FeatureResult, ::FeatureResult>> mLoader;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FeatureLoader();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FeatureLoader(
-        ::FeatureParserContext&                          context,
-        ::std::vector<::SupportedFeatureSchema> const&   supportedSchemas,
-        ::std::vector<::SupportedFeatureUpgrader> const& supportedUpgraders
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::FeatureParserContext&                          context,
-        ::std::vector<::SupportedFeatureSchema> const&   supportedSchemas,
-        ::std::vector<::SupportedFeatureUpgrader> const& supportedUpgraders
-    );
     // NOLINTEND
 };

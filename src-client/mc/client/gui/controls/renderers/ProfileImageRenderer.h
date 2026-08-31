@@ -30,6 +30,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                              mIsLoadingImage;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Image>>                  mImage;
     ::ll::TypedStorage<8, 24, ::mce::ClientTexture>                             mTexture;
+    ::ll::TypedStorage<1, 1, bool>                                              mFetchReturnedEmpty;
     // NOLINTEND
 
 public:
@@ -39,10 +40,10 @@ public:
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&) /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
 
     virtual void
-    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int) /*override*/;
+    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int) /*override*/;
 
     virtual ::UIBatchType getBatchType() const /*override*/;
 
@@ -64,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -72,9 +73,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
+    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int);
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
 
     MCFOLD ::UIBatchType $getBatchType() const;
 

@@ -22,18 +22,6 @@ public:
     BorderCellEntry& operator=(BorderCellEntry const&);
     BorderCellEntry(BorderCellEntry const&);
     BorderCellEntry();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~BorderCellEntry();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace BlendingDataFactoryUtil

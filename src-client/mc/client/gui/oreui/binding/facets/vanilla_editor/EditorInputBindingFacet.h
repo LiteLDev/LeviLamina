@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/common/editor/MouseActionCategory.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -24,7 +24,7 @@ namespace Editor::Services { class ClientPlayerInputServiceProvider; }
 
 namespace OreUI {
 
-class EditorInputBindingFacet : public ::OreUI::FacetBase<::OreUI::EditorInputBindingFacet> {
+class EditorInputBindingFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::EditorInputBindingFacet> {
 public:
     // EditorInputBindingFacet inner types declare
     // clang-format off
@@ -55,20 +55,12 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI KeyBindingFacet(::Editor::Input::ContextKeyBinding const& binding, bool useDefault);
-
-        MCAPI ~KeyBindingFacet();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::Editor::Input::ContextKeyBinding const& binding, bool useDefault);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -137,7 +129,7 @@ public:
             ::Editor::Input::EditorMouseBindingUnregistered> const& evt
     );
 
-    MCAPI void _handleTutorialStageChangeEvent(::HashedString const& isTutorialStarted, ::HashedString const&, bool);
+    MCAPI void _handleTutorialStageChangeEvent(::HashedString const&, ::HashedString const&, bool isTutorialStarted);
 
     MCAPI void _refreshBindings();
 
@@ -186,13 +178,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI bool $update();
     // NOLINTEND
 };
 

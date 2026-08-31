@@ -93,8 +93,6 @@ public:
         ::IFileAccess&                                                    fileAccess,
         ::IPackIOProvider const&                                          io
     );
-
-    MCNAPI bool _getUnencryptedAsset(::Core::Path const& packRelativePath, ::std::string& result) const;
     // NOLINTEND
 
 public:
@@ -151,11 +149,5 @@ public:
     $getStreamableSource(::Core::Path const&, ::std::optional<::Core::PathView>) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

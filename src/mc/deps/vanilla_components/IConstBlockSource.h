@@ -12,6 +12,7 @@ class AABB;
 class Block;
 class BlockActor;
 class BlockPos;
+class ChunkPos;
 class GetCollisionShapeInterface;
 class LevelChunk;
 class Material;
@@ -53,6 +54,8 @@ public:
 
     virtual bool hasBorderBlock(::BlockPos const pos) const = 0;
 
+    virtual bool hasChunk(::ChunkPos const& pos, bool serverSideOnly) const = 0;
+
     virtual bool hasChunksAt(::Bounds const& bounds, bool ignoreClientChunk) const = 0;
 
     virtual bool hasChunksAt(::BlockPos const& pos, int r, bool ignoreClientChunk) const = 0;
@@ -90,11 +93,5 @@ public:
     ) const = 0;
 
     virtual float getBrightness(::BlockPos const& pos) const = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

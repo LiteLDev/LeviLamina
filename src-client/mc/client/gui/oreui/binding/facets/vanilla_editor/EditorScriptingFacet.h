@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -19,7 +19,7 @@ namespace Json { class Value; }
 
 namespace OreUI {
 
-class EditorScriptingFacet : public ::OreUI::FacetBase<::OreUI::EditorScriptingFacet> {
+class EditorScriptingFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::EditorScriptingFacet> {
 public:
     // EditorScriptingFacet inner types declare
     // clang-format off
@@ -110,12 +110,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

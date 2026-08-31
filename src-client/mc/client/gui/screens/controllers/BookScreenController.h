@@ -59,7 +59,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BookScreenController() /*override*/;
+    virtual ~BookScreenController() /*override*/ = default;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -87,35 +87,13 @@ public:
 
     MCAPI void _addPhotoPageAt(int index, ::std::string const& photoName);
 
-    MCAPI void _addTextPageAt(int index, ::std::string text);
-
-    MCAPI void _deletePage(int index);
-
-    MCAPI void _editPageText(int index);
-
-    MCAPI ::std::string const& _getPageText(int index, bool isBeingEdited);
-
     MCAPI int _getPickIndex(char const* collectionPrefix, ::UIPropertyBag& bag);
-
-    MCAPI void _loadAuthorFromBook();
-
-    MCAPI void _loadTextFromBook();
-
-    MCAPI void _loadTitleFromBook();
 
     MCAPI void _parsePageText(int index);
 
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
     MCAPI void _setPageText(int index, ::std::string const& text);
 
-    MCAPI bool _signBook();
-
     MCAPI void _swapPages(int page1Index, int page2Index);
-
-    MCAPI void _tickExport();
 
     MCAPI void _tryFirePageTurnSound(::UIPropertyBag const& bag) const;
     // NOLINTEND
@@ -133,12 +111,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
@@ -150,13 +122,5 @@ public:
     MCAPI bool $_isStillValid() const;
 
     MCAPI ::std::string $_getButtonBDescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

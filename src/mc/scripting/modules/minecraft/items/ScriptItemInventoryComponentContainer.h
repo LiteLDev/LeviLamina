@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptContainer.h"
 #include "mc/world/containers/FullContainerName.h"
 
@@ -12,9 +12,7 @@
 // clang-format off
 class Container;
 class ItemContext;
-namespace ScriptModuleMinecraft { class ScriptContainerRules; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -29,13 +27,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptItemInventoryComponentContainer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptItemInventoryComponentContainer() /*override*/ = default;
+    virtual ~ScriptItemInventoryComponentContainer() /*override*/;
 
     virtual ::Scripting::Result_deprecated<int> getEmptySlotsCount() const /*override*/;
 
@@ -45,25 +39,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI ScriptItemInventoryComponentContainer(
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> weakItemStackHandle,
-        ::FullContainerName const&                                                   fullContainerName,
-        ::ScriptModuleMinecraft::ScriptContainerRules const&                         containerRules,
-        ::Scripting::WeakLifetimeScope const&                                        scope
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> weakItemStackHandle,
-        ::FullContainerName const&                                                   fullContainerName,
-        ::ScriptModuleMinecraft::ScriptContainerRules const&                         containerRules,
-        ::Scripting::WeakLifetimeScope const&                                        scope
-    );
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

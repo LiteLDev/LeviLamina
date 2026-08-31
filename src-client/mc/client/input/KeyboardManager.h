@@ -58,10 +58,4 @@ public:
         ::Vec2 const&          caretSize
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

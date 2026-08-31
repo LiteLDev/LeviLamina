@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 namespace OreUI {
 
-class PlayerBannedFacet : public ::OreUI::FacetBase<::OreUI::PlayerBannedFacet> {
+class PlayerBannedFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PlayerBannedFacet> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,12 +32,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

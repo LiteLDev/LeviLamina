@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ConnectGamepadScreenController() /*override*/ = default;
+    virtual ~ConnectGamepadScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -60,6 +60,12 @@ public:
         ::GameControllerErrorType                 controllerError,
         ::std::function<void()>                   onCompleteCallback
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

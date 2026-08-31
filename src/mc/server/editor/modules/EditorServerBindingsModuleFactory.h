@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_factory/GenericModuleBindingFactory.h"
+#include "mc/deps/script_core/binding_factory/scripting/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorServerBindingsModuleFactory() /*override*/ = default;
+    virtual ~EditorServerBindingsModuleFactory() /*override*/;
     // NOLINTEND
 
 public:
@@ -60,6 +60,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& managerServices);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

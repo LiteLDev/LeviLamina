@@ -9,17 +9,12 @@
 // clang-format off
 class Actor;
 class BlockPos;
-class BlockSource;
 class InteractionResult;
 class ItemStack;
 class Vec3;
 // clang-format on
 
 class CandleBlockItem : public ::BlockItem {
-public:
-    // prevent constructor by default
-    CandleBlockItem();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -30,21 +25,6 @@ public:
         /*override*/;
 
     virtual bool isCandle() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CandleBlockItem(::std::string const& name, int id);
-
-    MCAPI ::BlockPos
-    _getPlacementPosition(::BlockSource& region, ::Actor& usedOnPos, ::BlockPos usedOnFace, uchar) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

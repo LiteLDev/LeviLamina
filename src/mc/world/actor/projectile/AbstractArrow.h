@@ -8,15 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
 class ItemStack;
 class Player;
 class Vec3;
-struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct VariantParameterList;
 // clang-format on
@@ -35,10 +31,6 @@ public:
     ::ll::TypedStorage<1, 1, bool> mIsPlayerOwned;
     ::ll::TypedStorage<1, 1, bool> mIsCreative;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AbstractArrow();
 
 public:
     // virtual functions
@@ -68,39 +60,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AbstractArrow(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
     MCAPI bool _canPickup(::Player const& player) const;
 
     MCAPI void _defineEntityData();
-
-    MCAPI bool isPlayerOwned() const;
-
-    MCAPI void setFavoredSlot(int favoredSlot);
-
-    MCAPI void setIsCreative(bool creativeOnly);
-
-    MCAPI void setIsPlayerOwned(bool isPlayerOwned);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Actor* spawnPlayerProjectile(::ActorDefinitionIdentifier const& id, ::Player& player, ::Vec3 aimDir);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

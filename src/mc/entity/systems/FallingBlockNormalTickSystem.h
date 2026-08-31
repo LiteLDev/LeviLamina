@@ -28,16 +28,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doFallingBlockNormalTickSystem(
-        ::StrictEntityContext const& actorOwnerComponent,
-        ::ActorOwnerComponent&       onLand,
-        ::ITickDelegate&
-    );
-
-    MCAPI static void _tickFallingBlockNormalTickSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::FallingBlockFlagComponent>,
-            ::ActorOwnerComponent> view
+        ::StrictEntityContext const&,
+        ::ActorOwnerComponent& actorOwnerComponent,
+        ::ITickDelegate&       onLand
     );
 
     MCAPI static ::TickingSystemWithInfo createSystem();

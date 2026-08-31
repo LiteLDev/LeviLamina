@@ -62,26 +62,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ServerboundPackSettingChangePacket();
-
-#ifdef LL_PLAT_C
-    MCAPI explicit ServerboundPackSettingChangePacket(::ServerboundPackSettingChangePacketPayload payload);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ServerboundPackSettingChangePacketPayload payload);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;

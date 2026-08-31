@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/util/ProfanityFilterContext.h"
 
@@ -16,7 +16,7 @@ namespace OreUI { struct ScreenReaderOptions; }
 
 namespace OreUI {
 
-class ScreenReaderFacet : public ::OreUI::FacetBase<::OreUI::ScreenReaderFacet> {
+class ScreenReaderFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ScreenReaderFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,7 +58,7 @@ public:
 
     MCFOLD bool getIsChatTextToSpeechEnabled() const;
 
-    MCFOLD bool getIsIdle() const;
+    MCAPI bool getIsIdle() const;
 
     MCFOLD bool getIsUITextToSpeechEnabled() const;
 
@@ -88,7 +88,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

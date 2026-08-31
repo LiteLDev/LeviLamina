@@ -39,26 +39,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _blendChunkEnd4J(::LevelChunk& generatedChunk, ::LevelChunk& lc);
-
-    MCNAPI void _blendChunkNether(::LevelChunk& generatedChunk, ::LevelChunk& lc);
-
-    MCNAPI void _blendChunkNether4J(::LevelChunk& generatedChunk, ::LevelChunk& lc);
-
     MCNAPI void _blendChunkOverworld(
-        ::LevelChunk&                          generatedChunk,
-        ::LevelChunk&                          lc,
-        ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType
-    );
-
-    MCNAPI void _copyColumnFromGeneratedChunkNether(::LevelChunk& generatedChunk, ::LevelChunk& lc, int x, int z);
-
-    MCNAPI void _copyColumnFromGeneratedChunkOverworld(
-        ::LevelChunk&                          generatedChunk,
-        ::LevelChunk&                          lc,
-        int                                    x,
-        int                                    z,
-        ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType
+        ::LevelChunk&                                generatedChunk,
+        ::LevelChunk&                                lc,
+        ::ConsoleChunkBlender::ShiftBlockTypes const shiftBlockType
     );
 
     MCNAPI ::ChunkLocalHeight _findTopMostWaterHeight(
@@ -71,14 +55,14 @@ public:
     MCNAPI void _prepInterpTable();
 
     MCNAPI void _shiftColumnBySetBlocks(
-        ::LevelChunk&                          lc,
-        int                                    x,
-        int                                    z,
-        int                                    adj,
-        bool                                   isSeaBlock,
-        ::ChunkLocalHeight                     topSeaBlockHeight,
-        ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType,
-        ::OverworldBlendRules const&           blendRules
+        ::LevelChunk&                                lc,
+        int                                          x,
+        int                                          z,
+        int                                          adj,
+        bool                                         isSeaBlock,
+        ::ChunkLocalHeight const                     topSeaBlockHeight,
+        ::ConsoleChunkBlender::ShiftBlockTypes const shiftBlockType,
+        ::OverworldBlendRules const&                 blendRules
     );
 
     MCNAPI ~ConsoleChunkBlender();

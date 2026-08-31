@@ -40,7 +40,9 @@ public:
 
     MCNAPI ::Editor::LogMessage& operator=(::Editor::LogMessage const&);
 
+#ifdef LL_PLAT_C
     MCNAPI ~LogMessage();
+#endif
     // NOLINTEND
 
 public:
@@ -60,7 +62,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

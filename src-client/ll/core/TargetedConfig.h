@@ -1,6 +1,7 @@
 #pragma once
-#include "ll/core/tweak/ForceEnableCheatCommands.h"
 #include "ll/api/reflection/Dispatcher.h"
+#include "ll/core/tweak/ForceEnableCheatCommands.h"
+
 
 namespace ll {
 struct TargetedConfig {
@@ -10,9 +11,8 @@ struct TargetedConfig {
         bool alwaysLaunch = false;
     } playerInfo{};
     struct {
-        bool enable = true;
-        bool subChunkRequest = true;
-        bool rakNet = true;
+        bool enable                      = true;
+        bool subChunkRequest             = true;
         bool simulatedPlayerChunkLoading = true;
     } vulnerabilityFixes;
 };

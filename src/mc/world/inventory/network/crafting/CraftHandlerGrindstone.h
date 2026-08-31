@@ -60,8 +60,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemStack _createResultItem(::ItemStack const& input, ::ItemStack const& additional);
-
     MCAPI int _getExperienceFromItem(::ItemStack const& stack) const;
 
     MCAPI bool
@@ -84,7 +82,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -13,13 +13,9 @@ class MinecraftScreenModel;
 
 class DimensionChangeProgressHandler : public ::WorldGenerationProgressHandler {
 public:
-    // prevent constructor by default
-    DimensionChangeProgressHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DimensionChangeProgressHandler() /*override*/ = default;
+    virtual ~DimensionChangeProgressHandler() /*override*/;
 
     virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -27,15 +23,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI DimensionChangeProgressHandler(bool localServer, ::std::function<void()> const& startCallback);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool localServer, ::std::function<void()> const& startCallback);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

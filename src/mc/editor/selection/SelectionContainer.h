@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Editor::Network { class PayloadServiceProvider; }
-// clang-format on
-
 namespace Editor::Selection {
 
 class SelectionContainer {
@@ -26,12 +21,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SelectionContainer() = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::Network::PayloadServiceProvider& _getNetworkService();
     // NOLINTEND
 };
 

@@ -31,47 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BuoyancyComponent();
-
-    MCFOLD bool canAutoStepFromLiquid() const;
-
     MCAPI bool canFloat(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
-
-    MCFOLD float getBaseBuoyancy() const;
-
-    MCFOLD float getBigWaveProbability() const;
-
-    MCFOLD float getBigWaveSpeedMultiplier() const;
-
-    MCFOLD ::BuoyancyMovementType getMovementType() const;
-
-    MCAPI double getTimer() const;
-
-    MCAPI void increaseTimer(float toAdd);
 
     MCAPI void loadData(::std::string const& data, ::SemVersion const& engineVersion);
 
     MCAPI bool
     needToResurface(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
-
-    MCFOLD bool shouldApplyGravity() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ~BuoyancyComponent();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 };

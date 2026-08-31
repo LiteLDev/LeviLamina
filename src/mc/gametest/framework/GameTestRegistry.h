@@ -36,22 +36,7 @@ public:
 
     MCNAPI ::std::function<void()> getAfterBatchFunction(::std::string const& batchName);
 
-    MCNAPI ::std::vector<::std::shared_ptr<::gametest::BaseGameTestFunction>> getAllTestFunctions();
-
-    MCNAPI ::std::vector<::std::string> const& getAllTestTags() const;
-
     MCNAPI ::std::function<void()> getBeforeBatchFunction(::std::string const& batchName);
-
-    MCNAPI ::std::shared_ptr<::gametest::BaseGameTestFunction> getTestFunction(::std::string const& testName);
-
-    MCNAPI ::std::vector<::std::shared_ptr<::gametest::BaseGameTestFunction>>
-    getTestFunctionsWithTag(::std::string const& tag);
-
-#ifdef LL_PLAT_S
-    MCNAPI bool isReady() const;
-#endif
-
-    MCNAPI bool isTestTag(::std::string const& tag) const;
 
     MCNAPI bool registerAfterBatchFunction(::std::string const& batchName, ::std::function<void()> fn);
 
@@ -59,8 +44,6 @@ public:
 
     MCNAPI bool
     registerTestMethod(::std::string const& className, ::std::shared_ptr<::gametest::BaseGameTestFunction> fn);
-
-    MCNAPI void setReady();
 
     MCNAPI ~GameTestRegistry();
     // NOLINTEND

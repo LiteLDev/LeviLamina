@@ -23,7 +23,7 @@ public:
     MCNAPI static void _replaceArmorSlots(
         ::Util::ReplacementResults&          replacementResults,
         ::Actor&                             entity,
-        ::gsl::span<::ItemStack const>       itemSpan,
+        ::gsl::span<::ItemStack const> const itemSpan,
         ::SharedTypes::Legacy::EquipmentSlot slotType,
         int                                  count
     );

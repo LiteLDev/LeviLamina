@@ -75,10 +75,6 @@ public:
 
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
-    MCAPI void execute(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI ::CommandBlockMode getMode() const;
-
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void

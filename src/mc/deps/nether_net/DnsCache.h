@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class IPAddress; }
+namespace webrtc { class IPAddress; }
 // clang-format on
 
 namespace NetherNet {
@@ -16,7 +16,7 @@ class DnsCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnk9a8643;
+    ::ll::UntypedStorage<8, 112> mUnkfd9fa6;
     // NOLINTEND
 
 public:
@@ -24,18 +24,6 @@ public:
     DnsCache& operator=(DnsCache const&);
     DnsCache(DnsCache const&);
     DnsCache();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void
-    Add(::std::string_view                      hostname,
-        int                                     family,
-        ::std::vector<::rtc::IPAddress> const&  result,
-        ::std::chrono::steady_clock::time_point expiration);
-
-    MCNAPI bool TryGet(::std::string_view hostname, int family, ::std::vector<::rtc::IPAddress>* outResult);
-    // NOLINTEND
 };
 
 } // namespace NetherNet

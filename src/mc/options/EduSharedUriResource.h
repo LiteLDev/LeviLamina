@@ -18,23 +18,18 @@ public:
 public:
     // prevent constructor by default
     EduSharedUriResource& operator=(EduSharedUriResource const&);
+    EduSharedUriResource();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EduSharedUriResource();
-
     MCAPI EduSharedUriResource(::EduSharedUriResource const&);
-
-    MCAPI explicit EduSharedUriResource(::CompoundTag const& tag);
 
 #ifdef LL_PLAT_C
     MCAPI bool operator!=(::EduSharedUriResource const& rhs) const;
 #endif
 
     MCFOLD ::EduSharedUriResource& operator=(::EduSharedUriResource&&);
-
-    MCAPI bool operator==(::EduSharedUriResource const& rhs) const;
 
     MCAPI ~EduSharedUriResource();
     // NOLINTEND
@@ -55,11 +50,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
     MCFOLD void* $ctor(::EduSharedUriResource const&);
-
-    MCAPI void* $ctor(::CompoundTag const& tag);
     // NOLINTEND
 
 public:

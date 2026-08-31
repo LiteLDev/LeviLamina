@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-namespace SharedTypes::v1_20_80 { struct DistanceEvent; }
 // clang-format on
 
 namespace ParticleSystem {
@@ -16,12 +15,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float>                          mDistanceInterval;
     ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>> mEventName;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void upgradeToSharedTypes(::SharedTypes::v1_20_80::DistanceEvent& data);
     // NOLINTEND
 };
 

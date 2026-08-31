@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorJigsawStructureLoader() /*override*/ = default;
+    virtual ~EditorJigsawStructureLoader() /*override*/;
     // NOLINTEND
 
 public:
@@ -49,8 +49,8 @@ public:
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

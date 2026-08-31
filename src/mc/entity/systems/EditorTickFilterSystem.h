@@ -18,9 +18,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _addPauseTickNeeded(
-        ::StrictEntityContext&      entity,
-        ::ActorTickNeededComponent& modifier,
-        ::EntityModifier<::EditorActorPauseTickNeededComponent>&
+        ::StrictEntityContext& entity,
+        ::ActorTickNeededComponent&,
+        ::EntityModifier<::EditorActorPauseTickNeededComponent>& modifier
     );
 
     MCAPI static ::TickingSystemWithInfo createAddPauseTickNeeded();

@@ -25,9 +25,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeferredCommand() /*override*/ = default;
+    virtual ~DeferredCommand() /*override*/;
 
     virtual void execute(::MinecraftCommands& commands) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -36,11 +42,5 @@ public:
     MCAPI void $execute(::MinecraftCommands& commands);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

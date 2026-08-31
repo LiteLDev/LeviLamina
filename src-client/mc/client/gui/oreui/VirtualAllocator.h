@@ -11,7 +11,7 @@ class VirtualAllocator : public ::cohtml::IVirtualAllocator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VirtualAllocator() /*override*/ = default;
+    virtual ~VirtualAllocator() /*override*/;
 
     virtual uint64 GetAllocationPageSize() const /*override*/;
 
@@ -25,15 +25,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI VirtualAllocator();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -48,12 +42,6 @@ public:
     MCFOLD bool $Free(void*, uint64, int);
 
     MCFOLD bool $PartialFree(void*, uint64, uint64, int);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

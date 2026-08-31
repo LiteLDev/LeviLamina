@@ -35,18 +35,6 @@ public:
         ::ll::TypedStorage<8, 16, ::ExpressionNode>            mHeightMax;
         ::ll::TypedStorage<8, 56, ::SurfaceMaterialAttributes> mAdjustedMaterials;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~Element();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -70,13 +58,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static void
+    MCAPI static void
     parseExpressionNodeFloat(::ExpressionOp op, ::std::string const& data, ::ExpressionNode& node, float defaultValue);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

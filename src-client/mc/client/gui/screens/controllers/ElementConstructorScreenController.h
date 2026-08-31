@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ElementConstructorScreenController() /*override*/ = default;
+    virtual ~ElementConstructorScreenController() /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
 
@@ -62,17 +62,11 @@ public:
         ::ActorUniqueID                                uniqueId
     );
 
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
     MCAPI void
     _registerParticleBindings(::ElementConstructorScreenController::ParticleType type, ::std::string const& name);
 
     MCAPI void
     _registerParticleEventHandlers(::ElementConstructorScreenController::ParticleType type, ::std::string const& name);
-
-    MCAPI void _registerStateMachine();
     // NOLINTEND
 
 public:
@@ -87,9 +81,15 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $_isStillValid() const;
+    MCAPI bool $_isStillValid() const;
 
     MCAPI void $_registerCoalesceOrder();
 
@@ -98,13 +98,5 @@ public:
     MCAPI ::std::string $_getButtonADescription();
 
     MCAPI ::std::string $_getButtonXDescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

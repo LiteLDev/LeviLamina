@@ -11,6 +11,7 @@
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/VehicleUtils.h"
+#include "mc/world/actor/provider/SynchedActorDataAccess.h"
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/phys/AABB.h"
@@ -18,6 +19,7 @@
 #include "mc/world/phys/HitResultType.h"
 #include <limits>
 #include <vector>
+
 
 namespace HitDetection {
 
@@ -35,8 +37,7 @@ bool isValidHitDefault(Actor& actor, Actor* /*source*/, Actor* owner) {
     //     return false;
     // }
     if (owner)
-        if (auto actorDataFlag = actor.getEntityContext().tryGetComponent<ActorDataFlagComponent>();
-            !actorDataFlag || !actorDataFlag->getStatusFlag(ActorFlags::PassengerCanPick)) {
+        if (!SynchedActorDataAccess::getActorFlag(actor.getEntityContext(), ActorFlags::PassengerCanPick)) {
             if (VehicleUtils::isPassengerOfActor(*owner, actor.getOrCreateUniqueID())) {
                 return false;
             }
@@ -222,7 +223,7 @@ HitResult getClosestHitResult(
     size_t closestIndex      = 0;
 
     for (size_t i = 0; i < hitResults.size(); ++i) {
-        const auto& hit = hitResults[i];
+        auto const& hit = hitResults[i];
 
         float distanceSq = (float)from.distanceToSqr(hit.mPos);
 

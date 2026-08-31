@@ -15,34 +15,38 @@ class CartographyAdditionalContainerValidation : public ::ContainerValidationBas
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CartographyAdditionalContainerValidation() /*override*/ = default;
+    virtual ~CartographyAdditionalContainerValidation() /*override*/;
 
-    virtual bool
-    isItemAllowedInSlot(::ContainerScreenContext const& item, int const, ::ItemStackBase const&, int const, bool) const
-        /*override*/;
+    virtual bool isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
+        bool
+    ) const /*override*/;
 
-    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
+    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isItemAllowedInSlot(
-        ::ContainerScreenContext const& item,
-        int const,
-        ::ItemStackBase const&,
-        int const,
+    MCAPI bool $isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
         bool
     ) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const&) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

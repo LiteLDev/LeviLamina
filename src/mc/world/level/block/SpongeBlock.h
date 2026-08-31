@@ -9,17 +9,12 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Material;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class SpongeBlock : public ::BlockType {
-public:
-    // prevent constructor by default
-    SpongeBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,8 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpongeBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI void _attemptAbsorbWater(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool _performAbsorbWater(::BlockSource& region, ::BlockPos const& startPos) const;
@@ -45,12 +38,6 @@ public:
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

@@ -28,7 +28,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~GameArgumentCommandOrigin() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~GameArgumentCommandOrigin() /*override*/;
+#endif
 
     virtual ::std::string const& getRequestId() const /*override*/;
 
@@ -62,18 +66,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI GameArgumentCommandOrigin();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
 #endif
     // NOLINTEND
 

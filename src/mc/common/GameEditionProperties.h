@@ -21,13 +21,7 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI explicit GameEditionProperties(::std::string_view edition);
 
-    MCNAPI bool isConsoleEdition() const;
-
-    MCNAPI bool isIosEducationEdition() const;
-
     MCNAPI bool isPocketEdition() const;
-
-    MCNAPI ~GameEditionProperties();
 #endif
     // NOLINTEND
 
@@ -36,14 +30,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::string_view edition);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

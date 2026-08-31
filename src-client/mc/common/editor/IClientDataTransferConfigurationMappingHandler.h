@@ -20,7 +20,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IClientDataTransferConfigurationMappingHandler() = default;
+    virtual ~IClientDataTransferConfigurationMappingHandler();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

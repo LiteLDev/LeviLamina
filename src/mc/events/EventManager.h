@@ -2,12 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
 // auto generated forward declare list
 // clang-format off
-class AppPlatform;
+namespace Json { class Value; }
 namespace Social::Events { class Event; }
 namespace Social::Events { class IEventListener; }
 namespace Social::Events { class Property; }
@@ -32,9 +29,12 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk27720e;
     ::ll::UntypedStorage<8, 8>  mUnke742b0;
     ::ll::UntypedStorage<8, 8>  mUnkb0340f;
+    ::ll::UntypedStorage<8, 8>  mUnkb904e5;
     ::ll::UntypedStorage<8, 8>  mUnk7e8048;
+    ::ll::UntypedStorage<8, 64> mUnke7aafa;
+    ::ll::UntypedStorage<8, 8>  mUnk646108;
     ::ll::UntypedStorage<8, 8>  mUnk4a6715;
-    ::ll::UntypedStorage<4, 4>  mUnk4f8cc4;
+    ::ll::UntypedStorage<4, 4>  mUnk3ce00c;
     ::ll::UntypedStorage<1, 1>  mUnk6fc9f0;
     ::ll::UntypedStorage<1, 1>  mUnk60b46f;
     ::ll::UntypedStorage<8, 8>  mUnk7ec861;
@@ -54,6 +54,8 @@ public:
 
 #ifdef LL_PLAT_C
     MCNAPI void SendDelayedEventActions(uint primaryUserId);
+
+    MCNAPI void SendDelayedTelemetryEvents(uint primaryUserId);
 #endif
 
     MCNAPI void UpdateDnAPlatString();
@@ -74,39 +76,15 @@ public:
 
     MCNAPI ::Social::Events::Property getGlobalProperty(::std::string const& name) const;
 
-#ifdef LL_PLAT_C
-    MCNAPI uint getNextSequenceNumber();
-#endif
-
     MCNAPI ::Social::Events::Property getPlayerCommonProperty(uint userId, ::std::string const& name) const;
 
     MCNAPI ::Social::Events::Property getPlayerGlobalProperty(uint userId, ::std::string const& name) const;
 
-#ifdef LL_PLAT_C
-    MCNAPI bool isEventRecordingEnabled() const;
-#endif
-
-    MCNAPI void recordDelayedEventAction(::std::string const& action);
-
     MCNAPI void recordEvent(::Social::Events::Event& event);
-
-#ifdef LL_PLAT_C
-    MCNAPI void removeCommonProperty(::std::string const& name);
-#endif
 
     MCNAPI void removePlayerCommonProperty(uint userId, ::std::string const& name);
 
-    MCNAPI void setupCommonProperties();
-
     MCNAPI ~EventManager();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static ::std::string getPlatformCategory(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
-#endif
     // NOLINTEND
 
 public:

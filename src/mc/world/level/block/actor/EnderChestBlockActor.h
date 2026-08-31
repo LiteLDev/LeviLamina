@@ -16,7 +16,7 @@ class EnderChestBlockActor : public ::ChestBlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EnderChestBlockActor() /*override*/ = default;
+    virtual ~EnderChestBlockActor() /*override*/;
 
     virtual void openBy(::Player& p) /*override*/;
 
@@ -29,6 +29,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::EnderChestBlockActor> createEnderChestBlockEntity(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -46,8 +52,14 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForFillingContainer();
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
 
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

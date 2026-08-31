@@ -7,9 +7,7 @@
 #include "mc/client/gui/SceneType.h"
 #include "mc/client/gui/oreui/SceneState.h"
 #include "mc/client/gui/oreui/interface/IScene.h"
-#include "mc/client/gui/oreui/interface/RouteMode.h"
 #include "mc/client/gui/oreui/interface/ViewId.h"
-#include "mc/client/gui/oreui/routing/RouterAction.h"
 #include "mc/client/gui/screens/AbstractScene.h"
 #include "mc/client/renderer/screen/EyeRenderingModeBit.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -38,7 +36,6 @@ struct TouchPadTouchEventData;
 namespace OreUI { class IView; }
 namespace OreUI { class IViewProvider; }
 namespace OreUI { class RouteModeInputHandler; }
-namespace OreUI { class Router; }
 namespace OreUI { class RouterLocation; }
 namespace OreUI::Debug { class ISceneDataProvider; }
 // clang-format on
@@ -56,22 +53,19 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                                 mCurrentRoute;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::RouteModeInputHandler>> mRouteModeInputHandler;
     ::ll::TypedStorage<1, 1, ::OreUI::SceneState>                                            mState;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                        mOnRouteChangedSubscription;
-    ::ll::TypedStorage<4, 8, ::glm::vec2>                                             mGamepadCursorPosition;
-    ::ll::TypedStorage<2, 2, short>                                                   mCurrentPointerPositionX;
-    ::ll::TypedStorage<2, 2, short>                                                   mCurrentPointerPositionY;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AbstractScreenSetupCleanupStrategy>> mScreenSetupCleanup;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AbstractSceneProxy>>                mProxy;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnRouteChangedSubscription;
+    ::ll::TypedStorage<4, 8, ::glm::vec2>                      mGamepadCursorPosition;
+    ::ll::TypedStorage<2, 2, short>                            mCurrentPointerPositionX;
+    ::ll::TypedStorage<2, 2, short>                            mCurrentPointerPositionY;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::AbstractScreenSetupCleanupStrategy>>>
+                                                                       mScreenSetupCleanup;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AbstractSceneProxy>> mProxy;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Scene();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Scene() /*override*/;
+    virtual ~Scene() /*override*/ = default;
 
     virtual void onCreation() /*override*/;
 
@@ -262,48 +256,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Scene(
-        ::OreUI::ViewId                                               viewId,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IViewProvider>         viewProvider,
-        ::OreUI::Router&                                              router,
-        ::OreUI::RouteMode                                            routeMode,
-        ::std::function<void()>                                       onLoadFailedCallback,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::RouteModeInputHandler> routeModeInputHandler
-    );
-
-    MCAPI bool _isSameScene(::std::optional<::OreUI::RouterLocation> const& currentLocation) const;
-
     MCAPI void _updateRouteAndRouteMode(
         ::std::optional<::OreUI::RouterLocation> const& previousLocation,
         ::std::optional<::OreUI::RouterLocation> const& currentLocation
     );
-
-    MCAPI void onRouteChanged(
-        ::std::optional<::OreUI::RouterLocation> const& previousLocation,
-        ::std::optional<::OreUI::RouterLocation> const& currentLocation,
-        ::OreUI::RouterAction
-    );
-
-    MCAPI void setScreenSetupCleanup(::std::unique_ptr<::AbstractScreenSetupCleanupStrategy> strategy);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::OreUI::ViewId                                               viewId,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IViewProvider>         viewProvider,
-        ::OreUI::Router&                                              router,
-        ::OreUI::RouteMode                                            routeMode,
-        ::std::function<void()>                                       onLoadFailedCallback,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::RouteModeInputHandler> routeModeInputHandler
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -381,17 +337,17 @@ public:
 
     MCFOLD bool $useCustomPocketToast() const;
 
-    MCFOLD bool $isModal() const;
+    MCAPI bool $isModal() const;
 
-    MCFOLD bool $isEditorMode() const;
+    MCAPI bool $isEditorMode() const;
 
     MCAPI bool $isShowingMenu() const;
 
     MCAPI bool $shouldStealMouse() const;
 
-    MCFOLD bool $screenIsNotFlushable() const;
+    MCAPI bool $screenIsNotFlushable() const;
 
-    MCFOLD bool $alwaysAcceptsInput() const;
+    MCAPI bool $alwaysAcceptsInput() const;
 
     MCFOLD bool $screenDrawsLast() const;
 
@@ -413,7 +369,7 @@ public:
 
     MCAPI ::EyeRenderingModeBit $getEyeRenderingMode() const;
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCAPI ::ui::SceneType $getSceneType() const;
 
     MCAPI ::std::string $getScreenName() const;
 
@@ -492,14 +448,6 @@ public:
     MCAPI void $onReusedViewReleased();
 
     MCAPI bool $isInputEnabled() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForAbstractScene();
-
-    MCNAPI static void** $vftableForIScene();
     // NOLINTEND
 };
 

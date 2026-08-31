@@ -3,15 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/certificates/identity/ActiveDirectoryAction.h"
 #include "mc/certificates/identity/ActiveDirectoryExperience.h"
 #include "mc/certificates/identity/edu/Role.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
-class ADPopupButtonAction;
-class ADPopupTelemetryEvent;
 class ActiveDirectoryIdentity;
 // clang-format on
 
@@ -56,37 +53,9 @@ public:
 
     MCNAPI ActiveDirectoryPopup(::ActiveDirectoryPopup const&);
 
-    MCNAPI ::std::string const& getDemoLinkText() const;
-
-    MCNAPI ::ActiveDirectoryExperience getExperienceType() const;
-
-    MCNAPI ::ADPopupButtonAction const& getFirstLowerButton() const;
-
-    MCNAPI ::std::string const& getHyperlinkIntroText() const;
-
-    MCNAPI ::std::string const& getHyperlinkLabelText() const;
-
-    MCNAPI ::std::string const& getHyperlinkUri() const;
-
-    MCNAPI ::std::string const& getLearnMoreText() const;
-
-    MCNAPI ::std::string const& getLearnMoreUri() const;
-
-    MCNAPI ::std::string const& getPopupId() const;
-
-    MCNAPI ::std::string const& getPopupText() const;
-
-    MCNAPI ::std::string const& getPopupTitle() const;
-
-    MCNAPI ::std::optional<::ADPopupButtonAction> const& getSecondLowerButton() const;
-
     MCNAPI ::std::string getTTSMessageBody() const;
 
-    MCNAPI ::ADPopupTelemetryEvent const& getTelemetryEvent() const;
-
     MCNAPI ::ActiveDirectoryPopup& operator=(::ActiveDirectoryPopup const&);
-
-    MCNAPI ::ActiveDirectoryAction postAction() const;
 
     MCNAPI ~ActiveDirectoryPopup();
 #endif
@@ -101,7 +70,7 @@ public:
         ::ActiveDirectoryExperience                                    experience);
 
     MCNAPI static ::ActiveDirectoryPopup
-    get(::edu::Role trialsRemaining, int experience, ::ActiveDirectoryExperience email, ::std::string const&);
+    get(::edu::Role, int trialsRemaining, ::ActiveDirectoryExperience experience, ::std::string const& email);
 
     MCNAPI static ::ActiveDirectoryPopup getVerificationInProgressPopup(::std::string const& verificationUri);
 #endif

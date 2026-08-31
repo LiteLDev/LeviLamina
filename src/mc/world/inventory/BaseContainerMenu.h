@@ -54,11 +54,11 @@ public:
 
     virtual void removeSlot(int slot, int count) = 0;
 
-    virtual bool isSlotDirty(int);
+    virtual bool isSlotDirty(int slot);
 
-    virtual bool isResultSlot(int);
+    virtual bool isResultSlot(int slot);
 
-    virtual void containerContentChanged(int) /*override*/;
+    virtual void containerContentChanged(int slot) /*override*/;
 
     virtual void serverInitItemStackIds() = 0;
 
@@ -68,7 +68,7 @@ public:
 
     virtual ::ItemStack const& getSlot(int slot) const = 0;
 
-    virtual void setData(int, int) /*override*/;
+    virtual void setData(int id, int value) /*override*/;
 
     virtual ::ContainerID getContainerId() const /*override*/;
 
@@ -88,20 +88,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BaseContainerMenu(::Player& player, ::SharedTypes::Legacy::ContainerType containerType);
-
-    MCAPI void _markAndSweep();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, ::SharedTypes::Legacy::ContainerType containerType);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -110,19 +96,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isSlotDirty(int);
+    MCFOLD bool $isSlotDirty(int slot);
 
-    MCFOLD bool $isResultSlot(int);
+    MCFOLD bool $isResultSlot(int slot);
 
-    MCFOLD void $containerContentChanged(int);
+    MCFOLD void $containerContentChanged(int slot);
 
-    MCFOLD void $setData(int, int);
+    MCFOLD void $setData(int id, int value);
 
     MCFOLD ::ContainerID $getContainerId() const;
 
     MCAPI void $setContainerId(::ContainerID id);
 
-    MCFOLD ::SharedTypes::Legacy::ContainerType $getContainerType() const;
+    MCAPI ::SharedTypes::Legacy::ContainerType $getContainerType() const;
 
     MCAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
 
@@ -132,13 +118,5 @@ public:
     MCAPI void $broadcastChanges();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftableForContainerContentChangeListener();
-
-    MCAPI static void** $vftableForIContainerManager();
     // NOLINTEND
 };

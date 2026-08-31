@@ -125,12 +125,6 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> const& getRecoveryDestinationPath() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock

@@ -26,6 +26,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void render(::ScreenContext& screenContext) /*override*/;
+
+    virtual ~SerializedActorModel() /*override*/;
     // NOLINTEND
 
 public:
@@ -34,10 +36,6 @@ public:
     MCAPI SerializedActorModel();
 
     MCAPI void load(::GeometryPtr geo, ::gsl::span<::std::string_view const> modelNodeOrder);
-
-    MCAPI void setGuiMaterial();
-
-    MCAPI void setInWorldMaterial();
     // NOLINTEND
 
 public:
@@ -47,14 +45,14 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $render(::ScreenContext& screenContext);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI void $render(::ScreenContext& screenContext);
     // NOLINTEND
 };

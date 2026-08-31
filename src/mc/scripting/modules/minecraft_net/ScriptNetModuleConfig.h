@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,7 +11,6 @@ namespace Json { class Value; }
 namespace ScriptModuleMinecraftNet { class ScriptMalformedUriError; }
 namespace ScriptModuleMinecraftNet { class ScriptTLSOnlyError; }
 namespace ScriptModuleMinecraftNet { class ScriptUriNotAllowedError; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -32,6 +31,7 @@ public:
     ::ll::UntypedStorage<4, 8>  mUnk6d2d69;
     ::ll::UntypedStorage<4, 8>  mUnk68ca5d;
     ::ll::UntypedStorage<2, 4>  mUnke6462e;
+    ::ll::UntypedStorage<4, 8>  mUnk793c6c;
     ::ll::UntypedStorage<8, 72> mUnk369b95;
     // NOLINTEND
 
@@ -63,8 +63,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
     MCNAPI static ::nonstd::expected<::ScriptModuleMinecraftNet::ScriptNetModuleConfig, ::std::string>
     fromJson(::Json::Value data);
     // NOLINTEND

@@ -26,19 +26,11 @@ public:
     MCNAPI VanillaActorEventListenerManager();
 
     MCNAPI void registerWithActorEventCoordinator(::ActorEventCoordinator& actorEventCoordinator);
-
-    MCNAPI ~VanillaActorEventListenerManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -20,10 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CompressedNetworkPeer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~CompressedNetworkPeer() /*override*/;
@@ -40,20 +36,6 @@ public:
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit CompressedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer);
-
-    MCNAPI void setCompressionEnabled(bool val, ::NetworkSettingOptions options);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer);
     // NOLINTEND
 
 public:

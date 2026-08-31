@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/attribute/AttributeBuff.h"
-#include "mc/world/attribute/AttributeBuffType.h"
 #include "mc/world/effect/EffectDuration.h"
 
 // auto generated forward declare list
@@ -23,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TemporalAttributeBuff();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~TemporalAttributeBuff() /*override*/;
@@ -40,27 +35,6 @@ public:
     virtual bool isSerializable() const /*override*/;
 
     virtual void setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TemporalAttributeBuff(
-        float                amount,
-        ::EffectDuration     duration,
-        ::AttributeBuffType  type,
-        bool                 serialize,
-        ::std::string const& name
-    );
-
-    MCFOLD float getBaseAmount() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(float amount, ::EffectDuration duration, ::AttributeBuffType type, bool serialize, ::std::string const& name);
     // NOLINTEND
 
 public:

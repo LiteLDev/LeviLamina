@@ -21,10 +21,4 @@ public:
 
     virtual ::std::string removeRootFromPath(::std::string const& path) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

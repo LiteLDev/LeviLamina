@@ -21,16 +21,4 @@ public:
     ::ll::TypedStorage<4, 4, int const>                                     mRedstonePower;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef const>                        mSource;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PressurePlatePushEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

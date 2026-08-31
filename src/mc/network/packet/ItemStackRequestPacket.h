@@ -25,11 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~ItemStackRequestPacket() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~ItemStackRequestPacket() /*override*/;
-#endif
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
@@ -41,31 +37,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ItemStackRequestPacket();
-
-#ifdef LL_PLAT_C
-    MCAPI explicit ItemStackRequestPacket(::std::unique_ptr<::ItemStackRequestBatch> requestBatch);
-#endif
-
-    MCFOLD ::ItemStackRequestBatch const& getRequestBatch() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::unique_ptr<::ItemStackRequestBatch> requestBatch);
-#endif
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

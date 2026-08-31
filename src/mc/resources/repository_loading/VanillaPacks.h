@@ -17,18 +17,6 @@ public:
     VanillaPacks& operator=(VanillaPacks const&);
     VanillaPacks(VanillaPacks const&);
     VanillaPacks();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~VanillaPacks();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace RepositoryLoading

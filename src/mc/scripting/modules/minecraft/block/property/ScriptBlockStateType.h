@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -49,10 +49,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptBlockStateType(::ScriptModuleMinecraft::ScriptBlockStateType const&);
-
-    MCAPI explicit ScriptBlockStateType(::BlockState const& blockState);
-
-    MCAPI void _fillValidValues();
     // NOLINTEND
 
 public:
@@ -68,8 +64,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockStateType const&);
-
-    MCAPI void* $ctor(::BlockState const& blockState);
     // NOLINTEND
 };
 

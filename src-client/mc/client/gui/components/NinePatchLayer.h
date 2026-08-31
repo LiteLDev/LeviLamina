@@ -55,20 +55,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NinePatchLayer() = default;
+    virtual ~NinePatchLayer();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void draw(::ScreenContext& screenContext, ::Tessellator& tessellator, float x, float y);
-
-    MCAPI void setSize(float w, float h);
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI void $dtor();
     // NOLINTEND
 };

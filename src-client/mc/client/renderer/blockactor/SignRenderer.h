@@ -6,25 +6,19 @@
 #include "mc/client/model/models/SignModel.h"
 #include "mc/client/renderer/actor/ActorTextureInfo.h"
 #include "mc/client/renderer/blockactor/BlockActorRenderer.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 #include "mc/world/level/block/SignBlock.h"
-#include "mc/world/level/block/actor/SignBlockActor.h"
 #include "mc/world/level/block/actor/SignTextSide.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseActorRenderContext;
 class Block;
-class BlockActor;
 class BlockPos;
 class BlockSource;
-class Font;
-class IClientInstance;
+class IVanillaRenderBlockActorComponent;
 class Model;
-class ProfanityContext;
 class ScreenContext;
-class SignBlockActor;
 struct BlockActorRenderData;
 namespace mce { class TextureGroup; }
 namespace mce { struct ClientTexture; }
@@ -66,36 +60,28 @@ public:
     // NOLINTBEGIN
     MCAPI explicit SignRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI ::SignBlockActor::CachedMessageData const& _getCachedSignMessage(
-        ::SignBlockActor&                                        signBlockActor,
-        ::IClientInstance&                                       clientInstance,
-        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context,
-        ::Font&                                                  font,
-        ::SignTextSide                                           side
-    );
-
     MCAPI void _renderSign(
         ::BaseActorRenderContext&                               renderContext,
         ::Block const&                                          block,
-        float                                                   size,
-        int                                                     breakingAmount,
-        float                                                   frameAlpha,
+        float const                                             size,
+        int const                                               breakingAmount,
+        float const                                             frameAlpha,
         ::ScreenContext&                                        screenContext,
         ::BlockSource&                                          renderSource,
-        ::BlockActor&                                           entity,
+        ::IVanillaRenderBlockActorComponent&                    renderComponent,
         ::BlockPos const&                                       worldPos,
         ::mce::MaterialPtr const&                               forcedMat,
-        ::mce::ClientTexture                                    forcedTex,
+        ::mce::ClientTexture const                              forcedTex,
         ::Model&                                                model,
         ::mce::framebuilder::CustomSurfaceShaderMetadata const& cssMetadata
     );
 
     MCAPI void _renderText(
-        ::BaseActorRenderContext& renderContext,
-        ::BlockActor&             te,
-        float                     size,
-        ::BlockSource const&      renderSource,
-        ::SignTextSide            side
+        ::BaseActorRenderContext&            renderContext,
+        ::IVanillaRenderBlockActorComponent& renderComponent,
+        float                                size,
+        ::BlockSource const&                 renderSource,
+        ::SignTextSide                       side
     );
     // NOLINTEND
 
@@ -114,14 +100,8 @@ public:
 
     MCFOLD float $_yTextOffset() const;
 
-    MCFOLD float $_zTextOffset() const;
+    MCAPI float $_zTextOffset() const;
 
     MCFOLD int $_getSignWidth() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/image/ImageFormat.h"
+#include "mc/deps/core/math/AlphaUsage.h"
 #include "mc/external/render_dragon/texture_streaming/texture_cache/TextureCache.h"
 
 // auto generated forward declare list
@@ -43,12 +44,14 @@ public:
     loadImageResourceFromMemory(
         ::ResourceLocation const& resourceLocation,
         ::std::string const&      fileContents,
-        bool                      tryStreamed
+        bool                      tryStreamed,
+        ::mce::AlphaUsage         alphaUsage
     );
 
     MCNAPI ::nonstd::expected<::std::shared_ptr<::cg::ImageResource>, ::std::error_condition> loadImageWithoutExtension(
         ::ResourceLocation const&           resourceLocation,
         bool                                tryStreamed,
+        ::mce::AlphaUsage                   alphaUsage,
         ::std::optional<::mce::ImageFormat> desiredImageFormat,
         bool                                splitAsArray
     );

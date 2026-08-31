@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/DividedPos2d.h"
 #include "mc/world/level/biome/TerrainShaper.h"
 #include "mc/world/level/levelgen/synth/MultiOctaveNoiseImpl.h"
 #include "mc/world/level/levelgen/synth/NormalNoiseImpl.h"
@@ -13,6 +14,7 @@
 class BlockPos;
 class XoroshiroPositionalRandomFactory;
 struct TargetPoint;
+struct TerrainInfo;
 // clang-format on
 
 struct OverworldNoises3d {
@@ -36,31 +38,30 @@ public:
     ::ll::TypedStorage<8, 512, ::TerrainShaper const> mTerrainShaper;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     OverworldNoises3d& operator=(OverworldNoises3d const&);
+    OverworldNoises3d(OverworldNoises3d const&);
     OverworldNoises3d();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI OverworldNoises3d(::OverworldNoises3d&&);
+#endif
 
-    MCAPI OverworldNoises3d(::OverworldNoises3d const&);
+    MCAPI ::ChunkLocalNoiseCache::CacheEntry
+    _computeBaseValueSetForCacheEntry(::DividedPos2d<4> const& worldQuartPos) const;
 
-    MCAPI OverworldNoises3d(
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> temperatureNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> humidityNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> continentalnessNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> erosionNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> weirdnessNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> offsetNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> jaggedNoise
-    );
+    MCAPI ::ChunkLocalNoiseCache::CacheEntry computeNoiseValues(::DividedPos2d<4> const& worldQuartPos) const;
+
+    MCAPI ::TerrainInfo computeOffsetAndFactor(::DividedPos2d<4> const& worldQuartPos) const;
 
     MCAPI ::TargetPoint sample(::BlockPos position) const;
-
-    MCAPI ::TargetPoint sample(int blockY, ::ChunkLocalNoiseCache::CacheEntry const& cachedNoises) const;
 
     MCAPI ~OverworldNoises3d();
     // NOLINTEND
@@ -74,19 +75,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::OverworldNoises3d&&);
-
-    MCFOLD void* $ctor(::OverworldNoises3d const&);
-
-    MCAPI void* $ctor(
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> temperatureNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> humidityNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> continentalnessNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> erosionNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> weirdnessNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> offsetNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> jaggedNoise
-    );
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::OverworldNoises3d&&);
+#endif
     // NOLINTEND
 
 public:

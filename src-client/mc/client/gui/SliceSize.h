@@ -13,22 +13,6 @@ public:
     ::ll::TypedStorage<4, 4, float> right;
     ::ll::TypedStorage<4, 4, float> bottom;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SliceSize();
-
-    MCAPI explicit SliceSize(float s);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
-    MCAPI void* $ctor(float s);
-    // NOLINTEND
 };
 
 } // namespace ui

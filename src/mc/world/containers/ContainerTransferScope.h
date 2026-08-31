@@ -12,14 +12,21 @@ struct ContainerTransferScope {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContainerTransferScope() = default;
-
 #ifdef LL_PLAT_S
-    virtual void createItem(::ItemStack const&, ::std::shared_ptr<::SimpleSparseContainer>);
+    virtual ~ContainerTransferScope() = default;
 #else // LL_PLAT_C
-    virtual void createItem(::ItemStack const& item, ::std::shared_ptr<::SimpleSparseContainer> createdOutputContainer);
+    virtual ~ContainerTransferScope();
 #endif
 
+    virtual void createItem(::ItemStack const& item, ::std::shared_ptr<::SimpleSparseContainer> createdOutputContainer);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
@@ -30,11 +37,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

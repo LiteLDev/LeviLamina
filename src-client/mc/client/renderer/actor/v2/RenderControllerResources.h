@@ -2,40 +2,34 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class DataDrivenGeometry;
+class ExpressionNode;
+struct GeometryData;
+struct MeshResource;
+struct ResourceOffset;
+struct SimpleTextureData;
+struct SkeletonData;
+namespace mce { class MaterialPtr; }
+// clang-format on
+
 struct RenderControllerResources {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf342e5;
-    ::ll::UntypedStorage<8, 24> mUnk6686e7;
-    ::ll::UntypedStorage<8, 24> mUnk20dc79;
-    ::ll::UntypedStorage<8, 24> mUnkbb682b;
-    ::ll::UntypedStorage<8, 24> mUnkbf508d;
-    ::ll::UntypedStorage<8, 24> mUnkbde109;
-    ::ll::UntypedStorage<8, 24> mUnkac58ea;
-    ::ll::UntypedStorage<8, 24> mUnkb56c92;
-    ::ll::UntypedStorage<8, 24> mUnkd1b748;
-    ::ll::UntypedStorage<8, 24> mUnke6219a;
-    ::ll::UntypedStorage<8, 24> mUnk74b60b;
-    ::ll::UntypedStorage<8, 24> mUnkeed25f;
-    ::ll::UntypedStorage<8, 24> mUnkc5a813;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RenderControllerResources& operator=(RenderControllerResources const&);
-    RenderControllerResources(RenderControllerResources const&);
-    RenderControllerResources();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~RenderControllerResources();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    ::ll::TypedStorage<8, 24, ::std::vector<::SkeletonData>>                        mSkeletonResources;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::weak_ptr<::DataDrivenGeometry>>> mAssociatedGeometry;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::MeshResource>>>     mMeshResources;
+    ::ll::TypedStorage<8, 24, ::std::vector<::GeometryData>>                        mGeometryData;
+    ::ll::TypedStorage<8, 24, ::std::vector<::mce::MaterialPtr>>                    mBakedMaterials;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SimpleTextureData>>                   mBakedTextures;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>>                      mDynamicResourceExpressions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ResourceOffset>>                      mExtendedResources;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>>                      mPartVisibilityExpressions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>>                      mRenderControllerExpressions;
+    ::ll::TypedStorage<8, 24, ::std::vector<float>>                                 mRenderControllerConstants;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>>                      mLightMultiplierExpressions;
+    ::ll::TypedStorage<8, 24, ::std::vector<float>>                                 mLightMultiplierConstants;
     // NOLINTEND
 };

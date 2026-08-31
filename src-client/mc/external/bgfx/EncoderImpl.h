@@ -59,8 +59,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EncoderImpl();
-
     MCAPI void discard();
 
     MCAPI void dispatch(ushort _id, ::bgfx::ProgramHandle _handle, uint _numX, uint _numY, uint _numZ, uchar _flags);
@@ -119,20 +117,6 @@ public:
         int                          _depth,
         bool                         _preserveState
     );
-
-    MCAPI ~EncoderImpl();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

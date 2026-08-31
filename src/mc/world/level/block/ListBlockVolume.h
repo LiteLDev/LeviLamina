@@ -12,7 +12,6 @@
 class BaseBlockLocationIterator;
 class BoundingBox;
 class ChunkPos;
-class ListBlockVolumeIterator;
 class Vec3;
 // clang-format on
 
@@ -63,19 +62,9 @@ public:
 
     MCAPI explicit ListBlockVolume(::std::vector<::Vec3> const& blockPositions);
 
-    MCAPI ListBlockVolume(::ListBlockVolume const& rhs);
-
-    MCAPI ::ListBlockVolumeIterator begin() const;
-
     MCAPI void erase(::std::vector<::Vec3> const& blockPositions);
 
-#ifdef LL_PLAT_S
-    MCFOLD uint64 getChangeCount() const;
-#endif
-
     MCAPI void insert(::std::vector<::Vec3> const& blockPositions);
-
-    MCAPI ::ListBlockVolume& operator=(::ListBlockVolume const& rhs);
     // NOLINTEND
 
 public:
@@ -84,8 +73,6 @@ public:
     MCAPI void* $ctor(::std::vector<::BlockPos> const& blockPositions);
 
     MCAPI void* $ctor(::std::vector<::Vec3> const& blockPositions);
-
-    MCAPI void* $ctor(::ListBlockVolume const& rhs);
     // NOLINTEND
 
 public:
@@ -99,9 +86,17 @@ public:
 
     MCAPI ::glm::ivec3 $getSpan() const;
 
+#ifdef LL_PLAT_S
+    MCAPI int $getCapacity() const;
+#else // LL_PLAT_C
     MCFOLD int $getCapacity() const;
+#endif
 
+#ifdef LL_PLAT_S
     MCAPI bool $isInside(::BlockPos const& pos) const;
+#else // LL_PLAT_C
+    MCFOLD bool $isInside(::BlockPos const& pos) const;
+#endif
 
     MCAPI void $translate(::BlockPos const& delta);
 

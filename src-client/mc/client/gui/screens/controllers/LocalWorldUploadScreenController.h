@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalWorldUploadScreenController() /*override*/ = default;
+    virtual ~LocalWorldUploadScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -50,11 +50,7 @@ public:
         ::std::function<void(::UploadState, ::Realms::World)> callbackAfterUpload
     );
 
-    MCAPI void _displayLockedWorldPopup(int worldIndex);
-
-    MCAPI void _displayWorldIsTooBigPopup(int);
-
-    MCAPI void _upload(int worldIndex);
+    MCAPI void _upload(int const worldIndex);
     // NOLINTEND
 
 public:
@@ -70,6 +66,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onOpen();
@@ -77,13 +79,5 @@ public:
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCAPI void $_registerEventHandlers();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

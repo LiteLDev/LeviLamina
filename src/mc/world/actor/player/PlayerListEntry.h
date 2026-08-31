@@ -49,21 +49,17 @@ public:
 
     MCAPI explicit PlayerListEntry(::mce::UUID uuid);
 
-    MCAPI ::PlayerListEntry clone() const;
-
 #ifdef LL_PLAT_C
     MCAPI ::PlayerListEntry cloneExceptSkin() const;
-#endif
 
     MCAPI ::PlayerListEntry& operator=(::PlayerListEntry&&);
+#endif
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
     MCAPI ::Bedrock::Result<void> readRemove(::ReadOnlyBinaryStream& stream);
 
     MCAPI void write(::BinaryStream& stream) const;
-
-    MCAPI void writeRemove(::BinaryStream& stream) const;
 
     MCAPI ~PlayerListEntry();
     // NOLINTEND

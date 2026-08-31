@@ -36,8 +36,6 @@ public:
     // NOLINTBEGIN
     MCAPI EndPortalShape(::BlockSource& region, ::BlockPos pos);
 
-    MCAPI int getDistanceUntilEdge(::BlockPos const& pos, int direction, int facing);
-
     MCAPI bool isValid(::BlockSource& region);
     // NOLINTEND
 

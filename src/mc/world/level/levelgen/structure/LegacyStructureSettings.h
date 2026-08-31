@@ -14,7 +14,6 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPalette;
 class StructurePoolBlockRule;
 class StructurePoolBlockTagRule;
 // clang-format on
@@ -62,12 +61,11 @@ public:
 public:
     // prevent constructor by default
     LegacyStructureSettings(LegacyStructureSettings const&);
+    LegacyStructureSettings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyStructureSettings();
-
     MCAPI LegacyStructureSettings(
         ::Mirror             mirror,
         ::Rotation           rotation,
@@ -75,56 +73,14 @@ public:
         ::BoundingBox const& boundingBox
     );
 
-    MCAPI void addSwapAuxValue(int oldvariation, int variation);
-
-    MCAPI ::BoundingBox const& getBoundingBox();
-
-    MCFOLD ::Mirror const& getMirror() const;
-
-    MCFOLD ::BlockPos const& getRefPos() const;
-
-    MCFOLD ::Rotation const& getRotation() const;
-
-    MCAPI ::Block const& getSwappedBlock(::BlockPalette const& palette, ::Block const& oldBlock) const;
-
     MCAPI ::LegacyStructureSettings& operator=(::LegacyStructureSettings const& rhs);
-
-    MCFOLD void placeWaterBelowSeaLevel(bool water);
-
-    MCFOLD void setBlockRules(::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const* blockRules);
-
-    MCAPI void setBlockTagRules(::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* blockTagRules);
-
-    MCAPI void setBoundingBox(::BoundingBox const& boundingBox);
-
-    MCFOLD void setIgnoreBlock(::Block const* ignoreBlock);
-
-    MCAPI void setIntegrity(float integrity);
-
-    MCFOLD void setMirror(::Mirror mirror);
-
-    MCFOLD void setProjection(::Projection projection);
-
-    MCAPI void setRefPos(::BlockPos const& refPos);
-
-    MCAPI void setRotation(::Rotation rotation);
-
-    MCFOLD void setSeed(uint seed);
 
     MCAPI ~LegacyStructureSettings();
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& INTEGRITY_MAX();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void*
     $ctor(::Mirror mirror, ::Rotation rotation, ::Block const* ignoreBlock, ::BoundingBox const& boundingBox);
     // NOLINTEND

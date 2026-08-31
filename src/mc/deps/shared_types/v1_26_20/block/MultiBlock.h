@@ -6,11 +6,6 @@
 #include "mc/deps/core/container/EnumSet.h"
 #include "mc/deps/shared_types/legacy/Facing.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct MultiBlock {
@@ -31,19 +26,11 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& DIRECTION_ID();
 
     MCAPI static ::std::string_view const& ENABLED_STATES_ID();
-
-    MCAPI static ::std::string_view const& MULTI_BLOCK_PARTS_ID();
 
     MCAPI static ::std::string_view const& PART_COUNT_ID();
     // NOLINTEND

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/FacetPlayerAchievementData.h"
 #include "mc/client/social/manual_achievement_tracking/TrackedSetting.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -21,7 +21,7 @@ namespace persona { class AchievementOfferCollectionManager; }
 
 namespace OreUI {
 
-class AchievementsFacet : public ::OreUI::FacetBase<::OreUI::AchievementsFacet> {
+class AchievementsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::AchievementsFacet> {
 public:
     // AchievementsFacet inner types define
     enum class AchievementFacetStatus : uchar {
@@ -77,13 +77,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
     );
 
-    MCAPI void _addAchievementUpdateCallback(::std::function<void()> callback);
-
-    MCAPI void _getAchievementData();
-
     MCAPI void _refreshPersona(::OreUI::FacetAchievementData& facetAchievement) const;
-
-    MCAPI void _removeAchievementUpdateCallback();
 
     MCFOLD ::OreUI::FacetPlayerAchievementData const& getFacetPlayerAchievementData() const;
 
@@ -119,12 +113,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

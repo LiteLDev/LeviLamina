@@ -9,7 +9,6 @@
 // clang-format off
 class IClientInstance;
 class MinecraftUIRenderContext;
-class ScreenContext;
 class UIControl;
 class UICustomRenderer;
 // clang-format on
@@ -18,7 +17,7 @@ class HotBarCooldownRenderer : public ::HotBarWipeRenderer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HotBarCooldownRenderer() /*override*/ = default;
+    virtual ~HotBarCooldownRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -27,17 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI HotBarCooldownRenderer();
-
-    MCAPI void _renderCooldownProgress(::ScreenContext& screenContext, ::IClientInstance& client, ::UIControl& owner);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

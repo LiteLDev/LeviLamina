@@ -62,65 +62,25 @@ public:
         bool                    mustSee,
         ::MobDescriptor const** outDescriptorMatch
     );
+
+    virtual ~TargetGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TargetGoal(
-        ::Mob& pathMob,
-        bool   mustSee,
-        int    mustSeeForgetTicks,
-        bool   mustReach,
-        float  withinDefault,
-        bool   attackOwner,
-        int    persistTargetTicks
-    );
-
-    MCAPI TargetGoal(
-        ::Mob&                                pathMob,
-        ::std::vector<::MobDescriptor> const& targetTypes,
-        bool                                  mustSee,
-        int                                   mustSeeForgetTicks,
-        bool                                  mustReach,
-        float                                 withinDefault,
-        bool                                  attackOwner,
-        int                                   persistTargetTicks
-    );
-
     MCAPI bool _canAttack(::Actor* target, bool allowInvulnerable, ::MobDescriptor const** outDescriptorMatch);
 
     MCAPI bool _canReach(::Actor& target);
-
-    MCAPI bool _canReachAfterDelay(::Actor& target);
 
     MCAPI bool
     _matchesTargetTypes(::Mob* testMob, ::Actor* target, bool mustSee, ::MobDescriptor const** outDescriptorMatch);
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob& pathMob,
-        bool   mustSee,
-        int    mustSeeForgetTicks,
-        bool   mustReach,
-        float  withinDefault,
-        bool   attackOwner,
-        int    persistTargetTicks
-    );
-
-    MCAPI void* $ctor(
-        ::Mob&                                pathMob,
-        ::std::vector<::MobDescriptor> const& targetTypes,
-        bool                                  mustSee,
-        int                                   mustSeeForgetTicks,
-        bool                                  mustReach,
-        float                                 withinDefault,
-        bool                                  attackOwner,
-        int                                   persistTargetTicks
-    );
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

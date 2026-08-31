@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/controls/renderers/UIThumbnailAtlasRenderer.h"
 #include "mc/client/gui/oreui/interface/IResourceHandler.h"
 #include "mc/client/gui/oreui/interface/ResourceHandlerStatus.h"
 #include "mc/client/gui/oreui/resources/AtlasIndex.h"
@@ -18,7 +17,6 @@ class IClientInstance;
 namespace Gameface { class ResourceResponse; }
 namespace Gameface { class ResourceStreamResponse; }
 namespace Gameface { class TemporaryTextureHolder; }
-namespace Gameface { class UserImageData; }
 namespace Gameface { struct ResourceRequest; }
 namespace OreUI { class UIBlockThumbnailAtlasManager; }
 // clang-format on
@@ -54,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockResourceHandler() /*override*/ = default;
+    virtual ~BlockResourceHandler() /*override*/;
 
     virtual void update() /*override*/;
 
@@ -70,28 +68,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit BlockResourceHandler(::Gameface::TemporaryTextureHolder& temporaryTextureHolder);
-
-    MCAPI void _buildUserImageData(
-        ::Gameface::UserImageData&                   userImageData,
-        ::UIThumbnailAtlasRenderer::AtlasInfo const& atlasInfo,
-        ::OreUI::AtlasIndex::ItemEntry&              entry
-    );
-
-    MCAPI ::Gameface::UserImageData _generateUserImage(::Gameface::ResourceRequest const& request);
-
-    MCAPI void
-    _handleImageRequestAsync(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
-
-    MCAPI void _rejectResourceRequests();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Gameface::TemporaryTextureHolder& temporaryTextureHolder);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

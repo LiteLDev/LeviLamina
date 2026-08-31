@@ -29,22 +29,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool test(::BlockPos worldPos, ::BlockPos worldReference, ::BlockPos random, ::IRandom&) const /*override*/;
+    virtual bool test(::BlockPos, ::BlockPos worldPos, ::BlockPos worldReference, ::IRandom& random) const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::optional<::br::worldgen::processors::PosRules::AxisAlignedLinear>
-    tryFrom(float minChance, float maxChance, int minDist, int maxDist, ::Facing::Axis axis);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $test(::BlockPos worldPos, ::BlockPos worldReference, ::BlockPos random, ::IRandom&) const;
+    MCAPI bool $test(::BlockPos, ::BlockPos worldPos, ::BlockPos worldReference, ::IRandom& random) const;
 
     MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 

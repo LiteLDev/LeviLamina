@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/actor/DefintionDescription.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 struct IsSummonableDescription : public ::DefintionDescription {
 public:
     // member variables
@@ -20,16 +25,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void parse(::Json::Value const& root);
+#endif
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI char const* $getJsonName() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

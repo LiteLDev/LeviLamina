@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class Path; }
 namespace Social::Events { class Event; }
 // clang-format on
 
@@ -34,14 +33,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit DBStorageFolderWatcher(::Core::Path const& folderToWatch);
-
-    MCNAPI void captureWorldExitSnapshot();
-
-    MCNAPI void captureWorldStartSnapshot();
-
-    MCNAPI void pushSnapshot();
-
 #ifdef LL_PLAT_C
     MCNAPI void toTelemetryEvent(
         ::Social::Events::Event&               event,
@@ -51,12 +42,6 @@ public:
 #endif
 
     MCNAPI ~DBStorageFolderWatcher();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::Path const& folderToWatch);
     // NOLINTEND
 
 public:

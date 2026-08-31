@@ -9,6 +9,7 @@
 // clang-format off
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Bedrock::Resources::Archive { class Reader; }
+namespace Bedrock::Resources::Archive { class TOCReader; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -36,18 +37,6 @@ public:
         PreloadedContentMaps& operator=(PreloadedContentMaps const&);
         PreloadedContentMaps(PreloadedContentMaps const&);
         PreloadedContentMaps();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PreloadedContentMaps();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct SharedOnlyConstructionTag {};
@@ -56,6 +45,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 136> mUnk3091c8;
+    ::ll::UntypedStorage<8, 16>  mUnk407c1f;
+    ::ll::UntypedStorage<8, 72>  mUnkba8bc7;
     // NOLINTEND
 
 public:
@@ -67,6 +58,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit PreloadCache(::Bedrock::Resources::PreloadCache::SharedOnlyConstructionTag);
+
+    MCNAPI ::std::shared_ptr<::Bedrock::Resources::Archive::TOCReader>
+    _cacheTOCReader(::Core::Path const& archivePath) const;
+
     MCNAPI ::Bedrock::Resources::PreloadedPathHandle _findPreloadedPath(
         ::Bedrock::Resources::PreloadCache::PreloadedContentMaps const& contentMaps,
         ::Core::Path const&                                             cleanPath
@@ -78,14 +74,18 @@ public:
         ::std::string*                                                  assetData
     ) const;
 
+    MCNAPI bool _isNegativelyCached(::Core::Path const& archivePath) const;
+
     MCNAPI ::Bedrock::Resources::PreloadedPathHandle
     addPreloadedPath(::Core::Path const& path, ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> archiveReader);
 
     MCNAPI ::Bedrock::Resources::PreloadedPathHandle findPreloadedPath(::Core::Path const& path) const;
 
-    MCNAPI ::Bedrock::Resources::PreloadState getAsset(::Core::Path const& path, ::std::string& contents) const;
+    MCNAPI ::Bedrock::Resources::PreloadState
+    getAsset(::Core::Path const& path, ::Core::Path const& archivePath, ::std::string& contents) const;
 
-    MCNAPI ::Bedrock::Resources::PreloadState hasAsset(::Core::Path const& path) const;
+    MCNAPI ::Bedrock::Resources::PreloadState
+    hasAssetFallback(::Core::Path const& path, ::Core::Path const& archivePath) const;
     // NOLINTEND
 
 public:
@@ -96,8 +96,12 @@ public:
         ::Core::Path const&                                 path,
         ::Bedrock::Resources::Archive::Reader*              reader
     );
+    // NOLINTEND
 
-    MCNAPI static ::std::shared_ptr<::Bedrock::Resources::PreloadCache> create();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Bedrock::Resources::PreloadCache::SharedOnlyConstructionTag);
     // NOLINTEND
 };
 

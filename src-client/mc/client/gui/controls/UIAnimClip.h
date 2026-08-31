@@ -37,10 +37,4 @@ public:
 
     MCAPI void $_reset(::UIControl& ownerControl);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

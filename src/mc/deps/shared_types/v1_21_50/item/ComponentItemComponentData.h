@@ -122,8 +122,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemComponentData(::SharedTypes::v1_21_50::ComponentItemComponentData&&);
-
     MCAPI ComponentItemComponentData(::SharedTypes::v1_21_50::ComponentItemComponentData const&);
 
     MCAPI ::SharedTypes::v1_21_50::ComponentItemComponentData&
@@ -146,8 +144,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_50::ComponentItemComponentData&&);
-
     MCAPI void* $ctor(::SharedTypes::v1_21_50::ComponentItemComponentData const&);
     // NOLINTEND
 

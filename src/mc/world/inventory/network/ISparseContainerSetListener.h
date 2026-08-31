@@ -18,10 +18,4 @@ public:
 
     virtual bool postSetItem(::Container* container, ::ItemStack& item) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

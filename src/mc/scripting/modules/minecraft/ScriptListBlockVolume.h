@@ -3,13 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptBlockVolumeBase.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseBlockLocationIterator;
-class BlockPos;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -33,10 +32,6 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptListBlockVolume();
 
-    MCAPI explicit ScriptListBlockVolume(::std::vector<::BlockPos> const& locations);
-
-    MCAPI explicit ScriptListBlockVolume(::std::vector<::Vec3> const& locations);
-
     MCAPI void add(::std::vector<::Vec3> const& locations);
 
     MCAPI void remove(::std::vector<::Vec3> const& locations);
@@ -52,10 +47,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::vector<::BlockPos> const& locations);
-
-    MCAPI void* $ctor(::std::vector<::Vec3> const& locations);
     // NOLINTEND
 
 public:

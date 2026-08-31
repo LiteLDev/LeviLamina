@@ -36,12 +36,11 @@ public:
 public:
     // prevent constructor by default
     EducationMetadata& operator=(EducationMetadata const&);
+    EducationMetadata();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EducationMetadata();
-
     MCNAPI EducationMetadata(::EducationMetadata const& other);
 
     MCNAPI ~EducationMetadata();
@@ -58,8 +57,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::EducationMetadata const& other);
     // NOLINTEND
 

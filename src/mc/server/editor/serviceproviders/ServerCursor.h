@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/cursor/Cursor.h"
 
 // auto generated forward declare list
@@ -34,11 +34,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerCursor() /*override*/ = default;
+    virtual ~ServerCursor() /*override*/;
 
     virtual void setCursorState(::Editor::Cursor::CursorState&& state) /*override*/;
 
     virtual ::Scripting::Result_deprecated<::BlockPos> moveCursor(::glm::ivec3 const& offset) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -49,14 +55,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<::BlockPos> $moveCursor(::glm::ivec3 const& offset);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForCursor();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };
 

@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/gametest/framework/IGameTestRuleHelper.h"
 
-// auto generated forward declare list
-// clang-format off
-class ILevel;
-// clang-format on
-
 namespace gametest {
 
 class GameTestRuleHelper : public ::gametest::IGameTestRuleHelper {
@@ -53,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameTestRuleHelper() /*override*/ = default;
+    virtual ~GameTestRuleHelper() /*override*/;
 
     virtual void addRuleToClear(int ruleID) /*override*/;
 
@@ -63,15 +58,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI explicit GameTestRuleHelper(::ILevel& level);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ILevel& level);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

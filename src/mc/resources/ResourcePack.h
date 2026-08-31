@@ -3,10 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/screens/controllers/PackCategory.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/resource/PackOrigin.h"
-#include "mc/deps/core/resource/ResourceFileSystem.h"
 #include "mc/resources/PackIconType.h"
 #include "mc/resources/PackReport.h"
 #include "mc/resources/ResourceSignature.h"
@@ -15,14 +12,12 @@
 // clang-format off
 class Pack;
 class PackAccessStrategy;
-class PackManifest;
-class SemVersion;
-struct PackIdVersion;
+struct StreamableAssetSource;
 struct SubpackInfo;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Json { class Value; }
-namespace mce { class UUID; }
 // clang-format on
 
 class ResourcePack {
@@ -61,10 +56,6 @@ public:
 
     MCAPI void _createSubpacks();
 
-    MCAPI void _generateIconPath();
-
-    MCAPI bool _supportsPreload() const;
-
     MCAPI bool areKnownFilesValid();
 
     MCAPI void forEachIn(
@@ -77,44 +68,26 @@ public:
     MCAPI void generateAssetSet();
 
 #ifdef LL_PLAT_C
-    MCAPI ::ResourceFileSystem getIconFileSytem() const;
-
     MCAPI ::Core::PathBuffer<::std::string> getIconPath(::PackIconType iconType) const;
-
-    MCAPI ::Core::PathBuffer<::std::string> const& getIconZipPath() const;
-#endif
-
-    MCAPI ::PackManifest const& getManifest() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::PackCategory getPackCategory() const;
-
-    MCFOLD ::mce::UUID const& getPackId() const;
-
-    MCFOLD ::PackIdVersion const& getPackIdentity() const;
-
-    MCAPI ::PackOrigin getPackOrigin() const;
 #endif
 
     MCAPI bool getResource(::Core::Path const& resourceName, ::std::string& resourceStream, int subpackIndex) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::Json::Value getTexturesList(int subpackIndex) const;
+    MCAPI ::std::optional<::StreamableAssetSource> getStreamableSource(
+        ::Core::Path const&               resourceName,
+        int                               subpackIndex,
+        ::std::optional<::Core::PathView> tempDirectory
+    ) const;
 
-    MCAPI ::SemVersion const& getVersion() const;
+    MCAPI ::Json::Value getTexturesList(int subpackIndex) const;
 
     MCAPI bool hasExtraResourcesForLocale(::std::string const& code, int subpackIndex) const;
 
     MCAPI bool hasIcon(::PackIconType iconType) const;
 #endif
 
-    MCAPI bool hasResource(::Core::Path const& resourceName, int subpackIndex) const;
-
     MCAPI bool isAssetExtractionViable() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD bool isMarkedForRemoval() const;
-#endif
 
     MCAPI ::Bedrock::Resources::PreloadedPathHandle
     preloadArchive(::Core::Path const& packRelativePath, int subpackIndex) const;
@@ -124,12 +97,6 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void regenerateAssetSet();
-#endif
-
-    MCAPI void setAsSlicePack();
-
-#ifdef LL_PLAT_C
-    MCAPI void setError();
 #endif
 
     MCAPI void setLocale(::std::string const& code);

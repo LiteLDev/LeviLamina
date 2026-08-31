@@ -25,8 +25,7 @@ public:
 
 public:
     // prevent constructor by default
-    CameraAimAssistPresetsPacket& operator=(CameraAimAssistPresetsPacket const&);
-    CameraAimAssistPresetsPacket(CameraAimAssistPresetsPacket const&);
+    CameraAimAssistPresetsPacket();
 
 public:
     // virtual functions
@@ -64,30 +63,32 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual ~CameraAimAssistPresetsPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraAimAssistPresetsPacket();
-
     MCAPI explicit CameraAimAssistPresetsPacket(::CameraAimAssistPresetsPacketPayload payload);
-
-    MCAPI ::CameraAimAssistPresetsPacket& operator=(::CameraAimAssistPresetsPacket&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::CameraAimAssistPresetsPacketPayload payload);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::MinecraftPacketIds $getId() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
     MCAPI ::std::string_view $getName() const;
 

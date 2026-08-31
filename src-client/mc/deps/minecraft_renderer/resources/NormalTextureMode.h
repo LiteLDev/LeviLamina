@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class NormalTextureMode : uchar {
-    NormalMap = 0,
-    HeightMap = 1,
+    NormalMap           = 0,
+    HeightMap           = 1,
+    HeightDifferentials = 2,
 };

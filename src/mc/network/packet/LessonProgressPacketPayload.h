@@ -13,16 +13,4 @@ public:
     ::ll::TypedStorage<4, 4, int>            mScore;
     ::ll::TypedStorage<8, 32, ::std::string> mActivityId;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~LessonProgressPacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -15,10 +15,4 @@ public:
 
     virtual uint checkPacket(::MinecraftPacketIds packet) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

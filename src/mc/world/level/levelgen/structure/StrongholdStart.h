@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
-// auto generated forward declare list
-// clang-format off
-class Dimension;
-class Random;
-// clang-format on
-
 class StrongholdStart : public ::StructureStart {
 public:
     // member variables
@@ -19,13 +13,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StrongholdStart();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StrongholdStart() /*override*/ = default;
+    virtual ~StrongholdStart() /*override*/;
 
     virtual bool isValid() const /*override*/;
 
@@ -33,17 +23,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI StrongholdStart(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
-
-    MCAPI void _initializePieceSet(::Random& random);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -54,11 +36,5 @@ public:
     MCAPI ::std::string_view $getStructureName() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

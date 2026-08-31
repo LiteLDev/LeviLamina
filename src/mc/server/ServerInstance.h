@@ -10,6 +10,7 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
+#include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/network/connection/DisconnectFailReason.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/threading/Mutex.h"
@@ -21,14 +22,15 @@
 // clang-format off
 class AppPlatform;
 class CDNConfig;
+class ChatLoggingEventListener;
 class EducationOptions;
 class ILevel;
 class IMinecraftEventing;
 class ItemRegistry;
-class ItemRegistryRef;
 class LevelData;
 class LevelStorage;
 class LinkedAssetValidator;
+class LocalProfilerControlBroker;
 class LoopbackPacketSender;
 class Minecraft;
 class ResourcePackManager;
@@ -44,15 +46,12 @@ class WorldSessionEndPoint;
 struct ConnectionDefinition;
 struct DimensionFactoryAndManager;
 struct NetworkServerConfig;
-struct NetworkSystemToggles;
 struct ServerInstanceArguments;
 struct ServerInstanceInitArguments;
 struct ServerNetworkHandlerDependencies;
-struct TextProcessorInitParams;
 namespace Core { class FileStorageArea; }
 namespace Editor { class IEditorManager; }
 namespace Scripting { class RegistryManager; }
-namespace Scripting { class ScriptEngine; }
 namespace ServerInstanceMessenger { class IMessenger; }
 namespace br::worldgen { class StructureSetRegistry; }
 namespace cereal { struct ReflectionCtx; }
@@ -198,7 +197,9 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LinkedAssetValidator>>               mLinkedAssetValidator;
     ::ll::TypedStorage<1, 1, ::ServerGraphicsSettings>                                mGraphicsSettings;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ServerInstanceMessenger::IMessenger>>> mMessenger;
-    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<bool() const>> mShouldDisableNetworkOnSuspend;
+    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<bool() const>>    mShouldDisableNetworkOnSuspend;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChatLoggingEventListener>> mChatLoggingEventListener;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::LocalProfilerControlBroker>> mLocalProfilerControlBroker;
     // NOLINTEND
 
 public:
@@ -208,7 +209,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~ServerInstance() /*override*/;
+#else // LL_PLAT_C
+    virtual ~ServerInstance() /*override*/ = default;
+#endif
 
     virtual void onLowMemory(::LowMemorySeverity) /*override*/;
 
@@ -244,89 +249,38 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ServerInstance(::ServerInstanceArguments&& args);
 
-    MCAPI void _initializeTextProcessor(::TextProcessorInitParams textProcessorInitParams);
-
     MCAPI void _resetServerScriptManager();
-
-    MCAPI void _update();
 
     MCAPI bool _useClientSideChunkGeneration(::LevelData* levelData) const;
 
-#ifdef LL_PLAT_S
-    MCAPI void disconnectAllClients(::Connection::DisconnectFailReason reason);
+#ifdef LL_PLAT_C
+    MCAPI void finishLoadingLinkedAssets(::ResourcePackManager& rpm);
 #endif
 
-    MCFOLD bool enableItemStackNetManager() const;
-
-    MCAPI void finishLoadingLinkedAssets(::ResourcePackManager& rpm);
-
-    MCAPI ::Bedrock::NonOwnerPointer<::CDNConfig> getCDNConfig() const;
-
     MCAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> getEditorManager() const;
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ServerInstanceEventCoordinator> getEventCoordinator();
 
 #ifdef LL_PLAT_C
     MCAPI ::std::string getLevelId() const;
 #endif
 
-    MCFOLD ::ServerScriptManager* getScriptManager();
-
-#ifdef LL_PLAT_S
-    MCAPI ::Scripting::ScriptEngine* getScriptingEngine();
-#endif
-
-    MCFOLD ::ServerGraphicsSettings const& getServerGraphicsSettings() const;
-
-    MCAPI ::ItemRegistryRef getServerItemRegistry() const;
-
-    MCAPI ::Bedrock::NonOwnerPointer<::ServerTextSettings> getServerTextSettings() const;
-
     MCAPI bool initializeServer(::ServerInstanceInitArguments&& args);
 
-#ifdef LL_PLAT_C
-    MCAPI bool isLeaveGameDone() const;
-#endif
-
-    MCFOLD bool isRealmsStoriesEnabled() const;
-
     MCAPI void leaveGameSync();
-
-#ifdef LL_PLAT_C
-    MCAPI void onCriticalScriptError(::Connection::DisconnectFailReason clientReason, char const* logMessage);
-
-    MCAPI void prepForEarlyDestruction();
-#endif
 
     MCAPI void queueForServerThread(::std::function<void()> command);
 
 #ifdef LL_PLAT_C
     MCAPI bool requestInGamePause(bool status);
-
-    MCAPI void resume();
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI void setWakeupFrequency(int hertz);
 #endif
 
     MCAPI void startLeaveGame();
 
     MCAPI void startServerThread();
-
-#ifdef LL_PLAT_C
-    MCAPI void suspend();
-#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::brstd::move_only_function<bool(::ServerInstanceInitArguments::HostMultiplayerArguments&&) const>
-    createHostMultiplayerCallback(::ServerInstance::HostMultiplayerOps&& ops);
-
-    MCAPI static ::NetworkSystemToggles createNetworkToggles(::ServerInstance::NetworkToggleOptions const& ops);
-
     MCAPI static ::brstd::move_only_function<
         ::std::unique_ptr<::ServerLevel>(::ServerInstanceInitArguments::CreateLevelArguments&&) const>
     createServerLevelCallback(::ServerInstance::CreateServerLevelOps&& ops);
@@ -353,7 +307,9 @@ public:
 
     MCAPI static ::std::string const& PACK_SOURCE_LOADING_ERROR();
 
+#ifdef LL_PLAT_C
     MCAPI static ::std::string const& POST_INIT_ERROR();
+#endif
     // NOLINTEND
 
 public:
@@ -365,7 +321,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
@@ -400,17 +358,5 @@ public:
     MCFOLD void $updateScreens();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForGameCallbacks();
-
-    MCNAPI static void** $vftableForStorageAreaStateListener();
-
-    MCNAPI static void** $vftableForAppPlatformListener();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

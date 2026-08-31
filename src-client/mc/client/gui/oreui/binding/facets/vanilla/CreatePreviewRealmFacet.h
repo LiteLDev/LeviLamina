@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/CreatePreviewRealmFromSubscriptionResult.h"
@@ -17,7 +17,7 @@ class PlayScreenModel;
 
 namespace OreUI {
 
-class CreatePreviewRealmFacet : public ::OreUI::FacetBase<::OreUI::CreatePreviewRealmFacet> {
+class CreatePreviewRealmFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::CreatePreviewRealmFacet> {
 public:
     // member variables
     // NOLINTBEGIN

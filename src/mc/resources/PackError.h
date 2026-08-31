@@ -17,7 +17,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~PackError() = default;
+#else // LL_PLAT_C
+    virtual ~PackError();
+#endif
 
     virtual ::std::string getLocErrorMessage() const;
 
@@ -30,11 +34,15 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI int getErrorValue() const;
-
     MCNAPI ::std::string getEventErrorMessage() const;
+#endif
+    // NOLINTEND
 
-    MCNAPI ::PackErrorType getPackErrorType() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 

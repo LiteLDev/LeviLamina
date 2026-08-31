@@ -9,7 +9,6 @@
 // clang-format off
 class BlockSource;
 class BoundingBox;
-class Dimension;
 class Random;
 // clang-format on
 
@@ -25,12 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void createOutpost(::Dimension& dim, ::Random& random, int x, int z);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
@@ -40,11 +33,5 @@ public:
     MCAPI ::std::string_view $getStructureName() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

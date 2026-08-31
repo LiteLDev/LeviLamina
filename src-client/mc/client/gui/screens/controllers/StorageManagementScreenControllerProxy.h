@@ -16,12 +16,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageManagementScreenControllerProxy() /*override*/ = default;
+    virtual ~StorageManagementScreenControllerProxy() /*override*/;
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI void $dtor();
     // NOLINTEND
 };

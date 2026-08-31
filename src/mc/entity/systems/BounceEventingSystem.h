@@ -21,12 +21,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doBounceEventingSystem(
-        ::StrictEntityContext const&         stateVectorComponent,
-        ::StateVectorComponent const&        actorUniqueIDComponent,
-        ::ActorUniqueIDComponent const&      eventingDispatcherComponent,
-        ::EventingDispatcherComponent const& bounceComponent,
-        ::BounceComponent&                   requestQueueView,
-        ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent>
+        ::StrictEntityContext const&,
+        ::StateVectorComponent const&                                   stateVectorComponent,
+        ::ActorUniqueIDComponent const&                                 actorUniqueIDComponent,
+        ::EventingDispatcherComponent const&                            eventingDispatcherComponent,
+        ::BounceComponent&                                              bounceComponent,
+        ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView
     );
 
     MCAPI static ::TickingSystemWithInfo createSystem();

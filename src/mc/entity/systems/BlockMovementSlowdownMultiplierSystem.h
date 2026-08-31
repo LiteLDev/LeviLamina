@@ -10,11 +10,8 @@
 class StrictEntityContext;
 struct BlockMovementSlowdownAppliedComponent;
 struct BlockMovementSlowdownMultiplierComponent;
-struct FallDistanceComponent;
 struct MobEffectsComponent;
-struct MoveRequestComponent;
 struct MovementAbilitiesComponent;
-struct StateVectorComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -25,8 +22,6 @@ MCAPI ::TickingSystemWithInfo createAdjustFallDistanceSystem();
 
 MCAPI ::TickingSystemWithInfo createApplySlowdownOnMoveSystem();
 
-MCAPI ::TickingSystemWithInfo createCleanupSystem();
-
 MCAPI ::TickingSystemWithInfo createImmunePlayerSystem();
 
 MCAPI ::TickingSystemWithInfo createImmuneSpiderSystem();
@@ -34,17 +29,6 @@ MCAPI ::TickingSystemWithInfo createImmuneSpiderSystem();
 MCAPI ::TickingSystemWithInfo createImmuneWitherBossSystem();
 
 MCAPI ::TickingSystemWithInfo createWeavingMobSystem();
-
-MCAPI void tickAdjustFallDistance(
-    ::BlockMovementSlowdownAppliedComponent const& applied,
-    ::FallDistanceComponent&                       fallDistanceComponent
-);
-
-MCAPI void tickApplySlowdownOnMove(
-    ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
-    ::MoveRequestComponent&                     moveRequestComponent,
-    ::StateVectorComponent&                     stateComponent
-);
 
 MCAPI void tickImmunePlayer(
     ::StrictEntityContext const&                              entity,
@@ -60,9 +44,9 @@ MCAPI void tickImmuneSlowdown(
 );
 
 MCAPI void tickWeavingSlowdownOverride(
-    ::StrictEntityContext const&                blockMovementSlowdownMultiplierComponent,
-    ::BlockMovementSlowdownMultiplierComponent& mobEffectsComponent,
-    ::MobEffectsComponent const&
+    ::StrictEntityContext const&,
+    ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
+    ::MobEffectsComponent const&                mobEffectsComponent
 );
 // NOLINTEND
 

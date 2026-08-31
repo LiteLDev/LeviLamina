@@ -60,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EducationContentManagerScreenController() /*override*/ = default;
+    virtual ~EducationContentManagerScreenController() /*override*/;
     // NOLINTEND
 
 public:
@@ -78,11 +78,7 @@ public:
 
     MCAPI void cancelWorldDownload();
 
-    MCAPI void cancelWorldLaunch();
-
     MCAPI void importWorld(::LessonItem& item);
-
-    MCAPI bool isDownloadInProgress() const;
 
     MCAPI void launchWorld(
         ::LessonItem&                              item,
@@ -110,10 +106,8 @@ public:
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
+    MCAPI void $dtor();
     // NOLINTEND
 };

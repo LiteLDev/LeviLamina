@@ -13,7 +13,7 @@ class BlazePreTravelSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doBlazePreTravelSystem(::StrictEntityContext const& actorOwnerComponent, ::ActorOwnerComponent&);
+    MCAPI static void _doBlazePreTravelSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND

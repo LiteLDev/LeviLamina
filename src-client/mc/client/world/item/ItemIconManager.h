@@ -17,11 +17,7 @@ class ItemIconManager {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void clearTextureTessellatorData();
-
-    MCAPI static ::cg::TextureSetImageContainer const* findTextureTessellatorData(::ResourceLocation const& location);
-
-    MCAPI static ::TextureUVCoordinateSet const& getIcon(::ResolvedItemIconInfo const& texInfo, bool);
+    MCAPI static ::TextureUVCoordinateSet const& getIcon(::ResolvedItemIconInfo const& texInfo, bool inInventoryPane);
 
     MCAPI static ::TextureUVCoordinateSet const&
     getIcon(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane);
@@ -32,10 +28,6 @@ public:
         ::ItemRegistryRef                                                          registry,
         ::std::unordered_map<::ResourceLocation, ::cg::TextureSetImageContainer>&& availableIconTextures
     );
-
-    MCAPI static void setAtlasItemManager(::std::shared_ptr<::AtlasItemManager> itemsTextureAtlas);
-
-    MCAPI static bool trySetIconInfo(::std::string const& iconName, int& outFrameCount);
 
     MCAPI static void updateTextureTessellatorDataForHotReload(
         ::std::unordered_map<::ResourceLocation, ::cg::TextureSetImageContainer>&& maybeUpdatedTextures

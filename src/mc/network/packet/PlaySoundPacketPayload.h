@@ -36,8 +36,6 @@ public:
         float                                pitch,
         ::std::optional<::ServerSoundHandle> serverSoundHandle
     );
-
-    MCAPI ~PlaySoundPacketPayload();
     // NOLINTEND
 
 public:
@@ -50,11 +48,5 @@ public:
         float                                pitch,
         ::std::optional<::ServerSoundHandle> serverSoundHandle
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

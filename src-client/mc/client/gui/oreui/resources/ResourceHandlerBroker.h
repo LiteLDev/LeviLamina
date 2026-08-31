@@ -15,7 +15,7 @@ class ResourceHandlerBroker {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourceHandlerBroker() = default;
+    virtual ~ResourceHandlerBroker();
 
     virtual void update() = 0;
 
@@ -34,15 +34,9 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

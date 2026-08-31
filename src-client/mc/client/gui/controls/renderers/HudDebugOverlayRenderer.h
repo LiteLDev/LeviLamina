@@ -7,12 +7,6 @@
 #include "mc/deps/core/threading/BackgroundWorker.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 
-// auto generated forward declare list
-// clang-format off
-class IClientInstance;
-class ScreenContext;
-// clang-format on
-
 class HudDebugOverlayRenderer {
 public:
     // HudDebugOverlayRenderer inner types declare
@@ -109,17 +103,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HudDebugOverlayRenderer();
-
-    MCFOLD void render(::ScreenContext& screenContext, ::IClientInstance& client);
-
     MCAPI ~HudDebugOverlayRenderer();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

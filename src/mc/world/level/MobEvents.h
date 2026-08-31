@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 class ILevelStorageManagerConnector;
 class LevelStorage;
 // clang-format on
@@ -47,30 +46,10 @@ public:
 
     MCAPI void _onSaveEvent(::LevelStorage&);
 
-    MCFOLD bool areEventsEnabled() const;
-
-    MCAPI void deserialize(::CompoundTag const& tag);
-
-    MCAPI ::MobEvent const& getEvent(::MobEventsIndex eventIndex) const;
-
     MCAPI ::MobEventsIndex getIndexFromName(::std::string const& name) const;
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
-
-    MCAPI bool isEnabled(::MobEventsIndex eventIndex) const;
-
-    MCAPI void readFromLevelStorage();
-
-    MCAPI ::std::unique_ptr<::CompoundTag> serialize() const;
-
-    MCAPI void setEnabled(::MobEventsIndex eventIndex, bool newVal);
-
-    MCAPI void setEventsEnabled(bool newVal);
-
-    MCAPI void setMarketplaceDefaults();
-
-    MCAPI void tick();
 
     MCAPI void writeToLevelStorage();
     // NOLINTEND
@@ -91,11 +70,5 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

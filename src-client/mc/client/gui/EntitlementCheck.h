@@ -30,10 +30,4 @@ public:
     // NOLINTBEGIN
     MCAPI bool $isValid(::ContentIdentity const& identity) const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

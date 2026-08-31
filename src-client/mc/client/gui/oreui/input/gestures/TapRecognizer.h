@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace OreUI { class IGestureListener; }
-namespace OreUI { struct TapGestureParameters; }
 namespace OreUI { struct TouchEventData; }
 // clang-format on
 
@@ -27,13 +25,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TapRecognizer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TapRecognizer() /*override*/ = default;
+    virtual ~TapRecognizer() /*override*/;
 
     virtual void onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches) /*override*/;
 
@@ -45,27 +39,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI TapRecognizer(
-        ::OreUI::IGestureListener&                            gestureListener,
-        int                                                   priority,
-        ::OreUI::TapGestureParameters const&                  parameters,
-        float                                                 pixelsPerCm,
-        ::std::function<::std::chrono::milliseconds()> const& getTime
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::OreUI::IGestureListener&                            gestureListener,
-        int                                                   priority,
-        ::OreUI::TapGestureParameters const&                  parameters,
-        float                                                 pixelsPerCm,
-        ::std::function<::std::chrono::milliseconds()> const& getTime
-    );
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -77,12 +53,6 @@ public:
     $onTouchesEnded(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches);
 
     MCAPI void $onGestureRecognized();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

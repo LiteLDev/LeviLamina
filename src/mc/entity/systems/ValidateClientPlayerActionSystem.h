@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 
 // auto generated forward declare list
@@ -35,18 +34,6 @@ MCAPI void comparePlayerActionComponent(
 );
 
 MCAPI void registerServerSystems(::EntitySystems& systemRegistry);
-
-MCAPI void tickPlayerActionComparison(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::PlayerActionComponent const,
-        ::ServerPlayerCurrentMovementComponent const,
-        ::ActorDataDirtyFlagsComponent,
-        ::AttributesComponent,
-        ::Optional<::ActorUniqueIDComponent const>,
-        ::Optional<::AbilitiesComponent const>> view,
-    ::EntityModifier<::SendPacketsComponent>    modifier
-);
 // NOLINTEND
 
 } // namespace ValidateClientPlayerActionSystem

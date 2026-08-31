@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/shared_types/v1_26_20/block/GeometryComponent.h"
+#include "mc/world/level/block/components/BlockComponentDescription.h"
 #include "mc/world/level/block/components/BlockRendererDescription.h"
 #include "mc/world/level/block/components/NetworkedBlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-class CerealSchemaUpgradeSet;
 class CompoundTag;
 class ExpressionNode;
 class SemVersion;
@@ -49,11 +50,12 @@ public:
                                                                                 mSharedInitializationData;
     ::ll::TypedStorage<8, 24, ::std::variant<bool, ::std::set<::HashedString>>> mUVsLocked;
     ::ll::TypedStorage<4, 52, ::BlockRendererDescription>                       mRenderer;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::shared_ptr<::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping>>
+        mNWayVisualRotation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockGeometryDescription& operator=(BlockGeometryDescription const&);
 
 public:
     // virtual functions
@@ -62,13 +64,20 @@ public:
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
+    virtual void initializeComponent(::BlockComponentDescription::InitializationContext& context) const /*override*/;
+
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
+
+    virtual void initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const
+        /*override*/;
 
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
 
     virtual ::CompoundTag buildUnboundDataNetworkTag() const /*override*/;
 
     virtual void initializeUnboundDataFromNetwork(::CompoundTag const& tag) /*override*/;
+
+    virtual ~BlockGeometryDescription() /*override*/;
     // NOLINTEND
 
 public:
@@ -87,6 +96,10 @@ public:
         ::BlockRendererDescription const&                       renderer,
         bool                                                    isFullBlockV1
     );
+
+    MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription&&);
+
+    MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription const&);
     // NOLINTEND
 
 public:
@@ -96,8 +109,6 @@ public:
 
     MCAPI static ::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode>
     getBoneVisibility(::std::map<::std::string, ::ExpressionNode> const& boneVisibilities);
-
-    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
 
     MCAPI static ::std::map<::std::string, ::ExpressionNode>
     setBoneVisibility(::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode> const& boneVisibilities);
@@ -152,13 +163,23 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::string const& $getName() const;
 
     MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
+    MCAPI void $initializeComponent(::BlockComponentDescription::InitializationContext& context) const;
+
     MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+
+    MCAPI void $initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;
 
     MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 

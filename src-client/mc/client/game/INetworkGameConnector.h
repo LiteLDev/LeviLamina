@@ -39,6 +39,7 @@ public:
         ::std::string const&         serverName,
         ::std::string const&         worldName,
         ::NetworkType                networkTypeOverride,
+        ::std::shared_ptr<bool>      userCancelled,
         ::PlayerJoinWorldContext     context
     ) = 0;
 
@@ -73,11 +74,5 @@ public:
     ) = 0;
 
     virtual ::ClientNetworkSystem& getClientNetworkSystem() = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

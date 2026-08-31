@@ -16,20 +16,13 @@ public:
 public:
     // prevent constructor by default
     RequestHeader& operator=(RequestHeader const&);
+    RequestHeader(RequestHeader const&);
     RequestHeader();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RequestHeader(::CodeBuilder::RequestHeader const&);
-
     MCNAPI ~RequestHeader();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::CodeBuilder::RequestHeader const&);
     // NOLINTEND
 
 public:

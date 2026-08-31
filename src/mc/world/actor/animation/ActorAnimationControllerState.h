@@ -36,10 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAnimation(::HashedString const& name);
-
-    MCAPI void addBlendTransitionKeyFrame(float time, float blendValue);
-
 #ifdef LL_PLAT_C
     MCAPI void addTransition(
         ::std::string const& stateName,
@@ -48,15 +44,5 @@ public:
         bool                 createEvenIfAlreadyExists
     );
 #endif
-
-    MCAPI ::StateAnimationVariable& addVariable(::std::string const& variableName);
-
-    MCAPI ~ActorAnimationControllerState();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

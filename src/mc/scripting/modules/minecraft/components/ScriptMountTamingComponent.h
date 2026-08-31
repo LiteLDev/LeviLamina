@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ECSScriptActorComponent.h"
 
 // auto generated forward declare list
@@ -25,11 +25,6 @@ public:
     MCAPI ::Scripting::Result_deprecated<bool> isTamed() const;
 
     MCAPI ::Scripting::Result_deprecated<bool> isTamedToPlayer() const;
-
-    MCAPI ::Scripting::Result_deprecated<void> setTamed(bool showParticles) const;
-
-    MCAPI ::Scripting::Result_deprecated<bool>
-    setTamedToPlayer(bool showParticles, ::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer) const;
 
     MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>

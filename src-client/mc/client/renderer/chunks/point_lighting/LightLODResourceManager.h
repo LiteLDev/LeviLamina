@@ -30,18 +30,6 @@ public:
             ::std::shared_ptr<::PointLighting::ILightLODResourceProvider<::PointLighting::AnalyticLightResources>>>>
         mAnalyticLightResourceProviders;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~LightLODResourceManager();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace PointLighting

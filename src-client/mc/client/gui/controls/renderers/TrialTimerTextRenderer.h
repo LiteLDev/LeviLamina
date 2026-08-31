@@ -17,7 +17,7 @@ class TrialTimerTextRenderer : public ::MinecraftUICustomRenderer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TrialTimerTextRenderer() /*override*/ = default;
+    virtual ~TrialTimerTextRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -26,15 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI TrialTimerTextRenderer();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -41,6 +41,8 @@ enum class ESessionError : int {
     EInternalErrorJsonSerialization                         = 33,
     ESessionErrorInvalidArgument                            = 34,
     ESessionErrorGenericFailure                             = 35,
+    ESessionErrorFailedToCreateIdentityAssertion            = 36,
+    ESessionErrorIdentityNotAllowed                         = 37,
 };
 
 }

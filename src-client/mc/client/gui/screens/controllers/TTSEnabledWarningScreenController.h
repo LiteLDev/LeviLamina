@@ -8,11 +8,6 @@
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
 #include "mc/client/tts/TTSEnabledStatus.h"
 
-// auto generated forward declare list
-// clang-format off
-class MinecraftScreenModel;
-// clang-format on
-
 class TTSEnabledWarningScreenController : public ::MinecraftScreenController {
 public:
     // member variables
@@ -22,13 +17,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TTSEnabledWarningScreenController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TTSEnabledWarningScreenController() /*override*/ = default;
+    virtual ~TTSEnabledWarningScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -38,15 +29,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI TTSEnabledWarningScreenController(::std::shared_ptr<::MinecraftScreenModel> model, ::TTSEnabledStatus status);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::TTSEnabledStatus status);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

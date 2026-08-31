@@ -2,7 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/crypto/random/Random.h"
-#include "mc/platform/UUID.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
@@ -43,7 +42,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~CommandOrigin() = default;
+#else // LL_PLAT_C
+    virtual ~CommandOrigin();
+#endif
 
     virtual ::std::string const& getRequestId() const = 0;
 
@@ -73,7 +76,7 @@ public:
 
     virtual bool hasTellPerms() const;
 
-    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const;
+    virtual bool canUseAbility(::AbilitiesIndex ability) const;
 
     virtual bool isWorldBuilder() const;
 
@@ -113,23 +116,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::CommandArea> getAreaAt(::BlockPos const& pos, int commandVersion) const;
-
     MCAPI ::std::unique_ptr<::CommandArea>
     getAreaAt(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks) const;
-
-    MCAPI ::std::unique_ptr<::CommandArea> getAreaAtWithBuffer(::BlockPos const& pos, int commandVersion) const;
-
-    MCAPI ::std::unique_ptr<::CommandArea> getAreaAtWithBuffer(
-        ::BlockPos const& min,
-        ::BlockPos const& max,
-        int               commandVersion,
-        bool              allowUnloadedChunks
-    ) const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool isEditorWorld() const;
-#endif
     // NOLINTEND
 
 public:
@@ -156,6 +144,14 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::optional<::BlockPos> $getCursorHitBlockPos() const;
@@ -166,7 +162,7 @@ public:
 
     MCAPI bool $hasTellPerms() const;
 
-    MCFOLD bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
+    MCFOLD bool $canUseAbility(::AbilitiesIndex ability) const;
 
     MCAPI bool $isWorldBuilder() const;
 

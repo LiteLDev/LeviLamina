@@ -21,9 +21,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IQuery() = default;
+    virtual ~IQuery();
 
-    virtual void update(double time) = 0;
+    virtual void update(double) = 0;
 
     virtual bool isValid() const = 0;
 
@@ -39,9 +39,9 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

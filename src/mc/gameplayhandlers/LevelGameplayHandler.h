@@ -21,10 +21,4 @@ public:
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::MutableLevelGameplayEvent<::CoordinatorResult>& event) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

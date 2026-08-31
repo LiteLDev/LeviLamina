@@ -64,20 +64,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void evictPassengers(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void startRiding(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void stopRiding(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void summonPassenger(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void summonVehicle(::CommandOrigin const& origin, ::CommandOutput& output) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
@@ -90,21 +76,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::RideCommand::RideRules>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::RideCommand::TeleportRules>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::RideCommand::VehicleAction>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::RideCommand::VehicleFillType>();
-// clang-format on

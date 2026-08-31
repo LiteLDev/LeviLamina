@@ -23,17 +23,20 @@ public:
     ::ll::TypedStorage<8, 200, ::std::optional<::SharedTypes::v1_20_80::ColorExpr>>    mColor;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     TintingComponentColor& operator=(TintingComponentColor const&);
     TintingComponentColor();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI TintingComponentColor(::SharedTypes::v1_20_80::TintingComponentColor const&);
-
-    MCAPI ~TintingComponentColor();
+#endif
     // NOLINTEND
 
 public:
@@ -45,13 +48,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::SharedTypes::v1_20_80::TintingComponentColor const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

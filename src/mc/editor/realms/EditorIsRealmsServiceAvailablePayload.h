@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class EditorIsRealmsServiceAvailablePayload
@@ -29,13 +24,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorIsRealmsServiceAvailablePayload() /*override*/ = default;
+    virtual ~EditorIsRealmsServiceAvailablePayload() /*override*/;
     // NOLINTEND
 
 public:
-    // static functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -21,20 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraAvoidanceDefinition& operator=(CameraAvoidanceDefinition const&);
-    CameraAvoidanceDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CameraAvoidanceDefinition(::SharedTypes::v1_21_100::CameraAvoidanceDefinition const&);
-
-    MCFOLD ::SharedTypes::v1_21_100::CameraAvoidanceDefinition&
-    operator=(::SharedTypes::v1_21_100::CameraAvoidanceDefinition&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -43,13 +29,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_100::CameraAvoidanceDefinition const&);
+#endif
     // NOLINTEND
 };
 

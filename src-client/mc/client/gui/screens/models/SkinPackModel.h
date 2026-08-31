@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ContentIdentity;
 class IEntitlement;
 class PackManifest;
 class PersonaClient;
@@ -36,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SkinPackModel();
+    virtual ~SkinPackModel() = default;
     // NOLINTEND
 
 public:
@@ -55,43 +54,7 @@ public:
         bool                  isOfflineLoaded
     );
 
-    MCAPI void decrementFirstVisibleSkinIndex(int amount);
-
-    MCAPI ::ContentIdentity const& getContentIdentity() const;
-
-    MCAPI int getFirstVisibleSkinIndex() const;
-
-    MCAPI ::std::string const& getLocName() const;
-
-    MCFOLD ::SkinPackMeta const& getMetaData() const;
-
-    MCAPI int getNumSkins() const;
-
-    MCFOLD ::PackIdVersion const& getPackIdentity() const;
-
     MCAPI ::std::string const& getSkinName(int skinIndex) const;
-
-    MCAPI void incrementFirstVisibleSkinIndex(int amount);
-
-    MCAPI bool isCustomSkinPack() const;
-
-    MCAPI bool isInPackage() const;
-
-    MCAPI bool isLimitedUsageSkinPack() const;
-
-    MCAPI bool isOfflineOrSideLoaded() const;
-
-    MCAPI bool isPlatformLocked() const;
-
-    MCAPI bool isSideLoaded() const;
-
-    MCAPI bool isSkinLocked(int skinIndex) const;
-
-    MCAPI bool isSkinPackOwned() const;
-
-    MCAPI bool isValid() const;
-
-    MCAPI bool isVanillaSkinPack() const;
     // NOLINTEND
 
 public:
@@ -106,12 +69,6 @@ public:
         ::IEntitlement const* entitlement,
         bool                  isOfflineLoaded
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

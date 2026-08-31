@@ -28,30 +28,14 @@ public:
     // prevent constructor by default
     ActorSoundIdentifier& operator=(ActorSoundIdentifier const&);
     ActorSoundIdentifier(ActorSoundIdentifier const&);
+    ActorSoundIdentifier();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorSoundIdentifier();
-
     MCAPI explicit ActorSoundIdentifier(::Actor const& actor);
 
-    MCAPI ActorSoundIdentifier(
-        ::Bedrock::NotNullNonOwnerPtr<::ActorFetcher const> actorFetcher,
-        ::ActorDefinitionIdentifier const&                  identifier,
-        ::ActorUniqueID                                     actorid,
-        bool                                                isBaby
-    );
-
-    MCFOLD ::ActorUniqueID getActorId() const;
-
-    MCFOLD ::ActorDefinitionIdentifier const& getIdentifier() const;
-
-    MCFOLD bool isBaby() const;
-
 #ifdef LL_PLAT_C
-    MCAPI bool isValid() const;
-
     MCAPI ::std::optional<::RenderParams> tryCreateRenderParamsForVariants() const;
 #endif
 
@@ -61,16 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Actor const& actor);
-
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::ActorFetcher const> actorFetcher,
-        ::ActorDefinitionIdentifier const&                  identifier,
-        ::ActorUniqueID                                     actorid,
-        bool                                                isBaby
-    );
     // NOLINTEND
 
 public:

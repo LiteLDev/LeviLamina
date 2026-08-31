@@ -5,9 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 struct DeserializeDataParams;
-namespace SharedTypes::v1_21_100 { struct EatMobGoalDefinition; }
 namespace SharedTypes::v1_21_100 { struct TickWorldDefinition; }
-namespace SharedTypes::v1_21_100 { struct TransportItemsGoalDefinition; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -25,16 +23,6 @@ MCAPI void bindRotationSpace(::cereal::ReflectionCtx& ctx);
 MCAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_21_100::TickWorldDefinition& desc,
     ::DeserializeDataParams                        deserializeDataParams
-);
-
-MCAPI bool operator==(
-    ::SharedTypes::v1_21_100::EatMobGoalDefinition const&,
-    ::SharedTypes::v1_21_100::EatMobGoalDefinition const&
-);
-
-MCAPI bool operator==(
-    ::SharedTypes::v1_21_100::TransportItemsGoalDefinition const&,
-    ::SharedTypes::v1_21_100::TransportItemsGoalDefinition const&
 );
 // NOLINTEND
 

@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/Container.h"
 #include "mc/world/item/ItemStack.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,11 +16,10 @@ class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class Item;
-class ItemDescriptor;
 class SaveContext;
 // clang-format on
 
-class BrewingStandBlockActor : public ::BlockActor, public ::Container {
+class BrewingStandBlockActor : public ::VanillaBlockActor, public ::Container {
 public:
     // BrewingStandBlockActor inner types define
     enum : int {
@@ -49,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrewingStandBlockActor() /*override*/;
+    virtual ~BrewingStandBlockActor() /*override*/ = default;
 
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
@@ -77,7 +76,7 @@ public:
 
     virtual ::Container const* getContainer() const /*override*/;
 
-    virtual void load(::ILevel& base, ::CompoundTag const&, ::DataLoadHelper&) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
@@ -98,30 +97,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BrewingStandBlockActor(::BlockPos const& pos);
-
-    MCAPI void brew();
-
-    MCAPI bool canBrew();
-
-    MCFOLD int getBrewTime() const;
-
-    MCFOLD int getFuelAmount() const;
-
-    MCFOLD int getFuelTotal() const;
-
-    MCAPI int getPotionSlotUsage() const;
-
-    MCFOLD void setBrewTime(int value);
-
-    MCFOLD void setFuelAmount(int value);
-
-    MCFOLD void setFuelTotal(int value);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isFuel(::ItemDescriptor const& itemDescriptor);
     // NOLINTEND
 
 public:
@@ -131,19 +106,13 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCFOLD ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
     MCFOLD int $getMaxStackSize() const;
 
@@ -165,7 +134,7 @@ public:
 
     MCFOLD ::Container const* $getContainer() const;
 
-    MCAPI void $load(::ILevel& base, ::CompoundTag const&, ::DataLoadHelper&);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
@@ -189,6 +158,12 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftableForBlockActor();
 
-    MCAPI static void** $vftableForContainer();
+    MCNAPI static void** $vftable();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
     // NOLINTEND
 };

@@ -10,8 +10,6 @@ namespace OreUI { class RouterLocation; }
 namespace OreUI::EntryPoints::FriendsDrawer {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string composeRoute();
-
 MCAPI ::std::string composeRouteForTab(::std::string const& tab);
 
 MCAPI bool routeHasSocialDrawer(::OreUI::RouterLocation const& route);

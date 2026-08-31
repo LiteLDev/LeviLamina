@@ -6,11 +6,10 @@
 #include "mc/server/commands/CommandChainedSubcommand.h"
 #include "mc/server/commands/CommandCompareOperator.h"
 #include "mc/server/commands/CommandFilePath.h"
-#include "mc/server/commands/CommandFlag.h"
+#include "mc/server/commands/CommandIntegerRange.h"
 #include "mc/server/commands/CommandMessage.h"
 #include "mc/server/commands/CommandOperator.h"
 #include "mc/server/commands/CommandRawText.h"
-#include "mc/server/commands/CommandVersion.h"
 #include "mc/server/commands/CommandWildcardInt.h"
 #include "mc/server/commands/WildcardCommandSelector.h"
 
@@ -21,7 +20,6 @@
 #include "mc/server/commands/CommandLexer.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandSelector.h"
-#include "mc/server/commands/CommandStatus.h"
 #include "mc/server/commands/CommandTypeFlag.h"
 #include "mc/server/commands/CommandVersion.h"
 #include "mc/server/commands/SemanticConstraint.h"
@@ -67,10 +65,10 @@ public:
     struct ParamParseRule;
     struct ParseRule;
     struct SemanticInfo;
+    struct Signature;
     struct SymbolHasher;
     struct SymbolPairHasher;
     struct ParseTable;
-    struct Signature;
     class Parser;
     // clang-format on
 
@@ -203,30 +201,10 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<uint>> softEnumValuesCount;
         // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-    public:
-        // prevent constructor by default
-        RegistryState& operator=(RegistryState const&);
-        RegistryState();
-
-#endif
     public:
         // member functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI RegistryState(::CommandRegistry::RegistryState const&);
-#endif
-
         MCAPI ~RegistryState();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI void* $ctor(::CommandRegistry::RegistryState const&);
-#endif
         // NOLINTEND
 
     public:
@@ -246,7 +224,7 @@ public:
 
     public:
         // prevent constructor by default
-        SoftEnum() = default;
+        SoftEnum();
 
     public:
         // member functions
@@ -431,18 +409,6 @@ public:
         ParseFunction                            parse;
         ::std::vector<::std::pair<uint64, uint>> values;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ChainedSubcommand();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct Enum {
@@ -453,18 +419,6 @@ public:
         ::Bedrock::typeid_t<::CommandRegistry>     type;
         ParseFunction                              parse;
         ::std::vector<::std::pair<uint64, uint64>> values;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~Enum();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -525,62 +479,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                            mSoftEnumEscapeCharExceptions;
         ::ll::TypedStorage<8, 16, ::std::set<::CommandRegistry::Symbol>>    mAlreadyCompletedSymbols;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI ~SemanticInfo();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI void $dtor();
-#endif
-        // NOLINTEND
-    };
-
-    struct SymbolHasher {};
-
-    struct SymbolPairHasher {};
-
-    struct ParseTable {
-    public:
-        // member variables
-        // NOLINTBEGI
-        ::std::map<
-            ::CommandRegistry::Symbol,
-            ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>
-        first;
-
-        ::std::map<
-            ::CommandRegistry::Symbol,
-            ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>
-        follow;
-
-        ::entt::dense_map<
-            ::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::Symbol>,
-            int,
-            ::CommandRegistry::SymbolPairHasher,
-            ::std::equal_to<void>>
-                                                             predict;
-        ::std::chrono::nanoseconds buildDuration;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ParseTable();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
     };
 
     struct Signature {
@@ -603,41 +501,43 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Signature();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Signature(
-            ::std::string const&      name_,
-            char const*               description_,
-            ::CommandPermissionLevel  level_,
-            ::CommandRegistry::Symbol commandSymbol_,
-            ::CommandFlag             flags_,
-            uint64                    initialRuleCount
-        );
-
         MCAPI ~Signature();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::std::string const&      name_,
-            char const*               description_,
-            ::CommandPermissionLevel  level_,
-            ::CommandRegistry::Symbol commandSymbol_,
-            ::CommandFlag             flags_,
-            uint64                    initialRuleCount
-        );
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct SymbolHasher {};
+
+    struct SymbolPairHasher {};
+
+    struct ParseTable {
+    public:
+        // member variables
+        // NOLINTBEGI
+        ::std::map<
+            ::CommandRegistry::Symbol,
+            ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>
+            first;
+
+        ::std::map<
+            ::CommandRegistry::Symbol,
+            ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>
+            follow;
+
+        ::entt::dense_map<
+            ::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::Symbol>,
+            int,
+            ::CommandRegistry::SymbolPairHasher,
+            ::std::equal_to<void>>
+                                   predict;
+        ::std::chrono::nanoseconds buildDuration;
         // NOLINTEND
     };
 
@@ -670,22 +570,10 @@ public:
         // NOLINTBEGIN
         MCAPI Parser(::CommandRegistry const& registry, int version);
 
-        MCAPI ::entt::internal::dense_map_iterator<::entt::internal::dense_map_node<
-            ::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::Symbol>,
-            int> const*>
-        _findParsePrediction(
-            ::CommandRegistry::LexicalToken const& lexToken,
-            ::CommandRegistry::Symbol const&       stackSymbol
-        ) const;
-
         MCAPI bool _parse(::std::string const& in);
-
-        MCAPI ::std::unique_ptr<::Command> createCommand(::CommandOrigin const& origin);
 
         MCAPI ::std::unique_ptr<::CommandSelector<::Actor>>
         createSelector(::std::string const& selectorString, ::CommandOrigin const& origin);
-
-        MCFOLD ::std::string const& getErrorMessage() const;
 
         MCAPI ::std::vector<::std::string> getErrorParams() const;
 
@@ -849,6 +737,11 @@ public:
         )->second;
     }
 
+    template <class T>
+    struct ParseRuleFor {
+        MCAPI static ParamParseRule const& instance();
+    };
+
 public:
     // prevent constructor by default
     CommandRegistry();
@@ -873,11 +766,12 @@ public:
         ::CommandRegistry::Signature* signature
     );
 
+#ifdef LL_PLAT_C
     MCAPI ::CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
         ::std::string const&                            name,
         ::std::vector<::std::pair<uint64, uint>> const& values,
         ::Bedrock::typeid_t<::CommandRegistry>          type,
-        bool (CommandRegistry::*parse)(
+        bool (::CommandRegistry::*parse)(
             void*,
             ::CommandRegistry::ParseToken const&,
             ::CommandOrigin const&,
@@ -887,13 +781,7 @@ public:
         ) const,
         ::CommandRegistry::Signature* signature
     );
-
-    MCAPI void _addEnumValueConstraintsInternal(
-        ::std::vector<::std::pair<uint64, uint>> const& constrainedValueKeys,
-        ::SemanticConstraint                            constraints
-    );
-
-    MCAPI void _addEnumValueConstraintsToExisting(uint constrainedValueId, ::SemanticConstraint constraints);
+#endif
 
     MCAPI ::CommandRegistry::Symbol _addEnumValuesInternal(
         ::std::string const&                                     name,
@@ -913,7 +801,7 @@ public:
         ::std::string const&                              name,
         ::std::vector<::std::pair<uint64, uint64>> const& values,
         ::Bedrock::typeid_t<::CommandRegistry>            type,
-        bool (CommandRegistry::*parse)(
+        bool (::CommandRegistry::*parse)(
             void*,
             ::CommandRegistry::ParseToken const&,
             ::CommandOrigin const&,
@@ -923,8 +811,6 @@ public:
         ) const
     );
 
-    MCAPI ::CommandRegistry::Symbol _addFunctionSoftEnum();
-
     MCAPI ::std::unique_ptr<::CommandSelector<::Actor>> _createSelector(
         ::CommandRegistry::ParseToken const& root,
         ::CommandOrigin const&               origin,
@@ -933,7 +819,9 @@ public:
         ::std::vector<::std::string>&        errorParams
     ) const;
 
+#ifdef LL_PLAT_C
     MCAPI ::CommandRegistry::Symbol _getConstrainedParamEnumSymbol(::CommandRegistry::Symbol symbol) const;
+#endif
 
     MCAPI bool _matchesEnumConstraintsSet(
         ::CommandRegistry::Symbol const& commandParamSymbol,
@@ -943,20 +831,8 @@ public:
     ) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::vector<::CommandRegistry::Symbol> _reconstructParseStack(
-        ::CommandRegistry::ParseToken const* paramTree,
-        ::CommandRegistry::SemanticInfo&     semanticInfo
-    ) const;
-
-    MCAPI ::std::vector<::CommandRegistry::Symbol> _reconstructParseStack(
-        ::std::vector<::CommandParameterData> const& params,
-        uint                                         matchedParams,
-        ::CommandRegistry::ParseToken const*         commandParseTree,
-        ::CommandRegistry::SemanticInfo&             semanticInfo
-    ) const;
-#endif
-
     MCAPI void addChainedSubcommandValuesToExisting(uint index, ::std::vector<::std::pair<uint64, uint>> const& values);
+#endif
 
     MCAPI void addEnumValueConstraints(
         ::std::string const&                enumName,
@@ -968,7 +844,9 @@ public:
 
     MCAPI void addEnumValuesToExisting(uint index, ::std::vector<::std::pair<uint64, uint64>> const& values);
 
+#ifdef LL_PLAT_C
     MCAPI ::CommandRegistry::Symbol addPostfix(::std::string const& name);
+#endif
 
     MCAPI void addRule(
         ::CommandRegistry::Symbol                symbol,
@@ -1013,22 +891,7 @@ public:
         ::std::set<::CommandRegistry::Symbol>& workingSet
     ) const;
 
-    MCAPI ::CommandRegistry::Symbol buildOptionalRuleChain(
-        ::CommandRegistry::Signature const&             signature,
-        ::std::vector<::CommandParameterData> const&    params,
-        ::std::vector<::CommandRegistry::Symbol> const& symbols
-    );
-
-    MCAPI ::CommandRegistry::Symbol buildOptionalRuleChain(
-        ::CommandRegistry::Signature const&          signature,
-        ::std::vector<::CommandParameterData> const& params,
-        ::CommandParameterData const*                firstOptional,
-        uint64                                       count
-    );
-
     MCAPI void buildParseTable(uint version) const;
-
-    MCAPI void buildPredictTable(::CommandRegistry::ParseTable& table, uint version) const;
 
     MCAPI ::CommandRegistry::Symbol buildRules(
         ::CommandRegistry::Signature&                                       signature,
@@ -1048,12 +911,6 @@ public:
     ) const;
 #endif
 
-    MCAPI bool checkOriginCommandFlags(
-        ::CommandOrigin const&   origin,
-        ::CommandFlag            flags,
-        ::CommandPermissionLevel permissionLevel
-    ) const;
-
     MCAPI ::std::unique_ptr<::Command> createCommand(
         ::CommandRegistry::ParseToken const& root,
         ::CommandOrigin const&               origin,
@@ -1062,30 +919,24 @@ public:
         ::std::vector<::std::string>&        errorParams
     ) const;
 
-    MCAPI ::std::string describe(::CommandParameterData const& param) const;
-
     MCAPI ::std::string describe(::CommandRegistry::Symbol symbol) const;
 
+#ifdef LL_PLAT_C
     MCAPI ::std::string describe(
-        ::CommandRegistry::Signature const& alias,
-        ::std::string const&                overload,
-        ::CommandRegistry::Overload const&  highlight,
-        uint                                start,
-        uint*                               length,
-        uint*
+        ::CommandRegistry::Signature const& command,
+        ::std::string const&                alias,
+        ::CommandRegistry::Overload const&  overload,
+        uint                                highlight,
+        uint*                               start,
+        uint*                               length
     ) const;
-
-    MCAPI bool enabledInEditor(::std::string const& nameIn) const;
+#endif
 
     MCAPI void finalizeChainedSubcommandOverloadRules(char const* command);
 
     MCFOLD ::CommandRegistry::Signature const* findCommand(::std::string const& name) const;
 
     MCFOLD ::CommandRegistry::Signature* findCommand(::std::string const& name);
-
-    MCAPI ::CommandRegistry::Symbol findIdentifierInfo(::std::string const& name) const;
-
-    MCAPI ::CommandRegistry::Symbol findPostfix(::std::string const& input) const;
 
     MCAPI void fireCommandParseTableTelemetry(::IMinecraftEventing const& eventing, bool isServer) const;
 
@@ -1110,10 +961,6 @@ public:
     MCAPI ::CommandSyntaxInformation
     getCommandOverloadSyntaxInformation(::CommandOrigin const& origin, ::std::string const& commandName) const;
 
-    MCAPI ::CommandRunStats& getCommandRunStats() const;
-
-    MCAPI ::CommandStatus getCommandStatus(::std::string const& nameIn) const;
-
     MCAPI ::InvertableFilter<::std::string> getInvertableFilter(::CommandRegistry::ParseToken const& token) const;
 
 #ifdef LL_PLAT_C
@@ -1123,16 +970,10 @@ public:
         uint                   cursorPosition
     ) const;
 
-    MCAPI bool hasCommands() const;
-
-    MCAPI bool hasState() const;
+    MCAPI bool isCommandOfType(::std::string const& nameIn, ::CommandTypeFlag commandType) const;
 #endif
 
-    MCAPI bool isCommandOfType(::std::string const& nameIn, ::CommandTypeFlag commandType) const;
-
     MCAPI bool isValid(::CommandRegistry::Symbol symbol) const;
-
-    MCAPI bool isValidCommand(::std::string const& commandName) const;
 
 #ifdef LL_PLAT_C
     MCAPI void loadRemoteCommands(::AvailableCommandsPacket const& packet);
@@ -1140,9 +981,9 @@ public:
 
     MCAPI bool originCanRun(::CommandOrigin const& origin, ::CommandRegistry::Signature const& command) const;
 
+#ifdef LL_PLAT_C
     MCAPI bool originCanRunOverloadWithParam(::CommandOrigin const& origin, ::CommandParameterData const& param) const;
 
-#ifdef LL_PLAT_C
     MCAPI ::std::string parsePartialCommand(
         ::CommandRegistry::Parser& parser,
         ::std::string const&       _cmdLine,
@@ -1154,10 +995,10 @@ public:
     MCAPI bool parseSelector(
         ::ActorSelectorArgs&                 args,
         ::CommandRegistry::ParseToken const& token,
-        ::CommandOrigin const&               error,
-        int                                  errorParams,
-        ::std::string&,
-        ::std::vector<::std::string>&
+        ::CommandOrigin const&               origin,
+        int                                  version,
+        ::std::string&                       error,
+        ::std::vector<::std::string>&        errorParams
     ) const;
 
     MCAPI bool parseSelector(
@@ -1167,7 +1008,7 @@ public:
         int                                  version,
         ::std::string&                       error,
         ::std::vector<::std::string>&        errorParams,
-        bool
+        bool                                 wildcard
     ) const;
 
 #ifdef LL_PLAT_C
@@ -1197,21 +1038,19 @@ public:
 
     MCAPI void removeSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 
-#ifdef LL_PLAT_C
-    MCAPI bool requiresCheatsEnabled(::std::string const& nameIn) const;
-#endif
-
     MCAPI ::AvailableCommandsPacket serializeAvailableCommands() const;
 
     MCAPI void setCommandRegistrationOverride(CommandOverrideFunctor functor);
 
-    MCAPI void setScoreCallback(::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback);
+    MCFOLD void setScoreCallback(::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback);
 
     MCAPI void setSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 
     MCAPI void setupChainedSubcommandOverloadRules(::CommandRegistry::Signature& signature);
 
+#ifdef LL_PLAT_C
     MCAPI void setupOverloadRules(::CommandRegistry::Signature& signature);
+#endif
 
     MCAPI ::std::string symbolToString(::CommandRegistry::Symbol symbol) const;
 
@@ -1227,10 +1066,8 @@ public:
 
     MCAPI static ::std::string _removeStringQuotes(::std::string const& str);
 
-    MCFOLD static void buildOverload(::CommandRegistry::Overload& overload);
-
     MCFOLD static ::CommandRegistry::ParseToken*
-    collapse(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol);
+    collapse(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol symbol);
 
     MCAPI static ::CommandRegistry::ParseToken* collapseOn(
         ::CommandRegistry::ParseToken& parent,
@@ -1253,11 +1090,8 @@ public:
         ::CommandRegistry::Symbol      boundSymbol
     );
 
-#ifdef LL_PLAT_C
-    MCAPI static bool isParseMatch(::CommandParameterData const& param, ::CommandRegistry::Symbol in);
-#endif
-
-    MCAPI static ::CommandRegistry::ParseToken* kill(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol);
+    MCAPI static ::CommandRegistry::ParseToken*
+    kill(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol symbol);
 
     MCAPI static bool readFloat(
         float&                               value,
@@ -1296,24 +1130,6 @@ public:
     MCAPI static char const*& CODE_STATUS_PROPERTY_NAME();
 
     MCAPI static char const*& COMMAND_NAME_ENUM_NAME();
-
-    MCAPI static char const*& FUNCTION_NAME_SOFTENUM_NAME();
-
-    MCAPI static char const*& HASITEM_PARAM_DATA();
-
-    MCAPI static char const*& HASITEM_PARAM_ITEM();
-
-    MCAPI static char const*& HASITEM_PARAM_LOCATION();
-
-    MCAPI static char const*& HASITEM_PARAM_QUANTITY();
-
-    MCAPI static char const*& HASITEM_PARAM_SLOT();
-
-    MCAPI static char const*& HASPERMISSIONSTATE_ENUM_DISABLED();
-
-    MCAPI static char const*& HASPERMISSIONSTATE_ENUM_ENABLED();
-
-    MCAPI static char const*& HASPROPERTY_PARAM_PROPERTY_NAME();
 
     MCAPI static char const*& TAG_VALUES_SOFTENUM_NAME();
 

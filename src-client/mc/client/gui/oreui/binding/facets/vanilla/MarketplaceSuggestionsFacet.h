@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/SeeMoreRouteData.h"
 
 // auto generated forward declare list
@@ -13,7 +13,7 @@ class SuggestedContentOffersProvider;
 
 namespace OreUI {
 
-class MarketplaceSuggestionsFacet : public ::OreUI::FacetBase<::OreUI::MarketplaceSuggestionsFacet> {
+class MarketplaceSuggestionsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::MarketplaceSuggestionsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -55,12 +55,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

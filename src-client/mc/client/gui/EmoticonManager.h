@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
-// auto generated forward declare list
-// clang-format off
-class ResourceLocation;
-// clang-format on
-
 class EmoticonManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
@@ -33,8 +28,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit EmoticonManager(::std::string const& listFilename);
 
-    MCAPI void _readEmoticonList(::ResourceLocation const& listLocation);
-
     MCAPI ::std::string emoticonifyText(::std::string const& text) const;
 
     MCAPI void emoticonifyTextInPlace(::std::string& text) const;
@@ -51,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

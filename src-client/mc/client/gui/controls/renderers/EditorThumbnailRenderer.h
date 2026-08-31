@@ -10,9 +10,7 @@
 class BlockSource;
 class ChunkSource;
 class IClientInstance;
-class LocalPlayer;
 class ScreenContext;
-class StructureSettings;
 class StructureTemplate;
 class StructureVolumeRenderer;
 class UIScene;
@@ -44,12 +42,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit EditorThumbnailRenderer(::IClientInstance& clientInstance);
 
-    MCAPI void _buildBlockAndChunkSources(
-        ::LocalPlayer*             player,
-        ::StructureTemplate const& structure,
-        ::StructureSettings&       structureSettings
-    );
-
     MCAPI void _initialize(::IClientInstance& clientInstance);
 
     MCAPI void capture(
@@ -60,8 +52,6 @@ public:
         ::std::function<void(::cg::ImageBuffer&&)> callback,
         ::Vec2                                     rotation
     );
-
-    MCAPI bool isCaptureReady() const;
 
     MCAPI ~EditorThumbnailRenderer();
     // NOLINTEND

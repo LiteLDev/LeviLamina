@@ -4,14 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/RealmsWorldUploadResult.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/realms/EditorRealmsService.h"
 
 // auto generated forward declare list
 // clang-format off
 class WeakEntityRef;
 namespace Editor { class GameOptions; }
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class EditorIsRealmsServiceAvailablePayload; }
 namespace Editor::Network { class RealmWorldDownloadResponsePayload; }
 namespace Editor::Network { class RealmWorldListDownloadPayload; }
@@ -38,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorServerRealmsService() /*override*/ = default;
+    virtual ~EditorServerRealmsService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -64,8 +63,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit EditorServerRealmsService(::Editor::ServiceProviderCollection& providers);
-
     MCNAPI void
     _handleIsRealmsServiceAvailablePayload(::Editor::Network::EditorIsRealmsServiceAvailablePayload const& payload);
 
@@ -76,14 +73,12 @@ public:
     MCNAPI void _handleRealmWorldSlotsDownloadPayload(::Editor::Network::RealmWorldSlotsDownloadPayload const& payload);
 
     MCNAPI void _handleRealmWorldUploadResponse(::Editor::Network::RealmWorldUploadResponsePayload const& payload);
-
-    MCNAPI bool _isDedicatedServer();
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

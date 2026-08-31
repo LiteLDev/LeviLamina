@@ -7,8 +7,3 @@ enum class AnimationMode : uchar {
     Layers = 1,
     Blocks = 2,
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::AnimationMode>();
-// clang-format on

@@ -10,13 +10,14 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { struct TransportStats; }
+namespace webrtc { class Environment; }
 namespace webrtc { class PeerConnectionInternal; }
 namespace webrtc { class RTCStatsCollectorCallback; }
 namespace webrtc { class RTCStatsReport; }
 namespace webrtc { class RtpReceiverInternal; }
 namespace webrtc { class RtpSenderInternal; }
 namespace webrtc { class Timestamp; }
+namespace webrtc { struct TransportStats; }
 // clang-format on
 
 namespace webrtc {
@@ -36,8 +37,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk3befac;
-        ::ll::UntypedStorage<8, 8> mUnkea698f;
+        ::ll::UntypedStorage<8, 8> mUnkaa77b4;
+        ::ll::UntypedStorage<8, 8> mUnkfaa2e5;
         // NOLINTEND
 
     public:
@@ -131,7 +132,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>   mUnk975ff9;
-        ::ll::UntypedStorage<4, 4>   mUnk385638;
+        ::ll::UntypedStorage<4, 4>   mUnk3f24e1;
         ::ll::UntypedStorage<8, 40>  mUnkfde70b;
         ::ll::UntypedStorage<8, 40>  mUnk44b76f;
         ::ll::UntypedStorage<8, 360> mUnkd10314;
@@ -149,19 +150,22 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk7d2ce4;
-    ::ll::UntypedStorage<8, 8>  mUnka55ac4;
-    ::ll::UntypedStorage<8, 8>  mUnkafd602;
-    ::ll::UntypedStorage<8, 8>  mUnk4e06e8;
+    ::ll::UntypedStorage<1, 1>  mUnkf7857d;
+    ::ll::UntypedStorage<8, 40> mUnkfdda83;
+    ::ll::UntypedStorage<1, 1>  mUnkc89c9c;
+    ::ll::UntypedStorage<8, 8>  mUnk9bc54b;
+    ::ll::UntypedStorage<8, 8>  mUnkc1fc1c;
+    ::ll::UntypedStorage<8, 8>  mUnkb1c699;
     ::ll::UntypedStorage<4, 4>  mUnk848e5d;
     ::ll::UntypedStorage<8, 8>  mUnkd8e664;
     ::ll::UntypedStorage<8, 8>  mUnkcf7854;
     ::ll::UntypedStorage<8, 24> mUnk10ad9f;
     ::ll::UntypedStorage<8, 8>  mUnk28198a;
-    ::ll::UntypedStorage<8, 8>  mUnke33cdd;
+    ::ll::UntypedStorage<8, 8>  mUnk2377fa;
     ::ll::UntypedStorage<8, 24> mUnkc551e5;
     ::ll::UntypedStorage<8, 40> mUnk7f7d3c;
     ::ll::UntypedStorage<8, 16> mUnke88eee;
-    ::ll::UntypedStorage<8, 32> mUnk2d6bd0;
+    ::ll::UntypedStorage<8, 48> mUnk2d6bd0;
     ::ll::UntypedStorage<8, 48> mUnk6945d3;
     ::ll::UntypedStorage<8, 8>  mUnkc64145;
     ::ll::UntypedStorage<8, 8>  mUnkd56f88;
@@ -185,7 +189,7 @@ public:
 
     virtual void ProducePartialResultsOnNetworkThreadImpl(
         ::webrtc::Timestamp                                                                 timestamp,
-        ::std::map<::std::string, ::cricket::TransportStats> const&                         transport_stats_by_name,
+        ::std::map<::std::string, ::webrtc::TransportStats> const&                          transport_stats_by_name,
         ::std::map<::std::string, ::webrtc::RTCStatsCollector::CertificateStatsPair> const& transport_cert_stats,
         ::webrtc::RTCStatsReport*                                                           partial_report
     );
@@ -230,22 +234,23 @@ public:
 
     MCNAPI ::std::map<::std::string, ::webrtc::RTCStatsCollector::CertificateStatsPair>
     PrepareTransportCertificateStats_n(
-        ::std::map<::std::string, ::cricket::TransportStats> const& transport_stats_by_name
+        ::std::map<::std::string, ::webrtc::TransportStats> const& transport_stats_by_name
     );
 
     MCNAPI void ProduceAudioRTPStreamStats_n(
         ::webrtc::Timestamp                                         timestamp,
         ::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const& stats,
+        bool                                                        spec_lifetime,
         ::webrtc::RTCStatsReport*                                   report
     ) const;
 
     MCNAPI void ProduceDataChannelStats_n(::webrtc::Timestamp timestamp, ::webrtc::RTCStatsReport* report) const;
 
     MCNAPI void ProduceIceCandidateAndPairStats_n(
-        ::webrtc::Timestamp                                         timestamp,
-        ::std::map<::std::string, ::cricket::TransportStats> const& transport_stats_by_name,
-        ::webrtc::Call::Stats const&                                call_stats,
-        ::webrtc::RTCStatsReport*                                   report
+        ::webrtc::Timestamp                                        timestamp,
+        ::std::map<::std::string, ::webrtc::TransportStats> const& transport_stats_by_name,
+        ::webrtc::Call::Stats const&                               call_stats,
+        ::webrtc::RTCStatsReport*                                  report
     ) const;
 
     MCNAPI void ProduceMediaSourceStats_s(::webrtc::Timestamp timestamp, ::webrtc::RTCStatsReport* report) const;
@@ -255,18 +260,29 @@ public:
         ::std::optional<::std::string> sctp_transport_name
     );
 
+    MCNAPI void ProduceRTPStreamStats_n(
+        ::webrtc::Timestamp                                                        timestamp,
+        ::std::vector<::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo> const& transceiver_stats_infos,
+        ::webrtc::RTCStatsReport*                                                  report
+    ) const;
+
     MCNAPI void ProduceTransportStats_n(
         ::webrtc::Timestamp                                                                 timestamp,
-        ::std::map<::std::string, ::cricket::TransportStats> const&                         transport_stats_by_name,
+        ::std::map<::std::string, ::webrtc::TransportStats> const&                          transport_stats_by_name,
         ::std::map<::std::string, ::webrtc::RTCStatsCollector::CertificateStatsPair> const& transport_cert_stats,
+        ::webrtc::Call::Stats const&                                                        call_stats,
         ::webrtc::RTCStatsReport*                                                           report
     ) const;
 
     MCNAPI void ProduceVideoRTPStreamStats_n(
         ::webrtc::Timestamp                                         timestamp,
         ::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const& stats,
+        bool                                                        spec_lifetime,
         ::webrtc::RTCStatsReport*                                   report
     ) const;
+
+    MCNAPI
+    RTCStatsCollector(::webrtc::PeerConnectionInternal* pc, ::webrtc::Environment const& env, int64 cache_lifetime_us);
 
     MCNAPI void WaitForPendingRequest();
     // NOLINTEND
@@ -275,7 +291,13 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::RTCStatsCollector>
-    Create(::webrtc::PeerConnectionInternal* pc, int64 cache_lifetime_us);
+    Create(::webrtc::PeerConnectionInternal* pc, ::webrtc::Environment const& env, int64 cache_lifetime_us);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::webrtc::PeerConnectionInternal* pc, ::webrtc::Environment const& env, int64 cache_lifetime_us);
     // NOLINTEND
 
 public:
@@ -294,7 +316,7 @@ public:
 
     MCNAPI void $ProducePartialResultsOnNetworkThreadImpl(
         ::webrtc::Timestamp                                                                 timestamp,
-        ::std::map<::std::string, ::cricket::TransportStats> const&                         transport_stats_by_name,
+        ::std::map<::std::string, ::webrtc::TransportStats> const&                          transport_stats_by_name,
         ::std::map<::std::string, ::webrtc::RTCStatsCollector::CertificateStatsPair> const& transport_cert_stats,
         ::webrtc::RTCStatsReport*                                                           partial_report
     );

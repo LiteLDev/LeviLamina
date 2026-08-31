@@ -6,11 +6,6 @@
 #include "mc/deps/core/math/Color.h"
 #include "mc/world/level/dimension/DimensionType.h"
 
-// auto generated forward declare list
-// clang-format off
-struct Tick;
-// clang-format on
-
 class BaseLightData {
 public:
     // BaseLightData inner types declare
@@ -44,22 +39,6 @@ public:
     ::ll::TypedStorage<4, 4, int>             mSkyFlashTime;
     ::ll::TypedStorage<4, 4, float>           mDarknessFactor;
     ::ll::TypedStorage<4, 4, float>           mDarknessFactorPreviousFrame;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BaseLightData();
-
-    MCAPI ::BaseLightData::DarknessLevels
-    calculateDarknessLevels(::Tick const& currentTick, float strength, float a) const;
-
-    MCAPI bool operator==(::BaseLightData const& rhs) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    ::ll::TypedStorage<4, 4, float>           mTheEndLightSourceIntensity;
     // NOLINTEND
 };

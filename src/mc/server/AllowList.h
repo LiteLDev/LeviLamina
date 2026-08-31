@@ -19,6 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::AllowListEntry>> mEntries;
     ::ll::TypedStorage<8, 64, ::std::function<void()>>         mSyncCallback;
+    ::ll::TypedStorage<1, 1, bool>                             mIsEnabled;
     // NOLINTEND
 
 #ifdef LL_PLAT_S
@@ -53,10 +54,6 @@ public:
 
     MCAPI bool addByXuid(::std::string_view xuid);
 
-#ifdef LL_PLAT_S
-    MCFOLD ::std::vector<::AllowListEntry> const& getEntries() const;
-#endif
-
     MCAPI bool isAllowed(
         ::mce::UUID const& uuid,
         ::std::string_view xuid,
@@ -64,17 +61,9 @@ public:
         ::std::string_view nsaId
     ) const;
 
-    MCAPI bool isIgnoringPlayerLimit(::mce::UUID const& uuid, ::std::string_view xuid) const;
-
 #ifdef LL_PLAT_S
     MCAPI bool removeByName(::std::string_view name);
 #endif
-
-    MCAPI bool removeByNsaId(::std::string_view nsaId);
-
-    MCAPI bool removeByPsnId(::std::string_view psnId);
-
-    MCAPI bool removeByXuid(::std::string_view xuid);
 
     MCAPI void tryUpdateEntries(
         ::std::string_view name,

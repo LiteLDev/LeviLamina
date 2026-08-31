@@ -32,24 +32,6 @@ public:
     ServiceResponse& operator=(ServiceResponse const&);
     ServiceResponse(ServiceResponse const&);
     ServiceResponse();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::Identity::ServiceResponse& operator=(::Identity::ServiceResponse&&);
-
-    MCNAPI ~ServiceResponse();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace Identity

@@ -10,7 +10,6 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class LayeredAbilities;
 // clang-format on
 
 class WorldBuilderCommand : public ::Command {
@@ -23,8 +22,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setWorldBuilder(::LayeredAbilities& abilities, bool newValue);
-
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
@@ -34,11 +31,5 @@ public:
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

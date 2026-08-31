@@ -16,16 +16,4 @@ public:
     OSInformation& operator=(OSInformation const&);
     OSInformation(OSInformation const&);
     OSInformation();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~OSInformation();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

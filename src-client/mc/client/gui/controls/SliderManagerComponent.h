@@ -27,26 +27,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SliderManagerComponent() /*override*/ = default;
+    virtual ~SliderManagerComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&         visualTree,
-        ::ScreenInputContext& screenEvent,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     ) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void _gatherSliderGroupState(::VisualTree& visualTree);
-
-    MCAPI void setGroupNames(::std::vector<uint> collectionName);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -57,16 +55,10 @@ public:
     MCFOLD void $reset();
 
     MCAPI ::ComponentReceiveActionType $receive(
-        ::VisualTree&         visualTree,
-        ::ScreenInputContext& screenEvent,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

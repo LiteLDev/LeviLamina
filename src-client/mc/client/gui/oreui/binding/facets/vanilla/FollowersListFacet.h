@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/social/XboxAPICallResult.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -18,7 +18,7 @@ namespace Social { class IUserManager; }
 
 namespace OreUI {
 
-class FollowersListFacet : public ::OreUI::FacetBase<::OreUI::FollowersListFacet> {
+class FollowersListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::FollowersListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -51,9 +51,9 @@ public:
 
     MCFOLD ::std::vector<::OreUI::AddFriendUserItem>& getDisplayableList();
 
-    MCFOLD ::XboxAPICallResult const getXboxAPICallResult() const;
+    MCAPI ::XboxAPICallResult const getXboxAPICallResult() const;
 
-    MCFOLD bool isDataLoading() const;
+    MCAPI bool isDataLoading() const;
     // NOLINTEND
 
 public:
@@ -80,13 +80,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI bool $update();
     // NOLINTEND
 };
 

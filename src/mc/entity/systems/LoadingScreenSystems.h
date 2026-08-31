@@ -12,8 +12,6 @@ namespace LoadingScreenSystems {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCAPI ::std::unique_ptr<::LoadingScreenSystems::IClientFactory> createClientFactory();
-
 MCAPI void registerClientSystems(::EntitySystems& entitySystems, ::LoadingScreenSystems::IClientFactory const& factory);
 #endif
 

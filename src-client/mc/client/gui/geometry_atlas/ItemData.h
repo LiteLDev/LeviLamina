@@ -16,11 +16,8 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GeometryAtlas::IItemHandle>> mItem;
     ::ll::TypedStorage<4, 4, float>                                            mPosX;
     ::ll::TypedStorage<4, 4, float>                                            mPosY;
-    ::ll::TypedStorage<4, 4, float>                                            mLightMultiplier;
     ::ll::TypedStorage<4, 4, float>                                            mAlphaMultiplier;
     ::ll::TypedStorage<4, 4, float>                                            mScale;
-    ::ll::TypedStorage<4, 4, int>                                              mFrame;
-    ::ll::TypedStorage<1, 1, bool>                                             mAllowAnimation;
     // NOLINTEND
 };
 

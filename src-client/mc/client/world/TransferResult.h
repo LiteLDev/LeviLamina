@@ -16,6 +16,7 @@ enum class TransferResult : int {
     UnsupportedPlatform    = 8,
     AlreadyInProgress      = 9,
     InterruptedByUser      = 10,
+    FailureNotEnoughSpace  = 11,
 };
 
 }

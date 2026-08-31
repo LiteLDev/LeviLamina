@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Level;
 // clang-format on
 
 class ClientActorManagerProxy : public ::ActorManagerProxy {
@@ -38,18 +37,6 @@ public:
     virtual void removeActorInLevelChunk(::Actor const&) /*override*/;
 
     virtual void deleteActorFromWorldInLevelChunk(::Actor const&) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ClientActorManagerProxy(::Level& level);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Level& level);
     // NOLINTEND
 
 public:

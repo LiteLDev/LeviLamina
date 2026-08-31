@@ -3,18 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockActorComponent.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/level/block/actor/SignTextSide.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockSource;
-namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
-namespace ScriptModuleMinecraft { struct ScriptRawTextInterface; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -25,23 +21,7 @@ class ScriptBlockSignComponent : public ::ScriptModuleMinecraft::BaseScriptBlock
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRawTextInterface>>
-    getRawText(::SignTextSide side) const;
-
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getText(::SignTextSide side) const;
-
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::ItemColor>> getTextDyeColor(::SignTextSide side) const;
-
     MCAPI ::Scripting::Result_deprecated<bool> getWaxed() const;
-
-    MCAPI ::Scripting::Result_deprecated<void> setText(
-        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& messageParameter,
-        ::SignTextSide                                                                           side
-    );
-
-    MCAPI ::Scripting::Result_deprecated<void> setTextDyeColor(::std::optional<::ItemColor> color, ::SignTextSide side);
-
-    MCAPI ::Scripting::Result_deprecated<void> setWaxed(bool waxed);
     // NOLINTEND
 
 public:
@@ -58,12 +38,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static char const*& ComponentId();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

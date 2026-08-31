@@ -98,12 +98,6 @@ public:
 
     virtual void _initializeInternal() /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Core

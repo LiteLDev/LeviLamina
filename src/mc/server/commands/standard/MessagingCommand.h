@@ -23,14 +23,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MessagingCommand();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MessagingCommand(bool requireChatPerms, bool requireTellPerms);
-
     MCAPI bool checkChatPermissions(::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
@@ -42,17 +36,5 @@ public:
         ::Level const&                                     level,
         ::std::vector<::Safety::TextFilteringEvent> const& events
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool requireChatPerms, bool requireTellPerms);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

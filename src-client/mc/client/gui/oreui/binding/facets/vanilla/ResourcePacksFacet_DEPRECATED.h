@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/FacetResourcePackId.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/FindPackFlags.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/Prompt.h"
@@ -18,7 +18,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ContentTierIncompatibleReason;
 class ContentView;
 class DlcChecker;
 class IClientInstance;
@@ -49,7 +48,7 @@ namespace OreUI { struct PromptAction; }
 
 namespace OreUI {
 
-class ResourcePacksFacet_DEPRECATED : public ::OreUI::FacetBase<::OreUI::ResourcePacksFacet_DEPRECATED> {
+class ResourcePacksFacet_DEPRECATED : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ResourcePacksFacet_DEPRECATED> {
 public:
     // ResourcePacksFacet_DEPRECATED inner types declare
     // clang-format off
@@ -100,18 +99,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string> mTitle;
         ::ll::TypedStorage<8, 32, ::std::string> mBody;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~FacetPromptDetails();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct PackCollection {
@@ -125,18 +112,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::FacetResourcePack>> mRealms;
         ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::FacetResourcePack>> mUnowned;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~PackCollection();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
     struct PendingBehaviourPackRemoval {
@@ -147,18 +122,6 @@ public:
         ::ll::TypedStorage<4, 4, ::PackListType>                                             mToPackList;
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PackContentItem const>>                mPackItem;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~PendingBehaviourPackRemoval();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct PackActivationRequest {
@@ -167,31 +130,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::OreUI::FacetResourcePackId> mPackId;
         ::ll::TypedStorage<1, 1, bool>                          mForce;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PackActivationRequest& operator=(PackActivationRequest const&);
-        PackActivationRequest();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI PackActivationRequest(::OreUI::ResourcePacksFacet_DEPRECATED::PackActivationRequest const&);
-
-        MCAPI ~PackActivationRequest();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::OreUI::ResourcePacksFacet_DEPRECATED::PackActivationRequest const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -316,11 +254,7 @@ public:
 
     MCAPI ::OreUI::ResourcePacksFacet_DEPRECATED::ResourcePacksFacetStatus _handleDlcCheckError(::DlcCheckResult error);
 
-    MCAPI ::OreUI::ResourcePacksFacet_DEPRECATED::ResourcePacksFacetStatus _handlePromptInteraction();
-
     MCAPI void _initialize(::LevelSummary& levelSummary);
-
-    MCAPI ::OreUI::FacetResourcePack _makeFacetPack(::Bedrock::NotNullNonOwnerPtr<::PackContentItem const> item) const;
 
     MCAPI void _movePackOnDataWarning();
 
@@ -331,20 +265,8 @@ public:
         ::ContentType                              contentType
     );
 
-    MCAPI void _reserveMemoryUpfront();
-
     MCAPI void
     _reserveMemoryUpfrontOnPackCollection(::OreUI::ResourcePacksFacet_DEPRECATED::PackCollection& packCollection);
-
-    MCAPI void _showContentTierIncompatiblePrompt(::ContentTierIncompatibleReason const& reason);
-
-    MCAPI void _showDownloadPrompt();
-
-    MCAPI void _showHasPerformanceIssuesPrompt();
-
-    MCAPI void _showMissingDependencyErrorPrompt();
-
-    MCAPI void _showMissingOwnedDLCPrompt();
 
     MCAPI void _showNoInternetPrompt();
 
@@ -355,8 +277,6 @@ public:
     MCAPI void _showPackSettings(::OreUI::FacetResourcePackId const& packId);
 
     MCAPI void _showUnspecifiedErrorPrompt();
-
-    MCAPI void _startDownload();
 
     MCAPI void _tryActivatePack(::OreUI::ResourcePacksFacet_DEPRECATED::PackActivationRequest request);
 
@@ -370,13 +290,13 @@ public:
 
     MCAPI void clearLastActivatedPackId();
 
-    MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getActiveBehaviorPacks() const;
+    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getActiveBehaviorPacks() const;
 
     MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getActiveTexturePacks() const;
 
-    MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getAvailableBehaviorPacks() const;
+    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getAvailableBehaviorPacks() const;
 
-    MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getAvailableTexturePacks() const;
+    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getAvailableTexturePacks() const;
 
     MCAPI float getDownloadProgress() const;
 
@@ -384,17 +304,17 @@ public:
 
     MCAPI float getImportProgress() const;
 
-    MCFOLD ::OreUI::FacetResourcePackId const& getLastactivatedPackId() const;
+    MCAPI ::OreUI::FacetResourcePackId const& getLastactivatedPackId() const;
 
     MCFOLD ::OreUI::FacetResourcePackId const& getMarketplacePackId() const;
 
     MCAPI ::OreUI::Prompt const& getPrompt() const;
 
-    MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getRealmsTexturePacks() const;
+    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getRealmsTexturePacks() const;
 
-    MCFOLD ::OreUI::ResourcePacksFacet_DEPRECATED::FacetPromptDetails const& getResourcePackToDownload() const;
+    MCAPI ::OreUI::ResourcePacksFacet_DEPRECATED::FacetPromptDetails const& getResourcePackToDownload() const;
 
-    MCFOLD ::OreUI::ResourcePacksFacet_DEPRECATED::ResourcePacksFacetStatus getStatus() const;
+    MCAPI ::OreUI::ResourcePacksFacet_DEPRECATED::ResourcePacksFacetStatus getStatus() const;
 
     MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getUnownedTexturePacks() const;
 
@@ -456,12 +376,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

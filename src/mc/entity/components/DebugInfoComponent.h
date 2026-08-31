@@ -80,8 +80,6 @@ public:
 
     MCAPI void addListener(::HashedString const& messageType, ::NetworkIdentifier source, ::SubClientId subClientId);
 
-    MCFOLD bool listenersEmpty() const;
-
     MCAPI ::DebugInfoComponent& operator=(::DebugInfoComponent&&);
 
     MCAPI void removeListener(::HashedString const&, ::NetworkIdentifier networkIdentifier, ::SubClientId subClientId);

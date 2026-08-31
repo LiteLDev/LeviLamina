@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class SocketAddress; }
 namespace webrtc { class AsyncDnsResolverInterface; }
+namespace webrtc { class SocketAddress; }
 // clang-format on
 
 namespace NetherNet {
@@ -31,15 +31,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncDnsResolverFactory() /*override*/ = default;
+    virtual ~AsyncDnsResolverFactory() /*override*/;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> Create() /*override*/;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
+    CreateAndResolve(::webrtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
 
-    virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;
+    virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAndResolve(
+        ::webrtc::SocketAddress const& addr,
+        int                            family,
+        ::absl::AnyInvocable<void()>   callback
+    ) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -48,18 +57,12 @@ public:
     MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $Create();
 
     MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    $CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback);
+    $CreateAndResolve(::webrtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback);
 
     MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    $CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback);
+    $CreateAndResolve(::webrtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

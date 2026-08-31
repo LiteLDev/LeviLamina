@@ -6,7 +6,6 @@
 #include "mc/client/gui/SettingsModalType.h"
 #include "mc/client/gui/SettingsTabIndex.h"
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
-#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -76,16 +75,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack,
         ::OreUI::RouteAction const&                         routeAction,
         bool                                                fullscreen,
-        bool                                                skipLegacyProgress
-    ) const;
-
-    MCAPI bool _routeValid() const;
-
-    MCAPI bool _tryToPushRealmsManageTab(
-        ::std::string const&                                path,
-        ::SceneFactory&                                     sceneFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack,
-        ::SettingsTabIndex                                  settingsTabIndex
+        bool                                                skipLegacyProgress,
+        bool                                                legacySyncOnly
     ) const;
     // NOLINTEND
 
@@ -105,11 +96,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> OREUI_ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> STORAGE_LEGACY_ROUTE();
     // NOLINTEND
 
 public:
@@ -136,12 +127,6 @@ public:
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

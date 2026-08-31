@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrewingStandScreenController() /*override*/ = default;
+    virtual ~BrewingStandScreenController() /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
 
@@ -52,8 +52,6 @@ public:
         ::BlockPos const& pos,
         ::ActorUniqueID
     );
-
-    MCAPI void _registerBindings();
     // NOLINTEND
 
 public:
@@ -64,22 +62,20 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $_isStillValid() const;
+    MCAPI bool $_isStillValid() const;
 
     MCAPI void $_registerCoalesceOrder();
 
     MCAPI void $_registerAutoPlaceOrder();
 
     MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

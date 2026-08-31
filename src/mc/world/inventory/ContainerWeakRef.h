@@ -10,11 +10,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class BlockSource;
 class Container;
 struct ContainerRuntimeIdTag;
-struct ContainerWeakRefData;
 // clang-format on
 
 class ContainerWeakRef {
@@ -26,59 +23,5 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>                   mBlockPosition;
     ::ll::TypedStorage<4, 4, ::ContainerRuntimeId>          mContainerRuntimeId;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Container>> mWeakContainer;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ContainerWeakRef();
-
-    MCAPI explicit ContainerWeakRef(::std::weak_ptr<::Container> ref);
-
-    MCAPI ContainerWeakRef(::BlockPos const& blockPos, ::ContainerRuntimeId const& containerRuntimeId);
-
-    MCAPI ContainerWeakRef(
-        ::ActorUniqueID const&      actorId,
-        ::ActorContainerType        containerType,
-        ::ContainerRuntimeId const& containerRuntimeId
-    );
-
-    MCAPI explicit operator bool() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::ContainerWeakRefData tryGetContainer(::BlockSource& region) const;
-#endif
-
-    MCAPI ~ContainerWeakRef();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::Container* tryGetActorContainer(::Actor& actor, ::ActorContainerType containerType);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::weak_ptr<::Container> ref);
-
-    MCAPI void* $ctor(::BlockPos const& blockPos, ::ContainerRuntimeId const& containerRuntimeId);
-
-    MCAPI void* $ctor(
-        ::ActorUniqueID const&      actorId,
-        ::ActorContainerType        containerType,
-        ::ContainerRuntimeId const& containerRuntimeId
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

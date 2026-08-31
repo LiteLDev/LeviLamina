@@ -4,25 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/EditorReplicationService.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Editor { class ServiceProviderCollection; }
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 namespace Editor::Services {
 
 class ServerReplicationService : public ::Editor::Services::EditorReplicationService {
 public:
-    // prevent constructor by default
-    ServerReplicationService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerReplicationService() /*override*/ = default;
+    virtual ~ServerReplicationService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -36,21 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI ServerReplicationService(
-        ::Editor::ServiceProviderCollection& serviceProviders,
-        ::cereal::ReflectionCtx&             reflectionContext
-    );
-
-    MCNAPI void _sendClientInitPayload();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::cereal::ReflectionCtx& reflectionContext);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

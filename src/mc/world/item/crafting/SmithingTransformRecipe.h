@@ -47,14 +47,6 @@ public:
         ::Recipe::Results&&       results,
         ::HashedString const&     tag
     );
-
-    MCFOLD ::RecipeIngredient const& getAdditionIngredient() const;
-
-    MCFOLD ::RecipeIngredient const& getBaseIngredient() const;
-
-    MCAPI ::ItemInstance const& getResult() const;
-
-    MCFOLD ::RecipeIngredient const& getTemplateIngredient() const;
     // NOLINTEND
 
 public:
@@ -74,6 +66,14 @@ public:
         ::Recipe::Results&&       results,
         ::HashedString const&     tag
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

@@ -6,12 +6,14 @@
 #include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/client/gui/oreui/binding/properties/PropertyObject.h"
 #include "mc/client/gui/oreui/binding/queries/menus/ContentItemType.h"
+#include "mc/client/world/SyncState.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 struct ContentItem;
 namespace OreUI { class IResourceAllowList; }
+namespace World { class IWorldCloudSyncer; }
 // clang-format on
 
 namespace OreUI {
@@ -29,6 +31,7 @@ public:
     ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>>            mGameType;
     ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>>            mDescription;
     ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>>            mDate;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<::World::SyncState>>>       mCloudSyncState;
     ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>>            mVersion;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                      mIsSelected;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                      mHasErrors;
@@ -43,13 +46,9 @@ public:
     // NOLINTBEGIN
     MCAPI StorageContentItem(
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList,
+        ::World::IWorldCloudSyncer const&                                 worldCloudSyncer,
         ::std::shared_ptr<::ContentItem const> const&                     contentItem,
         bool                                                              isSelected
-    );
-
-    MCAPI void _setProperties(
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList,
-        ::std::shared_ptr<::ContentItem const> const&                     item
     );
     // NOLINTEND
 
@@ -58,15 +57,10 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList,
+        ::World::IWorldCloudSyncer const&                                 worldCloudSyncer,
         ::std::shared_ptr<::ContentItem const> const&                     contentItem,
         bool                                                              isSelected
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

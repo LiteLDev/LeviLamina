@@ -22,12 +22,6 @@ public:
         ::ServerInstanceMessenger::MessageAction                                     action
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ServerInstanceMessenger

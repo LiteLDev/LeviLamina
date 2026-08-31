@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class File; }
-namespace Core { class FileOpenMode; }
-// clang-format on
-
 namespace Core {
 
 class FileStdStreamBuf : public ::std::streambuf {
@@ -46,12 +40,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI int _flushoutput();
-
-    MCNAPI void close();
-
-    MCNAPI bool isOpen() const;
-
-    MCNAPI void open(::Core::File&& file, ::Core::FileOpenMode fileOpenMode);
     // NOLINTEND
 
 public:
@@ -74,12 +62,6 @@ public:
     MCNAPI int $sync();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

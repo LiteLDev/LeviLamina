@@ -6,9 +6,12 @@
 #include "mc/certificates/identity/edu/Role.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/network/BaseConnectionRequest.h"
+#include "mc/network/EditorConnectionJoinIntent.h"
+#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
+class ILevel;
 class WebToken;
 struct ConnectionAuthInfo;
 struct ConnectionSkinInfo;
@@ -18,11 +21,6 @@ namespace Social { struct Nonce; }
 // clang-format on
 
 class ConnectionRequest : public ::BaseConnectionRequest {
-public:
-    // prevent constructor by default
-    ConnectionRequest& operator=(ConnectionRequest const&);
-    ConnectionRequest();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -34,7 +32,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConnectionRequest(::ConnectionRequest const& other);
+    MCAPI bool clientIsEditorCapable() const;
+
+    MCAPI ::EditorConnectionJoinIntent getClientEditorConnectionIntent() const;
 
     MCAPI ::std::string getDeviceModel() const;
 
@@ -49,6 +49,9 @@ public:
     MCAPI ::std::optional<::PlayerPartyInfo> getPartyInfo() const;
 
     MCAPI bool isEduMode() const;
+
+    MCAPI ::Bedrock::Result<::EditorConnectionJoinIntent>
+    validateEditorConnectionJoinIntentAgainstServerPolicy(::gsl::not_null<::ILevel*> level) const;
     // NOLINTEND
 
 public:
@@ -65,7 +68,8 @@ public:
         ::InputMode                               currentInputMode,
         int                                       guiScale,
         ::std::string const&                      languageCode,
-        bool                                      isEditorMode,
+        bool                                      clientIsEditorCapable,
+        ::EditorConnectionJoinIntent              clientEditorConnectionIntent,
         bool                                      isEduMode,
         ::std::unique_ptr<::WebToken>             eduTokenChain,
         ::std::string                             eduSessionToken,
@@ -83,12 +87,6 @@ public:
 #endif
 
     MCAPI static ::ConnectionRequest fromString(::std::string const& str);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ConnectionRequest const& other);
     // NOLINTEND
 
 public:

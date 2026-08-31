@@ -44,10 +44,13 @@ public:
         mPictureTakenPublisher;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PhotoManager();
 
+#else // LL_PLAT_C
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -66,43 +69,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI PhotoManager(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, bool isClientSide);
 
     MCAPI ::Core::PathBuffer<::std::string> _getPhotoStoragePath();
+#endif
 
     MCAPI void createPhotoStorage();
 
     MCAPI void createScreenshotsFolder(::std::string const& levelId, ::AppPlatform& appPlatform);
-
-    MCAPI ::PhotoStorage& getPhotoStorage();
-
-    MCFOLD ::Core::PathBuffer<::std::string> const& getScreenshotsFolder() const;
-
-    MCAPI void takePicture(
-        ::cg::ImageBuffer&                                              outImage,
-        ::Actor*                                                        camera,
-        ::Actor*                                                        target,
-        ::ScreenshotOptions&                                            screenshotOptions,
-        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
-    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, bool isClientSide);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::PubSub::Connector<void(
+    MCAPI ::Bedrock::PubSub::Connector<void(
         ::cg::ImageBuffer&,
         ::Actor*,
         ::Actor*,
@@ -112,11 +107,5 @@ public:
     $getPictureTakenConnector();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

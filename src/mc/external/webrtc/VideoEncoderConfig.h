@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace webrtc { class FieldTrialsView; }
 namespace webrtc { struct VideoCodecAV1; }
 namespace webrtc { struct VideoCodecVP8; }
 namespace webrtc { struct VideoCodecVP9; }
@@ -44,12 +45,6 @@ public:
 
         virtual ~EncoderSpecificSettings() /*override*/ = default;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     class VideoStreamFactoryInterface : public ::webrtc::RefCountInterface {
@@ -57,15 +52,9 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual ::std::vector<::webrtc::VideoStream>
-        CreateEncoderStreams(int, int, ::webrtc::VideoEncoderConfig const&) = 0;
+        CreateEncoderStreams(::webrtc::FieldTrialsView const&, int, int, ::webrtc::VideoEncoderConfig const&) = 0;
 
         virtual ~VideoStreamFactoryInterface() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
         // NOLINTEND
     };
 
@@ -89,12 +78,6 @@ public:
 
         virtual ~Av1EncoderSpecificSettings() /*override*/ = default;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     class Vp8EncoderSpecificSettings : public ::webrtc::VideoEncoderConfig::EncoderSpecificSettings {
@@ -116,12 +99,6 @@ public:
         virtual void FillVideoCodecVp8(::webrtc::VideoCodecVP8*) const /*override*/;
 
         virtual ~Vp8EncoderSpecificSettings() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
         // NOLINTEND
     };
 
@@ -145,12 +122,6 @@ public:
 
         virtual ~Vp9EncoderSpecificSettings() /*override*/ = default;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:
@@ -159,7 +130,7 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnkd621ce;
     ::ll::UntypedStorage<8, 96> mUnkefb343;
     ::ll::UntypedStorage<8, 8>  mUnk1192ea;
-    ::ll::UntypedStorage<8, 24> mUnkd9e904;
+    ::ll::UntypedStorage<8, 24> mUnkcd9b96;
     ::ll::UntypedStorage<4, 4>  mUnk876a01;
     ::ll::UntypedStorage<1, 1>  mUnke69d66;
     ::ll::UntypedStorage<8, 8>  mUnk20c590;

@@ -45,12 +45,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI FeaturedWorldTemplateManager(
-        ::std::shared_ptr<::IMarketplaceContentOffersProvider>   suggestedContentOffersProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager
-    );
-
-    MCAPI FeaturedWorldTemplateManager(
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager,
@@ -64,30 +58,12 @@ public:
 
     MCAPI void _prepareOffers();
 
-    MCAPI bool areSuggestedOffersLoaded() const;
-
-    MCFOLD ::std::vector<::World::MarketplaceWorldTemplateData> const& getFeaturedWorldTemplateList() const;
-
-    MCAPI ::std::string getSeeMorePageId() const;
-
-    MCAPI ::std::optional<::std::string> getSuggestedOffersTitle() const;
-
-    MCFOLD bool isDirty() const;
-
-    MCAPI void refreshOffers();
-
     MCAPI void update(double);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::IMarketplaceContentOffersProvider>   suggestedContentOffersProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager
-    );
-
     MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
@@ -101,12 +77,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

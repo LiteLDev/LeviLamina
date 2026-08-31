@@ -17,18 +17,6 @@ public:
     FlatFileSearchResult& operator=(FlatFileSearchResult const&);
     FlatFileSearchResult(FlatFileSearchResult const&);
     FlatFileSearchResult();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~FlatFileSearchResult();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Core

@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WndProc_PC() /*override*/ = default;
+    virtual ~WndProc_PC() /*override*/;
 
     virtual ::std::optional<int64> onClose(::MainGameCore::WndProc::WndProcParams params) /*override*/;
 
@@ -71,6 +71,12 @@ public:
     virtual ::std::optional<int64> onMouseLeave(::MainGameCore::WndProc::WndProcParams params) /*override*/;
 
     virtual ::std::optional<int64> onChar(::MainGameCore::WndProc::WndProcParams params) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -105,12 +111,6 @@ public:
     MCAPI ::std::optional<int64> $onMouseLeave(::MainGameCore::WndProc::WndProcParams params);
 
     MCAPI ::std::optional<int64> $onChar(::MainGameCore::WndProc::WndProcParams params);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

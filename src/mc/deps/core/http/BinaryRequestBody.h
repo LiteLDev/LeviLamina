@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BinaryRequestBody() /*override*/ = default;
+    virtual ~BinaryRequestBody() /*override*/;
 
     virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar> destination) /*override*/;
 
@@ -40,10 +40,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BinaryRequestBody(::gsl::span<uchar const> data);
-
-    MCNAPI ::gsl::span<uchar const> _getData() const;
-
     MCNAPI void setData(::gsl::span<uchar const> data);
     // NOLINTEND
 
@@ -56,9 +52,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::gsl::span<uchar const> data);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -19,7 +19,6 @@ class Actor;
 class Block;
 class BlockSource;
 class BreakBlocksComponent;
-class IPathBlockSource;
 class NavigationComponent;
 class Path;
 class PathfinderNode;
@@ -114,24 +113,9 @@ public:
 
     MCNAPI ::AABB _getAABBForHeightComputation(::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI float _getHeightAboveBlock(::BlockPos const& blockPos, float mobHeight) const;
+    MCNAPI float _getHeightAboveBlock(::BlockPos const& blockPos, float const mobHeight) const;
 
-    MCNAPI float _getHeightBelowBlock(::BlockPos const& blockPos, float mobHeight) const;
-
-    MCNAPI ::std::optional<::BlockPos> _getHighestReachablePosByJumping(
-        ::BlockPos const& originalTargetPos,
-        float             maxReachableHeight,
-        ::BlockPos const& actorSize
-    ) const;
-
-    MCNAPI int _getNeighbors(
-        ::ActorPathingData const& data,
-        ::PathfinderNode&         pos,
-        ::PathfinderNode const&   size,
-        ::PathfinderNode const&   target,
-        uint                      maxDistSqr,
-        ::std::bitset<18> const&  validPositions
-    );
+    MCNAPI float _getHeightBelowBlock(::BlockPos const& blockPos, float const mobHeight) const;
 
     MCNAPI ::PathfinderNode* _getNode(::BlockPos const& pos, ::NodeType nodeType);
 
@@ -152,18 +136,8 @@ public:
 
     MCNAPI float _getPathfindingMalus(::ActorPathingData const& data, ::NodeType nodeType, ::BlockPos const& blockPos);
 
-    MCNAPI ::PathfinderNode* _getUnderneathSupportedNode(
-        ::PathfinderNode*         node,
-        ::ActorPathingData const& data,
-        ::BlockPos const&         fromPos,
-        ::PathfinderNode const&   size,
-        ::CanClimbIntoNode        climbIntoNode
-    );
-
     MCNAPI ::PathfinderNode*
     _getWaterNode(::ActorPathingData const& data, ::BlockPos const& lastPos, ::BlockPos const& blockPos);
-
-    MCNAPI bool _isBlockWater(::BlockPos const& pos) const;
 
     MCNAPI ::NodeType _isFreeStartNode(
         ::ActorPathingData const& data,
@@ -171,9 +145,6 @@ public:
         ::BlockPos const&         testPos,
         ::BlockPos const&         size
     );
-
-    MCNAPI ::NodeType
-    _isFreeWaterNode(::ActorPathingData const& data, ::BlockPos const& lastPos, ::BlockPos const& blockPos);
 
     MCNAPI bool _isNeighborPotentiallyValid(
         ::PathfinderNode const& node,
@@ -183,20 +154,9 @@ public:
     );
 
     MCNAPI ::std::unique_ptr<::Path>
-    _reconstructPath(::PathfinderNode* to, ::PathCompletionType completionType, ::ActorUniqueID);
+    _reconstructPath(::PathfinderNode* to, ::PathCompletionType const completionType, ::ActorUniqueID const actorId);
 
     MCNAPI ::std::unique_ptr<::Path> findPath(::Actor& from, ::Actor const& to, float maxDist);
-
-    MCNAPI ::std::unique_ptr<::Path> findPath(::Actor& from, int x, int y, int z, float maxDist);
-
-    MCNAPI ::NodeType isFree(
-        ::Actor&           actor,
-        ::BlockPos const&  fromPos,
-        ::BlockPos const&  testPos,
-        ::BlockPos const&  size,
-        ::CanJumpIntoNode  jumpIntoNode,
-        ::CanClimbIntoNode climbIntoNode
-    );
 
     MCNAPI ::NodeType isFree(
         ::ActorPathingData const& data,
@@ -213,21 +173,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static float _calculateMoveCost(
-        ::ActorPathingData const& data,
-        ::PathfinderNode&         start,
-        ::BlockPos const&         fromPos,
-        ::CachedChunkBlockSource& region
-    );
-
-    MCNAPI static ::BlockPos _getStartPositionFlyingActor(
-        ::IPathBlockSource const& pathBlockSource,
-        ::BlockPos                originalStartPos,
-        bool                      canFloat,
-        bool                      canPathOverLava,
-        float                     yFeetPosition
-    );
-
     MCNAPI static ::ActorPathingData extractPathingData(
         ::Actor&                        mutableActor,
         ::PathFinder::ExtractionPurpose purpose,

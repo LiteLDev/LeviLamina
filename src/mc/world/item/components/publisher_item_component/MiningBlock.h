@@ -20,16 +20,6 @@ struct MiningBlock : public ::ItemComponent,
                      public ::Bedrock::PubSub::Publisher<
                          void(bool&, ::ItemStack&, ::Block const&, int, int, int, ::Actor&),
                          ::Bedrock::PubSub::ThreadModel::SingleThreaded,
-                         0> {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForDispatchingPublisherBase();
-
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForConnector();
-    // NOLINTEND
-};
+                         0> {};
 
 } // namespace PublisherItemComponent

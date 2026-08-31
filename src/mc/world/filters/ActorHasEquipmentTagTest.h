@@ -17,7 +17,7 @@ public:
     // NOLINTBEGIN
     virtual ::std::string_view getName() const /*override*/;
 
-    virtual bool setup(::FilterTest::Definition const& inputs, ::FilterInputs const&) /*override*/;
+    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
     // NOLINTEND
 
 public:
@@ -25,14 +25,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string_view $getName() const;
 
-    MCNAPI bool $setup(::FilterTest::Definition const& inputs, ::FilterInputs const&);
+    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

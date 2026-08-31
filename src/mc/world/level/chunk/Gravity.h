@@ -31,10 +31,10 @@ public:
     // NOLINTBEGIN
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
         ::IBlockSource& region,
-        ::BlockPos      originalBlockInfo,
-        ::BlockPos      processedBlockInfo,
-        ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&&,
+        ::BlockPos,
+        ::BlockPos,
+        ::br::worldgen::StructureBlockInfo const& originalBlockInfo,
+        ::br::worldgen::StructureBlockInfo&&      processedBlockInfo,
         ::br::worldgen::StructurePlaceSettings const&
     ) const /*override*/;
 
@@ -54,10 +54,10 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
         ::IBlockSource& region,
-        ::BlockPos      originalBlockInfo,
-        ::BlockPos      processedBlockInfo,
-        ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&&,
+        ::BlockPos,
+        ::BlockPos,
+        ::br::worldgen::StructureBlockInfo const& originalBlockInfo,
+        ::br::worldgen::StructureBlockInfo&&      processedBlockInfo,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 
@@ -66,12 +66,6 @@ public:
     MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

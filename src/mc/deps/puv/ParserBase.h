@@ -32,7 +32,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~ParserBase() = default;
+#else // LL_PLAT_C
+    virtual ~ParserBase();
+#endif
 
     virtual ::Puv::LoadResultAny doParse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const = 0;
     // NOLINTEND
@@ -41,10 +45,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ParserBase(::SemVersion const& parserVersion, ::Puv::VersionRange supportedVersions);
-
-    MCNAPI ::Puv::LoadResultAny parse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const;
-
-    MCNAPI ::SemVersion const& parserVersion() const;
     // NOLINTEND
 
 public:
@@ -54,9 +54,11 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

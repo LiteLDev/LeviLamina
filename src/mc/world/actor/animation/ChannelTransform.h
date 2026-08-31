@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class BoneOrientation;
-class ChannelTransform_Float;
 class RenderParams;
 // clang-format on
 
@@ -31,12 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ChannelTransform(::ExpressionNode const& expression);
-
-    MCAPI explicit ChannelTransform(::ChannelTransform_Float const& rhs);
-
-    MCAPI ChannelTransform(::ExpressionNode const& expression, ::Vec3 const& axis);
-
     MCAPI ChannelTransform(::ExpressionNode const& expression, int axisIndex);
 
     MCAPI void animate(
@@ -45,19 +38,11 @@ public:
         float               scale,
         ::BoneTransformType boneTransformType
     ) const;
-
-    MCAPI bool LL_CC_V getDataValues(::__m128& minValueVec, ::__m128& maxValueVec) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ExpressionNode const& expression);
-
-    MCAPI void* $ctor(::ChannelTransform_Float const& rhs);
-
-    MCAPI void* $ctor(::ExpressionNode const& expression, ::Vec3 const& axis);
-
     MCAPI void* $ctor(::ExpressionNode const& expression, int axisIndex);
     // NOLINTEND
 };

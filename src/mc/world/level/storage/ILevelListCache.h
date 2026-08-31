@@ -28,13 +28,19 @@ class ILevelListCache : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~ILevelListCache() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ILevelListCache() /*override*/;
+#endif
 
     virtual void addLevel(::std::string const& levelId, ::LevelData&& levelData) = 0;
 
     virtual void deleteLevel(::std::string const& levelId) = 0;
 
     virtual void refreshLevel(::std::string const& levelId) = 0;
+
+    virtual void ensureLevelInitialized(::std::string const& levelId) = 0;
 
     virtual void deleteLevelFiles(::std::string const& levelId) = 0;
 
@@ -116,14 +122,10 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

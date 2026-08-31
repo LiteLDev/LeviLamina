@@ -18,29 +18,16 @@ public:
     // prevent constructor by default
     GameEventListenerComponent& operator=(GameEventListenerComponent const&);
     GameEventListenerComponent(GameEventListenerComponent const&);
+    GameEventListenerComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameEventListenerComponent();
-
-    MCAPI GameEventListenerComponent(::GameEventListenerComponent&& other);
-
     MCAPI bool initialize(::std::unique_ptr<::GameEventDynamicRegistration> registration);
 
     MCAPI ::GameEventListenerComponent& operator=(::GameEventListenerComponent&& other);
 
-    MCFOLD ::GameEventDynamicRegistration* tryGetListenerRegistration() const;
-
     MCAPI ~GameEventListenerComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
-    MCFOLD void* $ctor(::GameEventListenerComponent&& other);
     // NOLINTEND
 
 public:

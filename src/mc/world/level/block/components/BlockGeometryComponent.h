@@ -9,7 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class ExpressionNode;
+class BlockState;
+class BlockType;
 struct BlockGeometryDescription;
 namespace ClientBlockPipeline { struct BlockSchematic; }
 // clang-format on
@@ -68,14 +69,15 @@ public:
             ::BlockGeometryComponent::DefaultRenderer,
             ::BlockGeometryComponent::DefaultPlusEmbeddedRenderer,
             ::BlockGeometryComponent::DefaultPlusExtraBlockRenderer>>
-        mRenderer;
+                                                  mRenderer;
+    ::ll::TypedStorage<8, 8, ::BlockState const*> mNWayVisualRotationStateX;
+    ::ll::TypedStorage<8, 8, ::BlockState const*> mNWayVisualRotationStateY;
+    ::ll::TypedStorage<8, 8, ::BlockState const*> mNWayVisualRotationStateZ;
     // NOLINTEND
 
 #ifdef LL_PLAT_S
 public:
     // prevent constructor by default
-    BlockGeometryComponent& operator=(BlockGeometryComponent const&);
-    BlockGeometryComponent(BlockGeometryComponent const&);
     BlockGeometryComponent();
 
 #else // LL_PLAT_C
@@ -91,29 +93,12 @@ public:
     MCAPI BlockGeometryComponent();
 #endif
 
-    MCAPI explicit BlockGeometryComponent(::BlockGeometryDescription const& blockGeometryDescription);
+    MCAPI
+    BlockGeometryComponent(::BlockGeometryDescription const& blockGeometryDescription, ::BlockType const* blockType);
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::map<::std::string, ::ExpressionNode> const& getBoneVisibilities() const;
-
-    MCFOLD ::HashedString const& getCullingLayer() const;
-
-    MCFOLD ::HashedString const& getCullingName() const;
-
-    MCAPI bool hasLockedUVs() const;
-#endif
-
-    MCFOLD bool ignoreGeometryForIsSolid() const;
-
-    MCFOLD bool isFullBlock() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD bool isFullBlockV1() const;
-#endif
-
     MCAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent&&);
 
-#ifdef LL_PLAT_C
     MCAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent const&);
 #endif
 
@@ -127,7 +112,7 @@ public:
     MCAPI void* $ctor();
 #endif
 
-    MCAPI void* $ctor(::BlockGeometryDescription const& blockGeometryDescription);
+    MCAPI void* $ctor(::BlockGeometryDescription const& blockGeometryDescription, ::BlockType const* blockType);
     // NOLINTEND
 
 public:

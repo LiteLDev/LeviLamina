@@ -68,14 +68,6 @@ public:
 
     MCAPI int getBreedingStackIndex() const;
 
-    MCAPI bool isChasing() const;
-
-    MCAPI bool isWillingToBreed(bool consumeFoodIfNecessary);
-
-    MCAPI void setChasing(bool chasing);
-
-    MCAPI void setWillingToBreed(bool willingToBreed);
-
     MCAPI void stopGoals();
     // NOLINTEND
 
@@ -101,11 +93,5 @@ public:
     MCAPI void $onLightningHit();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

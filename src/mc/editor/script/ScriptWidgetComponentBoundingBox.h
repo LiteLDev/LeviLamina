@@ -4,11 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/deps/scripting/script_engine/Closure.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
 #include "mc/scripting/Axis.h"
 #include "mc/util/Mirror.h"
@@ -17,17 +15,11 @@
 // auto generated forward declare list
 // clang-format off
 class Vec3;
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class WidgetComponentStateChangePayload; }
-namespace Editor::ScriptModule { class ScriptWidget; }
-namespace Editor::ScriptModule { class ScriptWidgetComponentBoundingBoxOptions; }
-namespace Editor::ScriptModule { class ScriptWidgetComponentBoundingBoxStateChangeEventParameters; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
-namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace ScriptModuleMinecraft { class ScriptSimpleBlockVolume; }
 namespace Scripting { struct ClassBinding; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -73,20 +65,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentBoundingBox(
-        ::Editor::ServiceProviderCollection&                                             serviceProviders,
-        ::mce::UUID const&                                                               componentId,
-        ::std::string const&                                                             componentName,
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>         owner,
-        ::Editor::ScriptModule::ScriptWidgetService&                                     parentService,
-        ::Vec3 const&                                                                    size,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions> options
-    );
-
     MCNAPI void _calculateOrientationTransformations();
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _deactivateHandles();
 
     MCNAPI ::Scripting::Result<::Scripting::Axis, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _getEnableResizeHandles() const;
@@ -126,16 +105,7 @@ public:
     _getVisibleHull() const;
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setEnableResizeHandles(::Scripting::Axis enableResizeHandles);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _setHullColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setMirror(::Mirror m);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setNormalizedOrigin(::Vec3 const& normalizedOrigin);
 
     MCNAPI ::Scripting::Result_deprecated<void> _setOffset(::Vec3 const& offset);
 
@@ -143,19 +113,9 @@ public:
     _setOutlineColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setRotation(::Rotation r);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _setShowTerminator(bool showTerminator);
 
     MCNAPI ::Scripting::Result_deprecated<void> _setSize(::Vec3 const& size);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _setStateChangeEventClosure(
-        ::std::optional<::Scripting::Closure<
-            void(::Scripting::StrongTypedObjectHandle<
-                 ::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxStateChangeEventParameters>)>> const& closure
-    );
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _setVisibleHull(bool visible);
@@ -165,20 +125,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Editor::ServiceProviderCollection&                                             serviceProviders,
-        ::mce::UUID const&                                                               componentId,
-        ::std::string const&                                                             componentName,
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>         owner,
-        ::Editor::ScriptModule::ScriptWidgetService&                                     parentService,
-        ::Vec3 const&                                                                    size,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions> options
-    );
     // NOLINTEND
 
 public:
@@ -197,12 +143,6 @@ public:
     MCNAPI void $_onOwnerPositionUpdate();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

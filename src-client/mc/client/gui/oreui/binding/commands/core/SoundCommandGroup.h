@@ -37,20 +37,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SoundCommandGroup(::OreUI::ClientDependencies const& client);
-
-    MCAPI void _fadeOut(uint64 handle, float duration) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

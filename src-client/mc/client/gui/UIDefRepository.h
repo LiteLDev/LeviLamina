@@ -34,32 +34,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                                      mName;
         ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::Json::Value>> mDefs;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        UIDefNamespace();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit UIDefNamespace(::std::string const& name);
-
-        MCAPI ::Json::Value const& findDefInNamespace(::std::string const& defName) const;
-
-        MCAPI ~UIDefNamespace();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::std::string const& name);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct DefEntry {
@@ -72,18 +46,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string> refNs;
         ::ll::TypedStorage<8, 32, ::std::string> refName;
         ::ll::TypedStorage<8, 16, ::Json::Value> jsonVal;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~DefEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -171,27 +133,6 @@ public:
         ::std::string const&                                              namePath,
         ::std::function<void(::Json::Value const&, ::std::string const&)> callback
     );
-
-    MCAPI void _queueFinishLoad(
-        ::std::shared_ptr<::std::unordered_map<::std::string, ::UIDefRepository::UIDefNamespace>> defNamespaces,
-        ::std::shared_ptr<::std::vector<::PackReport>>                                            packReportsPtr,
-        ::ResourcePackStack const&                                                                packStack,
-        ::std::function<void(::std::vector<::PackReport>&)>                                       onReportsReady
-    );
-
-    MCAPI void _readGlobalVariables(::ResourcePackStack const& packStack);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _resolveReferences(
-        ::UIDefRepository::DefEntry&                      defEntry,
-        ::std::vector<::UIDefRepository::DefEntry> const& allDefEntries,
-        ::std::vector<int> const&                         sortedDefEntries,
-        ::std::unordered_set<int>&                        visitedRefs,
-        ::std::vector<bool>&                              resolved
-    );
     // NOLINTEND
 
 public:
@@ -238,11 +179,5 @@ public:
     MCFOLD ::Json::Value const& $getGlobalVariables() const;
 
     MCAPI void $translateLegacyItemIdsInRepository(::ItemRegistryRef const itemRegistry);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

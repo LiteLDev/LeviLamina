@@ -23,7 +23,6 @@ struct PingedCompatibleServer;
 struct PortPair;
 struct ServerSupportedAuthenticationTypes;
 namespace RakNet { class RakPeerInterface; }
-namespace RakNet { struct Packet; }
 namespace RakNet { struct RakNetGUID; }
 // clang-format on
 
@@ -68,44 +67,12 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI AnnounceServerData(::RakNetServerLocator::AnnounceServerData const& announceData);
-
-        MCNAPI AnnounceServerData(
-            ::std::string const&                 playerName,
-            ::std::string const&                 worldName,
-            ::GameType                           gameType,
-            int                                  numPlayers,
-            int                                  maxNumPlayers,
-            bool                                 isJoinableThroughServerScreen,
-            bool                                 isEditorWorld,
-            bool                                 isHardcore,
-            ::ServerSupportedAuthenticationTypes supportedAuth
-        );
-
-        MCNAPI ~AnnounceServerData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::RakNetServerLocator::AnnounceServerData const& announceData);
-
-        MCNAPI void* $ctor(
-            ::std::string const&                 playerName,
-            ::std::string const&                 worldName,
-            ::GameType                           gameType,
-            int                                  numPlayers,
-            int                                  maxNumPlayers,
-            bool                                 isJoinableThroughServerScreen,
-            bool                                 isEditorWorld,
-            bool                                 isHardcore,
-            ::ServerSupportedAuthenticationTypes supportedAuth
-        );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -151,12 +118,6 @@ public:
         PingRateRecorder& operator=(PingRateRecorder const&);
         PingRateRecorder(PingRateRecorder const&);
         PingRateRecorder();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI bool pingEnd(uint const& endTime, int ipVersion);
-        // NOLINTEND
     };
 
     struct StateChangeRequestData {
@@ -173,18 +134,6 @@ public:
         StateChangeRequestData& operator=(StateChangeRequestData const&);
         StateChangeRequestData(StateChangeRequestData const&);
         StateChangeRequestData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~StateChangeRequestData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct SuspendStateData {
@@ -201,18 +150,6 @@ public:
         SuspendStateData& operator=(SuspendStateData const&);
         SuspendStateData(SuspendStateData const&);
         SuspendStateData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~SuspendStateData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -319,10 +256,6 @@ public:
 
     MCNAPI void _addCustomServerFromIpResolver(::AsynchronousIPResolver const& futureIP, int port);
 
-    MCNAPI bool _addCustomServerV4(::AsynchronousIPResolver const& futureIP, int port);
-
-    MCNAPI bool _addCustomServerV6(::AsynchronousIPResolver const& futureIP, int port);
-
     MCNAPI void _announceServer(::RakNetServerLocator::AnnounceServerData const& serverData);
 
     MCNAPI void _enqueueStateChangeRequest(
@@ -331,20 +264,15 @@ public:
         ::PortPair                                newPorts
     );
 
-    MCNAPI ::std::string _getHostGuid(::std::string const& address, int);
+    MCNAPI ::std::string _getHostGuid(::std::string const& address, int port);
 
     MCNAPI void _getServerOriginalAddress(::std::string& originalAddressToSet, ::std::string const& ip);
 
-    MCNAPI bool _handleUnconnectedPong(
-        ::std::string const&    data,
-        ::RakNet::Packet const* p,
-        bool                    insertAtBeginning,
-        uint64                  readTime
-    );
-
+#ifdef LL_PLAT_C
     MCNAPI void _initializeBroadcastAddresses();
+#endif
 
-    MCNAPI void _onPingSend(::std::string const& guid, ::std::string const& ipVersion, int);
+    MCNAPI void _onPingSend(::std::string const& guid, ::std::string const& addr, int ipVersion);
 
     MCNAPI bool
     _onPongReceive(float& latencyToSet, ::RakNet::RakNetGUID const& guid, uint const& receivedTime, int ipVersion);
@@ -353,8 +281,6 @@ public:
 
     MCNAPI bool _pingServerV6(::std::string const& address, int port);
 
-    MCNAPI void _setPingResponder(::RakNetServerLocator::AnnounceServerData const& serverData);
-
     MCNAPI void _startAnnouncingServer(::RakNetServerLocator::AnnounceServerData const& announceData);
 
     MCNAPI void _startServerDiscovery(::PortPair const& ports);
@@ -362,19 +288,6 @@ public:
     MCNAPI void _stopAnnouncingServer();
 
     MCNAPI void _stopServerDiscovery();
-
-    MCNAPI void _updateNetwork();
-
-    MCNAPI bool _updateQueuedPings();
-
-    MCNAPI void _updateState();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static bool
-    parseUnconnectedPongPacketData(::std::string const& data, ::std::vector<::std::string>& extraData);
     // NOLINTEND
 
 public:
@@ -444,11 +357,5 @@ public:
     MCNAPI void $_onEnable();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

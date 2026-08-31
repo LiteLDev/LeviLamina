@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ struct FlatWorldPreset;
 
 namespace OreUI {
 
-class FlatWorldPresetsFacet : public ::OreUI::FacetBase<::OreUI::FlatWorldPresetsFacet> {
+class FlatWorldPresetsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::FlatWorldPresetsFacet> {
 public:
     // member variables
     // NOLINTBEGIN

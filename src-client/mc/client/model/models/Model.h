@@ -64,7 +64,7 @@ public:
 
     virtual void render(
         ::ScreenContext& screenContext,
-        ::Actor&         entity,
+        ::Actor&         e,
         float            time,
         float            r,
         float            bob,
@@ -121,35 +121,6 @@ public:
         ::dragon::RenderMetadata const& renderMetadata,
         ::ActorTextureInfo const&       textureInfo
     );
-
-    MCAPI void draw(
-        ::ScreenContext&                          screenContext,
-        ::dragon::RenderMetadata const&           renderMetadata,
-        ::ClientPBRTextureData const&             textureData,
-        ::std::optional<::MERSUniformData> const& mersUniforms
-    );
-
-    MCAPI void draw(
-        ::ScreenContext&                          screenContext,
-        ::dragon::RenderMetadata const&           renderMetadata,
-        ::ClientPBRTextureData const&             textureData,
-        ::MaterialVariants const&                 useMaterialVariant,
-        ::std::optional<::MERSUniformData> const& mersUniforms
-    );
-
-    MCAPI ::AABB getAABB() const;
-
-    MCFOLD ::std::vector<::std::shared_ptr<::DataDrivenGeometry>> const& getGeometries() const;
-
-    MCFOLD ::Vec3 getLeashOffsetPosition() const;
-
-    MCFOLD ::std::vector<::std::pair<::std::shared_ptr<::RenderController>, ::ExpressionNode>>& getRenderControllers();
-
-    MCAPI bool hasBone(::HashedString const& boneName) const;
-
-    MCAPI void prepareSkinning();
-
-    MCAPI void registerParts(::ModelPart& part);
     // NOLINTEND
 
 public:
@@ -179,7 +150,7 @@ public:
 
     MCAPI void $render(
         ::ScreenContext& screenContext,
-        ::Actor&         entity,
+        ::Actor&         e,
         float            time,
         float            r,
         float            bob,

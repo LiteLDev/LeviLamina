@@ -52,18 +52,6 @@ public:
         RefreshResult& operator=(RefreshResult const&);
         RefreshResult(RefreshResult const&);
         RefreshResult();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~RefreshResult();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -84,11 +72,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Bedrock::Threading::Async<void> _tryCompleteInitialization(::TaskGroup& taskGroup);
 
-    MCNAPI ::Bedrock::Threading::Async<void> initialize(::TaskGroup& taskGroup);
-
     MCNAPI ::ResourcePackRepositoryRefreshQueue::RefreshResult refreshPacks(::TaskGroup& taskGroup);
-
-    MCNAPI ::Bedrock::Threading::Async<void> reloadUserPacks(::TaskGroup& taskGroup);
 
     MCNAPI ~ResourcePackRepositoryRefreshQueue();
     // NOLINTEND

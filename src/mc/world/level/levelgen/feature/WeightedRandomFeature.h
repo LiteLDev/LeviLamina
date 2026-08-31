@@ -37,21 +37,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WeightedRandomFeature() /*override*/ = default;
+    virtual ~WeightedRandomFeature() /*override*/;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI WeightedRandomFeature();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

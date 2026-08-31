@@ -61,31 +61,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LevelChunkPacket();
-
-#ifdef LL_PLAT_C
-    MCFOLD ::std::vector<::LevelChunkPacket::SubChunkMetadata> const& getMetadata() const;
-#endif
-
-    MCAPI void pushSubChunkMetadata(uint64 id);
-
-    MCAPI ::Bedrock::Result<void> readCacheMetadata(::ReadOnlyBinaryStream& stream);
-
-    MCAPI void writeCacheMetadata(::BinaryStream& stream) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

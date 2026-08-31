@@ -24,21 +24,9 @@ public:
     ScriptModalFormDataToggleOptions();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ScriptModalFormDataToggleOptions();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

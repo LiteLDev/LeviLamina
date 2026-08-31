@@ -8,12 +8,6 @@
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockActor;
-class ClientInstanceScreenModel;
-// clang-format on
-
 class BlockScreenController : public ::ClientInstanceScreenController {
 public:
     // member variables
@@ -22,10 +16,6 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>      mBlockPos;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>  mEntityUniqueID;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockScreenController();
 
 public:
     // virtual functions
@@ -40,33 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockScreenController(
-        ::std::shared_ptr<::ClientInstanceScreenModel> model,
-        ::BlockPos const&                              pos,
-        ::BlockActorType                               type,
-        ::ActorUniqueID                                uniqueID
-    );
-
-    MCAPI ::BlockActor* _getBaseBlockEntity(::BlockPos const& pos, ::BlockActorType const& type) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::ClientInstanceScreenModel> model,
-        ::BlockPos const&                              pos,
-        ::BlockActorType                               type,
-        ::ActorUniqueID                                uniqueID
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

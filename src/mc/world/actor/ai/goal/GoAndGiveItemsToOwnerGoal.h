@@ -62,15 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GoAndGiveItemsToOwnerGoal(::Mob& mob);
-
     MCAPI bool _attemptToGiveItem();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

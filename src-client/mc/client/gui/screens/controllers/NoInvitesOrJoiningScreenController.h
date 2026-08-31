@@ -5,34 +5,19 @@
 // auto generated inclusion list
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
 
-// auto generated forward declare list
-// clang-format off
-class MinecraftScreenModel;
-// clang-format on
-
 class NoInvitesOrJoiningScreenController : public ::MinecraftScreenController {
-public:
-    // prevent constructor by default
-    NoInvitesOrJoiningScreenController();
-
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NoInvitesOrJoiningScreenController() /*override*/ = default;
+    virtual ~NoInvitesOrJoiningScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit NoInvitesOrJoiningScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

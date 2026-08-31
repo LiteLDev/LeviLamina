@@ -12,7 +12,6 @@ class BlockDescriptor;
 class BlockPos;
 class BlockSource;
 class FeaturePlacementFailureLogProxy;
-class IBlockWorldGenAPI;
 class IFeature;
 class MolangVariableMap;
 class Random;
@@ -23,20 +22,12 @@ struct BiomeDecorationFeature;
 namespace FeatureHelper {
 // functions
 // NOLINTBEGIN
-MCAPI bool isEmptyBlock(::IBlockWorldGenAPI const& target, ::BlockPos const& pos);
+MCAPI ::gsl::not_null<::Block const*> makeCompareBlock(::Block const& block);
 
 MCAPI ::RenderParams
 makeFeatureRenderParams(::BlockSource& source, ::BlockPos const& pos, ::MolangVariableMap& molangVariables);
 
 MCAPI bool passesAllowList(::Block const& block, ::std::vector<::BlockDescriptor> const& allowList);
-
-MCAPI bool passesAllowList(
-    ::IBlockWorldGenAPI const&              target,
-    ::BlockPos const&                       pos,
-    ::std::vector<::BlockDescriptor> const& allowList
-);
-
-MCAPI ::std::optional<::BlockPos> placeBlock(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block);
 
 MCAPI ::FeatureHelper::PlaceFeatureResult placeFeature(
     ::IFeature const&                 feature,

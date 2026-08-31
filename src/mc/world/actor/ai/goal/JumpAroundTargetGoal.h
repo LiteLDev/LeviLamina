@@ -99,12 +99,6 @@ public:
     MCAPI explicit JumpAroundTargetGoal(::Mob& mob);
 
     MCAPI ::std::optional<::JumpAroundTargetGoal::Jump> _calculateOptimalJumpVector(::Vec3 const& targetPosition) const;
-
-    MCAPI bool _canJumpFromCurrentPosition() const;
-
-    MCAPI void _jump() const;
-
-    MCAPI ::std::optional<::BlockPos> _snapToSurface(::Vec3 const& targetPosition) const;
     // NOLINTEND
 
 public:
@@ -131,11 +125,5 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

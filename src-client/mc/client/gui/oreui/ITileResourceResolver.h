@@ -6,8 +6,8 @@
 // clang-format off
 namespace GeometryAtlas { class IAtlasTile; }
 namespace GeometryAtlas { class IGeometryAtlas; }
+namespace GeometryAtlas { class InitializeCallbackPayload; }
 namespace GeometryAtlas { struct TileDefinition; }
-namespace OreUI { class IItemHandleFactory; }
 // clang-format on
 
 namespace OreUI {
@@ -28,13 +28,8 @@ public:
 
         virtual ::GeometryAtlas::TileDefinition const& getDefinition() const = 0;
 
-        virtual void submitUpdate(::GeometryAtlas::IAtlasTile& tile) const = 0;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
+        virtual void
+        submitUpdate(::GeometryAtlas::IAtlasTile& tile, ::GeometryAtlas::InitializeCallbackPayload init) const = 0;
         // NOLINTEND
     };
 
@@ -47,13 +42,7 @@ public:
     createTile(::GeometryAtlas::IGeometryAtlas& atlas, ::GeometryAtlas::TileDefinition const& definition) = 0;
 
     virtual ::std::unique_ptr<::OreUI::ITileResourceResolver::ITileResourceRequest>
-    tryResolveRequest(::std::string_view url, ::OreUI::IItemHandleFactory const& factory) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+    tryResolveRequest(::std::string_view url) = 0;
     // NOLINTEND
 };
 

@@ -9,6 +9,7 @@ enum class ServerScriptPackType : int {
     Experimental = 1,
     Samples      = 2,
     External     = 3,
+    Testing      = 4,
 };
 
 }

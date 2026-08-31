@@ -53,18 +53,7 @@ public:
         ::Vec3 const&                 spawnPosition
     );
 
-    MCAPI void processOwnedEntityLimboForPlayer(
-        ::ActorUniqueID               playerId,
-        ::IAddActorEntityProxy&       addActorEntityProxy,
-        ::DimensionHeightRange const& heightRange,
-        ::Vec3 const&                 spawnPosition
-    );
-
-    MCAPI void saveOwnedLimboActorsForPlayer(::ActorUniqueID playerId) const;
-
     MCAPI void transferActorToOwnedEntityLimbo(::ActorUniqueID playerUniqueID, ::Actor& actor);
-
-    MCAPI ::std::unique_ptr<::CompoundTag> transferAgentToOwnedEntityLimbo(::Actor& agent);
 
     MCAPI ~PlayerLimboActorManager();
     // NOLINTEND

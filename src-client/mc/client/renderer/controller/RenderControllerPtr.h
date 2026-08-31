@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-class RenderController;
 class RenderControllerGroup;
 // clang-format on
 
@@ -26,16 +25,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RenderControllerPtr(::RenderControllerGroup& group, ::HashedString const& name);
-
-    MCNAPI ::RenderController getCopyOfContainedRenderController() const;
-
-    MCNAPI ::HashedString const& getName() const;
-
-    MCNAPI bool isNull() const;
-
-    MCNAPI ::RenderController const* operator->() const;
-
-    MCNAPI ::RenderController* operator->();
 
     MCNAPI ~RenderControllerPtr();
     // NOLINTEND

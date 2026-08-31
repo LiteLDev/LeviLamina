@@ -27,8 +27,6 @@ public:
 
     MCAPI uint getActorInfoId(::std::string const& name) const;
 
-    MCAPI uint getActorInfoId(uint64 const& name) const;
-
     MCAPI ::std::vector<::ActorInfo> getActorInfoList() const;
 
     MCAPI bool isSpawnEggAvailable(::std::string identifier);

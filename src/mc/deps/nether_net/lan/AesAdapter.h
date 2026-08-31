@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/nether_net/utils/ErrorOr.h"
-#include "mc/external/rtc/AsyncSocketAdapter.h"
+#include "mc/external/webrtc/AsyncSocketAdapter.h"
 
 namespace NetherNet {
 
-class AesAdapter : public ::rtc::AsyncSocketAdapter {
+class AesAdapter : public ::webrtc::AsyncSocketAdapter {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -21,12 +21,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

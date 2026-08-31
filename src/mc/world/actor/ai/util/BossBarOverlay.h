@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class BossBarOverlay : int {
+enum class BossBarOverlay : uchar {
     Progress  = 0,
     Notched6  = 1,
     Notched10 = 2,

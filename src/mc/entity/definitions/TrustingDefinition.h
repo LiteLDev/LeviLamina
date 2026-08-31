@@ -25,12 +25,11 @@ public:
     // prevent constructor by default
     TrustingDefinition& operator=(TrustingDefinition const&);
     TrustingDefinition(TrustingDefinition const&);
+    TrustingDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TrustingDefinition();
-
     MCAPI void addTrustItemByName(::std::string const& name);
 
     MCAPI void initialize(::EntityContext&, ::TrustingComponent& component) const;
@@ -42,11 +41,5 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TrustingDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

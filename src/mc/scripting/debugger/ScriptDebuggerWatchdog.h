@@ -17,11 +17,12 @@ public:
     // prevent constructor by default
     ScriptDebuggerWatchdog& operator=(ScriptDebuggerWatchdog const&);
     ScriptDebuggerWatchdog(ScriptDebuggerWatchdog const&);
+    ScriptDebuggerWatchdog();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDebuggerWatchdog() /*override*/ = default;
+    virtual ~ScriptDebuggerWatchdog() /*override*/;
 
     virtual bool requireClose() const /*override*/;
 
@@ -31,19 +32,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI ScriptDebuggerWatchdog();
-
-#ifdef LL_PLAT_C
-    MCNAPI void startLeaveGame();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -56,11 +47,5 @@ public:
     MCNAPI bool $listenTimeoutExpired() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

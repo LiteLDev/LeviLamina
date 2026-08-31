@@ -21,10 +21,4 @@ public:
 
     virtual void onDebuggerConnect(bool autoAttach, int retries);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

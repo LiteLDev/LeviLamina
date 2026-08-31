@@ -3,15 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class Player;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -37,14 +34,6 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptPlayerUseNameTagAfterEvent(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
 
-    MCAPI ScriptPlayerUseNameTagAfterEvent(
-        ::Player const&                       player,
-        ::Actor const&                        entityNamed,
-        ::std::string                         newName,
-        ::std::optional<::std::string>        previousName,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
-
     MCAPI ::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
 
@@ -61,14 +50,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
-
-    MCAPI void* $ctor(
-        ::Player const&                       player,
-        ::Actor const&                        entityNamed,
-        ::std::string                         newName,
-        ::std::optional<::std::string>        previousName,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
     // NOLINTEND
 
 public:

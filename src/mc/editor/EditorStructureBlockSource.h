@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorStructureBlockSource() /*override*/ = default;
+    virtual ~EditorStructureBlockSource() /*override*/;
 
     virtual void addListener(::BlockSourceListener& l) /*override*/;
 
@@ -67,6 +67,16 @@ public:
         ::ActorBlockSyncMessage const* syncMsg,
         ::BlockChangeContext const&    changeSourceContext
     ) /*override*/;
+
+    virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
+
+    virtual ::Block const& getBlock(::BlockPos const& pos, uint layer) const /*override*/;
+
+    virtual ::Block const& getExtraBlock(::BlockPos const& pos) const /*override*/;
+
+    virtual ::Block const& getLiquidBlock(::BlockPos const& pos) const /*override*/;
+
+    virtual bool hasBlock(::BlockPos const& pos) const /*override*/;
     // NOLINTEND
 
 public:
@@ -79,8 +89,6 @@ public:
         ::AABB const&  bounds,
         ::BlockPos     offset
     );
-
-    MCNAPI ::Editor::EditorStructureTemplate const& getTemplate();
     // NOLINTEND
 
 public:
@@ -88,6 +96,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void*
     $ctor(::Level& level, ::Dimension& dimension, ::ChunkSource& chunkSource, ::AABB const& bounds, ::BlockPos offset);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -120,6 +134,16 @@ public:
         ::ActorBlockSyncMessage const* syncMsg,
         ::BlockChangeContext const&    changeSourceContext
     );
+
+    MCNAPI ::Block const& $getBlock(::BlockPos const& pos) const;
+
+    MCNAPI ::Block const& $getBlock(::BlockPos const& pos, uint layer) const;
+
+    MCNAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
+
+    MCNAPI ::Block const& $getLiquidBlock(::BlockPos const& pos) const;
+
+    MCNAPI bool $hasBlock(::BlockPos const& pos) const;
 
 
     // NOLINTEND

@@ -17,10 +17,4 @@ public:
 
     MCAPI static ::SubChunkPos const& ZERO();
     // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& bp);
-    // NOLINTEND
 };

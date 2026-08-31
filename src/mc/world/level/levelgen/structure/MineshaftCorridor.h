@@ -43,33 +43,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _fillPillarDownOrChainUp(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
+    MCAPI void _fillPillarDownOrChainUp(
+        ::BlockSource&       region,
+        int const            x,
+        int const            y,
+        int const            z,
+        ::BoundingBox const& chunkBB
+    );
 
-    MCAPI void
-    _placeCobWeb(::BlockSource& region, ::BoundingBox const& chunkBB, ::Random& random, float p, int x0, int y1, int z);
-
-    MCAPI void _placeSupport(
+    MCAPI void _placeCobWeb(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
-        int                  x0,
-        int                  y0,
-        int                  z,
-        int                  y1,
-        int                  x1,
-        ::Random&            random
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::BoundingBox findCorridorSize(
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        int                                                 footX,
-        int                                                 footY,
-        int                                                 footZ,
-        int                                                 direction
+        ::Random&            random,
+        float                p,
+        int const            x0,
+        int const            y1,
+        int                  z
     );
     // NOLINTEND
 
@@ -89,11 +78,5 @@ public:
     MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/util/SubscribedValue.h"
 
@@ -15,7 +15,7 @@ namespace Realms { class RealmsWorldEditor; }
 namespace OreUI {
 
 class RealmsWorldEditorGameRulesQueriesFacet
-: public ::OreUI::FacetBase<::OreUI::RealmsWorldEditorGameRulesQueriesFacet> {
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsWorldEditorGameRulesQueriesFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -61,7 +61,7 @@ public:
 
     MCAPI bool getImmediateRespawn() const;
 
-    MCFOLD bool getMobsDropLoot() const;
+    MCAPI bool getMobsDropLoot() const;
 
     MCFOLD bool getNaturalRegeneration() const;
 
@@ -77,11 +77,11 @@ public:
 
     MCAPI bool getSleepSkipNight() const;
 
-    MCFOLD int getSleepSkipNightPercent() const;
+    MCAPI int getSleepSkipNightPercent() const;
 
-    MCFOLD bool getTNTExplodes() const;
+    MCAPI bool getTNTExplodes() const;
 
-    MCFOLD bool getTileDrops() const;
+    MCAPI bool getTileDrops() const;
     // NOLINTEND
 
 public:
@@ -106,12 +106,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

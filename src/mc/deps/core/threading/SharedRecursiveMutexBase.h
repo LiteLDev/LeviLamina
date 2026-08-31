@@ -24,12 +24,6 @@ public:
 
     virtual bool _shouldUnLockForSharedAccess(::std::thread::id) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Threading

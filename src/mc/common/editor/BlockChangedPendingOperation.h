@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/IPendingOperation.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockChangedPendingOperation() /*override*/ = default;
+    virtual ~BlockChangedPendingOperation() /*override*/;
 
     virtual ::std::unique_ptr<::Editor::Transactions::IOperation>
     _commit(::Editor::ServiceProviderCollection& services) /*override*/;
@@ -44,8 +44,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockChangedPendingOperation(::std::vector<::Editor::Transactions::BlockChangeIntentData>&& blocks);
-
     MCNAPI void _processBlockChangeIntent(
         ::BlockSource const&                                              region,
         ::Editor::Transactions::BlockChangeIntentData&                    blockIntentData,
@@ -54,9 +52,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::vector<::Editor::Transactions::BlockChangeIntentData>&& blocks);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -68,12 +66,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<bool> $_discard(::Editor::ServiceProviderCollection&);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

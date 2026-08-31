@@ -47,29 +47,4 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::AbstractScene>(uint, ::std::string const&)>>
         mCreateServerForm;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SceneFactoryProxyCallbacks& operator=(SceneFactoryProxyCallbacks const&);
-    SceneFactoryProxyCallbacks();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SceneFactoryProxyCallbacks(::SceneFactoryProxyCallbacks const&);
-
-    MCAPI ~SceneFactoryProxyCallbacks();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SceneFactoryProxyCallbacks const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

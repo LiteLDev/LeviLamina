@@ -12,12 +12,4 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3> mOverworldSpawnPoint;
     ::ll::TypedStorage<4, 4, int>     mNetherScale;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI int getNetherScale() const;
-
-    MCNAPI ::Vec3 const& getOverworldSpawnPoint() const;
-    // NOLINTEND
 };

@@ -17,28 +17,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~CommandChainedSubcommand() = default;
+#else // LL_PLAT_C
+    virtual ~CommandChainedSubcommand();
+#endif
 
     virtual ::std::string getCommandName() const = 0;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCFOLD ::Command const* getCommand() const;
-
-    MCFOLD void setCommand(::std::unique_ptr<::Command> command);
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

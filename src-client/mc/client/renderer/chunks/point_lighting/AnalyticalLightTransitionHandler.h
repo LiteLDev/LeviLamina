@@ -38,12 +38,6 @@ public:
 
     virtual void finalize(::BlockPos const&, ::PointLighting::AnalyticLightResources&) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace PointLighting

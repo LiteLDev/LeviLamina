@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/options/EduConfigPreset.h"
-
 // auto generated forward declare list
 // clang-format off
-struct DemoConfig;
 struct ServicePacksConfig;
 namespace Json { class Value; }
 // clang-format on
@@ -30,29 +26,17 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnk2504bf;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     EDUConfigData& operator=(EDUConfigData const&);
     EDUConfigData(EDUConfigData const&);
     EDUConfigData();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    EDUConfigData& operator=(EDUConfigData const&);
-    EDUConfigData();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI EDUConfigData(::EDUConfigData const&);
-
     MCNAPI explicit EDUConfigData(::Json::Value const& config);
-
-    MCNAPI ::EDUConfigData& operator=(::EDUConfigData&&);
 #endif
     // NOLINTEND
 
@@ -60,11 +44,6 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static ::std::optional<::DemoConfig>
-    _parseDemoConfig(::Json::Value const& config, ::EduConfigPreset eduPreset);
-
-    MCNAPI static ::EduConfigPreset _parseEduPreset(::Json::Value const& config);
-
     MCNAPI static ::std::optional<::ServicePacksConfig> parseServicePacks(::Json::Value const& config);
 #endif
     // NOLINTEND
@@ -73,8 +52,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::EDUConfigData const&);
-
     MCNAPI void* $ctor(::Json::Value const& config);
 #endif
     // NOLINTEND

@@ -22,10 +22,4 @@ public:
 
     virtual ::EventResult onEvent(::ScriptingNotificationEvent const& event);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

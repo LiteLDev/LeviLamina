@@ -32,20 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GetInteractionPositionForBlockNode();
-
-    MCAPI ::Facing::Name parseFacingNameFromString(::std::string facingString);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::BehaviorStatus $tick(::Actor& owner);

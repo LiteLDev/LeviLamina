@@ -48,10 +48,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityId
     );
-
-    MCAPI bool hasDuplicationCooldown();
-
-    MCAPI void setNewDuplicationCooldown();
     // NOLINTEND
 
 public:

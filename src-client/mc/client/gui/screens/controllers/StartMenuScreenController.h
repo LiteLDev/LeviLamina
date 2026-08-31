@@ -10,7 +10,6 @@
 #include "mc/client/gui/SceneType.h"
 #include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
-#include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/network/realms/GenericStatus.h"
 #include "mc/client/services/messaging/MessageData.h"
 #include "mc/client/social/ProfileImageOptions.h"
@@ -25,6 +24,7 @@
 // clang-format off
 class ButtonArtSurface;
 class IEntitlementManager;
+class InboxSurface;
 class MainMenuScreenModel;
 class SocialButtonScreenController;
 namespace Json { class Value; }
@@ -58,12 +58,6 @@ public:
         // NOLINTBEGIN
         MCAPI void $onUserRemoved(::std::shared_ptr<::Social::User> const& user);
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
 public:
@@ -84,27 +78,30 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                              mExistenceTracker;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StartMenuScreenController::SignOutObserver>> mSignOutObserver;
     ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions>                                  mProfileImage;
-    ::ll::TypedStorage<1, 1, bool>                                                            mSetFocusToSignInButton;
-    ::ll::TypedStorage<1, 1, bool>                                                            mCapabilitiesChanged;
-    ::ll::TypedStorage<8, 336, ::TaskGroup>                                                   mTaskGroup;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ButtonArtSurface>>                 mStoreButtonArtSurface;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ButtonArtSurface>>                 mPlayButtonArtSurface;
-    ::ll::TypedStorage<8, 640, ::std::optional<::MessageData>>                                mStoreButtonArtData;
-    ::ll::TypedStorage<8, 640, ::std::optional<::MessageData>>                                mPlayButtonArtData;
-    ::ll::TypedStorage<1, 1, bool>                                                            mStoreButtonHovered;
-    ::ll::TypedStorage<1, 1, bool>                                                            mPlayButtonHovered;
-    ::ll::TypedStorage<4, 4, int>                                                             mUnreadInvites;
-    ::ll::TypedStorage<1, 1, bool>                                     mInitialInboxAnimationPlayed;
-    ::ll::TypedStorage<1, 1, bool>                                     mShowingNewPlayerFlowButtons;
-    ::ll::TypedStorage<1, 1, bool>                                     mNeedToPlayMainButtonsShowAnimation;
-    ::ll::TypedStorage<8, 248, ::std::optional<::ExperiencePromotion>> mActivePromotion;
-    ::ll::TypedStorage<1, 1, bool>                                     mOwnsRealmsSubscription;
-    ::ll::TypedStorage<1, 1, bool>                                     mRealmsFetched;
-    ::ll::TypedStorage<4, 4, ::Realms::GenericStatus>                  mRealmsStatus;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>         mPendingInviteCountSubscriber;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>         mPrimaryUserSignInSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>         mTrialModeUpdateSubscription;
-    ::ll::TypedStorage<1, 1, bool>                                     mIsTrialModeEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                            mProfileImageLoaded;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mProfileImageChangedSubscription;
+    ::ll::TypedStorage<1, 1, bool>                                            mSetFocusToSignInButton;
+    ::ll::TypedStorage<1, 1, bool>                                            mCapabilitiesChanged;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                   mTaskGroup;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ButtonArtSurface>> mStoreButtonArtSurface;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ButtonArtSurface>> mPlayButtonArtSurface;
+    ::ll::TypedStorage<8, 808, ::std::optional<::MessageData>>                mStoreButtonArtData;
+    ::ll::TypedStorage<8, 808, ::std::optional<::MessageData>>                mPlayButtonArtData;
+    ::ll::TypedStorage<1, 1, bool>                                            mStoreButtonHovered;
+    ::ll::TypedStorage<1, 1, bool>                                            mPlayButtonHovered;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::InboxSurface>>     mInboxSurface;
+    ::ll::TypedStorage<4, 4, int>                                             mUnreadInvites;
+    ::ll::TypedStorage<1, 1, bool>                                            mInitialInboxAnimationPlayed;
+    ::ll::TypedStorage<1, 1, bool>                                            mShowingNewPlayerFlowButtons;
+    ::ll::TypedStorage<1, 1, bool>                                            mNeedToPlayMainButtonsShowAnimation;
+    ::ll::TypedStorage<8, 248, ::std::optional<::ExperiencePromotion>>        mActivePromotion;
+    ::ll::TypedStorage<1, 1, bool>                                            mOwnsRealmsSubscription;
+    ::ll::TypedStorage<1, 1, bool>                                            mRealmsFetched;
+    ::ll::TypedStorage<4, 4, ::Realms::GenericStatus>                         mRealmsStatus;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mPendingInviteCountSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mPrimaryUserSignInSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mTrialModeUpdateSubscription;
+    ::ll::TypedStorage<1, 1, bool>                                            mIsTrialModeEnabled;
     // NOLINTEND
 
 public:
@@ -114,7 +111,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StartMenuScreenController() /*override*/;
+    virtual ~StartMenuScreenController() /*override*/ = default;
 
     virtual void handleLicenseChanged() /*override*/;
 
@@ -159,15 +156,7 @@ public:
 
     MCAPI bool _YHelperVisible() const;
 
-    MCAPI void _createProxy();
-
-    MCFOLD void _displayBetaFeedbackDialog(::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI void _displayOpenExternalBrowserDialog(::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI void _fetchRealms();
-
-    MCAPI void _fetchUserOrientedContent(bool signInFailed);
+    MCAPI void _fetchUserOrientedContent(bool const signInFailed);
 
     MCAPI bool _isNxAdHocEnabled() const;
 
@@ -177,41 +166,13 @@ public:
 
     MCAPI bool _isSignInVisible();
 
-    MCAPI ::ui::ViewRequest _navigateToProfileScreen();
-
     MCAPI bool _realmsPromoEnabled() const;
 
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerGatheringBindings();
-
-    MCAPI void _registerPlayButtonArtBindings();
-
-    MCAPI void _registerSilentSignInCallbacks();
-
-    MCAPI void _registerStoreButtonArtBindings();
-
-    MCAPI void _showDeviceSunsettingIfNeeded();
-
-    MCAPI void _tryImportPacks();
-
-    MCAPI void _updateButtonArt();
-
     MCAPI void _updateProfileImage();
-
-    MCAPI void _updatePromotion();
-
-    MCAPI void _updateUnreadMessageCount();
 
     MCAPI void resetInboxAnimation();
 
     MCAPI void startInboxAnimation();
-
-    MCAPI void startMainMenuShowButtonsAnimation();
-
-    MCAPI void startNewPlayerHideButtonsAnimation();
     // NOLINTEND
 
 public:
@@ -221,12 +182,6 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel>             model,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -260,15 +215,5 @@ public:
 
     MCAPI ::ui::ViewRequest
     $promptConnect(bool signInOnSuccess, ::std::function<void(::Social::UserPlatformConnectionResult)> signInCallback);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

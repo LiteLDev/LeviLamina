@@ -16,10 +16,6 @@ class Vec3;
 
 class CoralFanBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    CoralFanBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
@@ -29,18 +25,6 @@ public:
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CoralFanBlockItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

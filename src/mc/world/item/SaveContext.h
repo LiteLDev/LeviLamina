@@ -22,12 +22,4 @@ public:
     // NOLINTBEGIN
     ::SaveContext::SaveUseCase mSaveUseCase{SaveUseCase::Clone};
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::SaveContext::SaveOperation getOperation() const;
-
-    MCAPI bool isMoveContext() const;
-    // NOLINTEND
 };

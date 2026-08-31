@@ -35,10 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit CerealDocumentUpgrader(::SemVersion terminus);
-
-    MCNAPI void clear();
-
     MCNAPI ::CerealDocumentUpgrader::ParseAndUpgradeResult parseJsonAndUpgrade(
         ::SemVersion& outDocumentVersion,
         ::rapidjson::GenericDocument<
@@ -93,22 +89,10 @@ public:
             ::rapidjson::CrtAllocator>>
     parseDocument(::std::string_view json, bool allowMissingVersionAsZero, bool logRapidjsonErrors);
 
-    MCNAPI static ::rapidjson::GenericStringBuffer<::rapidjson::UTF8<char>, ::rapidjson::CrtAllocator> stringify(
-        ::rapidjson::GenericValue<
-            ::rapidjson::UTF8<char>,
-            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& document
-    );
-
     MCNAPI static bool validateParsedVersion(
         ::SemVersion const&                  documentVersion,
         ::std::optional<::SemVersion> const& minVersion,
         bool                                 betaApis
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::SemVersion terminus);
     // NOLINTEND
 };

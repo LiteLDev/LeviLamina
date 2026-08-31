@@ -33,7 +33,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~Command() = default;
+#else // LL_PLAT_C
+    virtual ~Command();
+#endif
 
     virtual void execute();
 
@@ -42,6 +46,14 @@ public:
     virtual void tick();
 
     virtual void fireCommandDoneEvent();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
@@ -54,12 +66,6 @@ public:
     MCAPI void $fireCommandDoneEvent();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

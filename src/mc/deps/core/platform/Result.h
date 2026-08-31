@@ -11,8 +11,6 @@ namespace Core {
 class Result : public ::Bedrock::Result<void> {
 public:
     // prevent constructor by default
-    Result& operator=(Result const&);
-    Result(Result const&);
     Result();
 
 public:
@@ -20,13 +18,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Result(::Bedrock::ErrorInfo<::std::error_code>&& error);
 
-    MCAPI explicit Result(::Bedrock::Result<void>&& result);
-
-    MCAPI Result(::Core::Result&& rhs);
-
     MCAPI explicit Result(bool success);
-
-    MCAPI ::Core::Result& operator=(::Core::Result&&);
 
     MCAPI ~Result();
     // NOLINTEND
@@ -35,10 +27,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::ErrorInfo<::std::error_code>&& error);
-
-    MCFOLD void* $ctor(::Bedrock::Result<void>&& result);
-
-    MCFOLD void* $ctor(::Core::Result&& rhs);
 
     MCAPI void* $ctor(bool success);
     // NOLINTEND

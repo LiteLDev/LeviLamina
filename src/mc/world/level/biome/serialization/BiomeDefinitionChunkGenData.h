@@ -40,6 +40,8 @@ public:
 
 public:
     // prevent constructor by default
+    BiomeDefinitionChunkGenData& operator=(BiomeDefinitionChunkGenData const&);
+    BiomeDefinitionChunkGenData(BiomeDefinitionChunkGenData const&);
     BiomeDefinitionChunkGenData();
 
 public:
@@ -47,11 +49,7 @@ public:
     // NOLINTBEGIN
     MCAPI BiomeDefinitionChunkGenData(::BiomeDefinitionChunkGenData&&);
 
-    MCAPI BiomeDefinitionChunkGenData(::BiomeDefinitionChunkGenData const&);
-
     MCAPI ::BiomeDefinitionChunkGenData& operator=(::BiomeDefinitionChunkGenData&&);
-
-    MCAPI ::BiomeDefinitionChunkGenData& operator=(::BiomeDefinitionChunkGenData const&);
 
     MCAPI bool operator==(::BiomeDefinitionChunkGenData const& other) const;
 
@@ -70,8 +68,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BiomeDefinitionChunkGenData&&);
-
-    MCAPI void* $ctor(::BiomeDefinitionChunkGenData const&);
     // NOLINTEND
 
 public:

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class WidgetPrimComponentDisc {
@@ -23,12 +18,6 @@ public:
     WidgetPrimComponentDisc& operator=(WidgetPrimComponentDisc const&);
     WidgetPrimComponentDisc(WidgetPrimComponentDisc const&);
     WidgetPrimComponentDisc();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
 };
 
 } // namespace Editor::Network

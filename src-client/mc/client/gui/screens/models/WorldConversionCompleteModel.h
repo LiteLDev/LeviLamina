@@ -22,17 +22,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::LocalWorldInfo const& getImportedWorld() const;
-
-    MCAPI void setImportedWorld(::std::string const& levelId);
-
     MCAPI void startImportedWorld();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

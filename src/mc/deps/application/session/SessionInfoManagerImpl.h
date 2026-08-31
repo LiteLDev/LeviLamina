@@ -28,11 +28,20 @@ public:
     ::ll::UntypedStorage<8, 128> mUnk1c9ab3;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     SessionInfoManagerImpl& operator=(SessionInfoManagerImpl const&);
     SessionInfoManagerImpl(SessionInfoManagerImpl const&);
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    SessionInfoManagerImpl& operator=(SessionInfoManagerImpl const&);
+    SessionInfoManagerImpl(SessionInfoManagerImpl const&);
+    SessionInfoManagerImpl();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -64,15 +73,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI SessionInfoManagerImpl();
-
-    MCNAPI void _reflectSessionInfo();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:
@@ -102,14 +113,6 @@ public:
     MCNAPI ::std::shared_ptr<::Bedrock::SessionInfo> $deserializeSession(::std::string_view contents) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForImplBase();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };
 

@@ -16,11 +16,7 @@ class ContainerScreenSimulationCrafting : public ::ContainerScreenSimulation {
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ::ContainerScreenActionResult tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs>);
-#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs);
-#endif
 
     virtual ::ContainerValidationCraftResult getCraftPreview();
     // NOLINTEND

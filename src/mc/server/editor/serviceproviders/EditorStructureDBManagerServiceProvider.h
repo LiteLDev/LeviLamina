@@ -52,12 +52,6 @@ public:
 
     virtual void processLevelStructures() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

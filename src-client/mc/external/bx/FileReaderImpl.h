@@ -35,12 +35,6 @@ public:
 
     virtual int read(void*, int, ::bx::Error*) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace bx

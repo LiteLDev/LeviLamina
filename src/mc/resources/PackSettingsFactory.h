@@ -14,7 +14,6 @@
 class PackManifest;
 class PackSettings;
 struct PackSettingValueAndDefault;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Core { class Path; }
 namespace Core { class PathView; }
@@ -114,13 +113,7 @@ public:
 
     MCAPI ::PackSettings* _getGlobalPackSettings(::PackManifest const& manifest);
 
-    MCAPI ::std::unordered_map<::mce::UUID, ::std::unique_ptr<::PackSettings>>&
-    _getWorldIdToPackSettingsMap(::std::string const& worldId);
-
     MCAPI ::PackSettings* _getWorldPackSettings(::PackManifest const& manifest, ::std::optional<::std::string> worldId);
-
-    MCAPI ::std::map<::std::string, ::std::variant<float, bool, ::std::string>>*
-    _getWorldUserOverrides(::std::string const& worldId, ::mce::UUID packId);
 
     MCAPI ::std::unique_ptr<::SharedTypes::v1_21_100::PackSettingsDefinition::Document>
     _loadUserOverridesFromFile(::Core::Path const& path) const;
@@ -134,23 +127,16 @@ public:
     MCAPI void _syncPackSettingsToSaveDoc(
         ::mce::UUID                                                 packId,
         ::PackSettings const&                                       packSettings,
-        ::SharedTypes::v1_21_100::PackSettingsDefinition::Document& settingsDoc,
+        ::SharedTypes::v1_21_100::PackSettingsDefinition::Document& userOverrides,
         bool                                                        includeTimestamp
     ) const;
 #endif
 
     MCAPI ::PackSettings* getPackSettings(::PackManifest const& manifest, ::std::optional<::std::string> worldId);
 
-    MCAPI bool loadGlobalUserOverrides();
-
     MCAPI bool loadPerWorldUserOverrides(::std::string const& worldId, ::Core::Path const& worldPath);
 
 #ifdef LL_PLAT_C
-    MCAPI ::Bedrock::PubSub::Subscription registerObserver(
-        ::std::function<
-            void(::mce::UUID const&, ::std::string const&, ::std::variant<float, bool, ::std::string> const&)> callback
-    );
-
     MCAPI bool saveGlobalUserOverrides();
 
     MCAPI bool savePerWorldUserOverrides(::std::string const& worldId, ::Core::Path const& worldPath);
@@ -186,14 +172,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $getAccessTimestamp() const;
+    MCFOLD uint64 $getAccessTimestamp() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

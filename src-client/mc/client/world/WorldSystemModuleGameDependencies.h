@@ -108,18 +108,6 @@ public:
     WorldSystemModuleGameDependencies& operator=(WorldSystemModuleGameDependencies const&);
     WorldSystemModuleGameDependencies(WorldSystemModuleGameDependencies const&);
     WorldSystemModuleGameDependencies();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~WorldSystemModuleGameDependencies();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace World

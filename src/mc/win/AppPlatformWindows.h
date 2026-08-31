@@ -26,11 +26,20 @@ public:
     ::ll::UntypedStorage<8, 616> mUnkfe07cc;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    AppPlatformWindows& operator=(AppPlatformWindows const&);
+    AppPlatformWindows(AppPlatformWindows const&);
+    AppPlatformWindows();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     AppPlatformWindows& operator=(AppPlatformWindows const&);
     AppPlatformWindows(AppPlatformWindows const&);
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -105,7 +114,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI AppPlatformWindows();
+#endif
 
     MCAPI uint64 _findHighPerformanceThreadsCount() const;
     // NOLINTEND
@@ -119,7 +130,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:
@@ -155,9 +168,17 @@ public:
 
     MCAPI bool $is24HourTimeFormat() const;
 
+#ifdef LL_PLAT_S
+    MCAPI ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
+#else // LL_PLAT_C
     MCFOLD ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
+#else // LL_PLAT_C
     MCFOLD ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
+#endif
 
     MCAPI ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
 
@@ -170,13 +191,13 @@ public:
 #ifdef LL_PLAT_C
     MCAPI ::std::string $getSystemLocale() const;
 
-    MCFOLD void $collectGraphicsHardwareDetails();
+    MCAPI void $collectGraphicsHardwareDetails();
 
     MCFOLD bool $supportsMSAA() const;
 
     MCFOLD bool $supportsAlbumExport() const;
 
-    MCFOLD bool $supportsPDFExport() const;
+    MCAPI bool $supportsPDFExport() const;
 
     MCFOLD ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
 

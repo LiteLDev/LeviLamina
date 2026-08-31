@@ -12,35 +12,17 @@ class Multitouch {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void commit();
-
-    MCAPI static void feed(char actionButtonId, char buttonData, short x, short y, int pointerId);
-
-    MCAPI static int getActivePointerIdsThisUpdate(int const** const ids);
-
-    MCAPI static bool isEdgeTouch(int pointerId);
-
-    MCAPI static bool isPointerDown(int pointerId);
-
-    MCAPI static bool isPressed(int pointerId);
-
     MCAPI static void reset();
-
-    MCAPI static void resetThisUpdate();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int& _activePointerCount();
-
     MCAPI static ::std::add_lvalue_reference_t<int[]> _activePointerList();
 
     MCAPI static int& _activePointerThisUpdateCount();
 
     MCAPI static ::std::add_lvalue_reference_t<int[]> _activePointerThisUpdateList();
-
-    MCAPI static int& _index();
 
     MCAPI static ::std::vector<::MouseAction>& _inputs();
 

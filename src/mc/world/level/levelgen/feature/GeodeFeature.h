@@ -8,9 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
-class BlockSource;
 // clang-format on
 
 class GeodeFeature : public ::IFeature {
@@ -57,36 +55,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GeodeFeature();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool canSupportGeode(::Block const& block);
-
-    MCFOLD static bool overlapsWithStructureFeature(::BlockSource const& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenHandlerBase();
+    virtual ~ScreenHandlerBase() = default;
 
     virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction);
 
@@ -39,28 +39,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScreenHandlerBase(::ItemStackRequestActionHandler& requestHandler);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStackRequestActionHandler& requestHandler);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
-
     MCFOLD ::ItemStackNetResult $endRequest();
 
     MCFOLD void $endRequestBatch();
@@ -68,11 +48,5 @@ public:
     MCFOLD void $postRequest(bool const wasSuccess);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

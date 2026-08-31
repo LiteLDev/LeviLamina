@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/Result.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/world/item/ItemDescriptor.h"
 #include "mc/world/item/ItemTag.h"
@@ -13,7 +12,6 @@
 class BinaryStream;
 class CompoundTag;
 class Item;
-class ReadOnlyBinaryStream;
 namespace Json { class Value; }
 // clang-format on
 
@@ -55,12 +53,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::std::unique_ptr<::ItemTagDescriptor>> deserialize(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
@@ -71,7 +63,7 @@ public:
 
     MCAPI bool $forEachItemUntil(::brstd::function_ref<bool(::Item const&, short)> func) const;
 
-    MCFOLD ::std::string $getFullName() const;
+    MCAPI ::std::string $getFullName() const;
 
     MCAPI ::std::string $toString() const;
 

@@ -8,6 +8,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/platform/threading/LockGuard.h"
+#include "mc/world/level/LevelListCacheObserver.h"
 #include "mc/world/level/storage/ILevelListCache.h"
 
 // auto generated forward declare list
@@ -52,13 +53,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelListCache() /*override*/;
+    virtual ~LevelListCache() /*override*/ = default;
 
     virtual void addLevel(::std::string const& levelId, ::LevelData&& levelData) /*override*/;
 
     virtual void deleteLevel(::std::string const& levelId) /*override*/;
 
     virtual void refreshLevel(::std::string const& levelId) /*override*/;
+
+    virtual void ensureLevelInitialized(::std::string const& levelId) /*override*/;
 
     virtual void deleteLevelFiles(::std::string const& levelId) /*override*/;
 
@@ -151,23 +154,25 @@ public:
 
     MCNAPI ::LevelCache* _addOrReplaceCache(::Core::Path const& path);
 
-    MCNAPI ::LevelCache* _addToCache(::Core::Path const& path);
+    MCNAPI ::LevelCache* _addToCache(
+        ::std::string const&                     levelId,
+        ::LevelCache&&                           levelCache,
+        ::LevelListCacheObserver::LevelAddedType levelAddedType
+    );
 
-    MCNAPI ::LevelCache* _addToCache(::std::string const& levelId, ::LevelCache&& levelCache);
-
-    MCNAPI ::LevelCache* _createAndAddToCache(::std::string const& levelId, ::Core::Path const& directory);
+    MCNAPI ::LevelCache* _createAndAddToCache(
+        ::std::string const&                     levelId,
+        ::Core::Path const&                      directory,
+        ::LevelListCacheObserver::LevelAddedType levelAddedType
+    );
 
     MCNAPI ::LevelCache* _getLevelCache(::std::string const& levelId);
 
     MCNAPI ::LevelSummary* _getLevelSummary(::std::string const& levelId);
 
-    MCNAPI void _notifyLevelDeleted(::std::string const& levelId);
-
     MCNAPI void _notifyLevelUpdated(::std::string const& levelId);
 
-    MCNAPI void _notifyNewLevelFound(::std::string const& levelId);
-
-    MCNAPI void _notifySummaryUpdated(::std::string const& levelId);
+    MCNAPI void _notifyNewLevelFound(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
 
     MCNAPI void _refreshSummary(::std::string const& levelId, ::LevelCache& cache);
     // NOLINTEND
@@ -183,12 +188,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $addLevel(::std::string const& levelId, ::LevelData&& levelData);
@@ -196,6 +195,8 @@ public:
     MCNAPI void $deleteLevel(::std::string const& levelId);
 
     MCNAPI void $refreshLevel(::std::string const& levelId);
+
+    MCNAPI void $ensureLevelInitialized(::std::string const& levelId);
 
     MCNAPI void $deleteLevelFiles(::std::string const& levelId);
 
@@ -276,13 +277,5 @@ public:
     MCNAPI ::Core::PathBuffer<::std::string> const $getBasePath() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForILevelListCache();
-
-    MCNAPI static void** $vftableForEnableQueueForMainThread();
     // NOLINTEND
 };

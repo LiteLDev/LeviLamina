@@ -18,7 +18,6 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    Matrix(Matrix const&);
     Matrix();
 
 #endif
@@ -27,10 +26,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI Matrix(::glm::vec4 const& row0, ::glm::vec4 const& row1, ::glm::vec4 const& row2, ::glm::vec4 const& row3);
-
-    MCAPI ::glm::qua<float> getRotationAsQuaternion() const;
-
-    MCAPI ::Matrix& operator=(::Matrix const&);
 
     MCAPI bool operator==(::Matrix const& rhs) const;
 

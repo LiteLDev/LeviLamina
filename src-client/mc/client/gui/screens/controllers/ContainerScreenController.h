@@ -16,8 +16,6 @@
 #include "mc/client/gui/screens/controllers/TypeInContainer.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/options/UIProfile.h"
-#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/SlotData.h"
 #include "mc/world/item/ItemGroup.h"
 #include "mc/world/item/ItemLockAction.h"
@@ -214,29 +212,7 @@ public:
 
     MCAPI void _compareStatesForFlyingItems();
 
-    MCFOLD int _getCollectionIndex(::UIPropertyBag* bag) const;
-
-    MCAPI ::ItemGroup const& _getCursorSelectedItemGroup() const;
-
-    MCAPI ::std::string _getDisplayName() const;
-
-    MCFOLD ::std::string _getFormattedHoverText(::ItemStackBase const& item) const;
-
-    MCFOLD ::std::string _getFormattedHoverTextForItem(::ItemStackBase const& item) const;
-
-    MCAPI ::InteractionModel _getInteractionModel() const;
-
     MCAPI ::ItemStack const& _getItemStack(::std::string const& collectionName, int collectionIndex) const;
-
-    MCAPI ::std::vector<::AutoPlaceItem>& _getReservedAutoPlaceOrder(::ContainerEnumName name, uint64 reserve);
-
-    MCAPI ::std::vector<::std::string>& _getReservedCoalesceOrder(::ContainerEnumName name, uint64 reserve);
-
-    MCAPI ::ItemStackBase const& _getSelectedItemStackBase() const;
-
-    MCAPI ::std::string _getStackItemCount() const;
-
-    MCAPI int _getStorageItemRemainingWeight(::ItemStackBase const& storageItem) const;
 
     MCAPI ::ItemStackBase const&
     _getTakeableItemStackBase(::std::string const& collectionName, int collectionIndex) const;
@@ -245,13 +221,7 @@ public:
 
     MCAPI void _handleAddAllToCursor(::std::string const& collectionName, int collectionIndex);
 
-    MCAPI void _handleAddHalfToCursor(::std::string const& collectionName, int collectionIndex);
-
     MCAPI void _handleAutoPlace(int amount, ::std::string const& collectionName, int index);
-
-    MCAPI bool _handleCoalesceStack(::std::string const& collectionName);
-
-    MCAPI bool _handleCoalesceToIndex(::std::string const& collectionName, int collectionIndex);
 
     MCAPI void
     _handleDropItem(::std::string const& collectionName, int collectionIndex, ::ItemTransferAmount transferAmount);
@@ -260,34 +230,15 @@ public:
 
     MCAPI void _handleSplit(::std::string const& collectionName, int collectionIndex);
 
-    MCAPI void
-    _handleSwap(::std::string const& firstName, int firstIndex, ::std::string const& secondName, int secondIndex);
-
     MCAPI void _handleTakeAll(::std::string const& collectionName, int index);
 
     MCAPI void _handleTakeAmount(int amount, ::std::string const& collectionName, int index);
 
     MCAPI void _handleUnselectSlot();
 
-    MCAPI bool _hasItems(::std::string const& collectionName, int collectionIndex) const;
-
-    MCAPI bool _hasSelectedSlot() const;
-
     MCAPI bool _isCursorSelectedActive() const;
 
-    MCAPI bool _isExpandoItem(::std::string const& collectionName, int collectionIndex) const;
-
-    MCAPI bool _isIdle() const;
-
     MCAPI bool _isInValidCraftingResultContainer(::std::string_view collectionName, int collectionIndex) const;
-
-    MCAPI bool _isOutputSlot(::std::string const& collectionName) const;
-
-    MCAPI bool _isProgressiveSelectBarVisible() const;
-
-    MCAPI bool _isSelectedSlot(::std::string const& collectionName, int collectionIndex) const;
-
-    MCAPI bool _isStorageItemEmpty(::ItemStackBase const& storageItem) const;
 
     MCAPI void _loadLastSelectedSlot();
 
@@ -302,12 +253,6 @@ public:
         int                  selectedItemIdx,
         ::std::string const& collectionName,
         int                  collectionIndex
-    );
-
-    MCAPI bool _moveSelectedItemFromStorageItemToStorageItem(
-        ::ItemStack const& fromStorageItem,
-        int                selectedItemIdx,
-        ::ItemStack const& toStorageItem
     );
 
     MCAPI bool _moveTopItemFromStorageItem(
@@ -325,27 +270,11 @@ public:
         ::ItemLockAction          actionOverride
     );
 
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
     MCAPI void _registerEventHandlersForStateMachine(uint buttonId);
-
-    MCAPI void _registerSingleTouchOutputSlot(::ContainerEnumName outputContainer);
-
-    MCAPI void _registerStateMachine();
-
-    MCAPI void _registerTouchHoldEventHandlersForStateMachine(uint buttonId);
-
-    MCAPI void _saveCurrentContainerState();
 
     MCAPI void _saveLastSelectedSlot();
 
     MCAPI void _stopSplitting();
-
-    MCAPI bool _usingGamepadScheme() const;
-
-    MCAPI bool _usingTouchScheme() const;
 
     MCAPI ::std::vector<::AutoPlaceItem> const* tryGetAutoPlaceOrder(::std::string const& collectionName) const;
     // NOLINTEND
@@ -354,8 +283,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _isInRecipeContainer(::std::string const& collectionName);
-
-    MCAPI static ::InteractionModel interactionModelFromUIProfile(::UIProfile uiProfile);
     // NOLINTEND
 
 public:
@@ -460,13 +387,5 @@ public:
     MCFOLD bool $_isInCreativeContainer(::std::string const& containerName) const;
 
     MCAPI bool $_getGestureControlEnabled() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

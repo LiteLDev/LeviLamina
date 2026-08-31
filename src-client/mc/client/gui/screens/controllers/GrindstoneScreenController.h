@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GrindstoneScreenController() /*override*/ = default;
+    virtual ~GrindstoneScreenController() /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
 
@@ -61,8 +61,6 @@ public:
         ::BlockPos const& pos,
         ::ActorUniqueID
     );
-
-    MCAPI void _registerStateMachine();
     // NOLINTEND
 
 public:
@@ -70,6 +68,12 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::Player&, ::BlockPos const& pos, ::ActorUniqueID);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -81,16 +85,8 @@ public:
 
     MCAPI void $_registerAutoPlaceOrder();
 
-    MCFOLD ::std::string $_getButtonXDescription();
+    MCAPI ::std::string $_getButtonXDescription();
 
     MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

@@ -4,12 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_21_10/scatter_params/CoordinateEvaluationOrder.h"
-#include "mc/platform/Result.h"
 #include "mc/util/molang/ExpressionOp.h"
 
 // auto generated forward declare list
 // clang-format off
-class ReadOnlyBinaryStream;
 struct BiomeCoordinateData;
 // clang-format on
 
@@ -31,19 +29,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool operator==(::BiomeScatterParamData const& other) const;
-
-    MCAPI ~BiomeScatterParamData();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeScatterParamData> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

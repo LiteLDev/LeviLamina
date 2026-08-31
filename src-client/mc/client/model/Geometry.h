@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/model/FitToFrame.h"
 #include "mc/client/model/geom/Cube.h"
-#include "mc/client/model/geom/QuadUVRotation.h"
 #include "mc/client/model/geom/TextureOffset.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
@@ -61,8 +60,6 @@ public:
             ::std::string const&                faceName,
             ::std::vector<::std::string> const& materialInstanceList
         ) const;
-
-        MCAPI void toJson(::Json::Value& root, ::std::vector<::std::string> const& materialInstanceList) const;
         // NOLINTEND
     };
 
@@ -96,18 +93,13 @@ public:
 
     public:
         // prevent constructor by default
+        NodePolyMesh& operator=(NodePolyMesh const&);
         NodePolyMesh();
 
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI NodePolyMesh(::Geometry::NodePolyMesh const&);
-
-        MCAPI ::Geometry::NodePolyMesh& operator=(::Geometry::NodePolyMesh&&);
-
-        MCAPI ::Geometry::NodePolyMesh& operator=(::Geometry::NodePolyMesh const&);
-
-        MCAPI void toJson(::Json::Value& root) const;
 
         MCAPI ~NodePolyMesh();
         // NOLINTEND
@@ -135,24 +127,6 @@ public:
         ::ll::TypedStorage<4, 12, ::Vec3>        mRotation;
         ::ll::TypedStorage<4, 12, ::Vec3>        mScale;
         ::ll::TypedStorage<1, 1, bool>           mUsePixelDepth;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        NodeTextureMesh();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit NodeTextureMesh(::std::string const& textureName);
-
-        MCAPI void toJson(::Json::Value& root) const;
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::std::string const& textureName);
         // NOLINTEND
     };
 
@@ -182,14 +156,14 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Node& operator=(Node const&);
+        Node();
+
+    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Node();
-
         MCAPI Node(::Geometry::Node const&);
-
-        MCAPI void
-        _textureMeshToJson(::std::vector<::Geometry::NodeTextureMesh> const& textureMeshes, ::Json::Value& node) const;
 
         MCAPI void addLocator(
             ::std::string const& name,
@@ -199,18 +173,12 @@ public:
             bool                 errorIfIdenticalLocatorAlreadyExists
         );
 
-        MCAPI ::Geometry::Node& operator=(::Geometry::Node const&);
-
-        MCAPI void toJson(::Json::Value& root, ::std::vector<::std::string> const& materialInstanceList) const;
-
         MCAPI ~Node();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
-
         MCAPI void* $ctor(::Geometry::Node const&);
         // NOLINTEND
 
@@ -243,40 +211,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Geometry();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Geometry(
-        ::std::string const& serializableName,
-        ::std::string const& sourceFilePathWithExtension,
-        bool                 isFromBaseGamePack,
-        int                  texw,
-        int                  texh
-    );
-
-    MCAPI Geometry(
-        ::std::string const& serializableName,
-        ::std::string const& sourceFilePathWithExtension,
-        ::Geometry const&    source,
-        bool                 isFromBaseGamePack,
-        int                  texw,
-        int                  texh
-    );
-
-    MCAPI void _convertPreV1_8MobArmorOffsetsToLocators();
-
-    MCAPI void _fixEnderDragonLegacyBones(::Geometry::Node& newNode, ::std::string const& name);
-
-    MCAPI void _fixPreDataDrivenMobGeometry(
-        ::std::string const&                       name,
-        ::std::vector<::JsonValueHierarchy> const& bones,
-        ::JsonValueHierarchy&                      sourceNode,
-        ::Geometry::Node*                          newNode
-    );
-
     MCAPI void
     _parseBones(::JsonValueHierarchy const& root, bool applyBindPoseRotation, ::TextureUVCoordinateSet const& uvOffset);
 
@@ -289,33 +225,9 @@ public:
         ::TextureUVCoordinateSet const& uvOffset
     );
 
-    MCAPI void
-    _parseBoxFaceUVs(::Geometry::Box& box, ::Json::Value const& uvNode, ::TextureUVCoordinateSet const& uvOffset);
-
-    MCAPI void _parseItemDisplayTransform(::Json::Value const& itemTransformNode, ::std::string const& transformName);
-
-    MCFOLD ::std::vector<::std::string> const& getMaterialInstanceList() const;
-
     MCAPI ::Geometry::Node const* getNode(::std::string_view name) const;
 
-    MCFOLD ::std::map<::std::string, ::Geometry::Node> const& getNodes() const;
-
-    MCFOLD ::Vec2 const& getTextureDimensions() const;
-
-    MCFOLD bool isFromBaseGamePack() const;
-
-    MCAPI void
-    parse(::JsonValueHierarchy const& root, bool applyBindPoseRotation, ::TextureUVCoordinateSet const& uvOffset);
-
     MCAPI void toJson(::Json::Value& root) const;
-
-    MCAPI ~Geometry();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::QuadUVRotation _parseUvRotation(::Json::Value const& value);
     // NOLINTEND
 
 public:
@@ -328,32 +240,5 @@ public:
     MCAPI static ::SemVersionConstant const& mDrownedParentFieldSupportedVersion();
 
     MCAPI static ::SemVersionConstant const& mParentFieldSupportedVersion();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const& serializableName,
-        ::std::string const& sourceFilePathWithExtension,
-        bool                 isFromBaseGamePack,
-        int                  texw,
-        int                  texh
-    );
-
-    MCAPI void* $ctor(
-        ::std::string const& serializableName,
-        ::std::string const& sourceFilePathWithExtension,
-        ::Geometry const&    source,
-        bool                 isFromBaseGamePack,
-        int                  texw,
-        int                  texh
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

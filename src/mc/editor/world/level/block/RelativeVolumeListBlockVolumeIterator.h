@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/level/block/BaseBlockLocationIterator.h"
 
-// auto generated forward declare list
-// clang-format off
-class SimpleBlockVolume;
-namespace Editor { class RelativeVolumeListBlockVolume; }
-// clang-format on
-
 namespace Editor {
 
 class RelativeVolumeListBlockVolumeIterator : public ::BaseBlockLocationIterator {
@@ -34,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RelativeVolumeListBlockVolumeIterator() /*override*/ = default;
+    virtual ~RelativeVolumeListBlockVolumeIterator() /*override*/;
 
     virtual bool isValid() const /*override*/;
 
@@ -44,29 +38,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI RelativeVolumeListBlockVolumeIterator(
-        ::Editor::RelativeVolumeListBlockVolume const& volume,
-        ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::SimpleBlockVolume>>>
-            currentVolumeIterator,
-        ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::SimpleBlockVolume>>> endVolumeIterator,
-        bool                                                                                         begin
-    );
-
-    MCNAPI bool operator!=(::Editor::RelativeVolumeListBlockVolumeIterator const& rhs) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Editor::RelativeVolumeListBlockVolume const& volume,
-        ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::SimpleBlockVolume>>>
-            currentVolumeIterator,
-        ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::SimpleBlockVolume>>> endVolumeIterator,
-        bool                                                                                         begin
-    );
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

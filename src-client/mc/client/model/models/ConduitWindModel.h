@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ConduitWindModel() /*override*/ = default;
+    virtual ~ConduitWindModel() /*override*/;
 
     virtual void render(::ScreenContext& screenContext) /*override*/;
     // NOLINTEND
@@ -45,14 +45,14 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $render(::ScreenContext& screenContext);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI void $render(::ScreenContext& screenContext);
     // NOLINTEND
 };

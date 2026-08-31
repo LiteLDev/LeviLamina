@@ -14,25 +14,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BrewingStandScreenControllerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrewingStandScreenControllerProxy() /*override*/ = default;
+    virtual ~BrewingStandScreenControllerProxy() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit BrewingStandScreenControllerProxy(::BrewingStandScreenControllerProxyCallbacks callbacks);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BrewingStandScreenControllerProxyCallbacks callbacks);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

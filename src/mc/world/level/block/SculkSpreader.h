@@ -41,18 +41,6 @@ public:
         int  additionalDecayRate
     );
 
-    MCAPI void addCursors(::BlockPos const& pos, int charge);
-
-    MCAPI void clearCursors();
-
-    MCAPI ::BlockPos getCursorPosition(int index) const;
-
-    MCFOLD int getMaxCharge() const;
-
-    MCAPI int getNumberOfCursors() const;
-
-    MCAPI int getTotalCharge() const;
-
     MCAPI void load(::CompoundTag const& tag);
 
     MCAPI void save(::CompoundTag& tag) const;
@@ -64,8 +52,6 @@ public:
         ::Random&            random,
         bool                 spreadVeins
     );
-
-    MCAPI ~SculkSpreader();
     // NOLINTEND
 
 public:
@@ -75,11 +61,5 @@ public:
 
     MCAPI void*
     $ctor(bool isWorldGen, int growthSpawnCost, int noGrowthRadius, int chargeDecayRate, int additionalDecayRate);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

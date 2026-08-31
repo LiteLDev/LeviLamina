@@ -27,33 +27,10 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                     mMaxDirectoryDepth;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    UnzipSettings& operator=(UnzipSettings const&);
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UnzipSettings();
-
-#ifdef LL_PLAT_C
-    MCAPI UnzipSettings(::Core::ZipUtils::UnzipSettings const&);
-#endif
-
     MCAPI ~UnzipSettings();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::Core::ZipUtils::UnzipSettings const&);
-#endif
     // NOLINTEND
 
 public:

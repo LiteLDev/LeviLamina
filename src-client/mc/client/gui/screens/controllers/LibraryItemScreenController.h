@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibraryItemScreenController() /*override*/;
+    virtual ~LibraryItemScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -71,28 +71,6 @@ public:
         ::IMinecraftEventing&                              eventing,
         ::ToastManager&                                    toastManager
     );
-
-    MCAPI void _populateTags();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerExpandableEventHandlers();
-
-    MCAPI void _registerSubControllers(
-        ::std::shared_ptr<::PlayScreenModel> model,
-        ::IResourcePackRepository&           resourcePackRepository,
-        ::ResourcePackManager&               resourcePackManager,
-        ::IMinecraftEventing&                eventing,
-        ::ToastManager&                      toastManager
-    );
-
-    MCAPI void _registerTagEventHandlers();
-
-    MCAPI void _showDownloadError();
-
-    MCAPI ::std::string const& getProductId() const;
     // NOLINTEND
 
 public:
@@ -110,12 +88,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ui::DirtyFlag $tick();
@@ -127,13 +99,5 @@ public:
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

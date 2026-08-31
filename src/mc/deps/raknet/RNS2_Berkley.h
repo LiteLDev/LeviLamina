@@ -33,7 +33,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~RNS2_Berkley() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~RNS2_Berkley() /*override*/;
+#endif
 
     virtual void SetMulticastInterface(int interfaceIndex) /*override*/;
     // NOLINTEND
@@ -42,11 +46,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::RakNet::RNS2BindResult
-    BindSharedIPV4And6(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const*, uint);
-
-    MCAPI uint RecvFromLoopInt();
-
-    MCAPI void SetBroadcastSocket(int broadcast);
+    BindSharedIPV4And6(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line);
     // NOLINTEND
 
 public:
@@ -58,17 +58,19 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $SetMulticastInterface(int interfaceIndex);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

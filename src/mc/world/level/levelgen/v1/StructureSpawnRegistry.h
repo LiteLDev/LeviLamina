@@ -31,20 +31,5 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride> const*
     get(::std::string const& key) const;
-
-    MCAPI void insert(::std::string_view key, ::std::weak_ptr<::br::worldgen::Structure>&& dynamicStructureMobs);
-
-    MCAPI void insert(
-        ::std::string_view                                                                    key,
-        ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride>&& staticStructureMobs
-    );
-
-    MCAPI ~StructureSpawnRegistry();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

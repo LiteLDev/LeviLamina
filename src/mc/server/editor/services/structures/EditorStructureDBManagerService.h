@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/BasicStackString.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/server/editor/serviceproviders/EditorStructureDBManagerServiceProvider.h"
 #include "mc/server/editor/services/structures/IStructureDataProvider.h"
@@ -55,7 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorStructureDBManagerService() /*override*/;
+    virtual ~EditorStructureDBManagerService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -128,33 +126,12 @@ public:
         ::Editor::EditorStructureDBMetadata&           metaData
     );
 
-    MCNAPI void
-    _exportFlaggedStructuresToTarget(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& targetRoot);
-
-    MCNAPI ::std::string const _getJsonStringFromMetadata(::Editor::EditorStructureDBMetadata const& metaData) const;
-
-    MCNAPI ::std::string _getNameFromStructurePath(::Core::Path const& path) const;
-
     MCNAPI ::std::string _getNamespaceFromStructurePath(::Core::Path const& path) const;
-
-    MCNAPI ::std::string _handleDupeDisplayName(::std::string_view displayName);
-
-    MCNAPI ::std::string _handleDupeName(::std::string_view name);
 
     MCNAPI ::std::optional<::Editor::EditorStructureSourceDataItem> const
     _parseJsonToMetadata(::std::string& jsonString, ::Editor::EditorStructureDBMetadata& metaData);
 
-    MCNAPI void _processBPStructures();
-
-    MCNAPI void _processEditorProjectStructures();
-
-    MCNAPI void _processInProjectStructures();
-
-    MCNAPI void _processPersistentEditorStructures();
-
     MCNAPI bool _writeMetaData(::Core::Path const& path, ::Editor::EditorStructureDBMetadata& metaData) const;
-
-    MCNAPI void buildManifests();
     // NOLINTEND
 
 public:
@@ -173,12 +150,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -233,16 +204,6 @@ public:
     $getStructureData(::mce::UUID const& id) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEditorStructureDBManagerServiceProvider();
-
-    MCNAPI static void** $vftableForIStructureDataProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

@@ -3,11 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/identity/XUID.h"
-#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +16,7 @@ namespace Social { class XboxLiveUserPrivacy; }
 
 namespace OreUI {
 
-class PlayerPrivacyFacet : public ::OreUI::FacetBase<::OreUI::PlayerPrivacyFacet> {
+class PlayerPrivacyFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PlayerPrivacyFacet> {
 public:
     // PlayerPrivacyFacet inner types declare
     // clang-format off
@@ -62,8 +61,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PlayerPrivacyFacet(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
 
-    MCAPI ::Bedrock::Result<void> _load(::std::string const& id);
-
     MCAPI ::OreUI::PlayerPrivacyFacet::PrivacyData const& getData();
 
     MCFOLD bool getLoaded();
@@ -86,7 +83,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentRenderPrimTypeBase() = default;
+    virtual ~ScriptWidgetComponentRenderPrimTypeBase();
     // NOLINTEND
 
 public:
@@ -36,9 +36,9 @@ public:
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/world/events/LevelEventCoordinator.h"
 
-class ClientLevelEventCoordinator : public ::LevelEventCoordinator {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
-};
+class ClientLevelEventCoordinator : public ::LevelEventCoordinator {};

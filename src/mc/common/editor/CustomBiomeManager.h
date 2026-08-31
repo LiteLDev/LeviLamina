@@ -31,13 +31,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CustomBiomeManager() /*override*/ = default;
+    virtual ~CustomBiomeManager() /*override*/;
 
     virtual ::WeakRef<::ICustomBiomeSource> buildCustomSource(::CustomBiomeSourceConfig const& config) /*override*/;
 
     virtual bool destroyCustomSource(::mce::UUID id) /*override*/;
 
     virtual ::WeakRef<::ICustomBiomeSource> getCustomSource(::mce::UUID const& id) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -50,12 +56,6 @@ public:
     MCNAPI ::WeakRef<::ICustomBiomeSource> $getCustomSource(::mce::UUID const& id);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

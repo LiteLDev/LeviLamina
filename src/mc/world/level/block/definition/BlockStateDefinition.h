@@ -22,6 +22,7 @@ public:
 #ifdef LL_PLAT_S
 public:
     // prevent constructor by default
+    BlockStateDefinition& operator=(BlockStateDefinition const&);
     BlockStateDefinition();
 
 #else // LL_PLAT_C
@@ -31,12 +32,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
     MCAPI BlockStateDefinition(::BlockStateDefinition const& rhs);
-#endif
-
-    MCAPI void _copy(::BlockStateDefinition const& rhs);
-
-#ifdef LL_PLAT_S
-    MCAPI ::BlockStateDefinition& operator=(::BlockStateDefinition const& rhs);
 #endif
 
     MCAPI ~BlockStateDefinition();

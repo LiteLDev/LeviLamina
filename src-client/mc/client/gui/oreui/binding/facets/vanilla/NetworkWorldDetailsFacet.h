@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/NetworkWorldDetails.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/NetworkWorldType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -18,7 +18,7 @@ namespace World { class ThirdPartyWorldList; }
 
 namespace OreUI {
 
-class NetworkWorldDetailsFacet : public ::OreUI::FacetBase<::OreUI::NetworkWorldDetailsFacet> {
+class NetworkWorldDetailsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::NetworkWorldDetailsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,9 +58,9 @@ public:
 
     MCFOLD ::OreUI::NetworkWorldDetails const& getCurrentNetworkWorldDetails() const;
 
-    MCFOLD bool hasLoadedDetails() const;
+    MCAPI bool hasLoadedDetails() const;
 
-    MCAPI void loadNetworkWorldDetails(::std::string const& id, ::OreUI::NetworkWorldType worldType);
+    MCAPI void loadNetworkWorldDetails(::std::string const& id, ::OreUI::NetworkWorldType const worldType);
     // NOLINTEND
 
 public:
@@ -83,12 +83,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

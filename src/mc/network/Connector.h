@@ -43,12 +43,6 @@ public:
             ::Json::Value const&                     sessionSummary
         ) = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:
@@ -83,18 +77,6 @@ public:
     virtual ushort getIPv6Port() const;
 
     virtual ::TransportLayer getNetworkType() const;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit Connector(::Connector::ConnectionCallbacks& callbacks);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Connector::ConnectionCallbacks& callbacks);
     // NOLINTEND
 
 public:

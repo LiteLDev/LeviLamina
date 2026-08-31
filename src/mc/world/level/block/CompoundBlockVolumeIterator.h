@@ -18,13 +18,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CompoundBlockVolumeIterator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CompoundBlockVolumeIterator() /*override*/ = default;
+    virtual ~CompoundBlockVolumeIterator() /*override*/;
 
     virtual ::BaseBlockLocationIterator& operator++() /*override*/;
 
@@ -36,15 +32,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI CompoundBlockVolumeIterator(::CompoundBlockVolume const& vol, bool begin);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::CompoundBlockVolume const& vol, bool begin);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -54,7 +44,7 @@ public:
 
     MCAPI void $_begin();
 
-    MCAPI void $_end();
+    MCFOLD void $_end();
 
 
     // NOLINTEND

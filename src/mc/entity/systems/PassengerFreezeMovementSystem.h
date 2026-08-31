@@ -15,6 +15,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCAPI static void freezeMovement(::StrictEntityContext& stateVector, ::StateVectorComponent&);
+    MCAPI static void freezeMovement(::StrictEntityContext&, ::StateVectorComponent& stateVector);
     // NOLINTEND
 };

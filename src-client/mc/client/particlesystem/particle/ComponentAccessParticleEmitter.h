@@ -36,22 +36,6 @@ public:
         ::ll::TypedStorage<4, 4, float>   mHitAlpha;
         ::ll::TypedStorage<1, 1, uchar>   mHitAxis;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CollisionHelper();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI CollisionHelper(float alpha, uchar hitAxis, ::AABB const& hitShape);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(float alpha, uchar hitAxis, ::AABB const& hitShape);
-        // NOLINTEND
     };
 
 public:
@@ -138,7 +122,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $setEmitRate(float emitRate);
+    MCAPI void $setEmitRate(float emitRate);
 
     MCFOLD float $getEmitRate() const;
 

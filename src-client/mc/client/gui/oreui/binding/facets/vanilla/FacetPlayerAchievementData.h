@@ -19,20 +19,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                                           mMaxGamerScore;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::FacetAchievementData>> mAchievementData;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void reset();
-
-    MCAPI ~FacetPlayerAchievementData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

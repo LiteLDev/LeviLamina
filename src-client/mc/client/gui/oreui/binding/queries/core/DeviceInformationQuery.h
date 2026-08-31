@@ -67,17 +67,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeviceInformationQuery() /*override*/ = default;
+    virtual ~DeviceInformationQuery() /*override*/;
 
-    virtual void onOperationModeChanged(::OperationMode) /*override*/;
+    virtual void onOperationModeChanged(::OperationMode operationMode) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI DeviceInformationQuery(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
-
-    MCAPI void _updateInputMethods();
     // NOLINTEND
 
 public:
@@ -87,21 +85,15 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $onOperationModeChanged(::OperationMode);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForIQuery();
-
-    MCNAPI static void** $vftableForPropertyObject();
-
-    MCNAPI static void** $vftableForAppPlatformListener();
-
-    MCNAPI static void** $vftableForStorageAreaStateListener();
+    MCFOLD void $onOperationModeChanged(::OperationMode operationMode);
     // NOLINTEND
 };
 

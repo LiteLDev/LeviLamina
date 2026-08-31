@@ -5,13 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/EquipmentSlot.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
-#include "mc/world/level/storage/AllExperiments.h"
-
-// auto generated forward declare list
-// clang-format off
-class SemVersion;
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
 
 struct WearableItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactoryData {
 public:
@@ -19,16 +12,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::EquipmentSlot> mEquipmentSlot;
     ::ll::TypedStorage<4, 4, int>                                  mProtection;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
     // NOLINTEND
 
 public:

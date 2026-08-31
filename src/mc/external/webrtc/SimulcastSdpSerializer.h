@@ -7,8 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class SimulcastDescription; }
-namespace cricket { struct RidDescription; }
+namespace webrtc { class MediaContentDescription; }
+namespace webrtc { class SimulcastDescription; }
+namespace webrtc { struct RidDescription; }
 // clang-format on
 
 namespace webrtc {
@@ -17,14 +18,18 @@ class SimulcastSdpSerializer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::RTCErrorOr<::cricket::RidDescription> DeserializeRidDescription(::std::string_view string) const;
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::RidDescription>
+    DeserializeRidDescription(::webrtc::MediaContentDescription const& media_desc, ::std::string_view string) const;
 
-    MCNAPI ::webrtc::RTCErrorOr<::cricket::SimulcastDescription>
+    MCNAPI ::webrtc::RTCErrorOr<::webrtc::SimulcastDescription>
     DeserializeSimulcastDescription(::std::string_view string) const;
 
-    MCNAPI ::std::string SerializeRidDescription(::cricket::RidDescription const& rid_description) const;
+    MCNAPI ::std::string SerializeRidDescription(
+        ::webrtc::MediaContentDescription const& media_desc,
+        ::webrtc::RidDescription const&          rid_description
+    ) const;
 
-    MCNAPI ::std::string SerializeSimulcastDescription(::cricket::SimulcastDescription const& simulcast) const;
+    MCNAPI ::std::string SerializeSimulcastDescription(::webrtc::SimulcastDescription const& simulcast) const;
     // NOLINTEND
 };
 

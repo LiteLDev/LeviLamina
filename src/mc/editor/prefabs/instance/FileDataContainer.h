@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::Prefabs::PrefabDBInstanceLoader::v1 { struct InstanceData; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -21,51 +20,13 @@ public:
 public:
     // prevent constructor by default
     FileDataContainer& operator=(FileDataContainer const&);
+    FileDataContainer(FileDataContainer const&);
     FileDataContainer();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI FileDataContainer(::Editor::Prefabs::PrefabDBInstanceLoader::CurrentVersion::FileDataContainer const&);
-
-    MCNAPI ::Editor::Prefabs::PrefabDBInstanceLoader::CurrentVersion::FileDataContainer&
-    operator=(::Editor::Prefabs::PrefabDBInstanceLoader::CurrentVersion::FileDataContainer&&);
-
-    MCNAPI ~FileDataContainer();
-    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCNAPI static ::std::optional<::Editor::Prefabs::PrefabDBInstanceLoader::CurrentVersion::FileDataContainer>
-    fromString(
-        ::Puv::SlicedLoader<
-            ::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData,
-            nullptr_t,
-            nullptr_t,
-            ::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData>& loader,
-        ::std::string&                                                    jsonString,
-        ::std::vector<::std::string>&                                     outErrors
-    );
-
-    MCNAPI static ::std::optional<::std::string> toString(
-        ::cereal::ReflectionCtx&                                           ctx,
-        ::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData const& templateData
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Prefabs::PrefabDBInstanceLoader::CurrentVersion::FileDataContainer const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

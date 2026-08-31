@@ -14,10 +14,6 @@ class Mob;
 
 class CarrotOnAStickItem : public ::Item {
 public:
-    // prevent constructor by default
-    CarrotOnAStickItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isHandEquipped() const /*override*/;
@@ -32,25 +28,17 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CarrotOnAStickItem(::std::string const& name, short id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, short id);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isHandEquipped() const;
 
     MCFOLD bool $requiresInteract() const;
 
+#ifdef LL_PLAT_S
     MCAPI int $getEnchantSlot() const;
+#else // LL_PLAT_C
+    MCFOLD int $getEnchantSlot() const;
+#endif
 
     MCFOLD int $getEnchantValue() const;
 

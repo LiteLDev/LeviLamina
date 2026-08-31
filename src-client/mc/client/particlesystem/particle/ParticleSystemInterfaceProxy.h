@@ -110,10 +110,4 @@ public:
         ::MolangVariableMap const& molangVariables
     );
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

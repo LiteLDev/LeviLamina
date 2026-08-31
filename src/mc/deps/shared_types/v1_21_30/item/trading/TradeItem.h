@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class DynamicValue; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_21_30 {
@@ -56,15 +55,9 @@ public:
 
     MCAPI TradeItem(::SharedTypes::v1_21_30::TradeItem const&);
 
-    MCAPI ::SharedTypes::v1_21_30::TradeItem& operator=(::SharedTypes::v1_21_30::TradeItem&&);
+    MCAPI bool operator==(::SharedTypes::v1_21_30::TradeItem const&) const;
 
     MCAPI ~TradeItem();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

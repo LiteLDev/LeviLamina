@@ -72,49 +72,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveToBlockGoal(
-        ::Mob&                                  mob,
-        float                                   speedModifier,
-        int                                     searchRange,
-        int                                     searchHeight,
-        int                                     tickInterval,
-        int                                     stayDurationTicks,
-        float                                   goalRadius,
-        ::Vec3                                  targetPositionOffset,
-        float                                   chanceToStart,
-        ::TargetSelectionMethod                 targetSelectionMethod,
-        ::std::vector<::ActorDefinitionTrigger> onReachTriggers,
-        ::std::vector<::ActorDefinitionTrigger> onStayCompletedTriggers,
-        ::std::vector<::ItemDescriptor>         targetBlocks,
-        ::ActorFilterGroup const&               targetBlockFilter
-    );
-
     MCAPI bool _findTargetBlock();
 
     MCAPI bool _isValidTarget(::BlockSource& region, ::BlockPos& pos) const;
 
     MCAPI void _moveToBlock();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                  mob,
-        float                                   speedModifier,
-        int                                     searchRange,
-        int                                     searchHeight,
-        int                                     tickInterval,
-        int                                     stayDurationTicks,
-        float                                   goalRadius,
-        ::Vec3                                  targetPositionOffset,
-        float                                   chanceToStart,
-        ::TargetSelectionMethod                 targetSelectionMethod,
-        ::std::vector<::ActorDefinitionTrigger> onReachTriggers,
-        ::std::vector<::ActorDefinitionTrigger> onStayCompletedTriggers,
-        ::std::vector<::ItemDescriptor>         targetBlocks,
-        ::ActorFilterGroup const&               targetBlockFilter
-    );
     // NOLINTEND
 
 public:
@@ -133,11 +95,5 @@ public:
     MCAPI void $stop();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

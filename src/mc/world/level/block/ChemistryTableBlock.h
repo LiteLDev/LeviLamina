@@ -21,10 +21,6 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 
 class ChemistryTableBlock : public ::ActorBlock {
 public:
-    // prevent constructor by default
-    ChemistryTableBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isCraftingBlock() const /*override*/;
@@ -49,8 +45,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChemistryTableBlock(::std::string const& nameId, int id);
-
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
@@ -59,12 +53,6 @@ public:
     // NOLINTBEGIN
     MCAPI static bool
     isUIValidForPlayer(::BlockPos const& pos, ::Player& player, float pickRange, ::HashedString const& expectedType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

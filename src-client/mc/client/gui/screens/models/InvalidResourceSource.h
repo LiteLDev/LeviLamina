@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InvalidResourceSource() /*override*/ = default;
+    virtual ~InvalidResourceSource() /*override*/;
 
     virtual void load() /*override*/;
 
@@ -50,6 +50,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::IResourcePackRepository& resourceRepository, ::InvalidPacksFilterGroup filter);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -28,26 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ItemStackRequestActionCreate();
-
-#ifdef LL_PLAT_C
-    MCNAPI explicit ItemStackRequestActionCreate(uchar resultsIndex);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(uchar resultsIndex);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $_write(::BinaryStream& stream) const;

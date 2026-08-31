@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class MainMenuScreenModel;
-namespace Realms { struct RealmId; }
 namespace RealmsScreenUtils { struct RealmsWorldLoadingDetailsGroup; }
 // clang-format on
 
@@ -31,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SubscriptionsScreenController() /*override*/ = default;
+    virtual ~SubscriptionsScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -47,17 +46,9 @@ public:
 
     MCAPI bool _isCsbExpired();
 
-    MCFOLD bool _isCsbSubscribed();
+    MCAPI bool _isCsbSubscribed();
 
     MCAPI bool _platformMatches();
-
-    MCAPI void _refreshRealmsSubscriptionsData();
-
-    MCAPI void _refreshWorld(::Realms::RealmId& realmId);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
 
     MCAPI bool shouldShowSubscriptionsTab() const;
     // NOLINTEND
@@ -69,6 +60,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ui::DirtyFlag $tick();
@@ -76,13 +73,5 @@ public:
     MCAPI void $onCreation();
 
     MCAPI void $onOpen();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

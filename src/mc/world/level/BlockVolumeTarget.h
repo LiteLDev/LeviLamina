@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockVolumeTarget() /*override*/ = default;
+    virtual ~BlockVolumeTarget() /*override*/;
 
     virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
 
@@ -98,37 +98,19 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI BlockVolumeTarget(
-        ::BlockVolume&           blockVolume,
-        ::ILevel&                level,
-        ::BiomeSource const&     biomeSource,
-        ::DimensionType          dimensionType,
-        ::WorldGenContext const& context
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BlockVolume&           blockVolume,
-        ::ILevel&                level,
-        ::BiomeSource const&     biomeSource,
-        ::DimensionType          dimensionType,
-        ::WorldGenContext const& context
-    );
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
+    MCFOLD ::Block const& $getBlock(::BlockPos const& pos) const;
 
-    MCAPI ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
+    MCFOLD ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
 
-    MCFOLD ::Block const& $getExtraBlock(::BlockPos const&) const;
+    MCAPI ::Block const& $getExtraBlock(::BlockPos const&) const;
 
     MCAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
 

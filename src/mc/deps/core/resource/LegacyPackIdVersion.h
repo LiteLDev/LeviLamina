@@ -28,8 +28,6 @@ public:
     MCNAPI LegacyPackIdVersion(::std::string const& id, ::std::string const& version);
 
     MCNAPI ::PackIdVersion getUpgradedPackId() const;
-
-    MCNAPI ~LegacyPackIdVersion();
     // NOLINTEND
 
 public:
@@ -38,11 +36,5 @@ public:
     MCNAPI void* $ctor(::LegacyPackIdVersion const&);
 
     MCNAPI void* $ctor(::std::string const& id, ::std::string const& version);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

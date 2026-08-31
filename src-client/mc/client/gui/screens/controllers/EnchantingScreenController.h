@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EnchantingScreenController() /*override*/ = default;
+    virtual ~EnchantingScreenController() /*override*/;
 
     virtual void onLeave() /*override*/;
 
@@ -59,15 +59,7 @@ public:
 
     MCAPI ::ui::ViewRequest _enchantmentClicked(int option);
 
-    MCAPI void _initScreenControllerProxy();
-
-    MCAPI ::ui::ViewRequest _onOptionButtonClicked(::UIPropertyBag* bag);
-
     MCAPI ::ui::ViewRequest _onOptionButtonSelected(::UIPropertyBag* bag);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -82,9 +74,15 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onLeave();
+    MCAPI void $onLeave();
 
     MCFOLD bool $_isStillValid() const;
 
@@ -95,13 +93,5 @@ public:
     MCAPI ::ui::ViewRequest $_onContainerSlotSelected(::std::string const& collectionName, int index);
 
     MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

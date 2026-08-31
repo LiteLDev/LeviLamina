@@ -30,12 +30,6 @@ public:
 
     virtual ::AABB const& _getWorldBounds() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

@@ -36,18 +36,10 @@ public:
     // NOLINTBEGIN
     virtual void hostServer();
 
-#ifdef LL_PLAT_S
-    virtual ::Social::EduJoinerResponse tryAcceptJoiner(::std::string const&, ::std::string const&);
-#else // LL_PLAT_C
     virtual ::Social::EduJoinerResponse
     tryAcceptJoiner(::std::string const& sessionToken, ::std::string const& joinerToHostNonce);
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::std::string getHostToJoinerNonce(::std::string const&) const;
-#else // LL_PLAT_C
     virtual ::std::string getHostToJoinerNonce(::std::string const& sessionToken) const;
-#endif
 
     virtual ::Bedrock::Threading::Async<void> onNextFetchJoiners();
 
@@ -88,17 +80,11 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static ::std::string const& getServicesEndpoint();
-#endif
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI static ::EducationServicesEnvironment& mCachedEnvironment();
+#endif
     // NOLINTEND
 
 public:

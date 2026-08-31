@@ -37,21 +37,6 @@ public:
         ::ll::TypedStorage<1, 1, bool> mBlockFace;
         ::ll::TypedStorage<1, 1, bool> mVerticalHalf;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void fromStringVector(
-            ::BlockTrait::PlacementPosition::EnabledStates& instance,
-            ::std::vector<::std::string> const&             states
-        );
-        // NOLINTEND
     };
 
     class UpdateBlockFaceGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
@@ -83,12 +68,6 @@ public:
         MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
 
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -122,12 +101,6 @@ public:
 
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
 public:
@@ -146,12 +119,6 @@ public:
     virtual ::std::unique_ptr<::CompoundTag> _buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
 
     virtual ::std::string const& _getName() const /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

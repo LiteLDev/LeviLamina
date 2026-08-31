@@ -16,14 +16,12 @@ class BlockPos;
 class BlockSource;
 class ChunkPos;
 class IMinecraftEventing;
-class IRandom;
 class IWorldRegistriesProvider;
 class ItemActor;
 class ItemStack;
 class Level;
 class LevelChunkVolumeData;
 class Mob;
-class MobSpawnRules;
 class Random;
 class ResourcePackManager;
 class SpawnConditions;
@@ -117,19 +115,6 @@ public:
     // NOLINTBEGIN
     MCAPI BedrockSpawner(::Level& level, ::IMinecraftEventing& eventing);
 
-    MCAPI void
-    _permuteId(::ActorDefinitionIdentifier& actualId, ::MobSpawnRules const& spawnRules, ::Random& random) const;
-
-    MCAPI void _postProcessSpawnMobs(
-        ::BlockSource&                                                      region,
-        int                                                                 xo,
-        int                                                                 zo,
-        ::IRandom&                                                          random,
-        bool                                                                doMobSpawning,
-        ::std::function<void(::BlockPos const&, ::SpawnConditions&)> const& spawnMobClusterCallback,
-        ::std::function<bool(::BlockSource const&, ::BlockPos)> const&      isInsideAncientCity
-    );
-
     MCAPI void _sendHerdEvents(::MobSpawnHerdInfo const& herdInfo, ::std::vector<::Mob*>& spawnGroup) const;
 
     MCAPI void _spawnMobCluster(::BlockSource& region, ::BlockPos const& pos, ::SpawnConditions& conditions);
@@ -212,11 +197,5 @@ public:
     MCFOLD ::br::spawn::SpawnPlacements& $getSpawnPlacements();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

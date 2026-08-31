@@ -63,19 +63,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScreenRenderer();
-
     MCAPI void blit(
         ::ScreenContext&          screenContext,
         ::mce::TexturePtr const&  tex,
         ::IntRectangle const&     rect,
-        ::mce::MaterialPtr const* optionalMat
-    );
-
-    MCAPI void blit(
-        ::ScreenContext& screenContext,
-        ::std::variant<::std::monostate, ::mce::TexturePtr, ::mce::ClientTexture, ::mce::ServerTexture> const& texture,
-        ::IntRectangle const&                                                                                  rect,
         ::mce::MaterialPtr const* optionalMat
     );
 
@@ -121,20 +112,7 @@ public:
     );
 
     MCAPI void
-    drawRect(::ScreenContext& screenContext, int x0, int y0, int x1, int y1, ::mce::Color const& color, int thickness);
-
-    MCAPI void
     fill(::ScreenContext& screenContext, float x0, float y0, float x1, float y1, ::mce::Color const& color) const;
-
-    MCAPI void fill(::ScreenContext& screenContext, int x0, int y0, int x1, int y1, ::mce::Color const& color) const;
-
-    MCAPI void fillGradient(
-        ::ScreenContext&    screenContext,
-        ::glm::vec2 const&  pos,
-        ::glm::vec2 const&  size,
-        ::mce::Color const& color1,
-        ::mce::Color const& color2
-    );
 
     MCAPI void fillGradient(
         ::ScreenContext&    screenContext,
@@ -142,14 +120,6 @@ public:
         float               y0,
         float               x1,
         float               y1,
-        ::mce::Color const& color1,
-        ::mce::Color const& color2
-    );
-
-    MCAPI void fillHorizontalGradient(
-        ::ScreenContext&    screenContext,
-        ::glm::vec2 const&  pos,
-        ::glm::vec2 const&  size,
         ::mce::Color const& color1,
         ::mce::Color const& color2
     );
@@ -166,8 +136,6 @@ public:
 
     MCAPI void fillStencil(::ScreenContext& screenContext, float x0, float y0, float x1, float y1) const;
 
-    MCAPI ::mce::MaterialPtr const& getMaterial(::ScreenRenderer::ScreenMaterial mat) const;
-
     MCAPI bool tessellateQuadBuffer(
         ::ScreenRenderer::QuadBuffer const& quadBuffer,
         float                               quadW,
@@ -180,10 +148,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void destroyInstance();
-
-    MCAPI static bool hasMaterial(::ScreenRenderer::ScreenMaterial mat);
-
     MCAPI static void loadMaterials();
 
     MCAPI static ::ScreenRenderer& singleton();
@@ -195,11 +159,5 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<::mce::MaterialPtr[]> mScreenMaterials();
 
     MCAPI static ::std::unique_ptr<::ScreenRenderer>& singletonPtr();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 };

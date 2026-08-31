@@ -26,16 +26,5 @@ public:
     // prevent constructor by default
     CrashDump_AllData& operator=(CrashDump_AllData const&);
     CrashDump_AllData(CrashDump_AllData const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI CrashDump_AllData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
+    CrashDump_AllData();
 };

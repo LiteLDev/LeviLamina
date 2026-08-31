@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -77,7 +77,7 @@ public:
 
     MCAPI int $getValue() const;
 
-    MCFOLD void $setValue(int value);
+    MCAPI void $setValue(int value);
 
     MCFOLD ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&

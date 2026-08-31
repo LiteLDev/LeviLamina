@@ -19,7 +19,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NoLicenseScreenController() /*override*/ = default;
+    virtual ~NoLicenseScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -30,14 +30,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit NoLicenseScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -28,21 +28,17 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CactusBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB getCollisionShape(
-        ::Block const& pos,
+        ::Block const&,
         ::IConstBlockSource const&,
-        ::BlockPos const&,
+        ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const
+    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
@@ -56,39 +52,29 @@ public:
 
     virtual bool isValidAuxValue(int value) const /*override*/;
 
-    virtual bool dealsContactDamage(::Actor const&, ::Block const&, bool) const /*override*/;
+    virtual bool dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CactusBlock(::std::string const& nameId, int id, bool growCactusFlowers);
-
-    MCAPI bool _neighborsDestroy(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool growCactusFlowers);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::AABB $getCollisionShape(
-        ::Block const& pos,
+        ::Block const&,
         ::IConstBlockSource const&,
-        ::BlockPos const&,
+        ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCFOLD ::AABB const&
-    $getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const;
+    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
     MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
@@ -100,7 +86,7 @@ public:
 
     MCFOLD bool $isValidAuxValue(int value) const;
 
-    MCFOLD bool $dealsContactDamage(::Actor const&, ::Block const&, bool) const;
+    MCFOLD bool $dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const;
 
 
     // NOLINTEND

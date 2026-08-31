@@ -58,8 +58,6 @@ public:
 
     MCNAPI bool removeDisplayActorEntity(::WeakEntityRef weakEntityRef);
 
-    MCNAPI void shutdown();
-
     MCNAPI ~DisplayActorManager();
 #endif
     // NOLINTEND

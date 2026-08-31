@@ -57,34 +57,12 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        PackManagerContentQueriesImpl();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         virtual ::ContentTierInfo getContentTierInfo() const /*override*/;
 
         virtual ::std::string const*
         getStoreCatalogItemAvailableDateByPackIdentityAndType(::mce::UUID const& uuid) const /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI PackManagerContentQueriesImpl(
-            ::Bedrock::NonOwnerPointer<::StoreCatalogRepository>       storeCatalog,
-            ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> contentTierManager
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::Bedrock::NonOwnerPointer<::StoreCatalogRepository>       storeCatalog,
-            ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> contentTierManager
-        );
         // NOLINTEND
 
     public:
@@ -95,12 +73,6 @@ public:
         MCAPI ::std::string const*
         $getStoreCatalogItemAvailableDateByPackIdentityAndType(::mce::UUID const& uuid) const;
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
 public:
@@ -108,10 +80,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 184, ::ContentManagerFactoryArgs> mArgs;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContentManagerFactoryImpl();
 
 public:
     // virtual functions
@@ -186,19 +154,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ContentManagerFactoryImpl(::ContentManagerFactoryArgs const& args);
-
     MCAPI ::PackManagerContentSourceArgs createPackManagerArgs(
         ::ContentType                                   type,
         ::ContentFlags                                  flags,
         ::std::vector<::PackManagerContentSourceData>&& data
     ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContentManagerFactoryArgs const& args);
     // NOLINTEND
 
 public:
@@ -269,11 +229,5 @@ public:
     MCAPI bool $allowsResourcePackDevelopment() const;
 
     MCAPI ::Bedrock::NonOwnerPointer<::AppPlatform> $getPlatform() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

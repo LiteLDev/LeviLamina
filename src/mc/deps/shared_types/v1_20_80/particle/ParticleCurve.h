@@ -8,11 +8,6 @@
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleCurveCatmullRom.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleCurveLinear.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_20_80 {
 
 struct ParticleCurve {
@@ -27,32 +22,31 @@ public:
 
 public:
     // prevent constructor by default
+    ParticleCurve& operator=(ParticleCurve const&);
     ParticleCurve();
 
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ParticleCurve(::SharedTypes::v1_20_80::ParticleCurve&&);
+#endif
 
     MCAPI ParticleCurve(::SharedTypes::v1_20_80::ParticleCurve const&);
 
-    MCAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve&&);
+    MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleCurve const&) const;
 
-    MCAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve const&);
-
+#ifdef LL_PLAT_C
     MCAPI ~ParticleCurve();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurve&&);
+#endif
 
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurve const&);
     // NOLINTEND
@@ -60,7 +54,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

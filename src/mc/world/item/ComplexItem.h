@@ -15,35 +15,13 @@ class Packet;
 
 class ComplexItem : public ::Item {
 public:
-    // prevent constructor by default
-    ComplexItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ComplexItem() /*override*/;
+    virtual ~ComplexItem() /*override*/ = default;
 
     virtual bool isComplex() const /*override*/;
 
     virtual ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const& item, ::Level& level, ::Actor& player) const;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ComplexItem(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -54,11 +32,5 @@ public:
     MCFOLD ::std::unique_ptr<::Packet> $getUpdatePacket(::ItemStack const& item, ::Level& level, ::Actor& player) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -7,7 +7,6 @@
 class BlockPos;
 class ITickingArea;
 class LevelStorage;
-class Random;
 class Vec3;
 struct ActorUniqueID;
 struct TickingAreaDescription;
@@ -39,30 +38,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _shouldRemoveArea(uint idx, ::std::vector<::Vec3> const& playerPositions) const;
-
-    MCAPI uint countEntityTickingAreas() const;
-
-    MCAPI void destroyAreas();
-
     MCAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasContaining(::BlockPos const& position);
 
     MCAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasNamed(::std::string const& name) const;
 
     MCAPI ::std::shared_ptr<::ITickingArea> getAreaFor(::ActorUniqueID const& entityId) const;
 
-    MCFOLD ::std::vector<::std::shared_ptr<::ITickingArea>> const& getAreas() const;
-
     MCAPI ::std::vector<::TickingAreaDescription> getStandaloneTickingAreaDescriptions() const;
-
-    MCAPI void processRemoves();
 
     MCAPI ::std::vector<::TickingAreaDescription> removeAllStandaloneAreas(::LevelStorage& levelStorage);
 
     MCAPI ::std::vector<::TickingAreaDescription>
     removeAreas(::std::vector<::std::shared_ptr<::ITickingArea>> const& areasToRemove, ::LevelStorage& levelStorage);
-
-    MCAPI void tickSeasons(::Random& random);
     // NOLINTEND
 
 public:

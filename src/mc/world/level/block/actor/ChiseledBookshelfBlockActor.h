@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/Container.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,7 +19,7 @@ class ItemStack;
 class SaveContext;
 // clang-format on
 
-class ChiseledBookshelfBlockActor : public ::BlockActor, public ::Container {
+class ChiseledBookshelfBlockActor : public ::VanillaBlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
@@ -60,7 +60,7 @@ public:
 
     virtual bool isEmpty() const /*override*/;
 
-    virtual bool canPushInItem(int slot, int item, ::ItemStack const&) const /*override*/;
+    virtual bool canPushInItem(int slot, int, ::ItemStack const& item) const /*override*/;
 
     virtual bool canPullOutItem(int slot, int, ::ItemStack const&) const /*override*/;
 
@@ -68,7 +68,7 @@ public:
 
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper&) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
@@ -82,21 +82,13 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ChiseledBookshelfBlockActor(::BlockPos const& pos);
 
-    MCAPI void _loadItems(::CompoundTag const& base, ::ILevel& level);
-
     MCAPI void _setItemInternal(int slot, ::ItemStack const& item, bool isLoading);
-
-    MCFOLD uint getLastInteractedSlot() const;
-
-    MCAPI ::ItemStack retrieveBook(int slot);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool allowedItem(::ItemStack const& item);
-
-    MCAPI static ::ChiseledBookshelfBlockActor* tryGet(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -134,7 +126,7 @@ public:
 
     MCAPI bool $isEmpty() const;
 
-    MCAPI bool $canPushInItem(int slot, int item, ::ItemStack const&) const;
+    MCAPI bool $canPushInItem(int slot, int, ::ItemStack const& item) const;
 
     MCAPI bool $canPullOutItem(int slot, int, ::ItemStack const&) const;
 
@@ -142,7 +134,7 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
@@ -151,13 +143,5 @@ public:
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftableForContainer();
-
-    MCAPI static void** $vftableForBlockActor();
     // NOLINTEND
 };

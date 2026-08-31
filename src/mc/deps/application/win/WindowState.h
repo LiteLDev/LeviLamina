@@ -36,13 +36,7 @@ public:
 
     MCNAPI bool _fitToScreen();
 
-    MCNAPI ::tagRECT const& getRect() const;
-
-    MCNAPI int getShowCommand() const;
-
     MCNAPI bool readFromWindow(::HWND__* window);
-
-    MCNAPI ~WindowState();
 #endif
     // NOLINTEND
 
@@ -55,14 +49,6 @@ public:
         ::std::unique_ptr<::WindowStateStorage>  storage,
         ::std::unique_ptr<::WindowStatePlatform> platform
     );
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

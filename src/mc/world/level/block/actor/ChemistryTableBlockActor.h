@@ -6,7 +6,7 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/world/Container.h"
 #include "mc/world/item/ItemStack.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,12 +20,11 @@ class ILevel;
 class LabTablePacket;
 class LabTableReaction;
 class Player;
-class Random;
 class SaveContext;
 struct ActorUniqueID;
 // clang-format on
 
-class ChemistryTableBlockActor : public ::BlockActor, public ::Container {
+class ChemistryTableBlockActor : public ::VanillaBlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
@@ -45,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChemistryTableBlockActor() /*override*/;
+    virtual ~ChemistryTableBlockActor() /*override*/ = default;
 
     virtual ::Container* getContainer() /*override*/;
 
@@ -65,9 +64,9 @@ public:
 
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper&) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const&) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
@@ -83,18 +82,17 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ChemistryTableBlockActor(::BlockPos const& pos);
 
-    MCAPI ::std::unique_ptr<::LabTableReaction>
-    _createReaction(::Random& random, ::std::vector<::ItemStack> const& consumedInput);
-
+#ifdef LL_PLAT_C
     MCAPI ::HashedString const& _getType(::BlockSource& region);
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI ::HashedString const& _getType(::BlockSource& region);
+#endif
 
 #ifdef LL_PLAT_C
     MCAPI void clientLabTablePacket(::LabTablePacket const& packet, ::BlockSource& region);
-
-    MCAPI bool isReactionInProgress();
 #endif
-
-    MCAPI bool isSameType(::HashedString const& type) const;
 
     MCAPI void playerOpenLabTable(::Player& player);
 
@@ -109,12 +107,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -138,9 +130,9 @@ public:
 
     MCAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const&) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCAPI void $tick(::BlockSource& region);
 
@@ -151,13 +143,5 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftableForContainer();
-
-    MCAPI static void** $vftableForBlockActor();
     // NOLINTEND
 };

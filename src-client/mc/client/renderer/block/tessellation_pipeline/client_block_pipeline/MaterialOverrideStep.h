@@ -9,14 +9,11 @@
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 namespace ClientBlockPipeline { class Inputs; }
 namespace ClientBlockPipeline { class Material; }
 namespace ClientBlockPipeline { class StepResult; }
-namespace ClientBlockPipeline { class UvTransform; }
 namespace ClientBlockPipeline { struct FaceNormalAttributes; }
 namespace ClientBlockPipeline { struct ImageUvFaceAttributes; }
-namespace ClientBlockPipeline { struct MaterialFaceAttributes; }
 namespace ClientBlockPipeline { struct PositionVertexAttributes; }
 namespace ClientBlockPipeline { struct QuadIndicesFaceAttributes; }
 // clang-format on
@@ -44,17 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _projectUvsFromBasis(
-        ::std::array<::Vec3, 4> const&      positions,
-        ::Vec3 const&                       faceNormal,
-        ::ClientBlockPipeline::UvTransform& generatedUvs
-    ) const;
-
-    MCAPI void _runMaterialOverride(
-        ::ClientBlockPipeline::MaterialFaceAttributes const& faceMaterials,
-        ::ClientBlockPipeline::MaterialFaceAttributes&       overridenFaceMaterials
-    ) const;
-
     MCAPI void _runUvGeneration(
         ::ClientBlockPipeline::QuadIndicesFaceAttributes const& faceIndices,
         ::ClientBlockPipeline::PositionVertexAttributes const&  vertexPositions,
@@ -67,12 +53,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ClientBlockPipeline::StepResult $run(::ClientBlockPipeline::Inputs const& inputs) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

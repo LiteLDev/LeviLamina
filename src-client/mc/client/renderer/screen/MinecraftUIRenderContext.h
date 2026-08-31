@@ -6,13 +6,10 @@
 #include "mc/client/gui/FontHandle.h"
 #include "mc/client/gui/TextAlignment.h"
 #include "mc/client/gui/controls/UIRenderContext.h"
-#include "mc/client/gui/screens/BatchKey.h"
 #include "mc/client/renderer/screen/MinecraftUIMeasureStrategy.h"
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/RectangleArea.h"
-#include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
-#include "mc/deps/minecraft_renderer/renderer/Mesh.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,7 +25,9 @@ class UIMeasureStrategy;
 class UIScene;
 class UITextureInfoPtr;
 struct CaretMeasureData;
+struct MinecraftUIPersistentMeshItem;
 struct NinesliceInfo;
+struct OffscreenCaptureDescription;
 struct TextMeasureData;
 namespace Core { class Path; }
 namespace mce { class TextureGroup; }
@@ -42,7 +41,6 @@ public:
     // clang-format off
     struct TextItem;
     struct ImageItem;
-    struct PersistentMeshItem;
     // clang-format on
 
     // MinecraftUIRenderContext inner types define
@@ -88,68 +86,22 @@ public:
         ImageItem();
     };
 
-    struct PersistentMeshItem {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 176, ::BatchKey>                      mFromBatchKey;
-        ::ll::TypedStorage<8, 24, ::std::vector<::mce::TexturePtr>> mTextures;
-        ::ll::TypedStorage<4, 4, uint>                              mNumInstances;
-        ::ll::TypedStorage<4, 4, int>                               mKeepAlive;
-        ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>               mMaterial;
-        ::ll::TypedStorage<8, 552, ::mce::Mesh>                     mMesh;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PersistentMeshItem();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI PersistentMeshItem(
-            ::BatchKey const&                batchKey,
-            ::std::vector<::mce::TexturePtr> textures,
-            ::HashedString const&            materialNameHash,
-            uint                             numInstances
-        );
-
-        MCAPI ~PersistentMeshItem();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::BatchKey const&                batchKey,
-            ::std::vector<::mce::TexturePtr> textures,
-            ::HashedString const&            materialNameHash,
-            uint                             numInstances
-        );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-    };
+    using PersistentMeshItem = ::MinecraftUIPersistentMeshItem;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::IClientInstance&>                                    mClient;
-    ::ll::TypedStorage<8, 8, ::ScreenContext&>                                      mScreenContext;
-    ::ll::TypedStorage<8, 32, ::MinecraftUIMeasureStrategy>                         mMeasureStrategy;
-    ::ll::TypedStorage<4, 4, float>                                                 mTextAlpha;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IUIRepository>>       mUIRepository;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::TextureGroup>>               mTextureGroup;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::mce::TextureGroup>>   mStoreCacheTextures;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MinecraftUIRenderContext::TextItem>>  mTextToDraw;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MinecraftUIRenderContext::ImageItem>> mImagesToDraw;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::MinecraftUIRenderContext::PersistentMeshItem>>>
-                                                            mPersistentMeshes;
-    ::ll::TypedStorage<1, 1, uchar>                         mStencilRef;
+    ::ll::TypedStorage<8, 8, ::IClientInstance&>                                                 mClient;
+    ::ll::TypedStorage<8, 8, ::ScreenContext&>                                                   mScreenContext;
+    ::ll::TypedStorage<8, 32, ::MinecraftUIMeasureStrategy>                                      mMeasureStrategy;
+    ::ll::TypedStorage<4, 4, float>                                                              mTextAlpha;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IUIRepository>>                    mUIRepository;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::TextureGroup>>                            mTextureGroup;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::mce::TextureGroup>>                mStoreCacheTextures;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MinecraftUIRenderContext::TextItem>>               mTextToDraw;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MinecraftUIRenderContext::ImageItem>>              mImagesToDraw;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::MinecraftUIPersistentMeshItem>>> mPersistentMeshes;
+    ::ll::TypedStorage<1, 1, uchar>                                                              mStencilRef;
     ::ll::TypedStorage<4, 4, int>                           mCurrentPersistentMeshItemIdx;
     ::ll::TypedStorage<8, 80, ::FontHandle>                 mDebugTextFontHandle;
     ::ll::TypedStorage<8, 8, ::UIScene const&>              mCurrentScene;
@@ -284,18 +236,20 @@ public:
     // NOLINTBEGIN
     MCAPI
     MinecraftUIRenderContext(::IClientInstance& client, ::ScreenContext& screenContext, ::UIScene const& currentScene);
+    // NOLINTEND
 
-    MCAPI float _getTextAlignmentOffset(::MinecraftUIRenderContext::TextItem const& textItem, float lineLength) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::MinecraftUIPersistentMeshItem>
+    _createPersistentMesh(::ComponentRenderBatch const& renderBatch, ::mce::TextureGroup& textureGroup);
 
-    MCAPI float _getTextAlignmentPosition(::MinecraftUIRenderContext::TextItem const& textItem) const;
-
-    MCAPI void
-    _renderTextAligned(::MinecraftUIRenderContext::TextItem const& textItem, float tx, float ty, bool forceUseCache);
-
-    MCAPI void
-    _splitTextItemText(::MinecraftUIRenderContext::TextItem const& textItem, ::std::vector<::std::string>& lines) const;
-
-    MCFOLD ::ScreenContext& getScreenContext();
+    MCAPI static bool _endSharedMeshBatch(
+        ::ComponentRenderBatch&              renderBatch,
+        ::MinecraftUIPersistentMeshItem&     persistentMeshItem,
+        ::ScreenContext&                     screenContext,
+        ::OffscreenCaptureDescription const& capture
+    );
     // NOLINTEND
 
 public:
@@ -317,7 +271,7 @@ public:
 
     MCFOLD float $getTextAlpha() const;
 
-    MCFOLD void $setTextAlpha(float alpha);
+    MCAPI void $setTextAlpha(float alpha);
 
     MCAPI void $drawDebugText(
         ::RectangleArea const&    rect,
@@ -418,11 +372,5 @@ public:
     MCAPI bool $updateCustom(::gsl::not_null<::CustomRenderComponent*> customRenderer);
 
     MCAPI void $renderCustom(::gsl::not_null<::CustomRenderComponent*> customRenderer, int pass);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

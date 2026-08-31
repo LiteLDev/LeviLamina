@@ -100,7 +100,12 @@ public:
 
     virtual void OnClipboardTextGet(::cohtml::IViewListener::IClipboardData* setDataObject);
 
-    virtual ::cohtml::IClientSideSocket* OnCreateWebSocket(::cohtml::ISocketListener*, char const*, char const**, uint);
+    virtual ::cohtml::IClientSideSocket* OnCreateWebSocket(
+        ::cohtml::ISocketListener* listener,
+        char const*                url,
+        char const**               protocols,
+        uint                       protocolsCount
+    );
     // NOLINTEND
 
 public:

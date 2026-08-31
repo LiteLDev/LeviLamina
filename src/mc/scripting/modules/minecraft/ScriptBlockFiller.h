@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptBlockFilter.h"
 
 // auto generated forward declare list
@@ -16,7 +16,6 @@ namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
 namespace ScriptModuleMinecraft { class ScriptListBlockVolume; }
-namespace ScriptModuleMinecraft { struct ScriptBlockFillOptions; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -32,18 +31,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptBlockFiller();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockFiller(
-        ::ScriptModuleMinecraft::ScriptBlockFillOptions const& options,
-        ::gsl::not_null<::Dimension*>                          dimension,
-        ::Scripting::WeakLifetimeScope                         scope
-    );
-
     MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>>
     fillBlocks(
@@ -54,16 +43,6 @@ public:
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ScriptModuleMinecraft::ScriptBlockFillOptions const& options,
-        ::gsl::not_null<::Dimension*>                          dimension,
-        ::Scripting::WeakLifetimeScope                         scope
     );
     // NOLINTEND
 };

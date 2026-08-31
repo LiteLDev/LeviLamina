@@ -37,8 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDocument(::SharedTypes::Legacy::ActorDocument&&);
-
     MCAPI ActorDocument(::SharedTypes::Legacy::ActorDocument const&);
 
     MCAPI ::SharedTypes::Legacy::ActorDocument& operator=(::SharedTypes::Legacy::ActorDocument const&);
@@ -61,8 +59,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::ActorDocument&&);
-
     MCAPI void* $ctor(::SharedTypes::Legacy::ActorDocument const&);
     // NOLINTEND
 

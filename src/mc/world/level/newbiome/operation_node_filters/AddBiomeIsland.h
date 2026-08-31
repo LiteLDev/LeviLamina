@@ -22,25 +22,32 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::Biome const*>> mShallowOceanBiomes;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     AddBiomeIsland();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI AddBiomeIsland(
         ::BiomeRegistry const& biomeRegistry,
         ::Biome const&         defaultIslandBiome,
         ::Biome const&         specialIslandBiome
     );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void*
     $ctor(::BiomeRegistry const& biomeRegistry, ::Biome const& defaultIslandBiome, ::Biome const& specialIslandBiome);
+#endif
     // NOLINTEND
 };
 

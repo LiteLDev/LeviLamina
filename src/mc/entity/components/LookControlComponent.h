@@ -30,40 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool getHasWantedPosition() const;
-
-    MCFOLD bool getHasWantedRotation() const;
-
-    MCFOLD ::Vec3 getWantedPosition() const;
-
-    MCFOLD ::Vec3 getWantedRotation() const;
-
-    MCFOLD float getXMax() const;
-
-    MCFOLD float getYMax() const;
-
-    MCAPI void initialize(::Mob& owner);
-
-    MCAPI void lockLookAtPosition(::Vec3 const& position, float yMax, float xMax, uint ticks);
-
-    MCAPI void resetWantedPosition();
-
-    MCFOLD void setHasWantedPosition(bool hasWantedPosition);
-
-    MCFOLD void setHasWantedRotation(bool hasWantedRotation);
-
-    MCFOLD void setInternalType(::std::unique_ptr<::LookControl> type);
-
-    MCAPI void setLookAtPosition(::Vec3 const& position, float yMax, float xMax);
-
     MCAPI void setLookAtPosition(::Actor const* target, float yMax, float xMax);
-
-    MCAPI void setLookAtRotation(::Vec3 const& rotation, float yMax, float xMax);
-
-    MCAPI void setYMax(float yMax);
-
-    MCAPI void updateLookAtPositionLock();
-
-    MCAPI void updateLookControl(::Mob& owner);
     // NOLINTEND
 };

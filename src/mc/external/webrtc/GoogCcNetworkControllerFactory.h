@@ -8,8 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class NetworkControllerInterface; }
-namespace webrtc { class NetworkStatePredictorFactoryInterface; }
 namespace webrtc { class TimeDelta; }
+namespace webrtc { struct GoogCcFactoryConfig; }
 namespace webrtc { struct NetworkControllerConfig; }
 // clang-format on
 
@@ -19,8 +19,7 @@ class GoogCcNetworkControllerFactory : public ::webrtc::NetworkControllerFactory
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk647ace;
-    ::ll::UntypedStorage<8, 24> mUnk8703af;
+    ::ll::UntypedStorage<8, 16> mUnk8703af;
     // NOLINTEND
 
 public:
@@ -43,15 +42,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit GoogCcNetworkControllerFactory(
-        ::webrtc::NetworkStatePredictorFactoryInterface* network_state_predictor_factory
-    );
+    MCNAPI explicit GoogCcNetworkControllerFactory(::webrtc::GoogCcFactoryConfig config);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::NetworkStatePredictorFactoryInterface* network_state_predictor_factory);
+    MCNAPI void* $ctor(::webrtc::GoogCcFactoryConfig config);
     // NOLINTEND
 
 public:

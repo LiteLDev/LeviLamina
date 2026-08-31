@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Editor::Cursor { struct CursorState; }
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class CursorServiceCreateCursorPayload
@@ -30,25 +24,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CursorServiceCreateCursorPayload() /*override*/ = default;
+    virtual ~CursorServiceCreateCursorPayload() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI explicit CursorServiceCreateCursorPayload(::Editor::Cursor::CursorState const& state);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Cursor::CursorState const& state);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -22,24 +22,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ServerWaypointGroup>> mWaypointGroup;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCFOLD ::ServerWaypointGroup* get() const;
-
-        MCFOLD explicit operator bool() const;
-
-        MCFOLD ::ServerWaypointGroup* operator->() const;
-
-        MCAPI ~GroupStrongHandle();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -54,13 +36,5 @@ public:
     MCAPI ::ServerLocatorBar::GroupStrongHandle createGroupHandle();
 
     MCAPI void update(::Player& player);
-
-    MCAPI ~ServerLocatorBar();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

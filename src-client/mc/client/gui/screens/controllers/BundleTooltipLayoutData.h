@@ -17,18 +17,4 @@ public:
     ::ll::TypedStorage<8, 48, ::brstd::flat_map<int, int, ::std::less<int>, ::std::vector<int>, ::std::vector<int>>>
         itemOrderToContainerIndexMap;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::pair<int, int> getFirstAndLastIndex() const;
-
-    MCAPI ~BundleTooltipLayoutData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

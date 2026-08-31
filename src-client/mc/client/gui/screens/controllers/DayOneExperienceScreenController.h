@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DayOneExperienceScreenController() /*override*/ = default;
+    virtual ~DayOneExperienceScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -44,17 +44,19 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DayOneExperienceScreenController(::std::shared_ptr<::DayOneExperienceModel> model);
 
-    MCAPI void _createSkipModal();
-
     MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::DayOneExperienceModel> model);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

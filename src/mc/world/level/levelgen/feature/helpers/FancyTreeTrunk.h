@@ -50,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FancyTreeTrunk() /*override*/ = default;
+    virtual ~FancyTreeTrunk() /*override*/;
 
     virtual int getTreeHeight(::Random& random) const /*override*/;
 
@@ -66,18 +66,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI int _checkLine(
-        ::IBlockWorldGenAPI&            target,
-        ::BlockPos const&               startPos,
-        ::BlockPos const&               endPos,
-        ::TreeHelper::TreeParams const& treeParams
-    ) const;
-
-    MCAPI void _placeLimb(::IBlockWorldGenAPI& target, ::BlockPos const& startPos, ::BlockPos const& endPos) const;
-
-    MCAPI void _placeTrunk(::IBlockWorldGenAPI& target, ::BlockPos const& pos, int trunkHeight) const;
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -96,11 +87,5 @@ public:
     ) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

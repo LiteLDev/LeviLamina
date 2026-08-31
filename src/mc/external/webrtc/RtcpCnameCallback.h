@@ -12,12 +12,6 @@ public:
 
     virtual void OnCname(uint, ::std::string_view) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

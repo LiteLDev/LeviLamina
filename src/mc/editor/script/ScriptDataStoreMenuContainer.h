@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,17 +30,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void> createItem(::std::string id, ::std::string const& payload);
-
-    MCNAPI ::Scripting::Result_deprecated<void> destroyItem(::std::string id);
-
-    MCNAPI ::std::string getPayload(::std::string id) const;
-
-    MCNAPI ::std::optional<::std::variant<float, bool, ::std::string>>
-    getProperty(::std::string id, ::std::string property) const;
-
-    MCNAPI bool hasPayload(::std::string id) const;
-
-    MCNAPI bool hasProperty(::std::string id, ::std::string property) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> updateItem(::std::string id, ::std::string const& payload);
     // NOLINTEND

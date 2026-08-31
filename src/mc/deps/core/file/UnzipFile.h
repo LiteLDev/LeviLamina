@@ -53,12 +53,6 @@ public:
         ::Core::UnzipFileLibrary                     library
     );
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Core

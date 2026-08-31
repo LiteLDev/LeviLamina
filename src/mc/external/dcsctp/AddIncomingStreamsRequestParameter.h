@@ -38,12 +38,6 @@ public:
 
     virtual ~AddIncomingStreamsRequestParameter() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace dcsctp

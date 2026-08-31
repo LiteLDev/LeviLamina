@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/gametest/BaseGameTestFunction.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-struct DimensionType;
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { class IGameTestFunctionContext; }
 // clang-format on
@@ -30,7 +28,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~BaseScriptGameTestFunction() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~BaseScriptGameTestFunction() /*override*/;
+#endif
 
     virtual ::std::unique_ptr<::gametest::IGameTestFunctionContext>
     createContext(::gametest::BaseGameTestHelper& helper) const /*override*/;
@@ -40,30 +42,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BaseScriptGameTestFunction(::Scripting::WeakLifetimeScope scope, ::std::string const& testName);
-
-    MCAPI void addTag(::std::string tag);
-
-    MCFOLD void setBatch(::std::string batchName);
-
-    MCFOLD void setMaxAttempts(int maxAttempts);
-
-    MCAPI void setMaxTicks(int maxTicks);
-
-    MCAPI void setPadding(int blockPadding);
-
-    MCFOLD void setRequired(bool required);
-
-    MCFOLD void setRequiredSuccesses(int requiredSuccesses);
-
-    MCFOLD void setRotate(bool rotate);
-
-    MCFOLD void setSetupTicks(int setupTicks);
-
-    MCAPI void setStructureDimension(::DimensionType structureDimension);
-
-    MCAPI void setStructureLocation(::BlockPos structureLocation);
-
-    MCAPI void setStructureName(::std::string structureName);
     // NOLINTEND
 
 public:
@@ -75,7 +53,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
@@ -85,12 +65,6 @@ public:
     $createContext(::gametest::BaseGameTestHelper& helper) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

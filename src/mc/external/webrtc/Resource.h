@@ -22,12 +22,6 @@ public:
 
     virtual void SetResourceListener(::webrtc::ResourceListener*) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

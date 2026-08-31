@@ -17,16 +17,4 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mSpawnedItemActor;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerDropItemEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

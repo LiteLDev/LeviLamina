@@ -29,22 +29,10 @@ public:
     TargetNearbyDefinition();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~TargetNearbyDefinition();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TargetNearbyDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

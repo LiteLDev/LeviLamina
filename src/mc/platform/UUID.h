@@ -36,16 +36,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string asString() const;
-
-    MCAPI bool isEmpty() const;
+    MCFOLD ::std::string asString() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool canParse(::std::string_view in);
-
     MCAPI static ::mce::UUID fromString(::std::string_view in);
     // NOLINTEND
 

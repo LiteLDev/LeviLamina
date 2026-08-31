@@ -52,31 +52,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RegisteredResourceHandler(
-        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&              rawFileAccess,
-        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&              appPackageFileAccess,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::ResourceAllowList> const& resourceAllowList,
-        ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&              rawFileAccess,
-        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&              appPackageFileAccess,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::ResourceAllowList> const& resourceAllowList,
-        ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

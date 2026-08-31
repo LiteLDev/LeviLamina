@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,25 +14,9 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptPrimitiveShapeError : public ::Scripting::BaseError {
 public:
-    // prevent constructor by default
-    ScriptPrimitiveShapeError();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptPrimitiveShapeError(::std::string const& message);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& message);
     // NOLINTEND
 };
 

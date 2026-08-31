@@ -3,15 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/scripting/modules/minecraft/events/metadata/ScriptAfterEventMetadata.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
-class ScriptDeferredFlushTracker;
-namespace ScriptModuleMinecraftNet { class ScriptWebSocketClientCloseEvent; }
-namespace ScriptModuleMinecraftNet { class ScriptWebSocketClientReceiveEvent; }
+namespace ScriptModuleMinecraft { struct ScriptAfterEventMetadata; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
@@ -36,20 +32,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ScriptWebSocketClientEvents(::Scripting::WeakLifetimeScope& scope);
-
-    MCNAPI void flushDeferredEvents(::ScriptDeferredFlushTracker& tracker);
-
-    MCNAPI void onClose(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptWebSocketClientCloseEvent> eventData
-    );
-
-    MCNAPI void onMessageReceive(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptWebSocketClientReceiveEvent> eventData
-    );
-
-    MCNAPI void postFlush();
-
-    MCNAPI void preFlush();
     // NOLINTEND
 
 public:
@@ -57,9 +39,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
-        ::ScriptModuleMinecraftNet::ScriptWebSocketClientEvents> const&
-    getMetadata();
+    MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata const& getMetadata();
     // NOLINTEND
 
 public:

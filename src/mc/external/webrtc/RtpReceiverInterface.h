@@ -3,7 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cricket/MediaType.h"
+#include "mc/external/webrtc/FrameTransformerHost.h"
+#include "mc/external/webrtc/MediaType.h"
 #include "mc/external/webrtc/RefCountInterface.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
@@ -21,7 +22,7 @@ namespace webrtc { struct RtpParameters; }
 
 namespace webrtc {
 
-class RtpReceiverInterface : public ::webrtc::RefCountInterface {
+class RtpReceiverInterface : public ::webrtc::RefCountInterface, public ::webrtc::FrameTransformerHost {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -33,13 +34,13 @@ public:
 
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> streams() const;
 
-    virtual ::cricket::MediaType media_type() const = 0;
+    virtual ::webrtc::MediaType media_type() const = 0;
 
     virtual ::std::string id() const = 0;
 
     virtual ::webrtc::RtpParameters GetParameters() const = 0;
 
-    virtual bool SetParameters(::webrtc::RtpParameters const& parameters);
+    virtual bool SetParameters(::webrtc::RtpParameters const&);
 
     virtual void SetObserver(::webrtc::RtpReceiverObserverInterface* a1) = 0;
 
@@ -51,8 +52,11 @@ public:
 
     virtual ::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface> GetFrameDecryptor() const;
 
-    virtual void
-    SetDepacketizerToDecoderFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> a1);
+    virtual void SetDepacketizerToDecoderFrameTransformer(
+        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
+    );
+
+    virtual void SetFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> a1) /*override*/;
 
     virtual ~RtpReceiverInterface() /*override*/ = default;
     // NOLINTEND
@@ -60,7 +64,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $SetParameters(::webrtc::RtpParameters const& parameters);
+    MCNAPI bool $SetParameters(::webrtc::RtpParameters const&);
+
+    MCNAPI void $SetDepacketizerToDecoderFrameTransformer(
+        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
+    );
 
 
     // NOLINTEND

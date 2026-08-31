@@ -18,18 +18,13 @@ class CreativeGroupInfo : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SharedTypes::CreativeItemCategory> mCategory;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::CreativeItemCategory> mCategory;
     ::ll::TypedStorage<8, 8, ::CreativeItemRegistry*>             mRegistry;
     ::ll::TypedStorage<8, 48, ::HashedString>                     mName;
     ::ll::TypedStorage<8, 128, ::ItemInstance>                    mIcon;
     ::ll::TypedStorage<4, 4, uint>                                mIndex;
     ::ll::TypedStorage<8, 24, ::std::vector<uint>>                mItemIndexes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CreativeGroupInfo& operator=(CreativeGroupInfo const&);
-    CreativeGroupInfo();
 
 public:
     // virtual functions
@@ -40,31 +35,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CreativeGroupInfo(::CreativeGroupInfo const&);
-
     MCAPI void _addCreativeItemEntry(::CreativeItemEntry* itemEntry);
-
-    MCAPI void addCreativeItem(::CreativeItemEntry* itemEntry);
-
-    MCFOLD ::SharedTypes::CreativeItemCategory getCreativeCategory() const;
-
-    MCFOLD ::ItemInstance const& getIcon() const;
-
-    MCFOLD ::std::vector<uint> const& getItems() const;
-
-    MCAPI ::std::string const& getName() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::CreativeGroupInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

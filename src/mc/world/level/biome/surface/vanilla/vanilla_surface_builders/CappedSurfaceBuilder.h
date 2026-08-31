@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class LevelSeed64;
 class PerlinNoise;
 class SurfaceBuilderData;
 // clang-format on
@@ -26,7 +27,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~MaterialHelper() = default;
+        virtual ~MaterialHelper();
 
         virtual bool isFoundationBlock(::Block const& block) const;
 
@@ -35,6 +36,12 @@ public:
         virtual bool isLavaBlock(::Block const& block) const;
 
         virtual bool isSolidBlock(::Block const& block) const;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -70,7 +77,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initBuilder(uint levelSeed) /*override*/;
+    virtual void initBuilder(::LevelSeed64 levelSeed) /*override*/;
 
     virtual void initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const /*override*/;
 
@@ -80,21 +87,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CappedSurfaceBuilder();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initBuilder(uint levelSeed);
+    MCAPI void $initBuilder(::LevelSeed64 levelSeed);
 
     MCAPI void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
 

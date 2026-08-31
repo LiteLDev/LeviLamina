@@ -65,16 +65,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PlayerSkinPacket();
-
-    MCAPI explicit PlayerSkinPacket(::PlayerSkinPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::PlayerSkinPacketPayload payload);
     // NOLINTEND
 
 public:

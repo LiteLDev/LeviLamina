@@ -19,13 +19,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MinecraftGameShimComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftGameShimComponent() = default;
+    virtual ~MinecraftGameShimComponent();
 
     virtual bool isInGame() const;
 
@@ -37,15 +33,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI explicit MinecraftGameShimComponent(::gsl::not_null<::IMinecraftGame*> game);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::gsl::not_null<::IMinecraftGame*> game);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

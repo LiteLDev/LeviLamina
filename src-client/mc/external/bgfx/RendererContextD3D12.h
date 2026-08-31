@@ -8,7 +8,6 @@
 #include "mc/external/bgfx/BufferD3D12.h"
 #include "mc/external/bgfx/CommandQueueD3D12.h"
 #include "mc/external/bgfx/Dxgi.h"
-#include "mc/external/bgfx/Enum.h"
 #include "mc/external/bgfx/FatalError.h"
 #include "mc/external/bgfx/FenceSyncContext.h"
 #include "mc/external/bgfx/FrameBufferD3D12.h"
@@ -34,6 +33,7 @@
 #include "mc/external/bgfx/VertexDeclHandle.h"
 #include "mc/external/bgfx/ViewProfilerManager.h"
 #include "mc/external/bgfx/acceleration_structure_build_flags/Enum.h"
+#include "mc/external/bgfx/d3d12/heap_property/Enum.h"
 #include "mc/external/bgfx/renderer_type/Enum.h"
 #include "mc/external/bgfx/texture_format/Enum.h"
 #include "mc/external/bgfx/uniform_type/Enum.h"
@@ -41,7 +41,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace bgfx { struct Attachment; }
-namespace bgfx { struct BlitState; }
 namespace bgfx { struct ClearQuad; }
 namespace bgfx { struct Frame; }
 namespace bgfx { struct Handle; }
@@ -83,29 +82,12 @@ public:
     // clang-format on
 
     // RendererContextD3D12 inner types define
-    enum class BufferHeapUpdateMode : int {
-        Flip            = 0,
-        AfterWaitForGPU = 1,
-    };
-
     struct TlasBuildRequest {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<2, 2, ::bgfx::AccelerationStructureHandle>          m_asHandle;
         ::ll::TypedStorage<8, 24, ::std::vector<::bgfx::TopLevelInstanceDesc>> m_tlasInstanceDescs;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~TlasBuildRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -378,10 +360,10 @@ public:
         ::bgfx::TextureHandle      _handle,
         ::bgfx::RendererType::Enum _type,
         void*                      _texturePtr,
-        void*                      ref
+        void*                      _deferredRef
     ) /*override*/;
 
-    virtual void overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint) /*override*/;
+    virtual void overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint _flags) /*override*/;
 
     virtual uint64 getInternal(::bgfx::TextureHandle _handle) /*override*/;
 
@@ -441,17 +423,17 @@ public:
 
     virtual void destroyUniform(::bgfx::UniformHandle _handle) /*override*/;
 
-    virtual void requestScreenShot(::bgfx::FrameBufferHandle _filePath, char const*) /*override*/;
+    virtual void requestScreenShot(::bgfx::FrameBufferHandle _handle, char const* _filePath) /*override*/;
 
     virtual void updateViewName(ushort _id, char const* _name) /*override*/;
 
     virtual void updateUniform(void* _uniformsTarget, ushort _loc, void const* _data, uint _size) /*override*/;
 
-    virtual void setMarker(void*, char const*, uint) /*override*/;
+    virtual void setMarker(void*, char const* _marker, uint) /*override*/;
 
     virtual void invalidateOcclusionQuery(::bgfx::OcclusionQueryHandle _handle) /*override*/;
 
-    virtual void setName(::bgfx::Handle _handle, char const*) /*override*/;
+    virtual void setName(::bgfx::Handle _handle, char const* _name) /*override*/;
 
     virtual void submit(
         ::bgfx::Frame*               _render,
@@ -465,7 +447,7 @@ public:
 
     virtual bool updateResolution(::bgfx::Resolution const& _resolution);
 
-    virtual void updateFlipRate(::bgfx::Resolution const&);
+    virtual void updateFlipRate(::bgfx::Resolution const& _resolution);
 
     virtual void kick(bool _alloc);
 
@@ -501,12 +483,6 @@ public:
     MCAPI void postReset(bool _swapChainReset);
 
     MCAPI void preReset(bool _swapChainReset);
-
-    MCAPI void saveDREDInfo();
-
-    MCAPI void submitBlit(::bgfx::d3d12::CommandListD3D12& _commandList, ::bgfx::BlitState& _bs, ushort _view);
-
-    MCAPI void updateBufferHeapFences(::bgfx::d3d12::RendererContextD3D12::BufferHeapUpdateMode bufferHeapUpdateMode);
 
     MCAPI void updateMsaa(::DXGI_FORMAT _format);
     // NOLINTEND
@@ -621,10 +597,14 @@ public:
     MCAPI void
     $resizeTexture(::bgfx::TextureHandle _handle, ushort _width, ushort _height, uchar _numMips, ushort _numLayers);
 
-    MCAPI void
-    $wrapExternalTexture(::bgfx::TextureHandle _handle, ::bgfx::RendererType::Enum _type, void* _texturePtr, void* ref);
+    MCAPI void $wrapExternalTexture(
+        ::bgfx::TextureHandle      _handle,
+        ::bgfx::RendererType::Enum _type,
+        void*                      _texturePtr,
+        void*                      _deferredRef
+    );
 
-    MCAPI void $overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint);
+    MCAPI void $overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint _flags);
 
     MCAPI uint64 $getInternal(::bgfx::TextureHandle _handle);
 
@@ -674,17 +654,17 @@ public:
 
     MCAPI void $destroyUniform(::bgfx::UniformHandle _handle);
 
-    MCAPI void $requestScreenShot(::bgfx::FrameBufferHandle _filePath, char const*);
+    MCAPI void $requestScreenShot(::bgfx::FrameBufferHandle _handle, char const* _filePath);
 
     MCAPI void $updateViewName(ushort _id, char const* _name);
 
     MCAPI void $updateUniform(void* _uniformsTarget, ushort _loc, void const* _data, uint _size);
 
-    MCFOLD void $setMarker(void*, char const*, uint);
+    MCFOLD void $setMarker(void*, char const* _marker, uint);
 
     MCAPI void $invalidateOcclusionQuery(::bgfx::OcclusionQueryHandle _handle);
 
-    MCAPI void $setName(::bgfx::Handle _handle, char const*);
+    MCAPI void $setName(::bgfx::Handle _handle, char const* _name);
 
     MCAPI void
     $submit(::bgfx::Frame* _render, ::bgfx::ClearQuad& _clearQuad, ::bgfx::TextVideoMemBlitter& _textVideoMemBlitter);
@@ -695,7 +675,7 @@ public:
 
     MCAPI bool $updateResolution(::bgfx::Resolution const& _resolution);
 
-    MCFOLD void $updateFlipRate(::bgfx::Resolution const&);
+    MCFOLD void $updateFlipRate(::bgfx::Resolution const& _resolution);
 
     MCAPI void $kick(bool _alloc);
 
@@ -711,12 +691,6 @@ public:
         ::bgfx::Matrix4 const&                 viewMat,
         ::bgfx::Matrix4 const&                 projMat
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

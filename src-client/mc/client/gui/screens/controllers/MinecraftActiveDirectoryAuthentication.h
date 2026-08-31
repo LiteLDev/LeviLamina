@@ -24,13 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MinecraftActiveDirectoryAuthentication();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftActiveDirectoryAuthentication() /*override*/ = default;
+    virtual ~MinecraftActiveDirectoryAuthentication() /*override*/;
 
     virtual ::ActiveDirectoryAuthenticationState getAuthenticationState() const /*override*/;
 
@@ -65,15 +61,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MinecraftActiveDirectoryAuthentication(::std::shared_ptr<::MinecraftScreenModel> model);
-
     MCAPI bool _isIOS() const;
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

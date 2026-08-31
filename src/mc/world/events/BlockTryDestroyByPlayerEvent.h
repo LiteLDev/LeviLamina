@@ -28,16 +28,4 @@ public:
     BlockTryDestroyByPlayerEvent& operator=(BlockTryDestroyByPlayerEvent const&);
     BlockTryDestroyByPlayerEvent(BlockTryDestroyByPlayerEvent const&);
     BlockTryDestroyByPlayerEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~BlockTryDestroyByPlayerEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

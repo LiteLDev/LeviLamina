@@ -4,10 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 namespace Editor::Structures::PUVLoader::CurrentVersion { struct FileDataContainer; }
 namespace cereal { struct ReflectionCtx; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor {
@@ -51,17 +49,6 @@ public:
 
     MCNAPI EditorStructureDBMetadata(::Editor::EditorStructureDBMetadata const&);
 
-    MCNAPI explicit EditorStructureDBMetadata(
-        ::Editor::Structures::PUVLoader::CurrentVersion::FileDataContainer&& loadedData
-    );
-
-    MCNAPI EditorStructureDBMetadata(
-        ::mce::UUID const& guid,
-        ::std::string      structureNamespace,
-        ::std::string      structureName,
-        ::std::string      displayName
-    );
-
     MCNAPI void fromFileDataContainer(::Editor::Structures::PUVLoader::CurrentVersion::FileDataContainer&& loadedData);
 
     MCNAPI ::Editor::EditorStructureDBMetadata& operator=(::Editor::EditorStructureDBMetadata&&);
@@ -77,12 +64,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
-
-#ifdef LL_PLAT_C
-    MCNAPI static ::Vec3 convertToAbsoluteFromNormalized(::Vec3 const& normalizedOrigin, ::Vec3 const& structureSize);
-#endif
-
-    MCNAPI static ::Vec3 convertToNormalizedVecFromAbs(::Vec3 const& absoluteOrigin, ::Vec3 const& structureSize);
     // NOLINTEND
 
 public:
@@ -91,15 +72,6 @@ public:
     MCNAPI void* $ctor(::Editor::EditorStructureDBMetadata&&);
 
     MCNAPI void* $ctor(::Editor::EditorStructureDBMetadata const&);
-
-    MCNAPI void* $ctor(::Editor::Structures::PUVLoader::CurrentVersion::FileDataContainer&& loadedData);
-
-    MCNAPI void* $ctor(
-        ::mce::UUID const& guid,
-        ::std::string      structureNamespace,
-        ::std::string      structureName,
-        ::std::string      displayName
-    );
     // NOLINTEND
 
 public:

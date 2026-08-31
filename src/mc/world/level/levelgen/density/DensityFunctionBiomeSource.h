@@ -86,10 +86,4 @@ public:
 
     virtual ::Biome const* _getBiome(::GetBiomeOptions const&) const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

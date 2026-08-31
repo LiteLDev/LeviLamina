@@ -137,12 +137,6 @@ public:
 
     virtual void OnRakPeerShutdown() /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace RakNet

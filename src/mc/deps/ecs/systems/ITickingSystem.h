@@ -16,13 +16,25 @@ class ITickingSystem : public ::ISystem {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~ITickingSystem() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ITickingSystem() /*override*/;
+#endif
 
     virtual void tick(::EntityRegistry& registry) = 0;
 
     virtual void singleTick(::EntityRegistry& registry, ::EntityContext& entity);
 
     virtual void singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
@@ -33,11 +45,5 @@ public:
     MCFOLD void $singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

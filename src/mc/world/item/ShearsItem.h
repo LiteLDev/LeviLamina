@@ -63,7 +63,7 @@ public:
 
     MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
-    MCFOLD int $getEnchantSlot() const;
+    MCAPI int $getEnchantSlot() const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 

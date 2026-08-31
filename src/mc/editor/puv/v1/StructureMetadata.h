@@ -40,21 +40,13 @@ public:
 
 public:
     // prevent constructor by default
+    StructureMetadata& operator=(StructureMetadata const&);
+    StructureMetadata(StructureMetadata const&);
     StructureMetadata();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructureMetadata(::Editor::Structures::PUVLoader::v1::StructureMetadata&&);
-
-    MCNAPI StructureMetadata(::Editor::Structures::PUVLoader::v1::StructureMetadata const&);
-
-    MCNAPI ::Editor::Structures::PUVLoader::v1::StructureMetadata&
-    operator=(::Editor::Structures::PUVLoader::v1::StructureMetadata&&);
-
-    MCNAPI ::Editor::Structures::PUVLoader::v1::StructureMetadata&
-    operator=(::Editor::Structures::PUVLoader::v1::StructureMetadata const&);
-
     MCNAPI ~StructureMetadata();
     // NOLINTEND
 
@@ -71,14 +63,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Structures::PUVLoader::v1::StructureMetadata&&);
-
-    MCNAPI void* $ctor(::Editor::Structures::PUVLoader::v1::StructureMetadata const&);
     // NOLINTEND
 
 public:

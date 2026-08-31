@@ -17,10 +17,4 @@ public:
     LocalLightConfigSessionStorage& operator=(LocalLightConfigSessionStorage const&);
     LocalLightConfigSessionStorage(LocalLightConfigSessionStorage const&);
     LocalLightConfigSessionStorage();
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

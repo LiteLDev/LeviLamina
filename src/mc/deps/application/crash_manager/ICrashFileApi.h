@@ -19,12 +19,6 @@ public:
 
     virtual ::Bedrock::Result<void> writeFile(char const* path, char const* buffer, uint64 bufferSize) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock

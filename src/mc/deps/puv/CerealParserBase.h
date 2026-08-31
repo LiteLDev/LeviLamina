@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/ResultCode.h"
 #include "mc/deps/puv/ParserBase.h"
 
 // auto generated forward declare list
@@ -29,6 +28,12 @@ public:
     CerealParserBase();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~CerealParserBase() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
@@ -43,14 +48,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::cereal::ResultCode const& StrictErrorCodes();
-
-    MCNAPI static ::cereal::ResultCode const& UnstrictErrorCodes();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
@@ -59,6 +56,12 @@ public:
 
     MCNAPI void*
     $ctor(::cereal::ReflectionCtx const& ctx, ::SemVersion parserVersion, ::Puv::VersionRange supportedRange);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

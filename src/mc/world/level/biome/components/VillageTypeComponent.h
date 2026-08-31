@@ -12,10 +12,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::SharedTypes::VillageType> mVillageType;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

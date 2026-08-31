@@ -51,15 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WitherTargetHighestDamage(::WitherBoss& witherBoss, ::std::vector<::MobDescriptor> const& targetTypes);
-
     MCAPI ::Player* getHighestDamageTarget();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::WitherBoss& witherBoss, ::std::vector<::MobDescriptor> const& targetTypes);
     // NOLINTEND
 
 public:

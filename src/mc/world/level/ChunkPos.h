@@ -2,7 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
 // clang-format off
 class BlockPos;
 class Vec3;
@@ -40,13 +39,5 @@ public:
     MCAPI static ::ChunkPos const& MIN();
 
     MCAPI static ::ChunkPos const& ONE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
-
-    MCAPI void* $ctor(::Vec3 const& pos);
     // NOLINTEND
 };

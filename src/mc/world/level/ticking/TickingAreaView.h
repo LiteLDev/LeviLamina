@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class ChunkBuildOrderPolicyBase;
 class ChunkPos;
 class ChunkSource;
 class ChunkViewSource;
@@ -38,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TickingAreaView() /*override*/;
+    virtual ~TickingAreaView() /*override*/ = default;
 
     virtual void init(::Bounds const& bounds, bool isCircle) /*override*/;
 
@@ -77,20 +76,12 @@ public:
         ::ChunkPos const&              cp,
         ::LevelChunkTicking::Registry* registry
     );
-
-    MCAPI void unregisterChunkBuildOrderPolicy(::ChunkBuildOrderPolicyBase& chunkBuildOrderPolicy);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ChunkSource& parent);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -108,7 +99,7 @@ public:
 
     MCAPI bool $isCircle() const;
 
-    MCFOLD bool $isDoneLoading() const;
+    MCAPI bool $isDoneLoading() const;
 
     MCAPI bool $checkInitialLoadDone(::Tick currentLevelTick);
 

@@ -51,12 +51,6 @@ public:
 
         virtual ::std::optional<::webrtc::SdpVideoFormat> OnEncoderBroken() = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:
@@ -70,19 +64,11 @@ public:
     QueryCodecSupport(::webrtc::SdpVideoFormat const&, ::std::optional<::std::string>) const;
 
     virtual ::std::unique_ptr<::webrtc::VideoEncoder>
-    Create(::webrtc::Environment const&, ::webrtc::SdpVideoFormat const&);
-
-    virtual ::std::unique_ptr<::webrtc::VideoEncoder> CreateVideoEncoder(::webrtc::SdpVideoFormat const&);
+    Create(::webrtc::Environment const&, ::webrtc::SdpVideoFormat const&) = 0;
 
     virtual ::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface> GetEncoderSelector() const;
 
     virtual ~VideoEncoderFactory() = default;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

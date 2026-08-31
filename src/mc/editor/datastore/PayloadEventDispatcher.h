@@ -2,16 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/editor/datastore/EventType.h"
-
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-namespace Editor::DataStore { struct PayloadDescription; }
-namespace Json { class Value; }
-// clang-format on
-
 namespace Editor::DataStore {
 
 class PayloadEventDispatcher {
@@ -31,22 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void publishEvent(
-        ::HashedString const&                          dataTag,
-        ::Editor::DataStore::EventType                 eventType,
-        ::Json::Value const&                           payload,
-        ::Editor::DataStore::PayloadDescription const& desc
-    );
-
-    MCNAPI void syncNetworkEvent(
-        ::HashedString const&                          dataTag,
-        ::Editor::DataStore::EventType                 eventType,
-        ::Json::Value const&                           payload,
-        ::Editor::DataStore::PayloadDescription const& desc
-    );
-#endif
-
     MCNAPI ~PayloadEventDispatcher();
     // NOLINTEND
 

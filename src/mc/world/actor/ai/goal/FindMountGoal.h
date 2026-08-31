@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FindMountGoal() /*override*/ = default;
+    virtual ~FindMountGoal() /*override*/;
 
     virtual bool canUse() /*override*/;
 
@@ -58,15 +58,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FindMountGoal(::Mob& mob);
-
     MCAPI bool isInMountRange();
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

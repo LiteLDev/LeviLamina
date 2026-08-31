@@ -24,21 +24,9 @@ public:
     ScriptModalFormDataDropdownOptions();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ScriptModalFormDataDropdownOptions();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -31,15 +31,9 @@ public:
         // NOLINTEND
 
     public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+        MCAPI static ::std::add_lvalue_reference_t<char const[18]> SCHEMA_NAME();
         // NOLINTEND
     };
 
@@ -70,7 +64,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI static ::std::add_lvalue_reference_t<char const[29]> SCHEMA_NAME();
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+#endif
     // NOLINTEND
 
 public:
@@ -79,12 +79,6 @@ public:
     MCFOLD ::ClientBiomeComponentVersion $getType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

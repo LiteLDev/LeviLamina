@@ -29,12 +29,8 @@ public:
     // NOLINTBEGIN
     virtual ~BlockEventListener() = default;
 
-#ifdef LL_PLAT_S
-    virtual ::EventResult onBlockPlacedByPlayer(::Player&, ::Block const&, ::BlockPos const&, bool);
-#else // LL_PLAT_C
     virtual ::EventResult
     onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
-#endif
 
     virtual ::EventResult onBlockDestroyedByPlayer(
         ::Player&              player,
@@ -51,8 +47,21 @@ public:
 
     virtual ::EventResult onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress);
 
-    virtual ::EventResult
-    onBlockDestructionStarted(::Player& player, ::BlockPos const& pos, ::Block const& hitBlock, uchar const face);
+    virtual ::EventResult onBlockDestructionStarted(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    hitBlock,
+        uchar const       face,
+        int const         previousProgress
+    );
+
+    virtual ::EventResult onBlockDestructionContinued(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        uchar const       face,
+        int const         previousProgress
+    );
 
     virtual ::EventResult onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 
@@ -84,8 +93,21 @@ public:
 
     MCFOLD ::EventResult $onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress);
 
-    MCFOLD ::EventResult
-    $onBlockDestructionStarted(::Player& player, ::BlockPos const& pos, ::Block const& hitBlock, uchar const face);
+    MCFOLD ::EventResult $onBlockDestructionStarted(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    hitBlock,
+        uchar const       face,
+        int const         previousProgress
+    );
+
+    MCFOLD ::EventResult $onBlockDestructionContinued(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        uchar const       face,
+        int const         previousProgress
+    );
 
     MCFOLD ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 

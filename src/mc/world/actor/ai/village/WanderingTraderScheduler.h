@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class BlockPos;
 class BlockSource;
 class Level;
@@ -33,20 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canSpawnAtPosition(::BlockPos const& pos, ::BlockSource& region) const;
-
-    MCAPI bool _canWanderingTraderBeMoved() const;
-
     MCAPI ::std::optional<::BlockPos> _findValidSpawnPosUnder(::BlockPos const& pos, ::BlockSource& region) const;
-
-    MCAPI ::Actor* _getRandomPlayerInOverworld() const;
-
-    MCAPI ::std::optional<::BlockPos>
-    _getSpawnPosFromNearestVillageToPlayerPos(::BlockPos const& playerPos, ::BlockSource& region);
-
-    MCAPI void _spawnWanderingTraderAtPos(::BlockPos const& pos, ::BlockSource& region);
-
-    MCAPI void readSaveData();
 
     MCAPI void tick();
 

@@ -9,13 +9,11 @@
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
 #include "mc/client/gui/screens/models/ContentType.h"
 #include "mc/client/gui/screens/models/PackListType.h"
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/resources/InvalidPacksFilterGroup.h"
 #include "mc/resources/PackScope.h"
 
 // auto generated forward declare list
 // clang-format off
-class ContentTierIncompatibleReason;
 class ContentView;
 class DlcChecker;
 class DlcUIWrapper;
@@ -29,7 +27,6 @@ struct ContentItem;
 struct MoveResourcePackResult;
 struct PackContentItem;
 struct PackIdVersion;
-struct PackMoveResult;
 // clang-format on
 
 class ResourcePacksScreenController : public ::SettingsScreenControllerBase {
@@ -95,7 +92,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourcePacksScreenController() /*override*/;
+    virtual ~ResourcePacksScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -127,59 +124,15 @@ public:
         ::ResourcePacksScreenController::PackRestriction restriction
     );
 
-    MCAPI void _displayAddonStackingWarningModal(::std::function<void(bool)> moveCallback);
-
-    MCAPI void _displayAddonStackingWarningModalFromLink();
-
-    MCAPI ::std::string _getAvailableSize(int slot);
-
     MCAPI ::ContentView* _getContentView(::UIPropertyBag* bag) const;
-
-    MCAPI ::std::string _getCyclingIconFileSystem();
-
-    MCAPI ::Core::PathBuffer<::std::string> _getCyclingIconPath();
-
-    MCAPI ::Core::PathBuffer<::std::string> _getCyclingIconZip();
 
     MCAPI ::ResourceLocation _getInvalidResource(int slot) const;
 
-    MCAPI ::PackListType _getPackListType(::UIPropertyBag* bag) const;
-
-    MCFOLD ::ui::ViewRequest _handleAvailablePackClicked(::UIPropertyBag* bag);
-
-    MCAPI void _handleCycleIcon();
-
-    MCAPI ::ui::ViewRequest _handleInvalidPackClicked(::UIPropertyBag* bag);
-
-    MCAPI void _handlePackSelectResult(
-        ::PackMoveResult const& result,
-        ::ContentView*          contentView,
-        int                     collectionIndex,
-        ::PackListType          packListType
-    );
-
-    MCAPI ::ui::ViewRequest _handleReadToggleClicked(::UIPropertyBag* bag);
-
-    MCFOLD ::ui::ViewRequest _handleRealmsPackClicked(::UIPropertyBag* bag);
-
-    MCAPI ::ui::ViewRequest _handleReportErrorsClicked(::UIPropertyBag* bag);
-
-    MCAPI ::ui::ViewRequest _handleSelectedPackClicked(::UIPropertyBag* bag);
-
-    MCAPI ::ui::ViewRequest _handleSelectedPackMoveClicked(::UIPropertyBag* bag);
+    MCAPI ::ui::ViewRequest _handleAvailablePackClicked(::UIPropertyBag* bag);
 
     MCAPI ::ui::ViewRequest _handleSortPackClicked(::UIPropertyBag* bag, int dir);
 
-    MCAPI ::ui::ViewRequest _handleStoreClicked(::UIPropertyBag* bag);
-
     MCAPI bool _hasRestrictedContent(::ContentView& view) const;
-
-    MCAPI bool _launchAddonStackingWarningDialogIfNeeded(
-        ::ContentView* contentView,
-        int            collectionIndex,
-        ::PackListType fromPackList,
-        bool           forceMove
-    );
 
     MCAPI bool _launchPlatformLockedDialogIfNeeded(
         ::PackContentItem&      packItem,
@@ -198,23 +151,15 @@ public:
         ::ContentView*                              contentView,
         int                                         collectionIndex,
         ::PackListType                              fromPackList,
-        bool                                        forceMove,
-        bool
+        bool,
+        bool forceMove
     );
 
     MCAPI void _registerBindings();
 
-    MCAPI void _registerEventHandlers();
-
     MCAPI void _removeSelectedPacks(int beginAtIndex);
 
-    MCAPI void _showDataPackWarningMessage(::MoveResourcePackResult& result);
-
-    MCAPI void _showIncompatibleMessage(::ContentTierIncompatibleReason const& reason);
-
     MCAPI void _showMissingDependencyMessage(::ContentView* contentView, int index, ::PackListType fromPacks);
-
-    MCAPI void _showStoreConnectFailedMessage();
 
     MCAPI void _tryMoveResource(
         ::std::shared_ptr<::PackContentItem> const& packItem,
@@ -224,9 +169,7 @@ public:
         bool                                        forceMove
     );
 
-    MCAPI void activatePack(::std::string packId);
-
-    MCAPI void setOtherPacksTabController(::ResourcePacksScreenController* otherPacksTab);
+    MCAPI void activatePack(::std::string const packId);
     // NOLINTEND
 
 public:
@@ -248,24 +191,10 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ui::DirtyFlag $tick();
 
     MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

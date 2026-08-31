@@ -13,20 +13,12 @@ public:
     operator int() const { return mValue; }
     DimensionType(int const value) : mValue(value) {}
     DimensionType() { mValue = 0; }
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool isCustom() const;
-
-    MCFOLD int value() const;
-    // NOLINTEND
 };
 
 template <>
 struct std::hash<DimensionType> {
     size_t operator()(DimensionType const& dimensionType) const noexcept {
-        return std::hash<int>()(dimensionType.value());
+        return std::hash<int>()(dimensionType.mValue);
     }
 };
 

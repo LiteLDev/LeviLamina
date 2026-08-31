@@ -17,14 +17,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isItemAllowedInSlot(
-        ::ContainerScreenContext const& slot,
-        int const                       item,
-        ::ItemStackBase const&          amount,
-        int const,
+        ::ContainerScreenContext const&,
+        int const              slot,
+        ::ItemStackBase const& item,
+        int const              amount,
         bool
     ) const /*override*/;
 
-    virtual int getAvailableSetCount(int const, ::ItemStackBase const&) const /*override*/;
+    virtual int getAvailableSetCount(int const slot, ::ItemStackBase const& item) const /*override*/;
 
     virtual bool isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const
         /*override*/;
@@ -33,21 +33,22 @@ public:
 
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
 
-    virtual int getContainerSize(::ContainerScreenContext const& container, ::Container const&) const /*override*/;
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
+        /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $isItemAllowedInSlot(
-        ::ContainerScreenContext const& slot,
-        int const                       item,
-        ::ItemStackBase const&          amount,
-        int const,
+        ::ContainerScreenContext const&,
+        int const              slot,
+        ::ItemStackBase const& item,
+        int const              amount,
         bool
     ) const;
 
-    MCFOLD int $getAvailableSetCount(int const, ::ItemStackBase const&) const;
+    MCFOLD int $getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
 
     MCAPI bool $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
 
@@ -55,7 +56,7 @@ public:
 
     MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
-    MCFOLD int $getContainerSize(::ContainerScreenContext const& container, ::Container const&) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
 
     // NOLINTEND

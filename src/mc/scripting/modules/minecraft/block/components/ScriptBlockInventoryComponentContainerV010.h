@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptContainer.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -13,7 +13,6 @@ class BlockActor;
 class BlockSource;
 class Container;
 class ItemContext;
-namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -36,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptBlockInventoryComponentContainerV010() /*override*/ = default;
+    virtual ~ScriptBlockInventoryComponentContainerV010() /*override*/;
 
     virtual ::Scripting::Result_deprecated<int> getEmptySlotsCount() const /*override*/;
 
@@ -46,9 +45,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -61,12 +60,6 @@ public:
     MCAPI ::ItemContext $_getItemContext(int slot) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -25,16 +25,9 @@ LL_TYPE_INSTANCE_HOOK(
     return res;
 }
 
-LL_TYPE_INSTANCE_HOOK(DBStorageDtorHook, HookPriority::High, DBStorage, &DBStorage::$dtor, void) {
-    dbStorage = nullptr;
-    origin();
-}
-
 optional_ref<DBStorage> getDBStorage() { return dbStorage.load(); }
 
-using HookReg = memory::HookRegistrar<
-    DBStorageHook,
-    DBStorageDtorHook>;
+using HookReg = memory::HookRegistrar<DBStorageHook>;
 
 static HookReg hookRegister;
 

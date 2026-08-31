@@ -55,7 +55,7 @@ public:
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const
+    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
     virtual void addAABBs(
@@ -93,7 +93,7 @@ public:
 
     virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
 
-    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar) const /*override*/;
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -115,9 +115,9 @@ public:
         ::BlockPos const&                                         pos
     ) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
     // NOLINTEND
 
 public:
@@ -137,7 +137,9 @@ public:
         int                                                       directionToCheck
     ) const;
 
+#ifdef LL_PLAT_C
     MCAPI void setBaseShape(::Block const& block, ::AABB& shape, bool shrink) const;
+#endif
 
     MCAPI bool setInnerPieceShape(
         ::Block const&             block,
@@ -157,15 +159,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static uchar stairDirectionToFacing(int stairDirection);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<int[][2]> DEAD_SPACES();
+    MCAPI static ::std::add_lvalue_reference_t<int const[8][2]> DEAD_SPACES();
     // NOLINTEND
 
 public:
@@ -194,7 +190,7 @@ public:
     ) const;
 
     MCFOLD ::AABB const&
-    $getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const;
+    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
     MCAPI void $addAABBs(
         ::Block const&             block,
@@ -229,7 +225,7 @@ public:
 
     MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -255,9 +251,9 @@ public:
         ::BlockPos const&                                         pos
     ) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

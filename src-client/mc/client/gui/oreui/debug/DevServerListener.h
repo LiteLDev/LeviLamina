@@ -7,10 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace OreUI { struct DevServer; }
+namespace OreUI::Debug { struct DevServer; }
 // clang-format on
 
-namespace OreUI {
+namespace OreUI::Debug {
 
 class DevServerListener {
 public:
@@ -33,7 +33,7 @@ public:
     class BroadcastListener {
     public:
         // BroadcastListener inner types define
-        using OnNewMessageCallback = ::std::function<void(::OreUI::DevServerListener::Message)>;
+        using OnNewMessageCallback = ::std::function<void(::OreUI::Debug::DevServerListener::Message)>;
 
     public:
         // member variables
@@ -46,20 +46,18 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::function<void(::std::vector<::OreUI::DevServer> const&)>> mOnDevServersChanged;
-    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::DevServer>>                               mDevServers;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                     mMessageQueueMutex;
-    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::DevServerListener::Message>>              mMessageQueue;
-    ::ll::TypedStorage<8, 16, ::std::thread>                                                   mListeningThread;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::DevServerListener::BroadcastListener>> mListener;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::gsl::span<::OreUI::Debug::DevServer const>)>> mOnDevServersChanged;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::Debug::DevServer>>                            mDevServers;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                         mMessageQueueMutex;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::Debug::DevServerListener::Message>>           mMessageQueue;
+    ::ll::TypedStorage<8, 16, ::std::thread>                                                       mListeningThread;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::Debug::DevServerListener::BroadcastListener>> mListener;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _handleNewMessages();
-
-    MCAPI ::std::optional<::OreUI::DevServer> _parseMessage(::OreUI::DevServerListener::Message const& message);
 
     MCAPI void _removeOldDevServers();
 
@@ -75,4 +73,4 @@ public:
     // NOLINTEND
 };
 
-} // namespace OreUI
+} // namespace OreUI::Debug

@@ -15,34 +15,34 @@ class BrewingStandFuelContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrewingStandFuelContainerValidation() /*override*/ = default;
+    virtual ~BrewingStandFuelContainerValidation() /*override*/;
 
     virtual bool
-    isItemAllowedInSlot(::ContainerScreenContext const& item, int const, ::ItemStackBase const&, int const, bool) const
+    isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool) const
         /*override*/;
 
-    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
+    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $isItemAllowedInSlot(
-        ::ContainerScreenContext const& item,
+        ::ContainerScreenContext const&,
         int const,
-        ::ItemStackBase const&,
+        ::ItemStackBase const& item,
         int const,
         bool
     ) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const&) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

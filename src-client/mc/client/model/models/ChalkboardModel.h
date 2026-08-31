@@ -39,8 +39,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ChalkboardModel(::GeometryPtr source);
-
-    MCAPI void showLegs(bool show);
     // NOLINTEND
 
 public:

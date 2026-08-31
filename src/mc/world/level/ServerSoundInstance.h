@@ -6,7 +6,10 @@ class ServerSoundInstance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9cc9d1;
+    ::ll::UntypedStorage<8, 8>   mUnk9cc9d1;
+    ::ll::UntypedStorage<8, 192> mUnk596b51;
+    ::ll::UntypedStorage<8, 24>  mUnk337e6c;
+    ::ll::UntypedStorage<1, 1>   mUnk2dc8a9;
     // NOLINTEND
 
 public:

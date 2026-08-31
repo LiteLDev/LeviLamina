@@ -92,24 +92,18 @@ public:
     MCNAPI void Detect(double trend, double ts_delta, int64 now_ms);
 
     MCNAPI TrendlineEstimator(
-        ::webrtc::FieldTrialsView const* key_value_config,
+        ::webrtc::FieldTrialsView const& key_value_config,
         ::webrtc::NetworkStatePredictor* network_state_predictor
     );
 
-    MCNAPI void UpdateTrendline(
-        double recv_delta_ms,
-        double send_delta_ms,
-        int64  send_time_ms,
-        int64  arrival_time_ms,
-        uint64 packet_size
-    );
+    MCNAPI void UpdateTrendline(double recv_delta_ms, double send_delta_ms, int64, int64 arrival_time_ms, uint64);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void*
-    $ctor(::webrtc::FieldTrialsView const* key_value_config, ::webrtc::NetworkStatePredictor* network_state_predictor);
+    $ctor(::webrtc::FieldTrialsView const& key_value_config, ::webrtc::NetworkStatePredictor* network_state_predictor);
     // NOLINTEND
 
 public:

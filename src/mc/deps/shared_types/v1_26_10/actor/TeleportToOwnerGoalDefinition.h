@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     MCAPI TeleportToOwnerGoalDefinition();
 
-    MCAPI ~TeleportToOwnerGoalDefinition();
+    MCFOLD bool operator==(::SharedTypes::v1_26_10::TeleportToOwnerGoalDefinition const&) const;
     // NOLINTEND
 
 public:
@@ -45,12 +45,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

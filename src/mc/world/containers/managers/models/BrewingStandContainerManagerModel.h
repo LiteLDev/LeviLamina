@@ -10,8 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ContainerScreenContext;
-class ItemDescriptor;
-class ItemInstance;
 class ItemStack;
 class Player;
 // clang-format on
@@ -33,11 +31,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrewingStandContainerManagerModel() /*override*/ = default;
+    virtual ~BrewingStandContainerManagerModel() /*override*/;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
+    virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
@@ -56,14 +54,6 @@ public:
     MCAPI BrewingStandContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
 #ifdef LL_PLAT_C
-    MCAPI void fireItemAcquiredEvent(::ItemInstance const& item, int count);
-
-    MCAPI void firePotionBrewedEvent(::ItemDescriptor const& item, int count);
-
-    MCAPI int getBrewProgress(int max);
-
-    MCAPI int getBubbleProgress(int);
-
     MCAPI int getFuelProgress(int max);
 
     MCAPI bool isFinished(int& outputId, int& outputAuxValue, int outputSlot);
@@ -77,11 +67,17 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 

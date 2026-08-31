@@ -20,20 +20,17 @@ public:
 
     virtual uint64 getUsableSize(void* ptr, bool alignedAllocation) = 0;
 
+#ifdef LL_PLAT_S
     virtual void* _realloc(::gsl::not_null<void*> p, uint64 newSize) = 0;
+#else // LL_PLAT_C
+    virtual void* _realloc(::gsl::not_null<void*> ptr, uint64 newSize) = 0;
+#endif
 
+#ifdef LL_PLAT_S
     virtual void* _alignedRealloc(::gsl::not_null<void*> p, uint64 newSize, uint64 alignment) = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void* realloc(void* ptr, uint64 newSize);
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
+#else // LL_PLAT_C
+    virtual void* _alignedRealloc(::gsl::not_null<void*> ptr, uint64 newSize, uint64 alignment) = 0;
+#endif
 
     // NOLINTEND
 };

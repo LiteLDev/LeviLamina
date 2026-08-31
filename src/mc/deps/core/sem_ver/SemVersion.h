@@ -28,18 +28,12 @@ public:
 
 public:
     // prevent constructor by default
-    SemVersion& operator=(SemVersion const&);
-    SemVersion(SemVersion const&);
     SemVersion();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SemVersion(::SemVersion&&);
-
     MCAPI explicit SemVersion(::SemVersionConstant const& other);
-
-    MCAPI ::SemVersion& operator=(::SemVersion&&);
     // NOLINTEND
 
 public:
@@ -55,10 +49,14 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& SemVerRegexStr();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SemVersion&&);
-
     MCAPI void* $ctor(::SemVersionConstant const& other);
     // NOLINTEND
 };

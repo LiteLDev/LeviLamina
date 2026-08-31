@@ -22,13 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MakeWriteThrottleProgressHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MakeWriteThrottleProgressHandler() /*override*/ = default;
+    virtual ~MakeWriteThrottleProgressHandler() /*override*/;
 
     virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
@@ -52,19 +48,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI MakeWriteThrottleProgressHandler(
-        ::std::chrono::duration<double, ::std::ratio<1, 1>> totalWait,
-        ::std::shared_ptr<bool>                             dialogStillAlive
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::chrono::duration<double, ::std::ratio<1, 1>> totalWait, ::std::shared_ptr<bool> dialogStillAlive);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -74,7 +60,7 @@ public:
 
     MCAPI void $tick(::MinecraftScreenModel&);
 
-    MCFOLD void $onComplete(::MinecraftScreenModel& minecraftScreenModel);
+    MCAPI void $onComplete(::MinecraftScreenModel& minecraftScreenModel);
 
     MCFOLD void $onCancel(::MinecraftScreenModel&);
 

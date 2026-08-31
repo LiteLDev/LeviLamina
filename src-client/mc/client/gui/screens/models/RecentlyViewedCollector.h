@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ContentCatalogService;
 class IEntitlementManager;
 class PersonaClient;
 class SkinPackModel;
@@ -23,13 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RecentlyViewedCollector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RecentlyViewedCollector() /*override*/ = default;
+    virtual ~RecentlyViewedCollector() /*override*/;
 
     virtual void collect(
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
@@ -40,18 +35,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI RecentlyViewedCollector(
-        ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const& catalog,
-        ::PersonaClient&                                              skinRepo
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const& catalog, ::PersonaClient& skinRepo);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -63,11 +49,5 @@ public:
         ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
         ::std::unordered_set<::mce::UUID>&                   handledPackSet
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

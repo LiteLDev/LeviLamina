@@ -11,13 +11,13 @@ class HttpInterface_windows : public ::Bedrock::Http::HttpInterfaceInternal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HttpInterface_windows() /*override*/ = default;
+    virtual ~HttpInterface_windows() /*override*/;
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

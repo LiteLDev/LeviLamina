@@ -2,12 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/Include.h"
+
 // auto generated forward declare list
 // clang-format off
-struct ActorHeadRotationComponent;
+class StrictEntityContext;
 struct ActorRotationComponent;
-struct MobBodyRotationComponent;
+struct LocalMoveVelocityComponent;
 struct MobTravelComponent;
+struct PassengerComponent;
+struct PassengerYRotLimitComponent;
 struct TickingSystemWithInfo;
 struct VehicleInputIntentComponent;
 // clang-format on
@@ -19,12 +25,17 @@ MCAPI ::TickingSystemWithInfo createPassengerSystem();
 
 MCAPI ::TickingSystemWithInfo createVehicleSystem();
 
-MCAPI void doVehicleTick(
-    ::VehicleInputIntentComponent const& vehicleInputIntentComponent,
-    ::ActorHeadRotationComponent&        actorHeadRotationComponent,
-    ::ActorRotationComponent&            actorRotationComponent,
-    ::MobBodyRotationComponent&          mobBodyRotationComponent,
-    ::MobTravelComponent&                mobTravelComponent
+MCAPI void doPassengerTick(
+    ::entt::type_list<::Include<::MobTravelComponent>>,
+    ::ActorRotationComponent const& vehicleRotation,
+    ::VehicleInputIntentComponent&  vehicleInputIntentComponent,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::PassengerComponent>,
+        ::ActorRotationComponent const,
+        ::LocalMoveVelocityComponent const> const& passengerView,
+    ::ViewT<::StrictEntityContext, ::Include<::PassengerComponent>, ::PassengerYRotLimitComponent const> const&
+        passengerRotLimitView
 );
 // NOLINTEND
 

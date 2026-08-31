@@ -55,12 +55,6 @@ public:
 
     virtual ::Molang::details::SourceTree* getSource() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Molang::details

@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersion;
+class SemVersionConstant;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -30,7 +30,11 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RaidTriggerDefinition>>& root
     );
+    // NOLINTEND
 
-    MCFOLD static ::SemVersion getStrictParsingVersion();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::SemVersionConstant const& JSONUTIL_DROP_UNRECOGNIZED_FIELDS_VERSION();
     // NOLINTEND
 };

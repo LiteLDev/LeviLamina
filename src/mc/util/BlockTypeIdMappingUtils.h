@@ -16,8 +16,6 @@ namespace BlockTypeIdMappingUtils {
 MCAPI void addBlockTypeIdMapping(::BlockType const& blockType, uint64 legacyId);
 
 MCAPI void addBlockTypeIdMappings();
-
-MCAPI void clearMappings();
 // NOLINTEND
 
 // static variables

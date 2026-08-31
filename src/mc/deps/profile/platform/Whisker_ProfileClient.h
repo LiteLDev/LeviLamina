@@ -38,28 +38,12 @@ public:
         KeepAlive& operator=(KeepAlive const&);
         KeepAlive(KeepAlive const&);
         KeepAlive();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI ~KeepAlive();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void $dtor();
-#endif
-        // NOLINTEND
     };
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Whisker_ProfileClient() /*override*/ = default;
+    virtual ~Whisker_ProfileClient() /*override*/;
 
     virtual void onFrameTransition(uchar previousFrameType) /*override*/;
 
@@ -102,10 +86,7 @@ public:
     MCNAPI ::std::shared_ptr<::Core::Profile::Whisker_ProfileClient::KeepAlive const>
     makeActive(::std::string_view consumerName);
 
-    MCNAPI void prepareForFetch(::Bedrock::Profile::Whisker::ScopeData& output, void const* key) const;
-
-    MCNAPI void
-    queryThreadIDsByType(::std::vector<::std::thread::id>& output, ::Core::Profile::ThreadFrameType threadType) const;
+    MCNAPI void purgeAllRecords();
 
     MCNAPI void resolveUniqueKeysByName(
         ::gsl::span<void const*>              output,
@@ -116,11 +97,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
+    // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static ::Core::Profile::Whisker_ProfileClient getInterface();
-#endif
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

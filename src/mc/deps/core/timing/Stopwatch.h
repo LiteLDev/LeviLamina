@@ -17,11 +17,12 @@ public:
     // prevent constructor by default
     Stopwatch& operator=(Stopwatch const&);
     Stopwatch(Stopwatch const&);
+    Stopwatch();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Stopwatch() = default;
+    virtual ~Stopwatch();
 
     virtual double stop();
 
@@ -31,29 +32,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI Stopwatch();
-
-#ifdef LL_PLAT_C
-    MCNAPI double getLast();
-
-    MCNAPI bool isReset() const;
-#endif
-
-    MCNAPI void reset();
-
-    MCNAPI void start();
-
-#ifdef LL_PLAT_C
-    MCNAPI double tick();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

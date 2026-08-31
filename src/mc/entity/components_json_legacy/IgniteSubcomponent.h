@@ -16,7 +16,7 @@ class IgniteSubcomponent : public ::OnHitSubcomponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IgniteSubcomponent() /*override*/ = default;
+    virtual ~IgniteSubcomponent() /*override*/;
 
     virtual void readfromJSON(::Json::Value&) /*override*/;
 
@@ -28,15 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI IgniteSubcomponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

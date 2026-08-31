@@ -11,18 +11,12 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
-class ActorDefinitionGroup;
 class ActorHurtResult;
 class Block;
-class EntityContext;
-struct ActorDefinitionIdentifier;
+struct HurtParameters;
 // clang-format on
 
 class MinecartTNT : public ::Minecart {
-public:
-    // prevent constructor by default
-    MinecartTNT();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -36,7 +30,8 @@ public:
 
     virtual ::Block const* getDefaultDisplayBlock() const /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual float causeFallDamageToActor(float distance, float, ::ActorDamageSource) /*override*/;
     // NOLINTEND
@@ -44,27 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MinecartTNT(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
-#ifdef LL_PLAT_C
-    MCAPI int getFuse();
-#endif
-
     MCAPI void primeFuse(::SharedTypes::Legacy::ActorDamageCause cause);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:
@@ -80,16 +55,11 @@ public:
 
     MCAPI ::Block const* $getDefaultDisplayBlock() const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
     MCAPI float $causeFallDamageToActor(float distance, float, ::ActorDamageSource);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

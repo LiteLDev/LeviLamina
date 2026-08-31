@@ -46,20 +46,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $preRender(
+    MCFOLD void $preRender(
         ::BaseActorRenderContext& renderContext,
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     );
 
-    MCNAPI void $renderEffects(
+    MCFOLD void $renderEffects(
         ::BaseActorRenderContext& renderContext,
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     );
 
-    MCNAPI ::AABB $getRenderBounds(::Actor const& entity) const;
+    MCFOLD ::AABB $getRenderBounds(::Actor const& entity) const;
 
-    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
+    MCFOLD ::V2TempComponentRequirements $getV2Requirements() const;
     // NOLINTEND
 };

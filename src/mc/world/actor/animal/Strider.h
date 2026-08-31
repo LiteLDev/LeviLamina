@@ -40,12 +40,6 @@ public:
         ::ll::TypedStorage<4, 12, ::Vec3>   mStartPosInLava;
         ::ll::TypedStorage<8, 8, ::Player*> mPlayer;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void tick(::Strider& strider);
-        // NOLINTEND
     };
 
 public:

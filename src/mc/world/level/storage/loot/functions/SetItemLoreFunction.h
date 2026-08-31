@@ -25,19 +25,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetItemLoreFunction() /*override*/ = default;
+    virtual ~SetItemLoreFunction() /*override*/;
 
     virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext&) /*override*/;
 
     virtual void apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::std::vector<::std::string> const& getLore() const;
     // NOLINTEND
 
 public:
@@ -48,20 +42,20 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
+    MCAPI void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
 
-    MCFOLD void $apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&);
+    MCAPI void $apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -68,19 +68,7 @@ public:
         ::std::function<void()>                        refreshChatCallback
     );
 
-    MCAPI void _fireEventChatSettingsUpdated() const;
-
     MCAPI void _handleFontColorChanged(int fontColorIndex, ::ChatSettingsScreenController::ColorSubsection colorType);
-
-    MCAPI void _registerButtons();
-
-    MCAPI void _registerDropdowns();
-
-    MCAPI void _registerSliders();
-
-    MCAPI void _registerToggles();
-
-    MCAPI void _resetChatSettings();
 
     MCAPI void _setInitialSettings();
     // NOLINTEND
@@ -96,13 +84,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setViewCommand(::ScreenViewCommand const& callback);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

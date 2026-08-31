@@ -4,10 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct UIActorOffscreenCaptureDescription;
-struct UIMeshOffscreenCaptureDescription;
-struct UIStructureVolumeOffscreenCaptureDescription;
-struct UIThumbnailMeshOffscreenCaptureDescription;
+struct OffscreenCaptureDescription;
 namespace dragon { struct RenderMetadata; }
 namespace mce::framebuilder { struct CustomSurfaceShaderMetadata; }
 // clang-format on
@@ -22,12 +19,7 @@ public:
         int64                                                   id,
         ::mce::framebuilder::CustomSurfaceShaderMetadata const& cssMetadata,
         bool                                                    isItem,
-        ::std::variant<
-            ::std::monostate,
-            ::UIActorOffscreenCaptureDescription,
-            ::UIThumbnailMeshOffscreenCaptureDescription,
-            ::UIMeshOffscreenCaptureDescription,
-            ::UIStructureVolumeOffscreenCaptureDescription> const& offscreenCaptureDescription
+        ::OffscreenCaptureDescription const&                    offscreenCaptureDescription
     );
     // NOLINTEND
 };

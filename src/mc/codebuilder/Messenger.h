@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Messenger() /*override*/;
+    virtual ~Messenger() /*override*/ = default;
 
     virtual void
     onAgentAction(::AgentActionType actionType, ::std::string const& requestId, ::Json::Value const& result) const
@@ -75,9 +75,9 @@ public:
     virtual void itemAcquired(
         ::Player const*         player,
         ::ItemDescriptor const& item,
-        int                     amountAcquired,
-        uint                    acquisitionMethod,
-        int
+        int,
+        uint amountAcquired,
+        int  acquisitionMethod
     ) const /*override*/;
 
     virtual void itemCrafted(
@@ -115,12 +115,12 @@ public:
     ) const /*override*/;
 
     virtual void mobKilled(
-        ::Player const*      player,
-        ::Actor*             entKiller,
-        ::Mob&               mobKilled,
-        uint                 method,
-        ::std::string const& traderTier,
-        int
+        ::Player const* player,
+        ::Actor*        entKiller,
+        ::Mob&          mobKilled,
+        uint            method,
+        ::std::string const&,
+        int traderTier
     ) const /*override*/;
 
     virtual void
@@ -181,12 +181,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void
@@ -220,9 +214,9 @@ public:
     MCNAPI void $itemAcquired(
         ::Player const*         player,
         ::ItemDescriptor const& item,
-        int                     amountAcquired,
-        uint                    acquisitionMethod,
-        int
+        int,
+        uint amountAcquired,
+        int  acquisitionMethod
     ) const;
 
     MCNAPI void $itemCrafted(
@@ -259,12 +253,12 @@ public:
     ) const;
 
     MCNAPI void $mobKilled(
-        ::Player const*      player,
-        ::Actor*             entKiller,
-        ::Mob&               mobKilled,
-        uint                 method,
-        ::std::string const& traderTier,
-        int
+        ::Player const* player,
+        ::Actor*        entKiller,
+        ::Mob&          mobKilled,
+        uint            method,
+        ::std::string const&,
+        int traderTier
     ) const;
 
     MCNAPI void
@@ -308,14 +302,6 @@ public:
     ) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForCommandOutputObserver();
     // NOLINTEND
 };
 

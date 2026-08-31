@@ -36,7 +36,11 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_S
         virtual ~IPSupportInterface() = default;
+#else // LL_PLAT_C
+        virtual ~IPSupportInterface();
+#endif
 
         virtual bool useIPv4Only() const = 0;
 
@@ -48,15 +52,11 @@ public:
         // NOLINTEND
 
     public:
-        // virtual function thunks
+        // destructor thunk
         // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
+#ifdef LL_PLAT_C
+        MCAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -78,8 +78,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void LogIPSupport(::RakPeerHelper::PeerPurpose purpose);
-
     MCAPI ::RakNet::StartupResult _startupInternal(
         ::gsl::not_null<::RakNet::RakPeerInterface*> peer,
         ::ConnectionDefinition const&                definition,

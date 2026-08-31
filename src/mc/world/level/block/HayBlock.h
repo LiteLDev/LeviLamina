@@ -15,10 +15,6 @@ namespace BlockEvents { class BlockEntityFallOnEvent; }
 
 class HayBlock : public ::RotatedPillarBlock {
 public:
-    // prevent constructor by default
-    HayBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
@@ -29,15 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HayBlock(::std::string const& nameId, int id);
-
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

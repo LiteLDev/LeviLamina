@@ -12,19 +12,7 @@ public:
     // clang-format on
 
     // ApplicationInitHandler inner types define
-    struct InstallCrashHandlerResult {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk1918e4;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        InstallCrashHandlerResult& operator=(InstallCrashHandlerResult const&);
-        InstallCrashHandlerResult(InstallCrashHandlerResult const&);
-        InstallCrashHandlerResult();
-    };
+    struct InstallCrashHandlerResult {};
 };
 
 } // namespace Bedrock

@@ -7,13 +7,9 @@
 #include "mc/world/inventory/network/SparseContainer.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
-#include "mc/world/inventory/simulation/SparseContainerBackingSetType.h"
 
 // auto generated forward declare list
 // clang-format off
-class Container;
-class IPlayerContainerSetter;
-class ISparseContainerSetListener;
 class ItemStack;
 class Player;
 struct ItemStackNetIdTag;
@@ -30,32 +26,20 @@ public:
         FailedWithError            = 2,
     };
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    SparseContainerClient();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~SparseContainerClient() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~SparseContainerClient() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI SparseContainerClient(
-        ::Container&                                     backingContainer,
-        ::SparseContainerBackingSetType                  backingSetType,
-        bool                                             isItemStackNetManagerEnabled,
-        ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
-        ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
-    );
-#endif
-
     MCNAPI void _networkUpdateItem(int slot, ::ItemStack const& newItem);
 
 #ifdef LL_PLAT_C
@@ -103,16 +87,10 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
-        ::Container&                                     backingContainer,
-        ::SparseContainerBackingSetType                  backingSetType,
-        bool                                             isItemStackNetManagerEnabled,
-        ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
-        ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
-    );
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 

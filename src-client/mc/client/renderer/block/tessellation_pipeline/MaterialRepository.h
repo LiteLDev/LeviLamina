@@ -38,8 +38,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::ClientBlockPipeline::Material>& mDefaultMaterial();
-
     MCAPI static ::std::vector<::TextureUVCoordinateSet>& mDefaultTexture();
     // NOLINTEND
 };

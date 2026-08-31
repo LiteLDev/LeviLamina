@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StackPanelComponent() /*override*/ = default;
+    virtual ~StackPanelComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -34,13 +34,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCFOLD ::ui::OrientationType getOrientation() const;
-
-    MCFOLD bool getUseChildAnchors() const;
-
-    MCFOLD bool getUsePriority() const;
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -51,11 +47,5 @@ public:
     MCFOLD void $reset();
 
     MCAPI void $onNotifyChildRemoved();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

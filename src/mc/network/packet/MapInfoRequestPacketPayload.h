@@ -25,26 +25,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MapInfoRequestPacketPayload(::ActorUniqueID mapId);
-
     MCAPI MapInfoRequestPacketPayload(::ActorUniqueID mapId, ::MapItemSavedData& map);
-
-    MCAPI bool replaceServerPixels(::MapItemSavedData& map) const;
-
-    MCAPI ~MapInfoRequestPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorUniqueID mapId);
-
     MCAPI void* $ctor(::ActorUniqueID mapId, ::MapItemSavedData& map);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

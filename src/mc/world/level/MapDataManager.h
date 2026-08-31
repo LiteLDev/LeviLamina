@@ -74,20 +74,7 @@ public:
         int                                   returnScaleLevel
     );
 
-    MCAPI ::MapItemSavedData& createMapSavedData(
-        ::ActorUniqueID const& uuid,
-        ::BlockPos const&      origin,
-        ::DimensionType        dimension,
-        int                    returnScaleLevel
-    );
-
-    MCAPI ::ActorUniqueID expandMapByID(::ActorUniqueID uuid, bool wasInit);
-
     MCAPI void registerOnSaveLevelDataSubscription(::ILevelStorageManagerConnector& levelStorageManagerConnector);
-
-    MCAPI void setPacketSender(::PacketSender& packetSender);
-
-    MCAPI void tick();
     // NOLINTEND
 
 public:

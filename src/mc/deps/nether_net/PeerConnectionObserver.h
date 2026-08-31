@@ -3,22 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/RefCountedObject.h"
 #include "mc/external/webrtc/PeerConnectionInterface.h"
 #include "mc/external/webrtc/PeerConnectionObserver.h"
 #include "mc/external/webrtc/RTCStatsCollectorCallback.h"
+#include "mc/external/webrtc/RefCountedObject.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class DataChannelInterface; }
-namespace webrtc { class IceCandidateInterface; }
+namespace webrtc { class IceCandidate; }
 namespace webrtc { class RTCStatsReport; }
 // clang-format on
 
 namespace NetherNet {
 
-class PeerConnectionObserver : public ::rtc::RefCountedObject<::webrtc::RTCStatsCollectorCallback>,
+class PeerConnectionObserver : public ::webrtc::RefCountedObject<::webrtc::RTCStatsCollectorCallback>,
                                public ::webrtc::PeerConnectionObserver {
 public:
     // member variables
@@ -26,7 +26,7 @@ public:
     ::ll::UntypedStorage<8, 128> mUnk6a5098;
     ::ll::UntypedStorage<8, 128> mUnkcbbbae;
     ::ll::UntypedStorage<8, 128> mUnk72f583;
-    ::ll::UntypedStorage<8, 128> mUnk29cbfb;
+    ::ll::UntypedStorage<8, 128> mUnkc9aa5b;
     ::ll::UntypedStorage<8, 128> mUnke6f099;
     ::ll::UntypedStorage<8, 128> mUnk674fc0;
     // NOLINTEND
@@ -49,7 +49,7 @@ public:
 
     virtual void OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState newState) /*override*/;
 
-    virtual void OnIceCandidate(::webrtc::IceCandidateInterface const* candidate) /*override*/;
+    virtual void OnIceCandidate(::webrtc::IceCandidate const* candidate) /*override*/;
 
     virtual void OnIceCandidateError(
         ::std::string const& address,
@@ -85,7 +85,7 @@ public:
 
     MCNAPI void $OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState newState);
 
-    MCNAPI void $OnIceCandidate(::webrtc::IceCandidateInterface const* candidate);
+    MCNAPI void $OnIceCandidate(::webrtc::IceCandidate const* candidate);
 
     MCNAPI void $OnIceCandidateError(
         ::std::string const& address,
@@ -96,14 +96,6 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPeerConnectionObserver();
-
-    MCNAPI static void** $vftableForRefCountedObject();
     // NOLINTEND
 };
 

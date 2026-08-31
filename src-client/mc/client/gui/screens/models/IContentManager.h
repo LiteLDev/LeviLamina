@@ -31,6 +31,7 @@ namespace Realms { struct Content; }
 namespace Realms { struct RealmId; }
 namespace StorageManager { class ContentItemProvider; }
 namespace StorageManager { class IContentHandler; }
+namespace StorageManager { class WorldConverter; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -152,12 +153,10 @@ public:
 
     virtual ::StorageManager::IContentHandler& getStorageContentHandler() = 0;
 
+    virtual ::std::shared_ptr<::StorageManager::WorldConverter> getStorageWorldConverter() = 0;
+
     virtual ::Bedrock::PubSub::Subscription registerToReloadViews(::std::function<void()> callback) = 0;
-    // NOLINTEND
 
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+    virtual ::Bedrock::PubSub::Subscription registerToDeleteContent(::std::function<void()> callback) = 0;
     // NOLINTEND
 };

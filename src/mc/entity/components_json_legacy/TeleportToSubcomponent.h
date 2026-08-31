@@ -16,7 +16,7 @@ class TeleportToSubcomponent : public ::OnHitSubcomponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TeleportToSubcomponent() /*override*/ = default;
+    virtual ~TeleportToSubcomponent() /*override*/;
 
     virtual void readfromJSON(::Json::Value&) /*override*/;
 
@@ -28,15 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI TeleportToSubcomponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

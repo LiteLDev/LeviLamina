@@ -18,17 +18,23 @@ namespace SharedTypes {
 class EventIdentifierReferenceConstraint
 : public ::cereal::ConstraintHandle<::SharedTypes::EventIdentifierReferenceConstraint> {
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
-
     MCFOLD void validateValue(::SharedTypes::Reference<1> const& ref, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCFOLD ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
+
     // NOLINTEND
 };
 

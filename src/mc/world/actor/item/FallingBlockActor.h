@@ -21,6 +21,7 @@ class DataLoadHelper;
 class EntityContext;
 class ITickDelegate;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -56,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     virtual void normalTick() /*override*/;
 
@@ -76,7 +77,7 @@ public:
 
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float, ::HurtParameters const&) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
@@ -92,15 +93,11 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI bool _isBeingPushedUp(::Block const& pushingBlock, ::BlockSource& region, ::BlockPos blockPos) const;
+    MCAPI bool _isBeingPushedUp(::Block const& pushingBlock, ::BlockSource& region, ::BlockPos const blockPos) const;
 
     MCAPI void breakBlock();
 
     MCAPI void doNormalTick(::ITickDelegate& tickDelegate);
-
-    MCAPI ::Block const& getFallingBlock() const;
-
-    MCAPI void setFallDamageAmount(float amount);
 
     MCAPI void setFallingBlock(::Block const& block, bool creative);
     // NOLINTEND
@@ -118,7 +115,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $normalTick();
 
@@ -133,18 +130,12 @@ public:
 
     MCAPI void $onSynchedDataUpdate(int dataId);
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float, ::HurtParameters const&);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

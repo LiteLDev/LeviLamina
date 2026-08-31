@@ -54,6 +54,8 @@ public:
     MCAPI ::SharedTypes::v1_26_10::RandomSearchAndDigGoalDefinition&
     operator=(::SharedTypes::v1_26_10::RandomSearchAndDigGoalDefinition const&);
 
+    MCAPI bool operator==(::SharedTypes::v1_26_10::RandomSearchAndDigGoalDefinition const&) const;
+
     MCAPI ~RandomSearchAndDigGoalDefinition();
     // NOLINTEND
 

@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     virtual ~ClientMoveInputHandler() = default;
 
-    virtual void registerInputHandlers(::InputHandler&, ::IClientInstance const&) = 0;
+    virtual void registerInputHandlers(::InputHandler& inputHandler, ::IClientInstance const& client) = 0;
     // NOLINTEND
 
 public:
@@ -57,11 +57,5 @@ public:
     MCAPI static void _updateClientMoveVector(float x, float y, ::FocusImpact, ::IClientInstance& client);
 
     MCAPI static ::MoveInputComponent* getMoveInput(::IClientInstance& client);
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

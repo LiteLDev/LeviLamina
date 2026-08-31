@@ -20,9 +20,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockSourceHandle() /*override*/ = default;
+    virtual ~BlockSourceHandle() /*override*/;
 
     virtual void onSourceDestroyed(::BlockSource& source) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

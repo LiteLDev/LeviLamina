@@ -31,21 +31,11 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI EntityOverrides();
-
     MCAPI void clear(::ActorUniqueID entity);
 
     MCAPI void remove(::ActorUniqueID entity, uint propertyIndex);
 
     MCAPI void set(::ActorUniqueID entity, uint propertyIndex, ::std::variant<::std::monostate, int, float> value);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor();
 #endif
     // NOLINTEND
 };

@@ -29,14 +29,6 @@ public:
     TransactionFrameSourceTarget();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI TransactionFrameSourceTarget(::Core::PathView source, ::Core::PathView target);
-
-    MCNAPI ~TransactionFrameSourceTarget();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Core::Result exec(
@@ -45,18 +37,6 @@ public:
         ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> sameStorageAreaFunction,
         ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> differentStorageAreaFunction
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::PathView source, ::Core::PathView target);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

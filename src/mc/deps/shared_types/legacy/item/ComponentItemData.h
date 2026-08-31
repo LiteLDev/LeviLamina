@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/json/Value.h"
 #include "mc/deps/shared_types/item/CreativeItemCategory.h"
 #include "mc/deps/shared_types/item/EnchantSlot.h"
 #include "mc/deps/shared_types/legacy/item/UseAnimation.h"
@@ -27,7 +28,7 @@ public:
     ::ll::TypedStorage<4, 8, ::std::optional<int>>                                 mDamage;
     ::ll::TypedStorage<4, 8, ::std::optional<int>>                                 mEnchantValue;
     ::ll::TypedStorage<4, 8, ::std::optional<int>>                                 mFrameCount;
-    ::ll::TypedStorage<4, 8, ::std::optional<::SharedTypes::CreativeItemCategory>> mCreativeCategory;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::CreativeItemCategory>> mCreativeCategory;
     ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::Legacy::UseAnimation>> mUseAnim;
     ::ll::TypedStorage<4, 8, ::std::optional<::SharedTypes::EnchantSlot>>          mEnchantSlot;
     ::ll::TypedStorage<1, 2, ::std::optional<uchar>>                               mMaxStackSize;
@@ -40,19 +41,32 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mAnimatesInToolbar;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mShouldDespawn;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                mRequiresInteract;
+    ::ll::TypedStorage<8, 24, ::std::optional<::Json::Value>>                      mItemJsonData;
+    ::ll::TypedStorage<8, 24, ::std::optional<::Json::Value>>                      mEvents;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ComponentItemData(ComponentItemData const&);
     ComponentItemData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ComponentItemData(::SharedTypes::Legacy::ComponentItemData const&);
+
+    MCAPI ::SharedTypes::Legacy::ComponentItemData& operator=(::SharedTypes::Legacy::ComponentItemData&&);
+
     MCAPI ::SharedTypes::Legacy::ComponentItemData& operator=(::SharedTypes::Legacy::ComponentItemData const&);
 
+    MCAPI bool operator==(::SharedTypes::Legacy::ComponentItemData const&) const;
+
     MCAPI ~ComponentItemData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::Legacy::ComponentItemData const&);
     // NOLINTEND
 
 public:

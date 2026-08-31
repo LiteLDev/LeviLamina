@@ -16,21 +16,15 @@ class MonsterRoomFeature : public ::Feature {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MonsterRoomFeature() /*override*/ = default;
+    virtual ~MonsterRoomFeature() /*override*/;
 
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI MonsterRoomFeature();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

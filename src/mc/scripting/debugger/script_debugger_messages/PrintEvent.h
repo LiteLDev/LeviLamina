@@ -16,29 +16,8 @@ public:
 public:
     // prevent constructor by default
     PrintEvent& operator=(PrintEvent const&);
+    PrintEvent(PrintEvent const&);
     PrintEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI PrintEvent(::ScriptDebuggerMessages::PrintEvent const&);
-
-    MCNAPI ::ScriptDebuggerMessages::PrintEvent& operator=(::ScriptDebuggerMessages::PrintEvent&&);
-
-    MCNAPI ~PrintEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptDebuggerMessages::PrintEvent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptDebuggerMessages

@@ -1,17 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/scripting/modules/gametest/ScriptGameTestHelper.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/gametest/framework/IGameTestFunctionContext.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleGameTest { class ScriptGameTestHelper; }
-namespace gametest { class BaseGameTestHelper; }
 // clang-format on
 
 namespace ScriptModuleGameTest {
@@ -27,39 +26,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptGameTestFunctionContext();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptGameTestFunctionContext() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptGameTestFunctionContext(::Scripting::WeakLifetimeScope scope, ::gametest::BaseGameTestHelper& helper);
-
-    MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestHelper> getScriptGameTestHelper();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::gametest::BaseGameTestHelper& helper);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

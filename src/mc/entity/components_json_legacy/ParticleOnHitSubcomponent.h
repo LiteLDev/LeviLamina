@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleOnHitSubcomponent() /*override*/ = default;
+    virtual ~ParticleOnHitSubcomponent() /*override*/;
 
     virtual void readfromJSON(::Json::Value& value) /*override*/;
 
@@ -50,15 +50,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI ParticleOnHitSubcomponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

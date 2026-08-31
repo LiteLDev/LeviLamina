@@ -16,10 +16,4 @@ public:
 
     virtual int performCommand(::CommandOrigin const& origin, ::Command& command) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

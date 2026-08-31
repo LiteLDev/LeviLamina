@@ -20,6 +20,7 @@ class Level;
 class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -62,7 +63,7 @@ public:
 
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& damage, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float damage, ::HurtParameters const&) /*override*/;
 
     virtual void doWaterSplashEffect() /*override*/;
     // NOLINTEND
@@ -76,12 +77,6 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _handleMending(::Player& player);
-
-    MCAPI void _tryMergeExistingOrbs();
-
-    MCAPI int getIconIndex() const;
-
     MCAPI void postNormalTick();
     // NOLINTEND
 
@@ -92,21 +87,10 @@ public:
 
     MCAPI static bool _tryMergeIntoExistingOrbs(::BlockSource& region, ::Vec3 const& pos, int xpValue);
 
-    MCAPI static void spawnOrb(::BlockSource& region, ::Vec3 const& pos, int orbXPValue);
-
     MCAPI static void spawnOrbs(
         ::BlockSource&            region,
         ::Vec3 const&             pos,
         int                       xpValue,
-        ::ExperienceOrb::DropType dropType,
-        ::Player*                 owner
-    );
-
-    MCAPI static void spawnOrbs(
-        ::BlockSource&            region,
-        ::Vec3 const&             pos,
-        int                       randValueMin,
-        int                       randValueMax,
         ::ExperienceOrb::DropType dropType,
         ::Player*                 owner
     );
@@ -137,16 +121,10 @@ public:
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& damage, float, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float damage, ::HurtParameters const&);
 
     MCFOLD void $doWaterSplashEffect();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

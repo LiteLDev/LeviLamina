@@ -14,16 +14,4 @@ public:
     RoleCheckerCallback& operator=(RoleCheckerCallback const&);
     RoleCheckerCallback(RoleCheckerCallback const&);
     RoleCheckerCallback();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~RoleCheckerCallback();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

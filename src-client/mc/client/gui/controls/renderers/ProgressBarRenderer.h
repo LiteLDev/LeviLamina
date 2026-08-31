@@ -35,27 +35,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ProgressBarRenderer();
-
-    MCAPI void setFullStorageColor(::mce::Color const& color);
-
-    MCFOLD void setPrimaryColor(::mce::Color const& color);
-
-    MCAPI void setSecondaryColor(::mce::Color const& color);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

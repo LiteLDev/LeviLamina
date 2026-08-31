@@ -41,20 +41,12 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void onReceivePacket(::PositionTrackingDBServerBroadcastPacket const& packet);
 #endif
-
-    MCAPI ~PositionTrackingDBClient();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Level& level);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

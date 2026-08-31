@@ -26,7 +26,7 @@ public:
         ::BlockPos const&                                       p,
         ::gsl::span<::DeclarativeBlockTessellation::Cube const> cubes,
         ::TextureUVCoordinateSet const*                         optionalOverrideTexture,
-        ::Facing::Rotation                                      applyRotation
+        ::Facing::Rotation const                                applyRotation
     );
     // NOLINTEND
 };

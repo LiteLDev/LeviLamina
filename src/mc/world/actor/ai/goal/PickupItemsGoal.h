@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ItemActor;
 class ItemDescriptor;
 class ItemStack;
 class Mob;
@@ -45,6 +44,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                             mCanPickupAnyItem;
     ::ll::TypedStorage<1, 1, bool>                             mCanPickupToHandOrEquipment;
     ::ll::TypedStorage<1, 1, bool>                             mPickupSameItemsAsInHand;
+    ::ll::TypedStorage<1, 1, bool>                             mStopIfHoldingItem;
     // NOLINTEND
 
 public:
@@ -67,13 +67,13 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+
+    virtual ~PickupItemsGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PickupItemsGoal(::Mob& mob);
-
     MCAPI void _dropItem(::ItemStack const& item) const;
 
     MCAPI ::std::vector<::WeakEntityRef>
@@ -82,18 +82,12 @@ public:
     MCAPI ::Shareable const* _getShareableItem(::ItemStack const& item) const;
 
     MCAPI bool _hasRoomForCarriedItem() const;
-
-    MCAPI bool _isSameItemAsInHand(::ItemStack const& item) const;
-
-    MCAPI void _pickItemUp(::ItemActor& itemActor);
-
-    MCAPI void _updatePathIfNecessary(::Actor const& target, float targetDistanceSqr);
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

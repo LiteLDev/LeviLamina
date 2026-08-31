@@ -12,7 +12,6 @@
 // clang-format off
 class ExpressionNode;
 class HashedString;
-class ListTag;
 class PropertyMetadata;
 class RenderParams;
 namespace Json { class Value; }
@@ -82,13 +81,15 @@ public:
     _addPropertyMetadata(::std::string const& name, bool clientSync, ::PropertyMetadata::ContainedType propertyType);
 
     MCAPI bool _loadPropertyFromJson(
-        ::std::string const& name,
-        ::Json::Value const& propertyNode,
-        ::MolangVersion      molangVersion,
-        bool                 clientSync
+        ::std::string const&  name,
+        ::Json::Value const&  propertyNode,
+        ::MolangVersion const molangVersion,
+        bool                  clientSync
     );
 
+#ifdef LL_PLAT_C
     MCAPI void _reserveSpaceForTypes(::std::vector<uint64> const& typeCounts);
+#endif
 
     MCAPI bool getDefaultBoolValue(uint64 boolArrayIndex, ::RenderParams& renderParams) const;
 
@@ -102,15 +103,9 @@ public:
 
     MCAPI int getDefaultIntValue(uint64 intArrayIndex, ::RenderParams& renderParams) const;
 
-    MCAPI ::ListTag getNetworkSyncPropertyDescriptionsAsListTag() const;
-
     MCAPI ::PropertyMetadata const* getPropertyMetadata(uint64 propertyNameHash) const;
 
     MCAPI ::PropertyMetadata const* getPropertyMetadataByString(::std::string const& propertyName) const;
-
-    MCAPI bool hasAnyClientSyncProperties() const;
-
-    MCAPI ~PropertyGroup();
     // NOLINTEND
 
 public:
@@ -118,32 +113,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::PropertyMetadata::ContainedType _getJsonPropertyType(::Json::Value const& typeNode);
 
-    MCAPI static bool
-    _tryGetClientSync(::std::string const& propertyName, ::Json::Value const& propertyNode, bool& clientSyncOut);
-
-    MCAPI static bool isValidEnumEntry(::std::string const& entryValue);
-
     MCAPI static ::std::shared_ptr<::PropertyGroup const>
     loadPropertiesFromJson(::Json::Value const& root, ::MolangVersion molangVersion);
-
-#ifdef LL_PLAT_C
-    MCAPI static ::std::shared_ptr<::PropertyGroup const> loadPropertiesFromNetworkSync(::ListTag const& propertiesTag);
-#endif
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static uint64 const& MAX_ENUM_SIZE();
-
-    MCAPI static uint64 const& MAX_ENUM_VALUE_SIZE();
-
-    MCAPI static uint64 const& MAX_PROPERTIES_COUNT();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

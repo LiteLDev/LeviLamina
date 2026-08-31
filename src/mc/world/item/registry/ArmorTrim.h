@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 class ItemStackBase;
 class Level;
 namespace Bedrock::Safety { class RedactableString; }
@@ -29,14 +28,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ArmorTrim(::HashedString patternId, ::HashedString materialId);
-
-    MCFOLD ::HashedString const& getMaterialId() const;
-
-    MCFOLD ::HashedString const& getPatternId() const;
-
-    MCAPI void load(::CompoundTag const& tag);
-
-    MCAPI void save(::CompoundTag& tag);
 
     MCAPI ~ArmorTrim();
     // NOLINTEND

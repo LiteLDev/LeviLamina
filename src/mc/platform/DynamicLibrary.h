@@ -27,12 +27,6 @@ public:
 
         virtual ::Bedrock::Result<void> freeLibrary(void*) = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:

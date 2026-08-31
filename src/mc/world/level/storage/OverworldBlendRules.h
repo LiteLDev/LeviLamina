@@ -18,16 +18,4 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::BlockType const*> const> mNotUnderwaterBlocks;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::BlockType const*> const> mWaterBlocks;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~OverworldBlendRules();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

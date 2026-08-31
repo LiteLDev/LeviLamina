@@ -11,7 +11,6 @@
 class HashedString;
 namespace Molang::details { class ExpressionNode; }
 namespace Molang::details { class IComplexExpression; }
-namespace Molang::details { class Program; }
 namespace Molang::details { class SourceTree; }
 // clang-format on
 
@@ -53,23 +52,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI CompiledExpressionWithSource(
-        ::Molang::details::Program    program,
-        bool                          hasVariableAssignments,
-        ::Molang::details::SourceTree source
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::Molang::details::Program program, bool hasVariableAssignments, ::Molang::details::SourceTree source);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::Molang::details::IComplexExpression> $clone() const;
@@ -86,12 +68,6 @@ public:
     MCNAPI ::Molang::details::SourceTree* $getSource();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

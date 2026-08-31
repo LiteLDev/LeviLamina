@@ -66,15 +66,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void OnSelectionChanged(::cohtml::IInputProxy*, ::cohtml::TextInput::Selection) /*override*/;
+    virtual void
+    OnSelectionChanged(::cohtml::IInputProxy* proxy, ::cohtml::TextInput::Selection selection) /*override*/;
 
     virtual void OnTextChanged(
-        ::cohtml::IInputProxy* addedChars,
-        char const*            addedCount,
-        uint                   removedChars,
-        char const*            removedCount,
-        uint                   index,
-        uint
+        ::cohtml::IInputProxy* proxy,
+        char const*            addedChars,
+        uint                   addedCount,
+        char const*            removedChars,
+        uint                   removedCount,
+        uint                   index
     ) /*override*/;
 
     virtual void OnFocus(::cohtml::IInputProxy* proxy) /*override*/;
@@ -95,20 +96,6 @@ public:
 
     MCAPI ::std::string getTextInputText();
 
-    MCAPI void handleNativeTextInput(::std::string_view text);
-
-    MCAPI void imeConfirmComposition();
-
-    MCAPI void imeConfirmComposition(::std::string const& utf8Text);
-
-    MCAPI void imeEndComposition();
-
-    MCAPI void imeReplaceCompositionTextRange(::std::string const& replacement, int from, int to);
-
-    MCAPI void imeStartComposition();
-
-    MCAPI void imeUpdateCompositionText(::std::string const& utf8Text);
-
     MCAPI void setText(::std::string const& text, ::std::optional<::TextBoxSelection> const& selection);
     // NOLINTEND
 
@@ -121,15 +108,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnSelectionChanged(::cohtml::IInputProxy*, ::cohtml::TextInput::Selection);
+    MCAPI void $OnSelectionChanged(::cohtml::IInputProxy* proxy, ::cohtml::TextInput::Selection selection);
 
     MCAPI void $OnTextChanged(
-        ::cohtml::IInputProxy* addedChars,
-        char const*            addedCount,
-        uint                   removedChars,
-        char const*            removedCount,
-        uint                   index,
-        uint
+        ::cohtml::IInputProxy* proxy,
+        char const*            addedChars,
+        uint                   addedCount,
+        char const*            removedChars,
+        uint                   removedCount,
+        uint                   index
     );
 
     MCAPI void $OnFocus(::cohtml::IInputProxy* proxy);

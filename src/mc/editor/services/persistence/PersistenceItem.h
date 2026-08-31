@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::PubSub { class Subscription; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -40,26 +39,15 @@ public:
     MCNAPI PersistenceItem(
         ::std::string const&                     key,
         ::Core::PathBuffer<::std::string> const& path,
-        bool                                     replication,
+        bool const                               replication,
         ::cereal::ReflectionCtx&                 ctx
     );
 
     MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _getFilePath();
 
-    MCNAPI ::std::string _loadItem();
-
     MCNAPI ::std::string const& fetchItemPayload();
 
-    MCNAPI ::std::string const& key() const;
-
-    MCNAPI ::Bedrock::PubSub::Subscription
-    onValueChange(::std::function<void(::Editor::Services::PersistenceItem const&)> callback);
-
     MCNAPI void save();
-
-    MCNAPI void setValue(::std::string const& value);
-
-    MCNAPI ::std::string const& value() const;
 
     MCNAPI ~PersistenceItem();
     // NOLINTEND
@@ -70,7 +58,7 @@ public:
     MCNAPI void* $ctor(
         ::std::string const&                     key,
         ::Core::PathBuffer<::std::string> const& path,
-        bool                                     replication,
+        bool const                               replication,
         ::cereal::ReflectionCtx&                 ctx
     );
     // NOLINTEND

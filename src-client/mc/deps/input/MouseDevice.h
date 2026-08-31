@@ -28,9 +28,5 @@ public:
     // NOLINTBEGIN
     MCAPI void
     feed(char actionButtonId, schar buttonData, short x, short y, short dx, short dy, bool forceMotionlessPointer);
-
-    MCFOLD short getX();
-
-    MCAPI short getY();
     // NOLINTEND
 };

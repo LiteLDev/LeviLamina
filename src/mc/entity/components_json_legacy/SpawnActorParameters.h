@@ -49,8 +49,6 @@ public:
 
     MCAPI void setSpawnTimeMin(int const& value);
 
-    MCAPI bool spawnsItemStack() const;
-
     MCAPI ~SpawnActorParameters();
     // NOLINTEND
 

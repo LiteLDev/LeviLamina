@@ -36,10 +36,4 @@ public:
         ::EntityContext&                   entityContext
     );
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
-    // NOLINTEND
 };

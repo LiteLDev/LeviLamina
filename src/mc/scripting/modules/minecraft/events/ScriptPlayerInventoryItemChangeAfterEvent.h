@@ -3,15 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/items/ScriptPlayerInventoryType.h"
 
 // auto generated forward declare list
 // clang-format off
-class Player;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -49,16 +47,6 @@ public:
     MCAPI ScriptPlayerInventoryItemChangeAfterEvent(
         ::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&
     );
-
-    MCAPI ScriptPlayerInventoryItemChangeAfterEvent(
-        ::Player const&                                                                                 player,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack,
-        ::ScriptModuleMinecraft::ScriptPlayerInventoryType playerInventoryType,
-        int                                                slotNumber,
-        bool                                               isQuantityChanged,
-        ::Scripting::WeakLifetimeScope const&              scope
-    );
     // NOLINTEND
 
 public:
@@ -71,16 +59,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&);
-
-    MCAPI void* $ctor(
-        ::Player const&                                                                                 player,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack,
-        ::ScriptModuleMinecraft::ScriptPlayerInventoryType playerInventoryType,
-        int                                                slotNumber,
-        bool                                               isQuantityChanged,
-        ::Scripting::WeakLifetimeScope const&              scope
-    );
     // NOLINTEND
 };
 

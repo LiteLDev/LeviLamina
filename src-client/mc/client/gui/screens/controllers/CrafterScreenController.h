@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CrafterScreenController() /*override*/ = default;
+    virtual ~CrafterScreenController() /*override*/;
 
     virtual ::ui::ViewRequest handleEvent(::ScreenEvent& screenEvent) /*override*/;
 
@@ -54,10 +54,6 @@ public:
         ::ActorUniqueID                                uniqueId
     );
 
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
     MCAPI void _setToggledStateForSlot(int slot, bool shouldEnable);
     // NOLINTEND
 
@@ -73,18 +69,16 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
 
     MCAPI ::ui::DirtyFlag $tick();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

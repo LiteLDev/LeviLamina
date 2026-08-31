@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ExperienceRewardCommitObject() /*override*/ = default;
+    virtual ~ExperienceRewardCommitObject() /*override*/;
 
     virtual bool append(::ContainerValidationCommitObject* other) /*override*/;
 
@@ -36,15 +36,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI explicit ExperienceRewardCommitObject(int experienceReward);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(int experienceReward);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

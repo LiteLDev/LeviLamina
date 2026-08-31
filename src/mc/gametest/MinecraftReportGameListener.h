@@ -9,7 +9,6 @@
 // clang-format off
 class Block;
 class BlockSource;
-class Vec3;
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { struct GameTestError; }
 // clang-format on
@@ -32,9 +31,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftReportGameListener() /*override*/ = default;
+    virtual ~MinecraftReportGameListener() /*override*/;
 
-    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance&) /*override*/;
+    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
     virtual void onTestPassed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
@@ -44,36 +43,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string _generateErrorDescription(::gametest::GameTestError const& error) const;
-
     MCNAPI void _reportFailure(::gametest::GameTestError const& error, ::BlockSource& region);
 
     MCNAPI void _say(::std::string const& chatColor, ::std::string const& text);
 
-    MCNAPI void _showRedBox(::std::string const& text, ::Vec3 const& position);
-
     MCNAPI void _spawnBeacon(::Block const& glassType);
+    // NOLINTEND
 
-    MCNAPI void _spawnLectern(::std::string const& text);
-
-    MCNAPI void _visualizeFailedTest(::gametest::GameTestError const& error, ::BlockSource&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
 
     MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 
     MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

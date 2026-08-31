@@ -35,25 +35,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MossStoneSelector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Block const& next(::Random& random, int, int, int, bool) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MossStoneSelector(::Block const* cobblestone, ::Block const* mossyCobblestone);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Block const* cobblestone, ::Block const* mossyCobblestone);
     // NOLINTEND
 
 public:
@@ -62,11 +46,5 @@ public:
     MCAPI ::Block const& $next(::Random& random, int, int, int, bool) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

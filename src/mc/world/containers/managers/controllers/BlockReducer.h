@@ -42,11 +42,12 @@ public:
     // prevent constructor by default
     BlockReducer& operator=(BlockReducer const&);
     BlockReducer(BlockReducer const&);
+    BlockReducer();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockReducer() = default;
+    virtual ~BlockReducer();
 
     virtual void registerBlock(::ItemStack const& block, ::std::vector<::ItemStack> const& elements);
     // NOLINTEND
@@ -54,19 +55,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockReducer();
-
     MCNAPI ::std::vector<::ItemStack> const* getReduction(::ItemStackBase const& block) const;
 
-    MCNAPI ::std::unordered_map<int, ::std::vector<::ItemStack>> const& getReductionMap() const;
-
+#ifdef LL_PLAT_C
     MCNAPI ::ItemDescriptor tryGetItemDescriptorFromKey(int blockKey) const;
+#endif
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

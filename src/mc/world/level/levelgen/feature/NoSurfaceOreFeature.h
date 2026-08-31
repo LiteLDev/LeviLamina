@@ -23,35 +23,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NoSurfaceOreFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI NoSurfaceOreFeature(
-        ::IntRange               count,
-        ::BlockDescriptor const& places,
-        ::BlockDescriptor const& replaces,
-        ::BlockDescriptor const& notExposedTo
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::IntRange               count,
-        ::BlockDescriptor const& places,
-        ::BlockDescriptor const& replaces,
-        ::BlockDescriptor const& notExposedTo
-    );
     // NOLINTEND
 
 public:

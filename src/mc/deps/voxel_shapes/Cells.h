@@ -4,15 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/container/small_vector.h"
-#include "mc/deps/voxel_shapes/JoinOperation.h"
 #include "mc/platform/brstd/function_ref.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace VoxelShapes { class AxesPermutation; }
-namespace VoxelShapes { class IndexMerger; }
-namespace VoxelShapes { struct SerializableCells; }
-// clang-format on
 
 namespace VoxelShapes {
 
@@ -42,26 +34,7 @@ public:
         bool                                                mergeNeighbors
     ) const;
 
-    MCNAPI ::VoxelShapes::Cells& operator=(::VoxelShapes::Cells&&);
-
     MCNAPI ::VoxelShapes::Cells reverseAxes(bool reverseX, bool reverseY, bool reverseZ) const;
-
-    MCNAPI ::VoxelShapes::Cells rotate(::VoxelShapes::AxesPermutation const& rotation) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::VoxelShapes::Cells fromSerializable(::VoxelShapes::SerializableCells const& serializable);
-
-    MCNAPI static ::VoxelShapes::Cells join(
-        ::VoxelShapes::Cells const&       first,
-        ::VoxelShapes::Cells const&       second,
-        ::VoxelShapes::IndexMerger const& xMerger,
-        ::VoxelShapes::IndexMerger const& yMerger,
-        ::VoxelShapes::IndexMerger const& zMerger,
-        ::VoxelShapes::JoinOperation      operation
-    );
     // NOLINTEND
 };
 

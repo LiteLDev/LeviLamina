@@ -52,8 +52,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit UIRepository(::ResourceLoader& resourceLoader);
-
-    MCAPI void _loadUITextureInfo(::ResourceLocation const& resourceLocation, ::UITextureInfo& uiTextureInfo) const;
     // NOLINTEND
 
 public:
@@ -65,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

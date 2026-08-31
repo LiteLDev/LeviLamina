@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Property() = default;
+    virtual ~Property();
 
     virtual void* Bind(::cohtml::Binder* binder, void* object) const = 0;
 
@@ -46,6 +46,8 @@ public:
     virtual bool ToBoolean(void* object, bool* boolean) const = 0;
 
     virtual bool ToNumber(void* object, float* number) const = 0;
+
+    virtual bool ToNumber(void* object, double* number) const;
 
     virtual bool ToString(void* object, char* buffer, uint64* length) const = 0;
 
@@ -63,15 +65,15 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI bool $ToNumber(void* object, double* number) const;
     // NOLINTEND
 };
 

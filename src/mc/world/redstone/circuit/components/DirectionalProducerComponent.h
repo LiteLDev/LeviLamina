@@ -33,8 +33,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI DirectionalProducerComponent();
-
-    MCFOLD void setAllowedConnections(::std::bitset<6> allowedConnections);
     // NOLINTEND
 
 public:

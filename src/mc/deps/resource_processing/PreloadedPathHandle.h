@@ -25,12 +25,11 @@ public:
 public:
     // prevent constructor by default
     PreloadedPathHandle& operator=(PreloadedPathHandle const&);
+    PreloadedPathHandle();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PreloadedPathHandle();
-
     MCNAPI PreloadedPathHandle(::Bedrock::Resources::PreloadedPathHandle const&);
 
     MCNAPI PreloadedPathHandle(
@@ -40,16 +39,12 @@ public:
 
     MCNAPI void forEach(::brstd::function_ref<void(::Core::Path const&)> callback) const;
 
-    MCNAPI explicit operator bool() const;
-
     MCNAPI ~PreloadedPathHandle();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::Bedrock::Resources::PreloadedPathHandle const&);
 
     MCNAPI void*

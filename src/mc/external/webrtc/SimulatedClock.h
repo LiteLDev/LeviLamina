@@ -35,12 +35,6 @@ public:
 
     virtual ::webrtc::NtpTime ConvertTimestampToNtpTime(::webrtc::Timestamp) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

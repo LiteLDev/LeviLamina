@@ -83,12 +83,6 @@ public:
 
     virtual ::Core::Result _endTransaction() /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Core

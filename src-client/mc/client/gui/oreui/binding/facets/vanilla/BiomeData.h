@@ -12,18 +12,6 @@ public:
     ::ll::TypedStorage<4, 4, int>            id;
     ::ll::TypedStorage<4, 4, int>            dimension;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~BiomeData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

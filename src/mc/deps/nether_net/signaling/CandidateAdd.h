@@ -17,19 +17,6 @@ public:
     CandidateAdd& operator=(CandidateAdd const&);
     CandidateAdd(CandidateAdd const&);
     CandidateAdd();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::std::string ToString() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::optional<::NetherNet::CandidateAdd>
-    TryParse(::std::array<::std::string_view, 3> const& tokens);
-    // NOLINTEND
 };
 
 } // namespace NetherNet

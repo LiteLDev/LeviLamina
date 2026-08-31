@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenController;
-class PersonaProfile;
+namespace persona { class Profile; }
 // clang-format on
 
 class DifferencePromptProfileEntryPromptData : public ::IProfileEntryPromptData {
@@ -17,17 +17,13 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController>> mScreenController;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PersonaProfile>>                        mPersonaProfile;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::persona::Profile>>                      mPersonaProfile;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DifferencePromptProfileEntryPromptData();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DifferencePromptProfileEntryPromptData() /*override*/ = default;
+    virtual ~DifferencePromptProfileEntryPromptData() /*override*/;
 
     virtual bool allowedToOpenCheck() const /*override*/;
 
@@ -37,21 +33,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI DifferencePromptProfileEntryPromptData(
-        ::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController,
-        ::std::shared_ptr<::PersonaProfile>                        personaProfile
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController,
-        ::std::shared_ptr<::PersonaProfile>                        personaProfile
-    );
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -62,11 +46,5 @@ public:
     MCAPI void $callOnOpen();
 
     MCAPI void $callOnClose();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

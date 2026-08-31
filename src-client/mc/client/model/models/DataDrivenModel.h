@@ -46,8 +46,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DataDrivenModel(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
 
-    MCAPI ::HashedString _parseRootSkinName(::HashedString const& skinName);
-
     MCAPI bool _setArmorTrim(
         ::ItemStack const&                   itemInstance,
         ::std::shared_ptr<::DataDrivenModel> model,
@@ -55,9 +53,6 @@ public:
         ::RenderParams&                      renderParams,
         ::RenderParams&                      childRenderParams
     );
-
-    MCAPI float
-    executeScript(::HashedString const& scriptName, ::RenderParams& renderParams, float defaultValueIfNoScript);
 
     MCAPI ::ExpressionNode getCopyOfScript_defaultIfNone(::HashedString const& name) const;
 
@@ -75,8 +70,6 @@ public:
         ::Vec3 const&                           cameraTargetPos
     );
 
-    MCAPI void renderAsChild(::RenderParams& renderParams, ::AttachableSlotIndex const& index);
-
     MCAPI void renderAttachable(
         ::ItemStack const&           itemInstance,
         ::AttachableSlotIndex const& attachableSlotIndex,
@@ -90,6 +83,8 @@ public:
         ::RenderParams&              renderParams,
         ::Actor&                     actor
     );
+
+    MCAPI void resolveHeldItemScaleForRender(::RenderParams& renderParams) const;
 
     MCAPI void setupAttachable(
         ::ItemStack const&           itemInstance,
@@ -140,11 +135,5 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

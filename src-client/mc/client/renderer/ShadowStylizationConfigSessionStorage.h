@@ -17,10 +17,4 @@ public:
     ShadowStylizationConfigSessionStorage& operator=(ShadowStylizationConfigSessionStorage const&);
     ShadowStylizationConfigSessionStorage(ShadowStylizationConfigSessionStorage const&);
     ShadowStylizationConfigSessionStorage();
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

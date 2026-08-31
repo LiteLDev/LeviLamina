@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HudVignetteRenderer() /*override*/ = default;
+    virtual ~HudVignetteRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -33,23 +33,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI HudVignetteRenderer();
-
-    MCAPI bool _renderVignette(
-        ::MinecraftUIRenderContext& renderContext,
-        ::IClientInstance&          client,
-        float                       undergroundness,
-        int                         w,
-        int                         h
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

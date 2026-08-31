@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/world/containers/models/ContainerCategory.h"
 #include "mc/world/containers/models/ContainerExpandStatus.h"
 #include "mc/world/containers/models/ContainerModel.h"
 
@@ -15,7 +14,6 @@ class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 struct ExpandoModelElement;
-struct FullContainerName;
 // clang-format on
 
 class ExpandoContainerModel : public ::ContainerModel {
@@ -34,13 +32,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ExpandoContainerModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ExpandoContainerModel() /*override*/;
+    virtual ~ExpandoContainerModel() /*override*/ = default;
 
     virtual void containerContentChanged(int slot) /*override*/;
 
@@ -78,37 +72,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExpandoContainerModel(
-        ::FullContainerName const&                            containerName,
-        int                                                   containerSize,
-        ::ContainerCategory                                   containerCategory,
-        ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> creativeItemRegistry
-    );
-
     MCAPI void _generateCurrentItems();
 
     MCAPI void _refreshContainer(bool fullRefresh);
-
-#ifdef LL_PLAT_C
-    MCAPI void setOnItemExpandedCallback(::std::function<void(::std::string const&, int, int)> callback);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::FullContainerName const&                            containerName,
-        int                                                   containerSize,
-        ::ContainerCategory                                   containerCategory,
-        ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> creativeItemRegistry
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -128,11 +94,11 @@ public:
 
     MCFOLD ::std::vector<::ItemStack> const& $getItems() const;
 
-    MCFOLD ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
+    MCAPI ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
 
-    MCFOLD int $getContainerSize() const;
+    MCAPI int $getContainerSize() const;
 
-    MCFOLD int $getFilteredContainerSize() const;
+    MCAPI int $getFilteredContainerSize() const;
 
     MCAPI ::ContainerExpandStatus $getItemExpandStatus(int itemId) const;
 
@@ -147,11 +113,5 @@ public:
     MCAPI void $_init();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

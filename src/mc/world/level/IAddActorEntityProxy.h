@@ -17,10 +17,4 @@ public:
 
     virtual void reloadActor(::Actor& actor) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

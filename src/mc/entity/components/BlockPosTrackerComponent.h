@@ -23,20 +23,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockPosTrackerComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockPosTrackerComponent(bool onGround, ::BlockPos const& pos);
-
     MCAPI void onRemove(::Actor& owner);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool onGround, ::BlockPos const& pos);
     // NOLINTEND
 };

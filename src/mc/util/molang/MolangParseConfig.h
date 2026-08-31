@@ -26,7 +26,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::MolangParseConfig& allowSpecificQuery(::std::string queryName);
-
-    MCAPI ::MolangParseConfig& disallowSideEffects(bool countRandomAsSideEffect);
     // NOLINTEND
 };

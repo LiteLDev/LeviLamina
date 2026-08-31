@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/ScreenshotGalleryFacetError.h"
 #include "mc/client/gui/oreui/resources/AllowListPath.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -21,7 +21,7 @@ namespace Social { class IUserManager; }
 
 namespace OreUI {
 
-class ScreenshotGalleryFacet : public ::OreUI::FacetBase<::OreUI::ScreenshotGalleryFacet> {
+class ScreenshotGalleryFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ScreenshotGalleryFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -81,7 +81,7 @@ public:
 
     MCAPI uint64 getCount() const;
 
-    MCFOLD ::OreUI::ScreenshotGalleryFacetError const getDeleteScreenshotsError() const;
+    MCAPI ::OreUI::ScreenshotGalleryFacetError const getDeleteScreenshotsError() const;
 
     MCFOLD ::OreUI::AllowListPath const& getFeaturedScreenshot() const;
 
@@ -95,11 +95,11 @@ public:
 
     MCFOLD bool const getIsModifyShowcaseGalleryInProgress() const;
 
-    MCFOLD ::OreUI::ScreenshotGalleryFacetError const getLoadGalleryError() const;
+    MCAPI ::OreUI::ScreenshotGalleryFacetError const getLoadGalleryError() const;
 
     MCFOLD uint64 getMaxScreenshots() const;
 
-    MCFOLD ::OreUI::ScreenshotGalleryFacetError const getModifyShowcaseGalleryError() const;
+    MCAPI ::OreUI::ScreenshotGalleryFacetError const getModifyShowcaseGalleryError() const;
 
     MCFOLD ::std::vector<::OreUI::GalleryScreenshot> const& getScreenshots() const;
 
@@ -140,12 +140,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

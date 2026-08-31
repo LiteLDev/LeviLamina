@@ -45,8 +45,6 @@ public:
         ::EntityContext&                   entityContext);
 
     MCAPI void _registerLoopingSounds();
-
-    MCAPI void postNormalTick();
     // NOLINTEND
 
 public:
@@ -73,11 +71,5 @@ public:
     MCAPI void $onSynchedDataUpdate(int dataId);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

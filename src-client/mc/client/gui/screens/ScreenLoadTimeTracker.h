@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AbstractScene;
 class IUIEventTelemetry;
 // clang-format on
 
@@ -39,16 +38,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ScreenLoadTimeTracker(::IUIEventTelemetry& eventing);
-
-    MCAPI ::Bedrock::Threading::Async<void> _queueScreenLoadTimeTrackerTask(
-        ::std::shared_ptr<::AbstractScene> newScreen,
-        ::std::chrono::nanoseconds         initialDelay,
-        ::std::chrono::nanoseconds         updateInterval
-    );
-
-    MCAPI void setLocalUserId(uint const& userId);
-
-    MCAPI void startLoadTimeTracking(::std::shared_ptr<::AbstractScene> pushedScene);
     // NOLINTEND
 
 public:
@@ -60,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

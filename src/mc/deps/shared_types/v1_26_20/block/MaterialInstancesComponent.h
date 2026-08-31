@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/cereal/ContextArea.h"
 #include "mc/deps/shared_types/util/Reference.h"
 #include "mc/deps/shared_types/v1_26_20/block/BlockRenderLayer.h"
 #include "mc/deps/shared_types/v1_26_20/block/TintMethod.h"
@@ -11,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
+namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace SharedTypes::v1_26_20::BlockDefinition {
@@ -20,7 +22,7 @@ public:
     // MaterialInstancesComponent inner types declare
     // clang-format off
     struct MaterialInstance;
-    struct MaterialInstanceConstraint;
+    class MaterialInstanceConstraint;
     // clang-format on
 
     // MaterialInstancesComponent inner types define
@@ -44,24 +46,24 @@ public:
         MCAPI bool operator==(
             ::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent::MaterialInstance const& instance
         ) const;
-
-        MCAPI ~MaterialInstance();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
-    struct MaterialInstanceConstraint
+    class MaterialInstanceConstraint
     : public ::cereal::ConstraintHandle<
           ::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent::MaterialInstanceConstraint> {
     public:
-        // vftables
+        // virtual functions
         // NOLINTBEGIN
-        MCNAPI static void** $vftable();
+        virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
+
         // NOLINTEND
     };
 
@@ -95,23 +97,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unordered_map<
-        ::std::string,
-        ::std::variant<
-            ::std::string,
-            ::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent::MaterialInstance>>
-    getter() const;
-
     MCAPI ::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent const&);
-
-    MCAPI void setter(
-        ::std::unordered_map<
-            ::std::string,
-            ::std::variant<
-                ::std::string,
-                ::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent::MaterialInstance>> parsedArray
-    );
 
     MCAPI ~MaterialInstancesComponent();
     // NOLINTEND

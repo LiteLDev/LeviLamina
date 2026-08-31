@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class IRandom;
 class Mob;
@@ -67,18 +66,5 @@ public:
 
     MCAPI static ::std::optional<::Vec3>
     getPosTowards(::Random& random, ::Mob& mob, int xzDist, int yDist, ::Vec3 const& towardsPos);
-
-    MCAPI static ::std::optional<::Vec3>
-    getSpawnPos(::BlockSource& region, ::Random& random, ::Vec3 const& inPos, int xzDist, int yDist, int numAttempts);
-
-    MCAPI static bool snapToGround(
-        ::BlockPos&         inOutPos,
-        ::Mob&              mob,
-        int                 yDist,
-        ::IntRange const&   hoverHeight,
-        ::SolidityCheckType blockTest
-    );
-
-    MCAPI static bool spawnSnapToGround(::BlockSource& region, ::BlockPos& inOutPos, float startingY, int yDist);
     // NOLINTEND
 };

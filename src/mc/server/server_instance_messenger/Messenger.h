@@ -65,16 +65,6 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIMessenger();
-
-    MCNAPI static void** $vftableForIMessageConsumer();
-
-    MCNAPI static void** $vftableForIMessageProducer();
-    // NOLINTEND
 };
 
 } // namespace ServerInstanceMessenger

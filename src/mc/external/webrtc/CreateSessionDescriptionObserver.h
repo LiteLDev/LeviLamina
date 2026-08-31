@@ -17,7 +17,7 @@ class CreateSessionDescriptionObserver : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void OnSuccess(::webrtc::SessionDescriptionInterface* desc) = 0;
+    virtual void OnSuccess(::webrtc::SessionDescriptionInterface* desc_ptr) = 0;
 
     virtual void OnFailure(::webrtc::RTCError error) = 0;
 
@@ -28,12 +28,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_21_60 { struct CraftingCatalogGroup; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_21_60 {
@@ -19,12 +18,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_60::CraftingCatalogItemCategory>          mCategory;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_60::CraftingCatalogGroup>> mGroups;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

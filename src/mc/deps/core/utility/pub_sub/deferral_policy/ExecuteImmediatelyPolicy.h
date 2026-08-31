@@ -6,6 +6,7 @@
 #include "mc/deps/application/storage_migration/WorldRecovery.h"
 #include "mc/deps/core/utility/pub_sub/DeferralType.h"
 #include "mc/deps/core/utility/pub_sub/deferred/SubscriptionBody.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 namespace Bedrock::PubSub::DeferralPolicy {
 

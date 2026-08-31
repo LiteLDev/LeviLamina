@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/DecodeTargetIndication.h"
 #include "mc/external/webrtc/VideoCodecType.h"
 #include "mc/external/webrtc/VideoContentType.h"
@@ -54,9 +55,9 @@ public:
 
     MCNAPI ::std::vector<uint> GetCsrcs() const;
 
-    MCNAPI ::rtc::ArrayView<::webrtc::DecodeTargetIndication const> GetDecodeTargetIndications() const;
+    MCNAPI ::webrtc::ArrayView<::webrtc::DecodeTargetIndication const> GetDecodeTargetIndications() const;
 
-    MCNAPI ::rtc::ArrayView<int64 const> GetFrameDependencies() const;
+    MCNAPI ::webrtc::ArrayView<int64 const> GetFrameDependencies() const;
 
     MCNAPI ::std::optional<int64> GetFrameId() const;
 
@@ -92,9 +93,9 @@ public:
     MCNAPI void SetCsrcs(::std::vector<uint> csrcs);
 
     MCNAPI void
-    SetDecodeTargetIndications(::rtc::ArrayView<::webrtc::DecodeTargetIndication const> decode_target_indications);
+    SetDecodeTargetIndications(::webrtc::ArrayView<::webrtc::DecodeTargetIndication const> decode_target_indications);
 
-    MCNAPI void SetFrameDependencies(::rtc::ArrayView<int64 const> frame_dependencies);
+    MCNAPI void SetFrameDependencies(::webrtc::ArrayView<int64 const> frame_dependencies);
 
     MCNAPI void SetFrameId(::std::optional<int64> frame_id);
 

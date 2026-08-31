@@ -54,25 +54,14 @@ public:
         int                                                 depth
     );
 
-    MCAPI ::std::unique_ptr<::StructurePiece> generatePieceFromSmallDoor(
-        ::SHStartPiece&                                     startPiece,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random const&                                     randomRef,
-        int                                                 footX,
-        int                                                 footY,
-        int                                                 footZ,
-        int                                                 direction,
-        int                                                 depth
-    );
-
     MCAPI void generateSmallDoor(
-        ::BlockSource&                   region,
-        ::Random&                        chunkBB,
-        ::BoundingBox const&             doorType,
-        ::StrongholdPiece::SmallDoorType footX,
+        ::BlockSource& region,
+        ::Random&,
+        ::BoundingBox const&             chunkBB,
+        ::StrongholdPiece::SmallDoorType doorType,
+        int                              footX,
         int                              footY,
-        int                              footZ,
-        int
+        int                              footZ
     );
 
     MCAPI ::StructurePiece* generateSmallDoorChildForward(
@@ -89,16 +78,6 @@ public:
         ::Random&                                           random,
         int                                                 yOff,
         int                                                 zOff
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void forceAddPortalRoom(
-        ::StructurePiece&                                   startPiece,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&
     );
     // NOLINTEND
 };

@@ -10,9 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Scheduler;
 class TaskResult;
-class WorkerPool;
 namespace Bedrock::Profiler::details { struct PredeclaredAnnotation; }
 // clang-format on
 
@@ -64,17 +62,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI ResourceLoadTaskGroup(
-            ::std::string_view                                    groupName,
-            ::Bedrock::Profiler::details::PredeclaredAnnotation&& annotation,
-            ::ResourceLoadType                                    loadType,
-            ::std::vector<::ResourceLoadType>                     dependencies,
-            ::Scheduler&                                          scheduler,
-            ::WorkerPool&                                         workerPool
-        );
-#endif
-
         MCNAPI ::Bedrock::Threading::Async<void> queue(
             ::brstd::move_only_function<::TaskResult()> threadedCallback,
             ::std::function<void()>                     mainThreadCallback,
@@ -89,21 +76,6 @@ public:
         queueSync(::brstd::move_only_function<::TaskResult()> callback, uint taskPriority);
 
         MCNAPI ~ResourceLoadTaskGroup();
-#endif
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void* $ctor(
-            ::std::string_view                                    groupName,
-            ::Bedrock::Profiler::details::PredeclaredAnnotation&& annotation,
-            ::ResourceLoadType                                    loadType,
-            ::std::vector<::ResourceLoadType>                     dependencies,
-            ::Scheduler&                                          scheduler,
-            ::WorkerPool&                                         workerPool
-        );
 #endif
         // NOLINTEND
 
@@ -162,13 +134,9 @@ public:
 
     MCNAPI bool areDependenciesLoaded(::ResourceLoadType resourceLoadType) const;
 
-    MCNAPI void hardCancel();
-
     MCNAPI bool isComplete() const;
 
     MCNAPI bool isComplete(::ResourceLoadType resourceLoadType) const;
-
-    MCNAPI bool isSuspended();
 
     MCNAPI void printRunningTasks();
 #endif
@@ -202,14 +170,8 @@ public:
 
     MCNAPI void setAppSuspended(bool suspended);
 
-    MCNAPI void setCannotBeCanceled();
-
     MCNAPI bool softCancel();
-#endif
 
-    MCNAPI bool softCancel(::ResourceLoadType resourceLoadType);
-
-#ifdef LL_PLAT_C
     MCNAPI void sync(::ResourceLoadType resourceLoadType);
 
     MCNAPI void update();
@@ -242,7 +204,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
@@ -100,25 +99,15 @@ public:
         ::IMinecraftEventing&                         eventing
     );
 
-    MCFOLD void _onNewDimensionCreated(::Dimension& dimension);
+    MCAPI void _onNewDimensionCreated(::Dimension& dimension);
 
     MCAPI void _savePlayer(::Player& player);
-
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::LevelStorage> getLevelStorage();
-
-    MCFOLD ::SavedDataStorage& getSavedDataStorage();
 
     MCAPI void initializeWithDimensionManager(::IDimensionManagerConnector& dimensionManagerConnector);
 
     MCAPI void initializeWithPlayerDeathManager(::IPlayerDeathManagerConnector& playerDeathManagerConnector);
 
-    MCAPI void onAppSuspend();
-
-    MCAPI void onLevelTearingDown();
-
     MCAPI void onStartLeaveGame();
-
-    MCAPI ::std::shared_ptr<void*> requestTimedStorageDeferment();
 
     MCAPI void save(::std::chrono::steady_clock::time_point currentTime);
 
@@ -127,8 +116,6 @@ public:
     MCAPI void saveLevelData();
 
     MCAPI void trySaveGameData(::std::chrono::steady_clock::time_point currentTime);
-
-    MCAPI void tryStartGameDataSaveTimerIfNotSet(::std::chrono::steady_clock::time_point currentTime);
     // NOLINTEND
 
 public:
@@ -151,9 +138,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveConnector();
+#else // LL_PLAT_C
+    MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveConnector();
+#endif
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveGameDataConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveGameDataConnector();
 
     MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveLevelDataConnector();
 
@@ -161,14 +152,8 @@ public:
 
     MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnStartLeaveGameConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnAppSuspendConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnAppSuspendConnector();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

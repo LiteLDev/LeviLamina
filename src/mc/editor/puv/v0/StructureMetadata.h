@@ -42,23 +42,9 @@ public:
 
 public:
     // prevent constructor by default
+    StructureMetadata& operator=(StructureMetadata const&);
+    StructureMetadata(StructureMetadata const&);
     StructureMetadata();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI StructureMetadata(::Editor::Structures::PUVLoader::v0::StructureMetadata&&);
-
-    MCNAPI StructureMetadata(::Editor::Structures::PUVLoader::v0::StructureMetadata const&);
-
-    MCNAPI ::Editor::Structures::PUVLoader::v0::StructureMetadata&
-    operator=(::Editor::Structures::PUVLoader::v0::StructureMetadata&&);
-
-    MCNAPI ::Editor::Structures::PUVLoader::v0::StructureMetadata&
-    operator=(::Editor::Structures::PUVLoader::v0::StructureMetadata const&);
-
-    MCNAPI ~StructureMetadata();
-    // NOLINTEND
 
 public:
     // static functions
@@ -73,20 +59,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Structures::PUVLoader::v0::StructureMetadata&&);
-
-    MCNAPI void* $ctor(::Editor::Structures::PUVLoader::v0::StructureMetadata const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

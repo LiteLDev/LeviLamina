@@ -29,23 +29,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void process();
-
     MCFOLD bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorItemDropEventFilterData const& data);
-
-    MCAPI ~ScriptActorItemDropEventFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

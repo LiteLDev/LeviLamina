@@ -31,18 +31,6 @@ public:
     LibraryFactoryArguments& operator=(LibraryFactoryArguments const&);
     LibraryFactoryArguments(LibraryFactoryArguments const&);
     LibraryFactoryArguments();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~LibraryFactoryArguments();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

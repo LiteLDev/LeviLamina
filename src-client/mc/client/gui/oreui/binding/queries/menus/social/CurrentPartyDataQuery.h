@@ -10,6 +10,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class IOptionRegistry;
+namespace OreUI { class ClientDependencies; }
 namespace OreUI { class GameDependencies; }
 // clang-format on
 
@@ -24,16 +26,19 @@ public:
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>           mPartyId;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<::Parties::PartyPrivacy>> mPrivacy;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                    mRestrictInvitesToLeader;
+    ::ll::TypedStorage<8, 8, ::IOptionRegistry&>                           mOptions;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    CurrentPartyDataQuery& operator=(CurrentPartyDataQuery const&);
+    CurrentPartyDataQuery(CurrentPartyDataQuery const&);
     CurrentPartyDataQuery();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CurrentPartyDataQuery(::OreUI::GameDependencies const& game);
+    MCAPI CurrentPartyDataQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
 
     MCAPI void _fetchData();
     // NOLINTEND
@@ -41,15 +46,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPropertyObject();
-
-    MCNAPI static void** $vftableForIQuery();
+    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
     // NOLINTEND
 };
 

@@ -4,13 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ItemDescriptor.h"
-#include "mc/world/level/storage/AllExperiments.h"
-
-// auto generated forward declare list
-// clang-format off
-class SemVersion;
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
 
 struct FoodItemComponentData_v1_20_30 {
 public:
@@ -20,27 +13,5 @@ public:
     ::ll::TypedStorage<4, 4, float>             mSaturationModifier;
     ::ll::TypedStorage<8, 16, ::ItemDescriptor> mUsingConvertsTo;
     ::ll::TypedStorage<1, 1, bool>              mCanAlwaysEat;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FoodItemComponentData_v1_20_30();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

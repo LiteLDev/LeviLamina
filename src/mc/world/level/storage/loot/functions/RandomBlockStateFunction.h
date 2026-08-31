@@ -11,10 +11,8 @@
 class Block;
 class ItemInstance;
 class ItemStack;
-class LootItemCondition;
 class LootTableContext;
 class Random;
-namespace Json { class Value; }
 // clang-format on
 
 class RandomBlockStateFunction : public ::LootItemFunction {
@@ -34,10 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RandomBlockStateFunction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RandomBlockStateFunction() /*override*/;
@@ -52,49 +46,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RandomBlockStateFunction(
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
-        ::RandomValueBounds&                                   values,
-        ::std::string const&                                   blockStateName
-    );
-
     MCAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult
     _remapComplexAliasBlock(int randomInt, ::Block const*& inOutItemBlock, ::std::string const& originalNameStr);
-
-    MCAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult _tryRemapComplexAliasBlock(
-        ::ItemInstance&      item,
-        int                  randomInt,
-        ::Block const*&      inOutItemBlock,
-        ::std::string const& originalName
-    );
-
-    MCAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult _tryRemapComplexAliasBlock(
-        ::ItemStack&         item,
-        int                  randomInt,
-        ::Block const*&      inOutItemBlock,
-        ::std::string const& originalName
-    );
-
-    MCFOLD ::std::string const& getBlockStateName() const;
-
-    MCFOLD ::RandomValueBounds getValues() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootItemFunction>
-    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
-        ::RandomValueBounds&                                   values,
-        ::std::string const&                                   blockStateName
-    );
     // NOLINTEND
 
 public:
@@ -113,11 +66,5 @@ public:
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,29 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/Keyframes.h"
+
 struct FogVolumetricDensitySetting {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mMaxDensity;
-    ::ll::TypedStorage<4, 4, float> mMaxDensityHeight;
-    ::ll::TypedStorage<4, 4, float> mZeroDensityHeight;
-    ::ll::TypedStorage<1, 1, bool>  mUniform;
+    ::ll::TypedStorage<8, 32, ::Core::Keyframes<float, float>> mMaxDensity;
+    ::ll::TypedStorage<8, 32, ::Core::Keyframes<float, float>> mMaxDensityHeight;
+    ::ll::TypedStorage<8, 32, ::Core::Keyframes<float, float>> mZeroDensityHeight;
+    ::ll::TypedStorage<1, 1, bool>                             mUniform;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FogVolumetricDensitySetting();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FogVolumetricDensitySetting();
+    MCAPI FogVolumetricDensitySetting(
+        ::Core::Keyframes<float, float> maxDensity,
+        ::Core::Keyframes<float, float> maxDensityHeight,
+        ::Core::Keyframes<float, float> zeroDensityHeight
+    );
 
-    MCAPI FogVolumetricDensitySetting(float maxDensity, float maxDensityHeight, float zeroDensityHeight);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::FogVolumetricDensitySetting
-    lerp(::FogVolumetricDensitySetting const& src, ::FogVolumetricDensitySetting const& dst, float alpha);
+    MCAPI ~FogVolumetricDensitySetting();
     // NOLINTEND
 
 public:
@@ -36,8 +40,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(
+        ::Core::Keyframes<float, float> maxDensity,
+        ::Core::Keyframes<float, float> maxDensityHeight,
+        ::Core::Keyframes<float, float> zeroDensityHeight
+    );
+    // NOLINTEND
 
-    MCAPI void* $ctor(float maxDensity, float maxDensityHeight, float zeroDensityHeight);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

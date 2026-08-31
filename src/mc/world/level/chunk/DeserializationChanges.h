@@ -18,20 +18,4 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::BlockDifference>> blockChangesMap;
     ::ll::TypedStorage<8, 24, ::std::vector<::HeightDifference>>                   heightChanges;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ~DeserializationChanges();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
-    // NOLINTEND
 };

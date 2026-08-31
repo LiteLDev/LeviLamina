@@ -9,7 +9,6 @@
 // clang-format off
 class ChunkPos;
 class Dimension;
-class Random;
 // clang-format on
 
 class EndCityStart : public ::StructureStart {
@@ -22,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EndCityStart() /*override*/ = default;
+    virtual ~EndCityStart() /*override*/;
 
     virtual bool isValid() const /*override*/;
 
@@ -30,15 +29,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _create(::Dimension& dimension, ::Random& random, ::ChunkPos const& pos);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int getYPositionForFeature(::ChunkPos const& pos, ::Dimension& dimension);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -49,11 +48,5 @@ public:
     MCAPI ::std::string_view $getStructureName() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

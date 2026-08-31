@@ -17,12 +17,6 @@ public:
 
     virtual bool startRiding(::RideableComponentHelpers::IActorWrapper&) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace RideableComponentHelpers

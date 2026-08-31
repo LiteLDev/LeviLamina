@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/network/services/signaling/json_rpc/JsonRpcRequestBase.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace JsonRpc {
 
 struct JsonRpcJoinPartyChat : public ::JsonRpc::JsonRpcRequestBase {
@@ -32,22 +27,6 @@ public:
         Params& operator=(Params const&);
         Params(Params const&);
         Params();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI ~Params();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void $dtor();
-#endif
-        // NOLINTEND
     };
 
 public:
@@ -61,40 +40,6 @@ public:
     JsonRpcJoinPartyChat& operator=(JsonRpcJoinPartyChat const&);
     JsonRpcJoinPartyChat(JsonRpcJoinPartyChat const&);
     JsonRpcJoinPartyChat();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI explicit JsonRpcJoinPartyChat(::std::string const& partyId);
-
-    MCNAPI ~JsonRpcJoinPartyChat();
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::std::string const& partyId);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace JsonRpc

@@ -89,7 +89,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ProgressScreenController() /*override*/;
+    virtual ~ProgressScreenController() /*override*/ = default;
 
     virtual void onCreation() /*override*/;
 
@@ -144,27 +144,11 @@ public:
         bool                                                    isCancellable
     );
 
-    MCAPI void _confirmSpaceAvailable();
-
-    MCAPI ::std::string const _getErrorCode() const;
-
-    MCAPI ::std::string const _getProgressMessage() const;
-
-    MCAPI ::std::string const _getProgressTitle() const;
-
     MCAPI bool _isInCancellableState() const;
-
-    MCAPI bool _isMobileDataIconVisible() const;
 
     MCAPI void _openConfirmationDialog();
 
-    MCAPI void _openPartyNotEligibleModal();
-
-    MCAPI void _openPartyPartiallyEligibleModal();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerProgressBindings();
+    MCAPI void _setupProgressScreen(bool const loadAssets);
 
     MCAPI void _updateProgressMessage(int64 const& timeNow, bool force);
     // NOLINTEND
@@ -202,12 +186,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onCreation();
@@ -229,13 +207,5 @@ public:
     MCAPI bool $_getGamepadHelperVisible() const;
 
     MCFOLD ::std::string $_getButtonADescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

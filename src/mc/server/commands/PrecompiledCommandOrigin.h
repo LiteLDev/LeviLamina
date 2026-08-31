@@ -23,7 +23,7 @@ class PrecompiledCommandOrigin : public ::CommandOrigin {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PrecompiledCommandOrigin() /*override*/ = default;
+    virtual ~PrecompiledCommandOrigin() /*override*/;
 
     virtual ::std::string const& getRequestId() const /*override*/;
 
@@ -55,13 +55,19 @@ public:
 
     virtual bool hasTellPerms() const /*override*/;
 
-    virtual bool canUseAbility(::AbilitiesIndex) const /*override*/;
+    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const /*override*/;
 
     virtual bool isWorldBuilder() const /*override*/;
 
     virtual ::CompoundTag serialize() const /*override*/;
 
     virtual bool isValid() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -97,7 +103,7 @@ public:
 
     MCFOLD bool $hasTellPerms() const;
 
-    MCFOLD bool $canUseAbility(::AbilitiesIndex) const;
+    MCFOLD bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
 
     MCFOLD bool $isWorldBuilder() const;
 

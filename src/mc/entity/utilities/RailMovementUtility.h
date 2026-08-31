@@ -59,8 +59,6 @@ public:
         ::std::function<bool(::Vec3&)> const& calculateAllPassengersInputFunc
     );
 
-    MCAPI static bool calculatePassengerRailMovementInput(::Vec3& posDelta, float forward, float passengerRotationY);
-
     MCAPI static ::Vec3 calculatePostRailMovementMinecartPosition(
         ::IConstBlockSource const& region,
         ::Vec3 const&              originalEntityPosition,
@@ -68,13 +66,6 @@ public:
         ::BlockPos const&          pos,
         int                        railDirection,
         ::Vec3&                    posDelta
-    );
-
-    MCAPI static ::Vec3 calculatePreRailMovementMinecartPosition(
-        ::Vec3            entityPos,
-        ::BlockPos const& pos,
-        int               railDirection,
-        float             heightOffset
     );
 
     MCAPI static bool getPos(::IConstBlockSource const& region, ::Vec3& valueVec, ::Vec3 pos);

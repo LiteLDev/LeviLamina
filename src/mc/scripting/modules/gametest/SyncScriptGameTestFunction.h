@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/script_engine/Closure.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/script_engine/scripting/Closure.h"
 #include "mc/scripting/modules/gametest/BaseScriptGameTestFunction.h"
 
 // auto generated forward declare list
@@ -37,7 +37,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
-    run(::gametest::BaseGameTestHelper& fnContext, ::gametest::IGameTestFunctionContext&) const /*override*/;
+    run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext& fnContext) const /*override*/;
     // NOLINTEND
 
 public:
@@ -66,7 +66,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
-    $run(::gametest::BaseGameTestHelper& fnContext, ::gametest::IGameTestFunctionContext&) const;
+    $run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext& fnContext) const;
 
 
     // NOLINTEND

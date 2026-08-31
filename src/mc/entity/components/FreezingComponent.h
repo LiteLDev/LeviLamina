@@ -21,18 +21,6 @@ public:
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void decreaseFreezingEffect();
-
-    MCFOLD float getFreezingEffectStrength() const;
-
-    MCAPI void increaseFreezingEffect();
-
-    MCAPI bool isFullyFrozen() const;
-
-    MCAPI bool isFullyUnfrozen() const;
-
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCFOLD void resetFreezingEffect();
     // NOLINTEND
 };

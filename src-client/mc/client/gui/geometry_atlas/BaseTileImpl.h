@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace GeometryAtlas { struct CommandDispatcherArgs; }
-namespace GeometryAtlas { struct TileDefinition; }
+namespace GeometryAtlas { struct InsertTilePayload; }
 // clang-format on
 
 namespace GeometryAtlas {
@@ -21,15 +21,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    BaseTileImpl(::GeometryAtlas::CommandDispatcherArgs&& args, ::GeometryAtlas::TileDefinition const& tileDefinition);
+    MCAPI BaseTileImpl(::GeometryAtlas::CommandDispatcherArgs&& args, ::GeometryAtlas::InsertTilePayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::GeometryAtlas::CommandDispatcherArgs&& args, ::GeometryAtlas::TileDefinition const& tileDefinition);
+    MCAPI void* $ctor(::GeometryAtlas::CommandDispatcherArgs&& args, ::GeometryAtlas::InsertTilePayload payload);
     // NOLINTEND
 };
 

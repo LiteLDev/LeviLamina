@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LoadOperation() /*override*/ = default;
+    virtual ~LoadOperation() /*override*/;
 
     virtual char const* getDescription() const /*override*/;
 
@@ -40,6 +40,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI char const* $getDescription() const;
@@ -49,16 +55,10 @@ public:
         ::PositionTrackingDB::TrackingRecord&                           record
     );
 
-    MCFOLD bool
+    MCAPI bool
     $_tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

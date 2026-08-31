@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UpdateWorldHeightScreenController() /*override*/ = default;
+    virtual ~UpdateWorldHeightScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -40,10 +40,6 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::function<void(bool)>               startWorldCallback
     );
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerProgressBindings();
     // NOLINTEND
 
 public:
@@ -53,18 +49,16 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onOpen();
 
     MCFOLD ::ui::SceneType $getSceneType() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

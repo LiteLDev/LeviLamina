@@ -32,6 +32,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ContentView();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ContentView() /*override*/;
@@ -40,17 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint64 countIf(::std::function<bool(::std::shared_ptr<::ContentItem> const&)> predicate) const;
-
-    MCFOLD ::std::shared_ptr<::ContentItem const> getItem(uint index) const;
-
-    MCFOLD ::std::shared_ptr<::ContentItem> getItem(uint index);
-
-    MCAPI ::std::shared_ptr<::ContentItem> getItem(::std::function<bool(::ContentItem const&)> predicate) const;
-
-    MCAPI uint getNumberOfItems() const;
-
-    MCAPI uint64 getTotalSize() const;
+    MCAPI explicit ContentView(::std::weak_ptr<::IContentManager> contentManager);
 
     MCFOLD void onReload(::std::function<void()> callback);
 
@@ -62,9 +56,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::weak_ptr<::IContentManager> contentManager);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

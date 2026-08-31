@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/playtest/SessionResult.h"
 #include "mc/server/editor/serviceproviders/EditorPlayerPlaytestServiceProvider.h"
@@ -86,7 +86,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorPlaytestManagerService() /*override*/;
+    virtual ~EditorPlaytestManagerService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -112,21 +112,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EditorPlaytestManagerService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI ::Editor::Services::EditorPlaytestManagerService::PlayerSessionInfo*
-    _createSessionInfo(::mce::UUID const& clientUUID);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

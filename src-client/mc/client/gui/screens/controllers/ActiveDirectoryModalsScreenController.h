@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActiveDirectoryModalsScreenController() /*override*/ = default;
+    virtual ~ActiveDirectoryModalsScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -40,8 +40,6 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::ActiveDirectoryModalArgs                args
     );
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -51,18 +49,16 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onOpen();
 
     MCFOLD ::ui::SceneType $getSceneType() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

@@ -29,9 +29,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorkerPoolHandleImpl() /*override*/ = default;
+    virtual ~WorkerPoolHandleImpl() /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::WorkerPool> get() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -40,12 +46,6 @@ public:
     MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorkerPool> $get() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

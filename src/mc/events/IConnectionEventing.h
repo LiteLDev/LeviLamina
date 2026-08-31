@@ -23,6 +23,7 @@ public:
         FailedToJoin           = 3,
         SuccessfulJoin         = 4,
         Canceled               = 5,
+        MissingEventDetected   = 6,
     };
 
     enum class ServerConnectionOutcome : int {
@@ -39,19 +40,13 @@ public:
     virtual ~IConnectionEventing() = default;
 
     virtual void fireServerConnectionEvent(
-        ::IConnectionEventing::ServerConnectionOutcome,
-        uint,
-        double,
-        ::std::string const&,
-        ::std::string const&
+        ::IConnectionEventing::ServerConnectionOutcome outcome,
+        uint                                           pingLatency,
+        double                                         timeElapsed,
+        ::std::string const&                           creatorName,
+        ::std::string const&                           worldId
     ) = 0;
 
     virtual void fireEventOnSuccessfulClientLogin(::Level const* level) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

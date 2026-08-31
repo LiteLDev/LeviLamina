@@ -37,8 +37,6 @@ public:
     MCAPI void addChunkViewTracker(::std::weak_ptr<::ChunkViewSource> chunkViewSource);
 
     MCAPI void onChunkReload(::Bounds const& bound);
-
-    MCAPI ~ChunkViewTrackerManager();
     // NOLINTEND
 
 public:
@@ -48,11 +46,5 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SimpleSparseContainer>>         mContainer;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerValidationBase const>> mValidator;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ContainerValidationSlotInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

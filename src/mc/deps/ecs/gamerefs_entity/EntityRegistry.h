@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/EntityId.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
-#include "mc/deps/game_refs/WeakRef.h"
 
 class EntityRegistry : public ::EnableGetWeakRef<::EntityRegistry>,
                        public ::std::enable_shared_from_this<::EntityRegistry> {
@@ -34,16 +33,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EntityRegistry();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EntityRegistry();
-
     MCNAPI explicit EntityRegistry(::std::string identifier);
 
 #ifdef LL_PLAT_C
     MCNAPI ::std::vector<uint> _getComponentIdsOfEntity(::EntityId const& context) const;
-
-    MCNAPI ::WeakRef<::EntityRegistry> getWeakRef();
 #endif
 
     MCNAPI void postViewEachCount(uint64 count);
@@ -54,8 +53,6 @@ public:
         ::std::function<void(::EntityId)>&& postInvoke
     );
 #endif
-
-    MCNAPI void shrinkToFit();
 
     MCNAPI ~EntityRegistry();
     // NOLINTEND
@@ -69,8 +66,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::std::string identifier);
     // NOLINTEND
 

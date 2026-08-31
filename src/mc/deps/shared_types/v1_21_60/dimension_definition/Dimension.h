@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/v1_21_60/dimension_definition/Components.h"
 #include "mc/deps/shared_types/v1_21_60/dimension_definition/Description.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_21_60::DimensionDefinition {
 
 struct Dimension {
@@ -36,15 +31,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_21_60::DimensionDefinition::Dimension const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_60::DimensionDefinition::Dimension const&);
     // NOLINTEND
 };
 

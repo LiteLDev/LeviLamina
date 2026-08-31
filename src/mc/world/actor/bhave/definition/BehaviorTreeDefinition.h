@@ -19,14 +19,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::BehaviorDefinition const* getRoot() const;
-
     MCAPI ~BehaviorTreeDefinition();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

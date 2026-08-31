@@ -11,7 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::Beta { struct ActorDefinitions; }
-namespace SharedTypes::v1_26_20 { struct ActorDefinitions; }
+namespace SharedTypes::v1_26_30 { struct ActorDefinitions; }
 // clang-format on
 
 struct ActorDocumentDataParams {
@@ -22,7 +22,7 @@ public:
         8,
         16,
         ::ComponentStorageLoadDataRefVariant<
-            ::SharedTypes::v1_26_20::ActorDefinitions,
+            ::SharedTypes::v1_26_30::ActorDefinitions,
             ::SharedTypes::Beta::ActorDefinitions>>
                                                         mValue;
     ::ll::TypedStorage<8, 24, ::SemVersion const>       mFormatVersion;
@@ -33,22 +33,19 @@ public:
 
 public:
     // prevent constructor by default
-    ActorDocumentDataParams& operator=(ActorDocumentDataParams const&);
     ActorDocumentDataParams();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDocumentDataParams(::ActorDocumentDataParams const&);
-
     MCAPI ActorDocumentDataParams(
         ::ComponentStorageLoadDataRefVariant<
-            ::SharedTypes::v1_26_20::ActorDefinitions,
+            ::SharedTypes::v1_26_30::ActorDefinitions,
             ::SharedTypes::Beta::ActorDefinitions> value,
         ::SemVersion const&                        formatVersion,
         ::MinEngineVersion const&                  minEngineVersion,
-        bool                                       isBaseGamePack,
-        ::JsonBetaState                            canUseBeta
+        bool const                                 isBaseGamePack,
+        ::JsonBetaState const                      canUseBeta
     );
 
     MCAPI ~ActorDocumentDataParams();
@@ -57,16 +54,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDocumentDataParams const&);
-
     MCAPI void* $ctor(
         ::ComponentStorageLoadDataRefVariant<
-            ::SharedTypes::v1_26_20::ActorDefinitions,
+            ::SharedTypes::v1_26_30::ActorDefinitions,
             ::SharedTypes::Beta::ActorDefinitions> value,
         ::SemVersion const&                        formatVersion,
         ::MinEngineVersion const&                  minEngineVersion,
-        bool                                       isBaseGamePack,
-        ::JsonBetaState                            canUseBeta
+        bool const                                 isBaseGamePack,
+        ::JsonBetaState const                      canUseBeta
     );
     // NOLINTEND
 

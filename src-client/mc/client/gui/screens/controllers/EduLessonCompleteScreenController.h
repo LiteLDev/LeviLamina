@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/ClientInstanceScreenController.h"
 
 // auto generated forward declare list
@@ -27,18 +26,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string> path;
         ::ll::TypedStorage<1, 1, bool>           mIncludeInExport;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ImageRecord();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -56,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EduLessonCompleteScreenController() /*override*/ = default;
+    virtual ~EduLessonCompleteScreenController() /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
     // NOLINTEND
@@ -65,16 +52,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EduLessonCompleteScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
-
-    MCAPI void _buildImageRecords();
-
-    MCAPI ::ui::ViewRequest _handleImagesExport();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerSubControllers();
     // NOLINTEND
 
 public:
@@ -84,16 +61,14 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCFOLD bool $_isStillValid() const;
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
+    MCAPI bool $_isStillValid() const;
     // NOLINTEND
 };

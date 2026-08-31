@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<4, 4, int>              mNewSlotSelected;
     ::ll::TypedStorage<8, 152, ::ItemStack>    mItem;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerHotbarSelectedSlotChangeEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

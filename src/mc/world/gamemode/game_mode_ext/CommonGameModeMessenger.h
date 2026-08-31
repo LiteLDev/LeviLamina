@@ -31,25 +31,37 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~CommonGameModeMessenger() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~CommonGameModeMessenger() /*override*/;
-#endif
 
     virtual ::gsl::final_action<::std::function<void()>> createBlockBreakCaptureScope(
-        ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)>
+        ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)> callback
     ) /*override*/;
 
+#ifdef LL_PLAT_S
     virtual void sendDenyDestroyBlock(::BlockPos const&, int) /*override*/;
+#else // LL_PLAT_C
+    virtual void sendDenyDestroyBlock(::BlockPos const& pos, int face) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual void sendStartDestroyBlock(::BlockPos const&, int) /*override*/;
+#else // LL_PLAT_C
+    virtual void sendStartDestroyBlock(::BlockPos const& pos, int face) /*override*/;
+#endif
 
     virtual void sendDestroyBlock(::Block const& oldBlock, ::BlockPos const& pos, int variantData) /*override*/;
 
+#ifdef LL_PLAT_S
     virtual void sendChangeContinueDestroyBlock(::BlockPos const&, int) /*override*/;
+#else // LL_PLAT_C
+    virtual void sendChangeContinueDestroyBlock(::BlockPos const& pos, int face) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual void sendContinueDestroyAboutToDestroyBlock(::BlockPos const&, int) /*override*/;
+#else // LL_PLAT_C
+    virtual void sendContinueDestroyAboutToDestroyBlock(::BlockPos const& pos, int face) /*override*/;
+#endif
 
     virtual void sendStopDestroyBlock(::BlockPos const&, float) /*override*/;
 
@@ -61,44 +73,37 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI explicit CommonGameModeMessenger(::Player& player);
-
-    MCFOLD ::Player& _getPlayer();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::Player& player);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::gsl::final_action<::std::function<void()>>
-        $createBlockBreakCaptureScope(::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)>);
+    MCAPI ::gsl::final_action<::std::function<void()>> $createBlockBreakCaptureScope(
+        ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)> callback
+    );
 
+#ifdef LL_PLAT_S
     MCFOLD void $sendDenyDestroyBlock(::BlockPos const&, int);
+#else // LL_PLAT_C
+    MCFOLD void $sendDenyDestroyBlock(::BlockPos const& pos, int face);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $sendStartDestroyBlock(::BlockPos const&, int);
+#else // LL_PLAT_C
+    MCFOLD void $sendStartDestroyBlock(::BlockPos const& pos, int face);
+#endif
 
     MCAPI void $sendDestroyBlock(::Block const& oldBlock, ::BlockPos const& pos, int variantData);
 
+#ifdef LL_PLAT_S
     MCFOLD void $sendChangeContinueDestroyBlock(::BlockPos const&, int);
+#else // LL_PLAT_C
+    MCFOLD void $sendChangeContinueDestroyBlock(::BlockPos const& pos, int face);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $sendContinueDestroyAboutToDestroyBlock(::BlockPos const&, int);
+#else // LL_PLAT_C
+    MCFOLD void $sendContinueDestroyAboutToDestroyBlock(::BlockPos const& pos, int face);
+#endif
 
     MCFOLD void $sendStopDestroyBlock(::BlockPos const&, float);
 
@@ -109,12 +114,6 @@ public:
     MCFOLD void $tryRotateTowardsAimAssist();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

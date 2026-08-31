@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GatheringInfoScreenController() /*override*/;
+    virtual ~GatheringInfoScreenController() /*override*/ = default;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -47,8 +47,6 @@ public:
     // NOLINTBEGIN
     MCAPI GatheringInfoScreenController(::std::shared_ptr<::MainMenuScreenModel> model, bool autoConnect);
 
-    MCAPI void _attemptAutoConnect();
-
     MCAPI void _attemptToConnect();
 
     MCAPI void _createQRCode();
@@ -56,10 +54,6 @@ public:
     MCAPI bool _isConsolePlatform() const;
 
     MCAPI bool _locKeyValid(::std::string const& key) const;
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
 
     MCAPI bool _shouldShowQRCode() const;
 
@@ -73,24 +67,10 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCAPI ::ui::DirtyFlag $tick();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

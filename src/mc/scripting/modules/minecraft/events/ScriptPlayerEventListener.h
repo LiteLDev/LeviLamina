@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
@@ -12,7 +12,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class Player;
 struct PlayerClosedContainerEvent;
 struct PlayerDimensionChangeAfterEvent;
@@ -62,10 +61,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPlayerEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::EventResult onEvent(::PlayerRespawnEvent const& respawnEvent) /*override*/;
@@ -105,25 +100,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerEventListener(
-        ::Scripting::WeakLifetimeScope const&                                            scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
-    );
-
     MCAPI void flushContainerCloseContext(::Player const& player);
-
-    MCAPI void onPlayerOpenedContainer(::Player const& player, ::BlockPos blockPos);
-
-    MCAPI void onPlayerOpenedContainer(::Player const& player, ::ActorUniqueID entityUniqueId);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Scripting::WeakLifetimeScope const&                                            scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
-    );
     // NOLINTEND
 
 public:

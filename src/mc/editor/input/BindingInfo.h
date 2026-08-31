@@ -17,6 +17,8 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk4e23d1;
     ::ll::UntypedStorage<8, 40> mUnk2af607;
     ::ll::UntypedStorage<8, 40> mUnkb20737;
+    ::ll::UntypedStorage<8, 40> mUnk558688;
+    ::ll::UntypedStorage<4, 8>  mUnk2bf33b;
     // NOLINTEND
 
 public:
@@ -32,7 +34,9 @@ public:
         ::std::string                  label,
         bool                           canRebind,
         ::std::optional<::std::string> tooltip,
-        ::std::optional<::std::string> actionId
+        ::std::optional<::std::string> actionId,
+        ::std::optional<::std::string> bindingCategory,
+        ::std::optional<int>           bindingPriority
     );
 #endif
 
@@ -55,7 +59,9 @@ public:
         ::std::string                  label,
         bool                           canRebind,
         ::std::optional<::std::string> tooltip,
-        ::std::optional<::std::string> actionId
+        ::std::optional<::std::string> actionId,
+        ::std::optional<::std::string> bindingCategory,
+        ::std::optional<int>           bindingPriority
     );
 #endif
     // NOLINTEND

@@ -39,7 +39,6 @@ public:
 
 public:
     // prevent constructor by default
-    FilePathManager& operator=(FilePathManager const&);
     FilePathManager();
 
 public:
@@ -51,52 +50,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FilePathManager(::Core::FilePathManager const&);
-
     MCAPI explicit FilePathManager(::Core::FilePathManagerPaths&& paths);
 
 #ifdef LL_PLAT_C
-    MCAPI ::Core::PathView getCacheFilePath() const;
-
-    MCAPI ::Core::PathView getDataUrl() const;
-
-    MCAPI ::Core::PathView getExternalFilePath() const;
-#endif
-
-    MCAPI ::Core::PathView getLevelArchivePath() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::Core::PathView getPackagePath() const;
-#endif
-
-    MCAPI ::Core::PathView getResourcePacksPath() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::Core::PathView getSettingsPath() const;
-
-    MCAPI ::Core::PathView getSharedDataPath() const;
-
-    MCAPI ::Core::PathView getSharedWorldsPath() const;
-
-    MCAPI ::Core::PathView getTemporaryFilePath() const;
-#endif
-
-    MCAPI ::Core::PathView getUserDataPath() const;
-
-    MCAPI ::Core::PathView getWorldsPath() const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool isDedicatedServer() const;
-#endif
-
     MCAPI void setRootPath(::Core::PathView path);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD static uint64 getWorldsPathDirectoryLimit();
 #endif
     // NOLINTEND
 
@@ -119,8 +76,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::FilePathManager const&);
-
     MCAPI void* $ctor(::Core::FilePathManagerPaths&& paths);
     // NOLINTEND
 

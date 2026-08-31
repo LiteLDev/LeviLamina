@@ -33,8 +33,6 @@ public:
         ::std::string const&       oldSkinName
     );
 
-    MCAPI ::PlayerSkinPacketPayload& operator=(::PlayerSkinPacketPayload&&);
-
     MCAPI ~PlayerSkinPacketPayload();
     // NOLINTEND
 

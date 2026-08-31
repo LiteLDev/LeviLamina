@@ -66,10 +66,6 @@ public:
         ::std::vector<::std::function<::Bedrock::PubSub::Subscription(::std::function<void()>)>> subscriptionConnectors,
         ::std::unique_ptr<::Settings::IOptionPropertyHandler>                                    delegate
     );
-
-    MCAPI void _updateData();
-
-    MCAPI void _updateSubscriptions();
     // NOLINTEND
 
 public:
@@ -86,7 +82,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canModify() const;
+    MCAPI bool $canModify() const;
 
     MCAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
 
@@ -97,12 +93,6 @@ public:
     MCFOLD ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
     $getInfo() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

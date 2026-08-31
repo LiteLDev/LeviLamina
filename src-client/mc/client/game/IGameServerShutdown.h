@@ -12,10 +12,4 @@ public:
 
     virtual void requestLeaveThenJoinFriendsWorld(::std::string_view serverId) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -36,10 +36,6 @@ public:
         uchar                                       face,
         ::ClientBlockPipeline::UvTransform::BoxType orientationType
     );
-
-    MCAPI void setFromStartAndEnd(::Vec2 start, ::Vec2 end);
-
-    MCAPI void setFromStartAndSize(::Vec2 start, ::Vec2 size);
     // NOLINTEND
 };
 

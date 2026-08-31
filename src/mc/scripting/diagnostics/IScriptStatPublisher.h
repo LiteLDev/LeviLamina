@@ -17,10 +17,4 @@ public:
 
     virtual void publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

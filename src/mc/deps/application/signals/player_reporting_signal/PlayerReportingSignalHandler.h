@@ -33,7 +33,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~PlayerReportingSignalHandler() = default;
+#else // LL_PLAT_C
+    virtual ~PlayerReportingSignalHandler();
+#endif
+
     // NOLINTEND
 
 public:
@@ -46,7 +51,7 @@ public:
 
     MCNAPI void _getReportJsonHandler(::PlayerReportingSignal::GetReportJson const& signal);
 
-    MCNAPI void _resetAll(::PlayerReportingSignal::ResetAll const&);
+    MCNAPI void _resetAll(::PlayerReportingSignal::ResetAll const& signal);
 
     MCNAPI void _sendReport(::PlayerReportingSignal::SendReport const& signal);
 
@@ -65,9 +70,11 @@ public:
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

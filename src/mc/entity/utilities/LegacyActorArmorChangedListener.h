@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     virtual void containerContentChanged(int) /*override*/;
 
-    virtual ~LegacyActorArmorChangedListener() /*override*/ = default;
+    virtual ~LegacyActorArmorChangedListener() /*override*/;
     // NOLINTEND
 
 public:
@@ -45,16 +45,16 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $containerContentChanged(int);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

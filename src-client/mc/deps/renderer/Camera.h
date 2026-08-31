@@ -28,39 +28,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Camera();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Camera(::mce::Camera const&);
-
-    MCFOLD ::glm::vec3 const& getForwardVector() const;
-
-    MCFOLD ::Frustum const& getFrustum() const;
-
-    MCAPI ::glm::vec3 const& getPosition() const;
-
-    MCAPI ::glm::mat4x4 getProjectionMatrix() const;
-
-    MCFOLD ::glm::vec3 const& getRightVector() const;
-
-    MCAPI ::glm::vec3 const& getUpVector() const;
-
-    MCAPI ::glm::mat4x4 getViewProjectionMatrix() const;
-
-    MCAPI ::mce::Camera& operator=(::mce::Camera const&);
-
     MCAPI void updateViewMatrixDependencies();
 
     MCAPI ~Camera();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::Camera const&);
     // NOLINTEND
 
 public:

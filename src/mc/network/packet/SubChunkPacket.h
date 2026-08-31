@@ -58,14 +58,6 @@ public:
             mHeightMapType       = HeightMapDataType::NoData;
             mRenderHeightMapType = HeightMapDataType::NoData;
         }
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
-
-        MCAPI static schar const& HEIGHT_COLUMN_BELOW_SUBCHUNK();
-        // NOLINTEND
     };
 
     struct SubChunkPosOffset {
@@ -125,15 +117,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SubChunkPacketData(::SubChunkPacket::SubChunkPacketData const&);
-
         MCAPI ~SubChunkPacketData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::SubChunkPacket::SubChunkPacketData const&);
         // NOLINTEND
 
     public:
@@ -167,25 +151,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SubChunkPacket();
-
-    MCAPI SubChunkPacket(::DimensionType const& dimension, ::SubChunkPos const& centerPos, bool cacheEnabled);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::DimensionType const& dimension, ::SubChunkPos const& centerPos, bool cacheEnabled);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

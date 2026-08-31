@@ -17,30 +17,6 @@ public:
     Swatch& operator=(Swatch const&);
     Swatch(Swatch const&);
     Swatch();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI bool isValid() const;
-#endif
-
-    MCNAPI ~Swatch();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static ::persona::color::Swatch const& getInvalidSwatch();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace persona::color

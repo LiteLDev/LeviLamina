@@ -37,52 +37,17 @@ public:
     virtual ~MutsVerifier() /*override*/;
 #endif
 
-#ifdef LL_PLAT_S
-    virtual void setRequest(::Json::Value&) /*override*/;
-#else // LL_PLAT_C
     virtual void setRequest(::Json::Value& request) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::std::optional<::Json::Value> verify(::Json::Value&&) /*override*/;
-#else // LL_PLAT_C
     virtual ::std::optional<::Json::Value> verify(::Json::Value&& response) /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI MutsVerifier(
-        ::std::string                    responseField,
-        ::std::string                    payloadField,
-        ::std::string                    publicKey,
-        ::std::function<int64()>         getTime,
-        ::std::function<::std::string()> createRequestId
-    );
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
-        ::std::string                    responseField,
-        ::std::string                    payloadField,
-        ::std::string                    publicKey,
-        ::std::function<int64()>         getTime,
-        ::std::function<::std::string()> createRequestId
-    );
-#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
@@ -95,11 +60,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

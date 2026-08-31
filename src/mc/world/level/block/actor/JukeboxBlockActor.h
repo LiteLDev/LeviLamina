@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/item/ItemStack.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
 
@@ -17,7 +16,6 @@ class CompoundTag;
 class Container;
 class DataLoadHelper;
 class ILevel;
-class Level;
 class SaveContext;
 // clang-format on
 
@@ -49,7 +47,7 @@ public:
 
     virtual int getMaxStackSize() const /*override*/;
 
-    virtual bool canPushInItem(int item, int, ::ItemStack const&) const /*override*/;
+    virtual bool canPushInItem(int, int, ::ItemStack const& item) const /*override*/;
 
     virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
@@ -69,8 +67,8 @@ public:
 
     virtual void serverInitItemStackIds(
         int containerSlot,
-        int onNetIdChanged,
-        ::std::function<void(int, ::ItemStack const&)>
+        int,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
@@ -82,20 +80,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit JukeboxBlockActor(::BlockPos const& pos);
-
-    MCAPI void _onChanged(::BlockSource& region, ::SharedTypes::Legacy::LevelSoundEvent sound);
-
-    MCAPI void _spawnMusicParticles(::Level& level, float recordDuration);
-
-    MCAPI void ejectRecord(::BlockSource& region);
-
-    MCFOLD ::ItemStack const& getRecord() const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool hasRecord() const;
-#endif
-
-    MCAPI bool isRecordPlaying() const;
 
     MCAPI void setRecord(::ItemStack const& record, bool startPlaying);
 
@@ -123,11 +107,11 @@ public:
 
     MCFOLD int $getMaxStackSize() const;
 
-    MCAPI bool $canPushInItem(int item, int, ::ItemStack const&) const;
+    MCAPI bool $canPushInItem(int, int, ::ItemStack const& item) const;
 
     MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
-    MCFOLD ::ItemStack const& $getItem(int) const;
+    MCAPI ::ItemStack const& $getItem(int) const;
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 
@@ -142,7 +126,7 @@ public:
     MCAPI void $onChanged(::BlockSource& region);
 
     MCAPI void
-    $serverInitItemStackIds(int containerSlot, int onNetIdChanged, ::std::function<void(int, ::ItemStack const&)>);
+    $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
@@ -154,8 +138,14 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainer();
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
 
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCNAPI static void** $vftable();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
     // NOLINTEND
 };

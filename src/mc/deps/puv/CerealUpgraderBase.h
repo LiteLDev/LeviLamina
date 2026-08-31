@@ -34,8 +34,6 @@ public:
         ::std::vector<::std::string>                                destination
     );
 
-    MCNAPI void ignore(::std::vector<::std::string> const& source);
-
     MCNAPI void move(::std::vector<::std::string> const& source, ::std::vector<::std::string> destination);
 
     MCNAPI ~CerealUpgraderBase();

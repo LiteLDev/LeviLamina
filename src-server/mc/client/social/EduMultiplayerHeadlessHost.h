@@ -48,12 +48,6 @@ public:
 
     virtual ::Bedrock::Threading::Async<void> onNextFetchJoiners() /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Social

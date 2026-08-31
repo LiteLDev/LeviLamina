@@ -32,14 +32,23 @@ public:
     // NOLINTEND
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::VectorComparativeConstraint
-    comparison(::SharedTypes::VectorComparativeConstraint::ComparisonRequirement constraint);
-
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
-
     MCAPI void validateValue(::Vec2 const& vec, ::cereal::SerializerContext& context) const;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
+
     // NOLINTEND
 
 public:

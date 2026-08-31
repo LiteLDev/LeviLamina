@@ -17,16 +17,4 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::UIControl>>> clippedGrids;
     ::ll::TypedStorage<8, 24, ::std::vector<::ScreenEvent>>                  clipStateChangeEvents;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ClippedControlMetadata();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

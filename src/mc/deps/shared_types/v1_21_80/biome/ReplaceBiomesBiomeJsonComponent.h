@@ -41,19 +41,13 @@ public:
         // NOLINTBEGIN
         MCAPI BiomeReplacement(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&);
 
-        MCAPI ~BiomeReplacement();
+        MCAPI bool operator==(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&) const;
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCFOLD void* $ctor(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 

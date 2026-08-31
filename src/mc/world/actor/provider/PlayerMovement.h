@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/input/InputMode.h"
 #include "mc/entity/components/PlayerPositionModeComponent.h"
 
 // auto generated forward declare list
@@ -12,13 +11,10 @@ class EntityContext;
 class Vec2;
 struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
-struct ActorUniqueID;
 struct ClientInputLockComponent;
 struct MoveInputComponent;
 struct MoveInputState;
-struct PlayerInputModeComponent;
 struct SneakingComponent;
-struct StrictActorIDEntityContextPair;
 struct Tick;
 struct VanillaClientGameplayComponent;
 // clang-format on
@@ -40,28 +36,17 @@ MCAPI ::Vec2 calculateMoveVector(
     ::SneakingComponent const*      sneakComponent
 );
 
+#ifdef LL_PLAT_C
 MCAPI void clearInputState(::MoveInputComponent& input);
 
-#ifdef LL_PLAT_C
 MCAPI float getBob(::EntityContext const& provider);
 
 MCAPI float getBobPrev(::EntityContext const& provider);
 #endif
 
-MCAPI ::ActorUniqueID
-getControllingPassengerID(::std::vector<::StrictActorIDEntityContextPair> const& passengers, int controllingSeat);
-
-MCAPI ::InputMode getInputMode(::EntityContext const& provider);
-
 MCAPI ::PlayerPositionModeComponent::PositionMode getPositionMode(::EntityContext const& provider);
 
 MCAPI void initializePlayer(::EntityContext& provider);
-
-#ifdef LL_PLAT_C
-MCAPI void initializeRemotePlayer(::EntityContext& provider);
-#endif
-
-MCAPI bool isGamepad(::PlayerInputModeComponent const& playerInputModeComponent);
 
 MCAPI void resetBob(::EntityContext& provider);
 

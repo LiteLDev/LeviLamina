@@ -24,6 +24,7 @@ public:
 
 public:
     // prevent constructor by default
+    TempEPtrBase(TempEPtrBase const&);
     TempEPtrBase();
 
 public:
@@ -37,8 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TempEPtrBase(::TempEPtrBase const& e);
-
     MCAPI ::Actor* _lock() const;
 
     MCAPI void _set(::Actor* e);
@@ -46,14 +45,6 @@ public:
     MCAPI bool isValid() const;
 
     MCAPI ::TempEPtrBase& operator=(::TempEPtrBase const& e);
-
-    MCAPI void unset();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::TempEPtrBase const& e);
     // NOLINTEND
 
 public:

@@ -3,14 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/world/level/chunk/EntityType.h"
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
-namespace ScriptModuleMinecraft { class ScriptAABB; }
-namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -26,11 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptAABB _getSpawnAABB(::Vec3 const& position) const;
-
-    MCAPI bool
-    _isBlockDangerous(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock> const& block) const;
-
     MCAPI ~ScriptEntitySpawnType();
     // NOLINTEND
 

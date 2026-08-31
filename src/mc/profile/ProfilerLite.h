@@ -91,14 +91,6 @@ public:
 #ifdef LL_PLAT_C
         MCNAPI void resetRecursive();
 #endif
-
-        MCNAPI ~ScopedData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -157,11 +149,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ProfilerLite();
-
 #ifdef LL_PLAT_C
-    MCAPI void _calculateRealtimeFrameData();
-
     MCAPI void _getProfileStringRecursive(
         ::ProfilerLite::ScopedData& scope,
         uint64&                     writeCount,
@@ -174,20 +162,12 @@ public:
     MCAPI void applyProfilerOptions(bool isClientDiagnosticsEnabled);
 #endif
 
-    MCAPI void calculateAndSetServerNetworkTime(::std::chrono::steady_clock::time_point tp);
-
-    MCAPI void calculateAndSetServerTickTimes(::std::chrono::steady_clock::time_point tp);
-
     MCAPI ::_ProfilerLiteTimer* getActiveScope(::std::thread::id threadId);
-
-    MCAPI ::std::chrono::nanoseconds getServerTickTime() const;
 
 #ifdef LL_PLAT_C
     MCAPI ::Bedrock::ScopeExit init(::Core::Path const& logFilePath);
 
     MCAPI void initWithFlightingAndOptions(bool isClientDiagnosticsEnabled);
-
-    MCAPI bool isBenchmarkModeDone();
 
     MCAPI void logMultipleTimedEvents(
         ::brstd::function_ref<
@@ -211,15 +191,14 @@ public:
         bool                           logPackets
     );
 #endif
-
-    MCAPI ~ProfilerLite();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void _writeHeadersIfEmpty(::std::string const& logFileName, ::Core::Path, ::Core::OutputFileStream&);
+    MCAPI static void
+    _writeHeadersIfEmpty(::std::string const& header, ::Core::Path logFileName, ::Core::OutputFileStream& file);
 
     MCAPI static void getNetworkStats(::NetworkStatMetrics& stats, uint& lastSampleNum, ::TrackerType type);
 #endif
@@ -229,19 +208,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::ProfilerLite& gProfilerLiteInstance();
-
-    MCAPI static ::std::thread::id& sEmptyThreadID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

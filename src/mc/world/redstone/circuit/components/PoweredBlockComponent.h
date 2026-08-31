@@ -34,10 +34,10 @@ public:
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     virtual bool addSource(
-        ::CircuitSceneGraph&         info,
-        ::CircuitTrackingInfo const& dampening,
-        int&                         bDirectlyPowered,
-        bool&
+        ::CircuitSceneGraph&         graph,
+        ::CircuitTrackingInfo const& info,
+        int&                         dampening,
+        bool&                        bDirectlyPowered
     ) /*override*/;
 
     virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
@@ -69,7 +69,7 @@ public:
     MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     MCAPI bool
-    $addSource(::CircuitSceneGraph& info, ::CircuitTrackingInfo const& dampening, int& bDirectlyPowered, bool&);
+    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     MCFOLD bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 

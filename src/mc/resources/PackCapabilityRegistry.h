@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/resources/PackCapability.h"
-
 // auto generated forward declare list
 // clang-format off
 class PackCapability;
@@ -27,12 +24,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit PackCapabilityRegistry(::std::initializer_list<::PackCapability> const& packCapabilities);
-
-    MCNAPI ::std::variant<
-        ::PackCapability::ValidationResult::Succeeded,
-        ::PackCapability::ValidationResult::Failed,
-        ::PackCapability::ValidationResult::NotFound>
-    lookup(::std::string_view name) const;
 
     MCNAPI ~PackCapabilityRegistry();
     // NOLINTEND

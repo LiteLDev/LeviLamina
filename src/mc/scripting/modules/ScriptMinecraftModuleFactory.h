@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_factory/GenericModuleBindingFactory.h"
+#include "mc/deps/script_core/binding_factory/scripting/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptMinecraftModuleFactory() /*override*/ = default;
+    virtual ~ScriptMinecraftModuleFactory() /*override*/;
     // NOLINTEND
 
 public:
@@ -53,8 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string getModuleName(::Scripting::Version version);
 
-    MCNAPI static ::mce::UUID getModuleUUID();
-
     MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::std::vector<::Scripting::Version> versions);
 
     MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
@@ -63,8 +61,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& LegacyModuleName();
-
     MCNAPI static char const*& ModuleName();
 
     MCNAPI static ::mce::UUID const& ModuleUUID();
@@ -74,6 +70,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ServerLevel* level);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

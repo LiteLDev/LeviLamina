@@ -52,22 +52,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SkinBanCheckProgressHandler();
-
-    MCAPI bool _shouldSkipCheck(::MinecraftScreenModel& minecraftScreenModel) const;
-
-    MCAPI void _verifySkin(::MinecraftScreenModel& minecraftScreenModel);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);

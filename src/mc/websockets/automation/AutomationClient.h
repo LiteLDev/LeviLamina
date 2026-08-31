@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CommandOrigin;
 class IMinecraftApp;
 namespace Automation { class AutomationSession; }
 namespace CodeBuilder { class GameContext; }
@@ -52,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AutomationClient() /*override*/;
+    virtual ~AutomationClient() /*override*/ = default;
 
     virtual void onUri(::ActivationUri const& uri) /*override*/;
 
@@ -82,8 +81,6 @@ public:
 
     MCNAPI void _forEachSession(::std::function<bool(::Automation::AutomationSession&)> const& callback);
 
-    MCNAPI void _removeSession(::Automation::AutomationSession const& session);
-
     MCNAPI bool _tryAddCommand(::CodeBuilder::CommandRequest&& commandRequest);
 
     MCNAPI ::std::shared_ptr<::Automation::AutomationSession> createSession();
@@ -91,40 +88,12 @@ public:
     MCNAPI ::std::shared_ptr<::Automation::AutomationSession> getDefaultSession();
 
     MCNAPI ::std::shared_ptr<::CodeBuilder::GameContext> getGameContext() const;
-
-    MCNAPI ::std::shared_ptr<::Automation::AutomationSession> getSessionForCommand(::CommandOrigin const& origin);
-
-#ifdef LL_PLAT_C
-    MCNAPI bool isReady();
-#endif
-
-    MCNAPI bool isReadyForInGameCommands();
-
-#ifdef LL_PLAT_C
-    MCNAPI bool isWebsocketsEnabled() const;
-#endif
-
-    MCNAPI void setRequireEncryption(bool isEncryptionRequired);
-
-#ifdef LL_PLAT_S
-    MCNAPI void setServerRetryTime(float retryTime);
-#endif
-
-#ifdef LL_PLAT_C
-    MCNAPI void setWebsocketsEnabled(bool enabled);
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::IMinecraftApp& minecraft);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -151,16 +120,6 @@ public:
     MCNAPI void $playerListChanged();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForUriListener();
-
-    MCNAPI static void** $vftableForIClient();
-
-    MCNAPI static void** $vftableForLevelListener();
     // NOLINTEND
 };
 

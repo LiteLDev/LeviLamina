@@ -44,14 +44,14 @@ public:
     MCAPI static ::TickingSystemWithInfo createApplyJumpModifierSystem();
 
     MCAPI static void tickApplyJumpModifierSystem(
-        ::StrictEntityContext const&         triggerJumpRequestComponent,
-        ::TriggerJumpRequestComponent const& actorRotationComponent,
-        ::ActorRotationComponent const&      attributesComponent,
-        ::MovementAttributesComponent const& mobEffectsComponent,
-        ::MobEffectsComponent const&         mobTravelComponent,
-        ::MobTravelComponent const&          jumpPendingScaleComponent,
-        ::JumpPendingScaleComponent&         stateVectorComponent,
-        ::StateVectorComponent&
+        ::StrictEntityContext const&,
+        ::TriggerJumpRequestComponent const& triggerJumpRequestComponent,
+        ::ActorRotationComponent const&      actorRotationComponent,
+        ::MovementAttributesComponent const& attributesComponent,
+        ::MobEffectsComponent const&         mobEffectsComponent,
+        ::MobTravelComponent const&          mobTravelComponent,
+        ::JumpPendingScaleComponent&         jumpPendingScaleComponent,
+        ::StateVectorComponent&              stateVectorComponent
     );
     // NOLINTEND
 };

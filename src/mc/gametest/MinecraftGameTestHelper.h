@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/gametest/framework/BaseGameTestHelper.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
@@ -21,7 +20,6 @@ class Dimension;
 class Item;
 class ItemStack;
 class Mob;
-class ServerNetworkHandler;
 class SimulatedPlayer;
 class Vec3;
 struct ActorDefinitionIdentifier;
@@ -45,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftGameTestHelper() /*override*/ = default;
+    virtual ~MinecraftGameTestHelper() /*override*/;
 
     virtual void succeedWhenEntityPresent(
         ::ActorDefinitionIdentifier const& actorIdentifier,
@@ -293,9 +291,13 @@ public:
 
     MCAPI int _getItemEntityCount(::Item const& item, ::AABB const& searchBounds);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> _getServerNetworkHandler() const;
-
     MCAPI ::std::optional<::gametest::GameTestError> _getStructureBlockMissingError() const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

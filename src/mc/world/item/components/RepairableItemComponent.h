@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CerealSchemaUpgradeSet;
 class ExpressionNode;
 class HashedString;
 class ItemStack;
@@ -59,8 +58,6 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
-
-    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:

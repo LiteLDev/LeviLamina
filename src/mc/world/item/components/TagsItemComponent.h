@@ -9,9 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class ComponentItem;
-class HashedString;
 class SemVersion;
-namespace SharedTypes::v1_20_50 { struct TagsItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -23,19 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TagsItemComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit TagsItemComponent(::SharedTypes::v1_20_50::TagsItemComponent component);
     // NOLINTEND
 
 public:
@@ -46,14 +34,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::TagsItemComponent component);
     // NOLINTEND
 
 public:

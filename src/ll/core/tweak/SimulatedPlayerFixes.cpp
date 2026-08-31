@@ -29,7 +29,7 @@ using GameTestSimulatedPlayerSpawnResult = std::variant<gametest::GameTestError,
 thread_local bool isSpawningGameTestSimulatedPlayer = false;
 
 bool shouldUsePlayerChunkLoading(SimulatedPlayer const& player) {
-    return !isSpawningGameTestSimulatedPlayer && !static_cast<bool>(player.getGameTestHelper());
+    return !isSpawningGameTestSimulatedPlayer && !*player.mGameTestHelper;
 }
 
 void configureSimulatedPlayerChunkRadius(SimulatedPlayer& player) {

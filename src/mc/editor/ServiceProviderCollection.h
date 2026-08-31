@@ -67,15 +67,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI ::std::vector<::std::string> getServiceList() const;
-
-    MCNAPI ~ServiceProviderCollection();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

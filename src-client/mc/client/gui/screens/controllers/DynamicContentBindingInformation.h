@@ -17,17 +17,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DynamicContentBindingInformation() = default;
+    virtual ~DynamicContentBindingInformation();
 
     virtual void createBindingData(::Json::Value const& contentData);
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void setEmoticonifyTextCallback(::std::function<::std::string(::std::string const&)> callback);
-
-    MCAPI void setOnContentItemChangedCallback(::std::function<void(::Json::Value&)> const& callback);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

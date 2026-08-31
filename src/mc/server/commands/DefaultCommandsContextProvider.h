@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DefaultCommandsContextProvider() /*override*/ = default;
+    virtual ~DefaultCommandsContextProvider() /*override*/;
 
     virtual ::ILevel* getLevel() /*override*/;
 
@@ -45,15 +45,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit DefaultCommandsContextProvider(::Minecraft& minecraft);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Minecraft& minecraft);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

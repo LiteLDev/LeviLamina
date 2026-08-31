@@ -24,21 +24,9 @@ public:
     ScriptTransferPlayerIpPortOptions();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ScriptTransferPlayerIpPortOptions();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

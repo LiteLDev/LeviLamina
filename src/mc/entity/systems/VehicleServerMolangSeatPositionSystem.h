@@ -21,11 +21,11 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _tickActor(
-        ::StrictEntityContext&               passengerComponent,
-        ::PassengerComponent const&          actorComponent,
-        ::ActorOwnerComponent&               positionPassengerRequestComponent,
-        ::PositionPassengerRequestComponent& vehicleView,
-        ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const>
+        ::StrictEntityContext&,
+        ::PassengerComponent const&          passengerComponent,
+        ::ActorOwnerComponent&               actorComponent,
+        ::PositionPassengerRequestComponent& positionPassengerRequestComponent,
+        ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> vehicleView
     );
 
     MCAPI static ::TickingSystemWithInfo createSystem();

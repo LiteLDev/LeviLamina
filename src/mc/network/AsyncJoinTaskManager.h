@@ -41,18 +41,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>               disconnected;
         ::ll::TypedStorage<8, 8, ::SourceClientHash> sourceClientHash;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~PendingVerdictEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -98,15 +86,6 @@ public:
         ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> defaultJoinVerdict
     );
 
-    MCAPI void _expirePendingVerdict(uint64 id);
-
-    MCAPI ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> _handleAllVerdictsTaskCompletion(
-        ::SubClientId                                                                    subClientId,
-        uint64                                                                           verdictId,
-        ::std::vector<::Bedrock::Threading::SharedAsync<
-            ::std::variant<::std::monostate, ::AsyncJoinAllow, ::AsyncJoinDeny>>> const& results
-    );
-
     MCAPI ::Bedrock::Threading::Async<::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny>> handleAsyncJoinCallbacks(
         ::NetworkIdentifier const&        source,
         ::PlayerAuthenticationInfo const& playerInfo,
@@ -121,8 +100,6 @@ public:
             ::std::shared_ptr<::AsyncVerdictPromise>
         )> callback
     );
-
-    MCAPI void removeExistingPendingVerdictIfPresent(::SourceClientHash);
     // NOLINTEND
 
 public:
@@ -138,11 +115,5 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

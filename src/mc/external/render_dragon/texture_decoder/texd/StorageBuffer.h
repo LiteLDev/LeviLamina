@@ -31,23 +31,14 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    StorageBuffer& operator=(StorageBuffer const&);
-    StorageBuffer(StorageBuffer const&);
+    StorageBuffer();
 
 #endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI StorageBuffer();
-
     MCAPI StorageBuffer(uchar const* data, uint64 size);
-
-    MCFOLD uchar const* data() const;
-
-    MCAPI ::texd::StorageBuffer& operator=(::texd::StorageBuffer&&);
-
-    MCAPI uint64 size() const;
 
     MCAPI ~StorageBuffer();
 #endif
@@ -57,8 +48,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void* $ctor();
-
     MCAPI void* $ctor(uchar const* data, uint64 size);
 #endif
     // NOLINTEND

@@ -50,7 +50,8 @@ public:
 
     virtual int getTickDelay() const;
 
-    virtual bool allowStateMismatchOnPlacement(::Block const&, ::Block const&) const /*override*/;
+    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
+        /*override*/;
 
     virtual void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
@@ -124,7 +125,7 @@ public:
 
     MCFOLD int $getTickDelay() const;
 
-    MCFOLD bool $allowStateMismatchOnPlacement(::Block const&, ::Block const&) const;
+    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
     MCAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
 

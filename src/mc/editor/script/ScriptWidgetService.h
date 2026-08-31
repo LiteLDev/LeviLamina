@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetService_GroupInterface.h"
 #include "mc/editor/script/ScriptWidgetService_WidgetInterface.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -18,7 +18,6 @@ namespace Editor::Network { class WidgetComponentStateChangePayload; }
 namespace Editor::Network { class WidgetStateChangePayload; }
 namespace Editor::ScriptModule { class ScriptWidget; }
 namespace Editor::ScriptModule { class ScriptWidgetGroup; }
-namespace Editor::ScriptModule { class ScriptWidgetGroupCreateOptions; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace mce { class UUID; }
@@ -68,18 +67,6 @@ public:
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup>>
-    _createGroup(::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options);
-
-    MCNAPI ::Scripting::Result_deprecated<void>
-    _deleteGroup(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete);
-
-    MCNAPI ::std::optional<::std::pair<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup>,
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>>>
-    _getWidgetGroupPair(::mce::UUID const& widgetId) const;
-
     MCNAPI void
     _handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload);
 
@@ -114,14 +101,6 @@ public:
     MCNAPI ::AABB const& $_getDimensionBounds() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScriptWidgetServiceWidgetInterface();
-
-    MCNAPI static void** $vftableForScriptWidgetServiceGroupInterface();
     // NOLINTEND
 };
 

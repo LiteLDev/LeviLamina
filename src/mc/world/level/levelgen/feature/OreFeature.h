@@ -34,12 +34,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Block const*, ::std::vector<::BlockType const*>>>> mRules;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void setRules(::std::vector<::ReplaceRule> const& replaceRules);
-        // NOLINTEND
     };
 
     struct SphereData {
@@ -61,18 +55,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::OreFeature::SphereData*>> mSpheres;
         ::ll::TypedStorage<4, 4, uint>                                      mActiveSpheres;
         ::ll::TypedStorage<1, 1, bool>                                      mInitialized;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~Helper();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -100,25 +82,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OreFeature();
-
-    MCAPI OreFeature(int count, ::std::vector<::ReplaceRule>&& replaceRules);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(int count, ::std::vector<::ReplaceRule>&& replaceRules);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

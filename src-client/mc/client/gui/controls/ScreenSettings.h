@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenSettings() /*override*/ = default;
+    virtual ~ScreenSettings() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -92,9 +92,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void setShouldSendEvents(bool sendEvents);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -104,17 +104,17 @@ public:
 
     MCFOLD void $reset();
 
-    MCFOLD bool $getScreenIsNotFlushable() const;
+    MCAPI bool $getScreenIsNotFlushable() const;
 
     MCAPI bool $getAlwaysAcceptsInput() const;
 
     MCAPI bool $getRenderGameBehind() const;
 
-    MCFOLD bool $getAbsorbsInput() const;
+    MCAPI bool $getAbsorbsInput() const;
 
-    MCFOLD bool $getIsShowingMenu() const;
+    MCAPI bool $getIsShowingMenu() const;
 
-    MCFOLD bool $getIsModal() const;
+    MCAPI bool $getIsModal() const;
 
     MCAPI bool $getShouldStealMouse() const;
 

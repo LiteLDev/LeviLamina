@@ -18,29 +18,18 @@ public:
 public:
     // prevent constructor by default
     FilterInputDefinition& operator=(FilterInputDefinition const&);
+    FilterInputDefinition(FilterInputDefinition const&);
     FilterInputDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FilterInputDefinition(::FilterInputDefinition const&);
-
     MCNAPI FilterInputDefinition(::FilterInput f, ::std::string const& d);
-
-    MCNAPI ~FilterInputDefinition();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::FilterInputDefinition const&);
-
     MCNAPI void* $ctor(::FilterInput f, ::std::string const& d);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

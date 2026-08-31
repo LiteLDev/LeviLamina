@@ -43,10 +43,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ScriptServerStateMonitor(::ServerScriptManagerEvents& events);
-
-    MCAPI bool isReloading() const;
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptServerState const& state() const;
     // NOLINTEND
 
 public:

@@ -22,16 +22,4 @@ public:
     ::ll::TypedStorage<4, 4, ::std::atomic<int>>                      mErrorCode;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mStartTime;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~StorageMigrationStatus();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

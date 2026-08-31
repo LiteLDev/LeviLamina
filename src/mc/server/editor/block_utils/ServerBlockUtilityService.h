@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/block_utils/CommonBlockUtilityService.h"
 #include "mc/editor/script/ServerBlockUtilityServiceProvider.h"
 
@@ -23,7 +23,7 @@ class ServerBlockUtilityService : public ::Editor::BlockUtils::CommonBlockUtilit
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerBlockUtilityService() /*override*/ = default;
+    virtual ~ServerBlockUtilityService() /*override*/;
 
     virtual ::Editor::BlockUtils::CommonBlockUtilityServiceProvider& getCommonInterface() /*override*/;
 
@@ -40,6 +40,12 @@ public:
     virtual ::Scripting::Result_deprecated<void> _implReady() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> _implQuit() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

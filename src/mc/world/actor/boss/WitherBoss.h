@@ -27,6 +27,7 @@ class MobEffectInstance;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct HurtEffectsSettings;
+struct HurtParameters;
 struct VariantParameterList;
 namespace mce { class UUID; }
 // clang-format on
@@ -126,7 +127,7 @@ public:
     virtual ::Vec3 getFiringPos() const /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
     // NOLINTEND
 
 public:
@@ -146,35 +147,15 @@ public:
         ::WitherBoss::WitherAttackType attackType
     );
 
-    MCAPI void _performRangedAttack(int headID, ::Actor& target);
-
     MCAPI void _performRangedAttack(int headID, ::Vec3 const& targetPos, bool dangerous);
 
     MCAPI void awardSpawnWitherAchievement() const;
-
-    MCAPI void baseDie();
-
-    MCAPI ::Vec2 getHeadRot(int headID) const;
-
-    MCAPI int getInvulnerableTicks() const;
-
-    MCAPI bool hasAerialAttack() const;
 
     MCAPI void postAiStep();
 
     MCAPI ::WitherBossPreAIStepResult preAiStep();
 
-    MCAPI void removeSkeleton();
-
     MCAPI void setAlternativeTarget(int headIndex, ::ActorUniqueID entityId);
-
-    MCAPI void setIsPathing(bool isPathing);
-
-    MCAPI void setShotDelay(int delay);
-
-    MCAPI void setWantsToMove(bool shouldMove);
-
-    MCAPI bool wantsToMove();
     // NOLINTEND
 
 public:
@@ -238,14 +219,9 @@ public:
 
     MCAPI ::Vec3 $getFiringPos() const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -41,30 +41,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SpecificEnchantFunction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SpecificEnchantFunction() /*override*/;
 
-    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
-    virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SpecificEnchantFunction(
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>&       predicates,
-        ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& enchantments
-    );
-
-    MCFOLD ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& getEnchantments() const;
     // NOLINTEND
 
 public:
@@ -72,15 +57,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>&       predicates,
-        ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& enchantments
-    );
     // NOLINTEND
 
 public:
@@ -92,18 +68,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext&);
+    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

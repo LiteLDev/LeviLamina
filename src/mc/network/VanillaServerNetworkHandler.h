@@ -34,26 +34,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VanillaServerNetworkHandler() /*override*/ = default;
+    virtual ~VanillaServerNetworkHandler() /*override*/;
 
     virtual void
     handle(::NetworkIdentifier const& source, ::ResourcePackClientResponsePacket const& packet) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI VanillaServerNetworkHandler(
-        ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> bedrockHandler,
-        ::ServerInstance&                                     serverInstance
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> bedrockHandler, ::ServerInstance& serverInstance);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

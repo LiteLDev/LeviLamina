@@ -30,11 +30,7 @@ MCNAPI bool canStayLeashedTo(::Actor const& actor, ::Actor const& leashHolder, f
 
 MCNAPI void forEachLeashedActor(::Actor const& leashHolder, ::brstd::function_ref<void(::Actor&)> callback);
 
-MCNAPI ::std::vector<::gsl::not_null<::Actor*>> getCuttableLeashedActors(::Actor& actor, ::Player const* player);
-
 MCNAPI float getDistanceSquared(::Actor const& actor, ::Vec3 const& position);
-
-MCNAPI ::Vec3 getFromToVector(::Actor const& actor1, ::Actor const& actor2);
 
 MCNAPI uint getLeashedActorCount(::Actor const& leashHolder);
 
@@ -42,8 +38,6 @@ MCNAPI ::LeashablePreset const&
 getPreset(::Actor const& leashedActor, ::LeashableComponent const& leashableComponent, ::Actor const* leashHolder);
 
 MCNAPI bool isAboveHardDistance(::Actor const& actor);
-
-MCNAPI bool isBeingPulledByLeash(::Actor const& actor);
 
 MCNAPI void leash(::Actor& entityToLeash, ::Actor& leashHolder, bool emitGameEvent, bool executeEntityEvent);
 

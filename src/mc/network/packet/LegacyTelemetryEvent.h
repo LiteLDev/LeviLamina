@@ -70,14 +70,6 @@ MCAPI ::LegacyTelemetryEventPacket packetForMobKilled(
     ::Actor const*                          killerEntity,
     ::ActorUniqueID const&                  killedMobID,
     ::SharedTypes::Legacy::ActorDamageCause cause,
-    ::ActorType                             damageChildType
-);
-
-MCAPI ::LegacyTelemetryEventPacket packetForMobKilled(
-    ::Player const&                         player,
-    ::Actor const*                          killerEntity,
-    ::ActorUniqueID const&                  killedMobID,
-    ::SharedTypes::Legacy::ActorDamageCause cause,
     ::std::string                           traderName,
     int                                     traderTier,
     ::ActorType                             damageChildType

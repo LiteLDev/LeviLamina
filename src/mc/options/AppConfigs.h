@@ -52,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AppConfigs() /*override*/;
+    virtual ~AppConfigs() /*override*/ = default;
 
     virtual void loadFromData(::IAppConfigData const&);
 
@@ -141,29 +141,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit AppConfigs(::AppConfigsDependencies&& dependencies);
-
-#ifdef LL_PLAT_C
-    MCAPI bool canAccessWorld(::LevelSummary const& levelSummary) const;
-
-    MCFOLD void setLeaveGameOverride(
-        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&, ::SceneFactory&)> leaveGameCallback
-    );
-
-    MCAPI bool
-    tryLeaveGameOverride(::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack, ::SceneFactory& sceneFactory);
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::AppConfigsDependencies&& dependencies);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -252,11 +235,5 @@ public:
     MCFOLD void $applyLevelDataOverride(::LevelData&) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -15,8 +15,8 @@ namespace ItemComponentHelpers {
 // NOLINTBEGIN
 MCAPI ::std::string const getHelpTextWithTogglesAndVersion(
     ::std::string const&                   description,
-    ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
-    ::std::optional<::SemVersion>
+    ::std::vector<::AllExperiments> const& requiredToggles,
+    ::std::optional<::SemVersion>          releasedMinFormatVersion
 );
 // NOLINTEND
 

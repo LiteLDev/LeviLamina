@@ -3,21 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/network/Connector.h"
 #include "mc/network/NetherNetConnector.h"
 
 // auto generated forward declare list
 // clang-format off
-class NetherNetTransportFactory;
 struct ConnectionDefinition;
 namespace NetherNet { struct NetworkID; }
 // clang-format on
 
 struct ServerNetherNetConnector : public ::NetherNetConnector {
-public:
-    // prevent constructor by default
-    ServerNetherNetConnector();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,29 +23,10 @@ public:
 
     virtual bool isServer() const /*override*/;
 
-    virtual bool OnSessionRequested(::NetherNet::NetworkID, uint64) /*override*/;
+    virtual bool
+        OnSessionRequested(::NetherNet::NetworkID, uint64, ::std::string_view, ::std::string_view) /*override*/;
 
     virtual void OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId, bool isLan) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ServerNetherNetConnector(
-        ::NetherNetTransportFactory const&      factory,
-        ::Connector::ConnectionCallbacks&       callbacks,
-        ::std::optional<::NetherNet::NetworkID> networkID
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::NetherNetTransportFactory const&      factory,
-        ::Connector::ConnectionCallbacks&       callbacks,
-        ::std::optional<::NetherNet::NetworkID> networkID
-    );
     // NOLINTEND
 
 public:
@@ -69,7 +44,7 @@ public:
 
     MCNAPI bool $isServer() const;
 
-    MCNAPI bool $OnSessionRequested(::NetherNet::NetworkID, uint64);
+    MCNAPI bool $OnSessionRequested(::NetherNet::NetworkID, uint64, ::std::string_view, ::std::string_view);
 
     MCNAPI void $OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId, bool isLan);
 

@@ -1,0 +1,109 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/script_core/runtime/watchdog/scripting/IWatchdog.h"
+
+// auto generated forward declare list
+// clang-format off
+struct JSContext;
+namespace Scripting { struct ContextId; }
+namespace Scripting { struct WatchdogEvent; }
+namespace Scripting::QuickJS { class ContextTimings; }
+// clang-format on
+
+namespace Scripting::QuickJS {
+
+class Watchdog : public ::Scripting::IWatchdog {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk4f214f;
+    ::ll::UntypedStorage<8, 64> mUnke0fc70;
+    ::ll::UntypedStorage<8, 8>  mUnk74e2d6;
+    ::ll::UntypedStorage<8, 16> mUnk83402b;
+    ::ll::UntypedStorage<8, 16> mUnke744e8;
+    ::ll::UntypedStorage<8, 8>  mUnk2babb0;
+    ::ll::UntypedStorage<8, 40> mUnk149bab;
+    ::ll::UntypedStorage<8, 24> mUnka13f8e;
+    ::ll::UntypedStorage<8, 24> mUnk9a7287;
+    ::ll::UntypedStorage<8, 8>  mUnk341985;
+    ::ll::UntypedStorage<1, 1>  mUnkc10073;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Watchdog& operator=(Watchdog const&);
+    Watchdog(Watchdog const&);
+    Watchdog();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~Watchdog() /*override*/;
+
+    virtual void
+    setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler) /*override*/;
+
+    virtual void setWatchdogInterruptPollCounter(uint counter) /*override*/;
+
+    virtual void beginTiming(::Scripting::ContextId contextId) /*override*/;
+
+    virtual void endTiming(::Scripting::ContextId contextId) /*override*/;
+
+    virtual void pushPhase(::std::string const& namedPhase, ::std::chrono::microseconds frameBaseLine) /*override*/;
+
+    virtual void popPhase() /*override*/;
+
+    virtual void endFrame() /*override*/;
+
+    virtual void resetTimings() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::QuickJS::ContextTimings& _getOrCreateContextTime(::Scripting::ContextId contextId);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _outOfMemoryHandler(::JSContext* ctx, void* runtimeOpaque);
+
+    MCNAPI static int _stackOverflowHandler(::JSContext* ctx, void* runtimeOpaque);
+
+    MCNAPI static int _timeoutHandler(::JSContext* ctx, void* runtimeOpaque);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI void $setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler);
+
+    MCNAPI void $setWatchdogInterruptPollCounter(uint counter);
+
+    MCNAPI void $beginTiming(::Scripting::ContextId contextId);
+
+    MCNAPI void $endTiming(::Scripting::ContextId contextId);
+
+    MCNAPI void $pushPhase(::std::string const& namedPhase, ::std::chrono::microseconds frameBaseLine);
+
+    MCNAPI void $popPhase();
+
+    MCNAPI void $endFrame();
+
+    MCNAPI void $resetTimings();
+
+
+    // NOLINTEND
+};
+
+} // namespace Scripting::QuickJS

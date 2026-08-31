@@ -8,7 +8,6 @@
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/enums/DirectionId.h"
 #include "mc/deps/input/enums/FocusImpact.h"
 
@@ -73,7 +72,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InGamePlayScreen() /*override*/;
+    virtual ~InGamePlayScreen() /*override*/ = default;
 
     virtual void applyInput(float a) /*override*/;
 
@@ -81,7 +80,7 @@ public:
 
     virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) /*override*/;
 
-    virtual void postRenderUpdate(::ScreenContext&) /*override*/;
+    virtual void postRenderUpdate(::ScreenContext& screenContext) /*override*/;
 
     virtual void onFocusGained() /*override*/;
 
@@ -97,7 +96,7 @@ public:
 
     virtual bool shouldStealMouse() const /*override*/;
 
-    virtual void handleDirection(::DirectionId directionId, float dx, float dy, ::FocusImpact) /*override*/;
+    virtual void handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact) /*override*/;
 
     virtual void handlePointerPressed(bool pressed) /*override*/;
 
@@ -122,18 +121,18 @@ public:
 
     virtual void _renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    virtual void _preLevelRender(::ScreenContext&);
+    virtual void _preLevelRender(::ScreenContext& screenContext);
 
-    virtual void _postLevelRender(::ScreenContext& levelRenderer, ::LevelRenderer&);
+    virtual void _postLevelRender(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
 
-    virtual bool _shouldRenderFirstPersonObjects(::LevelRenderer&) const;
+    virtual bool _shouldRenderFirstPersonObjects(::LevelRenderer& levelRenderer) const;
 
     virtual bool _updateFreeformPickDirection(
-        float        outSrc,
+        float,
+        ::Vec3&      outSrc,
         ::Vec3&      outDir,
-        ::Vec3&      outHitResult,
-        ::HitResult& outLiquidHit,
-        ::HitResult&
+        ::HitResult& outHitResult,
+        ::HitResult& outLiquidHit
     );
 
     virtual void _saveMatrices(::mce::Camera& camera);
@@ -144,49 +143,13 @@ public:
 
     virtual void _prepareCuller(::mce::Camera& camera, ::Frustum& frustumData);
 
-    virtual void _localPlayerTurned(float);
+    virtual void _localPlayerTurned(float yawDegrees);
 
     virtual float _getPickRange();
 
     virtual bool _shouldPushHUD();
 
     virtual void _updateInGameCursor();
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    InGamePlayScreen(::IMinecraftGame& minecraftGame, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
-
-    MCAPI void _applyInput_Standard(::InputMode const& inputMode, float xo, float yo, float a);
-
-    MCAPI void _pick(float a);
-
-    MCAPI bool _showHand() const;
-
-    MCAPI bool _showOverlay() const;
-
-    MCAPI void _tryTickRelativeStrafeRotation();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Vec2
-    calculateTurnDelta(::IClientInstance const& client, ::Vec2 const& newDelta, ::Vec2 const& currentDelta);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftGame& minecraftGame, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -198,7 +161,7 @@ public:
 
     MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    MCFOLD void $postRenderUpdate(::ScreenContext&);
+    MCFOLD void $postRenderUpdate(::ScreenContext& screenContext);
 
     MCFOLD void $onFocusGained();
 
@@ -214,7 +177,7 @@ public:
 
     MCAPI bool $shouldStealMouse() const;
 
-    MCAPI void $handleDirection(::DirectionId directionId, float dx, float dy, ::FocusImpact);
+    MCAPI void $handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact);
 
     MCAPI void $handlePointerPressed(bool pressed);
 
@@ -238,18 +201,18 @@ public:
 
     MCAPI void $_renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    MCFOLD void $_preLevelRender(::ScreenContext&);
+    MCFOLD void $_preLevelRender(::ScreenContext& screenContext);
 
-    MCAPI void $_postLevelRender(::ScreenContext& levelRenderer, ::LevelRenderer&);
+    MCAPI void $_postLevelRender(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
 
-    MCAPI bool $_shouldRenderFirstPersonObjects(::LevelRenderer&) const;
+    MCAPI bool $_shouldRenderFirstPersonObjects(::LevelRenderer& levelRenderer) const;
 
     MCAPI bool $_updateFreeformPickDirection(
-        float        outSrc,
+        float,
+        ::Vec3&      outSrc,
         ::Vec3&      outDir,
-        ::Vec3&      outHitResult,
-        ::HitResult& outLiquidHit,
-        ::HitResult&
+        ::HitResult& outHitResult,
+        ::HitResult& outLiquidHit
     );
 
     MCAPI void $_saveMatrices(::mce::Camera& camera);
@@ -260,18 +223,12 @@ public:
 
     MCAPI void $_prepareCuller(::mce::Camera& camera, ::Frustum& frustumData);
 
-    MCFOLD void $_localPlayerTurned(float);
+    MCFOLD void $_localPlayerTurned(float yawDegrees);
 
     MCAPI float $_getPickRange();
 
     MCFOLD bool $_shouldPushHUD();
 
     MCFOLD void $_updateInGameCursor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

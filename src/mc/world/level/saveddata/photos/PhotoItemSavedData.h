@@ -14,16 +14,4 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mPhotoOwner;
     ::ll::TypedStorage<1, 1, bool>            mDirty;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD ::ActorUniqueID getId() const;
-
-    MCFOLD ::std::string const& getPhotoName() const;
-
-    MCFOLD ::ActorUniqueID getPhotoOwner() const;
-#endif
-    // NOLINTEND
 };

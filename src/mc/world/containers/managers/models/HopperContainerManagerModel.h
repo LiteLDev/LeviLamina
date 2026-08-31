@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HopperContainerManagerModel() /*override*/ = default;
+    virtual ~HopperContainerManagerModel() /*override*/;
 
     virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
@@ -41,6 +41,12 @@ public:
     MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
     MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueID);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

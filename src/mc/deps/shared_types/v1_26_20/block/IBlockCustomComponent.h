@@ -21,12 +21,6 @@ public:
 
     virtual ~IBlockCustomComponent() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_26_20::BlockDefinition

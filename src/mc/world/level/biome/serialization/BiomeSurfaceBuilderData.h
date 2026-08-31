@@ -30,32 +30,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BiomeSurfaceBuilderData& operator=(BiomeSurfaceBuilderData const&);
-    BiomeSurfaceBuilderData(BiomeSurfaceBuilderData const&);
-    BiomeSurfaceBuilderData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BiomeSurfaceBuilderData& operator=(::BiomeSurfaceBuilderData&&);
-
     MCAPI bool operator==(::BiomeSurfaceBuilderData const& other) const;
 
     MCAPI void write(::BinaryStream& stream) const;
-
-    MCAPI ~BiomeSurfaceBuilderData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::BiomeSurfaceBuilderData> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

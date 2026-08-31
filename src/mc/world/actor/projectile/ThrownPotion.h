@@ -45,16 +45,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCAPI short getPotionId() const;
-
-    MCAPI void setLinger(bool linger);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& SPLASH_RANGE();
     // NOLINTEND
 
 public:
@@ -76,7 +66,7 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD void $setAuxValue(int aux);
+    MCAPI void $setAuxValue(int aux);
 
     MCAPI ::HashedString const& $queryEntityRenderer() const;
 

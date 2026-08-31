@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GroupInfoComponent() /*override*/ = default;
+    virtual ~GroupInfoComponent() /*override*/;
 
     virtual ::Settings::ComponentState getDefaultState() const /*override*/;
     // NOLINTEND
@@ -32,8 +32,6 @@ public:
     // NOLINTBEGIN
     MCAPI
     GroupInfoComponent(::std::string_view id, ::std::string_view name, ::std::optional<::std::string> description);
-
-    MCAPI bool flush();
     // NOLINTEND
 
 public:
@@ -43,15 +41,15 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCFOLD ::Settings::ComponentState $getDefaultState() const;
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCFOLD ::Settings::ComponentState $getDefaultState() const;
     // NOLINTEND
 };
 

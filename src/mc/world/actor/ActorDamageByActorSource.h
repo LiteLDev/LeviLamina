@@ -31,15 +31,13 @@ public:
 public:
     // prevent constructor by default
     ActorDamageByActorSource& operator=(ActorDamageByActorSource const&);
+    ActorDamageByActorSource(ActorDamageByActorSource const&);
     ActorDamageByActorSource();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isEntitySource() const /*override*/;
-
-    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
-    getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
 
     virtual bool getIsCreative() const /*override*/;
 
@@ -56,22 +54,29 @@ public:
     virtual ::ActorType getDamagingEntityType() const /*override*/;
 
     virtual ::std::unique_ptr<::ActorDamageSource> clone() const /*override*/;
+
+    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
+    _getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const /*override*/;
+
+    virtual ~ActorDamageByActorSource() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDamageByActorSource(::ActorDamageByActorSource const&);
-
     MCAPI ActorDamageByActorSource(::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDamageByActorSource const&);
-
     MCAPI void* $ctor(::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -79,12 +84,17 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isEntitySource() const;
 
-    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
-    $getDeathMessage(::std::string deadName, ::Actor* dead) const;
-
+#ifdef LL_PLAT_S
+    MCAPI bool $getIsCreative() const;
+#else // LL_PLAT_C
     MCFOLD bool $getIsCreative() const;
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI bool $getIsWorldBuilder() const;
+#else // LL_PLAT_C
     MCFOLD bool $getIsWorldBuilder() const;
+#endif
 
     MCFOLD ::ActorUniqueID $getEntityUniqueID() const;
 
@@ -97,6 +107,9 @@ public:
     MCFOLD ::ActorType $getDamagingEntityType() const;
 
     MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
+
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    $_getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const;
 
 
     // NOLINTEND

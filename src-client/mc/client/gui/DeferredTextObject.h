@@ -14,12 +14,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::string const& getRawText() const;
-
     MCAPI void setParseRawInputCallback(::std::function<void()> callback);
 
     MCAPI void setRawText(::std::string const& str);
-
-    MCAPI void tick();
     // NOLINTEND
 };

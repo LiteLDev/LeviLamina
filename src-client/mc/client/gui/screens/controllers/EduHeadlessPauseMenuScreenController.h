@@ -20,7 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EduHeadlessPauseMenuScreenController() /*override*/ = default;
+    virtual ~EduHeadlessPauseMenuScreenController() /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
     // NOLINTEND
@@ -32,14 +32,18 @@ public:
         ::std::shared_ptr<::PauseScreenModel> model,
         ::std::vector<::ActorUniqueID> const& clientIds
     );
-
-    MCAPI void _registerBindings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::PauseScreenModel> model, ::std::vector<::ActorUniqueID> const& clientIds);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

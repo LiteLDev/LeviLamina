@@ -51,19 +51,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AppPlatform_GameCore();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AppPlatform_GameCore() /*override*/;
+    virtual ~AppPlatform_GameCore() /*override*/ = default;
 
     virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename) /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
-    virtual bool canLaunchUri(::std::string const&) /*override*/;
+    virtual bool canLaunchUri(::std::string const& uri) /*override*/;
 
     virtual void launchUri(::std::string const& uri) /*override*/;
 
@@ -198,41 +194,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AppPlatform_GameCore(
-        ::HWND__*                                      hWnd,
-        ::std::string const&                           dataFolder,
-        ::std::string_view                             appName,
-        int                                            screenWidth,
-        int                                            screenHeight,
-        ::gsl::not_null<::Bedrock::Platform_GameCore*> platformGameCore
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _onInviteReceived(void* context, char const* inviteUri);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::HWND__*                                      hWnd,
-        ::std::string const&                           dataFolder,
-        ::std::string_view                             appName,
-        int                                            screenWidth,
-        int                                            screenHeight,
-        ::gsl::not_null<::Bedrock::Platform_GameCore*> platformGameCore
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -242,15 +206,15 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    MCFOLD bool $canLaunchUri(::std::string const&);
+    MCFOLD bool $canLaunchUri(::std::string const& uri);
 
     MCAPI void $launchUri(::std::string const& uri);
 
-    MCFOLD ::Core::PathBuffer<::std::string> $getPackagePath() const;
+    MCAPI ::Core::PathBuffer<::std::string> $getPackagePath() const;
 
     MCAPI ::Core::PathBuffer<::std::string> $getLoggingPath() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> $getDataUrl() const;
+    MCAPI ::Core::PathBuffer<::std::string> $getDataUrl() const;
 
     MCAPI ::Core::PathBuffer<::std::string> $getUserStorageRootPath() const;
 
@@ -345,11 +309,11 @@ public:
 
     MCAPI ::std::variant<::HWND__*, ::std::monostate> $getRenderSurfaceParameters() const;
 
-    MCFOLD bool $isLANAvailable() const;
+    MCAPI bool $isLANAvailable() const;
 
     MCAPI bool $isNetworkAllowed() const;
 
-    MCFOLD bool $isNetworkAvailable() const;
+    MCAPI bool $isNetworkAvailable() const;
 
     MCAPI bool $isInternetAvailable() const;
 
@@ -369,13 +333,5 @@ public:
     MCAPI int $getPlatformDpi() const;
 
     MCAPI ::Bedrock::CommonPlatform* $getPlatformShim() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForISecureStorageKeySystem();
-
-    MCNAPI static void** $vftableForIAppPlatform();
     // NOLINTEND
 };

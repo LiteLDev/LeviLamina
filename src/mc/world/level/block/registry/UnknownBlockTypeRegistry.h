@@ -29,15 +29,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UnknownBlockTypeRegistry() /*override*/ = default;
+    virtual ~UnknownBlockTypeRegistry() /*override*/;
 
     virtual ::Block const& getUnknownBlock(::CompoundTag const& serId) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void _registerBlock(::std::string const& name, uint64 serIdHash);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -46,11 +46,5 @@ public:
     MCAPI ::Block const& $getUnknownBlock(::CompoundTag const& serId);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

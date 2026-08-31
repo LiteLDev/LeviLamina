@@ -14,20 +14,14 @@ class WindChargedMobEffect : public ::MobEffect {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onActorDied(::Actor& target, int) const /*override*/;
+    virtual void onActorDied(::Actor& target, int amplifier) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onActorDied(::Actor& target, int) const;
+    MCAPI void $onActorDied(::Actor& target, int amplifier) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

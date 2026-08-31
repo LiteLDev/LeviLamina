@@ -26,18 +26,17 @@ public:
 public:
     // prevent constructor by default
     MessageButton& operator=(MessageButton const&);
+    MessageButton(MessageButton const&);
     MessageButton();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MessageButton(::OreUI::MessageButton const&);
-
     MCAPI explicit MessageButton(::ButtonData const& button);
 
     MCAPI void openExternalLink();
 
-    MCFOLD ::OreUI::MessageButton& operator=(::OreUI::MessageButton&&);
+    MCAPI ::OreUI::MessageButton& operator=(::OreUI::MessageButton&&);
 
     MCAPI ~MessageButton();
     // NOLINTEND
@@ -45,8 +44,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::OreUI::MessageButton const&);
-
     MCFOLD void* $ctor(::ButtonData const& button);
     // NOLINTEND
 

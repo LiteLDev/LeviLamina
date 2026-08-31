@@ -15,16 +15,11 @@ class BlockPos;
 class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Material;
 class Player;
 struct ActorBlockSyncMessage;
 // clang-format on
 
 class AirBlock : public ::BlockType {
-public:
-    // prevent constructor by default
-    AirBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -34,9 +29,10 @@ public:
     virtual ::AABB const& getVisualShape(::Block const&, ::AABB&) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& bufferValue, ::IConstBlockSource const&, ::BlockPos const&, ::AABB&) const /*override*/;
+    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const /*override*/;
 
-    virtual bool isObstructingChests(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
+    virtual bool isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const
+        /*override*/;
 
     virtual void addAABBs(
         ::Block const&             block,
@@ -62,13 +58,14 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
     virtual bool mayPick() const /*override*/;
 
-    virtual bool mayPick(::BlockSource const&, ::Block const&, bool) const /*override*/;
+    virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
 
-    virtual bool mayPlace(::BlockSource&, ::BlockPos const&, uchar) const /*override*/;
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -79,22 +76,12 @@ public:
         ::ActorBlockSyncMessage const* syncMsg
     ) const /*override*/;
 
-    virtual void destroy(::BlockSource&, ::BlockPos const&, ::Block const&, ::Actor*) const /*override*/;
+    virtual void
+    destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const
+        /*override*/;
 
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AirBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -106,9 +93,9 @@ public:
     MCFOLD ::AABB const& $getVisualShape(::Block const&, ::AABB&) const;
 
     MCAPI ::AABB const&
-    $getOutline(::Block const& bufferValue, ::IConstBlockSource const&, ::BlockPos const&, ::AABB&) const;
+    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const;
 
-    MCFOLD bool $isObstructingChests(::BlockSource&, ::BlockPos const&, ::Block const&) const;
+    MCFOLD bool $isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const;
 
     MCFOLD void $addAABBs(
         ::Block const&             block,
@@ -134,13 +121,13 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
     MCFOLD bool $mayPick() const;
 
-    MCFOLD bool $mayPick(::BlockSource const&, ::Block const&, bool) const;
+    MCFOLD bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
-    MCFOLD bool $mayPlace(::BlockSource&, ::BlockPos const&, uchar) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -151,7 +138,8 @@ public:
         ::ActorBlockSyncMessage const* syncMsg
     ) const;
 
-    MCFOLD void $destroy(::BlockSource&, ::BlockPos const&, ::Block const&, ::Actor*) const;
+    MCFOLD void
+    $destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;
 
     MCFOLD ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 

@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
@@ -25,15 +24,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Feature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~Feature() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~Feature() /*override*/;
+#endif
 
-    virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const = 0;
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const = 0;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
@@ -41,23 +40,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Feature(::Actor* placer);
-
     MCAPI bool _placeBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
-
-    MCAPI void _setManuallyPlaced(::Actor* placer);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor* placer);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD void $dtor();
+#endif
     // NOLINTEND
 
 public:

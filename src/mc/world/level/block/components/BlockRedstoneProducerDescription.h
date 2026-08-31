@@ -29,10 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockRedstoneProducerDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -47,19 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockRedstoneProducerDescription(
-        int                                   outputPower,
-        uchar                                 stronglyPoweredFace,
-        ::Bedrock::EnumSet<::Facing::Name, 6> connectedFaces,
-        bool                                  isTransformRelative,
-        bool                                  allowPowerUp,
-        bool                                  allowPowerDown
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -69,19 +52,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        int                                   outputPower,
-        uchar                                 stronglyPoweredFace,
-        ::Bedrock::EnumSet<::Facing::Name, 6> connectedFaces,
-        bool                                  isTransformRelative,
-        bool                                  allowPowerUp,
-        bool                                  allowPowerDown
-    );
     // NOLINTEND
 
 public:

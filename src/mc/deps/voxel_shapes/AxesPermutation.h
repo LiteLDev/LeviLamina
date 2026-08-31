@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-// clang-format on
-
 namespace VoxelShapes {
 
 class AxesPermutation {
@@ -22,12 +17,6 @@ public:
     AxesPermutation& operator=(AxesPermutation const&);
     AxesPermutation(AxesPermutation const&);
     AxesPermutation();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::VoxelShapes::AxesPermutation calculateAxesPermutation(::Vec3 rotation);
-    // NOLINTEND
 
 public:
     // static variables

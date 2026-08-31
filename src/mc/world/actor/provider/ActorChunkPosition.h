@@ -13,8 +13,6 @@ namespace ActorChunkPosition {
 // NOLINTBEGIN
 MCAPI ::ChunkPos const& getChunkPosition(::EntityContext const& provider);
 
-MCAPI void initializeActor(::EntityContext& provider);
-
 MCAPI void setChunkPosition(::EntityContext& provider, ::ChunkPos const& chunkPosition);
 // NOLINTEND
 

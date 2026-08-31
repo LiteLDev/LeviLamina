@@ -8,7 +8,7 @@
 #include "mc/world/actor/Hopper.h"
 #include "mc/world/item/ItemStack.h"
 #include "mc/world/level/Tick.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,7 +23,7 @@ class ILevel;
 class SaveContext;
 // clang-format on
 
-class HopperBlockActor : public ::BlockActor, public ::Container, public ::Hopper {
+class HopperBlockActor : public ::VanillaBlockActor, public ::Container, public ::Hopper {
 public:
     // member variables
     // NOLINTBEGIN
@@ -88,11 +88,7 @@ public:
 
     MCAPI int _countItems() const;
 
-    MCAPI void _ensureTickingOrder(::BlockSource& region, int maxRecursion);
-
     MCAPI void _tick(::BlockSource& region, int maxRecursion);
-
-    MCAPI void checkForSmeltEverythingAchievement(::BlockSource& region);
 
     MCAPI ::FurnaceBlockActor* getAttachedFurnace(::BlockSource& region);
 
@@ -101,10 +97,6 @@ public:
     MCAPI bool isAttachedToContainerType(::BlockSource& region, ::SharedTypes::Legacy::ContainerType containerType);
 
     MCAPI bool isSourceOfContainerType(::BlockSource& region, ::SharedTypes::Legacy::ContainerType containerType);
-
-    MCAPI void updateCooldownAfterMove(::Tick const& currentTick, int time);
-
-    MCAPI void updateMoveCooldownAfterMove(::Tick const& currentTick, int time);
     // NOLINTEND
 
 public:
@@ -140,7 +132,7 @@ public:
 
     MCFOLD ::Container const* $getContainer() const;
 
-    MCAPI void $setContainerChanged(int slot);
+    MCFOLD void $setContainerChanged(int slot);
 
     MCFOLD void $onRemoved(::BlockSource&);
 
@@ -154,18 +146,10 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockActor();
-
-    MCAPI static void** $vftableForContainer();
     // NOLINTEND
 };

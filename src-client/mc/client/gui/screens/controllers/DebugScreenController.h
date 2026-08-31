@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DebugScreenController() /*override*/ = default;
+    virtual ~DebugScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -47,14 +47,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit DebugScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

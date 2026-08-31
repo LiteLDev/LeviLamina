@@ -45,10 +45,4 @@ public:
 
     MCFOLD ::ContentItemCollectionVersion $getVersion() const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

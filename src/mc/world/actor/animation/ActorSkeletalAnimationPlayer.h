@@ -80,24 +80,10 @@ public:
         ::ExpressionNode const&     blendExpression
     );
 
-    MCAPI void _animateBones(
-        ::RenderParams&                                                                   renderParams,
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationMap,
-        float                                                                             blendWeight
-    );
-
-#ifdef LL_PLAT_C
-    MCAPI void _fireSoundEvents(::RenderParams& renderParams);
-
-    MCAPI void _rebuildBoneAnimationPlayers();
-#endif
-
     MCAPI void _setDefaultPose(
         ::RenderParams&                                                                   renderParams,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationMap
     ) const;
-
-    MCAPI bool _updateAnimTime(::RenderParams& renderParams);
     // NOLINTEND
 
 public:
@@ -123,14 +109,17 @@ public:
 
     MCAPI void $resetAnimation();
 
+#ifdef LL_PLAT_S
     MCFOLD void $buildBoneToPartMapping(::AnimationComponent& animationComponent);
+#else // LL_PLAT_C
+    MCAPI void $buildBoneToPartMapping(::AnimationComponent& animationComponent);
+#endif
 
-    MCFOLD void
-    $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
+    MCAPI void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
 
-    MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
+    MCAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
 
-    MCFOLD bool $hasAnimationFinished() const;
+    MCAPI bool $hasAnimationFinished() const;
 
     MCFOLD ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const&);
 

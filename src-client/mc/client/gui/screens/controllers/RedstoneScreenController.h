@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RedstoneScreenController() /*override*/ = default;
+    virtual ~RedstoneScreenController() /*override*/;
     // NOLINTEND
 
 public:
@@ -50,10 +50,8 @@ public:
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -25,34 +25,6 @@ public:
         ::ll::TypedStorage<4, 4, int> mItemId;
         ::ll::TypedStorage<4, 4, int> mData;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Ingredient();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit Ingredient(::ItemInstance const& item);
-
-#ifdef LL_PLAT_C
-        MCAPI Ingredient(::Item const& item, int data);
-#endif
-
-        MCFOLD int getData() const;
-
-        MCFOLD int getItemId() const;
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ItemInstance const& item);
-
-#ifdef LL_PLAT_C
-        MCAPI void* $ctor(::Item const& item, int data);
-#endif
-        // NOLINTEND
     };
 
     template <typename T0>
@@ -73,8 +45,6 @@ public:
     MCAPI static ::ItemInstance getChemistryMix(::ItemDescriptor const& from, ::ItemDescriptor const& ingredient);
 
     MCAPI static int getFuelValue(::ItemDescriptor const& item);
-
-    MCAPI static bool hasContainerMix(::ItemDescriptor const& source, ::ItemDescriptor const& ingredient);
 
     MCAPI static bool hasMix(::ItemInstance const& source, ::ItemDescriptor const& ingredient);
 
@@ -99,8 +69,6 @@ public:
     MCAPI static ::std::vector<::PotionBrewing::Mix<::ItemInstance>>& mChemistryMixes();
 
     MCAPI static ::std::vector<::PotionBrewing::Mix<::Item const&>>& mContainerMixes();
-
-    MCAPI static bool& mIsInitialized();
 
     MCAPI static ::std::vector<::PotionBrewing::Mix<::ItemDescriptor>>& mPotionMixes();
 

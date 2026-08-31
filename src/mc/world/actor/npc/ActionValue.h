@@ -13,36 +13,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActionValue& operator=(ActionValue const&);
-    ActionValue();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActionValue(::npc::ActionValue const&);
-
-#ifdef LL_PLAT_C
-    MCFOLD ::npc::ActionValue& operator=(::npc::ActionValue&&);
-#endif
-
     MCAPI ::npc::ActionValue& operator=(::std::string_view newName);
-
-    MCAPI ::std::string_view rawValue() const;
-
-    MCAPI ~ActionValue();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::npc::ActionValue const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

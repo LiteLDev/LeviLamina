@@ -44,10 +44,6 @@ public:
     MCNAPI void _hideGlobalSaveIcon();
 
     MCNAPI void _showGlobalSaveIcon();
-
-    MCNAPI void onBeginCompaction();
-
-    MCNAPI void onEndCompaction();
     // NOLINTEND
 
 public:

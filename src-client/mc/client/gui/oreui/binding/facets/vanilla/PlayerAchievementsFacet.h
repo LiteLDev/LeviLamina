@@ -3,17 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/AchievementsFacet.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/FacetPlayerAchievementData.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/identity/XUID.h"
-#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace OreUI { class IResourceAllowList; }
-namespace OreUI { struct FacetAchievementData; }
 namespace Social { class IUserManager; }
 namespace Social { class XboxLiveUserAchievements; }
 namespace persona { class AchievementOfferCollectionManager; }
@@ -21,7 +19,7 @@ namespace persona { class AchievementOfferCollectionManager; }
 
 namespace OreUI {
 
-class PlayerAchievementsFacet : public ::OreUI::FacetBase<::OreUI::PlayerAchievementsFacet> {
+class PlayerAchievementsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PlayerAchievementsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -59,12 +57,6 @@ public:
         ::persona::AchievementOfferCollectionManager&              achievementOfferCollectionManager
     );
 
-    MCAPI ::Bedrock::Result<void> _load(::std::string const& id);
-
-    MCAPI void _updateAchievementData();
-
-    MCAPI void _updatePersona(::OreUI::FacetAchievementData& facetAchievement) const;
-
     MCFOLD ::OreUI::FacetPlayerAchievementData const& getData();
 
     MCFOLD ::OreUI::AchievementsFacet::AchievementFacetStatus const& getStatus();
@@ -98,12 +90,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

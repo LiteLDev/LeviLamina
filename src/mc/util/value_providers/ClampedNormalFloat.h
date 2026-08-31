@@ -30,12 +30,6 @@ public:
     // NOLINTBEGIN
     MCNAPI float generateNext(::Random& random) const;
     // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static float generateNext(::Random& random, float mean, float deviation, float min, float max);
-    // NOLINTEND
 };
 
 } // namespace ValueProviders

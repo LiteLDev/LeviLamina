@@ -10,9 +10,9 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class VoiceMediaReceiveChannelInterface; }
 namespace webrtc { class AudioTrackSinkInterface; }
 namespace webrtc { class TaskQueueBase; }
+namespace webrtc { class VoiceMediaReceiveChannelInterface; }
 // clang-format on
 
 namespace webrtc {
@@ -114,9 +114,9 @@ public:
 
     MCNAPI void SetState(::webrtc::MediaSourceInterface::SourceState new_state);
 
-    MCNAPI void Start(::cricket::VoiceMediaReceiveChannelInterface* media_channel, ::std::optional<uint> ssrc);
+    MCNAPI void Start(::webrtc::VoiceMediaReceiveChannelInterface* media_channel, ::std::optional<uint> ssrc);
 
-    MCNAPI void Stop(::cricket::VoiceMediaReceiveChannelInterface* media_channel, ::std::optional<uint> ssrc);
+    MCNAPI void Stop(::webrtc::VoiceMediaReceiveChannelInterface* media_channel, ::std::optional<uint> ssrc);
     // NOLINTEND
 
 public:

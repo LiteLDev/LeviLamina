@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-struct BlockBakedMaterialDataComponent;
 struct BlockMaterialInstancesComponent;
 namespace ClientBlockPipeline { class Material; }
 namespace ClientBlockPipeline { struct BlockSchematic; }
@@ -46,32 +45,12 @@ public:
         ::ClientBlockPipeline::BlockSchematic const& blockSchematic,
         ::BlockMaterialInstancesComponent const&     materialInstance
     );
-
-    MCFOLD bool hasAlphaMaskedTint() const;
-
-    MCFOLD bool hasIsotropicMaterial() const;
-
-    MCFOLD bool hasTextureVariations() const;
-
-    MCFOLD bool isOpaqueForOccluding() const;
-
-    MCAPI ::ClientBlockPipeline::Material const* resolveMaterial(int materialInstanceId, uchar facing) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bake(
-        ::BlockBakedMaterialDataComponent&           bakedMaterialData,
-        ::BlockMaterialInstancesComponent const*     materialInstancesComponent,
-        ::ClientBlockPipeline::BlockSchematic const* blockSchematic
-    );
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> MATERIAL_INSTANCE_FIND_ERROR();
+    MCAPI static ::std::add_lvalue_reference_t<char const[83]> MATERIAL_INSTANCE_FIND_ERROR();
     // NOLINTEND
 };
 

@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourceLoader() /*override*/;
+    virtual ~ResourceLoader() /*override*/ = default;
 
     virtual bool load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const = 0;
 
@@ -42,19 +42,11 @@ public:
         ::gsl::span<::std::string const> extensionList
     ) const = 0;
 
-#ifdef LL_PLAT_S
     virtual bool load(
         ::ResourceLocationPair const&    resourceLocationPair,
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensionList
     ) const;
-#else // LL_PLAT_C
-    virtual bool load(
-        ::ResourceLocationPair const&    resourceLocation,
-        ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensionList
-    ) const;
-#endif
 
     virtual bool loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
@@ -100,12 +92,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::function<::Core::PathBuffer<::std::string>()> getPath);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

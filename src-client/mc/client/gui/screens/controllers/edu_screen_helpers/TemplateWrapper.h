@@ -19,20 +19,6 @@ public:
     ::ll::TypedStorage<1, 1, ::EDUScreenHelpers::TemplateType> mType;
     ::ll::TypedStorage<8, 8, ::WorldTemplateInfo const*>       mLocalInfo;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::string getSubtext1();
-
-    MCAPI ::std::string getSubtext2();
-
-    MCAPI ::std::string getTexture();
-
-    MCAPI ::std::string getTextureSource();
-
-    MCAPI ::std::string getTextureZip();
-    // NOLINTEND
 };
 
 } // namespace EDUScreenHelpers

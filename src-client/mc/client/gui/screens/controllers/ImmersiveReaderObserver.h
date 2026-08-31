@@ -23,10 +23,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $onMessageRecieved(::std::string const& message);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

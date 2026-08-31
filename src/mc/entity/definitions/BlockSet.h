@@ -15,16 +15,4 @@ public:
     BlockSet& operator=(BlockSet const&);
     BlockSet(BlockSet const&);
     BlockSet();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~BlockSet();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

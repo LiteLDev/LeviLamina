@@ -43,7 +43,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~DevConsoleCommandOrigin() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~DevConsoleCommandOrigin() /*override*/;
+#endif
 
     virtual ::std::string const& getRequestId() const /*override*/;
 
@@ -89,8 +93,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI explicit DevConsoleCommandOrigin(::Player& player);
-
-    MCAPI DevConsoleCommandOrigin(::ActorUniqueID id, ::Level* level, ::NetworkIdentifier source, ::SubClientId sub);
 #endif
     // NOLINTEND
 
@@ -99,8 +101,14 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::Player& player);
+#endif
+    // NOLINTEND
 
-    MCAPI void* $ctor(::ActorUniqueID id, ::Level* level, ::NetworkIdentifier source, ::SubClientId sub);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
 #endif
     // NOLINTEND
 
@@ -134,7 +142,7 @@ public:
 
     MCFOLD ::NetworkIdentifier const& $getSourceId() const;
 
-    MCFOLD ::SubClientId $getSourceSubId() const;
+    MCAPI ::SubClientId $getSourceSubId() const;
 
     MCFOLD ::CommandOriginType $getOriginType() const;
 

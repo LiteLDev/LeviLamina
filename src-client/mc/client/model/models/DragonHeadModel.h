@@ -43,8 +43,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit DragonHeadModel(::GeometryPtr source);
-
-    MCFOLD ::ModelPart const& getHeadModel() const;
     // NOLINTEND
 
 public:
@@ -65,11 +63,5 @@ public:
     MCAPI void $render(::ScreenContext& screenContext);
 
     MCAPI void $render(::ScreenContext& screenContext, float scale);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

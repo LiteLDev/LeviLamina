@@ -6,7 +6,7 @@
 #include "mc/common/editor/EditorRealmsServiceAvailability.h"
 #include "mc/common/editor/RealmsServiceStatus.h"
 #include "mc/common/editor/RealmsWorldUploadResult.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorRealmsServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -114,15 +114,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit EditorRealmsService(::Editor::ServiceProviderCollection& providers);
 
-    MCNAPI bool const _canUploadWorld() const;
-
     MCNAPI void _handleServiceStatusPayload(::Editor::Network::EditorRealmsStatusPayload const& payload);
-
-#ifdef LL_PLAT_C
-    MCNAPI void sendIsRealmsServiceAvailablePayload();
-#endif
-
-    MCNAPI void sendServiceStatusPayload();
     // NOLINTEND
 
 public:
@@ -180,9 +172,17 @@ public:
 
     MCNAPI void $loadRealmsWorldList();
 
+#ifdef LL_PLAT_S
     MCNAPI void $loadRealmsWorldSlots(::std::string const&);
+#else // LL_PLAT_C
+    MCNAPI void $loadRealmsWorldSlots(::std::string const& worldId);
+#endif
 
+#ifdef LL_PLAT_S
     MCNAPI void $downloadRealmWorld(::std::string const&, int const);
+#else // LL_PLAT_C
+    MCNAPI void $downloadRealmWorld(::std::string const& worldId, int const slotId);
+#endif
 
     MCNAPI bool const $canUploadWorld() const;
 

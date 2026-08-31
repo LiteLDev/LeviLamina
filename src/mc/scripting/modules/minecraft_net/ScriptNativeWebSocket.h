@@ -10,11 +10,20 @@ namespace ScriptModuleMinecraftNet {
 
 class ScriptNativeWebSocket : public ::Bedrock::Http::WebSocket {
 public:
+    // ScriptNativeWebSocket inner types define
+    enum class ConnectionState : int {
+        Connecting = 0,
+        Open       = 1,
+        Closed     = 2,
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnkd25108;
     ::ll::UntypedStorage<8, 24> mUnkc5aca1;
     ::ll::UntypedStorage<1, 1>  mUnkc75957;
+    ::ll::UntypedStorage<4, 4>  mUnkc3a64c;
     // NOLINTEND
 
 public:
@@ -26,11 +35,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptNativeWebSocket() /*override*/ = default;
+    virtual ~ScriptNativeWebSocket() /*override*/;
 
     virtual void onMessage(::std::string_view message) /*override*/;
 
     virtual void onClose(uint) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -41,12 +56,6 @@ public:
     MCNAPI void $onClose(uint);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AppPlatform;
 class IPackTelemetry;
 class PackAccessStrategy;
 class PackCapabilityRegistry;
@@ -37,11 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~PackManifestFactory() /*override*/;
-#else // LL_PLAT_C
-    virtual ~PackManifestFactory() /*override*/ = default;
-#endif
 
     virtual ::std::unique_ptr<::PackManifest> create(
         ::PackAccessStrategy&     accessStrategy,
@@ -55,31 +50,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PackManifestFactory(::PackCapabilityRegistry const& packCapabilityRegistry, ::IPackTelemetry& eventing);
-
-    MCNAPI void _setAndCachePackSize(
-        ::PackManifest&           manifest,
-        ::PackAccessStrategy&     accessStrategy,
-        ::ResourceLocation const& location
-    );
-
-    MCNAPI ::std::unique_ptr<::PackManifest>
-    _upgradeToWorldTemplateManifest(::PackAccessStrategy const& accessStrategy, ::PackManifest&& inputPack);
-
-#ifdef LL_PLAT_C
-    MCNAPI void load(::AppPlatform& appPlatform);
-
-    MCNAPI void save(::AppPlatform& appPlatform);
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static ::std::string alternateContentKeyLookup(::std::string const& packIdentity);
-#endif
-
-    MCNAPI static ::std::string contentKeyLookup(::std::string const& packIdentity);
     // NOLINTEND
 
 public:

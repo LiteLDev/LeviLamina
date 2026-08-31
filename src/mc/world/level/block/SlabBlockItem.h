@@ -44,9 +44,7 @@ public:
     // NOLINTBEGIN
     MCAPI SlabBlockItem(::std::string const& name, int id, ::HashedString const& doubleSlabId);
 
-    MCAPI bool _canConvertToDoubleBlock(::ItemStackBase& instance, ::Actor& face, uchar& block, ::Block const&) const;
-
-    MCAPI void setDoubleSlabId(::HashedString const& doubleSlabId);
+    MCAPI bool _canConvertToDoubleBlock(::ItemStackBase& instance, ::Actor&, uchar& face, ::Block const& block) const;
     // NOLINTEND
 
 public:

@@ -44,8 +44,6 @@ public:
         ::ItemStack const&         storageItem
     );
 
-    MCAPI ::InventorySlotPacketPayload& operator=(::InventorySlotPacketPayload&&);
-
     MCAPI ~InventorySlotPacketPayload();
     // NOLINTEND
 

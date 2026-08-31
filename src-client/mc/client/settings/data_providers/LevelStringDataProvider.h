@@ -55,8 +55,6 @@ public:
         ::std::vector<::std::function<::Bedrock::PubSub::Subscription(::std::function<void()>)>> subscriptionConnectors,
         ::std::unique_ptr<::Settings::IStringPropertyHandler>                                    delegate
     );
-
-    MCAPI void _updateSubscriptions();
     // NOLINTEND
 
 public:
@@ -73,19 +71,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canModify() const;
+    MCAPI bool $canModify() const;
 
     MCAPI ::std::string $getValue() const;
 
     MCAPI void $setValue(::std::string_view value);
 
     MCAPI void $commitValue();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

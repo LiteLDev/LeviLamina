@@ -30,7 +30,6 @@ class IResourcePackRepository;
 struct ContentItem;
 struct ContentViews;
 struct LevelSummary;
-struct MoveResourcePackResult;
 struct PackIdVersion;
 namespace World { class IWorldResourcePackDownloader; }
 namespace World { struct PackCheckResult; }
@@ -57,18 +56,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IContentManagerContext>> mContext;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IContentManagerContext>> mGlobalContext;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~Contexts();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -195,15 +182,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldResourcePackHandler(
-        ::IContentManager&                                         contentManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository>   resourcePackRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> contentTierManager,
-        ::IContentAcquisition&                                     contentAcquisition,
-        ::std::unique_ptr<::World::IWorldResourcePackDownloader>   worldResourcePackDownloader
-    );
-
     MCAPI ::World::WorldPacks&
     _cacheWorldPackData(::World::WorldResourcePackHandler::Contexts&& contexts, ::LevelSummary const& levelSummary);
 
@@ -213,17 +191,17 @@ public:
         ::PackScope                                  scope
     ) const;
 
-    MCAPI ::std::variant<::World::PackActionError, ::World::PackViewAndItem>
-    _findPackById(::World::WorldPacks& worldPacks, ::std::string const& packId) const;
-
-    MCAPI ::std::variant<::World::PackActionError, ::World::PackViewAndItem>
-    _findPackByType(::World::WorldPacks& worldPacks, ::ContentType contentType, ::std::string const& packId) const;
+    MCAPI ::std::variant<::World::PackActionError, ::World::PackViewAndItem> _findPackByType(
+        ::World::WorldPacks& worldPacks,
+        ::ContentType const  contentType,
+        ::std::string const& packId
+    ) const;
 
     MCAPI ::std::variant<::World::PackActionError, ::World::PackViewAndItem> _findPackViewAndContent(
-        ::World::WorldPacks& worldPacks,
-        ::ContentType        contentType,
-        ::World::PackStatus  packStatus,
-        ::std::string const& packId
+        ::World::WorldPacks&      worldPacks,
+        ::ContentType const       contentType,
+        ::World::PackStatus const packStatus,
+        ::std::string const&      packId
     ) const;
 
     MCAPI void _getMissingPackIds(
@@ -234,31 +212,11 @@ public:
     );
 
     MCAPI ::World::PackDetails _getPackDetails(
-        ::World::WorldID                        worldID,
+        ::World::WorldID const                  worldID,
         ::std::shared_ptr<::ContentItem> const& contentItem,
         ::ContentViews const&                   contentViews,
-        ::World::PackStatus                     packStatus,
-        bool                                    isEduMode
-    );
-
-    MCAPI ::std::optional<::World::PackActionError> _getPackError(
-        ::World::WorldID                        worldID,
-        ::std::string                           packID,
-        ::std::shared_ptr<::ContentItem> const& contentItem,
-        ::ContentViews const&                   contentViews,
-        ::ContentType                           packStatus,
-        ::World::PackStatus,
-        bool
-    );
-
-    MCAPI ::World::PackActionError _handlePackMoveError(
-        ::World::WorldID const&         worldID,
-        ::World::PackAction             packAction,
-        ::std::string const&            packId,
-        ::ContentType                   contentType,
-        bool                            isEduMode,
-        ::MoveResourcePackResult const& moveResourcePackResult,
-        bool                            onlyChecking
+        ::World::PackStatus const               packStatus,
+        bool const                              isEduMode
     );
 
     MCAPI ::World::WorldResourcePackHandler::Contexts
@@ -267,35 +225,22 @@ public:
     MCAPI bool _needToDownloadPack(::std::shared_ptr<::ContentItem> const& contentItem) const;
 
     MCAPI ::std::optional<::World::PackActionError> _performPackMovement(
-        ::World::PackAction   packAction,
-        ::LevelSummary const& levelSummary,
-        ::ContentType         contentType,
-        ::std::string const&  packId,
-        bool                  isEduMode,
-        bool                  force
+        ::World::PackAction const packAction,
+        ::LevelSummary const&     levelSummary,
+        ::ContentType const       contentType,
+        ::std::string const&      packId,
+        bool const                isEduMode,
+        bool const                force
     );
 
     MCAPI void _populatePackDetails(
-        ::World::WorldID                          worldID,
+        ::World::WorldID const                    worldID,
         ::std::vector<::World::PackDetails>&      packDetails,
         ::Bedrock::NonOwnerPointer<::ContentView> contentView,
         ::World::PackCollection const&            packCollection,
         ::ContentViews const&                     contentViews,
-        ::World::PackStatus                       packStatus,
-        bool                                      isEduMode
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::IContentManager&                                         contentManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository>   resourcePackRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> contentTierManager,
-        ::IContentAcquisition&                                     contentAcquisition,
-        ::std::unique_ptr<::World::IWorldResourcePackDownloader>   worldResourcePackDownloader
+        ::World::PackStatus const                 packStatus,
+        bool const                                isEduMode
     );
     // NOLINTEND
 
@@ -378,12 +323,6 @@ public:
     MCAPI bool $getResourcePacksDirty();
 
     MCAPI void $refreshPacksData();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

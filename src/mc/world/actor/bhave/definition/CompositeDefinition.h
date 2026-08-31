@@ -20,14 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::BehaviorDefinition const* get(uint64 index) const;
-
-    MCAPI uint64 getCount() const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _compositeLoadChildrenBehaviors(
@@ -36,11 +28,5 @@ public:
         ::BehaviorFactory const&                                factory,
         ::BehaviorTreeDefinitionPtr                             ptr
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

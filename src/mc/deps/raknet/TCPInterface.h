@@ -100,13 +100,10 @@ public:
     MCAPI ::RakNet::SystemAddress
     Connect(char const* host, ushort remotePort, bool block, ushort socketFamily, char const* bindAddress);
 
-    MCAPI bool CreateListenSocket(ushort port, ushort maxIncomingConnections, ushort socketFamily, char const*);
+    MCAPI bool
+    CreateListenSocket(ushort port, ushort maxIncomingConnections, ushort socketFamily, char const* bindAddress);
 
     MCAPI void DeallocatePacket(::RakNet::Packet* packet);
-
-    MCAPI ushort GetConnectionCount() const;
-
-    MCAPI void GetConnectionList(::RakNet::SystemAddress* remoteSystems, ushort* numberOfSystems) const;
 
     MCAPI uint GetOutgoingDataBufferSize(::RakNet::SystemAddress systemAddress) const;
 
@@ -116,9 +113,7 @@ public:
 
     MCAPI ::RakNet::SystemAddress HasLostConnection();
 
-    MCAPI ::RakNet::Packet* ReceiveInt();
-
-    MCAPI uint64 SocketConnect(char const* host, ushort remotePort, ushort socketFamily, char const*);
+    MCAPI uint64 SocketConnect(char const* host, ushort remotePort, ushort socketFamily, char const* bindAddress);
 
     MCAPI bool Start(
         ushort      port,
@@ -132,10 +127,6 @@ public:
     MCAPI void Stop();
 
     MCAPI TCPInterface();
-
-    MCAPI bool WasStarted() const;
-
-    MCAPI bool _appendToBlockingSocketList(uint64 const& s);
     // NOLINTEND
 
 public:
@@ -170,12 +161,6 @@ public:
     MCAPI void $PushBackPacket(::RakNet::Packet* packet, bool pushAtHead);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

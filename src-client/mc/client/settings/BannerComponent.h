@@ -31,10 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BannerComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BannerComponent() /*override*/;
@@ -45,35 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BannerComponent(
-        ::std::string_view                               id,
-        ::Settings::BannerType                           bannerType,
-        ::std::string_view                               bannerText,
-        ::std::optional<::Settings::BannerCta>           cta,
-        ::std::optional<::Settings::ConfirmationRequest> confirmationRequest,
-        ::std::unique_ptr<::Settings::IDataProvider>     dataProvider
-    );
-
-    MCFOLD ::Settings::BannerType getBannerType() const;
-
-    MCFOLD ::std::optional<::Settings::ConfirmationRequest> const& getConfirmationRequest() const;
-
     MCAPI ::std::optional<::std::string> getCtaText() const;
-
-    MCAPI bool invokeCtaCallback();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string_view                               id,
-        ::Settings::BannerType                           bannerType,
-        ::std::string_view                               bannerText,
-        ::std::optional<::Settings::BannerCta>           cta,
-        ::std::optional<::Settings::ConfirmationRequest> confirmationRequest,
-        ::std::unique_ptr<::Settings::IDataProvider>     dataProvider
-    );
     // NOLINTEND
 
 public:
@@ -86,12 +54,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::Settings::ComponentState $getDefaultState() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

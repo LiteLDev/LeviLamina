@@ -13,16 +13,4 @@ public:
     ::ll::TypedStorage<4, 4, int>            mFlyingItemIdAux;
     ::ll::TypedStorage<8, 32, ::std::string> mUserData;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~FlyingItemCommand();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

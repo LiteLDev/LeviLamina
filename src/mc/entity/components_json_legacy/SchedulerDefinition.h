@@ -8,8 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
-class EntityContext;
-class SchedulerComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -25,10 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SchedulerDefinition();
-
-    MCAPI void initialize(::EntityContext&, ::SchedulerComponent& component) const;
-
     MCAPI void setMaxDelayTicks(float const& seconds);
 
     MCAPI void setMinDelayTicks(float const& seconds);
@@ -40,11 +34,5 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SchedulerDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 };

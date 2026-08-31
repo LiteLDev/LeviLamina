@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct PumpkinArchetype {
@@ -15,12 +10,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mLit;
     ::ll::TypedStorage<1, 1, bool> mCarved;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/PlayerRole.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ namespace Realms { class RealmsRolesAndPermissions; }
 namespace OreUI {
 
 class RealmsRolesAndPermissionsCommandsFacet
-: public ::OreUI::FacetBase<::OreUI::RealmsRolesAndPermissionsCommandsFacet> {
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsRolesAndPermissionsCommandsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsRolesAndPermissionsCommandsFacet() /*override*/ = default;
+    virtual ~RealmsRolesAndPermissionsCommandsFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -63,6 +63,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsRolesAndPermissions> rolesAndPermissions);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

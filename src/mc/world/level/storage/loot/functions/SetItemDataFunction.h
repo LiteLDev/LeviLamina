@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetItemDataFunction() /*override*/ = default;
+    virtual ~SetItemDataFunction() /*override*/;
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
@@ -68,8 +68,6 @@ public:
         int&                 outAux,
         ::WeakPtr<::Item>&   outItem
     );
-
-    MCFOLD ::RandomValueBounds getValue() const;
     // NOLINTEND
 
 public:
@@ -80,13 +78,19 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
     MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
 
-    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCAPI ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

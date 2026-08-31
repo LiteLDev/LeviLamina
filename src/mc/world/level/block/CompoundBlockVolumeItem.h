@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundBlockVolume;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -25,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SimpleBlockVolume getAbsoluteVolume(::CompoundBlockVolume const& parent) const;
+    MCAPI bool operator!=(::CompoundBlockVolumeItem const& other) const;
     // NOLINTEND
 
 public:

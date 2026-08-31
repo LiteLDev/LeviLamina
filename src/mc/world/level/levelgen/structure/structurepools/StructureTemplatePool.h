@@ -35,31 +35,7 @@ public:
         ::std::vector<::std::pair<::StructurePoolElement const*, int>> const& templates
     );
 
-    MCAPI StructureTemplatePool(
-        ::StructureTemplateRegistrationContext                           context,
-        ::std::string_view                                               name,
-        ::std::string_view                                               fallback,
-        ::Projection                                                     projection,
-        ::std::initializer_list<::WeightedStructureTemplateRegistration> pieces
-    );
-
-    MCFOLD ::std::string const& getFallback() const;
-
-    MCAPI int getMaxHeight() const;
-
-    MCFOLD ::std::string const& getName() const;
-
-    MCAPI ::StructurePoolElement const* getRandomTemplate(::Random& random) const;
-
     MCAPI ::std::vector<uint64> getShuffledTemplateIndexes(::Random& random) const;
-
-    MCAPI ::StructurePoolElement const* getTemplate(uint64 index) const;
-
-    MCFOLD ::std::vector<::StructurePoolElement const*> const& getTemplates() const;
-
-    MCAPI bool isValid() const;
-
-    MCFOLD uint64 size() const;
 
     MCAPI ~StructureTemplatePool();
     // NOLINTEND
@@ -83,14 +59,6 @@ public:
         ::std::string                                                         name,
         ::std::string                                                         fallback,
         ::std::vector<::std::pair<::StructurePoolElement const*, int>> const& templates
-    );
-
-    MCAPI void* $ctor(
-        ::StructureTemplateRegistrationContext                           context,
-        ::std::string_view                                               name,
-        ::std::string_view                                               fallback,
-        ::Projection                                                     projection,
-        ::std::initializer_list<::WeightedStructureTemplateRegistration> pieces
     );
     // NOLINTEND
 

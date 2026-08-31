@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class MobEffectInstance;
 class StrictEntityContext;
 class Vec3;
 struct ActorDataDirtyFlagsComponent;
@@ -19,7 +18,6 @@ struct ActorRotationComponent;
 struct DashActionComponent;
 struct DashCooldownTimerComponent;
 struct JumpPendingScaleComponent;
-struct JumpPreventionResult;
 struct MobEffectsComponent;
 struct MovementAttributesComponent;
 struct PlayerComponent;
@@ -35,28 +33,6 @@ namespace DashActionSystem {
 MCAPI ::TickingSystemWithInfo create();
 
 MCAPI ::Vec3 dashForwardCamera(::Vec3 const& momentum, ::ActorRotationComponent const& cameraRotation);
-
-MCAPI ::Vec3 dashForwardPassengerCamera(
-    ::Vec3 const&                                                                                momentum,
-    ::VehicleComponent const&                                                                    vehicleComponent,
-    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ActorRotationComponent const> playerPassengerView
-);
-
-MCAPI void doDash(
-    ::StrictEntityContext const&                                                                 context,
-    ::JumpPreventionResult const&                                                                jumpPreventionResult,
-    ::MovementAttributesComponent const&                                                         attributes,
-    ::std::vector<::MobEffectInstance> const&                                                    mobEffects,
-    ::DashActionComponent const&                                                                 dashAction,
-    ::ActorRotationComponent const&                                                              actorRotationComponent,
-    ::Optional<::VehicleComponent const>                                                         vehicleComponent,
-    ::Vec3&                                                                                      posDelta,
-    float&                                                                                       jumpPendingScale,
-    ::ActorDataFlagComponent&                                                                    actorDataFlag,
-    ::ActorDataDirtyFlagsComponent&                                                              dirtyFlags,
-    ::EntityModifier<::DashCooldownTimerComponent>&                                              mod,
-    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ActorRotationComponent const> passengerView
-);
 
 MCAPI void tickApplyDashModifierSystem(
     ::StrictEntityContext const&                    context,

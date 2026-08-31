@@ -13,12 +13,6 @@ public:
     ::ll::TypedStorage<4, 4, int>            mMaxLength;
     ::ll::TypedStorage<4, 4, int>            mPositionOffset;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::string replaceRange(::std::string const& replacement, int from, int to);
-    // NOLINTEND
 };
 
 } // namespace OreUI

@@ -36,14 +36,6 @@ public:
         ::std::function<void()>                   storageLocationChangedCallback,
         ::std::function<uint64()>                 worldCountCallback
     );
-
-    MCAPI bool _hasExternalStoragePermissions();
-
-    MCAPI void _openStoragePermissionWarningDialog();
-
-    MCAPI void _openSystemSettings();
-
-    MCAPI void _registerBindings();
     // NOLINTEND
 
 public:
@@ -54,13 +46,5 @@ public:
         ::std::function<void()>                   storageLocationChangedCallback,
         ::std::function<uint64()>                 worldCountCallback
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

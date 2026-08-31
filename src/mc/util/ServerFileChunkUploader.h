@@ -52,7 +52,11 @@ public:
     getServerMissingChunks(::FileInfo const& file, ::std::function<void(::std::vector<::FileChunkInfo>)> callback) const
         /*override*/;
 
+#ifdef LL_PLAT_S
     virtual void confirmChunkReceived(::FileInfo const&, ::FileChunkInfo const&) /*override*/;
+#else // LL_PLAT_C
+    virtual void confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk) /*override*/;
+#endif
 
     virtual void uploadChunk(
         ::FileInfo const&           file,
@@ -61,33 +65,21 @@ public:
         ::std::function<void(bool)> onCompleteCallback
     ) /*override*/;
 
-    virtual bool canCancelUpload(::FileInfo const&) const /*override*/;
+    virtual bool canCancelUpload(::FileInfo const& file) const /*override*/;
 
-    virtual void cancelUpload(::FileInfo const&) /*override*/;
+    virtual void cancelUpload(::FileInfo const& file) /*override*/;
 
     virtual ::UploadError getInitErrorCode() const /*override*/;
 
-    virtual float getUploadProgress(::FileInfo const&) const /*override*/;
+    virtual float getUploadProgress(::FileInfo const& file) const /*override*/;
 
     virtual ::FileChunkInfo getChunkInfo(::FileInfo const& file, int chunkID) const /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ServerFileChunkUploader(::PacketSender& packetSender, ::NetworkIdentifier const& source);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PacketSender& packetSender, ::NetworkIdentifier const& source);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -106,7 +98,11 @@ public:
         ::std::function<void(::std::vector<::FileChunkInfo>)> callback
     ) const;
 
+#ifdef LL_PLAT_S
     MCFOLD void $confirmChunkReceived(::FileInfo const&, ::FileChunkInfo const&);
+#else // LL_PLAT_C
+    MCFOLD void $confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
+#endif
 
     MCAPI void $uploadChunk(
         ::FileInfo const&           file,
@@ -115,13 +111,13 @@ public:
         ::std::function<void(bool)> onCompleteCallback
     );
 
-    MCFOLD bool $canCancelUpload(::FileInfo const&) const;
+    MCFOLD bool $canCancelUpload(::FileInfo const& file) const;
 
-    MCFOLD void $cancelUpload(::FileInfo const&);
+    MCFOLD void $cancelUpload(::FileInfo const& file);
 
     MCFOLD ::UploadError $getInitErrorCode() const;
 
-    MCFOLD float $getUploadProgress(::FileInfo const&) const;
+    MCFOLD float $getUploadProgress(::FileInfo const& file) const;
 
     MCAPI ::FileChunkInfo $getChunkInfo(::FileInfo const& file, int chunkID) const;
 

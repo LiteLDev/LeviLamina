@@ -6,7 +6,6 @@
 #include "mc/deps/application/CommonPlatform.h"
 #include "mc/deps/core/platform/DisplayOrientation.h"
 #include "mc/deps/core/threading/XTaskQueueRegistrationToken.h"
-#include "mc/platform/Result.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/util/ResetCallbackObject.h"
 
@@ -17,9 +16,7 @@ class AppPlatform_GameCore;
 class GameControllerHandler_GameCore;
 class HIDControllerGameCoreDesktop;
 class IMinecraftEventing;
-class IMinecraftGame;
 class PushNotificationMessage;
-class RegistryKey;
 struct XTaskQueueObject;
 namespace Bedrock { class ActivationArguments; }
 // clang-format on
@@ -68,13 +65,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Platform_GameCore();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Platform_GameCore() /*override*/;
+    virtual ~Platform_GameCore() /*override*/ = default;
 
     virtual bool updatePlatformInfo() /*override*/;
 
@@ -128,31 +121,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    Platform_GameCore(::HWND__* hwnd, ::brstd::move_only_function<::std::unique_ptr<::IMinecraftGame>()> createGame);
-
-    MCAPI bool _checkResetGame();
-
-    MCAPI ::Bedrock::Result<void> _onScreenKeyboardHeightHandler();
-
-    MCAPI bool closeAppRequest();
-
-    MCAPI void displayMigrationFailureScreen();
-
-    MCAPI ::std::optional<::std::string> extractProtocolActivationURI();
-
-    MCAPI void performCriticalChecksTerminateOnFailure();
-
-    MCAPI void rapidShutdown();
-
     MCAPI void setRemoteSession(bool value);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::RegistryKey getAppRegistryKey();
-
     MCAPI static void onProtocolActivation(void* context, char const* uri);
     // NOLINTEND
 
@@ -160,18 +134,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& sAppName();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::HWND__* hwnd, ::brstd::move_only_function<::std::unique_ptr<::IMinecraftGame>()> createGame);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -224,14 +186,6 @@ public:
     MCFOLD bool $_isShutdown();
 
     MCFOLD void $resetCallback();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForResetCallbackObject();
-
-    MCNAPI static void** $vftableForCommonPlatform();
     // NOLINTEND
 };
 

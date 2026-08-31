@@ -17,16 +17,13 @@ class PersonaPiece;
 class ResourceLoadManager;
 class ResourcePackManager;
 class TaskGroup;
-class TextureAtlas;
 class TintMapColor;
 struct PersonaCharacter;
 struct PersonaTextureResources;
 struct TextureHotReloader;
 namespace Json { class Value; }
-namespace cg { class ImageBuffer; }
 namespace mce { class TextureGroup; }
 namespace persona { struct TextureTint; }
-namespace persona { struct TextureTintCollection; }
 // clang-format on
 
 class PersonaTextureBuilder {
@@ -56,15 +53,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager>      resourcePackManager,
         ::Bedrock::NonOwnerPointer<::TextureHotReloader>          textureHotReloader
     );
-
-    MCNAPI bool _onTextureAtlasStatus(
-        ::PersonaCharacter&                  character,
-        ::TextureAtlas const&                atlas,
-        ::std::shared_ptr<::cg::ImageBuffer> atlasImageBuffer
-    );
-
-    MCNAPI ::std::unique_ptr<::PersonaTextureResources>
-    _populateLocalTextureDataMaps(::PersonaCharacter const& character, ::IPersonaPieceProvider const& pieceProvider);
 
     MCNAPI ::Bedrock::Threading::Async<bool>
     parseTextures(::std::string const& characterName, ::TaskGroup& taskGroup, ::IPersonaPieceProvider& pieceProvider);
@@ -101,14 +89,11 @@ public:
         bool                          validateFileExists
     );
 
-    MCNAPI static ::std::vector<::persona::TextureTintCollection*>
-    _buildTintCollectionGroup(::PersonaTextureResources& textureResources);
-
     MCNAPI static void _ensureCPUImageDataIsLoaded(
         ::mce::TextureGroup&             textureGroup,
         ::persona::TextureTint const&    texture,
         ::persona::TextureTint::PathType pathType,
-        bool
+        bool                             validateFileExists
     );
 
     MCNAPI static void _readTexturesFromJsonIntoMap(
@@ -119,12 +104,6 @@ public:
         ::TintMapColor&            pieceTintColor,
         bool                       useTint,
         bool                       useIndexedIds
-    );
-
-    MCNAPI static ::Json::Value buildTextureConfiguration(
-        ::std::string const&       skinName,
-        ::mce::TextureGroup&       textureGroup,
-        ::PersonaTextureResources& textureResources
     );
     // NOLINTEND
 

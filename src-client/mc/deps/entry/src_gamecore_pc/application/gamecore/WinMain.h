@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WinMain() = default;
+    virtual ~WinMain();
 
     virtual void _processProtocolActivationArguments(::Bedrock::ActivationArguments& args);
 
@@ -41,17 +41,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI WinMain();
-
-    MCAPI int64 wndProc(::HWND__* hwnd, uint uMsg, uint64 wParam, int64 lParam);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -16,9 +16,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ShiftedValueAmplifier() /*override*/ = default;
+    virtual ~ShiftedValueAmplifier() /*override*/;
 
     virtual float getAmount(int amplification, float scale) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/scripting/modules/minecraft/actor/ScriptActorData.h"
 
 // auto generated forward declare list
@@ -23,23 +23,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptActorItemDropEventFilterData& operator=(ScriptActorItemDropEventFilterData const&);
-    ScriptActorItemDropEventFilterData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorItemDropEventFilterData(
-        ::ScriptModuleMinecraft::EventFilters::ScriptActorItemDropEventFilterData const&
-    );
-
-    MCAPI ScriptActorItemDropEventFilterData(
-        ::Scripting::WeakLifetimeScope           scope,
-        ::ScriptModuleMinecraft::ScriptActorData actorData,
-        ::std::vector<::ItemStack>               items
-    );
-
     MCAPI ~ScriptActorItemDropEventFilterData();
     // NOLINTEND
 
@@ -50,18 +35,6 @@ public:
         ::Scripting::WeakLifetimeScope                          scope,
         ::ScriptModuleMinecraft::ScriptActorData                actorData,
         ::std::vector<::ScriptModuleMinecraft::ScriptActorData> items
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorItemDropEventFilterData const&);
-
-    MCFOLD void* $ctor(
-        ::Scripting::WeakLifetimeScope           scope,
-        ::ScriptModuleMinecraft::ScriptActorData actorData,
-        ::std::vector<::ItemStack>               items
     );
     // NOLINTEND
 

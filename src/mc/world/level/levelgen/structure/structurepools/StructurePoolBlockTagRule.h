@@ -4,10 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
-class CompoundTag;
 class IStructurePoolBlockTagPredicate;
-namespace Util { class XXHash; }
 // clang-format on
 
 class StructurePoolBlockTagRule {
@@ -31,10 +28,6 @@ public:
         ::std::string                                          resultKey,
         ::std::string                                          resultValue
     );
-
-    MCAPI void appendMetadataKey(::Util::XXHash& hash) const;
-
-    MCAPI bool processRule(::Block const& sourceBlock, ::CompoundTag& sourceTag) const;
 
     MCAPI ~StructurePoolBlockTagRule();
     // NOLINTEND

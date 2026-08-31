@@ -19,7 +19,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SnapshotWritableFile() /*override*/ = default;
+    virtual ~SnapshotWritableFile() /*override*/;
 
     virtual ::leveldb::Status Append(::leveldb::Slice const& data) /*override*/;
 
@@ -28,6 +28,12 @@ public:
     virtual ::leveldb::Status Flush() /*override*/;
 
     virtual ::leveldb::Status Sync() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -42,11 +48,5 @@ public:
     MCNAPI ::leveldb::Status $Sync();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

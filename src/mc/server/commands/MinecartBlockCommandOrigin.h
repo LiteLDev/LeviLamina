@@ -16,10 +16,8 @@ class BlockSource;
 class CommandBlockActor;
 class CommandOrigin;
 class CompoundTag;
-class Level;
 class Vec2;
 class Vec3;
-struct DimensionType;
 // clang-format on
 
 class MinecartBlockCommandOrigin : public ::BlockCommandOrigin {
@@ -36,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecartBlockCommandOrigin() /*override*/ = default;
+    virtual ~MinecartBlockCommandOrigin() /*override*/;
 
     virtual ::BlockPos getBlockPosition() const /*override*/;
 
@@ -65,34 +63,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI MinecartBlockCommandOrigin(::BlockSource& region, ::ActorUniqueID const& minecartId);
-
-    MCAPI MinecartBlockCommandOrigin(
-        ::Level&               level,
-        ::DimensionType        dimensionType,
-        ::std::string const&   name,
-        ::BlockPos const&      pos,
-        ::ActorUniqueID const& minecartId
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::MinecartBlockCommandOrigin> load(::CompoundTag const& tag, ::Level& level);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockSource& region, ::ActorUniqueID const& minecartId);
+    // NOLINTEND
 
-    MCAPI void* $ctor(
-        ::Level&               level,
-        ::DimensionType        dimensionType,
-        ::std::string const&   name,
-        ::BlockPos const&      pos,
-        ::ActorUniqueID const& minecartId
-    );
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -121,11 +103,5 @@ public:
     MCAPI ::BaseCommandBlock* $_getBaseCommandBlock(::BlockSource& region) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

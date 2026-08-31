@@ -17,9 +17,7 @@ class ActorRenderData;
 class ActorResourceDefinition;
 class BaseActorRenderContext;
 class BlockTessellator;
-class DataDrivenModel;
 class DataDrivenRenderer_tempComponent;
-class Model;
 class RenderParams;
 class Vec3;
 namespace mce { class TextureGroup; }
@@ -35,6 +33,7 @@ public:
     ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                                    mDefaultSkin;
     ::ll::TypedStorage<8, 16, ::ExpressionNode> mUpdateBonesAndEffectsIfOffScreen;
     ::ll::TypedStorage<8, 16, ::ExpressionNode> mUpdateEffectsIfOffScreen;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode> mHideHeldItems;
     // NOLINTEND
 
 public:
@@ -46,11 +45,11 @@ public:
     // NOLINTBEGIN
     virtual void getLeashOffsets(
         ::Actor& actor,
-        float    legacyOffset,
-        float    output,
         float,
-        bool,
-        ::Bedrock::small_vector_base<::Vec3>&
+        float,
+        float,
+        bool                                  legacyOffset,
+        ::Bedrock::small_vector_base<::Vec3>& output
     ) const /*override*/;
 
     virtual void render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData) /*override*/;
@@ -67,6 +66,8 @@ public:
     virtual bool shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const /*override*/;
 
     virtual bool shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const /*override*/;
+
+    virtual bool shouldHideHeldItems(::RenderParams& renderParams) const /*override*/;
     // NOLINTEND
 
 public:
@@ -77,59 +78,11 @@ public:
         ::std::shared_ptr<::mce::TextureGroup>       textureGroup
     );
 
-    MCAPI void addAgentAdditionalRendering();
-
-    MCAPI void addBalloonAdditionalRendering();
-
-    MCAPI void addEnderCrystalAdditionalRendering();
-
-    MCAPI void addEnderDragonAdditionalRendering();
-
-    MCAPI void addEnderManAdditionalRendering(::BlockTessellator* blockTesselator);
-
-    MCAPI void addFoxAdditionalRendering();
-
     MCAPI void addGuardianAdditionalRendering();
 
     MCAPI void addHumanoidAdditionalRendering(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void addIronGolemAdditionalRendering(::BlockTessellator* blockTesselator);
-
     MCAPI void addMinecartAdditionalRendering(::BlockTessellator& commonBlockRenderer);
-
-    MCAPI void addMushroomCowAdditionalRendering(::BlockTessellator& commonBlockRenderer);
-
-    MCAPI void addPandaAdditionalRendering();
-
-    MCAPI void addSnowGolemAdditionalRendering(::BlockTessellator* blockTesselator);
-
-    MCAPI void addVexAdditionalRendering();
-
-    MCAPI void addVillagerAdditionalRendering();
-
-    MCFOLD void addVillagerV2AdditionalRendering();
-
-    MCFOLD void addWanderingTraderAdditionalRendering();
-
-    MCAPI void addWitchAdditionalRendering();
-
-    MCAPI bool armorHidden() const;
-
-    MCAPI bool attachablesEnabled() const;
-
-    MCAPI ::DataDrivenModel& getModel();
-
-    MCAPI ::std::shared_ptr<::DataDrivenModel> getModelShared();
-
-    MCAPI bool isAttachable() const;
-
-    MCAPI void renderModel(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::Model&);
-
-    MCAPI void setupModel(
-        ::ActorRenderData&        actorRenderData,
-        ::BaseActorRenderContext* baseActorRenderContext,
-        float                     actorFrameAlpha
-    );
     // NOLINTEND
 
 public:
@@ -150,11 +103,11 @@ public:
     // NOLINTBEGIN
     MCAPI void $getLeashOffsets(
         ::Actor& actor,
-        float    legacyOffset,
-        float    output,
         float,
-        bool,
-        ::Bedrock::small_vector_base<::Vec3>&
+        float,
+        float,
+        bool                                  legacyOffset,
+        ::Bedrock::small_vector_base<::Vec3>& output
     ) const;
 
     MCAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
@@ -170,11 +123,7 @@ public:
     MCAPI bool $shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const;
 
     MCAPI bool $shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const;
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI bool $shouldHideHeldItems(::RenderParams& renderParams) const;
     // NOLINTEND
 };

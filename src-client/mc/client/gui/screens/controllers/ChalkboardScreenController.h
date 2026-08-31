@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChalkboardScreenController() /*override*/;
+    virtual ~ChalkboardScreenController() /*override*/ = default;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -55,8 +55,6 @@ public:
     );
 
     MCAPI void _checkForTextObjectMessage();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -64,12 +62,6 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::BlockPos const& blockPos, bool lockVisible);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -86,13 +78,5 @@ public:
     MCAPI void $onTerminate();
 
     MCAPI bool $_isStillValid() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

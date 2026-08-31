@@ -40,10 +40,6 @@ LL_TYPE_INSTANCE_HOOK(
     serverInstance = this;
     return res;
 }
-LL_TYPE_INSTANCE_HOOK(ServerInstanceDestructor, HookPriority::High, ServerInstance, &ServerInstance::$dtor, void) {
-    serverInstance = nullptr;
-    origin();
-}
 
 // ClientInstance
 LL_TYPE_INSTANCE_HOOK(
@@ -57,10 +53,6 @@ LL_TYPE_INSTANCE_HOOK(
     auto res       = origin(std::move(args));
     clientInstance = this;
     return res;
-}
-LL_TYPE_INSTANCE_HOOK(ClientInstanceDestructor, HookPriority::High, ClientInstance, &ClientInstance::$dtor, void) {
-    clientInstance = nullptr;
-    origin();
 }
 
 optional_ref<AppPlatform> getAppPlatform() { return ServiceLocator<AppPlatform>::get().get().get(); }
@@ -121,7 +113,9 @@ optional_ref<NetworkSystem> getNetworkSystem(bool isClientSide) {
         }
     } else {
         if (auto mc = getMinecraft(isClientSide)) {
-            return mc->getServerNetworkSystem();
+            if (auto res = std::get_if<std::reference_wrapper<ServerNetworkSystem>>(&mc->mNetwork.get()); res) {
+                return res->get();
+            }
         }
     }
     return nullptr;
@@ -136,11 +130,7 @@ optional_ref<CommandRegistry> getCommandRegistry(bool isClientSide) {
     return nullptr;
 }
 
-using HookReg = memory::HookRegistrar<
-    ServerInstanceConstructor,
-    ServerInstanceDestructor,
-    ClientInstanceConstructor,
-    ClientInstanceDestructor>;
+using HookReg = memory::HookRegistrar<ServerInstanceConstructor, ClientInstanceConstructor>;
 
 static HookReg hookRegister;
 

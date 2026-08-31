@@ -26,15 +26,13 @@ public:
     // NOLINTBEGIN
     virtual int getExtraRenderLayers() const /*override*/;
 
-    virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
+    virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ChemicalHeatBlock(::std::string const& nameId, int id);
-
-    MCAPI bool _melt(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
@@ -43,12 +41,6 @@ public:
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::vector<::BlockPos> const& _getRelativeOffsets();
     // NOLINTEND
 
 public:
@@ -62,7 +54,7 @@ public:
     // NOLINTBEGIN
     MCFOLD int $getExtraRenderLayers() const;
 
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
 
 
     // NOLINTEND

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
-#include "mc/client/gui/oreui/binding/interface/IInvocationStateTracker.h"
 #include "mc/client/gui/oreui/binding/interface/InvocationResult.h"
 #include "mc/client/gui/oreui/binding/interface/InvocationState.h"
 #include "mc/client/gui/oreui/binding/properties/Property.h"
@@ -41,29 +40,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandStateQuery() /*override*/;
+    virtual ~CommandStateQuery() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommandStateQuery(::OreUI::Detail::InvocationStateTracker& tracker, ::OreUI::Detail::IdType const& id);
-
-    MCAPI void _removed();
-
-    MCAPI void _stateChanged(::OreUI::Detail::IInvocationStateTracker::InvocationInformation const& info);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::Detail::InvocationStateTracker& tracker, ::OreUI::Detail::IdType const& id);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

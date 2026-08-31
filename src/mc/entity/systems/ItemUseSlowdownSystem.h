@@ -12,8 +12,6 @@ namespace ItemUseSlowdownSystem {
 // NOLINTBEGIN
 MCAPI ::TickingSystemWithInfo createApplySystem();
 
-MCAPI ::TickingSystemWithInfo createClearSystem();
-
 MCAPI ::TickingSystemWithInfo createClientSystem();
 
 MCAPI ::TickingSystemWithInfo createSystem();

@@ -3,25 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Prefabs { class PrefabDBPrefabInstance; }
-namespace Editor::ScriptModule { class ScriptPrefabTemplateStructure; }
 namespace Editor::ScriptModule { struct ScriptPrefabErrorInvalidInstance; }
-namespace Editor::ScriptModule { struct ScriptPrefabErrorInvalidTemplate; }
-namespace Editor::ScriptModule { struct ScriptPrefabErrorInvalidTemplateStructure; }
-namespace Editor::ScriptModule { struct ScriptPrefabErrorServiceError; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -48,38 +38,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptPrefabTemplateInstanceStructure() = default;
+    virtual ~ScriptPrefabTemplateInstanceStructure();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPrefabTemplateInstanceStructure(
-        ::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance> prefabInstanceRef,
-        ::mce::UUID const&                                   prefabStructureId,
-        ::Editor::ServiceProviderCollection&                 serviceProviders,
-        ::Scripting::WeakLifetimeScope const&                scope
-    );
-
     MCNAPI ::Scripting::Result<::Mirror, ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
     _getInstanceMirror() const;
 
     MCNAPI ::Scripting::Result<::Rotation, ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
     _getInstanceRotation() const;
-
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptPrefabTemplateStructure>,
-        ::Editor::ScriptModule::ScriptPrefabErrorServiceError,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidTemplateStructure,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidTemplate,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
-    _getTemplateStructure();
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
-    _setInstanceMirror(::Mirror mirror);
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
-    _setInstanceRotation(::Rotation rotation);
     // NOLINTEND
 
 public:
@@ -89,20 +58,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance> prefabInstanceRef,
-        ::mce::UUID const&                                   prefabStructureId,
-        ::Editor::ServiceProviderCollection&                 serviceProviders,
-        ::Scripting::WeakLifetimeScope const&                scope
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

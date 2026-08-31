@@ -14,7 +14,7 @@ class LookControl : public ::Control {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LookControl() /*override*/ = default;
+    virtual ~LookControl() /*override*/;
 
     virtual void initializeInternal(::Mob& mob);
 
@@ -22,15 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI LookControl();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

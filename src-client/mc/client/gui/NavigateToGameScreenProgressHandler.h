@@ -22,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NavigateToGameScreenProgressHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~NavigateToGameScreenProgressHandler() /*override*/;
@@ -50,23 +46,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit NavigateToGameScreenProgressHandler(
-        ::std::unique_ptr<::ILocalPlayerEntityGetter const> localPlayerEntityGetter
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::ILocalPlayerEntityGetter const> localPlayerEntityGetter);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

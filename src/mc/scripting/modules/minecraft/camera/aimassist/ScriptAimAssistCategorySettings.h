@@ -23,14 +23,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptAimAssistCategorySettings();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptAimAssistCategorySettings(::std::string name);
-
     MCAPI ::std::unordered_map<::std::string, int> getBlockPriorities() const;
 
     MCAPI ::std::unordered_map<::std::string, int> getBlockTagPriorities() const;
@@ -54,12 +48,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string name);
     // NOLINTEND
 
 public:

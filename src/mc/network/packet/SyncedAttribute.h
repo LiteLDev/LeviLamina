@@ -11,16 +11,4 @@ public:
     ::ll::TypedStorage<4, 4, float>          mCurrentValue;
     ::ll::TypedStorage<4, 4, float>          mMaxValue;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~SyncedAttribute();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

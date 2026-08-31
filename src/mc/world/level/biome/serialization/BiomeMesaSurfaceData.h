@@ -2,15 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/Result.h"
-
-// auto generated forward declare list
-// clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
-// clang-format on
-
 struct BiomeMesaSurfaceData {
 public:
     // member variables
@@ -19,17 +10,5 @@ public:
     ::ll::TypedStorage<4, 4, uint> mHardClayMaterial;
     ::ll::TypedStorage<1, 1, bool> mBrycePillars;
     ::ll::TypedStorage<1, 1, bool> mHasForest;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void write(::BinaryStream& stream) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeMesaSurfaceData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

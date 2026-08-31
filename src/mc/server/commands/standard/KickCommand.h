@@ -37,16 +37,11 @@ public:
     MCAPI bool
     _canKickPlayerOrGenerateFailureOutput(::Player const& player, ::CommandOutput& output, ::Level* level) const;
 
-    MCAPI ::Player const*
-    _findTarget(::CommandOrigin const& output, ::CommandOutput& level, ::Level& idOrName, ::std::string const&) const;
-
     MCAPI void _generateSuccessOutput(
         ::CommandOutput&     output,
         ::std::string const& playerNameTag,
         ::std::string const& reason
     ) const;
-
-    MCAPI void _refreshJoinCode(::Level& level) const;
     // NOLINTEND
 
 public:
@@ -68,11 +63,5 @@ public:
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

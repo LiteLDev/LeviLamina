@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDebuggerCommandOrigin() /*override*/ = default;
+    virtual ~ScriptDebuggerCommandOrigin() /*override*/;
 
     virtual ::std::string const& getRequestId() const /*override*/;
 
@@ -67,6 +67,12 @@ public:
     virtual void handleCommandOutputCallback(int successCount, ::std::string&& messages) const /*override*/;
 
     virtual bool isValid() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -103,11 +109,5 @@ public:
     MCNAPI bool $isValid() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

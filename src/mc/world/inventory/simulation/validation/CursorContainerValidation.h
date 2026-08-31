@@ -17,7 +17,7 @@ public:
     // NOLINTBEGIN
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
 
-    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
+    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
     // NOLINTEND
 
 public:
@@ -25,14 +25,8 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const&) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

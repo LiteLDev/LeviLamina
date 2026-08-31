@@ -21,16 +21,6 @@ struct UseTimeDepleted : public ::ItemComponent,
                          public ::Bedrock::PubSub::Publisher<
                              void(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&),
                              ::Bedrock::PubSub::ThreadModel::SingleThreaded,
-                             0> {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForDispatchingPublisherBase();
-
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForConnector();
-    // NOLINTEND
-};
+                             0> {};
 
 } // namespace PublisherItemComponent

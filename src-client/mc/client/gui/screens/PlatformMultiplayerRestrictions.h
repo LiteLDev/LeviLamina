@@ -18,9 +18,9 @@ public:
 
     virtual void displayPlatformRestrictsMultiplayerModal(::std::function<void()>&& onCompleteCallback) = 0;
 
-    virtual void displayPlatformRestrictsUserGeneratedContentModal(::std::function<void()>&&) = 0;
+    virtual void displayPlatformRestrictsUserGeneratedContentModal(::std::function<void()>&& onCompleteCallback) = 0;
 
-    virtual void displayPlatformRestrictsChatModal(::std::function<void()>&&) = 0;
+    virtual void displayPlatformRestrictsChatModal(::std::function<void()>&& onCompleteCallback) = 0;
     // NOLINTEND
 
 public:
@@ -36,11 +36,5 @@ public:
     MCAPI static ::std::function<::std::unique_ptr<
         ::PlatformMultiplayerRestrictions>(::std::shared_ptr<::MinecraftScreenModel>, ::IClientInstance&)>&
     sFactory();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

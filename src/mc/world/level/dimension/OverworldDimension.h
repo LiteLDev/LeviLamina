@@ -14,7 +14,6 @@ class CompoundTag;
 class LevelChunk;
 class Vec3;
 class WorldGenerator;
-struct DerivedDimensionArguments;
 struct DimensionType;
 namespace br::worldgen { class StructureSetRegistry; }
 namespace mce { class Color; }
@@ -22,13 +21,9 @@ namespace mce { class Color; }
 
 class OverworldDimension : public ::Dimension {
 public:
-    // prevent constructor by default
-    OverworldDimension();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OverworldDimension() /*override*/ = default;
+    virtual ~OverworldDimension() /*override*/;
 
     virtual ::Vec3 translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const /*override*/;
 
@@ -55,15 +50,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit OverworldDimension(::DerivedDimensionArguments&& args);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DerivedDimensionArguments&& args);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -74,33 +63,21 @@ public:
     MCAPI ::std::unique_ptr<::WorldGenerator>
     $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
+    MCAPI bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
 
     MCAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
-    MCFOLD void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
+    MCAPI void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
 
     MCAPI short $getCloudHeight() const;
 
-    MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
+    MCFOLD ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
 
-    MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
+    MCAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
 
     MCAPI ::std::unique_ptr<::ChunkSource>
     $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForIDimension();
-
-    MCNAPI static void** $vftableForLevelListener();
-
-    MCNAPI static void** $vftableForSavedData();
     // NOLINTEND
 };

@@ -53,37 +53,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraPreset();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CameraPreset(::SharedTypes::v1_21_70::CameraPreset const&);
-
-    MCAPI ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset&&);
-
-    MCAPI ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset const&);
-
-    MCAPI ~CameraPreset();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_70::CameraPreset const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

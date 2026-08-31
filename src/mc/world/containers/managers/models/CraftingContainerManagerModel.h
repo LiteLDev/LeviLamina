@@ -74,11 +74,7 @@ public:
 
     virtual void broadcastChanges() /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual bool isValid(float) /*override*/;
-#else // LL_PLAT_C
     virtual bool isValid(float pickRange) /*override*/;
-#endif
 
     virtual bool tick() /*override*/;
 
@@ -106,13 +102,6 @@ public:
         ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
     );
 
-    MCAPI ::std::shared_ptr<::FilteredContainerModel> _createContainerModel(
-        ::ContainerEnumName                                          containerEnumName,
-        ::std::vector<::ItemInstance> const&                         itemInstanceVector,
-        bool                                                         doExpando,
-        ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
-    );
-
     MCAPI ::FilterResult _filterByInventory(::ItemInstance const& item, bool includeCursorItem) const;
 
     MCAPI ::FilterResult _filterByText(::ItemInstance const& item, ::TextSearchMode searchMode) const;
@@ -120,10 +109,6 @@ public:
     MCAPI bool _foundInStartOfAnyWord(::std::string const& itemName) const;
 
     MCAPI bool _hasUnlockedRecipes(::ItemInstance const& item) const;
-
-    MCAPI bool _populateContainers(uint64& count);
-
-    MCFOLD void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
 
     MCAPI ::std::vector<::std::string> const getCraftingTags() const;
 
@@ -154,7 +139,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
@@ -179,11 +166,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

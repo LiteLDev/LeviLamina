@@ -43,10 +43,4 @@ public:
 
     MCNAPI static ::PackIdVersion const& EDUResourcePack();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

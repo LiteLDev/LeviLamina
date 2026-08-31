@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BehaviorDefinition() = default;
+    virtual ~BehaviorDefinition();
 
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory);
 
@@ -34,9 +34,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI ::BehaviorTreeDefinitionPtr getTreeDefinition() const;
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

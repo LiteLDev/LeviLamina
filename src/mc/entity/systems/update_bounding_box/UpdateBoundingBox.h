@@ -14,7 +14,6 @@ class StrictEntityContext;
 class Vec2;
 struct AABBRelativeSizeUpdateComponent;
 struct AABBShapeComponent;
-struct AbsoluteSizeUpdateComponent;
 struct ActorDataBoundingBoxComponent;
 struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
@@ -40,8 +39,6 @@ MCAPI void onAABBRelativeSizeChanged(
     ::OffsetsComponent&                      offsets
 );
 
-MCAPI void onAbsoluteSizeChanged(::AbsoluteSizeUpdateComponent const& absolute, ::OffsetsComponent& offsets);
-
 MCAPI void onCustomSizeChanged(
     ::CustomSizeUpdateComponent const& custom,
     ::AABBShapeComponent const&        aabb,
@@ -59,8 +56,6 @@ MCAPI void onShulkerSizeChanged(
     ::AABBShapeComponent const&        aabb,
     ::OffsetsComponent&                offsets
 );
-
-MCAPI void singleTickImpl(::StrictEntityContext const& entity, ::UpdateBoundingBox::SystemParams& args);
 
 MCAPI void singleTickOnSizeChanged(::StrictEntityContext const& entity, ::UpdateBoundingBox::SystemParams& args);
 

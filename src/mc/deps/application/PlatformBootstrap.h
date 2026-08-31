@@ -138,22 +138,29 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::PlatformBootstrap::CreateDirectoryResult
-    _makeCreateDirectoryError(::Bedrock::PlatformBootstrap::CreateDirectoryResultCode, char*, uint64, char const*, ...);
+    MCNAPI static ::Bedrock::PlatformBootstrap::CreateDirectoryResult _makeCreateDirectoryError(
+        ::Bedrock::PlatformBootstrap::CreateDirectoryResultCode code,
+        char*                                                   errorBuffer,
+        uint64                                                  errorBufferSize,
+        char const*                                             errorFormat,
+        ...
+    );
 
-    MCNAPI static ::Bedrock::PlatformBootstrap::LoadResult
-    _makeLoadError(::Bedrock::PlatformBootstrap::LoadResultCode, char*, uint64, char const*, ...);
+    MCNAPI static ::Bedrock::PlatformBootstrap::LoadResult _makeLoadError(
+        ::Bedrock::PlatformBootstrap::LoadResultCode code,
+        char*                                        errorBuffer,
+        uint64                                       errorBufferSize,
+        char const*                                  errorFormat,
+        ...
+    );
 
-    MCNAPI static ::Bedrock::PlatformBootstrap::SaveResult
-    _makeSaveError(::Bedrock::PlatformBootstrap::SaveResultCode, char*, uint64, char const*, ...);
-
-    MCNAPI static ::Bedrock::PlatformBootstrap& getSharedInstance();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+    MCNAPI static ::Bedrock::PlatformBootstrap::SaveResult _makeSaveError(
+        ::Bedrock::PlatformBootstrap::SaveResultCode code,
+        char*                                        errorBuffer,
+        uint64                                       errorBufferSize,
+        char const*                                  errorFormat,
+        ...
+    );
     // NOLINTEND
 };
 

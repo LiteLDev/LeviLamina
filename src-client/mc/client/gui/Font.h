@@ -18,10 +18,7 @@ class ResourceLoadManager;
 class ResourceLocation;
 class ScreenContext;
 class Tessellator;
-struct UIActorOffscreenCaptureDescription;
-struct UIMeshOffscreenCaptureDescription;
-struct UIStructureVolumeOffscreenCaptureDescription;
-struct UIThumbnailMeshOffscreenCaptureDescription;
+struct OffscreenCaptureDescription;
 namespace Core { class Path; }
 namespace mce { class TextureGroup; }
 namespace mce::Font { struct RenderingParameters; }
@@ -61,7 +58,7 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::TypedStorage<8, 552, ::mce::Mesh>      mMesh;
+            ::ll::TypedStorage<8, 592, ::mce::Mesh>      mMesh;
             ::ll::TypedStorage<8, 32, ::mce::TexturePtr> mTexture;
             ::ll::TypedStorage<4, 4, int>                mSheet;
             // NOLINTEND
@@ -80,24 +77,11 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI void render(
-            ::ScreenContext&          screenContext,
-            ::Font const&             font,
-            ::mce::MaterialPtr const* optionalMat,
-            ::std::variant<
-                ::std::monostate,
-                ::UIActorOffscreenCaptureDescription,
-                ::UIThumbnailMeshOffscreenCaptureDescription,
-                ::UIMeshOffscreenCaptureDescription,
-                ::UIStructureVolumeOffscreenCaptureDescription> const& offscreenCaptureDescription
+            ::ScreenContext&                     screenContext,
+            ::Font const&                        font,
+            ::mce::MaterialPtr const*            optionalMat,
+            ::OffscreenCaptureDescription const& offscreenCaptureDescription
         ) const;
-
-        MCAPI ~TextObject();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -147,7 +131,6 @@ public:
 
 public:
     // prevent constructor by default
-    Font& operator=(Font const&);
     Font();
 
 public:
@@ -163,29 +146,24 @@ public:
     virtual void fetchPage(int page);
 
     virtual void drawCached(
-        ::ScreenContext&          screenContext,
-        ::std::string_view        str,
-        float                     x,
-        float                     y,
-        ::mce::Color const&       color,
-        bool                      ignoreColorFormatting,
-        bool                      darken,
-        bool                      drawColorSymbol,
-        ::mce::MaterialPtr const* optionalMat,
-        int                       caretPosition,
-        bool                      shadow,
-        float                     linePadding,
-        ::mce::Color const&       resetColorOverride,
-        ::mce::Color const&       shaderDarkColor,
-        float                     outlineWidth,
-        float                     yCaretOffset,
-        ::std::variant<
-            ::std::monostate,
-            ::UIActorOffscreenCaptureDescription,
-            ::UIThumbnailMeshOffscreenCaptureDescription,
-            ::UIMeshOffscreenCaptureDescription,
-            ::UIStructureVolumeOffscreenCaptureDescription> const& offscreenCaptureDescription,
-        bool                                                       autoGenNormalsAndTangents
+        ::ScreenContext&                     screenContext,
+        ::std::string_view                   str,
+        float                                x,
+        float                                y,
+        ::mce::Color const&                  color,
+        bool                                 ignoreColorFormatting,
+        bool                                 darken,
+        bool                                 drawColorSymbol,
+        ::mce::MaterialPtr const*            optionalMat,
+        int                                  caretPosition,
+        bool                                 shadow,
+        float                                linePadding,
+        ::mce::Color const&                  resetColorOverride,
+        ::mce::Color const&                  shaderDarkColor,
+        float                                outlineWidth,
+        float                                yCaretOffset,
+        ::OffscreenCaptureDescription const& offscreenCaptureDescription,
+        bool                                 autoGenNormalsAndTangents
     );
 
     virtual bool supportsChar(int const& character) = 0;
@@ -269,32 +247,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Font(::Font const& rhs);
-
     MCAPI explicit Font(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
     MCAPI bool _chopString(
-        ::std::string& currentLine,
-        ::std::string& activeFormatting,
-        float&         totalHeight,
-        uint&          remainingLineCount,
-        float          maxWidth,
-        bool           showColorSymbol,
-        bool           fontSize,
-        float          currentLineCallback,
-        ::std::function<bool(::std::string_view const&, ::std::string&, float, uint&)>
-    );
-
-    MCAPI void _drawTextSegment(
-        ::ScreenContext&    screenContext,
-        ::std::string_view  str,
-        float               startX,
-        float               startY,
-        ::mce::Color const& centered,
-        bool                shadow,
-        bool                showColorSymbol,
-        bool                optionalMat,
-        ::mce::MaterialPtr*
+        ::std::string&                                                                       currentLine,
+        ::std::string&                                                                       activeFormatting,
+        float&                                                                               totalHeight,
+        uint&                                                                                remainingLineCount,
+        float                                                                                maxWidth,
+        bool                                                                                 showColorSymbol,
+        bool                                                                                 centered,
+        float                                                                                fontSize,
+        ::std::function<bool(::std::string_view const&, ::std::string&, float, uint&)> const currentLineCallback
     );
 
     MCAPI int _drawWordWrap(
@@ -311,12 +275,6 @@ public:
         bool                showColorSymbol,
         ::mce::MaterialPtr* optionalMat
     );
-
-    MCAPI int _getSheet(int uniChar, int& replacementC, bool forceUnicode);
-
-    MCAPI int _getStringChopAmount(::std::string_view currentLine, bool showColorSymbol, float maxWidth);
-
-    MCAPI bool _isSpace(int codepoint) const;
 
     MCAPI ::std::shared_ptr<::Font::TextObject> _makeTextObject(
         ::Tessellator&      tessellator,
@@ -336,50 +294,18 @@ public:
     );
 
     MCAPI int _processHeightWrap(
-        ::std::string_view str,
-        float              startY,
-        float              maxWidth,
-        float              maxLine,
-        uint               showColorSymbol,
-        bool               centered,
-        bool               fontSize,
-        float              currentLineCallback,
-        ::std::function<bool(::std::string_view const&, ::std::string&, float, uint&)>
+        ::std::string_view                                                             str,
+        float                                                                          startX,
+        float                                                                          startY,
+        float                                                                          maxWidth,
+        uint                                                                           maxLine,
+        bool                                                                           showColorSymbol,
+        bool                                                                           centered,
+        float                                                                          fontSize,
+        ::std::function<bool(::std::string_view const&, ::std::string&, float, uint&)> currentLineCallback
     );
 
     MCAPI void calculateTextWidths(::std::string_view text, ::std::vector<int>& widths);
-
-    MCFOLD void clearCache();
-
-    MCAPI void draw(
-        ::ScreenContext&    screenContext,
-        ::std::string_view  str,
-        float               x,
-        float               y,
-        ::mce::Color const& color,
-        bool                showColorSymbol,
-        ::mce::MaterialPtr* optionalMat,
-        int                 caretPosition,
-        float               linePadding,
-        ::std::variant<
-            ::std::monostate,
-            ::UIActorOffscreenCaptureDescription,
-            ::UIThumbnailMeshOffscreenCaptureDescription,
-            ::UIMeshOffscreenCaptureDescription,
-            ::UIStructureVolumeOffscreenCaptureDescription> const& offscreenCaptureDescription
-    );
-
-    MCAPI void drawOutline(
-        ::ScreenContext&    screenContext,
-        ::std::string_view  str,
-        float               x,
-        float               y,
-        ::mce::Color const& textColor,
-        ::mce::Color const& outlineColor,
-        bool                showColorSymbol,
-        ::mce::MaterialPtr* optionalMat,
-        float               linePadding
-    );
 
     MCAPI void drawShadow(
         ::ScreenContext&    screenContext,
@@ -405,77 +331,9 @@ public:
         bool                shadow
     );
 
-    MCAPI void drawWithColorResetOverride(
-        ::ScreenContext&    screenContext,
-        ::std::string_view  str,
-        float               x,
-        float               y,
-        ::mce::Color const& color,
-        ::mce::Color const& resetColor,
-        bool                showColorSymbol,
-        ::mce::MaterialPtr* optionalMat,
-        int                 caretPosition,
-        float               linePadding,
-        float               yCaretOffset
-    );
-
-    MCAPI int drawWordWrap(
-        ::ScreenContext&    screenContext,
-        ::std::string_view  str,
-        float               x,
-        float               y,
-        float               w,
-        ::mce::Color const& color,
-        float               fontSize,
-        bool                shadow,
-        bool                centered,
-        bool                showColorSymbol,
-        ::mce::MaterialPtr* optionalMat
-    );
-
-    MCAPI int drawWordWrapMaxLine(
-        ::ScreenContext&    screenContext,
-        ::std::string_view  str,
-        float               x,
-        float               y,
-        float               w,
-        ::mce::Color const& color,
-        int                 maxLine,
-        float               fontSize,
-        bool                shadow,
-        bool                centered,
-        bool                showColorSymbol,
-        ::mce::MaterialPtr* optionalMat
-    );
-
-    MCFOLD bool getAlwaysUnicode() const;
-
-    MCAPI float getBaseFontHeight() const;
-
-    MCFOLD ::Vec2 const& getCaretRenderPosition() const;
-
-    MCFOLD ::Vec2 const& getCaretRenderSize() const;
-
     MCAPI ::std::unordered_set<::ResourceLocation> const& getGlyphLocations() const;
 
     MCAPI ::std::vector<::ResourceLocation> getReloadFontTextures() const;
-
-    MCAPI int getTextHeight(::std::string_view str, float fontSize);
-
-    MCAPI int getTextHeight(::std::string_view str, int w, float fontSize, bool showColorSymbol);
-
-    MCAPI bool hasFormattingCodes(::std::string_view str) const;
-
-    MCAPI bool hasGlyphLocation(::ResourceLocation const& location) const;
-
-    MCAPI void notifyStringChange(
-        ::std::string_view  str,
-        ::mce::Color const& color,
-        float               linePadding,
-        float               outlineWidth,
-        bool                uiMaterial,
-        bool                hasNormalsAndTangents
-    );
 
     MCAPI int processLinesInBox(
         ::std::string_view                                                             str,
@@ -487,33 +345,13 @@ public:
 
     MCAPI void resetFontData(bool uploadTextureImmediately);
 
-    MCAPI void resetFormat(::mce::Color const& color);
-
-    MCFOLD void setAlwaysUnicode(bool isAlwaysUnicode);
-
     MCAPI bool supportsString(::std::string_view str);
-
-    MCAPI void tickObfuscatedTextIndex(float deltaTime, float obfuscateSwitchTime);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool containsWideChar(::std::string_view str);
-
-    MCAPI static bool isNonSpacingMark(uint c);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_FONT_HEIGHT();
-
-    MCAPI static int const& DEFAULT_WRAP_HEIGHT();
-
     MCAPI static ::Core::PathBuffer<::std::string> const& NOT_FOUND_PAGE();
-
-    MCAPI static float const& OBFUSCATED_TIME_SWITCH();
 
     MCAPI static int const& UNICODE_REPLACEMENT_CHARACTER_CODE();
     // NOLINTEND
@@ -521,8 +359,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Font const& rhs);
-
     MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
@@ -538,29 +374,24 @@ public:
     MCFOLD void $fetchPage(int page);
 
     MCAPI void $drawCached(
-        ::ScreenContext&          screenContext,
-        ::std::string_view        str,
-        float                     x,
-        float                     y,
-        ::mce::Color const&       color,
-        bool                      ignoreColorFormatting,
-        bool                      darken,
-        bool                      drawColorSymbol,
-        ::mce::MaterialPtr const* optionalMat,
-        int                       caretPosition,
-        bool                      shadow,
-        float                     linePadding,
-        ::mce::Color const&       resetColorOverride,
-        ::mce::Color const&       shaderDarkColor,
-        float                     outlineWidth,
-        float                     yCaretOffset,
-        ::std::variant<
-            ::std::monostate,
-            ::UIActorOffscreenCaptureDescription,
-            ::UIThumbnailMeshOffscreenCaptureDescription,
-            ::UIMeshOffscreenCaptureDescription,
-            ::UIStructureVolumeOffscreenCaptureDescription> const& offscreenCaptureDescription,
-        bool                                                       autoGenNormalsAndTangents
+        ::ScreenContext&                     screenContext,
+        ::std::string_view                   str,
+        float                                x,
+        float                                y,
+        ::mce::Color const&                  color,
+        bool                                 ignoreColorFormatting,
+        bool                                 darken,
+        bool                                 drawColorSymbol,
+        ::mce::MaterialPtr const*            optionalMat,
+        int                                  caretPosition,
+        bool                                 shadow,
+        float                                linePadding,
+        ::mce::Color const&                  resetColorOverride,
+        ::mce::Color const&                  shaderDarkColor,
+        float                                outlineWidth,
+        float                                yCaretOffset,
+        ::OffscreenCaptureDescription const& offscreenCaptureDescription,
+        bool                                 autoGenNormalsAndTangents
     );
 
     MCAPI int $getLineLength(::std::string_view str, float fontSize, bool showColorSymbol);

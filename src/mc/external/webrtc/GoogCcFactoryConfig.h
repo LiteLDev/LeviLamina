@@ -10,7 +10,6 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnk5880d8;
     ::ll::UntypedStorage<8, 8> mUnk85c8e6;
-    ::ll::UntypedStorage<1, 1> mUnkc6cd22;
     // NOLINTEND
 
 public:
@@ -18,6 +17,18 @@ public:
     GoogCcFactoryConfig& operator=(GoogCcFactoryConfig const&);
     GoogCcFactoryConfig(GoogCcFactoryConfig const&);
     GoogCcFactoryConfig();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~GoogCcFactoryConfig();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace webrtc

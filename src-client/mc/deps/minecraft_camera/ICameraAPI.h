@@ -57,14 +57,13 @@ public:
         ::SharedTypes::Legacy::ActorLocation actorLoc
     ) const = 0;
 
-    virtual ::std::optional<::Vec3>
-    tryGetActorInterpolatedPosition(::WeakRef<::EntityContext> actorRef, float interpolationFactor) const = 0;
+    virtual ::std::optional<::Vec3> tryGetActorInterpolatedPosition(::WeakRef<::EntityContext>, float) const = 0;
 
     virtual ::std::optional<::Vec2> tryGetActorRotation(::WeakRef<::EntityContext const> const actorRef) const = 0;
 
-    virtual ::std::optional<::Vec3> tryGetActorPositionDelta(::WeakRef<::EntityContext> actorRef) const = 0;
+    virtual ::std::optional<::Vec3> tryGetActorPositionDelta(::WeakRef<::EntityContext>) const = 0;
 
-    virtual ::std::optional<::ICameraAPI::ShakeParameters> tryGetShakeParameters(
+    virtual ::std::vector<::ICameraAPI::ShakeParameters> tryGetShakeParameters(
         ::WeakRef<::EntityContext> actorRef,
         float                      noiseMultiplier,
         float                      frequency,
@@ -92,11 +91,5 @@ public:
     virtual bool isInWall(::Vec3 const& pos) const = 0;
 
     virtual bool isAlive(::WeakRef<::EntityContext> const actorRef) const = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

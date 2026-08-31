@@ -10,54 +10,31 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class Material;
 struct ResourceDropsContext;
 // clang-format on
 
 class RotatedPillarInfestedBlock : public ::RotatedPillarBlock {
 public:
-    // prevent constructor by default
-    RotatedPillarInfestedBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void spawnAfterBreak(
-        ::BlockSource&    region,
-        ::Block const&    pos,
-        ::BlockPos const& resourceDropsContext,
-        ::ResourceDropsContext const&
+        ::BlockSource& region,
+        ::Block const&,
+        ::BlockPos const&             pos,
+        ::ResourceDropsContext const& resourceDropsContext
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RotatedPillarInfestedBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $spawnAfterBreak(
-        ::BlockSource&    region,
-        ::Block const&    pos,
-        ::BlockPos const& resourceDropsContext,
-        ::ResourceDropsContext const&
+        ::BlockSource& region,
+        ::Block const&,
+        ::BlockPos const&             pos,
+        ::ResourceDropsContext const& resourceDropsContext
     ) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

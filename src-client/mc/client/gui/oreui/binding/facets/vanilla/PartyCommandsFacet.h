@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/CommandState.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/PartyCommandError.h"
 #include "mc/client/party/parties/PartyPrivacy.h"
@@ -19,7 +19,7 @@ namespace Parties { class PartySystem; }
 
 namespace OreUI {
 
-class PartyCommandsFacet : public ::OreUI::FacetBase<::OreUI::PartyCommandsFacet> {
+class PartyCommandsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PartyCommandsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -65,7 +65,7 @@ public:
 
     MCAPI ::OreUI::CommandState<::OreUI::PartyCommandError> const& getCreatePartyState() const;
 
-    MCFOLD ::OreUI::CommandState<::OreUI::PartyCommandError> const& getJoinPartyState() const;
+    MCAPI ::OreUI::CommandState<::OreUI::PartyCommandError> const& getJoinPartyState() const;
 
     MCAPI void ignoreInvite(::std::string const& partyId, ::std::string const& inviterXuid);
 
@@ -109,12 +109,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

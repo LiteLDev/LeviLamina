@@ -43,13 +43,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool _shouldOccludeAgainst(
-        ::BlockPos const&                                           relativePos,
-        uchar                                                       neighborDirection,
-        ::ClientBlockPipeline::BlockVolumeArea const&               area,
-        ::ClientBlockPipeline::BitsetCache const&                   opaqueFullBlockCache,
-        ::ClientBlockPipeline::ArrayCache<::Block const*> const&    cullingBlocksCache,
-        ::std::optional<::BlockCullingData::CullingRule::Condition> condition,
-        bool                                                        cullAgainstFullAndOpaque
+        ::BlockPos const&                                                 relativePos,
+        uchar                                                             neighborDirection,
+        ::ClientBlockPipeline::BlockVolumeArea const&                     area,
+        ::ClientBlockPipeline::BitsetCache const&                         opaqueFullBlockCache,
+        ::ClientBlockPipeline::ArrayCache<::Block const*> const&          cullingBlocksCache,
+        ::std::optional<::BlockCullingData::CullingRule::Condition> const condition,
+        bool const                                                        cullAgainstFullAndOpaque
     ) const;
     // NOLINTEND
 

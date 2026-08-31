@@ -2,42 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptBlockComponentRegistry; }
-namespace ScriptModuleMinecraft { class ScriptItemComponentRegistry; }
-namespace ScriptModuleMinecraft { class ScriptPropertyRegistry; }
+class ServerLevel;
+namespace ScriptModuleMinecraft { class IScriptItemCustomComponentRegistry; }
+namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentsRegistry; }
 // clang-format on
 
 struct ScriptingWorldInitializeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPropertyRegistry>>
-        mRegistry;
-    ::ll::
-        TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry>>
-            mBlockComponentRegistry;
-    ::ll::
-        TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry>>
-                                                              mItemComponentRegistry;
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-    ::ll::TypedStorage<1, 1, bool>                            mFinalEvent;
+    ::ll::TypedStorage<8, 8, ::ServerLevel&> mLevel;
+    ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry&>
+        mBlockCustomComponentRegistry;
+    ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry&> mItemCustomComponentRegistry;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ScriptingWorldInitializeEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
+    // prevent constructor by default
+    ScriptingWorldInitializeEvent& operator=(ScriptingWorldInitializeEvent const&);
+    ScriptingWorldInitializeEvent(ScriptingWorldInitializeEvent const&);
+    ScriptingWorldInitializeEvent();
 };

@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-struct LookedAtComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -63,21 +61,16 @@ public:
     // prevent constructor by default
     LookedAtDefinition& operator=(LookedAtDefinition const&);
     LookedAtDefinition(LookedAtDefinition const&);
+    LookedAtDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LookedAtDefinition();
-
-    MCAPI void initialize(::EntityContext&, ::LookedAtComponent& component) const;
-
     MCAPI void setFieldOfView(float const& fieldOfViewInDegrees);
 
     MCAPI void setLineOfSightObstructionType(::std::string const& str);
 
     MCAPI void setSetTargetMode(::std::string const& str);
-
-    MCAPI ~LookedAtDefinition();
     // NOLINTEND
 
 public:
@@ -86,17 +79,5 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::LookedAtDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

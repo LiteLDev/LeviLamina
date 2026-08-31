@@ -14,7 +14,6 @@ class IMinecraftEventing;
 class ResourceLoadManager;
 class ResourcePackManager;
 struct BlockCullingData;
-namespace PuvLoadData { struct LoadResultWithTiming; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -35,21 +34,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockCullingGroup() /*override*/ = default;
+    virtual ~BlockCullingGroup() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BlockCullingGroup(::IMinecraftEventing& eventing);
-
-    MCAPI ::PuvLoadData::LoadResultWithTiming _parseBlockCullingData(
-        ::std::string_view             fileWithExtension,
-        ::std::string const&           fileData,
-        ::MolangVersion                molangVersion,
-        bool                           isBaseGamePack,
-        ::cereal::ReflectionCtx const& ctx
-    );
 
     MCAPI void loadBlockCullingDataAsync(
         ::ResourcePackManager&                               resourcePackManager,
@@ -74,6 +65,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::IMinecraftEventing& eventing);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

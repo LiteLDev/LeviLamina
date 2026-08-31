@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/models/ContainerModel.h"
 
 // auto generated forward declare list
@@ -30,7 +29,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~ArmorContainerModel() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ArmorContainerModel() /*override*/;
+#endif
 
     virtual void postInit() /*override*/;
 
@@ -48,18 +51,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ArmorContainerModel(::ContainerEnumName containerName, int containerSize, ::Player& player);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::ContainerEnumName containerName, int containerSize, ::Player& player);
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
@@ -83,11 +78,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

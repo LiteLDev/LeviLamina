@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/script_engine/Promise.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/script_engine/scripting/Promise.h"
 #include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
 
 // auto generated forward declare list
@@ -21,6 +21,7 @@ namespace ScriptModuleMinecraftNet { class ScriptUriNotAllowedError; }
 namespace ScriptModuleMinecraftNet { class ScriptWebSocketClient; }
 namespace ScriptModuleMinecraftNet { class ScriptWebSocketConnectionFailedError; }
 namespace ScriptModuleMinecraftNet { class ScriptWebSocketLimitExceededError; }
+namespace ScriptModuleMinecraftNet { struct ScriptNetHeader; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetModuleConfig; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -53,12 +54,6 @@ public:
 
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
 public:
@@ -68,7 +63,7 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnk5f7385;
     ::ll::UntypedStorage<8, 16>  mUnk5b0a43;
     ::ll::UntypedStorage<8, 8>   mUnk1b6b60;
-    ::ll::UntypedStorage<8, 128> mUnk6215be;
+    ::ll::UntypedStorage<8, 136> mUnk6215be;
     ::ll::UntypedStorage<8, 16>  mUnka214d6;
     // NOLINTEND
 
@@ -97,13 +92,14 @@ public:
         ::ScriptModuleMinecraftNet::ScriptMalformedUriError,
         ::ScriptModuleMinecraftNet::ScriptTLSOnlyError,
         ::ScriptModuleMinecraftNet::ScriptUriNotAllowedError>
-    connect(::Scripting::ScriptObjectFactory& factory, ::std::string const& uri, ::Scripting::WeakLifetimeScope& scope);
-
-    MCNAPI void flushDeferredEvents(::ScriptDeferredFlushTracker& tracker);
+    connect(
+        ::Scripting::ScriptObjectFactory&                                                  factory,
+        ::std::string const&                                                               uri,
+        ::std::optional<::std::vector<::ScriptModuleMinecraftNet::ScriptNetHeader>> const& userHeaders,
+        ::Scripting::WeakLifetimeScope&                                                    scope
+    );
 
     MCNAPI void initEvents();
-
-    MCNAPI void postFlush();
 
     MCNAPI ~ScriptWebSocketFactory();
     // NOLINTEND

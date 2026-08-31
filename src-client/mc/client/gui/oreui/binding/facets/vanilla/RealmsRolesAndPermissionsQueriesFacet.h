@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/PlayerRole.h"
 #include "mc/client/realms/PlayerRoleActions.h"
 #include "mc/client/realms/RolesAndPermissionsState.h"
@@ -18,7 +18,7 @@ namespace Realms { struct PlayerRoleWithActionsList; }
 namespace OreUI {
 
 class RealmsRolesAndPermissionsQueriesFacet
-: public ::OreUI::FacetBase<::OreUI::RealmsRolesAndPermissionsQueriesFacet> {
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsRolesAndPermissionsQueriesFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -83,13 +83,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI bool $update();
     // NOLINTEND
 };
 

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/webrtc/ReceiveStreamInterface.h"
+#include "mc/external/webrtc/RtcpMode.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
@@ -30,13 +31,9 @@ public:
 
     virtual ::std::vector<::webrtc::RtpSource> GetSources() const = 0;
 
+    virtual void SetRtcpMode(::webrtc::RtcpMode) = 0;
+
     virtual ~MediaReceiveStreamInterface() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

@@ -12,7 +12,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Material;
 class Vec3;
 struct BlockAnimateTickData;
 struct Brightness;
@@ -20,10 +19,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class AbstractCandleBlock : public ::BlockType {
-public:
-    // prevent constructor by default
-    AbstractCandleBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -58,9 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AbstractCandleBlock(::std::string const& nameId, int id, ::Material const& material);
-
-    MCAPI void _addExtinguishEffects(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const;
+    MCAPI void _addExtinguishEffects(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void _checkForWaterlogging(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -76,12 +69,6 @@ public:
     MCAPI static bool _canBeLit(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static bool _isLit(::Block const& block);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

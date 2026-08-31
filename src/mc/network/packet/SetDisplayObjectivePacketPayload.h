@@ -23,8 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SetDisplayObjectivePacketPayload(::SetDisplayObjectivePacketPayload const&);
-
     MCAPI SetDisplayObjectivePacketPayload(
         ::std::string const& displaySlotName,
         ::std::string const& objectiveName,
@@ -33,18 +31,12 @@ public:
         ::ObjectiveSortOrder order
     );
 
-    MCAPI ::SetDisplayObjectivePacketPayload& operator=(::SetDisplayObjectivePacketPayload&&);
-
-    MCAPI ::SetDisplayObjectivePacketPayload& operator=(::SetDisplayObjectivePacketPayload const&);
-
     MCAPI ~SetDisplayObjectivePacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SetDisplayObjectivePacketPayload const&);
-
     MCAPI void* $ctor(
         ::std::string const& displaySlotName,
         ::std::string const& objectiveName,

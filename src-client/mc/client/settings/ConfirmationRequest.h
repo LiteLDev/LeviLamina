@@ -17,22 +17,15 @@ public:
 public:
     // prevent constructor by default
     ConfirmationRequest& operator=(ConfirmationRequest const&);
+    ConfirmationRequest(ConfirmationRequest const&);
     ConfirmationRequest();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConfirmationRequest(::Settings::ConfirmationRequest const&);
-
     MCFOLD ::Settings::ConfirmationRequest& operator=(::Settings::ConfirmationRequest&&);
 
     MCAPI ~ConfirmationRequest();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::Settings::ConfirmationRequest const&);
     // NOLINTEND
 
 public:

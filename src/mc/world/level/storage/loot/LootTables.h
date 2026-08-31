@@ -21,23 +21,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LootTables();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LootTables(bool usingUpcomingCreatorFeaturesExperiment);
-
     MCAPI ::LootTable* lookupByName(::std::string const& dir, ::ResourcePackManager& resourceLoader);
 
     MCAPI ~LootTables();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool usingUpcomingCreatorFeaturesExperiment);
     // NOLINTEND
 
 public:

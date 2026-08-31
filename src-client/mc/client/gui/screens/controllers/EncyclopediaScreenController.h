@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EncyclopediaScreenController() /*override*/ = default;
+    virtual ~EncyclopediaScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -52,10 +52,6 @@ public:
     MCAPI EncyclopediaScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::EncyclopediaTopicIndex topic);
 
     MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _selectNewTab(bool isInitialTab, int newTabIndex);
     // NOLINTEND
 
 public:
@@ -65,11 +61,17 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onOpen();
 
-    MCFOLD bool $bind(
+    MCAPI bool $bind(
         ::std::string const& bindingName,
         uint                 bindingNameHash,
         ::std::string const& bindingNameOverride,

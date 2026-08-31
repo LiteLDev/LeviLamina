@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SafeZoneScreenController() /*override*/ = default;
+    virtual ~SafeZoneScreenController() /*override*/;
 
     virtual ::ui::ViewRequest tryExit() /*override*/;
     // NOLINTEND
@@ -46,12 +46,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SafeZoneScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
-
-    MCAPI void _calculateSafeZoneValue();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -67,16 +61,14 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI ::ui::ViewRequest $tryExit();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
+    MCAPI ::ui::ViewRequest $tryExit();
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/MemberFilterOption.h"
 #include "mc/client/realms/MemberSortOption.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -16,7 +16,8 @@ namespace Realms::Stories { class FacetStateManager; }
 
 namespace OreUI {
 
-class RealmsStoriesPersistentDataFacet : public ::OreUI::FacetBase<::OreUI::RealmsStoriesPersistentDataFacet> {
+class RealmsStoriesPersistentDataFacet
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsStoriesPersistentDataFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -41,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsStoriesPersistentDataFacet() /*override*/ = default;
+    virtual ~RealmsStoriesPersistentDataFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -54,7 +55,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>       profanityContext
     );
 
-    MCFOLD ::std::string const& getCommentInProgressBody() const;
+    MCAPI ::std::string const& getCommentInProgressBody() const;
 
     MCFOLD ::Realms::Stories::MemberFilterOption& getCurrentMemberFilterOption() const;
 
@@ -103,15 +104,15 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI bool $update();
     // NOLINTEND
 };
 

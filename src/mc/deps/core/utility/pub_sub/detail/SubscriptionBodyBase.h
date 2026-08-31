@@ -41,31 +41,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SubscriptionBodyBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SubscriptionBodyBase();
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SubscriptionBodyBase(::std::unique_ptr<::Bedrock::PubSub::SubscriptionContext>&& context);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::Bedrock::PubSub::SubscriptionContext>&& context);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

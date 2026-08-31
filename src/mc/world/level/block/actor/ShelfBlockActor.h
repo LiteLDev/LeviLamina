@@ -4,11 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/platform/brstd/bitset.h"
 #include "mc/world/Container.h"
 #include "mc/world/item/ClockSpriteCalculator.h"
 #include "mc/world/item/CompassSpriteCalculator.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,7 +22,7 @@ class ItemStack;
 class SaveContext;
 // clang-format on
 
-class ShelfBlockActor : public ::BlockActor, public ::Container {
+class ShelfBlockActor : public ::VanillaBlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
@@ -88,29 +87,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ShelfBlockActor(::BlockPos const& pos);
 
-    MCAPI void _loadItems(::CompoundTag const& base, ::ILevel& level);
-
     MCAPI void _setItemInternal(int slot, ::ItemStack const& item, bool isLoading, bool emitVibrations);
-
-#ifdef LL_PLAT_C
-    MCFOLD ::ClockSpriteCalculator& getClockCalculator();
-
-    MCFOLD ::CompassSpriteCalculator& getCompassCalculator();
-#endif
-
-    MCAPI ::brstd::bitset<3, uchar> getOccupiedSlots();
-
-#ifdef LL_PLAT_C
-    MCAPI ::CompassSpriteCalculator& getRecoveryCompassCalculator();
-
-    MCAPI bool isSlotOccupied(int slot) const;
-#endif
-
-    MCAPI void setItemWithoutVibrations(int slot, ::ItemStack const& item);
-
-#ifdef LL_PLAT_C
-    MCAPI ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
-#endif
 
     MCAPI void updateItemCalculators(::ItemStack const& item, ::BlockSource const& region);
     // NOLINTEND
@@ -163,13 +140,5 @@ public:
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockActor();
-
-    MCAPI static void** $vftableForContainer();
     // NOLINTEND
 };

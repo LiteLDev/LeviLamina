@@ -25,15 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void SendOrBuffer(char const** data, uint const* lengths, int numParameters);
-
-    MCAPI ~RemoteClient();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void SendOrBuffer(char const** data, uint const* lengths, int const numParameters);
     // NOLINTEND
 };
 

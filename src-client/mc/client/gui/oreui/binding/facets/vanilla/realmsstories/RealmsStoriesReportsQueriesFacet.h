@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/DeletionStatus.h"
 #include "mc/client/realms/stories/FetchStatus.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -20,7 +20,8 @@ namespace Realms::Stories { class RealmsFeedModeration; }
 
 namespace OreUI {
 
-class RealmsStoriesReportsQueriesFacet : public ::OreUI::FacetBase<::OreUI::RealmsStoriesReportsQueriesFacet> {
+class RealmsStoriesReportsQueriesFacet
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsStoriesReportsQueriesFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -62,8 +63,6 @@ public:
     MCAPI ::Realms::Stories::FetchStatus _getStoryFeedStatus() const;
 
     MCAPI int _getStoryFeedTotalStories() const;
-
-    MCAPI void _regenerateView();
     // NOLINTEND
 
 public:
@@ -93,12 +92,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

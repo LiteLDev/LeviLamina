@@ -12,7 +12,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void onDespawn(::Actor& actor);
-
-    MCAPI void tick(::Actor& actor);
     // NOLINTEND
 };

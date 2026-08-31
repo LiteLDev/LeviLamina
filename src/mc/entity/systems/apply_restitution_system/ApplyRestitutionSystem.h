@@ -20,9 +20,9 @@ namespace ApplyRestitutionSystem {
 MCAPI void registerSystems(::EntitySystems& systems, ::EntitySystemTickingMode const& tickingMode, bool isClientSide);
 
 MCAPI void requestBounceGameEvent(
-    ::StrictEntityContext const&       entity,
-    ::ApplyRestitutionComponent const& modifier,
-    ::EntityModifier<::PostGameEventRequestComponent>
+    ::StrictEntityContext const& entity,
+    ::ApplyRestitutionComponent const&,
+    ::EntityModifier<::PostGameEventRequestComponent> modifier
 );
 // NOLINTEND
 

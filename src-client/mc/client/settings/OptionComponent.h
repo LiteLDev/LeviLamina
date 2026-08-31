@@ -10,7 +10,6 @@
 // clang-format off
 namespace Settings { class IOptionsDataProvider; }
 namespace Settings { struct OptionConfirmationRequest; }
-namespace Settings { struct OptionData; }
 // clang-format on
 
 namespace Settings {
@@ -37,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OptionComponent() /*override*/ = default;
+    virtual ~OptionComponent() /*override*/;
 
     virtual ::Settings::ComponentState getDefaultState() const /*override*/;
     // NOLINTEND
@@ -52,17 +51,7 @@ public:
         ::std::unique_ptr<::Settings::IOptionsDataProvider> dataProvider
     );
 
-    MCFOLD bool flush();
-
-    MCFOLD ::std::vector<::Settings::OptionConfirmationRequest> getConfirmationRequests() const;
-
     MCAPI ::std::optional<::std::string> getInfo() const;
-
-    MCFOLD ::gsl::span<::Settings::OptionData const> getOptions() const;
-
-    MCAPI int getValue() const;
-
-    MCAPI bool updateValue(int value);
     // NOLINTEND
 
 public:
@@ -77,15 +66,15 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCFOLD ::Settings::ComponentState $getDefaultState() const;
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCFOLD ::Settings::ComponentState $getDefaultState() const;
     // NOLINTEND
 };
 

@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScrollViewComponent() /*override*/ = default;
+    virtual ~ScrollViewComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -84,38 +84,6 @@ public:
 
     MCAPI ::glm::vec2 _getContentSize() const;
 
-    MCAPI bool _handlePointerMove(
-        ::VisualTree&         screenEvent,
-        ::ScreenInputContext& returnValue,
-        ::UIAnimationController&,
-        ::ScreenEvent const&,
-        ::ComponentReceiveActionType&
-    );
-
-    MCAPI bool _handleScrollDirection(
-        ::VisualTree&         screenEvent,
-        ::ScreenInputContext& returnValue,
-        ::UIAnimationController&,
-        ::ScreenEvent const&,
-        ::ComponentReceiveActionType&
-    );
-
-    MCAPI bool _handleScrollRequest(
-        ::VisualTree&         screenEvent,
-        ::ScreenInputContext& returnValue,
-        ::UIAnimationController&,
-        ::ScreenEvent const&,
-        ::ComponentReceiveActionType&
-    );
-
-    MCAPI bool _handleTrackScrollButton(
-        ::VisualTree&         screenEvent,
-        ::ScreenInputContext& returnValue,
-        ::UIAnimationController&,
-        ::ScreenEvent const&,
-        ::ComponentReceiveActionType&
-    );
-
     MCAPI void _makeScrollBarVisible();
 
     MCAPI void _setContentOffset(
@@ -137,8 +105,6 @@ public:
 
     MCAPI ::ui::AnimationStatus animationScrollingTick(::mce::TimeStep const& timeStep);
 
-    MCFOLD ::std::weak_ptr<::UIControl> getScrollContent() const;
-
     MCAPI bool handleScrollDirection(
         ::VisualTree&            visualTree,
         ::UIAnimationController& animationController,
@@ -147,16 +113,18 @@ public:
         ::glm::vec2 const&       deltaPosition,
         bool                     alreadyHandled
     );
-
-    MCAPI bool isPointInViewPort(::glm::vec2 const& pointerPosition) const;
-
-    MCFOLD void setGestureControlMode(bool state);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::UIControl& owner);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -178,11 +146,5 @@ public:
     MCFOLD void $onNotifyChildRemoved();
 
     MCAPI bool $onLayoutChange();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

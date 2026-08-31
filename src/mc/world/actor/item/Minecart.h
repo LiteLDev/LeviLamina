@@ -18,9 +18,9 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-struct AABBShapeComponent;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -45,7 +45,7 @@ public:
     // NOLINTBEGIN
     virtual ~Minecart() /*override*/;
 
-    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
@@ -71,7 +71,8 @@ public:
 
     virtual void kill() /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual void applyNaturalSlowdown(::BlockSource& region);
 
@@ -102,18 +103,6 @@ public:
     MCAPI ::BlockPos preNormalTick();
 
     MCAPI void setDisplayBlock(::Block const& block);
-
-    MCAPI void setDisplayOffset(int offset);
-
-#ifdef LL_PLAT_C
-    MCAPI void setRailRenderRot(float railRot);
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static float getHeightOffset(::AABBShapeComponent const& aabb);
     // NOLINTEND
 
 public:
@@ -135,7 +124,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
@@ -159,18 +148,13 @@ public:
 
     MCAPI void $kill();
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
     MCAPI void $applyNaturalSlowdown(::BlockSource& region);
 
     MCAPI void $_lazyInitDisplayBlock();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

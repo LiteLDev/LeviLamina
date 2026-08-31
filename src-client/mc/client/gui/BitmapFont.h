@@ -32,7 +32,6 @@ public:
 
 public:
     // prevent constructor by default
-    BitmapFont& operator=(BitmapFont const&);
     BitmapFont();
 
 public:
@@ -62,7 +61,7 @@ public:
 
     virtual ::ResourceLocation _getFontSheetLocation(int sheet, bool forceUnicode) const /*override*/;
 
-    virtual ::mce::MaterialPtr const& getMaterial(int isOddGuiScale, bool) const /*override*/;
+    virtual ::mce::MaterialPtr const& getMaterial(int sheet, bool isOddGuiScale) const /*override*/;
 
     virtual void loadFontData(bool uploadTextureImmediately) /*override*/;
 
@@ -88,23 +87,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BitmapFont(::BitmapFont const& rhs);
-
     MCAPI BitmapFont(
         ::Core::Path const&                    asciiName,
         ::Core::Path const&                    unicodeName,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
         bool                                   uploadOnConstruction
     );
-
-    MCAPI void _loadAsciiFontInformation(::Core::Path const& fontName, bool uploadTextureImmediately);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BitmapFont const& rhs);
-
     MCAPI void* $ctor(
         ::Core::Path const&                    asciiName,
         ::Core::Path const&                    unicodeName,
@@ -144,7 +137,7 @@ public:
 
     MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool forceUnicode) const;
 
-    MCAPI ::mce::MaterialPtr const& $getMaterial(int isOddGuiScale, bool) const;
+    MCAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
 
     MCAPI void $loadFontData(bool uploadTextureImmediately);
 
@@ -165,11 +158,5 @@ public:
 
     MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     $getFontSources() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

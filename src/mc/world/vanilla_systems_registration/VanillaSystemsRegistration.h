@@ -18,6 +18,7 @@ namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 namespace VanillaSystemsRegistration {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCAPI ::VanillaSystemsRegistration::RegistrationOptions getDefault(
     bool                            isClientSide,
     bool                            connectedToThirdPartyServer,
@@ -25,6 +26,7 @@ MCAPI ::VanillaSystemsRegistration::RegistrationOptions getDefault(
     ::BaseGameVersion const&        baseGameVersion,
     ::Experiments const&            experiments
 );
+#endif
 
 MCAPI void registerActorAiStepSystems(
     ::EntitySystems&                                         systemRegistry,
@@ -44,16 +46,7 @@ MCAPI void registerActorNormalTickSystems(
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
-MCAPI void registerActorPreTravelSystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
-MCAPI void registerActorTravelSystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
+#ifdef LL_PLAT_C
 MCAPI void registerBlockPosTrackerSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
@@ -61,87 +54,19 @@ MCAPI void registerBlockPosTrackerSystems(
 
 MCAPI void registerEditorPauseFilterSystems(::EntitySystems& systemRegistry);
 
-MCAPI void registerEntityInsideSystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
-MCAPI void registerEnvironmentSensingSystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
-MCAPI void registerInputDependentTickFilterSystems(::EntitySystems& systemRegistry);
-
-MCAPI void registerInputIndependentTickSystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
-MCAPI void registerMinecartMovementSystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
-MCAPI void registerMoveIntentSystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
-MCAPI void registerMovementInputSystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
-MCAPI void registerMovementTickEligibilitySystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
-MCAPI void registerPostMoveTravelVelocitySystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
-MCAPI void registerPostMovementSystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
-MCAPI void registerPreMoveTravelVelocitySystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
-MCAPI void registerResetMovementValuesSystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
 MCAPI void registerSharedVanillaPlayerInteractionSystems(::EntitySystems& systemRegistry);
 
 MCAPI void registerTickFilterSystems(::EntitySystems& systemRegistry);
 
-#ifdef LL_PLAT_C
 MCAPI void registerVanillaClientTickingSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 #endif
 
-MCAPI void registerVanillaServerRuntimeInitializers(
-    ::EntitySystems&                                         systems,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
 MCAPI void registerVanillaServerTickingSystems(
     ::EntitySystems& systemRegistry,
-    ::Bedrock::NotNullNonOwnerPtr<::ILevel const>,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
-
-MCAPI void registerVehicleManagementSystems(
-    ::EntitySystems&                                         systemRegistry,
+    ::Bedrock::NotNullNonOwnerPtr<::ILevel const> const,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 // NOLINTEND

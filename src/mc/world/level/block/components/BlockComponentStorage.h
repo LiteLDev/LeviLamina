@@ -27,6 +27,7 @@ class OnPlayerPlacingTrigger;
 class OnStepOffTrigger;
 class OnStepOnTrigger;
 struct BlockAmbientSoundComponent;
+struct BlockBlockEntityComponent;
 struct BlockChestObstructionComponent;
 struct BlockCollisionBoxComponent;
 struct BlockConnectionRuleComponent;
@@ -40,6 +41,7 @@ struct BlockFlammableComponent;
 struct BlockFlowerPottableComponent;
 struct BlockFrictionComponent;
 struct BlockGeometryComponent;
+struct BlockInstrumentComponent;
 struct BlockItemVisualComponent;
 struct BlockLeashableComponent;
 struct BlockLightDampeningComponent;
@@ -110,22 +112,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addStatelessComponent(::Bedrock::typeid_t<void> typeId);
-
     MCAPI ::BlockComponentStorage::ComponentBase* _findComponentBase(::Bedrock::typeid_t<void> componentIdToFind) const;
-
-    MCAPI void allowComponentReplacement();
-
-    MCAPI void allowTryGetComponentBeforeFinalization();
-
-    MCAPI void finalizeComponents();
-
-    MCFOLD bool modificationIsAllowed() const;
-
-    MCFOLD void setAllowComponentReplacement(bool allow);
-
-    MCAPI void
-    setBlockComponentEventSubscriber(::std::shared_ptr<::BlockComponentEventSubscriber> blockComponentEventSubscriber);
 
     MCAPI ~BlockComponentStorage();
     // NOLINTEND
@@ -133,6 +120,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

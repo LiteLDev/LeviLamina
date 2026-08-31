@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/binding_factory/GenericModuleBindingFactory.h"
+#include "mc/deps/script_core/binding_factory/scripting/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptMinecraftServerBindingModuleFactory() /*override*/ = default;
+    virtual ~ScriptMinecraftServerBindingModuleFactory() /*override*/;
     // NOLINTEND
 
 public:
@@ -51,8 +51,6 @@ public:
         ::WeakRef<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry const> blockCustomComponentRegistry,
         bool                                                                          importRestricted
     );
-
-    MCNAPI void _addVersions();
 
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Scripting::ModuleBindingBuilder&                 moduleBuilder,
@@ -67,13 +65,17 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::Scripting::Version version);
 
+#ifdef LL_PLAT_C
     MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI static char const*& ModuleName();
+#endif
 
     MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
@@ -90,8 +92,8 @@ public:
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

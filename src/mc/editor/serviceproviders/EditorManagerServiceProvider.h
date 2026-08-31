@@ -19,17 +19,13 @@ public:
 
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() = 0;
 
+    virtual bool isEditorModeEnabled() const = 0;
+
     virtual ::Bedrock::PubSub::Subscription
     registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManager&)> func) = 0;
 
     virtual ::Bedrock::PubSub::Subscription
     registerLevelTickSubscriber(::std::function<void(::Editor::EditorManager&)> func) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

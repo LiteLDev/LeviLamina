@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScatterFeature() /*override*/ = default;
+    virtual ~ScatterFeature() /*override*/;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
@@ -37,11 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScatterFeature();
-
-    MCAPI ::SharedTypes::v1_21_10::CoordinateRangeData
-    _createCoordinateRangeDataFromExpression(::SharedTypes::Legacy::ExpressionNode const& expressionNode);
-
     MCAPI void addCoordinateEvaluationOrder(
         ::SharedTypes::v1_21_10::ScatterParamsData&               scatterParamsData,
         ::SharedTypes::v1_21_10::CoordinateEvaluationOrder const& coordinateEvaluationOrder
@@ -96,9 +91,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

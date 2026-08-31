@@ -59,22 +59,14 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual ~CodeBuilderPacket() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI CodeBuilderPacket();
-
-    MCAPI explicit CodeBuilderPacket(::CodeBuilderPacketPayload payload);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::CodeBuilderPacketPayload payload);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

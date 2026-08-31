@@ -27,28 +27,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ToggleManagerComponent() /*override*/ = default;
+    virtual ~ToggleManagerComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&         visualTree,
-        ::ScreenInputContext& screenEvent,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     ) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _defaultToggleGroupState(::VisualTree& visualTree);
-
-    MCAPI void _gatherToggleGroupState(::VisualTree& visualTree);
-
     MCAPI void _updateToggleGroupState(::VisualTree& visualTree, bool toggleState);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -59,16 +61,10 @@ public:
     MCFOLD void $reset();
 
     MCAPI ::ComponentReceiveActionType $receive(
-        ::VisualTree&         visualTree,
-        ::ScreenInputContext& screenEvent,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

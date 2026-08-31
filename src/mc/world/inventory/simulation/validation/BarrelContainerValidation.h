@@ -15,20 +15,15 @@ class BarrelContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual int getContainerSize(::ContainerScreenContext const& container, ::Container const&) const /*override*/;
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
+        /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getContainerSize(::ContainerScreenContext const& container, ::Container const&) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

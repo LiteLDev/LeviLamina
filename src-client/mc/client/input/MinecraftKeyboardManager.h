@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftKeyboardManager() /*override*/ = default;
+    virtual ~MinecraftKeyboardManager() /*override*/;
 
     virtual bool tryEnableKeyboard(
         ::std::string const& currentText,
@@ -94,21 +94,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MinecraftKeyboardManager(::IClientInstance& clientInstance);
-
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData const> _getGuiData() const;
 
     MCAPI float _getGuiScale() const;
 
     MCAPI float _getInvGuiScale() const;
-
-    MCAPI void delayedInputResume();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool keyboardIsOwned();
     // NOLINTEND
 
 public:
@@ -118,9 +108,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IClientInstance& clientInstance);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -146,15 +136,15 @@ public:
 
     MCFOLD bool $isKeyboardActive() const;
 
-    MCFOLD bool $wasEnabledWithMultiline() const;
+    MCAPI bool $wasEnabledWithMultiline() const;
 
-    MCFOLD bool $isNumbersOnly() const;
+    MCAPI bool $isNumbersOnly() const;
 
-    MCFOLD int $getMaxLength() const;
+    MCAPI int $getMaxLength() const;
 
     MCAPI void $setResumeInputCallback(::std::function<void()> callback);
 
-    MCAPI void $setDisableInputToOtherClientsCallback(::std::function<void(int)> callback);
+    MCFOLD void $setDisableInputToOtherClientsCallback(::std::function<void(int)> callback);
 
     MCAPI bool $tryClaimKeyboardOwnership();
 

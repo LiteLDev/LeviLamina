@@ -2,17 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core_graphics/TextureSetLayerType.h"
-
 // auto generated forward declare list
 // clang-format off
-class FrameUpdateContext;
-class MinecraftGraphics;
 class ScreenContext;
-struct FlipbookTextureDescription;
-struct TextureUVCoordinateSet;
-namespace mce { class TextureGroup; }
+class Tessellator;
 namespace mce { class TexturePtr; }
 namespace mce { struct ViewportInfo; }
 namespace mce::framebuilder { struct BlitFlipbookSingleTextureDescription; }
@@ -27,8 +20,7 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnk3e9001;
     ::ll::UntypedStorage<8, 32>  mUnk662201;
     ::ll::UntypedStorage<8, 16>  mUnk31f342;
-    ::ll::UntypedStorage<8, 8>   mUnk5e4cdc;
-    ::ll::UntypedStorage<8, 552> mUnk3657f7;
+    ::ll::UntypedStorage<8, 592> mUnk3657f7;
     ::ll::UntypedStorage<8, 56>  mUnk350955;
     ::ll::UntypedStorage<4, 4>   mUnkdd2ba5;
     ::ll::UntypedStorage<4, 4>   mUnkaf5df3;
@@ -50,44 +42,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FlipbookTexture(
-        ::MinecraftGraphics&                   minecraftGraphics,
-        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
-        ::FlipbookTextureDescription const&    flipbookTextureDescription,
-        ::TextureUVCoordinateSet const&        uvs,
-        int                                    padSize,
-        ::cg::TextureSetLayerType              textureType
-    );
-
     MCNAPI ::mce::framebuilder::BlitFlipbookSingleTextureDescription
     createDescription(::ScreenContext& screenContext, ::mce::ViewportInfo const& viewportInfo) const;
 
-    MCNAPI void frameUpdate(::FrameUpdateContext&);
-
-    MCNAPI bool const isValid() const;
-
-    MCNAPI void load();
+    MCNAPI void load(::Tessellator& tessellator);
 
     MCNAPI void render(::ScreenContext& screenContext, ::mce::TexturePtr const&, ::mce::ViewportInfo const&) const;
 
-    MCNAPI void tick();
-
-    MCNAPI void unload();
-
     MCNAPI ~FlipbookTexture();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::MinecraftGraphics&                   minecraftGraphics,
-        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
-        ::FlipbookTextureDescription const&    flipbookTextureDescription,
-        ::TextureUVCoordinateSet const&        uvs,
-        int                                    padSize,
-        ::cg::TextureSetLayerType              textureType
-    );
     // NOLINTEND
 
 public:

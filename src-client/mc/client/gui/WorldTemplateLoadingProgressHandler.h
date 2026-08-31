@@ -31,9 +31,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldTemplateLoadingProgressHandler() /*override*/ = default;
+    virtual ~WorldTemplateLoadingProgressHandler() /*override*/;
 
-    virtual void onStart(::MinecraftScreenModel&) /*override*/;
+    virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -51,24 +51,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI WorldTemplateLoadingProgressHandler(
-        ::std::unique_ptr<::WorldTemplateLoader> worldTemplateLoader,
-        ::SceneFactory&                          sceneFactory
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::WorldTemplateLoader> worldTemplateLoader, ::SceneFactory& sceneFactory);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onStart(::MinecraftScreenModel&);
+    MCFOLD void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
     MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 

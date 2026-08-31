@@ -3,12 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct ErrorBinding; }
-// clang-format on
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 
 namespace Editor::ScriptModule {
 
@@ -31,28 +26,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptPrefabErrorStringInvalidLength(::std::string const& s, int len, int maxLen);
-
-    MCNAPI ~ScriptPrefabErrorStringInvalidLength();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::string _getStringMessage(::std::string const& s, int len, int maxLen);
-
-    MCNAPI static ::Scripting::ErrorBinding bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string const& s, int len, int maxLen);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

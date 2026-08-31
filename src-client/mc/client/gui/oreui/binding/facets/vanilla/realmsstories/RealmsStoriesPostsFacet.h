@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/PostStatus.h"
 #include "mc/client/realms/stories/FetchStatus.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -19,7 +19,7 @@ namespace Realms::Stories { class FacetStateManager; }
 
 namespace OreUI {
 
-class RealmsStoriesPostsFacet : public ::OreUI::FacetBase<::OreUI::RealmsStoriesPostsFacet> {
+class RealmsStoriesPostsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsStoriesPostsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -101,12 +101,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

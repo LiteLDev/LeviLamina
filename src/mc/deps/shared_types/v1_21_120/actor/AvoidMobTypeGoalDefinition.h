@@ -50,8 +50,6 @@ public:
 
     MCAPI ::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&
     operator=(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
-
-    MCAPI ~AvoidMobTypeGoalDefinition();
     // NOLINTEND
 
 public:
@@ -70,12 +68,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

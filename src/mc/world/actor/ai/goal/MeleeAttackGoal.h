@@ -51,8 +51,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit MeleeAttackGoal(::Mob& mob);
-
-    MCAPI float _getAttackReachSqr(::Actor const& target) const;
     // NOLINTEND
 
 public:
@@ -69,16 +67,16 @@ public:
     );
 
     MCAPI static bool _canReachTargetLegacy(
-        ::Mob const&  mob,
-        ::Vec3 const& attackReachSq,
-        float         targetMinY,
-        float         targetMaxY,
-        float         targetXZDistanceSqr,
-        float         attackTicks,
-        int
+        ::Mob const& mob,
+        ::Vec3 const&,
+        float attackReachSq,
+        float targetMinY,
+        float targetMaxY,
+        float targetXZDistanceSqr,
+        int   attackTicks
     );
 
-    MCFOLD static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
+    MCAPI static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
 
     MCAPI static bool _isTargetInLineOfSightLegacy(::Mob const& mob, ::Actor const& target);
     // NOLINTEND
@@ -100,7 +98,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

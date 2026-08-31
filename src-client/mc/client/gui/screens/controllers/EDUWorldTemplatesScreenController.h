@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUWorldTemplatesScreenController() /*override*/;
+    virtual ~EDUWorldTemplatesScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -50,14 +50,6 @@ public:
 
     MCAPI uint64 _getTileIndex(::UIPropertyBag& bag) const;
 
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerNestedControls();
-
-    MCAPI void _registerSubcontrollers();
-
     MCAPI void _useTemplate(
         ::PackManifest const&            manifest,
         ::EDUScreenHelpers::InstanceType type,
@@ -72,24 +64,10 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onOpen();
 
     MCAPI ::ui::DirtyFlag $tick();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

@@ -43,21 +43,8 @@ public:
     // NOLINTBEGIN
     MCAPI MonumentBuilding(::Random& random, short seaLevel, int west, int north, int& orientation);
 
-    MCAPI void generateEntranceArchs(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
-
-    MCAPI void generateEntranceWall(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
-
-    MCAPI void generateLowerWall(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
-
-    MCAPI void generateMiddleWall(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
-
-    MCAPI void generateRoofPiece(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
-
-    MCAPI ::std::vector<::std::shared_ptr<::RoomDefinition>> generateRoomGraph(::Random& random);
-
-    MCAPI void generateUpperWall(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
-
-    MCAPI void generateWing(bool isFlipped, int xoff, ::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
+    MCAPI void
+    generateWing(bool isFlipped, int xoff, ::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:
@@ -76,11 +63,5 @@ public:
     MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

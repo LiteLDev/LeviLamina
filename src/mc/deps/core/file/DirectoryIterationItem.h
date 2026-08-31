@@ -2,14 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/file/DirectoryIterationFlags.h"
-#include "mc/deps/core/file/FileType.h"
-#include "mc/deps/core/file/PathBuffer.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace Core { class PathPart; }
 namespace Core { class PathView; }
 // clang-format on
 
@@ -37,41 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit DirectoryIterationItem(::Core::DirectoryIterationFlags flags);
-
-    MCNAPI uint64 getFileSize() const;
-
-    MCNAPI ::Core::PathBuffer<::std::string> const& getFullPathName() const;
-
-    MCNAPI int64 getModifyTime() const;
-
-    MCNAPI ::Core::PathPart const& getName() const;
-
-    MCNAPI ::Core::FileType getType() const;
-
-    MCNAPI bool isDirectory() const;
-
-    MCNAPI bool isFile() const;
-
-    MCNAPI void setCreateTime(int64 time);
-
-    MCNAPI void setFileSize(uint64 size);
-
     MCNAPI void setFullPathName(::Core::PathView fullPathName);
 
-    MCNAPI void setModifyTime(int64 modifyTime);
-
-    MCNAPI void setName(::Core::PathPart const& name);
-
-    MCNAPI void setType(::Core::FileType type);
-
     MCNAPI ~DirectoryIterationItem();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::DirectoryIterationFlags flags);
     // NOLINTEND
 
 public:

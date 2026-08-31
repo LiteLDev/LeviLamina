@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~JigsawEditorScreenController() /*override*/ = default;
+    virtual ~JigsawEditorScreenController() /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
     // NOLINTEND
@@ -46,7 +46,7 @@ public:
         ::ActorUniqueID   uniqueId
     );
 
-    MCFOLD ::std::string _getTextEditValue(::TextEditScreenEventData& textEditEvent) const;
+    MCAPI ::std::string _getTextEditValue(::TextEditScreenEventData& textEditEvent) const;
 
     MCAPI int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent) const;
 
@@ -64,6 +64,12 @@ public:
         ::BlockPos const& pos,
         ::ActorUniqueID   uniqueId
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

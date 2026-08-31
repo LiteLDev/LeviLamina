@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/FontHandle.h"
 #include "mc/deps/application/AppPlatformListener.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
@@ -10,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class Font;
-class FontHandle;
 class ResourceLocation;
 namespace Core { class Path; }
 namespace mce { class TextureGroup; }
@@ -33,6 +33,11 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                                     mSmoothFontLatinFontId;
     ::ll::TypedStorage<8, 8, uint64>                                                     mUIFontId;
     ::ll::TypedStorage<8, 8, uint64>                                                     mSmoothSmallFontID;
+    ::ll::TypedStorage<8, 80, ::FontHandle>                                              mFontHandle;
+    ::ll::TypedStorage<8, 80, ::FontHandle>                                              mRuneFontHandle;
+    ::ll::TypedStorage<8, 80, ::FontHandle>                                              mUnicodeFontHandle;
+    ::ll::TypedStorage<8, 80, ::FontHandle>                                              mSmoothFontLatinHandle;
+    ::ll::TypedStorage<8, 80, ::FontHandle>                                              mUIFontHandle;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::shared_ptr<::Font>>>   mOriginalMinecraftFonts;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::shared_ptr<::Font>>>   mOverriddenFonts;
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::Threading::Async<void>>>          mFontLoadingTaskTrackers;
@@ -42,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FontRepository() /*override*/;
+    virtual ~FontRepository() /*override*/ = default;
 
     virtual void onAppSuspended() /*override*/;
 
@@ -67,37 +72,21 @@ public:
         ::std::weak_ptr<::mce::TextureGroup> textureGroupWeakPtr
     );
 
-    MCAPI void _setDefaultFont(::std::string const& fontName, uint64 fontId, ::std::shared_ptr<::Font> font);
+    MCAPI void _setDefaultFont(::std::string const& fontName, uint64 const fontId, ::std::shared_ptr<::Font> font);
 
-    MCAPI void _setFontIfOverride(uint64 fontId, ::std::shared_ptr<::Font> font);
+    MCAPI void _setFontIfOverride(uint64 const fontId, ::std::shared_ptr<::Font> font);
 
     MCAPI uint64 addPreloadedFont(::std::string const& fontName, ::gsl::not_null<::std::shared_ptr<::Font>> font);
 
-    MCAPI void clearStringCache();
+    MCAPI ::FontHandle getFontFromFontType(::std::string const& fontType) const;
 
-    MCAPI void getDefaultFontHandles(
-        ::FontHandle& defaultFontHandle,
-        ::FontHandle& runeFontHandle,
-        ::FontHandle& unicodeFontHandle,
-        ::FontHandle& smoothLatinFontHandle,
-        ::FontHandle& uiFontHandle
-    );
-
-    MCAPI ::Font& getFont(uint64 fontId);
-
-    MCAPI ::FontHandle getFontHandle(uint64 fontId);
+    MCAPI ::FontHandle getFontHandle(uint64 const fontId);
 
     MCAPI uint64 getFontIdentifier(::std::string const& fontName);
 
     MCAPI ::std::vector<::ResourceLocation> getReloadFontTextures() const;
 
-    MCAPI bool haveDefaultFontsLoaded();
-
-    MCAPI bool isFontIdInRepository(uint64 fontId);
-
-    MCAPI bool isReloadingTextures();
-
-    MCFOLD bool isRepositoryInitialized();
+    MCAPI void initDefaultFontHandles();
 
     MCAPI void loadDefaultFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
@@ -105,11 +94,7 @@ public:
 
     MCAPI void parseAndLoadMetadataFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void prepForShutdown();
-
     MCAPI void reloadFontTextures(bool blockingLoad);
-
-    MCAPI void resetPerFontData();
 
     MCAPI void setMinecraftSmoothFontStyle(float guiScale, ::std::string const&);
 
@@ -131,24 +116,10 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onAppSuspended();
 
     MCAPI void $onDeviceLost();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForAppPlatformListener();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

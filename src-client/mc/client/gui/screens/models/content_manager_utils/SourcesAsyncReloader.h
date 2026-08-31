@@ -12,7 +12,6 @@
 // clang-format off
 class IContentManager;
 class TaskGroup;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -31,10 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SourcesAsyncReloader();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SourcesAsyncReloader() /*override*/;
@@ -43,35 +38,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SourcesAsyncReloader(::std::unique_ptr<::TaskGroup> taskGroup);
-
-    MCAPI ::Bedrock::Threading::Async<void> _queueReloadingSources(bool saveSources);
-
-    MCAPI void
-    setOwnerAndInitTask(::std::weak_ptr<::IContentManager> weakOwner, ::Bedrock::Threading::Async<void>&& initTask);
-
-    MCAPI ::Bedrock::PubSub::Subscription
-    subscribeToOnSourcesReloadedAsync(::std::function<void()>&& onSourcesReloadedAsyncCallback);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::TaskGroup> createDefaultTaskGroup();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::TaskGroup> taskGroup);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

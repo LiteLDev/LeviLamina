@@ -18,7 +18,6 @@ class LevelChunk;
 class Vec3;
 class WorldGenerator;
 struct BiomeIdType;
-struct DerivedDimensionArguments;
 struct DimensionType;
 namespace br::worldgen { class StructureSetRegistry; }
 // clang-format on
@@ -29,16 +28,13 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EndDragonFight>>       mDragonFight;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EndChaosLightManager>> mEndChaosLightManager;
+    ::ll::TypedStorage<1, 1, bool>                                      mEnderDragonExists;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TheEndDimension();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TheEndDimension() /*override*/ = default;
+    virtual ~TheEndDimension() /*override*/;
 
     virtual void startLeaveGame() /*override*/;
 
@@ -50,7 +46,7 @@ public:
 
     virtual bool isNaturalDimension() const /*override*/;
 
-    virtual bool isValidSpawn(int, int) const /*override*/;
+    virtual bool isValidSpawn(int x, int z) const /*override*/;
 
     virtual short getCloudHeight() const /*override*/;
 
@@ -85,22 +81,16 @@ public:
 
     virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
-    virtual ::std::unique_ptr<::ChunkSource>
-    _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion) /*override*/;
+    virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
+        ::std::unique_ptr<::ChunkSource> storageSource,
+        ::StorageVersion                 levelVersion
+    ) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit TheEndDimension(::DerivedDimensionArguments&& args);
-
-    MCAPI void _handleSoundEffects() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DerivedDimensionArguments&& args);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -116,7 +106,7 @@ public:
 
     MCFOLD bool $isNaturalDimension() const;
 
-    MCFOLD bool $isValidSpawn(int, int) const;
+    MCFOLD bool $isValidSpawn(int x, int z) const;
 
     MCAPI short $getCloudHeight() const;
 
@@ -124,7 +114,7 @@ public:
 
     MCAPI ::BlockPos $getSpawnPos() const;
 
-    MCAPI int $getSpawnYPosition() const;
+    MCFOLD int $getSpawnYPosition() const;
 
     MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
@@ -137,11 +127,11 @@ public:
     MCAPI ::std::unique_ptr<::WorldGenerator>
     $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
+    MCAPI bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
 
-    MCFOLD void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
+    MCAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
-    MCFOLD void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
+    MCAPI void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
 
     MCAPI ::Dimension::DirectionalLightState $getDimensionDirectionalLightSourceState(float a) const;
 
@@ -149,23 +139,11 @@ public:
         ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
     );
 
-    MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
+    MCAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
 
     MCFOLD ::std::unique_ptr<::ChunkSource>
-    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion);
+    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCAPI static void** $vftableForIDimension();
-
-    MCNAPI static void** $vftableForSavedData();
-
-    MCNAPI static void** $vftableForLevelListener();
     // NOLINTEND
 };

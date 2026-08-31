@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/screens/models/WorldSeedCatalogModel.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -17,7 +17,7 @@ namespace Social { class IUserManager; }
 
 namespace OreUI {
 
-class SeedTemplateFacet : public ::OreUI::FacetBase<::OreUI::SeedTemplateFacet> {
+class SeedTemplateFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::SeedTemplateFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -45,7 +45,7 @@ public:
 
     MCAPI bool failedFetch() const;
 
-    MCAPI ::std::vector<::WorldSeedModel>& getWorldSeedModels();
+    MCFOLD ::std::vector<::WorldSeedModel>& getWorldSeedModels();
 
     MCAPI void refresh();
     // NOLINTEND
@@ -70,12 +70,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

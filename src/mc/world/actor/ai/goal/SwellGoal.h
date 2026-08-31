@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Creeper;
+class Mob;
 // clang-format on
 
 class SwellGoal : public ::BaseGoal {
@@ -44,13 +44,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SwellGoal(::Creeper* creeper, float startSwellDist, float stopSwellDist);
+    MCAPI explicit SwellGoal(::Mob& mob);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Creeper* creeper, float startSwellDist, float stopSwellDist);
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
@@ -67,11 +67,5 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

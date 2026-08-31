@@ -3,19 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/debug/SentryBreadcrumbLevel.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleDiagnostics { class IScriptSentryPlugin; }
 namespace ScriptModuleDiagnostics { struct ScriptSentryAlreadyInitializedError; }
-namespace ScriptModuleDiagnostics { struct ScriptSentryCaptureContext; }
-namespace ScriptModuleDiagnostics { struct ScriptSentryOptions; }
-namespace ScriptModuleDiagnostics { struct ScriptSentryUninitializedError; }
-namespace Scripting { struct BaseError; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct InvalidArgumentError; }
 // clang-format on
 
@@ -36,52 +29,9 @@ public:
     ScriptSentry();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptSentry(::std::unique_ptr<::ScriptModuleDiagnostics::IScriptSentryPlugin> plugin);
-
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleDiagnostics::ScriptSentryUninitializedError>
-    addBreadcrumb(::SentryBreadcrumbLevel level, ::std::string message, ::std::optional<::std::string> category);
-
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleDiagnostics::ScriptSentryUninitializedError>
-    addTag(::std::string key, ::std::string value);
-
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleDiagnostics::ScriptSentryUninitializedError> captureException(
-        ::Scripting::BaseError const&                                           error,
-        ::std::optional<::ScriptModuleDiagnostics::ScriptSentryCaptureContext>& context
-    );
-
-    MCNAPI ::Scripting::Result<
-        ::std::unordered_map<::std::string, ::std::string>,
-        ::ScriptModuleDiagnostics::ScriptSentryUninitializedError>
-    getTags() const;
-
-    MCNAPI ::Scripting::
-        Result<void, ::ScriptModuleDiagnostics::ScriptSentryAlreadyInitializedError, ::Scripting::InvalidArgumentError>
-        init(::Scripting::ContextConfig const& config, ::ScriptModuleDiagnostics::ScriptSentryOptions const& options);
-
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleDiagnostics::ScriptSentryUninitializedError>
-    removeTag(::std::string const& key);
-
-    MCNAPI ~ScriptSentry();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::unique_ptr<::ScriptModuleDiagnostics::IScriptSentryPlugin> plugin);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
+namespace NetherNet { class IIdentityAssertionGenerator; }
 namespace NetherNet { class ISignalingInterface; }
 namespace NetherNet { struct ILanEventHandler; }
 namespace NetherNet { struct ISignalingEventHandler; }
@@ -41,7 +42,10 @@ public:
         uint*                  pcbMessageSize
     ) = 0;
 
-    virtual bool OpenSessionWithUser(::NetherNet::NetworkID networkIDRemote) = 0;
+    virtual bool OpenSessionWithUser(
+        ::NetherNet::NetworkID                                      networkIDRemote,
+        ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator
+    ) = 0;
 
     virtual bool CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId) = 0;
 
@@ -77,12 +81,6 @@ public:
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) = 0;
 
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler* handler) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

@@ -39,7 +39,7 @@ public:
 
     virtual ::webrtc::NetworkControlUpdate OnSentPacket(::webrtc::SentPacket sent_packet) = 0;
 
-    virtual ::webrtc::NetworkControlUpdate OnReceivedPacket(::webrtc::ReceivedPacket received_packet) = 0;
+    virtual ::webrtc::NetworkControlUpdate OnReceivedPacket(::webrtc::ReceivedPacket) = 0;
 
     virtual ::webrtc::NetworkControlUpdate OnStreamsConfig(::webrtc::StreamsConfig msg) = 0;
 
@@ -50,12 +50,6 @@ public:
     virtual ::webrtc::NetworkControlUpdate OnTransportPacketsFeedback(::webrtc::TransportPacketsFeedback report) = 0;
 
     virtual ::webrtc::NetworkControlUpdate OnNetworkStateEstimate(::webrtc::NetworkStateEstimate msg) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

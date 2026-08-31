@@ -12,14 +12,9 @@ class AABB;
 class Block;
 class BlockPos;
 class IConstBlockSource;
-struct CopperBlockSet;
 // clang-format on
 
 class CopperGrateBlock : public ::CopperBlock<::BlockType> {
-public:
-    // prevent constructor by default
-    CopperGrateBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,18 +24,6 @@ public:
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CopperGrateBlock(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
     // NOLINTEND
 
 public:

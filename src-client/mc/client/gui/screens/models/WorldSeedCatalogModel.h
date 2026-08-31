@@ -30,18 +30,6 @@ public:
         ::ll::TypedStorage<8, 8, uint64>         startStringIndex;
         ::ll::TypedStorage<8, 32, ::std::string> matchedText;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~WorldSeedFilteredLookup();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -73,19 +61,9 @@ public:
 
     MCAPI void _filterWorldSeedModels();
 
-    MCAPI bool failedFetch() const;
-
     MCAPI void fetch();
 
-    MCAPI int getNumWorldSeedModels();
-
-    MCAPI ::WorldSeedModel& getWorldSeedModel(int index);
-
-    MCFOLD ::std::vector<::WorldSeedModel>& getWorldSeedModels();
-
     MCAPI void setWorldSeedsNameFilter(::std::string const& filter);
-
-    MCAPI bool update();
 
     MCAPI ~WorldSeedCatalogModel();
     // NOLINTEND

@@ -16,33 +16,33 @@ namespace NetherNet {
 struct NetworkID
 : public ::std::variant<::std::monostate, ::NetherNet::P2P::NetworkID, ::NetherNet::Realms::NetworkID> {
 public:
+    // prevent constructor by default
+    NetworkID();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NetworkID();
+    MCAPI explicit NetworkID(::std::string const& str);
 
-    MCNAPI explicit NetworkID(::std::string const& str);
+    MCAPI explicit NetworkID(::Json::Value const& value);
 
-    MCNAPI explicit NetworkID(::Json::Value const& value);
+    MCAPI bool isValid() const;
 
-    MCNAPI uint64 getHash() const;
+    MCAPI ::std::string toCorrelationId() const;
 
-    MCNAPI bool isValid() const;
+#ifdef LL_PLAT_C
+    MCAPI ::Json::Value toJson() const;
+#endif
 
-    MCNAPI ::std::string toCorrelationId() const;
-
-    MCNAPI ::Json::Value toJson() const;
-
-    MCNAPI ::std::string toString() const;
+    MCAPI ::std::string toString() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor(::std::string const& str);
 
-    MCNAPI void* $ctor(::std::string const& str);
-
-    MCNAPI void* $ctor(::Json::Value const& value);
+    MCAPI void* $ctor(::Json::Value const& value);
     // NOLINTEND
 };
 

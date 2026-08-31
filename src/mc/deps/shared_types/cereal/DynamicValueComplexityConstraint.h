@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class DynamicValue; }
-namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
@@ -21,28 +19,21 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 8, ::std::optional<int>> mMaxDepth;
+    ::ll::TypedStorage<1, 1, bool>                 mRejectNull;
     // NOLINTEND
 
 public:
-    // member functions
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI DynamicValueComplexityConstraint();
-
-#ifdef LL_PLAT_C
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
-#endif
-
-    MCAPI ::SharedTypes::DynamicValueComplexityConstraint& maxDepth(uint depth);
-
-#ifdef LL_PLAT_C
-    MCAPI void validateValue(::cereal::DynamicValue const& value, ::cereal::SerializerContext& serializerContext) const;
-#endif
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
+
     // NOLINTEND
 
 public:

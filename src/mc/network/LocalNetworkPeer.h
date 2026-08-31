@@ -27,22 +27,6 @@ public:
         IncomingData& operator=(IncomingData const&);
         IncomingData(IncomingData const&);
         IncomingData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI ~IncomingData();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void $dtor();
-#endif
-        // NOLINTEND
     };
 
 public:
@@ -69,11 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
-#else // LL_PLAT_C
     virtual void sendPacket(::std::string const& data, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
-#endif
 
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
@@ -81,16 +61,10 @@ public:
 
     virtual bool isEncrypted() const /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual ::NetworkPeer::DataStatus
-    _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
-#else // LL_PLAT_C
     virtual ::NetworkPeer::DataStatus _receivePacket(
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     ) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -98,8 +72,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI LocalNetworkPeer();
-
-    MCNAPI void addIncomingData(::std::string data);
 #endif
     // NOLINTEND
 
@@ -130,11 +102,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

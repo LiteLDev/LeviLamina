@@ -8,7 +8,7 @@ struct DataBuffer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk9f8b07;
+    ::ll::UntypedStorage<8, 24> mUnk722032;
     ::ll::UntypedStorage<1, 1>  mUnk37538d;
     // NOLINTEND
 

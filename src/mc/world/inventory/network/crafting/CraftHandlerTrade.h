@@ -6,14 +6,12 @@
 #include "mc/world/inventory/network/ItemStackNetResult.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
-#include "mc/world/inventory/network/crafting/ItemStackRequestActionCraft.h"
 
 // auto generated forward declare list
 // clang-format off
 class ContainerScreenContext;
 class ItemStack;
 class ItemStackRequestActionCraftBase;
-class ItemStackRequestActionCraftRecipeAuto;
 struct FullContainerName;
 struct RecipeNetIdTag;
 // clang-format on
@@ -54,11 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult _handleAutoTrade2(::ItemStackRequestActionCraftRecipeAuto const& requestAction);
-
-    MCAPI ::ItemStackNetResult _handleTrade1(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
-
-    MCAPI ::ItemStackNetResult _initResultItem(::RecipeNetId const& tradeRecipeNetId, uchar numCrafts);
+    MCAPI ::ItemStackNetResult _initResultItem(::RecipeNetId const& tradeRecipeNetId, uchar const numCrafts);
 
     MCAPI ::ItemStackNetResult _initTrade2Consumes();
     // NOLINTEND
@@ -83,11 +77,5 @@ public:
     MCAPI void $_postCraftRequest(bool const wasSuccess);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -33,8 +33,6 @@ public:
         ::FolderSizeAndModifyDateSnapshot const& older,
         ::FolderSizeAndModifyDateSnapshot const& newer
     );
-
-    MCNAPI ~FolderSizeAndModifyDateSnapshotDiff();
 #endif
     // NOLINTEND
 
@@ -43,14 +41,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::FolderSizeAndModifyDateSnapshot const& older, ::FolderSizeAndModifyDateSnapshot const& newer);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

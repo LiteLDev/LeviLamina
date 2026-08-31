@@ -3,9 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/deps/scripting/script_engine/Promise.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
+#include "mc/deps/script_core/script_engine/scripting/Promise.h"
 #include "mc/platform/UUID.h"
 #include "mc/util/Bounds.h"
 #include "mc/world/events/EventListenerDispatcher.h"
@@ -19,12 +18,7 @@
 class ServerLevel;
 struct LevelTickingAreaFinishedLoadingEvent;
 namespace ScriptModuleMinecraft { struct ScriptTickingArea; }
-namespace ScriptModuleMinecraft { struct ScriptTickingAreaError; }
-namespace ScriptModuleMinecraft { struct ScriptTickingAreaOptions; }
-namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct ContextConfig; }
-namespace Scripting { struct EngineError; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -57,31 +51,6 @@ public:
         ::ll::TypedStorage<4, 4, ::DimensionType>                                 mDimensionType;
         ::ll::TypedStorage<1, 1, bool>                                            mFinishedLoading;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PromiseContext& operator=(PromiseContext const&);
-        PromiseContext();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI PromiseContext(::ScriptModuleMinecraft::ScriptTickingAreaManager::PromiseContext const&);
-
-        MCAPI ~PromiseContext();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTickingAreaManager::PromiseContext const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -105,10 +74,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptTickingAreaManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptTickingAreaManager() /*override*/;
@@ -119,64 +84,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTickingAreaManager(
-        ::Scripting::WeakLifetimeScope const& scope,
-        ::gsl::not_null<::ServerLevel*>       level,
-        ::Scripting::ContextConfig const&
-    );
-
     MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptTickingArea>
     _getTickingArea(::ScriptModuleMinecraft::ScriptTickingAreaManager::PromiseContext const& context) const;
 
     MCAPI bool _hasCapacity(::DimensionType const& dimensionId, ::Bounds const& bounds);
 
     MCAPI bool _removeTickingAreas(::std::vector<::mce::UUID> const& uuids);
-
-    MCAPI void _removeTickingChunksFromCache(::DimensionType const& dimensionId, ::Bounds const& bounds);
-
-    MCAPI ::Scripting::Result<
-        ::Scripting::Promise<void, ::Scripting::Error>,
-        ::ScriptModuleMinecraft::ScriptTickingAreaError,
-        ::Scripting::EngineError>
-    createTickingArea(
-        ::Scripting::ScriptObjectFactory&                        factory,
-        ::Scripting::ContextConfig const&                        contextConfig,
-        ::std::string const&                                     identifier,
-        ::ScriptModuleMinecraft::ScriptTickingAreaOptions const& options
-    );
-
-    MCAPI ::Scripting::Result<::std::vector<::ScriptModuleMinecraft::ScriptTickingArea>, ::Scripting::EngineError>
-    getAllTickingAreas() const;
-
-    MCAPI ::Scripting::Result<::std::optional<::ScriptModuleMinecraft::ScriptTickingArea>, ::Scripting::EngineError>
-    getTickingArea(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptTickingArea> const& area) const;
-
-    MCAPI bool hasCapacity(::ScriptModuleMinecraft::ScriptTickingAreaOptions const& options);
-
-    MCAPI bool hasTickingArea(::std::string const& identifier) const;
-
-    MCAPI ::Scripting::Result<void, ::Scripting::EngineError> removeAllTickingAreas();
-
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptTickingAreaError, ::Scripting::EngineError>
-    removeTickingArea(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptTickingArea> const& area);
-
-    MCAPI bool tryResolvePromise(::mce::UUID uuid);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Scripting::WeakLifetimeScope const& scope,
-        ::gsl::not_null<::ServerLevel*>       level,
-        ::Scripting::ContextConfig const&
-    );
     // NOLINTEND
 
 public:
@@ -191,12 +110,6 @@ public:
     MCAPI ::EventResult $onEvent(::LevelTickingAreaFinishedLoadingEvent const& event);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

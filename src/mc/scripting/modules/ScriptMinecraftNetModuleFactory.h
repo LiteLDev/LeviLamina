@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/binding_factory/GenericModuleBindingFactory.h"
+#include "mc/deps/script_core/binding_factory/scripting/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,6 +26,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnkc9f7d9;
     ::ll::UntypedStorage<8, 8>  mUnk4fb1f9;
     ::ll::UntypedStorage<8, 16> mUnk167a04;
+    ::ll::UntypedStorage<8, 16> mUnkc2b23c;
     // NOLINTEND
 
 public:
@@ -33,6 +34,12 @@ public:
     ScriptMinecraftNetModuleFactory& operator=(ScriptMinecraftNetModuleFactory const&);
     ScriptMinecraftNetModuleFactory(ScriptMinecraftNetModuleFactory const&);
     ScriptMinecraftNetModuleFactory();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~ScriptMinecraftNetModuleFactory() /*override*/;
+    // NOLINTEND
 
 public:
     // member functions
@@ -43,8 +50,6 @@ public:
         ::ServerLevel*                                                              level,
         ::std::shared_ptr<::ScriptModuleMinecraftNet::ScriptNativeWebSocketFactory> webSocketFactory
     );
-
-    MCNAPI void _addVersions();
 
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Scripting::ModuleBindingBuilder&          moduleBuilder,
@@ -57,8 +62,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ModuleName();
-
     MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
 
@@ -74,8 +77,8 @@ public:
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

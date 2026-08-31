@@ -29,7 +29,6 @@ struct MonsterFlagComponent;
 struct NoActionTimeComponent;
 struct OffsetsComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 struct MonsterAiStepSystem
@@ -82,8 +81,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-
     MCAPI static void tickMonsterAiStep(
         ::StrictEntityContext const&                                        entity,
         ::AABBShapeComponent const&                                         aabbShapeComponent,

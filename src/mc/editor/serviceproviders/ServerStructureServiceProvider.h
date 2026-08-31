@@ -21,7 +21,11 @@ class ServerStructureServiceProvider : public ::Bedrock::EnableNonOwnerReference
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~ServerStructureServiceProvider() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ServerStructureServiceProvider() /*override*/;
+#endif
 
     virtual ::std::optional<::Editor::EditorStructureTemplate> loadStructure(::std::string const& id) = 0;
 
@@ -50,9 +54,11 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

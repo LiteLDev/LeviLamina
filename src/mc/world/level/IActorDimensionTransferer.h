@@ -31,10 +31,4 @@ public:
 
     virtual void transferActor(::Actor& actor, ::Dimension& toDimension, ::Vec3 const& targetPosition) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -24,13 +24,21 @@ public:
 
     MCAPI ::std::vector<::std::string> getFogSettingsStack() const;
 
-    MCAPI bool popFogSetting(::std::string const& userProvidedId);
+    MCAPI ::std::vector<::std::string> getUserProvidedIds() const;
 
-    MCAPI bool pushFogSetting(::std::string const& fogId, ::std::string const& userProvidedId);
+    MCAPI ::std::optional<::std::string> popFogSetting(::std::optional<::std::string> const& userProvidedId);
+
+    MCAPI ::std::optional<uchar>
+    pushFogSetting(::std::string const& fogId, ::std::optional<::std::string> const& userProvidedId);
 
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool removeFogSettings(::std::string const& userProvidedId);
+    MCAPI bool removeFogSettings(::std::optional<::std::string> const& userProvidedId);
+
+    MCAPI bool setFogSettingsStack(
+        ::std::vector<::std::string> const&   fogIds,
+        ::std::optional<::std::string> const& userProvidedId
+    );
     // NOLINTEND
 
 public:

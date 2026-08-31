@@ -30,12 +30,6 @@ public:
 
     virtual bool UseLossVectorMask() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

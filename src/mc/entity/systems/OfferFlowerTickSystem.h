@@ -14,7 +14,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void
-    _doOfferFlowerTickSystem(::StrictEntityContext const& offerFlowerTickComponent, ::OfferFlowerTickComponent&);
+    _doOfferFlowerTickSystem(::StrictEntityContext const&, ::OfferFlowerTickComponent& offerFlowerTickComponent);
 
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
@@ -15,7 +15,7 @@ struct LocalPlayerChangedConnector;
 
 namespace OreUI {
 
-class PlayerRespawnFacet : public ::OreUI::FacetBase<::OreUI::PlayerRespawnFacet> {
+class PlayerRespawnFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PlayerRespawnFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -63,12 +63,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

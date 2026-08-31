@@ -35,7 +35,7 @@ optional_ref<Block const> Block::tryGetFromRegistry(HashedString const& name, Bl
     if (!blockTypePtr) {
         return nullptr;
     }
-    auto&        registry = BlockTypeRegistry::get();
+    auto&        registry = BlockTypeRegistry::mBlockTypeRegistry().mValue;
     HashedString nameHash{name};
     if (!registry.isComplexAliasBlock(nameHash)) {
         return blockTypePtr->mDefaultState;
@@ -50,8 +50,10 @@ optional_ref<Block const> Block::tryGetFromRegistry(HashedString const& name, Bl
         int         value{};
         CompoundTag state{};
         std::visit([&](auto& val) { state[k] = val; }, v);
-        if (!stateBase->fromNBT(state, value)) {
+        if (auto res = stateBase->_fromNBT(state); !res) {
             continue;
+        } else {
+            value = res.value();
         }
         stateList.emplace_back(stateNameHash, value);
     }

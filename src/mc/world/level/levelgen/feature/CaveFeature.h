@@ -19,7 +19,6 @@ class ChunkPos;
 class IBlockWorldGenAPI;
 class Random;
 class RenderParams;
-struct WorldGenContext;
 namespace CaveFeatureUtils { struct CarverConfiguration; }
 // clang-format on
 
@@ -133,13 +132,13 @@ public:
     virtual bool carveEllipsoidVolume(
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
-        ::Random&                                      chunkPos,
-        ::ChunkPos const&                              startPos,
-        ::Vec3 const&                                  volume,
-        ::BoundingBox const&                           rad,
-        float                                          yRad,
-        float                                          carvingParameters,
-        ::CaveFeatureUtils::CarvingParameters const&
+        ::Random&,
+        ::ChunkPos const&                            chunkPos,
+        ::Vec3 const&                                startPos,
+        ::BoundingBox const&                         volume,
+        float                                        rad,
+        float                                        yRad,
+        ::CaveFeatureUtils::CarvingParameters const& carvingParameters
     ) const;
 
     virtual void addFeature(
@@ -157,18 +156,6 @@ public:
     // NOLINTBEGIN
     MCAPI CaveFeature();
 
-    MCAPI bool _thinSand(::IBlockWorldGenAPI& target, ::BlockPos aboveBlockPos, int currentYIndex) const;
-
-    MCAPI bool carveBlock(
-        ::IBlockWorldGenAPI&                           target,
-        ::CaveFeatureUtils::CarverConfiguration const& configuration,
-        ::BlockPos                                     currentBlockPos,
-        bool                                           carved,
-        ::Vec3 const&                                  originalStartPos,
-        int                                            currentYIndex,
-        ::BlockPos                                     worldPos
-    ) const;
-
     MCAPI bool carveEllipsoid(
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
@@ -176,21 +163,9 @@ public:
         ::ChunkPos const&                              chunkPos,
         ::Vec3 const&                                  startPos,
         float                                          horizontalRadius,
-        float                                          verticalRadius,
+        float const                                    verticalRadius,
         ::CaveFeatureUtils::CarvingParameters const&   carvingParameters
     ) const;
-
-    MCAPI bool detectWater(::IBlockWorldGenAPI& target, ::BoundingBox const& volume) const;
-
-    MCAPI ::Block const* getBlockToFill(::BlockPos currentPos, ::WorldGenContext const& context) const;
-
-    MCAPI float getWidthModifier(::RenderParams& renderParams) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool shouldSkipCarving(float yd, float xd_sq, float yd_sq, float zd_sq, float floorLevel);
     // NOLINTEND
 
 public:
@@ -243,13 +218,13 @@ public:
     MCAPI bool $carveEllipsoidVolume(
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
-        ::Random&                                      chunkPos,
-        ::ChunkPos const&                              startPos,
-        ::Vec3 const&                                  volume,
-        ::BoundingBox const&                           rad,
-        float                                          yRad,
-        float                                          carvingParameters,
-        ::CaveFeatureUtils::CarvingParameters const&
+        ::Random&,
+        ::ChunkPos const&                            chunkPos,
+        ::Vec3 const&                                startPos,
+        ::BoundingBox const&                         volume,
+        float                                        rad,
+        float                                        yRad,
+        ::CaveFeatureUtils::CarvingParameters const& carvingParameters
     ) const;
 
     MCAPI void $addFeature(

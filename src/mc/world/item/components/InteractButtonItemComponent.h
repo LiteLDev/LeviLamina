@@ -10,9 +10,7 @@
 // clang-format off
 class ComponentItem;
 class CompoundTag;
-class HashedString;
 class SemVersion;
-namespace SharedTypes::v1_20_50 { struct InteractButtonItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -23,10 +21,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>           mRequiresInteract;
     ::ll::TypedStorage<8, 32, ::std::string> mInteractText;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InteractButtonItemComponent();
 
 public:
     // virtual functions
@@ -43,8 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit InteractButtonItemComponent(::SharedTypes::v1_20_50::InteractButtonItemComponent component);
-
     MCFOLD ::std::string getInteractText() const;
     // NOLINTEND
 
@@ -56,14 +48,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::InteractButtonItemComponent component);
     // NOLINTEND
 
 public:

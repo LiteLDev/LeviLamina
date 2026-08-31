@@ -21,6 +21,7 @@ public:
     // prevent constructor by default
     WaterMovementDescription& operator=(WaterMovementDescription const&);
     WaterMovementDescription(WaterMovementDescription const&);
+    WaterMovementDescription();
 
 public:
     // virtual functions
@@ -28,18 +29,6 @@ public:
     virtual char const* getJsonName() const /*override*/;
 
     virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WaterMovementDescription();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

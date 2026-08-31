@@ -33,26 +33,6 @@ public:
         Copy& operator=(Copy const&);
         Copy(Copy const&);
         Copy();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI explicit Copy(::std::shared_ptr<::Localization const> original);
-
-        MCNAPI ~Copy();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::std::shared_ptr<::Localization const> original);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -71,8 +51,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _compareAndSwap(::ImmutableLocalization::Copy&& copy);
-
     MCNAPI void _setValue(::std::shared_ptr<::Localization const> value);
 
     MCNAPI void modifyAdditive(::brstd::function_ref<void(::Localization&)> modifier);

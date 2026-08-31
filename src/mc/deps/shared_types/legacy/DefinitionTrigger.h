@@ -32,6 +32,8 @@ public:
     // NOLINTBEGIN
     MCAPI DefinitionTrigger(::SharedTypes::Legacy::DefinitionTrigger const&);
 
+    MCAPI bool operator==(::SharedTypes::Legacy::DefinitionTrigger const&) const;
+
     MCAPI ~DefinitionTrigger();
     // NOLINTEND
 

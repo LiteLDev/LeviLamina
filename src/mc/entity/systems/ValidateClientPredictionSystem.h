@@ -29,17 +29,17 @@ namespace ValidateClientPredictionSystem {
 MCAPI ::TickingSystemWithInfo createSystem();
 
 MCAPI void tick(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::ReplayStateComponent>> entity,
-    ::StrictEntityContext const&                                                             actorBoundingBox,
-    ::ActorDataBoundingBoxComponent const&                                                   actorDataFlag,
-    ::ActorDataFlagComponent const&                                                          actorUniqueId,
-    ::ActorUniqueIDComponent const&                                                          movementAttributes,
-    ::MovementAttributesComponent const&                                                     clientPrediction,
-    ::ServerPlayerMovementSyncComponent const&                                               abilities,
-    ::AbilitiesComponent const&                                                              actorDataDirtyFlag,
-    ::ActorDataDirtyFlagsComponent&                                                          attributes,
-    ::AttributesComponent&                                                                   modifier,
-    ::EntityModifier<::ServerPlayerMovementSyncComponent, ::SendPacketsComponent>
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::ReplayStateComponent>>,
+    ::StrictEntityContext const&                                                  entity,
+    ::ActorDataBoundingBoxComponent const&                                        actorBoundingBox,
+    ::ActorDataFlagComponent const&                                               actorDataFlag,
+    ::ActorUniqueIDComponent const&                                               actorUniqueId,
+    ::MovementAttributesComponent const&                                          movementAttributes,
+    ::ServerPlayerMovementSyncComponent const&                                    clientPrediction,
+    ::AbilitiesComponent const&                                                   abilities,
+    ::ActorDataDirtyFlagsComponent&                                               actorDataDirtyFlag,
+    ::AttributesComponent&                                                        attributes,
+    ::EntityModifier<::ServerPlayerMovementSyncComponent, ::SendPacketsComponent> modifier
 );
 // NOLINTEND
 

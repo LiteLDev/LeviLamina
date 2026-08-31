@@ -43,6 +43,8 @@ public:
 
     MCAPI ::SharedTypes::v1_20_80::ParticleEffectData& operator=(::SharedTypes::v1_20_80::ParticleEffectData const&);
 
+    MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleEffectData const&) const;
+
     MCAPI ~ParticleEffectData();
     // NOLINTEND
 
@@ -55,7 +57,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static ::SemVersionConstant const& VERSION();
+#endif
     // NOLINTEND
 
 public:

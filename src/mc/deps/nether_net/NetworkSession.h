@@ -5,14 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/nether_net/ContextProxy.h"
 #include "mc/deps/nether_net/ESessionError.h"
-#include "mc/deps/nether_net/SignalingChannelId.h"
 #include "mc/external/webrtc/PeerConnectionInterface.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace NetherNet { class ConnectRequest; }
-namespace NetherNet { struct NetworkID; }
 namespace webrtc { class DataChannelInterface; }
 namespace webrtc { class RTCStatsReport; }
 // clang-format on
@@ -48,7 +45,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk11904d;
     ::ll::UntypedStorage<8, 72>  mUnk3ecbc0;
     ::ll::UntypedStorage<8, 72>  mUnk905b39;
-    ::ll::UntypedStorage<8, 752> mUnkd1f02b;
+    ::ll::UntypedStorage<8, 760> mUnkd1f02b;
     ::ll::UntypedStorage<8, 320> mUnk38831a;
     ::ll::UntypedStorage<8, 32>  mUnk6aa1b2;
     ::ll::UntypedStorage<8, 32>  mUnk921bca;
@@ -79,14 +76,6 @@ public:
 
     MCNAPI void CloseWithReason(::NetherNet::ESessionError error) const;
 
-    MCNAPI void InitializeIncoming(
-        ::NetherNet::NetworkID             remoteID,
-        ::NetherNet::ConnectRequest const& offer,
-        ::NetherNet::SignalingChannelId    preference
-    );
-
-    MCNAPI void InitializeOutgoing(::NetherNet::NetworkID remoteID);
-
     MCNAPI void _onDataChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface> dataChannel);
 
     MCNAPI void _onStatsDelivered(::webrtc::RTCStatsReport const& report);
@@ -98,12 +87,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

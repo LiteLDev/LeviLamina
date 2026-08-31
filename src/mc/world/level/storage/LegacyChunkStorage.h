@@ -65,12 +65,6 @@ public:
         ::Biome&                         defaultBiome
     );
 
-    MCNAPI bool _isImported(::ChunkPos const& pos);
-
-    MCNAPI bool _loadChunk(::LevelChunk& lc);
-
-    MCNAPI void _loadEntities();
-
     MCNAPI void _markChunkAsImported(::ChunkPos const& pos);
     // NOLINTEND
 
@@ -101,11 +95,5 @@ public:
     MCNAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

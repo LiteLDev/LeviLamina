@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/platform/Result.h"
 #include "mc/world/inventory/network/ItemStackRequestAction.h"
-#include "mc/world/inventory/network/ItemStackRequestActionType.h"
 #include "mc/world/inventory/network/ItemStackRequestSlotInfo.h"
 
 // auto generated forward declare list
@@ -25,55 +24,12 @@ public:
     ::ll::TypedStorage<8, 40, ::ItemStackRequestSlotInfo> mDst;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ItemStackRequestActionTransferBase();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ItemStackRequestActionTransferBase(
-        ::ItemStackRequestActionType      actionType,
-        uchar                             amount,
-        ::ItemStackRequestSlotInfo const& src,
-        ::ItemStackRequestSlotInfo const& dst,
-        bool                              isDstSerialized,
-        bool                              isAmountSerialized
-    );
-#endif
-
-    MCNAPI uchar getAmount() const;
-
-    MCNAPI ::ItemStackRequestSlotInfo const& getDst() const;
-
-    MCNAPI ::ItemStackRequestSlotInfo const& getSrc() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
-        ::ItemStackRequestActionType      actionType,
-        uchar                             amount,
-        ::ItemStackRequestSlotInfo const& src,
-        ::ItemStackRequestSlotInfo const& dst,
-        bool                              isDstSerialized,
-        bool                              isAmountSerialized
-    );
-#endif
     // NOLINTEND
 
 public:

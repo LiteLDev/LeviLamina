@@ -19,24 +19,15 @@ public:
     virtual bool
     resolveAndValidate(::entt::meta_any const& biomeJsonComponent, ::BiomeRegistry const& biomeRegistry) = 0;
 
-    virtual void applyToBiome(::Biome& biome, ::entt::meta_any const& biomeJsonComponent) const = 0;
+    virtual void applyToBiome(::Biome& biome, ::entt::meta_any const& component) const = 0;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Block const*
-    _getResolvedBlock(::std::string const& fieldName, ::SharedTypes::v1_20_60::BlockSpecifier const& blockSpecifier);
-
     MCAPI static ::std::vector<::Block const*> _getResolvedBlocks(
         ::std::string const&                                          fieldName,
         ::std::vector<::SharedTypes::v1_20_60::BlockSpecifier> const& blockSpecifiers
     );
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

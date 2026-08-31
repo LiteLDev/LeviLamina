@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Symmetric() /*override*/ = default;
+    virtual ~Symmetric() /*override*/;
 
     virtual void init(::std::string const& key, ::std::string const& IV) /*override*/;
 
@@ -41,6 +41,11 @@ public:
 
     virtual bool
     encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) /*override*/;
+
+    virtual uint64 getDecryptionBufferSize(uint64 inputSize) const /*override*/;
+
+    virtual bool
+    decryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) /*override*/;
     // NOLINTEND
 
 public:
@@ -53,6 +58,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Crypto::Symmetric::System system, ::Crypto::Symmetric::OperationMode mode);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -71,6 +82,10 @@ public:
     MCNAPI uint64 $getEncryptionBufferSize(uint64 inputSize) const;
 
     MCNAPI bool $encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten);
+
+    MCNAPI uint64 $getDecryptionBufferSize(uint64 inputSize) const;
+
+    MCNAPI bool $decryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten);
 
 
     // NOLINTEND

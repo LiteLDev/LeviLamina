@@ -3,22 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/editor/script/ServerScriptPackType.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::API { struct EditorExtensionOptionalParameters; }
+namespace Editor { class ServiceProviderCollection; }
+namespace Editor::API { class EditorExtensionServiceProvider; }
 // clang-format on
 
 namespace Editor::API {
 // functions
 // NOLINTBEGIN
-MCNAPI void _preprocessExtensionCreationParameters(
-    ::Editor::API::ServerScriptPackType                                packType,
-    ::std::optional<::Editor::API::EditorExtensionOptionalParameters>& params
-);
+MCNAPI ::Scripting::Result_deprecated<::Editor::API::EditorExtensionServiceProvider*>
+_getExtensionService(::Editor::ServiceProviderCollection&);
 
-MCNAPI ::Editor::API::ServerScriptPackType getServerScriptPackType(::std::string const& moduleId);
+MCNAPI ::Scripting::Result_deprecated<void>
+validateIdNamespaceForScriptPack(::std::string const& moduleUUID, ::std::string const& id);
 // NOLINTEND
 
 } // namespace Editor::API

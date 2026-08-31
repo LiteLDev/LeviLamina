@@ -18,10 +18,4 @@ public:
 
     virtual bool canAccess(::ContentIdentity const& contentIdentity) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

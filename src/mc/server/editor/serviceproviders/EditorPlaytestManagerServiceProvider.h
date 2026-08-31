@@ -8,13 +8,13 @@ class EditorPlaytestManagerServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorPlaytestManagerServiceProvider() = default;
+    virtual ~EditorPlaytestManagerServiceProvider();
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

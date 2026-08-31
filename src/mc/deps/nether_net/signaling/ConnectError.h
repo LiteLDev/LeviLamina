@@ -17,19 +17,6 @@ public:
     ConnectError& operator=(ConnectError const&);
     ConnectError(ConnectError const&);
     ConnectError();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::std::string ToString() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::optional<::NetherNet::ConnectError>
-    TryParse(::std::array<::std::string_view, 3> const& tokens);
-    // NOLINTEND
 };
 
 } // namespace NetherNet

@@ -24,8 +24,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::cereal::internal::InputConstraint> mInputConstraint;
-    ::ll::TypedStorage<1, 1, ::cereal::ContextArea>               mContextArea;
+    ::ll::TypedStorage<8, 16, ::cereal::internal::InputConstraint> mInputConstraint;
+    ::ll::TypedStorage<1, 1, ::cereal::ContextArea>                mContextArea;
     // NOLINTEND
 
 public:
@@ -33,9 +33,17 @@ public:
     // NOLINTBEGIN
     virtual void doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const = 0;
 
-    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea config) const = 0;
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea req) const = 0;
 
+    virtual uint64 doMaxInputLength() const;
+
+    virtual uint64 doMinInputLength() const;
+
+#ifdef LL_PLAT_S
     virtual ~Constraint() = default;
+#else // LL_PLAT_C
+    virtual ~Constraint();
+#endif
 
     virtual ::cereal::Constraint const* subConstraint(uint64 index) const;
 
@@ -43,24 +51,20 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCFOLD ::cereal::ContextArea contextArea() const;
-
-    MCFOLD ::cereal::internal::ConstraintDescription getDescription(::cereal::ContextArea req) const;
-
-    MCFOLD uint64 maxInputLength() const;
-
-    MCFOLD void setContextArea(::cereal::ContextArea area);
-
-    MCFOLD void setMaxInputLength(uint64 value);
-
-    MCAPI void validate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD uint64 $doMaxInputLength() const;
+
+    MCFOLD uint64 $doMinInputLength() const;
+
     MCFOLD ::cereal::Constraint const* $subConstraint(uint64 index) const;
 
 

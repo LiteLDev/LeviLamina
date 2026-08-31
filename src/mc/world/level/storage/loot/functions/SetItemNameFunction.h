@@ -43,8 +43,6 @@ public:
     // NOLINTBEGIN
     MCAPI
     SetItemNameFunction(::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates, ::std::string const& name);
-
-    MCFOLD ::std::string const& getName() const;
     // NOLINTEND
 
 public:
@@ -63,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

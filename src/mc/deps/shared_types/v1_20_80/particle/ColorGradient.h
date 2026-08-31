@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_20_80 { struct ColorExpr; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_20_80 {
@@ -16,24 +15,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::SharedTypes::v1_20_80::ColorExpr>>>     mColorArray;
     ::ll::TypedStorage<8, 24, ::std::optional<::std::map<float, ::SharedTypes::v1_20_80::ColorExpr>>> mColorMap;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ColorGradient();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

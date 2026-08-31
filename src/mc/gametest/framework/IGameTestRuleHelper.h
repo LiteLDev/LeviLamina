@@ -16,12 +16,6 @@ public:
 
     virtual void restoreRules() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace gametest

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Core { struct ContainerSyncState; }
 namespace World { struct WorldID; }
 // clang-format on
 
@@ -19,12 +20,16 @@ public:
     virtual ~IWorldCloudSyncer() = default;
 
     virtual void syncWorld(::World::WorldID const&, ::std::function<void(::World::WorldCloudSyncResult)> const&) = 0;
-    // NOLINTEND
 
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
+    virtual ::Core::ContainerSyncState getSyncState(::World::WorldID const&) const = 0;
 
+    virtual ::std::optional<uint64> getConsumedRemoteStorageQuota(::World::WorldID const&) const = 0;
+
+    virtual void
+    setLocalOnly(::World::WorldID const&, bool, ::std::function<void(::World::WorldCloudSyncResult)> const&) = 0;
+
+    virtual void
+    setCloudSaved(::World::WorldID const&, bool, ::std::function<void(::World::WorldCloudSyncResult)> const&) = 0;
     // NOLINTEND
 };
 

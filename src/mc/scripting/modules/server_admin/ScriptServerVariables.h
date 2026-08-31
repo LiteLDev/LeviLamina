@@ -10,7 +10,6 @@
 class ScriptPackConfigurationManager;
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
-namespace Scripting { struct JSON; }
 // clang-format on
 
 namespace ScriptModuleServerAdmin {
@@ -37,11 +36,7 @@ public:
         ::Scripting::ContextConfig const&                            contextConfig
     );
 
-    MCNAPI ::std::optional<::Scripting::JSON> get(::std::string const& name) const;
-
     MCNAPI ::std::vector<::std::string> getAllVariableNames() const;
-
-    MCNAPI ~ScriptServerVariables();
     // NOLINTEND
 
 public:
@@ -57,12 +52,6 @@ public:
         ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
         ::Scripting::ContextConfig const&                            contextConfig
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

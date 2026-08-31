@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/PurchaseGameError.h"
 #include "mc/client/store/iap/TrialUpgradePurchaseTier.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -15,7 +15,7 @@ class TrialManager;
 
 namespace OreUI {
 
-class TrialModeFacet : public ::OreUI::FacetBase<::OreUI::TrialModeFacet> {
+class TrialModeFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::TrialModeFacet> {
 public:
     // member variables
     // NOLINTBEGIN

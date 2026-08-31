@@ -49,6 +49,8 @@ public:
         ::OreUI::RouteType                      routeType
     );
 
+    MCAPI bool isCurrentRoute(::std::string_view route) const;
+
     MCAPI void push(
         ::std::weak_ptr<::AbstractScene> const& scene,
         ::std::string const&                    url,
@@ -62,8 +64,6 @@ public:
         ::OreUI::RouteMode                      mode,
         ::OreUI::RouteType                      routeType
     );
-
-    MCAPI ~RouterHistory();
     // NOLINTEND
 
 public:
@@ -76,12 +76,6 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ACTION_REPLACE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ACTION_UNKNOWN();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

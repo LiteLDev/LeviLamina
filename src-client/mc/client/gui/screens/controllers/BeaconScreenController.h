@@ -3,17 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/ContainerScreenController.h"
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
 class BeaconContainerManagerController;
 class BlockPos;
 class ClientInstanceScreenModel;
 class Player;
-class PropertyBag;
 struct ActorUniqueID;
 // clang-format on
 
@@ -31,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BeaconScreenController() /*override*/ = default;
+    virtual ~BeaconScreenController() /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
 
@@ -49,10 +46,6 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
-
-    MCAPI ::ui::ViewRequest _onButtonClicked(::PropertyBag* pBag);
-
-    MCAPI void _registerBindings(::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:
@@ -67,6 +60,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $_isStillValid() const;
@@ -74,13 +73,5 @@ public:
     MCAPI void $_registerCoalesceOrder();
 
     MCAPI void $_registerAutoPlaceOrder();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

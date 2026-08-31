@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DownloadableTemplateManagerBase() /*override*/;
+    virtual ~DownloadableTemplateManagerBase() /*override*/ = default;
 
     virtual ::std::optional<::World::DownloadWorldTemplateError> downloadWorldTemplate(
         ::std::string const&                                                        templateId,
@@ -81,12 +81,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::World::DownloadWorldTemplateError> $downloadWorldTemplate(
@@ -95,12 +89,6 @@ public:
     );
 
     MCAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -38,12 +38,6 @@ public:
         ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource>&  indexBuffer
     );
 
-    MCNAPI Mesh(
-        ::dragon::mesh::MeshDescription const&                                              meshDescription,
-        ::std::vector<::mce::ServerResourcePointer<::dragon::ResolvedVertexBufferResource>> vertexBuffers,
-        ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource>&                indexBuffer
-    );
-
     MCNAPI bool areBuffersValid() const;
 
     MCNAPI ::dragon::mesh::Mesh& operator=(::dragon::mesh::Mesh const&);
@@ -60,12 +54,6 @@ public:
         ::dragon::mesh::MeshDescription const&                                meshDescription,
         ::mce::ServerResourcePointer<::dragon::ResolvedVertexBufferResource>& vertexBuffer,
         ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource>&  indexBuffer
-    );
-
-    MCNAPI void* $ctor(
-        ::dragon::mesh::MeshDescription const&                                              meshDescription,
-        ::std::vector<::mce::ServerResourcePointer<::dragon::ResolvedVertexBufferResource>> vertexBuffers,
-        ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource>&                indexBuffer
     );
     // NOLINTEND
 

@@ -18,17 +18,17 @@ class IContentTierManager;
 class LinkedAssetValidator;
 class LoadedResourceData;
 class PackInstance;
-class PackReport;
 class PackSourceReport;
 class ResourceGroup;
 class ResourceLocation;
 class ResourceLocationPair;
 class ResourcePack;
 class ResourcePackListener;
-class ResourcePackMergeStrategy;
 class ResourcePackStack;
 struct PackIdVersion;
+struct StreamableAssetSource;
 namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace mce { struct Image; }
 // clang-format on
 
@@ -123,8 +123,6 @@ public:
         bool                                                              needsToInitialize
     );
 
-    MCAPI void _calculateMinEngineVersionFromFullStack();
-
     MCAPI void _composeFullStack();
 
     MCAPI bool _doStackOperation(
@@ -138,17 +136,12 @@ public:
         ::std::vector<::Core::Path>& resources
     ) const;
 
-    MCAPI void _updateLanguageSubpacks();
-
 #ifdef LL_PLAT_C
-    MCAPI bool areGameplayResourcesLoaded() const;
+    MCAPI void _updateLanguageSubpacks();
 
     MCAPI ::ContentTierIncompatibleReason canSupportPacks();
 
     MCAPI void clearPackReports();
-#endif
-
-    MCAPI void clearStack(::ResourcePackStackType stackType);
 
     MCAPI int composeFullStack(
         ::ResourcePackStack&       output,
@@ -156,7 +149,6 @@ public:
         ::ResourcePackStack const& levelStack
     ) const;
 
-#ifdef LL_PLAT_C
     MCAPI void ensureSupportedSubpacks();
 
     MCAPI ::std::vector<::ResourceLocationPair> findAllTexturesInUse() const;
@@ -165,10 +157,6 @@ public:
 
     MCAPI void finishLoadingLinkedAssets(::LinkedAssetValidator& validator);
 
-    MCAPI void forceStackCompose_DEPRECATED();
-
-    MCFOLD ::std::shared_mutex& getFullStackAccess() const;
-
     MCAPI ::SemVersion getFullStackMinEngineVersion_DEPRECATED() const;
 
     MCAPI ::std::vector<::PackInstance> getIncompatiblePacks() const;
@@ -176,24 +164,17 @@ public:
 
     MCAPI ::PackInstance* getPackForResource(::Core::Path const& resourceName) const;
 
-    MCFOLD ::PackSourceReport const* getPackSourceReport() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::std::vector<::PackInstance> getPacksWhereAssetExtractionNotViable(
-        ::std::function<::std::string(::ContentIdentity const&)> getContentKey,
-        ::std::string const&                                     sourceContext
-    ) const;
-#endif
-
     MCAPI ::ResourceGroup getResourcesOfGroup(::std::string const& group) const;
 
     MCAPI ::ResourceGroup getResourcesOfGroup(::PackInstance const& packInstance, ::std::string const& group) const;
 
-    MCAPI ::ResourcePackStack const& getStack(::ResourcePackStackType stackType) const;
-
-    MCAPI void handlePendingStackChanges();
-
 #ifdef LL_PLAT_C
+    MCAPI ::std::optional<::StreamableAssetSource> getStreamableSource(
+        ::ResourceLocation const&         resourceLocation,
+        ::gsl::span<::std::string const>  extensionList,
+        ::std::optional<::Core::PathView> tempDirectory
+    ) const;
+
     MCAPI bool hasResource(::ResourceLocation const& resourceLocation) const;
 
     MCAPI bool hasResource(
@@ -201,10 +182,6 @@ public:
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensionList
     ) const;
-
-    MCAPI bool hasTexture(::ResourceLocation const& resourceLocation) const;
-
-    MCAPI bool hasTexture(::ResourcePackStackType stackType, ::ResourceLocation const& resourceLocation) const;
 #endif
 
     MCAPI bool isAssetExtractionViableForFullStack(
@@ -212,30 +189,11 @@ public:
         ::std::string const&                                     sourceContext
     ) const;
 
-    MCAPI bool isOnlyBaseGamePacks() const;
-
     MCAPI void iteratePacks(::std::function<void(::PackInstance const&)> const& pred) const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool
-    loadAllVersionsOf(::ResourceLocation const& resourceLocation, ::ResourcePackMergeStrategy& mergeStrategy) const;
-
-    MCAPI void mergePackReports(::std::vector<::PackReport>& packReports);
-
-    MCAPI void notifyJsonResourcesChanged();
-
-    MCAPI void onBaseGamePackDownloadComplete();
-
     MCAPI void onLanguageChanged();
-
-    MCAPI void onLoadingFinished();
-
-    MCAPI bool refreshStack(::ResourcePackStackType stackType);
-
-    MCAPI void regeneratePackAssetSet();
 #endif
-
-    MCAPI void registerResourcePackListener(::ResourcePackListener& listener);
 
     MCAPI void removeIf(::std::function<bool(::PackInstance const&)> const& pred);
 
@@ -243,23 +201,11 @@ public:
     MCAPI void removePacks(::std::vector<::gsl::not_null<::ResourcePack const*>> const& packs);
 
     MCAPI void removeUnsupportedPacks();
-
-    MCAPI void setCanUseGlobalPackStack(bool canUseGlobalPackStack);
 #endif
-
-    MCAPI void setGameplayResourcesLoaded(bool gameplayResourcesLoaded);
 
     MCAPI void setPackSourceReport(::PackSourceReport&& report);
 
     MCAPI bool setStack(::std::unique_ptr<::ResourcePackStack> stack, ::ResourcePackStackType stackType);
-
-#ifdef LL_PLAT_C
-    MCAPI bool supportsVibrantVisuals() const;
-
-    MCAPI void unRegisterAllResourcePackListener();
-#endif
-
-    MCAPI void unRegisterResourcePackListener(::ResourcePackListener& listener);
     // NOLINTEND
 
 public:
@@ -331,11 +277,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

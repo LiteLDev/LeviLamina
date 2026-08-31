@@ -27,7 +27,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~ITreeFeature() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ITreeFeature() /*override*/;
+#endif
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const = 0;
     // NOLINTEND
@@ -39,14 +43,10 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

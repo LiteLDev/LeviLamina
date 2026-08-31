@@ -72,7 +72,7 @@ class IPacketHandler {
 public:
     virtual ~IPacketHandler() = default;
     virtual void
-    handle(const NetworkIdentifier& netId, NetEventCallback& callback, const ll::network::Packet& packet) const = 0;
+    handle(NetworkIdentifier const& netId, NetEventCallback& callback, ll::network::Packet const& packet) const = 0;
 };
 
 namespace detail {
@@ -102,21 +102,15 @@ inline bool packetHandlerRegistration = [] {
 } // namespace detail
 
 template <class Derived>
-class PacketBase
-: public Packet,
-  private detail::StaticRegistrationAnchor<detail::packetRegistration<Derived>> {
-    static bool ensureRegistered() {
-        return detail::packetRegistration<Derived>;
-    }
+class PacketBase : public Packet, private detail::StaticRegistrationAnchor<detail::packetRegistration<Derived>> {
+    static bool ensureRegistered() { return detail::packetRegistration<Derived>; }
 
 protected:
     using Packet::Packet;
 
 public:
-    [[nodiscard]] ::std::string_view getName() const override {
-        return reflection::type_unprefix_name_v<Derived>;
-    }
-    [[nodiscard]] PacketRuntimeId getRuntimeId() const override {
+    [[nodiscard]] ::std::string_view getName() const override { return reflection::type_unprefix_name_v<Derived>; }
+    [[nodiscard]] PacketRuntimeId    getRuntimeId() const override {
         constexpr PacketRuntimeId runtimeId = ll::hash_utils::doHash(reflection::type_unprefix_name_v<Derived>);
         return runtimeId;
     }
@@ -128,15 +122,13 @@ template <class Derived, class PacketType>
 class PacketHandlerBase
 : public IPacketHandler,
   private detail::StaticRegistrationAnchor<detail::packetHandlerRegistration<Derived, PacketType>> {
-    static bool ensureRegistered() {
-        return detail::packetHandlerRegistration<Derived, PacketType>;
-    }
+    static bool ensureRegistered() { return detail::packetHandlerRegistration<Derived, PacketType>; }
 
     inline static bool sRegistered = ensureRegistered();
 
 public:
-    void handle(const NetworkIdentifier& netId, NetEventCallback& callback, const Packet& packet) const final {
-        static_cast<const Derived*>(this)->handlePacket(netId, callback, static_cast<const PacketType&>(packet));
+    void handle(NetworkIdentifier const& netId, NetEventCallback& callback, Packet const& packet) const final {
+        static_cast<Derived const*>(this)->handlePacket(netId, callback, static_cast<PacketType const&>(packet));
     }
 };
 

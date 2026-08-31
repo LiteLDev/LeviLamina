@@ -67,26 +67,14 @@ public:
     // NOLINTBEGIN
     MCAPI ActorSkeletalAnimation(::std::string const& name, ::std::string const& sourceFilePathWithExtension);
 
-#ifdef LL_PLAT_C
-    MCFOLD ::std::vector<::ActorParticleEffectEvent> const& getParticleEffectEvents() const;
-#endif
-
     MCAPI void initPrecomputedInterpolation();
 
     MCAPI void removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion();
-
-    MCAPI ~ActorSkeletalAnimation();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& name, ::std::string const& sourceFilePathWithExtension);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

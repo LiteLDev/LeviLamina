@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class CommandOrigin;
 class CompoundTag;
 // clang-format on
@@ -26,29 +25,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandPosition();
-
-    MCAPI explicit CommandPosition(::Vec3 const& absoluteOffset);
-
-    MCAPI ::BlockPos getBlockPos(::Vec3 const& ref, ::Vec3 const& offsetFromBase) const;
-
-    MCAPI ::BlockPos getBlockPos(int version, ::CommandOrigin const& origin, ::Vec3 const& offsetFromBase) const;
-
     MCAPI ::Vec3 getPosition(int version, ::CommandOrigin const& origin, ::Vec3 const& offsetFromBase) const;
 
     MCAPI void load(::CompoundTag const& tag);
-
-    MCAPI bool operator==(::CommandPosition const& rhs) const;
-
-    MCAPI ::CompoundTag serialize() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Vec3 const& absoluteOffset);
     // NOLINTEND
 };
 

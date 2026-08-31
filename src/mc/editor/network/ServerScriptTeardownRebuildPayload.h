@@ -3,12 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/editor/ScriptManagerEventType.h"
 #include "mc/editor/network/NetworkPayload.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { struct ContextId; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,33 +18,18 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4> mUnkc13653;
-    ::ll::UntypedStorage<1, 1> mUnk8b4a55;
-    ::ll::UntypedStorage<1, 1> mUnk48dfa0;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ServerScriptTeardownRebuildPayload& operator=(ServerScriptTeardownRebuildPayload const&);
     ServerScriptTeardownRebuildPayload(ServerScriptTeardownRebuildPayload const&);
+    ServerScriptTeardownRebuildPayload();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerScriptTeardownRebuildPayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ServerScriptTeardownRebuildPayload();
-
-    MCNAPI ServerScriptTeardownRebuildPayload(
-        ::Editor::ScriptManagerEventType eventType,
-        ::Scripting::ContextId           contextId,
-        bool                             finalEvent
-    );
-
-    MCNAPI ::Scripting::ContextId getContextId() const;
+    virtual ~ServerScriptTeardownRebuildPayload() /*override*/;
     // NOLINTEND
 
 public:
@@ -56,11 +39,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::Editor::ScriptManagerEventType eventType, ::Scripting::ContextId contextId, bool finalEvent);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

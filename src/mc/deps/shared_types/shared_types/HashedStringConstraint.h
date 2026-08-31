@@ -9,8 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
-namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
@@ -20,7 +18,7 @@ class HashedStringConstraint : public ::cereal::ConstraintHandle<::SharedTypes::
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 104, ::cereal::StringConstraint> mConstraint;
+    ::ll::TypedStorage<8, 112, ::cereal::StringConstraint> mConstraint;
     // NOLINTEND
 
 public:
@@ -28,19 +26,29 @@ public:
     HashedStringConstraint();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea req) const /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit HashedStringConstraint(::cereal::StringConstraint constraint);
-
-    MCFOLD ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
-
-    MCAPI void validateValue(::HashedString const& value, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::cereal::StringConstraint constraint);
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCFOLD ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea req) const;
+
+
     // NOLINTEND
 
 public:

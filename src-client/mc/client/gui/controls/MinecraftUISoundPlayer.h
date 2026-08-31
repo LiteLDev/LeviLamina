@@ -26,21 +26,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftUISoundPlayer() /*override*/ = default;
+    virtual ~MinecraftUISoundPlayer() /*override*/;
 
     virtual void play(::std::string const& name, float volume, float pitch) const /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit MinecraftUISoundPlayer(::IMinecraftGame& mc);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftGame& mc);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

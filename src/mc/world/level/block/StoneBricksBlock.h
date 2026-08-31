@@ -11,7 +11,6 @@
 class Block;
 class BlockActor;
 class ItemInstance;
-class Material;
 // clang-format on
 
 class StoneBricksBlock : public ::BlockType {
@@ -22,33 +21,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StoneBricksBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StoneBricksBlock(
-        ::std::string const&  nameId,
-        int                   id,
-        ::Material const&     material,
-        ::HashedString const& infestedBlockId
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::string const& nameId, int id, ::Material const& material, ::HashedString const& infestedBlockId);
     // NOLINTEND
 
 public:

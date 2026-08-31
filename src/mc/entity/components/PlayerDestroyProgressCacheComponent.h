@@ -16,20 +16,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerDestroyProgressCacheComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PlayerDestroyProgressCacheComponent(uint64 initBlock);
-
-    MCAPI void reset();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uint64 initBlock);
-    // NOLINTEND
+    void reset() {
+        mCurrentToolIsOptimalToolForMining->reset();
+        mCurrentToolBlockDestroySpeed->reset();
+        mLastBlockBeingDestroyed = 0xFFFFFFFF;
+        mLastItemUsedToDestroy   = ItemDescriptor();
+    }
 };

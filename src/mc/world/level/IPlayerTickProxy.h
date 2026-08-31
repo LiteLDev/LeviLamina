@@ -28,10 +28,4 @@ public:
 
     virtual void postReplicationtick(::ServerPlayer& serverPlayer, ::Tick const& currentTick) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

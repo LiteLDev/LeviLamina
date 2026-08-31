@@ -10,7 +10,6 @@
 // clang-format off
 class CatalogInfo;
 class CharacterSelectorModel;
-class PersonaScreenModel;
 // clang-format on
 
 class CastModelPromptData : public ::IProfileEntryPromptData {
@@ -42,24 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CastModelPromptData(
-        ::Bedrock::NotNullNonOwnerPtr<::PersonaScreenModel>  screenModel,
-        ::Bedrock::NonOwnerPointer<::CharacterSelectorModel> characterSelectorModel
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::PersonaScreenModel>  screenModel,
-        ::Bedrock::NonOwnerPointer<::CharacterSelectorModel> characterSelectorModel
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -73,11 +54,5 @@ public:
     MCAPI void $callOnOpen();
 
     MCAPI void $callOnClose();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

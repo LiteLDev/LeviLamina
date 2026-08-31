@@ -23,10 +23,4 @@ public:
 
     virtual ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

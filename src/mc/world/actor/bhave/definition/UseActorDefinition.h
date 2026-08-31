@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/world/actor/bhave/definition/BehaviorDefinition.h"
 
-class UseActorDefinition : public ::BehaviorDefinition {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
-};
+class UseActorDefinition : public ::BehaviorDefinition {};

@@ -44,7 +44,7 @@ public:
 
     virtual void terminate() /*override*/;
 
-    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const&) /*override*/;
+    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) /*override*/;
 
     virtual bool screenIsNotFlushable() const /*override*/;
 
@@ -75,8 +75,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::CubemapBackgroundResources> const& cubemapResources,
         bool                                                               flushable
     );
-
-    MCAPI void renderCubemap(::ScreenContext& screenContext, bool hdrCubemap);
     // NOLINTEND
 
 public:
@@ -102,7 +100,7 @@ public:
 
     MCAPI void $terminate();
 
-    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const&);
+    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
     MCFOLD bool $screenIsNotFlushable() const;
 
@@ -123,11 +121,5 @@ public:
     MCFOLD bool $getShouldSendEvents();
 
     MCFOLD ::RectangleArea $getAreaOfControlByName(::std::string const&) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

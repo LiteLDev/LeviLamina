@@ -15,7 +15,6 @@ class MinecraftUIRenderContext;
 class Mob;
 class UIControl;
 class UICustomRenderer;
-class UIPropertyBag;
 // clang-format on
 
 class ActorPortraitRenderer : public ::MinecraftUICustomRenderer {
@@ -43,12 +42,6 @@ public:
         ::ll::TypedStorage<1, 1, ::ActorPortraitRenderer::RotateMode> mRotateMode;
         ::ll::TypedStorage<4, 16, ::SkinData>                         mSkin;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void _extract(::UIPropertyBag const& bag);
-        // NOLINTEND
     };
 
 public:
@@ -69,8 +62,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorPortraitRenderer();
-
     MCAPI void _prependTransform(
         ::Matrix&                            mat,
         ::glm::vec2 const&                   ownerPos,
@@ -83,22 +74,10 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
     MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

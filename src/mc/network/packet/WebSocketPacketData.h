@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/Result.h"
-
-// auto generated forward declare list
-// clang-format off
-class ReadOnlyBinaryStream;
-// clang-format on
-
 struct WebSocketPacketData {
 public:
     // member variables
@@ -25,8 +17,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit WebSocketPacketData(::std::string const& ip);
-
-    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:

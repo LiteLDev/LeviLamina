@@ -20,12 +20,13 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk85dd7f;
     ::ll::UntypedStorage<4, 8>  mUnk4c890d;
+    ::ll::UntypedStorage<8, 16> mUnk19a0ab;
+    ::ll::UntypedStorage<8, 16> mUnke12749;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     RTCReceivedRtpStreamStats& operator=(RTCReceivedRtpStreamStats const&);
-    RTCReceivedRtpStreamStats(RTCReceivedRtpStreamStats const&);
     RTCReceivedRtpStreamStats();
 
 public:
@@ -43,6 +44,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI RTCReceivedRtpStreamStats(::webrtc::RTCReceivedRtpStreamStats const&);
+
     MCNAPI RTCReceivedRtpStreamStats(::std::string id, ::webrtc::Timestamp timestamp);
     // NOLINTEND
 
@@ -55,6 +58,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::webrtc::RTCReceivedRtpStreamStats const&);
+
     MCNAPI void* $ctor(::std::string id, ::webrtc::Timestamp timestamp);
     // NOLINTEND
 

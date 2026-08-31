@@ -17,10 +17,4 @@ public:
 
     virtual void deserialize(::Json::Value const& root) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

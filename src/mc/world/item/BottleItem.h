@@ -18,10 +18,6 @@ class Vec3;
 
 class BottleItem : public ::Item {
 public:
-    // prevent constructor by default
-    BottleItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
@@ -37,24 +33,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BottleItem(::std::string const& name, int id);
-
-    MCAPI void _createBottledItem(::Actor& entity, ::ItemStack& instance, ::std::string_view itemToCreate) const;
+    MCAPI void _createBottledItem(::Actor& entity, ::ItemStack& instance, ::std::string_view const itemToCreate) const;
 
     MCAPI void _fillBottleViaDispenser(
-        ::BlockSource&     region,
-        ::std::string_view bottledItem,
-        ::Container&       container,
-        int                slot,
-        ::Vec3 const&      pos,
-        uchar              face
+        ::BlockSource&           region,
+        ::std::string_view const bottledItem,
+        ::Container&             container,
+        int                      slot,
+        ::Vec3 const&            pos,
+        uchar                    face
     ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

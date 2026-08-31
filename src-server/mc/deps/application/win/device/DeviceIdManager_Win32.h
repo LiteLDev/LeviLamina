@@ -24,14 +24,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $_initializePlatform(::Bedrock::DeviceIDPlatformEnvironment const& environment);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForImplBase();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-    // NOLINTEND
 };
 
 } // namespace Bedrock

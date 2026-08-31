@@ -3,10 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/identity/XUID.h"
-#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,7 +15,7 @@ namespace Social { class XboxLiveUserStatistics; }
 
 namespace OreUI {
 
-class PlayerStatisticsFacet : public ::OreUI::FacetBase<::OreUI::PlayerStatisticsFacet> {
+class PlayerStatisticsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PlayerStatisticsFacet> {
 public:
     // PlayerStatisticsFacet inner types declare
     // clang-format off
@@ -45,31 +44,6 @@ public:
         ::ll::TypedStorage<8, 8, double>                                        currentUserValueRaw;
         ::ll::TypedStorage<8, 32, ::std::string>                                currentUserValueDisplay;
         ::ll::TypedStorage<8, 32, ::std::string>                                currentUserValueNarration;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Statistic& operator=(Statistic const&);
-        Statistic();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Statistic(::OreUI::PlayerStatisticsFacet::Statistic const&);
-
-        MCAPI ~Statistic();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::OreUI::PlayerStatisticsFacet::Statistic const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -107,10 +81,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PlayerStatisticsFacet(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
 
-    MCAPI ::Bedrock::Result<void> _load(::std::string const& id);
-
-    MCAPI void _updateStatisticsData();
-
     MCFOLD ::std::vector<::OreUI::PlayerStatisticsFacet::Statistic> const& getData();
 
     MCFOLD bool getLoaded();
@@ -140,12 +110,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

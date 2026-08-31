@@ -24,21 +24,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::Matrix& operator*();
-
-        MCFOLD ::Matrix* operator->();
-
-        MCAPI ::MatrixStack::MatrixStackRef& operator=(::Matrix const& lhs);
-
-        MCFOLD void release();
-
         MCAPI ~MatrixStackRef();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -55,19 +47,9 @@ public:
     // NOLINTBEGIN
     MCAPI MatrixStack();
 
-    MCAPI ::Matrix& getTop();
-
-    MCAPI bool isSortOriginTop() const;
-
     MCAPI ::MatrixStack::MatrixStackRef push(bool isSortOrigin);
 
-    MCAPI ::MatrixStack::MatrixStackRef push(::Matrix const& matrix, bool isSortOrigin);
-
     MCAPI ::MatrixStack::MatrixStackRef pushIdentity(bool isSortOrigin);
-
-    MCAPI ::Matrix const& sortOriginTransform() const;
-
-    MCAPI ::Matrix const& top() const;
     // NOLINTEND
 
 public:

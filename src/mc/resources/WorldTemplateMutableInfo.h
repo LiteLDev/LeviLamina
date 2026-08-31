@@ -15,16 +15,4 @@ public:
     WorldTemplateMutableInfo& operator=(WorldTemplateMutableInfo const&);
     WorldTemplateMutableInfo(WorldTemplateMutableInfo const&);
     WorldTemplateMutableInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~WorldTemplateMutableInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

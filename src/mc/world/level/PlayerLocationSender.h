@@ -71,24 +71,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerLocationSender();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerLocationSender(
-        ::PacketSender& packetSender,
-        int             simulationDistanceChunks,
-        float           simulationDistanceMultiplyFactor
-    );
-
-    MCAPI void _checkPlayerPairAndMaybeSendPacket(
-        ::UserEntityIdentifierComponent const& userIdentifier,
-        ::Player const&                        viewingPlayer,
-        ::Player const&                        observedPlayer
-    );
-
     MCAPI void _forEachClientPlayerPair(
         ::std::vector<::WeakEntityRef> const&                                                           gameplayUsers,
         ::std::function<void(::UserEntityIdentifierComponent const&, ::Player const&, ::Player const&)> action
@@ -103,32 +87,11 @@ public:
     ) const;
 
     MCAPI void _updatePlayerData(::Player const& player);
-
-    MCAPI void checkPlayerPairsAndMaybeSendPackets(::std::vector<::WeakEntityRef> const& gameplayUsers);
-
-    MCAPI void sendPacketsHidingAllPlayers(::std::vector<::WeakEntityRef> const& gameplayUsers);
-
-    MCAPI void updatePlayersData(::std::vector<::WeakEntityRef> const& gameplayUsers);
-
-    MCAPI ~PlayerLocationSender();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::PlayerLocationSender::PlayerLocationData const& NULL_PLAYER_LOCATION_DATA();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::PacketSender& packetSender, int simulationDistanceChunks, float simulationDistanceMultiplyFactor);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

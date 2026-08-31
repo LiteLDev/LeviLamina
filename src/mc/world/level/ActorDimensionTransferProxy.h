@@ -17,7 +17,7 @@ class ActorDimensionTransferProxy : public ::IActorDimensionTransferProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorDimensionTransferProxy() /*override*/ = default;
+    virtual ~ActorDimensionTransferProxy() /*override*/;
 
     virtual void transferTickingArea(::Actor& actor, ::Dimension& dimension) const /*override*/;
 
@@ -32,15 +32,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI ActorDimensionTransferProxy();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

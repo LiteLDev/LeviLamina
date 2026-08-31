@@ -6,7 +6,7 @@
 #include "mc/common/editor/PrefabSource.h"
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 #include "mc/server/editor/serviceproviders/PrefabDBServerPlayerServiceProvider.h"
@@ -61,7 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PrefabDBService() /*override*/;
+    virtual ~PrefabDBService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -151,14 +151,6 @@ public:
 
     MCNAPI bool _buildManifests();
 
-    MCNAPI ::StackRefResult<::Editor::Prefabs::PrefabDBPrefabInstance> _createPrefabInstance(
-        ::WeakRef<::Editor::Prefabs::PrefabDBTemplate> prefabTemplateRef,
-        ::DimensionType const&                         dimension,
-        ::Vec3 const&                                  position,
-        ::Mirror                                       mirror,
-        ::Rotation                                     rotation
-    );
-
     MCNAPI ::StackRefResult<::Editor::Prefabs::PrefabDBTemplate> _createPrefabTemplate(
         ::std::string const&                   name,
         ::std::string const&                   displayName,
@@ -169,28 +161,12 @@ public:
     );
 
     MCNAPI void _onTickEvent(::Editor::EditorManager&);
-
-    MCNAPI void
-    _propagateDirtyTemplateChangesToInstances(::WeakRef<::Editor::Prefabs::PrefabDBTemplate> templateWeakRef);
-
-    MCNAPI void _validateDatabase(::std::vector<::std::string>& outErrors);
-
-    MCNAPI void findInstancesOfTemplate(
-        ::mce::UUID const&                                                   templateId,
-        ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>& outInstances
-    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

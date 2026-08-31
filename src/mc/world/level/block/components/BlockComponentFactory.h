@@ -12,7 +12,6 @@
 // auto generated forward declare list
 // clang-format off
 class CerealDocumentUpgrader;
-class CerealSchemaUpgrade;
 class Experiments;
 class PackLoadContext;
 class PackLoadRequirement;
@@ -88,11 +87,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockComponentFactory(BlockComponentFactory const&);
-    BlockComponentFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BlockComponentFactory() /*override*/;
@@ -101,20 +95,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockComponentFactory(::PackLoadContext const* packLoadContext);
-
     MCAPI void _buildBlockComponentsSchema();
 
     MCAPI void _registerLegacyDescriptions(::PackLoadContext const* packLoadContext);
 
     MCAPI ::std::unique_ptr<::BlockComponentDescription>
     createDescription(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
-
-    MCFOLD ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockComponentGroupDescription>> const&
-    getSchema() const;
-
-    MCAPI ::BlockComponentFactory& operator=(::BlockComponentFactory const&);
     // NOLINTEND
 
 public:
@@ -123,30 +109,13 @@ public:
     MCAPI static void
     addAllComponentUpgrades(::CerealDocumentUpgrader& documentUpgrader, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI static void addComponentMetadata(
-        ::cereal::ReflectionCtx&                     ctx,
-        ::std::string const&                         componentName,
-        ::BlockComponentFactory::ComponentMetadata&& metadata
-    );
-
     MCAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void registerComponentUpgrade(
-        ::CerealDocumentUpgrader&                documentUpgrader,
-        ::std::shared_ptr<::CerealSchemaUpgrade> upgrade
-    );
 
     MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata> const*
     registeredCerealComponents(::cereal::ReflectionCtx const& ctx);
 
     MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>&
     setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PackLoadContext const* packLoadContext);
     // NOLINTEND
 
 public:

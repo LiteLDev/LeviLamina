@@ -28,10 +28,4 @@ public:
 
     virtual void onTickingStopped(::LevelChunk& levelChunk) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

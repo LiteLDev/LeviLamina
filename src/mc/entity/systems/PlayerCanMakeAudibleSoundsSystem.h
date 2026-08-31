@@ -20,10 +20,10 @@ namespace PlayerCanMakeAudibleSoundsSystem {
 // functions
 // NOLINTBEGIN
 MCAPI void _doPlayerCanMakeAudibleSoundsSystem(
-    ::entt::type_list<::Include<::ActorTickedComponent, ::PlayerComponent>> entity,
-    ::StrictEntityContext const&                                            owner,
-    ::ActorOwnerComponent&                                                  entityModifier,
-    ::EntityModifier<::CanMakeAudibleSoundsComponent>
+    ::entt::type_list<::Include<::ActorTickedComponent, ::PlayerComponent>>,
+    ::StrictEntityContext const&                      entity,
+    ::ActorOwnerComponent&                            owner,
+    ::EntityModifier<::CanMakeAudibleSoundsComponent> entityModifier
 );
 
 MCAPI ::TickingSystemWithInfo createSystem();

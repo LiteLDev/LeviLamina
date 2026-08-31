@@ -17,31 +17,15 @@ class Vec3;
 
 class EndCrystalItem : public ::Item {
 public:
-    // prevent constructor by default
-    EndCrystalItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isGlint(::ItemStackBase const& stack) const /*override*/;
 
-    virtual bool isDestructive(int) const /*override*/;
+    virtual bool isDestructive(int auxValue) const /*override*/;
 
     virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+    _useOn(::ItemStack& instance, ::Actor& usingActor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EndCrystalItem(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -49,10 +33,10 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
 
-    MCFOLD bool $isDestructive(int) const;
+    MCFOLD bool $isDestructive(int auxValue) const;
 
     MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    $_useOn(::ItemStack& instance, ::Actor& usingActor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
 
     // NOLINTEND

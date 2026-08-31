@@ -23,7 +23,7 @@ public:
 
     virtual int getValue() const = 0;
 
-    virtual void setValue(int value) = 0;
+    virtual void setValue(int index) = 0;
 
     virtual ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&

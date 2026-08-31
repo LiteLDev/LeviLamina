@@ -16,18 +16,6 @@ public:
     UpgradeLegacyDependenciesBatch& operator=(UpgradeLegacyDependenciesBatch const&);
     UpgradeLegacyDependenciesBatch(UpgradeLegacyDependenciesBatch const&);
     UpgradeLegacyDependenciesBatch();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~UpgradeLegacyDependenciesBatch();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace PackCommand

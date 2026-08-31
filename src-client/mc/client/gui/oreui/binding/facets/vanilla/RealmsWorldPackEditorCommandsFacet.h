@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/screens/models/ContentType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -14,7 +14,8 @@ namespace Realms { class RealmsWorldPackEditor; }
 
 namespace OreUI {
 
-class RealmsWorldPackEditorCommandsFacet : public ::OreUI::FacetBase<::OreUI::RealmsWorldPackEditorCommandsFacet> {
+class RealmsWorldPackEditorCommandsFacet
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsWorldPackEditorCommandsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -28,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsWorldPackEditorCommandsFacet() /*override*/ = default;
+    virtual ~RealmsWorldPackEditorCommandsFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -51,9 +52,9 @@ public:
 
     MCAPI void clearChangePackPriorityError() const;
 
-    MCFOLD void clearPackApplicationError() const;
+    MCAPI void clearPackApplicationError() const;
 
-    MCFOLD void clearPendingPackAction() const;
+    MCAPI void clearPendingPackAction() const;
 
     MCAPI void clearRealmsWorldPackEditor() const;
 
@@ -76,6 +77,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

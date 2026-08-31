@@ -34,25 +34,7 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI TelemetryInfo();
 
-    MCNAPI void _detectTampering();
-
-    MCNAPI void _load();
-
     MCNAPI void _save();
-
-    MCNAPI bool getIsFirstSession() const;
-
-    MCNAPI bool getIsTampered() const;
-
-    MCNAPI ::std::string getLastSessionBuild() const;
-
-    MCNAPI ::std::string getLastSessionId() const;
-
-    MCNAPI void setCurrentSessionBuild(::std::string const& build);
-
-    MCNAPI void setCurrentSessionId(::std::string const& sessionId);
-
-    MCNAPI void trySave();
 #endif
     // NOLINTEND
 

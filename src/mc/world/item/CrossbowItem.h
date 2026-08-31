@@ -11,7 +11,6 @@
 // clang-format off
 class Actor;
 class Item;
-class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 class Level;
@@ -68,11 +67,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CrossbowItem(::std::string const& name, int id);
-
-    MCAPI void
-    _shootArrow(::ItemInstance const& crossbow, ::ItemInstance const& projectileInstance, ::Player& player) const;
-
-    MCAPI void _shootFirework(::ItemInstance const& projectileInstance, ::Player& player) const;
     // NOLINTEND
 
 public:
@@ -86,7 +80,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCFOLD ::ResolvedItemIconInfo
+    MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     MCAPI int
@@ -109,11 +103,5 @@ public:
     MCAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

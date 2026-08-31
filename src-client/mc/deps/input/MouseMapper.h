@@ -37,16 +37,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setMapping(
-        ::InputEventQueue&      bindingFactory,
-        ::BindingFactory const& inputMapping,
-        ::InputMapping const&   controllerId,
-        int
+        ::InputEventQueue&      eventQueue,
+        ::BindingFactory const& bindingFactory,
+        ::InputMapping const&   inputMapping,
+        int                     controllerId
     ) /*override*/;
 
     virtual void clearMapping(int controllerId) /*override*/;
 
-    virtual bool
-    tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const&) /*override*/;
+    virtual bool tick(
+        ::InputEventQueue&                                              eventQueue,
+        ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map
+    ) /*override*/;
 
     virtual void clearInputDeviceQueue() /*override*/;
 
@@ -58,30 +60,19 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MouseMapper();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setMapping(
-        ::InputEventQueue&      bindingFactory,
-        ::BindingFactory const& inputMapping,
-        ::InputMapping const&   controllerId,
-        int
+        ::InputEventQueue&      eventQueue,
+        ::BindingFactory const& bindingFactory,
+        ::InputMapping const&   inputMapping,
+        int                     controllerId
     );
 
     MCAPI void $clearMapping(int controllerId);
 
-    MCAPI bool $tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const&);
+    MCAPI bool
+    $tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map);
 
     MCAPI void $clearInputDeviceQueue();
 

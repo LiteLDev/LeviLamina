@@ -41,20 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void _setupActorMoveModule(
-        ::WeakRef<::EntityRegistry>                        registry,
-        ::VanillaSystemsRegistration::RegistrationOptions& options
-    );
-
-    MCNAPI void _setupTypeIds(::VanillaSystemsRegistration::RegistrationOptions& options);
-
-    MCNAPI void
-    _setupVanillaSystemsEventing(::EntityRegistry& registry, ::Bedrock::NonOwnerPointer<::IMinecraftEventing> eventing);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $init(

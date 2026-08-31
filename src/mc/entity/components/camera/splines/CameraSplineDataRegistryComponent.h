@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/puv/LoadResult.h"
 #include "mc/deps/resource_processing/category/CategoryLoader.h"
 #include "mc/deps/resource_processing/category/SharedSlicesTraits.h"
 #include "mc/platform/threading/Mutex.h"
@@ -15,9 +14,7 @@ class IMinecraftEventing;
 class NetworkIdentifier;
 class PacketSender;
 class ResourcePackManager;
-namespace Core { class Path; }
 namespace SharedTypes::v1_26_0 { struct CameraSplineDefinition; }
-namespace SharedTypes::v1_26_0 { struct CameraSplineFile; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -43,23 +40,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CameraSplineDataRegistryComponent(::IMinecraftEventing& eventing);
-
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_26_0::CameraSplineFile> _parseAndLoadSplines(
-        ::std::string const&&                                                                    fileData,
-        ::Core::Path const&                                                                      filenameWithExtension,
-        ::Bedrock::Resources::CategoryLoader<::Bedrock::Resources::SharedSlicesTraits<5>> const& splineLoader
-    );
-
     MCAPI void loadResources(::ResourcePackManager const& resourcePackManager, ::cereal::ReflectionCtx& ctx);
 
     MCAPI void sendRegistryToClient(::PacketSender& packetSender, ::NetworkIdentifier const& source);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

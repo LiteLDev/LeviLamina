@@ -19,26 +19,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WoolBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WoolBlockItem(::std::string const& name, int id, bool isCarpet);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, bool isCarpet);
     // NOLINTEND
 
 public:
@@ -47,11 +31,5 @@ public:
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

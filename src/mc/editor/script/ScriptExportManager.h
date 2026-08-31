@@ -2,13 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-
 // auto generated forward declare list
 // clang-format off
 class LevelData;
-class Player;
 namespace Editor::ScriptModule { class ScriptGameOptions; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
@@ -33,19 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptExportManager() = default;
+    virtual ~ScriptExportManager();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptExportManager(::Player& player);
-
     MCNAPI void _setGameOptions(::LevelData const& levelData, ::Editor::ScriptModule::ScriptGameOptions& gameOptions);
-
-    MCNAPI ::Editor::ScriptModule::ScriptGameOptions getGameOptions(::std::optional<bool> useDefault);
-
-    MCNAPI ::Scripting::Result_deprecated<::std::string> getGameVersion() const;
     // NOLINTEND
 
 public:
@@ -57,9 +47,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Player& player);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

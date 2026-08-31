@@ -15,10 +15,4 @@ public:
 
     virtual void deregisterTagsFromActor(::Actor& actor) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

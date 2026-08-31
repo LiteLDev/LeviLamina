@@ -7,7 +7,7 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/ProjectExportStatus.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/export/ExportResult.h"
@@ -17,6 +17,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class FileArchiver;
+class Level;
 class LevelData;
 class WeakEntityRef;
 namespace Bedrock::PubSub { class Subscription; }
@@ -49,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorExportProjectManagerService() /*override*/;
+    virtual ~EditorExportProjectManagerService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -108,11 +110,23 @@ public:
         ::Editor::ProjectExportStatus                          exportStatus
     );
 
+    MCNAPI void _beginBackupExport(
+        ::Level*                                                            level,
+        ::FileArchiver*                                                     fileArchiver,
+        ::std::function<void(::Editor::ExportResult const&, ::std::string)> callback
+    );
+
     MCNAPI void _onExportError(
         ::std::function<void(::Editor::ExportResult const&, ::std::string)> callback,
         ::std::string                                                       message,
         ::Editor::ExportResult                                              result
     );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::string _buildTimestampedFileName(::std::string const& levelId, ::std::string const& extension);
     // NOLINTEND
 
 public:
@@ -123,12 +137,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager,
         ::Editor::ProjectExportStatus                          exportStatus
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -181,16 +189,6 @@ public:
     MCNAPI ::std::shared_ptr<::FileArchiver::InterventionPublishers> $getInterventionPublisherTable();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIEditorService();
-
-    MCNAPI static void** $vftableForEditorPlayerExportProjectServiceProvider();
-
-    MCNAPI static void** $vftableForEditorServerExportProjectServiceProvider();
     // NOLINTEND
 };
 

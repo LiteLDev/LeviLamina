@@ -10,7 +10,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class BoundingBox;
 class Random;
 // clang-format on
 
@@ -29,17 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static uint64 _countEmptyCorners(::BlockSource const& region, ::BoundingBox const& boundingBox);
-
-    MCFOLD static bool _overlapsWithStructureFeature(::BlockSource const& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<::std::string const[]> STRUCTURE_LOCATION_FOSSIL();
+    MCAPI static ::std::add_lvalue_reference_t<::std::string const[8]> STRUCTURE_LOCATION_FOSSIL();
     // NOLINTEND
 
 public:
@@ -48,11 +39,5 @@ public:
     MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

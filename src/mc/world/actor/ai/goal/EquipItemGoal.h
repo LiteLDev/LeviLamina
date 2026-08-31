@@ -40,17 +40,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EquipItemGoal(::Mob& mob);
-
     MCAPI void _dropItem(::ItemStack const& item) const;
 
     MCAPI void _sendMobEquipmentPacket(::MobEquipmentPacket packet) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

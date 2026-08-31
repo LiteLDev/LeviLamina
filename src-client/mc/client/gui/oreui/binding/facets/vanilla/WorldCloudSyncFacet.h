@@ -3,24 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/world/WorldCloudSyncResult.h"
 
 // auto generated forward declare list
 // clang-format off
+class IContentManager;
 namespace World { class IWorldCloudSyncer; }
 // clang-format on
 
 namespace OreUI {
 
-class WorldCloudSyncFacet : public ::OreUI::FacetBase<::OreUI::WorldCloudSyncFacet> {
+class WorldCloudSyncFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::WorldCloudSyncFacet> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                                      mIsDirty;
     ::ll::TypedStorage<8, 8, ::World::IWorldCloudSyncer&>                               mWorldCloudSyncer;
+    ::ll::TypedStorage<8, 8, ::IContentManager&>                                        mContentManager;
     ::ll::TypedStorage<4, 16, ::OreUI::FacetTaskTracker<::World::WorldCloudSyncResult>> mSyncWorldTask;
     // NOLINTEND
 
@@ -33,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldCloudSyncFacet() /*override*/ = default;
+    virtual ~WorldCloudSyncFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -41,8 +43,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldCloudSyncFacet(::World::IWorldCloudSyncer& worldCloudSyncer);
-
     MCAPI void clearSyncWorldTaskState();
 
     MCFOLD ::std::optional<::World::WorldCloudSyncResult> const& getSyncWorldResult() const;
@@ -59,9 +59,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::World::IWorldCloudSyncer& worldCloudSyncer);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

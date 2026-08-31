@@ -18,7 +18,6 @@ class IPlayerSleepPercentageGetter;
 class LevelEventManager;
 class Player;
 class PlayerDeathManager;
-struct PlayerSleepStatus;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -71,8 +70,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>   levelEventManager
     );
 
-    MCAPI void _broadcastSleepingPlayerList(::PlayerSleepStatus const& playerSleepStatus);
-
     MCFOLD void _onPlayerDeath();
 
     MCAPI bool enoughPlayersDeepSleeping() const;
@@ -81,10 +78,6 @@ public:
 
     MCAPI void
     registerWithPlayerDimensionTransferConnector(::IPlayerDimensionTransferConnector& playerDimensionTransferConnector);
-
-    MCAPI void setShouldSendSleepMessage(bool shouldSend);
-
-    MCAPI bool shouldSendSleepMessage() const;
 
     MCAPI void tickCheckToWakeUpPlayers();
     // NOLINTEND
@@ -110,18 +103,14 @@ public:
     // NOLINTBEGIN
     MCAPI void $updateSleepingPlayerList();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
 
+#ifdef LL_PLAT_S
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
+#else // LL_PLAT_C
     MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
+#endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIServerPlayerSleepManagerConnector();
-
-    MCNAPI static void** $vftableForPlayerSleepManager();
     // NOLINTEND
 };

@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class Pack;
-struct CompositePackSourceOptions;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 // clang-format on
@@ -20,10 +19,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::PackSource*>> mPackSources;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CompositePackSource();
 
 public:
     // virtual functions
@@ -41,21 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CompositePackSource(::CompositePackSourceOptions options);
-
-    MCFOLD void addPackSource(::PackSource* packSource);
-
-    MCFOLD void clear();
-
 #ifdef LL_PLAT_C
     MCAPI ::std::vector<::PackSource*> getPackSources();
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::CompositePackSourceOptions options);
     // NOLINTEND
 
 public:
@@ -74,11 +57,5 @@ public:
     MCAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&&);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

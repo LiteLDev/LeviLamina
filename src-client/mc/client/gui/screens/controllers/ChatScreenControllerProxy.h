@@ -14,30 +14,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChatScreenControllerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChatScreenControllerProxy() /*override*/ = default;
+    virtual ~ChatScreenControllerProxy() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit ChatScreenControllerProxy(::ChatScreenControllerProxyCallbacks callbacks);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ChatScreenControllerProxyCallbacks callbacks);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI void $dtor();
     // NOLINTEND
 };

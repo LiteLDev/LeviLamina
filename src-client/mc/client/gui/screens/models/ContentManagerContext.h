@@ -23,10 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContentManagerContext();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ContentManagerContext() /*override*/;
@@ -38,24 +34,6 @@ public:
     virtual ::std::vector<::std::unique_ptr<::ContentView>> const& getContentViews() const /*override*/;
 
     virtual void onLanguageChanged() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ContentManagerContext(
-        ::std::weak_ptr<::IContentManager>                                   manager,
-        ::std::function<bool(::std::shared_ptr<::ContentItem const> const&)> contextPredicate
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::weak_ptr<::IContentManager>                                   manager,
-        ::std::function<bool(::std::shared_ptr<::ContentItem const> const&)> contextPredicate
-    );
     // NOLINTEND
 
 public:
@@ -73,11 +51,5 @@ public:
     MCFOLD ::std::vector<::std::unique_ptr<::ContentView>> const& $getContentViews() const;
 
     MCAPI void $onLanguageChanged();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

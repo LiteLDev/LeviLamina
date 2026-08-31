@@ -34,12 +34,6 @@ public:
 
     virtual float computeScore(::BlockPos const&, ::PointLighting::ManagedPointLight const&) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace PointLighting

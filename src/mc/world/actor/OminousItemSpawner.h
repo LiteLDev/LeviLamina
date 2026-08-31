@@ -51,15 +51,9 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _clientTick();
-
+#ifdef LL_PLAT_C
     MCAPI ::ItemStack const& _getItem();
-
-    MCAPI void _onTimePassed();
-
-    MCAPI void _removeDisplayEntity();
-
-    MCAPI void _serverTick();
+#endif
 
     MCAPI void init(::ItemStack const& itemToSpawn, int ticksBeforeRemoval);
 

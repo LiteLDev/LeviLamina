@@ -40,6 +40,8 @@ public:
 
     MCAPI void addDeathExpressionNode(::SharedTypes::Legacy::ExpressionNode const& expr);
 
+    MCAPI bool operator==(::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition const&) const;
+
     MCAPI ~ExperienceRewardComponentDefinition();
     // NOLINTEND
 

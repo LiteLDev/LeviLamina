@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ResourcePacksInfoPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -38,8 +42,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePacksInfoPacket();
-
     MCAPI ResourcePacksInfoPacket(
         bool                           resourcePackRequired,
         ::std::vector<::PackInfoData>& resourcePacks,
@@ -47,17 +49,11 @@ public:
         ::PackIdVersion const&         worldTemplateIdVersion,
         bool                           forceDisableVibrantVisuals
     );
-
-#ifdef LL_PLAT_C
-    MCFOLD ::PacksInfoData const& getHostSpecifiedPacks() const;
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(
         bool                           resourcePackRequired,
         ::std::vector<::PackInfoData>& resourcePacks,

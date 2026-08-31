@@ -35,12 +35,6 @@ public:
 
     virtual char const* getDescription() const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace PositionTrackingDB

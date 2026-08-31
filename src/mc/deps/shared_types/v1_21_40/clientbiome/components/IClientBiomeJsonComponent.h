@@ -15,12 +15,6 @@ public:
 
     virtual ::ClientBiomeComponentVersion getType() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_40

@@ -31,8 +31,6 @@ public:
 
     MCFOLD ::OreUI::AllowListPath& operator=(::OreUI::AllowListPath const&);
 
-    MCFOLD ::std::string const& url() const;
-
     MCAPI ~AllowListPath();
     // NOLINTEND
 

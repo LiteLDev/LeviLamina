@@ -25,8 +25,7 @@ public:
 
 public:
     // prevent constructor by default
-    StructureTemplateDataRequestPacket& operator=(StructureTemplateDataRequestPacket const&);
-    StructureTemplateDataRequestPacket(StructureTemplateDataRequestPacket const&);
+    StructureTemplateDataRequestPacket();
 
 public:
     // virtual functions
@@ -69,19 +68,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateDataRequestPacket();
-
     MCAPI explicit StructureTemplateDataRequestPacket(::StructureTemplateDataRequestPacketPayload payload);
-
-    MCAPI ::StructureTemplateDataRequestPacket& operator=(::StructureTemplateDataRequestPacket&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::StructureTemplateDataRequestPacketPayload payload);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

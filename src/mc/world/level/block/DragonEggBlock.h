@@ -31,7 +31,7 @@ public:
 
     virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
     // NOLINTEND
 
 public:
@@ -46,8 +46,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _attemptTeleport(::BlockSource& region, ::Random& random, ::BlockPos const& pos);
-
-    MCAPI static void _teleport(::BlockSource& region, ::BlockPos const& fromPos, ::BlockPos const& toPos);
     // NOLINTEND
 
 public:
@@ -65,7 +63,7 @@ public:
 
     MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
 
     // NOLINTEND

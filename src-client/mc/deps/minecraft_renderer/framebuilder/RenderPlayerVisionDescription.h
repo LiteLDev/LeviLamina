@@ -14,34 +14,6 @@ public:
     ::ll::TypedStorage<4, 4, float> mSkyAmbientContribution;
     ::ll::TypedStorage<4, 4, float> mDarknessScale;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RenderPlayerVisionDescription();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RenderPlayerVisionDescription(
-        bool  nightVisionEnabled,
-        float nightVisionScale,
-        float mobEffectFogLevel,
-        float skyAmbientContribution,
-        float darknessScale
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        bool  nightVisionEnabled,
-        float nightVisionScale,
-        float mobEffectFogLevel,
-        float skyAmbientContribution,
-        float darknessScale
-    );
-    // NOLINTEND
 };
 
 } // namespace mce::framebuilder

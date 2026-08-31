@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -15,7 +15,7 @@ namespace OreUI { class IResourceAllowList; }
 
 namespace OreUI {
 
-class WorldTemplateListFacet : public ::OreUI::FacetBase<::OreUI::WorldTemplateListFacet> {
+class WorldTemplateListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::WorldTemplateListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,12 +64,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

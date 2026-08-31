@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientAutomationCommandOrigin() /*override*/ = default;
+    virtual ~ClientAutomationCommandOrigin() /*override*/;
 
     virtual ::std::string const& getRequestId() const /*override*/;
 
@@ -81,11 +81,21 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::string const& $getRequestId() const;
 
+#ifdef LL_PLAT_S
+    MCAPI ::std::string $getName() const;
+#else // LL_PLAT_C
     MCFOLD ::std::string $getName() const;
+#endif
 
     MCFOLD ::BlockPos $getBlockPosition() const;
 
@@ -113,7 +123,7 @@ public:
 
     MCFOLD ::CompoundTag $serialize() const;
 
-    MCFOLD bool $isValid() const;
+    MCAPI bool $isValid() const;
 
 
     // NOLINTEND

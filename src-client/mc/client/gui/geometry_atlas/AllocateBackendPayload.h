@@ -4,6 +4,12 @@
 
 namespace GeometryAtlas {
 
-struct AllocateBackendPayload {};
+struct AllocateBackendPayload {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, uint64> mCurrentAttempt;
+    // NOLINTEND
+};
 
 } // namespace GeometryAtlas

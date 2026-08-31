@@ -8,10 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class Item;
-class ItemDescriptor;
 class LootTableContext;
 class Random;
-struct IntRange;
 namespace Json { class Value; }
 // clang-format on
 
@@ -59,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool applies(::Random& context, ::LootTableContext&) /*override*/;
+    virtual bool applies(::Random&, ::LootTableContext& context) /*override*/;
 
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
     // NOLINTEND
@@ -67,16 +65,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LootItemMatchToolCondition(
-        ::IntRange                                               count,
-        ::IntRange                                               durability,
-        ::std::string                                            itemName,
-        ::std::vector<::LootItemMatchToolCondition::EnchantInfo> enchantments,
-        ::std::vector<::ItemDescriptor>                          itemTagsAny,
-        ::std::vector<::ItemDescriptor>                          itemTagsAll,
-        ::std::vector<::ItemDescriptor>                          itemTagsNone
-    );
-
     MCNAPI bool _doItemTagsMatch(::Item const& item) const;
     // NOLINTEND
 
@@ -87,32 +75,12 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::IntRange                                               count,
-        ::IntRange                                               durability,
-        ::std::string                                            itemName,
-        ::std::vector<::LootItemMatchToolCondition::EnchantInfo> enchantments,
-        ::std::vector<::ItemDescriptor>                          itemTagsAny,
-        ::std::vector<::ItemDescriptor>                          itemTagsAll,
-        ::std::vector<::ItemDescriptor>                          itemTagsNone
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $applies(::Random& context, ::LootTableContext&);
+    MCNAPI bool $applies(::Random&, ::LootTableContext& context);
 
     MCNAPI ::LootItemCondition::ConditionType $getConditionType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

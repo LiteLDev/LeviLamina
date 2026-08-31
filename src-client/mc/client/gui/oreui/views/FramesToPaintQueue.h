@@ -37,10 +37,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void clear(::OreUI::ViewId viewId);
-
-    MCAPI ::std::vector<::OreUI::FrameId> popAll(::OreUI::ViewId viewId);
-
-    MCAPI void push(::OreUI::ViewId viewId, ::OreUI::FrameId frameId);
     // NOLINTEND
 };
 

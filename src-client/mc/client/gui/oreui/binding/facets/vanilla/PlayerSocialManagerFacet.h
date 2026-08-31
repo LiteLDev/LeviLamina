@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/events/IMinecraftEventing.h"
 
@@ -14,7 +14,7 @@ namespace Social { class IUserManager; }
 
 namespace OreUI {
 
-class PlayerSocialManagerFacet : public ::OreUI::FacetBase<::OreUI::PlayerSocialManagerFacet> {
+class PlayerSocialManagerFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PlayerSocialManagerFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerSocialManagerFacet() /*override*/ = default;
+    virtual ~PlayerSocialManagerFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -67,6 +67,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

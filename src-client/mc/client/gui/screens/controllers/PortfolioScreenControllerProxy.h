@@ -16,12 +16,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PortfolioScreenControllerProxy() /*override*/ = default;
+    virtual ~PortfolioScreenControllerProxy() /*override*/;
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI void $dtor();
     // NOLINTEND
 };

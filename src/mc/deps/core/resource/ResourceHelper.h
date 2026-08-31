@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class ResourceMetadata;
-struct PackIdVersion;
 struct PackInstanceId;
 namespace Json { class Value; }
 // clang-format on
@@ -21,8 +20,6 @@ MCAPI void serializePackStackEntry(::PackInstanceId const& packInstanceId, ::Jso
 MCAPI ::std::string stringifyCapabilities(::std::vector<::std::string> const& capabilities);
 
 MCAPI ::std::string stringifyResourceMetadataGeneratedWith(::ResourceMetadata const& resourceMetadata);
-
-MCAPI ::PackIdVersion toPackIdAnyVersion(::PackIdVersion const& fromPackIdVersion);
 // NOLINTEND
 
 } // namespace ResourceHelper

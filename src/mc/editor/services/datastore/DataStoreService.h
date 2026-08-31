@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/Mode.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/editor/serviceproviders/DataStoreServiceProvider.h"
@@ -14,7 +14,7 @@
 class HashedString;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::DataStore { class PayloadEventDispatcher; }
+namespace Editor::DataStore { class IContentBadgeContainer; }
 namespace Editor::DataStore { struct PayloadDescription; }
 namespace Editor::Network { class DataStoreEventPayload; }
 namespace Editor::Network { class ServerScriptTeardownRebuildPayload; }
@@ -33,6 +33,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnkddec22;
     ::ll::UntypedStorage<8, 8>   mUnk757ac0;
     ::ll::UntypedStorage<8, 8>   mUnk41f8d2;
+    ::ll::UntypedStorage<8, 8>   mUnk668036;
     ::ll::UntypedStorage<8, 128> mUnk906987;
     ::ll::UntypedStorage<8, 48>  mUnk16dd40;
     ::ll::UntypedStorage<8, 16>  mUnke703fc;
@@ -54,6 +55,8 @@ public:
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
+
+    virtual ::Editor::DataStore::IContentBadgeContainer& getContentBadgeContainer() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> dispatchEvent(
         ::HashedString const&                          dataTag,
@@ -89,8 +92,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit DataStoreService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI ::Editor::DataStore::PayloadEventDispatcher& _getDispatcher();
 
     MCNAPI void _handleDataStoreEventPacket(::Editor::Network::DataStoreEventPayload const& packet);
 
@@ -140,6 +141,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
+    MCNAPI ::Editor::DataStore::IContentBadgeContainer& $getContentBadgeContainer();
+
     MCNAPI ::Scripting::Result_deprecated<void> $dispatchEvent(
         ::HashedString const&                          dataTag,
         ::Editor::DataStore::EventType                 eventType,
@@ -160,14 +163,6 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForDataStoreServiceProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

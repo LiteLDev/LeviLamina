@@ -21,20 +21,4 @@ public:
     ::ll::TypedStorage<2, 12, ::Bedrock::DenseEnumMap<::SharedTypes::Facing, ::VoxelShapes::RegistryHandle, 6>>
         mOcclusionShapeHandlesByFace;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockVoxelShapesCullingComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BlockVoxelShapesCullingComponent(::HashedString const& occlusionShapeName);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::HashedString const& occlusionShapeName);
-    // NOLINTEND
 };

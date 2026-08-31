@@ -18,16 +18,4 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3 const>                                 mBlockPos;
     ::ll::TypedStorage<4, 12, ::Vec3 const>                                 mOtherBlockPos;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ChestBlockTryPairEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

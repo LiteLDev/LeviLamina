@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,21 +36,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptItemComponents();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptItemComponents(
-        ::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentReader const> customComponentReader
-    );
-
-    MCAPI ::std::unordered_map<
-        ::std::string_view,
-        ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const&
-    _getOrCreateNativeItemComponentFactories() const;
-
     MCAPI void bind(
         ::Scripting::ModuleBindingBuilder&                       moduleBuilder,
         ::Scripting::Version const&                              scriptingVersion,
@@ -72,13 +59,6 @@ public:
 
     MCAPI ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory> const&
     tryGetFactory(::std::string_view componentName);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void*
-    $ctor(::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentReader const> customComponentReader);
     // NOLINTEND
 };
 

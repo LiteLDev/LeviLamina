@@ -7,18 +7,6 @@
 
 class ElementConstructorContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ElementConstructorContainerScreenValidator();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

@@ -10,9 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class ComponentItem;
-class HashedString;
 class SemVersion;
-namespace SharedTypes::v1_20_50 { struct UseAnimationItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -24,19 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UseAnimationItemComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit UseAnimationItemComponent(::SharedTypes::v1_20_50::UseAnimationItemComponent component);
     // NOLINTEND
 
 public:
@@ -47,14 +35,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::UseAnimationItemComponent component);
     // NOLINTEND
 
 public:

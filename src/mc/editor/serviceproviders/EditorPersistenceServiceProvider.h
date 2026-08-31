@@ -6,7 +6,7 @@
 #include "mc/common/editor/PersistenceGroupType.h"
 #include "mc/common/editor/PersistenceScope.h"
 #include "mc/deps/game_refs/StackRefResult.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -67,12 +67,6 @@ public:
 
     virtual ::Scripting::Result_deprecated<void>
     syncAndSaveGroup(::StackRefResult<::Editor::Services::PersistenceGroup> group) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

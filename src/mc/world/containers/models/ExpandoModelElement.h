@@ -24,19 +24,11 @@ public:
     // NOLINTBEGIN
     MCNAPI
     ExpandoModelElement(::ItemInstance const& _item, ::ContainerExpandStatus _status, ::std::string const& _groupName);
-
-    MCNAPI ~ExpandoModelElement();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ItemInstance const& _item, ::ContainerExpandStatus _status, ::std::string const& _groupName);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

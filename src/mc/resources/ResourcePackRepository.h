@@ -89,12 +89,6 @@ public:
 
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
 public:
@@ -133,7 +127,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~ResourcePackRepository() /*override*/;
+#else // LL_PLAT_C
+    virtual ~ResourcePackRepository() /*override*/ = default;
+#endif
 
     virtual void getResourcePacksByPackId(
         ::std::vector<::PackInstanceId> const& packInstanceIds,
@@ -174,6 +172,8 @@ public:
 
     virtual void addServicePacksToStack(::ResourcePackStack& stack) const /*override*/;
 
+    virtual void addSystemPacksToStack(::ResourcePackStack& stack) const /*override*/;
+
     virtual void
     addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys) /*override*/;
 
@@ -212,6 +212,10 @@ public:
     virtual ::Core::PathBuffer<::std::string> const getDevelopmentSkinPacksPath() const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> const getTreatmentPacksPath() const /*override*/;
+
+    virtual ::Core::PathBuffer<::std::string> const getSystemBehaviorPacksPath() const /*override*/;
+
+    virtual ::Core::PathBuffer<::std::string> const getSystemResourcePacksPath() const /*override*/;
 
     virtual void refreshPacks() /*override*/;
 
@@ -271,30 +275,6 @@ public:
     );
 
     MCAPI void _removePacksIf(::brstd::function_ref<bool(::ResourcePack const&)> callback);
-
-#ifdef LL_PLAT_C
-    MCAPI void cancelInitialization();
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::std::string> getBehaviorPacksPath(::Core::FilePathManager const& paths);
-
-    MCAPI static ::Core::PathBuffer<::std::string> getCustomSkinDirectoryPath(::Core::FilePathManager const& paths);
-
-    MCAPI static ::Core::PathBuffer<::std::string>
-    getDevelopmentBehaviorPacksPath(::Core::FilePathManager const& paths);
-
-    MCAPI static ::Core::PathBuffer<::std::string>
-    getDevelopmentResourcePacksPath(::Core::FilePathManager const& paths);
-
-    MCAPI static ::Core::PathBuffer<::std::string> getDevelopmentSkinPacksPath(::Core::FilePathManager const& paths);
-
-    MCAPI static ::Core::PathBuffer<::std::string> getResourcePacksPath(::Core::FilePathManager const& paths);
-
-    MCAPI static ::Core::PathBuffer<::std::string> getSkinPacksPath(::Core::FilePathManager const& paths);
     // NOLINTEND
 
 public:
@@ -315,7 +295,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
@@ -357,6 +339,8 @@ public:
 
     MCAPI void $addServicePacksToStack(::ResourcePackStack& stack) const;
 
+    MCAPI void $addSystemPacksToStack(::ResourcePackStack& stack) const;
+
     MCAPI void $addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys);
 
     MCAPI void $addWorldResourcePacks(::Core::Path const& levelPath);
@@ -394,6 +378,10 @@ public:
     MCAPI ::Core::PathBuffer<::std::string> const $getDevelopmentSkinPacksPath() const;
 
     MCAPI ::Core::PathBuffer<::std::string> const $getTreatmentPacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getSystemBehaviorPacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getSystemResourcePacksPath() const;
 
     MCAPI void $refreshPacks();
 
@@ -437,13 +425,5 @@ public:
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> $getContentSourceRepository();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIContentSourceRepository();
-
-    MCNAPI static void** $vftableForIResourcePackRepository();
     // NOLINTEND
 };

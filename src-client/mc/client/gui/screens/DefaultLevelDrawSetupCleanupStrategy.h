@@ -22,13 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DefaultLevelDrawSetupCleanupStrategy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DefaultLevelDrawSetupCleanupStrategy() /*override*/ = default;
+    virtual ~DefaultLevelDrawSetupCleanupStrategy() /*override*/;
 
     virtual void setupScreen(::ScreenContext& screenContext) /*override*/;
 
@@ -36,15 +32,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit DefaultLevelDrawSetupCleanupStrategy(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

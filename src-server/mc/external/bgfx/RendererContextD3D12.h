@@ -16,8 +16,6 @@ public:
     // clang-format on
 
     // RendererContextD3D12 inner types define
-    enum class BufferHeapUpdateMode : int {};
-
     struct TlasBuildRequest {};
 
     struct BlasBuildRequest {};

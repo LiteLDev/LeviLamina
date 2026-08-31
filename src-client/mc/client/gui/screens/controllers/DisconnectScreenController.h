@@ -53,8 +53,6 @@ public:
         ::std::string const&                      displayMessage,
         ::std::string const&                      telemetryOverride
     );
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

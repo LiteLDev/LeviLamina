@@ -33,13 +33,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~RepairItemEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCAPI bool operator==(::SharedTypes::v1_20_50::RepairableItemComponent::RepairItemEntry const& a) const;
         // NOLINTEND
     };
 

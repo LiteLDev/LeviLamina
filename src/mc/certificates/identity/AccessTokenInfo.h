@@ -21,8 +21,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI AccessTokenInfo(::std::string _email, int64 _expiration);
-
-    MCNAPI ~AccessTokenInfo();
 #endif
     // NOLINTEND
 
@@ -31,14 +29,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::string _email, int64 _expiration);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

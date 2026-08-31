@@ -16,16 +16,4 @@ public:
     OffscreenCaptureData& operator=(OffscreenCaptureData const&);
     OffscreenCaptureData(OffscreenCaptureData const&);
     OffscreenCaptureData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~OffscreenCaptureData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

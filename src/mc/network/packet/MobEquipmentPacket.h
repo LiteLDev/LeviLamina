@@ -31,8 +31,7 @@ public:
 
 public:
     // prevent constructor by default
-    MobEquipmentPacket& operator=(MobEquipmentPacket const&);
-    MobEquipmentPacket(MobEquipmentPacket const&);
+    MobEquipmentPacket();
 
 public:
     // virtual functions
@@ -70,26 +69,26 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual ~MobEquipmentPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobEquipmentPacket();
-
-    MCAPI MobEquipmentPacket(::MobEquipmentPacket&&);
-
     MCAPI explicit MobEquipmentPacket(::MobEquipmentPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::MobEquipmentPacket&&);
-
     MCAPI void* $ctor(::MobEquipmentPacketPayload payload);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

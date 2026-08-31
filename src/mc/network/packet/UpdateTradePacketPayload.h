@@ -33,45 +33,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI UpdateTradePacketPayload(::UpdateTradePacketPayload const& other);
-
-    MCAPI UpdateTradePacketPayload(
-        ::ContainerID                        containerID,
-        ::SharedTypes::Legacy::ContainerType type,
-        int                                  size,
-        ::std::string const&                 displayName,
-        ::CompoundTag&&                      tag,
-        ::ActorUniqueID const&               entityID,
-        ::ActorUniqueID const&               playerID,
-        int                                  traderTier,
-        bool                                 useNewTradeScreen,
-        bool                                 usingEconomyTrade
-    );
-
-    MCAPI ~UpdateTradePacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::UpdateTradePacketPayload const& other);
-
-    MCAPI void* $ctor(
-        ::ContainerID                        containerID,
-        ::SharedTypes::Legacy::ContainerType type,
-        int                                  size,
-        ::std::string const&                 displayName,
-        ::CompoundTag&&                      tag,
-        ::ActorUniqueID const&               entityID,
-        ::ActorUniqueID const&               playerID,
-        int                                  traderTier,
-        bool                                 useNewTradeScreen,
-        bool                                 usingEconomyTrade
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -26,22 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool canStartLerpTo(bool mustBeCompleted) const;
-
-    MCAPI bool isActive() const;
-
-    MCAPI void lerpTo(::Vec3 const& pos, ::Vec2 const& rot, int steps);
-
-    MCAPI void lerpToRotation(::Vec2 const& rot, int steps);
-
-    MCAPI void reset();
-
-    MCAPI void setHeadYawLerpTarget(float headYaw, int steps);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C

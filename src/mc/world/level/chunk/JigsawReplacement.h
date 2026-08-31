@@ -22,23 +22,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
-        ::IBlockSource& processedBlockInfo,
-        ::BlockPos,
+        ::IBlockSource&,
+        ::BlockPos targetPosition,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&&,
+        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
         ::br::worldgen::StructurePlaceSettings const&
     ) const /*override*/;
 
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bootstrap();
     // NOLINTEND
 
 public:
@@ -51,11 +45,11 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
-        ::IBlockSource& processedBlockInfo,
-        ::BlockPos,
+        ::IBlockSource&,
+        ::BlockPos targetPosition,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&&,
+        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 
@@ -64,12 +58,6 @@ public:
     MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

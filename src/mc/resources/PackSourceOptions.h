@@ -14,24 +14,4 @@ public:
     PackSourceOptions& operator=(PackSourceOptions const&);
     PackSourceOptions(PackSourceOptions const&);
     PackSourceOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI PackSourceOptions(::PackSourceOptions&&);
-
-    MCNAPI ~PackSourceOptions();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::PackSourceOptions&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

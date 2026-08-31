@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SubChunkPos;
-struct DimensionType;
 class SubChunkRequestManager;
 // clang-format on
 
@@ -25,38 +23,4 @@ public:
     SubChunkRequestSubscriber& operator=(SubChunkRequestSubscriber const&);
     SubChunkRequestSubscriber(SubChunkRequestSubscriber const&);
     SubChunkRequestSubscriber();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI SubChunkRequestSubscriber(
-        ::SubChunkRequestManager&                                      manager,
-        ::std::function<void(::SubChunkPacket::SubChunkRequestResult)> callback
-    );
-
-    MCAPI bool managerHasQueuedRequests();
-
-    MCAPI void queueRequiredSubChunk(::DimensionType const& dimensionType, ::SubChunkPos const& subChunkPosition);
-
-    MCAPI ~SubChunkRequestSubscriber();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void*
-    $ctor(::SubChunkRequestManager& manager, ::std::function<void(::SubChunkPacket::SubChunkRequestResult)> callback);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
-    // NOLINTEND
 };

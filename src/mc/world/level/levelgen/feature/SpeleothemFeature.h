@@ -9,8 +9,6 @@
 // clang-format off
 class BlockPos;
 class HashedString;
-class IBlockWorldGenAPI;
-class Random;
 // clang-format on
 
 class SpeleothemFeature : public ::IFeature {
@@ -35,23 +33,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void
-    _createSpeleothemBasePatch(::IBlockWorldGenAPI& target, ::Random& random, ::BlockPos const& rootPos) const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

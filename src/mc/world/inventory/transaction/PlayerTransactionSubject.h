@@ -100,7 +100,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $setSelectedSlot(int slot, ::ContainerID containerId);
 
-    MCAPI bool $isAlive() const;
+    MCFOLD bool $isAlive() const;
 
     MCAPI ::ItemStack $unwrapItem(::NetworkItemStackDescriptor const& item) const;
 
@@ -157,11 +157,5 @@ public:
     MCAPI ::DepenetrationComponent& $getDepenetrationComponent();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

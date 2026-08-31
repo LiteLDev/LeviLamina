@@ -50,6 +50,8 @@ public:
     MCAPI ::SharedTypes::v1_20_40::ItemDeprecatedComponentData&
     operator=(::SharedTypes::v1_20_40::ItemDeprecatedComponentData const&);
 
+    MCAPI bool operator==(::SharedTypes::v1_20_40::ItemDeprecatedComponentData const&) const;
+
     MCAPI ~ItemDeprecatedComponentData();
     // NOLINTEND
 

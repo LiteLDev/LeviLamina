@@ -1,0 +1,77 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/nether_net/ESessionError.h"
+#include "mc/deps/nether_net/ISignalingInterface.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::PubSub { class Subscription; }
+namespace NetherNet { struct ISignalingEventHandler; }
+namespace NetherNet { struct NetworkID; }
+// clang-format on
+
+class HttpSignalingClient : public ::NetherNet::ISignalingInterface {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 336> mUnkabb525;
+    ::ll::UntypedStorage<8, 24>  mUnkae26d7;
+    ::ll::UntypedStorage<8, 32>  mUnkaf4e7e;
+    ::ll::UntypedStorage<8, 24>  mUnk4ffa8d;
+    ::ll::UntypedStorage<8, 128> mUnk2992c8;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    HttpSignalingClient& operator=(HttpSignalingClient const&);
+    HttpSignalingClient(HttpSignalingClient const&);
+    HttpSignalingClient();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~HttpSignalingClient() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~HttpSignalingClient() /*override*/;
+#endif
+
+    virtual void SendSignal(
+        ::NetherNet::NetworkID                              from,
+        ::NetherNet::NetworkID                              to,
+        ::std::string const&                                signal,
+        ::std::function<void(::NetherNet::ESessionError)>&& onComplete
+    ) /*override*/;
+
+    virtual ::Bedrock::PubSub::Subscription
+    RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $SendSignal(
+        ::NetherNet::NetworkID                              from,
+        ::NetherNet::NetworkID                              to,
+        ::std::string const&                                signal,
+        ::std::function<void(::NetherNet::ESessionError)>&& onComplete
+    );
+
+    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
+#endif
+
+
+    // NOLINTEND
+};

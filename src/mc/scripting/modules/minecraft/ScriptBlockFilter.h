@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
@@ -33,10 +33,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptBlockFilter();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockFilter();
-
     MCAPI ScriptBlockFilter(::ScriptModuleMinecraft::ScriptBlockFilter const&);
 
     MCAPI ::Scripting::Result_deprecated<::std::optional<
@@ -54,8 +56,6 @@ public:
     MCAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getIncludeTags() const;
 
     MCAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getIncludeTypes() const;
-
-    MCAPI bool isEmpty() const;
 
     MCAPI bool isValid(::Scripting::Error& error) const;
 
@@ -97,8 +97,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockFilter const&);
     // NOLINTEND
 

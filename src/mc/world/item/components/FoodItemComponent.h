@@ -15,14 +15,13 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class CerealSchemaUpgradeSet;
 class ComponentItem;
-class HashedString;
 class Item;
 class ItemStack;
 class Level;
 class Player;
 class SemVersion;
+struct ItemOnUseResult;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace SharedTypes::v1_20_50 { struct FoodItemComponent; }
 namespace cereal { struct ReflectionCtx; }
@@ -53,9 +52,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FoodItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FoodItemComponent() /*override*/;
+    virtual ~FoodItemComponent() /*override*/ = default;
 
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
@@ -67,7 +70,7 @@ public:
 
     virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) /*override*/;
 
-    virtual void use(bool& result, ::ItemStack& instance, ::Player& player) /*override*/;
+    virtual void use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player) /*override*/;
 
     virtual ::Item const* useTimeDepleted(
         ::ItemUseMethod&   itemUseMethod,
@@ -81,11 +84,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FoodItemComponent();
-
     MCAPI explicit FoodItemComponent(::SharedTypes::v1_20_50::FoodItemComponent component);
-
-    MCAPI ::ItemDescriptor getUsingConvertsToItemDescriptor() const;
 
     MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack const&, ::ItemStack&, ::Actor&)>& onConsume();
     // NOLINTEND
@@ -98,24 +97,12 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
-
-    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SharedTypes::v1_20_50::FoodItemComponent component);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -131,7 +118,7 @@ public:
 
     MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCAPI void $use(bool& result, ::ItemStack& instance, ::Player& player);
+    MCAPI void $use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player);
 
     MCAPI ::Item const* $useTimeDepleted(
         ::ItemUseMethod&   itemUseMethod,

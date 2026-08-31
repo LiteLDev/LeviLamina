@@ -38,10 +38,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $createBindingData(::Json::Value const& formData);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

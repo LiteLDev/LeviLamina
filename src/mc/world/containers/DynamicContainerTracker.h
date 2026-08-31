@@ -14,7 +14,6 @@ class IContainerRegistryTracker;
 class ItemStack;
 class StorageItemComponent;
 class StorageWeightLimitItemComponent;
-struct ContainerOwner;
 struct PlayerContainerRefresher;
 // clang-format on
 
@@ -30,17 +29,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DynamicContainerTracker();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DynamicContainerTracker(
-        ::WeakRef<::IContainerRegistryAccess>  registryAccess,
-        ::WeakRef<::IContainerRegistryTracker> registryManager
-    );
-
     MCAPI ::std::optional<::ItemStack> _initializeStorageItem(
         ::ItemStack const&                 item,
         ::StorageItemComponent*            storageItemComponent,
@@ -51,34 +41,11 @@ public:
 
     MCAPI void _retrackRecursiveAux(::ItemStack const& item, int depth);
 
-    MCAPI ::std::pair<::FullContainerName, ::ItemStack> _tryInitID(::ItemStack const& item) const;
-
     MCAPI void
     broadcastChanges(::PlayerContainerRefresher& refresher, ::std::function<void()> contentsChangedCallback) const;
-
-    MCAPI void giveContainerLifetimes(::ContainerOwner& containerOwner) const;
-
-    MCFOLD bool hasTrackingData() const;
-
-    MCAPI void mark(::ItemStack const& item);
 
     MCAPI void sweep();
 
     MCAPI ::std::optional<::ItemStack> tryTrackContainer(::ItemStack const& item);
-
-    MCAPI ~DynamicContainerTracker();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::WeakRef<::IContainerRegistryAccess> registryAccess, ::WeakRef<::IContainerRegistryTracker> registryManager);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -33,10 +33,4 @@ public:
     virtual ::UITextureInfo*
     getUITextureInfo(::ResourceLocation const& resourceLocation, bool forceReload, bool loadIfNeeded) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

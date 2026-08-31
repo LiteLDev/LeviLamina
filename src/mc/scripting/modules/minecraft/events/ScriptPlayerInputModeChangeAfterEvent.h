@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/input/InputMode.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off

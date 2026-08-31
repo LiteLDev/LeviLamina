@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     virtual ::std::error_code start(::std::optional<uint64>) /*override*/;
 
-    virtual ::std::error_code write(::gsl::span<uchar const>) /*override*/;
+    virtual ::std::error_code write(::gsl::span<uchar const> source) /*override*/;
 
     virtual void complete() /*override*/;
 

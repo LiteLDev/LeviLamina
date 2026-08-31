@@ -23,13 +23,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackRequestAction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~ItemStackRequestAction() = default;
+#else // LL_PLAT_C
     virtual ~ItemStackRequestAction();
+#endif
 
     virtual ::ItemStackRequestActionCraftBase const* getCraftAction() const;
 
@@ -43,21 +43,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ItemStackRequestAction(::ItemStackRequestActionType actionType);
-
-    MCFOLD ::ItemStackRequestActionType getActionType() const;
-
-    MCAPI void write(::BinaryStream& stream) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string const getActionTypeName(::ItemStackRequestActionType type);
-
-    MCAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestAction>> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
@@ -67,15 +55,11 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStackRequestActionType actionType);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD void $dtor();
+#endif
     // NOLINTEND
 
 public:

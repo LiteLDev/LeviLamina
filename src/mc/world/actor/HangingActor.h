@@ -18,6 +18,7 @@ class DataLoadHelper;
 class EntityContext;
 class IConstBlockSource;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -57,7 +58,7 @@ public:
 
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float, ::HurtParameters const&) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
@@ -82,17 +83,7 @@ public:
 
     MCAPI void _calculateActorPositionFromPlacementPosition(::BlockPos const& blockPos);
 
-    MCAPI ::BlockPos _calculateBlockPosFromPosition() const;
-
     MCAPI bool _wouldSurvive(::BlockSource& region, ::BlockPos const& blockPos, bool beingPlaced);
-
-    MCAPI void doNormalTick();
-
-    MCAPI int getDirection() const;
-
-#ifdef LL_PLAT_S
-    MCAPI void setDirection(int direction);
-#endif
     // NOLINTEND
 
 public:
@@ -123,18 +114,12 @@ public:
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float, ::HurtParameters const&);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

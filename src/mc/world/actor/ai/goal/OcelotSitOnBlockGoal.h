@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OcelotSitOnBlockGoal() /*override*/ = default;
+    virtual ~OcelotSitOnBlockGoal() /*override*/;
 
     virtual bool canUse() /*override*/;
 
@@ -46,15 +46,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit OcelotSitOnBlockGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

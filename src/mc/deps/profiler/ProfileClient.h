@@ -34,6 +34,8 @@ public:
 
     virtual void shutdownProfile();
 
+    virtual void setProfileStamp(::std::string_view);
+
     virtual void onFrameTransition(uchar previousFrameType);
 
     virtual uint getMaxTokens() const;
@@ -170,6 +172,8 @@ public:
     MCNAPI void $initializeProfile();
 
     MCNAPI void $shutdownProfile();
+
+    MCNAPI void $setProfileStamp(::std::string_view);
 
     MCNAPI void $onFrameTransition(uchar previousFrameType);
 

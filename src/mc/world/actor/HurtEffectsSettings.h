@@ -2,29 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 struct HurtEffectsSettings {
-public:
-    // HurtEffectsSettings inner types define
-    enum class ApplyKnockback : int {
-        Yes = 0,
-        No  = 1,
-    };
-
-    enum class Ignite : int {
-        Yes = 0,
-        No  = 1,
-    };
-
-    enum class ReceiveDamage : int {
-        Yes = 0,
-        No  = 1,
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::HurtEffectsSettings::ApplyKnockback> mKnockback;
-    ::ll::TypedStorage<4, 4, ::HurtEffectsSettings::Ignite>         mIgnition;
-    ::ll::TypedStorage<4, 4, ::HurtEffectsSettings::ReceiveDamage>  mReceiveDamage;
+    ::ll::TypedStorage<1, 1, bool>                     mKnockback;
+    ::ll::TypedStorage<1, 1, bool>                     mIgnition;
+    ::ll::TypedStorage<1, 1, bool>                     mReceiveDamage;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mAimDirection;
+    ::ll::TypedStorage<4, 4, float>                    mExtraKnockbackPower;
     // NOLINTEND
 };

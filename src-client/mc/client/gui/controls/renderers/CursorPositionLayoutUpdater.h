@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-class LayoutComponent;
 class MinecraftUIRenderContext;
 class UIControl;
 class UICustomRenderer;
@@ -24,12 +23,6 @@ public:
     virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
 
     virtual void render(::MinecraftUIRenderContext&, ::IClientInstance&, ::UIControl&, int) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void setupLayoutForTooltip(::LayoutComponent& layoutComponent, ::glm::vec2 const& cursorPos);
     // NOLINTEND
 
 public:

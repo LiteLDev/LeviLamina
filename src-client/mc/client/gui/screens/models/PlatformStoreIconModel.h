@@ -35,27 +35,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlatformStoreIconModel();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlatformStoreIconModel(::SubClientId subClientId);
-
     MCAPI void _updatePlatformStoreIcon();
 
-    MCAPI void setIsCheckoutInProgress(bool isCheckoutInProgress);
-
-    MCAPI void setIsInGameBrowsing(bool isInGameBrowsing);
-
     MCAPI ~PlatformStoreIconModel();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isIconVisible();
     // NOLINTEND
 
 public:
@@ -68,12 +52,6 @@ public:
         sPlatformStoreIconVisibilityStacks();
 
     MCAPI static ::Bedrock::Threading::Mutex& sStacksMutex();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SubClientId subClientId);
     // NOLINTEND
 
 public:

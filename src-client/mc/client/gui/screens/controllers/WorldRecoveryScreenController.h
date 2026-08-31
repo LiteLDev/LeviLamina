@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldRecoveryScreenController() /*override*/;
+    virtual ~WorldRecoveryScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -60,30 +60,12 @@ public:
     );
 
     MCAPI void _fireTelemetry();
-
-    MCAPI void _onWorldRecoveryDone(::Bedrock::WorldRecovery::RecoveryResult result);
-
-    MCAPI void _onWorldRecoveryUpdate(::Bedrock::WorldRecovery::RecoveryUpdate update);
-
-    MCAPI void _onWorldsDirectorySelected(::std::string const& uri, ::std::string const& error);
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _selectWorldsDirectory();
-
-    MCAPI void _updateDisplayText();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::std::function<void()> successCallback);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -94,13 +76,5 @@ public:
     MCAPI void $onOpen();
 
     MCAPI bool $canExit();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

@@ -20,7 +20,6 @@
 #include "mc/client/social/connection/UIReturnTarget.h"
 #include "mc/client/store/StoreErrorCodes.h"
 #include "mc/client/util/ClipboardProxy.h"
-#include "mc/client/world/JoinServerWorldResult.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/file/LevelStorageState.h"
 #include "mc/deps/core/file/PathBuffer.h"
@@ -39,7 +38,6 @@
 #include "mc/events/NetworkType.h"
 #include "mc/input/ClientPlayMode.h"
 #include "mc/network/connection/DisconnectFailReason.h"
-#include "mc/network/connection/DisconnectionStage.h"
 #include "mc/options/option_types/OptionID.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/util/ProfanityFilterContext.h"
@@ -66,6 +64,7 @@ class CameraRegistry;
 class ClientHitDetectCoordinator;
 class ClientInputHandler;
 class ClientInstanceEventCoordinator;
+class ClientLevel;
 class ClientMoveInputHandler;
 class ClientNetworkEventCoordinator;
 class ClientNetworkSystem;
@@ -99,6 +98,7 @@ class IGameConnectionListener;
 class IMinecraftEventing;
 class IMinecraftGame;
 class IOptionRegistry;
+class IReadWriteOptions;
 class IResourcePackRepository;
 class ISceneStack;
 class ITTSEventManager;
@@ -120,7 +120,6 @@ class Minecraft;
 class MinecraftGraphics;
 class MinecraftInputHandler;
 class MobEffectsLayout;
-class MultiPlayerLevel;
 class MusicManager;
 class Option;
 class OptionRegistry;
@@ -133,13 +132,11 @@ class Player;
 class PlayerAuthentication;
 class PlayerReportHandler;
 class ProfanityContext;
-class ProgressHandler;
 class ResourcePackManager;
 class SceneFactory;
 class ScreenContext;
 class ScreenLoadTimeTracker;
 class ShaderColor;
-class Skin;
 class SkinRepository;
 class SoundEngine;
 class StoreCatalogItem;
@@ -156,14 +153,12 @@ class WorldTransferAgent;
 struct ActorUniqueID;
 struct ClientInstanceArguments;
 struct ClientInstanceInitArguments;
-struct DisconnectionErrorDetails;
+struct ConnectionContextInfo;
 struct DisconnectionScreenParams;
-struct ExperienceConnectionData;
 struct ListenerState;
 struct LocalPlayerChangedConnector;
 struct PacksInfoData;
 struct PlayerJoinWorldContext;
-struct PlayerJoinWorldTelemetryInfo;
 struct RawGameServerToken;
 struct ScreenshotOptions;
 struct ServerSupportedAuthenticationTypes;
@@ -238,18 +233,6 @@ public:
         ClientDestroyBlockState& operator=(ClientDestroyBlockState const&);
         ClientDestroyBlockState(ClientDestroyBlockState const&);
         ClientDestroyBlockState();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ClientDestroyBlockState();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct mBehaviorCommandStatusCallback {};
@@ -339,8 +322,7 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk3430d4;
     ::ll::UntypedStorage<1, 1>   mUnk9f2b54;
     ::ll::UntypedStorage<1, 1>   mUnk962bb4;
-    ::ll::UntypedStorage<8, 528> mUnkcc66f1;
-    ::ll::UntypedStorage<1, 1>   mUnke203b0;
+    ::ll::UntypedStorage<8, 528> mUnk58b85f;
     ::ll::UntypedStorage<1, 1>   mUnk1ef4d7;
     ::ll::UntypedStorage<1, 1>   mUnk29fbcb;
     ::ll::UntypedStorage<4, 4>   mUnkc07c6b;
@@ -374,9 +356,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk6182e1;
     ::ll::UntypedStorage<8, 8>   mUnk84dba0;
     ::ll::UntypedStorage<8, 8>   mUnk9ffd30;
-    ::ll::UntypedStorage<8, 176> mUnkea7af0;
-    ::ll::UntypedStorage<8, 16>  mUnk8b8d16;
-    ::ll::UntypedStorage<8, 16>  mUnk2caa57;
+    ::ll::UntypedStorage<8, 256> mUnkfbb9ff;
     ::ll::UntypedStorage<8, 8>   mUnkf8bdff;
     ::ll::UntypedStorage<8, 24>  mUnkfbc948;
     ::ll::UntypedStorage<8, 24>  mUnk1e1098;
@@ -404,7 +384,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientInstance() /*override*/;
+    virtual ~ClientInstance() /*override*/ = default;
 
     virtual void onInitMinecraftGame() /*override*/;
 
@@ -432,11 +412,11 @@ public:
     virtual ::std::optional<::Social::GameConnectionInfo> getGameConnectionInfo() /*override*/;
 
     virtual void onStartJoinGame(
-        bool                                   isJoiningLocalServer,
+        bool                                   isLocalServer,
         ::std::string const&                   multiplayerCorrelationId,
         ::std::string const&                   serverName,
         ::std::string const&                   worldName,
-        ::NetworkType                          networkTypeOverride,
+        ::NetworkType                          networkType,
         ::Social::MultiplayerServiceIdentifier service,
         ::PlayerJoinWorldContext               context
     ) /*override*/;
@@ -472,9 +452,9 @@ public:
     virtual float getFrameAlpha() /*override*/;
 
     virtual void startSubClientLateJoin(
-        bool                                            hasXBLBroadcast,
-        ::std::unique_ptr<::GameModuleClient>           gameModuleClient,
-        ::std::optional<::PlayerJoinWorldTelemetryInfo> primaryClientJoinWorldInfo
+        bool                                     hasXBLBroadcast,
+        ::std::unique_ptr<::GameModuleClient>    gameModuleClient,
+        ::std::optional<::ConnectionContextInfo> primaryConnectionInfo
     ) /*override*/;
 
     virtual ::Bedrock::Threading::Async<::ClientGameSetupResult> setupClientGame(
@@ -679,7 +659,7 @@ public:
 
     virtual void navigateToDressingRoomOfferScreen(::std::string const& offerId) /*override*/;
 
-    virtual bool navigateToProfileScreen(::std::string const& preventProgressScreen, bool const) /*override*/;
+    virtual bool navigateToProfileScreen(::std::string const&, bool const preventProgressScreen) /*override*/;
 
     virtual void navigateToServersScreen(bool const calledFromHyperlink) /*override*/;
 
@@ -768,9 +748,9 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Minecraft const> getServerData() const /*override*/;
 
-    virtual ::MultiPlayerLevel* getLevel() /*override*/;
+    virtual ::ClientLevel* getLevel() /*override*/;
 
-    virtual ::MultiPlayerLevel const* getLevel() const /*override*/;
+    virtual ::ClientLevel const* getLevel() const /*override*/;
 
     virtual bool hasLevel() const /*override*/;
 
@@ -783,6 +763,8 @@ public:
     virtual ::IOptionRegistry& getOptions() /*override*/;
 
     virtual ::IOptionRegistry const& getOptions() const /*override*/;
+
+    virtual ::IReadWriteOptions const& getReadWriteOptions() const /*override*/;
 
     virtual ::std::shared_ptr<::OptionRegistry> getOptionsPtr() /*override*/;
 
@@ -816,7 +798,7 @@ public:
 
     virtual ::LightTexture* getLightTexture() /*override*/;
 
-    virtual void setupLevelRendering(::MultiPlayerLevel& level, ::WeakEntityRef cameraTargetEntity) /*override*/;
+    virtual void setupLevelRendering(::ClientLevel& level, ::WeakEntityRef cameraTargetEntity) /*override*/;
 
     virtual ::mce::ViewportInfo const& getViewportInfo() const /*override*/;
 
@@ -863,7 +845,7 @@ public:
 
     virtual void setGuiScaleOffset(int guiScale) /*override*/;
 
-    virtual void renderImGui(::ScreenContext&, bool) /*override*/;
+    virtual void renderImGui(::ScreenContext& screenContext, bool drawMenuBar) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::GuiData> getGuiData() /*override*/;
 
@@ -1112,13 +1094,6 @@ public:
         ::PlayerJoinWorldContext     context
     ) /*override*/;
 
-    virtual void connectToExperience(
-        ::ExperienceConnectionData                                                      data,
-        ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> joinServerCallback,
-        ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback,
-        ::PlayerJoinWorldContext                                                        context
-    ) /*override*/;
-
     virtual bool isReadyToReconnect() const /*override*/;
 
     virtual bool checkForPiracy() /*override*/;
@@ -1184,8 +1159,6 @@ public:
     virtual void postInitRenderResources() /*override*/;
 
     virtual void onAppSuspended() /*override*/;
-
-    virtual void onAppSuspensionDisconnect() /*override*/;
 
     virtual void onAppResumed() /*override*/;
 
@@ -1351,7 +1324,7 @@ public:
 
     virtual double getGameUpdateDurationInSeconds() const /*override*/;
 
-    virtual ::std::optional<::PlayerJoinWorldTelemetryInfo> getPlayerJoinWorldTelemetryInfo() const /*override*/;
+    virtual ::std::optional<::ConnectionContextInfo> getConnectionContextInfo() const /*override*/;
     // NOLINTEND
 
 public:
@@ -1359,35 +1332,18 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ClientInstance(::ClientInstanceArguments&& args);
 
-    MCAPI ::DisconnectionErrorDetails _createDisconnectionErrorDetails(::Connection::DisconnectionStage paramStage);
-
     MCAPI ::std::unique_ptr<::LegacyClientNetworkHandler>
     _createNetworkHandler(::PlayerAuthenticationType authType, ::RawGameServerToken&& token);
-
-    MCAPI void _createPersonaClient();
-
-    MCAPI void _fetchItemAndNavigateToPurchaseScreen(::std::string const& productId);
-
-    MCAPI void _finishDestroyingGame();
 
     MCAPI bool _getIsConnectedToApplicationLayer() const;
 
     MCAPI void _handleDisconnectionScreenRequests();
 
-    MCAPI void _handlePossibleControllerDisconnect(bool isInitFinished);
-
-    MCAPI void _initSceneStack();
-
     MCAPI bool _isEditorModeOrInEditorWorld() const;
-
-    MCAPI bool _isInEditorTestWorld() const;
 
     MCAPI bool _isShowingScreen(::std::string_view screenName) const;
 
-    MCAPI ::std::optional<bool> _isUsingTurn() const;
-
-    MCAPI void
-    _joinWorldInProgressSubclient(::std::optional<::PlayerJoinWorldTelemetryInfo> primaryClientJoinWorldInfo);
+    MCAPI void _joinWorldInProgressSubclient(::std::optional<::ConnectionContextInfo> primaryConnectionInfo);
 
     MCAPI void _leaveGameOnUnrecoverableError(
         ::Connection::DisconnectFailReason reason,
@@ -1395,34 +1351,11 @@ public:
         ::std::string const&               errorDescriptionOverride
     );
 
-    MCAPI void _navigateToSDLCharacterCreatorOffer(::std::string const& productId);
-
-    MCAPI void _notifyTelemetryClientCanceledJoinAttempt();
-
-    MCAPI void _notifyTelemetryClientStartedJoinAttempt();
-
-    MCAPI void _notifyTelemetryClientSuccessfullyEnteredWorld();
-
-    MCAPI void _notifyTelemetryOfFlaggedDisconnect(
-        ::Connection::DisconnectFailReason failReason,
-        ::std::string const&               titleMessage,
-        ::std::string const&               errorMessage,
-        ::std::string const&               codeword
-    );
-
     MCAPI void _perspectiveOptionChanged(::Option const&);
 
-    MCAPI void _requestLeaveGameImpl(bool switchScreen, bool sync);
-
-    MCAPI bool _shouldSkipBannedSkinCheck(::Skin const& currentSkin) const;
+    MCAPI void _requestLeaveGameImpl(bool const switchScreen, bool const sync);
 
     MCAPI void _startDestroyingGame();
-
-    MCAPI void _startExternalNetworkWorld(
-        ::Social::GameConnectionInfo connection,
-        ::std::string const&         serverName,
-        ::PlayerJoinWorldContext     context
-    );
 
     MCAPI void _startLeaveGame();
 
@@ -1442,21 +1375,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool tickDestroyBlock(::ClientInstance::ClientDestroyBlockState& state, bool advanceTime);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ClientInstanceArguments&& args);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -1488,11 +1409,11 @@ public:
     MCAPI ::std::optional<::Social::GameConnectionInfo> $getGameConnectionInfo();
 
     MCAPI void $onStartJoinGame(
-        bool                                   isJoiningLocalServer,
+        bool                                   isLocalServer,
         ::std::string const&                   multiplayerCorrelationId,
         ::std::string const&                   serverName,
         ::std::string const&                   worldName,
-        ::NetworkType                          networkTypeOverride,
+        ::NetworkType                          networkType,
         ::Social::MultiplayerServiceIdentifier service,
         ::PlayerJoinWorldContext               context
     );
@@ -1528,9 +1449,9 @@ public:
     MCAPI float $getFrameAlpha();
 
     MCAPI void $startSubClientLateJoin(
-        bool                                            hasXBLBroadcast,
-        ::std::unique_ptr<::GameModuleClient>           gameModuleClient,
-        ::std::optional<::PlayerJoinWorldTelemetryInfo> primaryClientJoinWorldInfo
+        bool                                     hasXBLBroadcast,
+        ::std::unique_ptr<::GameModuleClient>    gameModuleClient,
+        ::std::optional<::ConnectionContextInfo> primaryConnectionInfo
     );
 
     MCAPI ::Bedrock::Threading::Async<::ClientGameSetupResult> $setupClientGame(
@@ -1589,7 +1510,7 @@ public:
 
     MCAPI bool $isInDeathScreen() const;
 
-    MCFOLD bool $isKeyboardEnabled() const;
+    MCAPI bool $isKeyboardEnabled() const;
 
     MCAPI bool $hasCommands() const;
 
@@ -1731,7 +1652,7 @@ public:
 
     MCAPI void $navigateToDressingRoomOfferScreen(::std::string const& offerId);
 
-    MCAPI bool $navigateToProfileScreen(::std::string const& preventProgressScreen, bool const);
+    MCAPI bool $navigateToProfileScreen(::std::string const&, bool const preventProgressScreen);
 
     MCAPI void $navigateToServersScreen(bool const calledFromHyperlink);
 
@@ -1764,7 +1685,7 @@ public:
         ::OwnerPtr<::EntityContext>                                          userEntity
     );
 
-    MCFOLD ::PlayerAuthentication& $getPlayerAuthentication();
+    MCAPI ::PlayerAuthentication& $getPlayerAuthentication();
 
     MCAPI void $createPlayerAuthentication();
 
@@ -1812,17 +1733,17 @@ public:
 
     MCAPI bool $isEduMode() const;
 
-    MCFOLD bool $isGamepadCursorEnabled() const;
+    MCAPI bool $isGamepadCursorEnabled() const;
 
     MCAPI bool $isInControlCustomization() const;
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getServerData();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getServerData();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::Minecraft const> $getServerData() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft const> $getServerData() const;
 
-    MCFOLD ::MultiPlayerLevel* $getLevel();
+    MCAPI ::ClientLevel* $getLevel();
 
-    MCFOLD ::MultiPlayerLevel const* $getLevel() const;
+    MCAPI ::ClientLevel const* $getLevel() const;
 
     MCAPI bool $hasLevel() const;
 
@@ -1832,9 +1753,11 @@ public:
 
     MCAPI bool $isMultiPlayerClient() const;
 
-    MCFOLD ::IOptionRegistry& $getOptions();
+    MCAPI ::IOptionRegistry& $getOptions();
 
-    MCFOLD ::IOptionRegistry const& $getOptions() const;
+    MCAPI ::IOptionRegistry const& $getOptions() const;
+
+    MCAPI ::IReadWriteOptions const& $getReadWriteOptions() const;
 
     MCAPI ::std::shared_ptr<::OptionRegistry> $getOptionsPtr();
 
@@ -1856,7 +1779,7 @@ public:
 
     MCAPI ::GameRenderer& $getGameRenderer() const;
 
-    MCFOLD ::LevelRenderer* $getLevelRenderer() const;
+    MCAPI ::LevelRenderer* $getLevelRenderer() const;
 
     MCAPI ::LevelRendererCameraProxy* $getLevelRendererCameraProxy() const;
 
@@ -1868,9 +1791,9 @@ public:
 
     MCAPI ::LightTexture* $getLightTexture();
 
-    MCAPI void $setupLevelRendering(::MultiPlayerLevel& level, ::WeakEntityRef cameraTargetEntity);
+    MCAPI void $setupLevelRendering(::ClientLevel& level, ::WeakEntityRef cameraTargetEntity);
 
-    MCFOLD ::mce::ViewportInfo const& $getViewportInfo() const;
+    MCAPI ::mce::ViewportInfo const& $getViewportInfo() const;
 
     MCAPI void $setViewportInfo(::mce::ViewportInfo const& viewportInfo);
 
@@ -1878,19 +1801,19 @@ public:
 
     MCAPI void $updateChunkRadius();
 
-    MCFOLD void $setUITexture(::mce::Texture* tex);
+    MCAPI void $setUITexture(::mce::Texture* tex);
 
-    MCFOLD ::mce::Texture* $getUITexture();
+    MCAPI ::mce::Texture* $getUITexture();
 
-    MCFOLD void $setLevelTexture(::mce::Texture* tex);
+    MCAPI void $setLevelTexture(::mce::Texture* tex);
 
-    MCAPI ::mce::Texture* $getLevelTexture();
+    MCFOLD ::mce::Texture* $getLevelTexture();
 
     MCAPI void $setUICursorTexture(::mce::TexturePtr tex);
 
     MCAPI ::mce::TexturePtr $getUICursorTexture() const;
 
-    MCFOLD ::mce::Camera& $getCamera();
+    MCAPI ::mce::Camera& $getCamera();
 
     MCAPI ::ShaderColor& $getShaderColor();
 
@@ -1900,7 +1823,7 @@ public:
 
     MCAPI void $getNormalizedUICursorTransform(::MatrixStack::MatrixStackRef& matrix, float cursorHalfSizeTexels);
 
-    MCFOLD bool $shouldRenderUICursor() const;
+    MCAPI bool $shouldRenderUICursor() const;
 
     MCAPI bool $getRenderPlayerModel() const;
 
@@ -1914,13 +1837,13 @@ public:
 
     MCAPI void $setGuiScaleOffset(int guiScale);
 
-    MCFOLD void $renderImGui(::ScreenContext&, bool);
+    MCFOLD void $renderImGui(::ScreenContext& screenContext, bool drawMenuBar);
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::GuiData> $getGuiData();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData> $getGuiData();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::GuiData const> $getGuiData() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData const> $getGuiData() const;
 
-    MCAPI ::GuidedFlowManager& $getGuidedFlowManager();
+    MCFOLD ::GuidedFlowManager& $getGuidedFlowManager();
 
     MCAPI ::PixelCalc const& $getDpadScale() const;
 
@@ -1941,15 +1864,15 @@ public:
 
     MCAPI ::AbstractScene const* $getActiveScene() const;
 
-    MCFOLD ::SceneFactory& $getSceneFactory() const;
+    MCAPI ::SceneFactory& $getSceneFactory() const;
 
     MCAPI ::OreUI::SceneProvider& $getSceneProvider() const;
 
     MCAPI ::ui::ScreenTechStackSelector& $getScreenTechStackSelector();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> $getClientSceneStack() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> $getClientSceneStack() const;
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $getClientSceneStack();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $getClientSceneStack();
 
     MCAPI ::OreUI::Router& $getClientUIRouter() const;
 
@@ -1963,9 +1886,9 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $getCurrentSceneStack();
 
-    MCFOLD ::OreUI::Router& $getCurrentUIRouter();
+    MCAPI ::OreUI::Router& $getCurrentUIRouter();
 
-    MCFOLD ::OreUI::Router const& $getCurrentUIRouter() const;
+    MCAPI ::OreUI::Router const& $getCurrentUIRouter() const;
 
     MCAPI ::OreUI::ITelemetry& $getOreUITelemetry();
 
@@ -1976,7 +1899,7 @@ public:
         ::std::function<::std::shared_ptr<::AbstractScene>()> createScreenCallback
     );
 
-    MCFOLD ::CachedScenes& $getCachedScenes();
+    MCAPI ::CachedScenes& $getCachedScenes();
 
     MCAPI ::std::string $getScreenName() const;
 
@@ -2028,7 +1951,7 @@ public:
 
     MCAPI ::Bedrock::NonOwnerPointer<::MinecraftInputHandler> $getMinecraftInput() const;
 
-    MCFOLD ::KeyboardManager& $getKeyboardManager();
+    MCAPI ::KeyboardManager& $getKeyboardManager();
 
     MCAPI void $setLastPointerLocation(float x, float y, float z);
 
@@ -2050,13 +1973,13 @@ public:
 
     MCAPI bool $currentScreenShouldStealMouse();
 
-    MCFOLD ::BuildActionIntention& $getInProgressBAI() const;
+    MCAPI ::BuildActionIntention& $getInProgressBAI() const;
 
     MCFOLD ::PacketSender& $getPacketSender();
 
-    MCFOLD ::ClientNetworkSystem& $getClientNetworkSystem();
+    MCAPI ::ClientNetworkSystem& $getClientNetworkSystem();
 
-    MCFOLD ::ClientNetworkSystem const& $getClientNetworkSystem() const;
+    MCAPI ::ClientNetworkSystem const& $getClientNetworkSystem() const;
 
     MCAPI ::glm::vec2 $getGamepadCursorPosition() const;
 
@@ -2098,7 +2021,7 @@ public:
 
     MCAPI void $setClientInputHandler(::std::unique_ptr<::ClientInputHandler> pClientInputHandler);
 
-    MCFOLD ::ClientInputHandler* $getInput() const;
+    MCAPI ::ClientInputHandler* $getInput() const;
 
     MCAPI int $getControllerId() const;
 
@@ -2142,7 +2065,7 @@ public:
 
     MCAPI ::TaskGroup& $getTaskGroup();
 
-    MCFOLD void $onFullVanillaPackOnStack();
+    MCAPI void $onFullVanillaPackOnStack();
 
     MCAPI bool $isFullVanillaPackOnStack() const;
 
@@ -2160,13 +2083,6 @@ public:
         ::Social::GameConnectionInfo connection,
         ::std::string const&         serverName,
         ::PlayerJoinWorldContext     context
-    );
-
-    MCAPI void $connectToExperience(
-        ::ExperienceConnectionData                                                      data,
-        ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> joinServerCallback,
-        ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback,
-        ::PlayerJoinWorldContext                                                        context
     );
 
     MCAPI bool $isReadyToReconnect() const;
@@ -2234,8 +2150,6 @@ public:
 
     MCAPI void $onAppSuspended();
 
-    MCAPI void $onAppSuspensionDisconnect();
-
     MCAPI void $onAppResumed();
 
     MCAPI void $onActiveResourcePacksChanged(
@@ -2268,9 +2182,9 @@ public:
 
     MCAPI void $initTTSClient(::std::shared_ptr<::TextToSpeechClient> textToSpeechClient);
 
-    MCFOLD ::std::shared_ptr<::TextToSpeechClient> $getTTSClient();
+    MCAPI ::std::shared_ptr<::TextToSpeechClient> $getTTSClient();
 
-    MCFOLD ::std::shared_ptr<::TextToSpeechClient const> $getTTSClient() const;
+    MCAPI ::std::shared_ptr<::TextToSpeechClient const> $getTTSClient() const;
 
     MCAPI ::std::shared_ptr<::ITTSEventManager> $getTTSEventManager();
 
@@ -2327,9 +2241,9 @@ public:
 
     MCFOLD ::ClientInstanceState $getClientInstanceState() const;
 
-    MCFOLD ::LatencyGraphDisplay* $getLatencyGraphDisplay() const;
+    MCAPI ::LatencyGraphDisplay* $getLatencyGraphDisplay() const;
 
-    MCFOLD ::PlayerCapabilities::IClientController const& $getClientCapabilities() const;
+    MCAPI ::PlayerCapabilities::IClientController const& $getClientCapabilities() const;
 
     MCAPI ::cg::math::Rect<float> $calculateViewPortModifiers(
         ::SubClientId const          clientId,
@@ -2341,13 +2255,13 @@ public:
 
     MCAPI ::ClientRequirementVerifier const& $getClientRequirementVerifier() const;
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::FogDefinitionRegistry const> $getFogDefinitionRegistry() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FogDefinitionRegistry const> $getFogDefinitionRegistry() const;
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::FogDefinitionRegistry> $getFogDefinitionRegistry();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FogDefinitionRegistry> $getFogDefinitionRegistry();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::FogManager const> $getFogManager() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FogManager const> $getFogManager() const;
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::FogManager> $getFogManager();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FogManager> $getFogManager();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ScreenLoadTimeTracker> $getScreenLoadTimeTracker();
 
@@ -2399,18 +2313,6 @@ public:
 
     MCAPI double $getGameUpdateDurationInSeconds() const;
 
-    MCAPI ::std::optional<::PlayerJoinWorldTelemetryInfo> $getPlayerJoinWorldTelemetryInfo() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForGameCallbacks();
-
-    MCNAPI static void** $vftableForStorageAreaStateListener();
-
-    MCNAPI static void** $vftableForIClientInstance();
-
-    MCNAPI static void** $vftableForPlayerListener();
+    MCAPI ::std::optional<::ConnectionContextInfo> $getConnectionContextInfo() const;
     // NOLINTEND
 };

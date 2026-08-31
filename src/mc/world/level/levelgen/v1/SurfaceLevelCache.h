@@ -26,6 +26,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const /*override*/;
+
+    virtual ~SurfaceLevelCache() /*override*/;
     // NOLINTEND
 
 public:
@@ -46,6 +48,12 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider,
         uint64                               bufferSizeXZ
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

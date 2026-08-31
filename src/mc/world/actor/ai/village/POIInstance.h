@@ -11,7 +11,6 @@
 // clang-format off
 class AABB;
 class BlockSource;
-class CompoundTag;
 class Random;
 class Village;
 // clang-format on
@@ -55,27 +54,9 @@ public:
         ::std::string     endEvent
     );
 
-    MCFOLD ::HashedString const& getName() const;
-
-    MCFOLD ::BlockPos const& getPosition() const;
-
-    MCAPI float getRadius() const;
-
     MCAPI ::AABB getSecondBlockFullAABB(::BlockSource& region);
 
-    MCFOLD ::HashedString const& getSoundEvent() const;
-
-    MCAPI void incrementArrivalFailureCount();
-
-    MCAPI void resetArrivalFailureCount();
-
-    MCAPI void save(::CompoundTag& tag) const;
-
     MCAPI void trySpawnParticles(::BlockSource& region, ::Random& random, int particleType) const;
-
-    MCAPI bool useBoundingBox() const;
-
-    MCAPI ~POIInstance();
     // NOLINTEND
 
 public:
@@ -93,11 +74,5 @@ public:
         ::std::string     initEvent,
         ::std::string     endEvent
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

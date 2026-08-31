@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 #include "mc/scripting/modules/minecraft_net/events/IScriptNetworkBeforeEvents.h"
 
 // auto generated forward declare list
@@ -57,8 +57,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptNetworkBeforeEvents(::Scripting::WeakLifetimeScope scope, ::gsl::not_null<::ServerLevel*> level);
-
-    MCNAPI void registerListeners();
     // NOLINTEND
 
 public:

@@ -11,7 +11,6 @@
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/network/PacketGroupDefinition.h"
-#include "mc/platform/brstd/future.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,7 +22,6 @@ class EditorBootstrapper;
 class FileArchiver;
 class IEDUSystems;
 class IGameModuleShared;
-class IMinecraftEventing;
 class LevelDbEnv;
 class LevelSettings;
 class Minecraft;
@@ -37,7 +35,6 @@ class SignalingServiceSignInJob;
 class TestConfig;
 struct ImguiProfiler;
 struct PropertiesSettings;
-struct TextProcessorInitParams;
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class ActivationArguments; }
 namespace Bedrock::Http { class DispatcherInterface; }
@@ -117,7 +114,7 @@ public:
 
     virtual bool isDedicatedServer() const /*override*/;
 
-    virtual void onNetworkMaxPlayersChanged(uint) /*override*/;
+    virtual void onNetworkMaxPlayersChanged(uint newMaxPlayerCount) /*override*/;
 
     virtual ::IGameModuleShared& getGameModuleShared() /*override*/;
 
@@ -131,26 +128,6 @@ public:
     // NOLINTBEGIN
     MCAPI DedicatedServer();
 
-    MCAPI ::TextProcessorInitParams createTextProcessorInitParams(::PropertiesSettings const& properties) const;
-
-    MCAPI void initializeAppConfigs();
-
-    MCAPI void initializeCodeBuilder();
-
-    MCAPI void initializeHttp(::PropertiesSettings const& properties);
-
-    MCAPI void initializeImguiProfiler();
-
-    MCAPI void initializeLogging(::TestConfig& testConfig);
-
-    MCAPI ::brstd::future<bool>
-    initializeMultiplayerKeys(::Minecraft& minecraft, ::PropertiesSettings const& properties);
-
-    MCAPI void initializeServices(
-        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing> minecraftEventing,
-        ::PropertiesSettings const&                         properties
-    );
-
     MCAPI ::DedicatedServer::ServerExitCode runDedicatedServerLoop(
         ::Core::FilePathManager&                                     filePathManager,
         ::PropertiesSettings const&                                  properties,
@@ -161,8 +138,6 @@ public:
         ::Bedrock::ActivationArguments const&                        args,
         ::TestConfig&                                                testConfig
     );
-
-    MCAPI void shutdownServices();
 
     MCAPI ::DedicatedServer::ServerExitCode
     start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
@@ -195,20 +170,12 @@ public:
 
     MCFOLD bool $isDedicatedServer() const;
 
-    MCFOLD void $onNetworkMaxPlayersChanged(uint);
+    MCFOLD void $onNetworkMaxPlayersChanged(uint newMaxPlayerCount);
 
     MCFOLD ::IGameModuleShared& $getGameModuleShared();
 
     MCAPI void $requestServerShutdown();
 
     MCFOLD bool $requestInGamePause(::SubClientId const&, bool);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForAppIsland();
-
-    MCNAPI static void** $vftableForIMinecraftApp();
     // NOLINTEND
 };

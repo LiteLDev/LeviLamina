@@ -18,18 +18,6 @@ public:
     DataMessage& operator=(DataMessage const&);
     DataMessage(DataMessage const&);
     DataMessage();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DataMessage();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace CodeBuilder

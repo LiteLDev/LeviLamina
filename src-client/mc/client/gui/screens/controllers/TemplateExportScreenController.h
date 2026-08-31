@@ -30,38 +30,12 @@ public:
     // NOLINTBEGIN
     MCAPI explicit TemplateExportScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
 
-    MCAPI void _exportTemplate();
-
-    MCAPI void _pickTemplateImage();
-
-    MCAPI void _pickTemplateLocalization();
-
-    MCAPI void _registerControllerCallbacks();
-
-    MCAPI void _saveTemplateVersion() const;
-
-    MCAPI void _validateTemplateVersion(::std::string const& optionValue);
-
     MCAPI void setStorageInterface(::std::weak_ptr<::IWorldSettingsStorage> worldSettingsStorageInterface);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCFOLD static bool isTemplateExportDisabled();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

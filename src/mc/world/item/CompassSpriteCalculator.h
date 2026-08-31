@@ -27,36 +27,9 @@ public:
     ::ll::TypedStorage<4, 4, int>                                            mLastUpdatedAt;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    CompassSpriteCalculator();
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    CompassSpriteCalculator(CompassSpriteCalculator const&);
-    CompassSpriteCalculator();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CompassSpriteCalculator(
-        ::BlockPos (*targetToPointTo)(::BlockSource const*, ::Actor*),
-        bool (*isPointingAtTarget)(::BlockSource const*, ::Actor*),
-        float rot,
-        float rotA
-    );
-
-    MCFOLD int getFrame() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::CompassSpriteCalculator& operator=(::CompassSpriteCalculator const& other);
-#endif
-
-    MCAPI int update(::Actor& actor, bool instant);
-
     MCAPI int updateFromPosition(
         ::BlockSource const* region,
         ::Actor*             actor,
@@ -66,19 +39,6 @@ public:
         bool                 isZFlipped,
         bool                 instant
     );
-
-#ifdef LL_PLAT_C
-    MCAPI int updateFromPosition(
-        ::BlockSource const*,
-        ::BlockPos const& lookTowards,
-        float             x,
-        float             z,
-        float             yRot,
-        bool              isZFlipped,
-        bool              instant,
-        bool              spin
-    );
-#endif
     // NOLINTEND
 
 public:
@@ -91,16 +51,5 @@ public:
     MCAPI static ::BlockPos pointTowardsLastDeathLocation(::BlockSource const* region, ::Actor* actor);
 
     MCAPI static ::BlockPos pointTowardsSpawnPoint(::BlockSource const* region, ::Actor*);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BlockPos (*targetToPointTo)(::BlockSource const*, ::Actor*),
-        bool (*isPointingAtTarget)(::BlockSource const*, ::Actor*),
-        float rot,
-        float rotA
-    );
     // NOLINTEND
 };

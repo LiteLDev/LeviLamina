@@ -62,9 +62,9 @@ public:
     // NOLINTBEGIN
     MCAPI CameraPreset(::SharedTypes::v1_21_90::CameraPreset const&);
 
-    MCFOLD ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset&&);
+    MCAPI ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset&&);
 
-    MCFOLD ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset const&);
+    MCAPI ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset const&);
 
     MCAPI ~CameraPreset();
     // NOLINTEND
@@ -78,13 +78,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_21_90::CameraPreset const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_90::CameraPreset const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

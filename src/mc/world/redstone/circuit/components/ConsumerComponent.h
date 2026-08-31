@@ -37,10 +37,10 @@ public:
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     virtual bool addSource(
-        ::CircuitSceneGraph&         info,
-        ::CircuitTrackingInfo const& dampening,
-        int&                         bDirectlyPowered,
-        bool&
+        ::CircuitSceneGraph&         graph,
+        ::CircuitTrackingInfo const& info,
+        int&                         dampening,
+        bool&                        bDirectlyPowered
     ) /*override*/;
 
     virtual bool canConsumerPower() const /*override*/;
@@ -50,6 +50,8 @@ public:
     virtual bool needsUpdate() /*override*/;
 
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
+
+    virtual ~ConsumerComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -65,6 +67,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
@@ -72,11 +80,15 @@ public:
     MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     MCAPI bool
-    $addSource(::CircuitSceneGraph& info, ::CircuitTrackingInfo const& dampening, int& bDirectlyPowered, bool&);
+    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     MCFOLD bool $canConsumerPower() const;
 
+#ifdef LL_PLAT_S
+    MCAPI bool $isSecondaryPowered() const;
+#else // LL_PLAT_C
     MCFOLD bool $isSecondaryPowered() const;
+#endif
 
     MCAPI bool $needsUpdate();
 

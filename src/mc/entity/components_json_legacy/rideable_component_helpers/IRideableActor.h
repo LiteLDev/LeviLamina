@@ -32,12 +32,6 @@ public:
 
     virtual ::VehicleUtils::VehicleRootInfo getVehicleRoot() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace RideableComponentHelpers

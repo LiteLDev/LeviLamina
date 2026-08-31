@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~RamAttackGoalDefinition();
+    MCAPI bool operator==(::SharedTypes::v1_26_10::RamAttackGoalDefinition const&) const;
     // NOLINTEND
 
 public:
@@ -62,12 +62,6 @@ public:
     MCAPI static float const& DEFAULT_RUN_SPEED();
 
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

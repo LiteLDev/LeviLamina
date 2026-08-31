@@ -86,10 +86,6 @@ public:
         ::Core::PathBuffer<::std::string> const& filePath,
         ::std::unordered_set<::mce::UUID> const& packsToRemove
     ) const;
-
-    MCNAPI ::Core::PathBuffer<::std::string> _getLevelFolder(::std::string const& levelId) const;
-
-    MCNAPI ::std::string _getLevelIdFromFolderPath(::Core::PathBuffer<::std::string> const& levelFolder) const;
     // NOLINTEND
 
 public:
@@ -137,12 +133,6 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

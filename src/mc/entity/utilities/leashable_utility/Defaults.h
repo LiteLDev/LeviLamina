@@ -10,10 +10,6 @@ struct LeashablePreset;
 namespace Leashable::Defaults {
 // static variables
 // NOLINTBEGIN
-MCNAPI bool const& CAN_BE_CUT();
-
-MCNAPI bool const& CAN_BE_STOLEN();
-
 MCNAPI ::LeashablePreset const& PRESET();
 // NOLINTEND
 

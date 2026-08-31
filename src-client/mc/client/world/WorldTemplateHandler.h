@@ -5,12 +5,10 @@
 // auto generated inclusion list
 #include "mc/client/world/IWorldTemplateHandler.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/world/level/FileArchiver.h"
 
 // auto generated forward declare list
 // clang-format off
 class FileArchiver;
-class FilePickerSettings;
 class IContentKeyProvider;
 class ILevelListCache;
 class WorldTemplateManager;
@@ -60,18 +58,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::FilePickerSettings> _generateFilePickerSettingsForExport(
-        ::std::string const&       levelId,
-        ::std::string const&       levelName,
-        ::FileArchiver::ExportType type
-    ) const;
-
-    MCFOLD void _pickFile(::std::shared_ptr<::FilePickerSettings> settings) const;
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -91,12 +77,6 @@ public:
     MCFOLD bool $isTemplateExportEnabled() const;
 
     MCAPI ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& $getLocalTemplates() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

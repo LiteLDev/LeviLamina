@@ -44,7 +44,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int) /*override*/;
+    virtual void
+    tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor) /*override*/;
 
     virtual void render(::InputRenderContext& context) const /*override*/;
     // NOLINTEND
@@ -61,10 +62,6 @@ public:
         ::std::vector<::std::unique_ptr<::ControlConfiguration>> controlConfigurations,
         ::std::vector<::std::function<::RectangleArea()>> const& reservedAreas
     );
-
-    MCAPI bool _checkCollisionForPotentialUpdates(
-        ::std::unordered_map<::ControlConfiguration*, float> const& potentialUpdates
-    ) const;
 
     MCAPI int _getNumberOfActiveControlConfigurations() const;
 
@@ -98,14 +95,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int);
+    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
 
     MCAPI void $render(::InputRenderContext& context) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -19,12 +19,6 @@ public:
 
     virtual ~PlanarYuv16BBuffer() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

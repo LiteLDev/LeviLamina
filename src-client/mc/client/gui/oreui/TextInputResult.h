@@ -14,18 +14,6 @@ public:
     ::ll::TypedStorage<8, 8, uint64>         index;
     ::ll::TypedStorage<8, 32, ::std::string> text;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~TextInputResult();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI::InputUtils

@@ -71,13 +71,13 @@ public:
         /*override*/;
 
     virtual void _prepareHeights(
-        ::BlockVolume&                box,
-        ::ChunkPos const&             chunkPos,
-        ::ChunkLocalNoiseCache const& factorInBeardsAndShavers,
-        ::Aquifer*                    ZXheights,
-        ::std::function<void(::BlockPos const&, ::Block const&, int)>&&,
-        bool,
-        ::std::vector<short>*
+        ::BlockVolume&                                                  box,
+        ::ChunkPos const&                                               chunkPos,
+        ::ChunkLocalNoiseCache const&                                   chunkLocalNoiseCache,
+        ::Aquifer*                                                      aquiferPtr,
+        ::std::function<void(::BlockPos const&, ::Block const&, int)>&& tickUpdateFn,
+        bool                                                            factorInBeardsAndShavers,
+        ::std::vector<short>*                                           ZXheights
     ) /*override*/;
 
     virtual ::std::optional<::XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const
@@ -102,7 +102,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BiomeSource const& $getBiomeSource() const;
+    MCAPI ::BiomeSource const& $getBiomeSource() const;
 
     MCAPI ::BlockPos $findSpawnPosition() const;
 
@@ -113,31 +113,23 @@ public:
 
     MCAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
 
-    MCFOLD ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
+    MCAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
 
-    MCFOLD void
+    MCAPI void
     $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
 
     MCAPI void $_prepareHeights(
-        ::BlockVolume&                box,
-        ::ChunkPos const&             chunkPos,
-        ::ChunkLocalNoiseCache const& factorInBeardsAndShavers,
-        ::Aquifer*                    ZXheights,
-        ::std::function<void(::BlockPos const&, ::Block const&, int)>&&,
-        bool,
-        ::std::vector<short>*
+        ::BlockVolume&                                                  box,
+        ::ChunkPos const&                                               chunkPos,
+        ::ChunkLocalNoiseCache const&                                   chunkLocalNoiseCache,
+        ::Aquifer*                                                      aquiferPtr,
+        ::std::function<void(::BlockPos const&, ::Block const&, int)>&& tickUpdateFn,
+        bool                                                            factorInBeardsAndShavers,
+        ::std::vector<short>*                                           ZXheights
     );
 
     MCAPI ::std::optional<::XoroshiroPositionalRandomFactory> $getXoroshiroPositionalRandomFactory() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForChunkSource();
-
-    MCNAPI static void** $vftableForIPreliminarySurfaceProvider();
     // NOLINTEND
 };

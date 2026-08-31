@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/IOperation.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +14,6 @@ class CompoundTag;
 class Level;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Transactions { struct BlockChangeIntentData; }
-namespace Editor::Transactions { struct BlockChangedOperationData; }
 // clang-format on
 
 namespace Editor::Transactions {
@@ -35,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockChangedOperation() /*override*/ = default;
+    virtual ~BlockChangedOperation() /*override*/;
 
     virtual ::std::string_view getName() /*override*/;
 
@@ -47,8 +46,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockChangedOperation(::std::vector<::Editor::Transactions::BlockChangedOperationData>&& blocks);
-
     MCNAPI ::Scripting::Result_deprecated<void>
     _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo) const;
 
@@ -60,8 +57,6 @@ public:
         ::CompoundTag*    blockData,
         ::BlockPos const& pos
     ) const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> _setBlocks(::Level& level, ::BlockSource& region, bool isUndo) const;
     // NOLINTEND
 
 public:
@@ -78,9 +73,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::vector<::Editor::Transactions::BlockChangedOperationData>&& blocks);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

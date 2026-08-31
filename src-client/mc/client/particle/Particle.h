@@ -61,9 +61,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Particle();
+    virtual ~Particle() = default;
 
-    virtual void init(::Vec3 const&, ::Vec3 const&, int, ::ParticleEngine&) = 0;
+    virtual void init(::Vec3 const& pos, ::Vec3 const& dir, int scale, ::ParticleEngine& engine) = 0;
 
     virtual void addTagData(::CompoundTag const& tag);
 
@@ -83,11 +83,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
-    _init(::Vec3 const& pos, ::Vec3 const& dir, int scale, ::ParticleEngine& engine, ::CompoundTag const* tag);
-
-    MCAPI void _updateVertexData(::ParticleRenderContext const& renderContext, float sqDist);
-
     MCAPI void move(::Vec3 const& delta);
     // NOLINTEND
 
@@ -112,12 +107,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $addTagData(::CompoundTag const& tag);
@@ -126,18 +115,12 @@ public:
 
     MCAPI void $tessellate(::ParticleRenderContext const& renderContext);
 
-    MCFOLD ::mce::TexturePtr const& $getParticleTexture() const;
+    MCAPI ::mce::TexturePtr const& $getParticleTexture() const;
 
     MCFOLD void $setEmittingEntity(::Actor& entity);
 
     MCAPI bool $_shouldUpdateVertexData(float sqDist);
 
     MCAPI void $_calculateAmbientLight(float a);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

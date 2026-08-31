@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/levelgen/structure/StructureAnimationData.h"
 
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
@@ -45,11 +46,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI StructureAnimationAction(
-        ::std::unique_ptr<::StructureAnimationData> structureAnimationData,
-        ::DimensionType                             dimensionType
-    );
-
-    MCAPI StructureAnimationAction(
         ::StructureSettings const& structureSettings,
         ::DimensionType            dimensionType,
         ::BlockPos const&          loadPosition,
@@ -67,9 +63,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::unique_ptr<::StructureAnimationData> structureAnimationData, ::DimensionType dimensionType);
-
     MCAPI void* $ctor(
         ::StructureSettings const& structureSettings,
         ::DimensionType            dimensionType,

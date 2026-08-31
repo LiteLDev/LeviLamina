@@ -19,26 +19,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MobEvent(::std::string name, ::std::string localizableName, bool val);
-
-    MCNAPI ::std::string const& getLocalizableName() const;
-
-    MCNAPI ::std::string const& getName() const;
-
-    MCNAPI bool isEnabled() const;
-
-    MCNAPI ~MobEvent();
+    MCAPI MobEvent(::std::string name, ::std::string localizableName, bool val);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string name, ::std::string localizableName, bool val);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void* $ctor(::std::string name, ::std::string localizableName, bool val);
     // NOLINTEND
 };

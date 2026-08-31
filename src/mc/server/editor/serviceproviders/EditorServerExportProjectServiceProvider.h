@@ -52,12 +52,6 @@ public:
 
     virtual ::std::shared_ptr<::FileArchiver::InterventionPublishers> getInterventionPublisherTable() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

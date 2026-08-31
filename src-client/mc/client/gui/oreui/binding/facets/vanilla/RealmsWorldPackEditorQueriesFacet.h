@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/network/realms/GenericStatus.h"
 #include "mc/client/realms/RealmsWorldPackEditor.h"
 #include "mc/client/services/download/IMarketplacePackDownloader.h"
@@ -22,7 +22,8 @@ namespace World { struct PackDetails; }
 
 namespace OreUI {
 
-class RealmsWorldPackEditorQueriesFacet : public ::OreUI::FacetBase<::OreUI::RealmsWorldPackEditorQueriesFacet> {
+class RealmsWorldPackEditorQueriesFacet
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsWorldPackEditorQueriesFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -79,22 +80,22 @@ public:
 
     MCAPI void _regeneratePackDetails();
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getAvailableBehaviorPacks() const;
+    MCAPI ::std::vector<::World::PackDetails> const& getAvailableBehaviorPacks() const;
 
     MCFOLD ::std::vector<::World::PackDetails> const& getAvailableResourcePacks() const;
 
     MCFOLD ::std::optional<::World::PackActionError> const& getChangePackPriorityError() const;
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getGlobalResourcePacks() const;
+    MCAPI ::std::vector<::World::PackDetails> const& getGlobalResourcePacks() const;
 
     MCFOLD bool getIsPackEditorContentChanged() const;
 
-    MCFOLD ::std::optional<::IMarketplacePackDownloader::MarketplacePackDownloadStatus> const&
+    MCAPI ::std::optional<::IMarketplacePackDownloader::MarketplacePackDownloadStatus> const&
     getMarketplacePackDownloadStatus();
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getMarketplacePassBehaviorPacks() const;
+    MCAPI ::std::vector<::World::PackDetails> const& getMarketplacePassBehaviorPacks() const;
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getMarketplacePassResourcePacks() const;
+    MCAPI ::std::vector<::World::PackDetails> const& getMarketplacePassResourcePacks() const;
 
     MCFOLD ::std::optional<::World::PackActionError> const& getPackApplicationError() const;
 
@@ -108,9 +109,9 @@ public:
 
     MCFOLD ::Realms::RealmsWorldPackEditor::ProcessState getPackEditorSaveState() const;
 
-    MCFOLD ::std::optional<::World::PendingPackAction> const& getPendingPackAction() const;
+    MCAPI ::std::optional<::World::PendingPackAction> const& getPendingPackAction() const;
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getSelectedBehaviorPacks() const;
+    MCAPI ::std::vector<::World::PackDetails> const& getSelectedBehaviorPacks() const;
 
     MCFOLD ::std::vector<::World::PackDetails> const& getSelectedResourcePacks() const;
     // NOLINTEND
@@ -139,13 +140,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI bool $update();
     // NOLINTEND
 };
 

@@ -18,7 +18,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MarketplacePassUpsellScreenController() /*override*/ = default;
+    virtual ~MarketplacePassUpsellScreenController() /*override*/;
     // NOLINTEND
 
 public:
@@ -26,17 +26,19 @@ public:
     // NOLINTBEGIN
     MCAPI explicit MarketplacePassUpsellScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
 
-    MCAPI bool _isSwitchMPPTrialAvailableAndReady() const;
-
     MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

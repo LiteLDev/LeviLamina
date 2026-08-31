@@ -11,13 +11,13 @@ class NoOp_ProfileClient : public ::Core::Profile::ProfileClient {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NoOp_ProfileClient() /*override*/ = default;
+    virtual ~NoOp_ProfileClient() /*override*/;
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

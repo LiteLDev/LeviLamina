@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CerealSchemaUpgradeSet;
 class ComponentItem;
 class CompoundTag;
 class SemVersion;
@@ -24,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemComponent() /*override*/ = default;
+    virtual ~ItemComponent() /*override*/;
 
     virtual bool checkComponentDataForContentErrors() const;
 
@@ -42,23 +41,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void initializeComponent(::ComponentItem* owner);
-
-    MCAPI bool initializeComponentFromNetwork(
-        ::CompoundTag const&           tag,
-        ::cereal::ReflectionCtx const& ctx,
-        ::ComponentItem*               owner
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindItemComponentType(::cereal::ReflectionCtx& ctx);
-
-    MCFOLD static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

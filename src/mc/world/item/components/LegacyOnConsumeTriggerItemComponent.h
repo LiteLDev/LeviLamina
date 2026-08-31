@@ -9,10 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ComponentItem;
-class HashedString;
-class ItemStack;
 namespace SharedTypes::Legacy { struct OnConsumeTriggerItemComponent; }
 // clang-format on
 
@@ -38,14 +35,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit LegacyOnConsumeTriggerItemComponent(::SharedTypes::Legacy::OnConsumeTriggerItemComponent&& data);
-
-    MCAPI void _consume(::ItemStack const& item, ::ItemStack& actor, ::Actor&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

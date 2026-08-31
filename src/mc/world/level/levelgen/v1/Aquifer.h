@@ -97,14 +97,6 @@ public:
     MCAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
 
     MCAPI void computeAt(::BlockPos const& worldPos);
-
-    MCFOLD float getLastBarrier() const;
-
-    MCAPI ::Block const* getLastFluidBlockType() const;
-
-    MCFOLD int getLastFluidLevel() const;
-
-    MCFOLD bool shouldScheduleFluidUpdate() const;
     // NOLINTEND
 
 public:

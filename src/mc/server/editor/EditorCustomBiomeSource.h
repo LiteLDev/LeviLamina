@@ -11,8 +11,6 @@ class Biome;
 class BiomeRegistry;
 class BiomeSource;
 class BlockPos;
-class Dimension;
-class LevelSeed64;
 struct CustomBiome;
 namespace Bedrock::PubSub { class Subscription; }
 namespace mce { class Color; }
@@ -66,13 +64,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorCustomBiomeSource(
-        ::LevelSeed64                                   seed,
-        ::Dimension const&                              dimension,
-        ::std::map<::std::string, ::CustomBiome> const& customBiomeMap,
-        ::mce::UUID                                     id
-    );
-
     MCNAPI void _rebuildBiomeSource(::std::map<::std::string, ::CustomBiome> const& customBiomeMap);
     // NOLINTEND
 
@@ -81,17 +72,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::map<::std::string, ::mce::Color>
     buildColorMap(::std::map<::std::string, ::CustomBiome> const& customBiomeMap);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::LevelSeed64                                   seed,
-        ::Dimension const&                              dimension,
-        ::std::map<::std::string, ::CustomBiome> const& customBiomeMap,
-        ::mce::UUID                                     id
-    );
     // NOLINTEND
 
 public:
@@ -114,11 +94,5 @@ public:
     MCNAPI ::Bedrock::PubSub::Subscription $listenForBiomeUpdates(::std::function<void()> callback);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

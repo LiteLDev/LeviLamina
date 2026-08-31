@@ -4,15 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/world/inventory/network/ItemStackNetResult.h"
-#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
-#include "mc/world/inventory/network/crafting/ItemStackRequestActionCraft.h"
 
 // auto generated forward declare list
 // clang-format off
 class ItemStackRequestActionCraftBase;
 class Player;
-struct RecipeNetIdTag;
 // clang-format on
 
 class CraftHandlerEnchant : public ::CraftHandlerBase {
@@ -44,15 +41,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult _handleEnchant(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -72,22 +72,6 @@ public:
 
         virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view key) const = 0;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI bool getBooleanKey(::std::string_view key, bool defaultValue) const;
-
-        MCNAPI int getSInt32Key(::std::string_view key, int defaultValue) const;
-#endif
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     template <typename T0, typename T1>
@@ -101,12 +85,6 @@ public:
 
         virtual ::Bedrock::JSONObject::Node*
         setValueForKey(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value) = 0;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
         // NOLINTEND
     };
 
@@ -127,7 +105,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~EditorImpl() /*override*/ = default;
+        virtual ~EditorImpl() /*override*/;
 
         virtual ::gsl::not_null<::Bedrock::DataStore const*> getOwningDataStore() const /*override*/;
 
@@ -139,6 +117,12 @@ public:
 
         virtual ::Bedrock::JSONObject::Node*
         setValueForKey(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value) /*override*/;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -156,12 +140,6 @@ public:
         $setValueForKey(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value);
 
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -192,9 +170,6 @@ public:
         MCNAPI explicit Impl(::Bedrock::DataStore* owner);
 
         MCNAPI ::Bedrock::JSONObject::Node* _getValueForKey(char const* key, uint64 keyLength);
-
-        MCNAPI ::Bedrock::JSONObject::Node*
-        _setValueForKey(char const* key, uint64 keyLength, ::Bedrock::JSONObject::ValueWrapper const& value);
 
         MCNAPI void load();
 
@@ -254,12 +229,6 @@ public:
 
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
 public:
@@ -284,23 +253,7 @@ public:
     // NOLINTBEGIN
     MCNAPI DataStore();
 
-#ifdef LL_PLAT_C
-    MCNAPI ::Bedrock::DataStore::AccessHandle<::Bedrock::DataStore::Editor, ::Bedrock::DataStore::EditorImpl> edit();
-#endif
-
-    MCNAPI void load();
-
-#ifdef LL_PLAT_C
-    MCNAPI void save();
-#endif
-
     MCNAPI void setCustomFileHandlers(::Bedrock::DataStore::CustomFileHandlers handlers);
-
-    MCNAPI void setFilePath(::Core::Path const& filePath);
-
-#ifdef LL_PLAT_C
-    MCNAPI ::Bedrock::DataStore::AccessHandle<::Bedrock::DataStore::Viewer, ::Bedrock::DataStore::ViewerImpl> view();
-#endif
     // NOLINTEND
 
 public:

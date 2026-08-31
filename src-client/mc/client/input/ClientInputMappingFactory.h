@@ -8,11 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class Config;
 class IOptionRegistry;
 class KeyboardRemappingLayout;
 struct DeviceButtonMapping;
-struct GameControllerInputMapping;
 struct InputMapping;
 struct TouchInputMapping;
 // clang-format on
@@ -64,11 +62,7 @@ public:
 
     MCAPI void _activateMapping(::std::string const& mappingName);
 
-    MCAPI void _configureGameControllerMapping(::GameControllerInputMapping& mapping);
-
     MCAPI ::InputMapping* _getMappingInternal(::std::string const& mappingName);
-
-    MCAPI void onConfigChanged(::Config const& config);
     // NOLINTEND
 
 public:

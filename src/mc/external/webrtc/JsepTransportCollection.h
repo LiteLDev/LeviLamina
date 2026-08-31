@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class JsepTransport; }
+namespace webrtc { class JsepTransport; }
 // clang-format on
 
 namespace webrtc {
@@ -14,10 +14,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnk1f4845;
-    ::ll::UntypedStorage<8, 16> mUnkb9d3c8;
-    ::ll::UntypedStorage<8, 16> mUnkf64894;
-    ::ll::UntypedStorage<8, 16> mUnkd50bf3;
-    ::ll::UntypedStorage<8, 64> mUnk4ff06a;
+    ::ll::UntypedStorage<8, 16> mUnk87e9ee;
+    ::ll::UntypedStorage<8, 16> mUnk4c4f54;
+    ::ll::UntypedStorage<8, 16> mUnk99c0e3;
+    ::ll::UntypedStorage<8, 64> mUnk4f55f4;
     ::ll::UntypedStorage<8, 64> mUnkb06921;
     // NOLINTEND
 
@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::cricket::JsepTransport*> ActiveTransports();
+    MCNAPI ::std::vector<::webrtc::JsepTransport*> ActiveTransports();
 
     MCNAPI void CommitTransports();
 
@@ -38,36 +38,36 @@ public:
 
     MCNAPI void DestroyUnusedTransports();
 
-    MCNAPI ::cricket::JsepTransport const* GetTransportByName(::std::string const& transport_name) const;
+    MCNAPI ::webrtc::JsepTransport const* GetTransportByName(::std::string const& transport_name) const;
 
-    MCNAPI ::cricket::JsepTransport* GetTransportByName(::std::string const& transport_name);
+    MCNAPI ::webrtc::JsepTransport* GetTransportByName(::std::string const& transport_name);
 
-    MCNAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string const& mid) const;
+    MCNAPI ::webrtc::JsepTransport const* GetTransportForMid(::std::string const& mid) const;
 
-    MCNAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string_view mid) const;
+    MCNAPI ::webrtc::JsepTransport const* GetTransportForMid(::std::string_view mid) const;
 
-    MCNAPI ::cricket::JsepTransport* GetTransportForMid(::std::string const& mid);
+    MCNAPI ::webrtc::JsepTransport* GetTransportForMid(::std::string const& mid);
 
     MCNAPI JsepTransportCollection(
-        ::std::function<bool(::std::string const&, ::cricket::JsepTransport*)> map_change_callback,
-        ::std::function<void()>                                                state_change_callback
+        ::std::function<bool(::std::string const&, ::webrtc::JsepTransport*)> map_change_callback,
+        ::std::function<void()>                                               state_change_callback
     );
 
-    MCNAPI void MaybeDestroyJsepTransport(::cricket::JsepTransport* transport);
+    MCNAPI void MaybeDestroyJsepTransport(::webrtc::JsepTransport* transport);
 
-    MCNAPI void RegisterTransport(::std::string const& mid, ::std::unique_ptr<::cricket::JsepTransport> transport);
+    MCNAPI void RegisterTransport(::std::string const& mid, ::std::unique_ptr<::webrtc::JsepTransport> transport);
 
     MCNAPI void RemoveTransportForMid(::std::string const& mid);
 
     MCNAPI bool RollbackTransports();
 
-    MCNAPI bool SetTransportForMid(::std::string const& mid, ::cricket::JsepTransport* jsep_transport);
+    MCNAPI bool SetTransportForMid(::std::string const& mid, ::webrtc::JsepTransport* jsep_transport);
 
-    MCNAPI bool TransportInUse(::cricket::JsepTransport* jsep_transport) const;
+    MCNAPI bool TransportInUse(::webrtc::JsepTransport* jsep_transport) const;
 
-    MCNAPI bool TransportNeededForRollback(::cricket::JsepTransport* jsep_transport) const;
+    MCNAPI bool TransportNeededForRollback(::webrtc::JsepTransport* jsep_transport) const;
 
-    MCNAPI ::std::vector<::cricket::JsepTransport*> Transports();
+    MCNAPI ::std::vector<::webrtc::JsepTransport*> Transports();
 
     MCNAPI ~JsepTransportCollection();
     // NOLINTEND
@@ -76,8 +76,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::std::function<bool(::std::string const&, ::cricket::JsepTransport*)> map_change_callback,
-        ::std::function<void()>                                                state_change_callback
+        ::std::function<bool(::std::string const&, ::webrtc::JsepTransport*)> map_change_callback,
+        ::std::function<void()>                                               state_change_callback
     );
     // NOLINTEND
 

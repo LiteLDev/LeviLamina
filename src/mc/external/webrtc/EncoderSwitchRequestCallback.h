@@ -19,12 +19,6 @@ public:
 
     virtual void RequestEncoderSwitch(::webrtc::SdpVideoFormat const&, bool) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -46,16 +46,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void list(::CommandOrigin const& output, ::CommandOutput&) const;
-
-    MCAPI void reload(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void set(::CommandOrigin const& origin, ::CommandOutput& output) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry, ::PermissionsFile* permissionsFile);
@@ -74,17 +64,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::PermissionCommand::Action>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::PermissionCommand::AvailableCommandPermissionPresets>();
-// clang-format on

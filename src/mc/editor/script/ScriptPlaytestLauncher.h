@@ -4,8 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Player;
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
 // clang-format on
@@ -30,13 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptPlaytestLauncher() = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptPlaytestLauncher(::Player& player, ::Scripting::WeakLifetimeScope const& scope);
+    virtual ~ScriptPlaytestLauncher();
     // NOLINTEND
 
 public:
@@ -48,9 +40,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Player& player, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

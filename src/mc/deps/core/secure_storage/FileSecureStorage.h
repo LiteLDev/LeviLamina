@@ -11,7 +11,6 @@ class ISecureStorageKeySystem;
 class SecureStorageKey;
 namespace Core { class Path; }
 namespace Core { class PathView; }
-namespace Json { class Value; }
 // clang-format on
 
 class FileSecureStorage : public ::SecureStorage {
@@ -31,7 +30,13 @@ public:
 
         virtual void setData(::std::string const& data, ::Core::Path path);
 
-        virtual ~StorageSystem() = default;
+        virtual ~StorageSystem();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -42,12 +47,6 @@ public:
         MCNAPI void $setData(::std::string const& data, ::Core::Path path);
 
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -80,12 +79,6 @@ public:
         MCNAPI void $setData(::std::string const& data, ::Core::Path path);
 
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -140,10 +133,12 @@ public:
     MCNAPI ::SecureStorageKey _getSecureStorageKey() const;
 
 #ifdef LL_PLAT_C
-    MCNAPI ::Json::Value _getStoredJson();
+    MCNAPI bool _init(bool expectedFailure);
 #endif
 
-    MCNAPI bool _init(bool);
+#ifdef LL_PLAT_S
+    MCNAPI bool _init(bool expectedFailure);
+#endif
 
     MCNAPI void _initalizeSymmetricEncyrption(::std::string& symmetricKey, bool force);
 
@@ -180,11 +175,5 @@ public:
     MCNAPI bool $get(::std::string const& key, ::std::string& outValue);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

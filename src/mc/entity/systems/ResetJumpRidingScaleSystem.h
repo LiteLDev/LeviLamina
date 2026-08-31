@@ -15,9 +15,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doResetJumpRidingScaleSystem(
-        ::StrictEntityContext const& jumpRidingScaleComponent,
-        ::JumpRidingScaleComponent&  vanillaClientGameplayComponent,
-        ::VanillaClientGameplayComponent&
+        ::StrictEntityContext const&,
+        ::JumpRidingScaleComponent&       jumpRidingScaleComponent,
+        ::VanillaClientGameplayComponent& vanillaClientGameplayComponent
     );
 
     MCAPI static ::TickingSystemWithInfo createSystem();

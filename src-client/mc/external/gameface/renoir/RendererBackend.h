@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace renoir { class DynamicRendererBackend; }
 namespace renoir { struct ConstantBufferObject; }
 namespace renoir { struct DepthStencilTexture; }
 namespace renoir { struct DepthStencilTextureObject; }
@@ -105,12 +104,12 @@ public:
     virtual void BeginCommands() = 0;
 
     virtual void WrapUserRenderTarget(
-        void*,
-        ::renoir::Texture2D const&,
-        ::renoir::Texture2DObject,
-        void*,
-        ::renoir::DepthStencilTexture const&,
-        ::renoir::DepthStencilTextureObject
+        void*                                userObject,
+        ::renoir::Texture2D const&           description,
+        ::renoir::Texture2DObject            object,
+        void*                                depthStencil,
+        ::renoir::DepthStencilTexture const& dsDescription,
+        ::renoir::DepthStencilTextureObject  dsObject
     ) = 0;
 
     virtual void
@@ -191,8 +190,6 @@ public:
 
     virtual void EndCommands() = 0;
 
-    virtual ::renoir::DynamicRendererBackend* GetDynamicInterface();
-
     virtual void SetDebugName(::renoir::Texture2DObject, char const*);
 
     virtual void SetDebugName(::renoir::DepthStencilTextureObject, char const*);
@@ -225,8 +222,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::renoir::DynamicRendererBackend* $GetDynamicInterface();
-
     MCNAPI void $SetDebugName(::renoir::Texture2DObject, char const*);
 
     MCNAPI void $SetDebugName(::renoir::DepthStencilTextureObject, char const*);

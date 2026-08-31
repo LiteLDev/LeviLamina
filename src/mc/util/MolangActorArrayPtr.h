@@ -27,6 +27,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::std::vector<::Actor*> actors);
+    MCAPI void* $ctor(::std::vector<::Actor*> actors);
     // NOLINTEND
 };

@@ -11,7 +11,6 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/typeid_t.h"
-#include "mc/diagnostics/LogAreaID.h"
 #include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
@@ -26,8 +25,8 @@ public:
     // clang-format off
     class ContentLogEndPointData;
     class ThreadSpecificData;
-    class ContentLogScope;
     class ScopeHandler;
+    class ContentLogScope;
     // clang-format on
 
     // ContentLog inner types define
@@ -36,18 +35,6 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ContentLogEndPoint>> mContentLogEndPoint;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ContentLogEndPointData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -74,17 +61,25 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::ContentLog::ThreadSpecificData::ScopeData>> mScope;
         ::ll::TypedStorage<8, 24, ::std::vector<::ContextMessageLogger*>>                     mMessageLoggers;
         // NOLINTEND
+    };
+
+    class ScopeHandler : public ::std::enable_shared_from_this<::ContentLog::ScopeHandler> {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            168,
+            ::Bedrock::Threading::InstancedThreadLocal<
+                ::ContentLog::ThreadSpecificData,
+                ::std::allocator<::ContentLog::ThreadSpecificData>>>
+            mThreadSpecificData;
+        // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~ThreadSpecificData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCNAPI ::std::string getScope();
         // NOLINTEND
     };
 
@@ -118,31 +113,6 @@ public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
-    class ScopeHandler : public ::std::enable_shared_from_this<::ContentLog::ScopeHandler> {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<
-            8,
-            168,
-            ::Bedrock::Threading::InstancedThreadLocal<
-                ::ContentLog::ThreadSpecificData,
-                ::std::allocator<::ContentLog::ThreadSpecificData>>>
-            mThreadSpecificData;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::std::string getScope();
-
-        MCNAPI void pushScope(
-            ::Bedrock::StaticOptimizedString                scope,
-            ::gsl::not_null<::ContentLog::ContentLogScope*> contentLogScope
-        );
         // NOLINTEND
     };
 
@@ -180,31 +150,13 @@ public:
     MCAPI void flush();
 #endif
 
-    MCAPI ::std::string getScope();
-
-    MCFOLD bool isEnabled() const;
-
-    MCAPI void log(bool, ::LogLevel, ::LogArea, ...);
+    MCAPI void log(bool logOnlyOnce, ::LogLevel level, ::LogArea area, ...);
 
     MCAPI void registerEndPoint(::Bedrock::typeid_t<::ContentLog> id, ::gsl::not_null<::ContentLogEndPoint*> endPoint);
 
     MCAPI void unregisterEndPoint(::gsl::not_null<::ContentLogEndPoint*> endPoint);
 
     MCAPI void updateEnabledStatus();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI static ::LogAreaID const getBedrockLogAreaFromContentLogArea(::LogArea contentLogArea);
-#endif
-
-    MCAPI static char const* getLogAreaName(::LogArea area);
-
-#ifdef LL_PLAT_C
-    MCAPI static char const* getLogLevelName(::LogLevel level);
-#endif
     // NOLINTEND
 
 public:
@@ -216,7 +168,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

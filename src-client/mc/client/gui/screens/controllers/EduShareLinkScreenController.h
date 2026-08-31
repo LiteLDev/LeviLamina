@@ -90,25 +90,13 @@ public:
 
     MCAPI ::std::string _getResourceAddedText() const;
 
-    MCAPI ::std::string _getShareButtonText() const;
-
     MCAPI ::std::string _getTeamsAdvancedShareTitle() const;
 
     MCAPI ::std::string _getTeamsBodyText() const;
 
     MCAPI void _openScreen(::EduShareLinkScreenController::ScreenState state);
 
-    MCAPI void _registerAddResourcesHandlers();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
     MCAPI void _registerShareDialogHandlers(::std::string const& copyUri);
-
-    MCAPI void _registerShareTeamsHandlers();
-
-    MCAPI void _registerSimpleShareMenuHandlers();
 
     MCAPI void _screenTTS(::std::string const& title, ::std::string const& contents, ::std::string const& extra);
 
@@ -130,13 +118,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

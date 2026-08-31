@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DynamicFormScreenController() /*override*/ = default;
+    virtual ~DynamicFormScreenController() /*override*/;
     // NOLINTEND
 
 public:
@@ -41,15 +41,9 @@ public:
         ::std::shared_ptr<::DynamicContentBindingInformation> bindingData
     );
 
-    MCAPI float _getNewSliderValueFinished(int index, float newPercent);
-
-    MCAPI float _getNewSliderValueNotFinished(int index, float newPercent, bool setChangeType);
-
     MCAPI void _handleValidationErrors(::Json::Reader const& reader, ::std::vector<::std::string> validationErrors);
 
     MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
 
     MCAPI bool _resolveControlEnabled(::Json::Value const& formJson) const;
 
@@ -68,6 +62,12 @@ public:
         ::JsonValidator::Property const&                      validator,
         ::std::shared_ptr<::DynamicContentBindingInformation> bindingData
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

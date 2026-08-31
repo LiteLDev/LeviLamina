@@ -41,6 +41,8 @@ public:
         // NOLINTBEGIN
         MCAPI BiomeReplacement(::SharedTypes::v1_26_0::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&);
 
+        MCFOLD bool operator==(::SharedTypes::v1_26_0::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&) const;
+
         MCAPI ~BiomeReplacement();
         // NOLINTEND
 
@@ -74,12 +76,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

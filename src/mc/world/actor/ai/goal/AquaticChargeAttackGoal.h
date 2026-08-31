@@ -56,21 +56,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AquaticChargeAttackGoal(::Mob& mob);
-
     MCAPI bool _isCloseEnoughToAttack() const;
 
     MCAPI void _performKnockbackAttack(::Actor& target);
 
-    MCAPI void _resetForNextCharge();
-
     MCAPI void _transitionToCooldown(bool hasAttacked);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

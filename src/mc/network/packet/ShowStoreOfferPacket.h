@@ -62,26 +62,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ShowStoreOfferPacket();
-
-#ifdef LL_PLAT_S
-    MCAPI explicit ShowStoreOfferPacket(::ShowStoreOfferPacketPayload payload);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-#ifdef LL_PLAT_S
-    MCAPI void* $ctor(::ShowStoreOfferPacketPayload payload);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;

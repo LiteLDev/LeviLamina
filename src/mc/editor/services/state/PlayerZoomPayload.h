@@ -29,13 +29,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerZoomPayload() /*override*/ = default;
+    virtual ~PlayerZoomPayload() /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class BossBarColor : int {
+enum class BossBarColor : uchar {
     Pink          = 0,
     Blue          = 1,
     Red           = 2,

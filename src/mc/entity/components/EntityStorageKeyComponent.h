@@ -32,8 +32,6 @@ public:
     MCAPI void addAdditionalSaveData(::Actor const& owner, ::CompoundTag& tag) const;
 
     MCFOLD ::EntityStorageKeyComponent& operator=(::EntityStorageKeyComponent&&);
-
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag);
     // NOLINTEND
 
 public:

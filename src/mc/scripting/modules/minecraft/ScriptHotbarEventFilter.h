@@ -38,10 +38,6 @@ public:
     MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter const&);
 
-    MCAPI void process();
-
-    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilterData const& data) const;
-
     MCAPI ~ScriptHotbarEventFilter();
     // NOLINTEND
 

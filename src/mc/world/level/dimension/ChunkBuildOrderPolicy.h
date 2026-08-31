@@ -30,12 +30,6 @@ public:
         ::ll::TypedStorage<4, 12, ::Vec3>                           parameter;
         ::ll::TypedStorage<4, 4, ::ChunkBuildOrderPolicy::HintType> type;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI int getPriority(::ChunkPos const& cp) const;
-        // NOLINTEND
     };
 
 public:
@@ -77,21 +71,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ChunkBuildOrderPolicy();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

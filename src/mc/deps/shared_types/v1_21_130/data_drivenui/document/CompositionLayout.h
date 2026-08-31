@@ -18,6 +18,7 @@ namespace SharedTypes::v1_21_130::DataDrivenUI { struct PanelCloseButton; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct PanelDecoration; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct PanelSpacing; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct PanelText; }
+namespace SharedTypes::v1_21_130::DataDrivenUI { struct ScrollableGridLayout; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct Visibility; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -45,6 +46,7 @@ public:
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelSpacing>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
+            ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ScrollableGridLayout>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>>>
         mMarkup;
@@ -54,12 +56,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

@@ -7,11 +7,6 @@
 #include "mc/deps/shared_types/legacy/ExpressionNode.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleCurveBase.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_20_80 {
 
 struct ParticleCurveSimpleBase : public ::SharedTypes::v1_20_80::ParticleCurveBase {
@@ -35,6 +30,8 @@ public:
     virtual uint64 _getMinCurveNodesAllowed();
 
     virtual uint64 _getMaxCurveNodesAllowed();
+
+    virtual ~ParticleCurveSimpleBase() /*override*/;
     // NOLINTEND
 
 public:
@@ -44,15 +41,15 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

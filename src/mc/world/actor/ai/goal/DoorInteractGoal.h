@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DoorInteractGoal() /*override*/ = default;
+    virtual ~DoorInteractGoal() /*override*/;
 
     virtual bool canUse() /*override*/;
 
@@ -50,14 +50,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DoorInteractGoal(::Mob& mob);
-
-    MCAPI bool _mobHasExited();
     // NOLINTEND
 
 public:
@@ -73,9 +65,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

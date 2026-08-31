@@ -40,8 +40,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit PiglinHeadModel(::GeometryPtr source);
-
-    MCFOLD ::ModelPart const& getHeadModel() const;
     // NOLINTEND
 
 public:
@@ -54,11 +52,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $render(::ScreenContext& screenContext);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

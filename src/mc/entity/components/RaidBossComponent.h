@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/safety/RedactableString.h"
-#include "mc/world/actor/ai/util/BossBarColor.h"
 #include "mc/world/actor/ai/util/BossEventUpdateType.h"
 #include "mc/world/phys/AABB.h"
 
@@ -14,7 +13,6 @@
 class Actor;
 class Mob;
 class Player;
-class Raid;
 class Village;
 // clang-format on
 
@@ -38,12 +36,11 @@ public:
 public:
     // prevent constructor by default
     RaidBossComponent& operator=(RaidBossComponent const&);
+    RaidBossComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RaidBossComponent();
-
     MCAPI RaidBossComponent(::RaidBossComponent const&);
 
     MCAPI void _broadcastBossEvent(::BossEventUpdateType type, ::Actor& owner);
@@ -52,60 +49,26 @@ public:
 
     MCAPI void _sendBossEvent(::BossEventUpdateType type, ::Player& player);
 
-    MCFOLD ::BossBarColor getColor();
-
-    MCAPI float getHealthPercent();
-
     MCAPI ::Bedrock::Safety::RedactableString getName();
-
-    MCFOLD ::ActorUniqueID getOwnerUniqueID();
-
-    MCFOLD bool getRaidInProgress();
-
-    MCFOLD ::std::shared_ptr<::Village> getVillage();
-
-    MCFOLD bool getWaveStarted();
-
-    MCAPI void initialize(::ActorUniqueID ownerID);
 
     MCAPI bool isWithinRange(::Mob const& player);
 
     MCAPI void registerPlayer(::Player* player);
 
-    MCAPI void removeBossBar(::Actor& owner);
-
     MCAPI void resendRaidBossEventData(::Player& player);
 
     MCAPI void sendRegistryMessages(::Actor& owner);
-
-    MCFOLD void setVillage(::std::weak_ptr<::Village> village);
-
-    MCFOLD void setWaveStarted(bool val);
-
-    MCAPI void setupBossBarInfo(::Actor& owner, ::Village* village);
 
     MCAPI bool tryRemoveBoss(::Actor& owner, ::Player& player);
 
     MCAPI void unRegisterPlayer(::Player* player);
 
-    MCAPI void updateBossBarStats(::Actor& owner, ::Raid const& raid);
-
     MCAPI void updateHealthBarVisible(bool visible, ::Actor& owner);
-
-    MCAPI ~RaidBossComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::RaidBossComponent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -22,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerActorManagerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void initializeActor(::Actor& actor) /*override*/;
@@ -37,18 +33,6 @@ public:
     virtual void removeActorInLevelChunk(::Actor const& actor) /*override*/;
 
     virtual void deleteActorFromWorldInLevelChunk(::Actor const& actor) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ServerActorManagerProxy(::Level& level);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level);
     // NOLINTEND
 
 public:

@@ -26,10 +26,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Route(
-        ::std::string const&       fileName,
-        ::std::string const&       route,
-        ::OreUI::RouteMode         mode,
-        ::OreUI::RoutePrerequisite prerequisite
+        ::std::string const&             fileName,
+        ::std::string const&             route,
+        ::OreUI::RouteMode const         mode,
+        ::OreUI::RoutePrerequisite const prerequisite
     );
     // NOLINTEND
 
@@ -37,10 +37,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::string const&       fileName,
-        ::std::string const&       route,
-        ::OreUI::RouteMode         mode,
-        ::OreUI::RoutePrerequisite prerequisite
+        ::std::string const&             fileName,
+        ::std::string const&             route,
+        ::OreUI::RouteMode const         mode,
+        ::OreUI::RoutePrerequisite const prerequisite
     );
     // NOLINTEND
 };

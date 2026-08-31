@@ -24,32 +24,25 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SemVersionConstraint& operator=(SemVersionConstraint const&);
-    SemVersionConstraint();
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SemVersionConstraint(::SharedTypes::SemVersionConstraint const&);
-
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
-
     MCAPI ::SharedTypes::SemVersionConstraint& range(::SemVersion const& min, ::SemVersion const& max);
 
     MCAPI void validateValue(::SemVersion const& vers, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::SemVersionConstraint const&);
-    // NOLINTEND
+    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+
     // NOLINTEND
 };
 

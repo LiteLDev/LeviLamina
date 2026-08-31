@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
@@ -24,27 +25,27 @@ public:
         ::Block const&       block
     ) /*override*/;
 
-    virtual void dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) /*override*/;
+    virtual void dropResources(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Actor const*    actorContext
+    ) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $sendEvents(
+    MCAPI void $sendEvents(
         ::LevelEventManager& levelEventManager,
         ::BlockSource&       region,
         ::BlockPos const&    pos,
         ::Block const&       block
     );
 
-    MCNAPI void $dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
+    MCAPI void
+    $dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor const* actorContext);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,23 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/shared_types/legacy/actor/PaletteColor.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace mce { class Color; }
 // clang-format on
 
 class Palette {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::SharedTypes::Legacy::PaletteColor fromByte(uchar id);
-
-    MCNAPI static ::mce::Color const& getColor(::SharedTypes::Legacy::PaletteColor id);
-    // NOLINTEND
-
 public:
     // static variables
     // NOLINTBEGIN

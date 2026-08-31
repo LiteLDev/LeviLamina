@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -31,15 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ThumbnailCacheFetchRequestPayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ThumbnailCacheFetchRequestPayload(::mce::UUID const& id, uint hash);
-#endif
+    virtual ~ThumbnailCacheFetchRequestPayload() /*override*/;
     // NOLINTEND
 
 public:
@@ -49,11 +40,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::mce::UUID const& id, uint hash);
-#endif
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

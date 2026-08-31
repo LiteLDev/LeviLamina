@@ -19,18 +19,6 @@ public:
     RealmsServicePackSourceOptions& operator=(RealmsServicePackSourceOptions const&);
     RealmsServicePackSourceOptions(RealmsServicePackSourceOptions const&);
     RealmsServicePackSourceOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~RealmsServicePackSourceOptions();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Realms

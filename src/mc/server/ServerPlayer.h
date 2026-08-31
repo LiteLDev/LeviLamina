@@ -12,7 +12,6 @@
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
-#include "mc/deviceinfo/DeviceMemoryTier.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/util/CallbackToken.h"
 #include "mc/util/HudElement.h"
@@ -43,9 +42,9 @@ class ContainerManagerModel;
 class DataLoadHelper;
 class EntityContext;
 class IContainerManager;
+class IPacketObserver;
 class InventoryTransaction;
 class ItemStack;
-class ItemStackNetManagerServer;
 class Level;
 class NetworkIdentifier;
 class Packet;
@@ -59,9 +58,7 @@ struct DimensionType;
 struct INpcDialogueData;
 struct KnockbackParameters;
 struct PlayerAuthenticationInfo;
-struct PlayerMovementSettings;
 struct SyncedClientOptionsComponent;
-struct SyncedClientOptionsUpdate;
 struct VariantParameterList;
 namespace Bedrock::DDUI { class DataStoreSyncServer; }
 namespace ClientBlobCache::Server { class ActiveTransfersManager; }
@@ -130,9 +127,10 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::DDUI::DataStoreSyncServer>>             mDataStoreSync;
     ::ll::TypedStorage<1, 1, bool>                                                                mHasQueuedViewMove;
     ::ll::TypedStorage<1, 1, bool>                                                                mIsPendingDisconnect;
-    ::ll::TypedStorage<4, 52, ::std::array<::HudVisibility, 13>> mHudElementsVisibilityState;
-    ::ll::TypedStorage<8, 24, ::ServerLocatorBar>                mServerLocatorBar;
-    ::ll::TypedStorage<8, 24, ::VanillaWaypointManager>          mVanillaWaypointManager;
+    ::ll::TypedStorage<4, 52, ::std::array<::HudVisibility, 13>>             mHudElementsVisibilityState;
+    ::ll::TypedStorage<8, 24, ::ServerLocatorBar>                            mServerLocatorBar;
+    ::ll::TypedStorage<8, 24, ::VanillaWaypointManager>                      mVanillaWaypointManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IPacketObserver>> mPacketObserver;
     // NOLINTEND
 
 public:
@@ -144,7 +142,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~ServerPlayer() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ServerPlayer() /*override*/;
+#endif
 
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
@@ -164,7 +166,7 @@ public:
 
     virtual void frameUpdate(::FrameUpdateContextBase&) /*override*/;
 
-    virtual bool isValidTarget(::Actor*) const /*override*/;
+    virtual bool isValidTarget(::Actor* attacker) const /*override*/;
 
     virtual bool swing(::ActorSwingSource swingSource) /*override*/;
 
@@ -220,7 +222,7 @@ public:
 
     virtual void openInventory() /*override*/;
 
-    virtual void openBook(int lectern, bool, int, ::BlockActor*) /*override*/;
+    virtual void openBook(int, bool, int, ::BlockActor* lectern) /*override*/;
 
     virtual void openSign(::BlockPos const& position, bool isFrontSide) /*override*/;
 
@@ -236,9 +238,9 @@ public:
         ::IContainerManager& menu,
         ::Container&         container,
         int                  slot,
+        ::ItemStack const&   oldItem,
         ::ItemStack const&   newItem,
-        ::ItemStack const&   isResultSlot,
-        bool
+        bool                 isResultSlot
     ) /*override*/;
 
     virtual void refreshContainer(::IContainerManager& menu) /*override*/;
@@ -323,8 +325,6 @@ public:
         ::SyncedClientOptionsComponent                     clientOptions
     );
 
-    MCAPI bool _checkForLoadedTickingAreas() const;
-
     MCAPI void _logCDEvent(
         ::CrashDumpLogStringID option1,
         ::CrashDumpLogStringID option2,
@@ -332,15 +332,9 @@ public:
         ::CrashDumpLogStringID option4
     );
 
-    MCAPI ::ContainerID _nextContainerCounter();
-
     MCAPI void _removeNearbyEntities();
 
     MCAPI void _setContainerManagerModel(::std::shared_ptr<::ContainerManagerModel> menu);
-
-    MCAPI void _updateNearbyActors();
-
-    MCAPI void _updateWaitingForTickingAreasPreload();
 
     MCAPI void addActorToReplicationList(::gsl::not_null<::Actor*> actor, bool autonomous);
 
@@ -352,25 +346,7 @@ public:
 
     MCAPI void doInitialSpawn();
 
-    MCAPI ::Bedrock::DDUI::DataStoreSyncServer& getDataStoreSync();
-
-    MCAPI bool getFilterProfanity() const;
-
-    MCAPI ::std::array<::HudVisibility, 13> const& getHudVisibilityState() const;
-
-    MCFOLD ::ItemStackNetManagerServer& getItemStackNetManagerServer();
-
     MCAPI ::std::string getLanguageCode() const;
-
-    MCAPI int getMaxClientViewDistance() const;
-
-    MCAPI ::DeviceMemoryTier getMemoryTier() const;
-
-    MCAPI ::PlatformType getPlatformType() const;
-
-    MCAPI ::ServerLocatorBar& getServerLocatorBar();
-
-    MCAPI ::std::optional<int> getTextFilteringDebugTimeoutMilliSeconds() const;
 
     MCAPI void handleActorPickRequestOnServer(::Actor& target, bool withData, bool isActorAgentAndEduMode);
 
@@ -380,30 +356,18 @@ public:
 
     MCAPI void initiateContainerClose();
 
-    MCAPI bool isCompatibleWithClientSideChunkGen() const;
-
     MCAPI bool isInPickRangeOf(::BlockPos const& pos) const;
-
-    MCAPI bool isPendingDisconnect() const;
-
-    MCAPI bool isShowingCredits() const;
 
     MCAPI ::ContainerID openUnmanagedContainer(
         ::SharedTypes::Legacy::ContainerType        containerType,
         ::std::variant<::BlockPos, ::ActorUniqueID> owner
     );
 
-    MCAPI void postLoad(bool newPlayerCreated);
-
     MCAPI void postReplicationTick(::Tick const& currentTick);
 
     MCAPI void preReplicationTick(::Tick const& currentTick);
 
     MCAPI bool selectItem(::ItemStack const& item);
-
-    MCAPI void sendMobEffectPackets();
-
-    MCAPI void sendPlayerAuthInputReceivedEvent();
 
     MCAPI void sendPlayerContainerClosedEvent();
 
@@ -419,27 +383,7 @@ public:
         ::std::optional<::std::vector<::HudElement>> const& hudElements
     );
 
-    MCAPI void setIsCompatibleWithClientSideChunkGen(bool isCompatible);
-
-    MCAPI void setIsPendingDisconnect(bool isPendingDisconnect);
-
-    MCAPI void setIsShowingCredits(bool value);
-
-    MCAPI void setLanguageCode(::std::string const& languageCode);
-
-    MCAPI void setLocalPlayerAsInitialized();
-
-    MCAPI void triggerRespawnFromCompletingTheEnd();
-
-    MCAPI void updateClientOptions(::SyncedClientOptionsUpdate const& changedOptions);
-
     MCAPI void updatePartyState(::std::optional<::PlayerPartyInfo> partyInfo);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void initializePlayerTickComponents(::EntityContext& entity, ::PlayerMovementSettings const& settings);
     // NOLINTEND
 
 public:
@@ -471,7 +415,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
@@ -493,7 +439,7 @@ public:
 
     MCFOLD void $frameUpdate(::FrameUpdateContextBase&);
 
-    MCAPI bool $isValidTarget(::Actor*) const;
+    MCAPI bool $isValidTarget(::Actor* attacker) const;
 
     MCAPI bool $swing(::ActorSwingSource swingSource);
 
@@ -547,7 +493,7 @@ public:
 
     MCAPI void $openInventory();
 
-    MCAPI void $openBook(int lectern, bool, int, ::BlockActor*);
+    MCAPI void $openBook(int, bool, int, ::BlockActor* lectern);
 
     MCAPI void $openSign(::BlockPos const& position, bool isFrontSide);
 
@@ -563,9 +509,9 @@ public:
         ::IContainerManager& menu,
         ::Container&         container,
         int                  slot,
+        ::ItemStack const&   oldItem,
         ::ItemStack const&   newItem,
-        ::ItemStack const&   isResultSlot,
-        bool
+        bool                 isResultSlot
     );
 
     MCAPI void $refreshContainer(::IContainerManager& menu);
@@ -625,11 +571,5 @@ public:
     MCAPI void $_serverInitItemStackIds();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -12,7 +12,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IMinecraftScreenModel;
 class MinecraftScreenModel;
 // clang-format on
 
@@ -40,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ReconnectOnResumeProgressHandler() /*override*/ = default;
+    virtual ~ReconnectOnResumeProgressHandler() /*override*/;
 
     virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
@@ -69,8 +68,6 @@ public:
             ::ExperienceConnectionData,
             ::Realms::RealmId> cookie
     );
-
-    MCAPI void doTick(::IMinecraftScreenModel& minecraftScreenModel);
     // NOLINTEND
 
 public:
@@ -86,6 +83,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $onStart(::MinecraftScreenModel&);
@@ -96,7 +99,7 @@ public:
 
     MCFOLD void $onExit(::MinecraftScreenModel&);
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
     MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 

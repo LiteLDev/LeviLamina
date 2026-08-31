@@ -27,17 +27,11 @@ public:
     // NOLINTBEGIN
     virtual ~SetPotionFunction() /*override*/;
 
-    virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext& context) /*override*/;
 
-    virtual void apply(::ItemInstance& item, ::Random&, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemInstance& item, ::Random&, ::LootTableContext& context) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::std::string const& getPotionName() const;
     // NOLINTEND
 
 public:
@@ -50,15 +44,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
+    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random&, ::LootTableContext&);
+    MCFOLD void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 

@@ -60,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeleteStorageAreaContentProgressHandler() /*override*/ = default;
+    virtual ~DeleteStorageAreaContentProgressHandler() /*override*/;
 
     virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
@@ -87,16 +87,6 @@ public:
         ::std::function<void()> const&&                             onCompleteCallback
     );
 
-    MCAPI DeleteStorageAreaContentProgressHandler(
-        ::DeleteStorageAreaContentProgressHandler::CancelTimeInfo&& cancelTimeInfo,
-        ::std::function<void()> const&&                             onCompleteCallback,
-        ::std::string&&                                             deleteStorageContentTitle
-    );
-
-    MCAPI void _checkUserStorageList();
-
-    MCAPI void _onComplete(::MinecraftScreenModel& minecraftScreenModel);
-
     MCAPI void deleteDirectoryContentsRecursively(
         ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>& rootPath,
         ::std::string const&                                      dirToDelete
@@ -110,12 +100,12 @@ public:
         ::DeleteStorageAreaContentProgressHandler::CancelTimeInfo&& cancelTimeInfo,
         ::std::function<void()> const&&                             onCompleteCallback
     );
+    // NOLINTEND
 
-    MCAPI void* $ctor(
-        ::DeleteStorageAreaContentProgressHandler::CancelTimeInfo&& cancelTimeInfo,
-        ::std::function<void()> const&&                             onCompleteCallback,
-        ::std::string&&                                             deleteStorageContentTitle
-    );
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

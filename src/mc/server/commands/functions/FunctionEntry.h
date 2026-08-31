@@ -24,16 +24,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FunctionEntry() /*override*/ = default;
+    virtual ~FunctionEntry() /*override*/;
 
     virtual void
     execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCFOLD ::FunctionState getErrorState() const;
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -42,11 +42,5 @@ public:
     MCAPI void $execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

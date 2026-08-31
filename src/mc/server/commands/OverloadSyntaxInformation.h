@@ -14,16 +14,4 @@ public:
     ::ll::TypedStorage<4, 4, uint>           start;
     ::ll::TypedStorage<4, 4, uint>           length;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~OverloadSyntaxInformation();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

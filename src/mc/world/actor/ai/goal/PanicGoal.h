@@ -70,12 +70,6 @@ public:
         bool                                                   preferWater,
         ::std::vector<::SharedTypes::Legacy::ActorDamageCause> damageCauses
     );
-
-    MCAPI ::std::optional<::Vec3> _findWaterPos(int xzDist, int yDist) const;
-
-    MCAPI bool _shouldTryToMoveAway();
-
-    MCAPI ::std::optional<::Vec3> _tryGeneratePathEnd() const;
     // NOLINTEND
 
 public:

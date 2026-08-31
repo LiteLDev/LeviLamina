@@ -14,14 +14,11 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class BlockSource;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class DimensionHeightRange;
 class Level;
 class StructureEditorData;
-class StructureSettings;
 // clang-format on
 
 class StructureCommand : public ::Command {
@@ -54,11 +51,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _delete(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void
-    _editorDelete(::CommandOrigin const& origin, ::CommandOutput& output, ::std::string const& fullName) const;
-
     MCAPI void _editorLoad(
         ::CommandOrigin const& origin,
         ::CommandOutput&       output,
@@ -68,24 +60,7 @@ public:
         ::StructureEditorData& settings
     ) const;
 
-    MCAPI void _editorSave(
-        ::CommandOrigin const&     origin,
-        ::CommandOutput&           output,
-        ::BlockSource&             region,
-        ::std::string const&       fullName,
-        ::BlockPos                 from,
-        ::BlockPos                 to,
-        ::StructureSettings const& settings
-    ) const;
-
     MCAPI ::std::string _getFullName() const;
-
-    MCAPI bool
-    _isValidSize(::BlockPos const& size, ::DimensionHeightRange const& heightRange, ::CommandOutput& output) const;
-
-    MCAPI void _load(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void _save(::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
@@ -100,11 +75,5 @@ public:
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

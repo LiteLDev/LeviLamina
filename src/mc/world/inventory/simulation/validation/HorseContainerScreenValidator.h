@@ -7,18 +7,6 @@
 
 class HorseContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI HorseContainerScreenValidator();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

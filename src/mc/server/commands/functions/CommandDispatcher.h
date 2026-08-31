@@ -15,21 +15,15 @@ class CommandDispatcher : public ::ICommandDispatcher {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandDispatcher() /*override*/ = default;
+    virtual ~CommandDispatcher() /*override*/;
 
     virtual int performCommand(::CommandOrigin const& origin, ::Command& command) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI CommandDispatcher();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

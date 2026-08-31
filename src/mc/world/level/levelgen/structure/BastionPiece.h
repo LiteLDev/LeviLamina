@@ -24,15 +24,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual int generateHeightAtPosition(
-        ::BlockPos const& dim,
-        ::Dimension&,
-        ::BlockVolume&,
-        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&
+        ::BlockPos const&                                                          pos,
+        ::Dimension&                                                               dim,
+        ::BlockVolume&                                                             box,
+        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
     ) const /*override*/;
 
-    virtual ::Block const* getSupportBlock(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
+    virtual ::Block const*
+    getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const /*override*/;
 
-    virtual ::Block const& getBeardStabilizeBlock(::Block const&) const /*override*/;
+    virtual ::Block const& getBeardStabilizeBlock(::Block const& foundationBlock) const /*override*/;
 
     virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const /*override*/;
     // NOLINTEND
@@ -53,24 +54,19 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI int $generateHeightAtPosition(
-        ::BlockPos const& dim,
-        ::Dimension&,
-        ::BlockVolume&,
-        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&
+        ::BlockPos const&                                                          pos,
+        ::Dimension&                                                               dim,
+        ::BlockVolume&                                                             box,
+        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
     ) const;
 
-    MCFOLD ::Block const* $getSupportBlock(::BlockSource&, ::BlockPos const&, ::Block const&) const;
+    MCFOLD ::Block const*
+    $getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI ::Block const& $getBeardStabilizeBlock(::Block const&) const;
+    MCAPI ::Block const& $getBeardStabilizeBlock(::Block const& foundationBlock) const;
 
     MCFOLD ::AdjustmentEffect $getTerrainAdjustmentEffect() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

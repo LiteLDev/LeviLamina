@@ -4,9 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class DanceComponentListener;
-class Vec3;
 // clang-format on
 
 class DanceComponent {
@@ -20,12 +18,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI DanceComponent();
-
-    MCAPI bool inListenDistance(::Vec3 const& pos) const;
-
-    MCAPI void initFromDefinition(::Actor& actor);
-
-    MCAPI void initFromDefinition(::Actor& actor, float distance);
     // NOLINTEND
 
 public:

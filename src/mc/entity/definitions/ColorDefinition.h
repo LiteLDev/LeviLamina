@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace JsonUtil { class EmptyClass; }
-// clang-format on
-
 struct ColorDefinition {
 public:
     // member variables
@@ -26,13 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void setColorChoice(int const& colorChoice);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void
-    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ColorDefinition>>& root);
+    MCAPI void setColorChoice(int const& colorChoice);
     // NOLINTEND
 };

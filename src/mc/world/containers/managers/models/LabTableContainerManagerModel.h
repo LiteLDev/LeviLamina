@@ -28,15 +28,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LabTableContainerManagerModel() /*override*/ = default;
+    virtual ~LabTableContainerManagerModel() /*override*/;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
+    virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    virtual void setData(int, int) /*override*/;
+    virtual void setData(int id, int value) /*override*/;
 
     virtual bool isValid(float pickRange) /*override*/;
 
@@ -58,15 +58,21 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCFOLD void $setData(int, int);
+    MCFOLD void $setData(int id, int value);
 
     MCAPI bool $isValid(float pickRange);
 

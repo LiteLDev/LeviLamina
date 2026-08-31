@@ -28,23 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PackDetails();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackDetails(::World::PackDetails const&);
-
-    MCAPI ::World::PackDetails& operator=(::World::PackDetails const&);
-
     MCAPI ~PackDetails();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::World::PackDetails const&);
     // NOLINTEND
 
 public:

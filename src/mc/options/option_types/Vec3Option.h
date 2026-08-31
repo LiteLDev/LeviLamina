@@ -27,18 +27,4 @@ public:
 
     virtual void load(::Json::Value const& valueJson) /*override*/;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void reset(bool saveOptionChange);
-#endif
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

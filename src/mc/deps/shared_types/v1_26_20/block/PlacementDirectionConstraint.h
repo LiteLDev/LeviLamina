@@ -8,24 +8,17 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::v1_26_20::BlockDefinition { struct PlacementDirection; }
-namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
-struct PlacementDirectionConstraint
+class PlacementDirectionConstraint
 : public ::cereal::ConstraintHandle<::SharedTypes::v1_26_20::BlockDefinition::PlacementDirectionConstraint> {
 public:
-    // static functions
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static ::cereal::internal::ConstraintDescription description(::cereal::ContextArea);
-
-    MCAPI static void validateValue(
-        ::SharedTypes::v1_26_20::BlockDefinition::PlacementDirection const& placementDirection,
-        ::cereal::SerializerContext&                                        context
-    );
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
     // NOLINTEND
 
 public:
@@ -35,9 +28,11 @@ public:
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
+
     // NOLINTEND
 };
 

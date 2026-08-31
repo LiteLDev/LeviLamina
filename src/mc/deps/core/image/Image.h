@@ -6,6 +6,7 @@
 #include "mc/deps/core/container/Blob.h"
 #include "mc/deps/core/image/ImageFormat.h"
 #include "mc/deps/core/image/ImageUsage.h"
+#include "mc/deps/core/math/AlphaUsage.h"
 
 namespace mce {
 
@@ -18,6 +19,7 @@ struct Image {
     uint32              mHeight;
     uint32              mDepth;
     mce::ImageUsage     mUsage;
+    mce::AlphaUsage     mAlphaUsage;
     mce::Image::Storage mImageBytes;
 
     LLNDAPI Image();

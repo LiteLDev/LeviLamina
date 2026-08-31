@@ -54,8 +54,6 @@ public:
 
     MCNAPI ::Social::EduDedicatedServerDetails& operator=(::Social::EduDedicatedServerDetails&&);
 
-    MCNAPI ::Json::Value toJsonValue() const;
-
     MCNAPI ~EduDedicatedServerDetails();
 #endif
     // NOLINTEND

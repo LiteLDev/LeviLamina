@@ -32,10 +32,4 @@ public:
 
     MCNAPI static ::std::string const& RAW_TEXT_WITH_KEY();
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

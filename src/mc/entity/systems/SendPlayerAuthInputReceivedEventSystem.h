@@ -15,9 +15,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doSendPlayerAuthInputReceivedEvent(
-        ::StrictEntityContext&   playerComponent,
-        ::PlayerComponent const& actorOwnerComponent,
-        ::ActorOwnerComponent&
+        ::StrictEntityContext&,
+        ::PlayerComponent const& playerComponent,
+        ::ActorOwnerComponent&   actorOwnerComponent
     );
 
     MCAPI static ::TickingSystemWithInfo create();

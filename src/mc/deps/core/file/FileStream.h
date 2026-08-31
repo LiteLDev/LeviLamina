@@ -34,11 +34,7 @@ public:
     MCNAPI FileStream(uint64 bufferSize, ::Core::PathView filename, int openMode);
 #endif
 
-    MCNAPI void open(::Core::PathView filename, int om);
-
     MCNAPI void open(::Core::PathView filename, ::Core::FileOpenMode openMode);
-
-    MCNAPI void setLoggingEnabled(bool enabled);
     // NOLINTEND
 
 public:

@@ -30,15 +30,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $execute();
 
-    MCFOLD bool $isDone();
+    MCAPI bool $isDone();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

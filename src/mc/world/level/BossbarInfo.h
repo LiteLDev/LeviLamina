@@ -15,7 +15,7 @@ struct BossbarInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::BossBarColor>                  mColor;
+    ::ll::TypedStorage<1, 1, ::BossBarColor>                  mColor;
     ::ll::TypedStorage<4, 4, int>                             mMax;
     ::ll::TypedStorage<4, 4, int>                             mValue;
     ::ll::TypedStorage<1, 1, bool>                            mVisible;

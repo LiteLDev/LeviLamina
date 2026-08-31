@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -13,7 +13,7 @@ class Minecraft;
 
 namespace OreUI {
 
-class ImmediateRespawnFacet : public ::OreUI::FacetBase<::OreUI::ImmediateRespawnFacet> {
+class ImmediateRespawnFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ImmediateRespawnFacet> {
 public:
     // member variables
     // NOLINTBEGIN

@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,18 +37,6 @@ public:
         ManifestEntry& operator=(ManifestEntry const&);
         ManifestEntry(ManifestEntry const&);
         ManifestEntry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ManifestEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct ManifestState {
@@ -73,7 +61,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~SelectionServiceProvider() = default;
+#else // LL_PLAT_C
+    virtual ~SelectionServiceProvider();
+#endif
 
     virtual ::Editor::Selection::SelectionContainerVolume const& containerVolume() const = 0;
 
@@ -108,15 +100,11 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

@@ -22,12 +22,4 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::ClientMoveInputHandler> $_createClientMoveInputHandler();
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForIConfigListener();
-    // NOLINTEND
 };

@@ -54,20 +54,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ToastMessage(::ToastMessage&&);
-
     MCAPI ToastMessage(::ToastMessage const&);
 
     MCAPI explicit ToastMessage(::std::string const& message);
-
-    MCAPI ToastMessage(::ToastMessageType type, ::std::string const& title, ::std::string const& subtitle);
-
-    MCAPI ToastMessage(
-        ::ToastMessageType   type,
-        ::std::string const& title,
-        ::std::string const& subtitle,
-        ::Json::Value const& propertyBag
-    );
 
     MCAPI ToastMessage(
         ::ToastMessageType   type,
@@ -89,30 +78,15 @@ public:
 
     MCAPI ::ToastMessage& operator=(::ToastMessage const&);
 
-    MCAPI ::ToastMessage& operator=(::ToastMessage&&);
-
-    MCAPI void setIconIds(::std::vector<::ToastIconData> ids);
-
     MCAPI ~ToastMessage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ToastMessage&&);
-
     MCAPI void* $ctor(::ToastMessage const&);
 
     MCAPI void* $ctor(::std::string const& message);
-
-    MCAPI void* $ctor(::ToastMessageType type, ::std::string const& title, ::std::string const& subtitle);
-
-    MCAPI void* $ctor(
-        ::ToastMessageType   type,
-        ::std::string const& title,
-        ::std::string const& subtitle,
-        ::Json::Value const& propertyBag
-    );
 
     MCAPI void* $ctor(
         ::ToastMessageType   type,

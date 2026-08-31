@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptServerStateMonitor.h"
 #include "mc/world/level/chunk/EntitySpawnReason.h"
 
@@ -14,10 +13,6 @@ class BlockSource;
 class IRandom;
 class Mob;
 class ServerLevel;
-struct ServerScriptManagerEvents;
-namespace ScriptModuleMinecraft { struct ScriptNamespaceNameError; }
-namespace ScriptModuleMinecraft { struct ScriptSpawnRulesInvalidRegistryError; }
-namespace Scripting { struct InvalidArgumentError; }
 namespace br::spawn { struct EntityType; }
 // clang-format on
 
@@ -47,44 +42,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _onReload() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptCustomSpawnRulesRegistry(::ServerScriptManagerEvents& events, ::ServerLevel& level);
-
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError,
-        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
-        ::Scripting::InvalidArgumentError>
-    registerEntitySpawnCallback(
-        ::std::string const& id,
-        ::std::function<bool(
-            ::br::spawn::EntityType const&,
-            ::BlockSource&,
-            ::br::spawn::EntitySpawnReason&,
-            ::BlockPos,
-            ::IRandom&
-        )>                   callback
-    );
-
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError,
-        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
-        ::Scripting::InvalidArgumentError>
-    registerObstructionCallback(
-        ::std::string const&                                                                id,
-        ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)> callback
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerScriptManagerEvents& events, ::ServerLevel& level);
     // NOLINTEND
 
 public:

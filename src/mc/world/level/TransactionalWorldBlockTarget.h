@@ -30,13 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TransactionalWorldBlockTarget();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TransactionalWorldBlockTarget() /*override*/ = default;
+    virtual ~TransactionalWorldBlockTarget() /*override*/;
 
     virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
 
@@ -90,15 +86,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit TransactionalWorldBlockTarget(::IBlockWorldGenAPI& target);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IBlockWorldGenAPI& target);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -110,7 +100,11 @@ public:
 
     MCFOLD ::Block const& $getExtraBlock(::BlockPos const& pos) const;
 
+#ifdef LL_PLAT_S
+    MCAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
+#else // LL_PLAT_C
     MCFOLD ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
+#endif
 
     MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
     $fetchBlocksInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate);
@@ -145,7 +139,7 @@ public:
 
     MCAPI bool $isInBounds(::Pos const& pos) const;
 
-    MCFOLD short $getLocalWaterLevel(::BlockPos const& pos) const;
+    MCAPI short $getLocalWaterLevel(::BlockPos const& pos) const;
 
     MCAPI ::LevelData const& $getLevelData() const;
 

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,20 +31,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptGameTestRegistrationBuilder& operator=(ScriptGameTestRegistrationBuilder const&);
-    ScriptGameTestRegistrationBuilder(ScriptGameTestRegistrationBuilder const&);
-    ScriptGameTestRegistrationBuilder();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptGameTestRegistrationBuilder(::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&);
-
-    MCAPI explicit ScriptGameTestRegistrationBuilder(
-        ::std::shared_ptr<::ScriptModuleGameTest::BaseScriptGameTestFunction> gameTestFunction
-    );
-
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     batch(::std::string batchName);
 
@@ -53,9 +41,6 @@ public:
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     maxTicks(int maxTicks);
-
-    MCAPI ::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&
-    operator=(::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&);
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     padding(int blockPadding);
@@ -68,10 +53,6 @@ public:
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     rotate(bool rotate);
-
-    MCAPI void setScriptObjectHandle(
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> handle
-    );
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     setupTicks(int setupTicks);
@@ -90,22 +71,6 @@ public:
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     tag(::std::string tag);
-
-    MCAPI ~ScriptGameTestRegistrationBuilder();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&);
-
-    MCAPI void* $ctor(::std::shared_ptr<::ScriptModuleGameTest::BaseScriptGameTestFunction> gameTestFunction);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

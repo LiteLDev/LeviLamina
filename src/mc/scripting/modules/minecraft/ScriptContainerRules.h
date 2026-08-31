@@ -5,8 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class ItemDescriptor;
-class StorageItemComponent;
-class StorageWeightLimitItemComponent;
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -23,25 +21,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptContainerRules& operator=(ScriptContainerRules const&);
-    ScriptContainerRules(ScriptContainerRules const&);
-    ScriptContainerRules();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptContainerRules(
-        ::StorageItemComponent const&            storageItemComponent,
-        ::StorageWeightLimitItemComponent const* storageWeightLimitItemComponent
-    );
-
-    MCAPI void _setAllowedItems(::std::vector<::std::string> const& allowedItems);
-
-    MCAPI void _setBannedItems(::std::vector<::std::string> const& bannedItems);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptContainerRules& operator=(::ScriptModuleMinecraft::ScriptContainerRules&&);
-
     MCAPI ~ScriptContainerRules();
     // NOLINTEND
 
@@ -49,15 +30,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::StorageItemComponent const&            storageItemComponent,
-        ::StorageWeightLimitItemComponent const* storageWeightLimitItemComponent
-    );
     // NOLINTEND
 
 public:

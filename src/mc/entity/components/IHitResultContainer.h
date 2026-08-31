@@ -19,10 +19,4 @@ public:
 
     virtual ::gsl::span<::std::pair<::HitResult, ::HitResult> const> getHits() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

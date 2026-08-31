@@ -22,18 +22,14 @@ public:
     ::ll::UntypedStorage<8, 48>  mUnk5b8aee;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PriorityPreset& operator=(PriorityPreset const&);
+    PriorityPreset();
 
-#else // LL_PLAT_C
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PriorityPreset();
-
     MCNAPI PriorityPreset(::CameraAimAssist::PriorityPreset const&);
 
     MCNAPI PriorityPreset(
@@ -45,18 +41,10 @@ public:
         ::HashedString const&                                       defaultCategory
     );
 
-    MCNAPI ::CameraAimAssist::PriorityPresetExclusionData const& getExclusionList() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::std::unordered_set<::HashedString> const& getLiquidTargetingItems() const;
-#endif
-
     MCNAPI ::HashedString const& getPriorityCategoryNameOfItem(::HashedString const& itemName) const;
 
-    MCNAPI ::CameraAimAssist::PriorityPreset& operator=(::CameraAimAssist::PriorityPreset&&);
-
 #ifdef LL_PLAT_C
-    MCNAPI ::CameraAimAssist::PriorityPreset& operator=(::CameraAimAssist::PriorityPreset const&);
+    MCNAPI ::CameraAimAssist::PriorityPreset& operator=(::CameraAimAssist::PriorityPreset&&);
 #endif
 
     MCNAPI ~PriorityPreset();
@@ -71,8 +59,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::CameraAimAssist::PriorityPreset const&);
 
     MCNAPI void* $ctor(

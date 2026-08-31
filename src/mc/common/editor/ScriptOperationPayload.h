@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-
 namespace Editor::Transactions {
 
 class ScriptOperationPayload {
@@ -19,39 +16,8 @@ public:
 public:
     // prevent constructor by default
     ScriptOperationPayload& operator=(ScriptOperationPayload const&);
+    ScriptOperationPayload(ScriptOperationPayload const&);
     ScriptOperationPayload();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptOperationPayload(::Editor::Transactions::ScriptOperationPayload const&);
-
-    MCNAPI ScriptOperationPayload(
-        ::std::string const&                                                        payload,
-        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnUndo,
-        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnRedo
-    );
-
-    MCNAPI ~ScriptOperationPayload();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Transactions::ScriptOperationPayload const&);
-
-    MCNAPI void* $ctor(
-        ::std::string const&                                                        payload,
-        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnUndo,
-        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnRedo
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Editor::Transactions

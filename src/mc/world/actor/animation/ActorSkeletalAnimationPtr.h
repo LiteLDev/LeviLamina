@@ -9,7 +9,6 @@
 // clang-format off
 class ActorAnimationGroup;
 class ActorAnimationInfo;
-class ActorSkeletalAnimation;
 class HashedString;
 // clang-format on
 
@@ -31,12 +30,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ActorAnimationGroup> const& animationGroup,
         ::HashedString const&                                       name
     );
-
-#ifdef LL_PLAT_C
-    MCFOLD ::ActorSkeletalAnimation* get();
-#endif
-
-    MCFOLD bool isNull() const;
 
     MCAPI ~ActorSkeletalAnimationPtr();
     // NOLINTEND

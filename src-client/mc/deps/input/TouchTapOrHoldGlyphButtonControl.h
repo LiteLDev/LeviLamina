@@ -49,7 +49,8 @@ public:
 
     virtual void render(::InputRenderContext& context) const /*override*/;
 
-    virtual void tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int) /*override*/;
+    virtual void
+    tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor) /*override*/;
 
     virtual void release(::InputEventQueue& eventQueue) /*override*/;
     // NOLINTEND
@@ -99,14 +100,8 @@ public:
     // NOLINTBEGIN
     MCAPI void $render(::InputRenderContext& context) const;
 
-    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int);
+    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
 
     MCAPI void $release(::InputEventQueue& eventQueue);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

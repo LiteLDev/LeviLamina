@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
-namespace Bedrock::Resources { struct BinaryHeader; }
 namespace Puv { class Logger; }
 // clang-format on
 
@@ -64,17 +63,17 @@ public:
     virtual ::Puv::Input::Data data() const /*override*/;
 
     virtual ::Puv::Logger const& getErrors() const /*override*/;
+
+    virtual ~MinecraftDocumentInput() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MinecraftDocumentInput(::Bedrock::Resources::MinecraftDocumentInput&&);
-
     MCNAPI MinecraftDocumentInput(
-        ::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck minModernVersion,
-        ::SemVersion const&                                          data,
-        ::std::string
+        ::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck,
+        ::SemVersion const& minModernVersion,
+        ::std::string       data
     );
 
     MCNAPI
@@ -90,24 +89,18 @@ public:
             ::rapidjson::CrtAllocator> payload
     );
 
+    MCNAPI void checkPayloadKey(::std::string_view payloadKey);
+
     MCNAPI void init(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
-
-    MCNAPI void initAsBinary(::std::string_view data, ::std::string header, ::Bedrock::Resources::BinaryHeader const&);
-
-    MCNAPI void initAsJson(::std::string_view data, ::std::string);
-
-    MCNAPI ::std::string const& payloadMemberName() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::Resources::MinecraftDocumentInput&&);
-
     MCNAPI void* $ctor(
-        ::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck minModernVersion,
-        ::SemVersion const&                                          data,
-        ::std::string
+        ::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck,
+        ::SemVersion const& minModernVersion,
+        ::std::string       data
     );
 
     MCNAPI void* $ctor(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
@@ -121,6 +114,12 @@ public:
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
             ::rapidjson::CrtAllocator> payload
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

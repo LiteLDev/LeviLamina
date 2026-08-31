@@ -43,12 +43,10 @@ public:
     virtual bool canExtendSize() const /*override*/;
 
     virtual void preemptiveExtendSize(uint64 const, ::std::function<void()>, ::std::function<void()>) /*override*/;
-    // NOLINTEND
 
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
+    virtual uint64 getTransactionWriteSizeLimit() const /*override*/;
 
+    virtual ::Core::Result _commit() /*override*/;
     // NOLINTEND
 };
 

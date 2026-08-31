@@ -19,6 +19,7 @@ class DataLoadHelper;
 class EntityContext;
 class Mob;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -70,7 +71,7 @@ public:
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
     // NOLINTEND
 
 public:
@@ -82,29 +83,11 @@ public:
         ::EntityContext&                   entityContext
     );
 
-#ifdef LL_PLAT_C
-    MCAPI float getAttackAnimationScale(float a);
-#endif
-
-    MCAPI int getAttackDuration();
-
     MCAPI ::Vec3 getMoveEyeVector();
-
-#ifdef LL_PLAT_C
-    MCAPI ::Actor* getTargetEntity() const;
-#endif
-
-    MCAPI bool isElder() const;
-
-    MCFOLD bool isElderGhost() const;
 
     MCAPI void preAiStep();
 
     MCAPI void registerLoopingSounds();
-
-    MCAPI void setAttackTime(int time);
-
-    MCAPI void setElder(bool value);
 
 #ifdef LL_PLAT_C
     MCAPI void setElderGhost();
@@ -138,7 +121,7 @@ public:
 
     MCFOLD void $setTarget(::Actor* target);
 
-    MCFOLD float $getMaxHeadXRot();
+    MCAPI float $getMaxHeadXRot();
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
@@ -146,14 +129,9 @@ public:
 
     MCFOLD bool $isDarkEnoughToSpawn() const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

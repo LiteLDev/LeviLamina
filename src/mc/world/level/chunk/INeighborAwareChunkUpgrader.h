@@ -17,7 +17,7 @@ class INeighborAwareChunkUpgrader {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~INeighborAwareChunkUpgrader();
+    virtual ~INeighborAwareChunkUpgrader() = default;
 
     virtual ::NeighborAwareBlockUpdateType
     getUpdateType(::Block const& block, ::NeighborAwareBlockUpgradeVersionType neighborAwareUpgradeVersion) const = 0;
@@ -28,17 +28,5 @@ public:
         ::Block const&                 block,
         ::BlockPos const&              blockPos
     ) const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

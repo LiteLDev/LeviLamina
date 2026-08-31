@@ -16,7 +16,6 @@ class ScreenContext;
 namespace Core { class Path; }
 namespace mce { class Color; }
 namespace mce { class MaterialPtr; }
-namespace mce { class TextureGroup; }
 namespace mce::Font { struct RenderingParameters; }
 // clang-format on
 
@@ -37,33 +36,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<int, int>>> mIncludedUnicodeRanges;
         ::ll::TypedStorage<4, 4, float>                                 mFontScale;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ReferenceData& operator=(ReferenceData const&);
-        ReferenceData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ReferenceData(::FontAlias::ReferenceData const&);
-
-        MCAPI ::FontAlias::ReferenceData& operator=(::FontAlias::ReferenceData&&);
-
-        MCAPI ~ReferenceData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::FontAlias::ReferenceData const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -77,10 +49,6 @@ public:
     ::ll::TypedStorage<4, 4, float>                                      mMaxWrapHeight;
     ::ll::TypedStorage<4, 4, float>                                      mMaxScalar;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FontAlias();
 
 public:
     // virtual functions
@@ -127,7 +95,7 @@ public:
         uint                   textureHeight
     ) const /*override*/;
 
-    virtual void loadFontData(bool) /*override*/;
+    virtual void loadFontData(bool uploadTextureImmediately) /*override*/;
 
     virtual bool _supportsShadowInSingleDraw() /*override*/;
 
@@ -156,25 +124,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FontAlias(
-        ::std::shared_ptr<::mce::TextureGroup>      textureGroup,
-        ::std::vector<::FontAlias::ReferenceData>&& fontReferences,
-        float                                       scaleFactor
-    );
-
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontReferenceForSheet(int const& sheet) const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontReferenceForUnicode(int const& character) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::mce::TextureGroup>      textureGroup,
-        ::std::vector<::FontAlias::ReferenceData>&& fontReferences,
-        float                                       scaleFactor
-    );
     // NOLINTEND
 
 public:
@@ -226,7 +178,7 @@ public:
         uint                   textureHeight
     ) const;
 
-    MCFOLD void $loadFontData(bool);
+    MCFOLD void $loadFontData(bool uploadTextureImmediately);
 
     MCAPI bool $_supportsShadowInSingleDraw();
 
@@ -250,11 +202,5 @@ public:
 
     MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     $getFontSources() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

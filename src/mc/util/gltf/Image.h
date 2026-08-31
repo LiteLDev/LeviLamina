@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 namespace glTF {
 
 struct Image {
@@ -26,50 +21,11 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk6b4963;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     Image& operator=(Image const&);
     Image(Image const&);
     Image();
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    Image& operator=(Image const&);
-
-#endif
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI Image();
-
-    MCNAPI Image(::glTF::Image const&);
-
-    MCNAPI ::Json::Value serialize() const;
-
-    MCNAPI ~Image();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::glTF::Image const&);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace glTF

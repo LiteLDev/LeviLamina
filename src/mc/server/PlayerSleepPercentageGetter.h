@@ -21,9 +21,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerSleepPercentageGetter() /*override*/ = default;
+    virtual ~PlayerSleepPercentageGetter() /*override*/;
 
     virtual float getPlayerSleepPercentageGoal() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -32,11 +38,5 @@ public:
     MCAPI float $getPlayerSleepPercentageGoal() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

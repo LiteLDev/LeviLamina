@@ -20,12 +20,6 @@ public:
 
     virtual bool PartialFree(void*, uint64, uint64, int) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace cohtml

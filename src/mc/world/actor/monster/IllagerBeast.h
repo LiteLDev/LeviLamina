@@ -48,7 +48,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $blockedByShield(::ActorDamageSource const& source, ::Actor& blocker);
+    MCFOLD void $blockedByShield(::ActorDamageSource const& source, ::Actor& blocker);
 
 
     // NOLINTEND

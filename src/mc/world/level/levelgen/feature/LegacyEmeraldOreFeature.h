@@ -16,15 +16,15 @@ class LegacyEmeraldOreFeature : public ::Feature {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LegacyEmeraldOreFeature() /*override*/ = default;
+    virtual ~LegacyEmeraldOreFeature() /*override*/;
 
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
     // NOLINTEND
 
 public:
-    // static functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static bool placeOre(::BlockSource& region, ::BlockPos const& pos);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -33,11 +33,5 @@ public:
     MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

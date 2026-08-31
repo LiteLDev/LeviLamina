@@ -9,8 +9,8 @@
 // clang-format off
 class BlockComponentFactory;
 class BlockComponentStorage;
+class BlockType;
 class CompoundTag;
-class EntityContext;
 class SemVersion;
 struct BlockComponentGroupDescription;
 namespace JsonUtil { class EmptyClass; }
@@ -18,6 +18,28 @@ namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockComponentDescription {
+public:
+    // BlockComponentDescription inner types declare
+    // clang-format off
+    struct InitializationContext;
+    // clang-format on
+
+    // BlockComponentDescription inner types define
+    struct InitializationContext {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::BlockComponentStorage&> mBlockComponentStorage;
+        ::ll::TypedStorage<8, 8, ::BlockType&>             mBlockType;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        InitializationContext& operator=(InitializationContext const&);
+        InitializationContext(InitializationContext const&);
+        InitializationContext();
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -27,15 +49,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockComponentDescription() = default;
+    virtual ~BlockComponentDescription();
 
     virtual ::std::string const& getName() const;
 
-    virtual void initializeComponent(::EntityContext& entity) const;
+    virtual void initializeComponent(::BlockComponentDescription::InitializationContext& context) const;
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    virtual void initializeComponentFromCode(::EntityContext& entity) const;
+    virtual void initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;
 
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
@@ -55,15 +77,21 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::string const& $getName() const;
 
-    MCFOLD void $initializeComponent(::EntityContext& entity) const;
+    MCAPI void $initializeComponent(::BlockComponentDescription::InitializationContext& context) const;
 
     MCFOLD void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCFOLD void $initializeComponentFromCode(::EntityContext& entity) const;
+    MCAPI void $initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;
 
     MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 

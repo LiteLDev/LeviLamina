@@ -14,30 +14,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HowToPlayScreenControllerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HowToPlayScreenControllerProxy() /*override*/ = default;
+    virtual ~HowToPlayScreenControllerProxy() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit HowToPlayScreenControllerProxy(::HowToPlayScreenControllerProxyCallbacks const& callbacks);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::HowToPlayScreenControllerProxyCallbacks const& callbacks);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

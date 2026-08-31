@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class WoodType : int {
+enum class WoodType : uchar {
     Oak     = 0,
     Spruce  = 1,
     Birch   = 2,

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { class TextureBase; }
-// clang-format on
-
 namespace mce {
 
 class RenderContextStateBase {
@@ -29,20 +24,7 @@ public:
     // prevent constructor by default
     RenderContextStateBase& operator=(RenderContextStateBase const&);
     RenderContextStateBase(RenderContextStateBase const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI RenderContextStateBase();
-
-    MCNAPI void removeIfBound(::mce::TextureBase const& texture);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
+    RenderContextStateBase();
 };
 
 } // namespace mce

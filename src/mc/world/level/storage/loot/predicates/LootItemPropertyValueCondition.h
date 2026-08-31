@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool applies(::Random& context, ::LootTableContext&) /*override*/;
+    virtual bool applies(::Random&, ::LootTableContext& context) /*override*/;
 
     virtual bool _hasPropertyValue(::PropertyComponent const& component) const = 0;
     // NOLINTEND
@@ -36,14 +36,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $applies(::Random& context, ::LootTableContext&);
+    MCNAPI bool $applies(::Random&, ::LootTableContext& context);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

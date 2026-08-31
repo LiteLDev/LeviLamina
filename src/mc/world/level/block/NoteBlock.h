@@ -10,9 +10,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Level;
 class Player;
-class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
@@ -23,10 +21,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mSkullPlacementEnabled;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NoteBlock();
 
 public:
     // virtual functions
@@ -42,33 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NoteBlock(::std::string const& nameId, int id);
-
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
-    MCAPI void _triggerNoteParticle(::Level& level, ::Vec3 const& vPos, int note) const;
-
-    MCAPI ::NoteBlock& enableSkullPlacement(bool enabled);
-
-#ifdef LL_PLAT_C
-    MCFOLD bool skullPlacementEnabled() const;
-#endif
-
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static float getPitch(int note);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

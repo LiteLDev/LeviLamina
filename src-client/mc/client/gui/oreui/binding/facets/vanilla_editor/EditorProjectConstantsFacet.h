@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/math/Color.h"
 
 // auto generated forward declare list
@@ -13,7 +13,7 @@ namespace Editor { class ServiceProviderCollection; }
 
 namespace OreUI {
 
-class EditorProjectConstantsFacet : public ::OreUI::FacetBase<::OreUI::EditorProjectConstantsFacet> {
+class EditorProjectConstantsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::EditorProjectConstantsFacet> {
 public:
     // EditorProjectConstantsFacet inner types declare
     // clang-format off
@@ -34,7 +34,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+        MCAPI static ::std::add_lvalue_reference_t<char const[16]> NAME();
         // NOLINTEND
     };
 
@@ -47,21 +47,9 @@ public:
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~BlockInfo();
-        // NOLINTEND
-
-    public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI static ::std::add_lvalue_reference_t<char const[16]> NAME();
         // NOLINTEND
     };
 
@@ -73,21 +61,9 @@ public:
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~EntityInfo();
-        // NOLINTEND
-
-    public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI static ::std::add_lvalue_reference_t<char const[17]> NAME();
         // NOLINTEND
     };
 
@@ -156,12 +132,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

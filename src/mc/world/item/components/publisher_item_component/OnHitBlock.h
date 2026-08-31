@@ -21,16 +21,6 @@ struct OnHitBlock : public ::ItemComponent,
                     public ::Bedrock::PubSub::Publisher<
                         void(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&),
                         ::Bedrock::PubSub::ThreadModel::SingleThreaded,
-                        0> {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForDispatchingPublisherBase();
-
-    MCNAPI static void** $vftableForConnector();
-
-    MCNAPI static void** $vftable();
-    // NOLINTEND
-};
+                        0> {};
 
 } // namespace PublisherItemComponent

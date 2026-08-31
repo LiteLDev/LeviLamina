@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ namespace Bedrock::PubSub { class Subscription; }
 
 namespace OreUI {
 
-class CustomScalingFacet : public ::OreUI::FacetBase<::OreUI::CustomScalingFacet> {
+class CustomScalingFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::CustomScalingFacet> {
 public:
     // CustomScalingFacet inner types define
     enum class ScalingMode : int {
@@ -80,13 +80,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI bool $update();
     // NOLINTEND
 };
 

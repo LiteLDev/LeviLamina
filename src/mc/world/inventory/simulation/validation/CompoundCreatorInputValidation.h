@@ -16,38 +16,43 @@ class CompoundCreatorInputValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CompoundCreatorInputValidation() /*override*/ = default;
+    virtual ~CompoundCreatorInputValidation() /*override*/;
 
-    virtual bool
-    isItemAllowedInSlot(::ContainerScreenContext const& item, int const, ::ItemStackBase const&, int const, bool) const
+    virtual bool isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
+        bool
+    ) const /*override*/;
+
+    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
+
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
         /*override*/;
+    // NOLINTEND
 
-    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
-
-    virtual int getContainerSize(::ContainerScreenContext const&, ::Container const&) const /*override*/;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $isItemAllowedInSlot(
-        ::ContainerScreenContext const& item,
-        int const,
-        ::ItemStackBase const&,
-        int const,
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
         bool
     ) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const&) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
-    MCFOLD int $getContainerSize(::ContainerScreenContext const&, ::Container const&) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

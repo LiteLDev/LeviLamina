@@ -48,30 +48,18 @@ public:
 
 public:
     // prevent constructor by default
-    SocialPlayerObject& operator=(SocialPlayerObject const&);
-    SocialPlayerObject(SocialPlayerObject const&);
     SocialPlayerObject();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SocialPlayerObject(::OreUI::SocialPlayerObject&&);
-
     MCAPI SocialPlayerObject(::OreUI::Detail::IPropertyObject* parent, ::OreUI::SocialPlayerData const& data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::SocialPlayerObject&&);
-
     MCAPI void* $ctor(::OreUI::Detail::IPropertyObject* parent, ::OreUI::SocialPlayerData const& data);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

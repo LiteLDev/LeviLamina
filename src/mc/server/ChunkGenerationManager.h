@@ -3,16 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/SubClientId.h"
 #include "mc/platform/threading/SpinLockImpl.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/chunk/ChunkViewOwner.h"
-
-// auto generated forward declare list
-// clang-format off
-class NetworkChunkPublisherUpdatePacket;
-class NetworkIdentifier;
-// clang-format on
 
 class ChunkGenerationManager {
 public:
@@ -21,30 +14,5 @@ public:
     ::ll::TypedStorage<8, 24, ::SpinLockImpl> mGenerationRequestLock;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkViewOwner, ::std::unordered_set<::ChunkPos>>>
         mGenerationRequests;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void addServerChunksToPacket(
-        ::NetworkIdentifier const&           player,
-        ::SubClientId                        clientId,
-        ::NetworkChunkPublisherUpdatePacket& updatePacket
-    );
-
-    MCAPI void clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
-
-    MCAPI bool hasPendingGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId) const;
-
-    MCAPI void
-    queueChunkGenerationRequest(::NetworkIdentifier const& player, ::SubClientId clientId, ::ChunkPos const& pos);
-
-    MCAPI ~ChunkGenerationManager();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

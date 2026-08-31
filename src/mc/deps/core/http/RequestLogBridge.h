@@ -44,18 +44,6 @@ public:
         CompleteEvent& operator=(CompleteEvent const&);
         CompleteEvent(CompleteEvent const&);
         CompleteEvent();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~CompleteEvent();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct FailEvent {
@@ -92,18 +80,6 @@ public:
         InFlight& operator=(InFlight const&);
         InFlight(InFlight const&);
         InFlight();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~InFlight();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct ProgressEvent {
@@ -141,18 +117,6 @@ public:
         StartEvent& operator=(StartEvent const&);
         StartEvent(StartEvent const&);
         StartEvent();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~StartEvent();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct DrainedEvents {
@@ -190,18 +154,6 @@ public:
         SharedState& operator=(SharedState const&);
         SharedState(SharedState const&);
         SharedState();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~SharedState();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:

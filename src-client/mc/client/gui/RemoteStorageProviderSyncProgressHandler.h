@@ -43,33 +43,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        SyncState();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit SyncState(
-            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>&& completedCallback
-        );
-
         MCAPI void onCompleted(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> result, bool canceled);
-
-        MCAPI ~SyncState();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>&& completedCallback
-        );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -168,11 +144,5 @@ public:
     MCAPI ::std::string $getTitleText() const;
 
     MCAPI ::std::string $getName() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

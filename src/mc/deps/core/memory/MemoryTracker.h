@@ -16,36 +16,45 @@ class MemoryTracker {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MemoryTracker() = default;
+    virtual ~MemoryTracker();
 
     virtual bool isTracking() const;
 
     virtual ::Memory::MemoryCategory getCurrentCategory() const;
 
+#ifdef LL_PLAT_S
+    virtual void setCurrentCategory(::Memory::MemoryCategory);
+#else // LL_PLAT_C
     virtual void setCurrentCategory(::Memory::MemoryCategory category);
+#endif
 
     virtual uint64 getCategoryAllocationCount(uint) const;
 
+#ifdef LL_PLAT_S
+    virtual uint64 getCategoryAllocatedMemory(uint) const;
+#else // LL_PLAT_C
     virtual uint64 getCategoryAllocatedMemory(uint cat) const;
+#endif
 
     virtual uint64 getCategoryTotalAllocationCount(uint) const;
 
     virtual void publish();
 
+#ifdef LL_PLAT_S
+    virtual void populateCounters(::std::vector<::Memory::MemoryCategoryCounter>&, uint64) const;
+#else // LL_PLAT_C
     virtual void populateCounters(
         ::std::vector<::Memory::MemoryCategoryCounter>& categoryCounters,
         uint64                                          minimumThresholdBytes
     ) const;
+#endif
+
     // NOLINTEND
 
 public:
-    // static functions
+    // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static void disableTracking();
-#endif
-
-    MCAPI static ::Memory::MemoryTracker& get();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -55,28 +64,34 @@ public:
 
     MCFOLD ::Memory::MemoryCategory $getCurrentCategory() const;
 
+#ifdef LL_PLAT_S
+    MCFOLD void $setCurrentCategory(::Memory::MemoryCategory);
+#else // LL_PLAT_C
     MCFOLD void $setCurrentCategory(::Memory::MemoryCategory category);
+#endif
 
     MCFOLD uint64 $getCategoryAllocationCount(uint) const;
 
+#ifdef LL_PLAT_S
+    MCFOLD uint64 $getCategoryAllocatedMemory(uint) const;
+#else // LL_PLAT_C
     MCFOLD uint64 $getCategoryAllocatedMemory(uint cat) const;
+#endif
 
     MCFOLD uint64 $getCategoryTotalAllocationCount(uint) const;
 
     MCFOLD void $publish();
 
+#ifdef LL_PLAT_S
+    MCFOLD void $populateCounters(::std::vector<::Memory::MemoryCategoryCounter>&, uint64) const;
+#else // LL_PLAT_C
     MCFOLD void $populateCounters(
         ::std::vector<::Memory::MemoryCategoryCounter>& categoryCounters,
         uint64                                          minimumThresholdBytes
     ) const;
+#endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

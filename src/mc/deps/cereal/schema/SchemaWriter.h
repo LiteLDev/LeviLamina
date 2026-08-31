@@ -51,7 +51,7 @@ public:
 
     virtual void writeAdditionalData(::std::string_view const value) = 0;
 
-    virtual bool pushMember(::std::string_view const memberName) = 0;
+    virtual bool pushMember(::std::string_view const value) = 0;
 
     virtual void popMember() = 0;
 
@@ -60,12 +60,6 @@ public:
     virtual ::cereal::SchemaRWType openArray(bool isDynamicExtent, uint64 length) = 0;
 
     virtual void close() = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

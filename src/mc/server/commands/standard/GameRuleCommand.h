@@ -12,7 +12,6 @@ class CommandOutput;
 class CommandRegistry;
 class GameRule;
 class GameRules;
-class Level;
 namespace Json { class Value; }
 // clang-format on
 
@@ -36,44 +35,26 @@ public:
         InitProxy& operator=(InitProxy const&);
         InitProxy(InitProxy const&);
         InitProxy();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit InitProxy(::Level& level);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::Level& level);
-        // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mGameRule;
+    ::ll::TypedStorage<8, 32, ::std::string> mEnumStringValue;
     ::ll::TypedStorage<4, 4, float>          mFloatValue;
     ::ll::TypedStorage<4, 4, int>            mIntValue;
     ::ll::TypedStorage<1, 1, bool>           mBoolValue;
     ::ll::TypedStorage<1, 1, bool>           mBoolValueSet;
     ::ll::TypedStorage<1, 1, bool>           mIntValueSet;
     ::ll::TypedStorage<1, 1, bool>           mFloatValueSet;
+    ::ll::TypedStorage<1, 1, bool>           mEnumStringValueSet;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void getGameRule(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void setGameRule(::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
@@ -91,11 +72,5 @@ public:
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -16,28 +16,6 @@ public:
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>         mId;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::SettingsType>> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SettingsId();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SettingsId(::std::string_view id, ::OreUI::SettingsType type);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view id, ::OreUI::SettingsType type);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace OreUI

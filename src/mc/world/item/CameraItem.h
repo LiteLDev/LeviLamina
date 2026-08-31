@@ -7,22 +7,6 @@
 
 class CameraItem : public ::Item {
 public:
-    // prevent constructor by default
-    CameraItem();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CameraItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCAPI static void** $vftable();

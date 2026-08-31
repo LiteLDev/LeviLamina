@@ -17,16 +17,4 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>      mBlockPosition;
     ::ll::TypedStorage<4, 12, ::BlockPos>      mBuildBlockPosition;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ItemStartUseOnEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

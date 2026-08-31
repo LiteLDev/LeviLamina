@@ -13,7 +13,6 @@ class IClientInstance;
 class MinecraftUIRenderContext;
 class UIControl;
 class UICustomRenderer;
-class UIPropertyBag;
 class UIScene;
 struct UIItemRenderInfo;
 namespace ui { struct FlyingItem; }
@@ -29,11 +28,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FlyingItemRenderer() /*override*/ = default;
+    virtual ~FlyingItemRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual bool update(::IClientInstance& owner, ::UIControl&, ::UIScene const&) /*override*/;
+    virtual bool update(::IClientInstance&, ::UIControl& owner, ::UIScene const&) /*override*/;
 
     virtual void
     render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
@@ -44,10 +43,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FlyingItemRenderer();
-
-    MCAPI void _addNewFlyingItems(::UIPropertyBag& bag);
-
     MCAPI void _renderGuiIcon(
         ::MinecraftUIRenderContext& renderContext,
         ::IClientInstance&          client,
@@ -67,9 +62,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -77,7 +72,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI bool $update(::IClientInstance& owner, ::UIControl&, ::UIScene const&);
+    MCAPI bool $update(::IClientInstance&, ::UIControl& owner, ::UIScene const&);
 
     MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
 

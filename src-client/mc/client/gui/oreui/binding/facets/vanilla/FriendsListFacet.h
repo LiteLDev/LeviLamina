@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/FriendsLoadingState.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -21,7 +21,7 @@ namespace World { class WorldPlayerListTracker; }
 
 namespace OreUI {
 
-class FriendsListFacet : public ::OreUI::FacetBase<::OreUI::FriendsListFacet> {
+class FriendsListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::FriendsListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -70,9 +70,7 @@ public:
         ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>      partyProvider
     );
 
-    MCAPI void _copyFriendsList();
-
-    MCFOLD ::std::vector<::OreUI::SocialPlayer> const& getPlatformFriends() const;
+    MCAPI ::std::vector<::OreUI::SocialPlayer> const& getPlatformFriends() const;
 
     MCFOLD ::OreUI::FriendsLoadingState getPlatformFriendsLoadingState() const;
 
@@ -111,12 +109,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

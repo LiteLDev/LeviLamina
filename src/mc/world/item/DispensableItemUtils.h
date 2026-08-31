@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/EquipmentSlot.h"
-#include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
@@ -25,14 +24,6 @@ MCAPI bool canDispenseToHumanoids(::Mob const& mob);
 MCAPI bool canDispenseToNonPlayerHumanoids(::Mob const& mob);
 
 MCAPI void spawnLoot(::Level& level, ::Actor& actor, ::std::string const& lootTable);
-
-MCAPI bool tryDispenseArmor(
-    ::BlockSource&                   region,
-    ::Container&                     container,
-    int                              slot,
-    ::BlockPos                       pos,
-    ::SharedTypes::Legacy::ArmorSlot armorSlot
-);
 
 MCAPI bool tryDispenseEquipment(
     ::BlockSource&                            region,

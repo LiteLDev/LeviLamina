@@ -13,7 +13,6 @@
 // clang-format off
 class RenderParams;
 struct ConstDeserializeDataParams;
-namespace Json { class Value; }
 namespace ParticleSystem { class ComponentAccessParticleEmitter; }
 namespace ParticleSystem { struct CommonParticle; }
 namespace SharedTypes::v1_20_80 { struct ParticleEffectComponent; }
@@ -56,22 +55,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ParticleAppearanceBillboardComponent();
-
-    MCAPI void _parseFlipbook(::ConstDeserializeDataParams const& deserializeDataParams);
-
-    MCAPI void _parseTextureWidthHeight(::Json::Value const& uvs);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
@@ -88,12 +71,6 @@ public:
 
     MCAPI void
     $updateEmitterAppearance(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

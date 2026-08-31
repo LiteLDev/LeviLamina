@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorServerCommandOrigin() /*override*/ = default;
+    virtual ~ActorServerCommandOrigin() /*override*/;
 
     virtual bool isSelectorExpansionAllowed() const /*override*/;
 
@@ -38,11 +38,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCFOLD ::ActorUniqueID getTargetOther() const;
-
-    MCFOLD void setTargetOther(::ActorUniqueID targetOther);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

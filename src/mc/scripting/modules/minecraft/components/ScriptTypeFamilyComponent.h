@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
 // auto generated forward declare list
@@ -18,14 +17,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool _isValid() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getTypeFamilies() const;
-
-    MCAPI ::Scripting::Result_deprecated<bool> hasTypeFamily(::std::string const& typeFamily) const;
     // NOLINTEND
 
 public:
@@ -46,12 +37,6 @@ public:
     MCAPI bool $_isValid() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

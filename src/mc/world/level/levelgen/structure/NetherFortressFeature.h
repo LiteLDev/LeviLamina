@@ -36,20 +36,20 @@ public:
     virtual bool shouldAddHardcodedSpawnAreas() const /*override*/;
 
     virtual bool isFeatureChunk(
-        ::BiomeSource const& biomeSource,
-        ::Random&            random,
-        ::ChunkPos const&    chunkPos,
-        uint                 levelSeed,
-        ::IPreliminarySurfaceProvider const&,
-        ::Dimension const&
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    chunkPos,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&                   dimension
     ) /*override*/;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension&         generator,
-        ::BiomeSource const& random,
-        ::Random&            cp,
-        ::ChunkPos const&,
-        ::IPreliminarySurfaceProvider const&
+        ::Dimension&                         generator,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    cp,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
     // NOLINTEND
 
@@ -73,20 +73,20 @@ public:
     MCFOLD bool $shouldAddHardcodedSpawnAreas() const;
 
     MCAPI bool $isFeatureChunk(
-        ::BiomeSource const& biomeSource,
-        ::Random&            random,
-        ::ChunkPos const&    chunkPos,
-        uint                 levelSeed,
-        ::IPreliminarySurfaceProvider const&,
-        ::Dimension const&
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    chunkPos,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&                   dimension
     );
 
     MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
-        ::Dimension&         generator,
-        ::BiomeSource const& random,
-        ::Random&            cp,
-        ::ChunkPos const&,
-        ::IPreliminarySurfaceProvider const&
+        ::Dimension&                         generator,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    cp,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
 

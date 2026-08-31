@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BarterComponent;
 class Mob;
-class Vec3;
 // clang-format on
 
 class BarterGoal : public ::BaseGoal {
@@ -35,22 +33,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BarterGoal(::Mob& mob);
-
-    MCAPI ::Vec3 _getThrowVector();
-
-    MCAPI void _sendBarterEventPacket(::BarterComponent* barterComponent);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

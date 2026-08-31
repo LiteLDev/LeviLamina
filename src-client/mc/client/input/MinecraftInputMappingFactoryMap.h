@@ -39,12 +39,6 @@ public:
         // NOLINTBEGIN
         MCFOLD ::InputMapping const* $getMapping(::std::string const& mappingName);
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
 public:
@@ -64,11 +58,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::InputMappingFactory& $getInputMappingFactory(int controllerId);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

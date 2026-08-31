@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/IBreakpointValidator.h"
+#include "mc/deps/script_core/runtime/scripting/IBreakpointValidator.h"
 
 class ScriptBreakpointValidator : public ::Scripting::IBreakpointValidator {
 public:
@@ -22,9 +22,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptBreakpointValidator() /*override*/ = default;
+    virtual ~ScriptBreakpointValidator() /*override*/;
 
     virtual bool validatePath(::std::string_view sourcePath) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -33,11 +39,5 @@ public:
     MCNAPI bool $validatePath(::std::string_view sourcePath);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

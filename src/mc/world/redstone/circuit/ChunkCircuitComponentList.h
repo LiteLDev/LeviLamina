@@ -35,16 +35,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                              bShouldEvaluate;
     ::ll::TypedStorage<8, 24, ::std::vector<::ChunkCircuitComponentList::Item>> mComponents;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ChunkCircuitComponentList();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

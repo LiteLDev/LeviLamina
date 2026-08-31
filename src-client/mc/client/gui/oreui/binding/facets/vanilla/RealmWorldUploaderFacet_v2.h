@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/realms/UploadToRealmsError.h"
@@ -17,7 +17,7 @@ namespace Realms { class RealmsUploader; }
 
 namespace OreUI {
 
-class RealmWorldUploaderFacet_v2 : public ::OreUI::FacetBase<::OreUI::RealmWorldUploaderFacet_v2> {
+class RealmWorldUploaderFacet_v2 : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmWorldUploaderFacet_v2> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -72,13 +72,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI bool $update();
     // NOLINTEND
 };
 

@@ -10,8 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
-class BreedableComponent;
-class EntityContext;
 struct ActorDefinitionBreedItem;
 struct ActorDefinitionIdentifier;
 struct EnvironmentRequirement;
@@ -46,17 +44,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BreedableDefinition();
-
     MCAPI void addBreedItem(::ActorDefinitionBreedItem const& breedItem);
 
     MCAPI void addBreedItemByName(::std::string const& itemName);
 
     MCAPI void addEnvironmentRequirement(::EnvironmentRequirement const& envReq);
-
-    MCAPI void initialize(::EntityContext&, ::BreedableComponent& component) const;
-
-    MCAPI ~BreedableDefinition();
     // NOLINTEND
 
 public:
@@ -65,17 +57,5 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BreedableDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

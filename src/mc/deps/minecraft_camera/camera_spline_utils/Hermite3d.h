@@ -21,13 +21,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ::glm::vec3 eval(float) const /*override*/;
-#else // LL_PLAT_C
     virtual ::glm::vec3 eval(float t) const /*override*/;
-#endif
 
     virtual ::CameraSplineUtils::SplineType getType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

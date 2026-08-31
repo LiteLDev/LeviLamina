@@ -13,10 +13,4 @@ public:
 
     virtual void setCrashDumpLogStringID(::CrashDumpLogStringID crashDumpLogStringID) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

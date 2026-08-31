@@ -16,7 +16,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TickDeltaTimeManagerProxy() /*override*/ = default;
+    virtual ~TickDeltaTimeManagerProxy() /*override*/;
 
     virtual void start() /*override*/;
 
@@ -24,15 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI TickDeltaTimeManagerProxy();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

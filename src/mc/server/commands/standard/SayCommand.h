@@ -12,7 +12,6 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class Level;
-class Player;
 struct CommandOriginIdentity;
 // clang-format on
 
@@ -30,23 +29,22 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _logOutput(::std::string const& message, ::CommandOrigin const& output, ::CommandOutput&) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _sendMessage(
-        ::std::string const&           message,
-        ::std::optional<::std::string> filteredMessage,
-        ::std::string const&           sender,
-        ::CommandOriginIdentity const& identity,
-        ::Level&                       level
+    MCAPI static bool _sendEvent(
+        ::Level&                              level,
+        ::std::string const&                  sender,
+        ::std::string const&                  message,
+        ::std::optional<::std::string> const& filteredMessage
     );
 
-    MCAPI static bool _trySendSayCommandEvent(::Player const& player, ::Level& level, ::std::string const& message);
+    MCAPI static void _sendMessage(
+        ::std::string const&                  message,
+        ::std::optional<::std::string> const& filteredMessage,
+        ::std::string const&                  sender,
+        ::CommandOriginIdentity const&        identity,
+        ::Level&                              level
+    );
 
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
@@ -57,11 +55,5 @@ public:
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

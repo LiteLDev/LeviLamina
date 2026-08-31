@@ -20,46 +20,30 @@ namespace CanyonFeatureUtils { struct CanyonConfiguration; }
 
 class UnderwaterCanyonFeature : public ::CanyonFeature {
 public:
-    // prevent constructor by default
-    UnderwaterCanyonFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool _isDiggable(::BlockType const& block) const /*override*/;
 
     virtual bool _carve(
-        ::BlockVolume&                                   blocks,
-        ::BiomeSource const&                             localBiomeSource,
-        ::CanyonFeatureUtils::CanyonConfiguration const& random,
-        ::Random&                                        pos,
-        ::ChunkPos const&                                startPos,
-        ::Vec3 const&                                    originalStartPos,
-        ::Vec3 const&                                    x0,
-        int                                              x1,
-        int                                              y0,
-        int                                              y1,
-        int                                              z0,
-        int                                              z1,
-        int                                              rad,
-        float                                            yRad,
-        float                                            widthRandomization,
-        ::gsl::span<float const>                         biomeRegistry,
+        ::BlockVolume&       blocks,
+        ::BiomeSource const& localBiomeSource,
+        ::CanyonFeatureUtils::CanyonConfiguration const&,
+        ::Random&                random,
+        ::ChunkPos const&        pos,
+        ::Vec3 const&            startPos,
+        ::Vec3 const&            originalStartPos,
+        int                      x0,
+        int                      x1,
+        int                      y0,
+        int                      y1,
+        int                      z0,
+        int                      z1,
+        float                    rad,
+        float                    yRad,
+        ::gsl::span<float const> widthRandomization,
         ::WorldGenContext const&,
-        ::BiomeRegistry const&
+        ::BiomeRegistry const& biomeRegistry
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit UnderwaterCanyonFeature(short seaLevel);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(short seaLevel);
     // NOLINTEND
 
 public:
@@ -68,24 +52,24 @@ public:
     MCAPI bool $_isDiggable(::BlockType const& block) const;
 
     MCAPI bool $_carve(
-        ::BlockVolume&                                   blocks,
-        ::BiomeSource const&                             localBiomeSource,
-        ::CanyonFeatureUtils::CanyonConfiguration const& random,
-        ::Random&                                        pos,
-        ::ChunkPos const&                                startPos,
-        ::Vec3 const&                                    originalStartPos,
-        ::Vec3 const&                                    x0,
-        int                                              x1,
-        int                                              y0,
-        int                                              y1,
-        int                                              z0,
-        int                                              z1,
-        int                                              rad,
-        float                                            yRad,
-        float                                            widthRandomization,
-        ::gsl::span<float const>                         biomeRegistry,
+        ::BlockVolume&       blocks,
+        ::BiomeSource const& localBiomeSource,
+        ::CanyonFeatureUtils::CanyonConfiguration const&,
+        ::Random&                random,
+        ::ChunkPos const&        pos,
+        ::Vec3 const&            startPos,
+        ::Vec3 const&            originalStartPos,
+        int                      x0,
+        int                      x1,
+        int                      y0,
+        int                      y1,
+        int                      z0,
+        int                      z1,
+        float                    rad,
+        float                    yRad,
+        ::gsl::span<float const> widthRandomization,
         ::WorldGenContext const&,
-        ::BiomeRegistry const&
+        ::BiomeRegistry const& biomeRegistry
     ) const;
 
 

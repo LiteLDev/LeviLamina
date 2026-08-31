@@ -47,8 +47,10 @@ public:
 
     virtual void clearMapping(int controllerId) /*override*/;
 
-    virtual bool
-    tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const&) /*override*/;
+    virtual bool tick(
+        ::InputEventQueue&                                              eventQueue,
+        ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map
+    ) /*override*/;
 
     virtual void clearInputDeviceQueue() /*override*/;
 
@@ -91,15 +93,16 @@ public:
 
     MCAPI void $clearMapping(int controllerId);
 
-    MCAPI bool $tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const&);
+    MCAPI bool
+    $tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map);
 
     MCAPI void $clearInputDeviceQueue();
 
     MCFOLD ::InputMode $getInputMode() const;
 
-    MCAPI void $render(::InputRenderContext& context) const;
+    MCFOLD void $render(::InputRenderContext& context) const;
 
-    MCAPI void $setWindowSize(int width, int height);
+    MCFOLD void $setWindowSize(int width, int height);
 
     MCAPI void $changeControllerId(int oldId, int newId);
     // NOLINTEND

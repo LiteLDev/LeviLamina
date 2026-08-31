@@ -27,8 +27,6 @@ public:
 
     MCNAPI SentryEnvelopePayloadException(::SentryEnvelopePayloadException const&);
 
-    MCNAPI ::SentryEnvelopePayloadException& operator=(::SentryEnvelopePayloadException&&);
-
     MCNAPI ::SentryEnvelopePayloadException& operator=(::SentryEnvelopePayloadException const&);
 
     MCNAPI ~SentryEnvelopePayloadException();

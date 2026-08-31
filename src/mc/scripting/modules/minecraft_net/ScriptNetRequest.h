@@ -3,14 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { class Method; }
-namespace ScriptModuleMinecraftNet { struct ScriptNetHeader; }
-namespace ScriptModuleServerAdmin { class ScriptSecretString; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -22,7 +18,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk4b319b;
     ::ll::UntypedStorage<8, 24> mUnk5227c1;
-    ::ll::UntypedStorage<8, 32> mUnk685dad;
+    ::ll::UntypedStorage<8, 40> mUnk5b8bc6;
     ::ll::UntypedStorage<4, 4>  mUnk807e94;
     ::ll::UntypedStorage<1, 2>  mUnke5dba2;
     // NOLINTEND
@@ -30,54 +26,13 @@ public:
 public:
     // prevent constructor by default
     ScriptNetRequest& operator=(ScriptNetRequest const&);
+    ScriptNetRequest(ScriptNetRequest const&);
     ScriptNetRequest();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptNetRequest(::ScriptModuleMinecraftNet::ScriptNetRequest const&);
-
-    MCNAPI explicit ScriptNetRequest(::std::string const& uri);
-
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> addHeader(
-        ::std::string const&                                                                key,
-        ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> const& value
-    );
-
-    MCNAPI ::ScriptModuleMinecraftNet::ScriptNetRequest& operator=(::ScriptModuleMinecraftNet::ScriptNetRequest&&);
-
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest>
-    setBody(::std::string const& body);
-
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest>
-    setHeaders(::std::vector<::ScriptModuleMinecraftNet::ScriptNetHeader> const& headers);
-
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest>
-    setMethod(::Bedrock::Http::Method method);
-
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> setTimeout(uint timeout);
-
-    MCNAPI ~ScriptNetRequest();
-    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraftNet::ScriptNetRequest const&);
-
-    MCNAPI void* $ctor(::std::string const& uri);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

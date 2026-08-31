@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class MainMenuScreenModel;
-namespace mce { class Color; }
 // clang-format on
 
 struct EDULibraryCategory {
@@ -29,12 +28,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI EDULibraryCategory(::EDULibraryCategory const&);
-
-    MCAPI ::mce::Color getDefaultColor() const;
-
-    MCAPI ::mce::Color getInteractColor() const;
-
-    MCAPI ::EDULibraryCategory& operator=(::EDULibraryCategory&&);
 
     MCAPI ~EDULibraryCategory();
     // NOLINTEND

@@ -52,18 +52,7 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCNAPI ::NetherNet::Statistics::Snapshot::CandidateInfo&
-            operator=(::NetherNet::Statistics::Snapshot::CandidateInfo&&);
-
             MCNAPI ::Json::Value toJson() const;
-
-            MCNAPI ~CandidateInfo();
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCNAPI void $dtor();
             // NOLINTEND
         };
 
@@ -99,23 +88,6 @@ public:
             CandidatePairInfo& operator=(CandidatePairInfo const&);
             CandidatePairInfo(CandidatePairInfo const&);
             CandidatePairInfo();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCNAPI ::NetherNet::Statistics::Snapshot::CandidatePairInfo&
-            operator=(::NetherNet::Statistics::Snapshot::CandidatePairInfo&&);
-
-            MCNAPI ::Json::Value toJson() const;
-
-            MCNAPI ~CandidatePairInfo();
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCNAPI void $dtor();
-            // NOLINTEND
         };
 
         struct Error {
@@ -135,20 +107,6 @@ public:
             Error& operator=(Error const&);
             Error(Error const&);
             Error();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCNAPI ::Json::Value toJson() const;
-
-            MCNAPI ~Error();
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCNAPI void $dtor();
-            // NOLINTEND
         };
 
     public:
@@ -219,12 +177,20 @@ public:
     );
 
     MCNAPI bool getLastSnapshot(::NetherNet::SessionState& state) const;
+
+    MCNAPI ~Statistics();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::NetherNet::PeerConnectionObserver& peerObserver);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

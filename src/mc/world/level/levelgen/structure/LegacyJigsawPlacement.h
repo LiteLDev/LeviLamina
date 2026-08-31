@@ -112,8 +112,6 @@ public:
         ::JigsawStructureRegistry const&                    pools,
         ::Dimension&                                        dimension
     );
-
-    MCAPI ~LegacyJigsawPlacement();
     // NOLINTEND
 
 public:
@@ -131,11 +129,5 @@ public:
             ::BlockPos const&
         )>  factory
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

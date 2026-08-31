@@ -15,7 +15,6 @@ class IContentCatalogPackSourceService;
 class IEntitlementManager;
 class IPackManifestFactory;
 class TaskGroup;
-struct ContentCatalogPackSourceOptions;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 namespace ContentManagerUtils { class ISourcesAsyncReloader; }
@@ -37,10 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContentCatalogPackSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ContentCatalogPackSource() /*override*/;
@@ -57,17 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ContentCatalogPackSource(::ContentCatalogPackSourceOptions options);
-
-    MCAPI ::Bedrock::Threading::Async<void> _collectAllCatalogItems();
-
     MCAPI ::Bedrock::Threading::Async<void> _load();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContentCatalogPackSourceOptions options);
     // NOLINTEND
 
 public:
@@ -79,18 +64,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $setEnabled(bool enabled);
+    MCAPI void $setEnabled(bool enabled);
 
     MCAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&&);
 
-    MCFOLD ::PackType $getPackType() const;
+    MCAPI ::PackType $getPackType() const;
 
     MCAPI void $refreshCatalogItems(::IPackManifestFactory&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

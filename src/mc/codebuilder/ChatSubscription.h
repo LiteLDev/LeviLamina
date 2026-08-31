@@ -17,18 +17,6 @@ public:
     ChatSubscription& operator=(ChatSubscription const&);
     ChatSubscription(ChatSubscription const&);
     ChatSubscription();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ChatSubscription();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace CodeBuilder

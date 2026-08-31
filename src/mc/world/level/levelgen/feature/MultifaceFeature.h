@@ -11,7 +11,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class LevelChunk;
 class Random;
 // clang-format on
 
@@ -42,33 +41,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MultifaceFeature();
-
     MCAPI ::std::optional<::BlockPos> _placeBlockIfPossible(
-        ::BlockSource&           region,
-        ::BlockPos const&        pos,
-        ::Random&                random,
-        ::gsl::span<uchar const> placementDirections
+        ::BlockSource&                 region,
+        ::BlockPos const&              pos,
+        ::Random&                      random,
+        ::gsl::span<uchar const> const placementDirections
     ) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool _isNeighbourBlockChunkReady(
-        ::BlockSource&      region,
-        ::BlockPos const&   neighbourPos,
-        ::LevelChunk const* currentChunk
-    );
-
-    MCAPI static void
-    _shuffledDirectionsExcept(::Bedrock::small_vector<uchar, 6>& out, uchar exclude, ::gsl::span<uchar const> faces);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -22,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SimpleRandom();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual int nextInt() /*override*/;
@@ -55,18 +51,6 @@ public:
     virtual int64 seed64() const /*override*/;
 
     virtual ::Seed128Bit seed128() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SimpleRandom(int64 seed);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int64 seed);
     // NOLINTEND
 
 public:

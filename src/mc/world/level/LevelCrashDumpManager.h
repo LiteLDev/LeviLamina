@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/CrashDumpLogStringID.h"
 #include "mc/world/level/ILevelCrashDumpManager.h"
 
@@ -24,21 +23,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelCrashDumpManager() /*override*/ = default;
+    virtual ~LevelCrashDumpManager() /*override*/;
 
     virtual void setCrashDumpLogStringID(::CrashDumpLogStringID crashDumpLogStringID) const /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI LevelCrashDumpManager(bool isClientSide, ::SubClientId subClientId);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(bool isClientSide, ::SubClientId subClientId);
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

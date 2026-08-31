@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ItemStack;
 class Mob;
 // clang-format on
 
@@ -40,20 +39,6 @@ public:
     virtual bool canContinueToUse() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit EatCarriedItemGoal(::Mob& mob);
-
-    MCFOLD void _updateHand(::ItemStack const& item);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

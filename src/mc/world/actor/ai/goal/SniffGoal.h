@@ -54,17 +54,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SniffGoal(::Mob& mob);
-
     MCAPI ::std::vector<::DistanceSortedActor> _fetchNearbySniffableActors(::ActorType actorType) const;
 
     MCAPI ::std::optional<::DistanceSortedActor> _fetchNearestSniffableActor() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

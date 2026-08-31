@@ -26,18 +26,6 @@ public:
         CurrentWorldTemplatePacks& operator=(CurrentWorldTemplatePacks const&);
         CurrentWorldTemplatePacks(CurrentWorldTemplatePacks const&);
         CurrentWorldTemplatePacks();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~CurrentWorldTemplatePacks();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct DependencyError {
@@ -52,18 +40,6 @@ public:
         DependencyError& operator=(DependencyError const&);
         DependencyError(DependencyError const&);
         DependencyError();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~DependencyError();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct ReportError {
@@ -79,18 +55,6 @@ public:
         ReportError& operator=(ReportError const&);
         ReportError(ReportError const&);
         ReportError();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ReportError();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -106,18 +70,6 @@ public:
     PackModifications& operator=(PackModifications const&);
     PackModifications(PackModifications const&);
     PackModifications();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~PackModifications();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace RepositoryLoading

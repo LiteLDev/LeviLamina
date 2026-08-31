@@ -52,10 +52,10 @@ public:
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree& screenEvent,
-        ::ScreenInputContext&,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     ) /*override*/;
 
     virtual ::ComponentReceiveActionType receive(::ScreenEvent const& screenEvent) /*override*/;
@@ -66,44 +66,16 @@ public:
     // NOLINTBEGIN
     MCAPI explicit FocusComponent(::UIControl& owner);
 
-    MCAPI void _captureFocusPoint();
-
     MCAPI bool checkFocusChangeOverride(::ui::CardinalDirection dir, ::std::string const& checkName) const;
-
-    MCFOLD int getDefaultFocusPrecedence() const;
-
-    MCAPI bool getFocusEnabled() const;
-
-    MCFOLD ::std::string const& getFocusIdentifier() const;
-
-    MCAPI bool getFocusMagnetEnabled() const;
-
-    MCAPI bool getFocusWrapEnabled() const;
-
-    MCAPI bool getResetOnFocusLost() const;
-
-    MCAPI bool hasFocusChangeOverride(::ui::CardinalDirection dir) const;
-
-    MCFOLD void initialize(::FocusManager& manager);
 
     MCAPI void registerNewLookupMapEntry(
         ::std::string const&                                                focusID,
         ::std::unordered_map<::ui::CardinalDirection, ::std::string> const& mapping
     );
 
-    MCFOLD void setDefaultFocusPrecedence(int precedence);
-
     MCAPI void setFocusChangeOverride(::ui::CardinalDirection dir, ::std::string const& str);
 
-    MCAPI void setFocusEnabled(bool focusEnabled);
-
     MCAPI void setFocusIdentifier(::std::string const& str);
-
-    MCAPI void setFocusMagnetEnabled(bool focusMagnetEnabled);
-
-    MCAPI void setFocusWrapEnabled(bool focusWrapEnabled);
-
-    MCAPI void setResetOnFocusLost(bool resetOnFocusLost);
     // NOLINTEND
 
 public:
@@ -125,15 +97,13 @@ public:
 
     MCAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType
-    $receive(::VisualTree& screenEvent, ::ScreenInputContext&, ::UIAnimationController&, ::ScreenEvent const&);
+    MCAPI ::ComponentReceiveActionType $receive(
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
+    );
 
     MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

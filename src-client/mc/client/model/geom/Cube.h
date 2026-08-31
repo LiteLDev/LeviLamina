@@ -12,7 +12,6 @@
 // clang-format off
 class PolygonQuad;
 class TextureOffset;
-class VertexPT;
 // clang-format on
 
 class Cube {
@@ -56,16 +55,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Cube(
-        ::Vec3 const&                              point,
-        ::Vec3 const&                              extents,
-        float                                      growAmount,
-        bool                                       shouldMirror,
-        ::std::array<::Cube::FaceUVData, 6> const& faceUVData,
-        ::Vec2 const&                              inTexExtents,
-        ::mce::Color const&                        color
-    );
-
-    MCAPI Cube(
         ::Vec3 const&          point,
         ::Vec3 const&          extents,
         float                  growAmount,
@@ -75,25 +64,12 @@ public:
         ::mce::Color const&    color
     );
 
-    MCAPI void
-    setQuad(uchar facing, float u0, float v0, float u1, float v1, ::VertexPT* vertices, ::QuadUVRotation uvRotation);
-
     MCAPI ~Cube();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Vec3 const&                              point,
-        ::Vec3 const&                              extents,
-        float                                      growAmount,
-        bool                                       shouldMirror,
-        ::std::array<::Cube::FaceUVData, 6> const& faceUVData,
-        ::Vec2 const&                              inTexExtents,
-        ::mce::Color const&                        color
-    );
-
     MCAPI void* $ctor(
         ::Vec3 const&          point,
         ::Vec3 const&          extents,

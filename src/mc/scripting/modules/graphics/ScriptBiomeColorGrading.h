@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/network/packet/GraphicsOverrideParameterType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Vec3;
+namespace ScriptModuleServerGraphics { struct BiomeKey; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct InvalidArgumentError; }
@@ -18,49 +19,16 @@ namespace ScriptModuleServerGraphics {
 
 class ScriptBiomeColorGrading {
 public:
-    // ScriptBiomeColorGrading inner types declare
-    // clang-format off
-    struct BiomeKey;
-    // clang-format on
-
-    // ScriptBiomeColorGrading inner types define
-    struct BiomeKey {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk9a58e7;
-        ::ll::UntypedStorage<8, 32> mUnkfd9a5a;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BiomeKey& operator=(BiomeKey const&);
-        BiomeKey(BiomeKey const&);
-        BiomeKey();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~BiomeKey();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk255e2d;
     ::ll::UntypedStorage<8, 32> mUnkb3ab0b;
+    ::ll::UntypedStorage<8, 8>  mUnk5c890c;
+    ::ll::UntypedStorage<8, 40> mUnk81b971;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptBiomeColorGrading& operator=(ScriptBiomeColorGrading const&);
     ScriptBiomeColorGrading(ScriptBiomeColorGrading const&);
     ScriptBiomeColorGrading();
 
@@ -79,6 +47,9 @@ public:
 
     MCNAPI ::Scripting::Result<void, ::Scripting::InvalidArgumentError>
     _sendSetPacket(::GraphicsOverrideParameterType parameterType, float inValue, float minValue, float maxValue);
+
+    MCNAPI ::ScriptModuleServerGraphics::ScriptBiomeColorGrading&
+    operator=(::ScriptModuleServerGraphics::ScriptBiomeColorGrading const&);
 
     MCNAPI ::Scripting::Result<void, ::Scripting::EngineError> resetHighlightsContrast();
 
@@ -156,12 +127,20 @@ public:
     MCNAPI ::Scripting::Result<void, ::Scripting::InvalidArgumentError> setShadowsSaturation(::Vec3 shadowsSaturation);
 
     MCNAPI ::Scripting::Result<void, ::Scripting::InvalidArgumentError> setTemperature(float temperature);
+
+    MCNAPI ~ScriptBiomeColorGrading();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

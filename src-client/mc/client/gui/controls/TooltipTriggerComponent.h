@@ -37,10 +37,10 @@ public:
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree& screenEvent,
-        ::ScreenInputContext&,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     ) /*override*/;
 
     virtual ::std::string const& getTextToSpeechComponentValue() const /*override*/;
@@ -49,10 +49,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void _setVisible(::std::weak_ptr<::UIControl> const& control, bool visible);
-
-    MCAPI void _setVisiblePopup();
-
     MCAPI void _updateControlVisibility();
     // NOLINTEND
 
@@ -69,15 +65,13 @@ public:
 
     MCAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType
-    $receive(::VisualTree& screenEvent, ::ScreenInputContext&, ::UIAnimationController&, ::ScreenEvent const&);
+    MCAPI ::ComponentReceiveActionType $receive(
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
+    );
 
     MCFOLD ::std::string const& $getTextToSpeechComponentValue() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

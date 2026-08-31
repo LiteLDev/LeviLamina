@@ -16,23 +16,7 @@ class BedrockInputSource {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BedrockInputSource();
-
     MCAPI void handleInput(::OreUI::ViewInputHandler& inputHandler, ::OreUI::GamepadMode gamepadMode);
-
-    MCAPI ~BedrockInputSource();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SmithingTableScreenController() /*override*/ = default;
+    virtual ~SmithingTableScreenController() /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -66,14 +66,6 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID
     );
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerSmithingTable2UIBindings();
-
-    MCAPI void _registerStateMachine();
     // NOLINTEND
 
 public:
@@ -88,6 +80,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
@@ -98,16 +96,8 @@ public:
 
     MCAPI void $_registerAutoPlaceOrder();
 
-    MCFOLD ::std::string $_getButtonXDescription();
+    MCAPI ::std::string $_getButtonXDescription();
 
     MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

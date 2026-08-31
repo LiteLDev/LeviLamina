@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TrialUpsellScreenController() /*override*/ = default;
+    virtual ~TrialUpsellScreenController() /*override*/;
 
     virtual void handleLicenseChanged() /*override*/;
 
@@ -40,16 +40,18 @@ public:
     // NOLINTBEGIN
     MCAPI
     TrialUpsellScreenController(::std::shared_ptr<::MinecraftScreenModel> model, bool isNewWorld, bool timeExpired);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, bool isNewWorld, bool timeExpired);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -60,13 +62,5 @@ public:
     MCFOLD ::ui::SceneType $getSceneType() const;
 
     MCFOLD ::std::string $_getButtonADescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

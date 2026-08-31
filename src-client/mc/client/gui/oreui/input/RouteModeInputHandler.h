@@ -30,8 +30,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit RouteModeInputHandler(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> clientInstance);
 
-    MCAPI void onRouteDeactivated();
-
     MCAPI void onRouteModeChanged(::OreUI::RouteMode previousMode, ::OreUI::RouteMode currentMode);
     // NOLINTEND
 

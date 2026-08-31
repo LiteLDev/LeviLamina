@@ -23,13 +23,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::ParticleSystem::ParticleEffect> getEffectPtr();
-
-    MCAPI ~ParticleEffectInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

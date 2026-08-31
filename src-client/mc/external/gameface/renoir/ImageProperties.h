@@ -17,6 +17,10 @@ enum class ImageProperties : int {
     IgnoreInStats       = 1 << 8,
     WillGetTextureBytes = 1 << 9,
     AssumeAlphaOne      = 1 << 10,
+    LinearColorValues   = 1 << 11,
+    RenderSurface       = 1 << 12,
+    UserRTPixelFormat   = 1 << 13,
+    NeedsDepthStencil   = 1 << 14,
 };
 
 }

@@ -27,12 +27,6 @@ public:
 
     virtual bool isComplete() const;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace PositionTrackingDB

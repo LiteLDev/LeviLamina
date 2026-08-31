@@ -5,13 +5,10 @@
 // auto generated forward declare list
 // clang-format off
 class ComponentRenderBatch;
-class CustomRenderComponent;
-class GridComponent;
-class SpriteComponent;
-class TextComponent;
 class UIControl;
-class UIRenderContext;
+class UICustomRenderer;
 struct BatchClippingState;
+struct BatchKey;
 struct BatchVisualState;
 struct ClippedControlMetadata;
 struct RenderControlMetadata;
@@ -38,30 +35,6 @@ public:
         bool                        hasRenderableComponent
     );
 
-    MCAPI void _addToRenderBatch(
-        int                         depth,
-        ::SpriteComponent* const    sprite,
-        ::BatchClippingState const& batchClippingState,
-        ::BatchVisualState const&   batchVisualState
-    );
-
-    MCAPI void _addToRenderBatch(
-        int                         depth,
-        ::TextComponent* const      text,
-        ::BatchClippingState const& batchClippingState,
-        ::BatchVisualState const&   batchVisualState
-    );
-
-    MCAPI void _addToRenderBatch(
-        ::UIRenderContext&             renderContext,
-        int                            depth,
-        ::CustomRenderComponent* const customRender,
-        ::BatchClippingState const&    batchClippingState,
-        ::BatchVisualState const&      batchVisualState
-    );
-
-    MCAPI void _populateRenderBatch(::UIRenderContext& renderContext);
-
     MCAPI bool _populateRenderControlsCollection(
         ::UIControl&                control,
         ::BatchClippingState const& batchClippingState,
@@ -71,20 +44,21 @@ public:
         bool                        checkIfRendered
     );
 
-    MCAPI void _populateRenderControlsGrid(
-        ::UIControl&                control,
-        ::GridComponent&            gridComponent,
-        ::BatchClippingState const& childBatchClippingState,
-        ::BatchClippingState const& unclippedBatchClippingState,
-        ::BatchVisualState const&   childBatchVisualState,
-        ::ClippedControlMetadata&   clippedControlData
-    );
-
-    MCAPI void _sortRenderControlsCollection();
-
     MCAPI void _storeTextureState(::UIControl& control, bool state);
 
     MCAPI ~ScreenRenderBatch();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::BatchKey createBatchKey(
+        ::UICustomRenderer const&   renderer,
+        int                         pass,
+        float                       alpha,
+        int                         depth,
+        ::BatchClippingState const& clip
+    );
     // NOLINTEND
 
 public:

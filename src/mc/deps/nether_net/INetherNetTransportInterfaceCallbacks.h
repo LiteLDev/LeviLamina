@@ -21,7 +21,7 @@ public:
 
     virtual void OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint*) = 0;
 
-    virtual bool OnSessionRequested(::NetherNet::NetworkID, uint64) = 0;
+    virtual bool OnSessionRequested(::NetherNet::NetworkID, uint64, ::std::string_view, ::std::string_view) = 0;
 
     virtual void OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId, bool isLan) = 0;
 
@@ -38,12 +38,6 @@ public:
     OnBroadcastResponseReceived(::NetherNet::NetworkID networkID, void const* pApplicationData, int size) = 0;
 
     virtual bool OnBroadcastDiscoveryRequestReceivedGetResponse(void* pApplicationData, int* pSize) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

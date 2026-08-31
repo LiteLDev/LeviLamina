@@ -4,18 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/network/PredictionValidationError.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class ItemStack;
 class ItemStackRequestActionMineBlock;
 class ItemStackRequestData;
 class PlayerBlockActions;
 class ServerPlayer;
 class TextFilteringProcessor;
-struct PlayerBlockActionData;
 // clang-format on
 
 namespace ServerPlayerBlockUseHandler {
@@ -23,7 +20,7 @@ namespace ServerPlayerBlockUseHandler {
 // NOLINTBEGIN
 MCAPI bool isValidSourceRequest(::ServerPlayer& player, ::ItemStackRequestActionMineBlock const& request);
 
-MCAPI void onAbortDestroyBlock(::ServerPlayer& player, ::BlockPos const& pos, int face);
+MCAPI void onAbortDestroyBlock(::ServerPlayer& player, ::BlockPos const& pos, int progress);
 
 MCAPI void onBeforeMovementSimulation(
     ::ServerPlayer&                                      player,
@@ -35,15 +32,6 @@ MCAPI void onBeforeMovementSimulation(
 MCAPI void onStartDestroyBlock(::ServerPlayer& player, ::BlockPos const& pos, int face);
 
 MCAPI void serverTickBlockBreaking(::ServerPlayer& player, ::BlockPos const& destroyBlockPos, int facing);
-
-MCAPI ::ServerPlayerBlockUseHandler::PredictionValidationError validateClientBlockBreakPrediction(
-    ::ServerPlayer&                          player,
-    ::ItemStackRequestActionMineBlock const* mineRequest,
-    ::BlockPos const&                        serverDestroyedBlock,
-    ::ItemStack const&                       oldItem,
-    ::ItemStack const&                       newItem,
-    ::PlayerBlockActionData const*           clientDestroyPrediction
-);
 // NOLINTEND
 
 } // namespace ServerPlayerBlockUseHandler

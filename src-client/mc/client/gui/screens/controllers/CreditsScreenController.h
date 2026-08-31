@@ -40,8 +40,6 @@ public:
         ::CreditsType                             contentType,
         ::std::function<void()>                   finishedCallback
     );
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -60,13 +58,5 @@ public:
     MCFOLD void $onOpen();
 
     MCAPI void $onTerminate();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

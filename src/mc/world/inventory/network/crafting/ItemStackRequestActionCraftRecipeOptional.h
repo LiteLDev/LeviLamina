@@ -33,26 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ItemStackRequestActionCraftRecipeOptional();
-
-#ifdef LL_PLAT_C
-    MCNAPI ItemStackRequestActionCraftRecipeOptional(::RecipeNetId const& recipeNetId, int filteredStringIndex);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::RecipeNetId const& recipeNetId, int filteredStringIndex);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $_write(::BinaryStream& stream) const;

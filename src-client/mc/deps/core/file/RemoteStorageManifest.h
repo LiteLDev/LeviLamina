@@ -13,11 +13,7 @@ public:
     // clang-format on
 
     // RemoteStorageManifest inner types define
-    enum class State : uchar {
-        Good                   = 0,
-        MultiChunkProcessError = 1,
-        CommitLockFound        = 2,
-    };
+    enum class State : uchar {};
 
     struct BlobSequence {
     public:

@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/comprehensive/ParticleType.h"
-
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 class HashedString;
 class MolangVariableMap;
 class Vec3;
@@ -115,15 +111,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ParticleEventRequest addParticle(
-        ::ParticleType       id,
-        ::Vec3 const&        pos,
-        ::Vec3 const&        dir,
-        int                  data,
-        ::CompoundTag const* tag,
-        bool                 isGlobal
-    );
-
     MCAPI static ::ParticleEventRequest
     addParticleEffect(::HashedString effect, ::Vec3 const& emitterPosition, ::MolangVariableMap molangVariables);
     // NOLINTEND

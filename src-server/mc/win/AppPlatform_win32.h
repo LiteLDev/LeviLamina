@@ -57,7 +57,7 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
-    virtual bool canLaunchUri(::std::string const&) /*override*/;
+    virtual bool canLaunchUri(::std::string const& uri) /*override*/;
 
     virtual void launchUri(::std::string const& uri) /*override*/;
 
@@ -89,11 +89,11 @@ public:
 
     virtual ::std::string getTextBoxBackend() const /*override*/;
 
-    virtual void setTextBoxBackend(::std::string const&) /*override*/;
+    virtual void setTextBoxBackend(::std::string const& newText) /*override*/;
 
     virtual int getCaretPosition() const /*override*/;
 
-    virtual void setCaretPosition(int) /*override*/;
+    virtual void setCaretPosition(int position) /*override*/;
 
     virtual bool hasBuyButtonWhenInvalidLicense() /*override*/;
 
@@ -131,7 +131,7 @@ public:
 
     virtual bool isWebviewSupported() const /*override*/;
 
-    virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&&) const /*override*/;
+    virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&& args) const /*override*/;
 
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
@@ -157,8 +157,6 @@ public:
         int                                screenWidth,
         int                                screenHeight
     );
-
-    MCAPI ::OSInformation _fetchOSInformation() const;
     // NOLINTEND
 
 public:
@@ -195,7 +193,7 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    MCFOLD bool $canLaunchUri(::std::string const&);
+    MCFOLD bool $canLaunchUri(::std::string const& uri);
 
     MCAPI void $launchUri(::std::string const& uri);
 
@@ -227,11 +225,11 @@ public:
 
     MCFOLD ::std::string $getTextBoxBackend() const;
 
-    MCFOLD void $setTextBoxBackend(::std::string const&);
+    MCFOLD void $setTextBoxBackend(::std::string const& newText);
 
     MCFOLD int $getCaretPosition() const;
 
-    MCFOLD void $setCaretPosition(int);
+    MCFOLD void $setCaretPosition(int position);
 
     MCFOLD bool $hasBuyButtonWhenInvalidLicense();
 
@@ -269,7 +267,7 @@ public:
 
     MCAPI bool $isWebviewSupported() const;
 
-    MCFOLD ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&&) const;
+    MCFOLD ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&& args) const;
 
     MCAPI bool $getPlatformTTSEnabled() const;
 
@@ -282,13 +280,5 @@ public:
     MCFOLD int $getPlatformDpi() const;
 
     MCFOLD ::UIScalingRules $getPlatformUIScalingRules() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIAppPlatform();
-
-    MCNAPI static void** $vftableForISecureStorageKeySystem();
     // NOLINTEND
 };

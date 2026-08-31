@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -54,8 +54,6 @@ public:
 
     MCAPI ::ScriptModuleMinecraft::ScriptChatSendAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
-
-    MCAPI ::Scripting::Result_deprecated<void> setSendToTargets_V010(bool sendToTargets);
 
     MCAPI ::Scripting::Result_deprecated<void>
     setTargets_V010(::std::vector<::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> targets);

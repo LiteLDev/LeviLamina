@@ -7,19 +7,13 @@
 #include "mc/world/inventory/network/ItemStackRequestActionType.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
-#include "mc/world/inventory/network/crafting/ItemStackRequestActionCraft.h"
 
 // auto generated forward declare list
 // clang-format off
-class CraftingContainer;
-class ItemInstance;
 class ItemStack;
 class ItemStackRequestActionCraftBase;
-class ItemStackRequestActionCraftRecipeAuto;
 class Player;
-class Recipe;
 class Recipes;
-struct CreativeItemNetIdTag;
 struct FullContainerName;
 struct RecipeNetIdTag;
 // clang-format on
@@ -61,25 +55,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult _handleAutoCraft(::ItemStackRequestActionCraftRecipeAuto const& requestAction);
-
-    MCAPI void _handleCarefulRestoration(::ItemInstance const& itemInstance) const;
-
-    MCAPI ::ItemStackNetResult
-    _handleCraftCreative(::ItemStackRequestActionCraft<::CreativeItemNetId, 14> const& requestAction);
-
-    MCAPI ::ItemStackNetResult
-    _handleCraftOutput(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
-
-    MCAPI bool _recipeMatches(::Recipe const* recipe, ::CraftingContainer& currentCraftingItems);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

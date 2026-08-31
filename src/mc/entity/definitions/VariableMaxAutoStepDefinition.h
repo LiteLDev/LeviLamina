@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-struct VariableMaxAutoStepComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -26,12 +24,6 @@ public:
     VariableMaxAutoStepDefinition& operator=(VariableMaxAutoStepDefinition const&);
     VariableMaxAutoStepDefinition(VariableMaxAutoStepDefinition const&);
     VariableMaxAutoStepDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext&, ::VariableMaxAutoStepComponent& component) const;
-    // NOLINTEND
 
 public:
     // static functions

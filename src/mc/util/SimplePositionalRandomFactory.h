@@ -9,7 +9,6 @@
 // clang-format off
 class BlockPos;
 class IRandom;
-class SimpleRandom;
 // clang-format on
 
 class SimplePositionalRandomFactory : public ::IPositionalRandomFactory {
@@ -31,20 +30,6 @@ public:
     virtual ::std::unique_ptr<::IRandom> forBlockPos(::BlockPos const& blockPos) const /*override*/;
 
     virtual ::std::unique_ptr<::IRandom> forString(::std::string const& string) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit SimplePositionalRandomFactory(int64 seed);
-
-    MCNAPI ::SimpleRandom forBlockPosImpl(::BlockPos const& blockPos) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(int64 seed);
     // NOLINTEND
 
 public:

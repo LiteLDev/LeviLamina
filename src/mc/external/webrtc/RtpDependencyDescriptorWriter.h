@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { struct DependencyDescriptor; }
@@ -44,7 +47,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk1a89d6;
     ::ll::UntypedStorage<8, 8>  mUnk954103;
     ::ll::UntypedStorage<4, 4>  mUnk26891a;
-    ::ll::UntypedStorage<8, 32> mUnkdf423b;
+    ::ll::UntypedStorage<8, 32> mUnk4790b0;
     ::ll::UntypedStorage<8, 16> mUnkd891db;
     // NOLINTEND
 
@@ -63,7 +66,7 @@ public:
     ) const;
 
     MCNAPI RtpDependencyDescriptorWriter(
-        ::rtc::ArrayView<uchar>                   data,
+        ::webrtc::ArrayView<uchar>                data,
         ::webrtc::FrameDependencyStructure const& structure,
         ::std::bitset<32>                         active_chains,
         ::webrtc::DependencyDescriptor const&     descriptor
@@ -82,7 +85,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::rtc::ArrayView<uchar>                   data,
+        ::webrtc::ArrayView<uchar>                data,
         ::webrtc::FrameDependencyStructure const& structure,
         ::std::bitset<32>                         active_chains,
         ::webrtc::DependencyDescriptor const&     descriptor

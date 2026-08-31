@@ -26,9 +26,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
+    virtual ::mce::Color getDustColor(::Block const& block) const /*override*/;
 
-    virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
+    virtual ::std::string getDustParticleName(::Block const& block) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
@@ -57,9 +57,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::mce::Color $getDustColor(::Block const&) const;
+    MCFOLD ::mce::Color $getDustColor(::Block const& block) const;
 
-    MCAPI ::std::string $getDustParticleName(::Block const&) const;
+    MCAPI ::std::string $getDustParticleName(::Block const& block) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

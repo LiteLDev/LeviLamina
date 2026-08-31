@@ -24,25 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HugeFungusFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit HugeFungusFeature(bool isBlue);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool isBlue);
     // NOLINTEND
 
 public:

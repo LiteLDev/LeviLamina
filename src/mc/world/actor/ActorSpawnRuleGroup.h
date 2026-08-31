@@ -12,7 +12,6 @@ class MobSpawnRules;
 class Random;
 class ResourcePackManager;
 struct ActorDefinitionIdentifier;
-struct Tick;
 namespace br::spawn { class SpawnPlacements; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -55,8 +54,6 @@ public:
 
     MCAPI int getDelayEnd(::std::string const& id) const;
 
-    MCAPI void offSetDelayByCurrentTick(::Tick const& currentTick);
-
     MCAPI void resetDelayEnd(::MobSpawnRules spawnRules, uint64 age, ::Random& random);
     // NOLINTEND
 
@@ -78,11 +75,5 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

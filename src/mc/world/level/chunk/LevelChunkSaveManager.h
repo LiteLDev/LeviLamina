@@ -77,11 +77,7 @@ public:
 
     MCAPI bool _shouldDoSave() const;
 
-    MCFOLD bool isChunkSaveInProgress();
-
     MCAPI void registerForLevelChunkManagerEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
-
-    MCAPI void startLeaveGame();
 
     MCAPI void trySaveChunks();
 

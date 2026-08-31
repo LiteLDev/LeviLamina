@@ -60,6 +60,8 @@ public:
     virtual ::std::string_view getName() const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    virtual ~ClientboundMapItemDataPacket() /*override*/;
     // NOLINTEND
 
 public:
@@ -86,24 +88,6 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void applyToMap(::MapItemSavedData& map, bool resampleMap) const;
-
-    MCAPI ::DimensionType getDimensionId() const;
-
-    MCAPI ::ActorUniqueID getMapId() const;
-
-    MCFOLD ::std::vector<::ActorUniqueID> const& getMapIds() const;
-
-    MCAPI ::BlockPos getMapOrigin() const;
-
-    MCFOLD schar getScale() const;
-
-    MCAPI bool hasEmptyOrBlackPixels() const;
-
-    MCFOLD bool isLocked() const;
-
-    MCAPI bool isOfType(::ClientboundMapItemDataPacket::Type type) const;
-
-    MCAPI bool isTextureUpdate() const;
 
     MCAPI void resampleClientMap(
         ::MapItemSavedData& map,
@@ -135,6 +119,12 @@ public:
         bool                isLocked,
         ::BlockPos const&   mapOrigin
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

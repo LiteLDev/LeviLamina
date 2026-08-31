@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CodeScreenController() /*override*/;
+    virtual ~CodeScreenController() /*override*/ = default;
 
     virtual void onInit() /*override*/;
 
@@ -85,12 +85,6 @@ public:
     // NOLINTBEGIN
     MCAPI CodeScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::OpenCodeMethod openMethod);
 
-    MCAPI bool _deviceHasEnoughMemory() const;
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
     MCAPI void _selectEditor(::std::string const& url);
     // NOLINTEND
 
@@ -104,12 +98,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::OpenCodeMethod openMethod);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -134,17 +122,5 @@ public:
     MCAPI void $onError(::WebviewError const& error);
 
     MCFOLD void $onWebviewChanged();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForWebviewObserver();
-
-    MCNAPI static void** $vftableForCodeScreenControllerProxy();
     // NOLINTEND
 };

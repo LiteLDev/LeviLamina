@@ -29,8 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void process();
-
     MCFOLD bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilterData const& data);
 
     MCAPI ~ScriptActorItemPickupEventFilter();
@@ -45,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

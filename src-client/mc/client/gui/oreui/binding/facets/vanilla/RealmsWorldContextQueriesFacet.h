@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/RealmsWorldContextState.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -14,7 +14,7 @@ namespace Realms { class RealmsWorldContext; }
 
 namespace OreUI {
 
-class RealmsWorldContextQueriesFacet : public ::OreUI::FacetBase<::OreUI::RealmsWorldContextQueriesFacet> {
+class RealmsWorldContextQueriesFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsWorldContextQueriesFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -55,11 +55,11 @@ public:
 
     MCFOLD bool getIsClosed() const;
 
-    MCFOLD bool getIsExpired() const;
+    MCAPI bool getIsExpired() const;
 
-    MCFOLD bool getIsFull() const;
+    MCAPI bool getIsFull() const;
 
-    MCFOLD int getMaxPlayers() const;
+    MCAPI int getMaxPlayers() const;
 
     MCFOLD ::std::string const& getRealmId() const;
 
@@ -91,13 +91,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI bool $update();
     // NOLINTEND
 };
 

@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftTextBoxController() /*override*/ = default;
+    virtual ~MinecraftTextBoxController() /*override*/;
 
     virtual void setTextBoxState(int controllerId, ::TextBoxStateChange const& stateChange) /*override*/;
 
@@ -40,17 +40,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit MinecraftTextBoxController(::IMinecraftGame& minecraftGame);
-
-    MCFOLD void onOreUIInitialized(::OreUI::OreUISystem* oreUISystem);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftGame& minecraftGame);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

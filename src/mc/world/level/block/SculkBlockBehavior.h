@@ -39,27 +39,13 @@ public:
         ::BlockPos const&    originPos,
         ::BlockPos const&    pos,
         int                  charge,
-        int                  random,
-        ::Random&            spreader,
-        ::SculkSpreader&,
+        int,
+        ::Random&        random,
+        ::SculkSpreader& spreader,
         bool const
     ) const /*override*/;
 
     virtual void onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool _canPlaceGrowth(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::BlockPos const&);
-
-    MCAPI static void _placeGrowthAt(
-        ::IBlockWorldGenAPI& target,
-        ::BlockSource*       region,
-        ::BlockPos const&    pos,
-        ::Random&            random,
-        ::SculkSpreader&     spreader
-    );
     // NOLINTEND
 
 public:
@@ -71,7 +57,7 @@ public:
 
     MCFOLD bool $canChangeBlockOnSpread() const;
 
-    MCFOLD bool $attemptSpreadVeins(
+    MCAPI bool $attemptSpreadVeins(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
         ::Block const&       block,
@@ -85,20 +71,14 @@ public:
         ::BlockPos const&    originPos,
         ::BlockPos const&    pos,
         int                  charge,
-        int                  random,
-        ::Random&            spreader,
-        ::SculkSpreader&,
+        int,
+        ::Random&        random,
+        ::SculkSpreader& spreader,
         bool const
     ) const;
 
     MCFOLD void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

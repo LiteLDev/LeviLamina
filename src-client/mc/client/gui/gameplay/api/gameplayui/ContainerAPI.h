@@ -67,18 +67,6 @@ public:
         ::ll::TypedStorage<8, 40, ::SlotData> lastPlaceOneSelectedSlot;
         ::ll::TypedStorage<8, 40, ::SlotData> lastPlaceOneDestinationSlot;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SplitSingleState& operator=(SplitSingleState const&);
-        SplitSingleState(SplitSingleState const&);
-        SplitSingleState();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::GameplayUI::ContainerAPI::SplitSingleState& operator=(::GameplayUI::ContainerAPI::SplitSingleState&&);
-        // NOLINTEND
     };
 
 public:
@@ -99,20 +87,14 @@ public:
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Trade2ContainerManagerModel>>       mTrade2ContainerManagerModel;
     ::ll::TypedStorage<4, 12, ::BlockPos>                                           mContainerBlockPos;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                       mUniqueActorId;
-    ::ll::TypedStorage<8, 80, ::GameplayUI::AnvilInfo>                              mAnvilInfo;
+    ::ll::TypedStorage<8, 112, ::GameplayUI::AnvilInfo>                             mAnvilInfo;
     ::ll::TypedStorage<8, 184, ::GameplayUI::ContainerAPI::SplitMultipleState>      mSplitMultipleState;
     ::ll::TypedStorage<8, 88, ::std::optional<::GameplayUI::ContainerAPI::SplitSingleState>> mSplitSingleState;
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContainerAPI();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ContainerAPI(::std::function<::ItemRegistryRef()> getItemRegistryRef);
-
     MCAPI ::GameplayUI::ContainerItem
     _containerItemFromItemStack(::ItemStackBase const& item, ::GameplayUI::ContainerItemType containerItemType) const;
 
@@ -121,10 +103,6 @@ public:
     MCAPI ::std::shared_ptr<::ContainerModel> _tryGetContainerModel(::ContainerEnumName containerName) const;
 
     MCAPI void _tryUpdateCraftingContainer();
-
-    MCAPI void autoCraftAllItemsFromRecipe(::ContainerEnumName sourceName, int sourceIndex);
-
-    MCAPI void autoCraftOneItemFromRecipe(::ContainerEnumName sourceName, int sourceIndex);
 
     MCAPI void autoPlaceItems(::ContainerEnumName sourceName, int sourceIndex);
 
@@ -153,8 +131,6 @@ public:
 
     MCAPI ::std::string getContainerName() const;
 
-    MCAPI ::std::optional<int> getContainerSize(::ContainerEnumName containerName) const;
-
     MCAPI ::std::optional<::GameplayUI::ContainerItem>
     getCraftingScreenContainerItem(::ContainerEnumName containerName, int index) const;
 
@@ -167,10 +143,6 @@ public:
     MCAPI ::GameplayUI::ContainerItem getTradeScreenResultPreviewContainerItem(int index) const;
 
     MCAPI ::GameplayUI::TradeTierInfo getTradeTierInfo(int tradeTier) const;
-
-    MCAPI bool isItemStackableWithCursor(::ContainerEnumName containerName, int index) const;
-
-    MCAPI bool isRecipeBookFiltering() const;
 
     MCAPI void onPlayerOpenContainer(
         ::SharedTypes::Legacy::ContainerType containerType,
@@ -261,12 +233,6 @@ public:
     );
 
     MCAPI ~ContainerAPI();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::function<::ItemRegistryRef()> getItemRegistryRef);
     // NOLINTEND
 
 public:

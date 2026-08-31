@@ -21,13 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DefaultUIScreenSetupCleanupStrategy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DefaultUIScreenSetupCleanupStrategy() /*override*/ = default;
+    virtual ~DefaultUIScreenSetupCleanupStrategy() /*override*/;
 
     virtual void setupScreen(::ScreenContext& screenContext) /*override*/;
 
@@ -37,15 +33,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit DefaultUIScreenSetupCleanupStrategy(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

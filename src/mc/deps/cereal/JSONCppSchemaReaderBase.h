@@ -83,7 +83,7 @@ public:
 
     virtual uint64 members() /*override*/;
 
-    virtual uint64 length(uint64) /*override*/;
+    virtual uint64 length(uint64 expectedSize) /*override*/;
 
     virtual bool pushMember(::std::string_view const name) /*override*/;
 
@@ -114,6 +114,8 @@ public:
     virtual bool _allowAsFloat() = 0;
 
     virtual bool _allowAsDouble() = 0;
+
+    virtual ~JSONCppSchemaReaderBase() /*override*/;
     // NOLINTEND
 
 public:
@@ -130,6 +132,12 @@ public:
     MCAPI void* $ctor(::std::string const& data);
 
     MCAPI void* $ctor(::std::reference_wrapper<::Json::Value const> value);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -176,7 +184,7 @@ public:
 
     MCFOLD uint64 $members();
 
-    MCFOLD uint64 $length(uint64);
+    MCFOLD uint64 $length(uint64 expectedSize);
 
     MCAPI bool $pushMember(::std::string_view const name);
 

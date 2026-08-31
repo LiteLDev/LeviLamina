@@ -22,6 +22,13 @@ public:
     // ApplyKnockbackRulesComponentDefinition inner types define
     struct ApplyKnockbackRulesPreset {
     public:
+        // ApplyKnockbackRulesPreset inner types define
+        enum class ExtraKnockbackApproach : uchar {
+            ReapplyDefault  = 0,
+            MultiplyReduced = 1,
+        };
+
+    public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 232, ::SharedTypes::v1_21_20::FilterGroupData> mFilter;
@@ -34,42 +41,26 @@ public:
         ::ll::TypedStorage<4, 4, float>                                      mVerticalHitAngleScale;
         ::ll::TypedStorage<4, 4, float>                                      mVerticalPositionAngleScale;
         ::ll::TypedStorage<1, 1, bool>                                       mScaleWithDamage;
+        ::ll::TypedStorage<
+            1,
+            1,
+            ::SharedTypes::Beta::ApplyKnockbackRulesComponentDefinition::ApplyKnockbackRulesPreset::
+                ExtraKnockbackApproach>
+            mExtraKnockbackApproach;
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ApplyKnockbackRulesPreset();
-
         MCAPI bool operator==(
             ::SharedTypes::Beta::ApplyKnockbackRulesComponentDefinition::ApplyKnockbackRulesPreset const& other
         ) const;
-
-        MCAPI ~ApplyKnockbackRulesPreset();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
         MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static ::std::string_view const& NAME();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -81,30 +72,6 @@ public:
         24,
         ::std::vector<::SharedTypes::Beta::ApplyKnockbackRulesComponentDefinition::ApplyKnockbackRulesPreset>>
         mPresets;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ApplyKnockbackRulesComponentDefinition();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

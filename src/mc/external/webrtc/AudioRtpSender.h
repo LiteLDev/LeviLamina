@@ -3,17 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cricket/MediaType.h"
 #include "mc/external/webrtc/DtmfProviderInterface.h"
+#include "mc/external/webrtc/MediaType.h"
 #include "mc/external/webrtc/RtpSenderBase.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class Thread; }
 namespace webrtc { class DtmfSenderInterface; }
+namespace webrtc { class Environment; }
 namespace webrtc { class LegacyStatsCollectorInterface; }
 namespace webrtc { class RTCError; }
+namespace webrtc { class Thread; }
 // clang-format on
 
 namespace webrtc {
@@ -46,7 +47,7 @@ public:
 
     virtual void OnChanged() /*override*/;
 
-    virtual ::cricket::MediaType media_type() const /*override*/;
+    virtual ::webrtc::MediaType media_type() const /*override*/;
 
     virtual ::std::string track_kind() const /*override*/;
 
@@ -71,7 +72,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI AudioRtpSender(
-        ::rtc::Thread*                               worker_thread,
+        ::webrtc::Environment const&                 env,
+        ::webrtc::Thread*                            worker_thread,
         ::std::string const&                         id,
         ::webrtc::LegacyStatsCollectorInterface*     legacy_stats,
         ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer
@@ -82,7 +84,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::AudioRtpSender> Create(
-        ::rtc::Thread*                               worker_thread,
+        ::webrtc::Environment const&                 env,
+        ::webrtc::Thread*                            worker_thread,
         ::std::string const&                         id,
         ::webrtc::LegacyStatsCollectorInterface*     stats,
         ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer
@@ -93,7 +96,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::rtc::Thread*                               worker_thread,
+        ::webrtc::Environment const&                 env,
+        ::webrtc::Thread*                            worker_thread,
         ::std::string const&                         id,
         ::webrtc::LegacyStatsCollectorInterface*     legacy_stats,
         ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer
@@ -115,7 +119,7 @@ public:
 
     MCNAPI void $OnChanged();
 
-    MCNAPI ::cricket::MediaType $media_type() const;
+    MCNAPI ::webrtc::MediaType $media_type() const;
 
     MCNAPI ::std::string $track_kind() const;
 
@@ -141,11 +145,13 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForObserverInterface();
+    MCNAPI static void** $vftableForFrameTransformerHost();
 
-    MCNAPI static void** $vftable();
+    MCNAPI static void** $vftableForRefCountInterface();
 
-    MCNAPI static void** $vftableForRtpSenderInternal();
+    MCNAPI static void** $vftableForRtpSenderBase();
+
+    MCNAPI static void** $vftableForDtmfProviderInterface();
     // NOLINTEND
 };
 

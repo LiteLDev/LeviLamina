@@ -9,10 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class Pack;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
-namespace mce { class UUID; }
 // clang-format on
 
 class RealmsUnknownPackSource : public ::PackSource {
@@ -45,11 +43,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void addPack(::std::unique_ptr<::Pack>&& pack);
-
     MCNAPI void clearPacks();
-
-    MCNAPI bool removePack(::mce::UUID const& id);
 #endif
     // NOLINTEND
 
@@ -69,11 +63,5 @@ public:
     MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&&);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

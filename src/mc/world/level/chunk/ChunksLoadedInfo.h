@@ -29,8 +29,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::ChunkViewSource> getChunkViewSource() const;
-
-    MCFOLD ::ChunksLoadedStatus getChunksLoadedStatus() const;
     // NOLINTEND
 
 public:

@@ -24,14 +24,14 @@ struct StructureProcessor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureProcessor() = default;
+    virtual ~StructureProcessor();
 
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
-        ::IBlockSource& processedBlockInfo,
+        ::IBlockSource&,
         ::BlockPos,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&&,
+        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 
@@ -66,19 +66,23 @@ public:
 
     MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
     Rule(::std::vector<::br::worldgen::processors::RuleSet> rules);
+    // NOLINTEND
 
-    MCAPI static void bootstrap();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
-        ::IBlockSource& processedBlockInfo,
+        ::IBlockSource&,
         ::BlockPos,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&&,
+        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 

@@ -12,7 +12,6 @@
 // clang-format off
 class IConstBlockSource;
 class StrictEntityContext;
-class Vec3;
 struct ActorRotationComponent;
 struct ActorSetPositionRequestComponent;
 struct FallDistanceComponent;
@@ -23,7 +22,6 @@ struct PlayerComponent;
 struct RailMovementComponent;
 struct SnapOnRailComponent;
 struct StateVectorComponent;
-struct StrictActorIDEntityContextPair;
 struct TickingSystemWithInfo;
 struct VehicleComponent;
 // clang-format on
@@ -61,16 +59,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _calculateAllPassengersRailMovementInput(
-        ::std::vector<::StrictActorIDEntityContextPair> const& passengers,
-        ::Vec3&                                                posDelta,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::PlayerComponent>,
-            ::ActorRotationComponent const,
-            ::LocalMoveVelocityComponent const> playerView
-    );
-
     MCAPI static void _calculateRailMovementSystem(
         ::StrictEntityContext const&         context,
         ::RailMovementComponent const&       railMovementComponent,
@@ -102,8 +90,6 @@ public:
         ::EntityModifier<::ActorSetPositionRequestComponent> mod,
         ::IConstBlockSource const&                           constBlockSource
     );
-
-    MCAPI static ::TickingSystemWithInfo createCleanupSystem();
 
     MCAPI static ::TickingSystemWithInfo createPostRailMovementPositionSystem();
 

@@ -49,7 +49,11 @@ public:
 
     MCAPI int $nextInt(int const bound);
 
+#ifdef LL_PLAT_S
     MCAPI int64 $nextLong();
+#else // LL_PLAT_C
+    MCFOLD int64 $nextLong();
+#endif
 
     MCFOLD bool $nextBoolean();
 
@@ -57,7 +61,7 @@ public:
 
     MCAPI double $nextGaussianDouble();
 
-    MCAPI void $consumeCount(uint count);
+    MCFOLD void $consumeCount(uint count);
 
     MCFOLD ::std::unique_ptr<::IRandom> $fork();
 

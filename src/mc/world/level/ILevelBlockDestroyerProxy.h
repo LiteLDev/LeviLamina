@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
@@ -23,12 +24,7 @@ public:
         ::Block const&       block
     ) = 0;
 
-    virtual void dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+    virtual void
+    dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor const* actorContext) = 0;
     // NOLINTEND
 };

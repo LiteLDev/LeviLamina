@@ -21,10 +21,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class NetherSproutsBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    NetherSproutsBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -49,15 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetherSproutsBlock(::std::string const& nameId, int id);
-
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

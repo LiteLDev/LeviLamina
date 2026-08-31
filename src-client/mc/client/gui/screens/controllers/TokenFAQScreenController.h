@@ -18,21 +18,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TokenFAQScreenController() /*override*/ = default;
+    virtual ~TokenFAQScreenController() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit TokenFAQScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

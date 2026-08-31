@@ -20,51 +20,23 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkdf6bf6;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     CPUProfileTokenMarker& operator=(CPUProfileTokenMarker const&);
     CPUProfileTokenMarker(CPUProfileTokenMarker const&);
     CPUProfileTokenMarker();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    CPUProfileTokenMarker& operator=(CPUProfileTokenMarker const&);
-    CPUProfileTokenMarker();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI CPUProfileTokenMarker(::Core::Profile::CPUProfileTokenMarker const& rhs);
-
-    MCNAPI CPUProfileTokenMarker(char const* group, char const* label, uint color);
-#endif
-
     MCNAPI CPUProfileTokenMarker(char const* group, ::Bedrock::Profiler::details::StaticProfLabel label, uint color);
 
     MCNAPI ::Core::Profile::CPUProfileTokenMarker& operator=(::Core::Profile::CPUProfileTokenMarker&& rhs);
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> CLONE_WARNING();
-
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> EMPTY_WARNING();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::Core::Profile::CPUProfileTokenMarker const& rhs);
-
-    MCNAPI void* $ctor(char const* group, char const* label, uint color);
-#endif
-
     MCNAPI void* $ctor(char const* group, ::Bedrock::Profiler::details::StaticProfLabel label, uint color);
     // NOLINTEND
 };

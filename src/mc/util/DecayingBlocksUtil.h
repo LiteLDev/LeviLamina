@@ -11,7 +11,7 @@ class BlockSource;
 namespace DecayingBlocksUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI void runDecay(::BlockSource& region, ::BlockPos const& pos, int range);
+MCAPI void runDecay(::BlockSource& region, ::BlockPos const& pos, int range);
 // NOLINTEND
 
 } // namespace DecayingBlocksUtil

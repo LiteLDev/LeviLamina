@@ -35,28 +35,4 @@ public:
     ClipParameters& operator=(ClipParameters const&);
     ClipParameters(ClipParameters const&);
     ClipParameters();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ClipParameters(::Vec3 const& a, ::Vec3 const& b);
-
-    MCNAPI ClipParameters(
-        ::Vec3 const&                                                            a,
-        ::Vec3 const&                                                            b,
-        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& shouldCheckBlock
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Vec3 const& a, ::Vec3 const& b);
-
-    MCNAPI void* $ctor(
-        ::Vec3 const&                                                            a,
-        ::Vec3 const&                                                            b,
-        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& shouldCheckBlock
-    );
-    // NOLINTEND
 };

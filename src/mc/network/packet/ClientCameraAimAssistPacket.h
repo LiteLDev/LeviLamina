@@ -62,22 +62,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI ClientCameraAimAssistPacket();
-
 #ifdef LL_PLAT_C
-    MCAPI explicit ClientCameraAimAssistPacket(::ClientCameraAimAssistPacketPayload payload);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ClientCameraAimAssistPacketPayload payload);
+    MCAPI void $dtor();
 #endif
     // NOLINTEND
 

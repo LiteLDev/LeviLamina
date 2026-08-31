@@ -26,12 +26,6 @@ public:
 
     virtual void Finish(::cohtml::IAsyncResourceStreamResponse::Status) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace cohtml

@@ -25,27 +25,16 @@ public:
 
 public:
     // prevent constructor by default
-    TextureContainer& operator=(TextureContainer const&);
-    TextureContainer(TextureContainer const&);
+    TextureContainer();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TextureContainer();
-
-    MCAPI TextureContainer(::mce::TextureContainer&& rhs);
-
     MCAPI TextureContainer(::cg::ImageBuffer&& rhs, ::mce::AllowDroppingMips allowDroppingMips);
 
     MCAPI TextureContainer(::std::shared_ptr<::cg::ImageResource>&& rhs, ::mce::AllowDroppingMips allowDroppingMips);
 
     MCAPI TextureContainer(::std::vector<::cg::ImageBuffer>&& rhs, ::mce::TextureDescription const& textureDescription);
-
-    MCAPI ::cg::ImageBuffer const& getImage(uint mipLevel) const;
-
-    MCFOLD ::mce::TextureDescription const& getTextureDescription() const;
-
-    MCAPI bool isValid() const;
 
     MCAPI ::mce::TextureContainer& operator=(::cg::ImageBuffer&& rhs);
 
@@ -55,10 +44,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::mce::TextureContainer&& rhs);
-
     MCAPI void* $ctor(::cg::ImageBuffer&& rhs, ::mce::AllowDroppingMips allowDroppingMips);
 
     MCAPI void* $ctor(::std::shared_ptr<::cg::ImageResource>&& rhs, ::mce::AllowDroppingMips allowDroppingMips);

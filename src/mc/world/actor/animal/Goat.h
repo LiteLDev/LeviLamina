@@ -14,7 +14,6 @@ class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class Mob;
 struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
@@ -48,19 +47,7 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI int getHornCount() const;
-
-    MCAPI bool isScreaming();
-
     MCAPI void reduceHornCount();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getCustomDeathSound(::Mob const& mob);
-
-    MCAPI static ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getCustomHurtSound(::Mob const& mob);
     // NOLINTEND
 
 public:

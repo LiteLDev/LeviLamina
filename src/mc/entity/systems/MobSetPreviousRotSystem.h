@@ -15,10 +15,10 @@ namespace MobSetPreviousRotSystem {
 // functions
 // NOLINTBEGIN
 MCAPI void _setPreviousRotation(
-    ::StrictEntityContext&        actorHeadRotation,
-    ::ActorHeadRotationComponent& actorRotation,
-    ::ActorRotationComponent&     mobBodyRotation,
-    ::MobBodyRotationComponent&
+    ::StrictEntityContext&,
+    ::ActorHeadRotationComponent& actorHeadRotation,
+    ::ActorRotationComponent&     actorRotation,
+    ::MobBodyRotationComponent&   mobBodyRotation
 );
 
 MCAPI ::TickingSystemWithInfo createSystem();

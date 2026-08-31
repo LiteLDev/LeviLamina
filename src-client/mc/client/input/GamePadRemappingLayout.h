@@ -3,10 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/input/ButtonIndiciesEnum.h"
 #include "mc/client/input/IconSize.h"
 #include "mc/client/input/RemappingLayout.h"
-#include "mc/client/input/TriggerIndiciesEnum.h"
 #include "mc/deps/input/enums/RawInputType.h"
 
 // auto generated forward declare list
@@ -22,10 +20,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                mGamepadButtonsXYAreSwapped;
     ::ll::TypedStorage<1, 1, bool>                mGamepadButtonsABAreSwapped;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GamePadRemappingLayout();
 
 public:
     // virtual functions
@@ -54,42 +48,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GamePadRemappingLayout(bool swapAB, bool swapXY);
-
     MCAPI ::std::string
     _getKeySpriteLocationInternal(int key, bool checkUserConfiguredButtonSwapping, ::IconSize iconSize) const;
 
-    MCAPI ::std::string const _getMappedKeyNameInternal(int key, bool checkUserConfiguredButtonSwapping) const;
+    MCAPI ::std::string const _getMappedKeyNameInternal(int key, bool const checkUserConfiguredButtonSwapping) const;
 
     MCAPI void _swapGamepadKeyBindings(int key1, int key2);
 
-    MCAPI ::std::string getKeySpriteLocation(::TriggerIndiciesEnum trigger) const;
-
-    MCFOLD ::std::string getKeySpriteLocation(::ButtonIndiciesEnum button, ::IconSize iconSize) const;
-
     MCAPI ::std::string getKeySpriteName(int key) const;
 
-    MCAPI ::std::string getKeyTextName(int key) const;
-
-    MCAPI ::ButtonIndiciesEnum getMappedButtonIndicie(int key) const;
-
-    MCAPI void setGamepadButtonsABAreSwapped(bool swapAB);
-
-    MCAPI void setGamepadButtonsXYAreSwapped(bool swapXY);
-
-    MCAPI void swapGamepadButtonKeyBindings(::ButtonIndiciesEnum button1, ::ButtonIndiciesEnum button2);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool swapAB, bool swapXY);
+    MCAPI ::std::string getKeyTextName(int key, bool checkUserConfiguredButtonSwapping) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

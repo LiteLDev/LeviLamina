@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct AssertHandlerContext;
-// clang-format on
-
 class DebugAssertException : public ::std::exception {
 public:
     // member variables
@@ -18,41 +13,12 @@ public:
 public:
     // prevent constructor by default
     DebugAssertException& operator=(DebugAssertException const&);
+    DebugAssertException(DebugAssertException const&);
     DebugAssertException();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual char const* what() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI DebugAssertException(::DebugAssertException const&);
-
-    MCNAPI explicit DebugAssertException(::AssertHandlerContext context);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::DebugAssertException const&);
-
-    MCNAPI void* $ctor(::AssertHandlerContext context);
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI char const* $what() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

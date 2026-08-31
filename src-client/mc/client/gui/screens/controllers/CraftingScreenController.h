@@ -46,21 +46,9 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, ::InventoryLeftTabIndex>             tabIndex;
-        ::ll::TypedStorage<4, 4, ::SharedTypes::CreativeItemCategory> category;
+        ::ll::TypedStorage<1, 1, ::SharedTypes::CreativeItemCategory> category;
         ::ll::TypedStorage<1, 1, ::ContainerEnumName>                 container;
         ::ll::TypedStorage<8, 32, ::std::string>                      tabName;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~CategoryTabInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -70,18 +58,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 40, ::SlotData> mSlot;
         ::ll::TypedStorage<4, 4, int>         mNumExpandedItems;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ScrollItemData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -130,7 +106,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftingScreenController() /*override*/;
+    virtual ~CraftingScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -222,21 +198,7 @@ public:
 
     MCAPI void _focusCollectionItem(::std::string const& collectionName, int collectionIndex, bool forceFocus);
 
-    MCAPI ::std::string _getButtonLeftStickDescription() const;
-
-    MCAPI ::std::string _getCraftStackText() const;
-
-    MCAPI ::std::string _getExpandoItemGroupName(::std::string const& collectionName, int collectionIndex);
-
-    MCAPI ::std::string _getRecipeHoverText(::std::string const& collectionName, int collectionIndex);
-
-    MCAPI void _handleAutoDestroy(::std::string const& collectionName, int collectionIndex);
-
     MCAPI void _handleCraftItem(::ItemCraftType);
-
-    MCAPI void _handleCreativeHotbarPlaceAll(::std::string const& collectionName, int collectionIndex);
-
-    MCAPI void _handleCreativeHotbarPlaceOne(::std::string const& collectionName, int collectionIndex);
 
     MCAPI void _handleRecipeSelect(::std::string const& collectionName, int collectionIndex, bool displayOnly);
 
@@ -248,24 +210,14 @@ public:
 
     MCAPI bool _isNatureTabVisible() const;
 
-    MCAPI void _loadPlayerInventoryOptions();
-
     MCAPI ::ui::ViewRequest
     _recipeAutoCraft(::std::string const& collectionName, int collectionIndex, ::ItemCraftType craftType);
 
     MCAPI void _refreshFilters(::InventoryLeftTabIndex tab, bool forceRefresh);
 
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerStateMachine();
-
     MCAPI void _savePlayerInventoryOptions();
 
     MCAPI void _sendActiveLayoutInfo();
-
-    MCAPI void _setInitialTabsSelected(int defaultLeftTab, int defaultRightTab);
 
     MCAPI void _setLeftSideInventoryTab(int tabIndex, bool saveOptions);
 
@@ -277,10 +229,6 @@ public:
         ::ContainerEnumName               containerName,
         ::std::vector<::AutoPlaceResult>& autoPlaceResults
     );
-
-    MCAPI void _tryHoverOnIngredientSetChanged();
-
-    MCAPI void _updateInteractionCollectionName();
     // NOLINTEND
 
 public:
@@ -305,12 +253,6 @@ public:
         ::ActorUniqueID                                uniqueId,
         ::CraftingType                                 craftingType
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -382,15 +324,5 @@ public:
     MCAPI void $_registerAutoPlaceOrder();
 
     MCAPI bool $_isInCreativeContainer(::std::string const& containerName) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

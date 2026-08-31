@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/GameVersionBindings.h"
 
 namespace OreUI {
 
-class BuildSettingsFacet : public ::OreUI::FacetBase<::OreUI::BuildSettingsFacet> {
+class BuildSettingsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::BuildSettingsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -31,7 +31,7 @@ public:
 
     MCFOLD ::std::optional<::std::string> const& getDevelopmentVersion() const;
 
-    MCAPI bool isAnyBeta() const;
+    MCFOLD bool isAnyBeta() const;
 
     MCFOLD bool isBetaBuild() const;
 
@@ -54,12 +54,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

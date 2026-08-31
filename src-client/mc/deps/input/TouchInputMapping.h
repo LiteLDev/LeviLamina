@@ -28,13 +28,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TouchInputMapping& operator=(TouchInputMapping const&);
+    TouchInputMapping();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TouchInputMapping();
-
     MCAPI TouchInputMapping(::TouchInputMapping const&);
-
-    MCAPI ::TouchInputMapping& operator=(::TouchInputMapping const&);
 
     MCAPI ~TouchInputMapping();
     // NOLINTEND
@@ -42,8 +43,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::TouchInputMapping const&);
     // NOLINTEND
 

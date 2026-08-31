@@ -4,26 +4,34 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/cereal/ContextArea.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace BlockGeometrySerializer { struct Proxy; }
-namespace cereal { class SerializerContext; }
+namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace BlockGeometrySerializer {
 
-struct Constraint : public ::cereal::ConstraintHandle<::BlockGeometrySerializer::Constraint> {
+class Constraint : public ::cereal::ConstraintHandle<::BlockGeometrySerializer::Constraint> {
 public:
-    // member functions
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI void validateValue(::BlockGeometrySerializer::Proxy const& proxy, ::cereal::SerializerContext& context) const;
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
     // NOLINTEND
 
 public:
-    // vftables
+    // static variables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static ::std::array<::std::string_view, 3> const& InvalidVanillaGeometryForBoneVis();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
+
     // NOLINTEND
 };
 

@@ -42,13 +42,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI CommandOutputSender();
-
-    MCAPI void _sendToCodeBuilder(::CommandOrigin const& origin, ::CommandOutput const& commandOutput);
-
     MCAPI ::Json::Value _toJson(::CommandOutput const& commandOutput) const;
-
-    MCAPI void addObserver(::CodeBuilder::CommandOutputObserver& observer);
 #endif
 
     MCAPI void
@@ -58,21 +52,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor();
-#endif
+    MCAPI static ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

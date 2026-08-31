@@ -42,9 +42,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void _addTestResult(
-        ::std::string const&                       testName,
-        ::std::string const&                       result,
-        ::std::optional<::gametest::GameTestError> error
+        ::std::string const&                             testName,
+        ::std::string const&                             result,
+        ::std::optional<::gametest::GameTestError> const error
     );
     // NOLINTEND
 
@@ -62,11 +62,5 @@ public:
     MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 
     MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

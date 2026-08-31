@@ -11,20 +11,8 @@ namespace mce { class UUID; }
 namespace ScriptNativeModuleIds {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::array<::mce::UUID, 10>
+MCNAPI ::std::array<::mce::UUID, 11>
 getAll(::ScriptNativeModuleIds::Environment const& environment, ::mce::UUID const& missing);
-
-MCNAPI ::mce::UUID getScriptDebugUtilities();
-
-MCNAPI ::mce::UUID getScriptDiagnostics();
-
-MCNAPI ::mce::UUID getScriptGameTest();
-
-MCNAPI ::mce::UUID getScriptMinecraft();
-
-#ifdef LL_PLAT_C
-MCNAPI ::mce::UUID getScriptMinecraftClient();
-#endif
 // NOLINTEND
 
 } // namespace ScriptNativeModuleIds

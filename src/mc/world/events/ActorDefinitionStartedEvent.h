@@ -22,16 +22,4 @@ public:
     ActorDefinitionStartedEvent& operator=(ActorDefinitionStartedEvent const&);
     ActorDefinitionStartedEvent(ActorDefinitionStartedEvent const&);
     ActorDefinitionStartedEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorDefinitionStartedEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

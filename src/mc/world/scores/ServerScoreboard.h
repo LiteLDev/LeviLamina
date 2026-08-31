@@ -14,13 +14,11 @@
 class Actor;
 class BasicTimer;
 class CommandSoftEnumRegistry;
-class CompoundTag;
 class DisplayObjective;
 class EntityContext;
 class GameplayUserManager;
 class IActorManagerConnector;
 class ILevelStorageManagerConnector;
-class Level;
 class LevelStorage;
 class Objective;
 class PacketSender;
@@ -112,15 +110,11 @@ public:
     MCAPI void
     _clearAllScoreTagsForObjective(::std::string const& displaySlotName, ::DisplayObjective const& displayObjective);
 
-    MCAPI void _clearScoreTag(::ScoreboardId const& scoreboardId);
-
     MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
     MCAPI void _onRemoveActorEntityReferences(::Actor& actor);
 
-    MCFOLD void _onSaveEvent(::LevelStorage&);
-
-    MCAPI void _readFromLevelStorage();
+    MCAPI void _onSaveEvent(::LevelStorage&);
 
     MCAPI ::ScorePacketInfo _unpackIdentityDefToScorePacket(
         ::ScoreboardIdentityRef const& identityDef,
@@ -128,21 +122,12 @@ public:
         int                            score
     );
 
-    MCAPI void
-    _updateAllScoreTagsForObjective(::std::string const& displaySlotName, ::DisplayObjective const& displayObjective);
-
-    MCAPI void _updateScoreTag(::ScoreboardId const& scoreboardId, bool);
-
-    MCAPI void deserialize(::std::unique_ptr<::CompoundTag> root);
-
-    MCFOLD void initializeImGui(::Level& level);
+    MCAPI void _updateScoreTag(::ScoreboardId const& scoreboardId, bool assertOnFakePlayer);
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
     MCAPI void intializeWithActorManager(::IActorManagerConnector& actorManagerConnector);
-
-    MCAPI ::std::unique_ptr<::CompoundTag> serialize() const;
     // NOLINTEND
 
 public:
@@ -199,11 +184,5 @@ public:
     MCFOLD bool $isClientSide() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

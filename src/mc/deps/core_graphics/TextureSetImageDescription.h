@@ -34,31 +34,6 @@ public:
         ::ll::TypedStorage<1, 1, ::cg::TextureSetLayerType>                                             mLayerType;
         ::ll::TypedStorage<4, 24, ::std::variant<::cg::ImageDescription, ::ColorChannel, ::mce::Color>> mData;
         // NOLINTEND
-
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-    public:
-        // prevent constructor by default
-        LayerInfoVar(LayerInfoVar const&);
-        LayerInfoVar();
-
-#endif
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCFOLD ::cg::TextureSetLayerType const& getLayerType() const;
-
-        MCAPI bool isColor() const;
-
-        MCAPI bool isColorChannel() const;
-
-        MCAPI bool isImage() const;
-
-        MCAPI ::cg::TextureSetImageDescription::LayerInfoVar&
-        operator=(::cg::TextureSetImageDescription::LayerInfoVar const& var);
-#endif
-        // NOLINTEND
     };
 
     using LayerInfoVarList = ::std::vector<::cg::TextureSetImageDescription::LayerInfoVar>;
@@ -72,28 +47,20 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::cg::TextureSetImageDescription::LayerInfoVar>> mLayerInfo;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    TextureSetImageDescription();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI TextureSetImageDescription();
-
     MCAPI explicit TextureSetImageDescription(::cg::ImageDescription const& imageDesc);
 
     MCAPI explicit TextureSetImageDescription(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
-
-    MCFOLD ::std::_Vector_const_iterator<
-        ::std::_Vector_val<::std::_Simple_types<::cg::TextureSetImageDescription::LayerInfoVar>>> const
-    begin() const;
-
-    MCFOLD ::std::_Vector_const_iterator<
-        ::std::_Vector_val<::std::_Simple_types<::cg::TextureSetImageDescription::LayerInfoVar>>> const
-    end() const;
-
-    MCFOLD uint64 const getLayerCount() const;
-
-    MCAPI ::cg::TextureSetImageDescription::LayerInfoVar const*
-    tryGetLayerInfo(::cg::TextureSetLayerType const& layerType) const;
 
     MCAPI ~TextureSetImageDescription();
 #endif
@@ -103,8 +70,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void* $ctor();
-
     MCAPI void* $ctor(::cg::ImageDescription const& imageDesc);
 
     MCAPI void* $ctor(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);

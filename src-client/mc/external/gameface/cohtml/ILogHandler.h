@@ -15,12 +15,6 @@ public:
 
     virtual void WriteLog(::cohtml::Logging::Severity severity, char const* message, uint64 length) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace cohtml::Logging

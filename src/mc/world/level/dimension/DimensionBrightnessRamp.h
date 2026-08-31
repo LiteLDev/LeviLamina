@@ -12,7 +12,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DimensionBrightnessRamp() = default;
+    virtual ~DimensionBrightnessRamp();
 
     virtual void buildBrightnessRamp();
 
@@ -20,9 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI float getBrightnessRampValue(int index) const;
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

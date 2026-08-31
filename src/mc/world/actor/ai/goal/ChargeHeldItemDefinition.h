@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ChargeHeldItemGoal;
-class EntityContext;
 class ItemDescriptor;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -26,23 +24,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::ChargeHeldItemGoal& goal) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
         ::std::string const&                                                                                     name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ChargeHeldItemDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

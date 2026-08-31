@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SignScreenController() /*override*/ = default;
+    virtual ~SignScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -59,10 +59,6 @@ public:
         ::SignTextSide                                 signSide
     );
 
-    MCAPI void _finalizeMessage();
-
-    MCAPI void _registerEventHandlers();
-
     MCAPI void _setMessageToSign(::std::string message);
     // NOLINTEND
 
@@ -75,6 +71,12 @@ public:
         ::BlockActorType                               blockActorType,
         ::SignTextSide                                 signSide
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -91,13 +93,5 @@ public:
     MCAPI void $onTerminate();
 
     MCAPI bool $_isStillValid() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

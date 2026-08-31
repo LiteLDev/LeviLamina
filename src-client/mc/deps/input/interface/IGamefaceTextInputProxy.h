@@ -33,10 +33,4 @@ public:
 
     virtual ::TextBoxSelection getSelection() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

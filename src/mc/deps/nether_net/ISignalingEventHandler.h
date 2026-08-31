@@ -17,12 +17,6 @@ public:
 
     virtual void OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace NetherNet

@@ -19,13 +19,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AnchoredOffsetComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AnchoredOffsetComponent() /*override*/ = default;
+    virtual ~AnchoredOffsetComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -35,15 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AnchoredOffsetComponent(::UIControl& owner);
-
     MCAPI void updateLayoutFromPropertyValue();
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

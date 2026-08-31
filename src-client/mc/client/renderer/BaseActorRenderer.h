@@ -58,10 +58,6 @@ public:
         bool                                 showBackface,
         bool                                 showTextBackface
     ) const;
-
-    MCFOLD ::mce::MaterialPtr& getDepthTestedNameTagMat();
-
-    MCFOLD ::mce::MaterialPtr& getDepthTestedNameTextMat();
     // NOLINTEND
 
 public:
@@ -79,9 +75,6 @@ public:
         float                                scale,
         ::std::optional<::Quaternion> const& rotation
     );
-
-    MCAPI static ::std::variant<::std::shared_ptr<::mce::Mesh>, int>
-    _makeTextBackground(::Tessellator& tessellator, ::std::string const& str, ::std::vector<int> const& widths);
     // NOLINTEND
 
 public:
@@ -102,11 +95,5 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

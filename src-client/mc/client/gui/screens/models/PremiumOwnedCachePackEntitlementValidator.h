@@ -22,10 +22,4 @@ public:
     // NOLINTBEGIN
     MCAPI bool $isEntitlementValid(::IEntitlement const& entitlement) const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

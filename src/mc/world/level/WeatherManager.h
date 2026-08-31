@@ -46,8 +46,6 @@ public:
     MCAPI void stopWeather();
 
     MCAPI void updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
-
-    MCAPI ~WeatherManager();
     // NOLINTEND
 
 public:
@@ -59,11 +57,5 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>     levelEventManager,
         ::std::unique_ptr<::IWeatherManagerProxy>              weatherManagerProxy
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

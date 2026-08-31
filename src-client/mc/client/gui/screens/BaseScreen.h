@@ -85,13 +85,13 @@ public:
 
     virtual void applyInput(float a) /*override*/;
 
-    virtual void preRenderUpdate(::ScreenContext&) /*override*/;
+    virtual void preRenderUpdate(::ScreenContext& screenContext) /*override*/;
 
     virtual void prepareFrame(::ScreenContext& screenContext) /*override*/;
 
     virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) = 0;
 
-    virtual void postRenderUpdate(::ScreenContext&) /*override*/;
+    virtual void postRenderUpdate(::ScreenContext& screenContext) /*override*/;
 
     virtual void handleInputModeChanged(::InputMode inputMode) /*override*/;
 
@@ -177,7 +177,7 @@ public:
 
     virtual int getScreenVersion() const /*override*/;
 
-    virtual void processBufferedTextCharEvents(::std::vector<::TextCharEventData> const&) /*override*/;
+    virtual void processBufferedTextCharEvents(::std::vector<::TextCharEventData> const& bufferedEvents) /*override*/;
 
     virtual bool getShouldSendEvents() /*override*/;
 
@@ -235,12 +235,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BaseScreen();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void drawRectangleArea(
@@ -258,21 +252,15 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $setupForRendering(::ScreenContext& screenContext);
+    MCAPI void $setupForRendering(::ScreenContext& screenContext);
 
     MCAPI void $cleanupForRendering(::ScreenContext& screenContext);
 
@@ -308,11 +296,11 @@ public:
 
     MCFOLD void $applyInput(float a);
 
-    MCFOLD void $preRenderUpdate(::ScreenContext&);
+    MCFOLD void $preRenderUpdate(::ScreenContext& screenContext);
 
     MCFOLD void $prepareFrame(::ScreenContext& screenContext);
 
-    MCFOLD void $postRenderUpdate(::ScreenContext&);
+    MCFOLD void $postRenderUpdate(::ScreenContext& screenContext);
 
     MCFOLD void $handleInputModeChanged(::InputMode inputMode);
 
@@ -375,7 +363,7 @@ public:
 
     MCFOLD int $getWidth();
 
-    MCFOLD int $getHeight();
+    MCAPI int $getHeight();
 
     MCFOLD void $reload();
 
@@ -393,11 +381,11 @@ public:
 
     MCFOLD int $getScreenVersion() const;
 
-    MCFOLD void $processBufferedTextCharEvents(::std::vector<::TextCharEventData> const&);
+    MCFOLD void $processBufferedTextCharEvents(::std::vector<::TextCharEventData> const& bufferedEvents);
 
     MCFOLD bool $getShouldSendEvents();
 
-    MCFOLD void $setShouldSendEvents(bool sendEvents);
+    MCAPI void $setShouldSendEvents(bool sendEvents);
 
     MCFOLD bool $getWantsTextOnly();
 
@@ -431,7 +419,7 @@ public:
 
     MCAPI void $schedulePop();
 
-    MCFOLD bool $isTerminating() const;
+    MCAPI bool $isTerminating() const;
 
     MCFOLD bool $loadScreenImmediately() const;
 

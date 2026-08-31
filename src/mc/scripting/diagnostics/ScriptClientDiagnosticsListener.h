@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnk2405d5;
-    ::ll::UntypedStorage<8, 160> mUnkb8ac67;
+    ::ll::UntypedStorage<8, 184> mUnkb8ac67;
     // NOLINTEND
 
 public:
@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptClientDiagnosticsListener() /*override*/ = default;
+    virtual ~ScriptClientDiagnosticsListener() /*override*/;
 
     virtual ::EventResult onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent) /*override*/;
     // NOLINTEND
@@ -44,6 +44,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ServerNetworkEventCoordinator& networkEventCoordinator);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

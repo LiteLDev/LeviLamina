@@ -38,20 +38,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canUse();
+    MCAPI bool $canUse();
 
-    MCFOLD bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
     MCAPI void $tick();
 
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

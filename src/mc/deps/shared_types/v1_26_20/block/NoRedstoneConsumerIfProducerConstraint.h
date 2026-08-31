@@ -4,11 +4,23 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/cereal/ContextArea.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal::internal { struct ConstraintDescription; }
+// clang-format on
 
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
-struct NoRedstoneConsumerIfProducerConstraint
+class NoRedstoneConsumerIfProducerConstraint
 : public ::cereal::ConstraintHandle<::SharedTypes::v1_26_20::BlockDefinition::NoRedstoneConsumerIfProducerConstraint> {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+    // NOLINTEND
+
 public:
     // static variables
     // NOLINTBEGIN
@@ -16,9 +28,11 @@ public:
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
+
     // NOLINTEND
 };
 

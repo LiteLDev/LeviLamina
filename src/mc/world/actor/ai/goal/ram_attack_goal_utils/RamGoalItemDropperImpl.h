@@ -44,7 +44,11 @@ public:
 
     MCAPI void $checkForHornDropOnCollision(::Vec3 collisionPos);
 
+#ifdef LL_PLAT_S
     MCAPI void $dontDropHorn();
+#else // LL_PLAT_C
+    MCFOLD void $dontDropHorn();
+#endif
 
 
     // NOLINTEND

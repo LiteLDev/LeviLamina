@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ServerboundDiagnosticsPacket;
+namespace Bedrock::Profile::Whisker::Diagnostics { struct ScopeDataSummary; }
 // clang-format on
 
 struct DiagnosticsEvent {
@@ -17,30 +17,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 72, ::ProfilerLiteTelemetry>                                      mTelemetry;
     ::ll::TypedStorage<8, 48, ::ECS::Profiling::Diagnostics::EntitySystemDiagnosticSummary> mEntitySystemDiagnostics;
-    ::ll::TypedStorage<8, 32, ::std::string>                                                mPlayerName;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DiagnosticsEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DiagnosticsEvent(::ServerboundDiagnosticsPacket const& packet, ::std::string const& playerName);
-
-    MCAPI ~DiagnosticsEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerboundDiagnosticsPacket const& packet, ::std::string const& playerName);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::Profile::Whisker::Diagnostics::ScopeDataSummary>> mWhiskerData;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                             mPlayerName;
     // NOLINTEND
 };
