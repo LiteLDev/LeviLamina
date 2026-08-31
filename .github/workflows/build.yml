@@ -92,7 +92,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: matbour/setup-sentry-cli@v2
+      - uses: matbour/setup-sentry-cli@v3
         with:
           token: ${{ SECRETS.SENTRY_TOKEN }}
           organization: ${{ SECRETS.SENTRY_ORG }}
