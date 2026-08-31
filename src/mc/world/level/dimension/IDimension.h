@@ -25,7 +25,11 @@ class IDimension {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~IDimension() = default;
+#else // LL_PLAT_C
     virtual ~IDimension();
+#endif
 
     virtual bool isNaturalDimension() const = 0;
 
@@ -64,7 +68,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

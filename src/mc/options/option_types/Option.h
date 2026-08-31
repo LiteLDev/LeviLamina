@@ -142,7 +142,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~Option() = default;
+#else // LL_PLAT_C
     virtual ~Option();
+#endif
 
     virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) = 0;
 
@@ -222,7 +226,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

@@ -61,7 +61,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~SelectionServiceProvider() = default;
+#else // LL_PLAT_C
     virtual ~SelectionServiceProvider();
+#endif
 
     virtual ::Editor::Selection::SelectionContainerVolume const& containerVolume() const = 0;
 
@@ -98,7 +102,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

@@ -266,7 +266,11 @@ public:
     // NOLINTBEGIN
     virtual void onPlayerReady(::Player& player);
 
+#ifdef LL_PLAT_S
+    virtual ~NetEventCallback() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~NetEventCallback() /*override*/;
+#endif
 
     virtual void onConnect(::NetworkIdentifier const& id);
 
@@ -1057,7 +1061,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD void $dtor();
+#endif
     // NOLINTEND
 
 public:

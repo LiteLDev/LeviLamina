@@ -28,7 +28,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~IFunction() = default;
+#else // LL_PLAT_C
     virtual ~IFunction();
+#endif
 
     virtual ::entt::meta_any call(::entt::meta_handle, ::entt::meta_any*, uint) = 0;
 
@@ -52,7 +56,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

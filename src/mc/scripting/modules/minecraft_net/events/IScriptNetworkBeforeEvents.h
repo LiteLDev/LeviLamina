@@ -19,7 +19,11 @@ class IScriptNetworkBeforeEvents {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~IScriptNetworkBeforeEvents() = default;
+#else // LL_PLAT_C
     virtual ~IScriptNetworkBeforeEvents();
+#endif
 
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent>>
@@ -33,7 +37,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

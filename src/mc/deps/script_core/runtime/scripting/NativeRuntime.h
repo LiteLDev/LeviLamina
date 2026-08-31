@@ -134,7 +134,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

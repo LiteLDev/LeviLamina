@@ -28,7 +28,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~BaseScriptGameTestFunction() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~BaseScriptGameTestFunction() /*override*/;
+#endif
 
     virtual ::std::unique_ptr<::gametest::IGameTestFunctionContext>
     createContext(::gametest::BaseGameTestHelper& helper) const /*override*/;
@@ -49,7 +53,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

@@ -32,7 +32,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~BlockEventBlockTypeExecutor() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~BlockEventBlockTypeExecutor() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -45,7 +50,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD void $dtor();
+#endif
     // NOLINTEND
 
 public:

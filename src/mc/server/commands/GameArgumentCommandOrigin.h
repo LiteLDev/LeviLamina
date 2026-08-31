@@ -68,7 +68,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD void $dtor();
+#endif
     // NOLINTEND
 
 public:

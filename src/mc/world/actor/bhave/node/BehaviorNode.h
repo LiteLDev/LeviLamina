@@ -29,7 +29,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~BehaviorNode() = default;
+#else // LL_PLAT_C
     virtual ~BehaviorNode();
+#endif
 
     virtual ::BehaviorStatus tick(::Actor& owner) = 0;
 
@@ -39,7 +43,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD void $dtor();
+#endif
     // NOLINTEND
 
 public:
