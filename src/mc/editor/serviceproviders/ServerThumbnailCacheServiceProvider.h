@@ -13,7 +13,11 @@ class ServerThumbnailCacheServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~ServerThumbnailCacheServiceProvider() = default;
+#else // LL_PLAT_C
     virtual ~ServerThumbnailCacheServiceProvider();
+#endif
 
     virtual bool remove(::mce::UUID id, ::std::optional<uint> hash) = 0;
     // NOLINTEND
@@ -21,7 +25,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

@@ -6,7 +6,11 @@ class GameCallbacks {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~GameCallbacks() = default;
+#else // LL_PLAT_C
     virtual ~GameCallbacks();
+#endif
 
     virtual void onLevelCorrupt() = 0;
 
@@ -30,7 +34,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

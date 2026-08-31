@@ -25,7 +25,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~NavigationScriptActorComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~NavigationScriptActorComponent() /*override*/;
+#endif
 
     virtual ::Scripting::Result_deprecated<bool> getIsAmphibious() const;
 
@@ -73,7 +77,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD void $dtor();
+#endif
     // NOLINTEND
 
 public:

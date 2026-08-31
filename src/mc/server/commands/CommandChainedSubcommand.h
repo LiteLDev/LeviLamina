@@ -17,7 +17,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~CommandChainedSubcommand() = default;
+#else // LL_PLAT_C
     virtual ~CommandChainedSubcommand();
+#endif
 
     virtual ::std::string getCommandName() const = 0;
     // NOLINTEND
@@ -25,6 +29,8 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

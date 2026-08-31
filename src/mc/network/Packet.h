@@ -35,7 +35,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~Packet() = default;
+#else // LL_PLAT_C
     virtual ~Packet();
+#endif
 
     virtual ::MinecraftPacketIds getId() const = 0;
 
@@ -79,7 +83,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD void $dtor();
+#endif
     // NOLINTEND
 
 public:

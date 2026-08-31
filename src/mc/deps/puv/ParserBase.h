@@ -32,7 +32,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~ParserBase() = default;
+#else // LL_PLAT_C
     virtual ~ParserBase();
+#endif
 
     virtual ::Puv::LoadResultAny doParse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const = 0;
     // NOLINTEND
@@ -52,7 +56,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

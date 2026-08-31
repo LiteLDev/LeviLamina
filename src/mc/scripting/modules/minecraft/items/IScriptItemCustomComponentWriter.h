@@ -22,7 +22,11 @@ class IScriptItemCustomComponentWriter {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~IScriptItemCustomComponentWriter() = default;
+#else // LL_PLAT_C
     virtual ~IScriptItemCustomComponentWriter();
+#endif
 
     virtual ::Scripting::Result<
         void,
@@ -52,7 +56,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

@@ -14,7 +14,11 @@ class CrashTelemetryProcessor {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~CrashTelemetryProcessor() = default;
+#else // LL_PLAT_C
     virtual ~CrashTelemetryProcessor();
+#endif
 
     virtual void sendCrashTelemetryNow(::std::shared_ptr<::Bedrock::SessionInfo> session) = 0;
 
@@ -28,7 +32,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

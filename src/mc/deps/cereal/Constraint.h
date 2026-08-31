@@ -39,7 +39,11 @@ public:
 
     virtual uint64 doMinInputLength() const;
 
+#ifdef LL_PLAT_S
+    virtual ~Constraint() = default;
+#else // LL_PLAT_C
     virtual ~Constraint();
+#endif
 
     virtual ::cereal::Constraint const* subConstraint(uint64 index) const;
 
@@ -49,7 +53,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

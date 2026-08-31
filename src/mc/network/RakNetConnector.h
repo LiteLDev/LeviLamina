@@ -39,7 +39,11 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        virtual ~ConnectionCallbacks() /*override*/ = default;
+#else // LL_PLAT_C
         virtual ~ConnectionCallbacks() /*override*/;
+#endif
 
         virtual void
         onAllConnectionsClosed(::Connection::DisconnectFailReason discoReason, bool skipDisconnectMessage) = 0;
@@ -59,7 +63,9 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
