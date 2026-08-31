@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/scripting/data_sync/DDUI.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
@@ -68,6 +69,11 @@ public:
             ::Bedrock::DDUI::DataStoreRemoval>>>
         mOutgoingChanges;
     // NOLINTEND
+
+public:
+    [[nodiscard]] cereal::DynamicValue const* get(std::string const& datastoreName, std::string const& property) const {
+        return getNestedMapValueConst(mDataStores.get(), datastoreName, property);
+    }
 
 public:
     // virtual functions

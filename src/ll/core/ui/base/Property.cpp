@@ -58,7 +58,7 @@ Expected<detail::PropertySlot*> detail::ScreenSessionImpl::createProperty(
     }
 
     ScopedValue mutation{mServerMutationActive, true};
-    player->getDataStoreSync().set(slot.datastore, slot.property, value, true);
+    player->mDataStoreSync->set(slot.datastore, slot.property, value, true);
     return &slot;
 }
 
@@ -90,7 +90,7 @@ Expected<> detail::ScreenSessionImpl::set(PropertySlot const& property, cereal::
     }
 
     ScopedValue mutation{mServerMutationActive, true};
-    player->getDataStoreSync().set(property.datastore, property.property, value, true);
+    player->mDataStoreSync->set(property.datastore, property.property, value, true);
     return {};
 }
 
@@ -113,7 +113,7 @@ Expected<> detail::ScreenSessionImpl::erase(PropertySlot const& property) {
 
     cereal::DynamicValue nullValue{};
     ScopedValue          mutation{mServerMutationActive, true};
-    player->getDataStoreSync().set(property.datastore, property.property, nullValue, true);
+    player->mDataStoreSync->set(property.datastore, property.property, nullValue, true);
     return {};
 }
 

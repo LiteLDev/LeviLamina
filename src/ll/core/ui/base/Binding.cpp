@@ -83,7 +83,7 @@ Expected<detail::BindingVariant> detail::ScreenSessionImpl::getBinding(BindingSl
     }
 
     auto result =
-        player->getDataStoreSync().getPath(binding.property->datastore, binding.property->property, binding.path);
+        player->mDataStoreSync->getPath(binding.property->datastore, binding.property->property, binding.path);
     if (!result) {
         return pathError(result.error());
     }
@@ -104,17 +104,17 @@ Expected<> detail::ScreenSessionImpl::setBinding(BindingSlot& binding, BindingVa
     }
 
     ScopedValue mutation{mServerMutationActive, true};
-    auto&       sync = player->getDataStoreSync();
+    auto        sync = player->mDataStoreSync.get();
     return std::visit(
         [&](auto const& data) -> Expected<> {
             using T = std::remove_cvref_t<decltype(data)>;
             if constexpr (std::same_as<T, cereal::DynamicValue>) {
                 if (binding.path.empty()) {
-                    sync.set(binding.property->datastore, binding.property->property, data, true);
+                    sync->set(binding.property->datastore, binding.property->property, data, true);
                     return {};
                 }
 
-                auto const* current = sync.get(binding.property->datastore, binding.property->property);
+                auto const* current = sync->get(binding.property->datastore, binding.property->property);
                 if (current == nullptr) {
                     return makeI18nStringError<"DDUI property does not contain a value">();
                 }
@@ -129,12 +129,12 @@ Expected<> detail::ScreenSessionImpl::setBinding(BindingSlot& binding, BindingVa
                 if (!result) {
                     return pathError(result.error());
                 }
-                sync.set(binding.property->datastore, binding.property->property, updated, true);
+                sync->set(binding.property->datastore, binding.property->property, updated, true);
                 return {};
             } else {
                 using NativePrimitive = std::variant<double, bool, std::string>;
                 NativePrimitive primitive{std::in_place_type<T>, data};
-                auto            result = sync.setPath(
+                auto            result = sync->setPath(
                     binding.property->datastore,
                     binding.property->property,
                     binding.path,
