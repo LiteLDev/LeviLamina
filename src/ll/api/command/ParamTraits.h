@@ -42,11 +42,11 @@ struct ParamTraits;
 
 template <class T>
 struct ParamTraitsBase {
-    static constexpr CommandParameterDataType    dataType() { return CommandParameterDataType::Basic; }
-    static constexpr CommandParameterOption      options() { return CommandParameterOption::None; }
-    static inline CommandRegistry::ParseFunction parseFn() { return &CommandRegistry::parse<T>; }
-    static constexpr std::string_view            enumNameOrPostfix() { return {}; }
-    static constexpr std::string_view            subChain() { return {}; }
+    static constexpr CommandParameterDataType     dataType() { return CommandParameterDataType::Basic; }
+    static constexpr CommandParameterOption       options() { return CommandParameterOption::None; }
+    static inline CommandRegistry::ParseFunction  parseFn() { return &CommandRegistry::parse<T>; }
+    static constexpr std::string_view             enumNameOrPostfix() { return {}; }
+    static constexpr std::string_view             subChain() { return {}; }
     static CommandRegistry::ParamParseRule const* parseRule() {
         if constexpr (requires { ParamTraits<T>::parseRuleValue(); }) {
             static CommandRegistry::ParamParseRule rule = [] {
@@ -60,28 +60,22 @@ struct ParamTraitsBase {
             return nullptr;
         }
     }
-    static Bedrock::typeid_t<CommandRegistry>    typeId() { return Bedrock::type_id<CommandRegistry, T>(); }
-    static constexpr void                        transformData(CommandParameterData&, CommandRegistrar&) {}
+    static Bedrock::typeid_t<CommandRegistry> typeId() { return Bedrock::type_id<CommandRegistry, T>(); }
+    static constexpr void                     transformData(CommandParameterData&, CommandRegistrar&) {}
 };
 template <class T>
 struct ParamTraits : ParamTraitsBase<T> {};
 template <>
 struct ParamTraits<int> : ParamTraitsBase<int> {
-    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
-        return CommandRegistry::HardNonTerminal::Int;
-    }
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() { return CommandRegistry::HardNonTerminal::Int; }
 };
 template <>
 struct ParamTraits<float> : ParamTraitsBase<float> {
-    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
-        return CommandRegistry::HardNonTerminal::Val;
-    }
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() { return CommandRegistry::HardNonTerminal::Val; }
 };
 template <>
 struct ParamTraits<std::string> : ParamTraitsBase<std::string> {
-    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
-        return CommandRegistry::HardNonTerminal::Id;
-    }
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() { return CommandRegistry::HardNonTerminal::Id; }
 };
 template <>
 struct ParamTraits<CommandOperator> : ParamTraitsBase<CommandOperator> {
@@ -175,6 +169,10 @@ struct ParamTraits<std::vector<BlockStateCommandParam>> : ParamTraitsBase<std::v
 };
 template <>
 struct ParamTraits<std::unique_ptr<::Command>> : ParamTraitsBase<std::unique_ptr<::Command>> {
+    static CommandRegistry::ParamParseRule const* parseRule() {
+        // Fuck Mojang
+        return &CommandRegistry::ParseRuleFor<std::unique_ptr<::Command>>::instance();
+    }
     static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
         return CommandRegistry::HardNonTerminal::SlashCommand;
     }
@@ -200,7 +198,9 @@ struct ParamTraits<T> : ParamTraitsBase<T> {
     static constexpr CommandParameterDataType dataType() { return CommandParameterDataType::Enum; }
     static constexpr CommandParameterOption   options() { return CommandParameterOption::EnumAutocompleteExpansion; }
     static constexpr std::string_view         enumNameOrPostfix() { return enum_name_v<T>; }
-    static void transformData(CommandParameterData&, CommandRegistrar& registrar) { registrar.template tryRegisterEnum<T>(); }
+    static void                               transformData(CommandParameterData&, CommandRegistrar& registrar) {
+        registrar.template tryRegisterEnum<T>();
+    }
 };
 template <concepts::Specializes<SoftEnum> T>
 struct ParamTraits<T> : ParamTraitsBase<T> {

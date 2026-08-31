@@ -83,7 +83,7 @@ PacketRegistrar::PacketHandler PacketRegistrar::getHandler(PacketRuntimeId runti
 template <>
 class PacketHandlerDispatcherInstance<ll::network::RuntimePacket, false> : public IPacketHandlerDispatcher {
 public:
-    virtual void handle(
+    void handle(
         ::NetworkIdentifier const&   networkId,
         ::NetEventCallback&          netEvent,
         ::std::shared_ptr<::Packet>& pkt

@@ -737,6 +737,11 @@ public:
         )->second;
     }
 
+    template <class T>
+    struct ParseRuleFor {
+        MCAPI static ParamParseRule const& instance();
+    };
+
 public:
     // prevent constructor by default
     CommandRegistry();
