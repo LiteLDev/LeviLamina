@@ -25,6 +25,9 @@ public:
     // NOLINTEND
 
 public:
+    ClientboundDataDrivenUICloseScreenPacket() : mSerializationMode(::SerializationMode::CerealOnly) {}
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
