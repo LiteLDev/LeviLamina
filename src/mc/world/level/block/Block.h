@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated inclusion list
@@ -50,7 +51,10 @@ public:
     tryGetFromRegistry(HashedString const& name, BlockStatesType const& states);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(CompoundTag const& nbt);
 
-    LLNDAPI bool isAir() const;
+    LLNDAPI bool              isAir() const;
+    [[nodiscard]] inline bool hasProperty(BlockProperty type) const {
+        return static_cast<uint64>(type) & static_cast<uint64>(mBlockType->mProperties);
+    }
 
     [[nodiscard]] BlockType const& getBlockType() const { return *mBlockType; }
 

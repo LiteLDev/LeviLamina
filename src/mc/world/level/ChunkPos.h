@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/world/level/BlockPos.h"
 
 // clang-format off
 class BlockPos;
@@ -15,19 +17,15 @@ public:
 
     using intN2::intN2;
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ChunkPos(::BlockPos const& pos);
+    ChunkPos(BlockPos const& bp) {
+        x = bp.x >> 4;
+        z = bp.z >> 4;
+    }
 
-    MCAPI explicit ChunkPos(::Vec3 const& pos);
-
-    MCAPI ::BlockPos getMiddleBlockPosition(int y) const;
-
-    MCAPI bool isWithinBounds(::ChunkPos const& min, ::ChunkPos const& max) const;
-
-    MCAPI ::Vec3 toBlockSpaceVec3(float y) const;
-    // NOLINTEND
+    ChunkPos(Vec3 const& pos) {
+        x = static_cast<int>(floorf(pos.x)) >> 4;
+        z = static_cast<int>(floorf(pos.z)) >> 4;
+    }
 
 public:
     // static variables

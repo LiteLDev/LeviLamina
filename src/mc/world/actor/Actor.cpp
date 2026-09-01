@@ -4,12 +4,10 @@
 #include <optional>
 #include <string>
 
-#include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
-#include "mc/deps/ecs/gamerefs_entity/EntityRegistry.h"
 #include "mc/deps/nbt/CompoundTag.h"
 #include "mc/deps/vanilla_components/OnGroundFlagComponent.h"
 #include "mc/deps/vanilla_components/PlayerComponent.h"
@@ -37,7 +35,10 @@
 #include "mc/world/actor/provider/SynchedActorDataAccess.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSource.h"
+#include "mc/world/level/ChunkBlockPos.h"
 #include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/Block.h"
+#include "mc/world/level/chunk/LevelChunk.h"
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/phys/HitDetection.h"
 #include "mc/world/phys/HitResult.h"
@@ -214,8 +215,41 @@ Actor* Actor::tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
 
 ::DimensionType Actor::getDimensionId() const { return getDimension().getDimensionId(); }
 
-bool Actor::isType(::ActorType type) const { return getEntityTypeId() == type; }
-
 bool Actor::isPlayer() const { return mEntityContext->hasComponent<PlayerComponent>(); }
 
-bool Actor::isClientSide() const { return !mLevel; }
+bool Actor::isTouchingDamageBlock() const {
+    AABB const& aabb = mBuiltInComponents->mAABBShapeComponent->mAABB;
+    if (mDimension->expired()) {
+        return false;
+    }
+    auto&       blockSource = mDimension->lock()->getBlockSourceFromMainChunkSource();
+    float const minY        = aabb.min.y - 0.2f;
+    BlockPos    minPos(Vec3(aabb.min.x - 1.0f, minY - 1.0f, aabb.min.z - 1.0f));
+    BlockPos    maxPos(Vec3(aabb.max.x + 1.0f, minY + 1.0f, aabb.max.z + 1.0f));
+    minPos.y = std::max(minPos.y, static_cast<int>(blockSource.getMinHeight()));
+    maxPos.y = std::min(maxPos.y, static_cast<int>(blockSource.getMaxHeight()));
+    if (minPos.y > maxPos.y) {
+        return false;
+    }
+    for (int x = minPos.x; x <= maxPos.x; ++x) {
+        for (int z = minPos.z; z <= maxPos.z; ++z) {
+            BlockPos    pos(x, minPos.y, z);
+            ChunkPos    chunkPos(pos);
+            LevelChunk* chunk = blockSource.getChunk(chunkPos);
+            if (!chunk) {
+                continue;
+            }
+            for (int y = minPos.y; y <= maxPos.y; ++y) {
+                pos.y = y;
+                ChunkBlockPos chunkBlockPos(pos, blockSource.getMinHeight());
+                Block const&  block = chunk->getBlock(chunkBlockPos);
+                auto const    val =
+                    static_cast<uint64>(BlockProperty::CausesDamage) | static_cast<uint64>(BlockProperty::Scaffolding);
+                if (block.hasProperty(static_cast<BlockProperty>(val))) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}

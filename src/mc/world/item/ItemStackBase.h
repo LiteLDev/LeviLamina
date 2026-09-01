@@ -66,6 +66,12 @@ public:
     LLNDAPI bool        removeEnchants() const;
     LLAPI void          deserializeComponents(IDataInput& input);
     LLAPI bool          operator==(ItemStackBase const& other) const;
+    LLNDAPI short       getId() const;
+    LLNDAPI short       getAuxValue() const;
+    LLAPI void          setDamageValue(short newDamage);
+    inline void         add(int count) { set(mCount + count); }
+    inline void         remove(int count) { set(mCount - count); }
+
 
 public:
     // member variables

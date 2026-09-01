@@ -179,11 +179,13 @@ public:
 
     LLNDAPI ::DimensionType getDimensionId() const;
 
-    LLNDAPI bool isType(::ActorType type) const;
+    [[nodiscard]] inline bool isType(::ActorType type) const { return getEntityTypeId() == type; }
 
     LLNDAPI bool isPlayer() const;
 
-    LLNDAPI bool isClientSide() const;
+    [[nodiscard]] inline bool isClientSide() const { return !mLevel; }
+
+    LLNDAPI bool isTouchingDamageBlock() const;
 
 public:
     // member variables

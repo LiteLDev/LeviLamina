@@ -35,9 +35,8 @@ optional_ref<Block const> Block::tryGetFromRegistry(HashedString const& name, Bl
     if (!blockTypePtr) {
         return nullptr;
     }
-    auto&        registry = BlockTypeRegistry::mBlockTypeRegistry().mValue;
-    HashedString nameHash{name};
-    if (!registry.isComplexAliasBlock(nameHash)) {
+    auto& registry = BlockTypeRegistry::mBlockTypeRegistry().mValue;
+    if (!registry.isComplexAliasBlock(name)) {
         return blockTypePtr->mDefaultState;
     }
     std::vector<BlockTypeRegistry::BlockComplexAliasBlockState> stateList;
@@ -57,7 +56,7 @@ optional_ref<Block const> Block::tryGetFromRegistry(HashedString const& name, Bl
         }
         stateList.emplace_back(stateNameHash, value);
     }
-    auto block = registry._lookupByNameImpl(nameHash, 0, BlockTypeRegistry::LookupByNameImplResolve::Block).mBlock;
+    auto block = registry._lookupByNameImpl(name, 0, BlockTypeRegistry::LookupByNameImplResolve::Block).mBlock;
     if (block) {
         for (auto& state : stateList) {
             if (block) {

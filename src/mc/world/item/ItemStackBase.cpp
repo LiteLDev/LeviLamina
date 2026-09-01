@@ -2,6 +2,7 @@
 #include "mc/deps/nbt/CompoundTag.h"
 #include "mc/util/IDataInput.h"
 #include "mc/world/item/Item.h"
+#include "mc/world/level/block/Block.h"
 
 std::string ItemStackBase::getTypeName() const {
     if (auto item = mItem; item) {
@@ -63,4 +64,27 @@ bool ItemStackBase::operator==(ItemStackBase const& other) const {
         return matchesItem(other);
     }
     return false;
+}
+
+short ItemStackBase::getId() const {
+    if (mItem) {
+        return mItem->mId;
+    }
+    return 0;
+}
+
+short ItemStackBase::getAuxValue() const {
+    if (!mBlock || mAuxValue == 0x7FFF) {
+        return mAuxValue;
+    }
+    if (mBlock) {
+        return static_cast<short>(mBlock->mData);
+    }
+    return 0;
+}
+
+void ItemStackBase::setDamageValue(short newDamage) {
+    if (mItem) {
+        mItem->setDamageValue(*this, newDamage);
+    }
 }
