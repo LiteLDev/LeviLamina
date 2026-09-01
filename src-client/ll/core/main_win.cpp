@@ -3,9 +3,11 @@
 #include "ll/api/Versions.h"
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
+#include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/GamingStatus.h"
 #include "ll/api/utils/ErrorUtils.h"
+#include "ll/api/utils/StringUtils.h"
 
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
@@ -15,7 +17,7 @@
 
 #include "mc/client/game/ClientInstance.h"
 #include "mc/client/game/MinecraftGame.h"
-#include "mc/client/gui/screens/controllers/StartMenuScreenController.h"
+#include "mc/client/gui/screens/ScreenController.h"
 #include "mc/deps/core/file/Path.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
@@ -39,6 +41,7 @@
 #include "pl/Config.h"
 
 #include "windows.h"
+#include <filesystem>
 
 namespace ll {
 
@@ -48,7 +51,26 @@ namespace i18n {
 std::string& defaultLocaleCode();
 }
 
+// appmanifest.xml has broken on 26.32, fuck Mojang
+void AppManifestFix() {
+    auto xmlPath = std::filesystem::path("appxmanifest.xml");
+    auto content = ll::file_utils::readFile(xmlPath);
+    if (content) {
+        ll::file_utils::writeFile(
+            xmlPath,
+            ll::string_utils::replaceAll(
+                content.value(),
+                "<uap:VisualElements DisplayName=\"Minecraft for Windows\"",
+                "<uap:VisualElements DisplayName=\"Minecraft\""
+            ),
+            false
+        );
+    }
+}
+
 void leviLaminaMain() {
+    AppManifestFix();
+
     if (auto res = i18n::getInstance().load(getSelfModIns()->getLangDir()); !res) {
         getLogger().error("i18n load failed");
         res.error().log(getLogger());
