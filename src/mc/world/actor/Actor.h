@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated inclusion list
@@ -186,6 +187,33 @@ public:
     [[nodiscard]] inline bool isClientSide() const { return !mLevel; }
 
     LLNDAPI bool isTouchingDamageBlock() const;
+
+    LLNDAPI int getHealth() const;
+
+    LLNDAPI int getMaxHealth() const;
+
+    LLNDAPI bool isInWorld() const;
+
+    LLNDAPI ItemStack const& getArmor(::SharedTypes::Legacy::ArmorSlot slot) const;
+
+    LLNDAPI bool getStatusFlag(::ActorFlags flag) const;
+
+    LLNDAPI bool isOnHotBlock() const;
+
+    [[nodiscard]] bool isSwimming() const { return getStatusFlag(::ActorFlags::Swimming); }
+    [[nodiscard]] bool isMoving() const { return getStatusFlag(::ActorFlags::Moving); }
+    [[nodiscard]] bool isSprinting() const { return getStatusFlag(::ActorFlags::Sprinting); }
+    [[nodiscard]] bool isSneaking() const { return getStatusFlag(::ActorFlags::Sneaking); }
+    [[nodiscard]] bool isCrawling() const { return getStatusFlag(::ActorFlags::Crawling); }
+    [[nodiscard]] bool isGliding() const { return getStatusFlag(::ActorFlags::Gliding); }
+    [[nodiscard]] bool isDancing() const { return getStatusFlag(::ActorFlags::Dancing); }
+    [[nodiscard]] bool isHurt() const {
+        if (auto health = getHealth(); health > 0 && health < getMaxHealth()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 public:
     // member variables

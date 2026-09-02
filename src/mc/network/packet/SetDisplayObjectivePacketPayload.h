@@ -17,8 +17,7 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetDisplayObjectivePacketPayload();
+    SetDisplayObjectivePacketPayload() : mSortOrder(ObjectiveSortOrder::Ascending) {}
 
 public:
     // member functions

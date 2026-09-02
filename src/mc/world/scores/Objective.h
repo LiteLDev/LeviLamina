@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/scores/ScoreInfo.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
@@ -20,6 +21,15 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                             mDisplayName;
     ::ll::TypedStorage<8, 8, ::ObjectiveCriteria const&>                 mCriteria;
     // NOLINTEND
+
+public:
+    [[nodiscard]] ScoreInfo getPlayerScore(::ScoreboardId const& id) const {
+        auto it = mScores->find(id);
+        if (it == mScores->end()) {
+            return ScoreInfo{nullptr, false, 0};
+        }
+        return ScoreInfo{this, true, it->second};
+    }
 
 public:
     // prevent constructor by default

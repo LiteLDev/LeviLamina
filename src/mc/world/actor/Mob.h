@@ -58,6 +58,8 @@ public:
 
     LLAPI static ::Mob* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
 
+    LLNDAPI ItemStack const& getItemSlot(::SharedTypes::Legacy::EquipmentSlot slot) const;
+
 public:
     // member variables
     // NOLINTBEGIN

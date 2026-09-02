@@ -33,6 +33,8 @@ public:
         return b <=> other.b;
     }
 
+    LLNDAPI static bool canParse(std::string_view in);
+
 public:
     // member functions
     // NOLINTBEGIN

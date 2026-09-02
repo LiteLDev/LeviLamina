@@ -1,7 +1,6 @@
 #include "mc/server/SimulatedPlayer.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/utils/RandomUtils.h"
-#include "mc/deps/core/string/HashedString.h"
 #include "mc/entity/components/PlayerDestroyProgressCacheComponent.h"
 #include "mc/entity/components_json_legacy/NavigationComponent.h"
 #include "mc/network/ServerNetworkHandler.h"
@@ -208,4 +207,13 @@ void SimulatedPlayer::simulateStopDestroyingBlock() {
         mDestroyingBlockPos->reset();
     }
     mDestroyingBlockPos->reset();
+}
+
+bool SimulatedPlayer::simulateInteract(::BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face) {
+    if (!isAlive()) return false;
+
+    auto& block = getDimensionBlockSource().getBlock(pos);
+
+    Vec3 hitResult;
+    return block.use(*this, pos, static_cast<unsigned char>(face), hitResult);
 }

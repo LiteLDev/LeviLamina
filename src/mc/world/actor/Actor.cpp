@@ -13,6 +13,7 @@
 #include "mc/deps/vanilla_components/PlayerComponent.h"
 #include "mc/entity/components/ActorOwnerComponent.h"
 #include "mc/entity/components/ActorRotationComponent.h"
+#include "mc/entity/components/IsOnHotBlockFlagComponent.h"
 #include "mc/entity/components/OnFireComponent.h"
 #include "mc/entity/components/PostTickPositionDeltaComponent.h"
 #include "mc/entity/systems/OnFireSystem.h"
@@ -32,6 +33,7 @@
 #include "mc/world/actor/BuiltInActorComponents.h"
 #include "mc/world/actor/HurtParameters.h"
 #include "mc/world/actor/animation/AnimationComponent.h"
+#include "mc/world/actor/provider/ActorAttribute.h"
 #include "mc/world/actor/provider/SynchedActorDataAccess.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSource.h"
@@ -42,6 +44,7 @@
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/phys/HitDetection.h"
 #include "mc/world/phys/HitResult.h"
+#include "provider/ActorEquipment.h"
 
 
 void Actor::refresh() { _sendDirtyActorData(); }
@@ -219,7 +222,7 @@ bool Actor::isPlayer() const { return mEntityContext->hasComponent<PlayerCompone
 
 bool Actor::isTouchingDamageBlock() const {
     AABB const& aabb = mBuiltInComponents->mAABBShapeComponent->mAABB;
-    if (mDimension->expired()) {
+    if (!mDimension->lock()) {
         return false;
     }
     auto&       blockSource = mDimension->lock()->getBlockSourceFromMainChunkSource();
@@ -253,3 +256,19 @@ bool Actor::isTouchingDamageBlock() const {
     }
     return false;
 }
+
+int Actor::getHealth() const { return ActorAttribute::getHealth(getEntityContext()); }
+
+int Actor::getMaxHealth() const { return ActorAttribute::getMaxHealth(getEntityContext()); }
+
+bool Actor::isInWorld() const { return mAdded && mDimension->lock() && !mRemoved; }
+
+ItemStack const& Actor::getArmor(::SharedTypes::Legacy::ArmorSlot slot) const {
+    return ActorEquipment::getArmorContainer(getEntityContext()).getItem(static_cast<int>(slot));
+}
+
+bool Actor::getStatusFlag(::ActorFlags flag) const {
+    return SynchedActorDataAccess::getActorFlag(getEntityContext(), flag);
+}
+
+bool Actor::isOnHotBlock() const { return getEntityContext().hasComponent<IsOnHotBlockFlagComponent>(); }

@@ -59,6 +59,14 @@ public:
         PlayerScoreSetFunction     action
     );
 
+    [[nodiscard]] std::vector<::Objective const*> getObjectives() const {
+        std::vector<::Objective const*> result;
+        for (auto const& [name, objective] : *mObjectives) {
+            result.emplace_back(objective.get());
+        }
+        return result;
+    }
+
 public:
     // virtual functions
     // NOLINTBEGIN

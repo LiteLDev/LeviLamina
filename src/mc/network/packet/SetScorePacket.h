@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/ScorePacketInfo.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
@@ -26,8 +27,7 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetScorePacket();
+    SetScorePacket() : mType(ScorePacketType::Change) {}
 
 public:
     // virtual functions

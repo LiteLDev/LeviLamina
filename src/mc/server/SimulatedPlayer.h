@@ -87,6 +87,8 @@ public:
     LLAPI void simulateLocalMove(::Vec3 const& localDirection, float = 1.0f);
     LLAPI void simulateMoveToLocation(::Vec3 const& position, float speed, bool faceTarget);
     LLAPI void simulateStopDestroyingBlock();
+    LLAPI bool simulateInteract(::BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face);
+
 
     LLAPI static ::SimulatedPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
 

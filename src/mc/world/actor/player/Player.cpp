@@ -5,6 +5,9 @@
 #include "mc/deps/certificates/WebToken.h"
 #include "mc/deps/ecs/gamerefs_entity/GameRefsEntity.h"
 #include "mc/deps/vanilla_components/PlayerComponent.h"
+#include "mc/editor/Mode.h"
+#include "mc/editor/PlayerHelpers.h"
+#include "mc/editor/serviceproviders/ModeServiceProvider.h"
 #include "mc/network/ConnectionRequest.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/network/NetworkPeer.h"
@@ -20,6 +23,8 @@
 #include "mc/world/actor/player/PermissionsHandler.h"
 #include "mc/world/actor/player/PlayerInventory.h"
 #include "mc/world/actor/provider/SynchedActorDataAccess.h"
+#include "mc/world/attribute/AttributeInstance.h"
+#include "mc/world/attribute/AttributeInstanceConstRef.h"
 
 
 UserEntityIdentifierComponent const& Player::getUserEntityIdentifier() const {
@@ -144,4 +149,22 @@ void Player::setSelectedItem(::ItemStack const& item) const {
     if (mInventory->mSelectedContainerId == ContainerID::Inventory) {
         mInventory->mInventory->setItem(getSelectedItemSlot(), item);
     }
+}
+
+// TODO: uncomment this after added MCAPI
+// bool Player::canSleep() const {
+//     bool editorCanSleep = true;
+//     if (auto modeProvider = Editor::PlayerHelpers::_getModeServiceConst(*this)) {
+//         if (modeProvider->getMode() != Editor::Mode::Disabled) {
+//             editorCanSleep = false;
+//         }
+//     }
+//     return !isSpectator() && isAlive() && editorCanSleep;
+// }
+
+bool Player::isHungry() const {
+    if (auto at = getAttribute(HUNGER()).mPtr) {
+        return at->mCurrentMaxValue > at->mCurrentMaxValue;
+    }
+    return false;
 }
