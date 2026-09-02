@@ -25,21 +25,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~MovementScriptActorComponent() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~MovementScriptActorComponent() /*override*/;
-#endif
 
     virtual ::Scripting::Result_deprecated<float> getMaxTurn() const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
-#endif
     // NOLINTEND
 
 public:

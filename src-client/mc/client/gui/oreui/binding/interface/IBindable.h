@@ -8,7 +8,7 @@ class IBindable {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBindable();
+    virtual ~IBindable() = default;
 
     virtual void onReadyForBindings() = 0;
 
@@ -17,12 +17,6 @@ public:
     virtual void onBindingsReleased() = 0;
 
     virtual void update(double const time) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -20,25 +20,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~RemovedState() = default;
-#else // LL_PLAT_C
-    virtual ~RemovedState();
-#endif
 
     virtual void addValue(::CompoundTag const& tag) = 0;
 
     virtual void match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const = 0;
 
     virtual uint64 valueCount() const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

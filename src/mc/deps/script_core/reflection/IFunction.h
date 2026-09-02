@@ -28,11 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~IFunction() = default;
-#else // LL_PLAT_C
-    virtual ~IFunction();
-#endif
 
     virtual ::entt::meta_any call(::entt::meta_handle, ::entt::meta_any*, uint) = 0;
 
@@ -51,14 +47,6 @@ public:
     virtual ::std::optional<::entt::meta_type> getInstanceType() const = 0;
 
     virtual ::Scripting::ArgumentDetails const& getArgDetails(uint) const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

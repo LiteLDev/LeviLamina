@@ -38,21 +38,9 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_S
         virtual ~DataProxy() = default;
-#else // LL_PLAT_C
-        virtual ~DataProxy();
-#endif
 
         virtual ::std::unique_ptr<::BehaviorData::DataProxy> copy() = 0;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCFOLD void $dtor();
-#endif
         // NOLINTEND
 
     public:

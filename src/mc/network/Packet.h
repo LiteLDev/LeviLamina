@@ -35,11 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~Packet() = default;
-#else // LL_PLAT_C
-    virtual ~Packet();
-#endif
 
     virtual ::MinecraftPacketIds getId() const = 0;
 
@@ -78,14 +74,6 @@ public:
     _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
-#endif
     // NOLINTEND
 
 public:

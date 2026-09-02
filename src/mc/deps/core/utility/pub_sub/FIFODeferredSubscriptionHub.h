@@ -13,16 +13,23 @@ namespace Bedrock::PubSub {
 
 class FIFODeferredSubscriptionHub : public ::Bedrock::PubSub::DeferredSubscriptionHubBase {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 560> mUnka66d8b;
-    // NOLINTEND
+    // FIFODeferredSubscriptionHub inner types define
+    using QueueType = ::Bedrock::
+        MPSCQueue<::brstd::move_only_function<void()>, 64, ::std::allocator<::brstd::move_only_function<void()>>, 0>;
 
 public:
-    // prevent constructor by default
-    FIFODeferredSubscriptionHub& operator=(FIFODeferredSubscriptionHub const&);
-    FIFODeferredSubscriptionHub(FIFODeferredSubscriptionHub const&);
-    FIFODeferredSubscriptionHub();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        560,
+        ::Bedrock::MPSCQueue<
+            ::brstd::move_only_function<void()>,
+            64,
+            ::std::allocator<::brstd::move_only_function<void()>>,
+            0>>
+        mQueue;
+    // NOLINTEND
 
 public:
     // virtual functions

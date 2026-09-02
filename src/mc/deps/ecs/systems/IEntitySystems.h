@@ -18,11 +18,7 @@ class IEntitySystems {
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~IEntitySystems() = default;
-#else // LL_PLAT_C
-    virtual ~IEntitySystems();
-#endif
 
     virtual void registerTickingSystem(
         ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,
@@ -36,13 +32,5 @@ public:
     virtual void tickMovementCatchup(::EntityRegistry& registry) = 0;
 
     virtual void tickMovementCorrectionReplay(::EntityRegistry& registry) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 };

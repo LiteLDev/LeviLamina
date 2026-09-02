@@ -33,11 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~IEditorService() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~IEditorService() /*override*/;
-#endif
 
     virtual ::Scripting::Result_deprecated<void> init() = 0;
 
@@ -50,14 +46,6 @@ public:
     virtual bool isServiceInitialized() const;
 
     virtual bool isServiceReady() const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

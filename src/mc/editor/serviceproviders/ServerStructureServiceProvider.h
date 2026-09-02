@@ -21,11 +21,7 @@ class ServerStructureServiceProvider : public ::Bedrock::EnableNonOwnerReference
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~ServerStructureServiceProvider() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ServerStructureServiceProvider() /*override*/;
-#endif
 
     virtual ::std::optional<::Editor::EditorStructureTemplate> loadStructure(::std::string const& id) = 0;
 
@@ -51,14 +47,6 @@ public:
     virtual ::std::optional<::Editor::EditorStructureDBMetadata> const getMetadataByGuid(::mce::UUID const& guid) = 0;
 
     virtual ::Editor::EditorStructureMetadataDeleteEditResult const deleteEditorStructure(::mce::UUID const& guid) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

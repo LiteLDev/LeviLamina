@@ -25,11 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~ItemStackRequestAction() = default;
-#else // LL_PLAT_C
-    virtual ~ItemStackRequestAction();
-#endif
 
     virtual ::ItemStackRequestActionCraftBase const* getCraftAction() const;
 
@@ -52,14 +48,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BidirectionalUnorderedMap<::ItemStackRequestActionType, ::std::string> const& actionTypeMap();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
-#endif
     // NOLINTEND
 
 public:

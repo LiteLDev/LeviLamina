@@ -24,45 +24,44 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnk97b459;
-        ::ll::UntypedStorage<4, 4>  mUnkec5839;
+        ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void()>> mFunction;
+        ::ll::TypedStorage<4, 4, int>                                  mOrder;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DequeuedEntry& operator=(DequeuedEntry const&);
-        DequeuedEntry(DequeuedEntry const&);
-        DequeuedEntry();
     };
 
     struct QueueEntry {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnka2ed86;
-        ::ll::UntypedStorage<4, 8>  mUnk20c6e2;
-        ::ll::UntypedStorage<4, 4>  mUnka8f19d;
+        ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void()>> mFunction;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>>                 mGroup;
+        ::ll::TypedStorage<4, 4, ::Bedrock::PubSub::ConnectPosition>   mPosition;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        QueueEntry& operator=(QueueEntry const&);
-        QueueEntry(QueueEntry const&);
-        QueueEntry();
     };
+
+    using DequeuedItemsType = ::std::deque<::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry>;
+
+    using QueueType = ::Bedrock::MPSCQueue<
+        ::Bedrock::PubSub::PriorityDeferredSubscriptionHub::QueueEntry,
+        64,
+        ::std::allocator<::Bedrock::PubSub::PriorityDeferredSubscriptionHub::QueueEntry>,
+        0>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 560> mUnk31088e;
-    ::ll::UntypedStorage<8, 40>  mUnkd75b90;
+    ::ll::TypedStorage<
+        8,
+        560,
+        ::Bedrock::MPSCQueue<
+            ::Bedrock::PubSub::PriorityDeferredSubscriptionHub::QueueEntry,
+            64,
+            ::std::allocator<::Bedrock::PubSub::PriorityDeferredSubscriptionHub::QueueEntry>,
+            0>>
+        mQueue;
+    ::ll::TypedStorage<8, 40, ::std::deque<::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry>>
+        mDequeuedItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PriorityDeferredSubscriptionHub& operator=(PriorityDeferredSubscriptionHub const&);
-    PriorityDeferredSubscriptionHub(PriorityDeferredSubscriptionHub const&);
-    PriorityDeferredSubscriptionHub();
 
 public:
     // virtual functions
@@ -85,19 +84,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $flushPendingEvents();
+    MCAPI void $flushPendingEvents();
 
-    MCNAPI ::Bedrock::PubSub::DeferredSubscriptionHub::HubType $getHubType() const;
+    MCFOLD ::Bedrock::PubSub::DeferredSubscriptionHub::HubType $getHubType() const;
 
-    MCNAPI bool $_runOneEvent();
+    MCAPI bool $_runOneEvent();
 
-    MCNAPI void $_enqueue(
+    MCAPI void $_enqueue(
         ::brstd::move_only_function<void()> fn,
         ::Bedrock::PubSub::ConnectPosition  at,
         ::std::optional<int>                group
     );
 
-    MCNAPI void $_runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&& entry);
+#ifdef LL_PLAT_S
+    MCAPI void $_runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&& entry);
+#else // LL_PLAT_C
+    MCFOLD void $_runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&& entry);
+#endif
 
 
     // NOLINTEND

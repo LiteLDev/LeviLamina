@@ -195,7 +195,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IClientInstance() /*override*/;
+    virtual ~IClientInstance() /*override*/ = default;
 
     virtual void onInitMinecraftGame() = 0;
 
@@ -1096,12 +1096,6 @@ public:
     virtual ::std::optional<::ConnectionContextInfo> getConnectionContextInfo() const = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> getLinkedAssetValidator() = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
