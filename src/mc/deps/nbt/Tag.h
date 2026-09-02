@@ -79,7 +79,7 @@ public:
         return *static_cast<T*>(this);
     }
 
-    LLNDAPI bool operator==(Tag const& other) const;
+    [[nodiscard]] bool operator==(Tag const& other) const { return equals(other); }
 
     LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const noexcept;
 
