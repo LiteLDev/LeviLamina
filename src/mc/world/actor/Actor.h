@@ -215,6 +215,8 @@ public:
         }
     }
 
+    LLNDAPI ::ItemStack const& getOffhandSlot() const;
+
 public:
     // member variables
     // NOLINTBEGIN

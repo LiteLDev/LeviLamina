@@ -272,3 +272,7 @@ bool Actor::getStatusFlag(::ActorFlags flag) const {
 }
 
 bool Actor::isOnHotBlock() const { return getEntityContext().hasComponent<IsOnHotBlockFlagComponent>(); }
+
+::ItemStack const& Actor::getOffhandSlot() const {
+    return ActorEquipment::getHandContainer(getEntityContext()).getItem(1);
+}
