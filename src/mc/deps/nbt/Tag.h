@@ -28,12 +28,12 @@ enum class SnbtFormat : uint {
     PrettyChatPrint    = PrettyFilePrint | Colored,
     PrettyConsolePrint = PrettyFilePrint | Colored | Console,
 };
-[[nodiscard]] constexpr SnbtFormat operator|(const SnbtFormat l, const SnbtFormat r) noexcept {
+[[nodiscard]] constexpr SnbtFormat operator|(SnbtFormat const l, SnbtFormat const r) noexcept {
     return static_cast<SnbtFormat>(
         static_cast<std::underlying_type_t<SnbtFormat>>(l) | static_cast<std::underlying_type_t<SnbtFormat>>(r)
     );
 }
-[[nodiscard]] constexpr SnbtFormat operator&(const SnbtFormat l, const SnbtFormat r) noexcept {
+[[nodiscard]] constexpr SnbtFormat operator&(SnbtFormat const l, SnbtFormat const r) noexcept {
     return static_cast<SnbtFormat>(
         static_cast<std::underlying_type_t<SnbtFormat>>(l) & static_cast<std::underlying_type_t<SnbtFormat>>(r)
     );
@@ -46,18 +46,18 @@ protected:
 public:
     // Tag inner types define
     enum class Type : uchar {
-        End       = 0x0,
-        Byte      = 0x1,
-        Short     = 0x2,
-        Int       = 0x3,
-        Int64     = 0x4,
-        Float     = 0x5,
-        Double    = 0x6,
-        ByteArray = 0x7,
-        String    = 0x8,
-        List      = 0x9,
-        Compound  = 0xA,
-        IntArray  = 0xB,
+        End         = 0x0,
+        Byte        = 0x1,
+        Short       = 0x2,
+        Int         = 0x3,
+        Int64       = 0x4,
+        Float       = 0x5,
+        Double      = 0x6,
+        ByteArray   = 0x7,
+        String      = 0x8,
+        List        = 0x9,
+        Compound    = 0xA,
+        IntArray    = 0xB,
         NumTagTypes = 0xC,
     };
     using enum Type;
@@ -79,7 +79,7 @@ public:
         return *static_cast<T*>(this);
     }
 
-    [[nodiscard]] bool operator==(Tag const& other) const { return equals(other); }
+    LLNDAPI bool operator==(Tag const& other) const;
 
     LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const noexcept;
 
