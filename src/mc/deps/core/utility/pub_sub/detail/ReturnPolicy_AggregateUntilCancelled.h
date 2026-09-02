@@ -4,7 +4,13 @@
 
 namespace Bedrock::PubSub::Detail {
 
-template <typename T0>
-struct ReturnPolicy_AggregateUntilCancelled {};
+template <typename TReturnType>
+struct ReturnPolicy_AggregateUntilCancelled {
+    using ReturnType =
+        std::conditional_t<std::is_default_constructible_v<TReturnType>, TReturnType, std::optional<TReturnType>>;
+
+protected:
+    ReturnType return_value_;
+};
 
 } // namespace Bedrock::PubSub::Detail
