@@ -151,16 +151,15 @@ void Player::setSelectedItem(::ItemStack const& item) const {
     }
 }
 
-// TODO: uncomment this after added MCAPI
-// bool Player::canSleep() const {
-//     bool editorCanSleep = true;
-//     if (auto modeProvider = Editor::PlayerHelpers::_getModeServiceConst(*this)) {
-//         if (modeProvider->getMode() != Editor::Mode::Disabled) {
-//             editorCanSleep = false;
-//         }
-//     }
-//     return !isSpectator() && isAlive() && editorCanSleep;
-// }
+bool Player::canSleep() const {
+    bool editorCanSleep = true;
+    if (auto modeProvider = Editor::PlayerHelpers::_getModeServiceConst(*this)) {
+        if (modeProvider->getMode() != Editor::Mode::Disabled) {
+            editorCanSleep = false;
+        }
+    }
+    return !isSpectator() && isAlive() && editorCanSleep;
+}
 
 bool Player::isHungry() const {
     if (auto at = getAttribute(HUNGER()).mPtr) {

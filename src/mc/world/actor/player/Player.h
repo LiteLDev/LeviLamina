@@ -308,7 +308,7 @@ public:
 
     LLAPI void setSelectedItem(ItemStack const& item) const;
 
-    // LLNDAPI bool canSleep() const;
+    LLNDAPI bool canSleep() const;
 
     LLNDAPI bool isHungry() const;
 
