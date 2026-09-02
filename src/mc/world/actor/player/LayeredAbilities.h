@@ -22,6 +22,7 @@ public:
     LLNDAPI Ability& getAbility(::AbilitiesLayer layer, ::AbilitiesIndex val);
     LLAPI bool       setAbility(::AbilitiesIndex val, float value);
     LLAPI bool       setAbility(::AbilitiesIndex val, bool value);
+    LLAPI void       setPlayerPermissions(::PlayerPermissionLevel permissions);
 
 public:
     // member variables

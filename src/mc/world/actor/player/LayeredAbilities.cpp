@@ -50,3 +50,34 @@ bool LayeredAbilities::setAbility(::AbilitiesIndex val, bool value) {
     ability.mValue->mBoolVal = value;
     return true;
 }
+
+void LayeredAbilities::setPlayerPermissions(::PlayerPermissionLevel permissions) {
+    auto oldPermissions              = mPermissions->mPlayerPermissions;
+    mPermissions->mPlayerPermissions = permissions;
+
+    // TODO: uncomment this after added MCAPI
+    // mPermissions->mClientPlayerPermissionsPublisher->dispatch();
+
+    if (oldPermissions == PlayerPermissionLevel::Custom) {
+        auto& customAbilities = *mLayers->at(1).mAbilities;
+        auto& abilities       = *mLayers->at(0).mAbilities;
+
+        for (size_t i = 0; i < customAbilities.size(); ++i) {
+            auto& src = customAbilities[i];
+
+            if ((static_cast<uchar>(src.mOptions) & static_cast<uchar>(Ability::Options::PermissionsInterfaceExposed))
+                == 0)
+                continue;
+
+            if (src.mType == Ability::Type::Unset) continue;
+
+            auto& dst = abilities[i];
+
+            dst.mType    = src.mType;
+            dst.mValue   = src.mValue;
+            dst.mOptions = src.mOptions;
+        }
+    }
+
+    mLayers->at(1).setFromPermissions(permissions);
+}
