@@ -320,7 +320,7 @@ public:
 
     LLNDAPI bool setXpEarnedAtCurrentLevel(int xp);
 
-    LLNDAPI long long getXpNeededForLevelRange(int startLevel, int endLevel);
+    LLNDAPI static long long getXpNeededForLevelRange(int startLevel, int endLevel);
 
 public:
     // member variables
