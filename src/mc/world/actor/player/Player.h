@@ -312,6 +312,16 @@ public:
 
     LLNDAPI bool isHungry() const;
 
+    LLNDAPI int getXpNeededForNextLevel();
+
+    LLNDAPI int getPreviousLevelRequirement();
+
+    LLNDAPI int getXpEarnedAtCurrentLevel();
+
+    LLNDAPI bool setXpEarnedAtCurrentLevel(int xp);
+
+    LLNDAPI long long getXpNeededForLevelRange(int startLevel, int endLevel);
+
 public:
     // member variables
     // NOLINTBEGIN

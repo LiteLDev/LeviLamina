@@ -8,6 +8,7 @@
 #include "mc/editor/Mode.h"
 #include "mc/editor/PlayerHelpers.h"
 #include "mc/editor/serviceproviders/ModeServiceProvider.h"
+#include "mc/entity/components/AttributesComponent.h"
 #include "mc/network/ConnectionRequest.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/network/NetworkPeer.h"
@@ -166,4 +167,70 @@ bool Player::isHungry() const {
         return at->mCurrentMaxValue > at->mCurrentMaxValue;
     }
     return false;
+}
+
+int Player::getXpNeededForNextLevel() {
+    if (!mPlayerLevelChanged) return mPreviousLevelRequirement;
+
+    auto attr = getAttribute(Player::LEVEL());
+
+    int const level = static_cast<int>(attr.mPtr->mCurrentValue);
+
+    int result;
+    if (level < 15) result = 2 * level + 7;
+    else if (level < 30) result = 5 * level - 38;
+    else result = 9 * level - 158;
+
+    mPlayerLevelChanged       = false;
+    mPreviousLevelRequirement = result;
+
+    return result;
+}
+
+int Player::getPreviousLevelRequirement() {
+    if (mPlayerLevelChanged) {
+        int level = static_cast<int>(getAttribute(Player::LEVEL()).mPtr->mCurrentValue);
+        if (level >= 30) {
+            mPreviousLevelRequirement = 9 * level - 158;
+        } else if (level >= 15) {
+            mPreviousLevelRequirement = 5 * level - 38;
+        } else {
+            mPreviousLevelRequirement = 2 * level + 7;
+        }
+        mPlayerLevelChanged = false;
+    }
+    return mPreviousLevelRequirement;
+}
+
+int Player::getXpEarnedAtCurrentLevel() {
+    int  prevLevelReq = getPreviousLevelRequirement();
+    auto attribute    = getAttribute(Player::EXPERIENCE());
+    return static_cast<int>(roundf(attribute.mPtr->mCurrentValue * static_cast<float>(prevLevelReq)));
+}
+
+bool Player::setXpEarnedAtCurrentLevel(int xp) {
+    if (auto component = getEntityContext().tryGetComponent<AttributesComponent>()) {
+        int prevLevelReq = getPreviousLevelRequirement();
+        return component->mAttributes->setCurrentValue(
+            Player::EXPERIENCE(),
+            static_cast<float>(xp) / static_cast<float>(prevLevelReq)
+        );
+    }
+    return false;
+}
+
+long long Player::getXpNeededForLevelRange(int startLevel, int endLevel) {
+    long long result = 0;
+
+    for (; startLevel < endLevel; ++startLevel) {
+        if (startLevel < 15) {
+            result += 2 * startLevel + 7;
+        } else if (startLevel < 30) {
+            result += 5 * startLevel - 38;
+        } else {
+            result += 9 * startLevel - 158;
+        }
+    }
+
+    return result;
 }

@@ -40,6 +40,12 @@ public:
     // NOLINTEND
 
 public:
+    LLAPI void   setDirty(AttributeInstance const& attribute);
+    LLNDAPI bool setCurrentValue(Attribute const& attribute, float value);
+    LLNDAPI bool setMaxValue(Attribute const& attribute, float value);
+    LLNDAPI bool setDefaultValue(Attribute const& attribute, float value);
+
+public:
     // prevent constructor by default
     BaseAttributeMap& operator=(BaseAttributeMap const&);
     BaseAttributeMap();
