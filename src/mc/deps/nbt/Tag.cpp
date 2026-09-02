@@ -25,4 +25,4 @@ std::string CompoundTagVariant::toSnbt(SnbtFormat snbtFormat, uchar indent) cons
     return std::visit([&](auto& v) { return ll::nbt::detail::TypedToSnbt(v, indent, snbtFormat); }, mTagStorage);
 }
 
-LLAPI bool Tag::operator==(Tag const& rhs) const { return getId() == rhs.getId(); }
+LLAPI bool Tag::operator==(Tag const& other) const { return getId() == other.getId(); }

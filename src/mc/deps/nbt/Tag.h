@@ -98,7 +98,7 @@ public:
 
     virtual ::Tag::Type getId() const = 0;
 
-    virtual bool equals(::Tag const& rhs) const;
+    virtual bool equals(::Tag const& rhs) const = 0;
 
     virtual void print(::PrintStream& out) const;
 
