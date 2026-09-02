@@ -59,6 +59,8 @@ public:
         PlayerScoreSetFunction     action
     );
 
+    LLNDAPI ScoreboardId getId(PlayerScoreboardId const& playerId) const;
+
     [[nodiscard]] std::vector<::Objective const*> getObjectives() const {
         std::vector<::Objective const*> result;
         for (auto const& [name, objective] : *mObjectives) {
