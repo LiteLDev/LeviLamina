@@ -14,15 +14,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseLibraryInfo();
+    virtual ~BaseLibraryInfo() = default;
 
     virtual ::std::string_view getType() const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

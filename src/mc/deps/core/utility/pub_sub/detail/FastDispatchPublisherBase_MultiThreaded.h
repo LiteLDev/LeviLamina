@@ -5,33 +5,33 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/detail/PublisherBase.h"
 #include "mc/platform/threading/LockGuard.h"
+#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub::Detail { class DispatchTargets; }
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 namespace Bedrock::PubSub::Detail {
 
 class FastDispatchPublisherBase_MultiThreaded : public ::Bedrock::PubSub::Detail::PublisherBase {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnk641a85;
-    ::ll::UntypedStorage<8, 8>  mUnk467524;
-    // NOLINTEND
+    // FastDispatchPublisherBase_MultiThreaded inner types define
+    using LockType = ::Bedrock::Threading::LockGuard<::Bedrock::Threading::Mutex>;
+
+    using MutexType = ::Bedrock::Threading::Mutex;
 
 public:
-    // prevent constructor by default
-    FastDispatchPublisherBase_MultiThreaded& operator=(FastDispatchPublisherBase_MultiThreaded const&);
-    FastDispatchPublisherBase_MultiThreaded(FastDispatchPublisherBase_MultiThreaded const&);
-    FastDispatchPublisherBase_MultiThreaded();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
+    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>>        mFastDispatchInfo;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _loadDispatchTargets(::Bedrock::PubSub::Detail::DispatchTargets& targets) const;
+    MCAPI bool _loadDispatchTargets(::Bedrock::PubSub::Detail::DispatchTargets& targets) const;
     // NOLINTEND
 
 public:

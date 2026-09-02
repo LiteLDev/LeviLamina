@@ -27,11 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~IPropertySetter() = default;
-#else // LL_PLAT_C
-    virtual ~IPropertySetter();
-#endif
 
     virtual ::Scripting::ResultAny set(::entt::meta_handle, ::entt::meta_any) = 0;
 
@@ -40,14 +36,6 @@ public:
     virtual ::std::optional<::entt::meta_type> ownerType() const = 0;
 
     virtual bool isMemberFunction() const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

@@ -81,11 +81,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_S
         virtual ~HistoryItem() = default;
-#else // LL_PLAT_C
-        virtual ~HistoryItem();
-#endif
 
         virtual bool isValidStartItem() const = 0;
 
@@ -102,14 +98,6 @@ public:
         virtual float getYHeadRot() const = 0;
 
         virtual bool isOnGround() const = 0;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI void $dtor();
-#endif
         // NOLINTEND
 
     public:

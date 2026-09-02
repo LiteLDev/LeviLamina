@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Property();
+    virtual ~Property() = default;
 
     virtual void* Bind(::cohtml::Binder* binder, void* object) const = 0;
 
@@ -62,12 +62,6 @@ public:
     virtual bool ToMap(::cohtml::Binder* binder, void* object, ::cohtml::MapInfo* mapInfo) const = 0;
 
     virtual bool ToObject(::cohtml::Binder* binder, void* object, ::cohtml::ObjectInfo* objInfo) const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

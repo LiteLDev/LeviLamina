@@ -26,11 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~Feature() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~Feature() /*override*/;
-#endif
 
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const = 0;
 
@@ -41,14 +37,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool _placeBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
-#endif
     // NOLINTEND
 
 public:

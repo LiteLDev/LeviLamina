@@ -26,7 +26,7 @@ class BlockActorRenderer : public ::BaseActorRenderer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockActorRenderer() /*override*/;
+    virtual ~BlockActorRenderer() /*override*/ = default;
 
     virtual void render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) = 0;
 
@@ -70,12 +70,6 @@ public:
         ::mce::MaterialPtr const&       forcedMaterial,
         ::mce::ClientTexture const&     forcedTexture
     ) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

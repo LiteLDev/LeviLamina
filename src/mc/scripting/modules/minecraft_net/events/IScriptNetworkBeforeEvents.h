@@ -19,11 +19,7 @@ class IScriptNetworkBeforeEvents {
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~IScriptNetworkBeforeEvents() = default;
-#else // LL_PLAT_C
-    virtual ~IScriptNetworkBeforeEvents();
-#endif
 
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent>>
@@ -32,14 +28,6 @@ public:
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent>>
     onBeforePacketSend(::OutgoingPacketEvent const& packetEvent) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

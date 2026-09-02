@@ -21,18 +21,18 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::Bedrock::PubSub::DeferredSubscription& operator=(::Bedrock::PubSub::DeferredSubscription&& other);
+    MCAPI ::Bedrock::PubSub::DeferredSubscription& operator=(::Bedrock::PubSub::DeferredSubscription&& other);
 
-    MCNAPI uint64 runDeferredEvents(uint64 maxToRun);
+    MCAPI uint64 runDeferredEvents(uint64 maxToRun);
 #endif
 
-    MCNAPI ~DeferredSubscription();
+    MCAPI ~DeferredSubscription();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

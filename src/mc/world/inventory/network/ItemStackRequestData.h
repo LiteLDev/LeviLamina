@@ -38,33 +38,33 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ItemStackRequestData(::ItemStackRequestData&&);
+    MCAPI ItemStackRequestData(::ItemStackRequestData&&);
 
-    MCNAPI ::ItemStackRequestData& operator=(::ItemStackRequestData&&);
+    MCAPI ::ItemStackRequestData& operator=(::ItemStackRequestData&&);
 #endif
 
-    MCNAPI void write(::BinaryStream& stream) const;
+    MCAPI void write(::BinaryStream& stream) const;
 
-    MCNAPI ~ItemStackRequestData();
+    MCAPI ~ItemStackRequestData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestData>> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestData>> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::ItemStackRequestData&&);
+    MCAPI void* $ctor(::ItemStackRequestData&&);
 #endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -12,32 +12,48 @@ namespace Bedrock::PubSub::Detail {
 
 class DispatchTargets {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnkdc642f;
-    ::ll::UntypedStorage<8, 8>   mUnkaf5e3c;
-    ::ll::UntypedStorage<8, 8>   mUnk1bf9fe;
-    ::ll::UntypedStorage<8, 520> mUnk2b80ad;
-    // NOLINTEND
+    // DispatchTargets inner types define
+    using SSOTargets = ::std::array<::std::weak_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase>, 32>;
+
+    using StorageType = ::std::variant<
+        ::std::monostate,
+        ::std::array<::std::weak_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase>, 32>,
+        ::std::vector<::std::weak_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase>>>;
+
+    using StrongTarget = ::std::shared_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase>;
+
+    using UnboundedTargets = ::std::vector<::std::weak_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase>>;
+
+    using WeakTarget = ::std::weak_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase>;
 
 public:
-    // prevent constructor by default
-    DispatchTargets& operator=(DispatchTargets const&);
-    DispatchTargets(DispatchTargets const&);
-    DispatchTargets();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase>> mSingleDispatch;
+    ::ll::TypedStorage<8, 8, ::std::weak_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase>*>   mMultiDispatchBegin;
+    ::ll::TypedStorage<8, 8, ::std::weak_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase>*>   mMultiDispatchEnd;
+    ::ll::TypedStorage<
+        8,
+        520,
+        ::std::variant<
+            ::std::monostate,
+            ::std::array<::std::weak_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase>, 32>,
+            ::std::vector<::std::weak_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase>>>>
+        mStorage;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool loadSubscriptions(::Bedrock::PubSub::Detail::PublisherBase const& publisher);
+    MCAPI bool loadSubscriptions(::Bedrock::PubSub::Detail::PublisherBase const& publisher);
 
-    MCNAPI ~DispatchTargets();
+    MCAPI ~DispatchTargets();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
