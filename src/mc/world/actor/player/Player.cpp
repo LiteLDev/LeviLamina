@@ -164,7 +164,7 @@ bool Player::canSleep() const {
 
 bool Player::isHungry() const {
     if (auto at = getAttribute(HUNGER()).mPtr) {
-        return at->mCurrentMaxValue > at->mCurrentMaxValue;
+        return at->mCurrentMaxValue > at->mCurrentValue;
     }
     return false;
 }
