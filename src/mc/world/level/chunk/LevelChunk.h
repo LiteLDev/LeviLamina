@@ -224,6 +224,12 @@ public:
     // NOLINTEND
 
 public:
+    LLAPI void populateHeightMapDataForSubChunkPacket(
+        short                                 subChunkAbsoluteIndex,
+        ::SubChunkPacket::SubChunkPacketData& subChunkPacketData
+    ) const;
+
+public:
     // prevent constructor by default
     LevelChunk& operator=(LevelChunk const&);
     LevelChunk(LevelChunk const&);
