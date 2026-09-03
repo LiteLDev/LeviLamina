@@ -86,6 +86,9 @@ public:
 
     bool operator==(Block const& other) const { return mSerializationIdHash == other.mSerializationIdHash; }
 
+    template <typename T>
+    MCAPI T const* tryGetComponent() const;
+
 public:
     // member variables
     // NOLINTBEGIN
