@@ -32,8 +32,6 @@ jobs:
           restore-keys: |
             xmake-
 
-      - uses: microsoft/setup-msbuild@v3
-
       - name: Setup LLVM
         uses: ZhongRuoyu/setup-llvm@v0
         with:
