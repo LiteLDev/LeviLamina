@@ -31,8 +31,10 @@ public:
 #ifdef LL_PLAT_S
 #else // LL_PLAT_C
 public:
-    // prevent constructor by default
-    ItemStack();
+    ItemStack() {
+        mValid_DeprecatedSeeComment = true;
+        setNull(std::nullopt);
+    }
 
 #endif
 public:
