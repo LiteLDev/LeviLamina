@@ -15,6 +15,11 @@ namespace Json { class Value; }
 
 class ItemLockHelper {
 public:
+#ifdef LL_PLAT_S
+    LLNDAPI static ::ItemLockMode getItemLockMode(::ItemStackBase const& item);
+#endif
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _parseItemLockMode(::ItemStackBase& item, ::Json::Value const& data);
