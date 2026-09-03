@@ -217,6 +217,8 @@ public:
 
     LLNDAPI ::ItemStack const& getOffhandSlot() const;
 
+    LLNDAPI bool isDead() const;
+
 public:
     // member variables
     // NOLINTBEGIN

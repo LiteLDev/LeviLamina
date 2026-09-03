@@ -13,6 +13,7 @@
 #include "mc/deps/vanilla_components/PlayerComponent.h"
 #include "mc/entity/components/ActorOwnerComponent.h"
 #include "mc/entity/components/ActorRotationComponent.h"
+#include "mc/entity/components/IsDeadFlagComponent.h"
 #include "mc/entity/components/IsOnHotBlockFlagComponent.h"
 #include "mc/entity/components/OnFireComponent.h"
 #include "mc/entity/components/PostTickPositionDeltaComponent.h"
@@ -276,3 +277,5 @@ bool Actor::isOnHotBlock() const { return getEntityContext().hasComponent<IsOnHo
 ::ItemStack const& Actor::getOffhandSlot() const {
     return ActorEquipment::getHandContainer(getEntityContext()).getItem(1);
 }
+
+bool Actor::isDead() const { return getEntityContext().hasComponent<IsDeadFlagComponent>(); }
