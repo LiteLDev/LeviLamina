@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SelectionContainerVolume() /*override*/;
+    virtual ~SelectionContainerVolume() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -41,12 +41,6 @@ public:
     MCNAPI void moveTo(::Vec3 const& location, ::Editor::Selection::EventSource eventSource);
 
     MCNAPI void translate(::Vec3 const& offset, ::Editor::Selection::EventSource eventSource);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -25,18 +25,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BehaviorDefinition();
+    virtual ~BehaviorDefinition() = default;
 
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory);
 
     virtual ::std::unique_ptr<::BehaviorNode>
     createNode(::Actor& owner, ::BehaviorFactory const& factory, ::BehaviorNode* parent, ::BehaviorData* data) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -22,7 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI ~ScriptEntitySpawnType();
+#endif
     // NOLINTEND
 
 public:
@@ -34,7 +36,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };
 

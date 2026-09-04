@@ -138,8 +138,6 @@ public:
         ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback,
         ::std::function<void()>                                                         onJoinServerCancelled
     );
-
-    MCAPI ~ServerWorldJoiner();
     // NOLINTEND
 
 public:
@@ -162,12 +160,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> const&                 gatheringManager,
         ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()> getPartyProvider
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

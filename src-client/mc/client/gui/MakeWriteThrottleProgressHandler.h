@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MakeWriteThrottleProgressHandler() /*override*/;
+    virtual ~MakeWriteThrottleProgressHandler() /*override*/ = default;
 
     virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
@@ -45,12 +45,6 @@ public:
     virtual ::std::string getTitleText() const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

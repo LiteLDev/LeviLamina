@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerNetworkSystem() /*override*/;
+    virtual ~ServerNetworkSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -100,11 +100,5 @@ public:
         ::std::optional<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder,
         ::std::unique_ptr<::IPacketSerializationController>          packetController
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

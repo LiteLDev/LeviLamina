@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftGameShimComponent();
+    virtual ~MinecraftGameShimComponent() = default;
 
     virtual bool isInGame() const;
 
@@ -30,12 +30,6 @@ public:
     virtual void quit(::std::string const& src, ::std::string const& reason);
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> retrieveCIDToClientMap() const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

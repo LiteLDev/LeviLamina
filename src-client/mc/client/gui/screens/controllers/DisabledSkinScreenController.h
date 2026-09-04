@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DisabledSkinScreenController() /*override*/;
+    virtual ~DisabledSkinScreenController() /*override*/ = default;
 
     virtual ::std::string getTelemetryOverride() const /*override*/;
 
@@ -50,12 +50,6 @@ public:
         bool                                      twoButtonWithCallback,
         ::std::function<void()>                   callback
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

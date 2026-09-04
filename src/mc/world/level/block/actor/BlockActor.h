@@ -60,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockActor();
+    virtual ~BlockActor() = default;
 
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper);
 
@@ -141,12 +141,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& KEY_VERSION();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

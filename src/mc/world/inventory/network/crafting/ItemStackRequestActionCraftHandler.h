@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemStackRequestActionCraftHandler();
+    virtual ~ItemStackRequestActionCraftHandler() = default;
     // NOLINTEND
 
 public:
@@ -66,12 +66,6 @@ public:
     MCNAPI void onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
     MCNAPI ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType requestActionType);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

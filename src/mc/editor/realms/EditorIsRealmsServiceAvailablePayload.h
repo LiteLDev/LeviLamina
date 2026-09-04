@@ -24,13 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorIsRealmsServiceAvailablePayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~EditorIsRealmsServiceAvailablePayload() /*override*/ = default;
     // NOLINTEND
 
 public:

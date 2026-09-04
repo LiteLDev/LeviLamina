@@ -52,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerPlayerSleepManager() /*override*/;
+    virtual ~ServerPlayerSleepManager() /*override*/ = default;
 
     virtual void updateSleepingPlayerList() /*override*/;
 
@@ -90,12 +90,6 @@ public:
         ::std::unique_ptr<::IPlayerSleepPercentageGetter>    playerSleepPercentageGetter,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>   levelEventManager
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

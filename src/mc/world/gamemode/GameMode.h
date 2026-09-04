@@ -109,7 +109,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameMode();
+    virtual ~GameMode() = default;
 
     virtual bool startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
 
@@ -206,12 +206,6 @@ public:
         ::std::unique_ptr<::IGameModeTimer>     timer,
         ::std::unique_ptr<::IGameModeMessenger> messenger
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

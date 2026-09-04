@@ -60,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EducationContentManagerScreenController() /*override*/;
+    virtual ~EducationContentManagerScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -103,11 +103,5 @@ public:
         ::ToastManager&                                             tm,
         ::EducationContentManagerScreenController::OptionalBehavior optionalBehavior
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ToXAsyncBlock() /*override*/;
+    virtual ~ToXAsyncBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -37,12 +37,6 @@ public:
     MCAPI ::XAsyncBlock* _getAsyncBlock();
 
     MCAPI void _handleResult(long hr);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

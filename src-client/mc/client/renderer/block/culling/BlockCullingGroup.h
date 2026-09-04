@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockCullingGroup() /*override*/;
+    virtual ~BlockCullingGroup() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -65,12 +65,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::IMinecraftEventing& eventing);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

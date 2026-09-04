@@ -51,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptProjectRegion();
+    virtual ~ScriptProjectRegion() = default;
     // NOLINTEND
 
 public:
@@ -110,12 +110,6 @@ public:
         ::Editor::ScriptModule::ScriptProjectRegionPlayerService* owner,
         ::Scripting::WeakLifetimeScope const&                     scope
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

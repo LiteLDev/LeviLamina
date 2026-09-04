@@ -22,11 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~CraftingInputContainerController() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~CraftingInputContainerController() /*override*/;
-#endif
 
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const /*override*/;
 
@@ -45,14 +41,6 @@ public:
         bool                                     displayGhostItems,
         ::std::vector<::RecipeIngredient> const& ingredients
     );
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 

@@ -51,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContentBadgeContainer() /*override*/;
+    virtual ~ContentBadgeContainer() /*override*/ = default;
 
     virtual ::Editor::DataStore::IContentBadgeContainer::Config const& getConfig() const /*override*/;
 
@@ -112,12 +112,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -202,19 +202,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~RuntimePredictionData();
+        virtual ~RuntimePredictionData() = default;
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI void reset();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
 
     public:

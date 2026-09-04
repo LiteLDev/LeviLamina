@@ -43,13 +43,5 @@ public:
             ::std::unique_ptr<::StructurePoolBlockTagRule, ::std::default_delete<::StructurePoolBlockTagRule>>>>&&
             ruleList
     );
-
-    MCAPI ~JigsawStructureBlockTagRulesRegistry();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

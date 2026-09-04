@@ -24,13 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CursorServiceCreateCursorPayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~CursorServiceCreateCursorPayload() /*override*/ = default;
     // NOLINTEND
 
 public:

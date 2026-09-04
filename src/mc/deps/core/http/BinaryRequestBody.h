@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BinaryRequestBody() /*override*/;
+    virtual ~BinaryRequestBody() /*override*/ = default;
 
     virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar> destination) /*override*/;
 
@@ -49,12 +49,6 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI static ::std::shared_ptr<::Bedrock::Http::BinaryRequestBody> create(::gsl::span<uchar const> data);
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

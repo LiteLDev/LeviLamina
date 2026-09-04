@@ -58,7 +58,9 @@ public:
         ::Scripting::WeakLifetimeScope const& scope
     );
 
+#ifdef LL_PLAT_C
     MCNAPI ~ScriptInternalPlayerServiceContext();
+#endif
     // NOLINTEND
 
 public:
@@ -75,7 +77,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

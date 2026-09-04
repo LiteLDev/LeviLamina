@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TickTimeManagerServer() /*override*/;
+    virtual ~TickTimeManagerServer() /*override*/ = default;
 
     virtual void update() /*override*/;
 
@@ -79,12 +79,6 @@ public:
         ::cereal::ReflectionCtx&                             ctx,
         ::Bedrock::NotNullNonOwnerPtr<::PacketSender> const& packetSender
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

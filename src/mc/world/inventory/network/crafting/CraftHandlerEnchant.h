@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftHandlerEnchant() /*override*/;
+    virtual ~CraftHandlerEnchant() /*override*/ = default;
 
     virtual ::ItemStackNetResult
     _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
@@ -38,12 +38,6 @@ public:
     virtual void _postCraftRequest(bool const wasSuccess) /*override*/;
 
     virtual void endRequestBatch() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

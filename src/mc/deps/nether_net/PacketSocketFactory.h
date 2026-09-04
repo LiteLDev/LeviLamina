@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PacketSocketFactory() /*override*/;
+    virtual ~PacketSocketFactory() /*override*/ = default;
 
     virtual ::std::unique_ptr<::webrtc::AsyncPacketSocket>
     CreateUdpSocket(::webrtc::SocketAddress const& address, ushort min_port, ushort max_port) /*override*/;
@@ -41,12 +41,6 @@ public:
     CreateGlobalUdpSocket(::webrtc::SocketAddress const& address, ushort minPort, ushort maxPort) /*override*/;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAsyncDnsResolver() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -45,7 +45,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~CharacterSelectorFTUEModel();
+        virtual ~CharacterSelectorFTUEModel() = default;
         // NOLINTEND
 
     public:
@@ -56,12 +56,6 @@ public:
         MCAPI void openCurrentPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController) const;
 
         MCAPI bool prevPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -94,7 +88,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CharacterSelectorModel() /*override*/;
+    virtual ~CharacterSelectorModel() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -159,11 +153,5 @@ public:
         ::LinksToStyle const&                                      classicSkinLinksToStyle,
         ::LinksToStyle const&                                      personaLinksToStyle
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

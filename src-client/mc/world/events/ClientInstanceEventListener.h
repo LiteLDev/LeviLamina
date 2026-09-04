@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientInstanceEventListener();
+    virtual ~ClientInstanceEventListener() = default;
 
     virtual ::EventResult onClientInitializeStart(::ClientInstance& instance);
 
@@ -42,12 +42,6 @@ public:
     virtual ::EventResult onStartLeaveGame(::ClientInstance& instance);
 
     virtual ::EventResult onEvent(::ClientInstanceNotificationEvent const& playerViewPerspectiveChangedEvent);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

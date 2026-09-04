@@ -19,15 +19,9 @@ public:
     virtual bool _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const
         /*override*/;
 
-    virtual ~EmptyLootItem() /*override*/;
+    virtual ~EmptyLootItem() /*override*/ = default;
 
     virtual ::LootPoolEntry::EntryType getEntryType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

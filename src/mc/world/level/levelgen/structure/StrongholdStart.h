@@ -15,17 +15,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StrongholdStart() /*override*/;
+    virtual ~StrongholdStart() /*override*/ = default;
 
     virtual bool isValid() const /*override*/;
 
     virtual ::std::string_view getStructureName() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

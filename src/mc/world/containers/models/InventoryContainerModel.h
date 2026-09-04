@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InventoryContainerModel() /*override*/;
+    virtual ~InventoryContainerModel() /*override*/ = default;
 
     virtual void postInit() /*override*/;
 
@@ -46,12 +46,6 @@ public:
     virtual void _onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem) /*override*/;
 
     virtual ::Container* _getContainer() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

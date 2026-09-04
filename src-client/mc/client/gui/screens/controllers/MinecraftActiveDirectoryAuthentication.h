@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftActiveDirectoryAuthentication() /*override*/;
+    virtual ~MinecraftActiveDirectoryAuthentication() /*override*/ = default;
 
     virtual ::ActiveDirectoryAuthenticationState getAuthenticationState() const /*override*/;
 
@@ -62,12 +62,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool _isIOS() const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

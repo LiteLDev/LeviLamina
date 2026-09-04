@@ -58,8 +58,6 @@ public:
     MCAPI ::std::optional<::NetworkWorldInfo> getWorld(::std::string const& id);
 
     MCAPI ::std::optional<::World::ExternalServerWorldError> removeExternalServerWorld(int id);
-
-    MCAPI ~ExternalServerWorldList();
     // NOLINTEND
 
 public:
@@ -70,12 +68,6 @@ public:
         ::ServerLocator&                                     serverLocator,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>    profanityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

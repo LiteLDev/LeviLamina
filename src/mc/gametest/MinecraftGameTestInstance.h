@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftGameTestInstance() /*override*/;
+    virtual ~MinecraftGameTestInstance() /*override*/ = default;
 
     virtual ::BlockSource& getBlockSource() const;
 
@@ -57,12 +57,6 @@ public:
     virtual int _getLevelTick() const /*override*/;
 
     virtual bool _isTestReady() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

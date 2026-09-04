@@ -15,16 +15,10 @@ class CraftHandlerLoom : public ::CraftHandlerBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftHandlerLoom() /*override*/;
+    virtual ~CraftHandlerLoom() /*override*/ = default;
 
     virtual ::ItemStackNetResult
     _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ class PrecompiledCommandOrigin : public ::CommandOrigin {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PrecompiledCommandOrigin() /*override*/;
+    virtual ~PrecompiledCommandOrigin() /*override*/ = default;
 
     virtual ::std::string const& getRequestId() const /*override*/;
 
@@ -62,12 +62,6 @@ public:
     virtual ::CompoundTag serialize() const /*override*/;
 
     virtual bool isValid() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

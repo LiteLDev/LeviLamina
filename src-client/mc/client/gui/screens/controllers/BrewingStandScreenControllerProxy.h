@@ -16,13 +16,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrewingStandScreenControllerProxy() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~BrewingStandScreenControllerProxy() /*override*/ = default;
     // NOLINTEND
 
 public:

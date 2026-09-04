@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncDnsResolverFactory() /*override*/;
+    virtual ~AsyncDnsResolverFactory() /*override*/ = default;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> Create() /*override*/;
 
@@ -43,12 +43,6 @@ public:
         int                            family,
         ::absl::AnyInvocable<void()>   callback
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

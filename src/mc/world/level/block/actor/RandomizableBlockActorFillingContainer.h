@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RandomizableBlockActorFillingContainer() /*override*/;
+    virtual ~RandomizableBlockActorFillingContainer() /*override*/ = default;
 
     virtual void setContainerChanged(int slot) /*override*/;
 
@@ -62,12 +62,6 @@ public:
         ::SharedTypes::Legacy::ContainerType containerType,
         ::BlockActorRendererId               rendererId
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

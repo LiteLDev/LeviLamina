@@ -30,19 +30,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ThumbnailCacheFetchRequestPayload() /*override*/;
+    virtual ~ThumbnailCacheFetchRequestPayload() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

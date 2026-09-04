@@ -55,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Connection() /*override*/;
+    virtual ~Connection() /*override*/ = default;
 
     virtual void applyToBlockType(::BlockType& blockType) const /*override*/;
 
@@ -75,12 +75,6 @@ public:
         ::BlockPos const&          pos,
         ::NeighborBlockDirections  directionsToCheck
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourceHandlerBrokerImpl() /*override*/;
+    virtual ~ResourceHandlerBrokerImpl() /*override*/ = default;
 
     virtual void OnResourceRequest(
         ::cohtml::IAsyncResourceRequest const* request,
@@ -72,12 +72,6 @@ public:
     virtual void onAppPreSuspend() /*override*/;
 
     virtual ::cohtml::IAsyncResourceHandler* getCohtmlHandler() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -88,7 +88,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ProfileImageResourceHandler() /*override*/;
+    virtual ~ProfileImageResourceHandler() /*override*/ = default;
 
     virtual ::Gameface::ResourceHandlerStatus
     onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
@@ -119,12 +119,6 @@ public:
         ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>            userManager
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

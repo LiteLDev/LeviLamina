@@ -103,8 +103,6 @@ public:
     MCNAPI bool shouldSendMotionPredictionHintsPacket() const;
 
     MCNAPI void teleportEntity(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot);
-
-    MCNAPI ~SpatialActorNetworkData();
     // NOLINTEND
 
 public:
@@ -117,11 +115,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::SpatialActorNetworkData::DebugSpatialPacketModifiers& mDebugSpatialPacketModifiers();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

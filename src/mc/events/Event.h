@@ -64,9 +64,9 @@ public:
     MCNAPI ::Json::Value measurementsAsJsonValue() const;
 
     MCNAPI ::Json::Value propertiesAsJsonValue() const;
-#endif
 
     MCNAPI ~Event();
+#endif
     // NOLINTEND
 
 public:
@@ -83,7 +83,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

@@ -9,15 +9,9 @@ class NoInvitesOrJoiningScreenController : public ::MinecraftScreenController {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NoInvitesOrJoiningScreenController() /*override*/;
+    virtual ~NoInvitesOrJoiningScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

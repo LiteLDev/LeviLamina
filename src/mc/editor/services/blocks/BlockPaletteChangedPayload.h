@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockPaletteChangedPayload() /*override*/;
+    virtual ~BlockPaletteChangedPayload() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -42,12 +42,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::EditorBlockPalette const& palette);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

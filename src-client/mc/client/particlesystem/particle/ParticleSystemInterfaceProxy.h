@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleSystemInterfaceProxy() /*override*/;
+    virtual ~ParticleSystemInterfaceProxy() /*override*/ = default;
 
     virtual float getDistanceToCameraSqr(::Vec3 const& pos) const /*override*/;
 
@@ -84,12 +84,6 @@ public:
         ::std::unique_ptr<::ParticleEngine>       particleEngine,
         ::std::unique_ptr<::ParticleSystemEngine> particleSystemEngine
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

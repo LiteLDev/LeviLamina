@@ -23,19 +23,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EnchantRandomEquipmentFunction() /*override*/;
+    virtual ~EnchantRandomEquipmentFunction() /*override*/ = default;
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
     virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

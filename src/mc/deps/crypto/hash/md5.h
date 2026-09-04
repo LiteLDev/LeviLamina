@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~md5() /*override*/;
+    virtual ~md5() /*override*/ = default;
 
     virtual void reset() /*override*/;
 
@@ -39,12 +39,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void const* _body(void const* data, uint size);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VenueConnectProgressHandler() /*override*/;
+    virtual ~VenueConnectProgressHandler() /*override*/ = default;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -59,12 +59,6 @@ public:
         ::std::function<void(bool, ::Venue)> completeCallback,
         ::std::function<void()>              cancelCallback
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

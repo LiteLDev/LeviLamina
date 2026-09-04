@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UnburiedConstraint() /*override*/;
+    virtual ~UnburiedConstraint() /*override*/ = default;
 
     virtual bool isSatisfied(
         ::IBlockWorldGenAPI const& target,
@@ -47,12 +47,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::StructureTemplate& structure);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

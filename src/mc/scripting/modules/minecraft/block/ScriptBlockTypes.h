@@ -49,8 +49,6 @@ public:
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     get_V010(::Scripting::WeakLifetimeScope& scope, ::std::string const& blockName);
-
-    MCAPI ~ScriptBlockTypes();
     // NOLINTEND
 
 public:
@@ -59,12 +57,6 @@ public:
     MCAPI static ::Scripting::ClassBinding bind();
 
     MCAPI static ::Scripting::ClassBinding bind_V010();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

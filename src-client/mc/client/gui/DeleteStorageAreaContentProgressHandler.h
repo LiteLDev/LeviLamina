@@ -60,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeleteStorageAreaContentProgressHandler() /*override*/;
+    virtual ~DeleteStorageAreaContentProgressHandler() /*override*/ = default;
 
     virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
@@ -100,12 +100,6 @@ public:
         ::DeleteStorageAreaContentProgressHandler::CancelTimeInfo&& cancelTimeInfo,
         ::std::function<void()> const&&                             onCompleteCallback
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

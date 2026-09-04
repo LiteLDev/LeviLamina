@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UpdateWorldHeightScreenController() /*override*/;
+    virtual ~UpdateWorldHeightScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -46,12 +46,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::function<void(bool)> startWorldCallback);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

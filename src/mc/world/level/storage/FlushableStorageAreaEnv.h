@@ -21,15 +21,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FlushableStorageAreaEnv() /*override*/;
+    virtual ~FlushableStorageAreaEnv() /*override*/ = default;
 
     virtual void flushToPermanentStorage() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

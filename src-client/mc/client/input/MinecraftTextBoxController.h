@@ -30,19 +30,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftTextBoxController() /*override*/;
+    virtual ~MinecraftTextBoxController() /*override*/ = default;
 
     virtual void setTextBoxState(int controllerId, ::TextBoxStateChange const& stateChange) /*override*/;
 
     virtual void onKeyboardDismissed(int controllerId) /*override*/;
 
     virtual ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

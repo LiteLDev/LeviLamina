@@ -29,19 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CreativeGroupInfo() /*override*/;
+    virtual ~CreativeGroupInfo() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _addCreativeItemEntry(::CreativeItemEntry* itemEntry);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

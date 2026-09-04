@@ -53,8 +53,6 @@ public:
     MCAPI ::Bedrock::PubSub::Subscription subscribeToBuildGameList();
 
     MCFOLD void userControlledUpdateGameList();
-
-    MCAPI ~FriendServerWorldList();
     // NOLINTEND
 
 public:
@@ -66,12 +64,6 @@ public:
         ::std::function<bool(::Realms::RealmId)> isRealmJoinable,
         ::std::function<bool()>                  isEditorModeEnabled
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

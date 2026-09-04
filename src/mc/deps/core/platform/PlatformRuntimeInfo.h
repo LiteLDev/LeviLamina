@@ -75,13 +75,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~PlatformRuntimeInfo() = default;
+#else // LL_PLAT_C
     virtual ~PlatformRuntimeInfo();
+#endif
+
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

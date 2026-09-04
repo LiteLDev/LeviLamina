@@ -36,11 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~IntOption() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~IntOption() /*override*/;
-#endif
 
     virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) /*override*/;
 
@@ -114,14 +110,6 @@ public:
         int                  valueMax,
         ::GameVersion        version
     );
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
 #endif
     // NOLINTEND
 

@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorStructureBlockSource() /*override*/;
+    virtual ~EditorStructureBlockSource() /*override*/ = default;
 
     virtual void addListener(::BlockSourceListener& l) /*override*/;
 
@@ -96,12 +96,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void*
     $ctor(::Level& level, ::Dimension& dimension, ::ChunkSource& chunkSource, ::AABB const& bounds, ::BlockPos offset);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

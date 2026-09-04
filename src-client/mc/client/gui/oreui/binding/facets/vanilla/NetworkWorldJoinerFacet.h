@@ -52,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkWorldJoinerFacet() /*override*/;
+    virtual ~NetworkWorldJoinerFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -133,12 +133,6 @@ public:
         ::brstd::move_only_function<bool()>                  isUsingUnifiedJoinRealmFlow,
         ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

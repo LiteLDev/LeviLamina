@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MaterialReducerScreenController() /*override*/;
+    virtual ~MaterialReducerScreenController() /*override*/ = default;
 
     virtual ::std::string _getButtonADescription() /*override*/;
 
@@ -61,12 +61,6 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

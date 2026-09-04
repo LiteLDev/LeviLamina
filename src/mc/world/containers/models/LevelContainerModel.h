@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelContainerModel() /*override*/;
+    virtual ~LevelContainerModel() /*override*/ = default;
 
     virtual void releaseResources() /*override*/;
 
@@ -71,12 +71,6 @@ public:
 
     MCAPI static ::Container*
     getContainerHelper(::Player& player, ::BlockActorType blockActorType, ::BlockPos const& blockPos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

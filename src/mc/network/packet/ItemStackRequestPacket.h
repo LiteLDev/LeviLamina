@@ -25,7 +25,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~ItemStackRequestPacket() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ItemStackRequestPacket() /*override*/;
+#endif
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
@@ -39,7 +43,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

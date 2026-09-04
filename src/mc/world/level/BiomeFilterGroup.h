@@ -14,7 +14,7 @@ class BiomeFilterGroup : public ::FilterGroup {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BiomeFilterGroup() /*override*/;
+    virtual ~BiomeFilterGroup() /*override*/ = default;
 
     virtual ::std::shared_ptr<::FilterGroup> _createSubgroup(::FilterGroup::CollectionType type) const /*override*/;
     // NOLINTEND
@@ -23,12 +23,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void finalizeParsedValue(::IWorldRegistriesProvider& registries);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

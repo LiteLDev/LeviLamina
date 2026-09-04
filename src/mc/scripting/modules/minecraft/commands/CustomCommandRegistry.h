@@ -110,7 +110,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CustomCommandRegistry() /*override*/;
+    virtual ~CustomCommandRegistry() /*override*/ = default;
 
     virtual void _onScriptInitializationComplete() /*override*/;
     // NOLINTEND
@@ -133,12 +133,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ServerScriptManagerEvents& events, ::CommandRegistry& commandRegistry);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

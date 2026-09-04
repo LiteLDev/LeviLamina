@@ -32,19 +32,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenHandlerLabTable() /*override*/;
+    virtual ~ScreenHandlerLabTable() /*override*/ = default;
 
     virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
 
     virtual ::ItemStackNetResult endRequest() /*override*/;
 
     virtual void postRequest(bool const wasSuccess) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

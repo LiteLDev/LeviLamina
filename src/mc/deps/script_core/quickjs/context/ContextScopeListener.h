@@ -30,17 +30,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContextScopeListener() /*override*/;
+    virtual ~ContextScopeListener() /*override*/ = default;
 
     virtual void onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry& registry) /*override*/;
 
     virtual void onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

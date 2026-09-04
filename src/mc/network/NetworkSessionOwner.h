@@ -22,19 +22,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkSessionOwner() /*override*/;
+    virtual ~NetworkSessionOwner() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void createNetworkSession(::TransportLayer transportLayer);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

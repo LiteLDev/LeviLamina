@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsStoriesCommentsFacet() /*override*/;
+    virtual ~RealmsStoriesCommentsFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -70,12 +70,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>      dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>       profanityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

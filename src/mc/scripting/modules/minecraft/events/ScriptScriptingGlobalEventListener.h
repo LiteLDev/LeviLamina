@@ -25,15 +25,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptScriptingGlobalEventListener() /*override*/;
+    virtual ~ScriptScriptingGlobalEventListener() /*override*/ = default;
 
     virtual ::EventResult onEvent(::ScriptCommandMessageEvent const& scriptCommandMessageEvent) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

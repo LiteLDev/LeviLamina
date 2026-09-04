@@ -49,7 +49,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CameraItemComponentLegacy() /*override*/;
+    virtual ~CameraItemComponentLegacy() /*override*/ = default;
 
     virtual void takePictureNow(::Player& player, ::Actor* camera, ::Actor* target) /*override*/;
 
@@ -98,12 +98,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

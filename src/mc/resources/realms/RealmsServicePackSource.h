@@ -32,19 +32,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsServicePackSource() /*override*/;
+    virtual ~RealmsServicePackSource() /*override*/ = default;
 
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
     virtual ::PackType getPackType() const /*override*/;
 
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

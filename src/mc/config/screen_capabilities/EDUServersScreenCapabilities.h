@@ -21,13 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUServersScreenCapabilities() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~EDUServersScreenCapabilities() /*override*/ = default;
     // NOLINTEND
 
 public:

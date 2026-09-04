@@ -24,13 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockPaletteSelectedIndexChangedPayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~BlockPaletteSelectedIndexChangedPayload() /*override*/ = default;
     // NOLINTEND
 
 public:

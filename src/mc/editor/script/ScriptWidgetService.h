@@ -50,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetService();
+    virtual ~ScriptWidgetService() = default;
 
     virtual ::Scripting::Result_deprecated<void> _groupDeleteGroup(
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete
@@ -84,12 +84,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void*
     $ctor(::Editor::ServiceProviderCollection& serviceProviderCollection, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -395,7 +395,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileArchiver() /*override*/;
+    virtual ~FileArchiver() /*override*/ = default;
 
     virtual ::std::shared_ptr<::FilePickerSettings>
     generateFilePickerSettings(::std::vector<::FileArchiver::ExportType> const& types, ::std::string const&) const;
@@ -566,12 +566,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                     levelDbEnv,
         ::std::function<void(::std::string const&)>                     displayMessageFunction
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

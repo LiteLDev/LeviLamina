@@ -65,20 +65,12 @@ public:
     );
 
     MCAPI bool isManualEmitter() const;
-
-    MCAPI ~ParticleEffect();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::Random>& mRandomNumberGenerator();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

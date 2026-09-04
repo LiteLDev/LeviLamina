@@ -38,15 +38,9 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Duration();
+        virtual ~Duration() = default;
 
         virtual void reset();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
 
     public:

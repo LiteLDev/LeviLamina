@@ -33,16 +33,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RoutePrerequisiteHandler() /*override*/;
+    virtual ~RoutePrerequisiteHandler() /*override*/ = default;
 
     virtual ::OreUI::RoutePrerequisiteState
     handleRoutePrerequisites(::OreUI::RoutePrerequisite prerequisite, ::std::string const& newRoute) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

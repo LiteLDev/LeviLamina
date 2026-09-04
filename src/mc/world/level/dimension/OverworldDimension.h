@@ -23,7 +23,7 @@ class OverworldDimension : public ::Dimension {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OverworldDimension() /*override*/;
+    virtual ~OverworldDimension() /*override*/ = default;
 
     virtual ::Vec3 translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const /*override*/;
 
@@ -47,12 +47,6 @@ public:
         ::std::unique_ptr<::ChunkSource> storageSource,
         ::StorageVersion                 levelVersion
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

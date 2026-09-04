@@ -169,7 +169,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Channel() /*override*/;
+        virtual ~Channel() /*override*/ = default;
 
         virtual void SendSignal(
             ::NetherNet::NetworkID                              from,
@@ -180,12 +180,6 @@ public:
 
         virtual ::Bedrock::PubSub::Subscription
         RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -224,7 +218,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~JsonRpcInterop() /*override*/;
+        virtual ~JsonRpcInterop() /*override*/ = default;
 
         virtual ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>> sendJsonRpcTo(
             ::PlayerMessaging::NetworkID          networkIdTo,
@@ -248,12 +242,6 @@ public:
         ) /*override*/;
 
         virtual void onTurnConfigFailure(::Bedrock::ErrorInfo<::NetherNet::ESessionError> const& error) /*override*/;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -309,7 +297,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SignalingService() /*override*/;
+    virtual ~SignalingService() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -336,11 +324,5 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing>   eventing,
         ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> additionalJsonRpcComponents
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

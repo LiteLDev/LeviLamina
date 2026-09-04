@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsUnknownPackSource() /*override*/;
+    virtual ~RealmsUnknownPackSource() /*override*/ = default;
 
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
@@ -45,12 +45,6 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void clearPacks();
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -9,15 +9,9 @@ class PlayerUIContainerModel : public ::PlayerUIContainerModelBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerUIContainerModel() /*override*/;
+    virtual ~PlayerUIContainerModel() /*override*/ = default;
 
     virtual int _getContainerOffset() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

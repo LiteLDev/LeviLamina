@@ -32,8 +32,6 @@ public:
     MCNAPI ScriptLogProperties(::Editor::ScriptModule::ScriptLogProperties const&);
 
     MCNAPI ::Editor::ScriptModule::ScriptLogProperties& operator=(::Editor::ScriptModule::ScriptLogProperties const&);
-
-    MCNAPI ~ScriptLogProperties();
     // NOLINTEND
 
 public:
@@ -50,12 +48,6 @@ public:
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptLogProperties&&);
 
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptLogProperties const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

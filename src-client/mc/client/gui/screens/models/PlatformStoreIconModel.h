@@ -38,8 +38,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _updatePlatformStoreIcon();
-
-    MCAPI ~PlatformStoreIconModel();
     // NOLINTEND
 
 public:
@@ -52,11 +50,5 @@ public:
         sPlatformStoreIconVisibilityStacks();
 
     MCAPI static ::Bedrock::Threading::Mutex& sStacksMutex();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -70,8 +70,6 @@ public:
     MCAPI ::std::optional<::NetworkWorldInfo> getWorld(::std::string const& id);
 
     MCAPI void update(double timestampMs);
-
-    MCAPI ~ThirdPartyWorldList();
     // NOLINTEND
 
 public:
@@ -84,12 +82,6 @@ public:
         bool                                                         isEditorMode,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>            profanityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

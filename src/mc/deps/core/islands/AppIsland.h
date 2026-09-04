@@ -27,7 +27,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~AppIsland() /*override*/;
+#else // LL_PLAT_C
+    virtual ~AppIsland() /*override*/ = default;
+#endif
 
     virtual ushort getId() /*override*/;
 
@@ -64,7 +68,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

@@ -14,15 +14,9 @@ class GenericPlatformUpsellDialog : public ::PlatformUpsellDialog {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GenericPlatformUpsellDialog() /*override*/;
+    virtual ~GenericPlatformUpsellDialog() /*override*/ = default;
 
     virtual void show(::std::shared_ptr<::Social::User> const user, ::std::function<void(bool)> callback) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

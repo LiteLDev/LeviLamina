@@ -16,7 +16,7 @@ class CompoundCreatorInputValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CompoundCreatorInputValidation() /*override*/;
+    virtual ~CompoundCreatorInputValidation() /*override*/ = default;
 
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
@@ -30,12 +30,6 @@ public:
 
     virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

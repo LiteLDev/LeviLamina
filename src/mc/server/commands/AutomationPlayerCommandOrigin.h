@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AutomationPlayerCommandOrigin() /*override*/;
+    virtual ~AutomationPlayerCommandOrigin() /*override*/ = default;
 
     virtual ::std::string getName() const /*override*/;
 
@@ -59,12 +59,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& requestId, ::Player& origin);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

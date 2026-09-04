@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CustomRenderComponent() /*override*/;
+    virtual ~CustomRenderComponent() /*override*/ = default;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -42,12 +42,6 @@ public:
     MCAPI void setRenderer(::std::shared_ptr<::UICustomRenderer> renderer);
 
     MCAPI bool updateCustom(::IClientInstance& client, ::UIScene const& scene);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

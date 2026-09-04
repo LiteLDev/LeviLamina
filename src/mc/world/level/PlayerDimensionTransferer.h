@@ -55,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerDimensionTransferer() /*override*/;
+    virtual ~PlayerDimensionTransferer() /*override*/ = default;
 
     virtual void playerSaveLimboActors(
         ::Player&                  player,
@@ -145,12 +145,6 @@ public:
         ::Bedrock::NonOwnerPointer<::LevelStorage>           levelStorage,
         ::Bedrock::NonOwnerPointer<::LoadingScreenIdManager> loadingScreenIdManager
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -55,14 +55,6 @@ public:
     MCAPI ::PingedCompatibleServer const* getWorld(::Network::ServerID const& lookupId) const;
 
     MCAPI void update(double timestampMs, ::TrialManager const& trialManager);
-
-    MCAPI ~LanServerWorldList();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

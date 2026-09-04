@@ -28,18 +28,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::cereal::SerializerContext*> mContext;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ScopedPop();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:

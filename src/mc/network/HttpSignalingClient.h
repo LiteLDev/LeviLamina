@@ -33,11 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~HttpSignalingClient() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~HttpSignalingClient() /*override*/;
-#endif
 
     virtual void SendSignal(
         ::NetherNet::NetworkID                              from,
@@ -48,14 +44,6 @@ public:
 
     virtual ::Bedrock::PubSub::Subscription
     RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

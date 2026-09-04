@@ -27,19 +27,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerContainerSetter() /*override*/;
+    virtual ~PlayerContainerSetter() /*override*/ = default;
 
     virtual void setArmor(int slot, ::ItemStack const& item) /*override*/;
 
     virtual void setOffhandSlot(::ItemStack const& item) /*override*/;
 
     virtual void setPlayerUIItem(int slot, ::ItemStack const& item) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

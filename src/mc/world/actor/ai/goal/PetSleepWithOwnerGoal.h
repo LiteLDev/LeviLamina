@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PetSleepWithOwnerGoal() /*override*/;
+    virtual ~PetSleepWithOwnerGoal() /*override*/ = default;
 
     virtual bool canUse() /*override*/;
 
@@ -61,12 +61,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

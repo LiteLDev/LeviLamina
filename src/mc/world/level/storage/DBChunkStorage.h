@@ -91,7 +91,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DBChunkStorage() /*override*/;
+    virtual ~DBChunkStorage() /*override*/ = default;
 
     virtual void shutdown() /*override*/;
 
@@ -229,12 +229,6 @@ public:
         ::Scheduler&                     scheduler,
         ::Experiments const&             experiments
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

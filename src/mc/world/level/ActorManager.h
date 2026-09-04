@@ -61,7 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorManager();
+    virtual ~ActorManager() = default;
 
     virtual ::Bedrock::PubSub::Connector<void(::Actor&)>& getRegisterEntityAddedConnector() /*override*/;
 
@@ -122,12 +122,6 @@ public:
         ::std::unique_ptr<::IActorManagerProxy>                actorManagerProxy,
         ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector> actorGarbageCollector
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
