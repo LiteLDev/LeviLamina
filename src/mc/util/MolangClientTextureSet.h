@@ -5,12 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/minecraft_renderer/resources/MERSTextureMode.h"
+#include "mc/deps/minecraft_renderer/resources/MERSUniformData.h"
 #include "mc/deps/minecraft_renderer/resources/NormalTextureMode.h"
 
 // auto generated forward declare list
 // clang-format off
 struct BedrockTextureData;
-struct MERSUniformData;
 namespace mce { class TexturePtr; }
 // clang-format on
 
@@ -22,7 +22,17 @@ public:
     // clang-format on
 
     // MolangClientTextureSet inner types define
-    struct ExtraPBRData {};
+    struct ExtraPBRData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BedrockTextureData const>> mMERSTextureDataWeakPtr;
+        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BedrockTextureData const>> mNormalTextureDataWeakPtr;
+        ::ll::TypedStorage<4, 20, ::std::optional<::MERSUniformData>>          mMERSUniforms;
+        ::ll::TypedStorage<1, 1, ::MERSTextureMode>                            mMERSTextureMode;
+        ::ll::TypedStorage<1, 1, ::NormalTextureMode>                          mNormalTextureMode;
+        // NOLINTEND
+    };
 
 public:
 // member variables
