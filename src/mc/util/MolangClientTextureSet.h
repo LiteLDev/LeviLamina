@@ -19,6 +19,10 @@ struct MolangClientTextureSet {
 public:
     // MolangClientTextureSet inner types declare
     // clang-format off
+    struct ExtraPBRData;
+    // clang-format on
+
+    // MolangClientTextureSet inner types define
     struct ExtraPBRData {
         std::weak_ptr<const BedrockTextureData> mMERSTextureDataWeakPtr;
         std::weak_ptr<const BedrockTextureData> mNormalTextureDataWeakPtr;
