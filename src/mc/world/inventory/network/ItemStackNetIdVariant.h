@@ -24,6 +24,9 @@ public:
     // NOLINTEND
 
 public:
+    ItemStackNetIdVariant() : mVariant(ItemStackNetId(0)) {}
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Bedrock::Result<void> deserialize(::ReadOnlyBinaryStream& stream);

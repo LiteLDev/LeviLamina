@@ -8,6 +8,7 @@
 #include "mc/network/packet/ToastRequestPacketPayload.h"
 #include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
+#include <string>
 
 // auto generated forward declare list
 // clang-format off
@@ -24,8 +25,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ToastRequestPacket();
+    ToastRequestPacket() : mSerializationMode(SerializationMode::SideBySideLogOnMismatch) {}
+    ToastRequestPacket(std::string const& title, std::string const& content)
+    : ll::PayloadPacket<ToastRequestPacketPayload>(title, content),
+      mSerializationMode(SerializationMode::SideBySideLogOnMismatch) {}
 
 public:
     // virtual functions

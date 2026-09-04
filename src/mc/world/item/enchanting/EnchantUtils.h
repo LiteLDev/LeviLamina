@@ -29,6 +29,9 @@ namespace Bedrock::Safety { class RedactableString; }
 namespace EnchantUtils {
 // functions
 // NOLINTBEGIN
+LLNDAPI ::std::vector<::std::pair<::EnchantmentInstance, int>>
+getAvailableEnchantmentResults(::Item const* item, int value, bool treasure);
+
 MCAPI void appendEnchantToFormattedText(
     ::Enchant::Type                      type,
     ::std::string_view                   enchantName,

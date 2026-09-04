@@ -24,6 +24,24 @@ public:
 
 public:
     bool operator==(InventorySource const& other) const {
-        return this->mType == other.mType && this->mContainerId == other.mContainerId && this->mFlags == other.mFlags;
+        if (this->mType != other.mType) {
+            return false;
+        }
+        if (this->mType == InventorySourceType::GlobalInventory) {
+            return true;
+        }
+        if (this->mType != InventorySourceType::ContainerInventory) {
+            return false;
+        }
+        return this->mContainerId == other.mContainerId;
     }
 };
+
+namespace std {
+template <>
+struct hash<InventorySource> {
+    size_t operator()(InventorySource const& source) const noexcept {
+        return static_cast<int64>(source.mContainerId) ^ (static_cast<uint>(source.mType) << 16);
+    }
+};
+} // namespace std
