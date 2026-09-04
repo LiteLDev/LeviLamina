@@ -41,22 +41,22 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI GameSession(
+    MCAPI GameSession(
         ::ClientNetworkSystem&                network,
         ::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler,
         ::LoopbackPacketSender&               loopbackPacketSender,
         ::SubClientId                         subid
     );
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
+    MCAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
 
-    MCNAPI void setLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
+    MCAPI void setLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
 #endif
 
-    MCNAPI void tick();
+    MCAPI void tick();
 
 #ifdef LL_PLAT_C
-    MCNAPI ~GameSession();
+    MCAPI ~GameSession();
 #endif
     // NOLINTEND
 
@@ -64,7 +64,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ClientNetworkSystem&                network,
         ::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler,
         ::LoopbackPacketSender&               loopbackPacketSender,
@@ -77,7 +77,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
 #endif
     // NOLINTEND
 };
