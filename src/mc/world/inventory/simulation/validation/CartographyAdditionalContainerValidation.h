@@ -15,7 +15,7 @@ class CartographyAdditionalContainerValidation : public ::ContainerValidationBas
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CartographyAdditionalContainerValidation() /*override*/;
+    virtual ~CartographyAdditionalContainerValidation() /*override*/ = default;
 
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
@@ -26,12 +26,6 @@ public:
     ) const /*override*/;
 
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

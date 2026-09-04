@@ -16,19 +16,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldConversionCompleteModel() /*override*/;
+    virtual ~WorldConversionCompleteModel() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void startImportedWorld();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

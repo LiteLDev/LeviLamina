@@ -12,7 +12,7 @@ class ServerPlayerLogMessageHandlerService : public ::Editor::Services::IEditorS
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerPlayerLogMessageHandlerService() /*override*/;
+    virtual ~ServerPlayerLogMessageHandlerService() /*override*/ = default;
 
     virtual ::std::string_view getServiceName() const /*override*/;
 
@@ -21,12 +21,6 @@ public:
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TransactionalWorldBlockTarget() /*override*/;
+    virtual ~TransactionalWorldBlockTarget() /*override*/ = default;
 
     virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
 
@@ -83,12 +83,6 @@ public:
     virtual ::WorldGenContext const& getContext() /*override*/;
 
     virtual void disableBlockSimple() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

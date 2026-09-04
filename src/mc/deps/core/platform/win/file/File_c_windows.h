@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~File_c_windows() /*override*/;
+    virtual ~File_c_windows() /*override*/ = default;
 
     virtual ::Core::PathBuffer<::std::string> _getPath() const /*override*/;
 
@@ -67,12 +67,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::string getExtendedLengthPath(::Core::PathView path);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

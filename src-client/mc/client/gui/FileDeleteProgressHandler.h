@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileDeleteProgressHandler() /*override*/;
+    virtual ~FileDeleteProgressHandler() /*override*/ = default;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -70,12 +70,6 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::IContentManager& contentManager, ::std::vector<::std::shared_ptr<::ContentItem const>>&& itemsToDelete);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

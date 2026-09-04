@@ -16,12 +16,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayScreenControllerProxy() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~PlayScreenControllerProxy() /*override*/ = default;
     // NOLINTEND
 };

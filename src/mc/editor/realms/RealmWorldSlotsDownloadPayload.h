@@ -25,13 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmWorldSlotsDownloadPayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~RealmWorldSlotsDownloadPayload() /*override*/ = default;
     // NOLINTEND
 
 public:

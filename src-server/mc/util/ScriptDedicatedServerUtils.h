@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDedicatedServerUtils() /*override*/;
+    virtual ~ScriptDedicatedServerUtils() /*override*/ = default;
 
     virtual void stopServer() /*override*/;
 
@@ -59,12 +59,6 @@ public:
     virtual bool reloadScriptConfig() /*override*/;
 
     virtual bool reloadCDNConfig() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -43,11 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~DevConsoleCommandOrigin() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~DevConsoleCommandOrigin() /*override*/;
-#endif
 
     virtual ::std::string const& getRequestId() const /*override*/;
 
@@ -101,14 +97,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::Player& player);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
 #endif
     // NOLINTEND
 

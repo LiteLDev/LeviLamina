@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DoorInteractGoal() /*override*/;
+    virtual ~DoorInteractGoal() /*override*/ = default;
 
     virtual bool canUse() /*override*/;
 
@@ -62,12 +62,6 @@ public:
         ::Direction::Type& dirIn,
         ::Direction::Type& dirOut
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

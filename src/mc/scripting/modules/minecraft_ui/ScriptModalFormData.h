@@ -154,8 +154,6 @@ public:
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> label,
         ::std::optional<bool>                                                             defaultValue
     );
-
-    MCNAPI ~ScriptModalFormData();
     // NOLINTEND
 
 public:
@@ -168,12 +166,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptModalFormData&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ApplyAnimationContext();
+    virtual ~ApplyAnimationContext() = default;
 
 #ifdef LL_PLAT_S
     virtual void fireParticleEvents(
@@ -63,12 +63,6 @@ public:
     virtual bool hasParticleSystemEngine(::RenderParams const& renderParams) const;
 #endif
 
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

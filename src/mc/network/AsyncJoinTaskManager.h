@@ -75,7 +75,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncJoinTaskManager() /*override*/;
+    virtual ~AsyncJoinTaskManager() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -109,11 +109,5 @@ public:
         ::std::unique_ptr<::TaskGroup>                        taskGroup,
         ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> defaultJoinVerdict
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

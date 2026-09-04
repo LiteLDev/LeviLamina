@@ -193,7 +193,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RakNetServerLocator() /*override*/;
+    virtual ~RakNetServerLocator() /*override*/ = default;
 
     virtual void startAnnouncingServer(
         ::std::string const&                 playerName,
@@ -305,12 +305,6 @@ public:
         ::std::function<::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>()>
             createUniqueRakPeerFunc
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

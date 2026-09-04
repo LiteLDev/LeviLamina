@@ -16,17 +16,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsPackErrorsScreenController() /*override*/;
+    virtual ~RealmsPackErrorsScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

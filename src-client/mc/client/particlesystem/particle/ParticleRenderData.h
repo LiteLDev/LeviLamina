@@ -78,13 +78,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void reset();
-
-    MCAPI ~ParticleRenderData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

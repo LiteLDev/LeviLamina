@@ -16,12 +16,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldTemplatesScreenControllerProxy() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~WorldTemplatesScreenControllerProxy() /*override*/ = default;
     // NOLINTEND
 };

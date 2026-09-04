@@ -26,19 +26,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LookAtTradingPlayerGoal() /*override*/;
+    virtual ~LookAtTradingPlayerGoal() /*override*/ = default;
 
     virtual bool canUse() /*override*/;
 
     virtual bool canContinueToUse() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

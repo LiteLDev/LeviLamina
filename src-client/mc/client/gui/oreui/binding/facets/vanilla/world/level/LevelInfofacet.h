@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelInfofacet() /*override*/;
+    virtual ~LevelInfofacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -80,12 +80,6 @@ public:
         ::std::function<::LocalPlayer*()>                          getCurrentLocalPlayer,
         ::std::function<::LevelSummary*(::std::string)>            getCurrentLevelSummary
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

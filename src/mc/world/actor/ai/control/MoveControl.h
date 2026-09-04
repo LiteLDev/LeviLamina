@@ -17,7 +17,7 @@ class MoveControl : public ::Control {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MoveControl() /*override*/;
+    virtual ~MoveControl() /*override*/ = default;
 
     virtual void initializeInternal(::Mob& mob, ::MoveControlDescription const* description);
 
@@ -40,12 +40,6 @@ public:
     );
 
     MCAPI bool shouldSlowSpeed(::MoveControlComponent const& parent, ::Mob const& mob, float const endDistanceSqr);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

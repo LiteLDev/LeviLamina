@@ -180,7 +180,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~FirstFloorRoomCollection() /*override*/;
+        virtual ~FirstFloorRoomCollection() /*override*/ = default;
 
         virtual ::std::string get1x1(::Random& random) /*override*/;
 
@@ -195,12 +195,6 @@ public:
         virtual ::std::string get2x2(::Random& random) /*override*/;
 
         virtual ::std::string get2x2Secret(::Random& random) /*override*/;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -319,7 +313,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~SecondFloorRoomCollection() /*override*/;
+        virtual ~SecondFloorRoomCollection() /*override*/ = default;
 
         virtual ::std::string get1x1(::Random& random) /*override*/;
 
@@ -334,12 +328,6 @@ public:
         virtual ::std::string get2x2(::Random& random) /*override*/;
 
         virtual ::std::string get2x2Secret(::Random& random) /*override*/;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
 
     public:

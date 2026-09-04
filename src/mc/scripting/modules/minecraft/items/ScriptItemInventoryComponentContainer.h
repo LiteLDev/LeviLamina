@@ -29,19 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptItemInventoryComponentContainer() /*override*/;
+    virtual ~ScriptItemInventoryComponentContainer() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<int> getEmptySlotsCount() const /*override*/;
 
     virtual ::Container* _tryGetContainer() const /*override*/;
 
     virtual ::ItemContext _getItemContext(int slot) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

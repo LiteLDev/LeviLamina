@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UpsellPackCollector() /*override*/;
+    virtual ~UpsellPackCollector() /*override*/ = default;
 
     virtual void start(bool allowed) /*override*/;
 
@@ -55,12 +55,6 @@ public:
         ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
         ::std::unordered_set<::mce::UUID>&                   handledPackSet
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

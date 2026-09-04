@@ -61,7 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerScoreboard() /*override*/;
+    virtual ~ServerScoreboard() /*override*/ = default;
 
     virtual void onObjectiveAdded(::Objective const& objective) /*override*/;
 
@@ -138,12 +138,6 @@ public:
         ::LevelStorage*                                      levelStorage,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

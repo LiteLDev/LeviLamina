@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalWorldUploadScreenController() /*override*/;
+    virtual ~LocalWorldUploadScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -63,12 +63,6 @@ public:
         ::ui::ScreenTechStackSelector&                        techStackSelector,
         ::std::function<void(::UploadState, ::Realms::World)> callbackAfterUpload
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

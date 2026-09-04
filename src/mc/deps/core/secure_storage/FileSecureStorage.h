@@ -30,13 +30,7 @@ public:
 
         virtual void setData(::std::string const& data, ::Core::Path path);
 
-        virtual ~StorageSystem();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
+        virtual ~StorageSystem() = default;
         // NOLINTEND
 
     public:
@@ -106,7 +100,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~FileSecureStorage() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~FileSecureStorage() /*override*/;
+#endif
 
     virtual bool add(::std::string const& key, ::std::string const& value) /*override*/;
 
@@ -160,7 +158,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

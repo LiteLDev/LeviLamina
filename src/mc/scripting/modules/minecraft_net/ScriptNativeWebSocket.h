@@ -35,17 +35,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptNativeWebSocket() /*override*/;
+    virtual ~ScriptNativeWebSocket() /*override*/ = default;
 
     virtual void onMessage(::std::string_view message) /*override*/;
 
     virtual void onClose(uint) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

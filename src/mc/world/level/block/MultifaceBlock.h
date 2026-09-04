@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MultifaceBlock() /*override*/;
+    virtual ~MultifaceBlock() /*override*/ = default;
 
     virtual ::AABB const&
     getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const
@@ -162,12 +162,6 @@ public:
         ::Material const&                            material,
         ::std::unique_ptr<::MultifaceSpreader const> spreader
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

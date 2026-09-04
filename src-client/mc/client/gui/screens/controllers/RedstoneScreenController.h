@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RedstoneScreenController() /*override*/;
+    virtual ~RedstoneScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -47,11 +47,5 @@ public:
         ::ActorUniqueID                                uniqueId,
         ::RedstoneScreenType                           screenType
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

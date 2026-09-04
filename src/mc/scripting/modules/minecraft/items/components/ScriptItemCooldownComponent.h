@@ -16,19 +16,13 @@ class ScriptItemCooldownComponent : public ::ScriptModuleMinecraft::ScriptItemCo
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptItemCooldownComponent() /*override*/;
+    virtual ~ScriptItemCooldownComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

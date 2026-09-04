@@ -11,13 +11,7 @@ class SelectionContainerEntity : public ::Editor::Selection::SelectionContainer 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SelectionContainerEntity() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~SelectionContainerEntity() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -12,17 +12,11 @@ class LoggingInterfaceGeneric : public ::Bedrock::Http::LoggingInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LoggingInterfaceGeneric() /*override*/;
+    virtual ~LoggingInterfaceGeneric() /*override*/ = default;
 
     virtual uint64 threadId() /*override*/;
 
     virtual void writeToDebugger(char const* area, ::HCTraceLevel level, char const* message) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

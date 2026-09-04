@@ -55,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BatchedNetworkPeer() /*override*/;
+    virtual ~BatchedNetworkPeer() /*override*/ = default;
 
     virtual void flush(::std::function<void()>&& callback) /*override*/;
 
@@ -85,12 +85,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

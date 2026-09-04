@@ -73,7 +73,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RemoteStorageProviderSyncProgressHandler() /*override*/;
+    virtual ~RemoteStorageProviderSyncProgressHandler() /*override*/ = default;
 
     virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
@@ -118,12 +118,6 @@ public:
                              onProgressHandlerCompletion,
         ::std::string const& screenName
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

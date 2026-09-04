@@ -67,7 +67,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeviceInformationQuery() /*override*/;
+    virtual ~DeviceInformationQuery() /*override*/ = default;
 
     virtual void onOperationModeChanged(::OperationMode operationMode) /*override*/;
     // NOLINTEND
@@ -82,12 +82,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

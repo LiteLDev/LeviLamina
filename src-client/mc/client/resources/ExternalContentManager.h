@@ -118,7 +118,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ExternalContentManager() /*override*/;
+    virtual ~ExternalContentManager() /*override*/ = default;
 
     virtual void importContent(
         ::std::shared_ptr<::ImportContext>       context,
@@ -184,12 +184,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>              resourceLoadManager,
         bool                                                              isEditorModeEnabled
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

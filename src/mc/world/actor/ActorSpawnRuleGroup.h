@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorSpawnRuleGroup();
+    virtual ~ActorSpawnRuleGroup() = default;
     // NOLINTEND
 
 public:
@@ -69,11 +69,5 @@ public:
         ::Experiments const&           experiments,
         ::IMinecraftEventing&          eventing
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

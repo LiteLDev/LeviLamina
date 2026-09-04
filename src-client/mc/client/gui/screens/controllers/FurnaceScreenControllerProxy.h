@@ -20,7 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FurnaceScreenControllerProxy() /*override*/;
+    virtual ~FurnaceScreenControllerProxy() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -33,12 +33,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::FurnaceScreenControllerProxyCallbacks callbacks);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

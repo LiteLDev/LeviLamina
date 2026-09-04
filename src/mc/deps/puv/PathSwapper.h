@@ -18,18 +18,6 @@ public:
     PathSwapper& operator=(PathSwapper const&);
     PathSwapper(PathSwapper const&);
     PathSwapper();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~PathSwapper();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Puv::internal

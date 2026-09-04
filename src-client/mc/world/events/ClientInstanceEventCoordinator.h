@@ -23,19 +23,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientInstanceEventCoordinator() /*override*/;
+    virtual ~ClientInstanceEventCoordinator() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void sendEvent(::EventRef<::ClientInstanceGameplayEvent<void>> const& event);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

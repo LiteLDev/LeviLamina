@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SafeZoneScreenController() /*override*/;
+    virtual ~SafeZoneScreenController() /*override*/ = default;
 
     virtual ::ui::ViewRequest tryExit() /*override*/;
     // NOLINTEND
@@ -58,12 +58,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -61,7 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Block();
+    virtual ~Block() = default;
     // NOLINTEND
 
 public:
@@ -198,12 +198,6 @@ public:
     MCAPI void* $ctor(ushort data, ::gsl::not_null<::BlockType*> oldBlock);
 
     MCAPI void* $ctor(ushort data, ::gsl::not_null<::BlockType*> oldBlock, ::CompoundTag serId, uint const& runId);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

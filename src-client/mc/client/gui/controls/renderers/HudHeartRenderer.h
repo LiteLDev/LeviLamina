@@ -91,7 +91,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HudHeartRenderer() /*override*/;
+    virtual ~HudHeartRenderer() /*override*/ = default;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -105,12 +105,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _loadHeartTextures(::mce::TextureGroup& textureGroup, bool isHardcore);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

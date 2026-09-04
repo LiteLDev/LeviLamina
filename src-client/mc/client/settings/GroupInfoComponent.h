@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GroupInfoComponent() /*override*/;
+    virtual ~GroupInfoComponent() /*override*/ = default;
 
     virtual ::Settings::ComponentState getDefaultState() const /*override*/;
     // NOLINTEND
@@ -38,12 +38,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string_view id, ::std::string_view name, ::std::optional<::std::string> description);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

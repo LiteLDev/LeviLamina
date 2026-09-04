@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DynamicFormScreenController() /*override*/;
+    virtual ~DynamicFormScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -62,12 +62,6 @@ public:
         ::JsonValidator::Property const&                      validator,
         ::std::shared_ptr<::DynamicContentBindingInformation> bindingData
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InMemoryEnv() /*override*/;
+    virtual ~InMemoryEnv() /*override*/ = default;
 
     virtual ::leveldb::Status NewSequentialFile(::std::string const& f, ::leveldb::SequentialFile** r) /*override*/;
 
@@ -48,12 +48,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void _flushWithTransaction();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

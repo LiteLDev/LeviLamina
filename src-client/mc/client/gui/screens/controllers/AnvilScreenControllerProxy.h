@@ -16,13 +16,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AnvilScreenControllerProxy() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~AnvilScreenControllerProxy() /*override*/ = default;
     // NOLINTEND
 
 public:

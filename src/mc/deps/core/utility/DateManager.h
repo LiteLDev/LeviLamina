@@ -47,11 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~DateManager() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~DateManager() /*override*/;
-#endif
 
     virtual int64 _getUnixTime();
     // NOLINTEND
@@ -117,14 +113,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 

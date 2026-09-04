@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SignalingServiceDedicatedServerConfigProvider() /*override*/;
+    virtual ~SignalingServiceDedicatedServerConfigProvider() /*override*/ = default;
 
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl(::std::string const& id) /*override*/;
 
@@ -60,12 +60,6 @@ public:
         ::gsl::not_null<::std::shared_ptr<::Bedrock::Services::AuthHelper>>      authService,
         ::DiscoveryEnvironment                                                   environment
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

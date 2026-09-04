@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FindMountGoal() /*override*/;
+    virtual ~FindMountGoal() /*override*/ = default;
 
     virtual bool canUse() /*override*/;
 
@@ -59,12 +59,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool isInMountRange();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

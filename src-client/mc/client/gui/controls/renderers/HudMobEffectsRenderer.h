@@ -17,18 +17,12 @@ class HudMobEffectsRenderer : public ::MinecraftUICustomRenderer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HudMobEffectsRenderer() /*override*/;
+    virtual ~HudMobEffectsRenderer() /*override*/ = default;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
     virtual void
     render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

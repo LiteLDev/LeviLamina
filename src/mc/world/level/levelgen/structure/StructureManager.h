@@ -63,7 +63,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureManager() /*override*/;
+    virtual ~StructureManager() /*override*/ = default;
 
     virtual ::LegacyStructureTemplate& getOrCreateLegacy(::std::string const& structureName) /*override*/;
 
@@ -164,12 +164,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ResourcePackManager& packManager);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

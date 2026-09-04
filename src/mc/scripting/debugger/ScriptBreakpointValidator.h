@@ -22,15 +22,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptBreakpointValidator() /*override*/;
+    virtual ~ScriptBreakpointValidator() /*override*/ = default;
 
     virtual bool validatePath(::std::string_view sourcePath) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

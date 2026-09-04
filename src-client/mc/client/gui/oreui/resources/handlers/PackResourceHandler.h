@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PackResourceHandler() /*override*/;
+    virtual ~PackResourceHandler() /*override*/ = default;
 
     virtual ::Gameface::ResourceHandlerStatus
     onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
@@ -53,12 +53,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::optional<::ResourceLocation>
     _getAssetResourceLocationFromResourcePackManager(::Gameface::ResourceRequest const& request) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

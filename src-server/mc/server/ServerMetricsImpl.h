@@ -52,19 +52,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerMetricsImpl() /*override*/;
+    virtual ~ServerMetricsImpl() /*override*/ = default;
 
     virtual void sendPeriodicMetrics(::ServerInstance& serverInstance) /*override*/;
 
     virtual void sendServerTickTime(::std::chrono::nanoseconds const& timepoint) /*override*/;
 
     virtual void sendChunkLoadTelemetryData() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CrafterScreenController() /*override*/;
+    virtual ~CrafterScreenController() /*override*/ = default;
 
     virtual ::ui::ViewRequest handleEvent(::ScreenEvent& screenEvent) /*override*/;
 
@@ -66,12 +66,6 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

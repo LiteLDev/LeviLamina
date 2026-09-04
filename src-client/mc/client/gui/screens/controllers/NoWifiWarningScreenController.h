@@ -9,15 +9,9 @@ class NoWifiWarningScreenController : public ::MinecraftScreenController {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NoWifiWarningScreenController() /*override*/;
+    virtual ~NoWifiWarningScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

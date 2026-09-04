@@ -36,15 +36,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SnapToSurfaceFeature() /*override*/;
+    virtual ~SnapToSurfaceFeature() /*override*/ = default;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

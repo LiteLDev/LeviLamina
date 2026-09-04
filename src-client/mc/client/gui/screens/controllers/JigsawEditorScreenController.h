@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~JigsawEditorScreenController() /*override*/;
+    virtual ~JigsawEditorScreenController() /*override*/ = default;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
     // NOLINTEND
@@ -64,12 +64,6 @@ public:
         ::BlockPos const& pos,
         ::ActorUniqueID   uniqueId
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -74,7 +74,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DispatchQueue() /*override*/;
+    virtual ~DispatchQueue() /*override*/ = default;
 
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response>
     send(::Bedrock::Http::Request&& request) /*override*/;
@@ -84,12 +84,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void _handlePendingRequest();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

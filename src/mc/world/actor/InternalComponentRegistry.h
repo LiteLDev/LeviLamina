@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InternalComponentRegistry();
+    virtual ~InternalComponentRegistry() = default;
 
     virtual void registerComponents();
     // NOLINTEND
@@ -64,12 +64,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& INTERNAL_COMPONENTS();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

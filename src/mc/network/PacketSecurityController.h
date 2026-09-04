@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PacketSecurityController() /*override*/;
+    virtual ~PacketSecurityController() /*override*/ = default;
 
     virtual ::PacketViolationResponse checkForViolation(
         ::MinecraftPacketIds                                                     packetId,
@@ -66,12 +66,6 @@ public:
         ::NetworkIdentifier const&                                     netId,
         ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

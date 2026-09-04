@@ -115,8 +115,6 @@ public:
     checkModuleImportAllowed(::std::string const& baseName, ::std::string const& moduleName, bool dynamicImport) const;
 
     MCNAPI void processUnhandledPromiseRejection();
-
-    MCNAPI ~ContextObject();
     // NOLINTEND
 
 public:
@@ -188,12 +186,6 @@ public:
         ::JSRuntime*,
         ::Scripting::ContextConfig const& contextConfig
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

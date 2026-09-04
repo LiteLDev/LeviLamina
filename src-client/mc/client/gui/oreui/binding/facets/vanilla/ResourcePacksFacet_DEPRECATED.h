@@ -213,7 +213,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourcePacksFacet_DEPRECATED() /*override*/;
+    virtual ~ResourcePacksFacet_DEPRECATED() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -364,12 +364,6 @@ public:
         ::OreUI::Router&                                                  router,
         ::std::shared_ptr<::MainMenuScreenModel>                          mainMenuScreenModel
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

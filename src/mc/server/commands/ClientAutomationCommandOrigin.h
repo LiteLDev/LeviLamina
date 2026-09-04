@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientAutomationCommandOrigin() /*override*/;
+    virtual ~ClientAutomationCommandOrigin() /*override*/ = default;
 
     virtual ::std::string const& getRequestId() const /*override*/;
 
@@ -78,12 +78,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& requestId);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

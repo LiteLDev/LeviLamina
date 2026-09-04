@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActionBarContainer() /*override*/;
+    virtual ~ActionBarContainer() /*override*/ = default;
 
     virtual void clear() /*override*/;
     // NOLINTEND
@@ -62,12 +62,6 @@ public:
     MCNAPI static ::std::add_lvalue_reference_t<char const[9]> PROPERTY_CATEGORY();
 
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_DATA();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

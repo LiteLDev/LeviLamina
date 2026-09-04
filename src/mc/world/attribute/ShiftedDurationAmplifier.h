@@ -15,17 +15,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ShiftedDurationAmplifier() /*override*/;
+    virtual ~ShiftedDurationAmplifier() /*override*/ = default;
 
     virtual bool shouldBuff(int remainingDuration, int amplification) const /*override*/;
 
     virtual int getTickInterval(int amplification) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsPendingInvitationsScreenController() /*override*/;
+    virtual ~RealmsPendingInvitationsScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
     // NOLINTEND
@@ -60,12 +60,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, bool hasPendingInvites);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DimensionManager();
+    virtual ~DimensionManager() = default;
 
     virtual ::Bedrock::PubSub::Connector<void(::DimensionManager&)>&
     getOnReadyForCustomDimensionRegistrationConnector() /*override*/;
@@ -111,12 +111,6 @@ public:
         ::DimensionDefinitionGroup                         dimensionDefinitions
     );
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

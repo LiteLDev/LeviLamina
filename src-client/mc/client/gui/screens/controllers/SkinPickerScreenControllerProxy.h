@@ -16,12 +16,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SkinPickerScreenControllerProxy() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~SkinPickerScreenControllerProxy() /*override*/ = default;
     // NOLINTEND
 };

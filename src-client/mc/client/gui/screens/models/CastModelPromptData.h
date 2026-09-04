@@ -31,19 +31,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CastModelPromptData() /*override*/;
+    virtual ~CastModelPromptData() /*override*/ = default;
 
     virtual bool allowedToOpenCheck() const /*override*/;
 
     virtual void callOnOpen() /*override*/;
 
     virtual void callOnClose() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -22,7 +22,7 @@ class VanillaTreeFeature : public ::ITreeFeature {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VanillaTreeFeature() /*override*/;
+    virtual ~VanillaTreeFeature() /*override*/ = default;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
@@ -45,12 +45,6 @@ public:
         ::std::function<::ITreeTrunkWrapper&(::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>*)>
             trunkAccessor
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InternationalizationManager() /*override*/;
+    virtual ~InternationalizationManager() /*override*/ = default;
 
     virtual ::cohtml::i18n::IBreakIterator*
     CreateBreakIterator(::cohtml::i18n::BreakIteratorBoundary type) /*override*/;
@@ -36,12 +36,6 @@ public:
         uint                                                         size,
         ::cohtml::IInternationalizationManager::TextDirectionResult* result
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

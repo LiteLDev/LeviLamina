@@ -124,7 +124,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RendererContextD3D11() /*override*/;
+    virtual ~RendererContextD3D11() /*override*/ = default;
 
     virtual ::bgfx::RendererType::Enum getRendererType() const /*override*/;
 
@@ -333,12 +333,6 @@ public:
     MCAPI void submitBlit(::bgfx::BlitState& _bs, ushort _view);
 
     MCAPI void updateMsaa(::DXGI_FORMAT _format) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

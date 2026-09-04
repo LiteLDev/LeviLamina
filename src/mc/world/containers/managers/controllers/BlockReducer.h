@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockReducer();
+    virtual ~BlockReducer() = default;
 
     virtual void registerBlock(::ItemStack const& block, ::std::vector<::ItemStack> const& elements);
     // NOLINTEND
@@ -60,12 +60,6 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI ::ItemDescriptor tryGetItemDescriptorFromKey(int blockKey) const;
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

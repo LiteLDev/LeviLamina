@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BannerComponent() /*override*/;
+    virtual ~BannerComponent() /*override*/ = default;
 
     virtual ::Settings::ComponentState getDefaultState() const /*override*/;
     // NOLINTEND
@@ -42,12 +42,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<::std::string> getCtaText() const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

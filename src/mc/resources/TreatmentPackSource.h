@@ -31,25 +31,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~TreatmentPackSource() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~TreatmentPackSource() /*override*/;
-#endif
 
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
     virtual ::PackType getPackType() const /*override*/;
 
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

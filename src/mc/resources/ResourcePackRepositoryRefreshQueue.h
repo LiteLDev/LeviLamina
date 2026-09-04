@@ -73,13 +73,5 @@ public:
     MCNAPI ::Bedrock::Threading::Async<void> _tryCompleteInitialization(::TaskGroup& taskGroup);
 
     MCNAPI ::ResourcePackRepositoryRefreshQueue::RefreshResult refreshPacks(::TaskGroup& taskGroup);
-
-    MCNAPI ~ResourcePackRepositoryRefreshQueue();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

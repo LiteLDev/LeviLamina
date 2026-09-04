@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftReportGameListener() /*override*/;
+    virtual ~MinecraftReportGameListener() /*override*/ = default;
 
     virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
@@ -48,12 +48,6 @@ public:
     MCNAPI void _say(::std::string const& chatColor, ::std::string const& text);
 
     MCNAPI void _spawnBeacon(::Block const& glassType);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

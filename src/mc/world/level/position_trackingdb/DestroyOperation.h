@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DestroyOperation() /*override*/;
+    virtual ~DestroyOperation() /*override*/ = default;
 
     virtual char const* getDescription() const /*override*/;
 
@@ -37,12 +37,6 @@ public:
         ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>,
         ::PositionTrackingDB::TrackingRecord&
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

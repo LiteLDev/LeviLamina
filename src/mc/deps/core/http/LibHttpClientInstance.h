@@ -30,19 +30,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibHttpClientInstance();
+    virtual ~LibHttpClientInstance() = default;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::Threading::Mutex& sMutex();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -76,7 +76,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FunctionManager();
+    virtual ~FunctionManager() = default;
     // NOLINTEND
 
 public:
@@ -108,12 +108,6 @@ public:
         ::std::unique_ptr<::CommandOrigin>      tickOrigin,
         ::GameRule const*                       gameRule
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

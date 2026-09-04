@@ -38,13 +38,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool getHeader(::std::string const& name, ::std::string& outValue) const;
-
-    MCNAPI ~HttpHeaders();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

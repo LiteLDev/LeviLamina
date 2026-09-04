@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldCloudSyncCommandGroup() /*override*/;
+    virtual ~WorldCloudSyncCommandGroup() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -41,12 +41,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

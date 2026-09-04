@@ -23,19 +23,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerDeathManagerProxy() /*override*/;
+    virtual ~PlayerDeathManagerProxy() /*override*/ = default;
 
     virtual ::Actor* fetchActor(::ActorUniqueID actorUniqueID) const /*override*/;
 
     virtual bool shouldShowDeathMessages() const /*override*/;
 
     virtual void onWorldOwnerHasDied() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

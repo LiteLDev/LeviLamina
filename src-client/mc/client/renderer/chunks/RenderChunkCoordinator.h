@@ -76,7 +76,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RenderChunkCoordinator() /*override*/;
+    virtual ~RenderChunkCoordinator() /*override*/ = default;
 
     virtual void onChunkLoaded(::ChunkSource&, ::LevelChunk& lc) /*override*/;
 
@@ -131,12 +131,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Level& level, ::LevelRenderer& levelRenderer, ::DimensionType dimensionID);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

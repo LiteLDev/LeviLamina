@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Debugger() /*override*/;
+    virtual ~Debugger() /*override*/ = default;
 
     virtual bool attach(
         bool                                      performHandshake,
@@ -72,12 +72,6 @@ public:
     MCNAPI static uint64 TransportWrite(void* udata, char const* buffer, uint64 length);
 
     MCNAPI static int ValidatePath(void* udata, char const* path);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

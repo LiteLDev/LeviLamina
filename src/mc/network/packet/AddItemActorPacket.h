@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AddItemActorPacket() /*override*/;
+    virtual ~AddItemActorPacket() /*override*/ = default;
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
@@ -62,12 +62,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ItemActor& itemEntity);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

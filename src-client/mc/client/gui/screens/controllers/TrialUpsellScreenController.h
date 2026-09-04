@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TrialUpsellScreenController() /*override*/;
+    virtual ~TrialUpsellScreenController() /*override*/ = default;
 
     virtual void handleLicenseChanged() /*override*/;
 
@@ -46,12 +46,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, bool isNewWorld, bool timeExpired);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

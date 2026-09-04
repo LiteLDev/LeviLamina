@@ -22,19 +22,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Stopwatch();
+    virtual ~Stopwatch() = default;
 
     virtual double stop();
 
     virtual double stopContinue();
 
     virtual void print(::std::string const& prepend);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -88,7 +88,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SoundEngine() /*override*/;
+    virtual ~SoundEngine() /*override*/ = default;
 
     virtual void pauseMusic(bool state) /*override*/;
 
@@ -200,12 +200,6 @@ public:
     MCAPI void setTTSClient(::std::shared_ptr<::TextToSpeechClient> ttsClient);
 
     MCAPI void update(::gsl::span<::std::pair<int, ::ListenerState>> listenerStates, float elapsedTime);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

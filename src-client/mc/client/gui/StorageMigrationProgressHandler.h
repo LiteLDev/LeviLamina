@@ -16,7 +16,7 @@ class StorageMigrationProgressHandler : public ::ProgressHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageMigrationProgressHandler() /*override*/;
+    virtual ~StorageMigrationProgressHandler() /*override*/ = default;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -37,12 +37,6 @@ public:
     virtual ::ProgressAnimation showLoadingBar() const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

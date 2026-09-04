@@ -9,12 +9,6 @@ class SocialSettingsScreenController : public ::SettingsScreenControllerBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SocialSettingsScreenController() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~SocialSettingsScreenController() /*override*/ = default;
     // NOLINTEND
 };

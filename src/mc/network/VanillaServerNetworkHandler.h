@@ -31,16 +31,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VanillaServerNetworkHandler() /*override*/;
+    virtual ~VanillaServerNetworkHandler() /*override*/ = default;
 
     virtual void
     handle(::NetworkIdentifier const& source, ::ResourcePackClientResponsePacket const& packet) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -29,11 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~ArmorContainerModel() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ArmorContainerModel() /*override*/;
-#endif
 
     virtual void postInit() /*override*/;
 
@@ -48,14 +44,6 @@ public:
     virtual ::Container* _getContainer() const /*override*/;
 
     virtual void _onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

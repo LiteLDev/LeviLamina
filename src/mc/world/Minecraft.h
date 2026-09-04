@@ -118,7 +118,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Minecraft() /*override*/;
+    virtual ~Minecraft() /*override*/ = default;
 
     virtual void setSimTimePause(bool pause);
 
@@ -198,12 +198,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::MinecraftArguments&& args);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

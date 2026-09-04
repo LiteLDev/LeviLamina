@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ToggleManagerComponent() /*override*/;
+    virtual ~ToggleManagerComponent() /*override*/ = default;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -45,12 +45,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _updateToggleGroupState(::VisualTree& visualTree, bool toggleState);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ReconnectOnResumeProgressHandler() /*override*/;
+    virtual ~ReconnectOnResumeProgressHandler() /*override*/ = default;
 
     virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
@@ -80,12 +80,6 @@ public:
             ::ExperienceConnectionData,
             ::Realms::RealmId> cookie
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -145,7 +145,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemInHandRenderer() /*override*/;
+    virtual ~ItemInHandRenderer() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -338,11 +338,5 @@ public:
         ::BlockTessellator&                    commonRenderer,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

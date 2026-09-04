@@ -64,7 +64,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptObjRef() /*override*/;
+    virtual ~ScriptObjRef() /*override*/ = default;
 
     virtual void onReduceToSingleOwner() /*override*/;
 
@@ -79,12 +79,6 @@ public:
     MCNAPI void pin();
 
     MCNAPI void unpin();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

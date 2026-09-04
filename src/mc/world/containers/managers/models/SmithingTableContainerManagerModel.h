@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SmithingTableContainerManagerModel() /*override*/;
+    virtual ~SmithingTableContainerManagerModel() /*override*/ = default;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
@@ -54,12 +54,6 @@ public:
         ::ItemStack const& materialStack
     );
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

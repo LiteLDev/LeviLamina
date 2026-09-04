@@ -15,19 +15,13 @@ class OnStepOnTrigger : public ::DefinitionTrigger, public ::IBlockComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OnStepOnTrigger();
+    virtual ~OnStepOnTrigger() = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCFOLD void onEvent(::BlockEvents::BlockStepOnEvent const& eventData) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

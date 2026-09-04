@@ -74,7 +74,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelStorageManager() /*override*/;
+    virtual ~LevelStorageManager() /*override*/ = default;
 
     virtual ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& getOnSaveConnector() /*override*/;
 
@@ -127,12 +127,6 @@ public:
         ::std::unique_ptr<::UserStorageChecker>       userStorageChecker,
         ::IMinecraftEventing&                         eventing
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

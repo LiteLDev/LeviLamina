@@ -48,8 +48,6 @@ public:
     MCNAPI ::std::string const& fetchItemPayload();
 
     MCNAPI void save();
-
-    MCNAPI ~PersistenceItem();
     // NOLINTEND
 
 public:
@@ -61,12 +59,6 @@ public:
         bool const                               replication,
         ::cereal::ReflectionCtx&                 ctx
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

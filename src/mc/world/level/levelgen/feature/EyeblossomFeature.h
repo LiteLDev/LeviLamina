@@ -16,15 +16,9 @@ class EyeblossomFeature : public ::Feature {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EyeblossomFeature() /*override*/;
+    virtual ~EyeblossomFeature() /*override*/ = default;
 
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random&) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

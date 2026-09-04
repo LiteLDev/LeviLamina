@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftGameTestHelper() /*override*/;
+    virtual ~MinecraftGameTestHelper() /*override*/ = default;
 
     virtual void succeedWhenEntityPresent(
         ::ActorDefinitionIdentifier const& actorIdentifier,
@@ -292,12 +292,6 @@ public:
     MCAPI int _getItemEntityCount(::Item const& item, ::AABB const& searchBounds);
 
     MCAPI ::std::optional<::gametest::GameTestError> _getStructureBlockMissingError() const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

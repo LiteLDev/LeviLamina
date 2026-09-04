@@ -19,7 +19,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GlobalPauseScreenController() /*override*/;
+    virtual ~GlobalPauseScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
     // NOLINTEND
@@ -34,12 +34,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -97,7 +97,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldResourcePackHandler() /*override*/;
+    virtual ~WorldResourcePackHandler() /*override*/ = default;
 
     virtual ::World::WorldPacks& loadPackContentForWorld(::LevelSummary const& levelSummary) /*override*/;
 
@@ -242,12 +242,6 @@ public:
         ::World::PackStatus const                 packStatus,
         bool const                                isEduMode
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

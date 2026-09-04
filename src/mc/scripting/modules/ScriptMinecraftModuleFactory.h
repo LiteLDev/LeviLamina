@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptMinecraftModuleFactory() /*override*/;
+    virtual ~ScriptMinecraftModuleFactory() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,12 +70,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ServerLevel* level);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -18,7 +18,7 @@ class RandomDyeFunction : public ::LootItemFunction {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RandomDyeFunction() /*override*/;
+    virtual ~RandomDyeFunction() /*override*/ = default;
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
 
@@ -31,12 +31,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _applyBase(::ItemStackBase& item, ::Random& random) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

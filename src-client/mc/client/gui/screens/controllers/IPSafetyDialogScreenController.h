@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPSafetyDialogScreenController() /*override*/;
+    virtual ~IPSafetyDialogScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -41,12 +41,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, int externalServerId);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

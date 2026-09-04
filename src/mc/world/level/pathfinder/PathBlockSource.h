@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PathBlockSource() /*override*/;
+    virtual ~PathBlockSource() /*override*/ = default;
 
     virtual bool isInWater() const /*override*/;
 
@@ -39,12 +39,6 @@ public:
     virtual bool isLavaBlock(::BlockPos const& blockPos) const /*override*/;
 
     virtual bool isSolidBlock(::BlockPos const& blockPos) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

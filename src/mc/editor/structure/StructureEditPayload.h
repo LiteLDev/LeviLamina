@@ -28,19 +28,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureEditPayload() /*override*/;
+    virtual ~StructureEditPayload() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

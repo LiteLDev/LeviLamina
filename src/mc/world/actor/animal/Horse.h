@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Horse() /*override*/;
+    virtual ~Horse() /*override*/ = default;
 
     virtual void die(::ActorDamageSource const& damagesource) /*override*/;
 
@@ -111,12 +111,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

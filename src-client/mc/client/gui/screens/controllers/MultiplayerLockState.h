@@ -6,19 +6,13 @@ class MultiplayerLockState {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MultiplayerLockState();
+    virtual ~MultiplayerLockState() = default;
 
     virtual bool isLocked() const;
 
     virtual void setLockedByBehaviorPack(bool isLocked);
 
     virtual void setLockedByResourcePack(bool isLocked);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

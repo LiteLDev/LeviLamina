@@ -18,7 +18,7 @@ class EditorGizmoRenderer : public ::MinecraftUICustomRenderer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorGizmoRenderer() /*override*/;
+    virtual ~EditorGizmoRenderer() /*override*/ = default;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -27,12 +27,6 @@ public:
     virtual void preRenderSetup(::MinecraftUIRenderContext& renderContext) /*override*/;
 
     virtual void render(::MinecraftUIRenderContext& context, ::IClientInstance& client, ::UIControl&, int) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

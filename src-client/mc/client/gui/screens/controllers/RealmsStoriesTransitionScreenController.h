@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsStoriesTransitionScreenController() /*override*/;
+    virtual ~RealmsStoriesTransitionScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -45,12 +45,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::Realms::World const& world);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

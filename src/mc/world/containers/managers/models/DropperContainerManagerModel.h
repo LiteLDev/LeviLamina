@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DropperContainerManagerModel() /*override*/;
+    virtual ~DropperContainerManagerModel() /*override*/ = default;
 
     virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
@@ -36,12 +36,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

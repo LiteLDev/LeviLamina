@@ -81,7 +81,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldStartupFacet() /*override*/;
+    virtual ~WorldStartupFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -148,12 +148,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ContentAcquisition>               contentAcquisition,
         ::Bedrock::NotNullNonOwnerPtr<::World::OwnedWorldTemplateManager> ownedWorldTemplateManager
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

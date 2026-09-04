@@ -11,13 +11,7 @@ class ScriptItemDyeableComponent : public ::ScriptModuleMinecraft::ScriptItemCom
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptItemDyeableComponent() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~ScriptItemDyeableComponent() /*override*/ = default;
     // NOLINTEND
 };
 

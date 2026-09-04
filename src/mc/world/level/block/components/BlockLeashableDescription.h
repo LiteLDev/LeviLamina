@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockLeashableDescription() /*override*/;
+    virtual ~BlockLeashableDescription() /*override*/ = default;
 
     virtual ::std::string const& getName() const /*override*/;
 
@@ -41,12 +41,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

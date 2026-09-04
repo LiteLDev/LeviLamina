@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorBootstrapper() /*override*/;
+    virtual ~EditorBootstrapper() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,11 +54,5 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI static ::std::optional<::EditorConnectionJoinIntent>& msGlobalEditorJoinIntentOverride();
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
